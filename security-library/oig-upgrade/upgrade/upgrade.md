@@ -4,7 +4,7 @@
 
 This lab walks you through the steps involved in one-hop upgrade of Oracle Identity Manager.
 
-Estimated Lab Time: 50 minutes
+*Estimated Lab Time*: 50 minutes
 
 ### Objectives
 
@@ -14,8 +14,11 @@ In this lab, you will:
 
 ### Prerequisites
 
-* You have completed Lab 1: Initialize the workshop Environment
-* You have completed Lab 2: Pre-Upgrade Requirements
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+      - Lab 1: Initialize the workshop Environment
+      - Lab 2: Pre-Upgrade Requirements
 
 ## **STEP 1:** Identify existing schemas available for upgrade
 
@@ -35,7 +38,7 @@ In this lab, you will:
   ```
   We can observe that version 11g is displayed
 
-  ![](images/1-sql.PNG)
+  ![](images/1-sql.png)
 
 ## **STEP 2:** Run the upgrade assistant to perform schema upgrade
 
@@ -57,21 +60,23 @@ In this lab, you will:
 
   - Upgrade type - *All schemas used by a domain*. Browse to 11g Domain home - */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
 
-  ![](images/2-upgrade.PNG)
+  ![](images/2-upgrade.png)
 
   - Component list - Click *Next*
 
   - Prerequisite check - Make sure all the prerequisites have been met.
 
-  ![](images/3-upgrade.PNG)
+  ![](images/3-upgrade.png)
 
   - OPSS Schema
   ```
   DBA Username: <copy>FMW</copy>
+  ```
+  ```
   DBA Password: <copy>Welcom#123</copy>
   ```
 
-  ![](images/3a-upgrade.PNG)
+  ![](images/3a-upgrade.png)
 
   - MDS Schema - The same Username and Password is updated automatically - Click *Next*
 
@@ -83,19 +88,23 @@ In this lab, you will:
 
   - Create schemas - Make sure *Create missing schemas for specified domain* is checked. Click *Use same password for all schemas* and Enter the Schema password as *Welcom#123*
 
-  ![](images/4-upgrade.PNG)
+  ```
+  Schema Password: <copy>Welcom#123</copy>
+  ```
+
+  ![](images/4-upgrade.png)
 
   - Examine - Click *Next*
 
-  ![](images/5-upgrade.PNG)
+  ![](images/5-upgrade.png)
 
   - Create schema progress - Once the schema creation is completed, click on *Upgrade*
 
-  ![](images/6-upgrade.PNG)
+  ![](images/6-upgrade.png)
 
   - Close the upgrade assistant once the upgrade is successfully completed.
 
-  ![](images/7-upgrade.PNG)
+  ![](images/7-upgrade.png)
 
 ## **STEP 3:** Verify the schema Upgrade
 
@@ -115,8 +124,8 @@ In this lab, you will:
   ```
   We can verify that the upgrade was successful by checking that the schema version has been properly updated to 12c.
 
-  ![](images/8-sql.PNG)
-
+  ![](images/8-sql.png)
+  
 ## **STEP 4:** Cleaning the temporary folder
 
 1. As the */tmp* directory is set against the JVM *java.io.tmpdir* property, any unwanted files in the */tmp* folder can interfere with the OIG upgrade process and may result is MDS corruption. Hence, clean the */tmp* folder before starting the upgrade process.
@@ -144,7 +153,7 @@ In this lab, you will:
 
   Observe the Weblogic 12c console to verify that all the managed servers are in the ‘SHUTDOWN’ state.
 
-  ![](images/9-server12c.PNG)
+  ![](images/9-server12c.png)
 
 ## **STEP 6:** Rewiring the domain
 
@@ -184,7 +193,7 @@ In this lab, you will:
   Rewiring takes about 10-15 minutes to complete.
   Wait until the following message is displayed – “Rewiring done successfully”
 
-  ![](images/10-rewire.PNG)
+  ![](images/10-rewire.png)
 
   The 12c domain is now wired to the upgraded 11g schema. At this point, all the servers of 12c domain are shut down. Proceed to the next lab to restart all the servers and complete the upgrade process.
 
@@ -192,7 +201,6 @@ In this lab, you will:
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi
+* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R/May 2021
-* **Workshop (or Lab) Expiry Date** - Never
+* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, May 2021

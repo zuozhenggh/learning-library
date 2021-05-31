@@ -4,7 +4,7 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-Estimated Lab Time: 20 minutes
+*Estimated Lab Time*: 20 minutes
 
 ### About Product/Technology
 Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources.
@@ -56,7 +56,7 @@ Login to the Host using SSH Key based authentication using your preferred SSH cl
   ```
   <copy>./startDB.sh</copy>
   ```
-  ![](images/1-DB-start.PNG)
+  ![](images/1-DB-start.png)
 
 ## **STEP 3:** Start and Verify the 11g Domain
 
@@ -80,13 +80,13 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
     Password: <copy>Welcom@123</copy>
     ```
 
-    ![](images/2-weblogic-console.PNG)
+    ![](images/2-weblogic-console.png)
 
     - On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
 
-    ![](images/3-weblogic-servers.PNG)
+    ![](images/3-weblogic-servers.png)
 
-    ![](images/4-weblogic-servers.PNG)
+    ![](images/4-weblogic-servers.png)
 
 3. Access the Identity Self Service console
 
@@ -102,21 +102,21 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
     Password: <copy>Welcom@123</copy>
     ```
 
-    ![](images/5-identity-console.PNG)
+    ![](images/5-identity-console.png)
 
     - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 11g
 
-    ![](images/6-identity-console.PNG)
+    ![](images/6-identity-console.png)
 
     - Click on *Manage* on the top right corner. Then, click on *Users* and notice that 3 test users have been created (*TUSER1, TUSER2, TUSER3*)
 
-    ![](images/7-users.PNG)
+    ![](images/7-users.png)
 
-    ![](images/8-users.PNG)
+    ![](images/8-users.png)
 
 ## **STEP 4:** Start and Verify the 12c Domain
 
-1. Run the *startDomain12c.sh* script
+1. Run the *startDomain12c.sh* script.
 The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 
   ```
@@ -136,11 +136,11 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
     Password: <copy>Welcom@123</copy>
     ```
 
-    ![](images/9-weblogic12c.PNG)
+    ![](images/9-weblogic12c.png)
 
     - On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
 
-    ![](images/10-weblogic12c.PNG)
+    ![](images/10-weblogic12c.png)
 
 3. Access the Identity Self Service console
 
@@ -156,20 +156,19 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
     Password: <copy>Welcom@123</copy>
     ```
 
-    ![](images/11-oim12c.PNG)
+    ![](images/11-oim12c.png)
 
     - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 12c
 
-    ![](images/12-oim12c.PNG)
+    ![](images/12-oim12c.png)
 
     - Click on *Manage* on the top right corner. Then, click on *Users* and notice that there are no new users created.
 
-    ![](images/13-oim12c.PNG)
+    ![](images/13-oim12c.png)
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi
+* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R/May 2021
-* **Workshop (or Lab) Expiry Date** - Never
+* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, May 2021

@@ -4,7 +4,7 @@
 
 Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. This Workshop provides hands on experience of performing one-hop upgrade of Oracle Identity Manager(OIM) 11g Release 2 (11.1.2.3.0) using the Oracle published "how to upgrade guides". One-hop upgrade enables you to perform the upgrade on the same middle-tier machine or migrate to a new machine as part of the upgrade process. This workshop drives you through step by step upgrade process to be performed on a vanilla image of OIM 11g Release 2 (11.1.2.3.0) single node environment and on completion of step by step upgrade process the environment gets upgraded to OIG 12c (12.2.1.4.0).
 
-Estimated Lab Time: 2 hours
+*Estimated Lab Time*: 2 hours
 
 ### About Product/Technology
 Oracle Identity Management enables organizations to effectively manage the end-to-end lifecycle of user identities across all enterprise resources, both within and beyond the firewall and into the cloud. The Oracle Identity Management platform delivers scalable solutions for identity governance, access management and directory services. This modern platform helps organizations strengthen security, simplify compliance and capture business opportunities around mobile and social access.
@@ -17,7 +17,7 @@ Oracle Identity Governance is a powerful and flexible enterprise identity manage
 
 ### Objectives
 
-In this lab, you will:
+In this Workshop, you will:
 * Understand the prerequisites for directly upgrading from Oracle Identity Manager from 11g Release 2 (11.1.2.3.0) to Oracle Identity Manager 12c (12.2.1.4.0)
 * Learn step by step process for upgrading Oracle Identity Manager from 11g Release 2 to Oracle Identity Manager 12c directly, using the one-hop upgrade process
 * Understand post upgrade activities after upgrading from Oracle Identity Manager from 11g Release 2 to Oracle Identity Manager 12c
@@ -42,7 +42,6 @@ You may now [proceed to the next lab](#next).
 * [One-Hop Upgrade](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/iamup/one-hop-upgrade-oracle-identity-manager.html)
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi
+* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R/May 2021
-* **Workshop (or Lab) Expiry Date** - Never
+* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, May 2021

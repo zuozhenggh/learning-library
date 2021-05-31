@@ -4,7 +4,7 @@
 
 This lab walks you through the pre-upgrade tasks to be performed before upgrading to Oracle Identity Manager 12c such as backing up, cloning your current environment, analyzing Pre-Upgrade Report and verifying that your system meets certified requirements.
 
-Estimated Lab Time: 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 
@@ -17,7 +17,8 @@ In this lab, you will:
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * SSH Private Key to access the host via SSH
-* You have completed Lab 1: Initialize the workshop Environment
+* You have completed:
+      - Lab 1: Initialize the workshop Environment
 
 
 ## **STEP 1:** Create a non-SYSDBA user
@@ -60,7 +61,7 @@ The following steps are performed to ensure that the encrypted data from 11g (11
       <copy>exit ()</copy>      
         ```
 
-        ![](images/1-wlst.PNG)
+        ![](images/1-wlst.png)
 
 
     - Navigate to the */u01/OPSS_EncryptKey* directory and Verify that the exported encryption key files are created
@@ -90,50 +91,64 @@ The following steps are performed to ensure that the encrypted data from 11g (11
 
   - Welcome - Click *Next*
 
-  ![](images/2-ua.PNG)
+  ![](images/2-ua.png)
 
   - Readiness check type - *Domain based*. Browse to the 11g OIM home: */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
 
-  ![](images/3-ua.PNG)
+  ![](images/3-ua.png)
 
   - Component List - Click *Next*
 
-  ![](images/4-ua.PNG)
+  ![](images/4-ua.png)
 
   - OPSS Schema
   ```
   DBA Username: <copy>FMW</copy>
+  ```
+  ```
   DBA Password: <copy>Welcom#123</copy>
   ```
 
-  ![](images/5-ua.PNG)
+  ![](images/5-ua.png)
 
   - MDS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/6-ua.PNG)
+  ![](images/6-ua.png)
 
   - UMS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/7-ua.PNG)
+  ![](images/7-ua.png)
 
   - SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/8-ua.PNG)
+  ![](images/8-ua.png)
 
   - OIM Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/9-ua.PNG)
+  ![](images/9-ua.png)
 
   - Readiness Summary - Click *Next*
 
   - Click on *Finish* and then *Close* the UA once the Readiness check is complete
 
-  ![](images/10-ua.PNG)
+  ![](images/10-ua.png)
 
 ## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 
 The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
 Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the */u01/Upgrade_Utils/OIM_preupgrade_reports* directory.
+
+```
+<copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>
+```
+
+Open the *index.html* page and navigate through the different reports to analyze them.
+
+```
+<copy>firefox index.html</copy>
+```
+
+![](images/Reports.png)
 
 ## **STEP 5:** Stop 11g servers and processes
 
@@ -151,7 +166,6 @@ This completes all the pre-upgrade tasks to be performed.
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi
+* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R/May 2021
-* **Workshop (or Lab) Expiry Date** - Never
+* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, May 2021

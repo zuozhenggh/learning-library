@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to restart all the servers and complete the one-hop upgrade process.
 
-Estimated Lab Time: 20 minutes
+*Estimated Lab Time*: 20 minutes
 
 ### Objectives
 
@@ -13,9 +13,12 @@ In this lab, you will:
 * Verify the upgrade process
 
 ### Prerequisites
-* You have completed Lab 1: Initialize the workshop Environment
-* You have completed Lab 2: Pre-Upgrade Requirements
-* You have completed Lab 3: One-Hop Upgrade
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
+      - Lab 1: Initialize the workshop Environment
+      - Lab 2: Pre-Upgrade Requirements
+      - Lab 3: One-Hop Upgrade
 
 ## **STEP 1**: Start the 12c Admin Server and Managed Servers
 
@@ -113,17 +116,16 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
     - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 12c
 
-    ![](images/1-identity.PNG)
+    ![](images/1-identity.png)
 
     - Click on *Manage* on the top right corner. Then, click on *Users* and notice that the three users *TUSER1, TUSER2, TUSER3* are migrated from 11g to 12c.
 
-    ![](images/2-users.PNG)
+    ![](images/2-users.png)
 
 One-hop upgrade to Oracle Identity Manager 12c is complete.
 
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi
+* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R/May 2021
-* **Workshop (or Lab) Expiry Date** - Never
+* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, May 2021
