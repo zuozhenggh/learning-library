@@ -40,7 +40,7 @@ This lab assumes you have:
 
 1. The application has login and new user signup features, but it allows access to a non-logged in application user to some extent. It allows users to search for a product in the catalogue that meets their needs and make a purchase based on the product's reviews, sentiment score, and rating.
 
-  When a user accesses the application through the URL (http://<Public IP>:3000/), they are directed to the application's home page. To log in, go to the top right of the nav bar and press the login button. 
+  When a user accesses the application through the URL (**`http://<Public IP>:3000/`**), they are directed to the application's home page. To log in, go to the top right of the nav bar and press the login button. 
 
   ![](./images/app1.png " ")
 
