@@ -125,7 +125,7 @@ In this lab, you will:
   We can verify that the upgrade was successful by checking that the schema version has been properly updated to 12c.
 
   ![](images/8-sql.png)
-  
+
 ## **STEP 4:** Cleaning the temporary folder
 
 1. As the */tmp* directory is set against the JVM *java.io.tmpdir* property, any unwanted files in the */tmp* folder can interfere with the OIG upgrade process and may result is MDS corruption. Hence, clean the */tmp* folder before starting the upgrade process.
