@@ -15,7 +15,7 @@
         {
             "title": "NetFoundry Prerequisites",
             "description": "Prerequsites for using NetFoundry Zero Trust Networking",
-            "filename": "../../netfoundry-prerequisites/nefoundry-prerequisites.md"
+            "filename": "../../netfoundry-prerequisites/netfoundry-prerequisites.md"
         },
         {
             "title": "Lab 1: Setup Zero Trust network connectivity from client to an application server",
