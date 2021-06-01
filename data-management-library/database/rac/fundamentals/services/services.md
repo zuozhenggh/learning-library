@@ -5,6 +5,10 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video for a quick walk through of Oracle Database services lab.
+
+[](youtube:rPUFNMGCzDc)
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -28,7 +32,7 @@ Oracle recommends that all users who share a service have the same service level
 
 For more information on Oracle Database Services visit http://www.oracle.com/goto/ac
 
- [](https://youtu.be/dIMgaujSydQ)
+[](youtube:dIMgaujSydQ)
 
 ## **STEP 1:** Login and Identify Database and Instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names. 
