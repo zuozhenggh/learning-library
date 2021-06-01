@@ -5,17 +5,22 @@
         {
             "title": "Introduction",
             "description": "Introducing NetFoundry Zero Trust Networking",
-            "filename": "./.../intro/intro.md"
+            "filename": "./.../introduction/introduction.md"
         },
         {
             "title": "Getting Started",
-            "description": "Getting Started with NetFoundry Zero Trust Networking",
-            "filename": "../../getting-started/getting-started.md"
+            "description": "Prerequisites for Free Trial and Paid tenancies, and Always Free accounts",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "NetFoundry Prerequisites",
+            "description": "Prerequsites for using NetFoundry Zero Trust Networking",
+            "filename": "../../netfoundry-prerequisites/nefoundry-prerequisites.md"
         },
         {
             "title": "Lab 1: Setup Zero Trust network connectivity from client to an application server",
             "description": "Learn how to set up a Zero Trust Network in OCI Cloud",
-            "filename": "../../lab1/lab1.md"
+            "filename": "../../setup-zero-trust-network-connectivity/setup-zero-trust-network-connectivity.md"
         },
         {
             "title": "Need Help?",

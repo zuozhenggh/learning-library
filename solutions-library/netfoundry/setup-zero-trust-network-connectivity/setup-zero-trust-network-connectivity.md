@@ -54,7 +54,7 @@ You should now have a running web server in your specified VCN.
 
 
 
-## **Step 1:** Create Network
+## **STEP 1:** Create Network
 
 Once you have created your Organization after signing up for the 7 day trial or other, you are ready to create your first network. 
 
@@ -71,7 +71,7 @@ While the system is building the Controller, you will see a Grey spinning globe 
 
 
 
-## **Step 2:** Create Hosted Edge Router
+## **STEP 2:** Create Hosted Edge Router
 
 The next step is to create the Fabric Router which essentially builds the transport mechanism for the "middle mile". Choose a location that is Geographically in region to your resources in the cloud. Choose Routers and select the + in the upper right corner of the page.
 
@@ -88,7 +88,7 @@ Select a name for your Router --- Consider using the the word "Fabric" in the na
 
 
 
-## **Step 3:** Create Edge Router Policy
+## **STEP 3:** Create Edge Router Policy
 
 For the next step, we will create the Edge Router policy which allows Endpoints transit access to the customer edge network in the Cloud. From the Edge Routers screen, select Manage Edge Router Policies and hit the + in the upper right corner to add a policy.
  
@@ -103,7 +103,7 @@ Next click the mouse into the attributes field and select the @fabricrouter you 
 
 
 
-## **Step 4:** Create Customer Hosted Edge Router
+## **STEP 4:** Create Customer Hosted Edge Router
 
 The next element we will deploy is the Edge Router in the customer VCN containing the WebApp we created for this exercise. From the NetFoundry console, in the Manage Edge Routers tab(section), let's create a new Edge Router. Provide a name representing something like "customer-location-edge",
 
@@ -140,7 +140,7 @@ Once registered, you should now have 2 Edge Routers up and running in your Netwo
 
 
 
-## **Step 5:** Create Endpoint for user access - Windows
+## **STEP 5:** Create Endpoint for user access - Windows
 
 The next step in the process is to register your Laptop/Host as an endpoint in the Fabric. From the NetFoundry console. Select Endpoints from either location in the Network Dashboard.
 
@@ -172,7 +172,7 @@ Returning back to the NetFoundry console and the Endpoints page. You will see yo
 
 
 
-## **Step 6:** Create Services and AppWAN
+## **STEP 6:** Create Services and AppWAN
 
 The final step is to create a service for the web app in our VCN and to build an AppWAN to allow our endpoint (mylaptop) access to this service (port 80) on the private VCN IP address. The customer edge router will be used to terminate the service as show in this example. From the NetFoundry dashboard, select services from either location and hit the + sign in the upper right corner.
 
