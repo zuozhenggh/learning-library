@@ -1,4 +1,4 @@
-# RAC SQL and PL2./SQL - Sequences
+# SQL and PL/SQL - Sequences
 
 ## Introduction
 
