@@ -365,6 +365,7 @@ This exercise will demonstrate connection load balancing and why it is important
       1         unisrv                   10
     ````
 11. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
+
     ````
     <copy>
     srvctl stop instance -d aTFdbVm_replacename -i aTFdbVm2 -f
@@ -375,10 +376,8 @@ This exercise will demonstrate connection load balancing and why it is important
 12. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following:
 
     ````
-    <copy>
-    sudo su - oracle
-    </copy>
-    ```
+    <copy>sudo su - oracle</copy>
+    ````
 
 
     ````
