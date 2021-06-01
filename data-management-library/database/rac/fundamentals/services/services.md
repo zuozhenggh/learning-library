@@ -257,7 +257,8 @@ This exercise will demonstrate connection load balancing and why it is important
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
     ````
-where you will see similar to:
+    
+    where you will see similar to:
 
     ![](./images/lab6-step3-num2.png " ")
 
@@ -271,6 +272,7 @@ where you will see similar to:
     /u01/app/oracle/product/19.0.0.0/dbhome_1
     vi $ORACLE_HOME/network/admin/tnsnames.ora
     ````
+
     ![](./images/oraenv.png " ")
 
     ![](./images/tnsnames-1.png " ")
@@ -323,7 +325,7 @@ where you will see similar to:
     ````
     ![](./images/ping.png " ")
 
- 8. Use the CLBTEST alias to connect
+8. Use the CLBTEST alias to connect
 
      ````
     <copy>
@@ -331,7 +333,7 @@ where you will see similar to:
     </copy>
     ````
    
-5. Create 10 connections using the alias CLBTEST and look at where the connections were established
+9. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
     ````
     SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
@@ -347,7 +349,7 @@ where you will see similar to:
 
     The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances. You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
 
-6. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
+10. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
 
     ````  
     INST_ID     SERVICE_NAME          COUNT(*)
@@ -362,7 +364,7 @@ where you will see similar to:
     ---------- -------------------- ----------
       1         unisrv                   10
     ````
-7. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
+11. What if an instance is not available?  Shutdown one of the instances with srvctl - specify \"-f\" as you want to forcibly close services if any are running.
     ````
     <copy>
     srvctl stop instance -d aTFdbVm_replacename -i aTFdbVm2 -f
@@ -370,10 +372,13 @@ where you will see similar to:
     </copy>
     ````
 
-8. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the foll
-   
-   ````
-   sudo su - oracle
+12. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the foll
+
+    ````
+    <copy>
+    sudo su - oracle
+    </copy>
+    ```
 
 
     ````
@@ -402,7 +407,7 @@ where you will see similar to:
     Version 19.7.0.0.0
     SQL>
     ````
-9. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
+13. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
 
     ````
     Alias (or URL) = (DESCRIPTION =
@@ -415,9 +420,10 @@ where you will see similar to:
     ````    
     This is showing how a RAC and Data Guard environment would be specified. The assumption is that both the PRIMARY and SECONDARY sites are clustered environments, hence specifying a SCAN ADDRESS for each one.
 
-    Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY_COUNT, RETRY_DELAY, CONNECT_TIMEOUT and TRANSPORT_CONNECT_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
+    Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY\_COUNT, RETRY\_DELAY, CONNECT\_TIMEOUT and TRANSPORT\_CONNECT\_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
 
-10.  Update your tnsnames.ora file to specify a configuration similar to that below. This connect string will be used in later labs
+14.  Update your tnsnames.ora file to specify a configuration similar to that below. This connect string will be used in later labs
+    
     ````
     <copy>
     vi /u01/app/oracle/product/19.0.0.0/dbhome_1/network/admin/tnsnames.ora
@@ -431,12 +437,12 @@ where you will see similar to:
      (ADDRESS_LIST =(LOAD_BALANCE=on)
      (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
      (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
-   </copy>
+    </copy>
     ````
 
-     ![](./images/tnsnames-3.png " ")
+    ![](./images/tnsnames-3.png " ")
    
-11. Verify you can connect using this alias.
+15. Verify you can connect using this alias.
 
 You may now *proceed to the next lab*.  
 
