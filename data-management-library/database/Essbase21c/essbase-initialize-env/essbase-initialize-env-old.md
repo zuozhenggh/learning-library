@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab provides detailed instructions of connecting to Essbase 21c using Web UI. This machine comes with Essbase installed and configured with Oracle database and also starts its services on its own start-up.
+This lab provides detailed instructions of connecting to Essbase 21c using Web UI. This machine comes with Essbase installed and configured with Oracle database and it also starts services on its own start-up.
 
 *Estimated Lab Time:* 15 Minutes.
 
@@ -40,7 +40,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     ```
 
     ```
-    Password	: <copy>Oracle_4U</copy>
+    Password	: <copy>EssbaseTechBang123</copy>
     ````
 
 ## **STEP 2:** Download and Stage Workshop Artifacts
@@ -55,50 +55,50 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
 ### Start Script
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+ - Authentication OS User - “*opc*”
+ - Authentication method - *SSH RSA Key*
+ - OS User – “*oracle*”.
 
 ​Your workshop instance is configured to start all processes automatically needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in **Step1**
 
-1. Launch your browser to the following URL to access noVnc web UI.
-   
-    ```
-    <copy>http://[Instance-public-ip]:6080/index.html?resize=remote</copy>
-    ```
-   ​![](./images/ess-environment2.png " ")
+1. First login as “*opc*” using your SSH Private Key
+​
+2. Then login to *oracle*.
 
-2. Click Connect and enter the password
 
     ```
-    Password	:<copy>LiveLabs.Rocks_99</copy>
+    <copy>sudo su - oracle</copy>
     ```
 
-3.  Open the terminal on the desktop and go to folder /u01/scripts to find the manual startup script
+
+    ![](./images/ess-environment2.png " ")
+3.  Go to this folder /u01/scripts to find the manual startup script
 
     ```
     <copy>cd /u01/scripts/</copy>
     ```
-
-    Use clipboard on the left menu for copy paste. Paste on the clipboard and use shift+Insert key on the terminal.
-    
     ![](./images/ess-environment3.png " ")
-
 4.  Start the env_startup_script to start all the services of Database and Essbase.
 
     ```
     <copy>./env_start_script.sh</copy>
     ```
-
     ![](./images/ess-environment4.png " ")
-
 5.  Your services should be started and wait for the confirmation on start of servers.
 
     ![](./images/ess-environment5.png " ")
+
+
+
+
 
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat 
+- **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
 - **Last Updated By/Date** - Kowshik Nittala, Associate Solution Engineer, Analytics, NA Technology, May 2021
 
 ## Need Help?
