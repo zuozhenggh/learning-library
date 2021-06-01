@@ -13,6 +13,11 @@
             "filename": "../../introduction/introduction.md"
         },
         {
+            "title": "Lab 0: Generate SSH Key",
+            "description": "Generate SSH Key",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+        },
+        {
             "title": "Lab 1: Initialize the workshop environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../initialize-environment/initialize-environment.md"
