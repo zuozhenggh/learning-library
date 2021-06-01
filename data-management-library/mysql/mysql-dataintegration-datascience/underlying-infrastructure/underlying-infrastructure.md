@@ -10,11 +10,7 @@ The Oracle Cloud Infrastructure Object Storage service is an internet-scale, hig
 
 [](youtube:RHIfvO9aTQ0)
 
-### Prerequisites
-
-- Oracle Free Trial Account.
-
-Estimated Lab Time: 15 minutes.
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -23,6 +19,11 @@ In this lab, you will:
 - Create Virtual Cloud Network.
 - Create Bastion Host.
 - Create Object Storage and upload files.
+
+### Prerequisites
+
+- Oracle Free Trial Account
+
 
 ## **STEP 1:** Create Virtual Cloud Network (VCN)
 
@@ -118,9 +119,7 @@ In this lab, you will:
 
    ![Instance Values](images/compute_create_values.png)
 
-5. On the section **Add SSH Keys**.
-
-   Make sure **Generate SSH Keypair** is checked.
+5. On the section **Add SSH Keys**, make sure **Generate SSH Keypair** is checked.
 
 6. Click **Save Private Key** and **Save Public Key**.
 
@@ -236,7 +235,7 @@ In this lab, you will:
       <copy>mysqlsh --version</copy>
       ```
 
-## **STEP 3:** Create Object Storage and upload files
+## **STEP 3:** Create Object Storage and Upload Files
 
 1. Go to **Menu** > **Storage** > **Buckets**.
 
@@ -292,4 +291,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
