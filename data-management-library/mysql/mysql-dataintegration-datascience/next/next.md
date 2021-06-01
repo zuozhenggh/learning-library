@@ -6,8 +6,8 @@
 
 ## Troubleshooting
 
-
-Lab 2: Create MySQL Database Service - Enable HeatWave
+### Lab Create MySQL Database Service
+- Enable HeatWave
 
 Error: `attribute = {heatWaveCluster.shapeFamily}, value = {MySQL.HeatWave.VM.Standard.E3} - for this cluster shape the MySQL instance shape must be the same`
 
@@ -21,7 +21,7 @@ Error: `attribute = {heatWaveCluster.shapeFamily}, value = {MySQL.HeatWave.VM.St
 
 ---
 
-Lab 3: Create Data Integration Instance
+### Lab Create Data Integration Instance
 
 `java.io.IOException: Unable to determine if path is a directory`
 
@@ -33,7 +33,8 @@ Review Policy:
 
 ---
 
-Lab 3: Create Data Integration Instance
+### Lab Create Data Integration Instance
+
 
 ![Data Integration VNC policy missing](images/di_error_vcn.png.png)
 
@@ -54,7 +55,3 @@ You forgot to create the policy for Data Integration to use Virtual Cloud Networ
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-
-## See an issue
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
