@@ -35,15 +35,15 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 [](youtube:dIMgaujSydQ)
 
 ## **STEP 1:** Login and Identify Database and Instance names
-You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names. 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
-2.  Once you are logged in, open up a 2nd webbrowser tab.
-3.  Start Cloudshell in each.  Maximize both cloudshell instances.
-   
+You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names.
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
+2.  Once you are logged in, open up a 2nd web browser tab.
+3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -51,7 +51,7 @@ You should have already identified your database name and instance name.  Each p
     ![](../clusterware/images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
-   
+
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ps -ef | grep pmon
@@ -69,8 +69,8 @@ You should have already identified your database name and instance name.  Each p
     ![](./../clusterware/images/crsctl-1.png " ")
 
     ![](./../clusterware/images/crsctl-2.png " ")
-    
-7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab. 
+
+7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
 
     ![](./images/db-crsctl.png " ")
 8. Confirm that you have the *testy* service running and note the node it is running on.
@@ -181,12 +181,12 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````  
 
 6. Connect via sqlplus and replace the scan address name and the password with the password you chose for your cluster.
-   
+
     ````
     <copy>
     sqlplus sys/W3lc0m3#W3lc0m3#@//<Node2HostName>/svctest.pub.racdblab.oraclevcn.com as sysdba
     </copy>
-    ```` 
+    ````
 
     ![](./images/lab6-step2-num5-2.png " ")
 
@@ -197,7 +197,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     <copy>
     sqlplus sys/W3lc0m3#W3lc0m3#@//<PutScanNameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     </copy>
-    ```` 
+    ````
     and run the following SQL statement
 
     ````
@@ -208,8 +208,8 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     exit
     </copy>
     ````
-    This statement will show you the instance this service is running and the number of open connections on this service. 
-    
+    This statement will show you the instance this service is running and the number of open connections on this service.
+
     ![](./images/lab6-step2-num6.png " ")
 
 
@@ -257,15 +257,15 @@ This exercise will demonstrate connection load balancing and why it is important
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
     ````
-    
+
     where you will see similar to:
 
     ![](./images/lab6-step3-num2.png " ")
 
     You should notice that an entry for this service is configured for each instance.
 
-3. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from). 
-   
+3. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from).
+
     ````
     . oraenv
     <<Press enter>>
@@ -329,10 +329,10 @@ This exercise will demonstrate connection load balancing and why it is important
 
      ````
     <copy>
-    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST 
+    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
     </copy>
     ````
-   
+
 9. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
     ````
@@ -372,7 +372,7 @@ This exercise will demonstrate connection load balancing and why it is important
     </copy>
     ````
 
-12. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the foll
+12. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following:
 
     ````
     <copy>
@@ -423,7 +423,7 @@ This exercise will demonstrate connection load balancing and why it is important
     Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY\_COUNT, RETRY\_DELAY, CONNECT\_TIMEOUT and TRANSPORT\_CONNECT\_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
 
 14.  Update your tnsnames.ora file to specify a configuration similar to that below. This connect string will be used in later labs
-    
+
     ````
     <copy>
     vi /u01/app/oracle/product/19.0.0.0/dbhome_1/network/admin/tnsnames.ora
@@ -441,7 +441,7 @@ This exercise will demonstrate connection load balancing and why it is important
     ````
 
     ![](./images/tnsnames-3.png " ")
-   
+
 15. Verify you can connect using this alias.
 
 You may now *proceed to the next lab*.  
