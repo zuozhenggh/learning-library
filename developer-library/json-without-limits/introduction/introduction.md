@@ -2,10 +2,12 @@
 
 ## About this Workshop
 
-This workshop provides insights regarding the true meaning of a **Converged Database**. We'll start from the JSON data type perspective but quickly introduce the industry standard to combine JSON data with Relational data.
+This workshop provides insights regarding the true meaning of a **Converged Database**. We'll start from the JSON data 
+type perspective but quickly introduce the industry standard to combine JSON data with Relational data.
+
 The learning curve is based on true use cases introduced as if you were a developer for a fictive e-commerce startup.
 
-Estimated Workshop Time: 60 minutes
+**Estimated Workshop Time: 60 minutes**
 
 ![JSON without Limits](./images/json-without-limits.png)
 
