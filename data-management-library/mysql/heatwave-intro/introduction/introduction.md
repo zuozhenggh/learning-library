@@ -18,12 +18,6 @@ you to:
 * Instantly provision MySQL instances and connect to a
 production ready, pre-configured MySQL database.
 
-* Automate database specific tasks such as configuration,
-security patching, backup, HA, and monitoring.
-
-* Choose from multiple compute shapes, depending on
-your application and capacity requirements.
-
 * Provision fast, reliable, and secure cloud storage for all
 enterprise workloads.
 
@@ -53,9 +47,9 @@ In this lab, you will be guided through the following steps:
 * Create a MySQL DB System for HeatWave 
 * Configure a client Linux Virtual Machine 
 * Connect to and use MySQL 
-* Create tpch Database and Import Data
+* Create airpot Database and Import Data
 * Add a HeatWave Cluster to MDS
-* Loading TPCH Data into HeatWave
+* Loading airport Data into HeatWave
 * Runn Queries in HeatWave
 * Connect to HeatWave using Workbench
 * Delete MySQL DB With HeatWave System
