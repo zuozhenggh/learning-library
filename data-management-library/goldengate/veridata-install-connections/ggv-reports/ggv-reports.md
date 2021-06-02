@@ -41,10 +41,13 @@ This lab assumes you have:
     * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
     * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
 4. Select the Report from **Existing Reports**.
-      ![](./images/2-reports-selection-view.png " ")
-5. Click **View** to display the **Report View**.
-      ![](./images/3-reports-view-download-option.png " ")
-6. Click **Download this Report** in case you want to download and save the report for a future reference.  
+      
+5. Click the **Report Name** link to display the **Report**.
+    ![](./images/2-reports-selection-view.png " ")
+
+6. Click **Download This Report** in case you want to download and save the report for a future reference.  
+
+  ![](./images/3-reports-view-download-option.png " ")
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
