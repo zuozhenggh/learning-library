@@ -86,6 +86,9 @@ This lab assumes you have:
 
     echo "Proceeding with configuration for OS user \$appuser"
 
+    echo "Updating packages ..."
+    yum -y update
+
     echo "Installing X-Server required packages ..."
     yum -y groupinstall "Server with GUI"
 
