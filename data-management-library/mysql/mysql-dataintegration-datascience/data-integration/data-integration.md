@@ -10,10 +10,6 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 [](youtube:0BN8Ws2qJGQ)
 
-### Prerequisites
-
-- Steps from Create MySQL Database Service section have to be completed to go ahead on this lab.
-
 Estimated Lab Time: 30 minutes.
 
 ### Objectives
@@ -22,6 +18,12 @@ In this lab, you will:
 
 - Create Your OCI Data Integration Instance.
 - Create the Data Assets.
+
+### Prerequisites
+
+- Oracle Free Trial Account
+- Lab 1: Underlying Infrastructure 
+- Lab 2: Create MySQL Database Service
 
 ## **STEP 1:** Create Your OCI Data Integration Instance
 
@@ -258,7 +260,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![](images/dataasset_mysql_success_go_back_home.png)
 
-## **STEP 3:** It works
+## **STEP 3:** It Works
 
 1. Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
 
@@ -272,4 +274,4 @@ Congratulations, you are ready for the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
