@@ -1,5 +1,5 @@
 
-    ![](images/NFWhiteBG.jpg)
+![](images/NFWhiteBG.jpg)
 
 # Introduction 
 
