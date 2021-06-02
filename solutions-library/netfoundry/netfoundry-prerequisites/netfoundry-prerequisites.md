@@ -1,15 +1,16 @@
 
 # NetFoundry Prerequisites
 
-The following guide is intended to provide you guidance for your Oracle NetFoundry LiveLab environment. It provides simple network configuration steps to help partners & end-users learn about the building blocks of configuring a NetFoundry network.  It will help outline each element within the NetFoundry network and provide instructions on how to configure a simple design connecting a Windows client to a web application in a Oracle Cloud on a private IPV4 network. (Any application will do but web is easy to test)
+This guide is intended to provide you guidance for your Oracle NetFoundry LiveLab environment. 
 
-  ![](images/rfc1918.png " ")
+## What You Need
+
+The following provides simple network configuration steps to help partners & end-users learn about the building blocks of configuring a NetFoundry network.  It will help outline each element within the NetFoundry network and provide instructions on how to configure a simple design connecting a Windows client to a web application in a Oracle Cloud on a private IPV4 network. (Any application will do but web is easy to test)
+
+    ![](images/rfc1918.png " ")
 
 
-
-  
-
-## Assumptions
+### Prerequisites
 
 To get started you'll need to have the following:
 
@@ -23,39 +24,48 @@ To get started you'll need to have the following:
  
     [Oracle Cloud VCN Documentation for Live Lab](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingnetwork.htm)
    
-3. An internet connection with outbound connections to the below ports.
+3. An internet connection with outbound connections to TCP port 80 and 443.
 
     ![](images/diag.5.png)
 
 
- 
 
-## Software Components
+## Cloud application prep - Create Application in Cloud (Oracle Cloud example)
 
-Building the NetFoundry SDN framework consists of 7 major elements:
+Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. If you already have an application in your network, you can skip to the next section.
 
-* **Organization** - Platform customer/partner URL for organizational platform access - https://company.nfconsole.io.
+1. From within your Cloud console, select 
+    ![](images/diag1.5.png)
+   
+    Select a name for your instance, select desired compartment and Availability domain. Oracle Linux is ok to use or choose an image of your liking. This example will use Oracle Linux 7.9 with 1 OCPU and 2 GB memory and apache web server.
+    
+    ![](images/diag2.png)
 
-* **Network** - Dedicated Cloud based controller. Overlay only, not concerned with BGP, IP addressing and route peering.
+2. Next, select the VCN, subnet and assign a public IP address.  Select your public key for deployment.
 
-* **Edge Router Policy** - Transit policy providing access across the fabric. e.g. Which Hosted Edge routers to be used and which endpoints can transit these Hosted Edge Routers.
+3. Next click "Show Advanced Options" and select Paste cloud-init script and paste the following into the field:
 
-* **Endpoints**
+    ````
+        <copy>
+        sudo yum install httpd
+        sudo systemctl enable httpd
+        sudo systemctl start httpd
+        </copy>
+    ````
 
-    * **Hosted Edge Routers** - NetFoundry managed Global Fabric for middle mile transit. Deployed from the NetFoundry console. Automatically registered.
+    **NOTE: you can configure the firewall to allow 80 or disable the built in instance firewall for testing.**
 
-    * **Customer Hosted Edge Routers** - implemented for application termination. Deployed from Cloud Marketplace. Registered by customer manually or through instance deployment script.
+    ![](images/diag3.png)
 
-    * Endpoints for Windows, MAC, Linux or Mobile for application access or termination or both.
+You should now have a running web server in your specified VCN.
 
-* **Attributes** - Method to group Endpoints, Edge Routers and Services. e.g. "@myendpoint" implies only that endpoint. "#it-admin" may imply a grouping of multiple IT admin endpoints. Same for services. e.g. @webserver1 & @webserver2 could be grouped into #webservers to ease administration for AppWAN membership.
 
-* **Services** - IP/Hostname for applications residing in the VCN/VNET/VPC/VLAN.
+## Acknowledgements
+* **Author** - Person or persons, title(s)
+* **Contributors** -  person, Title
+* **Last Updated By/Date** - person, title,  June 2021
 
-* **AppWAN** - Policies for providing Services to Endpoints.  
 
-Diagram below for logical reference:
 
-![](images/diag1.png)
 
 
