@@ -13,7 +13,7 @@ In this session, we will discuss the data requirements and formats, and provide 
 In this lab, you will:
 - Understand the data requirements and data formats for training and detecting with the model
 - Be able to download prepared sample datasets
-- Upload the downloaded dataset into OCI object storage
+- Upload the downloaded dataset into OCI (Oracle Cloud Infrastructure) object storage
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
@@ -83,16 +83,43 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
 * [processed training csv data](../files/demo-training-data.csv)
-    - 11 signals with timestamp column, with 7299 observations
-* [processed testing json data](../files/demo-testing-data.json)
-    - same 11 signals with timestamp column, 100 observations
+    - 10 signals with timestamp column, with 10,000 observations
+* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+    - same 10 signals with timestamp column, 100 observations
 
 
 ## **STEP 3:** Upload Data to Object Storage
 
 You need to upload those sample training data into Oracle object storage, to be prepared for model training in next steps.
 
-Refer to this [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
+**STEP 3a:** Create an Object Storage Bucket
+
+Step 1 From the OCI Services menu, click Object Storage.
+![](../images/cloudstoragebucket.png " ")
+
+STEP 2 Click Create Bucket.
+![](../images/createbucketbutton.png " ")
+
+STEP 3 Fill out the dialog box:
+
+Bucket Name: Provide a name <br/>
+Storage Tier: STANDARD
+
+STEP 4 Click Create Bucket
+![](../images/pressbucketbutton.png " ")
+
+**STEP 3b:** Upload Object
+Switch to OCI window and click the Bucket Name.
+![](../images/selectbucket.png " ")
+
+Bucket detail window should be visible. Click Upload
+![](../images/bucketdetail.png " ")
+
+Click on Upload and then browse to file which you desire to upload.
+![](../images/upload-sample-file.png " ")
+
+
+More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 
 Congratulations on completing this lab!
@@ -104,4 +131,4 @@ Congratulations on completing this lab!
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Haad Khan - Principal Data Scientist, May 2021
