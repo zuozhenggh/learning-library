@@ -26,9 +26,9 @@ In this lab, you will:
 
 1. Spin up a database using Oracle Cloud Infrastructure to serve as the "Primary" database
 
-2. Click on the "Bare Metal, VM, and Exadata" tab under "Oracle Database" on the Cloud Console sidebar. 
+2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
 
-  ![](./screenshots/dg-screenshots/1-1.png)
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 3. Now let's create a DB System by clicking "Create DB System"
 
@@ -232,9 +232,6 @@ You are finished with all of the labs!
 * **Authors** - Humza Meraj, Cloud Engineer; Eben Dunlap, Cloud Engineer; Noah Horner, Cloud Engineer
 * **Last Updated By** - Mark Vong, October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
 

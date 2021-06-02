@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to a PeopleSoft Environment from the previously created environment template
+This lab walks you through the steps to provision and deploy an HCM PeopleSoft Environment from the previously created environment topolgy and template.
 
-Estimated Lab Time: 90 minutes
+Estimated Lab Time: 15 minutes + 90 minutes waiting for environment to delpoy
 
 ### Objectives
 
@@ -15,100 +15,97 @@ In this lab, you will:
 
 ### Prerequisites
 - A PeopleSoft Cloud Manager Instance
-- A PeopleSoft Environment Template 
+- A PeopleSoft Environment Topology and Template 
 
 ## **STEP 1**: Creating a New PeopleSoft Environment
 
 1. Navigate to Cloud Manager Dashboard > **Environments**  
-  ![](./images/1dashenv.png "")
+    ![](./images/1dashenv.png "")
 
- Click **Create Environment** button.
+  Click **Create Environment** button.
 
-  ![](./images/e1.png "")
+    ![](./images/e1.png "")
 
 2. Provide a unique Environment Name - **HCMFT**. Select the Template that was created in previous section – **TestWorkshop**. Click **yes** for **Pause after infra creation**.  
 
-  ![](./images/3newenvinfo.png "")
+    ![](./images/3newenvinfo.png "")
 
 3. Expand **Environment Attributes -> Full Tier -> Credentials**
 
-  Give the following values to the fields:
+    Give the following values to the fields:
 
-  No. | Full Tier | Credentials
-  --- | --------- | -----------
-  1 | Database Administrator Password | **Psft1234#**
-  2 | Gateway Administrator Password | Psft1234
-  3 | Web Profile Password for user PTWEBSERVER | Psft1234
-  4 | Database Connect Password | Psft1234
-  5 | Weblogic Administrator Password | Psft1234
-  6 | Database Access Password | Psft1234
-  7 | Database Operator Password | Psft1234
+    No. | Full Tier | Credentials
+    --- | --------- | -----------
+    1 | Database Administrator Password | **Psft1234#**
+    2 | Gateway Administrator Password | Psft1234
+    3 | Web Profile Password for user PTWEBSERVER | Psft1234
+    4 | Database Connect Password | Psft1234
+    5 | Weblogic Administrator Password | Psft1234
+    6 | Database Access Password | Psft1234
+    7 | Database Operator Password | Psft1234
 
-(All are the same except Database Administrator Password)
+  (All are the same except Database Adminitistrator Password)
 
-  ![](./images/4credentials.png "")
+    ![](./images/4credentials.png "")
 
 4. Expand PeopleSoft Client -> **Credentials**
 
   Enter the password: Psft12345678#
-  ![](./images/winenvpass.png "")
+    ![](./images/winenvpass.png "")
 
 5. Scroll up and click **Done** on the top right to begin the environment creation process. 
 
-  ![](./images/e4.png "")
-
-<!-- 6. Accept the license. 
-
-  ![](./images/e5.png "") -->
+    ![](./images/e4.png "")
 
 ## **STEP 2**: Monitoring Infrastructure Creation
 
 1. Refresh the page, and you'll see the status is **Initiating**.
-  ![](./images/6initiating.png "")
+    ![](./images/6initiating.png "")
 
 2. Refresh again after a minute, and you'll see the status change to **Infra Creation In Progress**. Now, Click the arrow, and then **Details**
-  ![](./images/7inprogress.png "")
+    ![](./images/7inprogress.png "")
 
 3. On the left, click **Logs**. Then, adjust the Number of Lines to Display and click **Fetch Logs**. You can take a monitor the infrastructure creation here. 
-  ![](./images/8fetchlogs.png "")
+    ![](./images/8fetchlogs.png "")
 
 It takes about 10 minutes to see the status change to **Infrastructure Creation Complete**:
-  ![](./images/9infracomplete.png "")
+    ![](./images/9infracomplete.png "")
 
 
 
 ## **STEP 3**: Monitoring Deployment of PeopleSoft Environment
 
 1. Now that the infrastructure has been created, we can deploy our environment. Click the arrow and **Deploy**
-  ![](./images/10deploy.png "")
+    ![](./images/10deploy.png "")
 
   Then click **Yes** to confirm the provisioning.
-  ![](./images/11yesdeploy.png "")
+    ![](./images/11yesdeploy.png "")
 
 2. Again, click the arrow for the **Details**
-  ![](./images/12provisioning.png "")
+    ![](./images/12provisioning.png "")
 
-  On the left, click **Provisioning Task Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
-  ![](./images/13tasks.png "")
+  On the left, click **Provisioning Tasksk Status** to see detailed progress status for every step. Click on **Deployment Tasks**. If any step fails, you can change the attribute as per the error and start the process from where it failed.
+    ![](./images/13tasks.png "")
 
 Provisioning takes about 90 minutes. You can monitor throughout this time.
 
 ## **STEP 4**: Signing in to PeopleSoft Environment
 
 1. Once your environment is in the **Running** status, go to **Details** again.
-  ![](./images/14details.png "")
+    ![](./images/14details.png "")
 
 2. You can access the url here, on **Environment Details**
-  ![](./images/15url.png "")
+    ![](./images/15url.png "")
 
 3. Sign in using the following credentials
+
   ```
   Username : PS    
   Password: Psft1234
   ```
   ![](./images/16pslogin.png "")
 4. And voila- your HCM PeopleSoft Environment:
-  ![](./images/17psenv.png "")
+    ![](./images/17psenv.png "")
 
 
 
@@ -146,9 +143,7 @@ You may follow the rest of the labs for even more features:
   This option is only available for DBaaS environments.
 
 
-
-
-You may proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer; Hayley Allmand, Cloud Engineer

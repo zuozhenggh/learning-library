@@ -214,7 +214,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-023.png " ")
 
-    ![](images/see-IP-address.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
 
@@ -286,5 +286,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
+* **Last Updated By/Date** - Kay Malcolm, Database Product Management, October 2020
 * **Workshop (or Lab) Expiry Date** - March 27, 2021
+

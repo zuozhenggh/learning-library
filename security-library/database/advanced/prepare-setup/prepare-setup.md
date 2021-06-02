@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-cp-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bKvP3wTGN1UBfI9uRqhyPcVio_E2fIheptYGf-g4vDG2TcB9L2Nde_GFRXHbkkPB/n/natdsecurity/b/stack/o/dbsec-cp-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-basics-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uInBuHTWiaS9QMSUZCMUhefu74NqaYtAlQEHDYgjMCLj924MUNnGwP6GEk5XZkTv/n/natdsecurity/b/stack/o/dbsec-basics-v3-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -48,13 +48,9 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
-
-* **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+- **Contributors** - Kay Malcolm, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021

@@ -32,9 +32,9 @@ Any software client you use to connect to Oracle Cloud Infrastructure must be co
     - API Key Fingerprint
     - API Key Passphrase
 
-2. On your Oracle Cloud account, open up the hamburger menu in the top-left corner of the Console. Choose **Administration > Tenancy Details**.
-
-  ![](images/tenancy-details.png)
+2. Click the **Navigation Menu** in the upper left, navigate to **Governance & Administration**, and select **Tenancy Details**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/admin-details.png " ")
 
 3. The Tenancy Details page shows information about your cloud account. Copy the Tenancy OCID by clicking on the **Copy** link next to it. Save the value in your note file.
 
@@ -129,7 +129,3 @@ You may proceed to the next lab.
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, September 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

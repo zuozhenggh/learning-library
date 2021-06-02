@@ -26,9 +26,9 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
 1.   To begin, make sure to already be signed in to cloud.oracle.com with your account credentials as done before in the previous labs.
 
-2.   Then, in the Oracle Cloud console, click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**.
-
-   ![](./images/0a.png " ")
+2.   Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+	
+   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 3.   Make sure you are in the correct compartment by selecting your compartment from the dropdown on the lefthand side (hint: use the same compartment as your ADW instance).  Then, cllick on **Create Instance**.
 
@@ -54,9 +54,9 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
 1. If you are not already signed in, sign in to cloud.oracle.com with your account credentials as done in the previous labs.
 
-2. Click on the **Hamburger menu** icon. Then, scroll down to the **Solutions and Platform** section, hover over **Analytics** and then click on **Analytics Cloud**.
-
-    ![](./images/0a.png " ")
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 3. Make sure that you are in the correct compartment by using the dropdown menu on the lefthand side of your screen.  Then, find your OAC instance that you will be using. For example, we are using the OAC instance **OACDEMO** shown below.  In order to access your instance, click on the **menu icon**, denoted by triple dots, on the right side of your instance. Then, click on **Open URL** which redirects you to a new page. Save this web page link for future use.
 
@@ -362,7 +362,4 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.

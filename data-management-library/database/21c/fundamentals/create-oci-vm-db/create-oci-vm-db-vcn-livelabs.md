@@ -19,8 +19,9 @@ Estimated Lab Time: 10 minutes
 
 ## **STEP**: Gather system details and connect to the Database using SSH
 
-1. Go to the Oracle Cloud Console and click on the hamburger menu. Select **Bare Metal, VM, and Exadata**
-  ![](images/select-bm-vm-ex.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 2. Select the compartment you were assigned. Note that you have a fully provisioned Database. Select it. 
   ![](images/select-db.png " ")
@@ -74,7 +75,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Kamryn Vinson, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

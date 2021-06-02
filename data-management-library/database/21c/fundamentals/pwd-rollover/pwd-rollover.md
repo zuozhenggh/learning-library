@@ -25,17 +25,11 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus sys@CDB21 AS SYSDBA</copy>
-
     SQL*Plus: Release 21.0.0.0.0 - Production on Wed Aug 12 09:45:45 2020
-
     Version 21.1.0.0.0
-
     Enter password: <i>WElcome123##</i>
-
     Connected to:
-
     Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
-
     Version 21.1.0.0.0
 
     SQL>
@@ -63,7 +57,6 @@ In this lab, you will:
     ```
 
     SQL> <copy>connect sys@PDB21 AS SYSDBA</copy>
-
     Enter password: <i>WElcome123##</i>
     ```
 
@@ -130,7 +123,3 @@ You may now [proceed to the next lab](#next).
 * **Contributors** -  David Start, Database Product Management
 * **Last Updated By/Date** -  David Start, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/database-19c). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

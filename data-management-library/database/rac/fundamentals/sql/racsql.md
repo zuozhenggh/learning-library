@@ -1,10 +1,10 @@
-# RAC SQL and PL2./SQL - Sequences
+# SQL and PL/SQL - Sequences
 
 ## Introduction
 
 This lab walks you through the use of SEQUENCES in a RAC database.
 
-Estimated Lab Time: 20 Minutes
+Estimated Lab Time: 10 Minutes
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -13,16 +13,19 @@ Estimated Lab Time: 20 Minutes
 - Lab: Install Sample Schema
 - Lab: Services
 
+Watch the video below for an overview of the SQL and PL/SQL Sequences lab
+[](youtube:x8UkHPBkwJo)
+
 ## **STEP 1:**  Build Tom Kyte's RUNSTATS package
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-   
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -34,7 +37,8 @@ Estimated Lab Time: 20 Minutes
     ````
     <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    srvctl config scan
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutScanNameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
     ![](./images/seq-step1-num4.png " ")
@@ -163,25 +167,25 @@ Estimated Lab Time: 20 Minutes
 1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance.
 
 2. You should still be connected as the *sys* user on **node 1**.  If you disconnected, connect to **node 1** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
-   
+
     ````
     <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/unisrv.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
 3. Connect to **node 2** as the *opc* user and switch to the *oracle* user.  *Remember to replace the password as you did in Step 1.*
-   
+
     ````
     <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//racnode2:1521/unisrv.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutHostNameHere>:1521/unisrv.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
     ![](./images/sqlplus-node2.png " ")
 
-4. Create the following SEQUENCES on *both* **node 1** and **node 2**
-   
+4. Create the following SEQUENCES on *one* **node 1**
+
     ````
     <copy>
     create table SEQTEST (seqid varchar2(30), highval number);
@@ -296,10 +300,5 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Contributors** - Kay Malcolm, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, March 2021

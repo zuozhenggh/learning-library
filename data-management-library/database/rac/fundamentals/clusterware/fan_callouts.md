@@ -6,7 +6,10 @@ This lab walks you through the steps to demonstrate Oracle Clusterware’s FAN c
 
 FAN is configured and runs automatically when you install Oracle Grid Infrastructure. All Oracle clients are FAN-aware and versions later than Oracle Database 12c Release 2 will auto-configure the FAN communication path. There is another lesson showing FAN at the application tier.
 
-Estimated Lab Time: 20 Minutes
+Estimated Lab Time: 30 Minutes
+
+Watch the video below for an overview of the Fast Application Notification lab
+[](youtube:J54SS_49AXs)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
@@ -17,17 +20,17 @@ Estimated Lab Time: 20 Minutes
 ### About FAN Callouts
 FAN callouts provide a simple yet powerful integration mechanism available with RAC that can be deployed with minimal programmatic efforts. A FAN callout is a wrapper shell script or pre-compiled executable written in any programming language that is executed each time a FAN event occurs. The purpose of the FAN callout is for simple logging, filing tickets and taking external actions. The purpose of the callout is not for integrated client failover –The FAN client failover is Fast Connection Failover in the next section. With the exception of node and network events (which act on all nodes), a FAN callout executes for the FAN events that are generated locally to each node and thus only for actions affecting resources on that node
 
-For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper. 
+For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper.
 
 ## **STEP 1:**  Write a callout
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
-2.  Once you are logged in, open up a 2nd webbrowser tab.
-3.  Start Cloudshell in each.  Maximize both cloudshell instances.
-   
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
+2.  Once you are logged in, open up a 2nd web browser tab.
+3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](./images/start-cloudshell.png " ")
 
-4.  Connect to node 1 (you identified the IP in an earlier lab) as the opc user. 
+4.  Connect to node 1 (you identified the IP in an earlier lab) as the opc user.
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -35,14 +38,14 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     ![](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
-   
+
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ````
     ![](./images/racnode2-login.png " ")
 
 6. On each node (node 1 and node 2), switch to the *grid* user, change in to the **racg/usrco** directory under the GI home
-   
+
     ````
     <copy>
     sudo su - grid
@@ -52,7 +55,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
 
     ![](./images/fan-step1-num6.png " ")
 
-7. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\). 
+7. Create a file named **callout-log.sh** using an editor \(vim and vi are installed\).
 8. Click the command to edit the file with vi
 
     ````
@@ -60,7 +63,6 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     vi callout-log.sh
     </copy>
     ````
-    ![](./images/fan-step1-num8.png " ")
 
 9.  Type **i** to switch to insert mode.  Copy the following lines and paste it into the vi editor. Click **esc**, **:wq!** to save it.  
 
@@ -72,11 +74,12 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     echo $* " reported = "`date` >> ${FAN_LOGFILE} &
     </copy>
     ````
+    ![](./images/fan-step1-num8.png " ")
 
     This callout will, place an entry in the logfile (FAN_LOGFILE) with the time (date) the event was generated, whenever a FAN event is generated,
 
 10. Repeat this for **node 2**.
-    
+
 11. Ensure that the callout file has the execute bit set.  Repeat this on **both nodes**.
 
     ````
@@ -89,8 +92,8 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
 
     Ensure that the callout directory has write permissions only to the system user who installed Grid Infrastructure (in our case, grid), and that each callout executable or script contained therein has execute permissions only to the same Grid Infrastructure owner. Each shell script or executable has to be able to run when called directly with the FAN payload as arguments.
 
-1. Verify that the file exists on **both nodes**
-   
+12. Verify that the file exists on **both nodes**
+
     ````
     [grid@racnode1 usrco]$ ls -al
     total 12
@@ -98,6 +101,14 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     drwxr-xr-x 6 grid oinstall 4096 Aug 14 04:47 ..
     -rwxr-xr-x 1 grid oinstall  119 Aug 17 10:26 callout-log.sh
 
+    ````
+
+13. Exit out of the grid user
+
+    ````
+    <copy>
+    exit
+    </copy>
     ````
 
 ## **STEP 2**: Generate an event
@@ -115,7 +126,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ![](./images/crsctl-1.png " ")
     ![](./images/crsctl-2.png " ")
-    
+
 
 2. Find your database name in the *Cluster Resources* section.  Replace the *replacename* with the name of your database.  Stop the database instance on node1 using srvctl
 
@@ -133,10 +144,10 @@ Stopping or starting a database instance, or a database service will generate a 
     ````
     ![](./images/fan-step2-num3.png " ")
 
-4. If your callout was written correctly and had the appropriate execute permissions, a file named racnode1_events.log should be visible in the /tmp directory
+4. If your callout was written correctly and had the appropriate execute permissions, a file named hostname_events.log should be visible in the /tmp directory
     ````
     <copy>
-    ls -altr /tmp/racnode*.log
+    ls -altr /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -146,7 +157,7 @@ Stopping or starting a database instance, or a database service will generate a 
 
     ````
     <copy>
-    cat /tmp/racnode*.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 
@@ -180,7 +191,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     # define AWK
     AWK=/bin/awk
     # Define a log file to see results
-    FAN_LOGFILE=/tmp/`hostname -s`_callout2.log
+    FAN_LOGFILE=/tmp/`hostname -s`.log
     # Event type is handled differently
     NOTIFY_EVENTTYPE=$1
     for ARGS in $*; do
@@ -230,21 +241,21 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
 
     ````
     <copy>
-    cat /tmp/racnode1_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````  
 4. Examine the entry created in the log file generated in /tmp on node2:
 
     ````
     <copy>
-    cat /tmp/racnode2_callout2.log
+    cat /tmp/<hostname>*.log
     </copy>
     ````
 5. Cause a DATABASE UP event to be generated:
 
     ````
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl start database -d aTFdbVm_replacename
-    ```` 
+    ````
 6.  Note the different entries generated in each log (on each node).  Exit out of the grid user
 
     ````
@@ -259,18 +270,18 @@ ONS is configured automatically by FAN-aware Oracle clients, which include Unive
 
 In order to determine if a client has received FAN events may require running your client in a debug fashion. This may be difficult to do and even more difficult to interpret.
 
-To confirm that FAN events are being received at a particular tier, you can install a java utility called FANWatcher, that will subscribe to ONS on a cluster and display events that it receives.
+To confirm that FAN events are being received at a particular tier, you can install a Java utility called FANWatcher, that will subscribe to ONS on a cluster and display events that it receives.
 
 Download the FANWatcher utility
-1. Open a terminal on one of the nodes using CloudShell (Putty or CYGWIN may be used)
+1. Open a terminal on one of the nodes using Cloud Shell (Putty or CYGWIN may be used)
 
 2. Become the "oracle" user and create a directory named fanWatcher
 
     ````
     <copy>
     sudo su - oracle
-    mkdir -p /home/oracle/fANWatcher
-    cd /home/oracle/fANWatcher
+    mkdir -p /home/oracle/fanWatcher
+    cd /home/oracle/fanWatcher
     </copy>
     ````
 3. Download the fanWatcher utility and unzip the file
@@ -284,10 +295,10 @@ Download the FANWatcher utility
 
     ![](./images/fan-step4-num3.png " ")
 
-4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lcom3\#W3lcom3\#**
+4. Create a database user in the PDB **pdb1** and a database service to connect to. The service should have 1 preferred instance and 1 available instance. In this example the service name is **testy** (choose a name you like), the instance names are as specified, the username is **test_user** and the password is **W3lc0m3\#W3lc0m3\#**
 
 5. Create the service and start it.
-   
+
     ````
     <copy>
     /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/srvctl add service -d aTFdbVm_replacename -s testy -pdb pdb1 -preferred aTFdbVm1 -available aTFdbVm2
@@ -298,20 +309,28 @@ Download the FANWatcher utility
     ![](./images/fan-step4-num5.png " ")
     ![](./images/fan-step4-num5-1.png " ")
 
-6. Connect to sqlplus as **SYS**
-   
+6. Run the hostname command
+
     ````
     <copy>
-    /u01/app/oracle/product/19.0.0.0/dbhome_1/bin/sqlplus sys/W3lc0m3#W3lc0m3#@//racnode1/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    hostname
     </copy>
-    ```` 
+    ````
+
+7. Connect to sqlplus as **SYS**. Replace PutYourHostnameHere in the connect string with your hostname
+
+    ````
+    <copy>
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutYourHostnameHere>/testy.pub.racdblab.oraclevcn.com as sysdba
+    </copy>
+    ````
     ![](./images/fan-step4-num6.png " ")
 
-7. Run the following commands to create a test user, password *W3lcom3#W3lcom##* and grant them the appropriate privileges
-   
+8. Run the following commands to create a test user, password *W3lc0m3#W3lc0m3#* and grant them the appropriate privileges
+
     ````
     <copy>
-    create user test_user identified by W3lcom3#W3lcom## default tablespace users temporary tablespace temp;
+    create user test_user identified by W3lc0m3#W3lc0m3# default tablespace users temporary tablespace temp;
     alter user test_user quota unlimited on users;
     grant connect, resource, create session to test_user;
     exit;
@@ -319,20 +338,34 @@ Download the FANWatcher utility
     ````
     ![](./images/fan-step4-num7.png " ")
 
-8. Edit the **fanWatcher.bash** script by entering the folloiwing **vi** command
+9. To get the SCAN address run the following command
+
+    ````
+    <copy>
+    srvctl config scan
+    </copy>
+    ````
+
+10. Enter the following commands and edit the **fanWatcher.bash** script by entering the following **vi** command
 
     ````
     <copy>
     ls -al
+    chmod 755 fanWatcher.bash
+    </copy>
+    ````
+
+    ````
+    <copy>
     vi fanWatcher.bash
     </copy>
     ````
 
-9.  Replace the **user**, **password**, and **URL** with the values you just created using the example shown the fanWatcher.bash script will look like:
+11.  Replace the **user**, **password**, and **URL**. Use the SCAN name in the URL. For example, the fanWatcher.bash script will look like:
 
     ````
     password=<<insert password>
-    url='jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=racnode1)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=racnode2)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=testy.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)))'
+    url='jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=scanname1)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=scanname2)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=testy.pub.racdblab.oraclevcn.com)))'
     user=test_user
     export password url user
     CLASSPATH="/u01/app/oracle/product/19.0.0.0/dbhome_1/jdbc/lib/ojdbc8.jar:/u01/app/oracle/product/19.0.0.0/dbhome_1/opmn/lib/ons.jar:."
@@ -348,9 +381,8 @@ Download the FANWatcher utility
     ![](./images/fan-step4-num9-1.png " ")
     ![](./images/fan-step4-num9-2.png " ")
 
-    Note that the service name will be domain qualified (use the operating system utility **lsnrctl service** to confirm the service name registered with the listener).
 
-10. Run the **fanWatcher.bash** script
+12. Run the **fanWatcher.bash** script
 
     ````
     <copy>
@@ -358,7 +390,6 @@ Download the FANWatcher utility
     </copy>
     ````
     ![](./images/fan-step4-num10.png " ")
-    ![](./images/fan-step4-num10-1.png " ")
 
     When fanWatcher is run with the argument **autoons** it will use the credentials and url provided to connect to the database (wherever it is running) and use that connection to obtain the ONS configuration of the DB system it is connected to. A subscription, to receive FAN events, is created with the Grid Infrastructure ONS daemon.
 
@@ -366,24 +397,24 @@ Download the FANWatcher utility
 
     ![](./images/clusterware-5.png " ")
 
-11. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database.
+13. Perform an action on another node that will generate a FAN event. Kill a SMON background process.  For example, on node2 in my system executing the command below will show the SMON process ids for ASM and my database.
 
     ````
     <copy>
     ps -ef | grep smon
     </copy>
     ````
-12. Examine the process id. The process id in this example is 31138. Your process id will be a different number.
+14. Examine the process id. The process id in this example is 99992. Your process id will be a different number.
     ![](./images/fan-step4-num11.png " ")
 
-13. Kill the process using the command below.  Replacing the ##### with the actual numbers of your smon process.
+15. Kill the process using the command below.  Replacing the ##### with the actual numbers of your smon process.
 
     ````
     sudo kill -9 #####
     ````
     ![](./images/fan-step4-num13.png " ")
 
-14. Look at the output from the fanWatcher utility
+16. Look at the output from the fanWatcher utility
 
     ![](./images/clusterware-8.png " ")
 
@@ -396,30 +427,25 @@ Download the FANWatcher utility
     ````
     ** Event Header **
     Notification Type: database/event/service
-    Delivery Time: Tue Aug 18 08:54:51 UTC 2020
-    Creation Time: Tue Aug 18 08:54:51 UTC 2020
-    Generating Node: racnode2
+    Delivery Time: Wed Mar 10 15:28:58 UTC 2021
+    Creation Time: Wed Mar 10 15:28:58 UTC 2021
+    Generating Node: lvracdb-s01-2021-03-10-1203442
     Event payload:
-    VERSION=1.0 event_type=INSTANCE service=atfdbvm_replacename.tfexsubdbsys.tfexvcndbsys.oraclevcn.com instance=aTFdbVm2 database=atfdbvm_replacename db_domain=tfexsubdbsys.tfexvcndbsys.oraclevcn.com host=racnode2 status=down reason=FAILURE timestamp=2020-08-18 08:54:51 timezone=+00:00
+    VERSION=1.0 event_type=INSTANCE service=ractciiv_iad1tf.pub.racdblab.oraclevcn.com instance=racTCIIV2 database=ractciiv_iad1tf db_domain=pub.racdblab.oraclevcn.com host=lvracdb-s01-2021-03-10-1203442 status=down reason=FAILURE timestamp=2021-03-10 15:28:23 timezone=+00:00
 
     ** Event Header **
     Notification Type: database/event/service
-    Delivery Time: Tue Aug 18 08:55:26 UTC 2020
-    Creation Time: Tue Aug 18 08:55:26 UTC 2020
-    Generating Node: racnode2
+    Delivery Time: Wed Mar 10 15:28:58 UTC 2021
+    Creation Time: Wed Mar 10 15:28:58 UTC 2021
+    Generating Node: lvracdb-s01-2021-03-10-1203442
     Event payload:
-    VERSION=1.0 event_type=INSTANCE service=atfdbvm_replacename.tfexsubdbsys.tfexvcndbsys.oraclevcn.com instance=aTFdbVm2 database=atfdbvm_replacename db_domain=tfexsubdbsys.tfexvcndbsys.oraclevcn.com host=racnode2 status=up reason=FAILURE timestamp=2020-08-18 08:55:25 timezone=+00:00
+    VERSION=1.0 event_type=INSTANCE service=ractciiv_iad1tf.pub.racdblab.oraclevcn.com instance=racTCIIV2 database=ractciiv_iad1tf db_domain=pub.racdblab.oraclevcn.com host=lvracdb-s01-2021-03-10-1203442 status=up reason=FAILURE timestamp=2021-03-10 15:28:58 timezone=+00:00
     ````
-    If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly. 
+    If fanWatcher can auto-configure with ONS and receive and display events, so can any client on the same tier. This validates the communication path (no firewall blockage for example), and that FAN events are propagating correctly.
 
 You may now *proceed to the next lab*.  
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Contributors** - Kay Malcolm, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, March 2021

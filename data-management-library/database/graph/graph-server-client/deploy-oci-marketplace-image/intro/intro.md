@@ -8,7 +8,7 @@ Estimated Workshop Time: 1 hour
 
 ### About Oracle Property Graph?
 
-Oracle Database property graph supports and consists of graph storage, indexing, and search; a powerful in-memory analyst with 50 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
+Oracle Database property graph supports and consists of graph storage, indexing, and search; a powerful in-memory analyst with nearly 60 built-in, parallel analytic functions; a graph query language and developer APIs. Graph algorithms enable you to explore and discover relationships in social networks, IoT, big data, data warehouses and complex transaction data for applications such as fraud detection in banking, customer 360, and smart manufacturing.
 
 Watch a short video that explains key features in Oracle Graph:
 
@@ -22,16 +22,16 @@ In this workshop you will:
 - Create and populate tables in the ADB instance.
 - Query, analyze, and visualize that data as graphs.
 
+This workshop is tested for the Graph Server version **20.4** or **21.1**.
+
 ### Prerequisites
 
-- This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Acknowledgements
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management.
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-graph). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

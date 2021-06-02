@@ -5,7 +5,7 @@ Resource Manager is an Oracle Cloud Infrastructure service that helps you instal
 
 In this tutorial, you obtain the configuration files, or stack, for Cloud Manager from the Oracle Cloud Infrastructure Marketplace, and use Resource Manager to create an instance and link it with associated resources such as a Virtual Cloud Network (VCN), subnet, gateways, and route tables. You enter the necessary passwords and other information in the Resource Manager interface and choose the types of resources created.
 
-Estimated Lab Time: 30 mins + 1 hour waiting
+Estimated Lab Time: 30 minutes + 90 minutes for provisioning
 
 ### Objectives
 The purpose of this lab is to show you how to create a PeopleSoft Cloud Manager instance from the Marketplace. 
@@ -238,9 +238,9 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
     ![](./images/puttycmconnect.png "")
 
 
-Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
+7. Now that you've SSH'ed into your Cloud Manager instance, let's check status of the deployment. 
 
-6. Monitor Cloud Manager bootstrap installation using the below command.
+    Monitor Cloud Manager bootstrap installation using the below command.
 
     ```
     <copy>
@@ -250,7 +250,7 @@ Now that you've SSH'ed into your Cloud Manager instance, let's check status of t
 
     ![](./images/tail.png "")
 
-7. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
+8. After Cloud Manager bootstrap is complete, the CloudManagerStatus.log will show the following messages. 
 
 		The PeopleSoft Environment Setup Process Ended.
 		CM installed successfully
@@ -294,16 +294,18 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
     -   The overall format of the command should look like this:
     ssh -i id_rsa -D 8123 -f -C -q -N opc@jumphost\_public\_ip
 
-5. Launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Then, run the command we just edited to create the SOCKS proxy.
+## **STEP 10**: Sign-In to Cloud Manager via Browser
+1. Once Cloud Manager has finished deploying, launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Then, run the command we just edited to create the SOCKS proxy.
 
     *Example:* ``` ssh -i id_rsa -D 8123 -f -C -q -N opc@XXX.XXX.XXX.XXX ```
 
     ![](./images/terminalproxy.png "")
 
+    *NOTE:* You will need to run this command each time you access Cloud Manager in the furute.
 
-5. Enter your **Cloud Manager PIA URL** (``CM_http_url`` from the Outputs) in Firefox
+2. Enter your **Cloud Manager PIA URL** (``CM_http_url`` from the Outputs) in Firefox
 
-6. To login, use the username **CLADM** and password as **Psft1234**. (**Details.txt** #13 & 14)
+3. To login, use the username **CLADM** and password as **Psft1234**. (**Details.txt** #13 & 14)
     ```
     <copy>CLADM</copy>
     ```
@@ -313,8 +315,9 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
     ```
      ![](./images/login.png "")
     
+You have now signed into Cloud Manager 12.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 

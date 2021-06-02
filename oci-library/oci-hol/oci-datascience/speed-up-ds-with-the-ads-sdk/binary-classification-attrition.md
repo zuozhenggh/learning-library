@@ -73,7 +73,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 1. Click on the **Notebook Examples**. A drop down will appear.
     ![](./../speed-up-ds-with-the-ads-sdk/images/click-ne.png)
 
-1. Select **binary\_classification\_attrition.ipynb**. 
+1. Select the environment **mlcpuv1** and then the notebook **binary\_classification\_attrition.ipynb**. 
     ![](./../speed-up-ds-with-the-ads-sdk/images/load-example.png)
 
 1. Click **Load Example**. The notebook will open in a new tab.
@@ -108,7 +108,3 @@ You may now *proceed to the next lab*.
 * **Last Updated By/Date**:
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

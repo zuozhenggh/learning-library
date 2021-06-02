@@ -36,9 +36,9 @@ Watch this video to learn more about Autonomous Database.
 
     ![](./images/infrastructuredash.png " ")
 
-2. Once you are logged in, you are taken to the OCI Console. Click **Create an ADW Database**
-
-    ![](./images/Part_1_Step_2_1.png " ")
+2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in the Cloud. Using the drop down, select the compartment of your choice.  Here, we are selecting **CloudDataWorkshop** from the compartment list.
 
@@ -271,9 +271,6 @@ Please proceed to the next lab.
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 
 
 

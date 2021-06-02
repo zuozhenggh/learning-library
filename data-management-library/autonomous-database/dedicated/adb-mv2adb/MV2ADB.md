@@ -23,7 +23,7 @@ As a LOB user
 ## STEP 1: Create a Bucket
 
 - Login to the OCI tenancy. Goto Menu => Core Infrastructure => Oject Storage => Object Storage
-   ![](./images/Img13.png " ") 
+   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ") 
    
 - Ensure you are in the right compartment and Click on Create Bucket.
    ![](./images/Img14.png " ") 
@@ -214,7 +214,3 @@ We had migrated a sample HR schema in this lab. Let's connect to the ATPD (Targe
 - **Last Updated By/Date** - Jayshree Chatterjee, July 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

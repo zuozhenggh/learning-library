@@ -287,7 +287,9 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     ![React frontend connected to the backend](images/dragon-react-frontend.png)
 
 
-## **STEP 7:** Cleanup your environment
+## **STEP 7:** Cleanup your environment (Optional)
+
+**_If you wish to continue to Lab 2, then skip this step._**
 
 1. Quit ngrok by pressing `Ctrl-C`.
 
@@ -318,7 +320,3 @@ Congratulations! You have completed the very first DRAGON Stack workshop!
 
 ![DRAGON Stack logo](./images/dragon-logo.png)
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

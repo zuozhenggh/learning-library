@@ -3,7 +3,7 @@
 ## Introduction
 Cloud Manager is delivered with channels for PeopleSoft applications, which are available after you complete the installation and configuration. An administrator can subscribe to multiple channels and download all necessary PIs (PeopleSoft Update Images) and PRPs (PeopleSoft Release Patchset) that the organization needs.
 
-Estimated Lab Time: 5 minutes + 2 hours waiting
+Estimated Lab Time: 5 minutes + 2 hours waiting for downloads to complete
 
 ### Objectives
 In this lab you will:
@@ -30,7 +30,7 @@ In this lab you will:
 
     ![](./images/s.png "")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
@@ -38,7 +38,3 @@ You may now proceed to the next lab.
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

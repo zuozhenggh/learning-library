@@ -3,7 +3,7 @@
 ## Introduction
 This lab will guide you on how to configure the system and infrastructure settings on Cloud Manager
 
-Estimated Lab Time: 10 minutes.
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 The purpose of this lab is to show you how to configure Cloud Manager settings.
@@ -58,13 +58,9 @@ Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**.
 
 2.	Click **Create**.  This action will create a file server in a few minutes. Please wait until the file server status shows ‘**FSS Configured**' which you can see by clicking **More Info**, and then the system will be ready for downloads. 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**
 
 ## Acknowledgments
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Migrate%20SaaS%20to%20OCI). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
