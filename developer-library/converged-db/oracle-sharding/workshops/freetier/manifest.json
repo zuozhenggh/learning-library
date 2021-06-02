@@ -37,22 +37,22 @@
     {
       "title": "Lab 5: About Eshop",
       "description": "About Eshop",
-      "filename": "../../sharding1/sharding.md"
+      "filename": "../../eshop/eshop.md"
     },
     {
       "title": "Lab 6: Exploring Sharding Topology",
       "description": "Exploring Sharding Topology",
-      "filename": "../../sharding2/sharding.md"
+      "filename": "../../topology/topology.md"
     },
     {
       "title": "Lab 7: Eshop App schema & Code Snippet",
       "description": "Eshop App schema & Code Snippet",
-      "filename": "../../sharding3/sharding.md"
+      "filename": "../../appschema/appschema.md"
     },
     {
       "title": "Lab 8: Application Queries on sharding Database",
       "description": "Application Queries on sharding Database",
-      "filename": "../../sharding4/sharding.md"
+      "filename": "../../appqueries/appqueries.md"
     },
 
     {
