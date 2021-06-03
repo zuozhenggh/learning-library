@@ -14,11 +14,11 @@
         },
         {
             "title": "NetFoundry Prerequisites",
-            "description": "Prerequsites for using NetFoundry Zero Trust Networking",
+            "description": "Prerequsites for Using NetFoundry Zero Trust Networking",
             "filename": "../../netfoundry-prerequisites/netfoundry-prerequisites.md"
         },
         {
-            "title": "Lab 1: Setup Zero Trust network connectivity from client to an application server",
+            "title": "Lab 1: Setup Zero Trust Network Connectivity from Client to an Application Server",
             "description": "Learn how to set up a Zero Trust Network in OCI Cloud",
             "filename": "../../setup-zero-trust-network-connectivity/setup-zero-trust-network-connectivity.md"
         },

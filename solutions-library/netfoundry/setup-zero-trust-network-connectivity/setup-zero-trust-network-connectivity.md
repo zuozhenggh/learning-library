@@ -1,4 +1,4 @@
-# Lab 1: Setup Zero Trust network  connectivity from client to an application server
+# Lab 1: Setup Zero Trust Network Connectivity from Client to an Application Server
 
 ## Introduction
 
@@ -114,7 +114,7 @@ The next element we will deploy is the Edge Router in the customer VCN containin
 
 	![](./images/diag19.png " ")
 
-## **STEP 5:** Create Endpoint for user access - Windows
+## **STEP 5:** Create Endpoint for User Access - Windows
 
 The next step in the process is to register your Laptop/Host as an endpoint in the Fabric. 
 

@@ -3,7 +3,7 @@
 
 # Introduction 
 
-## About this Workshop
+## About This Workshop
 
 In this workshop, you will [required explanation of what you will do in the labs in the workshop]
 
