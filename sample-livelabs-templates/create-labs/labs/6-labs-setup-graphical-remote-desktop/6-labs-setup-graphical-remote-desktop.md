@@ -234,6 +234,7 @@ This lab assumes you have:
     ```
     <copy>
     sudo su - ${appuser}
+    rm -rf $HOME/.vnc
     vncserver
     </copy>
     ```
