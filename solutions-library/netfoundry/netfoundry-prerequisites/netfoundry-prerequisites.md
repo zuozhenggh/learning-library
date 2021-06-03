@@ -13,11 +13,17 @@ The following provides simple network configuration steps to help partners & end
 To get started you will need:
 
 - A NetFoundry Account/Organization. A seven day free trial is available to all who wish to demo the NetFoundry product and OCI.
+
 	[NetFoundry Free Trial for Live Lab](https://nfconsole.io/signup)
+
 - A working public cloud account with networking (such as Oracle/VCN subscription), or have the necessary privilege's to install a virtual machine and/or install software onto a machine in your on premises environment. (ESXi/Hyper-V/VirtualBox). This example will utilize Oracle Cloud Infrastructure.
+
 	[Oracle Cloud Free Tier for Live Lab](https://www.oracle.com/cloud/free/)
+
 	[Oracle Cloud VCN Documentation for Live Lab](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingnetwork.htm)
+
 - An internet connection with outbound connections to TCP port 80 and 443.
+
 	![](./images/diag.5.png " ")
 
 ## Cloud application prep - Create Application in Cloud (Oracle Cloud example)
