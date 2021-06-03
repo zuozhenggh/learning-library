@@ -41,12 +41,12 @@ This lab requires:
 
     ![](./images/image14_2.png "")
 
-4.	Select "Sample_Basic.xlsx" file from:   
+4.	Select **Sample_Basic.xlsx** file from:   
     All Files -> Gallery -> Applications ->Demo Samples-> Block Storage.
 
     ![](./images/image14_3.png "")
 
-5.	Name the application “DynamicCorp” and the cube “Sales”. Click **OK**.
+5.	Name the application **DynamicCorp** and the cube **Sales**. Click **OK**.
 
     ![](./images/image14_4.png "")
 
@@ -240,7 +240,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
    
   On the 'Cube Designer' ribbon, click 'Catalog'.
 
-2.	On the Essbase Files dialog box, under Catalog, go to 'gallery/Technical/Table Format' as shown below, then select a sample tabular data file: "Unstr_Hints.xlsx".
+2.	On the Essbase Files dialog box, under Catalog, go to 'gallery/Technical/Table Format' as shown below, then select a sample tabular data file: **Unstr_Hints.xlsx**.
 
  ![](./images/image14_44.png "")
 
@@ -255,7 +255,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
 6. The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
 
-    "Unstr_Hints.xlsx": Application name is 'Unstr_Hints' and the cube name is 'SpendHistory'
+    **Unstr_Hints.xlsx**: Application name is **Unstr_Hints** and the cube name is **SpendHistory**
 
 7.	Click 'Preview Data'. The workbook is sent to Essbase 21c for analysis and then you can verify the dimensions and their members. 
 

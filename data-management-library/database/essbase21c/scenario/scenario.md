@@ -42,13 +42,13 @@ The exercises contained within this lesson will allow the user to get acquainted
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
-1. Download the worksheet "SandboxApp.xlsx".
+1. Download the worksheet **SandboxApp.xlsx**.
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
-   Open the "SandboxApp.xlsx" file.
+   Open the **SandboxApp.xlsx** file.
 
-2. Change the Application name (sheet Essbase.Cube) to "Sample_Scenario".
+2. Change the Application name (sheet Essbase.Cube) to **Sample_Scenario**.
 
    ![](./images/imageDT_01.0.png "")
 
@@ -56,13 +56,13 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
     ![](./images/imageSM_01.png "")
 
-4. Save your file as "SandboxApp.xlsx" and close it. 
+4. Save your file as **SandboxApp.xlsx** and close it. 
 
 5. Go to the Essbase Web UI and click on **Import**.
    
    ![](./images/imageSM_01.0.png "")
 
-6. Click on **File Browser**, and browse to select "SandboxApp.xlsx" excelsheet.
+6. Click on **File Browser**, and browse to select **SandboxApp.xlsx** excelsheet.
    ![](./images/imageSM_01.1.png "")
   
   Make sure to check that Load Data option is selected under Advanced Option. Click **OK**.
@@ -75,11 +75,11 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 This Step shows that creating sandboxes has little impact on resource usage such as disk space.
 
-1. Download "SmartView.xlsx" file.
+1. Download **SmartView.xlsx** file.
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
    
-   Open "SmartView.xlsx" and go to **sheet1** tab.
+   Open **SmartView.xlsx** and go to **sheet1** tab.
    ![](./images/imageSM_03.png "")
 
 2. Go to the smartview, Create a private connection to Essbase: http://IP:9000/essbase/smartview.
@@ -90,7 +90,7 @@ This Step shows that creating sandboxes has little impact on resource usage such
    
    ![](./images/imageSM_04.0.png "")
    
-   In order to query the selected Cube, choose the option -> "Set Active Connection for this Worksheet".
+   In order to query the selected Cube, choose the option -> **Set Active Connection for this Worksheet**.
 
 3. Refresh the data.
    ![](./images/imageSM_04.png "")
@@ -288,7 +288,7 @@ In this step you will create a calculation script to create data for ORCL USA->X
    a) Login to Essbase Web UI as Maria. Navigate to the **Scenarios** tab.
       ![](./images/imageSM_28.png "")
 
-   b) For **What-if** scenario, under **Actions**, click the "->" icon to Submit, enter a comment if needed(for e.g., submitted for approval). The status should now be submitted.
+   b) For **What-if** scenario, under **Actions**, click the **->** icon to Submit, enter a comment if needed(for e.g., submitted for approval). The status should now be submitted.
       ![](./images/imageSM_29.png "")
 
    c) Go to Smart View and retrieve data into the Comparison tab.
@@ -327,7 +327,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 1. Log on to Essbase Web UI as John.
 
-2. Download the file "Merge.csc".
+2. Download the file **Merge.csc**.
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
 
@@ -339,7 +339,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
    ![](./images/imageSM_33.png "")
 
-3. Drag or select the provided "Merge.csc" file.
+3. Drag or select the provided **Merge.csc** file.
    ![](./images/imageSM_34.png "")
 
 4. Click **Close**.
@@ -365,7 +365,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
    Click on the -> arrow(as shown below) to login as maria.
      ![](./images/imageSM_36.5.png "") 
 
-     a.	Select the "sb0" cell(C2 if unadulterated)  
+     a.	Select the **sb0** cell(C2 if unadulterated)  
 
      b.	Click on **Calculate** on the Essbase ribbon.  
             ![](./images/imageSM_36.2.png "")  
