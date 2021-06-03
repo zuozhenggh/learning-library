@@ -21,8 +21,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
+Steps from the previous lab must be completed. 
 
 ## **STEP 1:** Create an Instance of MySQL in the Cloud
 
