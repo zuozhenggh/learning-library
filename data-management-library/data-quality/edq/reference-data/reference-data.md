@@ -132,7 +132,7 @@ Now, we will copy reference data previously created into our project, which will
 
 This Completes your lab on reference data. Let's use this reference data in our next lab.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)

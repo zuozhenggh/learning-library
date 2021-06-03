@@ -1,56 +1,58 @@
-# Using Kustomize for templated environments
+# Using Kustomize for Templated Environments
 
 ## Introduction
 
-In the overview of the project, we saw how the repo is structured with **base** kubernetes resource manifests and **overlays**. 
+In the overview of the project, we saw how the repo is structured with **base** Kubernetes resource manifests and **overlays**. 
 
-In this lab we will look into more details at how the repo is structured to use Kustomize and to produce kubernetes resource manifests for each environment.
+In this lab we will look into more details at how the repo is structured to use Kustomize to produce Kubernetes resource manifests for each environment.
 
-Kustomize uses a set of **base** templates that define resources to be templated, and **overlays** which includes patches for the base resources.
+Kustomize uses a set of **base** templates that define resources to be templated, and **overlays** which includes patches for the base resources. Patches may include adding a prefix, or a suffix to resources names, changing a variable, or adding an entire section to the Kubernetes manifest, like a volume mount, environment variables or secrets.
 
 Kustomize also includes the concept of **components** that can be added to a set of resources. A **component** can be an add-on such as an additional service (be it a cache service, a LDAP service etc.) or it can be a shared **overlay** that should be applied to multiple configurations.
 
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 10 minutes.
 
 ### Objectives
 
 In this lab you will:
 
-- Review the project structure for templating with **Kustomize**
+- Review the project structure for templating with **Kustomize**.
 - Learn how to use Kustomize to generate manifests for various environments.
 
 
-The components are separated into 2 groups: infra and app as illustrated below
+The components are separated into 2 groups: `infra` and `app` as illustrated below.
 
 ![](./images/components.png)
 
 
-We'll go over the template files and how they are arranged together. It can be a little tedious looking at YAML files, so you can jump to step 10 for a quick visual of the infra template rendering. 
+We'll go over the template files and how they are arranged together. It can be a little tedious looking at YAML files, so below is a quick visual of the infra templates, with the **base** templates on the left, the **overlay** applied in the middle, and the final rendering on the right, with colored text showing the differences and their overlay origin.
+
+  ![](./images/kustomize.png)
 
 You can also look at the files themselves that are well commented.
 
-## **STEP 1:** The base templates
+## **STEP 1:** The Base Templates
 
 The base templates are separated into 3 folders:
 
-- *`infra`*
-- *`app`*
-- and *`components`*
+- *`infra`*.
+- *`app`*.
+- *`components`*.
 
-One of the challenges of developing on a live cluster is that pods need to be refreshed when code changes. Often pods have dependencies, like *ConfigMaps* or *Secrets* that need reloading etc.
+One of the challenges of developing on a live cluster is that pods need to be refreshed when code changes. Often pods have dependencies, like *ConfigMaps* or *Secrets* that need reloading.
 
 For that reason, the development tools like **Skaffold** (which we will cover in a later lab) assume that a development environment is meant to be brought up and torn down at each launch/stop of the tool. This is default behavior, and although it can be overriden, it is also best practice to insure components are up-to-date.
 
-However that does not play well with infrastructure like PaaS services that take time to provision, like the Autonomous Database.
+However that does not play well with infrastructure like PaaS services that take time to provision, like the Oracle Autonomous Database.
 
 It makes sense to separate the *`infrastructure`* components of the deployment (Streaming Service, Autonomous Database) from the *`app`* to be actively developed.
 
-This brings another challenge though: if infrastructure resources that get renamed (prefixed or suffixed) for an specific environment are deployed separately, they can no longer be found by the templating tool when they are referenced in the application deployment, and those references need to be patched in.
+This brings another challenge though: if infrastructure resources get renamed (i.e. prefixed or suffixed for an specific environment) and are deployed separately, they are no longer referenced in the application manifests, and those name changes need to be patched in.
 
 We'll look at how resources get patched for each environment, but first let's look at the base templates:
 
-## **STEP 2:** The base *`infra`* templates
+## **STEP 2:** The Base *`infra`* Templates
 
 1. The *`infra`* templates:
 
@@ -76,33 +78,33 @@ Note all the resources are named with their base name and the Type, so they are 
 
 2. *`common.Namespace.yaml`* describes the base namespace: the name is *`ns`* and will be prefixed with *`dev-`*, *`stage-`* or *`prod-`* when templating.
 
-3. *`ocir.Secret.yaml`* is generated by terraform. It provides the credentials to pull images. It is used by all the pods in the project.
+3. *`ocir.Secret.yaml`* is generated by Terraform. It provides the credentials to pull images. It is used by all the pods in the project.
 
-4. We have the Autonomous Database resources, which includes:
+4. The Autonomous Database resources include:
 
     - *`atp-admin.Secret.yaml`*: ATP admin user credentials, needed to provision the database.
 
-    - *`atp-user.Secret.yaml`*: Regular DB user credentials. It will be used by the application.
+    - *`atp-user.Secret.yaml`*: Regular database user credentials. It will be used by the application.
 
-    - *`atp.Secret.yaml`*: OSB-formatted DB admin credentials.
+    - *`atp.Secret.yaml`*: OSB-formatted database admin credentials.
     
-    - *`atp.ServiceBinding.yaml`*: defines a secret the OSB will generate for an instance (will contain the wallet to connect to the database)
+    - *`atp.ServiceBinding.yaml`*: defines a secret the OSB will generate for an instance (will contain the wallet to connect to the database).
 
-    - *`atp.ServiceInstance.yaml`*: ATP instance parameters (CPU cores, storage, etc...)
+    - *`atp.ServiceInstance.yaml`*: ATP instance parameters (CPU cores, storage, and so on).
 
-4. We have the Streaming resources, which includes:
+4. The Streaming resources include:
 
-    - *`kafka.Secret.yaml`*: username and token to connect to the Streaming Service. Generated by terraform.
+    - *`kafka.Secret.yaml`*: username and token to connect to the Streaming Service. Generated by Terraform.
 
-    - *`streaming.ServiceBinding.yaml`*: defines a secret with the streaming Stream id, name and poolId to use by the *`consumer`* and *`producer`* services. It references the stream instance
+    - *`streaming.ServiceBinding.yaml`*: defines a secret with the streaming Stream id, name and poolId to use by the *`consumer`* and *`producer`* services. It references the stream instance.
 
     - *`streaming.ServiceInstance.yaml`*: The stream to create, including # of partitions.
 
-        ***It requires the OCID of the compartment to use and you will need to edit this value to match the compartment where you deployed the cluster.***
+        ***It requires the OCID of the compartment to use. This value was automatically injected when running the  Terraform.***
 
 5. Finally we have the *`kustomization.yaml`* file and *`kustomizeconfig/custom.yaml`* file. Let's have a closer look at those.
 
-## **STEP 3:** The base *`kustomization.yaml`* file for *`infra`*
+## **STEP 3:** The Base *`kustomization.yaml`* File for *`infra`*
 
 1. The *`kustomization.yaml`* file contains the following:
 
@@ -132,9 +134,9 @@ Note all the resources are named with their base name and the Type, so they are 
     - streaming.ServiceBinding.yaml
     ```
 
-    In the *`base`*, we're only defining what resources need to be included (under *`resources`*) and what common labels should be applied to all resources (under *`commonLabels`*)
+    In the *`base`*, we're only defining what resources need to be included (under *`resources`*) and what common labels should be applied to all resources (under *`commonLabels`*).
 
-    We also include custom configuration files under *`configurations`*
+    We also include custom configuration files under *`configurations`*.
 
 
 2. The *`kustomizeconfig/custom.yaml`* is needed for **Kustomize** to understand our **Custom Resource Definitions (CRDs)**.
@@ -161,7 +163,7 @@ Note all the resources are named with their base name and the Type, so they are 
     # as a secret volume mount, env value or envFrom value
     - kind: ServiceBinding
       fieldSpecs:
-      # env: valueFrom
+        # env: valueFrom
       - path: spec/template/spec/containers/env/valueFrom/secretKeyRef/name
         kind: Deployment
       - path: spec/template/spec/containers/env/valueFrom/secretKeyRef/name
@@ -200,7 +202,7 @@ Note all the resources are named with their base name and the Type, so they are 
 
     Inversely, kustomize needs to know how regular resources are used in the custom resource. For example, the last bloc explains how a *`Secret`* is referenced within the *`ServiceBinding`* or *`ServiceInstance`* under the *`parametersFrom`* key.
 
-## **STEP 4:** The base *`app`* templates
+## **STEP 4:** The Base *`app`* Templates
 
 The same goes for the *`app`* templates:
 
@@ -219,17 +221,17 @@ The same goes for the *`app`* templates:
 
 2. Here we have some pretty standard Deployment files, which include Deployments for the *`consumer`*, *`producer`* and  *`web`* apps, with a *`web.Service`* to expose the web app to the outside through a load balancer.
 
-3. Note the 2 *`HorizontalPodAutoscaler`* which are here to show the use of autoscaling pod capability on OKE. The metrics server required for the HPA to work was provisioned as part of the terraform deployment earlier.
+3. Note the 2 *`HorizontalPodAutoscaler`* which are here to show the use of autoscaling pod capability on OKE. The metrics server required for the HPA to work was provisioned as part of the Terraform deployment earlier.
 
-4. The *`kustomization.yaml`* file is very basic, with only *`resources`*
+4. The *`kustomization.yaml`* file is very basic, with only *`resources`*.
 
-## **STEP 5:** The base *`components`* templates
+## **STEP 5:** The Base *`components`* Templates
 
 1. The *`base/components`* folder includes components that are used in both *`infra`* and *`app`* deployments.
 
     Specifically, the use of ATP via the OCI Service Broker requires the use of an *`InitContainer`* to decode the wallet credentials. This is an artifact of how Secrets are encoded with the OSB.
 
-    The component folder includes a single component, in a sub-folder , and its *`kustomization.yaml`* definition
+    The component folder includes a single component, in a sub-folder, and its *`kustomization.yaml`* definition:
 
     ```
     │   │   ├── components
@@ -255,38 +257,40 @@ The same goes for the *`app`* templates:
     - path: decode-wallet.InitContainer.yaml
       target:
         labelSelector: use_db=yes
-    # Inject DB creds volume needed for DB use into all the pods that need it
+    # Inject database creds volume needed for database use into all the pods that need it
     - target:
         labelSelector: use_db=yes
       patch: |-
         - op: add
-        # Inject DB wallet creds volume
+        # Inject database wallet creds volume
         path: /spec/template/spec/containers/0/volumeMounts/-
         value: { "name": "creds", "mountPath": "/instantclient_21_1/network/admin" }
     ```
 
     Here we see 2 patches:
 
-    - The *`decode-wallet.InitContainer.yaml`* is a patch defined by a file *`path`* and targetting resources using a *`labelSelector`* referencing a label called *`use_db`* with the value *`yes`*. 
+    - The *`decode-wallet.InitContainer.yaml`* is a patch defined by a file *`path`* and targetting resources using a *`labelSelector`* referencing a label called *`use_db`* with the value *`yes`*. That means ANY resource that has the label will get this InitContainer injected into it.
     
         Using a label as target allows to target different types of resources (in our case, we have *`Deployments`* and a *`Job`*). The label is affixed to the resources that will need the patch. This includes the *`db-config.Job`*, the *`consumer.Deployment`* and the *`web.Deployment`*; all 3 need the database access credentials decoded for them.
 
-    - The second patch also targets the label *`use_db=yes`*, but is an *`inline`* patch. It defines:
-        - an operation *`op`* (*`add`*, which means the patch will be inserted, as opposed to *`replace`* another value), 
-        - a *`path`* where the value needs to be inserted (here we're adding an entry to the *`volumeMounts`* array; note the *`/-`* syntax to indicate we're adding to an array)
-        - a *`value`*, here an object in JSON syntax, which defines the location where credentials need to be mounted for the app.
+    - The second patch also targets the label *`use_db=yes`*, but is an *`inline`* patch. It is used to inject the mount path for the wallet. It defines:
+        - An operation *`op`* (*`add`*, which means the patch will be inserted, as opposed to *`replace`* another value).
+        - A *`path`* where the value needs to be inserted (here we're adding an entry to the *`volumeMounts`* array; note the *`/-`* syntax to indicate we're adding to an array).
+        - A *`value`*, here an object in JSON syntax, which defines the location where credentials need to be mounted for the app.
 
 ## **STEP 6:** Overlays
 
 1. With base templates defining the general composition of our 2 different deployments (*`infra`* and *`app`*) for the purpose of separating the deployment of the PaaS services and the app to be developed, we can now build our different environments with overlays.
 
-2. Overlays are used to augment a base deployment with labels, defining a namespace, or renaming resources by adding a prefix or a suffix, as well as patch resources with different values (for example different CPU, mem requirements, a different number of replicas in prod compared to dev etc.)
+2. Overlays are used to augment a base deployment with labels, defining a namespace, or renaming resources by adding a prefix or a suffix, as well as patch resources with different values (for example different CPU, mem requirements, a different number of replicas in prod compared to dev and so on).
 
-3. We use 3 main overlays to define 3 main environments: *`development`*, *`staging`* and *`production`*
+3. We use 3 main overlays to define 3 main environments: *`development`*, *`staging`* and *`production`*.
 
-    The patches in each environment are very similar, so we'll describe the common ones for dev, and the specific ones for each environment.
+    The patches in each environment are very similar, so we'll describe the common ones for dev. Feel free to browse the other overlay files to see the differences.
 
-## **STEP 7:** The *`infra`* overlays
+4. An Overlay uses a Kustomization.yaml file that targets a **base** and then applies patches.
+
+## **STEP 7:** The *`infra`* Overlays
 
 1. The infra overlay in each environment has the following files:
 
@@ -298,9 +302,9 @@ The same goes for the *`app`* templates:
     ```
 
 2. The *`atp.ServiceInstance.patch.yaml`* is a patch for the atp.ServiceInstance, which updates the *`dbName`* parameter. 
-    This value needs to be unique per tenancy, so it needs to be mapped for each environment. It also cannot contain `-` or *`_`* characters so using a resolved parameter like the namespace does not work. For dev it is called *`devk8satp`*, for staging *`stagek8satp`*, for production it is *`prodk8satp`*
+    This value needs to be unique per tenancy, so it needs to be mapped for each environment. It also cannot contain `-` or *`_`* characters so using a resolved parameter like the namespace does not work. For dev it is called *`devk8satp`*, for staging *`stagek8satp`*, for production it is *`prodk8satp`*.
 
-3. The *`db.ConfigMap.yaml`* is a new resource added to the deployment that specifies the name of the DB service to use (the *`TNS_NAME`*). This ConfigMap resource is specific to the namespace as it needs to include the *`dbName`* and a suffix, so it is added to the deployment in the overlay.
+3. The *`db.ConfigMap.yaml`* is a new resource added to the deployment that specifies the name of the database service to use (the *`TNS_NAME`*). This ConfigMap resource is specific to the namespace as it needs to include the *`dbName`* and a suffix, so it is added to the deployment in the overlay.
 
 4. The deployment configuration is put together in the `kustomization.yaml` file, which looks like:
 
@@ -319,7 +323,7 @@ The same goes for the *`app`* templates:
     components:
     # add patch to add init container to all pods that need it.
     - ../../../base/components/db-init-container/
-    # add patch to add DB credential volumes to all pods that need it
+    # add patch to add database credential volumes to all pods that need it
     - ../components/db-creds/
     # add patch to set ImagePullSecrets to the namespaced ocir-secret
     - ../components/imagePullSecrets/
@@ -333,19 +337,19 @@ The same goes for the *`app`* templates:
 
     - We see the *`namePrefix`* value of `dev-` applied to all resources names. 
     
-    Note that this also prefixes the *`Namespace`* resource in *`base/infra`*, which was called *`ns`*, which results in the final namespace name being `dev-ns`
+    Note that this also prefixes the *`Namespace`* resource in *`base/infra`*, which was called *`ns`*, which results in the final namespace name being `dev-ns`.
 
-    - We then define the *`namespace`* to use for all resources as the prefixed namespace *`dev-ns`*
+    - We then define the *`namespace`* to use for all resources as the prefixed namespace *`dev-ns`*.
 
     - We call on the *`base/infra`* folder to use as base.
 
-    - We can see the new resource (db.ConfigMap) under the *`resources`* key, and the patch for *`atp.ServiceInstance`* under *`patchesStrategicMerge`*
+    - We can see the new resource (db.ConfigMap) under the *`resources`* key, and the patch for *`atp.ServiceInstance`* under *`patchesStrategicMerge`*.
 
     - We call the components from the base (db-init-container), as well as 2 other components specific to the environment (*`db-creds`* and *`imagePullSecrets`*) as those patch secret names with the proper prefix.
 
-## **STEP 8:** The *`app`* overlays
+## **STEP 8:** The *`app`* Overlays
 
-1. The *`app`* overlay is very similar to the *`infra`* overlay as it composes the environment with the *`base/app`*, the *`base/components`* and the namespaced specific *`overlay/development/components`*
+1. The *`app`* overlay is very similar to the *`infra`* overlay as it composes the environment with the *`base/app`*, the *`base/components`* and the namespaced specific *`overlay/development/components`*.
 
 2. The difference is in a few additional patches: as explained early on, as we separated *`infra`* from *`app`* deployment, the *`infra`* resources are not available to be referenced when templating the *`app`* resources, therefore the names of the infra resources used in the *`app`* deployment need to be patched to match the prefix applied to them.
 
@@ -372,13 +376,13 @@ The same goes for the *`app`* templates:
           value: {configMapRef: { name: kafka }}    
     ```
 
-4. This patches the name references of the Streaming service Secrets, as well as the Secret generated by the terraform, in all the resources using streaming, as specified by the *`target`* *`labelSelector`* using the label *`use_streaming=yes`*.
+4. This patches the name references of the Streaming service Secrets, as well as the Secret generated by the Terraform, in all the resources using streaming, as specified by the *`target`* *`labelSelector`* using the label *`use_streaming=yes`*.
 
 5. The *`kafka`* ConfigMap reference is not prefixed as it can be looked up by Kustomize in this case, and we'll take advantage of this later. it is included here as a patch instead of added to each resource that needs it.
 
-## **STEP 9:** The *`components`* overlays
+## **STEP 9:** The *`components`* Overlays
 
-1. Finally we have the *`components`* used in both *`infra`* and *`app`* overlays, which include patching the PaaS service secret names for the use of the DB service, and adding the *`imagePullSecrets`* secret value for all pods, prefixed by the environment name.
+1. Finally we have the *`components`* used in both *`infra`* and *`app`* overlays, which include patching the PaaS service secret names for the use of the database service, and adding the *`imagePullSecrets`* secret value for all pods, prefixed by the environment name.
 
 2. The *`db-creds`* component patch looks like:
 
@@ -400,7 +404,7 @@ The same goes for the *`app`* templates:
           value: { name: creds-raw, secret: { secretName: dev-atp-binding } }
     ```
 
-3. and the imagePullSecret patch, which targets all resources with the label *`use_ocir=yes`* looks like:
+3. The imagePullSecret patch, which targets all resources with the label *`use_ocir=yes`* looks like:
 
     ```yaml
     - target:
@@ -414,12 +418,7 @@ The same goes for the *`app`* templates:
 
 ## **STEP 10:** Let's Kustomize
 
-1. In the graphic below, we have the original template files under *`base/infra`* on the left, and the template rendered by Kustomize on the right where the patches (middle) insertions are color-coded. Zoom in your browser for a better look.
-
-    ![](./images/kustomize.png)
-
-
-2. By now you probably have yaml overdose, so let's jump to actual commands:
+1. By now you probably have yaml overdose, so let's jump to actual commands:
 
     To render the deployment resources for the development environment infra, just use:
 
@@ -429,42 +428,32 @@ The same goes for the *`app`* templates:
     </copy>
     ```
 
-    This will render the full template as shown above.
+    This will render the full template as shown above and give you a preview of what we will deploy.
 
 
 ## **STEP 11:** Deploying with Kustomize
 
-1. Luckily, we only need to read this when we debug. To actually deploy this *`infra`* stack for *`development`*, we can simply pipe it to *`kubectl`* like (Don't do this just yet though...):
+1. Luckily, we only need to read this when we debug. To actually deploy this *`infra`* stack for *`development`*, we can simply pipe it to *`kubectl`* like: 
+
+    Don't run this just yet though, it will fail.
 
     ```bash
     kustomize build k8s/overlays/development/infra | kubectl apply -f -
     ```
 
-2. In order to do this from **Kustomize**, we need to define the image registry in each Pod (in the case of the *`infra`* section, this is only for the *`Job`* resource)
+2. Running this command as is will fail because our Docker image names in our manifests are simply the service names.
 
-3. We will actually add another layer to this tool, by using **Skaffold**, which will let us add a *`default-repo`* flag when rendering, which will automatically fill in the image repository for us, and image tags. So just a little more patience before we actually deploy.
+ In order to deploy successfully, we would need to define the full image path (including the registry) and an image tag in each Pod.
 
-## **STEP 12:** Update the streaming.Instance template
+3. We will actually add another layer to this tool, by using **Skaffold**, which accepts a *`default-repo`* flag when rendering. This will automatically fill in the image repository for us, as well as computed image tags. So just a little more patience before we actually deploy.
 
-1. As mentioned in step 2.4, we need to update the *`base/infra/streaming.Instance.yaml`* file to point to the OCID of the compartment the project will live.
+## **STEP 12:** streaming.ServiceInstance.yaml Template
 
-    Edit the line below and provide the OCID of the compartment where you deployed the project.
+1. As mentioned in step 2.4, the *`base/infra/streaming.ServiceInstance.yaml`* requires the OCID of the compartment the project will live in.
 
-    ```yaml
-    apiVersion: servicecatalog.k8s.io/v1beta1
-    kind: ServiceInstance
-    metadata:
-      name: datastream
-    spec:
-      clusterServiceClassExternalName: oss-service
-      clusterServicePlanExternalName: standard
-      parameters:
-        name: datastream
-        compartmentId: **PROVIDE_YOUR_COMPARTMENT_OCID_HERE**
-        partitions: 2
-    ```
+  It should have been injected by the Terraform. Have a look to make sure it is correct.
 
-## **STEP 13:** Debugging templates
+## **STEP 13:** Debugging Templates
 
 1. What's important to understand at this point, is how to check for the effect of a patch. To see what **Kustomize** did to our original templates, we can look at the rendered output in the shell. 
 
@@ -473,12 +462,13 @@ The same goes for the *`app`* templates:
     ```bash
     <copy>
     kustomize build k8s/overlays/development/infra > deployment.yaml
+    kustomize build k8s/base/infra > base.yaml
     </copy>
     ```
 
-    Then open if you code editor of choice, which hopefully applies a colored theme for YAML files.
+    Then open it in your code editor or diff tool of choice to highlight the differences.
 
-3. Or we can use the *`diff`* tool to inspect changes, like:
+3. Another way, if you enjoy reading shell output, is to use the *`diff`* tool to inspect changes, like:
 
     ```bash
     <copy>
@@ -622,9 +612,9 @@ The same goes for the *`app`* templates:
     >     name: dev-datastream
     ```
 
-    And make it easy to confirm prefixes, suffixes or insertion happened properly, although if a patch was not applied somewhere, it would not show.
+    It makes it easy to confirm prefixes, suffixes or insertion happened properly, although if a patch was not applied somewhere, it would not show.
 
-Now we know how to produce templated deployment for each environment, let's develop.
+Now we know how to produce templated deployment for each environment, let's learn how to deploy and develop.
 
 You may proceed to the next lab.
 
@@ -632,8 +622,3 @@ You may proceed to the next lab.
 
  - **Author** - Emmanuel Leroy, February 2021
  - **Last Updated By/Date** - Emmanuel Leroy, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabs). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -35,7 +35,7 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     b. Click **Next**.
 
-4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier. 
+4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier.
 
     ![](./images/2.png " ")
 
@@ -89,9 +89,6 @@ Congratulations, you have successfully migrated an EBS instance to the EBS Cloud
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

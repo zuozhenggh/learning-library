@@ -2,30 +2,29 @@
 
 ## Introduction
 
-In this lab we will review and setup all components required to successfully upgrade IAM 11g to 12c version.  
+In this lab we will review and setup all components required to successfully upgrade IAM 11.1.2.3 to 12.2.1.4 version.  
 
 *Estimated Lab Time*:  30 minutes
 
 ### Objectives
-- Initialize the IAM 11g baseline workshop environment.
+- Initialize the IAM 11.1.2.3 baseline workshop environment.
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- A Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0:** Running your Lab
-### Access the graphical desktop
+## **STEP 1:** Access the Graphical Remote Desktop (Preferred)
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Launch your browser to the following URL
 
     ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
+    <copy>http://[your instance public-ip address]:8080/guacamole</copy>
     ```
 
 2. Provide login credentials
@@ -45,7 +44,7 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
     ![](./images/guacamole-landing.png " ")
 
-### Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
+## **STEP 2:**  Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
 During the execution of your labs you may need to copy text from your local PC/Mac to the Guacamole remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIT (*Mac*)
@@ -66,63 +65,42 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/guacamole-clipboard-3.png " ")
 
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+## **STEP 3:** Open Workshop Guide from the Remote Desktop
+LiveLabs workshop guides make an extensive use of *Click-to-Copy* function, providing convenient and effective way to quickly copy a predefined text or block of text without the need to first highlight it. This also help avoid mistakes that may occur when doing it manually such as copying extra or fewer characters than intended.
 
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
+As a result, launching your workshop guide from the remote desktop will further enhance your experience. It will greatly help speed up your labs execution by removing the need to constantly switch between the guide from your local computer and the remote desktop, and minimize the need for the 3-steps *copy/paste/paste* described in *STEP 2* above.
 
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
+1. From your remote desktop session, launch *Firefox*, browse to *LiveLabs* if not already opened, then click on *Sign In*
 
     ```
-    <copy>sudo su - oracle</copy>
+    <copy>http://bit.ly/golivelabs</copy>
     ```
 
-## **STEP 1**: Validate the environment
-1. As user *oracle* from any of the sessions started above, verify that the DB listener and all databases are up and running.
+    ![](./images/livelabs-login-1.png " ")
 
-    ```
-    <copy>
-    systemctl status oracle-database
-    </copy>
-    ```
-    ![](./images/check-db-service-up.png " ")
+2. Provide your login credentials and click on *Sign In*
 
-    ***Note***: The host is preconfigured to automatically start the database and database listener.
+    ![](./images/livelabs-login-2.png " ")
 
-2. Review environment details
+3. Click on *My Reservations*
 
-    This existing environment was set up using the LCM Automated setup utility for 11.1.2.3. This VM contains an 11g database, plus an integrated setup of OUD and OAM and OIM all at the 11.1.2.3 level. Some pertinent info for the existing setup is:
+    ![](./images/livelabs-reservations-1.png " ")
 
-    - **Domain locations**: /u01/app/oracle/config/domains
-    - **Instances**: /u01/app/oracle/config/instances
-    - **Access MW_HOME**: /u01/app/oracle/products/access
-    - **Identity MW_HOME**: /u01/app/oracle/products/identity
-    - **Directory MW_HOME**: /u01/app/oracle/products/dir
+4. Click on *Launch Workshop*
 
-3. Review key authentication details
+    ![](./images/livelabs-reservations-2.png " ")
 
-    - User connections in SQL Developer and jXplorer are pre-defined for some of the users.
-    - Password for all users is "*IAMUpgrade12c##*" with the exception of Guacamole remote desktop access provided above.
-    - Key users:
-        - **WLS Domain User**: weblogic
-        - **OAM User**: oamadmin
-        - **OIM User**: xelsysadm
-        - **OUD User**: Directory Manager
+5. Click on *-* next to *Workshop Details* and *Let's Get Started* to collapse
 
-4. As user *oracle*, review staged software needed for all labs.
-    For your convenience all IAM 12c software you will need for upgrading the suite have been staged on the instance under */home/oracle/Downloads*
+    ![](./images/livelabs-reservations-3.png " ")
 
-    ```
-    <copy>ls -ls ~oracle/Downloads</copy>
-    ```
-    ![](./images/staged-software.png " ")
+6. Click on *Open the workshop instructions in a new tab*
 
-## **STEP 2**: Start IAM 11g Suite
+    ![](./images/livelabs-reservations-4.png " ")
+
+    ![](./images/livelabs-reservations-5.png " ")
+
+## **STEP 4:** Start Oracle IAM 11.1.2.3 Components
 
 1.  From any of the terminal session started above, proceed as shown below to start all components as “*oracle*” user
 
@@ -175,19 +153,29 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+## **STEP 5:** Login to Host using SSH Key based authentication (Optional)
+While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+  - Authentication OS User - “*opc*”
+  - Authentication method - *SSH RSA Key*
+  - OS User – “*oracle*”.
+
+1. First login as “*opc*” using your SSH Private Key
+
+2. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 Use these links to get more information about Oracle Identity and Access Management:
-- [IAM 11g to 12c upgrade documentation](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/upgrade.html).  
-- [Oracle Identity Management Website](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
-- [Oracle Identity Governance Documentation](https://docs.oracle.com/en/middleware/idm/identity-governance/12.2.1.4/index.html)
-- [Oracle Access Management Documentation](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.4/books.html)
+- [Oracle Identity Management 12.2.1.4.0](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html).  
 
 ## Acknowledgements
 * **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
-* **Contributors** -  Eric Pollard, Rene Fontcha  
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-
-## Need Help?
-Please submit feedback or ask for help by sending an email to [livelabs-help-iam_us@oracle.com](livelabs-help-iam_us@oracle.com). Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.
+* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021

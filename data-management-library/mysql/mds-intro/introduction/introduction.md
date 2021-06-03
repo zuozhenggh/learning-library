@@ -18,7 +18,7 @@ you to:
 production ready, pre-configured MySQL database.
 
 * Automate database specific tasks such as configuration,
-security patching, backup, and monitoring.
+security patching, backup, HA, and monitoring.
 
 * Choose from multiple compute shapes, depending on
 your application and capacity requirements.
@@ -55,14 +55,15 @@ In this lab, you will be guided through the following steps:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Some Experience with MySQL Shell - [MySQL Site](https://www.mysql.com).
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+* Some Experience with MySQL Shell - [MySQL Site](https://dev.mysql.com/doc/mysql-shell/8.0/en/).
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** -  Airton Lastori, MySQL Principal Product Manager, MySQL Product Management 
+* **Contributors** -  Priscila Galvao, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, April 2021
 
 

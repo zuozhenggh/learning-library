@@ -21,7 +21,8 @@
         "title": "Lab 2: JSON in Autonomous Database",
         "description": "JSON Documents",
         "publisheddate": "4/05/2020",
-        "filename": "../../adb-json/json-adb.md"
+        "filename": "../../adb-json/json-adb.md",
+        "type": "19c"
       },
       {
         "title": "Lab 3: Advanced JSON in Autonomous Database",

@@ -21,9 +21,9 @@ In this lab, you will:
 
 ## **STEP 1**: Select Spatial Studio from Marketplace
 
-1. Log into your Oracle Cloud, click the main hamburger menu, and select  Marketplace > Applications
+1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
-    ![Image alt text](images/env-marketplace-1.png "Image title")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")	
 
 2. Search for Spatial Studio and then click on the Oracle Spatial Studio app
 
@@ -42,23 +42,23 @@ In this lab, you will:
 
 2. Select Availability Domain and Shape for the Compute Instance.   
 
-  *  Details on compute shapes are [here](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)
-  *  Check for quota availability of your desired Shape in Availabilty Domains
-    *  This is particularly important when using an Always Free shape.
-    *  In the OCI Console, navigate to Governance > Limits, Quotas, and Usage
-    *  For Service select Compute and for Scope select an Availability Domain. Confirm availability of your desired Shape. Change the Availability Domain selection if necessary to identify available quota.
+   Details on compute shapes are [here](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm). Check for quota availability of your desired Shape in Availability Domains. This is particularly important when using an Always Free shape:
+      *  In the OCI Console, navigate to Governance > Limits, Quotas, and Usage
+      *  For Service select Compute and for Scope select an Availability Domain 
+      *  Confirm availability of your desired Shape
+      *  Change the Availability Domain selection if necessary to identify available quota
 
-  ![Image alt text](images/env-marketplace-4-1.png "Image title")
+    ![Image alt text](images/env-marketplace-4-1.png "Image title")
 
-  Make selections.
+      Having confirmed quota, make selections in Create Stack wizard.
 
-  ![Image alt text](images/env-marketplace-5.png "Image title")
+    ![Image alt text](images/env-marketplace-5.png "Image title")
 
-  Then scroll down.
+      Then scroll down.
 
 3. Optionally change the HTTPS port and Spatial Studio admin user name from the defaults. For Spatial Studio Admin authentication, you have the option to use OCI Vault Secrets or a password. The image below shows an example using a password. For production deployments you are encouraged to use OCI Vault Secrets. Scroll down to the the section on Configuring Networking.
    
-   Note: By default the Spatial Studio admin user name is **studio\_admin**. This is an Spatial Studio application user and is distinct from the database user name (studio\_repo) created in Lab 3 for the repository schema.
+   Note: By default the Spatial Studio admin user name is **admin**. This is an Spatial Studio application user and is distinct from the database user name (studio\_repo) created in Lab 3 for the repository schema.
   
 
   ![Image alt text](images/env-marketplace-6.png "Image title")
@@ -71,7 +71,7 @@ In this lab, you will:
 
   Scroll down to the SSH Keys section.
 
-1. Loading a SSH public key enables access to Spatial Studio's file system for administrative purposes. The dialog has links to general SSH connection documentation. Submit your SSH public key by browsing to the key file or copy-pasting the key string. If you load you SSH public key from a file, the key file name will be displayed as shown in the image below. Click Next.
+5. Loading a SSH public key enables access to Spatial Studio's file system for administrative purposes. The dialog has links to general SSH connection documentation. Submit your SSH public key by browsing to the key file or copy-pasting the key string. If you load you SSH public key from a file, the key file name will be displayed as shown in the image below. Click Next.
 
   ![Image alt text](images/env-marketplace-8.png "Image title")
 
@@ -103,7 +103,7 @@ In this lab, you will:
 
   Click the link to continue to the website.
 
-2. Enter the Spatial Studio admin user name (default is studio_admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
+2. Enter the Spatial Studio admin user name (default is admin) and the password you entered in the Step 2 (Create Stack wizard, item 3). Then click Sign In.
 
   ![Image alt text](images/env-marketplace-14.png "Image title")
 
@@ -203,9 +203,9 @@ Oracle Spatial Studio is now provisioned and tested. The following Lab provides 
 
  **If you would like to fully remove your Marketplace deployment, proceed with the following.**
 
-1. Navigate to Resources > Stack
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
-    ![Image alt text](images/env-marketplace-19.png "Image title")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
 2. Choose the Compartment and Name used in STEP 2. In the example shown below, a compartment named sandbox and Stack named Oracle Spatial Studio was used.
 

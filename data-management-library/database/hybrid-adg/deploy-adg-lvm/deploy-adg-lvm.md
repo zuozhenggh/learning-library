@@ -79,14 +79,14 @@ To manually delete the database on the cloud host, run the steps below.
       [oracle@dbstby ~]$ sqlplus / as sysdba
       
       SQL*Plus: Release 19.0.0.0.0 - Production on Fri Jan 31 08:20:03 2020
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
       
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
       
       
       Connected to:
       Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
       
       SQL> set heading off linesize 999 pagesize 0 feedback off trimspool on
       SQL> spool /tmp/files.lst
@@ -117,7 +117,7 @@ To manually delete the database on the cloud host, run the steps below.
       ORACLE instance shut down.
       SQL> exit
       Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
       [oracle@dbstby ~]$ 
       ```
 
@@ -298,7 +298,7 @@ A static listener is needed for initial instantiation of a standby database. The
       [oracle@dbstby ~]$ sqlplus / as sysdba
 
       SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 10:50:18 2020
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
 
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
@@ -315,7 +315,7 @@ A static listener is needed for initial instantiation of a standby database. The
       Database mounted.
       SQL> exit
       Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
       [oracle@dbstby ~]$ 
       ```
 
@@ -495,11 +495,11 @@ The standby database can be created from the active primary database.
       ORACLE instance shut down.
       SQL> exit
       Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
       [oracle@dbstby ~]$ rman target /
 
       Recovery Manager: Release 19.0.0.0.0 - Production on Fri Jan 31 12:41:27 2020
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
 
       Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
 
@@ -611,7 +611,7 @@ The standby database can be created from the active primary database.
       [oracle@dbstby ~]$ sqlplus / as sysdba
 
       SQL*Plus: Release 19.0.0.0.0 - Production on Sat Feb 1 11:16:31 2020
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
 
       Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
@@ -752,7 +752,7 @@ The standby database can be created from the active primary database.
       ```
       [oracle@dbstby ~]$ dgmgrl sys/Ora_DB4U@ORCL
       DGMGRL for Linux: Release 19.0.0.0.0 - Production on Sat Feb 1 03:51:49 2020
-      Version 19.7.0.0.0
+      Version 19.10.0.0.0
 
       Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
 

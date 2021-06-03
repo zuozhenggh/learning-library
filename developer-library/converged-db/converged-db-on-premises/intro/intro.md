@@ -29,9 +29,11 @@ You will also download Oracle SQL Developer to help execute the programs associa
 
 ### Prerequisites
 - Oracle SQL Developer client
-- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [What is a converged database?](https://blogs.oracle.com/database/what-is-a-converged-database)

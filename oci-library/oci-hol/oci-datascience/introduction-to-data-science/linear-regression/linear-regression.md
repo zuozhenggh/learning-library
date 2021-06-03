@@ -27,24 +27,26 @@ In this lab you will:
 
 This guide shows how to use the Resource Manager to provision the service using Resource Manager. This process is mostly automated. However, if you prefer a step-by-step manual approach to control every aspect of the provisioning, please follow the following instructions instead: [manual provisioning steps](https://docs.cloud.oracle.com/en-us/iaas/data-science/data-science-tutorial/tutorial/get-started.htm#concept_tpd_33q_zkb).
 
-1. In your Oracle Cloud console, open the menu.
+1. Download the terraform configuration source
+
+    Download [Terraform configuration source](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Y1AdqPkxQdFho1SEuMMO7W8DlMWAkr0FUwdnL-m3ysgXirfHz9IV48yyAkRARF-b/n/odca/b/datascienceworkshop/o/oci-ods-orm.zip) and store it on your local PC. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .zip
+
+2. In your Oracle Cloud console, open the menu.
    ![](./images/openmenu.png)
 
-2. Select Resource Manager -> Stacks.
+3. Select Resource Manager -> Stacks.
 
    ![](./images/resourcemanager.png)
 
-3. Click the "Create Stack" button.
+4. Click the "Create Stack" button.
 
    ![](./images/createstackbutton.png)
 
-4. Choose "Sample Solution" and click the button "Select Solution".
+5. Select the configuration source you download earlier
 
-   ![](./images/newimage1.png)
+    Select ".ZIP" and drag the file you downloaded to the box.
 
-5. Check the "Data Science" solution and click "Select Solution".
-
-   ![](./images/newimage2.png)
+    ![](./images/select-zip.png)
 
 6. Choose a compartment that you've created or use Root.
 
@@ -54,19 +56,17 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    ![](./images/newimage4.png)
 
-8. Configure the Project and Notebook Session
+8. Disable Project and Notebook creation
 
-   Select "Create a Project and Notebook Session".
+    In the section "Project and Notebook Configuration" *uncheck* the checkbox "Create a Project and Notebook Session" (we will create them using the console later).
 
-   We recommend you choose VM.Standard2.8 (*not* VM.Standard.*E*2.8) as the shape. This is a high performance shape, which will be especially useful when we run AutoML later on.
+    ![](./images/disable-ods-creation.png)
 
-   ![](./images/newimage5b.png)
-
-9. Disable the option "Enable Vault Support".
+9. Make sure "Enable Vault Support" is disabled
 
    ![](./images/newimage6.png)
 
-10. Disable the option "Provision Functions and API Gateway".
+10. Make sure "Provision Functions and API Gateway" is disabled
 
    ![](./images/disablefunctions.png)
 
@@ -86,95 +86,116 @@ This guide shows how to use the Resource Manager to provision the service using 
 
 14. Click Apply once more to confirm the submission of the job.
 
-   Provisioning should take about 20 minutes after which the status of the Job should become "Succeeded".
+   Provisioning should take about 5 minutes after which the status of the Job should become "Succeeded".
+
+15. Create Oracle Data Science Project
+
+    Open the OCI Data Science projects and choose "Create Project".
+
+    ![](./images/open-ods.png)
+
+    ![](./images/create-project-1.png)
+
+    Choose a name and description and press "Create".
+
+    ![](./images/create-project-2.png)
+
+16. Provision an Oracle Data Science notebook
+
+    ![](./images/create-notebook-1.png)
+
+    - Select a name.
+    - We recommend you choose VM.Standard2.8 (*not* VM.Standard.*E*2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
+    - Set blockstorage to 50 GByte.
+    - Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
+
+    ![](./images/create-notebook-2.png)
+
+    Finally click "Create". The process should finish after about 5 minutes and the status of the notebook will change to "Active".
 
 ## **STEP 2:** Open the OCI Data Science notebook
 
-1. Open OCI Data Science projects console
-
-   ![](./images/open-projects.png)
-
-2. Open the project that was provisioned
-
-   The name of the project may be different than shown here in the screenshot.
-
-   ![](./images/open-project.png)
-
-3. Open the notebook that was provisioned
+1. Open the notebook that was provisioned
 
    The name of the notebook may be different than shown here in the screenshot.
 
    ![](./images/open-notebook.png)
 
-## **STEP 3:** Upload House Sales Data
+   ![](./images/open-notebook2.png)
+
+## **STEP 3:** Install a Conda Package
+
+   A Conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. We are going to use the General Machine Learning for CPUs conda. The following commands will install this Conda.
+
+   1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
+   1. Run the command: `odsc conda install -s mlcpuv1`
+   1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
+   1. Wait for the conda package to be installed.
+
+   This will take about 5 minutes.
+
+## **STEP 4:** Prepare the House Sales Data for analysis
 
 1. Download the dataset with the house prices and characteristics.
 
-   Download [The training dataset](files/housesales.csv) (the dataset is public)
+    Download [The training dataset](files/housesales.csv) (the dataset is public). Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .csv
 
-   Click on the link, then use the `"Raw"` button and then right click `"Save As"`. Make sure to save these with extension `CSV`. Some browsers try to convert this to Excel format, which is incorrect.
-
-2. Review the datasets.
+2. Review the dataset (e.g. use a text editor).
 
    The column names are explained [here](files/data-description.txt). This document also explains the possible list-of-values for categorical attributes.
 
-## **STEP 4:** Prepare your notebook
-
-1. Open the notebook (in OCI) that you created in the prerequisites
-
-   ![Open Notebook](images/opennotebook2.png)
-
-2. Upload the dataset by dragging it to the left panel
+3. Upload the dataset by dragging it to the left panel
 
    ![Upload Dataset](images/uploaddataset.png)
 
-3. Create a new notebook
+## **STEP 5:** Start the Python notebook
 
-   Jupyter is a notebook environment that allows on-the-fly Python execution. It allows you to mix Python code with text for documentation. Create a new Jupyter notebook by clicking on the button that shows `"Python 3"`.
+1. Open Launcher
 
-   ![Create Notebook](images/createjupyternotebook.png)
+    If you don't have a launcher open yet, do so by going to File -> New Launcher. ![Start Python notebook](images/new-launcher.png).
 
-## **STEP 5:** Data Exploration
+2. Start notebook
 
-1. Understanding Data Exploration
+    It is **important** to select the Python environment with the right Conda environment that we just installed. Look for the notebook that uses Conda **"mlcpuv1"** and open it. ![Start Python notebook](images/start-python-notebook.png)
 
-   The goals of this are to identify what data you have and what is usable, identify issues such as missing values and outliers, and Forf ideas of new features that could be calculated (Feature Engineering). Later on we'll use the knowledge that we gain during Data Exploration to decide which data transformations to perform.
+## **STEP 6:** Data Exploration
 
-2. Copy the code for loading the required Python libraries
+The goals of Data Exploration are to identify what data you have and what is usable, identify issues such as missing values and outliers, and to form ideas of new features that could be calculated (Feature Engineering). Later on we'll use the knowledge that we gain during Data Exploration to decide which data transformations to perform.
 
-   `Pandas` is a library that's used for working with data, e.g. displaying it and doing data transformations.
+1. Copy the code for loading the required Python libraries
 
-   - `Numpy` is a library to work with arrays and for calculations.
-   - `Sklearn` is the standard Python library for machine learning. It provides many unsupervised and supervised learning algorithms.
-   - `Seaborn` is a Python data visualization library based on matplotlib.
+    - `Pandas` is a library that's used for working with data, e.g. displaying it and doing data transformations.
+    - `Numpy` is a library to work with arrays and for calculations.
+    - `Sklearn` is the standard Python library for machine learning. It provides many unsupervised and supervised learning algorithms.
+    - `Seaborn` is a Python data visualization library based on matplotlib.
 
-   Press the copy button on the fragment below.
+    Press the copy button on the fragment below.
 
-    ```python
-    <copy>
-    import pandas as pd
-    import matplotlib.pyplot as plot
-    import seaborn as sns
-    import numpy as np
-    from scipy.stats import norm
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.model_selection import train_test_split
-    from sklearn import linear_model
-    from sklearn.metrics import mean_squared_error
-    from scipy import stats
-    import warnings
-    warnings.filterwarnings('ignore')
-    %matplotlib inline
-    </copy>
-    ```
+     ```python
+     <copy>
+     import pandas as pd
+     import matplotlib.pyplot as plot
+     import seaborn as sns
+     import numpy as np
+     from scipy.stats import norm
+     from sklearn.preprocessing import StandardScaler
+     from sklearn.model_selection import train_test_split
+     from sklearn import linear_model
+     from sklearn.metrics import mean_squared_error
+     from scipy import stats
+     import warnings
+     warnings.filterwarnings('ignore')
+     %matplotlib inline
+     </copy>
+     ```
 
-3. Paste the code into the Notebook and run it
+2. Paste the code into the Notebook and run it
 
    ![Run Script](images/runscript.png)
 
    Follow the copy-paste approach every time you see a piece of code like this.
 
-4. Load the training data
+3. Load the training data
 
    We'll split this into train and test later. All these type of data operations are handled by the Pandas library (named `"pd"` here)
 
@@ -184,11 +205,9 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-5. Check how much data we have
+4. Check how much data we have
 
    Is the dataset large enough to train a model?
-
-   The following code shows that there are 1460 rows, which at first sight looks like a good enough to train an initial model. The data is not extensive enough for production use but would help establish a good baseline. We also see that there are 80 input features that we can potentially use to predict our target variable.
 
     ```python
     <copy>
@@ -196,11 +215,13 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-6. Review the target attribute: `SalePrice`
+    This shows that there are 1460 rows, which at first sight looks like a good enough to train an initial model. The data is not extensive enough for production use but would help establish a good baseline. We also see that there are 80 input features that we can potentially use to predict our target variable.
 
-   Before we look at the input features, let's have a close look at our Target attribute: `SalePrice`.
+5. Review the target attribute: `SalePrice`
 
-   First, let's display some values. The `[:10]` selects only the first 10 rows.
+    Before we look at the input features, let's have a close look at our Target attribute: `SalePrice`.
+
+    First, let's display some values. The `[:10]` selects only the first 10 rows.
 
     ```python
     <copy>
@@ -208,7 +229,7 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-7. Let's check if there are any empty values
+6. Let's check if there are any empty values
 
     ```python
     <copy>
@@ -216,7 +237,7 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-8. Let's check the price range:
+7. Let's check the price range:
 
     ```python
     <copy>
@@ -227,11 +248,9 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-9. What can we conclude from the above?
+    This tells us that *SalePrice* is an integer and has numbers in the range that we would expect from house prices. There are no empty values. We could see however that the price range is very wide from a 34900 up to 755000. This would require to scale the price to allow the algorithm to learn better.
 
-   *SalePrice* is an integer and has numbers in the range that we would expect from house prices. There are no empty values. We could see however that the price range is very wide from a 34900 up to 755000. This would require to scale the price to allow the algorithm to learn better.
-
-10. Which columns will we select as input features for our model?
+8. Which columns will we select as input features for our model?
 
    Let's start by listing all the columns.
 
@@ -241,11 +260,9 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-11. Separate the columns into numerical and categorical
+9. Separate the columns into numerical and categorical
 
-   As we can see there are too many, maybe more useful will be to separate them and see only the numerical and the categorical ones.
-
-   Let's get a list of all numeric features first.
+    Let's get a list of all numeric features first.
 
     ```python
     <copy>
@@ -253,7 +270,9 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-12. Show a sample of numerical columns
+    As we can see there are too many, maybe more useful will be to separate them and see only the numerical and the categorical ones.
+
+10. Show a sample of numerical columns
 
    Now that we see the numeric columns we could also show a sample to get some impression about the data.
 
@@ -263,7 +282,7 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-13. Show a list of categorical columns
+11. Show a list of categorical columns
 
    We could do the same for all categorical variables, notice this time we use the property `exclude` in the `select_dtypes` function...
 
@@ -273,7 +292,7 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-14. Show a sample of categorical variables
+12. Show a sample of categorical variables
 
     ```python
     <copy>
@@ -281,26 +300,21 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-15. What can we conclude about the columns?
-   There are many input features that we could potentially use. Some of these columns are self explanatory, others not so much. To understand what each column mean, have a look at [data_scription.txt](./data/data-description.txt) for background.
+13. What can we conclude about the columns?
 
-16. Which columns would we select intuitively?
+    There are many input features that we could potentially use. Some of these columns are self explanatory, others not so much. To understand what each column means, have a look at [data_description.txt](./files/data-description.txt) for background.
 
-   To start with, let's first take an intuitive approach. Ask yourself:
+14. Which columns would we select intuitively?
 
-   `"Which of these columns is likely of value to predict Sale Price?"`
-   `"Which factors of a house would I look at yourself when making a buying decision?"`
-   `"Is enough information available in these columns, are there any empty values?"`
+    To start with, let's first take an intuitive approach. Ask yourself:
 
-   Imagine that we've decide that we believe the following features are relevant:
+   "Which of these columns is likely of value to predict Sale Price?"
+   "Which factors of a house would I look at yourself when making a buying decision?"
+   "Is enough information available in these columns, are there any empty values?"
 
-   `GrLivArea`: size of living area
-   `TotalBsmtSF`: size of basement
-   `OverallQual`: overall quality category
-   `YearBuilt`: year house was built
-   `MSZoning`: A=Agriculture, C=Commercial, RH=Residential High Density, etc.
+   Imagine that we've decide that we believe the following features are relevant: `GrLivArea` size of living area, `TotalBsmtSF` size of basement, `OverallQual` overall quality category, `YearBuilt` year house was built `MSZoning` A=Agriculture, C=Commercial, RH=Residential High Density, etc.
 
-17. Are the columns we selected intuitively also correlated with the Sale Price?
+15. Are the columns we intuitively selected also actually correlated with the Sale Price?
 
    Let's test our theories that these input features are correlated with Sale Price. We'll start with the numerical variables first: `GrLivArea`, `TotalBsmtSF`, `OverallQual` and `YearBuilt`.
    Because all of these are numerical continuous attributes, we can use scatter plots here.
@@ -323,21 +337,20 @@ This guide shows how to use the Resource Manager to provision the service using 
     plot.xlabel("YearBuilt")
     plot.ylabel("SalePrice")
     plot.show()
-    <copy>
+    </copy>
     ```
 
-18. What can we conclude from this plot?
+      We can conclude that:
+    `GrLivArea`: There is a linear correlation with `SalePrice`; We can draw a straight line from the bottom-left to the top-right.
+    `TotalBsmtSF`: It appears to be an relationship between `TotalBsmtSF` and `SalePrice` too but not that obvious. It seems a higher basement sizes lead to higher prices but we could notice that there are some outliers.
+    `OveralQual`: As expected, there is a higher sales price when overal quality perception is higher. But that is not nessary for the entire price range. Probably the quality of the house is not enough and the price would depend on the location or the zoning as well.
+    `YearBuilt`: This relationship is a little less obvious, but there's a trend for higher prices for more recent construction.
 
-   `GrLivArea`: There is a linear correlation with `SalePrice`; We can draw a straight line from the bottom-left to the top-right.
-   `TotalBsmtSF`: It appears to be an relationship between `TotalBsmtSF` and `SalePrice` too but not that obvious. It seems a higher basement sizes lead to higher prices but we could notice that there are some outliers.
-   `OveralQual`: As expected, there is a higher sales price when overal quality perception is higher. But that is not nessary for the entire price range. Probably the quality of the house is not enough and the price would depend on the location or the zoning as well.
-   `YearBuilt`: This relationship is a little less obvious, but there's a trend for higher prices for more recent construction.
+    These attributes appear to be of predictive value and we definitely want to keep them in our training set!
 
-   These attributes appear to be of predictive value and we want to keep them in our training set.
+    On another note, we see several `outliers`. In particular, the attribute `GrLivArea` shows that there are some houses with exceptionally large living areas given their price. We could notice this also for the `TotalBsmtSF`. Generally it is recommended to build the initial model with all the available values first and then start removing outliers to see if this would improve the prediction and make the model generalize better.
 
-   On another note, we see several `outliers`. In particular, the attribute `GrLivArea` shows that there are some houses with exceptionally large living areas given their price. We could notice this also for the `TotalBsmtSF`. Generally it is recommended to build the initial model with all the available values first and then start removing outliers to see if this would improve the prediction and make the model generalize better.
-
-19. Is the categorical attribute `MSZoning` also correlated with `SalePrice`?
+16. Is the categorical attribute `MSZoning` also correlated with `SalePrice`?
 
    This attribute contains the type of property (`A=Agriculture`, `C=Commercial`, `RH=Residential High Density`, et cetera). Correlation between a categorical and a continuous attribute (SalePrice) can be visualized as a boxplot.
 
@@ -351,11 +364,10 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-20. What can we conclude from the MSZoning plot?
+   What can we conclude from this? The boxplots for the various types of properties look very different. From the plot we could see that the residential areas seems to be more expensive as expected than commercial but the price range is high. So, again, MSZoning appears to contain important
+   information to predict the price.
 
-   The boxplots for the various types of properties look very different. From the plot we could see that the residential areas seems to be more expensive as expected than commercial but the price range is high.
-
-21. What is the relationship between Neighborhood and SalePrice?
+17. What is the relationship between Neighborhood and SalePrice?
 
    Let's explore also the relationship of the Neighborhood to the price. We can plot the data using the same technique.
 
@@ -369,11 +381,9 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-22. What can we conclude from the Neighborhood plot?
+   The plot is not necessary conclusive, but it appears that as expected some areas are more expensive than others. As such we should keep this columns and use it in the model. Notice that some areas shown very large range of prices and spikes like `NridgHt` or `StoneBr` or very large outliers like in `NoRidge` with prices more than double as the usual range for that neighborhood. After the initial model build you could try to remove these outliers and test if the model would have better performance.
 
-   The plot is not nesserary conclusive but it appears that as expected some areas are more expensive than others. As such we should keep this columns and use it in the model. Notice that some areas shown very large range of prices and spikes like `NridgHt` or `StoneBr` or very large outliers like in `NoRidge` with prices more than double as the usual range for that neighborhood. After the initial model build you could try to remove these outliers and test if the model would have better performance.
-
-23. A different approach: Systematically checking for correlation between input features and our target
+18. A different approach: Systematically checking for correlation between input features and our target
 
    It becomes clear that manually investigating all of the attributes this way is very time consuming. Therefore, let's take a more systematic approach. Ideally, we would like to see the correlation between all input attributes and the target `SalePrice`.
 
@@ -385,61 +395,24 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-24. What conclusion can we draw from the correlation plot?
+   The conclusion is that our intuition of thinking that `TotalBsmtSF`, `OverallQual`, `GrLivArea` and `YearBuilt` are of importance, was correct. However, there are other features listed as high correlation, such as `GarageCars`, `GarageArea` and `Fullbath`.
 
-   Our initial intuition of thinking that `TotalBsmtSF`, `OverallQual`, `GrLivArea` and `YearBuilt` are of importance, was correct. However, there are other features listed as high correlation, such as `GarageCars`, `GarageArea` and `Fullbath`.
+   Here's a list  of the features that are most correlated with our target:
+    - `OverallQual`: Rates the overall material and finish of the house (1 = Very Poor, 10 = Very Excellent)
+    - `GrLivArea`: Above grade (ground) living area square feet
+    - `GarageCars`: Size of garage in car capacity
+    - `GarageArea`: Size of garage in square feet
+    - `TotalBsmtSF`: Total square feet of basement area
+    - `1stFlrSF`: First Floor square feet
+    - `FullBath`: Full bathrooms above grade
+    - `TotRmsAbvGrd`: Total rooms above grade (does not include bathrooms)
+    - `YearBuilt`: Original construction date
 
-   Here's an explanation of the features that are most correlated with our target:
+19. Is there data missing from some of the columns?
 
-   `OverallQual`: Rates the overall material and finish of the house (1 = Very Poor, 10 = Very Excellent)
-   `GrLivArea`: Above grade (ground) living area square feet
-   `GarageCars`: Size of garage in car capacity
-   `GarageArea`: Size of garage in square feet
-   `TotalBsmtSF`: Total square feet of basement area
-   `1stFlrSF`: First Floor square feet
-   `FullBath`: Full bathrooms above grade
-   `TotRmsAbvGrd`: Total rooms above grade (does not include bathrooms)
-   `YearBuilt`: Original construction date
+   Many machine learning models are unable to handle missing data. We have to find out how much data is missing.
 
-25. What is the relationship between GarageCars and GarageArea?
-
-   Of the top correlated attributes, two are related to the garage(s) of the house. It appears that GarageArea and GarageCars are very similar types of information. This phenomenon is called `colinearity`. Let's test if GarageArea and GarageCars are correlated.
-
-    ```python
-    <copy>
-    var = 'GarageCars'
-    data = pd.concat([alldata['GarageArea'], alldata[var]], axis=1)
-    f, ax = plot.subplots(figsize=(8, 6))
-    fig = sns.boxplot(x=var, y="GarageArea", data=data)
-    fig.axis(ymin=0, ymax=1500);
-    </copy>
-    ```
-
-26. What conclusion can we draw from the colinearity plot?
-
-   Indeed, there's a pattern here. It's logical that a bigger size of garage (GarageArea) will allow for more cars to park (GarageCars) and maybe even suggest bigger house too. However we could notice also a lot of outliers where houses with single or two cars garage are as expensive as the houses with three or four cars garage. This could mean that other features have stronger relationship to the price or we have outliers that we should try to remove later.
-
-27. How can we deal with Colinearity in a systematic way?
-
-   To do this, we would have the check the correlation between all attributes (!) There's a visualization that can help us do this: `The Correlation Matrix Heatmap`
-
-    ```python
-    <copy>
-    corrmat = alldata.corr()
-    f, ax = plot.subplots(figsize=(15, 15))
-    sns.heatmap(corrmat, vmax=.8, square=True);
-    </copy>
-    ```
-
-28. How do we interpret this chart?
-
-   We see that all attributes are listed on the vertical and the horizontal axis. Bright colors (white) mean high correlation. The diagonal line shows the correlation of each attribute with itself, and hence is correlated. If you check the very bottom "line", you see the correlation of all input features with `SalePrice`. The other bright spots indicate attributes that might contain similar information. For example, we see the correlation between `GarageArea` and `GarageCars`.
-
-   **Which other correlations do you see? Can you explain them?**
-
-29. Do we have Missing Data?
-
-   Many machine learning models are unable to handle missing data. We have to find out how much data is missing. At the moment of replacing missing data, we should first find out whether that would cause some kind of distortion in the data and have a negative effect on model quality.
+   At the moment of replacing missing data, we should first find out whether that would cause some kind of distortion in the data and have a negative effect on model quality.
 
    Therefore, we have to see if the missing data follows certain patterns.
 
@@ -454,28 +427,26 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-30. Conclusions on missing data
+    There are a lot of attributes with missing values. This is especially the case for attributes `PoolQC`, `MiscFeature`, `Alley`, `Fence` and `FireplaceQu`.
 
-   There are a lot of attributes with missing values. This is especially the case for attributes `PoolQC`, `MiscFeature`, `Alley`, `Fence` and `FireplaceQu`.
+20. Let's investigate the attributes with most missing values in detail
 
-31. Let's investigate the attributes with most missing values in detail
+   Have a look at the [data description](files/data-description.txt) for these columsn in particular. The description of the attribute `PoolQC` (pool quality) is as follows:
 
-   The description of the attribute `PoolQC` (pool quality) is as follows:
-
-   `Ex - Excellent`
-   `Gd - Good`
-   `TA - Average/Typical`
-   `Fa - Fair`
-   `NA - No Pool`
+    - `Ex - Excellent`
+    - `Gd - Good`
+    - `TA - Average/Typical`
+    - `Fa - Fair`
+    - `NA - No Pool`
 
    It seems sensible to assume that most houses don't have pools and therefore missing values simply mean `"No Pool"`. Therefore we make a note to replace those missing values with `"NA"`.
    Similarly, we make a note to replace the missing values for `MiscFeature`, `Alley`, `Fence` and `FireplaceQu` with `"NA"`.
 
-   The next attribute with many hidden values is `LotFrontage`, which means `"Linear feet of street connected to property"`. This is a continuous measure, and we choose that we will replace missing values by with the mean of the existing values.
+   The next attribute with many hidden values is `LotFrontage`, which means `"Linear feet of street connected to property"`. This is a continuous measure, and we choose that we will replace missing values by with the mean of the existing values. We'll see more of this in the Data Preparation stage.
 
-32. Check the distribution of the Target variable
+21. Check the distribution of the Target variable
 
-   It's important that the target variable follows Normal Probability distribution. If it does not, this will negatively impact the model's performance. We can check for this using a histogram, and including a normal probability plot. The Seaborn library does this for us.
+    It's important that the target variable follows Normal Probability distribution. If it does not, this will negatively impact the model's performance. We can check for this using a histogram, and including a normal probability plot. The Seaborn library does this for us.
 
     ```python
     <copy>
@@ -484,13 +455,11 @@ This guide shows how to use the Resource Manager to provision the service using 
     </copy>
     ```
 
-33. What conclusion can we draw from the Target variable plot?
+    We can conclude from this that the values of the Target variable currently deviate from the Normal Distribution. You see that it is left skewed. The regression algorithms that we will use later on has problems with such a distribution. We will have to address this problem.
 
-   This deviates from the Normal Distribution. You see that it is left skewed. The regression algorithms that we will use later on has problems with such a distribution. We will have to address this problem.
+## **STEP 7:** Data Preparation
 
-## **STEP 6:** Data Preparation
-
-During Data Exploration, we have realized that several changes must be made to the dataset. Data Preparation is a logical result of Data Exploration; we will now take action based on the insights that we gained earlier.
+   During Data Exploration, we have realized that several changes must be made to the dataset. Data Preparation is a logical result of Data Exploration; we will now take action based on the insights that we gained earlier.
 
 1. Update missing values
 
@@ -526,7 +495,7 @@ During Data Exploration, we have realized that several changes must be made to t
 
 3. Remove the Outliers
 
-  Also plot the chart again to check that the outliers have disappeared.
+    We are also plotting the chart again to check that the outliers have disappeared.
 
     ```python
     <copy>
@@ -539,11 +508,11 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
+      You notice that those outliers have disappeared.
+
 4. Handling the skewed distribution of the Target variable
 
    Do you remember that the histogram of `SalePrice` showed a positive skew? We can solve this problem by converting the target variable. We use a `-log-` transformation to make the variable fit normal distribution. Let's make the log transformation and show the histogram again to check the result.
-
-   After this the sales price will follow a normal distribution. We will use the newly created `y` variable later to fit our model.
 
     ```python
     <copy>
@@ -553,9 +522,11 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
+    You will notice that the sales price now follows a normal distribution. We will use the newly created `y` variable later to fit our model.
+
 5. Removing irrelevant features
 
-   In any case we will remove the ID column, which does not carry any predictive value. We will also remove the attributes that showed very low correlation with `SalePrice` during Data Exploration. Note that this is a fairly brute approach, but it is again sufficient for our exercise. After the first model build, you could start addining back some of the features and observe if the model will generalize better.
+   In any case we will remove the ID column, which does not carry any predictive value. We will also remove the attributes that showed very low correlation with `SalePrice` during Data Exploration. Note that this is a fairly brute approach, but it is again sufficient for our exercise. After the first model build, you could start adding back some of the features and observe if the model will generalize better.
 
     ```python
     <copy>
@@ -579,12 +550,12 @@ During Data Exploration, we have realized that several changes must be made to t
 
 6. Separating Target and Input Features
 
-   Scikit Learn expects that we deliver the data for training in two parts:
+    Scikit Learn expects that we deliver the data for training in two parts:
 
-   * A dataset with a single column, the target, in this case `SalePrice`. We did this already earlier by taking the `log` of the `SalePrice` and storing it in `"y"` variable.
-   * A dataset with all the input columns, in this case all columns apart from `SalePrice`. We will place this in variable "X".
+    - A dataset with a single column, the target, in this case `SalePrice`. We did this already earlier by taking the `log` of the `SalePrice` and storing it in `"y"` variable.
+    - A dataset with all the input columns, in this case all columns apart from `SalePrice`. We will place this in variable "X".
 
-   Get all the data with the exception of the `SalePrice`:
+    Get all the data with the exception of the `SalePrice` and place it in variable X:
 
     ```python
     <copy>
@@ -607,7 +578,7 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
-## **STEP 7:** Building the model
+## **STEP 8:** Building the model
 
    We will build a simple Linear Regression model. We will use the Scikit-Learn library for this.
 
@@ -617,11 +588,11 @@ During Data Exploration, we have realized that several changes must be made to t
 
    We'll reserve 20% of the total dataset for testing. The random_state variable is for initializng the randomizer. By hardcoding it here we make sure that we select the same records everytime that we run the script.
 
-   After this we will have 4 variables:
-   `X_train`: The input features of the training dataset.
-   `X_test`: The input features of the test dataset.
-   `y_train`: The target of the training dataset.
-   `y_train`: The target of the test dataset.
+    After this we will have 4 variables:
+    - `X_train`: The input features of the training dataset.
+    - `X_test`: The input features of the test dataset.
+    - `y_train`: The target of the training dataset.
+    - `y_train`: The target of the test dataset.
 
     ```python
     <copy>
@@ -640,11 +611,11 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
-## **STEP 8:** Verifying the performance of the model
+## **STEP 9:** Verifying the performance of the model
 
-   How accurate is our model? We will use the Test dataset for this.
+How accurate is our model? We will use the Test dataset for this.
 
-1. Apply the predictions on the Test dataset
+1. First apply the predictions on the Test dataset
 
     ```python
     <copy>
@@ -652,16 +623,34 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
-2. An intuitive, visual approach to verification
+2. Look at the prediction of one particular house
+
+    From the given test set we get the data of one house and check the predicted value.
+
+    ```python
+    <copy>
+    y_predicted[0]
+    </copy>
+    ```
+
+3. Convert the value back to an actual house price
+
+    You would notice that the price above is strange, it shows a number that doesn't seem to be a normal house Sales Price. If you remember we scaled the SalePrice by using np.log(SalePrice) to get the prices in smaller range and help the algorithm generalize and learn better. To get the real price now we need to revert back this scale. To do so we have to use np.exp.
+
+    ```python
+    <copy>
+    np.exp(y_predicted[0])
+    </copy>
+    ```
+
+4. An intuitive, visual approach to verification
 
    To verify the quality of the predictions, let's first use an intuitive visual approach, which works well for linear regression models. For this we will display in one plot:
 
-   The actual `SalePrice` (according to the original data in the Test dataset)
-   The predicted `SalePrice` (the value according to our model)
+    - a. The actual `SalePrice` (according to the original data in the Test dataset)
+    - b. The predicted `SalePrice` (the value according to our model)
 
-   We're plotting this as a scatter.
-
-   In ideal circumstances we'd like to see the predictions falling on the line of actual values. This would mean that Predicted and Actual Sale Prices are the same.
+    We're plotting this as a scatter.
 
     ```python
     <copy>
@@ -674,13 +663,15 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
-3. A measurable approach to verification
+    In ideal circumstances we'd like to see the predictions falling on the line of actual values. This would mean that Predicted and Actual Sale Prices are the same. In our case, although the points are not oriented in a perfectly straight line, the model appears to be fairly accurate.
 
-   How can we express the accuracy of the model in a more mathematical way? For that we use a quality metric, in this case we could use [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation).
+5. A measurable approach to verification
 
-   In essence `RMSE` measures the distance between the predictions and the actual values. A lower value for RMSE means a higher accuracy.
+    How can we express the accuracy of the model in a more mathematical way? For that we use a quality metric, in this case we could use [RMSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation).
 
-   RMSE by itself is not easy to interpret, but it can be used to compare different versions of a model, to see whether a change you've made has resulted in an improvement. Scikit-Learn has a function to calculate RMSE.
+    `RMSE` measures the distance between the predictions and the actual values. A lower value for RMSE means a higher accuracy.
+
+    RMSE by itself is not easy to interpret, but it can be used to compare different versions of a model, to see whether a change you've made has resulted in an improvement. Scikit-Learn has a function to calculate RMSE.
 
     ```python
     <copy>
@@ -688,94 +679,54 @@ During Data Exploration, we have realized that several changes must be made to t
     </copy>
     ```
 
-## **STEP 9:** Single house SalesPrice prediction
+## **STEP 10:** Store the model in the catalog and deploy it
 
-   Let's use now the model and try to predict the SalesPrice for a house. From the given test set we would get the data from one house, to see how this works and to have this as reference example later if you want to deploy the model and use it as REST Services for example.
+1. Make sure you have a working model
 
-1. Select one record of house data from the test set and see how it looks in JSON format:
+    The following requires that you built a model successfully in steps 1 to 9. If you had any problems, you can download a [prebuilt notebook](files/house-price-prediction.ipynb) with all the steps done for you. Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .ipynb
 
-    ```python
-    <copy>
-    r = X_test.iloc[2]
-    r.to_json()
-    </copy>
-    ```
+    After you've downloaded it, drag it into OCI Data Science and open it (using the right Conda environment "mlcpuv1". Then  run all the cells before going to the next step.
 
-2. Verify the record
+2. Store the model in the model catalog
 
-   This is the information from the test set for a single house, however we only need the data and not the names of each of the columns/features to pass to the model for prediction.
-
-   ![single house data](images/singlehousedata.png)
-
-3. Convert data into an array
-
-   Let's get the data into a form that would allow us to store it as array. If you execute following in your notebook:
+    If we want applications/business processes to make good use of our model, then we need to deploy it first. We start by publishing the model to the model catalog. The following will **serialize** the model along with some other artifacts and store it in the catalog under the name "house-price-model".
 
     ```python
     <copy>
-    r.to_csv(index=False, line_terminator=',')
+    import ads
+    from ads.common.model_artifact import ModelArtifact
+    from ads.common.model_export_util import prepare_generic_model
+    import os
+    from os import path
+    from joblib import dump
+    import cloudpickle
+    ads.set_auth(auth='resource_principal')
+    path_to_model_artifacts = "house-price"
+    generic_model_artifact = prepare_generic_model(
+        path_to_model_artifacts,
+        force_overwrite=True,
+        function_artifacts=False,
+        data_science_env=True)
+    with open(path.join(path_to_model_artifacts, "model.pkl"), "wb") as outfile: cloudpickle.dump(model, outfile)
+    catalog_entry = generic_model_artifact.save(display_name='house-price-model',
+        description='Model to predict house prices')
     </copy>
     ```
 
-4. Check the resulting array
+3. Deploy the model
 
-    <p>
-    '67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,'
-    </p>
+    Now we're going to deploy this model to its own compute instance. This will take the model from the catalog and create a runtime version of it that's ready to receive requests. This uses normal OCI compute shapes. Next, choose "Create Deployment".
 
-5. Create a new variable with that data
+    ![](./images/go-to-model-catalog.png)
+    ![](./images/create-deployment-button.png)
 
-  Notice that we are removing the last comma `(,)` from the array.
+    - Give the model deployment a name, e.g. "house price model deployment"
+    - Choose the right model (house-price-model)
+    - Choose a shape, one instance of VM.Standard2.1 is sufficient. Note that we could have chosen multiple instances, this is useful for models that are used very intensively.
 
-    ```python
-    <copy>
-    input = [[67.0,10656.0,8.0,2006.0,2007.0,274.0,0.0,1638.0,1646.0,0.0,1646.0,0.0,2.0,0.0,3.0,6.0,1.0,2007.0,3.0,870.0,192.0,80.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0]]
-    </copy>
-    ```
+    Finally, submit the deployment. This should take about 10 minutes. Finally, you should see that the compute instance is active.
 
-6. Make prediction on single house
-
-    ```python
-    <copy>
-    s_predicted = model.predict(input)
-    s_predicted
-    </copy>
-    ```
-
-7. Check the resulting prediction
-
-  The result should be
-
-```console
-array([12.42384482])
-```
-
-8. Convert house price back to normal range
-
-  You would notice that the price is strange, it shows a number that doesn't seem to be a normal house Sales Price. If you remember we scaled the SalePrice by using `np.log(SalePrice)` to get the prices in smaller range and help the algorithm generalize and learn better. To get the real price now we need to revert back this scale. To do so we have to use `np.exp(PredictedSalePrice)`, example:
-
-    ```python
-    <copy>
-    np.exp(12.42384482)
-    </copy>
-    ```
-
-9. Check the result of the conversion
-
-    ```console
-    248660.7558014956
-    ```
-
-10. Predict directly from test set array
-
-   In case you want to save yourself all this steps and execute the model directly against a house data in the test set, you could also access it directly from the test set array. Notice we used the third house data from the test set:
-
-    ```python
-    <copy>
-    single_predicted = model.predict(X_test[2:3])
-    single_predicted
-    </copy>
-    ```
+    ![](./images/deployed-model.png)
 
 ## Bonus: Train the model using AutoML
 
@@ -783,27 +734,35 @@ array([12.42384482])
 
    We will use it to train a model for the same problem as above (House Price Prediction), but this time automating the process using the various AutoML features. Once we've done that we will evaluate it using the ADS evaluation features and compare it with our "manually" built model that we created earlier.
 
+   This exercise will demonstrate how you can be more productive by using the various features of the ADS library.
+
    In this case, we've already prepared the notebook that you will run.
 
 1. Download the notebook
 
-  Download the [AutoML and Model Evaluation notebook](files/lab100-bonus-1.ipynb). Click on the link, then use the `"Raw"` button and then right click `"Save As"`. Make sure to save these with extension `ipynb`. Some browsers try to convert this to Txt format, which is incorrect.
+  Download the [AutoML and Model Evaluation notebook](files/lab100-bonus-1.ipynb). Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .ipynb
 
 2. Upload the notebook to OCI Data Science by dragging it to the left panel.
 
-   ![Upload Notebook](images/uploadnotebook.png)
+    Open it by double clicking it.
 
-3. Open the Notebook that you've just uploaded
+    ![Upload Notebook](images/uploadnotebook.png)
+
+3. Choose the right Conda environment
+
+    You can do this by clicking on the Python icon on the top-right and selecting the mlcpuv1 environment.
+
+    ![Select Conda environment](images/select-conda-env.png)
+
+4. Open the Notebook that you've just uploaded
 
    Now go through each of the cells and run them one by one.
+
+   This notebook demonstrates how you can be more productive by using the various features of the ADS library. You need far less code to create a well performing model quickly.
 
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
 * **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

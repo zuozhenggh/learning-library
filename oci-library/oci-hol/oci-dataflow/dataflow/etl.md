@@ -82,7 +82,9 @@ The data is provided in CSV format and your first step is to convert this data t
     At this stage your application Configuration should look like this :
     ![](../images/step2_add_args_java_app.png " ")
 
-  *Note: The output path should point to your bucket in the tenant*
+
+  *Note: The output path should point to your bucket in the tenancy*
+
 
 7. When done, click **Create**. When the Application is created, you see it in the Application list.
 
@@ -131,7 +133,3 @@ The data is provided in CSV format and your first step is to convert this data t
 - **Contributors** -
 - **Last Updated By/Date** -
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/Data flow). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -40,9 +40,9 @@ In this section, you will be provisioning an ADW database and an ATP database us
 
 First, we are going to create an ADW Instance.
 
-1.  Click the hamburger menu, search for **Autonomous Data Warehouse**, and click on it.
-
-    ![](./images/choose-adw.png  " ")
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2.  Choose your **Compartment** by clicking on the drop-down list and then click **Create Autonomous Database**.
 
@@ -78,9 +78,9 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 ## **STEP 2:** Create an ATP Instance
 
-1.  Click the hamburger menu and select **Autonomous Transaction processing**.
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-    ![](./images/choose-atp.png  " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Choose your **Compartment** by clicking on the drop-down list and then click **Create Autonomous Database**.
 
@@ -116,9 +116,9 @@ You now have created your first ATP instance.
 
 ## **STEP 3:** Create ML User in ADW
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
-
-    ![](./images/ml-adw.png " ")
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/adw-instance.png " ")
 
@@ -140,7 +140,7 @@ You now have created your first ATP instance.
 
 7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
-    ![](./images/ml-user.png  " ")
+    ![](./images/create-ml-user.png  " ")
 
 8. Notice that the **ML\_USER** is created.
 
@@ -148,9 +148,9 @@ You now have created your first ATP instance.
 
 ## **STEP 4:** Grant Privileges to ML_USER to access Database Actions
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADW instance.
-
-    ![](./images/ml-adw.png " ")
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/adw-instance.png " ")
 

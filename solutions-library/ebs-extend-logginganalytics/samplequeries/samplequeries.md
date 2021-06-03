@@ -4,11 +4,11 @@
 
 This lab will provide various example queries for you to create your own dashboards and widgets
 
-**Estimated Lab Time: 15 minutes**
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-**In this lab, you will:**
+In this lab, you will:
 * Be able to use some sample queries to help familiarize yourself further with valuable query searches
 
 ### Prerequisites
@@ -80,7 +80,4 @@ For more information on how to create widgets to understand your data refer to [
 * **Contributors** -  Kumar Varun, Logging Analytics Product Management
 * **Last Updated By/Date** - Quintin Hill, Cloud Engineering, Mar 8 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

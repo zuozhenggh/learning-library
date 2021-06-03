@@ -18,21 +18,22 @@ Micronaut also includes a persistence framework called Micronaut Data that preco
 This 2-hour lab walks you through the steps to use Micronaut, Micronaut Data
 and Oracle Cloud to connected to an Oracle Database.
 
-- Lab 1: Generate SSH Keys (5 minutes)
-- Lab 2: Provision OCI Resources (OCI VM, VCN and Autonomous Database) (20 minutes)
-- Lab 3: Setup your environment (10 minutes)
-- Lab 4: Create a new Micronaut Application (10 minutes)
-- Lab 5: Build an app with Micronaut and Micronaut Data (30 minutes)
-- Lab 6: Building a Native Image with GraalVM (15 minutes)
-- Lab 7: Deploy your app on an Oracle Cloud VM (15 minutes)
-- Lab 8: Terminate and Destroy OCI Resources (5 minutes)
+- Lab 1: Setup Oracle Autonomous Database(20 minutes)
+- Lab 2: Create a new Micronaut Application (15 minutes)
+- Lab 3: Build an app with Micronaut and Micronaut Data (30 minutes)
+- Lab 4: Building a Native Image with GraalVM (20 minutes)
+- Lab 5: Deploy to a Oracle Cloud VM (Optional)
+- Lab 6: Terminate and Destroy OCI Resources (Optional)
 
 ### Prerequisites
-- An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 - Understanding of the Java programming language
 - [Micronaut 2.4](https://micronaut.io/download.html) 
 - [GraalVM 21.0.0 for JDK 11](https://www.graalvm.org/docs/getting-started-with-graalvm/) 
 - An IDE such as [VS Code](https://code.visualstudio.com/) or [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac)
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 
 ## More Information
 - [Micronaut](https://micronaut.io/)

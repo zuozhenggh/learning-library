@@ -41,17 +41,21 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
     ![Source Database details](images/01_01_12_regSourceDB.png)
 
+    The database becomes Active after a few minutes.
+
 ## **STEP 2:** Enable the ggadmin user for the Source Database
 
 Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
 
-1.  In the Console navigation menu, under **Oracle Databases**, select **Autonomous Transaction Processing**.
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  From the list of databases, select **ATPSource**.
 
 3.  On the ATPSource Database Details page, click **Tools**, and then click **Open Database Actions**.
 
-4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment.
+4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your lab environment details.
 
 5.  Under **Administration**, click **Database Users**.
 
@@ -63,7 +67,9 @@ Although the ggadmin user is created during the database registration process, i
 
     ![Edit user](images/02-07-edit.png)
 
-Note that the user icon changes from a blue padlock to a green checkmark.
+    Note that the user icon changes from a blue padlock to a green checkmark.
+
+8.  Log out of Database Actions.
 
 ## **STEP 3:** Register the Target Database and enable the ggadmin user
 
@@ -83,7 +89,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
     ![Target Database details](images/02_10-ggs-regDB_target.png)
 
-    The source and target databases appear in the list of Registered Databases.
+    The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
 7.  Repeat the instructions under STEP 2 to enable the ggadmin user on the TargetADW database.
 
@@ -96,4 +102,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - March 2021
+* **Last Updated By/Date** - May 2021

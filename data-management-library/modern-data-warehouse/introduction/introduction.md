@@ -22,6 +22,8 @@ Estimated workshop time: 2 hours
 - Permission to manage the following types of resources in your tenancy: vcns, internet-gateways, route-tables, network-security-groups, subnets, autonomous-database-family, and instances.
 - Quota to create the following resources: 1 VCN, 2 subnets, 1 Internet Gateway, 1 NAT Gateway, 2 route rules, 1 ADW database instance, 1 DataCatalog instance, 1 Oracle Analytics Cloud (OAC) instance, and 2 compute instances (bastion + ODI compute node).
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 ## Labs
 Lab 1 - Deploy the Stack to provision Data Integrator, Autonomous Data Warehouse and Oracle Analytics (30 minutes)
 
@@ -58,7 +60,3 @@ Lab 5 - Perform Analysis - Import Dashboards (10 minutes)
  - **Contributors** - Clarence Ondieki, Maharshi Desai
  - **Last Updated By/Date** - Yash Lamba, February 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

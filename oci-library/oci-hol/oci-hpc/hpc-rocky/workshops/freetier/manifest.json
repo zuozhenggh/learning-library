@@ -1,14 +1,15 @@
 {
     "workshoptitle": "High Performance Compute - Rocky DEM",
-    "tutorials": [
-        {
-            "title": "Getting Started",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
+    "help": "livelabs-help-hpc_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Brief Introduction on Oracle HPC",
             "filename": "../../intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Rocky DEM Introduction",
@@ -31,7 +32,11 @@
         {
             "title": "Lab 5: Run Rocky DEM",
             "filename": "../../run/run.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }
-

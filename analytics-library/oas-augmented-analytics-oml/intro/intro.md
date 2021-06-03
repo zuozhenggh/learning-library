@@ -16,19 +16,21 @@ Oracle Converged Database affords native support for all modern data types as we
 * In-Memory technologies for real-time analytic  
 * Machine Learning   
 
-What many customers do not realize is that  these capabilities are now included free with every Oracle database license.The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of **professional** data scientists.
+What many customers do not realize is that  these capabilities are now included free with every Oracle database license. The Machine Learning capabilities within the Oracle Database are designed to enable and support the more robust and demanding needs of **professional** data scientists.
 
 ### Objectives
-This workshop illustrates you how you can leverge embedded augmented analytics and machine learning capabilities of OAS to deliver the fastest time to insight across all of your data. Additionally, you will leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.
+This workshop illustrates you how you can leverage embedded augmented analytics and machine learning capabilities of OAS to deliver the fastest time to insight across all of your data. Additionally, you will leverage the more comprehensive set of Oracle Machine Learning (OML) algorithms, now offered for free with each of your Oracle Database licenses.
 In this lab you will:
-* Leverage OAS capabilies to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
+* Leverage OAS capabilities to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
 * Learn Predictive Analytics in OAS to predict attrition rate of an organization.
 * Learn and use Oracle Machine Learning (OML) algorithms of oracle converged database.
 
 ### Prerequisites
- -	An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+ - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -45,8 +47,3 @@ In this lab you will:
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - John Miller, Jyotsana Rawat
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, NA Technology, February 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

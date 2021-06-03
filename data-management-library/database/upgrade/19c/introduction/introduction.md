@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-Oracle Database 19c is the *Long Term* Release for the Oracle Database 12c and 18c family of products. It’s available on all popular on-prem platforms, Oracle Exadata and Oracle Database Appliance, and in the Oracle Cloud. As the latest Long Term Release, it offers customers the highest levels of stability and the longest error correction window. And, by upgrading to Oracle Database 19c customers can have Premier Support and Extended Support through to April, 2024 and April 2027 respectively.  There is a direct upgrade path to Oracle Database 19c from 11gR2, 12cR1, 12cR2 and 18c releases.
+Oracle Database 19c is the *Long Term* Release for the Oracle Database 12c and 18c family of products. It is available on all popular on-prem platforms, Oracle Exadata and Oracle Database Appliance, and in the Oracle Cloud. As the latest Long Term Release, it offers customers the highest levels of stability and the longest error correction window. And, by upgrading to Oracle Database 19c customers can have Premier Support and Extended Support through to April, 2024 and April 2027 respectively.  There is a direct upgrade path to Oracle Database 19c from 11gR2, 12cR1, 12cR2 and 18c releases.
 
 ![](./images/19cupgrade.png " ")
 
-Therefore in the interests of maintaining business continuity,  customers still running on prior releases (e.g. 11gR2, 12cR1, 12cR2, 18c) are encouraged to start planning their 19c upgrades before current support windows expire. BTW, always refer to [MOS note #742060.1](https://support.oracle.com/epmos/faces/DocumentDisplay?id=742060.1&displayIndex=1) for the latest status of Oracle Database releases and support coverage.
+Therefore in the interests of maintaining business continuity,  customers still running on prior releases (e.g. 11gR2, 12cR1, 12cR2, 18c) are encouraged to start planning their 19c upgrades before current support windows expire. Always refer to [MOS note #742060.1](https://support.oracle.com/epmos/faces/DocumentDisplay?id=742060.1&displayIndex=1) for the latest status of Oracle Database releases and support coverage.
 
 Estimated Lab Time: 120 minutes
 
@@ -14,7 +14,7 @@ Estimated Lab Time: 120 minutes
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
 * Setup your Upgrade Compute Instance in the Cloud
 * Load the database
 * Capture and Preserve SQL
@@ -23,25 +23,26 @@ In this lab, you will:
 * Analyze SQL
 * Tune and manage SQL Plans
 * Perform upgrades using the plugin method
-* and more. . .
 
 
 ### Prerequisites
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-## About the Workshop
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-This workshop runs on a compute instance running in Oracle Cloud.  This compute instance is stored in the Oracle Cloud Marketplace.  It is preloaded with 3 different Oracle Homes and 5 databases.
+## About the Product/Technology
 
-![](./images/archictecture.png " ")
+This workshop is preloaded with 3 different Oracle Homes and 5 databases.
 
-3 different Oracle Homes:
+![](./images/architecture.png " ")
+
+The 3 different databases 
 
 - Oracle 11.2.0.4 – /u01/app/oracle/product/11.2.0.4
 - Oracle 12.2.0.1 – /u01/app/oracle/product/12.2.0.1
 - Oracle 19.5.0 – /u01/app/oracle/product/19
 
-The workshop also contains also 5 different databases for running the various upgrade scenarios in each lab.
+The workshop also contains 5 different databases for running the various upgrade scenarios in each lab.
 
 - UPGR – 11.2.0.4 database (non-CDB)
 - FTEX – 11.2.0.4 database (non-CDB)
@@ -73,7 +74,7 @@ The workshop also contains also 5 different databases for running the various up
 
 ### Using Fleet Patching and Provisioning (FPP) to upgrade databases.
 
-- In a Fleet Patching and Provisioning (FPP) upgrade (formerly known as Rapid Home Provisioning), you complete a new Oracle Database installation. After testing the database, and modifying it in accordance with the standard operating environment (SOE) that you want to use for your databases, you create an FPP gold image. A DBA deploys instances of that gold image to servers that have earlier release databases that you want to upgrade. After deployment of these gold images, a DBA can run a single rhpctl command to move files, perform configuration changes, and perform other steps required to use the new binaries. Refer to Oracle Clusterware Administration and Deployment Guide for more information about Rapid Home Provisioning.
+- In a Fleet Patching and Provisioning (FPP) upgrade (formerly known as Rapid Home Provisioning), you will complete a new Oracle Database installation. After testing the database, and modifying it in accordance with the standard operating environment (SOE) that you want to use for your databases, you create an FPP gold image. A DBA will deploy instances of that gold image to servers that have earlier release databases that you will want to upgrade. After deployment of these gold images, a DBA can run a single rhpctl command to move files, perform configuration changes, and perform other steps required to use the new binaries. Refer to Oracle Clusterware Administration and Deployment Guide for more information about Rapid Home Provisioning.
 
 
 You may now [proceed to the next lab](#next).
