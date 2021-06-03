@@ -81,16 +81,23 @@ To create compare pairs on the **Pattern Mapping** tab:
 
 3. Under **Pattern Compare Pair Mapping**, select a **Table Mapping Method**. You can select any of the following:
 
-    a. **Map Source and Target Tables Using Exact Names**: Let's select this option here:
+  a. **Map Source and Target Tables Using Exact Names**: Let's select this option here:
         ![](./images/9-pattern-mapping-pair-mapping-option1.png " ")
-	  b.  **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**. Enter:
-        * Where Source Names Like: **%_Table**
-        * Where Target Names Like: **%_Table**
-        ![](./images/8-pattern-mapping-pair-mapping-option2.png " ")
-    c. **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**. Enter:
-        * Pattern for Source Names: **DUMMY_TABLE**
-        * Pattern for Target Names: *****
-        ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
+  b.  **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**.
+
+    Enter:
+    * Where Source Names Like: **%\_Table**
+
+    * Where Target Names Like: **%\_Table**
+    ![](./images/8-pattern-mapping-pair-mapping-option2.png " ")
+
+  c. **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**.
+
+    Enter:
+    * Pattern for Source Names: **DUMMY_TABLE**
+
+    * Pattern for Target Names: *****
+    ![](./images/10-pattern-mapping-pair-mapping-option3.png " ")
 
 4. Click **Generate Mappings**. The control moves to the **Preview** tab. Here, option **3b** has been selected.
     ![](./images/10-pattern-mapping-pair-mapping-option3b_has_been_selected.png " ")
@@ -98,7 +105,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
-You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-execute-jobs)
+You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-execute-jobs).
 
 
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:

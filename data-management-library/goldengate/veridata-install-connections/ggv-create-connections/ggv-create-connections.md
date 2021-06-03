@@ -29,9 +29,9 @@ This lab assumes you have:
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
-  1. In a browser, enter the URL:
+  1. Open a browser in VNC and enter the URL:
 
-        http://<your public IP address>:8830/veridata/login.jsf
+        http://<Hostname>:8830/veridata/login.jsf
 
       OR
 
@@ -42,6 +42,8 @@ This lab assumes you have:
 
     ![](./images/1-login-veridata.png " ")
   3. Click **Login**.
+
+  **Note**: After you login, in the displayed **Memory Check** pop-up screen, click **Ok** or close this pop-up screen.
 
 ## **STEP 2:** Create a Connection
 To get started with Oracle GoldenGate Veridata, you must define a connection to the source and target databases that contain the data that you want to compare. Oracle GoldenGate Veridata Server uses the connection information to communicate with Oracle GoldenGate Veridata Agent.
@@ -56,7 +58,7 @@ To create connections:
     ![](./images/3-connection-name-description.png " ")
 4. Enter the following details:
     * **Host Name or IP Address**: Name of the host where Oracle GoldenGate Veridata Agent is running.
-      Enter <pre><*your public IP address*></pre> Or <pre>localhost</pre>
+      Enter <pre><*Hostname*></pre> Or <pre>localhost</pre>
     * **Port**: The port number for Oracle GoldenGate Veridata Agent on that host. Enter
         <pre>7850</pre>
     * **Datasource Type**: The datasource that is associated with this agent. Click **Verify**.
