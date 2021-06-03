@@ -43,7 +43,8 @@ To get started you will need:
 
 	![](./images/diag5.png " ")
 
-2. You will be sent an email to accept your invitation to join the organization. Once you have created your password and upon first login, you will be prompted to create your Network. This step will build your dedicated SDN Controller which behaves as the central element of the Control plane. Once you hit Create my Network, this will deploy a NetFoundry managed Cloud based controller which will take about 5-10 minutes to finish. **NOTE: you will not be able to continue until this has finished.** 
+2. You will be sent an email to accept your invitation to join the organization. Once you have created your password and upon first login, you will be prompted to create your Network. This step will build your dedicated SDN Controller which behaves as the central element of the Control plane. Once you hit Create my Network, this will deploy a NetFoundry managed Cloud based controller which will take about 5-10 minutes to finish. 
+   **NOTE: you will not be able to continue until this has finished.** 
 
 	![](./images/diag6.png " ")
 
@@ -61,9 +62,11 @@ The next step is to create the Fabric Router which essentially builds the transp
 
 	![](./images/diag9.png " ")
 
-2. Select a name for your Router --- Consider using the the word "Fabric" in the name to indicate it is a NetFoundry managed transit instance. Leave the attribute blank. The default attribute will be **@thenameofthisrouter**. Select NetFoundry Hosted and choose an Oracle Data Center in or nearest your desired Cloud region and hit Create.
+2. Select a name for your Router --- Consider using the the word "Fabric" in the name to indicate it is a NetFoundry managed transit instance. Leave the attribute blank. The default attribute will be **@thenameofthisrouter**. 
 
 	![](./images/diag10.png " ")
+
+    Select NetFoundry Hosted and choose an Oracle Data Center in or nearest your desired Cloud region and hit Create.
 
 	![](./images/diag11.png " ")
 
@@ -75,11 +78,14 @@ For the next step, we will create the Edge Router policy which allows Endpoints 
 
 	![](./images/diag12.png " ")
 
-2. Name the Policy something representing Default-Policy or Base-Policy. **NOTE: It can be named anything you want but this may help with logical function representation.**
+2. Name the Policy something representing Default-Policy or Base-Policy. 
+   **NOTE: It can be named anything you want but this may help with logical function representation.**
 
-3. Next click the mouse into the attributes field and select the @fabricrouter you created in the previous step. In the Endpoints Attributes field, type "#all" and hit enter. Then select Create. At this point your base network is complete. **NOTE: by using #all in the endpoints field, you are allowing all endpoints to transit this Fabric via @FabricRouter1. For the purposes of a standard deployment and test this is a best practice. For advanced deployments you can utilize this feature to control transit for various endpoints.******
+3. Next click the mouse into the attributes field and select the @fabricrouter you created in the previous step. In the Endpoints Attributes field, type "#all" and hit enter. Then select Create. At this point your base network is complete. 
 
 	![](./images/diag13.png " ")
+
+    **NOTE: by using #all in the endpoints field, you are allowing all endpoints to transit this Fabric via @FabricRouter1. For the purposes of a standard deployment and test this is a best practice. For advanced deployments you can utilize this feature to control transit for various endpoints.**
 
 ## **STEP 4:** Create Customer Hosted Edge Router
 
@@ -99,7 +105,7 @@ The next element we will deploy is the Edge Router in the customer VCN containin
 
 	![](./images/diag17.png " ")
 
-4. Again, select the compartment,  Availability Region and select a shape with1 OCPU 2 GB Memory. Select the VCN, Public Subnet, select assign public IPV4 address, SSH keys and hit Show Advanced Options. You will select cloud-init script and paste the following into the script field. Append your registration key created in earlier step to the end of router-registration and hit Create. This will build the image in your VCN and register it for you. **NOTE: If for some reason the router fails registration and does not show registered in the NetFoundry console after 10 minutes, it may be necessary to SSH to the instance and attempt registration manually with the same command. You can execute sudo systemctl status ziti-router to see if it is running afterwards.**
+4. Again, select the compartment,  Availability Region and select a shape with1 OCPU 2 GB Memory. Select the VCN, Public Subnet, select assign public IPV4 address, SSH keys and hit Show Advanced Options. You will select cloud-init script and paste the following into the script field. 
 
 	````
 	<copy>
@@ -108,7 +114,13 @@ The next element we will deploy is the Edge Router in the customer VCN containin
 	yum clean metadata && yum update -y
 	</copy>
 	````
+
+    Append your registration key created in earlier step to the end of router-registration and hit Create. This will build the image in your VCN and register it for you. 
+    
 	![](./images/diag18.png " ")
+
+    **NOTE: If for some reason the router fails registration and does not show registered in the NetFoundry console after 10 minutes, it may be necessary to SSH to the instance and attempt registration manually with the same command. You can execute sudo systemctl status ziti-router to see if it is running afterwards.**
+
 
 5. Once registered, you should now have 2 Edge Routers up and running in your Network as shown here: 
 
@@ -126,9 +138,12 @@ The next step in the process is to register your Laptop/Host as an endpoint in t
 
 	![](./images/diag21.png " ")
 
-3. The next screen provides you the identity key and download location for the software. Save the mylaptop.jwt file somewhere you can easily find on your computer. Hit the "Select an Installer" to download the operating system specific version of the endpoint software. **NOTE: The name of your file will be "what-ever-you-named-it.jwt"**.
+3. The next screen provides you the identity key and download location for the software. Save the mylaptop.jwt file somewhere you can easily find on your computer. 
 
 	![](./images/diag22.png " ")
+
+	Hit the "Select an Installer" to download the operating system specific version of the endpoint software. 
+	**NOTE: The name of your file will be "what-ever-you-named-it.jwt"**.
 
 	![](./images/diag23.png " ")
 
