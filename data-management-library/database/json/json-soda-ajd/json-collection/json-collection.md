@@ -1,8 +1,10 @@
-# Introduction to JSON Collections
+# Working with JSON collections using the SODA (Simple Oracle Document Access) API
 
 ## Introduction
 
-Oracle Database can store JSON in regular columns of a table.. You can create a table and mix conventional columns with columns to store JSON data. This is described later in lab XX. But first let's look at 'JSON collections': These are system-generated tables that are designed to store JSON data (so called 'documents') with some additional data like a key for each document and some metadata like creation timestamp. In order to create a collection all the user have to specify is the collection's name. So, lets create a collection for the products we want to sell in the store.
+Oracle is a relational database, meaning it typically stores data in rows and column of tables and JSON can be stored as a column value. For this lab though we first focus on the Document Store API SODA (Simple Oracle Document Access) which allows to store JSON data in a so-called collection. A JSON collection stores JSON documents alongside some metadata like the time of creation or update. Collections offer operations like inserts, deletes, index creation or queries.
+
+In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
 Estimated Lab Time: n minutes
 
@@ -120,7 +122,7 @@ In this lab, you will:
 
 Documents can be selected based on filter conditions - we call them 'Queries By Example' or short 'QBE'. A QBE is a JSON document itself and it contains the fields and filter conditions that a JSON document in the collection must satisfy in order to be selected.
 
-The simples form of a QBE just contains a key-value pair. Any selected document in the collection must has the same key with the same value. More complex QBEs can contain multiple filter conditions or operators like 'negation' or 'and', etc.
+The simplest form of a QBE just contains a key-value pair. Any selected document in the collection must has the same key with the same value. More complex QBEs can contain multiple filter conditions or operators like 'negation' or 'and', etc.
 
 The following are examples for QBEs. You can copy them into the corresponding window (see screenshot) and execute them. Obviously, in a real application those QBE-expressions would be issued directly from the programming language - the SODA drivers have APIs for QBEs.
 
@@ -300,8 +302,6 @@ Some values need to be unique, so how do we enforce it?
 	```
 
 You may now [proceed to the next lab](#next).
-
-This is an example of a segment of the Markdown file injected before rendering:
 
 ## Acknowledgements
 
