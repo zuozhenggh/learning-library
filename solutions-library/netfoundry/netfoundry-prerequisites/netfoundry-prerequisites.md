@@ -10,15 +10,13 @@ The following provides simple network configuration steps to help partners & end
 
 ### Prerequisites
 
-To get started you'll need to have the following:
+To get started you'll need:
 
 - A NetFoundry Account/Organization. A seven day free trial is available to all who wish to demo the NetFoundry product and OCI.
 	[NetFoundry Free Trial for Live Lab](https://nfconsole.io/signup)
- 
 - A working public cloud account with networking (such as Oracle/VCN subscription), or have the necessary privilege's to install a virtual machine and/or install software onto a machine in your on premises environment. (ESXi/Hyper-V/VirtualBox). This example will utilize Oracle Cloud Infrastructure.
 	[Oracle Cloud Free Tier for Live Lab](https://www.oracle.com/cloud/free/)
 	[Oracle Cloud VCN Documentation for Live Lab](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingnetwork.htm)
-   
 - An internet connection with outbound connections to TCP port 80 and 443.
 	![](./images/diag.5.png " ")
 
@@ -42,7 +40,6 @@ Identify an application sitting in your Cloud network or create a simple web app
 	sudo systemctl start httpd
 	</copy>
 	````
-
 	**NOTE: you can configure the firewall to allow 80 or disable the built in instance firewall for testing.**
 	![](./images/diag3.png " ")
 

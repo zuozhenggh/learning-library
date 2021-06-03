@@ -1,5 +1,3 @@
-
-
 # Lab 1: Setup Zero Trust network  connectivity from client to an application server
 
 ## Introduction
@@ -7,7 +5,6 @@
 In this lab, you will setup a Zero Trust Network, etc etc etc. 
 
 Estimated Lab Time: ?? minutes
-
 
 ### Objectives
 
@@ -20,21 +17,17 @@ In this lab, you will:
 5. Create/Deploy Endpoints
 6. Create Services/AppWAN
 
-
 ### Prerequisites
 
-To get started you'll need to have the following:
+To get started you'll need:
 
 - A NetFoundry Account/Organization. A seven day free trial is available to all who wish to demo the NetFoundry product and OCI.
 	[NetFoundry Free Trial for Live Lab](https://nfconsole.io/signup)
- 
 - A working public cloud account with networking (such as Oracle/VCN subscription), or have the necessary privilege's to install a virtual machine and/or install software onto a machine in your on premises environment. (ESXi/Hyper-V/VirtualBox). This example will utilize Oracle Cloud Infrastructure.
 	[Oracle Cloud Free Tier for Live Lab](https://www.oracle.com/cloud/free/)
 	[Oracle Cloud VCN Documentation for Live Lab](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingnetwork.htm)
-   
 - An internet connection with outbound connections to TCP port 80 and 443.
 	![](./images/diag.5.png " ")
-
 - To have Completed the [NetFoundry Prerequsites](../netfoundry-prerequsites)
 
 ## **STEP 1:** Create Network
@@ -65,13 +58,10 @@ To get started you'll need to have the following:
 
 	![](./images/diag11.png " ")
 
-
-
-
 ## **STEP 3:** Create Edge Router Policy
 
 1. For the next step, we will create the Edge Router policy which allows Endpoints transit access to the customer edge network in the Cloud. From the Edge Routers screen, select Manage Edge Router Policies and hit the + in the upper right corner to add a policy.
- 
+
 	![](./images/diag12.png " ")
 
 2. Name the Policy something representing Default-Policy or Base-Policy. **NOTE: It can be named anything you want but this may help with logical function representation.**
@@ -79,9 +69,6 @@ To get started you'll need to have the following:
 3. Next click the mouse into the attributes field and select the @fabricrouter you created in the previous step. In the Endpoints Attributes field, type "#all" and hit enter. Then select Create. At this point your base network is complete. **NOTE: by using #all in the endpoints field, you are allowing all endpoints to transit this Fabric via @FabricRouter1. For the purposes of a standard deployment and test this is a best practice. For advanced deployments you can utilize this feature to control transit for various endpoints.******
 
 	![](./images/diag13.png " ")
-
-
-
 
 ## **STEP 4:** Create Customer Hosted Edge Router
 
@@ -108,15 +95,11 @@ To get started you'll need to have the following:
 	yum clean metadata && yum update -y
 	</copy>
 	````
-
 	![](./images/diag18.png " ")
 
 5. Once registered, you should now have 2 Edge Routers up and running in your Network as shown here: 
 
 	![](./images/diag19.png " ")
-
-
-
 
 ## **STEP 5:** Create Endpoint for user access - Windows
 
@@ -139,7 +122,6 @@ To get started you'll need to have the following:
 	![](./images/diag24.png " ")
 
 5. Now within the client application you will have your entry listed with No Services at this point.
-
 	**NOTE: Author has several identities in different networks and should be disregarded.**
 
 	![](./images/diag25.png " ")
