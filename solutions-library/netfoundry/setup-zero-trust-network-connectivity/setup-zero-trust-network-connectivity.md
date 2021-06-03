@@ -35,7 +35,7 @@ To get started you will need:
 
 	![](./images/diag.5.png " ")
 
-- To have Completed the [NetFoundry Prerequsites](../netfoundry-prerequisites/netfoundry-prerequisites.md)
+- To have Completed the [NetFoundry Prerequsites](?lab=netfoundry-prerequisites)
 
 ## **STEP 1:** Create Network
 
