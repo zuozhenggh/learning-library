@@ -8,9 +8,6 @@
 
 [](youtube:_Z5PdpdEklI)
 
-### Prerequisites
-
-- Steps from Design and Run your ETL Pipeline Data Integration Instance section have to be completed to go ahead on this lab. 
 
 Estimated Lab Time: 15 minutes.
 
@@ -23,6 +20,14 @@ In this lab, you will:
 - Create a Data Science Project.
 - Install libraries.
 - Create Jupyter Notebook environment.
+
+### Prerequisites
+
+- Oracle Free Trial Account
+- Lab 1: Underlying Infrastructure 
+- Lab 2: Create MySQL Database Service
+- Lab 3: Create Data Integration Instance
+- Lab 4: Design and Run your ETL Pipeline
 
 ## **STEP 1:** Create Policies
 
@@ -153,7 +158,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 4:** Install libraries
+## **STEP 4:** Install Libraries
 
 1. Welcome to your Jupyter Notebook, click **Terminal**.
 
@@ -171,7 +176,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** Create Jupyter Notebook environment
+## **STEP 5:** Create Jupyter Notebook Environment
 
 1. **Download** the Notebook <a href="./files/FishSurvey.ipynb" target="\_blank">here</a>.
 
@@ -218,4 +223,4 @@ Continue to the Next Steps for more information!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
