@@ -10,7 +10,7 @@ The following provides simple network configuration steps to help partners & end
 
 ### Prerequisites
 
-To get started you'll need:
+To get started you will need:
 
 - A NetFoundry Account/Organization. A seven day free trial is available to all who wish to demo the NetFoundry product and OCI.
 	[NetFoundry Free Trial for Live Lab](https://nfconsole.io/signup)
