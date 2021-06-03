@@ -212,13 +212,22 @@ Save the auth token for later.
     $ <copy>mvn -Dmaven.test.skip=true verify</copy>
     ```
    
-5. You can try running the JSON generator right now:
+5. You can try running the JSON generator right now using default parameters (please use the command given as the output of the stack creation):
 
     ```
     $ <copy>java -Xmx2G -Xms2G -jar target/rtgenerator-1.0.3-jar-with-dependencies.jar dragon_low jsonuser My_Strong_Pa55word /home/loic_lefev/dragon_demo/wallet_dragon purchase_orders false 100 2 false false 1000</copy>
     ```
 
+You should see the generator loading data into the purchase_orders collection. 
 
+You may now [proceed to the next lab](#next).
 
+## Learn More
 
-## **STEP 5:** 
+* [DRAGON Project (GitHub)](https://bit.ly/DRAGONStack) and add a star :)
+
+## Acknowledgements
+* **Author** - Loic Lefevre, Principal Product Manager
+* **Last Updated By/Date** - Loic Lefevre, Principal Product Manager, June 2021
+
+![DRAGON Stack logo](./images/dragon-logo.png)
