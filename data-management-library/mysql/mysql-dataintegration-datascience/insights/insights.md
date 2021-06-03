@@ -23,7 +23,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-Steps from the previous lab must be completed.
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create Policies
 
