@@ -23,11 +23,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
-- Lab 3: Create Data Integration Instance
-- Lab 4: Design and Run your ETL Pipeline
+- All previous labs have been successfully completed.
 
 ## **STEP 1:** Create Policies
 
