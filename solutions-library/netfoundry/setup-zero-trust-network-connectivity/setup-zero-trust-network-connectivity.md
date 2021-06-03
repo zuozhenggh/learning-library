@@ -10,11 +10,11 @@ Estimated Lab Time: ?? minutes
 
 In this lab, you will:
 ![](./images/diag4.png " ")
-1. Create Network
-2. Create Hosted Edge Router
-3. Create Edge Router Policy
-4. Create Self Hosted Edge Routers (Cloud Marketplace)
-5. Create/Deploy Endpoints
+1. Create a network
+2. Create a hosted edge router
+3. Create an edge router policy
+4. Create self hosted edge routers (Cloud Marketplace)
+5. Create/Deploy endpoints
 6. Create Services/AppWAN
 
 ### Prerequisites
