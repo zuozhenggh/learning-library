@@ -4,7 +4,7 @@
 
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
-Estimated Lab Time: *30 minutes*.
+Estimated Lab Time: *60 minutes*.
 
 ### Objectives
 

@@ -11,7 +11,7 @@ In this lab, the following topics are covered:
 * Overview of Web user interface
 
 
-Estimated Lab Time: *30 minutes*.
+Estimated Lab Time: *75 minutes*.
 
 ### Objectives
 

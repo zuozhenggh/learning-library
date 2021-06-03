@@ -6,7 +6,7 @@ In this workshop, you will learn how business users can utilize multiple data so
 
 This workshop is designed to give you a hands-on experience with various components of Oracle Essbase.
 
-Estimated Workshop Time: 200 minutes.
+Estimated Workshop Time: 345 minutes.
 
 ### About Product/Technology
 

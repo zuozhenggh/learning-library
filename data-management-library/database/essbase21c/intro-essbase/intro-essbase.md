@@ -4,7 +4,7 @@
 
 This lab provides an introduction to Oracle Essbase and how it can be used to enhance business analytics and data management. Through this lab, you will understand the overall Essbase architecture, as well as perform the prerequisites for the subsequent Essbase labs in this workshop.
 
-Estimated Lab Time: 15 minutes.
+Estimated Lab Time: *10 minutes*.
 
 ### Objectives
 

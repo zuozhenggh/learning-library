@@ -4,7 +4,7 @@
 
 This lab provides detailed instructions of connecting to Essbase 21c using Web UI. This machine comes with Essbase installed and configured with Oracle database and also starts its services on its own start-up.
 
-*Estimated Lab Time:* 15 Minutes.
+*Estimated Lab Time:* 10 Minutes.
 
 ### Objectives
 - Initialize the workshop environment.

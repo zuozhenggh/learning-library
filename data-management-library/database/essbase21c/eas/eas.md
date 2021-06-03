@@ -11,7 +11,7 @@ NOTE: EAS Lite supports only features and functionality available in 11g, and no
 This option is available in 21c independent installation and not on the Essbase marketplace.
 
 
-Estimated Lab Time: *15 minutes*.
+Estimated Lab Time: *10 minutes*.
 
 ### Objectives
 

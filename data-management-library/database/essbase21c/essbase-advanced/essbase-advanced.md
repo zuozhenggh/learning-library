@@ -9,7 +9,7 @@ This lab walks you through some of the advanced features of Essbase 21c. For exa
 * Overview of Essbase REST API functionality
 * Dimension build using rule file
 
-Estimated Lab Time: *60 minutes*.
+Estimated Lab Time: *90 minutes*.
 
 ### **Objectives**
 
