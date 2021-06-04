@@ -43,7 +43,7 @@
       "filename": "../7-oda/7-oda.md"
     },
     {
-      "title": "Lab 8: Deployment on OKE",
+      "title": "Lab 8: Deploy the application on OKE",
       "description": "This lab shows you how to deploy the application using OKE.",
       "filename": "../8-oke/8-oke.md"
     },

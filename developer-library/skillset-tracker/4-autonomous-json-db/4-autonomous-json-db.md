@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Oracle Autonomous JSON Database** is a cloud document database service that makes it easier to develop applications that use JSON documents. It allows using **SODA** (Simple Oracle Document Access) in order to easily build REST APIs to manipulate the data. In this lab, you will go through a series of steps to create an Autonomous JSON Database in OCI and import sample JSON files into SODA Document Collections. These collections will be later used to build REST APIs using SODA for NodeJS.
+**Oracle Autonomous JSON Database** is a cloud document database service that makes it easier to develop applications that use JSON documents. It allows using **SODA** (Simple Oracle Document Access) in order to easily build **REST APIs** to manipulate the data. In this lab, you will go through a series of steps to create an Autonomous JSON Database in OCI and import sample JSON files into **SODA Document Collections**. These collections will be later used to build REST APIs using **SODA for NodeJS**.
 
 Estimated Lab Time: 1 hour
 
@@ -160,12 +160,12 @@ In order to create an Autonomous JSON Database you must first login on the OCI C
 
 ![create ADB form step 2](./images/create-adb-form-2.png)
 
-Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access for everywhere**. Click **Create Autonomous Database**.
+Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access from everywhere**. Click **Create Autonomous Database**.
 
 ![create ADB form step 3](./images/create-adb-form-3.png)
 
 ## **Step 3:** Download database Wallet & connect to the database
-In order to connect to the database using SQL Developer, you must first download the wallet to you local machine.
+In order to connect to the database using SQL Developer, you must first download the wallet to your local machine.
 
 1. After the database has provisioned, click on the **DB Connection** button in the OCI Console to download the database wallet.
 
@@ -206,39 +206,37 @@ GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO skillset;
 ```
 
 ## **Step 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
-In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket.
+In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket. In this step you will need the two JSON files created at the beginning of this lab (_sample\_skills.json_ and _sample\_users.json_).
 
-1. Download the two sample JSON files **here**.
-
-2. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
+1. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
 
 ![Object Storage menu](./images/object-storage-menu.png)
 
-3. Choose the option to **Create Bucket**.
+2. Choose the option to **Create Bucket**.
 
-![Object Storage menu](./images/create-bucket-button.png)
+![Create bucket](./images/create-bucket-button.png)
 
-4. Set up a name for the bucket and select **Standard** for the Default Storage Tier field.
+3. Set up a name for the bucket and select **Standard** for the Default Storage Tier field.
 
-![Object Storage menu](./images/create-bucket-form.png)
+![Create bucket](./images/create-bucket-form.png)
 
-5. After the bucket was created, navigate to **Objects** and click **Upload** then select the files to be uploaded.
+4. After the bucket was created, navigate to **Objects** and click **Upload** then select the files to be uploaded.
 
-![Object Storage menu](./images/upload-object.png)
+![Upload object](./images/upload-object.png)
 
-6. Create Pre-Authenticated Requests for each of these files as shown in the images below.
+5. Create Pre-Authenticated Requests for each of these files as shown in the images below.
 
-![Object Storage menu](./images/create-par-button.png)
-![Object Storage menu](./images/create-par-form.png)
+![Create PAR URL 1](./images/create-par-button.png)
+![Create PAR URL 2](./images/create-par-form.png)
 
-7. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the **skills.json** file and one for **users.json** file.
+6. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the _sample\_skills.json_ file and one for _sample\_users.json_ file.
 
-![Object Storage menu](./images/create-par-result-url.png)
+![PAR URL](./images/create-par-result-url.png)
 
 ## **Step 6:** Create SODA Collections
 Login in SQL Developer using the _**SKILLSET**_ user created at **Step 4 - Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
-...more details about the structure of the sample json files...
-1. Create the _skills_ collection. Add in the following code the PAR URL for the **skills.json** file.
+
+1. Create the _skills_ collection. Add in the following code the PAR URL for the _sample\_skills.json_ file.
 ```
 <copy>
 --CREATE SKILLS COLLECTION
@@ -261,7 +259,7 @@ END;
 SELECT a.*, json_serialize(a.json_document) json FROM skillscollection a;
 </copy>
 ```
-3. Using the same JSON, create another collection which will be later used for seeing the progress of skills. The following code is using the same PAR URL for the **skills.json** file.
+3. Using the same JSON, create another collection which will be later used for seeing the progress of skills. The following code is using the same PAR URL for the _sample\_skills.json_ file.
 ```
 <copy>
 --CREATE SKILLS ARCH/HISTORY COLLECTION (same json as skills collection)
@@ -277,7 +275,7 @@ new_doc SODA_DOCUMENT_T;
 BEGIN
 DBMS_CLOUD.COPY_COLLECTION(
 collection_name => 'skillsarch_collection',
-file_uri_list => --PAR URL from json that was uploaded in object storage (this url has an exipration date on 1st June 2021)
+file_uri_list =>
 '<your_par_url_here>',
 format =>
 '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
@@ -304,7 +302,7 @@ END;
 /
 </copy>
 ```
-4. Create a unique index for the _skillscollection_ so that each employee's skils will only be added once, based on his/her email address.
+4. Create a unique index for the _skillscollection_ so that each employee's skills will only be added once, based on his/her email address.
 
 ```
 <copy>
@@ -337,7 +335,7 @@ SET DEFINE OFF
 BEGIN
 DBMS_CLOUD.COPY_COLLECTION(
 collection_name => 'userscollection',
-file_uri_list => --PAR URL from json that was uploaded in object storage (this url has an exipration date on 1st June 2021)
+file_uri_list =>
 '<your_par_url_here>',
 format =>
 '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
@@ -345,7 +343,7 @@ END;
 /
 </copy>
 ```
-6. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file ,
+6. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file.
 ```
 <copy>
 --CHECK DATA IN COLLECTION

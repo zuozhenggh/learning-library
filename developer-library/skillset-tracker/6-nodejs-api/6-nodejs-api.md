@@ -592,7 +592,7 @@ httpServer.listen(webServerConfig.port)
 
 15. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
 
-  **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder.
+  **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
   * On the instance:
   ```

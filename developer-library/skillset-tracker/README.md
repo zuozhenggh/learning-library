@@ -20,5 +20,5 @@ The application presented in the workshop is based on a sample JSON file with da
 | **Lab 5:** Build an OracleJET Web Application | Go through a series of steps to build and run a simple OracleJET application with a treemap based on a static JSON file |
 | **Lab 6:** Build NodeJS APIs | Learn how to use SODA for NodeJS to build and test APIs for manipulating data in a document collection from an Autonomous JSON Database  |
 | **Lab 7:** Integration with Oracle Digital Assistant and Slack | Learn how to provision an Oracle Digital Assistance Instance, download, import and test a Skill, create a Slack Channel and Workspace and integrate your Bot with Slack channel.  |
-| **Lab 8:** Deployment on OKE | Create a Docker file and deploy the NodeJS APIs code in Container Engine for Kubernetes (OKE) |
+| **Lab 8:** Deploy the application on OKE | Create a Docker file and deploy the NodeJS APIs code in Container Engine for Kubernetes (OKE) |
 | **Lab 9:** Set up the Development Environment | Put it all together in one single application that uses an Autonomous JSON Database for storing the data, APIs built using SODA for NodeJS to manipulate the data, OracleJET for the user interface, an integration with Oracle Digital Assistant and an integration with OKE |

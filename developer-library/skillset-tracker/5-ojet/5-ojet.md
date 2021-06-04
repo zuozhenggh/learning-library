@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab you are going to go through a series of steps for provisioning a **Linux Instance** and deploying an **OracleJET** application. The application that is going to be developed in this lab uses **OracleJET** elements (both **JavaScript** and **HTML**) to create a basic application that shows an Oracle JET tree map structure based on a JSON file stored inside the project.
+In this lab you are going to go through a series of steps for provisioning a **Linux Instance** and deploying an **OracleJET** application. The application that is going to be developed in this lab uses **OracleJET** elements (both **JavaScript** and **HTML**) to create a basic application that shows an Oracle JET treemap structure based on a JSON file stored inside the project.
 
-A **tree map** is **an interactive data visualization** in which hierarchical data is represented across two dimensions by the size and color of nested rectangular nodes.
+A **treemap** is **an interactive data visualization** in which hierarchical data is represented across two dimensions by the size and color of nested rectangular nodes.
 
 Treemap Characteristics:
 
@@ -29,7 +29,7 @@ Estimated Lab Time: 1 hour
 * An existing compartment in which the resources created will reside.
 
 ### Prerequisites
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3 - Install and prepare prerequisites**.
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
 
 ## **Step 1:** Creating a Virtual Cloud Network
 
@@ -396,7 +396,7 @@ After all this changes are made, run again `ojet build` and `ojet serve` command
 
 8. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
 
-  **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder.
+  **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
   * On the instance:
   ```
