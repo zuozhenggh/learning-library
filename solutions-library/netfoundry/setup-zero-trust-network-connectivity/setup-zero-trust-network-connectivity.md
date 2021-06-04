@@ -39,7 +39,7 @@ To get started you will need:
 
 	![](./images/diag.5.png " ")
 
-- To have Completed the [NetFoundry Prerequsites](?lab=netfoundry-prerequisites)
+- An existing application in the cloud to connect to: [NetFoundry Prerequsites](?lab=netfoundry-prerequisites)
 
 ## **STEP 1:** Create Network
 
