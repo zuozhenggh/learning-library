@@ -48,6 +48,7 @@ To get started you will need:
 	![](./images/diag5.png " ")
 
 2. You will be sent an email to accept your invitation to join the organization. Once you have created your password and upon first login, you will be prompted to create your Network. This step will build your dedicated SDN Controller which behaves as the central element of the Control plane. Once you hit Create my Network, this will deploy a NetFoundry managed Cloud based controller which will take about 5-10 minutes to finish. 
+
    **NOTE: you will not be able to continue until this has finished.** 
 
 	![](./images/diag6.png " ")
@@ -83,6 +84,7 @@ For the next step, we will create the Edge Router policy which allows Endpoints 
 	![](./images/diag12.png " ")
 
 2. Name the Policy something representing Default-Policy or Base-Policy. 
+
    **NOTE: It can be named anything you want but this may help with logical function representation.**
 
 3. Next click the mouse into the attributes field and select the @fabricrouter you created in the previous step. In the Endpoints Attributes field, type "#all" and hit enter. Then select Create. At this point your base network is complete. 
@@ -147,6 +149,7 @@ The next step in the process is to register your Laptop/Host as an endpoint in t
 	![](./images/diag22.png " ")
 
 	Hit the "Select an Installer" to download the operating system specific version of the endpoint software. 
+
 	**NOTE: The name of your file will be "what-ever-you-named-it.jwt"**.
 
 	![](./images/diag23.png " ")
@@ -156,6 +159,7 @@ The next step in the process is to register your Laptop/Host as an endpoint in t
 	![](./images/diag24.png " ")
 
 5. Now within the client application you will have your entry listed with No Services at this point.
+
 	**NOTE: Author has several identities in different networks and should be disregarded.**
 
 	![](./images/diag25.png " ")
