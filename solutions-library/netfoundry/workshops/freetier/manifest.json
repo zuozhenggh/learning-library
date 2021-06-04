@@ -13,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "NetFoundry Prerequisites",
+            "title": "NetFoundry Prerequisites - Cloud Application Prep",
             "description": "Prerequsites for Using NetFoundry Zero Trust Networking",
             "filename": "../../netfoundry-prerequisites/netfoundry-prerequisites.md"
         },

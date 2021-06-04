@@ -1,9 +1,14 @@
 
-# NetFoundry Prerequisites
+# NetFoundry Prerequisites - Cloud Application Prep
 
 This guide is intended to provide you guidance for your Oracle NetFoundry LiveLab environment. 
 
-## Prerequisites
+## Introduction
+
+Before we start, we will need a cloud application that we can use to test our connectivity.  If you already have an application in your network, you can skip to the next section.
+
+
+### Prerequsites
 
 To get started you will need:
 
@@ -21,9 +26,9 @@ To get started you will need:
 
 	![](./images/diag.5.png " ")
 
-## Cloud Application Prep - Create Application in Cloud (Oracle Cloud example)
+## Create Application in Cloud (Oracle Cloud example)
 
-Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. If you already have an application in your network, you can skip to the next section.
+Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. 
 
 1. From within your Cloud console, select 
 	![](./images/diag1.5.png " ")
