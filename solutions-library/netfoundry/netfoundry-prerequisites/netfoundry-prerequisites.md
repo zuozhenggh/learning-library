@@ -3,12 +3,7 @@
 
 This guide is intended to provide you guidance for your Oracle NetFoundry LiveLab environment. 
 
-## What You Need
-
-The following provides simple network configuration steps to help partners & end-users learn about the building blocks of configuring a NetFoundry network.  It will help outline each element within the NetFoundry network and provide instructions on how to configure a simple design connecting a Windows client to a web application in a Oracle Cloud on a private IPV4 network. (Any application will do but web is easy to test)
-![](./images/rfc1918.png " ")
-
-### Prerequisites
+## Prerequisites
 
 To get started you will need:
 
