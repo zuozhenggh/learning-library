@@ -92,20 +92,23 @@ Here are two prepared sample datasets to help you to easily understand how the t
 
 You need to upload those sample training data into Oracle object storage, to be prepared for model training in next steps.
 
-**STEP 3a:** Create an Object Storage Bucket
+**STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
 Step 1 From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
 
-STEP 2 Click Create Bucket.
+STEP 2 Select Compartment.
+![](../images/selectcompartment.png " ")
+
+STEP 3 Click Create Bucket.
 ![](../images/createbucketbutton.png " ")
 
-STEP 3 Fill out the dialog box:
+STEP 4 Fill out the dialog box:
 
 Bucket Name: Provide a name <br/>
 Storage Tier: STANDARD
 
-STEP 4 Click Create Bucket
+STEP 5 Click Create
 ![](../images/pressbucketbutton.png " ")
 
 **STEP 3b:** Upload Object
