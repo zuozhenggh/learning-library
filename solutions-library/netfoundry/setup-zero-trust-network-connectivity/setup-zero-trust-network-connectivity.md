@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will setup a Zero Trust Network, etc etc etc. 
+In this lab, you will configure a simple design connecting a Windows client to a web application in Oracle Cloud on a private IPV4 network.
 
-Estimated Lab Time: ?? minutes
+Estimated Lab Time: 90 minutes
 
 ### Objectives
 

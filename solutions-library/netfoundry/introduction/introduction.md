@@ -5,9 +5,9 @@
 
 ## About This Workshop
 
-In this workshop, you will [required explanation of what you will do in the labs in the workshop]
+In this workshop, you will learn about the building blocks of configuring a NetFoundry network. It will help outline each element within the NetFoundry network and provide instructions on how to configure a simple design connecting a Windows client to a web application in Oracle Cloud on a private IPV4 network.
 
-Estimated Lab Time: ??? minutes
+Estimated Lab Time: 90 minutes
 
 ## About NetFoundry
 NetFoundry helps you spin up automated, zero trust, network-as-code connections between Oracle Cloud and any other location without waiting for infrastructure, MPLS, or VPNs. This gives the business unprecedented speed, agility, and security with a cloud-based Total Cost of Ownership (TCO) built on the principles of Gen 2 Cloud (elastic, autonomous and secure by design).
