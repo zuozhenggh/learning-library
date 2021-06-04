@@ -41,7 +41,7 @@ For more information refer to the following [Oracle NetFoundry blog](https://blo
 
 ## Acknowledgements
 
-* **Author** - person, Title
-* **Contributors** -  person, Title
-* **Last Updated By/Date** - person, Title,  June 2021
+* **Author** - Skip Barr (Solutions Architect - NetFoundry), Raj Hindocha, Solutions Architect
+* **Contributors** - Randall Spicher, Senior Cloud Engineer
+* **Last Updated By/Date** - Randall Spicher, June 2021
 

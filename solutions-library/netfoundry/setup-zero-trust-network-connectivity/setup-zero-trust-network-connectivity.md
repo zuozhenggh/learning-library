@@ -2,13 +2,17 @@
 
 ## Introduction
 
-In this lab, you will configure a simple design connecting a Windows client to a web application in Oracle Cloud on a private IPV4 network.
+In this lab you will learn about the building blocks of configuring a NetFoundry network.
 
 Estimated Lab Time: 90 minutes
 
 ### Objectives
 
 In this lab, you will:
+
+* Learn how to configure a simple network zero trust network.
+* Learn how to connect a Windows client to a web application in Oracle Cloud on a private IPV4 network.
+
 ![](./images/diag4.png " ")
 1. Create a network
 2. Create a hosted edge router
@@ -196,7 +200,8 @@ The final step is to create a service for the web app in our VCN and to build an
 
 
 ## Acknowledgements
-* **Author** - Person or persons, title(s)
-* **Contributors** -  person, Title
-* **Last Updated By/Date** - person, title,  June 2021
+
+* **Author** - Skip Barr (Solutions Architect - NetFoundry), Raj Hindocha, Solutions Architect
+* **Contributors** - Randall Spicher, Senior Cloud Engineer
+* **Last Updated By/Date** - Randall Spicher, June 2021
 

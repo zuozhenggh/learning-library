@@ -52,8 +52,9 @@ Identify an application sitting in your Cloud network or create a simple web app
 You should now have a running web server in your specified VCN.
 
 ## Acknowledgements
-* **Author** - Person or persons, title(s)
-* **Contributors** -  person, Title
-* **Last Updated By/Date** - person, title,  June 2021
+
+* **Author** - Skip Barr (Solutions Architect - NetFoundry), Raj Hindocha, Solutions Architect
+* **Contributors** - Randall Spicher, Senior Cloud Engineer
+* **Last Updated By/Date** - Randall Spicher, June 2021
 
 
