@@ -58,7 +58,7 @@ Learn how to
     curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
-2. Unzip the archive into a local directory such as ~/downloads.
+2. **Unzip** the archive into a local directory such as ~/downloads.
 
 ## **STEP 4**: Upload using Database Actions Data Load
 
@@ -137,7 +137,7 @@ Learn how to
    ![](./images/db-actions-sql-script-output.png " ")
   
 
-Please **proceed to the next lab** to create a graph from these tables.
+Please *proceed to the next lab* to create a graph from these tables.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
