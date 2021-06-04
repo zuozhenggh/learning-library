@@ -22,6 +22,7 @@ Estimated Lab Time: 1 hour and 30 minutes
 * An existing compartment and a VCN in which the Instance will reside.
 
 ### Prerequisites
+* **Lab 4: Autonomous JSON Database & SODA Collections**
 * **Lab 5: Build an OracleJET Web Application** -> **Step 1: Creating a Virtual Cloud Network**
 * If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
 
@@ -242,7 +243,7 @@ process.on('uncaughtException', err => {
 </copy>
 ```
 3. Now that you have the basic content of the application, you can test it by running the following commands.
-  * Open a terminal and navigate to you application folder.
+  * Open a terminal and navigate to your application folder.
   * Install _npm_ packages using ``npm install``
   * Run the application using ``node app.js``
 

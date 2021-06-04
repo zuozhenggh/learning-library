@@ -1,4 +1,4 @@
-# Integrate your application with Oracle Digital Assistant [Work in progress]
+# Integrate your application with Oracle Digital Assistant
 
 ## Introduction
 
@@ -78,7 +78,7 @@ Estimated Lab Time: 2 hours
      * **Production**. This option should be selected for production instances of Digital Assistant. In comparison with the Development shape, this option has higher rate limits and greater database capacity, which enables more Insights data to be collected.
    * **Tag Namespace**. (Optional)
 
-   * ![complete the details](./images/complete-the-details.png)
+ ![complete the details](./images/complete-the-details.png)
 
 
 5. Click **Create**.

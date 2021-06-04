@@ -1,4 +1,4 @@
-#  Deploy the application on OKE [Work in progress]
+#  Deploy the application on OKE
 
 ## Introduction
 
