@@ -98,7 +98,7 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat 
+- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam
 - **Last Updated By/Date** - Kowshik Nittala, Associate Solution Engineer, Analytics, NA Technology, May 2021
 
 ## Need Help?

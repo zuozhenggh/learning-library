@@ -29,7 +29,7 @@ Oracle Essbase helps you to build your company’s On-Premise strategy efficient
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala
+* **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, May 2021
 
 ## Need Help?
