@@ -26,7 +26,7 @@ To get started you will need:
 
 	![](./images/diag.5.png " ")
 
-## Create Application in Cloud (Oracle Cloud example)
+## Create an Application in the Cloud (Oracle Cloud example)
 
 Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. 
 
