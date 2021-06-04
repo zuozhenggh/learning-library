@@ -5,7 +5,7 @@ This guide is intended to provide you guidance for your Oracle NetFoundry LiveLa
 
 ## Introduction
 
-Before we start, we will need a cloud application that we can use to test our connectivity.  If you already have an application in your network, you can skip to the next section.
+Before we start, we will need a cloud application that we can use to test our connectivity.  If you already have an application in your network, you can skip to the labs.
 
 
 ### Prerequsites
