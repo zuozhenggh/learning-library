@@ -60,7 +60,7 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
 
   If a dialog pops up, click on ‘Down’ again.
 
-     ![](images/emmonlab1step4b.png " ")     
+          ![](images/emmonlab1step4b.png " ")   
 
   5.	In Enterprise Manager we have an “All Targets” page, which shows all of the targets being monitored by EM. When we clicked on the Red slice of the pie, we essentially placed a filter on the All Targets page to display only Down targets. From here, you can click on the individual target to go to the Target Home Page and take necessary actions such as starting up a Database Instance.
       ![](images/emmonlab1step5.png " ")
@@ -209,7 +209,7 @@ As Best Practice:
 18. The Warning and Critical thresholds for the metric will now be shown with the chart as yellow and red lines respectively.  As you review the metric, you can also visually see how close the metric values are to its Warning and Critical thresholds
      ![](images/emmonlab3step18.png " ")
 
-## **step 4:** Corrective Actions
+## **Step 4:** Corrective Actions
 Corrective Actions automates response to metric alerts and events. A Corrective Action can start the DB listener when it unexpectedly goes down or it can run shell scripts to collect diagnostic data. You can create a custom Corrective Action once and grant access for other Admins to use. We ship with a long list of pre-defined Corrective Actions to get you started.
 
 1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
@@ -273,7 +273,7 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
     Click OK.
      ![](images/emmonlab4step17c.png " ")
 
-## **step 5:** Metric Extensions
+## **Step 5:** Metric Extensions
 Metric Extensions expand Oracle's monitoring capabilities to monitor conditions specific to your IT environment. It allows you to create custom metrics on any target type. You can create it once and deploy it to multiple targets at once.
 
 For this lab, a metric extension has already been created and is in Editable status.  As part of creating a metric extension, you can test it against some targets.  You will go through the process of testing the metric extension against some targets.
@@ -289,7 +289,7 @@ For this lab, a metric extension has already been created and is in Editable sta
 4.	Click on Actions >> Edit.
      ![](images/emmonlab5step4.png " ")
 
-5.	Steps 1 through 4 show the SQL and the metric columns of the metric extension that has been already defined for you.Click on Next until you reach “step 5 of 6”.
+5.	Steps 1 through 4 show the SQL and the metric columns of the metric extension that has been already defined for you. Click on Next until you reach “step 5 of 6”.
      ![](images/emmonlab5step5.png " ")
 
 6.	Click Add to select targets to test the Metric Extension.
@@ -331,7 +331,7 @@ For this lab, a metric extension has already been created and is in Editable sta
 18.	The Metric Extensions page shows the ME$RunawaySQL metric extension has been deployed to 2 targets. The RunawaySQL metrics will start to be collected for the 2 targets.
      ![](images/emmonlab5step18.png " ")
 
-## **step 6:** Monitoring Templates
+## **Step 6:** Monitoring Templates
 Monitoring templates enable you to deploy standardized monitoring setting across the targets in your data center. Enterprise Manager allows you to define monitoring settings on one target, and deploy the same settings to other targets. This feature is called Monitoring Template. When a change is made to a template, you can reapply the template across affected targets in order to propagate the new changes. The apply operation can be automated using Administration Groups and Template Collections. For any target, you can preserve custom monitoring settings by specifying metric settings that can never be overwritten by a template.
 
 1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
@@ -377,7 +377,7 @@ Monitoring templates enable you to deploy standardized monitoring setting across
 13.	Manually click on the Page Refresh icon. The status of the template apply operation is now Passed.
        ![](images/emmonlab6step13.png " ")
 
-## **step 7:** Administration Groups and Template Collections
+## **Step 7:** Administration Groups and Template Collections
 Administration groups are designed to simplify the process of setting up targets for management in Enterprise Manager. Typically, management settings such as monitoring settings and compliance standards are applied to a target manually or by custom scripts defined by the administrator. With Administration Groups, you first define a hierarchy of administration groups where targets in each group have the same management settings.  Next for each administration group, define and combine management settings (e.g. monitoring settings, compliance standards and cloud policies) into a container (called template collections) and associate them with the appropriate Administration Group. Once that one-time setup is done, all you need to do is add the target to the appropriate Administration Group, and Enterprise Manager will automatically apply the associated management settings to the target as it joins the group.  This greatly simplifies and streamlines the process of target setup. It also enables a datacenter to easily scale as new targets are added to Enterprise Manager for management.
 
 1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
@@ -483,7 +483,7 @@ To create this hierarchy, use target properties to define the membership criteri
 28.	Notice in the Synchronization Status section, there is now one additional (total of 4) synchronized targets for Monitoring Templates. Note: You may need to click on the page refresh icon if the count under Synchronized Targets doesn’t update right away.
      ![](images/emmonlab7step28.png " ")
 
-## **step 8:** Incident Rules
+## **Step 8:** Incident Rules
 Incident Rules specify actions to be taken on events.  For example, when a target down event occurs, you might want to create an incident for the event and send email notification on the  incident. A rule set is a collection of these rules and they apply to a common set of targets such as hosts, databases, groups. Enterprise Manager ships with out-of-the-box rule sets to get you started. Out-of-the-box rule sets have a Lock icon next to them because they cannot be modified. We recommend making a copy of the rule set, and modifying the copy to suit your needs. Alternatively, you can create new rule sets from scratch.
 
 1.	Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
