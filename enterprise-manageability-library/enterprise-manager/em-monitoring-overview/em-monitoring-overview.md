@@ -56,12 +56,10 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
   4.  Click on the Red slice of the pie in the “Status” section.
 
   Note: You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment.   The number of targets may vary based on your lab environment.
-
-      ![](images/emmonlab1step4.png " ")  
+     ![](images/emmonlab1step4.png " ")  
 
   If a dialog pops up, click on ‘Down’ again.
-
-      ![](images/emmonlab1step4b.png " ")     
+     ![](images/emmonlab1step4b.png " ")     
 
   5.	In Enterprise Manager we have an “All Targets” page, which shows all of the targets being monitored by EM. When we clicked on the Red slice of the pie, we essentially placed a filter on the All Targets page to display only Down targets. From here, you can click on the individual target to go to the Target Home Page and take necessary actions such as starting up a Database Instance.
       ![](images/emmonlab1step5.png " ")
