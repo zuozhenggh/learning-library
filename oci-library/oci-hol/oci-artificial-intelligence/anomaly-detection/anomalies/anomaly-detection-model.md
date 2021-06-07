@@ -37,10 +37,10 @@ The data asset created in lab 2 should be pop up in the drop down menu. Click Ne
 This takes us to train a model menu. We can specify FAP(false alarm probability) and Train Fraction Ratio. The default values for these are 0.01 and 0.7 (implying 70%) respectively.
 
 ###FAP(False Alarm Probability)
-FAP stands for False Alarm Probability. In other words, this basically specifies how much accurate the model needs to be. A high FAP model means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, they can specify it to be low. One thing to keep in mind is by specifying a lower FAP, the model needs more time to train.
+FAP stands for False Alarm Probability. In other words, this basically specifies how much accurate the model needs to be. A high FAP model means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, user can specify it to be low. One thing to keep in mind is by specifying a lower FAP, the model needs more time to train.
 
 ### How to calculate FAP
-![](../images/fap.png " ")
+![](../images/FAP_correct.png " ")
 As can be inferred from the formula, the more the number of false alarms higher the FAP will be.
 
 ###Train Fraction Ratio

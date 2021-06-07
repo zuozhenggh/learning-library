@@ -98,7 +98,7 @@ Step 1 From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
 
 STEP 2 Select Compartment.
-![](../images/selectcompartment.png " ")
+![](../images/createCompartment.png " ")
 
 STEP 3 Click Create Bucket.
 ![](../images/createbucketbutton.png " ")
