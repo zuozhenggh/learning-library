@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 30 minutes
 
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
@@ -57,6 +57,8 @@ Estimated Lab Time: 20 minutes
 
 3. Click on **Choose File** and select **ORDS-REST-DEMO.sql**, the file you just downloaded for this workshop.
 
+    ![](./images/25.png " ")
+
 4. Finish by clicking on **Import**.
 
     ![](./images/9new.png " ")
@@ -93,9 +95,10 @@ Estimated Lab Time: 20 minutes
 7. Change the **Source Type** to **Query**.
 
 8. Then, input the following into the Source box:
-```
-<copy>select * from OOW_DEMO_REGIONS</copy>
-```
+
+    ```
+    <copy>select * from OOW_DEMO_REGIONS</copy>
+    ```
 
 9. Finish by clicking on **Create Handler**.
 
@@ -125,19 +128,19 @@ Estimated Lab Time: 20 minutes
 
 1. Under **warehouseAPI**, click on the **stores** API and copy the **Full URL** and paste it into a separate notes file (i.e. Notepad, Microsoft Word, Apple Notes, etc.) to be used later.
 
-    ![](./images/17v1.png " ")
+    ![](./images/17new.png " ")
 
 2. Next, do the same with the following 2 APIs, copying each **Full URL** and pasting each into that same separate notes file.  Be sure to label which URL is which so that you do not confuse them later.
-```
-<copy>
-product/inventoryForecastingAPI/{store_add}
-</copy>
-```
-```
-<copy>
-product/trendingProductAPI/{store_add}
-</copy>
-```
+    ```
+    <copy>
+    product/inventoryForecastingAPI/{store_add}
+    </copy>
+    ```
+    ```
+    <copy>
+    product/trendingProductAPI/{store_add}
+    </copy>
+    ```
 
    ![](./images/17v2.png " ")
 
@@ -155,7 +158,7 @@ product/trendingProductAPI/{store_add}
 
 5. Next, copy your ‘Inventory Forecasting’ API URL, from your notes, into the "inventory forecast api url" variable in the code using the **DEFINE INVENTORY FORECAST API REQUEST URL** instructions provided in the code. (Note: Be sure to read the instructions carefully, as they are different than the instructions for the ‘stores’ API URL.)
 
--   **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
+    **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
 
     ![](./images/21version2.png " ")
 
@@ -189,6 +192,6 @@ product/trendingProductAPI/{store_add}
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
 
