@@ -53,9 +53,7 @@ The objective of this lab is to become familiar with Enterprise Monitoring capab
 The Overview pane shows the Target Status of your IT estate. The Status section shows aggregated target availability so you can get a sense of what percentage is UP vs DOWN at a quick glance. The Green slice of the pie are your targets that are up. The Red slice of the pie are the targets that are down. Targets in red may be down due to unscheduled outages. Let’s drill down and take a look at them.
      ![](images/emmonlab1step3.png " ")
 
-  4.  Click on the Red slice of the pie in the “Status” section.
-
-      Note: You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment.   The number of targets may vary based on your lab environment.
+  4.  Click on the Red slice of the pie in the “Status” section. Note: You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment.   The number of targets may vary based on your lab environment.
      ![](images/emmonlab1step4.png " ")  
 
      If a dialog pops up, click on ‘Down’ again.
