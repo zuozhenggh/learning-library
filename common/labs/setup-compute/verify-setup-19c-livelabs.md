@@ -26,12 +26,12 @@ This lab assumes you have:
 - A LiveLabs Cloud account and assigned compartment
 - The IP address and instance name for your DB19c Compute instance
 - Successfully logged into your LiveLabs account
-- A Valid SSH Key
+- A Valid SSH Key Pair
 
 ## **STEP 1**: Gather compute instance details
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
-2. Select the compartment that was assigned.
+2. Select the compartment that was assigned (the compartment assigned begins with the prefix *LL* followed by your user ID)
 3. Look for the instance that was created for you jot down the public IP address.
     ![Create a stack](images/workshop-012.png " ")
 
@@ -39,8 +39,57 @@ This lab assumes you have:
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you provided during registration.
 
+- Using Oracle Cloud Shell (recommended)
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
+
+### Upload Key to Cloud Shell and Connect
+
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key. Note the private key does not have a `.pub` extension.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the half of the key pair that does *not* have a `.pub` extension.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory and change the permissions.
+
+    ```nohighlight
+    <copy>
+    ls
+    </copy>
+    ```
+    ```nohighlight
+    mkdir ~/.ssh
+    mv <<keyname>> ~/.ssh
+    chmod 600 ~/.ssh/<privatekeyname>
+    ls ~/.ssh
+    ```
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+7.  Secure Shell into the compute instance using your uploaded key name (the private key).
+
+    ```
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ```
+    ![](./images/em-mac-linux-ssh-login.png " ")
+
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
@@ -203,4 +252,3 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 - **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
 - **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
-
