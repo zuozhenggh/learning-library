@@ -34,7 +34,7 @@ This lab assumes you have:
 2. Select the compartment that was assigned (the compartment assigned begins with the prefix *LL* followed by your user ID)
 3. Look for the instance that was created for you jot down the public IP address.
     ![Create a stack](images/workshop-012.png " ")
-    
+
 
 ## **STEP 2**: Connect to your instance
 
@@ -98,9 +98,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    ```
     ![](./images/cloudshellssh.png " ")
 
     ![](./images/cloudshelllogin.png " ")
@@ -115,9 +115,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 1.  Open up putty and create a new connection.
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    ```
     ![](./images/ssh-first-time.png " ")
 
     *Note: The angle brackets <> should not appear in your code.*
@@ -147,56 +147,56 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
 1. Run the following command to verify the database with the SID **ORCL** is up and running.
 
-    ````
+    ```
     <copy>
     ps -ef | grep ORCL
     </copy>
-    ````
+    ```
     ![](./images/pseforcl.png " ")
 
 2. Verify the listener is running
-    ````
+    ```
     <copy>
     ps -ef | grep tns
     </copy>
-    ````
+    ```
 
     ![](./images/pseftns.png " ")
 
 3. Switch to the oracle user.
-      ````
+    ```
     <copy>
     sudo su - oracle
     </copy>
-    ````
+    ```
 
     ![](./images/sudo-oracle.png " ")
 
 4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
-    ````
+    ```
     <copy>
     . oraenv
     </copy>
     ORCL
-    ````
+    ```
     ![](./images/oraenv.png " ")
 
 5.  Login using SQL*Plus as the **oracle** user.  
 
-    ````
+    ```
     <copy>
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
     </copy>
-    ````
+    ```
     ![](./images/sqlplus.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
 ## **STEP 4**: Exit SQLPLUS
 1.  Exit the sqlplus session.
 
-    ````
+    ```
     SQL> <copy>exit</copy>
-    ````
+    ```
 2. Type exit again to *switch back to the opc user*.
 
     ```
