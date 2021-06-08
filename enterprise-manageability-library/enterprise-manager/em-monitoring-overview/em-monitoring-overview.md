@@ -221,6 +221,7 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
      ![](images/emmonlab4step3.png " ")
 
 4.	Give the Corrective Action a name and click on the “Parameters” tab.
+
      ![](images/emmonlab4step4.png " ")
 
 5.	There are a number of parameters available for the Add Space to Tablespace corrective action. These parameters can be adjusted according to your needs. For the purpose of this lab, we will leave the parameter values as is and click on Save to Library.
