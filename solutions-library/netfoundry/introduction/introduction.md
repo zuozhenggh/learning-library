@@ -33,7 +33,7 @@ Building the NetFoundry SDN framework consists of 7 major elements:
 - **AppWAN** - Policies for providing Services to Endpoints.  
 
 Diagram below for logical reference:
-![](./images/diag1.png " ")
+![](./images/software_component.png " ")
 
 ## Learn More
 

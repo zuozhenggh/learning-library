@@ -24,17 +24,17 @@ To get started you will need:
 
 - An internet connection with outbound connections to TCP port 80 and 443.
 
-	![](./images/diag.5.png " ")
+	![](./images/securityListportsoutbound.png " ")
 
 ## Create an Application in the Cloud (Oracle Cloud example)
 
 Identify an application sitting in your Cloud network or create a simple web app (Apache/80). We will provide this example of creating a web server in OCI that your NetFoundry client will access via a private VCN network IP address. 
 
 1. From within your Cloud console, select 
-	![](./images/diag1.5.png " ")
+	![](./images/createInstanceButton.png " ")
    
 	Select a name for your instance, select desired compartment and Availability domain. Oracle Linux is ok to use or choose an image of your liking. This example will use Oracle Linux 7.9 with 1 OCPU and 2 GB memory and apache web server.
-	![](./images/diag2.png " ")
+	![](./images/createComputeScreen.png " ")
 
 2. Next, select the VCN, subnet and assign a public IP address.  Select your public key for deployment.
 
@@ -47,7 +47,7 @@ Identify an application sitting in your Cloud network or create a simple web app
 	</copy>
 	````
 	**NOTE: you can configure the firewall to allow 80 or disable the built in instance firewall for testing.**
-	![](./images/diag3.png " ")
+	![](./images/createComputeCloudInit.png " ")
 
 You should now have a running web server in your specified VCN.
 
