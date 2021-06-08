@@ -115,128 +115,8 @@ From the Stack Details page, we can completely manage the stack's configuration 
 
 7. When you see the Load Balancer status change to OK, copy the **IP Address** and paste it into a new web browser tab.  You should see the sample web page load and atop the page it indicates which web server you are connected to.  Press **F5** a couple of times and see the web server change as you refresh the page.  Congratulations - your sample application deployed successfully.
 
-## **Step 3:** (OPTIONAL) Migrate source code to Gitlab
 
-As you often hear Terraform referred to as Infrastructure is Code, an optimal strategy includes the use of source control for all Terraform configuration.  With resource manager, you can integrate directly to your source control through the use of **Configuration Source Providers**.  In this section you will create a new configuration source provider using Gitlab and store your configuration.  To test it out, you will make a small change to your code and apply (update) the stack.  Watch as ORM pulls directly from Gitlab.
-
-**Important** This exercise requires some working experience with Git, and an account with gitlab.com.  You can set up a free account here:
-https://gitlab.com/users/sign_up
-
-1. In order to create a configuration source provider, you will need an **Access Token** for gitlab.com.  First you need to login to your GitLab Account and, once logged into gitlab.com, navigate to: "https://gitlab.com/-/profile/personal_access_tokens".  Enter the following details:
-
-    ![](./../resource-manager/images/ConfigSource01.png " ")
-
-      - Name
-      - Expires at
-      - Scopes: **read_api**
-
-
-    For security reasons, you may choose to set the token expiration 30 days out.  The personal access token (PAT) should be rotated regularly. Click **Create personal access token**
-
-2. The screen wil display your personal access token at the top of the page. Copy and save the token.
-
-   ![](./../resource-manager/images/gitoken.png " ")
-
-3. Return to the resource manager console and navigate to configuration source providers.  Click **Create Configuration Source Provider**.
-
-4. Complete the required fields as follows and click **Create**:
-
-    ![](./../resource-manager/images/ConfigSource02.png " ")
-
-    ...pasting the PAT created in step 1.
-
-    *Important* The configuration source provider need only reference your Gitlab account.  You will specify a particular repository and branch at the Stack level.
-
-5. Create a new Project (repository) in Gitlab. Again, we are using *Sample ORM Source* for this guide.
-
-  https://docs.gitlab.com/ee/gitlab-basics/create-project.html
-
-6. In order to modify the source for the existing stack, you will need to utilize the Cloud Shell utility to execute a Command Line Interface (CLI) command.  Click the Cloud Shell link in the top right corner of the console.
-
-    ![](./../resource-manager/images/CloudShell.png " ")
-
-7. When the Cloud Shell console opens, run the following command.  *NOTE* you will need to change the property values to match your environment.
-
-    ```
-    oci resource-manager stack update-from-git-provider \
-    --config-source-configuration-source-provider-id <the OCID of your source provider> \
-    --stack-id <the OCID of your ORM stack> \
-    --config-source-branch-name master \
-    --config-source-repository-url <the URL to your gitlab repo>
-    ```
-
-    The command will look something like this:
-    ```
-    oci resource-manager stack update-from-git-provider \
-    --config-source-configuration-source-provider-id ocid1.ormconfigsourceprovider.oc1.phx.aaxxxxxxrlz6totua \
-    --stack-id ocid1.ormstack.oc1.phx.aaaaaaaayiqk6xxxxxxxxxxntbz4hq \
-    --config-source-branch-name master \
-    --config-source-repository-url https://gitlab.com/oci-labs/sample-orm-source.git
-    ```
-
-8. When the command completes, return to Stacks, select the stack created earlier in this lab, and view the stack details to confirm that the changes were applied.
-
-  ![](./../resource-manager/images/UpdateStack01.png " ")
-
-9.  Next, you will need to push your Terraform code to Gitlab.
-  
-- Clone your Gitlab repo into Cloud Shell:
-  
-```
-# git clone https://gitlab.com/<username>/sample-orm-source
-# cd sample-orm-source
-```
-
-- Configure your GitLab environment:
-  
-```
-# git config --global user.email <your_email@example.com>
-# git config --global user.name <gitlab_username>
-```
-
-
-- Download and extract the orm-lbass-demo.zip file: 
-
-```
-# wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Jp3iMGo_6czdM4qk45cBROd9hO5R1BhtTKkFm2kjoB8MoiyZk6NBSa-5JUb6fSIW/n/ociobenablement/b/hol-labs/o/orm-lbass-demo.zip
-# unzip orm-lbass-demo.zip
-```
-
-![](./../resource-manager/images/gitsample01.png " ")
-
-- Now Add / Commit / Push to Gitlab.
-
-```
-# git add -A
-# git commit -m "Pushing first version of terraform source to GitLab"
-```
-
-![](./../resource-manager/images/gitsample02.png " ")
-
-```
-# git push
-```
-
-![](./../resource-manager/images/gitsample03.png " ")
-    
-  
-10.  Run terraform plan once more.  Your new source (Gitlab) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
-
-11.  **EXPERIMENT** Now you can update the code in Gitlab and Plan/Apply them directly to your stack.
-
-- Return to the folder where you unzipped the stack and created the local Git repo.  
-- Modify the **compute.tf** file by changing the display name of the Web-Server-01 to Web-Server-03:
-  
-  ``display_name = "Web-Server-01"``
-
-  to
-
-  ``display_name = "Web-Server-03"``
-
-- Save the file / Add / Commit / Push to Gitlab
-- Plan and Apply the changes to your stack
-
-## **Step 4:** Execute Jobs: Destroy
+## **Step 3:** Execute Jobs: Destroy
 
 Now that we've successfully applied our Terraform to build out our cloud resources (and optionally completed the source migration to Gitlab), let's return to the Stack Details page and use the Resource Manager to tear it all down.
 
@@ -246,17 +126,19 @@ Now that we've successfully applied our Terraform to build out our cloud resourc
       - Click **Destroy**
 
     ![](./../resource-manager/images/destroy01.png " ")
+
     ![](./../resource-manager/images/destroy02.png " ")
 
-2. Once again, notice that the state change is reflected in the console:  
+1. Once again, notice that the state change is reflected in the console:  
 
     ![](./../resource-manager/images/destroy03.png " ")
     Wait until the status shows **Succeeded** before proceeding.
 
-3. The final step is to delete the stack by clicking on the More Actions button on Stack Details page. Click on **Delete Stack** and confirm it by clicking **Delete** on the modal window.
+1. The final step is to delete the stack by clicking on the More Actions button on Stack Details page. Click on **Delete Stack** and confirm it by clicking **Delete** on the modal window.
 
     ![](./../resource-manager/images/destroy04.png " ")
     ![](./../resource-manager/images/destroy05.png " ")
+
 
 *Congratulations! You have successfully completed the lab.*
 
@@ -264,6 +146,6 @@ Now that we've successfully applied our Terraform to build out our cloud resourc
 
 - **Author** - Flavio Pereira, Larry Beausoleil, Eli Schilling
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Contributors** - Arabella Yao, Kamryn Vinson
+- **Contributors** - Arabella Yao, Kamryn Vinson, Orlando Gentil
 - **Last Updated By/Date** - Orlando Gentil, Jun 2021
 
