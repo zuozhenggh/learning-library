@@ -55,7 +55,6 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
 
   4.  Click on the Red slice of the pie in the “Status” section. Note: You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment.   The number of targets may vary based on your lab environment.
      ![](images/emmonlab1step4.png " ")  
-
      If a dialog pops up, click on ‘Down’ again.
      ![](images/emmonlab1step4b.png " ")   
 
