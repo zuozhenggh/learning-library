@@ -82,15 +82,17 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
-* [processed training csv data](../files/demo-training-data.csv)
+* [training csv data](../files/demo-training-data.csv)
     - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
+* <a href="../files/demo-testing-data.json" target="_blank" download>testing json data for detection</a>
     - same 10 signals with timestamp column, 100 observations
 
 
 ## **STEP 3:** Upload Data to Object Storage
 
-You need to upload those sample training data into Oracle object storage, to be prepared for model training in next steps.
+You need to upload the sample training data into Oracle object storage, to be prepared for model training in next steps.
+
+Testing json data is not needed to upload to bucket, but is needed in detection UI later.
 
 **STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
@@ -110,7 +112,7 @@ Next, fill out the dialog box:
 Then click Create
 ![](../images/pressbucketbutton.png " ")
 
-**STEP 3b:** Upload Downloaded file into Storage Bucket
+**STEP 3b:** Upload the Downloaded training csv data file into Storage Bucket
 
 Switch to OCI window and click the Bucket Name.
 
