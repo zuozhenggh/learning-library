@@ -73,7 +73,7 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 }
 ```
 
-**Best practices**
+**Prerequisites**
 * The training data should cover all the normal system conditions with the full value ranges for all attributes/signals.
 * The training data should not have abnormal conditions, which may contains anomalies.
 * The attributes in the data should be correlated well or belong to the same system or asset. Attributes from different systems are suggested to train separate models.
@@ -94,26 +94,25 @@ You need to upload those sample training data into Oracle object storage, to be 
 
 **STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
-Step 1 From the OCI Services menu, click Object Storage.
+First, From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
 
-STEP 2 Select Compartment.
+Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
 ![](../images/createCompartment.png " ")
 
-STEP 3 Click Create Bucket.
+Next click Create Bucket.
 ![](../images/createbucketbutton.png " ")
 
-STEP 4 Fill out the dialog box:
+Next, fill out the dialog box:
+* Bucket Name: Provide a name <br/>
+* Storage Tier: STANDARD
 
-Bucket Name: Provide a name <br/>
-Storage Tier: STANDARD
-
-STEP 5 Click Create
+Then click Create
 ![](../images/pressbucketbutton.png " ")
 
-**STEP 3b:** Upload Object
+**STEP 3b:** Upload Downloaded file into Storage Bucket
+
 Switch to OCI window and click the Bucket Name.
-![](../images/selectbucket.png " ")
 
 Bucket detail window should be visible. Click Upload
 ![](../images/bucketdetail.png " ")
