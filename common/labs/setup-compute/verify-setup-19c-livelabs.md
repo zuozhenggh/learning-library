@@ -34,6 +34,7 @@ This lab assumes you have:
 2. Select the compartment that was assigned (the compartment assigned begins with the prefix *LL* followed by your user ID)
 3. Look for the instance that was created for you jot down the public IP address.
     ![Create a stack](images/workshop-012.png " ")
+    
 
 ## **STEP 2**: Connect to your instance
 
