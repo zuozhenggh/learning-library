@@ -25,21 +25,19 @@ In this lab, you will:
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
      ![](./images/menu.png " ")
 
-2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity**, and then select **Policies**.
+2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
     ![](./images/menu_policies.png " ")
 
-3. Under List Scope, select the **Compartment** you are using for Data Integration, in this case the one we have created in Lab 0.
-    ![](./images/list_comp.png " ")
-
-4. After you have selected your compartment, click on **Create Policy**.
+3. Under List Scope, make sure you select the **Compartment** you are using for Data Integration, in this case the one you have created in Lab 0 (DI-compartment). After you have selected your compartment, click on **Create Policy**.
     ![](./images/add_policy.png " ")
 
 5. In the **Create Policy** panel, complete the following fields:
   * Enter a unique **Name** for your policy (For example "Policies-OCI-DI"). *Note that the name can NOT contain spaces.*
   * Enter a **Description** to help other users know the purpose of this set of policies (for example, "Policies for OCI Data Integration").
-  * Using the Policy Builder UI, you will choose „Data Integration” for **Policy use cases** and „Let users create and delete workspaces with networking” for **Common policy templates**.
-  * Select your **Group** and your **Compartment**, created in Lab 0
-  The policy statements should appear below. Click **Create**.
+  * Using the Policy Builder UI, choose "Data Integration" for **Policy use cases** and "Let users create and delete workspaces with networking" for **Common policy templates**.
+  * Select for **Group** the data integration group you created in Lab 0 (di-group).
+  * Select for **Compartment** the data integration compartment created in Lab 0 (DI-compartment).
+  The policy statements will appear below. Click **Create**.
 ![](./images/policy_builder.png " ")
 
 ## **STEP 2:** Create an OCI Data Integration Workspace
@@ -53,13 +51,20 @@ In this lab, you will:
 3. Under **List Scope**, from the Compartment dropdown, select the compartment you created policies for in the previous section and on the Data Integration Workspaces page, click **Create Workspace**.
 ![](./images/workspaces.png " ")
 
-4. In the **Create Workspace** panel, complete the fields as follows, and then click **Create**:
-* For **Name**, enter a name without any spaces. (For example, "Workspace1"). *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
-* You can add a meaningful **Description** to help other understand more about your Data Integration Workspace
-* Under Network Selection, **uncheck "Enable private network"**. It should now appear disabled.
+4. In the **Create Workspace** panel, complete the fields as follows:
+* For **Name**, enter a name without any spaces. (For example, "DI-workspace"). *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
+* You can add a meaningful **Description** to help other users understand more about your Data Integration Workspace (For example, "Data Integration workspace for the LiveLabs workshop")
+* Under Network Selection, leave **Enable private network** selected.
+* Select the VCN we have created in Lab 0 (OCI-VCN-WORKSHOP).
+* Select a Subnet from our VCN created in Lab 0. Choose the public subnet (Public Subnet-OCI-VCN-WORKSHOP).
+* Leave the optional fields DNS Server IP and DNS Server Zone empty.
+Click **Create**.
 ![](./images/create_workspace.png " ")
 
-5.	Click **Create**. The workspace takes a few minutes to create and become active. After the creation process is completed, you can access the workspace from the workspace list.
+5. The workspace takes a few minutes to create and become active. Your are now in the Workspaces page where you can see your new workspace. While it is being created, you can see the status as **Creating**.
+![](./images/creating-workspace.png " ")
+
+6. After the creation process is completed, you can see the workspace in  the workspace list with the status **Active**.
 ![](./images/create.png " ")
 
 *At the conclusion of the lab add this statement:*

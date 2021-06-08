@@ -2,83 +2,227 @@
 
 ## Introduction
 
-This lab will walk you through the steps to set up the prerequisites before starting our Data Integration journey in Oracle Cloud Infrastructure.
+This lab will walk you through the steps to set up the prerequisites before starting our Data Integration journey in Oracle Cloud Infrastructure. Several of these tasks need to be performed by the Cloud Administrator for your tenancy.
 
-Estimated Lab Time: 45 minutes
+Estimated Lab Time: 1 hour
 
 ## Objectives
 
 In this lab, you will:
+* Create an OCI Compartment
 * Create an OCI user and assign it to OCI Group
-* Create a compartment
 * Create a VCN and Subnet using VCN Wizard
-* Create an Autonomous Data Warehouse
-* Create Object Storage bucket and upload the sample data
+* Provision an Autonomous Data Warehouse and download Client Credentials (wallet)
+* Create an Object Storage bucket and upload the sample data
 
 ## Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+* Oracle Cloud Account credentials (Username, Password and Tenant)
 
-## **STEP 1**: Create an OCI user and assign it to OCI Group
+## **STEP 1**: Create an OCI Compartment
 
-Step 1 opening paragraph.
+A compartment is a collection of cloud assets. A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Integration resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Integration resources that you will use in the workshop.
 
-1. Sub step 1
+1. Log in to the Oracle Cloud Console as a user with administrator privileges. On the Sign In page, select your tenancy, enter your username and password, and then click **Sign In**. The Oracle Cloud Console Home page is displayed.
+    ![](./images/console.png " ")
 
-  To create a link to local file you want the reader to download, use this format:
+2. From the OCI console menu, select **Identity & Security**. Under Identity section, click on **Compartments**.
+    ![](./images/di-compartments-menu.png " ")
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+3. In the Compartments page, we have the list of our existing compartments (if any). Click on the **Create Compartment** button to create a sub-compartment.
+  ![](./images/create-comp-button.png " ")
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+4. In the **Create Compartment** dialog box:
+- Enter a meaningful **Name** for the compartment (Enter "DI-compartment" in the Name field).
+- Enter a meaningful **Description** (Enter "Compartment for Data Integration resources" in the Description field).
+- In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
+- Then click **Create Compartment**.
+  ![](./images/create-comp.png " ")
 
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
+5. The Compartments page is displayed and the newly created compartment is shown in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
+  ![](./images/new-comp.png " ")
 
-    ![Image alt text](images/sample1.png "Image title")
+## **STEP 2:** Create an OCI user and assign it to OCI Group
 
-3. Ordered list item 3 with the same image but no link to the text description below.
+A Cloud Administrator has complete control over all of the resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more data integration administrators. To create a new data integration administrator for a service, a Cloud Administrator must create a user and then add that user to a DI administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
+Note: In this workshop, you will not login to OCI using the new di-admin user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new di-admin user. The user must change the password when they sign in to the Console. For detailed information on this topic, see Managing User Credentials in the OCI documentation.
 
-    ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+Create a new Administrator group that will have full access rights to the new di-compartment as follows:
 
-5. One example with bold **text**.
+1. From the OCI console menu, click **Identity & Security** and then select **Users** under Identity section.
+![](./images/di-users-menu.png " ")
 
-   If you add another paragraph, add 3 spaces before the line.
+2. On the Users page, click **Create User**.
+![](./images/create-user-button.png " ")
 
-## **STEP 2:** title
+3. In the **Create User** dialog box:
+- Select **IAM User** as the user type
+- Enter "di-admin" in the **Name** field
+- Enter "Workshop OCI Data Integration User" in the **Description** field
+- Click **Create**.
+![](./images/create-user.png " ")
 
-1. Sub step 1
+4. The **Users Details** page for the new di-admin user is displayed.
+![](./images/di-user-details.png " ")
 
-  Use tables sparingly:
+5. We will now create a Data Integration group for the data integration users. From the OCI console, on the Menu click **Identity & Security**, then select **Groups** under Identity section.
+![](./images/di-groups-menu.png " ")
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+6. On the Groups page, click **Create Group**.
+![](./images/create-group-button.png " ")
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+7. In the Create Group dialog box, enter a unique **Name** for your group, such as "di-group" and a meaningful **Description** (for example, "Group for data integration users"). Then, click **Create**.
+![](./images/create-group.png " ")
 
-    - List item 1
-    - List item 2
+8. Your new group details are displayed.
+![](./images/group-details.png " ")
 
-3. Code examples
+9. In the Group Members section, click **Add User to Group**.
+![](./images/add-users-button.png " ")
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+10. In the Add User to Group dialog box, select the di-admin user that you created earlier from the Users drop-down list, and then click **Add**.
+![](./images/add-user-to-group.png " ")
 
-4. Code examples that include variables
+11. The Group Details page is re-displayed and the newly added user to this group is displayed in the Group Members section.
+![](./images/group-members.png " ")
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+<!-- 12. Now, you will create a security policy that gives your group permissions in the data integration compartment for workshop purposes. In this example, create a policy that gives permission to compartment di-compartment to members of group di-group
 
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+a) On the OCI console menu click Identity & Security, and then select Policies under Identity section.
+![](./images/menu-policies.png " ")
+
+b) On the left side in the Policies page, make sure you have selected the DI-compartment in the Compartment drop-down list in the List Scope section. After you have selected the di-compartment compartment, click Create Policy.
+![](./images/create-policy.png " ")
+
+c) Enter a unique Name for your policy (for example, "Policy-for-di-group") and Desciption (for example, "Policies for data integration group").
+
+d) From the Policy builder:
+- Select "Compartment Management" as the Policy use case.
+- Select "Let compartment admins manage the compartment" as the Common policy templates.
+- For Group select your "di-group"
+- For Location, select your compartment (DI-compartment)
+The policy statement that will appear will say "Allow group di-group to manage all-resources in compartment DI-compatment"
+- Click Create -->
+
+
+## **STEP 3:** Create a VCN and Subnet using VCN Wizard
+1. From the OCI console menu, click **Networking** and then select **Virtual Cloud Networks**.
+![](./images/oci-menu-vcn.png " ")
+
+2. On the Virtual Cloud Networks page, make sure that you are in the Data Integration compartment we have created (DI-compartment). Then click **Start VCN Wizard**.
+![](./images/vcns.png " ")
+
+3. Select VCN with Internet Connectivity, and then click **Start VCN Wizard**.
+![](./images/start-vcn-wizard.png " ")
+
+4. The Configuration page of the wizard is displayed.
+In the Basic Information section, provide the following information:
+- **VCN NAME**: Enter OCI-VCN-WORKSHOP.
+- **COMPARTMENT**: Select DI-compartment.
+![](./images/vcn-config.png " ")
+
+In the Configure VCN and Subnets section, provide the following information:
+
+**VCN CIDR BLOCK**: Leave the default 10.0.0.0/16.
+**PUBLIC SUBNET CIDR BLOCK**: Leave the default 10.0.0.0/24.
+**PRIVATE SUBNET CIDR BLOCK**: Leave the default 10.0.1.0/24.
+In the DNS RESOLUTION section, select the **USE DNS HOSTNAMES IN THIS VCN** check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
+![](./images/vcn-config-cidr.png " ")
+
+5. Click the **Next** button at the bottom left of the screen.
+
+6. Review your settings to be sure they are correct and then click **Create** button.
+![](./images/create-vcn-button.png " ")
+
+7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the  VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
+![](./images/vcn-successful.png " ")
+
+7. The Virtual Cloud Network Details page is displayed, and we can see that we have a private and a public Subnet.
+![](./images/vcn-details.png " ")
+
+
+## **STEP 4:** Provision an Autonomous Data Warehouse and download Client Credentials (wallet)
+1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
+![](./images/oci-menu-adw.png " ")
+
+2. The console shows the Autonomous Data Warehouse databases that exist, if any. Make sure that you are in the compartment that we have created for our data integration resources (DI-compartment). Click on **Create Autonomous Database**.
+![](./images/create-adw-button.png " ")
+
+3. Provide basic information for the autonomous database:
+- Choose a **Compartment** - Select a compartment for the database from the drop-down list (DI-compartment)
+- **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use "ADW Workshop".
+- **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use ADWWORKSHOP.
+![](./images/create-adw-basic.png " ")
+
+4. Select **Data Warehouse** as the workload type.
+![](./images/dw-select.png " ")
+
+5. Choose **Shared Infrastructure** as the deployment type.
+![](./images/deployment-type.png " ")
+
+6. Configure the database:
+- Always Free - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+- Choose database version - Select a database version from the available versions. For this lab, leave the default version 19c.
+- OCPU count - Number of CPUs for your service. For this lab, specify 1 CPU.
+- Storage (TB) - Select your storage capacity in terabytes. For this lab, specify 1 TB of storage.
+- Auto Scaling - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand if needed.
+![](./images/adw-config.png " ")
+
+7. Create **administrator credentials**:
+- Password and Confirm Password - Specify the password for ADMIN user of the service instance.
+![](./images/adw-credentials.png " ")
+
+8. Choose network access:
+- For this lab, accept the default, **Allow secure access from everywhere**.
+![](./images/adw-network-access.png " ")
+
+9. Choose a license type. For this lab, choose License Included. The two license types are:
+- Bring Your Own License (BYOL) - Select this type when your organization has existing database licenses.
+- License Included - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+![](./images/adw-license.png " ")
+
+10. Click **Create Autonomous Database**.
+![](./images/create-adw-final.png " ")
+
+11. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use!
+![](./images/adw-available.png " ")
+
+12. Download the **Client Credentials (Wallet file)** for your Autonomous Data Warehouse.  This will be used to connect OCI Data Integrator to the Autonomous Data Warehouse. From the ADW details page you are currently in, click on DB Connection button.
+![](./images/adw-db-conn.png " ")
+
+13. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
+![](./images/download-wallet-button.png.png " ")
+
+14. In the Download Wallet dialog, enter a wallet password in the Password field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click Download to save the client security credentials zip file. By default the filename is: Wallet_databasename.zip. You can save this file as any filename you want.
+![](./images/download-wallet.png " ")
+
+
+## **STEP 5:** Create an Object Storage bucket and upload the sample data
+1. From the OCI console menu, click **Storage** and then select **Buckets** under Object Storage & Archive section.
+![](./images/oci-menu-buckets.png " ")
+
+2. From the Buckets page, make sure that you are in the Data Integration compartment we have created (DI-compartment) and then click on **Create Bucket**.
+![](./images/create-bucket-button.png " ")
+
+3. Fill out the Create Bucket dialog box:
+- Bucket Name: Provide a name (DI-bucket)
+- Default Storage Tier: Standard
+- Leave the rest of the defaults and then click Create
+![](./images/create-bucket.png " ")
+
+4. You should now be able to see your new bucket in the Buckets page. Click on your bucket (di-bucket).
+![](./images/buckets.png " ")
+
+5. You can now see the details of your di-bucket. We will upload our source files for our workshop data integration flows in this bucket. Click on **Upload** button under Objects.
+![](./images/upload-button.png " ")
+
+6. Drop or select the files CUSTOMERS.json and REVENUE.xls from your local directories. Click Upload.
+![](./images/upload-objects.png " ")
+
+7. Once the files are uploaded, you will see the Finished state of the upload. Click Close.
+![](./images/finished-upload.png " ")
 
 ## Learn More
 
@@ -88,7 +232,7 @@ You may now [proceed to the next lab](#next).
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** -
+* **Contributors** -  
+* **Last Updated By/Date** -
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
