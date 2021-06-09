@@ -11,10 +11,6 @@ The flow of data from source to target can undergo a series of transforms to agg
 Data engineers and ETL developers can then analyze or gather insights and use that data to make business decisions.
 
 
-### Prerequisites
-
-- Steps from Create Data Integration Instance section have to be completed to go ahead on this lab. 
-
 Estimated Lab Time: 30 minutes.
 
 ### Objectives
@@ -25,6 +21,13 @@ In this lab, you will:
 - Create the Integration Task.
 - Publish the Integration Task.
 - Run the Task.
+
+### Prerequisites
+
+- Oracle Free Trial Account
+- Lab 1: Underlying Infrastructure 
+- Lab 2: Create MySQL Database Service
+- Lab 3: Create Data Integration Instance
 
 ## **STEP 1:** Create the Data Flow
 
@@ -228,7 +231,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** It works
+## **STEP 5:** It Works
 
 1. On the bastion host in **Cloud Shell** (reconnect if timed out), run the **MySQL docker** image and in the `bash` **Terminal**, run:
 
@@ -268,4 +271,4 @@ Congratulations, you are ready for the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
