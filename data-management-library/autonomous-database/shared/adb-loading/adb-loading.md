@@ -23,7 +23,7 @@ Estimated Lab Time: 30 minutes
 -   Learn how to load data from the Object Store
 -   Learn how to troubleshoot data loads
 
-In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create and load several ADW tables  with sample data that you stage to an *OCI Object Store*.
+In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create and load several ADW tables with sample data that you stage to an *OCI Object Store*.
 
 ### Prerequisites
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
@@ -33,7 +33,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 ### You Will Practice Three Loading Methods
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
 - **Loading Method 2**: Create and load two ADW tables with sample data that you stage in an *OCI Object Store*, using the Database Actions DATA LOAD tool.
-- **Loading method 3**: Create seven ADW tables using SQL Worksheet and load them with sample data that you stage in an *OCI Object Store*, using the PL/SQL *`DBMS_CLOUD`* package.
+- **Loading method 3**: Create ADW tables using SQL Worksheet and load them with sample data that you stage in an *OCI Object Store*, using the PL/SQL *`DBMS_CLOUD`* package.
 
 ## **STEP 1**: Download Sample Data for Loading from Local File
 
@@ -179,7 +179,7 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
 ## **STEP 8**: Loading Data from the Object Store using Database Actions DATA LOAD Tool
 
-In the first part of this lab, you loaded data from a file that you located on your local computer. In this part of the lab, you are going to load some more data, but this time you will load data from 1 of the files you uploaded to the Oracle Object Store. There are two parts to this process and the first part only needs to be performed once. The two parts are:
+In the first part of this lab, you loaded data from a file that you located on your local computer. In this part of the lab, you are going to load some more data, but this time you will load data from 2 of the files you uploaded to the Oracle Object Store. There are two parts to this process and the first part only needs to be performed once. The two parts are:
 
 + Set up connection to the Oracle Object Store.
 + Load the files.
@@ -218,21 +218,26 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Choose LOAD DATA and CLOUD STORAGE.](./images/choose-load-data-and-cloud-storage.png " ")
 
-8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by locating the `coun_v3.dat` file in the left part of the screen. Click and drag this file onto the canvas on the right.
+8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `coun_v3.dat` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
 
     ![Drag the file onto the canvas.](./images/drag-files-onto-canvas.png " ")
 
-9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the table.
+9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `coun_v3.dat` tables.
 
     ![Click the pencil button.](./images/click-pencil-button.png " ")
 
-10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL. Change the target table name to **COUNTRY_INFO**.
+10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL.
+
+    - For `channels.csv`, change the target table name to **CHANNELS\_DB\_TOOLS**.
+    - For `coun_v3.dat`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
 
     ![Review the properties sheet.](./images/review-properties-sheet.png " ")
 
 11. As soon as you are satisfied with the format, you can close the form and then click the **green arrow** button to start your data load job.
 
     ![Click green arrow button to start data load job.](./images/click-green-arrow-button-start-data-load.png " ")
+
+**Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
 
 ## **STEP 9**: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
 
@@ -325,4 +330,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, May 2021
+- **Last Updated By/Date** - Richard Green, June 2021
