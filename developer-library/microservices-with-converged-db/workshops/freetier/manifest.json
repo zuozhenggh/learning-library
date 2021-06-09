@@ -35,7 +35,12 @@
         "filename": "../../apex/apex.md"
       },
       {
-        "title": "Lab 7: Tear Down",
+        "title": "Lab 7: Transactional Tests: Compare MongoDB, Postgres, and Kafka to OracleDB with TEQ/AQ",
+        "filename": "../../teardown/teardown.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Lab 9: Tear Down",
         "filename": "../../teardown/teardown.md"
       },
       {

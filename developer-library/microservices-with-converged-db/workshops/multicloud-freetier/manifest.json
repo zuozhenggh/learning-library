@@ -26,21 +26,16 @@
         "filename": "../../walkthrough-helidon/walkthrough-helidon.md"
       },
       {
-        "title": "Lab 4: Polyglot Microservices",
-        "type":"multicloud-freetier",
-        "filename": "../../polyglot/polyglot.md"
-      },
-      {
-        "title": "Lab 5: Scaling",
+        "title": "Lab 4: Scaling",
         "type":"multicloud-freetier",
         "filename": "../../scaling/scaling.md"
       },
       {
-        "title": "Lab 6: Tracing Using Jaeger",
+        "title": "Lab 5: Observability",
         "filename": "../../tracing/tracing.md"
       },
       {
-        "title": "Lab 7: Tear Down",
+        "title": "Lab 6: Tear Down",
         "type":"multicloud-freetier",
         "filename": "../../teardown/teardown.md"
       },
