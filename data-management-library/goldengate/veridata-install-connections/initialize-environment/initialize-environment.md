@@ -48,24 +48,11 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
 
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (for example, Putty on Windows or Native such as terminal on Mac OS).
 
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
 
 ## **Step 1**: Start the Database
-1. From any of the terminal session started above.
-
-2. Go to folder /home/opc:
-
+1. From any of the terminal session started above, go to folder /home/opc:
 
     ```
     <copy>
@@ -73,14 +60,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     </copy>
     ```
-3. Run the script file env_setup.sh to initialize the environment variables. This will setup the environment variables needed to start the Services.
+2. Run the script file env_setup.sh to initialize the environment variables. This will setup the environment variables needed to start the Services.
 
     ```
     <copy>
     source env_setup.sh
     </copy>
     ```
-4. Run the script file to start the database.
+3. Run the script file to start the database.
 
     ```
     <copy>
@@ -91,7 +78,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 This will start the database and listener. The script could take 2-5 minutes to run.
 
 ## **STEP 2**: Start the Oracle WebLogic Server
-1. Open Linux terminal on VNC and set up the environment variables.
+1. Open a terminal on noVNC Remote Desktop and set up the environment variables.
 
     ```
     <copy>
@@ -120,7 +107,7 @@ This script could take 2-5 minutes to start the WebLogic server.
 ## **STEP 3**: Start the Oracle GoldenGate Veridata Server
 You can start the Veridata server only after the WebLogic server is up and running.
 
-1. Open Linux terminal on VNC and set up the environment variables.
+1. Open a terminal on noVNC Remote Desktop and set up the environment variables.
 
     ```
     <copy>
@@ -152,7 +139,7 @@ This script could take 2-5 minutes to start the Veridata server.
 
 ## **STEP 4**: Start the Oracle GoldenGate Veridata Agent
 
-1. Open Linux terminal on VNC and set up the environment variables.
+1. Open a terminal on noVNC Remote Desktop and set up the environment variables.
 
      ```
      <copy>

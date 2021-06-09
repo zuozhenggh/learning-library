@@ -30,12 +30,25 @@ This lab assumes you have:
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
   1. Open a browser in VNC and enter the URL:
-
-        http://<Hostname>:8830/veridata/login.jsf
-
+    ```
+    <copy>
+    http://<your instance public-ip address>:8830/veridata/login.jsf
+    </copy>
+    ```
       OR
 
-        http://localhost:8830/veridata/login.jsf
+    ```
+    <copy>
+    http://localhost:8830/veridata/login.jsf
+    </copy>
+    ```
+      OR
+
+    ```
+  <copy>
+  http://veridata.livelabs.oraclevcn.com:8830/veridata/login.jsf
+  </copy>
+    ```
   2. Enter your login credentials:
       * **username**: ggadm
       * **Password**: welcome1
@@ -58,9 +71,26 @@ To create connections:
     ![](./images/3-connection-name-description.png " ")
 4. Enter the following details:
     * **Host Name or IP Address**: Name of the host where Oracle GoldenGate Veridata Agent is running.
-      Enter <pre><*Hostname*></pre> Or <pre>localhost</pre>
+      Enter
+          ```
+          <copy>
+          veridata.livelabs.oraclevcn.com
+          </copy>
+          ```
+      OR
+          ```
+          <copy>
+          localhost
+          </copy>
+          ```
+
     * **Port**: The port number for Oracle GoldenGate Veridata Agent on that host. Enter
-        <pre>7850</pre>
+
+          ```
+          <copy>
+          7850
+          </copy>
+          ```
     * **Datasource Type**: The datasource that is associated with this agent. Click **Verify**.
       ![](./images/4-new-connection-assistant.png " ")
 
@@ -80,7 +110,7 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
-You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-groups-compare-pairs)
+You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-groups-compare-pairs).
 
 ## Learn More
 
