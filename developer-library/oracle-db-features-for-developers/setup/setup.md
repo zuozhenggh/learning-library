@@ -17,12 +17,12 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     ```
 
 2. If you are not the oracle user, log back in:
-      ````
+    ````
     <copy>
     sudo su - oracle
     </copy>
     ````
-
+    
     ![](./images/sudo-oracle.png " ")
 
 4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
