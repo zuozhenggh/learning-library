@@ -45,7 +45,7 @@ Estimated Lab Time - 10 minutes
     ```
 
 
-## **STEP 2**: Run tests against ...... implementation
+## **STEP 2**: Run tests against MongoDB, Postgres, Kafka implementations
 
 
 1.  Click the `Crash order service after Order is inserted` button
@@ -55,6 +55,46 @@ Estimated Lab Time - 10 minutes
   Crash order service after Order is inserted (before Order message is sent to Inventory service)
   Crash Inventory service after Order message is received (before inventory for order is checked)
   Crash Inventory service after inventory for order is checked (before Inventory status message is sent)
+  
+   ![](images/getinventory10.png " ")
+   
+   ![](images/crashorder.png " ")
+   
+   ![](images/placeorder66.png " ")
+   
+   ![](images/connectionrefused.png " ")
+   
+   ![](images/order66pending.png " ")
+   
+   ![](images/getinventory10.png " ")
+   
+   ![](images/crashinventorybefore.png " ")
+   
+   ![](images/crashinventorybeforeset.png " ")
+   
+   ![](images/placeorder67.png " ")
+   
+   ![](images/order67pending.png " ")
+   
+   ![](images/showorder67.png " ")
+   
+   ![](images/order67success.png " ")
+   
+   ![](images/getinventory9.png " ")
+   
+   ![](images/crashinventoryafter.png " ")
+   
+   ![](images/crashinventoryafterset.png " ")
+   
+   ![](images/placeorder68.png " ")
+   
+   ![](images/order68pending.png " ")
+   
+   ![](images/showorder68.png " ")
+   
+   ![](images/order68success.png " ")
+   
+   ![](images/getinventory7.png " ")
   
 ## **STEP 3**: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
 
@@ -75,6 +115,57 @@ Estimated Lab Time - 10 minutes
     ```
     <copy>msdataworkshop</copy>
     ```
+   
+## **STEP 5**: Run tests against Oracle DB + AQ implementations
+
+1.  Click the `Crash order service after Order is inserted` button
+2.  Go through the same process as in the Lab 2 Microservices Walk-through and click the `Place Order` button
+3.  Notice hang and then the fact that order is pending.
+
+  Crash order service after Order is inserted (before Order message is sent to Inventory service)
+  Crash Inventory service after Order message is received (before inventory for order is checked)
+  Crash Inventory service after inventory for order is checked (before Inventory status message is sent)
+  
+   ![](images/getinventory10.png " ")
+   
+   ![](images/crashorder.png " ")
+   
+   ![](images/placeorder66.png " ")
+   
+   ![](images/connectionrefused.png " ")
+   
+   ![](images/showordernull.png " ")
+   
+   ![](images/getinventory10.png " ")
+   
+   ![](images/crashinventorybefore.png " ")
+   
+   ![](images/crashinventorybeforeset.png " ")
+   
+   ![](images/placeorder67.png " ")
+   
+   ![](images/order67pending.png " ")
+   
+   ![](images/showorder67.png " ")
+   
+   ![](images/order67success.png " ")
+   
+   ![](images/getinventory9.png " ")
+   
+   ![](images/crashinventoryafter.png " ")
+   
+   ![](images/crashinventoryafterset.png " ")
+   
+   ![](images/placeorder68.png " ")
+   
+   ![](images/order68pending.png " ")
+   
+   ![](images/showorder68.png " ")
+   
+   ![](images/order68success.png " ")
+   
+   ![](images/getinventory7.png " ")
+   
    
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata

@@ -36,7 +36,7 @@
       },
       {
         "title": "Lab 7: Transactional Tests: Compare MongoDB, Postgres, and Kafka to OracleDB with TEQ/AQ",
-        "filename": "../../teardown/teardown.md",
+        "filename": "../../transactional/transactional.md",
         "type": "event-freetier"
       },
       {
