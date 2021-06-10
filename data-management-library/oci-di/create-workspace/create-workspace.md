@@ -6,7 +6,7 @@ This lab will guide you through the steps to set up the necessary policies for O
 
 Estimated Lab Time: 15 minutes
 
-## OCI Data Integration policies and workspaces
+## About Policies and Workspaces in OCI Data Integration
 Oracle Cloud Infrastructure Data Integration uses standard authentication and authorization offered by Oracle Cloud Infrastructure. Policies required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. To control access to Data Integration and the type of access each group of users has, you must create policies. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, you must create policies that gives them proper access to Data Integration resources.
 Before you can get started with Data Integration, you must first create a workspace for your data integration solution. A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you can have separate workspaces for development, testing, and production. The workspace is the preliminary component of Oracle Cloud Infrastructure Data Integration.
 
@@ -56,7 +56,7 @@ In this lab, you will:
 * You can add a meaningful **Description** to help other users understand more about your Data Integration Workspace (For example, "Data Integration workspace for the LiveLabs workshop")
 * Under Network Selection, leave **Enable private network** selected.
 * Select the VCN we have created in Lab 0 (OCI-VCN-WORKSHOP).
-* Select a Subnet from our VCN created in Lab 0. Choose the public subnet (Public Subnet-OCI-VCN-WORKSHOP).
+* Select a Subnet from our VCN created in Lab 0. Choose the private subnet if it is not selected by default (Private Subnet-OCI-VCN-WORKSHOP).
 * Leave the optional fields DNS Server IP and DNS Server Zone empty.
 Click **Create**.
 ![](./images/create_workspace.png " ")
