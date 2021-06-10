@@ -49,7 +49,7 @@ To get started you will need:
 
 6. Finally, Add an ingress rule for port 80 and port 443
 
-	![](./images/Addingressrule.png " ")
+	![](./images/addIngressRule.png " ")
 
 	
 
