@@ -39,7 +39,7 @@ To get started you will need:
 
 	![](images/vcnCreation1.png " ")
 	
-4, Next, review the components that will be created and click Create
+4. Next, review the components that will be created and click Create
 
 	![](images/vcnCreation2.png " ")
 	
