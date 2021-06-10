@@ -34,23 +34,23 @@ To get started you will need:
 2. Next, select VCN with Internet Connectivity
 
 	![](images/createVCNwithInternetConnectivity.png " ")
-
+	
 3. Next, give a suitable name for your VCN and click Next
 
 	![](images/vcnCreation1.png " ")
-
+	
 4, Next, review the components that will be created and click Create
 
 	![](images/vcnCreation2.png " ")
-
+	
 5. Next, click the VCN that you just created and navigate to security list and select default Security List
 
 	![](images/securitylist.png " ")
-
+	
 6. Finally, Add an ingress rule for port 80 and port 443
-
+	
 	![](images/addIngressRule.png " ")
-
+	
 
 ## Create an Application in the Cloud (Oracle Cloud Example)
 
