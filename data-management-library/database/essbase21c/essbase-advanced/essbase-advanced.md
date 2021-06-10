@@ -58,16 +58,23 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
     d. In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
 
-    e. Under Preview Data, select File for the flat file input option.
+    e. Under the Source Type, Select File.
 
-    f. Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click Open to select it.
+    f. Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click **Open** to select it.
     
-    g. As you saw earlier, the first row of the flat file doesn’t contain header values. Deselect the Header Row check box if it is selected.
+    g. As you saw earlier, the first row of the flat file doesn’t contain header values. Enter the Header Record Number as 0.
 
     h. Specify the Delimiter value as Comma, based on the file format.
 
-    i. Click **Proceed**.
+    i.Set the preview data count value to 10.
+
     ![](./images/Dim_3.png)
+
+    j. Click **Preview Data**.
+
+    ![](./images/Dim_3_0.png)
+
+    k. Click **Proceed**.
 
     You can now preview the dimension structure in the rules editor, with the columns displayed based on the input flat file.
 
@@ -109,7 +116,7 @@ The source file for this rule is in parent-child format.
   i. Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
 Click **Close** to return to the home page.	
 
-1. Next, you create and run a job to build the dimension using the rule.
+6. Next, you create and run a job to build the dimension using the rule.
 
    a. On the home page, select, Jobs, and then New Job.
 
@@ -174,39 +181,48 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	  ![](./images/image14_78.png)
 
-	d. In the New Rule dialog box, enter LoadCorp as the name of rule.
+	d. In the New Rule dialog box, enter **LoadCorp** as the name of rule.
 
-	e. Enter Measures as the data dimension.
+	e. Under Source Type, select File for flat file input.
 
-	f. Under Preview Data, select File for flat file input.
+	f. Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
 
-	g. Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
+	g.As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
 
-	h.	As you saw earlier, the first row of the flat file doesn't contain header values. Uncheck the Header Row, if it is selected. When the header row is present the columns are mapped automatically.  
+	h.Select Comma as the Delimiter value based on the file format.  
 
-	i.	Select Comma as the Delimiter value based on the file format.  
-
-	j.	Click **Proceed**.  
+	i.	Click **Preview Data**.  
 
 	  ![](./images/image14_79.png)
 
-1.  You can now see the preview of the data in the rules editor based on the input flat file.
+    j. Click **Proceed**.
+
+    ![](./images/image14_79_1.png)
+
+5.  You can now see the preview of the data in the rules editor based on the input flat file.
 
     The Global options toolbar, on the top right of the rules editor allows you to modify file properties or the data source and to see the results in the rules editor. The Field options toolbar on the left side of the rules editor allows you map fields in the rule.
 
     Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 
-2. In the rules editor, you can now set up the rule fields.
+6. In the rules editor, you can now set up the rule fields.
 
     ![](./images/image14_80.png)
 
-    a. Map the fields as below:
+    a. Click **Edit** on Field 1 and map the fields as below:
 
-    * Field 1 - Product
+    ![](./images/image14_80_1.png)
+
+    * Field 1 - Search Product in member tree or enter Product under Field Name. Click **Next**.
+    ![](./images/image14_80_2.png)
+    * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
     * Field 2 - Market
     * Field 3 - Year
     * Field 4 - Scenario
-    * Field 5 - Sales
+    * Field 5 - Search Sales in member tree and select it as Field Name. Check **Data field** option and select the Storage type as **Sum**. Click **Next**.
+    ![](./images/image14_80_3.png)
+    Repeat the same as above for Field 6 – Field 11 and enter the Field Name as mentioned below.
+
     * Field 6 - COGS
     * Field 7 - Marketing
     * Field 8 - Payroll
@@ -216,13 +232,17 @@ Create a rule file that is based on a sample file from the data warehouse.
   
        All dimensions must be represented in the load data rule before any data can be loaded.
 
+       Click **OK**.
+
     b. After defining the rule with field options, click **Verify** on the Global toolbar to validate the syntax and then click **Save and Close**.
+
+    ![](./images/image14_80_4.png)
 
     c. Click **Refresh**. See that the created rule is now listed in the Rules pane of the Scripts tab.
 
     d. Click **Close** to return to the Applications home page. Next create a job to load the data using the rule.
 
-3. On the home page, select Jobs and then New Job.
+7. On the home page, select Jobs and then New Job.
     ![](./images/image15_60.png)
 
     a. Select Load Data.
@@ -246,7 +266,7 @@ Create a rule file that is based on a sample file from the data warehouse.
     i. On the Jobs page, click Refresh to monitor the job status.
 
 
-4. After the job is completed, verify that the input records were processed and loaded.
+8. After the job is completed, verify that the input records were processed and loaded.
 
     a.	Select Job Details to check the load data job details.
 

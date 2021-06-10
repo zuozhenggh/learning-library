@@ -197,14 +197,14 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
    ![](./images/imageDT_20.png "")
    
    d) In the drop down menu, select **Data Load**.    
-     * In the Name field, provide the name of the rules file as SalesDataload.  
-     * For Data Dimension, select “Measures” dimension.  
+     * In the Name field, provide the name of the rules file as **SalesDataload**.  
+     * •	For Source Type, select Datasource.  
      * Click **Proceed**.   
     
    
    ![](./images/imageDT_21.png "")
 
-2. Click **Create** and select **Regular** from the drop down options. Do the same 4 more times to have 5 fields.
+2. Click **Create** and select **Regular** from the drop-down options. Do the same 4 more times to have 5 fields.
 
 3. Map the fields as following:
       *  Field - 1:  **Product** 
@@ -213,15 +213,16 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
       *  Field - 4:  **Year**
       *  Field - 5:  **Sales**
 
-   Make Sure to give "Storage Type" for "Sales" field as **Sum**.
+   Edit on Field 5- Sales. Select Data Field and set the Storage Type as **Sum**. Click **OK**.
 
    
    ![](./images/imageDT_22.png "")
+   ![](./images/imageDT_22_0.png "")
 
-4. Click **Source** at the top. In the General tab, in the Name field, enter the connection string – **$OCI$IP:1521/ORCL**. 
-   ![](./images/imageDT_23.png "")
-
-5. Click **SQL/Datasource Properties tab**, enter below SQL statement in the Query field. Click **OK**. 
+4. Click **Source Properties** at the top. In SQL Properties, set Properties as SQL Data Sources (DSN) and in the Name field, enter the connection string – **$OCI$IP:1521/ORCL**. 
+   
+  
+5. Enter below SQL statement in the Query field. Click **OK**. 
 
         <copy>        
             select product, market, scenario, year, sales from SALES_BREAKDOWN_SB
