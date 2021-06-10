@@ -152,6 +152,9 @@ As a result, launching your workshop guide from the remote desktop will further 
     ```
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
+4. Review environment details to learn more about the setup. Navigate to the file browser as shown below and open *ReadMe.txt*
+
+    ![](./images/open-readme.png " ")
 
 ## **STEP 5:** Login to Host using SSH Key based authentication (Optional)
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
