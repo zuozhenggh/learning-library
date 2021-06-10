@@ -51,7 +51,6 @@ To get started you will need:
 
 	![](images/addIngressRule.png " ")
 
-	
 
 ## Create an Application in the Cloud (Oracle Cloud Example)
 
