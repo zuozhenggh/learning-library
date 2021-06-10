@@ -40,17 +40,27 @@ This takes us to "Train Model" form with parameter selections.
 
 We can specify FAP(false alarm probability) and Train Fraction Ratio. The default values for these are 0.01 and 0.7 (implying 70%) respectively.
 
-###FAP(False Alarm Probability)
-FAP stands for False Alarm Probability. In other words, this basically specifies how much accurate the model needs to be. A high FAP model means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, user can specify it to be low. One thing to keep in mind is by specifying a lower FAP, the model needs more time to train.
+###FAP (False Alarm Probability)
 
-### How to calculate FAP
-![](../images/FAP_correct.png " ")
-As can be inferred from the formula, the more the number of false alarms higher the FAP will be.
+FAP stands for False Alarm Probability, which is basically the likelihood (percentage) a timestamp is flagged as anomaly in the clean training data, i.e. value of a signal in one timestamp is incorrectly detected as anomaly.
+
+A model with high FAP means the likelihood of an anomaly flagged by AD service to be a false alarm is high. If this is not desired, depending on the sensitivity requirements of a user, user can specify it to be low.
+
+Typically, FAP can be set to be around the same level of percentage of anomalies in real business scenarios, and a value 0.01 or 1% is relatively appropriate for many scenarios. Also, be aware that if specifying a lower target FAP, the model needs more time to train, and may not achieve to the target FAP.
+
+
+###How to calculate FAP
+
+![](../images/fap-formula.png " ")
+
+**FAP = sum(number of anomalies in each signal) / (number of signals * number of timestamps)**
+
+As can be inferred from the formula, the more the number of false alarms allowed for the model to learn, the higher FAP will be.
 
 ###Train Fraction Ratio
 Train Fraction Ratio specifies to the model on how much of the data to use for training. So the default value 0.7 or 70% specifies the model to use 70% of the data for training.
 
-The default value for FAP is 0.01 which requires a long training time to achieve. In order to reduce the training time the FAP is increased to 0.05. The training fraction ratio can be left as it is.
+The default value for FAP and Train Fraction Ratio are appropriate to our demo data set, we will leave them as is.
 ![](../images/create_and_train_model.png " ")
 
 Click Submit. For this demo dataset, it takes **5 minutes** to finish training a model.
@@ -90,8 +100,24 @@ Once the test file is submitted, you have the option to select the column to see
 Use the drop wizard to select column. The columns for which the model has detected anomalies will be labelled as such.
 ![](../images/select_column_drop.png " ")
 
- Lets select temperature_3 to see where the model has detected an anomaly.
- ![](../images/graph.png " ")
+Lets select temperature_3 to see where the model has detected an anomaly.
+
+**Explanation of the Graph**
+
+Each signal in your detection data can be selected to show a separate graph.
+
+In the graph, horizontal axis represents the timestamp, and the vertical axis represents sensor values.
+
+The BLACK curve is the actual data you provided, GREEN curve is the value estimated by our model.
+
+The WHITE background means no anomaly detected, or the RED background means data in that range is detected as anomalies by the model.
+
+You can move your mouse over the graph, the actual value & estimated value at a certain timestamp will show at the upper right corner of the graph.
+
+You can also use the sliding bar under the graph to zoom in/out in different timestamp period.
+
+![](../images/graph.png " ")
+
 
 The part of the signal where the model has determined to be an anomaly is highlighted. There is also an option to download the anomaly detection result.
 
