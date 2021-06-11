@@ -41,7 +41,7 @@ This lab assumes you have:
     * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
     * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
 4. Select the Report from **Existing Reports**.
-      
+
 5. Click the **Report Name** link to display the **Report**.
     ![](./images/2-reports-selection-view.png " ")
 
@@ -56,5 +56,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji and Sukin Varghese
+* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
 * **Last Updated By/Date** - Anuradha Chepuri, June 2021
