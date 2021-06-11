@@ -194,6 +194,8 @@ This lab assumes you have:
     </copy>
     ```
 
+    **Notes:** If the URL fails to load, verify that your VCN contains an *ingress* rule for port *6080*
+
 5. Ensure that the *EPEL* Yum Repo is configured and enabled. i.e. contains the entry *enabled=1*. If not, update it accordingly before proceeding with the next step
 
     ```
@@ -234,6 +236,7 @@ This lab assumes you have:
     ```
     <copy>
     sudo su - ${appuser}
+    rm -rf $HOME/.vnc
     vncserver
     </copy>
     ```
@@ -345,7 +348,53 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-## **STEP 4**: Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
+## **STEP 4**: Add Important Bookmarks to FireFox
+Provide convenient access to LiveLabs and any relevant URL to your workshop by adding bookmarks to *FireFox* browser.
+
+1. Launch *FireFox* and delete all default bookmarks shown in the *Bookmarks Toolbar* area. For each item listed, Right-Click to select and Click *Delete* to remove
+
+    ![](./images/add-firefox-bookmarks-01.png " ")
+
+2. Right-Click in the *Bookmarks Toolbar* area and Click *New Bookmark*
+
+    ![](./images/add-firefox-bookmarks-02.png " ")
+
+3. Provide the following two inputs and click *Add* to create a bookmark to *LiveLabs*
+
+    ```
+    Name: <copy>Oracle LiveLabs</copy>
+    ```
+
+    ```
+    Location: <copy>bit.ly/golivelabs</copy>
+    ```
+
+    ![](./images/add-firefox-bookmarks-03.png " ")
+
+4. Click on the newly added bookmark to confirm successful page loading.
+
+    ![](./images/add-firefox-bookmarks-04.png " ")
+
+5. Repeat steps [2-4] above to add any other relevant URL needed in your workshop. In the example below borrowed from *DB Security* workshop, we added the following extra bookmarks
+    - HR App PDB1 Prod|Dev
+    - Enterprise Manager
+    - Audit Vault
+    - Key Vault
+
+6. Click on the *Hamburger-Menu* from the upper-right corner and select *Preferences*
+
+    ![](./images/add-firefox-bookmarks-05.png " ")
+
+7. With the tabs you would like preloaded on browser startup already opened and starting with LiveLabs, Click on *Home* and *Use Current Pages*, then do the following:
+    - Uncheck *Top Sites*, *Highlights*, and *Snippets*
+    - Click on *X* next to *Preferences* tab to close it
+    - Click on *+* to open a new tab and confirm that you are getting a clean new tab free of all elements such as *Top Sites* and *Highlights*
+
+    ![](./images/add-firefox-bookmarks-06.png " ")
+
+    ![](./images/add-firefox-bookmarks-07.png " ")
+
+## **STEP 5**: Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
 Perform the tasks below and add them to any workshop guide to instruct users on how to enable clipboard on the remote desktop for local-to-remote copy/paste.
 
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
@@ -364,7 +413,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     *Note:* Please make sure you initialize your clipboard with steps *[1-3]* shown above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function grayed out in step 4 when attempting to paste.
 
-## **STEP 5**: Enable VNC Password Reset for each instance provisioned from the image
+## **STEP 6**: Enable VNC Password Reset for each instance provisioned from the image
 For added security, update your Terraform/ORM stack with the tasks below to enable VNC password reset for each VM provisioned from the image.
 
 1. Add provider *random* to *main.tf* or and any other *TF* file in your configuration if you not using *main.tf*
@@ -439,11 +488,28 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
 
     </copy>
     ```
-6. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
+
+6. Add an *ingress* rule to your *network.tf* to enable remote access to port *6080* when the VCN is created
+
+    ```
+    <copy>
+    ingress_security_rules {
+      protocol = "6"
+      source   = "0.0.0.0/0"
+      tcp_options {
+        min = 6080
+        max = 6080
+      }
+    }
+
+    </copy>
+    ```
+
+7. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
 
     ![](./images/orm-output.png " ")
 
-7. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
+8. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
 
     ![](./images/orm-single-click-url.png " ")
 
