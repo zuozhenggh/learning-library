@@ -48,52 +48,62 @@ Estimated Lab Time - 10 minutes
 ## **STEP 2**: Run tests against MongoDB, Postgres, Kafka implementations
 
 
-1.  Click the `Crash order service after Order is inserted` button
-2.  Go through the same process as in the Lab 2 Microservices Walk-through and click the `Place Order` button
-3.  Notice hang and then the fact that order is pending.
-
-  Crash order service after Order is inserted (before Order message is sent to Inventory service)
-  Crash Inventory service after Order message is received (before inventory for order is checked)
-  Crash Inventory service after inventory for order is checked (before Inventory status message is sent)
-  
+1. Add Inventory until there is a value of 10 for sushi.
    ![](images/getinventory10.png " ")
    
+2. Click the `Crash order service after Order is inserted (before Order message is sent to Inventory service)` button. 
    ![](images/crashorder.png " ")
+   ![](images/crashorderset.png " ")
    
+3. Click the `Place Order` button to place order `66`
    ![](images/placeorder66.png " ")
    
+4. The request will hang due to the failure. Refresh the browser, return to the `Transactional` page, and click the `Show Order` button for order `66`.  
+   You may see a "connection refused" message as the Order service has crashed and is restarting.
    ![](images/connectionrefused.png " ")
    
+5. Click the `Show Order` button until the order is present. Notice the order is in a pending state and will remain in this state, requiring explicit handling.
    ![](images/order66pending.png " ")
    
+6. Click the `Get Inventory` button and notice inventory remains at 10 as expected.
    ![](images/getinventory10.png " ")
    
+7. Click the `Crash Inventory service after Order message is received (before inventory for order is checked)` button.
    ![](images/crashinventorybefore.png " ")
-   
    ![](images/crashinventorybeforeset.png " ")
    
+8. Enter order number `67` and click the `Place Order` button.
    ![](images/placeorder67.png " ")
    
+9. Notice the pending order status. The order will remain pending until the Inventory service restarts and receives the duplicate message deliver for the order
    ![](images/order67pending.png " ")
    
+10. Continue to click the `Show Order` button until the successful order status is shown.
    ![](images/showorder67.png " ")
    
+11. Notice the successful order status due to duplicate message being delivered.
    ![](images/order67success.png " ")
    
+12. Click the `Get Inventory` button and notice inventory has been reduced to correct value of 9.
    ![](images/getinventory9.png " ")
    
+13. Click  the `Crash Inventory service after inventory for order is checked (before Inventory status message is sent)` button.
    ![](images/crashinventoryafter.png " ")
-   
    ![](images/crashinventoryafterset.png " ")
    
+14. Enter order number `68` and click the `Place Order` button.
    ![](images/placeorder68.png " ")
    
+15. Notice the pending order status. The order will remain pending until the Inventory service restarts and receives the duplicate message deliver for the order
    ![](images/order68pending.png " ")
    
+16. Continue to click the `Show Order` button until the successful order status is shown.
    ![](images/showorder68.png " ")
    
+17. Notice the successful order status due to duplicate message being delivered.
    ![](images/order68success.png " ")
    
+18. Click the `Get Inventory` button and notice inventory has been reduced to incorrect value of 7 as the duplicate message delivery has reduced inventory twice for the same order.
    ![](images/getinventory7.png " ")
   
 ## **STEP 3**: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
@@ -118,54 +128,65 @@ Estimated Lab Time - 10 minutes
    
 ## **STEP 5**: Run tests against Oracle DB + AQ implementations
 
-1.  Click the `Crash order service after Order is inserted` button
-2.  Go through the same process as in the Lab 2 Microservices Walk-through and click the `Place Order` button
-3.  Notice hang and then the fact that order is pending.
 
-  Crash order service after Order is inserted (before Order message is sent to Inventory service)
-  Crash Inventory service after Order message is received (before inventory for order is checked)
-  Crash Inventory service after inventory for order is checked (before Inventory status message is sent)
-  
+1. Add Inventory until there is a value of 10 for sushi.
    ![](images/getinventory10.png " ")
    
+2. Click the `Crash order service after Order is inserted (before Order message is sent to Inventory service)` button. 
    ![](images/crashorder.png " ")
+   ![](images/crashorderset.png " ")
    
+3. Click the `Place Order` button to place order `66`
    ![](images/placeorder66.png " ")
    
+4. The request will hang due to the failure. Refresh the browser, return to the `Transactional` page, and click the `Show Order` button for order `66`.  
+   You may see a "connection refused" message as the Order service has crashed and is restarting.
    ![](images/connectionrefused.png " ")
    
+5. Click the `Show Order` button until the order is present. Notice the order is null as order `66` was correctly automatically rolled back. 
    ![](images/showordernull.png " ")
    
+6. Click the `Get Inventory` button and notice inventory remains at 10 as expected.
    ![](images/getinventory10.png " ")
    
+7. Click the `Crash Inventory service after Order message is received (before inventory for order is checked)` button.
    ![](images/crashinventorybefore.png " ")
-   
    ![](images/crashinventorybeforeset.png " ")
    
+8. Enter order number `67` and click the `Place Order` button.
    ![](images/placeorder67.png " ")
    
+9. Notice the pending order status. The order will remain pending until the Inventory service restarts and receives the re-delivery of the message from the Order service.
    ![](images/order67pending.png " ")
    
+10. Continue to click the `Show Order` button until the successful order status is shown.
    ![](images/showorder67.png " ")
    
+11. Notice the successful order status due to transactional exactly-once message delivery (of the message that was put back on the queue due to implicit rollback resulting from Inventory service crash).
    ![](images/order67success.png " ")
    
+12. Click the `Get Inventory` button and notice inventory has been reduced to correct value of 9.
    ![](images/getinventory9.png " ")
    
+13. Click  the `Crash Inventory service after inventory for order is checked (before Inventory status message is sent)` button.
    ![](images/crashinventoryafter.png " ")
-   
    ![](images/crashinventoryafterset.png " ")
    
+14. Enter order number `68` and click the `Place Order` button.
    ![](images/placeorder68.png " ")
    
+15. Notice the pending order status. The order will remain pending until the Inventory service restarts and receives the re-delivery of the message from the Order service.
    ![](images/order68pending.png " ")
    
+16. Continue to click the `Show Order` button until the successful order status is shown.
    ![](images/showorder68.png " ")
    
+17. Notice the successful order status due to transactional exactly-once message delivery (of the message that was put back on the queue due to implicit rollback resulting from Inventory service crash).
    ![](images/order68success.png " ")
    
+18. Click the `Get Inventory` button and notice inventory has been reduced to correct value of 8 as the order message was delivered exactly once..
    ![](images/getinventory7.png " ")
-   
+  
    
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
