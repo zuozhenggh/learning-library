@@ -35,6 +35,7 @@ Estimated Lab Time - 10 minutes
     cd $GRABDISH_HOME/order-mongodb-kafka ; ./deploy.sh
     cd $GRABDISH_HOME/inventory-postgres-kafka ; ./deploy.sh
     cd $GRABDISH_HOME
+    
     </copy>
     ```
 
@@ -117,6 +118,7 @@ Estimated Lab Time - 10 minutes
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME/supplier-helidon-se ; ./deploy.sh
     cd $GRABDISH_HOME
+    
     </copy>
     ```
 
@@ -126,7 +128,7 @@ Estimated Lab Time - 10 minutes
     <copy>msdataworkshop</copy>
     ```
    
-## **STEP 5**: Run tests against Oracle DB + AQ implementations
+## **STEP 4**: Run tests against Oracle DB + AQ implementations
 
 
 1. Add Inventory until there is a value of 10 for sushi.
