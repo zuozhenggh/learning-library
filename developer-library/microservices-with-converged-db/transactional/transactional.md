@@ -27,7 +27,7 @@ Estimated Lab Time - 10 minutes
     ```
 
 
-2.  Undeploy any existing Order, Inventory, and Supplier Services and deploy the MongoDB, Postgres, and Kafka backed Order and Inventory implementations.
+2.  Undeploy any existing Order, Inventory, and Supplier Services and deploy the MongoDB, Postgres, and Kafka backed Order and Inventory implementations by copying and running the following commands.
     
     ```
     <copy>
@@ -109,7 +109,7 @@ Estimated Lab Time - 10 minutes
   
 ## **STEP 3**: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
 
-1.  Undeploy any existing Order, Inventory, and Supplier Services and deploy the MongoDB, Postgres, and Kafka backed Order and Inventory implementations.
+1.  Undeploy MongoDB, Postgres, and Kafka backed Order and Inventory implementations and deploy the Oracle + TEQ/AQ backed Order and Inventory implementations by copying and running the following commands.
     
     ```
     <copy>
