@@ -48,7 +48,7 @@ The `DESCRIBE` command provides a description of a specified table or view. The 
 
 Syntax: DESC[RIBE] schema\_name.table\_name
 
-1. With the SQL Developer Web worksheet tab that you opened in the previous lab, type the following command to view the description of the COUNTRIES table:
+1. Using the SQL Worksheet that you opened in the previous lab, type the following command to view the description of the COUNTRIES table:
 
     `DESCRIBE SH.COUNTRIES;`
 
@@ -68,4 +68,3 @@ For more information on the SH schema, see the documentation on [Sample Schemas]
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Richard Green, April 2021
-

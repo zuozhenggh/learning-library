@@ -20,7 +20,7 @@ For a technical overview of this lab step, please watch the following video:
 
 ## **Step 1**: Open SQL Developer Web 
 
-1. Go to the top-left hamburger icon, navigate to **Autonomous Transaction Processing** and click on **HOL Target ATP** database.
+1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **HOL Target ATP** database.
 
 	![](/images/2.atp.PNG)
 
@@ -83,6 +83,6 @@ For a technical overview of this lab step, please watch the following video:
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
-* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - Bilegt Bat-Ochir 3/24/2021
+* **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
+* **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
+* **Last Updated By/Date** - Bilegt Bat-Ochir 4/15/2021

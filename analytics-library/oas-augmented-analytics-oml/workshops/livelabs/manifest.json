@@ -3,14 +3,14 @@
   "help": "livelabs-help-license_us@oracle.com",
   "tutorials": [
     {
-      "title": "Getting Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
-    {
       "title": "Introduction",
       "description": "Introduction",
       "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
     {
       "title": "Lab 1: Environment Setup (Verify Only) - Optional",
@@ -28,8 +28,8 @@
       "filename": "../../oas-augmented-analytics/oas-augmented-analytics.md"
     },
     {
-      "title": "Lab 4: Augmented Analytics for HR",
-      "description": "Augmented Analytics",
+      "title": "Lab 4: Machine Learning in the Oracle Database",
+      "description": "Machine Learning in the Oracle Database",
       "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md"
     },
     {

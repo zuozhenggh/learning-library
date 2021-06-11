@@ -1,13 +1,13 @@
 {
   "workshoptitle": "JavaScript for APEX Developers",
-  "help": "livelabs-help-analytics_us@oracle.com",
+  "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
     {
       "title": "Introduction",
       "filename": "0-workshop-intro-and-setup/0-workshop-intro-and-setup.md"
     },
     {
-      "title": "Lab 1: Sign up for an APEX Workspace",
+      "title": "Sign up for an APEX Workspace",
       "filename": "../common/1-sign-up-apex/1-sign-up-apex.md"
     },
     {
@@ -25,7 +25,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Set up the environment
 
-## Introduction 
+## Introduction
 
 This lab walks you through the steps to create the required resources you'll use for OCI GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
@@ -22,9 +22,10 @@ In this section, you will provision a VCN and subnet, ATP and ADW instances, and
 
 ## **STEP 1:** Create a VCN and subnet
 
-1.  In the Console navigation menu, under **Core Infrastructure**, in the **Networking** submenu, select **Virtual Cloud Networks**
 
-    ![Select Virtual Cloud Networks](./images/00-01-vcn.png)
+1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
+
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2.  Click **Start VCN Wizard**.
 
@@ -44,9 +45,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## **STEP 2:** Create an ATP Instance
 
-1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Transaction Processing**.
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
-    ![Select Autonomous Transaction Processing](./images/01-01-atp.png)
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Click **Create Autonomous Database**.
 
@@ -131,9 +132,10 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## **STEP 4:** Create an ADW Instance
 
-1.  In the Console navigation menu, under **Oracle Database**, select **Autonomous Data Warehouse**.
 
-    ![Select Autonomous Data Warehouse](./images/03-01-adw.png)
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2.  Click **Create Autonomous Database**.
 
@@ -186,25 +188,24 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Select SQL](./images/02-06-db-actions.png)
 
-5.  Copy the SQL script from **OCIGGLL_OCIGGS_SETUP_USERS_ADW.sql** paste it into the SQL Worksheet.
+5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
 
     ![Paste ADW User Set Up](./images/04-05-adw.png)
 
 6.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-7.  Copy the SQL script from **OCIGGLL_OCIGGS_SRC_MIRROR_USER_SEED_DATA.sql** and paste it into a new SQL Worksheet.
+7.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
 
     ![Paste ADW User Seed](./images/04-07-adw-schema.png)
 
 8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-9.  In the Navigator tab, look for the SRCMIRROR_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR_OCIGGLL.
+9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 Please proceed to the next [lab](#next).
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - March 2021
+- **Last Updated** - May 2021
 - **PAR Expiration date** - March 31, 2022
-
