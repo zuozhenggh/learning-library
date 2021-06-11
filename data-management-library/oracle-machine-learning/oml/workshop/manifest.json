@@ -2,6 +2,7 @@
     "tutorials": [
       {
           "title": "Introduction to Oracle Machine Learning (OML) Notebook",
+		  "help": "livelabs-help-db_us@oracle.com",
           "description": "Introduction to Oracle Machine Learning Notebook",
           "filename": "./intro.md"
       }
@@ -29,7 +30,10 @@
             "description": "This lab shows you how to map a node's private IP address to a public IP address",
             "filename": "./../use-scratchpad/oml_scratchpad.md"
         }
-
+		{
+            "title": "Need Help?",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
 
            ]
 }
