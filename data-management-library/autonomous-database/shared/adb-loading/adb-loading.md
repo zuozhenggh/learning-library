@@ -205,10 +205,11 @@ In the first part of this lab, you loaded data from a file that you located on y
     ![Click Add Cloud Storage.](./images/click-add-cloud-storage.png " ")
 
 6. Complete the **Add Cloud Storage** page.
-    + Specify a name and description.
+    + Specify the name **ADWCLab** and a description.
     + Choose **Oracle** as the cloud store, since you will be loading from your Oracle Object Store bucket.
     + Specify the URI and bucket that you recorded in STEP 6.
-    + Use the default **Create Credential** setting. Specify a credential name. In order to access data in the Object Store, you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth Token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
+    + Use the default **Create Credential** setting. Specify the credential name **OBJ\_STORE\_CRED**.
+    In order to access data in the Object Store, you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth Token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
     + Specify your Oracle Cloud Infrastructure user name.
     + Copy and paste the Auth Token that you generated in STEP 7. Click **Create**.
 
@@ -254,9 +255,11 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 + **copy_data**: Loads the specified source file to a table. The table must already exist in ADW.
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
+***Note:*** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed with the following:
+
 1. Unlike the previous steps where the Database Actions DATA LOAD tool gave you the option to automatically create the target autonomous database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables. Connected as your ADMIN user in SQL Worksheet, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to the worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 
-    - It is expected that you may *get ORA-00942 table or view does not exist* errors during the `DROP TABLE` commands for the first execution of the script, but you should not see any other errors.
+    - It is expected that you may get *ORA-00942 table or view does not exist* errors during the `DROP TABLE` commands for the first execution of the script, but you should not see any other errors.
 
     ![Click Run Script.](./images/table_creation_results_sql_dev_web.jpg " ")
 
