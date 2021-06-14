@@ -6,7 +6,6 @@
 
 ## Troubleshooting
 
----
 
 Lab 2: Create MySQL Database Service - Enable HeatWave
 
