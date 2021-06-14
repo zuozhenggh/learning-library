@@ -9,7 +9,7 @@
         {
             "title": "Lab 1: Create a Trusted Connection",
             "description": "Use a self-signed certificate to create a trusted connection",
-            "filename": "../create/create.md"
+            "filename": "../create/create-gb.md"
         },
         {
             "title": "Lab 2: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
