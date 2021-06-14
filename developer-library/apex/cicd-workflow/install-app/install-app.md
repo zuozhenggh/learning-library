@@ -12,14 +12,14 @@ In this lab you will install a sample app from the app library.
 
 ## **STEP 1:** Install a Sample Application
 
-1. Log in to the Oracle Autonomous Database for *`dev`*: 
+1. Log in to the Oracle Autonomous Database for *`dev`*:
 
-    - Go to **Oracle Databases -> Autonomous Transaction Processing** in your compartment
+    - Go to **Oracle Databases** and select **Autonomous Transaction Processing** in your compartment
     - Click the database for dev (*APEX\_DEV* if you used the default names)
 
       ![](./images/db-list.png)
 
-    - Click **Tools** tab 
+    - Click **Tools** tab
 
       ![](./images/atp-tools.png)
 
@@ -46,7 +46,7 @@ In this lab you will install a sample app from the app library.
 
     ![](./images/app-gallery.png)
 
-2. Choose the **Opportunity Tracker** application.
+2. Choose **Opportunity Tracker** application.
 
     ![](./images/opportunity-tracker.png)
 
@@ -76,10 +76,8 @@ The application gallery was removed from version 20.1, it is now available on Gi
 
 2. On first run, you're asked to configure the application. Click **Finish Configuration**.
 
-You may proceed to the next lab.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
  - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
-
