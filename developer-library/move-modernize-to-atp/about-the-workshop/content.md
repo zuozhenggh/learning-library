@@ -60,6 +60,6 @@ This section shows you how to manage storage volumes and images that make it eas
 
 - From the menu, click on the lab that you like to proceed with. For example, if you like to proceed to **Lab 0**, click **Lab 0: Login to the Oracle Cloud**.
 
-<img src="./images/menu.png" style="zoom:67%;" />
+<img src="./images/menu.PNG" style="zoom:67%;" />
 
 - You may close the menu by clicking ![](./images/menu-close.png "")
