@@ -1,3 +1,13 @@
+---
+duration: PT0H05M0S
+description: Omit column encryption attribute during import.
+level: Beginner
+roles: Application Developer;Developer;Technology Manager
+lab-id:
+products: en/database/oracle/oracle-database/19
+keywords: Database
+inject-note: true
+---
 # Omit the Column Encryption Attribute During Import
 
 ## Introduction
@@ -18,9 +28,7 @@ Learn how to do the following:
 
 Be sure that the following tasks are completed before you start:
 
-- Obtain an Oracle Cloud account.
-- Create SSH keys.
-- Sign in to Oracle Cloud Infrastructure.
+- Lab 4 completed.
 - Oracle Database 19c installed
 - A database, either non-CDB or CDB with a PDB.
 
@@ -47,46 +55,47 @@ Be sure that the following tasks are completed before you start:
 
 4. Before importing the table without its **ENCRYPT** column attribute, verify that the table exported in the **/home/oracle/labs/tab.dmp** dump file has an encrypted column.
 
-    1. Log in to a test non-CDB as the **system** user.
+5. Log in to a test non-CDB as the **system** user.
 
-        ```
-        $ sqlplus system/oracle
-        ```
-        >**Note**: **oracle** is the default password for the **system** user.
+    ```
+    $ sqlplus system/oracle
+    ```
+>**Note**: **oracle** is the default password for the **system** user.
 
-    2. Create the directory to point to the location of the dump file.
+6. Create the directory to point to the location of the dump file.
 
-        ```
-        SQL> CREATE DIRECTORY dp AS '/home/oracle/labs';
+    ```
+    SQL> CREATE DIRECTORY dp AS '/home/oracle/labs';
 
-        SQL> EXIT; 
-        ```
-    3. Generate the SQL file from the Data Pump export **/home/oracle/labs/tab.dmp** dump file by simulating an import into the non-CDB.
+    SQL> EXIT; 
+    ```
+7. Generate the SQL file from the Data Pump export **/home/oracle/labs/tab.dmp** dump file by simulating an import into the non-CDB.
 
-        ```
-        $ impdp system DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log
-        ```
-        >**Note**: You will be prompted to enter your password.
-    4. Verify the ouput
+    ```
+    $ impdp system DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log
+    ```
+>**Note**: You will be prompted to enter your password.
 
-        ```
-        $ cat tabenc1.sql
-        ```
-        ```
-        ...
-        CREATE TABLE "TEST"."TABENC" 
-        (    "C1" NUMBER, 
-        "LABEL" VARCHAR2(50 BYTE) ENCRYPT USING 'AES192' 'SHA-1'
-        ) SEGMENT CREATION IMMEDIATE 
-        PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
-        NOCOMPRESS LOGGING
-        STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-        PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-        BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-        TABLESPACE "SYSTEM" ;
-        ...
-        ```
-        >**Note**: Notice the **ENCRYPT USING 'AES192' 'SHA-1'** in the **LABEL** column definition.
+8. Verify the ouput
+
+    ```
+    $ cat tabenc1.sql
+    ```
+    ```
+    ...
+    CREATE TABLE "TEST"."TABENC" 
+    (    "C1" NUMBER, 
+    "LABEL" VARCHAR2(50 BYTE) ENCRYPT USING 'AES192' 'SHA-1'
+    ) SEGMENT CREATION IMMEDIATE 
+    PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+    NOCOMPRESS LOGGING
+    STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+    PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+    BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+    TABLESPACE "SYSTEM" ;
+    ...
+    ```
+>**Note**: Notice the **ENCRYPT USING 'AES192' 'SHA-1'** in the **LABEL** column definition.
 <!--
 5. If you have substeps, still use numbered steps:
 
@@ -152,5 +161,6 @@ Be sure that the following tasks are completed before you start:
 
 ## Acknowledgements
 
-- **Author**- Matthew McDaniel, Solution Engineer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, May 27 2021
+* **Author**- Dominique Jeunot, tbd, tbd
+* **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, June 2021
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in
