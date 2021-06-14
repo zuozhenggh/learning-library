@@ -11,7 +11,7 @@ Estimated Lab Time: 80 to 120 minutes depending on the path chosen.
 
 ### Objectives
 
-Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure (OCI), provisioning WebLogic on OCI with the marketplace.
+Perform the end-to-end migration of a local WebLogic domain to Oracle Cloud Infrastructure (OCI), provisioning WebLogic on OCI with the Oracle Cloud Marketplace.
 
 In this lab, you will:
 - Provision a demo environment to use as the on-premises environment to be migrated.

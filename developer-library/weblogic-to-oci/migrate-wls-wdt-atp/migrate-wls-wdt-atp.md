@@ -480,8 +480,6 @@ https://*LOAD_BALANCER_IP*/SimpleDB/
 
   ![](./images/oci-simpledb-app.png)
 
-You may proceed to the next lab.
-
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020

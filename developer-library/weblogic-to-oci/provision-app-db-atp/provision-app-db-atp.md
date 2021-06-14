@@ -118,7 +118,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
   ![](./images/provision-db-atp5.png)
 
-7. Enter and confirm the **Admin Database password** as it is on-premises: 
+7. Enter and confirm the **Admin Database password** as it is on-premises:
 
     ```
     <copy>
@@ -153,8 +153,6 @@ In this section we will create a Network Security Group for the WebLogic subnet 
   ![](./images/provision-db-atp12.png)
 
 To save some time, you can proceed to starting the database migration lab while the database is provisioning if you wish, however you will need the database fully provisioned and you will need to gather the database information before you can finish the migration.
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 
