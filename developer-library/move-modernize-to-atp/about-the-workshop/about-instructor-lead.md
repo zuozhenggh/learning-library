@@ -55,3 +55,4 @@ This section shows you how to manage storage volumes and images that make it eas
 <img src="./images/menu.PNG" style="zoom:67%;" />
 
 - You may close the menu by clicking ![](./images/menu-close.png "")
+
