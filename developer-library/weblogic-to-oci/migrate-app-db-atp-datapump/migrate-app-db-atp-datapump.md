@@ -81,21 +81,21 @@ To run this lab you need:
       It sets up the directory to backup to, and uses DataPump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
 
       The `datapump_export.sh</code>` script appears as follows.
-      
+
       ```bash
       EXPORT_DB_DIRNAME=export
-      
+
       # all other variables are from the local environment
-      
+
       # clear the folder and recreate
       rm -rf ~/datapump/export && mkdir -p ~/datapump/export
-      
+
       # drop directory if it exists
       echo "DROP DIRECTORY ${EXPORT_DB_DIRNAME};" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-      
+
       # create a directory object in the DB for export with DataPump, pointing to the folder created above
       echo "CREATE DIRECTORY ${EXPORT_DB_DIRNAME} AS '/home/oracle/datapump/export/';" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-      
+
       # export the schema 'RIDERS' with DataPump, which is our user schema with the Tour de France Riders data
       expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
       ```
@@ -119,7 +119,7 @@ To run this lab you need:
 
 This will be needed to get the wallet from the ATP database and put the database dump file into object storage from the source database.
 
-*Note:* You could also do without the CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
+> **Note:** You could also do without the CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
 1. Install the OCI CLI on the source database:
 
@@ -328,7 +328,7 @@ If the tunnel closing step reports failure, it is safe to ignore.
 
 There are 2 ways to download the wallet on to the target WebLogic servers:
 
-- We have downloaded the wallet locally already to migrate the database, and we can simply secure-copy that wallet to each server with `scp`. This is what we will do.
+We have downloaded the wallet locally already to migrate the database, and we can simply secure-copy that wallet to each server with `scp`. This is what we will do.
 
 1. Gather the IP adresses of the WebLogic server:
 
@@ -347,7 +347,7 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```
 
     Then:
-    
+
     ```bash
     <copy>
     scp wallet.zip opc@${TARGET_WLS_SERVER}:~/
@@ -364,7 +364,7 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     </copy>
     ```
 
-    *Make sure to specify the proper domain name (here `nonjrf_domain`)* if you didn't follow the naming convention of this workshop.
+    Make sure to specify the proper domain name (here `nonjrf_domain`) if you didn't follow the naming convention of this workshop.
 
     If you provisioned in a *Private Subnet* set the variables:
     ```bash
@@ -379,7 +379,7 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```
 
     Then:
-    
+
     ```bash
     <copy>
     scp -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" wallet.zip opc@${TARGET_WLS_SERVER}:~/
@@ -393,50 +393,48 @@ There are 2 ways to download the wallet on to the target WebLogic servers:
     ```bash
     <copy>
     ssh -o ProxyCommand="ssh opc@${BASTION_IP} -W %h:%p" opc@${TARGET_WLS_SERVER} "sudo unzip wallet.zip -d /u01/data/domains/nonjrf_domain/config/atp/"
-    
+
     </copy>
     ```
 
-    *Make sure to specify the proper domain name (here `nonjrf_domain`)*.
+    Make sure to specify the proper domain name (here `nonjrf_domain`).
 
 
 3. Repeat for each WLS target server.
 
-    Note: the destination path is important as this path is cloned when scaling WLS servers, insuring the wallet is also deployed on any new server instance.
+> **Note:** the destination path is important as this path is cloned when scaling WLS servers, insuring the wallet is also deployed on any new server instance.
 
 
-- An alternative method (for info only, no need to apply these commands):
+   An alternative method (for info only, no need to apply these commands):
 
-    There is also a helper script on each WebLogic server node to download the wallet.
+   There is also a helper script on each WebLogic server node to download the wallet.
 
-    For this script to work, you will need to add an extra policy on the **dynamic group** created by the WLS on OCI stack.
+   For this script to work, you will need to add an extra policy on the **dynamic group** created by the WLS on OCI stack.
 
-    The policy is called `<PREFIX>-wlsc-principal-group`, which you can find under **Identity -> Dynamic Groups**. The Policy to edit will be on the *root* of the tenancy, so you need to be an administrator to edit it. It is called `<PREFIX>-service-policy`. It should contain an extra policy rule as follow:
+   The policy is called `<PREFIX>-wlsc-principal-group`, which you can find under **Identity -> Dynamic Groups**. The Policy to edit will be on the *root* of the tenancy, so you need to be an administrator to edit it. It is called `<PREFIX>-service-policy`. It should contain an extra policy rule as follow:
 
-    ```
-    Allow dynamic-group nonjrf-wlsc-principal-group to use autonomous-transaction-processing-database-family in compartment id <your compartment>
-    ```
-    If you choose this method, you would use the following variables:
+   ```
+   Allow dynamic-group nonjrf-wlsc-principal-group to use autonomous-transaction-processing-database-family in compartment id <your compartment>
+   ```
+   If you choose this method, you would use the following variables:
 
-    ```bash
-    <copy>
-    export TARGET_WLS_SERVER=<Public IP>
-    export ATP_OCID=<OCID of the ATP database>
-    export WALLET_PASSWORD=<password of your choice>
-    </copy>
-    ```
-    
+   ```bash
+   <copy>
+   export TARGET_WLS_SERVER=<Public IP>
+   export ATP_OCID=<OCID of the ATP database>
+   export WALLET_PASSWORD=<password of your choice>
+   </copy>
+   ```
+
     Then run the command:
-    
+
     ```bash
     <copy>
     ssh opc@${TARGET_WLS_SERVER} "sudo su -c \"/opt/scripts/utils/download_atp_wallet.sh ${ATP_OCID} ${WALLET_PASSWORD} /u01/data/domains/nonjrf_domain/config/atp\"" - oracle
     </copy>
     ```
 
-    *Make sure to specify the proper domain name in the path (here `nonjrf_domain`)*.
-
-You may proceed to the next lab.
+    Make sure to specify the proper domain name in the path (here `nonjrf_domain`).
 
 ## Acknowledgements
 
