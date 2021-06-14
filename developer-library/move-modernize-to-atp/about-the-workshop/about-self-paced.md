@@ -56,10 +56,10 @@ This section shows you how to manage storage volumes and images that make it eas
 ## Access the labs ##
 
 - Use **Lab Contents** menu on your right to access the labs.
-    - If the menu is not displayed, click the menu button ![](./images/menu-button.png) on the top right  make it visible.
+    - If the menu is not displayed, click the menu button ![](../images/menu-button.png) on the top right  make it visible.
 
 - From the menu, click on the lab that you like to proceed with. For example, if you like to proceed to **Lab 0**, click **Lab 0: Login to the Oracle Cloud**.
 
-<img src="./images/menu.PNG" style="zoom:67%;" />
+<img src="../images/menu.PNG" style="zoom:67%;" />
 
-- You may close the menu by clicking ![](./images/menu-close.png "")
+- You may close the menu by clicking ![](../images/menu-close.png "")
