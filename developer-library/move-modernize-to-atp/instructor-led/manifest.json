@@ -16,7 +16,7 @@
             "title": "Lab Accounts",
             "description":"Lab accounts",
             "publisheddate": "04/26/2020",
-            "filename":"../lab-accounts.md"
+            "filename":"./lab-accounts.md"
         },
         {
             "title": "Lab 0: Login to Oracle Cloud",
@@ -24,7 +24,7 @@
             "publisheddate": "04/26/2020",
             "filename": "../lab001/content.md"
         },
-		{
+		    {
             "title": "Lab 1: Create the Virtual Cloud Network",
             "description":"Lab 3 if using common free tier and ssh key gen labs",
             "publisheddate": "04/26/2020",

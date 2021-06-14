@@ -9,7 +9,7 @@ For instructor-led training click this link: [Instructor-led](https://mw-orcl.gi
 
 ## Self-paced Learning
 
-For self-paced learning using your own account click this link: [Self-paced](https://mw-orcl.github.io/learning-library/developer-library/move-modernize-to-atp/self-paced/index.html)
+For self-paced learning using your own account click this link: [Self-paced](https://mw-orcl.github.io/learning-library/developer-library/move-modernize-to-atp/self-paced/)
 
 ## Get an Oracle Cloud Trial Account for Free!
 
