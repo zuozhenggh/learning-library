@@ -28,7 +28,7 @@ In this workshop, you will:
 
 *In order to run this workshop you need:*
 
-* A Mac OS X, linux or Windows machine (on Windows please use the Windows Linux Subsystem).
+* A Mac OS X, Linux or Windows machine (on Windows, use the Windows Linux Subsystem).
 * An Oracle Cloud Infrastructure (OCI) account with a Compartment setup.
 * Java 11 or later.
 * An Oracle account to download required software under license.
@@ -49,4 +49,3 @@ You may proceed to the next lab.
 
  - **Author** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
  - **Last Updated By/Date** - Emmanuel Leroy, Vanitha Subramanyam, March 2021
-
