@@ -209,4 +209,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Beda Hammerschmidt, Roger Ford
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021

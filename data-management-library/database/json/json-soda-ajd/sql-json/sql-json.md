@@ -92,4 +92,4 @@ In this lab, you will...
 
 - **Author** - Beda Hammerschmidt, Roger Ford
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
