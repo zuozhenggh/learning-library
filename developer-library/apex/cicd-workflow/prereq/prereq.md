@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will get the workflow template and install SQLcl.
+In this lab we will get the workflow template and install Oracle SQLcl.
 
 Oracle SQLcl integrates a version of Liquibase, which is used extensively to track database schema changes in this workshop.
 
