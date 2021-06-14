@@ -10,7 +10,7 @@ Estimated Lab Time: 2 minutes
 Database Registrations capture source and target credential information. A database registration also enables networking between the OCI GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
 
 ### Objectives
-In this lab, you will register source and target databases for Oracle GoldenGate deployments to use for the duration of this lab.
+In this lab, you will register source and target Oracle Autonomous databases for Oracle GoldenGate deployments to use for the duration of this lab.
 
 ### Prerequisites
 This lab assumes that you completed all preceding labs.
