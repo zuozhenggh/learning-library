@@ -10,17 +10,28 @@ A key characteristic of a JSON collection (like 'products') is that it is backed
 
 In the following we show you how you can use SQL to work with the JSON data in a collection.
 
-Estimated Lab Time - 
+Estimated Lab Time: 10 minutes 
 
 ### Objectives
 
+In this lab, you will...
+
+* Use JSON_Serialize to convert binary JSON data to a human-eligible string.
+* Use dot notation to extract values from JSON data.
+
 ### Prerequisites
+
+* All previous labs have been successfully completed.
 
 ## **STEP: 1** SQL Developer Web
 
 1. Click on the navigation menu on the top left and select **SQL** under Development.
 
+    ![](./images/nav-sql.png)
+
 2. On the left side, click on PRODUCTS - this is the table for the 'products' collection.
+
+    ![](./images/products-table.png)
 
     You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identified for the document, a 'JSON\_DOCUMENT' which holds the document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the JSON\_DOCUMENT column in the following examples.
 

@@ -143,9 +143,9 @@ In this lab, you will:
 
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
-    ![](./images/create-adb.png " ")
+    ![](./images/tutorials.png " ")
 
---> JSON Workshop -->> Steps to UI interface explanation.
+
 
 You are now connected to your Autonomous Database using JSON.
 
