@@ -33,7 +33,7 @@ To download the notebook version of this lab (without screenshots), click [here]
 
 [](include:import)
 
-## **Step 1**: Import libraries and create OML DataFrame proxy object
+## **Step 1**: Import libraries and create Oracle Machine Learning DataFrame proxy object
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.
 
@@ -52,7 +52,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
 2. Here, you load the IRIS data and combine the target and predictors into a single DataFrame, which matches the form the data would have as a database table. You use the `oml.push` function to load this Pandas DataFrame into the database, which creates a temporary table and returns a proxy object that you assign to IRIS_TMP.
 
   Such temporary tables will be automatically deleted when the database connection is terminated unless saved in a datastore. You learn more about datastore in lab 4.
-  In OML notebooks, you use the zeppelin-context `z.show` method to display Python objects and proxy object content. Display the first few rows of IRIS_TMP using `z.show` for displaying DataFrame results in the Zeppelin viewer.
+  In Oracle Machine Learning notebooks, you use the zeppelin-context `z.show` method to display Python objects and proxy object content. Display the first few rows of IRIS_TMP using `z.show` for displaying DataFrame results in the Zeppelin viewer.
 
     ```
     %python
@@ -154,7 +154,7 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
     ![](images/compound_row_selection.png)
     The script returns the rows where petal length is less than or equal to 5.0.
 
-3. This step shows an example of a compound row selection using `AND`, denoted by the `&` symbol. Run the following script to select all rows in which `PETAL_LENGTH` is less than 1.5 AND `SEPAL_LENGTH` is greater than 5.0:
+3. This step shows an example of a compound row selection using `AND`, denoted by the `&` symbol. Run the following script to select all rows in which `PETAL_LENGTH` is less than 1.5 and `SEPAL_LENGTH` is greater than 5.0:
 
     ```
     %python
@@ -171,13 +171,13 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
 ## **Step 4:** Use Pandas DataFrame objects
 
 You can join data from `oml.DataFrame` objects that represent database tables by using the `append`, `concat`, and `merge` methods.
-  * The `append` method appends or adds the other OML data object of the same class to this data object.
-  * The `concat` method combines the current OML data object with the other data objects column-wise.
+  * The `append` method appends or adds the other Oracle Machine Learning data object of the same class to this data object.
+  * The `concat` method combines the current Oracle Machine Learning data object with the other data objects column-wise.
   * The `merge` method joins data sets.
 
 These steps show how to use these methods.
 
-### Use the append () function
+### Use the append() function
 
 These steps show how to create a temporary table from a Pandas DataFrame and use the `append()` function. The `append` argument is a boolean that specifies whether to append the x data to an existing table.
 
@@ -206,7 +206,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
 2. In this step, you use the `append()` function to append an `oml.Float` series object to another, and then append an `oml.DataFrame` object to another.
 
-    **Note:** An `oml.Float` is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
+    > **Note:** An `oml.Float` is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
     ```
     %python
@@ -226,7 +226,7 @@ These steps show how to create a temporary table from a Pandas DataFrame and use
 
 Use the `concat` method to combine columns from one data frame proxy object with those of another. The `auto_name` argument of the `concat` method controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames. You can also explicitly rename columns by passing in a dictionary that maps strings to objects, as discussed below.
 
-**Note:** To combine two objects with the `concat` method, both objects must represent data from the same underlying database table, view, or query.
+> **Note:** To combine two objects with the `concat` method, both objects must represent data from the same underlying database table, view, or query.
 
 1. Use the `concat` function to create two `oml.DataFrame` objects and combine the objects by column.
 
@@ -243,7 +243,8 @@ Use the `concat` method to combine columns from one data frame proxy object with
 
 
   ![](images/column_wise_concat.png)
-  **Note:** The script automatically prints the result. When there is a single result to show, print command is not needed.
+
+  > **Note:** The script automatically prints the result. When there is a single result to show, print command is not needed.
 
 2. This step shows how to create an `oml.Float` object with the rounded exponential of two times the values in the `num` column of the `oml_frame` object, and then concatenate it with the `oml.DataFrame` object `y` using a new column name.
     ```
@@ -254,7 +255,7 @@ Use the `concat` method to combine columns from one data frame proxy object with
     y.concat({'round(exp(2*num))':w})</copy>
     ```
 
-  **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
+  > **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
   ![](images/concat_new_column.png)
 
@@ -270,8 +271,9 @@ Use the `concat` method to combine columns from one data frame proxy object with
 
   ![](images/concat_columns_name_reso.png)
 
-  **Note:** In this example, the `id` and `num` columns are duplicated.
-4. Run the following script to concatenate multiple OML data objects and perform customized renaming. Here, you add the word `New` to the duplicate columns and use `OrderedDict` to preserve the order in which the objects are added.
+> **Note:** In this example, the `id` and `num` columns are duplicated.
+
+4. Run the following script to concatenate multiple Oracle Machine Learning data objects and perform customized renaming. Here, you add the word `New` to the duplicate columns and use `OrderedDict` to preserve the order in which the objects are added.
 
     ```
     %python
@@ -321,7 +323,7 @@ Using the merge help file as a guide, and perform a `merge` with a right outer j
 
 In preparing data for analysis, a typical step is to transform data by dropping some values. You can filter out data that are not needed by using the `drop`, `drop_duplicates`, and `dropna` methods. Use the `oml.drop` function to delete a persistent database table. Use the del statement to remove an oml.DataFrame proxy object and its associated temporary table.
 
-**Note:** `del` does not delete a persistent table.
+> **Note:** `del` does not delete a persistent table.
 
 To work with the drop function, first create a demo data table `MY_DF2.`
 
@@ -399,7 +401,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
 
 ## **Step 5:** Use the split and KFold functions
 
-This lab demonstrates how to use the `split` and `KFold` function using the digits data set after creating an OML DataFrame proxy object for the digits data set.
+This lab demonstrates how to use the `split` and `KFold` function using the digits data set after creating an Oracle Machine Learning DataFrame proxy object for the digits data set.
 
 The `KFold` method splits the series data object randomly into k consecutive folds for use with k-fold cross validation.
 The `split` method splits the series data object randomly into multiple sets.
@@ -501,7 +503,7 @@ The following tasks are covered in this lab:
 
 ## **Step 6:** Use the crosstab and pivot_table functions on a DataFrame proxy object
 
-This step shows how to use the crosstab method to perform cross-column analysis of an oml.DataFrame object and the `pivot_table` method to convert an oml.DataFrame to a spreadsheet style pivot table.
+This step shows how to use the crosstab method to perform cross-column analysis of an `oml.DataFrame` object and the `pivot_table` method to convert an oml.DataFrame to a spreadsheet style pivot table.
 
 Cross-tabulation is a statistical technique that finds an interdependent relationship between two columns of values. The `crosstab` method computes a cross-tabulation of two or more columns. By default, it computes a frequency table for the columns unless a column and an aggregation function have been passed to it.
 
@@ -522,7 +524,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 
   ![](images/My_DF4_table.png)
 
-2. Use the `crosstab` function to find the categories that the most entries belonged to. This example shows how to use the `crosstab` function to find the count of gender, and right-handed and left-handed persons in descending order in the MY_DF4 dataframe.  
+2. Use the `crosstab` function to find the categories that the most entries belonged to. This example shows how to use the `crosstab` function to find the count of gender, and right-handed and left-handed persons in descending order in the `MY_DF4` dataframe.  
 
     ```
     %python
@@ -614,7 +616,7 @@ With the transparency layer classes, you can convert selected Python objects to 
   * `oml.drop:` Drops a persistent database table or view.
 
 
-### Create and view a persistent database table using oml.create
+### Create and view a persistent database table using `oml.create`
 
 This example shows how to create a persistent table using the `oml.create` function. The `oml.create` function creates a table in the database schema and returns an `oml.DataFrame` object that is a proxy for the table. The proxy `oml.DataFrame` object has the same name as the table. The resulting table is available from both Python and SQL, even after the session ends - in contrast to the temporary table created when using the `oml.push` function
 
@@ -647,7 +649,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
     ![](images/view_persistent_table.png)
 
 ### Use other transparency layer functions
-The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML database connection. It can be used to execute queries against Oracle Database.
+The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current Oracle Machine Learning database connection. It can be used to execute queries against Oracle Database.
 
 1. Create a cursor object for the database connection using `oml.cursor` from `cx_Oracle`, then shows the SQL data types of the columns in table IRIS.
 
@@ -710,4 +712,4 @@ The `oml.cursor()` function returns a cx_Oracle cursor object of the current OML
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2021

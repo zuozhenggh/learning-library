@@ -1,27 +1,27 @@
 # Get Started with LiveLabs
 
 ## Introduction
-This lab walks you through the steps to create an OML notebook and connect to the Python interpreter.
+This lab walks you through the steps to create an Oracle Machine Learning notebook and connect to the Python interpreter.
 
 Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-In this lab, you will learn how to provision an autonomous database
+In this lab, you will learn how to provision an Oracle Autonomous Database.
 
 
 ### Prerequisites
 * Sign up for a free tier Oracle Cloud account.
 
-_Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time._
+> Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time._
 
 
 <if type="livelabs">## **Step 1:** Launch the workshop
 
-*Note: it takes approximately 20 minutes to create your workshop environment.*
+> Note: it takes approximately 20 minutes to create your workshop environment.*
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
@@ -32,21 +32,21 @@ _Note: You may see differences in account details (eg: Compartment Name is diffe
 
 </if>
 
-## **Step 1:** Provision an Autonomous Database
+## **Step 1:** Provision an Oracle Autonomous Database
 
-To provision an Autonomous Database:
+To provision an Oracle Autonomous Database:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-2. From the Oracle Cloud Infrastructure Console, on the Autonomous Database page choose your region and select a compartment.
+2. From the Oracle Cloud Infrastructure Console, on the Oracle Autonomous Database page choose your region and select a compartment.
 
 3. Click **Create Autonomous Database**.
 
     ![](images/create-autonomous-db.png)
 
-4. Provide basic information for the Autonomous Database.
+4. Provide basic information for the Oracle Autonomous Database.
 
     Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
 
@@ -75,9 +75,9 @@ To provision an Autonomous Database:
 
     ![](images/create-adw-license.png)
 
-11. Click **Create Autonomous Database**. The Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Autonomous Database in your console.
+11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Oracle Autonomous Database instances in your console.
 
-12. Click the ADW instance you just created.
+12. Click the Autonomous Data Warehouse instance you just created.
 
     ![](images/adb_instance.png)
 
@@ -89,4 +89,4 @@ To provision an Autonomous Database:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, April 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2021

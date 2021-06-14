@@ -36,7 +36,7 @@ To download the notebook version of this lab (without screenshots), click [here]
     from oml import automl</copy>
     ```
 
-2. Use the `oml.sync` function to create an OML Dataframe as a proxy for the database table WINE.
+2. Use the `oml.sync` function to create an Oracle Machine Learning Dataframe as a proxy for the database table WINE.
     ```
     %python
     <copy>
@@ -184,4 +184,4 @@ Congratulations! You have completed this workshop!
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika,June 2021
