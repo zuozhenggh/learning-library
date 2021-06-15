@@ -1,4 +1,4 @@
-# Provisioning Autonomous Database (ADW and ATP)
+# Provision Autonomous Database (ADW and ATP)
 
 ## Introduction
 
