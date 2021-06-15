@@ -1,10 +1,10 @@
-# Provision Autonomous Database (ADW and ATP)
+# Provision an Autonomous Database (ADW and ATP)
 
 ## Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. In this lab, you provision a new ADW instance.
 
-*Note: While this lab uses ADW, the steps are identical for creating and connecting to an ATP database.*
+*Note: While this lab uses ADW, the steps are identical for creating an ATP database.*
 
 Estimated time: 5 minutes
 
@@ -12,13 +12,9 @@ Estimated time: 5 minutes
 
 -   Learn how to provision a new Autonomous Database
 
-### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** seen in the Contents menu on the left. In this lab, you will provision an ADB database instance using the cloud console.
-
 ## **STEP 1**: Choosing ADW or ATP from the Services Menu
 
-1. Login to the Oracle Cloud, as shown in the previous lab.
+1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     __Note:__ You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
@@ -29,7 +25,7 @@ Estimated time: 5 minutes
 
     ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
@@ -126,4 +122,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Tom McGinn, June 2021
