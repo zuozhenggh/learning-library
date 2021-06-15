@@ -46,6 +46,9 @@ Estimated time: 5 minutes
     ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+
+    ![](./images/create-adb-screen.png " ")
+
 3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
@@ -97,11 +100,14 @@ Estimated time: 5 minutes
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
+    ![](./images/network-access.png " ")
 
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+
+    ![](./images/license.png " ")
 
 10. Click __Create Autonomous Database__.
 
