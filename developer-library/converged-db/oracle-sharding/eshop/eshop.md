@@ -1,7 +1,7 @@
 # About Eshop
 
 ## Introduction   
-EShop is an example web-based ecommerce retail application, built for an online electronics retailer.
+EShop is an example web-based e-commerce retail application, built for an online electronics retailer.
 We developed this application to demonstrate Oracle Sharding (Hyperscale Globally Distributed Converged Database) with OLTP and Analytics (Massively Parallel Processing architecture). Oracle Cloud infrastructure (OCI) is used to host the application.
 
 - The application can support billions of users and products.
@@ -42,7 +42,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Eshop Demonstration
 
-1. A user accesses the application through the URL (**`http://<Public IP>:3000/`**), they are directed to the application's home page. To log in, go to the top right of the nav bar and press the login button. The login button brings the user to the login screen, where they can log in or build a new account by signup if they don't have one. 
+1. A user accesses the application through the URL (**`http://<Public IP>:3000/`**), they are directed to the application's home page. To **log in**, go to the top right of the nav bar and press the **login** button. The login button brings the user to the login screen, where they can log in or build a new account by signup if they don't have one. 
 
   ![](./images/app1.png " ")
 
@@ -52,13 +52,15 @@ This lab assumes you have:
 
   The user will be guided back to the home screen after a successful login.
 
-3. Click the CATALOG link in the navigation bar to browse the product list. Tthis module lists all the products in the store by bringing all the rows from Product JSON tables where it exists from all the shard databases, along with a picture and price. 
+3. Click the **CATALOG** link in the navigation bar to browse the product list. Tthis module lists all the products in the store by bringing all the rows from Product JSON tables where it exists from all the shard databases, along with a picture and price. 
 
 
   ![](./images/app3.JPG " ")
 
-  Any of the product tiles on this screen can be clicked to take the user to the product information tab or take the help of Filter option by price/Brand to get the list of specific products. You can click on selected product or you can choose to add directly to the cart by click on cart symbol. 
-  In addition, we can do the text search by directly typing the product information in search bar.
+  Any of the product tiles on this screen can be clicked to take the user to the product information tab or take the help of Filter option by price/Brand to get the list of specific products. You can click on selected product or you can choose to add directly to the cart by click on cart symbol.
+
+  In addition, we can do the text search by directly typing the product information in search bar. Here Oracle Fuzzy matching is a method used and it provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
+
 
   ![](./images/searchproduct.JPG " ")
 
@@ -70,25 +72,29 @@ This lab assumes you have:
 
   It will on the product information screen, the reviews are sorted by sentiment ratings. They may also look for reviews based on the content or keyword they are searching for.
 
-5. On the product information tab, click the add to cart button to add the product to the user's cart. If the user wants to add more items to the cart, they can repeat the procedure.
-  To place the order of the items click the **‘Go To Cart’**. 
+  On the product information tab, click the add to cart button to add the product to the user's cart. If the user wants to add more items to the cart, they can repeat the procedure.
+
+
+ 5. To place the order of the items click the **‘Go To Cart’**. 
 
   ![](./images/0608.png " ")
 
 
 6. You can specify the number count for specified product and click for Proceed to Checkout.
+Update the cart on quantity change along with price of items. In addition, total value will be update the cart shard table from all (3) shard DBs.
+
 
   ![](./images/bill.png " ")
 
-7. Review the order and click for place an order.
+7. Review the order for cross check and click for ‘Place your order’. Also, change the address in case you want to ship product to some location different from your default address.
 
   ![](./images/bill1.png " ")
 
-8. Finally, you can submit the review and rating for the purchased item.
+8. Finally, you can submit the review and rating for the purchased item. Here it will populate the LINE_ITEM table when user finally places the order and will take the reviews form user.
 
   ![](./images/final.png " ")
 
-9. Now the the reviews and ratings are successfully submitted.
+9. Your order details will be move on Placed-> Shipped-> OFD-> Delivered. Reviews and ratings are successfully submitted.
 
   ![](./images/finalsub.png " ")
 
@@ -110,8 +116,6 @@ This lab assumes you have:
 3. Analytics report made by Java table with Multiple sql Queries ( These queries spanning from multiple tables both relational & non-relational across all the shard databases).
 
   ![](./images/report2.png " ")
-
-  ![](./images/report3.png " ")
 
 
 ## **STEP 3**: XXXXXXXXXXXX

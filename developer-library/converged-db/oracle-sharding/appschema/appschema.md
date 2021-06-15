@@ -1,7 +1,13 @@
-# Oracle JSON
+# Eshop App schema & Code Snippet
 
 ## Introduction   
-JSON is a syntax for storing and exchanging data. In this lab you will be covering three main areas. The Connect to SQL Developer will setup the environment for JSON lab. The Insert and Update JSON Data which will use standard database APIs to insert or update JSON data. Lastly, Query JSON Documents using SQL where you will see improvements in the simplicity of querying JSON documents using SQL.
+This eShop application is developed on NodeJS, HTML code by using mainly JSON/SODA tables for non-relational and some regular relational tables.
+
+In the Oracle DB, JSON documents can be stored inside relational tables. The tables themselves act as JSON collections and each row is a JSON document. Within each row, one field, of type BLOB or OSON.
+Although Oracle provides support for JSON operators in order to create, work with and retrieve JSON documents, the SODA (Simple Oracle Document Access) interface is also supported. SODA acts as a layer on top of table access allowing a more intuitive interface for working with JSON documents.
+
+Although Oracle provides support for JSON operators in order to create, work with and retrieve JSON documents, the SODA (Simple Oracle Document Access) interface is also supported. SODA acts as a layer on top of table access allowing a more intuitive interface for working with JSON documents.
+
 
 *Estimated Lab Time*: 20 Minutes
 
@@ -32,45 +38,55 @@ This lab assumes you have:
 
 ***Note:***  All the scripts for this lab are stored in the **`/u01/workshop/json`** folder and run as the **oracle** user.
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Application code Snippet
 
-1. Open a terminal window and sudo to the user **oracle**
+1. Create Sharded table for use by JSON/SODA
 
     ```
     <copy>
-    sudo su - oracle
+    CREATE SHARDED TABLE "REVIEWS"
+	( "REVID" VARCHAR2(255 BYTE) NOT NULL ENABLE,
+	"SKU" VARCHAR2(255 BYTE) NOT NULL ENABLE, 
+	"JSON_TEXT" CLOB,
+	"SENTI_SCORE" NUMBER(4,0),
+	CHECK ("JSON_TEXT" is json strict) ENABLE,
+	CONSTRAINT  pk_reviews PRIMARY KEY (SKU,REVID), 
+	CONSTRAINT  fk_reviews_parent FOREIGN KEY (SKU)
+	REFERENCES PRODUCTS (SKU) ENABLE
+	)
+	PARTITION BY REFERENCE (fk_reviews_parent);
+
     </copy>
     ```
 
-2. Navigate to the JSON directory.
+2. Create SODA Map across all shards:
 
     ```
     <copy>
-    cd /u01/workshop/json
+    create or replace procedure COLLECTION_PROC_REVIEWS AS
+	METADATA varchar2(8000);
+	COL SODA_COLLECTION_T;
+	begin
+	METADATA := '{"tableName":"REVIEWS",
+	"keyColumn":{"name":"REVID","assignmentMethod":"CLIENT"},
+	"contentColumn":{"name":"JSON_TEXT","sqlType":"CLOB"},
+	"readOnly":false}';
+ 	-- Create a collection using "map" mode, based on the table we've created above 	and specified in
+ 	-- the custom metadata under "tableName" field.
+	COL := 	dbms_soda.create_collection('REVIEWS',METADATA,DBMS_SODA.CREATE_MODE_MAP);
+	end ;
+	/
+
+	exec sys.exec_shard_plsql('collection_proc_reviews()',4+1); 
+    
     </copy>
     ```
 
-3. Set your environment.
+3. 	ShaPopulated Shard Column
 
     ```
     <copy>
-    . oraenv
-    </copy>
-    ```
-
-4. When prompted paste the following:
-
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-
-5. Open sqlplus as the user appjson
-
-    ```
-    <copy>
-       sqlplus appjson/Oracle_4U@JXLPDB
+    CREATE SHARDED TABLE "REVIEWS"
     </copy>
     ```
 

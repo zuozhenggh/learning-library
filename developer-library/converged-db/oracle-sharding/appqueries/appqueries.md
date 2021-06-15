@@ -32,45 +32,71 @@ This lab assumes you have:
 
 ***Note:***  All the scripts for this lab are stored in the **`/u01/workshop/json`** folder and run as the **oracle** user.
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## **STEP 1**: Application Queries on sharding Database.
 
-1. Open a terminal window and sudo to the user **oracle**
+Run the below each sql query by login into Catalog database as well as one of the shard database. You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
+
+1. Top Selling Products: Return top Selling products in the store from last two months
+ by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
 
     ```
     <copy>
-    sudo su - oracle
+    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
     </copy>
     ```
 
-2. Navigate to the JSON directory.
+2. Text search on Products (JSON) table with auto corrections: Oracle Fuzzy matching is a method that provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
 
     ```
     <copy>
-    cd /u01/workshop/json
+    select p.json_text.NAME from PRODUCTS p where contains(json_text, 'fuzzy((sona))', 1) > 0 order by score(1) desc;
     </copy>
     ```
 
-3. Set your environment.
-
+3. Dollor Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
+   
     ```
     <copy>
-    . oraenv
+    Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l where rownum <= 12 and :YEAR_SELECTED =to_char(l.monthly,'YYYY') group by l.monthly order by monthly asc;
     </copy>
     ```
 
-4. When prompted paste the following:
-
+4. Sentiment Percentage:    A single query spanning from REVIEWS shard table by accessing multiple shard databases.
+   
     ```
     <copy>
-    convergedcdb
+    with pos as(select sum(senti_score) as positive_score from REVIEWS where senti_score > 0), neg as (select sum(senti_score) as negative_score from REVIEWS where senti_score <0),A as (select ABS(nvl(p.positive_score,0)) POSITIVE, ABS(nvl(n.negative_score,0)) NEGATIVE from pos p, neg n) select ROUND(POSITIVE/(POSITIVE+NEGATIVE) *100,2) as POS_PER, ROUND(NEGATIVE/(POSITIVE+NEGATIVE) *100,2) as NEG_PER from A;
     </copy>
     ```
 
-5. Open sqlplus as the user appjson
+5. Select products ordered by maximum sell
 
     ```
     <copy>
-       sqlplus appjson/Oracle_4U@JXLPDB
+    select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc
+    </copy>
+    ```
+
+6. Customer Average Review and review count
+
+    ```
+    <copy>
+    select substr(p.json_text.NAME,0,40) NAME,p.json_text.CUSTOMERREVIEWAVERAGE as AVG_REV,p.json_text.CUSTOMERREVIEWCOUNT as REV_COUNT,SKU from PRODUCTS p where SKU in ('SKU1','SKU2')
+    </copy>
+    ```
+7. Positive Review
+
+    ```
+    <copy>
+    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score>0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ('SKU1','SKU2') group by rj.json_text.PRODUCT_ID
+    </copy>
+    ```
+
+8. Negative Review
+
+    ```
+    <copy>
+    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score<=0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ("+inClauseString+") group by rj.json_text.PRODUCT_ID
     </copy>
     ```
 
