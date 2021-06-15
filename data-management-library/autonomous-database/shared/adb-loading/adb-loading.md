@@ -1,5 +1,5 @@
 
-# Loading Data into an Autonomous Database Instance
+# Load Data into an Autonomous Database Instance
 
 ## Introduction
 
@@ -24,11 +24,6 @@ Estimated Lab Time: 30 minutes
 -   Learn how to troubleshoot data loads
 
 In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create and load several ADW tables with sample data that you stage to an *OCI Object Store*.
-
-### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank"> Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
-- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the left.
 
 ### You Will Practice Three Loading Methods
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
@@ -89,13 +84,13 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 In Steps 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent steps.
 
-1. Click <a href="./files/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
+1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/8XMKhDq1fbRYPu2QedUP_y2xyYdzu_FbY2ctO35u5XZnWdDTOlWjuzS1aVwy6ynU/n/c4u03/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
 
 ## **STEP 4**: Navigate to Object Storage and Create Bucket
 
 In OCI Object Storage, a bucket is the terminology for a container of multiple files.
 
-1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Storage > Buckets**. To revisit signing-in and navigating to ADW, please see [Lab 1](?lab=lab-1-provision-autonomous-database).
+1. Now you set up the OCI Object Store. From the Autonomous Data Warehouse console, pull out the left side menu from the top-left corner and select **Storage > Buckets**.
 
   ![Select Storage and then Buckets from the left navigation window in the Oracle Cloud homepage.](images/select-storage-then-buckets.png " ")
 
