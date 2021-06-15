@@ -1,8 +1,8 @@
-# Prepare the OCI Account
+# Prepare the Oracle Cloud Infrastructure Account
 
 ## Introduction
 
-In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure from the marketplace.
+In this lab we will prepare the Oracle Cloud Infrastructure (OCI) environment to provision WebLogic Server for OCI from the Oracle Cloud Marketplace.
 
 Estimated Lab Time: 5 minutes.
 
@@ -21,7 +21,7 @@ For this lab you will need an OCI account with a compartment created.
 
 ## **STEP 1:** Create a Vault
 
-1. Go to **Security -> Vault**.
+1. Go to **Security** and select **Vault**.
 
    ![](./images/prereq-vault1.png)
 
@@ -31,7 +31,7 @@ For this lab you will need an OCI account with a compartment created.
 
    ![](./images/prereq-vault2.png)
 
-4. Name the vault `WebLogic Vault` or a name of your choosing. Make sure the `private` option is **not checked** and click **Create Vault**.
+4. Name the vault `WebLogic Vault` or a name of your choosing. Make sure the `private` option is not selected and click **Create Vault**.
 
    ![](./images/prereq-vault3.png)
 
@@ -59,18 +59,16 @@ For this lab you will need an OCI account with a compartment created.
 
   ![](./images/prereq-secret2.png)
 
-3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**.
+3. Name the **Secret** `WebLogicAdminPassword`, select the `WebLogicKey` that you created in **Create a key in the vault** as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 characters and 1 uppercase letter or number) in the **Secret Content** text field, and click **Create Secret**.
 
   ![](./images/prereq-secret3.png)
 
-4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**.
+4. Click the `WebLogicAdminPassword` secret you just created and make a note of its **OCID**.
 
    ![](./images/prereq-secret4.png)
 
-
 That is all that's needed to get started.
 
-You may proceed to the next lab.
 
 ## Acknowledgements
 

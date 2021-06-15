@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to migrate the on-premises application database to the database provisioned on OCI using DataPump.
+This lab walks you through the steps to migrate the on-premises application database to the database provisioned on OCI using Oracle DataPump.
 
 Estimated Lab Time: 10 minutes.
 
@@ -33,7 +33,7 @@ To run this lab you need:
 
 ## **STEP 1:** Get a Shell Inside the On-Premises Database Instance
 
-### If you used the Docker environment:
+### If you used the Docker environment
 
 1. You should already be inside the database container from the SSH key creation step. If not, use:
 
@@ -51,8 +51,7 @@ To run this lab you need:
       </copy>
       ```
 
-
-### If you used the workshop image:
+### If you used the workshop image
 
 1. You should already be logged into the instance and switched to the `oracle` user. If not use:
 
@@ -82,18 +81,18 @@ To run this lab you need:
 
       ```bash
       EXPORT_DB_DIRNAME=export
-      
+
       # all other variables are from the local environment
-      
+
       # clear the folder and recreate
       rm -rf ~/datapump/export && mkdir -p ~/datapump/export
-      
+
       # drop directory if it exists
       echo "DROP DIRECTORY ${EXPORT_DB_DIRNAME};" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-      
+
       # create a directory object in the DB for export with DataPump, pointing to the folder created above
       echo "CREATE DIRECTORY ${EXPORT_DB_DIRNAME} AS '/home/oracle/datapump/export/';" | sqlplus system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN}
-      
+
       # export the schema 'RIDERS' with DataPump, which is our user schema with the Tour de France Riders data
       expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
       ```
@@ -112,8 +111,6 @@ To run this lab you need:
 
       ![](./images/migrate-db-1.png)
 
-
-
 ## **STEP 3:** Edit the `datapump_import.sh` Script
 
 Once the schema and data are exported, we'll import it into the OCI DBaaS database.
@@ -130,8 +127,8 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 2. Enter the `BASTION_IP`.
 
-     If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion Instance.
-     
+     If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion instance.
+
      If you provisioned in a *Public Subnet* the `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**.
@@ -139,18 +136,16 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
        ![](./images/migrate-db-2.png)
 
 3. Enter the `TARGET_DB_HOST` **private IP address**.
- 
+
      This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**.
 
        ![](./images/provision-db-26-nodeip.png)
-
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the database connection string.
 
       If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
       ![](./images/provision-db-27-connection2.png)
-
 
 ## **STEP 4:** Import the Data into the Target Database
 
@@ -164,17 +159,15 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 2. You will be prompted to continue connection twice. Type `yes` each time to proceed.
 
-The import script runs in 4 phases:
+The import script runs in four phases:
 
-- It copies the files over to the OCI database node.
-- It runs the `impdp` import command once.
-You may notice this 1st try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
-- The script edits the `RIDERS` user tablespace quota.
-- And re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
+1. It copies the files over to the OCI database node.
+2. It runs the `impdp` import command once.
+You may notice this first try imports the schema but fails at importing the data, because the user `RIDERS` does not have a quota on the local `USERS` tablespace.
+3. The script edits the `RIDERS` user tablespace quota.
+4. Re-runs the `impdb` command that now succeeds at importing the data, but will show an error related to the user `RIDERS` already existing. This is normal.
 
 The database is now migrated to OCI.
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 

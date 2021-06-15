@@ -1,4 +1,4 @@
-# Optional: Scaling the Weblogic Domain
+# Scale the Weblogic Domain (Optional)
 
 ## Introduction
 
@@ -15,18 +15,16 @@ Estimated Lab Time: 20 minutes
 
 In this lab, you will:
 
-- Scale out the WebLogic domain provisioned on OCI using the Resource Manager
+- Scale out the WebLogic domain provisioned on Oracle Cloud Infrastructure (OCI) using the Resource Manager.
 - Scale the shape of a single node of the WebLogic deployment.
 
-### Prerequisites
+### Prerequisite
 
-For this lab you need:
+For this lab you need to have deployed the WebLogic on OCI stack successfully.
 
-- To have deployed the WebLogic on OCI stack successfully
+## **STEP 1:** Scale the Number of Nodes
 
-## **STEP 1:** Scaling the number of nodes
-
-***Important note***: If you changed a node shape manually, any change using the variables and re-applying to the stack will revert node shapes to their original shape defined at provisioning time.
+>**Note: If you changed a node shape manually, any change using the variables and re-applying to the stack will revert node shapes to their original shape defined at provisioning time.
 
 1. To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
 
@@ -58,7 +56,7 @@ For this lab you need:
 
 ## **STEP 2:** Scaling a node by changing shape
 
-***Important Note***: Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
+>**Note**: Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
 
 1. To scale a node by changing its shape, go to **Compute -> Instances**
 
@@ -81,8 +79,6 @@ For this lab you need:
   ![](./images/scale-compute-edit-shape2.png)
 
   You will be prompted to reboot the instance. The WebLogic servers will be restarted on reboot.
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 

@@ -1,4 +1,4 @@
-# Provision the Application Database on OCI with Database as a Service (DBaaS)
+# Provision the Application Database on Oracle Cloud Infrastructure with Database as a Service
 
 ## Introduction
 
@@ -31,7 +31,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-2.png)
 
-  You should find 2 subnets: a `nonjrf-lb-pubsubnet` and a `nonjrf-wls-subnet`.
+  You should find two subnets: a `nonjrf-lb-pubsubnet` and a `nonjrf-wls-subnet`.
 
 3. Click **Create Security List**.
 
@@ -89,7 +89,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-9-subnet6.png)
 
-9. and click **Create Subnet**.
+9. Click **Create Subnet**.
 
   ![](./images/provision-db-9-subnet7.png)
 
@@ -125,7 +125,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
 8. **Upload** the **SSH public key** created earlier.
 
-    The key created in the Docker container can be found in the folder `./weblogic-to-oci/ssh`.
+    The key created in the Docker container can be found in the `./weblogic-to-oci/ssh` folder.
 
     If using the marketplace image, just use the **Paste SSH Keys** and get the key  inside the on-premises environment with:
 
@@ -151,15 +151,15 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-20-dbname.png)
 
-13. Keep the default **Database version** 19c.
+13. Keep the default database version 19c.
 
   ![](./images/provision-db-21-version.png)
 
-14. Name the **PDB** `pdb` as it is on-premises.
+14. Name the **PDB** `pdb` as it is on premises.
 
   ![](./images/provision-db-22-pdb.png)
 
-15. Enter and confirm the **SYS Database password** as it is on-premises: 
+15. Enter and confirm the **SYS Database password** as it is on-premises:
 
     ```
     <copy>
@@ -169,7 +169,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-23-creds.png)
 
-16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**, and click **Create DB System**.
+16. Keep the default of **Transaction Processing**, select **Workload type** and **Backup**, and click **Create DB System**.
 
   ![](./images/provision-db-24.png)
 
@@ -178,8 +178,6 @@ In this section we will create a security list for the WebLogic subnet to be abl
   ![](./images/provision-db-25.png)
 
 To save some time, you can proceed to starting the database migration lab while the database is provisioning if you wish, however you will need the database fully provisioned and you will need to gather the database information before you can finish the migration.
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 
