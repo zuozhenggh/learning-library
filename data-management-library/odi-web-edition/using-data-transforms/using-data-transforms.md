@@ -359,7 +359,7 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
   It's actually easier to see it on the screen than it is to type it out in prose!
 
-  **Success Condition**
+5. Create success condition
 
     - Click on the green **ok** arrow in the tool palette. (This is for the success condition.)
 
@@ -367,9 +367,9 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
     - Drag the arrow stub from *Nightly\_Batch* to *Movie\_Stream\_Q2FY2020*.
 
-    ![ALT text is not available for this image](images/3019662948.png)
+  ![ALT text is not available for this image](images/3019662948.png)
 
-  **Failure Condition**
+6. Create failure condition
 
     - Click on the red **nok** arrow in the tool palette. (This is for the failure condition.)
 
@@ -377,15 +377,15 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
     - Drag the arrow stub from *Nightly\_Batch* to *Error\_Handling*.
 
-    ![ALT text is not available for this image](images/3019662947.png)
+  ![ALT text is not available for this image](images/3019662947.png)
 
-5. Complete the Workflows
+7. Complete the Workflows
 
-Repeat these steps to complete the workflow as follows, being sure to press the **Save** button (disk image) when you're finished:
+    Repeat these steps to complete the workflow as follows, being sure to press the **Save** button (disk image) when you're finished:
 
-  ![ALT text is not available for this image](images/3019662946.png)
+    ![ALT text is not available for this image](images/3019662946.png)
 
-After completing the definition of the Workflow, navigate back to the Data Transforms main page by pressing **Projects** in the breadcrumb at the upper left of the screen.
+    After completing the definition of the Workflow, navigate back to the Data Transforms main page by pressing **Projects** in the breadcrumb at the upper left of the screen.
 
 ## STEP 5: Create Schedules
 
