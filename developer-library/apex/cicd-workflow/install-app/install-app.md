@@ -34,7 +34,7 @@ In this lab you will install a sample app from the app library.
     - Enter the credentials for the Workspace Admin user (*WS\_ADMIN* if you used the default names) found in the *`dev.env`* file (WORKSPACE\_ADMIN and WORKSPACE\_ADMIN_PWD).
 
       If you used the defaults, the values are as follow:
-      - Workspace: `WS`.
+      - Worspace: `WS`.
       - User: `WS_ADMIN`.
       - Password: check in the `dev.env` file.
 
