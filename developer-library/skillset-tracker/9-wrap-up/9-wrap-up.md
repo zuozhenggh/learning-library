@@ -114,14 +114,265 @@ sudo reboot
 You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.  
 
 ## **Step 3:** Create OracleJET instance and run the code
-- sa isi instanta si sa puna codul pe ea ca in lab 6
-- sa updateze .env si fisierul cu ip-ul de db (+ explicatia pt dan cu valoare default - adb)
-- explicare treemap-uri (ce arata fiecare, culoarea era ceva si marimea era altceva + cine ce vede)
-- explicare filtre treemap
-- paleta culori
-- pagina skills - descriere tabel, butonul de adaugare si functionalitatea de edit/delete (cine ce vede) + filtre
-- about
 
+1. The first thing that you need to do is to go through the second step in **Lab 5: Build an OracleJET Web Application**, **Creating a Linux Instance in OCI**.
+
+2. After you created the instance, it's time to configure it as described in **Lab 5: Build an OracleJET Web Application** -> **Step 3**.
+
+3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained earlier.
+    * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
+    * **config** folder - The two files in the config folder are meant to set up the default configuration for the entire application.
+        * **authentication.js** - The authentication.js contains all the IDCS configuration using data stored in *.env* file, so that the user of the application can be successfully authenticated
+        * **web-server.js** - The web-server.js sets up the port on which the web server would run on. In this case, 8000, but any other port can be used.
+    * **scripts** folder appears automatically when you create a new OracleJET project.
+    * **services** folder contains all the necessary authentication functions and also the initialization of the server, so that the application can run properly.
+        * **authentication.js** - This file contains the user, login and logout routes and several functions that make possible the authentication part:
+            - *user()* - function to check if the user is authenticated.
+            - *login()* - function that makes the login action.
+            - *callback()* - function for storing *id_token* in the session (server side) for logout purposes and adding a request header that is required by the IDCS strategy.
+            - *logout()* - function that makes the logout action.
+            - *ensureAuthenticated()* - created as middleware to check if the user is authenticated.
+        * **web-server.js** - The web-server.js file has two main functions defined in it:
+            - *initialize()* – used to run the web server on the port that was set in the config/web-server.js file. Here it’s also set up the path for the API calls to the database, so that all the paths will look similar.
+            - *close()* – used to close the web server.
+    * **staged-themes** and **web** folders appear automatically when you run ``ojet build`` command.
+    * **src** - because Oracle JET applications are modular, it needs to be mentioned that a module consists of business logic defined in a JavaScript file and a view defined in an HTML file. By convention, the name of the JavaScript file is the same as the name of the HTML file. By default, the JavaScript side of a module is located in the *src/js/viewModels* folder, while its matching view is located in the *src/js/views* folder.
+    Whenever you run ``ojet build`` or ``ojet serve``, the *src* folder is copied to the *web* folder mentioned earlier.
+    If one developer wants to change something in the application, he should never change the files in the web folder, because they will automatically be overwritten whenever ojet build or ojet serve is run. Only change the files in the src folder.
+    As mentioned before, all JavaScript files have the same name as their associated HTML files.
+    * **src/js/viewModels** contains the JavaScript files (**about.js**, **skills.js**, **treemap.js**).
+    * **src/js/views** contains the HTML files (**about.html**, **skills.html**, **treemap.html**).
+    * **src/js/main.js** is the main entry point into the file, hooked into the index.html file via a script element.
+    * **src/js/appController.js** represents the location for global variables, which is loaded into the application in the require block in the main.js file.
+    * **src/index.html** is the main index file of the application, though note that ``ojet serve`` will load it from **web** folder, not the **src** folder.
+    **src/data** contains two JSON files, one for storing multiple databases with different parameters (**db.json**) and one with navigation information (**nav.json**).
+    * **app.js** file - All the code is tied up in app.js which starts / stops the application. When starting the application, the first step is to open the connection to the database by calling the database.initialize() function, then runs the web server by calling webserver.initialize() function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
+    * **.env** file - Contains the details regarding IDCS tenant, id and secret.
+
+  ***Treemap Section***
+
+  This section contains two treemap structures that can be seen in the Treemap entry of the application:
+    * **Cloud Native Skills Treemap** which shows all the skills grouped by categories according to existing JSON file in the database;
+
+    ![cloudnativeskills treemap](./images/cloudnativeskillstreemap.png)
+
+    * **Management Treemap** which shows all the people grouped by manager name.
+
+    ![management treemap](./images/managementtreemap.png)
+
+    The *size* of the treemap boxes is represented by number of people with that skill and the *color* is represented by the average skill points.
+
+    As you can see, the main two colors used for this treemap are *RED* (**highest average of skill points**) and *GREEN* (**lowest average of skill points**). But we took into consideration color blind people and also personal preferences, so the application has available a color palette from which the user can choose any combination he likes.
+
+    ![colorpalette](./images/colorpalette.png)
+
+    This color palette is defined like this in the code:
+
+    ```
+    /* CODE FOR COLOR PALETTE */
+      self.setPalette = (colors) => {
+        self.highPalette = colors.map((o) => {
+          let c = o.color;
+          if (typeof c === "string") {
+            o.color = new Color(c);
+          }
+          return o;
+        });
+        self.lowPalette = colors.map((o) => {
+          let c = o.color;
+          if (typeof c === "string") {
+            o.color = new Color(c);
+          }
+          return o;
+        });
+        ...
+      ```
+
+    You can **FILTER** both treemaps by *manager*, *skills category*, *development area* (primary/secondary), *skill*, and *minimum skill level*.
+
+    ![cloudnativeskillstreemapfilter](./images/cloudnativeskillstreemapfilter.png)
+
+    The filters are defined in the code like this:
+
+    ```
+    /* SKILL LEVELS LIST - FILTER */
+     self.skillLevelSelectVal = ko.observable('1');
+     var skillLevelList = rootModel.skillLevelList();
+     self.skillLevelDP = new ArrayDataProvider(skillLevelList, { keyAttributes: 'value' });
+    ```
+
+    When you click on a box at your choice from one of the treemaps you will see details about the people that have a certain skill if you choose **Cloud Native Skills Treemap** or engineer details and Edit form if you choose the **Management Treemap**.
+
+  ***Skills Section***
+
+  This entry in the application represents the page where the user can find all the engineers with their skill points taking into consideration their role.
+
+    ![skills entry](./images/skills.png)
+
+  If the role was mentioned, a user can have three different roles:
+
+  **ADMIN**
+    - VIEW Cloud Native Skills Treemap;
+    -	VIEW Details Table from Treemap;
+    -	VIEW, EDIT, DETELE Management Treemap + Edit Form;
+    -	VIEW, INSERT, EDIT, DELETE Skills Entry;
+    -	VIEW About Entry.
+
+  **MANAGER**
+    -	VIEW Cloud Native Skills Treemap;
+    -	VIEW Details Table from Treemap;
+    -	VIEW, EDIT, DETELE ONLY HIS PEOPLE - Management Treemap + Edit Form;
+    -	VIEW, INSERT, EDIT, DELETE ONLY HIS PEOPLE - Skills Entry;
+    -	VIEW About Entry.
+
+  **USER**
+    -	VIEW Cloud Native Skills Treemap;
+    -	VIEW Details Table from Treemap;
+    -	VIEW, INSERT, EDIT ONLY ITS OWN SKILLS - Skills Entry;
+    -	VIEW About Entry.
+
+  In order to explain the code part for this entry, the ADMIN role will be taken into consideration.
+
+  The **ADMIN** user can see and do everything (**use and apply all filters**, **add**, **edit**, **delete**, **view** engineers, **view table** and **click on specific engineer**).
+  All these elements can be found in the *skills.js* file for the JavaScript part and also in the skills.html for the HTML part.
+  For example, filters are defined like this in *skills.js* file:
+
+  ```
+  let mgrList = rootModel.managerListFilter();
+  self.mgrSelected = ko.observable('All');
+  self.mgrDP = new ArrayDataProvider(mgrList, { keyAttributes: 'value' });
+  var managersList = rootModel.managerList();
+  managerDP = new ArrayDataProvider(managersList, { keyAttributes: 'value' });
+  ```
+
+  And they are mentioned in the *skills.html* file like this:
+
+  ```
+  <oj-select-single id="selectMgr" label-hint="Manager" style="max-width:10em" data="[[mgrDP]]"
+          value="{{mgrSelected}}" on-value-changed="[[filterTable]]">
+          </oj-select-single>
+  ```
+
+  If you click on a specific engineer you can *VIEW* his details and you can *EDIT* or *DELETE* his data if you have **ADMIN** role.
+
+  ![clickontable](./images/clickontable.png)
+
+  This window is done based on a popup mechanism defined like this in the code:
+
+  ```
+  /* CODE FOR POPUP WITH FORM */
+      self.formAnimationListener = function (event) {
+         ...
+      };
+      self.formOpenListener = function () {
+        if (self.selectedNodesEmployee().length != 0) {
+         ...
+      };
+      self.formCancelListener = function () {
+        var popup = document.getElementById('form-popup');
+        popup.close();
+         ...
+      };
+  /* END OF CODE FOR POPUP WITH FORM */
+  ```
+
+  The **CREATE**, **EDIT**, **DELETE** buttons call specific functions defined in code. *POST* method is called for both *create* and *update* and *DELETE* method is called for *delete* functionality. Here is an example:
+
+  ```
+  $.ajax({
+      url: createURL,
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(json_var),
+      success: function (data) {
+          window.location.reload();
+          },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+      alert("Action failed! Please check that there isn't another person added with this EMAIL address. If you believe this is not the case, please contact the ADMIN of the application!");
+            }
+    });
+  ...
+  ```
+
+  ***About Section***
+
+  This section contains **about.js** and **about.html** files that contain all the elements that build the final result as a table which provides information about skill points and their meaning.
+
+  ![about entry](./images/about.png)
+
+  4. Open the _OJET_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _IDCS\_CLIENT\_TENANT_, _IDCS\_CLIENT\_ID_, and _IDCS\_CLIENT\_SECRET_ with your own IDCS details.
+
+  ```
+  IDCS_CLIENT_TENANT=IDCS_CLIENT_TENANT
+  IDCS_CLIENT_ID=IDCS_CLIENT_ID
+  IDCS_CLIENT_SECRET=IDCS_CLIENT_SECRET
+  ```
+
+  In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* according to your database type (OracleDB, NoSQL, MySQL and others).
+
+  ```
+  [   {
+      "name": "adb",
+      "description": "Autonomous JSON Database",
+      "ip": "<your_ip>",
+      "port": "<your_port>"
+      },
+      {
+      "name": "mysqldb",
+      "description": "MySQL Database",
+      "ip": "<your_ip>",
+      "port": "<your_port>"
+      }
+]
+  ```
+  5. In order to run the code, you need to upload it to the instance. You can use the following commands (run in from you laptop, not on the instance).
+
+    **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
+
+  * On the instance:
+  ```
+  <copy>
+  cd /home/opc
+  mkdir SkillsetTracking
+  </copy>
+  ```
+  To save output of the **npm** command into a _log_ file, you can create a new log folder.
+  ```
+  <copy>
+  cd /home/opc/SkillsetTracking
+  mkdir log
+  </copy>
+  ```
+  * On your local machine:
+  ```
+  <copy>
+  cd <project_folder_path>
+  rm node_modules
+  scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+  scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+  </copy>
+  ```
+
+  After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it manually with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**. Use the following commands to add it as a **crontab job**.
+  ```
+  <copy>
+  sudo crontab -e
+  </copy>
+  ```
+  Press ***insert*** to enter the _edit_ mode and paste the following. In this way, you will save the output of the ``node app.js`` command into _skillset\_log.log_ file.
+  ```
+  <copy>
+  @reboot node /home/opc/SkillsetTracker/app.js >> /home/opc/SkillsetTracker/log/skillset_log.log 2>&1
+  </copy>
+  ```
+  Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
+  ```
+  <copy>
+  sudo reboot
+  </copy>
+  ```
+
+  You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
 
 ## **Step 4:** Deploy the NodeJS API code in OKE
 - prepare code as in lab 8
