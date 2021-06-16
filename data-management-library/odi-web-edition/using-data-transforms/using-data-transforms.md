@@ -321,14 +321,11 @@ When you're satisfied, press **Close**. Then, press **Jobs** in the breadcrumb a
 
 ## STEP 4: Create Workflow
 
-### Workflows
+Good engineering practice is to build and thoroughly test (with both positive and negative cases) components of functionality. These components can then be combined into larger modules. The Data Transforms tool supports this best practice, with Data Flows representing the elemental components, and Workflows the assembly of these components into larger modules. In this exercise we'll simulate this approach. We begin by creating two additional Data Flows in project *MovieStream*:
 
-Good engineering practice is to build and thoroughly test (with both positive and negative cases) components of functionality. These components can then be combined into larger modules. The Data Transforms tool supports this best practice, with Data Flows representing the elemental components, and Workflows the assembly of these components into larger modules. In this exercise we'll simulate this approach. We begin by creating two additional workflows in project *MovieStream*:
+  - Error_Handling – a unified error handling module
 
-<ul style="list-style-type: square;">
-Error_Handling – a unified error handling module
-
-Nightly_Batch – an incremental load of data from the last day of operations
+  - Nightly_Batch – an incremental load of data from the last day of operations
 
 1. Following the procedures we've already covered (under *Lab 5 - Using Data Transforms / Create Data Flow*) create the definition for these two Data Flows. Note that for the purposes of this workshop it is sufficient merely to create the Data Flow headers. These additional flows are only for illustrations and don't do anything. In practice there will be real data flows that you may want to include in a workflow.
 
@@ -340,7 +337,7 @@ Nightly_Batch – an incremental load of data from the last day of operations
 
 3. Give the Workflow the name &quot;*MovieStream_Incremental&quot;* , and press  **Create** . 
 
-Note: Workflow names must be single words, so the underscore between *MovieStream* and *Incremental* is very important here. 
+  Note: Workflow names must be single words, so the underscore between *MovieStream* and *Incremental* is very important here. 
 
   ![ALT text is not available for this image](images/3019662950.png)
 
@@ -391,8 +388,6 @@ Repeat these steps to complete the workflow as follows, being sure to press the 
 After completing the definition of the Workflow, navigate back to the Data Transforms main page by pressing **Projects** in the breadcrumb at the upper left of the screen.
 
 ## STEP 5: Create Schedules
-
-### Schedules
 
 The typical process for development with Data Transforms will be first to develop and test Data Flows individually. These will then be assembled into Workflows, which are then tested in turn. During development and testing, the validation of these Data Flows and Workflows will initially by executed on demand. As they move into production, they typically transition to &quot;lights out&quot; operations, being executed automatically against a schedule. The definition of these schedules is the topic of this section. 
 
