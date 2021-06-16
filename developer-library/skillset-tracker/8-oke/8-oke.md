@@ -21,7 +21,7 @@ Estimated Lab Time: 2 hours
 
 ### Prerequisites
 
-* **Lab 4: Autonomous JSON Database & SODA Collections**
+* **Lab 4: Autonomous JSON Database & SODA Collections**.
 * **Lab 6: Build NodeJS APIs to make calls to the database**.
 
 
