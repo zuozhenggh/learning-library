@@ -30,184 +30,60 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 | **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1**  | SQL Performance Analyzer - API                              | 15 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using API PLSQL mode.                                                                        | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.3. How each SQLs in the application's workload (Order Entry) performs in new 19.3 upgrade.                                                                                                                                                                                                                                           |
-| **2**  | SQL Performance Analyzer - EM UI       | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using Enterprise Manager UI.                                                 | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.3. How each SQLs in the application's workload (Sales History) performs in new 19.3 upgrade.                                                                                                                                                                                                                                                                                                                                                  |
-| **3**  | Database Workload Replay - API                         | 10 minutes       | The objective of this activity is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities using API PLSQL mode and import Capture and Replay into Enterprise Manager.                                                                                                           | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. How the application's workload (Order Entry) performs in new 19.3 upgrade. Database Replay enables realistic testing of system changes by essentially re-creating the production workload environment on a test system.                                                                                                                                                                                                                                                                                                                                 |
-| **4**  | Database Replay - Consolidation Replay (EM) | 10 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.3.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **1**  | SQL Performance Analyzer        | 15 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using Enterprise Manager UI.                                                 | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.10. How each SQLs in the application's workload (Sales History) performs in new 19.10 upgrade. Sales History workload SQLs gathered in SQL Tuning Set SHSTS.                                                                                                                                                                                                                                                                                            |
+| **2**  | Database Workload Replay - Capture Workload                          | 15 minutes       | The objective of this activity is to demonstrate how to performs  Workload Capture for Real Application Testing   Database Replay                                                                                                         | **Scenario:**    You've been asked to Capture of  Database Workload before upgrade Database from 18.3 to 19.10 for Database Replay. The Workload simulated using SwingBench for 100 Concurrent Database Users.                                                                                                                                                                                                                                                                                                                                |
+| **3**  | Database Workload Replay - Replay Workload                          | 10 minutes       | The objective of this activity is to demonstrate how to performs  Workload Capture for Real Application Testing   Database Replay                                                                                                         | **Scenario:**    You've been asked to Replay of  Database Workload before upgrade Database from 18.3 to 19.10 for Database Replay. The Workload captured from previous Step*2 from 100 concurrent users workload.                                                                                                                                                                                                                                                                                                                                |
+| **4**  | Database Workload Replay - API, import to Enterprise Manager (Optional)                      | 10 minutes       | The objective of this activity is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities using API PLSQL mode and import Capture and Replay into Enterprise Manager.                                                                                                           | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. How the application's workload (Order Entry) performs in new 19.3 upgrade. Database Replay enables realistic testing of system changes by essentially re-creating the production workload environment on a test system.                                                                                                                                                                                                                                                                                                                                 |
+| **5**  | Database Replay - Consolidation Replay (EM) (Optional) | 10 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.3.                                                                                                                                          |
 
 
-## **STEP 1:** SQL Performance Analyzer - API
-### Login to Host using SSH Key based authentication
-1. Running Swingbench's Order Entry workload for 5 minutes. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-    **SSH Session 1**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Change directory to **cd scripts/swingbench/swingbench**
-    - Execute the script **bin/charbench -c /home/oracle/scripts/swingbench/swingbench/configs/SOE_Client_Side_2.xml**
-    - The Swingbench will be running for 5 minutes. Do not need to wait until Swingbench workload to finish to continue to Step 2.
 
-    ````
-    <copy>sudo su - oracle
-    cd scripts/swingbench/swingbench
-    bin/charbench -c /home/oracle/scripts/swingbench/swingbench/configs/SOE_Client_Side_2.xml</copy>
-    ````
+## **STEP 0:** Prepare EM and Databases
 
-    ![](images/emratlab1step1.png " ")
+1.  Setup Oracle Credential
+  - Go to Enterprise - Job - Library
 
-2.  Capture STS (SQL Tuning Set)
-    **SSH Session 2**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Set Environment variables for sales database **. SALESENV**
-    - Execute STS API to create STS and capture from cursor cache for 5 minutes in sqlplus
-    - Continue to Step 3 after PL/SQL procedure successfully completed.
-    ````
-    <copy>sudo su - oracle
-    . SALESENV
-    sqlplus '/ as sysdba'
-    SQL> alter session set container = oltp;
-    SQL> EXEC dbms_sqltune.create_sqlset('soests1');
-    SQL> EXEC dbms_sqltune.capture_cursor_cache_sqlset(sqlset_name => 'soests1', time_limit => 300, repeat_interval => 60,basic_filter => 'parsing_schema_name in (''SOE'')')</copy>
-    ````
+    ![](images/emratlab0step1a.png " ")
 
-    ![](images/emratlab1step2a.png " ")
+  - Pick **SETUP ORACLE CREDENTIALS** and click Submit
 
-    ![](images/emratlab1step2b.png " ")
+    ![](images/emratlab0step1b.png " ")
 
-3.  Move STS (SQL Tuning Set) to 19.3 Cloned oltp Database
-    - Create STS staging table in source 18.3 sales-oltp PDB
-    - Export STS staging table
-    ````
-    <copy>sudo su - oracle
-    . SALESENV
-    sqlplus '/ as sysdba'
-    SQL> alter session set container = oltp;
-    SQL> exec  DBMS_SQLTUNE.create_stgtab_sqlset(table_name => 'SQLSET_TAB', schema_name => 'SYSTEM', tablespace_name => 'USERS');
-    SQL> exec DBMS_SQLTUNE.pack_stgtab_sqlset(sqlset_name => 'soests1', sqlset_owner => 'SYS', staging_table_name => 'SQLSET_TAB', staging_schema_owner => 'SYSTEM');
-    SQL> create or replace directory dpdir as '/home/oracle/scripts/exp';
-    SQL> exit
-    emrep:oracle@emcc:~> expdp system/welcome1@oltp directory=DPDIR dumpfile=soests1.dmp tables=sqlset_tab</copy>
-    ````
+  - Click **Submit**
 
-    ![](images/emratlab1step3a.png " ")
+    ![](images/emratlab0step1c.png " ")  
 
-    ![](images/emratlab1step3b.png " ")
+2.  In this Lab, we use Databases : **db19c.subnet.vcn.oraclevcn.com**, **emrep.us.oracle.com** and **sales.subnet.vcn.oraclevcn.com**
+  -  Shutdown Databases : **cdb186.subnet.vcn.oraclevcn.com**, **finance.subnet.vcn.oraclevcn.com**, **hr.subnet.vcn.oraclevcn.com**
 
-    - Import STS staging table
-    - Unpack STS in target 19.3 clone sales-oltp PDB
-    ````
-    <copy>sudo su - oracle
-    . 19c.env
-    sqlplus system/welcome1@//emcc/oltp_cl2.subnet.vcn.oraclevcn.com
-    SQL> create  or replace directory dpdir as '/home/oracle/scripts/exp';
-    SQL> exit
-    emrep:oracle@emcc:~> impdp system/welcome1@//emcc/oltp_cl2.subnet.vcn.oraclevcn.com directory=DPDIR dumpfile=soests1.dmp
+    ![](images/emratlab0step2a.png " ")
 
-    emrep:oracle@emcc:~> sqlplus '/ as sysdba'
-    SQL> alter session set container = OLTP_CL2;
-    SQL> exec DBMS_SQLTUNE.unpack_stgtab_sqlset(sqlset_name => 'soests1', sqlset_owner => 'SYS', staging_table_name => 'SQLSET_TAB',replace => TRUE, staging_schema_owner => 'SYSTEM');</copy>
-    ````
+    ![](images/emratlab0step2b.png " ")
 
-    ![](images/emratlab1step3c.png " ")
+    ![](images/emratlab0step2c.png " ")
 
-    ![](images/emratlab1step3d.png " ")
+    ![](images/emratlab0step2d.png " ")
+
+    ![](images/emratlab0step2e.png " ")
+
+  - Start Database : **db19c.subnet.vcn.oraclevcn.com**
+
+  ![](images/emratlab0step2f.png " ")
+
+  ![](images/emratlab0step2g.png " ")
 
 
-4.  Create and run SPA task
-    - Create Database Link from target to source
-    ````
-    <copy>
-    . 19c.env
-    sqlplus '/ as sysdba'
-    SQL> alter session set container = OLTP_CL2;
-    SQL> create public database link oltp connect to system identified by welcome1 using '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = oltp.subnet.vcn.oraclevcn.com)))';
-    </copy>
-    ````
+  - Open Pluggable Databases : **db19c.subnet.vcn.oraclevcn.com_OLTP_CL2** and **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1**  
+  ![](images/emratlab0step2h.png " ")
 
-    ![](images/emratlab1step4a.png " ")
+  ![](images/emratlab0step2i.png " ")
 
-    - Create SPA task
-    ````
-    <copy>
-    SQL> var atname varchar2(30);
-    SQL> exec :atname := 'SPA_TEST_API';
-    SQL> begin
-        :atname := DBMS_SQLPA.CREATE_ANALYSIS_TASK (sqlset_owner => 'SYS',sqlset_name => 'soests1', task_name => :atname);
-        end;
-        /
-    </copy>    
-    ````
+  ![](images/emratlab0step2j.png " ")
 
-    ![](images/emratlab1step4b.png " ")
-
-    - Run SPA task test-execute to source 18c via dblink
-    ````
-    <copy>
-    SQL> begin
-        DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
-        task_name => 'SPA_TEST_API',
-        execution_type => 'TEST EXECUTE',
-        execution_name => 'oltp18c',
-        execution_params => dbms_advisor.arglist('DATABASE_LINK', 'OLTP.SUBNET.VCN.ORACLEVCN.COM'));
-        end;
-        /
-    </copy>  
-    ````
-
-    ![](images/emratlab1step4c.png " ")
-
-    - Run SPA task test-execute in target 19c
-    ````
-    <copy>
-    SQL> begin
-        DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
-        task_name => 'SPA_TEST_API',
-        execution_type => 'TEST EXECUTE',
-        execution_name => 'oltp19c');
-        end;
-        /
-    </copy>  
-    ````
-
-    ![](images/emratlab1step4d.png " ")
+  ![](images/emratlab0step2k.png " ")
 
 
-5.  Run SPA Analyze Compare and generate SPA report
-    - Run SPA Compare Analysis based on elapse time
-    ````
-    <copy>
-    SQL> begin
-      DBMS_SQLPA.EXECUTE_ANALYSIS_TASK(
-      task_name => 'SPA_TEST_API',
-      execution_type => 'COMPARE',
-      execution_name => 'oltp18cvs19c_elapsetime',
-      execution_params => dbms_advisor.arglist(
-          'comparison_metric',
-          'elapsed_time'));
-      end;
-      /
-    </copy>  
-    ````
-
-    ![](images/emratlab1step4e.png " ")
-
-    - Generate SPA report
-    ````
-    <copy>
-    SQL> set long 10000000 longchunksize 10000000 linesize 200 head off feedback off echo off
-    SQL> spool /tmp/spaapirep.html
-    SQL> SELECT dbms_sqlpa.report_analysis_task(task_name => 'SPA_TEST_API', type => 'html', section => 'ALL') FROM dual;
-    SQL> spool off
-    SQL> exit
-    emrep:oracle@emcc:~> chmod 777 /tmp/spaapirep.html
-    </copy>
-    ````
-    - Use a scp client tp copy file to your local machine
-
-
-## **STEP 2:** SQL Performance Analyzer - EM UI
+## **STEP 1:** SQL Performance Analyzer
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -215,21 +91,21 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 2. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
-    ![](images/emratlab2step2.png " ")
+    ![](images/emratlab1step2.png " ")
 
 3. Here you will notice different databases listed, such as SALES, HR etc., we will work in pluggable database psales inside the sales container database. **Expand** the Sales database from the list, and **Click** sales.subnet.vcn.oraclevcn.com_PSALES
 
-    ![](images/emratlab2step3.png " ")
+    ![](images/emratlab1step3.png " ")
 
 4. Go to SQL Tuning Set page by **Click** on Performance menu -> SQL -> SQL Tuning Set. And use SYS_SALES credential name from the database login screen
 
-    ![](images/emratlab2step4a.png " ")
+    ![](images/emratlab1step4a.png " ")
 
-    ![](images/emratlab2step4b.png " ")
+    ![](images/emratlab1step4b.png " ")
 
 5. Pick SQL Tuning Set 'shsts1' and **Click** Copy To A Database button
 
-    ![](images/emratlab2step5.png " ")
+    ![](images/emratlab1step5.png " ")
 
 6. Enter Copy SQL Tuning Set
     - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for Destination Database
@@ -237,69 +113,80 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     - Pick **ORACLE** for both Source and Destination Credentials and **SYS_SALES** for Destination Database Credential
     - **Click** Ok
 
-    ![](images/emratlab2step6a.png " ")
+    ![](images/emratlab1step6a.png " ")
 
-    ![](images/emratlab2step6b.png " ")
+    ![](images/emratlab1step6b.png " ")
 
-    ![](images/emratlab2step6c.png " ")
+    ![](images/emratlab1step6c.png " ")
 
-    - View on job page to check status of the Copy STS job
+    - View on job page to check status of the Copy STS job. It can take 1.5-2 minutes.
 
 7. After the COPY STS job successfully finished, **Click** Target - Database
     - **Click** db19c.subnet.vcn.oraclevcn.com - PDB **PSAL_CLone1**
     - **Click** on menu Performance - SQL - SQL Performance Analyzer
 
-    ![](images/emratlab2step7a.png " ")
+    ![](images/emratlab1step7a.png " ")
 
-    ![](images/emratlab2step7b.png " ")
+    ![](images/emratlab1step7b.png " ")
 
-    ![](images/emratlab2step7c.png " ")
+    ![](images/emratlab1step7c.png " ")
 
 8. In SPA (SQL Performance Analyzer) page, **Click** Guided Workflow
 
-    ![](images/emratlab2step8.png " ")
+    ![](images/emratlab1step8.png " ")
 
 9. Step 1 Create SPA Task  based on STS
 
-    ![](images/emratlab2step9a.png " ")
+    ![](images/emratlab1step9a.png " ")
 
     - Enter Name for the Task Name : **SHSPATASK**
     - Enter Description : **Sales History SPA Task**
     - Pick STS : **SHSTS1**
 
-    ![](images/emratlab2step9b.png " ")
+    ![](images/emratlab1step9b.png " ")
 
     - **Click** Create and back to **Guided Workflow** page
 
 10. Step 2 Create SQL Trial in Initial Environment
 
-    ![](images/emratlab2step10a.png " ")
+    ![](images/emratlab1step10a.png " ")
 
     - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_18C**
-    - Enter Description
+    - Enter Description : Sales History 18C run
     - Creation Method: **Execute SQLs Remotely**
 
-    ![](images/emratlab2step10b.png " ")
+    ![](images/emratlab1step10b.png " ")
 
     - Default per-SQL Time Limit
-    - Database Link: pick **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+    - Click Create Database Link button
+    ![](images/emratlab1step10e.png " ")
 
-    ![](images/emratlab2step10c.png " ")
+    - Enter Name :  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+    - Enter Net Service Name : **"(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = psales.subnet.vcn.oraclevcn.com)))"** (need to include double quote "")
+    - Click on Public - This database link is available to all users
+    - Pick Fixed User
+    - Enter Username : **SYSTEM**
+    - Password : **welcome1**
+    - Click Ok
+    ![](images/emratlab1step10f.png " ")
+
+    - Click Search button then pick Database Link  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+    ![](images/emratlab1step10c.png " ")
 
     - **Check** Trial environment established
     - **Click** Submit
 
 11. Back to SQL Performance Analyzer Home page, to check the status of the task run.
 
-    ![](images/emratlab2step11a.png " ")
+    ![](images/emratlab1step11a.png " ")
 
     - Continue the Workflow **Click** SHSPATASK
 
-    ![](images/emratlab2step11b.png " ")
+    ![](images/emratlab1step11b.png " ")
 
 12. Continue Step 3 in SPA Guided Workflow **SHSPATASK**, Create SQL Trial in Changed Environment
 
-    ![](images/emratlab2step12a.png " ")
+    ![](images/emratlab1step12a.png " ")
 
     - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_19C**
     - Enter Description
@@ -308,144 +195,347 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     - **Check** Trial environment established
     - **Click** Submit
 
-    ![](images/emratlab2step12b.png " ")
+    ![](images/emratlab1step12b.png " ")
 
 13. Back to SQL Performance Analyzer Home page, to check the status of the task run.
 
-    ![](images/emratlab2step13.png " ")
+    ![](images/emratlab1step13.png " ")
 
     - Continue the Workflow **Click** SHSPATASK
 
 14. Continue Step 4 in SPA Guided Workflow **SHSPATASK**, Compare Step 2 and Step 3
 
-    ![](images/emratlab2step14a.png " ")
+    ![](images/emratlab1step14a.png " ")
 
     - Trial 1 Name : **SHSTS_SQL_TRIAL_18C**
     - Trial 2 Name : **SHSTS_SQL_TRIAL_19C**
     - Comparison Metric : **Buffer Get**
     - **Click** Submit
 
-    ![](images/emratlab2step14b.png " ")
+    ![](images/emratlab1step14b.png " ")
 
 15.  Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
 
-    ![](images/emratlab2step15a.png " ")
+    ![](images/emratlab1step15a.png " ")
 
-    ![](images/emratlab2step15b.png " ")
+    ![](images/emratlab1step15b.png " ")
 
     - **Click** one of the SQLID to check the detail of the SQL comparison
 
-    ![](images/emratlab2step15c.png " ")
+    ![](images/emratlab1step15c.png " ")
 
 
-## **STEP 3:** Database Workload Replay - API
+## **STEP 2:** Database Workload Replay - Capture Workload
+
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+
+    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
+
+2. Go to Enterprise - Job - Library
+
+    ![](images/emratlab2step2.png " ")
+
+3. Pick Job Name 'START_SWINGBENCH_LOAD' then click Submit
+
+    ![](images/emratlab2step3.png " ")
+
+4. Click Submit, Swingbench workload starts with 100 concurrent users to Pluggable Database OLTP in **sales.subnet.vcn.oraclevcn.com**
+
+    ![](images/emratlab2step4.png " ")
+
+5. Go to Enterprise menu - Quality Management - Database Replay
+
+    ![](images/emratlab2step5.png " ")
+
+6. Click Create button in Capture Workloads Tab
+
+    ![](images/emratlab2step6.png " ")
+
+7. Check both Capture Prerequisites, then Click Next
+
+    ![](images/emratlab2step7.png " ")  
+
+8. Click Add in Capture Databases list,
+
+    ![](images/emratlab2step8a.png " ")  
+
+   Enter Capture Name **capsoe**, pick for Database Target
+
+    ![](images/emratlab2step8b.png " ")
+
+   and Select Target Database with Target Name **sales.subnet.vcn.oraclevcn.com**
+
+    ![](images/emratlab2step8c.png " ")
+
+9. Pick OEM_SYS credential for Database Credential, and check Preferred for Database Host Credential, and click Browse for Database Capture Storage location
+
+    ![](images/emratlab2step9.png " ")
+
+10. Go to Path **/home/oracle/scripts** and pick folder **CAPTURE**
+
+    ![](images/emratlab2step10.png " ")
+
+    Click Ok then Next
+
+    ![](images/emratlab2step10b.png " ")
+
+    ![](images/emratlab2step10c.png " ")
+
+
+11. Use Default Option
+    - Check on Capture SQL statements into a SQL Tuning Set during workload capture
+    - PL/SQL capture mode : Top Level
+    - Workload Filters : Exclusion Filter mode
+    - Excluded Sessions : Program OMS and Module emagent%
+
+    ![](images/emratlab2step11.png " ")    
+
+    Click Next
+
+12. Create Capture: Schedule, Start Immediately; Duration : 5 minutes
+    AWR export Schedule to run after capture Completed
+
+    ![](images/emratlab2step12.png " ")
+
+    Click Next
+
+13. Create Capture: Review, Click Submit
+
+    ![](images/emratlab2step13.png " ")
+
+    Click Submit
+
+14. In Database Replay landing page, click on **soecap** ih Capture Workload
+
+    ![](images/emratlab2step14.png " ")
+
+    ![](images/emratlab2step14a.png " ")
+
+15. After 5 minutes, DB Capture finished (Succeeded)
+
+    ![](images/emratlab2step15.png " ")
+
+16. Stop Swingbench Workload
+    Go to Enterprise - Job - library
+
+    ![](images/emratlab2step16a.png " ")
+
+    Pick **STOP_SWINGBENCH_WORKLOAD**, click Submit
+
+    ![](images/emratlab2step16b.png " ")
+
+    Click Submit in the Job page
+
+    ![](images/emratlab2step16c.png " ")
+
+17. Review Capture Report
+    Go to Enterprise - Quality Management - DB Replay
+
+    ![](images/emratlab2step17a.png " ")
+
+    ![](images/emratlab2step17b.png " ")
+
+    ![](images/emratlab2step17c.png " ")
+
+    ![](images/emratlab2step17d.png " ")
+
+    ![](images/emratlab2step17e.png " ")
+
+    ![](images/emratlab2step17f.png " ")
+
+## **STEP 3:** Database Workload Replay - DB Replay
+
+  1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+
+    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
+
+  2.  Go to Enterprise menu - Quality Management - Database Replay
+
+        ![](images/emratlab2step5.png " ")
+
+  3.  Click **Replay Task** tab
+
+        ![](images/emratlab3step3.png " ")
+
+  4. Click **Create** button
+
+        ![](images/emratlab3step4.png " ")
+
+  5. Enter **soerep** for Replay Task Name and click **Add** button in workloads
+
+        ![](images/emratlab3step5.png " ")
+
+  6. Pick **soecap** from Search and Select workloads
+
+        ![](images/emratlab3step6.png " ")
+
+  7. Enter **soerep_1** in Replay Name and click on **Search** button
+
+        ![](images/emratlab3step7.png " ")
+
+  8. Select **db19c.subnet.vcn.oraclevcn.com**
+
+        ![](images/emratlab3step8.png " ")
+
+  9. Click **Submit** button
+
+        ![](images/emratlab3step9.png " ")
+
+  10. Click **Preprocess workload** task
+
+        ![](images/emratlab3step10.png " ")
+
+  11. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+
+        ![](images/emratlab3step11.png " ")
+
+  12. Click **Next**
+
+        ![](images/emratlab3step12.png " ")   
+
+  13. Click **Submit**
+
+        ![](images/emratlab3step13.png " ")
+
+  14. Click on highlighted Preprocess Job to monitor preprocess job
+
+        ![](images/emratlab3step14.png " ")
+
+  15. Click **refresh** until the status **Succeeded**
+
+      ![](images/emratlab3step15.png " ")
+
+    - After status **Succeeded** click **soerep_1**
+
+      ![](images/emratlab3step15b.png " ")
+
+  16. Click **Replay Workload** tasks
+
+      ![](images/emratlab3step16.png " ")
+
+  17. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+
+        ![](images/emratlab3step11.png " ")
+
+  18. Click **Next** after validate the workload directory and **Retrieve Workload Information**
+
+        ![](images/emratlab3step18.png " ")
+
+        ![](images/emratlab3step19.png " ")
+
+  19. Remap replay connection using below connect string
+````
+(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
+````
+
+        ![](images/emratlab3step20.png " ")
+
+  20. Click **Next** using default Replay's Options
+
+        ![](images/emratlab3step21.png " ")
+
+  21. Click **Add** in Replay Client hosts
+
+        ![](images/emratlab3step22.png " ")  
+
+  22. Click **Search** in Host
+
+        ![](images/emratlab3step23.png " ")  
+
+  23. Select **emcc.marketplace.com**
+
+        ![](images/emratlab3step24.png " ")
+
+  24. Enter below connect string for Server Connection Identifier
+````
+(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
+````
+     Enter/Browse **/u01/app/database/product** for Client Oracle Home
+
+     Click **Browse** for Client Replay Directory
+
+         ![](images/emratlab3step25.png " ")
+
+     Select **DBReplayWorkload_soecap_2** in /home/oracle/script/CAPTURE
+
+      ![](images/emratlab3step25b.png " ")
+
+      Enter username : **System**  Password : **welcome1**
+
+      ![](images/emratlab3step25c.png " ")   
+
+25. Click **Next**
+
+      ![](images/emratlab3step26.png " ")
+
+26. Click **Start Clients**
+
+      ![](images/emratlab3step27.png " ")
+
+      ![](images/emratlab3step28.png " ")
+
+27. Click **Submit**
+
+      ![](images/emratlab3step30.png " ")
+
+      ![](images/emratlab3step30a.png " ")
+
+28. Click **Refresh**
+
+      ![](images/emratlab3step30b.png " ")
+
+      ![](images/emratlab3step30c.png " ")
+
+29. Click **Reports** tab
+
+      ![](images/emratlab3step30d.png " ")    
+
+30. Review **Database Replay Report** to determine the quality of Replay.
+
+      ![](images/emratlab3step31a.png " ")
+
+      - Compare number of **User calls** between capture and replay
+
+      ![](images/emratlab3step31b.png " ")    
+
+      - Review **Replay Divergence**
+
+      ![](images/emratlab3step31c.png " ")
+
+      Below 4% Divergence of the Total User Calls considered Replay to be a good workload representation for capture
+
+      Fix Divergence Errors possibilities caused by mis-configuration of Test Replay Database
+
+      ![](images/emratlab3step31d.png " ")      
+
+31. Review **Replay Compare Period Report** to review Database Performance comparison between Capture and Replay
+
+      ![](images/emratlab3step32a.png " ")
+
+      - Compare **Main Performance Statistics** Capture vs Replay
+
+      ![](images/emratlab3step32b.png " ")
+
+      - Compare **ADDM Comparison** Capture vs Replay
+
+      ![](images/emratlab3step32c.png " ")
+
+      - Compare ASH Wait Time Distribution Capture vs Replay
+
+      ![](images/emratlab3step32d.png " ")
+
+      - Compare SQL performance Capture vs Replay
+
+      ![](images/emratlab3step32e.png " ")
+
+      ![](images/emratlab3step32f.png " ")
+
+
+## **STEP 4:** Database Workload Replay - API
 
 ### Login to Host using SSH Key based authentication
-1. Running Swingbench's Order Entry workload for 10 minutes. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-    **SSH Session 1**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Change directory to **cd scripts/swingbench/swingbench**
-    - Execute the script **bin/charbench -c /home/oracle/scripts/swingbench/swingbench/configs/SOE_Client_Side_2.xml**
-    - The Swingbench will be running for 5 minutes. Do not need to wait until Swingbench workload to finish to continue to Step 2.
-
-    ````
-    <copy>sudo su - oracle
-    cd scripts/swingbench/swingbench
-    bin/charbench -c /home/oracle/scripts/swingbench/swingbench/configs/SOE_Client_Side_RAT1.xml</copy>
-    ````
-
-    ![](images/emratlab3step1.png " ")
-
-2.  Start Database Capture
-    **SSH Session 2**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Set Environment variables for sales database **. SALESENV**
-    - Create Unix folder for DB Replay's Capture **/home/oracle/scripts/CAPTURE/lab3SOE**
-    - Create DB Directory Object LAB3SOE
-    - Execute DBMS_WORKLOAD_CAPTURE.START_CAPTURE()
-
-    ````
-    <copy>sudo su - oracle
-    . SALESENV
-    mkdir /home/oracle/scripts/CAPTURE/lab3SOE
-    sqlplus '/ as sysdba'
-    SQL> create directory LAB3SOE as '/home/oracle/scripts/CAPTURE/lab3SOE';
-    SQL> exec  DBMS_WORKLOAD_CAPTURE.START_CAPTURE (name => 'Lab 3 Sales Order Entry', dir => 'LAB3SOE',duration => 600); </copy>
-    ````
-
-    ![](images/emratlab3step2.png " ")
-
-
-3.  Import DB Replay's Capture into EM
-    - The DB's Replay's Capture and workload scheduled for 10 minutes
-    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
-
-    ![](images/emratlab3step3a.png " ")
-
-    - In Database Replay page, Captured Workload tab **click** on **Import**
-
-    ![](images/emratlab3step3b.png " ")
-
-    - Pick **Attach to a capture running in DB target**
-
-    ![](images/emratlab3step3c.png " ")
-
-    - Pick **sales.subnet.vcn.oraclevcn.com**
-
-    ![](images/emratlab3step3d.png " ")
-
-    - Pick Credential **SYS_SALES** for Database Credential, Pick **ORACLE** for Database Host Credential
-
-    ![](images/emratlab3step3e.png " ")
-
-    - In Import Workload page, **Click Discover Workload** button
-
-    ![](images/emratlab3step3f.png " ")
-
-    - Remove **spaces** in New Name **Lab 3 Sales Order Entry** to **Lab3SalesOrderEntry** then **Click** Next
-
-    ![](images/emratlab3step3g.png " ")
-
-    - **Click Submit** in Import Workload: review
-
-    ![](images/emratlab3step3h.png " ")
-
-    - Back To Capture Workloads, and you can see **Lab3SalesOrder** status is **In Progress**
-
-    ![](images/emratlab3step3i.png " ")
-
-    - **Click Lab3SalesOrder** to enter Capture's detail page
-
-    ![](images/emratlab3step3j.png " ")
-
-4.  Generate DB Replay's Capture from API and EM
-    - Query the Capture's Id from dba_workload_captures
-      and use the id to generate the report
-    ````
-    <copy>sudo su - oracle
-    . SALESENV
-    mkdir /home/oracle/scripts/CAPTURE/lab3SOE
-    sqlplus '/ as sysdba'
-    SQL> select id, name from dba_workload_captures where name = 'Lab 3 Sales Order Entry';
-    SQL> set long 10000000 longchunksize 10000000 linesize 200 head off feedback off echo off
-    SQL> spool /tmp/capture_soe.txt
-    SQL> select dbms_workload_capture.report(capture_id => 11, format => 'TEXT') from dual;
-    SQL> spool off
-    </copy>
-     ````
-
-    -  Generate and view report in EM; Continue from step 3 above, **Click** Reports tab
-
-    ![](images/emratlab3step4a.png " ")
-
-    ![](images/emratlab3step4b.png " ")
-
-5.  Start Database Replay for Capture **Lab 3 Sales Order Entry** in 19C Database.
+In this lab, we are going to use a pre-captured workload of Sales History. The workload located in directory **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
+1.  Preprocess workload from API command
     **SSH Session 1**
     - Authentication OS User - “*opc*”
     - Authentication method - *SSH RSA Key*
@@ -453,39 +543,38 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     - Set Environment variables for sales database **. 19c.env**
     - Create DB Directory Object LAB3SOE
     - Pre-process the capture in 19C Database
-    ````
-    <copy>
+    ```` sql
     . /home/oracle/19c.env
     sqlplus '/ as sysdba'
-    SQL> create directory lab3soe as '/home/oracle/scripts/CAPTURE/lab3SOE';
-    SQL> exec dbms_workload_replay.process_capture('LAB3SOE')
-    </copy>
+    SQL> create directory lab4sh as '/home/oracle/scripts/CAPTURE/lab4con/lab4SH';
+    SQL> exec dbms_workload_replay.process_capture('LAB4SH')
     ````
-    - Start the replay by initializing it
+      ![](images/emratlab4step1.png " ")
+
+
+2.  Initialize the Replay
+    ```` sql
+    SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
-    <copy>
-    SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab3rep', replay_dir => 'LAB3SOE');
-    </copy>
-    ````
-    - Remap the connection for replay
-    ````
-    <copy>
+3.  Remap the connections for replay
+    ```` sql
     begin
-    for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab3rep')
+    for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
     loop
-      dbms_workload_replay.remap_connection(connection_id=>i.conn_id, replay_connection=>'(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))');
+      dbms_workload_replay.remap_connection(connection_id=>i.conn_id,
+        replay_connection=>'(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
      end loop;
      commit;
       end;
       /
-      </copy>
       ````
-     - Prepare the replay  
+      ![](images/emratlab4step3.png " ")
+
+4.   Prepare the replay with TIME synchronization  and query_only mode
+     ```` sql
+     SQL> exec dbms_workload_replay.PREPARE_REPLAY (synchronization => 'TIME',query_only => TRUE);
      ````
-     <copy>
-     SQL> exec dbms_workload_replay.PREPARE_REPLAY ();
-     </copy>
-     ````
+5.   Run the replay
      - Start wrc clients in new session
      **SSH Session 2**
      - Authentication OS User - “*opc*”
@@ -493,211 +582,237 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
      - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
      - Set Environment variables for sales database **. 19c.env**
      - run wrc in the replay folder
-     ````
+     ``` sh
      . 19c.env
-     cd /home/oracle/scripts/CAPTURE/lab3SOE
+     cd /home/oracle/scripts/CAPTURE/lab4con/lab4SH
      wrc system/welcome1
-
      Wait for the replay to start (22:41:37)
+     ```
+      ![](images/emratlab4step5.png " ")
 
-     ````
      - Start the replay in session 1
+
      **SSH Session 1**
-     ````
-     <copy>
+     ``` sql
      SQL> exec dbms_workload_replay.START_REPLAY
-     </copy>
-     ````
-6.  Import running Replay into EM
+     ```
+6.  Import Completed Capture into EM
 
     - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
     - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+    - **Click** Import button in Capture Workload  
+     ![](images/emratlab4step6a.png " ")
+    - Pick **Import a completed capture from a directory in file system** and click **Next**
+     ![](images/emratlab4step6b.png " ")  
+    - Select **db19c.subnet.vcn.oraclevcn.com**
+     ![](images/emratlab4step6c.png " ")
+    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential. Click Browse to enter **Workload Location**
+     ![](images/emratlab4step6d.png " ")
+    - Workload Location : **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
+     ![](images/emratlab4step6e.png " ")
+     ![](images/emratlab4step6f.png " ")    
+    - Click **Load Workload** button in Import Workload page, then click **Next**
+    ![](images/emratlab4step6g.png " ")
+    ![](images/emratlab4step6h.png " ")    
+    - Click **Submit**
+    ![](images/emratlab4step6i.png " ")
+    - The Import job might takes 2-3 minutes to be completed
+
+7.  Import Running Replay into EM    
     - **Click** Replay Tasks tab and **Click** Create button
 
-     ![](images/emratlab3step6a.png " ")
+     ![](images/emratlab4step7a.png " ")
 
-    - **Enter** Name **soetask** in Create Task page
+    - **Enter** Name **shrep** in Create Task page
     - **Click** Add button in Workloads section
-    - **Pick** Lab3SalesOrderEntry
+     ![](images/emratlab4step7b.png " ")
+
+    - **Pick** SH click **Select**
+     ![](images/emratlab4step7c.png " ")    
     - **Uncheck** Create a new replay in Replays section
     - **Click** Submit
 
-     ![](images/emratlab3step6b.png " ")
+     ![](images/emratlab4step7d.png " ")
 
     - Back to **Database  Replay** main page
-    - **Click** soetask replay task
+    - **Click** shrep replay task
 
-     ![](images/emratlab3step6c.png " ")
+     ![](images/emratlab4step7e.png " ")
 
     - In Replay Task page **click** Import button in Replays section
 
-     ![](images/emratlab3step6d.png " ")
+     ![](images/emratlab4step7f.png " ")
 
     - **Check** Attach to a replay of this replay task running in a database target
 
-     ![](images/emratlab3step6e.png " ")
+     ![](images/emratlab4step7g.png " ")
 
     - **Select** db19c.subnet.vcn.oraclevcn.com
 
-     ![](images/emratlab3step6f.png " ")
+     ![](images/emratlab4step7h.png " ")
 
     - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
 
-     ![](images/emratlab3step6g.png " ")
+     ![](images/emratlab4step7i.png " ")
 
     - **Click** Discover Replay and **Next** button
 
-     ![](images/emratlab3step6h.png " ")  
+     ![](images/emratlab4step7j.png " ")
+
+     ![](images/emratlab4step7k.png " ")   
 
     - **Click Submit**
 
-     ![](images/emratlab3step6i.png " ")
+     ![](images/emratlab4step7l.png " ")
 
-7. Generate Replay report and comparison report
+    - Running Replay imported and monitored in EM
+    ![](images/emratlab4step7m.png " ")
 
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Set Environment variables for sales database **. 19c.env**
-    - Generate replay report  
-    ````
-    <copy>Set long 500000
-    Set linesize 200
-    Set pagesize 0
-
-    Spool replay_report.txt
-    select dbms_workload_replay.report (replay_id => 1, format=> 'TEXT') from dual;
-    spool off</copy>
-    ````
-    - Import capture's awr into relay's DB
-
-    ````
-    <copy>
-    SELECT DBMS_WORKLOAD_CAPTURE.IMPORT_AWR (capture_id => 11,staging_schema => 'SYSTEM') from dual;</copy>
-    ````
-
-    - Generate replay capture comparison report
-
-    ````
-    <copy>spool compare_period_report.html
-
-    VAR v_clob CLOB
-    BEGIN dbms_workload_replay.compare_period_report(replay_id1 => 1, replay_id2 => null, format => DBMS_WORKLOAD_REPLAY.TYPE_HTML, result => :v_clob);
-    END;
-    /
-
-    print v_clob;
-    spool off
-    exit</copy>
-    ````
-
-    - Generate and view report in EM
-    Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
-    - **Expand** soetask and **click** lab3rep
-
-    ![](images/emratlab3step7a.png " ")
-
-    -  We view 3 reports: Database Replay Report, Replay Compare Period Report, AWR Compare Period Report
-
-    ![](images/emratlab3step7b.png " ")
+    ![](images/emratlab4step7n.png " ")
 
 
-This concludes the Database Replay lab activity.
+## **STEP 5:** Database Consolidation Replay
 
-## **STEP 4:** Database Consolidation Replay
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-1.  Refresh **SOE** schema in **db19c-oltp_cl2** for another replay and copy capture from Lab3 to a Consolidation Folder and by combining pre-existed a Sales History workload
-    **SSH Session 1**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Set Environment variables for sales database **. 19c.env**
-    - Run script **sh scripts/refsoe.sh**
-    - **cd /home/oracle/scripts/CAPTURE**
-    - **cp -r lab3SOE lab4con**
+  ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
-    ````
-    <copy>
-    . 19c.env
-    sh scripts/refsoe.sh
-    cd /home/oracle/scripts/CAPTURE
-    cp -r lab3SOE lab4con
-    </copy>
-    ````
+2.  Go to Enterprise menu - Quality Management - Database Replay
 
-    ![](images/emratlab4step1.png " ")
+      ![](images/emratlab2step5.png " ")
 
-2.  Import pre-existed Sales History Workload and lab's 3 SOE capture into a consolidation capture to EM
-    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
-    - In Database Replay page, Captured Workload tab **click** on **Import**
+3.  Click **Replay Task** tab
 
-    ![](images/emratlab4step2a.png " ")
+      ![](images/emratlab3step3.png " ")
 
-    - Pick **Import a completed captured workload from a directory in the file system** and click **Next**
+4. Click **Create** button
 
-    ![](images/emratlab4step2b.png " ")
+      ![](images/emratlab5step4.png " ")      
 
-    - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for  Database Target
+5.  Create Consolidation Replay Task
+    - Enter Name **lab5con**, Click Add button
 
-    ![](images/emratlab4step2c.png " ")
+      ![](images/emratlab5step5a.png " ")
 
-    - Pick **SYS_DB19C** as Named Credential for Database Credential, pick **ORACLE** as Named Credential for Database Host Target
-    - Enter **/home/oracle/scripts/CAPTURE/lab4con** as Workload Location
-    - Check **Specified workload location is a consolidated replay directory** and **click** Next
+    - Highlight **SH** and **soecap** and clieck **Select** button
 
-    ![](images/emratlab4step2d.png " ")  
+      ![](images/emratlab5step5b.png " ")
 
-    - **Click** Discover Workload and update Lab 3 Sales Order Entry to Lab3SalesOE then cick **Submit**
+    - Check Copy Workload to a new Replay Directory, then click <span style="color: red;">Set Credential</span>
 
-    ![](images/emratlab4step2e.png " ")
+      ![](images/emratlab5step5c.png " ")
 
-3.  Running Consolidation Replay for Sales History Workload and lab's 3 SOE capture
-    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
-    - **Click Create** in Replay Tasks tab  
+    - Click Ok
 
-    ![](images/emratlab4step3a.png " ")
+      ![](images/emratlab5step5d.png " ")
 
-    - **Enter Name and Description**  in Create Task
-    - **Click Add** in Workloads
-    - **Pick Lab3SalesOE** Workload and
-    - **Click Add** in Workloads
-    - **Pick SH** Workload  
+    - Click search button to select Host target
 
-    ![](images/emratlab4step3b.png " ")
+      ![](images/emratlab5step5e.png " ")
 
-    - **Check** Create a new replay for this replay task
-    - **Enter Name**
-    - **Pick db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for  Database Target
+    - Pick **emcc.marketplace.com** and click **Select**
 
-    ![](images/emratlab4step3c.png " ")
+      ![](images/emratlab5step5f.png " ")
 
-    - **Click** Preprocess Workload
+    - Check Named Credential, Credential Name ORACLE, Click Browse to eneter path **/home/oracle/scripts/CAPTURE/lab5**
 
-    ![](images/emratlab4step3d.png " ")
+      ![](images/emratlab5step5g.png " ")
 
-    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
+      ![](images/emratlab5step5h.png " ")
 
-    ![](images/emratlab4step3e.png " ")
+    - Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
 
-    - **Check** Specify a file path
-    - **/home/oracle/scripts/CAPTURE/lab4con** as Consolidated Replay Directory
+    ![](images/emratlab5step5i.png " ")  
 
-    ![](images/emratlab4step3f.png " ")
+    - Click **Submit**
 
-    -
+    ![](images/emratlab5step5j.png " ")
 
 
+6.  Click on Replay Workload Task
 
+    ![](images/emratlab5step6.png " ")
+
+7.  Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+
+    ![](images/emratlab5step7.png " ")
+
+8.  Check Use an existing directory object point to **/home/oracle/scripts/CAPTURE/lab5**, Click Next
+
+    ![](images/emratlab5step8.png " ")
+
+9. - Highlight Workloads **SH**, update Connect Descriptor
+````
+(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))
 ````
 
-alter system set sga_max_size=6291456000 scope=spfile;
-alter system set sga_target=6186598400  scope=spfile;
-alter system set pga_aggregate_target=2988m  scope=spfile;
+    ![](images/emratlab5step9a.png " ")
 
-````
+   - Highlight Workloads **soecap**, update Connect Descriptor
+   ````
+   (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))
+   ````
+
+    ![](images/emratlab5step9b.png " ")
+
+    - **Click Next**
+
+10. - Click **Advanced Replay Schedule**
+
+    ![](images/emratlab5step10a.png " ")
+
+    - Set 3 min Replay Delay for soecap
+
+    ![](images/emratlab5step10b.png " ")
+
+    - **Click Next**
+
+11.  - Click **Add** in Replay Client hosts
+
+          ![](images/emratlab3step22.png " ")  
+
+     -  Click **Search** in Host
+
+          ![](images/emratlab3step23.png " ")  
+
+     -  Select **emcc.marketplace.com**
+
+          ![](images/emratlab3step24.png " ")
+
+     -  Enter below connect string for Server Connection Identifier
+    ````
+    (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
+    ````
+
+    - Set **2** Number of Replay Clients
+
+    - Enter/Browse **/u01/app/database/product** for Client Oracle Home
+
+    - Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
+
+        ![](images/emratlab5step11b.png " ")
+
+    - Enter username : **System**  Password : **welcome1**
+
+        ![](images/emratlab5step11c.png " ")
+    - Click **Next**
+
+        ![](images/emratlab5step11d.png " ")
+
+12. - Click **Start Clients** button
+        ![](images/emratlab5step12a.png " ")
+
+    - Click Next
+        ![](images/emratlab5step12b.png " ")
+
+13. - Click Submit to start Consolidation Replay
+
+        ![](images/emratlab5step13a.png " ")
+
+        ![](images/emratlab5step13b.png " ")  
+
+        ![](images/emratlab5step13c.png " ")
+
 
 
 You have now learned how to work with Real Application Testing. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
