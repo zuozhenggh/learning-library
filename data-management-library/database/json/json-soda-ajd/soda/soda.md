@@ -17,49 +17,6 @@ In this lab, you will:
 
 * Have successfully created a JSON collection in Autonomous JSON Database and have inserted few documents
 
-<!---
-## **STEP 1:** Mass Insert
-
-1. Now do mass insert:
-
-	Click on New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	```
-	<copy>
-	soda insert products {"id":101,"title":"Top Gun","category":"VHS","condition":"like new","price":8,"starring":["Tom Cruise","Kelly McGillis","Anthony Edwards","Val Kilmer"],"year":1986,"decade":"80s"}
-	</copy>
-	```
-
-## **STEP 2:** Queries using QBE
-
-let's perform more QBEs to analyze the data.
-
--> More QBEs to analyze data
-
-1. Find all DVD's cheaper than 10$ and order by price
-
-	```
-	<copy>
-	{"type":"DVD", "price":{"$lte":10}}
-	</copy>
-	```
-
-2. Find all movies, there is no movie category, look for DVD, Blueray, VHS, LaserDisk, Betamax
-
-	```
-	<copy>
-	{}
-	</copy>
-	```
-
-3. Find all movies by Arnold
-
-	```
-	<copy>
-	Fulltext search
-	</copy>
-	```
----->
 ## **STEP 1:** Perform Simple REST Operations in Oracle Cloud Shell
 
 1. A simple REST request can be done from the browser - open a new window and copy the URL from the 'JSON Workshop' or the 'SQL Developer Web' into it.
@@ -177,6 +134,8 @@ let's perform more QBEs to analyze the data.
 	{"id":1414}
 	</copy>
 	```
+
+## **STEP 2:** Insert Data into the Collection
 
 12. Now, let's do a bulk load to insert more data. 
 
