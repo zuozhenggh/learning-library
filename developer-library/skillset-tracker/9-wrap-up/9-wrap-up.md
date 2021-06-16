@@ -2,11 +2,13 @@
 
 ## Introduction
 
-TBD
+The goal of this Lab is to guide you to connect all the components described in the previous Labs into one single application. So, as shown in the infrastructure diagram below, there will be an ***Oracle Autonomous JSON Database*** that will retrieve data from ***Object Storage*** and store it in ***SODA Document Collections***, a ***Kubernetes Cluster*** on which is deployed the API code that makes the calls to the database, an interface for the application built using ***OracleJET***, and an integration with ***Oracle Digital Assistant (ODA)*** and ***Slack***.
+
+As shown in the diagram, there can be other databases as well and the interface of the application can be easily customized to use any of these by simply changing the value of one parameter.
 
 ![architecture diagram](./images/architecture-diagram.png)
 
-Estimated Lab Time: TBD
+Estimated Lab Time: 6 hours
 
 ### Objectives
 * Download the code of the full Skillset Tracking application.
@@ -48,12 +50,12 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
         * **skills-jsondb.js** - Has 7 main functions as described below. This code is mainly using SODA for NodeJS functionalities for opening the document collections and for manipulating the data existing in these collections.
             - _initialize()_ – this function opens the connection to the database, as well as the document collections that currently exist in the database and are going to be used in the application.
             - _close()_ – function used to close the connection to the database.
-            - _get()_ – this is the most used function in the entire application and it’s making a call to the database to get the data from the document collection, based on the two parameters: _qbe_ (the query condition, which is written and formatted according to the documentation for SODA calls for NodeJS; if this parameter is _null_, the function will retrieve all the data in the collection) and _coll_name_ (which represents the name of the collection for which the calls are made).
+            - _get()_ – this is the most used function in the entire application and it’s making a call to the database to get the data from the document collection, based on the two parameters: _qbe_ (the query condition, which is written and formatted according to the documentation for SODA calls for NodeJS; if this parameter is _null_, the function will retrieve all the data in the collection) and _coll\_name_ (which represents the name of the collection for which the calls are made).
             - _getByQuery()_ – this function is making calls to get data from the database based on simple queries which are not using SODA calls (ex. simple ‘select’ statement queries).
             - _update()_ – this function is used to update (replace) an existing document in a collection with a new one by using SODA for NodeJS and based on an existing ID which is sent as a parameter of the function.
             - _create()_ – this function is used to create a new document in a collection.
             - _remove()_ – this function is used to remove an existing document from a collection, based on the unique ID sent as a parameter in the function.
-        * **api_router.js** - Sets up the routes for making the calls to the database. Currently this project has 36 routes which are described in the table that can be found in the ***Annexes*** section of this Lab. In order to make it easier to build the query for making the SODA calls, there are several functions that will either dynamically build the query or filter the data further, according to the need for each call.
+        * **api_router.js** - Sets up the routes for making the calls to the database. Currently this project has 37 routes which are described in the table that can be found in the ***Annexes*** section of this Lab. In order to make it easier to build the query for making the SODA calls, there are several functions that will either dynamically build the query or filter the data further, according to the need for each call.
       * **app.js** file - All the code is tied up in _app.js_ which starts/stops the application. When starting the application, the first step is to open the connection to the database by calling the _database.initialize()_ function, then runs the web server by calling _webserver.initialize()_ function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
       * **.env** file - Contains the details for connecting to the database: database user, password and connection string.
 4. Open the _API_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _DB\_USER_, _DB\_PASSWORD_, and _DB\_CONNECTION\_STRING_ with your own connection details.
@@ -64,7 +66,7 @@ NODE_ORACLEDB_PASSWORD=DB_PASSWORD
 NODE_ORACLEDB_CONNECTIONSTRING=DB_CONNECTION_STRING
 ```
 
-5. In order to run the code, you need to upload it to the instance. You can use the following commands (run in from you laptop, not on the instance).
+5. In order to run the code, you need to upload it to the instance. You can use the following commands.
 
   **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
@@ -122,11 +124,11 @@ You should now be able to see the application running in browser at **http://you
 3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained earlier.
     * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
     * **config** folder - The two files in the config folder are meant to set up the default configuration for the entire application.
-        * **authentication.js** - The authentication.js contains all the IDCS configuration using data stored in *.env* file, so that the user of the application can be successfully authenticated
-        * **web-server.js** - The web-server.js sets up the port on which the web server would run on. In this case, 8000, but any other port can be used.
+        * **authentication.js** - Contains all the IDCS configuration using data stored in *.env* file, so that the user of the application can be successfully authenticated
+        * **web-server.js** - Sets up the port on which the web server would run on. In this case, 8000, but any other port can be used.
     * **scripts** folder appears automatically when you create a new OracleJET project.
     * **services** folder contains all the necessary authentication functions and also the initialization of the server, so that the application can run properly.
-        * **authentication.js** - This file contains the user, login and logout routes and several functions that make possible the authentication part:
+        * **authentication.js** - This file contains the _/user_, _/login_ and _/logout_ routes and several functions that make possible the authentication part:
             - *user()* - function to check if the user is authenticated.
             - *login()* - function that makes the login action.
             - *callback()* - function for storing *id_token* in the session (server side) for logout purposes and adding a request header that is required by the IDCS strategy.
@@ -135,18 +137,28 @@ You should now be able to see the application running in browser at **http://you
         * **web-server.js** - The web-server.js file has two main functions defined in it:
             - *initialize()* – used to run the web server on the port that was set in the config/web-server.js file. Here it’s also set up the path for the API calls to the database, so that all the paths will look similar.
             - *close()* – used to close the web server.
-    * **staged-themes** and **web** folders appear automatically when you run ``ojet build`` command.
+    * **staged-themes** and **web** folders are created automatically when you run ``ojet build`` command.
     * **src** - because Oracle JET applications are modular, it needs to be mentioned that a module consists of business logic defined in a JavaScript file and a view defined in an HTML file. By convention, the name of the JavaScript file is the same as the name of the HTML file. By default, the JavaScript side of a module is located in the *src/js/viewModels* folder, while its matching view is located in the *src/js/views* folder.
-    Whenever you run ``ojet build`` or ``ojet serve``, the *src* folder is copied to the *web* folder mentioned earlier.
-    If one developer wants to change something in the application, he should never change the files in the web folder, because they will automatically be overwritten whenever ojet build or ojet serve is run. Only change the files in the src folder.
-    As mentioned before, all JavaScript files have the same name as their associated HTML files.
-    * **src/js/viewModels** contains the JavaScript files (**about.js**, **skills.js**, **treemap.js**).
-    * **src/js/views** contains the HTML files (**about.html**, **skills.html**, **treemap.html**).
-    * **src/js/main.js** is the main entry point into the file, hooked into the index.html file via a script element.
-    * **src/js/appController.js** represents the location for global variables, which is loaded into the application in the require block in the main.js file.
-    * **src/index.html** is the main index file of the application, though note that ``ojet serve`` will load it from **web** folder, not the **src** folder.
-    **src/data** contains two JSON files, one for storing multiple databases with different parameters (**db.json**) and one with navigation information (**nav.json**).
-    * **app.js** file - All the code is tied up in app.js which starts / stops the application. When starting the application, the first step is to open the connection to the database by calling the database.initialize() function, then runs the web server by calling webserver.initialize() function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
+
+        Whenever you run ``ojet build`` or ``ojet serve``, the *src* folder is copied to the *web* folder mentioned earlier.
+
+        If one developer wants to change something in the application, he should never change the files in the _web_ folder, because they will automatically be overwritten whenever ``ojet build`` or ``ojet serve`` is run. Only change the files in the _src_ folder.
+
+        As mentioned before, all JavaScript files have the same name as their associated HTML files.
+
+        * **js/viewModels** contains the JavaScript files (**about.js**, **skills.js**, **treemap.js**).
+
+        * **js/views** contains the HTML files (**about.html**, **skills.html**, **treemap.html**).
+
+        * **js/main.js** is the main entry point into the file, hooked into the index.html file via a script element.
+
+        * **js/appController.js** represents the location for global variables, which is loaded into the application in the require block in the main.js file.
+
+        * **index.html** is the main index file of the application, though note that ``ojet serve`` will load it from **web** folder, not the **src** folder.
+
+        * **data** contains two JSON files, one for storing multiple databases with different parameters (**db.json**) and one with navigation information (**nav.json**).
+
+    * **app.js** file - All the code is tied up in app.js which starts/stops the application. When starting the application, the first step is to open the connection to the database by calling the _database.initialize()_ function, then runs the web server by calling _webserver.initialize()_ function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
     * **.env** file - Contains the details regarding IDCS tenant, id and secret.
 
   ***Treemap Section***
@@ -211,25 +223,12 @@ You should now be able to see the application running in browser at **http://you
 
   If the role was mentioned, a user can have three different roles:
 
-  **ADMIN**
-    - VIEW Cloud Native Skills Treemap;
-    -	VIEW Details Table from Treemap;
-    -	VIEW, EDIT, DETELE Management Treemap + Edit Form;
-    -	VIEW, INSERT, EDIT, DELETE Skills Entry;
-    -	VIEW About Entry.
+  | User Role | Skills Treemap + Details Table from Treemap | Management Treemap + Edit Form     | Skills Entry                               | About Entry |
+  |-----------|---------------------------------------------|------------------------------------|--------------------------------------------|-------------|
+  | ADMIN     | View all                                    | View, Edit, Delete all             | View, Insert, Edit, Delete all             | View all    |
+  | MANAGER   | View all                                    | View, Edit, Delete only his people | View, Insert, Edit, Delete only his people | View all    |
+  | USER      | View all                                    | X                                  | View, Insert, Edit only its own skills     | View all    |
 
-  **MANAGER**
-    -	VIEW Cloud Native Skills Treemap;
-    -	VIEW Details Table from Treemap;
-    -	VIEW, EDIT, DETELE ONLY HIS PEOPLE - Management Treemap + Edit Form;
-    -	VIEW, INSERT, EDIT, DELETE ONLY HIS PEOPLE - Skills Entry;
-    -	VIEW About Entry.
-
-  **USER**
-    -	VIEW Cloud Native Skills Treemap;
-    -	VIEW Details Table from Treemap;
-    -	VIEW, INSERT, EDIT ONLY ITS OWN SKILLS - Skills Entry;
-    -	VIEW About Entry.
 
   In order to explain the code part for this entry, the ADMIN role will be taken into consideration.
 
@@ -300,7 +299,7 @@ You should now be able to see the application running in browser at **http://you
 
   ![about entry](./images/about.png)
 
-  4. Open the _OJET_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _IDCS\_CLIENT\_TENANT_, _IDCS\_CLIENT\_ID_, and _IDCS\_CLIENT\_SECRET_ with your own IDCS details.
+4. Open the _OJET_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _IDCS\_CLIENT\_TENANT_, _IDCS\_CLIENT\_ID_, and _IDCS\_CLIENT\_SECRET_ with your own IDCS details.
 
   ```
   IDCS_CLIENT_TENANT=IDCS_CLIENT_TENANT
@@ -308,7 +307,7 @@ You should now be able to see the application running in browser at **http://you
   IDCS_CLIENT_SECRET=IDCS_CLIENT_SECRET
   ```
 
-  In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* according to your database type (OracleDB, NoSQL, MySQL and others).
+5. In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* for the database you previously created. This can be updated to use more different databases (OracleDB, NoSQL, MySQL and others) according to your needs, but keep in mind that the code for the APIs might need to be updated as well.
 
   ```
   [   {
@@ -325,7 +324,17 @@ You should now be able to see the application running in browser at **http://you
       }
 ]
   ```
-  5. In order to run the code, you need to upload it to the instance. You can use the following commands (run in from you laptop, not on the instance).
+
+In _appController.js_ the default value for the database to be chosen is **adb**. If you want to change this, you should update the following code in _appController.js_ and set the default value of _dbNameParam_ to your own database name (the same as in the _db.json_ file).
+```
+...
+self.dbIP = ko.observable();
+self.dbPort = ko.observable();
+let dbNameParam = 'adb';
+...        
+```
+
+6. In order to run the code, you need to upload it to the instance. You can use the following commands (run in from you laptop, not on the instance).
 
     **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
@@ -375,16 +384,70 @@ You should now be able to see the application running in browser at **http://you
   You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
 
 ## **Step 4:** Deploy the NodeJS API code in OKE
-- prepare code as in lab 8
-- how to replace API ip in OJET with cluster ip
-- replace IP in ODA
+
+1. In order to deploy your API code in Kubernetes, you should follow all the steps described in **Lab 8: Deploy the application on OKE**, but instead of using the code you developed in **Lab 6**, you would use the code downloaded at the beginning of this Lab.
+
+2. After going through all these steps, you can go to your OracleJET project and update the IP in the _src/js/data/db.json_ file.
+
+```
+[   {
+    "name": "adb",
+    "description": "Autonomous JSON Database",
+    "ip": "<kubernetes_cluster_external_ip>",
+    "port": "<your_port>"
+    },
+    ...
+]
+```
 
 ## **Step 5:** Integrate your application with ODA
-In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Build NodeJS APIs to make calls to the database**, considering the fact that at **Step 4** -> **point 6** you would need to either use the Public IP of the NodeJS Instance from **Step 2** of this Lab, or the External IP from **Step 4** in this Lab.
+
+In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Build NodeJS APIs to make calls to the database**, considering the fact that at **Step 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **Step 2** of this Lab, or the _External IP_ from **Step 4** in this Lab.
 
 ## Annexes
 
-TBD - API list table here?
+***API route list***
+
+| NO | TYPE   | PATH                                                                                                                      | PARAMETERS                                                                                                                                                                                                                                                                                                                                | DESCRIPTION                                                                                                                                                                                                                                |
+| -- | ------ | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1  | GET    | /                                                                                                                         | \-                                                                                                                                                                                                                                                                                                                                        | home page                                                                                                                                                                                                                                  |
+| 2  | GET    | /skillset/                                                                                                                | \-                                                                                                                                                                                                                                                                                                                                        | retrieves all the data in skillscollection                                                                                                                                                                                                 |
+| 3  | GET    | /skillsetarch/email/:email                                                                                                | email - the email address of the employee in skillscollection                                                                                                                                                                                                                                                                             | retrieves data in history collection skillsarch\_collection for a certain employee based on the email address                                                                                                                              |
+| 4  | POST   | /skillset/:login                                                                                                          | login - the email address from the SSO login, used for authorization on the API side                                                                                                                                                                                                                                                      | inserts or updates the documents in skillscollection and skillsarch\_collection; If the JSON sent has an id key it updates, if not it inserts                                                                                              |
+| 5  | DELETE | /skillset/:login/:id                                                                                                      | login - the email address from the SSO login, used for authorization on the API side<br>id - the unique id from skillscollection                                                                                                                                                                                                          |                                                                                                                                                                                                                                            |
+| 6  | GET    | /managers                                                                                                                 | \-                                                                                                                                                                                                                                                                                                                                        | retrieves the list of all the managers in userscollection; used for forms                                                                                                                                                                  |
+| 7  | GET    | /managersfilter                                                                                                           | \-                                                                                                                                                                                                                                                                                                                                        | retrieves the list of all the managers that have employees added in the skillscollection; used for filters                                                                                                                                 |
+| 8  | GET    | /skills                                                                                                                   | \-                                                                                                                                                                                                                                                                                                                                        | retrieves the list of all skills in skillscollection                                                                                                                                                                                       |
+| 9  | GET    | /areas                                                                                                                    | \-                                                                                                                                                                                                                                                                                                                                        | retrieves the list of all skill areas in skillscollection                                                                                                                                                                                  |
+| 10 | GET    | /skillsview/:login                                                                                                        | login - the email address from the SSO login, used for authorization on the API side                                                                                                                                                                                                                                                      | retrieves data from skillsview for the table in Skills page                                                                                                                                                                                |
+| 11 | GET    | /skillsview/:login/mgr/:manager                                                                                           | login - the email address from the SSO login, used for authorization on the API side<br>manager - manager name                                                                                                                                                                                                                            | retrieves data from skillsview for the table in Skills page, filtering for a certain manager                                                                                                                                               |
+| 12 | GET    | /skillsview/:login/primary/:primary                                                                                       | login - the email address from the SSO login, used for authorization on the API side<br>primary - primary area of focus for an employee                                                                                                                                                                                                   | retrieves data from skillsview for the table in Skills page, filtering for a certain primary area of focus                                                                                                                                 |
+| 13 | GET    | /skillsview/:login/secondary/:secondary                                                                                   | login - the email address from the SSO login, used for authorization on the API side<br>secondary - secondary area of focus for an employee                                                                                                                                                                                               | retrieves data from skillsview for the table in Skills page, filtering for a certain secondary area of focus                                                                                                                               |
+| 14 | GET    | /skillsview/:login/mgr/:manager/primary/:primary                                                                          | login - the email address from the SSO login, used for authorization on the API side<br>manager - manager name<br>primary - primary area of focus for an employee                                                                                                                                                                         | retrieves data from skillsview for the table in Skills page, filtering for a certain manager and a certain primary area of focus                                                                                                           |
+| 15 | GET    | /skillsview/:login/mgr/:manager/secondary/:secondary                                                                      | login - the email address from the SSO login, used for authorization on the API side<br>manager - manager name<br>secondary - secondary area of focus for an employee                                                                                                                                                                     | retrieves data from skillsview for the table in Skills page, filtering for a certain manager and a certain secondary area of focus                                                                                                         |
+| 16 | GET    | /skillsview/:login/primary/:primary/secondary/:secondary                                                                  | login - the email address from the SSO login, used for authorization on the API side<br>primary \- primary area of focus for an employee<br>secondary - secondary area of focus for an employee                                                                                                                                           | retrieves data from skillsview for the table in Skills page, filtering for a certain primary and secondary area of focus                                                                                                                   |
+| 17 | GET    | /skillsview/:login/mgr/:manager/primary/:primary/secondary/:secondary                                                     | login - the email address from the SSO login, used for authorization on the API side<br>manager \- manager name<br>primary \- primary area of focus for an employee<br>secondary - secondary area of focus for an employee                                                                                                                | retrieves data from skillsview for the table in Skills page, filtering for a certain manager, primary and secondary area of focus                                                                                                          |
+| 18 | GET    | /skillsview/key/:key                                                                                                      | key - the unique id from skillscollection                                                                                                                                                                                                                                                                                                 | retrieves data from skillsview for the table in Skills page, filtering for a certain unique id                                                                                                                                             |
+| 19 | GET    | /skillset/skilllevel/:skilllevel                                                                                          | skillLevel - takes values from 0 to 5; the value of a certain skill                                                                                                                                                                                                                                                                       | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param                                                                                                               |
+| 20 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/                                                                    | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon                                                                                                                                                                                                                | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by manager name                                                                                    |
+| 21 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/domainSelect/:domainSelect/areaList/:areaList/skillList/:skillList/ | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>areaList \- filter list for primary/secondary areas of development separated by semicolon<br>skillList \- list of skill names separated by semicolon | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by manager name, skill domain (Oracle / Non-Oracle), primary and secondary area of development      |
+| 22 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/domainSelect/:domainSelect/areaList/:areaList/                      | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>areaList \- filter list for primary/secondary areas of development separated by semicolon                                                            | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by manager name, skill domain (Oracle / Non-Oracle), primary and secondary area of development     |
+| 23 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/domainSelect/:domainSelect/                                         | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>domainSelect \- skill domain (Oracle or Non-Oracle)                                                                                                                                                         | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by manager name, skill domain (Oracle / Non-Oracle)                                                |
+| 24 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/areaList/:areaList/                                                 | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>areaList \- filter list for primary/secondary areas of development separated by semicolon                                                                                                                   | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by manager name, primary and secondary area of development                                         |
+| 25 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/areaList/:areaList/skillList/:skillList/                            | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>areaList \- filter list for primary/secondary areas of development separated by semicolon<br>skillList \- list of skill names separated by semicolon                                                        | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by manager name, primary and secondary area of development                                          |
+| 26 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/skillList/:skillList/                                               | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>skillList \- list of skill names separated by semicolon                                                                                                                                                     | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by manager name                                                                                     |
+| 27 | GET    | /skillset/skilllevel/:skilllevel/domainSelect/:domainSelect/skillList/:skillList/                                         | skillLevel - takes values from 0 to 5; the value of a certain skill<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>skillList - list of skill names separated by semicolon                                                                                                                                                      | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by skill domain (Oracle / Non-Oracle)                                                               |
+| 28 | GET    | /skillset/scopeList/:scopeList/skilllevel/:skilllevel/domainSelect/:domainSelect/skillList/:skillList/                    | skillLevel - takes values from 0 to 5; the value of a certain skill<br>scopeList - list of managers separated by semicolon<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>skillList - list of skill names separated by semicolon                                                                                               | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by manager name, skill domain (Oracle / Non-Oracle)                                                 |
+| 29 | GET    | /skillset/skilllevel/:skilllevel/domainSelect/:domainSelect/areaList/:areaList/skillList/:skillList/                      | skillLevel - takes values from 0 to 5; the value of a certain skill<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>areaList - filter list for primary/secondary areas of development separated by semicolon<br>skillList - list of skill names separated by semicolon                                                          | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by skill domain (Oracle / Non-Oracle), primary and secondary area of development                    |
+| 30 | GET    | /skillset/skilllevel/:skilllevel/domainSelect/:domainSelect/areaList/:areaList/                                           | skillLevel - takes values from 0 to 5; the value of a certain skill<br>domainSelect \- skill domain (Oracle or Non-Oracle)<br>areaList - filter list for primary/secondary areas of development separated by semicolon                                                                                                                    | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by skill domain (Oracle / Non-Oracle), primary and secondary area of development                   |
+| 31 | GET    | /skillset/skilllevel/:skilllevel/domainSelect/:domainSelect/                                                              | skillLevel - takes values from 0 to 5; the value of a certain skill<br>domainSelect \- skill domain (Oracle or Non-Oracle)                                                                                                                                                                                                                | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by skill domain (Oracle / Non-Oracle)                                                              |
+| 32 | GET    | /skillset/skilllevel/:skilllevel/areaList/:areaList/                                                                      | skillLevel - takes values from 0 to 5; the value of a certain skill<br>areaList - filter list for primary/secondary areas of development separated by semicolon                                                                                                                                                                           | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param, filtering by primary and secondary area of development                                                       |
+| 33 | GET    | /skillset/skilllevel/:skilllevel/areaList/:areaList/skillList/:skillList/                                                 | skillLevel - takes values from 0 to 5; the value of a certain skill<br>areaList - filter list for primary/secondary areas of development separated by semicolon<br>skillList - list of skill names separated by semicolon                                                                                                                 | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param, filtering by primary and secondary area of development                                                        |
+| 34 | GET    | /skillset/skilllevel/:skilllevel/skillList/:skillList/                                                                    | skillLevel - takes values from 0 to 5; the value of a certain skill<br>skillList - list of skill names separated by semicolon                                                                                                                                                                                                             | retrieves data from skillscollection filtering for people that have the skills selected with a value above skillLevel param                                                                                                                |
+| 35 | GET    | /skillset/skilllevel/:skilllevel/areas/:areas/skillList/:skillList                                                        | skillLevel - takes values from 0 to 5; the value of a certain skill<br>areas \- list of areas of development separated by semicolon<br>skillList - list of skill names separated by semicolon                                                                                                                                             | retrieves data from skillscollection filtering for people that have at least one skill in the skillList with the value above skillLevel param, and at least one skill with the value above skillLevel for the areas in the areas parameter |
+| 36 | GET    | /skillset/skilllevel/:skilllevel/areas/:areas/                                                                            | skillLevel - takes values from 0 to 5; the value of a certain skill<br>areas \- list of areas of development separated by semicolon                                                                                                                                                                                                       | retrieves data from skillscollection filtering for people that have at least one skill with the value above skillLevel param for the areas in the areas parameter                                                                          |
+| 37 | GET    | /userRole/:login                                                                                                          | login - the email address from the SSO login, used for authorization on the API side                                                                                                                                                                                                                                                      | retrieves the user role                                                                                                                                                                                                                    |
+
 
 ## Acknowledgements
 
