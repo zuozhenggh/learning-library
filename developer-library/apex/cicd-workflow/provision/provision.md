@@ -4,7 +4,7 @@
 
 In this lab we will provision the infrastructure and set up various environments.
 
-We'll use the terraform template from the repository to deploy two Oracle Autonomous Databases, create credential files for four environments (dev, tst, stg and prd) and configure these four environments for APEX development
+We'll use the Terraform template from the repository to deploy two Oracle Autonomous Databases, create credential files for four environments (dev, tst, stg and prd) and configure these four environments for APEX development
 
 Estimated Lab Time: 10 minutes.
 
@@ -17,7 +17,7 @@ In this lab you will:
 
 ## **STEP 1:** Terraform Setup
 
-1. Get in the `terraform` folder:
+1. Navigate to the `terraform` folder:
 
     ```bash
     <copy>
@@ -43,7 +43,7 @@ In this lab you will:
     export TF_VAR_region=us-ashburn-1
     ```
 
-    These values come from your Oracle OCI CLI installation.
+    These values come from your Oracle Cloud Infrastructure (OCI) CLI installation.
 
 4. Create a `terraform.tfvars` file from template:
 
@@ -123,7 +123,7 @@ In this lab you will:
     }
     ```
 
-    This creates 2 databases, and 4 environments: dev, tst, and stg are on the APEX\_DEV database and prd is on the APEX\_PRD database.
+    This creates two databases, and four environments: dev, tst, and stg are on the APEX\_DEV database and prd is on the APEX\_PRD database.
 
     Feel free to configure these as you need for your own environment. In this workshop we will use these defaults.
 
@@ -196,9 +196,9 @@ In this lab you will:
 
 2. With this tool, you can create additional environments, by creating new workspaces and/or schemas.
 
-  *Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one app schema change may cause issues in the other app.*
+  *Remember that DB change tracking is per SCHEMA, and application change tracking is per application, so if you decide to create multiple applications in the same schema, make sure the applications are always deployed together otherwise one application schema change may cause issues in the other application.*
 
-  The preferred way to use multiple applications is to create a schema per application, and then grouping those schemas into a workspace.
+  *The preferred way to use multiple applications is to create a schema per application, and then grouping those schemas into a workspace.*
 
 
 
