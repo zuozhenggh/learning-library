@@ -18,7 +18,7 @@ In this workshop, we have already downloaded the software for you. You need to a
 
 ### Locate 19c software and unzip in correct location ###
 
-The software downloaded from the Oracle network is a zipfile for your operating system/architecture. In 19c, the location where you unzip the software and start the Oracle Universal Installer (OUI) **will be used as your new Oracle Home** so be careful where you unzip the software. The running of the OUI will only register the software with the inventory (or will create an inventory if none exist). 
+The software downloaded from the Oracle network is a zipfile for your operating system/architecture. In 19c, the location where you unzip the software and start the Oracle Universal Installer (OUI) **will be used as your new Oracle Home** so be careful where you unzip the software. The running of the OUI will only register the software with the inventory (or will create an inventory if none exist).
 
 First we need to create a new location for the software. Execute the following command as oracle user after starting a new terminal window in your image:
 
@@ -61,8 +61,8 @@ Marking /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm to be instal
 Resolving Dependencies
 ...
 Running transaction
-  Installing : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1 
-  Verifying  : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1 
+  Installing : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
+  Verifying  : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
 
 Installed:
   oracle-database-preinstall-19c.x86_64 0:1.0-1.el7                                                                    
@@ -88,11 +88,11 @@ $ <copy>./runInstaller</copy>
 The following screen should be visible on your (remote) desktop:
 
 ![](./images/01-OUI-1of9.png)
- 
+
 - Keep the default 'Create and Configure a single instance database' and press `NEXT`
 - Choose 'Desktop class' and press `NEXT`
 
-The desktop class will display 1 screen with all of the information required to create this type of database. If you think you need (for your local environment) other settings than displayed on the Desktop class screen, feel free to use the Server class. If you choose for the Server class, please check the documentation for the values to be used. For the Oracle provided Workshop environment, the Desktop class is enough. 
+The desktop class will display 1 screen with all of the information required to create this type of database. If you think you need (for your local environment) other settings than displayed on the Desktop class screen, feel free to use the Server class. If you choose for the Server class, please check the documentation for the values to be used. For the Oracle provided Workshop environment, the Desktop class is enough.
 
 Make sure to check and change the following values in the various fields:
 
@@ -121,12 +121,17 @@ Make sure to check and change the following values in the various fields:
 
 The following screen should be visible:
 
-![](./images/04-OUI-4of9.png)
+![](./images/03-sudo.png)
 
-Like previous installations, the `root.sh` script needs to be executed after the relinking and registration of the Oracle Home. This screen lets you decide whether or not you want the OUI to do this for you. In this workshop environment, you can use the root password (`OraclePTS#2019`) for automatic execution of the root.sh script(s). For your local environment (at home), do what is applicable for your situation.
+Like previous installations, the `root.sh` script needs to be executed after the relinking and registration of the Oracle Home. This screen lets you decide whether or not you want the OUI to do this for you. In this workshop environment, you can use the sudo option for automatic execution of the root.sh script(s). For your local environment (at home), do what is applicable for your situation.
 
-- Check the option to automatically execute the configuration scripts and enter the root password `OraclePTS#2019`
- 
+- Check the option to automatically execute the configuration scripts
+    - Select the 'Use sudo' radio button
+    - Change the command to execute to `/bin/sudo`
+    - Enter *any* password in the Password field.
+        - Please note the screen will display an error if you do not supply a (random) Password
+- Click the 'Next' button to continue.
+
 The system will now start checking the prerequisites for the 19c installation.
 
 ![](./images/05-OUI-5of9.png)
@@ -145,12 +150,12 @@ After about 5 minutes, provided there are no issues during the install, the root
 
 - Click the `Yes` button to continue
 
-> If you did not provide a root password or sudo information, a different window will be displayed. 
-> 
+> If you did not provide a root password or sudo information, a different window will be displayed.
+>
 > ![](./images/10-OUI-Pop-up-2.png)
 >
 > If you do not get the option to click `Yes`, please execute the script mentioned in the window as root user in a terminal environment.
- 
+
 The installer will now start to create the new CDB database with its PDB. This will take between 20 and 40 minutes.
 
 If this is a instructor-led class (either on-site or through a Live-Virtual-Class system) **Please inform your instructor that you are waiting for the database install to finish** so he/she can keep track of the progress of the installs and perhaps cntinue with presentations if everybody is waiting.
@@ -158,7 +163,7 @@ If this is a instructor-led class (either on-site or through a Live-Virtual-Clas
 After the database creation has finished, the following screen (or similar) will be displayed:
 
 ![](./images/11-OUI-8of8.png)
- 
+
 - Press the `Close` button to end the Universal Installer session.
 
 Your 19c Oracle Home has been created and the initial database (DB19C) has been started.
@@ -237,7 +242,7 @@ $ <copy>cp /source/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdb
 
 ### Make your 19c database startup using dbstart ###
 
-If you shutdown your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the 
+If you shutdown your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the
 
 ````
 $ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
@@ -249,4 +254,5 @@ Your container database and your environment is now ready for the Hands-On labs.
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - initial version March 2019
 - **Migrated to Github** - Robert Pastijn, Database Product Management, PTS EMEA - April 2020
-
+- **Updated for Livelabs** - Robert Pastijn, Database Product Management, PTS EMEA - June 2021
+    - Changed execute of root.sh from password to sudo
