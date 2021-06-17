@@ -191,8 +191,5 @@ Estimated Lab Time - 10 minutes
   
    
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Author** - Paul Parkinson, Developer Evangelist
+* **Last Updated By/Date** - Paul Parkinson, June 2021
