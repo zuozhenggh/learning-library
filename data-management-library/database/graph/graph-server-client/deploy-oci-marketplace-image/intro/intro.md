@@ -22,9 +22,13 @@ In this workshop you will:
 - Create and populate tables in the ADB instance.
 - Query, analyze, and visualize that data as graphs.
 
+This workshop is tested for the Graph Server version **20.4** or **21.1**.
+
 ### Prerequisites
 
-- This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Acknowledgements
 

@@ -29,19 +29,19 @@ In this lab, you will:
 ### Prerequisites  
 
 This lab assumes you have:
-* A Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+- A Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
-* As part of pre-upgrade steps, customers have to delete any 10g agents in oamconsole. If they fail to do this UA readiness check will fail indicating presence of 10g agents. As part of pre-upgrade steps for OAM, delete any 10g agents in oamconsole.  UA readiness check will fail if 10g agents exist
-* UA readiness check with fail at System Components Infrastructure with the error "OHS\_managed\_template.jar" missing. This can be ignored as we are not upgrading OHS
+- As part of pre-upgrade steps, customers have to delete any 10g agents in oamconsole. If they fail to do this UA readiness check will fail indicating presence of 10g agents. As part of pre-upgrade steps for OAM, delete any 10g agents in oamconsole.  UA readiness check will fail if 10g agents exist
+- UA readiness check with fail at System Components Infrastructure with the error "OHS\_managed\_template.jar" missing. This can be ignored as we are not upgrading OHS
 
 ##  **STEP 1**: Upgrade IAM Components from 11.1.2.3 to 12.2.1.3
 
-1. Upgrade OID 11.1.2.3 to OUD 12.2.1.3
+1. Upgrade OUD 11.1.2.3 to OUD 12.2.1.3
 
   * Perform all steps outlined in *section 6.6* of Upgrading Oracle Unified Directory guide - [6.6 Upgrading an Existing Oracle Unified Directory Server Instance](https://docs.oracle.com/en/middleware/idm/unified-directory/12.2.1.3/oudig/updating-oracle-unified-directory-software.html#GUID-506B9DAC-2FDB-47C9-8E00-CC1F99215E81)
 
@@ -51,7 +51,7 @@ This lab assumes you have:
   <copy>keytool -list -v -keystore /u01/app/oracle/config/domains/IAMGovernanceDomain/config/fmwconfig/default-keystore.jks -storepass IAMUpgrade12c##</copy>
   ```  
 
-  * Generate new keys using the keytool command
+  * •	Create a temporary folder called /tmp/keystore and then generate new keys using the keytool command
   ```
   <copy>
   keytool -genkeypair -keystore /tmp/keystore/default-keystore.jks -keyalg RSA -validity 3600 -alias xell -dname "CN=wsidmhost.idm.oracle.com, OU=Identity, O=Oracle, C=US" -keysize 2048 -storepass IAMUpgrade12c## -keypass IAMUpgrade12c##
@@ -89,14 +89,14 @@ This lab assumes you have:
   * Move .cert and .csr
   ```
   <copy>
-  cp x*.* /u01/app/oracle/config/domains/IAMGovernanceDomain/config/fmwconfig/
+  cp /tmp/keystore/x*.* /u01/app/oracle/config/domains/IAMGovernanceDomain/config/fmwconfig/
   </copy>
   ```  
 
   * Confirm keystore
   ```
   <copy>
-  updateskeytool -list -v -keystore /u01/app/oracle/config/domains/IAMGovernanceDomain/config/fmwconfig/default-keystore.jks -storepass IAMUpgrade12c##
+  keytool -list -v -keystore /u01/app/oracle/config/domains/IAMGovernanceDomain/config/fmwconfig/default-keystore.jks -storepass IAMUpgrade12c##
   </copy>
   ```  
 
@@ -105,6 +105,7 @@ This lab assumes you have:
       * Navigate to Weblogic Domain > IAMGovernanceDomain
       * Right click IAMGovernanceDomain
       * Select Security > Credentials
+      * Expand the oim entry
       * Highlight xell row
       * Click Edit
       * Update password
@@ -227,14 +228,13 @@ This lab assumes you have:
     - Verify the SSO logout feature works by logging out Oracle Identity Self Service page where *xelsysadm* is still logged out.
           - Upon logout from the page, you are redirected to the SSO logout page.
 
+**Congratulations! You have completed this workshop!**
+
+## Learn More
+- You can find more information about the latest version of Oracle IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
+- You can find more information about the upgrade strategies [here](https://docs.oracle.com/en/middleware/fusion-middleware/iamus/place-upgrade-strategies.html#GUID-9F906AE2-5BDF-426D-A97C-AC546ABFBD28)
+
 ## Acknowledgements
 * **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
-* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support  
-* **Last Updated By/Date** - Anbu, COE, February 2021
-
-## Need Help?
-For all technical issues related to the IAM upgrade lab, please contact Oracle support through the same Proactive SR that was created to initiate this lab.  
-
-For other issues, please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
