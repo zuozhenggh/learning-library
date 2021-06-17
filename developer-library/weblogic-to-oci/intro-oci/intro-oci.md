@@ -28,7 +28,7 @@ In this lab, you will:
 In order to run this workshop you need:
 
 * A Mac OS X, Windows or Linux machine.
-* A private or public SSH key-pair.
+* A private and public SSH key-pair.
 * Firefox browser.
 * An OCI account with a compartment set up.
 

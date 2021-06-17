@@ -364,7 +364,7 @@ We have downloaded the wallet locally already to migrate the database, and we ca
     </copy>
     ```
 
-    Make sure to specify the proper domain name (here `nonjrf_domain`) if you didn't follow the naming convention of this workshop.
+    *Make sure to specify the proper domain name (here `nonjrf_domain`)* if you didn't follow the naming convention of this workshop.
 
     If you provisioned in a *Private Subnet* set the variables:
     ```bash
