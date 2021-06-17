@@ -15,12 +15,6 @@ Estimates Lab Time - 25 minutes
 * Clone the setup and microservices code
 * Execute setup
 
-### Prerequisites
-
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](#previous).
-
-Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
-
 ## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
@@ -123,11 +117,11 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask for you to enter your User OCID.  
-    
-   Be sure to provide the user OCID and not the user name or tenancy OCID. 
-   
+
+   Be sure to provide the user OCID and not the user name or tenancy OCID.
+
    The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
-   
+
    This can be found in the OCI console.  Note that in some cases the name link may be inactive in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
   ![](images/get-user-ocid.png " ")

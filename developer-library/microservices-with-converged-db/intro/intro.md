@@ -15,9 +15,7 @@ If you need any help please join the databasehome.slack.com (#microservices) cha
 
 ### Let's Get Started!
 
-If you already have an Oracle Free Trial or Paid account, you can proceed to **Lab 1: Setup**.
-
-Otherwise, [proceed to the next lab](#next) to get your Oracle Free Trial Account.
+Proceed to the next lab.
 
 ## Want to Learn More?
 
