@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Autonomous Graph Database: Load CSV files, create a graph, and query and visualize it",
+  "workshoptitle": "Graph Studio: Finding Circular Payment Chains using Graph Queries",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -9,19 +9,14 @@
         {
             "title": "Introduction",
             "description": "Loading data from CSV files and creating a graph.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../../introduction/introduction-ll.md"
         },
         {
-            "title": "Lab 1: Load CSV files into the Autonomous Database",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../load-csv-files/load-csv-files.md"
+            "title": "Lab 1: Create a graph",
+            "filename": "../../create-graph/create-graph-ll.md"
         },
         {
-            "title": "Lab 2: Create a graph",
-            "filename": "../../create-graph/create-graph.md"
-        },
-        {
-            "title": "Lab 3: Query and visualize the graph",
+            "title": "Lab 2: Query and visualize the graph",
             "filename": "../../query-graph/query-graph.md"
         },
         {

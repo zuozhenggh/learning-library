@@ -32,16 +32,20 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
     ![Oracle home page.](./images/Picture100-36.png " ")
 
 3. The following steps apply similarly to either <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>  . This lab shows provisioning of an <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if>   database, so click <if type="atp">**Autonomous Transaction Processing**</if><if type="adw">**Autonomous Data Warehouse**</if>.
+    <if type="adw">
+    ![Click ADB.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    </if>
+    <if type="atp">
+    ![Click ADB.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+    </if>
 
-    ![Click ADB.](images/LabGuide1-39fb4a5b.png " ")
-
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
+4. Make sure your workload type is __All__ to see your <if type="atp">Autonomous Transaction Processing</if> <if type="adw">Autonomous Data Warehouse</if> instances. Use the __List Scope__ drop-down menu to select a compartment. If you are using a LiveLabs environment, be sure to select the compartment provided by the environment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
-
+  
    *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
 
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __<if type="atp">Transaction</if> <if type="adw">Data Warehouse</if>__ workload type is selected.
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. 
 
     ![Autonomous Databases console.](./images/Compartment.png " ")
 
@@ -78,7 +82,7 @@ Watch a video demonstration of provisioning a new <if type="atp">Autonomous Tran
 
 6. Configure the database:
 
-    - __Always Free__ - An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+    - __Always Free__ - An always free database comes with 1 CPU and 20 GB of storage. <if type="adw">For this lab, we recommend you leave Always Free unchecked.</if>
     - __Choose database version__ - <if type="atp">21c</if><if type="adw">19c</if>
 
     *Note: You cannot scale up/down an Always Free autonomous database.*

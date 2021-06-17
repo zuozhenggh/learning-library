@@ -1,4 +1,4 @@
-# OPTIONAL - Create Custom OCI Compute Image for Marketplace Publishing
+# Create Custom OCI Compute Image for Marketplace Publishing
 
 ## Introduction
 This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.
@@ -12,7 +12,7 @@ This lab will show you how to prepare a host for custom image capture and create
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **Step 1**: Configure Preserved Static hostname
+## **STEP 1**: Configure Preserved Static hostname
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -53,13 +53,15 @@ This lab assumes you have:
     ###############################################################################
 
     # Preserve user configured hostname across instance reboots
-    sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
+    sed -i -r 's/^PRESERVE_HOSTINFO.*\$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
 
     # Preserve hostname info and set it for current boot
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
 
     # Add static name to /etc/hosts
-    echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+
     EOF
     </copy>
     ```
@@ -98,7 +100,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **Step 2**: Cleanup Instance for Image Capture   
+## **STEP 2**: Cleanup Instance for Image Capture   
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -136,7 +138,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **Step 3**: Create Custom Image   
+## **STEP 3**: Create Custom Image   
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*

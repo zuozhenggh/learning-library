@@ -64,9 +64,9 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/0.Prep_3.PNG)
 
-## **Step 4**: Modify Bash Profile
+## **Step 4**: Modify Bash Profile (Optional)
 
-1. In your notepad, copy the below lines and add related values from previous step. For example: `export TF_VAR_user_ocid="ocid1.user.oc1..."`
+1. This step is **not needed** if you are running this lab from OCI **cloud-shell**. But will require this when you run from your local machine. In your notepad, copy the below lines and add related values from previous step. For example: `export TF_VAR_user_ocid="ocid1.user.oc1..."`
 
 	```
 	<copy>
@@ -103,6 +103,6 @@ You've now completed the prerequisites.
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir " Senior Solution Engineer"
-* **Contributors** - John Craig "Technology Strategy Program Manager", Patrick Agreiter "Senior Solution Engineer"
-* **Last Updated By/Date** - Bilegt Bat-Ochir 3/24/2021
+* **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
+* **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
+* **Last Updated By/Date** - Bilegt Bat-Ochir 4/15/2021

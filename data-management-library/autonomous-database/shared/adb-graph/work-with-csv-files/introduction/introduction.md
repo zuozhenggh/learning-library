@@ -4,7 +4,7 @@
 
 This workshop covers how to load data in CSV files into the database and introduces key graph data modeling and analysis concepts and the interactive Graph Studio for working with graphs in an Autonomous Database. It shows you how to use graph queries to find circular payments, i.e. potentially fraudulent transactions. You will load data from CSV files containing (artificial) Account and Transaction information. Then create a graph and finally query it and visualize the results.
 
-Estimated Workshop Time: 45 minutes
+Estimated Workshop Time: 60 minutes
 
 ### About Graph Studio
 Oracle Autonomous Database contains features that enable it to function as a scalable property graph database. They automate the creation of graph models and in-memory graphs from database tables. They include notebooks and developer APIs for executing graph queries using PGQL, a SQL-like graph query language, and nearly 60 built-in graph algorithms, and offer dozens of visualizations including native graph visualization.
@@ -26,14 +26,16 @@ In this workshop you will:
 * Query and visualize the graph using PGQL notebook paragraphs
  
 ### Prerequisites
+
 * Oracle Cloud Account
-* Provisioned ADB-Shared instance
-* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)
+* Provisioned Autonomous Database-Shared instance
+* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)  
+  
   
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, January 2021
+* **Last Updated By/Date** - Jayant Sharma, April 2021
 
 
