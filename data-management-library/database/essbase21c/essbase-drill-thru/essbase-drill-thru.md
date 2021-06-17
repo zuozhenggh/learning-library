@@ -108,6 +108,8 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 5. Provide the connection details under Create Connection:   
    Name, Host, User, Password, Port, Service Name. 
 
+   **Note**: For Host, please mention your instance's IP address.
+
    Password for the schema: **Admin123**.
 
 6. Click **Test** to check that the connection to the database is successful. Click **Create**. 
