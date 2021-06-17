@@ -59,7 +59,7 @@ For this lab you will need an OCI account with a compartment created.
 
   ![](./images/prereq-secret2.png)
 
-3. Name the **Secret** `WebLogicAdminPassword`, select the `WebLogicKey` that you created in **Create a key in the vault** as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 characters and 1 uppercase letter or number) in the **Secret Content** text field, and click **Create Secret**.
+3. Name the **Secret** `WebLogicAdminPassword`, select the `WebLogicKey` as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 characters and 1 uppercase letter or number) in the **Secret Content** text field, and click **Create Secret**.
 
   ![](./images/prereq-secret3.png)
 

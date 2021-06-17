@@ -75,7 +75,7 @@ To run this lab you need:
 
       The script itself is commented to explain what it does.
 
-      It sets up the directory to backup to, and uses DataPump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
+      The script sets up the directory to backup to, and uses DataPump `expdp` export command to dump the `RIDERS` schema, which is the schema the application depends on.
 
       The `datapump_export.sh` script should appears as follows.
 
@@ -99,17 +99,17 @@ To run this lab you need:
 
 ## **STEP 2:** Export the Source Database
 
-1. Run the `datapump_export.sh` script:
+Run the `datapump_export.sh` script:
 
-      ```
-      <copy>
-      ./datapump_export.sh
-      </copy>
-      ```
+```
+<copy>
+./datapump_export.sh
+</copy>
+```
 
-      The output will look like:
+The output will look like:
 
-      ![](./images/migrate-db-1.png)
+![](./images/migrate-db-1.png)
 
 ## **STEP 3:** Edit the `datapump_import.sh` Script
 

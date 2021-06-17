@@ -16,7 +16,7 @@ Migration with (WDT) consists of three steps:
 
 - Discover the source domain, and generate a _model_ file of the topology, resources and applications, a _variable_ file with required credentials, and an _archive_ file with the application binaries.
 - Edit the _model_ file and _variable_ file to target the new infrastructure on OCI.
-- Copy the files to the target Admin Server, and update the clean domain on OCI with the applications and resources discovered on-premises.
+- Copy the files to the target admin server, and update the clean domain on OCI with the applications and resources discovered on-premises.
 
 ### Objectives
 
@@ -51,7 +51,7 @@ To run this lab, you need to:
 
     You should be back on your local computer shell prompt.
 
-2. Get into the **WebLogic** docker container with the following command:
+2. Get into the **WebLogic** Docker container with the following command:
 
     ```bash
     <copy>
@@ -99,14 +99,14 @@ It also takes care of the manual extraction of applications that may be present 
 
 Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_HOME@@` and will not be included in the archive file. They need to be extracted manually. The script takes care of this and injects those applications in the `source.zip` file while replacing the path in the `source.yaml` file.
 
-1. Run the `discover_domain.sh` script:
+Run the `discover_domain.sh` script:
 
-    ```bash
-    <copy>
-    ./discover_domain.sh
-    </copy>
-    ```
-    [output of the discover_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/discover_domain.output.txt)
+```bash
+<copy>
+./discover_domain.sh
+</copy>
+```
+[output of the discover_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/discover_domain.output.txt)
 
 ## **STEP 3:** Edit the `source.yaml` File
 
@@ -373,11 +373,13 @@ appDeployments:
     </copy>
     ```
 
-  >**Note**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
+  > **Note**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
 ## **STEP 4:** Edit the `source.properties` File
+
+1. Open the `source.properties` file.
 
   ```bash
   <copy>
@@ -395,9 +397,9 @@ appDeployments:
   SecurityConfig.NodeManagerPasswordEncrypted=
   ```
 
-1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`.
+2. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`.
 
-2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`.
+3. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`.
 
   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
 
@@ -407,7 +409,7 @@ appDeployments:
     JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
     ```
 
-3. Save the file with `CTRL+x` and `y`.
+4. Save the file with `CTRL+x` and `y`.
 
 ## **STEP 5:** Update the WebLogic Domain on OCI
 
@@ -423,7 +425,7 @@ The `update_domain.sh` script updates the target domain.
 
 The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling** script `updateDomain.sh` online, by providing the `-admin_url` flag.
 
-**Note:** The url uses the `t3` protocol, which is only accessible through the internal admin server port, which is `9071` on the latest WebLogic marketplace stack. For older provisioning of the stack, the port may be `7001`.
+> **Note:** The URL uses the `t3` protocol, which is only accessible through the internal admin server port (`9071` on the latest WebLogic marketplace stack). For older provisioning of the stack, the port may be `7001`.
 
 1. Edit the `update_domain.sh` script:
 
@@ -469,255 +471,13 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
   You will be prompted to provide the `weblogic admin password` which is `welcome1`.
 
-<<<<<<< Updated upstream
   [View the output of the update_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/update_domain.output.txt)
-=======
-<details><summary>View the output of the <code>update_domain.sh</code> script</summary>
-
-```bash
-Copying files over to the WLS admin server...
-source.properties                                                           100%   56     0.7KB/s   00:00    
-source.yaml                                                                 100% 1233    14.4KB/s   00:00    
-source.zip                                                                  100% 8066    83.5KB/s   00:00    
-install_wdt.sh                                                              100%  273     3.2KB/s   00:00    
-update_domain_as_oracle_user.sh                                             100%  238     2.9KB/s   00:00    
-Changing ownership of files to oracle user...
-Installing WebLogic Deploy Tooling...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   632  100   632    0     0   2283      0 --:--:-- --:--:-- --:--:--  2289
-100 1034k  100 1034k    0     0  2547k      0 --:--:-- --:--:-- --:--:-- 2547k
-Archive:  weblogic-deploy.zip
-   creating: weblogic-deploy/
-   creating: weblogic-deploy/etc/
-   creating: weblogic-deploy/lib/
-   creating: weblogic-deploy/lib/python/
-   creating: weblogic-deploy/lib/python/wlsdeploy/
-   creating: weblogic-deploy/lib/python/wlsdeploy/util/
-   creating: weblogic-deploy/lib/python/wlsdeploy/json/
-   creating: weblogic-deploy/lib/python/wlsdeploy/yaml/
-   creating: weblogic-deploy/lib/python/wlsdeploy/aliases/
-   creating: weblogic-deploy/lib/python/wlsdeploy/exception/
-   creating: weblogic-deploy/lib/python/wlsdeploy/logging/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/validate/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/util/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/extract/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/encrypt/
-   creating: weblogic-deploy/lib/python/wlsdeploy/tool/create/
-   creating: weblogic-deploy/lib/typedefs/
-   creating: weblogic-deploy/bin/
-   creating: weblogic-deploy/lib/injectors/
-   creating: weblogic-deploy/samples/
-  inflating: weblogic-deploy/etc/logging.properties  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/model_context.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/cla_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/alias_entries.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/multi_tenant_resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/custom_folder_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/topology_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/alias_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/wldf_resources_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/wlsroles_helper.py  
-  inflating: weblogic-deploy/lib/python/validate.py  
-  inflating: weblogic-deploy/bin/injectVariables.cmd  
-  inflating: weblogic-deploy/bin/deployApps.sh  
-  inflating: weblogic-deploy/lib/injectors/target.json  
-  inflating: weblogic-deploy/lib/weblogic-deploy-core.jar  
-  inflating: weblogic-deploy/lib/python/encrypt.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/weblogic_roles_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/yaml/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/alias_constants.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/custom_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/deployments_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/attribute_setter.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/rcu_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/library_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/resources_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/model_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/encrypt/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/security_provider_creator.py  
-  inflating: weblogic-deploy/lib/typedefs/RestrictedJRF.json  
-  inflating: weblogic-deploy/bin/createDomain.cmd  
-  inflating: weblogic-deploy/bin/encryptModel.cmd  
-  inflating: weblogic-deploy/lib/injectors/port.json  
-  inflating: weblogic-deploy/lib/injectors/credentials.json  
-  inflating: weblogic-deploy/lib/python/update.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/getcreds.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/cla_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/enum.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/path_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/yaml/yaml_translator.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/alias_jvmargs.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/exception/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/logging/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/logging/log_collector.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/validate/validator.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/topology_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/archive_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/jms_resources_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/log_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/topology_updater.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/atp_helper.py  
-  inflating: weblogic-deploy/bin/extractDomainResource.cmd  
-  inflating: weblogic-deploy/bin/discoverDomain.sh  
-  inflating: weblogic-deploy/lib/python/deploy.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/string_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/model_translator.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/json/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/validation_codes.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/model_constants.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/exception/exception_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/coherence_resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/multi_tenant_topology_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/common_resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/mbean_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/variable_injector.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/applications_deployer.py  
-  inflating: weblogic-deploy/lib/typedefs/JRF.json  
-  inflating: weblogic-deploy/bin/shared.cmd  
-  inflating: weblogic-deploy/bin/injectVariables.sh  
-  inflating: weblogic-deploy/bin/updateDomain.sh  
-  inflating: weblogic-deploy/lib/injectors/topology.json  
-  inflating: weblogic-deploy/lib/python/create.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/model.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/weblogic_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/location_context.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/exception/expection_types.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/validate/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/validate/validation_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/global_resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/beaninfo_constants.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/model_context_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/datasource_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/common_resources_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/encrypt/encryption_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/custom_folder_helper.py  
-  inflating: weblogic-deploy/lib/typedefs/WLS.json  
-  inflating: weblogic-deploy/bin/validateModel.cmd  
-  inflating: weblogic-deploy/bin/createDomain.sh  
-  inflating: weblogic-deploy/lib/injectors/url.json  
-  inflating: weblogic-deploy/lib/antlr4-runtime-4.7.1.jar  
-  inflating: weblogic-deploy/lib/python/extract_resource.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/variables.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/tool_exit.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/yaml/dictionary_list.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/aliases.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/validate/usage_printer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/jms_resources_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/targeting_types.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/filter_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/deployer_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/odl_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/extract/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/extract/domain_resource_extractor.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/domain_creator.py  
-  inflating: weblogic-deploy/bin/extractDomainResource.sh  
-  inflating: weblogic-deploy/bin/validateModel.sh  
-  inflating: weblogic-deploy/samples/model_variable_injector.json  
-  inflating: weblogic-deploy/lib/python/discover.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/dictionary_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/wlst_modes.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/password_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/logging/platform_logger.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/domain_info_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/string_output_stream.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/wlst_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/rcudbinfo_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/creator.py  
-  inflating: weblogic-deploy/bin/deployApps.cmd  
-  inflating: weblogic-deploy/bin/updateDomain.cmd  
-  inflating: weblogic-deploy/bin/encryptModel.sh  
-  inflating: weblogic-deploy/samples/custom_injector.json  
-  inflating: weblogic-deploy/lib/python/__init__.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/util/model_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/json/json_translator.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/aliases/alias_utils.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/multi_tenant_discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/discover/discoverer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/target_helper.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/util/variable_injector_functions.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/deploy/multi_tenant_resources_deployer.py  
-  inflating: weblogic-deploy/lib/python/wlsdeploy/tool/create/domain_typedef.py  
-  inflating: weblogic-deploy/lib/python/variable_inject.py  
-  inflating: weblogic-deploy/bin/discoverDomain.cmd  
-  inflating: weblogic-deploy/bin/shared.sh  
-  inflating: weblogic-deploy/lib/variable_keywords.json  
-  inflating: weblogic-deploy/lib/injectors/host.json  
-  inflating: weblogic-deploy/LICENSE.txt  
-Updating the domain...
-JDK version is 1.8.0_251-b08
-JAVA_HOME = /u01/jdk
-WLST_EXT_CLASSPATH = /home/oracle/weblogic-deploy/lib/weblogic-deploy-core.jar
-CLASSPATH = /home/oracle/weblogic-deploy/lib/weblogic-deploy-core.jar
-WLST_PROPERTIES = -Djava.util.logging.config.class=oracle.weblogic.deploy.logging.WLSDeployCustomizeLoggingConfig -Dcom.oracle.cie.script.throwException=true
-/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh /home/oracle/weblogic-deploy/lib/python/update.py -oracle_home /u01/app/oracle/middleware -domain_home /u01/data/domains/nonjrf_domain -model_file source.yaml -variable_file source.properties -archive_file source.zip -admin_user weblogic -admin_url t3://10.0.3.3:9071 -domain_type WLS
-
-Initializing WebLogic Scripting Tool (WLST) ...
-
-Welcome to WebLogic Server Administration Scripting Shell
-
-Type help() for help on available commands
-
-####<May 25, 2020 1:55:47 AM> <INFO> <WebLogicDeployToolingVersion> <logVersionInfo> <WLSDPLY-01750> <The WebLogic Deploy Tooling updateDomain version is 1.7.3:master.4f1ebfc:Apr 03, 2020 18:05 UTC>
-Please enter the WebLogic administrator password: welcome1
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05002> <Performing validation in TOOL mode for WebLogic Server version 12.2.1.4.0 and WLST ONLINE mode>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05003> <Performing model validation on the /home/oracle/source.yaml model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_file> <WLSDPLY-05005> <Performing archive validation on the /home/oracle/source.zip archive file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the domainInfo section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a domainInfo section, validation of domainInfo was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the topology section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a topology section, validation of topology was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the resources section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the appDeployments section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05008> <Validating the kubernetes section of the model file>
-####<May 25, 2020 1:56:04 AM> <INFO> <Validator> <__validate_model_section> <WLSDPLY-05009> <Model file /home/oracle/source.yaml does not contain a kubernetes section, validation of kubernetes was skipped.>
-####<May 25, 2020 1:56:04 AM> <INFO> <filter_helper> <apply_filters> <WLSDPLY-20017> <No filter configuration file /home/oracle/weblogic-deploy/lib/model_filters.json>
-####<May 25, 2020 1:56:04 AM> <INFO> <update> <__update_online> <WLSDPLY-09005> <Connecting to domain at t3://10.0.3.3:9071...>
-
-####<May 25, 2020 1:56:06 AM> <INFO> <update> <__update_online> <WLSDPLY-09007> <Connected to domain at t3://10.0.3.3:9071>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <install_domain_libraries> <WLSDPLY-12213> <The model did not specify any domain libraries to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <extract_classpath_libraries> <WLSDPLY-12218> <The archive file /home/oracle/source.zip contains no classpath libraries to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <LibraryHelper> <install_domain_scripts> <WLSDPLY-12241> <The model did not specify any domain scripts to install>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09608> <Updating JDBCSystemResource JDBCConnection>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09604> <Updating JdbcResource for JDBCSystemResource JDBCConnection>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCConnectionPoolParams for JdbcResource>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDataSourceParams for JdbcResource>
-####<May 25, 2020 1:56:07 AM> <INFO> <DatasourceDeployer> <_add_model_elements> <WLSDPLY-09603> <Updating JDBCDriverParams for JdbcResource>
-####<May 25, 2020 1:56:08 AM> <INFO> <DatasourceDeployer> <_add_named_elements> <WLSDPLY-09609> <Updating Properties user in JDBCDriverParams>
-####<May 25, 2020 1:56:10 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleDB>
-####<May 25, 2020 1:56:14 AM> <INFO> <ApplicationDeployer> <__deploy_app_online> <WLSDPLY-09316> <Deploying application SimpleHTML>
-####<May 25, 2020 1:56:17 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleDB>
-####<May 25, 2020 1:56:21 AM> <INFO> <ApplicationDeployer> <__start_app> <WLSDPLY-09313> <Starting application SimpleHTML>
-
-Issue Log for updateDomain version 1.7.3 running WebLogic version 12.2.1.4.0 online mode:
-
-Total:       WARNING :     0    SEVERE :     0
-
-updateDomain.sh completed successfully (exit code = 0)
-```
-</details>
-
-### You're done!
->>>>>>> Stashed changes
 
 ## **STEP 6:** Check that the app deployed properly
 
 1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel (at https://localhost:7002/console) as you did earlier.
 
-    Note: If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
+  >** Note:** If you're using Chrome, you might encounter Self-signed certificate issues. We recommend using Firefox to test.
 
 2. In Firefox you will see the self-certificate warning as below:
 

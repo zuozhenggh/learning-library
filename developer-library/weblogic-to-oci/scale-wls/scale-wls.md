@@ -24,7 +24,7 @@ For this lab you need to have deployed the WebLogic on OCI stack successfully.
 
 ## **STEP 1:** Scale the Number of Nodes
 
->**Note: If you changed a node shape manually, any change using the variables and re-applying to the stack will revert node shapes to their original shape defined at provisioning time.
+> **Note: If you changed a node shape manually, any change using the variables and re-applying to the stack will revert node shapes to their original shape defined at provisioning time.
 
 1. To scale the number of nodes, go to **Resources Manager -> Stacks** and select the stack that was used to provision the WebLogic domain
 
@@ -38,7 +38,7 @@ For this lab you need to have deployed the WebLogic on OCI stack successfully.
 
   ![](./images/scale-10-nodes.png)
 
-4. Make sure the **Do not update domain configuration** is left **unchecked**. This option is to be used if you want to scale the number of nodes without scaling the cluster
+4. Make sure **Do not update domain configuration** is cleared. This option is to be used if you want to scale the number of nodes without scaling the cluster
 
   ![](./images/scale-no-update.png)
 
@@ -56,7 +56,7 @@ For this lab you need to have deployed the WebLogic on OCI stack successfully.
 
 ## **STEP 2:** Scaling a node by changing shape
 
->**Note**: Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
+> **Note**: Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
 
 1. To scale a node by changing its shape, go to **Compute -> Instances**
 

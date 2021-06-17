@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will clean up resources.
+Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
 Estimated Lab Time: 15 minutes
 
@@ -10,7 +10,7 @@ You should not keep the instances deployed on Oracle Cloud Infrastructure (OCI) 
 
 ### Objectives
 
-In this lab you will tear down the infrastructure provisioned.
+You will now tear down the infrastructure provisioned.
 
 ## **STEP 1:** Cleaning up the on-premises environment
 
@@ -25,7 +25,7 @@ In this lab you will tear down the infrastructure provisioned.
     </copy>
     ```
 
->**Note:** The ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
+> **Note:** The ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
 
 ### If you used the workshop image from the Oracle Cloud Marketplace
 

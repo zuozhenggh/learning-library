@@ -65,12 +65,14 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
   ![](./images/provision-8-sshkey.png)
 
    To output the public key information, use the following command from inside the on-premises environment as the `oracle` user.
+
     ```
     <copy>
     cat ~/.ssh/id_rsa.pub
     </copy>
     ```
-    Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the form
+
+    Copy the output of the command (the whole multi-line output) and paste it in the form field for SSH key in the .
 
     The output will look something like this:
 
@@ -78,7 +80,7 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlkF23qLyfimJ9Vp4D9psp7bDOB8JvtY/pfYzFxIA2E4v6or+XhvMW5RDhX9Ba54zQNNDLvwUhStdXKkiMXJtEQJarFn45pGy/lyUQKFJolAdHBrXJsg5XWn4DxCFeQUQe1szVfmwDLAktAS14r5g76h3CcA8Kk/cNVqevxVChyejuuOdtAMoriIC8uKV+535qPs/GMiu0zR9aW4w1VodL5eHnXjqdgp8Fr21dVUVQ6of+s/ws0zlQUwghrNguDUqlggzG2mpLBHExypxCrJYmsb05uYjjqVlC3YCatj4nJTIHKLCFiYVY/b8AFkqwXV9EYlja5bjTmunM847dcR8H oracle@ad753161734c
     ```
 
-    >**Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI).
+    > **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI).
 
 8. Select a **Node count**. In this lab, we'll provision two nodes.
 
@@ -96,7 +98,7 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
 
   ![](./images/provision-13-advanced.png)
 
-12. In this same **Advanced** section, **clear** the check box to **Provision the Sample Application**: since we will migrate our domain, we want a clean domain to start from.
+12. In this same **Advanced** section, clear the check box to **Provision the Sample Application**: since we will migrate our domain, we want a clean domain to start from.
 
   ![](./images/provision-14-no-app.png)
 
@@ -120,9 +122,9 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
 
 17. In this workshop, we are offering two options:
 
-    - Provision Weblogic in a Public Subnet: admin and managed server will be accessible directly from the internet (simpler, recommended if you are on Windows as there is no need for tunneling to the instances).
+    - Provision Weblogic in a Public Subnet: admin and managed server will be accessible directly from the internet (This is simpler and recommended if you are on Windows as there is no need for tunneling to the instances).
 
-    - Provision WebLogic in a Private Subnet: admin and managed servers will not be accessible directly from the internet. The admin server will be accessible through a bastion host, and the managed servers will only be accessible through a Public Load Balancer (this is the most likely production scenario, but involves extra complexity in setting up tunnels and resources. + 15 minutes).
+    - Provision WebLogic in a Private Subnet: admin and managed servers will not be accessible directly from the internet. The admin server will be accessible through a bastion host, and the managed servers will only be accessible through a Public Load Balancer (This is the most likely production scenario, but involves extra complexity in setting up tunnels and resources. This adds 15 minutes).
 
     To provision in a Public subnet, keep the defaults for subnets as-is and the stack will create the subnets for us.
 
@@ -140,7 +142,7 @@ For this lab, you need to have prepared the Oracle Cloud Infrastructure (OCI) te
 
   ![](./images/provision-20-lb2.png)
 
-  >**Note:** If you chose to provision in a **Private Subnet** you will get an option to use a **Private Load Balancer**. Keep it **Unchecked**.
+  > **Note:** If you chose to provision in a **Private Subnet** you will get an option to use a **Private Load Balancer**. Keep it **Unchecked**.
 
 20. Keep IDCS **unchecked**.
 
@@ -176,7 +178,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 
 Go to **Outputs** (or you can find the same information at the bottom of the logs).
 
-- If you provisioned in a **Public Subnet**, you should see something like the following:
+- If you provisioned the stack in a **Public Subnet**, you should see something like the following:
 
   ![](./images/provision-27.png)
 
@@ -186,7 +188,7 @@ Go to **Outputs** (or you can find the same information at the bottom of the log
 
   You can copy/paste the **WebLogic Admin Console URL** in your browser and explore the provisioned WebLogic domain. You should find that there are no applications in **deployments** and no data sources in the **service->datasources** menu.
 
-- If you provisioned in a **Private Subnet**, you should see something like the following:
+- If you provisioned the stack in a **Private Subnet**, you should see something like the following:
 
   ![](./images/provision-28.png)
 
@@ -207,6 +209,7 @@ Go to **Outputs** (or you can find the same information at the bottom of the log
     export PORT=7002
     </copy>
     ```
+
     Then use the following command to create a tunnel from the WLS admin server to your local machine.
 
     ```bash
@@ -214,30 +217,34 @@ Go to **Outputs** (or you can find the same information at the bottom of the log
     ssh -i ./ssh/id_rsa -4 -M -S socket -fnNT -L ${PORT}:${RHOST}:${PORT} opc@${BASTION_IP} cat -
     </copy>
     ```
-  >**Note:** The identity key (`-i`) is the key generated inside the Docker container, which is exported locally in the `ssh` folder.
+
+    > **Note:** The identity key (`-i`) is the key generated inside the Docker container, which is exported locally in the `ssh` folder.
 
     You can then reach the Admin console in your Firefox browser at [https://localhost:7002/console](https://localhost:7002/console). Make sure you use the `https://` scheme to access as the WLS on OCI admin server uses SSL. You'll be prompted with the SSL self-signed certificate warning.
 
     You can explore the provisioned WebLogic domain. You should find that there are no applications in **Deployments** and no data sources in the **Service -> Datasources** menu.
 
-- If you used the marketplace demo image, export the local variables:
+- If you used the Oracle Cloud Marketplace demo image, export the local variables:
 
     ```bash
     <copy>
     export BASTION_IP=<BASTION PUBLIC IP>
     </copy>
     ```
+
     ```bash
     <copy>
     export RHOST=<ADMIN SERVER PRIVATE IP, usually 10.0.3.2>
     </copy>
     ```
+
     ```bash
     <copy>
     export PORT=7002
     </copy>
     ```
-    Then we'll need to open up the firewall port 7002 on our demo enviroment with:
+
+    Then we'll need to open up the firewall port 7002 on our demo environment with:
 
     ```bash
     <copy>
@@ -253,6 +260,7 @@ Go to **Outputs** (or you can find the same information at the bottom of the log
     ssh -4 -M -S socket -fnNT -L 0.0.0.0:${PORT}:${RHOST}:${PORT} opc@${BASTION_IP} cat -
     </copy>
     ```
+
     In this case we use the default ssh key created on that host and we bind the port to 0.0.0.0 so it is accessible outside.
 
     You can then access the Oracle WebLogic Server console provisioned on Oracle Cloud Infrastructure (OCI) on port 7002 on your on-premises public IP address. Make sure you use Firefox and go to `https://IP_OF_DEMO_INSTANCE:7002/console` with `https://` scheme to access as the WLS on OCI admin server uses SSL.
