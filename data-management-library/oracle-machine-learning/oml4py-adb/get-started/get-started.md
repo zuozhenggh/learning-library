@@ -128,14 +128,14 @@ To download the notebook version of this lab (without screenshots), click <if ty
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
 1. <if type="freetier">Click the hamburger menu, search for Notebooks, and click on it. </if>In the Notebooks page, click **Create.** The Create Notebook window appears.
 
-    ![](images/create-notebook-1.png)
+    ![Create option in Notebooks page](images/create-notebook-1.png "Create option")
 
 2. In the **Name** field, provide a name for the notebook.
 3. In the **Comments** field, enter comments, if any.
 4. In the **Connections** field, select a connection in the drop-down list. By default, the `Global` connection group is assigned.
 5. Click **OK.** The notebook is created and it opens in the notebook editor.
 
-    ![](images/create-notebook-2.png)
+    ![Create Notebook dialog](images/create-notebook-2.png "Create Notebook dialog")
 
 > **Note:** For Oracle Autonomous Database, a connection is automatically established provided you have the appropriate interpreter binding specified and import the oml package.    
 
@@ -144,12 +144,12 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 The Oracle Machine Learning notebooks toolbar contains buttons to run code in paragraphs, for configuration settings, and display options.
 
 For example, it displays the current status and the number of users connected to the notebook. It also contains a menu item for keyboard shortcuts and options to show or hide the markdown editor and paragraph output. Additional settings are shown in the illustration here.
-    ![](images/notebook_toolbar.png)
+    ![Notebook toolbar](images/notebook_toolbar.png "Notebook toolbar")
 
 Oracle Machine Learning notebooks contain an internal list of bindings to fetch data from the database or another data source, such as Oracle Cloud Object Storage. For this lab, we set the interpreter binding to connect to the ADW database and run queries.
 
 Click the interpreter bindings icon in the upper right-corner of the Notebook to view the list of available interpreter bindings.
-  ![](images/interpreter_bindings.png)
+  ![Oracle Machine Learning Notebooks Interpreter Bindings](images/interpreter_bindings.png "Oracle Machine Learning Notebooks  Interpreter Bindings")
 
 The default service is low. Click to bind or unbind an interpreter. Drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. The first interpreter on the list becomes the default. Those highlighted in blue are active.
 
@@ -177,7 +177,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
 1. Open the notebook and click the interpreter bindings icon. View the available interpreter bindings.  The "low" priority binding runs operations serially (no parallelism). You can drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. Those highlighted in blue are active. Click to toggle to inactive.
 
-    ![](images/interpreter_bindings.png)
+    ![Oracle Machine Learning Notebooks Interpreter Bindings](images/interpreter_bindings.png "Oracle Machine Learning Notebooks  Interpreter Bindings")
 
     The available interpreter bindings are:
     - `%sql`&mdash;To call the SQL interpreter and run SQL statements
@@ -195,7 +195,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
     <copy>import oml</copy>
     ```
 
-    ![](images/import_oml.png)
+    ![Python command to import oml module](images/import_oml.png "Python command to import oml module")
 
 <if type="livelabs">## **Step 6:** Verify Connection to the Oracle Autonomous Database</if>
 <if type="freetier">## **Step 7:** Verify Connection to the Oracle Autonomous Database</if>
@@ -208,7 +208,7 @@ Using the default interpreter bindings, OML Notebooks automatically establishes 
     %python
     <copy>oml.isconnected()</copy>
     ```
-    ![](images/oml_connected.png)
+    ![Database Connection Verification](images/oml_connected.png "Connection Verification")
 
     Once your notebook is connected, the command returns `True`.         
 
