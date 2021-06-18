@@ -25,21 +25,16 @@ In this lab, you will:
 
 ## **STEP 1:** Login to the instance
 
-Login to the Host using SSH Key based authentication using your preferred SSH client.
-
-1. Open a terminal session and login as "oracle" user
+1. Launch your browser to the following URL to access the instance
 
   ```
-  <copy>sudo su - oracle</copy>
+  http://[your instance public-ip address]:6080/index.html?resize=remote
   ```
 
-2. Start the VNC server and connect to the instance using a preferred VNC client
+2. Login to the instance with the novnc password
 
   ```
-  <copy>vncserver :1</copy>
-  ```
-  ```
-  VNC Password: <copy>Welcom@123</copy>
+  NOVNC Password: <copy>LiveLabs.Rocks_99</copy>
   ```
 
 ## **STEP 2:** Start the Database
@@ -68,7 +63,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
   ```
 2. Access the Weblogic console from your browser and verify the version
 
-    - Click on the bookmark *IAM11g* and Click on *WLS* from the dropdown "OR" paste the following URL in the browser:
+    - Click on the bookmark *WLS11g* "OR" paste the following URL in the browser:
 
     ```
     <copy>http://onehopiam:7001/console</copy>
@@ -90,7 +85,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
 3. Access the Identity Self Service console
 
-    - Click on the bookmark *IAM11g* and Click on *OIM* from the dropdown "OR" paste the following URL in the browser:
+    - Click on the bookmark *OIG11g* "OR" paste the following URL in the browser:
 
     ```
     <copy>http://onehopiam:14000/identity</copy>
@@ -124,7 +119,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
   ```
 2. Access the Weblogic console from your browser and verify the version as 12c
 
-    - Click on the bookmark *IAM12c* and Click on *WLS* from the dropdown "OR" paste the following URL in the browser:
+    - Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
 
     ```
     <copy>http://onehopiam:7005/console</copy>
@@ -144,7 +139,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
 3. Access the Identity Self Service console
 
-    - Click on the bookmark *IAM12c* and Click on *OIM* from the dropdown "OR" paste the following URL in the browser:
+    - Click on the bookmark *OIG12c* "OR" paste the following URL in the browser:
 
     ```
     <copy>http://onehopiam:14005/identity</copy>

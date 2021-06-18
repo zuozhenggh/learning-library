@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. This Workshop provides hands on experience of performing one-hop upgrade of Oracle Identity Manager(OIM) 11g Release 2 (11.1.2.3.0) using the Oracle published "how to upgrade guides". One-hop upgrade enables you to perform the upgrade on the same middle-tier machine or migrate to a new machine as part of the upgrade process. This workshop drives you through step by step upgrade process to be performed on a vanilla image of OIM 11g Release 2 (11.1.2.3.0) single node environment and on completion of step by step upgrade process the environment gets upgraded to OIG 12c (12.2.1.4.0).
+Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. This Workshop provides hands on experience of performing one-hop upgrade of Oracle Identity Manager(OIM) 11g Release 2 (11.1.2.3.0) using the Oracle published "how to upgrade guides". One-hop upgrade enables you to perform the upgrade on the same middle-tier machine or migrate to a new machine as part of the upgrade process. This workshop drives you through step by step process to be performed for upgrading Oracle Identity Manager from 11g Release 2 to Oracle Identity Manager 12c (12.2.1.4.0) directly, using the one-hop upgrade process.
 
 *Estimated Lab Time*: 2 hours
 

@@ -197,7 +197,6 @@ In this lab, you will:
 
   The 12c domain is now wired to the upgraded 11g schema. At this point, all the servers of 12c domain are shut down. Proceed to the next lab to restart all the servers and complete the upgrade process.
 
-
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
