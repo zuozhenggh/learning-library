@@ -66,19 +66,15 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
     h. Specify the Delimiter value as Comma, based on the file format.
 
-    i. Set the preview data count value to 10.
-
-    
-
-    j. Click **Preview Data**.
+    i.Set the preview data count value to 10.
 
     ![](./images/Dim_3.png)
 
-   
+    j. Click **Preview Data**.
+
+    ![](./images/Dim_3_0.png)
 
     k. Click **Proceed**.
-
-     ![](./images/Dim_3_0.png)
 
     You can now preview the dimension structure in the rules editor, with the columns displayed based on the input flat file.
 
