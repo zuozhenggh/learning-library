@@ -25,19 +25,19 @@ An administrator creates a new user account and user credentials for Oracle Mach
 
 1. On the Autonomous Database Details page, click **Service Console.**
 
-    ![](images/service_console.png)
+    ![Service Console on the Autonomous Database Details page](images/service_console.png "Service Console")
 
 2. On the Service Console click **Administration.**
-    ![](images/administration.png)
+    ![Autonomous Data Warehouse Administration page](images/administration.png "Administration")
 
 3. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
-    ![](images/manage_oml_users.png)
+    ![Manage OML Users option in Oracle Machine Learning Administration page](images/manage_oml_users.png "Manage OML Users option")
 4. Click **Create** on the Oracle Machine Learning User Administration page.
-    <if type="freetier">![](images/create_option.png)</if>
-    <if type="livelabs">![](images/create_option_livelabs.png)</if>
+    <if type="freetier">![Users page in Oracle Machine Learning User Administration](images/create_option.png "Create User")</if>
+    <if type="livelabs">![Users page in Oracle Machine Learning User Administration](images/create_option_livelabs.png "Create User")</if>
 
 5. In the Create User page, enter the following details to create the user:
-    ![](images/create_user_page.png)
+    ![Create User page](images/create_user_page.png "Create User page")
     <if type="freetier">
     - **Username:** Enter `omluser` for username. Using this username, the user will log in to an Oracle Machine Learning instance.
     - **First Name:** Enter the first name of the user.
@@ -62,13 +62,13 @@ An administrator creates a new user account and user credentials for Oracle Mach
 6. Click **Create.**
 
 <if type="livelabs">
-    ![](images/omluser_2.png)
+    ![List of users](images/omluser_2.png "List of users")
 </if>
 
 <if type="freetier">
 7. Repeat step 5 and 6 to create `omluser2` user. You use this user later in the workshop to learn how to grant datastore access to a user.
 
-    ![](images/omluser_2.png)
+    ![List of users](images/omluser_2.png "List of users")
 </if>
 
 
@@ -78,21 +78,21 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
 1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** from the left.
 
-    ![](images/service-console.png)
+    ![Service Console](images/service-console.png "Service Console")
 
-    ![](images/service-console-development.png)
+    ![Development tab in Service Console](images/service-console-development.png "Development tab in Service Console")
 
 2. Click **Oracle Machine Learning Notebooks**.
 
-    ![](images/open-oml-notebooks.png)
+    ![Oracle Machine Learning Notebooks option in Development tab in Oracle ADW](images/open-oml-notebooks.png "Oracle Machine Learning Notebooks")
 
 3. <if type="livelabs">Sign in with the **omluser** using the password `AAbbcc123456`.</if><if type="freetier">Enter your `omluser` credentials and click **Sign in.**</if>
 
-    ![](images/signin-to-oml.png)
+    ![Oracle Machine Learning Notebooks Sign-in page](images/signin-to-oml.png "Sign-in page")
 
-4. Click on **Notebooks** from the Quick Actions menu.
+4. Click **Notebooks** on the Quick Actions menu.
 
-    ![](images/open-notebooks.png)
+    ![Oracle Machine Learning home page](images/oml-notebooks-homepage.png "Oracle Machine Learning home page")
 
 <if type="freetier">## **Step 3:** Create Tables and Views, and Grant Access
 
@@ -104,13 +104,13 @@ This workshop uses tables and views which need to be created before proceeding w
 
 3. Click on the notebook to open it after it is successfully imported.
 
-    ![](images/import-notebook.png)
+    ![Notebooks page in Oracle Machine Learning Notebooks](images/import-notebook.png "Notebooks page")
 
 4. Click the **Run all paragraphs** ![](images/run-all-paragraphs.png =20x*) icon, and then click **OK** to confirm.
 
 5. Wait until all the paragraphs have finished running and you see your current time in the last paragraph.
 
-    ![](images/last-paragraph.png)
+    ![The last paragraph with the current timestamp in a notebook](images/last-paragraph.png "Last paragraph in a notebook showing the current timestamp")
 
 The prerequisite scripts have run successfully.
 
