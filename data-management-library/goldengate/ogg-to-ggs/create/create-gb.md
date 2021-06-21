@@ -92,7 +92,7 @@ The following instructions show you how to download the Root Certificate using a
 
 5.  Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key.
 
-6.  In a new browser tab or window, enter **https://*&lt;public-ip&gt;:9000** to open the Service Manager.
+6.  In a new browser tab or window, enter **https://&lt;public-ip&gt;:443** to open the Service Manager.
 
 7.  Log in to the Service Manager using **oggadmin** credentials found in **/home/opc/ogg_credentials.json**.
 
