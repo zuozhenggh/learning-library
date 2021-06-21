@@ -5,6 +5,10 @@
 In this lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 Estimates Lab Time - 25 minutes
+<if type="multicloud-freetier">
+- Estimates Lab Time - 25 minutes
++ Estimates Lab Time - 25 minutes
+</if>
 
 ### Objectives
 
@@ -76,7 +80,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.4 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.6.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -172,10 +176,6 @@ Their log files are located in the $GRABDISH_LOG directory.
 ls -al $GRABDISH_LOG
 </copy>
 ```
-
-<if type="multicloud-freetier">
-+ **MULTICLOUD_FREETIER INSTRUCTIONSS HERE**
-</if>
 
 Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
