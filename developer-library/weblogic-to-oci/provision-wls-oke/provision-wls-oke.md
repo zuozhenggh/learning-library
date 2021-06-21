@@ -4,7 +4,7 @@
 
 We will walk you through provisioning the WebLogic Infrastructure on Oracle Kubernetes Engine (OKE) by leveraging the OCI Cloud Marketplace.
 
-Estimated Completiong Time: 30 minutes.
+Estimated Completion Time: 30 minutes.
 
 ### Objectives
 
