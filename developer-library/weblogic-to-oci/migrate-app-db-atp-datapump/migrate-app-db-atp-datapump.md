@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to migrate the on-premises application database to the database provisioned on OCI using DataPump.
+We will walk you through the steps to migrate the on-premises application database to the database provisioned on OCI using DataPump.
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### About Product/Technology
 
@@ -16,16 +16,12 @@ In this workshop we will be using wrapper scripts to export, move the data to th
 
 ### Objectives
 
-In this lab you will:
-
 - Get shell access to the on-premises database.
 - Use a DataPump script to export the database schema to migrate.
-- Edit the DataPump import script with the information collected in the database provisioning lab.
+- Edit the DataPump import script with the information collected in the database provisioning tutorial.
 - Run a DataPump import script to migrate the database schema to OCI.
 
 ### Prerequisites
-
-To run this lab you need:
 
 - To have provisioned the on-premises demo environment that includes the source database to migrate.
 - To have provisioned the target database on OCI.
@@ -112,7 +108,7 @@ To run this lab you need:
 
       The output will look like:
 
-        ![](./images/migrate-db-1.png)
+        ![](./images/migrate-db-1.png " ")
 
 
 ## **STEP 3:** Install the OCI CLI on the Source Database
@@ -213,7 +209,7 @@ This will be needed to get the wallet from the ATP database and put the database
 
 1. Go to **Core Infrastructure -> Object Storage**.
 
-    ![](./images/migrate-db-oss-1.png)
+    ![](./images/migrate-db-oss-1.png " ")
 
 2. Make sure you are in the compartment where you deployed the resources.
 
@@ -270,7 +266,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 7. **Copy** the **Private Endpoint IP address** and enter as the `TARGET_DB_HOST` in the script.
 
-    ![](./images/db-info.png)
+    ![](./images/db-info.png " ")
 
 8. **Enter** the name of the Object Storage bucket created earlier as `BUCKET` (`atp-upload`).
 
@@ -282,7 +278,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 12. In **User -> Settings** click **Auth Tokens**.
 
-    ![](./images/auth-token.png)
+    ![](./images/auth-token.png " ")
 
 13. Click **Generate Token**.
 
