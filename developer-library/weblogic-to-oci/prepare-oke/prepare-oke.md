@@ -4,7 +4,7 @@
 
 We will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
 
-Estimated Completiong Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
 
