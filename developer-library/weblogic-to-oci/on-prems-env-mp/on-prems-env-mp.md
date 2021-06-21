@@ -2,15 +2,13 @@
 
 ## Introduction
 
-This lab walks you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace.
+We will walk you through setting up an environment to simulate an established on-premises environment, using a Compute instance on OCI deployed through the marketplace.
 
-At the end of this lab, you will have a simulated on-premises environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
+On completion, you will have a simulated on-premises environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing 2 applications and a datasource.
 
-Estimated Lab Time: 15 minutes.
+Estimated Completion Time: 15 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Launch a demo marketplace image.
 - Check that the services are up and running.
@@ -18,8 +16,6 @@ In this lab you will:
 - Create a SSH key pair.
 
 ### Prerequisites
-
-For this lab you need:
 
 - A compute instance with 4 OCPUs available to run the image.
 
