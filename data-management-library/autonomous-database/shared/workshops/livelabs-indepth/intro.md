@@ -23,13 +23,7 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - Create Oracle Machine Learning SQL notebooks
 - Use the in-database DBMS\_PREDICTIVE\_ANALYTICS functionality
 
-
-**After reading the following workshop prerequisites, get started by clicking Lab 1 in the Contents menu on the right.**
-
-### Workshop Prerequisites
-This workshop requires an Oracle Cloud account. As a result of creating a reservation on LiveLabs, you should have logged into your LiveLabs generated Oracle Cloud environment.
-
-**You are all set; let's begin! Click Getting Started in the Contents menu on the left.**
+**Let's begin! Proceed to the next lab.**
 
 ## Learn More
 
@@ -47,4 +41,4 @@ Use these links to get more information about Oracle Autonomous Database:
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, April 2021
+- **Last Updated By/Date** - Tom McGinn, June 2021

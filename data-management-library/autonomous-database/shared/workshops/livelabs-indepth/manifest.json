@@ -25,7 +25,7 @@
         {
             "title": "Lab 3: Load Data",
             "description": "Load data into ADB",
-            "filename": "./../../adb-loading/adb-loading.md"
+            "filename": "./../../adb-loading/adb-loading-livelabs.md"
         },
         {
             "title": "Lab 4: Query External Data",
@@ -48,7 +48,7 @@
             "filename": "./../../adw-managing-monitoring/adw-managing-monitoring.md"
         },
         {
-            "title": "Lab 8: Scale Your Autonomous Database",
+            "title": "Lab 8: Scale for Performance",
             "description": "Scaling and Performance in Your Autonomous Database",
             "filename": "./../../adw-scaling-performance/adw-scaling-performance.md"
         },

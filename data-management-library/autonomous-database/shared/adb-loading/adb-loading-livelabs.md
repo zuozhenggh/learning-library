@@ -148,8 +148,6 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Click your username.](./images/click-your-username-livelabs.png " ")
 
-    *Note: If you don't see your user name in the drop-down menu, you might be a "federated" user. In that case, go instead to the menu on the left side and open Users. Federated users are “federated” from another user service, whether it is an Active Directory LDAP type service or users from the older OCI Classic.*
-
 2. Make note of this username, as you will need it in an upcoming step. At the bottom left side of the page, in the **Resources** section, click **Auth Tokens**.
 
     ![Click Auth Tokens under Resources at the bottom left.](./images/click-auth-tokens-livelabs.png " ")
@@ -210,18 +208,18 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Choose LOAD DATA and CLOUD STORAGE.](./images/choose-load-data-and-cloud-storage.png " ")
 
-8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `coun_v3.dat` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
+8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `countries.csv` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
 
     ![Drag the file onto the canvas.](./images/drag-files-onto-canvas.png " ")
 
-9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `coun_v3.dat` tables.
+9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `countries.csv` tables.
 
     ![Click the pencil button.](./images/click-pencil-button.png " ")
 
 10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL.
 
     - For `channels.csv`, change the target table name to **CHANNELS\_DB\_TOOLS**.
-    - For `coun_v3.dat`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
+    - For `countries.csv`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
 
     ![Review the properties sheet.](./images/review-properties-sheet.png " ")
 

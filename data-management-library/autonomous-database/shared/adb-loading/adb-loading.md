@@ -11,7 +11,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
-*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 Estimated Lab Time: 30 minutes
 
@@ -96,15 +96,15 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
   *To learn more about the OCI Object Storage, refer to its <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="\_blank">documentation</a>*
 
-2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, a **training** compartment is chosen. For LiveLabs tenancy users, select the compartment that you were assigned in the *Launch Workshop* window.
-*Note: If you are doing this workshop in the LiveLabs tenancy and you have issues selecting your compartment, go back to your ADB instance create page and select your compartment.  Now go back to Object Storage, you should be able to select your compartment and create your bucket.  This is a known OCI issue that should be resolved shortly*
+2. You should now be on the **Object Storage** page. Choose any compartment to which you have access.  In this example, a **training** compartment is chosen.
+
     ![Choose a compartment on Object Storage page.](images/choose-compartment.png " ")
 
 3. Click the **Create Bucket** button:
 
     ![Click Create Bucket.](images/click-create-bucket.png " ")
 
-4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. For example, if you are running this lab in LiveLabs, include your LiveLabs user login ID, as in **user_id-ADWCLab**. Enter the unique bucket name and click the **Create Bucket** button.
+4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. Enter the unique bucket name and click the **Create Bucket** button.
 
     ![Enter the required details and click Create.](images/click-create-to-create-the-bucket.png " ")
 
@@ -214,18 +214,18 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Choose LOAD DATA and CLOUD STORAGE.](./images/choose-load-data-and-cloud-storage.png " ")
 
-8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `coun_v3.dat` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
+8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `countries.csv` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
 
     ![Drag the file onto the canvas.](./images/drag-files-onto-canvas.png " ")
 
-9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `coun_v3.dat` tables.
+9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `countries.csv` tables.
 
     ![Click the pencil button.](./images/click-pencil-button.png " ")
 
 10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL.
 
     - For `channels.csv`, change the target table name to **CHANNELS\_DB\_TOOLS**.
-    - For `coun_v3.dat`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
+    - For `countries.csv`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
 
     ![Review the properties sheet.](./images/review-properties-sheet.png " ")
 
@@ -251,6 +251,10 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
 ***Note:*** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed with the following:
+
+1. Click on the SQL tile to open SQL web developer.
+
+  ![Open SQL Web Developer](images/open-sql-web-dev.png)
 
 1. Unlike the previous steps where the Database Actions DATA LOAD tool gave you the option to automatically create the target autonomous database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables. Connected as your ADMIN user in SQL Worksheet, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to the worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 
