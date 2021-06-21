@@ -8,7 +8,7 @@ Estimated Completion Time: 5 minutes.
 
 ### Objectives
 
-Install a sample app from the app library.
+We will install a sample app from the app library.
 
 ## **STEP 1:** Install a Sample Application
 
