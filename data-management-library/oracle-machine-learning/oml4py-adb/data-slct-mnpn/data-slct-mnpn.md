@@ -637,7 +637,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
     print("Shape:",IRIS.shape)
     z.show(IRIS.head(10))</copy>
     ```
-   ![](images/oml_create_table.png)
+   ![Use of oml.create function](images/oml_create_table.png "Use oml.create function")
 
 2. Run the following script to view the persistent database table:
 
@@ -647,7 +647,7 @@ Use the `z.show` function to automatically pull the desired data to Python for d
 
     list(oml.sync(table=".*", regex_match=True).keys())</copy>
     ```
-    ![](images/view_persistent_table.png)
+    ![Script to view the table created](images/view_persistent_table.png "View table")
 
 ### Use other transparency layer functions
 The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current Oracle Machine Learning database connection. It can be used to execute queries against Oracle Database.
@@ -662,7 +662,7 @@ The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current O
     _ = cr.execute("select data_type from all_tab_columns where table_name ='IRIS'")
     cr.fetchall()</copy>
     ```
-    ![](images/oml_cursor_function.png)
+    ![Example of creating a cursor object for the database connection, and display the data types of the columns in the IRIS table.](images/oml_cursor_function.png "Create cursor object for DB connection")
 
 2. To close the cursor, run `cr.close`.
 
@@ -681,7 +681,7 @@ The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current O
     IRIS.shape</copy>
     ```
 
-    ![](images/shape_function.png)
+    ![Example of viewing the shape of a table](images/shape_function.png "View shape of a table")
 4. Use the transparency layer function `head()` to view the first three rows of the IRIS table.
 
     ```
@@ -691,7 +691,7 @@ The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current O
     IRIS.head(n=3)</copy>
     ```
 
-    ![](images/head_function.png)
+    ![Example of the transparency layer function to view the first three rows of a table](images/head_function.png "Transparency layer function to view rows of a table")
 
 5. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the IRIS table in each numeric column.
 
@@ -702,7 +702,7 @@ The `oml.cursor()` function returns a `cx_Oracle` cursor object of the current O
     IRIS.describe()</copy>
     ```
 
-    ![](images/describe_function.png)
+    ![Example of the transparency layer function to calculate descriptive statistics and shape of the IRIS table in each numeric column](images/describe_function.png "Transparency layer function to calculate statistics")
 
 ## Learn More
 

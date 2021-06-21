@@ -56,14 +56,14 @@ This step shows how to predict numerical values using multiple regression. Given
     DEMO_DF   = oml.sync(query = """SELECT CUST_ID, EDUCATION, AFFINITY_CARD, HOUSEHOLD_SIZE, OCCUPATION, YRS_RESIDENCE, Y_BOX_GAMES FROM SH.SUPPLEMENTARY_DEMOGRAPHICS""")
     CUST_DF   = CUSTOMERS.merge(DEMO_DF, how = "inner", on = 'CUST_ID',suffixes = ["",""])</copy>
     ```
-2. Run the following command to display the first few rows of table `CUST_DF` :
+2. Run the following script to display the first few rows of the table `CUST_DF` :
     ```
     %python
     <copy>
 
     z.show(CUST_DF.head())</copy>
     ```
-    ![](images/cust_df_table.png)
+    ![Example of a script to display the first few rows of a table](images/cust_df_table.png "View first few rows of a table")
 
 3. Run the following script to randomly split and select the data into 60% for train and 40% for test.
 
@@ -100,7 +100,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     ```
 
-    ![](images/glm_regression.png)
+    ![Script to build a GLM regression model](images/glm_regression.png "Script to build a GLM regression model")
 
 5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
     * RMSE is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.
@@ -112,7 +112,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     z.show(glm_mod.fit_details)</copy>
     ```
-    ![](images/model_fit_details.png)
+    ![Script to view model fit details](images/model_fit_details.png "Script to view model fit details")
 
 6. Run the following command to display and view the model coefficients:
 
@@ -123,7 +123,7 @@ This step shows how to predict numerical values using multiple regression. Given
     glm_mod.coef</copy>
     ```
 
-    ![](images/model_coeff.png)
+    ![Script to display and view model coefficients](images/model_coeff.png "Script to display and view model coefficients")
 7. Run the following script to make predictions using the test data and display the results:
 
     ```
@@ -134,17 +134,17 @@ This step shows how to predict numerical values using multiple regression. Given
     z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE']])</copy>
     ```
 
-    ![](images/prediction.png)
+    ![Prediction](images/prediction.png "Prediction")
 In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `YRS_RESIDENCE` columns respectively, as shown in the screenshot.
 
-8. Run the following command to plot the predicted versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
+8. Run the following command to plot the predicted years of residence versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
     ```
     %python
     <copy>
 
     z.show(RES_DF[['YRS_RESIDENCE', 'PREDICTION']])</copy>
     ```
-    ![](images/view_predicted_actual_values.png)
+    ![Scatter plot displaying the predicted years of residence](images/view_predicted_actual_values.png "Scatter plot displaying the predicted years of residence")
 
 9. Using matplotlib, plot the predicted and actual years of residence and visually compare it against the perfect fit line, `y=x`.  The plot indicates how far the prediction deviated from actual value, which is known as the prediction error. Ideally, the predictions will converge to the perfect fit line.
 
@@ -169,7 +169,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.grid(True)
     plt.show()</copy>
     ```
-    ![](images/yrs_residence_predicted_matplotlib.png)
+    ![Predicted and actual years of residence](images/yrs_residence_predicted_matplotlib.png "Predicted and actual years of residence")
 10. Run the following script to plot the residuals using matplotlib.
 
     ```
@@ -191,7 +191,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.show()</copy>
     ```
 
-    ![](images/residuals.png)
+    ![Residuals](images/residuals.png "Residuals")
 11. Run the following script to calculate the RMSE manually on the prediction results on the testing test and the R-  squared on the testing set using the score method.
     **Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
 
@@ -204,7 +204,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     print(glm_mod.score(TEST.drop('YRS_RESIDENCE'), TEST[:,['YRS_RESIDENCE']]))</copy>
     ```
 
-    ![](images/rmse_calculation.png)
+    ![RMSE calculation](images/rmse_calculation.png "RMSE calculation")
 
 ## **Step 3**: Work with Clustering using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
@@ -235,7 +235,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
 
     km_mod</copy>
     ```
-    ![](images/kmeans_model_details.png)
+    ![](images/kmeans_model_details.png )
 
 3. To view the cluster details, run the following command. The command displays the cluster details for all clusters in the hierarchy with row counts and dispersion.
 The dispersion value is a measure of how compact or how spread out the data is within a cluster. The dispersion value is a number greater than 0.  The lower the dispersion value, the more compact the cluster, that is, the data points are closer to the centroid of the cluster. A larger dispersion value indicates that the data points are more disperse or spread out from the centroid.
@@ -247,7 +247,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.clusters)</copy>
     ```
 
-    ![](images/kmeans_model_cluster.png)
+    ![K-Means Model Cluster](images/kmeans_model_cluster.png "K-Means Model Cluster")
 
 4. Run the following script to display the taxonomy. The taxonomy shows the hierarchy of the child clusters in relationship to the parent clusters.
 
@@ -258,7 +258,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.taxonomy)</copy>
     ```
     The script returns the following table
-    ![](images/taxonomy.png)
+    ![Taxonomy](images/taxonomy.png "Taxonomy")
 
 5. Run the following command to predict the cluster membership.  The `supplemental_cols` argument carries the target column to the output to retain the relationship between the predictions and their original preditor values. These predictors may include a case id, for example to join with other tables, or multiple (or all) columns of the scoring data. You should be aware that unlike Pandas DataFrames, which are explicitly ordered in memory, results from relational databases do not have a specific order unless explicitly specified by an `ORDER BY` clause. As such, you cannot rely on results to maintain the same order across different data sets (tables and DataFrame proxy objects).
 
@@ -294,7 +294,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     handles = []
     labs = []
     colors = ['r', 'b', 'g']
-    
+
     for i, c in enumerate(clusters):
         xc = pred_df[pred_df['CLUSTER_ID'] == c]['YRS_RESIDENCE'].values
         yc = pred_df[pred_df['CLUSTER_ID'] == c]['CUST_YEAR_OF_BIRTH'].values
@@ -513,4 +513,4 @@ Build an in-db RandomForest model and compare the RF model's attribute importanc
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2021
