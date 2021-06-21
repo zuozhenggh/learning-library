@@ -44,12 +44,10 @@ Understanding Spatial Studio capabilities to
 ### Prerequisites
 
  <if type="freetier"> 
-   - This workshop requires access to Spatial Studio and Oracle Database. 
-   - These can be provisioned by completing the workshop [Install Oracle Spatial Studio from Cloud Marketplace ](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=778).  
+   - This workshop requires access to Spatial Studio and Oracle Database. These can be provisioned by completing the workshop [Install Oracle Spatial Studio from Cloud Marketplace ](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=778).  
 </if>
 <if type="reservation">  
-  - This workshop requires access to Spatial Studio and Oracle Database. 
-  - These are created for you as part of your LiveLabs Reservation.  
+  - This workshop requires access to Spatial Studio and Oracle Database. These are created for you as part of your LiveLabs Reservation.  
 </if>
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
