@@ -6,11 +6,10 @@ This lab will show how the application can be scaled at the application and data
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how the application can be scaled at the application and database tiers to maintain optimal performance.
 
 [](youtube:95cW9eH_os4)
-</if>
+
 
 ### Objectives
 -   Start the external load balancer for the order-helidon microservice
