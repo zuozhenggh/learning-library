@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to migrate the on-premises application database to the database provisioned on OCI using Oracle DataPump.
+We will walk you through the steps to migrate the on-premises application database to the database provisioned on OCI using Oracle DataPump.
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### About Product/Technology
 
@@ -16,16 +16,12 @@ In this workshop we will be using wrapper scripts to export, move the data to th
 
 ### Objectives
 
-In this lab you will:
-
 - Get shell access to the on-premises database.
 - Use a DataPump script to export the database schema to migrate.
-- Edit the DataPump import script with the information collected in the database provisioning lab.
+- Edit the DataPump import script with the information collected in Provision the Application Database on Oracle Cloud Infrastructure with Database as a Service.
 - Run a DataPump import script to migrate the database schema to OCI.
 
 ### Prerequisites
-
-To run this lab you need:
 
 - To have provisioned the on-premises demo environment that includes the source database to migrate.
 - To have provisioned the target database on OCI.
@@ -109,7 +105,7 @@ Run the `datapump_export.sh` script:
 
 The output will look like:
 
-![](./images/migrate-db-1.png)
+![](./images/migrate-db-1.png " ")
 
 ## **STEP 3:** Edit the `datapump_import.sh` Script
 
@@ -133,19 +129,19 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**.
 
-       ![](./images/migrate-db-2.png)
+       ![](./images/migrate-db-2.png " ")
 
 3. Enter the `TARGET_DB_HOST` **private IP address**.
 
      This IP address was gathered from the Database System details, under **Database System -> details -> Nodes**.
 
-       ![](./images/provision-db-26-nodeip.png)
+       ![](./images/provision-db-26-nodeip.png " ")
 
 4. Enter the `TARGET_DB_DOMAIN` name, from the database connection string.
 
-      If you followed the name convention defaults in the lab, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
+      If you followed the name convention defaults, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`.
 
-      ![](./images/provision-db-27-connection2.png)
+      ![](./images/provision-db-27-connection2.png " ")
 
 ## **STEP 4:** Import the Data into the Target Database
 
