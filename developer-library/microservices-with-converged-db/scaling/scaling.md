@@ -44,6 +44,10 @@ This lab assumes that you have already completed the previous labs.
     <copy>export LB='123.123.123.123'</copy>
     ```
 
+<if type="multicloud-freetier">
++ `export LB=$(kubectl get gateway msdataworkshop-order-helidon-appconf-gw -n msdataworkshop -o jsonpath='{.spec.servers[0].hosts[0]}')`
+</if>
+
 2. Install a load testing tool.  
 
     You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
