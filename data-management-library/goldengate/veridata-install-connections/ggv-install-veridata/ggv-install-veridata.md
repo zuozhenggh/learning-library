@@ -23,8 +23,8 @@ This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
 * The following are required to complete this lab:
@@ -209,5 +209,5 @@ To deploy agents:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-* **Last Updated By/Date** - Anuradha Chepuri, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021

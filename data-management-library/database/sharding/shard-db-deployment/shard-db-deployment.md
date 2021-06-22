@@ -28,7 +28,7 @@ In this lab, you will deploy a sharded database with 2 shard.
 This lab assumes you have already completed the following:
 - Setup environment to provision catalog and shard database.
 
-## **Step 1:** Configure Shard Hosts
+## **STEP 1:** Configure Shard Hosts
 
 1. Connect to the catalog host and each of the shard hosts with opc user. edit the `/etc/hosts` file.
 
@@ -85,7 +85,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **Step 2:** Install Shard Director Software
+## **STEP 2:** Install Shard Director Software
 
 In this workshop we choose to co-locate the shard director software on the same host as the shard catalog database, it must be installed in a separate Oracle Home. 
 
@@ -319,7 +319,7 @@ In this workshop we choose to co-locate the shard director software on the same 
     
 
 
-## **Step 3:** Setup Catalog Database
+## **STEP 3:** Setup Catalog Database
 
 1. Make sure you are in the catalog database environment.
 
@@ -531,7 +531,7 @@ In this workshop we choose to co-locate the shard director software on the same 
       
 
 
-## **Step 4:** Setup Shard Databases
+## **STEP 4:** Setup Shard Databases
 
 The following steps need to do in all the shard database side. We only provide steps for shard1. 
 
@@ -843,7 +843,7 @@ The following steps need to do in all the shard database side. We only provide s
 
     
 
-## **Step 5:** Configure the Shard Database Topology
+## **STEP 5:** Configure the Shard Database Topology
 
 1. Connect to the catalog database host. Switch to oracle user.
 
@@ -1118,7 +1118,7 @@ The following steps need to do in all the shard database side. We only provide s
 
 
 
-## **Step 6:** Deploy the Sharding Configuration
+## **STEP 6:** Deploy the Sharding Configuration
 
 1. When the sharded database topology has been fully configured, run the `GDSCTL DEPLOY` command to deploy the sharded database configuration.
 
@@ -1244,14 +1244,11 @@ The following steps need to do in all the shard database side. We only provide s
 
    
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Contributors** -  
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Apr 2021
+* **Last Updated By/Date** - Minqiao Wang, Jun 2021
 * **Workshop Expiry Date** - 
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 

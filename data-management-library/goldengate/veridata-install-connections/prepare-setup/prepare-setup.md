@@ -44,10 +44,10 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 ## **STEP 3**: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
-  -  Create Stack:  *Compute + Networking*
-  -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+-  Create Stack:  *Compute + Networking*
+-  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
 ## Acknowledgements
-  * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-  * **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-  * **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
