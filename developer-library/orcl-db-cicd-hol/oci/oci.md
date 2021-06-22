@@ -6,6 +6,8 @@ Development and deployment platforms can be created on Oracle Cloud Infrastructu
 
 In this lab we will create all the required components on OCI.
 
+Estimated Lab Time: 60 minutes
+
 ## **Step 1:** Generate SSH Keys
 
 1. On a linux machine you can generate the required ssh keys

@@ -10,6 +10,8 @@ Wercker is the CI service we will use in this workshop. Wercker empowers organiz
 
 Open [https://app.wercker.com](https://app.wercker.com) and login with your GitHub account. 
 
+Estimated Lab Time: 30 minutes
+
 ## **Step 1:** Add Application
 
 1. Click the **+** sign next to profile icon 👤 on upper right corner, and **Add Application**.

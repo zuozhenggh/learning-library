@@ -12,6 +12,8 @@ There are two methods to capture and track database changes:
 
 The tool we use to track, version, and deploy database schema changes is [Liquibase](https://www.liquibase.org/). Liquibase supports a broad range of databases, including Oracle Database. We will use migration based method, because Liquibase is not great at capturing existing changes in an Oracle Database.
 
+Estimated Lab Time: 45 minutes
+
 ## **Step 1:** Install Liquibase
 
 1. Access the website, and find the URL for the latest stable release for Linux x64. Deactivate Python virtual environment, and go to oracle's home.

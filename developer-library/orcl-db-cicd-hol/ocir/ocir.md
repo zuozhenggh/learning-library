@@ -8,6 +8,8 @@ All information required for pushing and retrieving the built Docker image, depl
 
 Our deployment will be monitored and managed using Kubernetes Dashboard.
 
+Estimated Lab Time: 30 minutes
+
 ## **Step 1:** Define Wercker Variables
 
 1. In Wercker, we need to define three environment variables, in the **Environment** tab. Enter the name of the variable in Key field, the value in Value, set Protected or not, and click **Add**.

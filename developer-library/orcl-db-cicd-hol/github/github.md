@@ -8,6 +8,8 @@ Navigate to [https://github.com](https://github.com/) and create an account.
 
 Fork [vltabacaru/orcl-ws-cicd](https://github.com/vltabacaru/orcl-ws-cicd) project in your account. It creates a copy of this repository in your account [Your Username]/orcl-ws-cicd. In your repository, click on **Clone or download**, and copy the URL in your notes text file. It looks like https://github.com/[Your Username]/orcl-ws-cicd.git.
 
+Estimated Lab Time: 45 minutes
+
 ## **Step 1:** Remote Desktop vs. Command Line
 
 1. Get the Public IP address of the Compute Instance from Oracle Cloud console, and save it in your notes text file.

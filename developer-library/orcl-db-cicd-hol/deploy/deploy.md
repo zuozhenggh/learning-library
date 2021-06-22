@@ -6,6 +6,8 @@ At this point we have all the components we need to deploy our Python micro web 
 
 Automated deployment uses YML templates received from the original [vltabacaru/orcl-ws-cicd] GitHub repository we forked.
 
+Estimated Lab Time: 30 minutes
+
 ## **Step 1:** Add Pipeline to Wercker.YML
 
 1. Add this section at the end of your wercker.yml file (leave a blank line between build section and deploy section):

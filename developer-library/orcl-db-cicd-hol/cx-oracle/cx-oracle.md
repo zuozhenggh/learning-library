@@ -6,6 +6,8 @@ Our application data in stored in an Oracle Database, that runs as a Database Cl
 
 We want our Python web micro service to connect to our Oracle Database, retrieve information about the employees in Human Resources (HR) sample schema, and calculate a promotion or a salary increase.
 
+Estimated Lab Time: 45 minutes
+
 ## **Step 1:** Get Database Host and Service
 
 1. Connect to the DB System you created on OCI, called [Your Initials]-DB. 

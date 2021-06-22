@@ -16,6 +16,8 @@ At a very high level, a CI/CD pipeline usually consists of the following five ma
 
 The entire workflow, and all pipelines are fully automated. This automation auto-magically converts a single commit by a developer into an update to production a few hours later.
 
+Estimated Lab Time:  minutes
+
 ## Workshop Requirements
 
 * Access to Oracle Cloud Infrastructure
