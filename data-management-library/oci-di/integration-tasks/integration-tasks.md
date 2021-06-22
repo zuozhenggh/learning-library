@@ -15,7 +15,7 @@ In this lab, you will:
 
 ## Prerequisites
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* You completed Lab 0, Lab 1, Lab 2
+* You completed Lab 0, Lab 1, Lab 2 of this LiveLabs workshop
 
 
 ## **STEP 1:** Create an OCI Data Integration project

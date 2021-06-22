@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to create data assets for your source and target data sources using Object Storage as the source and Autonomous Data Warehouse as the target. In Oracle Cloud Infrastructure Data Integration, data assets represent data sources that you can use as sources and targets for your integration tasks. Data assets can be databases, flat files, and so on.
+This lab walks you through the steps to create **Data assets** for your source and target data sources using **Object Storage** as the source and **Autonomous Data Warehouse** as the target. In Oracle Cloud Infrastructure Data Integration, data assets represent data sources that you can use as sources and targets for your integration tasks. Data assets can be databases, flat files, and so on.
 
-Estimated Lab Time: 15 minutes
+*Estimated Lab Time*: 15 minutes
 
 ## Objectives
 In this lab, you will:
@@ -23,72 +23,85 @@ In this lab, you will:
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). The Workspace you created in Lab 1 should be displayed (DI-workspace).
+2. From the **Workspaces** page, make sure that you are in the compartment you created for data integration (`DI-compartment`). The Workspace you created in Lab 1 should be displayed (`DI-workspace`).
 ![](./images/workspaces.png " ")
 
-3. Click the Actions menu (the three dots) for your Data Integration workspace and then select Copy OCID.
+3. Click the **Actions menu** (the three dots) for your Data Integration workspace and then select **Copy OCID**.
 ![](./images/copy-ocid.png " ")
 
-4. A notification saying "Workspace OCID copied" should be displayed at the top right of your screen. Paste your workspace OCID in a notepad, you will need it for later use in policies, as described in the next step of this lab.
+4. A notification saying `Workspace OCID copied` should be displayed at the top right of your screen. Paste your workspace OCID in a notepad, you will need it for later use in policies, as described in the next step of this lab.
 ![](./images/notification.png " ")
 
 
 ## **STEP 2**: Create policies for ADW and Object Storage
 
-Data Integration needs specific permissions to Oracle Object Storage to access metadata, and read and write data. Also working with Autonomous Databases in Data Integration uses Object Storage. So, you must create all the required Object Storage policies and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
+Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. So, you must create all the required Object Storage **policies** and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
 ![](./images/menu_policies.png " ")
 
-2. Make sure that you are in your compartment for data integration (DI-compartment). In the list of policies, click on the **Policies-OCI-DI** that you created in Lab 1. You will add here the necessary policies for the Object Storage connection from OCI Data Integration.
+2. Make sure that you are in your compartment for data integration (`DI-compartment`). In the list of policies, click on the **Policies-OCI-DI** that you created in Lab 1. You will add here the necessary policies for the Object Storage connection from OCI Data Integration.
 ![](./images/modify-policies.png " ")
 
 3. Your policy details will be displayed. Click on **Edit Policy Statements**.
 ![](./images/policy-details.png " ")
 
-4. Your Edit Policy Statements screen is displayed and you can see your current policy statements. Check "Advanced" for Policy Builder.
+4. Your **Edit Policy Statements** screen is displayed and you can see your current policy statements. Check `Advanced` for Policy Builder.
 ![](./images/policy-another-button.png " ")
 
-5. You will add the necessary policy statements to enable access to Oracle Object Storage and to use Autonomous Data Warehouse as target for your data integration tasks. In this workshop, the Data Integration workspace and Object Storage data asset belong to the same tenancy so the following statements are needed. Copy the following statements and paste them in the Policy Builder box, each statement as a new line :
-* For Object Storage
-Allow group <group-name> to use object-family in compartment <compartment-name>
-Allow any-user to use buckets in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>'}
-Allow any-user to manage objects in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>'}
+5. You will add the necessary policy statements to **enable access to Oracle Object Storage and to use Autonomous Data Warehouse** as target for your data integration tasks. In this workshop, the Data Integration workspace and Object Storage data asset belong to the same tenancy so the following statements are needed. Copy the following statements and paste them in the **Policy Builder** box, each statement as a new line:
 
-* For Autonomous Data Warehouse
-Allow any-user to manage buckets in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>', request.permission = 'PAR_MANAGE'}
+* For **Object Storage**
+```
+<copy>Allow group <group-name> to use object-family in compartment <compartment-name></copy>
+```
+
+```
+<copy>Allow any-user to use buckets in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>'}</copy>
+```
+
+```
+<copy>Allow any-user to manage objects in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>'}</copy>
+```
+
+* For **Autonomous Data Warehouse**
+```
+<copy>Allow any-user to manage buckets in compartment <compartment-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<workspace-ocid>', request.permission = 'PAR_MANAGE'}</copy>
+```
+
 ![](./images/edit-policies.png " ")
 
-6. Replace in the new policy statements:
-- <compartment-name> with the name of your data integration Compartment (DI-compartment)
-- <group-name> with the name of your data integration users Group (di-group)
-- <workspace-ocid> with the workspace OCID you copied in Step 1 of this lab
+6. **Replace** in the new policy statements:
+- *<compartment-name>* with the name of your data integration Compartment (DI-compartment)
+- *<group-name>* with the name of your data integration users Group (di-group)
+- *<workspace-ocid>* with the workspace OCID you copied in Step 1 of this lab
 ![](./images/new-policy.png " ")
 
 7. Click **Save Changes**.
 ![](./images/save-changes.png " ")
 
+
 ## **STEP 3**: Create Object Storage data asset
-In this workshop, Oracle Object Storage serves as the source data asset for our data integration tasks. In this step you will create the Object Storage data asset in our data integration workspace.
+
+In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in our data integration workspace.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). Click on your **Workspace** (DI-workspace).
+2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 ![](./images/workspaces-click.png " ")
 
-3. On your workspace Home page, click Create Data Asset from the Quick Actions tile.
+3. On your workspace Home page, click **Create Data Asset** from the **Quick Actions tile**.
 ![](./images/create-asset-button.png " ")
 
 4. The Create Data Asset dialog box appears. Fill in the following:
-* For **Name**, enter "Object_Storage" or any other meaningful name you want.
+* For **Name**, enter `Object_Storage` or any other meaningful name you want.
 * For **Description**, you can optionally enter a description about your data asset.
 * From the **Type** dropdown, select Oracle Object Storage.
 * For **URL**, enter the URL for your Oracle Object Storage resource in the following format: "https://objectstorage.<region-identifier>.oraclecloud.com"
-Note: You can find the list of region identifiers at the following link: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm .
-For example, if you have your Object Storage in Frankfurt region, use "https://objectstorage.eu-frankfurt-1.oraclecloud.com"
+*Note: You can find the list of region identifiers at the following [link](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm). For example, if you have your Object Storage in Frankfurt region, use "https://objectstorage.eu-frankfurt-1.oraclecloud.com"*
 * For **Tenant OCID**, enter the Oracle Cloud ID of your tenancy.
-Note: To view your tenancy OCID in the Console, from the Profile menu click Tenancy:<your_tenancy_name>. You can find the tenancy OCID under Tenancy Information and copy it from there.
+*Note: To view your tenancy OCID in the Console, from the Profile menu click Tenancy:<your_tenancy_name>. You can find the tenancy OCID under Tenancy Information and copy it from there.*
 ![](./images/profile-menu.png " ")
 ![](./images/tenancy-details.png " ")
 * For **Namespace**, the value should now be auto-populated after completing the preceding step. If not, enter the namespace for the Object Storage bucket, that you can find as in the picture below, section highlighted in yellow.
@@ -99,48 +112,108 @@ Note: To view your tenancy OCID in the Console, from the Profile menu click Tena
 A success or failure message displays, indicating whether the test was successful or not. If the test fails, review your connection settings and try again.
 ![](./images/test-os-conn.png " ")
 
-6. Click Create.
+6. Click **Create**.
 ![](./images/create-asset.png " ")
 
 
 ## **STEP 4**: Prepare the Autonomous Data Warehouse data asset
-In this workshop, Autonomous Data Warehouse serves as the target data asset for our data integration tasks. In this step you will create the ADW data asset in our data integration workspace.
-In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
+
+In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
+
 1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
 ![](./images/oci-menu-adw.png " ")
 
-2. The console shows the Autonomous Data Warehouse databases that exist. Make sure that you are in the compartment that we have created for our data integration resources (DI-compartment). Click on your ADW, the one you created in Lab 0 (ADW Workshop).
+2. The console shows the Autonomous Data Warehouse databases that exist. Make sure that you are in the compartment that we have created for our data integration resources (`DI-compartment`). **Click on your ADW**, the one you created in Lab 0 (`ADW Workshop`).
 ![](./images/select-adw.png " ")
 
-3. On your Autonomous Database Details, click Open Database Actions under Database Actions section.
+3. On your Autonomous Database Details, click **Open Database Actions** under Database Actions section.
 ![](./images/click-tools.png " ")
 
-4. In the Tools tab, click Open SQL Developer Web.
+4. In the Tools tab, click **Open SQL Developer Web**.
 ![](./images/open-db-actions.png " ")
 
-5. When prompted, log in with "admin" username and click Next.
+5. When prompted, log in with `admin` **username** and click Next.
 ![](./images/admin-user.png " ")
 
-6. A new window requiring the password will appear. Write your password for "admin" user and then click Sign In.
+6. A new window requiring the **password** will appear. Write your password for `admin` user and then click **Sign In**.
 ![](./images/admin-pass.png " ")
 
-7. On Database Actions page, click on SQL tile under Development section.
+7. On Database Actions page, click on **SQL tile** under Development section.
 ![](./images/sql-tile.png " ")
 
 8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
-create user beta identified by "<password>";
+```
+<copy>create user beta identified by "<password>";
 grant DWROLE to BETA;
 GRANT EXECUTE ON DBMS_CLOUD TO BETA;
-alter user BETA quota 200M on data;
+alter user BETA quota 200M on data;</copy>
+```
 
-Note : Ensure that you enter a password in place of <password>.
+*Note : Ensure that you enter a password in place of <password>.*
 ![](./images/create-user.png " ")
 
-9. In the same SQL worksheet, run the following SQL statements to create the CUSTOMERS_TARGET table.
-To-add
+9. In the same SQL worksheet, **run the following SQL statements** to create the CUSTOMERS_TARGET table.
+```
+<copy>CREATE TABLE "BETA"."CUSTOMERS_TARGET"
+   ("CUST_ID" NUMBER,
+    "LAST_NAME" VARCHAR2(200 BYTE),
+    "FIRST_NAME" VARCHAR2(200 BYTE),
+    "FULL_NAME" VARCHAR2(200 BYTE),
+    "STREET_ADDRESS" VARCHAR2(400 BYTE),
+    "POSTAL_CODE" VARCHAR2(10 BYTE),
+    "CITY_ID" NUMBER,
+    "CITY" VARCHAR2(100 BYTE),
+    "STATE_PROVINCE_ID" NUMBER,
+    "STATE_PROVINCE" VARCHAR2(100 BYTE),
+    "COUNTRY_ID" NUMBER,
+    "COUNTRY" VARCHAR2(400 BYTE),
+    "CONTINENT_ID" NUMBER,
+    "CONTINENT" VARCHAR2(400 BYTE),
+    "AGE" NUMBER,
+    "COMMUTE_DISTANCE" NUMBER,
+    "CREDIT_BALANCE" NUMBER,
+    "EDUCATION" VARCHAR2(40 BYTE),
+    "EMAIL" VARCHAR2(416 BYTE),
+    "FULL_TIME" VARCHAR2(40 BYTE),
+    "GENDER" VARCHAR2(6 BYTE),
+    "HOUSEHOLD_SIZE" NUMBER,
+    "INCOME" NUMBER,
+    "INCOME_LEVEL" VARCHAR2(20 BYTE),
+    "INSUFF_FUNDS_INCIDENTS" NUMBER,
+    "JOB_TYPE" VARCHAR2(200 BYTE),
+    "LATE_MORT_RENT_PMTS" NUMBER,
+    "MARITAL_STATUS" VARCHAR2(8 BYTE),
+    "MORTGAGE_AMT" NUMBER,
+    "NUM_CARS" NUMBER,
+    "NUM_MORTGAGES" NUMBER,
+    "PET" VARCHAR2(40 BYTE),
+    "PROMOTION_RESPONSE" NUMBER,
+    "RENT_OWN" VARCHAR2(40 BYTE),
+    "SEG" NUMBER,
+    "WORK_EXPERIENCE" NUMBER,
+    "YRS_CURRENT_EMPLOYER" NUMBER,
+    "YRS_CUSTOMER" NUMBER,
+    "YRS_RESIDENCE" NUMBER,
+    "COUNTRY_CODE" VARCHAR2(2 BYTE),
+    "ORDER_NUMBER" NUMBER,
+    "REVENUE" NUMBER
+   ) SEGMENT CREATION IMMEDIATE
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
 
-10. Refresh the browser and in the Navigator on the left, switch to the BETA schema to verify that your table was created successfully.
-![](./images/beta-schema.png " ")
+--------------------------------------------------------
+--  Constraints for Table CUSTOMERS_TARGET
+--------------------------------------------------------
+  ALTER TABLE "BETA"."CUSTOMERS_TARGET" MODIFY ("CUST_ID" NOT NULL ENABLE);
+  ALTER TABLE "BETA"."CUSTOMERS_TARGET" MODIFY ("SEG" NOT NULL ENABLE);
+
+10. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.
+![](./images/beta-schema.png " ")</copy>
+```
 
 
 ## **STEP 5**: Create Autonomous Data Warehouse data asset
@@ -148,7 +221,7 @@ To-add
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). Click on your **Workspace** (DI-workspace).
+2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 ![](./images/workspaces-click.png " ")
 
 3. From the workspace home landing page, click **Data Assets**.
@@ -158,22 +231,22 @@ To-add
 ![](./images/create-asset-new.png " ")
 
 5. On the **Create Data Asset** page, for **General Information**, set the following:
-* Name: Give a new for you ADW data asset (for example, "Data_Warehouse").
-* Identifier: Auto-generated based on the value you enter for Name. You can change the auto-generated value if you wish to.
-* Description: It is optional to give a description for your data asset.
-* Type: Select Oracle Autonomous Data Warehouse.
-* Choose the Upload Wallet option to provide the login credentials for the ADW.
-* Wallet File: Drag and drop or browse to select your wallet file. See the process to download a file in Lab 0 - Step 4 of this workshop.
-* You can optionally enter your wallet password.
-* Service Name: Choose the low service of Autonomous Data Warehouse.
-Note: For more information on predefined Database Service Names for Autonomous Data Warehouse, please see the following link https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-database-service-names.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE .
+* **Name**: Give a new for you ADW data asset (for example, `Data_Warehouse"`).
+* **Identifier**: Auto-generated based on the value you enter for Name. You can change the auto-generated value if you wish to.
+* **Description**: It is optional to give a description for your data asset.
+* **Type**: Select Oracle Autonomous Data Warehouse.
+* Choose the **Upload Wallet** option to provide the login credentials for the ADW.
+* **Wallet File**: Drag and drop or browse to select your wallet file. See the process to download a file in Lab 0 - Step 4 of this workshop.
+* Enter your **wallet password**.
+* **Service Name**: Choose the **low** service of Autonomous Data Warehouse.
+*Note: For more information on predefined Database Service Names for Autonomous Data Warehouse, please see the following [link](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-database-service-names.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE) .*
 ![](./images/adw-asset-general.png " ")
 
 6. In the **Connection** section, enter the following:
-* Name: You can optionally rename the connection to "BETA connection"
-*Description: : Optional (For example, "Connect with BETA user")
-User Name: BETA
-Password: The password you created for BETA.
+* **Name**: You can optionally rename the connection to `BETA connection`
+* **Description**: Optional (For example, `Connect with BETA user`)
+* **User Name**: `BETA`
+* **Password**: The password you created for BETA.
 ![](./images/adw-asset-conn.png " ")
 
 7. After you complete all the required fields, you can click **Test Connection** to ensure you've entered the data asset details correctly.
@@ -184,14 +257,12 @@ A success or failure message displays, indicating whether the test was successfu
 ![](./images/create-asset.png " ")
 
 *At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+Congratulations!  Now you have created in Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration. You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [Data Assets in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/data-assets.htm)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
