@@ -10,34 +10,23 @@ their team members names, development areas, skills for each development area an
 In Slack Workspace, the Data will appear like buttons that you can select and what you have selected it will be sent to **Oracle Digital Assistant** as a variable, that will trigger another buttons as effect of the states in Flows that exists in the Digital Assistant. At some states you can choose the button or you can type as input/response the name of the manager/name of the employee/name of the skill/what is written on the button.
 
 ### Terminology
-
 **Digital assistants** are virtual devices that help users accomplish tasks through natural language conversations, without having to seek out and wade through various apps and web sites. Each digital assistant contains a collection of specialized skills. When a user engages with the digital assistant, the digital assistant evaluates the user input and routes the conversation to and from the appropriate skills.
 
 ### Basic Concepts
-
   * **Intents** - Categories of actions or tasks users expect your skill to perform for them.
-
   * **Entities** - Variables that identify key pieces of information from user input that enable the skill to fulfill a task.
-
     Both intents and entities are common NLP (Natural Language Processing) concepts.
     NLP is the science of extracting the intention of text and relevant information from text.
-
   * **Components** - Provide your skill with various functions so that it can respond to users. These can be generic functions like outputting text, or they can return information from a backend and perform custom logic.
-
   * **Flows** - The definition for the skill-user interaction. The dialog flow describes how your skill responds and behaves according to user input.
-
   * **Channels** - Digital assistants and skills aren’t apps that you download from an app marketplace, like iTunes. Instead, users access them through messaging platforms or through client messaging apps. Channels, which are platform-specific configurations, allow this access. A single digital assistant or skill can have several channels configured for it so that it can run on different services simultaneously. Example of Channels: Slack, Facebook Messenger
-
-    Here is what happens when you use Slack as a channel for your digital assistant:
-
+  Here is what happens when you use Slack as a channel for your digital assistant:
       * Slack hosts your digital assistant through the intermediary of a Slack app.
       * Users chat with your digital assistant through the Slack app in the Slack user interface.
-
 
 Estimated Lab Time: 2 hours
 
 ### Objectives
-
   * Create an Oracle Digital Assistant Service Instance
   * Access the Service Instance from the Infrastructure Console
   * Import developed Skill in your Oracle Digital Assistant Service Instance
@@ -46,53 +35,41 @@ Estimated Lab Time: 2 hours
   * Test the Digital Assistant in Slack
 
 ### Prerequisites
-
   * This lab assumes you have an Oracle Cloud account and compartment, user, groups and policies created into it and you are logged in your account. For an overview of compartments, users, groups, policies etc. see this [link](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0).
 
-
-
-## **Step 1:** Create an Oracle Digital Assistant Service Instance
+## **STEP 1:** Create an Oracle Digital Assistant Service Instance
 
 1. In the Infrastructure Console, click on Hamburger menu on the top left to open the navigation menu, select **Analytics & AI** and select **Digital Assistant** (which appears under the **AI Services** category on the page).
 
   ![digital assistant menu](./images/digital-assistant-menu.png)
 
-
 2. From the **Compartments** panel, select a compartment.
 
   ![select compartment](./images/select-compartment.png)
-
 
 3. Click **Create Instance**.
 
   ![create digital assistant instance](./images/create-oda-instance.png)
 
-
 4. On the **Create Instance** page, fill in the following details:
+    * **Compartment**.
+    * **Name**. Enter a name that reflects usage of the instance.
+    * **Description**. (Optional) Enter a description for your instance.
+    * **Instance shape**. Select between the following shapes:
+        * **Development**. This is a lightweight option that is geared toward development work.
+        * **Production**. This option should be selected for production instances of Digital Assistant. In comparison with the Development shape, this option has higher rate limits and greater database capacity, which enables more Insights data to be collected.
+    * **Tag Namespace**. (Optional)
 
-   * **Compartment**.
-   * **Name**. Enter a name that reflects usage of the instance.
-   * **Description**. (Optional) Enter a description for your instance.
-   * **Instance shape**. Select between the following shapes:
-     * **Development**. This is a lightweight option that is geared toward development work.
-     * **Production**. This option should be selected for production instances of Digital Assistant. In comparison with the Development shape, this option has higher rate limits and greater database capacity, which enables more Insights data to be collected.
-   * **Tag Namespace**. (Optional)
-
- ![complete the details](./images/complete-the-details.png)
-
+    ![complete the details](./images/complete-the-details.png)
 
 5. Click **Create**.
 
 6. After a few minutes, your instance will go from the status of **Creating** to **Active**, meaning that your instance is ready to use.
 
   ![instance creating state](./images/creating-state.png)
-
   ![instance active state](./images/active-state.png)
 
-
-
-## **Step 2:** Access the Service Instance from the Infrastructure Console
-
+## **STEP 2:** Access the Service Instance from the Infrastructure Console
 Once you have provisioned an instance, you can access it from the **Infrastructure Console** by following these steps:
 
 1. Select your Digital Assistant Instance.
@@ -108,8 +85,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
   ![login 1](./images/login-1.png)
   ![login 2](./images/login-2.png)
 
-
-## **Step 3:** Import Skill
+## **STEP 3:** Import Skill
 
 1. In the Infrastructure Console, click on Hamburger menu on the top left to open the navigation menu, select **Development**, then select **Skills**.
 
@@ -123,13 +99,11 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 4. Select the downloaded file from your computer then click **Open**
 
-
-## **Step 4:** Integrate the Skill with your app
+## **STEP 4:** Integrate the Skill with your app
 
 1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** category. Now click on it's name, **SkillTracker**.
 
   ![imported skill](./images/imported-skill.png)
-
 
 2. In the left panel, click on **Components**.
 
@@ -153,14 +127,13 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 _.js_ files. Then save each file.
 
-
 7. Open a terminal an go in the **package** folder. Run the command:
 
-    ```
-    npm pack
-    ```
+  ```
+  npm pack
+  ```
 
-    ![npm pack](./images/npm-pack.png)
+  ![npm pack](./images/npm-pack.png)
 
 8. A new _.tgz_ file will be created inside the **package** folder.
 
@@ -170,8 +143,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 10. The status will change in **Awaiting Deployment**  then in **Ready**.
 
-
-## **Step 5:** Test the Skill with Conversation Tester
+## **STEP 5:** Test the Skill with Conversation Tester
 
 1. After you update the Custom Component, click on **Preview** to test the skill, in the up right corner of the console.
 
@@ -188,7 +160,6 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 4. You can make now 2 types of testing: _Press the button testing method_ or _User input & Press the button testing method_.
 
 * **I. Press the button testing method**
-
     After you wake up the bot, you can click on the buttons:
 
     1. **Managers and teams** to see a list of managers can you can choose a manager -> a list of it's Employees will show up and you can choose one of them -> a list of Skill Areas will show up and you can choose one of them -> a list of Skills and Skill Values of the selected employee will show up and you can select one -> an output message will show up that will have 3 buttons:
@@ -212,9 +183,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
     3. **None. Thanks!** if you changed your mind and want to exit the test.
 
-
 * **II. User input & Press the button testing method**
-
   After you wake up the bot, you can click on the buttons described above OR you can type in the **Utterance** field one of the following:
 
     * the name of the desired Manager
@@ -228,15 +197,12 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   After you enter one of the above, you can then press the buttons depending on what do you want to see next.
 
-
-## **Step 6:** Integrate your Digital Assistant with Slack
+## **STEP 6:** Integrate your Digital Assistant with Slack
 
 Below are the steps for creating a Slack channel for Digital Assistant.
 
-### **6.1. Get a Slack Workspace**
-
+**6.1. Get a Slack Workspace**
   To make your digital assistant  available in Slack, you need to have a Slack Workspace available to you where you have the permissions necessary to create a Slack app.
-
   OBS: If you already have a Slack Workspace you can just Login and skip this step.  
 
 
@@ -246,7 +212,6 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
     ![email](./images/email.png)
 
-
 3.  Check your email for a confirmation code.
 
 4.  Enter the 6-digit confirmation code that was sent to your email.
@@ -255,13 +220,9 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
     ![team company](./images/team-company.png)
 
-
-
 6.  Enter the **name of a project** your team is working on. This will be the name of the new Channel in Slack. Click **Next**.
 
     ![project name](./images/project-name.png)
-
-
 
 7.  Enter the **email** address of who do you email most about this project and click **Add Teammates** OR you can tap *skip for now*.
 
@@ -275,9 +236,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
     ![desktop](./images/desktop.png)
 
-
-
-### **6.2. Create a Slack App**
+**6.2. Create a Slack App**
 
 1. Go to Slack's [Your Apps](https://api.slack.com/apps) page.
 
@@ -299,10 +258,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
   ![app credentials](./images/app-credentials.png)
 
-
-
-### **6.3. Add OAuth Scopes for the Slack App**
-
+**6.3. Add OAuth Scopes for the Slack App**
 You add OAuth scopes for permissions that you want to give to the bot and to the user.
 
  1. In the left navigation of the web console for your Slack app, within the *Features* section, select **OAuth and Permissions**.
@@ -314,28 +270,24 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
     * User Token Scopes
 
  3. In the *Bot Token Scopes* section, add the scopes that correspond to the bot-level permissions that you want to allow. Click on **Add an OAuth Scope** and fill in with the following bot token scopes that are required:
-
     * chat:write
     * im:history
     * users:read
 
  4. In the *User Token Scopes* section, add the scopes that correspond to the user-level permissions that you want to allow. Click on **Add an OAuth Scope** and fill in with the following user token scope that is required:
-
     * files:write
 
  5. Your *Scopes* section should look like this:
 
     ![scopes](./images/scopes.png)
 
-
-### **6.4. Add the App to the Workspace**  
+**6.4. Add the App to the Workspace**  
 
 1. Scroll back to the *top* of the **OAuth & Permissions** page.
 
 2. Within the *OAuth Tokens & Redirect URLs* section and click **Install to Workspace**.
 
   ![install to workspace](./images/install-to-workspace.png)
-
 
 3. A page will appear showing what the app will be able to do. At the bottom of the page, click **Allow**.  
 
@@ -345,13 +297,11 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![app in slack 2](./images/app-in-slack-2.png)
 
-
-### **6.5. Create a Channel in Digital Assistant**  
+**6.5. Create a Channel in Digital Assistant**  
 
 1. In the Oracle Digital Assistant Instance Console, click on Hamburger menu on the top left to open the navigation menu, select **Development** -> **Channels** -> **Users** -> **Add Channel**.
 
   ![new channel](./images/new-channel.png)
-
 
 2. Fill in the following:
 
@@ -362,8 +312,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
     * **Success and Error URLs**: you can leave them blank.
     * Click **Create**.
 
-    *  ![create channel](./images/create-channel.png)
-
+    ![create channel](./images/create-channel.png)
 
 3. In the **Channels** page, copy the **WebHook URL** and paste it somewhere convenient on your system. You’ll need this to finish setting up the Slack app.
 
@@ -373,15 +322,11 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![select skill](./images/select-skill.png)
 
-
 5. *Switch on* the **Channel Enabled** control.
 
   ![enable channel](./images/enable-channel.png)
 
-
-
-### **6.6. Configure the Webhook URL in the Slack App**  
-
+**6.6. Configure the Webhook URL in the Slack App**  
 
 1. In the left navigation of the web console for your Slack app, select **Interactivity & Shortcuts** and turn the **Interactivity** switch **ON**.
 
@@ -391,44 +336,31 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![paste webhookurl](./images/paste-webhookurl.png)  
 
-
-
 3. In the left navigation, select **OAuth & Permissions**. In the *Redirect URLs* field, click **Add New Redirect URL**.
 
   ![redirect url](./images/redirect-url.png)   
-
-
-
 
 4. Paste the **webhook URL** and add at it's end **/authorizeV2**, click **Add** -> **Save URLs**.
 
   ![redirect url2](./images/redirect-2.png)
 
-
 5. In the left navigation, select **App Home**. In the *Your App’s Presence in Slack* section and turn on the **Always Show My Bot as Online** switch.
 
   ![online bot](./images/online-bot.png)
-
 
 6. In the left navigation, select **Event Subscriptions**. Set the **Enable Events** switch to ON.
 
   ![events on](./images/events-on.png)
 
-
 7. In the *Request URL* field, paste the **webhook URL**. A green *Verified* label should appear next to the Request URL label.
 
   ![events verified](./images/events-verified.png)
-
-
 
 8. Expand the *Subscribe to bot events* section of the page and click **Add Bot User Event**.
 
   ![bot events](./images/bot-events.png)
 
-
-
 9. Add the following events:
-
     * **message.im**
     * **app_mention**
     * **message.mpim**
@@ -439,11 +371,9 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
 10. Click **Save Changes**.
 
-
 11. In the left navigation, select **App Home**. Scroll down to *Show Tabs* section -> **Messages Tab** and check **Allow users to send Slash commands and messages from the messages tab**.
 
   ![check messages](./images/check-messages.png)
-
 
 12. In the left navigation, select **Manage Distribution**. Under the heading *Share Your App with Your Workspace*, click **Add to Slack**.
 
@@ -457,9 +387,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![success](./images/success.png)
 
-
-## **Step 7:** Test Your Bot in Slack
-
+## **STEP 7:** Test Your Bot in Slack
   With the Slack Channel and messaging configuration complete, you can test your Bot in Slack.
 
 1. Open the Slack Workspace where you have installed the app.
@@ -475,6 +403,8 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
   * **In the App**: In the left navigation bar, select the app that is associated with your Digital Assistant. In the *Message* field, you need to enter just the text to start communicating with the Digital Assistant.
 
     ![test 7](./images/test-7.png)
+
+You may now [proceed to the next lab](#next).     
 
 ## Want to Learn More?
 

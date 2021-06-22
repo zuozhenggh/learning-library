@@ -1,4 +1,4 @@
-# Put it all together in one single application [Work in progress]
+# Put it all together in one single application
 
 ## Introduction
 
@@ -22,21 +22,21 @@ Estimated Lab Time: 6 hours
 * **Lab 4: Autonomous JSON Database & SODA Collections**.
 
 
-## **Step 1:** Download the full Skillset Tracking application code
+## **STEP 1:** Download the full Skillset Tracking application code
 Before proceeding, you must first download the zip file with the code that can be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FCkf-hjTxrlpKNHF9Y-Ofpfg35DTBsOQDalozYSjvK_JfH98sdytIR8ZgF0Cr5GN/n/c4u03/b/labfiles/o/SkillsetTrackerApplicationCode.zip). After downloading, you can unzip the archive.
 
 In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
 
-* ***API*** - The code containing the APIs that make calls to the database for various operations. This is an extended version of the code you built in **Lab 6: Build NodeJS APIs to make calls to the database** and is needed for **Step 2** in this Lab.
+  * ***API*** - The code containing the APIs that make calls to the database for various operations. This is an extended version of the code you built in **Lab 6: Build NodeJS APIs to make calls to the database** and is needed for **STEP 2** in this Lab.
 
-* ***OJET*** - The code containing the interface of the Skillset Tracking application, built using OracleJET. This is an extended version of the application you built in **Lab 5: Build an OracleJET Web Application** and is needed for **Step 3** in this Lab.
+  * ***OJET*** - The code containing the interface of the Skillset Tracking application, built using OracleJET. This is an extended version of the application you built in **Lab 5: Build an OracleJET Web Application** and is needed for **STEP 3** in this Lab.
 
 
-## **Step 2:** Create NodeJS API instance and run the code
+## **STEP 2:** Create NodeJS API instance and run the code
 
 1. The first thing that you need to do is to go through the first step in **Lab 5: Build an OracleJET Web Application**, **Creating a Virtual Cloud Network**.
 
-2. After your VCN is properly set up, you can proceed creating and configuring a new Linux Instance as described in **Lab 6: Build NodeJS APIs to make calls to the database** -> **Steps 1, 2, and 3**.
+2. After your VCN is properly set up, you can proceed creating and configuring a new Linux Instance as described in **Lab 6: Build NodeJS APIs to make calls to the database** -> **STEPS 1, 2, and 3**.
 
 3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained in more detail in **Lab 6: Build NodeJS APIs to make calls to the database**.
     * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
@@ -58,68 +58,79 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
         * **api_router.js** - Sets up the routes for making the calls to the database. Currently this project has 37 routes which are described in the table that can be found in the ***Annexes*** section of this Lab. In order to make it easier to build the query for making the SODA calls, there are several functions that will either dynamically build the query or filter the data further, according to the need for each call.
       * **app.js** file - All the code is tied up in _app.js_ which starts/stops the application. When starting the application, the first step is to open the connection to the database by calling the _database.initialize()_ function, then runs the web server by calling _webserver.initialize()_ function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
       * **.env** file - Contains the details for connecting to the database: database user, password and connection string.
+
 4. Now that you have a general idea about what the code does, you can run it. Open the _API_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _DB\_USER_, _DB\_PASSWORD_, and _DB\_CONNECTION\_STRING_ with your own connection details.
 
-```
-NODE_ORACLEDB_USER=DB_USER
-NODE_ORACLEDB_PASSWORD=DB_PASSWORD
-NODE_ORACLEDB_CONNECTIONSTRING=DB_CONNECTION_STRING
-```
+  ```
+  NODE_ORACLEDB_USER=DB_USER
+  NODE_ORACLEDB_PASSWORD=DB_PASSWORD
+  NODE_ORACLEDB_CONNECTIONSTRING=DB_CONNECTION_STRING
+  ```
 
 5. In order to run the code, you need to upload it to the instance. You can use the following commands.
 
   **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
-* On the instance:
-```
-<copy>
-cd /home/opc
-mkdir SkillsetTracking
-</copy>
-```
-To save output of the **npm** command into a _log_ file, you can create a new log folder.
-```
-<copy>
-cd /home/opc/SkillsetTracking
-mkdir log
-</copy>
-```
-* On your local machine:
-```
-<copy>
-cd <project_folder_path>
-rm node_modules
-scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-</copy>
-```
+  * On the instance:
 
-After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it manually with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**. Use the following commands to add it as a **crontab job**.
-```
-<copy>
-sudo crontab -e
-</copy>
-```
-Press ***insert*** to enter the _edit_ mode and paste the following. In this way, you will save the output of the ``node app.js`` command into _skillset\_log.log_ file.
-```
-<copy>
-@reboot node /home/opc/SkillsetTracker/app.js >> /home/opc/SkillsetTracker/log/skillset_log.log 2>&1
-</copy>
-```
-Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
-```
-<copy>
-sudo reboot
-</copy>
-```
+    ```
+    <copy>
+    cd /home/opc
+    mkdir SkillsetTracking
+    </copy>
+    ```
+
+  To save output of the **npm** command into a _log_ file, you can create a new log folder.
+
+    ```
+    <copy>
+    cd /home/opc/SkillsetTracking
+    mkdir log
+    </copy>
+    ```
+
+  * On your local machine:
+
+    ```
+    <copy>
+    cd <project_folder_path>
+    rm node_modules
+    scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+    scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+    </copy>
+    ```
+
+  After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it manually with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**. Use the following commands to add it as a **crontab job**.
+
+    ```
+    <copy>
+    sudo crontab -e
+    </copy>
+    ```
+
+  Press ***insert*** to enter the _edit_ mode and paste the following. In this way, you will save the output of the ``node app.js`` command into _skillset\_log.log_ file.
+
+    ```
+    <copy>
+    @reboot node /home/opc/SkillsetTracker/app.js >> /home/opc/SkillsetTracker/log/skillset_log.log 2>&1
+    </copy>
+    ```
+
+  Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
+
+    ```
+    <copy>
+    sudo reboot
+    </copy>
+    ```
 
 You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.  
 
-## **Step 3:** Create OracleJET instance and run the code
+## **STEP 3:** Create OracleJET instance and run the code
 
 1. The first thing that you need to do is to go through the second step in **Lab 5: Build an OracleJET Web Application**, **Creating a Linux Instance in OCI**.
 
-2. After you created the instance, it's time to configure it as described in **Lab 5: Build an OracleJET Web Application** -> **Step 3**.
+2. After you created the instance, it's time to configure it as described in **Lab 5: Build an OracleJET Web Application** -> **STEP 3**.
 
 3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained earlier.
     * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
@@ -166,22 +177,22 @@ You should now be able to see the application running in browser at **http://you
 This section contains two treemap structures that can be seen in the Treemap entry of the application:
     * **Cloud Native Skills Treemap** which shows all the skills grouped by categories according to existing JSON file in the database;
 
-![cloudnativeskills treemap](./images/cloudnativeskillstreemap.png)
+    ![cloudnativeskills treemap](./images/cloudnativeskillstreemap.png)
 
     * **Management Treemap** which shows all the people grouped by manager name.
 
-![management treemap](./images/managementtreemap.png)
+    ![management treemap](./images/managementtreemap.png)
 
 The *size* of the treemap boxes is represented by **number of people with that skill** and the *color* is represented by **the average skill points**.
 
 As you can see, the main two colors used for this treemap are *RED* (**highest average of skill points**) and *GREEN* (**lowest average of skill points**). But we took into consideration color blind people and also personal preferences, so the application has available a color palette from which the user can choose any combination he likes.
 
-![colorpalette](./images/colorpalette.png)
+  ![colorpalette](./images/colorpalette.png)
 
 This color palette is defined like this in the code:
 
-```
-/* CODE FOR COLOR PALETTE */
+  ```
+  /* CODE FOR COLOR PALETTE */
   self.setPalette = (colors) => {
     self.highPalette = colors.map((o) => {
       let c = o.color;
@@ -202,16 +213,16 @@ This color palette is defined like this in the code:
 
 You can **FILTER** both treemaps by *manager*, *skills category*, *development area* (primary/secondary), *skill*, and *minimum skill level*.
 
-![cloudnativeskillstreemapfilter](./images/cloudnativeskillstreemapfilter.png)
+  ![cloudnativeskillstreemapfilter](./images/cloudnativeskillstreemapfilter.png)
 
 The filters are defined in the code like this:
 
-```
-/* SKILL LEVELS LIST - FILTER */
- self.skillLevelSelectVal = ko.observable('1');
- var skillLevelList = rootModel.skillLevelList();
- self.skillLevelDP = new ArrayDataProvider(skillLevelList, { keyAttributes: 'value' });
-```
+  ```
+  /* SKILL LEVELS LIST - FILTER */
+   self.skillLevelSelectVal = ko.observable('1');
+   var skillLevelList = rootModel.skillLevelList();
+   self.skillLevelDP = new ArrayDataProvider(skillLevelList, { keyAttributes: 'value' });
+  ```
 
 When you click on a box at your choice from one of the treemaps you will see details about the people that have a certain skill if you choose **Cloud Native Skills Treemap** or engineer details and Edit form if you choose the **Management Treemap**.
 
@@ -235,56 +246,56 @@ In order to explain the code part for this entry, the ADMIN role will be taken i
 The **ADMIN** user can see and do everything (**use and apply all filters**, **add**, **edit**, **delete**, **view** engineers, **view table** and **click on specific engineer**).
 All these elements can be found in the *skills.js* file for the JavaScript part and also in the skills.html for the HTML part. For example, filters are defined like this in *skills.js* file:
 
-```
-let mgrList = rootModel.managerListFilter();
-self.mgrSelected = ko.observable('All');
-self.mgrDP = new ArrayDataProvider(mgrList, { keyAttributes: 'value' });
-var managersList = rootModel.managerList();
-managerDP = new ArrayDataProvider(managersList, { keyAttributes: 'value' });
-```
+  ```
+  let mgrList = rootModel.managerListFilter();
+  self.mgrSelected = ko.observable('All');
+  self.mgrDP = new ArrayDataProvider(mgrList, { keyAttributes: 'value' });
+  var managersList = rootModel.managerList();
+  managerDP = new ArrayDataProvider(managersList, { keyAttributes: 'value' });
+  ```
 
 And they are mentioned in the *skills.html* file using the [_oj-select-single_](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=selectSingle&demo=states) items from OJET.
 
 If you click on a specific engineer you can *VIEW* his details and you can *EDIT* or *DELETE* his data if you have **ADMIN** role.
 
-![clickontable](./images/clickontable.png)
+  ![clickontable](./images/clickontable.png)
 
 This window is done based on a popup mechanism defined like this in the code:
 
-```
-/* CODE FOR POPUP WITH FORM */
-    self.formAnimationListener = function (event) {
-       ...
-    };
-    self.formOpenListener = function () {
-      if (self.selectedNodesEmployee().length != 0) {
-       ...
-    };
-    self.formCancelListener = function () {
-      var popup = document.getElementById('form-popup');
-      popup.close();
-       ...
-    };
-/* END OF CODE FOR POPUP WITH FORM */
-```
+  ```
+  /* CODE FOR POPUP WITH FORM */
+      self.formAnimationListener = function (event) {
+         ...
+      };
+      self.formOpenListener = function () {
+        if (self.selectedNodesEmployee().length != 0) {
+         ...
+      };
+      self.formCancelListener = function () {
+        var popup = document.getElementById('form-popup');
+        popup.close();
+         ...
+      };
+  /* END OF CODE FOR POPUP WITH FORM */
+  ```
 
 The **CREATE**, **EDIT**, **DELETE** buttons call specific functions defined in code. *POST* method is called for both *create* and *update* and *DELETE* method is called for *delete* functionality. Here is an example:
 
-```
-$.ajax({
-    url: createURL,
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify(json_var),
-    success: function (data) {
-        window.location.reload();
-        },
-    error: function (XMLHttpRequest, textStatus, errorThrown) {
-    alert("Action failed! Please check that there isn't another person added with this EMAIL address. If you believe this is not the case, please contact the ADMIN of the application!");
-          }
-  });
-...
-```
+  ```
+  $.ajax({
+      url: createURL,
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(json_var),
+      success: function (data) {
+          window.location.reload();
+          },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+      alert("Action failed! Please check that there isn't another person added with this EMAIL address. If you believe this is not the case, please contact the ADMIN of the application!");
+            }
+    });
+  ...
+  ```
 
 ***About Section***
 
@@ -301,100 +312,111 @@ This section contains **about.js** and **about.html** files that contain all the
 
 5. In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* for the database you previously created. This can be updated to use more different databases (OracleDB, NoSQL, MySQL and others) according to your needs, but keep in mind that the code for the APIs might need to be updated as well.
 
-```
-[   {
-    "name": "adb",
-    "description": "Autonomous JSON Database",
-    "ip": "your_ip",
-    "port": "your_port"
-    },
-    {
-    "name": "mysqldb",
-    "description": "MySQL Database",
-    "ip": "your_ip",
-    "port": "your_port"
-    }
-]
-```
+  ```
+  [   {
+      "name": "adb",
+      "description": "Autonomous JSON Database",
+      "ip": "your_ip",
+      "port": "your_port"
+      },
+      {
+      "name": "mysqldb",
+      "description": "MySQL Database",
+      "ip": "your_ip",
+      "port": "your_port"
+      }
+  ]
+  ```
 
 In _appController.js_ the default value for the database to be chosen is **adb**. If you want to change this, you should update the following code in _appController.js_ and set the default value of _dbNameParam_ to your own database name (the same as in the _db.json_ file).
-```
-...
-self.dbIP = ko.observable();
-self.dbPort = ko.observable();
-let dbNameParam = 'adb';
-...        
-```
+
+  ```
+  ...
+  self.dbIP = ko.observable();
+  self.dbPort = ko.observable();
+  let dbNameParam = 'adb';
+  ...        
+  ```
 
 6. In order to run the code, you need to upload it to the instance. You can use the following commands.
 
     **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
   * On the instance:
-  ```
-  <copy>
-  cd /home/opc
-  mkdir SkillsetTracking
-  </copy>
-  ```
+
+    ```
+    <copy>
+    cd /home/opc
+    mkdir SkillsetTracking
+    </copy>
+    ```
+
   To save output of the **npm** command into a _log_ file, you can create a new log folder.
-  ```
-  <copy>
-  cd /home/opc/SkillsetTracking
-  mkdir log
-  </copy>
-  ```
+
+    ```
+    <copy>
+    cd /home/opc/SkillsetTracking
+    mkdir log
+    </copy>
+    ```
+
   * On your local machine:
-  ```
-  <copy>
-  cd <project_folder_path>
-  rm node_modules
-  scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-  scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-  </copy>
-  ```
 
-  After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it manually with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**. Use the following commands to add it as a **crontab job**.
-  ```
-  <copy>
-  sudo crontab -e
-  </copy>
-  ```
-  Press ***insert*** to enter the _edit_ mode and paste the following. In this way, you will save the output of the ``node app.js`` command into _skillset\_log.log_ file.
-  ```
-  <copy>
-  @reboot node /home/opc/SkillsetTracker/app.js >> /home/opc/SkillsetTracker/log/skillset_log.log 2>&1
-  </copy>
-  ```
-  Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
-  ```
-  <copy>
-  sudo reboot
-  </copy>
-  ```
+    ```
+    <copy>
+    cd <project_folder_path>
+    rm node_modules
+    scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+    scp -r .env opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+    </copy>
+    ```
 
-  You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
+    After you uploaded the code on the instance, you need to run the ``npm install`` command in the application folder. Then you can either run it manually with ``node app.js``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**. Use the following commands to add it as a **crontab job**.
 
-## **Step 4:** Deploy the NodeJS API code in OKE
+      ```
+      <copy>
+      sudo crontab -e
+      </copy>
+      ```
+
+    Press ***insert*** to enter the _edit_ mode and paste the following. In this way, you will save the output of the ``node app.js`` command into _skillset\_log.log_ file.
+
+      ```
+      <copy>
+      @reboot node /home/opc/SkillsetTracker/app.js >> /home/opc/SkillsetTracker/log/skillset_log.log 2>&1
+      </copy>
+      ```
+
+    Press ***Esc***, then ***:wq***. After the crontab is saved, reboot the instance.
+
+      ```
+      <copy>
+      sudo reboot
+      </copy>
+      ```
+
+    You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
+
+## **STEP 4:** Deploy the NodeJS API code in OKE
 
 1. In order to deploy your API code in Kubernetes, you should follow all the steps described in **Lab 8: Deploy the application on OKE**, but instead of using the code you developed in **Lab 6**, you would use the code downloaded at the beginning of this Lab.
 
 2. After going through all these steps, you can go to your OracleJET project and update the IP in the _src/js/data/db.json_ file.
 
-```
-[   {
-    "name": "adb",
-    "description": "Autonomous JSON Database",
-    "ip": "kubernetes_cluster_external_ip",
-    "port": "your_port"
-    },
-    ...
-]
-```
+  ```
+  [   {
+      "name": "adb",
+      "description": "Autonomous JSON Database",
+      "ip": "kubernetes_cluster_external_ip",
+      "port": "your_port"
+      },
+      ...
+  ]
+  ```
 
-## **Step 5:** Integrate your application with ODA
+## **STEP 5:** Integrate your application with ODA
 
-1. In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Build NodeJS APIs to make calls to the database**, considering the fact that at **Step 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **Step 2** of this Lab, or the _External IP_ from **Step 4** in this Lab.
+1. In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Build NodeJS APIs to make calls to the database**, considering the fact that at **STEP 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **STEP 2** of this Lab, or the _External IP_ from **STEP 4** in this Lab.
 
 ## Annexes
 

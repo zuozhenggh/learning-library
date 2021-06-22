@@ -18,7 +18,7 @@ Estimated Lab Time: 1 hour
 * An existing compartment in which the ADB will reside.
 * SQL Developer Installed on your local machine.
 
-## **Step 1:** Understand the sample JSON files
+## **STEP 1:** Understand the sample JSON files
 In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
 
 Download the two sample JSON files [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/55cpQz2dELCpX3EcxqbQNvWEC4o3Q3LX0ZakL26g_goo_sydUz7K2get1-eJ-TL6/n/c4u03/b/labfiles/o/Lab4-Sample_JSON.zip).
@@ -29,21 +29,21 @@ As you can see in the snippet below, the JSON consists of a set of data about em
 
 As mentioned before, the keys in this JSON file can be customized in any way. An example would be to keep data regarding a list of products and product specifications.
 
-```
-[{
-  "product_name": "Smartphone X",
-  "brand": "Product Brand",
-  "code": "PROD12345",
-  "specifications":
-    [{
-      "spec_category": "Display",
-      "characteristics":
-        [{
-            "name": "Screen size (in inches)",
-            "value": 7
-          },
-   ...
-```
+  ```
+  [{
+    "product_name": "Smartphone X",
+    "brand": "Product Brand",
+    "code": "PROD12345",
+    "specifications":
+      [{
+        "spec_category": "Display",
+        "characteristics":
+          [{
+              "name": "Screen size (in inches)",
+              "value": 7
+            },
+     ...
+  ```
 
 The second JSON file (_sample\_users.json_) represents the data regarding some sample users for the application and will be used to emphasize the authorization in the application.
 
@@ -55,298 +55,323 @@ The users in the application presented will have 3 roles which will be determine
 | MANAGER | Y or N             | Y                |
 | USER    | N                  | N                |
 
-## **Step 2:** Create Autonomous JSON Database
+## **STEP 2:** Create Autonomous JSON Database
 
 In order to create an Autonomous JSON Database you must first login on the OCI Console, then follow the steps, as described below:
 
 1. In the top-left hamburger menu navigate to **Autonomous JSON Database** which can be found under **Oracle Database** category.
 
-![create ADB menu](./images/create-adb-menu.png)
+  ![create ADB menu](./images/create-adb-menu.png)
 
 2. Choose to create a new database by clicking **Create Autonomous Database**.
 
-![create ADB button](./images/create-adb-btn.png)
+  ![create ADB button](./images/create-adb-btn.png)
 
 3. Fill in the form by providing basic information for the ADB such as: compartment, display name and database name. For the workload type choose **JSON** and **Shared Infrastructure** for the deployment type.
 
-![create ADB form step 1](./images/create-adb-form-1.png)
+  ![create ADB form step 1](./images/create-adb-form-1.png)
 
- The database version is 19c with 1 OCPU count and 1TB of storage.
+  The database version is 19c with 1 OCPU count and 1TB of storage.
 
-![create ADB form step 2](./images/create-adb-form-2.png)
+  ![create ADB form step 2](./images/create-adb-form-2.png)
 
-Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access from everywhere**. Click **Create Autonomous Database**.
+  Choose a password for the ADMIN user of the database and for the network access type select **Allow secure access from everywhere**. Click **Create Autonomous Database**.
 
-![create ADB form step 3](./images/create-adb-form-3.png)
+  ![create ADB form step 3](./images/create-adb-form-3.png)
 
-## **Step 3:** Download database Wallet & connect to the database
+## **STEP 3:** Download database Wallet & connect to the database
+
 In order to connect to the database using SQL Developer, you must first download the wallet to your local machine.
 
 1. After the database has provisioned, click on the **DB Connection** button in the OCI Console to download the database wallet.
 
-![db connection button](./images/dbconnection-button.png)
+  ![db connection button](./images/dbconnection-button.png)
 
 2. Select **Instance Wallet** from the drop-down list, click **Download Wallet** and provide the password that you chose previously for ADMIN.
 
-![download wallet](./images/download-wallet.png)
+  ![download wallet](./images/download-wallet.png)
 
 3. Open SQL Developer and from the **Connections** window click on the green **+** sign to add a new connection.
 
-![SQL Developer new conection](./images/sql-developer-new-connection.png)
+  ![SQL Developer new conection](./images/sql-developer-new-connection.png)
 
-4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **Step 2 - Create Autonomous JSON Database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
+4. Provide a name for the connection (any name can be chosen) as well as the user (_ADMIN_) and the password you've set at **STEP 2: Create Autonomous JSON Database**. For the **Connection Type** choose **Cloud Wallet** from the drop-down list, browse to the location of the wallet zip file and select the desired service (here skillsetdb_high). Test the connection and if the test succeeds you can connect to the database.
 
-![SQL Developer conection form](./images/sql-developer-connection-form.png)
+  ![SQL Developer conection form](./images/sql-developer-connection-form.png)
 
-## **Step 4:** Create new database user and grant needed roles
+## **STEP 4:** Create new database user and grant needed roles
+
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
-1. Create user _SKILLSET_ with a password of your choice (here 'Password12345').
-```
-<copy>
-CREATE USER skillset IDENTIFIED BY Password12345;
-</copy>
-```
-2. Grant the needed roles for this user.
-```
-<copy>
-GRANT CONNECT TO skillset;
-GRANT CONNECT, RESOURCE TO skillset;
-GRANT CREATE SESSION TO skillset;
-GRANT UNLIMITED TABLESPACE TO skillset;
-GRANT CREATE VIEW TO skillset;
-GRANT SODA_APP TO skillset;
-GRANT EXECUTE ON DBMS_CLOUD TO skillset;
-GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO skillset;
-</copy>
-```
 
-## **Step 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
+1. Create user _SKILLSET_ with a password of your choice (here 'Password12345').
+  ```
+  <copy>
+  CREATE USER skillset IDENTIFIED BY Password12345;
+  </copy>
+  ```
+
+2. Grant the needed roles for this user.
+
+  ```
+  <copy>
+  GRANT CONNECT TO skillset;
+  GRANT CONNECT, RESOURCE TO skillset;
+  GRANT CREATE SESSION TO skillset;
+  GRANT UNLIMITED TABLESPACE TO skillset;
+  GRANT CREATE VIEW TO skillset;
+  GRANT SODA_APP TO skillset;
+  GRANT EXECUTE ON DBMS_CLOUD TO skillset;
+  GRANT READ, WRITE ON DIRECTORY DATA_PUMP_DIR TO skillset;
+  </copy>
+  ```
+
+## **STEP 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
+
 In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket. In this step you will need the two JSON files downloaded at the beginning of this lab (_sample\_skills.json_ and _sample\_users.json_).
 
 1. Log in on the OCI Console and from the top-left hamburger menu choose **Object Storage -> Object Storage**.
 
-![Object Storage menu](./images/object-storage-menu.png)
+  ![Object Storage menu](./images/object-storage-menu.png)
 
 2. Choose the option to **Create Bucket**.
 
-![Create bucket](./images/create-bucket-button.png)
+  ![Create bucket](./images/create-bucket-button.png)
 
 3. Set up a name for the bucket and select **Standard** for the Default Storage Tier field.
 
-![Create bucket](./images/create-bucket-form.png)
+  ![Create bucket](./images/create-bucket-form.png)
 
 4. After the bucket was created, navigate to **Objects** and click **Upload** then select the files to be uploaded.
 
-![Upload object](./images/upload-object.png)
+  ![Upload object](./images/upload-object.png)
 
 5. Create Pre-Authenticated Requests for each of these files as shown in the images below.
 
-![Create PAR URL 1](./images/create-par-button.png)
-![Create PAR URL 2](./images/create-par-form.png)
+  ![Create PAR URL 1](./images/create-par-button.png)
+  ![Create PAR URL 2](./images/create-par-form.png)
 
 6. Save the PAR URL somewhere. You will need it later and it will not be shown again. You should have two PAR URLs, one for the _sample\_skills.json_ file and one for _sample\_users.json_ file.
 
-![PAR URL](./images/create-par-result-url.png)
+  ![PAR URL](./images/create-par-result-url.png)
 
-## **Step 6:** Create SODA Collections
-Login in SQL Developer using the _**SKILLSET**_ user created at **Step 4 - Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
+## **STEP 6:** Create SODA Collections
+
+Login in SQL Developer using the _**SKILLSET**_ user created at **STEP 4: Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
 
 1. Create the _skills_ collection. Add in the following code the PAR URL for the _sample\_skills.json_ file.
-```
-<copy>
---CREATE SKILLS COLLECTION
-SET DEFINE OFF
-BEGIN
-DBMS_CLOUD.COPY_COLLECTION(
-collection_name => 'skillscollection',
-file_uri_list =>
-'<your_par_url_here>',
-format =>
-'{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
-END;
-/
-</copy>
-```
+
+  ```
+  <copy>
+  --CREATE SKILLS COLLECTION
+  SET DEFINE OFF
+  BEGIN
+  DBMS_CLOUD.COPY_COLLECTION(
+  collection_name => 'skillscollection',
+  file_uri_list =>
+  '<your_par_url_here>',
+  format =>
+  '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
+  END;
+  /
+  </copy>
+  ```
 2. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file
-```
-<copy>
---CHECK DATA IN COLLECTION
-SELECT a.*, json_serialize(a.json_document) json FROM skillscollection a;
-</copy>
-```
+
+  ```
+  <copy>
+  --CHECK DATA IN COLLECTION
+  SELECT a.*, json_serialize(a.json_document) json FROM skillscollection a;
+  </copy>
+  ```
+
 3. Using the same JSON, create another collection which will be later used for seeing the progress of skills. The following code is using the same PAR URL for the _sample\_skills.json_ file.
-```
-<copy>
---CREATE SKILLS ARCH/HISTORY COLLECTION (same json as skills collection)
-SET DEFINE OFF
-DECLARE
-collection SODA_COLLECTION_T;
-document SODA_DOCUMENT_T;
-cur SODA_CURSOR_T;
-status BOOLEAN;
-jsonClob CLOB;
-document2 SODA_DOCUMENT_T;
-new_doc SODA_DOCUMENT_T;
-BEGIN
-DBMS_CLOUD.COPY_COLLECTION(
-collection_name => 'skillsarch_collection',
-file_uri_list =>
-'<your_par_url_here>',
-format =>
-'{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
 
-collection := DBMS_SODA.open_collection('skillsarch_collection');
--- Open the cursor to fetch the documents
-cur := collection.find().get_cursor();
--- Loop through the cursor
-WHILE cur.has_next
-LOOP
-document := cur.next;
-IF document IS NOT NULL THEN
-jsonClob := json_query(document.get_blob, '$' PRETTY);
-jsonClob := substr(jsonClob, 0, length(jsonClob)-1) || ',"action":"INSERTED"}';
+  ```
+  <copy>
+  --CREATE SKILLS ARCH/HISTORY COLLECTION (same json as skills collection)
+  SET DEFINE OFF
+  DECLARE
+  collection SODA_COLLECTION_T;
+  document SODA_DOCUMENT_T;
+  cur SODA_CURSOR_T;
+  status BOOLEAN;
+  jsonClob CLOB;
+  document2 SODA_DOCUMENT_T;
+  new_doc SODA_DOCUMENT_T;
+  BEGIN
+  DBMS_CLOUD.COPY_COLLECTION(
+  collection_name => 'skillsarch_collection',
+  file_uri_list =>
+  '<your_par_url_here>',
+  format =>
+  '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
 
-document2 := SODA_DOCUMENT_T(
-b_content => utl_raw.cast_to_raw(jsonClob));
-new_doc := collection.find().key(document.get_key).replace_one_and_get(document2);
-END IF;
-END LOOP;
--- IMPORTANT: You must close the cursor, to release resources.
-status := cur.close;
-END;
-/
-</copy>
-```
+  collection := DBMS_SODA.open_collection('skillsarch_collection');
+  -- Open the cursor to fetch the documents
+  cur := collection.find().get_cursor();
+  -- Loop through the cursor
+  WHILE cur.has_next
+  LOOP
+  document := cur.next;
+  IF document IS NOT NULL THEN
+  jsonClob := json_query(document.get_blob, '$' PRETTY);
+  jsonClob := substr(jsonClob, 0, length(jsonClob)-1) || ',"action":"INSERTED"}';
+
+  document2 := SODA_DOCUMENT_T(
+  b_content => utl_raw.cast_to_raw(jsonClob));
+  new_doc := collection.find().key(document.get_key).replace_one_and_get(document2);
+  END IF;
+  END LOOP;
+  -- IMPORTANT: You must close the cursor, to release resources.
+  status := cur.close;
+  END;
+  /
+  </copy>
+  ```
+
 4. Create a unique index for the _skillscollection_ so that each employee's skills will only be added once, based on his/her email address.
 
-```
-<copy>
---CREATE SKILLS COLLECTION INDEX - UNIQUE EMAIL FIELD
-DECLARE
-collection SODA_COLLECTION_T;
-spec VARCHAR2(700);
-status NUMBER;
-BEGIN
--- Open the collection
-collection := DBMS_SODA.open_collection('skillscollection');
--- Define the index specification
-spec := '{"name" : "SKILLS_EMAIL_IDX1",
-"fields" : [{"path" : "email",
-"datatype" : "varchar2",
-"order" : "asc"}],
-"unique" : true}';
--- Create the index
-status := collection.create_index(spec);
-DBMS_OUTPUT.put_Line('Status: ' || status);
-END;
-/
-</copy>
-```
+  ```
+  <copy>
+  --CREATE SKILLS COLLECTION INDEX - UNIQUE EMAIL FIELD
+  DECLARE
+  collection SODA_COLLECTION_T;
+  spec VARCHAR2(700);
+  status NUMBER;
+  BEGIN
+  -- Open the collection
+  collection := DBMS_SODA.open_collection('skillscollection');
+  -- Define the index specification
+  spec := '{"name" : "SKILLS_EMAIL_IDX1",
+  "fields" : [{"path" : "email",
+  "datatype" : "varchar2",
+  "order" : "asc"}],
+  "unique" : true}';
+  -- Create the index
+  status := collection.create_index(spec);
+  DBMS_OUTPUT.put_Line('Status: ' || status);
+  END;
+  /
+  </copy>
+  ```
+
 5. Create the users collection.
-```
-<copy>
---CREATE USERS COLLECTION
-SET DEFINE OFF
-BEGIN
-DBMS_CLOUD.COPY_COLLECTION(
-collection_name => 'userscollection',
-file_uri_list =>
-'<your_par_url_here>',
-format =>
-'{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
-END;
-/
-</copy>
-```
+
+  ```
+  <copy>
+  --CREATE USERS COLLECTION
+  SET DEFINE OFF
+  BEGIN
+  DBMS_CLOUD.COPY_COLLECTION(
+  collection_name => 'userscollection',
+  file_uri_list =>
+  '<your_par_url_here>',
+  format =>
+  '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}' );
+  END;
+  /
+  </copy>
+  ```
+
 6. Run the following query to check the data in the collection. The collection should have the same data as the sample JSON file.
-```
-<copy>
---CHECK DATA IN COLLECTION
-SELECT a.*, json_serialize(a.json_document) json FROM userscollection a;
-</copy>
-```
+
+  ```
+  <copy>
+  --CHECK DATA IN COLLECTION
+  SELECT a.*, json_serialize(a.json_document) json FROM userscollection a;
+  </copy>
+  ```
+
 7. Create a unique index on the _email_ field so that each employee will only have one user defined in the application, based on his/her email address.
-```
-<copy>
---CREATE USERS COLLECTION INDEX - UNIQUE EMAIL FIELD
-DECLARE
-collection SODA_COLLECTION_T;
-spec VARCHAR2(700);
-status NUMBER;
-BEGIN
--- Open the collection
-collection := DBMS_SODA.open_collection('userscollection');
--- Define the index specification
-spec := '{"name" : "USER_EMAIL_IDX1",
-"fields" : [{"path" : "email",
-"datatype" : "varchar2",
-"order" : "asc"}],
-"unique" : true}';
--- Create the index
-status := collection.create_index(spec);
-DBMS_OUTPUT.put_Line('Status: ' || status);
-END;
-/
-</copy>
-```
 
-## **Step 7:** Create a view on a collection
+  ```
+  <copy>
+  --CREATE USERS COLLECTION INDEX - UNIQUE EMAIL FIELD
+  DECLARE
+  collection SODA_COLLECTION_T;
+  spec VARCHAR2(700);
+  status NUMBER;
+  BEGIN
+  -- Open the collection
+  collection := DBMS_SODA.open_collection('userscollection');
+  -- Define the index specification
+  spec := '{"name" : "USER_EMAIL_IDX1",
+  "fields" : [{"path" : "email",
+  "datatype" : "varchar2",
+  "order" : "asc"}],
+  "unique" : true}';
+  -- Create the index
+  status := collection.create_index(spec);
+  DBMS_OUTPUT.put_Line('Status: ' || status);
+  END;
+  /
+  </copy>
+  ```
+
+## **STEP 7:** Create a view on a collection
+
 The application is also using a view (called _SKILLSVIEW_) on the _skillscollection_ and since it would be hard to write the SQL script by hand, you can use the PL/SQL block below to dynamically build the **create view** script and execute it.
+
 1. Run the PL/SQL script to create the view
-```
-<copy>
---DYNAMICALLY CREATE VIEW ON SKILLS COLLECTION
-SET SERVEROUTPUT ON;
-BEGIN
-DECLARE
-query varchar2(4000);
-v_no_cols number;
-v_string varchar2(256);
-v_columns varchar2(4000);
-BEGIN
 
-select nvl((REGEXP_COUNT( skills_list, ',' ) + 1), 0) into v_no_cols from
-(select distinct a.json_document.areas.skills.skill skills_list from skillscollection a);
+  ```
+  <copy>
+  --DYNAMICALLY CREATE VIEW ON SKILLS COLLECTION
+  SET SERVEROUTPUT ON;
+  BEGIN
+  DECLARE
+  query varchar2(4000);
+  v_no_cols number;
+  v_string varchar2(256);
+  v_columns varchar2(4000);
+  BEGIN
 
-select upper(replace(replace(replace(REGEXP_REPLACE( substr(view_columns, 2, length(view_columns)-2), '[[:space:]]', '' ), '/', ''), '(', ''), ')', '')) cols into v_columns from
-(select distinct a.json_document.areas.skills.skill view_columns from skillscollection a);
+  select nvl((REGEXP_COUNT( skills_list, ',' ) + 1), 0) into v_no_cols from
+  (select distinct a.json_document.areas.skills.skill skills_list from skillscollection a);
 
-v_columns := '"ID", "CREATED_ON", "LAST_MODIFIED", "VERSION", "NAME", "EMAIL","MANAGER", "PRIMARY", "SECONDARY", ' || v_columns;
---DBMS_OUTPUT.PUT_LINE('v_columns='||v_columns);
-query := 'CREATE OR REPLACE VIEW SKILLSVIEW ('||v_columns||')AS
-(SELECT a.id, a.created_on, a.last_modified, a.version,
-a.json_document.name name,
-a.json_document.email email,
-a.json_document.manager manager,
-a.json_document.primary primary,
-a.json_document.secondary secondary, ';
+  select upper(replace(replace(replace(REGEXP_REPLACE( substr(view_columns, 2, length(view_columns)-2), '[[:space:]]', '' ), '/', ''), '(', ''), ')', '')) cols into v_columns from
+  (select distinct a.json_document.areas.skills.skill view_columns from skillscollection a);
 
-FOR I IN 1..v_no_cols LOOP
-IF I = 1 OR I = v_no_cols THEN
-v_string := 'REPLACE(REPLACE(REGEXP_SUBSTR(points, ''[^",]+'', 1, ' || i || '), ''['',''''), '']'','''') COL'||i||',';
-ELSE
-v_string := 'REGEXP_SUBSTR(points, ''[^",]+'', 1, ' || i || ') COL'||i||',';
-END IF;
-query := query || chr(13) || v_string;
-END LOOP;
+  v_columns := '"ID", "CREATED_ON", "LAST_MODIFIED", "VERSION", "NAME", "EMAIL","MANAGER", "PRIMARY", "SECONDARY", ' || v_columns;
+  --DBMS_OUTPUT.PUT_LINE('v_columns='||v_columns);
+  query := 'CREATE OR REPLACE VIEW SKILLSVIEW ('||v_columns||')AS
+  (SELECT a.id, a.created_on, a.last_modified, a.version,
+  a.json_document.name name,
+  a.json_document.email email,
+  a.json_document.manager manager,
+  a.json_document.primary primary,
+  a.json_document.secondary secondary, ';
 
-query := SUBSTR(query, 0, LENGTH(query) - 1);
-query := query || chr(13) || 'FROM (select b.id, b.json_document.areas.skills.value points from skillscollection b) t, skillscollection a WHERE t.id=a.id) order by name';
+  FOR I IN 1..v_no_cols LOOP
+  IF I = 1 OR I = v_no_cols THEN
+  v_string := 'REPLACE(REPLACE(REGEXP_SUBSTR(points, ''[^",]+'', 1, ' || i || '), ''['',''''), '']'','''') COL'||i||',';
+  ELSE
+  v_string := 'REGEXP_SUBSTR(points, ''[^",]+'', 1, ' || i || ') COL'||i||',';
+  END IF;
+  query := query || chr(13) || v_string;
+  END LOOP;
 
-DBMS_OUTPUT.PUT_LINE(query);
-EXECUTE IMMEDIATE query;
-END;
-END;
-/
-</copy>
-```
+  query := SUBSTR(query, 0, LENGTH(query) - 1);
+  query := query || chr(13) || 'FROM (select b.id, b.json_document.areas.skills.value points from skillscollection b) t, skillscollection a WHERE t.id=a.id) order by name';
+
+  DBMS_OUTPUT.PUT_LINE(query);
+  EXECUTE IMMEDIATE query;
+  END;
+  END;
+  /
+  </copy>
+  ```
+
 2. Run the following query to check the data in the view
-```
-<copy>
---CHECK DATA IN VIEW
-SELECT * FROM skillsview;
-</copy>
-```
+
+  ```
+  <copy>
+  --CHECK DATA IN VIEW
+  SELECT * FROM skillsview;
+  </copy>
+  ```
+
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 * [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)

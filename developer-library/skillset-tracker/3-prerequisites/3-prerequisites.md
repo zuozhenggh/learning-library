@@ -53,5 +53,7 @@ You should also add _C:\\oracle\\instantclient\_19\_9_ in your environment varia
 
 More information about Instant Client can be found [here](https://www.oracle.com/database/technologies/instant-client/).
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 **Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
