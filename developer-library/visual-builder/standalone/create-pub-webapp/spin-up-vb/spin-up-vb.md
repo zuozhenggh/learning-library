@@ -8,7 +8,11 @@ Estimated Lab Time:  5 minutes
 
 ### Background
 
-If you just created a new Cloud account following the instructions in Prerequisites, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder.  If you already had a Cloud account, you don't need to wait.  Either way, make sure you've signed into the Oracle Cloud before proceeding.
+If you just created a new Cloud account following the instructions in Getting Started, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to Oracle Cloud as an Oracle Identity Cloud Service (IDCS) user before proceeding.
+
+When you sign up for an Oracle Cloud account, a user is created for you in IDCS with the username and password you selected at signup. You can use this single sign-on option to sign in to Oracle Cloud Infrastructure and navigate to Visual Builder without reauthenticating.
+
+If you just created a new Cloud account, make sure you log out as you wait for your account to be provisioned. Log in only after you receive an email notification, saying that your account has been provisioned. You can use the "Sign in to Oracle Cloud" link in the email to log in as the IDCS user. If you log in using your Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.
 
 ## **STEP 1**: Create an Instance of Visual Builder
 
@@ -16,7 +20,7 @@ If you just created a new Cloud account following the instructions in Prerequisi
 
     ![](./images/hamburger.png)
 
-2.  Using the scroll bar on the left, scroll down until you see **Platform Services**.  Hover over it, then click **Visual Builder**:
+2.  Click **OCI Classic Services**, then select **Visual Builder**:
 
     ![](./images/platform.png)
 
@@ -40,4 +44,4 @@ If you just created a new Cloud account following the instructions in Prerequisi
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - January 2021
+**Last Updated** - June 2021
