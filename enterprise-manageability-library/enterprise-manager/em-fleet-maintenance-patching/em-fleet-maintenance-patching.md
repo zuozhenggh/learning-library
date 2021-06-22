@@ -137,7 +137,7 @@ This exercise enables us to analyze the database estate using Software Standardi
 
 3.  In the Databases targets page, click on ***Administration >> Software Standardization Advisor***
 
-    ![](images/6198ae4976d5ddad0fde0432c472e9e8.jpg " ")
+    ![](images/software-std-advisor.jpg " ")
 
 4.  Software Standardization Advisor shows two graphs depicting current configuration and recommended configuration.
 
