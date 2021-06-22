@@ -24,22 +24,23 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 If you already have a cloud account, skip to **STEP 2**.
 
 1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
-2.  You will be presented with a registration page.
+
+   You will be presented with a registration page.
        ![](images/cloud-infrastructure.png " ")
-3.  Enter the following information to create your Oracle Cloud Free Tier account.
+2.  Enter the following information to create your Oracle Cloud Free Tier account.
     * Choose your **Country**
     * Enter your **Name** and **Email**.
 
-4. Once you have entered a valid email address, select the **Verify my email** button.
+3. Once you have entered a valid email address, select the **Verify my email** button.
     The screen will appear as follows after you select the button:
        ![](images/verify-email.png " ")
 
-5. Go to your email. You will see an account validation email from Oracle in your inbox. The email will be similar to the following:
+4. Go to your email. You will see an account validation email from Oracle in your inbox. The email will be similar to the following:
        ![](images/verification-mail.png " ")
 
-6. Select the link (if possible) or copy and paste the link into your browser.
+5. Select the link (if possible) or copy and paste the link into your browser.
 
-7. Enter the following information to create your Oracle Cloud Free Tier account.
+6. Enter the following information to create your Oracle Cloud Free Tier account.
        * Choose a **Password**
        * Enter your **Company Name**
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
@@ -48,37 +49,39 @@ If you already have a cloud account, skip to **STEP 2**.
        ![](images/account-info.png " ")
 
 
-5.  Enter your Address information.  Click **Continue**.
+7.  Enter your Address information.  Click **Continue**.
           ![](images/free-tier-address.png " ")
 
-6.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
+8.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
 
        ![](images/free-tier-address-2.png " ")
 
-7. Once you receive your code, enter it and click **Verify My Code**.
+9. Once you receive your code, enter it and click **Verify My Code**.
        ![](images/free-tier-address-4.png " ")
 
-8. Click the **Add payment verification method** button.
+10. Click the **Add payment verification method** button.
        ![](images/free-tier-payment-1.png " ")  
 
-9.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
+11.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
        ![](images/free-tier-payment-2.png " ")
 
-10. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
+12. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
        ![](images/free-tier-agreement.png " ")
 
-11. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
+13. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
 ## **STEP 2**: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com). Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-oracle.png " ")
 
-2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
+2. Choose the [identity provider you want to use for sign-in](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/signinoptions.htm):   
+   - If you chose an Always Free trial,  click **Continue** to sign in using the *"oraclecloudidentityservice"*.
+   - If you want to use Oracle Cloud Infrastructure's Identity and Access Management Service (IAM), expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
 
     ![](images/cloud-login-tenant.png " ")
 
