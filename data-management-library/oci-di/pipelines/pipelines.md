@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to create an application, publish tasks and pipeline.
 
-Estimated Lab Time: 30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ## Objectives
 In this lab, you will:
@@ -20,7 +20,7 @@ In this lab, you will:
 
 ## **STEP 1:** Create an Application
 
-In OCI Data Integration, an Application is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
+In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
@@ -31,63 +31,48 @@ In OCI Data Integration, an Application is a container for published tasks, data
 ![](./images/create-app-tile.png " ")
 
 4. On the Applications page, enter "Workshop Application" for Name. You can optionally give a short description for your application, then click Create.
-create-app
+![](./images/create-app.png " ")
 
 5. The Application Details page for "Workshop Application" opens in a new tab.
-my-app
+![](./images/my-app.png " ")
 
 ## **STEP 2:** Publish the Integration task and Data Loader task into the Application
 
-Step 1 opening paragraph.
+In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
 1. From the Application Details you are currently in, click on Open tab (plus icon) in the tab bar and select Projects.
-tab-projects
+![](./images/tab-projects.png " ")
 
 2. Select your DI_Workshop project from the projects list.
-di-workshop
+![](./images/di-workshop.png " ")
 
 3. In the Tasks list, from the Actions icon (three dots) for Load Customers Lab, select Publish to Application.
-In the Publish to Application dialog, select Lab Application.
-Click Publish.
-You can modify the task or edit its data flow without impacting the published task. This enables you to test a version of your data flow, while working on some new changes.
+![](./images/publish-to-app.png " ")
 
-You can now go to Lab Application to run your published task.
+4. In the Publish to Application dialog, select Workshop Application and then click Publish.
+*Note:You can modify the task or edit its data flow without impacting the published task. This enables you to test a version of your data flow, while working on some new changes.*
+![](./images/app-publish.png " ")
+
+5. You will publish now the Data Loader task that you created in the previous lab. From your DI_Workshop project page you are currently in, in the Tasks list, from the Actions icon (three dots) for Load Revenue Data into Data Warehouse, select Publish to Application.
+![](./images/publish-app-new.png " ")
+
+6. In the Publish to Application dialog, select Workshop Application and then click Publish.
+![](./images/app-publish.png " ")
+
+7. You can now go to your Workshop Application to see your published task. On your workspace Home page, click Open tab (plus icon) in the tab bar, select Applications.
+![](./images/plus-apps.png " ")
+
+8. Select you Workshop Application from the list of applications.
+![](./images/workshop-apps.png " ")
+
+9. You can now see the list of published tasks inside your Workshop Application.
 
 ## **STEP 3:** Create a Pipeline
-A pipeline is a design-time resource in Data Integration for connecting a set of tasks and activities in a sequence from start to finish.
 
-1. On the workspace home page, from the Quick Actions tile, select Create Pipeline.
-Alternatively, you can navigate to a project or folder and then click Create Pipeline from the Pipelines section of the project or folder details page.
+## **STEP 4:** Create a Pipeline task
 
-2. Under the Details tab of the Properties panel for the pipeline, enter a Name and Description (optional).
+## **STEP 5:** Publish the Pipeline Task
 
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 *At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).

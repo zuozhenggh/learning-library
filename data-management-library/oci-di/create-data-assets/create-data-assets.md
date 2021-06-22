@@ -253,7 +253,7 @@ alter user BETA quota 200M on data;</copy>
 A success or failure message displays, indicating whether the test was successful or not. If the test fails, review your connection settings and try again.
 ![](./images/test-os-conn.png " ")
 
-8. Click Create.
+8. Click **Create**.
 ![](./images/create-asset.png " ")
 
 *At the conclusion of the lab add this statement:*
