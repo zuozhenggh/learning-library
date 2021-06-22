@@ -243,7 +243,7 @@ Some values need to be unique, so how do we enforce this?
 	</copy>
 	```
 
-	![](./images/id100.png)
+	![](./images/id100-2.png)
 
 	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
 
