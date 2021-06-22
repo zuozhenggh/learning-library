@@ -18,13 +18,12 @@ This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* The following are required to complete this lab:
-    * Source and Target connections are created as described in **Lab: Create Datasource Connections**.
-    * Groups and Compare Pairs are configured as described in **Lab: Create Groups and Compare Pairs**.
+    * Lab: Create Datasource Connections
+    * Lab: Create Groups and Compare Pairs
 
 ## **STEP 1**: Create a Job for the Compare Pair Group
   To create a job:
@@ -53,7 +52,7 @@ To execute a job:
 5. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
     ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
 
-You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-repair-data)
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -64,5 +63,5 @@ You may now [proceed to the next lab](https://oracle.github.io/learning-library/
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-* **Last Updated By/Date** - Anuradha Chepuri, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
