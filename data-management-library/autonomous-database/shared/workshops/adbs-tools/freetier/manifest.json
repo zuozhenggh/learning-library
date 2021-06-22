@@ -26,7 +26,11 @@
             "title": "Lab 3: Use Autonomous Database Tools",
             "description": "Using Autonomous Database Tools",
             "filename": "../using-adb-tools/using-adb-tools.md"
-        },
+        },        {
+          "title": "Lab X: Working with Spatial Analysis",
+          "description": "Using Autonomous Database Tools",
+          "filename": "../working-with-spatial/working-with-spatial.md"
+      },
         {
           "title": "Need Help?",
           "description": "Solutions to Common Problems and Directions for Receiving Live Help",
