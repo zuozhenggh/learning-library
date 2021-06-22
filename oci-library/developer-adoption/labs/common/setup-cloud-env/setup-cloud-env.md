@@ -30,7 +30,7 @@ Estimated time: 20 minutes
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
 
 1. From this screen, you will see a list of compartments, click **Create Compartment**.
 
@@ -57,8 +57,7 @@ Now you are ready to move on to Step 3.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Kubernetes Clusters (OKE)**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-OKE.png " ")
-
+ ![OKE](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-OKE.png " ")
 
 1. Verify you are in the **AppDev** Compartment and click **Create Cluster**.
 
@@ -68,7 +67,7 @@ Now you are ready to move on to Step 3.
 
    ![Quick Create Cluster](images/OKE-create-cluster.png " ")
 
-1. Keep the name to **cluster1** and the other default values, click Next to review the cluster settings. Do not choose the Kubernetes API Endpoint to be _Private Endpoint_ or you will need a bastion or an admin instance to access the kubectl commands. You can explore Private Endpoint on an expecific lab.
+1. Keep the name to **cluster1** and the other default values, click Next to review the cluster settings. Do not choose the Kubernetes API Endpoint to be _Private Endpoint_ or you will need a bastion or an admin instance to access the kubectl commands. You can explore Private Endpoint on an specific lab.
 <sup>_Optionally choose visibility of the Kubernetes Worker Nodes to **Public Workers** if you want public access to your nodes and number of nodes to **2** or **1** if you want reduced number of nodes_</sup>
 
 Keep the name to cluster1 and the other default values, click Next to review the cluster settings

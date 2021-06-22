@@ -12,6 +12,7 @@ Estimated time: 10 minutes
 - Create a compartment if not done yet.
 - Create a VCN if not done yet.
 - Create the policies to use Oracle Functions and to allow Functions to use OCI resources.
+- Create a Dynamic Group.
 
 ### Prerequisites
 
@@ -39,15 +40,15 @@ Log in to the Console as a **tenancy administrator** and under Governance and Ad
 1. For description, enter `Policy for Functions`.
 1. Click on **Customize (Advanced)** link and paste the policy statements into the Policy Builder field:
 
-  ```
-  <copy>
-  Allow group <group-name> to read metrics in tenancy
-  Allow group <group-name> to read objectstorage-namespaces in tenancy
-  Allow group <group-name> to use virtual-network-family in tenancy
-  Allow group <group-name> to manage functions-family in tenancy
-  Allow group <group-name> to use cloud-shell in tenancy
-  </copy>
-  ```
+    ```shell
+    <copy>
+    Allow group <group-name> to read metrics in tenancy
+    Allow group <group-name> to read objectstorage-namespaces in tenancy
+    Allow group <group-name> to use virtual-network-family in tenancy
+    Allow group <group-name> to manage functions-family in tenancy
+    Allow group <group-name> to use cloud-shell in tenancy
+    </copy>
+    ```
 
 1. Click **Create**.
 
@@ -55,11 +56,36 @@ Log in to the Console as a **tenancy administrator** and under Governance and Ad
 
 Make sure the user is part of the group referenced in the policy statements above. To create groups and add users to groups, refer to [Create a group](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm#To).
 
+## **STEP 4:** Create a Dynamic Group
+
+To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
+
+Before you create a dynamic group, you need to get your development compartment OCID. You will use the compartment OCID in the dynamic group matching rule.
+
+1. Open the navigation menu, select **Identity**, and then **Compartments**.
+1. Find your development compartment from the list, hover over the cell in the OCID column and click **Copy**, to copy the compartment OCID to your clipboard.
+1. Store the compartment OCID as you will use it soon.
+
+  Now you're ready to create a dynamic group.
+
+1. To create a dynamic group, open the navigation menu, select **Identity**, and then **Dynamic Groups**.
+1. Click **Create Dynamic Group**.
+1. For name, enter `functions-dynamic-group`.
+1. For description, enter `Group with all functions in a compartment`.
+1. To select the functions that belong to the dynamic group, [write matching rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Writing). Write the following matching rule that includes all functions within a compartment you created your application in:
+
+    ```shell
+    <copy>
+    All {resource.type = 'fnfunc', resource.compartment.id = 'ocid1.compartment.oc1..example'}
+    </copy>
+    ```
+
+  *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Author** - Greg Verstraeten
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
-- **Last Updated By/Date** - Adao Junior, October 2020
-
+- **Last Updated By/Date** - Adao Junior, June 2021
