@@ -27,7 +27,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 1:** Re-Design and Create the Demo Schema
+## **STEP 1:** Re-Design and Create the Demo Schema
 
 Before the existing database can be migrated to the sharded database, you must decide how to organize the sharded database. You must decide which tables in the application are sharded and which tables are duplicated tables. In this lab, we have already created a scripts for the sharded demo schema. It creates a sharded table family: `Customers-->Orders-->LineItems` using the sharding key `CustId`, and the `Products` is the duplicated table.
 
@@ -429,7 +429,7 @@ Before the existing database can be migrated to the sharded database, you must d
 
    
 
-## **Step 2:** Verify the Sharded Demo Schema
+## **STEP 2:** Verify the Sharded Demo Schema
 
 Now, we can verify the sharded demo schema which created in the previous step. 
 
@@ -819,7 +819,7 @@ Now, we can verify the sharded demo schema which created in the previous step.
 
 
 
-## **Step 3:** Migrate Data to the Sharded Tables
+## **STEP 3:** Migrate Data to the Sharded Tables
 
 Now, we will load data into sharded database using the dump file which created in the previous lab. 
 
@@ -964,7 +964,7 @@ Loading the data directly into the database shards is much faster, because each 
 
    
 
-## **Step 4:** Setup and Run the Demo Application
+## **STEP 4:** Setup and Run the Demo Application
 
 Migrate application to the sharded database a slight change to the application code.  In this workshop, the demo application is designed for sharded database. You need to create additional objects needed by the demo application.
 
@@ -1289,14 +1289,10 @@ Migrate application to the sharded database a slight change to the application c
 
      
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Contributors** -  
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Apr 2021
+* **Last Updated By/Date** - Minqiao Wang, Jun 2021
 * **Workshop Expiry Date** - 25 April 2022
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-

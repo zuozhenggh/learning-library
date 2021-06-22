@@ -25,7 +25,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 1:** Create a Non-Shard Service
+## **STEP 1:** Create a Non-Shard Service
 
 1. Connect to the shard3 host, switch to the oracle user.
 
@@ -139,7 +139,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 2:** Create the Demo Schema
+## **STEP 2:** Create the Demo Schema
 
 1. Still in the shard3 host with oracle user. Download the SQL script `nonshard-app-schema.sql`.
 
@@ -458,7 +458,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 3:** Setup and Run the Demo Application
+## **STEP 3:** Setup and Run the Demo Application
 
 1. Connect to the catalog host, switch to the oracle user.
 
@@ -942,7 +942,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 4:** Export the Demo Data and Copy DMP File
+## **STEP 4:** Export the Demo Data and Copy DMP File
 
 In this step, you will export the demo application data and copy the dmp file to the catalog and each of the shard hosts. You will import the data to the shard database in the next lab.
 
@@ -1161,14 +1161,11 @@ In this step, you will export the demo application data and copy the dmp file to
 
     
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Contributors** -  
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Apr 2021
+* **Last Updated By/Date** - Minqiao Wang, Jun 2021
 * **Workshop Expiry Date** - 25 April 2022
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
 
