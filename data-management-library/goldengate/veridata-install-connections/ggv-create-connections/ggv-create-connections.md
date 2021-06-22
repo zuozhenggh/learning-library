@@ -20,12 +20,10 @@ This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* The following are required to complete this lab:
-    * Oracle Database 19c (19.3.0.0) (for the repository)
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
@@ -45,13 +43,24 @@ This lab assumes you have:
       OR
 
     ```
-  <copy>
-  http://veridata.livelabs.oraclevcn.com:8830/veridata/login.jsf
-  </copy>
+    <copy>
+    http://veridata.livelabs.oraclevcn.com:8830/veridata/login.jsf
+    </copy>
     ```
   2. Enter your login credentials:
-      * **username**: ggadm
-      * **Password**: welcome1
+      * **username**
+    ```
+    <copy>
+    ggadm
+    </copy>
+    ```
+
+      * **Password**
+    ```
+    <copy>
+    welcome1
+    </copy>
+    ```
 
     ![](./images/1-login-veridata.png " ")
   3. Click **Login**.
@@ -110,14 +119,13 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
-You may now [proceed to the next lab](https://oracle.github.io/learning-library/data-management-library/goldengate/veridata-install-connections/workshops/freetier/?lab=ggv-create-groups-compare-pairs).
+You may now [proceed to the next lab](#next).
 
 ## Learn More
-
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)
 
 ### Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-* **Last Updated By/Date** - Anuradha Chepuri, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021

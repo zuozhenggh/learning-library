@@ -2,7 +2,7 @@
 
 ## About this Workshop                             
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
+The labs in this workshop walk you through several use cases with Oracle GoldenGate Veridata, including: Create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
 
 *Estimated Lab Time*: 4 hours
 
@@ -25,6 +25,8 @@ In this lab, you will:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
 
+You may now [proceed to the next lab](#next).
+
 ## Learn More
 
 Use these links to get more information about Oracle GoldenGate Veridata:
@@ -35,5 +37,5 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
