@@ -1,3 +1,4 @@
+/* DELETE THIS FILE IN THE NEXT RELEASE */
 # Provision an Autonomous Database (ADW and ATP)
 
 ## Introduction
