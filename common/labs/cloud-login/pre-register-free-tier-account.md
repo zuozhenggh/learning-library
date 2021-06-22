@@ -42,9 +42,13 @@ If you already have a cloud account, skip to **STEP 2**.
 
 6. Enter the following information to create your Oracle Cloud Free Tier account.
        * Choose a **Password**
+
        * Enter your **Company Name**
+
        * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
+
        * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
+       
        * Click **Continue**
        ![](images/account-info.png " ")
 
@@ -92,7 +96,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
      ![](images/oci-signin-single-signon.png " ")
 
    - Direct sign-in:
-   
+
      ![](images/oci-signin.png " ")
 
 4. You are now signed in to Oracle Cloud!
