@@ -5,17 +5,15 @@
 In this lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 Estimates Lab Time - 25 minutes
+<if type="multicloud-freetier">
+- Estimates Lab Time - 25 minutes
++ Estimates Lab Time - 25 minutes
+</if>
 
 ### Objectives
 
 * Clone the setup and microservices code
 * Execute setup
-
-### Prerequisites
-
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](#previous).
-
-Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
 ## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
 
@@ -82,7 +80,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.6.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -118,7 +116,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    The setup process will typically take around 20 minutes to complete.  
 
-2. The setup will ask for you to enter your User OCID.  This can be found in the OCI console.
+2. The setup will ask for you to enter your User OCID.  
+
+   Be sure to provide the user OCID and not the user name or tenancy OCID.
+
+   The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
+
+   This can be found in the OCI console.  Note that in some cases the name link may be inactive in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
   ![](images/get-user-ocid.png " ")
 
@@ -177,7 +181,7 @@ Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, 
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

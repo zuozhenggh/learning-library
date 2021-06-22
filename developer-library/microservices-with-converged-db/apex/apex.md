@@ -6,11 +6,9 @@ This lab will show you how to create an APEX application that will help make sen
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
 [](youtube:ITtdiqX8nWQ)
-</if>
 
 ### Objectives
 
@@ -139,7 +137,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
     ![](images/app-home-page.png)
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Author** - Paul Parkinson, Developer Evangelist
                Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
