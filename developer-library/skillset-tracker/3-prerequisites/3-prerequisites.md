@@ -1,8 +1,12 @@
 # Prerequisites
 
+## Introduction
+
 In order to complete the following labs you might need to install some of the following tools, if you don't already have them installed on your local machine.
 
-## Objectives
+Estimated Lab Time: 30 minutes
+
+### Objectives
 * Install SQL Developer.
 * Install and configure OCI CLI to connect to OCI.
 * Install and configure Docker.
@@ -41,11 +45,11 @@ Go to [nodejs.org](https://nodejs.org/en/download/) and download the proper pack
 ## [Optional] Installing OracleJET Tools
 
 After installing **NodeJS** open a command line window and run the following command. You might need administration rights to run them.
-```
-<copy>
-npm install -g @oracle/ojet-cli
-</copy>
-```
+  ```
+  <copy>
+  npm install -g @oracle/ojet-cli
+  </copy>
+  ```
 ## [Optional] Installing Oracle Instant Client
 Go to [oracle.com](https://www.oracle.com/database/technologies/instant-client/downloads.html) and download the proper package for your operating system. Create a new folder for it (for example _C:\\oracle_). Extract the downloaded archive and copy the contents into this folder. Now, if you navigate to _C:\\oracle\\instantclient\_19\_9_ you should be able to see a _network\\admin_ folder. This is the folder in which you would need to copy the wallet files to connect to the database. If you don't have these two folders, you need to create them.
 
