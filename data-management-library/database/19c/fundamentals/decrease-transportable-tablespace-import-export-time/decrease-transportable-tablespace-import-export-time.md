@@ -385,6 +385,5 @@ $
 
 ## Acknowledgements
 
-* **Dominique Jeunot's, Consulting User Assistance Developer**
-* **Blake Hendricks, Solutions Engineer, 6/17/21**
-* **Workshop (or Lab) Expiry Date**
+* **Author: Dominique Jeunot's, Consulting User Assistance Developer**
+* **Last Updated By: Blake Hendricks, Solutions Engineer, 6/17/21**

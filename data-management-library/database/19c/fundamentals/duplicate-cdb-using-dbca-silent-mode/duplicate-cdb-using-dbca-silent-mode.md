@@ -175,7 +175,5 @@ $ORACLE_HOME/bin/dbca -silent -deleteDatabase -sourceDB CDBOMF19 -sid CDBOMF19 -
 
 
 ## Acknowledgements
-* **Dominique Jeunot's, Consulting User Assistance Developer**
-* **Blake Hendricks, Solutions Engineer, 6/17/21**
-* **Workshop (or Lab) Expiry Date**
-- *Use [this](https://objectstorage.us-phoenix-1.oraclecloud.com/p/HWhZWTLneCryKP_gbTQh2fD-pvW480ay6aXRC06GmfwzEVEJfu9UCCSAdIuUQHcN/n/axfqugam48cs/b/livelabs/o/hr.sql) when you are using a Pre-Authorized Request (PAR) URL to an object in*
+* **Primary Author: Dominique Jeunot's, Consulting User Assistance Developer**
+* **Last Updated By: Blake Hendricks, Solutions Engineer, 6/17/21**
