@@ -741,4 +741,4 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
