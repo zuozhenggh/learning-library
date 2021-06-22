@@ -18,11 +18,38 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1:** Create compartment
+## **STEP 1:** Log into OCI Tenancy
+
+   Log in to your OCI dashboard and retrieve information required to create resources.
+
+1. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
+
+  ![Landing Screen](../../common/setup-cloud-env/images/landingScreen2.png " ")
+
+## **STEP 2:** Create compartment
 
 If you want to use an existing compartment, skip to the next step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 
-## **STEP 2:** Create VCN and subnets
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+
+1. From this screen, you will see a list of compartments, click **Create Compartment**.
+
+   ![Compartment Screen](../../common/setup-cloud-env/images/compartmentScreen.png " ")
+
+1. Enter the following:
+      - Name: Enter **"AppDev".**
+      - Description: Enter a description (required), for example: "AppDev compartment for the getting started tutorial". Avoid entering confidential information.
+      - Parent Compartment: Select the compartment you want this compartment to reside in. Defaults to the root compartment (or tenancy).
+      - Click **Create Compartment**.
+      - Your compartment is displayed in the list.
+
+  ![AppDev Compartment](../../common/setup-cloud-env/images/compartment-create.png " ")
+
+Now you are ready to move on to Step 3.
+
+## **STEP 3:** Create VCN and subnets
 
 If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and under Core Infrastructure, go to **Networking** and then:
 
@@ -30,7 +57,9 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 1. Click **Start VCN Wizard**, then **VCN with Internet Connectivity**, then **Start VCN Wizard**.
 1. Enter a name for the new VCN (for example: `fn-vcn`), click **Next**, and then click **Create** to create the VCN along with the related network resources.
 
-## **STEP 3:** Create policy for Oracle Functions
+  ![Create VCN Animation](images/create-fn-vcn.gif " ")
+
+## **STEP 4:** Create policy for Oracle Functions
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, go to **Identity** and click **Policies** and then do the following:
 
@@ -56,7 +85,7 @@ Log in to the Console as a **tenancy administrator** and under Governance and Ad
 
 Make sure the user is part of the group referenced in the policy statements above. To create groups and add users to groups, refer to [Create a group](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm#To).
 
-## **STEP 4:** Create a Dynamic Group
+## **STEP 5:** Create a Dynamic Group
 
 To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 
