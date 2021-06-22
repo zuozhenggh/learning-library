@@ -58,4 +58,3 @@ Please submit feedback or ask for help using our [LiveLabs Support Forum](https:
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 
-
