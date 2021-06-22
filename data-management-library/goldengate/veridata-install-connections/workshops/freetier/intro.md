@@ -2,7 +2,7 @@
 
 ## About this Workshop                             
 
-The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, and generate SQL files.
+The labs in this workshop walk you through all the steps to install Oracle GoldenGate Veridata, create datasoure connections, create groups, configure compare pairs, create and execute jobs, view reports, repair data, generate SQL files, and also use the Veridata command line utilities, such as Export, Import tools, Veridata GoldenGate Parameter Processing program, and run jobs using the Vericom tool.
 
 *Estimated Lab Time*: 4 hours
 

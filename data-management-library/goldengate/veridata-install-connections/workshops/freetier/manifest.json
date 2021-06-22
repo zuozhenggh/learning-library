@@ -68,8 +68,14 @@
               }
               ,
               {
+                  "title": "Lab: Use the Oracle GoldenGate Veridata Command-line Utilities ",
+                  "description": "This lab walks you through the steps to view comparision Reports.",
+                  "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
+              }
+              ,
+              {
                     "title": "Lab: Install and Configure Oracle GoldenGate Veridata (Optional)",
-                    "description": "This lab walks you through the required and optional tasks to install Oracle GoldenGate Veridata.",
+                    "description": "This lab describes how to accomplish the following tasks using Oracle GoldenGate Veridata command-line utilities.",
                     "filename": "./../../ggv-install-veridata/ggv-install-veridata.md"
               }
               ,
