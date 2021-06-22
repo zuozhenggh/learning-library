@@ -80,12 +80,17 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
     ![](images/cloud-oracle.png " ")
 
 2. Choose the [identity provider you want to use for sign-in](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/signinoptions.htm):   
-   - If you chose an Always Free trial,  click **Continue** to sign in using the *"oraclecloudidentityservice"*.
+   - If you chose an Always Free trial, click **Continue** to sign in using the *"oraclecloudidentityservice"*.
+       ![](images/cloud-login-tenant-single-sigon.png " ")
+
    - If you want to use Oracle Cloud Infrastructure's Identity and Access Management Service (IAM), expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
 
     ![](images/cloud-login-tenant.png " ")
 
 3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+   - Single sign-on:
+   ![](images/oci-signin.png " ")
+   - Direct sign-in:
 
     ![](images/oci-signin.png " ")
 
