@@ -183,30 +183,30 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     The noVNC desktop is displayed.
 
 
-## **STEP 6**: Download the labs files for this workshop
+## **STEP 6**: Download the lab files for this workshop
 
 1. On the noVNC desktop, open a terminal window.
 
-2. Create a `/home/oracle/labs` directory and switch to it.
+2. Create a `/home/oracle/labs/19cnf` directory and switch to it.
 
     ```
     $ mkdir ~/labs/19cnf
     $ cd ~/labs/19cnf
     ```
 
-3. Download the script files for this workshop into the `labs` directory.
+3. Download the lab files into the `19cnf` directory.
 
     ```
-    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/Jb7Cv2BroNwiNB9iZsv5W3bTlrAbMCW6JooCMZ-qEEFT-M1LKaBwb-8u9k4-Cnq4/n/c4u03/b/ll-19c/o/19c-new-features-lab-files.zip
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/7dgNGKXZqAlG_W04kW_i6VV4yDZWLNY5Mkw8Z-Bfd1AJhnQCH6TlJmAdmYDuCYKr/n/frmwj0cqbupb/b/19cNewFeatures/o/19c-new-features-lab-files.zip
     ```
 
 4. Extract the ZIP file in the `19cnf` directory.
 
     ```
-    $ unzip -q 19cNewFeatures.zip
+    $ unzip -q 19c-new-features-lab-files.zip
     ```
 
-5. Verify that you have 26 files in the `/home/oracle/labs/19cnf` directory:
+5. Verify that you have 27 files.
 
     ```
     ls
