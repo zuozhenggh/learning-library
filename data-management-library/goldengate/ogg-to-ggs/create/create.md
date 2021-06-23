@@ -1,143 +1,103 @@
-# Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
+# Create the Oracle Cloud Infrastructure GoldenGate Deployment
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate wallet.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate Deployment.
 
 Estimated Lab Time: 5 minutes
 
-
-### Before You Begin
-
-To successfully complete this lab, you must have:
-
-* An on premise or Marketplace Oracle GoldenGate instance running
-* The URL and log in credentials for the Oracle GoldenGate Service Manager
-* The log in credentials for the OCI GoldenGate Deployment Console
+### About Oracle Cloud Infrastructure GoldenGate Deployments
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
 
 ### Objectives
 
 In this lab, you will:
-* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
-* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
+* Locate Oracle Cloud Infrastructure GoldenGate in the Console
+* Create a OCI GoldenGate deployment
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
 
-## **STEP 1A**: Using Chrome to Download the Root Certificate
+### Prerequisites
 
-The following instructions show you how to download the Root Certificate using a Chrome web browser.
+This lab assumes that you completed all preceding labs.
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+## **STEP 1**: Create a Deployment
 
-2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
+*Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
-    ![Certificate](images/01-04-certificate.png)
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-3.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
+		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
 
-    Another Certificate window opens, displaying the details for the root DigiCert certificate.
+    You're brought to the **Deployments** page.
 
-    ![DigiCert Root](images/01-04-digicert.png)
+    ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-4.  Click **Details**, and then click **Copy to File**.
+2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL1234-user, select the compartment **LL1234-COMPARTMENT**.
 
-    ![Copy to File](images/01-05.png)
+2.  On the Deployments page, click **Create Deployment**.
 
-5.  In the Certificate Export Wizard, click **Next**.
+    ![Click Create Deployment](images/01-02-01.png "Create a deployment")
 
-6.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+3.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-    ![Base-64](images/01-07.png)
+4.  From the Compartment dropdown, select a compartment.
 
-7.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+5.  For OCPU Count, enter **2**.
 
-8.  Click **Next**, and then click **Finish**.
+6.  For Subnet, select **Public Subnet**.
 
-A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
+7.  For License type, select **Bring You Own License (BYOL)**.
 
-## **STEP 1B:** Using FireFox to Download the Root Certificate
+8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-The following instructions show you how to download the Root Certificate using a FireFox web browser.
+    ![Create GoldenGate Deployment](images/02_07_ggs-createdeployment.png "Create GoldenGate Deployment")
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+9.  Click **Next**.
 
-2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
+10. For GoldenGate Instance Name, enter **ogginstance**.
 
-    ![Show connection details](images/01b-02.png)
+11. For Administrator Username, enter **oggadmin**.
 
-3.  In the **Connection Security** dialog, click **More information**.
+12. For Administrator Password, enter a password. Take note of this password.
 
-    ![More information](images/01b-03.png)
+13. Click **Create**.
 
-4.  In the **Page info** window, click **View Certificate**.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-    ![Page info](images/01b-04.png)
+## **STEP 2:** Review the Deployment details
 
-5.  On the **Certificate** page, click **DigiCert Global Root CA**.
+On the Deployment Details page, you can:
 
-    ![Certificate page](images/01b-05.png)
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
 
-6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
+    ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-    ![Download PEM](images/01b-06.png)
+## **STEP 3:** Launch the GoldenGate Deployment Console
 
-## **STEP 2:** Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
+1. When the deployment is active, click **Launch Console**.
 
-1.  Open the on premise or Marketplace Oracle GoldenGate Service Manager in a browser window.
+    ![Launch Console](images/04-01-ggs-launchconsole.png)
 
-2.  In the navigation menu (hamburger icon), click **Certificate Management**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
-    ![Certificate Management](images/02-01-certmgmt.png)
+    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
 
-3.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
+After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-    ![Add CA Certificates](images/02-03-addcert.png)
+In this lab, you created an OCI Deployment and reviewed its Deployment details. You can now proceed to the next [lab](#next).
 
-4.  In the Add CA Certificate dialog, enter a **Unique Name**.
+## Learn More
 
-    ![Unique Name](images/02-04-addcertdialog.png)
-
-5.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
-
-    ![Enter Certificate](images/02-05-entercert.png)
-
-6.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
-
-    ![Upload Certificate](images/02-06-uploadcert.png)
-
-7.  Click **Add**.  The certificate now appears in the Shared list.
-
-    ![Shared Certificates](images/02-07-certlist.png)
-
-## **STEP 3:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
-
-1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
-
-    ![](images/03-01.png)
-
-2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
-
-    ![](images/03-02.png)
-
-    ![](images/03-02b.png)
-
-3.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server, and then use the Navigation menu to open the **Configuration** screen.
-
-4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
-
-    * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-    * For **Credential Alias**,  enter a name
-    * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
-    * For **Password**, enter the password associated to the user entered for User ID.
-    * For **Verify Password**, re-enter the password for verification purposes.
-
-    ![](images/03-04.png)
-
-5.  Click **Submit**.
-
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
-
+* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - May 2021
+* **Contributors** -  Denis Gray, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, May 2021
