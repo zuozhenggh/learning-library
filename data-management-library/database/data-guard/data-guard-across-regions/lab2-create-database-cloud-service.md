@@ -1,5 +1,6 @@
 # Create your Primary Database with the Oracle Database Cloud Service
 
+## Introduction
 The Oracle Database Cloud Service automates the provisioning and management of the Oracle database in the cloud.  We will create the Oracle Database Cloud Service as the primary database in one of the cloud regions.  The standby database will be automatically created when we set Data Guard association later.
 
 Estimated lab time:  5 minutes
@@ -12,7 +13,7 @@ Estimated wait time: 20 minutes to create database
 - VCN with private subnet
 
 
-## STEPS
+## **STEP 1:** Create the Oracle Database Cloud Service
 1. Select a region for your primary database.
 2. Select the menu Oracle Databases then Bare Metal, VM, and Exadata.
 3. Select your compartment.
@@ -29,11 +30,11 @@ Data Guard supports RAC databases, but we'll use a single instance database in t
 
 Standard Edition does not support Data Guard, select the other Enterprise editions.
 
-![image-20210121184635385](./images/image-20210121184635385.png)
+  ![image-20210121184635385](./images/image-20210121184635385.png)
 
 
 
-7. For faster provisioning for this lab, select Logical Volume Manager.
+7. For faster provisioning of the database for this lab, select Logical Volume Manager.
 
 8. Use the default storage size.
 
@@ -41,7 +42,7 @@ Standard Edition does not support Data Guard, select the other Enterprise editio
 
 
 
-![image-20210121184848646](./images/image-20210121184848646.png)
+  ![image-20210121184848646](./images/image-20210121184848646.png)
 
 
 
@@ -57,7 +58,7 @@ Standard Edition does not support Data Guard, select the other Enterprise editio
 
 
 
-![image-20210121185143404](./images/image-20210121185143404.png)
+  ![image-20210121185143404](./images/image-20210121185143404.png)
 
 15. Provide a database name, must be 8 characters or less.
 
@@ -68,6 +69,12 @@ Standard Edition does not support Data Guard, select the other Enterprise editio
 18. Click Create DB System.  Your Oracle Database Cloud Service will be created in a few minutes.
 
 
-![image-20210121185604333](./images/image-20210121185604333.png)
+  ![image-20210121185604333](./images/image-20210121185604333.png)
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Milton Wan, Database Product Management, Dec 2020
+* **Contributors** -  
+* **Last Updated By/Date** - Milton Wan, Jun 2021
+* **Workshop Expiry Date** -

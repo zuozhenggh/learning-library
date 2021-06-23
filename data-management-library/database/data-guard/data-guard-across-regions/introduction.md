@@ -27,10 +27,8 @@ Estimated workshop time:  45 minutes
 - [OCI Remote Peering](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/remoteVCNpeering.htm)
 
 
-
 ## Acknowledgements
-
-- **Author** - Milton Wan, Database Product Management, January 2021
-- **Contributors** -
-- **Last Updated By/Date** - Milton Wan, Database Product Management, May 4, 2021
-- **Workshop Expiry Date** - January 2023
+* **Author** - Milton Wan, Database Product Management, Dec 2020
+* **Contributors** -  
+* **Last Updated By/Date** - Milton Wan, Jun 2021
+* **Workshop Expiry Date** -

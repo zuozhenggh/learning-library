@@ -1,5 +1,6 @@
 # Configure Route Rule and Security List for Data Guard Cross Region
 
+## Introduction
 After creating your VCN and DRG on both regions.  You will need to set the route rules and security lists so that the primary and standby databases can communicate.
 
 Estimated lab time:  10 minutes
@@ -7,13 +8,16 @@ Estimated lab time:  10 minutes
 ### Objective
 - Configure the routing and security list for the connection
 
+### Prerequisite
+- VCN created in both the primary and standby regions
+- DRG created in both the primary and standby regions
 
-![image-20210122202020691](./images/image-20210122202020691.png)
+  ![image-20210122202020691](./images/image-20210122202020691.png)
 
-Let's start on the standby side.  From your VCN details select Route Tables.
+Let's start on the standby side.  
 
-## STEPS
-1. Select the private subnet route table or click Create Route Table if the private subnet route table is not there.
+## **STEP 1:** Setup the route table and rules
+1. From your VCN details select Route Tables, then select the private subnet route table or click Create Route Table if the private subnet route table is not there.
 
 2. Click Add Route Rules
 
@@ -28,56 +32,65 @@ Let's start on the standby side.  From your VCN details select Route Tables.
 
 
 
-![image-20210122200451778](./images/image-20210122200451778.png)
+  ![image-20210122200451778](./images/image-20210122200451778.png)
 
 
 
-Now configure the security list.  
+## **STEP 2:** Now configure the security list  
 
-7. Navigate to Security Lists and click Create Security List and name it something like Sec-List-Private-Subnet.
+1. Navigate to Security Lists and click Create Security List and name it something like Sec-List-Private-Subnet.
 
-8. Ensure you are in the correct compartment.
+2. Ensure you are in the correct compartment.
 
-9. Click Add Ingress Rule with the following:
+3. Click Add Ingress Rule with the following:
 
-10. Stateless is unchecked.
+4. Stateless is unchecked.
 
-11. Source Type is CIDR
+5. Source Type is CIDR
 
-12. Source CIDR is from your primary VCN or private subnet.  ie: 10.0.0.0/16 or 10.0.1.0/24.
+6. Source CIDR is from your primary VCN or private subnet.  ie: 10.0.0.0/16 or 10.0.1.0/24.
 
-13. IP Protocol is TCP
+7. IP Protocol is TCP
 
-14. Source Port Range is All
+8. Source Port Range is All
 
-15. Destination Port Range is 1521 for the database.
+9. Destination Port Range is 1521 for the database.
 
-16. Add a description if desired.
+10. Add a description if desired.
 
-![image-20210122200918911](./images/image-20210122200918911.png)
-
-
-
-17. Add an Egress Rule for outbound communication to the standby.
-
-18. Stateless is unchecked.
-
-19. Destination Type is CIDR.
-
-20. Destination CIDR is your primary VCN or private subnet CIDR Block.  ie: 10.0.0.0/16 or 10.0.1.0/24.
-
-21. IP Protocol is TCP
-
-22. Source Port Range is All
-
-23. Destination Port Range is 1521
-
-24. Click Create Security List
-
-![image-20210122201351067](./images/image-20210122201351067.png)
+  ![image-20210122200918911](./images/image-20210122200918911.png)
 
 
 
-Now do the same steps for the primary side.  This time the CIDR block should be different since they can not overlap with the standby.
+11. Add an Egress Rule for outbound communication to the standby.
 
-You may now proceed to the next lab.
+12. Stateless is unchecked.
+
+13. Destination Type is CIDR.
+
+14. Destination CIDR is your primary VCN or private subnet CIDR Block.  ie: 10.0.0.0/16 or 10.0.1.0/24.
+
+15. IP Protocol is TCP
+
+16. Source Port Range is All
+
+17. Destination Port Range is 1521
+
+18. Click Create Security List
+
+  ![image-20210122201351067](./images/image-20210122201351067.png)
+
+
+
+## **STEP 3:** Now do the same steps for the primary side  
+
+This time the CIDR block should be different since they can not overlap with the standby.
+When you have completed the primary side proceed to the next lab.
+
+You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Milton Wan, Database Product Management, Dec 2020
+* **Contributors** -  
+* **Last Updated By/Date** - Milton Wan, Jun 2021
+* **Workshop Expiry Date** -

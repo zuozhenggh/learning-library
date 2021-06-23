@@ -2,6 +2,7 @@
 
 # Set Data Guard Association
 
+## Introduction
 Setting up Data Guard for Database Cloud Service is a simple process called association.  We enable Data Guard in the primary database and the standby database is automatically created.
 
 Estimated lab time:  10 minutes
@@ -26,10 +27,10 @@ Navigate to your Database Cloud Service in your primary region.
 
 
 
-![image-20210121190217365](./images/image-20210121190217365.png)
+  ![image-20210121190217365](./images/image-20210121190217365.png)
 
 
-## STEPS
+## **STEP 1:** Enable Data Guard by Association
 1. Go to your database details page.
 
 2. Select your database under resources.
@@ -37,7 +38,7 @@ Navigate to your Database Cloud Service in your primary region.
 
 
 
-![image-20210121190255856](./images/image-20210121190255856.png)
+  ![image-20210121190255856](./images/image-20210121190255856.png)
 
 3. Select Data Guard Associations.
 
@@ -45,7 +46,7 @@ Navigate to your Database Cloud Service in your primary region.
 
 
 
-![image-20210121190326859](./images/image-20210121190326859.png)
+  ![image-20210121190326859](./images/image-20210121190326859.png)
 
 Data Guard is defaulted to Maximum Performance Protection Mode which means the redo log is transmitted to the standby immediately and does not wait for the standby to complete the redo apply.  It is also set to Async Transport type.  Maximum Protection mode is not available at this time.
 
@@ -69,17 +70,17 @@ Data Guard is defaulted to Maximum Performance Protection Mode which means the r
 
 
 
-![](./images/image-20210121182459418.png)
+  ![](./images/image-20210121182459418.png)
 
 
 
 Because the networking and remote peering connection is configured, the standby database and Data Guard will automatically be created.
 
-Check your standby region.  A standby database should be provisioning.
+## **STEP 2:** Check your standby region.  A standby database should be provisioning.
 
 
 
-![dbstby-provisioning](./images/dbstby-provisioning-copy.png)
+  ![dbstby-provisioning](./images/dbstby-provisioning-copy.png)
 
 
 
@@ -90,6 +91,12 @@ Completed. The standby database is now ready for a failover.
 
 
 
-![image-20210121222339306](./images/image-20210121222339306.png)
+  ![image-20210121222339306](./images/image-20210121222339306.png)
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Milton Wan, Database Product Management, Dec 2020
+* **Contributors** -  
+* **Last Updated By/Date** - Milton Wan, Jun 2021
+* **Workshop Expiry Date** -
