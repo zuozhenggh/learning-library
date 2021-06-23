@@ -49,9 +49,11 @@ In this lab, you will:
     </copy>
     ```
 
+    ![](./images/sql2-1.png " ")
+
 2. Simple dot notation - We can extract values from the JSON data using a simple notation (similar to JavaScript) directly from SQL.
 
-    For example, running the below query shows all movies costing more that 5.
+    For example, running the below query shows all movies costing more than 5.
 
     ```
     <copy>
@@ -62,6 +64,7 @@ In this lab, you will:
     and p.json_document.price.number() > 5;
     </copy>
     ```
+    ![](./images/sql2-2.png " ")
 
     We use a trailing function like 'string()' or 'number()' to map a selected JSON scalar value to a SQL value.
 
@@ -75,6 +78,7 @@ In this lab, you will:
     order by 2 DESC;
     </copy>
     ```
+    ![](./images/sql2-3.png " ")
 
 4. It is also possible to use aggregation or grouping with values from the JSON data.
 
@@ -89,6 +93,7 @@ In this lab, you will:
     group by p.json_document.decade;
     </copy>
     ```
+    ![](./images/sql2-4.png " ")  
 
     *Learn more -* [Oracle SQL Function JSON_SERIALIZE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-667D37FF-F5FB-465D-B8AE-DAE88F191B2F), and [Simple Dot-Notation Access to JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/simple-dot-notation-access-to-json-data.html#GUID-7249417B-A337-4854-8040-192D5CEFD576)
 
@@ -106,6 +111,7 @@ All above examples extracted singleton values from the JSON data - values that o
     from products p nested json_document columns (id, title, year NUMBER) jt;
     </copy>
     ```
+    ![](./images/sql3-1.png " ")
 
     As you can see we're extracting the 'id', the 'title' and the 'year' from each document. Instead of a trailing function we can specify an optional SQL data type like NUMBER - the default (used for the title) is a VARCHAR2(4000).
 
@@ -117,6 +123,7 @@ All above examples extracted singleton values from the JSON data - values that o
     from products p nested json_document columns (id, title, year NUMBER, nested starring[*] columns (actor path '$')) jt;
     </copy>
     ```
+    ![](./images/sql3-2.png " ")
 
     The second 'nested' acts over the JSON array called 'starring'. The '[*]' means that we want to select every item of the array; [0] would only select the first one, for example. Then the second columns clause defines which value we want to extract from inside the array. The 'starring' array consists only of string values; we therefore need to select the entire value. This is done with the path expression '$'. We give selected values the column name 'actor'. You will learn more about path expressions in the next step.
 
@@ -128,6 +135,7 @@ All above examples extracted singleton values from the JSON data - values that o
     from products p nested json_document.starring[*] columns (actor path '$') jt;
     </copy>
     ```
+    ![](./images/sql3-3.png " ")
 
 4.  On this we can do here by slightly modifying the query is to count the number of movies by actor. All we do is group the results by actor name and count the group's size. The 'order by' clause orders the results based on the second column (the count).
 
@@ -139,6 +147,7 @@ All above examples extracted singleton values from the JSON data - values that o
     order by 2 DESC;
     </copy>
     ```
+    ![](./images/sql3-4.png " ")
 
     *Learn more -* [SQL NESTED Clause Instead of JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-D870AAFF-58B0-4162-AC11-4DDC74B608A5)
 
@@ -173,6 +182,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
     select JSON_Value (json_document, '$.format' returning varchar2(10) default 'none' on empty) from products;
     </copy>
     ```
+    ![](./images/sql4-1.png " ")
 
 2.  JSON_Value can only select one scalar value. The following query will not return a result because it selects the array of actors.
 
@@ -181,6 +191,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
     select JSON_Value (json_document, '$.starring[0,1]') from products;
     </copy>
     ```
+    ![](./images/sql4-2.png " ")
 
 3.  But instead of seeing an error you'll see a lot of NULL values. This is because the NULL ON ERROR default applies. This fault-tolerant mode is to make working with schema-flexible data easier. To see the error you need to override this default with ERROR ON ERROR.
 
@@ -191,6 +202,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
     select JSON_Value (json_document, '$.starring' ERROR ON ERROR) from products;
     </copy>
     ```
+    ![](./images/sql4-3.png " ")
 
 4.  This query will raise ORA-40470: JSON_VALUE evaluated to multiple values.
 
@@ -199,6 +211,7 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
     select JSON_Value (json_document, '$.starring[0,1]' ERROR ON ERROR) from products;
     </copy>
     ```
+    ![](./images/sql4-4.png " ")
 
     *Learn more -* [SQL/JSON Function JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_VALUE.html#GUID-0565F0EE-5F13-44DD-8321-2AC142959215)
 
@@ -214,6 +227,7 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
     from products p;
     </copy>
     ```
+    ![](./images/sql4-5.png " ")
 
 2.  The following query selects two values: the first two actor names in the 'starring' array. You need to specify the 'with array wrapper' clause to return both values as one array. Scroll down the `Query Result` to see the values.
 
@@ -223,6 +237,8 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
     from products p;
     </copy>
     ```
+    ![](./images/sql4-6.png " ")
+
 
     *Learn more -* [SQL/JSON Function JSON_QUERY](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_QUERY.html#GUID-D64C7BE9-335D-449C-916D-1123539BF1FB)
 
@@ -240,6 +256,8 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     </copy>
     ```
 
+    ![](./images/sql5-1.png " ")
+
 2.  The following example returns all documents that have a field 'starring' that has the value 'Jim Carrey'.
 
     ```
@@ -249,6 +267,8 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     where JSON_Exists(p.json_document, '$.starring?(@ == "Jim Carrey")');
     </copy>
     ```
+    ![](./images/sql5-2.png " ")
+
 
     This is expressed using a path predicate using the question mark (?) symbol and a comparison following in parentheses. The '@' symbol represents the current value being used in the comparison. For an array the context will be every item of the array - one can think of iterating through the array and performing the comparison for each item of the array. If any item satisfies the condition than JSON_Exists selects the row.
 
@@ -261,6 +281,7 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     where JSON_Exists(p.json_document, '$?(@.genres.size() >= 2 && @.genres == "Sci-Fi" && @.starring starts with "Sigourney")');
     </copy>
     ```
+    ![](./images/sql5-3.png " ")
 
     SODA QBE filter expressions are rewritten to use JSON_Exists.
 
@@ -288,6 +309,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     )) jt;
     </copy>
     ```
+    ![](./images/sql6-1.png " ")
 
 2.  Like the other SQL/JSON operators the first input is the JSON data - the column 'json_document' from the products collection/table. The first path expressions, '$', is the row path expression - in this case we select the entire document. It would be possible to directly access an embedded object or array here, for example '$.starring[*]' would then generate a row for each actor.
 
@@ -314,6 +336,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     )) jt;
     </copy>
     ```
+    ![](./images/sql6-2.png " ")
 
 3.  A common practice is to define a database view using JSON\_TABLE. Then you can describe and query the view like a relational table. Fast refreshable materialized views are possible with JSON\_Table but not covered in this lab.
 
@@ -334,6 +357,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     )) jt;
     </copy>
     ```
+    ![](./images/sql6-3.png " ")
 
     Describe the movie_view:
 
@@ -342,6 +366,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     desc movie_view;
     </copy>
     ```
+    ![](./images/sql6-32.png " ")
 
     select columns from the movie_view:
 
@@ -353,6 +378,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     order by numGenres;
     </copy>
     ```
+    ![](./images/sql6-33.png " ")
 
     *Learn more -* [SQL/JSON Function JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-0172660F-CE29-4765-BF2C-C405BDE8369A)
 
@@ -373,6 +399,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     where p.json_document.id = 1414;
     </copy>
     ```
+    ![](./images/sql7-1.png " ")
 
 2.  This brings us the 'ET' doll which we have not sold yet. Maybe we should update the price and add a note?
 
@@ -383,6 +410,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     where p.json_document.id = 1414;
     </copy>
     ```
+    ![](./images/sql7-2.png " ")
 
 3.  Run the select query again to see the effect of the change: the price was updated, and a note got added.
 
@@ -393,6 +421,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     where p.json_document.id = 1414;
     </copy>
     ```
+    ![](./images/sql7-3.png " ")
 
     JSON\_Mergepatch also allows you to delete a value (by setting it to null) but JSON\_Mergepatch is not able to handle updates on JSON\_Arrays. This can be done with JSON\_Transform.
 
@@ -411,6 +440,7 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
     where p.json_document.id = 515;
     </copy>
     ```
+    ![](./images/sql7-4.png " ")
 
 2.  We want to add a new fields (duration), calculate a new price (10% higher) and append a new genre (thriller) to the array.
 
@@ -425,6 +455,7 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
     where p.json_document.id = 515;
     </copy>
     ```
+    ![](./images/sql7-5.png " ")
 
     *Learn more -* [Oracle SQL Function JSON_TRANSFORM](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/oracle-sql-function-json_transform.html#GUID-7BED994B-EAA3-4FF0-824D-C12ADAB862C1)
 
@@ -439,6 +470,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     create table emp (empno number, ename varchar2(30), salary number);
     </copy>
     ```
+    ![](./images/sql8-1.png " ")
 
     ```
     <copy>
@@ -447,6 +479,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     insert into emp values (3, 'Tom', 200000);
     </copy>
     ```
+    ![](./images/sql8-12.png " ")
 
 2.  With JSON_Object we can convert each row to a JSON object. The names are picked from the column names and are typically upper cased.
 
@@ -708,4 +741,4 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021

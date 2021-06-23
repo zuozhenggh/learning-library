@@ -143,6 +143,16 @@ In this lab, you will:
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
     ![](./images/tutorials.png " ")
+    ![](./images/tour2.png " ")
+    ![](./images/tour3.png " ")
+    ![](./images/tour4.png " ")
+    ![](./images/tour5.png " ")
+    ![](./images/tour6.png " ")
+    ![](./images/tour7.png " ")
+    ![](./images/tour8.png " ")
+    ![](./images/tour9.png " ")
+    ![](./images/tour10.png " ")
+    ![](./images/tour11.png " ")
 
 
 
@@ -157,4 +167,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
