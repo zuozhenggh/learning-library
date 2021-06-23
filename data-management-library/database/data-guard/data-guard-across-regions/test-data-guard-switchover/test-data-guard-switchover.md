@@ -1,7 +1,7 @@
 # Test the Data Guard Switchover
 
 ## Introduction
-We will test the Data Guard configuration across regions by switching the roles of the primary and standby database.  Switchover can be used to perform maintenance of the primary database.
+We will test the Data Guard configuration across regions by switching the roles of the primary and standby database.  Switchover can be used to perform planned maintenance of the primary database.
 
 Estimated lab time:  5 minutes
 Estimated wait time: 15 minutes for Switchover
@@ -35,7 +35,7 @@ The process will begin to make the standby database the primary.
 
   ![image-20210121225620549](./images/image-20210121225620549.png)
 
-In a few minutes the roles will be changed and the standby database will become the primary.  This use case can be used for maintenance operations in the primary region.
+In a few minutes the roles will be changed and the standby database will become the primary.  The switchover use case can be used for planned maintenance operations in the primary region.
 
 End of workshop.
 

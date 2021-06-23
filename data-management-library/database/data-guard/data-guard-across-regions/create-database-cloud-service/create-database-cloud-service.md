@@ -1,4 +1,4 @@
-# Create your Primary Database with the Oracle Database Cloud Service
+# Create the Database Cloud Service
 
 ## Introduction
 The Oracle Database Cloud Service automates the provisioning and management of the Oracle database in the cloud.  We will create the Oracle Database Cloud Service as the primary database in one of the cloud regions.  The standby database will be automatically created when we set Data Guard association later.

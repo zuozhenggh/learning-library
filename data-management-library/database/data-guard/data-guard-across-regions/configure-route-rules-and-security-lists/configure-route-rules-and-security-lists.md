@@ -1,4 +1,4 @@
-# Configure Route Rule and Security List for Data Guard Cross Region
+# Configure Route Rules and Security Lists
 
 ## Introduction
 After creating your VCN and DRG on both regions.  You will need to set the route rules and security lists so that the primary and standby databases can communicate.

@@ -94,11 +94,11 @@ The route rule and security list must also be configured to access the resources
 
 ## **STEP 5:** Now do the same on the other DRG in the other region
 
+## **STEP 6:** Establish connection
 Once you have both DRGs and RPCs created.  You must decide which side accepts a connection, and which side requests a connection.
 
 For our lab, we'll use the standby side as the acceptor, and the primary side as the requestor.  
 
-## **STEP 6:** Establish connection
 1. Navigate to the standby region.
 
 2. Record the OCID of the RPC on the standby side.  You will provide this to the primary side later to establish the peering.

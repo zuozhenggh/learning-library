@@ -1,7 +1,7 @@
 # Create your Virtual Cloud Network
 
 ## Introduction
-Create the Virtual Cloud Network on the primary region and the secondary region.  Although they are in different regions, the VCNs must both be in the same compartment. And they must not have overlapping VCN IP address blocks.
+Create a Virtual Cloud Network on the primary region and the secondary region.  Although they are in different regions, the VCNs must both be in the same compartment. And they must not have overlapping VCN IP address blocks.
 
 Estimated lab time:  5 minutes
 
@@ -13,7 +13,7 @@ Estimated lab time:  5 minutes
 - User policy to create the VCN
 
 ## **STEP 1:** Sign in to Oracle Cloud
-1. Sign in to Oracle Cloud
+1. Sign in to your tenancy with your username and password.
 
 ## **STEP 2:** Create a Virtual Cloud Network  
 
@@ -50,7 +50,12 @@ ie: 10.0.0.0/16 for one region and 11.0.0.0/16 for the peer region.
 
 9. Click Next and then Click Create.  Your cloud network will be created quickly.
 
-10. Now do the same steps and create another VCN on your peer region.  Switch to your peer region and create your VCN with the wizard.  Remember it must be in the same compartment but with a different CIDR block.
+## **STEP 3:** Create the second Virtual Cloud Network on your Peer Region
+Now do the same steps as above and create another VCN on your peer region.  
+1. Switch to your peer region and create your VCN with the wizard.  
+
+Remember it must be in the same compartment but with a different CIDR block.
+
 
 You may now [proceed to the next lab](#next).
 
