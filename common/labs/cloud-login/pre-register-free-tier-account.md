@@ -69,7 +69,7 @@ If you already have a cloud account, skip to **STEP 2**.
 
     ![](images/free-tier-agreement.png " ")
 
-13. Your account is provisioning and should be available soon! You might want to log out as you wait for your account to be provisioned. When it's ready, you'll receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
+13. Your account is provisioning and should be available soon! You might want to log out as you wait for your account to be provisioned. You'll receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
 ## **STEP 2**: Sign in to Your Account
