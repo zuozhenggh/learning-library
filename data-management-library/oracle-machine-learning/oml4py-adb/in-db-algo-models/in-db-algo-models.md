@@ -235,7 +235,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
 
     km_mod</copy>
     ```
-    ![](images/kmeans_model_details.png )
+    ![K-means model details](images/kmeans_model_details.png "K-means model details" )
 
 3. To view the cluster details, run the following command. The command displays the cluster details for all clusters in the hierarchy with row counts and dispersion.
 The dispersion value is a measure of how compact or how spread out the data is within a cluster. The dispersion value is a number greater than 0.  The lower the dispersion value, the more compact the cluster, that is, the data points are closer to the centroid of the cluster. A larger dispersion value indicates that the data points are more disperse or spread out from the centroid.
@@ -268,7 +268,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
 
     pred = km_mod.predict(CUST_DF, supplemental_cols = CUST_DF)</copy>
     ```
-6. Run the following command to view the pred computed in step 5.
+6. Run the following command to view the pred computed.
 
     ```
     %python
@@ -277,7 +277,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(pred)</copy>
     ```
 
-    ![](images/view_pred.png)
+    ![Prediction details](images/view_pred.png "Prediction details")
 
 7. Run the following command to view the cluster results using a matplotlib scatterplot:
     ```
@@ -311,7 +311,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     plt.ylabel('CUST_YEAR_OF_BIRTH')
     plt.show()</copy>
     ```
-    ![](images/cluster_results_scatterplot.png)
+    ![K-means clustering in a Scatter Plot](images/cluster_results_scatterplot.png "K-means clustering in a Scatter Plot")
 
 ## **Step 4**: Work with Partitioned models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
@@ -349,7 +349,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script builds a SVM partitioned model. Scroll down the notebook paragraph for complete details of the model.
 
-    ![](images/svm_partitioned_regression_model.png)        
+    ![SVM partitioned model](images/svm_partitioned_regression_model.png "SVM partitioned model")        
 
 3. Run the following script to predict on the test set and display prediction result. Note the use of the top level model only.
 
@@ -363,7 +363,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script makes prediction based on the test data, and displays the result in a table, as shown in the screenshot. The predicted values are listed in the PREDICTION column in the table.
 
-    ![](images/pred_results_svm_model.png)
+    ![Prediction results](images/pred_results_svm_model.png "Prediction results")
 
 4. Run the following command to show the model global statistics for each partitioned sub-model. The partition name column contains the values from the partition column. If multiple columns were specified, then there would be one column for each with corresponding value.
 
@@ -373,7 +373,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
 
     z.show(svm_mod.global_stats)</copy>
     ```
-    ![](images/global_stats.png)
+    ![Model global statistics](images/global_stats.png "Model global statistics")
 
 5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
 Here, you materialize the data to table `TEST_DATA` so that it can be queried from SQL.
@@ -414,7 +414,7 @@ Here, you materialize the data to table `TEST_DATA` so that it can be queried fr
       OUTPRED</copy>
       ```
 
-      ![](images/scoring_details.png)
+      ![Scoring details](images/scoring_details.png "Scoring details")
 
 ## **Step 5**: Rank Attribute Importance using Model Explainability
 
@@ -475,7 +475,7 @@ In this step, you will:
     "SVM accuracy score = {:.2f}".format(model.score(X_test, y_test))</copy>
     ```
 
-    ![](images/svm_accuracy_score.png)
+    ![Accuracy score computed by the SVM model](images/svm_accuracy_score.png "Accuracy score")
 
 4. Create the MLX Global Feature Importance explainer gfi, using the `f1_weighted` metric.
     ```
@@ -486,7 +486,7 @@ In this step, you will:
                               random_state=32, parallel=4)</copy>
     ```
 
-    ![](images/create_gfi.png)
+    ![Code to create MLX Global Feature Importance explainer](images/create_gfi.png "Create MLX Global Feature Importance explainer")
 5. Run the explainer `gfi.explain` to generate the global feature importance for the test data:
     ```
     %python
@@ -498,7 +498,7 @@ In this step, you will:
     ```  
    The explainer returns the following explanation, as shown in the screenshot:
 
-     ![](images/model_explanation.png)
+     ![Model Explainability - Output of gfi.explain](images/model_explanation.png "Model Explainability - Output of gfi.explain")
 
 ### **Try it yourself**
 
