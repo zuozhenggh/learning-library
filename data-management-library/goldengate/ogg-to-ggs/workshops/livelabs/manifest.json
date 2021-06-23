@@ -9,12 +9,12 @@
         {
             "title": "Lab 1: Create OCI GoldenGate resources"
             "description": "Create your OCI GoldenGate deployment and database registration"
-            "filename": "../create/create.md"
+            "filename": "../../create/create.md"
         },
         {
             "title": "Lab 2: Create a Trusted Connection",
             "description": "Use a self-signed certificate to create a trusted connection",
-            "filename": "../../create/create-gb.md"
+            "filename": "../../connection/connection-gb.md"
         },
         {
             "title": "Lab 3: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
