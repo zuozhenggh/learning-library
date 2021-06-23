@@ -63,18 +63,16 @@ If you already have a cloud account, skip to **STEP 2**.
 
 11.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
 
-  ![](images/free-tier-payment-2.png " ")
+    ![](images/free-tier-payment-2.png " ")
 
 12. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
 
     ![](images/free-tier-agreement.png " ")
 
-13. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
+13. Your account is provisioning and should be available soon! You might want to log out as you wait for your account to be provisioned. When it's ready, you'll receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
 ## **STEP 2**: Sign in to Your Account
-
-If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com). Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
