@@ -1,16 +1,14 @@
-# Create an Instance of Oracle Visual Builder  
+# Provision an Instance of Oracle Visual Builder  
 
 ## Introduction
 
-This lab walks you through the process of creating an instance of Visual Builder, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
+This lab walks you through the process of provisioning an instance of Visual Builder, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
 
 Estimated Lab Time:  5 minutes
 
 ### Background
 
-If you just created a new Cloud account following the instructions in Getting Started, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to Oracle Cloud as an Oracle Identity Cloud Service (IDCS) user before proceeding.
-
-When you sign up for an Oracle Cloud account, a user is created for you in IDCS with the username and password you selected at signup. You can use this single sign-on option to sign in to Oracle Cloud Infrastructure and navigate to Visual Builder without reauthenticating. *Note that if you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
+If you just created a new Cloud account following the instructions in Getting Started, you must wait at least 30 minutes (or until you receive an email notification that your account has been provisioned) before you attempt to create an instance of Visual Builder. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in directly using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
 ## **STEP 1**: Create an Instance of Visual Builder
 
