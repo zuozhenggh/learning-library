@@ -4,11 +4,11 @@
 
 Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it.
 
-Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via a browser and Cloud Shell.
+Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via Cloud Shell and a browser, and download the necessary lab files for the workshop.
 
 Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules. STEP 1 covers how to configure the security rules. If you accept the default to create a new VCN when configuring the stack, then you can skip STEP 1.
 
-> **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because those steps have already been done for you.
+> **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because they have already been done for you.
 
 Estimated Lab Time: 15 minutes
 
@@ -19,10 +19,9 @@ Learn how to do the following:
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
-- Connect to your compute instance via Cloud Shell
-- Download the script files for this workshop
-- Start the container databases on the compute instance
-- Discover the container databases and pluggable databases
+- Connect to your compute instance via Cloud Shell and initialize your environment
+- Connect to your compute instance via a browser
+- Download the labs files for this workshop
 
 ### Prerequisites
 
@@ -46,7 +45,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 4. Click the default security list.
 
-5. For each port number (22, 1521, 1523, 1524), do the following:
+5. For each port number (22, 1521, 1523, 1524, 6080), do the following:
 
     1. Click **Add Ingress Rule**.
 
@@ -137,7 +136,8 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 3. Find the public IP address of the compute instance that starts with **db19-hol-s01-...** in the table and jot it down.
 
 
-## **STEP 4**: Connect to your compute instance via Cloud Shell
+
+## **STEP 4**: Connect to your compute instance via Cloud Shell and initialize your environment
 
 1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
 
@@ -157,205 +157,66 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
   You are now connected to your new compute instance via Cloud Shell.
 
-
-## **STEP 5**: Download the script files for this workshop
-
-1. Switch to the `oracle` user.
+4. Preserve user configured hostname across instance reboots
 
     ```
-    $ sudo su - oracle
+    sudo sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
     ```
-
-2. Switch to the labs directory and confirm your directory
-
-    ```
-    $ cd ~/labs
-    $ pwd
-
-    /home/oracle/labs
-    ```
-
-3. Download the script files for this workshop.
+5. Preserve hostname info and set it for current boot
 
     ```
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/iHB8oCR7sve_J-hdridcAIS7-TGJ-cvZdkR5POjqpY0UwYnucbhyonPUhiSqhruY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cNewFeatures.zip
+    sudo hostnamectl set-hostname workshop-installed.subnet1.labvcn.oraclevcn.com
     ```
 
-4. Extract the ZIP file in the `labs` directory.
+
+## **STEP 5**: Connect to your compute instance via a browser
+
+1. Open a browser on your personal computer and enter the following url. Replace public-ip-address with your compute instance's public IP address.
+
+    ```
+    http://public-ip-address:6080/index.html?resize=remote
+    ```
+2. Click **Connect**.
+
+3. Enter the password **LiveLabs.Rocks_99**, and click **Send Password**.
+
+    The noVNC desktop is displayed.
+
+
+## **STEP 6**: Download the labs files for this workshop
+
+1. On the noVNC desktop, open a terminal window.
+
+2. Create a `/home/oracle/labs` directory and switch to it.
+
+    ```
+    $ mkdir ~/labs/19cnf
+    $ cd ~/labs/19cnf
+    ```
+
+3. Download the script files for this workshop into the `labs` directory.
+
+    ```
+    wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/Jb7Cv2BroNwiNB9iZsv5W3bTlrAbMCW6JooCMZ-qEEFT-M1LKaBwb-8u9k4-Cnq4/n/c4u03/b/ll-19c/o/19c-new-features-lab-files.zip
+    ```
+
+4. Extract the ZIP file in the `19cnf` directory.
 
     ```
     $ unzip -q 19cNewFeatures.zip
     ```
 
-5. Verify that you have the following directories in the `/home/oracle/labs` directory:
+5. Verify that you have 26 files in the `/home/oracle/labs/19cnf` directory:
 
     ```
     ls
-
-    19cNewFeatures.zip  admin  DB   db.rsp   DIAG   DW   envprep.sh   HA  multitenant   OBEs   PERF   SEC   Videos
     ```
 
-6. Grant permissions to execute on files in the `labs` directory.
+6. Grant permissions to execute on files in the `19cnf` directory.
 
     ```
-    chmod -R +x ~/labs
+    chmod -R +x ~/labs/19cnf
     ```
-
-## **STEP 6**: Start the container databases on the compute instance
-
-1. Return to the `opc` user.
-
-    ```
-    exit
-    ```
-
-2. Change to the `/tmp` directory
-
-    ```
-    cd /tmp/
-    ```
-
-3. Download a ZIP file that contains initialization scripts.
-
-    ```
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/agZ9XqafKHNCN3rpIegRlFFFJXe6YRPMqO7uHsO49vnLgm_3o0H_I_XTemvaAEXu/n/natdsecurity/b/labs-files/o/db-multitenant-prelab-init.zip
-    ```
-
-4. Extract the ZIP file into the `/tmp/bootstrap` directory.
-
-    ```
-    unzip db-multitenant-prelab-init.zip -d bootstrap
-    ```
-
-6. Change to the `/tmp/bootstrap` directory.
-
-    ```
-    cd bootstrap
-    ```
-
-7. Grant execute permissions on the SSH files in the `bootstrap` directory.
-
-    ```
-    chmod +x *.sh
-    ```
-
-8. Run the `db19-prelab-init.sh` script.
-
-    ```
-    sudo ./db19-prelab-init.sh
-    ```
-
-9. Switch to the `oracle` user.
-
-    ```
-    sudo su - oracle
-    ```
-
-10. Change to the `/tmp/bootstrap` directory.
-
-    ```
-    cd /tmp/bootstrap
-    ```
-
-11. Start the database listeners.
-
-    ```
-    lsnrctl start LISTCDB1
-    lsnrctl start LISTCDB2
-    ```
-
-12. Stop the two container databases (CDB1 an CDB2). Wait until they are both stopped.
-
-    ```
-    ./stop_all.sh
-    ```
-
-13. Start the two container databases.
-
-    ```
-    ./start_all.sh
-    ```
-
-14. View the status of the listeners and verify that the listeners are ready.
-
-    ```
-    lsnrctl status LISTCDB1
-    lsnrctl status LISTCDB2
-    ```
-
-
-
-## **STEP 7**: Discover the container databases and pluggable databases
-
-
-1. Set the oracle environment and connect to the CDB1 container database. When prompted for the `ORACLE_SID`, enter **CDB1**.
-
-    ```
-    $ . oraenv
-    ORACLE_SID = [ORCL] ? CDB1
-
-    The Oracle base remains unchanged with value /u01/app/oracle
-    ```
-
-2. Connect to the root container using SQL*Plus.
-
-    ```
-    $ sqlplus / as sysdba
-
-    SQL*Plus: Release 19.0.0.0.0 - Production on Wed May 26 20:51:15 2021
-    Version 19.10.0.0.0
-
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
-    Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
-    ```
-
-2. Verify that you are logged in to the `root` container as the `SYS` user.
-
-    ```
-    SQL> SHOW user
-
-    USER is "SYS"
-    SQL>
-    ```
-
-3. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
-
-    ```
-    SQL> SHOW con_name
-
-    CON_NAME
-    -------------------
-    CDB$ROOT
-    SQL>
-    ```
-
-4. List all of the containers in CDB1 by querying the `V$CONTAINERS` view. The results show that there are three containers: the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
-
-    ```
-    SQL> COLUMN name FORMAT A8
-    SQL> SELECT name, con_id FROM v$containers ORDER BY con_id;
-
-    NAME         CON_ID
-    -------- ----------
-    CDB$ROOT          1
-    PDB$SEED          2
-    PDB1              3
-
-    SQL>
-    ```
-
-5. Exit SQL*Plus.
-
-    ```
-    SQL> exit
-
-    $
-    ```
-
-Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
 
 
 
@@ -367,4 +228,4 @@ Congratulations! You have a fully functional Oracle Database 19c instance runnin
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, May 26 2021
+- **Last Updated By/Date** - Jody Glover, Database team, June 23 2021
