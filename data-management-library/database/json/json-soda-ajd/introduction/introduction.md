@@ -18,7 +18,7 @@ You can complete this entire workshop using your web browser. There is no need t
 
 This workshop consists of multiple 'labs' - each describing one aspect or feature. Most labs build on previous steps but there are also optional (advanced) labs which are optional - they can be skipped.
 
-Estimated Lab Time: 75 minutes (without extended labs); 90 minutes with extended labs.
+Estimated Lab Time: 75-90 minutes
 
 Watch this quick video to know why JSON in Oracle Autonomous Database is awesome.
 
