@@ -53,22 +53,19 @@ If you already have a cloud account, skip to **STEP 2**.
           ![](images/free-tier-address.png " ")
 
 8.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
-
-       ![](images/free-tier-address-2.png " ")
+          ![](images/free-tier-address-2.png " ")
 
 9. Once you receive your code, enter it and click **Verify My Code**.
-       ![](images/free-tier-address-4.png " ")
+          ![](images/free-tier-address-4.png " ")
 
 10. Click the **Add payment verification method** button.
-       ![](images/free-tier-payment-1.png " ")  
+          ![](images/free-tier-payment-1.png " ")  
 
 11.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
-
-       ![](images/free-tier-payment-2.png " ")
+          ![](images/free-tier-payment-2.png " ")
 
 12. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
-
-       ![](images/free-tier-agreement.png " ")
+          ![](images/free-tier-agreement.png " ")
 
 13. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
@@ -81,21 +78,15 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![](images/cloud-oracle.png " ")
 
-2. Choose the [identity provider you want to use for sign-in](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/signinoptions.htm):   
-   - If you chose an Always Free trial, click **Continue** to sign in using the *"oraclecloudidentityservice"*.
-       ![](images/cloud-login-tenant-single-sigon.png " ")
+2. Click **Continue** to sign in using the *"oraclecloudidentityservice"*.
 
-   - If you want to use Oracle Cloud Infrastructure's Identity and Access Management Service (IAM), expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
-      ![](images/cloud-login-tenant.png " ")
+   ![](images/cloud-login-tenant-single-sigon.png " ")
+
+   When you sign up for an Oracle Cloud account, a user is created for you in Oracle Identity Cloud Service with the username and password you selected at sign up. You can use this single sign-on option to sign in to Oracle Cloud Infrastructure and then navigate to other Oracle Cloud services without reauthenticating. This user has administrator privileges for all the Oracle Cloud services included with your account.
 
 3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
-   - Single sign-on:
 
      ![](images/oci-signin-single-signon.png " ")
-
-   - Direct sign-in:
-
-     ![](images/oci-signin.png " ")
 
 4. You are now signed in to Oracle Cloud!
 
