@@ -1,4 +1,4 @@
-
+/* DELETE THIS FILE IN THE NEXT RELEASE */
 # Load Data into an Autonomous Database Instance
 
 ## Introduction
@@ -11,7 +11,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
-*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 Estimated Lab Time: 30 minutes
 
@@ -104,7 +104,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![Click Create Bucket.](images/click-create-bucket.png " ")
 
-4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. For example, if you are running this lab in LiveLabs, include your LiveLabs user login ID, as in **user_id-ADWCLab**. Enter the unique bucket name and click the **Create Bucket** button.
+4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. Enter the unique bucket name and click the **Create Bucket** button.
 
     ![Enter the required details and click Create.](images/click-create-to-create-the-bucket.png " ")
 
