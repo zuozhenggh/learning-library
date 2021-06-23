@@ -9,7 +9,7 @@
         {
             "title": "Lab 1: Set up your environment",
             "description": "Set up your environment for use with your free or paid OCI account",
-            "filename": "../adb/adb.md"
+            "filename": "../adb/connect-provision-adb.md"
         },
         {
             "title": "Lab 2: Create OCI GoldenGate resources",
