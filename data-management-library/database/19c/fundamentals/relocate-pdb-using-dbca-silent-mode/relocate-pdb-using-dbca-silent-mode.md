@@ -38,27 +38,7 @@ Be sure that the following tasks are completed before you start:
     Version 19.10.0.0.0
     ```
 
-2. Open and connect to the PDB.
-    ```
-    SQL> alter pluggable database PDB1 open;
-
-    Pluggable database altered.
-
-    SQL> alter session set container = PDB1;
-
-    Session altered.
-    ```
-
-3. Find the current container name. You should now be connected to the PDB container.
-    ```
-    SQL> show con_name
-
-    NAME         CON_ID
-    -------- ----------
-    PDB1              3
-    ```
-
-4.
+2. Check the CDB log mode.
     ```
     SQL> select name, open_mode, log_mode from v$database;
 
@@ -67,7 +47,7 @@ Be sure that the following tasks are completed before you start:
     CDB1      READ WRITE           NOARCHIVELOG
     ```
 
-5.  Check your parameter values. A container cannot be in archive log mode if there
+3.  Check your parameter values. A container cannot be in archive log mode if there
 there are no values for each parameter.
     ```
     SQL> show parameter DB_RECOVERY_FILE        
@@ -78,7 +58,7 @@ there are no values for each parameter.
     db_recovery_file_dest_size           big integer 0
     ```
 
-6. Enter values for the parameters.
+4. Enter values for the parameters.
     ```
     SQL> alter system set db_recovery_file_dest_size=50G SCOPE=both;
 
@@ -89,7 +69,7 @@ there are no values for each parameter.
     System altered.
     ```
 
-7. Ensure your parameters contain values.
+5. Ensure your parameters contain values.
     ```
     SQL> select * from V$RECOVERY_FILE_DEST
 
@@ -108,7 +88,7 @@ there are no values for each parameter.
     db_recovery_file_dest_size           big integer 50G
     ```
 
-8. Mount your database instance and change it to archive log mode.
+6. Mount your database instance and change it to archive log mode.
     ```
     SQL> shutdown immediate
     Database closed.
@@ -145,9 +125,15 @@ there are no values for each parameter.
     Current log sequence           22
     ```
 
-9. Exit SQL*Plus
+7. Exit SQL*Plus
     ```
     SQL> exit
+    ```
+
+8. Login to CDB2 and repeat above steps from Step 1 - 7.
+    ```
+    $ . oraenv
+    ORACLE_SID = [CDB1] ? CDB2
     ```
 
 ## **STEP 2**: Add the hr.sql script to the admin folder.
@@ -244,12 +230,7 @@ there are no values for each parameter.
     Session altered.
     ```
 
-3. Use the hr.sql script to create the HR user and EMPLOYEES table in PDB1.
-    ```
-    SQL> @/home/oracle/labs/hr.sql
-    ```
-
-4. Verify that PDB1 contains the HR.EMPLOYEES table.
+3. Verify that PDB1 contains the HR.EMPLOYEES table.
     ```
     SQL> SELECT count(*) FROM hr.employees;
 
@@ -258,39 +239,33 @@ there are no values for each parameter.
           107
     ```
 
-5. Connect to ORCL as SYS.
+4. Connect to ORCL as SYS.
     ```
-    SQL> CONNECT sys@ORCL AS SYSDBA
+    SQL> CONNECT sys@CDB1 AS SYSDBA
     Enter password: Ora4U_1234
     ```
 
-6. Create a common user in ORCL, used in the database link automatically created to connect to ORCL during the relocation operation.
+5. Create a common user in CDB1, used in the database link automatically created to connect to CDB1 during the relocation operation.
     ```
     SQL> CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;
     ```
 
-7. Grant the privileges.
+6. Grant the privileges.
     ```
     SQL> GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;
     ```
 
-8. Quit session.
+7. Quit session.
     ```
     SQL> exit
     ```
 
 ## **STEP 4**: Use DBCA to Relocate a Remote PDB
->In this section, you use DBCA in silent mode to relocate PDB1 from ORCL as PDB1_IN_CDB2 in CDB2.<
+>In this section, you use DBCA in silent mode to relocate PDB1 from CDB1 as PDB1_IN_CDB2 in CDB2.<
 
-1. If CDB2 does not exist, launch the /home/oracle/labs/create_CDB2.sh script. The script creates the CDB2 with no PDB.
-In the script, update the password of the user connected to the database.
+1. Launch DBCA in silent mode to relocate PDB1 from CDB1 as PDB1_IN_CDB2 in CDB2.
     ```
-    $ /home/oracle/labs/create_CDB2.sh
-    ```
-
-2. Launch DBCA in silent mode to relocate PDB1 from ORCL as PDB1_IN_CDB2 in CDB2.
-    ```
-    $ dbca -silent -relocatePDB -remotePDBName PDB1 -remoteDBConnString ORCL -sysDBAUserName SYSTEM -sysDBAPassword Ora4U_1234 -remoteDBSYSDBAUserName SYS -remoteDBSYSDBAUserPassword Ora4U_1234 -dbLinkUsername c##remote_user -dbLinkUserPassword Ora4U_1234 -sourceDB CDB2 -pdbName PDB1_IN_CDB2
+    $ dbca -silent -relocatePDB -remotePDBName PDB1 -remoteDBConnString CDB1 -sysDBAUserName SYSTEM -sysDBAPassword Ora4U_1234 -remoteDBSYSDBAUserName SYS -remoteDBSYSDBAUserPassword Ora4U_1234 -dbLinkUsername c##remote_user -dbLinkUserPassword Ora4U_1234 -sourceDB CDB2 -pdbName PDB1_IN_CDB2
     ```
 
 ## **STEP 5**: Check that the PDB is Relocated
@@ -354,6 +329,36 @@ In the script, update the password of the user connected to the database.
 4. Quit the session.
     ```
     SQL> EXIT
+    ```
+
+## **STEP 7**: Disable archivelog mode for CDB1 and CDB2.
+1. Set the environment variables for your CDB.
+    ```
+    $ . oraenv
+    ORACLE_SID = [oracle] ? CDB1
+    ```
+
+2. Execute the following statements to disable ARCHIVELOG mode on the database.
+    ```
+    $ sqlplus / as sysdba
+
+    SQL> SHUTDOWN IMMEDIATE;
+
+    SQL> STARTUP MOUNT;
+
+    SQL> ALTER DATABASE noarchivelog;
+
+    SQL> ALTER DATABASE open;
+
+    SQL> SELECT log_mode FROM v$database;
+    ```
+
+3. Switch to CDB2 and repeat Step 2.
+    ```
+    SQL> EXIT
+
+    $ . oraenv
+    ORACLE_SID = [CDB1] ? CDB2
     ```
 
 ## Learn More
