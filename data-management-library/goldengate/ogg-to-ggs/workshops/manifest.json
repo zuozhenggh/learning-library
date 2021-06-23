@@ -7,13 +7,13 @@
             "filename": "../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Set up your environment"
-            "description": "Set up your environment for use with your free or paid OCI account"
+            "title": "Lab 1: Set up your environment",
+            "description": "Set up your environment for use with your free or paid OCI account",
             "filename": "../adb/adb.md"
         },
         {
-            "title": "Lab 2: Create OCI GoldenGate resources"
-            "description": "Create your OCI GoldenGate deployment and database registration"
+            "title": "Lab 2: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and database registration",
             "filename": "../create/create.md"
         },
         {

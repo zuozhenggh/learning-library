@@ -7,8 +7,8 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Create OCI GoldenGate resources"
-            "description": "Create your OCI GoldenGate deployment and database registration"
+            "title": "Lab 1: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and database registration",
             "filename": "../../create/create.md"
         },
         {
