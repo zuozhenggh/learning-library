@@ -62,8 +62,7 @@ If you already have a cloud account, skip to **STEP 2**.
           ![](images/free-tier-payment-1.png " ")  
 
 11.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
-
-    ![](images/free-tier-payment-2.png " ")
+  ![](images/free-tier-payment-2.png " ")
 
 12. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
 
