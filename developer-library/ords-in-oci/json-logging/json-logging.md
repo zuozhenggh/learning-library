@@ -9,6 +9,17 @@ In this lab, you will create a service connector to move log data from the Loggi
 - You have completed the setup lab.
 - You have completed the CSV Functions Lab
 
+
+## **Download Lab Files**
+Download the lab files with the following link. 
+
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip)
+
+To download them in the OCI Cloud Console, use the following command:
+```
+curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+```
+
 ## **STEP 1:** Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
@@ -143,10 +154,10 @@ In this lab, you will create a service connector to move log data from the Loggi
 
     We are now setup to deploy our function.
 
-4. Download the function code in your OCI Cloud Shell with the following command:
+4. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func2.zip https://xxxxxx/func.zip
+    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
     ```    
 
     Once downloaded, unzip it
