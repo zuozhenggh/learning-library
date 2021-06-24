@@ -16,7 +16,6 @@ In this lab, you will:
 ### Prerequisites
 
 * Logged into your Oracle Cloud Account
-* The labs work on both 19c and 21c AJD database
 
 ## **STEP 1**: Choose AJD from the Services Menu
 
@@ -73,7 +72,7 @@ In this lab, you will:
 6. Configure the database:
 
     - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - Select a database version from the available versions. Note: This lab works on both 19c and 21c AJD database.
+    - __Choose database version__ - Select 19c from the database version. Note: This lab should work on 21c AJD database as well.
     - __OCPU count__ - Number of OCPUs for your service. For this lab, leave the default __1 OCPU__. If you choose an Always Free database, it comes with 1 OCPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, leave the default __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
@@ -144,6 +143,16 @@ In this lab, you will:
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
     ![](./images/tutorials.png " ")
+    ![](./images/tour2.png " ")
+    ![](./images/tour3.png " ")
+    ![](./images/tour4.png " ")
+    ![](./images/tour5.png " ")
+    ![](./images/tour6.png " ")
+    ![](./images/tour7.png " ")
+    ![](./images/tour8.png " ")
+    ![](./images/tour9.png " ")
+    ![](./images/tour10.png " ")
+    ![](./images/tour11.png " ")
 
 
 
@@ -158,4 +167,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, June 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
