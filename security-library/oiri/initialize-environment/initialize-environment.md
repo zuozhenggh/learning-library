@@ -70,8 +70,6 @@ In this lab, you will:
   <copy>kubectl taint nodes --all node-role.kubernetes.io/master-</copy>
   ```
 
-  ![](images/3-pods.png)
-
 5. List all pods in all namespaces
 
   ```
@@ -88,6 +86,8 @@ In this lab, you will:
   ```
   <copy>kubectl get pods --all-namespaces</copy>
   ```
+
+  ![](images/3-pods.png)
 
 ## **STEP 3:** Start the Oracle Identity Governance (OIG) Database and Instance
 
