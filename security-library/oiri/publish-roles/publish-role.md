@@ -127,6 +127,19 @@ The task is now approved and is no longer displayed
   ![](images/21-publish-role.png)
 
 
+You have now completed the OIRI workshop. In this workshop, we learnt:
+  - How to deploy OIRI
+  - How to import Entity data into OIRI from OIG database
+  - How to run role mining tasks to discover candidate roles
+  - How to analyze candidate roles, review candidate roles using the analytics provided in OIRI
+  - How to publish candidate role into OIG
+
+From the knowledge gained from this workshop, you can now use OIRI to implement:
+  - Automation of role discovery and provisioning to eliminate the error-prone and manual process of creating roles
+  - Optimize existing RBAC
+  - What if analysis that is useful for mergers, acquisitions, or new application onboarding
+
+
 ## Acknowledgements
 * **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
