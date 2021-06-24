@@ -77,27 +77,19 @@ Data Guard is defaulted to Maximum Performance Protection Mode which means the r
 
 Because the networking and remote peering connection is configured, the standby database and Data Guard will automatically be created.
 
-## **STEP 2:** Check your standby region.  A standby database should be provisioning.
-
-
+## **STEP 2:** Check your standby region.  
+1. Ensure the standby database is provisioning.
 
   ![dbstby-provisioning](./images/dbstby-provisioning-copy.png)
 
-
-
-Check the Data Guard association.  You will see the primary being associated.
-
-
-Completed. The standby database is now ready for a failover.
-
-
+2. Check the Data Guard association.  You will see the primary being associated.
 
   ![image-20210121222339306](./images/image-20210121222339306.png)
+
+Completed. The standby database is now ready for a failover or a switchover.
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Milton Wan, Database Product Management, Dec 2020
-* **Contributors** -  
 * **Last Updated By/Date** - Milton Wan, Jun 2021
-* **Workshop Expiry Date** -
