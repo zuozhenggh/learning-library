@@ -33,7 +33,7 @@ Autonomous Database automatically manages the data storage process for you, so t
     table_name => 'MOVIE_FIN_ADJ_argentina_EXT',
     format =>  '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => '[https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_argentina.csv](https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_argentina.csv)'
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_argentina.csv'
     );END;
     /</copy>
     ```
@@ -147,7 +147,7 @@ Autonomous Database automatically manages the data storage process for you, so t
     table_name => 'MOVIE_FIN_ADJ_Austria_EXT',
     format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_austria.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_austria.csv');
     END;
     /
     BEGIN
@@ -155,315 +155,315 @@ Autonomous Database automatically manages the data storage process for you, so t
     table_name => 'MOVIE_FIN_ADJ_belarus_EXT',
     format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_belarus.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_belarus.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_brazil_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_brazil.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_brazil.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_canada_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_canada.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_canada.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_chile_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_chile.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_chile.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_china_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_china.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_china.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_egypt_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_egypt.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_egypt.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
       table_name => 'MOVIE_FIN_ADJ_finland_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
       column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-      file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_finland.csv');
+      file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_finland.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_france_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_france.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_france.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_germany_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_germany.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_germany.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_greece_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_greece.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_greece.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_hungary_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_hungary.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_hungary.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_india_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_india.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_india.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_indonesia_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_indonesia.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_indonesia.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_israel_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_israel.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_israel.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_italy_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_italy.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_italy.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_japan_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_japan.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_japan.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_jordan_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_jordan.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_jordan.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_kazakhstan_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_kazakhstan.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_kazakhstan.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_kenya_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_kenya.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_kenya.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_madagascar_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_madagascar.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_madagascar.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_malaysia_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_malaysia.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_malaysia.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_mexico_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_mexico.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_mexico.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_mozambique_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_mozambique.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_mozambique.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_netherlands_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_netherlands.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_netherlands.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_new_zealand_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_new_zealand.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_new_zealand.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_pakistan_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_pakistan.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_pakistan.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_paraguay_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_paraguay.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_paraguay.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_peru_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_peru.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_peru.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_poland_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_poland.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_poland.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_portugal_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_portugal.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_portugal.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_romania_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_romania.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_romania.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_russian_federation_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_russian_federation.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_russian_federation.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_saudi_arabia_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_saudi_arabia.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_saudi_arabia.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_serbia_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_serbia.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_serbia.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_singapore_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_singapore.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_singapore.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_somalia_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_somalia.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_somalia.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_south_korea_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_south_korea.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_south_korea.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_thailand_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_thailand.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_thailand.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_turkey_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_turkey.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_turkey.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_ukraine_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_ukraine.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_ukraine.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_united_kingdom_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_united_kingdom.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_united_kingdom.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_united_states_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_united_states.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_united_states.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_uruguay_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_uruguay.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_uruguay.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_uzbekistan_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_uzbekistan.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_uzbekistan.csv');
     END;
     /
     BEGIN
     dbms_cloud.create_external_table (
     table_name => 'MOVIE_FIN_ADJ_venezuela_EXT',format => '{"delimiter":",","recorddelimiter":"newline","skipheaders":"1","quote":"\\\"","rejectlimit":"1000","trimspaces":"rtrim","ignoreblanklines":"false","ignoremissingcolumns":"true","dateformat":"DD-MON-YYYY HH24:MI:SS"}',
     column_list => '"ORDER_NUM" INTEGER,"COUNTRY" VARCHAR2(256),"DISCOUNT_PERCENT" NUMBER,"ACTUAL_PRICE" NUMBER',
-    file_uri_list => 'https://objectstorage.ca-toronto-1.oraclecloud.com/n/adwc4pm/b/MovieStreamToronto/o/d801_movie_sales_finance_adj_venezuela.csv');
+    file_uri_list => 'https://objectstorage.uk-london-1.oraclecloud.com/n/adwc4pm/b/data_library/o/d801_movie_sales_finance_adj_venezuela.csv');
     END;
     /</copy>
     ```
