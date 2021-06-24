@@ -51,7 +51,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-   You should now see the directory `microservices-datadriven` in the directory that you created.
+   You should now see the directory `microservices-datadriven` in the current directory.
 
 2. Run the following command to edit your .bashrc file so that you will be returned to the workshop directory when you connect to the cloud shell in the future.
 
