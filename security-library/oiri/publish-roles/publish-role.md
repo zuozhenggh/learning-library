@@ -127,6 +127,8 @@ The task is now approved and is no longer displayed
   ![](images/21-publish-role.png)
 
 
+## **Summary**
+
 You have now completed the OIRI workshop. In this workshop, we learnt:
   - How to deploy OIRI
   - How to import Entity data into OIRI from OIG database
