@@ -20,6 +20,8 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 **Note**: Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
 
+Estimated Workshop Time: 3.5 hours
+
 ### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
 - Build an Oracle Application Express (APEX) App
