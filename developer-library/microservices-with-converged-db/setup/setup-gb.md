@@ -15,19 +15,19 @@ Estimates Lab Time - 20 minutes
 
 You have been assigned your own OCI compartment for running this workshop.  The name of the compartment is shown on the Launch page.
 
-1. Copy the compartment name (not OCID) from the workshop reservation page
+1. Copy the compartment name (not OCID) from the workshop reservation page.
 
 ![](images/copy-comp-name.png " ")
 
-2. Select the hamburger menu from the top left corner of the OCI Console and navigate to the Compute --> Compute --> Instances page
+2. Select the hamburger menu from the top left corner of the OCI Console and navigate to the Compute --> Compute --> Instances page.
 
 ![](images/select-compute-instances.png " ")
 
-3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope"  
+3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope". 
 
 ![](images/enter-comp-name.png " ")
 
-4. Select the compartment name from the drop down list
+4. Select your compartment name from the drop down list.
 
 ![](images/select-comp-name.png " ")
 
@@ -87,17 +87,17 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/get-compartment-ocid.png " ")
 
-4. The setup will ask you to enter an Auth Token so that docker can login to the OCI Registry. Please follow these steps to create an Auth Token
+4. The setup will ask you to enter an Auth Token so that docker can login to the OCI Registry. Please follow these steps to create an Auth Token.
 
   a. Locate your menu bar and click on the person icon at the far upper right. From the drop-down menu, select your user's name.
 
    ![](images/get-gbuser-ocid.png " ")
 
-  b. On the left side of the page, click Auth Tokens and click Generate Token
+  b. On the left side of the page, click Auth Tokens and click Generate Token.
 
    ![](images/auth-token-region.png " ")
 
-  c. Enter "grabdish" in the description field and click Generate Token
+  c. Enter "grabdish" in the description field and click Generate Token.
 
    ![](images/generate-auth-token.png " ")
 
