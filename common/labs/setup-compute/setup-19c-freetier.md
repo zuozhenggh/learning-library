@@ -38,21 +38,24 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
-5.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
+5. Click **Create Stack**.
+    ![](./images/create-stack.png " ")
+
+6.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
 
    ![](./images/zip-file.png " ")
 
-6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
+7. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
    ![Create a stack](images/workshop-001.png " ")
-7. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
+8. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
    ![Create a stack](images/workshop-002.png " ")
-8. Paste the SSH key you created in the previous lab.
+9. Paste the SSH key you created in the previous lab.
    ![Create a stack](images/workshop-003.png " ")
-9. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
+10. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
     ![Create a stack](images/workshop-004.png " ")
-10. Accept the network and click **Next**.
+11. Accept the network and click **Next**.
     ![Create a stack](images/workshop-005.png " ")
-11. Review the details and click **Create**.
+12. Review the details and click **Create**.
     ![Create a stack](images/workshop-006.png " ")
 
 ## **STEP 2**: Run Stack Apply Job
@@ -335,5 +338,5 @@ Reload your browser
 ## Acknowledgements
 - **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
