@@ -189,9 +189,8 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     sqlplus system/Ora_DB4U@localhost:1521/catapdb
     </copy>
     ````
-    
 
-![](./images/sqlplus_login_orclpdb.png " ")
+    ![](./images/sqlplus_login_orclpdb.png " ")
     
 6.  To leave `sqlplus` you need to use the exit command. Copy and paste the text below into your terminal to exit sqlplus.
 
@@ -215,7 +214,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
-* **Contributors** -  
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
 * **Workshop Expiry Date** - 25 April 2022
 
