@@ -27,15 +27,15 @@ Oracle recommends that you create a non-SYSDBA user called *FMW* to run the Upgr
 
 1. Login to the database and run the *fmw.sql* script
 
-```
-<copy>sqlplus / as sysdba</copy>
-```
-```
-SQL> <copy>@/u01/scripts/FMW.sql</copy>
-```
-```
-SQL> <copy>exit</copy>
-```
+    ```
+    <copy>sqlplus / as sysdba</copy>
+    ```
+    ```
+    SQL> <copy>@/u01/scripts/FMW.sql</copy>
+    ```
+    ```
+    SQL> <copy>exit</copy>
+    ```
 
 ## **STEP 2:** Export and Copy the OPSS Encryption Keys
 
@@ -45,20 +45,24 @@ The following steps are performed to ensure that the encrypted data from 11g (11
 
     - Navigate to the *<11g_(11.1.2.3_ORACLE_HOME>/oracle_common/common/bin* location
 
-			<copy>cd /u01/oracle/middleware11g/oracle_common/common/bin</copy>
+        ```
+        <copy>cd /u01/oracle/middleware11g/oracle_common/common/bin</copy>
+        ```
 
     - Launch the *wlst.sh* script
-
-			<copy>./wlst.sh</copy>
+        ```
+        <copy>./wlst.sh</copy>
+        ```
 
     - Execute the *exportEncryptionKey* WLST command in the offline mode
+
         ```
-      <copy>exportEncryptionKey('/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/jps-config.xml', '/u01/OPSS_EncryptKey', 'Welcom@123')</copy>
+        <copy>exportEncryptionKey('/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/jps-config.xml', '/u01/OPSS_EncryptKey', 'Welcom@123')</copy>
         ```
 
     - Exit from the WLST
         ```
-      <copy>exit ()</copy>      
+        <copy>exit ()</copy>      
         ```
 
         ![](images/1-wlst.png)
@@ -81,86 +85,89 @@ The following steps are performed to ensure that the encrypted data from 11g (11
 ## **STEP 3:** Pre-Upgrade readiness check
 
 1. Run the Upgrade Assistant in readiness mode to perform a pre-upgrade readiness check
-  ```
-  <copy>cd /u01/oracle/middleware12c/oracle_common/upgrade/bin</copy>
-  ```
-  ```
-  <copy>./ua -readiness</copy>
-  ```
+    ```
+    <copy>cd /u01/oracle/middleware12c/oracle_common/upgrade/bin</copy>
+    ```
+    ```
+    <copy>./ua -readiness</copy>
+    ```
   The Upgrade Assistant is launched in readiness mode:
 
   - Welcome - Click *Next*
 
-  ![](images/2-ua.png)
+      ![](images/2-ua.png)
 
   - Readiness check type - *Domain based*. Browse to the 11g OIM home: */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
 
-  ![](images/3-ua.png)
+      ![](images/3-ua.png)
 
   - Component List - Click *Next*
 
-  ![](images/4-ua.png)
+      ![](images/4-ua.png)
 
   - OPSS Schema
-  ```
-  DBA Username: <copy>FMW</copy>
-  ```
-  ```
-  DBA Password: <copy>Welcom#123</copy>
-  ```
+      ```
+      DBA Username: <copy>FMW</copy>
+      ```
+      ```
+      DBA Password: <copy>Welcom#123</copy>
+      ```
 
-  ![](images/5-ua.png)
+      ![](images/5-ua.png)
 
   - MDS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/6-ua.png)
+      ![](images/6-ua.png)
 
   - UMS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/7-ua.png)
+      ![](images/7-ua.png)
 
   - SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/8-ua.png)
+      ![](images/8-ua.png)
 
   - OIM Schema - The same Username and Password is updated automatically - Click *Next*
 
-  ![](images/9-ua.png)
+      ![](images/9-ua.png)
 
   - Readiness Summary - Click *Next*
 
   - Click on *Finish* and then *Close* the UA once the Readiness check is complete
 
-  ![](images/10-ua.png)
+      ![](images/10-ua.png)
 
 ## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 
 The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
 Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the */u01/Upgrade_Utils/OIM_preupgrade_reports* directory.
 
-```
-<copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>
-```
+  ```
+  <copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>
+  ```
 
 Open the *index.html* page and navigate through the different reports to analyze them.
 
-```
-<copy>firefox index.html</copy>
-```
+  ```
+  <copy>firefox index.html</copy>
+  ```
 
-![](images/Reports.png)
+  ![](images/Reports.png)
 
 ## **STEP 5:** Stop 11g servers and processes
 
 Before you run the Upgrade Assistant to upgrade the schemas, you must shut down all the processes and servers in the 11g OIG domain, including the Administration Server, Node Manager (if you have configured Node Manager), and all Managed Servers.
 
 1. Run the *stopDomain11g.sh* script to stop all 11g servers
-```
-<copy>cd /u01/scripts</copy>
-```
-```
-<copy>./stopDomain11g.sh</copy>
-```
+
+    ```
+    <copy>cd /u01/scripts</copy>
+    ```
+
+    ```
+    <copy>./stopDomain11g.sh</copy>
+    ```
+    
 This completes all the pre-upgrade tasks to be performed.
 
 You may now [proceed to the next lab](#next).

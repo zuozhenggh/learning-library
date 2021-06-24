@@ -28,49 +28,57 @@ In this lab, you will:
     ```
 
     - Start the Admin Server
-    ```
-    <copy>nohup ./startWebLogic.sh &</copy>
-    ```
-    Once the Admin Server starts up, access the Weblogic console from your browser.
+        ```
+        <copy>nohup ./startWebLogic.sh &</copy>
+        ```
+    - Once the Admin Server starts up, access the Weblogic console from your browser.
     Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
 
-    ```
-    <copy>http://onehopiam:7005/console</copy>
-    ```
-    ```
-    Username: <copy>weblogic</copy>
-    ```
-    ```
-    Password: <copy>Welcom@123</copy>
-    ```
+        ```
+        <copy>http://onehopiam:7005/console</copy>
+        ```
+        ```
+        Username: <copy>weblogic</copy>
+        ```
+        ```
+        Password: <copy>Welcom@123</copy>
+        ```
 
-    On the Weblogic console, Click on *Servers* under *Environment* and notice that all servers(OIM,SOA) are in the ‘SHUTDOWN’ state
+    - On the Weblogic console, Click on *Servers* under *Environment* and notice that all servers(OIM,SOA) are in the ‘SHUTDOWN’ state
 
     - Open another tab in the terminal. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and start the SOA server
-    ```
-    <copy>nohup ./startManagedWebLogic.sh soa_server1 t3://onehopiam:7005 -Dbpm.enabled=true &</copy>
-    ```
-    Refresh the Weblogic console and notice that the SOA server is now in the ‘RUNNING’ state. It may take about 5-8 minutes for the SOA server to start.
+
+        ```
+        <copy>nohup ./startManagedWebLogic.sh soa_server1 t3://onehopiam:7005 -Dbpm.enabled=true &</copy>
+        ```
+
+    - Refresh the Weblogic console and notice that the SOA server is now in the ‘RUNNING’ state. It may take about 5-8 minutes for the SOA server to start.
 
     - Open another tab in the terminal. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and start the OIM server
-    ```
-    <copy>nohup ./startManagedWebLogic.sh oim_server1 t3://onehopiam:7005 &</copy>
-    ```
-    This time, OIM bootstrap process will be executed, and after successful bootstrap, OIM Managed Server will be shut down automatically.
 
-    After the OIM server is shutdown automatically, verify that no OIM processes are running by issuing the following command:
-    ```
-    <copy>ps -ef |grep oim_server1</copy>
-    ```
+        ```
+        <copy>nohup ./startManagedWebLogic.sh oim_server1 t3://onehopiam:7005 &</copy>
+        ```
+
+    - This time, OIM bootstrap process will be executed, and after successful bootstrap, OIM Managed Server will be shut down automatically.
+
+    - After the OIM server is shutdown automatically, verify that no OIM processes are running by issuing the following command:
+
+        ```
+        <copy>ps -ef |grep oim_server1</copy>
+        ```
 
     - Stop the SOA Server. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and stop the SOA server
-    ```
-    <copy>./stopManagedWebLogic.sh soa_server1</copy>
-    ```
+
+        ```
+        <copy>./stopManagedWebLogic.sh soa_server1</copy>
+        ```
+
     - Stop the Admin Server.
-    ```
-    <copy>./stopWebLogic.sh</copy>
-    ```
+
+        ```
+        <copy>./stopWebLogic.sh</copy>
+        ```
 
 ## **STEP 2:** Verify the Upgrade Process
 
@@ -88,15 +96,15 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
     - Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
 
-    ```
-    <copy>http://onehopiam:7005/console</copy>
-    ```
-    ```
-    Username: <copy>weblogic</copy>
-    ```
-    ```
-    Password: <copy>Welcom@123</copy>
-    ```
+        ```
+        <copy>http://onehopiam:7005/console</copy>
+        ```
+        ```
+        Username: <copy>weblogic</copy>
+        ```
+        ```
+        Password: <copy>Welcom@123</copy>
+        ```
 
     - On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.  
 
@@ -104,23 +112,23 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
     - Click on the bookmark *OIG12c* "OR" paste the following URL in the browser:
 
-    ```
-    <copy>http://onehopiam:14005/identity</copy>
-    ```
-    ```
-    Username: <copy>xelsysadm</copy>
-    ```
-    ```
-    Password: <copy>Welcom@123</copy>
-    ```
+        ```
+        <copy>http://onehopiam:14005/identity</copy>
+        ```
+        ```
+        Username: <copy>xelsysadm</copy>
+        ```
+        ```
+        Password: <copy>Welcom@123</copy>
+        ```
 
     - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 12c
 
-    ![](images/1-identity.png)
+        ![](images/1-identity.png)
 
     - Click on *Manage* on the top right corner. Then, click on *Users* and notice that the three users *TUSER1, TUSER2, TUSER3* are migrated from 11g to 12c.
 
-    ![](images/2-users.png)
+        ![](images/2-users.png)
 
 One-hop upgrade to Oracle Identity Manager 12c is complete.
 

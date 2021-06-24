@@ -29,11 +29,6 @@ In this Workshop, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
-
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 
