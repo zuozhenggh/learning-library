@@ -28,5 +28,5 @@ Estimated workshop time:  45 minutes
 
 
 ## Acknowledgements
-* **Author** - Milton Wan, Database Product Management, Dec 2020 
+* **Author** - Milton Wan, Database Product Management, Dec 2020
 * **Last Updated By/Date** - Milton Wan, Jun 2021
