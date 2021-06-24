@@ -4,11 +4,11 @@
 
 Migrating a WebLogic domain is equivalent to re-deploying the applications and resources to a new domain and infrastructure.
 
-We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on WebLogic Server (WLS) on Oracle Kubernetes Engine (OKE) via the Jenkins build pipeline to update the domain.
+We'll use WebLogic Deploy Tooling to migrate the domain from on-premises and re-deploy it on Oracle WebLogic Server (WLS) on Oracle Kubernetes Engine (OKE) via the Jenkins build pipeline to update the domain.
 
-Estimated Lab Time: 15 minutes.
+Estimated Completion Time: 15 minutes.
 
-### About Product/Technologies
+### About Products and Technologies
 
 **WebLogic Deploy Tooling** is an open source tool found on Github at [https://github.com/oracle/weblogic-deploy-tooling](https://github.com/oracle/weblogic-deploy-tooling).
 
@@ -21,8 +21,6 @@ Migration with WebLogic Deploy Tooling (WDT) consists of 4 steps:
 
 ### Objectives
 
-In this lab, you will:
-
 - Install WebLogic Deploy Tooling on the source WebLogic domain.
 - Discover the source domain.
 - Edit the source domain model file.
@@ -32,8 +30,6 @@ In this lab, you will:
 - Check migration was successful.
 
 ### Prerequisites
-
-To run this lab, you need to:
 
 - Have set up the demo on-premises environment to use as the source domain to migrate.
 - Have deployed a WebLogic on OCI domain using the Oracle Cloud Marketplace.
@@ -75,17 +71,16 @@ To run this lab, you need to:
 
 You should already be in the on-premises environment logged in as the `oracle` user.
 
-1. Run the `install_wdt.sh` script:
+Run the `install_wdt.sh` script:
 
-    ```bash
-    <copy>
-    cd ~/wdt
-    ./install_wdt.sh
-    </copy>
-    ```
+```bash
+<copy>
+cd ~/wdt
+./install_wdt.sh
+</copy>
+```
 
-    This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
-
+This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
 
 ## **STEP 2:** Discover the On-Premises Domain
 
@@ -99,13 +94,13 @@ It also takes care of the manual extraction of applications that may be present 
 
 Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_HOME@@` and **will not be included in the archive file**. They need to be extracted manually. The script takes care of this and injects those applications in the `source.zip` file while replacing the path in the `source.yaml` file.
 
-1. Run the `discover_domain.sh` script:
+Run the `discover_domain.sh` script:
 
-    ```bash
-    <copy>
-    ./discover_domain.sh
-    </copy>
-    ```
+```bash
+<copy>
+./discover_domain.sh
+</copy>
+```
 
 The output of the `discover_domain.sh` script should look like:
 
@@ -413,54 +408,54 @@ appDeployments:
 
   4. Finally, edit the `resources->JDBCSystemResource->JDBCConnection->JdbcResource->JDBCDriverParams->URL` to match the JDBC connection string of the database on OCI.
 
-    The new JDBC connection string should be:
-
-    ```
-    <copy>
-    jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
-    </copy>
-    ```
-
-    This is the connection string gathered earlier but making sure the **service** name is changed to `pdb` (this is the name of the pdb where the `RIDERS.RIDERS` table resides, as needed by the **SimpleDB** application).
-
-    The resulting `source.yaml` file should be like:
-
-    ```yaml
-    <copy>
-    resources:
-        JDBCSystemResource:
-            JDBCConnection:
-                Target: 'nonjrf-cluster'
-                JdbcResource:
-                    JDBCConnectionPoolParams:
-                        InitialCapacity: 0
-                        TestTableName: SQL SELECT 1 FROM DUAL
-                    JDBCDataSourceParams:
-                        GlobalTransactionsProtocol: TwoPhaseCommit
-                        JNDIName: jdbc.JDBCConnectionDS
-                    JDBCDriverParams:
-                        URL: 'jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com'
-                        PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
-                        DriverName: oracle.jdbc.xa.client.OracleXADataSource
-                        Properties:
-                            user:
-                                Value: riders
-    appDeployments:
-        Application:
-            SimpleDB:
-                SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
-                ModuleType: ear
-                StagingMode: stage
-                Target: 'nonjrf-cluster'
-            SimpleHTML:
-                SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
-                ModuleType: ear
-                StagingMode: stage
-                Target: 'nonjrf-cluster'
-    </copy>
-    ```
-
-  > **Important**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
+     The new JDBC connection string should be:
+   
+     ```
+     <copy>
+     jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com
+     </copy>
+     ```
+   
+     This is the connection string gathered earlier but making sure the **service** name is changed to `pdb` (this is the name of the pdb where the `RIDERS.RIDERS` table resides, as needed by the **SimpleDB** application).
+   
+     The resulting `source.yaml` file should be like:
+   
+     ```yaml
+     <copy>
+     resources:
+         JDBCSystemResource:
+             JDBCConnection:
+                 Target: 'nonjrf-cluster'
+                 JdbcResource:
+                     JDBCConnectionPoolParams:
+                         InitialCapacity: 0
+                         TestTableName: SQL SELECT 1 FROM DUAL
+                     JDBCDataSourceParams:
+                         GlobalTransactionsProtocol: TwoPhaseCommit
+                         JNDIName: jdbc.JDBCConnectionDS
+                     JDBCDriverParams:
+                         URL: 'jdbc:oracle:thin:@//db.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com:1521/pdb.nonjrfdbsubnet.nonjrfvcn.oraclevcn.com'
+                         PasswordEncrypted: '@@PROP:JDBC.JDBCConnection.PasswordEncrypted@@'
+                         DriverName: oracle.jdbc.xa.client.OracleXADataSource
+                         Properties:
+                             user:
+                                 Value: riders
+     appDeployments:
+         Application:
+             SimpleDB:
+                 SourcePath: 'wlsdeploy/applications/SimpleDB.ear'
+                 ModuleType: ear
+                 StagingMode: stage
+                 Target: 'nonjrf-cluster'
+             SimpleHTML:
+                 SourcePath: 'wlsdeploy/applications/SimpleHTML.ear'
+                 ModuleType: ear
+                 StagingMode: stage
+                 Target: 'nonjrf-cluster'
+     </copy>
+     ```
+   
+   > **Important**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 

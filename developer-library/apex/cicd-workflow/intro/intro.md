@@ -8,9 +8,9 @@ This shows the flow to develop an APEX application and promote it from a develop
 
 The process takes advantage of Terraform to deploy the infrastructure, Liquibase which is integrated in the Oracle SQLcl command line tool, as well as git and APEX specific app management functionalities.
 
-![](./images/apex-wf.png)
+![](./images/apex-wf.png " ")
 
-Estimated Lab Time: 45 minutes.
+Estimated Completion Time: 45 minutes.
 
 ### Objectives
 

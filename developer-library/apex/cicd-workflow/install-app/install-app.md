@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this lab we will install a sample application in the *`dev`* environment.
+We will install a sample application in the *`dev`* environment.
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
 
-In this lab you will install a sample app from the app library.
+We will install a sample app from the app library.
 
 ## **STEP 1:** Install a Sample Application
 
@@ -17,19 +17,19 @@ In this lab you will install a sample app from the app library.
     - Go to **Oracle Databases** and select **Autonomous Transaction Processing** in your compartment.
     - Click the database for dev (*APEX\_DEV* if you used the default names).
 
-      ![](./images/db-list.png)
+      ![](./images/db-list.png " ")
 
     - Click **Tools** tab.
 
-      ![](./images/atp-tools.png)
+      ![](./images/atp-tools.png " ")
 
     - Under **Oracle Application Express**, click **Open APEX**.
 
-      ![](./images/open-apex.png)
+      ![](./images/open-apex.png " ")
 
     - Click **Workspace Sign-in**.
 
-      ![](./images/ws_signin.png)
+      ![](./images/ws_signin.png " ")
 
     - Enter the credentials for the Workspace Admin user (*WS\_ADMIN* if you used the default names) found in the *`dev.env`* file (WORKSPACE\_ADMIN and WORKSPACE\_ADMIN_PWD).
 
@@ -38,23 +38,23 @@ In this lab you will install a sample app from the app library.
       - User: `WS_ADMIN`.
       - Password: check in the `dev.env` file.
 
-    ![](./images/signin.png)
+    ![](./images/signin.png " ")
 
 ## **STEP 2:** Sample App from Gallery On APEX below 21.1
 
 1. Click **App Gallery**.
 
-    ![](./images/app-gallery.png)
+    ![](./images/app-gallery.png " ")
 
 2. Choose **Opportunity Tracker** application.
 
-    ![](./images/opportunity-tracker.png)
+    ![](./images/opportunity-tracker.png " ")
 
 3. Click **Install**.
 
 4. When installed, make sure to click **Manage** and then **Unlock** the app before the next steps:
 
-  ![](./images/unlock.png)
+  ![](./images/unlock.png " ")
 
 ## **STEP 3:** Sample App on APEX 21.1 and Above
 
