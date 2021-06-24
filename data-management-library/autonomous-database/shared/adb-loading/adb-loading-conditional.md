@@ -281,19 +281,25 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 
     > **Note:** You do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
 
-3. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
+3. Download <a href="./files/load_data_without_base_url_v2.txt" target="\_blank">this code snippet</a> to a text editor.
 
-4. Replace `<file_uri_base>` in the code with the base URL you copied in Step 6. You should make 10 substitutions. The top of the file should look similar to the example below:
+4. Replace `<bucket URI>` in the code with the base URL you copied in Step 6.  The top of the file should look similar to the example below:
 
     ```
+    /* Replace <bucket URI> below with the URL you copied from your files in OCI Object Storage at runtime.
+    */
+    set define on
+    define &file_uri_base = 'https://objectstorage.me-dubai-1.oraclecloud.com/n/c4u04/b/LL6570-ADWLab/o'
+
     begin
      dbms_cloud.copy_data(
         table_name =>'CHANNELS',
         credential_name =>'OBJ_STORE_CRED',
-        file_uri_list =>'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/ADWCLab/o/chan_v3.dat',
+        file_uri_list =>'&file_uri_base/chan_v3.dat',
         format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
      );
     end;
+    /
     ...
     ```
 
