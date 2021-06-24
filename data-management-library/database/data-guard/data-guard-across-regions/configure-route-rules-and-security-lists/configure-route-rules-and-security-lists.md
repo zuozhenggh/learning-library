@@ -29,12 +29,7 @@ Let's start on the standby side.
 
 6. Click Add Route Rules to finish.
 
-
-
-
   ![image-20210122200451778](./images/image-20210122200451778.png)
-
-
 
 ## **STEP 2:** Now configure the security list  
 
@@ -60,8 +55,6 @@ Let's start on the standby side.
 
   ![image-20210122200918911](./images/image-20210122200918911.png)
 
-
-
 11. Add an Egress Rule for outbound communication to the standby.
 
 12. Stateless is unchecked.
@@ -80,8 +73,6 @@ Let's start on the standby side.
 
   ![image-20210122201351067](./images/image-20210122201351067.png)
 
-
-
 ## **STEP 3:** Now do the same steps for the primary side  
 
 This time the CIDR block should be different since they can not overlap with the standby.
@@ -91,6 +82,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Milton Wan, Database Product Management, Dec 2020
-* **Contributors** -  
 * **Last Updated By/Date** - Milton Wan, Jun 2021
-* **Workshop Expiry Date** -

@@ -2,6 +2,17 @@
 
 ## Introduction
 In order to configure Data Guard across regions we must first set up remote VCN peering.  Remote VCN peering connects VCNs in different regions together.  The peering allows resources such as the database with private IP address to communicate across regions.
+A picture of the remote VCN peering is shown below.  
+
+![This image shows the basic layout of two VCNs that are remotely peered, each with a remote peering connection on the DRG](./images/network_remote_peering_basic.png)
+
+If you don't have admin policies you will need to add remote peering policies.  A diagram of the policies follows.  Refer to the documentation for more information.
+
+![This image shows the two policies for VCNs in different regions but in the same tenancy.](./images/network_remote_peering_policy_same_tenancy.png)
+
+The DRG or Dynamic Routing Gateway must be set up on both VCNs and the RPC or Remote Peering Connection is then configured to connect the two VCNs.  
+
+The route rule and security list must also be configured to access the resources in the VCN.
 
 Estimated lab time: 10 minutes
 
@@ -16,29 +27,6 @@ Estimated lab time: 10 minutes
 
 - Oracle Database Cloud Service created in your primary region
 
-
-
-A picture of the remote VCN peering is shown below.  
-
-
-
-  ![This image shows the basic layout of two VCNs that are remotely peered, each with a remote peering connection on the DRG](./images/network_remote_peering_basic.png)
-
-
-
-If you don't have admin policies you will need to add remote peering policies.  A diagram of the policies follows.  Refer to the documentation for more information.
-
-
-
-  ![This image shows the two policies for VCNs in different regions but in the same tenancy.](./images/network_remote_peering_policy_same_tenancy.png)
-
-
-
-
-
-The DRG or Dynamic Routing Gateway must be set up on both VCNs and the RPC or Remote Peering Connection is then configured to connect the two VCNs.  
-
-The route rule and security list must also be configured to access the resources in the VCN.  
 
 ## **STEP 1:** Create the Dynamic Routing Gateways
 1. Create the DRGs in both VCNs.  
@@ -134,7 +122,5 @@ The Peering Status will show Peered if it is successful.
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Milton Wan, Database Product Management, Dec 2020
-* **Contributors** -  
+* **Author** - Milton Wan, Database Product Management, Dec 2020  
 * **Last Updated By/Date** - Milton Wan, Jun 2021
-* **Workshop Expiry Date** -
