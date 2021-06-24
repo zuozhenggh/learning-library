@@ -6,7 +6,6 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 Estimated Lab Time: 30 minutes
 
-
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:Zq0qEgF0bMU)
 
