@@ -31,19 +31,20 @@ Estimated time: 15 minutes
 
     ```
     <copy>SELECT year,quarter_name,SUM(quantity_sold * actual_price)
-    FROM movie_sales_factWHERE YEAR = '2020'
+    FROM movie_sales_fact
+    WHERE YEAR = '2020'
     GROUP BY year, quarter_nameORDER BY 1,2;</copy>
     ```
 
 2. The result should look something like this:
 
-    ![The result of simple query should look like this.](images/3038282373.png)
+    ![The result of simple query should look like this.](images/analytics-lab-1-step-1-substep-2.png)
 
-    Note the time taken to run your query. In the above example, this was 1.409 seconds to run (*when you run your query the timing may vary slightly*). Now simply run the query again:
+    Note the time taken to run your query. In the above example, this was 1.315 seconds to run (*when you run your query the timing may vary slightly*). Now simply run the query again:
 
-    ![Run the query again.](images/3038282374.png)
+    ![Run the query again.](images/analytics-lab-1-step-1-substep-2-after-note.png)
 
-3. This time the query ran much faster, taking just 0.003 seconds! So what happened?
+3. This time the query ran much faster, taking just 0.004 seconds! So what happened?
 
     When we executed the query the first time, Autonomous Data Warehouse executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**;. When we then ran the same query again Autonomous Data Warehouse simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
 
@@ -70,14 +71,14 @@ But, how do you know if the results from a query are returned from cache?
     SUM(actual_price) AS total_revenue,
     SUM(actual_price)/COUNT(customer_id) AS avg_revenue
     FROM movie_sales_fact
-    GROUP BY year, quarter_name, continent, country, state_province
     WHERE YEAR = '2020'
+    GROUP BY year, quarter_name, continent, country, state_province
     ORDER BY 1,2,3,4;</copy>
     ```
 
 3. This query should return a result similar to this:
 
-    ![Worksheet showing query and result](images/3038282365.png)
+    ![Worksheet showing query and result](images/analytics-lab-1-step-2-substep-3.png)
 
 4. Click this icon at the top of the worksheet:
 
@@ -107,7 +108,7 @@ But, how do you know if the results from a query are returned from cache?
 
 7. You can see that it runs significantly faster this time!
 
-    ![Query results with faster run time](images/3038282368.png)
+    ![Query results with faster run time](images/analytics-lab-1-step-2-substep-7.png)
 
 8. If you look at the explain plan again it will be the same explain plan as last time which is helpful in some ways but we want to dig a little deeper this time. To track the actual execution process, we need to switch over to the Autonomous Data Warehouse console. There should be a tab open in your browser which is labelled **Oracle Cloud Infrastructure**, or simply open a new tab and go to  **[cloud.oracle.com](http://cloud.oracle.com),**  then click on the card labelled **View all my resources **,  and find your data warehouse in the list of resources, and use Performance Hub. Switch back to your Autonomous Data Warehouse console page. 
 
@@ -137,10 +138,10 @@ Now that we have some insight into how Autonomous Data Warehouse manages querie
 
     ```
     <copy>SELECT
-      TO_CHAR(day, 'D') AS day_id,
-      TO_CHAR(day, 'Day') AS day_name,
-      COUNT(customer_id) AS no_viewers,
-      SUM(actual_price * quantity_sold) AS revenue
+    TO_CHAR(day, 'D') AS day_id,
+    TO_CHAR(day, 'Day') AS day_name,
+    COUNT(customer_id) AS no_viewers,
+    SUM(actual_price * quantity_sold) AS revenue
     FROM movie_sales_fact
     WHERE YEAR = '2020'
     GROUP BY to_CHAR(day, 'D'), TO_CHAR(day, 'Day')
@@ -149,7 +150,7 @@ Now that we have some insight into how Autonomous Data Warehouse manages querie
 
 3. This should return something similar to the following:
 
-    ![Result of query](images/3038282372.png)
+    ![Result of query](images/analytics-lab-1-step-3-substep-3.png)
 
     This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
 
@@ -192,7 +193,7 @@ We are going to extend the **```RATIO_TO_REPORT```** function a little further 
 
 2. The output from this query is shown below and the last column containing the contribution calculation is definitely a little challenging to read:
 
-    ![Output from query showing confusing values for contribution calculation](images/3038282359.png)
+    ![Output from query showing confusing values for contribution calculation](images/analytics-lab-1-step-4-substep-2.png)
 
 3. In a spreadsheet, it's very easy to clean up this type of report by using the decimals button. SQL has a similar way to formatting option called **ROUND**, so let's clean up the output:
 
@@ -210,7 +211,7 @@ We are going to extend the **```RATIO_TO_REPORT```** function a little further 
     ```
 4. Now we can get a much clearer picture of the contribution each day is providing:
 
-    ![[Output from query showing more meaningful values for contribution calculation](images/3038282360.png)
+    ![[Output from query showing more meaningful values for contribution calculation](images/analytics-lab-1-step-4-substep-4.png)
 
 5. We can see that Friday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Monday** are actually providing the highest levels of contribution across the whole week.  Now let's try and breakout the data across different dimensions to get some more insight. 
 

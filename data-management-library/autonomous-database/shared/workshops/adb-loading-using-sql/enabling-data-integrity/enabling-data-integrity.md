@@ -41,7 +41,7 @@ A unique constraint designates a column (it could also be a group of columns) a
 
 3. This time, the data load process will fail with the following error message in the script output window that indicates the duplicate records have been rejected (unique constraint (SALES.IDX\_MSF\_ORDER\_NUM) violated):
 
-    ![Error message showing duplicates](images/data-load-error-message-duplicate-records.png)
+    ![Error message showing duplicates](images/loading-lab-3-step-2-substep-3.png)
 
     **NOTE:** The data integrity checking does not depend on the name of the source data file. We could use a different filename (i.e. a filename that has not been used before) and we will get the same result - an error message that indicates the data file contains records that have already been loaded.
 

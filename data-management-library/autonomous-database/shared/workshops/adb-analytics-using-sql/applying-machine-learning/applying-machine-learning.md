@@ -66,7 +66,7 @@ FROM movie_sales_fact</copy>
 
 4. This will return something like the following output:
 
-    ![Query result showing what the table data set looks like](images/3038282314.png)
+    ![Query result showing what the table data set looks like](images/analytics-lab-6-step-1-substep-4.png)
 
     **NOTE:** Unlike the movie sales data, we now have a single row per customer and you can see that in the column **insufficient\_funds\_incidents** there are single numeric values determining the status of this column.
 
