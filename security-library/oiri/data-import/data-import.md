@@ -28,44 +28,44 @@ In this lab, you will:
 
 1. Copy ca.crt from K8S Master
 
-  ```
-  <copy>cp /etc/kubernetes/pki/ca.crt /nfs/ding/</copy>
-  ```
+    ```
+    <copy>cp /etc/kubernetes/pki/ca.crt /nfs/ding/</copy>
+    ```
 
 2. Run ding-cli container and update the existing data load configuration to import entity data from Oracle Identity Governance database
 
-  ```
-  <copy>docker exec -it ding-cli bash</copy>
-  ```
-  ```
-  <copy>./updateDataIngestionConfig.sh --useoigdbforetl true --entityusersenabled true --entityuserssyncmode full --entityapplicationsenabled true --entityapplicationssyncmode full --useflatfileforetl false</copy>
-  ```
+    ```
+    <copy>docker exec -it ding-cli bash</copy>
+    ```
+    ```
+    <copy>./updateDataIngestionConfig.sh --useoigdbforetl true --entityusersenabled true --entityuserssyncmode full --entityapplicationsenabled true --entityapplicationssyncmode full --useflatfileforetl false</copy>
+    ```
 
 
-  ![](images/1-data-load.png)
+    ![](images/1-data-load.png)
 
 
 ## **STEP 2:** Perform a Dry Import Run
 
 1. Before data import (or data ingestion), perform a dry run to validate if the data fits into the OIRI database. This will fetch data from Oracle Identity Governance database and validate it against the metadata of the OIRI database
 
-  ```
-  <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion dry-run /app/data/conf/data-ingestion-config.yaml</copy>
-  ```
+    ```
+    <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion dry-run /app/data/conf/data-ingestion-config.yaml</copy>
+    ```
 
 ## **STEP 3:** Sign in to the OIRI user interface and validate the dry data import
 
 1. Sign in to Identity Role Intelligence user interface. Launch a browser window and click on the bookmark *OIRI*. The OIRI account sign in page appears. Enter the username and password
 
-  ```
-  Username: <copy>xelsysadm</copy>
-  ```
-  ```
-  Password: <copy>Welcome1</copy>
-  ```
+    ```
+    Username: <copy>xelsysadm</copy>
+    ```
+    ```
+    Password: <copy>Welcome1</copy>
+    ```
 
 
-  ![](images/2-oiri.png)
+    ![](images/2-oiri.png)
 
 
 
@@ -101,9 +101,9 @@ In this lab, you will:
 
 1. Run the actual data import process
 
-  ```
-  <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion start /app/data/conf/data-ingestion-config.yaml</copy>
-  ```
+    ```
+    <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion start /app/data/conf/data-ingestion-config.yaml</copy>
+    ```
 
 ## **STEP 5:** Validate the data import task
 
