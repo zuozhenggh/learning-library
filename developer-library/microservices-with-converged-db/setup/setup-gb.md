@@ -23,9 +23,15 @@ You have been assigned your own OCI compartment for running this workshop.  The 
 
 ![](images/select-compute-instances.png " ")
 
-3. Paste the compartment name in the "Compartment" field under "List Scope"
+3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope"  
 
 ![](images/enter-comp-name.png " ")
+
+4. Select the compartment name from the drop down list
+
+![](images/select-comp-name.png " ")
+
+![](images/correct-comp-name.png " ")
 
 ## **STEP 2**: Launch the Cloud Shell
 
