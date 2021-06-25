@@ -191,17 +191,17 @@ In this lab, you will:
 6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database Service**.
 
    ```
-   <copy>cnx = mysql.connector.connect(
+   cnx = mysql.connector.connect(
       host="PRIVATE_IP",
       user="root",
       passwd="R2d2&C3po!",
       database="nature"
-   )</copy>
+   )
    ```
 
    ![](images/ds_notebook_fish_notebook_run.png)
 
-7. **Select** the rest paragraph (called Cell) of the Notebook and run the **Notebook** cell by cell by clicking the **play** icon over and over until you reach the end.
+7. **Select** the first paragraph (called Cell) with all the `import` statements in the Notebook and run the **Notebook** cell by cell by clicking the **play** icon over and over until you reach the end.
 
    ![](images/ds_notebook_fish_notebook_head.png)
 
