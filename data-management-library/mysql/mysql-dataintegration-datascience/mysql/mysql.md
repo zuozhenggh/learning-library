@@ -84,7 +84,7 @@ In this lab, you will:
 
    ![](images/cloud_shell.png)
 
-      - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
+      - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
          <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
