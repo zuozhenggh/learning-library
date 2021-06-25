@@ -144,7 +144,7 @@ In this lab, you will:
 
 We are going to need the **Object Storage URL** and **Tenancy ID**.
 
-1. ### Keep the Object Storage URL at hand
+1. ### Keep the Object Storage URL that you copied previously at hand
 
    You have this URL from Lab number 1, Underlying Infrastructure. The URL depends on the region you are doing the workshop.
 
