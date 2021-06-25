@@ -56,7 +56,7 @@ In this lab, you will:
       - Data Asset: `bucket-study`
       - Connection: `Default Connection`
       - Schema: `bucket-study`
-      - Data entity: Click **Browse By Name** and select `reef_life_survey_fish.csv`
+      - Data entity: Click **Browse By Name** and select `mds-di-ds-reef_life_survey_fish.csv`
       - All the default values are good
 
    Click **Select**.
