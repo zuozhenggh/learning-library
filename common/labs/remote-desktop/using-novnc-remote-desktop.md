@@ -14,8 +14,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Successfully completed
-    - Lab: Getting Started
+- Provisioned VM Instance configured with noVNC
 
 ## **STEP 1:** Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
