@@ -36,9 +36,14 @@ In this lab, you will:
 	COLUMN UPGRADED FORMAT A8
 	SELECT MRC_NAME, COMP_ID, OWNER, VERSION, STATUS, UPGRADED FROM SCHEMA_VERSION_REGISTRY where OWNER like '%DEV11G%' ORDER BY MRC_NAME, COMP_ID;</copy>
     ```
+
   We can observe that version 11g is displayed
 
     ![](images/1-sql.png)
+
+    ```
+    <copy>exit</copy>
+    ```
 
 ## **STEP 2:** Run the upgrade assistant to perform schema upgrade
 
@@ -49,11 +54,13 @@ In this lab, you will:
     ```
 
 2. Set a parameter for the Upgrade Assistant to include the JVM encoding requirement
+
     ```
     <copy>export UA_PROPERTIES="-Dfile.encoding=UTF-8"</copy>
     ```
 
 3. Start the Upgrade Assistant
+
     ```
     <copy>./ua</copy>
     ```

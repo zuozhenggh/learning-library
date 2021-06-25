@@ -39,58 +39,59 @@ Oracle recommends that you create a non-SYSDBA user called *FMW* to run the Upgr
 
 ## **STEP 2:** Export and Copy the OPSS Encryption Keys
 
-The following steps are performed to ensure that the encrypted data from 11g (11.1.2.3) OIG is read correctly after the upgrade to 12c (12.2.1.4) OIG. The exported keys will be required by the oneHopUpgrade tool to complete the upgrade process.
+Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) setup.The following steps are performed to ensure that the encrypted data from 11g (11.1.2.3) OIG is read correctly after the upgrade to 12c (12.2.1.4) OIG. The exported keys will be required by the oneHopUpgrade tool to complete the upgrade process.
 
-1. Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) setup
+1. Navigate to the *<11g_(11.1.2.3_ORACLE_HOME>/oracle_common/common/bin* location
 
-    - Navigate to the *<11g_(11.1.2.3_ORACLE_HOME>/oracle_common/common/bin* location
+    ```
+    <copy>cd /u01/oracle/middleware11g/oracle_common/common/bin</copy>
+    ```
 
-        ```
-        <copy>cd /u01/oracle/middleware11g/oracle_common/common/bin</copy>
-        ```
+2. Launch the *wlst.sh* script
+    ```
+    <copy>./wlst.sh</copy>
+    ```
 
-    - Launch the *wlst.sh* script
-        ```
-        <copy>./wlst.sh</copy>
-        ```
+3. Execute the *exportEncryptionKey* WLST command in the offline mode
 
-    - Execute the *exportEncryptionKey* WLST command in the offline mode
+    ```
+    <copy>exportEncryptionKey('/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/jps-config.xml', '/u01/OPSS_EncryptKey', 'Welcom@123')</copy>
+    ```
 
-        ```
-        <copy>exportEncryptionKey('/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/jps-config.xml', '/u01/OPSS_EncryptKey', 'Welcom@123')</copy>
-        ```
+4. Exit from the WLST
+    ```
+    <copy>exit ()</copy>      
+    ```
 
-    - Exit from the WLST
-        ```
-        <copy>exit ()</copy>      
-        ```
+    ![](images/1-wlst.png)
 
-        ![](images/1-wlst.png)
+5. Navigate to the */u01/OPSS_EncryptKey* directory and Verify that the exported encryption key files are created
 
+    ```
+    <copy>cd /u01/OPSS_EncryptKey</copy>
+    ```
+    ```
+    <copy>ls -latr</copy>
+    ```
 
-    - Navigate to the */u01/OPSS_EncryptKey* directory and Verify that the exported encryption key files are created
+6. Copy the .xldatabasekey from the 11g (11.1.2.3) setup location to */u01/OPSS_EncryptKey* directory
 
-        ```
-        <copy>cd /u01/OPSS_EncryptKey</copy>
-        ```
-        ```
-        <copy>ls -latr</copy>
-        ```
-    - Copy the .xldatabasekey from the 11g (11.1.2.3) setup location to */u01/OPSS_EncryptKey* directory
-
-        ```
-        <copy>cp /u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/.xldatabasekey /u01/OPSS_EncryptKey</copy>
-        ```
+    ```
+    <copy>cp /u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/.xldatabasekey /u01/OPSS_EncryptKey</copy>
+    ```
 
 ## **STEP 3:** Pre-Upgrade readiness check
 
 1. Run the Upgrade Assistant in readiness mode to perform a pre-upgrade readiness check
+
     ```
     <copy>cd /u01/oracle/middleware12c/oracle_common/upgrade/bin</copy>
     ```
+
     ```
     <copy>./ua -readiness</copy>
     ```
+
   The Upgrade Assistant is launched in readiness mode:
 
   - Welcome - Click *Next*
@@ -139,20 +140,20 @@ The following steps are performed to ensure that the encrypted data from 11g (11
 
 ## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 
-The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
+1. The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
 Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the */u01/Upgrade_Utils/OIM_preupgrade_reports* directory.
 
-  ```
-  <copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>
-  ```
+    ```
+    <copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>
+    ```
 
-Open the *index.html* page and navigate through the different reports to analyze them.
+2. Open the *index.html* page and navigate through the different reports to analyze them.
 
-  ```
-  <copy>firefox index.html</copy>
-  ```
+    ```
+    <copy>firefox index.html</copy>
+    ```
 
-  ![](images/Reports.png)
+    ![](images/Reports.png)
 
 ## **STEP 5:** Stop 11g servers and processes
 
@@ -167,7 +168,7 @@ Before you run the Upgrade Assistant to upgrade the schemas, you must shut down 
     ```
     <copy>./stopDomain11g.sh</copy>
     ```
-    
+
 This completes all the pre-upgrade tasks to be performed.
 
 You may now [proceed to the next lab](#next).

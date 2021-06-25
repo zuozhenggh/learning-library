@@ -23,14 +23,17 @@ In this lab, you will:
 ## **STEP 1**: Start the 12c Admin Server and Managed Servers
 
 1. Navigate to the 12c domain directory and Start the servers in the order given below
+
     ```
     <copy>cd /u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin</copy>
     ```
 
     - Start the Admin Server
+
         ```
         <copy>nohup ./startWebLogic.sh &</copy>
         ```
+        
     - Once the Admin Server starts up, access the Weblogic console from your browser.
     Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
 

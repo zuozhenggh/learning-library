@@ -28,42 +28,26 @@ In this lab, you will:
 1. Launch your browser to the following URL to access the instance
 
     ```
-    http://[your instance public-ip address]:6080/index.html?resize=remote
+    http://[your instance public-ip address]:6080/index.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true
     ```
 
-2. Login to the instance with the novnc password
+## **STEP 2:** Verify that the Database is up and running
+
+1. Verify that the Database has started
 
     ```
-    NOVNC Password: <copy>LiveLabs.Rocks_99</copy>
+    <copy>lsnrctl status</copy>
     ```
 
-## **STEP 2:** Start the Database
+    ![](images/1-db-status.png)
 
-1. Open a terminal session and Navigate to the */u01/scripts* folder
+## **STEP 3:** Verify the 11g Domain
 
-    ```
-    <copy>cd /u01/scripts</copy>
-    ```
+1. Wait for the 11g domain to startup. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start
 
-
-2. Start the database by running the *startDB.sh* script
-
-    ```
-    <copy>./startDB.sh</copy>
-    ```
-    ![](images/1-DB-start.png)
-
-## **STEP 3:** Start and Verify the 11g Domain
-
-1. Run the *startDomain11g.sh* script
-The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
-
-    ```
-    <copy>./startDomain11g.sh</copy>
-    ```
 2. Access the Weblogic console from your browser and verify the version
 
-    - Click on the bookmark *WLS11g* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *WLS11g* from the dropdown "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:7001/console</copy>
@@ -85,7 +69,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
 3. Access the Identity Self Service console
 
-    - Click on the bookmark *OIG11g* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *OIG11g* "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:14000/identity</copy>
@@ -109,17 +93,13 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
         ![](images/8-users.png)
 
-## **STEP 4:** Start and Verify the 12c Domain
+## **STEP 4:** Verify the 12c Domain
 
-1. Run the *startDomain12c.sh* script.
-The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
+1. Wait for the 12c Domain to startup. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 
-    ```
-    <copy>./startDomain12c.sh</copy>
-    ```
 2. Access the Weblogic console from your browser and verify the version as 12c
 
-    - Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *WLS12c* "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:7005/console</copy>
@@ -139,7 +119,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
 3. Access the Identity Self Service console
 
-    - Click on the bookmark *OIG12c* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:14005/identity</copy>
