@@ -180,13 +180,13 @@ In this lab, you will:
 
    ![](images/ds_notebook_upload.png)
 
-3. **Select** `FishSurvey.ipynb` from your disk. Wait for the upload to **complete**.
+3. **Select** `mds-di-ds-FishSurvey.ipynb` from your disk. Wait for the upload to **complete**.
 
-4. Your `FishSurvey.ipynb` will be **loaded** on the side panel.
+4. Your `mds-di-ds-FishSurvey.ipynb` will be **loaded** on the side panel.
 
    ![](images/ds_notebook_fish_notebook.png)
 
-5. **Double click** on **FishSurvey.ipynb**.
+5. **Double click** on **mds-di-ds-FishSurvey.ipynb**.
 
 6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database Service**.
 

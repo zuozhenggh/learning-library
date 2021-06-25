@@ -214,13 +214,13 @@ In this lab, you will:
 
 ## **STEP 5:** It Works
 
-1. On the bastion host in **Cloud Shell** (reconnect if timed out), run the **MySQL docker** image and in the `bash` **Terminal**, run:
+1. On the bastion host in **Cloud Shell** (reconnect from Cloud Shell to the bastion host if timed out: `ssh -i .ssh/bastion opc@PUBLIC_IP`), run the **MySQL Shell** in the `bash` **Terminal** with:
 
    ```
    <copy>mysqlsh --sql root@PRIVATE_IP</copy>
    ```
 
-2. Put the MySQL **password**:
+2. Put the MySQL **password** (if requested):
 
    ```
    <copy>R2d2&C3po!</copy>
@@ -232,11 +232,15 @@ In this lab, you will:
    <copy>use nature;</copy>
    ```
 
-4. Count the **number** of rows in the table `fish`.
+   The result message says `Default schema set to nature.` And `Fetching table and column names from nature for auto-completion... Press ^C to stop.` You can continue.
+
+4. Count the **number** of rows in the table `fish` by running the following query.
 
    ```sql
    <copy>select count(1) from fish;</copy>
    ```
+
+   You should see 3493 as result.
 
 5. **Exit** with:
 
