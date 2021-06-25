@@ -2,12 +2,25 @@
 ## Introduction
 The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
 
+Estimated Lab Time: 60 minutes
+
+### About Configuration and Compliance Management
+Changes to configuration properties of database and host targets invariably happen, typically because of common events like patches and upgrades. At some point a change to one component can affect the overall system in a negative way. Detecting the root cause becomes paramount. With Configuration Management, one can continuously monitor and track configuration drifts of targets against the reference configuration. Enterprise Manger automatically collects a comprehensive set of configuration properties of all managed targets across the datacenter and cloud.
+
+With Compliance Management, one can run automated, continuous security checks based on industry standards and best practices, such as the Center for Internet Security (CIS), Security Technical Implementation Guide (STIG), Payment Card Industry Data Security Standard (PCI DSS), and Health Insurance Portability and Accountability Act (HIPAA). Reinforce industry standards such as STIG and CIS with custom policies to protect against threats, providing a secure databases and hosts for applications. These security checks provide a compliance score to depict the overall compliance of targets against an industry standard benchmark.
+
 ### Objectives
 
-The objective of this workshop is to highlight Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities related to configuration and security compliance management of managed targets. Each activity focuses on different capabilities for an administrator.
+In this lab you will perform the following steps:
 
+| Step No.                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
+|-----------------------------------------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| 1                                                         | Inventory & Usage details                                               | 10 minutes   | IT Manager wants to get an inventory of all existing databases managed by Enterprise Manager including different versions of databases, number of instances deployed over a period of time | Reduce number of different configuration sets and increase standardization across the data center.                  |
+| 2                                                         | One-time database comparison                                            | 10 minutes   | Compare latest reference configuration to one or more targets to determine the configuration differences                                                                                   | Validate the configuration of new database provisioned aligns with IT configuration policy                          |
+| 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
+| 4                                                         | Database security compliance using custom compliance standard | 10 minutes   | Database security compliance for Oracle Database 12c target                                                                                      | Monitor security compliance for database targets from one customized dashboard.                                 |
+| 5                                                         | Host security compliance using custom compliance standard | 10 minutes   | Host security compliance                                                                                       | Monitor security compliance for host targets from one customized dashboard.                                 |
 
-*Estimated Lab Time*: 60 minutes
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -20,22 +33,12 @@ The objective of this workshop is to highlight Oracle Enterprise Manager Cloud C
     - password: **welcome1**
 - EM13c Host Public IP address
 - OMS Console URL:
-  ````
-  <copy>https://<EM13c Host Public IP address>:7803/em</copy>
-  e.g: https://111.888.111.888:7803/em
-  ````
+````
+<copy>https://<EM13c Host Public IP address>:7803/em</copy>
+e.g: https://111.888.111.888:7803/em
+````
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
-
-### Lab Timing (Estimated)
-
-| Step No.                                      | Feature                                                                 | Approx. Time | Details                                                                                                                                                                                    | Value proposition                                                                                                   |
-|-----------------------------------------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| 1                                                         | Inventory & Usage details                                               | 10 minutes   | IT Manager wants to get an inventory of all existing databases managed by Enterprise Manager including different versions of databases, number of instances deployed over a period of time | Reduce number of different configuration sets and increase standardization across the data center.                  |
-| 2                                                         | One-time database comparison                                            | 10 minutes   | Compare latest reference configuration to one or more targets to determine the configuration differences                                                                                   | Validate the configuration of new database provisioned aligns with IT configuration policy                          |
-| 3                                                         | Database configuration drift management                                 | 20 minutes   | Compare latest or saved target configuration to one or more targets.                                                                                                                       | Monitor databases in your organization for any configuration drift, remediate to align with reference configuration |
-| 4                                                         | Database security compliance using custom compliance standard | 10 minutes   | Database security compliance for Oracle Database 12c target                                                                                      | Monitor security compliance for database targets from one customized dashboard.                                 |
-| 5                                                         | Host security compliance using custom compliance standard | 10 minutes   | Host security compliance                                                                                       | Monitor security compliance for host targets from one customized dashboard.                                 |
 
 ## **STEP 0:** Running your Workload
 ### Login to OMS Console
@@ -177,8 +180,6 @@ In this step, you will compare two database targets to determine configuration d
 
   ![](images/ecm2_one_time_database_comparison_report2.png " ")
 
-### Summary
-
 In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters.
 
 ## **STEP 3:** Database Configuration Drift Management
@@ -212,10 +213,10 @@ In this workshop, you will learn about continuous configuration drift monitoring
   ![](images/ecm3_drift_comparison_template4.png " ")
 
 7.  Select the following three configuration items only
-    - Instance Caging Information
-    - Instance Information
-    - Initialization Parameters under Instance Information configuration item
-    - Click Save
+  - Instance Caging Information
+  - Instance Information
+  - Initialization Parameters under Instance Information configuration item
+  - Click Save
 
       ![](images/ecm3_drift_comparison_template5.png " ")
 
@@ -228,9 +229,9 @@ In this workshop, you will learn about continuous configuration drift monitoring
   ![](images/ecm3_create_drift_definiton1.png " ")
 
 10. Click on Create Definition under Drift Management.
-    - Choose Database Instance as the Target Type
-    - Select the template created in the previous step
-    - Click OK
+  - Choose Database Instance as the Target Type
+  - Select the template created in the previous step
+  - Click OK
 
       ![](images/ecm3_create_drift_definiton2.png " ")
 
@@ -240,8 +241,8 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 12. Under Source Configuration, do the following
 
-    -  Select ‘Latest Configuration’
-    -  Click search to choose Source Target  
+  -  Select ‘Latest Configuration’
+  -  Click search to choose Source Target  
 
       ![](images/ecm3_create_drift_definiton4.png " ")
 
@@ -289,10 +290,10 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
   Under the target compared column, you will see few icons. The icons that appear in the view are mostly intuitive:
 
-    - Equal sign means parameter properties are same across the reference and target compared
-    - Not equal sign indicates parameter properties are different across the reference and target compared
-    - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
-    - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
+  - Equal sign means parameter properties are same across the reference and target compared
+  - Not equal sign indicates parameter properties are different across the reference and target compared
+  - A red box with 1 (left only) means that the comparison did not find a matching item to compare, this means 2nd target doesn’t have property configured to compare
+  - A red box 2 (right only) means that the comparison did not find a matching item to compare to the second configuration
 
 
 23. Export the comparison results into an excel report for offline analysis. In the Drift Results page, highlight the definition and choose Export Results. You can choose the specific results to export.
@@ -302,8 +303,6 @@ In this workshop, you will learn about continuous configuration drift monitoring
 24. Exported results in excel for offline analysis looks like:
 
   ![](images/ecm3_drift_report2.png " ")
-
-### Summary
 
 In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately.
 
@@ -412,9 +411,9 @@ A compliance standard rule is a specific test to determine if a configuration da
   All these will give you a security posture of database target
 
 
-## **STEP 5:** Host Security Compliance
+  ## **STEP 5:** Host Security Compliance
 
-### Overview
+  ### Overview
 
   Compliance Management provides the ability to evaluate the compliance of targets and systems as they relate to business best practices for configuration, security, and storage.
 
@@ -422,21 +421,21 @@ A compliance standard rule is a specific test to determine if a configuration da
 
   Terminology Used in this Compliance specific workshop
 
-#### Compliance Standard
+  #### Compliance Standard
 
   A compliance standard is a collection of checks or rules that follow broadly accepted best practices. It is the Cloud Control representation of a compliance control that must be tested against some set of IT infrastructure to determine if the control is being followed. This ensures that IT infrastructure, applications, business services and processes are organized, configured, managed, and monitored properly. A compliance standard evaluation can provide information related to platform compatibility, known issues affecting other customers with similar configurations, security vulnerabilities, patch recommendations, and more. A compliance standard is also used to define where to perform real-time change monitoring.
 
   A compliance standard is mapped to one or more compliance standard rules and is associated to one or more targets which should be evaluated.
 
-#### Compliance Standard Rule
+  #### Compliance Standard Rule
 
   A compliance standard rule is a specific test to determine if a configuration data change affects compliance. A compliance standard rule is mapped to one or more compliance standards
 
-### Execution
+  ### Execution
 
-1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
+  1.  Log into your Enterprise Manager VM using the IP provided on your cheat sheet.
 
-2.  From the Enterprise menu, select Compliance, then select Library
+  2.  From the Enterprise menu, select Compliance, then select Library
 
     ![](images/ecm5_host_compliance_menu.png " ")
 
@@ -492,17 +491,16 @@ A compliance standard rule is a specific test to determine if a configuration da
 
   All these will give you a security posture of host target
 
-
-### Summary
-
 With this step, you got a hands-on experience in creating a custom framework to monitor the security compliance of heterogeneous targets (Database and Host, this example). This will help you assess overall security compliance of all
 Enterprise Manager managed targets from one aggregated view. And if required, you can drill down into each standard to assess details of target specific security compliance
 
 This completes the Lab.
 
+You may now [proceed to the next lab](#next).
+
 Thank You!
 
-## Want to Learn More?
+## Learn More
 
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
@@ -511,4 +509,7 @@ Thank You!
 ## Acknowledgements
 - **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+- **Last Updated By/Date** - Harish Niddagatta, Oracle Enterprise Manager Product Management, June 2021
+
+## See an issue?
+Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.

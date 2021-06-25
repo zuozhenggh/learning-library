@@ -1,5 +1,9 @@
 # Automated Database Patching at Scale with Fleet Maintenance
 ## Introduction
+The goal of this workshop is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
+
+Estimated Lab Time: 60 minutes
+
 ### About Database Fleet Maintenance
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
@@ -13,11 +17,21 @@ Benefits with Fleet Maintenance:
 
 ![](images/em-fleet-maintenance-overview-1.png " ")
 
-*Estimated Lab Time*: 60 minutes
+#### Video Preview
+Watch a preview of database patching using Oracle Enterprise Manager Fleet Maintenance:
+
+[](youtube:JlspEvqebHE)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
 ### Objectives
 
-The objective of this workshop is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
+In this lab you will perform the following steps:
+| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
+|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
+| 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -37,20 +51,6 @@ e.g: https://111.888.111.888:7803/em
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-### Video Preview
-Watch a preview of database patching using Oracle Enterprise Manager Fleet Maintenance:
-
-[](youtube:JlspEvqebHE)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
-
-### Lab Timing (Estimated)
-
-| Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
-|----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
-
 ## **STEP 0:** Running your Workload
 ### Login to Host using SSH Key based authentication
 1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -62,17 +62,17 @@ Watch a preview of database patching using Oracle Enterprise Manager Fleet Maint
       ````
 
 ### Login to OMS Console
-1. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+2. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
   You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ### Update the Named Credentials with your SSH Key
 
-1. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential and Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+3. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential and Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
     ![](images/update_ssh_creds.jpg " ")
 
-2. Setup oracle Named Credentials using Job System
+4. Setup oracle Named Credentials using Job System
 
     This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
   Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
@@ -80,22 +80,22 @@ Watch a preview of database patching using Oracle Enterprise Manager Fleet Maint
     ![](images/named_creds_job.jpg " ")
 
 
-3.  Click **Submit** again on the Job submission Page
+5.  Click **Submit** again on the Job submission Page
 
     ![](images/named_creds_job_submit.jpg " ")
 
-4. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
+6. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
 
     ![](images/submitted.jpg " ")
 
-5. The Job should show Status **Succeeded**
+7. The Job should show Status **Succeeded**
 
     ![](images/named_creds_job_succeeded.jpg " ")
 
 
 ### Fleet Maintenance Login to EMCLI
 
-  1.  Upon login as user “oracle” via sudo from user “opc”, the following are performed automatically for your convenience:
+  8.  Upon login as user “oracle” via sudo from user “opc”, the following are performed automatically for your convenience:
 
       - OMS environment variables set
       - emcli session is established
@@ -174,16 +174,15 @@ This exercise enables us to analyze the database estate using Software Standardi
 
     Recommendation is based on union of all bugs included in the Patches in all OHs and based on configuration type.
 
-### Summary
-This completes Step 1. In this section, you learned how to perform the following:
+    This completes Step 1. In this section, you learned how to perform the following:
 
-  - Access the Database Software Standardization Advisor
-  - View Configuration summary
-  - Generate and download current and recommended configuration reports
+      - Access the Database Software Standardization Advisor
+      - View Configuration summary
+      - Generate and download current and recommended configuration reports
 
-In the next section we will follow these recommendations to perform the following using Enterprise Manager 13c Fleet Maintenance.
+    In the next section we will follow these recommendations to perform the following using Enterprise Manager 13c Fleet Maintenance.
 
-  - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
+      - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
 
 ## **STEP 2:** Database Server patching with Fleet maintenance
 
@@ -558,19 +557,19 @@ In order to have an old empty home previously used by “***hr.subnet.vcn.oracle
 
     ![](images/b95a982c86b233dfa1af34d29c03aa6e.png " ")
 
-### Summary
 This completes Step 2. In this section, you learned how to perform the following:
-  -   Create Oracle Database Software Gold Image
-  -   Subscribe Database to Gold Image
-  -   Deploy Gold Image to Database Host
-  -   Migrate Oracle Database Listener from old Oracle Home to newly Deployed Oracle Home
-  -   Update (Patch) Database from 18.3 to 18.10
-  -   Rollback (Un-patch) Database from 18.10 to 18.3
-  -   Clean up old Oracle Homes
+-   Create Oracle Database Software Gold Image
+-   Subscribe Database to Gold Image
+-   Deploy Gold Image to Database Host
+-   Migrate Oracle Database Listener from old Oracle Home to newly Deployed Oracle Home
+-   Update (Patch) Database from 18.3 to 18.10
+-   Rollback (Un-patch) Database from 18.10 to 18.3
+-   Clean up old Oracle Homes
 
-Thank you!
+This completes this lab.
+You may now [proceed to the next lab](#next).
 
-## Want to Learn More?
+## Learn More
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
@@ -582,4 +581,4 @@ Thank you!
       - Rene Fontcha, Master Principal Solutions Architect, NA Technology
       - Shefali Bhargava, Oracle Enterprise Manager Product Management
   - **Adapted for Cloud by** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-  - **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+  - **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, June 2021

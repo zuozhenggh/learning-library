@@ -13,6 +13,16 @@ A job is a unit of work that you define to automate commonly-run tasks. Scheduli
 - Enables you to create your own multi-task jobs comprised of multiple tasks
 - Centralizes environment job scheduling into one robust tool
 
+### Objectives
+
+In this lab you will perform the following steps:
+
+| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
+|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Understand how to create an OS Command Job                                      | 5min                     | Understand a simple OS Command Job to update user oracle's password and update name credentials using a script                                                                                   | Learn how to create your own custom jobs to automate using scripts or cronjobs.                                                                                                           |
+| 2    | Create a SQL command Job | 10min                     |         Run a SQL query to **determine number of targets down** OR **modify an initialization parameter of a database**                                                                                                              | Access and run your databases queries and tasks on a regular basis using sql commands                                                                                                                  |
+| 3    | Create Database Backup Job using Wizard                               | 15min                      |   Use Customized Wizard to back up a database using various options to customize your RMAN script.                                                                                                                     |Create and schedule regular backups of your database to safeguard against data loss and application errors                                                                                       |
+
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
@@ -31,15 +41,8 @@ e.g: https://111.888.111.888:7803/em
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
-### Lab Timing (Estimated)
 
-| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
-|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | Understand how to create an OS Command Job                                      | 5min                     | Understand a simple OS Command Job to update user oracle's password and update name credentials using a script                                                                                   | Learn how to create your own custom jobs to automate using scripts or cronjobs.                                                                                                           |
-| 2    | Create a SQL command Job | 10min                     |         Run a SQL query to **determine number of targets down** OR **modify an initialization parameter of a database**                                                                                                              | Access and run your databases queries and tasks on a regular basis using sql commands                                                                                                                  |
-| 3    | Create Database Backup Job using Wizard                               | 15min                      |   Use Customized Wizard to back up a database using various options to customize your RMAN script.                                                                                                                     |Create and schedule regular backups of your database to safeguard against data loss and application errors                                                                                       |
-
-## **Step 0:** Running your Workload
+## **STEP 0:** Running your Workload
 
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
@@ -67,9 +70,9 @@ Navigate to "***Setup >> Security >> Named Credential***" and Select **ROOT** cr
   ![](images/named_creds_job_succeeded.jpg " ")
 
 
-## **Step 1:** Understand how to create an OS Command Job
+## **STEP 1:** Understand how to create an OS Command Job
 
-In this workshop we will first review the Job you ran in Step 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
+In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
 1.  Log into your Enterprise Manager as user **emadmin**
 
@@ -107,9 +110,9 @@ In this workshop we will first review the Job you ran in Step 0 to set user *ora
 12. In the **Select Named Credentials** Window, Select Named Credential **ROOT**. Click **Test and Save**
   ![](images/preferred_creds4.jpg " ")
 
-Now the Library job created is ready to be used as in Step 0 to setup user **oracle** Named Credentials.
+Now the Library job created is ready to be used as in STEP 0 to setup user **oracle** Named Credentials.
 
-## **Step 2:** Create a SQL command Job
+## **STEP 2:** Create a SQL command Job
 
 In this workshop we will create and run a SQL Command Job to determine how many targets are down from the Enterprise Manager Repository
 
@@ -202,7 +205,7 @@ Now let's see how we can run a sql job to alter the initialization parameters of
 This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.  
 
 
-## **Step 3:** Create Database Backup Job using Wizard
+## **STEP 3:** Create Database Backup Job using Wizard
 
 Jobs can be accessed from the Jobs menu or from within the context of a target. Let's look at it from a Database target perspective.
 
@@ -248,7 +251,7 @@ This lab shows how you can create Enterprise Manager Jobs from a Database Target
 
 This concludes the Automation of Enterprise Manager Job System lab.
 
-## Want to Learn More?
+## Learn More
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
 - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Utilizing the Job System](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emadm/utilizing-job-system-and-corrective-actions.html#GUID-3F8CCFFA-4290-4AA9-A093-1E1659C8784D)

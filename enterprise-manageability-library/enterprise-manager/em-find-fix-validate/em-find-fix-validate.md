@@ -1,12 +1,24 @@
 # Database Performance Management: Find, Fix, Validate
 ## Introduction
+The goal of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c
+Estimated Lab Time: 55 minutes
+
+### About Database Performance Management
 Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. In this lab you will get familiar with Performance hub, Real-time database operation monitoring, SQL Performance Analyzer etc.  
 
 ### Objectives
-The objective of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c
+
+In this lab you will perform the following steps:
 
 
-*Estimated Lab Time*: 55 minutes
+| **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **1**  | Performance Hub                               | 15 minutes       | Oracle Enterprise Manager 13c includes a new Jet based unified Performance Hub Jet interface for performance monitoring.                                                                                           | Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. The time picker allows the administrator to switch between Real-Time and Historical views of database performance.                                                                                                                                                                                                                                                                      |
+| **2**  | Real-time database operation monitoring       | 10 minutes       | Real-Time Database Operations Monitoring, introduced in Oracle Database 12c, enables an administrator to monitor long running database tasks as a composite business operation.                                                | Developers and DBAs can define business operations for monitoring by explicitly specifying the start and end of an operation or implicitly with tags that identify the operation.                                                                                                                                                                                                                                                                                                                                                                                              |
+| **3**  | Tuning a SQL in a Pluggable Database (PDB)                         | 10 minutes       | In this activity see how a pluggable database administrator can tune queries in a PDB.                                                                                                                                        | The DBA for the PDB will not have access to the Container so their view is restricted to the queries running in the PDB assigned to them. This activity identifies a Top SQL in a PDB and then tune it using SQL Tuning Advisor.                                                                                                                                                                                                                                                                                                                                  |
+| **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
+
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -26,16 +38,6 @@ The objective of this lab is to become familiar with on-premise and Oracle Cloud
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-### Lab Timing (Estimated)
-
-| **Step No.** | **Feature**                                   | **Approx. Time** | **Details**                                                                                                                                                                                                                    | **Value proposition**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|--------|-----------------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1**  | Performance Hub                               | 15 minutes       | Oracle Enterprise Manager 13c includes a new Jet based unified Performance Hub Jet interface for performance monitoring.                                                                                           | Performance Hub is a single pane of glass view of database performance with access to Active Session History (ASH) Analytics, Real-time SQL Monitoring and SQL Tuning together. The time picker allows the administrator to switch between Real-Time and Historical views of database performance.                                                                                                                                                                                                                                                                      |
-| **2**  | Real-time database operation monitoring       | 10 minutes       | Real-Time Database Operations Monitoring, introduced in Oracle Database 12c, enables an administrator to monitor long running database tasks as a composite business operation.                                                | Developers and DBAs can define business operations for monitoring by explicitly specifying the start and end of an operation or implicitly with tags that identify the operation.                                                                                                                                                                                                                                                                                                                                                                                              |
-| **3**  | Tuning a SQL in a Pluggable Database (PDB)                         | 10 minutes       | In this activity see how a pluggable database administrator can tune queries in a PDB.                                                                                                                                        | The DBA for the PDB will not have access to the Container so their view is restricted to the queries running in the PDB assigned to them. This activity identifies a Top SQL in a PDB and then tune it using SQL Tuning Advisor.                                                                                                                                                                                                                                                                                                                                  |
-| **4**  | SQL Performance Analyzer Optimizer Statistics | 10 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c with Oracle Database 18c. | SQL Performance Analyzer gathers Oracle Database Optimizer statistics for validation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **5**  | Database Workload Replay                      | 10 minutes       | The objective of this activity is to is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities in Oracle Enterprise Manager Cloud Control 13c and Oracle Database 18c.                | **Scenario:** You've been asked to add three new indexes for an application, but before adding, you want proof that database performance is improved. Use of SQL Performance Analyzer (SPA) isn't enough because there is also the cost of maintaining the indexes. Replay will be performed against the **Sales** Container Database and changes need to be performed in the OLTP Container against the **DWH\_TEST** schema. The database version is 18c so the capture and replay are performed using a CDB. |
-
 ## **STEP 0:** Running your Workload
 ### Login to Host using SSH Key based authentication
 1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -47,52 +49,52 @@ The objective of this lab is to become familiar with on-premise and Oracle Cloud
       ````
 
 ### Login to OMS Console
-1. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
+2. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
     You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ### Update the Named Credentials with your SSH Key
 
-1. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+3. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
 
     ![](images/update_ssh_creds.jpg " ")
 
-2. Setup oracle Named Credentials using Job System
+4. Setup oracle Named Credentials using Job System
 
     This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
   Navigate to "***Enterprise >> Job >> Library***" and **select** "SETUP ORACLE CREDENTIALS"; **Click** Submit.
 
     ![](images/named_creds_job.jpg " ")
 
-3. Click **Submit** again on the Job submission Page
+5. Click **Submit** again on the Job submission Page
 
     ![](images/named_creds_job_submit.jpg " ")
 
-4. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
+6. The Job will be submitted successfully. **Click** on SETUP ORACLE CREDENTIALS Job link to view the Job
 
     ![](images/submitted.jpg " ")
 
-5. The Job should show Status **Succeeded**
+7. The Job should show Status **Succeeded**
 
     ![](images/named_creds_job_succeeded.jpg " ")
 
 
 ### Prepare database - Option 1: Using EM Console
-1. Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+8. Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
-2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
+9. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
 
     ![](images/emjobnav.png " ")
 
-3. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
+10. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
 
     ![](images/emdbstartjob.png " ")
 
-4. Then Click the Submit button in the upper right of your window.
+11. Then Click the Submit button in the upper right of your window.
 
     ![](images/emjobsubmitbutton.png " ")
 
-5. The workload is now started and takes a few minutes to ramp up.
+12. The workload is now started and takes a few minutes to ramp up.
 
     ![](images/emjobcom.png " ")
 
@@ -213,7 +215,7 @@ Now execute the file \@DBOP.sql
 
     ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg " ")
 
-5.  Click on the Metrics tab. You will see all the activity for this operation.
+5.  Click on the Activity tab. You will see all the activity for this operation.
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
@@ -295,89 +297,94 @@ In this activity we need to configure the database to set up optimizer statistic
 
     ![](images/emspasetup.png " ")
 
-4. **Click** the **Submit** button
+4. Select OS Command in the Create library Job drop down list **Click** Go
+
+    ![](images/a04978f5e6e7d3e03d34685c7212f413.jpg " ")
+
+5. **Click** the **Submit** button
 
     ![](images/spasubmit.png " ")
 
-5. The job then runs and completes
+6. The job then runs and completes
 
     ![](images/emspajobconfirm.png " ")
 
-6. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
+7. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
 
-    ![](images/baa21e15a952e1b090944051c919d47e.jpg " ")
+    ![](images/emspadbtarget.png " ")
 
-7. Expand the *sales.subnet.vcn.oraclevcn.com* database. **Click** on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
+
+8. Expand the *sales.subnet.vcn.oraclevcn.com* database. **Click** on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
 
     ![](images/6273897d2614da4d3babab73299d5bc5.jpg " ")
 
-8. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
+9. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
 
     ![](images/52d28e53edc6e12a26eefd6df1487d20.jpg " ")
 
-9.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
+10.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
 
-10. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
+11. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
 
     ![](images/dd8e59451bf9d2de14f07592d390da6a.jpg " ")
 
-11.  Navigate ***Performance >> SQL >> Optimizer Statistics***
+12.  Navigate ***Performance >> SQL >> Optimizer Statistics***
 
       ![](images/4e82b571a46f839223bca1f879643bb0.jpg " ")
 
-12.  **Click** “Gather”
+13.  **Click** “Gather”
 
       ![](images/1e54f21d483e95189477069278b54053.jpg " ")
 
-13.  Select “Schema”. Check “Validate the impact of statistics on…..” **Click**  “Next”
+14.  Select “Schema”. Check “Validate the impact of statistics on…..” **Click**  “Next”
 
       ![](images/1d4b3ee3678078564de13336896fbe34.jpg " ")
 
-14.  **Click**  “Add”
+15.  **Click**  “Add”
 
       ![](images/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg " ")
 
-15.  **Click**  “Search”. **Select:** STAT1, STAT2 **Click**  “OK”
+16.  **Click**  “Search”. **Select:** STAT1, STAT2 **Click**  “OK”
 
       ![](images/5f8e1b0229f48747aa96998dbbe0aa87.jpg " ")
 
-16.  **Click**  “Next”
+17.  **Click**  “Next”
 
       ![](images/47d4db96f2a225723e405f06171d2c7d.jpg " ")
 
-17.  **Click**  “Next”
+18.  **Click**  “Next”
 
       ![](images/a4faddf1878e9f72df40f1bde4e54bdf.jpg " ")
 
-18.  **Click**  “Submit”
+19.  **Click**  “Submit”
 
       ![](images/d2c4f87d66682e3ecbb6b9c62e639281.jpg " ")
 
-19. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
+20. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
 
     ![](images/24fee673a5a32b19e55b92dae376c233.jpg " ")
 
-20. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed. **Click**  on “Name”
+21. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed. **Click**  on “Name”
 
     ![](images/d7b97d687f8d9a904ed2e7ee68f5da89.jpg " ")
 
-21.  As you can see there have been four SQL trials executed. The first two have identified SQL statements with plan changes. In the last two trials it is only statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. **Click** on the eyeglasses icon for the second report.
+22.  As you can see there have been four SQL trials executed. The first two have identified SQL statements with plan changes. In the last two trials it is only statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. **Click** on the eyeglasses icon for the second report.
 
       ![](images/e74bda3508f98dbfb69f1e9e196d9c01.jpg " ")
 
-22.  As we can see the majority of our statements had unchanged performance. We have a significant improvement but most important to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
+23.  As we can see the majority of our statements had unchanged performance. We have a significant improvement but most important to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
 
-      ![](images/2d5e94962e6a26f9d9442e09870cde04.jpg " ")
+      ![](images/emspapubobj.png " ")
 
-23.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. **Click** on “Publish Object Statistics”
+24.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. **Click** on “Publish Object Statistics”
 
       ![](images/bfd46716f39ec820e1c9c0c9982d5218.jpg " ")
 
-24. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. **Click** the Checkbox for schema STAT1 **Click** Publish
+25. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. **Click** the Checkbox for schema STAT1 **Click** Publish
 
     ![](images/1d3a02d5d46d720eefbe226143471f2c.jpg " ")
 
-25. **Click** “Yes”
+26. **Click** “Yes”
 
     ![](images/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg " ")
 
@@ -601,11 +608,12 @@ Now switch back to session 1. You should already be connected as user oracle
   We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
 
 This completes the Lab
+You may now [proceed to the next lab](#next).
 
 Thank You!
 
-## Want to Learn More?
-
+## Learn More
+You may now [proceed to the next lab](#next).
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
@@ -613,4 +621,8 @@ Thank You!
 ## Acknowledgements
 - **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, June 2021
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the Log In button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*. Please include your workshop name and lab name. You can also include screenshots and attach files. Engage directly with the author of the workshop.
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
