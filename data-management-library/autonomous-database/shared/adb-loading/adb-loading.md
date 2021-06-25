@@ -1,4 +1,4 @@
-
+/* DELETE THIS FILE IN THE NEXT RELEASE */
 # Load Data into an Autonomous Database Instance
 
 ## Introduction
