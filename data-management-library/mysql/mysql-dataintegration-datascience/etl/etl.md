@@ -35,10 +35,11 @@ In this lab, you will:
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
       - Name: `CSV to MySQL`
-      - Project or Folder: `My First Project`
       - Description: `Data Flow from CSV on Object Storage to MySQL Database`
 
-3. To select the **Project**, click on `My First Project` and **Select**.
+3. To select the **Project or Folder**, click on `My First Project` and **Select**.
+
+      - Project or Folder: `My First Project`
 
    ![](images/dataflow_select_project.png)
 
