@@ -27,7 +27,7 @@ In this lab, you will:
 
 1. We need to create some **policies** to allow the Data Integration service to use other services within OCI.
 
-2. Go to **Identity** > **Policies**.
+2. Go to **Identity & Security** > **Policies**.
 
    ![Identity Policy Menu](images/identity_policies_menu.png)
 
@@ -96,7 +96,7 @@ In this lab, you will:
 
    ![](images/di_ocid.png)
 
-11. Go to **Identity** > **Policies**. We are going to add new **policies** for our new Workspace.
+11. Go to **Identity & Security** > **Policies**. We are going to add new **policies** for our new Workspace.
 
    ![](images/identity_policies_menu.png)
 
