@@ -21,11 +21,21 @@ This lab assumes you have:
 ## **STEP 1:** Access the Graphical Remote Desktop
 For ease of execution of this workshop, your VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
-1. Navigate to **Stack Details**, **Application Information** tab, and click on the remote desktop URL
+1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
 
-  ![](./images/novnc-stack-apply-2.png " ")
+   ![](images/ll-launch-workshop.png " ")
 
-    *Note:* It may take up to 5 minutes for the URL to render. If the page loads and issues an *authentication error*, update the URL and replace the value after *password=* with *LiveLabs.Rocks_99*
+2. Click on ***Launch Workshop***
+
+3. In the expanded **Workshop Details**, look for the instance(s) and write down the public IP address(es).
+
+   ![](images/novnc-get-public-ip.png " ")
+
+4. Open a new browser tab and navigate to this URL to get started with labs execution.
+
+    ```
+    <copy>http://<your public-ip from above>:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
+    ```
 
     e.g.
 
@@ -33,9 +43,7 @@ For ease of execution of this workshop, your VM instance has been pre-configured
     <copy>http://111.111.111.111/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-    *Note:* The IP address shown above is made up for illustration only. Provide the correct IP address.
-
-    ![](./images/novnc-login-1.png " ")
+    *Note:* The IP address `111.111.111.111` is made up for illustration only. Provide the correct IP address.
 
 ## **STEP 2:** Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
