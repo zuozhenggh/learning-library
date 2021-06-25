@@ -113,7 +113,7 @@ In this lab, you will:
 
    ![](images/mds_heatwave_add_cluster.png)
 
-4. Check the values, and click **Add HeatWave Cluster**.
+4. Leave the default values, and click **Add HeatWave Cluster**.
 
    ![](images/mds_heatwave_select_shape.png)
 
