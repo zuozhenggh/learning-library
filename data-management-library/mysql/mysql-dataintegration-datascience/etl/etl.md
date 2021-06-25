@@ -117,7 +117,7 @@ In this lab, you will:
 
    ![](images/dataflow_target_attributes.png)
 
-20. Time to **wire source and target**. Draw the link between `FISH_SURVEY` and `MYSQL_DB`. Starting from the circle in `FISH_SURVEY` source box and finishing over `MYSQL_DB` target box.
+20. Time to **wire Source and Target**. Draw the link between `FISH_SURVEY` and `MYSQL_DB`. Starting from the circle in `FISH_SURVEY` source box and finishing over `MYSQL_DB` target box.
 
    ![](images/dataflow_source_to_target.png)
 
@@ -194,7 +194,7 @@ In this lab, you will:
 
    ![](images/di_application_integration_dots.png)
 
-3. Click on the **context menu** (three dots) and click **Run**.
+3. Click on the **Context Menu** (three dots) and click **Run**.
 
    ![](images/di_application_integration_run.png)
 
@@ -220,7 +220,7 @@ In this lab, you will:
    <copy>mysqlsh --sql root@PRIVATE_IP</copy>
    ```
 
-2. Put the MySQL **password** (if requested):
+2. If requested, put the MySQL **Password**:
 
    ```
    <copy>R2d2&C3po!</copy>
