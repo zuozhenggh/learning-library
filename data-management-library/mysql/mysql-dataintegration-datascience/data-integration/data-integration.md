@@ -130,7 +130,7 @@ In this lab, you will:
 
    ![](images/di_policy_save_changes.png)
 
-17. Come back to **Data Integration**, Click **Menu** > **Analytics & AI** > **Data Integration**.
+17. Come back to **Data Integration** under **Analytics & AI**, click **Menu** > **Analytics & AI** > **Data Integration**.
 
    ![](images/di_menu.png)
 
