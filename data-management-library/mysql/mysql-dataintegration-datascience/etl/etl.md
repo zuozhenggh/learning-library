@@ -77,7 +77,7 @@ In this lab, you will:
 
    ![](images/dataflow_source_data_entity_browse.png)
 
-10. **Select** `reef_life_survey_fish.csv` file.
+10. **Select** `mds-di-ds-reef_life_survey_fish.csv` file.
 
    ![](images/dataflow_source_data_entity_file.png)
 
