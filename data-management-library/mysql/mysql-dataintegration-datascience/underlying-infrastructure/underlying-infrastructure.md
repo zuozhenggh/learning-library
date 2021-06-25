@@ -222,7 +222,7 @@ In this lab, you will:
       ```
 
       ```
-      <copy>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm</copy>
+      <copy>sudo yum localinstall -y mysql80-community-release-el7-3.noarch.rpm</copy>
       ```
 
       ```

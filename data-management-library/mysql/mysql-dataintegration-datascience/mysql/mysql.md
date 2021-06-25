@@ -101,9 +101,9 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Enable HeatWave
+## **STEP 3:** Enable HeatWave (Optional)
 
-1. If you have select the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
+1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
 
 2. Go to the **Resources Menu** > **HeatWave**.
 
