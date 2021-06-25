@@ -6,6 +6,18 @@
 - You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
 
+## **Download Lab Files**
+Download the lab files with the following link. 
+
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip)
+
+To download them in the OCI Cloud Console, use the following command:
+```
+curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
+```
+
+We will be using the **file1.csv** file in the next section.
+
 ## **STEP 1**: Prepare the Database
 
 1. Start by going to the details page of your autonomous database if not already there. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
@@ -46,17 +58,13 @@
 
     ![Click the Center of the Data Loading Tab Area](./images/sdw-17.png)
 
-4. The Upload Data into New Table model will appear.
+4. The Upload Data into New Table modal will appear.
 
     ![To upload a file, Drag into the File Load Modal or Click Select File and use the OS File Browser](./images/sdw-18.png)
 
-5. We are going to use the same file we are going to run the automated load with so that the table definitions match. Use the following link to download the file:
+5. We are going to use the same file we are going to run the automated load with so that the table definitions match. In the zip file you downloaded at the begining of the lab, find the **file1.csv** file.
 
-    **(right-click and download the file with the following link)**
-
-    [file1.csv](https://xxxxxx)
-
-6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
+6. Drag the **file1.csv** file into the Upload Data into New Table modal. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
     ![Click the Next Button](./images/sdw-19.png)
 
@@ -282,10 +290,10 @@ With Oracle Functions, an application is:
 
     We are now setup to deploy our function.
 
-18. Download the function code in your OCI Cloud Shell with the following command:
+18. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func.zip https://xxxxxx/func.zip
+    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
     ```    
 
     Once downloaded, unzip it
