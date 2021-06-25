@@ -19,7 +19,7 @@ This lab assumes you have already completed the following:
 - Sharded database deployment
 - Migrate application to sharded database
 
-## **Step 1:** Add the New Shard
+## **STEP 1:** Add the New Shard
 
 1. Connect to the catalog database host. Switch to oracle user.
 
@@ -200,7 +200,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **Step 2:** Deploy and Verify the New Shard.
+## **STEP 2:** Deploy and Verify the New Shard.
 
 1. Run the deploy command to add the new shard.
 
@@ -333,7 +333,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **Step 3:** Run the Demo Application Again
+## **STEP 3:** Run the Demo Application Again
 
 1. Switch to catalog environment.
 
@@ -476,9 +476,5 @@ This lab assumes you have already completed the following:
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Contributors** -  
-* **Last Updated By/Date** - Minqiao Wang, DB Product Management, Apr 2021
+* **Last Updated By/Date** - Minqiao Wang, Jun 2021
 * **Workshop Expiry Date** - 
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
-
