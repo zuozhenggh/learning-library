@@ -35,7 +35,7 @@ Be sure that the following tasks are completed before you start:
 
 Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections and traffic on ports 1521, 1523, and 1524 for the DB Listener.
 
-> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended).
+> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended). If you are working in the LiveLabs environment, you can skip this step and then next and proceed to STEP 3.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -45,21 +45,13 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 4. Click the default security list.
 
-5. For each port number (22, 1521, 1523, 1524, 6080), do the following:
-
-    1. Click **Add Ingress Rule**.
-
-    2. For **Source CIDR**, enter **0.0.0.0/0**.
-
-    3. For **Destination port range**, enter the port number.
-
-    4. Click **Add Ingress Rule**.
+5. For each port number (22, 1521, 1523, 1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
 ## **STEP 2**: Create and apply a stack in Resource Manager
 
-> **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 2.
+> **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [db-multitenant-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G7LZB2PC1IU-WlBfrsDzKTgqKL9vbyhE5mWrF01MAyD3Gi589C6detaJdbTESF3F/n/natdsecurity/b/stack/o/db-multitenant-mkplc-freetier.zip) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
+1. Download [imagename.zip](need url) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
@@ -67,15 +59,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     The **Create Stack** page is displayed.
 
-3. For **Stack Information**, do the following:
-
-    1. Select **My Configuration**.
-
-    2. In the **Stack Configuration** section, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
-
-    3. Leave the default values for **Name** and **Description** as is.
-
-    4. Select your compartment.
+3. For **Stack Information**, select **My Configuration**. In the **Stack Configuration** section, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**. Leave the default values for **Name** and **Description** as is. Select your compartment.
 
   ![Stack Information page top half](images/stack-information-page-top-half.png "Stack Information page top half")
 
@@ -85,25 +69,11 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     The **Configure Variables** page is displayed.
 
-5. In the **Main Configuration** section, do the following:
-
-    1. Leave **Instance Count** set to **1**.
-
-    2. Select an **availability domain**.
-
-    3. Paste your **SSH Public Key** into the box.
+5. In the **Main Configuration** section, leave **Instance Count** set to **1**. Select an **availability domain**. Paste your **SSH Public Key** into the box.
 
   ![Main Configuration section](images/main-configuration-section.png "Main Configuration section")
 
-6. In the **Options** section, do the following:
-
-    1. Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected.
-
-    2. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected.
-
-    3. For **Select OCPUs Count per Instance**, leave 2 selected.
-
-    4. (Optional) If you want to use one of your existing VCNs, select **Use Existing VCN**, and then select a VCN that has a regional public subnet and the required security rules. Also select your public subnet.
+6. In the **Options** section, leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. For **Select OCPUs Count per Instance**, leave 2 selected. If you want to use one of your existing VCNs, select **Use Existing VCN**, and then select a VCN that has a regional public subnet and the required security rules. Also select your public subnet. Oracle recommends that you let Resource Manager create VCN for you.
 
   ![Options section](images/options-section.png "Options section")
 
@@ -129,11 +99,17 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## **STEP 3**: Obtain the public IP address of your compute instance
 
+After the job is completed, you are directed to the **Instance Details** page. Find the public IP address under **Instance Access** and jot it down.
+
+If you navigated away from the **Instance Details** page, you can return to it by following these steps:
+
 1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
 
 2. Select your compartment.
 
-3. Find the public IP address of the compute instance that starts with **db19-hol-s01-...** in the table and jot it down.
+3. Find the public IP address of the compute instance called **workshop-installed** in the table and jot it down.
+
+4. (Optional) Click the name of your compute instance to view all of its details.
 
 
 
@@ -157,12 +133,12 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
   You are now connected to your new compute instance via Cloud Shell.
 
-4. Preserve user configured hostname across instance reboots
+4. Preserve the user-configured hostname across instance reboots.
 
     ```
     sudo sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
     ```
-5. Preserve hostname info and set it for current boot
+5. Preserve the hostname information and set it for current boot.
 
     ```
     sudo hostnamectl set-hostname workshop-installed.subnet1.labvcn.oraclevcn.com
@@ -171,14 +147,15 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## **STEP 5**: Connect to your compute instance via a browser
 
-1. Open a browser on your personal computer and enter the following url. Replace public-ip-address with your compute instance's public IP address.
+1. Open a browser on your personal computer and enter the following URL. Replace `public-ip-address` with your compute instance's public IP address.
 
     ```
     http://public-ip-address:6080/index.html?resize=remote
     ```
-2. Click **Connect**.
 
-3. Enter the password **LiveLabs.Rocks_99**, and click **Send Password**.
+2. Click **Connect**. If a login page is not displayed, wait a few minutes and then try the URL again.
+
+3. Enter the password **LiveLabs.Rocks_99**, and then click **Send Password**.
 
     The noVNC desktop is displayed.
 
@@ -228,4 +205,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, June 23 2021
+- **Last Updated By/Date** - Jody Glover, Database team, June 25 2021

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. Here you configure the `oracle` user to run the scripts, which has already been configured as a sudoer on your compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. Here you configure the `oracle` user to run the scripts. The `oracle` user has already been configured as a sudoer on your compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
 
 Estimated Lab Time: 30 minutes
 
@@ -17,22 +17,9 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+Be sure that the following task is completed before you start:
 
-- Obtain Oracle Cloud account.
-- Create or obtain a compartment in Oracle Cloud Infrastructure.
-- Sign in to your compute instance that you created in [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
-
-
-### Tip
-To copy and paste text from your local machine into an application on your Guacamole desktop, you can do the following:
-1.  On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac), and then select **Text Input**.
-
-  A black Text Input field is displayed at the bottom of the Guacamole desktop.
-
-2. Position your cursor where you want to paste the text.
-
-3. Copy text from your local machine, and then paste the copied text into the black Text Input field.
+- Sign in to the `workshop-stage` compute instance. If you do not have a compute instance, see [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
 
 
 ## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
@@ -53,6 +40,8 @@ To copy and paste text from your local machine into an application on your Guaca
 
 4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes up about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
 
+  *Important! Enter the command carefully and check that it is correct before you run it!*
+
     ```
     ./runInstaller -applyRU 32545013
     ```
@@ -67,15 +56,15 @@ To copy and paste text from your local machine into an application on your Guaca
 
 7. On the **Typical Installation** page, leave all the default values as is, except for the following:
 
-    1. In the **Global database name** box, enter the following name. Make sure to capitalize `ORCL`.
+    - In the **Global database name** box, enter the following name. Make sure to capitalize `ORCL`.
 
     ```
     ORCL.livelabs.oraclevcn.com
     ```
 
-    2. In the **Password** and **Confirm Password** boxes, enter `Ora4U_1234`. This will be the password for the `admin` database user.
+    - In the **Password** and **Confirm Password** boxes, enter `Ora4U_1234`.
 
-    3. In the **Pluggable database name** box, enter **PDB1**.
+    - In the **Pluggable database name** box, enter **PDB1**.
 
   ![Typical Install Configuration page](images/typical-install-configuration-page.png "Typical Install Configuration page")
 
@@ -83,15 +72,14 @@ To copy and paste text from your local machine into an application on your Guaca
 
   ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
 
-9. On the **Root script execution configuration** page, do the following:
+9. On the **Root script execution configuration** page, do the following, and then click **Next**.
 
-    1. Select the **Automatically run configuration scripts** check box. *This is the new feature!*
+    - Select the **Automatically run configuration scripts** check box. *This is the new feature!*
 
-    2. Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
+    - Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
 
-    3. Enter the password for the `oracle` user (`Ora4U_1234`).
+    - Enter the password for the `oracle` user (`Ora4U_1234`).
 
-    4. Click **Next**.
 
   ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
 
@@ -271,4 +259,4 @@ Congratulations! You have a fully functional Oracle Database 19c instance runnin
     - James Spiller, Principal User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
-- **Last Updated By/Date** - Jody Glover, Database team, May 26 2021
+- **Last Updated By/Date** - Jody Glover, Database team, June 25 2021

@@ -60,3 +60,12 @@ The following labs cover general database overall enhancements:
 [Lab 1 - Install Oracle Database 19c with Automatic Root Script Execution](?lab=install-db19c-auto-config-script-execution)
 
 <if type="freetier paid">[Lab 2 - Deploy an Oracle Database Image from Oracle Cloud Marketplace](?lab=deploy-db19c-marketplace)</if><if type="livelabs">[Lab 2 - Verify the Oracle Database](?lab=verify-database)</if>
+
+## Using the Clipboard on a noVNC compute instance
+
+To copy and paste text from your local machine into an application on your noVNC desktop, you can do the following:
+1.  On the noVNC desktop, click the tiny white arrow button on the left of the screen. Click the **Clipboard** icon (5th icon down) to open the Clipboard dialog box.
+
+2. Paste the text into the **Clipboard** dialog box. It's important to do this before you open the application into which you want to paste the text.
+
+3. Open the application and paste the text using the **Paste** option on the speed menu (right-click menu).
