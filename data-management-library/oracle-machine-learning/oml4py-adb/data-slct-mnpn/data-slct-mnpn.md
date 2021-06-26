@@ -609,12 +609,12 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
 ## **Step 8**: Manage and Explore Data Using Transparency Layer Functions
 
 With the transparency layer classes, you can convert selected Python objects to Oracle Autonomous Database (ADB) objects and also call a range of familiar Python functions that are overloaded to run the corresponding SQL on tables in the database.
-  * `oml.create:` Creates a table in the database schema from a Python data set.
-  * `oml_object.pull:` Creates a local Python object that contains a copy of data referenced by the `oml` object.
-  * `oml.push:` Pushes data from a Python session into an object in a database schema.
-  * `oml.sync:` Creates a DataFrame proxy object in Python that represents a database table or view.
-  * `oml.dir:` Return the names of `oml` objects in the Python session workspace.
-  * `oml.drop:` Drops a persistent database table or view.
+  * `oml.create`&mdash;Creates a table in the database schema from a Python data set.
+  * `oml_object.pull`&mdash;Creates a local Python object that contains a copy of data referenced by the `oml` object.
+  * `oml.push`&mdash;Pushes data from a Python session into an object in a database schema.
+  * `oml.sync`&mdash;Creates a DataFrame proxy object in Python that represents a database table or view.
+  * `oml.dir`&mdash;Return the names of `oml` objects in the Python session workspace.
+  * `oml.drop`&mdash;Drops a persistent database table or view.
 
 
 ### Create and view a persistent database table using `oml.create`

@@ -46,7 +46,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
 1. Run the following script to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
 
-    **Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
+    >**Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
 
     ```
     %python
@@ -81,7 +81,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     This method runs the `oml.glm` algorithm in-database using the given settings. The settings are supplied as key-value pairs. In this example, feature generation and feature selection are specified.
 
-    **Note:** For a complete list of settings, refer to the OML4Py product documentation. You may also refer to the `oml.glm` help file.
+    >**Note:** For a complete list of settings, refer to the OML4Py product documentation. You may also refer to the `oml.glm` help file.
 
     ```
     %python
@@ -193,7 +193,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
     ![Residuals](images/residuals.png "Residuals")
 11. Run the following script to calculate the RMSE manually on the prediction results on the testing test and the R-  squared on the testing set using the score method.
-    **Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
+    >**Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
 
     ```
     %python
@@ -214,7 +214,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
     * Drop the model `CUST_CLUSTER_MODEL` if it exists.
     * Specify the number of iterations for building the cluster tree using the `KMNS_ITERATIONS` setting and the K-Means random seed generator using the `KMNS_RANDOM_SEED` setting. `KMNS_ITERATIONS` specifies the number of times the algorithm should iterate over the training data before it finalizes the selection of centroids. You can adjust this parameter to balance accuracy against training time. The `KMNS_RANDOM_SEED` value is used for cluster initialization and can have a significant effect on cluster selection.
 
-    **Note:** The `model_name` causes the model to be persisted across notebook sessions.
+    >**Note:** The `model_name` causes the model to be persisted across notebook sessions.
 
     ```
     %python

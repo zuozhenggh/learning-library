@@ -17,7 +17,7 @@ The OML4Py Embedded Python Execution functions are:
 * `oml.row_apply`&mdash;Partitions a database table into sets of rows and runs the provided user-defined Python function on the data in each set.
 * `oml.table_apply`&mdash;Calls a Python function on data in the database as a single pandas.DataFrame in a single Python engine.
 
-**Note:** Embedded Python Execution functions are also available through the Oracle Machine Learning for Python REST API for Embedded Python Execution.
+> **Note:** Embedded Python Execution functions are also available through the Oracle Machine Learning for Python REST API for Embedded Python Execution.
 
 ### About the Python Script Repository
 OML4Py stores named user-defined functions called scripts in the script repository.
@@ -156,7 +156,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
 * Define the function `build_lm_1`, that returns the model as the result. This is referred to as a user-defined function.
 * Next, score the training data and plot the model against the data points.
 
-  **Note:**  The embedded Python execution can return images as well as structured content in the Python API. In the SQL API, as you'll see in another script, you choose between structured data, images, or XML output. Run this function to ensure it returns what is expected; - in this case, it is both an image and a model.
+  > **Note:**  The embedded Python execution can return images as well as structured content in the Python API. In the SQL API, as you'll see in another script, you choose between structured data, images, or XML output. Run this function to ensure it returns what is expected; - in this case, it is both an image and a model.
 
 1. Run the script to define the user-defined function `build_lm_1`:   
     ```
@@ -322,7 +322,8 @@ In this step, you build three models, one specific to each species and return th
       return name</copy>
     ```
 3. Use `group_apply` to call the user-defined function and list the resulting models, which are a dictionary of three elements each assigned the model object name. The `group_apply` function takes the data, the index parameter that specifies the column or columns to partition on, the user-defined function, and the database to which you connect from the Python engine. Connecting to the database is necessary when using the datastore functionality.
-**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
+
+>**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
     ```
     %python
     <copy>
@@ -342,7 +343,7 @@ In this step, you build three models, one specific to each species and return th
 
 Here, the model object names are `mod_versicolor`, `mod_virginica`, and `mod_setosa`.
 When you load the datastore, you get the three models loaded into the client Python engine, assigned to their respective variables.
-**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
+>**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
 
 Again, we create this script in the Python script repository and then call it by name using `table_apply`. We then pull the model to the client and view its type.
 ### **Try it yourself**
@@ -375,7 +376,7 @@ Use the `group_apply` function to count the number of each species in the data s
 ## **Step 5:** Return Multiple Images from Embedded Python Execution
 This step shows how to create a function `RandomRedDots` that creates a simple DataFrame and generates two plots of random red dots. You create a function named `RandomRedDots` in the Python Script Repository, and then run the native Python function.
 
-**Note:** To know about **Python Script Repository**, go to step 6 in this lab.
+>**Note:** To know about **Python Script Repository**, go to step 6 in this lab.
 
 1. Run the following script to import the python packages - Numpy, Pandas, and Matplotlib; define and create the function `RandomRedDots`:
 
@@ -444,7 +445,7 @@ Run the following script to define the `RandomRedDots2` function that generates 
 
     print(RandomRedDots2)</copy>
     ```
-    **Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
+    >**Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
 
     ![RandomRedDots2](images/randomreddots_2.png "RandomRedDots2")
 
@@ -468,16 +469,17 @@ Step 6 to 15, you will work with Python Script Repository.
 
 OML4Py stores named user-defined functions called scripts in the script repository.  You can make scripts either private or global. A private script is available only to the owner. A global script is available to any user. For private scripts, the owner of the script may grant the read privilege to other users or revoke that privilege.
 
-* `oml.script.create` - Creates a script, which contains a single Python function definition, in the script repository.
-* `oml.script.dir` - Lists the scripts present in the script repository.
-* `oml.script.drop` - Drops a script from the script repository.
-* `oml.script.load` - Loads a script from the script repository into a Python session.
-* `oml.grant` - Grants read privilege permission to another user to a datastore or script owned by the current user.
-* `oml.revoke` - Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
+* `oml.script.create`&mdash;Creates a script, which contains a single Python function definition, in the script repository.
+* `oml.script.dir`&mdash;Lists the scripts present in the script repository.
+* `oml.script.drop`&mdash;Drops a script from the script repository.
+* `oml.script.load`&mdash;Loads a script from the script repository into a Python session.
+* `oml.grant`&mdash;Grants read privilege permission to another user to a datastore or script owned by the current user.
+* `oml.revoke`&mdash;Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
 
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
-1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`. **Note** the use of triple quotes to enable formatting.
+1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`.
+>**Note:** The use of triple quotes to enable formatting.
 
     ```
     %python
@@ -544,7 +546,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     print(MyLM_function.get_source().read())</copy>
     ```
     ![Loading a function into the Python engine](images/load_function.png "Loading a function into the Python engine")
-4. Extract the function text string from the function object and use this to save in the script repository using `oml.script_create`.
+4. Extract the function text string from the function object and use this to save in the script repository using `get_source().read()`.
 
     ```
     %python
@@ -581,7 +583,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod1 = oml.table_apply(data=IRIS, func = build_lm_str)
     mod1.coef_</copy>
     ```
-    ![](images/mod1_coef.png "")
+    ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod1_coef.png "Using Embedded Python Execution function oml.table_apply to call the function build_lm_str")
 
     Run the same function on `loaded_str`:
 
@@ -592,7 +594,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod2 = oml.table_apply(data=IRIS, func = loaded_str)
     mod2.coef_</copy>
     ```
-    ![](images/mod2_coef.png)
+    ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod2_coef.png "Using Embedded Python Execution function oml.table_apply to call the function loaded_str")
 
 ## **Step 8:** Store a function as a global  function
 
@@ -633,7 +635,7 @@ In this step, you will define and save a global function `build_lm3`. You will t
     print(res)
     print(res.coef_)</copy>
     ```
-    ![](images/res_coef.png)
+    ![Running the user-defined function MyGlobalML_function](images/res_coef.png "Running the user-defined function MyGlobalML_function")
 
 ## **Step 9:** Drop scripts from the Script Repository
 In this step, you will perform the following:
@@ -642,7 +644,7 @@ In this step, you will perform the following:
 * Drop the global script.
 * List the available scripts again.
 
-**Note:** You can make the script either private or global. A global script is available to any user. A private script is available only to the owner or to users to whom the owner of the script has granted the read privilege.
+>**Note:** You can make the script either private or global. A global script is available to any user. A private script is available only to the owner or to users to whom the owner of the script has granted the read privilege.
 
 1. Run the following script to drop the private script `MyLM_function2`, drop the global script `MyGlobalML_function`, and then list the available scripts:
 
@@ -654,7 +656,7 @@ In this step, you will perform the following:
     oml.script.drop("MyGlobalLM_function", is_global=True)
     oml.script.dir(sctype="all")</copy>
     ```
-    ![](images/drop_script.png)
+    ![Dropping scripts](images/drop_script.png "Dropping scripts")
 
 ## Learn More
 
@@ -665,4 +667,4 @@ In this step, you will perform the following:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, June 2021
