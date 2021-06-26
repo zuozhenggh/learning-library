@@ -56,11 +56,11 @@ Estimated Completion Time: 5 minutes.
 
 2. Click **Create Secret**.
 
-  ![](./images/prereq-secret2.png " ")
+   ![](./images/prereq-secret2.png " ")
 
 3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**.
 
-  ![](./images/prereq-secret3.png " ")
+   ![](./images/prereq-secret3.png " ")
 
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**.
 

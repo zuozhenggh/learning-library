@@ -9,7 +9,7 @@ Estimated Completion Time: 10 minutes.
 ### About Product/Technology
 
 - DataPump is a tool that is part of the Oracle database set of utilities.
-- DataPump export function creates a DDL + data dump of the user schema.
+- DataPump export function creates a DDL and data dump of the user schema.
 - DataPump import function imports the data into the database.
 
 We will be using wrapper scripts to export, move the data to the destination, and import to complete a full migration.
@@ -96,19 +96,17 @@ We will be using wrapper scripts to export, move the data to the destination, an
 
 ## **STEP 2:** Export the Source Database
 
-1. Run the `datapump_export.sh` script:
+Run the `datapump_export.sh` script:
 
-    ```
-    <copy>
-    ./datapump_export.sh
-    </copy>
-    ```
+```
+<copy>
+./datapump_export.sh
+</copy>
+```
 
-    The output will look like:
+The output will look like:
 
-    ![](./images/migrate-db-1.png " ")
-
-
+![](./images/migrate-db-1.png " ")
 
 ## **STEP 3:** Edit the `datapump_import.sh` script
 
