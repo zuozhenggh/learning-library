@@ -22,7 +22,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "")
 
 2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
 
@@ -38,19 +38,19 @@ To provision an Oracle Autonomous Database:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+	![Autonomous Data Warehouse option under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "Autonomous Data Warehouse option under Oracle Database")
 
 2. From the Oracle Cloud Infrastructure Console, on the Oracle Autonomous Database page choose your region and select a compartment.
 
 3. Click **Create Autonomous Database**.
 
-    ![](images/create-autonomous-db.png)
+    ![Create Autonomous Database option](images/create-autonomous-db.png "Create Autonomous Database option")
 
 4. Provide basic information for the Oracle Autonomous Database.
 
     Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
 
-    ![](images/create-autonomous-db-1.png)
+    ![Create Autonomous Database dialog](images/create-autonomous-db-1.png "Create Autonomous Database dialog")
 
 5. For Workload Type, click **Data Warehouse**.
 
@@ -63,23 +63,23 @@ To provision an Oracle Autonomous Database:
     - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Enter 1 TB.
     - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
 
-    ![](images/create-adw-config.png)
+    ![Configure Database dialog](images/create-adw-config.png "Configure Database dialog")
 
 8. For Administrator credentials, enter and re-confirm a password.
 
 9. For Network Access, select Allow Secure access from everywhere.
 
-    ![](images/create-adw-network.png)
+    ![Network Access settings](images/create-adw-network.png "Network Access settings")
 
 10. For License, select **License Included**.
 
-    ![](images/create-adw-license.png)
+    ![License settings](images/create-adw-license.png "License settings")
 
 11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Oracle Autonomous Database instances in your console.
 
 12. Click the Autonomous Data Warehouse instance you just created.
 
-    ![](images/adb_instance.png)
+    ![List of Oracle Autonomous Database instances](images/adb_instance.png "List of Oracle Autonomous Database instances")
 
 ## Learn More
 

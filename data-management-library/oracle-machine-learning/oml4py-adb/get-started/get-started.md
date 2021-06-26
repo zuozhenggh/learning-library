@@ -1,7 +1,7 @@
 # Get Started with OML4Py on Oracle Autonomous Database
 
 ## Introduction
-This lab walks you through the steps to create anOracle Machine Learning notebook and connect to the Python interpreter.
+This lab walks you through the steps to create an Oracle Machine Learning notebook and connect to the Python interpreter.
 
 Estimated Lab Time: 15 minutes
 

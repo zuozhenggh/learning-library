@@ -12,7 +12,7 @@ AutoML (Automated Machine Learning) provides built-in data science expertise abo
 ### Objectives
 
 In this lab, you will learn how to:
-* Create data set (wine data) as Pandas DataFrame and load into ADB
+* Create data set (wine data) as Pandas DataFrame and load into Oracle Autonomous Database
 * Use `automl.AlgorithmSelection` to rank the in-database algorithms by predicted score metric for classification or regression problems
 * Use `automl.FeatureSelection` to quickly identify the most relevant feature subsets for the provided training data set and an in-database algorithm
 * Use `automl.ModelTuning` to tune the hyperparameters for the specified algorithm and training data

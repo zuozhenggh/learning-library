@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-In this lab you will setup your environment. Here we will show you how to provision an Oracle Autonomous Database instances, create a user, load data into the database, and set up credentials and tools.
+In this lab you will set up your environment. Here we will show you how to provision an Oracle Autonomous Database instances, create a user, load data into the database, and set up credentials and tools.
 
 Estimated Time: 20 mins
 
