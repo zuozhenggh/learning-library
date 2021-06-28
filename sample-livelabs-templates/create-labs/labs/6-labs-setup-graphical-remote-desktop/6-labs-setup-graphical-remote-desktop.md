@@ -308,7 +308,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
 
     ```
     <copy>
-    gsettings set org.gnome.nautilus.icon-view default-zoom-level small
+    gnome-session-properties
     </copy>
     ```
 
