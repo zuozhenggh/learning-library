@@ -17,19 +17,14 @@ In this workshop, you will gain first-hand experience of how Oracle Database can
 
 Once you complete your setup, the next lab will cover:
 
+- About Eshop
+- Exploring Sharding Topology
+- Eshop App schema & Code Snippet
+- Application queries on Sharding Database
 
-- Lab : Sharding in Oracle Database
-
-      - Sharding deployment on Docker
-      - Sample Eshop Application
-      - Text search capabilities
-      - Analytics on sharded tables
-
-
-You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
+We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 
 ### Prerequisites
-- Oracle SQL Developer client
 - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***

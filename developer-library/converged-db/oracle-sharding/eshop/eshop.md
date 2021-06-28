@@ -1,24 +1,25 @@
 # About Eshop
 
 ## Introduction   
-EShop is an example web-based e-commerce retail application, built for an online electronics retailer.
-We developed this application to demonstrate Oracle Sharding (Hyperscale Globally Distributed Converged Database) with OLTP and Analytics (Massively Parallel Processing architecture). Oracle Cloud infrastructure (OCI) is used to host the application.
+eShop is an example web-based, e-commerce retail application, built for an online electronics retailer.
+
+We developed this application to demonstrate Oracle Sharding (a hyperscale globally distributed converged database) with OLTP and Analytics (in a massively parallel processing (MPP) architecture). Oracle Cloud infrastructure (OCI) hosts the application.
 
 - The application can support billions of users and products.
 
-- We used Oracle Database Sharding (3 Shards) with different types of data stored in a single database platform, which includes structured and unstructured data, Relational, JSON and Text.
+-  We used Oracle Database Sharding (with 3 shards) with different types of data stored in a single database platform, which includes structured and unstructured data, relational, JSON and text.
   
-- Multiple capabilities like the Simple Oracle Document Access (SODA) API + Text Search for JSON. Joins, Transactions, and ACID properties for Relational Queries. Fuzzy Match, Type Ahead, Free Form Text Search, Sentiment Analysis for Text.
+-  Multiple capabilities, like the Simple Oracle Document Access (SODA) API + Text Search for JSON, joins, transactions, and ACID properties for relational queries, fuzzy match, type ahead, free-form text search, and sentiment analysis for text.
 
 
 *Estimated Lab Time*: 20 Minutes
 
 ![](./images/app_front.JPG " ")
 
-Typically, multiple technologies and products are required to develop such an application. For example, a  JSON Database, a Text Index application, a Relational Database, an  Analytics Engine, which makes it difficult to query data across multiple data stores near. 
+Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
-Further, using the traditional methods, the customer would have spent several years and millions of dollars in licensing and development. 
-But this Eshop application has been built using the single data platform (oracle sharding) within just two weeks.
+The entire eShop application, including database configuration, front-end UI, and application logic, was developed within a two-week time frame.
+
 
 [](youtube:CAXepxXPC7Q)
 
@@ -26,7 +27,7 @@ But this Eshop application has been built using the single data platform (oracle
 In this lab, you will:
 * Setup the environment for Sharding lab.
 * Connect the putty.
-* Learn about the Sharding capabilities.
+* Learn about Sharding capabilities with Eshop.
 
 ### Prerequisites
 This lab assumes you have:
@@ -38,92 +39,89 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-***Note:***  All the scripts for this lab are stored in the **`/u01/workshop/json`** folder and run as the **oracle** user.
-
 ## **STEP 1**: Eshop Demonstration
 
-1. A user accesses the application through the URL (**`http://<Public IP>:3000/`**), they are directed to the application's home page. To **log in**, go to the top right of the nav bar and press the **login** button. The login button brings the user to the login screen, where they can log in or build a new account by signup if they don't have one. 
+1. **eShop URL Access:** When you access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens. 
+   
+   To log in, go to the top right of the navigation bar, click the user profile icon, and select Log In. On the login page, you can log in to an existing account or sign up for a new account. 
 
   ![](./images/app1.png " ")
 
-2. The application has login and new user signup features, but it also allows access to a non-logged in application user to some extent. It allows users to search for a product in the catalogue that meets their needs and make a purchase based on the product's reviews, sentiment score, and rating.
+2. **Log In and Sign Up:** The application has login and new user signup features, but it allows access to a non-logged in application user to some extent. It allows you to search for a product in the catalog and make a purchase based on the product's reviews, sentiment score, and rating.
 
   ![](./images/app2.JPG " ")
 
-  The user will be guided back to the home screen after a successful login.
+  After a successful login you are brought back to the home page.
 
-3. Click the **CATALOG** link in the navigation bar to browse the product list. Tthis module lists all the products in the store by bringing all the rows from Product JSON tables where it exists from all the shard databases, along with a picture and price. 
-
+3. **Browse and Search Products:** Click CATALOG in the navigation bar to browse the product list. This page lists all of the products in the store by fetching all of the rows from the Product JSON tables, which are partitioned among the three database shards, along with a picture and price.
 
   ![](./images/app3.JPG " ")
 
-  Any of the product tiles on this screen can be clicked to take the user to the product information tab or take the help of Filter option by price/Brand to get the list of specific products. You can click on selected product or you can choose to add directly to the cart by click on cart symbol.
+  Any of the product tiles on this page can be clicked to take you to the product information tab. 
+  Use the Filter options by selecting from the Price and/or Brand filters to get a list of specific products. 
 
-  In addition, we can do the text search by directly typing the product information in search bar. Here Oracle Fuzzy matching is a method used and it provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
+   Alternatively, you can perform a text search. Access the search bar by clicking the Search icon, then directly type the product information in the search bar. Here, Oracle fuzzy matching is the method used, and it provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
+
+   You can click on a selected product to view its details, or you can choose to add the product directly to the cart by clicking on the cart symbol.
 
 
   ![](./images/searchproduct.JPG " ")
 
-4. The product search functionality is flexible enough to autocorrect the misspelled search text and provide users with suggestion list they might be looking for. For better performance and faster loading of product list, we have proper indexing on SODA collections as well as pagination logic using limit and skip functions.
-  
-  By navigating the specific product to take the user to the product information tab, where they can read the review and rating for the product, they have chosen. 
+   The product search functionality is flexible enough to autocorrect any misspelled search text and provide you with a suggestion list of what you might be looking for.
+
+  For better performance and faster loading of the product list, we have proper indexing on SODA collections and pagination logic using limit and skip functions.
+
+4. **Select a Product:** Select a specific product to go to the product information page, where you can find more information about the product and read the reviews and ratings.
 
   ![](./images/singleproductview.JPG " ")
 
-  It will on the product information screen, the reviews are sorted by sentiment ratings. They may also look for reviews based on the content or keyword they are searching for.
+  On the product information screen the reviews are sorted by sentiment ratings. You can search for reviews based on the content or keyword.
 
-  On the product information tab, click the add to cart button to add the product to the user's cart. If the user wants to add more items to the cart, they can repeat the procedure.
+  On the product information page, click the Add To Cart button to add the product to your cart. If you want to add more item to the cart, you can repeat the procedure.
 
-
- 5. To place the order of the items click the **‘Go To Cart’**. 
+5. **Go To the Cart:**  Click the Go To Cart button on a product page.
 
   ![](./images/0608.png " ")
 
+  In the cart you can alter the number of a specific product and click Proceed to Checkout.
+  When you change the product quantity, the cart updates the total price per product calculation. In addition, total value of the cart contents is updated using a query to a table which is sharded across all (3) shard databases.
 
-6. You can specify the number count for specified product and click for Proceed to Checkout.
-Update the cart on quantity change along with price of items. In addition, total value will be update the cart shard table from all (3) shard DBs.
+  ![](./images/0626.png " ")
 
+6. **Place Your Order:** In the Review Order page, look over the order and click Place your order. 
+You can change the address shown in Saved Address if you want to ship products to a location different from your default address.
 
   ![](./images/bill.png " ")
 
-7. Review the order for cross check and click for ‘Place your order’. Also, change the address in case you want to ship product to some location different from your default address.
+7. **Submit a Review:** You can submit the review and rating for the purchased item. When your order is placed, eShop populates the LINE_ITEM and allows you to enter a product review.
 
-  ![](./images/bill1.png " ")
+ ![](./images/new.png " ")
 
-8. Finally, you can submit the review and rating for the purchased item. Here it will populate the LINE_ITEM table when user finally places the order and will take the reviews form user.
-
-  ![](./images/final.png " ")
-
-9. Your order details will be move on Placed-> Shipped-> OFD-> Delivered. Reviews and ratings are successfully submitted.
-
-  ![](./images/finalsub.png " ")
+  Your order workflow goes from Placed to Shipped, then OFD (out for delivery), and finally Delivered.
+ ![](./images/new1.png " ")
 
 
-## **STEP 2**: Report Generation
+## **STEP 2**: View Reports
 
-1. We can make reports by emulating two large data sets from relational tables (customers, orders, line items ) and Non-Relational tables (products & Reviews - JSON, Text , sentiment analysis). And these Analytics reports are a A single query spanning multiple data types from multiple shard databases.
+The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
 
-   **Dollar value sale by month:** A single query spanning from LINE_ITEM by accessing multiple shard databases.
+1.	Dollar value sale by month: A single query from LINE_ITEM accessing multiple shard databases.
+2.	Sentiment Percentage: A single query from Reviews accessing multiple shard databases.
 
-   **Sentiment Percentage:** A single query spanning from Reviews by accessing multiple shard databases.
 
   ![](./images/report.png " ")
 
-2. Best Selling Product In last two months: A single query spanning from multiple tables both relational and non-relational by accessing multiple shard databases.
-
+3.	Best Selling Product In last two months: A single query from multiple tables, both relational and non-relational, accessing multiple shard databases.
+   
   ![](./images/report1.png " ")
 
-3. Analytics report made by Java table with Multiple sql Queries ( These queries spanning from multiple tables both relational & non-relational across all the shard databases).
+4. The Analytics report is made with a Java table with multiple SQL queries (These queries are on multiple tables both relational and non-relational across all of the shard databases).
 
   ![](./images/report2.png " ")
 
-
-## **STEP 3**: XXXXXXXXXXXX
-
-
 ## Learn More
 
-- Oracle JSON Documentation ([JSON](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html))
+- [Oracle Sharding Documentation] (https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/sharding-overview.html#GUID-0F39B1FB-DCF9-4C8A-A2EA-88705B90C5BF)
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
