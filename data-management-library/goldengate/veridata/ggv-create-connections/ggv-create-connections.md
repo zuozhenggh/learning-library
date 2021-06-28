@@ -27,45 +27,30 @@ This lab assumes you have:
 
 ## **STEP 1:** Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
-  1. Open a browser in VNC and enter the URL:
-    ```
-    <copy>
-    http://<your instance public-ip address>:8830/veridata/login.jsf
-    </copy>
-    ```
-      OR
-
-    ```
-    <copy>
-    http://localhost:8830/veridata/login.jsf
-    </copy>
-    ```
-      OR
-
-    ```
-    <copy>
-    http://veridata.livelabs.oraclevcn.com:8830/veridata/login.jsf
-    </copy>
-    ```
-  2. Enter your login credentials:
-      * **username**
-    ```
-    <copy>
-    ggadm
-    </copy>
-    ```
-
-      * **Password**
-    ```
-    <copy>
-    welcome1
-    </copy>
-    ```
+  1. From the *Firefox* window opened in the previous lab and if not already connected, Click on *Workshop Links* toolbar folder and select *GoldenGate Veridata Server* to load the page and login using the saved credentials.
 
     ![](./images/1-login-veridata.png " ")
+
+    *Note:* If for any reason you want to login from a location that is external to your remote desktop session such as your workstation/laptop, then refer to the following details.
+
+    ```
+    Username: <copy>ggadm</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
+
+    ```
+    URL: <copy>http://<Your Instance public_ip>:8830/veridata/login.jsf</copy>
+    ```
+
+    ![](./images/1a-login-veridata.png " ")
+
   3. Click **Login**.
 
-  **Note**: After you login, in the displayed **Memory Check** pop-up screen, click **Ok** or close this pop-up screen.
+  *Note*: After you login, you may see a this pop-up screen about **Memory Check**. Click **Ok** or close.
 
 ## **STEP 2:** Create a Connection
 To get started with Oracle GoldenGate Veridata, you must define a connection to the source and target databases that contain the data that you want to compare. Oracle GoldenGate Veridata Server uses the connection information to communicate with Oracle GoldenGate Veridata Agent.
