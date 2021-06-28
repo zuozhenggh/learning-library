@@ -12,6 +12,7 @@ In this lab, you will:
 * Create a Data Flow
 * Create an Integration task
 * Create a Data Loader task
+* Create a SQL task
 
 ## Prerequisites
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
@@ -101,7 +102,6 @@ In the Attributes tab, you can view the data entity's attributes and apply exclu
 
 13. You will now filter your source data. The Filter operator produces a subset of data from an upstream operator based on a condition. From the Operators panel, drag and drop a Filter operator onto the canvas.
 ![](./images/canvas-filter.png " ")
-
 
 14. Connect REVENUE source operator to FILTER_1 operator:
 - Place your cursor on REVENUE.
@@ -355,6 +355,9 @@ A panel displays, showing the Data Profile and the Attribute Profile for SRC_ORD
 
 21. The Target section in the Data Loader task now displays your selections for the target. Click Save and Close.
 ![](./images/loader-save.png " ")
+
+## **STEP 5:** Create a SQL task
+
 
 ## Learn More
 

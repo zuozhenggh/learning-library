@@ -24,15 +24,15 @@
             "filename": "../../create-data-assets/create-data-assets.md"
         },
         {
-            "title": "Lab 3: Create a Data Flow, Data Loader task and Integration task",
+            "title": "Lab 3: Create a Data Flow, Integration task, Data Loader Task and SQL Task",
             "filename": "../../integration-tasks/integration-tasks.md"
         },
         {
-            "title": "Lab 4: Create a Pipeline and publish tasks",
+            "title": "Lab 4: Create an Application, a Pipeline and publish tasks",
             "filename": "../../pipelines/pipelines.md"
         },
         {
-            "title": "Lab 5: Schedule and run task",
+            "title": "Lab 5: Schedule and run Pipeline task",
             "filename": ""
         },
         {
