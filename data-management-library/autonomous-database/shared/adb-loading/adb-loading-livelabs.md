@@ -1,4 +1,4 @@
-
+/* DELETE THIS FILE IN THE NEXT RELEASE */
 # Load Data into an Autonomous Database Instance
 
 ## Introduction
@@ -11,7 +11,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
-*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 Estimated Lab Time: 30 minutes
 
@@ -134,7 +134,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 3. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is a+++++++++ng5, and the **bucket name** is ADWCLab.
 
-    *Note: The URL can also be constructed as below:*
+    > **Note:** The URL can also be constructed as below:
 
     `https://objectstorage.<`**region name**`>.oraclecloud.com/n/<`**namespace name**`>/b/<`**bucket name**`>/o`
 
@@ -148,8 +148,6 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Click your username.](./images/click-your-username-livelabs.png " ")
 
-    *Note: If you don't see your user name in the drop-down menu, you might be a "federated" user. In that case, go instead to the menu on the left side and open Users. Federated users are “federated” from another user service, whether it is an Active Directory LDAP type service or users from the older OCI Classic.*
-
 2. Make note of this username, as you will need it in an upcoming step. At the bottom left side of the page, in the **Resources** section, click **Auth Tokens**.
 
     ![Click Auth Tokens under Resources at the bottom left.](./images/click-auth-tokens-livelabs.png " ")
@@ -162,7 +160,9 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Enter Description and click Generate Token.](./images/generate-the-token.png " ")
 
-5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps. *Note: You can't retrieve the Auth Token again after closing the dialog box.*
+5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps.
+
+> **Note:** You can't retrieve the Auth Token again after closing the dialog box.
 
     ![Copy the Auth Token to clipboard.](./images/generated-token.png " ")
 
@@ -210,18 +210,18 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Choose LOAD DATA and CLOUD STORAGE.](./images/choose-load-data-and-cloud-storage.png " ")
 
-8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `coun_v3.dat` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
+8. Now you see a file browser-like view of your Object Store. Let's practice the easy drag-and-drop method of loading files by multi-selecting the `channels.csv` and `countries.csv` files in the left part of the screen. Drag and drop these files onto the canvas on the right.
 
     ![Drag the file onto the canvas.](./images/drag-files-onto-canvas.png " ")
 
-9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `coun_v3.dat` tables.
+9. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. Click the **pencil** button for the `channels.csv` and `countries.csv` tables.
 
     ![Click the pencil button.](./images/click-pencil-button.png " ")
 
 10. You can use this page to quickly review the properties sheet and make any changes to column names or data types. Since this is an initial load, accept the default option of **Create Table**, which conveniently creates the target table in the ADW database, without the need to predefine the table in SQL.
 
     - For `channels.csv`, change the target table name to **CHANNELS\_DB\_TOOLS**.
-    - For `coun_v3.dat`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
+    - For `countries.csv`, change the target table name to **COUNTRIES\_DB\_TOOLS**.
 
     ![Review the properties sheet.](./images/review-properties-sheet.png " ")
 
@@ -229,7 +229,7 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Click green arrow button to start data load job.](./images/click-green-arrow-button-start-data-load.png " ")
 
-**Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
+> **Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
 
 ## **STEP 9**: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
 
@@ -246,7 +246,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 + **copy_data**: Loads the specified source file to a table. The table must already exist in ADW.
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
-***Note:*** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed with the following:
+ > **Note:** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed.
 
 1. Click on the SQL tile to open SQL web developer.
 
@@ -258,7 +258,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 
     ![Click Run Script.](./images/table_creation_results_sql_dev_web.jpg " ")
 
-    *Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
+    > **Note:** You do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
 
 2. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
@@ -328,4 +328,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2021
+- **Last Updated By/Date** - Tom McGinn, June 2021
