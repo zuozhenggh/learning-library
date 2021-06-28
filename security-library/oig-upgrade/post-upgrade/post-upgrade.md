@@ -33,7 +33,7 @@ In this lab, you will:
         ```
         <copy>nohup ./startWebLogic.sh &</copy>
         ```
-        
+
     - Once the Admin Server starts up, access the Weblogic console from your browser.
     Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
 
@@ -97,7 +97,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
     ```
 1. Access the 12c Weblogic console from your browser and verify the version as 12c
 
-    - Click on the bookmark *WLS12c* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *WLS12c* "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:7005/console</copy>
@@ -113,7 +113,7 @@ The Admin server will take about 3-4 mins to start. It may take about 10mins for
 
 2. Access the Identity Self Service console
 
-    - Click on the bookmark *OIG12c* "OR" paste the following URL in the browser:
+    - Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
 
         ```
         <copy>http://onehopiam:14005/identity</copy>

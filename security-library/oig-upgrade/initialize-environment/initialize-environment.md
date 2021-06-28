@@ -41,9 +41,16 @@ In this lab, you will:
 
     ![](images/1-db-status.png)
 
-## **STEP 3:** Verify the 11g Domain
+## **STEP 3:** Start and Verify the 11g Domain
 
-1. Wait for the 11g domain to startup. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start
+1. Launch a terminal instance and Run the *startDomain11g.sh* script. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
+
+    ```
+    <copy>cd /u01/scripts</copy>
+    ```
+    ```
+    <copy>./startDomain11g.sh</copy>
+    ```
 
 2. Access the Weblogic console from your browser and verify the version
 
