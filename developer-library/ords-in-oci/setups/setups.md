@@ -1,6 +1,6 @@
 # Lab Setups
 
-This part of the lab will guide you through some setups that have to happen before we can start the lab.
+This part of the lab will guide you through some setup items that have to be performed before we can start the lab.
 
 ## **SETUP 1**: Create a Compartment
 
@@ -37,11 +37,11 @@ We are going to create a **Compartment** for this lab so that our functions, log
 
     **Parent Compartment:** Use the root compartment (Should be auto-selected, your root compartment will be named different, but will have (root) after it)
 
-    ![Create Compartment Parent Compartment Field](./images/pol-5.png)
+    ![Create Compartment Parent Compartment Field](./images/comp-5.png)
 
 4. When your Create Compartment modal looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment** button.
 
-    ![Create Compartment Modal](./images/pol-6.png)
+    ![Create Compartment Modal](./images/comp-6.png)
 
 ### Get the Compartment OCID
 
@@ -57,7 +57,7 @@ For the Function we create to interact with the Object Store, we first have to c
 
 ### Create a Dynamic Group
 
-Start off by creating a dynamic group. This group will be used with policy generation in the next step. More on Dynamic Groups can be found [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+Let's start off by creating a dynamic group. This group will be used with policy generation in the next step. More on Dynamic Groups can be found [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 
 1. Use the OCI web console drop down menu and select **Identity & Security**, then **Dynamic Groups**.
 
@@ -91,13 +91,13 @@ Start off by creating a dynamic group. This group will be used with policy gener
 
     **Matching Rules:** 
     
-    The Match any rules defined below radio button is selected
+    The Match any rules defined below radio button is selected. **Be sure to replace **YOUR COMPARTMENT OCID** with exactly that, your compartment OCID you copied in setup 1**
 
     **Rule 1 text is:** 
 
     ````
     <copy>
-    ALL {resource.type = 'fnfunc', resource.compartment.id = '**YOUR COMPARTMENT OCID**'}
+    ALL {resource.type = 'fnfunc', resource.compartment.id = 'YOUR COMPARTMENT OCID'}
     </copy>
     ````
     
