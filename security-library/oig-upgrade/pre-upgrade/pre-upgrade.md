@@ -92,51 +92,52 @@ Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) s
     <copy>./ua -readiness</copy>
     ```
 
-  The Upgrade Assistant is launched in readiness mode:
+    The Upgrade Assistant is launched in readiness mode:
 
-  - Welcome - Click *Next*
+2. Welcome - Click *Next*
 
-      ![](images/2-ua.png)
+    ![](images/2-ua.png)
 
-  - Readiness check type - *Domain based*. Browse to the 11g OIM home: */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
+3. Readiness check type - *Domain based*. Browse to the 11g OIM home: */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
 
-      ![](images/3-ua.png)
+    ![](images/3-ua.png)
 
-  - Component List - Click *Next*
+4. Component List - Click *Next*
 
-      ![](images/4-ua.png)
+    ![](images/4-ua.png)
 
-  - OPSS Schema
-      ```
-      DBA Username: <copy>FMW</copy>
-      ```
-      ```
-      DBA Password: <copy>Welcom#123</copy>
-      ```
+5. OPSS Schema - Enter the appropriate credentials and click on *Connect* to test the connection to the database
 
-      ![](images/5-ua.png)
+    ```
+    DBA Username: <copy>FMW</copy>
+    ```
+    ```
+    DBA Password: <copy>Welcom#123</copy>
+    ```
 
-  - MDS Schema - The same Username and Password is updated automatically - Click *Next*
+    ![](images/5-ua.png)
 
-      ![](images/6-ua.png)
+6. MDS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  - UMS Schema - The same Username and Password is updated automatically - Click *Next*
+    ![](images/6-ua.png)
 
-      ![](images/7-ua.png)
+7. UMS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  - SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
+    ![](images/7-ua.png)
 
-      ![](images/8-ua.png)
+8. SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
 
-  - OIM Schema - The same Username and Password is updated automatically - Click *Next*
+    ![](images/8-ua.png)
 
-      ![](images/9-ua.png)
+9. OIM Schema - The same Username and Password is updated automatically - Click *Next*
 
-  - Readiness Summary - Click *Next*
+    ![](images/9-ua.png)
 
-  - Click on *Finish* and then *Close* the UA once the Readiness check is complete
+10. Readiness Summary - Click *Next*
 
-      ![](images/10-ua.png)
+11. Click on *Finish* and then *Close* the UA once the Readiness check is complete
+
+    ![](images/10-ua.png)
 
 ## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 

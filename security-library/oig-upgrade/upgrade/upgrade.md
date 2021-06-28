@@ -66,53 +66,54 @@ In this lab, you will:
     ```
   The Upgrade Assistant is launched.
 
-  - Upgrade type - *All schemas used by a domain*. Browse to 11g Domain home - */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
+4. Upgrade type - *All schemas used by a domain*. Browse to 11g Domain home - */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
 
-      ![](images/2-upgrade.png)
+    ![](images/2-upgrade.png)
 
-  - Component list - Click *Next*
+5. Component list - Click *Next*
 
-  - Prerequisite check - Make sure all the prerequisites have been met.
+6. Prerequisite check - Make sure all the prerequisites have been met.
 
-      ![](images/3-upgrade.png)
+    ![](images/3-upgrade.png)
 
-  - OPSS Schema
-      ```
-      DBA Username: <copy>FMW</copy>
-      ```
-      ```
-      DBA Password: <copy>Welcom#123</copy>
-      ```
+7. OPSS Schema
 
-      ![](images/3a-upgrade.png)
+    ```
+    DBA Username: <copy>FMW</copy>
+    ```
+    ```
+    DBA Password: <copy>Welcom#123</copy>
+    ```
 
-  - MDS Schema - The same Username and Password is updated automatically - Click *Next*
+    ![](images/3a-upgrade.png)
 
-  - UMS Schema - The same Username and Password is updated automatically - Click *Next*
+8. MDS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  - SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
+9. UMS Schema - The same Username and Password is updated automatically - Click *Next*
 
-  - OIM Schema - The same Username and Password is updated automatically - Click *Next*
+10. SOAINFRA schema - The same Username and Password is updated automatically - Click *Next*
 
-  - Create schemas - Make sure *Create missing schemas for specified domain* is checked. Click *Use same password for all schemas* and Enter the Schema password as *Welcom#123*
+11. OIM Schema - The same Username and Password is updated automatically - Click *Next*
 
-      ```
-      Schema Password: <copy>Welcom#123</copy>
-      ```
+12. Create schemas - Make sure *Create missing schemas for specified domain* is checked. Click *Use same password for all schemas* and Enter the Schema password as *Welcom#123*
 
-      ![](images/4-upgrade.png)
+    ```
+    Schema Password: <copy>Welcom#123</copy>
+    ```
 
-  - Examine - Click *Next*
+    ![](images/4-upgrade.png)
 
-      ![](images/5-upgrade.png)
+13. Examine - Click *Next*
 
-  - Create schema progress - Once the schema creation is completed, click on *Upgrade*
+    ![](images/5-upgrade.png)
 
-      ![](images/6-upgrade.png)
+14. Create schema progress - Once the schema creation is completed, click on *Upgrade*
 
-  - Close the upgrade assistant once the upgrade is successfully completed.
+    ![](images/6-upgrade.png)
 
-      ![](images/7-upgrade.png)
+15. Close the upgrade assistant once the upgrade is successfully completed.
+
+    ![](images/7-upgrade.png)
 
 ## **STEP 3:** Verify the schema Upgrade
 
@@ -130,7 +131,7 @@ In this lab, you will:
 	COLUMN UPGRADED FORMAT A8
 	SELECT MRC_NAME, COMP_ID, OWNER, VERSION, STATUS, UPGRADED FROM SCHEMA_VERSION_REGISTRY where OWNER like '%DEV11G%' ORDER BY MRC_NAME, COMP_ID;</copy>
     ```
-  We can verify that the upgrade was successful by checking that the schema version has been properly updated to 12c.
+  We can verify that the schema upgrade was successful by checking that the schema version has been properly updated to 12c.
 
     ![](images/8-sql.png)
 
@@ -144,27 +145,25 @@ In this lab, you will:
 
 ## **STEP 5:** Stopping 12c Managed Servers
 
-1. Stop the SOA, OIM Managed Servers before rewiring the domain. Ensure that the Admin Server and Database are up and running
+1. Stop the SOA, OIM Managed Servers before rewiring the domain. Ensure that the Admin Server and Database are up and running. First, stop the OIM Server
 
     ```
     <copy>cd /u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin</copy>
     ```
 
-  - Stop OIM Managed Server
+    ```
+    <copy>./stopManagedWebLogic.sh oim_server1</copy>
+    ```
 
-      ```
-      <copy>./stopManagedWebLogic.sh oim_server1</copy>
-      ```
+2. Once the OIM Server is shut down, stop the SOA server
 
-  - Once the OIM Server is shut down, stop the SOA server
+    ```
+    <copy>./stopManagedWebLogic.sh soa_server1</copy>
+    ```
 
-      ```
-      <copy>./stopManagedWebLogic.sh soa_server1</copy>
-      ```
+    Observe the Weblogic 12c console to verify that all the managed servers are in the ‘SHUTDOWN’ state.
 
-  Observe the Weblogic 12c console to verify that all the managed servers are in the ‘SHUTDOWN’ state.
-
-      ![](images/9-server12c.png)
+    ![](images/9-server12c.png)
 
 ## **STEP 6:** Rewiring the domain
 

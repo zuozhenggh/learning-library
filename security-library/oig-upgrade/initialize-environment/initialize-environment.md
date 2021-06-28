@@ -52,101 +52,107 @@ In this lab, you will:
     <copy>./startDomain11g.sh</copy>
     ```
 
-2. Access the Weblogic console from your browser and verify the version
+2. Open a browser window to access the Weblogic console. Click on the bookmark *Workshop Links* and click on *WLS11g* from the dropdown "OR" paste the following URL in the browser:
 
-    - Click on the bookmark *Workshop Links* and click on *WLS11g* from the dropdown "OR" paste the following URL in the browser:
+    ```
+    <copy>http://onehopiam:7001/console</copy>
+    ```
 
-        ```
-        <copy>http://onehopiam:7001/console</copy>
-        ```
-        ```
-        Username: <copy>weblogic</copy>
-        ```
-        ```
-        Password: <copy>Welcom@123</copy>
-        ```
+    Verify the version as 11g and login to the instance.
 
-        ![](images/2-weblogic-console.png)
+    ```
+    Username: <copy>weblogic</copy>
+    ```
 
-    - On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
+    ```
+    Password: <copy>Welcom@123</copy>
+    ```
 
-        ![](images/3-weblogic-servers.png)
+    ![](images/2-weblogic-console.png)
 
-        ![](images/4-weblogic-servers.png)
+3. On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
 
-3. Access the Identity Self Service console
+    ![](images/3-weblogic-servers.png)
 
-    - Click on the bookmark *Workshop Links* and click on *OIG11g* "OR" paste the following URL in the browser:
+    ![](images/4-weblogic-servers.png)
 
-        ```
-        <copy>http://onehopiam:14000/identity</copy>
-        ```
-        ```
-        Username: <copy>xelsysadm</copy>
-        ```
-        ```
-        Password: <copy>Welcom@123</copy>
-        ```
 
-        ![](images/5-identity-console.png)
+4. Access the Identity Self Service console. Click on the bookmark *Workshop Links* and click on *OIG11g* "OR" paste the following URL in the browser:
 
-    - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 11g
+    ```
+    <copy>http://onehopiam:14000/identity</copy>
+    ```
+    ```
+    Username: <copy>xelsysadm</copy>
+    ```
+    ```
+    Password: <copy>Welcom@123</copy>
+    ```
 
-        ![](images/6-identity-console.png)
+    ![](images/5-identity-console.png)
 
-    - Click on *Manage* on the top right corner. Then, click on *Users* and notice that 3 test users have been created (*TUSER1, TUSER2, TUSER3*)
+5. Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 11g
 
-        ![](images/7-users.png)
+    ![](images/6-identity-console.png)
 
-        ![](images/8-users.png)
+6. Click on *Manage* on the top right corner. Then, click on *Users* and notice that 3 test users have been created (*TUSER1, TUSER2, TUSER3*)
 
-## **STEP 4:** Verify the 12c Domain
+    ![](images/7-users.png)
 
-1. Wait for the 12c Domain to startup. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
+    ![](images/8-users.png)
 
-2. Access the Weblogic console from your browser and verify the version as 12c
+## **STEP 4:** Start and Verify the 12c Domain
 
-    - Click on the bookmark *Workshop Links* and click on *WLS12c* "OR" paste the following URL in the browser:
+1. Run the *startDomain12c.sh* script. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 
-        ```
-        <copy>http://onehopiam:7005/console</copy>
-        ```
-        ```
-        Username: <copy>weblogic</copy>
-        ```
-        ```
-        Password: <copy>Welcom@123</copy>
-        ```
+    ```
+    <copy>./startDomain12c.sh</copy>
+    ```
 
-        ![](images/9-weblogic12c.png)
+2. Open a browser window to access the Weblogic console. Click on the bookmark *Workshop Links* and click on *WLS12c* "OR" paste the following URL in the browser:
 
-    - On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
+    ```
+    <copy>http://onehopiam:7005/console</copy>
+    ```
 
-        ![](images/10-weblogic12c.png)
+    Verify the version as 12c and login to the instance.
 
-3. Access the Identity Self Service console
+    ```
+    Username: <copy>weblogic</copy>
+    ```
+    ```
+    Password: <copy>Welcom@123</copy>
+    ```
 
-    - Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
+    ![](images/9-weblogic12c.png)
 
-        ```
-        <copy>http://onehopiam:14005/identity</copy>
-        ```
-        ```
-        Username: <copy>xelsysadm</copy>
-        ```
-        ```
-        Password: <copy>Welcom@123</copy>
-        ```
+3. On the Weblogic console, Click on *Servers* under *Environment* and verify that all servers(OIM,SOA) are in the ‘RUNNING’ state.
 
-        ![](images/11-oim12c.png)
+    ![](images/10-weblogic12c.png)
 
-    - Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 12c
+4. Access the Identity Self Service console. Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
 
-        ![](images/12-oim12c.png)
+    ```
+    <copy>http://onehopiam:14005/identity</copy>
+    ```
 
-    - Click on *Manage* on the top right corner. Then, click on *Users* and notice that there are no new users created.
+    ```
+    Username: <copy>xelsysadm</copy>
+    ```
 
-        ![](images/13-oim12c.png)
+    ```
+    Password: <copy>Welcom@123</copy>
+    ```
+
+    ![](images/11-oim12c.png)
+
+5. Click on *xelsysadm* on the top right corner and Click on *About* from the dropdown. Verify that the OIM version is 12c
+
+    ![](images/12-oim12c.png)
+
+6. Click on *Manage* on the top right corner. Then, click on *Users* and notice that there are no new users created.
+
+    ![](images/13-oim12c.png)
 
 You may now [proceed to the next lab](#next).
 
