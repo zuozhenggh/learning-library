@@ -56,7 +56,7 @@ Before you begin, you must have installed the required software:
     secrets_encryption_key_ocid = null
     ```
 
-    - `region` and `tenancy_ocid` should match the values set in `TF_VARS.sh`.
+    - `region` and `tenancy_ocid` should match the values in your environment.
 
     - `compartment_ocid` is the OCID of the compartment where the stack will be deployed. If you have not created a compartment, create one and get the OCID by going to the Oracle Cloud Console and selecting  **Identity** and then **Compartments**. Select the compartment to use to see its details and retrieve the OCID.
 

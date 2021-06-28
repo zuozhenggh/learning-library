@@ -148,10 +148,10 @@ Estimated Time: 10 minutes.
         controller: true
         kind: ServiceBinding
         name: test-stream-binding
-        uid: b26883f5-d6d5-48ac-bb01-9c4994f194dc
+        uid: b26883f5-d6d5...
     resourceVersion: "87133"
     selfLink: /api/v1/namespaces/oci-service-broker/secrets/test-stream-binding
-    uid: bac04231-91ee-4a02-bb51-849aa3609ed9
+    uid: bac04231-91ee-4a02...
     type: Opaque
     ```
 
