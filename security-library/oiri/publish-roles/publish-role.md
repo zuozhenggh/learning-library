@@ -114,7 +114,7 @@ The task is now approved and is no longer displayed
 
 8. Click on the refresh icon and make sure that there are no pending approvals
 
-9. Click on Manage on the top right corner. Then, click on Roles and Access policies – then click on Roles
+9. Click on Manage on the top right corner. Then, click on Roles and Access policies and choose Roles
 
     ![](images/19-publish-role.png)
 
