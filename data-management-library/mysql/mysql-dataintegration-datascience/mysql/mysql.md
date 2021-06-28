@@ -7,11 +7,7 @@
 **MySQL Database Service** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
 
 [](youtube:f-fVabi1tRA)
-
-
-### Prerequisites
-
-- Steps from Underlying Infrastructure section have to be completed to go ahead on this lab. 
+ 
 
 Estimated Lab Time: 30 minutes.
 
@@ -23,7 +19,11 @@ In this lab, you will:
 - Connect and create the Database.
 - Enable HeatWave Analytics Engine.
 
-## **STEP 1:** Create an instance of MySQL in the cloud
+### Prerequisites
+
+- All previous labs have been successfully completed.
+
+## **STEP 1:** Create an Instance of MySQL in the Cloud
 
 1. Go to **Menu** > **Databases** > **DB Systems**.
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Connect and create DB
+## **STEP 2:** Connect and Create DB
 
 1. Connect with **Cloud Shell** (if you close it or it is no longer active).
 
@@ -87,10 +87,11 @@ In this lab, you will:
       - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
-         <copy>curl https://raw.githubusercontent.com/vmleon/mysql-dataintegrator-datascience-workshop/main/mysql/files/create_fish_survey.sql | mysqlsh --sql root@PRIVATE_IP</copy>
+         <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
          ```
+   This command will download the SQL script, and pipe the content to MySQL Shell to be executed as SQL code. We also indicate with `--save-passwords=always` to save the password securely for future uses of MySQL Shell.
 
-2. It will ask for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
+2. If the terminal asks for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
 
       - Type the MySQL DB password: `R2d2&C3po!`
 
@@ -132,4 +133,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
