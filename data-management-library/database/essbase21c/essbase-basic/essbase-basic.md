@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with Overview of the Essbase 21c Web interface.
+This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with and overview of the Essbase 21c web interface.
 
 In this lab, the following topics are covered:  
 
@@ -54,7 +54,7 @@ This lab requires:
 
     ![](./images/image14_5.png "")
 
-This concludes the creation of sample application from the **Catalog** in the Essabase 21c Web Interface.
+This concludes the creation of sample application from the **Catalog** in the Essbase 21c web Interface.
 
 ## **Step 2:** Analyzing Essbase data using Smart View Add-ins
 
@@ -62,7 +62,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
 *Steps to create a private connection to Essbase:*
 
-1. In Excel, select the 'Smart View' ribbon, and then click 'Panel'.
+1. In Excel, select the 'Smart View' ribbon, and then click **Panel**.
 
 2. On the Smart View Panel, select the Private Connections from the list.
 
@@ -77,10 +77,10 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_7.png "")
 
-6. After successful login, you can now begin working with data in Essbase. Expand **EssbaseCluster** navigate to the **DynamicCorp** application.    
+6. After successful login, you can now begin working with data in Essbase. Expand **EssbaseCluster** and navigate to the **DynamicCorp** application.    
    
    Click **Sales** and **Connect**.  
-   Click **Ad hoc analysis**.  
+   Click **Ad Hoc analysis**.  
    
    
    ![](./images/image14_8.png "")
@@ -101,19 +101,19 @@ The Essbase ribbon contains commands that enable you to view, navigate, and anal
 
 **POV Toolbar**
 
-Dimensions that are not displayed in columns or rows of a data grid are displayed on POV toolbar, which identifies a slice of the database for a grid. For default ad hoc grids, all database dimensions are displayed on the POV toolbar at the dimension level.
+Dimensions that are not displayed in columns or rows of a data grid are displayed on POV toolbar, which identifies a slice of the database for a grid. For default Ad Hoc grids, all database dimensions are displayed on the POV toolbar at the dimension level.
 
 **Smart View Panel**
 
-You use Smart View panel to connect to your smart view data sources and manage connections.
+You use Smart View panel to connect to your Smart View data sources and manage connections.
 
-1. Open a new excel. Click 'Smart View – Panel – Private Connections'. Enter the smart view URL and the credentials.
+1. Open a new Excel. Click 'Smart View – Panel – Private Connections'. Enter the Smart View URL and the credentials.
 
-2. In the Connection Manager panel to your right, Click **DynamicCorp** – **Sales**. Click **Connect** and then **Ad hoc analysis**.
+2. In the Connection Manager panel to your right, Click **DynamicCorp** – **Sales**. Click **Connect** and then **Ad Hoc analysis**.
 
     ![](./images/image14_8.png "")
 
-3. After connecting to an Essbase server, you can initiate Ad Hoc reports against databases on the connected server. The Adhoc report on a blank worksheet returns data from the top levels of each database dimension.
+3. After connecting to an Essbase server, you can initiate Ad Hoc reports against databases on the connected server. The Ad Hoc report on a blank worksheet returns data from the top levels of each database dimension.
 
     ![](./images/image14_12.png "")
 
@@ -121,10 +121,10 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_14.png "")
 
-5. Go to Year. Navigate to 'Essbase' Ribbon and Click on 'Keep only'. Using this option, only the Year Dimension is displayed and all the Quarters are removed.
+5. Go to Year. Navigate to 'Essbase' ribbon and click **Keep only**. Using this option, only the Year dimension is displayed and all the Quarters are removed.
     ![](./images/image14_14.0.png "")
 
-6. Go to Year. Click on Zoom in-All levels. Now you can see the numbers drill down to leaf level(Months).
+6. Go to Year. Click **Zoom in-All Levels**. Now you can see the numbers drill down to leaf level (Months).
 
 
     ![](./images/image14_15.png "")
@@ -132,37 +132,36 @@ You use Smart View panel to connect to your smart view data sources and manage c
     ![](./images/image14_16.png "")
 
 
-7. Double click on 'Measures'. It will Zoom into next level. 
+7. Double click on 'Measures'. It will zoom into next level. 
    ![](./images/image14_17.0.png "")
    
-   Now double click on 'Profit', it will take you further next level.
+   Now double click on 'Profit', it will take you to a further next level.
    ![](./images/image14_17.1.png "")
 
-    Now double click on 'Margin', it will take you further to next level(i.e, at sales level).
+    Now double click on 'Margin', it will take you further to next level (i.e, at sales level).
    ![](./images/image14_17.2.png "")
    
-   Select 'Sales' and click 'Keep Only'. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
+   Select 'Sales' and click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
 
     ![](./images/image14_17.png "")
 
-8.  In the 'Smart view' ribbon click 'Undo'. Undo reverses the last change you made to the data.
+8.  In the 'Smart View' ribbon click **Undo**. Undo reverses the last change you made to the data.
     ![](./images/image14_18.png "")
 
 
-9.  In the 'Smart view ribbon' click 'Redo'. It will take you back to the sheet prior to the Undo.
+9.  In the 'Smart View ribbon' click **Redo**. It will take you back to the sheet prior to the Undo.
 
 
-10. Click on 'Year' and select 'Keep only'. Click on Sales and change it to Measures by clicking 'Zoom out' on sales 3 times.
+10. Click on 'Year' and click **Keep only**. Click on Sales and change it to Measures by clicking 'Zoom out' on sales three times.
 
     Create the below report by zooming into next level of Year dimension and Measures dimension.
     ![](./images/image14_99.png "")
     
     
-    
 
 11.  Pivot to POV:
 
-    a. Click on 'POV' in 'Essbase' ribbon.
+    a. Click **POV** in 'Essbase' ribbon.
 
     ![](./images/image14_19.png "")
 
@@ -172,7 +171,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     ![](./images/image14_21.png "")
 
-    c. Select 'New York' in the POV toolbar, and click 'Refresh' to see the figures refreshed in the sheet for New York.
+    c. Select 'New York' in the POV toolbar, and click **Refresh** to see the figures refreshed in the sheet for New York.
 
     ![](./images/image14_22.png "")
 
@@ -180,7 +179,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     Note: Revert the last step changes by selecting 'Market' and 'Scenario' in the POV and click on 'refresh'.
 
-    a. Click on 'POV' in 'Essbase' ribbon again.
+    a. Click **POV** in 'Essbase' ribbon again.
 
     ![](./images/image14_23.png "")
 
@@ -198,9 +197,9 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
     a. You can enter a member combination on a sheet. Click 'Refresh'. The sheet is updated to show the results of the query in your free form sheet.
 
-    b. Start by creating smart view analysis report.
+    b. Start by creating Smart View analysis report.
 
-    c. Create the below report by zooming into the Year & Measures dimension.
+    c. Create the below report by zooming into the Year and Measures dimension.
 
     ![](./images/image14_26.png "")
 
@@ -215,7 +214,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 ## **Step 4:** Install the Smart View Cube Designer Extension
 
-1. On the 'Smart View' ribbon, select 'Options', and then 'Extensions'.
+1. On the 'Smart View' ribbon, select **Options**, and then **Extensions**.
 
     ![](./images/image14_38.png "")
 
@@ -227,7 +226,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 4. Follow the prompts to install the extension.
    
-   Note: Please give 1 or 2 minutes for cube designer to complete the installation. 
+   Note: Please give 1 or 2 minutes for Cube Designer to complete the installation. 
 
 
 ## **Step 5:** Creating a cube from tabular data in Cube Designer
@@ -235,10 +234,10 @@ You use Smart View panel to connect to your smart view data sources and manage c
 This workflow uses two sample tabular data excel files to demonstrate the concepts of intrinsic and forced-designation headers. See about [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
 
 
-1. In the 'Cube Designer' ribbon, click 'connections' -> select the current connection from the dropdown menu to connect to Essbase. 
+1. In the 'Cube Designer' ribbon, click **connections** -> select the current connection from the dropdown menu to connect to Essbase. 
    ![](./images/image14_44.0.png "")
    
-  On the 'Cube Designer' ribbon, click 'Catalog'.
+  On the 'Cube Designer' ribbon, click **Catalog**.
 
 2.	On the Essbase Files dialog box, under Catalog, go to 'gallery/Technical/Table Format' as shown below, then select a sample tabular data file: **Unstr_Hints.xlsx**.
 
@@ -247,7 +246,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 3.	Double click on the above directed file.  
  The table format workbook have Intrinsic headers that uses table.column format.
 
-4.	On the 'Cube Designer' ribbon, select 'Transform Data'.
+4.	On the 'Cube Designer' ribbon, select **Transform Data**.
 
 5.	On the 'Transform Data' dialog box, enter an application and a cube name if you want to change the default names that are prepopulated.
 
@@ -259,7 +258,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
 7.	Click 'Preview Data'. The workbook is sent to Essbase 21c for analysis and then you can verify the dimensions and their members. 
 
-8.	When you are ready to create the cube, click 'Run'.
+8.	When you are ready to create the cube, click **Run**.
 
 9.	Once the job is finished, a pop-up will appear to view the job staus. If you want to see the job status, click 'Yes'.
 
@@ -267,11 +266,11 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
 10.  The newly created application and cube are listed on the Applications home page in the user interface. Now the cube is created from the tabular data, you can export the cube to an application workbook.
 
-11.	On the 'Cube Designer' ribbon, select 'Local', then select 'Export Cube to Application Workbook'
+11.	On the 'Cube Designer' ribbon, select **Local**, then select **Export Cube to Application Workbook**.
 
     ![](./images/image14_48.png "")
 
-12.	On the 'Export Cube to Application Workbook' dialog box, select the application and cube, and then select 'Run'.
+12.	On the 'Export Cube to Application Workbook' dialog box, select the application and cube, and then select **Run**.
 
     ![](./images/image14_49.png "")
 
@@ -439,7 +438,7 @@ applications and cubes.
 
 ### **Scenarios**:
 
-1. The **Scenarios** tab is where you create scenario modeling on the applications for 'What-If' analysis, which empowers the users to analyze the data and get insights from the data. More details on this are covered in an upcoming lab.
+The **Scenarios** tab is where you create scenario modeling on the applications for 'What-If' analysis, which empowers the users to analyze the data and get insights from the data. More details on this are covered in an upcoming lab.
 
 ### **Security**:
 
@@ -461,7 +460,7 @@ applications and cubes.
 
 ### **Sources**:
 
-1. Many cube operations require connection information to access remote source data or hosts. You can define 'Connections' and 'Datasources' once and reuse them in various operations.
+Many cube operations require connection information to access remote source data or hosts. You can define 'Connections' and 'Datasources' once and reuse them in various operations.
    
    A connection stores login credentials required to access an external source. A Datasource points to an external source of information.  
    More details on this are covered in an upcoming lab. 
@@ -470,7 +469,7 @@ applications and cubes.
 
 ### **Console**:
 
-1. The Console tab is one stop place for Essbase Administrator tools such as:
+The Console tab is one stop place for Essbase Administrator tools such as:
 
     *	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a application workbook.
     *	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts.  
@@ -487,7 +486,7 @@ applications and cubes.
 
 ### **Academy**:
 
-1. **Academy** has documentation links by topics for users and administrators.
+**Academy** has documentation links by topics for users and administrators.
 
     ![](./images/image14_75.png "")
 

@@ -52,11 +52,11 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 
 
 ## **STEP 3**: Login to Host for manual startup (Optional)
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+While you only need the browser to perform all tasks in this workshop, you can optionally use your preferred SSH client to connect to the instance to perform any troubleshooting task such as restarting processes, rebooting the instance, or to just look around.
 
 ### Start Script
 
-​Your workshop instance is configured to start all processes automatically needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in **Step1**.
+​Your workshop instance is configured to automatically start all processes needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in **Step1**.
 
 1. Launch your browser to the following URL to access noVnc web UI.
    
@@ -65,7 +65,7 @@ While you will only need the browser to perform all tasks included in this works
     ```
    ​![](./images/ess-environment2.png " ")
 
-2. Click Connect and enter the password.
+2. Click **Connect** and enter the password.
 
     ```
     Password	:<copy>LiveLabs.Rocks_99</copy>
@@ -77,11 +77,11 @@ While you will only need the browser to perform all tasks included in this works
     <copy>cd /u01/scripts/</copy>
     ```
 
-    Use clipboard on the left menu for copy paste. Paste on the clipboard and use shift+Insert key on the terminal.
+    Use the clipboard on the left menu to paste on the clipboard and use shift+Insert key on the terminal.
     
     ![](./images/ess-environment3.png " ")
 
-4.  Start the env_startup_script to start all the services of Database and Essbase.
+4.  Start the "env_startup_script" to start all the services of Database and Essbase.
 
     ```
     <copy>./env_start_script.sh</copy>
@@ -89,7 +89,7 @@ While you will only need the browser to perform all tasks included in this works
 
     ![](./images/ess-environment4.png " ")
 
-5.  Your services should be started and wait for the confirmation on start of servers.
+5.  Your services should be started. Wait for the confirmation.
 
     ![](./images/ess-environment5.png " ")
 

@@ -12,15 +12,15 @@ Estimated Lab Time: *60 minutes*
 * Create a connection from Essbase 21c to Oracle Database.
 * Build dimension using data in database.
 * Load data from Database to Essbase cube.
-* View / Analyze data from database in smart view.
-* Drill through to data in database from smart view.
+* View / analyze data from database in Smart View.
+* Drill through to data in database from Smart View.
 
 ### Prerequisites
 
 * Essbase 21c instance.
-* Database conection details(Refer to Lab5).  
+* Database connection details (Refer to Lab5).  
 * Smart View plugin for excel.
-* SQL Developer Client(Optional)
+* SQL Developer Client(optional)
 * Files: Sample\_Basic\_DT.xlsx
 
 
@@ -47,21 +47,21 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 5.  Close the outline browser tab.
 
 6.	Open the query worksheet QueryDT.Sample within Sample\_Basic\_DT.xlsx.   
-   Login to smart view. Select the application SampleDT and click **Connect** and click **Set active connection**.
+   Login to Smart View. Select the application SampleDT, click **Connect** and click **Set active connection**.
 
 7.  Go to Smart View Ribbon, click **Options –> Cell Styles –> Essbase –> Data Cells** and pick colors for  Drill-through (blue), Read-Only (pink), Writable (green) and Linked Objects (yellow). 
    
-   For example, Select "Drill-t  horugh" and double click on it and then double click "Backgroud" to pick the required  color.
+   For example, select **Drill-through**,  double click on it, and then double-click **Background** to pick the required color.
 
     Click **OK**.
     
      ![](./images/imageDT_03.png "")
 
-8. Refresh the sheet in smart view. Notice data cells E2 to E11 representing Sales figures for different Regions are all color coded green.
+8. Refresh the sheet in Smart View. Notice data cells E2 to E11 representing Sales figures for different Regions are all color coded green.
     ![](./images/imageDT_04.png "")
 
   
-## **Step 2:** Check the data in relational table(Optional)
+## **Step 2:** Check the data in relational table (optional)
 
    **Note**: The data is already loaded in the database.  
 
@@ -74,7 +74,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
    Password for Esscs Schema: **Admin123**.
 
 2. Query the data in the relational table:
-   Right click on Connection name -> Open SQL Worksheet. Type the query and check the result:   
+   Right-click on Connection name -> Open SQL Worksheet. Type the query and check the result:   
     ```
     <copy>        
           select product, market, statename, scenario, year, sales from SALES_BREAKDOWN_SB order by product, market, scenario, year, sales;
@@ -95,9 +95,9 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 
 ## **Step 3:** Define a Drill-through Connection
-1. In Essbase UI, go to Applications. Select the application SampleDT.
+1. In Essbase interface, go to Applications. Select the application SampleDT.
 
-2. Launch application inspector, by clicking icon under Actions for the application selected and choose Inspect.
+2. Launch application inspector, by clicking the icon under Actions for the application selected and choose **Inspect**.
    ![](./images/imageDT_08.png "")
 
 3. Click Sources on the application inspector.
@@ -119,7 +119,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 1. Click **Datasources** on the Sources tab on application inspector. Click **Create Datasource**.
 
-2. In the General tab of the Create Datasource wizard, select the connection from the drop down created in the previous step.
+2. In the General tab of the Create Datasource wizard, select the connection from the drop-down list created in the previous step.
 
   Enter Name: "SalesTable". In the Query field, enter the database query string below and click **Next**. 
 
@@ -137,7 +137,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 4. Next page is Parameters. Click **Next**. 
    ![](./images/imageDT_13.png "")
    
-5. In the next page you can preview the results of the query, which is same as what you saw through SQL Developer in Step2. Click **Create**.
+5. In the next page you can preview the results of the query, which is the same as what you saw with SQL Developer in Step2. Click **Create**.
    ![](./images/imageDT_14.png "")
 
 6. Datasource **SalesTable** and Connection **SAMPLEDT.esscs** you created above are listed under Datasources. 
@@ -148,7 +148,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 ## **Step 5:** Define Drill-through Report
 1. Navigate to the database inspector for the application SampleDT and database Basic. Click **Scripts**.   
 
-2. Select Drill Through Reports on left navigation section. On the Create menu to the right, Select **Datasource**.
+2. Select **Drill Through Reports** in left navigation section. On the Create menu to the right, select **Datasource**.
    ![](./images/imageDT_16.png "")
 
 3. Enter Name "SalesBreakdown". 
@@ -174,7 +174,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 
 ## **Step 6:** Drill-through Color Coding
-1. Go back to smart view and open the query worksheet **QueryDT.Sample** within Sample\_Basic\_DT.xlsx.
+1. Go back to Smart View and open the query worksheet **QueryDT.Sample** within Sample\_Basic\_DT.xlsx.
    ![](./images/imageDT_04.png "")
 
 2. We are now checking drill-through color coding (blue color) to see if drill-through reports are defined.   
@@ -191,16 +191,16 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 ## **Step 7:** Load Data
 1. Create Load Rules:     
 
-   a) Go to Applications in Essbase web UI. Select application SampleDT and cube Basic.   
+   a) Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
    
    b) Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
    
    c) Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
    ![](./images/imageDT_20.png "")
    
-   d) In the drop down menu, select **Data Load**.    
+   d) In the drop-down menu, select **Data Load**.    
      * In the Name field, provide the name of the rules file as **SalesDataload**.  
-     * •	For Source Type, select Datasource.  
+     * For Source Type, select Datasource.  
      * Click **Proceed**.   
     
    
@@ -254,7 +254,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 
 ## **Step 8:** Execute Drill-through
-1.	Go back to smart view. Refresh the query sheet. Observe the Sales figure for the Central region.
+1.	Go back to Smart View. Refresh the query sheet. Observe the Sales figure for the Central region.
    ![](./images/imageDT_27.png "")
 
 2.	The sales for the month of April in Central region is 1207. 

@@ -217,7 +217,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     ![](./images/image14_80_1.png)
 
-    * Field 1 - Search Product in member tree or enter Product under Field Name. Click **Next**.
+    * Field 1 - Search Product in member tree and double click or enter Product under Field Name. Click **Next**.
     ![](./images/image14_80_2.png)
     * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
     * Field 2 - Market
