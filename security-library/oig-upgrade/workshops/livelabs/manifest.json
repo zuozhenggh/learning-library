@@ -20,7 +20,7 @@
         {
           "title": "Lab 2: Environment Setup",
           "description": "Verify Setup of compute instance",
-          "filename": "../../../../common/labs/verify-compute/verify-compute-novnc.md"
+          "filename": "./../../../../common/labs/verify-compute/verify-compute-novnc.md"
         },
         {
             "title": "Lab 3: Initialize the workshop environment",
