@@ -1,3 +1,13 @@
+---
+duration: PT0H15M0S
+description: Use RMAN to connect to PDB to use recovery catalog
+level: Beginner
+roles: Application Developer;Developer;Technology Manager
+lab-id:
+products: en/database/oracle/oracle-database/19
+keywords: Database
+inject-note: true
+---
 # Use Recovery Manager (RMAN) to Connect to a PDB to Use the Recovery Catalog
 
 ## Introduction
@@ -26,27 +36,27 @@ Be sure that the following tasks are completed before you start:
 
 
 ## **STEP 1**: Prepare environment
-1. Execute the **/home/oracle/labs/admin/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
+1. Execute the **/home/oracle/labs/19cnf/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
    
     ```
-    $ /home/oracle/labs/admin/cleanup_PDBs.sh
+    $ /home/oracle/labs/19cnf/cleanup_PDBs.sh
     ``` 
 
-2. Execute the **/home/oracle/labs/HA/create_PDB2.sh** shell script, this will create **PDB2** in the **CDB1** container. **PDB2** will be the database we are backing up.
+2. Execute the **/home/oracle/labs/19cnf/create_PDB2.sh** shell script, this will create **PDB2** in the **CDB1** container. **PDB2** will be the database we are backing up.
    
     ```
-    $/home/oracle/labs/HA/create_PDB2.sh
+    $/home/oracle/labs/19cnf/create_PDB2.sh
     ```
 
-3.  Execute the **/home/oracle/labs/HA/create_PDB19.sh** shell script. this will create **PDB19** in the **CDB1** container. **PDB19** will be the recovery catalog PDB.
+3.  Execute the **/home/oracle/labs/19cnf/create_PDB19.sh** shell script. this will create **PDB19** in the **CDB1** container. **PDB19** will be the recovery catalog PDB.
    
     ```
-    $ /home/oracle/labsHA/create_PDB19.sh
+    $ /home/oracle/labs/19cnf/create_PDB19.sh
     ```
-4. Execute the **/home/oracle/labs/HA/glogin.sh** shell script. This will set the formatting for all columns selected in queries.
+4. Execute the **/home/oracle/labs/19cnf/glogin.sh** shell script. This will set the formatting for all columns selected in queries.
 
     ```
-    $ /home/oracle/labs/HA/glogin.sh
+    $ /home/oracle/labs/19cnf/glogin.sh
     ```
 
 ## **STEP 2**: Create catalog owner and grant privileges 
@@ -113,7 +123,7 @@ Be sure that the following tasks are completed before you start:
     ```
     RMAN> EXIT
     ```
-4. Execute **$ORACLE_HOME/rdms/admin/dbmsrmanvpc.sql** after connecting to the catalog as **SYS** to grant VPD-required privileges to the base catalog owner.
+4. Execute **$ORACLE_HOME/rdbms/admin/dbmsrmanvpc.sql** after connecting to the catalog as **SYS** to grant VPD-required privileges to the base catalog owner.
     ```
     $ sqlplus sys@PDB19 AS SYSDBA
 
@@ -121,7 +131,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
     ```
-    SQL> @$ORACLE_HOME/rdms/admin/dbmsrmanvpc.sql -vpd catowner
+    SQL> @$ORACLE_HOME/rdbms/admin/dbmsrmanvpc.sql -vpd catowner
 
     checking the operating user... Passed
 
