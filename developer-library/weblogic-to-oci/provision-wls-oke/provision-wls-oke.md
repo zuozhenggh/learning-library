@@ -1,4 +1,4 @@
-# Provision WebLogic on Oracle Kubernetes Engine
+# Provision Oracle WebLogic Server on Oracle Kubernetes Engine
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Completion Time: 30 minutes.
 
 ### Objectives
 
-- Provision WebLogic Server on OKE e via the Oracle Cloud Marketplace offering.
+- Provision Oracle WebLogic Server on OKE via the Oracle Cloud Marketplace offering.
 - Gather information for further steps.
 
 ### Prerequisites
@@ -25,7 +25,7 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
 1. Go to **Solutions and Platforms**.
 
-  ![](./images/provision-1.png " ")
+   ![](./images/provision-1.png " ")
 
 2. In the search input, type `weblogic` and click **WebLogic Enterprise Edition on OKE UCM**.
 
@@ -132,31 +132,31 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
 22. Click **Create**.
 
-   ![](./images/provision-25.png " ")
+    ![](./images/provision-25.png " ")
 
 23. The stack will get provisioned using the **Resource Manager**. This may take 7 to 15 minutes.
 
-   ![](./images/provision-26.png " ")
+    ![](./images/provision-26.png " ")
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
 ## **STEP 2:** Gather Deployment Information
 
-1. Go to **Outputs** (or you can find the same information at the bottom of the logs).
+Go to **Outputs** (or you can find the same information at the bottom of the logs).
 
-   You should see something like the following:
+You should see something like the following:
 
-   ![](./images/provision-28.png " ")
+![](./images/provision-28.png " ")
 
-   - Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
+- Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
 
-   - Make a note of the **Load Balancer IP** for later use.
+- Make a note of the **Load Balancer IP** for later use.
 
-   - Make a note of the Bastion Instance **Public IP address** for later use.
+- Make a note of the Bastion Instance **Public IP address** for later use.
 
-   To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
+To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
 
-   We'll need to set up a tunnel through the Bastion Instance, with a dynamic port to connect to the Admin Console and the Jenkins UI with the browser.
+We'll need to set up a tunnel through the Bastion Instance, with a dynamic port to connect to the Admin Console and the Jenkins UI with the browser.
 
 ## **STEP 3:** Set Up Connectivity
 

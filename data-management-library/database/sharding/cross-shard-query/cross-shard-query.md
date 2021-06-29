@@ -22,6 +22,7 @@ This lab assumes you have already completed the following:
 - Create Demo App Schema
 - Custom Demo Data Loading
 
+## **STEP 1:** Prepare the sample rows
 1. Login to the catalog database host, switch to oracle user, and make sure you are in the cata environment.
 
    ```
@@ -78,8 +79,8 @@ This lab assumes you have already completed the following:
    ```
 
    
-
-4. Now, let’s run a Cross Shard Query which does a SELECT with ORDER BY query accessing multiple shards but not all shards.
+## **STEP 2:** Cross Shard Query
+1. Now, let’s run a Cross Shard Query which does a SELECT with ORDER BY query accessing multiple shards but not all shards.
 
    ```
    SQL> set termout on
@@ -131,7 +132,7 @@ This lab assumes you have already completed the following:
 
     
 
-5. Let’s run a CSQ query which joins sharded and duplicated table (join on non sharding key) to get the fast moving products (qty sold > 10). The output that you will observe will be different (due to data load randomization).
+2. Let’s run a CSQ query which joins sharded and duplicated table (join on non sharding key) to get the fast moving products (qty sold > 10). The output that you will observe will be different (due to data load randomization).
 
    ```
    SQL> set echo on
@@ -198,7 +199,7 @@ This lab assumes you have already completed the following:
 
    
 
-6. Let’s run a CSQ query which runs an IN subquery to get orders that includes product with `price > 900000`.
+3. Let’s run a CSQ query which runs an IN subquery to get orders that includes product with `price > 900000`.
 
    ```
    SQL> set echo on
@@ -246,7 +247,7 @@ This lab assumes you have already completed the following:
 
    
 
-7. Let’s run a CSQ query that calculates customer distribution based on the number of orders placed. Please wait several minutes for the results return.
+4. Let’s run a CSQ query that calculates customer distribution based on the number of orders placed. Please wait several minutes for the results return.
 
    ```
    SQL> set echo off
@@ -314,7 +315,7 @@ This lab assumes you have already completed the following:
 
    
 
-8. Exit the sqlplus.
+5. Exit the sqlplus.
 
    ```
    SQL> exit
@@ -324,4 +325,11 @@ This lab assumes you have already completed the following:
    ```
 
    
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Dec 2020
+* **Contributors** -  
+* **Last Updated By/Date** - Minqiao Wang, Jun 2021
+* **Workshop Expiry Date** - 
+
