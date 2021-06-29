@@ -24,17 +24,18 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+Before you start, be sure that you have done the following:
 
-- Obtain an Oracle Cloud account.
-- Create SSH keys.
-- Sign in to Oracle Cloud Infrastructure.
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell
+
 
 ## **STEP 1**: Add security rules to your existing VCN
 
-Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections and traffic on ports 1521, 1523, and 1524 for the DB Listener.
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521, 1523, and 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
-> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended). If you are working in the LiveLabs environment, you can skip this step and then next and proceed to STEP 3.
+> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended). If you are working in the LiveLabs environment, you can skip this step and STEP 2 and proceed to STEP 3.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -50,7 +51,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [19cnf-workshop-installed.zip](need url) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
+1. Download [19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K5s7Sw5wGMvC4ose91816ptvrxQgLM2RFNaP6w-uO3oCA[…]b/LiveLabsBucket/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 

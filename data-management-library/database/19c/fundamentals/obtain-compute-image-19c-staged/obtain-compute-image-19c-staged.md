@@ -22,11 +22,11 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+Before you start, be sure that you have done the following:
 
-- Obtain an Oracle Cloud account.
-- Sign in to Oracle Cloud Infrastructure.
-- Create SSH keys in Cloud Shell.
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell.
 
 
 
