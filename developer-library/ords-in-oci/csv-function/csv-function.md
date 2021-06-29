@@ -354,11 +354,7 @@ In Oracle Functions, an application is:
     ![deploy our function Step 10](./images/func-13g.png)
 
     Use the following command
-
-    ```
-    fn -v deploy --app functionsApp
-    ```
-    
+   
     ````
     <copy>
     fn -v deploy --app functionsApp
@@ -386,7 +382,9 @@ In Oracle Functions, an application is:
     Successfully created function: csv-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68
     ```
 
-21. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. Configuring function parameters is in the following syntax"
+21. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. 
+
+    Configuring function parameters is in the following syntax:
     ```
     fn config function <app-name> <function-name> <parameter> <parameter-value>
     ```
@@ -400,7 +398,7 @@ In Oracle Functions, an application is:
     fn config function <app-name> <function-name> input_bucket <input bucket name>
     fn config function <app-name> <function-name> processed_bucket <processed bucket name>
     ```
-    And with the values we need
+    And with the values we need with our **app-name** and **function-name** filled in for you:
 
     ````
     <copy>
@@ -482,7 +480,7 @@ In Oracle Functions, an application is:
 
 ## **STEP 4:** Create an Event
 
-1. So that the function triggers when a csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
+1. So that the function triggers when the file1.csv csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
 
     ![Observability & Management and then Events Service](./images/event-1.png)
 
@@ -579,7 +577,7 @@ In Oracle Functions, an application is:
 
 ## **STEP 5:** Taking the Flow for a Spin
 
-1. It's time to see our function in action. To do this we need to put a csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+1. It's time to see our function in action. To do this we need to put the file1.csv csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
     ![Storage then Buckets](./images/full-1.png)
 
