@@ -53,6 +53,7 @@ Before we create some of the resources we need for functions, we need to record 
 ## **SETUP 2**: Setup OCI Permissions
 
 For the Function we create to interact with the Object Store, we first have to create a Dynamic Group and some IAM policies.
+**If you did not copy the OCID for the compartment you just created do that now before moving on to the next step**
 
 
 ### Create a Dynamic Group
@@ -201,7 +202,7 @@ Next, we need to associate our dynamic group to some policies so that it has the
     ![Create Autonomous Database button](./images/adb-3.png)
 
 
-4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our Compartment is livelabs and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
+4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
 
     **Display Name:** ORDS ADB
 
@@ -272,7 +273,6 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
-15. 
 
 ## **SETUP 4**: Create a Virtual Cloud Network
 
@@ -371,6 +371,8 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
 
     When you have copied the token and saved it somewhere (text pad, notes app, etc), click the **Close** button.
 
+    **It is important to note that the token text will not be displayed or able to be retrieved after you click the close button in the Generate Token Model. Please copy and save this token text.**
+
 
 ## **SETUP 6**: Create Object Store Buckets
 
@@ -448,12 +450,12 @@ To ensure we are not using passwords in plain text in any configurations or part
 
     ![livelabs** is selected for the Create in Compartment dropdown](./images/vault-4.png)
 
-5. And lets name the vault **livelabs vault** using the Name field.
+5. And lets name the vault **livelabsVault** using the Name field.
 
-    **Name:** livelabs vault
+    **Name:** livelabsVault
     ````
     <copy>
-    livelabs vault
+    livelabsVault
     </copy>
     ````
     ![name field](./images/vault-5.png)
