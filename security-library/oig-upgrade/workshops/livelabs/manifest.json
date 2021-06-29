@@ -13,25 +13,30 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 0: Generate SSH Key",
+            "title": "Lab 1: Generate SSH Key",
             "description": "Generate SSH Key",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
-            "title": "Lab 1: Initialize the workshop environment",
+          "title": "Lab 2: Environment Setup",
+          "description": "Verify Setup of compute instance",
+          "filename": "../../../../common/labs/verify-compute/verify-compute-novnc.md"
+        },
+        {
+            "title": "Lab 3: Initialize the workshop environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../initialize-environment/initialize-environment.md"
         },
         {
-            "title": "Lab 2: Pre-Upgrade Requirements",
+            "title": "Lab 4: Pre-Upgrade Requirements",
             "filename": "../../pre-upgrade/pre-upgrade.md"
         },
         {
-            "title": "Lab 3: One-hop Upgrade",
+            "title": "Lab 5: One-hop Upgrade",
             "filename": "../../upgrade/upgrade.md"
         },
         {
-            "title": "Lab 4: Post-Upgrade tasks",
+            "title": "Lab 6: Post-Upgrade tasks",
             "filename": "../../post-upgrade/post-upgrade.md"
         },
         {
