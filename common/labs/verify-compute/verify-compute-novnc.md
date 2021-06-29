@@ -40,7 +40,7 @@ For ease of execution of this workshop, your VM instance has been pre-configured
     e.g.
 
     ```
-    <copy>http://111.111.111.111/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
+    <copy>http://111.111.111.111:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
     *Note:* The IP address `111.111.111.111` is made up for illustration only. Provide the correct IP address.
