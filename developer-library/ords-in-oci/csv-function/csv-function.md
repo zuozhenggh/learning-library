@@ -9,6 +9,8 @@ Download the lab files with the following link.
 
 [Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip)
 
+We will be using the **file1.csv** file in the next section via a browser so unzip the func.zip file in your local environment/desktop.
+
 To download them in the OCI Cloud Console, use the following command:
 ```
 curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
@@ -17,8 +19,6 @@ curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10V
 If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
 
 ![drag and drop files to your home directory](./images/cdd-1.png)
-
-We will be using the **file1.csv** file in the next section.
 
 ## **STEP 1**: Prepare the Database
 
@@ -142,18 +142,24 @@ We will be using the **file1.csv** file in the next section.
 
     ![The REST Enable Object Slider, view the Preview URL](./images/sdw-35.png)
 
-We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be similar.
+We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-ordsadb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be in a similar format but a different hostname.
 
 
 ## **STEP 3:** Create and Deploy the Function
 
-We now need to create a function that will take the incoming file from Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. First, we need to make an Application to hold our function. 
+We now need to create a function that will see the incoming file in Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. 
 
-With Oracle Functions, an application is:
+First, we need to make an Application to hold our function. 
+
+From the [documentation](https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsconcepts.htm):
+
+```
+In Oracle Functions, an application is:
     a logical grouping of functions
     a way to allocate and configure resources for all functions in the application
     a common context to store configuration variables that are available to all functions in the application
     a way to ensure function runtime isolation
+```
 
 1. Use the OCI web console drop down menu to go to **Developer Services** and then **Applications**.
 
@@ -214,7 +220,11 @@ With Oracle Functions, an application is:
 
     ![OCI Cloud Shell](./images/func-13.png)
 
-12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2**, copy and paste the first command
+12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2** for setting our region context,
+
+    ![Setup fn CLI on Cloud Shell Step 2](./images/func-13a.png)
+
+    copy and paste the first command
 
     ````
     <copy>
@@ -237,14 +247,22 @@ With Oracle Functions, an application is:
     Now using context: eu-frankfurt-1 
     ```
 
-13. We are now going to update the context with the function's compartment ID with step 3. The OCI web console gives you this command to copy and paste with the compartment OCID already in the command; no need to fetch it. Copy, paste and run this command in the cloud shell.
+13. We are now going to update the context with the function's compartment ID with step 3. The OCI web console gives you this command to copy and paste with the compartment OCID already in the command; no need to fetch it.
+
+    ![update the context with the function's compartment ID Step 3](./images/func-13b.png)
+
+    Copy, paste and run this command in the cloud shell.
 
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context oracle.compartment-id ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
     Current context updated oracle.compartment-id with ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
     ```
 
-14. In step 4, we will update the context with the location of the Registry you want to use. The command the UI gives is in the format:
+14. In step 4, we will update the context with the location of the Registry you want to use.
+
+    ![update the context with the location of the Registry Step 4](./images/func-13c.png)
+
+    The command the UI gives is in the format:
     ```
     region_container_registry/tenancy_name/ocir_repo_name_of_your_choice
     ```
@@ -263,10 +281,19 @@ With Oracle Functions, an application is:
     Current context updated registry with fra.ocir.io/mytenancy/livelabsrepo
     ```
 
-15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. Now would be a good time to retrieve the saved token you saved from the setup steps.
+15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. 
 
-16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format 
-     ```
+    ![generated a token Step 5](./images/func-13d.png)
+
+    Now would be a good time to retrieve the saved token you saved from the setup steps.
+
+16. For step 6, 
+
+    ![logging into the Registry Step 6](./images/func-13e.png)    
+
+    we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format 
+    
+    ```
     docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io
     ```
     as seen below:
@@ -286,7 +313,11 @@ With Oracle Functions, an application is:
     Login Succeeded
     ```
 
-17. Next, in step 7, we verify we can see our application by running fn list apps
+17. Next, in step 7, 
+
+    ![verify we can see our application Step 7](./images/func-13f.png)
+
+    verify we can see our application by running **fn list apps**
 
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
@@ -318,7 +349,11 @@ With Oracle Functions, an application is:
 
     cd func
 
-20. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
+20. Now we can deploy our function to our application. This command can also be found as step number 10 on the Functions Getting Started page.
+
+    ![deploy our function Step 10](./images/func-13g.png)
+
+    Use the following command
 
     ```
     fn -v deploy --app functionsApp
