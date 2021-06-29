@@ -19,7 +19,6 @@ Learn how to do the following:
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
-- Connect to your compute instance via Cloud Shell and initialize your environment
 - Connect to your compute instance via a browser
 - Download the labs files for this workshop
 
@@ -51,41 +50,43 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [imagename.zip](need url) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
+1. Download [19cnf-workshop-installed.zip](need url) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
-  ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
+    ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
 
     The **Create Stack** page is displayed.
 
-3. For **Stack Information**, select **My Configuration**. In the **Stack Configuration** section, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**. Leave the default values for **Name** and **Description** as is. Select your compartment.
+3. For **Stack Information**, select **My Configuration**. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**. Leave the default values for stack name and description as is. Select your compartment.
 
-  ![Stack Information page top half](images/stack-information-page-top-half.png "Stack Information page top half")
+    ![Stack Information page top half](images/stack-information-page-top-half.png "Stack Information page top half")
 
-  ![Stack Information page bottom half](images/stack-information-page-bottom-half.png "Stack Information page bottom half")
+    ![Stack Information page bottom half](images/stack-information-page-bottom-half.png "Stack Information page bottom half")
 
 4. Click **Next**.
 
     The **Configure Variables** page is displayed.
 
-5. In the **Main Configuration** section, leave **Instance Count** set to **1**. Select an **availability domain**. Paste your **SSH Public Key** into the box.
+5. In the **Instance** section, select a region, your compartment, an availability domain, and **Paste SSH Key**. In the SSH field, paste your public SSH key.
 
-  ![Main Configuration section](images/main-configuration-section.png "Main Configuration section")
+    ![Instance section](images/instance-section.png "Instance section")
 
-6. In the **Options** section, leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. For **Select OCPUs Count per Instance**, leave 2 selected. If you want to use one of your existing VCNs, select **Use Existing VCN**, and then select a VCN that has a regional public subnet and the required security rules. Also select your public subnet. Oracle recommends that you let Resource Manager create VCN for you.
+6. In the **Network** section, leave the default setting as is to create a new VCN (recommended).
 
-  ![Options section](images/options-section.png "Options section")
+    If you want to use one of your existing VCNs, select **Use existing VCN**, select a VCN that has a regional public subnet and the required security rules, and select your public subnet.
+
+    ![Network section](images/network-section.png "Network section")
 
 7. Click **Next**.
 
-8. On the **Review** page, review your configuration variables and make sure they are correct. Only the variables that you edited are displayed.
+8. On the **Review** page, review your configuration variables and make sure they are correct.
 
-  ![Review page](images/review-page.png)
+    ![Review page](images/review-page.png)
 
-9. In the **Run Apply on the created stack** section, select **RUN APPLY**.
+9. Scroll to the bottom. In the **Run Apply on the created stack** section, select **RUN APPLY**.
 
-  ![Run Apply option](images/run-apply-option.png "Run Apply option")
+    ![Run Apply option](images/run-apply-option.png "Run Apply option")
 
 10. Click **Create** to begin the provisioning job.
 
@@ -93,17 +94,12 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 11. Wait for the job to be completed. The job is successful when it reads "SUCCEEDED" and the last line of the log file reads `Apply complete!`.
 
-  ![Job Details page with the job marked as succeeded](images/job-details-page-succeeded.png "Job Details page with the job marked as succeeded")
-
+    ![Job Details page with the job marked as succeeded](images/job-details-page-succeeded.png "Job Details page with the job marked as succeeded")
 
 
 ## **STEP 3**: Obtain the public IP address of your compute instance
 
-After the job is completed, you are directed to the **Instance Details** page. Find the public IP address under **Instance Access** and jot it down.
-
-If you navigated away from the **Instance Details** page, you can return to it by following these steps:
-
-1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
+1. From the navigation menu, select **Compute**, and then **Instances**.
 
 2. Select your compartment.
 
@@ -113,39 +109,7 @@ If you navigated away from the **Instance Details** page, you can return to it b
 
 
 
-## **STEP 4**: Connect to your compute instance via Cloud Shell and initialize your environment
-
-1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
-
-  ![Cloud Shell icon](images/cloud-shell-icon.png "Cloud Shell icon")
-
-  A terminal window is displayed at the bottom of the page.
-
-2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance. Replace `cloudshellkey` with the name of your private key file if it has a different name.
-
-    ```
-    $ ssh -i ~/.ssh/cloudshellkey opc@public-ip-address
-    ```
-
-    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
-
-3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
-
-  You are now connected to your new compute instance via Cloud Shell.
-
-4. Preserve the user-configured hostname across instance reboots.
-
-    ```
-    sudo sed -i -r 's/^PRESERVE_HOSTINFO.*$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
-    ```
-5. Preserve the hostname information and set it for current boot.
-
-    ```
-    sudo hostnamectl set-hostname workshop-installed.subnet1.labvcn.oraclevcn.com
-    ```
-
-
-## **STEP 5**: Connect to your compute instance via a browser
+## **STEP 4**: Connect to your compute instance via a browser
 
 1. Open a browser on your personal computer and enter the following URL. Replace `public-ip-address` with your compute instance's public IP address.
 
@@ -160,27 +124,27 @@ If you navigated away from the **Instance Details** page, you can return to it b
     The noVNC desktop is displayed.
 
 
-## **STEP 6**: Download the lab files for this workshop
+## **STEP 5**: Download the lab files for this workshop
 
 1. On the noVNC desktop, open a terminal window.
 
 2. Create a `/home/oracle/labs/19cnf` directory and switch to it.
 
     ```
-    $ mkdir ~/labs/19cnf
+    $ mkdir -p ~/labs/19cnf
     $ cd ~/labs/19cnf
     ```
 
 3. Download the lab files into the `19cnf` directory.
 
     ```
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/7dgNGKXZqAlG_W04kW_i6VV4yDZWLNY5Mkw8Z-Bfd1AJhnQCH6TlJmAdmYDuCYKr/n/frmwj0cqbupb/b/19cNewFeatures/o/19c-new-features-lab-files.zip
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5BYzHdiNpOX1w6BT_iitF9kqujT244EMC3UMLNtT5QQ60Hqsqy9f7m3G4mS7swhh/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip
     ```
 
 4. Extract the ZIP file in the `19cnf` directory.
 
     ```
-    $ unzip -q 19c-new-features-lab-files.zip
+    $ unzip -q 19cnf-lab-files.zip
     ```
 
 5. Verify that you have 27 files.
@@ -196,8 +160,6 @@ If you navigated away from the **Instance Details** page, you can return to it b
     ```
 
 
-
-
 ## Learn More
 
 - [Resource Manager Video](https://youtu.be/udJdVCz5HYs)
@@ -205,4 +167,4 @@ If you navigated away from the **Instance Details** page, you can return to it b
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, June 25 2021
+- **Last Updated By/Date** - Jody Glover, Database team, June 28 2021
