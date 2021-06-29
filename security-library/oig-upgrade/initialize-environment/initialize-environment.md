@@ -36,10 +36,10 @@ In this lab, you will:
 1. Verify that the Database has started
 
     ```
-    <copy>lsnrctl status</copy>
+    <copy>systemctl status oracle-database.service</copy>
     ```
 
-    ![](images/1-db-status.png)
+    ![](images/1-database.png)
 
 ## **STEP 3:** Start and Verify the 11g Domain
 
