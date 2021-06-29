@@ -2,9 +2,7 @@
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
-
 
 ## **Download Lab Files**
 Download the lab files with the following link. 
@@ -16,6 +14,10 @@ To download them in the OCI Cloud Console, use the following command:
 curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
 ```
 
+If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
+
+![drag and drop files to your home directory](./images/cdd-1.png)
+
 We will be using the **file1.csv** file in the next section.
 
 ## **STEP 1**: Prepare the Database
@@ -24,7 +26,11 @@ We will be using the **file1.csv** file in the next section.
 
     ![ADB from the menu](./images/sdw-1.png)
 
-2. On the Autonomous Database page, find your **ORDS ADB** database in the list and left click on the Display Name
+    And on the **Autonomous Database** page, ensure that **livelabs** is selected for the **Compartment** dropdown on the left side of the page.
+
+    ![ADB from the menu](./images/sdw-1a.png)
+
+2. Now, find your **ORDS ADB** database in the list and left click on the **Display Name**
 
     ![ORDS ADB database in the list](./images/sdw-2.png)
 

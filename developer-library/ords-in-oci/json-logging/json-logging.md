@@ -4,10 +4,8 @@ In this lab, you will create a service connector to move log data from the Loggi
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the setup lab.
-- You have completed the CSV Functions Lab
+- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+- You have completed the [CSV Functions Lab](../csv-function/csv-function.md)
 
 
 ## **Download Lab Files**
