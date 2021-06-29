@@ -48,7 +48,7 @@ In this lab, you will:
 
 4. On the Weblogic console, Click on *Servers* under *Environment* and notice that all servers(OIM,SOA) are in the ‘SHUTDOWN’ state
 
-5. Open another tab in the terminal. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and start the SOA server
+5. Open another tab in the terminal. Navigate to the *`/u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin`* path and start the SOA server
 
     ```
     <copy>nohup ./startManagedWebLogic.sh soa_server1 t3://onehopiam:7005 -Dbpm.enabled=true &</copy>
@@ -56,7 +56,7 @@ In this lab, you will:
 
     Refresh the Weblogic console and notice that the SOA server is now in the ‘RUNNING’ state. It may take about 5-8 minutes for the SOA server to start.
 
-6. Open another tab in the terminal. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and start the OIM server
+6. Open another tab in the terminal. Navigate to the *`/u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin`* path and start the OIM server
 
     ```
     <copy>nohup ./startManagedWebLogic.sh oim_server1 t3://onehopiam:7005 &</copy>
@@ -70,7 +70,7 @@ In this lab, you will:
     <copy>ps -ef |grep oim_server1</copy>
     ```
 
-8. Stop the SOA Server. Navigate to the */u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin* path and stop the SOA server
+8. Stop the SOA Server. Navigate to the *`/u01/oracle/middleware12c/user_projects/domains/iam12c_domain/bin`* path and stop the SOA server
 
     ```
     <copy>./stopManagedWebLogic.sh soa_server1</copy>

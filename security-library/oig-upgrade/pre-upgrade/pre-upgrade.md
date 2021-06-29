@@ -98,7 +98,7 @@ Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) s
 
     ![](images/2-ua.png)
 
-3. Readiness check type - *Domain based*. Browse to the 11g OIM home: */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
+3. Readiness check type - *Domain based*. Browse to the 11g OIM home: *`/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/`*
 
     ![](images/3-ua.png)
 
@@ -142,7 +142,7 @@ Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) s
 ## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 
 1. The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
-Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the */u01/Upgrade_Utils/OIM_preupgrade_reports* directory.
+Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the *`/u01/Upgrade_Utils/OIM_preupgrade_reports`* directory.
 
     ```
     <copy>cd /u01/Upgrade_Utils/OIM_preupgrade_reports</copy>

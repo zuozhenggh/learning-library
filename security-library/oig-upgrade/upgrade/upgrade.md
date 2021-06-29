@@ -66,7 +66,7 @@ In this lab, you will:
     ```
   The Upgrade Assistant is launched.
 
-4. Upgrade type - *All schemas used by a domain*. Browse to 11g Domain home - */u01/oracle/middleware11g/user_projects/domains/iam11g_domain/*
+4. Upgrade type - *All schemas used by a domain*. Browse to 11g Domain home - *`/u01/oracle/middleware11g/user_projects/domains/iam11g_domain/`*
 
     ![](images/2-upgrade.png)
 
