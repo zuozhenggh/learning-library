@@ -360,6 +360,6 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
-* **Authors** - 
-* **Contributors** - 
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
+* **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
+* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021

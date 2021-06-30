@@ -84,8 +84,8 @@ Certain workshops require SQL Developer.  To setup SQL Developer, follow the ste
       ![](./images/vdatabase.png " ")
 
 ## Acknowledgements
-* **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
+* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
+* **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
+* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021
 
 

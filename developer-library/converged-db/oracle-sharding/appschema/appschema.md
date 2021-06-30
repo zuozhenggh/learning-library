@@ -108,7 +108,7 @@ Example: Database connection details by passing a sharding key:
              			connectString: '10.0.20.101:1521/oltp_rw_products.shardcatalog1.oradbcloud',
 
               			shardingKey:[docmt.PRODUCT_ID]
-                          
+
             			  });
 
 For more details for the eShop code snippet click [here] (https://github.com/nishakau/ShardingSampleCode.git)
@@ -133,6 +133,6 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
-* **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
-* **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
+* **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
+* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021

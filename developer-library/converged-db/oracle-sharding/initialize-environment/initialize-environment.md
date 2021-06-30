@@ -69,7 +69,6 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-
-- **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
-- **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
+* **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
+* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021

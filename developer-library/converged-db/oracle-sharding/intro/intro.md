@@ -36,9 +36,8 @@ You may now [proceed to the next lab](#next).
 - [Linear Scalability Demonstration on a Sharded Database Running on Oracle Bare Metal Cloud](https://www.oracle.com/technetwork/database/availability/oraclesharding-200-3588532.mp4)
 
 ## Acknowledgements
-- **Owners** - Balasubramanian Ramamoorthy,
-- **Contributors** - 
-- **Team** - North America Database Specialists
-- **Last Updated By** - Abhinav Srivastava, Principal Product Marketing Director, Oracle Database, July 2020
+* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
+* **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
+* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021
 
 
