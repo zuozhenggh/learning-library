@@ -21,22 +21,29 @@ This lab assumes you have:
 ## **STEP 1:** Access the Graphical Remote Desktop
 For ease of execution of this workshop, your VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
-1. Launch your browser to the following URL if no remote desktop URL is provided under **Workshop Details**
+1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
+
+   ![](images/ll-launch-workshop.png " ")
+
+2. Click on ***Launch Workshop***
+
+3. In the expanded **Workshop Details**, look for the instance(s) and write down the public IP address(es).
+
+   ![](images/novnc-get-public-ip.png " ")
+
+4. Open a new browser tab and navigate to this URL to get started with labs execution.
 
     ```
-    <copy>http://[your instance public-ip address]/vnc.html?password=[password]&resize=remote&autoconnect=true</copy>
+    <copy>http://<your public-ip from above>:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-2. Update the URL with the IP address and password provided under **Workshop Details** from the prior step. Use *LiveLabs.Rocks_99* for password if none is listed
-
-    ![](./images/novnc-login-1.png " ")
     e.g.
 
     ```
-    <copy>http://111.111.111.111/vnc.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true</copy>
+    <copy>http://111.111.111.111:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-    *Note:* Above URL uses a dummy IP address and is for illustration only. Provide the correct IP address.
+    *Note:* The IP address `111.111.111.111` is made up for illustration only. Provide the correct IP address.
 
 ## **STEP 2:** Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
@@ -73,16 +80,18 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/firefox-launch-2.png " ")
 
-## **STEP 5:** Login to Host using SSH Key Based Authentication (Optional) - Choose a path
+You may now [proceed to the next lab](#next).
 
-Access by SSH terminal is optional and if needed, choose a path from the following 3 methods. If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 5A).
+## Appendix 1: Login to Host using SSH Key Based Authentication (Optional) - Choose a path
+
+Access by SSH terminal is optional and if needed, choose a path from the following 3 methods. If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Appendix 1A).
 
 Your options are:
-1. Step 5A: Connect using Cloud Shell *(recommended)*
-2. Step 5B: Connect using MAC or a Windows CYGWIN Emulator
-3. Step 5C: Connect using Putty *(Requires you to install applications on your machine)*
+1. Appendix 1A: Connect using Cloud Shell *(recommended)*
+2. Appendix 1B: Connect using MAC or a Windows CYGWIN Emulator
+3. Appendix 1C: Connect using Putty *(Requires you to install applications on your machine)*
 
-## **STEP 5A:** Upload Key to Cloud Shell and Connect
+## Appendix 1A: Upload Key to Cloud Shell and Connect
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment).
 
@@ -135,7 +144,7 @@ If you are unable to ssh in, check out the troubleshooting tips below.
 
 You may now [proceed to the next lab](#next).
 
-## **STEP 5B:** Connect via MAC or Windows CYGWIN Emulator
+## Appendix 1B: Connect via MAC or Windows CYGWIN Emulator
 Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next lab(s) to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
@@ -149,7 +158,7 @@ Depending on your workshop, you may need to connect to the instance via a secure
 
 You may now [proceed to the next lab](#next).
 
-## **STEP 5C:** Connect via Windows using Putty
+## Appendix 1C: Connect via Windows using Putty
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)

@@ -90,7 +90,7 @@ Estimated Lab Time - 10 minutes
 10. Continue to click the `Show Order` button until the successful order status is shown.
    ![](images/showorder67.png " ")
    
-11. Notice the successful order status due to duplicate message being delivered.
+11. Notice the successful order status due to duplicate message being delivered. 
    ![](images/order67success.png " ")
    
 12. Click the `Get Inventory` button and notice inventory has been reduced to correct value of 9.
@@ -198,7 +198,7 @@ Estimated Lab Time - 10 minutes
    ![](images/order68success.png " ")
    
 18. Click the `Get Inventory` button and notice inventory has been reduced to correct value of 8 as the order message was delivered exactly once..
-   ![](images/getinventory7.png " ")
+   ![](images/getinventory8.png " ")
   
    
 ## Acknowledgements
