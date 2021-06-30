@@ -223,13 +223,13 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 4. You should now be able to see your new bucket in the **Buckets** page. Click on your bucket (`di-bucket`).
 ![](./images/buckets.png " ")
 
-5. **Download** the datasets  *CUSTOMERS.json* and *REVENUE.xls* to your local directories.
+5. **Download** the datasets  *CUSTOMERS.json* and *REVENUE.csv* to your local directories.
  <!-- **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/27PK5yRJp6ikvVdli-21D0vTwNywA0Q1aUPD2RQ7G8rtbPQwO2onh7TaZjfjawPj/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>. -->
 
 6. You will upload our source files for our workshop data integration flows in this bucket. Click on **Upload** button under Objects.
 ![](./images/upload-button.png " ")
 
-7. Drop or select the files *CUSTOMERS.json* and *REVENUE.xls* from your local directories. Click **Upload**.
+7. Drop or select the files *CUSTOMERS.json* and *REVENUE.csv* from your local directories. Click **Upload**.
 ![](./images/upload-objects.png " ")
 
 8. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.

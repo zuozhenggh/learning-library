@@ -4,13 +4,13 @@
 
 This lab will walk you through the steps to create a Data Flow, Data Integration task and a Data Loader task in OCI Data Integration.
 
-Estimated Lab Time: 45 minutes
+Estimated Lab Time: 60 minutes
 
 ## Objectives
 In this lab, you will:
 * Create an OCI Data Integration project
-* Create a Data Flow
-* Create an Integration task
+* Create two Data Flows
+* Create an Integration tasks
 * Create a Data Loader task
 * Create a SQL task
 
@@ -41,7 +41,7 @@ In Oracle Cloud Infrastructure Data Integration, data flows and tasks can only b
 6. You are now in the Project Details page for DI_Workshop project.
 ![](./images/di-workshop-project.png " ")
 
-## **STEP 2:** Create a Data Flow
+## **STEP 2:** Create a Data Flow - 1
 A data flow is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
@@ -214,8 +214,8 @@ To join the data from expression CONCAT_FULL_NAME with the data from FILTER_1, d
 ![](./images/target-op.png " ")
 
 39. With TARGET_1 selected on the canvas, in the Details tab of the Properties panel complete the fields accordingly:
-- Leave the default value for Integration Strategy as Insert.
-- Next, click Select for each of the following options to make your selections for a data entity:
+* Leave the default value for Integration Strategy as Insert.
+* Next, click Select for each of the following options to make your selections for a data entity:
 * For Data Asset, select Data_Warehouse.
 * For Connection, select Beta Connection.
 * For Schema, select BETA.
@@ -245,8 +245,187 @@ To join the data from expression CONCAT_FULL_NAME with the data from FILTER_1, d
 46. To save the data flow, click Save.
 ![](./images/save-df.png " ")
 
+## **STEP 3:** Create a Data Flow - 2
+To further explore the capabilities of Data Flows in OCI Data Integration, you will now create a new Data Flow with different transformation rules.
 
-## **STEP 3:** Create an Integration Task
+This Data Flow will load data from multiple source files using File Patterns functionality in OCI Data Integration. After, you will do transformations on the data and later load the data in multiple target tables, based on the region. We will take advantage of the Split operator in OCI Data Integration.
+
+1. From the Project Details page for DI_Workshop project, click on **Data Flows** from the submenu.
+![](./images/click-data-flows.png " ")
+
+2. Click Create Data Flow.
+![](./images/click-create-df.png " ")
+
+3. The data flow designer opens in a new tab. In the Properties panel, for Name, enter "Load Employees by Region", and click Save.
+![](./images/load-emp.png " ")
+![](./images/save-button.png " ")
+
+
+4. You will add your Source operator. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
+![](./images/source-op-new.png " ")
+
+5.  On the canvas, select SOURCE_1 operator. The Properties panel now displays the details for this operator.
+In the Details tab, click Select next to each of the following options to make your selections:
+* For Data Asset, select Object_Storage.
+* For Connection, select Default Connection.
+* For Schema, select your compartment and then your bucket. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
+![](./images/browse-pattern.png " ")
+* For Data Entity, click on "Browse by Pattern".
+Write the file pattern "EMPLOYEES_*" and click Search. All files from your Object Storage bucket that are found with this pattern are now displayed: you have three files for employees. Click on Select Pattern.
+![](./images/employees-pattern.png " ")
+For File Type, choose CSV and leave the defaults for the other fields that appear. Click Select.
+![](./images/source-entity.png " ")
+
+In the end, your details for the source operator should look like this:
+![](./images/source-pattern.png " ")
+
+6. Drag and drop a Distinct operator on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect EMPLOYEES__ source to the DISTINCT_1 operator.
+![](./images/add-distinct.png " ")
+
+7. Drag and drop an Expression operator on the data flow canvas. Connect the DISTINCT_1 operator to the new Expression operator.
+![](./images/new-expres.png " ")
+
+8. In the Properties panel for EXPRESSION_1 operator, rename the Identifier to "TRANSFORM_DATAYPES".
+![](./images/transform-datatypes.png " ")
+
+9. You will now add a new expression. Still in the Properties panel, click on Add Expression.
+![](./images/add-exp.png " ")
+
+10. In the Add Expression panel:
+* Rename the expression to BIRTH_DATE in the Identifier field.
+* Change Data Type to DATE.
+* Enter TO_DATE(EXPRESSION_1.EMPLOYEES__.Date_of_Birth, 'MM/dd/yyyy') in the expression box. This function will transform your string value of birth date from the files to a date value, in the specified format.
+You can also find this functions on Functions tab, under Date/Time section and select it from there. Attributes can be added from Incoming tab, by highlight a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
+* Click Add.
+![](./images/new-exp-details.png " ")
+
+11. Your expression for BIRTH_DATE is now displayed. Click again on Add Expression to add a new one.
+![](./images/add-new-exp.png " ")
+
+12. In the Add Expression panel:
+* Rename the expression to YEAR_OF_JOINING in the Identifier field.
+* Change Data Type to NUMERIC.
+* Enter TO_NUMBER(EXPRESSION_1.EMPLOYEES__.Year_of_Joining) in the expression box. This function will transform your string value of year of joining from the files to a number value.
+* Click Add.
+![](./images/new-num-exp.png " ")
+
+13. The expressions for the TRANSFORM_DATAYPES operator should now look like this:
+![](./images/expressions-second-df.png " ")
+
+14. Drag and drop an Expression operator on the data flow canvas. Connect the TRANSFORM_DATAYPES operator to the new Expression operator.
+![](./images/new-expression-df.png " ")
+
+15. In the Properties panel for the new EXPRESSION_1 operator, rename the Identifier to "EMPLOYEE_AGE_AND_PHONE".
+![](./images/employee-age.png " ")
+
+16. You will now add a new expression. Still in the Properties panel, click on Add Expression.
+![](./images/add-exp-new.png " ")
+
+17. In the Add Expression panel:
+* Rename the expression to EMPLOYEE_AGE in the Identifier field.
+* Change Data Type to NUMERIC.
+* Enter
+CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)-1) END
+in the expression box.
+This function will calculate the age of the employee, by doing a minus between the current date and his birthday. CASE WHEN function returns the value for which a condition is met.
+* Click Add.
+![](./images/new-exp-case.png " ")
+
+18. You will now add a new expression in the same operator. Still in the Properties panel, click on Add Expression.
+![](./images/add-expression-phone.png " ")
+
+19. In the Add Expression panel:
+* Rename the expression to PHONE_NO in the Identifier field.
+* Leave Data Type to VARCHAR.
+* Enter COALESCE(EXPRESSION_1.EMPLOYEES__.Phone_No_, 'Phone No Not Available')	in the expression box.
+This function will fill in the null values for phone number with string 'Phone No Not Available'.
+* Click Add.
+![](./images/phone-no-exp.png " ")
+
+20. The two expressions you defined for this operator are now displayed. Click on Attributes tab.
+![](./images/attributes-tab.png " ")
+
+21. Check the following two fields: EMPLOYEES__.Age_in_Yrs_, EMPLOYEES__.Year_of_Joining. We will exclude these fields from this operator.
+![](./images/check-fields.png " ")
+
+22. Click on Actions and then on Exclude by selection.
+![](./images/exclude-selection.png " ")
+
+23. Our fields are now excluded. Click on View Rules to see the rules you defined.
+![](./images/rules-exclusions.png " ")
+
+24. Click on Data tab of the EMPLOYEE_AGE_AND_PHONE operator.
+![](./images/data-tab-employee.png " ")
+
+25. Scroll to the right until you get to attribute "EXPRESSION_1.EMPLOYEES__.Region". Click on it and a Data Profile window will appear. We can see that we  have employee data from 4 regions: Northeast, West, South, Midwest. You will split the employee data into multiple target tables based on the region.
+![](./images/region-profile.png " ")
+
+26. Drag and drop a Split operator on the data flow canvas. Connect the EMPLOYEE_AGE_AND_PHONE operator to the new Split operator. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
+![](./images/split-op.png " ")
+
+27. In the Properties bar of the Split Operator, we will rename it to SPLIT_BY_REGION and we will leave the defaults Match option (First matching condition - It means that data that matches the first condition should be removed from further processing by other conditions).
+![](./images/split-region.png " ")
+
+28. Still in Properties bar of the Split Operator, click on Add in Conditions section.
+![](./images/add-cond.png " ")
+
+29. In Add Split Condition page:
+* Enter Identifier "MIDWEST_REGION"
+* For condition enter SPLIT_1.EMPLOYEES__.Region='Midwest'
+* Click Save Changes.
+![](./images/midwest-cond.png " ")
+
+30. The first split condition you defined is now displayed. Repeat steps 28 and 29 to add the following conditions:
+* NORTHEAST_REGION condition -  SPLIT_1.EMPLOYEES__.Region='Northeast'
+* SOUTH_REGION - SPLIT_1.EMPLOYEES__.Region='South'
+* WEST_REGION	- SPLIT_1.EMPLOYEES__.Region='West'
+After adding these conditions, the Split operator properties should look like in this picture:
+![](./images/split-op-prop.png " ")
+
+31. Drag and drop a target operator. Connect the MIDWEST_REGION output of the Split operator to the TARGET_1 operator.
+![](./images/first-target.png " ")
+
+
+32. In the properties for TARGET_1 operator:
+* Change to Merge Integration Strategy
+* For Data Asset, select Data_Warehouse
+* For Connection, select Beta connection
+* For Schema. select Beta
+* For Data Entity, select EMPLOYEES_MIDWEST (this target table was created with the prerequisites SQL script you ran on the ADW)
+* For Staging Location, select your Object Storage bucket (DI-bucket)
+* Merge Key will automatically get populated with the primary key name of the table, from the database
+![](./images/employees-midwest.png " ")
+
+33. Go to Map tab of the EMPLOYEES_MIDWEST target operator. You can see that there are 4 attributes that were not mapped automatically in the target.
+![](./images/attr-not-mapped.png " ")
+
+34. Manually map the Not Mapped attributes from the target:
+* Drag and drop E_Mail from source to EMAIL attribute from target
+* Drag and drop Father_s_Name from source to FATHERS_NAME attribute from target
+* Drag and drop Mother_s_Name from source to MOTHERS_NAME attribute from target
+* Drag and drop Last__Hike from source to LAST_HIKE attribute from target
+You are now finished mapping the attributes to the EMPLOYEES_MIDWEST target table.
+![](./images/manual-map.png " ")
+
+35. Drag and drop another target operator. Connect the NORTHEAST_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_NORTHEAST. Make sure you also map all of the columns, same as in step 34.
+![](./images/notheast.png " ")
+
+36. Drag and drop another target operator. Connect the SOUTH_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_SOUTH. Make sure you also map all of the columns, same as in step 34.
+![](./images/south.png " ")
+
+37. Drag and drop another target operator. Connect the WEST_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_WEST. Make sure you also map all of the columns, same as in step 34.
+![](./images/west.png " ")
+
+38. Drag and drop another target operator. Connect the UNMATCHED output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_NO_REGION. Make sure you also map all of the columns, same as in step 34. Entries that don't match any of the previous split conditions will refer to Unmatched condition.
+![](./images/no-region.png " ")
+
+39. The design of our Data Flow is now ready. Click on Validate. The result in the Global Validation window displays no Errors and no Warnings.
+![](./images/validate-df.png " ")
+
+40. Click on Save and Close.
+![](./images/save-close-button.png " ")
+
+## **STEP 4:** Create Integration Tasks
 Integration tasks in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime.
 1. From your Workspace home page of OCI Data Integration, click Open tab (plus icon), and then select Projects.
 ![](./images/home-projects.png " ")
@@ -268,8 +447,17 @@ Integration tasks in OCI Data Integration let you take your data flow design and
 - Click Save and Close.
 ![](./images/integration-task-save.png " ")
 
+6. From the DI_Workshop project section Tasks, you will now create an Integration Task for your second Data Flow. Click Create Task and then select Integration.
+![](./images/integration-task.png " ")
 
-## **STEP 4:** Create a Data Loader task
+7. The Create Integration Task page opens in a new tab. On this page:
+- Change the Name to "Load Employees by Regions" and enter the optional Description if you wish to. The value in the Identifier field is auto-generated based on the value you enter for Name.
+- In the Data Flow section, click Select. In the Select a Data Flow panel, select "Load Employees by Region", and then click Select.
+- The Data Flow will be validated after the selection and the result should be displayed as "Successful".
+- Click Save and Close.
+![](./images/save-close-int-task.png " ")
+
+## **STEP 5:** Create a Data Loader task
 A data loader task helps you load diverse data set into data lakes, data marts, and data warehouses. You can create a data loader task from the Console or by using the API, and configure transformations to cleanse and process data while it gets loaded into a target data asset. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
 
 1. From your Workspace home page of OCI Data Integration, click Open tab (plus icon), and then select Projects.
@@ -356,8 +544,59 @@ A panel displays, showing the Data Profile and the Attribute Profile for SRC_ORD
 21. The Target section in the Data Loader task now displays your selections for the target. Click Save and Close.
 ![](./images/loader-save.png " ")
 
-## **STEP 5:** Create a SQL task
 
+## **STEP 6:** Create a SQL task
+A SQL task lets you run a SQL object in pipeline. Currently, the only SQL objects you can run are stored procedures. You create a SQL task by selecting a stored procedure. The stored procedure must exist in the data source that's associated with a data asset already created in your workspace. The variables defined in a stored procedure are exposed as input, output, and in-out parameters in a SQL task.
+When you create a SQL task, you can configure values for input parameters only. If input parameters are configured in a SQL task, you can override the default values when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task. In a pipeline, downstream tasks and operations can use the outputs from an upstream SQL task.
+
+1. From your Workspace home page of OCI Data Integration, click Open tab (plus icon), and then select Projects.
+![](./images/home-projects.png " ")
+
+2. On the Projects page, select the project you have been working on for this workshop, DI_Workshop.
+![](./images/select-project.png " ")
+
+3. On the DI_Workshop Project Details page, from the submenu, click Tasks.
+![](./images/click-tasks.png " ")
+
+4. Click Create Task, and then select SQL.
+![](./images/create-sql-task.png " ")
+
+5. On the Create SQL Task page, enter:
+* Name: You can use `Procedure DWH Load Stats`
+*Note: The Identifier field is a system-generated value based on what you enter for Name. You can change the value, but after you save the task, you cannot change the value again.*
+* Description (optional)
+* Project DI_Workshop is auto-populated because we're creating this task from project details page
+![](./images/sql-task-input.png " ")
+
+6. In the SQL section, click Select.
+![](./images/select-button.png " ")
+
+7. In the Select SQL page:
+* Select the Data Asset: Choose you ADW data asset ("Data_Warehouse")
+* Select the Connection: Choose the Beta Connection
+* Select the Schema: BETA schema on your ADW
+* Select the Stored Procedure: Choose the OCIDI_RESULT procedure.
+![](./images/sql-proc.png " ")
+
+8. Review the list selections for the SQL task, then click Done.
+![](./images/done-button.png " ")
+
+9. In the Configure Parameters section, click Configure to view or configure values for the stored procedure parameters. The number of parameters is shown next to Parameters Configured.
+![](./images/config-params.png " ")
+
+10. In the Configure Stored Procedure Parameters page, review the list of parameters in the stored procedure. Only input parameters can be configured. You can see here the input parameter IN_DI_RESULT from the procedure you're using.
+* In the row of the input parameter value for IN_DI_RESULT, click Configure.
+![](./images/config-in-par.png " ")
+* In the Edit Parameter panel, enter value "SUCCESS" (without any apostrophes) for that input parameter and click Save Changes.
+![](./images/in-param.png " ")
+* Click Done.
+![](./images/done-param.png " ")
+
+11. In the Validate Task section, click Validate to check for errors and warnings in the configured parameter values. When validation is completed, a Successful message should appear near Validation.
+![](./images/validate-sql.png " ")
+
+12. Click Save and Close.
+![](./images/save-close.png " ")
 
 ## Learn More
 
