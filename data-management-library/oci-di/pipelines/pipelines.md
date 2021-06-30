@@ -193,12 +193,67 @@ A pipeline is a set of tasks connected in a sequence or in parallel to facilitat
 ![](./images/sql-dwh.png " ")
 
 33. In the properties bar, the SQL Task "Procedure DWH Load Stats" is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of "Run on failure of previous operator". The arrow from the previous operator to the new SQL task operator will turn red.
-![](./images/failure-op
-.png " ")
+![](./images/failure-op.png " ")
+
+34. In the properties bar, click on Configuration tab and then on Configure where you have "Incoming Parameters Configured: 0/1".
+![](./images/config-params.png " ")
+
+35. A window to Configure Incoming Parameters pops up. OCI Data Integration identified the input parameter of your procedure (OCIDI_RESULT) from the database. Click on Configure for the IN_DI_RESULT parameter.
+![](./images/config-value.png " ")
+
+36. In the new windows that is displayed:
+* Leave the  Assign a value option checked. This means you will override the default value of this parameter.
+* In Default value box, write "ERROR" (no apostrophes).
+* Click Done.
+![](./images/error-val.png " ")
+
+37. The input parameter of the procedure now has a Configured Value (ERROR). Click Configure.
+![](./images/config-error.png " ")
+
+38. In Configuration tab, now the Incoming Parameters are displayed as configured (1/1).
+![](./images/one-configured.png " ")
+
+39. Connect the two SQL tasks to the END_1 operator. The final Pipeline should look like this:
+![](./images/one-configured.png " ")
+
+40. Click Validate. The result of the Global Validation should display no warnings and no errors.
+![](./images/validate-pip.png " ")
+
+41. Click on Save and Close.
+![](./images/save-close.png " ")
+
 ## **STEP 4:** Create a Pipeline task
+Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
+1. On the DI_Workshop Project Details page, from the submenu, click Tasks.
+![](./images/click-tasks.png " ")
+
+2. Click Create Task, and then select Pipeline.
+![](./images/create-pip-task.png " ")
+
+3. On the Create Pipeline Task page, enter:
+* For Name enter "Load DWH Pipeline Task"
+* Description (optional)
+* Project DI_Workshop is auto-populated because we're creating this task from project details page
+![](./images/pip-task-name.png " ")
+
+4. In the Pipeline section, click Select.
+![](./images/select-pip.png " ")
+
+5. In the Select a Pipeline panel, select the "Load DWH Pipeline"	that this task will run. Then, click Select.
+![](./images/pipeline-select.png " ")
+
+6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as "Successful", click on Save and Close.
+![](./images/save-pip-task.png " ")
 
 ## **STEP 5:** Publish the Pipeline Task
+1. On the DI_Workshop Project Details page, from the submenu, click Tasks.
+![](./images/click-tasks.png " ")
 
+2. All tasks from the DI_Workshop project will be displayed. Click on the Actions menu (3 dots) for the "Load DWH Pipeline Task". Then, click on Publish to Application.
+![](./images/publish-to-app.png " ")
+
+3. In the Publish to Application dialog, select the Workshop Application to publish to from the drop-down list. Then, click Publish.
+![](./images/app-select.png " ")
 
 *At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
