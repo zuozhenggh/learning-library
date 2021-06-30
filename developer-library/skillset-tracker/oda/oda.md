@@ -1,4 +1,4 @@
-# Integrate your application with Oracle Digital Assistant
+# Integration with Oracle Digital Assistant and Slack
 
 ## Introduction
 
@@ -121,17 +121,17 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 6. Open each of them and you will find in the code a constant named **restUrl**, for example in the GetAllAreas.js at line 16.
 
-  ```
-  const restUrl = "http://your_public_ip:8000/api/skillset";
-  ```
+      ```
+      const restUrl = "http://your_public_ip:8000/api/skillset";
+      ```
 
   You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 _.js_ files. Then save each file.
 
 7. Open a terminal an go in the **package** folder. Run the command:
 
-  ```
-  npm pack
-  ```
+      ```
+      npm pack
+      ```
 
   ![npm pack](./images/npm-pack.png)
 
@@ -201,7 +201,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 Below are the steps for creating a Slack channel for Digital Assistant.
 
-**6.1. Get a Slack Workspace**
+### **Get a Slack Workspace**
   To make your digital assistant  available in Slack, you need to have a Slack Workspace available to you where you have the permissions necessary to create a Slack app.
   OBS: If you already have a Slack Workspace you can just Login and skip this step.  
 
@@ -236,7 +236,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
     ![desktop](./images/desktop.png)
 
-**6.2. Create a Slack App**
+### **Create a Slack App**
 
 1. Go to Slack's [Your Apps](https://api.slack.com/apps) page.
 
@@ -258,7 +258,7 @@ Below are the steps for creating a Slack channel for Digital Assistant.
 
   ![app credentials](./images/app-credentials.png)
 
-**6.3. Add OAuth Scopes for the Slack App**
+### **Add OAuth Scopes for the Slack App**
 You add OAuth scopes for permissions that you want to give to the bot and to the user.
 
  1. In the left navigation of the web console for your Slack app, within the *Features* section, select **OAuth and Permissions**.
@@ -281,7 +281,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
     ![scopes](./images/scopes.png)
 
-**6.4. Add the App to the Workspace**  
+### **Add the App to the Workspace**  
 
 1. Scroll back to the *top* of the **OAuth & Permissions** page.
 
@@ -297,7 +297,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![app in slack 2](./images/app-in-slack-2.png)
 
-**6.5. Create a Channel in Digital Assistant**  
+### **Create a Channel in Digital Assistant**  
 
 1. In the Oracle Digital Assistant Instance Console, click on Hamburger menu on the top left to open the navigation menu, select **Development** -> **Channels** -> **Users** -> **Add Channel**.
 
@@ -326,7 +326,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![enable channel](./images/enable-channel.png)
 
-**6.6. Configure the Webhook URL in the Slack App**  
+### **Configure the Webhook URL in the Slack App**  
 
 1. In the left navigation of the web console for your Slack app, select **Interactivity & Shortcuts** and turn the **Interactivity** switch **ON**.
 
@@ -421,4 +421,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-**Authors/Contributors** - Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
+**Authors** - Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe

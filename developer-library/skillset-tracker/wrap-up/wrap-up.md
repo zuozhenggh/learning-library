@@ -61,11 +61,11 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
 
 4. Now that you have a general idea about what the code does, you can run it. Open the _API_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _DB\_USER_, _DB\_PASSWORD_, and _DB\_CONNECTION\_STRING_ with your own connection details.
 
-  ```
-  NODE_ORACLEDB_USER=DB_USER
-  NODE_ORACLEDB_PASSWORD=DB_PASSWORD
-  NODE_ORACLEDB_CONNECTIONSTRING=DB_CONNECTION_STRING
-  ```
+    ```
+    NODE_ORACLEDB_USER=DB_USER
+    NODE_ORACLEDB_PASSWORD=DB_PASSWORD
+    NODE_ORACLEDB_CONNECTIONSTRING=DB_CONNECTION_STRING
+    ```
 
 5. In order to run the code, you need to upload it to the instance. You can use the following commands.
 
@@ -172,173 +172,175 @@ You should now be able to see the application running in browser at **http://you
     * **app.js** file - All the code is tied up in app.js which starts/stops the application. When starting the application, the first step is to open the connection to the database by calling the _database.initialize()_ function, then runs the web server by calling _webserver.initialize()_ function. When shutting down the application, the order is reversed: first the web server is closed and then the database connection.
     * **.env** file - Contains the details regarding IDCS tenant, id and secret.
 
-***Treemap Section***
+4. Let's understand the sections of the application presented.
 
-This section contains two treemap structures that can be seen in the Treemap entry of the application:
-    * **Cloud Native Skills Treemap** which shows all the skills grouped by categories according to existing JSON file in the database;
+    * ***Treemap Section***
 
-    ![cloudnativeskills treemap](./images/cloudnativeskillstreemap.png)
+      This section contains two treemap structures that can be seen in the Treemap entry of the application:
+          * **Cloud Native Skills Treemap** which shows all the skills grouped by categories according to existing JSON file in the database;
 
-    * **Management Treemap** which shows all the people grouped by manager name.
+              ![cloudnativeskills treemap](./images/cloudnativeskillstreemap.png)
 
-    ![management treemap](./images/managementtreemap.png)
+          * **Management Treemap** which shows all the people grouped by manager name.
 
-The *size* of the treemap boxes is represented by **number of people with that skill** and the *color* is represented by **the average skill points**.
+              ![management treemap](./images/managementtreemap.png)
 
-As you can see, the main two colors used for this treemap are *RED* (**highest average of skill points**) and *GREEN* (**lowest average of skill points**). But we took into consideration color blind people and also personal preferences, so the application has available a color palette from which the user can choose any combination he likes.
+      The *size* of the treemap boxes is represented by **number of people with that skill** and the *color* is represented by **the average skill points**.
 
-  ![colorpalette](./images/colorpalette.png)
+      As you can see, the main two colors used for this treemap are *RED* (**highest average of skill points**) and *GREEN* (**lowest average of skill points**). But we took into consideration color blind people and also personal preferences, so the application has available a color palette from which the user can choose any combination he likes.
 
-This color palette is defined like this in the code:
+          ![colorpalette](./images/colorpalette.png)
 
-  ```
-  /* CODE FOR COLOR PALETTE */
-  self.setPalette = (colors) => {
-    self.highPalette = colors.map((o) => {
-      let c = o.color;
-      if (typeof c === "string") {
-        o.color = new Color(c);
-      }
-      return o;
-    });
-    self.lowPalette = colors.map((o) => {
-      let c = o.color;
-      if (typeof c === "string") {
-        o.color = new Color(c);
-      }
-      return o;
-    });
+      This color palette is defined like this in the code:
+
+          ```
+          /* CODE FOR COLOR PALETTE */
+          self.setPalette = (colors) => {
+            self.highPalette = colors.map((o) => {
+              let c = o.color;
+              if (typeof c === "string") {
+                o.color = new Color(c);
+              }
+              return o;
+            });
+            self.lowPalette = colors.map((o) => {
+              let c = o.color;
+              if (typeof c === "string") {
+                o.color = new Color(c);
+              }
+              return o;
+            });
+            ...
+          ```
+
+      You can **FILTER** both treemaps by *manager*, *skills category*, *development area* (primary/secondary), *skill*, and *minimum skill level*.
+
+          ![cloudnativeskillstreemapfilter](./images/cloudnativeskillstreemapfilter.png)
+
+      The filters are defined in the code like this:
+
+          ```
+          /* SKILL LEVELS LIST - FILTER */
+           self.skillLevelSelectVal = ko.observable('1');
+           var skillLevelList = rootModel.skillLevelList();
+           self.skillLevelDP = new ArrayDataProvider(skillLevelList, { keyAttributes: 'value' });
+          ```
+
+      When you click on a box at your choice from one of the treemaps you will see details about the people that have a certain skill if you choose **Cloud Native Skills Treemap** or engineer details and Edit form if you choose the **Management Treemap**.
+
+    * ***Skills Section***
+
+        This entry in the application represents the page where the user can find all the engineers with their skill points taking into consideration their role.
+
+          ![skills entry](./images/skills.png)
+
+        If the role was mentioned, a user can have three different roles:
+
+        | User Role | Skills Treemap + Details Table from Treemap | Management Treemap + Edit Form     | Skills Entry                               | About Entry |
+        |-----------|---------------------------------------------|------------------------------------|--------------------------------------------|-------------|
+        | ADMIN     | View all                                    | View, Edit, Delete all             | View, Insert, Edit, Delete all             | View all    |
+        | MANAGER   | View all                                    | View, Edit, Delete only his people | View, Insert, Edit, Delete only his people | View all    |
+        | USER      | View all                                    | X                                  | View, Insert, Edit only its own skills     | View all    |
+
+
+        In order to explain the code part for this entry, the ADMIN role will be taken into consideration.
+
+        The **ADMIN** user can see and do everything (**use and apply all filters**, **add**, **edit**, **delete**, **view** engineers, **view table** and **click on specific engineer**).
+        All these elements can be found in the *skills.js* file for the JavaScript part and also in the skills.html for the HTML part. For example, filters are defined like this in *skills.js* file:
+
+          ```
+          let mgrList = rootModel.managerListFilter();
+          self.mgrSelected = ko.observable('All');
+          self.mgrDP = new ArrayDataProvider(mgrList, { keyAttributes: 'value' });
+          var managersList = rootModel.managerList();
+          managerDP = new ArrayDataProvider(managersList, { keyAttributes: 'value' });
+          ```
+
+        And they are mentioned in the *skills.html* file using the [_oj-select-single_](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=selectSingle&demo=states) items from OJET.
+
+        If you click on a specific engineer you can *VIEW* his details and you can *EDIT* or *DELETE* his data if you have **ADMIN** role.
+
+          ![clickontable](./images/clickontable.png)
+
+        This window is done based on a popup mechanism defined like this in the code:
+
+          ```
+          /* CODE FOR POPUP WITH FORM */
+              self.formAnimationListener = function (event) {
+                 ...
+              };
+              self.formOpenListener = function () {
+                if (self.selectedNodesEmployee().length != 0) {
+                 ...
+              };
+              self.formCancelListener = function () {
+                var popup = document.getElementById('form-popup');
+                popup.close();
+                 ...
+              };
+          /* END OF CODE FOR POPUP WITH FORM */
+          ```
+
+        The **CREATE**, **EDIT**, **DELETE** buttons call specific functions defined in code. *POST* method is called for both *create* and *update* and *DELETE* method is called for *delete* functionality. Here is an example:
+
+          ```
+          $.ajax({
+              url: createURL,
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify(json_var),
+              success: function (data) {
+                  window.location.reload();
+                  },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+              alert("Action failed! Please check that there isn't another person added with this EMAIL address. If you believe this is not the case, please contact the ADMIN of the application!");
+                    }
+            });
+          ...
+          ```
+
+    * ***About Section***
+
+        This section contains **about.js** and **about.html** files that contain all the elements that build the final result as a table which provides information about skill points and their meaning.
+
+
+5. Open the _OJET_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _IDCS\_CLIENT\_TENANT_, _IDCS\_CLIENT\_ID_, and _IDCS\_CLIENT\_SECRET_ with your own IDCS details.
+
+    ```
+    IDCS_CLIENT_TENANT=IDCS_CLIENT_TENANT
+    IDCS_CLIENT_ID=IDCS_CLIENT_ID
+    IDCS_CLIENT_SECRET=IDCS_CLIENT_SECRET
+    ```
+
+6. In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* for the database you previously created. This can be updated to use more different databases (OracleDB, NoSQL, MySQL and others) according to your needs, but keep in mind that the code for the APIs might need to be updated as well.
+
+    ```
+    [   {
+        "name": "adb",
+        "description": "Autonomous JSON Database",
+        "ip": "your_ip",
+        "port": "your_port"
+        },
+        {
+        "name": "mysqldb",
+        "description": "MySQL Database",
+        "ip": "your_ip",
+        "port": "your_port"
+        }
+    ]
+    ```
+
+7. In _appController.js_ the default value for the database to be chosen is **adb**. If you want to change this, you should update the following code in _appController.js_ and set the default value of _dbNameParam_ to your own database name (the same as in the _db.json_ file).
+
+    ```
     ...
-  ```
+    self.dbIP = ko.observable();
+    self.dbPort = ko.observable();
+    let dbNameParam = 'adb';
+    ...        
+    ```
 
-You can **FILTER** both treemaps by *manager*, *skills category*, *development area* (primary/secondary), *skill*, and *minimum skill level*.
-
-  ![cloudnativeskillstreemapfilter](./images/cloudnativeskillstreemapfilter.png)
-
-The filters are defined in the code like this:
-
-  ```
-  /* SKILL LEVELS LIST - FILTER */
-   self.skillLevelSelectVal = ko.observable('1');
-   var skillLevelList = rootModel.skillLevelList();
-   self.skillLevelDP = new ArrayDataProvider(skillLevelList, { keyAttributes: 'value' });
-  ```
-
-When you click on a box at your choice from one of the treemaps you will see details about the people that have a certain skill if you choose **Cloud Native Skills Treemap** or engineer details and Edit form if you choose the **Management Treemap**.
-
-***Skills Section***
-
-This entry in the application represents the page where the user can find all the engineers with their skill points taking into consideration their role.
-
-  ![skills entry](./images/skills.png)
-
-If the role was mentioned, a user can have three different roles:
-
-| User Role | Skills Treemap + Details Table from Treemap | Management Treemap + Edit Form     | Skills Entry                               | About Entry |
-|-----------|---------------------------------------------|------------------------------------|--------------------------------------------|-------------|
-| ADMIN     | View all                                    | View, Edit, Delete all             | View, Insert, Edit, Delete all             | View all    |
-| MANAGER   | View all                                    | View, Edit, Delete only his people | View, Insert, Edit, Delete only his people | View all    |
-| USER      | View all                                    | X                                  | View, Insert, Edit only its own skills     | View all    |
-
-
-In order to explain the code part for this entry, the ADMIN role will be taken into consideration.
-
-The **ADMIN** user can see and do everything (**use and apply all filters**, **add**, **edit**, **delete**, **view** engineers, **view table** and **click on specific engineer**).
-All these elements can be found in the *skills.js* file for the JavaScript part and also in the skills.html for the HTML part. For example, filters are defined like this in *skills.js* file:
-
-  ```
-  let mgrList = rootModel.managerListFilter();
-  self.mgrSelected = ko.observable('All');
-  self.mgrDP = new ArrayDataProvider(mgrList, { keyAttributes: 'value' });
-  var managersList = rootModel.managerList();
-  managerDP = new ArrayDataProvider(managersList, { keyAttributes: 'value' });
-  ```
-
-And they are mentioned in the *skills.html* file using the [_oj-select-single_](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=selectSingle&demo=states) items from OJET.
-
-If you click on a specific engineer you can *VIEW* his details and you can *EDIT* or *DELETE* his data if you have **ADMIN** role.
-
-  ![clickontable](./images/clickontable.png)
-
-This window is done based on a popup mechanism defined like this in the code:
-
-  ```
-  /* CODE FOR POPUP WITH FORM */
-      self.formAnimationListener = function (event) {
-         ...
-      };
-      self.formOpenListener = function () {
-        if (self.selectedNodesEmployee().length != 0) {
-         ...
-      };
-      self.formCancelListener = function () {
-        var popup = document.getElementById('form-popup');
-        popup.close();
-         ...
-      };
-  /* END OF CODE FOR POPUP WITH FORM */
-  ```
-
-The **CREATE**, **EDIT**, **DELETE** buttons call specific functions defined in code. *POST* method is called for both *create* and *update* and *DELETE* method is called for *delete* functionality. Here is an example:
-
-  ```
-  $.ajax({
-      url: createURL,
-      type: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify(json_var),
-      success: function (data) {
-          window.location.reload();
-          },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-      alert("Action failed! Please check that there isn't another person added with this EMAIL address. If you believe this is not the case, please contact the ADMIN of the application!");
-            }
-    });
-  ...
-  ```
-
-***About Section***
-
-This section contains **about.js** and **about.html** files that contain all the elements that build the final result as a table which provides information about skill points and their meaning.
-
-
-4. Open the _OJET_ project folder in _Visual Studio Code_ (or any other editor of your choice) and let's configure the code to run properly. Open the _.env_ file and replace _IDCS\_CLIENT\_TENANT_, _IDCS\_CLIENT\_ID_, and _IDCS\_CLIENT\_SECRET_ with your own IDCS details.
-
-  ```
-  IDCS_CLIENT_TENANT=IDCS_CLIENT_TENANT
-  IDCS_CLIENT_ID=IDCS_CLIENT_ID
-  IDCS_CLIENT_SECRET=IDCS_CLIENT_SECRET
-  ```
-
-5. In the same manner, complete the **src/data/db.json** file with your *NAME*, *DESCRIPTION*, *IP*, *PORT* for the database you previously created. This can be updated to use more different databases (OracleDB, NoSQL, MySQL and others) according to your needs, but keep in mind that the code for the APIs might need to be updated as well.
-
-  ```
-  [   {
-      "name": "adb",
-      "description": "Autonomous JSON Database",
-      "ip": "your_ip",
-      "port": "your_port"
-      },
-      {
-      "name": "mysqldb",
-      "description": "MySQL Database",
-      "ip": "your_ip",
-      "port": "your_port"
-      }
-  ]
-  ```
-
-In _appController.js_ the default value for the database to be chosen is **adb**. If you want to change this, you should update the following code in _appController.js_ and set the default value of _dbNameParam_ to your own database name (the same as in the _db.json_ file).
-
-  ```
-  ...
-  self.dbIP = ko.observable();
-  self.dbPort = ko.observable();
-  let dbNameParam = 'adb';
-  ...        
-  ```
-
-6. In order to run the code, you need to upload it to the instance. You can use the following commands.
+8. In order to run the code, you need to upload it to the instance. You can use the following commands.
 
     **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
@@ -403,16 +405,16 @@ In _appController.js_ the default value for the database to be chosen is **adb**
 
 2. After going through all these steps, you can go to your OracleJET project and update the IP in the _src/js/data/db.json_ file.
 
-  ```
-  [   {
-      "name": "adb",
-      "description": "Autonomous JSON Database",
-      "ip": "kubernetes_cluster_external_ip",
-      "port": "your_port"
-      },
-      ...
-  ]
-  ```
+    ```
+    [   {
+        "name": "adb",
+        "description": "Autonomous JSON Database",
+        "ip": "kubernetes_cluster_external_ip",
+        "port": "your_port"
+        },
+        ...
+    ]
+    ```
 
 ## **STEP 5:** Integrate your application with ODA
 
@@ -464,5 +466,6 @@ In _appController.js_ the default value for the database to be chosen is **adb**
 
 
 ## Acknowledgements
+**Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina
 
-**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina
+**Contributors** - Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe, Grama Emanuel

@@ -22,13 +22,11 @@ Estimated Lab Time: 1 hour
 * Build a basic OracleJET application that will make show a treemap structure based on a locally stored JSON file.
 * Run and test the application.
 
-### What Do You Need?
+### Prerequisites
 * An IDE, such as **Visual Studio Code**.
 * An OCI Account.
 * A tenancy where you have the resources available to provision a VCN and a Linux Instance.
 * An existing compartment in which the resources created will reside.
-
-### Prerequisites
 * If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
 
 ## **STEP 1:** Creating a Virtual Cloud Network
@@ -104,68 +102,68 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
 2. The next step for connecting to the instance is to run the following command.
 
-  ```
-  <copy>ssh opc@<instance_public_ip></copy>
-  ```
+      ```
+      <copy>ssh opc@<instance_public_ip></copy>
+      ```
 
 3.  After the connection is successful you need to run some commands in order to make the configuration complete
   * Before beginning to install anything on the instance, the following command needs to be run.
 
-  ```
-  <copy>sudo yum update</copy>
-  ```
+      ```
+      <copy>sudo yum update</copy>
+      ```
 
   * Open the port needed for the application. In this case, 8000, the default port for an OracleJET application.
 
-  ```
-  <copy>sudo firewall-cmd --permanent --zone=public --add-port=8000/tcp
-  sudo firewall-cmd --reload</copy>
-  ```
+      ```
+      <copy>sudo firewall-cmd --permanent --zone=public --add-port=8000/tcp
+      sudo firewall-cmd --reload</copy>
+      ```
 
   * Install **curl** package.
 
-  ```
-  <copy>sudo yum install curl</copy>
-  ```
+      ```
+      <copy>sudo yum install curl</copy>
+      ```
 
   * Install **NodeJS** package.
 
-  ```
-  <copy>sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
-  sudo yum install -y nodejs</copy>
-  ```
+      ```
+      <copy>sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+      sudo yum install -y nodejs</copy>
+      ```
 
   * Install **OracleJET Cli** package.
 
-  ```
-  <copy>sudo npm install -g @oracle/ojet-cli</copy>
-  ```
+      ```
+      <copy>sudo npm install -g @oracle/ojet-cli</copy>
+      ```
 
 4. [Optional] In order to check that the installation was successful, you can generate a simple OracleJET application and run it, using the following command.
 
-  ```
-  <copy>ojet create <your_app_name> --template=navbar</copy>
-  ```
+      ```
+      <copy>ojet create <your_app_name> --template=navbar</copy>
+      ```
 
 5. [Optional] After the application is created, you can see a new folder named <your_app_name>. Navigate to that folder and run the application as follows:
 
-  ```
-  <copy>cd <your_app_name>
-  ojet build
-  ojet serve</copy>
-  ```
+      ```
+      <copy>cd <your_app_name>
+      ojet build
+      ojet serve</copy>
+      ```
 
 6. [Optional] Leave the terminal at the previous step open, with the ``ojet serve`` command running, open a browser on your local machine and navigate to **http://public\_ip\_address:8000** You should be able to see an empty OracleJET application.
 
 7. [Optional] If there are going to be more people that would need to connect to the instance, their SSH keys need to be added on the instance as well. In order to do this, connect to the instance using SSH and run the following commands.
 
-  ```
-  <copy>
-  ssh opc@<instance_public_ip>
-  cd ~/.ssh
-  nano authorized_keys
-  </copy>
-  ```
+      ```
+      <copy>
+      ssh opc@<instance_public_ip>
+      cd ~/.ssh
+      nano authorized_keys
+      </copy>
+      ```
 
   Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
@@ -185,33 +183,33 @@ Follow this steps:
 
 2. Go to a folder from your computer where you will create a new OracleJET project.
 
-  ```
-  <copy>cd <folder_name></copy>
-  ```
+      ```
+      <copy>cd <folder_name></copy>
+      ```
 
 3. Create a new OracleJET project.
 
-  ```
-  <copy>ojet create OJETTreemap_Demo --template=navbar</copy>
-  ```
+      ```
+      <copy>ojet create OJETTreemap_Demo --template=navbar</copy>
+      ```
 
 4. Navigate to the _OJETTreemap\_Demo_ folder.
 
-  ```
-  <copy>cd OJETTreemap_Demo</copy>
-  ```
+      ```
+      <copy>cd OJETTreemap_Demo</copy>
+      ```
 
 5. Build your new project.
 
-  ```
-  <copy>ojet build</copy>
-  ```
+      ```
+      <copy>ojet build</copy>
+      ```
 
 6. Run your project to see the result in the interface.
 
-  ```
-  <copy>ojet serve</copy>
-  ```
+      ```
+      <copy>ojet serve</copy>
+      ```
 
 After creating your new project, open **Visual Studio Code** editor and open the folder where your OracleJET project was created.
 
@@ -239,70 +237,70 @@ In order to see a treemap in your application, use Visual Studio Code and follow
 
 2. Copy this code to the file:
 
-  ```
-  <copy>
-  define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojattributegrouphandler',
-      'text!data/sampletest.json',
-      'ojs/ojarraytreedataprovider', 'ojs/ojarraydataprovider',
-      'ojs/ojtreemap'],
-      function (accUtils, ko, Bootstrap, attributeGroupHandler, jsonData, ArrayTreeDataProvider) {
-          function DemoViewModel() {
+      ```
+      <copy>
+      define(['accUtils', 'knockout', 'ojs/ojbootstrap', 'ojs/ojattributegrouphandler',
+          'text!data/sampletest.json',
+          'ojs/ojarraytreedataprovider', 'ojs/ojarraydataprovider',
+          'ojs/ojtreemap'],
+          function (accUtils, ko, Bootstrap, attributeGroupHandler, jsonData, ArrayTreeDataProvider) {
+              function DemoViewModel() {
 
-              //TREEMAP CODE
-              var colorHandler = new attributeGroupHandler.ColorAttributeGroupHandler();
-              var nodes = JSON.parse(jsonData);
-              this.treemapData = new ArrayTreeDataProvider(nodes, { keyAttributes: 'label', childrenAttribute: 'nodes' });
-              this.getColor = function () {
-                  return colorHandler.getValue(Math.floor(Math.random() * 4));
+                  //TREEMAP CODE
+                  var colorHandler = new attributeGroupHandler.ColorAttributeGroupHandler();
+                  var nodes = JSON.parse(jsonData);
+                  this.treemapData = new ArrayTreeDataProvider(nodes, { keyAttributes: 'label', childrenAttribute: 'nodes' });
+                  this.getColor = function () {
+                      return colorHandler.getValue(Math.floor(Math.random() * 4));
+                  };
+              }
+
+              this.connected = () => {
+                  accUtils.announce('Demo page loaded.', 'assertive');
+                  document.title = "Demo";
               };
+
+              this.disconnected = () => {
+                  // Implement if needed
+              };
+
+              this.transitionCompleted = () => {
+                  // Implement if needed
+              };
+
+              return DemoViewModel;
           }
-
-          this.connected = () => {
-              accUtils.announce('Demo page loaded.', 'assertive');
-              document.title = "Demo";
-          };
-
-          this.disconnected = () => {
-              // Implement if needed
-          };
-
-          this.transitionCompleted = () => {
-              // Implement if needed
-          };
-
-          return DemoViewModel;
-      }
-  );
-  </copy>
-  ```
+      );
+      </copy>
+      ```
 
 3. Create a new HTML file under **src/js/views** named _demo.html_.
 
 4. Copy this code to the file:
 
-  ```
-  <copy>
-  <html lang="en-us" style="height:100%;" dir="ltr">
-  <body>
-      <div> Treemap </div>
-      <div id="sampleDemo" class="demo-padding demo-container">
-          <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
-              <div id="treemap-container">
-                  <oj-treemap id="treemap" animation-on-display="auto" animation-on-data-change="auto"
-                      data="[[treemapData]]">
-                      <template slot="nodeTemplate">
-                          <oj-treemap-node label="[[$current.data.label]]" value="[[$current.data.noSkilledEng]]"
-                              id="[[$current.data.id]]" color="[[getColor()]]">
-                          </oj-treemap-node>
-                      </template>
-                  </oj-treemap>
+      ```
+      <copy>
+      <html lang="en-us" style="height:100%;" dir="ltr">
+      <body>
+          <div> Treemap </div>
+          <div id="sampleDemo" class="demo-padding demo-container">
+              <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+                  <div id="treemap-container">
+                      <oj-treemap id="treemap" animation-on-display="auto" animation-on-data-change="auto"
+                          data="[[treemapData]]">
+                          <template slot="nodeTemplate">
+                              <oj-treemap-node label="[[$current.data.label]]" value="[[$current.data.noSkilledEng]]"
+                                  id="[[$current.data.id]]" color="[[getColor()]]">
+                              </oj-treemap-node>
+                          </template>
+                      </oj-treemap>
 
+                  </div>
               </div>
-          </div>
-  </body>
-  </html>
-  </copy>
-  ```
+      </body>
+      </html>
+      </copy>
+      ```
 
 The treemap will need to extract the data from a JSON file which has a specific structure so that it will display the data correctly.
 
@@ -314,18 +312,18 @@ The treemap will need to extract the data from a JSON file which has a specific 
 
 7. Open the _appController.js_ file, search for the _navData_ variable and add your new entry.
 
-  ```
-  <copy>
-       let navData = [
-          { path: '', redirect: 'dashboard' },
-          { path: 'dashboard', detail: { label: 'Dashboard', iconClass: 'oj-ux-ico-bar-chart' } },
-          { path: 'incidents', detail: { label: 'Incidents', iconClass: 'oj-ux-ico-fire' } },
-          { path: 'customers', detail: { label: 'Customers', iconClass: 'oj-ux-ico-contact-group' } },
-          { path: 'about', detail: { label: 'About', iconClass: 'oj-ux-ico-information-s' } },
-          { path: 'demo', detail: { label: 'Demo', iconClass: 'oj-ux-ico-information-s' } }
-        ];
-  </copy>
-  ```
+      ```
+      <copy>
+           let navData = [
+              { path: '', redirect: 'dashboard' },
+              { path: 'dashboard', detail: { label: 'Dashboard', iconClass: 'oj-ux-ico-bar-chart' } },
+              { path: 'incidents', detail: { label: 'Incidents', iconClass: 'oj-ux-ico-fire' } },
+              { path: 'customers', detail: { label: 'Customers', iconClass: 'oj-ux-ico-contact-group' } },
+              { path: 'about', detail: { label: 'About', iconClass: 'oj-ux-ico-information-s' } },
+              { path: 'demo', detail: { label: 'Demo', iconClass: 'oj-ux-ico-information-s' } }
+            ];
+      </copy>
+      ```
 
 After all this changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
 
@@ -390,4 +388,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-**Authors/Contributors** - Gheorghe Teodora Sabina, Giurgiteanu Maria Alexandra
+**Authors** - Gheorghe Teodora Sabina, Giurgiteanu Maria Alexandra

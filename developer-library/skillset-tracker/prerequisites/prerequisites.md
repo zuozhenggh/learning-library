@@ -1,4 +1,4 @@
-# Prerequisites
+# Install and prepare prerequisites
 
 ## Introduction
 
@@ -17,6 +17,9 @@ Estimated Lab Time: 30 minutes
 * Install NodeJS.
 * Install OracleJET Tools.
 * Install Oracle Instant Client.
+
+### Prerequisites
+* Login to Oracle Cloud account.
 
 ## Installing SQL Developer
 
@@ -60,4 +63,6 @@ More information about Instant Client can be found [here](https://www.oracle.com
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-**Authors/Contributors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
+**Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina
+
+**Contributors** - Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe, Grama Emanuel
