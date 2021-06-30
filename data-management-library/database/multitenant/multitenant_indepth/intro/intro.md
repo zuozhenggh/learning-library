@@ -1,12 +1,3 @@
-# Objective
-
-The objectives of this workshop is to understand the basic functionality of Oracle database multitenant features which would cover Cloning, Plug and Unplug PDBs, Hot Cloning, Refresh and Relocation. and in-depth understanding of advanced features like Application Containers
-
-# Prerequisite
-
-- Some understanding of cloud and database terms is helpful
-- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful 
-
 # Introduction
 
 ## Oracle Multitenant
@@ -21,6 +12,16 @@ Enormous gains in technical efficiency are enabled by a shared technical infrast
 Watch the video below for an overview of Oracle Multitenant.
 
 [](youtube:4mUwjBfztfU)
+
+# Objective
+
+The objectives of this workshop is to understand the basic functionality of Oracle database multitenant features which would cover Cloning, Plug and Unplug PDBs, Hot Cloning, Refresh and Relocation. and in-depth understanding of advanced features like Application Containers
+
+# Prerequisite
+
+- Some understanding of cloud and database terms is helpful
+- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+
 
 ### Containers and Pluggable Databases
 
