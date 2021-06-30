@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ggvd-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Vo75y6-hxT4jgMS5yzQdZs28frxcpv8Fg9BjCg3kJSJEsMRCtzWml25zJGwXcsfK/n/natdsecurity/b/stack/o/ggvd-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -30,7 +30,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 80             | Application (http)                    |
 | 7001           | GoldenGate Administration Server (WLS)|
 | 8830           | GoldenGate Veridata Server            |
-| 7850           | GoldenGate Veridata Agent             |
+| 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network

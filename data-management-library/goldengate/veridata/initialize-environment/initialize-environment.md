@@ -18,92 +18,102 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Start the Database
-1. Click on *Terminal* to launch the terminal utility from the remote desktop.
+## **STEP 1:** Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-    ![](images/launch-terminal.png " ")
+    - Database Listener
+    - Database Server
+    - Veridata Server
+    - Veridata Agent
 
-2. Run the script file `env_setup.sh` to initialize the environment variables. This will setup the environment variables needed to start the Services.
+2. On the *Firefox* window on the right preloaded with *Veridata*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
+    ```
+    Username: <copy>ggadm</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
+    ![](images/veridata-login.png " ")
+
+3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
+
+    ![](images/veridata-landing.png " ")
+
+    If successful, the page above is displayed and as a result your environment is now ready.  
+
+    You may now [proceed to the next lab](#next).
+
+4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+
+    - Database and Listener
     ```
     <copy>
-    cd /home/opc
-    source env_setup.sh
-    </copy>
-    ```
-3. Run the script file to start the database.
-
-    ```
-    <copy>
-    ./db_start.sh
-    </copy>
-    ```
-
-This will start the database and listener. The script could take 2-5 minutes to run.
-
-## **STEP 2**: Start the Oracle WebLogic Server
-1. Navigate to the Domain Home.
-
-    ```
-    <copy>
-    cd $DOMAIN_HOME
-    </copy>
-    ```
-
-2. Run `startWebLogic.sh` script. This will start the WebLogic services.
-
-    ```
-    <copy>
-    ./startWebLogic.sh
+    systemctl status oracle-database
     </copy>
     ```
 
-This script could take 2-5 minutes to start the WebLogic server.
+    ![](images/db-service-status.png " ")
 
-## **STEP 3**: Start the Oracle GoldenGate Veridata Server
-You can start the Veridata server only after the WebLogic server is up and running.
-
-1. Navigate to the Veridata Domain Home.
-
+    - WLS Admin Server, Veridata Server, and Veridata Agent
     ```
     <copy>
-    cd $DOMAIN_HOME/veridata/bin
+    systemctl status oracle-veridata
     </copy>
     ```
 
-2. Run veridataServer.sh script and provide the WebLogic credentials when prompted.    This will start the Oracle GoldenGate Veridata server.
+    ![](images/veridata-service-status.png " ")
 
+5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+
+    - Database and Listener
     ```
     <copy>
-    ./veridataServer.sh start
+    systemctl restart oracle-database
     </copy>
     ```
 
-   **User Name**: weblogic
-
-   **Password**: welcome1
-
-This script could take 2-5 minutes to start the Veridata server.
-
-## **STEP 4**: Start the Oracle GoldenGate Veridata Agent
-
-1. Navigate to the Veridata Agent location.
-
-     ```
-     <copy>
-     cd /home/opc/agent1
-     </copy>
-     ```
-
-2.  Run agent.sh script. This will start the Oracle GoldenGate Veridata agent.
-
+    - WLS Admin Server, Veridata Server, and Veridata Agent
     ```
     <copy>
-    ./agent.sh run
+    systemctl restart oracle-veridata
     </copy>
     ```
 
 You may now [proceed to the next lab](#next).
+
+## Appendix 1: Managing Startup Services
+
+1. Database Service (Database and Listener).
+
+    ```
+    Start: <copy>systemctl start oracle-database</copy>
+    ```
+    ```
+    Stop: <copy>systemctl stop oracle-database</copy>
+    ```
+    ```
+    Status: <copy>systemctl status oracle-database</copy>
+    ```
+    ```
+    Restart: <copy>systemctl restart oracle-database</copy>
+    ```
+2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+
+    ```
+    Start: <copy>systemctl start oracle-veridata</copy>
+    ```
+    ```
+    Stop: <copy>systemctl stop oracle-veridata</copy>
+    ```
+    ```
+    Status: <copy>systemctl status oracle-veridata</copy>
+    ```
+    ```
+    Restart: <copy>systemctl restart oracle-veridata</copy>
+    ```
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -8,7 +8,7 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Getting Started",
+      "title": "Get Started",
       "description": "Login to Oracle Cloud",
       "filename": "./../../../../../common/labs/cloud-login/cloud-login-livelabs-novnc.md"
     },
