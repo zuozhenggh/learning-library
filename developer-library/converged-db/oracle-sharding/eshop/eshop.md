@@ -42,12 +42,17 @@ This lab assumes you have:
 ## **STEP 1**: Eshop Demonstration
 
 1. **eShop URL Access:** When you access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens. 
-   
-   To log in, go to the top right of the navigation bar, click the user profile icon, and select Log In. On the login page, you can log in to an existing account or sign up for a new account. 
 
   ![](./images/app1.png " ")
 
 2. **Log In and Sign Up:** The application has login and new user signup features, but it allows access to a non-logged in application user to some extent. It allows you to search for a product in the catalog and make a purchase based on the product's reviews, sentiment score, and rating.
+
+  To log in, go to the top right of the navigation bar, click the user profile icon, and select Log In. On the login page, you can log in to an existing account or sign up for a new account.
+   
+  You can use the default login email and password for this LiveLab.
+
+
+  **Login email** = demo@eshop.com and **password** = demo
 
   ![](./images/app2.JPG " ")
 

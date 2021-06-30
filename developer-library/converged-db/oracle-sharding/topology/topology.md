@@ -17,9 +17,8 @@ As shown in the diagram above, the sharded database is deployed as multiple cont
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for JSON lab.
-* Connect the Oracle SQL developer to Insert and Update the JSON Data into Oracle Database by using JSON Function.
-* Learn about the JSON functions.
+* Explore Sharding environment.
+* Understand Sharding architecture and its components.
 
 ### Prerequisites
 This lab assumes you have:
@@ -194,13 +193,15 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
     ![](./images/catalog.JPG " ") 
 
-2. Connect to the database as test user and ...
+2. Connect to the shard schema in catalog server.
    
     ```
     <copy>
     sqlplus SHARDUSERTEST/oracle@PCAT1PDB
     </copy>
     ```
+
+3. Check core pre-loaded shard tables in shard schema.
 
     ```
     <copy>
@@ -212,11 +213,12 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
+4. Check the row count on the Product & Review shard tables.
+
      ```
     <copy>
     set heading off;
     select 'PRODUCT', count(*) from products union select 'REVIEWS', count(*) from reviews;
-
     </copy>
     ```
 
@@ -238,13 +240,15 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-2. Connect to the shard as test user.
+2. Connect to the shard schema in one of the shard database.
    
     ```
     <copy>
     sqlplus SHARDUSERTEST/oracle@PORCL1PDB 
     </copy>
     ```
+
+3. Check core pre-loaded shard tables in shard schema.
 
     ```
     <copy>
@@ -256,6 +260,8 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
+4. Check the row count for the Product & Review shard tables in one of the shard database.
+
     ```
     <copy>
     set heading off;
@@ -263,17 +269,19 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-       ![](./images/query1.JPG " ") 
+    ![](./images/query1.JPG " ") 
 
-   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
+   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb_porcl1pdb, porcl2cdb_porcl2pdb, porcl3cdb_porcl3pdb).
 
-3. Check the status of the agent.
+5.  Check the status of the agent. **Exit** and run below as **oracle** user.
    
     ```
     <copy>
     schagent -status
     </copy>
     ```
+
+    ![](./images/agent.JPG " ") 
 
 ## **STEP 5**: Connect to Shard 2 Database
 1.  Run in the terminal as **root** user.

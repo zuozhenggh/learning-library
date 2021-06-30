@@ -61,25 +61,10 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 1**: Start Database and Application
-1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
+## **Step 1**: Check Application accessibility
+1. Access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens.
 
-2. Go to folder /u01/script
-
-    ```
-    <copy>
-    cd /u01/script
-    </copy>
-    ```
-3. Run the script file to start the components.
-
-    ```
-    <copy>
-    ./env_setup_db-workshop.sh
-    </copy>
-    ```
-
-This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
+![](./images/app1.png " ")
 
 You may now [proceed to the next lab](#next).
 
