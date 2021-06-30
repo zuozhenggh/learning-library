@@ -12,11 +12,6 @@ In this lab you will create a series of scenarios in OCI where Oracle REST Data 
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 
 
-### Prerequisites
-This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
-
-
 ## Oracle REST Data Services in Oracle Cloud Infrastructure
 
 ### **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database
