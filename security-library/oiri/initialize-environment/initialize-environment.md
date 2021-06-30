@@ -4,7 +4,7 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Lab Time*:
+*Estimated Lab Time*: 20 minutes
 
 ### Objectives
 
@@ -91,55 +91,21 @@ In this lab, you will:
 
     ![](images/3-pods.png)
 
-## **STEP 3:** Start the Oracle Identity Governance (OIG) Database and Instance
+## **STEP 3:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
 
-1. Start the OIG Database
+1. Verify that the OIG Database is running
 
     ```
-    <copy>source ~/.bash_profile</copy>
-    ```
-    ```
-    <copy>lsnrctl start</copy>
-    ```
-    ```
-    <copy>sqlplus / as sysdba</copy>
-    ```
-    ```
-    <copy>startup</copy>
-    ```
-    ```
-    <copy>exit</copy>
-    ```
-    ```
-    <copy>lsnrctl status</copy>
+    <copy>systemctl status oracle-database.service</copy>
     ```
 
     ![](images/4-db-start.png)
 
-2. Start the Node Manager
-
-    ```
-    <copy>cd /u01/oracle/config/domains/oig_domain/bin/</copy>
-    ```
-    ```
-    <copy>nohup ./startNodeManager.sh &</copy>
-    ```
-
-    ![](images/5-node-manager.png)
-
-3. Start the Weblogic Admin Server
-
-    ```
-    <copy>nohup ./startWebLogic.sh &</copy>
-    ```
-
-    ![](images/6-weblogic.png)
-
-4. Open a browser window and Click on the bookmark *Weblogic Admin Console* to access the Weblogic console
+2. Verify that the Admin Server is running. Open a browser window and Click on the bookmark *Workshop links* and click on *Weblogic Admin Console* to access the Weblogic console
 
     ![](images/7-weblogic-console.png)
 
-5. Sign in to the console with the weblogic credentials
+3. Sign in to the console with the weblogic credentials
 
     ```
     Username:<copy>weblogic</copy>
