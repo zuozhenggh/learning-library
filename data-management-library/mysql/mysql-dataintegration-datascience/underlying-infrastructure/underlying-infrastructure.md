@@ -222,7 +222,7 @@ In this lab, you will:
       ```
 
       ```
-      <copy>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm</copy>
+      <copy>sudo yum localinstall -y mysql80-community-release-el7-3.noarch.rpm</copy>
       ```
 
       ```
@@ -281,7 +281,7 @@ In this lab, you will:
 
    ![Object Details Menu](images/os_object_details_menu.png)
 
-12. Take note of the URL you have. We will use it in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use it in the Lab number 3, Create Data Integration Instance.
 
    ![Object Details URL](images/os_object_details_url.png)
 
