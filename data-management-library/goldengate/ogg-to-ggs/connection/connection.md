@@ -120,9 +120,11 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png)
 
-3.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server, and then use the Navigation menu to open the **Configuration** screen.
+3.  On the on premise or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premise or Marketplace Administration Server opens in a new browser.
 
-4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
+4.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
+
+5.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
     * For **Credential Alias**,  enter a name
@@ -132,7 +134,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-04.png)
 
-5.  Click **Submit**.
+6.  Click **Submit**.
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
 
