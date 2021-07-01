@@ -19,7 +19,29 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Application Queries on sharding Database.
+## **STEP 1**: Establish connection to Catalog and shard1 Database.
+
+1. Open a terminal and execute below as **opc** user to connect to Catalog.
+
+    ```
+    <copy>
+    sudo docker exec -i -t catalog /bin/bash
+    sqlplus SHARDUSERTEST/oracle@PCAT1PDB
+    </copy>
+    ```
+
+2. Open another terminal and execute below as **opc** user to connect to Shard1 Database.
+
+    ```
+    <copy>
+    sudo docker exec -i -t shard1 /bin/bash
+    sqlplus SHARDUSERTEST/oracle@PORCL1PDB
+    </copy>
+    ```
+
+    ![](./images/1.JPG " ") 
+
+## **STEP 2**: Application Queries on sharding Database.
 
 Run the below each sql query by login into Catalog database as well as one of the shard database. You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
 
@@ -31,6 +53,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
     </copy>
     ```
+    ![](./images/query1.JPG " ") 
 
 2. Text search on Products (JSON) table with auto corrections: Oracle Fuzzy matching is a method that provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
 
@@ -40,6 +63,8 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
 
+    ![](./images/query2.JPG " ") 
+
 3. Dollor Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
    
     ```
@@ -47,6 +72,8 @@ Run the below each sql query by login into Catalog database as well as one of th
     Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l where rownum <= 12 and :YEAR_SELECTED =to_char(l.monthly,'YYYY') group by l.monthly order by monthly asc;
     </copy>
     ```
+
+    ![](./images/query3.JPG " ") 
 
 4. Sentiment Percentage:    A single query spanning from REVIEWS shard table by accessing multiple shard databases.
    
@@ -56,36 +83,48 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
 
+    ![](./images/query4.JPG " ") 
+
 5. Select products ordered by maximum sell
 
     ```
     <copy>
-    select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc
+    select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
     </copy>
     ```
+    ![](./images/query5.JPG " ") 
 
 6. Customer Average Review and review count
 
     ```
     <copy>
-    select substr(p.json_text.NAME,0,40) NAME,p.json_text.CUSTOMERREVIEWAVERAGE as AVG_REV,p.json_text.CUSTOMERREVIEWCOUNT as REV_COUNT,SKU from PRODUCTS p where SKU in ('SKU1','SKU2')
+    select substr(p.json_text.NAME,0,40) NAME,p.json_text.CUSTOMERREVIEWAVERAGE as AVG_REV,p.json_text.CUSTOMERREVIEWCOUNT as REV_COUNT,SKU from PRODUCTS p where SKU in ('SKU1','SKU2');
     </copy>
     ```
+
+    ![](./images/query6.JPG " ") 
+
+
 7. Positive Review
 
     ```
     <copy>
-    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score>0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ('SKU1','SKU2') group by rj.json_text.PRODUCT_ID
+    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score>0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ('SKU1','SKU2') group by rj.json_text.PRODUCT_ID;
     </copy>
     ```
+
+    ![](./images/query7.JPG " ") 
 
 8. Negative Review
 
     ```
     <copy>
-    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score<=0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ("+inClauseString+") group by rj.json_text.PRODUCT_ID
+    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score<=0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ("+inClauseString+") group by rj.json_text.PRODUCT_ID;
     </copy>
     ```
+
+    ![](./images/query8.JPG " ") 
+
 
 
 ## Learn More

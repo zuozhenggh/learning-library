@@ -1,11 +1,12 @@
-# Eshop App schema & Code Snippet
+# Eshop Application Schema & Code Snippet
 
 ## Introduction   
-This eShop application is developed on NodeJS, HTML code by using mainly JSON/SODA tables for non-relational and some regular relational tables.
+eShop application is server side rendered web application hosted on a NodeJS web server. Application is designed on MVC (Model, View and Controller) architecture pattern, with view as HTML 5 pages, controllers written in NodeJS to handle user http request and model to access database objects.
 
-In the Oracle database, JSON documents can be stored inside relational tables. The tables themselves act as JSON collections and each row is a JSON document. Within each row one field of type BLOB, CLOB, or OSON.
+It utilizes different types of tables (relational, non-relational) in Oracle database to persist application data.
 
-Although Oracle provides support for JSON operators in order to create, work with, and retrieve JSON documents, the SODA (Simple Oracle Document Access) interface is also supported. SODA acts as a layer on top of table access allowing a more intuitive interface for working with JSON documents.
+Relational table stores data related to **Customer** and their **Orders** while the **Product Catalog** and **Customer Reviews** data are stored as JSON in SODA collections.
+
 
 *Estimated Lab Time*: 20 Minutes
 
@@ -24,49 +25,77 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Application code Snippet (Node JS, HTML, etc)
+## **STEP 1**: Application Schema and Code Snippet
 
-1. Create Sharded table for use by JSON/SODA
+1. User makes a valid http request to server using a rest call from browser.
+   
+2. Application validates the route and map it to a proper controller as shown below:
 
     ```
     <copy>
-    CREATE SHARDED TABLE "REVIEWS"
-	( "REVID" VARCHAR2(255 BYTE) NOT NULL ENABLE,
-	"SKU" VARCHAR2(255 BYTE) NOT NULL ENABLE, 
-	"JSON_TEXT" CLOB,
-	"SENTI_SCORE" NUMBER(4,0),
-	CHECK ("JSON_TEXT" is json strict) ENABLE,
-	CONSTRAINT  pk_reviews PRIMARY KEY (SKU,REVID), 
-	CONSTRAINT  fk_reviews_parent FOREIGN KEY (SKU)
-	REFERENCES PRODUCTS (SKU) ENABLE
-	)
-	PARTITION BY REFERENCE (fk_reviews_parent);
+    app.route("/shop/product/:key").get(shopController.fetchProductById);
+    </copy>
+    ```
+
+3. Controller function pull out the provided details from the request and make pass it to model layer, as shown below in the code snippet:
+
+    ```
+    <copy>
+    exports.fetchProductById = function(req,res,next){
+    let item = req.params.key;
+    dbService.getProductByKey(item)
+
+    }
+    </copy>
+    ```
+dbService.getProductByKey(item) – calling model layer function with “item” as parameter.
+
+4. Model layer which interacts with database, makes a no-SQL SODA API call or SQL call to access data from SODA Collections or Relational tables/SODA Collections respectively.
+
+   **Connect to database shard using sharding key**
+
+    ```
+    <copy>
+    connection = await oracledb.getConnection({
+      
+	user: 'SHARDUSERTEST',
+    password: 'oracle',
+    connectString: '158.101.120.251:1522/oltp_rw_products.orasdb.oradbcloud',
+    shardingKey:[id]
+
+      });
+    </copy>
+    ```
+
+	**Query the SODA Collection or Table (In this case PRODUCTS is a SODA Collection)**
+
+	```
+    <copy>
+    const soda = connection.getSodaDatabase();
+    const collection = await soda.openCollection("PRODUCTS");
+    const doc = await collection.find().key(id).getOne();
+    const content = doc.getContent();
 
     </copy>
     ```
 
-2. Create SODA Map across all shards:
+5. Views (HTML page) get created using the data returned to controller from model layer, as show below and then sent to client as response.
 
     ```
     <copy>
-    create or replace procedure COLLECTION_PROC_REVIEWS AS
-	METADATA varchar2(8000);
-	COL SODA_COLLECTION_T;
-	begin
-	METADATA := '{"tableName":"REVIEWS",
-	"keyColumn":{"name":"REVID","assignmentMethod":"CLIENT"},
-	"contentColumn":{"name":"JSON_TEXT","sqlType":"CLOB"},
-	"readOnly":false}';
- 	-- Create a collection using "map" mode, based on the table we've created above 	and specified in
- 	-- the custom metadata under "tableName" field.
-	COL := 	dbms_soda.create_collection('REVIEWS',METADATA,DBMS_SODA.CREATE_MODE_MAP);
-	end ;
-	/
-
-	exec sys.exec_shard_plsql('collection_proc_reviews()',4+1); 
-    
+   dbService.getProductByKey(item)
+    	.then(
+        (data)=>{
+            res.render('productInfo',{product:data});
+            res.end();
+        },
+        err=>{
+            return next(err);
+        }
+    	)
     </copy>
     ```
+
 
 ## **STEP 2**: Application Connection Details
 

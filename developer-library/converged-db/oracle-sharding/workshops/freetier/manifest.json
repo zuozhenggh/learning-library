@@ -45,12 +45,12 @@
       "filename": "../../topology/topology.md"
     },
     {
-      "title": "Lab 7: Eshop App schema & Code Snippet",
+      "title": "Lab 7: Eshop Application Schema & Code Snippet",
       "description": "Eshop App schema & Code Snippet",
       "filename": "../../appschema/appschema.md"
     },
     {
-      "title": "Lab 8: Application Queries on sharding Database",
+      "title": "Lab 8: Application Queries on Sharded Database",
       "description": "Application Queries on sharding Database",
       "filename": "../../appqueries/appqueries.md"
     },
