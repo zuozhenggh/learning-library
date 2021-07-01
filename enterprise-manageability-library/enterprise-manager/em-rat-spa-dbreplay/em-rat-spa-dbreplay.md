@@ -40,21 +40,31 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 ## **STEP 0:** Prepare EM and Databases
 
-1.  Setup Oracle Credential
-  - Go to Enterprise - Job - Library
+1. Setup Oracle Credential
+
+   - Go to Enterprise - Job - Library
 
     ![](images/emratlab0step1a.png " ")
 
-  - Pick **SETUP ORACLE CREDENTIALS** and click Submit
+   - Pick **SETUP ORACLE CREDENTIALS** and click Submit
 
     ![](images/emratlab0step1b.png " ")
 
-  - Click **Submit**
+   - Click **Submit**
 
     ![](images/emratlab0step1c.png " ")  
 
-2.  In this Lab, we use Databases : **db19c.subnet.vcn.oraclevcn.com**, **emrep.us.oracle.com** and **sales.subnet.vcn.oraclevcn.com**
-  -  Shutdown Databases : **cdb186.subnet.vcn.oraclevcn.com**, **finance.subnet.vcn.oraclevcn.com**, **hr.subnet.vcn.oraclevcn.com**
+2. In this Lab, we use Databases :    
+
+        - **db19c.subnet.vcn.oraclevcn.com**
+        - **emrep.us.oracle.com**
+        - **sales.subnet.vcn.oraclevcn.com**
+
+    - Shutdown Databases :
+
+        - **cdb186.subnet.vcn.oraclevcn.com**
+        - **finance.subnet.vcn.oraclevcn.com**  
+        - **hr.subnet.vcn.oraclevcn.com**
 
     ![](images/emratlab0step2a.png " ")
 
@@ -66,21 +76,25 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab0step2e.png " ")
 
-  - Start Database : **db19c.subnet.vcn.oraclevcn.com**
+    - Start Database : **db19c.subnet.vcn.oraclevcn.com**
 
-  ![](images/emratlab0step2f.png " ")
+    ![](images/emratlab0step2f.png " ")
 
-  ![](images/emratlab0step2g.png " ")
+    ![](images/emratlab0step2g.png " ")
 
 
-  - Open Pluggable Databases : **db19c.subnet.vcn.oraclevcn.com_OLTP_CL2** and **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1**  
-  ![](images/emratlab0step2h.png " ")
+    - Open Pluggable Databases :
 
-  ![](images/emratlab0step2i.png " ")
+        - **db19c.subnet.vcn.oraclevcn.com_OLTP_CL2**
+        - **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1**
 
-  ![](images/emratlab0step2j.png " ")
+    ![](images/emratlab0step2h.png " ")
 
-  ![](images/emratlab0step2k.png " ")
+    ![](images/emratlab0step2i.png " ")
+
+    ![](images/emratlab0step2j.png " ")
+
+    ![](images/emratlab0step2k.png " ")
 
 
 ## **STEP 1:** SQL Performance Analyzer
@@ -108,10 +122,11 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     ![](images/emratlab1step5.png " ")
 
 6. Enter Copy SQL Tuning Set
-    - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for Destination Database
-    - Pick **STSCOPY** for Directory Object
-    - Pick **ORACLE** for both Source and Destination Credentials and **SYS_SALES** for Destination Database Credential
-    - **Click** Ok
+
+       - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for Destination Database
+       - Pick **STSCOPY** for Directory Object
+       - Pick **ORACLE** for both Source and Destination Credentials and **SYS_SALES** for Destination Database Credential
+       - Click **Ok**
 
     ![](images/emratlab1step6a.png " ")
 
@@ -119,11 +134,12 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step6c.png " ")
 
-    - View on job page to check status of the Copy STS job. It can take 1.5-2 minutes.
+   View on job page to check status of the Copy STS job. It can take 1.5-2 minutes.
 
 7. After the COPY STS job successfully finished, **Click** Target - Database
-    - **Click** db19c.subnet.vcn.oraclevcn.com - PDB **PSAL_CLone1**
-    - **Click** on menu Performance - SQL - SQL Performance Analyzer
+
+       - **Click** db19c.subnet.vcn.oraclevcn.com - PDB **PSAL_CLone1**
+       - **Click** on menu Performance - SQL - SQL Performance Analyzer
 
     ![](images/emratlab1step7a.png " ")
 
@@ -139,48 +155,55 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step9a.png " ")
 
-    - Enter Name for the Task Name : **SHSPATASK**
-    - Enter Description : **Sales History SPA Task**
-    - Pick STS : **SHSTS1**
+       - Enter Name for the Task Name : **SHSPATASK**
+       - Enter Description : **Sales History SPA Task**
+       - Pick STS : **SHSTS1**
 
     ![](images/emratlab1step9b.png " ")
 
-    - **Click** Create and back to **Guided Workflow** page
+       - **Click** Create and back to **Guided Workflow** page
 
 10. Step 2 Create SQL Trial in Initial Environment
 
     ![](images/emratlab1step10a.png " ")
 
-    - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_18C**
-    - Enter Description : Sales History 18C run
-    - Creation Method: **Execute SQLs Remotely**
+       - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_18C**
+       - Enter Description : Sales History 18C run
+       - Creation Method: **Execute SQLs Remotely**
 
     ![](images/emratlab1step10b.png " ")
 
-    - Default per-SQL Time Limit
-    - Click Create Database Link button
+       - Default per-SQL Time Limit
+       - Click Create Database Link button
+
     ![](images/emratlab1step10e.png " ")
 
-    - Enter Name :  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
-    - Enter Net Service Name : **"(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = psales.subnet.vcn.oraclevcn.com)))"** (need to include double quote "")
-    - Click on Public - This database link is available to all users
-    - Pick Fixed User
-    - Enter Username : **SYSTEM**
-    - Password : **welcome1**
-    - Click Ok
+       - Enter Name :  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+       - Enter Net Service Name :
+      ```
+      "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = psales.subnet.vcn.oraclevcn.com)))"
+      ```
+         (need to include double quote "")
+       - Click on Public - This database link is available to all users
+       - Pick Fixed User
+       - Enter Username : **SYSTEM**
+       - Password : **welcome1**
+       - Click Ok
+
     ![](images/emratlab1step10f.png " ")
 
-    - Click Search button then pick Database Link  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+       - Click Search button then pick Database Link  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
+
     ![](images/emratlab1step10c.png " ")
 
-    - **Check** Trial environment established
-    - **Click** Submit
+       - **Check** Trial environment established
+       - **Click** Submit
 
 11. Back to SQL Performance Analyzer Home page, to check the status of the task run.
 
     ![](images/emratlab1step11a.png " ")
 
-    - Continue the Workflow **Click** SHSPATASK
+       - Continue the Workflow **Click** SHSPATASK
 
     ![](images/emratlab1step11b.png " ")
 
@@ -188,12 +211,12 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step12a.png " ")
 
-    - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_19C**
-    - Enter Description
-    - Creation Method: **Execute SQLs Locally**
-    - Default per-SQL Time Limit
-    - **Check** Trial environment established
-    - **Click** Submit
+       - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_19C**
+       - Enter Description
+       - Creation Method: **Execute SQLs Locally**
+       - Default per-SQL Time Limit
+       - **Check** Trial environment established
+       - **Click** Submit
 
     ![](images/emratlab1step12b.png " ")
 
