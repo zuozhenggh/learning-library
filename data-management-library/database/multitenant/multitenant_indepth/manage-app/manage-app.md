@@ -1,23 +1,23 @@
 # Hands-on with Multitenant (Advanced)
 
-## Lab Introduction
+## Introduction
 
 This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, We will dive into the concepts of Application container and Proxy PDBs.
 
-### Setup
+### Prerequisites
 
-### Lab Assumptions
+This lab assumes you have:
 
-- Each participant has been provided a username and password to the tenancy c4u03.
-- Each participant has completed the Environment Setup lab.
-- Each participant has created an OCI compute instance using the database template.
+- Been provided a username and password to the tenancy c4u03
+- Completed the Environment Setup lab
+- Created an OCI compute instance using the database template
 
 There are two container databases running:
 
 - CDB1 running on port 1523
 - CDB2 running on port 1524
 
-### Lab Setup
+## **Step 1:** Lab Setup
 
 All the scripts for this lab are located in the /home/oracle/labs/multitenant/scripts folder.
 
@@ -35,7 +35,7 @@ All the scripts for this lab are located in the /home/oracle/labs/multitenant/sc
    ./resetCDB.sh
    ```
 
-   ## Creating an application root
+## **Step 2:** Creating an Application Root
 
    Creating an Application Root is similar to creating a normal PDB, just with an extra parameter. The source of the Application Root can be an existing database or the SEED database on CDB level.
 
@@ -322,7 +322,7 @@ SQL> /
 
 
 
-## Upgrade Applications
+## **Step 3:** Upgrade Applications
 
 ###  Upgrade APP01 in APP_ROOT  from 1.0 to 2.0
 
@@ -619,7 +619,7 @@ In some application in a Multitenant environment , It may **not be possible** to
 
 
 
-## Proxy PDBs
+## **Step 4:** Proxy PDBs
 
 ![](./images/MT_proxyPDB.png " ")
 
@@ -740,7 +740,7 @@ select * from proxy_test;
 
 
 
-## Synchronizing an Application Root Replica with a Proxy PDB
+## **Step 5:** Synchronizing an Application Root Replica with a Proxy PDB
 
  With Application Containers, you can install applications in an Application Root and synchronize the application to Application PDBs. On the other hand, a Proxy PDB provides location transparency; this is useful when we want to access data or objects remotely from another Container Database (CDB). An advantage of a Proxy PDB is that we don’t have to copy all the data to the remote CDB in order to access the objects and its data, however this is also a disadvantage. If the network  fails or If something goes wrong with the Application Root in the Master Application Container, all the remote Proxy PDBs will  not work. To avoid this, we would probably want to have a physical replica of all the objects and data in another remote Container Database. Here is where a new feature called “Application Root Replica”
 
@@ -1072,7 +1072,7 @@ in_cdb1-app_root
 
 Table created during the upgrade of APP01 from 2.0 to 20.0 in APP_ROOT has successfully replicated. This demonstrates that we can have **one Master Application root container and push changes to all the  Root replicas** and inturn help manage application PDBs. 
 
-## Version Control and Compatibility.
+## **Step 6:** Version Control and Compatibility
 
 In Order to upgrade the application PDBs, we need to login to the PDBS and SYNC to a version. If we do not SYNC, they will be on the previous version. This will give use better Version Control Ability. In Addition, you could have more than one Application Module in one App root. Each of the Application could be different modules of the same application like HR,ERP,Sales, reporting. It could be totally different applications as well. The advantage of having multiple applications with in the same App root is that there could be applications that will need to access tables or packages from another application.  This could be a use case for micro services where you could isolate each microservice to its own application. But at the same time applications can cross reference other application's data if required.
 
