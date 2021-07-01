@@ -12,12 +12,17 @@
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 2: Create a Trusted Connection",
+            "title": "Lab 2: Register the database",
+            "description": "Create a database registration for the ADW instance",
+            "filename": "../../register-db/gb-register-db.md"
+        },
+        {
+            "title": "Lab 3: Create a Trusted Connection",
             "description": "Use a self-signed certificate to create a trusted connection",
             "filename": "../../connection/connection-gb.md"
         },
         {
-            "title": "Lab 3: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
+            "title": "Lab 4: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
             "description": "Create an Extract, Distribution Path, and Replicat",
             "filename": "../../extract/extract.md"
         },

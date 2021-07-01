@@ -51,7 +51,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Create GoldenGate Deployment](images/02_07_ggs-createdeployment.png "Create GoldenGate Deployment")
+    ![Create GoldenGate Deployment](images/01-02_create_deployment_panel.png "Create GoldenGate Deployment")
 
 9.  Click **Next**.
 
