@@ -406,17 +406,12 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
 You may now [proceed to the next lab](#next).     
 
-## Want to Learn More?
-
-1. [Users, Groups, and Policies](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0()
-
-2. [Provision an Instance](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-EB06833C-7B1C-46F6-B63C-1F23375CEB7E)
-
-3. [Skills](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/skills-ada.html)
-
-4. [Channels](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/channels-part-topic.html)
-
-5. [Slack](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/slack.html)
+## Learn More?
+* [Users, Groups, and Policies](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0()
+* [Provision an Instance](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-EB06833C-7B1C-46F6-B63C-1F23375CEB7E)
+* [Skills](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/skills-ada.html)
+* [Channels](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/channels-part-topic.html)
+* [Slack](https://docs.oracle.com/en-us/iaas/digital-assistant/doc/slack.html)
 
 
 ## Acknowledgements

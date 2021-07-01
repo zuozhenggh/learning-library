@@ -903,7 +903,7 @@ In this step you are going to make two types of API calls: ***GET*** and ***POST
 
 You may now [proceed to the next lab](#next).  
 
-## Want to Learn More?
+## Learn More?
 * [SODA for NodeJS](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/nodejs/)
 * [SODA Filter Specifications (QBEs)](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda-filter-specifications-qbes.html#GUID-CB09C4E3-BBB1-40DC-88A8-8417821B0FBE)
 * [Postman](https://www.postman.com/)

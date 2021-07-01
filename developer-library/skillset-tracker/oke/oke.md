@@ -248,7 +248,7 @@ As a prerequisite for this step you should have available the code from **Lab 6:
 
 You may now [proceed to the next lab](#next).  
 
-## Want to Learn More?
+## Learn More?
 
 * [Overview of Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm)
 * [Overview of Registry](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm)

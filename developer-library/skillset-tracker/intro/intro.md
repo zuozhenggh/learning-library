@@ -37,13 +37,6 @@ Estimated Lab Time: 14 hours
 
   **Container Engine for Kubernetes (OKE)** or **Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications.
 
-### Want to Learn More?
-* [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)
-* [SODA](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/index.html)
-* [OracleJET](https://www.oracle.com/webfolder/technetwork/jet/index.html)
-* [Oracle Digital Assistant](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-EB06833C-7B1C-46F6-B63C-1F23375CEB7E)
-* [Overview of Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm)
-
 ### Workshop Objectives
   * Set up the environment in OCI
   * Provision an Autonomous JSON Database
@@ -59,6 +52,13 @@ Estimated Lab Time: 14 hours
   * An OCI Account.
 
 You may now [proceed to the next lab](#next).
+
+## Learn More?
+* [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)
+* [SODA](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/index.html)
+* [OracleJET](https://www.oracle.com/webfolder/technetwork/jet/index.html)
+* [Oracle Digital Assistant](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-EB06833C-7B1C-46F6-B63C-1F23375CEB7E)
+* [Overview of Container Engine for Kubernetes](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm)
 
 ## Acknowledgements
 

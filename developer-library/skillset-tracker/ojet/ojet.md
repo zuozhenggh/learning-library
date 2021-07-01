@@ -107,37 +107,38 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
       ```
 
 3.  After the connection is successful you need to run some commands in order to make the configuration complete
-  * Before beginning to install anything on the instance, the following command needs to be run.
 
-      ```
-      <copy>sudo yum update</copy>
-      ```
+    * Before beginning to install anything on the instance, the following command needs to be run.
 
-  * Open the port needed for the application. In this case, 8000, the default port for an OracleJET application.
+        ```
+        <copy>sudo yum update</copy>
+        ```
 
-      ```
-      <copy>sudo firewall-cmd --permanent --zone=public --add-port=8000/tcp
-      sudo firewall-cmd --reload</copy>
-      ```
+    * Open the port needed for the application. In this case, 8000, the default port for an OracleJET application.
 
-  * Install **curl** package.
+        ```
+        <copy>sudo firewall-cmd --permanent --zone=public --add-port=8000/tcp
+        sudo firewall-cmd --reload</copy>
+        ```
 
-      ```
-      <copy>sudo yum install curl</copy>
-      ```
+    * Install **curl** package.
 
-  * Install **NodeJS** package.
+        ```
+        <copy>sudo yum install curl</copy>
+        ```
 
-      ```
-      <copy>sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
-      sudo yum install -y nodejs</copy>
-      ```
+    * Install **NodeJS** package.
 
-  * Install **OracleJET Cli** package.
+        ```
+        <copy>sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+        sudo yum install -y nodejs</copy>
+        ```
 
-      ```
-      <copy>sudo npm install -g @oracle/ojet-cli</copy>
-      ```
+    * Install **OracleJET Cli** package.
+
+        ```
+        <copy>sudo npm install -g @oracle/ojet-cli</copy>
+        ```
 
 4. [Optional] In order to check that the installation was successful, you can generate a simple OracleJET application and run it, using the following command.
 
@@ -233,9 +234,9 @@ If you want to create a new module in the application, you will need to create:
 
 In order to see a treemap in your application, use Visual Studio Code and follow these steps:
 
-1. Create a new JavaScript file under **src/js/viewModels** named _demo.js_.
+7. Create a new JavaScript file under **src/js/viewModels** named _demo.js_.
 
-2. Copy this code to the file:
+8. Copy this code to the file:
 
       ```
       <copy>
@@ -274,9 +275,9 @@ In order to see a treemap in your application, use Visual Studio Code and follow
       </copy>
       ```
 
-3. Create a new HTML file under **src/js/views** named _demo.html_.
+9. Create a new HTML file under **src/js/views** named _demo.html_.
 
-4. Copy this code to the file:
+10. Copy this code to the file:
 
       ```
       <copy>
@@ -302,15 +303,15 @@ In order to see a treemap in your application, use Visual Studio Code and follow
       </copy>
       ```
 
-The treemap will need to extract the data from a JSON file which has a specific structure so that it will display the data correctly.
+      The treemap will need to extract the data from a JSON file which has a specific structure so that it will display the data correctly.
 
-5. Create a new folder under **/src/js** named _data_.
+11. Create a new folder under **/src/js** named _data_.
 
-6. Download the _sampletest.json_ file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l6r-762fqT4EZuv8dopEPFwOexn40krchYio-0P2T8mTT1RBaMHo4Qy1rBGArloA/n/c4u03/b/labfiles/o/Lab5-Sample_JSON.zip). You can customize this with as many skill areas, skills and employees as you want. Place this file into the folder created at the previous step.
+12. Download the _sampletest.json_ file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l6r-762fqT4EZuv8dopEPFwOexn40krchYio-0P2T8mTT1RBaMHo4Qy1rBGArloA/n/c4u03/b/labfiles/o/Lab5-Sample_JSON.zip). You can customize this with as many skill areas, skills and employees as you want. Place this file into the folder created at the previous step.
 
   At this moment you have the JSON, JavaScript and HTML file and if you want to see the result, you need to create a new entry in the menu.
 
-7. Open the _appController.js_ file, search for the _navData_ variable and add your new entry.
+13. Open the _appController.js_ file, search for the _navData_ variable and add your new entry.
 
       ```
       <copy>
@@ -325,34 +326,34 @@ The treemap will need to extract the data from a JSON file which has a specific 
       </copy>
       ```
 
-After all this changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
+      After all this changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
 
-  ![Running app in browser](./images/treemap.png)
+      ![Running app in browser](./images/treemap.png)
 
-8. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
+14. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
 
   **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
-  * On the instance:
+    * On the instance:
 
-    ```
-    <copy>
-    cd /home/opc
-    mkdir SkillsetTracking
-    </copy>
-    ```
+      ```
+      <copy>
+      cd /home/opc
+      mkdir SkillsetTracking
+      </copy>
+      ```
 
-  * On your local machine:
+    * On your local machine:
 
-    ```
-    <copy>
-    cd <project_folder_path>
-    rm node_modules
-    scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
-    </copy>
-    ```
+      ```
+      <copy>
+      cd <project_folder_path>
+      rm node_modules
+      scp -r * opc@<your_instance_public_ip>:/home/opc/SkillsetTracking/
+      </copy>
+      ```
 
-9. After you uploaded the code on the instance, you can run it with ``npm install``, ``ojet build`` and ``ojet serve``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**.
+15. After you uploaded the code on the instance, you can run it with ``npm install``, ``ojet build`` and ``ojet serve``, but the application will stop running when you close the SSH connection, or you can add it as a **crontab job**.
 
     ```
     <copy>
@@ -380,7 +381,7 @@ After all this changes are made, run again `ojet build` and `ojet serve` command
 
 You may now [proceed to the next lab](#next).
 
-## Want to Learn More?
+## Learn More?
 
 * [OracleJET](https://www.oracle.com/webfolder/technetwork/jet/index.html)
 * [OracleJET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)

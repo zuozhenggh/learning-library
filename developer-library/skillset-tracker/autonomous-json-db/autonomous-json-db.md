@@ -373,7 +373,7 @@ The application is also using a view (called _SKILLSVIEW_) on the _skillscollect
 
 You may now [proceed to the next lab](#next).
 
-## Want to Learn More?
+## Learn More?
 * [Oracle Autonomous JSON Databases](https://www.oracle.com/autonomous-database/autonomous-json-database/)
 * [SODA for PL/SQL](https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/plsql/19/adsdp/soda-pl-sql-overview.html#GUID-34D59D45-F9FA-4B36-BA17-E13D7B11E97E)
 
