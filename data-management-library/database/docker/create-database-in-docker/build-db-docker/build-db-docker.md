@@ -10,7 +10,7 @@ This lab walks you through the steps to build an Oracle Database Docker image on
 
 
 ### Prerequisites
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free)
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](•	https://signup.cloud.oracle.com)
 * SSH keys
 * Docker installed on an Oracle Cloud compute instance.
 
@@ -45,8 +45,9 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
     ```
 
   Download the zip file to this folder.
+  
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/PXP-5on5zL_aMkWxQsvKHPBUv0rWZkgCKpLySmCIxX6fZGvBcuK5omFCeuFlrlYL/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3pVf_6xSFIgi7VHOh-wPFYnQVVReNn8q21JhED6cgBJVnZ9hOkQrwwisa1AHRtn6/n/c4u04/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
   ![](images/download_PAR.png " ")
