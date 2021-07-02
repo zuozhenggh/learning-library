@@ -42,25 +42,19 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 1. Setup Oracle Credential
 
-   - Go to Enterprise - Job - Library
+        - Go to Enterprise - Job - Library
 
     ![](images/emratlab0step1a.png " ")
 
-   - Pick **SETUP ORACLE CREDENTIALS** and click Submit
+        - Pick **SETUP ORACLE CREDENTIALS** and click Submit
 
     ![](images/emratlab0step1b.png " ")
 
-   - Click **Submit**
+        - Click **Submit**
 
     ![](images/emratlab0step1c.png " ")  
 
-2. In this Lab, we use Databases :    
-
-        - **db19c.subnet.vcn.oraclevcn.com**
-        - **emrep.us.oracle.com**
-        - **sales.subnet.vcn.oraclevcn.com**
-
-    - Shutdown Databases :
+2. Shutdown Databases :
 
         - **cdb186.subnet.vcn.oraclevcn.com**
         - **finance.subnet.vcn.oraclevcn.com**  
@@ -76,17 +70,23 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab0step2e.png " ")
 
-    - Start Database : **db19c.subnet.vcn.oraclevcn.com**
+3. In this Lab, we use Databases :    
 
-    ![](images/emratlab0step2f.png " ")
+        - **db19c.subnet.vcn.oraclevcn.com**
+        - **emrep.us.oracle.com**
+        - **sales.subnet.vcn.oraclevcn.com**
 
-    ![](images/emratlab0step2g.png " ")
+   Start Database : **db19c.subnet.vcn.oraclevcn.com**
+
+        ![](images/emratlab0step2f.png " ")
+
+        ![](images/emratlab0step2g.png " ")
 
 
-    - Open Pluggable Databases :
+  Open Pluggable Databases :
 
-        - **db19c.subnet.vcn.oraclevcn.com_OLTP_CL2**
-        - **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1**
+        - **db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2**
+        - **db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1**
 
     ![](images/emratlab0step2h.png " ")
 
@@ -123,7 +123,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 6. Enter Copy SQL Tuning Set
 
-       - Pick **db19c.subnet.vcn.oraclevcn.com_PSAL_CL1** for Destination Database
+       - Pick **db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1** for Destination Database
        - Pick **STSCOPY** for Directory Object
        - Pick **ORACLE** for both Source and Destination Credentials and **SYS_SALES** for Destination Database Credential
        - Click **Ok**
@@ -181,7 +181,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
        - Enter Name :  **PSALES.SUBNET.VCN.ORACLEVCN.COM**
        - Enter Net Service Name :
       ```
-      "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = psales.subnet.vcn.oraclevcn.com)))"
+      <copy>"(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = psales.subnet.vcn.oraclevcn.com)))"</copy>
       ```
          (need to include double quote "")
        - Click on Public - This database link is available to all users
@@ -211,7 +211,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step12a.png " ")
 
-       - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_19C**
+       - Enter SQL Trial Name : **SHSTS\_SQL\_TRIAL\_19C**
        - Enter Description
        - Creation Method: **Execute SQLs Locally**
        - Default per-SQL Time Limit
