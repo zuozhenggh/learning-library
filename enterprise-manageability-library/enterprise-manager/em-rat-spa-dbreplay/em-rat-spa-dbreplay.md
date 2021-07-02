@@ -199,7 +199,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     ![](images/emratlab1step12a.png " ")
 
        - Enter SQL Trial Name : **SHSTS\_SQL\_TRIAL\_19C**
-       - Enter Description
+       - Enter Description : Sales History 19C Run
        - Creation Method: **Execute SQLs Locally**
        - Default per-SQL Time Limit
        - **Check** Trial environment established
@@ -217,12 +217,12 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step14a.png " ")
 
-       - Trial 1 Name : **SHSTS_SQL_TRIAL_18C**
-       - Trial 2 Name : **SHSTS_SQL_TRIAL_19C**
+       - Trial 1 Name : **SHSTS\_SQL\_TRIAL\_18C**
+       - Trial 2 Name : **SHSTS\_SQL\_TRIAL\_19C**
        - Comparison Metric : **Buffer Get**
        - **Click** Submit
 
-    ![](images/emratlab1step14b.png " ")
+    ![](images/emratlab1step14c.png " ")
 
 15. Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
 
@@ -245,11 +245,11 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
       ![](images/emratlab2step2.png " ")
 
-3. Pick Job Name 'START_SWINGBENCH_LOAD' then click Submit
+3. Pick Job Name **START\_SWINGBENCH\_LOAD** then click Submit
 
       ![](images/emratlab2step3.png " ")
 
-4. Click Submit, Swingbench workload starts with 100 concurrent users to Pluggable Database OLTP in **sales.subnet.vcn.oraclevcn.com**
+4. Click Submit, Swingbench workload starts with 40 concurrent users to Pluggable Database OLTP in **sales.subnet.vcn.oraclevcn.com**
 
      ![](images/emratlab2step4.png " ")
 
@@ -269,7 +269,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
      ![](images/emratlab2step8a.png " ")  
 
-9. Enter Capture Name **capsoe**
+9. Enter Capture Name **soecap**
 
      ![](images/emratlab2step8b.png " ")
 
@@ -293,10 +293,11 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 
 13. Use Default Option
-    - Check on Capture SQL statements into a SQL Tuning Set during workload capture
-    - PL/SQL capture mode : Top Level
-    - Workload Filters : Exclusion Filter mode
-    - Excluded Sessions : Program OMS and Module emagent%
+
+       - Check on Capture SQL statements into a SQL Tuning Set during workload capture
+       - PL/SQL capture mode : Top Level
+       - Workload Filters : Exclusion Filter mode
+       - Excluded Sessions : Program OMS and Module emagent%
 
      ![](images/emratlab2step11.png " ")    
 
@@ -329,7 +330,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
      ![](images/emratlab2step16a.png " ")
 
-19. Pick STOP_SWINGBENCH_WORKLOAD, click Submit
+19. Pick STOP\_SWINGBENCH\_WORKLOAD, click Submit
 
      ![](images/emratlab2step16b.png " ")
 
@@ -381,7 +382,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab3step5.png " ")
 
-6. Pick **soecap** from Search and Select workloads
+6. Pick **capsoe** from Search and Select workloads
 
     ![](images/emratlab3step6.png " ")
 
@@ -581,7 +582,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
 3. Remap the connections for replay
-    ```` sql
+    ```` <copy> sql
     begin
     for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
     loop
@@ -590,7 +591,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
      end loop;
      commit;
       end;
-      /
+      / </copy>
       ````
       ![](images/emratlab4step3.png " ")
 
@@ -748,7 +749,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step5a.png " ")
 
-        - Highlight **SH** and **soecap** and clieck **Select** button
+        - Highlight **SH** and **soecap** and click **Select** button
 
     ![](images/emratlab5step5b.png " ")
 
@@ -803,7 +804,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step9a.png " ")
 
-         - Highlight Workloads **soecap**, update Connect Descriptor
+   Highlight Workloads **soecap**, update Connect Descriptor
 
    ````
    <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))</copy>
@@ -811,67 +812,67 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step9b.png " ")
 
-         - **Click Next**
+    **Click Next**
 
 10. Click **Advanced Replay Schedule**
 
     ![](images/emratlab5step10a.png " ")
 
-        - Set 3 min Replay Delay for soecap
+    Set 3 min Replay Delay for soecap
 
     ![](images/emratlab5step10b.png " ")
 
-        - **Click Next**
+    **Click Next**
 
 11. Click **Add** in Replay Client hosts
 
-          ![](images/emratlab3step22.png " ")  
+    ![](images/emratlab3step22.png " ")  
 
-        -  Click **Search** in Host
+    Click **Search** in Host
 
-          ![](images/emratlab3step23.png " ")  
+    ![](images/emratlab3step23.png " ")  
 
-        -  Select **emcc.marketplace.com**
+    Select **emcc.marketplace.com**
 
-          ![](images/emratlab3step24.png " ")
+    ![](images/emratlab3step24.png " ")
 
-        -  Enter below connect string for Server Connection Identifier
+    Enter below connect string for Server Connection Identifier
 
     ````
     <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
     ````
 
-        - Set **2** Number of Replay Clients
+    Set **2** Number of Replay Clients
 
-        - Enter/Browse **/u01/app/database/product** for Client Oracle Home
+    Enter/Browse **/u01/app/database/product** for Client Oracle Home
 
-        - Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
+    Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
 
-          ![](images/emratlab5step11b.png " ")
+    ![](images/emratlab5step11b.png " ")
 
-        - Enter username : **System**  Password : **welcome1**
+    Enter username : **System**  Password : **welcome1**
 
-          ![](images/emratlab5step11c.png " ")
+    ![](images/emratlab5step11c.png " ")
 
-        - Click **Next**
+    Click **Next**
 
-          ![](images/emratlab5step11d.png " ")
+    ![](images/emratlab5step11d.png " ")
 
 12. Click **Start Clients** button
 
-         ![](images/emratlab5step12a.png " ")
+    ![](images/emratlab5step12a.png " ")
 
-        - Click Next
+    Click Next
 
-         ![](images/emratlab5step12b.png " ")
+    ![](images/emratlab5step12b.png " ")
 
 13. Click Submit to start Consolidation Replay
 
-        ![](images/emratlab5step13a.png " ")
+    ![](images/emratlab5step13a.png " ")
 
-        ![](images/emratlab5step13b.png " ")  
+    ![](images/emratlab5step13b.png " ")  
 
-        ![](images/emratlab5step13c.png " ")
+    ![](images/emratlab5step13c.png " ")
 
 
 
