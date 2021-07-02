@@ -1,4 +1,11 @@
-/* DELETE THIS FILE IN THE NEXT RELEASE */
+/* DELETE THIS FILE IN THE NEXT RELEASE - PLEASE USE ADB-PROVISION-CONDITIONAL.MD FILE INSTEAD AND SPECIFY THE VERSION YOU WANT IN YOUR MANIFEST:
+{
+  "title": "Lab 1: Provision an ADB Instance",
+  "description": "Provisioning an Autonomous Database Instance",
+  "type": "livelabs",
+  "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
+},
+*/
 # Provision an Autonomous Database (ADW and ATP)
 
 ## Introduction
