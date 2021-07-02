@@ -207,7 +207,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step11b.png " ")
 
-12. Continue Step 3 in SPA Guided Workflow **SHSPATASK**, Create SQL Trial in Changed Environment
+12. Continue Step 3 in SPA Guided Workflow **SHSPATASK**, and create SQL Trial in Changed Environment
 
     ![](images/emratlab1step12a.png " ")
 
@@ -224,26 +224,26 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step13.png " ")
 
-    - Continue the Workflow **Click** SHSPATASK
+       - Continue the Workflow **Click** SHSPATASK
 
-14. Continue Step 4 in SPA Guided Workflow **SHSPATASK**, Compare Step 2 and Step 3
+14. Continue Step 4 in SPA Guided Workflow **SHSPATASK**, and compare Step 2 and Step 3
 
     ![](images/emratlab1step14a.png " ")
 
-    - Trial 1 Name : **SHSTS_SQL_TRIAL_18C**
-    - Trial 2 Name : **SHSTS_SQL_TRIAL_19C**
-    - Comparison Metric : **Buffer Get**
-    - **Click** Submit
+       - Trial 1 Name : **SHSTS_SQL_TRIAL_18C**
+       - Trial 2 Name : **SHSTS_SQL_TRIAL_19C**
+       - Comparison Metric : **Buffer Get**
+       - **Click** Submit
 
     ![](images/emratlab1step14b.png " ")
 
-15.  Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
+15. Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
 
     ![](images/emratlab1step15a.png " ")
 
     ![](images/emratlab1step15b.png " ")
 
-    - **Click** one of the SQLID to check the detail of the SQL comparison
+       - **Click** one of the SQLID to check the detail of the SQL comparison
 
     ![](images/emratlab1step15c.png " ")
 
@@ -252,115 +252,121 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
+      ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
 2. Go to Enterprise - Job - Library
 
-    ![](images/emratlab2step2.png " ")
+      ![](images/emratlab2step2.png " ")
 
 3. Pick Job Name 'START_SWINGBENCH_LOAD' then click Submit
 
-    ![](images/emratlab2step3.png " ")
+      ![](images/emratlab2step3.png " ")
 
 4. Click Submit, Swingbench workload starts with 100 concurrent users to Pluggable Database OLTP in **sales.subnet.vcn.oraclevcn.com**
 
-    ![](images/emratlab2step4.png " ")
+     ![](images/emratlab2step4.png " ")
 
 5. Go to Enterprise menu - Quality Management - Database Replay
 
-    ![](images/emratlab2step5.png " ")
+     ![](images/emratlab2step5.png " ")
 
 6. Click Create button in Capture Workloads Tab
 
-    ![](images/emratlab2step6.png " ")
+     ![](images/emratlab2step6.png " ")
 
 7. Check both Capture Prerequisites, then Click Next
 
-    ![](images/emratlab2step7.png " ")  
+     ![](images/emratlab2step7.png " ")  
 
-8. Click Add in Capture Databases list,
+8. Click Add in Capture Databases list
 
-    ![](images/emratlab2step8a.png " ")  
+     ![](images/emratlab2step8a.png " ")  
 
-   Enter Capture Name **capsoe**, pick for Database Target
+9. Enter Capture Name **capsoe**
 
-    ![](images/emratlab2step8b.png " ")
+     ![](images/emratlab2step8b.png " ")
 
-   and Select Target Database with Target Name **sales.subnet.vcn.oraclevcn.com**
+10. Select Target Database with Target Name **sales.subnet.vcn.oraclevcn.com**
 
-    ![](images/emratlab2step8c.png " ")
+     ![](images/emratlab2step8c.png " ")
 
-9. Pick OEM_SYS credential for Database Credential, and check Preferred for Database Host Credential, and click Browse for Database Capture Storage location
+11. Pick OEM_SYS credential for Database Credential, and check Preferred for Database Host Credential, and click Browse for Database Capture Storage location
 
-    ![](images/emratlab2step9.png " ")
+     ![](images/emratlab2step9.png " ")
 
-10. Go to Path **/home/oracle/scripts** and pick folder **CAPTURE**
+12. Go to Path **/home/oracle/scripts** and pick folder **CAPTURE**
 
-    ![](images/emratlab2step10.png " ")
+     ![](images/emratlab2step10.png " ")
 
     Click Ok then Next
 
-    ![](images/emratlab2step10b.png " ")
+     ![](images/emratlab2step10b.png " ")
 
-    ![](images/emratlab2step10c.png " ")
+     ![](images/emratlab2step10c.png " ")
 
 
-11. Use Default Option
+13. Use Default Option
     - Check on Capture SQL statements into a SQL Tuning Set during workload capture
     - PL/SQL capture mode : Top Level
     - Workload Filters : Exclusion Filter mode
     - Excluded Sessions : Program OMS and Module emagent%
 
-    ![](images/emratlab2step11.png " ")    
+     ![](images/emratlab2step11.png " ")    
 
     Click Next
 
-12. Create Capture: Schedule, Start Immediately; Duration : 5 minutes
+14. Create Capture: Schedule, Start Immediately; Duration : 5 minutes
     AWR export Schedule to run after capture Completed
 
-    ![](images/emratlab2step12.png " ")
+     ![](images/emratlab2step12.png " ")
 
     Click Next
 
-13. Create Capture: Review, Click Submit
+15. Create Capture: Review, Click Submit
 
-    ![](images/emratlab2step13.png " ")
+     ![](images/emratlab2step13.png " ")
 
     Click Submit
 
-14. In Database Replay landing page, click on **soecap** ih Capture Workload
+16. In Database Replay landing page, click on **soecap** ih Capture Workload
 
-    ![](images/emratlab2step14.png " ")
+     ![](images/emratlab2step14.png " ")
 
-    ![](images/emratlab2step14a.png " ")
+     ![](images/emratlab2step14a.png " ")
 
-15. After 5 minutes, DB Capture finished (Succeeded)
+17. After 5 minutes, DB Capture finished (Succeeded)
 
-    ![](images/emratlab2step15.png " ")
+     ![](images/emratlab2step15.png " ")
 
-16. Stop Swingbench Workload
-    Go to Enterprise - Job - library
+18. Stop Swingbench Workload. Go to Enterprise - Job - library
 
-    ![](images/emratlab2step16a.png " ")
+     ![](images/emratlab2step16a.png " ")
 
-    Pick **STOP_SWINGBENCH_WORKLOAD**, click Submit
+19. Pick STOP_SWINGBENCH_WORKLOAD, click Submit
 
-    ![](images/emratlab2step16b.png " ")
+     ![](images/emratlab2step16b.png " ")
 
     Click Submit in the Job page
 
-    ![](images/emratlab2step16c.png " ")
+     ![](images/emratlab2step16c.png " ")
 
-17. Review Capture Report
-    Go to Enterprise - Quality Management - DB Replay
+20. Review Capture Report. Go to Enterprise - Quality Management - DB Replay
 
-    ![](images/emratlab2step17a.png " ")
+     ![](images/emratlab2step17a.png " ")
 
-    ![](images/emratlab2step17b.png " ")
+21. In Workload Cature tab, select **soecap**
 
-    ![](images/emratlab2step17c.png " ")
+     ![](images/emratlab2step17b.png " ")
 
-    ![](images/emratlab2step17d.png " ")
+22. Click tab **Reports**
+
+     ![](images/emratlab2step17c.png " ")
+
+23. Click **View** button
+
+     ![](images/emratlab2step17d.png " ")
+
+24. Pop up window appear to show Capture's Report
 
     ![](images/emratlab2step17e.png " ")
 
@@ -368,120 +374,123 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 ## **STEP 3:** Database Workload Replay - DB Replay
 
-  1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
     ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
-  2.  Go to Enterprise menu - Quality Management - Database Replay
+2. Go to Enterprise menu - Quality Management - Database Replay
 
-        ![](images/emratlab2step5.png " ")
+    ![](images/emratlab2step5.png " ")
 
-  3.  Click **Replay Task** tab
+3. Click **Replay Task** tab
 
-        ![](images/emratlab3step3.png " ")
+    ![](images/emratlab3step3.png " ")
 
-  4. Click **Create** button
+4. Click **Create** button
 
-        ![](images/emratlab3step4.png " ")
+    ![](images/emratlab3step4.png " ")
 
-  5. Enter **soerep** for Replay Task Name and click **Add** button in workloads
+5. Enter **soerep** for Replay Task Name and click **Add** button in workloads
 
-        ![](images/emratlab3step5.png " ")
+    ![](images/emratlab3step5.png " ")
 
-  6. Pick **soecap** from Search and Select workloads
+6. Pick **soecap** from Search and Select workloads
 
-        ![](images/emratlab3step6.png " ")
+    ![](images/emratlab3step6.png " ")
 
-  7. Enter **soerep_1** in Replay Name and click on **Search** button
+7. Enter **soerep_1** in Replay Name and click on **Search** button
 
-        ![](images/emratlab3step7.png " ")
+    ![](images/emratlab3step7.png " ")
 
-  8. Select **db19c.subnet.vcn.oraclevcn.com**
+8. Select **db19c.subnet.vcn.oraclevcn.com**
 
-        ![](images/emratlab3step8.png " ")
+    ![](images/emratlab3step8.png " ")
 
-  9. Click **Submit** button
+9. Click **Submit** button
 
-        ![](images/emratlab3step9.png " ")
+    ![](images/emratlab3step9.png " ")
 
-  10. Click **Preprocess workload** task
+10. Click **Preprocess workload** task
 
-        ![](images/emratlab3step10.png " ")
+    ![](images/emratlab3step10.png " ")
 
-  11. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+11. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
 
-        ![](images/emratlab3step11.png " ")
+    ![](images/emratlab3step11.png " ")
 
-  12. Click **Next**
+12. Click **Next**
 
-        ![](images/emratlab3step12.png " ")   
+    ![](images/emratlab3step12.png " ")   
 
-  13. Click **Submit**
+13. Click **Submit**
 
-        ![](images/emratlab3step13.png " ")
+    ![](images/emratlab3step13.png " ")
 
-  14. Click on highlighted Preprocess Job to monitor preprocess job
+14. Click on highlighted Preprocess Job to monitor preprocess job
 
-        ![](images/emratlab3step14.png " ")
+    ![](images/emratlab3step14.png " ")
 
-  15. Click **refresh** until the status **Succeeded**
+15. Click **refresh** until the status **Succeeded**
 
-      ![](images/emratlab3step15.png " ")
+    ![](images/emratlab3step15.png " ")
 
-    - After status **Succeeded** click **soerep_1**
+       - After status **Succeeded** click **soerep_1**
 
-      ![](images/emratlab3step15b.png " ")
+    ![](images/emratlab3step15b.png " ")
 
-  16. Click **Replay Workload** tasks
+16. Click **Replay Workload** tasks
 
       ![](images/emratlab3step16.png " ")
 
-  17. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+17. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
 
-        ![](images/emratlab3step11.png " ")
+      ![](images/emratlab3step11.png " ")
 
-  18. Click **Next** after validate the workload directory and **Retrieve Workload Information**
+18. Click **Next** after validate the workload directory and **Retrieve Workload Information**
 
-        ![](images/emratlab3step18.png " ")
+      ![](images/emratlab3step18.png " ")
 
-        ![](images/emratlab3step19.png " ")
+      ![](images/emratlab3step19.png " ")
 
-  19. Remap replay connection using below connect string
-````
-(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
-````
+19. Remap replay connection using below connect string
 
-        ![](images/emratlab3step20.png " ")
+   ````
+   <copy>DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
+   ````
 
-  20. Click **Next** using default Replay's Options
+      ![](images/emratlab3step20.png " ")
 
-        ![](images/emratlab3step21.png " ")
+20. Click **Next** using default Replay's Options
 
-  21. Click **Add** in Replay Client hosts
+      ![](images/emratlab3step21.png " ")
 
-        ![](images/emratlab3step22.png " ")  
+21. Click **Add** in Replay Client hosts
 
-  22. Click **Search** in Host
+      ![](images/emratlab3step22.png " ")  
 
-        ![](images/emratlab3step23.png " ")  
+22. Click **Search** in Host
 
-  23. Select **emcc.marketplace.com**
+      ![](images/emratlab3step23.png " ")  
 
-        ![](images/emratlab3step24.png " ")
+23. Select **emcc.marketplace.com**
 
-  24. Enter below connect string for Server Connection Identifier
-````
-(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
-````
+      ![](images/emratlab3step24.png " ")
+
+24. Enter below connect string for Server Connection Identifier
+
+    ```
+     <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
+    ```
+
      Enter/Browse **/u01/app/database/product** for Client Oracle Home
 
      Click **Browse** for Client Replay Directory
 
-         ![](images/emratlab3step25.png " ")
+        ![](images/emratlab3step25.png " ")
 
      Select **DBReplayWorkload_soecap_2** in /home/oracle/script/CAPTURE
 
-      ![](images/emratlab3step25b.png " ")
+        ![](images/emratlab3step25b.png " ")
 
       Enter username : **System**  Password : **welcome1**
 
@@ -558,28 +567,33 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 ### Login to Host using SSH Key based authentication
 In this lab, we are going to use a pre-captured workload of Sales History. The workload located in directory **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
-1.  Preprocess workload from API command
-    **SSH Session 1**
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-    - Set Environment variables for sales database **. 19c.env**
-    - Create DB Directory Object LAB3SOE
-    - Pre-process the capture in 19C Database
-    ```` sql
+
+1. Preprocess workload from API command
+
+   **SSH Session 1**
+
+        - Authentication OS User - “*opc*”
+        - Authentication method - *SSH RSA Key*
+        - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
+        - Set Environment variables for sales database **. 19c.env**
+        - Create DB Directory Object LAB3SOE
+        - Pre-process the capture in 19C Database
+
+    ``` sql
     . /home/oracle/19c.env
     sqlplus '/ as sysdba'
     SQL> create directory lab4sh as '/home/oracle/scripts/CAPTURE/lab4con/lab4SH';
     SQL> exec dbms_workload_replay.process_capture('LAB4SH')
-    ````
+    ```
+
       ![](images/emratlab4step1.png " ")
 
+2. Initialize the Replay
 
-2.  Initialize the Replay
     ```` sql
     SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
-3.  Remap the connections for replay
+3. Remap the connections for replay
     ```` sql
     begin
     for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
@@ -593,242 +607,278 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
       ````
       ![](images/emratlab4step3.png " ")
 
-4.   Prepare the replay with TIME synchronization  and query_only mode
+4. Prepare the replay with TIME synchronization  and query_only mode
+
      ```` sql
      SQL> exec dbms_workload_replay.PREPARE_REPLAY (synchronization => 'TIME',query_only => TRUE);
      ````
-5.   Run the replay
-     - Start wrc clients in new session
-     **SSH Session 2**
-     - Authentication OS User - “*opc*”
-     - Authentication method - *SSH RSA Key*
-     - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
-     - Set Environment variables for sales database **. 19c.env**
-     - run wrc in the replay folder
+
+5. Run the replay
+
+    **SSH Session 2**
+
+        - Start wrc clients in new session
+        - Authentication OS User - “*opc*”
+        - Authentication method - *SSH RSA Key*
+        - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”.
+        - Set Environment variables for sales database **. 19c.env**
+        - run wrc in the replay folder
+
      ``` sh
      . 19c.env
      cd /home/oracle/scripts/CAPTURE/lab4con/lab4SH
      wrc system/welcome1
      Wait for the replay to start (22:41:37)
      ```
+
       ![](images/emratlab4step5.png " ")
 
-     - Start the replay in session 1
-
      **SSH Session 1**
+
+        - Start the replay in session 1
+
      ``` sql
      SQL> exec dbms_workload_replay.START_REPLAY
      ```
-6.  Import Completed Capture into EM
 
-    - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-    - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
-    - **Click** Import button in Capture Workload  
+6. Import Completed Capture into EM
+
+       - Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+       - Navigate from **Enterprise** to **Quality Management** top then **Database Replay**
+       - **Click** Import button in Capture Workload  
+
      ![](images/emratlab4step6a.png " ")
-    - Pick **Import a completed capture from a directory in file system** and click **Next**
-     ![](images/emratlab4step6b.png " ")  
-    - Select **db19c.subnet.vcn.oraclevcn.com**
-     ![](images/emratlab4step6c.png " ")
-    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential. Click Browse to enter **Workload Location**
-     ![](images/emratlab4step6d.png " ")
-    - Workload Location : **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
-     ![](images/emratlab4step6e.png " ")
-     ![](images/emratlab4step6f.png " ")    
-    - Click **Load Workload** button in Import Workload page, then click **Next**
-    ![](images/emratlab4step6g.png " ")
-    ![](images/emratlab4step6h.png " ")    
-    - Click **Submit**
-    ![](images/emratlab4step6i.png " ")
-    - The Import job might takes 2-3 minutes to be completed
 
-7.  Import Running Replay into EM    
-    - **Click** Replay Tasks tab and **Click** Create button
+       - Pick **Import a completed capture from a directory in file system** and click **Next**
+
+     ![](images/emratlab4step6b.png " ")  
+
+       - Select **db19c.subnet.vcn.oraclevcn.com**
+
+     ![](images/emratlab4step6c.png " ")
+
+       - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential. Click Browse to enter **Workload Location**
+
+     ![](images/emratlab4step6d.png " ")
+
+       - Workload Location : **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
+
+     ![](images/emratlab4step6e.png " ")
+
+     ![](images/emratlab4step6f.png " ")    
+
+       - Click **Load Workload** button in Import Workload page, then click **Next**
+
+     ![](images/emratlab4step6g.png " ")
+
+     ![](images/emratlab4step6h.png " ")    
+
+       - Click **Submit**
+
+     ![](images/emratlab4step6i.png " ")
+
+       - The Import job might takes 2-3 minutes to be completed
+
+7. Import Running Replay into EM    
+
+       - **Click** Replay Tasks tab and **Click** Create button
 
      ![](images/emratlab4step7a.png " ")
 
-    - **Enter** Name **shrep** in Create Task page
-    - **Click** Add button in Workloads section
+       - **Enter** Name **shrep** in Create Task page
+       - **Click** Add button in Workloads section
+
      ![](images/emratlab4step7b.png " ")
 
-    - **Pick** SH click **Select**
+       - **Pick** SH click **Select**
+
      ![](images/emratlab4step7c.png " ")    
-    - **Uncheck** Create a new replay in Replays section
-    - **Click** Submit
+
+       - **Uncheck** Create a new replay in Replays section
+       - **Click** Submit
 
      ![](images/emratlab4step7d.png " ")
 
-    - Back to **Database  Replay** main page
-    - **Click** shrep replay task
+       - Back to **Database  Replay** main page
+       - **Click** shrep replay task
 
      ![](images/emratlab4step7e.png " ")
 
-    - In Replay Task page **click** Import button in Replays section
+       - In Replay Task page **click** Import button in Replays section
 
      ![](images/emratlab4step7f.png " ")
 
-    - **Check** Attach to a replay of this replay task running in a database target
+       - **Check** Attach to a replay of this replay task running in a database target
 
      ![](images/emratlab4step7g.png " ")
 
-    - **Select** db19c.subnet.vcn.oraclevcn.com
+       - **Select** db19c.subnet.vcn.oraclevcn.com
 
      ![](images/emratlab4step7h.png " ")
 
-    - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
+       - Use **SYS_DB19C** named credential for DB credential, use **ORACLE** for named credential for DB Host credential
 
      ![](images/emratlab4step7i.png " ")
 
-    - **Click** Discover Replay and **Next** button
+       - **Click** Discover Replay and **Next** button
 
      ![](images/emratlab4step7j.png " ")
 
      ![](images/emratlab4step7k.png " ")   
 
-    - **Click Submit**
+       - **Click Submit**
 
      ![](images/emratlab4step7l.png " ")
 
-    - Running Replay imported and monitored in EM
-    ![](images/emratlab4step7m.png " ")
+       - Running Replay imported and monitored in EM
 
-    ![](images/emratlab4step7n.png " ")
+     ![](images/emratlab4step7m.png " ")
+
+     ![](images/emratlab4step7n.png " ")
 
 
 ## **STEP 5:** Database Consolidation Replay
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
-  ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
+     ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
-2.  Go to Enterprise menu - Quality Management - Database Replay
+2. Go to Enterprise menu - Quality Management - Database Replay
 
-      ![](images/emratlab2step5.png " ")
+     ![](images/emratlab2step5.png " ")
 
-3.  Click **Replay Task** tab
+3. Click **Replay Task** tab
 
-      ![](images/emratlab3step3.png " ")
+    ![](images/emratlab3step3.png " ")
 
 4. Click **Create** button
 
-      ![](images/emratlab5step4.png " ")      
+    ![](images/emratlab5step4.png " ")      
 
-5.  Create Consolidation Replay Task
-    - Enter Name **lab5con**, Click Add button
+5. Create Consolidation Replay Task
 
-      ![](images/emratlab5step5a.png " ")
+        - Enter Name **lab5con**, Click Add button
 
-    - Highlight **SH** and **soecap** and clieck **Select** button
+    ![](images/emratlab5step5a.png " ")
 
-      ![](images/emratlab5step5b.png " ")
+        - Highlight **SH** and **soecap** and clieck **Select** button
 
-    - Check Copy Workload to a new Replay Directory, then click <span style="color: red;">Set Credential</span>
+    ![](images/emratlab5step5b.png " ")
 
-      ![](images/emratlab5step5c.png " ")
+        - Check Copy Workload to a new Replay Directory, then click <span style="color: red;">Set Credential</span>
 
-    - Click Ok
+    ![](images/emratlab5step5c.png " ")
 
-      ![](images/emratlab5step5d.png " ")
+        - Click Ok
 
-    - Click search button to select Host target
+    ![](images/emratlab5step5d.png " ")
 
-      ![](images/emratlab5step5e.png " ")
+        - Click search button to select Host target
 
-    - Pick **emcc.marketplace.com** and click **Select**
+    ![](images/emratlab5step5e.png " ")
 
-      ![](images/emratlab5step5f.png " ")
+        - Pick **emcc.marketplace.com** and click **Select**
 
-    - Check Named Credential, Credential Name ORACLE, Click Browse to eneter path **/home/oracle/scripts/CAPTURE/lab5**
+    ![](images/emratlab5step5f.png " ")
 
-      ![](images/emratlab5step5g.png " ")
+        - Check Named Credential, Credential Name ORACLE, Click Browse to eneter path **/home/oracle/scripts/CAPTURE/lab5**
 
-      ![](images/emratlab5step5h.png " ")
+    ![](images/emratlab5step5g.png " ")
 
-    - Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
+    ![](images/emratlab5step5h.png " ")
+
+        - Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
 
     ![](images/emratlab5step5i.png " ")  
 
-    - Click **Submit**
+        - Click **Submit**
 
     ![](images/emratlab5step5j.png " ")
 
 
-6.  Click on Replay Workload Task
+6. Click on Replay Workload Task
 
     ![](images/emratlab5step6.png " ")
 
-7.  Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
+7. Pick Named Credential **SYS_DB19C** for Database Credential and **ORACLE** for Database Host Credential, then click **Next**
 
     ![](images/emratlab5step7.png " ")
 
-8.  Check Use an existing directory object point to **/home/oracle/scripts/CAPTURE/lab5**, Click Next
+8. Check Use an existing directory object point to **/home/oracle/scripts/CAPTURE/lab5**, Click Next
 
     ![](images/emratlab5step8.png " ")
 
-9. - Highlight Workloads **SH**, update Connect Descriptor
-````
-(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))
-````
+9. Highlight Workloads **SH**, update Connect Descriptor
+
+    ````
+    <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))</copy>
+    ````
 
     ![](images/emratlab5step9a.png " ")
 
-   - Highlight Workloads **soecap**, update Connect Descriptor
+         - Highlight Workloads **soecap**, update Connect Descriptor
+
    ````
-   (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))
+   <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))</copy>
    ````
 
     ![](images/emratlab5step9b.png " ")
 
-    - **Click Next**
+         - **Click Next**
 
-10. - Click **Advanced Replay Schedule**
+10. Click **Advanced Replay Schedule**
 
     ![](images/emratlab5step10a.png " ")
 
-    - Set 3 min Replay Delay for soecap
+        - Set 3 min Replay Delay for soecap
 
     ![](images/emratlab5step10b.png " ")
 
-    - **Click Next**
+        - **Click Next**
 
-11.  - Click **Add** in Replay Client hosts
+11. Click **Add** in Replay Client hosts
 
           ![](images/emratlab3step22.png " ")  
 
-     -  Click **Search** in Host
+        -  Click **Search** in Host
 
           ![](images/emratlab3step23.png " ")  
 
-     -  Select **emcc.marketplace.com**
+        -  Select **emcc.marketplace.com**
 
           ![](images/emratlab3step24.png " ")
 
-     -  Enter below connect string for Server Connection Identifier
+        -  Enter below connect string for Server Connection Identifier
+
     ````
-    (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))
+    <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
     ````
 
-    - Set **2** Number of Replay Clients
+        - Set **2** Number of Replay Clients
 
-    - Enter/Browse **/u01/app/database/product** for Client Oracle Home
+        - Enter/Browse **/u01/app/database/product** for Client Oracle Home
 
-    - Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
+        - Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
 
-        ![](images/emratlab5step11b.png " ")
+          ![](images/emratlab5step11b.png " ")
 
-    - Enter username : **System**  Password : **welcome1**
+        - Enter username : **System**  Password : **welcome1**
 
-        ![](images/emratlab5step11c.png " ")
-    - Click **Next**
+          ![](images/emratlab5step11c.png " ")
 
-        ![](images/emratlab5step11d.png " ")
+        - Click **Next**
 
-12. - Click **Start Clients** button
-        ![](images/emratlab5step12a.png " ")
+          ![](images/emratlab5step11d.png " ")
 
-    - Click Next
-        ![](images/emratlab5step12b.png " ")
+12. Click **Start Clients** button
 
-13. - Click Submit to start Consolidation Replay
+         ![](images/emratlab5step12a.png " ")
+
+        - Click Next
+
+         ![](images/emratlab5step12b.png " ")
+
+13. Click Submit to start Consolidation Replay
 
         ![](images/emratlab5step13a.png " ")
 
