@@ -1,4 +1,4 @@
-# Title of the lab
+# Using OML to predict churn
 
 ## Introduction
 

@@ -47,13 +47,14 @@ Learn how to
 
 ## **STEP 3**: Download the sample datasets from the ObjectStore
 
-1. Use `wget` or `curl` to download the sample data to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
+1. Copy and paste the url in your browser for the zip archive, i.e.  
 
     ```
     https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
-    A sample `curl` request is:
+   Or use `wget` or `curl` to download the sample data to you computer.   
+   A sample `curl` request is:
     ```
     curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```

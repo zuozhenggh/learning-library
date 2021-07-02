@@ -1,4 +1,4 @@
-# Title of the lab
+# Using Spatial queries to find best location
 
 ## Introduction
 

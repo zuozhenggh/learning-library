@@ -16,6 +16,7 @@ In this lab, you will:
 * Understand the basic functionality of Cloning, Plug and Unplug PDBs, Hot Cloning, and Refresh and Relocation
 * Understand advanced features like Application Containers
 
+
 ### Prerequisites
 
 This workshop assumes you have: 

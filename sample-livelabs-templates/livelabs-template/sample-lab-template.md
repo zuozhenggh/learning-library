@@ -6,10 +6,10 @@
 
 Estimated Time: n minutes
 
-### About <Product/Technology>
+### About Product/Technology
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
 
-### Objectives <optional>
+### Objectives optional
 
 *List objectives for this lab*
 
