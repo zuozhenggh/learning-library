@@ -43,7 +43,7 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
     - In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
     - Then click **Create Compartment**.
 
-![](./images/create-comp.png " ")
+![](./images/create-compartment.png " ")
 
 5. The Compartments page is displayed and the newly created compartment is shown in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
   ![](./images/new-comp.png " ")
@@ -74,7 +74,7 @@ In case you are a **Non-admin user**, you can ask your Cloud administrator to ru
 
 4. The **Users Details** page for the new `di-admin` user is displayed.
 
-![](./images/di-user-details.png " ")
+![](./images/di-admin-details.png " ")
 
 5. You will now create a Data Integration group for the data integration users. From the OCI console, on the Menu click **Identity & Security**, then select **Groups** under Identity section.
 ![](./images/di-groups-menu.png " ")
@@ -87,7 +87,7 @@ In case you are a **Non-admin user**, you can ask your Cloud administrator to ru
 
 8. Your new group **details** are displayed.
 
-![](./images/group-details.png " ")
+![](./images/group-detail.png " ")
 
 9. In the Group Members section, click **Add User to Group**.
 ![](./images/add-users-button.png " ")
@@ -97,7 +97,7 @@ In case you are a **Non-admin user**, you can ask your Cloud administrator to ru
 
 11. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the Group Members section.
 
-![](./images/group-members.png " ")
+![](./images/members-of-group.png " ")
 
 <!-- 12. Now, you will create a **security policy** that gives your group permissions in the data integration **compartment** for workshop purposes. In this example, create a policy that gives permission to compartment `di-compartment` to members of group `di-group`.
 
@@ -142,7 +142,7 @@ In the **Basic Information** section, provide the following information:
   - **PRIVATE SUBNET CIDR BLOCK**: Leave the default `10.0.1.0/24`.
   - In the DNS RESOLUTION section, select the `USE DNS HOSTNAMES IN THIS VCN` check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
 
-![](./images/vcn-config-cidr.png " ")
+![](./images/vcn-config-subnets.png " ")
 
 
 6. Click the **Next** button at the bottom left of the screen.
@@ -155,7 +155,7 @@ In the **Basic Information** section, provide the following information:
 
 9. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
 
-![](./images/vcn-details.png " ")
+![](./images/vcn-detail.png " ")
 
 
 ## **STEP 4:** Provision an Autonomous Data Warehouse and download Wallet
@@ -172,15 +172,15 @@ In the **Basic Information** section, provide the following information:
   - **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use `ADW Workshop`.
   - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use `ADWWORKSHOP`.
 
-![](./images/create-adw-basic.png " ")
+![](./images/create-adw-info.png " ")
 
 4. Select **Data Warehouse** as the workload type.
 
-![](./images/dw-select.png " ")
+![](./images/adw-worload.png " ")
 
 5. Choose **Shared Infrastructure** as the deployment type.
 
-![](./images/deployment-type.png " ")
+![](./images/shared-infrastructure.png " ")
 
 6. Configure the database:
   - **Always Free** - Leave this option unchecked.
@@ -189,23 +189,23 @@ In the **Basic Information** section, provide the following information:
   - **Storage (TB)** - Select your storage capacity in terabytes. Specify 1 TB of storage.
   - **Auto Scaling** - Keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand if needed.
 
-![](./images/adw-config.png " ")
+![](./images/adw-configure.png " ")
 
 7. Create **Administrator credentials**:
   - Password and Confirm Password - Specify the password for `ADMIN` user of the service instance.
 
-![](./images/adw-credentials.png " ")
+![](./images/adw-admin.png " ")
 
 8. Choose **Network access**:
 - For this lab, accept the default, **Allow secure access from everywhere**.
 
-![](./images/adw-network-access.png " ")
+![](./images/adw-network.png " ")
 
 9. Choose a **license type**. For this lab, choose **License Included**. The two license types are:
 - Bring Your Own License (BYOL) - Select this type when your organization has existing database licenses.
 - License Included - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-![](./images/adw-license.png " ")
+![](./images/adw-license-type.png " ")
 
 10. Click **Create Autonomous Database**.
 ![](./images/create-adw-final.png " ")
@@ -218,7 +218,7 @@ In the **Basic Information** section, provide the following information:
 
 13. On the Database Connection page, leave the default wallet type as Instance Wallet and then click on **Download Wallet**.
 
-![](./images/download-wallet-button.png " ")
+![](./images/download-wallet-click.png " ")
 
 14. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
 ![](./images/download-wallet.png " ")
