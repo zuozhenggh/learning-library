@@ -802,17 +802,17 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))</copy>
     ````
 
-    ![](images/emratlab5step9a.png " ")
+   ![](images/emratlab5step9a.png " ")
 
    Highlight Workloads **soecap**, update Connect Descriptor
 
-   ````
-   <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))</copy>
-   ````
+    ````
+    <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)))</copy>
+    ````
 
     ![](images/emratlab5step9b.png " ")
 
-    **Click Next**
+   **Click Next**
 
 10. Click **Advanced Replay Schedule**
 
