@@ -1,41 +1,20 @@
 # Hands-on with Multitenant (Advanced)
 
+Introduction
+This hands-on labs is designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, We will dive into the concepts of Application container and Proxy PDBs.
 
-## Introduction
-
-This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, We will dive into the concepts of Application container and Proxy PDBs.
-
-### Prerequisites
+Prerequisites
 This lab assumes you have:
 
-- Been provided a username and password to the tenancy c4u03
-- Completed the Environment Setup lab
-- Created an OCI compute instance using the database template
+- You need to have completed Lab 1 through Lab 3 and Step 0 of Lab 4.
+- This Lab is indipendent of Lab 4. However, you need to have run Step 0 of Lab4 if you plan to do only Lab 5.
 
 The setup should have  two container databases running:
 
 - CDB1 running on port 1523
 - CDB2 running on port 1524
 
-## **Step 1:** Lab Setup
-
-All the scripts for this lab are located in the /home/oracle/labs/multitenant/scripts folder.
-
-1. To access the scripts, secure shell into the OCI compute instance.
-
-2. Change to the ssh directory and ssh into your instance. The public IP address can be found by going to Compute -> Instance.
-
-   ```
-   cd /home/oracle/labs/multitenant
-   ```
-
-3. Reset the container databases back to their original ports if they were changed in a previous lab. If any errors about dropping databases appear they can be ignored.
-
-
-
-
-## **Step 2:** Creating an Application Root
-
+## Step 1 Creating an application root
 
    Creating an Application Root is similar to creating a normal PDB, just with an extra parameter. The source of the Application Root can be an existing database or the SEED database on CDB level.
 
@@ -320,9 +299,7 @@ All the scripts for this lab are located in the /home/oracle/labs/multitenant/sc
 
 
 
-
-## **Step 3:** Upgrade Applications
-
+##  Step 7 :Upgrade Applications
 
 ###  Upgrade APP01 in APP_ROOT  from 1.0 to 2.0
 
@@ -614,8 +591,7 @@ In some application in a Multitenant environment , It may **not be possible** to
 
 
 
-
-## **Step 4:** Proxy PDBs
+## Step 9: PROXY PDBs
 
 ![](./images/MT_proxyPDB.png " ")
 
@@ -738,9 +714,7 @@ select * from proxy_test;
 
 
 
-
-## **Step 5:** Synchronizing an Application Root Replica with a Proxy PDB
-
+## Step 10: Synchronizing an Application Root Replica with a Proxy PDB
 
  With Application Containers, you can install applications in an Application Root and synchronize the application to Application PDBs. On the other hand, a Proxy PDB provides location transparency; this is useful when we want to access data or objects remotely from another Container Database (CDB). An advantage of a Proxy PDB is that we don’t have to copy all the data to the remote CDB in order to access the objects and its data, however this is also a disadvantage. If the network  fails or If something goes wrong with the Application Root in the Master Application Container, all the remote Proxy PDBs will  not work. To avoid this, we would probably want to have a physical replica of all the objects and data in another remote Container Database. Here is where a new feature called “Application Root Replica”
 
@@ -1062,9 +1036,7 @@ in_cdb1-app_root
 
 Table created during the upgrade of APP01 from 2.0 to 20.0 in APP_ROOT has successfully replicated. This demonstrates that we can have **one Master Application root container and push changes to all the  Root replicas** and inturn help manage application PDBs.
 
-
-## **Step 6:** Version Control and Compatibility
-
+## Step 11: Version Control and Compatibility.
 
 In Order to upgrade the application PDBs, we need to login to the PDBS and SYNC to a version. If we do not SYNC, they will be on the previous version. This will give use better Version Control Ability. In Addition, you could have more than one Application Module in one App root. Each of the Application could be different modules of the same application like HR,ERP,Sales, reporting. It could be totally different applications as well. The advantage of having multiple applications with in the same App root is that there could be applications that will need to access tables or packages from another application.  This could be a use case for micro services where you could isolate each microservice to its own application. But at the same time applications can cross reference other application's data if required.
 
