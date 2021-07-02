@@ -56,9 +56,9 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 2. Shutdown Databases :
 
-        - **cdb186.subnet.vcn.oraclevcn.com**
-        - **finance.subnet.vcn.oraclevcn.com**  
-        - **hr.subnet.vcn.oraclevcn.com**
+        - cdb186.subnet.vcn.oraclevcn.com
+        - finance.subnet.vcn.oraclevcn.com  
+        - hr.subnet.vcn.oraclevcn.com
 
     ![](images/emratlab0step2a.png " ")
 
@@ -72,21 +72,21 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 3. In this Lab, we use Databases :    
 
-        - **db19c.subnet.vcn.oraclevcn.com**
-        - **emrep.us.oracle.com**
-        - **sales.subnet.vcn.oraclevcn.com**
+        - db19c.subnet.vcn.oraclevcn.com
+        - emrep.us.oracle.com
+        - sales.subnet.vcn.oraclevcn.com
 
    Start Database : **db19c.subnet.vcn.oraclevcn.com**
 
-        ![](images/emratlab0step2f.png " ")
+    ![](images/emratlab0step2f.png " ")
 
-        ![](images/emratlab0step2g.png " ")
+    ![](images/emratlab0step2g.png " ")
 
 
-  Open Pluggable Databases :
+   Open Pluggable Databases :
 
-        - **db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2**
-        - **db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1**
+        - db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2
+        - db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1
 
     ![](images/emratlab0step2h.png " ")
 
