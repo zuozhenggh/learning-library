@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure.
 
-When using your own **paid tenancy**, several of these tasks need to be performed by the Cloud Administrator for your tenancy. When using the **Free Tier** Oracle Cloud account, you are the Cloud Administrator so you can perform all of the steps below.
+When using your own **paid tenancy**, several of these tasks need to be performed by the Cloud Administrator for your tenancy. When using the **Free Tier** Oracle Cloud account, you are the Cloud Administrator and you can perform all of the steps below.
 
 *Estimated Lab Time*: 1 hour
 
@@ -28,19 +28,20 @@ A **compartment** is a collection of cloud assets. For this workshop, we are cre
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Integration resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Integration resources that you will use in the workshop.
 
 1. **Log in to the Oracle Cloud Console** as a user with administrator privileges. On the Sign In page, select your tenancy, enter your username and password, and then click **Sign In**. The Oracle Cloud Console Home page is displayed.
-![](./images/console.png " ")
+![](./images/oci-console.png " ")
 
 2. From the OCI console menu, select **Identity & Security**. Under Identity section, click on **Compartments**.
-  ![](./images/di-compartments-menu.png " ")
+![](./images/di-compartments-menu.png " ")
 
 3. In the Compartments page, we have the list of our existing compartments (if any). Click on the **Create Compartment** button to create a sub-compartment.
   ![](./images/create-comp-button.png " ")
 
 4. In the **Create Compartment** dialog box:
-* Enter a **Name** for the compartment: `DI-compartment`
-* Enter a meaningful **Description**: `Compartment for Data Integration resources`
-* In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
-* Then click **Create Compartment**
+    - Enter a **Name** for the compartment: `DI-compartment`
+    - Enter a meaningful **Description**: `Compartment for Data Integration resources`
+    - In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
+    - Then click **Create Compartment**.
+    
 ![](./images/create-comp.png " ")
 
 5. The Compartments page is displayed and the newly created compartment is shown in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
