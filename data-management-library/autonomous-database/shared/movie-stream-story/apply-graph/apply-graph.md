@@ -1,4 +1,4 @@
-# Title of the lab
+# Use Graph analytics to recommend movies
 
 ## Introduction
 
