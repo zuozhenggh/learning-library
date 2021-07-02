@@ -1,4 +1,4 @@
-# Title of the lab
+# Analyzing data with Oracle SQL
 
 ## Introduction
 

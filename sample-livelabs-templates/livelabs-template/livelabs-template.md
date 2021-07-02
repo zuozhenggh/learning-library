@@ -1,4 +1,4 @@
-# LiveLabs Complete Template
+# LiveLabs Test Template
 
 *About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
 
@@ -24,13 +24,6 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 * [relative lab url test](?lab=need-help)
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
@@ -81,7 +74,7 @@ In this lab, you will:
     This is a code block.
     ```
 
-9. Long code block with line breaks test
+9. Long code block with line breaks
 
     ```
     <copy>/* Specify the base URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
@@ -262,47 +255,7 @@ In this lab, you will:
 
   *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
-2. You can also include a file in a copy block, or offer it as a download in a single Step. For example, download the [starter SQL code](files/starter-file.sql), or copy it from the block below:
-
-    ```
-    <copy>[](include:starter-file.sql)</copy>
-    ```
-
-  To support this feature, you need to specify the location of the files you are including in the manifest as key-value pairs:
-
-    ```
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
-    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-                "sample.json":"../../data-load/files/sample.json"},
-    "tutorials": [
-    ```
-
-3. You can also inject Markdown files into your lab. For example, the next substep is injected from a file called `injected-step.md`:
-
-[](include:injected-step.md)
-
-<!-- images -->
-
-3. You can override the default image scaling by applying manual controls over image sizes:
-
-  No image sizing applied: `![](images/pic2.png)`
-
-  ![](images/pic2.png)
-
-  50% of the width and use auto height: `![](images/pic2.png =50%x*)`
-
-  ![](images/pic2.png =50%x*)
-
-  absolute width and height (500 pixel by 200 pixels): `![](./images/pic2.png =500x200)`
-
-  ![](./images/pic2.png =500x200)
-
-  50% for both width and height:  `![](./images/pic2.png =50%x50%)`
-
-  ![](./images/pic2.png =50%x50%)
-
-
-4. Conditional content example (type="livelabs")
+3. Conditional content example (type="livelabs")
 
     Select your compartment. <if type="livelabs">If you are using a LiveLabs environment, be sure to select the compartment provided by the environment. Leave Always Free unchecked,</if><if type="alwaysfree">Choose any compartment, select "Always Free",</if> and enter `SecretPassw0rd` for the ADMIN password, then click **Create Autonomous Database**.
 
@@ -310,11 +263,6 @@ In this lab, you will:
     <if type="livelabs">![](images/atp-settings-2-notaf.png)</if>
     <if type="alwaysfree">![](images/atp-settings-2.png)</if>
     ![](images/atp-settings-3.png)
-
-
-5. This is an example of a segment of the Markdown file injected before rendering:
-
-[](include:injected-step.md)
 
 ## Learn More
 
@@ -327,4 +275,3 @@ In this lab, you will:
 * **Author** - <Name, Title, Group>
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
