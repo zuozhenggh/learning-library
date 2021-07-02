@@ -5,6 +5,25 @@
 The very first cloud service that you'll need is a database, an Oracle *Autonomous Database* that will ease a lot of the tasks
 related to data management. We'll also introduce a JSON data generator.
 
+### Objectives
+
+In this lad, you will:
+- deploy an Autonomous database using the DRAGON Stack manager
+- deploy a JSON documents generator as a micro-service
+
+### Prerequisites
+
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+## Introducing MoviE-Commerce
+
+MoviE-Commerce is a startup selling movies online. As part of their strategy, MoviE-Commerce website is being built 100% on cloud
+computing infrastructure.
+
+You are one of the developers recently recruited, and you've been assigned to the e-shop development team. This is your
+first week, your first JIRA issues are awaiting you..., but you're not alone: Oracle Cloud Services and Oracle Technologies
+will help you.
+
 ### DRAGON Stack manager to the rescue
 
 The easiest way to set up these 2 components of your architecture will be to use the [DRAGON Stack manager](https://bit.ly/DRAGONStackManager). 
@@ -92,15 +111,18 @@ The DRAGON Stack manager is an open-source project which provides the fastest wa
     ```
 
 6. Copy the public key (from the BEGIN RSA PUBLIC KEY to the end of END RSA PUBLIC KEY, including the dashes).
+
    ![Copy the public key](images/copy-key.png)
 
 ## **STEP 2:** Gather Data you need
 
 1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add API Key**.
+
    ![Select user in OCI Console](./images/select-user.png " ")
    ![Create an API key for the user](./images/create-api-key.png " ")
 
 2. Select **Paste Public Keys** and paste the content of the public key you created and click **Add**. A new finger print will be generated.
+
    ![Add a public key for the user](./images/add-public-key.png " ")
 
 Make a note of the fingerprint for later.
@@ -170,6 +192,7 @@ Save the auth token for later.
     ```
     $ <copy>./dragon-linux-x86_64-2.2.0 -help</copy>
     ```
+
    ![Help for DRAGON Stack manager](./images/dragon-help.png)
 
 2. Create the DRAGON Stack along the Purchase Orders JSON generator:
@@ -220,7 +243,7 @@ Save the auth token for later.
 
 You should see the generator loading data into the purchase_orders collection. 
 
-You may now [proceed to the next lab](#next).
+You may now [proceed to the next lab](#next): Understanding best practices for JSON data loading...
 
 ## Learn More
 

@@ -17,6 +17,14 @@
             "filename": "../../setup/setup.md"
         },
         {
+            "title": "Lab 2: Loading JSON data",
+            "filename": "../../data-loading/data-loading.md"
+        },
+        {
+            "title": "Lab 3: Indexing JSON data",
+            "filename": "../../indexing/indexing.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
