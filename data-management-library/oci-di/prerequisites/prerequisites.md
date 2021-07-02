@@ -3,7 +3,8 @@
 ## Introduction
 
 This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure.
-When using your own paid tenancy, several of these tasks need to be performed by the Cloud Administrator for your tenancy. When using the Free Tier Oracle Cloud account, you are the Cloud Administrator so you can perform all of the steps below.
+
+When using your own **paid tenancy**, several of these tasks need to be performed by the Cloud Administrator for your tenancy. When using the **Free Tier** Oracle Cloud account, you are the Cloud Administrator so you can perform all of the steps below.
 
 *Estimated Lab Time*: 1 hour
 
@@ -18,28 +19,29 @@ In this lab, you will:
 
 ## Prerequisites
 
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+* Free Tier/ Paid Oracle Cloud Account
 * Oracle Cloud Account credentials (Username, Password and Tenant)
 
 ## **STEP 1**: Create an OCI Compartment
 
-A compartment is a collection of cloud assets. A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Integration resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Integration resources that you will use in the workshop.
+A **compartment** is a collection of cloud assets. For this workshop, we are creating a new compartment to help organize all of the Data Integration resources. However, if you already have a compartment, you can use that one for this Workshop.
+A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Integration resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Integration resources that you will use in the workshop.
 
 1. **Log in to the Oracle Cloud Console** as a user with administrator privileges. On the Sign In page, select your tenancy, enter your username and password, and then click **Sign In**. The Oracle Cloud Console Home page is displayed.
-    ![](./images/console.png " ")
+![](./images/console.png " ")
 
 2. From the OCI console menu, select **Identity & Security**. Under Identity section, click on **Compartments**.
-    ![](./images/di-compartments-menu.png " ")
+  ![](./images/di-compartments-menu.png " ")
 
 3. In the Compartments page, we have the list of our existing compartments (if any). Click on the **Create Compartment** button to create a sub-compartment.
   ![](./images/create-comp-button.png " ")
 
 4. In the **Create Compartment** dialog box:
-* Enter a **Name** for the compartment (Enter "DI-compartment" in the Name field)
-* Enter a meaningful **Description** (Enter "Compartment for Data Integration resources" in the Description field)
+* Enter a **Name** for the compartment: `DI-compartment`
+* Enter a meaningful **Description**: `Compartment for Data Integration resources`
 * In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
-* Then click **Create Compartment**.
-  ![](./images/create-comp.png " ")
+* Then click **Create Compartment**
+![](./images/create-comp.png " ")
 
 5. The Compartments page is displayed and the newly created compartment is shown in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
   ![](./images/new-comp.png " ")
@@ -47,11 +49,11 @@ A compartment is a collection of cloud assets. A Cloud Administrator can optiona
 
 ## **STEP 2:** Create an OCI user and assign it to OCI Group
 
-A Cloud Administrator has complete control over all of the resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more data integration administrators. To create a new data integration administrator for a service, a Cloud Administrator must create a user and then add that user to a DI administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
+A Cloud Administrator has complete control over all of the resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more data integration administrators. To create a new data integration administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Integration administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
 *Note*:
-If you have created an *Oracle Cloud Account Free Tier* to do the workshop, you are already the *Administrator*. In this workshop, you will not login to OCI using the new `di-admin` user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new `di-admin` user. The user must change the password when they sign in to the Console. For detailed information on this topic, see [Managing User Credentials](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.*
-In case you are a *Non-admin user*, you can ask your administrator to run this step and later on you can login using the `di-admin` user.
+If you have created an **Oracle Cloud Account Free Tier** to do the workshop, you are already the *Administrator*. In this workshop, you will not login to OCI using the new `di-admin` user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new `di-admin` user. The user must change the password when they sign in to the Console. For detailed information on this topic, see [Managing User Credentials](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
+In case you are a *Non-admin user*, you can ask your Cloud administrator to run this step and later on you can login using the `di-admin` user.
 
 Create a new Administrator group that will have full access rights to the new di-compartment as follows:
 
@@ -65,14 +67,14 @@ Create a new Administrator group that will have full access rights to the new di
 * Select **IAM User** as the user type
 * Enter `di-admin` in the **Name** field
 * Enter `Workshop OCI Data Integration User` in the **Description** field
-* Click **Create**.
+* Click **Create**
 ![](./images/create-user.png " ")
 
 4. The **Users Details** page for the new `di-admin` user is displayed.
 ![](./images/di-user-details.png " ")
 
 5. We will now create a Data Integration group for the data integration users. From the OCI console, on the Menu click **Identity & Security**, then select **Groups** under Identity section.
-![](./images/di-groups-menu.png " ")
+ ![](./images/di-groups-menu.png " ")
 
 6. On the Groups page, click **Create Group**.
 ![](./images/create-group-button.png " ")
@@ -81,6 +83,7 @@ Create a new Administrator group that will have full access rights to the new di
 ![](./images/create-group.png " ")
 
 8. Your new group details are displayed.
+
 ![](./images/group-details.png " ")
 
 9. In the Group Members section, click **Add User to Group**.

@@ -21,7 +21,8 @@ ETL developers will be able to load a data mart in minutes without coding, quick
 **Key use cases** include:
 * Data Integration for Big Data, Data Lakes & Data Science – by efficiently loading and transforming data at scale into data lakes used for data science and analytics purposes
 * Data Integration for Data Warehousing and Analytics – by efficiently loading and transforming data at scale into data marts and data warehouses (e.g. Autonomous Data Warehouse) used for analytics purposes
-Key features
+
+**Key features** include:
 *	Visual, no-code design of ETL data flows
 *	Data immersive user experience to boost productivity
 *	Hybrid execution powered by Spark and SQL push-down capabilities
@@ -37,23 +38,23 @@ Key features
 
 ## Workshop Objectives
 
-In this lab, you will:
-* Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure
+In this workshop, you will:
+* Set up the Data Integration prerequisites in Oracle Cloud Infrastructure
 * Create an OCI Data Integration Workspace and the necessary policies
 * Create Object Storage and Autonomous Data Warehouse Data Assets in the Workspace
 * Create a Data Flow, Integration task, Data Loader task and SQL task
-* Create a Pipeline task and publish task to Application
+* Create a Pipeline, pipeline task and publish tasks into an Application
 * Schedule and run the tasks
 
 
 ## Workshop Prerequisites
 
-This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
+This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in the **Getting Started** lab in the Contents menu.
 Also:
 * Familiarity with Database is desirable, but not required
-* Some understanding of cloud and database terms is helpful
+* Some understanding of Cloud and Database terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
-* Familiarity with ETL concepts in helpful
+* Familiarity with ETL concepts is helpful
 
 ## Learn More about OCI Data Integration
 Use the following links to get more information about OCI Data Integration:
@@ -64,6 +65,6 @@ Use the following links to get more information about OCI Data Integration:
 
 ## Acknowledgements
 * **Author** -
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Contributors** -  
+* **Last Updated By/Date** -
+* **Workshop (or Lab) Expiry Date** -

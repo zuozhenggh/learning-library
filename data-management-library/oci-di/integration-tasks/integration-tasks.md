@@ -370,33 +370,28 @@ This function will fill in the null values for phone number with string 'Phone N
 ![](./images/add-cond.png " ")
 
 29. In Add Split Condition page:
-* Enter Identifier "MIDWEST_REGION"
-* For condition enter SPLIT_1.EMPLOYEES__.Region='Midwest'
+* Enter Identifier "WEST_MIDWEST_REGION"
+* For condition enter SPLIT_1.EMPLOYEES__.Region IN ('Midwest','West')
 * Click Save Changes.
 ![](./images/midwest-cond.png " ")
 
-30. The first split condition you defined is now displayed. Repeat steps 28 and 29 to add the following conditions:
-* NORTHEAST_REGION condition -  SPLIT_1.EMPLOYEES__.Region='Northeast'
-* SOUTH_REGION - SPLIT_1.EMPLOYEES__.Region='South'
-* WEST_REGION	- SPLIT_1.EMPLOYEES__.Region='West'
-After adding these conditions, the Split operator properties should look like in this picture:
+30. The first split condition you defined is now displayed. After all conditions in the split operator have been evaluated during run-time, data that does not meet a condition is directed to the Unmatched output port. The Split operator properties should look like in this picture:
 ![](./images/split-op-prop.png " ")
 
-31. Drag and drop a target operator. Connect the MIDWEST_REGION output of the Split operator to the TARGET_1 operator.
+31. Drag and drop a target operator. Connect the WEST_MIDWEST_REGION output of the Split operator to the TARGET_1 operator.
 ![](./images/first-target.png " ")
-
 
 32. In the properties for TARGET_1 operator:
 * Change to Merge Integration Strategy
 * For Data Asset, select Data_Warehouse
 * For Connection, select Beta connection
 * For Schema. select Beta
-* For Data Entity, select EMPLOYEES_MIDWEST (this target table was created with the prerequisites SQL script you ran on the ADW)
+* For Data Entity, select EMPLOYEES_WEST_MIDWEST (this target table was created with the prerequisites SQL script you ran on the ADW)
 * For Staging Location, select your Object Storage bucket (DI-bucket)
 * Merge Key will automatically get populated with the primary key name of the table, from the database
-![](./images/employees-midwest.png " ")
+![](./images/employees-west-midwest.png " ")
 
-33. Go to Map tab of the EMPLOYEES_MIDWEST target operator. You can see that there are 4 attributes that were not mapped automatically in the target.
+33. Go to Map tab of the EMPLOYEES_WEST_MIDWEST target operator. You can see that there are 4 attributes that were not mapped automatically in the target.
 ![](./images/attr-not-mapped.png " ")
 
 34. Manually map the Not Mapped attributes from the target:
@@ -404,20 +399,11 @@ After adding these conditions, the Split operator properties should look like in
 * Drag and drop Father_s_Name from source to FATHERS_NAME attribute from target
 * Drag and drop Mother_s_Name from source to MOTHERS_NAME attribute from target
 * Drag and drop Last__Hike from source to LAST_HIKE attribute from target
-You are now finished mapping the attributes to the EMPLOYEES_MIDWEST target table.
+You are now finished mapping the attributes to the EMPLOYEES_WEST_MIDWEST target table.
 ![](./images/manual-map.png " ")
 
-35. Drag and drop another target operator. Connect the NORTHEAST_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_NORTHEAST. Make sure you also map all of the columns, same as in step 34.
-![](./images/notheast.png " ")
-
-36. Drag and drop another target operator. Connect the SOUTH_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_SOUTH. Make sure you also map all of the columns, same as in step 34.
-![](./images/south.png " ")
-
-37. Drag and drop another target operator. Connect the WEST_REGION output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_WEST. Make sure you also map all of the columns, same as in step 34.
-![](./images/west.png " ")
-
-38. Drag and drop another target operator. Connect the UNMATCHED output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_NO_REGION. Make sure you also map all of the columns, same as in step 34. Entries that don't match any of the previous split conditions will refer to Unmatched condition.
-![](./images/no-region.png " ")
+35. Drag and drop another target operator. Connect the UNMATCHED output of the Split operator to the TARGET_1 operator. For Properties, do the same as in step 32 but select Data Entity EMPLOYEES_NORTHEAST_SOUTH. Make sure you also map all of the columns, same as in step 34. Entries that don't match the previous split condition will refer to Unmatched condition.
+![](./images/northeast-south.png " ")
 
 39. The design of our Data Flow is now ready. Click on Validate. The result in the Global Validation window displays no Errors and no Warnings.
 ![](./images/validate-df.png " ")
