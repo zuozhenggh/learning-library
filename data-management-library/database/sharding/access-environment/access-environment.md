@@ -118,49 +118,49 @@ This lab assumes you have already completed the following:
 
     - Connect to the catalog database.
 
-       ```
-       <copy>
-       sudo su - oracle
-       sqlplus system/Ora_DB4U@localhost:1521/catapdb
-       </copy>
-       ```
+        ```
+        <copy>
+        sudo su - oracle
+        sqlplus system/Ora_DB4U@localhost:1521/catapdb
+        </copy>
+        ```
 
        
 
     - Connect to the shard1 database.
 
-       ```
-       <copy>
-       sudo su - oracle
-       sqlplus system/Ora_DB4U@localhost:1521/shdpdb1
-       </copy>
-       ```
+        ```
+        <copy>
+        sudo su - oracle
+        sqlplus system/Ora_DB4U@localhost:1521/shdpdb1
+        </copy>
+        ```
 
        
 
     - Connect to the shard 2 database.
 
-       ```
-       <copy>
-       sudo su - oracle
-       sqlplus system/Ora_DB4U@localhost:1521/shdpdb2
-       </copy>
-       ```
+        ```
+        <copy>
+        sudo su - oracle
+        sqlplus system/Ora_DB4U@localhost:1521/shdpdb2
+        </copy>
+        ```
 
        
 
     - Connect to the shard3 database.
 
-       ```
-       <copy>
-       sudo su - oracle
-       sqlplus system/Ora_DB4U@localhost:1521/shdpdb3
-       </copy>
-       ```
+        ```
+        <copy>
+        sudo su - oracle
+        sqlplus system/Ora_DB4U@localhost:1521/shdpdb3
+        </copy>
+        ```
 
        
 
-![](./images/sqlplus_login_orclpdb.png " ")
+    ![](./images/sqlplus_login_orclpdb.png " ")
     
 6.  To leave `sqlplus` you need to use the exit command. Copy and paste the text below into your terminal to exit sqlplus.
 
@@ -183,8 +183,6 @@ You now have 4 Oracle Database 19c instances running on Oracle Cloud Compute VMs
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Minqiao Wang, DB Product Management
-* **Contributors** -  
+* **Author** - Minqiao Wang, DB Product Management 
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
-* **Workshop Expiry Date** - 
 
