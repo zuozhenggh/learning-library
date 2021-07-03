@@ -72,9 +72,9 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 ![](./images/edit-policies.png " ")
 
 6. **Replace** in the new policy statements:
-  - *<compartment-name>* with the name of your data integration Compartment (`DI-compartment)`
-  - *<group-name>* with the name of your data integration users Group (`di-group`)
-  - *<workspace-ocid>* with the workspace OCID you copied in Step 1 of this lab.
+  - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`
+  - *"group-name* with the name of your data integration users Group (`di-group`)
+  - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
 
 ![](./images/new-policy.png " ")
 
@@ -97,16 +97,16 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset** 
 
 4. The Create Data Asset dialog box appears. Fill in the following:
   - **Name**: `Object_Storage`
-  -**Description**: you can optionally enter a description about your data asset.
-  - From the **Type** dropdown, select Oracle Object Storage.
+  - **Description**: you can optionally enter a description about your data asset
+  - From the **Type** dropdown, select `Oracle Object Storage`
   - For **URL**, enter the URL for your Oracle Object Storage resource in the following format:
   ```
   <copy>https://objectstorage.<region-identifier>.oraclecloud.com
   ```
-*Note*:
-You can find the list of region identifiers at the following [link](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm). For example, if you have your Object Storage in Frankfurt region, use `https://objectstorage.eu-frankfurt-1.oraclecloud.com`
+*Note*: Replace the *"region-identifier"* with the one corresponding to the region where your Object Storage bucket is located. You can find the list of region identifiers at the following [link](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm). For example, if you have your Object Storage in Frankfurt region, use `https://objectstorage.eu-frankfurt-1.oraclecloud.com`
 
   - For **Tenant OCID**, enter the Oracle Cloud ID of your tenancy.
+
 *Note*:
 To view your tenancy OCID in the Console, from the Profile menu click Tenancy:`your_tenancy_name`. You can find the tenancy OCID under Tenancy Information and copy it from there.
 ![](./images/profile-menu.png " ")
@@ -152,7 +152,7 @@ In this workshop, **Autonomous Data Warehouse** serves as the **target data asse
 
 8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
 ```
-<copy>create user beta identified by "<password>";
+<copy>create user beta identified by "password";
 grant DWROLE to BETA;
 GRANT EXECUTE ON DBMS_CLOUD TO BETA;
 alter user BETA quota 200M on data;</copy>
@@ -239,7 +239,7 @@ alter user BETA quota 200M on data;</copy>
 ![](./images/create-asset-new.png " ")
 
 5. On the **Create Data Asset** page, for **General Information**, set the following:
-  - **Name**:`Data_Warehouse"`
+  - **Name**:`Data_Warehouse`
   - **Identifier**: Auto-generated based on the value you enter for Name
   - **Description**: It is optional to give a description for your data asset
   - **Type**: Oracle Autonomous Data Warehouse
@@ -267,7 +267,7 @@ A success or failure message displays, indicating whether the test was successfu
 ![](./images/create-asset.png " ")
 
 
-**Congratulations!**  Now you have created in Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration. You may now [proceed to the next lab](#next).
+**Congratulations!**  Now you have created the Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration. You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -278,4 +278,4 @@ A success or failure message displays, indicating whether the test was successfu
 * **Author** -
 * **Contributors** -  
 * **Last Updated By/Date** -
-* **Workshop (or Lab) Expiry Date** - 
+* **Workshop (or Lab) Expiry Date** -

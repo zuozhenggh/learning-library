@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab will walk you through the steps to create a Data Flow, Data Integration task and a Data Loader task in OCI Data Integration.
+This lab will walk you through the steps to create **two Data Flows**, **Integration tasks**, a **Data Loader task** and a **SQL task** in OCI Data Integration.
 
-Estimated Lab Time: 60 minutes
+*Estimated Lab Time*: 60 minutes
 
 ## Objectives
 In this lab, you will:
@@ -15,155 +15,160 @@ In this lab, you will:
 * Create a SQL task
 
 ## Prerequisites
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* You completed Lab 0, Lab 1, Lab 2 of this LiveLabs workshop
-
+* Free Tier/ Paid Oracle Cloud Account
+* All previous labs have been successfully completed
 
 ## **STEP 1:** Create an OCI Data Integration project
 
-In Oracle Cloud Infrastructure Data Integration, data flows and tasks can only be created in a project or folder.
+In Oracle Cloud Infrastructure Data Integration, a **project** is the container for design-time resources, such as tasks or data flows and pipelines.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
-2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). Click on your **Workspace** (DI-workspace).
+2. From the Workspaces page, make sure that you are in the compartment for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 ![](./images/workspaces-click.png " ")
 
-3. On your workspace Home page, click Open tab (plus icon) in the tab bar, select Projects.
+3. On your workspace home page, click **Open tab** (plus icon) in the tab bar and then select **Projects**.
 ![](./images/click-projects.png " ")
 
-4. On the Projects page, click Create Project.
-![](./images/click-projects.png " ")
+4. On the Projects page, click **Create Project**.
+![](./images/create-project.png " ")
 
-5. On the Create Project page, enter DI_Workshop for Name and an optional Description, and then click Save.
+5. On the Create Project page, enter `DI_Workshop` for **Name** and an optional **Description**, and then click **Save**.
 ![](./images/create-project-page.png " ")
 
-6. You are now in the Project Details page for DI_Workshop project.
+6. You are now in the **Project Details** page for `DI_Workshop` project.
 ![](./images/di-workshop-project.png " ")
 
 ## **STEP 2:** Create a Data Flow - 1
-A data flow is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
+A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
-You will create a data flow to ingest data from two source files, containing customers (CUSTOMERS_JSON) and orders (REVENUE_CSV) information.
-1. From the Project Details page for DI_Workshop project, click on **Data Flows** from the submenu.
+You will create a data flow to ingest data from two source files, containing customers (CUSTOMERS.json) and orders (REVENUE.csv) information.
+
+1. From the **Project Details** page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
 
-2. Click Create Data Flow.
+2. Click **Create Data Flow**.
 ![](./images/click-create-df.png " ")
 
-3. The data flow designer opens in a new tab. In the Properties panel, for Name, enter "Load Customers and Revenue Data", and click Save.
+3. The data flow designer opens in a new tab. In the Properties panel, for **Name**, enter `Load Customers and Revenue Data`, and click **Save**.
 ![](./images/df-new.png " ")
 
-4. You will add your Source operator. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
+4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, **drag and drop a Source operator** onto the canvas.
 ![](./images/source-op.png " ")
 
-5. On the canvas, select SOURCE_1 operator. The Properties panel now displays the details for this operator.
-In the Details tab, click Select next to each of the following options to make your selections:
-- For Data Asset, select Object_Storage.
-- For Connection, select Default Connection.
-- For Schema, select your compartment and then your bucket. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
+5. On the canvas, select **SOURCE_1 operator**. The Properties panel now displays the details for this operator.
+
+In the **Details** tab, click Select next to each of the following options to make your selections:
+  - For **Data Asset**, select `Object_Storage`
+  - For **Connection**, select `Default Connection`
+  - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
 ![](./images/comp-bucket.png " ")
-- For Data Entity, click on "Browse by name", select CUSTOMERS.json and then click JSON for the file type.
+  - For **Data Entity**, click on **Browse by name**. Select `CUSTOMERS.json` and then choose **JSON** for the file type.
 ![](./images/select-file.png " ")
 ![](./images/select-entity.png " ")
 
 In the end, your details for the source operator should look like this:
-![](./images/source-details.png " ")
+![](./images/source-operator-details.png " ")
 
-6. When you complete your selections for SOURCE_1, the operator name becomes CUSTOMERS_JSON, reflecting your data entity selection. In the Identifier field, rename the source operator to **CUSTOMERS**.
+6. When you complete your selections for **SOURCE\_1**, the operator name becomes **CUSTOMERS\_JSON**, reflecting your data entity selection. In the Identifier field, rename the source operator to **CUSTOMERS**.
 ![](./images/customers.png " ")
 
-7. You will now drag and drop onto the data flow canvas another source operator.
+7. You will now drag and drop onto the data flow canvas another **source operator**.
 ![](./images/new-source.png " ")
 
-8.  On the canvas, select the new source operator. You will now fill  in the details for this new source, in Properties panel.
-- For Data Asset, select Object_Storage.
-- For Connection, select Default Connection.
-- For Schema, select your compartment and then your bucket. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
-- For Data Entity, click on "Browse by name", select REVENUE.csv and then click CSV  for the file type. Accept the default values for the remaining items.
+8.  On the canvas, select the new source operator. You will now fill in the details for this new source, in **Properties** panel:
+  - For **Data Asset**, select `Object_Storage`
+  - For **Connection**, select `Default Connection`
+  - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
+  - For **Data Entity**, click on **Browse by name**. Select `REVENUE.csv` and then choose **CSV**  for the file type. Accept the default values for the remaining items.
 ![](./images/revenue-csv.png " ")
 
 In the end, your details for this new source operator should look like this:
-![](./images/csv-source-operator.png " ")
+![](./images/csv-source.png " ")
 
-9. When you complete your selections for SOURCE_2, the operator name becomes REVENUE_CSV, reflecting your data entity selection. In the Identifier field, rename the source operator to **REVENUE**.
+9. When you complete your selections for **SOURCE\_2**, the operator name becomes **REVENUE\_CSV**, reflecting your data entity selection. In the Identifier field, rename the source operator to **REVENUE**.
 ![](./images/revenue.png " ")
 
 10. While you still have the **REVENUE** operator selected, click on **Attributes** tab in Properties panel.
-In the Attributes tab, you can view the data entity's attributes and apply exclude or rename rules to the attributes from their respective Actions icon (three dots). You can also use the filter icon on the Name or Type column to apply one or more filters on the attributes to be excluded.
+In the Attributes tab, you can view the data entity's attributes and apply **exclude** or **rename** rules to the attributes from their respective **actions icon** (three dots). You can also use the **filter** icon on the Name or Type column to apply one or more filters on the attributes to be excluded.
 ![](./images/prop-attributes.png " ")
 
-11. While you still have the **REVENUE** operator selected, click on **Data** tab in Properties panel. In the Data tab, you can view a sampling of data from the source data entity. Scroll to the right and click on field REVENUE_CSV.CURRENCY to view the data profile.
+11. While you still have the **REVENUE** operator selected, click on **Data** tab in Properties panel. In the Data tab, you can view a sampling of data from the source data entity. Scroll to the right and click on field REVENUE_CSV.CURRENCY to view the **data profile**.
 ![](./images/currency-profile.png " ")
 
-12. In the Validation tab, check for warnings or errors with the configuration of the source operators.
+12. In the **Validation tab**, you can check for warnings or errors with the configuration of the source operators. The message "No items found" after clicking on the Validate button tells us that there are no warnings or errors with the operator.
 ![](./images/validate-revenue.png " ")
 
-13. You will now filter your source data. The Filter operator produces a subset of data from an upstream operator based on a condition. From the Operators panel, drag and drop a Filter operator onto the canvas.
+13. You will now **filter your source data**. The **Filter operator** produces a subset of data from an upstream operator based on a condition. From the Operators panel, drag and drop a Filter operator onto the canvas.
 ![](./images/canvas-filter.png " ")
 
-14. Connect REVENUE source operator to FILTER_1 operator:
-- Place your cursor on REVENUE.
-- Click the connector circle at the side of REVENUE.
+14. Connect **REVENUE** source operator to **FILTER_1** operator:
+  - Place your cursor on REVENUE.
+  - Click the connector circle at the side of REVENUE.
 ![](./images/revenue-operator.png " ")
 
-- Drag and drop the connector to FILTER_1.
+  - Drag and drop the connector to FILTER_1.
+
 ![](./images/connect-revenue-filter.png " ")
 
-15. Click on FILTER_1 on the Data Flow Canvas.
+
+15. Click on **FILTER_1** on the Data Flow Canvas.
 ![](./images/click-filter.png " ")
 
-16. In the Properties panel of FILTER_1, click Create for Filter Condition.
+16. In the Properties panel of FILTER_1, click **Create** for **Filter Condition**.
 ![](./images/click-create-filter.png " ")
 
-17. You will now add your filter condition:
-- In the Create Filter Condition panel, enter "STA" in the Filter by name search field
-- Double-click or drag and drop ORDER_STATUS to add it to the filter condition editor.
+17. You will now add your **filter condition**:
+  - In the Create Filter Condition panel, enter **STA** in the Incoming attributes search field
+  - Double-click or drag and drop **ORDER_STATUS** to add it to the filter condition editor
 ![](./images/filter-cond.png " ")
-- In the condition editor, enter ='1-Booked', so your condition looks like the following:
-FILTER_1.REVENUE_CSV.ORDER_STATUS='1-Booked'
+  - In the condition editor, enter **='1-Booked'**, so your condition looks like the following:
+**FILTER\_1.REVENUE_CSV.ORDER_STATUS='1-Booked'**.
 ![](./images/filter-condition.png " ")
-Note: To avoid issues with the quotes, do not copy and paste.
-- Click Create.
+*Note: To avoid issues with the quotes, do not copy and paste.*
+  - Click **Create**.
 ![](./images/create-button.png " ")
 
-18. The details for FILTER_1 operator should now look like this:
+18. The details for **FILTER_1 operator** should now look like this:
 ![](./images/filter-details.png " ")
 
-19. From the Operators panel, drag and drop a new Filter operator onto the canvas after CUSTOMERS. Connect CUSTOMERS to FILTER_2.
+19. From the Operators panel, drag and drop a new **Filter operator** onto the canvas after CUSTOMERS. **Connect CUSTOMERS to FILTER_2**.
 ![](./images/new-filter.png " ")
 
-20. In the Properties panel of FILTER_2, click Create for Filter Condition.
+20. In the Properties panel of FILTER_2, click **Create** for **Filter Condition**.
 ![](./images/new-filter-cond.png " ")
 
-21. You will now add your filter condition for FILTER_2:
-- In the Create Filter Condition panel, enter COU in the Filter by name search field.
-- Double-click COUNTRY_CODE to add it to the Filter condition editor.
-- Enter ='US', so your condition looks like the following: FILTER_2.CUSTOMERS_JSON.COUNTRY_CODE='US'
-- Click Create.
+21. You will now add your **filter condition** for **FILTER_2**:
+  - In the Create Filter Condition panel, enter **COU** in the Incoming attributes search field
+  - Double-click **COUNTRY_CODE** to add it to the Filter condition editor
+  - Enter **='US'**, so your condition looks like the following: **FILTER\_2.CUSTOMERS_JSON.COUNTRY_CODE='US'**
+  - Click **Create**.
 ![](./images/new-filter-create.png " ")
 
-22. The details for FILTER_2 operator should now look like this:
+22. The details for **FILTER_2 operator** should now look like this:
 ![](./images/filter-new-details.png " ")
 
-23. You will now work on the Data Transformation part of your Data Flow. In the Properties panel for FILTER_2, click the Data tab.
+23. You will now work on the **Data Transformation** part of your Data Flow. In the Properties panel for FILTER_2, click the **Data** tab.
 All data rows and attributes are displayed. You can use the vertical scrollbar to scroll the rows, and the horizontal scrollbar to scroll the attributes.
 ![](./images/data-tab.png " ")
 
-24. In the Filter by pattern search field, enter STATE*.
+24. In the Filter by pattern search field, enter `STATE*`.
 The number of attributes in the table are filtered. Only those attributes that match the pattern are displayed.
 ![](./images/filter-state.png " ")
 
-25. Click the transformations icon (three dots) for FILTER_2.CUSTOMERS_JSON.STATE_PROVINCE, and then select Change Case.
+25. Click the **transformations icon** (three dots) for `FILTER\_2.CUSTOMERS\_JSON.STATE\_PROVINCE`, and then select **Change Case**.
 ![](./images/change-case.png " ")
 
-26. In the Change Case dialog:
-- From the Type drop-down, select UPPER.
-- Do not select the check box Keep Source Attributes.
-- Leave the Name as-is.
-- Click Apply.
+26. In the **Change Case** dialog:
+  - From the **Type** drop-down, select **UPPER**
+  - Do **not** select the check box Keep Source Attributes
+  - Leave the **Name** as-is
+  - Click **Apply**.
+
 ![](./images/change-case-apply.png " ")
+
 
 27. An Expression operator is added to the data flow. In the Properties panel, the Details tab is now in focus, showing the expression details. You can see the generated expression, UPPER(EXPRESSION_1.CUSTOMERS_JSON.STATE_PROVINCE), in the Expressions table.
 ![](./images/expression-operator.png " ")
