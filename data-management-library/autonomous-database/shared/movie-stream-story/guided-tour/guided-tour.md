@@ -1,4 +1,4 @@
-# Title of the lab
+# A Guided Tour Of The Autonomous Data Warehouse Console
 
 ## Introduction
 
