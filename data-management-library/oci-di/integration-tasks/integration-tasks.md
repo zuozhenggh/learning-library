@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to create **two Data Flows**, **Integration tasks**, a **Data Loader task** and a **SQL task** in OCI Data Integration.
 
-*Estimated Lab Time*: 60 minutes
+*Estimated Lab Time*: 1 hour
 
 ## Objectives
 In this lab, you will:
@@ -44,7 +44,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
-You will create a data flow to ingest data from two source files, containing customers (CUSTOMERS.json) and orders (REVENUE.csv) information.
+You will create a data flow to ingest data from **two source files**, containing customers (`CUSTOMERS.json`) and orders (`REVENUE.csv`) information.
 
 1. From the **Project Details** page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
@@ -124,12 +124,16 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
   - In the Create Filter Condition panel, enter **STA** in the Incoming attributes search field
   - Double-click or drag and drop **ORDER_STATUS** to add it to the filter condition editor
 ![](./images/filter-cond.png " ")
-  - In the condition editor, enter **='1-Booked'**, so your condition looks like the following:
-**FILTER\_1.REVENUE_CSV.ORDER_STATUS='1-Booked'**.
+  - In the condition editor, enter `='1-Booked'`, so your condition looks like the following:
+
+`FILTER_1.REVENUE_CSV.ORDER_STATUS='1-Booked'`.
 ![](./images/filter-condition.png " ")
 *Note: To avoid issues with the quotes, do not copy and paste.*
+
   - Click **Create**.
+
 ![](./images/create-button.png " ")
+
 
 18. The details for **FILTER_1 operator** should now look like this:
 ![](./images/filter-details.png " ")
@@ -143,7 +147,7 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 21. You will now add your **filter condition** for **FILTER_2**:
   - In the Create Filter Condition panel, enter **COU** in the Incoming attributes search field
   - Double-click **COUNTRY_CODE** to add it to the Filter condition editor
-  - Enter **='US'**, so your condition looks like the following: **FILTER\_2.CUSTOMERS_JSON.COUNTRY_CODE='US'**
+  - Enter `='US'`, so your condition looks like the following: `FILTER_2.CUSTOMERS_JSON.COUNTRY_CODE='US'`
   - Click **Create**.
 ![](./images/new-filter-create.png " ")
 
@@ -154,11 +158,11 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 All data rows and attributes are displayed. You can use the vertical scrollbar to scroll the rows, and the horizontal scrollbar to scroll the attributes.
 ![](./images/data-tab.png " ")
 
-24. In the Filter by pattern search field, enter `STATE*`.
+24. In the **Filter by pattern** search field, enter `STATE*`.
 The number of attributes in the table are filtered. Only those attributes that match the pattern are displayed.
 ![](./images/filter-state.png " ")
 
-25. Click the **transformations icon** (three dots) for `FILTER\_2.CUSTOMERS\_JSON.STATE\_PROVINCE`, and then select **Change Case**.
+25. Click the **transformations icon** (three dots) for `FILTER_2.CUSTOMERS_JSON.STATE_PROVINCE`, and then select **Change Case**.
 ![](./images/change-case.png " ")
 
 26. In the **Change Case** dialog:
@@ -170,84 +174,85 @@ The number of attributes in the table are filtered. Only those attributes that m
 ![](./images/change-case-apply.png " ")
 
 
-27. An Expression operator is added to the data flow. In the Properties panel, the Details tab is now in focus, showing the expression details. You can see the generated expression, UPPER(EXPRESSION_1.CUSTOMERS_JSON.STATE_PROVINCE), in the Expressions table.
+27. An **Expression operator** is added to the data flow. In the Properties panel, the Details tab is now in focus, showing the expression details. You can see the generated expression, `UPPER(EXPRESSION_1.CUSTOMERS_JSON.STATE_PROVINCE)`, in the Expressions table.
 ![](./images/expression-operator.png " ")
 
-28. With the new Expression_1 operator selected in the data flow, in the Properties panel, change the name in Identifier to CHANGE_CASE.
+28. With the new **EXPRESSION_1** operator selected in the data flow, in the Properties panel, change the name in Identifier to **CHANGE_CASE**.
 ![](./images/expression-name.png " ")
 
-29. Click the Data tab, and then use the horizontal scrollbar to scroll to the end. EXPRESSION_1.STATE_PROVINCE is added to the end of the dataset. You can preview the transformed data for EXPRESSION_1.STATE_PROVINCE in the Data tab.
+29. Click the **Data** tab, and then use the horizontal scrollbar to scroll to the end. **EXPRESSION_1.STATE_PROVINCE** is added to the end of the dataset. You can preview the transformed data for EXPRESSION\_1.STATE\_PROVINCE in the Data tab.
 ![](./images/state-province.png " ")
 
-30. From the Operators panel, drag and drop a new Expression operator onto the canvas after CHANGE_CASE. Connect CHANGE_CASE to the new Expression.
+30. From the Operators panel, drag and drop a **new Expression** operator onto the canvas after **CHANGE_CASE** operator. Connect CHANGE\_CASE to the new Expression.
 ![](./images/new-expression.png " ")
 
-31. With EXPRESSION_2 selected, in the Properties panel, change the name in Identifier to CONCAT_FULL_NAME and then click Add Expression button in the Expressions table.
+31. With **EXPRESSION_2** selected, in the Properties panel, change the name in Identifier to **CONCAT_FULL_NAME** and then click **Add Expression** button in the Expressions table.
 ![](./images/add-expression.png " ")
 
-32. In the Add Expression panel:
-- Rename the expression to FULLNAME in the Identifier field.
-- Keep Data Type as VARCHAR.
-- Set Length to 200.
-- Under Expression Builder, switch from the Incoming list to the Functions list.
-- In the filter by name search field, enter CON. Then locate CONCAT under String. You can either search for CONCAT in the functions list yourself, or enter CON to use the auto-complete functionality.
-- Enter CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME) in the expression box.
+32. In the **Add Expression** panel:
+  - Rename the expression to `FULLNAME` in the **Identifier** field.
+  - Keep **Data Type** as `VARCHAR`.
+  - Set **Length** to `200`.
+  - Under Expression Builder, switch from the Incoming list to the **Functions list**.
+  - In the **filter by name search field**, enter `CON`. Then locate `CONCAT` under String. You can either search for CONCAT in the functions list yourself, or enter CON to use the auto-complete functionality.
+  - Enter `CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)` in the **expression box**.
 You can also highlight a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
-- Click Add.
+  - Click **Add**.
+
 ![](./images/expression-conditions.png " ")
 
-33. The new expression is now listed in the Expression operator. You can add as many expressions as you want.
+
+33. The new expression is now listed in the **Expression operator**. You can add as many expressions as you want.
 ![](./images/final-expression.png " ")
 
 34. After you apply filters and transformations, you can join the source data entities using a unique customer identifier, and then load the data into a target data entity.
-To join the data from expression CONCAT_FULL_NAME with the data from FILTER_1, drag and drop a Join operator from the Operators panel onto the canvas next to CONCAT_FULL_NAME and FILTER_1. Connect CONCAT_FULL_NAME to JOIN_1 and then connect FILTER_1 to JOIN_1.
+To join the data from expression **CONCAT_FULL_NAME** with the data from **FILTER_1**, drag and drop a **Join operator** from the Operators panel onto the canvas next to CONCAT\_FULL\_NAME and FILTER\_1. Connect CONCAT\_FULL\_NAME to JOIN\_1 and then connect FILTER\_1 to JOIN\_1.
 ![](./images/add-join.png " ")
 
-35. With JOIN_1 selected, in the Details tab of the Properties panel, click Create next to Join Condition.
+35. With JOIN_1 selected, in the Details tab of the Properties panel, click **Create** next to **Join Condition**.
 ![](./images/create-join-cond.png " ")
 
-36. In the Create Join Condition panel:
-- Enter CUST in the filter by name search field.
-- You want to join the entities using CUST_ID and CUST_KEY. In the editor, enter JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY.
-- Click Create.
+36. In the **Create Join Condition panel**:
+  - Enter `CUST` in the filter by name search field
+  - You want to join the entities using CUST\_ID and CUST\_KEY. In the editor, enter `JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY`
+  - Click **Create**.
 ![](./images/join-cond.png " ")
 
-37. Your Join operator properties should now look like this:
+37. Your **Join operator properties** should now look like this:
 ![](./images/join-prop.png " ")
 
-38. From the Operators panel, drag and drop a Target operator onto the canvas. Connect JOIN_1 to TARGET_1.
+38. From the Operators panel, drag and drop a **Target operator** onto the canvas. Connect JOIN\_1 to TARGET\_1.
 ![](./images/target-op.png " ")
 
-39. With TARGET_1 selected on the canvas, in the Details tab of the Properties panel complete the fields accordingly:
-* Leave the default value for Integration Strategy as Insert.
-* Next, click Select for each of the following options to make your selections for a data entity:
-* For Data Asset, select Data_Warehouse.
-* For Connection, select Beta Connection.
-* For Schema, select BETA.
-* For Data Entity, select CUSTOMERS_TARGET.
-* For Staging Location, select the Object Storage data asset, its default connection, and your compartment. Then for Schema, select the Object Storage bucket that you created while importing the sample data. Click Select.
+39. With **TARGET_1** selected on the canvas, in the **Details** tab of the Properties panel complete the fields accordingly:
+  - Leave the default value for **Integration Strategy** as **Insert**
+  - For **Data Asset**, select `Data_Warehouse`
+  - For **Connection**, select `Beta Connection`
+  - For **Schema**, select `BETA`
+  - For **Data Entity**, select `CUSTOMERS_TARGET`
+  - For **Staging Location**, select the **Object Storage data asset**, its **default connection** and your **compartment**. Then for **Schema**, select the **Object Storage bucket** that you created before importing the sample data (in Lab 0). Click **Select**.
 ![](./images/staging-location.png " ")
 
-40. The properties details for CUSTOMERS_TARGET operator should now look like this:
-![](./images/properties-tgt.png " ")
+40. The properties details for **CUSTOMERS_TARGET operator** should now look like this:
+![](./images/target-operator-properties.png " ")
 
-41. To review the Attributes mapping, click the Map tab. By default, all attributes are mapped by name. For example, CUST_ID from JOIN_1 maps to CUST_ID in the target data entity.
+41. To review the Attributes mapping, click the **Map tab**. By default, all attributes are **mapped by name**. For example, CUST\_ID from JOIN\_1 maps to CUST\_ID in the target data entity.
 ![](./images/mappings.png " ")
 
-42. To manually map attributes that are not yet mapped, click the All drop-down in the Target attributes table, and then select Attributes not mapped. You can do the same in the Source attributes table (for the incoming fields).
+42. To manually map attributes that are not yet mapped, click the **All** drop-down in the Target attributes table, and then select** Attributes not mapped**. You can do the same in the Source attributes table (for the incoming fields). You can see that there is one attribute that is not mapped, more specifically attribute FULL_NAME from target.
 ![](./images/attributes-not-mapped.png " ")
 
-43. Now drag and drop FULLNAME under Source attributes to FULL_NAME under Target attributes. All attributes are now mapped.
+43. Now drag and drop **FULLNAME** under Source attributes to **FULL_NAME** under Target attributes. All attributes are now mapped.
 ![](./images/map-fullname.png " ")
 
-44. Click View Rules to filter and view the applied Rules.
+44. Click **View Rules** to filter and view the applied Rules.
 ![](./images/view-rules.png " ")
 ![](./images/rules.png " ")
 
-45. You have now completed the data flow. Click on Validate to see the validation output. There shouldn't be any warnings or errors.
+45. You have now completed the data flow. Click on **Validate** to see the validation output. There shouldn't be any warnings or errors.
 ![](./images/validate.png " ")
 
-46. To save the data flow, click Save.
+46. To save the data flow, click **Save**.
 ![](./images/save-df.png " ")
 
 ## **STEP 3:** Create a Data Flow - 2
