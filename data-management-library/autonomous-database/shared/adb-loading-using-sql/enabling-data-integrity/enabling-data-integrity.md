@@ -43,7 +43,7 @@ A unique constraint designates a column (it could also be a group of columns) a
 
     ![Error message showing duplicates](images/data-loading-lab3-step2-substep-3.png)
 
-    **NOTE:** The data integrity checking does not depend on the name of the source data file. We could use a different filename (i.e. a filename that has not been used before) and we would get the same result - an error message that indicates the data file contains records that have already been loaded.
+    **NOTE:** The data integrity checking does not depend on the name of the source data file. We could use a different filename (i.e. a filename that has not been used before) and we would get the same result - an error message indicating the data file contains records that have already been loaded.
 
 4. Check the value of total sales in the `movie_sales_fact` table:
 
