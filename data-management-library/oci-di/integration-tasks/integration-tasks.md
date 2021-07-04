@@ -192,12 +192,13 @@ The number of attributes in the table are filtered. Only those attributes that m
 ![](./images/add-expression.png " ")
 
 32. In the **Add Expression** panel:
-  - Rename the expression to `FULLNAME` in the **Identifier** field.
-  - Keep **Data Type** as `VARCHAR`.
-  - Set **Length** to `200`.
-  - Under Expression Builder, switch from the Incoming list to the **Functions list**.
-  - In the **filter by name search field**, enter `CON`. Then locate `CONCAT` under String. You can either search for CONCAT in the functions list yourself, or enter CON to use the auto-complete functionality.
-  - Enter `CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)` in the **expression box**.
+  - Rename the expression to `FULLNAME` in the **Identifier** field
+  - Keep **Data Type** as `VARCHAR`
+  - Set **Length** to `200`
+  - Under Expression Builder, switch from the Incoming list to the **Functions list**
+  - In the **filter by name search field**, enter `CON`. Then locate `CONCAT` under String. You can either search for CONCAT in the functions list yourself, or enter CON to use the auto-complete functionality
+  - Enter
+  `CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)` in the **expression box**.
 You can also highlight a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
   - Click **Add**.
 
@@ -235,7 +236,9 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
   - For **Schema**, select `BETA`
   - For **Data Entity**, select `CUSTOMERS_TARGET`
   - For **Staging Location**, select the **Object Storage data asset**, its **default connection** and your **compartment**. Then for **Schema**, select the **Object Storage bucket** that you created before importing the sample data (in Lab 0). Click **Select**.
+
 ![](./images/staging-location.png " ")
+
 
 40. The properties details for **CUSTOMERS_TARGET operator** should now look like this:
 ![](./images/target-operator-properties.png " ")
@@ -264,108 +267,120 @@ To further explore the capabilities of Data Flows in OCI Data Integration, you w
 
 This Data Flow will load data from **multiple source files** using File Patterns functionality in OCI Data Integration. After, you will do transformations on the data and later load the data in **multiple target tables**, based on the region. We will take advantage of the **Split operator** in OCI Data Integration.
 
-1. From the Project Details page for DI_Workshop project, click on **Data Flows** from the submenu.
+1. From the Project Details page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
 
-2. Click Create Data Flow.
+2. Click **Create Data Flow**.
 ![](./images/click-create-df.png " ")
 
-3. The data flow designer opens in a new tab. In the Properties panel, for Name, enter "Load Employees by Region", and click Save.
+3. The data flow designer opens in a new tab. In the **Properties panel**, for **Name**, enter `Load Employees by Region`, and click **Save**.
 ![](./images/load-emp.png " ")
 ![](./images/save-button.png " ")
 
 
-4. You will add your Source operator. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
+4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
 ![](./images/source-op-new.png " ")
 
-5.  On the canvas, select SOURCE_1 operator. The Properties panel now displays the details for this operator.
+5.  On the canvas, select **SOURCE_1** operator. The Properties panel now displays the details for this operator.
 In the Details tab, click Select next to each of the following options to make your selections:
-* For Data Asset, select Object_Storage.
-* For Connection, select Default Connection.
-* For Schema, select your compartment and then your bucket. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
-![](./images/browse-pattern.png " ")
-* For Data Entity, click on "Browse by Pattern".
-Write the file pattern "EMPLOYEES_*" and click Search. All files from your Object Storage bucket that are found with this pattern are now displayed: you have three files for employees. Click on Select Pattern.
-![](./images/employees-pattern.png " ")
-For File Type, choose CSV and leave the defaults for the other fields that appear. Click Select.
-![](./images/source-entity.png " ")
+  - For **Data Asset**, select `Object_Storage`
+  - For **Connection**, select `Default Connection`
+  - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here
+  - For **Data Entity**, click on **Browse by Pattern**.
+  ![](./images/browse-pattern.png " ")
 
-In the end, your details for the source operator should look like this:
-![](./images/source-pattern.png " ")
+  Write the file pattern `EMPLOYEES\_*` and click **Search**. All files from your Object Storage bucket that are found that match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
+  ![](./images/employees-pattern.png " ")
 
-6. Drag and drop a Distinct operator on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect EMPLOYEES__ source to the DISTINCT_1 operator.
+  For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
+  ![](./images/source-entity.png " ")
+
+  In the end, your details for the source operator should look like this:
+  ![](./images/pattern-source.png " ")
+
+6. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES__** source to the **DISTINCT_1** operator.
 ![](./images/add-distinct.png " ")
 
-7. Drag and drop an Expression operator on the data flow canvas. Connect the DISTINCT_1 operator to the new Expression operator.
+7. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT_1** operator to the new **Expression** operator.
 ![](./images/new-expres.png " ")
 
-8. In the Properties panel for EXPRESSION_1 operator, rename the Identifier to "TRANSFORM_DATAYPES".
+8. In the Properties panel for **EXPRESSION\_1** operator, rename the Identifier to **TRANSFORM\_DATAYPES**.
 ![](./images/transform-datatypes.png " ")
 
-9. You will now add a new expression. Still in the Properties panel, click on Add Expression.
+9. You will now add a **new expression**. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-exp.png " ")
 
-10. In the Add Expression panel:
-* Rename the expression to BIRTH_DATE in the Identifier field.
-* Change Data Type to DATE.
-* Enter TO_DATE(EXPRESSION_1.EMPLOYEES__.Date_of_Birth, 'MM/dd/yyyy') in the expression box. This function will transform your string value of birth date from the files to a date value, in the specified format.
-You can also find this functions on Functions tab, under Date/Time section and select it from there. Attributes can be added from Incoming tab, by highlight a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
-* Click Add.
+10. In the **Add Expression** panel:
+  - **Rename** the expression to `BIRTH_DATE` in the Identifier field
+  - Change **Data Type** to `DATE`
+  - Enter `TO\_DATE(EXPRESSION\_1.EMPLOYEES\__.Date\_of\_Birth, 'MM/dd/yyyy')` in the **expression** box. This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format.
+  You can also find this functions in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
+  - Click **Add**.
+
 ![](./images/new-exp-details.png " ")
 
-11. Your expression for BIRTH_DATE is now displayed. Click again on Add Expression to add a new one.
+
+11. Your expression for **BIRTH_DATE** is now displayed. Click again on **Add Expression** to add a new one.
 ![](./images/add-new-exp.png " ")
 
-12. In the Add Expression panel:
-* Rename the expression to YEAR_OF_JOINING in the Identifier field.
-* Change Data Type to NUMERIC.
-* Enter TO_NUMBER(EXPRESSION_1.EMPLOYEES__.Year_of_Joining) in the expression box. This function will transform your string value of year of joining from the files to a number value.
-* Click Add.
+12. In the **Add Expression** panel:
+  - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field
+  - Change **Data Type** to `NUMERIC`
+  - Enter `TO\_NUMBER(EXPRESSION\_1.EMPLOYEES\__.Year\_of\_Joining)` in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
+  - Click **Add**.
+
 ![](./images/new-num-exp.png " ")
 
-13. The expressions for the TRANSFORM_DATAYPES operator should now look like this:
+
+13. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
 ![](./images/expressions-second-df.png " ")
 
-14. Drag and drop an Expression operator on the data flow canvas. Connect the TRANSFORM_DATAYPES operator to the new Expression operator.
+14. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.
 ![](./images/new-expression-df.png " ")
 
-15. In the Properties panel for the new EXPRESSION_1 operator, rename the Identifier to "EMPLOYEE_AGE_AND_PHONE".
+15. In the Properties panel for the new **EXPRESSION\_1 operator**, rename the Identifier to **EMPLOYEE_AGE_AND_PHONE**.
 ![](./images/employee-age.png " ")
 
-16. You will now add a new expression. Still in the Properties panel, click on Add Expression.
+16. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-exp-new.png " ")
 
-17. In the Add Expression panel:
-* Rename the expression to EMPLOYEE_AGE in the Identifier field.
-* Change Data Type to NUMERIC.
-* Enter
-CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)-1) END
-in the expression box.
-This function will calculate the age of the employee, by doing a minus between the current date and his birthday. CASE WHEN function returns the value for which a condition is met.
-* Click Add.
+17. In the **Add Expression** panel:
+  - **Rename** the expression to `EMPLOYEE_AGE` in the Identifier field
+  - Change **Data Type** to `NUMERIC`
+  - Enter
+
+  `CASE WHEN DAYOFYEAR(CURRENT_DATE)>=DAYOFYEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE) THEN TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)) ELSE TRUNC(YEAR(CURRENT_DATE)-YEAR(EXPRESSION_1.EXPRESSION_1.BIRTH_DATE)-1) END`
+  in the **expression** box.
+  This function will calculate the age of the employee, by doing a minus between the current date and his birthdate. CASE WHEN function returns the value for which a condition is met.
+  *Note: In case the attributes in the expression don't get automatically highlighted, please replace them, by highlighting in the expression's placeholders and then double-click or drag and drop attributes from the Incoming list.*
+  - Click **Add**.
+
 ![](./images/new-exp-case.png " ")
 
-18. You will now add a new expression in the same operator. Still in the Properties panel, click on Add Expression.
+
+18. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-expression-phone.png " ")
 
-19. In the Add Expression panel:
-* Rename the expression to PHONE_NO in the Identifier field.
-* Leave Data Type to VARCHAR.
-* Enter COALESCE(EXPRESSION_1.EMPLOYEES__.Phone_No_, 'Phone No Not Available')	in the expression box.
-This function will fill in the null values for phone number with string 'Phone No Not Available'.
-* Click Add.
+19. In the **Add Expression** panel:
+  - **Rename** the expression to `PHONE_NO` in the Identifier field
+  - Leave **Data Type** to `VARCHAR`
+  - Enter `COALESCE(EXPRESSION_1.EMPLOYEES__.Phone_No_, 'Phone No Not Available')`	in the **expression** box
+  This function will fill in the null values for phone number with string `Phone No Not Available`.
+  - Click **Add**.
+
 ![](./images/phone-no-exp.png " ")
 
-20. The two expressions you defined for this operator are now displayed. Click on Attributes tab.
+
+20. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.
 ![](./images/attributes-tab.png " ")
 
-21. Check the following two fields: EMPLOYEES__.Age_in_Yrs_, EMPLOYEES__.Year_of_Joining. We will exclude these fields from this operator.
+21. Check the following two fields: **EMPLOYEES\_\_.Age\_in\_Yrs\_**, **EMPLOYEES\__.Year\_of\_Joining**. We will exclude these fields from this operator.
 ![](./images/check-fields.png " ")
 
-22. Click on Actions and then on Exclude by selection.
+22. Click on **Actions** and then on **Exclude by selection**.
 ![](./images/exclude-selection.png " ")
 
-23. Our fields are now excluded. Click on View Rules to see the rules you defined.
+23. The fields are now excluded. Click on View Rules to see the rules you defined.
 ![](./images/rules-exclusions.png " ")
 
 24. Click on Data tab of the EMPLOYEE_AGE_AND_PHONE operator.
