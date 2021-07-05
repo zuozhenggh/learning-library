@@ -671,7 +671,7 @@ When you create a SQL task, you can configure values for **input parameters** on
 * [SQL Task in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/sql-tasks.htm)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** -
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
