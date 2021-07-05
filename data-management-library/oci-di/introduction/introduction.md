@@ -64,7 +64,7 @@ Use the following links to get more information about OCI Data Integration:
 
 
 ## Acknowledgements
-* **Author** -
-* **Contributors** -  
-* **Last Updated By/Date** -
+* **Author** - Theodora Cristea
+* **Contributors** -  Aditya Duvuri, Rohit Saha
+* **Last Updated By/Date** - Theodora Cristea, July 2021
 * **Workshop (or Lab) Expiry Date** -

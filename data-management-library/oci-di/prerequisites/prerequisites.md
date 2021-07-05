@@ -12,7 +12,6 @@ When using your own **paid tenancy**, several of these tasks need to be performe
 
 In this lab, you will:
 * Create an OCI Compartment
-* Create an OCI user and assign it to OCI Group
 * Create a VCN and Subnet using VCN Wizard
 * Provision an Autonomous Data Warehouse and download Wallet
 * Prepare the Autonomous Data Warehouse
@@ -20,8 +19,10 @@ In this lab, you will:
 
 ## Prerequisites
 
-* Free Tier/ Paid Oracle Cloud Account
-* Oracle Cloud Account credentials (Username, Password and Tenant)
+* **Free Tier/ Paid Oracle Cloud Account**
+* **OCI user** that is assigned to an **OCI group**.
+*Note:* In case you want to create a new OCI user and/or assign the user to a group, please see the following [LiveLabs workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566) about Identity and Access Management.
+
 
 ## **STEP 1**: Create an OCI Compartment
 
@@ -50,76 +51,8 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
   ![](./images/new-comp.png " ")
 
 
-## **STEP 2:** Create an OCI user and assign it to OCI Group
-In this workshop step, you will create a new **OCI user** in charge with Data Integration, and then you will add the user to a new **group of Data Integration users**.
-
-A Cloud Administrator has complete control over all of the resources in the tenancy. To create a new OCI user, a Cloud Administrator must create a user and then add that user to a new group for users in charge of Data Integration tasks. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs. For more details, please see [Managing Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) in the OCI documentation.
-
-*Note*:
-If you are using an **Oracle Cloud Account Free Tier** to do the workshop, you are already the **Administrator**. In this workshop, you will not login to OCI using the new `di-admin` user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new `di-admin` user. The user must change the password when they sign in to the Console. For detailed information on this topic, see [Managing User Credentials](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation, as this is not in scope for the workshop.
-In case you are a **Non-admin user**, you can ask your Cloud administrator to run this step and later on you can login using the `di-admin` user. Or, assuming that you already have an OCI user, you can ask your Cloud administrator to only create the group for Data Integration users and add your already existing user to the group.
-
-1. From the OCI console menu, click **Identity & Security** and then select **Users** under Identity section.
-![](./images/di-users-menu.png " ")
-
-2. On the Users page, click **Create User**.
-![](./images/create-user-button.png " ")
-
-3. In the **Create User** dialog box:
-    - Select **IAM User** as the user type
-    - Enter `di-admin` in the **Name** field
-    - Enter `Workshop OCI Data Integration User` in the **Description** field
-    - Click **Create**.
-
-![](./images/create-user.png " ")
-
-4. The **Users Details** page for the new `di-admin` user is displayed.
-
-![](./images/di-admin-details.png " ")
-
-5. You will now create a Data Integration group for the data integration users. From the OCI console, on the Menu click **Identity & Security**, then select **Groups** under Identity section.
-![](./images/di-groups-menu.png " ")
-
-6. On the Groups page, click **Create Group**.
-![](./images/create-group-button.png " ")
-
-7. In the Create Group dialog box, enter a unique **Name** for your group, such as `di-group` and a meaningful **Description** (for example, `Group for data integration users`). Then, click **Create**.
-![](./images/create-group.png " ")
-
-8. Your new group **details** are displayed.
-
-![](./images/group-detail.png " ")
-
-9. In the Group Members section, click **Add User to Group**.
-![](./images/add-users-button.png " ")
-
-10. In the Add User to Group dialog box, select the `di-admin` user that you created earlier from the Users drop-down list, and then click **Add**.
-![](./images/add-user-to-group.png " ")
-
-11. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the Group Members section.
-
-![](./images/members-of-group.png " ")
-
-<!-- 12. Now, you will create a **security policy** that gives your group permissions in the data integration **compartment** for workshop purposes. In this example, create a policy that gives permission to compartment `di-compartment` to members of group `di-group`.
-
-a) On the OCI console menu click **Identity & Security**, and then select **Policies** under Identity section.
-![](./images/menu-policies.png " ")
-
-b) On the left side in the Policies page, make sure you have selected the `DI-compartment` in the **Compartment** drop-down list in the List Scope section. After you have selected the `DI-compartment`, click **Create Policy**.
-![](./images/create-policy.png " ")
-
-c) Enter a unique **Name** for your policy (for example, `Policy-for-di-group`) and **Description** (for example, `Policies for data integration group`).
-
-d) From the **Policy Builder**:
-- Select `Compartment Management` as the **Policy use case**.
-- Select `Let compartment admins manage the compartment` as the **Common policy templates**.
-- For **Group** select your `di-group`
-- For **Location**, select your data integration compartment (`DI-compartment`)
-The policy statement that will appear will say `Allow group di-group to manage all-resources in compartment DI-compartment`
-- Click **Create** -->
-
-## **STEP 3:** Create a VCN and Subnet using VCN Wizard
-**Oracle virtual cloud networks** (VCNs) provide customizable and private cloud networks in Oracle Cloud Infrastructure (OCI). Just like a traditional data center network, the VCN provides customers with complete control over their cloud networking environment. This includes assigning private IP address spaces, creating subnets and route tables, and configuring stateful firewalls.
+## **STEP 2:** Create a VCN and Subnet using VCN Wizard
+You will need a **Virtual cloud network** for further use in this OCI Data Integration LiveLab. **Oracle virtual cloud networks** (VCNs) provide customizable and private cloud networks in Oracle Cloud Infrastructure (OCI).
 
 1. From the OCI console menu, click **Networking** and then select **Virtual Cloud Networks**.
 ![](./images/oci-menu-vcn.png " ")
@@ -159,7 +92,7 @@ In the **Basic Information** section, provide the following information:
 ![](./images/vcn-detail.png " ")
 
 
-## **STEP 4:** Provision an Autonomous Data Warehouse and download Wallet
+## **STEP 3:** Provision an Autonomous Data Warehouse and download Wallet
 **Autonomous Data Warehouse** (ADW) is a cloud data warehouse service that eliminates all the complexities of operating a data warehouse, securing data, and developing data-driven applications. It automates provisioning, configuring, securing, tuning, scaling, and backing up of the data warehouse.
 
 1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
@@ -224,7 +157,7 @@ In the **Basic Information** section, provide the following information:
 14. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
 ![](./images/download-wallet.png " ")
 
-## **STEP 5**: Prepare the Autonomous Data Warehouse
+## **STEP 4**: Prepare the Autonomous Data Warehouse
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
 
@@ -269,7 +202,7 @@ alter user BETA quota 200M on data;</copy>
 ![](./images/beta-schema.png " ")
 
 
-## **STEP 6:** Create an Object Storage bucket and upload the sample data
+## **STEP 5:** Create an Object Storage bucket and upload the sample data
 The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform.
 
 1. From the OCI console menu, click **Storage** and then select **Buckets** under Object Storage & Archive section.
@@ -310,7 +243,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
 
 ## Acknowledgements
-* **Author** -
-* **Contributors** -  
-* **Last Updated By/Date** -
+* **Author** - Theodora Cristea
+* **Contributors** -  Aditya Duvuri, Rohit Saha
+* **Last Updated By/Date** - Theodora Cristea, July 2021
 * **Workshop (or Lab) Expiry Date** -

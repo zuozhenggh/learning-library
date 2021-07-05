@@ -125,7 +125,7 @@ In this lab step, you will now do a **manual on-demand run** of your pipeline ta
 * [Viewing Executed Task Runs](https://docs.oracle.com/en-us/iaas/data-integration/using/task-runs.htm)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Theodora Cristea
+* **Contributors** -  Aditya Duvuri, Rohit Saha
+* **Last Updated By/Date** - Theodora Cristea, July 2021
+* **Workshop (or Lab) Expiry Date** -

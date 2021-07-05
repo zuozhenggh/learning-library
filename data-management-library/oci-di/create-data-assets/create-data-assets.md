@@ -73,7 +73,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 6. **Replace** in the new policy statements:
   - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`
-  - *"group-name* with the name of your data integration users Group (`di-group`)
+  - *"group-name"* with the name of the OCI group where your user belongs to(`di-group`)
   - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
 
 ![](./images/new-policy.png " ")
@@ -176,7 +176,7 @@ A success or failure message displays, indicating whether the test was successfu
 
 
 ## Acknowledgements
-* **Author** -
-* **Contributors** -  
-* **Last Updated By/Date** -
+* **Author** - Theodora Cristea
+* **Contributors** -  Aditya Duvuri, Rohit Saha
+* **Last Updated By/Date** - Theodora Cristea, July 2021
 * **Workshop (or Lab) Expiry Date** -

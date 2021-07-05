@@ -18,7 +18,9 @@ In this lab, you will:
 
 ## **STEP 1**: Create access policies for OCI Data Integration
 
-Oracle Cloud Infrastructure Data Integration uses **standard authentication and authorization** offered by Oracle Cloud Infrastructure. **Policies** required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. To control access to Data Integration and the type of access each group of users has, you must create policies. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, the Cloud Administrator must create policies that gives them proper access to Data Integration resources.
+Oracle Cloud Infrastructure Data Integration uses **standard authentication and authorization** offered by Oracle Cloud Infrastructure. **Policies** required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, the Cloud Administrator must create policies that gives them proper access to Data Integration resources.
+
+*Note: In case you are a Non-admin user, ask your administrator to set up the policies in this Lab step.*
 
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
      ![](./images/menu.png " ")
@@ -33,8 +35,8 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
   - **Name**: `Policies-OCI-DI`. *Note that the name can NOT contain spaces.*
   - **Description**: `Policies for OCI Data Integration`.
   - Using the Policy Builder UI, choose `Data Integration` for **Policy use cases** and `Let users create and delete workspaces with networking` for **Common policy templates**.
-  - **Group**: `di-group`.
-  - **Compartment**: `DI-compartment`.
+  - **Group**: The group which your OCI user belongs to. *Note: For the following steps we will use the group name `di-group`, but please use your group name.*
+  - **Compartment**: `DI-compartment` (or the OCI Compartment you are using).
   The policy statements will appear below. Click **Create**.
 ![](./images/policy_builder.png " ")
 
@@ -75,7 +77,7 @@ Before you can get started with Data Integration, you must first create a **Work
 * [Policies in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/policies.htm)
 
 ## Acknowledgements
-* **Author** -
-* **Contributors** -  
-* **Last Updated By/Date** -
+* **Author** - Theodora Cristea
+* **Contributors** -  Aditya Duvuri, Rohit Saha
+* **Last Updated By/Date** - Theodora Cristea, July 2021
 * **Workshop (or Lab) Expiry Date** -
