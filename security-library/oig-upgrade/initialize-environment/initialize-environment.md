@@ -31,10 +31,10 @@ In this lab, you will:
 
     ```
     <copy>
-    http://[your instance public-ip address]:6080/index.html?password=LiveLabs.Rocks_99&resize=scale&autoconnect=true
+    http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&autoconnect=true
     </copy>
     ```
-2. On the *Firefox* window on the right preloaded Weblogic 11g console, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference.
+2. On the *Firefox* window on the right preloaded Weblogic 11g console, if not then refresh the page or wait 2-3min to start Admin server then click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference.
     
     ```
     Username: <copy>weblogic</copy>
@@ -66,28 +66,29 @@ In this lab, you will:
 4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
     - Database and Listener
-    ```
-    <copy>
-    systemctl status oracle-database
-    </copy>
-    ```
-    ![](images/1-database.png " ")
+        ```
+        <copy>
+        systemctl status oracle-database
+        </copy>
+        ```
+        ![](images/1-database.png " ")
 
     - WLS Admin Server, OIM Server
-    ```
-    <copy>
-    systemctl status oig-11g.service
-    </copy>
-    ```
 
-    ![](images/oig-11gservice.png " ")
+        ```
+        <copy>
+        systemctl status oig-11g.service
+        </copy>
+        ```
 
-    ```
-    <copy>
-    systemctl status oig-12c.service
-    </copy>
-    ```
-    ![](images/oig-12cservice.png " ")
+        ![](images/oig-11gservice.png " ")
+
+        ```
+        <copy>
+        systemctl status oig-12c.service
+        </copy>
+        ```
+        ![](images/oig-12cservice.png " ")
 
 <!-- ## **STEP 2:** Verify that the Database is up and running
 
@@ -188,7 +189,7 @@ In this lab, you will:
 
     ![](images/10-weblogic12c.png) -->
 
-4. Access the Identity Self Service console. Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
+4. Access the Identity Self Service OIG-12c console. Click on the bookmark *Workshop Links* and click on *OIG12c* "OR" paste the following URL in the browser:
 
     ```
     <copy>http://onehopiam:14005/identity</copy>
