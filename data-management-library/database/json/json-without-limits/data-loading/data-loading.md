@@ -117,7 +117,7 @@ In fact the microservice deployed in the previous lab already provides an implem
 
 1. Start by creating a table partitioned by interval (time range) with a new partition added automatically every hour:
 ```
-<copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated)
+<copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
 create table PURCHASE_ORDERS (
     ID VARCHAR2(255) default SYS_GUID() not null primary key,
     CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,

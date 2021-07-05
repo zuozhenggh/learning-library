@@ -195,6 +195,7 @@ Save the auth token for later.
 
    ![Help for DRAGON Stack manager](./images/dragon-help.png)
 
+
 2. Create the DRAGON Stack along the Purchase Orders JSON generator:
 
    The following command will use the configuration information from the `dragon.config` file in order to deploy an
@@ -204,6 +205,11 @@ Save the auth token for later.
     ```
 
    ![Stack provisioned with DRAGON](./images/stack-provisioned.png)
+
+   Remark the URL and the login resulting from the provisioning steps. You can use these to directly log into SQL Developer Web (aka SQL Database Action).
+   
+   See **Lab 3**.
+
 
 3. If your tenancy has reached its limit for available Always Free Databases, you can change the type of the database to provision using the `database_type` parameter and try again. For example, this file uses an Autonomous Transaction Processing database (ATP).
 
@@ -241,7 +247,10 @@ Save the auth token for later.
     $ <copy>java -Xmx2G -Xms2G -jar target/rtgenerator-1.0.3-jar-with-dependencies.jar dragon_low jsonuser My_Strong_Pa55word /home/loic_lefev/dragon_demo/wallet_dragon purchase_orders false 100 2 false false 1000</copy>
     ```
 
-You should see the generator loading data into the purchase_orders collection. 
+You should see the generator loading data into the purchase_orders collection:
+
+
+![](./images/generator-running-from-cloudshell.png)
 
 You may now [proceed to the next lab](#next): Understanding best practices for JSON data loading...
 
