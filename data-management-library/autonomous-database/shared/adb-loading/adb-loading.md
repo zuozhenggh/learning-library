@@ -1,4 +1,10 @@
-/* DELETE THIS FILE IN THE NEXT RELEASE */
+/* DELETE THIS FILE IN THE NEXT RELEASE - PLEASE USE ADB-LOADING-CONDITIONAL.MD FILE INSTEAD AND SPECIFY THE VERSION YOU WANT IN YOUR MANIFEST:
+{
+    "title": "Lab 3: Load Data",
+    "description": "Load data into ADB",
+    "type": "freetier",
+    "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-loading/adb-loading-conditional.md"
+},
 # Load Data into an Autonomous Database Instance
 
 ## Introduction
