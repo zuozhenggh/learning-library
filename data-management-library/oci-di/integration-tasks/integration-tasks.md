@@ -602,7 +602,7 @@ A **SQL task** lets you run a SQL object in pipeline. Currently, the only SQL ob
 
 When you create a SQL task, you can configure values for **input parameters** only. If input parameters are configured in a SQL task, you can **override the default values** when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task. In a pipeline, downstream tasks and operations can use the outputs from an upstream SQL task.
 
-This SQL task will write inside a statistics table on the Autonomous Data Warehouse (DWH_LOAD_STATS) the successful/ unsuccessful result of a Pipeline task run based on input parameters. This SQL task will be included in a Pipeline in the following lab.
+This SQL task will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameters, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in the following lab. The database table will offer the possibility to be queried in order to see the result of the data integration pipelines.
 
 1. From your Workspace home page in OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 ![](./images/home-projects.png " ")
@@ -634,7 +634,7 @@ This SQL task will write inside a statistics table on the Autonomous Data Wareho
   - **Connection**: Choose the `Beta Connection`
   - **Schema**: `BETA` schema on your ADW
   - **Stored Procedure**: Choose the `OCIDI_RESULT` procedure.
-  *Note: The `OCIDI_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH_LOAD_STATS target table a new entry in case of success or failure*
+  *Note: The `OCIDI\_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure*
 
 ![](./images/sql-procedure-task.png " ")
 
@@ -645,11 +645,15 @@ This SQL task will write inside a statistics table on the Autonomous Data Wareho
 9. In the **Configure Parameters** section, click **Configure** to view or configure values for the stored procedure parameters.
 ![](./images/config-params.png " ")
 
-10. In the **Configure Stored Procedure Parameters** page, review the list of parameters in the stored procedure. Only **input parameters** can be configured. You can see here the input parameter **IN\_DI\_RESULT** from the procedure you're using.
+10. In the **Configure Stored Procedure Parameters** page, review the list of parameters in the stored procedure. Only **input parameters** can be configured. You can see here the input parameters **IN\_DI\_RESULT** and **PIPELINE\_NAME\_TASK\_RUN** from the procedure you're using.
   - In the row of the input parameter value for IN\_DI\_RESULT, click **Configure**.
   ![](./images/config-in-par.png " ")
   - In the Edit Parameter panel, enter value **SUCCESS** (without any apostrophes) for that input parameter and click Save Changes.
   ![](./images/in-param.png " ")
+  - In the row of the input parameter value for PIPELINE\_NAME\_TASK\_RUN, click **Configure**.
+  ![](./images/config-in-second-param.png " ")
+  - In the Edit Parameter panel, enter value **DEFAULT** (without any apostrophes) for that input parameter and click Save Changes.
+  ![](./images/in-second-param.png " ")
   - Click **Done**.
 
   ![](./images/done-param.png " ")
