@@ -15,6 +15,7 @@ In this lab, you will:
 * Create an OCI user and assign it to OCI Group
 * Create a VCN and Subnet using VCN Wizard
 * Provision an Autonomous Data Warehouse and download Wallet
+* Prepare the Autonomous Data Warehouse
 * Create an Object Storage bucket and upload the sample data
 
 ## Prerequisites
@@ -223,8 +224,52 @@ In the **Basic Information** section, provide the following information:
 14. In the Download Wallet dialog, enter a wallet password in the **Password** field and confirm the password in the Confirm Password field. This password protects the downloaded Client Credentials wallet. Click **Download** to save the client security credentials zip file. By default the filename is: `Wallet_databasename.zip`. You can save this file as any filename you want.
 ![](./images/download-wallet.png " ")
 
+## **STEP 5**: Prepare the Autonomous Data Warehouse
 
-## **STEP 5:** Create an Object Storage bucket and upload the sample data
+In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
+
+1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
+![](./images/oci-menu-adw.png " ")
+
+2. The console shows the Autonomous Data Warehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your ADW**, the one you created in the previous step (`ADW Workshop`).
+![](./images/select-adw.png " ")
+
+3. On your Autonomous Database Details, click **Open Database Actions** under Database Actions section.
+![](./images/click-tools.png " ")
+
+4. In the Tools tab, click **Open SQL Developer Web**.
+![](./images/open-db-actions.png " ")
+
+5. When prompted, log in with `admin` **username** and click Next.
+![](./images/admin-user.png " ")
+
+6. A new window requiring the **password** will appear. Write your password for `admin` user and then click **Sign In**.
+![](./images/admin-pass.png " ")
+
+7. On Database Actions page, click on **SQL tile** under Development section.
+![](./images/sql-tile.png " ")
+
+8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
+```
+<copy>create user beta identified by "password";
+grant DWROLE to BETA;
+GRANT EXECUTE ON DBMS_CLOUD TO BETA;
+alter user BETA quota 200M on data;</copy>
+```
+
+*Note : Ensure that you enter a password in place of password.*
+![](./images/create-user.png " ")
+
+9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPC9LuVhG3MIVEwuU3v6XdS17hoEfZzSEopKxp2QJO3yoguKbHcM7ZpjyJ1OUqIG/n/sehubemeaprod/b/DI-bucket/o/OCI%20DI%20Workshop%20files.zip) to your local directories. Unzip this file.
+
+10. In the same SQL worksheet, **run the ADW\_OCIDI\_LiveLabs.sql SQL script from the unzipped archive from the previous step**, to create the rest of the database objects you need for the following integration tasks.
+![](./images/adw-run-sql-script.png " ")
+
+11. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.
+![](./images/beta-schema.png " ")
+
+
+## **STEP 6:** Create an Object Storage bucket and upload the sample data
 The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform.
 
 1. From the OCI console menu, click **Storage** and then select **Buckets** under Object Storage & Archive section.
@@ -240,20 +285,17 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 ![](./images/create-bucket.png " ")
 
-4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`di-bucket`).
+4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`DI-bucket`).
 
-![](./images/buckets.png " ")
+![](./images/bucket-list.png " ")
 
-5. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPC9LuVhG3MIVEwuU3v6XdS17hoEfZzSEopKxp2QJO3yoguKbHcM7ZpjyJ1OUqIG/n/sehubemeaprod/b/DI-bucket/o/OCI%20DI%20Workshop%20files.zip) to your local directories. Unzip this file.
- <!-- **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/27PK5yRJp6ikvVdli-21D0vTwNywA0Q1aUPD2RQ7G8rtbPQwO2onh7TaZjfjawPj/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>. -->
-
-6. You will upload the source files for the workshop data integration flows in this bucket. Click on **Upload** button under Objects.
+5. You will upload the source files for the workshop data integration flows in this bucket. Click on **Upload** button under Objects.
 ![](./images/upload-button.png " ")
 
-7. Drop or select the files *CUSTOMERS.json*, *REVENUE.csv*, *EMPLOYEES_1.csv*, *EMPLOYEES_2.csv*, *EMPLOYEES_3.csv* from your local directory where you unzipped the OCI DI Workshop files.zip file. Click **Upload**.
+6. Drop or select the files *CUSTOMERS.json*, *REVENUE.csv*, *EMPLOYEES_1.csv*, *EMPLOYEES_2.csv*, *EMPLOYEES_3.csv* from your local directory where you unzipped the OCI DI Workshop files.zip file. Click **Upload**.
 ![](./images/upload-objects.png " ")
 
-8. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.
+7. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.
 ![](./images/finished-upload.png " ")
 
 

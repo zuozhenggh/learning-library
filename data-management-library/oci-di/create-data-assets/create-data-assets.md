@@ -1,4 +1,4 @@
-# Create your Object Storage and ADW Data assets
+# Create the Object Storage and ADW Data assets
 
 ## Introduction
 
@@ -125,7 +125,7 @@ A success or failure message displays, indicating whether the test was successfu
 ![](./images/create-asset.png " ")
 
 
-## **STEP 4**: Prepare the Autonomous Data Warehouse data asset
+<!-- ## **STEP 4**: Prepare the Autonomous Data Warehouse data asset
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
 
@@ -222,7 +222,7 @@ alter user BETA quota 200M on data;</copy>
   ```
 
 10. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.
-![](./images/beta-schema.png " ")
+![](./images/beta-schema.png " ") -->
 
 ## **STEP 5**: Create Autonomous Data Warehouse data asset
 
