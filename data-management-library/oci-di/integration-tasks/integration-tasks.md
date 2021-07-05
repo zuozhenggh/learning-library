@@ -60,7 +60,7 @@ You will create a data flow to ingest data from **two source files**, containing
 
 5. On the canvas, select **SOURCE_1 operator**. The Properties panel now displays the details for this operator.
 
-In the **Details** tab, click Select next to each of the following options to make your selections:
+  In the **Details** tab, click Select next to each of the following options to make your selections:
   - For **Data Asset**, select `Object_Storage`
   - For **Connection**, select `Default Connection`
   - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.

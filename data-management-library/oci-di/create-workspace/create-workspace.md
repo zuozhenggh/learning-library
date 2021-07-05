@@ -18,7 +18,7 @@ In this lab, you will:
 
 ## **STEP 1**: Create access policies for OCI Data Integration
 
-Oracle Cloud Infrastructure Data Integration uses **standard authentication and authorization** offered by Oracle Cloud Infrastructure. **Policies** required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. To control access to Data Integration and the type of access each group of users has, you must create policies. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, you must create policies that gives them proper access to Data Integration resources.
+Oracle Cloud Infrastructure Data Integration uses **standard authentication and authorization** offered by Oracle Cloud Infrastructure. **Policies** required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. To control access to Data Integration and the type of access each group of users has, you must create policies. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, the Cloud Administrator must create policies that gives them proper access to Data Integration resources.
 
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
      ![](./images/menu.png " ")
@@ -78,4 +78,4 @@ Before you can get started with Data Integration, you must first create a **Work
 * **Author** -
 * **Contributors** -  
 * **Last Updated By/Date** -
-* **Workshop (or Lab) Expiry Date** - 
+* **Workshop (or Lab) Expiry Date** -
