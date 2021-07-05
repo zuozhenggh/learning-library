@@ -1,6 +1,18 @@
 # Lab Setups
 
-This part of the lab will guide you through some setups that have to happen before we can start the lab.
+This part of the lab will guide you through some setup items that have to be performed before we can start the lab.
+
+*Estimated Lab Time:* 60 Minutes
+
+### Objectives
+
+In this lab, you will:
+    - Create a compartment for our OCI components
+    - Setup permissions for dynamic groups and policies
+    - Create an Autonomous Database
+    - Setup a Virtual Cloud Network
+    - Create Object Store Buckets for our csv files
+    - Create a secret using the Secrets Service and the OCI Vault
 
 ## **SETUP 1**: Create a Compartment
 
@@ -37,11 +49,11 @@ We are going to create a **Compartment** for this lab so that our functions, log
 
     **Parent Compartment:** Use the root compartment (Should be auto-selected, your root compartment will be named different, but will have (root) after it)
 
-    ![Create Compartment Parent Compartment Field](./images/pol-5.png)
+    ![Create Compartment Parent Compartment Field](./images/comp-5.png)
 
 4. When your Create Compartment modal looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment** button.
 
-    ![Create Compartment Modal](./images/pol-6.png)
+    ![Create Compartment Modal](./images/comp-6.png)
 
 ### Get the Compartment OCID
 
@@ -53,11 +65,12 @@ Before we create some of the resources we need for functions, we need to record 
 ## **SETUP 2**: Setup OCI Permissions
 
 For the Function we create to interact with the Object Store, we first have to create a Dynamic Group and some IAM policies.
+**If you did not copy the OCID for the compartment you just created do that now before moving on to the next step**
 
 
 ### Create a Dynamic Group
 
-Start off by creating a dynamic group. This group will be used with policy generation in the next step. More on Dynamic Groups can be found [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
+Let's start off by creating a dynamic group. This group will be used with policy generation in the next step. More on Dynamic Groups can be found [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 
 1. Use the OCI web console drop down menu and select **Identity & Security**, then **Dynamic Groups**.
 
@@ -91,13 +104,13 @@ Start off by creating a dynamic group. This group will be used with policy gener
 
     **Matching Rules:** 
     
-    The Match any rules defined below radio button is selected
+    The Match any rules defined below radio button is selected. **Be sure to replace **YOUR COMPARTMENT OCID** with exactly that, your compartment OCID you copied in setup 1**
 
     **Rule 1 text is:** 
 
     ````
     <copy>
-    ALL {resource.type = 'fnfunc', resource.compartment.id = '**YOUR COMPARTMENT OCID**'}
+    ALL {resource.type = 'fnfunc', resource.compartment.id = 'YOUR COMPARTMENT OCID'}
     </copy>
     ````
     
@@ -201,7 +214,7 @@ Next, we need to associate our dynamic group to some policies so that it has the
     ![Create Autonomous Database button](./images/adb-3.png)
 
 
-4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our Compartment is livelabs and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
+4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
 
     **Display Name:** ORDS ADB
 
@@ -272,7 +285,6 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
-15. 
 
 ## **SETUP 4**: Create a Virtual Cloud Network
 
@@ -371,6 +383,8 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
 
     When you have copied the token and saved it somewhere (text pad, notes app, etc), click the **Close** button.
 
+    **It is important to note that the token text will not be displayed or able to be retrieved after you click the close button in the Generate Token Model. Please copy and save this token text.**
+
 
 ## **SETUP 6**: Create Object Store Buckets
 
@@ -448,12 +462,12 @@ To ensure we are not using passwords in plain text in any configurations or part
 
     ![livelabs** is selected for the Create in Compartment dropdown](./images/vault-4.png)
 
-5. And lets name the vault **livelabs vault** using the Name field.
+5. And lets name the vault **livelabsVault** using the Name field.
 
-    **Name:** livelabs vault
+    **Name:** livelabsVault
     ````
     <copy>
-    livelabs vault
+    livelabsVault
     </copy>
     ````
     ![name field](./images/vault-5.png)

@@ -2,12 +2,19 @@
 
 In this lab, you will create a service connector to move log data from the Logging service to an Autonomous Database using Functions and Oracle REST Data Services.
 
+*Estimated Lab Time:* 30 Minutes
+
+### Objectives
+
+In this lab, you will:
+    - Create a JSON collection in the Autonomous Database using SODA/Database Actions
+    - Create a function to pass log files into a JSON collection
+    - Connect all the pieces together with Service Connector Hub
+
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the setup lab.
-- You have completed the CSV Functions Lab
+- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+- You have completed the [CSV Functions Lab](../csv-function/csv-function.md)
 
 
 ## **Download Lab Files**
@@ -176,12 +183,8 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 
     cd func2
 
-6. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
-
-    ```
-    fn -v deploy --app functionsApp
-    ```
-    
+6. Now we can deploy our function to our application. Use the following command:
+   
     ````
     <copy>
     fn -v deploy --app functionsApp
@@ -222,8 +225,8 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     fn config function <app-name> <function-name> secret_ocid <secret ocid>
     fn config function <app-name> <function-name> collection <input bucket name>
     ```
-    And with the values we need
 
+    And with the values we need with our **app-name** and **function-name** filled in for you:
     ````
     <copy>
     fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
@@ -246,7 +249,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
     ```
 
-    Once the values are entered, run them in the OCI Cloud Shell.
+    Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
     functionsApp log-to-adw-with-ords-and-fn updated ords_base_url with https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
@@ -389,7 +392,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 
 ## **STEP 4:** Testing the flow
 
-1. To test the entire flow, we need to put a csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+1. To test the entire flow, we need to put the file1.csv csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
     ![Storage then Buckets](./images/full-1.png)
 
@@ -421,7 +424,7 @@ or select the JSON tile on the **Database Actions** homepage.
 
     ![JSON in the Database Actions Menu](./images/full-7.png)
 
-8. Now using the worksheet, issue a **Query by Example** that will bring back all records. We can do this by typeing **{}** in the worksheet
+8. Now using the worksheet, issue a **Query by Example** that will bring back all records. We can do this by typing **{}** in the worksheet
     ````
     <copy>
     {}
