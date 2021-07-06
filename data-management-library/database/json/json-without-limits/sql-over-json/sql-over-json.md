@@ -738,13 +738,27 @@ The final step of this lab will consist of running every single capability toget
 - the full-text indexing process
 - the invoices batch generation
 
+1. Reopen the OCI Cloud shell and rerun the data generator.
 
+2. While the generator loads JSON documents, run several times the latest query to generate new invoices.
 
-You may now [proceed to the next lab](#next): ...
+You should see using the Autonomous database performance hub the CPU activity increase:
+
+![](./images/together.png)
+
+For an Always Free Autonomous Transaction Processing database, you can see above an ingestion rate of about 2,700 purchase 
+orders by second (which translate into about $ 440k of purchase orders by second, great!!!) and the invoices batch generator 
+which generated close to 200,000 new invoices in less than 12 seconds. And remember all of these newly ingested JSON documents
+are fully indexed: fields and values allowing great frontend response times!
+
+**Converged database: all data models persistence and processing inside the same database.** 
+
+You've now reached the end of this workshop. We hope you've tested and learned new things. 
 
 ## Learn More
 
-* []()
+* [Query JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/query-json-data.html)
+* [CREATE MATERIALIZED VIEW SQL Reference](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/CREATE-MATERIALIZED-VIEW.html)
 
 ## Acknowledgements
 * **Author** - Loic Lefevre, Principal Product Manager
