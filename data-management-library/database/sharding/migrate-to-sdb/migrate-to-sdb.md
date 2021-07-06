@@ -193,17 +193,17 @@ Before the existing database can be migrated to the sharded database, you must d
 
 4. Use SQLPLUS to run this sql scripts
 
-   ```
-   [oracle@cata ~]$ <copy>sqlplus /nolog</copy>
-   
-   SQL*Plus: Release 19.0.0.0.0 - Production on Mon Nov 30 01:26:03 2020
-   Version 19.10.0.0.0
-   
-   Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-   
-   
-   SQL> <copy>@sdb-app-schema.sql</copy>
-   ```
+    ```
+    [oracle@cata ~]$ <copy>sqlplus /nolog</copy>
+    
+    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Nov 30 01:26:03 2020
+    Version 19.10.0.0.0
+    
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    
+    
+    SQL> <copy>@sdb-app-schema.sql</copy>
+    ```
 
    
 
@@ -1295,4 +1295,3 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020  
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
-* **Workshop Expiry Date** - 25 April 2022
