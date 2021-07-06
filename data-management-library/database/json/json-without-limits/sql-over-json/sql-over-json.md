@@ -306,7 +306,7 @@ The very first step will be to initialize our VAT per country relational data.
 
 ## **STEP 2**: Creating INVOICES Relational Table
 
-1. Create the INVOICES table that will contain the computed invoices including the applied VAT according to the country origine of the purchase order:
+1. Create the INVOICES table that will contain the computed invoices including the applied VAT according to the country origin of the purchase order:
 
    ```
    <copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
