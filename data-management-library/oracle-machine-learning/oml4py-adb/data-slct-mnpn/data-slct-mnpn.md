@@ -256,9 +256,11 @@ Use the `concat` method to combine columns from one data frame proxy object with
     y.concat({'round(exp(2*num))':w})</copy>
     ```
 
+    ![Concatenation example](images/concat_new_column.png "Concatenation example")
+
   > **Note:** An oml.Float is numeric series data class that represents a single column of `NUMBER`, `BINARY_DOUBLE`, or `BINARY_FLOAT` database data types.
 
-  ![Concatenation example](images/concat_new_column.png "Concatenation example")
+
 
 3. Concatenate object x with multiple objects and turn on automatic name conflict resolution. In this example, `auto_name=True` controls whether to call automatic name conflict resolution if one or more column names are duplicates in the two data frames:
 

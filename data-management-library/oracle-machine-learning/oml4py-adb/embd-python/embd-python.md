@@ -323,7 +323,6 @@ In this step, you build three models, one specific to each species and return th
     ```
 3. Use `group_apply` to call the user-defined function and list the resulting models, which are a dictionary of three elements each assigned the model object name. The `group_apply` function takes the data, the index parameter that specifies the column or columns to partition on, the user-defined function, and the database to which you connect from the Python engine. Connecting to the database is necessary when using the datastore functionality.
 
->**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
     ```
     %python
     <copy>
@@ -339,7 +338,11 @@ In this step, you build three models, one specific to each species and return th
 
     print("Outcome:",res)</copy>
     ```
+
     ![Using group_apply and print to list models which are a dictionary of three elements, each assigned the model object name](images/print_outcome.png "Using group_apply and print to list models")
+
+>**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
+
 
 Here, the model object names are `mod_versicolor`, `mod_virginica`, and `mod_setosa`.
 When you load the datastore, you get the three models loaded into the client Python engine, assigned to their respective variables.
@@ -479,7 +482,6 @@ OML4Py stores named user-defined functions called scripts in the script reposito
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
 1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`.
->**Note:** The use of triple quotes to enable formatting.
 
     ```
     %python
@@ -495,6 +497,10 @@ To illustrate using the Python Script Repository, you will define a function `bu
       regr.fit(X, y)
       return regr"""</copy>
     ```
+
+>**Note:** The use of triple quotes to enable formatting.
+
+
 2. Run the following script to view the string that you just created:
 
     ```

@@ -119,14 +119,14 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
     ```
 2. Save the `DIABETES_TMP` tables into the database.
 
-  >**Note:** The condition `append=TRUE` adds the object to the datastore, if it already exists.  The default is `append=False`, and in that case, you will receive an error stating that the datastore exists and it won't be able to create it again.
-
     ```
     %python
     <copy>
 
     oml.ds.save(objs={'oml_diabetes':DIABETES_TMP}, name="ds_pydata", append=True)</copy>
     ```
+
+  >**Note:** The condition `append=TRUE` adds the object to the datastore, if it already exists.  The default is `append=False`, and in that case, you will receive an error stating that the datastore exists and it won't be able to create it again.
 
 
 3. Save the `IRIS` table to a new datastore, and then list the datastores. Notice that you see the datastore name, the number of objects in the datastore, the size in bytes consumed, when the datastore was create/updated, and any description provided by the user. The two datastores `ds_iris_data` and `ds_pydata` are present, with the latter containing the three objects you added.
@@ -148,8 +148,6 @@ This step illustrates how to store other types of objects in datastores. For thi
 
 1. Run the following script to build two regression models - `regr1` and `regr2`. The `regr1` uses the open  source function `LinearRegression()` and the `regr2` uses the OML function `oml.glm()`.
 
-  >**Note:** This highlights that both open source models and in-database model proxy objects can be stored in a datastore. Like tables created using `oml.push` function, default-named model proxy objects are dropped at the end of the database connection unless they are saved in a datastore.
-
     ```
     %python
     <copy>
@@ -164,9 +162,10 @@ This step illustrates how to store other types of objects in datastores. For thi
     y = BOSTON_TMP['Value']
     regr2 = regr2.fit(X, y)</copy>
     ```
-2. Run the following script to save the objects `regr1` and `regr2` to the datastore `ds_pymodels`, and allow the read privilege to be granted to them.
 
-  >**Note:** `overwrite=True` indicates that the contents of the datastore should be replaced.
+  >**Note:** This highlights that both open source models and in-database model proxy objects can be stored in a datastore. Like tables created using `oml.push` function, default-named model proxy objects are dropped at the end of the database connection unless they are saved in a datastore.
+
+2. Run the following script to save the objects `regr1` and `regr2` to the datastore `ds_pymodels`, and allow the read privilege to be granted to them.
 
     ```
     %python
@@ -179,6 +178,9 @@ This step illustrates how to store other types of objects in datastores. For thi
     oml.ds.dir()</copy>
     ```
     ![Saving objects in datastores](images/regr1_regr2.png "Saving objects in datastores")  
+
+  >**Note:** `overwrite=True` indicates that the contents of the datastore should be replaced.
+    
 3. Now grant the read privilege to all users by specifying `user=None`. Finally, list the datastores to which the read privilege has been granted.
 
     ```

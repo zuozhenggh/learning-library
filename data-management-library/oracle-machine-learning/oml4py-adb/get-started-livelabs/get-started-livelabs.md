@@ -13,7 +13,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 ### Prerequisites
 * Sign up for a free tier Oracle Cloud account.
 
-> Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time._
+> **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 
 <if type="livelabs">## **Step 1:** Launch the workshop
