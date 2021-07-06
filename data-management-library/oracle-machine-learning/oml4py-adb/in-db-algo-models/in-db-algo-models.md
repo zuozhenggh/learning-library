@@ -42,7 +42,7 @@ To download the notebook version of this lab (without screenshots), click [here]
 ## **Step 2**: Work with Regression using GLM
 This step shows how to predict numerical values using multiple regression. Given demographic, purchase, and affinity card data for a set of customers, predict the number of years a customer remains at the same residence, as found in column `YRS_RESIDENCE` - a continuous variable. This example uses the Generalized Linear Model algorithm.
 
-**Note:** All processing occurs inside Oracle Autonomous Database.
+>**Note:** All processing occurs inside Oracle Autonomous Database.
 
 1. Run the following script to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
 
@@ -376,7 +376,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ![Model global statistics](images/global_stats.png "Model global statistics")
 
 5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
-Here, you materialize the data to table `TEST_DATA` so that it can be queried from SQL.
+Here, the data is materialized to table `TEST_DATA` so that it can be queried from SQL.
 
     ```
     %python
@@ -513,4 +513,4 @@ Build an in-db RandomForest model and compare the RF model's attribute importanc
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, June 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021

@@ -47,7 +47,7 @@ To download the notebook version of this lab (without screenshots), click [here]
 ## **Step 1**: Import OML4Py and supporting libraries and Create Data Table
 
 In Step 1 to Step 5, you learn about Embedded Python Execution.
-Step 6 to 15, you will work with Python Script Repository.
+In step 6 to 15, you will work with Python Script Repository.
 
 1. Import the `oml` module.
     ```
@@ -305,7 +305,7 @@ In this step, you build three models, one specific to each species and return th
     ![Using the group_apply function to build three models](images/model_group_apply.png "Using the group_apply function to build three models")
 
 
-2. Change the user-defined function to save the models in a datastore. The datastore allows storing Python objects in the database under the provided name. The object assumes the name it is assigned in the Python environment. Here, you construct a name concatenating `mod_` as a prefix and the corresponding `Species` value.
+2. Change the user-defined function to save the models in a datastore. The datastore allows storing Python objects in the database under the provided name. The object assumes the name it is assigned in the Python environment. In this example, you construct a name by concatenating `mod_` as a prefix and the corresponding `Species` value.
     ```
     %python
     <copy>
@@ -450,7 +450,7 @@ Run the following script to define the `RandomRedDots2` function that generates 
     ![RandomRedDots2](images/randomreddots_2.png "RandomRedDots2")
 
 
-5. Use the `oml.do_eval` function to call the function `RandomRedDots2`. Here, you are specifying arguments to `do_eval` for `num_dots_1` and `num_dots_2`. These are specified as you would any other argument to `do_eval`. This applies to the other embedded Python functions as well.
+5. Use the `oml.do_eval` function to call the function `RandomRedDots2`. Here, you specify arguments to `do_eval` for `num_dots_1` and `num_dots_2`. These are specified as you would any other argument to `do_eval`. This applies to the other embedded Python functions as well.
     ```
     %python
     <copy>
@@ -667,4 +667,4 @@ In this step, you will perform the following:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, June 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021

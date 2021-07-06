@@ -38,7 +38,7 @@ To download the notebook version of this lab (without screenshots), click [here]
 
 To use OML4Py, first import the package `oml`. Also import the pandas package for pandas-specific functionality.
 
-**Note:** This lab requires the `PYQADMIN` role to use some functionalities in this lab, and in the Embedded Python Execution.
+>**Note:** This lab requires the `PYQADMIN` role to use some functionalities in this lab, and in the Embedded Python Execution.
 
 1. Run the following commands to imports the `oml` module and the `Pandas` package. Import the Pandas package work with oml DataFrames.
 
@@ -51,7 +51,7 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
 
 ## **Step 2:** Create Pandas DataFrames and load them into Autonomous Database
 
-In this step, you will work with three data set - IRIS data set, Diabetes data set, and Boston data set. Here, you will learn how to:
+In this step, you will work with three data set - IRIS data set, Diabetes data set, and Boston data set. You will learn how to:
 
 * Load these three data sets and for each combine the target and predictors into a single DataFrame
 * Create and display the columns for each data set
@@ -103,7 +103,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
 
 In this step, you will save the actual Iris data set and the temporary BOSTON proxy object to a datastore named `ds_pydata`, overwriting if the named datastore already exists.
 
-**Note:** You can store actual data objects in a datastore, but large data objects should remain as database tables for performance and scalability.    
+>**Note:** You can store actual data objects in a datastore, but large data objects should remain as database tables for performance and scalability.    
 
 By storing the `BOSTON_TMP` object, the temporary table will not be deleted when the session terminates.
 
@@ -119,7 +119,7 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
     ```
 2. Save the `DIABETES_TMP` tables into the database.
 
-  **Note:** The condition `append=TRUE` adds the object to the datastore, if it already exists.  The default is `append=False`, and in that case, you will receive an error stating that the datastore exists and it won't be able to create it again.
+  >**Note:** The condition `append=TRUE` adds the object to the datastore, if it already exists.  The default is `append=False`, and in that case, you will receive an error stating that the datastore exists and it won't be able to create it again.
 
     ```
     %python
@@ -148,7 +148,7 @@ This step illustrates how to store other types of objects in datastores. For thi
 
 1. Run the following script to build two regression models - `regr1` and `regr2`. The `regr1` uses the open  source function `LinearRegression()` and the `regr2` uses the OML function `oml.glm()`.
 
-  **Note:** This highlights that both open source models and in-database model proxy objects can be stored in a datastore. Like tables created using `oml.push` function, default-named model proxy objects are dropped at the end of the database connection unless they are saved in a datastore.
+  >**Note:** This highlights that both open source models and in-database model proxy objects can be stored in a datastore. Like tables created using `oml.push` function, default-named model proxy objects are dropped at the end of the database connection unless they are saved in a datastore.
 
     ```
     %python
@@ -166,7 +166,7 @@ This step illustrates how to store other types of objects in datastores. For thi
     ```
 2. Run the following script to save the objects `regr1` and `regr2` to the datastore `ds_pymodels`, and allow the read privilege to be granted to them.
 
-  **Note:** `overwrite=True` indicates that the contents of the datastore should be replaced.
+  >**Note:** `overwrite=True` indicates that the contents of the datastore should be replaced.
 
     ```
     %python
@@ -207,7 +207,7 @@ In this step, you load all Python objects from a datastore to the global workspa
 
 2. Run the following script to load the named Python object `regr2` (regression model), from the datastore to the global workspace.
 
-    **Note:** Using the boolean `to_globals` parameter, you can specify whether the objects are loaded to a global workspace or to a dictionary object. If the argument is `to_globals=True`, then `oml.ds.load` function loads the objects into the global workspace. If the argument is `to_globals=False`, then the function returns a dict object that contains pairs of object names and values.
+    >**Note:** Using the boolean `to_globals` parameter, you can specify whether the objects are loaded to a global workspace or to a dictionary object. If the argument is `to_globals=True`, then `oml.ds.load` function loads the objects into the global workspace. If the argument is `to_globals=False`, then the function returns a dict object that contains pairs of object names and values.
 
     ```
     %python
@@ -229,7 +229,7 @@ In this step, you load all Python objects from a datastore to the global workspa
     ![Viewing model details](images/view_model_details.png "Viewing model details")
 4. Run the following script to load the named Python object `regr1`, from the datastore to the user's workspace.
 
-    **Note:** Using the boolean `to_globals` parameter, you can specify whether the objects are loaded to a global workspace or to a dictionary object. If the argument is `to_globals=True`, then `oml.ds.load` function loads the objects into the global workspace. If the argument is `to_globals=False`, then the function returns a dict object that contains pairs of object names and values.
+    >**Note:** Using the boolean `to_globals` parameter, you can specify whether the objects are loaded to a global workspace or to a dictionary object. If the argument is `to_globals=True`, then `oml.ds.load` function loads the objects into the global workspace. If the argument is `to_globals=False`, then the function returns a dict object that contains pairs of object names and values.
 
     ```
     %python
@@ -336,4 +336,4 @@ This step shows how to use the `oml.ds.delete` function to delete datastores or 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, June 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021
