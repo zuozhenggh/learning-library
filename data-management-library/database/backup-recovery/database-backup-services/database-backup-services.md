@@ -42,7 +42,7 @@ Estimated Lab Time: 2 hours
 3. You can download the backup module from [Oracle Cloud Backup Downloads](https://www.oracle.com/database/technologies/oracle-cloud-backup-downloads.html), however, to load the zip through Cloud Shell, you will use this `wget` command:
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/wca3eJkQbQO5uK8yNu33FVtASa0gLhZC1CMrXW6rsEb8JunoEHtw4zlsjQYBCb-x/n/c4u03/b/data-management-library-files/o/opc_installer.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/eOuRHktK97D9L_PR14XMVPnG-sa1_p3CZycI-WR_IpY8zK-Dsph3SqvTtWFHi0_f/n/c4u04/b/data-management-library-files/o/opc_installer.zip</copy>
     ```
 
 4. Extract the contents of the zip file. The file contains two directories: oci\_installer and opc\_installer, and a README file.

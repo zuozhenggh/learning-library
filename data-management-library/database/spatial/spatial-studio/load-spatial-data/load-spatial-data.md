@@ -27,9 +27,9 @@ Estimated Lab Time: 15 minutes
 
 ## **STEP 1:** Load Accidents data
 
-You begin by loading a set of traffic accident data from a GeoJSON file. The data are  are ficticous and were generated for random locations along roadways in South Africa.. 
+You begin by loading a set of traffic accident data from a GeoJSON file. The data are  are fictitious and were generated for random locations along roadways in South Africa.. 
 
-1. Download GeoJSON file to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/I5d1FAqOt_6pFfusz9acATvw3tnsvTZcXOCJtBE1O_YnSWNdfqRBmgj5wyn6H4IE/n/c4u03/b/data-management-library-files/o/accidents.geojson">  accidents.geojson  </a>
+1. Download GeoJSON file to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpxonTIMsO35MNPIWquV9V9hIj-ndlfUwXoDzgHdSWB_2H00yTSvp6PwXl39C3Nc/n/c4u04/b/data-management-library-files/o/accidents.geojson">  accidents.geojson  </a>
 
 2. In Spatial Studio, from the left panel menu navigate to the Datasets page, click **Create Dataset**, and drag-and-drop accidents.geojson. You can also click on the upload region and navigate to select the file.
 ![Image alt text](images/load-data-1.png)
@@ -49,7 +49,7 @@ Observe the ACCIDENTS dataset now listed with no warnings, meaning that is prepa
 ## **STEP 2:** Load Police Station data
 Next you load South African Police Servce (SAPS) Stations and Station Boundaries from Shapefiles stored in a single zip file. 
 
-1. Download zip file containing Shapefiles to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/_PGrBeLxMChOWAym329rmCpmFz7U63wtnLrKJpzqA0n2azNqhjSnGzYUVfLYSFT9/n/c4u03/b/data-management-library-files/o/SAPS_police.zip"> SAPS_police.zip </a>  
+1. Download zip file containing Shapefiles to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/VA5KnilzQqGqLdQEjymb9AkNTFdkHp6r9bTp8zeaGNS6ClS8JROr8qIDhuV6mhJx/n/c4u04/b/data-management-library-files/o/SAPS_police.zip"> SAPS_police.zip </a>  
 
 2. Navigate to the Datasets page, click **Create Dataset**, and drag-and-drop SAPS_police.zip  Spatial Studio will extract the Shapefiles from the zip file and process them individually. 
 ![Image alt text](images/load-data-6.png)

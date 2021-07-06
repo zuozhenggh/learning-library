@@ -62,7 +62,7 @@ Estimated Lab Time: 15 minutes
 
         sudo su - oracle
         
-        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/26qfKZW8shBK4e9A8nrS2xoWoYtlJDhExmG38rDPNxHU3k6O0-RdiWCJS9s_RmPM/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/EBS_ODI_ADW.xml
+        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/bRXa47PIVqrTX4ChvQW_92fmk75fQnK3O_P_dHA5Q4Vto9a8DRZQ-Wr9P4tjhpUI/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/EBS_ODI_ADW.xml
         
 ## **STEP 2:** Access ODI Studio
 

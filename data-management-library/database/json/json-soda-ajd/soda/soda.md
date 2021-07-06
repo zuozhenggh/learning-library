@@ -165,7 +165,7 @@ In this lab, you will:
 
 	```
 	<copy>
-	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/D2qfIeCdhjmT3tik7QZQgVIO1bcV3jbW5vgqKMzWM3_GtLCOgZvDvz9JhaPqjhCB/n/c4u03/b/data-management-library-files/o/testdata.json --output testdata.json
+	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/b3XNySsmYQLPsy2Aw8C_uz14NYTfv2lqJ9IKoLNDRfKj6uZzUKPUFc5MbloNP0Cz/n/c4u04/b/data-management-library-files/o/testdata.json --output testdata.json
 	</copy>
 	```
 
