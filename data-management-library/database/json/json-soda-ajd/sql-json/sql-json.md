@@ -472,6 +472,8 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     ```
     ![](./images/sql8-1.png " ")
 
+    **Note:** Click the refresh button on the left-hand side to view the new table. 
+
     ```
     <copy>
     insert into emp values (1, 'Arnold', 500000);
@@ -488,6 +490,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     select JSON_Object(*) from emp;
     </copy>
     ```
+    ![](./images/sql8-2.png " ")
 
 3.  If we want fewer columns or different field names we can specify this as follows:
 
@@ -496,7 +499,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     select JSON_Object('name' value ename, 'compensation' value (salary/1000)) from emp;
     </copy>
     ```
-
+    ![](./images/sql8-3.png " ")
 4.  As you can see, one JSON object is generated per row. Using JSON\_ObjectAgg we can summarize the information in one JSON\_Object - note that the field names now originate from column values:
 
     ```
@@ -504,6 +507,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     select JSON_ObjectAgg(ename value (salary/1000)) from emp;
     </copy>
     ```
+    ![](./images/sql8-4.png " ")
 
 5.  Similary, we use JSON\_Array and JSON\_ArrayAgg to build arrays:
 
@@ -512,12 +516,13 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     select JSON_Array(empno, ename, salary) from emp;
     </copy>
     ```
-
+    ![](./images/sql8-51.png " ")
     ```
     <copy>
     select JSON_ArrayAgg(ename) from emp;
     </copy>
     ```
+    ![](./images/sql8-52.png " ")
 
 6.  We now use JSON generation together with JSON_Table to create a new JSON representation of information that is in the product collection: Every movie points to an array of actors. The same actor occurs in multiple arrays if she/he played in multiple movies.
 
@@ -537,6 +542,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     where jt.actor is not null;
     </copy>
     ```
+    ![](./images/sql8-6.png " ")
 
 7.  This list contains multiple entries for the same actor. How do we find the distinct actor names? By just issuing a 'DISTINCT' query on top of the previous query. We use the WITH clause to define the above query as an inlined subquery named ' actor\_title\_map'.
 
@@ -557,6 +563,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     from actor_title_map;
     </copy>
     ```
+    ![](./images/sql8-7.png " ")
 
 8.  Now, we know each actor, and with the first query we're able to map each actor to all their movie titles. We can then use JSON generation functions to convert this information into a brand new JSON. The distinct actor names also become an inlined subquery in the following example:
 
@@ -584,6 +591,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     from distinct_actors da;
     </copy>
     ```
+    ![](./images/sql8-8.png " ")
 
     The value for the field 'movies' is the result of a subquery on the actor\_title\_map with a join on the actor's name.
 
@@ -601,7 +609,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     from products;
     </copy>
     ```
-
+    ![](./images/sql9-1.png " ")
     ```
     {
         "type": "object",
@@ -631,6 +639,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     create table tmp_dataguide (dg_val CLOB, check (dg_val is JSON));
     </copy>
     ```
+    ![](./images/sql9-2.png " ")
 
     ```
     <copy>
@@ -639,6 +648,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     from products;
     </copy>
     ```
+    ![](./images/sql9-22.png " ")
 
 3.  We can find all the default column names using the following JSON_Query statement, which uses the '..' descendant path step. The descendant step is similar to the normal '.' object step, but it  also scans all descendants of the current object.
 
@@ -648,6 +658,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     from tmp_dataguide;
     </copy>
     ```
+    ![](./images/sql9-3.png " ")
 
 4.  As a result, we see that the following column names use "scalar_string" twice.
 
@@ -666,6 +677,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     );
     </copy>
     ```
+    ![](./images/sql9-5.png " ")
 
 6.  Now we can use a simple PL/SQL procedure DBMS_JSON.create_view to automatically create a relational view over the JSON data. The JSON Dataguide provides all information for the columns like their name, data type and the JSON path expression to extract the corresponding values.
 
@@ -680,12 +692,14 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     /
     </copy>
     ```
+    ![](./images/sql9-6.png " ")
 
     ```
     <copy>
     describe prod_view;
     </copy>
-    ```
+     ```
+    ![](./images/sql9-62.png " ")
 
 7.  You can now query prod_view like any other view
 
@@ -696,6 +710,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     where "year" = 1988;
     </copy>
     ```
+    ![](./images/sql9-7.png " ")
 
 8.  If you describe the underlying view you'll see that it is based on JSON_Table, and all the column clauses have been built automatically.
 
@@ -704,6 +719,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     select dbms_metadata.get_ddl('VIEW', 'PROD_VIEW') from dual;
     </copy>
     ```
+    ![](./images/sql9-8.png " ")
 
     ```
     CREATE OR REPLACE FORCE EDITIONABLE VIEW ...

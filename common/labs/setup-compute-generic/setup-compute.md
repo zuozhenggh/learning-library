@@ -9,6 +9,7 @@ This lab will show you how to setup a Resource Manager stack that will generate 
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
+In this lab, you will:
 -   Create Compute + Networking Resource Manager Stack
 -   Connect to compute instance
 

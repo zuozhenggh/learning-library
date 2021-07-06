@@ -31,17 +31,8 @@ This lab assumes you have already completed the previous labs.
     inventory-helidon folder, using the following command.
 
     ```
-<if type="multicloud-freetier">
-  -  <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
-  +  <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy-verrazzano.sh</copy>
-</if>
+    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
     ```
-
-<if type="multicloud-freetier">
-    ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy-verrazzano.sh</copy>
-    ```
-</if>
 
    ![](images/undeploy-inventory-helidon-mp.png " ")
 

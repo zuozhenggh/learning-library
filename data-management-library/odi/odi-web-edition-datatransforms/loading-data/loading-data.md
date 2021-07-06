@@ -61,9 +61,14 @@ When you have completed these details, press **Create**.
 
 ## **STEP 2:** Inspect the Data 
 
-1. Navigate to the Data Load main page and press the **Explore** card. You'll now see the table MOVIE\_SALES\_2020 has been loaded into our Autonomous Data Warehouse. Click on this table and then click **Statistics** on the panel to the left of the screen. You can think of this as a UI on top of the statistics that drive the optimizer of Oracle Database. In this case this data presents a nice simple way to characterize the data we've just loaded. 
+1. Navigate to the Data Load main page and press the **Explore** card.
 
-    ![ALT text is not available for this image](images/3021448535.png)
+![ALT text is not available for this image](images/data_explore_01.jpg)
+
+
+2. You'll now see the table MOVIE\_SALES\_2020 has been loaded into our Autonomous Data Warehouse. Click on this table and then click **Source Statistics** on the panel to the left of the screen. You can think of this as a UI on top of the statistics that drive the optimizer of Oracle Database. In this case this data presents a nice simple way to characterize the data we've just loaded. 
+
+    ![ALT text is not available for this image](images/data_explore_02.jpg)
 
 ## Conclusion
 
