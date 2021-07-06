@@ -13,7 +13,9 @@ In this lab we will verify notifications when a compute instance is launched and
 
     ![](images/Grafana_015.PNG " ")
 
-2. First we will create a Notification topic and subscribe to this topic. From OCI Services menu, click **Notifications** under **Application Integration**.
+2. First we will create a Notification topic and subscribe to this topic. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Notifications**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-application-notification.png " ")
 
 3. Click **Create Topic** and fill out the dialog box:
 
@@ -22,7 +24,6 @@ In this lab we will verify notifications when a compute instance is launched and
 
 4. Click **Create**.
 
-    ![](images/Events_001.PNG " ")
 
 5. Once the topic state changes to **Active**, Click the topic Name. Click **Create Subscription** and fill out the dialog box:
 
@@ -166,5 +167,3 @@ We have now configured Notification service and tied events to it with a specifi
 - **Contributors** - Kamryn Vinson, QA Engineer Lead Intern, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Tom McGinn, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

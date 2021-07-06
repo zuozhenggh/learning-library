@@ -19,15 +19,13 @@ As a database user, DBA or application developer,
 
 In this section you will be provisioning a dedicated autonomous database using the cloud console.
 
-## **Step 1:** Create an Autonomous Transaction Processing Database
+## STEP 1: Create an Autonomous Transaction Processing Database
 
 *Login to your OCI account as a database user*
 
--  Click on the hamburger menu icon on the top left of the screen.
-    ![](./images/Picture100-20.jpeg " ")
+-  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
--  Click on *Autonomous Transaction Processing* from the menu.
-    ![](./images/Picture100-21.jpeg " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Select *userXX-Compartment under the Workshop Compartment*. 
     ![](./images/provisionATP-Dname1.png " ")
@@ -106,5 +104,3 @@ There are a few other things you can do as an administrator of your autonomous d
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

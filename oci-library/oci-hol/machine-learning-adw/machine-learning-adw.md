@@ -101,7 +101,7 @@ Next, you will import a Zeppelin Notebook into the Oracle Machine Learning insta
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_01.png " ")
 
-7. Enter <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png" alt="admin@oracle.com"> in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
+7. Enter ![](https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-hol/machine-learning-adw/images/ADW_ML_EMAIL.png) in the E-mail Address field, and enter <code>AAbbcc123456</code> in both password fields and click **Save**.
 
    ![](./../machine-learning-adw/images/ADW_ML_USER_02.png " ")
 
@@ -171,8 +171,5 @@ Next, you will import a Zeppelin Notebook into the Oracle Machine Learning insta
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
 
 

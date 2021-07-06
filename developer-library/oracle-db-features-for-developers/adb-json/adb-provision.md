@@ -28,7 +28,7 @@ Estimated time: 5 minutes
 
 3. The following steps apply similarly to Autonomous Data Warehouse, Autonomous Transaction Processing or Autonomous JSON Database. This lab shows provisioning of an Autonomous Transaction Processing database, so click **Autonomous Transaction Processing**.
 
-    ![](images/LabGuide1-39fb4a5b.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 4. If you already have a list of databases, you can filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
@@ -164,5 +164,3 @@ You may now proceed to the following lab.
 - **Last Updated By/Date** - Nilay Panchal, August 2020
 
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

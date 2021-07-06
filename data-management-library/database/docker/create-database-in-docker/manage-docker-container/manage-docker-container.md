@@ -1,9 +1,11 @@
 # Manage a Docker Container
-## Before You Begin
+## Introduction
 
 This lab walks you through the steps to manage your Docker container, including stopping and restarting the container and reviewing container logs.
 
-### What Do You Need?
+Estimated Lab Time: 5 minutes
+
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * SSH keys
@@ -15,18 +17,14 @@ This lab walks you through the steps to manage your Docker container, including 
 
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys and connect:
 
-    ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
-    Enter passphrase for key './myOracleCloudKey':
-    [opc@oraclelinux77 ~]$
+    ```nohighlight
+    ssh -i ~/.ssh/cloudshellkey opc@123.123.123.123
     ```
 
 2. Stop the docker container:
 
     ```
-    [opc@oraclelinux77 ~]$ <copy>docker stop -t 600 oracle-ee</copy>
-    oracle-ee
-    [opc@oraclelinux77 ~]$
+    <copy>docker stop -t 600 oracle-ee</copy>
     ```
 
 ## **STEP 2**: Starting a Docker Container
@@ -36,33 +34,13 @@ The docker `start` command will put the container into background and return con
 1. Start the docker container:
 
     ```
-    [opc@oraclelinux77 ~]$ <copy>docker start oracle-ee</copy>
-    oracle-ee
+    <copy>docker start oracle-ee</copy>
     ```
 
 2. Check the logs:
 
     ```
-    [opc@oraclelinux77 ~]$ <copy>docker logs oracle-ee</copy>
-    Starting /opt/oracle/product/19c/dbhome_1/bin/tnslsnr: please wait...
-    ...
-
-    The Oracle base remains unchanged with value /opt/oracle
-    #########################
-    DATABASE IS READY TO USE!
-    #########################
-    The following output is now a tail of the alert.log:
-    ORCLPDB1(3):Completed: ALTER DATABASE DEFAULT TABLESPACE "USERS"
-    2020-04-07T20:18:55.253120+00:00
-    ALTER SYSTEM SET control_files='/opt/oracle/oradata/ORCLCDB/control01.ctl' SCOPE=SPFILE;
-    2020-04-07T20:18:55.267972+00:00
-    ALTER SYSTEM SET local_listener='' SCOPE=BOTH;
-     ALTER PLUGGABLE DATABASE ORCLPDB1 SAVE STATE
-    Completed:    ALTER PLUGGABLE DATABASE ORCLPDB1 SAVE STATE
-    2020-04-07T20:18:55.706902+00:00
-
-    XDB initialized.
-    [opc@oraclelinux77 ~]$
+    <copy>docker logs oracle-ee</copy>
     ```
 
   Note that using `docker logs -f` will tail the log.
@@ -75,9 +53,6 @@ Congratulations! You have completed this workshop. Oracle has also provided buil
 
 ## Acknowledgements
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
+* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
+* **Last Updated By/Date** - Tom McGinn, June 2021

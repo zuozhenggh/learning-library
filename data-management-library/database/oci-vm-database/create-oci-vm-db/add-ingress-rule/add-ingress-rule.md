@@ -1,24 +1,20 @@
 # Add an Ingress Rule to Open a Port to VCN
-## Before You Begin
+## Introduction
 This lab walks you through the steps to open a port to your Oracle Cloud network to allow access to an Oracle Database instance running on an Oracle Cloud Compute, Bare Metal or Virtual Machine instance. For example, by opening port 1521, you will allow Oracle Database clients and external applications to access your Oracle Database.
 
-### Background
+### Objectives
 Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Database 19c instance running in a Virtual Machine.
 
-### What Do You Need?
+### Prerequisites
 
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 * An Oracle Virtual Cloud Network (VCN) instance
 
 ## **STEP 1**: Add an Ingress Rule to your Virtual Cloud Network instance
 
-1. After logging into your Oracle Cloud account, click on **Networking -> Virtual Cloud Networks** from the menu.
+1. After logging into your Oracle Cloud account, click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-  ![](images/open-vcn-instances.png " ")
-
-2. Click on your VCN from the list of instances. If your instance is not shown, be sure you have the correct compartment selected.
-
-  ![](images/select-vcn.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 3. On the left menu, click **Security Lists**.
 
@@ -50,9 +46,6 @@ Oracle Cloud Infrastructure provides a quick and easy way to create an Oracle Da
 * [Oracle Cloud Infrastructure: Connecting to a DB System](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/connectingDB.htm)
 
 ## Acknowledgements
-* **Author** -Tom McGinn, Learning Architect, Database User Assistance
+* **Author** -Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Last Updated By/Date** - Tom McGinn, March 2020
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

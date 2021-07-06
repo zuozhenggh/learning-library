@@ -20,7 +20,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     <copy>
     cd /home/opc/
 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/hMeiZMcq94oH6LFVJepojex8lT4etzCu2ClpjpcS0eF6B6caCAsU25Y5saRfdBS1/n/c4u04/b/labfiles/o/nfscripts.zip
 
     unzip nfscripts.zip;
 
@@ -74,5 +74,3 @@ The above copyright notice and this permission notice shall be included in all c
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

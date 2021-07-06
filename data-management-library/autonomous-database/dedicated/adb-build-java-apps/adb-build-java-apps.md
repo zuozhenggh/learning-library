@@ -17,14 +17,15 @@ As an application developer,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 5](?lab=lab-5-configuring-development-system).
-- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
-## **Step 1:** Download sample java application
+## STEP 1: Download sample java application
 
-- Login to your Oracle Cloud Infrastructure account and select *Compute* and *Instances* from the hamburger menu top left.
-    ![](./images/Compute1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Select the right Oracle Developer Cloud image you created in earlier labs. 
 
@@ -92,10 +93,11 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-## **Step 2:** Transfer database wallet to developer client
+## STEP 2: Transfer database wallet to developer client
 
-- Login to Oracle Cloud Infrastructure account and click on *Autonomous Transaction Processing* from top left menu.
-    ![](./images/atpd1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -128,7 +130,7 @@ tar xzfv ojdbc8-full.tar.gz
 
 - Use a scp client such as winSCP to move your wallet to the client machine.
 
-## **Step 3:** Run your java application
+## STEP 3: Run your java application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 
@@ -225,5 +227,3 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 

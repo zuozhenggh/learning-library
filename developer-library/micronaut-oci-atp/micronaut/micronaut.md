@@ -3,9 +3,20 @@
 ## Introduction
 In this lab you will build a Micronaut application locally that connects to Oracle Autonomous Database.
 
-Note: If at any point you have trouble completing the Lab the complete working example Micronaut application can be checked out from [Github](https://github.com/graemerocher/micronaut-hol-example).
+If at any point you run into trouble completing the steps, the full source code for the application can be cloned from Github using the following command to checkout the code:
 
-Estimated Lab Time: 40 minutes
+    <copy>
+    git clone -b lab3 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
+If you were unable to setup the Autonomous Database and necessary cloud resources you can also checkout a version of the code that uses an in-memory database:
+
+    <copy>
+    git clone -b lab3-h2 https://github.com/graemerocher/micronaut-hol-example.git
+    </copy>
+
+
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -24,11 +35,22 @@ In this lab you will:
 
 ## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
 
-1. The first step is to define entity classes that can be used to read data from database tables.
+In the previous lab Flyway was used to setup the following schema:
 
-    Using your favourite IDE create a new class under `src/main/java/example/atp/domain` that looks like the following:
+
+    CREATE TABLE "PET" ("ID" VARCHAR(36),"OWNER_ID" NUMBER(19) NOT NULL,"NAME" VARCHAR(255) NOT NULL,"TYPE" VARCHAR(255) NOT NULL);
+    CREATE TABLE "OWNER" ("ID" NUMBER(19) PRIMARY KEY NOT NULL,"AGE" NUMBER(10) NOT NULL,"NAME" VARCHAR(255) NOT NULL);
+    CREATE SEQUENCE "OWNER_SEQ" MINVALUE 1 START WITH 1 NOCACHE NOCYCLE;
+
+
+As you can see a table called `OWNER` and a table called `PET` were created.
+
+1. The first step is to define entity classes that can be used to read data from the database tables.
+
+    Using your favorite IDE create a `Owner.java` file under `src/main/java/example/atp/domain` which will represent the `Owner` class and looks like the following:
 
     ```java
+    <copy>
     package example.atp.domain;
 
     import io.micronaut.core.annotation.Creator;
@@ -36,121 +58,138 @@ In this lab you will:
     import io.micronaut.data.annotation.Id;
     import io.micronaut.data.annotation.MappedEntity;
 
-
     @MappedEntity
     public class Owner {
 
-        @Id
-        @GeneratedValue
-        private Long id;
-        private final String name;
-        private int age;
+      // The ID of the class uses a generated sequence value
+      @Id
+      @GeneratedValue
+      private Long id;
 
-        @Creator
-        public Owner(String name) {
-            this.name = name;
-        }
+      private final String name;
 
-        public int getAge() {
-            return age;
-        }
+      private int age;
 
-        public void setAge(int age) {
-            this.age = age;
-        }
+      // the constructor reads column values by the name of each constructor argument
+      @Creator
+      public Owner(String name) {
+          this.name = name;
+      }
 
-        public String getName() {
-            return name;
-        }
+      // each property of the class maps to a database column
+      public int getAge() {
+          return age;
+      }
 
-        public Long getId() {
-            return id;
-        }
+      public void setAge(int age) {
+          this.age = age;
+      }
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+      public String getName() {
+          return name;
+      }
+
+      public Long getId() {
+          return id;
+      }
+
+      public void setId(Long id) {
+          this.id = id;
+      }
     }
+    </copy>
     ```
 
-2. The `@MappedEntity` annotation is used to indicate that the entity is mapped to a database table. By default this will be a table using the same name as the class (in this case `owner`).
+    The `@MappedEntity` annotation is used to indicate that the entity is mapped to a database table. By default this will be a table using the same name as the class (in this case `owner`).
 
     The columns of the table are represented by each Java property. In the above case an `id` column will be used to represent the primary key and by using `@GeneratedValue` this sets up the mapping to assume the use of an `identity` column in Autonomous Database.
 
     The `@Creator` annotation is used on the constructor that will be used to instantiate the mapped entity and is also used to express required columns. In this case the `name` column is required and immutable whilst the `age` column is not and can be set independently using the `setAge` setter.
 
-    Now define another entity to model a `pet` table under `src/main/java/example/atp/domain`:
+2.  Now define a `Pet.java` file that will represent the `Pet` entity to model a `pet` table under `src/main/java/example/atp/domain`:
 
     ```java
+    <copy>
     package example.atp.domain;
 
     import io.micronaut.core.annotation.Creator;
+    import io.micronaut.core.annotation.Nullable;
     import io.micronaut.data.annotation.AutoPopulated;
     import io.micronaut.data.annotation.Id;
     import io.micronaut.data.annotation.MappedEntity;
     import io.micronaut.data.annotation.Relation;
 
-    import javax.annotation.Nullable;
     import java.util.UUID;
 
     @MappedEntity
     public class Pet {
 
-        @Id
-        @AutoPopulated
-        private UUID id;
-        private String name;
-        @Relation(Relation.Kind.MANY_TO_ONE)
-        private Owner owner;
-        private PetType type = PetType.DOG;
+      // This class uses an auto populated UUID for the primary key
+      @Id
+      @AutoPopulated
+      private UUID id;
 
-        @Creator
-        public Pet(String name, @Nullable Owner owner) {
-            this.name = name;
-            this.owner = owner;
-        }
+      private final String name;
 
-        public Owner getOwner() {
-            return owner;
-        }
+      // A relation is defined between Pet and Owner
+      @Relation(Relation.Kind.MANY_TO_ONE)
+      private final Owner owner;
 
-        public String getName() {
-            return name;
-        }
+      private PetType type = PetType.DOG;
 
-        public UUID getId() {
-            return id;
-        }
+      // The constructor defines the columns to be read
+      @Creator
+      public Pet(String name, @Nullable Owner owner) {
+          this.name = name;
+          this.owner = owner;
+      }
 
-        public void setId(UUID id) {
-            this.id = id;
-        }
+      public Owner getOwner() {
+          return owner;
+      }
 
-        public PetType getType() {
-            return type;
-        }
+      public String getName() {
+          return name;
+      }
 
-        public void setType(PetType type) {
-            this.type = type;
-        }
+      public UUID getId() {
+          return id;
+      }
 
-        public enum PetType {
-            DOG,
-            CAT
-        }
+      public void setId(UUID id) {
+          this.id = id;
+      }
+
+      public PetType getType() {
+          return type;
+      }
+
+      public void setType(PetType type) {
+          this.type = type;
+      }
+
+      public enum PetType {
+          DOG,
+          CAT
+      }
     }
+    </copy>
     ```
 
-With that done it is time move onto defining repository interfaces to implement queries.
+Note that the `Pet` class uses an automatically populated `UUID` as the primary key to demonstrate differing approaches to ID generation.
+
+A relationship between the `Pet` class and the `Owner` class is also defined using the `@Relation(Relation.Kind.MANY_TO_ONE)` annotation, indicating this is a many-to-one relationship.
+
+With that done it is time to move onto defining repository interfaces to implement queries.
 
 ## **STEP 2**: Define Micronaut Data repositories to implement queries
 
 Micronaut Data supports the notion of defining interfaces that automatically implement SQL queries for you at compilation time using the data repository pattern.
 
-To take advantage of this feature of Micronaut Data define a new repository interface that extends from `CrudRepository` and is annotated with `@JdbcRepository` using the `ORACLE` dialect
- under `src/main/java/example/atp/repositories`:
+To take advantage of this feature of Micronaut Data define a new repository interface that extends from `CrudRepository` and is annotated with `@JdbcRepository` using the `ORACLE` dialect in a file called `OwnerRepository.java` under `src/main/java/example/atp/repositories`:
 
 ```java
+<copy>
 package example.atp.repositories;
 
 import example.atp.domain.Owner;
@@ -161,19 +200,25 @@ import io.micronaut.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
+// The @JdbcRepository annotation indicates the database dialect
 @JdbcRepository(dialect = Dialect.ORACLE)
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
 
     @Override
     List<Owner> findAll();
 
+    // This method will compute at compilation time a query such as
+    // SELECT ID, NAME, AGE FROM OWNER WHERE NAME = ?
     Optional<Owner> findByName(String name);
 }
+</copy>
 ```
 
-The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type if the ID (in this case `Long`).
+Note that if you were unable to setup Autonomous database and are using the H2 in-memory database you should use the `H2` dialect instead.
 
-The `CrudRepository` interface defines methods that allow you to create, read, update and delete (CRUD) entities from the database with the appropriate SQL inserts, selects, updates and deletes computed for you at compilation time. For more information see the javadoc for [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html).
+The `CrudRepository` interface takes 2 generic argument types. The first is the type of the entity (in this case `Owner`) and the second is the type of the ID (in this case `Long`).
+
+The `CrudRepository` interface defines methods that allow you to create, read, update and delete (CRUD) entities from the database with the appropriate SQL inserts, selects, updates and deletes computed for you at compilation time. For more information see the Javadoc for [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html).
 
 You can define methods within the interface that perform JDBC queries and automatically handle all the intricate details for you such as defining correct transaction semantics (read-only transactions for queries), executing the query and mapping the result set to the `Owner` entity class you defined earlier.
 
@@ -183,9 +228,10 @@ For more information on query methods and the types of queries you can define se
 
 With the `OwnerRepository` in place let's create another repository and this time using a data transfer object (DTO) to perform an optimized query.
 
-First create the DTO under `src/main/java/example/atp/domain`:
+First create the DTO class in a file called `NameDTO.java` under `src/main/java/example/atp/domain`:
 
 ```java
+<copy>
 package example.atp.domain;
 
 import io.micronaut.core.annotation.Introspected;
@@ -202,11 +248,13 @@ public class NameDTO {
         this.name = name;
     }
 }
+</copy>
 ```
 
-A DTO is a simple POJO that allows you to select only the columns a particular query needs, thus producing a more optimized query. Define another repository called `PetRepository` for the `Pet` entity that uses the DTO:
+A DTO is a simple POJO that allows you to select only the columns a particular query needs, thus producing a more optimized query. Define another repository called `PetRepository` in a file called `PetRepository.java` for the `Pet` entity that uses the DTO under `src/main/java/example/atp/repositories`:
 
 ```java
+<copy>
 package example.atp.repositories;
 
 import example.atp.domain.NameDTO;
@@ -228,21 +276,23 @@ public interface PetRepository extends PageableRepository<Pet, UUID> {
     @Join("owner")
     Optional<Pet> findByName(String name);
 }
+</copy>
 ```
 
-Take note of the `list` method that returns the DTO. This method will again be implemented for you at compilation time, but this time instead of retrieving all the columns of the `Pet` column it will only rereive the `name` column and any other columns you may define.
+Take note of the `list` method that returns the DTO. This method will again be implemented for you at compilation time, but this time instead of retrieving all the columns of the `Pet` column it will only retrieve the `name` column and any other columns you may define.
 
 The `findByName` method is also interesting as it uses another important feature of Micronaut Data which is the `@Join` annotation which allows you to [specify join paths](https://micronaut-projects.github.io/micronaut-data/latest/guide/#joinQueries) so that you retrieve exactly the data you need via database joins resulting in much more efficient queries.
 
-With the data repositories in place let's move on exposing REST endpoints.
+With the data repositories in place let's move on to exposing REST endpoints.
 
 ## **STEP 3**: Expose Micronaut Controllers as REST endpoints
 
-REST endpoints in Micronaut are easy to write and defined as [controllers (as per the MVC pattern)](https://docs.micronaut.io/latest/guide/index.html#httpServer).
+REST endpoints in Micronaut are easy to write and are defined as [controllers (as per the MVC pattern)](https://docs.micronaut.io/latest/guide/index.html#httpServer).
 
-Define a new `OwnerController` class in `src/main/java/example/atp/controllers` like the following:
+Define a new `OwnerController` class in a file called `OwnerController.java` in `src/main/java/example/atp/controllers` like the following:
 
 ```java
+<copy>
 package example.atp.controllers;
 
 import java.util.List;
@@ -277,6 +327,7 @@ class OwnerController {
         return ownerRepository.findByName(name);
     }
 }
+</copy>
 ```
 
 A controller class is defined with the `@Controller` annotation which you can use to define the root URI that the controller maps to (in this case `/owners`).
@@ -288,9 +339,10 @@ The `OwnerController` class uses [Micronaut dependency injection](https://docs.m
 * `/` - The root endpoint lists all the owners
 * `/{name}` - The second endpoint uses a [URI template](https://docs.micronaut.io/latest/guide/index.html#routing) to allow looking up an owner by name. The value of the URI variable `{name}` is provided as a parameter to the `byName` method.
 
-Next define another REST endpoint called `PetController` under `src/main/java/example/atp/controllers`:
+Next define another REST endpoint called `PetController` in a file called `PetController.java` under `src/main/java/example/atp/controllers`:
 
 ```java
+<copy>
 package example.atp.controllers;
 
 import java.util.List;
@@ -324,6 +376,7 @@ class PetController {
         return petRepository.findByName(name);
     }
 }
+</copy>
 ```
 
 This time the `PetRepository` is injected to expose a list of pets and pets by name.
@@ -335,6 +388,7 @@ The next step is to populate some application data on startup. To do this you ca
 Modify your `src/main/java/example/atp/Application.java` class to look like the following:
 
 ```java
+<copy>
 package example.atp;
 
 import example.atp.domain.Owner;
@@ -359,14 +413,18 @@ public class Application {
         this.petRepository = petRepository;
     }
 
-    public static void main(String[] args) {
-        System.setProperty("oracle.jdbc.fanEnabled", "false");
+    public static void main(String[] args) {        
         Micronaut.run(Application.class);
     }
 
     @EventListener
     @Transactional
     void init(StartupEvent event) {
+        // clear out any existing data
+        petRepository.deleteAll();
+        ownerRepository.deleteAll();
+
+        // create data
         Owner fred = new Owner("Fred");
         fred.setAge(45);
         Owner barney = new Owner("Barney");
@@ -381,54 +439,63 @@ public class Application {
         petRepository.saveAll(Arrays.asList(dino, bp, hoppy));
     }
 }
+</copy>
 ```
 
 Note that the constructor is modified to dependency inject the repository definitions so data can be persisted.
-
-Notice in the `main` method JDBC support for FAN events is disabled as they are not necessary for this application:
-
-```java
-System.setProperty("oracle.jdbc.fanEnabled", "false");
-```
 
 Finally the `init` method is annotated with `@EventListener` with an argument to receive a `StartupEvent`. This event is called
 once the application is up and running and can be used to persist data when your application is ready to do so.
 
 The rest of the example demonstrates saving a few entities using the [saveAll](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html#saveAll-java.lang.Iterable-) method of the [CrudRepository](https://micronaut-projects.github.io/micronaut-data/latest/api/io/micronaut/data/repository/CrudRepository.html) interface.
 
-Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if anything goes wrong during the execution of the method.
+Notice that `javax.transaction.Transactional` is declared on the method which ensures that Micronaut Data wraps the execution of the `init` method in a JDBC transaction that is rolled back if an exception occurs during the execution of the method.
 
-If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL loggin:
+If you wish to monitor the SQL queries that Micronaut Data performs you can open up `src/main/resources/logback.xml` and add the following line to enable SQL logging:
 
 ```xml
+<copy>
 <logger name="io.micronaut.data.query" level="debug" />
+</copy>
 ```
 
-## **STEP 5**: Write Integration Tests for the Micronaut Application
+## **STEP 5**: Run Integration Tests for the Micronaut Application
 
 The application will already have been setup with a single test that tests the application can startup successfully (and hence will test the logic of the `init` method defined in the previous section).
 
-This test is configured to use [Testcontainers](https://www.testcontainers.org/) and an Oracle Express image, making sure you are writing integration tests that exercise the correct database.
-
-Note that the test requires a working Docker installation and will take some time (depending on your internet connectivity) to download the Oracle Express image on first execution.
-
-You can execute your tests with:
+To execute your tests if you are using Gradle use the `test` task to execute your tests:
 
 ```bash
+<copy>
 ./gradlew test
+</copy>
+```
+
+Alternatively if you chose Maven use the `test` goal:
+
+```bash
+<copy>
+./mvnw test
+</copy>
 ```
 
 ## **STEP 6**: Run the Micronaut application locally
 
-To run the application locally and test against the Autonomous Database that was setup in the previous labs. Make sure you have set the `TNS_ADMIN` environment variable to the location of you Wallet directory and set `DATASOURCES_DEFAULT_PASSWORD` to the output value `atp_schema_password` produced by the Terraform script in the previous lab and then execute `./gradlew run -t`
+To run the application locally if you are using Gradle using the `run` task to start the application:
 
 ```bash
-   export TNS_ADMIN=[Your absolute path to wallet]
-   export DATASOURCES_DEFAULT_PASSWORD=[Your atp_schema_password]
-   ./gradlew run -t
-   ```
+<copy>
+./gradlew run
+</copy>
+ ```
 
-Note that the `-t` argument is optional and activates continuous build such that if you make changes to your application it will be automatically restarted.
+Alternatively if you are using Maven use the `mn:run` goal:
+
+```bash
+<copy>
+./mvnw mn:run
+</copy>
+ ```
 
 You can now access [http://localhost:8080/pets](http://localhost:8080/pets) for the `/pet` endpoint and [http://localhost:8080/owners](http://localhost:8080/owners) for the `/owners` endpoint. For example:
 
@@ -453,6 +520,3 @@ You may now *proceed to the next lab*.
 - **Owners** - Graeme Rocher, Architect, Oracle Labs - Databases and Optimization
 - **Contributors** - Chris Bensen, Todd Sharp, Eric Sedlar
 - **Last Updated By** - Kay Malcolm, DB Product Management, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

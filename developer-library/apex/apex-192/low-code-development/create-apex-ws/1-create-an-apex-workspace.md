@@ -20,7 +20,7 @@ In this step, you will create an instance of the Autonomous Transaction Processi
 
 1.  From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **Autonomous Transaction Processing**.
 
-    ![](images/select-atp-in-nav-menu.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 2.  Click **Create Autonomous Database**.
 
@@ -88,5 +88,3 @@ This completes this lab. At this point, you know how to create a new Autonomous 
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 - **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

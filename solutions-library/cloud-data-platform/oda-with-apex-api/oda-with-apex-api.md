@@ -1,13 +1,10 @@
 # Oracle Digital Assistant (ODA) with APEX APIs
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 In this lab, you will learn how to navigate to an Oracle Digital Assistant instance and design a Skill in which you will implement your APIs from the APEX portion of this workshop.  These APIs will be utilized in order to make REST calls to the Autonomous Data Warehouse to get information on store predictions.  These REST API calls will be tested through interacting with the chatbot dialogue.
+
+Estimated Lab Time: 20 minutes
 
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
@@ -21,10 +18,9 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 -   Learn how to implement REST APIs through Digital Assistant
 -   Learn how to test Digital Assistant Dialogue
 
-### Required Artifacts
+### Prerequisites
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 20 minutes.
 
 ### Extra Resources
 -   To learn more about Oracle Digital Assistant (ODA), feel free to watch the following video: [](youtube:byXa6tIgyKY)
@@ -37,9 +33,9 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/1.png " ")
 
-2. In the side menu, navigate to **Digital Assistant** under Data and AI.
-
-    ![](./images/2.png " ")
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-assist.png " ")
 
 3. On the Digital Assistant Instances screen, find the **Compartment** drop down on the left, and select the compartment of your choice from the drop down list.  Here, I am choosing the CloudDataWorkshop compartment.
 
@@ -52,15 +48,15 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 5. For the name of your Digital Assistant Instance, put **ODA_YOURINITIALS**.  For shape, select **Development**.  Next, click **Create**.
 
     ![](./images/600n2.png " ")
-    
+
 6. You will see that your instance is in the 'Creating' state.  Note: The instance should take a few minutes to provision.
 
    ![](./images/600n3.png " ")
-   
+
 7. Once your instance has successfully been provisioned, you will see it's state will change to 'Active'.
 
     ![](./images/600n4.png " ")
-    
+
 8. Once your instance is in the 'Active' state, you can **click** on the right side menu (denoted by three dots), then select **Service Console**.
 
     ![](./images/600n5.png " ")
@@ -99,7 +95,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 6. It will take a few seconds, but after it is finished importing, you will see the Skill on your Skills page.  To start editing your Skill, click your **Demo Digital Assistant Skill**.  Hint: If you don't see your Skill show up in a minute or so, you might need to refresh your browser.
 
     ![](./images/600n7.png " ")
-    
+
 7. Your digital assistant is now imported! You are now ready to implement your APEX APIs.
 
 ## **Step 3:** Add REST API URLs to Digital Assistant Code
@@ -151,8 +147,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
-- **Last Updated By/Date** - Jess Rein, August 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request. 
+

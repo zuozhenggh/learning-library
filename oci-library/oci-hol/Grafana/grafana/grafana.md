@@ -240,7 +240,7 @@ As part of preparation for this lab, a dynamic group and IAM policy was created.
     ![](./../grafana/images/Grafana_008.PNG " ")
 
 12. Switch to Grafana tab and paste the OCID in **Tenancy OCID**. Choose your region for **Default Region**
-Choose **OCI Instance** for Enviornment.
+Choose **OCI Instance** for environment.
     ![](./../grafana/images/Grafana_009.PNG " ")
 
 13. Click **Save & Test** and verify **Data source is working** message is displayed.
@@ -318,7 +318,4 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section. 
 

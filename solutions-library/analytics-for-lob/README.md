@@ -30,6 +30,3 @@ If you don't have an Oracle Cloud account then you can quickly and easily sign u
 - Your credit card will only be used for verification purposes and will not be charged unless you 'Upgrade to Paid' in My Services
 
 Click here to request your trial account: [https://www.oracle.com/cloud/free](https://www.oracle.com/cloud/free)
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
