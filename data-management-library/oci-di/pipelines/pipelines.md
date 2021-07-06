@@ -151,13 +151,38 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 20. In the properties bar, the **Integration Task** `Load Employees by Regions` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 ![](./images/run-success.png " ")
 
-21. Drag and drop a **SQL task** operator to the pipeline canvas. Connect the SQL task operator to the **LOAD\_EMPLOYEES\_BY\_REGIONS** integration task.
+21. Drag and drop an **Expression** operator to the pipeline canvas. A pipeline expression operator lets you create new, derivative fields in a pipeline, similar to an expression operator in a data flow. **Connect the Expression operator** to the **LOAD\_EMPLOYEES\_BY\_REGIONS** integration task.
+![](./images/pipeline-expression-operator.png " ")
+
+22. In the **Properties** bar of **EXPRESSION\_1** operator, change the Identifier to **PIPELINE\_NAME\_TASK\_RUN**
+and click on **Add** under Expression.
+![](./images/pipeline-add-expression.png " ")
+
+23. This **Expression** will create a new field based on the **System Defined Parameters** of the pipeline. Generated system parameter values can be used in expressions but the values cannot be modified. For more information on System parameters in OCI Data Integration pipeline, please see this [link](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters).
+The expression will concatenate the **PIPELINE\_NAME** system parameter with the **TASK\_RUN\_KEY** system parameter,  and the new field will later on be used in the pipeline as input parameter for SQL task.
+
+In the **Add Expression** panel:
+  - Enter name `PIPELINE_NAME_RUN` in the **Identifier** field
+  - Leave the default `VARCHAR` **Data Type** and default **Length**
+  - Copy the following expression and paste it in the **Expression Builder** box. This expression concatenates the PIPELINE\_NAME system parameter with a space character and the TASK\_RUN\_KEY system parameter.
+
+  ```
+  <copy>CONCAT(CONCAT(${SYS.PIPELINE_NAME}, ' '),${SYS.TASK_RUN_KEY})</copy>
+  ```
+
+  *Note: You can also manually create the expression in the Expression Builder, by double-click or drag an drop of the System defined parameters and CONCAT function.*
+  - Click **Add**.
+
+![](./images/  add-expression-pipeline.png " ")
+
+
+24. Drag and drop a **SQL task** operator to the pipeline canvas. Connect the SQL task operator to the **PIPELINE\_NAME\_TASK\_RUN** expression operator.
 ![](./images/sql-task.png " ")
 
-22. On the Properties tab for **SQL\_TASK\_1**, Details section, click on Select to choose a **published SQL task from your Application**.
+25. On the Properties tab for **SQL\_TASK\_1**, Details section, click on Select to choose a **published SQL task from your Application**.
 ![](./images/select-sql.png " ")
 
-23. A page pops up with the selections for the **SQL Task**:
+26. A page pops up with the selections for the **SQL Task**:
   - The **Compartment** with your OCI Data Integration resources is already selected
   - The **Workspace** you are currently working in is already selected
   - For **Application**, make sure you select the `Workshop Application`
@@ -167,16 +192,16 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 ![](./images/sql-dwh.png " ")
 
 
-24. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
+27. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
 ![](./images/run-sql-success.png " ")
 
-25. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/1**.
+28. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/2**.
 ![](./images/config-params.png " ")
 
-26. A window to **Configure Incoming Parameters** pops up. OCI Data Integration identified the **input parameter of your procedure** (OCIDI\_RESULT) from the database. Click on Configure for the **IN\_DI\_RESULT** parameter.
+29. A window to **Configure Incoming Parameters** pops up. OCI Data Integration identified the **input parameters of your procedure** (OCIDI\_RESULT and PIPELINE\_NAME\_TASK\_RUN) from the SQL task. Click on **Configure** for the **IN\_DI\_RESULT** parameter.
 ![](./images/config-value.png " ")
 
-27. In the new windows that is displayed:
+30. In the new windows that is displayed:
   - Leave the **Assign a value** option checked. This means you will override the default value of this parameter
   - In Default value box, write **SUCCESS**
   - Click **Done**.
@@ -184,19 +209,30 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 ![](./images/config-incoming.png " ")
 
 
-28. The input parameter of the procedure now has a **Configured Value** - SUCCESS. Click **Configure**.
-![](./images/config-final.png " ")
+31. In the Configure Incoming Parameters window, click on **Configure** for the **PIPELINE\_NAME\_TASK\_RUN** parameter.
+![](./images/configure-second-param.png " ")
 
-29. In **Configuration tab**, the **Incoming Parameters** are now displayed as configured **(1/1)**.
+32. In the new windows that is displayed:
+  - Select **Previous Operator Output** option, to assign the value of an output from a previous operator step to the input.
+  - Check the box to select the `PIPELINE_NAME_TASK_RUN.PIPELINE_NAME_RUN` field from the previous Expression operator. The SQL task will use the value from the Expression as the input parameter for the SQL task.
+  - Click **Done**.
+
+  ![](./images/pipeline-second-parameter.png " ")
+
+
+33. The two input parameters of the SQL task now have Configured values . Click **Configure**.
+![](./images/configure-parameters.png " ")
+
+34. In **Configuration tab**, the **Incoming Parameters** are now displayed as configured **(2/2)**.
 ![](./images/one-configured.png " ")
 
-30.  Drag and drop a **SQL task operator** to the pipeline canvas. Connect the SQL task operator to the **LOAD\_EMPLOYEES\_BY\_REGIONS** integration task.
+35.  Drag and drop another **SQL task operator** to the pipeline canvas. Connect the SQL task operator to the **PIPELINE\_NAME\_TASK\_RUN** expression operator.
 ![](./images/new-sql.png " ")
 
-31. On the Properties tab for **SQL\_TASK\_1**, Details section, click on Select to choose a **published SQL task from your Application**.
+36. On the Properties tab for **SQL\_TASK\_1**, Details section, click on Select to choose a **published SQL task from your Application**.
 ![](./images/select-sql.png " ")
 
-32. A page pops up with the selections for the **SQL Task**:
+37. A page pops up with the selections for the **SQL Task**:
   - The **Compartment** with your OCI Data Integration resources is already selected
   - The **Workspace** you are currently working in is already selected
   - For **Application**, make sure you select the `Workshop Application`
@@ -206,16 +242,16 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 ![](./images/sql-dwh.png " ")
 
 
-33. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on failure of previous operator**. The arrow from the previous operator to the new SQL task operator will turn **red**.
+38. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on failure of previous operator**. The arrow from the previous operator to the new SQL task operator will turn **red**.
 ![](./images/failure-op.png " ")
 
-34. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/1**.
+39. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/2**.
 ![](./images/config-params.png " ")
 
-35. A window to **Configure Incoming Parameters** pops up. OCI Data Integration identified the **input parameter of the procedure** (OCIDI\_RESULT) from the database. Click on Configure for the **IN\_DI\_RESULT** parameter.
+40. A window to **Configure Incoming Parameters** pops up. OCI Data Integration identified the **input parameters of your procedure** (OCIDI\_RESULT and PIPELINE\_NAME\_TASK\_RUN) from the SQL task. Click on **Configure** for the **IN\_DI\_RESULT** parameter.
 ![](./images/config-value.png " ")
 
-36. In the new windows that is displayed:
+41. In the new windows that is displayed:
   - Leave the **Assign a value** option checked. This means you will **override the default value of this parameter**
   - In Default value box, write **ERROR**
   - Click **Done**.
@@ -223,19 +259,31 @@ A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** 
 ![](./images/error-val.png " ")
 
 
-37. The input parameter of the procedure now has a **Configured Value** - ERROR. Click **Configure.**
+42. In the Configure Incoming Parameters window, click on **Configure** for the **PIPELINE\_NAME\_TASK\_RUN** parameter.
+ Click **Configure.**
 ![](./images/config-error.png " ")
 
-38. In **Configuration tab**, the **Incoming Parameters** are now displayed as configured **(1/1)**.
+43. In the new windows that is displayed:
+  - Select **Previous Operator Output** option, to assign the value of an output from a previous operator step to the input.
+  - Check the box to select the `PIPELINE_NAME_TASK_RUN.PIPELINE_NAME_RUN` field from the previous Expression operator. The SQL task will use the value from the Expression as the input parameter for the SQL task.
+  - Click **Done**.
+
+  ![](./images/pipeline-second-parameter.png " ")
+
+
+44. The two input parameters of the SQL task now have Configured values . Click **Configure**.
+![](./images/configure-parameters-second.png " ")
+
+45. In **Configuration tab**, the **Incoming Parameters** are now displayed as configured **(2/2)**.
 ![](./images/one-configured.png " ")
 
-39. Connect the **two SQL tasks** to the **END\_1** operator. The final Pipeline should look like this:
+46. Connect the **two SQL tasks** to the **END\_1** operator. The final Pipeline should look like this:
 ![](./images/final-pipeline.png " ")
 
-40. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
+47. Click **Validate**. The result of the Global Validation should display no warnings and no errors.
 ![](./images/validate-pip.png " ")
 
-41. Click on **Save and Close**.
+48. Click on **Save and Close**.
 ![](./images/save-close.png " ")
 
 ## **STEP 4:** Create a Pipeline task
@@ -282,10 +330,12 @@ Pipeline tasks let you take your pipeline design and choose the parameter values
 * [Applications in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/applications.htm)
 * [Pipelines in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline.htm)
 * [Pipeline Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-tasks.htm)
+* [Using Parameters in Pipelines](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters)
 * [Publishing Design Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/publish-design-tasks.htm)
+
 
 ## Acknowledgements
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021
-* **Workshop (or Lab) Expiry Date** - 
+* **Workshop (or Lab) Expiry Date** -

@@ -21,12 +21,13 @@ In this lab, you will:
 
 * **Free Tier/ Paid Oracle Cloud Account**
 * **OCI user** that is assigned to an **OCI group**.
+
 *Note:* In case you want to create a new OCI user and/or assign the user to a group, please see the following [LiveLabs workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566) about Identity and Access Management.
 
 
 ## **STEP 1**: Create an OCI Compartment
 
-A **compartment** is a collection of cloud assets. For this workshop, we are creating a new compartment to help organize all of the Data Integration resources. However, if you already have a compartment, you can use that one for this Workshop.
+A **compartment** is a collection of cloud assets. For this workshop, we are creating a new compartment to help organize all of the Data Integration resources. However, if you already have a compartment, you can use that one for this Workshop and skip this step.
 
 A Cloud Administrator can create a compartment in your tenancy. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Integration resources that you will use in the workshop.
 
@@ -52,7 +53,7 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
 
 
 ## **STEP 2:** Create a VCN and Subnet using VCN Wizard
-You will need a **Virtual cloud network** for further use in this OCI Data Integration LiveLab. **Oracle virtual cloud networks** (VCNs) provide customizable and private cloud networks in Oracle Cloud Infrastructure (OCI).
+You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data Integration workshop. **Oracle virtual cloud networks** provide customizable and private cloud networks in Oracle Cloud Infrastructure.
 
 1. From the OCI console menu, click **Networking** and then select **Virtual Cloud Networks**.
 ![](./images/oci-menu-vcn.png " ")
@@ -74,20 +75,19 @@ In the **Basic Information** section, provide the following information:
   - **VCN CIDR BLOCK**: Leave the default `10.0.0.0/16`.
   - **PUBLIC SUBNET CIDR BLOCK**: Leave the default `10.0.0.0/24`.
   - **PRIVATE SUBNET CIDR BLOCK**: Leave the default `10.0.1.0/24`.
-  - In the DNS RESOLUTION section, select the `USE DNS HOSTNAMES IN THIS VCN` check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other.
+  - In the DNS RESOLUTION section, select the `USE DNS HOSTNAMES IN THIS VCN` check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other
+  - Click the **Next** button at the bottom left of the screen.
 
 ![](./images/vcn-config-subnets.png " ")
 
 
-6. Click the **Next** button at the bottom left of the screen.
-
-7. Review your settings to be sure they are correct and then click **Create** button.
+6. Review your settings to be sure they are correct and then click **Create** button.
 ![](./images/create-vcn-button.png " ")
 
-8. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
+7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
 ![](./images/vcn-successful.png " ")
 
-9. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
+8. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
 
 ![](./images/vcn-detail.png " ")
 

@@ -634,7 +634,7 @@ This SQL task will write inside a statistics table on the Autonomous Data Wareho
   - **Connection**: Choose the `Beta Connection`
   - **Schema**: `BETA` schema on your ADW
   - **Stored Procedure**: Choose the `OCIDI_RESULT` procedure.
-  *Note: The `OCIDI\_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure*
+  *Note: The `OCIDI_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure*
 
 ![](./images/sql-procedure-task.png " ")
 
