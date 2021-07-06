@@ -111,7 +111,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       <copy>
       cd $HOME
       pwd
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/IP2M0lIZ4vAmTv-z828w1E41TAwIKiIHY7C6Z8p2GDxKYVBxLeFYTp1MbgbHBAWD/n/c4u03/b/data-management-library-files/o/load-21c.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/xHRXzv3UiDSJXbEI1mlRFTG33gQ6n-ukFdCNEVvWu6XWOyEqBeyAvTdgOsmHaaWa/n/c4u04/b/data-management-library-files/o/load-21c.sh
       chmod +x load-21c.sh
       export PATH=$PATH:/usr/lib/oracle/19.10/client64/bin
       </copy>
