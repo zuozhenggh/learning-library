@@ -50,13 +50,13 @@ Learn how to
 1. Copy and paste the url in your browser for the zip archive, i.e.  
 
     ```
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
    Or use `wget` or `curl` to download the sample data to you computer.   
    A sample `curl` request is:
     ```
-    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
 2. **Unzip** the archive into a local directory such as ~/downloads.

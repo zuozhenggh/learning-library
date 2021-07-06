@@ -1,4 +1,4 @@
-# Title of the lab
+# Create a Database User
 
 ## Introduction
 

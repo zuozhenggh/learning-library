@@ -14,11 +14,10 @@ Estimated Time: n minutes -- this estimate is for the entire workshop - it is th
 
 *List objectives for the workshop*
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+In this workshop, you will:
+* Objective 1
+* Objective 2
+* Objective 3
 
 *This is the "fold" - below items are collapsed by default*
 
