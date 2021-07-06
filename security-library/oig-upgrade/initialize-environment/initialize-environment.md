@@ -25,15 +25,14 @@ In this lab, you will:
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 
-## **STEP 1:** Login to the Remote Desktop and Validate
+## **STEP 1:** Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Launch your browser to the following URL to access the Remote Desktop.
+    - Database Listener
+    - Database Server
+    - Admin Server (Admin server will take about 3-4 mins to start)
+    - OIM & SOA Server (SOA and OIM servers will take 10-12mins to start)
 
-    ```
-    <copy>
-    http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&autoconnect=true
-    </copy>
-    ```
 2. On the *Firefox* window on the right preloaded Weblogic 11g console, if not then refresh the page or wait 2-3min to start Admin server then click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference.
     
     ```
