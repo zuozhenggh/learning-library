@@ -30,14 +30,6 @@
             "filename": "../../query/query.md"
         },
         {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
-        },
-        {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
-        },
-        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"

@@ -2,6 +2,15 @@
 
 In this lab, you will create a service connector to move log data from the Logging service to an Autonomous Database using Functions and Oracle REST Data Services.
 
+*Estimated Lab Time:* 30 Minutes
+
+### Objectives
+
+In this lab, you will:
+    - Create a JSON collection in the Autonomous Database using SODA/Database Actions
+    - Create a function to pass log files into a JSON collection
+    - Connect all the pieces together with Service Connector Hub
+
 ### Prerequisites
 
 - You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
