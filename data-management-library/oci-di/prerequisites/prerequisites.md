@@ -2,9 +2,7 @@
 
 ## Introduction
 
-This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure.
-
-When using your own **paid tenancy**, several of these tasks need to be performed by the Cloud Administrator for your tenancy. When using the **Free Tier** Oracle Cloud account, you are the Cloud Administrator and you can perform all of the steps below.
+This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading source files in Object Storage bucket and creating the necessary database objects in Autonomous Data Warehouse.
 
 *Estimated Lab Time*: 1 hour
 
@@ -58,38 +56,31 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 1. From the OCI console menu, click **Networking** and then select **Virtual Cloud Networks**.
 ![](./images/oci-menu-vcn.png " ")
 
-2. On the Virtual Cloud Networks page, make sure that you are in the Data Integration compartment you have created (`DI-compartment`). Then click **Start VCN Wizard**.
+2. On the Virtual Cloud Networks page, make sure that you are in the Data Integration compartment you have are using for data integration (`DI-compartment`). Then click **Start VCN Wizard**.
 ![](./images/vcns.png " ")
 
 3. Select *VCN with Internet Connectivity*, and then click **Start VCN Wizard**.
 ![](./images/start-vcn-wizard.png " ")
 
 4. The Configuration page of the wizard is displayed.
-In the **Basic Information** section, provide the following information:
+In the **Basic Information** section, provide:
   - **VCN Name**: `OCI-VCN-WORKSHOP`
-  - **Compartment**: Select `DI-compartment`.
+  - **Compartment**: Select `DI-compartment` or the compartment you are using for data integration.
 
 ![](./images/vcn-config.png " ")
 
-5. In the **Configure VCN and Subnets** section, provide the following information:
-  - **VCN CIDR BLOCK**: Leave the default `10.0.0.0/16`.
-  - **PUBLIC SUBNET CIDR BLOCK**: Leave the default `10.0.0.0/24`.
-  - **PRIVATE SUBNET CIDR BLOCK**: Leave the default `10.0.1.0/24`.
-  - In the DNS RESOLUTION section, select the `USE DNS HOSTNAMES IN THIS VCN` check box. This allows the use of host names instead of IP addresses for hosts to communicate with each other
-  - Click the **Next** button at the bottom left of the screen.
 
+5. In the **Configure VCN and Subnets** section, leave all the default values and selections. Click **Next**.
 ![](./images/vcn-config-subnets.png " ")
-
 
 6. Review your settings to be sure they are correct and then click **Create** button.
 ![](./images/create-vcn-button.png " ")
 
-7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
+<!-- 7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
 ![](./images/vcn-successful.png " ")
 
 8. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
-
-![](./images/vcn-detail.png " ")
+![](./images/vcn-detail.png " ") -->
 
 
 ## **STEP 3:** Provision an Autonomous Data Warehouse and download Wallet
