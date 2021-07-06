@@ -1,9 +1,9 @@
 # Hands-on with Multitenant (Advanced)
 
-Introduction
+## Objective
 This hands-on labs is designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, We will dive into the concepts of Application container and Proxy PDBs.
 
-Prerequisites
+## Prerequisites
 This lab assumes you have:
 
 - You need to have completed Lab 1 through Lab 3 and Step 0 of Lab 4.
