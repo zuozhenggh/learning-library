@@ -380,7 +380,7 @@ end;
 			</pdf>
 	</display>
 	<display id="a4015bc6-0148-1000-8014-0a9fb866e52c" type="" style="plsql-dbms_output" enable="true">
-		<name><![CDATA[any query runstat with session]]></name>
+		<name><![CDATA[In-Memory Query vs Buffer Cache with custom session parameters]]></name>
 		<description><![CDATA[]]></description>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
