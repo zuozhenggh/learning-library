@@ -14,7 +14,7 @@ For example, you can build up a JSON with information for an online shop if inst
 
 It's up to you to customize the JSON according to your business need.
 
-Estimated Lab Time: 14 hours
+Estimated Workshop Time: 14 hours
 
 ### About Product/Technology
 * ***What are Oracle Autonomous JSON Databases?***
@@ -37,7 +37,8 @@ Estimated Lab Time: 14 hours
 
   **Container Engine for Kubernetes (OKE)** or **Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications.
 
-### Workshop Objectives
+### Objectives
+In this lab, you will:
   * Set up the environment in OCI
   * Provision an Autonomous JSON Database
   * Create an Object Storage Standard Bucket and upload sample JSON
@@ -49,6 +50,7 @@ Estimated Lab Time: 14 hours
   * Put it all together in one single application
 
 ### Prerequisites
+To complete this lab, you must have:
   * An OCI Account.
 
 You may now [proceed to the next lab](#next).
@@ -62,6 +64,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-**Workshop Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
-
-**Workshop Contributors** - Grama Emanuel
+**Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina, Minoiu (Paraschiv) Laura Tatiana, Digori Gheorghe
+**Contributors** - Grama Emanuel
+**Last Updated By** - Brianna Ambler, July 2021

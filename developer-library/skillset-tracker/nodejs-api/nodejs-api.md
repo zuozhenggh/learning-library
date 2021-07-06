@@ -1,4 +1,4 @@
-# Build NodeJS APIs to make calls to the database
+# Build NodeJS APIs to Make Calls to the Database
 
 ## Introduction
 
@@ -9,13 +9,14 @@ SODA for NodeJS is part of the Oracle NodeJS driver, **node-oracledb**, and does
 Estimated Lab Time: 1 hour and 30 minutes
 
 ### Objectives
-
+In this lab, you will:
 * Provision a Linux Instance in OCI and install the needed packages.
 * Build a basic NodeJS application that will make calls to the database.
 * Run and test the application.
 * Test the APIs using Postman.
 
 ### Prerequisites
+To complete this lab, you must have:
 * An IDE, such as **Visual Studio Code**.
 * An OCI Account.
 * A tenancy where you have the resources available to provision a Linux Instance.
@@ -40,7 +41,7 @@ Estimated Lab Time: 1 hour and 30 minutes
 
 4. Click the **Create** button.
 
-## **STEP 2:** Connecting to the Instance and installing the needed packages
+## **STEP 2:** Connecting to the Instance and Installing the Needed Packages
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
@@ -197,7 +198,7 @@ Estimated Lab Time: 1 hour and 30 minutes
 
   **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **your\_path\_to\_instant\_client/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
 
-## **STEP 4:** Create a simple NodeJS application with APIs
+## **STEP 4:** Create a Simple NodeJS Application with APIs
 
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
@@ -707,7 +708,7 @@ The final structure of the project you are going to create will look as in the p
 
     You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.
 
-## **STEP 5:** Testing APIs using Postman
+## **STEP 5:** Testing APIs Using Postman
 
 In this step you are going to make two types of API calls: ***GET*** and ***POST***. Since in the previous steps of this lab you only created paths for the GET operation, you must first update the code of the application.
 
@@ -911,3 +912,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 **Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina
+**Last Updated By** - Brianna Ambler, July 2021

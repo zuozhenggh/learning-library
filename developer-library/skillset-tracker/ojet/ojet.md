@@ -16,13 +16,14 @@ Treemap Characteristics:
 Estimated Lab Time: 1 hour
 
 ### Objectives
-
+In this lab, you will:
 * Provision a Virtual Cloud Network and needed resources.
 * Provision a Linux Instance in OCI and install the needed packages.
 * Build a basic OracleJET application that will make show a treemap structure based on a locally stored JSON file.
 * Run and test the application.
 
 ### Prerequisites
+To complete this lab, you must have:
 * An IDE, such as **Visual Studio Code**.
 * An OCI Account.
 * A tenancy where you have the resources available to provision a VCN and a Linux Instance.
@@ -96,7 +97,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
 5. Click the **Create** button.
 
-## **STEP 3:** Connecting to the Instance and installing the needed packages
+## **STEP 3:** Connecting to the Instance and Installing the Needed Packages
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
@@ -168,7 +169,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
-## **STEP 4:** Create a simple OracleJET application with a Treemap
+## **STEP 4:** Create a Simple OracleJET Application with a Treemap
 
 After the process of configuring the OCI instance, in order to be able to create and run OracleJET application, you will see an example of a basic project that will contain a treemap structure based on a JSON file stored in the project.
 
@@ -390,3 +391,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 **Authors** - Gheorghe Teodora Sabina, Giurgiteanu Maria Alexandra
+**Last Updated By** - Brianna Ambler, July 2021
