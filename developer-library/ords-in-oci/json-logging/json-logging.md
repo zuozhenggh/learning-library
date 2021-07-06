@@ -20,11 +20,11 @@ In this lab, you will:
 ## **Download Lab Files**
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip)
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
 ```
 
 ## **STEP 1:** Creating a Collection
@@ -164,7 +164,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 4. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
     ```    
 
     Once downloaded, unzip it

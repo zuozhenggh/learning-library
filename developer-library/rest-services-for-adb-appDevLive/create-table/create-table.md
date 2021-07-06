@@ -40,7 +40,7 @@ Estimated Lab Time: 15 minutes
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/pp_oz_4cJpg26fUsPQYshv6G--X4TmAkpRKeFdZWzQ_XuG-eVCo3Ea3Mz1u4RxKI/n/c4u03/b/developer-library/o/csv_data.csv)
+    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Q4ShRkHMFyl4RiSUfoR5zH_KS8rfFeRDpM-wHkY6Ytt4YcpmnlOiOpoPUNzdzbtf/n/c4u04/b/developer-library/o/csv_data.csv)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
