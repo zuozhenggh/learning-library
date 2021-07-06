@@ -34,18 +34,18 @@ This lab assumes you have already completed the following:
 
    
 
-2. Download the `sdb_demo_app.zip`  file. 
+2. Download the `sdb-demo-app-qs.zip`  file. 
 
     ```
-    oracle@cata ~]$ <copy>wget https://github.com/minqiaowang/work-with-db-shard/raw/main/deploy-demo-app/sdb_demo_app.zip</copy>
+    oracle@cata ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ErxEBOjxY0ZmkmhX2bdvMvc7kM5A3bJSIVYOOC9jf2NB4DlW-nXxj78jSYoErYWY/n/c4u04/b/data-management-library-files/o/OracleShardingQuickStart/sdb-demo-app-qs.zip</copy>
     ```
 
    
 
-3. Unzip the file. This will create `sdb_demo_app` directory under the `/home/oracle`
+3. Unzip the file. This will create `sdb-demo-app` directory under the `/home/oracle`
 
     ```
-    [oracle@sdbsd0 ~]$ <copy>unzip sdb_demo_app.zip</copy> 
+    [oracle@sdbsd0 ~]$ <copy>unzip sdb_demo_app-qs.zip</copy> 
     Archive:  sdb_demo_app.zip
        creating: sdb_demo_app/
       inflating: sdb_demo_app/license.inc  
@@ -489,3 +489,8 @@ This lab assumes you have already completed the following:
     
 
 You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Jan 2021
+* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Workshop Expiry Date** - Jul 2022

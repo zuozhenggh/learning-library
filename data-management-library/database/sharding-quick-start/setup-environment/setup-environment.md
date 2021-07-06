@@ -22,7 +22,7 @@ This lab assumes you have already completed the following:
 
 Click on the link below to download the Resource Manager zip files you need to build your enviornment.
 
-- [shardstack-nodomain.zip](https://github.com/minqiaowang/work-with-db-shard/raw/main/setup-environment/shardstack-nodomain.zip) - Packaged terraform primary database instances creation script.
+- [shardstack-nodomain-qs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/66WhdraCtnNngZ7qkghulTFnOAr_uNF9Cc8mqneE8gdk2fej-w_eOEolLGUOmE4D/n/c4u04/b/data-management-library-files/o/OracleShardingQuickStart/shardstack-nodomain-qs.zip) - Packaged terraform primary database instances creation script.
 
 
 
@@ -38,7 +38,7 @@ Click on the link below to download the Resource Manager zip files you need to b
     
     ![](./images/step1.3-createstackpage.png " ")
 
-2. Check the **ZIP FILE**, Click the **Browse** link and select the setup zip file (`shardstack-nodomain.zip`) that you downloaded. Click **Select** to upload the zip file.
+2. Check the **ZIP FILE**, Click the **Browse** link and select the setup zip file (`shardstack-nodomain-qs.zip`) that you downloaded. Click **Select** to upload the zip file.
 
     ![image-20210123085353928](images/image-20210123085353928.png)
 
@@ -325,7 +325,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Jan 2021
-* **Last Updated By/Date** - Minqiao Wang, Jun 2021
-
+* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Workshop Expiry Date** - Jul 2022
 
 

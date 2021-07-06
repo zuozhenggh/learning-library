@@ -36,10 +36,10 @@ This lab assumes you have already completed the following:
 
    
 
-2. Download the SQL scripts `create-app-schema.sql`.
+2. Download the SQL scripts `create-app-schema-qs.sql`.
 
     ```
-    [oracle@sdbsd0 ~]$ <copy>wget https://github.com/minqiaowang/work-with-db-shard/raw/main/create-app-schema/create-app-schema.sql</copy>
+    [oracle@sdbsd0 ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/eSQ5xkzqiv-yWsQj5FzDm33LKnVbdvPlkIMzHgDP9OmMgaPTQzNfNSOVNcAT2uhK/n/c4u04/b/data-management-library-files/o/OracleShardingQuickStart/create-app-schema-qs.sql</copy>
     ```
 
    
@@ -47,7 +47,7 @@ This lab assumes you have already completed the following:
 3. Edit the sql scripts file. Modify the sys user password in the connect string `connect sys/your-own-sys-password@sdbsc0:1521/sdbpdb as sysdba` to the catalog database. Make sure the connect string for the demo app_schema user to the catalog database is correct in your environment: `connect app_schema/App_Schema_Pass_123@sdbsc0:1521/sdbpdb`.
 
     ```
-    [oracle@cata ~]$ <copy>vi create-app-schema.sql</copy>  
+    [oracle@cata ~]$ <copy>vi create-app-schema-qs.sql</copy>  
     set echo on 
     set termout on
     set time on
@@ -196,7 +196,7 @@ This lab assumes you have already completed the following:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
     Version 19.7.0.0.0
     
-    SQL> @create-app-schema.sql
+    SQL> @create-app-schema-qs.sql
     ```
 
    
@@ -917,3 +917,8 @@ This lab assumes you have already completed the following:
    
 
 You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Jan 2021
+* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Workshop Expiry Date** - Jul 2022
