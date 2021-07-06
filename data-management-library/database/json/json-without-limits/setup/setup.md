@@ -7,7 +7,7 @@ related to data management. We'll also introduce a JSON data generator.
 
 ### Objectives
 
-In this lad, you will:
+In this lab, you will:
 - deploy an Autonomous database using the DRAGON Stack manager
 - deploy a JSON documents generator as a micro-service
 

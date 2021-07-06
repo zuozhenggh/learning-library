@@ -2,7 +2,7 @@
 
 ### Objectives
 
-In this lad, you will:
+In this lab, you will:
 - learn best practices to load JSON documents using the SODA API for Java
 
 ### Prerequisites
@@ -116,22 +116,22 @@ In fact the microservice deployed in the previous lab already provides an implem
 ### Inside the Database
 
 1. Start by creating a table partitioned by interval (time range) with a new partition added automatically every hour:
-```
-<copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
-create table PURCHASE_ORDERS (
-    ID VARCHAR2(255) default SYS_GUID() not null primary key,
-    CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
-    LAST_MODIFIED timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
-    VERSION varchar2(255) not null,
-    JSON_DOCUMENT BLOB, -- using the 19c compatible way
-    check (JSON_DOCUMENT is json format oson))
-    LOB(JSON_DOCUMENT) STORE AS (CACHE)
-PARTITION BY RANGE (CREATED_ON)
-INTERVAL (INTERVAL '1' HOUR)
-(
-   PARTITION part_01 values LESS THAN (TO_TIMESTAMP('01-JUN-2021','DD-MON-YYYY'))
-);</copy>
-```
+   ```
+   <copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
+   create table PURCHASE_ORDERS (
+       ID VARCHAR2(255) default SYS_GUID() not null primary key,
+       CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
+       LAST_MODIFIED timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
+       VERSION varchar2(255) not null,
+       JSON_DOCUMENT BLOB, -- using the 19c compatible way
+       check (JSON_DOCUMENT is json format oson))
+       LOB(JSON_DOCUMENT) STORE AS (CACHE)
+   PARTITION BY RANGE (CREATED_ON)
+   INTERVAL (INTERVAL '1' HOUR)
+   (
+      PARTITION part_01 values LESS THAN (TO_TIMESTAMP('01-JUN-2021','DD-MON-YYYY'))
+   );</copy>
+   ```
 
 2. Create the SODA collection using either SQL Developer Web or SQLcl: 
    

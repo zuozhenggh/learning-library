@@ -2,7 +2,7 @@
 
 ### Objectives
 
-In this lad, you will:
+In this lab, you will:
 - learn about the different types of indexes available for JSON data 
 - learn how to create functional indexes for JSON data 
 - learn how to create advanced Full-Text search indexes on a JSON collection
