@@ -343,14 +343,236 @@ we'll only ask for the results, and the database engine will process data in the
 
 1. Retrieving the **JSON** documents from the `purchase_orders` collection... in SQL:
 
-   The simplest query is:
+   The simplest query we can start with will use the dot-notation to walk the JSON documents hierarchy:
 
    ```
    <copy>
+   select p.id as purchase_order_id,
+          p.json_document.shippingInstructions.address.country as country
+     from purchase_orders p;
+   </copy>
+   ```
    
+   This allows us to retrieve the country from the shipping address fields along the ID or primary key for each single JSON document:
+   ![](./images/simple-query-dot-notation.png)
+
+
+2. Converting them into **relational** data using the `JSON_TABLE()` SQL/JSON function
+
+   The [`JSON_TABLE()`](https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/function-JSON_TABLE.html) function allows projecting JSON fields into relational columns. It also allows unnesting JSON array elements into new rows.
+   
+   In the following example, we'll unnest the `items` array from our JSON documents:
+   ```
+   {
+      "requestor": "Alexis Bull",
+      ...
+      "shippingInstructions": {
+         "address": {
+            ...
+            "country": "United States of America",
+            ...
+         },
+         ...
+      },
+      ...
+      "items": [
+         {
+            "description": "One Magic Christmas",
+            "unitPrice": 19.95,
+            "UPCCode": 13131092899,
+            "quantity": 1.0
+         },
+         {
+            "description": "Lethal Weapon",
+            "unitPrice": 19.95,
+            "UPCCode": 85391628927,
+            "quantity": 5.0
+         }
+      ]
+   }
+   ```
+   
+   Here is the SQL query:
+   
+   ```
+   <copy>
+   select p.id as purchase_order_id,
+          jt.country,
+          jt.itemNumber,
+          jt.description,
+          jt.quantity,
+          jt.unitPrice
+    from purchase_orders p,
+         JSON_TABLE( json_document,
+            '$' Columns(Nested items[*] Columns( quantity, unitPrice, description, itemNumber FOR ORDINALITY),
+            country path '$.shippingInstructions.address.country')
+         ) jt;
+   </copy>
+   ```
+   
+   And here is the result:
+   ![](./images/json-table-result.png)
+
+   You can see that the `JSON_TABLE()` function builds a new table with alias `jt`. The `'$'` symbol represents the root of the 
+   JSON document hierarchy and we can navigate the JSON fields such as the `$.items` array or the `$.shippingInstructions.address.country`.
+   
+   The interesting part comes from the **Nested** operator which denotes the presence of an array inside the JSON document and then builds the rows by extracting here the 3
+   JSON fields: `quantity`, `unitPrice` and `description`. The `ìtemNumber` column is a new one that will contain the item number inside the array starting from 1. This is the purpose of the `FOR ORDINALITY` expression:
+   allows us to put a number in front of the new generated row.
+   
+   The first JSON document with ID highlighted in the red square is displayed hereunder to help you better understand what is happening:
+
+   ```
+   {
+     "reference" : "FRAJKIRAN-20210703",
+     "requestor" : "Fiamma Rajkiran",
+     "user" : "FRAJKIRAN",
+     "requestedAt" : "2021-07-03T08:30:31.752701Z",
+     "shippingInstructions" :
+     {
+       "name" : "Fiamma Rajkiran",
+       "address" :
+       {
+         "street" : "04478 Lincoln Springs",
+         "city" : "South Armandobury",
+         "state" : "NH",
+         "zipCode" : "94335-7419",
+         "country" : "Myanmar",
+         "geometry" :
+         {
+           "type" : "Point",
+           "coordinates" :
+           [
+             91.790958,
+             -36.701601
+           ]
+         }
+       },
+       "phone" :
+       [
+         {
+           "type" : "Office",
+           "number" : "530-931-1111"
+         }
+       ]
+     },
+     "costCenter" : "A30",
+     "specialInstructions" : "COD",
+     "allowPartialShipment" : true,
+     "items" :
+     [
+       {
+         "description" : "Exploring The Supernatural 3: Miracles/Mysteries",
+         "unitPrice" : 19.95,
+         "UPCCode" : 56775020194,
+         "quantity" : 2
+       },
+       {
+         "description" : "Men in Black",
+         "unitPrice" : 19.95,
+         "UPCCode" : 43396054981,
+         "quantity" : 3
+       },
+       {
+         "description" : "Short 7: Utopia",
+         "unitPrice" : 19.95,
+         "UPCCode" : 85393694326,
+         "quantity" : 3
+       }
+     ]
+   }
+   ```
+
+   As you can see, the array contains 3 items.
+
+   With the 19c version of the Oracle database, we get a new way to write such query with, simpler:
+   
+   ```
+   <copy>
+   select p.id as purchase_order_id,
+          jt.country,
+          jt.itemNumber,
+          jt.description,
+          jt.quantity,
+          jt.unitPrice
+    from purchase_orders p
+         Nested json_document
+         Columns(
+             Nested items[*] Columns( quantity, unitPrice, description, itemNumber FOR ORDINALITY),
+             country path '$.shippingInstructions.address.country'
+         ) jt;
+   </copy>
+   ```
+   
+   This produces the exact same result:
+   ![](./images/json-table-result-simplified-nested.png)
+
+
+3. Joining these data with the `country_taxes` **relational** data
+
+   We can improve the previous query by introducing a SQL join with the `country_taxes` table:
+
+   ```
+   <copy>
+   select p.id as purchase_order_id,
+          jt.country,
+          ct.tax,
+          jt.itemNumber,
+          jt.description,
+          jt.quantity,
+          jt.unitPrice
+     from purchase_orders p,
+          JSON_TABLE( json_document, 
+                      '$' Columns(Nested items[*] Columns( quantity, unitPrice, description, itemNumber FOR ORDINALITY),
+                       country path '$.shippingInstructions.address.country')
+                    ) jt,
+          country_taxes ct
+    where ct.COUNTRY_NAME = jt.country;
    </copy>
    ```
 
+   The result with the taxes per country now displayed and available for further computing...
+   
+   ![](./images/join-with-country-taxes.png)
+
+
+4. Computing the new price using the SQL `GROUP BY` operation along the aggregate function `SUM`
+
+   This is the easiest part: writing an aggregation query to sum the quantity of our items and multiplying it by the unit 
+   price and summing for all the items of a given purchase order (_unique identifier_: ID). This will give us a price in $. 
+   
+   Now adding to it the VAT consist of taking this price and multiply it by 100% + tax = 1 + tax: 
+
+   ```
+   <copy>
+   select p.id as purchase_order_id,
+          jt.country,
+          SUM(jt.quantity * jt.unitPrice) as totalPrice, 
+          SUM(jt.quantity * jt.unitPrice * (1 + ct.tax)) as totalPriceWithVAT
+     from purchase_orders p,
+          JSON_TABLE( json_document, 
+                      '$' Columns(Nested items[*] Columns( quantity, unitPrice ),
+                       country path '$.shippingInstructions.address.country')
+                    ) jt,
+          country_taxes ct
+    where ct.COUNTRY_NAME = jt.country
+    GROUP BY p.id, jt.country;
+   </copy>
+   ```
+
+   This gives the following result:
+
+   ![](./images/group-by.png)
+
+
+5. Removing the invoices that have already been processed using an `ANTI JOIN` technic
+
+   Remember, we want to generate invoices relational data. However, we don't want to generate duplicates!
+
+   Since we'll insert the generated data into the `invoices` table we've just created, we can use an `ANTI JOIN` to restrict the
+   invoice generation to the purchase orders **without** an invoice.
+   
+   
 
 You may now [proceed to the next lab](#next): ...
 

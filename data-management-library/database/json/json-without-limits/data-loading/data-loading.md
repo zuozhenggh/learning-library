@@ -40,6 +40,7 @@ Example of JSON formatted purchase order:
          "street": "200 Sequoia Avenue",
          "city": "South San Francisco",
          "zipCode": 94080,
+         "country": "United States of America",
          "geometry": {
              "type": "Point",
              "coordinates": [ 37.662187, -122.440148 ]
