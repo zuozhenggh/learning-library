@@ -9,18 +9,23 @@ Enormous gains in technical efficiency are enabled by a shared technical infrast
 
 *Estimated Workshop Time*: 4 hours
 
+### Objectives
+
+In this lab, you will:
+
+* Understand the basic functionality of Cloning, Plug and Unplug PDBs, Hot Cloning, and Refresh and Relocation
+* Understand advanced features like Application Containers
+
+
+### Prerequisites
+
+This workshop assumes you have: 
+
+- Some understanding of cloud and database terms 
+- Familiarity with Oracle Cloud Infrastructure (OCI) 
 Watch the video below for an overview of Oracle Multitenant.
 
 [](youtube:4mUwjBfztfU)
-
-# Objective
-
-The objectives of this workshop is to understand the basic functionality of Oracle database multitenant features which would cover Cloning, Plug and Unplug PDBs, Hot Cloning, Refresh and Relocation. and in-depth understanding of advanced features like Application Containers
-
-# Prerequisite
-
-- Some understanding of cloud and database terms is helpful
-- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 
 ### Containers and Pluggable Databases
