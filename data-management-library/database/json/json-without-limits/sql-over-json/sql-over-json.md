@@ -570,9 +570,175 @@ we'll only ask for the results, and the database engine will process data in the
    Remember, we want to generate invoices relational data. However, we don't want to generate duplicates!
 
    Since we'll insert the generated data into the `invoices` table we've just created, we can use an `ANTI JOIN` to restrict the
-   invoice generation to the purchase orders **without** an invoice.
+   invoice generation to the purchase orders **without** any related invoice. We'll keep the purchase order ID as the unique identifier for our invoice.
    
+   This gives the following query:
    
+   ```
+   <copy>
+   select p.id as purchase_order_id,
+          jt.country,
+          SUM(jt.quantity * jt.unitPrice) as totalPrice, 
+          SUM(jt.quantity * jt.unitPrice * (1 + ct.tax)) as totalPriceWithVAT
+     from purchase_orders p,
+          JSON_TABLE( json_document, 
+                      '$' Columns(Nested items[*] Columns( quantity, unitPrice ),
+                       country path '$.shippingInstructions.address.country')
+                    ) jt,
+          country_taxes ct,
+          invoices i
+    where ct.COUNTRY_NAME = jt.country
+      and i.id(+) = p.id -- outer join
+      and i.id is null   -- anti join
+    GROUP BY p.id, jt.country;
+   </copy>
+   ```
+
+   The resulting rows are:
+
+   ![](./images/anti-join.png)
+
+   You can see highlighted the 2 interesting lines:
+   - the first one does a left outer join between `purchase_orders` collection and the `invoices` table 
+   - the second one checks that any resulting row from the `invoices` table has a null ID (the unique not null identifier) 
+     meaning that there is no corresponding `invoices` row, and so we need to create one for this purchase order JSON document
+
+
+6. Inserting the data into the `INVOICES` **relational** table
+
+   We can then add the missing SQL expression to use to insert the data inside the `invoices` table:
+
+   ```
+   <copy>
+   INSERT into invoices (id, country_name, price, price_with_country_vat)
+   select p.id as purchase_order_id,
+          jt.country,
+          SUM(jt.quantity * jt.unitPrice) as totalPrice, 
+          SUM(jt.quantity * jt.unitPrice * (1 + ct.tax)) as totalPriceWithVAT
+     from purchase_orders p,
+          JSON_TABLE( json_document, 
+                      '$' Columns(Nested items[*] Columns( quantity, unitPrice ),
+                       country path '$.shippingInstructions.address.country')
+                    ) jt,
+          country_taxes ct,
+          invoices i
+    where ct.COUNTRY_NAME = jt.country
+      and i.id(+) = p.id -- outer join
+      and i.id is null   -- anti join
+    GROUP BY p.id, jt.country;
+   </copy>
+   ```
+
+   Using the LOW database service on an Always Free Tiers database, it created 304,000 new invoices in 12 seconds:
+
+   ![](./images/insert.png)
+
+   If we run it again without adding any new JSON purchase order, hence no new invoice to create, this is almost instantaneous:
+
+   ![](./images/re-insert.png)
+
+
+## **STEP 4**: Optimizing the Process!
+
+![](./images/batch-insert-too-slow.png)
+
+Indeed, a new bug need to be fixed! Apparently the batch process is too slow... It appears the generation of relational rows
+from JSON data using the `JSON_TABLE()` function takes a lot of time.
+
+Let's review what the integration of the JSON data model means for the Oracle database compared to the features available since years
+for relational data:
+
+![](./images/all-features-for-all-models.png)
+
+As you can see, the features from the Relational world are available to the JSON world. Particularly, the one highlighted 
+in green (`Materialized Views`) deserves our attention.
+
+Indeed, this capability is very useful for reporting/analytics/batch workloads involving potentially a lot of rows. `Materialized Views` allow
+pre-computing data during DML to speed-up the queries later.
+
+Let's see how to optimize our batch process...
+
+1. Creating a `Materialized View`
+
+   We'll create a materialized view, that will be updated in the case of any DML operation occurring on the underlying `purchase_orders` collection.
+   We'll also leverage the Autonomous database underlying infrastructure (Exadata) to ask for the columnar compression of the data inside the materialized view.
+   
+   ```
+   <copy>
+   CREATE MATERIALIZED VIEW PURCHASE_ORDERS_MV 
+   organization heap COMPRESS FOR QUERY LOW
+   refresh fast ON STATEMENT
+   enable query rewrite
+   AS 
+   select p.rowid as p_rowid, p.id,
+          jt.country,
+          jt.quantity,
+          jt.unitPrice
+     from purchase_orders p,
+          JSON_TABLE( json_document, 
+                      '$' Columns(Nested items[*] Columns( 
+                               quantity number path '$.quantity' error on error null on empty, 
+                               unitPrice number path '$.unitPrice' error on error null on empty
+                       ),
+                       country varchar2(500) path '$.shippingInstructions.address.country' 
+                           error on error null on empty)
+                    ) jt;
+   </copy>
+   ```
+   
+   ![](./images/create-mv.png)
+
+   In red, there are several remarks:
+   - the columnar compression is ideal for later queries, several other compression algorithms are available)
+   - the refresh fast on statement allows computing only the additional data in the case of new purchase orders are ingested
+   - the fields `quantity`, `unitPrice`, and `country` extracted from the JSON fields are converted into the proper data types to avoid being strings by default
+   - the materialized view creation took 5 seconds for 304,000 purchase orders
+   
+
+2. Regenerating invoices data using the `MATERIALIZED VIEW`
+
+   Let's clear the `invoices` table:
+
+   ```
+   <copy>
+   truncate table invoices;
+   </copy>
+   ```
+    
+   And let's modify the `INSERT` statement to leverage our brand new `materialized view`:
+
+   ```
+   <copy>
+   INSERT into invoices (id, country_name, price, price_with_country_vat)
+   select p.id as purchase_order_id,
+          p.country,
+          SUM(p.quantity * p.unitPrice) as totalPrice, 
+          SUM(p.quantity * p.unitPrice * (1 + ct.tax)) as totalPriceWithVAT
+        from purchase_orders_mv p,
+             country_taxes ct,
+             invoices i
+       where ct.COUNTRY_NAME = p.country
+         and i.id(+) = p.id -- outer join
+         and i.id is null   -- anti join
+       GROUP BY p.id, p.country;
+   </copy>
+   ```
+   
+   And following are the results:
+
+   ![](./images/insert-from-mv.png)
+
+   The insertion batch took now 6 seconds to generate the 304,000 invoices instead of 11 seconds. And running it a second 
+   time took again almost no time because no new purchase orders have been ingested.
+
+## **STEP 5**: Running Everything Together!
+
+The final step of this lab will consist of running every single capability together:
+- the ingestion process
+- the full-text indexing process
+- the invoices batch generation
+
+
 
 You may now [proceed to the next lab](#next): ...
 
