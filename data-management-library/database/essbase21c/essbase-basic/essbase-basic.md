@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with and overview of the Essbase 21c web interface.
+This lab walks you through the major features of Essbase 21c and their functionalities across the platform along with an overview of the Essbase 21c web interface.
 
 In this lab, the following topics are covered:  
 
@@ -16,7 +16,7 @@ Estimated Lab Time: *75 minutes*.
 ### Objectives
 
  * Understand the Essbase 21c add-ins (Smart View and Cube designer)
- * Understand the Essbase 21c Web-interface overview.
+ * Understand the Essbase 21c web interface overview.
 
 ### Prerequisites
 
@@ -29,11 +29,11 @@ This lab requires:
 
 ## **Step 1:** Creating a Sample Application in Essbase21c
 
-1.	Login to the Essbase 21c web interface using the Essbase URL. i.e. http://ip:9000/essbase/jet.
+1.	Log in to the Essbase 21c web interface using the Essbase URL. i.e. http://ip:9000/essbase/jet.
     
     Note: Please replace ip with your instance's IP Address.
 
-2.	On the Applications tab click **Import** option in the Essbase web interface as shown below.
+2.	On the Applications tab, click **Import** option in the Essbase web interface as shown below.
 
     ![](./images/image14_1.png "")
 
@@ -54,7 +54,7 @@ This lab requires:
 
     ![](./images/image14_5.png "")
 
-This concludes the creation of sample application from the **Catalog** in the Essbase 21c web Interface.
+This concludes the creation of sample application from the **Catalog** in the Essbase 21c web interface.
 
 ## **Step 2:** Analyzing Essbase data using Smart View Add-ins
 
@@ -73,14 +73,14 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 4. Click **Go**.
 
 5. On the login window, enter your login credentials.
-   Note: login with your IP address. 
+   Note: Log in with your IP address. 
 
     ![](./images/image14_7.png "")
 
 6. After successful login, you can now begin working with data in Essbase. Expand **EssbaseCluster** and navigate to the **DynamicCorp** application.    
    
    Click **Sales** and **Connect**.  
-   Click **Ad Hoc analysis**.  
+   Click **Ad hoc analysis**.  
    
    
    ![](./images/image14_8.png "")
@@ -101,7 +101,7 @@ The Essbase ribbon contains commands that enable you to view, navigate, and anal
 
 **POV Toolbar**
 
-Dimensions that are not displayed in columns or rows of a data grid are displayed on POV toolbar, which identifies a slice of the database for a grid. For default Ad Hoc grids, all database dimensions are displayed on the POV toolbar at the dimension level.
+Dimensions that are not displayed in columns or rows of a data grid are displayed on POV toolbar, which identifies a slice of the database for a grid. For default ad hoc grids, all database dimensions are displayed on the POV toolbar at the dimension level.
 
 **Smart View Panel**
 
@@ -109,22 +109,22 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 
 1. Open a new Excel. Click 'Smart View – Panel – Private Connections'. Enter the Smart View URL and the credentials.
 
-2. In the Connection Manager panel to your right, Click **DynamicCorp** – **Sales**. Click **Connect** and then **Ad Hoc analysis**.
+2. In the Connection Manager panel to your right, Click **DynamicCorp** – **Sales**. Click **Connect** and then **Ad hoc analysis**.
 
     ![](./images/image14_8.png "")
 
-3. After connecting to an Essbase server, you can initiate Ad Hoc reports against databases on the connected server. The Ad Hoc report on a blank worksheet returns data from the top levels of each database dimension.
+3. After connecting to an Essbase server, you can initiate ad Hoc reports against databases on the connected server. The ad hoc report on a blank worksheet returns data from the top levels of each database dimension.
 
     ![](./images/image14_12.png "")
 
-4. Double click on year or Zoom in to next level. Now you can see the Quarter level data.
+4. Double-click on year or Zoom in to next level. Now you can see the Quarter level data.
 
     ![](./images/image14_14.png "")
 
-5. Go to Year. Navigate to 'Essbase' ribbon and click **Keep only**. Using this option, only the Year dimension is displayed and all the Quarters are removed.
+5. Go to Year. Navigate to 'Essbase' ribbon and click **Keep only**. Using this option, only the Year dimension is displayed and all the quarters are removed.
     ![](./images/image14_14.0.png "")
 
-6. Go to Year. Click **Zoom in-All Levels**. Now you can see the numbers drill down to leaf level (Months).
+6. Go to Year. Click on **Zoom in- All Levels**. Now you can see the numbers drill down to leaf level (Months).
 
 
     ![](./images/image14_15.png "")
@@ -132,13 +132,13 @@ You use Smart View panel to connect to your Smart View data sources and manage c
     ![](./images/image14_16.png "")
 
 
-7. Double click on 'Measures'. It will zoom into next level. 
+7. Double-click on 'Measures'. It will zoom into next level. 
    ![](./images/image14_17.0.png "")
    
-   Now double click on 'Profit', it will take you to a further next level.
+   Now double-click on 'Profit', it will take you to a further next level.
    ![](./images/image14_17.1.png "")
 
-    Now double click on 'Margin', it will take you further to next level (i.e, at sales level).
+    Now double-click on 'Margin', it will take you further to next level (i.e, at sales level).
    ![](./images/image14_17.2.png "")
    
    Select 'Sales' and click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
@@ -152,16 +152,17 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 9.  In the 'Smart View ribbon' click **Redo**. It will take you back to the sheet prior to the Undo.
 
 
-10. Click on 'Year' and click **Keep only**. Click on Sales and change it to Measures by clicking 'Zoom out' on sales three times.
+10. Click on 'Year' and select **Keep only**. Click on 'Sales' and change it to 'Measures' by clicking 'Zoom out' on sales three times.
 
     Create the below report by zooming into next level of Year dimension and Measures dimension.
     ![](./images/image14_99.png "")
     
     
+    
 
 11.  Pivot to POV:
 
-    a. Click **POV** in 'Essbase' ribbon.
+    a. Click 'POV' in 'Essbase' ribbon.
 
     ![](./images/image14_19.png "")
 
@@ -179,7 +180,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 
     Note: Revert the last step changes by selecting 'Market' and 'Scenario' in the POV and click on 'refresh'.
 
-    a. Click **POV** in 'Essbase' ribbon again.
+    a. Click 'POV' in 'Essbase' ribbon again.
 
     ![](./images/image14_23.png "")
 
@@ -214,7 +215,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 
 ## **Step 4:** Install the Smart View Cube Designer Extension
 
-1. On the 'Smart View' ribbon, select **Options**, and then **Extensions**.
+1. On the 'Smart View' ribbon, select 'Options', and then 'Extensions'.
 
     ![](./images/image14_38.png "")
 
@@ -234,7 +235,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 This workflow uses two sample tabular data excel files to demonstrate the concepts of intrinsic and forced-designation headers. See about [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
 
 
-1. In the 'Cube Designer' ribbon, click **connections** -> select the current connection from the dropdown menu to connect to Essbase. 
+1. In the 'Cube Designer' ribbon, click **Connections** -> select the current connection from the dropdown menu to connect to Essbase. 
    ![](./images/image14_44.0.png "")
    
   On the 'Cube Designer' ribbon, click **Catalog**.
@@ -243,8 +244,8 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
  ![](./images/image14_44.png "")
 
-3.	Double click on the above directed file.  
- The table format workbook have Intrinsic headers that uses table.column format.
+3.	Double-click on the above directed file.  
+ The table format workbook have intrinsic headers that uses table.column format.
 
 4.	On the 'Cube Designer' ribbon, select **Transform Data**.
 
@@ -254,9 +255,9 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
 6. The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
 
-    **Unstr_Hints.xlsx**: Application name is **Unstr_Hints** and the cube name is **SpendHistory**
+    **Unstr\_Hints.xlsx** : Application name is **Unstr\_Hints** and the cube name is **SpendHistory**
 
-7.	Click 'Preview Data'. The workbook is sent to Essbase 21c for analysis and then you can verify the dimensions and their members. 
+7.	Click **Preview Data**. The workbook is sent to Essbase 21c for analysis and then you can verify the dimensions and their members. 
 
 8.	When you are ready to create the cube, click **Run**.
 
@@ -266,7 +267,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
 10.  The newly created application and cube are listed on the Applications home page in the user interface. Now the cube is created from the tabular data, you can export the cube to an application workbook.
 
-11.	On the 'Cube Designer' ribbon, select **Local**, then select **Export Cube to Application Workbook**.
+11.	On the 'Cube Designer' ribbon, select **Local**, then select **Export Cube to Application Workbook**
 
     ![](./images/image14_48.png "")
 
@@ -275,12 +276,12 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
     ![](./images/image14_49.png "")
 
 
-  Note: In the above exercise, you saw how a normal flat file Excel sheet can be converted into an Essbase application and a cube. You can get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
+  Note: In the above exercise, you saw how a normal flat file excel sheet can be converted into an Essbase application and a cube. You can get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
 
 ## **Step 6:** Export a Cube to an Application Workbook
 1. In Essbase web UI, expand the application: **DynamicCorp** that contains the cube that you want to export.
    
-2. From the Actions menu, to the right of the cube name: **Sales**, select **Export to Excel**.
+2. From the Actions menu, to the right of the cube name **Sales**, select **Export to Excel**.
    
    ![](./images/image14_49.1.png "")
 
@@ -289,7 +290,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
            - In block storage cubes, if the size of the data is 400 MB or less, it is exported to the application workbook, on the Data worksheet. If the data size exceeds 400MB, data is exported to a flat file named Cubename.txt, which is included in a file named Cubename.zip on the **Files** page.
            - In aggregate storage cubes, regardless of the size, data is always exported to a flat file named Cubename.txt, which is included in a file named Cubename.zip on the **Files** page.
       * Select build method as **Parent-Child**.
-      * Select **Export Calculation Script** to export each of the calculation scripts as a separate worksheet within the application workbook.
+      * Select **Export Script** to export each of the calculation scripts as a separate worksheet within the application workbook.
       * Select **Export Member IDs**.
       
    ![](./images/image14_49.2.png "")
@@ -321,7 +322,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 4. **Outline Analysis**: 
    The Outline option is equivalent to the EAS console in Essbase on-premises.
 
-  This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the 'Edit' option. Select the 'Outline' option for the 'SpendHistory' cube(or any cube that is already LIVE on the Essbase 21c web interface).
+  This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the 'Edit' option. Select the 'Outline' option for the 'SpendHistory' cube (or any cube that is already LIVE on the Essbase 21c web interface).
 
     ![](./images/image14_58.png "")
     ![](./images/image14_59.png "")
@@ -345,7 +346,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
     ![](./images/image14_63.png "")
 
-9. **About Time Balance property**: To use time balance property for members, the dimension must
+   **About Time Balance property**: To use time balance property for members, the dimension must
 be tagged as Accounts. You must have a dimension tagged as Accounts and a dimension tagged
 as Time.
 
@@ -400,7 +401,7 @@ the background as a unique thread. Each job has a unique id.
    You can create and run new jobs using this tab by clicking on **New Job** as shown below.
     ![](./images/image14_64.png "")
 
-1. Execute a Build Dimension job by selecting the application(**Unstr_Hints**) and cube(**SpendHistory**).
+1. Execute a Build Dimension job by selecting the application (**Unstr_Hints**) and cube (**SpendHistory**).
 
    The 'Script' file is the rule[.rul] file where the dimension build script exists.
 
@@ -427,7 +428,7 @@ the background as a unique thread. Each job has a unique id.
     ![](./images/image14_69.png "")
     ![](./images/image14_70.png "")
 
-    **Application workbooks** comprise a series of worksheets, which can appear in any order, and define a cube, including cube settings and dimensional hierarchies. There are strict layout and syntax requirements for application workbooks, and validations to ensure that workbook contents are formatted correctly. The cube building process will fail, if there are any errors.
+4. **Application workbooks** comprise a series of worksheets, which can appear in any order, and define a cube, including cube settings and dimensional hierarchies. There are strict layout and syntax requirements for application workbooks, and validations to ensure that workbook contents are formatted correctly. The cube building process will fail, if there are any errors.
 
     Modifications can also be made to the workbook using Designer Panel.
     
@@ -465,30 +466,30 @@ Many cube operations require connection information to access remote source data
    A connection stores login credentials required to access an external source. A Datasource points to an external source of information.  
    More details on this are covered in an upcoming lab. 
 
-    ![](./images/image14_72.png "")
+![](./images/image14_72.png "")
 
 ### **Console**:
 
 The Console tab is one stop place for Essbase Administrator tools such as:
 
-    *	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a application workbook.
-    *	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts.  
-    *	Command-Line Tool: CLI utility to perform administrative actions on On-Premise Essbase platform.
-    *	Migration Utility: This utility is used for migrating Essbase artifacts between Essbase instances and environments. This tab also contains the download links for Smart View and Cube Designer add-ins. Extensions and Essbase Client tools such as MaxL, Java API, and others are also available in the Desktop Tools section.
+*	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a application workbook.
+*	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts.  
+*	Command-Line Tool: CLI utility to perform administrative actions on On-Premise Essbase platform.
+*	Migration Utility: This utility is used for migrating Essbase artifacts between Essbase instances and environments. This tab also contains the download links for Smart View and Cube Designer add-ins. Extensions and Essbase Client tools such as MaxL, Java API, and others are also available in the Desktop Tools section.
 
-    ![](./images/image14_73.png "")
+![](./images/image14_73.png "")
 
-    * **Console** tab also holds the information regarding session login by users, settings of the Essbase environment, email configuration settings etc.
-    * The **Global configuration** file of Essbase is available directly from the Essbase Web-user interface, here we can add new variable property settings with corresponding values using 'Add' option.
+* **Console** tab also holds the information regarding session login by users, settings of the Essbase environment, email configuration settings etc.
+* The **Global configuration** file of Essbase is available directly from the Essbase Web-user interface, here we can add new variable property settings with corresponding values using 'Add' option.
 
-    ![](./images/image14_74.png "")
+![](./images/image14_74.png "")
 
 
 ### **Academy**:
 
 **Academy** has documentation links by topics for users and administrators.
 
-    ![](./images/image14_75.png "")
+![](./images/image14_75.png "")
 
 You may proceed to the next lab.
 

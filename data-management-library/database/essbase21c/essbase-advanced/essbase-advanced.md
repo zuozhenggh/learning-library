@@ -58,7 +58,7 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
     d. In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
 
-    e. Under the Source Type, Select File.
+    e. Under the Source Type, select **File**.
 
     f. Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click **Open** to select it.
     
@@ -100,14 +100,14 @@ The source file for this rule is in parent-child format.
       * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
         ![](./images/Dim_4.png)
 
-    d. Now check the field properties for a field. Select the last field column, Population.
+    d. Now check the field properties for a field. Select the last field column, **Population**.
     
        On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
       ![](./images/Dim_5.png)
       ![](./images/Dim_6.png)
 
 
-  e. Click **Dimensions** under the Global toolbar and select Market.
+  e. Click **Dimensions** under the Global toolbar and select **Market**.
 
   f. Go to Advanced and Check Allow Property Changes. Click **OK**.
     ![](./images/Dim_7_0.png)
@@ -122,31 +122,31 @@ Click **Close** to return to the home page.
 
 6. Next, you create and run a job to build the dimension using the rule.
 
-   a. On the home page, select, Jobs, and then New Job.
+   a. On the home page, select Jobs, and then New Job.
 
-   b. Select Build Dimension.
+   b. Select **Build Dimension**.
    ![](./images/Dim_8.png)
 
-   c. In the Build Dimension dialog box, from the Application list, select the DynamicCorp application.
+   c. In the Build Dimension dialog box, from the Application list, select 'DynamicCorp' application.
 
-   d. In the Database list, select the Sales cube. 
+   d. In the Database list, select 'Sales' cube. 
 
    e. In the Script list, select the build dimension rule that you created, **Dim_market1.rul**.
 
-   f. For Load Type, select File.
+   f. For Load Type, select **File**.
 
-   g. In the Data File list, select the **Dim_Market.txt** as the data dimension data file. This file is located in the DynamicCorp,Sales folder.
+   g. In the Data File list, select **Dim_Market.txt** as the data dimension data file. This file is located in the DynamicCorp,Sales folder.
 
-   h. From the Restructure Options list, select Preserve Input Data for the data you want to preserve.
+   h. From the Restructure Options list, select **Preserve Input Data** for the data you want to preserve.
 
    For input data, only blocks that contain data being loaded are preserved. 
    ![](./images/Dim_9.png)
 
    i. Click **OK**. The build dimension job is executed.
 
-   j. On the Jobs page, click Refresh to monitor the job status.
+   j. On the Jobs page, click **Refresh** to monitor the job status.
 
-   k. When the job completes, click **Actions** for the executed job, and select Job Details to verify the status of your build job.
+   k. When the job completes, click **Actions** for the executed job, and select **Job Details** to verify the status of your build job.
    ![](./images/Dim_10.png)
    ![](./images/Dim_11.png)
 
@@ -173,27 +173,27 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 2.	Sign in to the Essbase web interface.
 
-3.	On the home page, expand the DynamicCorp application, and select the Sales cube.
+3.	On the home page, expand the 'DynamicCorp' application, and select the 'Sales' cube.
 
 4.	Now create the load rule.  
     a. In the Sales cube, from the right side hamburger, click **Inspect**.  
        ![](./images/image14_77.png)
 
-	b. On the Scripts tab, select Rules. The Rules editor shows defined rules.  
+	b. On the Scripts tab, select **Rules**. The Rules editor shows defined rules.  
 
-	c. Click **Create** and select Data Load to define the load data rule.  
+	c. Click **Create** and select **Data Load** to define the load data rule.  
 
 	  ![](./images/image14_78.png)
 
 	d. In the New Rule dialog box, enter **LoadCorp** as the name of rule.
 
-	e. Under Source Type, select File for flat file input.
+	e. Under Source Type, select **File** for flat file input.
 
 	f. Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
 
 	g.As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
 
-	h.Select Comma as the Delimiter value based on the file format.  
+	h.Select **Comma** as the Delimiter value based on the file format.  
 
 	i.	Click **Preview Data**.  
 
@@ -217,7 +217,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     ![](./images/image14_80_1.png)
 
-    * Field 1 - Search Product in member tree and double click or enter Product under Field Name. Click **Next**.
+    * Field 1 - Search Product in member tree and double-click or enter Product under Field Name. Click **Next**.
     ![](./images/image14_80_2.png)
     * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
     * Field 2 - Market
@@ -246,16 +246,16 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     d. Click **Close** to return to the Applications home page. Next create a job to load the data using the rule.
 
-7. On the home page, select Jobs and then New Job.
+7. On the home page, select **Jobs** and then **New Job**.
     ![](./images/image15_60.png)
 
-    a. Select Load Data.
+    a. Select **Load Data**.
 
-    b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
+    b. In the Load Data dialog box, from the Application menu, select the 'DynamicCorp' application.
 
-    c. In the Database list, select the Sales cube.
+    c. In the Database list, select the 'Sales' cube.
 
-    d. For Load Type, select File.
+    d. For Load Type, select **File**.
 
     e. Select the file **Data-basic.txt** from the Data File list. This file is located in the DataCorp > Sales folder.
 
@@ -272,14 +272,14 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 8. After the job is completed, verify that the input records were processed and loaded.
 
-    a.	Select Job Details to check the load data job details.
+    a.	Select **Job Details** to check the load data job details.
 
     b.	Click **Close**.
      ![](./images/image14_83.png)
 
-9.	On the Applications page, click Actions to the right of the DynamicCorp - Sales cube and click **Inspect**.
+9.	On the Applications page, click **Actions** to the right of the DynamicCorp - Sales cube and click **Inspect**.
 
-1.  Select Statistics to view the resulting statistics for the Sales cube.  
+1.  Select **Statistics** to view the resulting statistics for the Sales cube.  
     ![](./images/image15_61.png)
 
     You have now completed the data load using rule file.
@@ -289,7 +289,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 A cube contains two types of values: values that you enter called input data and values that are calculated from input data.
 
 A cube can be calculated using one of two methods:
-*  Outline calculation: The calculation of a cube is based on the relationships between members in the cube outline(the hierarchy) and on any formulas that are associated with members in the outline. 
+*  Outline calculation: The calculation of a cube is based on the relationships between members in the cube outline (the hierarchy) and on any formulas that are associated with members in the outline. 
 
 * Script based calculations: This contains a series of calculation commands, equations, and formulas, which allows you to define calculations other than those defined by the database outline calculation.  
   
@@ -302,7 +302,7 @@ A cube can be calculated using one of two methods:
 
     ![](./images/image14_84.png)
 
-3.	Select the Scripts tab, and then select the Calculation Scripts tab.
+3.	Select **Scripts** tab, and then select **Calculation Scripts** tab.
 
     ![](./images/image14_85.png)
 
@@ -338,13 +338,13 @@ A cube can be calculated using one of two methods:
 10.  After creating and saving calculation scripts, use the Jobs page to execute them and perform the calculations on data loaded in your cube.
 
 
-11.	On the Jobs page, click **New Job** and select Run Calculation.
+11.	On the Jobs page, click **New Job** and select **Run Calculation**.
 
     ![](./images/image14_87.png)
 
-12.	On the Run Calculation dialog box, select the application - DynamicCorp and cube – Sales.
+12.	On the Run Calculation dialog box, select the application - **DynamicCorp** and cube – **Sales**.
 
-13.	Select the script – CalcActual.
+13.	Select the script – **CalcActual**.
 
     ![](./images/image14_88.png)
 
@@ -352,25 +352,25 @@ A cube can be calculated using one of two methods:
 
 15.	Click **Refresh** to see the status of your calculation.
 
-To verify if the data is aggregated at all the dimension levels for Actual, you can go to excel and build a retrieval sheet using smart view.
+To verify if the data is aggregated at all the dimension levels for Actual, you can go to excel and build a retrieval sheet using Smart View.
 
 ## **Step 4:** Migration Utilities
 
 1. Download and configure CLI:  
 
-  a. Login to Essbase web user interface.  
+  a. Log in to Essbase web user interface.  
   
-  b. Navigate to top left hand corner, click the hamburger, select console and then desktop tools.
+  b. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
  
   c. Expand the Command Line Tools section.  
   
-  d. Download the Command-line Tool by clicking download for "Command-Line Tool".
+  d. Download the Command-Line Tool by clicking download for "Command-Line Tool".
      ![](./images/image15_62.png)
 
   e. Unzip the cli.zip file in a directory e.g. C:\app\cli  
   
-  f. In your machine, search for Command Prompt. Open it by right clicking **Run as administrator**.
-    Change directory to where you unzipped the the CLI tool.  
+  f. In your machine, search for Command Prompt. Open it by right-clicking **Run as administrator**.
+    Change directory to where you unzipped the CLI tool.  
  
     **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
     **C:\app\cli>esscs.bat**
@@ -414,7 +414,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     ![](./images/image14_91.png)
 
-3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application deployed in last step use command.
+3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application, deployed in last step, use this command.
 
 
     ```
@@ -445,17 +445,17 @@ You can view a list of all REST Endpoints.
 
 **Explore the Swagger Interface**
 
-The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL(Client URL) or another API implementation method. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
+The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL (Client URL) or another API implementation method. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
 
 To use the Swagger interface,
 
-1. Login Essbase web interface with url. For example: http://ip:9000/essbase/jet
+1. Log in to Essbase web interface with url. For example: http://ip:9000/essbase/jet
 
 2. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. For example, change the URL to:  **http://ip:9000/essbase/rest/doc/**
 
-3. On Swagger web interface, you are presented with number of different REST APIs.  
+3. On Swagger web interface, you are presented with a number of REST APIs.  
 
-4.	Under Application logs, click the second **GET** button(Download Latest Log).
+4.	Under Application logs, click the second **GET** button. (Download Latest Log)
 
     ![](./images/image14_94.png)
 
