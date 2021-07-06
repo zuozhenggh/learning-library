@@ -15,13 +15,13 @@
             "title": "Lab 1: Provision Autonomous Database",
             "description": "Provision a new ADW instance and connect to the database",
             "type": "freetier",
-            "filename": "./../../adb-provision/adb-provision-conditional.md"
+            "filename": "./../../../adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Load Data",
             "description": "Load data into ADB",
             "type": "freetier",
-            "filename": "./../../adb-loading/adb-loading-conditional.md"
+            "filename": "./../../../adb-loading/adb-loading-conditional.md"
         },
         {
             "title": "Lab 3: Use Machine Learning Notebooks",
