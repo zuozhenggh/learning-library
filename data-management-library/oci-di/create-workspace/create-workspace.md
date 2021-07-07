@@ -34,9 +34,10 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
 5. In the **Create Policy** panel, complete the following fields:
   - **Name**: `Policies-OCI-DI`. *Note that the name can NOT contain spaces.*
   - **Description**: `Policies for OCI Data Integration`.
-  - Using the Policy Builder UI, choose `Data Integration` for **Policy use cases** and `Let users create and delete workspaces with networking` for **Common policy templates**.
+  - Using the Policy Builder UI: For **Policy use cases** choose `Data Integration`. For **Common policy templates** choose `Let users create and delete workspaces with networking`.
   - **Group**: The group which your OCI user belongs to. *Note: For the following steps we will use the group name `di-group`, but please use your group name.*
   - **Compartment**: `DI-compartment` (or the OCI Compartment you are using).
+
   The policy statements will appear below. Click **Create**.
 ![](./images/policy_builder.png " ")
 
@@ -53,7 +54,7 @@ Before you can get started with Data Integration, you must first create a **Work
 ![](./images/workspaces.png " ")
 
 4. In the **Create Workspace** panel, complete the fields as follows:
-  - For **Name**:`DI-workspace`. *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
+  - For **Name**: `DI-workspace`. *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
   - **Description**: `Data Integration workspace for the LiveLabs workshop`
   - Under Network Selection, leave **Enable private network** selected.
   - Select the **VCN** you have created in Lab 0 (`OCI-VCN-WORKSHOP`).
