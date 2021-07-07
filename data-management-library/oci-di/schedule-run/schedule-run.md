@@ -8,6 +8,8 @@ To run a task automatically on a specific schedule, you must:
 * **Create a schedule**: A schedule defines when and how frequently tasks should be run. A schedule can be used across tasks of any type.
 * **Create a task schedule for the task**: A task schedule is an automated run configuration for a specific task. You schedule a task to run automatically by creating a task schedule, and associating the task schedule with an existing schedule.
 
+In this Lab, you will schedule your Pipeline Task to run daily at 2PM.
+
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives

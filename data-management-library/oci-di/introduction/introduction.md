@@ -7,6 +7,8 @@ This workshop introduces you to **Oracle Cloud Infrastructure Data Integration**
 Administrators, data engineers, ETL developers, and operators are among the different types of data professionals who can use Oracle Cloud Infrastructure Data Integration and would benefit from this workshop.
 We will create a workspace in OCI Data Integration, connect to data assets, create Data Flows along with Integration tasks, Data Loader task and SQL task. We will create a Pipeline and a Pipeline task and finally schedule to run it.  
 
+You will transform and load Customers, Revenues and Employees data into Autonomous Data Warehouse and populate a statistics table with the success/error result of the Data Integration Pipeline, along with the pipeline name and task run key.
+
 *Estimated Workshop Time*: 3 Hours 30 Minutes
 
 Watch this short video that gives a service overview of OCI Data Integration:

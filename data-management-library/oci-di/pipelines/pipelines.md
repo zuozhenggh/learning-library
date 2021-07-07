@@ -2,8 +2,9 @@
 
 ## Introduction
 
-This lab will walk you through the steps to create an OCI Data Integration application, publish tasks and create a Data Integration pipeline which calls the published tasks.
+This lab will walk you through the steps to create an OCI Data Integration **application**, **publish tasks** into the application and create a Data Integration **pipeline** which calls the published tasks.
 
+The Pipeline you will create in this Lab step will orchestrate the execution of all of the tasks you created and published in this Workshop until now (Integration tasks, Data Loader task, SQL task). It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives
@@ -21,6 +22,7 @@ In this lab, you will:
 ## **STEP 1:** Create an Application
 
 In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
+
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
@@ -39,6 +41,8 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 ## **STEP 2:** Publish tasks to Application
 
 In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
+
+You will publish into the Workshop Application all of the tasks that you have created in the previous Lab (Integration tasks, Data Loader task and SQL task).
 
 1. From the Application Details you are currently in, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
 ![](./images/tab-projects.png " ")
@@ -68,6 +72,9 @@ In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time res
 
 ## **STEP 3:** Create a Pipeline
 A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** to facilitate data processing. It manages and orchestrates the execution of a set of related tasks and processes. The pipeline functionality in Oracle Cloud Infrastructure Data Integration helps write complex data pipelines using published tasks from any application, and you can add data loader, integration or SQL tasks. You can create pipelines quickly using a designer similar to the Data Flow designer.
+
+The Pipeline you will create in this Lab step will orchestrate the execution of all of the tasks you created and published in this Workshop until now. The pipeline will begin with the **parallel execution** of the `LOAD_CUSTOMERS_LAB` Integration Task and `LOAD_REVENUE_DATA_INTO_DATA_WAREHOUSE` Data Loader task. After the successful execution of these two tasks, the `LOAD_EMPLOYEES_BY_REGIONS` Integration Task will be executed in sequence. Then, an Expression operator will add a new field that is populated with the Pipeline name and Task run key System parameters of the pipeline.
+The following SQL task step will get success/error input configured in the pipeline and the new pipeline System parameter populated expression as **Input parameters**. It will load this information in the Autonomous Data Warehouse, according to the SQL stored procedure logic. Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking result in the Data Integration Application from OCI Console.
 
 
 1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
@@ -288,6 +295,7 @@ In the **Add Expression** panel:
 
 ## **STEP 4:** Create a Pipeline task
 Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
+You will create a Pipeline task for the pipeline you created in the above step.
 
 1. On the `DI_Workshop` Project Details page, from the submenu, click **Tasks**.
 ![](./images/click-tasks.png " ")
