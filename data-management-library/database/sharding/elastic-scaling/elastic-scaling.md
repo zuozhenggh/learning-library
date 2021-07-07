@@ -476,4 +476,3 @@ This lab assumes you have already completed the following:
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020 
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
-* **Workshop Expiry Date** - 

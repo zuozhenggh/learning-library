@@ -7,27 +7,27 @@ This lab walks you through the steps to use OML4Py Embedded Python Execution fun
 Estimated Lab Time: 30 minutes
 
 ### About Embedded Python Execution
-Embedded Python Execution enables you to run user-defined Python functions in Python engines spawned in the Autonomous Database environment. These engines run alongside an OML Notebooks Python interpreter session.
+Embedded Python Execution enables you to run user-defined Python functions in Python engines spawned in the Oracle Autonomous Database environment. These engines run alongside an OML Notebooks Python interpreter session.
 
 The OML4Py Embedded Python Execution functions are:
 
-* `oml.do_eval` - Calls a Python function in Python engines spawned by the Autonomous Database environment.
-* `oml.group_apply` - Partitions a database table by the values in one or more columns and runs the provided user-defined Python function on each partition.
-* `oml.index_apply` - Calls a Python function multiple times, passing in a unique index of the invocation to the user-defined function.
-* `oml.row_apply` - Partitions a database table into sets of rows and runs the provided user-defined Python function on the data in each set.
-* `oml.table_apply` - Calls a Python function on data in the database as a single pandas.DataFrame in a single Python engine.
+* `oml.do_eval`&mdash;Calls a Python function in Python engines spawned by the Oracle Autonomous Database environment.
+* `oml.group_apply`&mdash;Partitions a database table by the values in one or more columns and runs the provided user-defined Python function on each partition.
+* `oml.index_apply`&mdash;Calls a Python function multiple times, passing in a unique index of the invocation to the user-defined function.
+* `oml.row_apply`&mdash;Partitions a database table into sets of rows and runs the provided user-defined Python function on the data in each set.
+* `oml.table_apply`&mdash;Calls a Python function on data in the database as a single pandas.DataFrame in a single Python engine.
 
-**Note:** Embedded Python Execution functions are also available through the Oracle Machine Learning for Python REST API for Embedded Python Execution.
+> **Note:** Embedded Python Execution functions are also available through the Oracle Machine Learning for Python REST API for Embedded Python Execution.
 
 ### About the Python Script Repository
 OML4Py stores named user-defined functions called scripts in the script repository.
 
-* `oml.script.create` - Creates a script, which contains a single Python function definition, in the script repository.
-* `oml.script.dir` - Lists the scripts present in the script repository.
-* `oml.script.drop` - Drops a script from the script repository.
-* `oml.script.load` - Loads a script from the script repository into a Python session.
-* `oml.grant` - Grants read privilege permission to another user to a datastore or script owned by the current user.
-* `oml.revoke` - Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
+* `oml.script.create`&mdash;Creates a script, which contains a single Python function definition, in the script repository.
+* `oml.script.dir`&mdash;Lists the scripts present in the script repository.
+* `oml.script.drop`&mdash;Drops a script from the script repository.
+* `oml.script.load`&mdash;Loads a script from the script repository into a Python session.
+* `oml.grant`&mdash;Grants read privilege permission to another user to a datastore or script owned by the current user.
+* `oml.revoke`&mdash;Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
 
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
@@ -47,7 +47,7 @@ To download the notebook version of this lab (without screenshots), click [here]
 ## **Step 1**: Import OML4Py and supporting libraries and Create Data Table
 
 In Step 1 to Step 5, you learn about Embedded Python Execution.
-Step 6 to 15, you will work with Python Script Repository.
+In step 6 to 15, you will work with Python Script Repository.
 
 1. Import the `oml` module.
     ```
@@ -78,7 +78,7 @@ Step 6 to 15, you will work with Python Script Repository.
     iris_df = pd.concat([x, y], axis=1)
     print(IRIS.columns)</copy>
     ```
-    ![](images/iris_table.png)
+    ![IRIS table](images/iris_table.png "IRIS table")
 
 ## **Step 2:** Build and Score a Linear Model from sklearn in Python
 In this step, you will validate your Python script, validate the user-defined function before calling the embedded Python APIs.  You will also build a linear regression model LinearRegression.
@@ -104,7 +104,7 @@ When working with embedded Python execution, a typical workflow is:
     mod = lm.fit(X, y)
     print("Model:",mod)</copy>
     ```
-    ![](images/LinearRegression_model.png)
+    ![Script to create a Linear Regression model](images/LinearRegression_model.png "Script to create a Linear Regression model")
 
 2. Run the script to predict the petal length using the `predict` function:
     ```
@@ -114,7 +114,7 @@ When working with embedded Python execution, a typical workflow is:
     pred = mod.predict(iris_df[["PETAL_WIDTH"]])
     pred[0:10]</copy>
     ```
-    ![](images/model_prediction.png)
+    ![Predicting petal width](images/model_prediction.png "Predicting petal width")
 
 3. Run the following script to assess model quality using mean squared error and R^2:
     ```
@@ -129,7 +129,7 @@ When working with embedded Python execution, a typical workflow is:
 
     print('Variance score (1 is perfect prediction): %.2f' % r2_score(iris_df[["PETAL_LENGTH"]], pred))</copy>
     ```
-    ![](images/coeff_mse_r2.png)
+    ![Assessing model quality using mean squared error and R^2](images/coeff_mse_r2.png "Root mean square Error and R^2")
 
 4. Run the following script to generate a scatterplot of the data along with a plot of the regression line:
     ```
@@ -148,15 +148,15 @@ When working with embedded Python execution, a typical workflow is:
     plt.show()</copy>
     ```
 
-   ![](images/scatterplot_iris.png)
+   ![Generating a scatter plot](images/scatterplot_iris.png "Scatter plot")
 
 ## **Step 3:** Build the model using Embedded Python Execution
-In this step, you will build the same linear model, but using the embedded Python execution Python engines under control of the Autonomous Database environment. You will perform the following tasks:
+In this step, you will build the same linear model, but using the embedded Python execution Python engines under control of the Oracle Autonomous Database environment. You will perform the following tasks:
 
 * Define the function `build_lm_1`, that returns the model as the result. This is referred to as a user-defined function.
 * Next, score the training data and plot the model against the data points.
 
-  **Note:**  The embedded Python execution can return images as well as structured content in the Python API. In the SQL API, as you'll see in another script, you choose between structured data, images, or XML output. Run this function to ensure it returns what is expected; - in this case, it is both an image and a model.
+  > **Note:**  The embedded Python execution can return images as well as structured content in the Python API. In the SQL API, as you'll see in another script, you choose between structured data, images, or XML output. Run this function to ensure it returns what is expected; - in this case, it is both an image and a model.
 
 1. Run the script to define the user-defined function `build_lm_1`:   
     ```
@@ -184,7 +184,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
       plt.show()
       return mod</copy>
     ```
-2. Now, call the user-defined function `build_lm_1` to build the model and plot the petal length predictions.:
+2. Now, call the user-defined function `build_lm_1` to build the model and plot the petal length predictions:
 
     ```
     %python
@@ -192,7 +192,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
 
     build_lm_1(iris_df)</copy>
     ```
-    ![](images/petal_length_prediction.png)
+    ![Predicting petal length](images/petal_length_prediction.png "Predicting petal length")
 
 ### Use the table_apply Function
 3. The `oml.table_apply` function takes the proxy object IRIS as input data and loads that data to the user-defined function as a pandas DataFrame. In this example, the user-defined function is passed as a Python string. You see that the model comes back as an OML object, which you can pull to the client to view the linear model.
@@ -233,7 +233,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
 
     mod = oml.table_apply(data=IRIS, func = build_lm_1)</copy>
     ```
-    ![](images/table_apply_output.png)
+    ![Output of the table_apply function](images/table_apply_output.png "Output of the table_apply function")
 
 5. Run the following script to print the object, model, type and coefficient.
 
@@ -245,7 +245,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
     print("Type:",type(mod))
     print("Coefficient", mod.coef_)</copy>
     ```
-    ![](images/print.png)
+    ![Printing the model, model type and coefficient](images/print.png "Printing the model, model type and coefficient")
 
 ### Use the row_apply Function
 6. Use the embedded Python execution function `oml.row_apply` to run a user-defined function on chunks of rows, which is useful to perform scoring in parallel for native Python models. In this example, you pass the function to `row_apply` as a Python function object. Run the following script to define the user-defined function `score_lm_1` to make predictions (score data) using the data set and model passed in as arguments. It returns the predictions as a DataFrame object.
@@ -273,14 +273,14 @@ In this step, you will build the same linear model, but using the embedded Pytho
                         columns=['SPECIES', 'PETAL_LENGTH', 'PRED_PETAL_LENGTH']))
     res.head()</copy>
     ```
-    ![](images/row_apply.png)
+    ![Using the row_apply function](images/row_apply.png "Using the row_apply function")
 
 ## **Step 4:** Build One Model per Species using Group_Apply Function
 This step shows how to use the `oml.group_apply` function for model building. The `group_apply` function passes the `oml.DataFrame` specified by the data argument to the user-defined function as its first argument. The index argument `oml.group_apply` specifies the columns of `oml.DataFrame` by which the database groups the data for processing by the user-defined Python function. The `group_apply` function can use data-parallel execution, in which one or more Python engines perform the same Python function on different groups of data.
 
 In this step, you build three models, one specific to each species and return them as a dictionary. These models are indexed by their corresponding index value.
 
-1. Run the following script to build three models, one each for the species - Versicolor, Setosa, and Virginica. Here, you use the `oml.group_apply` function to call the user-defined function `build_lm_g` three times (one for each species) using two Python engines (parallel=2)
+1. Run the following script to build three models, one each for the species - Versicolor, Setosa, and Virginica. Here, you use the `oml.group_apply` function to call the user-defined function `build_lm_g` three times (one for each species) using two Python engines (parallel=2).
     ```
     %python
     <copy>
@@ -302,10 +302,10 @@ In this step, you build three models, one specific to each species and return th
     print("Type:",type(mod))
     mod</copy>
     ```
-    ![](images/model_group_apply.png)
+    ![Using the group_apply function to build three models](images/model_group_apply.png "Using the group_apply function to build three models")
 
 
-2. Change the user-defined function to save the models in a datastore. The datastore allows storing Python objects in the database under the provided name. The object assumes the name it is assigned in the Python environment. Here, you construct a name concatenating `mod_` as a prefix and the corresponding `Species` value.
+2. Change the user-defined function to save the models in a datastore. The datastore allows storing Python objects in the database under the provided name. The object assumes the name it is assigned in the Python environment. In this example, you construct a name by concatenating `mod_` as a prefix and the corresponding `Species` value.
     ```
     %python
     <copy>
@@ -322,7 +322,7 @@ In this step, you build three models, one specific to each species and return th
       return name</copy>
     ```
 3. Use `group_apply` to call the user-defined function and list the resulting models, which are a dictionary of three elements each assigned the model object name. The `group_apply` function takes the data, the index parameter that specifies the column or columns to partition on, the user-defined function, and the database to which you connect from the Python engine. Connecting to the database is necessary when using the datastore functionality.
-**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
+
     ```
     %python
     <copy>
@@ -338,11 +338,15 @@ In this step, you build three models, one specific to each species and return th
 
     print("Outcome:",res)</copy>
     ```
-    ![](images/print_outcome.png)
+
+    ![Using group_apply and print to list models which are a dictionary of three elements, each assigned the model object name](images/print_outcome.png "Using group_apply and print to list models")
+
+>**Note:** If the datastore exists, then delete it so that the `group_apply` function completes successfully.
+
 
 Here, the model object names are `mod_versicolor`, `mod_virginica`, and `mod_setosa`.
 When you load the datastore, you get the three models loaded into the client Python engine, assigned to their respective variables.
-**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
+>**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
 
 Again, we create this script in the Python script repository and then call it by name using `table_apply`. We then pull the model to the client and view its type.
 ### **Try it yourself**
@@ -367,7 +371,7 @@ Use the `group_apply` function to count the number of each species in the data s
     res = oml.index_apply(times=12, func=compute_random_mean)
     res</copy>
     ```
-    ![](images/index_apply.png)
+    ![Using the index_apply function to call another function N number of times](images/index_apply.png "Using the index_apply function to call another function N number of times")
 
 ### **Try it yourself**
 Use the `group_apply` function to count the number of each species in the data set.
@@ -375,7 +379,7 @@ Use the `group_apply` function to count the number of each species in the data s
 ## **Step 5:** Return Multiple Images from Embedded Python Execution
 This step shows how to create a function `RandomRedDots` that creates a simple DataFrame and generates two plots of random red dots. You create a function named `RandomRedDots` in the Python Script Repository, and then run the native Python function.
 
-**Note:** To know about **Python Script Repository**, go to step 6 in this lab.
+>**Note:** To know about **Python Script Repository**, go to step 6 in this lab.
 
 1. Run the following script to import the python packages - Numpy, Pandas, and Matplotlib; define and create the function `RandomRedDots`:
 
@@ -397,11 +401,11 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
       plt.scatter(range(0,num_dots_2), np.random.rand(10),c='r')
       plt.title("Random Red Dots")
       return df"""
-    
+
     oml.script.create("RandomRedDots", func=RandomRedDots, is_global=True, overwrite=True)
     print(RandomRedDots)</copy>
     ```
-    ![](images/randomreddots_def.png)
+    ![Defining the function RandomRedDots](images/randomreddots_def.png "Defining the function RandomRedDots")
 
 2. Use the `oml.do_eval` function to call the function `RandomRedDots` that you created in step 1:
     ```
@@ -414,7 +418,7 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
     res</copy>
     ```
     The function returns the following:
-    ![](images/randomreddots.png)
+    ![Calling the function RandomRedDots by using oml.do.eval](images/randomreddots.png "Calling the function RandomRedDots")
 
 3. In this example, you modify the function to use subplots, thereby creating separate figure objects for the scatter plots. Store this in the script repository as `RandomRedDots2` and call the function to see the results. As expected, you get both plots.
 Run the following script to define the `RandomRedDots2` function that generates two scatter plots, and returns a two column DataFrame. Note that you can pass arguments to these functions here, `num_dots_1` and `num_dots_2`.
@@ -444,12 +448,12 @@ Run the following script to define the `RandomRedDots2` function that generates 
 
     print(RandomRedDots2)</copy>
     ```
-    **Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
+    >**Note:** When you call `RandomRedDots2` using embedded Python execution, you will get both plots as shown in the result.
 
-    ![](images/randomreddots_2.png)
+    ![RandomRedDots2](images/randomreddots_2.png "RandomRedDots2")
 
 
-5. Use the `oml.do_eval` function to call the function `RandomRedDots2`. Here, you are specifying arguments to `do_eval` for `num_dots_1` and `num_dots_2`. These are specified as you would any other argument to `do_eval`. This applies to the other embedded Python functions as well.
+5. Use the `oml.do_eval` function to call the function `RandomRedDots2`. Here, you specify arguments to `do_eval` for `num_dots_1` and `num_dots_2`. These are specified as you would any other argument to `do_eval`. This applies to the other embedded Python functions as well.
     ```
     %python
     <copy>
@@ -460,7 +464,7 @@ Run the following script to define the `RandomRedDots2` function that generates 
     res</copy>
     ```
 
-    ![](images/randomreddots2.png)
+    ![Scatter plot of RandomRedDots2](images/randomreddots2.png "Scatter plot of RandomRedDots2")
 
 
 ## **Step 6:** Use the Python Script Repository
@@ -468,16 +472,16 @@ Step 6 to 15, you will work with Python Script Repository.
 
 OML4Py stores named user-defined functions called scripts in the script repository.  You can make scripts either private or global. A private script is available only to the owner. A global script is available to any user. For private scripts, the owner of the script may grant the read privilege to other users or revoke that privilege.
 
-* `oml.script.create` - Creates a script, which contains a single Python function definition, in the script repository.
-* `oml.script.dir` - Lists the scripts present in the script repository.
-* `oml.script.drop` - Drops a script from the script repository.
-* `oml.script.load` - Loads a script from the script repository into a Python session.
-* `oml.grant` - Grants read privilege permission to another user to a datastore or script owned by the current user.
-* `oml.revoke` - Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
+* `oml.script.create`&mdash;Creates a script, which contains a single Python function definition, in the script repository.
+* `oml.script.dir`&mdash;Lists the scripts present in the script repository.
+* `oml.script.drop`&mdash;Drops a script from the script repository.
+* `oml.script.load`&mdash;Loads a script from the script repository into a Python session.
+* `oml.grant`&mdash;Grants read privilege permission to another user to a datastore or script owned by the current user.
+* `oml.revoke`&mdash;Revokes the read privilege permission that was granted to another user to a datastore or script owned by the current user.
 
 To illustrate using the Python Script Repository, you will define a function `build_lm1` that will fit a regression model. Using this function, you will then create a script named `MyLM_function`.
 
-1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`. **Note** the use of triple quotes to enable formatting.
+1. To store a user-defined function in the script repository, it must be presented as a named string. Run the following script to define the function as a string, `build_lm_str`.
 
     ```
     %python
@@ -493,6 +497,10 @@ To illustrate using the Python Script Repository, you will define a function `bu
       regr.fit(X, y)
       return regr"""</copy>
     ```
+
+>**Note:** The use of triple quotes to enable formatting.
+
+
 2. Run the following script to view the string that you just created:
 
     ```
@@ -501,7 +509,7 @@ To illustrate using the Python Script Repository, you will define a function `bu
 
     print(build_lm_str)</copy>
     ```
-    ![](images/view_build_lm_str.png)
+    ![Viewing the build_lm_str string](images/view_build_lm_str.png "Viewing the build_lm_str string")
 
 ## **Step 7:** Create Scripts in Repository
 In this step, you will use the function `oml.script.create` to create a script `MyLM_function`.
@@ -527,7 +535,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     ```
     The script returns the following information as shown in the screenshot:
 
-    ![](images/list_script.png)
+    ![Displaying the list of scripts to which read privilege has been granted](images/list_script.png "Displaying the list of scripts")
 
 3. Run the following script to load the named function `MyLM_function` into the Python engine for use as a typical Python function using  `oml.script.load`.
 
@@ -543,8 +551,8 @@ In this step, you will use the function `oml.script.create` to create a script `
     print(str(MyLM_function))
     print(MyLM_function.get_source().read())</copy>
     ```
-    ![](images/load_function.png)
-4. Extract the function text string from the function object and use this to save in the script repository using `oml.script_create`.
+    ![Loading a function into the Python engine](images/load_function.png "Loading a function into the Python engine")
+4. Extract the function text string from the function object and use this to save in the script repository using `get_source().read()`.
 
     ```
     %python
@@ -553,7 +561,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     loaded_str = MyLM_function.get_source().read()
     type(loaded_str)</copy>
     ```
-    ![](images/type_loaded_str.png)
+    ![Loading the MyLM_function in the script repository](images/type_loaded_str.png "Loading the MyLM_function in the script repository")
 5. Run the script `oml.script.create` to create a test function `MyTEST_function`:
 
     ```
@@ -570,7 +578,7 @@ In this step, you will use the function `oml.script.create` to create a script `
 
     oml.script.dir(sctype="all")</copy>
     ```
-    ![](images/list_scripts.png)
+    ![Using oml.script.dir to list all the available scripts](images/list_scripts.png "Using oml.script.dir to list all the available scripts")
 
 7. Call the `table_apply` on `build_lm_str` and `loaded_str` functions. Note that these strings represent the same function `build_lm_str` that was saved to the script repository after assigning the function to a string object. The `loaded_str` is the string representation of the function extracted using `get_source().read()`.
 
@@ -581,7 +589,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod1 = oml.table_apply(data=IRIS, func = build_lm_str)
     mod1.coef_</copy>
     ```
-    ![](images/mod1_coef.png)
+    ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod1_coef.png "Using Embedded Python Execution function oml.table_apply to call the function build_lm_str")
 
     Run the same function on `loaded_str`:
 
@@ -592,7 +600,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     mod2 = oml.table_apply(data=IRIS, func = loaded_str)
     mod2.coef_</copy>
     ```
-    ![](images/mod2_coef.png)
+    ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod2_coef.png "Using Embedded Python Execution function oml.table_apply to call the function loaded_str")
 
 ## **Step 8:** Store a function as a global  function
 
@@ -633,7 +641,7 @@ In this step, you will define and save a global function `build_lm3`. You will t
     print(res)
     print(res.coef_)</copy>
     ```
-    ![](images/res_coef.png)
+    ![Running the user-defined function MyGlobalML_function](images/res_coef.png "Running the user-defined function MyGlobalML_function")
 
 ## **Step 9:** Drop scripts from the Script Repository
 In this step, you will perform the following:
@@ -642,7 +650,7 @@ In this step, you will perform the following:
 * Drop the global script.
 * List the available scripts again.
 
-**Note:** You can make the script either private or global. A global script is available to any user. A private script is available only to the owner or to users to whom the owner of the script has granted the read privilege.
+>**Note:** You can make the script either private or global. A global script is available to any user. A private script is available only to the owner or to users to whom the owner of the script has granted the read privilege.
 
 1. Run the following script to drop the private script `MyLM_function2`, drop the global script `MyGlobalML_function`, and then list the available scripts:
 
@@ -654,7 +662,7 @@ In this step, you will perform the following:
     oml.script.drop("MyGlobalLM_function", is_global=True)
     oml.script.dir(sctype="all")</copy>
     ```
-    ![](images/drop_script.png)
+    ![Dropping scripts](images/drop_script.png "Dropping scripts")
 
 ## Learn More
 
@@ -665,4 +673,4 @@ In this step, you will perform the following:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021

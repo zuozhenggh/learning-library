@@ -19,7 +19,7 @@ For more information about Terraform and Resource Manager, please see the append
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.
 
-    [tf-fpp-1.0.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SiXU2m1mrYj_HApnyJ11Ze7r4pcxpVhVBwM1NoBFlMggfi6fqaH8EqtMTS3H1CeW/n/c4u03/b/data-management-library-files/o/tf-fpp-1.0.zip)
+    [tf-fpp-1.0.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o387wRpvG_oMB4lmVNV8e9M5tw3r5mGsS6oCBDxfM8ag34a7bjTnrwVQDlwb-ot6/n/c4u04/b/data-management-library-files/o/tf-fpp-1.0.zip)
 
 2. Login to Oracle Cloud
 3. Select the correct region
