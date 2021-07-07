@@ -211,7 +211,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`DI-bucket`).
 
-![](./images/buckets.png " ")
+![](./images/buckets-list.png " ")
 
 5. You will upload the source files for the workshop data integration flows in this bucket. Click on **Upload** button under Objects.
 ![](./images/upload-button.png " ")

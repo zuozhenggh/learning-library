@@ -295,7 +295,7 @@ In the Details tab, click Select next to each of the following options to make y
   For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
   ![](./images/source-entity.png " ")
 
-  In the end, your details for the source operator should look like this:
+  In the end, your details for the source operator should look like this.
 
   ![](./images/pattern-source.png " ")
 
