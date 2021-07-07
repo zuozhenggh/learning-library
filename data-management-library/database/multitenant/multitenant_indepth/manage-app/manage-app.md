@@ -14,7 +14,7 @@ The setup should have  two container databases running:
 - CDB1 running on port 1523
 - CDB2 running on port 1524
 
-## **Step 1:** Creating an application root
+## **Step 1:** Creating an Application Root
 
    Creating an Application Root is similar to creating a normal PDB, just with an extra parameter. The source of the Application Root can be an existing database or the SEED database on CDB level.
 
@@ -67,13 +67,13 @@ The setup should have  two container databases running:
 
    For more information see [documentation](http://docs.oracle.com/database/122/ADMIN/administering-application-containers-with-sql-plus.htm) .you will see there is a lot of detail about this functionality.
 
-##  **Step 3:** Creating an application
+##  **Step 3:** Creating an User Application
 
-   We can create one or more Applications within the Application Root container. When an Application is created, you need to give it a version number and a name. All statements that are executed after the initial 'BEGIN' clause of the application are captured and can be replayed in the target APP PDB.
+   We can create one or more user Applications within the Application Root container. When an Application is created, you need to give it a version number and a name. All statements that are executed after the initial 'BEGIN' clause of the application are captured and can be replayed in the target APP PDB.
 
    Connect to the application root and create a new Application called APP01 with version 1.0
 
-   3. Create Application in APP_ROOT
+   3. Create user Application in APP_ROOT
 
    ```
    alter session set container=APP_ROOT;
@@ -161,7 +161,7 @@ The setup should have  two container databases running:
 
 
 
-## **Step 5:** Installing an application in an Application PDB
+## **Step 5:** Installing an User Application in an Application PDB
 
    Installing, upgrading or patching an application in an Application PDB is basically running the statements that have been captured during the initial INSTALL command in the Application Root. The running of the statements is called 'Syncing' to a particular version of the application. If no version has been specified during the **SYNC** process, the system will run all commands up to the latest version of the Application.
 
@@ -226,7 +226,7 @@ The setup should have  two container databases running:
 
 
 
-## **Step 6:** Patching an Application and pushing the changes
+## **Step 6:** Patching an Application and Pushing the Changes
 
    Patching means changing the application in a non-destructive way. Basically, do anything that would not result in data loss. For example, we can add a new table, procedures, functions  to the application, add a column to an existing table or add data into the existing tables. Dropping a table would not be allowed as this would mean data loss. Minor changes to an application constitute application patches. If you consider the changes to be major and will affect you application compatibility, then use upgrade instead of patching. Here is an example of Patching:
 
@@ -554,7 +554,7 @@ As you can see, From APP\_ROOT, you cannot see data inserted in APP\_PDB1.
 
 
 
-## **Step 8:** SQL CONTAINERS CLAUSE
+## **Step 8:** SQL CONTAINERS Clause
 
 When a metadata-linked table is queried using the CONTAINERS clause in the application root, a UNION ALL of the table rows from the application root and all the opened application PDBs is returned. Thus, by leveraging the CONTAINERS clause, the user-created data can be aggregated across many application PDBs from one single place; i.e., the application root. If we need to retrieve data from a subset of the PDBs, we can include a filter on CON_ID or CON$NAME in the WHERE clause. These are pseudo columns that can be queried or used in where clause. This clause also helps us to do DML operations on all open App PDBs or specific  App PDBs.
 
