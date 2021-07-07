@@ -5,7 +5,7 @@
 This lab will walk you through the steps to create **two Data Flows**, **Integration tasks**, a **Data Loader task** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed at the beginning of each of the steps.
 *Estimated Lab Time*: 1 hour
 
-## Objectives
+### Objectives
 In this lab, you will:
 * Create an OCI Data Integration project
 * Create two Data Flows
@@ -13,7 +13,7 @@ In this lab, you will:
 * Create a Data Loader task
 * Create a SQL task
 
-## Prerequisites
+### Prerequisites
 * Free Tier/ Paid Oracle Cloud Account
 * All previous labs have been successfully completed
 
@@ -43,7 +43,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
-You will create a data flow to ingest data from **two source files**, containing customers (`CUSTOMERS.json`) and orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the Order status and country code of the customers and in the end will be loaded to `CUSTOMERS_TARGET` table in the Autonomous Data Warehouse.
+You will create a data flow to ingest data from **two source files**, containing Customers (`CUSTOMERS.json`) and Orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the order status and country code of the customers, and in the end data will be loaded to `CUSTOMERS_TARGET` table in Autonomous Data Warehouse.
 
 1. From the **Project Details** page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
@@ -264,7 +264,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 ## **STEP 3:** Create a Data Flow - 2
 To further explore the capabilities of Data Flows in OCI Data Integration, you will now create **a new Data Flow** with different transformation rules.
 
-This Data Flow will load data from **multiple source files** holding Employees data, using File Patterns functionality in OCI Data Integration. After, you will do transformations on the data and later load the data in **multiple target tables**, based on the region of the employees. Two target tables will be loaded: one for employees from West and Midwest region and one for employees from Northeast and South region. We will take advantage of the **Split operator** in OCI Data Integration.
+This Data Flow will load data from **multiple source files** containing Employees data using File Patterns functionality in OCI Data Integration. After, you will do transformations on the Employees data and later load the data in **multiple target tables**, based on the region of the employees. Two target tables will be loaded: one for employees from **West and Midwest region** and one for employees from **Northeast and South region**. We will take advantage of the **Split operator** in OCI Data Integration Data Flows.
 
 1. From the Project Details page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
@@ -465,7 +465,7 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
 ![](./images/save-close-button.png " ")
 
 ## **STEP 4:** Create Integration Tasks
-**Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow.
+**Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create Integration tasks for the two Data Flows you created in the previous steps of this Lab.
 
 1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 ![](./images/home-projects.png " ")
@@ -504,7 +504,7 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
 ## **STEP 5:** Create a Data Loader task
 A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
 
-In this step of the Workshop, you will create a Data Loader task that will load data from **REVENUE.csv** source file, perform transformations and load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
+In this step of the Workshop, you will create a Data Loader task that will load Orders data from **REVENUE.csv** source file. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
 
 1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 ![](./images/home-projects.png " ")
@@ -598,11 +598,13 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 
 
 ## **STEP 6:** Create a SQL task
-A **SQL task** lets you run a SQL object in pipeline. Currently, the only SQL objects you can run are stored procedures. You create a SQL task by selecting a stored procedure. The stored procedure must exist in the data source that's associated with a data asset already created in your workspace. The variables defined in a stored procedure are exposed as input, output, and in-out parameters in a SQL task.
+A **SQL task** lets you run a SQL stored procedure in pipeline. You create a SQL task by selecting a stored procedure that exists in the data source that's associated with a data asset already created in your workspace. The variables defined in a stored procedure are exposed as input, output, and in-out parameters in a SQL task.
 
-When you create a SQL task, you can configure values for **input parameters** only. If input parameters are configured in a SQL task, you can **override the default values** when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task. In a pipeline, downstream tasks and operations can use the outputs from an upstream SQL task.
+When you create a SQL task, you can configure values for **input parameters** only. If input parameters are configured in a SQL task, you can **override the default values** when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task.
 
-This SQL task will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameters, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in the following lab. The database table will offer the possibility to be queried in order to see the result of the data integration pipelines.
+This SQL task in this workshop will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameter from the pipeline, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in the following lab. To understand better the SQL stored procedure, please check the `OCIDI_RESULT` procedure statement from the SQL script you downloaded and ran on Autonomous Data Warehouse in Lab 0.
+Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking result in the Data Integration Application from OCI Console.
+
 
 1. From your Workspace home page in OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 ![](./images/home-projects.png " ")

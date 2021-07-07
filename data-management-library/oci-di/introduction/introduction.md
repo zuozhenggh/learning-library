@@ -5,7 +5,7 @@
 This workshop introduces you to **Oracle Cloud Infrastructure Data Integration** and will give you a full tour of the service in a hands-on manner.
 
 Administrators, data engineers, ETL developers, and operators are among the different types of data professionals who can use Oracle Cloud Infrastructure Data Integration and would benefit from this workshop.
-We will create a workspace in OCI Data Integration, connect to data assets, create a Data Flow along with an Integration task, Data Loader task and SQL task. We will create a Pipeline and a pipeline task and finally schedule to run it.  
+We will create a workspace in OCI Data Integration, connect to data assets, create Data Flows along with Integration tasks, Data Loader task and SQL task. We will create a Pipeline and a Pipeline task and finally schedule to run it.  
 
 *Estimated Workshop Time*: 3 Hours 30 Minutes
 
@@ -20,7 +20,7 @@ ETL developers will be able to load a data mart in minutes without coding, quick
 
 **Key use cases** include:
 * Data Integration for Big Data, Data Lakes & Data Science – by efficiently loading and transforming data at scale into data lakes used for data science and analytics purposes
-* Data Integration for Data Warehousing and Analytics – by efficiently loading and transforming data at scale into data marts and data warehouses (e.g. Autonomous Data Warehouse) used for analytics purposes
+* Data Integration for Data Warehousing and Analytics – by efficiently loading and transforming data at scale into data marts and data warehouses (e.g. Autonomous Data Warehouse) used for analytics purposes.
 
 **Key features** include:
 *	Visual, no-code design of ETL data flows
@@ -42,14 +42,14 @@ In this workshop, you will:
 * Set up the Data Integration prerequisites in Oracle Cloud Infrastructure
 * Create an OCI Data Integration Workspace and the necessary policies
 * Create Object Storage and Autonomous Data Warehouse Data Assets in the Workspace
-* Create a Data Flow, Integration task, Data Loader task and SQL task
-* Create a Pipeline, pipeline task and publish tasks into an Application
-* Schedule and run the tasks
+* Create Data Flows, Integration tasks, Data Loader task and SQL task
+* Create a Pipeline, Pipeline task and publish tasks into an Application
+* Schedule and run the Pipeline task
 
 
 ## Workshop Prerequisites
 
-This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in the **Getting Started** lab in the Contents menu.
+This workshop requires an Oracle Cloud account. You may use your **own cloud account** or you can get a **Free Trial** account as described in the **Getting Started** lab from the Contents menu.
 Also:
 * Familiarity with Database is desirable, but not required
 * Some understanding of Cloud and Database terms is helpful

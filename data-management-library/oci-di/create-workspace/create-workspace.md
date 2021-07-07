@@ -6,12 +6,12 @@ This lab will guide you through the steps to set up the necessary **Policies** f
 
 *Estimated Lab Time*: 15 minutes
 
-## Objectives
+### Objectives
 In this lab, you will:
 * Create access policies for OCI Data Integration using Policy Builder UI in Oracle Cloud Infrastructure
 * Create a Workspace for Data Integration resources
 
-## Prerequisites
+### Prerequisites
 * Free Tier/ Paid Oracle Cloud Account
 * You have completed **Lab 0 - Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure**
 

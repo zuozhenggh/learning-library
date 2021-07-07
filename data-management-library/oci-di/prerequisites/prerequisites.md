@@ -6,7 +6,7 @@ This lab will walk you through the steps to set up the **prerequisites** before 
 
 *Estimated Lab Time*: 1 hour
 
-## Objectives
+### Objectives
 
 In this lab, you will:
 * Create an OCI Compartment
@@ -15,7 +15,7 @@ In this lab, you will:
 * Prepare the Autonomous Data Warehouse
 * Create an Object Storage bucket and upload the sample data
 
-## Prerequisites
+### Prerequisites
 
 * **Free Tier/ Paid Oracle Cloud Account**
 * **OCI user** that is assigned to an **OCI group**.

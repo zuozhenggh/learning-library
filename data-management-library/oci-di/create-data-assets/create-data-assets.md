@@ -6,14 +6,14 @@ This lab walks you through the steps to create **Data assets** for your source a
 
 *Estimated Lab Time*: 15 minutes
 
-## Objectives
+### Objectives
 In this lab, you will:
 * Copy the Workspace OCID for further use in policies
 * Create policies for ADW and Object Storage
 * Create Object Storage data asset
 * Create Autonomous Data Warehouse data asset
 
-## Prerequisites
+### Prerequisites
 * Free Tier/ Paid Oracle Cloud Account
 * All previous labs have been successfully completed
 

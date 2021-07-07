@@ -10,13 +10,13 @@ To run a task automatically on a specific schedule, you must:
 
 *Estimated Lab Time*: 30 minutes
 
-## Objectives
+### Objectives
 In this lab, you will:
 * Create a Schedule
 * Schedule the Pipeline Task
 * Run the Pipeline Task
 
-## Prerequisites
+### Prerequisites
 * Free Tier/ Paid Oracle Cloud Account
 * Oracle Cloud Account credentials (Username, Password and Tenant)
 

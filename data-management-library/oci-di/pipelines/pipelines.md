@@ -6,7 +6,7 @@ This lab will walk you through the steps to create an OCI Data Integration appli
 
 *Estimated Lab Time*: 30 minutes
 
-## Objectives
+### Objectives
 In this lab, you will:
 * Create an Application
 * Publish tasks to Application
@@ -14,7 +14,7 @@ In this lab, you will:
 * Creating a Pipeline Task
 * Publish the Pipeline Task
 
-## Prerequisites
+### Prerequisites
 * Free Tier/ Paid Oracle Cloud Account
 * All previous labs have been successfully completed
 
