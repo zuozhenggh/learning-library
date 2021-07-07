@@ -49,7 +49,7 @@ Before the existing database can be migrated to the sharded database, you must d
 2. Download the sharded demo schema SQL scripts `sdb-app-schema.sql`.
 
     ```
-    [oracle@cata ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/sFsUxEwqwoVhXOS2koM9bHb2cWE4m4Zb_sffA8DP92RQM4ip_ESe315daR7ic0Fj/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/sdb-app-schema.sql</copy>
+    [oracle@cata ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZkoZi3PVSwYGZAscZNDRzOLlqdKypfJEnM15czI6ud6nM5POU8MHkcXHXnp1NJ27/n/c4u04/b/data-management-library-files/o/Oracle%20Sharding/sdb-app-schema.sql</copy>
     ```
 
     
@@ -193,17 +193,17 @@ Before the existing database can be migrated to the sharded database, you must d
 
 4. Use SQLPLUS to run this sql scripts
 
-   ```
-   [oracle@cata ~]$ <copy>sqlplus /nolog</copy>
-   
-   SQL*Plus: Release 19.0.0.0.0 - Production on Mon Nov 30 01:26:03 2020
-   Version 19.10.0.0.0
-   
-   Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-   
-   
-   SQL> <copy>@sdb-app-schema.sql</copy>
-   ```
+    ```
+    [oracle@cata ~]$ <copy>sqlplus /nolog</copy>
+    
+    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Nov 30 01:26:03 2020
+    Version 19.10.0.0.0
+    
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    
+    
+    SQL> <copy>@sdb-app-schema.sql</copy>
+    ```
 
    
 
@@ -1295,4 +1295,3 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020  
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
-* **Workshop Expiry Date** - 25 April 2022

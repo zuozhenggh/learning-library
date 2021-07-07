@@ -2,6 +2,15 @@
 
 In this lab, you will create a service connector to move log data from the Logging service to an Autonomous Database using Functions and Oracle REST Data Services.
 
+*Estimated Lab Time:* 30 Minutes
+
+### Objectives
+
+In this lab, you will:
+    - Create a JSON collection in the Autonomous Database using SODA/Database Actions
+    - Create a function to pass log files into a JSON collection
+    - Connect all the pieces together with Service Connector Hub
+
 ### Prerequisites
 
 - You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
@@ -11,11 +20,11 @@ In this lab, you will create a service connector to move log data from the Loggi
 ## **Download Lab Files**
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip)
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
 ```
 
 ## **STEP 1:** Creating a Collection
@@ -155,7 +164,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 4. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
     ```    
 
     Once downloaded, unzip it

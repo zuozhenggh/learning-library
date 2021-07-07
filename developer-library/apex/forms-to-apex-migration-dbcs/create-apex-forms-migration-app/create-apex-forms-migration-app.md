@@ -24,8 +24,8 @@ Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: **Download the Sample Scripts and Form**
 
-Download the  sample database DDL  scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jrxGuOZ6rX5Ih1zMyt6eFWqWKy3Kwo9rR5fgKGauY1VEDhYis3m58I_b-pa3FkSG/n/c4u03/b/developer-library/o/forms\_conversion\_ddl.sql) and sample data insert scripts from [here](
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/nrcRTwPDRP9SkWGWtkOEzY8OyskzhnHtSJDINe4TcaWCRqJ8kuHNyQ49ffnHJxRB/n/c4u03/b/developer-library/o/conversion\_data\_insert.sql)
+Download the  sample database DDL  scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s1jbId1lVW9okGZ0wliLdohdwYD98PQHM4bWzywDN45VaZh6G-O8JNPw7gvVPR1H/n/c4u04/b/developer-library/o/forms_conversion_ddl.sql) and sample data insert scripts from [here](
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/VaBxXaGo2ahhaXJTJeD7lFrFyne2a58rxIzMrDYpyz7ud2YeUJu0CuKwkZ9HUQsy/n/c4u04/b/developer-library/o/conversion_data_insert.sql)
 to use in the lab to your desktop
 
 

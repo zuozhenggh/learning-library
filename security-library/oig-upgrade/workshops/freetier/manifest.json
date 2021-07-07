@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "One-Hop Upgrade of Oracle Identity Manager",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "workshoptitle": "Oracle Identity Governance(OIG) One Hop Upgrade",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
           "title": "Introduction",
@@ -30,7 +30,7 @@
           "filename": "./../../../../common/labs/setup-compute-generic/setup-compute-novnc.md"
         },
         {
-            "title": "Lab 4: Initialize the workshop environment",
+            "title": "Lab 4: Initialize Environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../initialize-environment/initialize-environment.md"
         },
@@ -43,7 +43,7 @@
             "filename": "../../upgrade/upgrade.md"
         },
         {
-            "title": "Lab 7: Post-Upgrade tasks",
+            "title": "Lab 7: Post-Upgrade Tasks",
             "filename": "../../post-upgrade/post-upgrade.md"
         },
         {
