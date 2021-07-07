@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -8,14 +8,14 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Getting Started",
+      "title": "Get Started",
       "description": "Login to Oracle Cloud",
-      "filename": "./../../../../../common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
     },
     {
       "title": "Lab 1: Environment Setup",
       "description": "Verify Setup of compute instance",
-      "filename": "./../../../../../common/labs/verify-compute/verify-compute-novnc.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
       "title": "Lab 2: Initialize Environment",

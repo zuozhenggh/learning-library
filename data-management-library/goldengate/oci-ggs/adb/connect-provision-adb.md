@@ -84,7 +84,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Click the following link to download the database schema.
 
-    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/D9dqoEWMpWZgpMSyILK-ycaSQqiywQ2CxFZZkTY4ZpW9Yi0rV0MHiD4UWOgIGu0T/n/c4u03/b/data-management-library-files/o/Archive.zip)
+    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GBBFZbbFdladZV7maRiV3egDpZ_jCOglhpEWyqOgEuKZzIjxqeDgbrq9_WRhzjR5/n/c4u04/b/data-management-library-files/o/Archive.zip)
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 
