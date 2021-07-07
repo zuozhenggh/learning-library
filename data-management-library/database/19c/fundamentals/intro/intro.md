@@ -40,17 +40,24 @@ $ <copy>/home/oracle/labs/19cnf/recreate_ORCL.sh</copy>
 $
 ```
 
-## Using the clipboard in noVNC
+## Copying and pasting text
 
-To copy and paste text from your local machine into an application on your noVNC desktop, do the following:
+The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code. There are several ways to do so.
 
-1.  On the noVNC desktop, click the tiny white arrow button on the left of the screen to display the toolbar.
+With the lab instructions displayed on your compute instance's desktop, it's easy to copy text directly from the lab and paste text into any application using the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** to copy text, and click the middle mouse button to paste text. Some instructions in the labs may include a Copy button.
 
-2. Click the **Clipboard** icon (5th icon down) to open the Clipboard dialog box.
+If you need to copy and paste text from your local computer to the compute instance:
 
-3. Paste text into the **Clipboard** field. It's important to do this before you open the application into which you want to paste the text.
+1. Click the **Clipboard** icon on the control bar (5th button down). In the **Clipboard** dialog box, paste some copied text, for example, "This text was copied from my local computer".
 
-4. Open the application and paste the text using the **Paste** option on the speed menu (right-click menu).
+    ![Clipboard](images/clipboard.png "Clipboard")
+
+2. Open the application into which you want to paste the text, for example, a terminal window.
+
+3. Paste the text using your mouse controls (middle button or context menu option). It's important that you open the Clipboard dialog box and paste your text into it before you open the application into which you want to paste the text. Otherwise, the Paste option on the context menu may be grayed out.
+
+
+
 
 
 ## General Database Overall Enhancements

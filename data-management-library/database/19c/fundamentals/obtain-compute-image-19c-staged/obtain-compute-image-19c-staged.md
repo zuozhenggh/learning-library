@@ -17,7 +17,7 @@ Learn how to do the following:
 
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
-- Connect to your compute instance from a browser
+- Connect to your compute instance from a browser and set up your desktop
 - Configure a security rule in your VCN
 
 ### Prerequisites
@@ -64,7 +64,9 @@ Before you start, be sure that you have done the following:
 
 12. Select **Paste SSH Key**, and then paste the contents of your public key into the box. Be sure that there are no carriage returns. The key should be all on one line.
 
-13. Leave **VM.Standard.E4.Flex** selected as the instance shape.
+13. Select **VM.Standard.E3.Flex** as the instance shape.
+
+   *update this graphic*
 
   ![Instance Configuration](images/instance-configuration.png "Instance Configuration")
 
@@ -115,20 +117,23 @@ If you navigated away from the **Instance Details** page, you can return to it b
 4. (Optional) Click the name of your compute instance to view all of its details.
 
 
-## **STEP 3**: Connect to your compute instance via a browser
+## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
 
 1. On your local computer, open a browser, and enter the following URL. Replace `compute-public-ip` with the public IP address of your compute instance.
 
     ```
-    compute-public-ip:6080/index.html?resize=remote
+    http://compute-public-ip:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true
     ```
 
-2. On the **noVNC** login page, click **Connect**. If a login page is not displayed, wait a few minutes and then try the URL again.
+   You are presented with user-friendly desktop for your Unix instance. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
 
-3. Enter **LiveLabs.Rocks_99** as the password, and then click **Send Password**.
+    ![noVNC Desktop](images/noVNC-desktop.png "noVNC Desktop")
 
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
 
-   You are presented with user-friendly desktop for your Unix instance. On the desktop, you can find shortcuts to Firefox and a terminal window.
+    ![Enable Full Screen](images/enable-full-screen.png "Enable Full Screen")
+
+3. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
 ## **STEP 4**: Configure a security rule on your VCN

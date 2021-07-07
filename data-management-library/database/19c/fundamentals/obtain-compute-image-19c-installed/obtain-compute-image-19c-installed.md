@@ -19,7 +19,7 @@ Learn how to do the following:
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
 - Obtain the public IP address of your compute instance
-- Connect to your compute instance via a browser
+- Connect to your compute instance via a browser and set up your desktop
 - Download the labs files for this workshop
 
 ### Prerequisites
@@ -110,19 +110,23 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 
 
-## **STEP 4**: Connect to your compute instance via a browser
+## **STEP 4**: Connect to your compute instance via a browser and set up your desktop
 
 1. Open a browser on your personal computer and enter the following URL. Replace `public-ip-address` with your compute instance's public IP address.
 
     ```
-    http://public-ip-address:6080/index.html?resize=remote
+    http://compute-public-ip:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true
     ```
 
-2. Click **Connect**. If a login page is not displayed, wait a few minutes and then try the URL again.
+    You are presented with user-friendly desktop for your Unix instance. On the desktop, you can find shortcuts to Firefox and a terminal window.
 
-3. Enter the password **LiveLabs.Rocks_99**, and then click **Send Password**.
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
 
-    The noVNC desktop is displayed.
+3. To initialize local copy and pasting of text: Click the **Clipboard** icon on the control bar (5th button down). In the **Clipboard** dialog box, paste some copied text, for example, "This text was copied from my local computer". Open the application into which you want to paste the text, for example, a terminal window. Paste the text using your mouse controls (middle button or context menu option).
+
+> **Note**: It's important that you open the Clipboard dialog box and paste your text into it before you open the application into which you want to paste the text. Otherwise, the Paste option on the context menu may be grayed out.
+
+4. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
 ## **STEP 5**: Download the lab files for this workshop
