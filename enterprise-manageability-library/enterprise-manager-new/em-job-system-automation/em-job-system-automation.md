@@ -1,7 +1,8 @@
 # Automation with Enterprise Manager Job System
+
 ## Introduction
 
-In this workshop you will learn how to use the Enterprise Manager Job System to automate routine administrative tasks such as backup, SQL scripts and OS jobs etc., in your environment so you can manage them more efficiently.
+In this lab you will learn how to use the Enterprise Manager Job System to automate routine administrative tasks such as backup, SQL scripts and OS jobs etc., in your environment so you can manage them more efficiently.
 
 *Estimated Lab Time*: 60 minutes
 
@@ -15,7 +16,7 @@ A job is a unit of work that you define to automate commonly-run tasks. Scheduli
 
 ### Objectives
 
-In this lab you will perform the following steps:
+In this lab you will learn:
 
 | **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
 |--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,10 +35,10 @@ In this lab you will perform the following steps:
     - Username: **emadmin**; Password: **welcome1**
 - EM13c Host Public IP address
 - OMS Console URL:
-````
+```
 <copy>https://<EM13c Host Public IP address>:7803/em</copy>
 e.g: https://111.888.111.888:7803/em
-````
+```
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
@@ -116,98 +117,98 @@ Now the Library job created is ready to be used as in STEP 0 to setup user **ora
 
 In this workshop we will create and run a SQL Command Job to determine how many targets are down from the Enterprise Manager Repository
 
-1.  Log into your Enterprise Manager as user **emadmin**
+1.  Log into your Enterprise Manager as user **emadmin**.
 
-2.  Navigate to “***Enterprise >> Job >> Activity***”.
+2.  Navigate to ***Enterprise >> Job >> Activity***.
   ![](images/enterprise_job_activity.jpg " ")
 
-3.  In the Job Activity page, on the top of the Activity table, click **Create Job**
+3.  In the Job Activity page, on the top of the Activity table, click **Create Job**.
   ![](images/create_job.jpg " ")
 
-4. In the **Select Job Type** pop-up, select "**SQL Script**" and Click **Select**
+4. In the **Select Job Type** pop-up, select **SQL Script** and Click **Select**.
   ![](images/sql_job.jpg " ")
 
-5. On the General Tab, Enter **TARGET_DOWN** as Name of the job and Click on **Add** to add Target Instance
+5. On the General Tab, Enter **TARGET_DOWN** as Name of the job and Click on **Add** to add Target Instance.
   ![](images/sql_job1.jpg " ")
 
-6. Check **emrep.us.oracle.com** (the EM repository) and click **Select**
+6. Check **emrep.us.oracle.com** (the EM repository) and click **Select**.
   ![](images/sql_job1.1.jpg " ")
 
 7. On the Parameters tab enter the following SQL command to be executed
 
-    ````
+    ```
     <copy> SELECT COUNT(*) FROM mgmt$availability_current WHERE availability_status='Target Down'; </copy>
 
-    ````
+    ```
     ![](images/sql_job1.2.jpg " ")
 
 8. On the **Credentials** tab, Select Database Named Credential **SYSMAN** and Host Named Credential **ORACLE** and Click on **Submit** to submit the SQl Script job.
   ![](images/sql_job1.3.jpg " ")
 
-9. You will get a confirmation dialog at the top of the screen. CLick on **TARGET_DOWN** to view your job run
+9. You will get a confirmation dialog at the top of the screen. CLick on **TARGET_DOWN** to view your job run.
   ![](images/sql_job1.4.jpg " ")
 
-10. This will show you the sql command job's successful run with the value of number of targets that are Down
+10. This will show you the sql command job's successful run with the value of number of targets that are Down.
   ![](images/sql_job1.5.jpg " ")
 
-Now let's see how we can run a sql job to alter the initialization parameters of a database
+Now let us see how we can run a sql job to alter the initialization parameters of a database
 
-11. First, let's see the original value of the parameter. From the main menu, Click on ***Targets >> Databases*** and Click on **finance.subnet.vcn.oraclevcn.com**
+11. First, let us see the original value of the parameter. From the main menu, Click on ***Targets >> Databases*** and Click on **finance.subnet.vcn.oraclevcn.com**.
   ![](images/databases_finance.jpg " ")
 
 12. Under **Administration** drop down Click **Initialization Parameters**.
   ![](images/finance_init_param.jpg " ")
 
-13. This will pop up the credentials screen. Select Named Credential **OEM_SYS**; Click **Login**
+13. This will pop up the credentials screen. Select Named Credential **OEM_SYS**; Click **Login**.
   ![](images/finance_init_param1.jpg " ")
 
 14. Scroll down and you will see the **open\_cursors** initialization parameter set to 300 as shown.
   ![](images/finance_init_param2.jpg " ")
 
-15. Navigate to the ***Enterprise menu >> Job >> Activity***
+15. Navigate to the ***Enterprise menu >> Job >> Activity***.
     ![](images/enterprise_job_activity.jpg " ")
 
-16. In the Job Activity page, on the top of the Activity table, click **Create Job**
+16. In the Job Activity page, on the top of the Activity table, click **Create Job**.
     ![](images/create_job.jpg " ")
 
-17. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**
+17. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**.
     ![](images/sql_job.jpg " ")
 
-18.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance
+18.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
     ![](images/sql_job2.jpg " ")
 
-18. Check **finance.subnet.vcn.oraclevcn.com**  and click **Select**
+18. Check **finance.subnet.vcn.oraclevcn.com**  and click **Select**.
     ![](images/sql_job2.1.jpg " ")
 
 19. On the Parameters tab enter the following SQL command to be executed
 
-    ````
+    ```
     <copy>alter system set open_cursors = 400 scope=both;</copy>
 
-    ````
+    ```
     ![](images/sql_job2.2.jpg " ")
 
-20. On the Credentials tab, Select Database Named Credential OEM_SYS and Host Named Credential ORACLE
+20. On the Credentials tab, Select Database Named Credential OEM_SYS and Host Named Credential ORACLE.
     ![](images/sql_job2.3.jpg " ")
 
 21. On the **Schedule** Tab you can specify whether you want to run the job immediately or at a later time by specifying date, time etc. Click on **One Time (Immediately)**. Click on **Submit** to submit the SQL Script job.     
     ![](images/sql_job2.6.jpg " ")
 
-21. You will get a confirmation dialog at the top of the screen. Click on **FIX_OPEN_CURSOR** to view your job run
+21. You will get a confirmation dialog at the top of the screen. Click on **FIX_OPEN_CURSOR** to view your job run.
     ![](images/sql_job2.4.jpg " ")
 
-22. This will show you the sql command job's successful run
+22. This will show you the sql command job's successful run.
     ![](images/sql_job2.5.jpg " ")
 
-23. You can go back to the finance database by repeating steps 11-14 to verify the new value of the open_cursors initialization parameter
+23. You can go back to the finance database by repeating steps 11-14 to verify the new value of the open_cursors initialization parameter.
   ![](images/finance_init_param3.jpg " ")
 
-This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.  
+<!-- This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.   -->
 
 
 ## **STEP 3:** Create Database Backup Job using Wizard
 
-Jobs can be accessed from the Jobs menu or from within the context of a target. Let's look at it from a Database target perspective.
+Jobs can be accessed from the Jobs menu or from within the context of a target. Let us look at it from a Database target perspective.
 
 1. Navigate to the ***Targets >> Databases***.
   ![](images/database_backup1.jpg " ")
@@ -219,20 +220,21 @@ Jobs can be accessed from the Jobs menu or from within the context of a target. 
   ![](images/database_backup3.jpg " ")
 
 4. Select **OEM_SYS** Named Credential and Click **Login**
-  ![](images/database_backup4.jpg " ")**
+  ![](images/database_backup4.jpg " ")
 
 5. From the Schedule Backup Wizard, you can select either Oracle-suggested backup or Customized backup. Oracle-suggested backup is based on your disk, tape, or disk and tape configuration. Using Customized backup, you can schedule your own backup jobs with more flexibility. Customized backup jobs are influenced by the database configuration.
 In the Customized Backup section, the **Whole Database** option is selected by   default. Select **ORACLE** Host Credentials (default). Click on **Schedule Customized Backup**
   ![](images/database_backup5.jpg " ")
 
 6. You can use the **Options** page of the Schedule Customized Backup Wizard to:
-   * Choose a full backup
-   * Choose an incremental backup
-   * Delete obsolete backups
-   * Use a proxy copy supported by media management software to perform the backup
+      * Choose a full backup
+      * Choose an incremental backup
+      * Delete obsolete backups
+      * Use a proxy copy supported by media management software to perform the backup
 
-   Click the **Full Backup** option (default) to back up all the blocks into the backup set. It takes a backup of archived redo log files and control files. Click Next
-   ![](images/database_backup6.jpg " ")  
+      Click the **Full Backup** option (default) to back up all the blocks into the backup set. It takes a backup of archived redo log files and control files. Click Next.
+
+    ![](images/database_backup6.jpg " ")  
 
 7. You can use the **Settings** page of the Schedule Customized Backup Wizard to specify the media type on which to take the backup of the database. You can select either Disk or Tape here. Select **Disk** as the media on which the backup is to be taken. You can change the default path by clicking the Override Default Settings button. Click **Next**.
   ![](images/database_backup7.jpg " ")
@@ -260,5 +262,4 @@ This concludes the Automation of Enterprise Manager Job System lab.
 - **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
 - **Last Updated By/Date** - Shefali Bhargava, Oracle Enterprise Manager Product Management, June 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.
+
