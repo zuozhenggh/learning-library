@@ -8,22 +8,22 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Login to Oracle Cloud",
+            "title": "Getting Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
             "title": "Lab 1: Setups",
-            "description": "Setup your OCI account and create an Oracle Autonomous Database",
+            "description": "Setup your OCI Account and Create an Oracle Autonomous Database",
             "filename": "../../setups/setups.md"
         },
         {
-            "title": "Lab 2: Create a Function to batchload data into the database using ORDS",
-            "description": "Connect to an Autonomous Database with SQL Developer Web",
+            "title": "Lab 2: Create a Function to Batch Load Data into the Database Using ORDS",
+            "description": "Create a Function to Batch Load Data into the Database Using ORDS",
             "filename": "../../csv-function/csv-function.md"
         },
         {
-            "title": "Lab 3: Create a Function and Service Connector to load logs from the Logging Service into the database using ORDS",
-            "description": "Modern App Dev with Oracle REST Data Services",
+            "title": "Lab 3: Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
+            "description": "Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
             "filename": "../../json-logging/json-logging.md"
         },
         {
