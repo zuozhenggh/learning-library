@@ -74,7 +74,7 @@ To obtain the benefits of sharding, the schema of a sharded database should be d
 
 Click [here] (https://github.com/alexkovuru/Oracle-Shard-Schema-Design/blob/main/Shard_Schema_Design.txt) for more details.
 
-## **STEP 1**: Check for containers in your VM.
+## **STEP 1**: Check for containers in your VM
 
 1. Open a terminal window and execute below as **opc** user.
 

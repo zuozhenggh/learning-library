@@ -19,8 +19,8 @@ Once you complete your setup, the next lab will cover:
 
 - About Eshop
 - Exploring Sharding Topology
-- Eshop App schema & Code Snippet
-- Application queries on Sharding Database
+- Eshop Application schema & Code Snippet
+- Application queries on Sharded Database
 
 We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 

@@ -69,23 +69,14 @@ Run the below each sql query by login into Catalog database as well as one of th
    
     ```
     <copy>
-    Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l where rownum <= 12 and :YEAR_SELECTED =to_char(l.monthly,'YYYY') group by l.monthly order by monthly asc;
+    Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l group by l.monthly order by monthly asc;
     </copy>
     ```
 
     ![](./images/query3.JPG " ") 
 
-4. Sentiment Percentage:    A single query spanning from REVIEWS shard table by accessing multiple shard databases.
-   
-    ```
-    <copy>
-    with pos as(select sum(senti_score) as positive_score from REVIEWS where senti_score > 0), neg as (select sum(senti_score) as negative_score from REVIEWS where senti_score <0),A as (select ABS(nvl(p.positive_score,0)) POSITIVE, ABS(nvl(n.negative_score,0)) NEGATIVE from pos p, neg n) select ROUND(POSITIVE/(POSITIVE+NEGATIVE) *100,2) as POS_PER, ROUND(NEGATIVE/(POSITIVE+NEGATIVE) *100,2) as NEG_PER from A;
-    </copy>
-    ```
 
-    ![](./images/query4.JPG " ") 
-
-5. Select products ordered by maximum sell
+4. Select products ordered by maximum sell
 
     ```
     <copy>
@@ -94,37 +85,20 @@ Run the below each sql query by login into Catalog database as well as one of th
     ```
     ![](./images/query5.JPG " ") 
 
-6. Customer Average Review and review count
+5. Customer Average Review and review count
 
     ```
     <copy>
-    select substr(p.json_text.NAME,0,40) NAME,p.json_text.CUSTOMERREVIEWAVERAGE as AVG_REV,p.json_text.CUSTOMERREVIEWCOUNT as REV_COUNT,SKU from PRODUCTS p where SKU in ('SKU1','SKU2');
+    Set lines 200 pages 200
+    col NAME for a40
+    col AVG_REV for a5
+    col REV_COUNT for a5
+    col SKU for a30
+    select substr(p.json_text.NAME,0,40) NAME,p.json_text.CUSTOMERREVIEWAVERAGE as AVG_REV,p.json_text.CUSTOMERREVIEWCOUNT as REV_COUNT,SKU from PRODUCTS p ;
     </copy>
     ```
 
     ![](./images/query6.JPG " ") 
-
-
-7. Positive Review
-
-    ```
-    <copy>
-    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score>0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ('SKU1','SKU2') group by rj.json_text.PRODUCT_ID;
-    </copy>
-    ```
-
-    ![](./images/query7.JPG " ") 
-
-8. Negative Review
-
-    ```
-    <copy>
-    select sum(senti_score) as SCORE, rj.json_text.PRODUCT_ID from REVIEWS rj where senti_score<=0 and json_value(rj.json_text, '$.PRODUCT_ID' returning VARCHAR2(64)) in ("+inClauseString+") group by rj.json_text.PRODUCT_ID;
-    </copy>
-    ```
-
-    ![](./images/query8.JPG " ") 
-
 
 
 ## Learn More
