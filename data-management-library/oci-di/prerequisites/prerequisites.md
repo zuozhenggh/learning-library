@@ -186,7 +186,7 @@ alter user BETA quota 200M on data;</copy>
 
 9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPC9LuVhG3MIVEwuU3v6XdS17hoEfZzSEopKxp2QJO3yoguKbHcM7ZpjyJ1OUqIG/n/sehubemeaprod/b/DI-bucket/o/OCI%20DI%20Workshop%20files.zip) to your local directories. Unzip this file.
 
-10. In the same SQL worksheet, **run the ADW\_OCIDI\_LiveLabs.sql SQL script from the unzipped archive from the previous step**, to create the rest of the database objects you need for the following integration tasks.
+10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects you need for the following integration tasks.
 ![](./images/adw-run-sql-script.png " ")
 
 11. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.
@@ -211,12 +211,12 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 
 4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`DI-bucket`).
 
-![](./images/bucket-list.png " ")
+![](./images/buckets.png " ")
 
 5. You will upload the source files for the workshop data integration flows in this bucket. Click on **Upload** button under Objects.
 ![](./images/upload-button.png " ")
 
-6. Drop or select the files *CUSTOMERS.json*, *REVENUE.csv*, *EMPLOYEES_1.csv*, *EMPLOYEES_2.csv*, *EMPLOYEES_3.csv* from your local directory where you unzipped the OCI DI Workshop files.zip file. Click **Upload**.
+6. Drop or select the files *CUSTOMERS.json*, *REVENUE.csv*, *EMPLOYEES_1.csv*, *EMPLOYEES_2.csv*, *EMPLOYEES_3.csv* from your local directory where you unzipped the **OCI DI Workshop files.zip** file. Click **Upload**.
 ![](./images/upload-objects.png " ")
 
 7. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.

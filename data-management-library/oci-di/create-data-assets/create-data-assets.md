@@ -35,7 +35,7 @@ In this lab, you will:
 
 ## **STEP 2**: Create policies for ADW and Object Storage
 
-Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. So, you must create all the required Object Storage **policies** and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
+Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. You must create all the required Object Storage **policies** and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
 ![](./images/menu_policies.png " ")
@@ -46,7 +46,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 3. Your policy details will be displayed. Click on **Edit Policy Statements**.
 ![](./images/policy-details.png " ")
 
-4. Your **Edit Policy Statements** screen is displayed and you can see your current policy statements. Check **Advanced** for Policy Builder.
+4. The **Edit Policy Statements** screen is displayed and you can see your current policy statements. Check **Advanced** for Policy Builder.
 ![](./images/policy-another-button.png " ")
 
 5. You will add the necessary policy statements to **enable access to Oracle Object Storage** and **to use Autonomous Data Warehouse** as target for your data integration tasks. In this workshop, the Data Integration workspace and Object Storage data asset belong to the same tenancy so the following statements are needed. Copy the following statements and paste them in the **Policy Builder** box, each statement as a new line:
@@ -73,7 +73,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 6. **Replace** in the new policy statements:
   - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`
-  - *"group-name"* with the name of the OCI group where your user belongs to(`di-group`)
+  - *"group-name"* with the name of the OCI group where your user belongs to (`di-group`)
   - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
 
 ![](./images/new-policy.png " ")
@@ -84,7 +84,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 ## **STEP 3**: Create Object Storage data asset
 
-In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in our data integration workspace.
+In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in the data integration workspace.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
@@ -100,9 +100,9 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset** 
   - **Description**: you can optionally enter a description about your data asset
   - From the **Type** dropdown, select `Oracle Object Storage`
   - For **URL**, enter the URL for your Oracle Object Storage resource in the following format:
-  ```
-  <copy>https://objectstorage.<region-identifier>.oraclecloud.com
-  ```
+
+  `https://objectstorage.<region-identifier>.oraclecloud.com`
+
 *Note*: Replace the *"region-identifier"* with the one corresponding to the region where your Object Storage bucket is located. You can find the list of region identifiers at the following [link](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm). For example, if you have your Object Storage in Frankfurt region, use `https://objectstorage.eu-frankfurt-1.oraclecloud.com`
 
   - For **Tenant OCID**, enter the Oracle Cloud ID of your tenancy.
@@ -112,7 +112,7 @@ To view your tenancy OCID in the Console, from the Profile menu click Tenancy:`y
 ![](./images/profile-menu.png " ")
 ![](./images/tenancy-details.png " ")
 
-  - For **Namespace**, the value should now be auto-populated after completing the preceding step. If not, enter the namespace for the Object Storage bucket, that you can find as in the picture above, section highlighted in yellow.
+  - For **Namespace**, the value should be auto-populated after completing the preceding step. If not, enter the namespace for the Object Storage bucket, that you can find as in the picture above, section highlighted in yellow.
   - Under **Default Connection** Information, you can optionally enter a name and description for the connection or leave the default one.
 
 ![](./images/create-os.png " ")
