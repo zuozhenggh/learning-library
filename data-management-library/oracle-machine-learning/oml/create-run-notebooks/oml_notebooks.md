@@ -8,7 +8,7 @@ This lab takes approximately 10 minutes to complete.
 ### Background
 Oracle Machine Learning Notebooks is a web-based interface for data analysis, data discovery, and data visualization. Whenever a notebook is created, it must be defined with a specific Interpreter Settings specification. The notebook contains an internal list of bindings that determines the order of the interpreter bindings.
 
-A notebook comprises paragraphs which is a notebook component where you can write SQL statements, run PL/SQL scripts, and run Python commands. A paragraph has an input section and an output section. In the input section, specify the interpreter to run along with the text. This information is sent to the interpreter to be executed. In the output section, the results of the interpreter are provided.
+A notebook comprises paragraphs which is a notebook component where you can write SQL statements, run PL/SQL scripts, and run Python commands. A paragraph has an input section and an output section. In the input section, specify the interpreter to run along with the text. This information is sent to the interpreter to be run. In the output section, the results of the interpreter are provided.
 
 ### What Do You Need?
 
@@ -20,7 +20,7 @@ A notebook comprises paragraphs which is a notebook component where you can writ
 
 To create a notebook:
 
-1. Log in to your Oracle Machine Learning account and click **Notebooks** in the home page.
+1. Log in to your Oracle Machine Learning Notebooks account and click **Notebooks** on the home page.
 
    ![oml_homepage.png](images/oml_homepage.png "oml_homepage.png")
 
@@ -43,11 +43,11 @@ To create a notebook:
 
 7. Click **Back** to return to the Notebooks page, and to save the changes in the notebook.
 
-## Create Your Notebook From Templates
+## Create Your Notebook From Examples Templates
 
 To create a notebook based on a template:
 
-1. Log in to your Oracle Machine Learning account and click **Examples** in the home page.
+1. Log in to your Oracle Machine Learning Notebooks account and click **Examples** on the home page.
 
     ![oml_homepage_examples.png](images/oml_homepage_examples.png "oml_homepage_examples.png")
 
@@ -175,6 +175,6 @@ To run a notebook:
 
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Dimpi Sarmah, September 2020
+* **Last Updated By/Date**: Moitreyee Hazarika, June 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

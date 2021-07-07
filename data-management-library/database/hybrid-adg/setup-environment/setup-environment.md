@@ -18,7 +18,7 @@ This lab assumes you have already completed the following:
 
 Click on the link below to download the Resource Manager zip files you need to build your environment.
 
-- [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s-qeS2mcWmyygcQx-Q_jdZ4ZuchnpXxHeGVGL4zfooV0fHIVlHNpVYZkeFLRAn9s/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/db19c-primary-num.zip) - Packaged terraform primary database instance creation script.
+- [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MTAHlJNEY0EpvUmO-Sct41ag2qKafnViXREvWhuhz36F17H2u0svyQU2QVJfgUX4/n/c4u04/b/data-management-library-files/o/db19c-primary-num.zip) - Packaged terraform primary database instance creation script.
 
 
 ## **STEP 1:** Prepare the Primary Database
