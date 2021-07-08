@@ -2,15 +2,13 @@
 
 ## Introduction
 
-In this lab we will provision the infrastructure and set up various environments.
+We will provision the infrastructure and set up various environments.
 
 We'll use the Terraform template from the repository to deploy two Oracle Autonomous Databases, create credential files for four environments (dev, tst, stg and prd) and configure these four environments for APEX development
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Provision the databases.
 - Configure the environments.

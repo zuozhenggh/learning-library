@@ -1,16 +1,16 @@
 {
-  "workshoptitle": "Getting Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
-    {
-      "title": "Getting Started",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "./../../../../../common/labs/remote-desktop/using-novnc-remote-desktop.md"
-    },
     {
       "title": "Introduction",
       "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
       "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
       "title": "Lab 1: Initialize Environment",

@@ -24,7 +24,7 @@ Estimated Lab Time: 5 minutes
 
 ## **STEP 1**: Download the Sample Scripts and Form
 
-1. Download the  sample forms and sample database scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/k9m-8Ft1Q5l8Bk880FkfX-hA8iGcxgjNNnyqFNLzwM-gx_T154_DkWOVH54Qjoue/n/c4u03/b/developer-library/o/create-apex-forms.zip)
+1. Download the  sample forms and sample database scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oXLXBhc8t3oFAKawgOOg3HZWhPL06OB9A19LITfmyiq83NKKMS013eoAlxaJ_B2C/n/c4u04/b/developer-library/o/create-apex-forms.zip)
 to use in the lab
 
 2. Unzip the files in your local Desktop

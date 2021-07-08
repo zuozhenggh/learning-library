@@ -351,4 +351,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Beda Hammerschmidt, Architect
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler June 2021
+- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualisations. You will then connect to the destination ADW to explore the data.
+In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualizations. You will then connect to the destination ADW to explore the data.
 
 Estimated Lab Time: 15 minutes
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 15 minutes
 
 - The source and destination Autonomous Data Warehouses (ADW) and Analytics Cloud (OAC) instance.
 - Access to the ModernDW file needed to recreate an analytics project.
-    - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_DhuXYUewHtA48gaEaBEZSH-L7MjSe309RqyHDTgActtB9hVZeDSJc1KGqWs3KKC/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/ModernDW.dva)
+    - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4CYxFxh-zXj8Ke32RMTnGQa0mEoiHsAgBO0Kc7qbqQUTtkFD8YpJN25ybT4Amr83/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/ModernDW.dva)
 
 **Note:** Please download the file above before continuing.
 

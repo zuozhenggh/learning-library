@@ -42,11 +42,11 @@ To download the notebook version of this lab (without screenshots), click [here]
 ## **Step 2**: Work with Regression using GLM
 This step shows how to predict numerical values using multiple regression. Given demographic, purchase, and affinity card data for a set of customers, predict the number of years a customer remains at the same residence, as found in column `YRS_RESIDENCE` - a continuous variable. This example uses the Generalized Linear Model algorithm.
 
-**Note:** All processing occurs inside Oracle Autonomous Database.
+>**Note:** All processing occurs inside Oracle Autonomous Database.
 
 1. Run the following script to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
 
-    **Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
+    >**Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
 
     ```
     %python
@@ -56,14 +56,14 @@ This step shows how to predict numerical values using multiple regression. Given
     DEMO_DF   = oml.sync(query = """SELECT CUST_ID, EDUCATION, AFFINITY_CARD, HOUSEHOLD_SIZE, OCCUPATION, YRS_RESIDENCE, Y_BOX_GAMES FROM SH.SUPPLEMENTARY_DEMOGRAPHICS""")
     CUST_DF   = CUSTOMERS.merge(DEMO_DF, how = "inner", on = 'CUST_ID',suffixes = ["",""])</copy>
     ```
-2. Run the following command to display the first few rows of table `CUST_DF` :
+2. Run the following script to display the first few rows of the table `CUST_DF` :
     ```
     %python
     <copy>
 
     z.show(CUST_DF.head())</copy>
     ```
-    ![](images/cust_df_table.png)
+    ![Example of a script to display the first few rows of a table](images/cust_df_table.png "View first few rows of a table")
 
 3. Run the following script to randomly split and select the data into 60% for train and 40% for test.
 
@@ -81,7 +81,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     This method runs the `oml.glm` algorithm in-database using the given settings. The settings are supplied as key-value pairs. In this example, feature generation and feature selection are specified.
 
-    **Note:** For a complete list of settings, refer to the OML4Py product documentation. You may also refer to the `oml.glm` help file.
+    >**Note:** For a complete list of settings, refer to the OML4Py product documentation. You may also refer to the `oml.glm` help file.
 
     ```
     %python
@@ -100,7 +100,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     ```
 
-    ![](images/glm_regression.png)
+    ![Script to build a GLM regression model](images/glm_regression.png "Script to build a GLM regression model")
 
 5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
     * RMSE is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.
@@ -112,7 +112,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     z.show(glm_mod.fit_details)</copy>
     ```
-    ![](images/model_fit_details.png)
+    ![Script to view model fit details](images/model_fit_details.png "Script to view model fit details")
 
 6. Run the following command to display and view the model coefficients:
 
@@ -123,7 +123,7 @@ This step shows how to predict numerical values using multiple regression. Given
     glm_mod.coef</copy>
     ```
 
-    ![](images/model_coeff.png)
+    ![Script to display and view model coefficients](images/model_coeff.png "Script to display and view model coefficients")
 7. Run the following script to make predictions using the test data and display the results:
 
     ```
@@ -134,17 +134,17 @@ This step shows how to predict numerical values using multiple regression. Given
     z.show(RES_DF[['PREDICTION', 'YRS_RESIDENCE']])</copy>
     ```
 
-    ![](images/prediction.png)
+    ![Prediction](images/prediction.png "Prediction")
 In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `YRS_RESIDENCE` columns respectively, as shown in the screenshot.
 
-8. Run the following command to plot the predicted versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
+8. Run the following command to plot the predicted years of residence versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
     ```
     %python
     <copy>
 
     z.show(RES_DF[['YRS_RESIDENCE', 'PREDICTION']])</copy>
     ```
-    ![](images/view_predicted_actual_values.png)
+    ![Scatter plot displaying the predicted years of residence](images/view_predicted_actual_values.png "Scatter plot displaying the predicted years of residence")
 
 9. Using matplotlib, plot the predicted and actual years of residence and visually compare it against the perfect fit line, `y=x`.  The plot indicates how far the prediction deviated from actual value, which is known as the prediction error. Ideally, the predictions will converge to the perfect fit line.
 
@@ -169,7 +169,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.grid(True)
     plt.show()</copy>
     ```
-    ![](images/yrs_residence_predicted_matplotlib.png)
+    ![Predicted and actual years of residence](images/yrs_residence_predicted_matplotlib.png "Predicted and actual years of residence")
 10. Run the following script to plot the residuals using matplotlib.
 
     ```
@@ -191,9 +191,9 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     plt.show()</copy>
     ```
 
-    ![](images/residuals.png)
+    ![Residuals](images/residuals.png "Residuals")
 11. Run the following script to calculate the RMSE manually on the prediction results on the testing test and the R-  squared on the testing set using the score method.
-    **Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
+    >**Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
 
     ```
     %python
@@ -204,7 +204,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     print(glm_mod.score(TEST.drop('YRS_RESIDENCE'), TEST[:,['YRS_RESIDENCE']]))</copy>
     ```
 
-    ![](images/rmse_calculation.png)
+    ![RMSE calculation](images/rmse_calculation.png "RMSE calculation")
 
 ## **Step 3**: Work with Clustering using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
@@ -214,7 +214,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
     * Drop the model `CUST_CLUSTER_MODEL` if it exists.
     * Specify the number of iterations for building the cluster tree using the `KMNS_ITERATIONS` setting and the K-Means random seed generator using the `KMNS_RANDOM_SEED` setting. `KMNS_ITERATIONS` specifies the number of times the algorithm should iterate over the training data before it finalizes the selection of centroids. You can adjust this parameter to balance accuracy against training time. The `KMNS_RANDOM_SEED` value is used for cluster initialization and can have a significant effect on cluster selection.
 
-    **Note:** The `model_name` causes the model to be persisted across notebook sessions.
+    >**Note:** The `model_name` causes the model to be persisted across notebook sessions.
 
     ```
     %python
@@ -235,7 +235,7 @@ OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Exp
 
     km_mod</copy>
     ```
-    ![](images/kmeans_model_details.png)
+    ![K-means model details](images/kmeans_model_details.png "K-means model details" )
 
 3. To view the cluster details, run the following command. The command displays the cluster details for all clusters in the hierarchy with row counts and dispersion.
 The dispersion value is a measure of how compact or how spread out the data is within a cluster. The dispersion value is a number greater than 0.  The lower the dispersion value, the more compact the cluster, that is, the data points are closer to the centroid of the cluster. A larger dispersion value indicates that the data points are more disperse or spread out from the centroid.
@@ -247,7 +247,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.clusters)</copy>
     ```
 
-    ![](images/kmeans_model_cluster.png)
+    ![K-Means Model Cluster](images/kmeans_model_cluster.png "K-Means Model Cluster")
 
 4. Run the following script to display the taxonomy. The taxonomy shows the hierarchy of the child clusters in relationship to the parent clusters.
 
@@ -258,7 +258,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(km_mod.taxonomy)</copy>
     ```
     The script returns the following table
-    ![](images/taxonomy.png)
+    ![Taxonomy](images/taxonomy.png "Taxonomy")
 
 5. Run the following command to predict the cluster membership.  The `supplemental_cols` argument carries the target column to the output to retain the relationship between the predictions and their original preditor values. These predictors may include a case id, for example to join with other tables, or multiple (or all) columns of the scoring data. You should be aware that unlike Pandas DataFrames, which are explicitly ordered in memory, results from relational databases do not have a specific order unless explicitly specified by an `ORDER BY` clause. As such, you cannot rely on results to maintain the same order across different data sets (tables and DataFrame proxy objects).
 
@@ -268,7 +268,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
 
     pred = km_mod.predict(CUST_DF, supplemental_cols = CUST_DF)</copy>
     ```
-6. Run the following command to view the pred computed in step 5.
+6. Run the following command to view the pred computed.
 
     ```
     %python
@@ -277,7 +277,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     z.show(pred)</copy>
     ```
 
-    ![](images/view_pred.png)
+    ![Prediction details](images/view_pred.png "Prediction details")
 
 7. Run the following command to view the cluster results using a matplotlib scatterplot:
     ```
@@ -294,7 +294,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     handles = []
     labs = []
     colors = ['r', 'b', 'g']
-    
+
     for i, c in enumerate(clusters):
         xc = pred_df[pred_df['CLUSTER_ID'] == c]['YRS_RESIDENCE'].values
         yc = pred_df[pred_df['CLUSTER_ID'] == c]['CUST_YEAR_OF_BIRTH'].values
@@ -311,7 +311,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     plt.ylabel('CUST_YEAR_OF_BIRTH')
     plt.show()</copy>
     ```
-    ![](images/cluster_results_scatterplot.png)
+    ![K-means clustering in a Scatter Plot](images/cluster_results_scatterplot.png "K-means clustering in a Scatter Plot")
 
 ## **Step 4**: Work with Partitioned models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
@@ -349,7 +349,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script builds a SVM partitioned model. Scroll down the notebook paragraph for complete details of the model.
 
-    ![](images/svm_partitioned_regression_model.png)        
+    ![SVM partitioned model](images/svm_partitioned_regression_model.png "SVM partitioned model")        
 
 3. Run the following script to predict on the test set and display prediction result. Note the use of the top level model only.
 
@@ -363,7 +363,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     The script makes prediction based on the test data, and displays the result in a table, as shown in the screenshot. The predicted values are listed in the PREDICTION column in the table.
 
-    ![](images/pred_results_svm_model.png)
+    ![Prediction results](images/pred_results_svm_model.png "Prediction results")
 
 4. Run the following command to show the model global statistics for each partitioned sub-model. The partition name column contains the values from the partition column. If multiple columns were specified, then there would be one column for each with corresponding value.
 
@@ -373,10 +373,10 @@ In this lab, we build an SVM model to predict the number of years a customer res
 
     z.show(svm_mod.global_stats)</copy>
     ```
-    ![](images/global_stats.png)
+    ![Model global statistics](images/global_stats.png "Model global statistics")
 
 5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
-Here, you materialize the data to table `TEST_DATA` so that it can be queried from SQL.
+Here, the data is materialized to table `TEST_DATA` so that it can be queried from SQL.
 
     ```
     %python
@@ -414,7 +414,7 @@ Here, you materialize the data to table `TEST_DATA` so that it can be queried fr
       OUTPRED</copy>
       ```
 
-      ![](images/scoring_details.png)
+      ![Scoring details](images/scoring_details.png "Scoring details")
 
 ## **Step 5**: Rank Attribute Importance using Model Explainability
 
@@ -475,7 +475,7 @@ In this step, you will:
     "SVM accuracy score = {:.2f}".format(model.score(X_test, y_test))</copy>
     ```
 
-    ![](images/svm_accuracy_score.png)
+    ![Accuracy score computed by the SVM model](images/svm_accuracy_score.png "Accuracy score")
 
 4. Create the MLX Global Feature Importance explainer gfi, using the `f1_weighted` metric.
     ```
@@ -486,7 +486,7 @@ In this step, you will:
                               random_state=32, parallel=4)</copy>
     ```
 
-    ![](images/create_gfi.png)
+    ![Code to create MLX Global Feature Importance explainer](images/create_gfi.png "Create MLX Global Feature Importance explainer")
 5. Run the explainer `gfi.explain` to generate the global feature importance for the test data:
     ```
     %python
@@ -498,7 +498,7 @@ In this step, you will:
     ```  
    The explainer returns the following explanation, as shown in the screenshot:
 
-     ![](images/model_explanation.png)
+     ![Model Explainability - Output of gfi.explain](images/model_explanation.png "Model Explainability - Output of gfi.explain")
 
 ### **Try it yourself**
 
@@ -513,4 +513,4 @@ Build an in-db RandomForest model and compare the RF model's attribute importanc
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021
