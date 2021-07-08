@@ -282,22 +282,24 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/source-op-new.png " ")
 
 5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
-In the Details tab, click Select next to each of the following options to make your selections:
-  - For **Data Asset**, select `Object_Storage`
-  - For **Connection**, select `Default Connection`
-  - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here
-  - For **Data Entity**, click on **Browse by Pattern**.
-  ![](./images/browse-pattern.png " ")
 
-  Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found that match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
-  ![](./images/employees-pattern.png " ")
+   In the Details tab, click Select next to each of the following options to make your selections:
+    - For **Data Asset**, select `Object_Storage`
+    - For **Connection**, select `Default Connection`
+    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here
+    - For **Data Entity**, click on **Browse by Pattern**.
 
-  For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
-  ![](./images/source-entity.png " ")
+    ![](./images/browse-pattern.png " ")
 
-  In the end, your details for the source operator should look like this.
+   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found that match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
+    ![](./images/employees-pattern.png " ")
 
-  ![](./images/pattern-source.png " ")
+   For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
+    ![](./images/source-entity.png " ")
+
+   In the end, your details for the source operator should look like this.
+
+    ![](./images/pattern-source.png " ")
 
 
 6. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_\_** source to the **DISTINCT\_1** operator.
