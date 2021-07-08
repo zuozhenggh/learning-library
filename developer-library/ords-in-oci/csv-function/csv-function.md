@@ -9,25 +9,26 @@ This lab will walk you through combining different components of OCI and the aut
 ### Objectives
 
 In this lab, you will:
-    * Create a table and Auto-REST enable it
-    * Create a function to pass a CSV file into batch load API of the auto-REST enabled table
-    * Create an event that looks in a bucket for CSV files to consume and pass into our function.
+* Create a table and Auto-REST enable it
+* Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+* Create an event that looks in a bucket for CSV files to consume and pass into our function.
 
 ### Prerequisites
 
-- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
 ## **STEP 1:** Download Lab Files
 
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip)
 
 We will be using the **file1.csv** file in the next section via a browser so unzip the func.zip file in your local environment/desktop.
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
+curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
 ```
 
 If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
@@ -344,7 +345,7 @@ In Oracle Functions, an application is:
 18. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
+    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
     ```    
 
     Once downloaded, unzip it
