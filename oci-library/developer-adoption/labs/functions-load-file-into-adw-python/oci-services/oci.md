@@ -95,7 +95,9 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
 1. Open OCI Cloud Shell
 
-1. From your OCI Cloud Shell (If using another terminal, you need to make sure you have all tools to test or alternatives), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
+    ![Open OCI Cloud Shell](../../common/setup-cloud-env/images/open-cloud-shell.png)
+
+1. From your OCI Cloud Shell (If using another terminal, you need to make sure you have all tools to test or alternatives), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB_PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
     - export env variable `ORDS_BASE_URL`:
 
