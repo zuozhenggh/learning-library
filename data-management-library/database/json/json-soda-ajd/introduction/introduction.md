@@ -16,13 +16,14 @@ The workshop uses the 'Autonomous JSON Database' cloud service. But everything s
 
 You can complete this entire workshop using your web browser. There is no need to install any extra software. Obviously, when writing a real application, you would call many of the functionalities from a programming language like Java, JavaScript(nodeJS) or Python.
 
-This workshop consists of multiple 'labs' - each describing one aspect or feature. Most labs build on previous steps but there are also optional (advanced) labs which are optional - they can be skipped.
+This workshop consists of multiple 'labs' - each describing one aspect or feature. This lab has been designed for 19c AJD database but should also work on 21c AJD database and these concepts are also applicable to on-premise versions.
 
-Estimated Lab Time: 60 minutes (without extended labs); 90 minutes with extended labs.
+Estimated Lab Time: 75-90 minutes
 
 Watch this quick video to know why JSON in Oracle Autonomous Database is awesome.
 
-[](youtube:I8k8K6LGsug)
+[](youtube:yiGFO139ftg)
+
 
 ### About JSON
 
@@ -85,7 +86,12 @@ In this workshop, you will explore:
 
 You may now [proceed to the next lab](#next).
 
+## Learn More
+
+* [Overview of JSON](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-data.html#GUID-B2D82ED4-B007-4019-8B53-9D0CDA81C4FA)
+
 ## Acknowledgements
-* **Author** - Beda Hammerschmidt, Roger Ford
+
+* **Author** - Beda Hammerschmidt, Architect
 * **Contributors** -  Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, June 2021
+* **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021

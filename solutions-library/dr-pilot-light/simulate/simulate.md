@@ -54,7 +54,7 @@ Estimated lab time: 1 hour
 
 ### Run Python scripts
 
-1. [Download the python file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/cT_e-91q3vOplvaxy4wCmuLrCjEQQAf6P6LlNYa_1PO2pz2Sncbgk6fdF5srgN98/n/c4u03/b/data-management-library-files/o/Labapi.py). Just copy the python files to your bastion instance. Then move your API key to the `.oci` folder. Then edit the config file with the correct configurations.
+1. [Download the python file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G6awE8OJP3I-iGTkvqAanLt8Die91JHGt9fTNT4c5XM2da98QEkYIPmZuBLnfLcZ/n/c4u04/b/data-management-library-files/o/Labapi.py). Just copy the python files to your bastion instance. Then move your API key to the `.oci` folder. Then edit the config file with the correct configurations.
 
 2. This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs) will help you setup the REST API key that python needs to run scaling script.
 

@@ -12,7 +12,7 @@ AutoML (Automated Machine Learning) provides built-in data science expertise abo
 ### Objectives
 
 In this lab, you will learn how to:
-* Create data set (wine data) as Pandas DataFrame and load into ADB
+* Create data set (wine data) as Pandas DataFrame and load into Oracle Autonomous Database
 * Use `automl.AlgorithmSelection` to rank the in-database algorithms by predicted score metric for classification or regression problems
 * Use `automl.FeatureSelection` to quickly identify the most relevant feature subsets for the provided training data set and an in-database algorithm
 * Use `automl.ModelTuning` to tune the hyperparameters for the specified algorithm and training data
@@ -36,7 +36,7 @@ To download the notebook version of this lab (without screenshots), click [here]
     from oml import automl</copy>
     ```
 
-2. Use the `oml.sync` function to create an OML Dataframe as a proxy for the database table WINE.
+2. Use the `oml.sync` function to create an Oracle Machine Learning Dataframe as a proxy for the database table WINE.
     ```
     %python
     <copy>
@@ -45,8 +45,7 @@ To download the notebook version of this lab (without screenshots), click [here]
     print(WINE.shape)
     print(WINE.dtypes)</copy>
     ```
-
-    ![](images/oml_sync_wine.png)
+    ![This is the output of the oml.sync function](images/oml_sync_wine.png "Output of the oml.sync function")    
 
 ## **Step 2:** Automated Algorithm Selection
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
@@ -72,7 +71,7 @@ In this step, you prepare the wine data set by separating predictors from the ta
     selected_wine_alg_cl = next(iter(dict(wine_alg_ranking_cl).keys()))
     print("Best algorithm: ", selected_wine_alg_cl)</copy>
     ```
-    ![](images/compute_algo_ranking_wine.png)
+    ![Top classification algorithms for predicting the WINE data target](images/compute_algo_ranking_wine.png "Top ranked algorithms")
 
     The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
@@ -81,7 +80,7 @@ In this step, you determine the features that best support the selected algorith
 
 You see the set of selected columns.
 
-1. Run the following script to define the Feature Selection object `fs_wine_cl` and call the `reduce` function with the selected algorithms and WINE proxy objects.:
+1. Run the following script to define the Feature Selection object `fs_wine_cl` and call the `reduce` function with the selected algorithms and WINE proxy objects:
     ```
     %python
     <copy>
@@ -96,7 +95,7 @@ You see the set of selected columns.
     print("Number of columns:")
     "{} reduced to {}".format(len(WINE_X_cl.columns), len(selected_wine_features_cl))</copy>
     ```
-    ![](images/define_feature_selection_obj.png)
+    ![Script and its output to define the Feature Selection object fs_wine_cl and the reduce function](images/define_feature_selection_obj.png "Script to Define Feature Selection object fs_wine_cl")
 
 
 ### **Try it Yourself**
@@ -123,7 +122,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
     tuned_model_cl = results_cl['best_model']
     tuned_model_cl</copy>
     ```
-    ![](images/define_model_tuning_obj.png)
+    ![Script to define the model tuning object and tune the model](images/define_model_tuning_obj.png "Script to tune model")
 
 2. Run the following script to list the hyperparameters and their values tried for the top two models, along with the corresponding model's score metric value.
     ```
@@ -134,7 +133,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
 
     print(*hyper_results_cl[:2], sep='\n')</copy>
     ```
-    ![](images/hyperparameter_list.png)
+    ![Script to list the hyperparameters and their values](images/hyperparameter_list.png "List of Hyperparameters and their values")
 
 3. Run the following script to specify a custom search space to explore for model building using the `param_space` argument to the `tune` function. With this specification, model tuning will narrow the set of important hyperparameter values.
     ```
@@ -156,12 +155,12 @@ Model tuning returns a dictionary with the best model and the evaluation results
     tuned_model2_cl = results2_cl['best_model']
     tuned_model2_cl</copy>
     ```
-    ![](images/custom_search_space.png)
+    ![Script to specify a custom search space](images/custom_search_space.png "Script to custom search")
 
 ## **Step 5:** Automated Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
 
-1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data.  select the best model for the wine data set:
+1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data. It selects the best model for the wine data set:
     ```
     %python
     <copy>
@@ -171,7 +170,7 @@ As a short cut, you may choose to go directly to model selection on the training
     best_model = ms_wine.select(WINE_X_cl, WINE_y_cl, k=1, cv=2)
     best_model</copy>
     ```
-    ![](images/best_model.png)
+    ![Script to define model selection object to return the best model](images/best_model.png "Model Selection")
 
 
 Congratulations! You have completed this workshop!
@@ -184,4 +183,4 @@ Congratulations! You have completed this workshop!
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Tom McGinn and Ashwin Agarwal, March 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, July 2021
