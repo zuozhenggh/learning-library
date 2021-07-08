@@ -24,11 +24,11 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
 
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
 
-		![](./images/menu.png " ")
+    ![](./images/menu.png " ")
 
 2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
 
-		![](./images/menu_policies.png " ")
+    ![](./images/menu_policies.png " ")
 
 3. Under List Scope, make sure you select the **Compartment** you are using for Data Integration, in this case the one you have created in Lab 0 (`DI-compartment`). After you have selected your compartment, click on **Create Policy**.
 

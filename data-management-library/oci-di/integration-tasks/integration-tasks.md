@@ -292,9 +292,11 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/browse-pattern.png " ")
 
    Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found that match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
+
     ![](./images/employees-pattern.png " ")
 
    For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
+   
     ![](./images/source-entity.png " ")
 
    In the end, your details for the source operator should look like this.
