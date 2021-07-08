@@ -1,4 +1,4 @@
-# Initialize the workshop environment
+# Initialize Environment
 
 ## Introduction
 
