@@ -15,15 +15,18 @@ Watch the video below for an overview of Oracle Multitenant.
 
 ### Objectives
 
-The objectives of this workshop is to understand the basic functionality of Oracle database multitenant features which would cover Cloning, Plug and Unplug PDBs, Hot Cloning, Refresh and Relocation. and in-depth understanding of advanced features like Application Containers
+In this workshop you will:
+* Understand the basic functionality of Oracle database multitenant features (Cloning, Plug and Unplug PDBs, Hot Cloning, Refresh and Relocation) 
+* Gain in-depth understanding of advanced features, like Application Containers
 
-### Prerequisite
+### Prerequisites
 
-- Some understanding of cloud and database terms is helpful
-- Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
+This workshop assumes you have:
+- Some understanding of Cloud and database terms
+- Familiarity with Oracle Cloud Infrastructure (OCI)
 
 
-### Containers and Pluggable Databases
+## **Containers and Pluggable Databases**
 
 A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.
 
@@ -34,7 +37,7 @@ Every CDB has the following containers:
 - Exactly one seed PDB
 - User-created PDBs
 
-### Diagram of CDBs and PDBs
+## **Diagram of CDBs and PDBs**
 
 The following figure shows a CDB with four containers: the root, seed, and two PDBs. Each PDB has its own dedicated application. A different PDB administrator manages each PDB. A common user exists across a CDB with a single identity. In this example, common user SYS can manage the root and every PDB. At the physical level, this CDB has a database instance and database files, just as a non-CDB does.
 
