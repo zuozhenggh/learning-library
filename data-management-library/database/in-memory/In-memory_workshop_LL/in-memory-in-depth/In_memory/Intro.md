@@ -33,7 +33,7 @@ With Oracle’s unique approach, there remains a single copy of the table on sto
 
 Database In-Memory uses an In-Memory column store (IM column store), which is a new component of the Oracle Database System Global Area (SGA), called the In-Memory Area. Data in the IM column store does not reside in the traditional row format used by the Oracle Database; instead it uses a new columnar format. The IM column store does not replace the buffer cache, but acts as a supplement, so that data can now be stored in memory in both a row and a columnar format.
 
-![](images/Immemory_area.png)
+![](images/immemory_area.png)
 
 The In-Memory area is sub-divided into two pools: a 1MB pool used to store the actual columnar formatted data populated into memory (i.e. IMCUs), and a 64KB pool used to store metadata about the objects that are populated into the IM column store (i.e. SMUs). The amount of available memory in each pool is visible in the V$INMEMORY_AREA view. The relative size of the two pools is determined by internal heuristics; the majority of the In-Memory area memory is allocated to the 1MB pool.
 
@@ -94,6 +94,7 @@ Join Groups have been added to help improve the performance of standard hash joi
 
 In-Memory Expressions provide the ability to materialize commonly used expressions in the IM column store. Materializing these expressions not only improves the query performance by preventing the repeated computation of the expression for every row but it also enables the ability to take advantage of all of the In-Memory query performance optimizations when they are accessed.
 
+
 **In-Memory Optimized Arithmetic :** In-Memory Optimized Arithmetic is a feature that encodes the NUMBER data type as a fixed-width native integer scaled by a common exponent. This enables faster calculations using SIMD hardware. The Oracle Database NUMBER data type has high fidelity and precision. However, NUMBER can incur a significant performance overhead for queries because arithmetic operations cannot be performed natively in hardware.
 
 The In-Memory optimized number format enables native calculations in hardware for segments compressed with the QUERY LOW compression option. Not all row sources in the query processing engine have support for the In-Memory optimized number format so the IM column store stores both the traditional Oracle Database NUMBER data type and the In-Memory optimized number type. This dual storage increases the space overhead, sometimes up to 15%.
@@ -115,4 +116,5 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Authors/Contributors** - Vijay Balebail, Andy Rivenes, Maria Colgan
-- **Workshop Expiration Date** - July 31, 2022
+- **Reviewers** - Bob Mackowiak, Rajeev Rumale
+- **Workshop Expiration Date** - July 31, 2023
