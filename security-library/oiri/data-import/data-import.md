@@ -4,9 +4,9 @@
 
 Data import, also called data ingestion, is the process of importing entity data from a source to the Oracle Identity Role Intelligence (OIRI) database. OIRI uses a data ingestion command-line tool (DING CLI) to fetch and load entity data from third-party sources, namely Oracle Identity Governance (OIG) database or flat files.
 As part of the data import process, data from the source, such as OIG database or flat files, is loaded into the following tables of the OIRI database:
-`USERS`, `APPLICATIONS`, `ACCOUNTS`, `ENTITLEMENTS`, `ASSIGNED_ENTS`, `ROLES`, `ROLE_USER_MSHIP`, `ROLE_ENT_COMPOSI`, `ROLE_HIERARCHY`, `ORGANIZATIONS`
+`USERS`, `APPLICATIONS`, `ACCOUNTS`, `ENTITLEMENTS`, `ASSIGNED_ENTS`, `ROLES`, `ROLE_USER_MSHIP`, `ROLE_ENT_COMPOSI`, `ROLE_HIERARCHY`, `ORGANIZATIONS`.
 
-*Estimated Lab Time*:
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 
@@ -26,13 +26,13 @@ In this lab, you will:
 
 ## **STEP 1:** Starting the data load process
 
-1. Copy ca.crt from K8S Master
+1. Copy ca.crt from K8S Master.
 
     ```
     <copy>cp /etc/kubernetes/pki/ca.crt /nfs/ding/</copy>
     ```
 
-2. Run ding-cli container and update the existing data load configuration to import entity data from Oracle Identity Governance database
+2. Run ding-cli container and update the existing data load configuration to import entity data from Oracle Identity Governance database.
 
     ```
     <copy>docker exec -it ding-cli bash</copy>
@@ -47,7 +47,7 @@ In this lab, you will:
 
 ## **STEP 2:** Perform a Dry Import Run
 
-1. Before data import (or data ingestion), perform a dry run to validate if the data fits into the OIRI database. This will fetch data from Oracle Identity Governance database and validate it against the metadata of the OIRI database
+1. Before data import (or data ingestion), perform a dry run to validate if the data fits into the OIRI database. This will fetch data from Oracle Identity Governance database and validate it against the metadata of the OIRI database.
 
     ```
     <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion dry-run /app/data/conf/data-ingestion-config.yaml</copy>
@@ -55,7 +55,7 @@ In this lab, you will:
 
 ## **STEP 3:** Sign in to the OIRI user interface and validate the dry data import
 
-1. Sign in to Identity Role Intelligence user interface. Launch a browser window and click on the bookmark *OIRI*. The OIRI account sign in page appears. Enter the username and password
+1. Sign in to Identity Role Intelligence user interface. Launch a browser window and click on the bookmark *OIRI*. The OIRI account sign in page appears. Enter the username and password.
 
     ```
     Username: <copy>xelsysadm</copy>
@@ -69,19 +69,19 @@ In this lab, you will:
 
 
 
-2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the Manage Data Import page with a list of all the data import tasks
+2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the Manage Data Import page with a list of all the data import tasks.
 
     ![](images/3-data-import.png)
 
     ![](images/4-data-import.png)    
 
 
-3. Verify that the dry data import run has been completed successfully. Click *View Results* against the Import data(dry-run) from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database
+3. Verify that the dry data import run has been completed successfully. Click *View Results* against the Import data(dry-run) from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
 
     ![](images/5-data-import.png)
 
 
-4. Expand each entity to review the details of the data import of that entity, such as duplicate data count, whether or not dataset is valid, and the count of invalid data type
+4. Expand each entity to review the details of the data import of that entity, such as duplicate data count, whether or not dataset is valid, and the count of invalid data type.
 
     ![](images/6-data-import.png)
 
@@ -93,13 +93,13 @@ In this lab, you will:
 
     ![](images/10-data-import.png)
 
-5. Click Cancel to close the View Results window
+5. Click Cancel to close the View Results window.
 
 
 
 ## **STEP 4:** Data Import from Oracle Identity Governance
 
-1. Run the actual data import process
+1. Run the actual data import process.
 
     ```
     <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion start /app/data/conf/data-ingestion-config.yaml</copy>
@@ -107,19 +107,19 @@ In this lab, you will:
 
 ## **STEP 5:** Validate the data import task
 
-1. Access the OIRI console from the browser window
+1. Access the OIRI console from the browser window.
 
 2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the Manage Data Import page with a list of all the data import tasks
 
-3. Verify that the data import from OIG has been completed successfully. Click *View Results* against the Import data from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database
+3. Verify that the data import from OIG has been completed successfully. Click *View Results* against the Import data from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
 
     ![](images/11-data-import.png)
 
-4. Expand each entity to review the details of the data import of that entity
+4. Expand each entity to review the details of the data import of that entity.
 
     ![](images/12-data-import.png)
 
-5. Click Cancel to close the View Results window
+5. Click Cancel to close the View Results window.
 
 
 

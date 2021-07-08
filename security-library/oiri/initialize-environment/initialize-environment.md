@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will review and startup all components required to successfully run this workshop.
+In this lab we will review and start all components required to successfully run this workshop.
 
 *Estimated Lab Time*: 20 minutes
 
@@ -12,7 +12,7 @@ In this lab, you will:
 * Launch the workshop instance
 * Start the OIG Database
 * Create and Initialize Kubernetes nodes
-* Start the OIG 12c domain. Analyze the different roles and entitlements created in OIG
+* Start the OIG 12c domain. Analyze different roles and entitlements created in OIG
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ In this lab, you will:
 
 ## **STEP 1:** Launch the workshop instance
 
-1. Launch a browser window to the following URL to access the instance
+1. Launch a browser window to the following URL to access the instance.
 
     ```
     <copy>http://[your instance public-ip address]:6080/index.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true/</copy>
@@ -36,7 +36,7 @@ In this lab, you will:
 
 ## **STEP 2:** Initialize the Kubernetes cluster and the pod network add-on
 
-1. Open a terminal session as opc user (default)
+1. Open a terminal session as opc user (default).
 
     ```
     <copy>sudo swapoff -a</copy>
@@ -48,13 +48,13 @@ In this lab, you will:
     <copy>sudo sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux</copy>
     ```
 
-2. Deploy and initialize the pod network and make sure that the pod network does not overlap with any of the host networks
+2. Deploy and initialize the pod network and make sure that the pod network does not overlap with any of the host networks.
 
     ```
     <copy>sudo kubeadm init --pod-network-cidr=10.244.0.0/16</copy>
     ```
 
-3. Enable kubectl to work with non-root users
+3. Enable kubectl to work with non-root users.
 
     ```
     <copy>sudo cp -i /etc/kubernetes/admin.conf /home/oracle/.kube/config</copy>
@@ -63,7 +63,7 @@ In this lab, you will:
     <copy>sudo chown oracle:oinstall /home/oracle/.kube/config</copy>
     ```
 
-4. Launch another terminal session as *oracle* user and schedule Pods on the control-plane node
+4. Launch another terminal session as *oracle* user and schedule Pods on the control-plane node.
 
     ```
     <copy>sudo su - oracle</copy>
@@ -72,18 +72,18 @@ In this lab, you will:
     <copy>kubectl taint nodes --all node-role.kubernetes.io/master-</copy>
     ```
 
-5. List all pods in all namespaces
+5. List all pods in all namespaces.
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
     ```
 
-6. Update the resources in the cluster and make sure all pods are in the “Running” state
+6. Update the resources in the cluster and make sure all pods are in the “Running” state.
 
     ```
     <copy>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</copy>
     ```
-    Wait for 1-2 minutes and list all the pods and make sure they are in the *Running* state
+    Wait for 1-2 minutes and list all the pods and make sure they are in the *Running* state.
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -93,7 +93,7 @@ In this lab, you will:
 
 ## **STEP 3:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
 
-1. Verify that the OIG Database is running
+1. Verify that the OIG Database is running.
 
     ```
     <copy>systemctl status oracle-database.service</copy>
@@ -101,11 +101,11 @@ In this lab, you will:
 
     ![](images/4-db.png)
 
-2. Verify that the Admin Server is running. Open a browser window and Click on the bookmark *Workshop links* and click on *Weblogic Admin Console* to access the Weblogic console
+2. Verify that the Admin Server is running. Open a browser window and Click on the bookmark *Workshop links* and click on *Weblogic Admin Console* to access the Weblogic console.
 
     ![](images/7-weblogic-console.png)
 
-3. Sign in to the console with the weblogic credentials
+3. Sign in to the console with the weblogic credentials.
 
     ```
     Username:<copy>weblogic</copy>
@@ -116,11 +116,11 @@ In this lab, you will:
 
     ![](images/8-weblogic.png)
 
-6. On the Weblogic console, Click on *Servers* under *Environment*. Under Summary of servers, click on *Control*
+6. On the Weblogic console, Click on *Servers* under *Environment*. Under Summary of servers, click on *Control*.
 
     ![](images/9-server.png)
 
-    Select SOA and OIM server and click on *Start*
+    Select SOA and OIM server and click on *Start*.
 
     ![](images/10-server.png)
     ![](images/11-server.png)
@@ -148,7 +148,7 @@ In this lab, you will:
     ![](images/17-oig.png)
 
 
-9. Now click on *Home*. Then, click on *Roles and Access policies* and select *Roles*. Notice that the OIRI role engineer role is created. The role *OrclOIRIRoleEngineer* is created and assigned to the application user so that the user can login to the OIRI application. In this example, this role is assigned to the *xelsysadm* user.
+9. Now click on *Home*. Then, click on *Roles and Access policies* and select *Roles*. Notice that the role *OrclOIRIRoleEngineer* is created and assigned to the application user so that the user can login to the OIRI application. In this example, this role is assigned to the *xelsysadm* user.
 
     ![](images/18-oig.png)
 

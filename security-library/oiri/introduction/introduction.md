@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. Oracle Identity Role Intelligence(OIRI) a new microservice available as part of OIG suite is an intelligent, automated, and flexible way to optimize role-based access control (RBAC). OIRI Workshop provides hands on experience of deploying OIRI, importing data into OIRI from OIG, performing role mining in OIRI & publishing roles into OIG from OIRI.
+Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. Oracle Identity Role Intelligence(OIRI) is a new microservice available as part of OIG suite is an intelligent, automated and flexible way of optimizing role-based access control (RBAC). This Workshop provides hands on experience in deploying OIRI, importing data from OIG, performing role mining and publishing roles into OIG from OIRI.
 
-*Estimated Lab Time*: 3 hours
+*Estimated Lab Time*: 2 hours
 
 ### About Product/Technology
 
@@ -12,10 +12,10 @@ Oracle Identity Role Intelligence is an intelligent, automated, and flexible way
 The key capabilities of OIRI include:
   - Discovery of entitlements patterns across peer groups
   - Support for top-down approach for role mining based on user attributes, or for bottom-up approach that filters data based on applications and entitlements, or a hybrid approach
-  - Compare candidate roles with existing role to avoid role explosion
+  - Compare candidate roles with existing roles to avoid role explosion
   - Ability to fine tune the candidate roles based on user affinity and role affinity
   - Automated publishing of roles to OIG to trigger workflow for role adoption
-  - Ability to merge data from different sources, such as OIG database and flat files, and provide what if analysis before moving candidate roles to production
+  - Ability to merge data from different sources, such as OIG database and flat files and provide what-if analysis before moving candidate roles to production
 
 ### Objectives
 
