@@ -143,4 +143,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
-- **Last Updated By/Date** - Ashish Kumar - LiveLabs, July 2021
+- **Last Updated By/Date** - Ashish Kumar - Solution Engineer, July 2021
