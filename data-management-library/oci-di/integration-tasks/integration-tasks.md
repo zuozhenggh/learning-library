@@ -10,7 +10,7 @@ This lab will walk you through the steps to create **two Data Flows**, **Integra
 In this lab, you will:
 * Create an OCI Data Integration project
 * Create two Data Flows
-* Create an Integration tasks
+* Create Integration tasks
 * Create a Data Loader task
 * Create a SQL task
 
@@ -44,7 +44,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
-You will create a data flow to ingest data from **two source files**, containing Customers (`CUSTOMERS.json`) and Orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the order status and country code of the customers, and in the end data will be loaded to `CUSTOMERS_TARGET` table in Autonomous Data Warehouse.
+You will create a data flow to ingest data from **two source files**, containing Customers (`CUSTOMERS.json`) and Orders (`REVENUE.csv`) information. The data from the files will go through a process of transformations and filtering based on the order status and country code of the customers, and in the end will be loaded to `CUSTOMERS_TARGET` table in Autonomous Data Warehouse.
 
 1. From the **Project Details** page for `DI_Workshop` project, click on **Data Flows** from the submenu.
 ![](./images/click-data-flows.png " ")
@@ -52,24 +52,24 @@ You will create a data flow to ingest data from **two source files**, containing
 2. Click **Create Data Flow**.
 ![](./images/click-create-df.png " ")
 
-3. The data flow designer opens in a new tab. In the Properties panel, for **Name**, enter `Load Customers and Revenue Data`, and click **Save**.
+3. The data flow designer opens in a new tab. In the Properties panel, for **Name** enter `Load Customers and Revenue Data`, then click **Save**.
 ![](./images/df-new.png " ")
 
-4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, **drag and drop a Source operator** onto the canvas.
+4. You will add the **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, **drag and drop a Source operator** onto the canvas.
 ![](./images/source-op.png " ")
 
 5. On the canvas, select **SOURCE_1 operator**. The Properties panel now displays the details for this operator.
 
   In the **Details** tab, click Select next to each of the following options to make your selections:
-  - For **Data Asset**, select `Object_Storage`
-  - For **Connection**, select `Default Connection`
+  - For **Data Asset**, select `Object_Storage`.
+  - For **Connection**, select `Default Connection`.
   - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
 ![](./images/comp-bucket.png " ")
   - For **Data Entity**, click on **Browse by name**. Select `CUSTOMERS.json` and then choose **JSON** for the file type.
 ![](./images/select-file.png " ")
 ![](./images/select-entity.png " ")
 
-In the end, your details for the source operator should look like this:
+In the end, the details for the source operator should look like this:
 ![](./images/source-operator-details.png " ")
 
 6. When you complete your selections for **SOURCE\_1**, the operator name becomes **CUSTOMERS\_JSON**, reflecting your data entity selection. In the Identifier field, rename the source operator to **CUSTOMERS**.
@@ -78,9 +78,9 @@ In the end, your details for the source operator should look like this:
 7. You will now drag and drop onto the data flow canvas another **source operator**.
 ![](./images/new-source.png " ")
 
-8.  On the canvas, select the new source operator. You will now fill in the details for this new source, in **Properties** panel:
-  - For **Data Asset**, select `Object_Storage`
-  - For **Connection**, select `Default Connection`
+8.  On the canvas, select the new source operator. You will now fill in the details for this source, in **Properties** panel:
+  - For **Data Asset**, select `Object_Storage`.
+  - For **Connection**, select `Default Connection`.
   - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
   - For **Data Entity**, click on **Browse by name**. Select `REVENUE.csv` and then choose **CSV**  for the file type. Accept the default values for the remaining items.
 ![](./images/revenue-csv.png " ")
@@ -114,19 +114,17 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 ![](./images/connect-revenue-filter.png " ")
 
 
-15. Click on **FILTER_1** on the Data Flow Canvas.
+15. Click on **FILTER_1** on the Data Flow canvas.
 ![](./images/click-filter.png " ")
 
 16. In the Properties panel of FILTER_1, click **Create** for **Filter Condition**.
 ![](./images/click-create-filter.png " ")
 
 17. You will now add your **filter condition**:
-  - In the Create Filter Condition panel, enter **STA** in the Incoming attributes search field
-  - Double-click or drag and drop **ORDER_STATUS** to add it to the filter condition editor
+  - In the Create Filter Condition panel, enter `STA` in the Incoming attributes search field.
+  - Double-click or drag and drop **ORDER\_STATUS** to add it to the filter condition editor.
 ![](./images/filter-cond.png " ")
-  - In the condition editor, enter `='1-Booked'`, so your condition looks like the following:
-![](./images/filter-condition.png " ")
-
+  - In the condition editor, enter `='1-Booked'`, so your condition looks like the following: `FILTER_1.REVENUE_CSV.ORDER_STATUS='1-Booked'`
   - Click **Create**.
 
 ![](./images/create-button.png " ")
@@ -142,8 +140,8 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 ![](./images/new-filter-cond.png " ")
 
 21. You will now add your **filter condition** for **FILTER_2**:
-  - In the Create Filter Condition panel, enter **COU** in the Incoming attributes search field
-  - Double-click **COUNTRY_CODE** to add it to the Filter condition editor
+  - In the Create Filter Condition panel, enter `COU` in the Incoming attributes search field.
+  - Double-click **COUNTRY_CODE** to add it to the Filter condition editor.
   - Enter `='US'`, so your condition looks like the following: `FILTER_2.CUSTOMERS_JSON.COUNTRY_CODE='US'`
   - Click **Create**.
 
@@ -165,9 +163,9 @@ The number of attributes in the table are filtered. Only those attributes that m
 ![](./images/change-case.png " ")
 
 26. In the **Change Case** dialog:
-  - From the **Type** drop-down, select **UPPER**
+  - From the **Type** drop-down, select **UPPER**.
   - Do **not** select the check box Keep Source Attributes
-  - Leave the **Name** as-is
+  - Leave the **Name** as-is.
   - Click **Apply**.
 
 ![](./images/change-case-apply.png " ")
@@ -185,14 +183,14 @@ The number of attributes in the table are filtered. Only those attributes that m
 30. From the Operators panel, drag and drop a **new Expression** operator onto the canvas after **CHANGE_CASE** operator. **Connect CHANGE\_CASE to the new Expression**.
 ![](./images/new-expression.png " ")
 
-31. With **EXPRESSION\_2** selected, in the Properties panel, change the name in Identifier to **CONCAT\_FULL\_NAME** and then click **Add Expression** button in the Expressions table.
+31. With **EXPRESSION\_2** selected, in the Properties panel, change the **Identifier** to **CONCAT\_FULL\_NAME** and then click **Add Expression** button in the Expressions table.
 ![](./images/add-expression.png " ")
 
 32. In the **Add Expression** panel:
-  - Rename the expression to `FULLNAME` in the **Identifier** field
-  - Keep **Data Type** as `VARCHAR`
-  - Set **Length** to `200`
-  - Under Expression Builder, switch from the Incoming list to the **Functions list**
+  - Rename the expression to `FULLNAME` in the **Identifier** field.
+  - Keep **Data Type** as `VARCHAR`.
+  - Set **Length** to `200`.
+  - Under Expression Builder, switch from the Incoming list to the **Functions list**.
   - In the **filter by name search field**, enter `CON`. Then locate `CONCAT` under String. You can either search for CONCAT in the functions list yourself, or enter CON to use the auto-complete functionality
   - Enter
   ```
@@ -216,8 +214,11 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 ![](./images/create-join-cond.png " ")
 
 36. In the **Create Join Condition panel**:
-  - Enter `CUST` in the filter by name search field
-  - You want to join the entities using CUST\_ID and CUST\_KEY. In the editor, enter `JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY`
+  - Enter `CUST` in the filter by name search field.
+  - You want to join the entities using CUST\_ID and CUST\_KEY. In the editor, enter
+  ```
+  <copy>JOIN_1_1.CUSTOMERS_JSON.CUST_ID=JOIN_1_2.REVENUE_CSV.CUST_KEY</copy>
+  ```
   - Click **Create**.
 
 ![](./images/join-cond.png " ")
@@ -230,11 +231,11 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 ![](./images/target-op.png " ")
 
 39. With **TARGET_1** selected on the canvas, in the **Details** tab of the Properties panel complete the fields accordingly:
-  - Leave the default value for **Integration Strategy** as **Insert**
-  - For **Data Asset**, select `Data_Warehouse`
-  - For **Connection**, select `Beta Connection`
-  - For **Schema**, select `BETA`
-  - For **Data Entity**, select `CUSTOMERS_TARGET`
+  - Leave the default value for **Integration Strategy** as **Insert**.
+  - For **Data Asset**, select `Data_Warehouse`.
+  - For **Connection**, select `Beta Connection`.
+  - For **Schema**, select `BETA`.
+  - For **Data Entity**, select `CUSTOMERS_TARGET`.
   - For **Staging Location**, select the **Object Storage data asset**, its **default connection** and your **compartment**. Then for **Schema**, select the **Object Storage bucket** that you created before importing the sample data (in Lab 0). Click **Select**.
 
 ![](./images/staging-location.png " ")
@@ -284,15 +285,15 @@ This Data Flow will load data from **multiple source files** containing Employee
 5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
 
    In the Details tab, click Select next to each of the following options to make your selections:
-    - For **Identifier**, rename to `EMPLOYEES_SOURCE_FILES`
-    - For **Data Asset**, select `Object_Storage`
-    - For **Connection**, select `Default Connection`
-    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here
+    - For **Identifier**, rename to `EMPLOYEES_SOURCE_FILES`.
+    - For **Data Asset**, select `Object_Storage`.
+    - For **Connection**, select `Default Connection`.
+    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here.
     - For **Data Entity**, click on **Browse by Pattern**.
 
     ![](./images/browse-pattern.png " ")
 
-   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found that match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
+   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found WHICH match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
 
     ![](./images/employees-pattern.png " ")
 
@@ -318,10 +319,14 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/add-exp.png " ")
 
 10. In the **Add Expression** panel:
-  - **Rename** the expression to `BIRTH_DATE` in the Identifier field
-  - Change **Data Type** to `DATE`
-  - Enter `TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')` in the **expression** box.
-  This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this functions in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
+  - **Rename** the expression to `BIRTH_DATE` in the Identifier field.
+  - Change **Data Type** to `DATE`.
+  - Enter
+  ```
+  <copy>TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')</copy>
+  ```
+   in the **expression** box.
+  This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
   - Click **Add**.
 
 ![](./images/new-exp-details.png " ")
@@ -331,9 +336,13 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/add-new-exp.png " ")
 
 12. In the **Add Expression** panel:
-  - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field
-  - Change **Data Type** to `NUMERIC`
-  - Enter `TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)` in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
+  - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field.
+  - Change **Data Type** to `NUMERIC`.
+  - Enter   
+  ```
+  <copy>TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)</copy>
+  ```
+   in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
   - Click **Add**.
 
 ![](./images/new-num-exp.png " ")
@@ -345,15 +354,15 @@ This Data Flow will load data from **multiple source files** containing Employee
 14. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.
 ![](./images/new-expression-df.png " ")
 
-15. In the Properties panel for the new **EXPRESSION\_1 operator**, rename the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
+15. In the Properties panel for the new **EXPRESSION\_1 operator**, change the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
 ![](./images/employee-age.png " ")
 
 16. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-exp-new.png " ")
 
 17. In the **Add Expression** panel:
-  - **Rename** the expression to `EMPLOYEE_AGE` in the Identifier field
-  - Change **Data Type** to `NUMERIC`
+  - **Rename** the expression to `EMPLOYEE_AGE` in the Identifier field.
+  - Change **Data Type** to `NUMERIC`.
   - Enter
 
   ```
@@ -361,7 +370,8 @@ This Data Flow will load data from **multiple source files** containing Employee
   ```
 
   in the **expression** box.
-  This function will calculate the age of the employee, by doing a minus between the current date and his birthdate. CASE WHEN function returns the value for which a condition is met.
+  This function will calculate the age of the employee, by doing a minus between the current date and his birth date. CASE WHEN function returns the value for which a condition is met.
+
   *Note: In case the attributes in the expression don't get automatically highlighted, please replace them, by highlighting in the expression's placeholders and then double-click or drag and drop attributes from the Incoming list.*
   - Click **Add**.
 
@@ -372,8 +382,8 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/add-expression-phone.png " ")
 
 19. In the **Add Expression** panel:
-  - **Rename** the expression to `PHONE_NO` in the Identifier field
-  - Leave **Data Type** to `VARCHAR`
+  - **Rename** the expression to `PHONE_NO` in the Identifier field.
+  - Leave **Data Type** as `VARCHAR`.
   - Enter   
   ```
   <copy>COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No_, 'Phone Number Not Available')</copy>
@@ -406,33 +416,33 @@ This Data Flow will load data from **multiple source files** containing Employee
 26. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
 ![](./images/split-op.png " ")
 
-27. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the **default Match option** (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
+27. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the default **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
 ![](./images/split-region.png " ")
 
 28. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section**.
 ![](./images/add-cond.png " ")
 
 29. In **Add Split Condition** page:
-  - Enter **Identifier** `WEST_MIDWEST_REGION`
-  - For **Condition** enter `SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')`
+  - Enter **Identifier** `WEST_MIDWEST_REGION`.
+  - For **Condition** enter `SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')`.
   - Click **Add**.
 
 ![](./images/midwest-cond.png " ")
 
 
-30. The first split condition you defined is now displayed. After all conditions in the split operator are evaluated during run-time, data that does not meet a condition is directed to the **Unmatched** output port. The Split operator properties should look like in this picture:
+30. The first split condition you defined is now displayed. After the condition in the split operator is evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port. The Split operator properties should look like this:
 ![](./images/split-op-prop.png " ")
 
 31. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.
 ![](./images/first-target.png " ")
 
 32. In the properties for **TARGET\_1** operator:
-  - Change to **Merge Integration Strategy**
-  - For **Data Asset**, select `Data_Warehouse`
-  - For **Connection**, select `Beta connection`
-  - For **Schema**, select `Beta`
-  - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the Lab 0 SQL script that you ran on the ADW)
-  - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
+  - Change to **Merge Integration Strategy**.
+  - For **Data Asset**, select `Data_Warehouse`.
+  - For **Connection**, select `Beta connection`.
+  - For **Schema**, select `Beta`.
+  - For **Data Entity**, select `EMPLOYEES_WEST_MIDWEST` (this target table was created with the SQL script from Lab 0 that you ran on the Autonomous Data Warehouse).
+  - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`).
   - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 
 ![](./images/employees-west-and-midwest.png " ")
@@ -441,22 +451,22 @@ This Data Flow will load data from **multiple source files** containing Employee
 33. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 4 attributes that were not mapped automatically in the target.
 ![](./images/attr-not-mapped.png " ")
 
-34. **Manually map the Not Mapped attributes** in the target:
+34. **Manually map the "Not Mapped" attributes** in the target:
   - Drag and drop **E\_Mail** from source to **EMAIL** attribute from target
   - Drag and drop **Father\_s\_Name** from source to **FATHERS\_NAME** attribute from target
   - Drag and drop **Mother\_s\_Name** from source to **MOTHERS\_NAME** attribute from target
   - Drag and drop **Last\_\_Hike** from source to **LAST\_HIKE** attribute from target
-You now finished mapping the attributes to the **EMPLOYEES\_WEST\_MIDWEST** target table.
+You have now finished mapping the attributes to the **EMPLOYEES\_WEST\_MIDWEST** target table.
 
 ![](./images/manual-map.png " ")
 
 
 35. Drag and drop **another target operator**. Connect the **UNMATCHED output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
-  - Change to **Merge Integration Strategy**
-  - For **Data Asset**, select `Data_Warehouse`
-  - For **Connection**, select `Beta connection`
-  - For **Schema**, select `Beta`
-  - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the Lab 0 SQL script that you ran on the ADW)
+  - Change to **Merge Integration Strategy**.
+  - For **Data Asset**, select `Data_Warehouse`.
+  - For **Connection**, select `Beta connection`.
+  - For **Schema**, select `Beta`.
+  - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the SQL script from Lab 0 that you ran on the Autonomous Data Warehouse).
   - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
   - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 Make sure you also map all of the columns, same as in step 34 of this lab.
@@ -464,7 +474,7 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
 ![](./images/employees-northeast-and-south.png " ")
 
 
-39. The design of our Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays **no Errors and no Warnings**.
+39. The design of the Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays **no Errors and no Warnings**.
 ![](./images/validate-df.png " ")
 
 40. Click on **Save and Close**.
