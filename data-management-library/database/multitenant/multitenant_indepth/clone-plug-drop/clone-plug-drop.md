@@ -1,11 +1,20 @@
 # Clone, Plug and Drop
 
 ## Introduction
-In this lab you will perform many multitenant basic tasks.  You will create a pluggable database (PDB), make a copy of this pluggable database, or clone it, explore the concepts of "plugging" and "unplugging" a PDB and finally drop it.  You will then explore the concepts of cloning unplugged databases and databases that are hot or active.
-
-*Estimated Workshop Time*: 1 hour
+Oracle Multitenant enables an Oracle Database to function as a container database (CDB). A CDB consolidates multiple pluggable databases (PDB), a portable collection of schemas, schema objects, and non-schema objects. Whether deployed on-premises or in the cloud, with Oracle Multitenant, applications run unchanged in self-contained PDBs, improving resource utilization, management, and overall security.
 
 [](youtube:kzTQGs75IjA)
+
+### Objective
+- Rapid cloning and provisioning
+    Local clones and remote clones
+    Database administrators save time by provisioning pluggable databases as clones locally or from across the network without disrupting the source.
+
+- Refreshable PDBs
+    Maintain up to date copies of production databases by periodically topping them up with incremental transactions.
+
+*Estimated Workshop Time*: 2 hour
+
 
 ### Prerequisites
 
@@ -18,7 +27,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 
-## **Step 0:** Initialize Environment
+## **Step 1:** Initialize Environment
 Proceed as indicated below to Initialize your workshop instance prior to executing any subsequent step or lab.
 
 Refer to *Lab Environment Setup* for the detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
@@ -56,7 +65,7 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     </copy>
     ```
 
-## **Step 1:** Login and Create PDB
+## **Step 2:** Login and Create PDB
 This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
 
 1. All scripts for this lab are stored in the `labs/multitenant` folder and are run as the oracle user. Let's navigate to the path now.
@@ -209,7 +218,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ![](./images/step1.9-containers.png " ")
 
-## **Step 2:** Clone a PDB
+## **Step 4:** Clone a PDB
 This section looks at how to clone a PDB.
 
 The tasks you will accomplish in this step are:
@@ -288,7 +297,7 @@ The tasks you will accomplish in this step are:
 
    ![](./images/pdb3mytab.png " ")
 
-## **Step 3:** Unplug a PDB
+## **Step 4:** Unplug a PDB
 This section looks at how to unplug a PDB.
 
 The tasks you will accomplish in this step are:
@@ -383,7 +392,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/xmlfile.png " ")
 
-## **Step 4:** Plug in a PDB
+## **Step 5:** Plug in a PDB
 This section looks at how to plug in a PDB.
 
 The tasks you will accomplish in this step are:
@@ -512,7 +521,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/pdb3mytab2.png " ")
 
-## **Step 5:** Drop a PDB
+## **Step 6:** Drop a PDB
 This section looks at how to drop a pluggable database.
 
 The tasks you will accomplish in this step are:
@@ -550,7 +559,7 @@ The tasks you will accomplish in this step are:
     ![](./images/droppdb.png " ")
 
 
-## **Step 6:** Clone an Unplugged PDB
+## **Step 7:** Clone an Unplugged PDB
 This section looks at how to create a gold copy of a PDB and clone it into another container.
 
 The tasks you will accomplish in this step are:
@@ -724,7 +733,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/step6.12-guid.png " ")
 
-## **Step 7:** PDB Hot Clones
+## **Step 8:** PDB Hot Clones
 This section looks at how to hot clone a pluggable database.
 
 The tasks you will accomplish in this step are:
@@ -871,7 +880,7 @@ The tasks you will accomplish in this step are:
 
 You can see that the clone of the pluggable database worked without having to stop the load on the source database. In the next step, you will look at how to refresh a clone.
 
-## **Step 8:** PDB Refresh
+## **Step 9:** PDB Refresh
 This section looks at how to hot clone a pluggable database, open it for read only and then refresh the database.
 
 [](youtube:L9l7v6dH-e8)
@@ -969,7 +978,7 @@ The tasks you will accomplish in this step are:
 
 7. Leave the **OE** pluggable database open with the load running against it for the rest of this lab.
 
-## **Step 9:** PDB Relocation
+## **Step 10:** PDB Relocation
 
 This section looks at how to relocate a pluggable database from one container database to another. One important note, either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
 
