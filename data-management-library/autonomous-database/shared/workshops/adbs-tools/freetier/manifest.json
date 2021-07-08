@@ -28,8 +28,8 @@
             "description": "Using Autonomous Database Tools",
             "filename": "../using-adb-tools/using-adb-tools.md"
         },        {
-          "title": "Lab x: Working with Spatial Analysis",
-          "description": "Working with Spatial Analysis",
+          "title": "Lab 8: Find Best Location with Spatial",
+          "description": "Find Best Location with Spatial",
           "filename": "../working-with-spatial/working-with-spatial.md"
       },
         {

@@ -26,15 +26,11 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab requires completion of the previous labs in the Contents menu on the left.
+* This lab requires completion of Labs 1-5 in the Contents menu on the left.
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Load the Data
-
-<< placeholder for navigating to sdw worksheet and loading customer and pizza_locations... here or in a central lab that others labs point to? >>
-
-## **STEP 2**: Prepare the Data
+## **STEP 1**: Prepare the Data
 
 To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER and PIZZA_LOCATIONS tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
 
@@ -58,8 +54,8 @@ To prepare your data for spatial analyses, you create function-based spatial ind
        ELSE
        --return point geometry
         RETURN sdo_geometry(
-                2001,  -- identifier for a point geometry
-                4326,  -- identifier for lat/lon coordinate system
+                2001, --identifier for a point geometry
+                4326, --identifier for lat/lon coordinate system
                 sdo_point_type(
                  longitude, latitude, NULL), 
                 NULL, NULL);
@@ -75,7 +71,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
     SELECT sdo_geom.sdo_distance(
             latlon_to_geometry(22, -90),
             latlon_to_geometry(23, -91),
-            0.05, -- tolerance (i.e., coordinate precision in meters)
+            0.05, --tolerance (coordinate precision in meters)
            'unit=KM') as distance_km
       FROM dual;
     </copy>
@@ -91,9 +87,9 @@ To prepare your data for spatial analyses, you create function-based spatial ind
      'CUSTOMER',
      user||'.LATLON_TO_GEOMETRY(loc_lat,loc_long)',
       sdo_dim_array(
-          sdo_dim_element('X', -180, 180, 0.05), -- longitude bounds and tolerance in meters
-          sdo_dim_element('Y', -90, 90, 0.05)),  -- latitude bounds and tolerance in meters
-      4326  -- identifier for lat/lon coordinate system
+          sdo_dim_element('X', -180, 180, 0.05), --longitude bounds and tolerance in meters
+          sdo_dim_element('Y', -90, 90, 0.05)),  --latitude bounds and tolerance in meters
+      4326 --identifier for lat/lon coordinate system
         );
 
     INSERT INTO user_sdo_geom_metadata VALUES (
@@ -123,7 +119,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
     </copy>
     ```
 
-## **STEP 3**: Run Spatial Queries
+## **STEP 2**: Run Spatial Queries
 
 Oracle Autonomous Database provides an extensive SQL API for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and more. In this lab you focus on one of those spatial analysis operations; "nearest neighbor" analysis. Nearest neighbor analysis refers to identifying which item(s) are nearest to a location. 
 
@@ -131,9 +127,9 @@ The neareat neighbor SQL operator is called ```sdo_nn( )``` as the has general f
 
 ```
 sdo_nn(
-geometry1, -- geometry in a table
-geometry2, -- geometry in a table or dynamically defined
-parameters -- how many nearest neighbors to return
+geometry1, --geometry in a table
+geometry2, --geometry in a table or dynamically defined
+parameters --how many nearest neighbors to return
 )
 ```
 and returns the item(s) in ```geometry1``` that are nearest to ```geometry2```.
@@ -316,7 +312,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
 ###Performance and Scaling
 Parallel processing is a powerful capability of Oracle database for high performance and scalability. Parallelized operations are spread across database server processors, where performance generally increases linearly with the "degree of parallelism" (DOP). DOP can be thought of as the number of processors that the operation is spread over. Many spatial operations of Oracle database support parallel processing, including nearest neighbor.
 
-In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous.  A feature called "auto-DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations.  So a balance must be reached between optimal performance and sufficient resources for all workloads.
+In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous.  A feature called "auto-DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations.  So a balance must be reached between optimal performance and sufficient resources for all workloads. Details can be found in the documention [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953).
 
 ## **STEP 3**: Purge changes (Optional)
 
