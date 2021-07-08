@@ -1,17 +1,16 @@
-# Loading data from object storage using SQL Tools (& API)
+# Loading data from object storage using Data Tools (& API)
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab takes you through the steps needed to load data from the MovieStream data lake on Oracle Object Store into an Oracle Autonomous Data Warehouse instance in preparation for exploration and analysis
 
-Estimated Time: n minutes
+Estimated Time: 20 minutes
 
 ### About <Product/Technology>
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
 
 ### Objectives <optional>
 
-*List objectives for this lab*
 
 In this lab, you will:
 * Objective 1
