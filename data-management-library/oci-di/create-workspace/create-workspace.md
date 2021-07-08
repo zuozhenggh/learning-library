@@ -23,13 +23,16 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
 *Note: In case you are a Non-admin user, ask your administrator to set up the policies in this Lab step.*
 
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
-     ![](./images/menu.png " ")
+
+   ![](./images/menu.png " ")
 
 2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Identity & Security**, and then select **Policies** under Identity section.
-    ![](./images/menu_policies.png " ")
+
+   ![](./images/menu_policies.png " ")
 
 3. Under List Scope, make sure you select the **Compartment** you are using for Data Integration, in this case the one you have created in Lab 0 (`DI-compartment`). After you have selected your compartment, click on **Create Policy**.
-    ![](./images/add_policy.png " ")
+
+   ![](./images/add_policy.png " ")
 
 5. In the **Create Policy** panel, complete the following fields:
   - **Name**: `Policies-OCI-DI`. *Note that the name can NOT contain spaces.*
@@ -40,19 +43,23 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
   - **Compartment**: `DI-compartment` (or the OCI Compartment you are using).
 
   The policy statements will appear below. Click **Create**.
-     ![](./images/policy_builder.png " ")
+
+   ![](./images/policy_builder.png " ")
 
 ## **STEP 2:** Create an OCI Data Integration Workspace
 Before you can get started with Data Integration, you must first create a **Workspace** for your data integration solution. A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you can have separate workspaces for development, testing, and production. The workspace is the preliminary component of Oracle Cloud Infrastructure Data Integration.
 
 1. In your Oracle Cloud console, open the **Menu** in the upper left.
-    ![](./images/menu.png " ")
+
+   ![](./images/menu.png " ")
 
 2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
-    ![](./images/menu_di.png " ")
+
+   ![](./images/menu_di.png " ")
 
 3. Under **List Scope**, from the Compartment dropdown, select the compartment that you created policies for in the previous section and on the Data Integration Workspaces page, click **Create Workspace**.
-    ![](./images/workspaces.png " ")
+
+   ![](./images/workspaces.png " ")
 
 4. In the **Create Workspace** panel, complete the fields as follows:
   - For **Name**: `DI-workspace`. *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
@@ -63,15 +70,15 @@ Before you can get started with Data Integration, you must first create a **Work
   - Leave the optional fields DNS Server IP and DNS Server Zone empty.
   - Click **Create**.
 
-    ![](./images/create_workspace.png " ")
-
-
+   ![](./images/create_workspace.png " ")
 
 5. The workspace takes a few minutes to be created and become active. Your are now in the Workspaces page where you can see your new workspace. While it is being created, the status should appear as **Creating**.
-     ![](./images/creating-workspace.png " ")
+
+   ![](./images/creating-workspace.png " ")
 
 6. After the creation process is completed, you can see the workspace in the list with the status **Active**.
-     ![](./images/create.png " ")
+
+   ![](./images/create.png " ")
 
 **Congratulations!**  Now you have the workspace that will hold all your Data Integration resources, such as projects, folders, data assets, tasks, data flows, pipelines, and applications and schedules. You may now [proceed to the next lab](#next).
 

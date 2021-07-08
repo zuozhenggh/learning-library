@@ -73,7 +73,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 6. **Replace** in the new policy statements:
   - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`
-  - *"group-name"* with the name of the OCI group where your user belongs to (`di-group`)
+  - *"group-name"* with the name of the OCI group that your user belongs to (`di-group`)
   - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
 
 ![](./images/new-policy.png " ")
@@ -84,7 +84,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 ## **STEP 3**: Create Object Storage data asset
 
-In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in the data integration workspace.
+In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in the Data integration workspace.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 ![](./images/menu_di.png " ")
