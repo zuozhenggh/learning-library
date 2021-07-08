@@ -1,7 +1,7 @@
 # Application Queries on a sharded Database
 
 ## Introduction   
-Run each SQL query by logging in to the shard catalog database as well as one of the shard databases. You can observe the difference in row count on the shard catalog compared to the shard-database (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
+Run each SQL query by logging in to the shard catalog database as well as one of the shard databases. You can observe the difference in row count on the shard catalog compared to the shard-database (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb and porcl3cdb\_porcl3pdb).
 
 *Estimated Lab Time*: 20 Minutes
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## **STEP 2**: Application Queries on sharding Database.
 
-Run the below each sql query by login into Catalog database as well as one of the shard database(shard3 in this case). You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
+Run the below each sql query by login into Catalog database as well as one of the shard database(shard3 in this case). You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb and porcl3cdb\_porcl3pdb).
 
 1. Text search on Products (JSON) table with auto corrections: Oracle Fuzzy matching is a method that provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
 
