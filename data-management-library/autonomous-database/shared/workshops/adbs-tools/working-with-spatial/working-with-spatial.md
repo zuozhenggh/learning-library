@@ -1,4 +1,4 @@
-# Working with Spatial Analysis
+# Find Closest Pizza Shops with Spatial
 
 ## Introduction
 

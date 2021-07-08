@@ -28,8 +28,8 @@
             "description": "Using Autonomous Database Tools",
             "filename": "../using-adb-tools/using-adb-tools.md"
         },        {
-          "title": "Lab 8: Find Best Location with Spatial",
-          "description": "Find Best Location with Spatial",
+          "title": "Lab 8: Find Closest Pizza Shops with Spatial",
+          "description": "Find Closest Pizza Shops with Spatial",
           "filename": "../working-with-spatial/working-with-spatial.md"
       },
         {
