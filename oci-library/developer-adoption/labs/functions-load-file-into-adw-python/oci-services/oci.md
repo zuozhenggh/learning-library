@@ -1,4 +1,4 @@
-# Functions
+# Create Bucket and Autonomous Database (ADW)
 
 ## Introduction
 
