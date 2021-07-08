@@ -1,5 +1,7 @@
 # Lab Setups
 
+## About the Workshop
+
 This part of the lab will guide you through some setup items that have to be performed before we can start the lab.
 
 *Estimated Lab Time:* 60 Minutes
@@ -7,12 +9,12 @@ This part of the lab will guide you through some setup items that have to be per
 ### Objectives
 
 In this lab, you will:
-    - Create a compartment for our OCI components
-    - Setup permissions for dynamic groups and policies
-    - Create an Autonomous Database
-    - Setup a Virtual Cloud Network
-    - Create Object Store Buckets for our csv files
-    - Create a secret using the Secrets Service and the OCI Vault
+    * Create a compartment for our OCI components
+    * Setup permissions for dynamic groups and policies
+    * Create an Autonomous Database
+    * Setup a Virtual Cloud Network
+    * Create Object Store Buckets for our csv files
+    * Create a secret using the Secrets Service and the OCI Vault
 
 ## **SETUP 1**: Create a Compartment
 
@@ -561,7 +563,7 @@ To ensure we are not using passwords in plain text in any configurations or part
 
     ![Secret Contents text area](./images/vault-21.png)
 
-22. Once your **Create Secret** silder looks like the following image, click the **Create Secret** button in the lower left.
+22. Once your **Create Secret** slider looks like the following image, click the **Create Secret** button in the lower left.
 
     ![click the Create Secret button](./images/vault-22.png)
 
