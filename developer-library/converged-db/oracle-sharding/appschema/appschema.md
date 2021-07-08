@@ -99,7 +99,7 @@ dbService.getProductByKey(item) – calling model layer function with “item”
 
 ## **STEP 2**: Application Connection Details
 
-In Oracle Sharding, database query and DML requests are routed to the shards in two main ways, depending on whether a sharding key is supplied with the request. These two routing methods are called **proxy routing** and **direct routing. **
+In Oracle Sharding, database query and DML requests are routed to the shards in two main ways, depending on whether a sharding key is supplied with the request. These two routing methods are called **proxy routing** and **direct routing.**
 
 **Proxy Routing:** Queries that need data from multiple shards, and queries that do not specify a sharding key, cannot be routed directly by the application. Those queries require a proxy to route requests between the application and the shards. Proxy routing is handled by the shard catalog query coordinator. 
 
@@ -141,6 +141,8 @@ Example: Database connection details by passing a sharding key:
             			  });
 
 For more details for the eShop code snippet click [here] (https://github.com/nishakau/ShardingSampleCode.git)
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

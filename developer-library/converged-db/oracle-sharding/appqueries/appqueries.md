@@ -64,7 +64,7 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ![](./images/query2.JPG " ") 
 
-2. Dollor Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
+2. Dollar Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
    
     ```
     <copy>
@@ -127,6 +127,9 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
     ![](./images/query1.JPG " ") 
+
+
+You may now [proceed to the next lab](#next).
 
 
 ## Learn More

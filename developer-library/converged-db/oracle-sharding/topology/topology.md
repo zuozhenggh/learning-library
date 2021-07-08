@@ -31,49 +31,6 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP 0**: Sharding Overview & Architecture
-
-**Oracle Sharding** is a feature of Oracle Database that lets you automatically distribute and replicate data across a pool of Oracle databases that share no hardware or software. Oracle Sharding provides the best features and capabilities of mature RDBMS and NoSQL databases.
-
-![](./images/arch.JPG " ")  
-
-**Core Components of the Oracle Sharding Architecture**
-
-1. **Partitions, Tablespaces and Chunks:** Distribution of partitions across shards is achieved by creating partitions in tablespaces that reside on different shards.
-   
-2. **Tablespace Sets:** Oracle Sharding creates and manages tablespaces as a unit called a TABLESPACE SET.
-
-3. **Sharding Methods:** The following topics discuss sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
-
-4. **Sharded Database Schema Objects:** To obtain the benefits of sharding, the schema of a sharded database should be designed in a way that maximizes the number of database requests executed on a single shard. The following topics define and illustrate the schema objects that form a sharded database to inform your design.
-
-For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/oracle-sharding-architecture-and-concepts1.html#GUID-9DC0048A-2D6E-4759-BA80-10F8855E6871)
-
-**Oracle Sharding Components**
-
-1. **Shard Director:** Shard directors are network listeners that enable high performance connection routing based on a sharding key.
-   
-2. **Global Service:** A global service is a database service that is use to access data in a sharded database.
-   
-3. **Shard Catalog:** A shard catalog is an Oracle Database that supports automated shard deployment, centralized management of a sharded database, and multi-shard queries.
-   
-4. **Sharded Database and Shards:** A sharded database is a collection of shards.
-
-
-**Sharded database schema objects**
-
-To obtain the benefits of sharding, the schema of a sharded database should be designed in a way that maximizes the number of database requests executed on a single shard. The following topics define and illustrate the schema objects that form a sharded database to inform your design.
-
-**Sharded Tables:** A database table is split up across the shards, so that each shard contains the table with the same columns, but a different subset of rows. A table split up in this manner is called a sharded table.
-
-**Sharded Table Family:** A sharded table family is a set of tables that are sharded in the same way. Often there is a parent-child relationship between database tables with a referential constraint in a child table (foreign key) referring to the primary key of the parent table.
-
-**Duplicated Tables:** In Oracle Sharding a table with the same contents in each shard is called a duplicated table.
-
-**Non-Table Objects Created on All Shards:** In addition to duplicated tables, other schema objects, such as users, roles, views, indexes, synonyms, functions, procedures, and packages, and non-schema database objects, such as tablespaces, tablespace sets, directories, and contexts, can be created on all shards.
-
-Click [here] (https://github.com/alexkovuru/Oracle-Shard-Schema-Design/blob/main/Shard_Schema_Design.txt) for more details.
-
 ## **STEP 1**: Check for containers in your VM
 
 1. Open a terminal window and execute below as **opc** user.
@@ -299,8 +256,51 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     schagent -status
     </copy>
     ```
+## **Appendix 1**: Sharding Overview & Architecture
 
-## **STEP 6**: Sharding Methods
+**Oracle Sharding** is a feature of Oracle Database that lets you automatically distribute and replicate data across a pool of Oracle databases that share no hardware or software. Oracle Sharding provides the best features and capabilities of mature RDBMS and NoSQL databases.
+
+![](./images/arch.JPG " ")  
+
+**Core Components of the Oracle Sharding Architecture**
+
+1. **Partitions, Tablespaces and Chunks:** Distribution of partitions across shards is achieved by creating partitions in tablespaces that reside on different shards.
+   
+2. **Tablespace Sets:** Oracle Sharding creates and manages tablespaces as a unit called a TABLESPACE SET.
+
+3. **Sharding Methods:** The following topics discuss sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
+
+4. **Sharded Database Schema Objects:** To obtain the benefits of sharding, the schema of a sharded database should be designed in a way that maximizes the number of database requests executed on a single shard. The following topics define and illustrate the schema objects that form a sharded database to inform your design.
+
+For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/oracle-sharding-architecture-and-concepts1.html#GUID-9DC0048A-2D6E-4759-BA80-10F8855E6871)
+
+**Oracle Sharding Components**
+
+1. **Shard Director:** Shard directors are network listeners that enable high performance connection routing based on a sharding key.
+   
+2. **Global Service:** A global service is a database service that is use to access data in a sharded database.
+   
+3. **Shard Catalog:** A shard catalog is an Oracle Database that supports automated shard deployment, centralized management of a sharded database, and multi-shard queries.
+   
+4. **Sharded Database and Shards:** A sharded database is a collection of shards.
+
+
+**Sharded database schema objects**
+
+To obtain the benefits of sharding, the schema of a sharded database should be designed in a way that maximizes the number of database requests executed on a single shard. The following topics define and illustrate the schema objects that form a sharded database to inform your design.
+
+**Sharded Tables:** A database table is split up across the shards, so that each shard contains the table with the same columns, but a different subset of rows. A table split up in this manner is called a sharded table.
+
+**Sharded Table Family:** A sharded table family is a set of tables that are sharded in the same way. Often there is a parent-child relationship between database tables with a referential constraint in a child table (foreign key) referring to the primary key of the parent table.
+
+**Duplicated Tables:** In Oracle Sharding a table with the same contents in each shard is called a duplicated table.
+
+**Non-Table Objects Created on All Shards:** In addition to duplicated tables, other schema objects, such as users, roles, views, indexes, synonyms, functions, procedures, and packages, and non-schema database objects, such as tablespaces, tablespace sets, directories, and contexts, can be created on all shards.
+
+Click [here] (https://github.com/alexkovuru/Oracle-Shard-Schema-Design/blob/main/Shard_Schema_Design.txt) for more details.
+
+
+## **Appendix 2**: Sharding Methods
 
 The following topics discuss sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
 
@@ -340,6 +340,8 @@ Below are Sample sharded table DDLs:
       ) TABLESPACE SET TTTSP_SET_2 PARTITION BY CONSISTENT HASH (SKU) PARTITIONS AUTO;
 </copy>
  ```
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

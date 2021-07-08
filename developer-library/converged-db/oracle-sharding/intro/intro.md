@@ -9,11 +9,11 @@ Oracle Database Sharding enables globally distributed, linearly scalable, multi-
 
 It is built on shared-nothing architecture, in which data is horizontally partitioned across databases that share no hardware or software. To learn more, see this [blog](https://blogs.oracle.com/database/sharding-oracle-database-cloud-service-v2).
 
-### Objectives
-In this workshop, you will gain first-hand experience of how Oracle Database can store structured and unstructured data in same database with ten’s of petabytes of data.
-
 **Workshop Architecture**
 ![](images/sharding2.JPG " ")
+
+### Objectives
+In this workshop, you will gain first-hand experience of how Oracle Database can store structured and unstructured data in same database with ten’s of petabytes of data.
 
 Once you complete your setup, the next lab will cover:
 
