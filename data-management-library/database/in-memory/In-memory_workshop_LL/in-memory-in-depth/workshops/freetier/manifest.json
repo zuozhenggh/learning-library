@@ -37,7 +37,7 @@
     },
 
     {
-        "title": "LAB 03: Mixed workoad",
+        "title": "LAB 03: Mixed Workload",
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
         "filename":"../../in_memory/mixed_workload/mixed-workload.md"
