@@ -27,7 +27,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+		![](images/database-goldengate.png " ")
 
     You're brought to the **Deployments** page.
 
