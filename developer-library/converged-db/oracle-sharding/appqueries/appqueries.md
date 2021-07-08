@@ -110,7 +110,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     ```
     ```
     <copy>
-    sqlplus SHARDUSERTEST/oracle@PORCL1PDB
+    sqlplus SHARDUSERTEST/oracle@PORCL2PDB
     </copy>
     ```
 
