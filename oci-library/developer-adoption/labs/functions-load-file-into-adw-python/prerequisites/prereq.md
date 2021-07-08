@@ -28,7 +28,7 @@ Estimated time: 10 minutes
 
 ## **STEP 2:** Create compartment
 
-If you want to use an existing compartment, skip to the next step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
+If you want to use an existing compartment, skip to the next step. Otherwise, follow the steps.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
@@ -36,7 +36,7 @@ If you want to use an existing compartment, skip to the next step. Otherwise, cl
 
 1. From this screen, you will see a list of compartments, click **Create Compartment**.
 
-   ![Compartment Screen](../../common/setup-cloud-env/images/compartmentScreen.png " ")
+   ![Compartment Screen](../../common/setup-cloud-env/images/compartment-screen.png " ")
 
 1. Enter the following:
       - Name: Enter **"AppDev".**
@@ -51,9 +51,13 @@ Now you are ready to move on to Step 3.
 
 ## **STEP 3:** Create VCN and subnets
 
-If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and under Core Infrastructure, go to **Networking** and then:
+If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and then:
 
-1. Click **Virtual Cloud Networks** and choose a compartment from the previous step.
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking** and select **Virtual Cloud Networks**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+
+1. Choose a compartment from the previous step.
 1. Click **Start VCN Wizard**, then **VCN with Internet Connectivity**, then **Start VCN Wizard**.
 1. Enter a name for the new VCN (for example: `fn-vcn`), click **Next**, and then click **Create** to create the VCN along with the related network resources.
 
@@ -61,7 +65,11 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 
 ## **STEP 4:** Create policy for Oracle Functions
 
-Log in to the Console as a **tenancy administrator** and under Governance and Administration, go to **Identity** and click **Policies** and then do the following:
+Log in to the Console as a **tenancy administrator** and under Governance and Administration, and do the following:
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 1. Select the tenancy's **root compartment**
 1. Click **Create Policy**.
@@ -85,8 +93,14 @@ To use other OCI Services, your function must be part of a **dynamic group**. Fo
 
 Before you create a dynamic group, you need to get your development compartment OCID. You will use the compartment OCID in the dynamic group matching rule.
 
-1. Open the navigation menu, select **Identity**, and then **Compartments**.
-1. Find your development compartment from the list, hover over the cell in the OCID column and click **Copy**, to copy the compartment OCID to your clipboard.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+
+1. Find your development compartment (AppDev) from the list, hover over the cell in the OCID column and click **Copy**, to copy the compartment OCID to your clipboard.
+
+  ![Compartment AppDev copy](../../common/setup-cloud-env/images/compartment-appdev-copy.png " ")
+
 1. Store the compartment OCID as you will use it soon.
 
   Now you're ready to create a dynamic group.
@@ -104,6 +118,8 @@ Before you create a dynamic group, you need to get your development compartment 
     ```
 
   *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
+
+1. Click **Create**.
 
 You may now [proceed to the next lab](#next).
 
