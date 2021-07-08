@@ -55,7 +55,7 @@ In this lab, you will:
 
 Good news! You already installed Prometheus/Grafana as part of the umbrella chart during setup. Now let's revisit the charts and connect to some Grafana dashboards!
 
-1. Go back to your Cloud Shel by clicking on the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
+1. Go back to your Cloud Shell by clicking on the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
   ![CloudShell](images/cloudshell-1.png " ")
 
@@ -184,7 +184,7 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
     ````shell
     <copy>
-    kubectl create -f src/load/load-dep.yaml
+    kubectl create -f https://raw.githubusercontent.com/oracle-quickstart/oci-cloudnative/master/src/load/load-dep.yaml
     </copy>
     ````
 
@@ -221,11 +221,11 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
     ````shell
     <copy>
-    kubectl delete -f src/load/load-dep.yaml
+    kubectl delete -f https://raw.githubusercontent.com/oracle-quickstart/oci-cloudnative/master/src/load/load-dep.yaml
     </copy>
     ````
 
-    Notice that after few minutes the preasure will be reduced and targets will be reduced to the lowest level. At this point the Kubernetes will start to **scale down** and will bring the number of replicas back to minimum.
+    Notice that after few minutes the pressure will be reduced and targets will be reduced to the lowest level. At this point the Kubernetes will start to **scale down** and will bring the number of replicas back to minimum.
 
 You may now [proceed to the next lab](#next).
 
