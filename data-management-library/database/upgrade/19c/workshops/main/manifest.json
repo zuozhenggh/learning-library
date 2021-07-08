@@ -4,14 +4,14 @@
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
-      "title": "Get Started",
-      "description": "Using noVNC Remote Desktop",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
-    },
-    {
       "title": "Introduction",
       "description": "The Introduction to Upgrade to 19c Workshop.",
       "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
       "title": "Lab 1: Initialize Environment",
@@ -69,7 +69,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
