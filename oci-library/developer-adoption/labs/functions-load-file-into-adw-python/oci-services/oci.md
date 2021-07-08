@@ -32,7 +32,7 @@ Let's create the `input-bucket` first:
 1. Name the bucket **input-bucket**.
 1. Select the **Standard** storage tier.
 1. Check the **Emit Object Events** check box.
-1. Click **Create Bucket**.
+1. Click **Create**.
 
 ![Create input bucket](./images/create-input-bucket.png)
 
@@ -53,7 +53,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
     `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'`
 
-    Note: the `compartment-name` is your development compartment (the one where you created the VCN and Function Application).
+    Note: the `compartment-name` is your development compartment (the one where you created the VCN and Function Application. e.g.: AppDev).
 
     Example using AppDev Compartment:
 
@@ -71,13 +71,12 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
-1. Open the navigation menu, select **Autonomous Data Warehouse**.
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
+1. Navigate to **Autonomous Data Warehouse**. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
 
  ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 1. Click **Create Autonomous Database**.
-1. From the list, select your development compartment.
+1. From the list, select your development compartment (AppDev).
 1. For display name and database name, enter `funcdb`.
 1. For the workload type, select **Data Warehouse**.
 1. For deployment type, select **Shared Infrastructure**.

@@ -24,16 +24,24 @@ Estimated time: 20 minutes
 In this step, you will create an application and set up Fn CLI in the OCI Cloud Shell.
 
 1. Under Solutions and Platform, select **Developer Services** and click **Functions**.
-1. Select your development compartment from the **Compartment** list.
+1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click **Create Application**.
 1. For name, enter `etl-app`.
 1. Select the VCN you created earlier (e.g. `fn-vcn`).
 1. Select the public subnet.
 1. Click **Create**.
-1. Click on the created application to open the application details.
-1. Click the **Getting Started** link and follow the **Begin your Cloud Shell session** and **Setup fn CLI on Cloud Shell** sections in the **Cloud Shell Setup**.
 
     ![Create an application](./images/create-fn-app.png)
+
+1. Click on the created application to open the application details.
+1. Follow the **Begin your Cloud Shell session** steps under **Getting Started** in the **Cloud Shell Setup**
+
+    ![Function application](./images/function-app.png)
+
+1. Follow each step of **Setup fn CLI on Cloud Shell**.
+1. On the step 4 of Setup fn CLI on Cloud Shell, replace the placeholder **[OCIR-REPO]** with **fnadw** (Or some friendly name)
+1. On the step 6 of Setup fn CLI on Cloud Shell, you will be using the generated token from the previous step as password
+1. Stop at step 7 of Setup fn CLI on Cloud Shell, as you will be creating your own function on the next lab step
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
@@ -41,7 +49,7 @@ This involves launching Cloud Shell, updating the Fn context, generating an auth
 
 In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
-1. From the Console UI, open the Cloud Shell.
+1. You should have already open the OCI Cloud Shell, if not the case, from the Console UI, open the Cloud Shell.
 1. Clone the Functions source code repository:
 
     ```shell
@@ -68,15 +76,29 @@ In this step, you will clone the functions source code repository and use the `f
 
     After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
-1. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
+1. Using the Fn CLI, set the following configuration values.
+
+    Note: This commands uses the **`ORDS_BASE_URL`** env variable that you exported after created the Oracle Database. If your Cloud Shell timed out or was reconnected, you may need to export again using `export ORDS_BASE_URL=<ORDS_BASE_URL>` replacing `<ORDS_BASE_URL>` with the copied URL from the **RESTful Services and SODA**
 
     ```shell
     <copy>
-    fn config function etl-app oci-load-file-into-adw-python ords-base-url [ORDS_BASE_URL]
-    fn config function etl-app oci-load-file-into-adw-python db-schema admin
-    fn config function etl-app oci-load-file-into-adw-python db-user admin
+    fn config function etl-app oci-load-file-into-adw-python ords-base-url $ORDS_BASE_URL && \
+    fn config function etl-app oci-load-file-into-adw-python db-schema admin && \
+    fn config function etl-app oci-load-file-into-adw-python db-user admin 
+    </copy>
+    ```
+
+    Make sure you replace the `[DB_PASSWORD]` with your values:
+
+    ```shell
+    <copy>
     fn config function etl-app oci-load-file-into-adw-python dbpwd-cipher [DB-PASSWORD]
-    fn config function etl-app oci-load-file-into-adw-python input-bucket input-bucket
+    </copy>
+    ```
+
+    ```shell
+    <copy>
+    fn config function etl-app oci-load-file-into-adw-python input-bucket input-bucket && \
     fn config function etl-app oci-load-file-into-adw-python processed-bucket processed-bucket
     </copy>
     ```
@@ -87,7 +109,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 
 1. From Console UI, open navigation and select **Observability & Management** and click **Events Service** > **Rules**.
     ![Console Event Rules](./images/console-events-rules.png)
-1. Select your development compartment from the **Compartment** list. e.g.: **AppDev**
+1. Select your development compartment (AppDev) from the **Compartment** list. e.g.: **AppDev**
 1. Click **Create Rule**.
 1. For display name, enter `load_CSV_into_ADW`.
 1. For description, enter `Load CSV file into ADW`.
@@ -104,7 +126,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
         | --- | --- | --- |
         | Attribute | compartmentName | AppDev |
 
-        Note: If you deployed in a different compartment, enter the name of the compartment instead of AppDev
+        Note: If you deployed in a different compartment, enter the name of that compartment instead of AppDev
 
     - Enter the Third Condition:
 
@@ -113,13 +135,13 @@ In this step, you will configure a Cloud Event to trigger the function when you 
         | Attribute | bucketName | input-bucket |
 
 1. Under Actions, select **Functions**:
-    - For function compartment, select your development compartment.
+    - For function compartment, select your development compartment (AppDev).
     - For function application, select `etl-app`.
     - For function, select `oci-load-file-into-adw-python`.
 
-1. Click **Create Rule**.
+    ![Rule](./images/create-event-rule.png)
 
-![Rule](./images/create-event-rule.png)
+1. Click **Create Rule**.
 
 ## **STEP 4:** Test the function
 
@@ -136,35 +158,53 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
 
 1. Use the OCI CLI to upload `file1.csv` to the `input-bucket`:
 
+    ```shell
+    <copy>
+    oci os object put --bucket-name input-bucket --file file1.csv
+    </copy>
+    ```
+
+    You should see something like this:
+
     ```bash
-    $ oci os object put  --bucket-name input-bucket --file file1.csv
     Uploading object  [####################################]  100%
     {
       "etag": "607fd72d-a041-484c-9ee0-93b9f5488084",
-      "last-modified": "Tue, 20 Oct 2020 18:03:50 GMT",
+      "last-modified": "Tue, 6 Jul 2021 18:03:50 GMT",
       "opc-content-md5": "O8mZv0X2gLagQGT5CutWsQ=="
     }
     ```
 
 To see the data in the database, follow these steps:
 
-1. From the OCI console, navigate to **Autonomous Data Warehouse**.
-1. Select your development compartment from the **Compartment** list.
+1. Navigate to **Autonomous Data Warehouse**. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click on the database name (`funcdb`).
 1. Click the **Service Console**.
 1. Click **Development** link from the side bar.
 1. Click **Database Actions**.
 1. Use **ADMIN** and the admin password to authenticate.
 1. Click **SQL** to get to the worksheet.
+
+    ![Database Actions - SQL](./images/database-actions-sql.png)
+
 1. In the worksheet, enter the following query:
 
     ```shell
     <copy>
-    select UTL_RAW.CAST_TO_VARCHAR2( DBMS_LOB.SUBSTR( JSON_DOCUMENT, 4000, 1 )) AS json from regionsnumbers
+    select json_serialize (
+         JSON_DOCUMENT returning varchar2 pretty 
+       ) 
+    from regionsnumbers;
     </copy>
     ```
 
 1. Click the green play button to execute the query.
+
+    ![Database Actions - SQL - Worksheet](./images/database-actions-sql-worksheet.png)
 
 1. The data from the CSV file is in the **Query Result** tab.
 
