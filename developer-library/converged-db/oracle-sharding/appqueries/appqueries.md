@@ -44,7 +44,7 @@ This lab assumes you have:
     ```
     ```
     <copy>
-    sqlplus SHARDUSERTEST/oracle@PORCL1PDB
+    sqlplus SHARDUSERTEST/oracle@PORCL3PDB
     </copy>
     ```
 
