@@ -3,7 +3,7 @@
 Oracle Multitenant is the architecture for the next-generation database cloud. It delivers isolation, agility and economies of scale. A multitenant container database can hold many pluggable databases. An existing database can simply be adopted with no application changes required. Oracle Multitenant fully complements other options, including Oracle Real Application Clusters and Oracle Active Data Guard.  
 
 ## Workshops
-[Run a workshop now!](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=573)
+[Run a workshop now!](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=704)
 
 ## Get an Oracle Cloud Trial Account for Free!
 If you don't have an Oracle Cloud account then you can quickly and easily sign up for a free trial account that provides:
@@ -31,4 +31,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Converged Database Architcture](https://www.youtube.com/watch?v=9d76-LhgMQs)
 - [Multitenant PDBs for Microservices and Clouds](https://www.youtube.com/watch?v=JdfATqdXuRc)
 - [The Hidden Data Economy](https://www.youtube.com/watch?v=CP3pwAwNepU)
-

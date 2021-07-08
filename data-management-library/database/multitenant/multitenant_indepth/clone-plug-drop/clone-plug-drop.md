@@ -5,15 +5,15 @@ Oracle Multitenant enables an Oracle Database to function as a container databas
 
 [](youtube:kzTQGs75IjA)
 
-### Objective
+*Estimated Workshop Time*: 2 hour
+
+### Objectives
 - Rapid cloning and provisioning
     Local clones and remote clones
     Database administrators save time by provisioning pluggable databases as clones locally or from across the network without disrupting the source.
 
 - Refreshable PDBs
     Maintain up to date copies of production databases by periodically topping them up with incremental transactions.
-
-*Estimated Workshop Time*: 2 hour
 
 
 ### Prerequisites
