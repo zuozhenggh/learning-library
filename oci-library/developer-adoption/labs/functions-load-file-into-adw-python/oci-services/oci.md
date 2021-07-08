@@ -24,12 +24,12 @@ You need a `input-bucket` bucket in Object Storage. You will use the `input-buck
 Let's create the `input-bucket` first:
 
 1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
-2. Select your development compartment from the **Compartment** list.
-3. Click the **Create Bucket**.
-4. Name the bucket **input-bucket**.
-5. Select the **Standard** storage tier.
-6. Check the **Emit Object Events** check box.
-7. Click **Create Bucket**.
+1. Select your development compartment from the **Compartment** list.
+1. Click the **Create Bucket**.
+1. Name the bucket **input-bucket**.
+1. Select the **Standard** storage tier.
+1. Check the **Emit Object Events** check box.
+1. Click **Create Bucket**.
 
 ![Create input bucket](./images/create-input-bucket.png)
 
@@ -38,20 +38,26 @@ Let's create the `input-bucket` first:
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
 1. Open the navigation menu, select **Identity**, and then select **Policies**.
-2. Click **Create Policy**.
-3. For name, enter `functions-buckets-policy`.
-4. For description, enter `Policy that allows functions dynamic group to manage objects in the bucket`.
-5. Click the **Customize (Advanced)** link and paste the policy statements into the Policy Builder field:
+1. Click **Create Policy**.
+1. For name, enter `functions-buckets-policy`.
+1. For description, enter `Policy that allows functions dynamic group to manage objects in the bucket`.
+1. Under Compartment, select `AppDev` (Or any other compartment that you created on the previous lab)
+1. Go to the Policy Builder section and turn on the `Show manual editor`.
+1. Enter on the textbox the policy bellow:
+
+    `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'`
+
+    Note: the `compartment-name` is your development compartment (the one where you created the VCN and Function Application).
+
+    Example using AppDev Compartment:
 
     ```shell
     <copy>
-    Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'
+    Allow dynamic-group functions-dynamic-group to manage objects in compartment AppDev where target.bucket.name='input-bucket'
     </copy>
     ```
 
-    Note: replace the `compartment-name` with the name of your development compartment (the one where you created the VCN and Function Application).
-
-6. Click **Create**.
+1. Click **Create**.
 
 ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
@@ -60,21 +66,22 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
 1. Open the navigation menu, select **Autonomous Data Warehouse**.
-2. Click **Create Autonomous Database**.
-3. From the list, select your development compartment.
-4. For display name and database name, enter `funcdb`.
-5. For the workload type, select **Transaction Processing**.
-6. For deployment type, select **Shared Infrastructure**.
-7. Enter the admin password.
-8. Click **Create Autonomous Database**.
+1. Click **Create Autonomous Database**.
+1. From the list, select your development compartment.
+1. For display name and database name, enter `funcdb`.
+1. For the workload type, select **Data Warehouse**.
+1. For deployment type, select **Shared Infrastructure**.
+1. Enter the admin password. Make a note on the password, as you will need on the next lab.
+1. Click **Create Autonomous Database**.
+1. Choose license type to **License Included**.
 
-![Create Autonomous Database](./images/create-db.png)
+![Create Autonomous Database](./images/create-db.gif)
 
 Wait for OCI to provision the Autonomous Database, and then click the **Service Console** button.
 
 1. Click **Development** from the sidebar.
-2. Under RESTful Services and SODA, click **Copy URL**.
-3. From your terminal (or Cloud Shell), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
+1. Under RESTful Services and SODA, click **Copy URL**.
+1. From your terminal (or Cloud Shell), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
     ```shell
     <copy>
@@ -83,7 +90,7 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
     </copy>
     ```
 
-4. To double check collection was created, you can list all collections. The output should look similar as below:
+1. To double check collection was created, you can list all collections. The output should look similar as below:
 
     ```bash
     $ curl -u 'ADMIN:<DB-password>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/
@@ -97,4 +104,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Greg Verstraeten
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
-- **Last Updated By/Date** - Adao Junior, June 2021
+- **Last Updated By/Date** - Adao Junior, July 2021

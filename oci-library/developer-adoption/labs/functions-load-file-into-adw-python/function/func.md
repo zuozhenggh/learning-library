@@ -42,7 +42,7 @@ This involves launching Cloud Shell, updating the Fn context, generating an auth
 In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
 1. From the Console UI, open the Cloud Shell.
-2. Clone the Functions source code repository:
+1. Clone the Functions source code repository:
 
     ```shell
     <copy>
@@ -50,7 +50,7 @@ In this step, you will clone the functions source code repository and use the `f
     </copy>
     ```
 
-3. Go to the `samples/oci-load-file-into-adw-python` folder:
+1. Go to the `samples/oci-load-file-into-adw-python` folder:
 
     ```shell
     <copy>
@@ -58,7 +58,7 @@ In this step, you will clone the functions source code repository and use the `f
     </copy>
     ```
 
-4. Deploy the function to the `etl-app`:
+1. Deploy the function to the `etl-app`:
 
     ```shell
     <copy>
@@ -68,7 +68,7 @@ In this step, you will clone the functions source code repository and use the `f
 
 After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
-5. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
+1. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
 
     ```shell
     <copy>
@@ -85,12 +85,13 @@ After you deploy the function, you need to set function configuration values so 
 
 In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
-1. From Console UI, open navigation and select **Application Integration** and click **Events Service**.
-2. Select your development compartment from the **Compartment** list.
-3. Click **Create Rule**.
-4. For display name, enter `load_CSV_into_ADW`.
-5. For description, enter `Load CSV file into ADW`.
-6. Create three rules. You can click **Another Condition** to add more conditions:
+1. From Console UI, open navigation and select **Observability & Management** and click **Events Service** > **Rules**.
+    ![Console Event Rules](./images/console-events-rules.png)
+1. Select your development compartment from the **Compartment** list. e.g.: **AppDev**
+1. Click **Create Rule**.
+1. For display name, enter `load_CSV_into_ADW`.
+1. For description, enter `Load CSV file into ADW`.
+1. Create three rules. You can click **Another Condition** to add more conditions:
 
     | Condition | Service/Attribute Name | Event Type/Attribute Values |
     | --- | --- | --- |
@@ -98,21 +99,21 @@ In this step, you will configure a Cloud Event to trigger the function when you 
     | Attribute | compartmentName | <YOUR_DEVELOPMENT_COMPARTMENT> |
     | Attribute | bucketName | input-bucket |
 
-7. Under Actions, select **Functions**:
+1. Under Actions, select **Functions**:
     - For function compartment, select your development compartment.
     - For function application, select `etl-app`.
     - For function, select `oci-load-file-into-adw-python`.
 
-8. Click **Create Rule**.
+1. Click **Create Rule**.
 
-![Rule](./images/create-rule.png)
+![Rule](./images/create-event-rule.png)
 
 ## **STEP 4:** Test the function
 
 To test the function, you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or the Cloud Shell using the OCI CLI.
 
 1. Open the Cloud Shell.
-2. Go to the functions folder:
+1. Go to the functions folder:
 
     ```shell
     <copy>
@@ -120,7 +121,7 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
     </copy>
     ```
 
-3. Use the OCI CLI to upload `file1.csv` to the `input-bucket`:
+1. Use the OCI CLI to upload `file1.csv` to the `input-bucket`:
 
     ```bash
     $ oci os object put  --bucket-name input-bucket --file file1.csv
@@ -135,14 +136,13 @@ To test the function, you can upload a `.csv` file to the `input-bucket`. You ca
 To see the data in the database, follow these steps:
 
 1. From the OCI console, navigate to **Autonomous Data Warehouse**.
-2. Select your development compartment from the **Compartment** list.
-3. Select **Transaction Processing** from the **Workload Type** list.
-4. Click on the database name (`funcdb`).
-5. Click the **Service Console**.
-6. Click **Development** link from the side bar.
-7. Click **SQL Developer Web**.
-8. Use **ADMIN** and the admin password to authenticate.
-9. In the worksheet, enter the following query:
+1. Select your development compartment from the **Compartment** list.
+1. Click on the database name (`funcdb`).
+1. Click the **Service Console**.
+1. Click **Development** link from the side bar.
+1. Click **Database Actions**.
+1. Use **ADMIN** and the admin password to authenticate.
+1. In the worksheet, enter the following query:
 
     ```shell
     <copy>
@@ -150,9 +150,9 @@ To see the data in the database, follow these steps:
     </copy>
     ```
 
-10. Click the green play button to execute the query.
+1. Click the green play button to execute the query.
 
-11. The data from the CSV file is in the **Query Result** tab.
+1. The data from the CSV file is in the **Query Result** tab.
 
 This concludes this lab.
 
