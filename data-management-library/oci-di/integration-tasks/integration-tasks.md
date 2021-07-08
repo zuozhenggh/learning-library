@@ -284,6 +284,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
 
    In the Details tab, click Select next to each of the following options to make your selections:
+    - For **Identifier**, rename to `EMPLOYEES_SOURCE_FILES`
     - For **Data Asset**, select `Object_Storage`
     - For **Connection**, select `Default Connection`
     - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here
@@ -296,7 +297,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/employees-pattern.png " ")
 
    For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
-   
+
     ![](./images/source-entity.png " ")
 
    In the end, your details for the source operator should look like this.
@@ -304,7 +305,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/pattern-source.png " ")
 
 
-6. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_\_** source to the **DISTINCT\_1** operator.
+6. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.
 ![](./images/add-distinct.png " ")
 
 7. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
@@ -319,7 +320,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 10. In the **Add Expression** panel:
   - **Rename** the expression to `BIRTH_DATE` in the Identifier field
   - Change **Data Type** to `DATE`
-  - Enter `TO_DATE(EXPRESSION_1.EMPLOYEES__.Date_of_Birth, 'MM/dd/yyyy')` in the **expression** box.
+  - Enter `TO_DATE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Date_of_Birth, 'MM/dd/yyyy')` in the **expression** box.
   This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this functions in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
   - Click **Add**.
 
@@ -332,7 +333,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 12. In the **Add Expression** panel:
   - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field
   - Change **Data Type** to `NUMERIC`
-  - Enter `TO_NUMBER(EXPRESSION_1.EMPLOYEES__.Year_of_Joining)` in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
+  - Enter `TO_NUMBER(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Year_of_Joining)` in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
   - Click **Add**.
 
 ![](./images/new-num-exp.png " ")
@@ -375,10 +376,10 @@ This Data Flow will load data from **multiple source files** containing Employee
   - Leave **Data Type** to `VARCHAR`
   - Enter   
   ```
-  <copy>COALESCE(EXPRESSION_1.EMPLOYEES__.Phone_No_, 'Phone No Not Available')</copy>
+  <copy>COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No_, 'Phone Number Not Available')</copy>
   ```
   in the **expression** box
-  This function will fill in the null values for phone number with string `Phone No Not Available`.
+  This function will fill in the null values for phone number with string `Phone Number Not Available`.
   - Click **Add**.
 
 ![](./images/phone-no-exp.png " ")
@@ -387,7 +388,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 20. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.
 ![](./images/attributes-tab.png " ")
 
-21. Check the following two fields: **EMPLOYEES\_\_.Age\_in\_Yrs\_**, **EMPLOYEES\__.Year\_of\_Joining**. We will exclude these fields from this operator.
+21. Check the following two fields: **EMPLOYEES\_SOURCE\_FILES.Age\_in\_Yrs\_**, **EMPLOYEES\_SOURCE\_FILES.Year\_of\_Joining**. We will exclude these fields from this operator.
 ![](./images/check-fields.png " ")
 
 22. Click on **Actions** and then on **Exclude by selection**.
@@ -399,7 +400,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 24. Click on **Data** tab of the **EMPLOYEE\_AGE\_AND\_PHONE** operator.
 ![](./images/data-tab-employee.png " ")
 
-25. Scroll to the right until you get to the attribute **EXPRESSION\_1.EMPLOYEES\_\_.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the region: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
+25. Scroll to the right until you get to the attribute **EXPRESSION\_1.EMPLOYEES\_SOURCE\_FILES.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the region: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
 ![](./images/data-profile-region.png " ")
 
 26. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
@@ -408,13 +409,13 @@ This Data Flow will load data from **multiple source files** containing Employee
 27. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the **default Match option** (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
 ![](./images/split-region.png " ")
 
-28. Still in Properties bar of the Split Operator, click on **Add** in ****Conditions section**.
+28. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section**.
 ![](./images/add-cond.png " ")
 
 29. In **Add Split Condition** page:
   - Enter **Identifier** `WEST_MIDWEST_REGION`
-  - For **Condition** enter `SPLIT_1.EMPLOYEES__.Region IN ('Midwest','West')`
-  - Click **Save Changes**.
+  - For **Condition** enter `SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')`
+  - Click **Add**.
 
 ![](./images/midwest-cond.png " ")
 
