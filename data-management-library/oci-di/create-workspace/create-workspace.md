@@ -51,7 +51,7 @@ Before you can get started with Data Integration, you must first create a **Work
 2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
      ![](./images/menu_di.png " ")
 
-3. Under **List Scope**, from the Compartment dropdown, select the compartment you created policies for in the previous section and on the Data Integration Workspaces page, click **Create Workspace**.
+3. Under **List Scope**, from the Compartment dropdown, select the compartment that you created policies for in the previous section and on the Data Integration Workspaces page, click **Create Workspace**.
      ![](./images/workspaces.png " ")
 
 4. In the **Create Workspace** panel, complete the fields as follows:
@@ -64,6 +64,7 @@ Before you can get started with Data Integration, you must first create a **Work
   - Click **Create**.
 
      ![](./images/create_workspace.png " ")
+
 
 
 5. The workspace takes a few minutes to be created and become active. Your are now in the Workspaces page where you can see your new workspace. While it is being created, you can see the status as **Creating**.
