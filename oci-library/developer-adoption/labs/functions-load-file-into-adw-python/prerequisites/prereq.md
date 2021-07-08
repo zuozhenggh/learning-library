@@ -24,7 +24,7 @@ Estimated time: 10 minutes
 
 1. Once you log in you will see a page similar to the one below.
 
-  ![Landing Screen](../../common/setup-cloud-env/images/landingScreen2.png " ")
+  ![Landing Screen](../../common/setup-cloud-env/images/landing-screen-mid-2021.png " ")
 
 ## **STEP 2:** Create compartment
 
