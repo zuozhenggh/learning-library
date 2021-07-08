@@ -21,13 +21,13 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1**: Create a Deployment
+## **STEP 1:** Create a Deployment
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-		![Select Oracle GoldenGate under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png "Select Oracle GoldenGate under Oracle Database")
+		![Select Oracle GoldenGate under Oracle Database](images/database-goldengate.png "Select Oracle GoldenGate under Oracle Database")
 
     You're brought to the **Deployments** page.
 
