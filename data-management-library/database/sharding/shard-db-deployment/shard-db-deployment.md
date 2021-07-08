@@ -287,12 +287,12 @@ In this workshop we choose to co-locate the shard director software on the same 
 
 10. When you see the installation `100% Done`, press **Enter** to return to the command line. Exit to the opc user.
 
-   ```
-   [oracle@cata ~]$ <copy>exit</copy>
-   logout
-   
-   [opc@cata ~]$ 
-   ```
+    ```
+    [oracle@cata ~]$ <copy>exit</copy>
+    logout
+    
+    [opc@cata ~]$ 
+    ```
 
   
 
@@ -476,46 +476,46 @@ In this workshop we choose to co-locate the shard director software on the same 
 
 10. Enable archivelog and flashback on.
 
-   ```
-   SQL> <copy>!mkdir -p /u01/app/oracle/fast_recovery_area</copy>
-   
-   SQL> <copy>alter system set db_recovery_file_dest_size=50G scope=both;</copy>
-   
-   System altered.
-   
-   SQL> <copy>alter system set db_recovery_file_dest='/u01/app/oracle/fast_recovery_area' scope=both;</copy>
-   
-   System altered.
-   
-   SQL> <copy>shutdown immediate</copy>
-   Database closed.
-   Database dismounted.
-   ORACLE instance shut down.
-   
-   SQL> <copy>startup mount;</copy>
-   ORACLE instance started.
-   
-   Total System Global Area 4647286504 bytes
-   Fixed Size		    9144040 bytes
-   Variable Size		  855638016 bytes
-   Database Buffers	 3774873600 bytes
-   Redo Buffers		    7630848 bytes
-   Database mounted.
-   
-   SQL> <copy>alter database archivelog;</copy>
-   
-   Database altered.
-   
-   SQL> <copy>alter database flashback on;</copy>
-   
-   Database altered.
-   
-   SQL> <copy>alter database open;</copy>
-   
-   Database altered.
-   
-   SQL> 
-   ```
+    ```
+    SQL> <copy>!mkdir -p /u01/app/oracle/fast_recovery_area</copy>
+    
+    SQL> <copy>alter system set db_recovery_file_dest_size=50G scope=both;</copy>
+    
+    System altered.
+    
+    SQL> <copy>alter system set db_recovery_file_dest='/u01/app/oracle/fast_recovery_area' scope=both;</copy>
+    
+    System altered.
+    
+    SQL> <copy>shutdown immediate</copy>
+    Database closed.
+    Database dismounted.
+    ORACLE instance shut down.
+    
+    SQL> <copy>startup mount;</copy>
+    ORACLE instance started.
+    
+    Total System Global Area 4647286504 bytes
+    Fixed Size		    9144040 bytes
+    Variable Size		  855638016 bytes
+    Database Buffers	 3774873600 bytes
+    Redo Buffers		    7630848 bytes
+    Database mounted.
+    
+    SQL> <copy>alter database archivelog;</copy>
+    
+    Database altered.
+    
+    SQL> <copy>alter database flashback on;</copy>
+    
+    Database altered.
+    
+    SQL> <copy>alter database open;</copy>
+    
+    Database altered.
+    
+    SQL> 
+    ```
 
   
 

@@ -342,7 +342,7 @@ In the Oracle Database 19c New Features workshop, you run many prebuilt scripts.
 2. Use the `wget` command to download a ZIP file containing the lab files to the `labs` directory.
 
     ```nohighlighting
-    $ <copy>wget "https://objectstorage.us-phoenix-1.oraclecloud.com/p/83Tmlx4J_v8iicr-u5G8PYlzpiFmXxxB9qKGBgEVScgZXHjmyb5xSLUOdolnPO0F/n/c4u03/b/ll-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
+    $ <copy>wget "https://objectstorage.us-ashburn-1.oraclecloud.com/p/H9kHHj4bjsvsZ3H3lLQAq8KLHfVcx9K_AorT0HveZVG_LDFOH1zUTsjCUZvp4_FO/n/c4u04/b/II-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
         ```
 
 
