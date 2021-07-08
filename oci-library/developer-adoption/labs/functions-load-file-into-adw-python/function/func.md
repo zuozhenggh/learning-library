@@ -142,6 +142,7 @@ To see the data in the database, follow these steps:
 1. Click **Development** link from the side bar.
 1. Click **Database Actions**.
 1. Use **ADMIN** and the admin password to authenticate.
+1. Click **SQL** to get to the worksheet.
 1. In the worksheet, enter the following query:
 
     ```shell
