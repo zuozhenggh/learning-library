@@ -19,22 +19,31 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Establish connection to Catalog and shard1 Database.
+## **STEP 1**: Establish connection to Catalog and to one of the Shards.
 
-1. Open a terminal and execute below as **opc** user to connect to Catalog.
+1. Open a terminal and execute below as **opc** user to connect to **Catalog**.
 
     ```
     <copy>
     sudo docker exec -i -t catalog /bin/bash
+    </copy>
+    ```
+
+    ```
+    <copy>
     sqlplus SHARDUSERTEST/oracle@PCAT1PDB
     </copy>
     ```
 
-2. Open another terminal and execute below as **opc** user to connect to Shard1 Database.
+2. Open another terminal and execute below as **opc** user to connect to one of the shards. In this    case, you will connect to **shard3** as below.
 
     ```
     <copy>
-    sudo docker exec -i -t shard1 /bin/bash
+    sudo docker exec -i -t shard3 /bin/bash
+    </copy>
+    ```
+    ```
+    <copy>
     sqlplus SHARDUSERTEST/oracle@PORCL1PDB
     </copy>
     ```
@@ -43,19 +52,9 @@ This lab assumes you have:
 
 ## **STEP 2**: Application Queries on sharding Database.
 
-Run the below each sql query by login into Catalog database as well as one of the shard database. You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
+Run the below each sql query by login into Catalog database as well as one of the shard database(shard3 in this case). You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb_porcl1pdb/ porcl2cdb_porcl2pdb/ porcl3cdb_porcl3pdb).
 
-1. Top Selling Products: Return top Selling products in the store from last two months
- by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
-
-    ```
-    <copy>
-    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
-    </copy>
-    ```
-    ![](./images/query1.JPG " ") 
-
-2. Text search on Products (JSON) table with auto corrections: Oracle Fuzzy matching is a method that provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
+1. Text search on Products (JSON) table with auto corrections: Oracle Fuzzy matching is a method that provides an improved ability to process word-based matching queries to find matching phrases or sentences from a database.
 
     ```
     <copy>
@@ -65,7 +64,7 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ![](./images/query2.JPG " ") 
 
-3. Dollor Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
+2. Dollor Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
    
     ```
     <copy>
@@ -76,16 +75,18 @@ Run the below each sql query by login into Catalog database as well as one of th
     ![](./images/query3.JPG " ") 
 
 
-4. Select products ordered by maximum sell
+3. Select products ordered by maximum sell
 
     ```
     <copy>
+    set lines 200 pages 200
+    col SKU for a20
     select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
     </copy>
     ```
     ![](./images/query5.JPG " ") 
 
-5. Customer Average Review and review count
+4. Customer Average Review and review count
 
     ```
     <copy>
@@ -99,6 +100,33 @@ Run the below each sql query by login into Catalog database as well as one of th
     ```
 
     ![](./images/query6.JPG " ") 
+
+5.  Let's try one query at **shard2** database. Open another terminal and execute below as **opc** user to connect to **shard2**.
+
+    ```
+    <copy>
+    sudo docker exec -i -t shard2 /bin/bash
+    </copy>
+    ```
+    ```
+    <copy>
+    sqlplus SHARDUSERTEST/oracle@PORCL1PDB
+    </copy>
+    ```
+
+    Top Selling Products: Return top Selling products in the store from last two months
+    by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
+
+    ```
+    <copy>
+    set lines 200 pages 200
+    col SKU for a20
+    col PRODUCT_NAME for a30
+    col BEST_REVIEW for a50
+    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
+    </copy>
+    ```
+    ![](./images/query1.JPG " ") 
 
 
 ## Learn More
