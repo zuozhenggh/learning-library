@@ -109,7 +109,7 @@ Before you create a dynamic group, you need to get your development compartment 
 1. Click **Create Dynamic Group**.
 1. For name, enter `functions-dynamic-group`.
 1. For description, enter `Group with all functions in a compartment`.
-1. To select the functions that belong to the dynamic group, [write matching rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Writing). Write the following matching rule that includes all functions within a compartment you created your application in:
+1. To select the functions that belong to the dynamic group, [write matching rules](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Writing). Write the following matching rule that includes all functions within a compartment you created your application in. This will be valid for new or previous functions created on this compartment:
 
     ```shell
     <copy>

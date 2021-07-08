@@ -23,8 +23,11 @@ You need a `input-bucket` bucket in Object Storage. You will use the `input-buck
 
 Let's create the `input-bucket` first:
 
-1. Open the navigation menu, select **Object Storage**, and then select **Object Storage**.
-1. Select your development compartment from the **Compartment** list.
+1. Click the **Navigation Menu** in the upper left, navigate to **Storage** and select **Buckets** under **Object Storage and Archive Storage**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+
+1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click the **Create Bucket**.
 1. Name the bucket **input-bucket**.
 1. Select the **Standard** storage tier.
@@ -37,7 +40,10 @@ Let's create the `input-bucket` first:
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
-1. Open the navigation menu, select **Identity**, and then select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+
 1. Click **Create Policy**.
 1. For name, enter `functions-buckets-policy`.
 1. For description, enter `Policy that allows functions dynamic group to manage objects in the bucket`.
@@ -66,22 +72,26 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
 1. Open the navigation menu, select **Autonomous Data Warehouse**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
 1. Click **Create Autonomous Database**.
 1. From the list, select your development compartment.
 1. For display name and database name, enter `funcdb`.
 1. For the workload type, select **Data Warehouse**.
 1. For deployment type, select **Shared Infrastructure**.
 1. Enter the admin password. Make a note on the password, as you will need on the next lab.
-1. Click **Create Autonomous Database**.
 1. Choose license type to **License Included**.
+1. Click **Create Autonomous Database**.
 
-![Create Autonomous Database](./images/create-db.gif)
+    ![Create Autonomous Database](./images/create-db.gif)
 
-Wait for OCI to provision the Autonomous Database, and then click the **Service Console** button.
+    Wait for OCI to provision the Autonomous Database, and then click the **Service Console** button.
 
 1. Click **Development** from the sidebar.
 1. Under RESTful Services and SODA, click **Copy URL**.
-1. From your terminal (or Cloud Shell), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
+1. From your OCI Cloud Shell (If using another terminal, you need to make sure you have all tools to test or alternatives), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
     ```shell
     <copy>
