@@ -2,31 +2,33 @@
 
 ## Introduction
 
-This lab takes you through the steps needed to load data from the MovieStream data lake on Oracle Object Store into an Oracle Autonomous Data Warehouse instance in preparation for exploration and analysis
+This lab takes you through the steps needed to load data from the MovieStream data lake on Oracle Object Store into an Oracle autonomous database instance in preparation for exploration and analysis.
 
-Estimated Time: 20 minutes
+You can load data into your autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, and Oracle and 3rd party data integration tools. You can load data:
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
++ from files in your local device, or
++ from tables in remote databases, or
++ from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
+
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
+
+Estimated Time: 30 minutes
 
 ### Objectives <optional>
 
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+-   Learn how to define object store credentials for your autonomous database
+-   Learn how to load data from the Object Store
+-   Learn how to troubleshoot data loads
 
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: <what is the action in this step>
+## **Step 1**: Load Data from Object Store using the Database Actions Data Load Tool
 
-(optional) Step 1 opening paragraph.
+1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-1. Sub step 1
-
-		![Image alt text](images/sample1.png)
+		![Click Tools and Open Database Actions](images/sample1.png)
 
   To create a link to local file you want the reader to download, use this format:
 
