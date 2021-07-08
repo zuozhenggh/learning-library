@@ -9,13 +9,14 @@ This lab will walk you through combining different components of OCI and the aut
 ### Objectives
 
 In this lab, you will:
-    * Create a table and Auto-REST enable it
-    * Create a function to pass a CSV file into batch load API of the auto-REST enabled table
-    * Create an event that looks in a bucket for CSV files to consume and pass into our function.
+* Create a table and Auto-REST enable it
+* Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+* Create an event that looks in a bucket for CSV files to consume and pass into our function.
 
 ### Prerequisites
 
-- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
 ## **STEP 1:** Download Lab Files
 
