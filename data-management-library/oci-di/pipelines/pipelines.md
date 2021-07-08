@@ -5,6 +5,7 @@
 This lab will walk you through the steps to create an OCI Data Integration **application**, **publish tasks** into the application and create a Data Integration **pipeline** which calls the published tasks.
 
 The Pipeline you will create in this Lab step will orchestrate the execution of all of the tasks you created and published in this Workshop until now (Integration tasks, Data Loader task, SQL task). It will load and transform Customers, Revenues and Employees data and populate a statistics table in the Autonomous Data Warehouse with the success/error result of the Pipeline, along with the pipeline name and task run key.
+
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives
