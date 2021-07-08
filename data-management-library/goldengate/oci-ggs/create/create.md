@@ -27,7 +27,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-		![Select Oracle GoldenGate from Oracle Database](images/database-goldengate.png " ")
+    ![GoldenGate Deployments page](images/database-goldengate.png "Deployments page")
 
     You're brought to the **Deployments** page.
 

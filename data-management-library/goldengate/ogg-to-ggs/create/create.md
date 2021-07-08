@@ -27,7 +27,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-		![](images/database-goldengate.png " ")
+    ![GoldenGate Deployments page](images/database-goldengate.png "Deployments page")
 
     You're brought to the **Deployments** page.
 
@@ -35,35 +35,36 @@ This lab assumes that you completed all preceding labs.
 
 2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL1234-user, select the compartment **LL1234-COMPARTMENT**.
 
-2.  On the Deployments page, click **Create Deployment**.
+3.  On the Deployments page, click **Create Deployment**.
 
     ![Click Create Deployment](images/01-02-01.png "Create a deployment")
 
-3.  In the Create Deployment panel, enter **GGSDeployment** for Name.
+4.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-4.  From the Compartment dropdown, select a compartment.
+5.  From the Compartment dropdown, select a compartment.
 
-5.  For OCPU Count, enter **2**.
+6.  For OCPU Count, enter **2**.
 
-6.  For Subnet, select **Public Subnet**.
+7.  For Subnet, select **Public Subnet**.
 
-7.  For License type, select **Bring You Own License (BYOL)**.
+8.  For License type, select **Bring You Own License (BYOL)**.
 
-8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+9.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Create GoldenGate Deployment](images/01-02_create_deployment_panel.png "Create GoldenGate Deployment")
+    ![Click Create Deployment](images/01-02-create_deployment_panel.png "Create a deployment")
 
-9.  Click **Next**.
+10. Click **Next**.
 
-10. For GoldenGate Instance Name, enter **ogginstance**.
+11. For GoldenGate Instance Name, enter **ogginstance**.
 
-11. For Administrator Username, enter **oggadmin**.
+12. For Administrator Username, enter **oggadmin**.
 
-12. For Administrator Password, enter a password. Take note of this password.
+13. For Administrator Password, enter a password. Take note of this password.
 
-13. Click **Create**.
+14. Click **Create**.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
+
 
 ## **STEP 2:** Review the Deployment details
 
