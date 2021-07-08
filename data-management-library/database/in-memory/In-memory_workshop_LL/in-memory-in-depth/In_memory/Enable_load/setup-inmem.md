@@ -173,7 +173,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
           ALTER TABLE part INMEMORY PRIORITY HIGH;
           ALTER TABLE customer INMEMORY PRIORITY MEDIUM;
           ALTER TABLE supplier INMEMORY PRIORITY LOW;
-          ALTER TABLE date_dim INMEMORY ;
+          ALTER TABLE date_dim INMEMORY;
           </copy>
       ````
 
@@ -251,7 +251,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     ````
     <copy>
-    ALTER TABLE bonus NO INMEMORY ;
+    ALTER TABLE bonus NO INMEMORY;
     </copy>
     ````
 
@@ -340,9 +340,9 @@ BONUS      YEAR                 DEFAULT
 
  ![](images/IMHybrid.png)
 
-## Step 4: In-Memory External Tables. (Cloud and  Engineered Systems only)
+## Step 4: In-Memory External Tables.
 In-Memory External Tables builds on the theme of expanding analytic queries to all data, not just Oracle native data. Oracle Database already supports accessing external data with features like External Tables and Big Data SQL to allow fast and secure SQL query on all types of data. In-Memory External Tables allow essentially any type of data to be populated into the IM column store. This means non-native Oracle data can be analyzed with any data in Oracle Database using Oracle SQL and its rich feature set and also get the benefit of using all of the performance enhancing features of Database In-Memory.
-Currently , this feature is licensed for only Oracle Cloud databases and  Engineered Systems. We can still test the feature on EE after setting  "_exadata_feature_on" to true. This feature could eventually release on all EE releases.
+Until 19c , this feature is licensed for only Oracle Cloud databases and  Engineered Systems. We can still test the feature on EE after setting  "_exadata_feature_on" to true. This feature is available in 21c EE releases.
 
  ![](images/IMExternal.png)
 
@@ -354,10 +354,10 @@ Currently , this feature is licensed for only Oracle Cloud databases and  Engine
  show pdbs
  alter session set container=orclpdb;
  create or replace directory ext_dir as '/home/oracle/labs' ;
- grant read,write on directory ext_dir to ssb;
- connect ssb/Ora_DB4U@localhost:1521/orclpdb   
+ grant read, write on directory ext_dir to ssb;
+ connect ssb/Ora_DB4U@localhost:1521/orclpdb
 
-CREATE TABLE ext_emp  ( ID NUMBER(6), FIRST_NAME VARCHAR2(20),
+ CREATE  TABLE ext_emp ( ID NUMBER(6), FIRST_NAME VARCHAR2(20),
      LAST_NAME VARCHAR2(25), EMAIL VARCHAR2(25),
      PHONE_NUMBER VARCHAR2(20), HIRE_DATE DATE,
      JOB_ID VARCHAR2(10), SALARY NUMBER(8,2),
