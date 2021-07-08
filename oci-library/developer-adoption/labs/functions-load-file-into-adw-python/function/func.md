@@ -33,7 +33,7 @@ In this step, you will create an application and set up Fn CLI in the OCI Cloud 
 1. Click on the created application to open the application details.
 1. Click the **Getting Started** link and follow the **Begin your Cloud Shell session** and **Setup fn CLI on Cloud Shell** sections in the **Cloud Shell Setup**.
 
-![Create an application](./images/create-fn-app.png)
+    ![Create an application](./images/create-fn-app.png)
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
@@ -66,7 +66,7 @@ In this step, you will clone the functions source code repository and use the `f
     </copy>
     ```
 
-After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
+    After you deploy the function, you need to set function configuration values so the function knows how to connect to the Autonomous Database.
 
 1. Using the Fn CLI, set the following configuration values. Make sure you replace the `[ORDS_BASE_URL]` and `[DB_PASSWORD]` with your values:
 
@@ -91,13 +91,26 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 1. Click **Create Rule**.
 1. For display name, enter `load_CSV_into_ADW`.
 1. For description, enter `Load CSV file into ADW`.
-1. Create three rules. You can click **Another Condition** to add more conditions:
+1. Create three rules.
+    - Enter the first Condition and click **Another Condition** to add more conditions:
 
-    | Condition | Service/Attribute Name | Event Type/Attribute Values |
-    | --- | --- | --- |
-    | Event Type | Object Storage | Object - Create | 
-    | Attribute | compartmentName | <YOUR_DEVELOPMENT_COMPARTMENT> |
-    | Attribute | bucketName | input-bucket |
+        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | --- | --- | --- |
+        | Event Type | Object Storage | Object - Create |
+
+    - Enter the Second Condition and click **Another Condition** to add more conditions:
+
+        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | --- | --- | --- |
+        | Attribute | compartmentName | AppDev |
+
+        Note: If you deployed in a different compartment, enter the name of the compartment instead of AppDev
+
+    - Enter the Third Condition:
+
+        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | --- | --- | --- |
+        | Attribute | bucketName | input-bucket |
 
 1. Under Actions, select **Functions**:
     - For function compartment, select your development compartment.
