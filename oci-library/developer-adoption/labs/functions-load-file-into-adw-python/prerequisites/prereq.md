@@ -22,7 +22,7 @@ Estimated time: 10 minutes
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
-1. Once you log in you will see a page similar to the one below. Click on "Infrastructure Dashboard."
+1. Once you log in you will see a page similar to the one below.
 
   ![Landing Screen](../../common/setup-cloud-env/images/landingScreen2.png " ")
 
