@@ -20,11 +20,10 @@ This workshop consists of multiple 'labs' - each describing one aspect or featur
 
 Estimated Lab Time: 75-90 minutes
 
-<!---
 Watch this quick video to know why JSON in Oracle Autonomous Database is awesome.
 
-[](youtube:I8k8K6LGsug)
--->
+[](youtube:yiGFO139ftg)
+
 
 ### About JSON
 

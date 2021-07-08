@@ -1,5 +1,16 @@
 # Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services
 
+This lab will walk you through combining different components of OCI and the autonomous database to create an end to end data loading flow with CSV files.
+
+*Estimated Lab Time:* 60 Minutes
+
+### Objectives
+
+In this lab, you will:
+    - Create a table and Auto-REST enable it
+    - Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+    - Create an event that looks in a bucket for CSV files to consume and pass into our function.
+
 ### Prerequisites
 
 - You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
