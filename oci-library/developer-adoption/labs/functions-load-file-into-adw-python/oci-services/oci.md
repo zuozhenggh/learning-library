@@ -90,20 +90,50 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
 1. Click **Development** from the sidebar.
 1. Under RESTful Services and SODA, click **Copy URL**.
+
+    ![RESTful Services and SODA URL](./images/database-ords-url.png)
+
+1. Open OCI Cloud Shell
+
 1. From your OCI Cloud Shell (If using another terminal, you need to make sure you have all tools to test or alternatives), create the collection called `regionsnumbers` by running the command below. Make sure you replace the `<ORDS_BASE_URL>` with the value you copied in the previous step, and `<DB-PASSWORD>` with the admin password you set when you created the Autonomous Database.
 
-    ```shell
-    <copy>
-    export ORDS_BASE_URL=<ORDS_BASE_URL>
-    curl -X PUT -u 'ADMIN:<DB-PASSWORD>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/regionsnumbers
-    </copy>
-    ```
+    - export env variable `ORDS_BASE_URL`:
+
+        ```shell
+        <copy>
+        export ORDS_BASE_URL=<ORDS_BASE_URL>
+        </copy>
+        ```
+
+    - export env variable DB_PASSWORD:
+
+        ```shell
+        <copy>
+        export DB_PASSWORD=<DB_PASSWORD>
+        </copy>
+        ```
+
+        Note: Include passwords on env variables is not recommended in a production environment. Is include here to facilitate the copy of the commands
+
+    - create collection `regionsnumbers`:
+
+        ```shell
+        <copy>
+        curl -X PUT -u 'ADMIN:"'$DB_PASSWORD'"' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/regionsnumbers
+        </copy>
+        ```
 
 1. To double check collection was created, you can list all collections. The output should look similar as below:
 
-    ```bash
-    $ curl -u 'ADMIN:<DB-password>' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/
+    ```shell
+    <copy>
+    curl -u 'ADMIN:"'$DB_PASSWORD'"' -H "Content-Type: application/json" $ORDS_BASE_URL/admin/soda/latest/
+    </copy>
+    ```
 
+    You should see something like this:
+
+    ```bash
     {"items":[{"name":"regionsnumbers","properties":{"schemaName":"ADMIN","tableName":"REGIONSNUMBERS","keyColumn":{"name":"ID","sqlType":"VARCHAR2","maxLength":255,"assignmentMethod":"UUID"},"contentColumn":{"name":"JSON_DOCUMENT","sqlType":"BLOB","jsonFormat":"OSON"},"versionColumn":{"name":"VERSION","type":"String","method":"UUID"},"lastModifiedColumn":{"name":"LAST_MODIFIED"},"creationTimeColumn":{"name":"CREATED_ON"},"readOnly":false},"links":[{"rel":"canonical","href":"https://.../ords/admin/soda/latest/regionsnumbers"}]}],"hasMore":false}
     ```
 

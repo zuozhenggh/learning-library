@@ -78,21 +78,19 @@ In this step, you will clone the functions source code repository and use the `f
 
 1. Using the Fn CLI, set the following configuration values.
 
-    Note: This commands uses the **`ORDS_BASE_URL`** env variable that you exported after created the Oracle Database. If your Cloud Shell timed out or was reconnected, you may need to export again using `export ORDS_BASE_URL=<ORDS_BASE_URL>` replacing `<ORDS_BASE_URL>` with the copied URL from the **RESTful Services and SODA**
+    Note: These commands uses the **`ORDS_BASE_URL`** and **DB_PASSWORD** env variables that you exported after created the Oracle Database. If your Cloud Shell timed out or was reconnected, you may need to export again using `export ORDS_BASE_URL=<ORDS_BASE_URL>` replacing `<ORDS_BASE_URL>` with the copied URL from the **RESTful Services and SODA** and `export DB_PASSWORD=<DB_PASSWORD>` replacing `<DB_PASSWORD>` with the ADMIN database password that you chose
 
     ```shell
     <copy>
     fn config function etl-app oci-load-file-into-adw-python ords-base-url $ORDS_BASE_URL && \
     fn config function etl-app oci-load-file-into-adw-python db-schema admin && \
-    fn config function etl-app oci-load-file-into-adw-python db-user admin 
+    fn config function etl-app oci-load-file-into-adw-python db-user admin
     </copy>
     ```
 
-    Make sure you replace the `[DB_PASSWORD]` with your values:
-
     ```shell
     <copy>
-    fn config function etl-app oci-load-file-into-adw-python dbpwd-cipher [DB-PASSWORD]
+    fn config function etl-app oci-load-file-into-adw-python dbpwd-cipher $DB_PASSWORD
     </copy>
     ```
 
