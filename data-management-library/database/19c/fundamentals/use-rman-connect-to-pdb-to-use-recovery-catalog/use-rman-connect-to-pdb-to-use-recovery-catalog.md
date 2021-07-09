@@ -1,13 +1,4 @@
----
-duration: PT0H15M0S
-description: Use RMAN to connect to PDB to use recovery catalog
-level: Beginner
-roles: Application Developer;Developer;Technology Manager
-lab-id:
-products: en/database/oracle/oracle-database/19
-keywords: Database
-inject-note: true
----
+
 # Use Recovery Manager (RMAN) to Connect to a PDB to Use the Recovery Catalog
 
 ## Introduction
@@ -30,11 +21,10 @@ Be sure that the following tasks are completed before you start:
 
 - Lab 4 completed.
 - Oracle Database 19c installed.
-- A database, either non-CDB or CDB with a PDB.
-- If not downloaded, download 19cNewFeatures.zip 
+- If not downloaded, download 19cNewFeatures.zip
 
-
-
+## **STEP 0**: Enable ARCHIVELOG mode
+1. 
 ## **STEP 1**: Prepare environment
 1. Execute the **/home/oracle/labs/19cnf/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
    

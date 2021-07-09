@@ -1,13 +1,4 @@
----
-duration: PT0H05M0S
-description: Omit column encryption attribute during import.
-level: Beginner
-roles: Application Developer;Developer;Technology Manager
-lab-id:
-products: en/database/oracle/oracle-database/19
-keywords: Database
-inject-note: true
----
+
 # Omit the Column Encryption Attribute During Import
 
 ## Introduction

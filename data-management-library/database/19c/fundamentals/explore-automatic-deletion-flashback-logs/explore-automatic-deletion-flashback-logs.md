@@ -1,13 +1,4 @@
----
-duration: PT0H10M0S
-description: Explore automatic deletion of flashback logs.
-level: Beginner
-roles: Application Developer;Developer;Technology Manager
-lab-id:
-products: en/database/oracle/oracle-database/19
-keywords: Database
-inject-note: true
----
+
 # Explore Automatic Deletion of Flashback Logs
 
 ## Introduction
