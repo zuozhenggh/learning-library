@@ -22,13 +22,11 @@ Estimated Time: 30 minutes
 -   Learn how to troubleshoot data loads
 
 
-*This is the "fold" - below items are collapsed by default*
-
 ## **Step 1**: Load Data from Object Store using the Database Actions Data Load Tool
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-		![Click Tools and Open Database Actions](images/launchdbactions.png)
+	  ![Click on Tools, then Database Actions](images/launchdbactions.png)
 
 2. On the login screen, enter the username MOVIEWORK, then click the blue **Next** button.
 
