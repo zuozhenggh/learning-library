@@ -42,7 +42,10 @@ Estimated Time: 30 minutes
 
 5. Click on **+Add Cloud Storage** in the top right of your screen.
 
--   In the **Name** field, enter 'MovieStream Data Lake'
+-   In the **Name** field, enter 'MovieStreamDataLake'
+
+> **Note:** Take care not to use spaces in the name.
+
 -   Leave the Cloud Store selected as **Oracle**
 -   Copy and paste the following URI into the URI + Bucket field:
 
@@ -52,27 +55,60 @@ Estimated Time: 30 minutes
 -   Click on the **Test** button to test the connection. Then click **Save**.
 
 
-## **Step 2:** Link to your source files, creating External Tables in the database
+## **Step 2:** Load data from files in Object Storage
 
 1. Now, to load or link data from this newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
     ![Click on Data Load](images/backtodataload.png)
 
-2. Under **What do you want to do with your data?** select **LINK DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
-    ![Select Link Data, then Cloud Storage](images/linkdata.png)
+    ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-3. Up to here... problem because folders are not supported.
+3. Expand the **customer**, **customer_segment**, **genre** and **movie** folders in the tree view on the left hand side and drag the following four files to the right hand pane:
 
+-   customer.csv
+-   customer_segment.csv
+-   genre.csv
+-   movies.json
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+> **Note:** We will be loading files from the **custsales** folder in later steps.
 
-4. Code examples that include variables
+4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables using simple names. First, click on the pencil icon to edit the settings for the customer/customer.csv load task.
+
+    ![Edit the load task for customer.csv](images/editcustomerload.png)
+
+5. Rename the target table to **CUSTOMER**
+
+    ![Change the target table name to CUSTOMER](images/custtablename.png)
+
+6. In the Mapping section, we can see that the Data Load tool has guessed the target data types for the table. In this case, we want to change the target column type for the **POSTAL_CODE** column from NUMBER to VARCHAR2(4000).
+
+    ![Change the column type for POSTAL_CODE](images/postalcodetype.png)
+
+7. Click **Close** to close the settings editor.
+
+8. Click on the pencil icon to edit the settings for the customer_segment/customer_segment.csv load task.
+
+9. Rename the target table to **CUSTOMER_SEGMENT**. Then click **Close**.
+
+10. Click on the pencil icon to edit the settings for the genre/genre.csv load task.
+
+11. Rename the target table to **GENRE**. Then click **Close**.
+
+12. Click on the pencil icon to edit the settings for the movie/movies.json load task.
+
+13. Rename the target collection name to **MOVIES**, and the name of the view to generate under **Generate View** to **MOVIES**. Then click **Close**.
+
+    ![Edit the settings for movie.json](images/editmovies.png)
+
+14. Click on the Play button to run the data load job.
+
+    ![Run the data load job](images/rundataload.png)
+    
+
+----------------------------------
+N. Code examples that include variables
 
 	```
   <copy>ssh -i <ssh-key-file></copy>
