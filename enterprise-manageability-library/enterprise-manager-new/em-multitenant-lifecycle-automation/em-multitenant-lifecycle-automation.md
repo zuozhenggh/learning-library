@@ -24,33 +24,28 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
 - SSH Private Key to access the host via SSH
-- OMS super-user Credentials:
-    - Username: **sysman**
-    - password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-```
-<copy>https://<EM13c Host Public IP address>:7803/em</copy>
-e.g: https://111.888.111.888:7803/em
-```
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-
-## **STEP 0:** Running your Workload
-
-### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
-
-You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
-
 ## **STEP 1:** Create Pluggable Database (PDB)
 
-1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
+1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+
+    ```
+    Username: <copy>sysman</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
+    ![](../initialize-environment/images/em-login.png " ")
 
 2.  Navigate to the ***Enterprise menu >> Provisioning and Patching >> Database provisioning***.
 
@@ -87,7 +82,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/7d3fcabc8fe5f6f80fe20e55bb28655d.jpg " ")
 
-11. In the Schedule page, select the check box immediately next to Start.Click Next. 
+11. In the Schedule page, select the check box immediately next to Start. Click Next.
 
 12. In the Review page, review the details you have provided for the deployment procedure. If you are satisfied with the details, click Submit. You can now click on View Execution Details link to see details.
 
@@ -157,7 +152,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/2ac79b220d664b868c62e4529791e187.jpg " ")
 
-  **Note**: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
+  *Note*: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
 
 15. On the Identification page, in the PDB Template Location section: Select **Software Library** radio button. Click on the magnifier icon placed on Location text box. Select the Name which you created during Unplug .Click Next
 
@@ -175,7 +170,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 20. Optionally Click the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***. Click on CDB186 and you will see the newly created PDB
 
-  **Note**: You do not have to wait until the steps complete and move on to the next section.
+  *Note*: You do not have to wait until the steps complete and move on to the next section.
 
 ## **STEP 3:** Clone an existing Pluggable Database (PDB)
 
@@ -309,7 +304,7 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
     -  **Provision New Empty Pluggable Database**: This template enables users to create a new pluggable database in a container database configured by DBA.
     -  **Provision Pluggable Database with Data**: This template enables users to create a new pluggable database with data from non-container database.
-  
+
 4. In the **Pluggable Database Configuration** section, enter Service and SID details:
 
       * Name: **YOUR INITIALS\_PDB2** (e.g. AS\_PDB2)
@@ -318,19 +313,28 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
     ![](images/fd8fe73465009dbd65e2231503481e40.jpg " ")
 
-5. Enter the Credentials details in the “**Pluggable Database Administrator Account**”
+5. Enter the Credentials details in the “**Pluggable Database Administrator Account**” and for Tablespaces, select **Accept default**
 
-      * Administrator Name: **PDBADMIN**
-      * Password: **welcome1**
-      * Confirm Password: **welcome1**
-      * Tablespaces: **Accept default**
+    ```
+    Administrator Name: <copy>PDBADMIN</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
 
     ![](images/181bed80a9978ed3e02c050838749f2b.jpg " ")
 
 6. Instance Details, keep all defaults as they are. The Properties Page has the properties for the instance. The Self-Service Administrator has configured this as a optional step. However, properties can help users locate an instance more quickly. So Enter:
 
-      - Contact: **CYRUS**
-      - Lifecycle Status: **Test**
+    ```
+    Contact: <copy>CYRUS</copy>
+    ```
+
+    ```
+    Lifecycle Status: <copy>Test</copy>
+    ```
 
     ![](images/f5f29e12efaaf8a1fce318e871d9009d.jpg " ")
 
@@ -377,7 +381,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/ee3e8bccf25b8a836bea2f9a3a487cb7.jpg " ")
 
-  **Note**: Following widgets are shown on the Database Cloud Services landing Page
+  *Note*: Following widgets are shown on the Database Cloud Services landing Page
 
     * **Instances** show the number and status (Up/Down) of the DB/PDB Instances provisioned by the self-service user.
     * **Expiry**, shows the expiration summary of DB/PDB Instances.
@@ -425,7 +429,7 @@ Previous exercises demonstrated the process of requesting PDBs using available s
 
 Login to the EM Console as super administrator **sysman/welcome1**
 
-### PaaS Infrastructure Zone
+### **PaaS Infrastructure Zone**
 
 1. On the EM Console, go to Setup ->> Cloud ->> Database.
 
@@ -443,7 +447,7 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
   ![](images/b3ddc4d5e436d1e6dec7eb0ed795f0b7.jpg " ")
 
-### Pluggable Database Pool
+### **Pluggable Database Pool**
 
 5. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select **Pluggable Database** from the drop-down menu. And then click on **Pluggable Database Pool**’.
 
@@ -459,7 +463,7 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
   ![](images/243ed347412f16a2159b2184c2dacdf7.jpg " ")
 
-### Data Sources
+### **Data Sources**
 
 8. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Data Sources** observe that the profile is based on Schema Export(s). This Data Profile was used for provisioning a PDB with data.
 
@@ -469,7 +473,7 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
   ![](images/532db10bbaab85fcdd83f245bd317a6b.jpg " ")
 
-### Service Templates
+### **Service Templates**
 10. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select Pluggable Database from the drop-down menu. And then click on **Service Templates from you left menu.**
 
   ![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg " ")
@@ -483,9 +487,9 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
   ![](images/a0efb63a12d01e1254593656765ec52a.jpg " ")
 
-This concludes lab
-You may now [proceed to the next lab](#next).
+This completes the Lab!
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
@@ -494,15 +498,6 @@ You may now [proceed to the next lab](#next).
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-- **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
-- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Harish Niddagatta, Enterprise Manager Product Management, June 2021
-
-<!-- ## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager).
-  * Click the **Log In** button and login using your Oracle Account.
-  * Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  
-
-  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. -->
+  - **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
+  - **Contributors** -  Rene Fontcha
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
