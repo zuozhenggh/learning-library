@@ -39,9 +39,9 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
   ![](./images/create-comp-button.png " ")
 
 4. In the **Create Compartment** dialog box:
-    - Enter a **Name** for the compartment: `DI-compartment`
-    - Enter a meaningful **Description**: `Compartment for Data Integration resources`
-    - In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment)
+    - Enter a **Name** for the compartment: `DI-compartment`.
+    - Enter a meaningful **Description**: `Compartment for Data Integration resources`.
+    - In the **Parent Compartment** drop-down list, select your parent compartment (root or any other existing compartment).
     - Then click **Create Compartment**.
 
 ![](./images/create-compartment.png " ")
@@ -64,7 +64,7 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
 4. The Configuration page of the wizard is displayed.
 In the **Basic Information** section, provide:
-  - **VCN Name**: `OCI-VCN-WORKSHOP`
+  - **VCN Name**: `OCI-VCN-WORKSHOP`.
   - **Compartment**: Select `DI-compartment` or the compartment you are using for data integration.
 
 ![](./images/vcn-config.png " ")
@@ -93,7 +93,7 @@ In the **Basic Information** section, provide:
 ![](./images/create-adw-button.png " ")
 
 3. Provide basic information for the Autonomous Database:
-  - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`)
+  - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`DI-compartment`).
   - **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use `ADW Workshop`.
   - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use `ADWWORKSHOP`.
 
@@ -174,12 +174,12 @@ In this workshop, **Autonomous Data Warehouse** serves as the **target data asse
 ![](./images/sql-tile.png " ")
 
 8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
-```
-<copy>create user beta identified by "password";
-grant DWROLE to BETA;
-GRANT EXECUTE ON DBMS_CLOUD TO BETA;
-alter user BETA quota 200M on data;</copy>
-```
+    ```
+    <copy>create user beta identified by "password";
+    grant DWROLE to BETA;
+    GRANT EXECUTE ON DBMS_CLOUD TO BETA;
+    alter user BETA quota 200M on data;</copy>
+    ```
 
 *Note : Ensure that you enter a password in place of password.*
 ![](./images/create-user.png " ")

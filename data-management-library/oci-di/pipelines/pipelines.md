@@ -24,7 +24,7 @@ In this lab, you will:
 
 In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
+1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (DI-compartment). Click on your **Workspace** (DI-workspace).
@@ -184,7 +184,7 @@ In the **Add Expression** panel:
   *Note: You can also manually create the expression in the Expression Builder, by double-click or drag an drop of the System defined parameters and CONCAT function.*
   - Click **Add**.
 
-![](./images/  add-expression-pipeline.png " ")
+![](./images/add-expression-pipeline.png " ")
 
 
 24. Drag and drop a **SQL task** operator to the pipeline canvas. Connect the SQL task operator to the **PIPELINE\_NAME\_TASK\_RUN** expression operator.

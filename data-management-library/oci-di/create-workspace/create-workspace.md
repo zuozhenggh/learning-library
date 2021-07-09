@@ -53,7 +53,7 @@ Before you can get started with Data Integration, you must first create a **Work
 
     ![](./images/menu.png " ")
 
-2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
+2. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
     ![](./images/menu_di.png " ")
 

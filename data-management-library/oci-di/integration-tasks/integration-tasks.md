@@ -22,7 +22,7 @@ In this lab, you will:
 
 In Oracle Cloud Infrastructure Data Integration, a **project** is the container for design-time resources, such as tasks or data flows and pipelines.
 
-1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
+1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 ![](./images/menu_di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
@@ -34,7 +34,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 4. On the Projects page, click **Create Project**.
 ![](./images/create-project.png " ")
 
-5. On the Create Project page, enter `DI_Workshop` for **Name** and an optional **Description**, and then click **Save**.
+5. On the Create Project page, enter `DI_Workshop` for **Name** and an optional **Description**, and then click **Create**.
 ![](./images/create-project-page.png " ")
 
 6. You are now in the **Project Details** page for `DI_Workshop` project.
