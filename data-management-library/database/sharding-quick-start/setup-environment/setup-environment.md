@@ -40,50 +40,50 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 2. Check the **ZIP FILE**, Click the **Browse** link and select the setup zip file (`shardstack-nodomain-qs.zip`) that you downloaded. Click **Select** to upload the zip file.
 
-    ![image-20210123085353928](images/image-20210123085353928.png)
+    ![image-add-stack-file](images/image-add-stack-file.png)
 
     
 
 
 3. Scroll down the screen, you can accept all the default informations and click **Next**.
 
-    ![image-20210123085526861](images/image-20210123085526861.png)
+    ![image-stack-info](images/image-stack-info.png)
 
 4. Oracle Sharded Database General Configuration. Enter the Sharded Database Name, for example: **sdb**. Accept all other default values.
 
-    ![image-20210123090136172](images/image-20210123090136172.png)
+    ![image-config-variables](images/image-config-variables.png)
 
 5. Scroll down the screen, in the Shard configuration sector, You can set the shard database shape, number of the primary shards and shard database available storage. Accept the default values.
 
-    ![image-20210123090806888](images/image-20210123090806888.png)
+    ![image-shard-shape](images/image-shard-shape.png)
 
 6. In the Shard Catalog configuration sector, you can set the shard catalog database shape, shard catalog db available storage. Accept the default values.
 
-    ![image-20210123091242011](images/image-20210123091242011.png)
+    ![image-catalog-shape](images/image-catalog-shape.png)
 
 7. In the replication sector, you can set the number of the replication factor. If the selected value is 1, then only a single replica set of the primary shard will be created. If the selected value is 2, then both the primary shard replica set and standby shard replica set will be created. In this workshop, we will not use the standby shard, so accept the default value **1**.
 
-    ![image-20210123092049916](images/image-20210123092049916.png)
+    ![image-replication-factor](images/image-replication-factor.png)
 
 8. In Shard Director Configuration,  you can set the shard director VM shape, and number of the shard directors. Accept the default values.
 
-    ![image-20210123092141556](images/image-20210123092141556.png)
+    ![image-director-shape](images/image-director-shape.png)
 
 9. In the Network setting sector, You can choose create new network or use a previously created network. In this workshop, we use create new network, you can select the compartment for VCN and subnet network. Accept all other default values.
 
-    ![image-20210123092712279](images/image-20210123092712279.png)
+    ![image-network-setting](images/image-network-setting.png)
 
 10. In the ssh configuration, You can choose the ssh public key file which you created before or paste the ssh public key value in it.
 
-    ![image-20210123093220866](images/image-20210123093220866.png)
+    ![image-ssh-public-key](images/image-ssh-public-key.png)
 
 11. Click **Next**, you can review you configuration variables.
 
-    ![image-20210123093515210](images/image-20210123093515210.png)
+    ![image-review-config](images/image-review-config.png)
 
 12. Click **Create**. Your stack has now been created!  
 
-    ![image-20210123093811054](images/image-20210123093811054.png)
+    ![image-stack-created](images/image-stack-created.png)
 
 ## **STEP 2:** Terraform Apply
 
@@ -91,19 +91,19 @@ When using Resource Manager to deploy an environment, execute a terraform **Appl
 
 1. At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**. Click **Apply**. This will create the shard database. This takes about about 30 minutes, please be patient.
 
-    ![image-20210123094226914](images/image-20210123094226914.png)
+    ![image-apply-job](images/image-apply-job.png)
     
-    ![image-20210123094352236](images/image-20210123094352236.png)
+    ![image-click-apply](images/image-click-apply.png)
     
-    ![image-20210123094634314](images/image-20210123094634314.png)
+    ![image-job-running](images/image-job-running.png)
     
-    ![image-20210123101330140](images/image-20210123101330140.png)
+    ![image-job-complete](images/image-job-complete.png)
 
     
 
 2. Once this job succeeds, you will get an apply complete notification from Terraform.  Click **Outputs**,  you can get the **public ip address** for the shard director, shard catalog and shard database. You can also get the sys user password for the catalog database and shard database. 
 
-    ![image-20210123101504556](images/image-20210123101504556.png)
+    ![image-output](images/image-output.png)
 
 3. Write down all the public ip's and sys password for later use. It will be similar to the following. All the pdb name in the catalog and shard database is named `sdbpdb` by default. For example: the sys user password is: `sd_yonN176_uGAE009qa`
 

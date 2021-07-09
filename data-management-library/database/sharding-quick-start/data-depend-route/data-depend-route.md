@@ -569,3 +569,8 @@ A multi-shard query maps to more than one shard and the coordinator might need t
    
 
 You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Jan 2021
+* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Workshop Expiry Date** - Jul 2022
