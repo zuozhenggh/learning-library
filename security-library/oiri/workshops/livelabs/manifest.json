@@ -1,6 +1,6 @@
 {
     "workshoptitle": "Oracle Identity Role Intelligence(OIRI) Workshop",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -13,30 +13,34 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Initialize the workshop environment",
+            "title": "Lab 1: Initialize Environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../initialize-environment/initialize-environment.md"
         },
         {
-            "title": "Lab 2: Deploy OIRI in the local Kubernetes node",
+            "title": "Lab 2: Deploy Kubernetes Nodes And Start OIG Server",
+            "filename": "../../init-kub-nodes/init-kub-nodes.md"
+        },
+        {
+            "title": "Lab 3: Deploy OIRI In The Local Kubernetes Node",
             "filename": "../../deploy-oiri/deploy-oiri.md"
         },
         {
-            "title": "Lab 3: Import data into OIRI from OIG",
+            "title": "Lab 4: Import data into OIRI from OIG",
             "filename": "../../data-import/data-import.md"
         },
         {
-            "title": "Lab 4: Role Mining",
+            "title": "Lab 5: Role Mining",
             "filename": "../../role-mining/role-mining.md"
         },
         {
-            "title": "Lab 5: Publish Roles to OIG",
+            "title": "Lab 6: Publish Roles to OIG",
             "filename": "../../publish-roles/publish-role.md"
         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
