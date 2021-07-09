@@ -2,25 +2,25 @@
 
 ## Introduction
 
-In this lab, you will learn how to delete some or all of the resources that you created in this workshop. You can delete some or all of the resources that you don't need. If you want to run all the labs in this workshop again from the beginning, you can delete the entire compartment.
+In this lab, you will learn how to delete some or all of the resources that you created in this workshop that you don't need. If you want to re-run all the labs in this workshop again from the beginning, you can delete the entire compartment.
 
 **Note:**    
 If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at delete the Data Catalog instance that you created when you successfully complete this workshop, to avoid unnecessary charges. This deletes the Data Catalog instance and all of the resources in this instance.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
 * Delete the **`training-dcat-instance`** Data Catalog instance. This also deletes all of the resources in this instance.
-* Delete the resources that you created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, object storage bucket and its objects, and so on.
-* Delete the
+* Delete the resources that you created in your **`training-dcat-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, Object Storage buckets and its objects, and so on.
+* Delete the entire **`training-dcat-compartment`** compartment.
 
 ### What Do You Need?
 
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     
-If you want to list the resources in your **`training-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
+If you want to list the resources in your **`training-dcat-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
 ## **STEP 1:** Delete Your Data Catalog Instance
 

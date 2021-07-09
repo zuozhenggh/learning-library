@@ -42,7 +42,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Catalog resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Catalog resources that you will use in the workshop.
 
-1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**.
+1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**.
 
 	 ![](./images/navigate-compartment.png " ")
 

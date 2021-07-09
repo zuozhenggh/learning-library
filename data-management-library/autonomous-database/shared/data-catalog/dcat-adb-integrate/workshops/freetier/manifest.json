@@ -28,7 +28,12 @@
             "filename": "./../../harvest-metadata/harvest-metadata.md"
         },
         {
-          "title": "Lab 4: Clean up Resources Used in the Workshop (Optional)",
+          "title": "Lab 4: Provision an Autonomous Database (ADB) Instance",
+          "description": "This lab shows you how to provision an ADB instance.",
+          "filename": "./../../adb-provision/adb-provision.md"
+        },
+        {
+          "title": "Lab 5: Clean up Resources Used in the Workshop (Optional)",
           "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
           "filename": "./../../cleanup/cleanup.md"
         },
