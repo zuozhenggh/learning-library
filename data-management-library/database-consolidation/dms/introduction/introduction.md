@@ -1,10 +1,40 @@
 # Introduction
 
-## About this Workshop
+The labs in this workshop walk you through all the steps to get started using Oracle Cloud Infrastructure (OCI) Database Migration (DMS). You will provision a Virtual Cloud Network (VCN), an Oracle Database 19c, an Oracle Autonomous Database (ADB) and a GoldenGate instance in order to perform a database migration using OCI Database Migration.
 
-This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spendign their time on this workshop?
+With OCI Database Migration we make it quick and easy for you to migrate databases from on-premises, Oracle or third-party cloud into Oracle databases on OCI.
 
-Estimated Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+## About OCI Database Migration
+
+OCI Database Migration (DMS) provides high performant, fully managed approach to migrating databases from on-premsies, Oracle or third-party cloud into OCI-hosted databases. Migrations can be in either one of the following modes:
+
+* **Offline**: The Migration makes a point-in-time copy of the source to the target database. Any changes to the source database during migration are not copied, requiring any applications to stay offline for the duration of the migration.
+* **Online**: The Migration makes a point-in-time copy and replicates all subsequent changes from the source to the target database. This allows applications to stay online during the migration and then be switched over from source to target database.
+
+In the current release of DMS we support Oracle databases located on-premises, in third-party clouds, or on OCI as the source and Oracle Autonomous Database shared or dedicated as the target database. Below is a table of supported source and target databases as well as migration modes:
+
+|                  | DMS LA Phase 2 | Added for DMS GA | Added for DMS Roadmap |   
+|---------------------|--------------------|-------------------|-----------------------|
+| Source Databases | Oracle DB 11g, 12c, 18c, 19c: <br>on-premises, third-party cloud, OCI | Latest DB version | Heterogeneous Databases |   
+| Target Databases | ADB shared | ADB dedicated | Oracle DB (DBCS, ExaCS, <br>self-installed) |   
+| Migration Modes  | Direct Access to Source <br>(VPN or Fast Connect) | Indirect Access to Source <br>(Agent on Source Env) |                       |  
+| Initial Load <br> (Offline Migration) | Logical Migration using <br>Data Pump to Object Store | Data Pump using SQLnet | Physical Migration using RMAN |
+| Replication <br> (Online Migration) | GoldenGate Marketplace | | GoldenGate Service-Based <br>Physical Migration using <br>Data Guard |
+
+The DMS service runs as a managed cloud service separate from the user's tenancy and resources. The service operates as a multitenant service in a DMS Service Tenancy and communicates with the user's resources using Private Endpoints (PEs). PEs are managed by DMS and are transparent to the user.
+
+![](images/dms-simplified-topology-2.png =80%x*)
+
+* **DMS Control Plane**: Used by DMS end user to manage Migration and Registered Database objects. The control plane is exposed through the DMS Console UI as well as the REST API.
+* **DMS Data Plane**: Managed by DMS Control Plane and transparent to the user. The GGS Data Plane manages ongoing migration jobs and communicates with the user's databases and GoldenGate instance using PEs. The DMS data plane does not store any customer data, as data flows through GoldenGate and Data Pump directly within the user's tenancy.
+* **Migration**: A Migration contains metadata for migrating one database. It contains information about source, target, and migration methods and is the central object for users to run migrations. After creating a migration, a user can validate the correctness of the environment and then run the migration to perform the copy of database data and schema metadata from source to target.
+* **Migration Job**: A Migration Job displays the state or a given Migration execution, either for validation or migration purposes. A job consists of a number of sequential phases, users can opt to wait after a given phase for user input to resume with the following phase.
+* **Registered Database**: A Registered Database represents information about a source or target database, such as connection and authentication credentials. DMS uses the OCI Vault to store credentials. A Registered Database is reusable across multiple Migrations.
+
+Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+
+### About Product/Technology
+Enter background information here....
 
 *You may add an option video, using this format: [](youtube:YouTube video id)*
 
@@ -12,26 +42,30 @@ Estimated Time: n minutes -- this estimate is for the entire workshop - it is th
 
 ### Objectives
 
-*List objectives for the workshop*
+In this lab, you will:
+* Create SSH Keys
+* Create a VCN
+* Create a Vault
+* Create Databases
+* Create a GoldenGate Marketplace Instance
+* Create an Object Storage Bucket
+* Create Registered Databases
+* Create, Validate, and Run a Migration
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
+### Prerequisites
 
-*This is the "fold" - below items are collapsed by default*
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-In general, the Introduction does not have Steps.
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Blog - Elevate your database into the cloud using Oracle Cloud Infrastructure Database Migration](https://blogs.oracle.com/dataintegration/elevate-your-database-into-the-cloud-using-oracle-cloud-infrastructure-database-migration)
+* [Overview of Oracle Cloud Infrastructure Database Migration](https://docs.oracle.com/en-us/iaas/database-migration/doc/overview-oracle-cloud-infrastructure-database-migration.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Alex Kotopoulis, Director, Product Management
+* **Contributors** -  Kiana McDaniel, Hanna Rakhsha, Killian Lynch, Solution Engineers, Austin Specialist Hub
+* **Last Updated By/Date** - Killian Lynch, Solution Engineers, July 2021
