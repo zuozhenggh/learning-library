@@ -13,7 +13,7 @@
         {
             "title": "Lab 1: Provision an ADW Instance",
             "type": "freetier",
-            "filename": "./../../adb-provision/adb-provision-conditional.md"
+            "filename": "./../../../adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Explore SQL Developer Web",
@@ -22,7 +22,7 @@
         {
             "title": "Lab 3: Load Data",
             "type": "freetier",
-            "filename": "./../../adb-loading/adb-loading-conditional.md"
+            "filename": "./../../../adb-loading/adb-loading-conditional.md"
         },
         {
             "title": "Lab 4: Manage and Monitor",

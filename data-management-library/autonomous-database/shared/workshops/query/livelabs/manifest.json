@@ -16,13 +16,13 @@
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
             "type": "livelabs",
-            "filename": "./../../adb-provision/adb-provision-conditional.md"
+            "filename": "./../../../adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Load Data",
             "description": "Provision a new ADW instance and connect to the database",
             "type": "livelabs",
-            "filename": "./../../adb-loading/adb-loading-conditional.md"
+            "filename": "./../../../adb-loading/adb-loading-conditional.md"
         },
         {
             "title": "Lab 3: Query External Data",

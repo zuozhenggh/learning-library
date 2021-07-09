@@ -16,7 +16,7 @@
             "title": "Lab 1: Provision Autonomous Database",
             "description": "Provision a new ADW instance and connect to the database",
             "type": "freetier",
-            "filename": "./../../adb-provision/adb-provision-conditional.md"
+            "filename": "./../../../adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Scale for Performance",

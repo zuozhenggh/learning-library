@@ -1,26 +1,37 @@
 # Send Log Data to an Autonomous Database with Service Connector Hub
 
+## Introduction
+
 In this lab, you will create a service connector to move log data from the Logging service to an Autonomous Database using Functions and Oracle REST Data Services.
+
+*Estimated Lab Time:* 30 Minutes
+
+### Objectives
+
+In this lab, you will:
+* Create a JSON collection in the Autonomous Database using SODA/Database Actions
+* Create a function to pass log files into a JSON collection
+* Connect all the pieces together with Service Connector Hub
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the setup lab.
-- You have completed the CSV Functions Lab
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+- Completed the [CSV Functions Lab](../csv-function/csv-function.md)
 
 
-## **Download Lab Files**
+## **STEP 1:** Download Lab Files
+
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip)
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
 ```
 
-## **STEP 1:** Creating a Collection
+## **STEP 2:** Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -123,7 +134,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     Cache-Control: private,must-revalidate,max-age=0
     ```
 
-## **STEP 2:** Create and Deploy a Function
+## **STEP 3:** Create and Deploy a Function
 
 1. The next few steps will be using the **OCI Cloud Shell**. We can do this by clicking the **Cloud Shell icon** in the upper right of the OCI web console.
 
@@ -157,7 +168,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 4. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB0TCPTiDPeBDJveIUh6DhH6GrQUJVI2m5FV_8ssq094MJMwOIWOm7c5O/n/c4u03/b/developer-library/o/func2.zip
+    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
     ```    
 
     Once downloaded, unzip it
@@ -176,12 +187,8 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 
     cd func2
 
-6. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
-
-    ```
-    fn -v deploy --app functionsApp
-    ```
-    
+6. Now we can deploy our function to our application. Use the following command:
+   
     ````
     <copy>
     fn -v deploy --app functionsApp
@@ -222,8 +229,8 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     fn config function <app-name> <function-name> secret_ocid <secret ocid>
     fn config function <app-name> <function-name> collection <input bucket name>
     ```
-    And with the values we need
 
+    And with the values we need with our **app-name** and **function-name** filled in for you:
     ````
     <copy>
     fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://xxxxxx-xxxxxx/ords/"
@@ -246,7 +253,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
     ```
 
-    Once the values are entered, run them in the OCI Cloud Shell.
+    Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
     functionsApp log-to-adw-with-ords-and-fn updated ords_base_url with https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
@@ -276,7 +283,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
     ![Deployed Function](./images/func-3.png)
 
 
-## **STEP 3:** Create a Service Connector
+## **STEP 4:** Create a Service Connector
 
 1. Use the OCI web console drop down menu to go to **Observability & Management** and then **Service Connectors**.
 
@@ -387,9 +394,9 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/JEQlZ8lKB
 
     ![Created Service Connector](./images/con-22.png)
 
-## **STEP 4:** Testing the flow
+## **STEP 5:** Testing the flow
 
-1. To test the entire flow, we need to put a csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+1. To test the entire flow, we need to put the file1.csv csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
     ![Storage then Buckets](./images/full-1.png)
 
@@ -421,7 +428,7 @@ or select the JSON tile on the **Database Actions** homepage.
 
     ![JSON in the Database Actions Menu](./images/full-7.png)
 
-8. Now using the worksheet, issue a **Query by Example** that will bring back all records. We can do this by typeing **{}** in the worksheet
+8. Now using the worksheet, issue a **Query by Example** that will bring back all records. We can do this by typing **{}** in the worksheet
     ````
     <copy>
     {}

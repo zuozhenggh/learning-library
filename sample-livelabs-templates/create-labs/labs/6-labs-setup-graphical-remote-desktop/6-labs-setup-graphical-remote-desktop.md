@@ -8,6 +8,7 @@ to capturing the custom image.
 - Deploy NoVNC Remote Desktop
 - Configure Desktop
 - Add Applications Shortcuts to Desktop
+- Add Firefox bookmarks
 - Configure remote clipboard
 - Enable VNC password reset
 
@@ -184,8 +185,6 @@ This lab assumes you have:
     echo ""
     echo "#================================================="
     echo "#"
-    echo "# http://`curl -s ident.me`:6080/vnc.html?resize=remote"      
-    echo "# or"
     echo "# http://`curl -s ident.me`:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true"      
     echo "#================================================="
     echo ""
@@ -284,7 +283,7 @@ This lab assumes you have:
     ```
 
 ## **STEP 2**: Configure Desktop   
-LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings some settings to ensure a better user experience.
+LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
 
 1. Launch your browser to the following URL
 
@@ -307,7 +306,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
 
     ```
     <copy>
-    gsettings set org.gnome.nautilus.icon-view default-zoom-level small
+    gnome-session-properties
     </copy>
     ```
 
@@ -405,7 +404,7 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
 
     ![](./images/add-firefox-bookmarks-08.png " ")
 
-7. Provide the following two inputs and click *Add* to create the folder *Workshop Guides*
+7. Provide the following input and click *Add* to create the folder *Workshop Guides*
 
     ```
     Name: <copy>Workshop Guides</copy>
@@ -479,7 +478,22 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
 
     ![](./images/add-firefox-bookmarks-19.png " ")
 
-18. From you external SSH Terminal (e.g. PuTTy, MobaXterm, Mac Terminal, Cygwin, etc.), stop VNC Service to preserve the layout before proceeding with custom image creation
+18. Open a new tab and browse to *about:config*. Click on *Accept the Risk and Continue*
+
+    ![](./images/add-firefox-bookmarks-20.png " ")
+
+19. In the config search field do the following to always get bookmarks to open in tabs:
+    - Type in the following
+    ```
+    <copy>browser.tabs.loadBookmarksInTabs</copy>
+    ```
+    - Double-click on *False* to toggle it to *True*
+    - Click on *X* to close the tab
+    - Click on a link from the *Workshop Guides* toolbar folder to confirm that it's opening in a new tab and not overwriting an existing one.
+
+    ![](./images/add-firefox-bookmarks-21.png " ")
+
+20. From you external SSH Terminal (e.g. PuTTy, MobaXterm, Mac Terminal, Cygwin, etc.), stop VNC Service to preserve the layout before proceeding with custom image creation
 
     ```
     <copy>
@@ -489,6 +503,7 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
     ```
 
     ![](./images/novnc-stop-vncserver.png " ")
+
 
 You may now [proceed to the next lab](#next).
 

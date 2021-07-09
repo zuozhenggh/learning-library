@@ -1,30 +1,51 @@
 # Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services
 
+## Introduction
+
+This lab will walk you through combining different components of OCI and the autonomous database to create an end to end data loading flow with CSV files.
+
+*Estimated Lab Time:* 60 Minutes
+
+### Objectives
+
+In this lab, you will:
+* Create a table and Auto-REST enable it
+* Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+* Create an event that looks in a bucket for CSV files to consume and pass into our function.
+
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
+## **STEP 1:** Download Lab Files
 
-## **Download Lab Files**
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip)
+
+We will be using the **file1.csv** file in the next section via a browser so unzip the func.zip file in your local environment/desktop.
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
+curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
 ```
 
-We will be using the **file1.csv** file in the next section.
+If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
 
-## **STEP 1**: Prepare the Database
+![drag and drop files to your home directory](./images/cdd-1.png)
+
+## **STEP 2**: Prepare the Database
 
 1. Start by going to the details page of your autonomous database if not already there. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
     ![ADB from the menu](./images/sdw-1.png)
 
-2. On the Autonomous Database page, find your **ORDS ADB** database in the list and left click on the Display Name
+    And on the **Autonomous Database** page, ensure that **livelabs** is selected for the **Compartment** dropdown on the left side of the page.
+
+    ![ADB from the menu](./images/sdw-1a.png)
+
+2. Now, find your **ORDS ADB** database in the list and left click on the **Display Name**
 
     ![ORDS ADB database in the list](./images/sdw-2.png)
 
@@ -116,7 +137,7 @@ We will be using the **file1.csv** file in the next section.
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 2:** Auto-REST Enable a Table
+## **STEP 3:** Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 
@@ -136,18 +157,24 @@ We will be using the **file1.csv** file in the next section.
 
     ![The REST Enable Object Slider, view the Preview URL](./images/sdw-35.png)
 
-We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be similar.
+We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-ordsadb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be in a similar format but a different hostname.
 
 
-## **STEP 3:** Create and Deploy the Function
+## **STEP 4:** Create and Deploy the Function
 
-We now need to create a function that will take the incoming file from Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. First, we need to make an Application to hold our function. 
+We now need to create a function that will see the incoming file in Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. 
 
-With Oracle Functions, an application is:
+First, we need to make an Application to hold our function. 
+
+From the [documentation](https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsconcepts.htm):
+
+```
+In Oracle Functions, an application is:
     a logical grouping of functions
     a way to allocate and configure resources for all functions in the application
     a common context to store configuration variables that are available to all functions in the application
     a way to ensure function runtime isolation
+```
 
 1. Use the OCI web console drop down menu to go to **Developer Services** and then **Applications**.
 
@@ -208,7 +235,11 @@ With Oracle Functions, an application is:
 
     ![OCI Cloud Shell](./images/func-13.png)
 
-12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2**, copy and paste the first command
+12. In the **Setup fn CLI on Cloud Shell** section, we will be copying and pasting many commands to use in the **OCI Cloud Shell** . Starting at **Step 2** for setting our region context,
+
+    ![Setup fn CLI on Cloud Shell Step 2](./images/func-13a.png)
+
+    copy and paste the first command
 
     ````
     <copy>
@@ -231,14 +262,22 @@ With Oracle Functions, an application is:
     Now using context: eu-frankfurt-1 
     ```
 
-13. We are now going to update the context with the function's compartment ID with step 3. The OCI web console gives you this command to copy and paste with the compartment OCID already in the command; no need to fetch it. Copy, paste and run this command in the cloud shell.
+13. We are now going to update the context with the function's compartment ID with step 3. The OCI web console gives you this command to copy and paste with the compartment OCID already in the command; no need to fetch it.
+
+    ![update the context with the function's compartment ID Step 3](./images/func-13b.png)
+
+    Copy, paste and run this command in the cloud shell.
 
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn update context oracle.compartment-id ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
     Current context updated oracle.compartment-id with ocid1.compartment.oc1..aaaaaaaaszrdd8hj489fhfdrhf8sjwsns98n498dfjhnsdaioocereyzgkrkosw4q
     ```
 
-14. In step 4, we will update the context with the location of the Registry you want to use. The command the UI gives is in the format:
+14. In step 4, we will update the context with the location of the Registry you want to use.
+
+    ![update the context with the location of the Registry Step 4](./images/func-13c.png)
+
+    The command the UI gives is in the format:
     ```
     region_container_registry/tenancy_name/ocir_repo_name_of_your_choice
     ```
@@ -257,10 +296,19 @@ With Oracle Functions, an application is:
     Current context updated registry with fra.ocir.io/mytenancy/livelabsrepo
     ```
 
-15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. Now would be a good time to retrieve the saved token you saved from the setup steps.
+15. Step 5 was completed in the setup lab where we generated a token for our user so we can skip this step. 
 
-16. For step 6, we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format 
-     ```
+    ![generated a token Step 5](./images/func-13d.png)
+
+    Now would be a good time to retrieve the saved token you saved from the setup steps.
+
+16. For step 6, 
+
+    ![logging into the Registry Step 6](./images/func-13e.png)    
+
+    we will be logging into the Registry using the Auth Token you generated in the setup steps as your password. The command we will be running will be in the format 
+    
+    ```
     docker login -u '<tenancy-namespace>/<user-name>' <region-key>.ocir.io
     ```
     as seen below:
@@ -280,7 +328,11 @@ With Oracle Functions, an application is:
     Login Succeeded
     ```
 
-17. Next, in step 7, we verify we can see our application by running fn list apps
+17. Next, in step 7, 
+
+    ![verify we can see our application Step 7](./images/func-13f.png)
+
+    verify we can see our application by running **fn list apps**
 
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
@@ -293,7 +345,7 @@ With Oracle Functions, an application is:
 18. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKDvHv-10Va_u8yWI5XPxnXXvAxx6b_scHonO4mtfZYufEN_FxqhGHGcTomM7veC/n/c4u03/b/developer-library/o/func.zip
+    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
     ```    
 
     Once downloaded, unzip it
@@ -312,12 +364,12 @@ With Oracle Functions, an application is:
 
     cd func
 
-20. Now we can deploy our function to our application. Use the following command (this command can also be found as step number 10 on the Functions Getting Started page):
+20. Now we can deploy our function to our application. This command can also be found as step number 10 on the Functions Getting Started page.
 
-    ```
-    fn -v deploy --app functionsApp
-    ```
-    
+    ![deploy our function Step 10](./images/func-13g.png)
+
+    Use the following command
+   
     ````
     <copy>
     fn -v deploy --app functionsApp
@@ -345,7 +397,9 @@ With Oracle Functions, an application is:
     Successfully created function: csv-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68
     ```
 
-21. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. Configuring function parameters is in the following syntax"
+21. With the function deployed, we need to configure some of the parameters needed so that it can find and login to the database. 
+
+    Configuring function parameters is in the following syntax:
     ```
     fn config function <app-name> <function-name> <parameter> <parameter-value>
     ```
@@ -359,7 +413,7 @@ With Oracle Functions, an application is:
     fn config function <app-name> <function-name> input_bucket <input bucket name>
     fn config function <app-name> <function-name> processed_bucket <processed bucket name>
     ```
-    And with the values we need
+    And with the values we need with our **app-name** and **function-name** filled in for you:
 
     ````
     <copy>
@@ -383,7 +437,7 @@ With Oracle Functions, an application is:
     fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
     ```
 
-    Once the values are entered, run them in the OCI Cloud Shell.
+    Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn ords_base_url "https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/"
     functionsApp csv-to-adw-with-ords-and-fn updated ords_base_url with https://myadbhostname-adb21.adb.eu-frankfurt-1.oraclecloudapps.com/ords/
@@ -439,9 +493,9 @@ With Oracle Functions, an application is:
 
     ![view the log by clicking on the functionsApp_invoke link](./images/func-21.png)
 
-## **STEP 4:** Create an Event
+## **STEP 5:** Create an Event
 
-1. So that the function triggers when a csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
+1. So that the function triggers when the file1.csv csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
 
     ![Observability & Management and then Events Service](./images/event-1.png)
 
@@ -536,9 +590,9 @@ With Oracle Functions, an application is:
 
     ![Create Rule Filled Out](./images/event-15.png)
 
-## **STEP 5:** Taking the Flow for a Spin
+## **STEP 6:** Taking the Flow for a Spin
 
-1. It's time to see our function in action. To do this we need to put a csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
+1. It's time to see our function in action. To do this we need to put the file1.csv csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
     ![Storage then Buckets](./images/full-1.png)
 

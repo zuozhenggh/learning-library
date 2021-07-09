@@ -31,7 +31,7 @@ This lab assumes you have:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yfXLshLk0N5UXoHbL5ZPeVfqMS7lvxA_Bl-E2t4hdxXGJghQgVjs-MmohR6HDkYi/n/c4u04/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
 4.  Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
@@ -68,6 +68,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     ![Create a stack](images/workshop-009.png " ")
 4. Inspect the log, you will notice that 8 resources were created including the compute instance.
    ![Create a stack](images/workshop-010.png " ")
+   ![Create a stack](images/workshop-11.png " ")
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
@@ -173,12 +174,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/workshop-014.png " ")
 
-2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
-
-    ![](./images/build-complete.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
-3. Run the following command to verify the database with the SID **ORCL** is up and running
+2. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
     <copy>
@@ -187,7 +185,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/pseforcl.png " ")
 
-4. Verify the listener is running
+3. Verify the listener is running
     ````
     <copy>
     ps -ef | grep tns
@@ -196,7 +194,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/pseftns.png " ")
 
-5. Switch to the oracle user.
+4. Switch to the oracle user.
       ````
     <copy>
     sudo su - oracle
@@ -205,7 +203,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/sudo-oracle.png " ")
 
-6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+5.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
     <copy>
     . oraenv
@@ -214,7 +212,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/oraenv.png " ")
 
-7.  Login using SQL*Plus as the **oracle** user.  
+6.  Login using SQL*Plus as the **oracle** user.  
 
     ````
     <copy>

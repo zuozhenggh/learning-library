@@ -151,7 +151,7 @@ In the prior steps we elected to trigger the *terraform apply action* on stack c
 
 1.  Review the job output.
 
-  ![](./images/stack-apply-1.png " ")
+  ![](./images/novnc-stack-apply-1.png " ")
 
 2.  Congratulations, your environment has been created!  Click on the *Application Information* tab to get additional information about what you have just done.
 3.  Your public IP address(es), instance name(s), and remote desktop URL are displayed.
@@ -162,18 +162,19 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
 1. Navigate to **Stack Details**, **Application Information** tab, and click on the remote desktop URL
 
-  ![](./images/stack-apply-2.png " ")
+  ![](./images/novnc-stack-apply-2.png " ")
 
-    *Note:* It may take up to 5 minutes for the URL to render. If the page loads and issue an *authentication error*, update the URL and replace the value after *password=* with *LiveLabs.Rocks_99*
+    *Note:* It may take up to 5 minutes for the URL to render. If the page loads and issues an *authentication error*, update the URL and replace the value after *password=* with *LiveLabs.Rocks_99*
 
-    ![](./images/novnc-login-1.png " ")
     e.g.
 
     ```
-    <copy>http://111.111.111.111/vnc.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true</copy>
+    <copy>http://111.111.111.111/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-    *Note:* Above URL uses a dummy IP address and is for illustration only. Provide the correct IP address.
+    *Note:* The IP address shown above is made up for illustration only. Provide the correct IP address.
+
+    ![](./images/novnc-login-1.png " ")
 
 ## **STEP 4:** Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
@@ -210,16 +211,18 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/firefox-launch-2.png " ")
 
-## **STEP 7:** Login to Host using SSH Key Based Authentication (Optional) - Choose a path
+You may now [proceed to the next lab](#next).
 
-Access by SSH terminal is optional and if needed, choose a path from the following 3 methods. If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 7A).
+## Appendix 1: Login to Host using SSH Key Based Authentication (Optional) - Choose a path
+
+Access by SSH terminal is optional and if needed, choose a path from the following 3 methods. If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Appendix 1A).
 
 Your options are:
-1. Step 7A: Connect using Cloud Shell *(recommended)*
-2. Step 7B: Connect using MAC or a Windows CYGWIN Emulator
-3. Step 7C: Connect using Putty *(Requires you to install applications on your machine)*
+1. Appendix 1A: Connect using Cloud Shell *(recommended)*
+2. Appendix 1B: Connect using MAC or a Windows CYGWIN Emulator
+3. Appendix 1C: Connect using Putty *(Requires you to install applications on your machine)*
 
-## **STEP 7A:** Upload Key to Cloud Shell and Connect
+## Appendix 1A: Upload Key to Cloud Shell and Connect
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment).
 
@@ -272,7 +275,7 @@ If you are unable to ssh in, check out the troubleshooting tips below.
 
 You may now [proceed to the next lab](#next).
 
-## **STEP 7B:** Connect via MAC or Windows CYGWIN Emulator
+## Appendix 1B: Connect via MAC or Windows CYGWIN Emulator
 Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next lab(s) to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
@@ -286,7 +289,7 @@ Depending on your workshop, you may need to connect to the instance via a secure
 
 You may now [proceed to the next lab](#next).
 
-## **STEP 7C:** Connect via Windows using Putty
+## Appendix 1C: Connect via Windows using Putty
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
@@ -320,16 +323,14 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 1.  In the category section, **Click** session.
 2.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now [proceed to the next lab](#next).
-
-## Appendix 1:  Terraform and Resource Manager
+## Appendix 2:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
 
 [](youtube:udJdVCz5HYs)
 
-## Appendix 2: Troubleshooting Tips
+## Appendix 3: Troubleshooting Tips
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
 - Invalid public key
