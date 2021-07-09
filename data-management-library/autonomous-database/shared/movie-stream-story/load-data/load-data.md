@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab takes you through the steps needed to load data from the MovieStream data lake on Oracle Object Store into an Oracle autonomous database instance in preparation for exploration and analysis.
+This lab takes you through the steps needed to link to, and load, data from the MovieStream data lake on Oracle Object Store into an Oracle autonomous database instance in preparation for exploration and analysis.
 
-You can load data into your autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, and Oracle and 3rd party data integration tools. You can load data:
+You can load data into your autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, as well as Oracle and 3rd party data integration tools. You can load data:
 
-+ from files in your local device, or
++ from files in your local device,
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
@@ -17,7 +17,7 @@ Estimated Time: 30 minutes
 ### Objectives <optional>
 
 
--   Learn how to define object store credentials for your autonomous database
+-   Learn how to define Object Store credentials for your autonomous database
 -   Learn how to load data from the Object Store
 -   Learn how to troubleshoot data loads
 
@@ -28,19 +28,19 @@ Estimated Time: 30 minutes
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-		![Click Tools and Open Database Actions](images/sample1.png)
+		![Click Tools and Open Database Actions](images/launchdbactions.png)
 
-  To create a link to local file you want the reader to download, use this format:
+2. On the login screen, enter the username MOVIEWORK, then click the blue **Next** button.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+3. Enter the password for the MOVIEWORK user you set up in the previous lab.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+4. Under **Data Tools**, click on **DATA LOAD**
 
-2. Sub step 2
+    ![Click DATA LOAD](images/dataload.png)
 
-    ![Image alt text](images/sample1.png)
+5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to Object Store.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
 5. Example with bold **text**.
 
