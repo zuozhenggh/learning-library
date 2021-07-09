@@ -26,28 +26,14 @@ In this lab you will perform the following steps:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
 - SSH Private Key to access the host via SSH
-- OMS super-user Credentials:
-    - Username: **sysman**
-    - password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-```
-<copy>https://<EM13c Host Public IP address>:7803/em</copy>
-e.g: https://111.888.111.888:7803/em
-```
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
-
-## **STEP 0:** Running your Workload
-
-### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
-
-You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
 ## **STEP 1:** Inventory & Usage Details
 
@@ -58,8 +44,17 @@ The IT Manager wants to get an inventory of all existing databases managed by En
 All the items in this step are read-only, primary goal is to learn about inventory usage details within Enterprise Manager for all supported targets
 
 ### Execution
+1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
-1.  Log into your Enterprise Manager as indicated in the Prerequisites step if not already done.
+    ```
+    Username: <copy>sysman</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
+    ![](../initialize-environment/images/em-login.png " ")
 
 2.  From the Enterprise menu, select Configuration, then select Inventory and  Usage Details
 
@@ -89,7 +84,7 @@ All the items in this step are read-only, primary goal is to learn about invento
 
   ![](images/ecm1_inventory_usage_details_report.png " ")
 
-## **STEP 2:** One Time Database Comparison
+## **STEP 3:** One Time Database Comparison
 
 ### Overview
 
@@ -182,7 +177,7 @@ In this step, you will compare two database targets to determine configuration d
 
 <!-- In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters. -->
 
-## **STEP 3:** Database Configuration Drift Management
+## **STEP 4:** Database Configuration Drift Management
 
 ### Overview
 
@@ -306,7 +301,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 <!-- In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately. -->
 
-## **STEP 4:** Database Security Compliance
+## **STEP 5:** Database Security Compliance
 
 ### Overview
 
@@ -411,7 +406,7 @@ A compliance standard rule is a specific test to determine if a configuration da
   All these will give you a security posture of database target
 
 
-## **STEP 5:** Host Security Compliance
+## **STEP 6:** Host Security Compliance
 
 ### Overview
 
@@ -494,11 +489,9 @@ Terminology Used in this Compliance specific workshop
 <!-- With this step, you got a hands-on experience in creating a custom framework to monitor the security compliance of heterogeneous targets (Database and Host, this example). This will help you assess overall security compliance of all
 Enterprise Manager managed targets from one aggregated view. And if required, you can drill down into each standard to assess details of target specific security compliance -->
 
-This completes the Lab.
+This completes the Lab!
 
 You may now [proceed to the next lab](#next).
-
-Thank You!
 
 ## Learn More
 
@@ -507,8 +500,6 @@ Thank You!
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 
 ## Acknowledgements
-- **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
-- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Harish Niddagatta, Oracle Enterprise Manager Product Management, June 2021
-
-
+  - **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
+  - **Contributors** -  Rene Fontcha
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
