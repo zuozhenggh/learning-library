@@ -1,5 +1,9 @@
 #  Connection setup
 
+#  Please change the lab setup to point to livelab event and NOVNC URL.
+
+----
+
 ## Obtain an IP address and a Secure Key File
 Your instructor will provide you with both a **Virtual Machine IP address** and a **SSH secure key file**.
 
@@ -95,3 +99,5 @@ chmod +x /home/oracle/labs/inmemory/importssb.sh
 TEST
 </copy>
 ````
+
+----

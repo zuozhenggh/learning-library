@@ -11,12 +11,16 @@
             "filename": "../../labs/functions-load-file-into-adw-python/intro/intro.md"
         },
         {
-            "title": "Functions Prerequisites",
-            "filename": "../../labs/functions-load-file-into-adw-python/prerequisites/functions.md"
+            "title": "Lab 1: Functions Prerequisites",
+            "filename": "../../labs/functions-load-file-into-adw-python/prerequisites/prereq.md"
         },
         {
-            "title": "Lab 1: Functions",
-            "filename": "../../labs/functions-load-file-into-adw-python/fn-lab/lab.md"
+            "title": "Lab 2: Create Bucket and Autonomous Database",
+            "filename": "../../labs/functions-load-file-into-adw-python/oci-services/oci.md"
+        },
+        {
+            "title": "Lab 3: Create the Function",
+            "filename": "../../labs/functions-load-file-into-adw-python/function/func.md"
         },
         {
             "title": "Need Help?",
