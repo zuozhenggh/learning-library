@@ -1,5 +1,7 @@
 # Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services
 
+## Introduction
+
 This lab will walk you through combining different components of OCI and the autonomous database to create an end to end data loading flow with CSV files.
 
 *Estimated Lab Time:* 60 Minutes
@@ -7,15 +9,17 @@ This lab will walk you through combining different components of OCI and the aut
 ### Objectives
 
 In this lab, you will:
-    - Create a table and Auto-REST enable it
-    - Create a function to pass a CSV file into batch load API of the auto-REST enabled table
-    - Create an event that looks in a bucket for CSV files to consume and pass into our function.
+* Create a table and Auto-REST enable it
+* Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+* Create an event that looks in a bucket for CSV files to consume and pass into our function.
 
 ### Prerequisites
 
-- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
-## **Download Lab Files**
+## **STEP 1:** Download Lab Files
+
 Download the lab files with the following link. 
 
 [Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip)
@@ -31,7 +35,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
 ![drag and drop files to your home directory](./images/cdd-1.png)
 
-## **STEP 1**: Prepare the Database
+## **STEP 2**: Prepare the Database
 
 1. Start by going to the details page of your autonomous database if not already there. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
@@ -133,7 +137,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 2:** Auto-REST Enable a Table
+## **STEP 3:** Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 
@@ -156,7 +160,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-ordsadb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be in a similar format but a different hostname.
 
 
-## **STEP 3:** Create and Deploy the Function
+## **STEP 4:** Create and Deploy the Function
 
 We now need to create a function that will see the incoming file in Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. 
 
@@ -489,7 +493,7 @@ In Oracle Functions, an application is:
 
     ![view the log by clicking on the functionsApp_invoke link](./images/func-21.png)
 
-## **STEP 4:** Create an Event
+## **STEP 5:** Create an Event
 
 1. So that the function triggers when the file1.csv csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
 
@@ -586,7 +590,7 @@ In Oracle Functions, an application is:
 
     ![Create Rule Filled Out](./images/event-15.png)
 
-## **STEP 5:** Taking the Flow for a Spin
+## **STEP 6:** Taking the Flow for a Spin
 
 1. It's time to see our function in action. To do this we need to put the file1.csv csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 

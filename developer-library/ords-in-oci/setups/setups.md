@@ -1,5 +1,7 @@
 # Lab Setups
 
+## About the Workshop
+
 This part of the lab will guide you through some setup items that have to be performed before we can start the lab.
 
 *Estimated Lab Time:* 60 Minutes
@@ -7,14 +9,20 @@ This part of the lab will guide you through some setup items that have to be per
 ### Objectives
 
 In this lab, you will:
-    - Create a compartment for our OCI components
-    - Setup permissions for dynamic groups and policies
-    - Create an Autonomous Database
-    - Setup a Virtual Cloud Network
-    - Create Object Store Buckets for our csv files
-    - Create a secret using the Secrets Service and the OCI Vault
+* Create a compartment for our OCI components
+* Setup permissions for dynamic groups and policies
+* Create an Autonomous Database
+* Setup a Virtual Cloud Network
+* Create Object Store Buckets for our csv files
+* Create a secret using the Secrets Service and the OCI Vault
 
-## **SETUP 1**: Create a Compartment
+### Prerequisites
+
+This lab assumes you have:
+* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+
+
+## **STEP 1:** Create a Compartment
 
 We are going to create a **Compartment** for this lab so that our functions, logs, database and other OCI components reside in a single place.
 
@@ -62,7 +70,7 @@ Before we create some of the resources we need for functions, we need to record 
 
 ![Copy a compartment OCID](./images/compartmentOCID-1.png)
 
-## **SETUP 2**: Setup OCI Permissions
+## **STEP 2:** Setup OCI Permissions
 
 For the Function we create to interact with the Object Store, we first have to create a Dynamic Group and some IAM policies.
 **If you did not copy the OCID for the compartment you just created do that now before moving on to the next step**
@@ -199,7 +207,7 @@ Next, we need to associate our dynamic group to some policies so that it has the
 
     ![Policy Details Page](./images/pol-11.png)
 
-## **SETUP 3**: Create an Autonomous Database
+## **STEP 3:** Create an Autonomous Database
 
 1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
@@ -286,7 +294,7 @@ Next, we need to associate our dynamic group to some policies so that it has the
 14. Your Autonomous Database should be done creating in just a few short minutes. 
 
 
-## **SETUP 4**: Create a Virtual Cloud Network
+## **STEP 4:** Create a Virtual Cloud Network
 
 Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly create one with the VCN Wizard.
 
@@ -345,7 +353,7 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
 
    ![click the Create button](./images/vcn-12.png)
 
-## **SETUP 5**: Generate an Auth Token
+## **STEP 5:** Generate an Auth Token
 
 1. Use the OCI web console menu to navigate to **Identity & Security**, then **Users**
 
@@ -386,7 +394,7 @@ Our functions will need a Virtual Cloud Network (VCN) to live in. We can quickly
     **It is important to note that the token text will not be displayed or able to be retrieved after you click the close button in the Generate Token Model. Please copy and save this token text.**
 
 
-## **SETUP 6**: Create Object Store Buckets
+## **STEP 6:** Create Object Store Buckets
 
 The function will be watching an object store bucket for a CSV file, process it then place it into another bucket so we need to create two buckets.
 
@@ -442,7 +450,7 @@ The function will be watching an object store bucket for a CSV file, process it 
 
     ![Create button](./images/buck-8.png)
 
-## **SETUP 7**: Create a Vault and Store the Database Admin Password
+## **STEP 7:** Create a Vault and Store the Database Admin Password
 
 To ensure we are not using passwords in plain text in any configurations or parts of this lab, we need to create an OCI Vault and place the password for the admin user of the database into the Secrets Service.
 
@@ -561,7 +569,7 @@ To ensure we are not using passwords in plain text in any configurations or part
 
     ![Secret Contents text area](./images/vault-21.png)
 
-22. Once your **Create Secret** silder looks like the following image, click the **Create Secret** button in the lower left.
+22. Once your **Create Secret** slider looks like the following image, click the **Create Secret** button in the lower left.
 
     ![click the Create Secret button](./images/vault-22.png)
 
@@ -571,9 +579,7 @@ To ensure we are not using passwords in plain text in any configurations or part
 
     Save this OCID in a text editor or notes application for later use.
 
-## Next Steps
-
-Please move to the next section of the lab [Automatically load CSV data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
+Please move to the next section of the lab, [Automatically Load CSV Data from Object Storage into an Autonomous Data Warehouse with Functions and Oracle REST Data Services](../csv-function/csv-function.md).
 
 ## Conclusion
 
