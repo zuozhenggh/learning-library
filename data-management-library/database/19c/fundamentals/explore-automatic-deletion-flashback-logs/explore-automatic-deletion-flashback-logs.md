@@ -35,7 +35,7 @@ Be sure that the following tasks are completed before you start:
 
 ## **STEP 1**: Verify that **CDB1** is in **FLASHBACK** mode
 
-1. Berify that **CDB1** is in **FLASHBACK** mode and display the flashback retention period. If the database is not in flashback mode, execute the **/home/oracle/labs/19cnf/admin/flashback.sql** script.
+1. Verify that **CDB1** is in **FLASHBACK** mode and display the flashback retention period. If the database is not in flashback mode, execute the **/home/oracle/labs/19cnf/admin/flashback.sql** script.
 
     ```
     $ sqlplus / AS SYSDBA
@@ -83,7 +83,7 @@ Be sure that the following tasks are completed before you start:
     ```
     SQL> HOST
 
-    $ cd /u01/app/oracle/recovery_area/CDB1/flashback
+    $ cd /u01/app/oracle/recovery_area/CDB1/CDB1/flashback/
 
     $ls -l
     ```
@@ -94,7 +94,7 @@ Be sure that the following tasks are completed before you start:
     $ /home/oracle/labs/19cnf/workload.sh
     ```
 ## **STEP 3**: View flashback logs
-1. Back in the initial terminal session, check the flashback logs in the FRA after 30 min`utes. 
+1. Back in the initial terminal session, check the flashback logs in the FRA after 30 minutes. 
     ```
     $ ls -ltr /u01/app/oracle/recovery_area/CDB1/
 

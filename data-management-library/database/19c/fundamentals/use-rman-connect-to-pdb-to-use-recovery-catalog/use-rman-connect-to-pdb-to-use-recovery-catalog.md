@@ -66,7 +66,7 @@ Be sure that the following tasks are completed before you start:
     ```
     $ sqlplus system@PDB19
 
-    Enter password : <password>
+    Enter password : Ora4U_1234
     ```
 
     ```
@@ -167,12 +167,16 @@ Be sure that the following tasks are completed before you start:
     DBMS_RCVCAT package upgraded to version 19.10.00.00.
     ```
 
+    ```
+    RMAN> exit
+    ```
+
         
 ## **STEP 3**: Create VPC users
 1. Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will be given access to the metadata of **PDB1** and **PDB2**, respectively.
     ```
     $ sqlplus system@PDB19
-    Enter password: oracle
+    Enter password: Ora4U_1234
     ```
 
     ```
@@ -227,7 +231,7 @@ Be sure that the following tasks are completed before you start:
     ```
     $rman TARGET sys@PDB1 CATALOG vpc_pdb1@PDB19
 
-    target database Password: <password>
+    target database Password: Ora4U_1234
     connected to target database: ORCL:PDB1 (DBID=4095280305)
     recovery catalog database Password: <password>
     connected to recovery catalog database
@@ -250,6 +254,8 @@ Be sure that the following tasks are completed before you start:
     channel ORA_DISK_1: backup set complete, elapsed time: 00:00:15
     Finished backup at 03-JUN-21
     ```
+
+2. Save your **TAG** value from the previous ouput, it is located near the bottom. 
     
     ```
     RMAN> EXIT
@@ -310,6 +316,7 @@ Be sure that the following tasks are completed before you start:
     RMAN> REVOKE CATALOG FOR PLUGGABLE DATABASE pdb2  FROM vpc_pdb2;
 
     Revoke succeeded.
+    ```
 
     ```
     RMAN> EXIT
@@ -325,7 +332,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
     ```
-    RMAN> backup database;
+    RMAN> BACKUP DATABASE;
 
     Starting backup at 03-JUN-21
     RMAN-00571: ===========================================================
@@ -352,6 +359,7 @@ Be sure that the following tasks are completed before you start:
 
     recovery catalog owner is CATOWNER
     enter DROP CATALOG command again to confirm catalog removal
+    ```
 
     ```
     RMAN> DROP CATALOG;
