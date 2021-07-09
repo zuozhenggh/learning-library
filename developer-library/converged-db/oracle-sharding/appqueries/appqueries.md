@@ -129,7 +129,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     ![](./images/query1.JPG " ") 
 
 
-You may now [proceed to the next lab](#next).
+This is the end of the Oracle Sharding Workshop.
 
 
 ## Learn More
