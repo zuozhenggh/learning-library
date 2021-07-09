@@ -8,20 +8,21 @@ Oracle Multitenant enables an Oracle Database to function as a container databas
 *Estimated Workshop Time*: 2 hour
 
 ### Objectives
-- Rapid cloning and provisioning
-    Local clones and remote clones
-    Database administrators save time by provisioning pluggable databases as clones locally or from across the network without disrupting the source.
 
-- Refreshable PDBs
-    Maintain up to date copies of production databases by periodically topping them up with incremental transactions.
+In this lab, you will:
+* Explore rapid cloning and provisioning
+* Explore local clones and remote clones
+* Save database administrators time by provisioning pluggable databases as clones locally or from across the network without disrupting the source
+* Explore refreshable PDBs
+* Maintain up-to-date copies of production databases by periodically topping them up with incremental transactions.
 
 
 ### Prerequisites
 
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
+* You have completed:
     - Lab: Generate SSH Keys (*Free Tier* and *Paid Tenancies* only)
     - Lab: Prepare Setup (*Free Tier* and *Paid Tenancies* only)
     - Lab: Environment Setup
