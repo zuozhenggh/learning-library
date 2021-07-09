@@ -65,14 +65,13 @@ Estimated Time: 30 minutes
 
     ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-3. Expand the **customer**, **customer_segment**, **genre** and **movie** folders in the tree view on the left hand side and drag the following four files to the right hand pane:
+3. Expand the **customer**, **customer_segment**, and **genre** folders in the tree view on the left hand side and drag the following three files to the right hand pane:
 
 -   customer.csv
 -   customer_segment.csv
 -   genre.csv
--   movies.json
 
-> **Note:** We will be loading files from the **custsales** folder in later steps.
+> **Note:** We will be loading files from the movie **custsales** folder in later steps.
 
 4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables using simple names. First, click on the pencil icon to edit the settings for the customer/customer.csv load task.
 
@@ -96,13 +95,7 @@ Estimated Time: 30 minutes
 
 11. Rename the target table to **GENRE**. Then click **Close**.
 
-12. Click on the pencil icon to edit the settings for the movie/movies.json load task.
-
-13. Rename the target collection name to **MOVIES**, and the name of the view to generate under **Generate View** to **MOVIES**. Then click **Close**.
-
-    ![Edit the settings for movie.json](images/editmovies.png)
-
-14. Click on the Play button to run the data load job.
+12. Click on the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
     
