@@ -22,7 +22,7 @@ Estimated Time: 30 minutes
 -   Learn how to troubleshoot data loads
 
 
-## **Step 1**: Load Data from Object Store using the Database Actions Data Load Tool
+## **Step 1**: Configure the Object Storage Connection
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
@@ -40,28 +40,30 @@ Estimated Time: 30 minutes
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-5. Example with bold **text**.
+5. Click on **+Add Cloud Storage** in the top right of your screen.
 
-   If you add another paragraph, add 3 spaces before the line.
+-   In the **Name** field, enter 'MovieStream Data Lake'
+-   Leave the Cloud Store selected as **Oracle**
+-   Copy and paste the following URI into the URI + Bucket field:
 
-## **STEP 2:** <what is the action in this step>
+> https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
 
-1. Sub step 1 - tables sample
+-   Select **No Credential** as this is a public bucket
+-   Click on the **Test** button to test the connection. Then click **Save**.
 
-  Use tables sparingly:
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+## **Step 2:** Link to your source files, creating External Tables in the database
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+1. Now, to load or link data from this newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
-    - List item 1
-    - List item 2
+    ![Click on Data Load](images/backtodataload.png)
 
-3. Code examples
+2. Under **What do you want to do with your data?** select **LINK DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+
+    ![Select Link Data, then Cloud Storage](images/linkdata.png)
+
+3. Up to here... problem because folders are not supported.
+
 
     ```
     Adding code examples
