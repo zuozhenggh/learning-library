@@ -48,7 +48,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [workshop-staged.zip](need url) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
+1. Download [19cnf-workshop-staged.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8ymA1czX8XRytfobEBedr8guxJfPwZ9gRUH2PZjbk2AeQBnFHMM06si6NSitFeqY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-staged.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
@@ -104,7 +104,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
   ![Job Details page](images/job-details-page.png "Job Details page")
 
-18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard and paste it where you can refer to it later if needed.
+18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard because you need it in STEP 3.
 
     ```
     remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
@@ -113,21 +113,21 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
 
-> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance. Otherwise, you obtain the URL in the previous step by looking in the stack job log.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
 
-1. In a browser, enter the URL to your compute instance.
+1. In a browser, enter the URL to your workshop-staged compute instance.
 
-   You are automatically logged into your `workshop-staged` compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
+   You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
 
     ![noVNC Desktop](images/noVNC-desktop.png "noVNC Desktop")
 
-2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down).
 
     ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
-    ![Enable Full Screen](images/enable-full-screen.png "Enable Full Screen")
+    ![Full Screen](images/full-screen.png "Full Screen")
 
-3. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
 

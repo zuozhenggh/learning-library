@@ -19,7 +19,7 @@ Learn how to do the following:
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
 - Connect to your compute instance via a browser and set up your desktop
-- Download the labs files for this workshop
+- Download the labs files
 
 ### Prerequisites
 
@@ -50,51 +50,63 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K5s7Sw5wGMvC4ose91816ptvrxQgLM2RFNaP6w-uO3oCA[…]b/LiveLabsBucket/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
+1. Download [19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/61yXY7ISpjmrT5pryLONxwk861S83-yyZF2zo8YUFqp3HpzO2hN-fFXzdz2zS1pI/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
-    ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
+  ![Create a stack tile on the home page](images/create-a-stack.png)
 
-    The **Create Stack** page is displayed.
+    The **Create Stack - Stack Information** page is displayed.
 
-3. For **Stack Information**, select **My Configuration**. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**. Leave the default values for stack name and description as is. Select your compartment.
+3. Select **My Configuration**.
 
-    ![Stack Information page top half](images/stack-information-page-top-half.png "Stack Information page top half")
+4. In the **Stack Configuration** area, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
-    ![Stack Information page bottom half](images/stack-information-page-bottom-half.png "Stack Information page bottom half")
+  ![Stack Information](images/stack-information-page-workshop-installed.png "Stack Information page")
 
-4. Click **Next**.
+5. For **Name**, leave the default stack name as is.
 
-    The **Configure Variables** page is displayed.
+6. For **Description**, leave the default description for the stack as is.
 
-5. In the **Instance** section, select a region, your compartment, an availability domain, and **Paste SSH Key**. In the SSH field, paste your public SSH key.
+7. Select your compartment to store the stack.
 
-    ![Instance section](images/instance-section.png "Instance section")
+8. Click **Next**. The **Configure Variables** page is displayed.
 
-6. In the **Network** section, leave the default setting as is to create a new VCN (recommended).
+9. In the **Instance** section, make sure the appropriate region is selected.
 
-    If you want to use one of your existing VCNs, select **Use existing VCN**, select a VCN that has a regional public subnet and the required security rules, and select your public subnet.
+10. Select your compartment.
 
-    ![Network section](images/network-section.png "Network section")
+11. Select an availability domain.
 
-7. Click **Next**.
+12. Select **Paste SSH Key**, and then paste the contents of your public key into the box. Be sure that there are no carriage returns. The key should be all on one line.
 
-8. On the **Review** page, review your configuration variables and make sure they are correct.
+  ![Instance Configuration](images/instance-configuration.png "Instance Configuration")
 
-    ![Review page](images/review-page.png)
+13. In the **Network** section, choose one of the following options:
 
-9. Scroll to the bottom. In the **Run Apply on the created stack** section, select **RUN APPLY**.
+    - **Option 1 (Recommended)**: Leave the default settings as is to create a new VCN.
 
-    ![Run Apply option](images/run-apply-option.png "Run Apply option")
+    ![Network Configuration](images/network-configuration.png "Network Configuration")
 
-10. Click **Create**.
+    - **Option 2**: Select **Use existing VCN** and select an existing VCN and subnet in your tenancy. You may need to select different compartments to locate these items. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires the ingress security rules specified in STEP 1 above.
 
-    Resource Manager starts provisioning your compute instance. The **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. When the job is finished, the state reads **Succeeded**.
+14. Click **Next**.
 
-    ![Job Details page](images/job-details-page.png "Job Details page")
+15. On the **Review** page, verify that the information is correct.
 
-11. Wait for the log to indicate that the Apply job has completed. The last line in the log contains the URL to access your compute instance. For example, your URL looks similar to the one below, with your own public IP address.
+  ![Review page](images/review-page.png "Review page")
+
+16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
+
+  ![Run Apply section](images/run-apply-section.png "Run Apply Section")
+
+17. Click **Create**.
+
+    Resource Manager starts provisioning your compute instance. The **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
+
+  ![Job Details page](images/job-details-page.png "Job Details page")
+
+18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard because you need it in STEP 3.
 
     ```
     remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
@@ -103,22 +115,24 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
 
-> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance. Otherwise, you obtain the URL in the previous step by looking in the log for the stack job.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
 
-1. In a browser, enter the URL to your compute instance.
+1. In a browser, enter the URL to your workshop-installed compute instance.
 
-    You are automatically logged into your workshop-staged computed instance and presented with user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
+    You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox, a terminal window, and gedit (text editor). The Oracle Database 19c New Features workshop guide is displayed in Firefox.
 
     ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
 
-2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down).
 
-    ![Enable Full Screen](images/enable-full-screen.png "Enable Full Screen")
+    ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
-3. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+    ![Full Screen](images/full-screen.png "Full Screen")
+
+3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
-## **STEP 4**: Download the lab files for this workshop
+## **STEP 4**: Download the lab files
 
 1. On the noVNC desktop, open a terminal window.
 
@@ -132,7 +146,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 3. Download the lab files into the `19cnf` directory.
 
     ```
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5BYzHdiNpOX1w6BT_iitF9kqujT244EMC3UMLNtT5QQ60Hqsqy9f7m3G4mS7swhh/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip
     ```
 
 4. Extract the ZIP file in the `19cnf` directory.
@@ -141,7 +155,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     $ unzip -q 19cnf-lab-files.zip
     ```
 
-5. Verify that you have 27 files.
+5. View the list of files.
 
     ```
     ls
@@ -161,4 +175,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, July 8 2021
+- **Last Updated By/Date** - Jody Glover, Database team, July 9 2021
