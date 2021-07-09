@@ -474,13 +474,13 @@ This lab assumes you have already completed the following:
 
 6. From your laptop, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the shard director host and the port number is 8081.
 
-    ![image-20210123155946840](images/image-20210123155946840.png)
+    ![image-app-monitor](images/image-app-monitor.png)
 
    
 
 7. Scroll down the screen, you can see the Last inserted orders:
 
-    ![image-20210123160029874](images/image-20210123160029874.png)
+    ![image-last-inserted-orders](images/image-last-inserted-orders.png)
 
    
 
