@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private **workshop-installed** image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window, a Firefox browser, and a gedit text editor.
 
-Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via Cloud Shell and a browser, and download the necessary lab files for the workshop.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser and then download the lab files.
 
-Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules. STEP 1 covers how to configure the security rules. If you accept the default to create a new VCN when configuring the stack, then you can skip STEP 1.
+Oracle highly recommends that you create a new VCN when creating the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which is covered in STEP 1. If you accept the default to create a new VCN when creating the stack, then you can skip STEP 1.
 
 > **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because they have already been done for you.
 
@@ -18,7 +18,6 @@ Learn how to do the following:
 
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
-- Obtain the public IP address of your compute instance
 - Connect to your compute instance via a browser and set up your desktop
 - Download the labs files for this workshop
 
@@ -35,7 +34,7 @@ Before you start, be sure that you have done the following:
 
 Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521, 1523, and 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
-> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended). If you are working in the LiveLabs environment, you can skip this step and STEP 2 and proceed to STEP 3.
+> **Note**: If you plan to let the terraform script create a new VCN for you (recommended), you can skip this step and proceed to STEP 2. If you are working in the LiveLabs environment, you can skip this step and STEP 2 and proceed to STEP 3.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -45,7 +44,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 4. Click the default security list.
 
-5. For each port number (22, 1521, 1523, 1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
+5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
 ## **STEP 2**: Create and apply a stack in Resource Manager
 
@@ -89,47 +88,37 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Run Apply option](images/run-apply-option.png "Run Apply option")
 
-10. Click **Create** to begin the provisioning job.
+10. Click **Create**.
 
-    The **Job Details** page is displayed showing the job in progress.
+    Resource Manager starts provisioning your compute instance. The **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. When the job is finished, the state reads **Succeeded**.
 
-11. Wait for the job to be completed. The job is successful when it reads "SUCCEEDED" and the last line of the log file reads `Apply complete!`.
+    ![Job Details page](images/job-details-page.png "Job Details page")
 
-    ![Job Details page with the job marked as succeeded](images/job-details-page-succeeded.png "Job Details page with the job marked as succeeded")
-
-
-## **STEP 3**: Obtain the public IP address of your compute instance
-
-1. From the navigation menu, select **Compute**, and then **Instances**.
-
-2. Select your compartment.
-
-3. Find the public IP address of the compute instance called **workshop-installed** in the table and jot it down.
-
-4. (Optional) Click the name of your compute instance to view all of its details.
-
-
-
-## **STEP 4**: Connect to your compute instance via a browser and set up your desktop
-
-1. Open a browser on your personal computer and enter the following URL. Replace `public-ip-address` with your compute instance's public IP address.
+11. Wait for the log to indicate that the Apply job has completed. The last line in the log contains the URL to access your compute instance. For example, your URL looks similar to the one below, with your own public IP address.
 
     ```
-    http://compute-public-ip:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true
+    remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
     ```
 
-    You are presented with user-friendly desktop for your Unix instance. On the desktop, you can find shortcuts to Firefox and a terminal window.
+
+## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
+
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance. Otherwise, you obtain the URL in the previous step by looking in the log for the stack job.
+
+1. In a browser, enter the URL to your compute instance.
+
+    You are automatically logged into your workshop-staged computed instance and presented with user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
+
+    ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
 
 2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
 
-3. To initialize local copy and pasting of text: Click the **Clipboard** icon on the control bar (5th button down). In the **Clipboard** dialog box, paste some copied text, for example, "This text was copied from my local computer". Open the application into which you want to paste the text, for example, a terminal window. Paste the text using your mouse controls (middle button or context menu option).
+    ![Enable Full Screen](images/enable-full-screen.png "Enable Full Screen")
 
-> **Note**: It's important that you open the Clipboard dialog box and paste your text into it before you open the application into which you want to paste the text. Otherwise, the Paste option on the context menu may be grayed out.
-
-4. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+3. If the workshop guide is not already open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
-## **STEP 5**: Download the lab files for this workshop
+## **STEP 4**: Download the lab files for this workshop
 
 1. On the noVNC desktop, open a terminal window.
 
@@ -172,4 +161,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, June 28 2021
+- **Last Updated By/Date** - Jody Glover, Database team, July 8 2021

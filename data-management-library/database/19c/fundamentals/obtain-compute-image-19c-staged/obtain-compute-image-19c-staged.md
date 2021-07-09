@@ -1,11 +1,11 @@
 # Obtain a Compute Image with Staged Oracle Database 19c Installer Files
 
 ## Introduction
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. noVNC is installed on the compute instance to provide an easy-to-use browser user interface. You can also access a terminal window on the compute instance.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private **workshop-staged** image in Oracle Cloud Marketplace. The image has the Oracle Database 19c installer files staged on it and has a noVNC desktop, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window and a Firefox browser.
 
-Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser.
 
-Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires an ingress security rule to allow traffic on port 6080 so that you can access your compute instance via a browser. STEP 1 covers how to configure the security rule.
+Oracle highly recommends that you create a new VCN when creating the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which is covered in STEP 1. If you accept the default to create a new VCN when creating the stack, then you can skip STEP 1.
 
 > **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because they are already done for you.
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 30 minutes
 
 Learn how to do the following:
 
-- Configure a security rule in your VCN
+- Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
 - Connect to your compute instance from a browser and set up your desktop
 
@@ -28,28 +28,21 @@ Before you start, be sure that you have done the following:
 - Signed in to Oracle Cloud Infrastructure
 - Created SSH keys in Cloud Shell
 
-## **STEP 1**: Configure a security rule on your VCN
+## **STEP 1**: Add security rules to your existing VCN
 
-> **Note**: Complete this step only if you plan to use your own VCN when creating the stack in STEP 2. You can skip this step if you are working in the LiveLabs environment.
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521 to 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
-1. From the navigation menu, select **Networking**, and then **Virtual Cloud Networks**.
+> **Note**: If you plan to let the terraform script create a new VCN for you (recommended), you can skip this step and proceed to STEP 2. If you are working in the LiveLabs environment, you can skip this step and STEP 2 and proceed to STEP 3.
 
-2. Select the compartment in which your VCN resides.
+1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
-3. Click the name of your VCN.
+2. Select your VCN.
 
-4. On the left, click **Security Lists**.
+3. Under **Resources**, select **Security Lists**.
 
-5. Click the default security list.
+4. Click the default security list.
 
-6. Click **Add Ingress Rules**. An Ingress Rule dialog box is displayed.
-
-7. Configure the following rule, and then click **Add Ingress Rules**.
-
-    - source type: CIDR
-    - source cidr 0.0.0.0/0
-    - destination port: 6080
-
+5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
 ## **STEP 2**: Create and apply a stack in Resource Manager
 
@@ -87,13 +80,13 @@ Before you start, be sure that you have done the following:
 
   ![Instance Configuration](images/instance-configuration.png "Instance Configuration")
 
-13. Choose one of the following options to configure the network:
+13. In the **Network** section, choose one of the following options:
 
     - **Option 1 (Recommended)**: Leave the default settings as is to create a new VCN.
 
     ![Network Configuration](images/network-configuration.png "Network Configuration")
 
-    - **Option 2**: Select **Use existing VCN** and select an existing VCN and subnet. You may need to select different compartments to locate these items. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires an ingress security rule to allow traffic on port 6080 so that you can access your compute instance via a browser. See STEP 5 for information on how to configure the security rule.
+    - **Option 2**: Select **Use existing VCN** and select an existing VCN and subnet in your tenancy. You may need to select different compartments to locate these items. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires the ingress security rules specified in STEP 1 above.
 
 14. Click **Next**.
 
@@ -101,17 +94,17 @@ Before you start, be sure that you have done the following:
 
   ![Review page](images/review-page.png "Review page")
 
-16. In the **Run Apply on the created stack** section, select **RUN APPLY** to immediately provision the resources.
+16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
   ![Run Apply section](images/run-apply-section.png "Run Apply Section")
 
 17. Click **Create**.
 
-    Resource Manager starts provisioning your compute instance. The **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. When the job is finished, the state reads **Succeeded**.
+    Resource Manager starts provisioning your compute instance. The **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
 
   ![Job Details page](images/job-details-page.png "Job Details page")
 
-18. Wait for the log to indicate that the Apply job has completed. The last line in the log contains the URL to access your compute instance. For example, your URL looks similar to the one below, with your own public IP address.
+18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard and paste it where you can refer to it later if needed.
 
     ```
     remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
@@ -120,15 +113,17 @@ Before you start, be sure that you have done the following:
 
 ## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
 
-> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance. Otherwise, you obtain the URL in the previous step by looking in the log for the stack job.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance. Otherwise, you obtain the URL in the previous step by looking in the stack job log.
 
 1. In a browser, enter the URL to your compute instance.
 
-   You are automatically logged into your workshop-staged computed instance and presented with user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
+   You are automatically logged into your `workshop-staged` compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox and a terminal window. The "Install Oracle Database 19c with Automatic Root Script Execution" lab instructions are displayed in Firefox.
 
     ![noVNC Desktop](images/noVNC-desktop.png "noVNC Desktop")
 
 2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Click the **Fullscreen** icon (6th button down).
+
+    ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
     ![Enable Full Screen](images/enable-full-screen.png "Enable Full Screen")
 
@@ -145,4 +140,4 @@ Before you start, be sure that you have done the following:
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, July 7 2021
+- **Last Updated By/Date** - Jody Glover, Database team, July 9 2021
