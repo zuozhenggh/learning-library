@@ -36,7 +36,7 @@
         },
         {
             "title": "Lab 5: Deploy Kubernetes Nodes And Start OIG Server",
-            "filename": "../../init-kub-nodes/init-Kub-nodes.md"
+            "filename": "../../init-kub-nodes/init-kub-nodes.md"
         },
         {
             "title": "Lab 6: Deploy OIRI In The Local Kubernetes Node",
