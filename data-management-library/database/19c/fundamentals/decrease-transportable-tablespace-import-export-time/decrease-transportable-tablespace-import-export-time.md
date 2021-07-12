@@ -22,10 +22,9 @@ Be sure that the following tasks are completed before you start:
 - Create SSH keys.
 - Sign in to Oracle Cloud Infrastructure.
 
-
 ## **Task**: Decrease the Transportable Tablespace Import Time
 
-1. Execute the` /home/oracle/labs/DB/create_drop_TBS.sh` shell script. The script creates another `PDB`, `PDB19_IN_ORCL`, creates the `TEST` tablespace in `PDB1` and the directory for Data Pump in `PDB1` in `ORCL`, and drops the `TEST` tablespace in `PDB19_IN_ORCL`.
+1. Execute the` /home/oracle/labs/19cnf/create_drop_TBS.sh` shell script. The script creates another `PDB`, `PDB19_IN_ORCL`, creates the `TEST` tablespace in `PDB1` and the directory for Data Pump in `PDB1` in `ORCL`, and drops the `TEST` tablespace in `PDB19_IN_ORCL`.
 ```
 $ /home/oracle/labs/DB/create_drop_TBS.sh
 ```
@@ -379,6 +378,7 @@ $
   SQL> EXIT
   $
   ```
+
 
 > **Note**: End of Decreasing TTS Export Time Lab.
 

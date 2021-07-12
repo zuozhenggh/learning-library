@@ -10,7 +10,7 @@ Estimated Lab Time: 15 minutes
 
 - Oracle Database 19c installed
 - A CDB: `ORCL` with `PDB1` in archivelog mode.
-- `HR` schema installed in `PDB1` as an example of application tables. If you want to use the `HR.EMPLOYEES` table, use the [hr.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/duplicate-cdbs-using-dbca-silent-mode/files/hr.sql). Download the SQL script to the labs directory created on your server `/home/oracle/labs`. In the script, update the password of the user connected to the database.
+- `HR` schema installed in `PDB1` as an example of application tables. If you want to use the `HR.EMPLOYEES` table, use the [hr_main.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/duplicate-cdbs-using-dbca-silent-mode/files/hr.sql). Download the SQL script to the labs directory created on your server `/home/oracle/labs`. In the script, update the password of the user connected to the database.
 
 
 ### Objectives
@@ -23,7 +23,6 @@ Learn how to do the following:
 - Use DBCA to Duplicate a CDB with OMF
 - Clean Up the CDBs Duplicated
 
-
 ### Prerequisites
 
 Be sure that the following tasks are completed before you start:
@@ -31,6 +30,12 @@ Be sure that the following tasks are completed before you start:
 - Obtain an Oracle Cloud account.
 - Create SSH keys.
 - Sign in to Oracle Cloud Infrastructure.
+
+## Enable Archive Log Mode
+- enable_ARCHIVELOG.sh
+
+## Disable Archive Log Mode
+- disable_ARCHIVELOG.sh
 
 
 ## **STEP 1**: Check the Existence of Application Data in the CDB
@@ -41,10 +46,10 @@ Be sure that the following tasks are completed before you start:
     Enter password: password
     ```
 
-2. Use the [hr.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/duplicate-cdbs-using-dbca-silent-mode/files/hr.sql) script to create the `HR` user and `EMPLOYEES` table in `PDB1`.
+2. Use the [hr_main.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/duplicate-cdbs-using-dbca-silent-mode/files/hr.sql) script to create the `HR` user and `EMPLOYEES` table in `PDB1`.
 
     ```
-    @/home/oracle/labs/hr.sql
+    @/home/oracle/labs/19cnf/hr.sql
     ```
 
 3. Verify that `PDB1` contains the `HR.EMPLOYEES` table.
