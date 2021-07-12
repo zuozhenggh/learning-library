@@ -57,6 +57,8 @@ Estimated Time: 30 minutes
 
 ## **Step 2:** Load data from files in Object Storage
 
+In this step we will perform some simple data loading tasks, to load in CSV files from Object Store into tables in our autonomous database.
+
 1. Now, to load or link data from this newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
     ![Click on Data Load](images/backtodataload.png)
@@ -98,7 +100,110 @@ Estimated Time: 30 minutes
 12. Click on the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
-    
+
+    The job should take about 30 seconds to run.
+
+13. Check that all three data load tasks completed successfully, and have green tick icons next to them.
+
+    ![Check the job is completed](images/loadcompleted.png)
+
+## **Step 3:** Using Database APIs to load richer data files
+
+In this step, we will use some of the additional options of the DBMS_CLOUD APIs to load in some files with differently structured data.
+
+1.  Using the top left menu, navigate to **Development** > **SQL** to open SQL Developer Web
+
+2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the multiple parquet files in the **custsales** folder in Object Store.
+
+define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+define parquet_format = '{"type":"parquet",  "schema": "all"}'
+ 
+begin
+    dbms_cloud.create_external_table(
+        table_name => 'ext_custsales',
+        file_uri_list => '&uri_gold/custsales/*.parquet',
+        format => '&parquet_format',
+        column_list => 'MOVIE_ID NUMBER(20,0),
+                        LIST_PRICE BINARY_DOUBLE,
+                        DISCOUNT_TYPE VARCHAR2(4000 BYTE),
+                        PAYMENT_METHOD VARCHAR2(4000 BYTE),
+                        GENRE_ID NUMBER(20,0),
+                        DISCOUNT_PERCENT BINARY_DOUBLE,
+                        ACTUAL_PRICE BINARY_DOUBLE,
+                        DEVICE VARCHAR2(4000 BYTE),
+                        CUST_ID NUMBER(20,0),
+                        OS VARCHAR2(4000 BYTE),
+                        DAY date,
+                        APP VARCHAR2(4000 BYTE)'
+    ); 
+end;
+/
+
+3.  Click on the **Run Script** button (or use the F5 key) to run the script.
+
+    ![Run the script to load the ext_custsales table](images/custsalesscript.png)
+
+    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table that is independent on the parquet files. 
+
+4.  To do this, click on the bin icon to clear the worksheet
+
+    ![Click on the bin icon](images/binicon.png)
+
+    Then, copy and paste the following script into the worksheet:
+
+exec dbms_output.put_line(systimestamp || ' - create custsales')
+create table custsales as select * from ext_custsales;
+
+5.  Click on the Run Script button again to run the script.
+
+6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
+
+define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
+begin
+    dbms_cloud.create_external_table(
+        table_name => 'ext_movie',
+        file_uri_list => '&uri_gold/movie/movies.json',
+        format => '&json_format',
+        column_list => 'doc varchar2(30000)'
+        );
+end;
+/  
+
+exec dbms_output.put_line(systimestamp || ' - create movie')
+create table movie as
+select
+    cast(m.doc.movie_id as number) as movie_id,
+    cast(m.doc.title as varchar2(200 byte)) as title,   
+    cast(m.doc.budget as number) as budget,
+    cast(m.doc.gross as number) gross,
+    cast(m.doc.list_price as number) as list_price,
+    cast(m.doc.genre as varchar2(4000)) as genre,
+    cast(m.doc.sku as varchar2(30 byte)) as sku,   
+    cast(m.doc.year as number) as year,
+    to_date(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
+    cast(m.doc.views as number) as views,
+    cast(m.doc.cast as varchar2(4000 byte)) as cast,
+    cast(m.doc.crew as varchar2(4000 byte)) as crew,
+    cast(m.doc.studio as varchar2(4000 byte)) as studio,
+    cast(m.doc.main_subject as varchar2(4000 byte)) as main_subject,
+    cast(m.doc.awards as varchar2(4000 byte)) as awards,
+    cast(m.doc.nominations as varchar2(4000 byte)) as nominations,
+    cast(m.doc.runtime as number) as runtime,
+    substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
+from ext_movie m
+where rownum < 10;
+ 
+alter table movie add constraint pk_movie_cust_id primary key("MOVIE_ID");
+alter table movie add CONSTRAINT movie_cast_json CHECK (cast IS JSON);
+alter table movie add CONSTRAINT movie_genre_json CHECK (genre IS JSON);
+alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
+alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
+alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
+alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
+
+7. Click on the **Run Script** button to run the script.
+
 
 ----------------------------------
 N. Code examples that include variables
