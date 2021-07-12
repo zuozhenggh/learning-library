@@ -150,16 +150,15 @@ end;
 
     ![Click on the bin icon](images/binicon.png)
 
-    Then, copy and paste the following script into the worksheet:
+    Then, copy and paste the following statement into the worksheet:
 
 ```
-exec dbms_output.put_line(systimestamp || ' - create custsales')
 create table custsales as select * from ext_custsales;
 ```
 
-5.  Click on the Run Script button again to run the script.
+5.  Click on the Run (or Run Script) button to run the statement.
 
-6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
+6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -174,7 +173,6 @@ begin
 end;
 /  
 
-exec dbms_output.put_line(systimestamp || ' - create movie')
 create table movie as
 select
     cast(m.doc.movie_id as number) as movie_id,
@@ -209,22 +207,198 @@ alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JS
 
 7.  Click on the **Run Script** button to run the script.
 
+8.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, then copy and paste the following script:
 
-----------------------------------
-N. Code examples that include variables
+```
+define uri_landing = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o'
+define csv_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
+begin       
+    dbms_cloud.create_external_table(
+        table_name => 'ext_pizza_locations',
+        file_uri_list => '&uri_landing/pizza-locations/*.csv',
+        format => '&csv_format',
+        column_list => 'PIZZA_LOC_ID NUMBER,
+                        LAT NUMBER,
+                        LON NUMBER,
+                        CHAIN_ID NUMBER,
+                        CHAIN VARCHAR2(30 BYTE),
+                        ADDRESS VARCHAR2(250 BYTE),
+                        CITY VARCHAR2(250 BYTE),
+                        STATE VARCHAR2(26 BYTE),
+                        POSTAL_CODE VARCHAR2(38 BYTE),
+                        COUNTY VARCHAR2(250 BYTE)'
+        ); 
+end;
+/
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+create table pizza_locations as select * from ext_pizza_locations;
+```
 
-## Learn More
+9.  Click on the **Run Script** button to run the script.
 
-*(optional - include links to docs, white papers, blogs, etc)*
+10. Part of our later data analysis will require us to have a TIME table in the autonomous database. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, then copy and paste the following lines:
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+```
+create table TIME as
+SELECT TRUNC (to_date('20210101','YYYYMMDD')) as day
+  FROM DUAL CONNECT BY ROWNUM < 732;  
+```
+
+11. Click on the **Run Script** button to run the script.
+
+12. Now that we have all the data we need loaded into the database, it is useful to create some views on the data that we can use in later analysis. Click on the bin icon to clear the worksheet, then copy and paste the following script:
+
+```
+CREATE OR REPLACE VIEW v_custsales AS
+SELECT
+    cs.day,
+    c.cust_id,
+    c.last_name,
+    c.first_name,
+    c.city,
+    c.state_province,
+    c.country,
+    c.continent,
+    c.age,
+    c.commute_distance,
+    c.credit_balance,
+    c.education,
+    c.full_time,
+    c.gender,
+    c.household_size,
+    c.income,
+    c.income_level,
+    c.insuff_funds_incidents,
+    c.job_type,
+    c.late_mort_rent_pmts,
+    c.marital_status,
+    c.mortgage_amt,
+    c.num_cars,
+    c.num_mortgages,
+    c.pet,
+    c.promotion_response,
+    c.rent_own,
+    c.work_experience,
+    c.yrs_current_employer,
+    c.yrs_customer,
+    c.yrs_residence,
+    c.loc_lat,
+    c.loc_long,   
+    cs.app,
+    cs.device,
+    cs.os,
+    cs.payment_method,
+    cs.list_price,
+    cs.discount_type,
+    cs.discount_percent,
+    cs.actual_price,
+    1 as transactions,
+    s.short_name as segment,
+    g.name as genre,
+    m.title,
+    m.budget,
+    m.gross,
+    m.genre as genre_list,
+    m.sku,
+    m.year,
+    m.opening_date,
+    m.cast,
+    m.crew,
+    m.studio,
+    m.main_subject,
+    nvl(json_value(m.awards,'$.size()'),0) awards,
+    nvl(json_value(m.nominations,'$.size()'),0) nominations,
+    m.runtime
+FROM
+    genre g, customer c, custsales cs, customer_segment s, movie m
+WHERE
+     cs.movie_id = m.movie_id
+AND  cs.genre_id = g.genre_id
+AND  cs.cust_id = c.cust_id
+AND  c.segment_id = s.segment_id;
+ 
+create materialized view mv_custsales
+build immediate
+refresh complete
+as SELECT
+    cs.day,
+    c.cust_id,
+    c.last_name,
+    c.first_name,
+    c.city,
+    c.state_province,
+    c.country,
+    c.continent,
+    c.age,
+    c.commute_distance,
+    c.credit_balance,
+    c.education,
+    c.full_time,
+    c.gender,
+    c.household_size,
+    c.income,
+    c.income_level,
+    c.insuff_funds_incidents,
+    c.job_type,
+    c.late_mort_rent_pmts,
+    c.marital_status,
+    c.mortgage_amt,
+    c.num_cars,
+    c.num_mortgages,
+    c.pet,
+    c.promotion_response,
+    c.rent_own,
+    c.work_experience,
+    c.yrs_current_employer,
+    c.yrs_customer,
+    c.yrs_residence,
+    c.loc_lat,
+    c.loc_long,   
+    cs.app,
+    cs.device,
+    cs.os,
+    cs.payment_method,
+    cs.list_price,
+    cs.discount_type,
+    cs.discount_percent,
+    cs.actual_price,
+    1 as transactions,
+    s.short_name as segment,
+    g.name as genre,
+    m.title,
+    m.budget,
+    m.gross,
+    m.genre as genre_list,
+    m.sku,
+    m.year,
+    m.opening_date,
+    m.cast,
+    m.crew,
+    m.studio,
+    m.main_subject,
+    nvl(json_value(m.awards,'$.size()'),0) awards,
+    nvl(json_value(m.nominations,'$.size()'),0) nominations,
+    m.runtime
+FROM
+    genre g, customer c, custsales cs, customer_segment s, movie m
+WHERE
+     cs.movie_id = m.movie_id
+AND  cs.genre_id = g.genre_id
+AND  cs.cust_id = c.cust_id
+AND  c.segment_id = s.segment_id;
+  
+alter table mv_custsales add CONSTRAINT cs_cast_json CHECK (cast IS JSON);
+alter table mv_custsales add CONSTRAINT cs_crew_json CHECK (crew IS JSON);
+alter table mv_custsales add CONSTRAINT cs_studio_json CHECK (studio IS JSON);
+```
+
+13. Click on the **Run Script** button to run the script and create the views.
+
+This completes the Data Load lab. We now have a full set of structured tables and views loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables and views in later labs.
+
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+
+* **Author** - <Mike Matthews, Autonomous Database Product Management>
+* **Contributors** -  <Marty Gubar, Autonomous Database Product Management> 
+* **Last Updated By/Date** - <Mike Matthews, Autonomous Database Product Management, July 2021>
