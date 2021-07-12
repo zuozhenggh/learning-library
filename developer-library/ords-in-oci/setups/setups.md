@@ -16,6 +16,12 @@ In this lab, you will:
 * Create Object Store Buckets for our csv files
 * Create a secret using the Secrets Service and the OCI Vault
 
+### Prerequisites
+
+This lab assumes you have:
+* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+
+
 ## **STEP 1:** Create a Compartment
 
 We are going to create a **Compartment** for this lab so that our functions, logs, database and other OCI components reside in a single place.

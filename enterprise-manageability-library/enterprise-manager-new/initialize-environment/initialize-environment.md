@@ -23,24 +23,24 @@ This lab assumes you have:
 
     - Database Listener
     - Database Server
-    - Veridata Server
-    - Veridata Agent
+    - Enterprise Manager - Management server (OMS)
+    - Enterprise Manager - Management Agent (emagent)
 
-2. On the *Firefox* window on the right preloaded with *Veridata*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
     ```
-    Username: <copy>ggadm</copy>
+    Username: <copy>sysman</copy>
     ```
 
     ```
     Password: <copy>welcome1</copy>
     ```
 
-    ![](images/veridata-login.png " ")
+    ![](images/em-login.png " ")
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
-    ![](images/veridata-landing.png " ")
+    ![](images/em-landing.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
@@ -48,45 +48,56 @@ This lab assumes you have:
 
 4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
-    - Database and Listener
-    ```
-    <copy>
-    systemctl status oracle-database
-    </copy>
-    ```
+    - Database services (All databases and Standard Listener)
+        ```
+        <copy>
+        systemctl status oracle-database
+        </copy>
+        ```
 
-    ![](images/db-service-status.png " ")
+        ![](images/db-service-status.png " ")
+        ![](images/db-service-status2.png " ")
 
-    - WLS Admin Server, Veridata Server, and Veridata Agent
-    ```
-    <copy>
-    systemctl status oracle-veridata
-    </copy>
-    ```
+    - Listener Service (Non-Standard)
+        ```
+        <copy>
+        systemctl status oracle-db-listener
+        </copy>
+        ```
+        ![](images/listener-service-status.png " ")
 
-    ![](images/veridata-service-status.png " ")
+    - Enterprise Manager Services (OMS and emagent)
+        ```
+        <copy>
+        systemctl status oracle-emcc
+        </copy>
+        ```
+
+        ![](images/em-service-status.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
-    ```
-    <copy>
-    systemctl restart oracle-database
-    </copy>
-    ```
+        ```
+        <copy>
+        systemctl restart oracle-database
+        systemctl restart oracle-db-listener
+        </copy>
+        ```
 
-    - WLS Admin Server, Veridata Server, and Veridata Agent
-    ```
-    <copy>
-    systemctl restart oracle-veridata
-    </copy>
-    ```
+    - Enterprise Manager Services (OMS and emagent)
+  
+        ```
+        <copy>
+        systemctl restart oracle-emcc
+        </copy>
+        ```
 
 You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 
-1. Database Service (Database and Listener).
+1. Database Service
 
     ```
     Start: <copy>systemctl start oracle-database</copy>
@@ -100,22 +111,36 @@ You may now [proceed to the next lab](#next).
     ```
     Restart: <copy>systemctl restart oracle-database</copy>
     ```
-2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+2. Listener Service
 
     ```
-    Start: <copy>systemctl start oracle-veridata</copy>
+    Start: <copy>systemctl start oracle-db-listener</copy>
     ```
     ```
-    Stop: <copy>systemctl stop oracle-veridata</copy>
+    Stop: <copy>systemctl stop oracle-db-listener</copy>
     ```
     ```
-    Status: <copy>systemctl status oracle-veridata</copy>
+    Status: <copy>systemctl status oracle-db-listener</copy>
     ```
     ```
-    Restart: <copy>systemctl restart oracle-veridata</copy>
+    Restart: <copy>systemctl restart oracle-db-listener</copy>
+    ```
+3. Enterprise Manager Service
+
+    ```
+    Start: <copy>systemctl start oracle-emcc</copy>
+    ```
+    ```
+    Stop: <copy>systemctl stop oracle-emcc</copy>
+    ```
+    ```
+    Status: <copy>systemctl status oracle-emcc</copy>
+    ```
+    ```
+    Restart: <copy>systemctl restart oracle-emcc</copy>
     ```
 
 ## Acknowledgements
-* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
+- **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
+- **Last Updated By/Date** - Ashish Kumar - Solution Engineer, July 2021
