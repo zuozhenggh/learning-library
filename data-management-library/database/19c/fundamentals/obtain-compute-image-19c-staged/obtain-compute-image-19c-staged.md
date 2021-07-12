@@ -104,11 +104,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
   ![Job Details page](images/job-details-page.png "Job Details page")
 
-18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard because you need it in STEP 3.
-
-    ```
-    remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
-    ```
+18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. Copy the URL to the clipboard because you need it in STEP 3. Don't include `remote_desktop =`.
 
 
 ## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
