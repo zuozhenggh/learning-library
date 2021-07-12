@@ -4,41 +4,36 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "This lab provides an overview of Oracle Sharding – Hyperscale Globally Distributed Database",
+      "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
       "filename": "../../intro/intro.md"
     },
     {
       "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
-    },
-    {
-      "title": "Lab 4: Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: About Eshop",
+      "title": "Lab 2: About Eshop",
       "description": "About Eshop",
       "filename": "../../eshop/eshop.md"
     },
     {
-      "title": "Lab 6: Exploring Sharding Topology",
+      "title": "Lab 3: Exploring Sharding Topology",
       "description": "Exploring Sharding Topology",
       "filename": "../../topology/topology.md"
     },
     {
-      "title": "Lab 7: Eshop Application Schema & Code Snippet",
+      "title": "Lab 4: Eshop Application Schema & Code Snippet",
       "description": "Eshop App schema & Code Snippet",
       "filename": "../../appschema/appschema.md"
     },
     {
-      "title": "Lab 8: Application Queries on Sharded Database",
+      "title": "Lab 5: Application Queries on Sharded Database",
       "description": "Application Queries on sharding Database",
       "filename": "../../appqueries/appqueries.md"
     },
