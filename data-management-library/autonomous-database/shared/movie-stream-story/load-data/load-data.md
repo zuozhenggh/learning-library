@@ -399,6 +399,6 @@ This completes the Data Load lab. We now have a full set of structured tables an
 
 ## Acknowledgements
 
-* **Author** - <Mike Matthews, Autonomous Database Product Management>
-* **Contributors** -  <Marty Gubar, Autonomous Database Product Management> 
-* **Last Updated By/Date** - <Mike Matthews, Autonomous Database Product Management, July 2021>
+* **Author** - Mike Matthews, Autonomous Database Product Management
+* **Contributors** -  Marty Gubar, Autonomous Database Product Management
+* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, July 2021
