@@ -35,7 +35,7 @@
             "filename": "../../initialize-environment/initialize-environment.md"
         },
         {
-            "title": "Lab 5: Deploy Kubernetes Nodes And Start OIG Server",
+            "title": "Lab 5: Deploy Kubernetes Cluster And Start OIG Server",
             "filename": "../../init-kub-nodes/init-kub-nodes.md"
         },
         {

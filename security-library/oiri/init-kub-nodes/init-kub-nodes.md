@@ -1,4 +1,4 @@
-# Deploy Kubernetes Nodes And Start OIG Server
+# Deploy Kubernetes Cluster And Start OIG Server
 
 ## Introduction
 
@@ -9,7 +9,7 @@ In this lab we will review and start all and deploy Kubernetes nodes required to
 ### Objectives
 
 In this lab, you will:
-* Create and Initialize Kubernetes nodes
+* Create and Initialize Kubernetes Cluster
 * Start the OIG 12c domain. Analyze different roles and entitlements created in OIG
 
 ### Prerequisites
@@ -145,4 +145,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, June 2021
+* **Last Updated By/Date** - Ashish Kumar, NATD Solution Engineering (LiveLabs), June 2021
