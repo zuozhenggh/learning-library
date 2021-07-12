@@ -152,14 +152,17 @@ end;
 
     Then, copy and paste the following script into the worksheet:
 
-```exec dbms_output.put_line(systimestamp || ' - create custsales')
-create table custsales as select * from ext_custsales;```
+```
+exec dbms_output.put_line(systimestamp || ' - create custsales')
+create table custsales as select * from ext_custsales;
+```
 
 5.  Click on the Run Script button again to run the script.
 
 6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
 
-```define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+```
+define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
 define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
 begin
     dbms_cloud.create_external_table(
