@@ -2,29 +2,29 @@
 
 ## Introduction ##
 
-In this lab you will setup your environment. Here we will show you how to provision an autonomous database instances, create a user, load data into the database, and set up credentials and tools.
+In this lab you will set up your environment. Here we will show you how to provision an Oracle Autonomous Database instances, create a user, load data into the database, and set up credentials and tools.
 
 Estimated Time: 20 mins
 
 ### Objectives
--   Learn how to provision an ADW instance
--   Learn how to connect to ADW and use Database Actions
+-   Learn how to provision an Oracle Autonomous Data Warehouse instance
+-   Learn how to connect to Oracle Autonomous Data Warehouse and use Database Actions
 
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
 * Sign Up for Free Tier/Login to Oracle Cloud
 
-*Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
-In this section, you will provision an ADWC database, create an OML user account, and load the data required by the OML notebooks.
+In this section, you will provision an Oracle Autonomous Data Warehouse (ADWC) database, create an OML user account, and load the data required by the OML notebooks.
 
-## **Step 1:** Create an ADW Instance
+## **Step 1:** Create an Oracle Autonomous Data Warehouse Instance
 
-First, we are going to create an ADW Instance.
+First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2.  Select **Create Autonomous Data Warehouse**.
@@ -55,7 +55,7 @@ First, we are going to create an ADW Instance.
 
     ![](./images/prov-adw-5.png)
 
-## **Step 2:** Create an OML User
+## **Step 2:** Create an Oracle Machine Learning User
 
 1. On your instance, click the **Tools** tab, and then click **Open Oracle ML User Administration**.
 
@@ -119,7 +119,7 @@ First, we are going to create an ADW Instance.
 
 1.  Click the link below to download the install file.
 
-    [claims.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yaGHxlS_7qmrSGfYH33N4VLt6e7K8BPm1iqdyDXy0z2Cr8v0jjDXzuQfL4c9BPrY/n/c4u03/b/data-management-library-files/o/claims.zip)
+    [claims.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ajch-LlyUA2dXoLDXmKm-7W8ix9HGnJ9kjUiXG2o6mAlAddKew_TLYm3KpEMCq5m/n/c4u04/b/data-management-library-files/o/claims.zip)
 
 2.  Save `claims.zip` to a download directory and then unzip the file.
 

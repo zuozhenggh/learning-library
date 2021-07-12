@@ -77,5 +77,3 @@ If any of these three conditions are true, some ports in your network may be clo
 ## Acknowledgements
 
 * **Author** - Didi Han, Database Product Management
-* **Contributors** - Tom McGinn, Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, March 2021

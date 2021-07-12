@@ -14,18 +14,18 @@ Estimated Completion Time: 15 minutes
 
 ## **STEP 1:** Cleaning up the on-premises environment
 
-### If you used docker
+### If you used Docker
 
-1. Stop the services and remove containers:
+Stop the services and remove containers:
 
-    ```
-    <copy>
-    bash
-    docker-compose down
-    </copy>
-    ```
+```
+<copy>
+bash
+docker-compose down
+</copy>
+```
 
-> **Note:** the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
+> **Note:** The ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
 
 ### If you used the workshop image from the Oracle Cloud Marketplace
 

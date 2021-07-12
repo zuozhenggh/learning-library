@@ -15,7 +15,7 @@ Estimated Lab Time: 30 minutes
 - ADW and ODI instance created in Lab 1.
 - ADW wallet file downloaded in Lab 1.
 - Access to the following file: 
-    - [ModernDW\_Schema.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zqaUA8691p3f_QwquDdNmlzVLy6cglVISPOmhfEd5k0qpHUemNDaaWC_XwLLSFw4/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/ModernDW_Schema.sql)
+    - [ModernDW\_Schema.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m8jCcDv09syT0jpwNF3nI3YiNEhkBNTOug8eUrx_3aoYisQRLvqt4NxDytMLbh16/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/ModernDW_Schema.sql)
     
 ## **STEP 1:** Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
 

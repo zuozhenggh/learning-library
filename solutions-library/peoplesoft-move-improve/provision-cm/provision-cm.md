@@ -25,12 +25,12 @@ In this lab, you will:
 
 ## **STEP 1**: Generating Keys
 
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WxGTfD307h7JLB5lmBmmPT76JB6_nk5b30vVV_PbrrLDOViqCRkSM5ZbxJk8uwwv/n/c4u04/b/solutions-library/o/TestDrivekeys.zip)
 
 **Option B:** If you would like to generate your own keys, continue here:
 1. Ensure Git Bash is installed on your laptop/workstation.
 
-2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
+2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_1rr44ieeEs_O4vzHcvCD9Lv_gbzcLMXEmS1ti79tcqcBtLTVA5XHwQ3KKVE0qLM/n/c4u04/b/solutions-library/o/make_keys.sh)
 
 3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded. For example, if the file was downloaded in the Downloads folder, you can type the following command:
 

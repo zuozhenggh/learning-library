@@ -6,11 +6,9 @@ This lab will show you how to deploy the microservices on your Kubernetes cluste
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
 [](youtube:8gMmjbXSR68)
-</if>
 
 ### Objectives
 
