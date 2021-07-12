@@ -1,4 +1,4 @@
-# Loading data from object storage using Data Tools (& API)
+# Loading data from object storage using Data Tools and the DBMS_CLOUD APIs
 
 ## Introduction
 
@@ -18,8 +18,8 @@ Estimated Time: 30 minutes
 
 
 -   Learn how to define Object Store credentials for your autonomous database
--   Learn how to load data from the Object Store
--   Learn how to troubleshoot data loads
+-   Learn how to load data from the Object Store using Data Tools
+-   Learn now to load data from the Object Store using the DBMS_CLOUD APIs executed from SQL
 
 
 ## **Step 1**: Configure the Object Storage Connection
@@ -59,7 +59,7 @@ Estimated Time: 30 minutes
 
 In this step we will perform some simple data loading tasks, to load in CSV files from Object Store into tables in our autonomous database.
 
-1. Now, to load or link data from this newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
+1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
     ![Click on Data Load](images/backtodataload.png)
 
@@ -73,9 +73,9 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 -   customer_segment.csv
 -   genre.csv
 
-> **Note:** We will be loading files from the movie **custsales** folder in later steps.
+> **Note:** We will be loading files from the **movie** and **custsales** folders in later steps.
 
-4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables using simple names. First, click on the pencil icon to edit the settings for the customer/customer.csv load task.
+4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer/customer.csv load task.
 
     ![Edit the load task for customer.csv](images/editcustomerload.png)
 
@@ -109,9 +109,9 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 ## **Step 3:** Using Database APIs to load richer data files
 
-In this step, we will use some of the additional options of the DBMS_CLOUD APIs to load in some files with differently structured data.
+In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some files with differently structured data.
 
-1.  Using the top left menu, navigate to **Development** > **SQL** to open SQL Developer Web
+1.  Using the top left menu, navigate to **Development** > **SQL** to open a SQL Worksheet.
 
 2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the multiple parquet files in the **custsales** folder in Object Store.
 
@@ -144,9 +144,9 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table that is independent of the parquet files. 
+    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table. 
 
-4.  To do this, click on the bin icon to clear the worksheet
+4.  To do this, click on the bin icon to clear the worksheet.
 
     ![Click on the bin icon](images/binicon.png)
 
