@@ -115,7 +115,8 @@ In this step, we will use some of the additional options of the DBMS_CLOUD APIs 
 
 2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the multiple parquet files in the **custsales** folder in Object Store.
 
-define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+```
+<copy>define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
 define parquet_format = '{"type":"parquet",  "schema": "all"}'
  
 begin
@@ -137,7 +138,8 @@ begin
                         APP VARCHAR2(4000 BYTE)'
     ); 
 end;
-/
+/</copy>
+```
 
 3.  Click on the **Run Script** button (or use the F5 key) to run the script.
 
