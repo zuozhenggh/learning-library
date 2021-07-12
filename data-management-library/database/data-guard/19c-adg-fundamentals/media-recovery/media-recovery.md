@@ -8,7 +8,7 @@ corrupted when its cont-ent has changed from what Oracle Database expects to fin
 not prevented or repaired, block corruption can bring down the database and possibly
 result in the loss of key business data.
 
-Data Guard maintains a copy of your data in a standby database that is continuously updated with changes from the primary database. Data Guard validates all changes before they are applied to the standby database, preventing physical corruptions that occur in the storage layer from causing data loss and downtime. The primary database automatically attempts to repair the corrupted block in real time by fetching a good version of the same block from an Active Data Guard physical standby database. This process works in both ways. 
+Data Guard maintains a copy of your data in a standby database that is continuously updated with changes from the primary database. Data Guard validates all changes before they are applied to the standby database, preventing physical corruptions that occur in the storage layer from causing data loss and downtime. The primary database automatically attempts to repair the corrupted block in real time by fetching a good version of the same block from an Active Data Guard physical standby database. This process works in both ways.
 
 In this lab we will introduce a block corruption in the database and see Active Data Guard repairing it.
 
@@ -20,8 +20,7 @@ Estimated Lab Time: 40 Minutes
 - Access the table
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab 3: Connect to the Database
+- Connect to the Database
 
 
 ## **STEP 1**: Set the environment
@@ -35,7 +34,7 @@ First download the 3 sql scripts we will need in this Lab.
 [03-abmr.sql](./scripts/03-abmr.sql)
 
 
-Also find your ssh keys which were created earlier in order to connect to the hosts where the primary and standby database are located. 
+Also find your ssh keys which were created earlier in order to connect to the hosts where the primary and standby database are located.
 
 We need 4 sessions
 
@@ -47,7 +46,7 @@ The first session will be used to perform the actions in the database, the secon
 1. On the first session of the primary, set the environment and log on to the database
 
 ### **Option 1:** MAC or Windows CYGWIN Emulator
-1.  Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1*** 
+1.  Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1***
 2.  On the DB System homepage, Scroll downd to ***Nodes(1)*** find the Public IP address for your Virtual Machine.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -62,7 +61,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)
 2.  Run the PuTTY program. On your computer, go to **All Programs > PuTTY > PuTTY**
-3. Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1*** 
+3. Go to ***Overview >> Bare Metal, VM and Exadata >> DB Systems*** and select the First Database system ***ADGHOLAD1***
 4.   On the DB System homepage, Scroll downd to ***Nodes(1)*** find the Public IP address for your Virtual Machine.
 5. Select or enter the following information:
     - Category: _Session_
@@ -74,8 +73,8 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 ### Create all the sessions accordinghly
  In the terminal, connect to the Database. We use the SYS user for this and we can login with ***sqlplus / as sysdba***
- 
-    
+
+
 ````
     [opc@vmadgholad1 ~]$ sudo su - oracle
     [oracle@vmadgholad1 ~]$ . oraenv
@@ -122,10 +121,10 @@ Repeat these steps on the standby consoles.
 
 ## **Step 2**: Setup the environment
 
-1. In the SQL Plus console from the primary database, run the 01-abmr.sql script. 
+1. In the SQL Plus console from the primary database, run the 01-abmr.sql script.
     You can open this script and copy/paste this or copy it over to the host, just as you prefer.
-    
-Another option instead of copy/paste is to use wget on the command line from the host. 
+
+Another option instead of copy/paste is to use wget on the command line from the host.
 To do this, open a new SSH connection to the host as the opc user.
 Next ***sudo su - oracle*** to switch to the Oracle user and then issue the following wget commands:
 
@@ -207,7 +206,7 @@ In this example, you will need to remember the number 15.
 
 ## **Step 3**: Corrupt the datafile
 1. In the same session, execute script 02-abmr.sql.
-    This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created. 
+    This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created.
 
     ````
     SQL> @02-abmr.sql
@@ -220,14 +219,14 @@ In this example, you will need to remember the number 15.
     SQL>
     ````
 
-At this point, we have a corrupt datafile, but the database is not aware of it yet. 
+At this point, we have a corrupt datafile, but the database is not aware of it yet.
 
 
-## **Step 4**: Access the table 
+## **Step 4**: Access the table
 
-By accessing the table, Oracle will need to read the data. This demo database is not very active, so it will be necessary to flush the caches before we access the table. That way, the data needs to be read from disk. This data is corrupt and without any error returned to the user, Active Data Guard will repair the corrupt block before returning the query result. 
+By accessing the table, Oracle will need to read the data. This demo database is not very active, so it will be necessary to flush the caches before we access the table. That way, the data needs to be read from disk. This data is corrupt and without any error returned to the user, Active Data Guard will repair the corrupt block before returning the query result.
 
-1. Use the script 03-abmr.sql for this. 
+1. Use the script 03-abmr.sql for this.
 
     Monitor the alertlogs closely while executing this step.
 

@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. Here you configure the `oracle` user to run the scripts, which has already been configured as a sudoer on your compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. Here you configure the `oracle` user to run the scripts. The `oracle` user has already been configured as a sudoer on your compute instance.
+
+After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
 
 Estimated Lab Time: 30 minutes
 
@@ -17,22 +19,9 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+Be sure that the following task is completed before you start:
 
-- Obtain Oracle Cloud account.
-- Create or obtain a compartment in Oracle Cloud Infrastructure.
-- Sign in to your compute instance that you created in [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
-
-
-### Tip
-To copy and paste text from your local machine into an application on your Guacamole desktop, you can do the following:
-1.  On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac), and then select **Text Input**.
-
-  A black Text Input field is displayed at the bottom of the Guacamole desktop.
-
-2. Position your cursor where you want to paste the text.
-
-3. Copy text from your local machine, and then paste the copied text into the black Text Input field.
+- Sign in to the `workshop-stage` compute instance. If you do not have a compute instance, see [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
 
 
 ## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
@@ -51,47 +40,52 @@ To copy and paste text from your local machine into an application on your Guaca
     ls
     ```
 
-4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes up about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
+4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
+
+  *Important! Enter the command carefully and check that it is correct before you run it.*
 
     ```
     ./runInstaller -applyRU 32545013
     ```
 
-5. On the **Select Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
+5. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
   ![Select Configuration Option page](images/select-configuration-option-page.png "Select Configuration Option page")
 
-6. On the **Select System Class** page, leave **Desktop Class** selected, and click **Next**.
+6. On the **System Class** page, leave **Desktop Class** selected, and click **Next**.
 
   ![Select System Class page](images/select-system-class-page.png "Select System Class page")
 
-7. On the **Typical Installation** page, leave all the default values as is, except for the following:
+7. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes. The following values will be configured:
 
-    1. In the **Global database name** box, enter the following name. Make sure to capitalize `ORCL`.
-
-    ```
-    ORCL.livelabs.oraclevcn.com
-    ```
-
-    2. In the **Password** and **Confirm Password** boxes, enter `Ora4U_1234`. This will be the password for the `admin` database user.
-
-    3. In the **Pluggable database name** box, enter **PDB1**.
+    - Oracle base: `/u01/app/oracle`
+    - Database file location: `/u01/app/oracle/oradata`
+    - Database edition: Enterprise Edition
+    - Character set: Unicode (AL32UTF8)
+    - OSDBA group: `dba`
+    - Global database name: `orcl.livelabs.oraclevcn.com`
+    - Password: `Ora4U_1234`
+    - Create as Container database (selected)
+    - Pluggable database name: `orclpdb`
 
   ![Typical Install Configuration page](images/typical-install-configuration-page.png "Typical Install Configuration page")
 
-8. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+
+8. On the **Create Inventory** page, leave the default settings as is, and click **Next**. The following values will be configured:
+
+    - Inventory Directory: `/u01/app/oraInventory`
+    - oraInventory Group Name: `oinstall`
 
   ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
 
-9. On the **Root script execution configuration** page, do the following:
+9. On the **Root script execution** page, do the following, and then click **Next**.
 
-    1. Select the **Automatically run configuration scripts** check box. *This is the new feature!*
+    - Select the **Automatically run configuration scripts** check box. *This is the new feature!*
 
-    2. Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
+    - Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
 
-    3. Enter the password for the `oracle` user (`Ora4U_1234`).
+    - Enter the password for the `oracle` user, which is `Ora4U_1234`.
 
-    4. Click **Next**.
 
   ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
 
@@ -101,13 +95,7 @@ To copy and paste text from your local machine into an application on your Guaca
 
   ![Summary page](images/summary-page.png "Summary page")
 
-11. On the **Summary** page, save the response file.
-
-    1. Click **Save Response File**. The **Save Response File** dialog box is displayed.
-
-    2. Browse to and select the `/tmp` directory.
-
-    3. Leave **db.rsp** as the name, and click **Save**.
+11. On the **Summary** page, click **Save Response File**. The **Save Response File** dialog box is displayed. Browse to and select the `/tmp` directory. Leave **db.rsp** as the name, and click **Save**.
 
 12. Click **Install** to begin installing the software.
 
@@ -165,12 +153,12 @@ You can continue to use your PuTTY connection for this step.
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
 
-  For the `ORACLE_SID` value, enter `ORCL` (in uppercase).
+  For the `ORACLE_SID` value, enter `orcl`.
 
     ```
     $ . oraenv
 
-    ORACLE_SID = [oracle] ? ORCL
+    ORACLE_SID = [oracle] ? orcl
     The Oracle base has been set to /u01/app/oracle
     $
     ```
@@ -183,7 +171,7 @@ You can continue to use your PuTTY connection for this step.
     OLD_ORACLE_BASE=
     ORACLE_BASE=/u01/app/oracle
     ORACLE_HOME=/u01/app/oracle/product/19c/dbhome_1
-    ORACLE_SID=ORCL
+    ORACLE_SID=orcl
     $
     ```
 
@@ -193,7 +181,7 @@ You can continue to use your PuTTY connection for this step.
     ```
     $ sqlplus / as sysdba
 
-    SQL*Plus: Release 19.0.0.0.0 - Production on Sun May 2 14:58:59 2021
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Jul 7 14:58:59 2021
     Version 19.11.0.0.0
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
@@ -208,7 +196,12 @@ You can continue to use your PuTTY connection for this step.
 4. Check the version of the database.
 
     ```
-    SQL> SELECT * FROM v$version;
+    SQL> SELECT banner_full FROM v$version;
+
+    BANNER_FULL
+    --------------------------------------------------------------------------------
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.11.0.0.0
     ```
 
 5. Verify that you are logged in to the `root` container as the `SYS` user.
@@ -231,7 +224,7 @@ You can continue to use your PuTTY connection for this step.
     SQL>
     ```
 
-7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
+7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
 
     ```
     SQL> COLUMN name FORMAT A8
@@ -241,7 +234,7 @@ You can continue to use your PuTTY connection for this step.
     -------- ----------
     CDB$ROOT          1
     PDB$SEED          2
-    PDB1              3
+    ORCLPDB           3
     SQL>
     ```
 
@@ -254,10 +247,7 @@ You can continue to use your PuTTY connection for this step.
     $
     ```
 
-Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
-
-
-
+Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
 
 ## Learn More
 
@@ -271,4 +261,5 @@ Congratulations! You have a fully functional Oracle Database 19c instance runnin
     - James Spiller, Principal User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
-- **Last Updated By/Date** - Jody Glover, Database team, May 26 2021
+    - Rene Fontcha, Master Principal Solutions Architect
+- **Last Updated By/Date** - Jody Glover, Database team, July 7 2021
