@@ -9,7 +9,7 @@
 
 ## Install
 
-The SQL In-Memory POC tool is loaded into Sql\*Developer as a "User Defined Reports".
+The SQL In-Memory POC tool is loaded into SQL Developer as a "User Defined Reports".
 
 1. Download the Report script from [your Browser](https://raw.githubusercontent.com/vijaybalebail/In-memory-workshop/master/In_memory/sqlDev/InMemoryPOC.xml). Then right click and choose "save as"  to save the XML file.
 
@@ -19,7 +19,7 @@ The SQL In-Memory POC tool is loaded into Sql\*Developer as a "User Defined Repo
 
 
 
-2. Open Sql*Developer and click on Views--> Reports
+2. Open SQL Developer and click on Views--> Reports
 ![](images/viewReports.png)
 
 3. Under "User Defined Reports", Right click and select "Open Report". Open the xml file saved in step 1.
@@ -280,7 +280,7 @@ alter session set nls_date_format='YYYY-MON-DD';
 Next we can see other useful reports which could help during a POC.
 
 
-##  Report 4 : Top InmemorySQL report
+##  Report 4 : Top InmemorySQL Report
 
 
 ![](images/topSQLwithInMemory.png)

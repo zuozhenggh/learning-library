@@ -4,7 +4,7 @@
 
 We will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
-On completion, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing two applications and a datasource.
+On completion, you will have a local environment running with an Oracle 12c database and Oracle WebLogic Server 12c with a domain containing two applications and a datasource.
 
 Estimated Completion Time: 30 minutes.
 
@@ -179,13 +179,13 @@ Start up the local environment stack that will simulate our on-premises environm
 
 ### Troubleshooting
 
-1. If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
+If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
 
-    ```
-    pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
-    ```
+```
+pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+```
 
-    Go to the appropriate registry and image page, and go through the acknowledgement steps.
+Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
 ## **STEP 4:**  Check the Local Environment
 

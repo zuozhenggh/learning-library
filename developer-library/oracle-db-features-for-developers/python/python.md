@@ -6,7 +6,7 @@ In this lab, you will explore the various capabilities available when developing
 
 Estimated Lab Time:  20 minutes
 
-## About Python and Oracle
+### About Python and Oracle
 
 PL/SQL is ideal for programming tasks within Oracle Database. Most Oracle professionals, however, aren't confined to working strictly within the database itself.
 
@@ -154,7 +154,7 @@ There are several ways to execute Python code. In this step, we start with two e
     con = cx_Oracle.connect('system/Ora_DB4U@localhost:1521/orclpdb')
     print(con.version)
     </copy>
-    19.5.0.0.0
+    19.7.0.0.0
     <copy>
     quit()
     </copy>
@@ -522,5 +522,5 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 
 - **Author** - Troy Anthony
 - **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
-- **Last Updated By/Date** - Kay Malcolm, DB Product Management, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 

@@ -1,5 +1,11 @@
-
-# Load Data into an Autonomous Database Instance
+/* DELETE THIS FILE IN THE NEXT RELEASE - PLEASE USE ADB-LOADING-CONDITIONAL.MD FILE INSTEAD AND SPECIFY THE VERSION YOU WANT IN YOUR MANIFEST:
+{
+    "title": "Lab 3: Load Data",
+    "description": "Load data into ADB",
+    "type": "livelabs",
+    "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-loading/adb-loading-conditional.md"
+},
+*/# Load Data into an Autonomous Database Instance
 
 ## Introduction
 
@@ -11,7 +17,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 + from tables in remote databases, or
 + from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
 
-*Note: While this lab uses ADW, the steps are identical for loading data into an ATP database.*
+> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 Estimated Lab Time: 30 minutes
 
@@ -32,7 +38,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 ## **STEP 1**: Download Sample Data for Loading from Local File
 
-1. For this step, you will download a .csv file containing CHANNELS information to your local computer, then use it to populate a CHANNELS_LOCAL table in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/A5zXkuuOG2C5AOBHTiVpJd3obiECvsk8omPtnzvTwP0/n/c4u03/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
+1. For this step, you will download a .csv file containing CHANNELS information to your local computer, then use it to populate a CHANNELS_LOCAL table in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/pK5PL_ui1Q7OgZE6gh2WgR0Wyw6TiPyz7pkY5KkKUmc8NkmaccIHHHA8u0gbZnmd/n/c4u04/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
 ## **STEP 2**: Load Local Data Using the Database Actions DATA LOAD Tool
 
@@ -84,7 +90,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 In Steps 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent steps.
 
-1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/8XMKhDq1fbRYPu2QedUP_y2xyYdzu_FbY2ctO35u5XZnWdDTOlWjuzS1aVwy6ynU/n/c4u03/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
+1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/FNddNM_ga0qV-01p7an3Gkg4cpApXppFJwWYK_BzsH94qgZHibssWbhOHO87QUMp/n/c4u04/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
 
 ## **STEP 4**: Navigate to Object Storage and Create Bucket
 
@@ -134,7 +140,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
 3. Take a look at the URL you copied. In this example above, the **region name** is us-ashburn-1, the **Namespace** is a+++++++++ng5, and the **bucket name** is ADWCLab.
 
-    *Note: The URL can also be constructed as below:*
+    > **Note:** The URL can also be constructed as below:
 
     `https://objectstorage.<`**region name**`>.oraclecloud.com/n/<`**namespace name**`>/b/<`**bucket name**`>/o`
 
@@ -160,7 +166,9 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Enter Description and click Generate Token.](./images/generate-the-token.png " ")
 
-5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps. *Note: You can't retrieve the Auth Token again after closing the dialog box.*
+5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps.
+
+> **Note:** You can't retrieve the Auth Token again after closing the dialog box.
 
     ![Copy the Auth Token to clipboard.](./images/generated-token.png " ")
 
@@ -227,7 +235,7 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Click green arrow button to start data load job.](./images/click-green-arrow-button-start-data-load.png " ")
 
-**Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
+> **Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
 
 ## **STEP 9**: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
 
@@ -244,7 +252,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 + **copy_data**: Loads the specified source file to a table. The table must already exist in ADW.
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
-***Note:*** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed with the following:
+ > **Note:** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed.
 
 1. Click on the SQL tile to open SQL web developer.
 
@@ -256,7 +264,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 
     ![Click Run Script.](./images/table_creation_results_sql_dev_web.jpg " ")
 
-    *Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
+    > **Note:** You do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.*
 
 2. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
@@ -267,7 +275,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
      dbms_cloud.copy_data(
         table_name =>'CHANNELS',
         credential_name =>'OBJ_STORE_CRED',
-        file_uri_list =>'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/ADWCLab/o/chan_v3.dat',
+        file_uri_list =>'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/ADWCLab/o/chan_v3.dat',
         format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
      );
     end;
@@ -326,4 +334,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2021
+- **Last Updated By/Date** - Tom McGinn, June 2021
