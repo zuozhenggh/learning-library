@@ -144,7 +144,7 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table that is independent on the parquet files. 
+    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table that is independent of the parquet files. 
 
 4.  To do this, click on the bin icon to clear the worksheet
 
@@ -152,14 +152,14 @@ end;
 
     Then, copy and paste the following script into the worksheet:
 
-exec dbms_output.put_line(systimestamp || ' - create custsales')
-create table custsales as select * from ext_custsales;
+```exec dbms_output.put_line(systimestamp || ' - create custsales')
+create table custsales as select * from ext_custsales;```
 
 5.  Click on the Run Script button again to run the script.
 
 6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
 
-define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+```define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
 define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
 begin
     dbms_cloud.create_external_table(
@@ -202,8 +202,9 @@ alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
 alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
 alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
 alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
+```
 
-7. Click on the **Run Script** button to run the script.
+7.  Click on the **Run Script** button to run the script.
 
 
 ----------------------------------
