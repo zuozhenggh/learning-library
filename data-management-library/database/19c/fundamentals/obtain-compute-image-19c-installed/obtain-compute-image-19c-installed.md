@@ -50,7 +50,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
-1. Download [19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/61yXY7ISpjmrT5pryLONxwk861S83-yyZF2zo8YUFqp3HpzO2hN-fFXzdz2zS1pI/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
+1. Download [19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/UyFdPRkpgtXDamUYzyMeZckjhekdqj1BJ83Jpp8rVC1baCP06xDIKCeVX4gcTwwM/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
