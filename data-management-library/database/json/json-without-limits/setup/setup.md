@@ -72,8 +72,8 @@ The DRAGON Stack manager is an open-source project which provides the fastest wa
 5. Run the dragon command to generate SSH keys and display the config file:
 
     ```
-    $ <copy>./dragon-linux-x86_64-2.0.8 -config-template -create-keys</copy>
-    DRAGON Stack manager v2.0.8
+    $ <copy>./dragon-linux-x86_64-2.2.0 -config-template -create-keys</copy>
+    DRAGON Stack manager v2.2.0
 
     > Command line parameters ................................................... ok
     Entering keys generation process...
@@ -246,11 +246,14 @@ Save the auth token for later.
     ```
     $ <copy>java -Xmx2G -Xms2G -jar target/rtgenerator-1.0.3-jar-with-dependencies.jar dragon_low jsonuser My_Strong_Pa55word /home/loic_lefev/dragon_demo/wallet_dragon purchase_orders false 100 2 false false 1000</copy>
     ```
+    
+    The very first action that the data loader will do is to open the `purchase_orders` collection to start loading data. 
+   
+    **In the case the collection doesn't exist (like for the first run), then it will be created.**
 
-You should see the generator loading data into the purchase_orders collection:
+    You should see the generator loading data into the purchase_orders collection:
 
-
-![](./images/generator-running-from-cloudshell.png)
+    ![](./images/generator-running-from-cloudshell.png)
 
 You may now [proceed to the next lab](#next): Understanding best practices for JSON data loading...
 
