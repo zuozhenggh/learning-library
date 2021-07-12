@@ -24,7 +24,7 @@ Estimated lab time: 1 hour
 
 ## **STEP 1:** Quickstart Deployment
 
-1. [Download ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Y3e0GVKgbk-Jjkj5U_nxcmjfuqV4GMuQlWQmzKxbhFRoDLBK8mZcT4FW3ZPLI7N4/n/c4u03/b/data-management-library-files/o/resource-manager-bin-dr.zip)
+1. [Download ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bRhYkdkKFxunrMMKHNObtOV10XRTIyxm6KEqw07px425EMe4H7NPxDwsPsnrA73Z/n/c4u04/b/data-management-library-files/o/resource-manager-bin-dr.zip)
 2.  Create your own private/public key pair on your local system.
 3.  Move the key pair to the resource-manager-bin folder.
 4.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.

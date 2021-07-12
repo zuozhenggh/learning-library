@@ -27,7 +27,7 @@ Be sure that the following tasks are completed before you start:
 
 1. Connect to the PDB container using SQL*Plus.  
     ```
-    $ sqlplus /as sysdba
+    $ sqlplus / as sysdba
 
     SQL*Plus: Release 19.0.0.0.0 - Production on Tue Jun 1 14:52:31 2021
     Version 19.10.0.0.0
@@ -52,7 +52,7 @@ Be sure that the following tasks are completed before you start:
 3.  Check your parameter values. A container cannot be in archive log mode if there
 there are no values for each parameter.
     ```
-    SQL> show parameter DB_RECOVERY_FILE        
+    SQL> show parameter DB_RECOVERY_FILE;        
 
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- ---------------------------
@@ -77,7 +77,7 @@ there are no values for each parameter.
 
 5. Ensure your parameters contain values.
     ```
-    SQL> select * from V$RECOVERY_FILE_DEST
+    SQL> select * from V$RECOVERY_FILE_DEST;
 
     NAME
     ----------------------------------------------------------------------------
@@ -86,7 +86,7 @@ there are no values for each parameter.
     /u01/app/oracle/recovery_area/CDB1
                          0                 0               0          0
 
-    SQL> show parameter DB_RECOVERY_FILE_DEST        
+    SQL> show parameter DB_RECOVERY_FILE_DEST;       
 
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- ---------------------------
@@ -141,82 +141,8 @@ there are no values for each parameter.
     $ . oraenv
     ORACLE_SID = [CDB1] ? CDB2
     ```
-## **STEP 2**: Add the hr.sql script to the admin folder.
-1. Make sure you are in the Oracle instance.
-    ```
-    $ sudo su - oracle
-    Last login: Tue Jun  1 16:35:21 GMT 2021 on pts/0
-    ```
 
-2. Change to the /labs directory. Check that the 19cNewFeatures.zip is in the directory.
-    ```
-    $ cd ~/labs
-    $ ls
-    19cnf.zip    admin  db.rsp  DW          HA           OBEs  SEC
-                          DB     DIAG    envprep.sh  multitenant  PERF  Videos
-    ```
-
-3. Change to the admin directory. Check to see if the hr.sql script is in the directory.
-    ```
-    $cd admin
-    $ls
-    cleanup_PDBs.sh     create_PDB19.sql      hr_code.sql     hr_idx.sql      listener.ora        startup_mount.sql     cleanup_PDBs.sql      create_PDB1.sh      hr_comnt.sql      hr_main_new.sql     profile.sql     startup.sql     cleanup_trace_ORCL.sh     create_PDB1.sql     hr_cre.sql      hr_main.sql     recreate_ORCL.sh      tnsnames.ora      close_TDE.sql     flashback.sql     hr_drop_new.sql     hr_popul.sql      shutdown.sql      create_CDB19.sh     hr_analz.sql      hr_drop.sql     **hr.sql**      sqlnet.ora
-    ```
-
-    >**Note**: If the hr.sql script is already in the directory, you can skip to Step 5.<Ora4U_1234
-
-4. Insert the hr.sql script file in the admin
-    1. Open this [hr.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/clone-pdbs-using-dbca-silent-mode/files/hr.sql) script in a separate tab.
-
-    2. In the cloud shell, create the hr.sql file in the admin directory.
-    ```
-    $ vi hr.sql
-    ```
-
-    3. Once the vi editory opens, copy and paste the hr.sql script from the link
-    into the newly created hr.sql file in the vi editor. It should look something
-    like below.
-    ```
-    CREATE USER hr IDENTIFIED BY Ora4U_1234;
-
-    GRANT dba, unlimited tablespace TO hr;
-    ALTER SESSION SET CURRENT_SCHEMA=HR;
-
-    ALTER SESSION SET NLS_LANGUAGE=American;
-    ALTER SESSION SET NLS_TERRITORY=America;
-
-    CREATE TABLE employees
-    ( employee_id    NUMBER(6)
-    , first_name     VARCHAR2(20)
-    , last_name      VARCHAR2(25)
-    , email          VARCHAR2(25)
-    , phone_number   VARCHAR2(20)
-    , hire_date      DATE
-    , job_id         VARCHAR2(10)
-    , salary         NUMBER(8,2)
-    , commission_pct NUMBER(2,2)
-    , manager_id     NUMBER(6)
-    , department_id  NUMBER(4)) ;
-    **script continues below**
-    ```
-
-    4. Exit the vi editor.
-    ```
-    Press Esc
-    Input :q
-    ```
-
-    5. Check that hr.sql is now in the admin directory.
-    ```
-    $ ls
-    ```
-
-    6. Now that the hr.sql script is the directory, it must be granted permission to execute.
-    ```
-    $ chmod -R +x ~/labs
-    ```
-
-## **STEP 3**: Prepare the PDB before Cloning
+## **STEP 2**: Prepare the PDB before Cloning
 1. Login into the CDB1. If already logged into CDB1, skip to Step 2.
     ```
     $ . oraenv
@@ -244,7 +170,7 @@ there are no values for each parameter.
           107
     ```
 
-4. Connect to ORCL as SYSTEM.
+4. Connect to CDB1 as SYSTEM.
     ```
     SQL> CONNECT system@CDB1
     Enter password: Ora4U_1234
@@ -265,7 +191,7 @@ there are no values for each parameter.
     SQL> exit
     ```
 
-## **STEP 4**: Use DBCA to Clone a Remote PDB
+## **STEP 3**: Use DBCA to Clone a Remote PDB
 >In this section, you use DBCA in silent mode to clone PDB1 from CDB1 as PDB2 in CDB2.<
 
 1. Launch DBCA in silent mode to clone PDB1 from CDB1 as PDB2 in CDB2.
@@ -273,10 +199,10 @@ there are no values for each parameter.
     $ dbca -silent -createPluggableDatabase -createFromRemotePDB -remotePDBName PDB1 -remoteDBConnString CDB1 -remoteDBSYSDBAUserName SYS -remoteDBSYSDBAUserPassword Ora4U_1234 -sysDBAUserName sys -sysDBAPassword Ora4U_1234 -dbLinkUsername c##remote_user -dbLinkUserPassword Ora4U_1234 -sourceDB CDB2 -pdbName PDB2
     ```
 
-## **STEP 5**: Check that the PDB is Cloned
+## **STEP 4**: Check that the PDB is Cloned
 1. Connect to CDB2 as SYS
     ```
-    $ sqlplus sys@CDB2 AS SYSDBA
+    $ sqlplus sys@CDB2 as sysdba
     Enter password: Ora4U_1234
     ```
     ```
@@ -290,18 +216,14 @@ there are no values for each parameter.
 
 2. Check that PDB2 contains the HR.EMPLOYEES table as in PDB1.
     ```
-    SQL> CONNECT hr / as sysdba
-    Enter password: Ora4U_1234
-    ```
-    ```
-    SQL> SELECT count(*) FROM employees;
+    SQL> SELECT count(*) FROM hr.employees;
 
     COUNT(*)
     ----------
            107
     ```
 
-## **STEP 6**: Clean up the Cloned PDB
+## **STEP 5**: Clean up the Cloned PDB
 1. Connect to CDB2 as SYS.
     ```
     SQL> CONNECT sys@CDB2 as sysdba
@@ -323,7 +245,7 @@ there are no values for each parameter.
     SQL> EXIT
     ```
 
-## **STEP 7**: Disable archivelog mode for CDB1 and CDB2.
+## **STEP 6**: Disable archivelog mode for CDB1 and CDB2.
 1. Set the environment variables for your CDB.
     ```
     $ . oraenv
@@ -345,7 +267,21 @@ there are no values for each parameter.
     SQL> SELECT log_mode FROM v$database;
     ```
 
-3. Switch to CDB2 and repeat Step 2.
+3. To find out how much space the recovery area is using:
+    ```
+    SQL> SELECT * FROM V$RECOVERY_FILE_DEST;
+    SQL> EXIT
+    ```
+
+4. Delete the archive log files, database backups, and copies using Recovery Manager (RMAN).
+    ```
+    $ rman
+    RMAN> DELETE NOPROMPT ARCHIVELOG ALL;
+    RMAN> DELETE BACKUP;
+    RMAN> DELETE COPY;
+    ```
+
+5. Switch to CDB2 and repeat Steps 2 - 4.
     ```
     SQL> EXIT
 

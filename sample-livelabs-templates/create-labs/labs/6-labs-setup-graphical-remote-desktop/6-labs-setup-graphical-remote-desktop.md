@@ -185,8 +185,6 @@ This lab assumes you have:
     echo ""
     echo "#================================================="
     echo "#"
-    echo "# http://`curl -s ident.me`:6080/vnc.html?resize=remote"      
-    echo "# or"
     echo "# http://`curl -s ident.me`:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true"      
     echo "#================================================="
     echo ""
