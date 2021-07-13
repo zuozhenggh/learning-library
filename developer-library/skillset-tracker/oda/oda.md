@@ -27,6 +27,7 @@ In Slack Workspace, the Data will appear like buttons that you can select and wh
 Estimated Lab Time: 2 hours
 
 ### Objectives
+In this lab, you will:
   * Create an Oracle Digital Assistant Service Instance
   * Access the Service Instance from the Infrastructure Console
   * Import developed Skill in your Oracle Digital Assistant Service Instance
@@ -35,6 +36,7 @@ Estimated Lab Time: 2 hours
   * Test the Digital Assistant in Slack
 
 ### Prerequisites
+To complete this lab, you must have:
   * This lab assumes you have an Oracle Cloud account and compartment, user, groups and policies created into it and you are logged in your account. For an overview of compartments, users, groups, policies etc. see this [link](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0).
 
 ## **STEP 1:** Create an Oracle Digital Assistant Service Instance
@@ -91,7 +93,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   ![skills](./images/skills.png)
 
-2. Download the **Skill** by accessing this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/aA4xXJ3NFQgV6bxcrYEXjRpQtqYIsV40CVX2AZxKGd-CEtDgG6AxtK-BT-dwc7Jx/n/c4u03/b/labfiles/o/Lab7-SkillTracker_1.0.zip)
+2. Download the **Skill** by accessing this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/efUHVuXRy_8QsKWdYPaEOzaH07C8wNKoWlwGZdx2ytgpP2cgf_QmSyMF66HW60Zd/n/c4u04/b/labfiles/o/Lab7-SkillTracker_1.0.zip)
 
 3. In the up right corner of the Console, select **Import Skill**.
 
@@ -99,7 +101,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 4. Select the downloaded file from your computer then click **Open**
 
-## **STEP 4:** Integrate the Skill with your app
+## **STEP 4:** Integrate the Skill with your App
 
 1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** category. Now click on it's name, **SkillTracker**.
 

@@ -33,7 +33,7 @@ With Oracle’s unique approach, there remains a single copy of the table on sto
 
 Database In-Memory uses an In-Memory column store (IM column store), which is a new component of the Oracle Database System Global Area (SGA), called the In-Memory Area. Data in the IM column store does not reside in the traditional row format used by the Oracle Database; instead it uses a new columnar format. The IM column store does not replace the buffer cache, but acts as a supplement, so that data can now be stored in memory in both a row and a columnar format.
 
-![](images/Immemory_area.png)
+![](images/immemory_area.png)
 
 The In-Memory area is sub-divided into two pools: a 1MB pool used to store the actual columnar formatted data populated into memory (i.e. IMCUs), and a 64KB pool used to store metadata about the objects that are populated into the IM column store (i.e. SMUs). The amount of available memory in each pool is visible in the V$INMEMORY_AREA view. The relative size of the two pools is determined by internal heuristics; the majority of the In-Memory area memory is allocated to the 1MB pool.
 
@@ -115,4 +115,5 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Authors/Contributors** - Vijay Balebail, Andy Rivenes, Maria Colgan
-- **Workshop Expiration Date** - July 31, 2022
+- **Reviewers** - Bob Mackowiak, Rajeev Rumale
+- **Workshop Expiration Date** - July 31, 2023

@@ -16,9 +16,9 @@ This lab assumes you have already completed the following:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Create a SSH Keys pair
 
-Click on the link below to download the Resource Manager zip files you need to build your enviornment.
+Click on the link below to download the Resource Manager zip files you need to build your environment.
 
-- [sdb19c-market-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yFTb0ghnGHTjSYPGegZ0kq0ta9CkgbsDUeW-lpZ9ddc953NcuJzW9K7J-PpkqRS4/n/c4u03/b/data-management-library-files/o/Oracle%20Sharding/sdb19c-market-num.zip) - Packaged terraform primary database instances creation script.
+- [sdb19c-market-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zpuA8h8OushSqOX-Rg1T2wO3-KntQU46S7CIQhwkQ82LdzZMXz0yf1xRg79Hb0lq/n/c4u04/b/data-management-library-files/o/Oracle%20Sharding/sdb19c-market-num.zip) - Packaged terraform primary database instances creation script.
 
 
 
@@ -215,5 +215,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
 * **Last Updated By/Date** - Minqiao Wang, Jun 2021
-* **Workshop Expiry Date** - 25 April 2022
 
