@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
-        "title": "Workshop Introduction",
+        "title": "Introduction",
         "description": "Inroduction to this workshop",
         "filename": "../workshop-intro/workshop-intro.md"
       },
