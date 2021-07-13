@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading source files in Object Storage bucket and creating the necessary database objects in Autonomous Data Warehouse.
+This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading source files in Object Storage bucket and creating the necessary database objects in Autonomous Data Warehouse. Steps 3, 4 and 5 of this Lab are not prerequisites for using OCI Data Integration, but for following the workshop instructions.
 
 *Estimated Lab Time*: 1 hour
 
@@ -97,6 +97,8 @@ In the **Basic Information** section, provide:
   - **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use `ADW Workshop`.
   - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use `ADWWORKSHOP`.
 
+*Note: The same database name cannot be used for multiple Autonomous Databases in your tenancy, in the same region.*
+
 ![](./images/create-adw-info.png " ")
 
 4. Select **Data Warehouse** as the workload type.
@@ -158,10 +160,10 @@ In this workshop, **Autonomous Data Warehouse** serves as the **target data asse
 2. The console shows the Autonomous Data Warehouse databases that exist. Make sure that you are in the compartment for the data integration resources (`DI-compartment`). **Click on your ADW**, the one you created in the previous step (`ADW Workshop`).
 ![](./images/select-adw.png " ")
 
-3. On your Autonomous Database Details, click **Open Database Actions** under Database Actions section.
+3. On your Autonomous Database Details page, click on **Tools** tab.
 ![](./images/click-tools.png " ")
 
-4. In the Tools tab, click **Open SQL Developer Web**.
+4. In the Tools tab, click on **Open Database Actions** under Database Actions section.
 ![](./images/open-db-actions.png " ")
 
 5. When prompted, log in with `admin` **username** and click Next.
@@ -207,6 +209,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
   - **Default Storage Tier**: `Standard`
   - Leave the rest of the defaults and then click **Create**.
 
+*Note: The Bucket Name should be unique within your tenancy's Object Storage namespace.*
 ![](./images/create-bucket.png " ")
 
 4. You should now see your new bucket in the **Buckets** page. Click on your bucket (`DI-bucket`).

@@ -72,7 +72,9 @@ Before you can get started with Data Integration, you must first create a **Work
 
     ![](./images/create_workspace.png " ")
 
-5. The workspace takes a few minutes to be created and become active. Your are now in the Workspaces page where you can see your new workspace. While it is being created, the status should appear as **Creating**.
+5. Your are now in the Workspaces page where you can see your new workspace. While it is being created, the status should appear as **Creating**.
+
+*Note: It may be around 10 minutes for the Workspace to be created and become active.*
 
     ![](./images/creating-workspace.png " ")
 
