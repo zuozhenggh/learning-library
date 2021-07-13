@@ -1,4 +1,4 @@
-# Lab 2: Create MySQL DB System (MDS) with Heatwave 
+# Create MySQL DB System (MDS) with Heatwave 
 
 **Key Objectives:**
 
