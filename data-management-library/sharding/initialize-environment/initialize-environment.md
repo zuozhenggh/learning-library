@@ -18,7 +18,60 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0**: Running your Lab
+## **STEP 1:** Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+
+    - Oracle Sharding GSM  Container
+    - Oracle Sharding Catalog container
+    - Three Oracle shard Database container
+    - Nodejs eShop Application Container
+
+2. On the *Firefox* window on the right preloaded with *eShop Application*, click on the *Login* button to login the Application and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+
+    ![](images/oracle-shading-noVnc.png " ")
+    ```
+    Username: <copy>demo@eshop.com</copy>
+    ```
+
+    ```
+    Password: <copy>demo</copy>
+    ```
+
+    ![](images/application-login.png " ")
+
+3. Confirm successful login. Please note that it takes about 2 minutes after instance provisioning for all processes to fully start.
+
+    ![](images/application-demo.png " ")
+
+    If successful, the page above is displayed and as a result your environment is now ready.  
+
+    You may now [proceed to the next lab](#next).
+
+4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+
+    - Oracle Sharding container Details
+
+        ```
+        <copy>
+        sudo Docker pa -a 
+        </copy>
+        ```
+        ![](images/sharding-docker.png " ")
+
+    - if container are stopped and not in running state then try to restart the container by using below docker command.
+  
+        ```
+        <copy>
+        sudo docker stop <container ID/NAME>
+        </copy>
+        <copy>
+        sudo docker start <container ID/NAME>
+        </copy>
+        ```
+
+You may now [proceed to the next lab](#next).
+
+<!-- ## **Step 0**: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -66,9 +119,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 ![](./images/app1.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now [proceed to the next lab](#next). -->
 
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021
+* **Last Updated By/Date** - Ashish Kumar, Solution Engineer - July 2021

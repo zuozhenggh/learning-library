@@ -4,30 +4,18 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction",
+      "description": "This lab provides an overview of Oracle Sharding – Hyperscale Globally Distributed Database",
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Getting Started",
+      "title": "Get Started",
       "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
     },
     {
-      "title": "Lab 1: Generate SSH Keys",
-      "description": "Generate SSH Key",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
-    },
-    {
-      "title": "Lab 2: Prepare Setup",
-      "description": "How to download your ORM stack and update security rules for an existing VCN",
-      "publisheddate": "09/28/2020",
-      "filename": "../../../prepare-setup/prepare-setup.md"
-    },
-    {
-      "title": "Lab 3: Environment Setup",
-      "description": "How to provision the workshop environment and connect to it",
-      "publisheddate": "06/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "title": "Lab 1: Environment Setup",
+      "description": "Verify Setup of compute instance",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
       "title": "Lab 4: Initialize Environment",
@@ -54,7 +42,6 @@
       "description": "Application Queries on sharding Database",
       "filename": "../../appqueries/appqueries.md"
     },
-
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
