@@ -1,5 +1,12 @@
 #  Connection setup
 
+
+**Please change the lab setup to point to livelab event and NOVNC URL. Once the NoVNC image setup is completed.  Check with Robert Pastjin for the deployment and availability of NoVNC image in the Live labs staging area.**
+
+*** The below text needs to be removed after that ***
+
+----
+
 ## Obtain an IP address and a Secure Key File
 Your instructor will provide you with both a **Virtual Machine IP address** and a **SSH secure key file**.
 
@@ -95,3 +102,5 @@ chmod +x /home/oracle/labs/inmemory/importssb.sh
 TEST
 </copy>
 ````
+
+----

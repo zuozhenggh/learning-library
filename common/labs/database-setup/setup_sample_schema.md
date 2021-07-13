@@ -20,8 +20,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     <copy>
     cd /home/opc/
 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/hMeiZMcq94oH6LFVJepojex8lT4etzCu2ClpjpcS0eF6B6caCAsU25Y5saRfdBS1/n/c4u04/b/labfiles/o/nfscripts.zip
-
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/C0K_PxLC5D0szNqwB11bJ_xq-L5gfQga9wDDIOMKpDnU5mcmBqmI0DICuS9mWJuE/n/c4u04/b/labfiles/o/nfscripts.zip
+    
     unzip nfscripts.zip;
 
     chmod +x *.sh

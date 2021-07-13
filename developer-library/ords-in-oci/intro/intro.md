@@ -1,8 +1,10 @@
 # Expanding Oracle REST Data Services into Oracle Cloud Infrastructure
 
-## Introduction
+## About this Workshop
 
 Like a swiss army knife or that as-seen-on-tv multi-tool you got from your grandmother on your birthday, Oracle REST Data Services can work with more than just the Oracle Database. This Lab will walk you through using ORDS to expose the database to multiple other OCI services and product as well as secure REST endpoints for external consumption.
+
+*Estimated Workshop Time:* 2 Hours
 
 ### Objectives
 
@@ -11,14 +13,18 @@ In this lab you will create a series of scenarios in OCI where Oracle REST Data 
 - Consume a CSV file from Object Store with a REST enabled table in an Autonomous Database using Functions and Events
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 
+### Prerequisites
+This lab assumes you have:
+* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
 
-## Oracle REST Data Services in Oracle Cloud Infrastructure
 
-### **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database
+## **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database
 
-### **STEP 2:** Create a Function to batch load data into the database using ORDS
+## **STEP 2:** Create a Function to Batch Load Data into the Database using ORDS
 
-### **STEP 3:** Create a Function and Service Connector to load logs from the Logging Service into the database using ORDS
+## **STEP 3:** Create a Function and Service Connector to Load Logs from the Logging Service into the Database using ORDS
+
+## Learn More
 
 ### About Oracle REST Data Services
 
@@ -49,4 +55,4 @@ More about Logging can be found [here](https://docs.oracle.com/en-us/iaas/Conten
 ## Acknowledgements
 
 - **Authors** - Jeff Smith and Brian Spendolini
-- **Last Updated By/Date** - Brian Spendolini/June 2021
+- **Last Updated By/Date** - Brian Spendolini, June 2021

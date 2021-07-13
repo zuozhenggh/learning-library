@@ -6,14 +6,17 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 - Easy and quick to deploy - Everything starts automatically in under 20 minutes
 - The EM Workshop comes with step-by-step instructions that walks the user through multiple use cases for the areas summarized below and further detailed for each lab listed on the right:
 
+*Estimated Time:* 420 minutes
+
 ### About Oracle Enterprise Manager
-Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
+Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems.
 
 Join Oracle's ***Wim Coekaerts***, *senior vice president of software development*, as he describes key innovations delivered in Oracle Enterprise Manager to help customers easily migrate their databases to the cloud and simplify management of hybrid IT environments
 
 [](youtube:MZJQx6MuHA0)
 
-The workshops focus on the the following areas:
+<!-- The labs focus on the the following areas:
+
 #### 1. Oracle Database Lifecycle Management including configuration and compliance, provisioning, patching and upgrades
 - Database Lifecycle Management Pack
 - Cloud Management Pack for Oracle Database
@@ -21,11 +24,12 @@ The workshops focus on the the following areas:
 #### 2. Oracle Database Performance Management including overall DB performance, SQL analysis, real-time operation monitoring, and tuning
 - Oracle Diagnostics Pack for Oracle Database
 - Tuning Pack for Oracle Database
-- Real Application Testing
+- Real Application Testing -->
 
 ### Objectives
 
-The workshops cover the following labs:
+In this workshop you will learn about:
+
 #### 1. Database Lifecycle Automation
 -	Create a Pluggable Database (PDB)
 -	Un-plug/Plug an existing Pluggable Database
@@ -67,7 +71,8 @@ The workshops cover the following labs:
 
 ### Prerequisites
 
-Each lab covers its own prerequisites specific to its requirements.
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
+* SSH Private Key to access the host via SSH
 
 ## Learn More
 

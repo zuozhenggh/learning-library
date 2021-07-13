@@ -7,21 +7,23 @@
 Estimated Lab Time: 1 hour
 
 ### Objectives
+In this lab, you will:
 * Create Autonomous JSON Database in OCI.
 * Upload sample JSON files to Object Storage Bucket.
 * Create SODA Document collections based on JSON files from Object Storage.
 * Use SODA for PL/SQL to check the data in the collections.
 
 ### Prerequisites
+To complete this lab, you must have:
 * An OCI Account.
 * A tenancy where you have the resources available to provision an Autonomous JSON Database and a Standard Object Storage Bucket.
 * An existing compartment in which the ADB will reside.
 * SQL Developer Installed on your local machine.
 
-## **STEP 1:** Understand the sample JSON files
+## **STEP 1:** Understand the Sample JSON Files
 In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
 
-1. Download the two sample JSON files [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/55cpQz2dELCpX3EcxqbQNvWEC4o3Q3LX0ZakL26g_goo_sydUz7K2get1-eJ-TL6/n/c4u03/b/labfiles/o/Lab4-Sample_JSON.zip).
+1. Download the two sample JSON files [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yMnZyy1OnckGYo29oHIqULDWwFKvqtc7uXwsDFyhRxlZO_N1oiRMr6Oj-KYKVQtr/n/c4u04/b/labfiles/o/Lab4-Sample_JSON.zip).
 
 2. The first, and the most important one is the _sample\_skills.json_ file. This file represents the main data source for the application that is going to be build in these labs.
 
@@ -99,7 +101,7 @@ In order to connect to the database using SQL Developer, you must first download
 
   ![SQL Developer conection form](./images/sql-developer-connection-form.png)
 
-## **STEP 4:** Create new database user and grant needed roles
+## **STEP 4:** Create New Database User and Grant Needed Roles
 
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
 
@@ -125,7 +127,7 @@ Considering the fact that you previously connected to the database using the _AD
       </copy>
       ```
 
-## **STEP 5:** Upload sample JSON files in Object Storage & create PAR URL for each of them
+## **STEP 5:** Upload Sample JSON Files in Object Storage & Create PAR URL for Each of Them
 
 In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket. In this step you will need the two JSON files downloaded at the beginning of this lab (_sample\_skills.json_ and _sample\_users.json_).
 
@@ -308,7 +310,7 @@ Login in SQL Developer using the _**SKILLSET**_ user created at **STEP 4: Create
       </copy>
       ```
 
-## **STEP 7:** Create a view on a collection
+## **STEP 7:** Create a View on a Collection
 
 The application is also using a view (called _SKILLSVIEW_) on the _skillscollection_ and since it would be hard to write the SQL script by hand, you can use the PL/SQL block below to dynamically build the **create view** script and execute it.
 
@@ -380,3 +382,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 **Authors** - Giurgiteanu Maria Alexandra, Gheorghe Teodora Sabina
+**Last Updated By** - Brianna Ambler, July 2021
