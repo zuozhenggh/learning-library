@@ -5,6 +5,25 @@
 
 Autonomous Database automatically manages the data storage process for you, so there are no settings to monitor or tweak. You simply load your data, update your data and let Autonomous Database efficiently manage how that data is stored. You will update the movie sales data using MERGE.
 
+Estimated Lab Time: 25 minutes
+
+### Objectives
+
+In this lab, you will:
+
+*   Determine how much space the movie sales table is consuming.
+*   Create an external table.
+*   Determine how much space the external table is consuming.
+*   Update the movie sales data using MERGE.
+*   Confirm the very small increase in space usage after updating the data using MERGE.
+*   Create additional external tables.
+
+### Prerequisites
+
+This lab assumes you have:
+
+- Added a data integrity constraint in the previous lab.
+
 ## **STEP 1:** Finding Out Space Usage for the Movie Sales Data
 
 1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
