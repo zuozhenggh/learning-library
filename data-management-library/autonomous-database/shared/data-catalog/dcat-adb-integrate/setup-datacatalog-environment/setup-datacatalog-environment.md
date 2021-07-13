@@ -1,8 +1,8 @@
-# Get Started with OCI Data Catalog
+# Setup the Data Catalog Environment
 
 ## Introduction
 
-This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create the Data Catalog administrator group and an optional user group and then add the Data Catalog users to the respective groups. Next, you create the user policies that are required to create a data catalog.
+This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a Compartment for your Data Catalog objects. Next, you create the Data Catalog administrator group and an optional user group and then add the Data Catalog users to the respective groups. Next, you create the user policies that are required to create a Data Catalog instance. Finally, you create a Data Catalog instance.
 
 This tutorial is directed at administrator users because they are granted the required access permissions.
 
@@ -11,11 +11,11 @@ Estimated Lab Time: 30 minutes
 ### Objectives
 
 In this lab, you will:
-* (Optional) Create a compartment for your data catalog objects.
-* (Optional) Create a user group for data catalog administrators.
-* Create policies to give your data catalog admins and other user groups access to use data catalog resources.
+* (Optional) Create a compartment for your Data Catalog objects.
+* (Optional) Create a user group for Data Catalog administrators.
+* Create policies to give your Data Catalog admins and other user groups access to use Data Catalog resources.
 * Create a Dynamic Group policy to allow Data Catalog to access your Object Storage resources.
-* Create a data catalog instance.
+* Create a Data Catalog instance.
 
 
 ### Prerequisites
@@ -128,7 +128,7 @@ Create a Data Catalog group whose members will be granted permissions to manage 
 ## **STEP 5:** Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Data Catalog resources. Before you can create and access a data catalog, you must also create a policy that grants the system access to networking resources.
 
-1. In the **Identity** section on the left, select **Policies**. Alternatively, click the **Navigation** menu and navigate to **Identity & Security > Policies**.
+1. In the **Identity** section on the left, select **Policies**. Alternatively, open the **Navigation** menu and click **Identity & Security**. Under **Identity & Security** click  **Policies**.
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-dcat-compartment`** where the new policies will reside.  
 
@@ -162,7 +162,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         ```
         **Note:**
         Data Catalog offers both aggregate and individual resource-types for writing policies. You can use aggregate resource-types to write fewer policies. For example, instead of allowing a group to manage **`data-catalogs`** and **`data-catalog-data-assets`**, you can have a policy that allows the group to manage the aggregate resource-type, **`data-catalog-family`**. See [Data Catalog Policies](https://docs.oracle.com/en-us/iaas/data-catalog/using/policies.htm) in the Oracle Cloud Infrastructure documentation.
-    + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows Data Catalog service, **`datacatalog`**, to access the network, create instances, and more.
+    + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows Data Catalog service, **`datacatalog`**, to access the network, create instances, and more. Before you can create a private network in your compartment in the **Harvest Technical Metadata from Autonomous Database** lab in this workshop, you must have the required networking permissions. The following statement allows you to perform all networking operations in any your **training-dcat-compartment** compartment.
 
         ```
         <copy>allow group training-dcat-admin-group to manage virtual-network-family in compartment training-dcat-compartment</copy>

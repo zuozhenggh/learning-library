@@ -25,12 +25,12 @@
         {
             "title": "Lab 3: Harvest Metadata from Oracle Object Storage",
             "description": "This lab walks you through how to harvest technical metadata from Oracle Object Storage.",
-            "filename": "./../../harvest-metadata/harvest-metadata.md"
+            "filename": "./../../harvest-metadata-os/harvest-metadata-os.md"
         },
         {
-          "title": "Lab 4: Provision an Autonomous Database (ADB) Instance",
-          "description": "This lab shows you how to provision an ADB instance.",
-          "filename": "./../../adb-provision/adb-provision.md"
+          "title": "Lab 4: Harvest Metadata from an ADB Instance with Private Access",
+          "description": "This lab walks you through how to harvest technical metadata from an ADB instance.",
+          "filename": "./../../harvest-metadata-adb/harvest-metadata-adb.md"
         },
         {
           "title": "Lab 5: Clean up Resources Used in the Workshop (Optional)",
