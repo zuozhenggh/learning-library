@@ -7,52 +7,52 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
       {
-        "title": "Introduction and Overview",
+        "title": "Introduction",
         "description":"In-Memory Overview",
         "publisheddate": "10/15/2020",
-        "filename":"../../in_memory/intro.md"
+        "filename":"../../intro/intro.md"
     },
     {
-        "title": "Lab setup",
+        "title": "Lab Setup",
         "description": "Lab Setup",
         "partnumber": "Ennnnn_01",
         "publisheddate": "10/10/2020",
         "contentid": "12nnnn",
-        "filename": "../../in_memory/labsetup/labsetup_mk.md"
+        "filename": "../../labsetup/labsetup.md"
     },
     {
-        "title": "LAB 01: In-Memory Basics",
+        "title": "Lab 1: In-Memory Basics",
         "description": "Enable, load, QUERY",
         "partnumber": "Ennnnn_01",
         "publisheddate": "10/10/2020",
         "contentid": "12nnnn",
-        "filename": "../../in_memory/enable_load/setup-inmem.md"
+        "filename": "../../setup-inmem/setup-inmem.md"
     },
 
     {
-        "title": "LAB 02: In-Memory Features",
+        "title": "Lab 2: In-Memory Features",
         "description":"vector joins, hints,dbms packages.",
         "publisheddate": "04/07/2020",
-        "filename":"../../in_memory/im_features/queries.md"
+        "filename":"../../im-features/im-features.md"
     },
 
     {
-        "title": "LAB 03: Mixed Workload",
+        "title": "Lab 3: Mixed Workload",
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
-        "filename":"../../in_memory/mixed_workload/mixed-workload.md"
+        "filename":"../../mixed-workload/mixed-workload.md"
     },
     {
-        "title": "LAB 04: In-Memory POC using SQL Developer",
+        "title": "Lab 4: In-Memory POC using SQL Developer",
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
-        "filename":"../../in_memory/sqldev/inmemorypoc.md"
+        "filename":"../../inmemory-poc/inmemory-poc.md"
     },
     {
-        "title": "LAB 05: Miscellaneous Complementary Features",
+        "title": "Lab 5: Miscellaneous Complementary Features",
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
-        "filename":"../../in_memory/sqldev/inmemorypocmisc.md"
+        "filename":"../..//inmemory-pocmisc/inmemory-pocmisc.md"
     },
         {
             "title": "Need Help?",
