@@ -18,7 +18,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * An IDE, such as Atom or Visual Studio Code.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
-## **Option 1:** Install Atom
+## **STEP 1:** Install Atom
 `Atom.io` is a 3rd party IDE freely available under MIT License.
 
 To install Atom:
@@ -27,9 +27,6 @@ To install Atom:
   ![](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
-## **Option 2:** Install Visual Studio Code
-
-To install  (VSCode):https://code.visualstudio.com/download
 ## **STEP 2:** Install the atom-live-server Plugin
 You must NOT be connected to Oracle's network or VPN while installing the **atom-live-server** package.
 
