@@ -6,6 +6,8 @@
 -	Create a compute instance as a bastion host
 -	Connect to the bastion host, install MySQL Shell and download the workshop dataset
 
+
+
 ## **STEP 1**: Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
 
 ### **Step 1.1:**
