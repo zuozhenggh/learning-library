@@ -3,9 +3,9 @@
   "help": "livelabs-help-mgmt_us@oracle.com",
   "tutorials": [
     {
-      "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Workshops",
-      "filename": "./../../../enterprise-manager-new/intro/intro-desktop.md"
+      "title": "Open Your Workshop Guide",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "filename": "./../../../../common/labs/open-workshop-guide/open-workshop-guide.md"
     },
     {
       "title": "Need Help?",
