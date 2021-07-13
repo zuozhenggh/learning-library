@@ -1,4 +1,4 @@
-# Lab 3: Run queries leveraging HeatWave
+# Run queries leveraging HeatWave
  
 **Key Objectives:**
 
