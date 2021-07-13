@@ -78,14 +78,14 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     table scans (IM)                                                      1
     ````
 
-    "IM scan CUs columns theoretical max = 748" is the count of columns that would be accessed if each scan looked at all column units (CUs) in all IMCUs for that column.
-    There are 17 columns in the table LINEORDER.
-    Each column data is held in 748/17 = 44 IMCUs. This information is in "IM scan CUs memcompress for query low".
 
-    However, the IMCUs actually accessed is 88. This is because we accessed 2 columns in the query. (2 *44 =88)
+    "IM scan CUs memcompress for query low" is the number of IMCUs accessed for each column in the table.
 
-    If the query had a filter condition , then those CUs would have been accessed too.
+    The above query access 2 columns (lo_ordtotalprice and lo_quantity ) and no where condition. This is indicated by "IM scan CUs columns accessed" = 88. This is because we accessed 2 columns in the query. (2 *44 =88)
 
+    If the query had a where clause on any other columns, then those CUs would need to accessed  and value of  "IM scan CUs columns accessed" will be a multiple of "IM scan CUs memcompress for query low" and number of distinct columns accessed.
+
+    For a quick referance to some important IM events, check out this [blog](https://blogs.oracle.com/in-memory/popular-statistics-with-database-in-memory).
 
     To execute the same query against the buffer cache you will need to disable the IM column store either through a hint called NO\_INMEMORY or at session level parameter INMEMORY\_QUERY as in the syntax below.
 
