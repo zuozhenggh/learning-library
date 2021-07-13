@@ -28,7 +28,7 @@
             "filename": "./../../harvest-metadata-os/harvest-metadata-os.md"
         },
         {
-          "title": "Lab 4: Harvest Metadata from an ADB Instance with Private Access",
+          "title": "Lab 4: Provision an Autonomous Database Instance",
           "description": "This lab walks you through how to harvest technical metadata from an ADB instance.",
           "filename": "./../../harvest-metadata-adb/harvest-metadata-adb.md"
         },

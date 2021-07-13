@@ -1,8 +1,10 @@
-# Harvest Technical Metadata from Autonomous Database
+# Provision an Autonomous Database (ADB)
 
 ## Introduction
 
 This lab walks you through the steps to provision a new Autonomous Data Warehouse (ADW) instance.
+
+<!--- This is a comment -->
 
 Estimated Lab Time: 5 minutes
 
@@ -25,6 +27,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
+<!---
 ## **STEP 2**: Create a Virtual Cloud Network (VCN)
 
 A Virtual Cloud Network (VCN) is a virtual, private network that you set up in a single Oracle Cloud Infrastructure region. A VCN has a single, contiguous IPv4 CIDR block of your choice. The allowable VCN size range is **/16** to **/30**. Decide on the CIDR block before you create a VCN. You can't change the CIDR value later. For your reference, here's a [CIDR Calculator](https://www.ipaddressguide.com/cidr).
@@ -157,7 +160,7 @@ Create an NSG with an Ingress and Egress rules as follows:
     In this lab, the Autonomous Database that you will provision in the next step is created in the same subnet that is used in Data Catalog to configure the private network for harvesting. For this scenario, you have created the ingress and egress rules specifying the CIDR of the private subnet.
 
     Your autonomous database may be in a different private subnet than the subnet used in Data Catalog to configure the private network for harvesting. In that case, you must create the ingress and egress rules specifying the CIDR of the VCN.
-
+-->
 
 ## **STEP 5**: Create an Autonomous Database Instance with Private Access
 
