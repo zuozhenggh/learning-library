@@ -12,8 +12,6 @@ Learn how to do the following:
 - Decrease TTS Import Time
 - Decrease TTS Export Time
 
-
-
 ### Prerequisites
 
 Be sure that the following tasks are completed before you start:
@@ -386,4 +384,4 @@ $
 ## Acknowledgements
 
 * **Author: Dominique Jeunot's, Consulting User Assistance Developer**
-* **Last Updated By: Blake Hendricks, Solutions Engineer, 6/17/21**
+* **Last Updated By: Blake Hendricks, Solutions Engineer, 7/13/21**
