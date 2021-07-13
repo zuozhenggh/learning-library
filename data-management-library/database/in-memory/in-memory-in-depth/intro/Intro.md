@@ -1,4 +1,4 @@
-# Workshop Introduction and Overview
+# Introduction
 
 ## Introduction to Oracle In-Memory
 
