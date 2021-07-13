@@ -4,7 +4,7 @@
 
 -  Import data into MDS and load tables to HeatWave
 -  Execute queries leveraging HeatWave and compare the query execution time with and without HeatWave enabled
--  
+  
 ## **STEP 1:** Import data into MDS and load tables to HeatWave
 
 ### **Step 1.1:**
