@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will generate an application load on the UPGR database before upgrade and use an external load tool, HammerDB.  At a later stage we will compare statements and overall performance-before/after upgrade.  You can use your own load scripts as well.
+In this lab, you will execute an application workload on the UPGR database before upgrade using an external load tool, HammerDB.  You will capture all SQL statements to be able to compare performance from before-upgrade to after-upgrade.
 
-*Estimated Lab Time:* 30 Minutes.
+*Estimated Lab Time:* 15 Minutes.
 
 ### About AWR Snapshots
 The Automatic Workload Repository (AWR) collects, processes, and maintains performance statistics for problem detection and self-tuning purposes. This data is both in memory and stored in the database. The gathered data can be displayed as both reports and views.
@@ -39,13 +39,14 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate an AWR snapshot
 
-1. Switch the environment to UPGR using *`. upgr`*, change directory to /home/oracle/scripts and start SQL*Plus:
+1. Open a terminal session and set the environment to UPGR using *`. upgr`*, change directory to /home/oracle/scripts and startup the database in SQL*Plus:
 
     ```
     <copy>
     . upgr
     cd /home/oracle/scripts
     sqlplus / as sysdba
+    startup
     </copy>
     ```
     ![](./images/upgrade_19c_1.png " ")
@@ -54,7 +55,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    @/home/oracle/scripts/snap.sql
+    @snap.sql
     </copy>
     ```
     ![](./images/upgrade_19c_2.png " ")
@@ -67,48 +68,51 @@ This lab assumes you have:
 ## **STEP 2**: Load Driver Script and start Virtual Users
 
 1. Click on the triangle “TPC-C“
+    ![](./images/hammerdb02.png " ")
 2. Open the Driver Script setup with a Click
+    ![](./images/hammerdb03.png " ")
 3. Then Double-Click on the Load option.
+    ![](./images/hammerdb04.png " ")
 4. This will populate the script window with the driver script (ignore the error messages in the script window)
 5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window.
-   ![](./images/upgrade_19c_4.png " ")
+    ![](./images/hammerdb05.png " ")
 
-## **STEP 3**: Capture SQL, Load Test and Monitor
+## **STEP 3**: Capture SQL, run workload and monitor
 
-Please start the following script in your SQL*plus window. With this script you will capture all the  SQL statements directly from the cursor cache while HammerDB is running and generating load on your database.
+Please start the following script in your SQL*Plus window. With this script you will capture all the SQL statements directly from the cursor cache while HammerDB is running and generating load on your database.
 
 1. Run the capture script. The capture is scheduled for 240 seconds. It polls the cache every 10 seconds.
 
     ```
     <copy>
-    @/home/oracle/scripts/capture_cc.sql
+    @capture_cc.sql
     </copy>
     ```
     ![](./images/upgrade_19c_5.png " ")
 
-2. Start the TPC-C Load Test and Monitor the progress by double clicking on the Run icon.
-    ![](./images/upgrade_19c_6.png " ")
+2. Start the TPC-C Load by clicking on the Run icon.
+    ![](./images/hammerdb06.png " ")
 
 3. Click on the Graph / Transaction Counter icon in the top menu icon bar. You will see that the script window changes now waiting for data.
+    ![](./images/hammerdb07.png " ")
 
 4. It will take a few seconds, then you will see the performance charts and the transactions-per-minute (tpm). The load run usually takes 2-3 minutes to complete.
-    ![](./images/upgrade_19c_7.png " ")
-    ![](./images/upgrade_19c_8.png " ")
+    ![](./images/hammerdb08.png " ")
 
-5. Note that Complete=1 per Virtual User underneath the graph.  We will use this load only to generate a few statements.
+5. Finally Exit HammerDB.
 
-6. Finally Exit HammerDB:
+Please WAIT until the capture_cc.sql scripts returns control back to you – DON NOT CTRL-C it!
 
 
 ## **STEP 4**: Generate another AWR snapshot
 
-Please WAIT until the capture_cc.sql scripts returns control back to you – DON NOT CTRL-C it!
 
-1. In the existing sqlplus create another AWR snapshot. Once the command prompt is visible execute the sql script below.  Please NOTE down the snapshot number (e.g. 111).
+1. In the existing sqlplus create another AWR snapshot. Once the command prompt is visible execute the sql script below.
+    Please NOTE down the snapshot number (e.g. 111). Be aware that your snapshot number may be different than the one in the screenshot.
 
     ```
     <copy>
-    @/home/oracle/scripts/snap.sql
+    @snap.sql
     </copy>
     ```
     ![](./images/upgrade_19c_9.png " ")
@@ -127,4 +131,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Mike Dietrich, Database Product Management
 * **Contributors** -  Roy Swonger, Kay Malcolm, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Last Updated By/Date** - Mike Dietrich, July 2021

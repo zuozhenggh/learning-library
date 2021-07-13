@@ -8,11 +8,11 @@ The SQL Performance Analyzer reports overall showed good results for the run in 
 
 You could now try to fix a specific plan which has been changed or just write down all the plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Let us see if the results are good or if it is a better option to allow the optimizer to find newer paths.
 
-![](./images/sql-plan-mgmt.png " ")
+![](./images/performance_prescription_05.png " ")
 
 In this lab we use scripts written by Carlos Sierra.
 
-*Estimated Lab Time:* 30 minutes
+*Estimated Lab Time:* 20 minutes
 
 ### About SQL Plan Management
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
@@ -65,12 +65,13 @@ This lab assumes you have:
 
       ````
       <copy>
-      @/home/oracle/scripts/spb_create.sql
+      @spb_create.sql
       </copy>
       ````
       ![](./images/fix_a_2.png " ")
 
-3. The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it will display the potential plans:
+3. *Please be aware that the following example sometimes will show only one plan, and hence the script may not work as intended*
+   The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it should display the potential plans:
       ![](./images/fix_a_3.png " ")
       ![](./images/fix_a_4.png " ")
 
@@ -115,7 +116,7 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
 
       ````
       <copy>
-      @/home/oracle/scripts/spm_load_all.sql
+      @spm_load_all.sql
       </copy>
       ````
       ![](./images/fix_a_7.png " ")
@@ -128,26 +129,26 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
       </copy>
       ````
       ![](./images/fix_a_8.png " ")
-      
+
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
       ````
       <copy>
-      @/home/oracle/scripts/spa_cpu.sql
-      @/home/oracle/scripts/spa_report_cpu.sql
+      @spa_cpu.sql
+      @spa_report_cpu.sql
       </copy>
       ````
       ````
       <copy>
-      @/home/oracle/scripts/spa_elapsed.sql
-      @/home/oracle/scripts/spa_report_elapsed.sql
+      @spa_elapsed.sql
+      @spa_report_elapsed.sql
       </copy>
       ````
 
-4. Open a remote desktop( guacamole) and compare the two resulting reports again. Then compare them to the two examples from the previous run.
+4. Compare the two resulting reports again. Then compare them to the two examples from the previous run.
       ![](./images/sql_per_5.png " ")
 
-      Do you realize that fixing all statements resulting in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
+      It may happen that "fixing" ALL statements results in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c may have been better!
       This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
 
       What is the outcome?
@@ -172,6 +173,6 @@ White Paper:
 [SQL Plan Management with Oracle Database 12c Release 2](http://www.oracle.com/technetwork/database/bi-datawarehousing/twp-sql-plan-mgmt-12c-1963237.pdf)
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Carlos Sierra
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Author** - Mike Dietrich - Scripts provided by: Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021
