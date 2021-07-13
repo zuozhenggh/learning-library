@@ -94,7 +94,6 @@ Join Groups have been added to help improve the performance of standard hash joi
 
 In-Memory Expressions provide the ability to materialize commonly used expressions in the IM column store. Materializing these expressions not only improves the query performance by preventing the repeated computation of the expression for every row but it also enables the ability to take advantage of all of the In-Memory query performance optimizations when they are accessed.
 
-
 **In-Memory Optimized Arithmetic :** In-Memory Optimized Arithmetic is a feature that encodes the NUMBER data type as a fixed-width native integer scaled by a common exponent. This enables faster calculations using SIMD hardware. The Oracle Database NUMBER data type has high fidelity and precision. However, NUMBER can incur a significant performance overhead for queries because arithmetic operations cannot be performed natively in hardware.
 
 The In-Memory optimized number format enables native calculations in hardware for segments compressed with the QUERY LOW compression option. Not all row sources in the query processing engine have support for the In-Memory optimized number format so the IM column store stores both the traditional Oracle Database NUMBER data type and the In-Memory optimized number type. This dual storage increases the space overhead, sometimes up to 15%.

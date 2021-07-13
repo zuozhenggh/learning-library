@@ -1,8 +1,9 @@
+
 # Explore Automatic Deletion of Flashback Logs
 
 ## Introduction
 
-Estimated Lab Time: x minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -25,7 +26,7 @@ Be sure that the following tasks are completed before you start:
 
 ## **STEP 1**: Verify that **CDB1** is in **FLASHBACK** mode
 
-1. Berify that **CDB1** is in **FLASHBACK** mode and display the flashback retention period. If the database is not in flashback mode, execute the **/home/oracle/labs/admin/flashback.sql** script.
+1. Verify that **CDB1** is in **FLASHBACK** mode and display the flashback retention period. If the database is not in flashback mode, execute the **/home/oracle/labs/19cnf/admin/flashback.sql** script.
 
     ```
     $ sqlplus / AS SYSDBA
@@ -40,7 +41,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
     ```
-    SQL> @/home/oracle/labs/admin/flashback_on.sql
+    SQL> @/home/oracle/labs/19cnf/flashback.sql
     ```
 
     ```
@@ -73,20 +74,20 @@ Be sure that the following tasks are completed before you start:
     ```
     SQL> HOST
 
-    $ cd /u01/app/oracle/fast_recovery_area/CDB1/flashback
+    $ cd /u01/app/oracle/recovery_area/CDB1/CDB1/flashback/
 
     $ls -l
     ```
 
-2. In another terminal window, execute **/home/oracle/labs/HA/workload.sh** to generate flashback logs. This script takes a long time to complete.
+2. In another terminal window, execute **/home/oracle/labs/19cnf/workload.sh** to generate flashback logs. This script takes a long time to complete.
 
     ```
-    $ /home/oracle/labs/HA/workload.sh
+    $ /home/oracle/labs/19cnf/workload.sh
     ```
 ## **STEP 3**: View flashback logs
-1. Back in the initial terminal session, check the flashback logs in the FRA after 30 min`utes. 
+1. Back in the initial terminal session, check the flashback logs in the FRA after 30 minutes. 
     ```
-    $ ls -ltr /u01/app/oracle/fast_recovery_area/CDB1/
+    $ ls -ltr /u01/app/oracle/recovery_area/CDB1/
 
     -rw-r-----. 1 oracle dba  209723392 Jun 10 14:52 o1_mf_jd49pwwp_.flb
     -rw-r-----. 1 oracle dba  209723392 Jun 10 14:52 o1_mf_jd49q0q4_.flb
@@ -124,11 +125,11 @@ Be sure that the following tasks are completed before you start:
 
 ## Learn More
 
-- [Text](link)
-- [Text](link)
+- [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
 
 
 ## Acknowledgements
 
-- **Author**- Your Name, Your Title
-- **Last Updated By/Date** - Your Name, Team name, Month Day 2021
+**Author**- Dominique Jeunot, Consulting User Assistance Developer
+* **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, June 2021
+* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in
