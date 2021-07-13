@@ -14,13 +14,18 @@ You can load data into your autonomous database (Autonomous Data Warehouse [ADW]
 
 Estimated Time: 30 minutes
 
-### Objectives <optional>
+### Objectives
 
 
 -   Learn how to define Object Store credentials for your autonomous database
 -   Learn how to load data from the Object Store using Data Tools
 -   Learn now to load data from the Object Store using the DBMS_CLOUD APIs executed from SQL
 
+### Pre-requisites
+
+This lab requires you to have access to an autonomous database instance (either ADW or ATP).
+
+The MOVIESTREAM user must have been set up. If the user is not set up, please complete [Lab 4 in this series (Create a Database User)](create-db-user/create-db-user.md) before proceeding.
 
 ## **Step 1**: Configure the Object Storage Connection
 
@@ -30,7 +35,7 @@ Estimated Time: 30 minutes
 
 2. On the login screen, enter the username MOVIEWORK, then click the blue **Next** button.
 
-3. Enter the password for the MOVIEWORK user you set up in the previous lab.
+3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
 
 4. Under **Data Tools**, click on **DATA LOAD**
 
@@ -40,7 +45,7 @@ Estimated Time: 30 minutes
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-5. Click on **+Add Cloud Storage** in the top right of your screen.
+6. Click on **+Add Cloud Storage** in the top right of your screen.
 
 -   In the **Name** field, enter 'MovieStreamDataLake'
 
@@ -52,7 +57,7 @@ Estimated Time: 30 minutes
 > https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
 
 -   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Save**.
+-   Click on the **Test** button to test the connection. Then click **Create**.
 
 
 ## **Step 2:** Load data from files in Object Storage
@@ -144,7 +149,7 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_cust_sales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **cust_sales** table. 
+    We now have a new **ext_custsales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **custsales** table. 
 
 4.  To do this, click on the bin icon to clear the worksheet.
 
@@ -236,7 +241,7 @@ create table pizza_locations as select * from ext_pizza_locations;
 
 9.  Click on the **Run Script** button to run the script.
 
-10. Part of our later data analysis will require us to have a TIME table in the autonomous database. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, then copy and paste the following lines:
+10. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, then copy and paste the following lines:
 
 ```
 create table TIME as
