@@ -41,10 +41,10 @@ In this lab, you will:
 In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables.sh` shell script. The shell script creates and loads the `OE.INVENTORIES`, `OE.ORDERS` and `OE.ORDER_ITEMS` tables.
 
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the 21c instance in DB Systems.  Switch to the oracle user.
-	````
+	```
 	ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address
 	sudo su - oracle
-	````
+	```
 
 2.  Change to the lab directory and run the shell script to setup the tables
 
@@ -92,9 +92,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
-2. Open up Cloud Shell 
+2. Open up Cloud Shell
 3. Connect to the OE user using SQL\*Plus by entering the commands below.
-   
+
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
@@ -125,11 +125,12 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	```
 	SQL> <copy>SELECT count(distinct product_id) FROM inventories;</copy>
-	<if type="atp">
 	```
+	<if type="atp">
     ![](images/step2-inventories.png)
 	</if>
 	<if type="dbcs">
+	```
 	COUNT(PRODUCT_ID)
 	-----------------
 				208
@@ -140,15 +141,16 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	```
 	SQL> <copy>SELECT count(distinct product_id) FROM order_items;</copy>
-	<if type="atp">
 	```
+	<if type="atp">
     ![](images/step2-order.png)
 	</if>
 	<if type="dbcs">
+	```
 	COUNT(PRODUCT_ID)
 	-----------------
 				185
-	
+
 	```
 	</if>
 
@@ -160,11 +162,12 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 			(SELECT product_id FROM inventories
 				EXCEPT
 			SELECT product_id FROM order_items);</copy>
-	<if type="atp">
 	```
+ 	<if type="atp">
     ![](images/step2-except-inventories.png)
 	</if>
-	<if type="dbcs">	
+	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
 		84
@@ -180,11 +183,12 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 				EXCEPT
 			SELECT product_id FROM inventories);
 		</copy>
-	<if type="atp">
 	```
+	<if type="atp">
     ![](images/step2-except-order.png)
 	</if>
 	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
     61
@@ -200,11 +204,12 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	SQL> <copy>SELECT product_id FROM inventories
 		EXCEPT ALL
 		SELECT product_id FROM order_items;</copy>
-	<if type="atp">
 	```
+	<if type="atp">
     ![](images/step3-exceptall.png)
 	</if>
 	<if type="dbcs">
+	```
 	PRODUCT_ID
 	----------
 		1729
@@ -235,11 +240,14 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 		(SELECT product_id FROM inventories
 		EXCEPT ALL
 		SELECT product_id FROM order_items);</copy>
-	<if type="atp">
 	```
+
+	<if type="atp">
     ![](images/step3-exceptreverse.png)
 	</if>
+
 	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
 		826
@@ -252,40 +260,43 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 1. How many products that were ordered are still orderable? The statement combining the results from two queries with the `INTERSECT` operator returns only those unique rows returned by both queries.
 
-	````
+	```
 	SQL> <copy>SELECT count(*) FROM
 		(SELECT product_id FROM inventories
 		INTERSECT
 		SELECT product_id FROM order_items);</copy>
+	```
 	<if type="atp">
-	````
     ![](images/step4-inventories.png)
 	</if>
+
 	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
 		124
 
-	````
+	```
 	</if>
 
 2. Run the sql statement below reversing the intersect clause.
 
-	````
+	```
 	SQL> <copy>SELECT count(*) FROM
 		(SELECT product_id FROM order_items
 		INTERSECT
 		SELECT product_id FROM inventories);
 		</copy>
+	```
 	<if type="atp">
-	````
     ![](images/step4-order.png)
 	</if>
 	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
 		124
-	````
+	```
 	</if>
 
 ## **STEP  5**: Test the set operator with the `INTERSECT ALL` clause
@@ -297,11 +308,14 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 		(SELECT product_id FROM order_items
 		INTERSECT ALL
 		SELECT product_id FROM inventories);</copy>
-	<if type="atp">
 	```
+
+	<if type="atp">
     ![](images/step5-all.png)
 	</if>
+
 	<if type="dbcs">
+	```
 	COUNT(*)
 	----------
 		286
@@ -323,5 +337,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Didi Han, Database Product Management
-* **Last Updated By/Date** -  Didi Han, April 2021
-
+* **Last Updated By/Date** -  Tom McGinn, July 2021
