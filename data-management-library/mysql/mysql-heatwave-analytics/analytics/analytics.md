@@ -1,4 +1,4 @@
-# Lab 4: Use Analytics Cloud on MySQL Database Service powered by Heatwave
+# Use Analytics Cloud on MySQL Database Service powered by Heatwave
 
 ## Key Objectives:
 - Learn how to use Oracle Analytics Cloud on MySQL Database Service powered by HeatWawe.
