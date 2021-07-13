@@ -11,14 +11,13 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that use
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
 * Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
 * Create and run a distribution path on Oracle GoldenGate
 
 ### Prerequisites
 To successfully complete this LiveLab, you must have the following:
 * An on premise or Marketplace Oracle GoldenGate installation
-* A Trail File to send to OCI GoldenGate
 * An OCI GoldenGate deployment created, with public IP enabled
 
 ### Lab Breakdown
@@ -34,7 +33,5 @@ To successfully complete this LiveLab, you must have the following:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He, Database Product Management
-* **Last Updated By/Date** - April 2021
-
-
+* **Contributors** -  Werner He and Julien Testut, Database Product Management
+* **Last Updated By/Date** - May 2021
