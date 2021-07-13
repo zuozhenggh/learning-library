@@ -43,7 +43,7 @@
         "filename":"../../in_memory/mixed_workload/mixed-workload.md"
     },
     {
-        "title": "LAB 04: In-Memory POC using Sql*Developer",
+        "title": "LAB 04: In-Memory POC using SQL Developer",
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
         "filename":"../../in_memory/sqldev/inmemorypoc.md"

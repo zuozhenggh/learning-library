@@ -26,56 +26,30 @@ In this lab you will learn:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
 - SSH Private Key to access the host via SSH
-- OMS Credentials:
-    - Username: **sysman**; Password: **welcome1**
-    - Username: **emadmin**; Password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-```
-<copy>https://<EM13c Host Public IP address>:7803/em</copy>
-e.g: https://111.888.111.888:7803/em
-```
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
-
-
-## **STEP 0:** Running your Workload
-
-### Login to OMS Console
-Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
-
-You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
-
-
-1. Update the Named Credentials with your SSH Key
-Navigate to "***Setup >> Security >> Named Credential***" and Select **ROOT** credential; Click **Edit**. Replace the existing entry with your **SSH Private Key** and Click on **Test and Save**.
-  ![](images/update_ssh_creds.jpg " ")
-
-2. Setup oracle Named Credentials using Job System
-   This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
-   Navigate to "***Enterprise >> Job >> Library***" and select **SETUP ORACLE CREDENTIALS**; Click **Submit**.
-  ![](images/named_creds_job.jpg " ")
-
-
-3. Click **Submit** again on the Job submission Page
-  ![](images/named_creds_job_submit.jpg " ")
-
-4. The Job will be submitted successfully. Click on **SETUP ORACLE CREDENTIALS** Job link to view the Job
-  ![](images/submitted.jpg " ")
-
-5. The Job should show Status **Succeeded**
-  ![](images/named_creds_job_succeeded.jpg " ")
-
 
 ## **STEP 1:** Understand how to create an OS Command Job
 
 In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
-1.  Log into your Enterprise Manager as user **emadmin**
+1.  On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+
+  ```
+  Username: <copy>emadmin</copy>
+  ```
+
+  ```
+  Password: <copy>welcome1</copy>
+  ```
+
+  ![](images/em-login-emadmin.png " ")
 
 2.  Navigate to the “***Enterprise menu >> Job >> Activity***”.
   ![](images/enterprise_job_activity.jpg " ")
@@ -111,30 +85,28 @@ In this workshop we will first review the Job you ran in STEP 0 to set user *ora
 12. In the **Select Named Credentials** Window, Select Named Credential **ROOT**. Click **Test and Save**
   ![](images/preferred_creds4.jpg " ")
 
-Now the Library job created is ready to be used as in STEP 0 to setup user **oracle** Named Credentials.
+Now the Library job created is ready to be used.
 
 ## **STEP 2:** Create a SQL command Job
 
 In this workshop we will create and run a SQL Command Job to determine how many targets are down from the Enterprise Manager Repository
 
-1.  Log into your Enterprise Manager as user **emadmin**.
-
-2.  Navigate to ***Enterprise >> Job >> Activity***.
+1.  Still connected to your Enterprise Manager as user **emadmin**, Navigate to ***Enterprise >> Job >> Activity***.
   ![](images/enterprise_job_activity.jpg " ")
 
-3.  In the Job Activity page, on the top of the Activity table, click **Create Job**.
+2.  In the Job Activity page, on the top of the Activity table, click **Create Job**.
   ![](images/create_job.jpg " ")
 
-4. In the **Select Job Type** pop-up, select **SQL Script** and Click **Select**.
+3. In the **Select Job Type** pop-up, select **SQL Script** and Click **Select**.
   ![](images/sql_job.jpg " ")
 
-5. On the General Tab, Enter **TARGET_DOWN** as Name of the job and Click on **Add** to add Target Instance.
+4. On the General Tab, Enter **TARGET_DOWN** as Name of the job and Click on **Add** to add Target Instance.
   ![](images/sql_job1.jpg " ")
 
-6. Check **emrep.us.oracle.com** (the EM repository) and click **Select**.
+5. Check **emrep.us.oracle.com** (the EM repository) and click **Select**.
   ![](images/sql_job1.1.jpg " ")
 
-7. On the Parameters tab enter the following SQL command to be executed
+6. On the Parameters tab enter the following SQL command to be executed
 
     ```
     <copy> SELECT COUNT(*) FROM mgmt$availability_current WHERE availability_status='Target Down'; </copy>
@@ -142,39 +114,39 @@ In this workshop we will create and run a SQL Command Job to determine how many 
     ```
     ![](images/sql_job1.2.jpg " ")
 
-8. On the **Credentials** tab, Select Database Named Credential **SYSMAN** and Host Named Credential **ORACLE** and Click on **Submit** to submit the SQl Script job.
+7. On the **Credentials** tab, Select Database Named Credential **SYSMAN** and Host Named Credential **ORACLE** and Click on **Submit** to submit the SQl Script job.
   ![](images/sql_job1.3.jpg " ")
 
-9. You will get a confirmation dialog at the top of the screen. CLick on **TARGET_DOWN** to view your job run.
+8. You will get a confirmation dialog at the top of the screen. CLick on **TARGET_DOWN** to view your job run.
   ![](images/sql_job1.4.jpg " ")
 
-10. This will show you the sql command job's successful run with the value of number of targets that are Down.
+9. This will show you the sql command job's successful run with the value of number of targets that are Down.
   ![](images/sql_job1.5.jpg " ")
 
 Now let us see how we can run a sql job to alter the initialization parameters of a database
 
-11. First, let us see the original value of the parameter. From the main menu, Click on ***Targets >> Databases*** and Click on **finance.subnet.vcn.oraclevcn.com**.
+10. First, let us see the original value of the parameter. From the main menu, Click on ***Targets >> Databases*** and Click on **finance.subnet.vcn.oraclevcn.com**.
   ![](images/databases_finance.jpg " ")
 
-12. Under **Administration** drop down Click **Initialization Parameters**.
+11. Under **Administration** drop down Click **Initialization Parameters**.
   ![](images/finance_init_param.jpg " ")
 
-13. This will pop up the credentials screen. Select Named Credential **OEM_SYS**; Click **Login**.
+12. This will pop up the credentials screen. Select Named Credential **OEM_SYS**; Click **Login**.
   ![](images/finance_init_param1.jpg " ")
 
-14. Scroll down and you will see the **open\_cursors** initialization parameter set to 300 as shown.
+13. Scroll down and you will see the **open\_cursors** initialization parameter set to 300 as shown.
   ![](images/finance_init_param2.jpg " ")
 
-15. Navigate to the ***Enterprise menu >> Job >> Activity***.
+14. Navigate to the ***Enterprise menu >> Job >> Activity***.
     ![](images/enterprise_job_activity.jpg " ")
 
-16. In the Job Activity page, on the top of the Activity table, click **Create Job**.
+15. In the Job Activity page, on the top of the Activity table, click **Create Job**.
     ![](images/create_job.jpg " ")
 
-17. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**.
+16. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**.
     ![](images/sql_job.jpg " ")
 
-18.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
+17.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
     ![](images/sql_job2.jpg " ")
 
 18. Check **finance.subnet.vcn.oraclevcn.com**  and click **Select**.
@@ -204,7 +176,6 @@ Now let us see how we can run a sql job to alter the initialization parameters o
   ![](images/finance_init_param3.jpg " ")
 
 <!-- This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.   -->
-
 
 ## **STEP 3:** Create Database Backup Job using Wizard
 
@@ -249,9 +220,9 @@ In the Customized Backup section, the **Whole Database** option is selected by  
   ![](images/database_backup10.jpg " ")
   ![](images/database_backup11.jpg " ")
 
-This lab shows how you can create Enterprise Manager Jobs from a Database Target page as well and schedule and automate the same.
+This completes this lab.
 
-This concludes the Automation of Enterprise Manager Job System lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
@@ -259,7 +230,6 @@ This concludes the Automation of Enterprise Manager Job System lab.
 - [Utilizing the Job System](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emadm/utilizing-job-system-and-corrective-actions.html#GUID-3F8CCFFA-4290-4AA9-A093-1E1659C8784D)
 
 ## Acknowledgements
-- **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
-- **Last Updated By/Date** - Shefali Bhargava, Oracle Enterprise Manager Product Management, June 2021
-
-
+  - **Author** - Shefali Bhargava, Oracle Enterprise Manager Product Management
+  - **Contributors** -  Rene Fontcha
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
