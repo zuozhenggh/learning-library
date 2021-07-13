@@ -4,7 +4,7 @@
 - Learn how to use Oracle Analytics Cloud on MySQL Database Service powered by HeatWawe.
 
 
-## STEP 1: Create Oracle Analytics Cloud Instance 
+## **STEP 1:** Create Oracle Analytics Cloud Instance 
 
 ### **Step 1.1:**
 
@@ -82,7 +82,7 @@ After you filled out everything, click on _**Save**_.
 
 You Oracle Analytics Instance is now connected to your MySQL Database Service powered by Heatwawe.
 
-## **STEP 2:** CREATE YOUR FIRST DASHBOARD
+## **STEP 2:** Create Your First Dashboard
 
 ### **Step 2.1:**
 Let's now use this connection to create a very simple dashboard! From the top right corner click _**Create**_ and this time click on _**Dataset**_ as shown in the picture below.
