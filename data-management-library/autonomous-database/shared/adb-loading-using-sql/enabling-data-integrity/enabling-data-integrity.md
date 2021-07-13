@@ -7,7 +7,7 @@ Autonomous Data Warehouse supports the ability to define constraints against you
 
 A unique constraint designates a column (it could also be a group of columns) as a unique key. To satisfy a unique constraint, no two rows in the table can have the same value for the unique key. The second step is to combine this concept with the NOT NULL constraint that was included in the definition of our data table to derive a **PRIMART KEY**. The concept of a primary key concept is a key part of an efficient relational database. Without the primary key, along with the closely related concept of a foreign key, relational databases would simply not work. A primary key provides us with a fast and efficient way to uniquely identify each row in a table.   
 
-## STEP 1 - Adding Constraints
+## **STEP 1:** Adding Constraints
 
 1. Run the following command in the SQL worksheet to enable a data integrity check on the fact table:
 
@@ -17,7 +17,7 @@ A unique constraint designates a column (it could also be a group of columns) a
     ```
     **NOTE:**  These two statement may take a 1-2 minutes to complete.
 
-## STEP 2 - Testing that the New Constraint Works
+## **STEP 2:** Testing that the New Constraint Works
 
 1. Check the value of total sales in the `movie_sales_fact` table:
 
@@ -57,8 +57,8 @@ We can now show that our sales data is factually correct - our data set contains
 
 Please *proceed to the next lab*.
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Keith Laker, ADB Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2021
+* **Author** - Keith Laker, ADB Product Management
+* **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Richard Green, June 2021
