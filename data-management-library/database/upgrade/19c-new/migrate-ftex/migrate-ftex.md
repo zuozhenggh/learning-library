@@ -8,12 +8,12 @@ As part of the lab, you will move an Oracle 11.2.0.4 database, FTEX, directly in
 
 It is important to mention that this feature works cross-platform and cross-Endianness!
 
-*Estimated Lab Time*: 30 minutes
+*Estimated Lab Time*: 15 minutes
 
 ### About Transportable Export/Import
 You can use full transportable export/import to upgrade a database from an Oracle Database 11g Release 2 (11.2.0.3) or later to Oracle Database 19c.
 
-To do so, install Oracle Database 19c and create an empty database. Next, use full transportable export/import to transport the Oracle Database 11g Release 2 (11.2.0.3) or later database into the Oracle Database 19c database.
+To do so, install Oracle Database 19c and create an empty (pluggable) database. Next, use full transportable export/import to transport the Oracle Database 11g Release 2 (11.2.0.3) or later database into the Oracle Database 19c database.
 
 ### Objectives
 
@@ -53,7 +53,7 @@ At first, as with every other Transportable Tablespace migration, we need to cre
     ````
     ![](./images/trans_exp_2.png " ")
 
-2.  The admin user needs to exist when a PDB gets created. You can delete it later on if necessary.  Once the PDB2 is created you need to start it up and create some additional objects for the migration.
+2.  The admin user needs to exist when a PDB gets created. You can delete it later on if desired. Once the PDB2 is created you need to start it up and create some additional objects for the migration.
 
     ````
     <copy>
@@ -79,7 +79,7 @@ At first, as with every other Transportable Tablespace migration, we need to cre
 
 Before we can transport anything, we need to prepare the FTEX database.
 
-1. Firstly, we need to start the database. Then you will switch the one tablespace we will migrate to Read-Only.
+1. You will switch the one tablespace we will migrate to Read-Only.
 
     ````
     <copy>
@@ -91,14 +91,13 @@ Before we can transport anything, we need to prepare the FTEX database.
 
     ````
     <copy>
-    startup
     alter tablespace USERS read only;
     exit
     </copy>
     ````
     ![](./images/trans_exp_6.png " ")
 
-2. Migrate FTEX into PDB2.  At first of course you need to transfer the file as well to the new environment.
+2. Migrate FTEX into PDB2.  At first of course you need to transfer the file (aka "copy") to the new environment.
 
     ````
     <copy>
@@ -117,7 +116,16 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     ![](./images/trans_exp_8.png " ")
 
-4. Once the operation is completed (it takes between 2 and 3 minutes) you can shutdown FTEX.  You will find some error messages. This particular one can be safely ignored as the object belongs to Advanced Replication.
+    In the /home/oracle/IMP directory you will find a file called ft.par . This is the parameter file for Data Pump containing the above parameters. You can use it instead of typing the long line above with:
+
+    ````
+    <copy>
+    impdp system/oracle@pdb2 parfile=/home/oracle/IMP/ft.par
+    </copy>
+    ````
+
+
+4. Once the operation is completed (it takes between 2 and 3 minutes) you can shutdown FTEX. You will find some error messages. This particular one can be safely ignored as the object belongs to Advanced Replication.
     ![](./images/trans_exp_9.png " ")
 
     <!-- ````
@@ -131,7 +139,7 @@ Before we can transport anything, we need to prepare the FTEX database.
 
     W-1      Completed 4 PROCACT_SYSTEM objects in 25 seconds
     ```` -->
-5. In case copy/paste does not work correctly, there is a prepared file with all the parameters in /home/oracle/IMP. Use “impdp parfile=/home/oracle/IMP/ft.par” instead.
+5. Shutdown the FTEX database.
 
     ````
     <copy>
@@ -142,6 +150,7 @@ Before we can transport anything, we need to prepare the FTEX database.
     ````
     <copy>
     alter tablespace users read write;
+    shutdown immediate
     exit
     </copy>
     ````
@@ -181,5 +190,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Mike Dietrich, Database Product Management
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021
