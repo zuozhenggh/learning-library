@@ -1,8 +1,8 @@
 # Database Performance Management: Find, Fix, Validate
 
 ## Introduction
- 
-The goal of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c. 
+
+The goal of this lab is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud Control 13c.
 
 *Estimated Lab Time:* 55 minutes
 
@@ -25,94 +25,54 @@ In this lab you will learn:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Environment Setup
 - SSH Private Key to access the host via SSH
-- OMS super-user Credentials:
-    - Username: **sysman**
-    - password: **welcome1**
-- EM13c Host Public IP address
-- OMS Console URL:
-  ```
-  <copy>https://<EM13c Host Public IP address>:7803/em</copy>
-  e.g: https://111.888.111.888:7803/em
-  ```
+- You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
-*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
-## **STEP 0:** Running your Workload
+## **STEP 1:** Prepare Database
+Select between *STEP 1A* and *STEP 1B*
 
-### Login to Host using SSH Key based authentication
+## **STEP 1A:** Prepare Database Using EM Console
 
-1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
- - Authentication OS User - “*opc*”
- - Authentication method - *SSH RSA Key*
- - Oracle EM and DB Software OS User – “*oracle*”. First login as “*opc*”, then sudo to “*oracle*”. E.g.
-```
-<copy>sudo su - oracle</copy>
-```
+1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
-### Login to OMS Console
+    ```
+    Username: <copy>sysman</copy>
+    ```
 
-2. Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above.
+    ```
+    Password: <copy>welcome1</copy>
+    ```
 
-    You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
+    ![](../initialize-environment/images/em-login.png " ")
 
-### Update the Named Credentials with your SSH Key
-
-3. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
-
-    ![](images/update_ssh_creds.jpg " ")
-
-4. Setup oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
-Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDENTIALS"; Click Submit.
-
-    ![](images/named_creds_job.jpg " ")
-
-5. Click Submit again on the Job submission Page
-
-    ![](images/named_creds_job_submit.jpg " ")
-
-6. The Job will be submitted successfully. Click on SETUP ORACLE CREDENTIALS Job link to view the Job
-
-    ![](images/submitted.jpg " ")
-
-7. The Job should show Status **Succeeded**
-
-    ![](images/named_creds_job_succeeded.jpg " ")
-
-
-### Prepare database - Option 1: Using EM Console
-
-8. Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
-
-9. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
+2. From the upper left, navigate from **Enterprise** to **Job** to then **Library**
 
     ![](images/emjobnav.png " ")
 
-10. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
+3. Locate and select the job name **1-DB\_LAB\_START**, and Click the Submit  button.
 
     ![](images/emdbstartjob.png " ")
 
-11. Then Click the Submit button in the upper right hand of your window.
+4. Then Click the Submit button in the upper right hand of your window.
 
     ![](images/emjobsubmitbutton.png " ")
 
-12. The workload has started and will take a few minutes to ramp up.
+5. The workload has started and will take a few minutes to ramp up.
 
     ![](images/emjobcom.png " ")
 
-### Prepare database - Option 2: Using SSH terminal from the VM host
+## **STEP 1B:** Prepare database Using the terminal
 
-  - Login as user "opc",
-  - Sudo over to user "oracle"
-  - Change directory to **scripts**
-  - Set your environment variables with ***SALESENV***
-  - Execute the script **1-db\_lab\_start.sh**
+1. Instead of *STEP 1* above, you may run the block below from the terminal as user *oracle*
 
     ```
-    <copy>sudo su - oracle
+    <copy>
     cd scripts
     source SALESENV
     . ./1-db_lab_start.sh</copy>
@@ -120,27 +80,23 @@ Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDEN
 
     ![](images/emopt2start.jpg " ")
 
-## **STEP 1:** Performance Hub
+## **STEP 2:** Performance Hub
 
-1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
-
-    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
-
-2. Click on the Targets, then Databases. You will be directed to the list of Databases in EM.
+1. Click on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
     ![](images/9b88b0ba0cefae75a2374d91dcbd4e2e.jpg " ")
 
-3. Here you will notice different databases listed, such as SALES, HR etc. We will work the sales container database. **Select** the Sales database from the list and this will take you to the DB home page for this database.
+2. Here you will notice different databases listed, such as SALES, HR etc. We will work the sales container database. **Select** the Sales database from the list and this will take you to the DB home page for this database.
 
     ![](images/95063e3082e730e54d957b9ff7575f49.jpg " ")
 
     ![](images/89801010273a62f99a3da10de8bf5c71.jpg " ")
 
-4.  Click on the **Containers** tab. It is located at the upper right-hand corner of the page, underneath the Performance tile. This will show the list of pluggable databases in the CDB and their activity
+3.  Click on the **Containers** tab. It is located at the upper right-hand corner of the page, underneath the Performance tile. This will show the list of pluggable databases in the CDB and their activity
 
     ![](images/c6bc11e91d6db9627a146b3e79d0ce19.jpg " ")
 
-5.  Notice that the PSALES database is the busiest. We focus our attention to this PDB. Let us now navigate to Performance Hub. Select Performance Hub from the Performance Menu and Click on ASH Analytics and use the sales\_system credential name from the database login screen
+4.  Notice that the PSALES database is the busiest. We focus our attention to this PDB. Let us now navigate to Performance Hub. Select Performance Hub from the Performance Menu and Click on ASH Analytics and use the sales\_system credential name from the database login screen
 
     ![](images/e131e1ce965ab5bb248d5439529fc921.jpg " ")
 
@@ -148,83 +104,80 @@ Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDEN
 
     ![](images/58e81976fa9957ee57f89139a06c4841.jpg " ")
 
-6. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
+5. Make sure to slide the time picker on an area of high usage (e.g., CPU, IO or Waits). Notice how the corresponding selected time window also changes in the summary section. You can also resize the slider to entirely cover the time period of your interest.
 
     Notice the graph at bottom, it is providing more detailed view of the time window you selected. By Default the wait class dimension is selected. On the right hand side of the graph you have a list of wait classes for the time window you selected (blue for user I/O, green for CPU etc.). Notice how the color changes if you hover over either the menu or the graph to highlight the particular wait class.
 
     Wait class isn’t the only dimension you can drill into the performance issue by. Let us say you wanted to identify the SQL that was causing the biggest performance impact. You can do that by Clicking the drop down list and changing the top dimension from wait class to SQL ID.
 
-7. Select the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
+6. Select the SQL ID dimension from the list of available dimensions (Under Top Dimensions) using the dropdown box that is currently displaying Wait Class. Top Dimensions SQL ID
 
     ![](images/32b079f89c002058721d0c8a3e41f993.jpg " ")
 
-8. Hover your mouse on top of the SQL (one at the bottom) and you will be able to see how much activity is consumed by this SQL. Now using the same list of filters select the PDB dimension. Session Identifiers PDB.
+7. Hover your mouse on top of the SQL (one at the bottom) and you will be able to see how much activity is consumed by this SQL. Now using the same list of filters select the PDB dimension. Session Identifiers PDB.
 
     ![](images/95cce3b331aa85fc893b8eecc9a6c0a6.jpg " ")
 
-9. What do you see? The chart changes to activity by the different pluggable databases created in this Container database.Click on the ‘PSALES” pluggable database on the list to add it to the filter by list and drilldown to activity by this PDB on the same page.
+8. What do you see? The chart changes to activity by the different pluggable databases created in this Container database.Click on the ‘PSALES” pluggable database on the list to add it to the filter by list and drilldown to activity by this PDB on the same page.
 
     ![](images/384fdb12e234cbc0d60df1639079dc3e.jpg " ")
 
     ![](images/07dcb138dcb6773ee6b560681a62ec5f.jpg " ")
 
-10. Click on the SQL Monitoring Tab
+9. Click on the SQL Monitoring Tab
 
       ![](images/6e47bf2703c3c1e4adffd39d2202045f.jpg " ")
 
-11. You can see all the executed SQL during that time along with different attributes like ‘user’,’Start’,’Ended’ etc. The test next to the \@ sign indicates the name of the PDB. Click on any SQL of your choice (e.g. 6kd5jj7kr8swv)
+10. You can see all the executed SQL during that time along with different attributes like ‘user’,’Start’,’Ended’ etc. The test next to the \@ sign indicates the name of the PDB. Click on any SQL of your choice (e.g. 6kd5jj7kr8swv)
 
     ![](images/533523dca8453a0ce246ac933fdb639c.jpg " ")
 
-12. It will navigate you to show the details of this particular query. You can see the plan, parallelism and activity of the query. “Plan Statistics” tab is selected by default. You can see the plan of this query in graphical mode. In some cases, the Monitored SQL may have aged out and no rows are displayed, in this case try using the time-picker and pick last 24 hrs. time period to identify the historical SQL that was monitored.
+11. It will navigate you to show the details of this particular query. You can see the plan, parallelism and activity of the query. “Plan Statistics” tab is selected by default. You can see the plan of this query in graphical mode. In some cases, the Monitored SQL may have aged out and no rows are displayed, in this case try using the time-picker and pick last 24 hrs. time period to identify the historical SQL that was monitored.
 
-13. Select **Parallel** tab. This will give details about parallel coordinator and parallel slaves.
+12. Select **Parallel** tab. This will give details about parallel coordinator and parallel slaves.
 
-14. Click on the **SQL Text** tab. You can see the query text which has been executed.
+13. Click on the **SQL Text** tab. You can see the query text which has been executed.
 
-15. Click on the **activity** tab to understand about the activity breakdown for this SQL.
+14. Click on the **activity** tab to understand about the activity breakdown for this SQL.
 
 16. Click on **Save** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
 
-## **STEP 2:** Real-Time Database Operations Monitoring
+## **STEP 3:** Real-Time Database Operations Monitoring
 
-  - Login as user "opc",
-  - Sudo over to user "oracle"
-  - Change directory to **scripts**
-  - Set your environment variables with ***SALESENV***
-  - Change directory to **load/frame/queries/awrv**
+1. From the terminal session on your remote desktop, run as user *oracle*
 
     ```
-    <copy>sudo su - oracle
+    <copy>
     cd scripts
     source SALESENV
     cd load/frame/queries/awrv</copy>
     ```
 
-1. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
+2. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
 Now execute the file \@DBOP.sql
+
     ```
     <copy>sqlplus sh2/sh2@psales
     @DBOP.sql</copy>
     ```
 
-2. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the **Monitored SQL** tab.
+3. You should already be logged on to Enterprise Manager. If you are not, please follow the instructions detailed earlier. Select the **Monitored SQL** tab.
 
-3. Review the list of currently executing SQLs that are visible. Click on the DBOP\_DEMO name. This will open the DBOP named DBOP\_DEMO.
+4. Review the list of currently executing SQLs that are visible. Click on the DBOP\_DEMO name. This will open the DBOP named DBOP\_DEMO.
 
     Note: You may have to scroll down or select “Database operations” from the type dropdown.
 
     ![](images/b10c056370e56dd1286ca1f556118c8f.jpg " ")
 
-4. Review the details of the Database Operations.
+5. Review the details of the Database Operations.
 
     ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg " ")
 
-5.  Click on the **Activity** tab. You will see all the activity for this operation.
+6.  Click on the **Activity** tab. You will see all the activity for this operation.
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## **STEP 3:** Tuning a SQL in a PDB
+## **STEP 4:** Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -286,7 +239,7 @@ Now execute the file \@DBOP.sql
 
 <!-- This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity. -->
 
-## **STEP 4:** SQL Performance Analyzer Optimizer Statistics
+## **STEP 5:** SQL Performance Analyzer Optimizer Statistics
 
 In this step we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -398,16 +351,11 @@ In this step we need to configure the database to set up optimizer statistics to
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **STEP 5:** Database Workload Replay
+## **STEP 6:** Database Workload Replay
 
-1. Create a Replay Task
-You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  
+1. Create a Replay Task. You need to open two terminal sessions as user *oracle*.  
 
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-### SSH Session 1
+### **SSH Session 1**
 
 2. Set Environment variables for sales database
 
@@ -487,9 +435,9 @@ You need to open two SSH sessions to your dedicated VM host as user "opc" using 
     <copy>exec DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY (synchronization => 'TIME');</copy>
     ```
 
-Now switch to session 2. You should already be connected as user oracle
+Now switch to session 2.
 
-### SSH Session 2
+### **SSH Session 2**
 
 12. Set Environment variables for sales database and change to the replay directory
 
@@ -504,7 +452,7 @@ Now switch to session 2. You should already be connected as user oracle
     <copy>wrc mode=calibrate replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
     ```
 
-    **Note**: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
+    *Note*: Replay clients are the application tier and should not be co-allocated with the database due to resource usage. Our recommendation is to place replay clients close to the database to avoid delays between database and replay clients. This is regardless if the application tier is located far away. The reason is that the replay clients communicate with the database to know when a certain database call should be replayed and if replay clients are located far away it will delay the call and create artificial delays during the replay.
 
 ### Calibrate output
 
@@ -530,9 +478,9 @@ Now switch to session 2. You should already be connected as user oracle
     <copy>wrc system/welcome1@sales mode=replay replaydir=/home/oracle/scripts/dbpack/RAT_REPLAY/DBReplayWorkload_OLTP_CAP_1</copy>
     ```
 
-Now switch back to session 1. You should already be connected as user oracle
+Now switch back to *session 1*. You should already be connected as user oracle
 
-### SSH Session 1
+### **SSH Session 1**
 
 15. You should still be connected in the SQL*Plus session as used before. From this window start the replay
 
@@ -610,18 +558,16 @@ Now switch back to session 1. You should already be connected as user oracle
 
   We have seen how you can use Real Application Testing Database Replay to validate changes that may impact performance on both SQL statements and DML statements. We have also seen the extensive reporting that will help you find and analyze bottlenecks or peaks during certain workloads.
 
-This completes the Lab
-You may now [proceed to the next lab](#next).
+This completes the Lab!
 
-Thank You!
+You may now [proceed to the next lab](#next).
 
 ## Learn More
-You may now [proceed to the next lab](#next).
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
   - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 
 ## Acknowledgements
 - **Author** - Björn Bolltoft, Oracle Enterprise Manager Product Management
-- **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, June 2021
+* **Contributors** -  Shefali Bhargava, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

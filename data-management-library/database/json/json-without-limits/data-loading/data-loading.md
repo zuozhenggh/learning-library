@@ -116,9 +116,13 @@ In fact the microservice deployed in the previous lab already provides an implem
 
 ### Inside the Database
 
-1. Start by creating a table partitioned by interval (time range) with a new partition added automatically every hour:
+1. Start by dropping the collection (in the case you started the data loader before). Then you'll create a table partitioned by interval (time range) with a new partition added automatically every hour:
+   
    ```
-   <copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
+   <copy>
+   soda drop purchase_orders;
+   
+   -- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
    create table PURCHASE_ORDERS (
        ID VARCHAR2(255) default SYS_GUID() not null primary key,
        CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
@@ -139,10 +143,15 @@ In fact the microservice deployed in the previous lab already provides an implem
    `<copy>soda create purchase_orders;</copy>`
 
    SQL Developer Web:
+
    ![](./images/soda-collection-created.png)
  
    SQLcl:
+
    ![](./images/soda-collection-created-with-cloud-shell-and-sqlcl.png)
+
+   Doing so, the SODA API will create the collection mapped onto the existing table we just created before.
+
 
 ### Inside your Java code
 

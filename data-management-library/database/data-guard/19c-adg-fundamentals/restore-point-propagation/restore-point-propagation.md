@@ -7,7 +7,7 @@ In this lab, we will use the 19c new feature which is called the Restore point p
 
 Oracle 19c supports automatic restore point propagation from the primary database to the standby database.
 
-This can be particularly useful in situations that during a logical operation on the primary database, the database suddenly fails beyond repair. When you perform a failover, the database would be in the same state as the primary, which would be logically corrupt. 
+This can be particularly useful in situations that during a logical operation on the primary database, the database suddenly fails beyond repair. When you perform a failover, the database would be in the same state as the primary, which would be logically corrupt.
 
 To avoid this, we are now forwarding the restore points automatically, that in case you need to use the standby, you can also flashback the standby database to a known good point in time.
 
@@ -21,9 +21,8 @@ Estimated Lab Time: 20 Minutes
 - Drop the restore point in the primary database
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab 3: Connect to the Database
-- Lab 6: Enable Active Data Guard DML Redirection
+- Connect to the Database
+- Enable Active Data Guard DML Redirection
 
 ## **STEP 1**: Create a restore point in the primary
 
@@ -61,7 +60,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
 
 ## **STEP 2**: Drop the restore point
 
-1. Next, drop the restore point in the primary database with following query 
+1. Next, drop the restore point in the primary database with following query
     ````
     drop restore point testrp;
     ````

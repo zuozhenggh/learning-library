@@ -1,0 +1,35 @@
+{
+    "workshoptitle": "Sending Data From Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create OCI GoldenGate resources",
+            "description": "Create your OCI GoldenGate deployment and database registration",
+            "filename": "../../create/create.md"
+        },
+        {
+            "title": "Lab 2: Create a Trusted Connection",
+            "description": "Use a self-signed certificate to create a trusted connection",
+            "filename": "../../connection/connection-gb.md"
+        },
+        {
+            "title": "Lab 3: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
+            "description": "Create an Extract, Distribution Path, and Replicat",
+            "filename": "../../extract/extract.md"
+        },
+        {
+            "title": "Lab 4: (Optional) Connect to the Admin Client",
+            "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
+            "filename": "../../admin-client/admin-client.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

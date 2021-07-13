@@ -1,3 +1,4 @@
+
 # Use Recovery Manager (RMAN) to Connect to a PDB to Use the Recovery Catalog
 
 ## Introduction
@@ -20,33 +21,32 @@ Be sure that the following tasks are completed before you start:
 
 - Lab 4 completed.
 - Oracle Database 19c installed.
-- A database, either non-CDB or CDB with a PDB.
-- If not downloaded, download 19cNewFeatures.zip 
+- If not downloaded, download 19cNewFeatures.zip
 
-
-
+## **STEP 0**: Enable ARCHIVELOG mode
+1. 
 ## **STEP 1**: Prepare environment
-1. Execute the **/home/oracle/labs/admin/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
+1. Execute the **/home/oracle/labs/19cnf/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
    
     ```
-    $ /home/oracle/labs/admin/cleanup_PDBs.sh
+    $ /home/oracle/labs/19cnf/cleanup_PDBs.sh
     ``` 
 
-2. Execute the **/home/oracle/labs/HA/create_PDB2.sh** shell script, this will create **PDB2** in the **CDB1** container. **PDB2** will be the database we are backing up.
+2. Execute the **/home/oracle/labs/19cnf/create_PDB2.sh** shell script, this will create **PDB2** in the **CDB1** container. **PDB2** will be the database we are backing up.
    
     ```
-    $/home/oracle/labs/HA/create_PDB2.sh
+    $/home/oracle/labs/19cnf/create_PDB2.sh
     ```
 
-3.  Execute the **/home/oracle/labs/HA/create_PDB19.sh** shell script. this will create **PDB19** in the **CDB1** container. **PDB19** will be the recovery catalog PDB.
+3.  Execute the **/home/oracle/labs/19cnf/create_PDB19.sh** shell script. this will create **PDB19** in the **CDB1** container. **PDB19** will be the recovery catalog PDB.
    
     ```
-    $ /home/oracle/labsHA/create_PDB19.sh
+    $ /home/oracle/labs/19cnf/create_PDB19.sh
     ```
-4. Execute the **/home/oracle/labs/HA/glogin.sh** shell script. This will set the formatting for all columns selected in queries.
+4. Execute the **/home/oracle/labs/19cnf/glogin.sh** shell script. This will set the formatting for all columns selected in queries.
 
     ```
-    $ /home/oracle/labs/HA/glogin.sh
+    $ /home/oracle/labs/19cnf/glogin.sh
     ```
 
 ## **STEP 2**: Create catalog owner and grant privileges 
@@ -56,7 +56,7 @@ Be sure that the following tasks are completed before you start:
     ```
     $ sqlplus system@PDB19
 
-    Enter password : <password>
+    Enter password : Ora4U_1234
     ```
 
     ```
@@ -113,7 +113,7 @@ Be sure that the following tasks are completed before you start:
     ```
     RMAN> EXIT
     ```
-4. Execute **$ORACLE_HOME/rdms/admin/dbmsrmanvpc.sql** after connecting to the catalog as **SYS** to grant VPD-required privileges to the base catalog owner.
+4. Execute **$ORACLE_HOME/rdbms/admin/dbmsrmanvpc.sql** after connecting to the catalog as **SYS** to grant VPD-required privileges to the base catalog owner.
     ```
     $ sqlplus sys@PDB19 AS SYSDBA
 
@@ -121,7 +121,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
     ```
-    SQL> @$ORACLE_HOME/rdms/admin/dbmsrmanvpc.sql -vpd catowner
+    SQL> @$ORACLE_HOME/rdbms/admin/dbmsrmanvpc.sql -vpd catowner
 
     checking the operating user... Passed
 
@@ -157,12 +157,16 @@ Be sure that the following tasks are completed before you start:
     DBMS_RCVCAT package upgraded to version 19.10.00.00.
     ```
 
+    ```
+    RMAN> exit
+    ```
+
         
 ## **STEP 3**: Create VPC users
 1. Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will be given access to the metadata of **PDB1** and **PDB2**, respectively.
     ```
     $ sqlplus system@PDB19
-    Enter password: oracle
+    Enter password: Ora4U_1234
     ```
 
     ```
@@ -217,7 +221,7 @@ Be sure that the following tasks are completed before you start:
     ```
     $rman TARGET sys@PDB1 CATALOG vpc_pdb1@PDB19
 
-    target database Password: <password>
+    target database Password: Ora4U_1234
     connected to target database: ORCL:PDB1 (DBID=4095280305)
     recovery catalog database Password: <password>
     connected to recovery catalog database
@@ -240,6 +244,8 @@ Be sure that the following tasks are completed before you start:
     channel ORA_DISK_1: backup set complete, elapsed time: 00:00:15
     Finished backup at 03-JUN-21
     ```
+
+2. Save your **TAG** value from the previous ouput, it is located near the bottom. 
     
     ```
     RMAN> EXIT
@@ -300,6 +306,7 @@ Be sure that the following tasks are completed before you start:
     RMAN> REVOKE CATALOG FOR PLUGGABLE DATABASE pdb2  FROM vpc_pdb2;
 
     Revoke succeeded.
+    ```
 
     ```
     RMAN> EXIT
@@ -315,7 +322,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
     ```
-    RMAN> backup database;
+    RMAN> BACKUP DATABASE;
 
     Starting backup at 03-JUN-21
     RMAN-00571: ===========================================================
@@ -342,6 +349,7 @@ Be sure that the following tasks are completed before you start:
 
     recovery catalog owner is CATOWNER
     enter DROP CATALOG command again to confirm catalog removal
+    ```
 
     ```
     RMAN> DROP CATALOG;
