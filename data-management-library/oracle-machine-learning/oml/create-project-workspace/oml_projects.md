@@ -5,7 +5,7 @@
 
   **Note:** The initial workspaces and the default project are
   created by the Oracle Machine Learning service automatically
-  when you log in to Oracle Machine Learning for the first time.
+  when you log in to Oracle Machine Learning Notebooks for the first time.
   The term default applies to the last project that you work on,
   and it is stored in the browser cache. If you clear the cache,
   then there would be no default project selected. Then you must
@@ -21,24 +21,24 @@ A project is a container for storing your notebooks and other objects such as da
 
 ### What Do You Need?
 
-* Access to your Oracle Machine Learning account
+* Access to your Oracle Machine Learning Notebooks account
 
-## Access your Oracle Machine Learning Account
+## Access your Oracle Machine Learning Notebooks Account
 
-  To gain access to your Oracle Machine Learning account, contact the Oracle Machine Learning administrator to create your account. The administrator creates the Oracle Machine Learning account, and provides you the account details in an email.
+  To gain access to your Oracle Machine Learning Notebooks account, contact the Oracle Machine Learning administrator to create your account. The administrator creates the Oracle Machine Learning Notebooks account, and provides you the account details in an email.
 
 
 1. Click the URL provided by your Oracle Machine Learning
-  administrator. This opens the Oracle Machine Learning Sign In
+  administrator. This opens the Oracle Machine Learning Notebooks Sign In
   page.
-2. In the Sign In page, enter the Tenant and Database name
+2. On the Sign In page, enter the Tenant and Database name
   provided by your administrator.
 
     ![login1.png](images/login1.png "login1.png")
 
 
 3. Click **Continue**.
-4. In the next Sign In page, enter your Username and Password provided to you and click **Sign In**.
+4. On the next Sign In page, enter your Username and Password provided to you and click **Sign In**.
 
     ![login2.png](images/login2.png "login2.png")
 
@@ -49,11 +49,11 @@ A project is a container for storing your notebooks and other objects such as da
   ![changepassword.png](images/changepassword.png "changepassword.png")
 
 
-## Create Project in Oracle Machine Learning
+## Create Project in Oracle Machine Learning Notebooks
 
 To create a project:
 
-1. On the top right corner of the Oracle Machine Learning home
+1. On the top right corner of the Oracle Machine Learning Notebooks home
   page, click the project workspace drop-down list. The project
   name and the workspace, in which the project resides, are
   displayed here. In this screenshot, the project name is <i>USER1
@@ -76,11 +76,11 @@ To create a project:
   the selected workspace. In this example, the <i>USER1 Workspace</i> is selected.
 6. Click **OK**. This completes the task of creating a project and assigning it to a workspace. In this example, the assigned workspace is <i>USER1 Workspace.</i>
 
-## Create Workspace in Oracle Machine Learning
+## Create Workspace in Oracle Machine Learning Notebooks
 
 To create a workspace:
 
-1. On the top right corner of the Oracle Machine Learning homepage, click the project workspace drop-down list and click **Select Project**. The Select Project dialog box opens.
+1. On the top right corner of the Oracle Machine Learning Notebooks homepage, click the project workspace drop-down list and click **Select Project**. The Select Project dialog box opens.
 
    ![select_project.png](images/select_project.png "select_project.png")
 
@@ -124,11 +124,11 @@ To create a workspace:
 
 ## Want to Learn More?
 
-* [Using Oracle Machine Learning](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/index.html)
+* [Using Oracle Machine Learning Notebooks](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/omlug/index.html)
 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Dimpi Sarmah, September 2020
+* **Last Updated By/Date**: Moitreyee Hazarika, June 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

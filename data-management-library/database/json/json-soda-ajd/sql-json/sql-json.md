@@ -86,11 +86,11 @@ In this lab, you will:
 
     ```
     <copy>
-    select p.json_document.decade,
+    select p.json_document.decade.string(),
     avg(p.json_document.price.number())
     from products p
     where p.json_document.type.string() = 'movie'
-    group by p.json_document.decade;
+    group by p.json_document.decade.string();
     </copy>
     ```
     ![](./images/sql2-4.png " ")  
@@ -396,7 +396,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     <copy>
     select JSON_Serialize(json_document)
     from products p
-    where p.json_document.id = 1414;
+    where p.json_document.id.number() = 1414;
     </copy>
     ```
     ![](./images/sql7-1.png " ")
@@ -407,7 +407,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     <copy>
     update products p
     set p.json_document = JSON_Mergepatch(json_document, '{"price":45, "note":"only 100 were made!"}')
-    where p.json_document.id = 1414;
+    where p.json_document.id.number() = 1414;
     </copy>
     ```
     ![](./images/sql7-2.png " ")
@@ -418,7 +418,7 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     <copy>
     select JSON_Serialize(json_document)
     from products p
-    where p.json_document.id = 1414;
+    where p.json_document.id.number()= 1414;
     </copy>
     ```
     ![](./images/sql7-3.png " ")
@@ -437,7 +437,7 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
     <copy>
     select JSON_Serialize(json_document)
     from products p
-    where p.json_document.id = 515;
+    where p.json_document.id.number() = 515;
     </copy>
     ```
     ![](./images/sql7-4.png " ")
@@ -452,7 +452,7 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
     set '$.price' = (p.json_document.price.number() * 1.10),
     append '$.genres' = 'Thriller'
     )
-    where p.json_document.id = 515;
+    where p.json_document.id.number() = 515;
     </copy>
     ```
     ![](./images/sql7-5.png " ")
