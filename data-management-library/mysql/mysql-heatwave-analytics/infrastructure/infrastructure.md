@@ -1,4 +1,4 @@
-# Lab 1: Infrastructure Configuration 
+# Infrastructure Configuration 
 
 **Key Objectives:**
  
