@@ -240,7 +240,7 @@ alter table movie add constraint movie_nominations_json check (nominations IS JS
 
 9.  Click on the **Run Script** button to run the script.
 
-10.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, then copy and paste the following script:
+10.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 define uri_landing = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o'
@@ -269,7 +269,7 @@ create table pizza_locations as select * from ext_pizza_locations;
 
 11.  Click on the **Run Script** button to run the script.
 
-12. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, then copy and paste the following lines:
+12. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
 
 ```
 create table TIME as
@@ -352,9 +352,9 @@ AND  cs.genre_id = g.genre_id
 AND  cs.cust_id = c.cust_id
 AND  c.segment_id = s.segment_id;
   
-alter table mv_custsales add CONSTRAINT cs_cast_json CHECK (cast IS JSON);
-alter table mv_custsales add CONSTRAINT cs_crew_json CHECK (crew IS JSON);
-alter table mv_custsales add CONSTRAINT cs_studio_json CHECK (studio IS JSON);
+alter table mv_custsales add constraint cs_cast_json check (cast IS JSON);
+alter table mv_custsales add constraint cs_crew_json check (crew IS JSON);
+alter table mv_custsales add constraint cs_studio_json check (studio IS JSON);
 ```
 
 15. Click on the **Run Script** button to run the script and create the views.
