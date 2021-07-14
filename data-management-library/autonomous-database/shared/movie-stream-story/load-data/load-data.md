@@ -368,7 +368,7 @@ Click on the run button. You can now see a more complete view of customer movie 
 
   ![View the data in mv_custsales](images/select-mvsales.png)
 
-This completes the Data Load lab. We now have a full set of structured tables and views loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables and views in later labs.
+This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, and a view that links many of the tables together for further analysis. We will be working with these tables, and the view, in later labs.
 
 
 ## Acknowledgements
