@@ -39,38 +39,38 @@ At first, as with every other Transportable Tablespace migration, we need to cre
 
 1. Login to CDB2 and create a new PDB.
 
-    ````
+    ```
     <copy>
     . cdb2
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_1.png " ")
-    ````
+    ```
     <copy>
     create pluggable database PDB2 admin user adm identified by adm file_name_convert=('pdbseed', 'pdb2');
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_2.png " ")
 
 2.  The admin user needs to exist when a PDB gets created. You can delete it later on if desired. Once the PDB2 is created you need to start it up and create some additional objects for the migration.
 
-    ````
+    ```
     <copy>
     alter pluggable database PDB2 open;
     alter pluggable database PDB2 save state;
     alter session set container=PDB2;
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_3.png " ")
-    ````
+    ```
     <copy>
     create directory mydir as '/u02/oradata/CDB2/mydir';
     grant read, write on directory mydir to system;
     create public database link SOURCEDB connect to system identified by oracle using 'FTEX';
     exit
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_4.png " ")
 
     We will use the database link to allow Data Pump pulling all information via the database link. The task can be done without the database link but then two operations are necessary, an expdp and an impdp.
@@ -81,54 +81,54 @@ Before we can transport anything, we need to prepare the FTEX database.
 
 1. You will switch the one tablespace we will migrate to Read-Only.
 
-    ````
+    ```
     <copy>
     . ftex
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_5.png " ")
 
-    ````
+    ```
     <copy>
     alter tablespace USERS read only;
     exit
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_6.png " ")
 
 2. Migrate FTEX into PDB2.  At first of course you need to transfer the file (aka "copy") to the new environment.
 
-    ````
+    ```
     <copy>
     cp /u02/oradata/FTEX/users01.dbf /u02/oradata/CDB2/pdb2
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_7.png " ")
 
 3. Then you need to initiate the transport operation. In this case Data Pump will take over the usual manual steps from Transportable Tablespaces. The keywords TRANSPORTABLE=ALWAYS and FULL=Y advice Data Pump to use the Full Transportable Export/Import feature. VERSION=12 is needed as we use an 11g database as source.
 
-    ````
+    ```
     <copy>
     . cdb2
     impdp system/oracle@pdb2 network_link=sourcedb version=12 full=y transportable=always metrics=y exclude=statistics directory=mydir logfile=pdb2.log transport_datafiles='/u02/oradata/CDB2/pdb2/users01.dbf'
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_8.png " ")
 
     In the /home/oracle/IMP directory you will find a file called ft.par . This is the parameter file for Data Pump containing the above parameters. You can use it instead of typing the long line above with:
 
-    ````
+    ```
     <copy>
     impdp system/oracle@pdb2 parfile=/home/oracle/IMP/ft.par
     </copy>
-    ````
+    ```
 
 
 4. Once the operation is completed (it takes between 2 and 3 minutes) you can shutdown FTEX. You will find some error messages. This particular one can be safely ignored as the object belongs to Advanced Replication.
     ![](./images/trans_exp_9.png " ")
 
-    <!-- ````
+    <!-- ```
     W-1 Processing object type DATABASE_EXPORT/SYSTEM_PROCOBJACT/POST_SYSTEM_ACTIONS/PROCACT_SYSTEM
     ORA-39083: Object type PROCACT_SYSTEM failed to create with error:
     ORA-04042: procedure, function, package, or package body does not exist
@@ -138,41 +138,41 @@ Before we can transport anything, we need to prepare the FTEX database.
     SYS.DBMS_UTILITY.EXEC_DDL_STATEMENT('GRANT EXECUTE ON DBMS_DEFER_SYS TO "DBA"');COMMIT; END;
 
     W-1      Completed 4 PROCACT_SYSTEM objects in 25 seconds
-    ```` -->
+    ``` -->
 5. Shutdown the FTEX database.
 
-    ````
+    ```
     <copy>
     . ftex
     sqlplus / as sysdba
     </copy>
-    ````
-    ````
+    ```
+    ```
     <copy>
     alter tablespace users read write;
     shutdown immediate
     exit
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_10.png " ")
 
 6. You can now connect to the migrated PDB.
 
-    ````
+    ```
     <copy>
     . cdb2
     sqlplus "system/oracle@PDB2"
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_11.png " ")
 
-    ````
+    ```
     <copy>
     show con_id
     show con_name
     exit
     </copy>
-    ````
+    ```
     ![](./images/trans_exp_12.png " ")
 
 7. Note: You have to switch into the 19c environment to do this. If you execute the same “show” commands from the 11.2 SQL*Plus, you will receive errors.

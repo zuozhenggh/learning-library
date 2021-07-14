@@ -4,11 +4,11 @@
 
 Oracle Database 19c is the *Long Term Support Release* for the Oracle Database 12.2 release family. It is available on all popular on-prem platforms, Oracle Exadata and Oracle Database Appliance, and in the Oracle Cloud. As the latest Long Term Support Release, it offers customers the highest levels of stability and the longest error correction support. And, by upgrading to Oracle Database 19c customers will have Premier Support until end of April 2024, and Extended Support until end of April 2027.  There is a direct upgrade path to Oracle Database 19c from Oracle Database 11.2.0.4, 12.1.0.2, 12.2.0.1 and 18c releases, regardless of the patch bundle applied.
 
+*Estimated Lab Time*: 120 minutes
+
 ![](./images/releases_upgrade19c_LAB.png " ")
 
 Therefore in the interests of maintaining business continuity,  customers still running on prior releases (e.g. 11gR2, 12cR1, 12cR2, 18c) are encouraged to start planning their 19c upgrades before current support windows expire. Always refer to [MOS note #742060.1](https://support.oracle.com/epmos/faces/DocumentDisplay?id=742060.1&displayIndex=1) for the latest status of Oracle Database releases and support coverage.
-
-Estimated Lab Time: 120 minutes
 
   [](youtube:lOzL5irmuJo)
 
@@ -27,10 +27,6 @@ In this workshop, you will:
 * Plugin your upgraded database into Multitenant
 * Unplug/plug/upgrade a PDBs
 * Migrate another database with Full Transportable Export/import
-
-
-
-
 
 ### Prerequisites
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
@@ -62,8 +58,6 @@ These are the tasks you can complete in the lab.
 
 ![](./images/architecture_upgrade19c_LAB.png " ")
 
-
-
 ## Upgrade and Data Migration Methods and Processes
 
 ### AutoUpgrade
@@ -73,9 +67,6 @@ These are the tasks you can complete in the lab.
 ### Migrating data using Oracle Data Pump
 
 - Provides export and import capabilities. Oracle Data Pump can perform a full or partial export from your database, followed by a full, or partial import into the new release of Oracle Database. Data Pump allows to migrate directly into PDBs as well, and works independently of the source database version across versions and operating system platforms. In addition, Data Pump in conjunction with Transportable Tablespaces takes away the complexity of rebuilding all the meta objects with just one command as Full Transportable Export Import.
-
-
-
 
 You may now [proceed to the next lab](#next).
 

@@ -28,7 +28,7 @@
       "title": "Lab 3: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
       "title": "Lab 4: Initialize Environment",
@@ -75,7 +75,7 @@
       "title": "Lab 14: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
     },
-        {
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"

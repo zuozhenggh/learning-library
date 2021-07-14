@@ -1,14 +1,14 @@
 {
-  "workshoptitle": "Oracle Enterprise Manager - Database Performance Management: Find-Fix-Validate",
+  "workshoptitle": "Oracle Enterprise Manager - Automated Database Upgrade at Scale with Fleet Maintenance",
   "help": "livelabs-help-mgmt_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction to Enterprise Manager Fundamentals Workshop",
-      "filename": "./../../intro/intro.md"
+      "filename": "./../../../enterprise-manager-new/intro/intro.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -16,19 +16,19 @@
       "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
-      "filename": "./../../initialize-environment/initialize-environment.md"
+      "filename": "./../../../enterprise-manager-new/initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Database Performance Management: Find-Fix-Validate",
-      "description": "The objective is to become familiar with on-premise and Oracle Cloud Database performance management (Virtual Machine/Bare Metal/Exadata Cloud Service) capabilities using Oracle Enterprise Manager Cloud",
+      "title": "Lab 2: Automated Database Upgrade at Scale with Fleet Maintenance",
+      "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-find-fix-validate/em-find-fix-validate134.md"
+      "filename": "./../../../enterprise-manager-new/em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade134.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",
       "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
       "publisheddate": "8/12/2020",
-      "filename": "./../../faq/faq.md"
+      "filename": "./../../../enterprise-manager-new/faq/faq.md"
     },
     {
       "title": "Need Help?",
