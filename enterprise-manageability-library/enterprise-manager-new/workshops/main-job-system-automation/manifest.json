@@ -1,14 +1,14 @@
 {
-  "workshoptitle": "Oracle Enterprise Manager - Database Configuration and Compliance Management",
+  "workshoptitle": "Oracle Enterprise Manager - Job System Automation",
   "help": "livelabs-help-mgmt_us@oracle.com",
-	"tutorials": [
+  "tutorials": [
     {
       "title": "Introduction",
       "description": "Introduction to Enterprise Manager Fundamentals Workshop",
       "filename": "./../../intro/intro.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -19,10 +19,10 @@
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Database Configuration and Compliance Management",
-      "description": "This lab provides an overview of Configuration and Compliance Management features in. It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
-      "publisheddate": "7/16/2020",
-      "filename": "./../../em-configuration-compliance-management/em-configuration-compliance-management134.md"
+      "title": "Lab 2: Job System Automation",
+      "description": "This lab provides an overview of the Enterprise Manager Job System and how to use it to automate routine administrative tasks such as backup, SQL scripts, OS jobs etc.",
+      "publisheddate": "6/15/2021",
+      "filename": "./../../em-job-system-automation/em-job-system-automation.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",
@@ -33,7 +33,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
