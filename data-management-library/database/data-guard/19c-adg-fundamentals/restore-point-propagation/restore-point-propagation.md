@@ -28,16 +28,14 @@ Estimated Lab Time: 20 Minutes
 
 1. Download the 2 textfiles with the sql commands.
 
-    [For the primary
-    ](./images/primary.txt)
+    [For the primary](./images/primary.txt)
 
-    [For the standby
-    ](./images/standby.txt)
+    [For the standby](./images/standby.txt)
 
 2. As the SYS user connection, first check the restore points with the following query
 
     ````
-    select name,replicated,guarantee_flashback_database from v$restore_point;
+    <copy>select name,replicated,guarantee_flashback_database from v$restore_point;</copy>
     ````
 
 3. Do the same on the standby database.
@@ -45,12 +43,17 @@ Estimated Lab Time: 20 Minutes
     ![](./images/rp01.png)
 
 4. Next, create a restore point in the primary database
+
+    ````
+    <copy>create restore point testrp guarantee flashback database;</copy>
+    ````
+
     ![](./images/rp02.png)
 
 5. Check the restore points with following query
 
     ````
-    select name,replicated,guarantee_flashback_database from v$restore_point;
+    <copy>select name,replicated,guarantee_flashback_database from v$restore_point;</copy>
     ````
 
 6. Do the same on the standby database.
@@ -62,7 +65,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
 
 1. Next, drop the restore point in the primary database with following query
     ````
-    drop restore point testrp;
+    <copy>drop restore point testrp;</copy>
     ````
 
     ![](./images/rp04.png)
@@ -70,7 +73,7 @@ The restore point drop is now replicated to the standby and has been suffixed wi
 2. Check the restore points with following query
 
     ````
-    select name,replicated,guarantee_flashback_database from v$restore_point;
+    <copy>select name,replicated,guarantee_flashback_database from v$restore_point;</copy>
     ````
 
 3. Do the same on the standby database.
@@ -83,4 +86,4 @@ You have now successfully used Active Data Guard Restore point propagation. You 
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021
