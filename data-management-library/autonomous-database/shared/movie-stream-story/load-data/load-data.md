@@ -14,12 +14,20 @@ You can load data into your autonomous database (Autonomous Data Warehouse [ADW]
 
 Estimated Time: 30 minutes
 
+### About Product
+
+In this lab, we will learn more about the Autonomous Database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
+
+
+
 ### Objectives
 
 
 -   Learn how to define Object Store credentials for your autonomous database
 -   Learn how to load data from the Object Store using Data Tools
 -   Learn now to load data from the Object Store using the DBMS_CLOUD APIs executed from SQL
+
+
 
 ### Pre-requisites
 
@@ -114,6 +122,8 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 ## **Step 3:** Using Database APIs to load richer data files
 
+The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle Object Store, Amazon S3, and Azure Data Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbdu/dbms_cloud-package.html).
+
 In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some files with differently structured data.
 
 1.  Using the top left menu, navigate to **Development** > **SQL** to open a SQL Worksheet.
@@ -149,9 +159,24 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_custsales** table that links to the parquet files in our data lake on Object Store. We can work with this data directly in the autonomous database, but for the purposes of later labs, it is useful for us to copy this data over to **custsales** table. 
+    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on Object Store. [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for Moviestream. 
+    
+4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
-4.  To do this, click on the bin icon to clear the worksheet.
+```
+select * from EXT_CUSTSALES;
+```
+
+    Click on the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
+
+     ![Data from ext_custsales](images/select-extcustsales.png)
+
+    Click on the bin icon below **Query Result** in the lower window to clear the query output.
+
+    ![Clear the query output](images/clearoutput.png)
+
+
+5.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click on the bin icon to clear the worksheet.
 
     ![Click on the bin icon](images/binicon.png)
 
@@ -163,7 +188,7 @@ create table custsales as select * from ext_custsales;
 
 5.  Click on the Run (or Run Script) button to run the statement.
 
-6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
+6.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -251,7 +276,7 @@ SELECT TRUNC (to_date('20210101','YYYYMMDD')) as day
 
 11. Click on the **Run Script** button to run the script.
 
-12. Now that we have all the data we need loaded into the database, it is useful to create some views on the data that we can use in later analysis. Click on the bin icon to clear the worksheet, then copy and paste the following script:
+12. Now that we have all the data we need loaded into the database, it is useful to create some views on the data that we can use in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 CREATE OR REPLACE VIEW v_custsales AS
@@ -398,6 +423,16 @@ alter table mv_custsales add CONSTRAINT cs_studio_json CHECK (studio IS JSON);
 ```
 
 13. Click on the **Run Script** button to run the script and create the views.
+
+14. To take a look at the data in the new view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
+
+```
+select * from mv_custsales;
+```
+
+Click on the run button. You can now see a more complete view of customer movie purchases, with many attributes of both the customer (such as **last_name**,**first_name**, and **age**) and, if you scroll to the right to see more columns, the movie (such as **title**, **genre** and **year**) included in the view.
+
+  ![View the data in mv_custsales](images/select-mvsales.png)
 
 This completes the Data Load lab. We now have a full set of structured tables and views loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables and views in later labs.
 
