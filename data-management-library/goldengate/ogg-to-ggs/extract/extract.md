@@ -38,27 +38,19 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png)
 
-5.  Under **Source Database Credential**, select the source **Credential Domain** and **Credential Alias**. For the purposes of this lab, select **OracleGoldenGate** and **SourceDBaaS**, respectively.
+5.  For **Credential Domain**, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
-    ![](images/01-05.png)
+6.  Click **Next**.
 
-6.  Under **Registration Information**, for **Register to PDBs**, select **PDB1**.
-
-    ![](images/01-06.png)
-
-7.  Click **Next**.
-
-8.  In the Extract Parameters screen, add the following to the text area:
+7.  In the Extract Parameters screen, add the following to the text area:
 
     ```
-    <code>TABLE PDB1.SRC_OCIGGL.*;</code>
+    <code>Table SRC_OCIGGLL.*;</code>
     ```
 
-    ![](images/01-08.png)
+8.  Click **Create**. You're returned to the Administration Server Overview page.
 
-9.  Click **Create**. You're returned to the Administration Server Overview page.
-
-8.  In the UAEXT **Actions** menu, select **Start**. In the Confirm Action dialog, click **OK**.
+9.  In the UAEXT **Actions** menu, select **Start**. In the Confirm Action dialog, click **OK**.
 
     ![Start Extract](images/02-12-ggs-start-extract.png)
 
@@ -70,11 +62,11 @@ This Extract process captures data from the source database to send to OCI Golde
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
-1.  In the Oracle GoldenGate Administration Server console, click **Distribution Server**.
+1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Distribution Server**.
 
     ![](images/02-01.png)
 
-2.  Click **Add Path**.
+2.  Click **Add Path** (plus icon).
 
     ![](images/02-02.png)
 
@@ -94,19 +86,19 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![](images/02-07-note.png)
 
-8.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com:443**.
+8.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page.*
 
     ![](images/02-08-note.png)
 
-9.  For **Target Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate.
+9.  For **Port Number**, enter 443.
 
-10. For **Target Deployment Name**, enter the your OCI GoldenGate Deployment name.
+9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
 
-11. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
+10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
 
-12. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **dpuser**.
+11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
 
     ![](images/02-12.png)
 
@@ -140,7 +132,7 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 9.  Click **Next**.
 
-10.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP PDB1.SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+10.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
 11. Click **Create**.
 
@@ -149,6 +141,13 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
     ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
 
     The yellow exclamation point icon changes to a green checkmark.  
+
+## **STEP 4:** Confirm the Distribution Path is running
+
+In the Marketplace Oracle GoldenGate Distribution Server, verify the Distribution Path is running.
+
+![Confirm Distribution Path](images/04-00.png)
+
 
 ## Learn More
 
@@ -159,4 +158,4 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, May 2021
+* **Last Updated By/Date** - Jenny Chan, July 2021
