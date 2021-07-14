@@ -19,106 +19,103 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1:** Validate That Required Processes are Up and Running.
+
+*Note:* All screenshots for SSH terminal type tasks featured throughout this workshop were captured using the *MobaXterm* SSH Client as described in this step. As a result when executing such tasks from within the graphical remote desktop session you can skip steps requiring you to login as user *oracle* using *sudo su - oracle*, the reason being that the remote desktop session is under user *oracle*.
+
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
-    - Database Server
-    - Oracle SQL Developer
+    - Database Server Instances
+        - FTEX
+        - DB12
+        - CDB2
 
-2. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
+    You may test database connectivity clicking on the *+* sign next to each of the 3 Databases as shown below in the *SQL Developer Oracle Connections* panel.
 
-    The host is preconfigured to automatically start a database listener and 4 databases upon startup.
     ![](./images/19c_upgrade_landing.png " ")
 
-3. On the connection panel on the left, click the *+* sign next to each of the following databases to confirm that you can connect.
-    - UPGR
-    - FTEX
-    - DB12
-    - CDB2
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
-    ![](./images/sqldeveloper-2.png " ")
-
-4. Launch the Terminal as "Oracle" User.
-    ![](./images/launch-terminal.png " ")
-    If successful, the page above is displayed and as a result your environment is now ready.  
-
-    You may now [proceed to the next lab](#next).
-
-5. If you are still unable to access SQL developer as per the instruction given above then open a terminal session and proceed as indicated below to validate the services.
-
-    - Database and Listener
     ```
     <copy>
-    systemctl status oracle-databps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep LISTENER|grep -v grep
     ps -ef|grep ora_|grep pmon|grep -v grep
     systemctl status oracle-database
     </copy>
     ```
+    
     ![](./images/check-tns-up.png " ")
     ![](./images/check-pmon-up.png " ")
     ![](./images/check-db-service-up.png " ")
 
-    <!-- ![](images/db-service-status.png " ") -->
+    If all expected processes are shown in your output as seen above, then your environment is ready.  
 
-    <!-- - WLS Admin Server, Veridata Server, and Veridata Agent
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+
     ```
     <copy>
-    systemctl status oracle-veridata
+    sudo systemctl restart oracle-database
     </copy>
     ```
-
-    ![](images/veridata-service-status.png " ") -->
-
-6. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
-
-    - Database and Listener
-    ```
-    <copy>
-    systemctl restart oracle-database
-    </copy>
-    ```
-
-    <!-- - WLS Admin Server, Veridata Server, and Veridata Agent
-    ```
-    <copy>
-    systemctl restart oracle-veridata
-    </copy>
-    ``` -->
 
 You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 
-1. Database Service (Database and Listener).
+1. Database service (All databases and Standard Listener).
+
+    - Start
 
     ```
-    Start: <copy>systemctl start oracle-database</copy>
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
     ```
-    ```
-    Stop: <copy>systemctl stop oracle-database</copy>
-    ```
-    ```
-    Status: <copy>systemctl status oracle-database</copy>
-    ```
-    ```
-    Restart: <copy>systemctl restart oracle-database</copy>
-    ```
-<!-- 2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+    - Stop
 
     ```
-    Start: <copy>systemctl start oracle-veridata</copy>
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
     ```
+
+    - Status
+
     ```
-    Stop: <copy>systemctl stop oracle-veridata</copy>
+    <copy>
+    systemctl status oracle-database
+    </copy>
     ```
+
+    - Restart
+
     ```
-    Status: <copy>systemctl status oracle-veridata</copy>
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
     ```
+## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
     ```
-    Restart: <copy>systemctl restart oracle-veridata</copy>
-    ``` -->
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Database Product Management
-* **Contributors** -  Roy Swonger, Kay Malcolm, Rene Fontcha
-* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform , NA Technology, July 2021
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+* **Contributors** - Mike Dietrich, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

@@ -8,11 +8,11 @@ The SQL Performance Analyzer reports overall showed good results for the run in 
 
 You could now try to fix a specific plan which has been changed or just write down all the plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Let us see if the results are good or if it is a better option to allow the optimizer to find newer paths.
 
-![](./images/sql-plan-mgmt.png " ")
+*Estimated Lab Time:* 20 minutes
+
+![](./images/performance_prescription_05.png " ")
 
 In this lab we use scripts written by Carlos Sierra.
-
-*Estimated Lab Time:* 30 minutes
 
 ### About SQL Plan Management
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
@@ -23,15 +23,11 @@ In this context, a plan includes all plan-related information (for example, SQL 
 
 The main components of SQL plan management are as follows:
 
-Plan capture
-- This component stores relevant information about plans for a set of SQL statements.
+- **Plan capture**: This component stores relevant information about plans for a set of SQL statements.
 
-Plan selection
-- This component is the detection by the optimizer of plan changes based on stored plan history, and the use of SQL plan baselines to select appropriate plans to avoid potential performance regressions.
+- **Plan selection**: This component is the detection by the optimizer of plan changes based on stored plan history, and the use of SQL plan baselines to select appropriate plans to avoid potential performance regressions.
 
-Plan evolution
-- This component is the process of adding new plans to existing SQL plan baselines, either manually or automatically. In the typical use case, the database accepts a plan into the plan baseline only after verifying that the plan performs well.
-
+- **Plan evolution**: This component is the process of adding new plans to existing SQL plan baselines, either manually or automatically. In the typical use case, the database accepts a plan into the plan baseline only after verifying that the plan performs well.
 
 ### Objectives
 
@@ -52,29 +48,30 @@ This lab assumes you have:
 ## **STEP 1**: Fix A Single Statement
 
 1. Run the statements below.
-      ````
+      ```
       <copy>
       . upgr19
       cd /home/oracle/scripts
       sqlplus / as sysdba
       </copy>
-      ````
+      ```
       ![](./images/fix_a_1.png " ")
 
 2. Here we will use one of Carlos Sierra’s scripts: spb_create.sql:
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spb_create.sql
+      @spb_create.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_2.png " ")
 
-3. The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it will display the potential plans:
+3. *Please be aware that the following example sometimes will show only one plan, and hence the script may not work as intended*
+   The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it should display the potential plans:
       ![](./images/fix_a_3.png " ")
       ![](./images/fix_a_4.png " ")
 
-    <!-- ````
+    <!-- ```
       PLANS PERFORMANCE
       ~~~~~~~~~~~~~~~~~
 
@@ -89,22 +86,22 @@ This lab assumes you have:
       Select up to 3 plans:
       1st Plan Hash Value (req): 3642382161
       2nd Plan Hash Value (opt): 1075826057
-      ```` -->
+      ``` -->
 
 4. Hit RETURN, RETURN and again RETURN.  Verify if the plans have been accepted:
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_6.png " ")
 
       <!-- SQL_HANDLE                     PLAN_NAME                      ENA ACC
       —————————— —————————— — —
       SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
-      ```` -->
+      ``` -->
 If you like to dig deeper “Why has this plan changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
 ## **STEP 2**: Fix all statements
@@ -113,41 +110,41 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
 
 1. Use spm\_load\_all.sql
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spm_load_all.sql
+      @spm_load_all.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_7.png " ")
 
 2. Observe the changes that have taken place
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_8.png " ")
-      
+
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spa_cpu.sql
-      @/home/oracle/scripts/spa_report_cpu.sql
+      @spa_cpu.sql
+      @spa_report_cpu.sql
       </copy>
-      ````
-      ````
+      ```
+      ```
       <copy>
-      @/home/oracle/scripts/spa_elapsed.sql
-      @/home/oracle/scripts/spa_report_elapsed.sql
+      @spa_elapsed.sql
+      @spa_report_elapsed.sql
       </copy>
-      ````
+      ```
 
-4. Open a remote desktop( guacamole) and compare the two resulting reports again. Then compare them to the two examples from the previous run.
+4. Compare the two resulting reports again. Then compare them to the two examples from the previous run.
       ![](./images/sql_per_5.png " ")
 
-      Do you realize that fixing all statements resulting in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
+      It may happen that "fixing" ALL statements results in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c may have been better!
       This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
 
       What is the outcome?
@@ -172,6 +169,6 @@ White Paper:
 [SQL Plan Management with Oracle Database 12c Release 2](http://www.oracle.com/technetwork/database/bi-datawarehousing/twp-sql-plan-mgmt-12c-1963237.pdf)
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Carlos Sierra
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Author** - Mike Dietrich - Scripts provided by: Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021

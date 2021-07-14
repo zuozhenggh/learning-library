@@ -9,7 +9,7 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -57,18 +57,6 @@
     {
       "title": "Lab 11: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
-    },
-    {
-      "title": "Lab 12: Fallback Before Upgrade",
-      "filename": "../../fallback/fallback-before-upgrade.md"
-    },
-    {
-      "title": "Lab 13: Fallback After Upgrade",
-      "filename": "../../fallback/fallback-after-upgrade.md"
-    },
-    {
-      "title": "Lab 14: AutoUpgrade (Optional)",
-      "filename": "../../upgrade/autoupgrade.md"
     },
     {
       "title": "Need Help?",

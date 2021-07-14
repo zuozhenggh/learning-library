@@ -21,13 +21,13 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: <what is the action in this step>
+## **Step 1**: what is the action in this step
 
 (optional) Step 1 opening paragraph.
 
 1. Sub step 1
 
-		![Image alt text](images/sample1.png)
+	![Image alt text](images/sample1.png)
 
   To create a link to local file you want the reader to download, use this format:
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
 2. Sub step 2
 
-    ![Image alt text](images/sample1.png)
+  ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
@@ -45,7 +45,7 @@ In this lab, you will:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** <what is the action in this step>
+## **Step 2:** what is the action in this step
 
 1. Sub step 1 - tables sample
 

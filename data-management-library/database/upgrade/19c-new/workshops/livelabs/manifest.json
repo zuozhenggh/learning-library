@@ -4,19 +4,19 @@
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
-      "title": "Getting Started",
-      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
-    {
       "title": "Introduction",
       "description": "The Introduction to Upgrade to 19c Workshop.",
       "filename": "../../introduction/introduction.md"
     },
     {
+      "title": "Get Started",
+      "description": "Login to Oracle Cloud",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+    },
+    {
       "title": "Lab 1: Environment Setup",
       "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
       "title": "Lab 2: Initialize Environment",
@@ -62,18 +62,6 @@
     {
       "title": "Lab 12: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
-    },
-    {
-      "title": "Lab 13: Fallback Before Upgrade",
-      "filename": "../../fallback/fallback-before-upgrade.md"
-    },
-    {
-      "title": "Lab 14: Fallback After Upgrade",
-      "filename": "../../fallback/fallback-after-upgrade.md"
-    },
-    {
-      "title": "Lab 15: AutoUpgrade (Optional)",
-      "filename": "../../upgrade/autoupgrade.md"
     },
     {
       "title": "Need Help?",

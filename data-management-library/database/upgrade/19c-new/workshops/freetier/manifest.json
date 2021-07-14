@@ -28,7 +28,7 @@
       "title": "Lab 3: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
       "title": "Lab 4: Initialize Environment",
@@ -74,18 +74,6 @@
     {
       "title": "Lab 14: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
-    },
-    {
-      "title": "Lab 15: Fallback Before Upgrade",
-      "filename": "../../fallback/fallback-before-upgrade.md"
-    },
-    {
-      "title": "Lab 16: Fallback After Upgrade",
-      "filename": "../../fallback/fallback-after-upgrade.md"
-    },
-    {
-      "title": "Lab 17: AutoUpgrade (Optional)",
-      "filename": "../../upgrade/autoupgrade.md"
     },
     {
       "title": "Need Help?",

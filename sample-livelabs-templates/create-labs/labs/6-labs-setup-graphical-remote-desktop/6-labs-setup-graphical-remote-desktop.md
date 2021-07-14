@@ -161,6 +161,12 @@ This lab assumes you have:
     WantedBy=multi-user.target
     EOF
 
+    cat >> /etc/sudoers.d/90-cloud-init-users <<EOF
+
+    # User rules for ${appuser}
+    ${appuser} ALL=(ALL) NOPASSWD:ALL
+    EOF
+
     chmod +x /usr/local/bin/resetvncpwd.sh
     chmod +x /tmp/novnc-*.sh
     </copy>

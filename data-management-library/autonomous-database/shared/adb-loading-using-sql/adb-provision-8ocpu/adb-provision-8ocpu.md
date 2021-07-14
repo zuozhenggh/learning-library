@@ -4,16 +4,21 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW]) on Oracle Cloud. In this lab, you provision a new ADW instance.
 
-Estimated time: 5 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
--   Learn how to provision a new Autonomous Database
+In this lab, you will:
+
+*   Learn how to provision a new Autonomous Database
 
 ### Prerequisites
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a 30-day free trial, or a training account whose details were given to you by an Oracle instructor.
+
+This lab assumes you have:
+
+- An <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a 30-day free trial, or a training account whose details were given to you by an Oracle instructor.
 - **Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with 1 OCPU, the response times and query times will be longer.
-- This lab assumes you have completed the **Prerequisites** seen in the Contents menu on the left. In this lab, you will provision an ADB database instance using the cloud console.
+- Completed the **Prerequisites** seen in the Contents menu on the left. In this lab, you will provision an ADB database instance using the cloud console.
 
 ## **STEP 1**: Choosing ADW from the Services Menu
 
@@ -42,7 +47,7 @@ Estimated time: 5 minutes
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## **STEP 2**: Creating the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -114,7 +119,7 @@ Estimated time: 5 minutes
 
 Please *proceed to the next lab*.
 
-## Want to Learn More?
+## Learn More
 
 Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
@@ -123,4 +128,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Richard Green, June 2021
+- **Last Updated By/Date** - Brianna Ambler, July 2021

@@ -79,8 +79,8 @@ This lab assumes you have:
     - Database and Listener
         ```
         <copy>
-        systemctl restart oracle-database
-        systemctl restart oracle-db-listener
+        sudo systemctl restart oracle-database
+        sudo systemctl restart oracle-db-listener
         </copy>
         ```
 
@@ -88,7 +88,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        systemctl restart oracle-emcc
+        sudo systemctl restart oracle-emcc
         </copy>
         ```
 6. Validate *emcli* connectivity. From the terminal session on your remote desktop, run as user *oracle*
@@ -131,12 +131,12 @@ You may now [proceed to the next lab](#next).
     - Start
 
     ```
-    <copy>systemctl start oracle-database</copy>
+    <copy>sudo systemctl start oracle-database</copy>
     ```
     - Stop
 
     ```
-    <copy>systemctl stop oracle-database</copy>
+    <copy>sudo systemctl stop oracle-database</copy>
     ```
 
     - Status
@@ -148,20 +148,20 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-database</copy>
+    <copy>sudo systemctl restart oracle-database</copy>
     ```
 2. Listener Service (Non-Standard)
 
     - Start
 
     ```
-    <copy>systemctl start oracle-db-listener</copy>
+    <copy>sudo systemctl start oracle-db-listener</copy>
     ```
 
     - Stop
 
     ```
-    <copy>systemctl stop oracle-db-listener</copy>
+    <copy>sudo systemctl stop oracle-db-listener</copy>
     ```
 
     - Status
@@ -173,20 +173,20 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-db-listener</copy>
+    <copy>sudo systemctl restart oracle-db-listener</copy>
     ```
 3. Enterprise Manager Service (OMS and emagent)
 
     - Start
 
     ```
-    <copy>systemctl start oracle-emcc</copy>
+    <copy>sudo systemctl start oracle-emcc</copy>
     ```
 
     - Stop
 
     ```
-    <copy>systemctl stop oracle-emcc</copy>
+    <copy>sudo systemctl stop oracle-emcc</copy>
     ```
 
     - Status
@@ -198,7 +198,7 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-emcc</copy>
+    <copy>sudo systemctl restart oracle-emcc</copy>
     ```
 
 ## Appendix 2: External Web Access
@@ -237,9 +237,9 @@ While you will only need the browser to perform all tasks included in this works
     - Authentication method - *SSH RSA Key*
     - OS User – “*oracle*”.
 
-1. First login as “*opc*” using your SSH Private Key
+2. First login as “*opc*” using your SSH Private Key
 
-2. Then sudo to “*oracle*”. E.g.
+3. Then sudo to “*oracle*”. E.g.
 
     ```
     <copy>sudo su - oracle</copy>
