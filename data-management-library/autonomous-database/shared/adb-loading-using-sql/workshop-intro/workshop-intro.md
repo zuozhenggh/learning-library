@@ -1,39 +1,39 @@
 ﻿
-# Workshop Introduction
+# Introduction
 
-## Workshop Overview
+## About this Workshop
 
 The purpose of this workshop is to introduce you to Oracle Cloud and the unique capabilities of Oracle's Autonomous Data Warehouse. It is designed to be used alongside your own cloud account (paid or Bring-Your-Own-License) or you can register and claim free trial credits which provides up to 3,300 hours of cloud time, and 2 TB of storage which is more than enough time and storage space to run this lab. 
 
 **NOTE:** The timings shown in the notes and screenshots for this workshop assume an ADW instance configured with 1TB of storage and 8 OCPUs. You can configure your own ADW instance with fewer OCPUs and still use the scripts below. However, while all the scripts will complete successfully, the timings for some of the steps will be longer.
 
-Estimated Workshop Duration: 1 hour
+Estimated Workshop Time: 1 hour
 
 ### Who Should Use This Workshop?
 
 Everyone can benefit from doing the exercises listed in this guide: technical experts (data warehouse architects to database administrators), business users who want to focus on extracting meaning and insight from their own data, along with data scientists who want to build machine learning models within the context of a data warehouse project.
 
-### Objectives for this Workshop Introduction
+### Objectives
 
 The aim of this workshop is to explore how Autonomous Data Warehouse can support the types of everyday business operations that are needed for real-world data analysis. At the end of this workshop, you will have learned how to do the following:
 
-1. Quickly and easily load data into an Autonomous Data Warehouse
+* Quickly and easily load data into an Autonomous Data Warehouse
 
-2. Learn how to enable data integrity features to manage data quality challenges 
+* Learn how to enable data integrity features to manage data quality challenges 
 
-3. Explore how to update existing data using Oracle's MERGE command
+* Explore how to update existing data using Oracle's MERGE command
 
-4. Learn more about how Autonomous Data Warehouse stores and manages your data
+* Learn more about how Autonomous Data Warehouse stores and manages your data
 
-### What Do You Need To Get Started?
+### Prerequisites
 
 Before you launch into this workshop, you will need the following:
 
-1. Basic knowledge of Oracle Cloud
+* Basic knowledge of Oracle Cloud
 
-2. Basic level of understanding of SQL query language
+* Basic level of understanding of SQL query language
 
-3. Completion of the "Getting Started" workshop for Autonomous Data Warehouse
+* Completion of the "Getting Started" workshop for Autonomous Data Warehouse
 
 If you have any questions about the topics covered in this lab and the entire workshop, please contact us by posting on our public forum on [cloudcustomerconnect.oracle.com](http://cloudcustomerconnect.oracle.com) and we will respond as soon as possible.
 
@@ -49,8 +49,8 @@ Oracle MovieStream is a fictitious on-line movie streaming company. Customers lo
 
 ## Acknowledgements
 
-- Created By/Date - Keith Laker, Product Manager, Autonomous Database, March 2021
+* **Created By/Date** - Keith Laker, Product Manager, Autonomous Database, March 2021
 
-- Contributors - Nilay Panchal, Rick Green, Patrick Wheeler, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
+* **Contributors** - Nilay Panchal, Rick Green, Patrick Wheeler, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
 
-- Last Updated By - Keith Laker, May 2021
+* **Last Updated By** - Brianna Ambler, July 2021

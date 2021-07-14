@@ -8,22 +8,21 @@ It is important to remember that after the In-Memory option is enabled at the in
 
 ## In-Memory Pool
 
-## Step 1: Enabling In-Memory
+## **STEP 1**: Enabling In-Memory
 
+1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
-Step 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
+    ````
+        <copy>
+        sudo su - oracle
+        cd ~/labs/inmemory
+        ls
+        </copy>
+    ````
 
-  ````
-    <copy>
-    sudo su - oracle
-    cd ~/labs/inmemory
-    ls
-    </copy>
-  ````
-
-The In-Memory Area is a static pool within the SGA that holds the column format data (also referred to as the In-Memory Column Store). The size of the In-Memory Area is controlled by the initialization parameter INMEMORY\_SIZE (default is 0, i.e. disabled).
-As the IM column store is a static pool, any changes to the INMEMORY\_SIZE parameter will not take effect until the database instance is restarted.
-Note :  The default install of database usually set a parameter MEMORY_TARGET which manages both SGA (System Global Area) and PGA(Process Global Area). In the earlier version, Automatic Memory Management (AMM) was not supported and we had to set SGA and PGA exclusively.
+    The In-Memory Area is a static pool within the SGA that holds the column format data (also referred to as the In-Memory Column Store). The size of the In-Memory Area is controlled by the initialization parameter INMEMORY\_SIZE (default is 0, i.e. disabled).
+    As the IM column store is a static pool, any changes to the INMEMORY\_SIZE parameter will not take effect until the database instance is restarted.
+    Note :  The default install of database usually set a parameter MEMORY_TARGET which manages both SGA (System Global Area) and PGA(Process Global Area). In the earlier version, Automatic Memory Management (AMM) was not supported and we had to set SGA and PGA exclusively.
 
 2. Login as sys
     ````
@@ -77,7 +76,7 @@ Note :  The default install of database usually set a parameter MEMORY_TARGET wh
     </copy>
     ````
 
-## Step 2: Enable Objects  In-Memory
+## **STEP 2**: Enable Objects  In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account.
 
@@ -267,33 +266,33 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     We have learnt to how to add In-Memory attributes to tables, add priority and compress options. Oracle Database In-Memory is designed to be completely and seamlessly compatible with existing applications. No changes are required to use it with any application or tool that runs against Oracle Database. Analytic queries are automatically routed to the column store by the SQL optimizer, and transactional semantics are guaranteed by the database.
 
-## Step 3: Partial In-Memory Data.
+## **STEP 3**: Partial In-Memory Data
 
 ### Partition In-Memory
-13. In order to conserve the In-Memory pool in SGA, we need not load all the data. In case of a Big partitioned table, we can load only the partition that is relevant.
+1. In order to conserve the In-Memory pool in SGA, we need not load all the data. In case of a Big partitioned table, we can load only the partition that is relevant.
 Also, each partition can be compressed to a different level and have different priority for loading. Below is a example.
 
-````
-<copy>
-CREATE TABLE list_customers
-   ( customer_id             NUMBER(6)
-   , cust_first_name         VARCHAR2(20)
-   , cust_last_name          VARCHAR2(20)
-   , cust_address            VARCHAR2(40)
-   , nls_territory           VARCHAR2(30)
-   , cust_email              VARCHAR2(40))
-   PARTITION BY LIST (nls_territory) (
-   PARTITION asia VALUES ('CHINA', 'THAILAND')
-         INMEMORY MEMCOMPRESS FOR CAPACITY HIGH PRIORITY HIGH,
-   PARTITION europe VALUES ('GERMANY', 'ITALY', 'SWITZERLAND')
-         INMEMORY MEMCOMPRESS FOR CAPACITY LOW,
-   PARTITION west VALUES ('AMERICA')
-         INMEMORY MEMCOMPRESS FOR CAPACITY LOW,
-   PARTITION east VALUES ('INDIA')
-         INMEMORY MEMCOMPRESS FOR CAPACITY HIGH,
-   PARTITION rest VALUES (DEFAULT) NO INMEMORY);
-</copy>
-````
+    ````
+    <copy>
+    CREATE TABLE list_customers
+    ( customer_id             NUMBER(6)
+    , cust_first_name         VARCHAR2(20)
+    , cust_last_name          VARCHAR2(20)
+    , cust_address            VARCHAR2(40)
+    , nls_territory           VARCHAR2(30)
+    , cust_email              VARCHAR2(40))
+    PARTITION BY LIST (nls_territory) (
+    PARTITION asia VALUES ('CHINA', 'THAILAND')
+            INMEMORY MEMCOMPRESS FOR CAPACITY HIGH PRIORITY HIGH,
+    PARTITION europe VALUES ('GERMANY', 'ITALY', 'SWITZERLAND')
+            INMEMORY MEMCOMPRESS FOR CAPACITY LOW,
+    PARTITION west VALUES ('AMERICA')
+            INMEMORY MEMCOMPRESS FOR CAPACITY LOW,
+    PARTITION east VALUES ('INDIA')
+            INMEMORY MEMCOMPRESS FOR CAPACITY HIGH,
+    PARTITION rest VALUES (DEFAULT) NO INMEMORY);
+    </copy>
+    ````
 
 ### Partital Columns In-Memory.
 By default, all of the columns in an object with the INMEMORY attribute will be populated into the IM column store.
@@ -306,172 +305,172 @@ For example, to enable an existing table for the IM column store, you would use 
 	. ALTER TABLE … 	INMEMORY MEMCOMPRESS QUERY LOW (col1)
 	. ALTER TABLE … 	INMEMORY MEMCOMPRESS QUERY HIGH (col2) NO INMEMORY (col3) INMEMORY PRIORITY HIGH
  ````
-14. Enable partial columns for In-Memory.
+2. Enable partial columns for In-Memory.
 
-````
-<copy>
-ALTER TABLE BONUS INMEMORY  
-INMEMORY    (emp_id,bonus,year)
-NO INMEMORY (id) ;
-</copy>
-````
+    ````
+    <copy>
+    ALTER TABLE BONUS INMEMORY  
+    INMEMORY    (emp_id,bonus,year)
+    NO INMEMORY (id) ;
+    </copy>
+    ````
 
-15. check the In-Memory parameters at column level.
- ````
- <copy>
- col table_name format a10
- col column_name format a20
- col inmemory_compression format a20
- SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
- FROM V$IM_COLUMN_LEVEL
- WHERE TABLE_NAME = 'BONUS'; </copy>
+3. check the In-Memory parameters at column level.
+    ````
+    <copy>
+    col table_name format a10
+    col column_name format a20
+    col inmemory_compression format a20
+    SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+    FROM V$IM_COLUMN_LEVEL
+    WHERE TABLE_NAME = 'BONUS'; </copy>
 
- TABLE_NAME COLUMN_NAME          INMEMORY_COMPRESSION
----------- -------------------- --------------------
-BONUS      ID                   NO INMEMORY
-BONUS      EMP_ID               DEFAULT
-BONUS      BONUS                DEFAULT
-BONUS      YEAR                 DEFAULT
+    TABLE_NAME COLUMN_NAME          INMEMORY_COMPRESSION
+    ---------- -------------------- --------------------
+    BONUS      ID                   NO INMEMORY
+    BONUS      EMP_ID               DEFAULT
+    BONUS      BONUS                DEFAULT
+    BONUS      YEAR                 DEFAULT
 
- ````
+    ````
  Note: Before 21c, Oracle optimizer will not choose the In-Memory table if all the rows in the select and filter are not loaded into memory.
  Starting in 21c, there is a new feature called **HYBRID SCAN**.  In-memory hybrid scans can access some data from the IM column store, and some data from the row store, when not all columns in a table have been populated into the In-Memory Column Store, improving performance by orders of magnitude over pure row store queries.
 
 
  ![](images/IMHybrid.png)
 
-## Step 4: In-Memory External Tables.
+## **STEP 4**: In-Memory External Tables
 In-Memory External Tables builds on the theme of expanding analytic queries to all data, not just Oracle native data. Oracle Database already supports accessing external data with features like External Tables and Big Data SQL to allow fast and secure SQL query on all types of data. In-Memory External Tables allow essentially any type of data to be populated into the IM column store. This means non-native Oracle data can be analyzed with any data in Oracle Database using Oracle SQL and its rich feature set and also get the benefit of using all of the performance enhancing features of Database In-Memory.
-Until 19c , this feature is licensed for only Oracle Cloud databases and  Engineered Systems. We can still test the feature on EE after setting  "_exadata_feature_on" to true. This feature is available in 21c EE releases.
+Until 19c , this feature is licensed for only Oracle Cloud databases and  Engineered Systems. We can still test the feature on EE after setting  "\_exadata\_feature_on" to true. This feature is available in 21c EE releases.
 
  ![](images/IMExternal.png)
 
-17. Create an external table on a comma separated text file in /home/oracle/labs.
+1. Create an external table on a comma separated text file in /home/oracle/labs.
 
- ````
- <copy>
- connect / as sysdba
- show pdbs
- alter session set container=orclpdb;
- create or replace directory ext_dir as '/home/oracle/labs' ;
- grant read, write on directory ext_dir to ssb;
- connect ssb/Ora_DB4U@localhost:1521/orclpdb
+    ````
+    <copy>
+    connect / as sysdba
+    show pdbs
+    alter session set container=orclpdb;
+    create or replace directory ext_dir as '/home/oracle/labs' ;
+    grant read, write on directory ext_dir to ssb;
+    connect ssb/Ora_DB4U@localhost:1521/orclpdb
 
- CREATE  TABLE ext_emp ( ID NUMBER(6), FIRST_NAME VARCHAR2(20),
-     LAST_NAME VARCHAR2(25), EMAIL VARCHAR2(25),
-     PHONE_NUMBER VARCHAR2(20), HIRE_DATE DATE,
-     JOB_ID VARCHAR2(10), SALARY NUMBER(8,2),
-     COMMISSION_PCT NUMBER(2,2), MANAGER_ID NUMBER(6),
-     DEPARTMENT_ID NUMBER(4)
-     )
-     ORGANIZATION EXTERNAL
-     ( TYPE ORACLE_LOADER  DEFAULT DIRECTORY ext_dir
-       ACCESS PARAMETERS
-      (records delimited by newline
-       badfile ext_dir:'empxt%a_%p.bad'
-       logfile ext_dir:'empxt%a_%p.log'
-       fields terminated by ','  missing field values are null
-       (ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER,
-         HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT,
-         MANAGER_ID, DEPARTMENT_ID)
+    CREATE  TABLE ext_emp ( ID NUMBER(6), FIRST_NAME VARCHAR2(20),
+        LAST_NAME VARCHAR2(25), EMAIL VARCHAR2(25),
+        PHONE_NUMBER VARCHAR2(20), HIRE_DATE DATE,
+        JOB_ID VARCHAR2(10), SALARY NUMBER(8,2),
+        COMMISSION_PCT NUMBER(2,2), MANAGER_ID NUMBER(6),
+        DEPARTMENT_ID NUMBER(4)
         )
-      LOCATION ('empext1.dat')
-     )
- REJECT LIMIT UNLIMITED
- INMEMORY;
- </copy>
-````
+        ORGANIZATION EXTERNAL
+        ( TYPE ORACLE_LOADER  DEFAULT DIRECTORY ext_dir
+        ACCESS PARAMETERS
+        (records delimited by newline
+        badfile ext_dir:'empxt%a_%p.bad'
+        logfile ext_dir:'empxt%a_%p.log'
+        fields terminated by ','  missing field values are null
+        (ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER,
+            HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT,
+            MANAGER_ID, DEPARTMENT_ID)
+            )
+        LOCATION ('empext1.dat')
+        )
+    REJECT LIMIT UNLIMITED
+    INMEMORY;
+    </copy>
+    ````
 
-18. Query the table. Note: External tables will not populate upon query..
-````
-<copy>
- set linesize 200
- set pages 10
- select count(*) from  ext_emp;
- SELECT * FROM table(dbms_xplan.display_cursor());
- </copy>
- PLAN_TABLE_OUTPUT
---------------------------------------------------------------------------------
-SQL_ID  gsd9fmyquwh5c, child number 0
--------------------------------------
- select count(*) from  ext_emp
-Plan hash value: 546827939
--------------------------------------------------------------------------------
-PLAN_TABLE_OUTPUT
---------------------------------------------------------------------------------
-| Id  | Operation                   | Name    | Rows  | Cost (%CPU)| Time     |
--------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT            |         |       |   341 (100)|          |
-|   1 |  SORT AGGREGATE             |         |     1 |            |          |
-|   2 |   EXTERNAL TABLE ACCESS FULL| EXT_EMP |   102K|   341   (1)| 00:00:01 |
--------------------------------------------------------------------------------
+2. Query the table. Note: External tables will not populate upon query..
+    ````
+    <copy>
+    set linesize 200
+    set pages 10
+    select count(*) from  ext_emp;
+    SELECT * FROM table(dbms_xplan.display_cursor());
+    </copy>
+    PLAN_TABLE_OUTPUT
+    --------------------------------------------------------------------------------
+    SQL_ID  gsd9fmyquwh5c, child number 0
+    -------------------------------------
+    select count(*) from  ext_emp
+    Plan hash value: 546827939
+    -------------------------------------------------------------------------------
+    PLAN_TABLE_OUTPUT
+    --------------------------------------------------------------------------------
+    | Id  | Operation                   | Name    | Rows  | Cost (%CPU)| Time     |
+    -------------------------------------------------------------------------------
+    |   0 | SELECT STATEMENT            |         |       |   341 (100)|          |
+    |   1 |  SORT AGGREGATE             |         |     1 |            |          |
+    |   2 |   EXTERNAL TABLE ACCESS FULL| EXT_EMP |   102K|   341   (1)| 00:00:01 |
+    -------------------------------------------------------------------------------
 
-````
+    ````
 Note that in the above plan *EXTERNAL TABLE ACCESS FULL* would mean that oracle is still doing a scan of external table on disk and has not loaded the table to In-Memory.
 
-19. Unlike regular tables, external table does not get populated into In-Memory even if it has INMEMORY parameter on the external table. Confirm if it is not populated.
+3. Unlike regular tables, external table does not get populated into In-Memory even if it has INMEMORY parameter on the external table. Confirm if it is not populated.
 
-````
-<copy>
-col owner format A10
-col segment_name format A20
+    ````
+    <copy>
+    col owner format A10
+    col segment_name format A20
 
-SELECT owner, segment_name, populate_status, con_id FROM v$im_segments where segment_name='EXT_EMP';
-</copy>
-````
+    SELECT owner, segment_name, populate_status, con_id FROM v$im_segments where segment_name='EXT_EMP';
+    </copy>
+    ````
 
-20. Populate the external table (manually) and verify that the population is complete.
+4. Populate the external table (manually) and verify that the population is complete.
     External tables need to be manually populated
-````
-<copy>
-EXEC dbms_inmemory.populate ('SSB','EXT_EMP')
+    ````
+    <copy>
+    EXEC dbms_inmemory.populate ('SSB','EXT_EMP')
 
 
-SELECT owner, segment_name, populate_status, con_id FROM v$im_segments where segment_name='EXT_EMP';
-</copy>
+    SELECT owner, segment_name, populate_status, con_id FROM v$im_segments where segment_name='EXT_EMP';
+    </copy>
 
-OWNER      SEGMENT_NAME         POPULATE_STAT     CON_ID
----------- -------------------- ------------- ----------
-SSB        EXT_EMP              COMPLETED              3
+    OWNER      SEGMENT_NAME         POPULATE_STAT     CON_ID
+    ---------- -------------------- ------------- ----------
+    SSB        EXT_EMP              COMPLETED              3
 
-````
+    ````
 
-21. Query In-Memory external table.
+5. Query In-Memory external table.
 
-Sessions that query In-Memory external tables must have the initialization parameter QUERY\_REWRITE\_INTEGRITY set to stale_tolerated. It is important to keep in mind that if an external table is modified, then the results from the IM column store are undefined. Results are also undefined if a partition is altered (by dropping or adding values). This may lead to differences in results between IM and non-IM based scans. You can run DBMS_INMEMORY.REPOPULATE to refresh the IM store so that it is resynchronized with the table data.
+    Sessions that query In-Memory external tables must have the initialization parameter QUERY\_REWRITE\_INTEGRITY set to stale\_tolerated. It is important to keep in mind that if an external table is modified, then the results from the IM column store are undefined. Results are also undefined if a partition is altered (by dropping or adding values). This may lead to differences in results between IM and non-IM based scans. You can run DBMS_INMEMORY.REPOPULATE to refresh the IM store so that it is resynchronized with the table data.
 
-````
-<copy>
-col plan_table_output format a140
-ALTER SESSION SET QUERY_REWRITE_INTEGRITY=stale_tolerated;
+    ````
+    <copy>
+    col plan_table_output format a140
+    ALTER SESSION SET QUERY_REWRITE_INTEGRITY=stale_tolerated;
 
-SELECT count(*) FROM ext_emp ;
-SELECT * FROM table(dbms_xplan.display_cursor());
-</copy>
+    SELECT count(*) FROM ext_emp ;
+    SELECT * FROM table(dbms_xplan.display_cursor());
+    </copy>
 
-SQL>
-PLAN_TABLE_OUTPUT
-------------------------------------------------------------------------------------------
-SQL_ID  d720xtyhhdfx0, child number 0
--------------------------------------
-SELECT count(*) FROM ext_emp
-Plan hash value: 546827939
+    SQL>
+    PLAN_TABLE_OUTPUT
+    ------------------------------------------------------------------------------------------
+    SQL_ID  d720xtyhhdfx0, child number 0
+    -------------------------------------
+    SELECT count(*) FROM ext_emp
+    Plan hash value: 546827939
 
-----------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------
 
-PLAN_TABLE_OUTPUT
-------------------------------------------------------------------------------------------
-| Id  | Operation                            | Name    | Rows  | Cost (%CPU)| Time     |
-----------------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT                     |         |       |   341 (100)|          |
-|   1 |  SORT AGGREGATE                      |         |     1 |            |          |
-|   2 |   EXTERNAL TABLE ACCESS INMEMORY FULL| EXT_EMP |   102K|   341   (1)| 00:00:01 |
-----------------------------------------------------------------------------------------
-````
-Notice that tha plan changed from *EXTERNAL TABLE ACCESS FULL* to *EXTERNAL TABLE ACCESS INMEMORY FULL*.
+    PLAN_TABLE_OUTPUT
+    ------------------------------------------------------------------------------------------
+    | Id  | Operation                            | Name    | Rows  | Cost (%CPU)| Time     |
+    ----------------------------------------------------------------------------------------
+    |   0 | SELECT STATEMENT                     |         |       |   341 (100)|          |
+    |   1 |  SORT AGGREGATE                      |         |     1 |            |          |
+    |   2 |   EXTERNAL TABLE ACCESS INMEMORY FULL| EXT_EMP |   102K|   341   (1)| 00:00:01 |
+    ----------------------------------------------------------------------------------------
+    ````
+Notice that the plan changed from *EXTERNAL TABLE ACCESS FULL* to *EXTERNAL TABLE ACCESS INMEMORY FULL*.
 Note that if you append data to the external file, you will have to repopulate to In-Memory.
 
-## Step 5: In-Memory FastStart
+## **STEP 5**: In-Memory FastStart
 
 ![](images/IMFaststart.png)
 
@@ -481,44 +480,50 @@ The IM FastStart area does not change the behavior of population. Priorities are
 
 So how does this work? The first thing you have to do is to enable IM FastStart. You do this by designating a tablespace that you create as the IM FastStart tablespace. It must be empty and be able to store the contents of the IM column store. Oracle recommends that the tablespace be sized at twice the size of the INMEMORY_SIZE parameter setting.
 
-22. Enable FastStart
+1. Enable FastStart
 
-````
-<copy>
-conn / as sysdba
-alter session set container=orclpdb;
-exec dbms_inmemory_admin.faststart_enable('USERS', FALSE);
-</copy>
-````
+    ````
+    <copy>
+    conn / as sysdba
+    alter session set container=orclpdb;
+    exec dbms_inmemory_admin.faststart_enable('USERS', FALSE);
+    </copy>
+    ````
 
-23. verify that that FastStart is enabled.
-````
-<copy>
- column tablespace_name format a10
- select tablespace_name, status, allocated_size, used_size from
- v$inmemory_faststart_area;
- </copy>
+2. Verify that FastStart is enabled.
+    ````
+    <copy>
+    column tablespace_name format a10
+    select tablespace_name, status, allocated_size, used_size from
+    v$inmemory_faststart_area;
+    </copy>
 
-TABLESPACE STATUS     ALLOCATED_SIZE  USED_SIZE
----------- ---------- -------------- ----------
-USERS      ENABLE         2368471040 2215837696
-````
-24. The actual IM FastStart data is written to a SecureFile LOB in the IM FastStart tablespace. You can display the LOB information from the DBA_LOBS view:
-````
-<copy>
-column segment_name format a20
-select segment_name, logging from dba_lobs where tablespace_name='USERS';
-</copy>
+    TABLESPACE STATUS     ALLOCATED_SIZE  USED_SIZE
+    ---------- ---------- -------------- ----------
+    USERS      ENABLE         2368471040 2215837696
+    ````
+3. The actual IM FastStart data is written to a SecureFile LOB in the IM FastStart tablespace. You can display the LOB information from the DBA_LOBS view:
+    ````
+    <copy>
+    column segment_name format a20
+    select segment_name, logging from dba_lobs where tablespace_name='USERS';
+    </copy>
 
-SEGMENT_NAME         LOGGING
--------------------- -------
-SYSDBIMFS_LOBSEG$    YES
+    SEGMENT_NAME         LOGGING
+    -------------------- -------
+    SYSDBIMFS_LOBSEG$    YES
 
-````
-25. To Disable In-Memory FastStart , run the following.
-````
-<copy>
-exec DBMS_INMEMORY_ADMIN.FASTSTART_DISABLE();
-</copy>
-````
+    ````
+4. To Disable In-Memory FastStart run the following.
+    ````
+    <copy>
+    exec DBMS_INMEMORY_ADMIN.FASTSTART_DISABLE();
+    </copy>
+    ````
 We have looked at how we can configure In-Memory pool. Alter table InMemory properties and how to load them. Next we will look at some of the optimizations to speed up queries.
+
+## Acknowledgements
+
+- **Authors/Contributors** - Vijay Balebail, Andy Rivenes, Maria Colgan
+- **Reviewers** - Bob Mackowiak, Rajeev Rumale
+- **Last Updated By/Date** - Kamryn Vinson, July 2021
