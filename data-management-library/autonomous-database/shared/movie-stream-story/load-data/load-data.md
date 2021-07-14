@@ -34,7 +34,7 @@ We will also learn how to exercise features of the DBMS_CLOUD package to link an
 
 This lab requires you to have access to an autonomous database instance (either ADW or ATP).
 
-The MOVIESTREAM user must have been set up. If the user is not set up, please complete [Lab 4 in this series (Create a Database User)](create-db-user/create-db-user.md) before proceeding.
+The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 4 in this series (Create a Database User) before proceeding.
 
 ## **Step 1**: Configure the Object Storage Connection
 
@@ -42,7 +42,7 @@ The MOVIESTREAM user must have been set up. If the user is not set up, please co
 
 	  ![Click on Tools, then Database Actions](images/launchdbactions.png)
 
-2. On the login screen, enter the username MOVIEWORK, then click the blue **Next** button.
+2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
 
 3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
 
@@ -129,7 +129,7 @@ In this step, we will use some of the additional features of the DBMS_CLOUD APIs
 
 1.  Using the top left menu, navigate to **Development** > **SQL** to open a SQL Worksheet.
 
-2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the multiple parquet files in the **custsales** folder in Object Store.
+2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -167,6 +167,7 @@ end;
 ```
 select * from EXT_CUSTSALES;
 ```
+
 
     Click on the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
 
@@ -277,77 +278,9 @@ SELECT TRUNC (to_date('20210101','YYYYMMDD')) as day
 
 11. Click on the **Run Script** button to run the script.
 
-12. Now that we have all the data we need loaded into the database, it is useful to create some views on the data that we can use in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+12. Now that we have all the data we need loaded into the database, it is useful to create a view on the data that joins the tables together. We can use this view in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
-CREATE OR REPLACE VIEW v_custsales AS
-SELECT
-    cs.day,
-    c.cust_id,
-    c.last_name,
-    c.first_name,
-    c.city,
-    c.state_province,
-    c.country,
-    c.continent,
-    c.age,
-    c.commute_distance,
-    c.credit_balance,
-    c.education,
-    c.full_time,
-    c.gender,
-    c.household_size,
-    c.income,
-    c.income_level,
-    c.insuff_funds_incidents,
-    c.job_type,
-    c.late_mort_rent_pmts,
-    c.marital_status,
-    c.mortgage_amt,
-    c.num_cars,
-    c.num_mortgages,
-    c.pet,
-    c.promotion_response,
-    c.rent_own,
-    c.work_experience,
-    c.yrs_current_employer,
-    c.yrs_customer,
-    c.yrs_residence,
-    c.loc_lat,
-    c.loc_long,   
-    cs.app,
-    cs.device,
-    cs.os,
-    cs.payment_method,
-    cs.list_price,
-    cs.discount_type,
-    cs.discount_percent,
-    cs.actual_price,
-    1 as transactions,
-    s.short_name as segment,
-    g.name as genre,
-    m.title,
-    m.budget,
-    m.gross,
-    m.genre as genre_list,
-    m.sku,
-    m.year,
-    m.opening_date,
-    m.cast,
-    m.crew,
-    m.studio,
-    m.main_subject,
-    nvl(json_value(m.awards,'$.size()'),0) awards,
-    nvl(json_value(m.nominations,'$.size()'),0) nominations,
-    m.runtime
-FROM
-    genre g, customer c, custsales cs, customer_segment s, movie m
-WHERE
-     cs.movie_id = m.movie_id
-AND  cs.genre_id = g.genre_id
-AND  cs.cust_id = c.cust_id
-AND  c.segment_id = s.segment_id;
- 
 create materialized view mv_custsales
 build immediate
 refresh complete
