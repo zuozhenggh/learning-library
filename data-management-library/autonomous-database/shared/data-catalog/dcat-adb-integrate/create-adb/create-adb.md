@@ -1,4 +1,4 @@
-# Create an Autonomous Database Instance (ADB)
+# Create an Autonomous Database Instance
 
 ## Introduction
 
