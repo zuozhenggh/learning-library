@@ -20,8 +20,9 @@ This lab assumes you have completed the following labs:
 
 In this section, you will provision a VCN and subnet, ATP and ADW instances, and load data to use with OCI GoldenGate.
 
-## **STEP 1:** Create a VCN and subnet
+*Note: This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
+## **STEP 1:** Create a VCN and subnet
 
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -84,7 +85,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 1.  Click the following link to download the database schema.
 
-    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/D9dqoEWMpWZgpMSyILK-ycaSQqiywQ2CxFZZkTY4ZpW9Yi0rV0MHiD4UWOgIGu0T/n/c4u03/b/data-management-library-files/o/Archive.zip)
+    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GBBFZbbFdladZV7maRiV3egDpZ_jCOglhpEWyqOgEuKZzIjxqeDgbrq9_WRhzjR5/n/c4u04/b/data-management-library-files/o/Archive.zip)
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 

@@ -74,7 +74,13 @@
               "type": "livelabs"
           },
           {
-              "title": "Lab 10: Explore Automatic Deletion of Flashback Logs",
+              "title": "Lab 10: Use RMAN to Connect to a PDB to Use the Recovery Catalog",
+              "description": "Use Resource Manager (RMAN) to connect to a pluggable database (PDB) to use the recovery catalog.",
+              "filename": "./../../use-rman-connect-to-pdb-to-use-recovery-catalog/use-rman-connect-to-pdb-to-use-recovery-catalog.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 11: Explore Automatic Deletion of Flashback Logs",
               "description": "Omit the column encryption attribute during import.",
               "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md",
               "type": "livelabs"

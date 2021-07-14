@@ -1,85 +1,53 @@
-# Load Data into an Instance
+# Title of the lab
 
 ## Introduction
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Lab Time: n minutes
+Estimated Time: n minutes
 
-### About Product/Technology
-Enter background information here..
+### About <Product/Technology>
+Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
 
-### Objectives
+### Objectives <optional>
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop*
+*List objectives for this lab*
 
 In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
 
-To link to other areas in document use this [syntax](#STEP1:title)
-
-### Prerequisites
-
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
-
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## **Step 1**: what is the action in this step
 
-Step 1 opening paragraph.
+(optional) Step 1 opening paragraph.
 
-1. Files that you want the reader to download:
+1. Sub step 1
 
-  When the file type is not recognized by the browser, you can use this format:
+	![Image alt text](images/sample1.png)
 
-  Download the [starter SQL code](files/starter-file.sql).
+  To create a link to local file you want the reader to download, use this format:
 
-  When the file type is recognized by the browser, it will attempt to render it. So you can use this format to force the download dialog box:
-
-  Download the [sample JSON code](files/sample.json?download=1).
+  Download the [starter file](files/starter-file.sql) SQL code.
 
   *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
-2. You can also include a file in a copy block, or offer it as a download in a single step. For example, download the [starter SQL code](files/starter-file.sql), or copy it from the block below:
+2. Sub step 2
 
-  ```
-  <copy>[](include:starter-file.sql)</copy>
-  ```
-
-  To support this feature, you need to specify the location of the files you are including in the manifest as key-value pairs:
-
-  ```
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
-  "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
-              "sample.json":"../../data-load/files/sample.json"},
-  "tutorials": [
-  ```
-
-
-2. Sub step 2 with image and link to the text description below. The `sample1.txt` file must be added to the `files` folder.
-
-    ![Image alt text](images/sample1.png "Image title")
-
-3. Ordered list item 3 with the same image but no link to the text description below.
-
-    ![Image alt text](images/sample1.png)
+  ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
-5. One example with bold **text**.
+5. Example with bold **text**.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** title
+## **Step 2:** what is the action in this step
 
-1. Sub step 1
+1. Sub step 1 - tables sample
 
   Use tables sparingly:
 
@@ -98,19 +66,16 @@ Step 1 opening paragraph.
 
     ```
     Adding code examples
-    Indentation is important for the code example to appear inside the step
+  	Indentation is important for the code example to appear inside the step
     Multiple lines of code
-  	<copy>Enclose the text you want to copy using the <copy> element.</copy>
+  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
     ```
 
 4. Code examples that include variables
 
-  	```
-    <copy>ssh -i <ssh-key-file></copy>
-    ```
-
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
+	```
+  <copy>ssh -i <ssh-key-file></copy>
+  ```
 
 ## Learn More
 
@@ -119,6 +84,7 @@ You may now [proceed to the next lab](#next).
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
-This is an example of a segment of the Markdown file injected before rendering:
-
-[](include:acknowledgements.md)
+## Acknowledgements
+* **Author** - <Name, Title, Group>
+* **Contributors** -  <Name, Group> -- optional
+* **Last Updated By/Date** - <Name, Group, Month Year>

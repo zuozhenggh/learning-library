@@ -2,15 +2,13 @@
 
 ## Introduction
 
-This lab will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
+We will walk you through setting up a local environment to simulate an established on-premises environment, using Docker on your local machine.
 
-At the end of this lab, you will have a local environment running with an Oracle 12c database and WebLogic Server 12c with a domain containing two applications and a datasource.
+On completion, you will have a local environment running with an Oracle 12c database and Oracle WebLogic Server 12c with a domain containing two applications and a datasource.
 
-Estimated Lab Time: 30 minutes.
+Estimated Completion Time: 30 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Get the Docker environment files.
 - Start up the Docker-based on-premises demo environment.
@@ -19,8 +17,6 @@ In this lab you will:
 
 
 ### Prerequisites
-
-To run this lab, you will need:
 
 - Docker installed locally to run the on-premises environment.
 
@@ -183,13 +179,13 @@ Start up the local environment stack that will simulate our on-premises environm
 
 ### Troubleshooting
 
-1. If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
+If you get an error message like the following even though you are logged in, it usually means you have not accepted the *Terms and Condition* for the specific image.
 
-    ```
-    pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
-    ```
+```
+pull access denied for store/oracle/database-instantclient, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+```
 
-    Go to the appropriate registry and image page, and go through the acknowledgement steps.
+Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
 ## **STEP 4:**  Check the Local Environment
 

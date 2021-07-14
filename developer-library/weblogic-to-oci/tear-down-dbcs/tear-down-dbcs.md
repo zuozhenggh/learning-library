@@ -4,28 +4,28 @@
 
 Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
-Estimated Lab Time: 15 minutes
+Estimated Completion Time: 15 minutes
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
 ### Objectives
 
-In this lab you will tear down the infrastructure provisioned.
+- Tear down the infrastructure provisioned.
 
 ## **STEP 1:** Cleaning up the on-premises environment
 
-### If you used docker
+### If you used Docker
 
-1. stop the services and remove containers:
+Stop the services and remove containers:
 
-    ```
-    <copy>
-    bash
-    docker-compose down
-    </copy>
-    ```
+```
+<copy>
+bash
+docker-compose down
+</copy>
+```
 
-> **Note:** the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
+> **Note:** The ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
 
 ### If you used the workshop image from the Oracle Cloud Marketplace
 

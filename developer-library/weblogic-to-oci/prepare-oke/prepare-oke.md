@@ -2,13 +2,11 @@
 
 ## Introduction
 
-In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
+We will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Create a Vault.
 - Create a Key.
@@ -17,8 +15,6 @@ In this lab you will:
 - Copy the Secret OCIDs to use during the provisioning stage.
 
 ### Prerequisites
-
-For this lab you will need:
 
 - An OCI account with a compartment created.
 
@@ -60,11 +56,11 @@ For this lab you will need:
 
 2. Click **Create Secret**.
 
-  ![](./images/prereq-secret2.png " ")
+   ![](./images/prereq-secret2.png " ")
 
 3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**.
 
-  ![](./images/prereq-secret3.png " ")
+   ![](./images/prereq-secret3.png " ")
 
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**.
 

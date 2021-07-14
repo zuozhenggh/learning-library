@@ -4,16 +4,16 @@
 
 For this migration workshop, we need an environment to migrate *from*.
 
-We're offering 2 ways to provision this environment:
+We're offering two ways to provision this environment:
 
-- Using a demo marketplace image for this workshop.
+- Using a demo Oracle Cloud Marketplace image for this workshop.
 - Using Docker locally on your development machine.
 
 Both paths provide a pre-packaged on-premises simulated environment, which includes an application database and a WebLogic domain with two web applications and a datasource to connect to the database.
 
-The marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an on-premises environment as it runs on your local machine.
+The Oracle Cloud Marketplace image deployment is simpler and faster, while the Docker environment provides a way to more realistically simulate an on-premises environment as it runs on your local machine.
 
-Estimated Lab Time: 15 to 30 minutes depending on path chosen.
+Estimated Completion Time: 15 to 30 minutes depending on path chosen.
 
 ### Objectives
 
@@ -23,7 +23,7 @@ In this workshop, choose a path to create a demo environment to use as the on-pr
 
 Depending on the path you choose, there are different requirements:
 
-- For the marketplace environment, you will need one compute instance with 4 OCPU available.
+- For the Oracle Cloud Marketplace environment, you will need one compute instance with 4 OCPU available.
 
 - For the Docker environment, you will need a machine with at least 3 CPUs and 6 GB of memory to allocate to the Docker engine.
 
