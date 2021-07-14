@@ -2,15 +2,9 @@
 
 ## Introduction
 
-In this lab exercise, we will introduce you to modern practices for deploying Cloud Native Applications through an automated CI/CD pipeline, and the first one is `GitOps`.
+In this lab exercise, you will turn into a SRE/Platform Administrator and will provision all the Infrastructure resources used by your applicaitons through Infrastructure As Code (IaC) using [Terraform](https://www.terraform.io) on [Oracle Cloud Infrastructure Resource Manager service (ORM)](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).  
 
-GitOps is a paradigm for application development and operations. It provides a developer-centric experience for operating infrastructure. It consists of declarative description of an immutable infrastructure and its desired state, stored in a Git repository. 
-
-To deploy/provision application and infrastructure, you need to update your git repository and then create a pull/merge request so that someone can review your code and accept the changes. Those changes should be deployed to your servers/infrastructure through an automation process.
-
-As part of this lab, you will turn into a SRE/Platform Administrator and will provision all the Infrastructure resources used by your applicaitons through Infrastructure As Code (IaC) using [Terraform](https://www.terraform.io) on [Oracle Cloud Infrastructure Resource Manager service (ORM)](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).  
-
-If you are not familar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
+If you are not familar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files that will represent the state of your infrastructure. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
 
 ![Diagram](./images/sre_infrastructure_onboarding.png)
 
@@ -21,7 +15,7 @@ Estimated Lab time: 20 minutes
 In this lab, you will:
 
 * Create an IAM compartment to isolate and organize your CI/CD cloud resources
-* Create ORM project pointing to a git repository.
+* Create ORM Stack and configuration pointing to a git repository.
 * Provision Infrastructure: Network, IAM, Kubernetes Cluster on OKE, DevOps project
 
 ### Prerequisites
@@ -80,6 +74,48 @@ In order to connect your GitHub account with ORM you need first to generate a Pe
 
 1. Click on generate token, then copy the token value and store it safely as we are going to use it soon and it won't be displayed again.
 ![pat created](./images/github-pat-created.png)
+
+### Change Terraform template
+
+The existing Terraform template code published in the git repo uses Terraform CLI which uses user/key authentication principal. In ORM, OCI uses service principal authentication, so, we need to make some changes to the template code and remove some variables before start the provisioning process.
+
+To make it simple during this lab, let's make these changes directly through the browser rather than cloning the repo and using an IDE/git client:
+
+
+1. Go back to the code tab on GitHub, open up `devops_oke` folder. There are 2 files we need to change:
+    - providers.tf
+    - variables.tf
+  
+  
+1. Edit `providers.tf` file. Delete the code that contains the oci providers (`provider "oci"`). Then paste the following code (yes, we are replacingn 3 providers by 2):
+    ```
+    provider "oci" {
+      alias        = "home_region"
+      tenancy_ocid = var.tenancy_ocid
+      region       = lookup(data.oci_identity_regions.home_region.regions[0], "name")
+    }
+
+    provider "oci" {
+      alias        = "current_region"
+      tenancy_ocid = var.tenancy_ocid
+      region       = var.region
+    }
+    ```
+    Note: this is required due to the fact that ORM injects the standard provider with the authentication based upon the identity associated with the CLI.
+
+
+1. Let's commit these changes to the code, but instead of pushing the code to the master repo, we are creating a new feature branch and then we are going to merge the code into the master through Pull Requests when we complete all the changes. Select `Create a new branch for this commit and start a pull request`. Set the branch name to: `release-infra`. This will not trigger a new workflow since the workflow is expecting changes to the `master` repo.
+
+1. Create a pull request, then you need to edit the next file,  `variables.tf`. Remove the following variables:
+    - user_ocid
+    - fingerprint
+    - private_key_path
+
+1. Commit the change into the `release-infra` branch. This will update the pull request. 
+
+1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progres on the Action tab.
+
+
 
 ### Create ORM Configuration Source Provider
 
@@ -157,104 +193,11 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 
 ## **STEP 5**: Provisioning the Infrastructure
 
-We are going to use [GitHub Actions](https://github.com/features/actions) to automate the provisioning of the Infrastructure using the OCI Command Line Interface (CLI) and the ORM Stack that will hold the state of the infrastructure.
+1. After creating the Stack, you can perform some Terraform operations that are also known as `Jobs` in OCI. By clicking on `Plan` button and defining a name for your plan, Resource Manager will parse your Terraform configuration and creates an execution plan for the associated stack. The execution plan lists the sequence of specific actions planned to provision your Oracle Cloud Infrastructure resources. The execution plan is handed off to the apply job, which then executes the instructions.
 
-1. Let's create the workflow file. Open up the GitHub repo on your browser and go to the `.github/workflows` folder. Then click on Add File -> Create New File.
+1. Next, click on `Apply` button and select the plan resolution that was previously created (or select Automatically approve to bypass a plan). This will apply the execution plan to create (or modify) your Oracle Cloud Infrastructure resources. This operation will take some time to complete (15-20 minutes) as it is going to provision all infrastructure resources needed by this lab (IAM, Network, Logging, OKE). You can check status and logs while the job runs. After the end, you can click on `Associated Resources` menu to visualize the list of resources that were provisioned.
+![Associated Resources](./images/apply-job-complete.png)
 
-2. Create a file named `oci-platform-build.yaml` with the following content:
+1. At anytime you can go back to the Stack details page, click on `Edit` button to change the variable values. After that, you need to run Plan -> Apply jobs to make these changes into the infrastructure. Always review the execution plan as some resources are immutable and they can be completely destroyed and recreated by Terraform/ORM after hitting `Apply`.
 
-```yaml
- name: oci-build-platform-dev-environment
-on:
-  push:
-    branches:
-      - dev_environment
-jobs:
-  build-resource-manager:
-    name: Build Infrastructure
-    runs-on: ubuntu-latest
-    env: 
-        STACK_NAME: "oci-build-platform-dev-environment-"
-        PROVIDER_NAME: "GitHub Source Provider"
-        BRANCH_NAME: "dev_environment"
-        REPO_URL: "https://github.com/lucassrg/oci-devops-platform-deploy"
-        WORKING_DIRECTORY: "devops_oke"
-        TF_VERSION: "0.14.x"
-        REGION: "us-ashburn-1"
-    steps:
-      
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-
-      - name: 'Write OCI CLI Config & PEM Key Files'
-        run: |
-          mkdir ~/.oci
-          echo "[DEFAULT]" >> ~/.oci/config
-          echo "user=${{secrets.OCI_USER_OCID}}" >> ~/.oci/config
-          echo "fingerprint=${{secrets.OCI_FINGERPRINT}}" >> ~/.oci/config
-          echo "pass_phrase=${{secrets.OCI_PASSPHRASE}}" >> ~/.oci/config
-          echo "region=${{secrets.OCI_REGION}}" >> ~/.oci/config
-          echo "tenancy=${{secrets.OCI_TENANCY_OCID}}" >> ~/.oci/config
-          echo "key_file=~/.oci/key.pem" >> ~/.oci/config
-          echo "${{secrets.OCI_KEY_FILE}}" >> ~/.oci/key.pem
-          
-      - name: 'Install OCI CLI'
-        run: |
-          curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
-          chmod +x install.sh
-          ./install.sh --accept-all-defaults
-          echo "/home/runner/bin" >> $GITHUB_PATH
-          exec -l $SHELL
-          
-      - name: 'Fix OCI Config File Permissions'
-        run: |
-          oci setup repair-file-permissions --file /home/runner/.oci/config
-          oci setup repair-file-permissions --file /home/runner/.oci/key.pem
-          
-      - name: 'Check Provider'
-        run: |
-          echo "SOURCE_PROVIDER_ID=$(oci resource-manager configuration-source-provider list \
-            --compartment-id ${{secrets.OCI_COMPARTMENT_OCID}} | jq '.data.items[] | select(."display-name"==env.PROVIDER_NAME).id' -r)" >> $GITHUB_ENV
-            
-      - name: 'Check Stack'
-        run: |
-          echo "STACK_ID=$(oci resource-manager stack list --all --compartment-id ${{secrets.OCI_COMPARTMENT_OCID}} | jq '.data[] | select(."display-name"==env.STACK_NAME).id' -r)" >> $GITHUB_ENV
-      
-      - name: 'Create Provider'
-        if: ${{env.SOURCE_PROVIDER_ID == ''}}
-        run: |
-          echo "SOURCE_PROVIDER_ID=$(oci resource-manager configuration-source-provider create-github-access-token-provider \
-            --access-token ${{secrets.GITHUB_ACCESS_TOKEN}} \
-            --api-endpoint https://github.com/ \
-            --display-name $PROVIDER_NAME \
-            --compartment-id ${{secrets.OCI_COMPARTMENT_OCID}} | jq '.data.id' -r)" >> $GITHUB_ENV
-            
-      - name: 'Create Stack'
-        if: ${{env.STACK_ID == ''}}
-        run: |
-          echo "STACK_ID=$(oci resource-manager stack create-from-git-provider \
-            --compartment-id ${{secrets.OCI_COMPARTMENT_OCID}} \
-            --config-source-configuration-source-provider-id $SOURCE_PROVIDER_ID \
-            --config-source-branch-name $BRANCH_NAME \
-            --config-source-repository-url $REPO_URL \
-            --config-source-working-directory $WORKING_DIRECTORY \
-            --display-name "$STACK_NAME" \
-            --terraform-version $TF_VERSION \
-            --variables '{"compartment_ocid": "${{secrets.OCI_COMPARTMENT_OCID}}", "region": "${{env.REGION}}", "bucket_name": "${{env.BUCKET_NAME}}"}' \
-            --wait-for-state SUCCEEDED | jq '.data.id' -r)" >> $GITHUB_ENV
-        
-      - name: 'Create Plan Job'
-        if: ${{env.STACK_ID != ''}}
-        run: |
-          echo "PLAN_JOB_ID=$(oci resource-manager job create-plan-job \
-            --stack-id $STACK_ID --wait-for-state SUCCEEDED | jq '.data.id' -r)" >> $GITHUB_ENV
-   
-      - name: 'Apply Plan Job'
-        if: ${{env.PLAN_JOB_ID != ''}}
-        run: | 
-          echo "APPLY_JOB_ID=$(oci resource-manager job create-apply-job \
-            --execution-plan-strategy FROM_PLAN_JOB_ID \
-            --execution-plan-job-id $PLAN_JOB_ID \
-            --stack-id $STACK_ID \
-            --wait-for-state SUCCEEDED | jq '.data.id' -r)" >> $GITHUB_ENV
-```
+Note: in case of quota/service limit/permission issues, Apply job will fail and not all resources might have been provisioned. Click on Destroy button will trigger the job to remove provisioned resources. 

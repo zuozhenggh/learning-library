@@ -7,13 +7,13 @@ You will learn how to build a Java application, containerize your application, a
 Estimated time: 1h:30 minutes
 
 
-## Cloud Native Applications
+## Cloud Native Applications Overview
 
-According to Cloud Native Computing Foundation (CNCF):
+Here is the definition of Cloud Native Applications accordingly to [Cloud Native Computing Foundation (CNCF)](https://github.com/cncf/foundation/blob/master/charter.md):
 
 "Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
 
-These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.The Software architects understand the benefits of running scalable applications adecided to use Kubernetes to build their Cloud Native solution."
+These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil."
 
 
 ## Oracle DevOps
@@ -30,9 +30,9 @@ OCI DevOps offers many deployment strategies to meet your needs – you can perf
 
 ## Role Play Scenario
 
-You are leading a company to build a new e-commerce cloud native application using microservices architecture, Kubernetes and you want to automate the software development lifecycle (SDLC) to quickly innovate, delivery new features to customers constantly and faster. There is a Developers team that is responsible for building and testing the application. There is also a SRE (Site Reliability Engineering) team that will be responsible for managing the infrastructure and operations to ensure the business can meet their Service Level Objective (SLO).
+You are leading a company to build a new e-commerce cloud native application using microservices architecture, Kubernetes and you want to automate the software development lifecycle (SDLC) to quickly innovate, delivery new features to customers constantly and faster. There is a Developers team that is responsible for building and testing the application. There is also a SRE (Site Reliability Engineering)/Platform Engineer team that will be responsible for provisioning the infrastructure and take care of operations to ensure the business can meet their Service Level Objective (SLO).
 
-During this lab you will play both Developers and SREs roles and will perform the following activities: 
+During this lab you will play both Developer and SRE/Platform Engineer roles and will perform the following activities: 
 
 As a developer:
 
@@ -44,10 +44,10 @@ As a developer:
 - run Continuous Integration (CI) pipelines (test, package and publish docker image)
 
 
-As a SRE:
+As a SRE/Platform Engineer:
 - write Infrastructure As Code (IaC) and provision the infrastructure
-- push IaC to a git repository (deploy repository)
-- approve/reject pull/merge requests into main branch of `deploy`repository
+- push IaC to a git repository (`deploy` repository)
+- approve/reject pull/merge requests into `main` branch of `deploy` repository
 - approve and onboard applications (new namespace) into the K8s cluster through an automated Continous Delivery (CD) pipeline
 - write K8s manifest files for deploying services/endpoints/security used by application
 - rollout new features/services through the Continous Delivery pipeline
@@ -61,11 +61,9 @@ As a SRE:
 
 In this lab, you will:
 
-* Create OCI DevOps Projects
-* Create Environment
-* Create Artifacts
-* Create Pipelines
-* Deploy Application to OKE via DevOps Pipeline
+* Provisioning Infrastructure using IaC and OCI Resource Manager 
+* Extend a Java Cloud Native Microservice and publish to OCI Container Registry
+* Deploy a Java Cloud Native Microservice to OKE Kubernetes cluster via DevOps Pipeline
 
 ### Prerequisites
 

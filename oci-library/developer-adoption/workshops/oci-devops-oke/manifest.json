@@ -11,16 +11,16 @@
             "filename": "../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Setup Cloud Environment",
-            "filename": "../../labs/common/setup-cloud-env/setup-cloud-env.md"
+            "title": "Lab 1a: Provision the Infrastructure using Resource Manager",
+            "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-orm.md"
         },
         {
-            "title": "Lab 2: Prepare your Tenancy",
-            "filename": "../../labs/oci-devops-oke/prepare/setup-access.md"
+            "title": "Lab 1b: Provision the Infrastructure using Resource Manager and GitHub Actions",
+            "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-github-actions.md"
         },
         {
-            "title": "Lab 3: Create a DevOps Project",
-            "filename": "../../labs/oci-devops-oke/project/create-devops-project.md"
+            "title": "Lab 2: Build and Publish Application - Continous Integration",
+            "filename": "../../labs/oci-devops-oke/build-publish-app/build-publish-app.md"
         },
         {
             "title": "Lab 4: Create Environment",
