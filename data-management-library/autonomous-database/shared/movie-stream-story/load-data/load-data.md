@@ -165,13 +165,12 @@ end;
 4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
 ```
-select * from EXT_CUSTSALES;
+select * from ext_custsales;
 ```
-
 
     Click on the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
 
-     ![Data from ext_custsales](images/select-extcustsales.png)
+    ![Data from ext_custsales](images/select-extcustsales.png)
 
     Click on the bin icon below **Query Result** in the lower window to clear the query output.
 
