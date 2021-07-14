@@ -1,4 +1,4 @@
-# Loading data from object storage using Data Tools and the DBMS_CLOUD APIs
+# Loading data from object storage using Data Tools and Scripting
 
 ## Introduction
 
@@ -18,6 +18,7 @@ Estimated Time: 30 minutes
 
 In this lab, we will learn more about the Autonomous Database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
 
+We will also learn how to exercise features of the DBMS_CLOUD package to link and load data into the autonomous database using SQL scripts. For more information about DBMS_CLOUD, see its [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
 
 ### Objectives
@@ -122,7 +123,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 ## **Step 3:** Using Database APIs to load richer data files
 
-The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle Object Store, Amazon S3, and Azure Data Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbdu/dbms_cloud-package.html).
+The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle Object Store, Amazon S3, and Azure Data Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
 In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some files with differently structured data.
 
