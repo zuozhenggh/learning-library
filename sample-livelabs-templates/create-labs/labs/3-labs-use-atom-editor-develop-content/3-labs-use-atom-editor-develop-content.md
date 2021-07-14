@@ -1,4 +1,4 @@
-# Use Atom Editor to Develop Markdown Content
+# Use A Text Editor to Develop Markdown Content
 
 ## Introduction
 
@@ -15,7 +15,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 
 
 ### What Do You Need?
-* An IDE, such as Atom.
+* An IDE, such as Atom or Visual Studio Code.
 * A local web server such as **atom-live-server**, a plugin for `Atom.io`.
 
 ## **STEP 1:** Install Atom
