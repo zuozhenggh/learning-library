@@ -24,17 +24,15 @@ Watch our short overview video that explains key features in Data Catalog.
 ## Objectives
 
 In this workshop, you will:
-* Set up the Data Catalog environment.
-* Set up the ADB environment. _coming soon_
+* Set up the workshop environment.
 * Create a Data Catalog instance.
 * Import and review a business glossary.
 * Create and harvest a data asset.
 * Create, schedule, and monitor jobs to harvest data assets.
-* Link glossary terms to data objects. _coming soon_
-* Link tags to data objects. _coming soon_
-* Search, browse, and explore information in Data Catalog.
-* Provision an ADB instance. _coming soon_
-* Connect ADB to Data Catalog. _coming soon_
+* Search, browse, explore, and update information in Data Catalog (Link tags to data objects, not too much details)
+* Create an ADB instance.
+* Set up the ADB environment.
+* Connect ADB to Data Catalog. (v1, using SQL scripts and APIs using Database Actions in ADB)
 
 ## Prerequisites
 

@@ -1,8 +1,8 @@
-# Provision an Autonomous Database (ADB)
+# Create an Autonomous Database Instance (ADB)
 
 ## Introduction
 
-This lab walks you through the steps to provision a new Autonomous Data Warehouse (ADW) instance.
+This lab walks you through the steps to create a new Autonomous Data Warehouse (ADW) instance.
 
 <!--- This is a comment -->
 

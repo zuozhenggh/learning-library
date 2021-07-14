@@ -1,4 +1,4 @@
-# Setup the Data Catalog Environment
+# Setup the Workshop Environment
 
 ## Introduction
 

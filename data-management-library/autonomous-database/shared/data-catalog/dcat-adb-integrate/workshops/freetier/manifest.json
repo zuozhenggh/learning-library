@@ -13,9 +13,9 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Setup the Data Catalog Environment",
-            "description": "This lab walks you through the required and optional tasks to setup your Data Catalog environment.",
-            "filename": "./../../setup-datacatalog-environment/setup-datacatalog-environment.md"
+            "title": "Lab 1: Setup the Workshop Environment",
+            "description": "This lab walks you through the required and optional tasks to setup your workshop environment.",
+            "filename": "./../../setup-workshop-environment/setup-workshop-environment.md"
         },
         {
             "title": "Lab 2: Create a Data Catalog Instance",
@@ -28,9 +28,9 @@
             "filename": "./../../harvest-metadata-os/harvest-metadata-os.md"
         },
         {
-          "title": "Lab 4: Provision an Autonomous Database Instance",
-          "description": "This lab walks you through how to harvest technical metadata from an ADB instance.",
-          "filename": "./../../harvest-metadata-adb/harvest-metadata-adb.md"
+          "title": "Lab 4: create an Autonomous Database Instance",
+          "description": "This lab walks you through how to create an ADB instance.",
+          "filename": "./../../create-adb/create-adb.md"
         },
         {
           "title": "Lab 5: Clean up Resources Used in the Workshop (Optional)",
