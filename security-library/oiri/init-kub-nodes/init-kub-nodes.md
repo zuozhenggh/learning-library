@@ -74,7 +74,7 @@ In this lab, you will:
 
     ![](images/3-pods.png)
 
-## **STE 2:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
+## **STEP 2:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
 
 <!-- 1. Verify that the OIG Database is running.
 
