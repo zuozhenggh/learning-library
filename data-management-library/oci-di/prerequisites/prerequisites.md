@@ -154,6 +154,8 @@ In the **Basic Information** section, provide:
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
 
+You will create a new user on the Autonomous Data Warehouse and will run a SQL script that will create the database objects you need for the following integration tasks.
+
 1. From the OCI console menu, click **Oracle Database** and then select **Autonomous Data Warehouse** under Autonomous Database section.
 ![](./images/oci-menu-adw.png " ")
 
@@ -188,7 +190,9 @@ In this workshop, **Autonomous Data Warehouse** serves as the **target data asse
 
 9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPC9LuVhG3MIVEwuU3v6XdS17hoEfZzSEopKxp2QJO3yoguKbHcM7ZpjyJ1OUqIG/n/sehubemeaprod/b/DI-bucket/o/OCI%20DI%20Workshop%20files.zip) to your local directories. Unzip this file.
 
-10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects you need for the following integration tasks.
+10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects you need for the following labs.
+
+This SQL script will create tables CUSTOMERS_TARGET, EMPLOYEES_WEST_MIDWEST and EMPLOYEES_NORTHEAST_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
 ![](./images/adw-run-sql-script.png " ")
 
 11. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.
