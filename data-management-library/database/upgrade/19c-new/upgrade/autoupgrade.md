@@ -39,38 +39,38 @@ This lab assumes you have:
 ## **STEP 1**: Preparation
 
 1. The first step is to start the database DB12.
-    ````
+    ```
     <copy>
     . db12
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_1.png " ")
 
-    ````
+    ```
     <copy>
     startup
     exit
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_2.png " ")
 
 ## **STEP 2**: Generate and edit the config file
 
 1. Run the command below to generate autoupgrade sample file.
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -create_sample_file config
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_3.png " ")
 
 2.  You will need to edit the sample file and then pass it to the AutoUpgrade utility. You can find the sample configuration file from the path- `/home/oracle/scripts/sample_config.cfg`.  Open the sample file in your preferred editor and adjust the following things from the below parameters.  Generated config.cfg, make the following adjustments.
 
     ![](./images/upgrade_19c_4.png " ")
-   
-    <!-- ````
+
+    <!-- ```
     #Global configurations
     #Autoupgrade's global directory, ...
     #temp files created and other ...
@@ -92,7 +92,7 @@ This lab assumes you have:
     #upg1.timezone_upg=yes
 
  -->
-    ````
+    ```
     #Global configurations
     #Autoupgrade's global directory, ...
     #temp files created and other ...
@@ -112,35 +112,35 @@ This lab assumes you have:
     upg1.upgrade_node=localhost
     upg1.target_version=19
     upg1.restoration=no
-    ````
+    ```
     ![](./images/upgrade_19c_5.png " ")
 
 3. Then save the file as config.cfg to `/home/oracle/scripts`.  
-    
-    ````
+
+    ```
     <copy>
     mv /home/oracle/sample_config.cfg /home/oracle/scripts/config.cfg
     </copy>
-    ````
+    ```
 
     If you do not want to edit the file by yourself, there is a config file for DB12 stored already:
 
-    ````
+    ```
     <copy>
     cat /home/oracle/scripts/DB12.cfg
     </copy>
-     ````
+     ```
     Just ensure that you adjust the below calls to call DB12.cfg instead of config.cfg.
 
 ##  **STEP 3**: Analyze
 
 1. You could run the autoupgrade directly, but it is best practice to run an analyze first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode analyze
     </copy>
-    ````
+    ```
     You will see this output below.
     ![](./images/upgrade_19c_6.png " ")
 
@@ -148,18 +148,18 @@ This lab assumes you have:
 
 1. When you initiate the upgrade now with the -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/config.cfg -mode deploy
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_7.png " ")
 
 2. You will see this output:
 
     ![](./images/upgrade_19c_8.png " ")
 
-    <!-- ````
+    <!-- ```
     Autoupgrade tool launched with default options
     +--------------------------------+
     | Starting AutoUpgrade execution |
@@ -168,23 +168,23 @@ This lab assumes you have:
     Type 'help' to list console commands
     upg>
 
-    ```` -->
+    ``` -->
 
 3. At this point you can monitor the upgrade now – enlarge the xterm’s width a bit to see no line wraps.  The most important commands are:
 
     **lsj** – this lists the job number and overview information about each active job
-    ````
+    ```
     upg> <copy>lsj</copy>
-    ````
+    ```
     ![](./images/upgrade_19c_8.png " ")
     ![](./images/upgrade_19c_9.png " ")
     **status -job 101** This gives you more information about a specific job
-    ````
+    ```
     upg> <copy>status -job 101</copy>
-    ````
+    ```
     ![](./images/upgrade_19c_10.png " ")
     ![](./images/upgrade_19c_11.png " ")
-    
+
 
 4. You can also monitor the logs in /home/oracle/logs/DB12/101. In the ./dbupgrade subdirectory you will find the usual upgrade logs of each worker.  Depending on your hardware, the upgrade will take **20-45 minutes**. You don’t have to wait for the next step but instead you can progress with Plugin UPGR into CDB2.  Execute the lsj command a while later.
     ![](./images/upgrade_19c_12.png " ")
@@ -195,14 +195,14 @@ This lab assumes you have:
 
 6. As the upgrade has been completed successfully, you should adjust the COMPATIBLE parameter as it does not affect the Optimizer behavior.
 
-    ````
+    ```
     <copy>
     alter system set COMPATIBLE='19.0.0' scope=spfile;
     shutdown immediate
     startup
     exit
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_14.png " ")
     ![](./images/upgrade_19c_15.png " ")
 

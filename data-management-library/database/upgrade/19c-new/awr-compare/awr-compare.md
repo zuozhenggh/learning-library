@@ -4,9 +4,9 @@
 
 In this lab, you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
 
-![](./images/performance_prescription_02.png " ")
-
 *Estimated Lab Time*: 30 minutes
+
+![](./images/performance_prescription_02.png " ")
 
 ### Comparing Database Performance Over Time
 Performance degradation of the database occurs when your database was performing optimally in the past, but over time has gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.
@@ -32,22 +32,22 @@ This lab assumes you have:
 ## **STEP 1**: Generate Load
 
 1.  Open an xterm or reuse the previous one. Now, since the database has been upgraded, the environment needs to be switched to 19c:
-	````
+	```
 	<copy>
     . upgr19
     cd /home/oracle/scripts
     sqlplus / as sysdba
 	</copy>
-	````
+	```
    ![](./images/upgrade_19c_29.png " ")
 
 2. At first, create an AWR snapshot BEFORE load, then another one AFTER load.
 
-	````
+	```
 	<copy>
 	@snap.sql
 	</copy>
-	````
+	```
 
 3. Please NOTE down the snapshot number. It may be different than in the screenshot below.
    ![](./images/upgrade_19c_30.png " ")
@@ -57,11 +57,11 @@ This lab assumes you have:
 
 5. Once finished, create another AWR snapshot.
 
-	````
+	```
 	<copy>
 	@snap.sql
 	</copy>
-	````
+	```
 
 6. Please NOTE down the snapshot number of the second snapshot. It may be different than the one in the screenshot below.
    ![](./images/upgrade_19c_31.png " ")
@@ -72,28 +72,28 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 1. Call the AWR Diff script awrddrpt.sql:
 
-	````
+	```
 	<copy>
 	@?/rdbms/admin/awrddrpt.sql
 	</copy>
-	````
+	```
 	![](./images/upgrade_19c_32-2.png " ")
 
-	<!-- ````
+	<!-- ```
 	Specify the Report Type
 	~~~~~~~~~~~~~~~~~~~~~~~
 	Would you like an HTML report, or a plain text report?
 	Enter 'html' for an HTML report, or 'text' for plain text
 	Defaults to 'html'
 	Enter value for report_type:
-	```` -->
+	``` -->
 
 2. Click **RETURN**
    ![](./images/upgrade_19c_32.png " ")
    ![](./images/upgrade_19c_33-2.png " ")
 
 
-	<!--````
+	<!--```
 	Instances in this Workload Repository schema
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	DB Id      Inst Num	DB Name      Instance	  Host
@@ -114,13 +114,13 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 
 	Enter value for num_days:
-	```` -->
+	``` -->
 
 3.  Type: **2** and click **RETURN**
    ![](./images/upgrade_19c_34.png " ")
 
 4. Now you need to define the first snapshot interval – therefore, fill in the snapshot ID's you noted down during the first HammerDB run.
-	<!-- ````
+	<!-- ```
 	Enter value for num_days: 2
 
 	Listing the last 2 days of Completed Snapshots
@@ -137,7 +137,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Specify the First Pair of Begin and End Snapshot Ids
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Enter value for begin_snap:
-	```` -->
+	``` -->
 
 5. Type: 150. (Your actual snapshot ID may be different – please check your notes!) Hit RETURN.
    ![](./images/upgrade_19c_35.png " ")
@@ -155,20 +155,20 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 8.  Enter awrdiff and hit RETURN. Wait until the HTML output has been generated
 
-	````
+	```
 	<copy>
 	exit
 	</copy>
-	````
+	```
 
 9. Start Mozilla Firefox with the awrdiff report.
 
 
-	````
+	```
 	<copy>
 	firefox /home/oracle/scripts/awrdiff*.html &
 	</copy>
-	````
+	```
 	![](./images/upgrade_19c_39.png " ")
 	![](./images/upgrade_19c_40.png " ")
 
