@@ -56,7 +56,7 @@ In this lab, you will:
     - Database and Listener
         ```
         <copy>
-        systemctl status oracle-database
+        sudo systemctl status oracle-database
         </copy>
         ```
         ![](images/4-db.png " ")
@@ -65,14 +65,14 @@ In this lab, you will:
 
         ```
         <copy>
-        systemctl status oiri-weblogic.service
+        sudo systemctl status oiri-weblogic.service
         </copy>
         ```
         ![](images/oiri-wls-service.png " ")
 
         ```
         <copy>
-        systemctl status oiri-node.service
+        sudo systemctl status oiri-node.service
         </copy>
         ```
         ![](images/oiri-node-service.png " ")
@@ -82,7 +82,7 @@ In this lab, you will:
     - Database and Listener
         ```
         <copy>
-        systemctl restart oracle-database
+        sudo systemctl restart oracle-database
         </copy>
         ```
 
@@ -90,12 +90,12 @@ In this lab, you will:
   
         ```
         <copy>
-        systemctl restart oiri-weblogic.service
+        sudo systemctl restart oiri-weblogic.service
         </copy>
         ```
         ```
         <copy>
-        systemctl restart oiri-node.service
+        sudo systemctl restart oiri-node.service
         </copy>
         ```
 
@@ -106,44 +106,44 @@ You may now [proceed to the next lab](#next).
 1. Database Service (Database and Listener).
 
     ```
-    Start: <copy>systemctl start oracle-database</copy>
+    Start: <copy>sudo systemctl start oracle-database</copy>
     ```
     ```
-    Stop: <copy>systemctl stop oracle-database</copy>
+    Stop: <copy>sudo systemctl stop oracle-database</copy>
     ```
     ```
-    Status: <copy>systemctl status oracle-database</copy>
+    Status: <copy>sudo systemctl status oracle-database</copy>
     ```
     ```
-    Restart: <copy>systemctl restart oracle-database</copy>
+    Restart: <copy>sudo systemctl restart oracle-database</copy>
     ```
 2. OIRI Service (WLS Admin Server)
 
     ```
-    Start: <copy>systemctl start  oiri-weblogic.service</copy>
+    Start: <copy>sudo systemctl start  oiri-weblogic.service</copy>
     ```
     ```
-    Stop: <copy>systemctl stop oiri-weblogic.service</copy>
+    Stop: <copy>sudo systemctl stop oiri-weblogic.service</copy>
     ```
     ```
-    Status: <copy>systemctl status oiri-weblogic.service</copy>
+    Status: <copy>sudo systemctl status oiri-weblogic.service</copy>
     ```
     ```
-    Restart: <copy>systemctl restart oiri-weblogic.service</copy>
+    Restart: <copy>sudo systemctl restart oiri-weblogic.service</copy>
     ```
 3. OIRI Service (Node Manager Service)
    
     ```
-    Start: <copy>systemctl start oiri-node.service</copy>
+    Start: <copy>sudo systemctl start oiri-node.service</copy>
     ```
     ```
-    Stop: <copy>systemctl stop oiri-node.service</copy>
+    Stop: <copy>sudo systemctl stop oiri-node.service</copy>
     ```
     ```
-    Status: <copy>systemctl status oiri-node.service</copy>
+    Status: <copy>sudo systemctl status oiri-node.service</copy>
     ```
     ```
-    Restart: <copy>systemctl restart oiri-node.service</copy>
+    Restart: <copy>sudo systemctl restart oiri-node.service</copy>
     ```
 
 ## Acknowledgements
