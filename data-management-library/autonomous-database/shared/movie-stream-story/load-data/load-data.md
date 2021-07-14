@@ -187,7 +187,9 @@ select * from ext_custsales;
 create table custsales as select * from ext_custsales;
 ```
 
-7.  Click on the Run (or Run Script) button to run the statement.
+7.  Click on the Run (or Run Script) button to run the statement. 
+
+> **Note:** This may take a minute or two, since it will be copying over 25m rows.
 
 8.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
@@ -228,12 +230,12 @@ from ext_movie m
 where rownum < 10;
  
 alter table movie add constraint pk_movie_cust_id primary key("MOVIE_ID");
-alter table movie add CONSTRAINT movie_cast_json CHECK (cast IS JSON);
-alter table movie add CONSTRAINT movie_genre_json CHECK (genre IS JSON);
-alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
-alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
-alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
-alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
+alter table movie add constraint movie_cast_json check (cast IS JSON);
+alter table movie add constraint movie_genre_json check (genre IS JSON);
+alter table movie add constraint movie_crew_json check (crew IS JSON);
+alter table movie add constraint movie_studio_json check (studio IS JSON);
+alter table movie add constraint movie_awards_json check (awards IS JSON);
+alter table movie add constraint movie_nominations_json check (nominations IS JSON);
 ```
 
 9.  Click on the **Run Script** button to run the script.
