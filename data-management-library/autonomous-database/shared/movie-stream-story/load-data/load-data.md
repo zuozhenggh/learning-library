@@ -229,7 +229,7 @@ select
 from ext_movie m
 where rownum < 10;
  
-alter table movie add constraint pk_movie_cust_id primary key("MOVIE_ID");
+alter table movie add constraint pk_movie_cust_id primary key ("MOVIE_ID");
 alter table movie add constraint movie_cast_json check (cast IS JSON);
 alter table movie add constraint movie_genre_json check (genre IS JSON);
 alter table movie add constraint movie_crew_json check (crew IS JSON);
