@@ -1,0 +1,47 @@
+{
+    "workshoptitle": "Automating the Deployment of Java Apps to Oracle Cloud Infrastructure",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../labs/oci-devops-oke/intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "filename": "../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Setup Cloud Environment",
+            "filename": "../../labs/common/setup-cloud-env/setup-cloud-env.md"
+        },
+        {
+            "title": "Lab 2: Prepare your Tenancy",
+            "filename": "../../labs/oci-devops-oke/prepare/setup-access.md"
+        },
+        {
+            "title": "Lab 3: Create a DevOps Project",
+            "filename": "../../labs/oci-devops-oke/project/create-devops-project.md"
+        },
+        {
+            "title": "Lab 4: Create Environment",
+            "filename": "../../labs/oci-devops-oke/environment/create-environment.md"
+        },
+        {
+            "title": "Lab 5: Create Artifact",
+            "filename": "../../labs/oci-devops-oke/artifact/create-artifact.md"
+        },
+        {
+            "title": "Lab 6: Create Pipeline",
+            "filename": "../../labs/oci-devops-oke/pipeline/create-pipeline.md"
+        },
+        {
+            "title": "Lab 7: Deploy Application to OKE",
+            "filename": "../../labs/oci-devops-oke/deploy/deploy-app-oke.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}
