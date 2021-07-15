@@ -161,7 +161,7 @@ Although the ggadmin user is created during the database registration process, i
 10. Enter the following into the worksheet, and then click **Run Script**.
 
     ```
-    <code>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</code>
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
 11. Log out of Database Actions.

@@ -13,10 +13,9 @@ In this lab, you will:
 * Upload the ATP credentials to the Oracle GoldenGate Marketplace compute instance
 * Add the ATP credentials in the Oracle GoldenGate Administration Server
 
-## Prerequisites
+### Prerequisites
 
 * Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
-* From the Configuration page of the OCI GoldenGate Deployment Console, copy the SourceATP Connection String.
 
 ## **STEP 1:** Download the Source ATP Client Credentials
 
@@ -51,8 +50,8 @@ In this lab, you will:
 6.  Upload the wallet\_ATP.zip and extract its contents to a new directory, such as **wallet\_ATP**.
 
     ```
-    <code>mkdir wallet_ATP
-    unzip wallet_ATP.zip -d wallet_ATP</code>
+    <copy>mkdir wallet_ATP
+unzip wallet_ATP.zip -d wallet_ATP</copy>
     ```
 
 ## **STEP 3:** Add the Source ATP credential in the Oracle GoldenGate Administration Server
@@ -96,7 +95,7 @@ In this lab, you will:
 
 14. Click **Connect to Database**.
 
-    ![](images/04-01.png)
+    ![](images/04-14.png)
 
 15. Next to TRANDATA Information, click Add **TRANDATA**.
 
@@ -107,6 +106,7 @@ In this lab, you will:
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You can now proceed to the [next lab](#next).
 
 ## Acknowledgements
+
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
 * **Last Updated By/Date** - Jenny Chan, July 2021
