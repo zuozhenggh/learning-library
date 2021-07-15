@@ -21,8 +21,19 @@ This lab assumes you have:
 ## **STEP 1:** Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-    - Database Listener
-    - Database Server
+    - Database Listeners
+        - LISTENER
+        - LISTENER_1522
+        - LISTENER_1523
+        - LISTENER_1524
+        - LISTENER_1525
+    - Database Server Instances
+        - emrep
+        - sales
+        - finance
+        - hr
+        - cdb186
+        - db19c
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
@@ -39,7 +50,7 @@ This lab assumes you have:
     ![](images/em-login.png " ")
 
 
-3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
+3. Confirm successful login. Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start.
 
     ![](images/em-landing.png " ")
 
