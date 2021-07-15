@@ -25,6 +25,7 @@ This lab assumes you have:
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
+        - LISTENER
     - Database Server Instances
         - FTEX
         - DB12
@@ -43,7 +44,7 @@ This lab assumes you have:
     systemctl status oracle-database
     </copy>
     ```
-    
+
     ![](./images/check-tns-up.png " ")
     ![](./images/check-pmon-up.png " ")
     ![](./images/check-db-service-up.png " ")
