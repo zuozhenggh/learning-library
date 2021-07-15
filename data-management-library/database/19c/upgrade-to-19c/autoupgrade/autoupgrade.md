@@ -1,9 +1,9 @@
 # Upgrade to 19c using the Autoupgrade tool #
 
-In this lab we will leverage the Autoupgrade tool and upgrade an existing 12.1 CDB with 2 PDBs to 19c in a single command and configuration file.. 
+In this lab, we will leverage the Autoupgrade tool and upgrade an existing 12.1 CDB with 2 PDBs to 19c in a single command and configuration file. 
 
 ## Disclaimer ##
-The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
+The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
 
 ## Prerequisites ##
 
@@ -11,7 +11,7 @@ The following is intended to outline our general product direction. It is intend
 - A new 19c database has been created in this image
 - All databases in the image are running
 
-When in doubt or need to start the databases, please login as **oracle** user and execute the following command:
+When in doubt or need to start the databases, please log in as **oracle** user and execute the following command:
 
 ````
 $ <copy>. oraenv</copy>
@@ -57,7 +57,7 @@ We can now log into SQL*Plus as sys user in sysdba mode:
 $ <copy>sqlplus / as sysdba</copy>
 ````
 
-The upgrade commands will only upgrade databases (and Pluggable Databases) that are in OPEN mode during the upgrade process. Therefore please check that all PDBs are in OPEN mode before you start the upgrade.
+The upgrade commands will only upgrade databases (and Pluggable Databases) in OPEN mode during the upgrade process. Therefore please check that all PDBs are in OPEN mode before you start the upgrade.
 
 ````
 SQL> <copy>show pdbs</copy>
@@ -71,7 +71,7 @@ The following will probably be visible:
          3 DB121C01                       MOUNTED
 ````
 
-This means we need to open the PDB first. Execute the following commands:
+The DB121C01 PDB is in MOUNTED mode. This means we need to open the PDB first before we can upgrade it. Execute the following commands:
 
 ````
 SQL> <copy>alter pluggable database all open;</copy>
@@ -103,9 +103,9 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 
 ### Create the Auto Upgrade Config file ###
  
-The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous versions (<= 18.4) will need a separate download and setup from MyOracle Support under note 2485457.1. In this example we will only put one database into the configuration file but you can add as many databases as needed.
+The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous versions (<= 18.4) will need a separate download and set up from MyOracle Support under note 2485457.1. In this example, we will only put one database into the configuration file, but you can add as many databases as needed.
 
-First, we will create a directory on the operating system where we can store Autoupgrade related files (and logfiles): 
+First, we will create a directory on the operating system where we can store Autoupgrade related files (and log files): 
 
 ````
 $  <copy>mkdir -p /u01/autoupgrade</copy>
@@ -114,7 +114,7 @@ $  <copy>mkdir -p /u01/autoupgrade</copy>
 $ <copy>cd /u01/autoupgrade/</copy>
 ````
 
-Now we can create a new configuration file for the Auto Upgrade tool. In this example the `vi` tool is used. If you are not familiar with `vi`, feel free to exchange the command with `gedit`:
+Now we can create a new configuration file for the Auto Upgrade tool. In this example, the "vi" tool is used. If you are not familiar with "vi", feel free to exchange the command with "gedit":
 
 ````
 $ <copy>vi DB121C.cfg</copy>
@@ -137,13 +137,13 @@ upg1.restoration=no</copy>
 
 Save the file and close the editor.
 
-Be aware that in the above example, we used the `upg1.restoration=no`. This means that we will **not be able to restore** the database if something goes bad. This setting is only to be used in databases which are in NOARCHIVE mode or databases (like Standard Edition databases) who cannot have a guaranteed restore point (GRP).
+Be aware that in the above example, we used the `upg1.restoration=no`. This means that we will **not be able to restore** the database if something goes wrong. This setting is only to be used in databases that are in NOARCHIVE mode or databases (like Standard Edition databases) that cannot have a guaranteed restore point (GRP).
 
-In our setup, we use it to speed up the upgrade process (since no archivelog needs to be written) and to save disk space in our limited environment.
+In our setup, we use it to speed up the upgrade process (since no archive log needs to be written) and to save disk space in our limited environment.
 
 ### Launch the Auto Upgrade tool pre-check phase ###
 
-We can now launch the Auto upgrade tool. First make sure you have the 19c environment variables setup:
+We can now launch the Auto upgrade tool. First, make sure you have the 19c environment variables setup:
 
 ````
 $ <copy>. oraenv</copy>
@@ -179,7 +179,7 @@ Jobs pending                   [0]
 Job 100 for DB121C
 ````
 
-In the parameter file we specified the location for the logfiles, in this case `/u01/autoupgrade`. After running of the command, the output stated a Job number (100). A new directory has been created in the logfile directory with this name; it contains all of the logfiles for this run. In the prechecks directory, the output of the prechecks are displayed in various formats:
+In the parameter file, we specified the location for the log files, in this case `/u01/autoupgrade`. After running the command, the output stated a Job number (100). A new directory has been created in the logfile directory with this name; it contains all of the log files for this run. In the prechecks directory, the output of the prechecks are displayed in various formats:
 
 ````
 $ <copy>cat /u01/autoupgrade/DB121C/100/prechecks/db121c_preupgrade.log</copy>
@@ -224,7 +224,7 @@ The result should be similar to the following:
 ....
 ````
 
-In a regular upgrade situation, you can now check whether or not there are blocking issues with regards to your upgrade. The step executed here is basically the same as running the preupgrade.jar manually or through the DBUA.
+In a typical upgrade situation, you can now check whether or not there are blocking issues concerning your upgrade. The step executed here is the same as running the preupgrade.jar manually or through the DBUA.
 
 In this hands-on lab, no changes are required so we can continue with the actual upgrade process.
  
@@ -244,7 +244,7 @@ Autoupgrade tool launched with default options
 | Starting AutoUpgrade execution |
 +--------------------------------+
 1 databases will be processed
-Type 'help' to list console commands
+Type' help' to list console commands
 
 upg>
 ````
@@ -264,7 +264,7 @@ The following is an example output:
 +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+ 
 ````
 
-Using the command prompt, you can do many things to control your upgrade. If there are any failure, you can correct the failures and restart the job or perhaps restore the environment to its original state. On the operating system you can check the running of the upgrade as well. 
+Using the command prompt, you can do many things to control your upgrade. If there is any failure, you can correct the failures, restart the job, or restore the environment to its original state. On the operating system, you can check the running of the upgrade as well. 
 
 To get a more detailed status of the job, you can use the `status` command with the job number of your upgrade. Example:
 
@@ -311,7 +311,7 @@ Error Details:
 None
 ````
 
-The actual upgrade will be done using the regular tools for upgrading databases. You can see this in the operating system once the `lsj` command indicates that the actual upgrade has started:
+The actual upgrade will be done using the standard tools for upgrading databases. You can see this in the operating system once the `lsj` command indicates that the actual upgrade has started:
 
 ````
 upg> <copy>lsj</copy>
@@ -328,22 +328,22 @@ upg> lsj
 +----+-------+---------+---------+-------+--------------+--------+--------+-------+
 ````
 
-You can open a second terminal window (do not close the running autoupgrade tool) that the regular tools are being used by the autoupgrade tool for the upgrade:
+You can open a second terminal window (do not close the running autoupgrade tool) that the standard tools are being used by the autoupgrade tool for the upgrade:
 
 
 ````
 $ <copy>ps -ef | grep perl</copy>
 ````
 
-The output will be similar tot the following:
+The output will be similar to the following:
 
 ````
 oracle   17211 11951  0 10:13 pts/4    00:00:01 /u01/app/oracle/product/19.0.0/dbhome_193/perl/bin/perl /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/catctl.pl -A -l /u01/autoupgrade/100/dbupgrade -i 20190321101158db112 -d /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin catupgrd.sql
 ````
 
-Please, again, note that the perl command will only give you a result if the autoupgrade tool is actually running the perl scripts of course.
+Please, again, note that the perl command will only give you a result if the autoupgrade tool is actually running the perl scripts.
 
-The logfiles in the `/u01/autoupgrade/<job#>` directory show you the progress as well for example:
+The logfiles in the `/u01/autoupgrade/<job#>` directory show you the progress as well, for example:
 
 ````
 $ <copy>cd /u01/autoupgrade/</copy><job#>
@@ -383,11 +383,11 @@ After a while, you will see that the upgrade has finished:
 Job 101 for DB121C FINISHED
 ````
 
-You database is now upgraded to 19c (with all PDBs as well).
+Your database is now upgraded to 19c (with all PDBs as well).
 
 ## Check target database ##
 
-To check your target database you can execute the following:
+To check your target database, you can execute the following:
 
 ````
 $ <copy>. oraenv</copy>
@@ -419,14 +419,14 @@ Check the version of the database by querying the `v$instance` view:
 SQL> <copy>select version from v$instance;</copy>
 ````
 
-The outputwill be similar to this:
+The output will be similar to this:
 
 ```` 
 VERSION
 -----------------
 19.0.0.0.0
 ````
-The autoupgrade tool was successful. You can check the logfiles for details regarding this upgrade if you want to.
+The autoupgrade tool was successful. You can check the log files for details regarding this upgrade if you want to.
 
 ## Acknowledgements ##
 
