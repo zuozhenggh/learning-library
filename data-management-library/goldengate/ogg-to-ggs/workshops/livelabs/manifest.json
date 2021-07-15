@@ -7,14 +7,14 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Connect Oracle GoldenGate to Autonomous Transaction Processing ",
-            "description": "Connect Oracle GoldenGate to its Source Database",
-            "filename": "../../oggmp-atp/oggmp-atp.md"
-        },
-        {
-            "title": "Lab 2: Create OCI GoldenGate resources",
+            "title": "Lab 1: Create OCI GoldenGate resources",
             "description": "Create your OCI GoldenGate deployment and database registration",
             "filename": "../../create/create.md"
+        },
+        {
+            "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Transaction Processing ",
+            "description": "Connect Oracle GoldenGate to its Source Database",
+            "filename": "../../oggmp-atp/oggmp-atp.md"
         },
         {
             "title": "Lab 3: Create a Trusted Connection",

@@ -7,7 +7,8 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 Estimated Lab Time: 20 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
-Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that uses Oracle GoldenGate Microservices to help you replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
+
+Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that uses Oracle GoldenGate Microservices to replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
 
 ### Objectives
 
@@ -16,14 +17,16 @@ In this workshop, you will:
 * Create and run a distribution path on Oracle GoldenGate
 
 ### Prerequisites
-To successfully complete this LiveLab, you must have the following:
-* An on premise or Marketplace Oracle GoldenGate installation
-* An OCI GoldenGate deployment created, with public IP enabled
+
+To successfully complete this LiveLab, you must have an on premise or Marketplace Oracle GoldenGate installation.
 
 ### Lab Breakdown
 
-* Lab 1: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 2: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
+* Lab 1: Create OCI GoldenGate resources
+* Lab 2: Connect Oracle GoldenGate to Autononous Transaction Processing
+* Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
+* Lab 4: Send the Oracle GoldenGate Trail File to OCI GoldenGate
+* Lab 5: (Optional) Connect to the Admin Client
 
 ## Learn More
 
@@ -34,4 +37,4 @@ To successfully complete this LiveLab, you must have the following:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - May 2021
+* **Last Updated By/Date** - July 2021

@@ -20,13 +20,11 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Cloud Database System and the target database is Oracle Autonomous Data Warehouse.
 
-## **STEP 1**: Add and Run an Extract in Oracle GoldenGate
+## **STEP 1:** Add and Run an Extract in Oracle GoldenGate
 
 This Extract process captures data from the source database to send to OCI GoldenGate.
 
-1.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server console.
-
-2.  On the Administration Server Overview page, click **Add Extract** (plus icon).
+1.  In the Oracle GoldenGate Marketplace Administration Server console, click **Add Extract** (plus icon).
 
     ![Click Add Extract](images/02-02-ggs-add-extract.png)
 
@@ -38,14 +36,14 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png)
 
-5.  For **Credential Domain**, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
+5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
 6.  Click **Next**.
 
 7.  In the Extract Parameters screen, add the following to the text area:
 
     ```
-    <code>Table SRC_OCIGGLL.*;</code>
+    <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
@@ -58,7 +56,7 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 2**: Add and Run a Distribution Server Path
+## **STEP 2:** Add and Run a Distribution Server Path
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
@@ -108,41 +106,59 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
-## **STEP 3**: Add and Run a Replicat
+## **STEP 3:** Add a Checkpoint table
+
+1.  In the OCI GoldenGate Deployment Console, open the navigation menu and then click **Configuration**.
+
+    ![](images/02-01-nav-config.png)
+
+2.  For TargetADW, click **Connect to Database**.
+
+3.  Next to Checkpoint, click **Add Checkpoint**.
+
+    ![](images/02-06-add-checkpoint.png)
+
+3.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
+
+    ![](images/02-07-checktable.png)
+
+To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+
+## **STEP 4:** Add and Run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
-1.  Launch the OCI GoldenGate Deployment Console and log in.
-
-2.  Click **Add Replicat** (plus icon).
+1.  Click **Add Replicat** (plus icon).
 
     ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
 
-3.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-4.  On the Replicate Options page, for **Process Name**, enter **Rep**.
+3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
 
-5.  For **Credential Domain**, select **OracleGoldenGate**.
+4.  For **Credential Domain**, select **OracleGoldenGate**.
 
-6.  For **Credential Alias**, select **TargetADW**.
+5.  For **Credential Alias**, select **TargetADW**.
 
-7.  For **Trail Name**, enter R1.
+8.  For **Trail Name**, enter T1.
 
-8.  Under **Managed Options**, enable **Critical to deployment health**.
+9.  From the **Checkpoint Table** dropdown, select **\"SRCMIRROR\_OCIGGLL\".\"CHECKTABLE\"**.
 
-9.  Click **Next**.
+9.  Under **Managed Options**, enable **Critical to deployment health**.
 
-10.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+10. Click **Next**.
 
-11. Click **Create**.
+11.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-12. In the Rep Replicat **Action** menu, select **Start**.
+12. Click **Create**.
+
+13. In the Rep Replicat **Action** menu, select **Start**.
 
     ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
 
     The yellow exclamation point icon changes to a green checkmark.  
 
-## **STEP 4:** Confirm the Distribution Path is running
+## **STEP 5:** Confirm the Distribution Path is running
 
 In the Marketplace Oracle GoldenGate Distribution Server, verify the Distribution Path is running.
 

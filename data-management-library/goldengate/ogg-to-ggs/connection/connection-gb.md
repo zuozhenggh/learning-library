@@ -80,49 +80,35 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Download PEM](images/01b-06.png)
 
-## **STEP 2:** Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
+## **STEP 2:** Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
 
-1.  Log in to Oracle Cloud Infrastructure.
-
-2.  In the OCI Console Navigation menu, click **Compute**, and then click **Instances**.
-
-3.  Under **List Scope**, select your **Compartment** from the dropdown. You can find your compartment information in the Workshop Details of this LiveLab.
-
-4.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** from the list of instances.
-
-5.  Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key.
-
-6.  In a new browser tab or window, enter **https://&lt;public-ip&gt;:443** to open the Service Manager.
-
-7.  Log in to the Service Manager using **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
-
-8.  In the navigation menu (hamburger icon), click **Certificate Management**.
+1.  In the Oracle GoldenGate Marketplace Service Manager, open the navigation menu (hamburger icon), and then click **Certificate Management**.
 
     ![Certificate Management](images/02-01-certmgmt.png)
 
-9.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
+2.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
     ![Add CA Certificates](images/02-03-addcert.png)
 
-10. In the Add CA Certificate dialog, enter a **Unique Name**.
+3.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
     ![Unique Name](images/02-04-addcertdialog.png)
 
-11. For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
+4.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
     ![Enter Certificate](images/02-05-entercert.png)
 
-12. If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
+5.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
     ![Upload Certificate](images/02-06-uploadcert.png)
 
-13. Click **Add**.  The certificate now appears in the Shared list.
+6.  Click **Add**.  The certificate now appears in the Shared list.
 
     ![Shared Certificates](images/02-07-certlist.png)
 
 ## **STEP 3:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  In the OCI GoldenGate Deployment Console, use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
     ![](images/03-01.png)
 
@@ -132,7 +118,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png)
 
-3.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server, and then use the Navigation menu to open the **Configuration** screen.
+3.  Back in the Oracle GoldenGate Marketplace Administration Server, use the Navigation menu to open the **Configuration** screen.
 
 4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
@@ -147,7 +133,6 @@ The following instructions show you how to download the Root Certificate using a
 5.  Click **Submit**.
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
-
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
