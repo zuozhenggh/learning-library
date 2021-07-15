@@ -191,7 +191,7 @@ create table custsales as select * from ext_custsales;
 
 > **Note:** This may take a minute or two, since it will be copying over 25m rows.
 
-8.  Next, we will create an external table to link to the **movies.json** file, then create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+8.  Next, we will create an external table to link to the **movies.json** file. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -205,7 +205,11 @@ begin
         );
 end;
 /  
+```
 
+9. This has created a simple external table with the whole JSON structure in a single column. It will be useful to create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+
+```
 create table movie as
 select
     cast(m.doc.movie_id as number) as movie_id,
@@ -226,8 +230,7 @@ select
     cast(m.doc.nominations as varchar2(4000 byte)) as nominations,
     cast(m.doc.runtime as number) as runtime,
     substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
-from ext_movie m
-where rownum < 10;
+from ext_movie m;
  
 alter table movie add constraint pk_movie_cust_id primary key ("MOVIE_ID");
 alter table movie add constraint movie_cast_json check (cast IS JSON);
@@ -238,9 +241,9 @@ alter table movie add constraint movie_awards_json check (awards IS JSON);
 alter table movie add constraint movie_nominations_json check (nominations IS JSON);
 ```
 
-9.  Click on the **Run Script** button to run the script.
+10.  Click on the **Run Script** button to run the script.
 
-10.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+11.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 define uri_landing = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o'
@@ -267,9 +270,9 @@ end;
 create table pizza_locations as select * from ext_pizza_locations;
 ```
 
-11.  Click on the **Run Script** button to run the script.
+12.  Click on the **Run Script** button to run the script.
 
-12. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
+13. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
 
 ```
 create table TIME as
@@ -277,9 +280,9 @@ SELECT TRUNC (to_date('20210101','YYYYMMDD')) as day
   FROM DUAL CONNECT BY ROWNUM < 732;  
 ```
 
-13. Click on the **Run Script** button to run the script.
+14. Click on the **Run Script** button to run the script.
 
-14. Now that we have all the data we need loaded into the database, it is useful to create a view on the data that joins the tables together. We can use this view in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+15. Now that we have all the data we need loaded into the database, it is useful to create a view on the data that joins the tables together. We can use this view in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 create materialized view mv_custsales
@@ -357,9 +360,9 @@ alter table mv_custsales add constraint cs_crew_json check (crew IS JSON);
 alter table mv_custsales add constraint cs_studio_json check (studio IS JSON);
 ```
 
-15. Click on the **Run Script** button to run the script and create the views.
+16. Click on the **Run Script** button to run the script and create the views.
 
-16. To take a look at the data in the new view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
+17. To take a look at the data in the new view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
 
 ```
 select * from mv_custsales;
