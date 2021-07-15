@@ -108,7 +108,7 @@ key_file=<path to your private keyfile> # TODO
 
 1. You can keep this page opened to continuous to the next lab.
 
-### Create secrets
+### Create GitHub secrets
 
 Secrets are used to store sensitive information used by your workflows. They are encrypted variables and can be defined at organization, repository or repository environment level. We will create secrets to store IAM information used by the OCI CLI thorough the workflow. 
 
@@ -232,6 +232,7 @@ cat <your-pem-public-file>.pem | pbcopy
                 --terraform-version ${{env.TF_VERSION}} \
                 --variables '{"tenancy_ocid": "${{secrets.OCI_TENANCY_OCID}}", "compartment_ocid": "${{env.COMPARTMENT_OCID}}", "region": "${{env.REGION}}", "app_name": "${{env.APP_NAME}}"}' | jq '.data.id' -r)" >> $GITHUB_ENV
 
+
           - name: 'Check Stack'
             if: ${{env.STACK_ID == ''}}
             run: |
@@ -240,16 +241,15 @@ cat <your-pem-public-file>.pem | pbcopy
 
           - name: 'Create Plan Job'
             if: ${{env.STACK_ID != ''}}
-            timeout-minutes: 5        
+            timeout-minutes: 5     
             run: |
               echo "PLAN_JOB_ID=$(oci resource-manager job create-plan-job \
-                --stack-id $STACK_ID | jq '.data.id' -r)" >> $GITHUB_ENV
+                --stack-id $STACK_ID --wait-for-state SUCCEEDED --wait-for-state FAILED | jq '.data.id' -r)" >> $GITHUB_ENV
                 
           - name: 'Fetch Plan Job status'
             if: ${{env.PLAN_JOB_ID != ''}}
             run: |
               echo "${{env.PLAN_JOB_ID}}"
-              sleep 60s
               echo "PLAN_JOB_STATUS=$(oci resource-manager job get \
                 --job-id $PLAN_JOB_ID | jq '.data."lifecycle-state"' -r)" >> $GITHUB_ENV
 
@@ -257,6 +257,7 @@ cat <your-pem-public-file>.pem | pbcopy
             if: ${{env.PLAN_JOB_STATUS != 'SUCCEEDED'}}
             run: |
               echo "Plan Job has not succeeded at this point. Review job $PLAN_JOB_ID"
+              echo "$(oci resource-manager job get-job-logs --job-id ${{env.PLAN_JOB_ID}})"
               exit 1    
       
           - name: 'Apply Plan Job'
@@ -266,7 +267,21 @@ cat <your-pem-public-file>.pem | pbcopy
                 --execution-plan-strategy FROM_PLAN_JOB_ID \
                 --execution-plan-job-id $PLAN_JOB_ID \
                 --stack-id $STACK_ID \
-                --wait-for-state SUCCEEDED | jq '.data.id' -r)" >> $GITHUB_ENV
+                --wait-for-state SUCCEEDED --wait-for-state FAILED | jq '.data.id' -r)" >> $GITHUB_ENV
+
+          - name: 'Fetch Apply Job status'
+            if: ${{env.APPLY_JOB_ID != ''}}
+            run: |
+              echo "${{env.APPLY_JOB_ID}}"
+              echo "APPLY_JOB_STATUS=$(oci resource-manager job get \
+                --job-id $APPLY_JOB_ID | jq '.data."lifecycle-state"' -r)" >> $GITHUB_ENV
+                
+          - name: 'APPLY Job Failed'
+            if: ${{env.APPLY_JOB_STATUS != 'SUCCEEDED'}}
+            run: |
+              echo "Apply Job has not succeeded at this point. Review job $APPLY_JOB_ID"
+              echo "$(oci resource-manager job get-job-logs --job-id ${{env.APPLY_JOB_ID}})"
+              exit 1             
     ```
 
 1. Update the following variables in the `env` section of the file with the information from your own environment:
