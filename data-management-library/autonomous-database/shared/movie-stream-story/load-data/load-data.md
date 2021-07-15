@@ -226,7 +226,8 @@ select
     cast(m.doc.nominations as varchar2(4000 byte)) as nominations,
     cast(m.doc.runtime as number) as runtime,
     substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
-from ext_movie m;
+from ext_movie m
+where rownum < 10>;
  
 alter table movie add constraint pk_movie_cust_id primary key ("MOVIE_ID");
 alter table movie add constraint movie_cast_json check (cast IS JSON);
