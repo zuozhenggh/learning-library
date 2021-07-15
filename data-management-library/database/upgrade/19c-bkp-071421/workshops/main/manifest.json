@@ -9,7 +9,7 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get Started with noVNC Remote Desktop",
+      "title": "Get Started",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -19,44 +19,52 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Generate AWR Snapshot",
-      "filename": "../../awr-snapshot/awr-snapshot.md"
-    },
-    {
-      "title": "Lab 3: Capture and Preserve SQL",
+      "title": "Lab 2: Capture and Preserve SQL",
       "filename": "../../capture-sql/capture-sql.md"
     },
     {
-      "title": "Lab 4: AutoUpgrade",
+      "title": "Lab 3: AutoUpgrade",
       "filename": "../../upgrade/upgrade-to-19c.md"
     },
     {
-      "title": "Lab 5: AWR Compare Report",
+      "title": "Lab 4: AWR Compare Report",
       "filename": "../../awr-compare/awr-compare.md"
     },
     {
-      "title": "Lab 6: SQL Performance Analyzer",
+      "title": "Lab 5: SQL Performance Analyzer",
       "filename": "../../sql/sql-perf-analyzer.md"
     },
     {
-      "title": "Lab 7: SQL Plan Management",
+      "title": "Lab 6: SQL Plan Management",
       "filename": "../../sql/sql-plan-mgmt.md"
     },
     {
-      "title": "Lab 8: SQL Tuning Advisor",
+      "title": "Lab 7: SQL Tuning Advisor",
       "filename": "../../sql/sql-tuning-advisor.md"
     },
     {
-      "title": "Lab 9: Plugin UPGR into CDB2",
+      "title": "Lab 8: Plugin UPGR into CDB2",
       "filename": "../../upgrade/plugin-upgr-cdb2.md"
     },
     {
-      "title": "Lab 10: Transportable Export/Import",
+      "title": "Lab 9: Transportable Export/Import",
       "filename": "../../migrate-ftex/migrate-ftex.md"
     },
     {
-      "title": "Lab 11: Unplug Plug Upgrade",
+      "title": "Lab 10: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
+    },
+    {
+      "title": "Lab 11: Fallback Before Upgrade",
+      "filename": "../../fallback/fallback-before-upgrade.md"
+    },
+    {
+      "title": "Lab 12: Fallback After Upgrade",
+      "filename": "../../fallback/fallback-after-upgrade.md"
+    },
+    {
+      "title": "Lab 13: AutoUpgrade (Optional)",
+      "filename": "../../upgrade/autoupgrade.md"
     },
     {
       "title": "Need Help?",
