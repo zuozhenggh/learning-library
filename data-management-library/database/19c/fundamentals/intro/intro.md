@@ -14,15 +14,33 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named workshop-staged and workshop-installed. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named `workshop-staged` and `workshop-installed`. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
 
 To obtain your compute instances, you need to create SSH keys for yourself. When you reserve this workshop in the LiveLabs tenancy, you are asked to provide your public SSH key on the registration page. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances using Resource Manager.
 
 All labs are independent of each other, so you don't need to do them in any particular order.
 
-### Cleaning Up PDBs at the beginning of each lab
+## Labs
 
-The workshop-installed compute instance consists of three container databases (ORCL, CDB1, and CDB2). You only use CDB1 and CDB2. CDB1 contains one pluggable database (PDB1). CDB2 doesn't contain any pluggable database.
+Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
+
+### General Database Overall Enhancements
+
+The following labs cover general database overall enhancements in Oracle Database 19c:
+
+- Install Oracle Database 19c with Automatic Root Script Execution
+- Clone a PDB by Using DBCA in Silent Mode
+- Relocate a PDB by Using DBCA in Silent Mode
+- Duplicate a CDB by Using DBCA in Silent Mode
+- Decrease the Transportable Tablespace (TTS) Import and Export Time
+- Omit the Column Encryption Attribute During Import
+- Use RMAN to Connect to a PDB to Use the Recovery Catalog
+- Explore Automatic Deletion of Flashback Logs
+
+
+## Cleaning Up PDBs at the beginning of each lab
+
+The `workshop-installed` compute instance consists of three container databases (ORCL, CDB1, and CDB2). You only use CDB1 and CDB2 in this workshop. CDB1 contains one pluggable database (PDB1). CDB2 doesn't contain any pluggable database.
 
 If you need to reset CDB1 back to its original state, you can run the `/home/oracle/labs/19cnf/cleanup_PDBs.sh` shell script. This script drops all PDBs that may have been created during the labs, and re-creates `PDB1` in CDB1. Enter the following command to run the script.
 
@@ -35,40 +53,31 @@ $
 In case you need to recreate `CDB1` and `PDB1`, run the `/home/oracle/labs/19cnf/recreate_CDB1.sh` shell script.
 
 ```nohighlighting
-$ <copy>/home/oracle/labs/19cnf/recreate_ORCL.sh</copy>
+$ <copy>/home/oracle/labs/19cnf/recreate_CDB1.sh</copy>
 ...
 $
 ```
 
 ## Copying and pasting text
 
-The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code. There are several ways to do so.
+The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code from the workshop guide. There are several ways to do this.
 
-With the lab instructions displayed on your compute instance's desktop, it's easy to copy text directly from the lab and paste text into any application using the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** to copy text, and click the middle mouse button to paste text. Some instructions in the labs may include a Copy button.
+If you copy text from an application on the compute instance itself, you can use the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** and **Ctrl+V**. Some instructions in the workshop guide may include a Copy button.
 
-If you need to copy and paste text from your local computer to the compute instance:
+If you copy text from your local computer, then you need to use the clipboard utility on the compute instance to paste text into an application on the compute instance. Here is how you do it:
 
-1. Click the **Clipboard** icon on the control bar (5th button down). In the **Clipboard** dialog box, paste some copied text, for example, "This text was copied from my local computer".
+1. Copy text from your local machine.
+
+2. On your compute instance, click the small grey arrow on the middle-left side of your screen to open the control bar.
+
+    ![Small grey tab](images/small-grey-tab.png "Small grey tab")
+
+3. On the control bar, click the **Clipboard** icon (5th button down).
 
     ![Clipboard](images/clipboard.png "Clipboard")
 
-2. Open the application into which you want to paste the text, for example, a terminal window.
+4. In the **Clipboard** dialog box, paste the copied text using **Ctrl+v** or the **Paste** option on your speed menu. The text is displayed in the Clipboard dialog box.
 
-3. Paste the text using your mouse controls (middle button or context menu option). It's important that you open the Clipboard dialog box and paste your text into it before you open the application into which you want to paste the text. Otherwise, the Paste option on the context menu may be grayed out.
+5. Position your cursor in the application where you want to paste the text, and click your middle mouse button.
 
-
-
-
-
-## General Database Overall Enhancements
-
-The following new features in Oracle Database 19c are covered in the labs:
-
-- Install Oracle Database 19c using automatic root script execution
-- Clone a PDB by using DBCA in silent mode
-- Relocate a PDB by using DBCA in silent mode
-- Duplicate a CDB by using DBCA in silent mode
-- Decrease the transportable tablespace (TTS) import and export time
-- Omit the column encryption attribute during import
-- Use RMAN to connect to a PDB to use the recovery catalog
-- Explore automatic deletion of flashback logs
+> **Note**: The same method works in reverse. If you want to copy and paste text from your compute instance to your local computer, first paste the text into the **Clipboard** dialog box, and then copy and paste the text from it to your local computer.

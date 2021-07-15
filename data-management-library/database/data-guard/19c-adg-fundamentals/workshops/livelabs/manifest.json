@@ -16,7 +16,7 @@
         {
             "title": "Lab 1: Connecting to the Database ",
             "description":"Connection to the databases",
-            "publisheddate": "26/02/2021",
+            "type": "livelabs",
             "filename":"../../connect-db/connect-db.md"
         },
         {
@@ -54,7 +54,8 @@
             "description":"Change the SYS password",
             "publisheddate": "26/02/2021",
             "filename":"../../sys-passwords/sys-passwords.md"
-        },  {
+        },
+        {
             "title": "Appendix 1: Creation of the primary Database",
             "description":"Setup the 19c Primary Database",
             "publisheddate": "26/02/2021",

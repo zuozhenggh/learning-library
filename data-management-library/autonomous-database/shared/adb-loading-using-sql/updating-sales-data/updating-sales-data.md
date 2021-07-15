@@ -1,11 +1,11 @@
 ﻿
 # Updating the Sales Data
 
-## Overview 
+## Introduction
 
 Autonomous Database automatically manages the data storage process for you, so there are no settings to monitor or tweak. You simply load your data, update your data and let Autonomous Database efficiently manage how that data is stored. You will update the movie sales data using MERGE.
 
-## STEP 1 - Finding Out Space Usage for the Movie Sales Data
+## **STEP 1:** Finding Out Space Usage for the Movie Sales Data
 
 1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
 
@@ -23,7 +23,7 @@ Autonomous Database automatically manages the data storage process for you, so t
 
     ![Query result showing space consumed by movie sales table](images/3054194685.png)
 
-## STEP 2 - Creating The Staging Table
+## **STEP 2:** Creating The Staging Table
 
 1. Copy and paste the following code into your SQL worksheet and then run the code:
 
@@ -64,7 +64,7 @@ Autonomous Database automatically manages the data storage process for you, so t
 
     ![Query result showing number of rows](images/3054194697.png)
 
-## STEP 3 - How Much Space Is The Staging Table Using?
+## **STEP 3:** How Much Space Is The Staging Table Using?
 
 1. To find out how much space our new external table is consuming, we can run the following query in our SQL worksheet:
 
@@ -84,7 +84,7 @@ Autonomous Database automatically manages the data storage process for you, so t
 
     This means that our table is not consuming any space within our database.
 
-## STEP 4 - Updating The Movie Sales Data Using MERGE
+## **STEP 4:** Updating The Movie Sales Data Using MERGE
 
 1. Copy and paste the command below in SQL worksheet and run it:
 
@@ -119,7 +119,7 @@ Autonomous Database automatically manages the data storage process for you, so t
 
     ![Results of query to validate financial adjustments file processed successfuly](images/3054194694.png)
 
-## STEP 5 - Finding Out Space Usage For The Movie Sales Data
+## **STEP 5:** Finding Out Space Usage For The Movie Sales Data
 
 1.  Now we can run the same space calculation query in our SQL worksheet
 
@@ -137,7 +137,7 @@ Autonomous Database automatically manages the data storage process for you, so t
 
     ![Query result showing very slight increase in space usage](images/3054194684.png)
 
-## STEP 6 – Creating Additional External Tables
+## **STEP 6:** Creating Additional External Tables
 
 #### Overview
 MovieStream is a global business with finance departments distributed around the world. Each of these periodically generates a number of financial adjustments for customers in their respective countries. In practice, these will come in at various times and will need to be processed one-by-one. For the sake of demonstration we will here process them all more or less simultaneously, but it is important to bear in mind that each must be processed immediately–and therefore individually–so that we can always get the most up-to-date information from our warehouse. We simulate that here by creating an external table for each country’s finance department and running individual merges for each.
@@ -582,12 +582,12 @@ Why is the information above important? This is a real-world scenario for the ma
 
 Please *proceed to the next lab*.
 
-## Want to Learn More?
+## Learn More
 
 [Click here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E) for more information about how to load data into Autonomous Database. 
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Keith Laker, ADB Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2021
+* **Author** - Keith Laker, ADB Product Management
+* **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Brianna Ambler, July 2021

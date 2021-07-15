@@ -9,7 +9,8 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../../introduction/introduction.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab 1: Login to your Environment",
@@ -34,7 +35,8 @@
         },
         {
             "title": "Lab: SQM Scalar and Table Expressions",
-            "filename": "../../sql-macro/sql-macro.md"
+            "filename": "../../sql-macro/sql-macro.md",
+            "type": "dbcs"
         },
         {
             "title": "Big Data and DW",
@@ -42,23 +44,28 @@
         },
         {
             "title": "Lab: Bitwise Aggregate Functions",
-            "filename": "../../bitwise-agg/bitwise-agg.md"
+            "filename": "../../bitwise-agg/bitwise-agg.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Enhanced Analytic Functions",
-            "filename": "../../enhanced-analytics/enhanced-analytics.md"
+            "filename": "../../enhanced-analytics/enhanced-analytics.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Detecting Data Tampering",
-            "filename": "../../data-tampering/data-tampering.md"
+            "filename": "../../data-tampering/data-tampering.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Measuring Asymmetry in Data",
-            "filename": "../../skewness/skewness.md"
+            "filename": "../../skewness/skewness.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Measuring Tailedness of Data",
-            "filename": "../../kurtosis/kurtosis.md"
+            "filename": "../../kurtosis/kurtosis.md",
+            "type": "dbcs"
         },
         {
             "title": "Performance and HA",
@@ -70,7 +77,8 @@
         },
         {
             "title": "Lab: SecureFile LOBs",
-            "filename": "../../securefile-lobs/securefile-lobs.md"
+            "filename": "../../securefile-lobs/securefile-lobs.md",
+            "type": "dbcs"
         },
         {
             "title": "Lab: Automatic In-Memory",

@@ -29,48 +29,48 @@ the case new ones need to be added, then the flexibility of the JSON schema will
 enhancements. For example, the development team might add GeoJSON to improve further the spatial information gathered while
 managing purchase orders. A new feature could then benefit from it to better align stocks management.
 
-Example of JSON formatted purchase order:
+   Example of JSON formatted purchase order:
 
-```
-{
-   "requestor": "Alexis Bull",
-   "requestedAt": "2020-07-20T10:16:52Z",
-   "shippingInstructions": {
-      "address": {
-         "street": "200 Sequoia Avenue",
-         "city": "South San Francisco",
-         "zipCode": 94080,
-         "country": "United States of America",
-         "geometry": {
-             "type": "Point",
-             "coordinates": [ 37.662187, -122.440148 ]
-         }
-      },
-      "phone": [
-         {
-            "type": "Mobile",
-            "number": "415-555-1234"
-         }
-      ]
-   },
-   "specialInstructions": "Air Mail",
-   "allowPartialShipment": false,
-   "items": [
+      ```
       {
-         "description": "One Magic Christmas",
-         "unitPrice": 19.95,
-         "UPCCode": 13131092899,
-         "quantity": 1.0
-      },
-      {
-         "description": "Lethal Weapon",
-         "unitPrice": 19.95,
-         "UPCCode": 85391628927,
-         "quantity": 5.0
+         "requestor": "Alexis Bull",
+         "requestedAt": "2020-07-20T10:16:52Z",
+         "shippingInstructions": {
+            "address": {
+               "street": "200 Sequoia Avenue",
+               "city": "South San Francisco",
+               "zipCode": 94080,
+               "country": "United States of America",
+               "geometry": {
+                  "type": "Point",
+                  "coordinates": [ 37.662187, -122.440148 ]
+               }
+            },
+            "phone": [
+               {
+                  "type": "Mobile",
+                  "number": "415-555-1234"
+               }
+            ]
+         },
+         "specialInstructions": "Air Mail",
+         "allowPartialShipment": false,
+         "items": [
+            {
+               "description": "One Magic Christmas",
+               "unitPrice": 19.95,
+               "UPCCode": 13131092899,
+               "quantity": 1.0
+            },
+            {
+               "description": "Lethal Weapon",
+               "unitPrice": 19.95,
+               "UPCCode": 85391628927,
+               "quantity": 5.0
+            }
+         ]
       }
-   ]
-}
-```
+      ```
 
 3. It is also important to realize that the nature of this data is directly related to the financial incomes for the startup.
 This means that you don't want to miss any Purchase Order for your customer and for your company!
@@ -116,33 +116,44 @@ In fact the microservice deployed in the previous lab already provides an implem
 
 ### Inside the Database
 
-1. Start by creating a table partitioned by interval (time range) with a new partition added automatically every hour:
-   ```
-   <copy>-- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
-   create table PURCHASE_ORDERS (
-       ID VARCHAR2(255) default SYS_GUID() not null primary key,
-       CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
-       LAST_MODIFIED timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
-       VERSION varchar2(255) not null,
-       JSON_DOCUMENT BLOB, -- using the 19c compatible way
-       check (JSON_DOCUMENT is json format oson))
-       LOB(JSON_DOCUMENT) STORE AS (CACHE)
-   PARTITION BY RANGE (CREATED_ON)
-   INTERVAL (INTERVAL '1' HOUR)
-   (
-      PARTITION part_01 values LESS THAN (TO_TIMESTAMP('01-JUN-2021','DD-MON-YYYY'))
-   );</copy>
-   ```
+1. Start by dropping the collection (in the case you started the data loader before). Then you'll create a table partitioned by interval (time range) with a new partition added automatically every hour:
+   
+      ```
+      <copy>
+      soda drop purchase_orders;
+      
+      -- /!\ Warning for on-premises: this will use the Partitioning Option (costs associated unless you use the database XE version)
+      create table PURCHASE_ORDERS (
+         ID VARCHAR2(255) default SYS_GUID() not null primary key,
+         CREATED_ON timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
+         LAST_MODIFIED timestamp default sys_extract_utc(SYSTIMESTAMP) not null,
+         VERSION varchar2(255) not null,
+         JSON_DOCUMENT BLOB, -- using the 19c compatible way
+         check (JSON_DOCUMENT is json format oson))
+         LOB(JSON_DOCUMENT) STORE AS (CACHE)
+      PARTITION BY RANGE (CREATED_ON)
+      INTERVAL (INTERVAL '1' HOUR)
+      (
+         PARTITION part_01 values LESS THAN (TO_TIMESTAMP('01-JUN-2021','DD-MON-YYYY'))
+      );</copy>
+      ```
 
 2. Create the SODA collection using either SQL Developer Web or SQLcl: 
-   
-   `<copy>soda create purchase_orders;</copy>`
+
+    ```
+    $ <copy>soda create purchase_orders;</copy>
+    ```
 
    SQL Developer Web:
+
    ![](./images/soda-collection-created.png)
  
    SQLcl:
+
    ![](./images/soda-collection-created-with-cloud-shell-and-sqlcl.png)
+
+   Doing so, the SODA API will create the collection mapped onto the existing table we just created before.
+
 
 ### Inside your Java code
 

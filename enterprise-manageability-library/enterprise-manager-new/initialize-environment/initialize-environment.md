@@ -38,25 +38,6 @@ This lab assumes you have:
 
     ![](images/em-login.png " ")
 
-    *Note:* If for any reason you want to login from a location that is external to your remote desktop session such as your workstation/laptop, then refer to the following details to access your EM console. For remote SSH terminal connections methods, refer to "*Lab Environment Setup*"
-
-    ```
-    Username: <copy>sysman</copy>
-    ```
-
-    ```
-    Password: <copy>welcome1</copy>
-    ```
-
-    ```
-    URL: <copy>http://<Your Instance public_ip>:7803/em</copy>
-    ```
-
-    *Note*: You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
-
-    ![](images/login-em-external-1.png " ")
-    ![](images/login-em-external-2.png " ")
-
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
@@ -98,8 +79,8 @@ This lab assumes you have:
     - Database and Listener
         ```
         <copy>
-        systemctl restart oracle-database
-        systemctl restart oracle-db-listener
+        sudo systemctl restart oracle-database
+        sudo systemctl restart oracle-db-listener
         </copy>
         ```
 
@@ -107,7 +88,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        systemctl restart oracle-emcc
+        sudo systemctl restart oracle-emcc
         </copy>
         ```
 6. Validate *emcli* connectivity. From the terminal session on your remote desktop, run as user *oracle*
@@ -150,12 +131,12 @@ You may now [proceed to the next lab](#next).
     - Start
 
     ```
-    <copy>systemctl start oracle-database</copy>
+    <copy>sudo systemctl start oracle-database</copy>
     ```
     - Stop
 
     ```
-    <copy>systemctl stop oracle-database</copy>
+    <copy>sudo systemctl stop oracle-database</copy>
     ```
 
     - Status
@@ -167,20 +148,20 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-database</copy>
+    <copy>sudo systemctl restart oracle-database</copy>
     ```
 2. Listener Service (Non-Standard)
 
     - Start
 
     ```
-    <copy>systemctl start oracle-db-listener</copy>
+    <copy>sudo systemctl start oracle-db-listener</copy>
     ```
 
     - Stop
 
     ```
-    <copy>systemctl stop oracle-db-listener</copy>
+    <copy>sudo systemctl stop oracle-db-listener</copy>
     ```
 
     - Status
@@ -192,20 +173,20 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-db-listener</copy>
+    <copy>sudo systemctl restart oracle-db-listener</copy>
     ```
 3. Enterprise Manager Service (OMS and emagent)
 
     - Start
 
     ```
-    <copy>systemctl start oracle-emcc</copy>
+    <copy>sudo systemctl start oracle-emcc</copy>
     ```
 
     - Stop
 
     ```
-    <copy>systemctl stop oracle-emcc</copy>
+    <copy>sudo systemctl stop oracle-emcc</copy>
     ```
 
     - Status
@@ -217,7 +198,51 @@ You may now [proceed to the next lab](#next).
     - Restart
 
     ```
-    <copy>systemctl restart oracle-emcc</copy>
+    <copy>sudo systemctl restart oracle-emcc</copy>
+    ```
+
+## Appendix 2: External Web Access
+
+If for any reason you want to login from a location that is external to your remote desktop session such as your workstation/laptop, then refer to the details below.
+
+1.  Enterprise Manager 13c Console
+
+    ```
+    Username: <copy>sysman</copy>
+    ```
+
+    ```
+    Password: <copy>welcome1</copy>
+    ```
+
+    ```
+    URL: <copy>http://<Your Instance public_ip>:7803/em</copy>
+    ```
+
+    - *Note:* You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
+
+    ![](images/login-em-external-1.png " ")
+    ![](images/login-em-external-2.png " ")
+
+## Appendix 3: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
     ```
 
 ## Acknowledgements
