@@ -25,7 +25,8 @@ In this lab, you will:
 
 The following task is *optional* if a source database is already present.
 
-1. You will need an SSH key pair for logging into your database and GoldenGate environments. If you don’t already have one, please create one. *Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
+1. You will need an SSH key pair for logging into your database and GoldenGate environments. If you don’t already have one, please create one.
+*Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
 
 2. In the OCI Console Menu, go to **Oracle Database > Bare Metal, VM, and Exadata**.
 
@@ -115,8 +116,13 @@ The following task is *optional* if a source database is already present.
     ```
     <copy>mkdir /u01/app/oracle/dumpdir</copy>
     ```
+3. Connect as sysdba to alter the streams pool size:
 
-3. Set the streams pool size = 2GB
+    ```
+    <copy>sqlplus / as sysdba</copy>
+    ```
+
+3. Set the streams pool size = 2GB:
 
     ```
     <copy>alter system set streams_pool_size=2G scope=both SID='sourcedb';</copy>

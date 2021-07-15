@@ -101,7 +101,7 @@ For this task you need the following info from previous steps:
     - Database Administrator Username: **system**
     - Database Administrator Password: <*Admin password*>
     - SSH Database Server Hostname: <*DB Node Private IP Address*>
-    - SSH Private Key: Select private key file
+    - SSH Private Key: Select **private** key file
     - SSH Username: **opc**
     - SSH Sudo Location: **/usr/bin/sudo**
 
