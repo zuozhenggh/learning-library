@@ -1,7 +1,5 @@
 # Upgrade to 19c Hands-On-Lab (HOL) #
 
- TODO: New menu without Lab 5
-
 ## Workshop Overview ##
 
 **19c Database** is the current version Oracle promotes to customers and partners as the best target version for a database upgrade. Oracle 19c is the long-term support version and will be supported for at least four years after the initial release. After this, Extended support and Sustaining support will be available.
@@ -46,7 +44,7 @@
 
 - From the menu, click on the lab that you would like to run. For example, if you want to proceed to **Lab 0**, click **Lab 0: Verify the environment**.
 
- ![](./images/menu.png "")
+ ![](./images/menu.jpg "")
 
 - You may close the menu by clicking ![](./images/menu-close.png "")
 
