@@ -46,7 +46,7 @@
 
  ![](./images/menu.jpg "")
 
-- You may close the menu by clicking ![](./images/menu-close.png "")
+- You may close the menu by clicking the  ![](./images/menu-button.png "") again.
 
 ## Acknowledgements ##
 
