@@ -65,10 +65,16 @@ You will publish into the Workshop Application all of the tasks that you have cr
 6. You can now go to your `Workshop Application` to see your published task. On your workspace Home page, click **Open tab** (plus icon) in the tab bar, select **Applications**.
 ![](./images/plus-apps.png " ")
 
-8. Select you `Workshop Application` from the list of applications.
+7. Select you `Workshop Application` from the list of applications.
 ![](./images/workshop-apps.png " ")
 
-9. You can now see the **list of published tasks** inside your `Workshop Application`.
+8. From the landing page of `Workshop Application`, click on **Patches**. A patch contains updates to published tasks in an Application. When you publish a task to an Application or unpublish a task, a patch is created in the Application. If you publish a group of tasks at the same time, only one patch is created. You should now see the patch that was created for the tasks you are publishing, with the status **In Progress**.
+![](./images/patch-in-progress.png " ")
+
+9. Click on the **Refresh** button for Patches. After a short time, the status of the patch should be displayed as **Success**.
+![](./images/patch-success.png " ")
+
+10. Click on **Tasks** tab under Details. You can now see the **list of published tasks** inside your `Workshop Application`.
 ![](./images/all-tasks.png " ")
 
 ## **STEP 3:** Create a Pipeline
@@ -344,7 +350,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 * [Pipeline Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-tasks.htm)
 * [Using Parameters in Pipelines](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters)
 * [Publishing Design Tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/publish-design-tasks.htm)
-
+* [Patches in OCI Data Integration Applications](https://docs.oracle.com/en-us/iaas/data-integration/using/patches.htm#patches)
 
 ## Acknowledgements
 * **Author** - Theodora Cristea

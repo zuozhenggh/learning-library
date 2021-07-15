@@ -2,16 +2,16 @@
 
 ## Introduction
 
-This lab will walk you through the steps to create **two Data Flows**, **Integration tasks**, a **Data Loader task** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed at the beginning of each of the steps.
+This lab will walk you through the steps to create a **Data Loader task**, **two Data Flows**, an **Integration tasks** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed at the beginning of each of the steps.
 
 *Estimated Lab Time*: 1 hour
 
 ### Objectives
 In this lab, you will:
 * Create an OCI Data Integration project
+* Create a Data Loader task
 * Create two Data Flows
 * Create Integration tasks
-* Create a Data Loader task
 * Create a SQL task
 
 ### Prerequisites
@@ -40,7 +40,104 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
 6. You are now in the **Project Details** page for `DI_Workshop` project.
 ![](./images/di-workshop-project.png " ")
 
-## **STEP 2:** Create a Data Flow - 1
+
+## **STEP 2:** Create a Data Loader task
+A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
+
+In this step of the Workshop, you will create a Data Loader task that will load Orders data from **REVENUE.csv** source file. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
+
+1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
+![](./images/home-projects.png " ")
+
+2. On the **Projects** page, select the project you have been working on for this workshop, `DI_Workshop`.
+![](./images/select-project.png " ")
+
+3. On the `DI_Workshop` **Project Details** page, from the submenu, click **Tasks**.
+![](./images/click-tasks.png " ")
+
+4. Click **Create Task**, and then select **Data Loader**.
+![](./images/data-loader.png " ")
+
+5. On the **Create Data Loader Task** page that pops up, for **Name**, enter `Load Revenue Data into Data Warehouse`.
+![](./images/loader-name.png " ")
+
+6. In the **Source** section, click **Select**.
+![](./images/select-source.png " ")
+
+7. In the **Select Source** page that pops up, select the following values:
+  - **Data Asset**: `Object_Storage`
+  - **Connection**: `Default Connection`
+  - **Compartment**: `DI-compartment` (the Compartment in which you have the bucket where you uploaded your REVENUE.CSV file in Lab 0)
+  - **Schema**: `DI-bucket` (the Object Storage bucket where you uploaded your REVENUE.CSV file in Lab 0)
+  - **Data Entity**: Click `Browse by Name` and then select **REVENUE.csv**
+  - **File Type**: Set to **CSV**. Then leave the default settings as-is in all the remaining fields
+  - Click **Select**.
+
+![](./images/loader-file.png " ")
+
+
+8. In the **Configure Transformations** section, click **Configure**.
+![](./images/configure-transf.png " ")
+
+9. The Configure Transformations panel opens, showing the metadata information of the data entity and its attributes. You can also view sample data in the **Data** tab.
+![](./images/loader-attributes.png " ")
+
+10. Click **Data** to navigate to the Data tab, then locate and select **SRC\_ORDER\_NUMBER**.
+A panel displays, showing the **Data Profile** and the **Attribute Profile** for SRC\_ORDER\_NUMBER. Null Data Percent for SRC\_ORDER\_NUMBER is at 100%.
+![](./images/src-order-num.png " ")
+
+11. From the **transformations icon** (three dots) for SRC\_ORDER\_NUMBER, select **Null Fill Up**.
+![](./images/null-fill-up.png " ")
+
+12. In the **Null Fill Up dialog**, do the following:
+  - Enter `Not Available` in the **Replace by String** field.
+  - Do **not** select Keep Source Attributes.
+  - Leave the **Name** and **Data Type** as-is.
+  - Click **Apply**.
+
+![](./images/null-new.png " ")
+
+
+13. After the **Data** tab refreshes, use the horizontal scrollbar to scroll to the end of the dataset where the updated **SRC\_ORDER\_NUMBER** column is. Notice the values for SRC\_ORDER\_NUMBER have been replaced by the `Not Available` string.
+![](./images/data-loader-new-field.png " ")
+
+14. In the Data tab, look for attribute **ORDER\_DTIME2\_TIMEZONE** by scrolling to the right. Click on the **transformation icon** (three dots) for ORDER\_DTIME2\_TIMEZONE, and then select **Rename**.
+![](./images/rename-attr.png " ")
+
+15. In the **Rename** dialog box, enter a new name for the attribute ORDER\_DTIME2\_TIMEZONE. For this workshop, enter **ORDER\_TIMEZONE** then click **Apply**.
+![](./images/rename-attribute-loader.png " ")
+
+16. Click the **Transformations** icon next to the data entity name.
+![](./images/transformations.png " ")
+
+17. You can **review the list of transformations** that are applied to the source dataset. If you would want to remove a transformation, you could click the X icon next to a transformed attribute name. For now close the Configure Transformations panel, click **OK**.
+![](./images/final-transf.png " ")
+
+18. The number of transformation rules applied is shown in the **Configure Transformations** section.
+![](./images/transf-no.png " ")
+
+19. In the **Target section**, select the **Create New Entity** check box, and then click Select.
+![](./images/loader-tgt.png " ")
+
+20. In the **Select Target** page, select the following values:
+  - **Data Asset**: `Data_Warehouse`
+  - **Connection**: `Beta Connection`
+  - **Schema**: `BETA`
+  - **Data Entity**: Enter `REVENUE_TARGET` for the new entity you're going to create
+  - Under **Staging Location**, select the `Object_Storage` data asset
+  - Select the `Default connection` for Object Storage
+  - Select the `DI-compartment` name
+  - Select the `DI-bucket`
+  - Click **Select** to complete selecting the target.
+
+![](./images/loader-tgt-all.png " ")
+
+
+21. The Target section in the Data Loader task now displays your selections for the target. Click **Save and Close**.
+![](./images/loader-save.png " ")
+
+
+## **STEP 3:** Create a Data Flow - 1
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
 
@@ -275,7 +372,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 49. To save the data flow, click **Save**.
 ![](./images/save-df.png " ")
 
-## **STEP 3:** Create a Data Flow - 2
+## **STEP 4:** Create a Data Flow - 2
 To further explore the capabilities of Data Flows in OCI Data Integration, you will now create **a new Data Flow** with different transformation rules.
 
 This Data Flow will load data from **multiple source files** containing Employees data using File Patterns functionality in OCI Data Integration. After, you will do transformations on the Employees data and later load the data in **multiple target tables**, based on the region of the employees. Two target tables will be loaded: one for employees from **West and Midwest region** and one for employees from **Northeast and South region**. We will take advantage of the **Split operator** in OCI Data Integration Data Flows.
@@ -492,7 +589,7 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
 40. Click on **Save and Close**.
 ![](./images/save-close-button.png " ")
 
-## **STEP 4:** Create Integration Tasks
+## **STEP 5:** Create Integration Tasks
 **Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create Integration tasks for the two Data Flows you created in the previous steps of this Lab.
 
 1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
@@ -509,7 +606,10 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
 
 5. The **Create Integration Task** page opens in a new tab. On this page:
   - Change the **Name** to `Load Customers Lab` and enter an optional **Description**. The value in the **Identifier** field is auto-generated based on the value you enter for Name.
-  - In the Data Flow section, click Select. In the **Select a Data Flow** panel, select `Load Customers and Revenue Data`, and then click Select.
+  ![](./images/integration-task-name.png " ")
+  - In the Data Flow section, click Select.
+  ![](./images/integration-task-select-df.png " ")
+ - In the **Select a Data Flow** panel, select `Load Customers and Revenue Data`, and then click Select.
   ![](./images/select-df.png " ")
   - The Data Flow will be **validated** after the selection and the result should be displayed as **Successful**.
   - Click **Save and Close**.
@@ -527,102 +627,6 @@ Make sure you also map all of the columns, same as in step 34 of this lab.
   - Click **Save and Close**.
 
 ![](./images/save-close-int-task.png " ")
-
-
-## **STEP 5:** Create a Data Loader task
-A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
-
-In this step of the Workshop, you will create a Data Loader task that will load Orders data from **REVENUE.csv** source file. You will then fill up the null values for the Source Order Number and rename the Order Time zone field, and finally load data to **REVENUE_TARGET** table in Autonomous Data Warehouse. The Data Loader task will also create the target table on the Autonomous Data Warehouse.
-
-1. From your Workspace home page of OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
-![](./images/home-projects.png " ")
-
-2. On the **Projects** page, select the project you have been working on for this workshop, `DI_Workshop`.
-![](./images/select-project.png " ")
-
-3. On the `DI_Workshop` **Project Details** page, from the submenu, click **Tasks**.
-![](./images/click-tasks.png " ")
-
-4. Click **Create Task**, and then select **Data Loader**.
-![](./images/data-loader.png " ")
-
-5. On the **Create Data Loader Task** page that pops up, for **Name**, enter `Load Revenue Data into Data Warehouse`.
-![](./images/loader-name.png " ")
-
-6. In the **Source** section, click **Select**.
-![](./images/select-source.png " ")
-
-7. In the **Select Source** page that pops up, select the following values:
-  - **Data Asset**: `Object_Storage`
-  - **Connection**: `Default Connection`
-  - **Compartment**: `DI-compartment` (the Compartment in which you have the bucket where you uploaded your REVENUE.CSV file in Lab 0)
-  - **Schema**: `DI-bucket` (the Object Storage bucket where you uploaded your REVENUE.CSV file in Lab 0)
-  - **Data Entity**: Click `Browse by Name` and then select **REVENUE.csv**
-  - **File Type**: Set to **CSV**. Then leave the default settings as-is in all the remaining fields
-  - Click **Select**.
-
-![](./images/loader-file.png " ")
-
-
-8. In the **Configure Transformations** section, click **Configure**.
-![](./images/configure-transf.png " ")
-
-9. The Configure Transformations panel opens, showing the metadata information of the data entity and its attributes. You can also view sample data in the **Data** tab.
-![](./images/loader-attributes.png " ")
-
-10. Click **Data** to navigate to the Data tab, then locate and select **SRC\_ORDER\_NUMBER**.
-A panel displays, showing the **Data Profile** and the **Attribute Profile** for SRC\_ORDER\_NUMBER. Null Data Percent for SRC\_ORDER\_NUMBER is at 100%.
-![](./images/src-order-num.png " ")
-
-11. From the **transformations icon** (three dots) for SRC\_ORDER\_NUMBER, select **Null Fill Up**.
-![](./images/null-fill-up.png " ")
-
-12. In the **Null Fill Up dialog**, do the following:
-  - Enter `Not Available` in the **Replace by String** field.
-  - Do **not** select Keep Source Attributes.
-  - Leave the **Name** as-is.
-  - Click **Apply**.
-
-![](./images/null-new.png " ")
-
-
-13. After the **Data** tab refreshes, use the horizontal scrollbar to scroll to the end of the dataset where the updated **SRC\_ORDER\_NUMBER** column is. Notice the values for SRC\_ORDER\_NUMBER have been replaced by the `Not Available` string.
-![](./images/data-loader-new-field.png " ")
-
-14. In the Data tab, look for attribute **ORDER\_DTIME2\_TIMEZONE** by scrolling to the right. Click on the **transformation icon** (three dots) for ORDER\_DTIME2\_TIMEZONE, and then select **Rename**.
-![](./images/rename-attr.png " ")
-
-15. In the **Rename** dialog box, enter a new name for the attribute ORDER\_DTIME2\_TIMEZONE. For this workshop, enter **ORDER\_TIMEZONE** then click **Apply**.
-![](./images/rename-attribute-loader.png " ")
-
-16. Click the **Transformations** icon next to the data entity name.
-![](./images/transformations.png " ")
-
-17. You can **review the list of transformations** that are applied to the source dataset. If you would want to remove a transformation, you could click the X icon next to a transformed attribute name. For now close the Configure Transformations panel, click **OK**.
-![](./images/final-transf.png " ")
-
-18. The number of transformation rules applied is shown in the **Configure Transformations** section.
-![](./images/transf-no.png " ")
-
-19. In the **Target section**, select the **Create New Entity** check box, and then click Select.
-![](./images/loader-tgt.png " ")
-
-20. In the **Select Target** page, select the following values:
-  - **Data Asset**: `Data_Warehouse`
-  - **Connection**: `Beta Connection`
-  - **Schema**: `BETA`
-  - **Data Entity**: Enter `REVENUE_TARGET` for the new entity you're going to create
-  - Under **Staging Location**, select the `Object_Storage` data asset
-  - Select the `Default connection` for Object Storage
-  - Select the `DI-compartment` name
-  - Select the `DI-bucket`
-  - Click **Select** to complete selecting the target.
-
-![](./images/loader-tgt-all.png " ")
-
-
-21. The Target section in the Data Loader task now displays your selections for the target. Click **Save and Close**.
-![](./images/loader-save.png " ")
 
 
 ## **STEP 6:** Create a SQL task
