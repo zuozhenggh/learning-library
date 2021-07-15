@@ -15,7 +15,7 @@ This lab assumes you have:
 - SSH Keys
 
 ## **STEP 1**: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [emcc-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fsWp1EI_Wr4KJfvHilXQUSU7GtmmO1puCA_PM9Rh1zjkLMwHegvgAIvTNhHlPl5J/n/natdsecurity/b/stack/o/...zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [emcc-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CaJ4NdhHpEknQAWzpTf94WshzRVfl_yel0AIfU382AWrSGzOm7j9LUxz8ByAmKxD/n/natdsecurity/b/stack/o/emcc-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
