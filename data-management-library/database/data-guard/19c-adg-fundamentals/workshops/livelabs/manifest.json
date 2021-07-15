@@ -54,7 +54,8 @@
             "description":"Change the SYS password",
             "publisheddate": "26/02/2021",
             "filename":"../../sys-passwords/sys-passwords.md"
-        },  {
+        },
+        {
             "title": "Appendix 1: Creation of the primary Database",
             "description":"Setup the 19c Primary Database",
             "publisheddate": "26/02/2021",

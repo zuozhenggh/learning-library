@@ -21,7 +21,7 @@ The DML Redirection process breaks down in 5 steps:
 4. This redo is a normal redo stream and together with the normal redo stream this is sent to the standby database
 5. The standby database applies the received redo stream and releases the lock on the session so the session can see the result.
 
-We will use SQL Developer to connect to the Database System.You can run this tool from any desktop that has network connectivity to the Database System.
+We will use SQL Developer to connect to the Database System. You can run this tool from any desktop that has network connectivity to the Database System.
 
 You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html)
 
@@ -50,26 +50,26 @@ So we will create a common user in the Database to learn about this feature.
     This can be checked by following query:
 
     ````
-    Select name, db_unique_name, database_role from v$database;
+    <copy>Select name, db_unique_name, database_role from v$database;</copy>
     ````
     ![](./images/dml01.png)
 
 2. Then use following query to create a common user in all the pdbs.
 
     ````
-    create user C##HOLUSER identified by "WelC0me2##" container = all;
+    <copy>create user C##HOLUSER identified by "WelC0me2##" container = all;</copy>
     ````
 
 3. Grant this user the minimum privileges required to perform its duties. In a production environment, evaluate carefully the rights common users need. This is just for demonstration purposes that we give this user all the rights possible. For this lab and ease of things, we grant powerful role to the user.
 
     ````
-    grant connect,resource, dba to C##HOLUSER;
+    <copy>grant connect,resource, dba to C##HOLUSER;</copy>
     ````
 
 4. Verify with this query if the user has been created correctly:
 
     ````
-    select username from dba_users where username like '%HOL%';
+    <copy>select username from dba_users where username like '%HOL%';</copy>
     ````
     ![](./images/dml02.png)
 
@@ -90,7 +90,7 @@ More information about this parameter can be found in the [Oracle Documentation.
 You can use following alter system command to enable this parameter.
 
 ````
-alter system set adg_redirect_dml=true scope=both;
+<copy>alter system set adg_redirect_dml=true scope=both;</copy>
 ````
 ![](./images/dml03.png)
 
@@ -115,13 +115,13 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 4. In the pane with the C##HOLUSER connection, first check if a DML table exists.
 
     ````
-    desc DMLTable
+    <copy>desc DMLTable</copy>
     ````
 
 5. Also verify this on the standby
 
     ````
-    desc DMLTable
+    <copy>desc DMLTable</copy>
     ````
 
 6. It is expected this one does not exist.
@@ -130,7 +130,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 7. So on the primary create this table.
 
     ````
-    create table DMLTable (id number);
+    <copy>create table DMLTable (id number);</copy>
     ````
 
 8. Describe this again on the standby with the `desc DMLTable` command.
@@ -143,7 +143,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 1. On the standby database try to insert a row in this table with following SQL Statement
 
     ````
-    insert into DMLTable(id) values (1);
+    <copy>insert into DMLTable(id) values (1);</copy>
     ````
 
 2. and of course do not forget to `commit;`.
@@ -153,7 +153,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
 3. Then on the primary database, verify if the row is visible as well.
 
     ````
-    select * from DMLTable;
+    <copy>select * from DMLTable;</copy>
     ````
 
     ![](./images/dml10.png)
@@ -165,4 +165,4 @@ You have now successfully used Active Data Guard DML Redirection. You may now [p
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021
