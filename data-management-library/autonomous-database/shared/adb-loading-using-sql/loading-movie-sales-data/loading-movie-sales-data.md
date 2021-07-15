@@ -5,7 +5,23 @@
 
 To help us do some financial analysis, the IT Team at MovieStream has created a data extract for us from the MovieStream operational systems. The quarter-end closing process takes a few days, so some of our data contains an early snapshot of our company's financial trading data. We can expect a second set of files a bit later, which will contain the final updates and corrections that reflect the closed-status of the accounts.
 
-### Overview Of The Data Loading Process
+Estimated Lab Time: 25 minutes
+
+### Objectives
+
+In this lab, you will:
+
+*   Launch SQL Worksheet.
+*   Create a new table.
+*   Load sales data.
+
+### Prerequisites
+
+This lab assumes you have:
+
+- Created the Autonomous Data Warehouse database in the previous lab.
+
+## Overview Of The Data Loading Process
 
 Autonomous Data Warehouse provides different ways to load data depending on your needs: a way to load data on a regular basis and a way to load one-off files. In this lab, we will explore how you can quickly and easily initially populate a new data warehouse using a simple script, which you can then amend and use to load new data on an on-going basis. Later in this lab, we will load a set of data files containing just updates and corrections - in many cases with this type of sales analysis you will get an initial file to load containing a "draft" view or soft-close view of the latest sales data. A "final", verified sales data set is often then published later in the month after all the sales transactions have been processed and correctly booked. This is the scenario we are using in this workshop.
 

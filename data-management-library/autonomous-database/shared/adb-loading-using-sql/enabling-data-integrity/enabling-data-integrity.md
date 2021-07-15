@@ -1,13 +1,28 @@
 ﻿
 # Enabling Data Integrity
 
-## Background
+## Introduction
 
 Autonomous Data Warehouse supports the ability to define constraints against your data that enforce logical and business rules. In the example below, we are going to add a unique constraint and ensure that there are no empty rows in our data table.
 
 A unique constraint designates a column (it could also be a group of columns) as a unique key. To satisfy a unique constraint, no two rows in the table can have the same value for the unique key. The second step is to combine this concept with the NOT NULL constraint that was included in the definition of our data table to derive a **PRIMART KEY**. The concept of a primary key concept is a key part of an efficient relational database. Without the primary key, along with the closely related concept of a foreign key, relational databases would simply not work. A primary key provides us with a fast and efficient way to uniquely identify each row in a table.   
 
-## **STEP 1:** Adding Constraints
+Estimated Lab Time: 5 minutes
+
+### Objectives
+
+In this lab, you will:
+
+*   Add a constraint.
+*   Test that the new constraint works.
+
+### Prerequisites
+
+This lab assumes you have:
+
+- Loaded movie sales data into your Autonomous Data Warehouse database in the previous lab.
+
+## **STEP 1:** Adding a Constraint
 
 1. Run the following command in the SQL worksheet to enable a data integrity check on the fact table:
 
