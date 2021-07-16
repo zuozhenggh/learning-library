@@ -111,7 +111,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Click on Data Load](images/selectfilesfromgold.png)
 
-> **Note:** We will be loading files from the **movie** and **custsales** folders in later steps.
+> **Note:** We will be loading files from the **custsales** and **movie** folders in later steps.
 
 4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer_contact/customer_contact.csv load task.
 
@@ -189,7 +189,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 ## **Step 3:** Creating the Customer view
 
-We have now created a number of containing information about MovieStream customers - CUSTOMER_CONTACT, CUSTOMER_SEGMENT, and CUSTOMER_EXTENSION. It will be useful to link these three tables together to create a view of customer information. We can do this with some simple SQL.
+We have now created two main tables containing information about MovieStream customers - CUSTOMER_CONTACT and CUSTOMER_EXTENSION. It will be useful to link these tables together to create a view of customer information. We can do this with some simple SQL.
 
 1. In the **Development** section, click on **SQL** to open a SQL Worksheet.
 
@@ -240,7 +240,7 @@ where cc.cust_id = ce.cust_id;
 ```
 3. Click on the **Run Script** button (or use the F5 key) to run the script.
 
-    ![Run the script to create the customer view](images/runscustscript.png)
+    ![Run the script to create the customer view](images/runcustscript.png)
 
 4. To check that the view has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
@@ -260,9 +260,15 @@ The DBMS_CLOUD package is a feature of the autonomous database that allows us to
 
 In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some files with differently structured data.
 
-1.  Using the top left menu, navigate to **Development** > **SQL** to open a SQL Worksheet.
+1.  Still in the SQL Worksheet viewer, click on the bin icon on the top toolbar to clear the worksheet.
 
-2.  Copy and paste the following script into the Worksheet. This script will create the table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
+    ![Click on the bin icon](images/binicon.png)
+
+    Then click on the bin icon below **Query Result** in the bottom window to clear the output.
+
+    ![Clear the query output](images/clearoutput.png)
+
+2.  Now, copy and paste the following script into the Worksheet. This script will create the table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -307,14 +313,8 @@ select * from ext_custsales;
 
     Click on the bin icon below **Query Result** in the lower window to clear the query output.
 
-    ![Clear the query output](images/clearoutput.png)
 
-
-6.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click on the bin icon to clear the worksheet.
-
-    ![Click on the bin icon](images/binicon.png)
-
-    Then, copy and paste the following statement into the worksheet:
+6.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click on the bin icon to clear the worksheet. Then, copy and paste the following statement into the worksheet:
 
 ```
 create table custsales as select * from ext_custsales;
@@ -376,36 +376,7 @@ alter table movie add constraint movie_nominations_json check (nominations IS JS
 
 10.  Click on the **Run Script** button to run the script.
 
-11.  Next, we will use a similar script to create an external table, and then a table, from the pizza_locations.csv file in the landing area of our data lake. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
-
-```
-define uri_landing = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o'
-define csv_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
-begin       
-    dbms_cloud.create_external_table(
-        table_name => 'ext_pizza_locations',
-        file_uri_list => '&uri_landing/pizza-locations/*.csv',
-        format => '&csv_format',
-        column_list => 'PIZZA_LOC_ID NUMBER,
-                        LAT NUMBER,
-                        LON NUMBER,
-                        CHAIN_ID NUMBER,
-                        CHAIN VARCHAR2(30 BYTE),
-                        ADDRESS VARCHAR2(250 BYTE),
-                        CITY VARCHAR2(250 BYTE),
-                        STATE VARCHAR2(26 BYTE),
-                        POSTAL_CODE VARCHAR2(38 BYTE),
-                        COUNTY VARCHAR2(250 BYTE)'
-        ); 
-end;
-/
-
-create table pizza_locations as select * from ext_pizza_locations;
-```
-
-12.  Click on the **Run Script** button to run the script.
-
-13. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
+11. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
 
 ```
 create table TIME as
@@ -415,7 +386,7 @@ SELECT TRUNC (to_date('20210101','YYYYMMDD')) as day
 
 14. Click on the **Run Script** button to run the script.
 
-15. Now that we have all the data we need loaded into the database, it is useful to create a view on the data that joins the tables together. We can use this view in later analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+15. Now that we have all the data we need loaded into the database, it is useful to create a view on the customer sales data for further analysis. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 create materialized view mv_custsales
