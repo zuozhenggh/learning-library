@@ -36,7 +36,9 @@ This lab requires you to have access to an autonomous database instance (either 
 
 The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 4 in this series (Create a Database User) before proceeding.
 
-## **Step 1**: Configure the Object Storage Connection
+## **Step 1**: Configure the Object Storage Connections
+
+In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area. 
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
@@ -54,9 +56,27 @@ The MOVIESTREAM user must have been set up. If the user is not set up, please co
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-6. Click on **+Add Cloud Storage** in the top right of your screen.
+6. To add access to the Moviestream landing area, click on **+Add Cloud Storage** in the top right of your screen.
 
--   In the **Name** field, enter 'MovieStreamDataLake'
+-   In the **Name** field, enter 'MovieStreamLanding'
+
+> **Note:** Take care not to use spaces in the name.
+
+-   Leave the Cloud Store selected as **Oracle**
+-   Copy and paste the following URI into the URI + Bucket field:
+
+> https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+
+-   Select **No Credential** as this is a public bucket
+-   Click on the **Test** button to test the connection. Then click **Create**.
+
+7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click on Data Load in the top left of your screen to go back to the main Data Load page.
+
+    ![Click Data Load](images/todataload.png)
+
+8. In the **Explore and Connect** section, click on **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click on **+Add Cloud Storage**.
+
+-   In the **Name** field, enter 'MovieStreamGold'
 
 > **Note:** Take care not to use spaces in the name.
 
@@ -68,8 +88,11 @@ The MOVIESTREAM user must have been set up. If the user is not set up, please co
 -   Select **No Credential** as this is a public bucket
 -   Click on the **Test** button to test the connection. Then click **Create**.
 
+We now have two cloud storage locations set up.
 
-## **Step 2:** Load data from files in Object Storage
+    ![Cloud Storage Locations](images/cloudstoragelocations.png)
+
+## **Step 2:** Load data from files in Object Storage using Data Tools
 
 In this step we will perform some simple data loading tasks, to load in CSV files from Object Store into tables in our autonomous database.
 
@@ -81,47 +104,157 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-3. Expand the **customer**, **customer_segment**, and **genre** folders in the tree view on the left hand side and drag the following three files to the right hand pane:
+3. From the MOVIESTREAMGOLD location, expand the **customer_contact** and **genre** folders in the tree view on the left hand side and drag the following two files to the right hand pane:
 
--   customer.csv
--   customer_segment.csv
+-   customer_contact.csv
 -   genre.csv
+
+    ![Click on Data Load](images/selectfilesfromgold.png)
 
 > **Note:** We will be loading files from the **movie** and **custsales** folders in later steps.
 
-4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer/customer.csv load task.
+4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer_contact/customer_contact.csv load task.
 
-    ![Edit the load task for customer.csv](images/editcustomerload.png)
+    ![Edit the load task for customer_contact.csv](images/editcustcontact.png)
 
-5. Rename the target table to **CUSTOMER**
+5. Rename the target table to **CUSTOMER_CONTACT**
 
-    ![Change the target table name to CUSTOMER](images/custtablename.png)
+    ![Change the target table name to CUSTOMER_CONTACT](images/custcontactname.png)
 
-6. In the Mapping section, we can see that the Data Load tool has guessed the target data types for the table. In this case, we want to change the target column type for the **POSTAL_CODE** column from NUMBER to VARCHAR2(4000).
+6. Click **Close** to close the settings editor.
 
-    ![Change the column type for POSTAL_CODE](images/postalcodetype.png)
+7. Click on the pencil icon to edit the settings for the genre/genre.csv load task.
 
-7. Click **Close** to close the settings editor.
+8. Rename the target table to **GENRE**. Then click **Close**.
 
-8. Click on the pencil icon to edit the settings for the customer_segment/customer_segment.csv load task.
-
-9. Rename the target table to **CUSTOMER_SEGMENT**. Then click **Close**.
-
-10. Click on the pencil icon to edit the settings for the genre/genre.csv load task.
-
-11. Rename the target table to **GENRE**. Then click **Close**.
-
-12. Click on the Play button to run the data load job.
+9. Click on the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
 
-    The job should take about 30 seconds to run.
+    The job should take about 20 seconds to run.
 
-13. Check that all three data load tasks completed successfully, and have green tick icons next to them.
+13. Check that both data load tasks completed successfully, and have green tick icons next to them.
 
     ![Check the job is completed](images/loadcompleted.png)
 
-## **Step 3:** Using Database APIs to load richer data files
+14. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
+
+    ![Click on Data Load](images/backtodataload.png)
+
+15. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+
+16. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
+
+    ![Click on Data Load](images/selectlanding.png)
+
+17. From the MOVIESTREAMLANDING location, expand the **customer_extension**, **customer_segment** and **pizza_locations** folders in the tree view and drag the following three files to the right hand pane:
+
+-   customer_extension.csv
+-   customer_segment.csv
+-   pizza_locations.csv
+
+    ![Click on Data Load](images/selectfileslanding.png)
+
+18. Again, we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer_extension/customer_extension.csv load task.
+
+19. Rename the target table to **CUSTOMER_EXTENSION**
+
+    ![Click on Data Load](images/editcustext.png)
+
+20. Click **Close** to close the settings editor.
+
+21. Click on the pencil icon to edit the settings for the customer_segment/customer_segment.csv load task.
+
+22. Rename the target table to **CUSTOMER_SEGMENT**
+
+23. Click **Close** to close the settings editor.
+
+24. Click on the pencil icon to edit the settings for the pizza_locations/pizza_locations.csv load task.
+
+25. Rename the target table to **PIZZA_LOCATIONS**.
+
+26. Click **Close** to close the settings editor.
+
+27. Click on the Play button to run the data load job.
+
+    ![Run the data load job](images/runload2.png)
+
+    The job should take about 20 seconds to run.
+
+28. Check that all three data load tasks completed successfully, and have green tick icons next to them.
+
+    ![Check the job is completed](images/loadcompleted2.png)
+
+29. Click on the **Done** button in the bottom right of the screen.
+
+## **Step 3:** Creating the Customer view
+
+We have now created a number of containing information about MovieStream customers - CUSTOMER_CONTACT, CUSTOMER_SEGMENT, and CUSTOMER_EXTENSION. It will be useful to link these three tables together to create a view of customer information. We can do this with some simple SQL.
+
+1. In the **Development** section, click on **SQL** to open a SQL Worksheet.
+
+2. Copy and paste the following script into the Worksheet. This script will create the view **customer**, joining our customer information together.
+
+```
+create or replace view CUSTOMER
+as
+select  cc.CUST_ID,                
+        cc.LAST_NAME,              
+        cc.FIRST_NAME,             
+        cc.EMAIL,                  
+        cc.STREET_ADDRESS,         
+        cc.POSTAL_CODE,            
+        cc.CITY,                   
+        cc.STATE_PROVINCE,         
+        cc.COUNTRY,                
+        cc.COUNTRY_CODE,           
+        cc.CONTINENT,              
+        cc.YRS_CUSTOMER,           
+        cc.PROMOTION_RESPONSE,     
+        cc.LOC_LAT,                
+        cc.LOC_LONG,               
+        ce.AGE,                    
+        ce.COMMUTE_DISTANCE,       
+        ce.CREDIT_BALANCE,         
+        ce.EDUCATION,              
+        ce.FULL_TIME,              
+        ce.GENDER,                 
+        ce.HOUSEHOLD_SIZE,         
+        ce.INCOME,                 
+        ce.INCOME_LEVEL,           
+        ce.INSUFF_FUNDS_INCIDENTS, 
+        ce.JOB_TYPE,               
+        ce.LATE_MORT_RENT_PMTS,    
+        ce.MARITAL_STATUS,         
+        ce.MORTGAGE_AMT,           
+        ce.NUM_CARS,               
+        ce.NUM_MORTGAGES,          
+        ce.PET,                    
+        ce.RENT_OWN,    
+        ce.SEGMENT_ID,           
+        ce.WORK_EXPERIENCE,        
+        ce.YRS_CURRENT_EMPLOYER,   
+        ce.YRS_RESIDENCE
+from CUSTOMER_CONTACT cc, CUSTOMER_EXTENSION ce
+where cc.cust_id = ce.cust_id;
+```
+3. Click on the **Run Script** button (or use the F5 key) to run the script.
+
+    ![Run the script to create the customer view](images/runscustscript.png)
+
+4. To check that the view has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
+
+```
+select * from customer;
+```
+
+5. Click on the Run button to run the statement. You should see customer information, like this.
+
+    ![Run the script to create the customer view](images/custview.png)
+
+If you scroll to the right, you can see the columns that have been joined from the **customer_extension** table, such as **age**, **commute_distance** and so on.
+
+## **Step 4:** Using Database APIs to load richer data files
 
 The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle Object Store, Amazon S3, and Azure Data Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
@@ -129,7 +262,7 @@ In this step, we will use some of the additional features of the DBMS_CLOUD APIs
 
 1.  Using the top left menu, navigate to **Development** > **SQL** to open a SQL Worksheet.
 
-2.  Copy and paste the following script into the Worksheet. This script will create an external table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
+2.  Copy and paste the following script into the Worksheet. This script will create the table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
 
 ```
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
@@ -207,7 +340,7 @@ end;
 /  
 ```
 
-9. This has created a simple external table with the whole JSON structure in a single column. It will be useful to create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+9. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 create table movie as
@@ -360,7 +493,7 @@ alter table mv_custsales add constraint cs_crew_json check (crew IS JSON);
 alter table mv_custsales add constraint cs_studio_json check (studio IS JSON);
 ```
 
-16. Click on the **Run Script** button to run the script and create the views.
+16. Click on the **Run Script** button to run the script and create the view.
 
 17. To take a look at the data in the new view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
 
