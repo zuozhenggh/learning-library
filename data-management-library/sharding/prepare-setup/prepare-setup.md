@@ -44,6 +44,8 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute + Networking*
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Balasubramanian Ramamoorthy, Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
