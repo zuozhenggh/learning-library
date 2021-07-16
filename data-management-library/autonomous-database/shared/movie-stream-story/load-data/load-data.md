@@ -90,7 +90,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 We now have two cloud storage locations set up.
 
-    ![Cloud Storage Locations](images/cloudstoragelocations.png)
+![Cloud Storage Locations](images/cloudstoragelocations.png)
 
 ## **Step 2:** Load data from files in Object Storage using Data Tools
 
