@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Introducing a powerful union between MySQL Enterprise Edition + Oracle Cloud Infrastructure 
+We are introducing a powerful union between MySQL Enterprise Edition + Oracle Cloud Infrastructure.
 
 In this hands-on workshop you will learn how to create your first MySQL Database Service System in a secure OCI environment. You will also learn how to connect and use your MySQL Database Service System with the MySQL Shell tool.
 
