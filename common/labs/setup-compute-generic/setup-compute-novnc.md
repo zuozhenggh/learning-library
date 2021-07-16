@@ -176,6 +176,12 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
     ![](./images/novnc-login-1.png " ")
 
+    *Note:* While rare, you may see an error on the browser - “*Deceptive Site Ahead*” or similar depending on your browser type as shown below.
+
+    Public IP addresses used for LiveLabs provisioning comes from a pool of reusable addresses and this error is due to the fact that the address was previously used by a compute instance long terminated, but that wasn't properly secured, got bridged and was flagged. You can safely ignore and proceed by clicking on *Details*, and finally on *Visit this unsafe site*.
+
+    ![](images/novnc-deceptive-site-error.png " ")
+
 ## **STEP 4:** Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
 

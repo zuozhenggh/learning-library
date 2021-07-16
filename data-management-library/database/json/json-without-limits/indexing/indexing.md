@@ -83,28 +83,28 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
 
 7. Create a _single field_ (functional) index on the `purchase_orders` SODA collection using the SODA API for PL/SQL:
    
-   ```
-   <copy>
-    DECLARE
-      collection  SODA_COLLECTION_T;
-      spec        VARCHAR2(32000);
-      status      NUMBER;
-    BEGIN
-      -- Open the collection
-      collection := DBMS_SODA.open_collection('purchase_orders');
+      ```
+      <copy>
+      DECLARE
+         collection  SODA_COLLECTION_T;
+         spec        VARCHAR2(32000);
+         status      NUMBER;
+      BEGIN
+         -- Open the collection
+         collection := DBMS_SODA.open_collection('purchase_orders');
 
-      -- Define the index specification
-      spec := '{"name"   : "IDX_REQUESTOR",
-                "fields" : [{"path"     : "requestor",
-                             "datatype" : "string",
-                             "order"    : "asc"}]}';
-      -- Create the index
-      status := collection.create_index(spec);
+         -- Define the index specification
+         spec := '{"name"   : "IDX_REQUESTOR",
+                  "fields" : [{"path"     : "requestor",
+                              "datatype" : "string",
+                              "order"    : "asc"}]}';
+         -- Create the index
+         status := collection.create_index(spec);
 
-      DBMS_OUTPUT.put_Line('Status: ' || status);
-    END;
-    /</copy>
-   ```  
+         DBMS_OUTPUT.put_Line('Status: ' || status);
+      END;
+      /</copy>
+      ```  
    
    We've used the `requestor` JSON Path expression to index only this field (single field index) for each JSON document inside the collection. 
    Behind the curtain, the SODA API will create a functional index (aka function based index) since it'll use the SQL/JSON function `JSON_VALUE`. 
@@ -123,11 +123,11 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
 
 2. Running a QBE is simple. Having several JSON documents with the `requestor` field equals to Augustina Shiflett (random value), we can run the following QBE to retrieve all the documents with the `requestor` field starting by Aug:
 
-   ```
-   <copy>{ "requestor" : { "$like" : "Aug%" } }</copy>
-   ```
+      ```
+      <copy>{ "requestor" : { "$like" : "Aug%" } }</copy>
+      ```
 
-   ![](./images/qbe-requestor-like-aug.png)
+      ![](./images/qbe-requestor-like-aug.png)
    
    But how do we know if the command uses the index we've just created before?
 
@@ -142,16 +142,16 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
    
    It will count the number of JSON documents from the collection using the exact same QBE filter, but this time written using pure SQL thanks to the SQL/JSON standard operator `JSON_EXISTS`.
 
-   ```
-   <copy>SELECT
-      COUNT(*)
-   FROM
-      PURCHASE_ORDERS
-   WHERE
-      JSON_EXISTS ( JSON_DOCUMENT, '$?(@.requestor like "Aug%")' );</copy>
-   ```
-   
-   ![](./images/qbe-as-sql.png)
+      ```
+      <copy>SELECT
+         COUNT(*)
+      FROM
+         PURCHASE_ORDERS
+      WHERE
+         JSON_EXISTS ( JSON_DOCUMENT, '$?(@.requestor like "Aug%")' );</copy>
+      ```
+      
+      ![](./images/qbe-as-sql.png)
 
 
 3. Get the _Execution Plan_ by clicking on the highlighted icon:
@@ -181,33 +181,36 @@ Search indexes take a significant time to create on large collections.
 
 1. Preparing the JSON collection
    
-   We'll create a Search Index on a limited set of data: say 300,000 JSON documents:
-   - you can either delete JSON documents from the `purchase_orders` collection,
-   - or you can also truncate the underlying table and restart the data generator: `<copy>truncate table purchase_orders;</copy>`
+      We'll create a Search Index on a limited set of data: say 300,000 JSON documents:
+      - you can either delete JSON documents from the `purchase_orders` collection,
+      - or you can also truncate the underlying table and restart the data generator: 
+      ```
+      $ <copy>truncate table purchase_orders;</copy>
+      ```
    
 2. Creating the Search Index using the SODA API:
 
-   ```
-   <copy>
-    DECLARE
-      collection  SODA_COLLECTION_T;
-      spec        VARCHAR2(32000);
-      status      NUMBER;
-    BEGIN
-      -- Open the collection
-      collection := DBMS_SODA.open_collection('purchase_orders');
+      ```
+      <copy>
+      DECLARE
+         collection  SODA_COLLECTION_T;
+         spec        VARCHAR2(32000);
+         status      NUMBER;
+      BEGIN
+         -- Open the collection
+         collection := DBMS_SODA.open_collection('purchase_orders');
 
-      -- Define the Search index specification
-      spec := '{"name"   : "IDX_PO"}';
+         -- Define the Search index specification
+         spec := '{"name"   : "IDX_PO"}';
 
-      -- Create the Search index
-      status := collection.create_index(spec);
+         -- Create the Search index
+         status := collection.create_index(spec);
 
-      DBMS_OUTPUT.put_Line('Status: ' || status);
-    END;
-    /   
-   </copy>
-   ```
+         DBMS_OUTPUT.put_Line('Status: ' || status);
+      END;
+      /   
+      </copy>
+      ```
    
    The index specification is very simple. Using the LOW database service, this should take about 1 minute to complete.
 
@@ -221,12 +224,12 @@ Search indexes take a significant time to create on large collections.
    
    Using the following syntax, you can create a Search index that will be maintained asynchronously (e.g not during the INSERT transaction), every second:
 
-   ```
-   <copy>
-   CREATE SEARCH INDEX idx_po ON purchase_orders (json_document) FOR JSON
-   PARAMETERS('SYNC (EVERY "FREQ=SECONDLY; INTERVAL=1")');
-   </copy>
-   ```
+      ```
+      <copy>
+      CREATE SEARCH INDEX idx_po ON purchase_orders (json_document) FOR JSON
+      PARAMETERS('SYNC (EVERY "FREQ=SECONDLY; INTERVAL=1")');
+      </copy>
+      ```
 
    The index creation should take about 1 minute to complete.
 
@@ -239,15 +242,15 @@ Search indexes take a significant time to create on large collections.
    
    Back in the JSON database action panel, run the following search:
 
-   ```
-   <copy>
-   {
-       "requestor": {
-           "$contains": "(%Aug%)"
-       }
-   }
-   </copy>
-   ```
+      ```
+      <copy>
+      {
+         "requestor": {
+            "$contains": "(%Aug%)"
+         }
+      }
+      </copy>
+      ```
    
    ![](./images/contains-qbe.png)
 
@@ -259,18 +262,18 @@ Search indexes take a significant time to create on large collections.
 
    Switch back to the SQL database action panel and run the following SQL query:
 
-   ```
-   <copy>
-   SELECT
-      COUNT(1)
-   FROM
-      PURCHASE_ORDERS p
-   WHERE
-      JSON_TEXTCONTAINS ( JSON_DOCUMENT, '$.requestor', '(%Aug%)');
-   </copy>
-   ```
+      ```
+      <copy>
+      SELECT
+         COUNT(1)
+      FROM
+         PURCHASE_ORDERS p
+      WHERE
+         JSON_TEXTCONTAINS ( JSON_DOCUMENT, '$.requestor', '(%Aug%)');
+      </copy>
+      ```
 
-   ![](./images/json-textcontains.png)
+      ![](./images/json-textcontains.png)
    
    And following, you can see the execution plan:
 
@@ -281,18 +284,18 @@ Search indexes take a significant time to create on large collections.
 
    Oracle Text offers other [advanced operators](https://docs.oracle.com/en/database/oracle/oracle-database/19/ccref/oracle-text-CONTAINS-query-operators.html#GUID-6410B783-FC9A-4C99-B3AF-9E0349AA43D1) such as fuzzy search:
  
-   ```
-   <copy>
-   SELECT DISTINCT
-       p.json_document.requestor
-   FROM
-       PURCHASE_ORDERS p
-   WHERE
-       JSON_TEXTCONTAINS ( JSON_DOCUMENT, '$.requestor', 'fuzzy(%scoot%)');
-   </copy>
-   ```
-   
-   ![](./images/json-fuzzy-search.png)
+      ```
+      <copy>
+      SELECT DISTINCT
+         p.json_document.requestor
+      FROM
+         PURCHASE_ORDERS p
+      WHERE
+         JSON_TEXTCONTAINS ( JSON_DOCUMENT, '$.requestor', 'fuzzy(%scoot%)');
+      </copy>
+      ```
+      
+      ![](./images/json-fuzzy-search.png)
 
 
 In the next lab, we'll look at even more advanced technics to combine JSON documents with Relational data.

@@ -13,12 +13,12 @@ Estimated Lab Time: 15 Minutes
 
 ### Performing a switchover
 
-A switchover is always started from the primary database, where a failover is initiated from the standby database. 
-The difference between a switchover and a failover is that a switchover is a graceful operation where a failover is only needed when the primary database is broken beyond repair or that repair would take too long. 
+A switchover is always started from the primary database, where a failover is initiated from the standby database.
+The difference between a switchover and a failover is that a switchover is a graceful operation where a failover is only needed when the primary database is broken beyond repair or that repair would take too long.
 
 We will use SQL Developer to connect to the Database System. You can run this tool from any desktop that has network connectivity to the Database System.
 
-You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html) 
+You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html)
 
 
 ### Objectives
@@ -26,13 +26,12 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Perform a switchover
 
 ### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab 3: Connect to the Database
+- Connect to the Database
 
 
 ## **STEP 1**: Verify the database roles in the database
 
-1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally. 
+1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally.
 
     ![](./images/switchover-01.png)
 
@@ -40,7 +39,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 2. Verify the roles with the following query:
 
     ````
-    Select name, db_unique_name, database_role from v$database;
+    <copy>Select name, db_unique_name, database_role from v$database;</copy>
     ````
 
 3. Enter this query in both panes and click the run button to see the result.
@@ -68,22 +67,23 @@ We can conclude that the Database in AD1 is the primary database and the databas
 4. Click on the 3 dots on the right, and click **Switchover**
     ![](./images/switchover-05.png)
 
-5. This is a DBA responsibility, so the tooling asks the password. Enter the SYS password from the Primary database and click **OK** then the role transition starts.
+5. This is a DBA responsibility, so the tooling asks the password. Enter the SYS password (WElcome123##) from the Primary database and click **OK** then the role transition starts.
     ![](./images/switchover-06.png)
 
 6. At this point, the lifecycle state will be updating and the role transition happens in the background.
     ![](./images/switchover-07.png)
 
-7. After some time the role transition finished and the state is Available again. 
+7. After some time the role transition finished and the state is Available again.
     ![](./images/switchover-08.png)
 
+    > **Note:** If you get an error indicating that the failover failed and you need to open an SR, try again and enter the sys password carefully.
 
 ## **STEP 3**: Verify the database roles in the database
 
 1. Using SQL Developer, verify the roles again with following Query:
 
     ````
-    Select name, db_unique_name, database_role from v$database;
+    <copy>Select name, db_unique_name, database_role from v$database;</copy>
     ````
 
 2. Enter this query in both panes and click the run button to see the result.
@@ -92,11 +92,10 @@ We can conclude that the Database in AD1 is the primary database and the databas
 
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
-You have now successfully performed a graceful role transition. You may now [proceed to the next lab](#next).
-
+You have now successfully performed a graceful role transition.
 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021
