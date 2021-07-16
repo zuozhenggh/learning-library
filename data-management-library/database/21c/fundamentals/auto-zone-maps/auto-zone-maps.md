@@ -21,11 +21,11 @@ In this lab, you will:
 
 1. Create the `SALES.ZM_TABLE` table in `PDB21`.  
 
-
+    ```
+    $ <copy>cd /home/oracle/labs/M104784GC10</copy>
     ```
 
-    $ <copy>cd /home/oracle/labs/M104784GC10</copy>
-
+    ```
     $ <copy>/home/oracle/labs/M104784GC10/setup_zonemap.sh</copy>
 
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
@@ -117,10 +117,12 @@ In this lab, you will:
     $ <copy>sqlplus sales@PDB21</copy>
     Enter password: <i>WElcome123##</i>
     ```
+
+    ```
+    SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
     ```
 
-    SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
-
+    ```
     SQL> <copy>SELECT COUNT(DISTINCT sale_id) FROM sales_zm WHERE customer_id = 50; </copy>
     COUNT(DISTINCTSALE_ID)
     ----------------------
@@ -147,21 +149,20 @@ In this lab, you will:
 
 
     ```
-
     SQL> <copy>ALTER TABLE sales_zm ADD CLUSTERING BY LINEAR ORDER (customer_id) WITH MATERIALIZED ZONEMAP;</copy>
     Table altered.
+    ```
 
+    ```
     SQL> <copy>ALTER TABLE sales_zm MOVE;</copy>
     Table altered.
 
     SQL>
-
     ```
 
 4. Re-run the query to see the “consistent gets” value.
 
     ```
-
     SQL> <copy>SELECT COUNT(DISTINCT sale_id) FROM sales_zm WHERE customer_id = 50; </copy>
     COUNT(DISTINCTSALE_ID)
     ----------------------
@@ -182,29 +183,30 @@ In this lab, you will:
               1  rows processed
 
     SQL>
-
     ```
 
-  4. Display the status of the zone map created for this table.
+5. Display the status of the zone map created for this table.
 
 
     ```
-
     SQL> <copy>SET AUTOTRACE OFF</copy>
+    ```
 
+    ```
     SQL> <copy>COL zonemap_name FORMAT A20</copy>
+    ```
 
+    ```
     SQL> <copy>SELECT zonemap_name,automatic,partly_stale, incomplete
-          FROM   dba_zonemaps;</copy>
+          FROM dba_zonemaps;</copy>
     ZONEMAP_NAME         AUTOMATIC PARTLY_STALE INCOMPLETE
     -------------------- --------- ------------ ------------
     ZMAP$_SALES_ZM       NO        NO           NO
 
     SQL>
-
     ```
 
-  *The new column `AUTOMATIC`, added to the existing view `DBA_ZONEMAPS` shows that the zone map is not created automatically.*
+    > **Note:** The new column `AUTOMATIC`, added to the existing view `DBA_ZONEMAPS` shows that the zone map is not created automatically.
 
 
 
@@ -214,28 +216,26 @@ In this lab, you will:
 
 
     ```
-
     SQL> <copy>DROP TABLE sales_zm PURGE;</copy>
     Table dropped.
+    ```
 
+    ```
     SQL> <copy>SELECT zonemap_name, automatic, partly_stale, incomplete
         FROM   dba_zonemaps;</copy>
     no rows selected
 
     SQL>
-
     ```
 
 2. Enable automatic zone map creation.
 
 
     ```
-
     SQL> <copy>EXEC DBMS_AUTO_ZONEMAP.CONFIGURE('AUTO_ZONEMAP_MODE','ON')</copy>
     PL/SQL procedure successfully completed.
 
     SQL>
-
     ```
 
 ## **STEP 3:** Show how automatic zone maps are created without DBA intervention
@@ -244,7 +244,6 @@ In this lab, you will:
 
 
     ```
-
     SQL> <copy>CREATE TABLE sales_zm (sale_id NUMBER(10), customer_id NUMBER(10));</copy>
 
     Table created.
@@ -264,22 +263,24 @@ In this lab, you will:
     /</copy>  2    3    4    5    6    7    8    9   10   11   12   13
 
     PL/SQL procedure successfully completed.
+    ```
 
+    ```
     SQL> <copy>EXEC dbms_stats.gather_table_stats(ownname=>NULL, tabname=>'SALES_ZM')</copy>
 
     PL/SQL procedure successfully completed.
 
     SQL>
-
     ```
 
 2. Query the `SALES_ZM` table at least twenty times to see the “consistent gets” value.
 
 
     ```
-
     SQL> <copy>SET AUTOTRACE ON STATISTIC</copy>
+    ```
 
+    ```
     SQL> <copy>SELECT COUNT(DISTINCT sale_id) FROM sales_zm WHERE customer_id = 50;</copy>  
 
     COUNT(DISTINCTSALE_ID)
@@ -300,54 +301,12 @@ In this lab, you will:
               0  sorts (disk)
               1  rows processed
 
-    SQL> <copy>/</copy>
-
-    COUNT(DISTINCTSALE_ID)
-    ----------------------
-                      100
-
-    Statistics
-    ----------------------------------------------------------
-            44  recursive calls
-            12  db block gets
-          <copy>15248  consistent gets</copy>
-              4  physical reads
-          2084  redo size
-            582  bytes sent via SQL*Net to client
-            432  bytes received via SQL*Net from client
-              2  SQL*Net roundtrips to/from client
-              2  sorts (memory)
-              0  sorts (disk)
-              1  rows processed
-
-    SQL> <copy>/</copy>
-
-    COUNT(DISTINCTSALE_ID)
-    ----------------------
-                      100
-
-    Statistics
-    ----------------------------------------------------------
-            44  recursive calls
-            12  db block gets
-          <copy>15248  consistent gets</copy>
-              4  physical reads
-          2084  redo size
-            582  bytes sent via SQL*Net to client
-            432  bytes received via SQL*Net from client
-              2  SQL*Net roundtrips to/from client
-              2  sorts (memory)
-              0  sorts (disk)
-              1  rows processed
     SQL>
-
     ```
 
 3. Because the background process responsible for the zone maps creation will wake up late, use the `/home/oracle/labs/M104784GC10/zonemap_exec.sql` SQL script to wake it up sooner.
 
-
     ```
-
     SQL> <copy>@/home/oracle/labs/M104784GC10/zonemap_exec.sql</copy>
     Connected.
     PL/SQL procedure successfully completed.
@@ -360,7 +319,6 @@ In this lab, you will:
 
 
     ```
-
     SQL> <copy>SELECT zonemap_name, automatic, partly_stale, incomplete
         FROM   dba_zonemaps;</copy>
 
@@ -368,14 +326,12 @@ In this lab, you will:
     -------------------- --------- ------------ ------------
     ZMAP$_SALES_ZM       YES       NO           NO
     SQL>
-
     ```
 
 5. Display the automatic zone map task actions. Query the `DBA_ZONEMAP_AUTO_ACTIONS` view several times until you see that an automatic zone map is created.
 
 
     ```
-
     SQL> <copy>SELECT task_id, msg_id, action_msg  FROM dba_zonemap_auto_actions;</copy>
 
       TASK_ID     MSG_ID
@@ -406,14 +362,12 @@ In this lab, you will:
     BS:****** End of Zonemap Background Action Report for Task ID: 7 **********
     11 rows selected.
     SQL>
-
     ```
 
 6. Another way to show the activity report of the auto task run is to use the `DBMS_AUTO_ZONEMAP.ACTIVITY_REPORT` function.
 
 
     ```
-
     SQL> <copy>SELECT dbms_auto_zonemap.activity_report(systimestamp-2, systimestamp, 'TEXT') FROM dual;</copy>
 
     DBMS_AUTO_ZONEMAP.ACTIVITY_REPORT(SYSTIMESTAMP-2,SYSTIMESTAMP,'TEXT')
@@ -448,14 +402,12 @@ In this lab, you will:
     -------------------------------------------------------------------------------
     Execution Name  Finding Name  Finding Reason  Finding Type  Message
     SQL>
-
     ```
 
   If you want to know how many zone maps were created across all executions, run the following query:
 
 
     ```
-
     SQL> <copy>SELECT * FROM dba_zonemap_auto_actions
     WHERE action_msg LIKE '%succesfully created zonemap:%' ORDER BY TIME_STAMP;</copy>
 
@@ -473,13 +425,11 @@ In this lab, you will:
     BS:successfully created zonemap: ZN:ZMAP$_SALES_ZM BT:SALES_ZM SN:SALES CL:SALE_ID CT:+00 00:00:02.830222 TS:2020-11-12/16:37:54 DP:8
     12-NOV-20 04.37.54.000000000 PM
     SQL>
-
     ```
 7. Update the `SALE_ID` column vales in `SALES_ZM` table.
 
 
     ```
-
     SQL> <copy>@/home/oracle/labs/M104784GC10/zonemap_update.sql</copy>
     8000 rows updated.
     8000 rows updated.
@@ -487,14 +437,12 @@ In this lab, you will:
     8000 rows updated.
     Commit complete.
     SQL>
-
     ```
 
 8. Display the status of the zone map maintenance.
 
 
     ```
-
     SQL> <copy>SELECT zonemap_name, automatic, partly_stale, incomplete
         FROM   dba_zonemaps;</copy>
 
@@ -503,14 +451,12 @@ In this lab, you will:
     ZMAP$_SALES_ZM       YES       YES         NO
 
     SQL>
-
     ```
 
 9. Display the activity report until you see actions to automatic zone map maintenance.
 
 
     ```
-
     SQL> <copy>SELECT dbms_auto_zonemap.activity_report(systimestamp-2, systimestamp, 'TEXT') FROM dual;</copy>
 
     DBMS_AUTO_ZONEMAP.ACTIVITY_REPORT(SYSTIMESTAMP-2,SYSTIMESTAMP,'TEXT')
@@ -547,20 +493,14 @@ In this lab, you will:
     -------------------------------------------------------------------------------
     Execution Name  Finding Name  Finding Reason  Finding Type  Message
     SQL>
-
     ```
 
-  *It is possible that the background process responsible for the zone maps maintenance woke up very quickly and already rebuilt the zonemap. In this case, no information in &quot;`ZONEMAPS
-
-                                      MAINTENANCE DETAILS`&quot; would be displayed.*
-
-
+    > **Note:** It is possible that the background process responsible for the zone maps maintenance woke up very quickly and already rebuilt the zonemap. In this case, no information in &quot;`ZONEMAPS MAINTENANCE DETAILS`&quot; would be displayed.
 
 10. Display the activity report.
 
 
     ```
-
     SQL> <copy>SELECT zonemap_name, automatic, partly_stale, incomplete
         FROM   dba_zonemaps;</copy>
 
@@ -601,24 +541,24 @@ In this lab, you will:
     -------------------------------------------------------------------------------
     Execution Name  Finding Name  Finding Reason  Finding Type  Message
     SQL>
-
     ```
 
 ## **STEP 4:** Drop the table
 
 1.  Execute the commands to drop the table.
-    ```
 
+    ```
     SQL> <copy>DROP TABLE sales_zm PURGE;</copy>
     Table dropped.
+    ```
 
+    ```
     SQL> <copy>SELECT zonemap_name, automatic, partly_stale, incomplete
         FROM   dba_zonemaps;</copy>
     no rows selected
 
     SQL> <copy>EXIT</copy>
     $
-
     ```
 
 You may now [proceed to the next lab](#next).
@@ -627,5 +567,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
-
+* **Last Updated By/Date** -  Tom McGinn, July 2020
