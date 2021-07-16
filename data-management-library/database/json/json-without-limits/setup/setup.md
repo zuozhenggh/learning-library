@@ -166,6 +166,8 @@ Save the auth token for later.
 
 2. Copy the following and paste it into the file, and add the values you collected earlier:
 
+    /!\ FOR RESERVED TENANTS (Green Button): Please, check the remark just after this block.
+
     ```
     <copy>
     [DEFAULT]
@@ -182,6 +184,14 @@ Save the auth token for later.
     database_collections=purchase_orders
     </copy>
     ```
+
+   /!\ FOR RESERVED TENANTS (Green Button): Please, verify that you've chosen to deploy an ATP-S database and not an Always Free one! E.g. add this additional configuration parameter:
+
+   ```
+   <copy>
+   database_type=atp
+   </copy> 
+   ```
 
    *Remark: the JSON data being used will be stored inside the **purchase_orders** collection.*
 
