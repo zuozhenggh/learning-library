@@ -2,7 +2,7 @@
 
 ## About this workshop
 
-We will walk you through the process of migrating an existing on-premises WebLogic domain to WebLogic for Oracle Kubernetes Engine (OKE). The WebLogic domain we'll migrate contains Java applications and a datasource connecting to a database that will be migrated along with the WebLogic domain.
+We will walk you through the process of migrating an existing on-premises WebLogic domain to Oracle WebLogic for Oracle Kubernetes Engine (OKE). The WebLogic domain we'll migrate contains Java applications and a datasource connecting to a database that will be migrated along with the WebLogic domain.
 
 Attached below is a sample architecture of the final solution:
 ![](./images/arch-oke.png " ")

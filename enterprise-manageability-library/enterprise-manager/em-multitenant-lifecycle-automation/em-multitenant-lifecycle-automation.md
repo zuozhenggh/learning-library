@@ -1,13 +1,27 @@
 # Multitenant Database Lifecycle Management
 ## Introduction
 
-In this workshop you will explore how Database organizations can begin their Cloud journey with Multitenant Database by requesting a Pluggable Database (PDB) for testing purposes and perform other Lifecycle Operations like Clone, Unplug etc. You will also focus on setting up Private Cloud for PDBs and highlighting the ease of Provisioning, Resizing and even Deleting a PDB using a Self-Service option.
+In this workshop, you will learn how IT can establish Database Private Cloud for enabling self-service users to request Pluggable Database (PDB) for testing, and perform other lifecycle operations like Clone, Plug/Unplug, etc. You will also learn about ease of provisioning, resizing, and deleting a PDB using a self-service interface
 
-*Estimated Lab Time*: 60 minutes
+Estimated Lab Time: 60 minutes
+
+### About Multitenant Database Lifecycle Management
+Oracle Enterprise Manager Database Lifecycle Management Pack comes with out-of-box Deployment Procedures to provision, clone, and patch  various configurations of the Oracle Database. The Management Pack offers new capabilities that simplify support for the entire lifecycle of pluggable databases, including migration, plugging and unplugging. The Management Pack features include pluggable database (PDB) provisioning and management from the self-service portal, PDB patching and upgrades, and PDB relocation to new platforms.
+
 
 ### Objectives
 
-The objective of this workshop is to highlight the Oracle Enterprise Manager Cloud Control 13c’s Lifecycle Management capabilities around Multitenant Database.
+The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lifecycle Management capabilities for multitenant databases.
+
+| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
+|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Create a Pluggable Database (PDB)                                      | 10min                     | Create Pluggable database (PDB) within a CDB and run a post-script to lock/unlock accounts.                                                                                  | Create multiple PDBs with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                                           |
+| 2    | Un-plug/Plug an existing Pluggable Database | 10min                     | Un-plug a PDB and later Plug it back in a CDB when needed (Create from unplugged)                                                                                                                       | Unplug a PDB when not needed and plug it back as per need hence maximizing resource utilization in your organization. Easily upgrade PDBs with few clicks by moving from one container to another.                                                                                                                  |
+| 3    | Clone an existing Pluggable Database                                 | 5min                      | Create multiple copies (Clones) of a PDB to dev/test purpose                                                                                                                     | Create multiple PDBs clones for Dev/test with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                      |
+| 4    | Compliance Management for Pluggable Database                                                         | 10min                     | Apply a compliance standard on PDB and use corrective action to fix the violation                                                                                                | Make sure PDBs comply with compliance standards and fix them with a click of a button if there is any anomaly.                                                                                                                         |
+| 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
+| 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
+
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -25,27 +39,17 @@ The objective of this workshop is to highlight the Oracle Enterprise Manager Clo
 e.g: https://111.888.111.888:7803/em
 ````
 
-*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.3 and Database 19.3 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-### Lab Timing (Estimated)
 
-| **Step No.** | **Feature**                                                                | **Approx. Time** | **Details**                                                                                                                                                                      | **Value proposition**                                                                                                                                                                                                                   |
-|--------|----------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1    | Create a Pluggable Database (PDB)                                      | 10min                     | Create Pluggable database (PDB) within a CDB and run a post-script to lock/unlock accounts.                                                                                  | Create multiple PDBs with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                                           |
-| 2    | Un-plug/Plug an existing Pluggable Database | 10min                     | Un-plug a PDB and later Plug it back in a CDB when needed (Create from unplugged)                                                                                                                       | Unplug a PDB when not needed and plug it back as per need hence maximizing resource utilization in your organization. Easily upgrade PDBs with few clicks by moving from one container to another.                                                                                                                  |
-| 3    | Clone an existing Pluggable Database                                 | 5min                      | Create multiple copies (Clones) of a PDB to dev/test purpose                                                                                                                     | Create multiple PDBs clones for Dev/test with few clicks while making sure they follow organization’s standards by using automated post-scripts.                                                                                      |
-| 4    | Compliance Management for Pluggable Database                                                         | 10min                     | Apply a compliance standard on PDB and use corrective action to fix the violation                                                                                                | Make sure PDBs comply with compliance standards and fix them with a click of a button if there is any anomaly.                                                                                                                         |
-| 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
-| 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
-
-## **Step 0:** Running your Workload
+## **STEP 0:** Running your Workload
 
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## **Step 1:** Create Pluggable Database (PDB)
+## **STEP 1:** Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
@@ -55,6 +59,8 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 3.  In the Database Provisioning page, in the Related Links section of the left menu pane, **click** “**Provision Pluggable Databases**”
 
+  ![](images/PDB-Provisioning.jpg " ")
+
 4.  In the Provision Pluggable Database Console, in the **Container Database** section, **select** the CDB (**CDB186 – 18.8 version**) within which you want to create new PDBs.
 
   ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
@@ -63,21 +69,19 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/2248640eabc0efa2fb32293ec07fb389.jpg " ")
 
-6.  Use the named credentials (CDB186\_SYS) for login
-
-  ![](images/8741cbb813d375a296f8344f4beaeb7e.jpg " ")
+6.  In the PDB Creation Options section, choose **Create a New PDB**. Use the Named credentials (ORACLE) for login
 
   ![](images/9be6823423a692b7e1f0e240c10567c9.jpg " ")
 
-7.  In the Source page of the Create Pluggable Database Wizard, in the Source Type section, **select** Create a new PDB . **Select** Named credentials “ORACLE”In the Identification page, **enter** a unique name for the PDB you are creating (your initial\_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
+7.  In the Identification page, **enter** a unique name for the PDB you are creating (your initial\_pdb). **Optionally**, **select** check box to “create multiple DBs” and put **2** as number of copies.
 
-8.  In the PDB Administrator section, **enter** the credentials of the admin user account you need to create for administering the PDB. **UserName**: pdbadmin **Password**: welcome1 **Click** Next.
+  In the PDB Administrator section, **enter** the credentials of the admin user account you need to create for administering the PDB. **UserName**: pdbadmin **Password**: welcome1 **Click** Next.
 
   ![](images/7442f8d5bf4704af57849ae9741f5a36.jpg " ")
 
 9. For storage option, **select** “Use Common Location for PDB Datafiles” and leave defaults as-is.
 
-  ![](images/e42b8bce3bdaac0c78fccbe24f1ede48.jpg " ")
+  ![](images/CreatePluggableDatabaseStorage.jpg " ")
 
 10. Optionally, you may also want to select a post-script, which will run post creation of PDB. Choose “Select from software library” and then search for
 “**unlock**” and select unlock.sql (Or you can upload a SQL file from your system).
@@ -99,7 +103,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/657ef309d7087942b8d871256a359050.jpg " ")
 
-## **Step 2:** Un-plug/Plug an Existing Pluggable Database (PDB)
+## **STEP 2:** Unplug/Plug an existing Pluggable Database (PDB)
 
 1. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -155,7 +159,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/2ac79b220d664b868c62e4529791e187.jpg " ")
 
-**Note**: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
+  **Note**: We will keep pdbadmin as a default admin. So, don’t select anything in this section.
 
 17. On the Identification page, in the PDB Template Location section: **Select** “Software Library” radio button. **Click** on the magnifier icon placed on Location text box. **Select** the Name which you created During Unplug **Click** Next
 
@@ -173,9 +177,9 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 24. Optionally **Click** the status link for each step to view the details of the execution of each step. Once the procedure is completed, you can Navigate to ***Targets >> Databases***, Click on CDB186 and you will see the newly created PDB
 
-**Note**: You do not have to wait until the steps complete and move on to the next section.
+  **Note**: You do not have to wait until the steps complete and move on to the next section.
 
-## **Step 3:** Clone an Existing Pluggable Database (PDB)
+## **STEP 3:** Clone an existing Pluggable Database (PDB)
 
 1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -203,7 +207,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 7.  **Select** “Use Common Location for PDB Datafiles” in the Source page of the Create Pluggable Database Wizard, please enter **/tmp** in temporary working directory.
 
-Optionally, you can select the postscript as we did in the creation flow. **Click** Next
+  Optionally, you can select the postscript as we did in the creation flow. **Click** Next
 
   ![](images/ff556eb15570c55dfd477361c20051d6.jpg " ")
 
@@ -215,7 +219,7 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
-## **Step 4:** Compliance Management for Pluggable Database
+## **STEP 4:** Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
@@ -278,7 +282,7 @@ Navigate to ***Enterprise >> Compliance >> Library*** to get started
 
   ![](images/21e5a02e32296dd7dea196a7edfd29ac.jpg " ")
 
-The job will take about a minute to complete. Click on refresh icon if the job did not complete. You will see the status change to Succeeded
+  The job will take about a minute to complete. Click on refresh icon if the job did not complete. You will see the status change to Succeeded
 
   ![](images/3be714a84eeca17c22b2c786688b567a.jpg " ")
 
@@ -290,7 +294,7 @@ The job will take about a minute to complete. Click on refresh icon if the job d
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## **Step 5:** Self-Service to Request PDB Using PDBaaS
+## **STEP 5:** Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
@@ -339,9 +343,9 @@ With the Self-Service Portal, cloud users can request an  Pluggable Database thr
 
 8.  Click on Submit button
 
-What do these options represent? In most cases the PDBaaS options are self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the table listed below for a description of each option:
+  What do these options represent? In most cases the PDBaaS options are self-explanatory. The self-service user should be able to provision a PDB by entering minimal information. Fields with an ‘\*’ represent mandatory input fields. Please refer to the table listed below for a description of each option:
 
-| **Field**                   | **Description**                                                                                                                                                                                                                                                                                    |
+  | **Field**                   | **Description**                                                                                                                                                                                                                                                                                    |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Request Name                | By default, it is the Self-Service User Requestor name with timestamp. This field can be modified                                                                                                                                                                                                  |
 | Zone                        | The Zone is a PaaS Zone that represents hosts/vm, where the PDB database will be deployed for this request. The zones are configured by the administrator. Self-service user need not know the host or platform details.                                                                           |
@@ -359,11 +363,11 @@ What do these options represent? In most cases the PDBaaS options are self-expla
 
 11.  It will perform the following actions:
 
-* Create database roles and PDB
-* Create a resource plan based on the workload size
-* Create and register the database
+  * Create database roles and PDB
+  * Create a resource plan based on the workload size
+  * Create and register the database
 
-The request should take less than 10 minutes to complete. Click on refresh icon or as an alternative set Refresh to 30 seconds. The success status
+  The request should take less than 10 minutes to complete. Click on refresh icon or as an alternative set Refresh to 30 seconds. The success status
 indicates that PDB database was successfully created. The new PDB database should be visible under Database Cloud Services page.
 
   ![](images/3fc668c3d45cc0a1a7dc3c3f7233bfe6.jpg " ")
@@ -376,13 +380,13 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/ee3e8bccf25b8a836bea2f9a3a487cb7.jpg " ")
 
-**Note**: Following widgets are shown on the Database Cloud Services landing Page
+  **Note**: Following widgets are shown on the Database Cloud Services landing Page
 
-* **Instances** show the number and status (Up/Down) of the DB/PDB Instances provisioned by the self-service user.
-* **Expiry**, shows the expiration summary of DB/PDB Instances.
-* **Usage**, resource usage status for the Self-Service user, status of the resource consumption for this user.
-* **Memory**, current memory consumption against the Quota for this user.
-* **Storage**, current storage consumption against the Quota for this user.
+  * **Instances** show the number and status (Up/Down) of the DB/PDB Instances provisioned by the self-service user.
+  * **Expiry**, shows the expiration summary of DB/PDB Instances.
+  * **Usage**, resource usage status for the Self-Service user, status of the resource consumption for this user.
+  * **Memory**, current memory consumption against the Quota for this user.
+  * **Storage**, current storage consumption against the Quota for this user.
 
 14. Click on the name of the PDB. You can use the connection details to connect to the PDB using SQL tools.
 
@@ -392,9 +396,9 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/20537907e3a274a9df16e7c54f73713f.jpg " ")
 
-* Resize allows you to resize your instance to other available resource sizes.
-* We have 2 resource sizes available for Service Template. Both are displayed.
-* Current size of PDB instance is Small, you can now resize it to large.
+  * Resize allows you to resize your instance to other available resource sizes.
+  * We have 2 resource sizes available for Service Template. Both are displayed.
+  * Current size of PDB instance is Small, you can now resize it to large.
 
   ![](images/cc03cc86d7e3d8146a3d799b52583a83.jpg " ")
 
@@ -418,7 +422,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg " ")
 
-## **Step 6:** Administrative setup for PDB-as-a-Service (Private Cloud)
+## **STEP 6:**  Setup  PDB-as-a-Service (PDBaaS)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 
@@ -446,7 +450,7 @@ Login to the EM Console as super administrator **sysman/welcome1**
 
 1. On the EM Console, go to **Setup**, then **Cloud**, then **Database**. Select **Pluggable Database** from the drop-down menu. And then click on **Pluggable Database Pool**’.
 
-A Pluggable Database Pool consists of a set of Container Databases on which PDBs will be provisioned.
+  A Pluggable Database Pool consists of a set of Container Databases on which PDBs will be provisioned.
 
   ![](images/b49f455842d0fb11dd7de44fcaccfe26.jpg " ")
 
@@ -473,24 +477,35 @@ A Pluggable Database Pool consists of a set of Container Databases on which PDBs
 
   ![](images/47baba2a1e7567bfb0b5f89429a7831d.jpg " ")
 
-There are two service templates pertaining to Pluggable Database
+  There are two service templates pertaining to Pluggable Database
 
-* **Provision New Empty Pluggable Database**: This template enables the user to create a new pluggable database in a container database configured by DBA
-* **Provision Pluggable Database with Data**: This template enables user to create a new pluggable database with data from a non-container database.
+  * **Provision New Empty Pluggable Database**: This template enables the user to create a new pluggable database in a container database configured by DBA
+  * **Provision Pluggable Database with Data**: This template enables user to create a new pluggable database with data from a non-container database.
 
 2. Click on name of any template to explore more details.
 
   ![](images/a0efb63a12d01e1254593656765ec52a.jpg " ")
 
-That concludes this lab.
+This concludes lab
+You may now [proceed to the next lab](#next).
 
-## Want to Learn More?
+
+## Learn More
 - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
 - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
 - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
 
 ## Acknowledgements
-- **Author** - Pankaj Chandiramani, Oracle Enterprise Manager Product Management
+- **Author** - Harish Niddagatta, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, August 2020
+- **Last Updated By/Date** - Harish Niddagatta, Enterprise Manager Product Management, June 2021
+
+## Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/enterprise-manager).
+  * Click the **Log In** button and login using your Oracle Account.
+  * Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  
+
+  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+  If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
