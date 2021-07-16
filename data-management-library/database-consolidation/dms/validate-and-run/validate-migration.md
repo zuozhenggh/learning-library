@@ -64,7 +64,7 @@ In this lab, you will:
 
     ![](images/2.png =90%x*)
 
-  3. Press **Start** to begin the Migration
+  3. Press **Start** to begin the Migration. Please note, if a dialog box appears, press **Start** in the dialog box  to begin the migration.
 
     ![](images/pic.png =90%x*)
 

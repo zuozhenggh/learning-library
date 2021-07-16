@@ -6,7 +6,7 @@ With OCI Database Migration we make it quick and easy for you to migrate databas
 
 ## About OCI Database Migration
 
-OCI Database Migration (DMS) provides high performance, fully managed approach to migrating databases from on-premsies, Oracle or third-party cloud into OCI-hosted databases. Migrations can be in either one of the following modes:
+OCI Database Migration (DMS) provides high performance, fully managed approach to migrating databases from on-premises, Oracle or third-party cloud into OCI-hosted databases. Migrations can be in either one of the following modes:
 
 * **Offline**: The Migration makes a point-in-time copy of the source to the target database. Any changes to the source database during migration are not copied, requiring any applications to stay offline for the duration of the migration.
 * **Online**: The Migration makes a point-in-time copy and replicates all subsequent changes from the source to the target database. This allows applications to stay online during the migration and then be switched over from source to target database.
@@ -33,12 +33,6 @@ The DMS service runs as a managed cloud service separate from the user's tenancy
 
 Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
-### About Product/Technology
-Enter background information here....
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -47,7 +41,6 @@ In this lab, you will:
 * Create a VCN
 * Create a Vault
 * Create Databases
-* Create a GoldenGate Marketplace Instance
 * Create an Object Storage Bucket
 * Create Registered Databases
 * Create, Validate, and Run a Migration
