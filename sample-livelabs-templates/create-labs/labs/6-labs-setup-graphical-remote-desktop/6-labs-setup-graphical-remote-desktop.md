@@ -320,16 +320,22 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
 
 4. Fill in the details as shown below and click *Add* to add *Firefox* to the list of applications to be started automatically on *VNC* Startup
 
-    ```
-    Name: <copy>Firefox Browser</copy>
-    ```
+    - Name
 
     ```
-    Command: <copy>firefox</copy>
+    <copy>Firefox Browser</copy>
     ```
 
+    - Command
+
     ```
-    Comment: <copy>Launch Firefox on VNC Startup</copy>
+    <copy>firefox</copy>
+    ```
+
+    - Comment
+
+    ```
+    <copy>Launch Firefox on VNC Startup</copy>
     ```
 
     ![](./images/novnc-startup-prog-2.png " ")
@@ -392,12 +398,16 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
 
 3. Provide the following two inputs and click *Add* to create a bookmark to *LiveLabs*
 
-    ```
-    Name: <copy>Oracle LiveLabs</copy>
-    ```
+    - Name
 
     ```
-    Location: <copy>bit.ly/golivelabs</copy>
+    <copy>Oracle LiveLabs</copy>
+    ```
+
+    - Location
+
+    ```
+    <copy>bit.ly/golivelabs</copy>
     ```
 
     ![](./images/add-firefox-bookmarks-03.png " ")
@@ -412,16 +422,20 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
 
 7. Provide the following input and click *Add* to create the folder *Workshop Guides*
 
+    - Name
+
     ```
-    Name: <copy>Workshop Guides</copy>
+    <copy>Workshop Guides</copy>
     ```
 
     ![](./images/add-firefox-bookmarks-09.png " ")
 
 8. Repeat to create the folder *Workshop Links*
 
+    - Name
+
     ```
-    Name: <copy>Workshop Links</copy>
+    <copy>Workshop Links</copy>
     ```
 
     ![](./images/add-firefox-bookmarks-10.png " ")
@@ -433,12 +447,16 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
 
 10. Provide details to add a bookmark for your workshop(s). For most workshops this folder will content a single item. If your image is used by multiple workshops then repeat this action to add bookmarks for all relevant listings accordingly.
 
-    ```
-    Name: <copy><Your Workshop Name as recorded in WMS></copy>
-    ```
+    - Name
 
     ```
-    Location: <copy><Your Workshop Github URL ending with ./workshop/main></copy>
+    <copy><Your Workshop Name as recorded in WMS></copy>
+    ```
+
+    - Location
+
+    ```
+    <copy><Your Workshop Github URL ending with ./workshop/main></copy>
     ```
 
     *Note*: If you are still developing your workshop this URL may not yet be available. In that case, skip adding bookmarks to this folder and return when it's (they are) available.
@@ -617,8 +635,57 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
 
     **Note:** Your source image instance is now configured to generate a random VNC password for every instance created from it, provided that the provisioning requests include the needed metadata storing the random string.
 
+## Appendix 2: Removing Guacamole from a previously configured LiveLabs image
+
+Prior to noVNC some images were configured with *Apache Guacamole*. If this applies to your image, proceed as detailed below to remove it prior to deploying noVNC
+
+1.  As root, create and run script */tmp/remove-guac.sh*.
+
+    ```
+    <copy>
+    sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+    cat > /tmp/remove-guac.sh <<EOF
+    #!/bin/sh
+    # Copyright (c) 2019 Oracle and/or its affiliates. All rights reserved.
+
+    cd /etc/systemd/system
+
+    for i in `ls vncserver_*.service`
+      do
+    systemctl stop $i
+    done
+
+    cd /tmp
+
+    systemctl disable guacd tomcat
+    systemctl stop guacd tomcat
+
+    yum -y remove \
+    	guacd \
+        libguac \
+        libguac-client-ssh \
+        libguac-client-vnc \
+    	tomcat \
+        tomcat-admin-webapps \
+        tomcat-webapps \
+        nginx
+
+    chmod +x /tmp/remove-guac.sh
+    /tmp/remove-guac.sh
+
+    rm -rf /etc/guac*
+    rm -rf /etc/nginx*
+    rm -f /tmp/remove-guac.sh
+    </copy>
+    ```
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

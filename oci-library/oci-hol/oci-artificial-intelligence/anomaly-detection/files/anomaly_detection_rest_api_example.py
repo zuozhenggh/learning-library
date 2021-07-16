@@ -5,7 +5,6 @@ from datetime import datetime
 
 from oci.config import from_file
 from oci.ai_anomaly_detection.models import *
-from oci.ai_anomaly_detection.ai_service_client import AiServiceClient
 from oci.ai_anomaly_detection.anomaly_detection_client import AnomalyDetectionClient
 
 from oci.ai_anomaly_detection.models.create_project_details import CreateProjectDetails
@@ -19,7 +18,8 @@ from oci.ai_anomaly_detection.models.model_training_details import ModelTraining
 from oci.ai_anomaly_detection.models.data_item import DataItem
 from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import InlineDetectAnomaliesRequest
 
-# change the config file location
+# change the following constants accordingly 
+## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
 CONFIG_FILENAME = "/Users/home/.oci/config"
 SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-phoenix-1.oci.oraclecloud.com"
 NAMESPACE = "id5zdxxxxa"
