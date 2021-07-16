@@ -31,7 +31,7 @@ The DMS service runs as a managed cloud service separate from the user's tenancy
 * **Migration Job**: A Migration Job displays the state or a given Migration execution, either for validation or migration purposes. A job consists of a number of sequential phases, users can opt to wait after a given phase for user input to resume with the following phase.
 * **Registered Database**: A Registered Database represents information about a source or target database, such as connection and authentication credentials. DMS uses the OCI Vault to store credentials. A Registered Database is reusable across multiple Migrations.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+Estimated Lab Time: 180 minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
 
 ### Objectives
