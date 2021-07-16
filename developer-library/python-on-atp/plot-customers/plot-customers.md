@@ -134,8 +134,7 @@ Please proceed to the next lab.
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Derrick Cameron
-- **Last Updated By/Date** - Kay Malcolm, April 2020
-- **Workshop Expiration Date** - April 31, 2021
+- **Authors/Contributors** - Varun Yadav
+- **Last Updated By/Date** - Varun Yadav, July 2021
 
 
