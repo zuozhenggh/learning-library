@@ -8,16 +8,15 @@ Oracle Database In-Memory accelerates both Data Warehouses and mixed workload OL
 
 Oracle introduced Database In-Memory in Oracle Database Enterprise Edition with the first patch set (12.1.0.2) for Oracle Database 12c Release 1. Database In-Memory has been significantly enhanced in subsequent releases of Oracle Database with additional performance, scalability and manageability features. These features include the ability to automatically manage the contents of the In-Memory column store to maximize the use of memory and increase performance, enhanced mutli-model support, scale-out support with Oracle Real Applications Cluster (RAC) and support for Oracle Multitenant and Oracle Active Data Guard (ADG).
 
-<< The Innovations Slide >>
+![ ](images/IMFeatures.png)
+
 
 ## **Dual-Format Database**
 
 
 **Row Format vs. Column Format**
 
-  ![ ](https://github.com/vijaybalebail/learning-library/raw/master/data-management-library/database/in-memory/intro/images/DBIM.png)
-
-<< Update the image >>
+  ![ ](images/DBIM.png)
 
 Oracle Database has traditionally stored data in a row format. In a row format database, each new transaction or record stored in the database is represented as a new row in a table. That row is made up of multiple columns, with each column representing a different attribute about that record. A row format is ideal for online transaction systems, as it allows quick access to all of the columns in a record since all of the data for a given record are kept together inmemory and on-storage.
 
@@ -67,7 +66,7 @@ For example, let’s use the SALES table and let’s assume we are asked to find
 
 A further reduction in the amount of data accessed is possible due to the In-Memory Storage Indexes that are automatically created and maintained on each of the columns in the IM column store. Storage Indexes allow data pruning to occur based on the filter predicates supplied in a SQL statement. An In-Memory Storage Index keeps track of minimum and maximum values for each column in an IMCU. When a query specifies a WHERE clause predicate, the In-Memory Storage Index on the referenced column is examined to determine if any entries with the specified column value exist in each IMCU by comparing the specified value(s) to the minimum and maximum values maintained in the In-Memory Storage Index. If the column value is outside the minimum and maximum range for an IMCU, the scan of that IMCU is avoided.
 
-![](images\IMCUMIN_MAX.png)
+![](images/IMCUMIN_MAX.png)
 
 
 
@@ -106,9 +105,9 @@ In-Memory Dynamic Scans (IM dynamic scans) further increase scan performance. Wh
 ## **More Information on In-Memory**
  **[Oracle 19c InMemory White paper](https://www.oracle.com/a/tech/docs/twp-oracle-database-in-memory-19c.pdf)**
 
-Database In-Memory Channel [![ ](https://github.com/vijaybalebail/learning-library/raw/master/data-management-library/database/in-memory/intro/images/inmem.png)](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
+Database In-Memory Channel [![ ](images/inmem.png)](https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA)
 
-Oracle Database Product Management Videos on In-Memory [![ ](https://github.com/vijaybalebail/learning-library/raw/master/data-management-library/database/in-memory/intro/images/youtube.png)](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=in-memory)
+Oracle Database Product Management Videos on In-Memory [![ ](images/youtube.png)](https://www.youtube.com/channel/UCr6mzwq_gcdsefQWBI72wIQ/search?query=in-memory)
 
 Please proceed to the next lab.
 
