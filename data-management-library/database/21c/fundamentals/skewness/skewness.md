@@ -197,7 +197,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
   </if>
    ```
    SQL> <copy>SELECT house, SKEWNESS_SAMP(price_big_city), SKEWNESS_SAMP(price_small_city) FROM houses
-   GROUP BY house;</copy
+   GROUP BY house;</copy>
    ```
   <if type="dbcs">
    ```

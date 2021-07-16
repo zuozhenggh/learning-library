@@ -83,9 +83,12 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     Enter password: <b><i>WElcome123##</i></b>
     Connected to:
     ```
+
     ```
     SQL> <copy>COL table_name FORMAT A18</copy>
+    ```
 
+    ```
     SQL> <copy>SELECT table_name, inmemory, inmemory_compression
     FROM   dba_tables WHERE  owner='HR';</copy>
     TABLE_NAME         INMEMORY INMEMORY_COMPRESS
@@ -108,7 +111,9 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     ```
     SQL> <copy>ALTER TABLE hr.job_history INMEMORY MEMCOMPRESS FOR CAPACITY LOW;</copy>
     Table altered.
+    ```
 
+    ```
     SQL> <copy>SELECT table_name, inmemory, inmemory_compression
     FROM   dba_tables WHERE  owner='HR';</copy>
     TABLE_NAME         INMEMORY INMEMORY_COMPRESS
@@ -133,30 +138,33 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL> <copy>CONNECT / AS SYSDBA</copy>
     Connected.
     ```
-    ```
 
+    ```
     SQL> <copy>ALTER SYSTEM SET INMEMORY_AUTOMATIC_LEVEL=HIGH SCOPE=SPFILE;</copy>
     System altered.
+    ```
 
+    ```
     SQL> <copy>exit;</copy>
     ```
+
     ```
-    <copy>cd /home/oracle/labs/M104784GC10</copy>
-    <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
+    <copy>cd /home/oracle/labs/M104784GC10
+    /home/oracle/labs/M104784GC10/wallet.sh</copy>
     ```
 
 2. Query the data dictionary to determine whether `HR` tables are specified as `INMEMORY`.
 
 
     ```
-    SQl> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
+    SQL> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
 
     Connected.
     ```
-    ```
 
+    ```
     SQL> <copy>SELECT table_name, inmemory, inmemory_compression
     FROM   dba_tables WHERE  owner='HR';</copy>
 
@@ -175,20 +183,20 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     8 rows selected.
 
     SQL>
-
     ```
 
 3. Why are the `HR` tables not enabled to `INMEMORY`, except those already manually set to `INMEMORY`? Display the `INMEMORY_AUTOMATIC_LEVEL` in the PDB.
 
 
     ```
-
-    SQl> <copy>SHOW PARAMETER INMEMORY_AUTOMATIC_LEVEL</copy>
+    SQL> <copy>SHOW PARAMETER INMEMORY_AUTOMATIC_LEVEL</copy>
 
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- -------------
     inmemory_automatic_level             string      LOW
+    ```
 
+    ```
     SQL> <copy>SELECT ispdb_modifiable FROM v$parameter WHERE name='inmemory_automatic_level';</copy>
 
     ISPDB
@@ -196,20 +204,21 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     TRUE
 
     SQL>
-
     ```
 
 4. Set `INMEMORY_AUTOMATIC_LEVEL` to `HIGH` at the PDB level, and re-start `PDB21`.
 
 
     ```
-
-    SQl> <copy>ALTER SYSTEM SET INMEMORY_AUTOMATIC_LEVEL=HIGH SCOPE=SPFILE;</copy>
+    SQL> <copy>ALTER SYSTEM SET INMEMORY_AUTOMATIC_LEVEL=HIGH SCOPE=SPFILE;</copy>
 
     System altered.
+    ```
 
+    ```
     SQL> <copy>exit;</copy>
     ```
+
     ```
     <copy>cd /home/oracle/labs/M104784GC10</copy>
     <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
@@ -221,14 +230,14 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 
 
     ```
-    SQl> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
+    SQL> <copy>sqlplus sys@PDB21 AS SYSDBA</copy>
 
     Enter password: <b><i>WElcome123##</i></b>
 
     Connected.
     ```
-    ```
 
+    ```
     SQL> <copy>SELECT table_name, inmemory, inmemory_compression
     FROM   dba_tables WHERE  owner='HR';</copy>
 
@@ -246,7 +255,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     8 rows selected.
 
     SQL>
-
     ```
 
 2. *Observe that `HR.JOB_HISTORY` and `HR.JOB_EMP` which were manually specified as `INMEMORY`, retain their previous settings.*
@@ -254,7 +262,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 3. Why is `HR.COUNTRIES` not automatically enabled?
 
     ```
-
     SQL> <copy>ALTER TABLE hr.countries INMEMORY;</copy>
 
     ALTER TABLE hr.countries INMEMORY
@@ -266,7 +273,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     ORA-64358: in-memory column store feature not supported for IOTs
 
     SQL>
-
     ```
 4. Populate the in-memory tables into the IM Column Store.
 
@@ -316,7 +322,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     Commit complete.
 
     SQL>
-
     ```
 
 5. Why aren't the `ENABLED AUTO` tables not populated into the IM column store? The internal statistics are not sufficient yet to identify cold and hot data in the IM column store to consider which segments can be populated into the IM column store.
@@ -325,7 +330,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
 
 
     ```
-
     SQL> <copy>@/home/oracle/labs/M104783GC10/AutoIM_scan.sql</copy>
 
     SQL> SELECT /*+ FULL(hr.employees) NO_PARALLEL(hr.employees) */ count(*) FROM hr.employees;
@@ -364,7 +368,6 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
       3506176
 
     SQL>
-
     ```
 
 7. Display the population status of the `HR` tables into the IM Column Store. You may have to wait for a few minutes before the population of `EMPLOYEES` table starts.
@@ -378,11 +381,12 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     ------------ ------------- ------------------- -----------------
     EMP               44433408                   0 FOR QUERY LOW
     EMPLOYEES          1310720                   0 AUTO
+    ```
 
+    ```
     SQL> <copy>EXIT</copy>
 
     $
-
     ```
 
 
@@ -399,4 +403,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
 * **Last Updated By/Date** -  David Start, December 2020
-
