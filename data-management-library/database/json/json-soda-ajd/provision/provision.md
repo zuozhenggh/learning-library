@@ -101,7 +101,12 @@ In this lab, you will:
 
 6. Configure the database:
 
+    <if type="freetier">
     - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+    </if>
+    <if type="livelabs">
+    - __Always Free__ - For this lab, we recommend you leave Always Free unchecked.
+    </if>
     - __Choose database version__ - Select 19c from the database version. Note: This lab should work on 21c AJD database as well.
     - __OCPU count__ - Number of OCPUs for your service. For this lab, leave the default __1 OCPU__. If you choose an Always Free database, it comes with 1 OCPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, leave the default __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
