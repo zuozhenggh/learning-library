@@ -36,13 +36,13 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")	
 
-2. On Compartments Page, click on Create Compartment. 
+2. On Compartments Page, click Create Compartment. 
 
     ![Compartment2](./images/01compartment02.png " ")
 
    **Note**:  Two Compartments, named Oracle Account Name (root) and a compartment for PaaS, were automatically created by the Oracle Cloud. 
 
-3. On Create Compartment, enter Name **MDS_Sandbox**, Description, select Parent Compartment, and click on Create Compartment.ompartment.
+3. On Create Compartment, enter Name **MDS_Sandbox**, Description, select Parent Compartment, and click Create Compartment.ompartment.
 
     ![Compartment3](./images/01compartment03.png " ")
     
@@ -56,7 +56,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
 
-2.	On Policies Page, under List Scope, select the Compartment(root) and click on the Create Policy button.
+2.	On Policies Page, under List Scope, select the Compartment(root) and click the Create Policy button.
     ![Policy2](./images/02policy02.png " ")
 
 3.	On Create Policy, enter Name **MDS_Policy**, Description, select Root comaprtment. On Policy Builder turn on the “Show manual editor”  switch. 
@@ -96,12 +96,12 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
-2. Click on Start VCN Wizard.
+2. Click Start VCN Wizard.
     ![VCN](./images/03vcn02.png " ")
 
 3. Select VCN with Internet Connectivity 
 
-    click on Button Start VCN Wizard 
+    click Button Start VCN Wizard 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -123,25 +123,25 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 7. The Virtual Cloud Network creation is completing 
     ![VCN](./images/03vcn05.png " ")
     
-8. Click on "View Virtual Cloud Network" button to display the  created VCN
+8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. Click on the VCN Name **MDS_VCN**. 
+9. Click the VCN Name **MDS_VCN**. 
             ![COMPUTE](./images/03vcn08.png " ")
 
-10.	On the Virtual Cloud Network Details page, under Resources, click on Security Lists (2).
+10.	On the Virtual Cloud Network Details page, under Resources, click Security Lists (2).
         ![COMPUTE](./images/03vcn09.png " ")
 
-11.	On Security Lists in <Compartment Name> Compartment, click on Security List for Private Subnet-MDS_VCN.
+11.	On Security Lists in <Compartment Name> Compartment, click Security List for Private Subnet-MDS_VCN.
 
     ![COMPUTE](./images/03vcn10.png " ")
 
-12.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click on Add Ingress Rules.
+12.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click Add Ingress Rules.
     ![COMPUTE](./images/03vcn11.png " ")
 
 13.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 3306, 33060 
 
-    Click on Add Ingress Rule.
+    Click Add Ingress Rule.
     ![COMPUTE](./images/03vcn12.png " ")
 
 14.	On Security List for Private Subnet-MDS_VCN page
@@ -155,7 +155,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-2. Click on Create MySQL Database System
+2. Click Create MySQL Database System
     ![MDS](./images/04mysql02.png" ")
 
 3. On Create MySQL Database System dialog complete the fields in each section
@@ -219,7 +219,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     
     ![MDS](./images/04mysql02_08.png" ")
     
-20. Click on Create button 
+20. Click Create button 
     ![MDS](./images/04mysql02_09.png" ")
 
 11. The New MySQL Database System will be ready to use after a few minutes. 
@@ -243,7 +243,7 @@ When you are finished, return to this step.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
-2. On Instances in **MDS_Sandbox** Compartment, click on Create Instance.
+2. On Instances in **MDS_Sandbox** Compartment, click Create Instance.
     ![COMPUTE](./images/05compute02.png " ")
 
 3. On Create Compute Instance enter **MDS_Client**  for the instance Name. 
@@ -285,7 +285,7 @@ When you are finished, return to this step.
 
    If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
+    Click the Git Bash command. This will take you to the Git Bash terminal as shown below 
     
     and continue to  STEP 6: #2. 
     ![Connect](./images/06connect0.png" ")
@@ -415,7 +415,7 @@ Choose  **MDS_Sandbox** Compartment
 Click **MDS_DB** to open the Database System details page
 ![MDS](./images/04mysql07.png " ")
 
-Click on "More Actions" drop down list and select **Delete**
+Click "More Actions" drop down list and select **Delete**
 ![MDS](./images/04mysql08.png " ")
 
 A prompt is displayed asking you to confirm the deletion.
