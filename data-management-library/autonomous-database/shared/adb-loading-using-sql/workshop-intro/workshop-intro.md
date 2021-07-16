@@ -3,7 +3,7 @@
 
 ## About this Workshop
 
-The purpose of this workshop is to introduce you to Oracle Cloud and the unique capabilities of Oracle's Autonomous Data Warehouse. It is designed to be used alongside your own cloud account (paid or Bring-Your-Own-License) or you can register and claim free trial credits which provides up to 3,300 hours of cloud time, and 2 TB of storage which is more than enough time and storage space to run this lab. 
+The purpose of this workshop is to introduce you to Oracle Cloud and the unique capabilities of Oracle's Autonomous Data Warehouse. It is designed to be used alongside your own cloud account (paid or Bring-Your-Own-License) or you can register and claim free trial credits which provides up to 3,300 hours of cloud time, and 2 TB of storage which is more than enough time and storage space to run this lab. 
 
 **NOTE:** The timings shown in the notes and screenshots for this workshop assume an ADW instance configured with 1TB of storage and 8 OCPUs. You can configure your own ADW instance with fewer OCPUs and still use the scripts below. However, while all the scripts will complete successfully, the timings for some of the steps will be longer.
 
@@ -19,7 +19,7 @@ The aim of this workshop is to explore how Autonomous Data Warehouse can support
 
 * Quickly and easily load data into an Autonomous Data Warehouse
 
-* Learn how to enable data integrity features to manage data quality challenges 
+* Learn how to enable data integrity features to manage data quality challenges 
 
 * Explore how to update existing data using Oracle's MERGE command
 
@@ -33,7 +33,6 @@ Before you launch into this workshop, you will need the following:
 
 * Basic level of understanding of SQL query language
 
-* Completion of the "Getting Started" workshop for Autonomous Data Warehouse
 
 If you have any questions about the topics covered in this lab and the entire workshop, please contact us by posting on our public forum on [cloudcustomerconnect.oracle.com](http://cloudcustomerconnect.oracle.com) and we will respond as soon as possible.
 
@@ -45,7 +44,7 @@ To make this workshop as realistic as possible, let us introduce the business sc
 
 ### Welcome to Oracle MovieStream
 
-Oracle MovieStream is a fictitious on-line movie streaming company. Customers log into Oracle MovieStream using their computers, tablets and phones where they are presented with a targeted list of movies based on their past viewing behavior. The company is now looking for better, smarter ways to track performance, identifying target customers with campaigns to promote new services, new movies and new viewing platforms. Many of the scenarios in the rest of this workshop will very likely match the challenges you are seeing in your business and we hope the following examples will give you some insight into how Oracle can help you solve these common everyday challenges.
+Oracle MovieStream is a fictitious on-line movie streaming company. Customers log into Oracle MovieStream using their computers, tablets and phones where they are presented with a targeted list of movies based on their past viewing habits. The company is now looking for better, smarter ways to track performance, identifying customers to target with campaigns that promote new services, new movies and new viewing platforms. Many of the scenarios in this workshop will very likely match the challenges you are seeing in your business and we hope the following labs and accompanying workshops will give you some insight into how Oracle can help you solve these common everyday business and technical challenges.
 
 ## Acknowledgements
 
