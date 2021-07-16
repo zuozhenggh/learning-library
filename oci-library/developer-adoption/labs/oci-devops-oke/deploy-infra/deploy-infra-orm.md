@@ -201,3 +201,5 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 1. At anytime you can go back to the Stack details page, click on `Edit` button to change the variable values. After that, you need to run Plan -> Apply jobs to make these changes into the infrastructure. Always review the execution plan as some resources are immutable and they can be completely destroyed and recreated by Terraform/ORM after hitting `Apply`.
 
 Note: in case of quota/service limit/permission issues, Apply job will fail and not all resources might have been provisioned. Click on Destroy button will trigger the job to remove provisioned resources. 
+
+You may now [proceed to the next lab](#next).

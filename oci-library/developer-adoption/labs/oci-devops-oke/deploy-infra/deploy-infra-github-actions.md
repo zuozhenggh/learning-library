@@ -139,8 +139,8 @@ cat <your-pem-public-file>.pem | pbcopy
 
     on:
       push:
-        branches:
-          - master
+        branches: [ master ]
+        paths: ['devops_oke/']      
     jobs:
       build-resource-manager:
         name: Build Infrastructure
@@ -328,3 +328,5 @@ cat <your-pem-public-file>.pem | pbcopy
 1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progres on the Action tab.
 
 1. It may take about 20 minutes to complete the provisioning workflow. Upon success, you will have provisioned all the infrastructure resources in the Oracle Cloud Infrastructure. This is the final step we used to provision the infrastructure. You can go back to OCI Console and check the resources that were created, including the OCI DevOps service.
+
+You may now [proceed to the next lab](#next).

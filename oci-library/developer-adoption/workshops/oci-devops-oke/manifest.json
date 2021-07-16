@@ -23,21 +23,9 @@
             "filename": "../../labs/oci-devops-oke/build-publish-app/build-publish-app.md"
         },
         {
-            "title": "Lab 4: Create Environment",
-            "filename": "../../labs/oci-devops-oke/environment/create-environment.md"
-        },
-        {
-            "title": "Lab 5: Create Artifact",
-            "filename": "../../labs/oci-devops-oke/artifact/create-artifact.md"
-        },
-        {
-            "title": "Lab 6: Create Pipeline",
-            "filename": "../../labs/oci-devops-oke/pipeline/create-pipeline.md"
-        },
-        {
-            "title": "Lab 7: Deploy Application to OKE",
-            "filename": "../../labs/oci-devops-oke/deploy/deploy-app-oke.md"
-        },
+            "title": "Lab 3: DevOps Pipeline",
+            "filename": "../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
+        },        
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

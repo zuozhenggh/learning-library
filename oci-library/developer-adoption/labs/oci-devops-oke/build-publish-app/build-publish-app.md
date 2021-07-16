@@ -166,6 +166,22 @@ This project has some GitHub Actions pre-created that are responsible for publis
 
 1. If you want to review/change the actions, go to code tab, then open the file: `.github/workflows/containers.yaml`.
 
-1. After the workflow completes, the container image will be available on the OCIR.
+1. After the workflow completes, the container image will be available on the OCIR. 
 
     ![OCIR Container image](./images/oci-ocir-mushop-carts.png)
+    You can use the following URL to access the image:
+
+    `<region-key>.ocir.io/<tenancy-namespace>/<repository>:<tag>`
+     
+
+    `iad.ocir.io/ansh81vru1zp/oci-cloud-native-mushop/mushop-carts:1.5.2`
+
+
+
+    ---
+    | DOCKER_REPOSITORY
+
+    This is the name of the repository we previously defined: ``
+
+
+You may now [proceed to the next lab](#next).
