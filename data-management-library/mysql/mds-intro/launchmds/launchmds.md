@@ -30,7 +30,7 @@ In this lab, you will be guided through the following steps:
 
 ## **STEP 1**: Create Compartment
 
-You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
@@ -149,19 +149,19 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
      New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn13.png " ")
 
-## **STEP 4:** Create a MySQL DB System.
+## **STEP 4:** Create a MySQL Database System.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-2. Click on Create MySQL DB System
+2. Click on Create MySQL Database System
     ![MDS](./images/04mysql02.png" ")
 
-3. On Create MySQL DB System dialog complete the fields in each section
+3. On Create MySQL Database System dialog complete the fields in each section
 
-    - Provide basic information for the DB System
-    - Setup your required DB System
+    - Provide basic information for the Database System
+    - Setup your required Database System
     - Create Administrator credentials
     - Configure Networking
     - Configure placement
@@ -169,7 +169,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     - Configure Backups
     - Show Advanced Options
 
-4. On Provide basic information for the DB System:
+4. On Provide basic information for the Database System:
       
     Select Compartment **MDS_Sandbox**
       
@@ -179,9 +179,9 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     ![MDS](./images/04mysql02_02.png " ")
 
-5. On Setup your required DB System 
+5. On Setup your required Database System 
     
-    System Select **Standalone** to specify a single-instance DB System
+    System Select **Standalone** to specify a single-instance Database System
     ![MDS](./images/04mysql02_03.png " ")
 
 6. On Create Administrator credentials
@@ -203,7 +203,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 8. On Configure placement  keep checked  "Availability Domain"
     
-    Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
+    Do not check "Choose a Fault Domain" for this Database System. Oracle will chooses the best placement for you.
     ![MDS](./images/04mysql02_06.png" ")
 
 9. On Configure hardware keep default shape  **MySQL.VM.Standard.E3.1.8GB**
@@ -222,14 +222,14 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 20. Click on Create button 
     ![MDS](./images/04mysql02_09.png" ")
 
-11. The New MySQL DB System will be ready to use after a few minutes. 
+11. The New MySQL Database System will be ready to use after a few minutes. 
 
     The state will be shown as Creating during the creation
     ![MDS](./images/04mysql02_10.png" ")
 
-12. The state Active indicates that the DB System is ready to use. 
+12. The state Active indicates that the Database System is ready to use. 
 
-    Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
+    Check the MySQL endpoint (Address) under Instances in the MySQL Database System Details page. 
 
     ![MDS](./images/04mysql02_11.png" ")
 
@@ -304,7 +304,7 @@ When you are finished, return to this step.
 
     ![Connect](./images/06connect01.png " ")
 
-3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine. 
+3. You will need a MySQL client tool to connect to your new MySQL Database System from your client machine. 
 
     Install MySQL release package  with the following command:
 
@@ -319,7 +319,7 @@ When you are finished, return to this step.
  
 4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
     
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoints" resource. 
+   The endpoint (IP Address) can be found in the MySQL Database System Details page, under the "Endpoints" resource. 
 
     ![Connect](./images/06connect06.png " ")
 
@@ -367,30 +367,30 @@ When you are finished, return to this step.
 
     ![Connect](./images/06workbench02.png " ")
 
-## **STEP 7:** Start, stop, or reboot MySQL DB System
+## **STEP 7:** Start, stop, or reboot MySQL Database System
 
-Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-List DB Systems
+List Database Systems
 ![MDS](./images/04mysql02_06.png " ")
 Choose  **MDS_Sandbox** Compartment 
 
-Click **MDS_DB** to open the DB System details page
+Click **MDS_DB** to open the Database System details page
 ![MDS](./images/04mysql07.png " ")
 
 Select one of the following actions:
-* Start: Starts a stopped DB System. After the DB System is started, the Stop action is enabled and the Start option is disabled.
-* Stop: Stops a running DB System. After the DB System is powered off, the Start action is enabled.
-* Restart: Shuts down a DB System, and restarts it.
+* Start: Starts a stopped Database System. After the Database System is started, the Stop action is enabled and the Start option is disabled.
+* Stop: Stops a running Database System. After the Database System is powered off, the Start action is enabled.
+* Restart: Shuts down a Database System, and restarts it.
 
-**Note**  Stopping a DB System stops billing for all OCPUs associated with it. 
+**Note**  Stopping a Database System stops billing for all OCPUs associated with it. 
 * Billing continues for storage. 
-* Billing for OCPUs resumes if you restart the DB System.
-* If you selected Stop or Restart, the Stop/Restart MySQL DB System dialog is displayed.
+* Billing for OCPUs resumes if you restart the Database System.
+* If you selected Stop or Restart, the Stop/Restart MySQL Database System dialog is displayed.
 
 Select a shutdown type:
-* Fast: Flushes dirty pages before shutting down the DB System. 
+* Fast: Flushes dirty pages before shutting down the Database System. 
 
     Some flush operations must be performed during next startup, potentially increasing the duration of the startup process.
 * Slow: Flushes dirty pages and purges undo log pages for older transactions. 
@@ -401,18 +401,18 @@ Select a shutdown type:
 
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
-## **STEP 8:** Delete MySQL DB System
+## **STEP 8:** Delete MySQL Database System
 
-Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
+Deleting a Database System permanently deletes it. Any manual backups associated with the deleted Database System are retained for their retention periods. Automatic backups are deleted with the Database System.
 
-Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-List DB Systems
+List Database Systems
 ![MDS](./images/04mysql02_06.png " ")
 Choose  **MDS_Sandbox** Compartment 
 
-Click **MDS_DB** to open the DB System details page
+Click **MDS_DB** to open the Database System details page
 ![MDS](./images/04mysql07.png " ")
 
 Click on "More Actions" drop down list and select **Delete**
@@ -420,7 +420,7 @@ Click on "More Actions" drop down list and select **Delete**
 
 A prompt is displayed asking you to confirm the deletion.
 ![MDS](./images/04mysql08_1.png " ")
-Enter the word, all caps, "DELETE" and click "Delete 1 MySQL DB System" button.
+Enter the word, all caps, "DELETE" and click "Delete 1 MySQL Database System" button.
 
 When delete process is done **MDS_DB** will be set to Delete status.
 ## Learn More
