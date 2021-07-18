@@ -2,31 +2,12 @@
 
 ## Introduction
 
-In this lab, you will generate an application load on the UPGR database before upgrade and use an external load tool, HammerDB.  At a later stage we will compare statements and overall performance-before/after upgrade.  You can use your own load scripts as well.
+In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Lab Time:* 30 Minutes.
-
-### About AWR Snapshots
-The Automatic Workload Repository (AWR) collects, processes, and maintains performance statistics for problem detection and self-tuning purposes. This data is both in memory and stored in the database. The gathered data can be displayed as both reports and views.
-
-The statistics collected and processed by AWR include:
-- Object statistics that determine both access and usage statistics of database segments
-- Time model statistics based on time usage for activities, displayed in the `V$SYS_TIME_MODEL` and `V$SESS_TIME_MODEL` views
-- A few system and session statistics collected in the `V$SYSSTAT` and `V$SESSTAT` views
-- SQL statements that are producing the highest load on the system, based on criteria such as elapsed time and CPU time
-- ASH statistics, representing the history of recent sessions activity
-
-Snapshots are sets of historical data for specific time periods that are used for performance comparisons by ADDM. By default, Oracle Database automatically generates snapshots of the performance data once every hour and retains the statistics in the workload repository for 8 days. You can also manually create snapshots. In this lab we will manually create snapshots.
+*Estimated Lab Time:* 10 Minutes.
 
 ### Objectives
-
-In this lab, you will:
-- Validate the environment
-- Generate an AWR snapshot
-- Start HammerDB
-- Load Driver Script and start virtual users
-- Capture SQL, load test and monitor
-- Generate another AWR snapshot
+- Initialize the workshop environment.
 
 ### Prerequisites
 This lab assumes you have:
@@ -37,54 +18,24 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed with the help of the details below to login.
+## **STEP 1:** Validate That Required Processes are Up and Running.
 
-1. Launch your browser to the following URL
+*Note:* All screenshots for SSH terminal type tasks featured throughout this workshop were captured using the *MobaXterm* SSH Client as described in this step. As a result when executing such tasks from within the graphical remote desktop session you can skip steps requiring you to login as user *oracle* using *sudo su - oracle*, the reason being that the remote desktop session is under user *oracle*.
 
-    ```
-    <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    e.g: http://111.888.111.888:8080/guacamole
-    ```
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-2. Provide login credentials
+    - Database Listener
+        - LISTENER
+    - Database Server Instances
+        - FTEX
+        - DB12
+        - CDB2
 
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
+    You may test database connectivity clicking on the *+* sign next to each of the 3 Databases as shown below in the *SQL Developer Oracle Connections* panel.
 
-    ![](./images/guacamole-login.png " ")
+    ![](./images/19c_upgrade_landing.png " ")
 
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. Review the desktop. Important shortcuts have been placed on the desktop for your convenience.
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you also have the option to use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for the detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 1**: Validate the environment
-1. As user *oracle* from any of the sessions started above, verify that the DB listener and all databases are up and running.
-
-    The host is preconfigured to automatically start a database listener and 4 databases upon startup.
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
     <copy>
@@ -93,110 +44,79 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     systemctl status oracle-database
     </copy>
     ```
+
     ![](./images/check-tns-up.png " ")
     ![](./images/check-pmon-up.png " ")
     ![](./images/check-db-service-up.png " ")
 
-2. Click on *SQLDeveloper* icon on the desktop to Launch
+    If all expected processes are shown in your output as seen above, then your environment is ready.  
 
-    ![](./images/sqldeveloper-1.png " ")
-
-3. On the connection panel on the left, click the *+* sign next to each of the following databases to confirm that you can connect.
-    - UPGR
-    - FTEX
-    - DB12
-    - CDB2
-
-    ![](./images/sqldeveloper-2.png " ")
-
-## **STEP 2**: Generate an AWR snapshot
-
-1. Switch the environment to UPGR using *`. upgr`*, change directory to /home/oracle/scripts and start SQL*Plus:
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
 
     ```
     <copy>
-    . upgr
-    cd /home/oracle/scripts
-    sqlplus / as sysdba
+    sudo systemctl restart oracle-database
     </copy>
     ```
-    ![](./images/upgrade_19c_1.png " ")
-
-2.  Execute snap.sql which generates an AWR snapshot.  Please NOTE down the snapshot number (e.g.: 110)
-
-    ```
-    <copy>
-    @/home/oracle/scripts/snap.sql
-    </copy>
-    ```
-    ![](./images/upgrade_19c_2.png " ")
-
-3. Don’t exit from the terminal or SSH session. Keep SQL*Plus open.
-
-4. On the remote desktop session, Double-Click on the *HammerDB* icon on the desktop to Launch it
-    ![](./images/upgrade_19c_3.png " ")
-
-## **STEP 3**: Load Driver Script and start Virtual Users
-
-1. Click on the triangle “TPC-C“
-2. Open the Driver Script setup with a Click
-3. Then Double-Click on the Load option.
-4. This will populate the script window with the driver script (ignore the error messages in the script window)
-5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window.
-   ![](./images/upgrade_19c_4.png " ")
-
-## **STEP 4**: Capture SQL, Load Test and Monitor
-
-Please start the following script in your SQL*plus window. With this script you will capture all the  SQL statements directly from the cursor cache while HammerDB is running and generating load on your database.
-
-1. Run the capture script. The capture is scheduled for 240 seconds. It polls the cache every 10 seconds.
-
-    ```
-    <copy>
-    @/home/oracle/scripts/capture_cc.sql
-    </copy>
-    ```
-    ![](./images/upgrade_19c_5.png " ")
-
-2. Start the TPC-C Load Test and Monitor the progress by double clicking on the Run icon.
-    ![](./images/upgrade_19c_6.png " ")
-
-3. Click on the Graph / Transaction Counter icon in the top menu icon bar. You will see that the script window changes now waiting for data.
-
-4. It will take a few seconds, then you will see the performance charts and the transactions-per-minute (tpm). The load run usually takes 2-3 minutes to complete.
-    ![](./images/upgrade_19c_7.png " ")
-    ![](./images/upgrade_19c_8.png " ")
-
-5. Note that Complete=1 per Virtual User underneath the graph.  We will use this load only to generate a few statements.
-
-6. Finally Exit HammerDB:
-
-
-## **STEP 5**: Generate another AWR snapshot
-
-Please WAIT until the capture_cc.sql scripts returns control back to you – DON NOT CTRL-C it!
-
-1. In the existing sqlplus create another AWR snapshot. Once the command prompt is visible execute the sql script below.  Please NOTE down the snapshot number (e.g. 111).
-
-    ```
-    <copy>
-    @/home/oracle/scripts/snap.sql
-    </copy>
-    ```
-    ![](./images/upgrade_19c_9.png " ")
-
-## Appendix 1: Additional Information on HammerDB
-
-You can modify the standard parameters in either the GUI tool or as defaults in config.xml located in `/home/oracle/HammerDB-3.3`
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
+## Appendix 1: Managing Startup Services
 
-* [HammerDB](https://www.hammerdb.com/)
-* [AWR Snapshots](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgdba/gathering-database-statistics.html#GUID-144711F9-85AE-4281-B548-3E01280F9A56)
+1. Database service (All databases and Standard Listener).
+
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Database Product Management
-* **Contributors** -  Roy Swonger, Kay Malcolm, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+* **Contributors** - Mike Dietrich, Database Product Management
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

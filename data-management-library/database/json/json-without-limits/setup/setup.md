@@ -131,28 +131,28 @@ To see more information about generating the keys and finding your OCIDs, refer 
 
 3. Click on **Auth Tokens** and click **Generate Token** to create an Authentication token.
 
-![](images/generate-auth-token-1.png)
+    ![](images/generate-auth-token-1.png)
 
 4. Enter a description and click **Generate Token**. Click **Copy** to save the token to the clipboard and then click **Close**.
 
-![](images/generate-auth-token-2.png)
+    ![](images/generate-auth-token-2.png)
 
-![](images/copy-auth-token.png)
+    ![](images/copy-auth-token.png)
 
 Save the auth token for later.
 
 5. On the User Details page, copy the user OCID and save it for later:
 
-![Retrieve user OCID](images/user-ocid.png)
+    ![Retrieve user OCID](images/user-ocid.png)
 
 6. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
 
-![Retrieve tenancy OCID](images/user-icon-tenancy.png)
-![Retrieve tenancy OCID](images/tenancy-ocid.png)
+    ![Retrieve tenancy OCID](images/user-icon-tenancy.png)
+    ![Retrieve tenancy OCID](images/tenancy-ocid.png)
 
 7. If you are using a LiveLabs reservation, your compartment OCID is provided on your reservation page. If you are using a Free Trial or Customer-owned tenancy, from your compartment details page, copy the compartment OCID and save it for later.
 
-![Retrieve compartment OCID](images/compartment-details.png)
+    ![Retrieve compartment OCID](images/compartment-details.png)
 
 8. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
@@ -165,6 +165,8 @@ Save the auth token for later.
     ```
 
 2. Copy the following and paste it into the file, and add the values you collected earlier:
+
+    /!\ FOR RESERVED TENANTS (Green Button): Please, check the remark just after this block.
 
     ```
     <copy>
@@ -182,6 +184,14 @@ Save the auth token for later.
     database_collections=purchase_orders
     </copy>
     ```
+
+   /!\ FOR RESERVED TENANTS (Green Button): Please, verify that you've chosen to deploy an ATP-S database and not an Always Free one! E.g. add this additional configuration parameter:
+
+   ```
+   <copy>
+   database_type=atp
+   </copy> 
+   ```
 
    *Remark: the JSON data being used will be stored inside the **purchase_orders** collection.*
 
