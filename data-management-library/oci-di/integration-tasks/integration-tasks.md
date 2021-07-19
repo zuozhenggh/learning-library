@@ -393,17 +393,19 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/source-op-new.png " ")
 
 5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
+![](./images/second-data-flow-source.png " ")
 
-   In the Details tab, click Select next to each of the following options to make your selections:
+6. In the **Details** tab, click Select next to each of the following options to make your selections:
     - For **Identifier**, rename to `EMPLOYEES_SOURCE_FILES`.
     - For **Data Asset**, select `Object_Storage`.
     - For **Connection**, select `Default Connection`.
     - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here.
-    - For **Data Entity**, click on **Browse by Pattern**.
+![](./images/second-data-flow-source.png " ")
+    - For **Data Entity**, click on **Select** and then on **Browse by Pattern**.
 
     ![](./images/browse-pattern.png " ")
 
-   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found WHICH match this pattern are now displayed: you have three files for employees. Click on **Select Pattern**.
+   Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found which match this pattern are now displayed: there are three files for employees. Click on **Select Pattern**.
 
     ![](./images/employees-pattern.png " ")
 
@@ -416,19 +418,19 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/pattern-source.png " ")
 
 
-6. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.
+7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.
 ![](./images/add-distinct.png " ")
 
-7. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
+8. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
 ![](./images/new-expres.png " ")
 
-8. In the Properties panel for **EXPRESSION\_1** operator, rename the Identifier to **TRANSFORM\_DATAYPES**.
+9. In the Properties panel for **EXPRESSION\_1** operator, rename the Identifier to **TRANSFORM\_DATAYPES**.
 ![](./images/transform-datatypes.png " ")
 
-9. You will now add a **new expression**. Still in the Properties panel, click on **Add Expression**.
+10. You will now add a **new expression**. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-exp.png " ")
 
-10. In the **Add Expression** panel:
+11. In the **Add Expression** panel:
   - **Rename** the expression to `BIRTH_DATE` in the Identifier field.
   - Change **Data Type** to `DATE`.
   - Enter
@@ -442,10 +444,10 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/new-exp-details.png " ")
 
 
-11. Your expression for **BIRTH\_DATE** is now displayed. Click again on **Add Expression** to add a new one.
+12. Your expression for **BIRTH\_DATE** is now displayed. Click again on **Add Expression** to add a new one.
 ![](./images/add-new-exp.png " ")
 
-12. In the **Add Expression** panel:
+13. In the **Add Expression** panel:
   - **Rename** the expression to `YEAR_OF_JOINING` in the Identifier field.
   - Change **Data Type** to `NUMERIC`.
   - Enter   
@@ -458,19 +460,19 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/new-num-exp.png " ")
 
 
-13. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
+14. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
 ![](./images/expressions-second-df.png " ")
 
-14. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.
+15. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.
 ![](./images/new-expression-df.png " ")
 
-15. In the Properties panel for the new **EXPRESSION\_1 operator**, change the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
+16. In the Properties panel for the new **EXPRESSION\_1 operator**, change the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
 ![](./images/employee-age.png " ")
 
-16. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
+17. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-exp-new.png " ")
 
-17. In the **Add Expression** panel:
+18. In the **Add Expression** panel:
   - **Rename** the expression to `EMPLOYEE_AGE` in the Identifier field.
   - Change **Data Type** to `NUMERIC`.
   - Enter
@@ -488,15 +490,15 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/new-exp-case.png " ")
 
 
-18. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
+19. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
 ![](./images/add-expression-phone.png " ")
 
-19. In the **Add Expression** panel:
+20. In the **Add Expression** panel:
   - **Rename** the expression to `PHONE_NO` in the Identifier field.
   - Leave **Data Type** as `VARCHAR`.
   - Enter   
   ```
-  <copy>COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No_, 'Phone Number Not Available')</copy>
+  <copy>COALESCE(EXPRESSION_1.EMPLOYEES_SOURCE_FILES.Phone_No,'Phone Number Not Available')</copy>
   ```
   in the **expression** box
   This function will fill in the null values for phone number with string `Phone Number Not Available`.
@@ -505,48 +507,51 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/phone-no-exp.png " ")
 
 
-20. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.
+21. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.
 ![](./images/attributes-tab.png " ")
 
-21. Check the following two fields: **EMPLOYEES\_SOURCE\_FILES.Age\_in\_Yrs\_**, **EMPLOYEES\_SOURCE\_FILES.Year\_of\_Joining**. We will exclude these fields from this operator.
+22. Check the following two fields: **EMPLOYEES\_SOURCE\_FILES.Age\_in\_Yrs**, **EMPLOYEES\_SOURCE\_FILES.Year\_of\_Joining**. We will exclude these fields from this operator.
 ![](./images/check-fields.png " ")
 
-22. Click on **Actions** and then on **Exclude by selection**.
+23. Click on **Actions** and then on **Exclude by selection**.
 ![](./images/exclude-selection.png " ")
 
-23. The fields are now excluded. Click on **View Rules** to see the rules you defined.
+24. The fields are now excluded. Click on **View Rules** to see the rules you defined.
 ![](./images/rules-exclusions.png " ")
 
-24. Click on **Data** tab of the **EMPLOYEE\_AGE\_AND\_PHONE** operator.
+25. Click on **Data** tab of the **EMPLOYEE\_AGE\_AND\_PHONE** operator.
 ![](./images/data-tab-employee.png " ")
 
-25. Scroll to the right until you get to the attribute **EXPRESSION\_1.EMPLOYEES\_SOURCE\_FILES.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the region: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
+26. Scroll to the right until you get to the attribute **EXPRESSION\_1.EMPLOYEES\_SOURCE\_FILES.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the region: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
 ![](./images/data-profile-region.png " ")
 
-26. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
+27. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
 ![](./images/split-op.png " ")
 
-27. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the default **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
+28. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the default **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
 ![](./images/split-region.png " ")
 
-28. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section**.
+29. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section**.
 ![](./images/add-cond.png " ")
 
-29. In **Add Split Condition** page:
+30. In **Add Split Condition** page:
   - Enter **Identifier** `WEST_MIDWEST_REGION`.
-  - For **Condition** enter `SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')`.
+  - For **Condition** enter
+  ```
+  <copy>SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Midwest','West')</copy>
+  ```
   - Click **Add**.
 
 ![](./images/midwest-cond.png " ")
 
 
-30. The first split condition you defined is now displayed. After the condition in the split operator is evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port. The Split operator properties should look like this:
+31. The first split condition you defined is now displayed. After the condition in the split operator is evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port. The Split operator properties should look like this:
 ![](./images/split-op-prop.png " ")
 
-31. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.
+32. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.
 ![](./images/first-target.png " ")
 
-32. In the properties for **TARGET\_1** operator:
+33. In the properties for **TARGET\_1** operator:
   - Change to **Merge Integration Strategy**.
   - For **Data Asset**, select `Data_Warehouse`.
   - For **Connection**, select `Beta connection`.
@@ -558,20 +563,29 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/employees-west-and-midwest.png " ")
 
 
-33. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 4 attributes that were not mapped automatically in the target.
+34. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 3 attributes that were not mapped automatically in the target.
 ![](./images/attr-not-mapped.png " ")
 
-34. **Manually map the "Not Mapped" attributes** in the target:
-  - Drag and drop **E\_Mail** from source to **EMAIL** attribute from target
-  - Drag and drop **Father\_s\_Name** from source to **FATHERS\_NAME** attribute from target
-  - Drag and drop **Mother\_s\_Name** from source to **MOTHERS\_NAME** attribute from target
-  - Drag and drop **Last\_\_Hike** from source to **LAST\_HIKE** attribute from target
-You have now finished mapping the attributes to the **EMPLOYEES\_WEST\_MIDWEST** target table.
+35. **Manually map** the **E\_Mail** attribute from source  to **EMAIL** attribute from target, with drag and drop.
+![](./images/map-email-attribute.png " ")
 
-![](./images/manual-map.png " ")
+36. You will use **mapping by pattern** to map the two remaining unmapped attributes. This maps inbound attributes to target attributes based on simple, user-defined regex rules. Click on **Actions** button and then on **Map by pattern**.
+![](./images/map-by-pattern-button.png " ")
 
+37. In the **Map by pattern** page that pops up:
+  - For **Source Pattern**, use `*_S_NAME`.
+  - For **Target Pattern**, use `$1S_NAME`.
+  - Click on **Preview Mapping**. In the table, the mapping for FATHERS_NAME and MOTHERS_NAME attributes is now displayed.
+  - Click on **Map**.
 
-35. Drag and drop **another target operator**. Connect the **UNMATCHED output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
+*Note:* For more information on how to use**Mapping by pattern**, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm#operator-target), section Target Operator, **Mapping attributes**.
+
+![](./images/map-by-pattern.png " ")
+
+38. The attribute mapping for the **EMPLOYEES_WEST_MIDWEST target table** is now complete.
+![](./images/mapping-result.png " ")
+
+39. Drag and drop **another target operator**. Connect the **UNMATCHED output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
   - Change to **Merge Integration Strategy**.
   - For **Data Asset**, select `Data_Warehouse`.
   - For **Connection**, select `Beta connection`.
@@ -579,15 +593,16 @@ You have now finished mapping the attributes to the **EMPLOYEES\_WEST\_MIDWEST**
   - For **Data Entity**, select `EMPLOYEES_NORTHEAST_SOUTH` (this target table was created with the SQL script from Lab 0 that you ran on the Autonomous Data Warehouse).
   - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
   - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
-Make sure you also map all of the columns, same as in step 34 of this lab.
+
+**Make sure you also map all of the columns, same as in steps 35 and 36 of this lab.**
 
 ![](./images/employees-northeast-and-south.png " ")
 
 
-39. The design of the Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays **no Errors and no Warnings**.
+40. The design of the Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays **no Errors and no Warnings**.
 ![](./images/validate-df.png " ")
 
-40. Click on **Save and Close**.
+41. Click on **Save and Close**.
 ![](./images/save-close-button.png " ")
 
 ## **STEP 5:** Create Integration Tasks
