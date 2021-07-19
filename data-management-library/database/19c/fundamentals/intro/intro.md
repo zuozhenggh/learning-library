@@ -14,9 +14,9 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named `workshop-staged` and `workshop-installed`. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+This workshop lets you try out new features for Oracle Database 19c. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named `workshop-staged` and `workshop-installed`. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
 
-To obtain your compute instances, you need to create SSH keys for yourself. When you reserve this workshop in the LiveLabs tenancy, you are asked to provide your public SSH key on the registration page. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances using Resource Manager.
+To obtain your compute instances, you need to create SSH keys for yourself. When you reserve this workshop in the LiveLabs tenancy, you are asked to provide your public SSH key. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances using Resource Manager.
 
 All labs are independent of each other, so you don't need to do them in any particular order.
 

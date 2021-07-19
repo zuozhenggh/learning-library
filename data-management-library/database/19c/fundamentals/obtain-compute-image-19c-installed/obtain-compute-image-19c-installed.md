@@ -98,7 +98,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
-  ![Run Apply section](images/run-apply-section.png "Run Apply Section")
+    ![Run Apply section](images/run-apply-section.png "Run Apply Section")
 
 17. Click **Create**.
 
@@ -108,6 +108,8 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 
 18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. Copy the URL to the clipboard because you need it in STEP 3. Don't include `remote_desktop =`.
+
+    ![Image URL](images/image-url.png "Image URL")
 
 
 ## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
@@ -133,36 +135,50 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 1. On the noVNC desktop, open a terminal window.
 
-2. Create a `/home/oracle/labs/19cnf` directory and switch to it.
+2. Run the following commands to create a `/home/oracle/labs/19cnf` directory, switch to it, download the lab files into the `19cnf` directory and extract the ZIP file, set permissions, and view the list of files.
 
     ```
-    $ mkdir -p ~/labs/19cnf
-    $ cd ~/labs/19cnf
+    $ <copy>mkdir -p ~/labs/19cnf</copy>
+    $ <copy>cd ~/labs/19cnf</copy>
+    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip</copy>
+    $ <copy>unzip -q 19cnf-lab-files.zip</copy>
+    $ <copy>chmod -R +x ~/labs/19cnf</copy>
+    $ <copy>ls -an</copy>
     ```
 
-3. Download the lab files into the `19cnf` directory.
 
-    ```
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip
-    ```
+## **STEP 5**: Start the database listeners
 
-4. Extract the ZIP file in the `19cnf` directory.
+CDB1 and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to be in `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases.
 
-    ```
-    $ unzip -q 19cnf-lab-files.zip
-    ```
+When you start the listeners, the output indicates that the listener doesn't support any services. You can ignore this message. After you start up the databases in the labs, the listener will support the services.
 
-5. View the list of files.
+The listener for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTCDB1`, and `LISTCDB2` respectively.
 
-    ```
-    ls
-    ```
+1. Start the listener for the ORCL database instance.
 
-6. Grant permissions to execute on files in the `19cnf` directory.
+    ````
+    $ . oraenv
+    Enter ORCL
+    $ lsnrctl start LISTENER
+    ````
 
-    ```
-    chmod -R +x ~/labs/19cnf
-    ```
+2. Start the listener for the CDB1 database instance.
+
+    ````
+    $ . oraenv
+    Enter CDB1
+    $ lsnrctl start LISTCDB1
+    ````
+
+3. Start the listener for the CDB2 database instance.
+
+    ````
+    $ . oraenv
+    Enter CDB2
+    $ lsnrctl start LISTCDB2
+    ````
+
 
 
 ## Learn More
@@ -172,4 +188,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, July 9 2021
+- **Last Updated By/Date** - Jody Glover, Database team, July 19 2021
