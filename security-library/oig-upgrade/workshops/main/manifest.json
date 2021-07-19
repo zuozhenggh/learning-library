@@ -4,7 +4,7 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "This lab provides an overview of Oracle Identity Manager.",
+      "description": "This lab provides an overview of this workshop.",
       "filename": "../../introduction/introduction.md"
     },
     {

@@ -18,51 +18,15 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## **STEP 1:** Start And Validate The Required Processes For The Subsequent Labs.
+1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running.
 
-1. Launch your browser to the following URL
+    On the *terminal* window on the right preloaded with *oracle* user. Execute the STEP-2 scripts to start to required process for the lab.
+    ![](./images/convg-landing.png " ")
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
 
-2. Provide login credentials
-
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-    ![](./images/guacamole-login.png " ")
-
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. Click on *Terminal* icon on the desktop to start a terminal
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 2**: Setup and Initialize Environment
-1.	From any of the terminal session, proceed as shown below as user “*oracle*”
+## **STEP 2:** Setup and Initialize Environment
+1.	From any of the terminal session, proceed as shown below.
 2.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
 
   	```
