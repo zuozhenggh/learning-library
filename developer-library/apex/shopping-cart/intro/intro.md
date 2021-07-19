@@ -26,13 +26,13 @@ Estimated Time: 90 minutes
 | --- | --- | --- |
 | 1 | [Installing Sample Tables](?lab=1-installing-sample-tables) | 5 min |
 | 2 | [Adding columns to Products table](?lab=2-adding-columns) | 10 min |
-| 3 | [Creating database objects](3?lab=-creating-db-objects) | 10 min |
+| 3 | [Creating database objects](?lab=3-creating-db-objects) | 10 min |
 | 4 | [Creating the application](?lab=4-create-app) | 15 min |
-| 5 | [Creating the order page](?lab=5-create-maps) | 10 min |
-| 6 | [Creating the Shopping Cart page](?lab=6-creating-supporting-pages) | 10 min |
-| 7 | [Creating the Add to Cart page](?lab=7-improving-products) | 10 min |
-| 8 | [Improving Products page](?lab=8-improving-app) | 10 min |
-| 9 | [Improving the App](?lab=8-improving-app) | 10 min |
+| 5 | [Creating the order page](?lab=5-creating-orders-page) | 10 min |
+| 6 | [Creating the Shopping Cart page](?lab=6-creating-shopping-cart) | 10 min |
+| 7 | [Creating the Add to Cart page](?lab=7-creating-add-to-cart-page) | 10 min |
+| 8 | [Improving Products page](?lab=8-improving-products) | 10 min |
+| 9 | [Improving the App](?lab=9-improving-app) | 10 min |
 
 ### **Let's Get Started!**
 
