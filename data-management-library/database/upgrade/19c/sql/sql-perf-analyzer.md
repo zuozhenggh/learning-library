@@ -15,8 +15,9 @@ You have collected SQL statements from the first load of HammerDB earlier in thi
 
 You will simulate the statements with "test executes" of one of the SQL Tuning Sets (you can do both if time allows), and generate a comparison report.
 
-### About SQL Performance Analyzer
+### SQL Performance Analyzer
 You can run SQL Performance Analyzer on a production system or a test system that closely resembles the production system. It's highly recommended to execute the SQL Performance Analyzer runs on a test system rather than directly on the production system.
+
 
 ### Objectives
 
@@ -26,7 +27,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -34,6 +35,7 @@ This lab assumes you have:
 		- Lab: Initialize Environment
 
 ## **STEP 1**: Check Statements
+
 
 1. Check the number of statements you collected in the SQL Tuning Sets
 
@@ -114,10 +116,10 @@ This lab assumes you have:
 10.  You may recognize regressed statements and statements with plan changes (rightmost column).  But you may also recognize that the statements NOT marked in GREEN have improved drastically as well.  Why are they not marked GREEN, too? The reason is the THRESHOLD of 2% that has been set.
     ![](./images/sql_per_9.png " ")
 
-11.  You can change the threshold value in the script
+11.  If you want to play, you can change the threshold values in this script - but this is not part of the lab exercise.
     ```
     <copy>
-    /home/oracle/scripts/spa_elapsed.sql
+    vi /home/oracle/scripts/spa_elapsed.sql
     </copy>
     ```
 
@@ -131,7 +133,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    alter session set optimizer_features_enable=’11.2.0.4′;
+    alter session set optimizer_features_enable='11.2.0.4';
     @spa_elapsed.sql
     </copy>
     ```
@@ -149,8 +151,10 @@ This lab assumes you have:
 15. Open it with Firefox.
 
     ```
+    <copy>
     cd /home/oracle/scripts
     firefox compare_spa_* &
+    </copy>
     ```
     ![](./images/sql_per_8.png " ")
 

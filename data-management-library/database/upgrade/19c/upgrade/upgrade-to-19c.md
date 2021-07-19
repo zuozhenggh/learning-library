@@ -9,6 +9,7 @@ The only thing you need to provide is a config file in text format.
 
 *Estimated Lab Time*: 45 minutes
 
+
 ### About AutoUpgrade
 The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle database.
 
@@ -23,7 +24,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -64,14 +65,14 @@ This lab assumes you have:
     ```
     ![](./images/sample_config.png " ")
 
-6. Generate the standard config.cfg . Make the following adjustments - only 6 lines are needed - and remove the obsolete lines from the sample config file:
+6. Make the following adjustments - only 6 lines (without comments) are needed - please remove the obsolete lines from the sample config file:
 
     ```
     <copy>
-    #Global configurations
-    #Autoupgrade's global directory, ...
-    #temp files created and other ...
-    #send here
+    # Global configurations
+    # Autoupgrade's global directory, ...
+    # temp files created and other ...
+
     global.autoupg_log_dir=/home/oracle/logs
 
     #
@@ -109,29 +110,16 @@ This lab assumes you have:
     ```
     ![](./images/upgrade_19c_22.png " ")
 
-<!-- 2. You can monitor the analyze phase in the upg> job console with:
+    <!--- This is an HTML comment in Markdown -->
+
+
+2. You can try to monitor the analyze phase in the upg> job console – but you'll have to be very fast as the analyze run finishes within seconds:
 
     ```
+    <copy>
     lsj
-
-    status -job 100
-
-    Shortly after, the console will reply:
-
-    upg> status Job 100 completed
-    ------------------- Final Summary --------------------
-    Number of databases            [ 1 ]
-
-    Jobs finished                  [1]
-    Jobs failed                    [0]
-    Jobs pending                   [0]
-
-    Please check the summary report at:
-    /home/oracle/logs/cfgtoollogs/upgrade/auto/status/status.html
-    /home/oracle/logs/cfgtoollogs/upgrade/auto/status/status.log
-
-    The database can be upgraded automatically.
-    ``` -->
+    </copy>
+    ```
 
 3. Please check also the HTML Output:
 
@@ -164,23 +152,15 @@ This lab assumes you have:
     ![](./images/upgrade_19c_23.png " ")
 
 
-<!-- 2. You will see this output:
+2. At this point you can monitor the upgrade now – enlarge the xterm‘s width a bit to see no line wraps.  Type 'help' on the upg> job console to see an overview of available commands.
 
     ```
-    Autoupgrade tool launched with default options
-    +--------------------------------+
-    | Starting AutoUpgrade execution |
-    +--------------------------------+
-    1 databases will be processed
-    Type 'help' to list console commands
-    upg>
-    ``` -->
-
-2. At this point you can monitor the upgrade now – enlarge the xterm‘s width a bit to see no line wraps.  Type help on the upg> job console to see an overview of available commands.
-
-    <!-- ```
+    <copy>
     help
+    </copy>
+    ```
 
+    ```
     upg> help
     exit                          // To close and exit
     help                          // Displays help
@@ -202,7 +182,7 @@ This lab assumes you have:
     abort -job                    // Aborts the specified job
     h[ist]                        // Displays the command line history
     /[]                           // Executes the command specified from the history. The default is the last command
-    ``` -->
+    ```
 
 3. The most important commands are:
 
@@ -211,12 +191,13 @@ This lab assumes you have:
 
     ![](./images/upgrade_19c_27.png " ")
 
-    <!-- ```
-        lsj – this lists the job number and overview information about each active job.
-        Please note that the job number has now changed for the -mode deploy run.
-
+    ```
+    <copy>
     lsj
+    </copy>
+    ```
 
+    ```
     upg> lsj
     +----+-------+---------+---------+--------+--------------+--------+--------+-------------+
     |Job#|DB_NAME|    STAGE|OPERATION|  STATUS|    START_TIME|END_TIME| UPDATED|      MESSAGE|
@@ -226,62 +207,66 @@ This lab assumes you have:
     Total jobs 2
 
     status -job <number> – this gives you more information about a specific job.
-    ``` -->
+    ```
 
-4. It also displays where the log files are located.
+4. And 'status -job jobnr' which tells you more details. It also displays where the log files are located.
     ![](./images/upgrade_19c_24.png " ")
     ![](./images/upgrade_19c_25.png " ")
 
-    <!-- ```
-        status -job 101
+    ```
+    <copy>
+    status -job 101
+    </copy>
+    ```
 
-        upg> status -job 101
-        Progress
-        -----------------------------------
-        Start time:      19/10/17 23:16
-        Elapsed (min):   1
-        End time:        N/A
-        Last update:     2019-10-17T23:16:58.468
-        Stage:           PREFIXUPS
-        Operation:       EXECUTING
-        Status:          RUNNING
-        Pending stages:  6
-        Stage summary:
-            SETUP             <1 min
-            PREUPGRADE        <1 min
-            PRECHECKS         <1 min
-            GRP               <1 min
-            PREFIXUPS         <1 min (IN PROGRESS)
+    ```
+    upg> status -job 101
 
-        Job Logs Locations
-        -----------------------------------
-        Logs Base:    /home/oracle/upg_logs/UPGR
-        Job logs:     /home/oracle/upg_logs/UPGR/101
-        Stage logs:   /home/oracle/upg_logs/UPGR/101/prefixups
-        TimeZone:     /home/oracle/upg_logs/UPGR/temp
+    Progress
+    -----------------------------------
+    Start time:      19/10/17 23:16
+    Elapsed (min):   1
+    End time:        N/A
+    Last update:     2019-10-17T23:16:58.468
+    Stage:           PREFIXUPS
+    Operation:       EXECUTING
+    Status:          RUNNING
+    Pending stages:  6
+    Stage summary:
+        SETUP             <1 min
+        PREUPGRADE        <1 min
+        PRECHECKS         <1 min
+        GRP               <1 min
+        PREFIXUPS         <1 min (IN PROGRESS)
 
-        Additional information
-        -----------------------------------
-        Details:
-        +--------+----------------+-------+
-        |DATABASE|           FIXUP| STATUS|
-        +--------+----------------+-------+
-        |    UPGR|DICTIONARY_STATS|STARTED|
-        +--------+----------------+-------+
+    Job Logs Locations
+    -----------------------------------
+    Logs Base:    /home/oracle/upg_logs/UPGR
+    Job logs:     /home/oracle/upg_logs/UPGR/101
+    Stage logs:   /home/oracle/upg_logs/UPGR/101/prefixups
+    TimeZone:     /home/oracle/upg_logs/UPGR/temp
 
-        Error Details:
-        None
-    ``` -->
+    Additional information
+    -----------------------------------
+    Details:
+    +--------+----------------+-------+
+    |DATABASE|           FIXUP| STATUS|
+    +--------+----------------+-------+
+    |    UPGR|DICTIONARY_STATS|STARTED|
+    +--------+----------------+-------+
 
-5. logs – displays the logs folder
+    Error Details:
+    None
+    ```
+
+5. Then 'logs' – displays the logs folder
    ![](./images/upgrade_19c_26.png " ")
 
-    <!-- ```
+    ```
+    <copy>
     logs
-
-    Autoupgrade logs folder [/home/oracle/upg_logs/cfgtoollogs/upgrade/auto/config_files]
-    logs folder [UPGR][/home/oracle/upg_logs/UPGR]
-    ``` -->
+    </copy>    
+    ```
 
 6. Please open a second xterm tab and go to the logs folder.
 
@@ -294,8 +279,10 @@ This lab assumes you have:
 7. Explore the subdirectories, especially /home/oracle/upg\_logs/UPGR/101 and below. Check the /home/oracle/upg\_logs/UPGR/101/prechecks subdirectory. It contains the preupgrade.log:
 
     ```
+    <copy>
     cd prechecks
     more upgr_preupgrade.log
+    </copy>
     ```
 
 8. Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd /home/oracle/upg_logs/UPGR/101/dbupgrade.These 4 subdirectories get created before dbupgrade.
@@ -315,7 +302,8 @@ This lab assumes you have:
     ```
     ![](./images/monitor_upgrade.png " ")
 
-11. Wait until the upgrade completed. Depending on the hardware, the upgrade will take about 25-35 minutes. You don not have to wait but instead we will do some exercises now with the AutoUpgrade tool.
+11. Wait until the upgrade completed. Depending on the hardware, the upgrade will take about 25-35 minutes.
+*If you don't want to watch the screen this long, you could meanwhile approach Lab 13: Transportable Export Import as it uses another database, and then return to this lab stage here again - don't close the xterm, don't exit AutoUpgrade.*
 
     ![](./images/upgrade_19c_28.png " ")
 
@@ -324,8 +312,11 @@ This lab assumes you have:
     exit
     </copy>
     ```
+    If you accidentally closed the xterm or autoupgrade, then no panic please. Just open an xterm, set the environment with '. upgr19' and start AutoUpgrade with the exact same 'deploy' command again. It will resume from where it has been left of.
 
     Congratulations – you upgraded the UPGR database successfully from Oracle 11.2.0.4 to Oracle 19c.
+
+
 
 You may now [proceed to the next lab](#next).
 

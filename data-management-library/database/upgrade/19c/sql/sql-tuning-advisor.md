@@ -11,7 +11,7 @@ In the previous section you fixed plans with SQL Plan Management. But let us see
 You will pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
 
-A complete script is provided: sta_cc.sql.  
+A complete script is provided: `sta_cc.sql`.  
 
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
@@ -20,7 +20,7 @@ You can submit one or more SQL statements as input to the advisor and receive ad
 
 ### Objectives
 In this lab, you will:
-* Generate a tuning task with the SQL Tuning Set STS_CaptureCursorCache
+* Generate a tuning task with the SQL Tuning Set `STS_CaptureCursorCache`
 * Run a tuning task where the SQL Tuning Advisor simulates the execution
 * Generate a result report in TEXT format
 * Generate statements to implement the findings
@@ -28,7 +28,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate a Tuning Task
 
-1. Execute the SQL Tuning Advisor script sta_cc.sql to create, execute and report a complete tuning task.
+1. Execute the SQL Tuning Advisor script `sta_cc.sql` to create, execute and report a complete tuning task.
 
     ```
     <copy>
@@ -50,7 +50,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    @sta_cc.sql
+    @`sta_cc.sql`
     </copy>
     ```
 
@@ -61,11 +61,22 @@ This lab assumes you have:
 
   You see that the SQL Tuning Advisor interacts with SQL Plan Management from the previous exercise as well.
 
+  **And please note that your output may vary from the screenshots. So please read and interpret your own output rather than comparing it with the screenshots.**
+
   When you scroll to the end, you will find the implementation section:
     ![](./images/sql_tun_4.png " ")
 
 
-3. Firstly, remove the duplicate recommendations. You will not need several identical indexes with different names on TPCC.CUSTOMER for sure (marked in BLUE). Fix everything.  This is an exercise. Please do not do this in a real environment without proper verification. But let us implement all the recommendations and see what happens. Execute all the recommendations from the Advisor.
+3. Firstly, remove the duplicate recommendations. You will not need several identical indexes with different names on TPCC.CUSTOMER for sure.
+
+   ** Please read your output and either copy&paste it into an editor, or copy&paste statements statement-by-statement into the session.**
+
+    Try tp fix everything but eliminate duplicate recommendations.
+
+    This is an exercise only. Please do not do this in a real environment without proper verification.
+
+    But let us implement all the recommendations and see what happens.
+
       ![](./images/sql_tun_5.png " ")
 
 

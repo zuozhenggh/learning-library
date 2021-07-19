@@ -4,7 +4,7 @@
 
 In this Lab, you will plugin UPGR into CDB2.
 
-We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
+We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: `target_cdb`=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
 CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
@@ -39,7 +39,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -144,7 +144,7 @@ This lab assumes you have:
     ```
     ![](./images/plugin_upgr_11.png " ")
 
-    To find the above issue
+    To find the above issue execute:
     ```
     <copy>
     column message format a50
@@ -157,6 +157,7 @@ This lab assumes you have:
     </copy>
     ```
     ![](./images/plugin_upgr_12.png " ")
+
 
 2. As you can see, a lot of the reported issues aren’t really issues. This is a known issue. Only in the case you see ERROR in the first column you need to solve it.  The only real ERROR says:
 
@@ -186,7 +187,7 @@ This lab assumes you have:
     ```
     ![](./images/plugin_upgr_14.png " ")
 
-5. Try to connect directly to PDB1 – notice that you cannot just connect without specifying the service name, as PDB1 is not visible on the OS level.
+5. Try to connect directly to PDB1 – please notice that you are using the service name. Otherwise you'd connect to the CDB$ROOT instead as PDB1 is not visible on the OS level.
 
     ```
     <copy>
@@ -207,9 +208,9 @@ This lab assumes you have:
     ![](./images/plugin_upgr_16.png " ")
 
 
+## Appendix 1: Plugin Operation with AutoUpgrade
 
-
-## **ALTERNATE ROUTE**: Plugin Operation with AutoUpgrade
+DON'T USE THIS IF YOU HAVE DONE THE PLUGIN WITH THE ABOVE STEPS ALREADY.
 
 You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
 
