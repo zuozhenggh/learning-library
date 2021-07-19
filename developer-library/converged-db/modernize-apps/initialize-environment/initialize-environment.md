@@ -21,9 +21,9 @@ This lab assumes you have:
 ## **STEP 1:** Start And Validate The Required Processes For The Subsequent Labs.
 1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running.
 
+    ![](./images/convg-novnc-guide.png " ")
     Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
-    ![](./images/convg-landing.png " ")
-
+    
 2.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
 
   	```
@@ -42,7 +42,8 @@ This lab assumes you have:
     tail -f nohup.out
     </copy>
   	```
-
+    ![](./images/weblogic-start.png " ") 
+    
     Press `CTRL + C` to end the tail command
 
 4.	The terminal shows stdout logs for starting the AdminServer.
