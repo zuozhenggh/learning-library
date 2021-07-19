@@ -61,7 +61,7 @@ This lab assumes you have:
     ````
     ![](./images/unplug_PDB3_03.png " ")
 
-    <!-- ````
+    ````
     global.autoupg_log_dir=/home/oracle/logs
 
     upg1.source_home=/u01/app/oracle/product/12.2.0.1
@@ -71,7 +71,7 @@ This lab assumes you have:
     upg1.target_cdb=CDB2
     upg1.log_dir=/home/oracle/logs
     upg1.target_pdb_copy_option=file_name_convert=('CDB1', 'CDB2')
-    ```` -->
+    ````
 
 2. Invoke AutoUpgrade to analyze PDB3 in Oracle 12.2.0.1
 
@@ -83,21 +83,23 @@ This lab assumes you have:
     ![](./images/unplug_PDB3_04.png " ")
 
     If you get the following error:
-    <!-- ````
+
+    ````
     $ java -jar $OH19/rdbms/admin/autoupgrade.jar -mode analyze -config /home/oracle/scripts/PDB3.cfg
 
     Previous execution found loading latest data
     Total jobs recovered: 1
 
     The content of the user config file /home/oracle/scripts/PDB3.cfg was altered after a deploy which may lead to corruption or invalid settings, the AutoUpgrade will stop for safety, make sure to restore the original content of the file prior running the tool again or if you wish to start from the beginning then remove or change the autoupg_log_dir directory
-    ```` -->
+    ````
+
     then please execute the following steps to clear the log history of AutoUpgrade:
 
     ````
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PDB3.cfg -clear_recovery_data
     rm -rf /home/oracle/logs
-    
+
     </copy>
     ````
 
@@ -157,7 +159,8 @@ This lab assumes you have:
     ![](./images/unplug_PDB3_10.png " ")
 
 
-      <!-- ````
+    This should be the result now:
+    ````
       SQL> show pdbs
 
           CON_ID CON_NAME			  OPEN MODE  RESTRICTED
@@ -166,7 +169,7 @@ This lab assumes you have:
       	 3 PDB1 			  READ WRITE NO
       	 4 PDB2 			  READ WRITE NO
       	 5 PDB3 			  READ WRITE NO
-    ```` -->
+    ````
 
 Congratulations! You completed all stages of this Upgrade to Oracle Database 19c lab successfully!
 
