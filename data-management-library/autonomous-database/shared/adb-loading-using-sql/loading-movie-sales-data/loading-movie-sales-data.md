@@ -25,9 +25,9 @@ A wide range of file formats are supported including Excel, comma-separated, tab
 
 For this data loading scenario, we will access data files that have been stored in a  **public bucket**  in Oracle's OCI **Object Storage**.
 
-**Note** -  *all the data files for this workshop are located in a public bucket in our UK (London) data center. All timings for data loading in this workshop assume an ADW instance also running in the UK (London) data center. If this is not the case then your timings for specific steps may vary because the data files and ADW instance are not co-located in the same data center*.
+**Note** -  *All the data files for this workshop are located in a public bucket in our UK (London) data center. All timings for data loading in this workshop assume an ADW instance also running in the UK (London) data center. If this is not the case then your timings for specific steps may vary because the data files and ADW instance are not co-located in the same data center*.
 
-## STEP 1 - Launching SQL Worksheet 
+## **STEP 1:** Launching SQL Worksheet 
 
 During this part of the workshop, we will use the SQL Worksheet application that is built-in to our data warehouse environment. 
 
@@ -48,7 +48,7 @@ During this part of the workshop, we will use the SQL Worksheet application that
     ![Screenshot of initial SQL Worksheet](images/3054194690.png)
 
 
-## STEP 2 - Creating A New Table
+## **STEP 2:** Creating A New Table
 
 1. Below is the script to help you create the sales fact table, **"MOVIE\_SALES\_FACT"**. Simply copy and paste this code into your SQL Worksheet (**NOTE** the first column in the CREATE TABLE definition includes a NOT NULL clause which ensures that each row we load has an order number. There is more on this concept in the lab covering data integrity): 
 
@@ -143,7 +143,7 @@ During this part of the workshop, we will use the SQL Worksheet application that
 
 Now we are ready to start loading the sales data.
 
-## STEP 3 - Loading Sales Data
+## **STEP 3:** Loading Sales Data
 
 ### Background
 
@@ -275,8 +275,8 @@ A smarter and more efficient way to load all the data for 2018 to 2020 is to let
 
 Please *proceed to the next lab*.
 
-## **Acknowledgements**
+## Acknowledgements
 
-- **Author** - Keith Laker, ADB Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, June 2021
+* **Author** - Keith Laker, ADB Product Management
+* **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Brianna Ambler, July 2021

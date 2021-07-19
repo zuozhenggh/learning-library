@@ -1,4 +1,4 @@
-# Deploy OIRI in the local Kubernetes node
+  # Deploy OIRI in the local Kubernetes node
 
 ## Introduction
 
@@ -27,17 +27,16 @@ In this lab, you will:
 ## **STEP 1:** Load the OIRI docker images
 
 The OIRI service comprises of four images as follows:
+  
   - oiri: OIRI service
   - oiri-cli: OIRI command line interface
   - oiri-ding: For data import
   - oiri-ui: Identity Role Intelligence user interface
-Follow the steps below to load these docker images
+  
+Follow the steps below to load these docker images.
 
-1. Open a terminal session as *oracle* user and load the OIRI docker images.
+1. Open a terminal session and load the OIRI docker images.
 
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
     ```
     <copy>cd /u01/setup/oiri/oiri-12.2.1.4.210423</copy>
     ```
@@ -297,11 +296,8 @@ Set up the files required for configuring data import (or data ingestion) and He
     ![](images/11-opc.png)
 
 
-3. Switch back to the terminal session with *oracle* user and Generate a keystore inside the *oiri-cli* container.
+3. Switch back to the terminal session and Generate a keystore inside the *oiri-cli* container.
 
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
     ```
     <copy>docker exec -it oiri-cli /bin/bash</copy>
     ```

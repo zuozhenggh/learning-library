@@ -106,9 +106,9 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 ## **STEP  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
-2. Open up Cloud Shell 
+2. Open up Cloud Shell
 3. Connect to the *HR* user using SQL*Plus by entering the commands below.
-   
+
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
@@ -131,15 +131,15 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 1. Display the table rows. The `HOUSE` column values refer to types of house that you want to look at and categorize the data that you look at statistically and compare with each other.
 
 
-     ```
-     SQL> <copy>SELECT * FROM houses;</copy>
-     <if type="atp">
     ```
+     SQL> <copy>SELECT * FROM houses;</copy>
+    ```
+    <if type="atp">
     ![](./images/step2-2.png " ")
     </if>
     <if type="dbcs">
-
-               HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
+    ```
+     HOUSE PRICE_BIG_CITY PRICE_SMALL_CITY PRICE_DAT
      ---------- -------------- ---------------- ---------
                1         100000            10000 05-FEB-20
                1         200000            15000 06-FEB-20
@@ -171,25 +171,31 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      ```
      SQL> <copy>SELECT house, kurtosis_pop(price_big_city), kurtosis_pop(price_small_city) FROM houses
           GROUP BY house;</copy>
+     ```
      <if type="dbcs">
-
-               HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
-     ---------- ---------------------------- ------------------------------
-               1                        -1.23                      -.7058169
-               2                        -.212                     .245200191
-               3                         -1.3                     -1.5417881
-     </if>
-     SQL> <copy>SELECT house, kurtosis_samp(price_big_city), kurtosis_samp(price_small_city) FROM houses
-          GROUP BY house;</copy>
-     <if type="dbcs">
-
-               HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
-     ---------- ----------------------------- -------------------------------
-               1                          -1.2                        -.201556
-               2                         3.152                      4.98080076
-               3                          -1.2                      -2.1671526
+    ```
+    HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
+    ---------- ---------------------------- ------------------------------
+         1                        -1.23                      -.7058169
+         2                        -.212                     .245200191
+         3                         -1.3                     -1.5417881
+    ```
      </if>
      ```
+     SQL> <copy>SELECT house, kurtosis_samp(price_big_city), kurtosis_samp(price_small_city) FROM houses
+          GROUP BY house;</copy>
+     ```
+     <if type="dbcs">
+     ```
+     HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
+     ---------- ----------------------------- -------------------------------
+         1                          -1.2                        -.201556
+         2                         3.152                      4.98080076
+         3                          -1.2                      -2.1671526
+
+     ```
+
+    </if>
      <if type="atp">
      ![](./images/step2-3.png " ")
     </if>
@@ -220,7 +226,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      ```
 </if>
 <if type="atp">
-1. Insert more rows in the table. 
+1. Insert more rows in the table.
 
 	```
 	SQL> <copy>INSERT INTO houses SELECT * FROM houses;</copy>
@@ -238,25 +244,30 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      ```
      SQL> <copy>SELECT house, KURTOSIS_POP(price_big_city), KURTOSIS_POP(price_small_city) FROM houses
           GROUP BY house ORDER BY 1;</copy>
+    ```
      <if type="dbcs">
-
-               HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
+    ```
+       HOUSE KURTOSIS_POP(PRICE_BIG_CITY) KURTOSIS_POP(PRICE_SMALL_CITY)
      ---------- ---------------------------- ------------------------------
-               1                        -1.23                      -.7058169
-               2                        -.212                     .245200191
-               3                         -1.3                     -1.5417881
-     </if>
-     SQL> <copy>SELECT house, KURTOSIS_SAMP(price_big_city), KURTOSIS_SAMP(price_small_city) FROM houses
-          GROUP BY house ORDER BY 1;</copy>
-     <if type="dbcs">
-               
-               HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
-     ---------- ----------------------------- -------------------------------
-               1                    -1.2309485                      -.68809876
-               2                    -.14695105                      .340165838
-               3                    -1.3061439                      -1.5637533
+          1                        -1.23                      -.7058169
+          2                        -.212                     .245200191
+          3                         -1.3                     -1.5417881
+     ```
      </if>
      ```
+     SQL> <copy>SELECT house, KURTOSIS_SAMP(price_big_city), KURTOSIS_SAMP(price_small_city) FROM houses
+          GROUP BY house ORDER BY 1;</copy>
+     ```
+     <if type="dbcs">
+     ```       
+      HOUSE KURTOSIS_SAMP(PRICE_BIG_CITY) KURTOSIS_SAMP(PRICE_SMALL_CITY)
+     ---------- ----------------------------- -------------------------------
+          1                    -1.2309485                      -.68809876
+          2                    -.14695105                      .340165838
+          3                    -1.3061439                      -1.5637533
+
+     ```
+     </if>
      <if type="atp">
      ![](./images/step3-4.png " ")
      </if>
@@ -275,12 +286,13 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                          KURTOSIS_SAMP(DISTINCT price_small_city) samp_small_city  
                     FROM houses
                     GROUP BY house;</copy>
-     <if type="atp">
+
     ```
+   <if type="atp">
     ![](./images/step3-5a.png " ")
     </if>
     <if type="dbcs">
-
+    ```
                HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
      ---------- ------------ ------------- -------------- ---------------
                1        -1.23          -1.2      -.7058169        -.201556
@@ -300,12 +312,13 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                          KURTOSIS_SAMP(price_small_city) samp_small_city  
                     FROM houses
                     GROUP BY house;</copy>
-     <if type="atp">
+
     ```
+    <if type="atp">
     ![](./images/step3-5b.png " ")
     </if>
     <if type="dbcs">
-
+    ```
                HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
      ---------- ------------ ------------- -------------- ---------------
                1        -1.23    -1.2309485      -.7058169      -.68809876
@@ -363,16 +376,18 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
      ```
      SQL> <copy>SELECT house, count(house) FROM houses GROUP BY house ORDER BY 1;</copy>
+     ```
      <if type="dbcs">
-
+    ```
 
                HOUSE COUNT(HOUSE)
      ---------- ------------
                1         4608
                2           80
                3           80
+     ```
      </if>
-
+     ```
      SQL> <copy>SELECT house,
                          KURTOSIS_POP(price_big_city) pop_big_city,
                          KURTOSIS_SAMP(price_big_city) samp_big_city,
@@ -380,16 +395,19 @@ There are multiple ways to access your Autonomous Database.  You can access it v
                          KURTOSIS_SAMP(price_small_city) samp_small_city  
                     FROM houses
                     GROUP BY house;</copy>
-     <if type="dbcs">
+     ```
 
+     <if type="dbcs">
+     ```
 
                HOUSE POP_BIG_CITY SAMP_BIG_CITY POP_SMALL_CITY SAMP_SMALL_CITY
      ---------- ------------ ------------- -------------- ---------------
                1   9.12746931    9.13868421     33.7452495      33.7831972
                2        -.212    -.14695105     .245200191      .340165838
                3         -1.3    -1.3061439     -1.5417881      -1.5637533
-     </if>
+
      ```
+    </if>
      <if type="atp">
      ![](./images/step3-9.png " ")
      </if>
@@ -411,11 +429,10 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 You may now [proceed to the next lab](#next).
 
-## References 
+## References
 [Skewness Kurtosis Blog](https://www.sisense.com/blog/understanding-outliers-with-skew-and-kurtosis/)
 
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Didi Han Database Product Management
-* **Last Updated By/Date** -  Didi Han, April 2021
-
+* **Last Updated By/Date** -  Tom McGinn, July 2021

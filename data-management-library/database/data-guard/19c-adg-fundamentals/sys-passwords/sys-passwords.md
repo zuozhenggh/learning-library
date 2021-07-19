@@ -52,9 +52,6 @@ Estimated Lab Time: 15 Minutes
     ![](./images/sys-05.png)
 
 
-You have now successfully changed the SYS password. You may now [proceed to the next lab](#next).
-
-
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
