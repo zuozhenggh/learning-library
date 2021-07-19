@@ -4,6 +4,8 @@
 
 In this Lab, you will use the SQL Performance Analyzer (SPA) which is a part of the Real Application Testing (RAT). You will compare statements collected before the upgrade to a simulation of these statements after upgrade. You will use the SQL Tuning Sets collected earlier in the workshop.
 
+*Estimated Lab Time*: 30 minutes
+
 ![](./images/performance_prescription_03.png " ")
 
 You have collected SQL statements from the first load of HammerDB earlier in this workshop into two SQL Tuning Sets:
@@ -12,8 +14,6 @@ You have collected SQL statements from the first load of HammerDB earlier in thi
     STS_CaptureCursorCache
 
 You will simulate the statements with "test executes" of one of the SQL Tuning Sets (you can do both if time allows), and generate a comparison report.
-
-*Estimated Lab Time*: 30 minutes
 
 ### SQL Performance Analyzer
 You can run SQL Performance Analyzer on a production system or a test system that closely resembles the production system. It's highly recommended to execute the SQL Performance Analyzer runs on a test system rather than directly on the production system.

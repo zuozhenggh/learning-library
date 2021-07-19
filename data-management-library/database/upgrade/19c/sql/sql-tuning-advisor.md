@@ -4,14 +4,14 @@
 
 In the previous section you fixed plans with SQL Plan Management. But let us see what else could be done and ask the SQL Tuning Advisor (STA).
 
+*Estimated Lab Time:* 10 minutes
+
 ![](./images/performance_prescription_04.png " ")
 
 You will pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
 
-A complete script is provided: sta_cc.sql.  
-
-*Estimated Lab Time:* 10 minutes
+A complete script is provided: `sta_cc.sql`.  
 
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
@@ -20,7 +20,7 @@ You can submit one or more SQL statements as input to the advisor and receive ad
 
 ### Objectives
 In this lab, you will:
-* Generate a tuning task with the SQL Tuning Set STS_CaptureCursorCache
+* Generate a tuning task with the SQL Tuning Set `STS_CaptureCursorCache`
 * Run a tuning task where the SQL Tuning Advisor simulates the execution
 * Generate a result report in TEXT format
 * Generate statements to implement the findings
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate a Tuning Task
 
-1. Execute the SQL Tuning Advisor script sta_cc.sql to create, execute and report a complete tuning task.
+1. Execute the SQL Tuning Advisor script `sta_cc.sql` to create, execute and report a complete tuning task.
 
     ````
     <copy>
@@ -50,7 +50,7 @@ This lab assumes you have:
 
     ````
     <copy>
-    @sta_cc.sql
+    @`sta_cc.sql`
     </copy>
     ````
 
@@ -76,7 +76,7 @@ This lab assumes you have:
     This is an exercise only. Please do not do this in a real environment without proper verification.
 
     But let us implement all the recommendations and see what happens.
-    
+
       ![](./images/sql_tun_5.png " ")
 
 

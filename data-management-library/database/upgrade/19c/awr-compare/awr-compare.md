@@ -4,9 +4,9 @@
 
 In this lab, you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
 
-![](./images/performance_prescription_02.png " ")
-
 *Estimated Lab Time*: 30 minutes
+
+![](./images/performance_prescription_02.png " ")
 
 ### Comparing Database Performance Over Time
 Performance degradation of the database occurs when your database was performing optimally in the past, but over time has gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.

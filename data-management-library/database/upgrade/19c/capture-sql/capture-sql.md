@@ -4,9 +4,9 @@
 
 In this lab, you will capture and preserve SQL statements and information as well as the AWR. We will use this collection later on following a performance stability method guideline.
 
-![](./images/performance_prescription_01.png " ")
-
 *Estimated Lab Time*: 15 minutes
+
+![](./images/performance_prescription_01.png " ")
 
 ### About SQL Tuning Sets
 A SQL tuning set (STS) is a database object that you can use as input to tuning tools.
@@ -77,7 +77,7 @@ You can also collect statements directly from the Cursor Cache. This is more res
     ````
     ![](./images/sqlset.png " ")
 
-    It is very likely that you will get different statement counts. One of the reasons could be that often the capture from cursor cache will catch more statements compared to those written down from ASH (Active Session History) into AWR. And it does not play any role for the lab whether the number of statements matches the number in the screenshots or not. 
+    It is very likely that you will get different statement counts. One of the reasons could be that often the capture from cursor cache will catch more statements compared to those written down from ASH (Active Session History) into AWR. And it does not play any role for the lab whether the number of statements matches the number in the screenshots or not.
 
 
 ## **STEP 3**: Optional - Export AWR

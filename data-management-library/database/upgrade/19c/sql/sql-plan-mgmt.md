@@ -8,13 +8,14 @@ The SQL Performance Analyzer reports overall showed good results for the run in 
 
 You could now try to fix a specific plan which has been changed or just write down all the plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Let us see if the results are good or if it is a better option to allow the optimizer to find newer paths.
 
+*Estimated Lab Time:* 20 minutes
+
 ![](./images/performance_prescription_05.png " ")
 
 In this lab we use scripts written by Carlos Sierra.
 
-*Estimated Lab Time:* 20 minutes
-
 ### About SQL Plan Management
+
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
 
 SQL plan management uses a mechanism called a SQL plan baseline, which is a set of accepted plans that the optimizer is allowed to use for a SQL statement.

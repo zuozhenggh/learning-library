@@ -4,7 +4,7 @@
 
 In this Lab, you will plugin UPGR into CDB2.
 
-We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
+We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: `target_cdb`=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
 CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
@@ -206,8 +206,6 @@ This lab assumes you have:
     </copy>
     ````
     ![](./images/plugin_upgr_16.png " ")
-
-
 
 
 ## Appendix 1: Plugin Operation with AutoUpgrade
