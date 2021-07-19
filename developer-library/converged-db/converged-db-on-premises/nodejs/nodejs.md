@@ -34,13 +34,13 @@ This lab assumes you have:
 1. Open up a web browser and visit the Application URL indicated in your terminal.    
 
     ```
-    URL: <copy>http://[your instance public-ip address]:3000/</copy>
+    URL: <copy>http://localhost:3000/</copy>
     ```
 
-3. Open up a web browser and visit the Application API indicated in your terminal.   
+2. Open up a web browser and visit the Application API indicated in your terminal.   
 
     ```
-    URL: <copy>http://[your instance public-ip address]:3001/products</copy>
+    URL: <copy>http://localhost:3001/products</copy>
     ```
 
     ![](./images/application_home_pageupdated.png " ")

@@ -29,15 +29,15 @@ This lab assumes you have:
 
 ## **STEP 1:** Connect to SQL Developer
 
-1. Make a connection to SQL Developer. Use the details given below and click on connect.
+1. Make a new connection to SQL Developer. Use the details given below or just click on *dmuser* to connect database.
   - **Name**: dmuser
   - **Username**: mluser
   - **Password**: `Oracle_4U`
-  - **Hostname**: PUBLIC-IP
+  - **Hostname**: localhost
   - **Port**: 1521
   - **Service name**: apppdb
 
-    ![](./images/sql_developer_json.png " ")
+   ![](./images/convg-novnc-landing.png " ")
 
 
 ## **STEP 2:** Identifying SQL Developer and Data Miner Interface Components
