@@ -1,8 +1,8 @@
-# Create a Data Flow, Integration task, Data Loader Task and SQL Task
+# Create a Data Loader task, two Data Flows, Integration tasks and a SQL task
 
 ## Introduction
 
-This lab will walk you through the steps to create a **Data Loader task**, **two Data Flows**, an **Integration tasks** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed at the beginning of each of the steps.
+This lab will walk you through the steps to create a **Data Loader task**, **two Data Flows** along with **Integration tasks** and a **SQL task** in OCI Data Integration. The use-case for each of these data integration tasks is detailed at the beginning of each of the steps.
 
 *Estimated Lab Time*: 1 hour
 

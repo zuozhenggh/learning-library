@@ -24,7 +24,7 @@
             "filename": "../../create-data-assets/create-data-assets.md"
         },
         {
-            "title": "Lab 3: Create a Data Flow, Integration task, Data Loader Task and SQL Task",
+            "title": "Lab 3: Create a Data Loader task, two Data Flows, Integration tasks and a SQL task",
             "filename": "../../integration-tasks/integration-tasks.md"
         },
         {
