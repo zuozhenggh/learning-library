@@ -4,7 +4,7 @@
 
 In this Lab, you will plugin UPGR into CDB2.
 
-We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
+We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: `target_cdb`=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
 CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
@@ -39,7 +39,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -50,58 +50,58 @@ This lab assumes you have:
 
 1. Switch to the UPGR database in 19c environment.
 
-    ````
+    ```
     <copy>
     . upgr19
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_1.png " ")
 
 2. Shutdown UPGR and start it as read only.
 
-    ````
+    ```
     <copy>
     shutdown immediate
     startup open read only;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_2.png " ")
 
 3. Create the XML manifest file describing UPGR’s layout and information.
 
-    ````
+    ```
     <copy>
     exec DBMS_PDB.DESCRIBE('/home/oracle/pdb1.xml');
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_3.png " ")
 
 4. Shutdown UPGR.
 
-    ````
+    ```
     <copy>
     shutdown immediate
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_4.png " ")
 
 5. Switch to CDB2.
 
-    ````
+    ```
     <copy>
     . cdb2
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_5.png " ")
 
 ## **STEP 2**: Compatibility check
 
 1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO only.
 
-    ````
+    ```
     <copy>
     set serveroutput on
 
@@ -113,7 +113,7 @@ This lab assumes you have:
     END;
     /
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_6.png " ")
 
 2. If the result is “NO” (and it is NO very often), then check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. In this case, the result should be “YES“.
@@ -127,25 +127,25 @@ This lab assumes you have:
 
     ![](./images/plugin_upgr_7.png " ")
 
-    ````
+    ```
     <copy>
     create pluggable database PDB1 using '/home/oracle/pdb1.xml' nocopy tempfile reuse;
     show pdbs;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_10.png " ")
 
     If you didn't execute a compatibility check beforehand, you will open the PDB now and recognize that it opens only with errors.
 
-    ````
+    ```
     <copy>
     alter pluggable database PDB1 open;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_11.png " ")
 
     To find the above issue execute:
-    ````
+    ```
     <copy>
     column message format a50
     column status format a9
@@ -155,7 +155,7 @@ This lab assumes you have:
     select con_id, type, message, status from PDB_PLUG_IN_VIOLATIONS
     where status<>'RESOLVED' order by time;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_12.png " ")
 
 
@@ -165,17 +165,17 @@ This lab assumes you have:
 
 3. Kick off this transformation script to assimilate UPGR and make it a “real” pluggable database PDB1 with noncdb\_to\_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
 
-    ````
+    ```
     <copy>
     alter session set container=PDB1;
     @?/rdbms/admin/noncdb_to_pdb.sql
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_13.png " ")
 
 4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB or else it opens only in RESTRICTED mode.
 
-    ````
+    ```
     <copy>
     shutdown
     startup
@@ -184,39 +184,37 @@ This lab assumes you have:
     show pdbs
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_14.png " ")
 
 5. Try to connect directly to PDB1 – please notice that you are using the service name. Otherwise you'd connect to the CDB$ROOT instead as PDB1 is not visible on the OS level.
 
-    ````
+    ```
     <copy>
     sqlplus "sys/oracle@pdb1 as sysdba"
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_15.png " ")
 
 6. As an alternative you could also use the EZconnect (speak: Easy Connect)
 
-    ````
+    ```
     <copy>
     sqlplus "sys/oracle@//localhost:1521/pdb1 as sysdba"
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_16.png " ")
 
 
-
-
-## **ALTERNATE ROUTE**: Plugin Operation with AutoUpgrade
+## Appendix 1: Plugin Operation with AutoUpgrade
 
 DON'T USE THIS IF YOU HAVE DONE THE PLUGIN WITH THE ABOVE STEPS ALREADY.
 
 You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
 
-   ````
+   ```
    <copy>
    global.autoupg_log_dir=/home/oracle/logs
 
@@ -227,18 +225,18 @@ You could have completed the above task with AutoUpgrade as well. Even when the 
    upg1.target_pdb_name=PDB1
    upg1.log_dir=/home/oracle/logs
    </copy>
-   ````
+   ```
 
    Save the file under /home/oracle/scripts/PLUG.cfg.
 
    You start AutoUpgrade now, and let it plugin your database as a new PDB.
 
 
-   ````
+   ```
    <copy>
    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PLUG.cfg -mode deploy
    </copy>
-   ````
+   ```
 
 
 You may now [proceed to the next lab](#next).
