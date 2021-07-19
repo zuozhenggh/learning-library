@@ -24,33 +24,32 @@ This lab assumes you have:
     - Database Listeners
     - Database Server Instances
     - OAS Services
+    ![](./images/convg-novnc-guide.png " ")
 
-2. To launch *Firefox* browser or a *Terminal* client, click on respective icon on the remote desktop
+2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
+    - On the *SQL-Developer* window on the right preloaded with saved credential
+    ![](./images/convg-novnc-landing.png " ")
 
-    ![](./images/guacamole-landing.png " ")
+3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
+    
+    - Go to folder /u01/script
 
-## **STEP 2**: Starting Database And OAS Services
-1. From any of the terminal session started above, proceed as shown below.
+        ```
+        <copy>
+        cd /u01/script
+        </copy>
+        ```
+    - Run the script file to start the components.
 
-2. Go to folder /u01/script
+        ```
+        <copy>
+        ./env_setup_oas-workshop.sh
+        </copy>
+        ```
+        ![](./images/convg-terminal.png " ")
 
-    ```
-    <copy>
-    cd /u01/script
-    </copy>
-    ```
-3. Run the script file to start the services. All the required services of converged database and OAS will start in 5-6 minutes.
-
-    ![](./images/oas-environment2.PNG " ")
-
-    ```
-    <copy>
-    ./env_setup_oas-workshop.sh
-    </copy>
-    ```
-
-    ![](./images/oas-environment3.PNG " ")
-Check for the "Finished starting servers" status before proceeding next.
+        Check for the "Finished starting servers" status before proceeding next.
+        ![](./images/oas-environment3.png " ")
 
 4. Run "status.sh" file to get the status of all the services required for OAS. The command shows all the service names and their status.
 
@@ -60,32 +59,38 @@ Check for the "Finished starting servers" status before proceeding next.
     /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
     </copy>
     ```
-
     ![](./images/oas-environment5.png " ")
-Check for the success status as shown above, before login to OAS screen.
 
-## **STEP 3**: Login To Oracle Analytics Server
+    Check for the success status as shown above, before login to OAS screen.
 
-1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
+5. The above command will start the database, listener and OAS server. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
+
+    - Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop. 
+    ![](./images/oas-login.png " ")
+    If successful, the page above is displayed and as a result your environment is now ready.  
+
+## **STEP 2**: Login To Oracle Analytics Server
+
+1. Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop.   
 
     ```
     <copy>
-    http://[Instance-public-ip]:9502/dv/ui
+    http://localhost:9502/dv/ui
     </copy>
     ```
-    ![](./images/oas-environment8.png " ")
-
-2. Login with the below credentials;
-
     ```
     Username	: <copy>Weblogic</copy>
     ```
-
     ```
     Password	: <copy>Oracle_4U</copy>
     ```
 
-## **STEP 4**: Create A Connection To Database
+    ![](./images/oas-login.png " ")
+    click on *Sign In*
+    ![](./images/oas-landing.png " ")
+
+
+## **STEP 3**: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 
@@ -111,6 +116,27 @@ Check for the success status as shown above, before login to OAS screen.
 3. Once connection details are provided click **Save** to save the connection.
 
 You may now [proceed to the next lab](#next).
+
+## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
 
