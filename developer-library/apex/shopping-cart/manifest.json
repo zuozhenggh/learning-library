@@ -3,7 +3,7 @@
     "tutorials": [
       {
         "title": "Getting Started",
-        "filename": "../signup/1-sign-up-apex.md"
+        "filename": "signup/1-sign-up-apex.md"
       },
       {
         "title": "Introduction",
@@ -11,19 +11,19 @@
       },
       {
         "title": "Lab 1: Installing Sample Tables",
-        "filename": "../installing-sample-tables/1-installing-sample-tables.md"
+        "filename": "installing-sample-tables/1-installing-sample-tables.md"
       },
       {
         "title": "Lab 2: Adding columns to Products table",
-          "filename": "../adding-columns/2-adding-columns.md"
+          "filename": "adding-columns/2-adding-columns.md"
       },
       {
         "title": "Lab 3: Creating database objects",
-        "filename": "../creating-db-objects/3-creating-db-objects.md"
+        "filename": "creating-db-objects/3-creating-db-objects.md"
       },
       {
         "title": "Lab 4: Creating the application",
-        "filename": "../create-app/4-create-app.md"
+        "filename": "create-app/4-create-app.md"
       },     
       {
         "title": "Lab 5: Creating the order page",
