@@ -1,7 +1,7 @@
 # Initialize Environment
 
 ## Introduction
-This lab will show you how to access the DBSecLab environment and validate successful initialization
+This lab will show you how to access the Inmemory Lab environment and validate successful initialization
 
 ### Objectives
 - Access remote desktop
@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 ## **STEP 1:** Access the Graphical Remote Desktop (Preferred)
-For ease of execution of this workshop, your *dbseclab* VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+For ease of execution of this workshop, your InMemory VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Launch your browser to the following URL
 
