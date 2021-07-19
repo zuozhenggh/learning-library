@@ -10,6 +10,7 @@ This lab walks you through the steps to create **Data assets** for your source a
 In this lab, you will:
 * Copy the Workspace OCID for further use in policies
 * Create policies for ADW and Object Storage
+* Copy the Tenancy OCID for further use to create Oracle Object Storage Data Asset
 * Create Object Storage data asset
 * Create Autonomous Data Warehouse data asset
 
@@ -82,7 +83,18 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 ![](./images/save-changes.png " ")
 
 
-## **STEP 3**: Create Object Storage data asset
+## **STEP 3:** Get the Tenancy OCID
+Most types of Oracle Cloud Infrastructure resources have an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). To create the Oracle Object Storage Data Asset in OCI Data Integration, you will need the **OCID for you tenancy**, which you will get from the OCI Console.
+
+1. In the Oracle Cloud Infrastructure Console, open the **Profile** menu and click **Tenancy:**`<your_tenancy_name>`.
+![](./images/profile-menu.png " ")
+
+2. The tenancy OCID is shown under **Tenancy Information**. Click **Copy** to copy it to your clipboard.
+![](./images/tenancy-details.png " ")
+
+3. Paste your tenancy OCID to a local notepad, you will need it for the next step of this lab to create the Object Storage data asset in OCI Data Integration.
+
+## **STEP 4**: Create Object Storage data asset
 
 In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in the Data integration workspace.
 
@@ -101,18 +113,17 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset** 
   - From the **Type** dropdown, select `Oracle Object Storage`
   - For **URL**, enter the URL for your Oracle Object Storage resource in the following format:
 
-  `https://objectstorage.<region-identifier>.oraclecloud.com`
+  ```
+  <copy>https://objectstorage.<region-identifier>.oraclecloud.com</copy>
+  ```
 
 *Note*: Replace the *"region-identifier"* with the one corresponding to the region where your Object Storage bucket is located. You can find the list of region identifiers at the following [link](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm). For example, if you have your Object Storage in Frankfurt region, use `https://objectstorage.eu-frankfurt-1.oraclecloud.com`
 
-  - For **Tenant OCID**, enter the Oracle Cloud ID of your tenancy.
+  - For **Tenant OCID**, paste the one you copied in Step 3 of this lab.
+  - For **Namespace**, the value should be auto-populated after completing the preceding step.
 
-*Note*:
-To view your tenancy OCID in the Console, from the Profile menu click Tenancy:`your_tenancy_name`. You can find the tenancy OCID under Tenancy Information and copy it from there.
-![](./images/profile-menu.png " ")
-![](./images/tenancy-details.png " ")
-
-  - For **Namespace**, the value should be auto-populated after completing the preceding step. If not, enter the namespace for the Object Storage bucket, that you can find as in the picture above, section highlighted in yellow.
+  *Note*:If the values does not get auto-populated, enter the namespace for the Object Storage bucket that you can find as in the picture from step 3.2 of this lab, section highlighted in yellow.
+  
   - Under **Default Connection** Information, you can optionally enter a name and description for the connection or leave the default one.
 
 ![](./images/create-os.png " ")
@@ -125,7 +136,7 @@ A success or failure message displays, indicating whether the test was successfu
 ![](./images/create-asset.png " ")
 
 
-## **STEP 4**: Create Autonomous Data Warehouse data asset
+## **STEP 5**: Create Autonomous Data Warehouse data asset
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 ![](./images/menu_di.png " ")

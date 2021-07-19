@@ -235,6 +235,7 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
   - Click **Create**.
   ![](./images/filter-condition.png " ")
 
+
 20. The details for **FILTER_1 operator** should now look like this:
 ![](./images/filter-details.png " ")
 
