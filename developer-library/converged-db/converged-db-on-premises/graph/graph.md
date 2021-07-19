@@ -230,7 +230,7 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
-GraphViz should be accessible at http://&lt;instance\_ip\_address&gt;:7007/ui
+GraphViz should be accessible at http://localhost:7007/ui
 
 The principal points of entry for the GraphViz application are the query editor and the graph lists.
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
@@ -295,34 +295,34 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
 14. Click on New Highlight
 
-14. Select Filter By Vertices and Apply to Vertex (i.e. the conditions apply to Vertices)
+15. Select Filter By Vertices and Apply to Vertex (i.e. the conditions apply to Vertices)
 
-15. Click on the +  sign to add a condition
+16. Click on the +  sign to add a condition
 
-16. Choose label = ORDERS
+17. Choose label = ORDERS
 
-17. Click + to add another condition
+18. Click + to add another condition
 
-18. Choose ORDER_STATUS = REFUNDED
+19. Choose ORDER_STATUS = REFUNDED
 
-19. Click the checkbox for Color (vertex color) and choose a yellow color from the color-picker
+20. Click the checkbox for Color (vertex color) and choose a yellow color from the color-picker
 
-20. Set the Legend Title to Refunded
+21. Set the Legend Title to Refunded
 
-21. Then Click Add Highlight.
+22. Then Click Add Highlight.
 
     ![](./images/IMGG30.PNG " ")
 
-22. There should now be two highlights. Click OK
+23. There should now be two highlights. Click OK
 
     ![](./images/IMGG31.PNG " ")
 
-23. The resulting viz should look like
+24. The resulting viz should look like
 
     ![](./images/IMGG32.PNG " ")
 
 
-24. The following statement will look at what products did customer buy?
+25. The following statement will look at what products did customer buy?
 
     ```
     <copy>
@@ -334,13 +334,13 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG33.PNG " ")
 
-25. Add highlights on edges for Order items that had Quantity > 1 and unit_Price > 25
+26. Add highlights on edges for Order items that had Quantity > 1 and unit_Price > 25
 
-26. Click on settings-> Highlights-> New Highlights. Select Filter By Edges and Apply to Edge (i.e. the conditions apply to edges).
+27. Click on settings-> Highlights-> New Highlights. Select Filter By Edges and Apply to Edge (i.e. the conditions apply to edges).
 
-27. Add two conditions
+28. Add two conditions
 
-28. Click on the +  sign to add conditions
+29. Click on the +  sign to add conditions
 
     - One for QUANTITY > 1
     - Another for UNIT_PRICE > 25
@@ -351,7 +351,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ![](./images/IMGG35.PNG " ")
 
 
-29. This statement will show Which customers bought product with id 44 and will display 100 results per page.
+30. This statement will show Which customers bought product with id 44 and will display 100 results per page.
 
     ```
     <copy>
@@ -365,7 +365,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     ![](./images/IMGG36.PNG " ")
 
 
-30. Now let's look at which customers bought product with id 44 displaying 100 results per page
+31. Now let's look at which customers bought product with id 44 displaying 100 results per page
 
     ```
     <copy>
@@ -377,7 +377,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG37.PNG " ")
 
-31. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
+32. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
 
     ```
     <copy>
