@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database and GoldenGate environments are correctly set up.
+This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database environments are correctly set up.
 
 Estimated Lab Time: 20 minutes
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to register a database for use with OCI Database Migration. Registered database resources enable networking and connectivity for the source and target databases
+This lab walks you through the steps to register a database for use with DMS. Registered database resources enable networking and connectivity for the source and target databases
 
 Estimated Lab Time: 20 minutes
 
