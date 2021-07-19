@@ -67,7 +67,7 @@ In this lab, you will:
 	}
 	</copy>
 	```
-	
+
 	![](./images/paste1.png)
 
 4. A notification pops up that says A New Document is created and the new document is shown in the bottom section of the JSON workshop.
@@ -244,6 +244,8 @@ Some values need to be unique, so how do we enforce this?
 	```
 
 	![](./images/id100-2.png)
+
+	![](./images/delete_document.png)
 
 	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
 

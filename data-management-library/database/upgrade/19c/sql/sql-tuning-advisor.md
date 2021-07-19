@@ -4,14 +4,14 @@
 
 In the previous section you fixed plans with SQL Plan Management. But let us see what else could be done and ask the SQL Tuning Advisor (STA).
 
-![](./images/sql-tuning-advisor.png " ")
+![](./images/performance_prescription_04.png " ")
 
 You will pass the SQL Tuning Set from the “Load” exercise where you captured the HammerDB workload directly from Cursor Cache to the SQL Tuning Advisor and check the results.
 Analyze the SQL Tuning Set and generate recommendations
 
 A complete script is provided: sta_cc.sql.  
 
-*Estimated Lab Time:* 20 minutes
+*Estimated Lab Time:* 10 minutes
 
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
@@ -37,8 +37,8 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate a Tuning Task
 
-1. Execute the script.
-   
+1. Execute the SQL Tuning Advisor script sta_cc.sql to create, execute and report a complete tuning task.
+
     ````
     <copy>
     . upgr19
@@ -50,7 +50,7 @@ This lab assumes you have:
 
     ````
     <copy>
-    @/home/oracle/scripts/sta_cc.sql
+    @sta_cc.sql
     </copy>
     ````
 
@@ -61,26 +61,37 @@ This lab assumes you have:
 
   You see that the SQL Tuning Advisor interacts with SQL Plan Management from the previous exercise as well.
 
+  **And please note that your output may vary from the screenshots. So please read and interpret your own output rather than comparing it with the screenshots.**
+
   When you scroll to the end, you will find the implementation section:
     ![](./images/sql_tun_4.png " ")
 
-  
-3. Firstly, remove the duplicate recommendations (you will not need 3 identical indexes with different names on TPCC.CUSTOMER for sure) marked in BLUE.  Fix everything.  This is an exercise. Please do not do this in a real environment without proper verification. But let us implement all the recommendations and see what happens.  Execute all the recommendations from the Advisor.
+
+3. Firstly, remove the duplicate recommendations. You will not need several identical indexes with different names on TPCC.CUSTOMER for sure.
+
+   ** Please read your output and either copy&paste it into an editor, or copy&paste statements statement-by-statement into the session.**
+
+    Try tp fix everything but eliminate duplicate recommendations.
+
+    This is an exercise only. Please do not do this in a real environment without proper verification.
+
+    But let us implement all the recommendations and see what happens.
+    
       ![](./images/sql_tun_5.png " ")
 
 
 4. Wait for a while until all statements have been executed. Subsequently, repeat the SQL Performance Analyzer runs from the previous exersize and verify the results.
     ````
     <copy>
-    @/home/oracle/scripts/spa_cpu.sql
-    @/home/oracle/scripts/spa_report_cpu.sql
+    @spa_cpu.sql
+    @spa_report_cpu.sql
     </copy>
     ````
     ![](./images/sql_tun_6.png " ")
     ````
     <copy>
-    @/home/oracle/scripts/spa_elapsed.sql
-    @/home/oracle/scripts/spa_report_elapsed.sql
+    @spa_elapsed.sql
+    @spa_report_elapsed.sql
     </copy>
     ````
     ![](./images/sql_tun_7.png " ")
@@ -90,7 +101,7 @@ This lab assumes you have:
     </copy>
     ````
 
-5. Open a remote desktop (Guacamole) and compare the two resulting reports again. Then compare them to the examples from the previous run.
+5. Compare the two resulting reports again. Then compare them to the examples from the previous run. Firefox will open several tabs, one for each report.
 
     ````
     <copy>
@@ -109,6 +120,6 @@ You may now [proceed to the next lab](#next).
 * [SQL Tuning Advisor](https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/sql-tuning-advisor.html#GUID-8E1A39CB-A491-4254-8B31-9B1DF7B52AA1)
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Carlos Sierra
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Author** - Mike Dietrich
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021

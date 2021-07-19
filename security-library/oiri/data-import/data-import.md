@@ -95,8 +95,6 @@ In this lab, you will:
 
 5. Click Cancel to close the View Results window.
 
-
-
 ## **STEP 4:** Data Import from Oracle Identity Governance
 
 1. Run the actual data import process.
