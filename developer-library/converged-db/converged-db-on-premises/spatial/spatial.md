@@ -79,7 +79,7 @@ This lab assumes you have:
   - **Name**: Spatial
   - **Username**: appspat
   - **Password**: `Oracle_4U`
-  - **Hostname**: PUBLIC-IP
+  - **Hostname**: localhost
   - **Port**: 1521
   - **Service name**: SGRPDB
 
