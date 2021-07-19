@@ -44,11 +44,11 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 
 1.  In your open SQL*plus session connected to UPGR run the below script stored in the path- /home/oracle/scripts:    
 
-    ````
+    ```
     <copy>
     @capture_awr.sql
     </copy>
-    ````
+    ```
 
 2. The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
     ![](./images/upgrade_19c_10.png " ")
@@ -70,11 +70,11 @@ You can also collect statements directly from the Cursor Cache. This is more res
 
 3. Please check how many statements you collected in each SQL Tuning Set.
 
-    ````
+    ```
     <copy>
     select name, owner, statement_count from dba_sqlset;
     </copy>
-    ````
+    ```
     ![](./images/sqlset.png " ")
 
     It is very likely that you will get different statement counts. One of the reasons could be that often the capture from cursor cache will catch more statements compared to those written down from ASH (Active Session History) into AWR. And it does not play any role for the lab whether the number of statements matches the number in the screenshots or not.
@@ -86,11 +86,11 @@ When you migrate databases, exporting and preserving the AWR is important. When 
 
 1. Export the AWR by running the sql stored in your Oracle home.
 
-    ````
+    ```
     <copy>
     @?/rdbms/admin/awrextr.sql
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_11.png " ")
 
 2. Hit **RETURN**.
@@ -116,11 +116,11 @@ When you migrate databases, exporting and preserving the AWR is important. When 
 
 6. Exit from SQL*Plus.
 
-    ````
+    ```
     <copy>
     exit
     </copy>
-    ````
+    ```
 
 You may now [proceed to the next lab](#next).
 

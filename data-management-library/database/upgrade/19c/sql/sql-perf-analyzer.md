@@ -39,22 +39,22 @@ This lab assumes you have:
 
 1. Check the number of statements you collected in the SQL Tuning Sets
 
-    ````
+    ```
     <copy>
     . upgr19
     cd /home/oracle/scripts
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/sql_per_1.png " ")
 
 2. Run the query given below:
 
-    ````
+    ```
     <copy>
     select count(*), sqlset_name from dba_sqlset_statements group by sqlset_name order by 2;
     </copy>
-    ````
+    ```
     ![](./images/sql_per_2.png " ")
 
 3. Then start a completely scripted SQL Performance Analyzer run.
@@ -66,46 +66,46 @@ This lab assumes you have:
 
 4. You will execute two simulations using different comparison metrics for both, CPU\_TIME and ELAPSED\_TIME.  Start with an initial run for CPU\_TIME with the script below.
 
-    ````
+    ```
     <copy>
     @spa_cpu.sql
     </copy>
-    ````
+    ```
     ![](./images/sql_per_3.png " ")
 
 5. Generate the HTML Report containing the results below.
 
-    ````
+    ```
     <copy>
     @spa_report_cpu.sql
     </copy>
-    ````
+    ```
 6. Then repeat this for ELAPSED\_TIME
 
-    ````
+    ```
     <copy>
     @spa_elapsed.sql
     </copy>
-    ````
+    ```
     ![](./images/sql_per_4.png " ")
 
 7. Finally, generate the HTML Report containing the results below
 
-    ````
+    ```
     <copy>
     @spa_report_elapsed.sql
     </copy>
     exit
-    ````
+    ```
 
 8. Notice that there will be two html files in /home/oracle/scripts. Open a remote desktop( Guacamole) with Firefox.
 
-    ````
+    ```
     <copy>
     cd /home/oracle/scripts
     firefox compare_spa_* &
     </copy>
-    ````
+    ```
     ![](./images/sql_per_5.png " ")
 
 9.  Firstly, observe the different comparison metrics in the report’s header.
@@ -117,11 +117,11 @@ This lab assumes you have:
     ![](./images/sql_per_9.png " ")
 
 11.  If you want to play, you can change the threshold values in this script - but this is not part of the lab exercise.
-    ````
+    ```
     <copy>
     vi /home/oracle/scripts/spa_elapsed.sql
     </copy>
-    ````
+    ```
 
 12.  The statement in the screen shot is slightly better than before measured.  Now click on the statement with the ID 7m5h0wf6stq0q and check the plan differences.  Scroll down to the two plans, BEFORE and AFTER.
 
@@ -131,31 +131,31 @@ This lab assumes you have:
 
 13. But this demonstrates that it is not always good to deny plan changes as part of an upgrade. Repeat the ELAPSED run but set.
 
-    ````
+    ```
     <copy>
     alter session set optimizer_features_enable='11.2.0.4';
     @spa_elapsed.sql
     </copy>
-    ````
+    ```
     ![](./images/sql_per_7.png " ")
 
 14.  Then regenerate the HTML Report containing the results below.
 
-    ````
+    ```
     <copy>
     @spa_report_elapsed.sql
     exit
     </copy>
-    ````
+    ```
 
 15. Open it with Firefox.
 
-    ````
+    ```
     <copy>
     cd /home/oracle/scripts
     firefox compare_spa_* &
     </copy>
-    ````
+    ```
     ![](./images/sql_per_8.png " ")
 
 16.  Now there is no plane change, but there is still an improvement as 19c seems to do something different internally. We basically “lost” the improvement partially by using an old optimizer parametrization.

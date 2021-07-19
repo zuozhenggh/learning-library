@@ -53,22 +53,22 @@ This lab assumes you have:
 ## **STEP 1**: Fix A Single Statement
 
 1. Run the statements below.
-      ````
+      ```
       <copy>
       . upgr19
       cd /home/oracle/scripts
       sqlplus / as sysdba
       </copy>
-      ````
+      ```
       ![](./images/fix_a_1.png " ")
 
 2. Here we will use one of Carlos Sierra’s scripts: spb_create.sql:
 
-      ````
+      ```
       <copy>
       @spb_create.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_2.png " ")
 
 3. *Please be aware that the following example often will show only one plan, and hence the script may not work as intended*
@@ -76,7 +76,7 @@ This lab assumes you have:
       ![](./images/fix_a_3.png " ")
       ![](./images/fix_a_4.png " ")
 
-    ````
+    ```
       PLANS PERFORMANCE
       ~~~~~~~~~~~~~~~~~
 
@@ -91,23 +91,23 @@ This lab assumes you have:
       Select up to 3 plans:
       1st Plan Hash Value (req): 3642382161
       2nd Plan Hash Value (opt): 1075826057
-      ````
+      ```
 
 4. Hit RETURN, RETURN and again RETURN (and maybe a forth time).  Verify if the plans have been accepted. If there was only one plan listed above, the following query will return no rows.
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_6.png " ")
 
-      ````
+      ```
       SQL_HANDLE                     PLAN_NAME                      ENA ACC
       -----------------------------  ------------------------------ --- ---
       SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
-      ````
+      ```
 
 If you like to dig deeper “Why has this plan changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
@@ -117,45 +117,45 @@ Now we pin down all possible statements collected in the SQL Tuning Set STS_Capt
 
 1. Use spm\_load\_all.sql
 
-      ````
+      ```
       <copy>
       @spm_load_all.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_7.png " ")
 
 2. Observe the changes that have taken place
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_8.png " ")
 
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
-      ````
+      ```
       <copy>
       @spa_cpu.sql
       @spa_report_cpu.sql
       </copy>
-      ````
-      ````
+      ```
+      ```
       <copy>
       @spa_elapsed.sql
       @spa_report_elapsed.sql
       </copy>
-      ````
+      ```
 
 4. Compare the two resulting reports again. Then compare them to the two examples from the previous run.
 
-    ````
+    ```
     <copy>
     cd /home/oracle/scripts
     firefox compare_spa_* &
     </copy>
-    ````
+    ```
     ![](./images/sql_per_5.png " ")
 
     It may happen that "fixing" ALL statements results in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c may have been better!

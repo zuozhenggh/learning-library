@@ -51,23 +51,23 @@ This lab assumes you have:
 
 5. Open the file /home/oracle/sample_config.cfg in your preferred editor (text or graph mode)
 
-    ````
+    ```
     Text mode:
     <copy>
     vi /home/oracle/scripts/sample_config.cfg
     </copy>
-    ````
-    ````
+    ```
+    ```
     Graphical mode:
     <copy>
     kwrite /home/oracle/scripts/sample_config.cfg &
     </copy>
-    ````
+    ```
     ![](./images/sample_config.png " ")
 
 6. Make the following adjustments - only 6 lines (without comments) are needed - please remove the obsolete lines from the sample config file:
 
-    ````
+    ```
     <copy>
     # Global configurations
     # Autoupgrade's global directory, ...
@@ -85,29 +85,29 @@ This lab assumes you have:
     upg1.log_dir=/home/oracle/logs
     upg1.restoration=no
     </copy>
-    ````    
+    ```    
     ![](./images/config_file.png " ")
 
 
 7. Save the file and name it as UPGR.cfg in /home/oracle/scripts.  If you saved it under its original name, sample_config.cfg, rename it as shown below:
 
-    ````
+    ```
     <copy>
     mv /home/oracle/scripts/sample_config.cfg /home/oracle/scripts/UPGR.cfg
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_21.png " ")
 
 ## **STEP 2**: Analyze Phase
 
 1. It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
 
-    ````
+    ```
     <copy>
     . upgr
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode analyze
     </copy>
-    ````
+    ```
     ![](./images/upgrade_19c_22.png " ")
 
     <!--- This is an HTML comment in Markdown -->
@@ -115,19 +115,19 @@ This lab assumes you have:
 
 2. You can try to monitor the analyze phase in the upg> job console – but you'll have to be very fast as the analyze run finishes within seconds:
 
-    ````
+    ```
     <copy>
     lsj
     </copy>
-    ````
+    ```
 
 3. Please check also the HTML Output:
 
-    ````
+    ```
     <copy>
     firefox /home/oracle/logs/cfgtoollogs/upgrade/auto/status/status.html &
     </copy>
-    ````
+    ```
 
     Click on the "Precheck Report" link and browse through all the checks.
     ![](./images/analyze_report_01.png " ")
@@ -143,24 +143,24 @@ This lab assumes you have:
 
 1. When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/UPGR.cfg -mode deploy
     </copy>
-    ````
+    ```
     You will see the output below
     ![](./images/upgrade_19c_23.png " ")
 
 
 2. At this point you can monitor the upgrade now – enlarge the xterm‘s width a bit to see no line wraps.  Type 'help' on the upg> job console to see an overview of available commands.
 
-    ````
+    ```
     <copy>
     help
     </copy>
-    ````
+    ```
 
-    ````
+    ```
     upg> help
     exit                          // To close and exit
     help                          // Displays help
@@ -182,7 +182,7 @@ This lab assumes you have:
     abort -job                    // Aborts the specified job
     h[ist]                        // Displays the command line history
     /[]                           // Executes the command specified from the history. The default is the last command
-    ````
+    ```
 
 3. The most important commands are:
 
@@ -191,13 +191,13 @@ This lab assumes you have:
 
     ![](./images/upgrade_19c_27.png " ")
 
-    ````
+    ```
     <copy>
     lsj
     </copy>
-    ````
+    ```
 
-    ````
+    ```
     upg> lsj
     +----+-------+---------+---------+--------+--------------+--------+--------+-------------+
     |Job#|DB_NAME|    STAGE|OPERATION|  STATUS|    START_TIME|END_TIME| UPDATED|      MESSAGE|
@@ -207,19 +207,19 @@ This lab assumes you have:
     Total jobs 2
 
     status -job <number> – this gives you more information about a specific job.
-    ````
+    ```
 
 4. And 'status -job jobnr' which tells you more details. It also displays where the log files are located.
     ![](./images/upgrade_19c_24.png " ")
     ![](./images/upgrade_19c_25.png " ")
 
-    ````
+    ```
     <copy>
     status -job 101
     </copy>
-    ````
+    ```
 
-    ````
+    ```
     upg> status -job 101
 
     Progress
@@ -257,49 +257,49 @@ This lab assumes you have:
 
     Error Details:
     None
-    ````
+    ```
 
 5. Then 'logs' – displays the logs folder
    ![](./images/upgrade_19c_26.png " ")
 
-    ````
+    ```
     <copy>
     logs
     </copy>    
-    ````
+    ```
 
 6. Please open a second xterm tab and go to the logs folder.
 
-    ````
+    ```
     <copy>
     cd /home/oracle/logs/UPGR/
     </copy>
-    ````
+    ```
 
 7. Explore the subdirectories, especially /home/oracle/upg\_logs/UPGR/101 and below. Check the /home/oracle/upg\_logs/UPGR/101/prechecks subdirectory. It contains the preupgrade.log:
 
-    ````
+    ```
     <copy>
     cd prechecks
     more upgr_preupgrade.log
     </copy>
-    ````
+    ```
 
 8. Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd /home/oracle/upg_logs/UPGR/101/dbupgrade.These 4 subdirectories get created before dbupgrade.
 
-    ````
+    ```
     prechecks
     prefixups
     preupgrade
     drain
-    ````
+    ```
 
 9. You can now easily monitor the entire upgrade just within Firefox. The page will be refreshed automatically. You don't need to push the RELOAD button.
-    ````
+    ```
     <copy>
     firefox /home/oracle/logs/cfgtoollogs/upgrade/auto/state.html &
     </copy>
-    ````
+    ```
     ![](./images/monitor_upgrade.png " ")
 
 11. Wait until the upgrade completed. Depending on the hardware, the upgrade will take about 25-35 minutes.
@@ -307,11 +307,11 @@ This lab assumes you have:
 
     ![](./images/upgrade_19c_28.png " ")
 
-    ````
+    ```
     <copy>
     exit
     </copy>
-    ````
+    ```
     If you accidentally closed the xterm or autoupgrade, then no panic please. Just open an xterm, set the environment with '. upgr19' and start AutoUpgrade with the exact same 'deploy' command again. It will resume from where it has been left of.
 
     Congratulations – you upgraded the UPGR database successfully from Oracle 11.2.0.4 to Oracle 19c.
