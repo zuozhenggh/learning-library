@@ -209,7 +209,7 @@ This lab assumes you have:
 
 
 
-## **ALTERNATE ROUTE**: Plugin Operation with AutoUpgrade
+## Appendix 1: Plugin Operation with AutoUpgrade
 
 You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
 
