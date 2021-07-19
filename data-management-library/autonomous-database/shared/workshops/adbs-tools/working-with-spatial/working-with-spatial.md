@@ -26,7 +26,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* This lab requires completion of Labs 1-5 in the Contents menu on the left.
+* This lab requires completion of Labs 1-4 in the Contents menu on the left.
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
@@ -35,7 +35,9 @@ In this lab, you will:
 To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER and PIZZA_LOCATIONS tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
 
 
-1. Begin by creating a function that accepts coordinates and returns a geometry. In order to use a function for a function-based index, it must be declared DETERMINISTIC. This means that a given input will always return the same output.  Our case of returning a geometry from latitude, longitude input meets this requirement. Run the following command to create the function.
+1. As described in Lab 4 Step 3, navigate to a SQL Worksheet as user MOVIESTREAM.
+   
+2. Begin by creating a function that accepts coordinates and returns a geometry. In order to use a function for a function-based index, it must be declared DETERMINISTIC. This means that a given input will always return the same output.  Our case of returning a geometry from latitude, longitude input meets this requirement. Run the following command to create the function.
  
     ```
 	<copy>
@@ -123,7 +125,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
 
 Oracle Autonomous Database provides an extensive SQL API for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and more. In this lab you focus on one of those spatial analysis operations; "nearest neighbor" analysis. Nearest neighbor analysis refers to identifying which item(s) are nearest to a location. 
 
-The neareat neighbor SQL operator is called ```sdo_nn( )``` as the has general form 
+The neareat neighbor SQL operator is called ```sdo_nn( )``` as has the general form 
 
 ```
 sdo_nn(
