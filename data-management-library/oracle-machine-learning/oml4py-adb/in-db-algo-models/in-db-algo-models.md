@@ -5,15 +5,15 @@ This lab highlights a few of the machine learning algorithms and features availa
 
 Estimated Lab Time: 15 minutes
 
-### About in-database algorithms and models
+### About in-database Algorithms and Models
 Oracle Machine Learning for Python (OML4Py) makes the open source Python scripting language and environment ready for the enterprise and big data. Designed for problems involving both large and small data volumes, OML4Py integrates Python with Oracle Autonomous Database, allowing users to run Python commands and scripts for statistical, machine learning, and visualization analyses on database tables and views using Python syntax. Many familiar Python functions are overloaded that translate Python behavior into SQL for running in-database, as well as new automatic machine learning capabilities.
 
 ### Objectives
 
 In this lab, you will learn how to:
 * Predict numerical values using multiple regression
-* Work with Clustering using K-means
-* Work with Partitioned Models
+* Work with clustering using K-means
+* Work with partitioned models
 * Use the Model Explainability feature to rank attributes
 
 
@@ -23,9 +23,9 @@ To download the notebook version of this lab (without screenshots), click [here]
 
 [](include:import)
 
-## **Step 1**: Import libraries
+## **Step 1**: Import Libraries
 
-1. Run the following script to import the `oml` package, the python packages - Pandas, Numpy, and matplotlib:
+1. Run the following script to import the `oml` package, and the python packages - Pandas, Numpy, and matplotlib:
 
     ```
     <copy>%python
@@ -56,7 +56,7 @@ This step shows how to predict numerical values using multiple regression. Given
     DEMO_DF   = oml.sync(query = """SELECT CUST_ID, EDUCATION, AFFINITY_CARD, HOUSEHOLD_SIZE, OCCUPATION, YRS_RESIDENCE, Y_BOX_GAMES FROM SH.SUPPLEMENTARY_DEMOGRAPHICS""")
     CUST_DF   = CUSTOMERS.merge(DEMO_DF, how = "inner", on = 'CUST_ID',suffixes = ["",""])</copy>
     ```
-2. Run the following script to display the first few rows of the table `CUST_DF` :
+2. Run the following script to display the first few rows of the table `CUST_DF`:
     ```
     %python
     <copy>
@@ -102,7 +102,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
     ![Script to build a GLM regression model](images/glm_regression.png "Script to build a GLM regression model")
 
-5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
+5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error (RMSE) `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
     * RMSE is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.
     * R-Squared is a statistical measure that represents the goodness of fit of a regression model. The ideal value for R-squared is 1. The closer the value of R-squared is to 1, the better the model fit. For instance, if the R-squared of a model is 0.50, then approximately half of the observed variation can be explained by the model's inputs
 
@@ -206,7 +206,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
     ![RMSE calculation](images/rmse_calculation.png "RMSE calculation")
 
-## **Step 3**: Work with Clustering using K-Means
+## **Step 3**: Work with Clustering Using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
 
 1. Run the following script to build a k-Means clustering model with 3 clusters. You do the following in this step:
@@ -313,7 +313,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     ```
     ![K-means clustering in a Scatter Plot](images/cluster_results_scatterplot.png "K-means clustering in a Scatter Plot")
 
-## **Step 4**: Work with Partitioned models
+## **Step 4**: Work with Partitioned Models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
 
 In this lab, we build an SVM model to predict the number of years a customer resides at their residence but partitioned on customer gender. The model is then used to predict the target, then predict the target with prediction details.
@@ -500,7 +500,7 @@ In this step, you will:
 
      ![Model Explainability - Output of gfi.explain](images/model_explanation.png "Model Explainability - Output of gfi.explain")
 
-### **Try it yourself**
+**Try it yourself**
 
 Build an in-db RandomForest model and compare the RF model's attribute importance ranking with that from MLX.
 

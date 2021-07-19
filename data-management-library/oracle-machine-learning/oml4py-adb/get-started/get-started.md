@@ -1,4 +1,4 @@
-# Get Started with OML4Py on Oracle Autonomous Database
+# Get started with OML4Py on Oracle Autonomous Database
 
 ## Introduction
 This lab walks you through the steps to create an Oracle Machine Learning notebook and connect to the Python interpreter.
@@ -15,7 +15,7 @@ In this lab, you will learn how to:
 * Familiarize with the Oracle Machine Learning Notebook interpreter bindings
 * Familiarize with the Oracle Machine Learning Notebook interpreters
 * Connect to the Python Interpreter
-* Verify Connection to the Oracle Autonomous Database
+* Verify the connection to the Oracle Autonomous Database
 * View help files
 
 ## **Step 1**: Create an Oracle Machine Learning User
@@ -27,26 +27,26 @@ An administrator creates a new user account and user credentials for Oracle Mach
 
     ![Service Console on the Autonomous Database Details page](images/service_console.png "Service Console")
 
-2. On the Service Console click **Administration.**
+2. On the Service Console, click **Administration.**
     ![Autonomous Data Warehouse Administration page](images/administration.png "Administration")
 
 3. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
     ![Manage OML Users option in Oracle Machine Learning Administration page](images/manage_oml_users.png "Manage OML Users option")
-4. Click **Create** on the Oracle Machine Learning User Administration page.
+4. On the Oracle Machine Learning User Administration page, click **Create**.
     <if type="freetier">![Users page in Oracle Machine Learning User Administration](images/create_option.png "Create User")</if>
     <if type="livelabs">![Users page in Oracle Machine Learning User Administration](images/create_option_livelabs.png "Create User")</if>
 
-5. In the Create User page, enter the following details to create the user:
+5. On the Create User page, enter the following details to create the user:
     ![Create User page](images/create_user_page.png "Create User page")
     <if type="freetier">
     - **Username:** Enter `omluser` for username. Using this username, the user will log in to an Oracle Machine Learning instance.
     - **First Name:** Enter the first name of the user.
     - **Last Name:**  Enter the first name of the user.
     - **Email Address:** Enter the email ID of the user.
-    - Select the option **Generate password and email account details to user. User will be required to reset the password on first sign in.** to auto generate a temporary password and send an email with the account credentials to the user.
-    If you select this option, you need not enter values in the **Password** and **Confirm Password** fields; the fields are grayed out.
+    - Select the **Generate password and email account details to user. User will be required to reset the password on first sign in**  check box to auto generate a temporary password and send an email with the account credentials to the user.
+    If you select this option, you don't need to enter values in the **Password** and **Confirm Password** fields; the fields are grayed out.
     - **Password:** Enter a password for the user, if you choose to create a password for the user.
-    This option is disabled if you select the Generate password... option to auto generate a temporary password for the user.
+    This option is disabled if you select the **Generate password...** option to auto generate a temporary password for the user.
     - **Confirm Password:** Enter a password to confirm the value that you entered in the Password field.
     By doing so, you create the password for the user. The user can change the password when first logging in.
     </if>
@@ -86,7 +86,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     ![Oracle Machine Learning Notebooks option in Development tab in Oracle ADW](images/open-oml-notebooks.png "Oracle Machine Learning Notebooks")
 
-3. <if type="livelabs">Sign in with the **omluser** using the password `AAbbcc123456`.</if><if type="freetier">Enter your `omluser` credentials and click **Sign in.**</if>
+3. <if type="livelabs">Sign in with the ``omluser`` using the password `AAbbcc123456`. </if><if type="freetier">Enter your `omluser` credentials and click **Sign in.**</if>
 
     ![Oracle Machine Learning Notebooks Sign-in page](images/signin-to-oml.png "Sign-in page")
 
@@ -100,7 +100,7 @@ This workshop uses tables and views which need to be created before proceeding w
 
 1. Download the [Run Me First notebook](./../notebooks/lab0_run_me_first.json?download=1). This notebook contains the scripts for creating tables and views, and granting required access.
 
-2. In the Notebooks page click **Import** and select the `lab0_run_me_first.json` notebook file.
+2. On the Notebooks page click **Import** and select the `lab0_run_me_first.json` notebook file.
 
 3. Click on the notebook to open it after it is successfully imported.
 
@@ -132,7 +132,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 2. In the **Name** field, provide a name for the notebook.
 3. In the **Comments** field, enter comments, if any.
-4. In the **Connections** field, select a connection in the drop-down list. By default, the `Global` connection group is assigned.
+4. In the **Connections** field, select a connection in the drop-down list. By default, the **Global** connection group is assigned.
 5. Click **OK.** The notebook is created and it opens in the notebook editor.
 
     ![Create Notebook dialog](images/create-notebook-2.png "Create Notebook dialog")
@@ -170,12 +170,12 @@ To run Python commands in a notebook, you must first connect to the Python inter
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
 
 * Connect to a Python interpreter to run Python commands in a notebook
-* Import the Python modules - oml, pandas, numpy, and matplotlib
+* Import the Python modules&mdash;oml, pandas, numpy, and matplotlib
 * Check if the `oml` module is connected to the database
 
 **Note:** `z` is a reserved keyword and must not be used as a variable in `%python` paragraphs in Oracle Machine Learning Notebooks. You will see `z.show()` used in the examples to display Python object and proxy object content.
 
-1. Open the notebook and click the interpreter bindings icon. View the available interpreter bindings.  The "low" priority binding runs operations serially (no parallelism). You can drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. Those highlighted in blue are active. Click to toggle to inactive.
+1. Open the notebook and click the interpreter bindings ![](images/interpreter_bindings_icon.png =20x*) icon. View the available interpreter bindings.  The "low" priority binding runs operations serially (no parallelism). You can drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. Those highlighted in blue are active. Click to toggle to inactive.
 
     ![Oracle Machine Learning Notebooks Interpreter Bindings](images/interpreter_bindings.png "Oracle Machine Learning Notebooks  Interpreter Bindings")
 
@@ -188,7 +188,7 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 2. To connect to the Python interpreter, type `%python` at the top of a new paragraph in your notebook.
    You are now ready to run Python scripts in your notebook.
 
-3. To use OML4Py module, you must import the oml module. Type the following Python command to import the `oml` module, and click the run icon. Alternatively, you can press Shift+Enter keys to run the notebook.   
+3. To use OML4Py module, you must import the oml module. Type the following Python command to import the `oml` module, and click the **run** icon. Alternatively, you can press Shift+Enter keys to run the notebook.   
 
     ```
     %python
@@ -222,7 +222,7 @@ The Python help function is used to display the documentation of packages, modul
     help([object])
     ```
 
-For example,
+For example:
   - To view the help files for the `oml.create` function, type:
     ```
     %python
