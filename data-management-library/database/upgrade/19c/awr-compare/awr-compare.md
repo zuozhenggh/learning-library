@@ -4,14 +4,14 @@
 
 In this lab, you will create AWR diff reports. Those reports give you a first indication about issues you may see (or performance improvements). It is important to compare periods which have roughly the same load and duration.
 
-![](./images/awr-compare.png " ")
-
 *Estimated Lab Time*: 30 minutes
+
+![](./images/performance_prescription_02.png " ")
 
 ### Comparing Database Performance Over Time
 Performance degradation of the database occurs when your database was performing optimally in the past, but over time has gradually degraded to a point where it becomes noticeable to the users. AWR Compare Periods report enables you to compare database performance over time.
 
-An AWR Compare Periods report, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods:  before upgrade and after upgrade.
+An AWR Compare Periods report, shows the difference between two periods in time (or two AWR reports, which equates to four snapshots). Using AWR Compare Periods reports helps you to identify detailed performance attributes and configuration settings that differ between two time periods: before upgrade and after upgrade.
 
 ### Objectives
 
@@ -31,70 +31,69 @@ This lab assumes you have:
 
 ## **STEP 1**: Generate Load
 
-1.  Login to Oracle Cloud.  Run the command below.
-	````
+1.  Open an xterm or reuse the previous one. Now, since the database has been upgraded, the environment needs to be switched to 19c:
+	```
 	<copy>
-	sudo su - oracle
     . upgr19
     cd /home/oracle/scripts
     sqlplus / as sysdba
 	</copy>
-	````
+	```
    ![](./images/upgrade_19c_29.png " ")
 
-2. At first, create an AWR snapshot BEFORE load, then AFTER load. Note down the snapshot numbers again.
-   
-	````
-	<copy>
-	@/home/oracle/scripts/snap.sql
-	</copy>
-	````
+2. At first, create an AWR snapshot BEFORE load, then another one AFTER load.
 
-3.  NOTE down the snapshot number.
+	```
+	<copy>
+	@snap.sql
+	</copy>
+	```
+
+3. Please NOTE down the snapshot number. It may be different than in the screenshot below.
    ![](./images/upgrade_19c_30.png " ")
 
-4. Now run the HammerDB load again as you did in the Generate Load lab
-   ![](./images/upgrade_19c_4.png " ")
+4. At this point you need to generate a comparable workload again. Start HammerDB a second time and repeat the steps from the "Generate Load lab" again.
+   ![](./images/hammerdb02.png " ")
 
 5. Once finished, create another AWR snapshot.
 
-	````
+	```
 	<copy>
-	@/home/oracle/scripts/snap.sql
+	@snap.sql
 	</copy>
-	````
+	```
 
-6. Please NOTE down the snapshot number.
+6. Please NOTE down the snapshot number of the second snapshot. It may be different than the one in the screenshot below.
    ![](./images/upgrade_19c_31.png " ")
-   
+
 ## **STEP 2**: AWR Diff Report
 
 In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a snapshot period AFTER upgrade.
 
-1. Call the AWR Diff script
+1. Call the AWR Diff script awrddrpt.sql:
 
-	````
+	```
 	<copy>
 	@?/rdbms/admin/awrddrpt.sql
 	</copy>
-	````
+	```
 	![](./images/upgrade_19c_32-2.png " ")
 
-	<!-- ````
+	<!-- ```
 	Specify the Report Type
 	~~~~~~~~~~~~~~~~~~~~~~~
 	Would you like an HTML report, or a plain text report?
 	Enter 'html' for an HTML report, or 'text' for plain text
 	Defaults to 'html'
 	Enter value for report_type:
-	```` -->
+	``` -->
 
 2. Click **RETURN**
    ![](./images/upgrade_19c_32.png " ")
    ![](./images/upgrade_19c_33-2.png " ")
 
- 
-	<!--````
+
+	<!--```
 	Instances in this Workload Repository schema
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	DB Id      Inst Num	DB Name      Instance	  Host
@@ -115,13 +114,13 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 
 	Enter value for num_days:
-	```` -->
+	``` -->
 
 3.  Type: **2** and click **RETURN**
    ![](./images/upgrade_19c_34.png " ")
 
 4. Now you need to define the first snapshot interval – therefore, fill in the snapshot ID's you noted down during the first HammerDB run.
-	<!-- ````
+	<!-- ```
 	Enter value for num_days: 2
 
 	Listing the last 2 days of Completed Snapshots
@@ -138,7 +137,7 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	Specify the First Pair of Begin and End Snapshot Ids
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Enter value for begin_snap:
-	```` -->
+	``` -->
 
 5. Type: 150. (Your actual snapshot ID may be different – please check your notes!) Hit RETURN.
    ![](./images/upgrade_19c_35.png " ")
@@ -156,24 +155,24 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 
 8.  Enter awrdiff and hit RETURN. Wait until the HTML output has been generated
 
-	````
+	```
 	<copy>
 	exit
 	</copy>
-	````
+	```
 
-9. In your remote desktop(Guacamole) start Mozilla Firefox with the awr diff report.
-    
+9. Start Mozilla Firefox with the awrdiff report.
 
-	````
+
+	```
 	<copy>
 	firefox /home/oracle/scripts/awrdiff*.html &
 	</copy>
-	````
+	```
 	![](./images/upgrade_19c_39.png " ")
 	![](./images/upgrade_19c_40.png " ")
 
-10. Compare things such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run. Also, browse through the SQL statistics and see if you find remarkable differences between the two runs.  Overall, you will not see any significant differences. The purpose of this lab exercise is for you to simply recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
+10. Compare items such as Wait Events etc. Watch out for significant divergence between the two runs, for instance the different redo sizes per run. Also, browse through the SQL statistics and see if you find remarkable differences between the two runs. Overall, you will not see any significant differences. The purpose of this lab exercise is for you to simply recognize and remember how easy AWR Diff Reports can be generated when you have comparable workloads in your testing environments.
 
 You may now [proceed to the next lab](#next).
 
@@ -183,5 +182,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Mike Dietrich, Database Product Management
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021
