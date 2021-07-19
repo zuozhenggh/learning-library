@@ -230,32 +230,6 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
    You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb_porcl1pdb, porcl2cdb_porcl2pdb, porcl3cdb_porcl3pdb).
 
-5.  Check the status of the agent. **Exit** and run below as **oracle** user.
-   
-    ```
-    <copy>
-    schagent -status
-    </copy>
-    ```
-
-    ![](./images/agent.JPG " ") 
-
-## **STEP 5**: Connect to Shard 2 Database
-1.  Run in the terminal as **root** user.
-
-    ```
-    <copy>
-    docker exec -i -t shard2 /bin/bash
-    </copy>
-    ```
-
-2. Check the status of the agent.
-   
-    ```
-    <copy>
-    schagent -status
-    </copy>
-    ```
 ## **Appendix 1**: Sharding Overview & Architecture
 
 **Oracle Sharding** is a feature of Oracle Database that lets you automatically distribute and replicate data across a pool of Oracle databases that share no hardware or software. Oracle Sharding provides the best features and capabilities of mature RDBMS and NoSQL databases.
@@ -364,4 +338,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Balasubramanian Ramamoorthy, Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021
+* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - July 2021
