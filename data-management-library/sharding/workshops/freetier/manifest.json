@@ -21,13 +21,13 @@
       "title": "Lab 2: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
-      "filename": "../../../prepare-setup/prepare-setup.md"
+      "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
       "title": "Lab 3: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
       "title": "Lab 4: Initialize Environment",
@@ -45,7 +45,7 @@
       "filename": "../../topology/topology.md"
     },
     {
-      "title": "Lab 7: Eshop Application Schema & Code Snippet",
+      "title": "Lab 7: Eshop Application Schema & Code Snippet (read-only)",
       "description": "Eshop App schema & Code Snippet",
       "filename": "../../appschema/appschema.md"
     },

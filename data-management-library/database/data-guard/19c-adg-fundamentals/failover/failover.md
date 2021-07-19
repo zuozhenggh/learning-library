@@ -38,7 +38,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 2. Verify the roles with following Query:
 
     ````
-    Select name, db_unique_name, database_role from v$database;
+    <copy>Select name, db_unique_name, database_role from v$database;</copy>
     ````
 
 3. Enter this query in both panes and click the run button to see the result.
@@ -112,7 +112,7 @@ A failover means that the old primary, in our case the DB in AD2, will be disabl
 1. Using SQL Developer, verify the roles again with following Query:
 
     ````
-    Select name, db_unique_name, database_role from v$database;
+    <copy>Select name, db_unique_name, database_role from v$database;</copy>
     ````
 
 2. Enter this query in both panes and click the run button to see the result.
@@ -128,4 +128,4 @@ You have now successfully performed a failover. You may now [proceed to the next
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021

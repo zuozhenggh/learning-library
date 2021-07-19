@@ -4,11 +4,11 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "This lab provides an overview of Oracle Identity Manager.",
+      "description": "This lab provides an overview of this workshop.",
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Get Started",
+      "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -40,7 +40,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

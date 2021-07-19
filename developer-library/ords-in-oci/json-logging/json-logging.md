@@ -394,7 +394,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
 
     ![Created Service Connector](./images/con-22.png)
 
-## **STEP 5:** Testing the flow
+## **STEP 5:** Testing the Flow
 
 1. To test the entire flow, we need to put the file1.csv csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
