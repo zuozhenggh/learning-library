@@ -19,7 +19,7 @@ In this lab, you will learn how to:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab3_in-db_algo.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab3_in-db_algo.json](./../notebooks/lab3_in-db_algo.json?download=1).
 
 [](include:import)
 
@@ -46,7 +46,7 @@ This step shows how to predict numerical values using multiple regression. Given
 
 1. Run the following script to prepare the dataset combining the `CUSTOMERS` table from the `SH` schema with the `SUPPLEMENTARY_DEMOGRAPHICS` table.
 
-    >**Note:** Here, it shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
+    >**Note:** This script shows how to use the query specification with `oml.sync` and how to select the columns you want to include. However, you could also have used `oml.sync` on the `CUSTOMERS` and `SUPPLEMENTARY_DEMOGRAPHICS` tables and perform column filtering in Python prior to the merge.
 
     ```
     %python
@@ -103,8 +103,10 @@ This step shows how to predict numerical values using multiple regression. Given
     ![Script to build a GLM regression model](images/glm_regression.png "Script to build a GLM regression model")
 
 5. Run the following script to view model fit details to understand the key statistics of the model. Locate the values of Root Mean Square Error (RMSE) `ROOT_MEAN_SQ` and R-squared `R_SQ` from the output. RMSE and R-squared are used to evaluate baseline performance of the model.
-    * RMSE is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.
-    * R-Squared is a statistical measure that represents the goodness of fit of a regression model. The ideal value for R-squared is 1. The closer the value of R-squared is to 1, the better the model fit. For instance, if the R-squared of a model is 0.50, then approximately half of the observed variation can be explained by the model's inputs
+
+    >**Note:** `Root Mean Square Error (RMSE)` is a measure of the differences between values predicted by a model and the values observed. A good model should have a low RMSE. But at the same time, a model with very low RMSE has the potential to overfit.  
+
+    >`R-Squared` is a statistical measure that represents the goodness of fit of a regression model. The ideal value for R-squared is 1. The closer the value of R-squared is to 1, the better the model fit. For instance, if the R-squared of a model is 0.50, then approximately half of the observed variation can be explained by the model's inputs.
 
     ```
     %python
@@ -135,6 +137,7 @@ This step shows how to predict numerical values using multiple regression. Given
     ```
 
     ![Prediction](images/prediction.png "Prediction")
+
 In the RES_DF table, the predicted values and the actual years of residence are displayed in the `PREDICTION` and `YRS_RESIDENCE` columns respectively, as shown in the screenshot.
 
 8. Run the following command to plot the predicted years of residence versus the actual years of residence and then click the **Scatter Chart** icon to see the visualization. Click **Settings** to see how the plot was specified.
@@ -193,6 +196,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
     ![Residuals](images/residuals.png "Residuals")
 11. Run the following script to calculate the RMSE manually on the prediction results on the testing test and the R-  squared on the testing set using the score method.
+
     >**Note:** Both the RMSE and R-squared calculations are similar to the values produced by `oml.glm`.
 
     ```
@@ -207,7 +211,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
     ![RMSE calculation](images/rmse_calculation.png "RMSE calculation")
 
 ## **Step 3**: Work with Clustering Using K-Means
-OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Autonomous Database.
+OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Oracle Autonomous Database.
 
 1. Run the following script to build a k-Means clustering model with 3 clusters. You do the following in this step:
 
@@ -257,10 +261,10 @@ The dispersion value is a measure of how compact or how spread out the data is w
 
     z.show(km_mod.taxonomy)</copy>
     ```
-    The script returns the following table
+    The script returns the following table:
     ![Taxonomy](images/taxonomy.png "Taxonomy")
 
-5. Run the following command to predict the cluster membership.  The `supplemental_cols` argument carries the target column to the output to retain the relationship between the predictions and their original preditor values. These predictors may include a case id, for example to join with other tables, or multiple (or all) columns of the scoring data. You should be aware that unlike Pandas DataFrames, which are explicitly ordered in memory, results from relational databases do not have a specific order unless explicitly specified by an `ORDER BY` clause. As such, you cannot rely on results to maintain the same order across different data sets (tables and DataFrame proxy objects).
+5. Run the following command to predict the cluster membership.  The `supplemental_cols` argument carries the target column to the output to retain the relationship between the predictions and their original preditor values. These predictors may include a case ID, for example to join with other tables, or multiple (or all) columns of the scoring data. You should be aware that unlike Pandas DataFrames, which are explicitly ordered in memory, results from relational databases do not have a specific order unless explicitly specified by an `ORDER BY` clause. As such, you cannot rely on results to maintain the same order across different data sets (tables and DataFrame proxy objects).
 
     ```
     %python
@@ -316,7 +320,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
 ## **Step 4**: Work with Partitioned Models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
 
-In this lab, we build an SVM model to predict the number of years a customer resides at their residence but partitioned on customer gender. The model is then used to predict the target, then predict the target with prediction details.
+In this lab, we build an Support Vector Machine (SVM) model to predict the number of years a customer resides at their residence but partitioned on customer gender. The model is then used to predict the target, then predict the target with prediction details.
 
 1. Run the following script to create test and train data sets and drop missing values.
     ```
@@ -375,7 +379,7 @@ In this lab, we build an SVM model to predict the number of years a customer res
     ```
     ![Model global statistics](images/global_stats.png "Model global statistics")
 
-5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an OML proxy object (a view, a table and so on) into a table in Oracle Database.
+5. Run the following command to materialize the test dataset. The `materialize` method pushes the contents represented by an Oracle Machine Learning proxy object (a view, a table and so on) into a table in Oracle Database.
 Here, the data is materialized to table `TEST_DATA` so that it can be queried from SQL.
 
     ```
@@ -420,19 +424,19 @@ Here, the data is materialized to table `TEST_DATA` so that it can be queried fr
 
 Machine Learning Explainability (MLX) is the process of explaining and interpreting machine learning models. The `oml.mlx` Python module supports the ability to help better understand a model's behavior and how it ranks predictors when making predictions. MLX currently provides model-agnostic explanations for classification and regression tasks where explanations treat the ML model as a black-box, instead of using properties from the model to guide the explanation.
 
-The **GlobalFeatureImportance** explainer object is the interface to the MLX permutation importance explainer. The global feature importance explainer identifies the most important features for a given model and data set. The explainer is model-agnostic and currently supports tabular classification and regression data set with both numerical and categorical features.
+The Global Feature Importance explainer object is the interface to the MLX permutation importance explainer. The global feature importance explainer identifies the most important features for a given model and data set. The explainer is model-agnostic and currently supports tabular classification and regression data set with both numerical and categorical features.
 
-This step walks you through the steps to the steps to use the Model Explainability feature. You will learn how to use this feature, run the **GlobalFeatureImportance** to explain and interpret machine learning models.
+This step walks you through the steps to the steps to use the Model Explainability feature. You will learn how to use this feature, run the Global Feature Importance to explain and interpret machine learning models.
 
 In this step, you will:
-* Import the **GlobalFeatureImportance** explainer
+* Import the Global Feature Importance explainer
 * Load the data set into the database
 * Split the data set into train and test variables
 * Train an SVM model
 * Create the MLX Global Feature Importance explainer `gfi`
 * Run the explainer `gfi.explain` to generate the global feature importance for the test data
 
-1. Run the following command to import import the GlobalFeatureImportance explainer, and load the IRIS data set into the database.
+1. Run the following command to import import the Global Feature Importance explainer, and load the IRIS data set into the database.
 
     ```
     <copy>%python
@@ -487,7 +491,7 @@ In this step, you will:
     ```
 
     ![Code to create MLX Global Feature Importance explainer](images/create_gfi.png "Create MLX Global Feature Importance explainer")
-5. Run the explainer `gfi.explain` to generate the global feature importance for the test data:
+5. Run the `gfi.explain` explainer to generate the Global Feature Importance for the test data:
     ```
     %python
     <copy>
@@ -502,7 +506,7 @@ In this step, you will:
 
 **Try it yourself**
 
-Build an in-db RandomForest model and compare the RF model's attribute importance ranking with that from MLX.
+Build an in-db Random Forest model and compare the RF model's attribute importance ranking with that from MLX.
 
 ## Learn More
 

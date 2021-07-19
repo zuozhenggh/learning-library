@@ -29,7 +29,7 @@ In this lab, you will learn how to:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab2_select_manipulate_data.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab2_select_manipulate_data.json](./../notebooks/lab2_select_manipulate_data.json?download=1).
 
 [](include:import)
 
