@@ -53,6 +53,8 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
