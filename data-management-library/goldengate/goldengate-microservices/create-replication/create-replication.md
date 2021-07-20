@@ -40,7 +40,7 @@ Deployments provide a siloed approach to splitting replication environments betw
 1.	Log in to ServiceManager’s HTML5 webpage using the following details.
 
     ```
-    URL: <copy> https://<Your VM Public IP Address>:16000 </copy>
+    URL: <copy> https://localhost:16000 </copy>
     ```
 
     ```
@@ -96,7 +96,7 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ***Boston deployment creation***
 
-8. Run the script using the following parameter values, to create the Boston Deployment:
+1. Run the script using the following parameter values, to create the Boston Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005 </copy>
