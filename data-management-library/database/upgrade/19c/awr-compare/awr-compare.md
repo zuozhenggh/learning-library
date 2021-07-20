@@ -109,24 +109,25 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
    ![](./images/upgrade_19c_34.png " ")
 
 4. Now you need to define the first snapshot interval – therefore, **fill in the snapshot ID's you noted down during the first HammerDB run**.
-	```
-	Enter value for num_days: 2
 
-	Listing the last 2 days of Completed Snapshots
-	Instance     DB Name	  Snap Id	Snap Started	Snap Level
-	------------ ------------ ---------- ------------------ ----------
+    ```
+    Enter value for num_days: 2
 
-	UPGR	     UPGR		110  20 Feb 2020 22:12	  1
-                    111  20 Feb 2020 22:39	  1
-                    112  20 Feb 2020 22:40	  1
-                    113  21 Feb 2020 00:05	  1
-                    114  21 Feb 2020 00:15	  1
+    Listing the last 2 days of Completed Snapshots
+    Instance     DB Name	  Snap Id	Snap Started	Snap Level
+    ------------ ------------ ---------- ------------------ ----------
+
+    UPGR	     UPGR		110  20 Feb 2020 22:12	  1
+                      111  20 Feb 2020 22:39	  1
+                      112  20 Feb 2020 22:40	  1
+                      113  21 Feb 2020 00:05	  1
+                      114  21 Feb 2020 00:15	  1
 
 
-	Specify the First Pair of Begin and End Snapshot Ids
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Enter value for begin_snap:
-	```
+    Specify the First Pair of Begin and End Snapshot Ids
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Enter value for begin_snap:
+    ```
 
 5. Type: 150. (Your actual snapshot ID may be different – please check your notes!) Hit RETURN.
    ![](./images/upgrade_19c_35.png " ")

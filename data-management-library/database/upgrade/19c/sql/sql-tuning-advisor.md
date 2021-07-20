@@ -50,7 +50,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    @`sta_cc.sql`
+    @sta_cc.sql
     </copy>
     ```
 
