@@ -46,7 +46,9 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
 
 ![](./images/create-compartment.png " ")
 
-5. The Compartments page is displayed and the newly created compartment is shown in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
+5. The Compartments page is displayed. If the newly created compartment  was created under root parent compartment, it is shown now in the list of available compartments. If you select your new **DI-compartment**, you can see the details for it.
+
+*Note: If the compartment was created under another parent compartment (not root), click on the parent compartment in the list of Compartments and you should be able to see your new compartment in Child Compartments section.*
   ![](./images/new-comp.png " ")
 
 
@@ -179,16 +181,16 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
 8. The SQL worksheet opens. To create the BETA user, copy and paste the following code and run it:
     ```
-    <copy>create user beta identified by "password";
+    <copy>create user BETA identified by "password";
     grant DWROLE to BETA;
     GRANT EXECUTE ON DBMS_CLOUD TO BETA;
     alter user BETA quota 200M on data;</copy>
     ```
 
-*Note : Ensure that you enter a password in place of password.*
-![](./images/create-user.png " ")
+*Note : Ensure that you enter a password in place of password. Also, make sure that the script output shows the success of the commands.*
+![](./images/create-user-sql.png " ")
 
-9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wPC9LuVhG3MIVEwuU3v6XdS17hoEfZzSEopKxp2QJO3yoguKbHcM7ZpjyJ1OUqIG/n/sehubemeaprod/b/DI-bucket/o/OCI%20DI%20Workshop%20files.zip) to your local directories. Unzip this file.
+9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2TCtAI9Q0F7Q02LWk_os6VKrHA6d-quG4bwjKHP2g6-h3ilqQyQULWfjEHED1mY6/n/c4u04/b/labfiles/o/OCI_DI_Workshop_files.zip) to your local directories. Unzip this file.
 
 10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects you need for the following labs.
 
@@ -229,6 +231,9 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 7. Once the files are uploaded, you will see the Finished state of the upload. Click **Close**.
 ![](./images/finished-upload.png " ")
 
+8. The files are **uploaded and displayed** in the list of objects in your bucket.
+![](./images/files-in-bucket.png " ")
+
 
 **Congratulations!** You may now [proceed to the next lab](#next).
 
@@ -239,6 +244,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 * [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm_)
 * [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
+* [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
 * **Author** - Theodora Cristea

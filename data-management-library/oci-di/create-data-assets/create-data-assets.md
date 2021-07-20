@@ -73,7 +73,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 ![](./images/edit-policies.png " ")
 
 6. **Replace** in the new policy statements:
-  - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`
+  - *\<compartment-name\>* with the name of your data integration Compartment (`DI-compartment)`
   - *"group-name"* with the name of the OCI group that your user belongs to (`di-group`)
   - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
 
@@ -81,6 +81,9 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
 7. Click **Save Changes**.
 ![](./images/save-changes.png " ")
+
+8. You can now see the list with all the **policy statements** you have defined.
+![](./images/policy-statements.png " ")
 
 
 ## **STEP 3:** Get the Tenancy OCID
@@ -123,7 +126,7 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset** 
   - For **Namespace**, the value should be auto-populated after completing the preceding step.
 
   *Note*:If the values does not get auto-populated, enter the namespace for the Object Storage bucket that you can find as in the picture from step 3.2 of this lab, section highlighted in yellow.
-  
+
   - Under **Default Connection** Information, you can optionally enter a name and description for the connection or leave the default one.
 
 ![](./images/create-os.png " ")
