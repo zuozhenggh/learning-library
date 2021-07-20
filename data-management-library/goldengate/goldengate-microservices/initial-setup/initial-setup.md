@@ -42,8 +42,11 @@ This lab assumes you have:
         ```
         <copy>Welcome1</copy>
         ```
+        ![](./images/goldegate-landing.png" ")
+
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
+    ![](./images/goldengate-service-mgr.png " ")
     If successful, the page above is displayed and as a result your environment is now ready.  
 
     In the interest of time and for ease of execution, all prerequisite tasks to prepare the database for GoldenGate replication have already been performed on your VM instance. This includes:
@@ -68,39 +71,40 @@ You may now [proceed to the next lab](#next).
 5. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
     - Database and Listener
-    ```
-    <copy>
-    sudo systemctl status oracle-database
-    </copy>
-    ```
-    ![](images/db-service-status.png " ")
+        ```
+        <copy>
+        sudo systemctl status oracle-database
+        </copy>
+        ```
+        ![](images/goldengate-database-service.png " ")
+        ![](images/goldengate-database-service2.png " ")
 
     - Oracle GoldenGate ServiceManager
-    ```
-    <copy>
-    sudo systemctl status OracleGoldenGate
-    </copy>
-    ```
-    ![](images/veridata-service-status.png " ")
+
+        ```
+        <copy>
+        sudo systemctl status OracleGoldenGate
+        </copy>
+        ```
+        ![](images/oraclegoldengate.png " ")
 
 6. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
 
-    ```
-    <copy>
-    sudo sudo systemctl restart oracle-database
-    </copy>
-    ```
-
+        ```
+        <copy>
+        sudo sudo systemctl restart oracle-database
+        </copy>
+        ```
     - Oracle GoldenGate ServiceManager
 
-    ```
-    <copy>
-    sudo sudo systemctl restart OracleGoldenGate
-    </copy>
-    ```
-You may now [proceed to the next lab](#next).
+        ```
+        <copy>
+        sudo sudo systemctl restart OracleGoldenGate
+        </copy>
+        ```
+    You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 
