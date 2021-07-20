@@ -428,9 +428,9 @@ When delete process is done **MDS_DB** will be set to Delete status.
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
 * [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
-* **Author** -  Airton Lastori, MySQL Principal Product Manager, MySQL Product Management 
-* **Contributors** -  Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, April 2021
+* **Author** -  Perside Foster, MySQL Solution Engineering 
+* **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, June 2021
 
 
 
