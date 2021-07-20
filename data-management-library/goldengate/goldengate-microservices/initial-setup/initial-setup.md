@@ -33,22 +33,39 @@ This lab assumes you have:
    
     - Username
 
-    ```
-    <copy>oggadmin</copy>
-    ```
+        ```
+        <copy>oggadmin</copy>
+        ```
 
     - Password
 
-    ```
-    <copy>Welcome1</copy>
-    ```
+        ```
+        <copy>Welcome1</copy>
+        ```
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-    You may now [proceed to the next lab](#next).
+    In the interest of time and for ease of execution, all prerequisite tasks to prepare the database for GoldenGate replication have already been performed on your VM instance. This includes:
+      - Enabling Archive Log Mode
+      - Enabling Supplemental Logging
+      - Setting DB parameter `enable_goldengate_replication` to  true
+      - Creating GoldenGate users in the database
 
-4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+
+4. Click on *Terminal* icon on the desktop to start a terminal and Create some additional tables that we will be using later in our labs for CDR purposes.
+
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab10
+    ./db_createTable.sh
+    </copy>
+    ```
+    ![](./images/create_tables.png " ")
+
+You may now [proceed to the next lab](#next).
+
+5. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
     - Database and Listener
     ```
@@ -66,7 +83,7 @@ This lab assumes you have:
     ```
     ![](images/veridata-service-status.png " ")
 
-5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+6. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
 
@@ -113,7 +130,7 @@ You may now [proceed to the next lab](#next).
     <copy>sudo systemctl restart oracle-database</copy>
     ```
 
-2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+2. Oracle GoldenGate ServiceManager
 
     - Start
 
@@ -159,7 +176,7 @@ While you will only need the browser to perform all tasks included in this works
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 0**: Running your Lab
+<!-- ## **STEP 0**: Running your Lab
 ### Login to Host using SSH Key based authentication
 
 1. Select the hamburger menu and select **Compute** > **Instances**
@@ -212,7 +229,7 @@ While you will only need the browser to perform all tasks included in this works
     ./db_createTable.sh
     </copy>
     ```
-    ![](./images/create_tables.png " ")
+    ![](./images/create_tables.png " ") -->
 
 You may now [proceed to the next lab](#next).
 

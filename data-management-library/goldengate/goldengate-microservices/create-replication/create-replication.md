@@ -37,7 +37,7 @@ In this lab we will setup GoldenGate Microservices
 Deployments are a new concept in Oracle GoldenGate Microservices.
 Deployments provide a siloed approach to splitting replication environments between applications, customers, or environments. This allows for greater control over the use of Oracle GoldenGate in larger environments.
 
-1.	Log in to ServiceManager’s HTML5 webpage using the following details.
+<!-- 1.	Log in to ServiceManager’s HTML5 webpage using the following details.
 
     ```
     URL: <copy> https://localhost:16000 </copy>
@@ -51,19 +51,19 @@ Deployments provide a siloed approach to splitting replication environments betw
     Password: <copy>Welcome1</copy>
     ```
 
-    ![](./images/g2.png " ")
+    ![](./images/g2.png " ") -->
 
-2.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.
+1.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.
 
     ![](./images/g3.png " ")
 
-3.	Now switch back to the SSH Terminal session you started as user *oracle*, navigate to *`~/Desktop/Scripts/HOL/Lab2`*
+2.	Now switch back to the SSH Terminal session you started as user *oracle*, navigate to *`~/Desktop/Scripts/HOL/Lab2`*
 
     ```
     <copy>cd ~/Desktop/Scripts/HOL/Lab2</copy>
     ```
 
-4.	To run the `create_deployment.sh` script, you will need to provide eight (8) command line parameters. Here is the template of the command:
+3.	To run the `create_deployment.sh` script, you will need to provide eight (8) command line parameters. Here is the template of the command:
 
     ```
     sh ./create_deployment.sh <Deployment Name> <Admin Password> <SMPort> <ASPort> <DSPort> <RSPort> <PMSPort> <PMSPortUDP>
@@ -81,22 +81,22 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ***Atlanta deployment creation***  
 
-5.	Run the script using the following parameter values, to create the Atlanta Deployment:
+4.	Run the script using the following parameter values, to create the Atlanta Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
     ```
     ![](./images/g4.png " ")
 
-6.	Return to the browser and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed.
+5.	Return to the browser and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed.
 
     ![](./images/g5.png " ")
 
-7.	Return to the Terminal Window where you ran the `create_deployment.sh` script and rerun the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
+6.	Return to the Terminal Window where you ran the `create_deployment.sh` script and rerun the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
 
     ***Boston deployment creation***
 
-1. Run the script using the following parameter values, to create the Boston Deployment:
+7. Run the script using the following parameter values, to create the Boston Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005 </copy>
@@ -104,7 +104,7 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ![](./images/g6.png " ")
 
-9.	Return to the browser and refresh the ServiceManager page again. You should now have two (2) Deployments with a total of eight (8) services running.
+8.	Return to the browser and refresh the ServiceManager page again. You should now have two (2) Deployments with a total of eight (8) services running.
 
     ![](./images/g7.png " ")
 
