@@ -40,11 +40,11 @@ In this lab, you will:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab5_embed_python.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab5 embed python.json](./../notebooks/lab5_embed_python.json?download=1).
 
 [](include:import)
 
-## **Step 1**: Import OML4Py and supporting libraries and Create Data Table
+## **Step 1**: Import OML4Py and Supporting Libraries and Create Data Table
 
 In Step 1 to Step 5, you learn about Embedded Python Execution.
 In step 6 to 15, you will work with Python Script Repository.
@@ -150,7 +150,7 @@ When working with embedded Python execution, a typical workflow is:
 
    ![Generating a scatter plot](images/scatterplot_iris.png "Scatter plot")
 
-## **Step 3:** Build the model using Embedded Python Execution
+## **Step 3:** Build the Model Using Embedded Python Execution
 In this step, you will build the same linear model, but using the embedded Python execution Python engines under control of the Oracle Autonomous Database environment. You will perform the following tasks:
 
 * Define the function `build_lm_1`, that returns the model as the result. This is referred to as a user-defined function.
@@ -184,7 +184,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
       plt.show()
       return mod</copy>
     ```
-2. Now, call the user-defined function `build_lm_1` to build the model and plot the petal length predictions:
+2. Call the user-defined function `build_lm_1` to build the model and plot the petal length predictions:
 
     ```
     %python
@@ -275,12 +275,12 @@ In this step, you will build the same linear model, but using the embedded Pytho
     ```
     ![Using the row_apply function](images/row_apply.png "Using the row_apply function")
 
-## **Step 4:** Build One Model per Species using Group_Apply Function
+## **Step 4:** Build One Model per Species Using Group_Apply Function
 This step shows how to use the `oml.group_apply` function for model building. The `group_apply` function passes the `oml.DataFrame` specified by the data argument to the user-defined function as its first argument. The index argument `oml.group_apply` specifies the columns of `oml.DataFrame` by which the database groups the data for processing by the user-defined Python function. The `group_apply` function can use data-parallel execution, in which one or more Python engines perform the same Python function on different groups of data.
 
 In this step, you build three models, one specific to each species and return them as a dictionary. These models are indexed by their corresponding index value.
 
-1. Run the following script to build three models, one each for the species - Versicolor, Setosa, and Virginica. Here, you use the `oml.group_apply` function to call the user-defined function `build_lm_g` three times (one for each species) using two Python engines (parallel=2).
+1. Run the following script to build three models, one each for the species - Versicolor, Setosa, and Virginica. Use the `oml.group_apply` function to call the user-defined function `build_lm_g` three times (one for each species) using two Python engines (parallel=2).
     ```
     %python
     <copy>
@@ -349,10 +349,10 @@ When you load the datastore, you get the three models loaded into the client Pyt
 >**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
 
 Again, we create this script in the Python script repository and then call it by name using `table_apply`. We then pull the model to the client and view its type.
-### **Try it yourself**
+**Try it yourself**
 Use the `group_apply` function to count the number of each species in the data set.
 
-### Call a function N times
+### Call a Function n Times
 4. The `index_apply` function allows the same function to be called a specified number of times. The first argument to the user-defined function is an index number for the function execution. For example, if the `times` argument is `10`, each function call will receive a distinct value between 1 and 10. This can be used, for instance, for selecting behavior within the function or setting a random seed for Monte Carlo analysis.
     ```
     %python
@@ -373,7 +373,7 @@ Use the `group_apply` function to count the number of each species in the data s
     ```
     ![Using the index_apply function to call another function N number of times](images/index_apply.png "Using the index_apply function to call another function N number of times")
 
-### **Try it yourself**
+**Try it yourself**
 Use the `group_apply` function to count the number of each species in the data set.
 
 ## **Step 5:** Return Multiple Images from Embedded Python Execution
@@ -417,7 +417,9 @@ This step shows how to create a function `RandomRedDots` that creates a simple D
 
     res</copy>
     ```
+
     The function returns the following:
+
     ![Calling the function RandomRedDots by using oml.do.eval](images/randomreddots.png "Calling the function RandomRedDots")
 
 3. In this example, you modify the function to use subplots, thereby creating separate figure objects for the scatter plots. Store this in the script repository as `RandomRedDots2` and call the function to see the results. As expected, you get both plots.
@@ -602,7 +604,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     ```
     ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod2_coef.png "Using Embedded Python Execution function oml.table_apply to call the function loaded_str")
 
-## **Step 8:** Store a function as a global  function
+## **Step 8:** Store a Function as a Global  Function
 
 A global function is one that can be accessed by any user.
 

@@ -19,7 +19,7 @@ In this lab, you will learn how to:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [lab3_in-db_algo.json](./../notebooks/lab3_in-db_algo.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab3 in-db algo.json](./../notebooks/lab3_in-db_algo.json?download=1).
 
 [](include:import)
 
