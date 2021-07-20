@@ -11,31 +11,22 @@ Estimated Lab Time: 60 minutes
 ### About Product/Technology
 The NEW MySQL Database Service (MDS) is the only database service that is 100% developed, managed, and supported by the MySQL team. 
 MySQL Database Service is a fully managed service,
-running on Oracle Cloud (Gen 2) Cloud Infrastructure. It enables
-you to:
+running on Oracle Cloud (Gen 2) Cloud Infrastructure. It enables you to:
 
-* Instantly provision MySQL instances and connect to a
-production ready, pre-configured MySQL database.
+* Instantly provision MySQL instances and connect to a production ready, pre-configured MySQL database.
 
-* Automate database specific tasks such as configuration,
-security patching, backup, High Availability, and monitoring.
+* Automate database specific tasks such as configuration, security patching, backup, High Availability, and monitoring.
 
 * Choose from multiple compute shapes, depending on
 your application and capacity requirements.
 
-* Provision fast, reliable, and secure cloud storage for all
-enterprise workloads.
+* Provision fast, reliable, and secure cloud storage for all enterprise workloads.
 
-* Set up fast, predictable networking with end-to-end
-network security, including a virtual cloud network
-(VCN).
+* Set up fast, predictable networking with end-to-end network security, including a virtual cloud network (VCN).
 
-* Monitor the health of your resources, optimize the
-performance of your applications, and respond to
-anomalies in real time.
+* Monitor the health of your resources, optimize the performance of your applications, and respond to anomalies in real time.
 
-* Access to dozens of additional Oracle Cloud Services
-enabling organizations to embrace the shift to the cloud.
+* Access to dozens of additional Oracle Cloud Services enabling organizations to embrace the shift to the cloud.
 
 * Free up time of developers, Database Administrators(DBA), and DevOps to focus
 on value added tasks that are core to your business.
