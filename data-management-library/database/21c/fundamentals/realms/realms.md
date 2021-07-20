@@ -211,7 +211,7 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT c##test1@PDB21</copy>
+    SQL> <copy>CONNECT c##test2@PDB21</copy>
     Enter password: <i>WElcome123##</i>
     Connected.
     ```
