@@ -36,7 +36,7 @@ To download the notebook version of this lab (without screenshots), click [lab4_
 
 [](include:import)
 
-## **Step 1**: Import libraries supporting OML4Py and Ceate Data Table
+## **Step 1**: Import libraries supporting OML4Py and Create Data Table
 
 To use OML4Py, first import the package `oml`. Also import the pandas package for pandas-specific functionality.
 

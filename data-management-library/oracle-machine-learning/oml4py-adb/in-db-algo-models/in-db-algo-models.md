@@ -1,7 +1,7 @@
 # Use in-database algorithms and models
 
 ## Introduction
-This lab highlights a few of the machine learning algorithms and features available in OML4Py: Generalized Linear Models, K-Means Clustering, partitioned models, and model explainability.
+This lab highlights a few of the machine learning algorithms and features available in OML4Py: Generalized Linear Models (GLM), K-Means Clustering, partitioned models, and model explainability.
 
 Estimated Lab Time: 15 minutes
 
@@ -39,7 +39,7 @@ To download the notebook version of this lab (without screenshots), click [lab3 
     pd.set_option('display.width', 1000)</copy>
     ```
 
-## **Step 2**: Work with Regression using GLM
+## **Step 2**: Work with Regression Using Generalized Liner Model (GLM)
 This step shows how to predict numerical values using multiple regression. Given demographic, purchase, and affinity card data for a set of customers, predict the number of years a customer remains at the same residence, as found in column `YRS_RESIDENCE` - a continuous variable. This example uses the Generalized Linear Model algorithm.
 
 >**Note:** All processing occurs inside Oracle Autonomous Database.

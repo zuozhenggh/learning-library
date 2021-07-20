@@ -1,4 +1,4 @@
-# Select and manipulate data using the Transparency Layer
+# Select and manipulate data using the transparency layer
 
 ## Introduction
 
@@ -6,7 +6,7 @@ This lab shows how to use the transparency layer classes to work with data and t
 
 Estimated Lab Time: 20 minutes
 
-### About Transparency Layer, Data Selection and Manipulation
+### About , Data Selection and Manipulation
 The transparency layer classes allows you to convert select Python objects to Oracle Autonomous Database objects and also call a range of familiar Python functions that are overloaded to call the corresponding SQL on tables in the
 database.
 The Oracle Machine Learning for Python (OML4Py) transparency layer supports functions that interact with database data and enables you to:
@@ -84,7 +84,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
     res</copy>
     ```
 
-    ![Script to list the transparency layer functions](images/transparency_layer_functions.png "Script to list the Transparency layer functions")   
+    ![Script to list the transparency layer functions](images/transparency_layer_functions.png "Script to list the transparency layer functions")   
 
 ## **Step 2:** Select Table Columns using Proxy Object IRIS_TMP
 In this step, you will select the first three records for columns `SEPAL_LENGTH` and `PETAL_LENGTH` from the `IRIS_TMP` table.
@@ -502,7 +502,7 @@ The following tasks are covered in this lab:
 
     ![Example of KFold function to split the data randomly](images/random_data_split.png "Example of KFold function")
 
-**Try it yourself**: Split the digit data set into four even samples of 25% each
+**Try it yourself:** Split the digit data set into four even samples of 25% each
 
 ## **Step 6:** Use the crosstab and pivot_table Functions on a DataFrame Proxy Object
 

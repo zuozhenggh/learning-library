@@ -25,7 +25,7 @@ To download the notebook version of this lab (without screenshots), click [lab6_
 
 [](include:import)
 
-## **Step 1**: Import Libraries Supporting OML4Py
+## **Step 1**: Import Libraries Supporting Oracle Machine Learning for Python (OML4Py)
 
 1. Run the following script to import `oml` module, Pandas package, and `automl` module.
     ```
@@ -98,7 +98,7 @@ You see the set of selected columns.
     ![Script and its output to define the Feature Selection object fs_wine_cl and the reduce function](images/define_feature_selection_obj.png "Script to Define Feature Selection object fs_wine_cl")
 
 
-**Try it Yourself**
+**Try it Yourself:**
 Try other algorithms, such as `svm_linear` or `rf` in the first argument of the reduce function see if different columns are selected.
 
 ## **Step 4:** Automated Model Tuning

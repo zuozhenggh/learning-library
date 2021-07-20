@@ -235,7 +235,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
     ```
     ![Output of the table_apply function](images/table_apply_output.png "Output of the table_apply function")
 
-5. Run the following script to print the object, model, type and coefficient.
+5. Run the following script to print the object, model, type and coefficient:
 
     ```
     %python
@@ -349,7 +349,7 @@ When you load the datastore, you get the three models loaded into the client Pyt
 >**Note:** Embedded Python execution can also leverage functions from third-party packages. These packages need to be installed on the database server machine, but can then be used inside the user-defined function as shown here using LinearSVC.
 
 Again, we create this script in the Python script repository and then call it by name using `table_apply`. We then pull the model to the client and view its type.
-**Try it yourself**
+**Try it yourself:**
 Use the `group_apply` function to count the number of each species in the data set.
 
 ### Call a Function n Times
@@ -373,7 +373,7 @@ Use the `group_apply` function to count the number of each species in the data s
     ```
     ![Using the index_apply function to call another function N number of times](images/index_apply.png "Using the index_apply function to call another function N number of times")
 
-**Try it yourself**
+**Try it yourself:**
 Use the `group_apply` function to count the number of each species in the data set.
 
 ## **Step 5:** Return Multiple Images from Embedded Python Execution
@@ -645,7 +645,7 @@ In this step, you will define and save a global function `build_lm3`. You will t
     ```
     ![Running the user-defined function MyGlobalML_function](images/res_coef.png "Running the user-defined function MyGlobalML_function")
 
-## **Step 9:** Drop scripts from the Script Repository
+## **Step 9:** Drop Scripts from the Script Repository
 In this step, you will perform the following:
 
 * Drop one of the private scripts.
