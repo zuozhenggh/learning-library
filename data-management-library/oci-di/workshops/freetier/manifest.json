@@ -1,9 +1,10 @@
 {
     "workshoptitle": "Introduction to Oracle Cloud Infrastructure (OCI) Data Integration",
+    "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Introduction to OCI Data Integration.",
+            "description": "Introduction to OCI Data Integration LiveLab.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -12,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 0: Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure",
+            "title": "Lab 0: Setting up the Data Integration prerequisites in OCI",
             "filename": "../../prerequisites/prerequisites.md"
         },
         {
@@ -20,7 +21,7 @@
             "filename": "../../create-workspace/create-workspace.md"
         },
         {
-            "title": "Lab 2: Create Data Assets",
+            "title": "Lab 2: Create the Object Storage and ADW Data Assets",
             "filename": "../../create-data-assets/create-data-assets.md"
         },
         {
