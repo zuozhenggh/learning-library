@@ -115,6 +115,6 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+- **Author** - Robert Pastijn
 - **Contributors** - Hakim Loumi
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021
+* **Last Updated By/Date** - Vijay Balebail, Rajeev Rumale
