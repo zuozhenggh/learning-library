@@ -46,10 +46,10 @@ This lab assumes you have:
 3. This tells you that the sample file has been created at:
    ![](./images/upgrade_19c_18.png " ")
 
-4. The created sample configuration file /home/oracle/scripts/sample_config.cfg
+4. The created sample configuration file `/home/oracle/scripts/sample_config.cfg`
    You will need to edit it – and then pass it to the AutoUpgrade utility.
 
-5. Open the file /home/oracle/sample_config.cfg in your preferred editor (text or graph mode)
+5. Open the file `/home/oracle/sample_config.cfg` in your preferred editor (text or graph mode)
 
     ```
     Text mode:
@@ -89,7 +89,7 @@ This lab assumes you have:
     ![](./images/config_file.png " ")
 
 
-7. Save the file and name it as UPGR.cfg in /home/oracle/scripts.  If you saved it under its original name, sample_config.cfg, rename it as shown below:
+7. Save the file and name it as UPGR.cfg in /home/oracle/scripts.  If you saved it under its original name, `sample_config.cfg`, rename it as shown below:
 
     ```
     <copy>
@@ -285,7 +285,7 @@ This lab assumes you have:
     </copy>
     ```
 
-8. Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd /home/oracle/upg_logs/UPGR/101/dbupgrade.These 4 subdirectories get created before dbupgrade.
+8. Now change the directoy and see whether the dbupgrade directory has been created. This usually takes up to 4 minutes until the prechecks and fixups have been completed. You will find the 4 upgrade worker’s logs in cd` /home/oracle/upg_logs/UPGR/101/dbupgrade`. These 4 subdirectories get created before dbupgrade.
 
     ```
     prechecks
@@ -315,8 +315,6 @@ This lab assumes you have:
     If you accidentally closed the xterm or autoupgrade, then no panic please. Just open an xterm, set the environment with '. upgr19' and start AutoUpgrade with the exact same 'deploy' command again. It will resume from where it has been left of.
 
     Congratulations – you upgraded the UPGR database successfully from Oracle 11.2.0.4 to Oracle 19c.
-
-
 
 You may now [proceed to the next lab](#next).
 

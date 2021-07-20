@@ -59,8 +59,8 @@ This lab assumes you have:
 
 3. Then start a completely scripted SQL Performance Analyzer run.
    It will:
-      - Convert the information from STS_CaptureAWR into the right format
-      - Simulate the execution of all statements in STS_CaptureAWR
+      - Convert the information from `STS_CaptureAWR` into the right format
+      - Simulate the execution of all statements in `STS_CaptureAWR`
       - Compare before/after
       - Report on the results – in this case based on CPU\_TIME and ELAPSED\_TIME
 
@@ -98,7 +98,7 @@ This lab assumes you have:
     exit
     ```
 
-8. Notice that there will be two html files in /home/oracle/scripts. Open a remote desktop( Guacamole) with Firefox.
+8. Notice that there will be two html files in /home/oracle/scripts.
 
     ```
     <copy>
