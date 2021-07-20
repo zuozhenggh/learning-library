@@ -135,7 +135,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
     ```
-    <copy>https://<Your Public IP Address></copy>
+    <copy>https://localhost</copy>
     ```
 
     If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
@@ -149,13 +149,13 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
     Simplified URLs: The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.  If you are so inclined, provide your browser a URL that models this:
 
     ```
-    https://<Your Public IP Address>/<deployment>/adminsrvr
+    https://localhost/<deployment>/adminsrvr
     ```
 
     Where *deployment* is the name of a deployment you built earlier. In the example below using the Atlanta deployment, the URL would look like this:
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
 
     ![](./images/g10-1.png " ")
@@ -183,7 +183,7 @@ In this step we will manually execute each step from the SSH terminal session.
 3. From a browser session to the Administration Service of your deployment as user *oggadmin*, validate the results.
 
     ```
-    URL: <copy> https://<Your VM Public IP Address>/atlanta/adminsrvr </copy>
+    URL: <copy> https://localhost/atlanta/adminsrvr </copy>
     ```
 
     ```
@@ -253,7 +253,7 @@ In this step we will manually execute each step from the SSH terminal session.
 4. Validate your results from the browser by navigating to the path below as *oggadmin*
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/distsrvr</copy>
+    <copy>https://localhost/Atlanta/distsrvr</copy>
     ```
 
     ![](./images/g16.png " ")
@@ -275,7 +275,7 @@ In this step we will manually execute each step from the SSH terminal session.
     ![](./images/g17.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr/</copy>
+    <copy>https://localhost/Boston/adminsrvr/</copy>
     ```
 
     ![](./images/g18.png " ")
