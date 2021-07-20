@@ -19,10 +19,11 @@
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
-          "title": "Lab 7: Find Closest Pizza Shops with Spatial",
+          "title": "Lab 8: Find Closest Pizza Shops with Spatial",
           "description": "Find Closest Pizza Shops with Spatial",
+          "type": "freetier",
           "filename": "../working-with-spatial/working-with-spatial.md"
-      },
+        },
         {
           "title": "Need Help?",
           "description": "Solutions to Common Problems and Directions for Receiving Live Help",
