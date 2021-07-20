@@ -61,8 +61,8 @@ In this lab, you will be guided through the following steps:
 Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Acknowledgements
-* **Author** -  Perside Foster, MySQL Solution Engineering
-* **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, June 2021
+* **Author** - Perside Foster, MySQL Solution Engineering
+* **Contributors** - Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
 
 

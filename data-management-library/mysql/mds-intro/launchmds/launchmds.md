@@ -430,7 +430,7 @@ When delete process is done **MDS_DB** will be set to Delete status.
 ## Acknowledgements
 * **Author** -  Perside Foster, MySQL Solution Engineering 
 * **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, June 2021
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
 
 
 
