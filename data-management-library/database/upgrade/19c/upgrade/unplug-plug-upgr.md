@@ -119,10 +119,6 @@ This lab assumes you have:
 
     There shouldn't be any issue to be fixed by yourself in PDB3. AutoUpgrade will take care on everything for you.
 
-
-
-
-
 ## **STEP 3**: Unplug/Plugin/Upgrade with AutoUpgrade
 
 1. Now you can start AutoUpgade in deploy mode and let the tool unplug and plug and upgrade PDB3 within CDB2
