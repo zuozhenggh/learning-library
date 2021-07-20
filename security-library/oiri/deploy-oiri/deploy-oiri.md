@@ -27,12 +27,12 @@ In this lab, you will:
 ## **STEP 1:** Load the OIRI docker images
 
 The OIRI service comprises of four images as follows:
-  
+
   - oiri: OIRI service
   - oiri-cli: OIRI command line interface
   - oiri-ding: For data import
   - oiri-ui: Identity Role Intelligence user interface
-  
+
 Follow the steps below to load these docker images.
 
 1. Open a terminal session and load the OIRI docker images.
@@ -281,7 +281,7 @@ Set up the files required for configuring data import (or data ingestion) and He
 
   The *default-keystore.jks* is located at *DOMAIN_HOME/config/fmwconfig*. The certificate you are exporting here protects the OIG REST API. It is not the same as the OIG server certificate.
 
-2. Copy the *xell.pem* file exported from the OIG keystore to the */nfs/oiri/data/keystore/* directory. Launch another terminal tab as *opc* user to copy the file.
+2. Copy the *xell.pem* file exported from the OIG keystore to the */nfs/oiri/data/keystore/* directory.
 
     ```
     <copy>sudo cp /u01/oracle/config/domains/oig_domain/config/fmwconfig/xell.pem /nfs/oiri/data/keystore/</copy>
@@ -290,7 +290,7 @@ Set up the files required for configuring data import (or data ingestion) and He
     <copy>sudo chown opc:users /nfs/oiri/data/keystore/xell.pem</copy>
     ```
     ```
-    <copy>ls -latr /nfs/oiri/data/keystore</copy>
+    <copy>sudo ls -latr /nfs/oiri/data/keystore</copy>
     ```
 
     ![](images/11-opc.png)
