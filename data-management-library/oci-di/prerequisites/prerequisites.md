@@ -192,7 +192,7 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
 10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects you need for the following labs.
 
-This SQL script will create tables CUSTOMERS_TARGET, EMPLOYEES_WEST_MIDWEST and EMPLOYEES_NORTHEAST_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
+This SQL script will create tables CUSTOMERS\_TARGET, EMPLOYEES\_WEST\_MIDWEST and EMPLOYEES\_NORTHEAST\_SOUTH, which will serve as the target tables for the data integration tasks. You will also create a statistics table and a stored procedure that will write the success/error result of the data integration pipeline in this table, as well as a sequence that will be used for the primary key.
 ![](./images/adw-run-sql-script.png " ")
 
 11. Refresh the browser and in the Navigator on the left, switch to the `BETA` schema to verify that your table was created successfully.

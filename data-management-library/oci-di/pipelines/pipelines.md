@@ -121,7 +121,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 ![](./images/select-task.png " ")
 
 
-10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.
+10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.  *Note: Be sure to save often during design time!*
 ![](./images/pip-first-op.png " ")
 
 11. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
@@ -146,7 +146,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 15. For these two tasks to run **in parallel**, you will now add a **merge operator**. Drag and drop the Merge operator on the canvas, then connect the two tasks (LOAD\_CUSTOMERS\_LAB and LOAD\_REVENUE\_DATA\_INTO_DATA\_WAREHOUSE) to the MERGE\_1 operator.
 ![](./images/merge-op.png " ")
 
-16. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.
+16. Under the Details tab of the **Properties** panel of the **MERGE\_1** operator, you can enter a name and optional description. Change the name to MERGE\_SUCCESS. For Merge Condition select the **All Success** option, which means that all parallel operations that are linked upstream must complete and succeed before the next downstream operation can proceed.  *Note: Be sure to save often during design time!*
 ![](./images/merge-success.png " ")
 
 17. Drag and drop an **Integration task** to the pipeline canvas. Connect **MERGE\_1** operator to the Integration task you added.
@@ -171,8 +171,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 21. Drag and drop an **Expression** operator to the pipeline canvas. A pipeline expression operator lets you create new, derivative fields in a pipeline, similar to an expression operator in a data flow. **Connect the Expression operator** to the **LOAD\_EMPLOYEES\_BY\_REGIONS** integration task.
 ![](./images/pipeline-expression-operator.png " ")
 
-22. In the **Properties** bar of **EXPRESSION\_1** operator, change the Identifier to **PIPELINE\_NAME\_TASK\_RUN**
-and click on **Add** under Expression.
+22. In the **Properties** bar of **EXPRESSION\_1** operator, change the Identifier to **PIPELINE\_NAME\_TASK\_RUN** and click on **Add** under Expression.  *Note: Be sure to save often during design time!*
 ![](./images/pipeline-add-expression.png " ")
 
 23. This **Expression** will create a new field based on the **System Defined Parameters** of the pipeline. Generated system parameter values can be used in expressions but the values cannot be modified. For more information on System parameters in OCI Data Integration pipeline, please see this [link](https://docs.oracle.com/en-us/iaas/data-integration/using/pipeline-parameters.htm#parameter-types-pipeline__system-defined-parameters).
@@ -209,7 +208,7 @@ In the **Add Expression** panel:
 ![](./images/sql-dwh.png " ")
 
 
-27. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.
+27. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on success of previous operator**.  *Note: Be sure to save often during design time!*
 ![](./images/run-sql-success.png " ")
 
 28. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/2**.
@@ -234,6 +233,7 @@ In the **Add Expression** panel:
   - Check the box to select the `PIPELINE_NAME_TASK_RUN.PIPELINE_NAME_RUN` field from the previous Expression operator. The SQL task will use the value from the Expression as the input parameter for the SQL task.
   - Click **Done**.
 
+ *Note: Be sure to save often during design time!*
   ![](./images/pipeline-second-parameter.png " ")
 
 
@@ -259,7 +259,7 @@ In the **Add Expression** panel:
 ![](./images/sql-dwh.png " ")
 
 
-38. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on failure of previous operator**. The arrow from the previous operator to the new SQL task operator will turn **red**.
+38. In the properties bar, the **SQL Task** `Procedure DWH Load Stats` is now selected. The Identifier has automatically changed with the name of SQL Task you selected. For Incoming Link Condition, leave the default option of **Run on failure of previous operator**. The arrow from the previous operator to the new SQL task operator will turn **red**.  *Note: Be sure to save often during design time!*
 ![](./images/failure-op.png " ")
 
 39. In the properties bar, click on **Configuration** tab and then on Configure where you have **Incoming Parameters Configured: 0/2**.

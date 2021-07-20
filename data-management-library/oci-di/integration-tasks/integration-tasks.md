@@ -149,7 +149,7 @@ You will create a data flow to ingest data from **two source files**, containing
 2. Click **Create Data Flow**.
 ![](./images/click-create-df.png " ")
 
-3. The data flow designer opens in a new tab. In the Properties panel, for **Name** enter `Load Customers and Revenue Data`, then click **Save**.
+3. The data flow designer opens in a new tab. In the Properties panel, for **Name** enter `Load Customers and Revenue Data`, then click **Save**. *Note: Be sure to save often during design time!*
 
 On the left side of the canvas, you can find the data flow operators which represent input sources, output targets, and transformations that can be used. The Shaping Operators currently available are Filter, Join, Expression, Aggregate, Distinct, Sort, Union, Minus, Intersect, Split and Lookup Operator. From the Operators panel, you can drag and drop operators onto the canvas to design a data flow. Then use the Properties panel to configure the properties for each operator. For more details on Data Flow Operators, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm).
 
@@ -196,6 +196,7 @@ In the end, your details for this new source operator should look like this:
 ![](./images/csv-source.png " ")
 
 11. When you complete your selections for **SOURCE\_1**, the operator name becomes **REVENUE\_CSV**, reflecting your data entity selection. In the Identifier field, rename the source operator to **REVENUE**.
+*Note: Be sure to save often during design time!*
 ![](./images/revenue.png " ")
 
 12. While you still have the **REVENUE** operator selected, click on **Attributes** tab in Properties panel.
@@ -236,7 +237,7 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
   ![](./images/filter-condition.png " ")
 
 
-20. The details for **FILTER_1 operator** should now look like this:
+20. The details for **FILTER_1 operator** should now look like this: *Note: Be sure to save often during design time!*
 ![](./images/filter-details.png " ")
 
 21. From the Operators panel, drag and drop a new **Filter operator** onto the canvas after CUSTOMERS. **Connect CUSTOMERS to FILTER_2**.
@@ -280,7 +281,7 @@ The number of attributes in the table are filtered. Only those attributes that m
 29. An **Expression operator** is added to the data flow. In the Properties panel, the Details tab is now in focus, showing the expression details. You can see the generated expression, `UPPER(EXPRESSION_1.CUSTOMERS_JSON.STATE_PROVINCE)`, in the Expressions table.
 ![](./images/expression-operator.png " ")
 
-30. With the new **EXPRESSION\_1** operator selected in the data flow, in the Properties panel, change the name in Identifier to **CHANGE\_CASE**.
+30. With the new **EXPRESSION\_1** operator selected in the data flow, in the Properties panel, change the name in Identifier to **CHANGE\_CASE**. *Note: Be sure to save often during design time!*
 ![](./images/expression-name.png " ")
 
 31. Click the **Data** tab, and then use the horizontal scrollbar to scroll to the end. **EXPRESSION\_1.STATE\_PROVINCE** is added to the end of the dataset. You can preview the transformed data for EXPRESSION\_1.STATE\_PROVINCE in the Data tab.
@@ -309,7 +310,7 @@ You can also highlight a function's placeholders and then double-click or drag a
 ![](./images/expression-conditions.png " ")
 
 
-35. The new expression is now listed in the **Expression operator**. You can add as many expressions as you want.
+35. The new expression is now listed in the **Expression operator**. You can add as many expressions as you want. *Note: Be sure to save often during design time!*
 ![](./images/final-expression.png " ")
 
 36. After you apply filters and transformations, you can join the source data entities using a unique customer identifier, and then load the data into a target data entity.
@@ -333,7 +334,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 39. Your **Join operator properties** should now look like this:
 ![](./images/join-prop.png " ")
 
-40. From the Operators panel, drag and drop a **Target operator** onto the canvas. Connect JOIN\_1 to TARGET\_1.
+40. From the Operators panel, drag and drop a **Target operator** onto the canvas. Connect JOIN\_1 to TARGET\_1. *Note: Be sure to save often during design time!*
 ![](./images/target-op.png " ")
 
 41. Select **TARGET_1** operator on the canvas. The details for this operator are now displayed in the **Properties** bar.
@@ -418,7 +419,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/pattern-source.png " ")
 
 
-7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.
+7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.  *Note: Be sure to save often during design time!*
 ![](./images/add-distinct.png " ")
 
 8. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
@@ -463,7 +464,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 14. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
 ![](./images/expressions-second-df.png " ")
 
-15. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.
+15. Drag and drop an **Expression operator** on the data flow canvas. Connect the **TRANSFORM\_DATAYPES** operator to the new **Expression** operator.  *Note: Be sure to save often during design time!*
 ![](./images/new-expression-df.png " ")
 
 16. In the Properties panel for the new **EXPRESSION\_1 operator**, change the Identifier to **EMPLOYEE\_AGE\_AND\_PHONE**.
@@ -507,7 +508,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 ![](./images/phone-no-exp.png " ")
 
 
-21. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.
+21. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.  *Note: Be sure to save often during design time!*
 ![](./images/attributes-tab.png " ")
 
 22. Check the following two fields: **EMPLOYEES\_SOURCE\_FILES.Age\_in\_Yrs**, **EMPLOYEES\_SOURCE\_FILES.Year\_of\_Joining**. We will exclude these fields from this operator.
@@ -525,7 +526,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 26. Scroll to the right until you get to the attribute **EXPRESSION\_1.EMPLOYEES\_SOURCE\_FILES.Region**. Click on it and a **Data Profile** window will appear. You can observe that there is employee data from four regions: Northeast, West, South, Midwest. In this data flow you will split the employee data into two target tables based on the region: one target table for employees from **Northeast and South** region (table named `EMPLOYEES_NORTHEAST_SOUTH`) and one target table for employees from **West and Midwest** region (table named `EMPLOYEES_WEST_MIDWEST`).
 ![](./images/data-profile-region.png " ")
 
-27. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.
+27. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.  *Note: Be sure to save often during design time!*
 ![](./images/split-op.png " ")
 
 28. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the default **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
@@ -548,7 +549,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 31. The first split condition you defined is now displayed. After the condition in the split operator is evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port. The Split operator properties should look like this:
 ![](./images/split-op-prop.png " ")
 
-32. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.
+32. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.  *Note: Be sure to save often during design time!*
 ![](./images/first-target.png " ")
 
 33. In the properties for **TARGET\_1** operator:
@@ -582,7 +583,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 ![](./images/map-by-pattern.png " ")
 
-38. The attribute mapping for the **EMPLOYEES_WEST_MIDWEST target table** is now complete.
+38. The attribute mapping for the **EMPLOYEES\_WEST\_MIDWEST target table** is now complete.  *Note: Be sure to save often during design time!*
 ![](./images/mapping-result.png " ")
 
 39. Drag and drop **another target operator**. Connect the **UNMATCHED output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
