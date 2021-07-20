@@ -61,17 +61,11 @@ While you only need the browser to perform all tasks in this workshop, you can o
 1. Launch your browser to the following URL to access noVnc web UI.
    
     ```
-    <copy>http://[Instance-public-ip]:6080/index.html?resize=remote</copy>
+    <copy>http://[Instance-public-ip]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
    ​![](./images/ess-environment2.png " ")
 
-2. Click **Connect** and enter the password.
-
-    ```
-    Password	:<copy>LiveLabs.Rocks_99</copy>
-    ```
-
-3.  Open the terminal on the desktop and go to folder /u01/scripts to find the manual startup script.
+2.  Open the terminal on the desktop and go to folder /u01/scripts to find the manual startup script.
 
     ```
     <copy>cd /u01/scripts/</copy>
@@ -81,7 +75,7 @@ While you only need the browser to perform all tasks in this workshop, you can o
     
     ![](./images/ess-environment3.png " ")
 
-4.  Start the "env_startup_script" to start all the services of Database and Essbase.
+3.  Start the "env_startup_script" to start all the services of Database and Essbase.
 
     ```
     <copy>./env_start_script.sh</copy>
@@ -89,7 +83,7 @@ While you only need the browser to perform all tasks in this workshop, you can o
 
     ![](./images/ess-environment4.png " ")
 
-5.  Your services should be started. Wait for the confirmation.
+4.  Your services should be started. Wait for the confirmation.
 
     ![](./images/ess-environment5.png " ")
 
