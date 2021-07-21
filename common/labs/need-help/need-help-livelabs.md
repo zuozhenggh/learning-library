@@ -7,23 +7,23 @@ If you still find yourself stuck or would like to report an issue with the works
 
 ![](images/help-button2.png)
 
-For more about getting support using our email, click [here](#HowToFormatYourSupportEmailRequest).
+For more about getting support using our email, click [here](#HowtoFormatYourSupportEmailRequest).
 
 ### Common Issues Table of Contents
   - [Can't Login to Oracle Cloud](#CantLogintoOracleCloud)
-  - [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateAnOracleDatabase?NothingInYourCompartment?)
-  - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnableToUploadDataorConnectToThedatabase?)
+  - [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateanOracleDatabase?NothinginYourCompartment?)
+  - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnabletoUploadDataorConnecttotheDatabase?)
 
 ### **Rate This Workshop**
 When you are finished please don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
 
 1.  Go back to your **Workshop Homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
 
-2.  Click on the **Brown Button** to re-access the workshop  
+2.  Click on the **Brown Button** to re-access the workshop.  
 
     ![](images/workshop-homepage-2.png " ")
 
-3.  Click **Rate this workshop**
+3.  Click **Rate this workshop**.
 
     ![](images/rate-this-workshop.png " ")
 
@@ -57,7 +57,9 @@ This will construct an email in your default mail application that is auto popul
     ![](images/reset-password.png)
 
 ## Can't Create an Oracle Database? Nothing in Your Compartment?
-1. Ensure that under "List Scope", you are selecting the compartment provided to you in the lab banner. 2. If you can't find your compartment in the drop-down box, make sure you *set your region* to the one provided in the lab banner.
+1. Ensure that under "List Scope", you are selecting the compartment provided to you in the lab banner. 
+
+2. If you can't find your compartment in the drop-down box, make sure you *set your region* to the one provided in the lab banner.
 
     ![](images/compartment-select.png)
 

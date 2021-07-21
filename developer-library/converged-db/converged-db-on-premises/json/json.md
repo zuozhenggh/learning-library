@@ -16,7 +16,7 @@ For More Details About Oracle JSON [Click here](#Appendix2:MoreaboutOracleJSON)
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for JSON lab. 
+* Setup the environment for JSON lab.
 * Connect the Oracle SQL developer to Insert and Update the JSON Data into Oracle Database by using JSON Function.
 * Learn about the JSON functions.
 
@@ -25,8 +25,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -376,7 +376,7 @@ For this , we will create two views next
 
     ![](./images/json_fun_5b.png " ")  
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: Loading JSON Documents into the database  
 
@@ -454,7 +454,7 @@ JSON documents can be stored using a VARCHAR2, CLOB, or BLOB column. An IS JSON 
 
 Oracle’s JSON capabilities are focused on providing full support for schemaless development and document-based storage. Developers are free to change the structure of their JSON documents as necessary. With the addition of JSON support, Oracle Database delivers the same degree of flexibility as a NoSQL JSON document store.
 
-The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,. 
+The first thing to realize about JSON is that it remains a simple text format, which is relatively easy to read and inspect with the naked eye. At a syntax level, what starts to set JSON apart from other formats is the characters used to separate data, which are mainly constrained to apostrophes ', brackets ( ), [ ], { }, colons :, and commas ,.
 
 This listing illustrates what a JSON payload looks like:
   ![](./images/json_intro.png " ")
@@ -482,6 +482,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-
-

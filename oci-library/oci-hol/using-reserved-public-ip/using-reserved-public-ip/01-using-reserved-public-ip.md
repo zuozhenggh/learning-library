@@ -178,6 +178,3 @@ Create an Oracle Linux instance and assign the IP after its creation.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - ORlando Gentil, March 2021
 
-## Need Help?
-
-Please submit feedback or ask for help by sending an email to livelabs-help-oci_us@oracle.com. Please make sure to include your workshop name and lab name. You can also include screenshots and attach files.

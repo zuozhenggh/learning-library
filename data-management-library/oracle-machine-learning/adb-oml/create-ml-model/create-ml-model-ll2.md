@@ -8,7 +8,7 @@ Estimated lab time: 20 - 30 minutes
 
 Watch this short video to preview how to build a machine learning model.
 
-[](youtube:XO9WI2bJN5s)
+[](youtube:_i7fT1YYybM)
 
 ### About Oracle Machine Learning
 
@@ -42,9 +42,9 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 1:** Create ML User in ADW
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse**, choose your compartment and navigate to your ADW instance.
-
-    ![](./images/ml-adw.png " ")
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/adw-instance.png " ")
 
@@ -66,7 +66,7 @@ This lab assumes you have completed the following labs:
 
 7. On the Create User form, enter **Username - ML\_USER**, an e-mail address (you can use admin@oracle.com), un-check **Generate password**, and enter a password you will remember. You can use the same password you used for the ADMIN account. Then click **Create**.
 
-    ![](./images/ml-user.png  " ")
+    ![](./images/create-ml-user.png  " ")
 
 8. Notice that the **ML\_USER** is created.
 
@@ -74,9 +74,9 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 2:** Grant Privileges to ML_USER to access Database Actions
 
-1.  From the hamburger menu, select **Autonomous Data Warehouse**, choose your compartment and navigate to your ADW instance.
-
-    ![](./images/ml-adw.png " ")
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/adw-instance.png " ")
 
@@ -136,9 +136,9 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 3:** Create ML Notebook
 
-1.  If you are not logged into Machine Learning User Administration as ADMIN user, log in to your cloud account, click the hamburger menu, select **Autonomous Data Warehouse** and navigate to your instance.
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse** and navigate to your instance.
 
-    ![](./images/choose-adw.png  " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![](./images/adw-instance.png " ")
 
@@ -240,13 +240,13 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
     </copy>
     ````
 
-    ![](./images/select-table-run.png  " ")
+    ![](./images/admin-select-table-run.png  " ")
 
-    ![](./images/select-mluser-table.png  " ")
+    ![](./images/select-admin-table.png  " ")
 
 7.  To add a title, click on the **gear** icon and select **Show title**.
 
-    ![](./images/show-title.png  " ")
+    ![](./images/gear-show-title.png  " ")
 
 8.  Enter the following into the title.
 
@@ -256,7 +256,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
     </copy>
     ````
 
-    ![](./images/edit-title.png  " ")
+    ![](./images/add-title.png  " ")
     ![](./images/057.png  " ")
 
 9.  In this last example, enter the following in the next paragraph and then execute the script. Review Data by Mode of Job Contacts and Income.
@@ -267,17 +267,18 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     /* This is a basic example of a chart visualization in Zeppelin.  This particular one is a column graph.  Click on the 'settings' link below.  That will show you the fields in the query that were used to create the chart.  After you review the settings you can click on the link again to hide the settings. */
 
-    select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from ml_user.credit_scoring_100k where rownum &lt; 1000
+    select customer_id, age, income, tenure, loan_type, loan_amount, occupation, number_of_current_accounts, max_cc_spent_amount, mode_job_of_contacts from admin.credit_scoring_100k where rownum &lt; 1000
     </copy>
     ````
 
-    ![](./images/enter-paragraph.png  " ")
+    ![](./images/new-para.png  " ")
 
-    ![](./images/select-query-output.png  " ")
+    ![](./images/para-output.png  " ")
 
 10. Change the presentation style by selecting **bar chart** and then click on **Setting**.
 
-    ![](./images/bar-chart.png  " ")
+    ![](./images/bar-graph.png  " ")
+    ![](./images/step3.10-060-1.png  " ")
 
     ![](./images/settings.png  " ")
 
@@ -334,9 +335,9 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
 5.  Select the **Targeting Customers That Complete All Payments** notebook.
 
-    ![](./images/step4.4-023.png  " ")
+    ![](./images/select-credit-notebook.png  " ")
 
-6.  Before you start working the **Targeting Customers That Complete All Payments** you need to set the interpreter binging. Click on the gear icon.
+6.  Before you start working the **Targeting Customers That Complete All Payments** you need to set the interpreter binding. Click on the gear icon.
 
     ![](./images/step4.5-024.png  " ")
 
@@ -350,7 +351,7 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
     ![](./images/click-ok.png  " ")
 
-9.  Click on the **output** icon to show the output and to view the code and the formatted text, click on **show editor** icon. Ensure that all the paragraphs are in **Finished** state and then click on **output** icon.
+9.  Click on the **output** icon to show the output. To view the code and the formatted text, click on **show/hide the code** icon. Ensure that all the paragraphs are in **Finished** state and then click on **output** icon.
 
     ![](./images/step4.8-027.png  " ")
 
@@ -374,7 +375,7 @@ The rest of this lab will be done interactively in the notebook. This step discu
 
     ![](./images/nb5.png  " ")
 
-3. Run the Attribute Importance to identify key variables that most influence the target attribute.
+3. This Attribute Importance model identifies the key variables that most influence the target attribute.
 
     ![](./images/nb6.png  " ")
 

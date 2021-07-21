@@ -1,5 +1,6 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -34,6 +35,11 @@
         {
             "title": "Lab 6: Visualize Data",
             "filename": "../../visualize/visualize.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

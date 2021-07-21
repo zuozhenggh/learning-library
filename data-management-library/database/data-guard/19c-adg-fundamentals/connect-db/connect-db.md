@@ -1,7 +1,7 @@
 # Connect to the Database
 
 ## Introduction
-In this lab, we will create the standby database.
+In this lab, we will create the connection to primary & standby databases.
 
 ### Connection to the Databases
 
@@ -14,7 +14,7 @@ When you first open SQL Developer, the screen looks like this:
 
 ![](./images/sql-developer.png)
 
-Estimated Lab Time: 20 Minutes
+Estimated Lab Time: 30 Minutes
 
 ### Objectives
 - Create a database connection to the primary database
@@ -64,6 +64,7 @@ To add the connection, use following information:
 
     * Name: sys@ADGHOLAD1
     * Username: sys
+    * Password: WElcome123##
     * Role: SYSDBA
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).
@@ -114,6 +115,7 @@ To add the connection, use following information:
 
     * Name: sys@ADGHOLAD2
     * Username: sys
+    * Password: WElcome123##
     * Role: SYSDBA
     * Hostname: The Public IP Address you found in the step above
     * Service name: The service name you found in the step above (the part after the / (slash)).

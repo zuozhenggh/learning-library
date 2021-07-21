@@ -28,9 +28,9 @@ In this lab, you will:
 
 1. Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
 
-2. After you log in to the Console, open the navigation menu, and then under **Database Related Services**, select **GoldenGate**.
+2. After you log in to the Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
 
-   ![Select GoldenGate Deployments in Navigation menu](images/01-01-02.png "Access GoldenGate service")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
 
    You're brought to the **Deployments** page.
 
@@ -112,7 +112,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 * **Contributors** -  Werner He, Database Product Management
 * **Last Updated By/Date** - March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

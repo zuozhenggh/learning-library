@@ -19,7 +19,6 @@ Estimated Lab Time: 10 minutes
 
 
     ```
-
     $ <copy>sqlplus system@cdb21</copy>    
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
     Enter password: <b><i>WElcome123##</i></b>
@@ -58,98 +57,72 @@ Estimated Lab Time: 10 minutes
     SQL> <copy>SHOW PARAMETER sga</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ----------------------------
-
     allow_group_access_to_sga            boolean     FALSE
-
     lock_sga                             boolean     FALSE
-
     pre_page_sga                         boolean     TRUE
-
-    <b>sga_max_size</b>                         big integer <b>5632M</b>
-
+    sga_max_size<                        big integer <b>5632M</b>
     sga_min_size                         big integer 0
-
     <b>sga_target</b>                           big integer <b>4512M</b>
 
     SQL>
 
     ```
-3. Set the `job_queue_processes` to the 10% of the processes value.
+4. Set the `job_queue_processes` to the 10% of the processes value.
 
 
     ```
 
     SQL> <copy>ALTER SYSTEM SET job_queue_processes='processes*10/100' SCOPE=BOTH;</copy>
-
     System altered.
 
     SQL> <copy>SHOW PARAMETER processes</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ----------------------------
-
     aq_tm_processes                      integer     1
-
     db_writer_processes                  integer     1
-
     gcs_server_processes                 integer     0
-
     global_txn_processes                 integer     1
-
     <b>job_queue_processes</b>                  integer     <b>40</b>
-
     log_archive_max_processes            integer     4
-
     <b>processes</b>                            integer     <b>400</b>
 
     SQL>
 
     ```
 
-4. Set the `aq_tm_processes` to the minimum value between 40 and 10% of processes.
+5. Set the `aq_tm_processes` to the minimum value between 40 and 10% of processes.
 
 
     ```
 
     SQL> <copy>ALTER SYSTEM SET AQ_TM_PROCESSES = 'MIN(40, PROCESSES * .1)' SCOPE=BOTH;</copy>
-
     System altered.
 
     SQL> <copy>SHOW PARAMETER processes</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ----------------------------
-
     <b>aq_tm_processes</b>                      integer     <b>40</b>
-
     db_writer_processes                  integer     1
-
     gcs_server_processes                 integer     0
-
     global_txn_processes                 integer     1
-
     job_queue_processes                  integer     40
-
     log_archive_max_processes            integer     4
-
     <b>processes</b>                            integer     <b>400</b>
 
     SQL>
 
     ```
 
-5. What happens if you change the value of `processes`?
+6. What happens if you change the value of `processes`?
 
-6. Set the `processes` value to 500 in SPFILE.
+7. Set the `processes` value to 500 in SPFILE.
 
       ```
 
       SQL> <copy>ALTER SYSTEM SET PROCESSES = 500 SCOPE=SPFILE;</copy>
-
       System altered.
 
       SQL> <copy>exit;</copy>
@@ -205,25 +178,18 @@ Estimated Lab Time: 10 minutes
     SQL> <copy>SHOW PARAMETER db_recovery_file_dest</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- ----------------------------
-
     db_recovery_file_dest                string      $HOME
-
     db_recovery_file_dest_size           big integer 15000M
 
     SQL> <copy>ALTER SYSTEM SWITCH LOGFILE;</copy>
-
     System altered.
 
     SQL> <copy>ALTER SYSTEM SWITCH LOGFILE;</copy>
-
     System altered.
 
     SQL> <copy>ALTER SYSTEM SWITCH LOGFILE;</copy>
-
     SQL> <copy>HOST</copy>
-
     $ <copy>cd $HOME</copy>
 
     $ <copy>ls -ltR | more</copy>
@@ -233,11 +199,8 @@ Estimated Lab Time: 10 minutes
     total 20
 
     drwxr-x--- 3 oracle oinstall 4096 Apr  8 11:49 CDB20_IAD3CV
-
     drwxrwxrwx 9 oracle oinstall 4096 Apr  8 10:11 labs
-
     drwxrwxrwx 2 oracle oinstall 4096 Apr  3 13:06 foo
-
     -rwxrwxrwx 1 oracle oinstall  590 Apr  3 10:27 database2007112852029
 
     274968.rsp

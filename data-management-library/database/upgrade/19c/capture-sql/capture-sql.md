@@ -2,17 +2,17 @@
 
 ## Introduction
 
-In this lab you will capture and preserve SQL statements and information as well as the AWR. We’ll use this collection later on following a performance stability method guideline.
+In this lab, you will capture and preserve SQL statements and information as well as the AWR. We will use this collection later on following a performance stability method guideline.
 
 ![](./images/capturesql.png " ")
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 15 minutes
 
 ### About SQL Tuning Sets
-A SQL tuning set (STS) is a database object that you can use as input to tuning tools. The database stores SQL tuning sets in a database-provided schema. An STS includes:
+A SQL tuning set (STS) is a database object that you can use as input to tuning tools. The database stores the SQL tuning sets in a database-provided schema. An STS includes:
 
 - A set of SQL statements
-- Associated execution context, such as user schema, application module name and action, list of bind values, and the environment for SQL compilation of the cursor
+- Associated execution context, such as a user schema, application module name and action, list of bind values, and the environment for SQL compilation of the cursor
 - Associated basic execution statistics, such as elapsed time, CPU time, buffer gets, disk reads, rows processed, cursor fetches, the number of executions, the number of complete executions, optimizer cost, and the command type
 - Associated execution plans and row source statistics for each SQL statement (optional)
 
@@ -38,11 +38,11 @@ This lab assumes you have:
 
 ## **STEP 1**: Collect Statements from AWR
 
-In order to collect SQL Statements directly from AWR (Automatic Workload Repository) you’ll call a SQL script which:
+In order to collect SQL Statements directly from AWR (Automatic Workload Repository) you will call a SQL script which:
 - Creates a SQL Tuning Set (STS)
 - Populates the STS with SQL information stored in AWR
 
-1.  Run the script stored in /home/oracle/scripts:
+1.  Run the script stored in the path- /home/oracle/scripts:
     
     capture_awr.sql
 
@@ -60,16 +60,16 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 You can also collect statements directly from the Cursor Cache. This is more resource intense but helpful in case of OLTP applications. Be careful when you poll the cursor cache too frequently.
 
 1. This procedure:
-   - Creates a SQL Tuning Set (STS)
-   - Populates the STS with SQL statements/information from the cursor cache
-   - It will poll the cursor cache for 240 seconds every 10 seconds
+      - Creates a SQL Tuning Set (STS)
+      - Populates the STS with SQL statements/information from the cursor cache
+      - It will poll the cursor cache for 240 seconds every 10 seconds.
 
 2. The script is stored in /home/oracle/scripts:
         capture_cc.sql
 
-    You used it already when you ran HammerDB in the earlier lab. Hence, no need to run it again. @/home/oracle/scripts/capture_cc.sql — don’t run it again!!!
+    You already used it when you ran HammerDB in the earlier lab. Hence, there is no need to run it again. @/home/oracle/scripts/capture_cc.sql — don’t run it again!!!
 
-3. The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be displayed. But now check, how many statements you’ve collected in each SQL Tuning Set.
+3. The number of statements in SQL Tuning Set “STS_CaptureCursorCache” will be displayed. But now check, how many statements you have collected in each SQL Tuning Set.
     
     ````
     <copy>
@@ -81,7 +81,7 @@ You can also collect statements directly from the Cursor Cache. This is more res
 
 ## **STEP 3**: Optional - Export AWR
 
-Especially when you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR will stay in the database. This exercise is only done for protection but not necessary for the flow of the lab.
+When you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR remains in the database. This exercise is done for protection but it is not necessary for the flow of the lab.
 
 1. Export the AWR by running the sql stored in your Oracle home.
 
@@ -96,12 +96,12 @@ Especially when you migrate databases, exporting and preserving the AWR is impor
     
     ![](./images/upgrade_19c_12.png " ")
 
-3. Type: 2 and Hit **RETURN**.
+3. Type **2** and Hit **RETURN**.
    ![](./images/snapday2.png " ")
 
     ![](./images/snapid.png " ")
 
-4. Type: 154 <= Your snapshot number may be different.  Hit RETURN.
+4. Type: 154. (Your snapshot number may be different.)  Hit RETURN.
 
     ![](./images/upgrade_19c_15.png " ")
 

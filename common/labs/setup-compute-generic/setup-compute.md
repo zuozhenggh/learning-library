@@ -23,13 +23,11 @@ This lab assumes you have:
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
 
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file that you downloaded. Click **Select**.
 
   ![](./images/zip-file.png " ")
 
@@ -42,9 +40,9 @@ This lab assumes you have:
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 6.  Click **Next**.
 
-  ![](./images/em-create-stack-2.png " ")
-
 7. Enter or select the following:
+   ![](./images/em-create-stack-2.png " ")
+
     - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
@@ -52,11 +50,11 @@ This lab assumes you have:
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless not available or you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+    - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
     - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
-9. If don't have quota for Flex Shapes or you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+9.  If don't have quota for Flex Shapes or you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard2.4
 
   ![](./images/standardshape.png " ")
 
@@ -83,9 +81,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
 
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -112,7 +108,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
   ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
+    - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
     - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
     - **Use Existing VCN?:** Check to select.
 
@@ -192,24 +188,57 @@ Depending on your workshop, you may need to connect to the instance via a secure
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
-### **Option 1:** Oracle Cloud Shell
+### **Option 1:** Upload Key to Cloud Shell and Connect
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
-  ***Note:*** *Make sure you are in the region you were assigned*
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
-  ![](./images/em-cloudshell.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
 
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Change the permissions to 600 and move it into your .ssh directory
+
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
+    ````
+    chmod 600 <<keyname>>
+    mv <<keyname>> .ssh
+    ls .ssh
+    cd ~
+    ````
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+6.  If you didn't jot down your compute instance public IP address, go to *Compute* -> *Instance* and select the instance you created (make sure you choose the correct compartment). Alternatively, you can navigate to *My Reservations* in LiveLabs, click on *Launch Workshop* and get your public IP.
+
+7.  Secure Shell into the compute instance using your uploaded key name
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to Step 5 on the left hand menu.
+    *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
+
+8.  When prompted, answer **yes** to continue connecting.
 
 ### **Option 2:** MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
@@ -257,7 +286,7 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Appendix 1:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -376,4 +405,3 @@ Modify your stack to use fixed shapes instead.
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
-

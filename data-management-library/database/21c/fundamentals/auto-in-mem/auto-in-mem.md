@@ -163,21 +163,13 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     TABLE_NAME         INMEMORY INMEMORY_COMPRESS
 
     ------------------ -------- -----------------
-
     REGIONS            DISABLED
-
     LOCATIONS          DISABLED
-
     DEPARTMENTS        DISABLED
-
     JOBS               DISABLED
-
     EMPLOYEES          DISABLED
-
     JOB_HISTORY        ENABLED  FOR CAPACITY LOW
-
     EMP                ENABLED  FOR QUERY LOW
-
     COUNTRIES          DISABLED
 
     8 rows selected.
@@ -194,17 +186,13 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQl> <copy>SHOW PARAMETER INMEMORY_AUTOMATIC_LEVEL</copy>
 
     NAME                                 TYPE        VALUE
-
     ------------------------------------ ----------- -------------
-
     inmemory_automatic_level             string      LOW
 
     SQL> <copy>SELECT ispdb_modifiable FROM v$parameter WHERE name='inmemory_automatic_level';</copy>
 
     ISPDB
-
     -----
-
     TRUE
 
     SQL>
@@ -245,23 +233,14 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     FROM   dba_tables WHERE  owner='HR';</copy>
 
     TABLE_NAME         INMEMORY INMEMORY_COMPRESS
-
     ------------------ -------- -----------------
-
     REGIONS            <b>ENABLED  AUTO</b>
-
     LOCATIONS          <b>ENABLED  AUTO</b>
-
     DEPARTMENTS        <b>ENABLED  AUTO</b>
-
     JOBS               <b>ENABLED  AUTO</b>
-
     EMPLOYEES          <b>ENABLED  AUTO</b>
-
     JOB_HISTORY        ENABLED  FOR CAPACITY LOW
-
     EMP                ENABLED  FOR QUERY LOW
-
     COUNTRIES          DISABLED
 
     8 rows selected.
@@ -299,59 +278,41 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL> set echo on
 
     SQL> begin
-
       2  for i in (select constraint_name, table_name from dba_constraints where table_name='EMPLOYEES') LOOP
-
       3  execute immediate 'alter table hr.employees drop constraint '||i.constraint_name||' CASCADE';
-
       4  end loop;
-
       5  end;
-
       6  /
 
     PL/SQL procedure successfully completed.
 
     SQL> drop index hr.EMP_EMP_ID_PK;
-
     drop index hr.EMP_EMP_ID_PK
-
                   *
-
     ERROR at line 1:
-
     ORA-01418: specified index does not exist
-
     SQL>
 
     SQL> INSERT INTO hr.employees SELECT * FROM hr.employees;
-
     107 rows created.
 
     SQL> /
-
     214 rows created.
 
     ...
 
     SQL> /
-
     27392 rows created.
 
-    SQL> COMMIT;
-
+    SQL> COMMIT
     Commit complete.
 
     SQL> /
-
     ...
-
     SQL> /
-
     Commit complete.
 
     SQL> COMMIT;
-
     Commit complete.
 
     SQL>
@@ -368,51 +329,38 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL> <copy>@/home/oracle/labs/M104783GC10/AutoIM_scan.sql</copy>
 
     SQL> SELECT /*+ FULL(hr.employees) NO_PARALLEL(hr.employees) */ count(*) FROM hr.employees;
-
       COUNT(*)
-
     ----------
-
           107
 
     SQL> SELECT /*+ FULL(hr.departments) NO_PARALLEL(hr.departments) */ count(*) FROM hr.departments;
 
       COUNT(*)
-
     ----------
-
             27
 
     SQL> SELECT /*+ FULL(hr.locations) NO_PARALLEL(hr.locations) */ count(*) FROM hr.locations;
 
       COUNT(*)
-
     ----------
-
             23
 
     SQL> SELECT /*+ FULL(hr.jobs) NO_PARALLEL(hr.jobs) */ count(*) FROM hr.jobs;
 
       COUNT(*)
-
     ----------
-
             19
 
     SQL> SELECT /*+ FULL(hr.regions) NO_PARALLEL(hr.regions) */ count(*) FROM hr.regions;
 
       COUNT(*)
-
     ----------
-
             4
 
     SQL> SELECT /*+ FULL(hr.emp) NO_PARALLEL(hr.emp) */ count(*) FROM hr.emp;
 
       COUNT(*)
-
     ----------
-
       3506176
 
     SQL>
@@ -427,11 +375,8 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL> <copy>SELECT segment_name, inmemory_size, bytes_not_populated, inmemory_compression FROM v$im_segments;</copy>
 
     SEGMENT_NAME INMEMORY_SIZE BYTES_NOT_POPULATED INMEMORY_COMPRESS
-
     ------------ ------------- ------------------- -----------------
-
     EMP               44433408                   0 FOR QUERY LOW
-
     EMPLOYEES          1310720                   0 AUTO
 
     SQL> <copy>EXIT</copy>

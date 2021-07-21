@@ -331,6 +331,3 @@ This concludes this lab and this workshop.
 - **Author** - Derrick Cameron
 - **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
 - **Contributors** - Peter Jeffcock, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, June 2020
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.

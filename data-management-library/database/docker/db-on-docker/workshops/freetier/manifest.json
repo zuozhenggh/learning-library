@@ -1,7 +1,7 @@
 {
-  "workshoptitle": "Containerized Development with Docker on Autonomous Database",
-  "help": "livelabs-help-db_us@oracle.com",
-	"tutorials": [
+  "workshoptitle": "Containerized Development with Docker on Oracle Database",
+	"help": "livelabs-help-oci_us@oracle.com",
+  "tutorials": [
       {
         "title": "Introduction",
         "filename":"../../intro/intro.md"

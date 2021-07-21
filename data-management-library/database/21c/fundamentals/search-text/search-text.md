@@ -36,23 +36,18 @@ In this lab, you will:
     ORA-28389: cannot close auto login wallet
 
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-
     keystore altered.
     ...
     SQL> ALTER SYSTEM SET sga_target=812M SCOPE=spfile;
-
     System altered.
 
     SQL> ALTER SYSTEM SET inmemory_size=110M SCOPE=SPFILE;
-
     System altered.
 
     SQL> ALTER SYSTEM SET inmemory_expressions_usage=STATIC_ONLY SCOPE=SPFILE;
-
     System altered.
 
     SQL> ALTER SYSTEM SET inmemory_virtual_columns = ENABLE SCOPE=SPFILE;
-
     System altered.
     ...
     DOC>
@@ -63,28 +58,22 @@ In this lab, you will:
     DOC>#
     ...
     SQL> DROP USER textuser CASCADE;
-
     User dropped.
 
     SQL> ALTER SESSION SET db_create_file_dest='';
-
     Session altered.
 
     SQL> DROP TABLESPACE tbs_text INCLUDING CONTENTS AND DATAFILES cascade constraints;
-
     Tablespace dropped.
 
     SQL> CREATE TABLESPACE tbs_text DATAFILE '/u02/app/oracle/oradata/pdb21/tbstext01.dbf' SIZE 500M segment space management auto;
-
     Tablespace created.
 
     SQL>
     SQL> CREATE USER textuser IDENTIFIED BY <i>WElcome123##</i> default tablespace tbs_text;
-
     User created.
 
     SQL> GRANT RESOURCE, CONNECT, CTXAPP, unlimited tablespace, select any dictionary TO textuser;
-
     Grant succeeded.
 
     SQL> exit
@@ -100,27 +89,20 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus textuser@PDB21</copy>
-
     Connected to:
-
     SQL> <copy>CREATE TABLE docs (id NUMBER PRIMARY KEY, text VARCHAR2(200), json_text JSON);</copy>
-
     Table created.
 
     SQL> <copy>INSERT INTO docs VALUES(4, 'Lyon is a city in France.', '{"country": "France", "city" : "Lyon"}');</copy>
-
     1 row created.
 
     SQL> <copy>INSERT INTO docs VALUES(5, 'Barcelone is a city in Spain.', '{"country": "Spain", "city" : "Barcelona"}');</copy>
-
     1 row created.
 
     SQL> <copy>INSERT INTO docs VALUES(3, 'France is in Europe.', '{"continent": "Europe", "country" : "France"}');</copy>
-
     1 row created.
 
     SQL> <copy>COMMIT;</copy>
-
     Commit complete.
 
     SQL>
@@ -133,11 +115,9 @@ In this lab, you will:
     ```
 
     SQL> <copy>CREATE INDEX idx_docs_text ON docs(text) INDEXTYPE IS CTXSYS.CONTEXT;</copy>
-
     Index created.
 
     SQL> <copy>CREATE SEARCH INDEX idx_docs_json ON docs(json_text) FOR JSON;</copy>
-
     Index created.
 
     SQL>
@@ -150,21 +130,15 @@ In this lab, you will:
     ```
 
     SQL> <copy>COLUMN id FORMAT 99</copy>
-
     SQL> <copy>COLUMN text FORMAT a29</copy>
-
     SQL> <copy>SELECT id, text FROM docs WHERE CONTAINS(text, 'France', 1) > 0;</copy>
 
     ID TEXT
-
     -- -----------------------------
-
     4 Lyon is a city in France.
-
     3 France is in Europe.
 
     SQL>
-
     ```
 
 4. Query the table to retrieve the documents that contain the word `France`, using the JSON search index.
@@ -178,11 +152,8 @@ In this lab, you will:
                       WHERE JSON_TEXTCONTAINS(json_text, '$.country', 'France');</copy>
 
     ID JSON_TEXT
-
     --- -----------------------------------------
-
       4 {"country":"France","city":"Lyon"}
-
       3 {"continent":"Europe","country":"France"}
 
     SQL>`</pre
@@ -196,7 +167,6 @@ In this lab, you will:
     ```
 
     SQL> <copy>ALTER TABLE docs INMEMORY INMEMORY TEXT(text, json_text);</copy>
-
     Table altered.
 
     SQL>
@@ -213,51 +183,33 @@ In this lab, you will:
     SQL> <copy>SELECT * FROM docs;</copy>
 
     ID TEXT                          JSON_TEXT
-
     --- ----------------------------- -----------------------------------------
-
       4 Lyon is a city in France.     {"country":"France","city":"Lyon"}
-
       5 Barcelone is a city in Spain. {"country":"Spain","city":"Barcelona"}
-
       3 France is in Europe.          {"continent":"Europe","country":"France"}
 
     SQL> <copy>SELECT * FROM table(dbms_xplan.display_cursor());</copy>
 
     PLAN_TABLE_OUTPUT
-
     -----------------------------------------------------------------------------
-
     SQL_ID  6dthd7dtuh58t, child number 0
-
     -------------------------------------
-
     select * from docs
 
     Plan hash value: 1540662602
-
     -----------------------------------------------------------------------------
-
     | Id  | Operation                  | Name | Rows  | Bytes | Cost (%CPU)| Time   |
 
     PLAN_TABLE_OUTPUT
-
     -----------------------------------------------------------------------------
-
     |   0 | SELECT STATEMENT           |      |       |       |     3 (100)|        |
-
     |   1 |  <b>TABLE ACCESS INMEMORY FULL</b>| DOCS |     3 | 12351 |     3   (0)|00:00:01|
-
     -----------------------------------------------------------------------------
-
     PLAN_TABLE_OUTPUT
-
     -----------------------------------------------------------------------------
 
     Note
-
     -----
-
       - dynamic statistics used: dynamic sampling (level=2)
 
     SQL>
@@ -273,19 +225,13 @@ In this lab, you will:
                       WHERE table_name='DOCS';</copy>
 
     COLUMN_NAME
-
     -----------------------------------------------------------------------------
 
     SQL_EXPRESSION
-
     -----------------------------------------------------------------------------
-
     SYS_IME_IVDX_2C08A74E2BF04F99BFF4480F794661D0
-
     SYS_CTX_MKIVIDX("TEXT" RETURNING RAW(32767))
-
     SYS_IME_IVDX_65232FABEDB64F37BF6FF91B94EE81B0
-
     SYS_CTX_MKIVIDX("JSON_TEXT" RETURNING RAW(32767))
 
     SQL>
@@ -391,11 +337,9 @@ In this lab, you will:
     ```
 
     SQL> <copy>DROP INDEX idx_docs_text;</copy>
-
     Index dropped.
 
     SQL> <copy>DROP INDEX idx_docs_json;</copy>
-
     Index dropped.
 
     SQL>

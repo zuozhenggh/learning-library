@@ -126,11 +126,12 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     **NOTE:** Your browser will not return anything because port 80 was not opened into the Security Lists
 
-4. Using the menu, click on **Virtual Cloud Network** and then the VCN you created for this practice.
+4. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**. Then click on the VCN name you created for this practice.
 
-    ![Click on the VCN](images/vcn1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 5. Now click on **Security Lists** on the left navigation bar for the VCN.
+
     ![Click on Security Lists](images/vcn2.png " ")
 
 6. Click on the **Default Security List**.
@@ -172,7 +173,3 @@ If you are unable to see the webserver on your browser, possible scenarios inclu
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Rajeshwari Rai, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

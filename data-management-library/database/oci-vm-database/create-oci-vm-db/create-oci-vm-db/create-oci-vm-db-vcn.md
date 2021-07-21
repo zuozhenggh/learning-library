@@ -22,9 +22,9 @@ Estimated Lab Time: 35 minutes
 Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
 
 1. Login to Oracle Cloud
-2. From the Console menu, select **Networking > Virtual Cloud Networks**.
+2. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-  ![](../create-virtual-cloud-network/images/virtual-cloud-networks.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.  If you were assigned a compartment, enter it here.
 
@@ -48,7 +48,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
-  ![](images/bare-metal-vm-exadata.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 2. Select the compartment you want to create the database in and click on **Create DB System**.
 
@@ -151,8 +151,3 @@ Error:  Renderable Exception From Internal-API.You have reached your service lim
 ## Acknowledgements
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
 * **Last Updated By/Date** - Kay Malcolm, December 7, 2020
-
-## Need Help?  
-Having an issue or found an error?  Click the question mark icon in the upper left corner to contact the LiveLabs team directly.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 

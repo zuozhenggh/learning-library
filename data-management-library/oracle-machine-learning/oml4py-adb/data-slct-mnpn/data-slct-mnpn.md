@@ -27,6 +27,12 @@ In this lab, you will learn how to:
   * Use the `split` and `KFold` function
   * Use the `crosstab` and `pivot_table` functions on a DataFrame
 
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab2_select_manipulate_data.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries and create OML DataFrame proxy object
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.

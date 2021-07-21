@@ -18,9 +18,9 @@ This lab assumes you have already completed the following:
 
 ## **STEP 1:** Create the VCN
 
-1. Open the navigation menu. Under **Core Infrastructure**, go to **Networking** and click **Virtual Cloud Networks**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-   ![](./images/image-20200505123858663.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Click **Start VCN Wizard**.
 
@@ -100,13 +100,13 @@ This lab assumes you have already completed the following:
 
        ![](images/image-20201030173528498.png)
 
-    - Turn on the **Display all available versions**, select the Database version: 19.7.0.0, same version as the on premise database
+    - Turn on the **Display all available versions**, select the Database version: 19.10.0.0, same version as the on premise database
 
-       ![](images/image-20201030173619754.png)
+       ![image-20210423232538531](images/image-20210423232538531.png)
 
     - PDB name: orclpdb
 
-    ![](images/image-20201030173822578.png)
+    ![image-20210423232721371](images/image-20210423232721371.png)
 
     - Enter a strong password
     - Workload type: OLTP
@@ -130,5 +130,5 @@ You may proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management
-* **Last Updated By/Date** - Minqiao Wang, October 2020
+* **Last Updated By/Date** - Minqiao Wang, Apr. 2021
 

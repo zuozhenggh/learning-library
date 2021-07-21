@@ -28,13 +28,9 @@ Note: Please download the above file before continuing. Normally, while working 
 
 If you are using an Autonomous Database to emulate the EBS database, please follow Step 1, else proceed to Step 2.
 
-1. Go to the navigation menu using the menu button in the top left.
-
-    ![](./images/3.1.png " ")
-
-2. Choose **Autonomous Data Warehouse** from the **Oracle Database** section.
-
-    ![](./images/3.2.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 3. Click on the **Create Autonomous Database** button.
 
@@ -198,7 +194,3 @@ You may now proceed to Lab 4.
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

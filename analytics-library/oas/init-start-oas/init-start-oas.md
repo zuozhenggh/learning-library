@@ -100,7 +100,7 @@ Your workshop instance is configured to automatically start all processes needed
     <copy>sudo systemctl stop oas</copy>
     ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn more
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -111,8 +111,3 @@ Your workshop instance is configured to automatically start all processes needed
 * **Authors** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 * **Contributors** - Diane Grace
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -21,7 +21,7 @@ Notes:
 ## Logging Analytics
 
 ### **Access this workshop**:
-[**Extend EBS with Logging Analytics**]()
+[**Extend EBS with Logging Analytics**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=803&p210_type=1&session=14069977178339)
 
 Estimated Workshop Time: 2.5 hours
 
@@ -60,9 +60,6 @@ In this lab, you will:
 
 * **Author:** Quintin Hill, William Masdon, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Feb 2021
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
-### Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/ebs-on-oci-automation). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
+#

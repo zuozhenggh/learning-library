@@ -25,17 +25,11 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus sys@CDB21 AS SYSDBA</copy>
-
     SQL*Plus: Release 21.0.0.0.0 - Production on Wed Aug 12 09:45:45 2020
-
     Version 21.1.0.0.0
-
     Enter password: <i>WElcome123##</i>
-
     Connected to:
-
     Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Development
-
     Version 21.1.0.0.0
 
     SQL>
@@ -63,7 +57,6 @@ In this lab, you will:
     ```
 
     SQL> <copy>connect sys@PDB21 AS SYSDBA</copy>
-
     Enter password: <i>WElcome123##</i>
     ```
 

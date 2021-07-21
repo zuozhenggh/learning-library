@@ -29,91 +29,61 @@ In this lab, you will:
     $ <copy>/home/oracle/labs/M104786GC10/DP.sh</copy>
 
     SQL> host mkdir /u01/app/oracle/admin/CDB21/tde
-
     mkdir: cannot create directory '/u01/app/oracle/admin/CDB21/tde': File exists
 
     SQL>
 
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL ;
-
     ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE CONTAINER=ALL
-
     *
-
     ERROR at line 1:
-
     ORA-28389: cannot close auto login wallet
 
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-
     keystore altered.
 
     ...
-
     specify password for HR as parameter 1:
-
     specify default tablespace for HR as parameter 2:
-
     specify temporary tablespace for HR as parameter 3:
-
     specify log path as parameter 4:
-
     PL/SQL procedure successfully completed.
-
     User created.
 
     ...
 
     ******  Creating EMPLOYEES table ....
-
     Table created.
-
     Index created.
-
     Table altered.
-
     Table altered.
-
     Sequence created.
 
     ...
-
     Commit complete.
-
     Session altered.
 
     ...
 
     ******  Populating EMPLOYEES table ....
-
     1 row created.
-
     ...
 
     Commit complete.
-
     Index created.
 
     ...
 
     Commit complete.
-
     Procedure created.
-
     Trigger created.
-
     Trigger altered.
-
     Procedure created.
-
     Trigger created.
-
     Commit complete.
-
     ...
 
     Directory created.
-
     Grant succeeded.
 
     $
@@ -128,43 +98,26 @@ In this lab, you will:
     ```
 
     $ <copy>expdp system@PDB21 TABLES=hr.employees DUMPFILE=dp_dir:emp.dmp CHECKSUM=yes REUSE_DUMPFILES=yes</copy>
-
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-
     Password: <b><i>WElcome123##</i></b>
-
     Starting "SYSTEM"."SYS_EXPORT_TABLE_01":  system/********@PDB21 TABLES=hr.employees dump file=dp_dir:emp.dmp CHECKSUM=YES
-
     Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
-
     Processing object type TABLE_EXPORT/TABLE/TABLE
-
     Processing object type TABLE_EXPORT/TABLE/COMMENT
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
-
     Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
-
     Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
-
     Processing object type TABLE_EXPORT/TABLE/TRIGGER
-
     . . exported "HR"."EMPLOYEES"                            17.08 KB     107 rows
-
     Master table "SYSTEM"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
 
     Generating checksums for dump file set
-
     ******************************************************************************
 
     Dump file set for SYSTEM.SYS_EXPORT_TABLE_01 is:
-
       /home/oracle/labs/M104786GC10/emp.dmp
 
     Job "SYSTEM"."SYS_EXPORT_TABLE_01" successfully completed at Thu Feb 6 07:15:15 2020 elapsed 0 00:00:26
@@ -188,11 +141,8 @@ In this lab, you will:
     $ <copy>expdp system@PDB21 TABLES=hr.employees DUMPFILE=dp_dir:emp384.dmp CHECKSUM_ALGORITHM=SHA384 CHECKSUM=no REUSE_DUMPFILES=yes</copy>
 
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-
     Password: <b><i>WElcome123##</i></b>
-
     ORA-39002: invalid operation
-
     ORA-39050: parameter CHECKSUM=NO is incompatible with parameter CHECKSUM_ALGORITHM
 
     $
@@ -204,43 +154,24 @@ In this lab, you will:
     $ <copy>expdp system@PDB21 TABLES=hr.employees DUMPFILE=dp_dir:emp512.dmp CHECKSUM_ALGORITHM=SHA512 REUSE_DUMPFILES=yes</copy>
 
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.
-
     Password: <b><i>WElcome123##</i></b>
-
     Starting "SYSTEM"."SYS_EXPORT_TABLE_01":  system/********@PDB21 TABLES=hr.employees dump file=dp_dir:emp512.dmp CHECKSUM_ALGORITHM=SHA512
-
     Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
-
     Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
-
     Processing object type TABLE_EXPORT/TABLE/TABLE
-
     Processing object type TABLE_EXPORT/TABLE/COMMENT
-
     Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX
-
     Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
-
     Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
-
     Processing object type TABLE_EXPORT/TABLE/TRIGGER
-
     . . exported "HR"."EMPLOYEES"                            17.08 KB     107 rows
-
     Master table "SYSTEM"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
-
     Generating checksums for dump file set
-
     ******************************************************************************
-
     Dump file set for SYSTEM.SYS_EXPORT_TABLE_01 is:
-
       /home/oracle/labs/M104786GC10/emp512.dmp
-
     Job "SYSTEM"."SYS_EXPORT_TABLE_01" successfully completed at Thu Feb 6 07:46:51 2020 elapsed 0 00:00:09
 
     $
@@ -255,21 +186,16 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus hr@PDB21</copy>
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <b><i>WElcome123##</i></b>
-
     Connected to:
     ```
     ```
 
     SQL> <copy>DROP TABLE employees CASCADE CONSTRAINTS;</copy>
-
     Table dropped.
 
     SQL> <copy>EXIT</copy>
-
     $
 
     ```
@@ -279,7 +205,6 @@ In this lab, you will:
     - Corrupt one of the dump files by executing the `/home/oracle/labs/M104786GC10/corrupt.sh` shell script.
 
     ```
-
     $ <copy>/home/oracle/labs/M104786GC10/corrupt.sh</copy>
     $
 
@@ -382,9 +307,7 @@ In this lab, you will:
     ```
 
     $ <copy>sqlplus hr@pdb21</copy>
-
     Copyright (c) 1982, 2019, Oracle.  All rights reserved.
-
     Enter password: <b><i>WElcome123##</i></b>
 
     Connected to:
@@ -392,11 +315,9 @@ In this lab, you will:
     ```
 
     SQL> <copy>DROP TABLE employees CASCADE CONSTRAINTS;</copy>
-
     Table dropped.
 
     SQL> <copy>EXIT</copy>
-
     $ <copy>impdp hr@PDB21 FULL=yes DUMPFILE=dp_dir:emp512.dmp VERIFY_CHECKSUM=NO</copy>
 
     Copyright (c) 1982, 2020, Oracle and/or its affiliates.  All rights reserved.

@@ -10,7 +10,7 @@ This lab will show you how to correctly change the SYS password in a Data Guard 
 
 Doing this right is important. When you change the SYS password in a Data Guard environment, Data Guard will propagate password changes for the SYS user to the standby database.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 15 Minutes
 
 ### Objectives
 - Change the SYS password

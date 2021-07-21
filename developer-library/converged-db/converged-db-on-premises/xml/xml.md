@@ -1,14 +1,14 @@
 # Oracle XML
 
 ## Introduction
-This lab will cover three main topics. The Connect to SQL Developer Web will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The Query XML Data uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The Insert and Update XML Data updates XML content or replaces either the entire contents of a document or only particular parts of a document. 
+This lab will cover three main topics. The Connect to SQL Developer Web will use SQL Developer Web, which is one of the tools that comes preinstalled with Autonomous Database. The Query XML Data uses XQuery which is a  general and expressive language, that combines the power of expression and computation with the strengths of SQL. The Insert and Update XML Data updates XML content or replaces either the entire contents of a document or only particular parts of a document.
 
 *Estimated Lab Time*: 15 Minutes
 
 ### About Oracle XML
 XML(Extensible Markup Language) is used to store and transport data. XML data is known as self-describing or self-defining, meaning that the structure of the data is embedded with the data, thus when the data arrives there is no need to pre-build the structure to store the data; it is dynamically understood within the XML.
 The basic building block of an XML document is an element, defined by tags. An element has a beginning and an ending tag. All elements in an XML document are contained in an outermost element known as the root element.
-XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures. 
+XML can also support nested elements, or elements within elements. This ability allows XML to support hierarchical structures.
 
 [](youtube:lGQvxPCYR2c)
 
@@ -16,7 +16,7 @@ For More Details About Oracle XML [Click here](#Appendix1:MoreaboutOracleXML)
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for XML lab. 
+* Setup the environment for XML lab.
 * Connect the oracle SQL developer to Insert and Update the XML Data into Oracle Database by using XML Function.
 * Learn about the XML functions.
 
@@ -26,8 +26,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -342,7 +342,7 @@ This lab assumes you have:
 
     ![](./images/xml_m10_ba.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: More about Oracle XML
 ### **XML with Oracle Database**
@@ -378,5 +378,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

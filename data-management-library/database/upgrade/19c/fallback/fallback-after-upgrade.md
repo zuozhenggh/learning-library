@@ -2,25 +2,24 @@
 
 ## Introduction
 
-In this lab you will use two techniques to protect your database, but this time for issues happening after the upgrade. You can call this also “Downgrade“.
+In this lab, you will use two techniques to protect your database, but this time for issues happening after the upgrade. You can call this “Downgrade“.
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 30 minutes
+
+![](./images/fallback_after_diag.png " ")
 
 ### About Fallback Strategies
 
-![](./images/fallback.png " ")
-
-You will have to protect your environment for issues during, but also after the upgrade. And of course you’ll have to consider and maintain the Service Level Agreements about fallback requirements in seconds, minutes, hours or days. In addition it is very important to be aware that some of the fallback strategies won’t allow to change COMPATIBLE. This means, you will need extra downtime to change COMPATIBLE afterwards as it requires a restart of the database(s).
+You will have to protect your environment for issues during, and after the upgrade. You will also have to consider and maintain the Service Level Agreements about fallback requirements in seconds, minutes, hours or days. In addition to the above, it is very important to be aware that some of the fallback strategies will not allow you to change COMPATIBLE. This means, you will need extra downtime to change COMPATIBLE later as it requires a restart of the database(s).
 
 The minimum COMPATIBLE setting in Oracle Database 19c is “11.0.0“. Keep COMPATIBLE at 3 digits. The default COMPATIBLE setting in Oracle Database 19c is “19.0.0".
 
-We won’t cover RMAN Online Backups as we assume that everybody is doing RMAN backups anyways. And we won’t cover Oracle GoldenGate as this would go beyond the lab possibilities. We may add this in a later stage.
+We will not cover RMAN Online Backups as we assume that everybody is doing RMAN backups anyways. And we will not cover Oracle GoldenGate as this would go beyond the lab possibilities. We may cover this at a later stage.
 
 ### Objectives
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Downgrade with a Full Database Export and Import
+* Downgrade with the downgrade scripts
 
 ### Prerequisites
 This lab assumes you have:
@@ -34,7 +33,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Downgrade with a Full Database Export and Import
 
-1. For this part you’ll just start the export from the 19c database after upgrading.
+1. For this part you will start the export from the 19c database after upgrading.
 
     Run the full database export:
     ````
@@ -43,7 +42,7 @@ This lab assumes you have:
     sqlplus / as sysdba
     </copy>
     ````
-
+    ![](./images/fallback_after_1.png " ")
     ````
     <copy>
     insert into SYSTEM.TRACKING_TAB values (4,'full export downgrade');
@@ -52,13 +51,19 @@ This lab assumes you have:
     exit
     </copy>
     ````
+    ![](./images/fallback_after_2.png " ")
+
     ````
     <copy>
     expdp system/oracle DIRECTORY=EXP18 DUMPFILE=down.dmp LOGFILE=down.log VERSION=12.2 FULL=Y REUSE_DUMPFILES=Y EXCLUDE=STATISTICS LOGTIME=ALL
     </copy>
     ````
+ 
+    ![](./images/fallback_after_3.png " ")
 
-2. The important part is that the VERSION parameter tells Data Pump to create an export in the format a database of “VERSION” will understand.
+    ![](./images/fallback_after_4.png " ")   
+
+2. The important point is that the VERSION parameter tells Data Pump to create an export in the format ,a “VERSION” of the database that it will understand.
     In this case you will downgrade into a 12.2 Pluggable Database. You need to create the PDB first.
     
     ````
@@ -67,6 +72,7 @@ This lab assumes you have:
     sqlplus / as sysdba
     </copy>
     ````
+![](./images/fallback_after_5.png " ")
 
     ````
     <copy>
@@ -74,6 +80,8 @@ This lab assumes you have:
     create pluggable database PDB3 admin user adm identified by adm file_name_convert=('pdbseed','pdb3');
     </copy>
     ````
+![](./images/fallback_after_6.png " ")
+
     ````
     <copy>
     alter pluggable database PDB3 open;
@@ -82,17 +90,20 @@ This lab assumes you have:
     exit
     </copy>
     ````
+![](./images/fallback_after_8.png " ")
+
     ````
     <copy>
     impdp system/oracle@PDB3 DIRECTORY=IMP19 DUMPFILE=down.dmp LOGFILE=impdown.log LOGTIME=ALL
     </copy>
     ````
+![](./images/fallback_after_9.png " ")
 
-    This was a quick exercise Of course it would take longer the more data and objects your database contains. Especially LOB data types can be crucial.
+    This was a quick exercise.It would definitely take longer as your database contains more data and objects.LOB data types can be crucial.
 
 ## **STEP 2**: Downgrade with the downgrade scripts
 
-1. **HOL 19c - Fallback - Issues After Upgrade**. In this final exercise you’ll use a powerful technique, the database downgrade with downgrade scripts.
+1. **HOL 19c - Fallback - Issues After Upgrade**. In this final exercise you will use a powerful technique- the database downgrade with downgrade scripts.
     
     Set a marker in the database
 
@@ -102,6 +113,7 @@ This lab assumes you have:
     sqlplus / as sysdba
     </copy>
     ````
+![](./images/fallback_after_10.png " ")
 
     ````
     <copy>
@@ -109,6 +121,7 @@ This lab assumes you have:
     commit;
     </copy>
     ````
+![](./images/fallback_after_11.png " ")
 
 2. Run the downgrade script.
 
@@ -120,6 +133,8 @@ This lab assumes you have:
     spool /home/oracle/logs/downgrade.log
     </copy>
     ````
+![](./images/fallback_after_12.png " ")
+
     ````
     <copy>
     @?/rdbms/admin/catdwgrd.sql
@@ -127,6 +142,7 @@ This lab assumes you have:
     exit
     </copy>
     ````
+![](./images/fallback_after_13.png " ")
 
 3. Switch to the source environment and start he bootstrap reload script.
     
@@ -136,6 +152,7 @@ This lab assumes you have:
     sqlplus / as sysdba
     </copy>
     ````
+![](./images/fallback_after_14.png " ")
 
     ````
     <copy>
@@ -144,12 +161,15 @@ This lab assumes you have:
     spool /home/oracle/logs/relod.log
     </copy>
     ````
+![](./images/fallback_after_15.png " ")
+
     ````
     <copy>
     @?/rdbms/admin/catrelod.sql
     shutdown immediate
     </copy>
     ````
+![](./images/fallback_after_16.png " ")
 
 4. Final steps and checks.
 
@@ -159,6 +179,7 @@ This lab assumes you have:
     @?/rdbms/admin/utlrp.sql
     </copy>
     ````
+![](./images/fallback_after_17.png " ")
     ````
     <copy>
     select * from TRACKING_TAB;
@@ -166,22 +187,14 @@ This lab assumes you have:
     select COMP_ID, STATUS from DBA_REGISTRY order by COMP_ID;
     </copy>
     ````
+![](./images/fallback_after_18.png " ")
 
     The downgrade should have removed the XDB component as well. Did it?
 
-    You can watch an entire database downgrade in this short video as well:
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021

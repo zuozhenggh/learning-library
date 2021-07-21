@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Oracle Identity Cloud Service Introductory Workshop",
+    "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -35,6 +36,11 @@
         {
             "title": "Lab 6: Enabling Adaptive MFA in IDCS",
             "filename": "../../adaptive/adaptive.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

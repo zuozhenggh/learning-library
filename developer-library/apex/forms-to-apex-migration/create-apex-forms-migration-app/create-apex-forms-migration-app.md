@@ -44,7 +44,7 @@ In order to start the conversion process, the database objects associated with y
 4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
 
 
-## **STEP 3**: Create Conversion Project
+## **STEP 3**: **Create Migration Project**
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 

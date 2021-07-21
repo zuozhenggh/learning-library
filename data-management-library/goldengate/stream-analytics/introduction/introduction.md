@@ -58,7 +58,7 @@ In this workshop you will:
   Spark Password: <copy>Sparkadmin#123</copy>
   ```
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

@@ -1,17 +1,18 @@
 {
   "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
-    "tutorials": [
-      {
-         "title": "Get Started with Oracle Cloud",
-         "description": "Get a Free Trial",
-         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
-      },
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
       {
           "title": "Introduction to Oracle Big Data Service (BDS)",
           "description": "Introduction to Oracle Big Data Service",
           "filename": "./intro.md"
       }
-      ,
+      ,      
+      {
+            "title": "Getting Started",
+            "description": "Get a Free Trial",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      },
       {
             "title": "Lab 1: Set Up the BDS Environment Resources",
             "type":"freetier",
@@ -65,6 +66,11 @@
             "title": "Lab 8: Clean up Resources Used in the Workshop (Optional)",
             "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
             "filename": "./../../cleanup/cleanup.md"
+            },
+            {
+              "title": "Need Help?",
+              "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+              "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
             }
            ]
 }

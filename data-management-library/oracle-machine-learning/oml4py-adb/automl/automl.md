@@ -18,6 +18,13 @@ In this lab, you will learn how to:
 * Use `automl.ModelTuning` to tune the hyperparameters for the specified algorithm and training data
 * Use `automl.ModelSelection` to select the top in-database algorithm, and then tune the corresponding model
 
+
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab6_automl.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import libraries supporting OML4Py
 
 1. Run the following script to import `oml` module, Pandas package, and `automl` module.

@@ -15,18 +15,18 @@ For More Details About Oracle Spatial [Click here](#Appendix:ProductDetailsandSe
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for Spatial lab. 
+* Setup the environment for Spatial lab.
 * Connect the oracle SQL developer to access the Spatial Data from Oracle Database by using Spatial Function.
 * Learn More about the Spatial functions.
-  
+
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -200,9 +200,9 @@ Note: See [Appendix: Product Details and Setting Up Spatial Environment ](#Appen
 
     ![](./images/spatial_module6a.png " ")
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
-## **Appendix**: Product Details and Setting Up Spatial Environment 
+## **Appendix**: Product Details and Setting Up Spatial Environment
 Oracle Spatial is an integrated set of functions, procedures, data types, and data models that support spatial analytics. The spatial features enable spatial data to be stored, accessed, and analyzed quickly and efficiently in an Oracle database. It is designed to make spatial data management easier and more natural to users of location-enabled applications and geographic information system (GIS) applications. Once spatial data is stored in an Oracle database, it can be easily manipulated, retrieved, and related to all other data stored in the database.
 
 A common example of spatial data can be seen in a road map. A road map is a two-dimensional object that contains points, lines, and polygons that can represent cities, roads, and political boundaries such as states or provinces. A road map is a visualization of geographic information.
@@ -327,5 +327,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

@@ -26,9 +26,9 @@ As previously mentioned, when you spin up the stack the links to some resources 
 
 ![](./images/5.31.png " ")
 
-1. Click on the **Navigation Menu**, scroll down to **Analytics** and select **Analytics Cloud**.
-
-    ![](./images/5.34.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
 2. Choose the right compartment and then select your analytics instance. In the page that opens up, click on **Analytics Home Page** to login to the analytics cloud instance.
 
@@ -80,7 +80,3 @@ We will now leave it up to your imagination to analyse the data sets that have b
 - **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -25,13 +25,16 @@ In this lab, you will:
 * Experience with Oracle Database
 * Familiarity with Oracle GoldenGate is helpful, but not required
 * Familiarity with Oracle Cloud Infrastructure is helpful, but not required
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ## Lab Breakdown
 
 * Lab 1: Set Up the Environment
 * Lab 2: Create the Oracle Cloud Infrastructure GoldenGate Deployment
-* Lab 2: Register Databases
-* Lab 3: Create and Run the Extract and Replicat
+* Lab 3: Register Databases
+* Lab 4: Create and Run the Extract and Replicat
 * Lab 5: Monitor the Extract and Replicat
 
 ## Learn More
@@ -42,5 +45,4 @@ In this lab, you will:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Kamryn Vinson, March 2021
-
+* **Last Updated By/Date** - Jenny Chan, April 2021

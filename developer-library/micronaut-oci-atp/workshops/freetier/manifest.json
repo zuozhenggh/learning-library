@@ -1,7 +1,7 @@
 {
-  "workshoptitle": "Building Java Cloud Applications with Micronaut and OCI",
-  "help": "livelabs-help-db_us@oracle.com",
-    "tutorials": [
+    "workshoptitle": "Building Java Cloud Applications with Micronaut and OCI",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
         {
             "title": "Introduction",
             "description": "Introduction to building Micronaut applications with Autonomous database.",
@@ -13,43 +13,34 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Generate SSH Keys",
-            "description": "Generate SSH Key",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
-        },
-        {
-            "title": "Lab 2: Provision the OCI Resources",
-            "description": "Provision the OCI resources",
+            "title": "Lab 1: Setup Oracle Autonomous Database",
+            "description": "Setup Autonomous Database",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 3: Setup Your Environment",
-            "filename": "../../setup/setup.md"
-        },
-        {
-            "title": "Lab 4: Create the Micronaut Application",
+            "title": "Lab 2: Create the Micronaut Application",
             "filename": "../../create/create.md"
         },
         {
-            "title": "Lab 5: Build the Micronaut Application",
+            "title": "Lab 3: Build the Micronaut Application",
             "filename": "../../micronaut/micronaut.md"
         },
         {
-            "title": "Lab 6: Build a GraalVM Native Image",
+            "title": "Lab 4: Build a GraalVM Native Image",
             "filename": "../../graalvm/nativeimage.md"
-        },
+        },        
         {
-            "title": "Lab 7: Deploy the Micronaut Application",
+            "title": "Lab 5: Deploy to Oracle Cloud (Optional)",
             "filename": "../../deploy/deploy.md"
-        },
+        },        
         {
-            "title": "Lab 8: Terminate and Destroy the OCI Resources",
+            "title": "Lab 6: Terminate and Destroy the OCI Resources (Optional)",
             "filename": "../../destroy/destroy.md"
         },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }

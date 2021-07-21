@@ -30,7 +30,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -95,7 +95,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -378,7 +378,7 @@ If you have other compute instances you are not using, you can go to those insta
 12. Click **Save Changes**
 13. Click **Terraform Actions** -> **Apply**
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

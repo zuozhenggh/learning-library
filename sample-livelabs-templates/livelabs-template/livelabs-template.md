@@ -1,6 +1,6 @@
 # LiveLabs Complete Template
 
-*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with ![this Confluence page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) and then follow it with ![this page](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+New+Features+and+Fixed).*
+*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
 
 ## Introduction
 
@@ -9,23 +9,6 @@
 *You may add an option video, using this format: [](youtube:YouTube video id)*
 
   [](youtube:zNKxJjkq0Pw)
-
-*Example of collapsed section - use these to include large blocks of text that are optional for the reader*
-
-<details><summary><b>What is Helidon?</b></summary>
-
-[Helidon](https://helidon.io) is an open source implementation of [Eclipse Microprofile](https://microprofile.io/) from Oracle. Through these labs we talk about Helidon, but it's key to remember that the work we're doing is applicable to *any* microprofile implementation, of which Helidon is one.
-
-Microprofile (and thus Helidon) are designed to be lighter weight than things like Java EE or Spring Boot, but also more standards based than Spring, so it has more stability from an API change perspective.
-
-Microprofile is built on other pre-existing standards, for example the `@GET` annotation is used by microprofile (Helidon uses it to indicate a method respond to a http GET request), but the annotation itself is actually a Java web services annotation that microprofile uses.
-
-This lab aims to introduce you to the major capabilities provided by the Helidon implementation of Microprofile. It does this in a number of stages, starting with core capabilities such as REST enabling a class and moving on to features such as building clients to talk to other REST services and how to use Helidon to quickly create service elements that support Cloud Native tools such as Kubernetes.
-
-We are using Helidon MP, this is an annotation based framework, where to utilize it you just place annotations (e.g. `@Path("/mypath"`) on a class or method. There is no need to modify the code beyond that. Helidon also comes in a variety called Helidon SE. The SE framework however requires you to actually make the Java method calls yourself, so you'd have to change your code. Helidon MP actually converts the annotations at runtime into calls to the Helidon SE Java API, so there is no need to change your logic. Helidon MP is also similar in style to frameworks like __Spring__ which are also annotation based, so we've chosen the MP version for these labs.
-
-</details>
-
 
 Estimated Lab Time: n minutes
 
@@ -40,13 +23,16 @@ In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
+* [relative lab url test](?lab=need-help)
 
 ### Prerequisites
 
 *Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * Item no 2 with url - [URL Text](https://www.oracle.com).
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -95,6 +81,114 @@ In this lab, you will:
     This is a code block.
     ```
 
+9. Long code block with line breaks test
+
+    ```
+    <copy>/* Specify the base URL that you copied from your files in OCI Object Storage in the define base_URL line below*/
+    /* change idthydc0kinr to your real namespace. The name is case-sensitive. */
+    /* change ADWCLab to your real bucket name. The name is case-sensitive. */
+    /* change us-phoenix-1 to your real region name. The name is case-sensitive. */
+    /* you can find these values on the OCI Console .. Storage .. Object Storage screen */
+    set define on
+    define base_URL='https://objectstorage.us-phoenix-1.oraclecloud.com/n/idthydc0kinr/b/ADWCLab/o'
+
+    /* copy Channels table */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'CHANNELS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/chan_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+
+    /* copy Countries table */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'COUNTRIES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/coun_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+
+    /* Copy customers */
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'CUSTOMERS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/cust1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SUPPLEMENTARY_DEMOGRAPHICS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/dem1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SALES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/dmsal_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'PRODUCTS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/prod1v3.dat',
+        format => json_object('delimiter' value '|', 'quote' value '^', 'ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'PROMOTIONS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/prom1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'SALES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/sale1v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'TIMES',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/time_v3.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'removequotes' value 'true', 'dateformat' value 'YYYY-MM-DD-HH24-MI-SS', 'blankasnull' value 'true')
+     );
+    end;
+    /
+    begin
+     dbms_cloud.copy_data(
+        table_name =>'COSTS',
+        credential_name =>'OBJ_STORE_CRED',
+        file_uri_list =>'&base_URL/costs.dat',
+        format => json_object('ignoremissingcolumns' value 'true', 'dateformat' value 'YYYY-MM-DD', 'blankasnull' value 'true')
+     );
+    end;
+    /</copy>
+    ```
+
 9. Use the copy function to allow your users to copy code snippets from LiveLabs into the clipboard.
 
     ```
@@ -112,12 +206,17 @@ In this lab, you will:
     ```
     <copy>select * from employees;</copy>
     ```
+    Sample with line breaks:
 
     ```
     <copy>class Simple{  
+
       public static void main(String args[]){  
+
         System.out.println("Hello Java");  
+
       }  
+
     }</copy>
     ```
 
@@ -216,9 +315,6 @@ In this lab, you will:
 5. This is an example of a segment of the Markdown file injected before rendering:
 
 [](include:injected-step.md)
-
-*At the conclusion of the lab add this statement:*
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 

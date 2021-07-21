@@ -40,27 +40,21 @@ In this lab, you will:
     ORA-28389: cannot close auto login wallet
 
     SQL> ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE IDENTIFIED BY <i>WElcome123##</i> CONTAINER=ALL;
-
     keystore altered.
     ...
     SQL> ALTER PLUGGABLE DATABASE toys_root CLOSE IMMEDIATE;
-
     Pluggable database altered.
 
     SQL> DROP PLUGGABLE DATABASE robots INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> DROP PLUGGABLE DATABASE dolls INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> DROP PLUGGABLE DATABASE toys_root INCLUDING DATAFILES;
-
     Pluggable database dropped.
 
     SQL> ALTER SESSION SET db_create_file_dest='/home/oracle/labs/toys_root';
-
     Session altered.
 
     SQL> CREATE PLUGGABLE DATABASE toys_root AS APPLICATION CONTAINER
@@ -71,7 +65,6 @@ In this lab, you will:
     ...
 
     SQL> alter pluggable database dolls open;
-
     Pluggable database altered.
 
     SQL>
@@ -116,13 +109,11 @@ In this lab, you will:
 
     ```
 	  <copy>sqlplus sys@localhost:1521/robots AS SYSDBA</copy>
-
 	  Enter password: WElcome123##
     ```
     ```
 
 	  SQL> <copy>ALTER PLUGGABLE DATABASE APPLICATION toys_app, sales_toys_app SYNC;</copy>
-
 	  Pluggable database altered.
 
 	  SQL>
@@ -141,11 +132,8 @@ In this lab, you will:
 		ORDER BY 1;</copy>
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-
 	TOYS_APP         1.0          NORMAL       ROBOTS
 
   SQL><copy>exit;</copy>
@@ -169,15 +157,11 @@ In this lab, you will:
 		ORDER BY 1;</copy>
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-
 	TOYS_APP         1.0          NORMAL       DOLLS
 
 	SQL> <copy>CONNECT / AS SYSDBA</copy>
-
 	Connected.
 
 	SQL> <copy>SELECT app_name, app_version, app_status, p.pdb_name
@@ -187,19 +171,12 @@ In this lab, you will:
 		ORDER BY 1;</copy>  
 
 	APP_NAME         APP_VERSION  APP_STATUS   PDB_NAME
-
 	---------------- ------------ ------------ ----------
-
 	SALES_TOYS_APP   1.0          NORMAL       DOLLS
-
 	SALES_TOYS_APP   1.0          NORMAL       ROBOTS
-
 	SALES_TOYS_APP   1.0          NORMAL       TOYS_ROOT
-
 	TOYS_APP         1.0          NORMAL       DOLLS
-
 	TOYS_APP         1.0          NORMAL       TOYS_ROOT
-
 	TOYS_APP         1.0          NORMAL       ROBOTS
 
 	6 rows selected.

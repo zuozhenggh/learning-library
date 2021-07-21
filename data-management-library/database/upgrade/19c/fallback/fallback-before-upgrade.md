@@ -2,25 +2,38 @@
 
 ## Introduction
 
-In this lab you will use two techniques to protect your database, but this time for issues happening after the upgrade.
+Protection for issues during upgradeHOL 19c - Fallback - Issues During the Upgrade
 
-Estimated Lab Time: n minutes
+In this lab, you will use two techniques to protect your database for issues happening during the upgrade. Or simply, if you would like to test multiple times.
+You will evaluate two options: Partial Offline Backups and Guaranteed Restore Points.
+
+![](./images/fallback_before_diag.png " ")
+
+*Estimated Lab Time*: 40 minutes
 
 ### About Fallback Strategies
 
-![](./images/fallback.png " ")
+1. Partial Offline Backup
+A partial offline backup is used for protection against failures during the upgrade or for testing purposes to avoid the restoration of an entire database environment. You can change the COMPATIBLE parameter if you want with this technique.It is not required to do it in the lab,as you will use two techniques in parallel.
+    - Very large databases where restoring just a small piece of the database is faster than an entire restore.
+    - Databases who are – on purpose – in NOARCHIVELOG mode, hence you are unable to do an online backup and restore.
+    - Standard Edition databases where you cannot use Guaranteed Restore Points.
+    
+    For a Partial Offline Backup as fallback strategy, you’ll have to put all your user and data tablespaces into read-only mode, then create an offline backup of the “heart” of your database.
 
-You will have to protect your environment for issues during, but also after the upgrade. And of course you’ll have to consider and maintain the Service Level Agreements about fallback requirements in seconds, minutes, hours or days. In addition it is very important to be aware that some of the fallback strategies won’t allow to change COMPATIBLE. This means, you will need extra downtime to change COMPATIBLE afterwards as it requires a restart of the database(s).
+2. Flashback to a Guaranteed Restore Point
+ By far the best and most simple technique to protect your databases are Guaranteed Restore Points. But it can only used when the following requirements are all met:
+    - Database must be in ARCHIVELOG mode
+    - Enterprise Edition database (or XE or PE)
+    - Don not change COMPATIBLE
+    This is the overview on how to fallback with a guaranteed restore point GRP1 which allows you to flashback your database – many times.
 
-The minimum COMPATIBLE setting in Oracle Database 19c is “11.0.0“. Keep COMPATIBLE at 3 digits. The default COMPATIBLE setting in Oracle Database 19c is “19.0.0".
-
-We won’t cover RMAN Online Backups as we assume that everybody is doing RMAN backups anyways. And we won’t cover Oracle GoldenGate as this would go beyond the lab possibilities. We may add this in a later stage.
+![](./images/fallback_Flashback_Guaranteed_Restore_Point.png " ")
 
 ### Objectives
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+In this lab, you will perform:
+* Partial Offline Backup
+* Flashback to a Guaranteed Restore Point
 
 ### Prerequisites
 This lab assumes you have:
@@ -34,7 +47,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Partial Offline Backup
 
-1. At first, set the USERS tablespace read-only and then SHUTDOWN the database
+1. At first, set the USERS tablespace read-only and then SHUTDOWN the database.
 
     Run the full database export:
     ````
@@ -64,7 +77,7 @@ This lab assumes you have:
     ````
     ![](./images/fallback_before_3.png " ")
 
-2. Then copy the “heart of the database” to a backup location Execute the “backupFTEX.sh” script.
+2. Then copy the “heart of the database” to a backup location and Execute the “backupFTEX.sh” script.
     
     ````
     <copy>
@@ -74,6 +87,7 @@ This lab assumes you have:
     ````
     ![](./images/fallback_before_4.png " ")
     ![](./images/fallback_before_5.png " ")
+
 3. Startup the database in 19c and upgrade it.
 
     ````
@@ -100,11 +114,12 @@ This lab assumes you have:
     ````
     ![](./images/fallback_before_8.png " ")
     ![](./images/fallback_before_9.png " ")
+
 4. After 2-3 minutes, CTRL-C the upgrade and try the fallback.
     ![](./images/fallback_before_10.png " ")
     The upgrade failed.
 
-5. Now first of all, try out the RESUME of the upgrade driver.
+5. Now, try out the RESUME of the upgrade driver.
     
     ````
     <copy>
@@ -114,7 +129,7 @@ This lab assumes you have:
     ![](./images/fallback_before_11.png " ")
     The upgrade should start from where it had been stopped.
 
-6. Let the upgrade fail a second time , Press CTRL+C.
+6. Let the upgrade fail a second time. Press CTRL+C.
     
 
 7. Then SHUTDOWN the database and RESTORE it.
@@ -266,7 +281,7 @@ This lab assumes you have:
 
     Do you recognize that the database has been flashed back to “before upgrade” in less than a minute? You could open it RESETLOGS and repeat the upgrade.
 
-5. But FLASHBACK DATABASE works in all directions, backwards and forward (even though forward may take a bit longer now).
+5. FLASHBACK DATABASE works in all directions, backwards and forward (although forward may take a bit longer now).
     
     ````
     <copy>
@@ -294,7 +309,7 @@ This lab assumes you have:
     ![](./images/fallback_before_33.png " ")
     Even though you opened the database with OPEN RESETLOGS you can repeat the FLASHBACK DATABASE operations as often as you’d like.
 
-6. Take also note of the components which exist now in the database.
+6. Also, take note of the components which exist now in the database.
 
     ````
     <copy>
@@ -302,7 +317,8 @@ This lab assumes you have:
     </copy>
     ````
     ![](./images/fallback_before_34.png " ")
-7. Clean up and drop the restore points as otherwise at some point you’ll run out of archive space. In addition you’ll turn off ARCHIVELOG mode now as we won’t need it for the next exercises:
+
+7. Clean up and drop the restore points. Or else at some point you will run out of archive space. In addition you will turn off ARCHIVELOG mode now as we would not need it for the next exercises.
 
     ````
     <copy>
@@ -324,20 +340,11 @@ This lab assumes you have:
  
     ![](./images/fallback_before_36.png " ")
 
-    You successfully completed the second part of the Fallback Strategies lab.
-    You can watch an entire database downgrade in this short video as well:
-
-You may now [proceed to the next lab](#next).
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    You have successfully completed the second part of the Fallback Strategies lab.
+    
+    You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Mike Dietrich, Database Product Management
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
+* **Last Updated By/Date** - Kay Malcolm, February 2021

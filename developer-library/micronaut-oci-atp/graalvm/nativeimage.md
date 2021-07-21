@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you will learn how to turn your application into a native executable with GraalVM Native Image.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -20,48 +20,6 @@ In this lab you will:
 [GraalVM Native Image](https://www.graalvm.org/reference-manual/native-image/) is a technology that allows performing a closed world static analysis of a Java application and turning the Java application into a native executable designed to execute on a specific target environment.
 
 Whilst building a native image can take some time, the benefits include a dramatic reduction in startup time and reduced overall memory consumption, both of which can significantly reduce the cost of running Cloud applications over time.
-
-## Configuring Native Image Support
-
-To get started, add the following dependency to your `build.gradle` file within the `dependencies` block:
-
-    <copy>
-    annotationProcessor("io.micronaut:micronaut-graal")
-    </copy>
-
-Or if you are using Maven add `micronaut-graal` under `<annotationProcessorPaths>`:
-
-    <copy>
-    <path>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-graal</artifactId>
-      <version>${micronaut.version}</version>
-    </path>
-    </copy>
-
-Next since this application needs to establish a secure connection to Autonomous Database, you need to pass the `--enable-all-security-services` flag to native image.
-
-To do this with Gradle add the following to `build.gradle`:
-
-    <copy>
-    nativeImage {
-        args("--enable-all-security-services")
-    }
-    </copy>
-
-Or if you are using Maven, add the following configuration under `<plugins>`:
-
-    <copy>
-    <plugin>
-        <groupId>org.graalvm.nativeimage</groupId>
-        <artifactId>native-image-maven-plugin</artifactId>
-        <configuration>
-          <buildArgs combine.children="append">
-            <buildArg>--enable-all-security-services</buildArg>
-          </buildArgs>
-        </configuration>
-    </plugin>
-    </copy>
 
 ## Building a Native Image with Gradle
 

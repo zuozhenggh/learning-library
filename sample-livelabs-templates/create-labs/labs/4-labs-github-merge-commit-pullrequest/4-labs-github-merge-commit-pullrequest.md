@@ -18,7 +18,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 3: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
-## **Step 1:** Get Latest Updates from Production
+## **STEP 1:** Get Latest Updates from Production
 
 Before you develop you should ensure you have the latest content from production to ensure you are developing off the latest code set.
 
@@ -34,12 +34,15 @@ Before you develop you should ensure you have the latest content from production
    
   ![](./images/git-hub-merge-branch-2.png " ")
 
-4. Press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+4. Finally, select **Push Origin**
+  ![](./images/push-origin.png " ")
 
-  ![](./images/git-hub-merge-ahead.png " ")
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-sync-ahead.png " ")
 
 
-## **Step 2:** Commit your Changes in your Clone
+## **STEP 2:** Commit your Changes in your Clone
 When you create, delete, or modify assets in your clone (local copy), you should commit (save) those changes to your clone, and then push those changes from your clone to your fork. Then these changes get saved to your forked learning-library repository.
 
 To commit your changes:
@@ -55,7 +58,7 @@ To commit your changes:
   ![](./images/git-hub-commit-push-origin.png " ")
 
 
-## **Step 3:** Set Up GitHub Pages for your Fork to Test your Content
+## **STEP 3:** Set Up GitHub Pages for your Fork to Test your Content
 
 After you upload the content from your clone to your fork, request your review team members to review this content by providing them with access to your GitHub Pages site URL (or the URL of your forked repository).
 
@@ -80,18 +83,18 @@ To publish your GitHub Pages site:
   This may take a few minutes to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
-## **Step 4:** Sharing your Workshop for Review
+## **STEP 4:** Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
 To share and view your workshop:
 1. In the browser, enter the URL of your GitHub Pages [https://achepuri.github.io/learning-library/](https://achepuri.github.io/learning-library/).
 2. Append the URL with the details of your workshop.
     The complete URL will look similar to this: [https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/](https://achepuri.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/), which can be shared for review.
 
-## **Step 5**: Create a Pull Request to Upload Your Content to the Master Repository
+## **STEP 5**: Create a Pull Request to Upload Your Content to the Master Repository
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
-Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.*
+Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
 
 **Note**: The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -104,7 +107,8 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter the title for the pull request and include your LWMS ID (you can find that by visiting the [LWMS](http://bit.ly/oraclelivelabs)) in the title and then click **Create pull request**.
+3. Enter the title for the pull request, **include your LWMS ID** (you can find that by visiting the [LWMS](http://bit.ly/oraclelwms)) in the title.  PRs will not be approved without this ID.
+4. Click **Create pull request**.
     ![](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
@@ -118,11 +122,11 @@ To create a Pull Request:
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
-## **Step 6**: Accessing your workshop in GitHub
+## **STEP 6**: Accessing your workshop in GitHub
 
-After your pull request is complete, wait a few minutes and perform the steps below.  
+After your pull request is complete, wait a few minutes and perform the steps below.  Github pages takes approximately 5 minutes for the pages to be copied
 
-1.  replace your GitHub pages site from Step 3 -> #5 with oracle.github.io.  This will take you to the full path of your workshop.  
+1.  Replace your GitHub pages site from Step 3 -> #5 with oracle.github.io.  This will take you to the full path of your workshop.  
 
   ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
@@ -134,15 +138,37 @@ After your pull request is complete, wait a few minutes and perform the steps be
 
   https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
 
-4.  Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
-5.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.* 
-6.  Click on the ID for your workshop
-7.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3. 
-8.  Update your Development GithHub URL to your personal github pages address
-9.  When you are finished with your workshop, set your workshop status to **Self QA**.
-10. Questions?  Contact the email underneath Support Link.
+## **STEP 7**: Change your status
+Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**, if you still have some work to do, change your status to **Moving to Github**.
+1. Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
+4.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.* 
+5.  Click on the ID for your workshop
+6.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3. 
+7.  Update your Development GithHub URL to your personal github pages address
+8.  When you are finished with your workshop, set your workshop status to **Self QA**.
+9.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+You may now [proceed to the next lab](#next).
+
+## **Appendix**: Troubleshooting Tips
+### Issue: Conflicts
+![](./images/behind.png " ")
+
+1. To fix this, in Github Desktop select **Fetch Origin**
+  ![](./images/fetch-origin.png " ")
+
+2. Next, select **Branch -> Merge into Current Branch**
+  ![](./images/branch.png " ")
+
+3. Then, click **Upstream/Master -> Merge Upstream/Master into Master**
+  ![](./images/merge.png " ")
+
+4. Finally, select **Push Origin**
+  ![](./images/push-origin.png " ")
+
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-sync-ahead.png " ")
 
 ## Want to Learn More?
 
@@ -158,6 +184,6 @@ After your pull request is complete, wait a few minutes and perform the steps be
 * **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+* **Last Updated By/Date:** Kamryn Vinson, May 2021
 
 

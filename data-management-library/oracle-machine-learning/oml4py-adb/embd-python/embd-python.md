@@ -37,6 +37,13 @@ In this lab, you will:
 * Use the OML4Py Embedded Python Execution functions
 * Use the Python Script Repository
 
+
+## (Optional) Download and View the Notebook File
+
+To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab5_embed_python.json?download=1).
+
+[](include:import)
+
 ## **Step 1**: Import OML4Py and supporting libraries and Create Data Table
 
 In Step 1 to Step 5, you learn about Embedded Python Execution.

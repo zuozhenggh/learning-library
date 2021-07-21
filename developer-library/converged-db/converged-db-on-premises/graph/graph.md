@@ -15,7 +15,7 @@ For More Details About Oracle Graph [Click here](#Appendix2:MoreaboutOracleGraph
 
 ### Objectives
 In this lab, you will:
-* Setup the environment for property graph. 
+* Setup the environment for property graph.
 * Connect the Graph Server and Client to access the Spatial Data from Oracle Database by using PGQL Query.
 * Learn More about the Graph query, PGQL Query, Graph server and client.
 
@@ -24,8 +24,8 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup (Free Tier and Paid Tenants Only)
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
@@ -66,7 +66,7 @@ The below screenshot is an example of what a Connection to a PGX server using Js
 
 ## **STEP 2**: Create Graph
 
-For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh. 
+For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh.
 If you want to learn more about the Create Graph [Click here](#Appendix1:CreateGraph)
 
 
@@ -384,7 +384,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     graph.destroy();
     </copy>
     ```
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: Create Graph
 
@@ -575,7 +575,7 @@ PGQL provides a specific construct known as the MATCH clause for matching graph 
 - [GeoRaster Developer's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/geors/index.html)
 
 
-<!-- **This concludes this lab. You may now [proceed to the next lab](#next).** -->
+<!-- You may now [proceed to the next lab](#next). -->
 
 ## Rate this Workshop
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
@@ -595,5 +595,3 @@ If you selected the **Green Button** for this workshop and still have an active 
 * **Authors** - Balasubramanian Ramamoorthy, Arvind Bhope
 * **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K, Robert Ruppel, David Start, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

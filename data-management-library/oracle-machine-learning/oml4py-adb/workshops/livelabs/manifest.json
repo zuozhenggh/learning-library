@@ -1,6 +1,9 @@
 {
     "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
+    "include": {
+        "import": "../../common/import_notebook.md"
+    },
     "tutorials": [
         {
             "title": "Getting Started",

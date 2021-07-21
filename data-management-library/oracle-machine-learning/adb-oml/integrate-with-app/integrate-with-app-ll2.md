@@ -50,9 +50,9 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 2:** Prepare data for the lab in ATP
 
-1.  From the hamburger menu, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
-    ![](./images/choose-atp.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
     ![](./images/atp-instance.png " ")
 
@@ -159,9 +159,9 @@ This lab assumes you have completed the following labs:
 
 ## **STEP 3:** Import the APEX Application
 
-1.  From the hamburger menu of Oracle cloud console, select **Autonomous Transaction Processing** and navigate to your ATP instance.
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing** and navigate to your ATP instance.
 
-    ![](./images/choose-atp.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
     ![](./images/atp-instance.png " ")
 
@@ -311,7 +311,7 @@ This lab assumes you have completed the following labs:
 
 13. Select **Overall Credit Profile**. This provides an overall measure of the credit across the entire 100k credit database. This scoring of 100k customers with 10 variables takes less than a second. *This shows Alpha Office has 12k customers with a 100 percent probability of good credit, 22k customers with a 50.7 probability of good credit, and 66k customers with a 1.2 percent probability of good credit*. (Note: your values may differ slightly.)
 
-    ![](./images/overall-profile.png  " ")
+    ![](./images/overall-profile-1.png  " ")
 
 ## **STEP 5:** Expose the ml model as a REST end point so any application can call it
 

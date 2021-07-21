@@ -16,9 +16,9 @@ This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys
-    * Lab: Prepare Setup (Free Tier and Paid Tenants Only)
-    * Lab: Environment Setup   
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup   
 * Java Setup
     * Make sure that the `$COHERENCE_HOME` environment variable points to the location of the unpacked Coherence directory.
     * Make sure that the `$JAVA_HOME` environment variable points to the location of a supported JDK before building the examples.
@@ -288,5 +288,3 @@ How to asynchronously process cache entries in Coherence and to asynchronously a
 * **Author** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

@@ -23,44 +23,53 @@
             "filename": "../../setup/setup-adb.md"
         },
         {
-            "title": "Lab 3: New Set Operators",
+            "title": "Lab 3: JSON",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb.md",
+            "type": "21c"
+        },
+        {
+            "title": "Lab 4: Blockchain Tables",
+            "filename": "../../blockchain-tables-adb/blockchain-tables-adb.md",
+            "type": "21c"
+        },
+        {
+            "title": "Lab 5: New Set Operators",
             "filename": "../../set-operators/set-operators.md",
             "type": "atp"
         },
         {
-            "title": "Lab 4: SQM Scalar and Table Expressions",
+            "title": "Lab 6: SQM Scalar and Table Expressions",
             "filename": "../../sql-macro/sql-macro.md",
             "type": "atp"
         },
         {
-            "title": "Lab 5: Bitwise Aggregate Functions",
+            "title": "Lab 7: Bitwise Aggregate Functions",
             "filename": "../../bitwise-agg/bitwise-agg.md",
             "type": "atp"
         },
         {
-            "title": "Lab 6: Enhanced Analytic Functions",
+            "title": "Lab 8: Enhanced Analytic Functions",
             "filename": "../../enhanced-analytics/enhanced-analytics.md",
             "type": "atp"
         },
         {
-            "title": "Lab 7: Detecting Data Tampering",
-            "filename": "../../data-tampering/data-tampering.md",
-            "type": "atp"
-        },
-        {
-            "title": "Lab 8: Measuring Asymmetry in Data",
+            "title": "Lab 9: Measuring Asymmetry in Data",
             "filename": "../../skewness/skewness.md",
             "type": "atp"
         },
         {
-            "title": "Lab 9: Measuring Tailedness of Data",
+            "title": "Lab 10: Measuring Tailedness of Data",
             "filename": "../../kurtosis/kurtosis.md",
             "type": "atp"
         },
         {
-            "title": "Lab 10: SecureFile LOBs",
+            "title": "Lab 11: SecureFile LOBs",
             "filename": "../../securefile-lobs/securefile-lobs.md",
-             "type": "atp"
+            "type": "atp"
+        },
+        {
+            "title": "Lab 12: Advanced JSON",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/adb-json/json-adb-advanced.md"
         },
         {
             "title": "Need Help?",

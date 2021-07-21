@@ -2,19 +2,19 @@
 
 ## Introduction
 
-You did the AutoUpgrade in a previous lab.  In this OPTIONAL lab you will upgrade the two other databases
+You executed the AutoUpgrade in a previous lab.  In this OPTIONAL lab you will upgrade the two other databases
 
 You can upgrade Oracle 11.2.0.4 databases and newer to:
 - Oracle 12.2.0.1 with Release Update January 2019 or newer
 - Oracle 18.5.0 or newer
 - Oracle 19.5.0 or newer
 
-Estimated Lab Time: n minutes
+*Estimated Lab Time*: 1 hour
 
 ### About AutoUpgrade
 The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle Database.
 
-The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments, and during postupgrade checks and configuration migration. You use AutoUpgrade after you have downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
+The AutoUpgrade utility is designed to automate the upgrade process, both before starting upgrades, during upgrade deployments,during postupgrade checks and configuration migration. You will use AutoUpgrade after having downloaded binaries for the new Oracle Database release, and set up new release Oracle homes. When you use AutoUpgrade, you can upgrade multiple Oracle Database deployments at the same time, using a single configuration file, customized as needed for each database deployment.
 
 With the January 2019 Release Updates (DBJAN2019RU) and later updates, AutoUpgrade support is available for Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes. For both Oracle Database 12c Release 2 (12.2) and Oracle Database 18c (18.5) target homes, you must download the AutoUpgrade kit from My Oracle Support Document 2485457.1.
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
 ## **STEP 1**: Preparation
 
-1. The database DB12 needs to be started at first.
+1. The first step is to start the database DB12.
     ````
     <copy>
     . db12
@@ -57,7 +57,7 @@ This lab assumes you have:
 
 ## **STEP 2**: Generate and edit the config file
 
-1. Run the command below.
+1. Run the command below to generate autoupgrade sample file.
 
     ````
     <copy>
@@ -66,7 +66,7 @@ This lab assumes you have:
     ````
     ![](./images/upgrade_19c_3.png " ")
 
-2. This will create a sample config file. You will need to edit it – and then pass it to the AutoUpgrade utility.  Created sample configuration file `/home/oracle/scripts/sample_config.cfg`.  Open the file `/home/oracle/scripts/sample_config.cfg` in your preferred editor and adjust the following things.  Generated config.cfg, make the following adjustments.
+2.  You will need to edit the sample file and then pass it to the AutoUpgrade utility. You can find the sample configuration file from the path- `/home/oracle/scripts/sample_config.cfg`.  Open the sample file in your preferred editor and adjust the following things from the below parameters.  Generated config.cfg, make the following adjustments.
 
     ![](./images/upgrade_19c_4.png " ")
    
@@ -115,7 +115,7 @@ This lab assumes you have:
     ````
     ![](./images/upgrade_19c_5.png " ")
 
-3. Then save the file as config.cfg to /home/oracle/scripts.  
+3. Then save the file as config.cfg to `/home/oracle/scripts`.  
     
     ````
     <copy>
@@ -123,7 +123,7 @@ This lab assumes you have:
     </copy>
     ````
 
-    If you don’t want to edit the file by yourself, there’s a config file for DB12 stored already:
+    If you do not want to edit the file by yourself, there is a config file for DB12 stored already:
 
     ````
     <copy>
@@ -134,7 +134,7 @@ This lab assumes you have:
 
 ##  **STEP 3**: Analyze
 
-1. You could run the autoupgrade directly, but it is best practice to run an analyze at first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
+1. You could run the autoupgrade directly, but it is best practice to run an analyze first. Once the analyze phase is passed without issues, the database can be upgraded automatically.
 
     ````
     <copy>
@@ -146,7 +146,7 @@ This lab assumes you have:
 
 ## **STEP 4**: Deploy mode
 
-1. When you initiate the upgrade now with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
+1. When you initiate the upgrade now with the -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 
     ````
     <copy>
@@ -186,14 +186,14 @@ This lab assumes you have:
     ![](./images/upgrade_19c_11.png " ")
     
 
-4. You can also monitor the logs in /home/oracle/logs/DB12/101. In the ./dbupgrade subdirectory you will find the usual upgrade logs of each worker.  Depending on your hardware, the upgrade will take **20-45 minutes**. You don’t have to wait for the next step but instead can progress with Plugin UPGR into CDB2.  Execute the lsj command a while later.
+4. You can also monitor the logs in /home/oracle/logs/DB12/101. In the ./dbupgrade subdirectory you will find the usual upgrade logs of each worker.  Depending on your hardware, the upgrade will take **20-45 minutes**. You don’t have to wait for the next step but instead you can progress with Plugin UPGR into CDB2.  Execute the lsj command a while later.
     ![](./images/upgrade_19c_12.png " ")
 
-5. The AutoUpgrade utility will complete also the recompilation, the time zone change and update password file, spfile and /etc/oratab.  The final output will look like this:
+5. The AutoUpgrade utility will also complete the recompilation, the time zone change and update password file, spfile and /etc/oratab.  The final output will look like this:
     ![](./images/upgrade_19c_13.png " ")
 
 
-6. As a final step, as the upgrade completed successfully, you should adjust the COMPATIBLE parameter. It does not affect the Optimizer behavior:
+6. As the upgrade has been completed successfully, you should adjust the COMPATIBLE parameter as it does not affect the Optimizer behavior.
 
     ````
     <copy>

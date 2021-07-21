@@ -16,12 +16,18 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
 ## **STEP 0**: Running your Lab
 ### Login to Host using SSH Key based authentication
+
+1. Select the hamburger menu and select **Compute** > **Instances**
+  ![](./images/select-compute.png " ")  
+
+2. Select your compartment. You should see your Compute Instance Public IP address. 
+    ![](./images/ip-address.png " ")
 
 1. If needed, refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
     - Authentication OS User - “*opc*”
@@ -29,6 +35,10 @@ This lab assumes you have:
     - OS User – “*oracle*”.
 
 2. First login as “*opc*” using your SSH Private Key
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
 
 3. Then sudo to “*oracle*”.
 
@@ -54,7 +64,18 @@ This lab assumes you have:
       - Setting DB parameter `enable_goldengate_replication` to  true
       - Creating GoldenGate users in the database
 
-You may now *proceed to the next lab*.
+
+2. Create some additional tables that we will be using later in our labs for CDR purposes.
+
+    ```
+    <copy>
+    cd ~/Desktop/Scripts/HOL/Lab10
+    ./db_createTable.sh
+    </copy>
+    ```
+    ![](./images/create_tables.png " ")
+
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -64,5 +85,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration, November 2020
 * **Contributors** - Zia Khan, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
-

@@ -23,15 +23,11 @@ Create a Kubernetes secret containing the Administration Server boot credentials
 
 After you have your domain namespace (the WebLogic domain is not deployed yet), you have to update the load balancer and operator configuration to specify where the domain will be deployed.
 
-Before executing the domain `helm` install, be sure that you are in the WebLogic operator local Git repository folder.
-
-```bash
-<copy>cd ~/weblogic-kubernetes-operator/</copy>
-```
 To update the operator, execute the following `helm upgrade` command:
 ```bash
 <copy>helm upgrade sample-weblogic-operator \
-  kubernetes/charts/weblogic-operator \
+  weblogic-operator/weblogic-operator \
+  --version 3.0.0 \
   --namespace sample-weblogic-operator-ns \
   --reuse-values \
   --set "domainNamespaces={sample-domain1-ns}" \
@@ -154,8 +150,3 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Maciej Gruszka, Peter Nagy, September 2020
 * **Last Updated By/Date**
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
