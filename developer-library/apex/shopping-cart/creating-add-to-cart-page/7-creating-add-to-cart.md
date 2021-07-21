@@ -4,7 +4,7 @@
 
 In this lab, you will create a new modal page to add product to the Shopping Cart.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 - Create a page that allows user to add products to the Shopping Cart.
@@ -183,8 +183,8 @@ In this step, you will create four page items:
     - Set Display Extra Values to **Off**
     - Set Display Null Value to **Off**
 
-7. Navigate to **Buttons Bar** region (in the right side), 
-8. Right-click on the region and click **Create Button** 
+7. Navigate to **Buttons Bar** region (left side).
+8. Right-click on the region and click **Create Button**.
      ![](images/create-button.png " ") 
 9. Create three buttons as follows:
 
@@ -209,7 +209,25 @@ In this step, you will create four page items:
         - For Style -select **Display as Link**
         - For Spacing Right, select **Large**
 
-## **Step 5** - Adding process to add products to the Shopping Cart
+## **Step 5** - Adding computation to calculate the number of items for a product
+1. In the Rendering tree (left pane), expand the **Pre-Rendering**.
+2. Right-click on **Before Regions** and click **Create Computation**.
+     ![](images/computation.png " ")    
+3. In the Property Editor, enter the following:
+    - Under Identification section:
+        - For Item Name - select **P18_QUANTITY**
+    - Under Computation:
+        - For Type - select **Function Body**
+        - For PL/SQL Function Body - enter the following PL/SQL Code:
+
+        ```
+        <copy>
+        RETURN manage_orders.product_exists(p_product => :P18_PRODUCT_ID);
+        </copy>
+        ```
+     ![](images/computation2.png " ")          
+
+## **Step 6** - Adding process to add products to the Shopping Cart
 
 1. In the Rendering tree (left pane), navigate to **Processing** tab.  
      ![](images/create-process.png " ")    
@@ -235,7 +253,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed - select **Add**      
 
-## **Step 6** - Adding process to edit products in the Shopping Cart
+## **Step 7** - Adding process to edit products in the Shopping Cart
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -260,7 +278,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed, select **Edit**
 
-## **Step 7** - Adding process to delete products from the Shopping Cart
+## **Step 8** - Adding process to delete products from the Shopping Cart
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -284,7 +302,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed - select **Delete**    
 
-## **Step 8** - Adding process to calculate the shopping cart items
+## **Step 9** - Adding process to calculate the shopping cart items
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click  **Create Process**.
@@ -302,7 +320,7 @@ In this step, you will create four page items:
         </copy>
         ```
 
-## **Step 9** - Adding process to close the Modal Page
+## **Step 10** - Adding process to close the Modal Page
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -314,7 +332,7 @@ In this step, you will create four page items:
     - Under Settings section:
         - For Items to Return - enter **P18\_SHOPPING\_CART\_ITEMS,P18\_PRODUCT\_ID,P18\_ACTION,P18\_QUANTITY** 
 
-## **Step 10** - Enhance the Modal Page
+## **Step 11** - Enhance the Modal Page
 
 1. Navigate to **Rendering** tab (left pane).
      ![](images/rendering-tab.png " ")  
@@ -326,7 +344,9 @@ In this step, you will create four page items:
     - Under Dialog section:
         - For Width, enter **600**
         - For Height, enter **600**
-     ![](images/enhance-modal.png " ")      
+     ![](images/enhance-modal.png " ")     
+
+4. Click **Save**. 
 
 ## **Summary**
 

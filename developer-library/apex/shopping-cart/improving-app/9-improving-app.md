@@ -29,12 +29,16 @@ Follow these steps for the four listed pages:
 
 2. Within Page Designer, in the Rendering tree (left pane), navigate to  **Page x: Name of the Page**.
 
-    In the Property Editor (right pane), under Security:
-    - For Authentication - select **Page Is Public**
+    In the Property Editor (right pane), apply the following change:
+    - Under Security section:
+        - For Authentication - select **Page Is Public**
 
     ![](images/public-page.png " ")
 
 3. Click **Save**.
+
+4. Navigate to Page Finder and go to the next page. 
+    ![](images/page-finder.png " ")
 
 ## **Step 2** - Cleaning the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 

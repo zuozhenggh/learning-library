@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to create database objects to use in your APEX application. This package contains the function and procedures to add products to the shopping cart, create the order, clear the cart and more.
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 - Create a package to manage the Shopping Cart.

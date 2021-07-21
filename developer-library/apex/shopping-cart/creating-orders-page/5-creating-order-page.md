@@ -1,4 +1,4 @@
-# Creating the Order Page
+# Creating Order Page
 
 ## Introduction
 
@@ -19,7 +19,7 @@ Create a Normal Page to review the Order that customer has made.
 3. Enter the following and click **Next**.
     - Name - enter **Order Information**
     - Page Mode - select **Normal**
-    - Breadcrumb - select **- don't use breadcrums on page -** 
+    - Breadcrumb - select **- don't use breadcrumbs on page -** 
 4. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 5. Click **Finish**.
 
@@ -45,6 +45,8 @@ Add a region to the page to display order details.
     | Name |  Type  | 
     | --- |  --- | 
     | P16_ORDER | Hidden |
+
+    ![](images/order-item.png " ")    
     
 ## **Step 4** - Adding Static Content Region
 Add a region to contain Order details and items.
@@ -85,7 +87,7 @@ Add a region to display Order details.
             ```
 4. Click on Attributes.
     ![](images/attributes.png " ")
-    -  Scroll until Secondary Body section and do the following:
+    -  Search for Secondary Body in the filter and do the following:
         - Set Advanced Formatting to **On**
         - For HTML Expression - enter:
 

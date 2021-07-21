@@ -89,7 +89,7 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/lt-color3.png " ")
 
-    The lookup table
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
 8. To create **Department** lookup table, navigate to **Products** table and click on **Create Lookup Table** button.
 
@@ -113,6 +113,7 @@ You will create lookup tables based on the new three columns, after you will hav
 13. Click **Create Lookup Table**.
 
     ![](images/lt-department3.png " ")
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
     
 14. To create **Clothing** lookup table, navigate to **Products** table and click on **Create Lookup Table** button.
 
@@ -136,6 +137,7 @@ You will create lookup tables based on the new three columns, after you will hav
 19. Click **Create Lookup Table**.
 
     ![](images/lt-clothing3.png " ")
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
 20. The columns COLOR, DEPARTMENT, and CLOTHING in the **PRODUCTS** table were renamed and the data type changed to NUMBER. Also, three new tables were created:
     - COLOR_LOOKUP

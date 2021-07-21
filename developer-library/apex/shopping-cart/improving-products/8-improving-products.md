@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to improve the Products page by adding new facets and customizing the cards.
 
-Estimated Time: 10 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 - Add new facets to the page
@@ -87,15 +87,14 @@ Unit price is not a common search criteria, so you want to put this facet at the
 
 1. In the Rendering tree (left pane), navigate to **Search**.
 2. In the Property Editor (right pane), click Attributes and do the following:
-    -   For Total Row Count Label - enter **Total Products**.
+    -   For Total Row Count Label - enter **Total Products**
     -   For Show Charts - select **No**.
 
     ![](images/enhance-facet.png " ")    
 
 ## **Step 4** - Enhance the Cards Region
     
-1.  In the Rendering tree (left pane), navigate to **Search Results** and in the Property Editor (right pane), update the SQL Query:
-    - For Type - select  **SQL Query**.
+1.  In the Rendering tree (left pane), navigate to **Search Results** and in the Property Editor (right pane), do the following:
     - For SQL Query - enter the following SQL code:
 
     ```
@@ -124,7 +123,6 @@ Unit price is not a common search criteria, so you want to put this facet at the
                 SELECT l3."CLOTHING"
                 FROM   "CLOTHING_LOOKUP" l3
                 WHERE  l3."CLOTHING_ID" = m."CLOTHING_ID") "CLOTHING_ID_L$3",
-        manage_orders.product_exists(p_product => product_id)                           quantity,
         b.brand
     FROM   "PRODUCTS" m,
         json_table (m.product_details, '$' columns ( brand varchar2(4000) path '$.brand') ) b
@@ -132,8 +130,11 @@ Unit price is not a common search criteria, so you want to put this facet at the
     ```
     - Under Appearance section:
         - Click on Template Options. For Style - select **Style A**
-
+    ![](images/template-options.png " ")  
+        - Click **Ok**
+        
 2. Click Attributes and apply the following changes:
+    ![](images/attributes.png " ")
     - Under Apperance section:
         - For Layout - select **Grid**.
         - For Grid Columns - select **Auto**.
@@ -184,7 +185,6 @@ You need to provide a way for customers to shop the products, so in this step yo
             | Name | Value | 
             | --- | --- | 
             | P18\_PRODUCT\_ID | &PRODUCT_ID. |
-            | P18\_QUANTITY    | &QUANTITY. |
              
         - For Clear Cache, enter **18**
         - Click **Ok**.
@@ -231,17 +231,7 @@ In this step, you will create two dynamic actions:
             </copy>
             ```
 
-5. Create a second action. In the Dynamic Actions tab (left pane), navigate to **True** under **Show Success Message** Dynamic Action. 
-6. Right-click on **True** and click **Create TRUE Action**.
-    ![](images/create-da3.png " ") 
-7. In the Property Editor, enter the following:  
-    - Under Identification section:
-        - For Action - select **Refresh** 
-    - Under Affected Elements section:          
-        - For Selection Type - select **Region**
-        - For Region - select **Search Results**
-
-8. Create the second dynamic action. Right-click on Dialog Closed and click **Create Dynamic Action**.  
+8. Create a second dynamic action. Right-click on Dialog Closed and click **Create Dynamic Action**.  
      ![](images/create-da4.png " ") 
 9. In the Property Editor, enter the following:    
     - Under Identification section: 
@@ -277,7 +267,7 @@ In this step, you will create two dynamic actions:
             ```
 11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
 12. Right-click on **Execute JavaScript Code** and click **Create Opposite Action**.
-     ![](images/create-da5.png " ") 
+     ![](images/create-opposite-action.png " ") 
 
 13. Navigate to **Execute JavaScript Code** Action.
     - Under Identification section:

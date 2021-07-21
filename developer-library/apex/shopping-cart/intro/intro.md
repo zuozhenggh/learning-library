@@ -8,7 +8,7 @@ This workshop walks you through creation a Shopping Cart application that allows
     * To review, add, delete or edit the number of products in the shopping cart
     * To submit orders
 
-Estimated Time: 90 minutes
+Estimated Time: 100 minutes
 
 ### Lab Objectives
 
@@ -47,12 +47,12 @@ Estimated Time: 90 minutes
 
 ## Learn More - *Useful Links*
 
-- APEX on Autonomous:   [https://apex.oracle.com/autonomous](https://apex.oracle.com/autonomous)
-- APEX Service         [https://apex.oracle.com/en/platform/apex-service/](https://apex.oracle.com/en/platform/apex-service/)
-- APEX Collateral:   [https://apex.oracle.com](https://apex.oracle.com)
-- Tutorials:   [https://apex.oracle.com/en/learn/tutorials](https://apex.oracle.com/en/learn/tutorials)
-- Community:  [https://apex.oracle.com/community](https://apex.oracle.com/community)
-- External Site + Slack:   [http://apex.world](http://apex.world)
+- [APEX on Autonomous](https://apex.oracle.com/autonomous)
+- [APEX Service](https://apex.oracle.com/en/platform/apex-service/)
+- [APEX Collateral](https://apex.oracle.com)
+- [Tutorials](https://apex.oracle.com/en/learn/tutorials)
+- [Community](https://apex.oracle.com/community)
+- [External Site + Slack](http://apex.world)
 
 ## Acknowledgments
 

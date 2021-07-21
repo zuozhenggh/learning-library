@@ -36,8 +36,8 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 2. Under Application logic, click **Application Processes**.
     ![](images/application-process.png " ")
 3. Click **Create** and enter the following:
-    - For Name - enter **Initialize Shopping Cart Header**.
-    - For Process Point - select **On Load: Before Header (page template header)**.
+    - For Name - enter **Initialize Shopping Cart Header**
+    - For Process Point - select **On Load: Before Header (page template header)**
     ![](images/application-process1.png " ")    
 4. Click **Next**.
 5. For Code, enter:
@@ -159,7 +159,6 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
             | Name             |  Value       |
             | ---              |  ---         | 
             | P18\_PRODUCT\_ID | &PRODUCT_ID. |
-            | P18\_QUANTITY    | &QUANTITY.   |
 
         - Click **Ok**.
     - For Display Type - select **Text with Icon**
@@ -213,8 +212,8 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
      Under Server-side Condition:
     | Button Name | Type  | Item |
     | --- |  --- | --- | 
-    | Proceed | Item is NOT zero | SHOPPING\_CART\_ITEMS |
-    | Clear | Item is NOT zero | SHOPPING\_CART\_ITEMS |
+    | Proceed | Item is NOT NULL | SHOPPING\_CART\_ITEMS |
+    | Clear | Item is NOT NULL | SHOPPING\_CART\_ITEMS |
 
      ![](images/buttons.png " ")      
 
@@ -294,7 +293,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 2. Right click on After Processing and click **Create Branch**.
      ![](images/create-branch.png " ")  
 3. In the Property Editor, enter the following:     
-    - For Name - enter **Go to Orders**.
+    - For Name - enter **Go to Orders**
     - Navigate to Target attribute and click on **No Link Defined**.
         - For Type - select **Page in this application**
         - For Page - enter **16**
@@ -319,58 +318,16 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - For When Button Pressed, select **Clear**
 
 ## **Step 11** - Adding Dynamic Actions
-In this step, you will create two dynamic actions:
-- To show success message when a product is added / edited / removed from the shopping cart.
-- To update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
+In this step, you will create a dynamic actions to:
+- Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
+- Refresh the shopping cart region.
 
 1. Navigate to **Dynamic Actions** tab (left pane).
      ![](images/create-da.png " ")  
 
 2. Right-click on Dialog Closed and click **Create Dynamic Action**.
      ![](images/create-da2.png " ")  
-3. In the Property Editor, enter the following: 
-    - Under Identification section:
-        - For Name - enter **Show Success Message**
-    - Under When section:
-        - For Event - select **Dialog Closed**
-        - For Selection Type - select **Region**
-        - For Region - select **Shopping Cart**
-
-4. Navigate to **Refresh** Action.
-    - Under Identification section:
-        - For Action - select **Execute JavaScript Code**
-    - Under Settings section:        
-        - For Code - enter the following JavaScript Code:
-
-            ```
-            <copy>    
-            var productAction   = this.data.P18_ACTION,
-                productQuantity = this.data.P18_QUANTITY,
-                productCard$  = apex.jQuery("#message_" + this.data.P18_PRODUCT_ID);
-
-            if (productAction === 'ADD') {
-                productCard$.text("Added " + productQuantity + " to cart!");
-            } else if (productAction === 'EDIT') {
-                productCard$.text("Updated quantity to " + productQuantity + "!");
-            } else if (productAction === 'DELETE') {
-                productCard$.text("Removed from cart!");
-            }
-            </copy>
-            ```
-
-5. Create a second action. In the Dynamic Actions tab (left pane), navigate to **True** under **Show Success Message** Dynamic Action. 
-6. Right-click on **True** and click **Create TRUE Action**.
-    ![](images/create-da3.png " ") 
-7. In the Property Editor, enter the following:  
-    - Under Identification section:
-        - For Action - select **Refresh** 
-    - Under Affected Elements section:          
-        - For Selection Type - select **Region**
-        - For Region - select **Shopping Cart**
-
-8. Create the second dynamic action. Right-click on Dialog Closed and click **Create Dynamic Action**.  
-     ![](images/create-da4.png " ") 
-9. In the Property Editor, enter the following:    
+3. In the Property Editor, enter the following:    
     - Under Identification section: 
         - For Name - enter **Update Shopping Cart Header**
     - Under When section:        
@@ -387,7 +344,7 @@ In this step, you will create two dynamic actions:
             </copy>
             ```
 
-10. Navigate to **Refresh** Action.
+4. Navigate to **Refresh** Action.
     - Under Identification section:
         - For Action - select **Execute JavaScript Code**
     - Under Settings section:        
@@ -402,8 +359,17 @@ In this step, you will create two dynamic actions:
             apex.jQuery(".js-shopping-cart-item .t-Icon").removeClass('fa-cart-empty').addClass('fa-cart-full');
             </copy>
             ```
-11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
-12. Right-click on **Execute JavaScript Code** and click **Create Opposite Action**.
+
+5. Create a second action. In the Dynamic Actions tab (left pane), navigate to **True** under **Update Shopping Cart Header** Dynamic Action. 
+     ![](images/create-2da.png " ")
+6. In the Property Editor, enter the following:  
+    - Under Identification section:
+        - For Action - select **Refresh** 
+    - Under Affected Elements section:          
+        - For Selection Type - select **Region**
+        - For Region - select **Shopping Cart**          
+11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to **Execute JavaScript Code** action.
+12. Right-click on **Execute JavaScript Code** action and click **Create Opposite Action**.
      ![](images/create-da5.png " ") 
 
 13. Navigate to **Execute JavaScript Code** Action.
