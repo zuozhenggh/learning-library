@@ -138,11 +138,11 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 
 18. The number of transformation rules applied is shown in the **Configure Transformations** section.
 
-  ![](./images/transf-no.png " ")
+  ![](./images/transformations-number.png " ")
 
 19. In the **Target section**, select the **Create New Entity** check box, and then click Select.
 
-  ![](./images/loader-tgt.png " ")
+  ![](./images/data-loader-target.png " ")
 
 20. In the **Select Target** page, select the following values:
 
@@ -156,7 +156,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
     - Select the `DI-bucket`
     - Click **Select** to complete selecting the target.
 
-    ![](./images/loader-tgt-all.png " ")
+    ![](./images/data-loader-target-selections.png " ")
 
 21. The Target section in the Data Loader task now displays your selections for the target. Click **Save and Close**.
 
@@ -637,15 +637,35 @@ This Data Flow will load data from **multiple source files** containing Employee
 
     ![](./images/midwest-cond.png " ")
 
-31. The first split condition you defined is now displayed. After the condition in the split operator is evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port. The Split operator properties should look like this:
+31. The first split condition you defined is now displayed. The Split operator properties should look like this:
 
   ![](./images/split-op-prop.png " ")
 
-32. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.  *Note: Be sure to save often during design time!*
+32. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section** to add a new split condition.
+
+  ![](./images/add-new-split-condition.png " ")
+
+
+33. In **Add Split Condition** page:
+
+    - Enter **Identifier** `NORTHEAST_SOUTH_REGION`.
+    - For **Condition** enter
+    ```
+    <copy>SPLIT_1.EMPLOYEES_SOURCE_FILES.Region IN ('Northeast','South')</copy>
+    ```
+    - Click **Add**.
+
+    ![](./images/split-operator-second-condition.png " ")
+
+34. The split conditions that you defined are now displayed. After the conditions in the split operator are evaluated during run-time, data that does not meet the condition is directed to the **Unmatched** output port.
+
+  ![](./images/split-operator-all-conditions.png " ")
+
+35. Drag and drop a **target operator**. Connect the **WEST\_MIDWEST\_REGION** output of the Split operator to the **TARGET\_1** operator.  *Note: Be sure to save often during design time!*
 
   ![](./images/first-target.png " ")
 
-33. In the properties for **TARGET\_1** operator:
+36. In the properties for **TARGET\_1** operator:
 
     - Change to **Merge Integration Strategy**.
     - For **Data Asset**, select `Data_Warehouse`.
@@ -657,19 +677,19 @@ This Data Flow will load data from **multiple source files** containing Employee
 
     ![](./images/employees-west-and-midwest.png " ")
 
-34. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 3 attributes that were not mapped automatically in the target.
+37. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 3 attributes that were not mapped automatically in the target.
 
   ![](./images/attr-not-mapped.png " ")
 
-35. **Manually map** the **E\_Mail** attribute from source  to **EMAIL** attribute from target, with drag and drop.
+38. **Manually map** the **E\_Mail** attribute from source  to **EMAIL** attribute from target, with drag and drop.
 
   ![](./images/map-email-attribute.png " ")
 
-36. You will use **mapping by pattern** to map the two remaining unmapped attributes. This maps inbound attributes to target attributes based on simple, user-defined regex rules. Click on **Actions** button and then on **Map by pattern**.
+39. You will use **mapping by pattern** to map the two remaining unmapped attributes. This maps inbound attributes to target attributes based on simple, user-defined regex rules. Click on **Actions** button and then on **Map by pattern**.
 
   ![](./images/map-by-pattern-button.png " ")
 
-37. In the **Map by pattern** page that pops up:
+40. In the **Map by pattern** page that pops up:
 
     - For **Source Pattern**, use `*_S_NAME`.
     - For **Target Pattern**, use `$1S_NAME`.
@@ -680,11 +700,11 @@ This Data Flow will load data from **multiple source files** containing Employee
 
    ![](./images/map-by-pattern.png " ")
 
-38. The attribute mapping for the **EMPLOYEES\_WEST\_MIDWEST target table** is now complete.  *Note: Be sure to save often during design time!*
+41. The attribute mapping for the **EMPLOYEES\_WEST\_MIDWEST target table** is now complete.  *Note: Be sure to save often during design time!*
 
   ![](./images/mapping-result.png " ")
 
-39. Drag and drop **another target operator**. Connect the **UNMATCHED output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
+42. Drag and drop **another target operator**. Connect the **NORTHEAST\_SOUTH\_REGION output port** of the Split operator to the **TARGET\_1 operator**. In Properties tab of the new target operator:
 
     - Change to **Merge Integration Strategy**.
     - For **Data Asset**, select `Data_Warehouse`.
@@ -698,11 +718,12 @@ This Data Flow will load data from **multiple source files** containing Employee
 
   ![](./images/employees-northeast-and-south.png " ")
 
-40. The design of the Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays **no Errors and no Warnings**.
+43. The design of the Data Flow is now ready. Click on **Validate**. The result in the Global Validation window displays two warnings related to the UNMATCHED output port of the split operator, which is not connected to any target table.
+   *Note: However, since these are not errors which could cause the task to fail, and for the purposes of this workshop, we will ignore these warnings.*
 
-  ![](./images/validate-df.png " ")
+   ![](./images/validate-df.png " ")
 
-41. Click on **Save and Close**.
+44. Click on **Save and Close**.
 
   ![](./images/save-close-button.png " ")
 

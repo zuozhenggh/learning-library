@@ -90,11 +90,13 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
   ![](./images/create-vcn-button.png " ")
 
-<!-- 7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
-![](./images/vcn-successful.png " ")
+7. It will take a moment to create the VCN and a progress screen will keep you aware of the process. Once you see that the VCN creation is complete, click on the **View Virtual Cloud Network** button at the bottom of the screen.
+
+  ![](./images/vcn-successful.png " ")
 
 8. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
-![](./images/vcn-detail.png " ") -->
+
+  ![](./images/vcn-detail.png " ") 
 
 
 ## **Step 3**: Provision an Autonomous Data Warehouse and download Wallet
