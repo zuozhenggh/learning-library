@@ -59,7 +59,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        systemctl status oracle-database
+        sudo systemctl status oracle-database
         </copy>
         ```
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        systemctl status oracle-dbsec-lab
+        sudo systemctl status oracle-dbsec-lab
         </copy>
         ```
 
@@ -81,7 +81,7 @@ This lab assumes you have:
     - Database and Listener
         ```
         <copy>
-        systemctl restart oracle-database
+        sudo systemctl restart oracle-database
         </copy>
         ```
 
@@ -89,7 +89,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        systemctl restart oracle-dbsec-lab
+        sudo systemctl restart oracle-dbsec-lab
         </copy>
         ```
 
@@ -102,24 +102,24 @@ You may now [proceed to the next lab](#next).
     - Start
 
     ```
-    <copy>systemctl start oracle-database</copy>
+    <copy>sudo systemctl start oracle-database</copy>
     ```
     - Stop
 
     ```
-    <copy>systemctl stop oracle-database</copy>
+    <copy>sudo systemctl stop oracle-database</copy>
     ```
 
     - Status
 
     ```
-    <copy>systemctl status oracle-database</copy>
+    <copy>sudo systemctl status oracle-database</copy>
     ```
 
     - Restart
 
     ```
-    <copy>systemctl restart oracle-database</copy>
+    <copy>sudo systemctl restart oracle-database</copy>
     ```
 
 2. DBSec-lab Service (Enterprise Manager 13c and My HR Applications on Glassfish)
@@ -127,25 +127,25 @@ You may now [proceed to the next lab](#next).
     - Start
 
     ```
-    <copy>systemctl start oracle-dbsec-lab</copy>
+    <copy>sudo systemctl start oracle-dbsec-lab</copy>
     ```
 
     - Stop
 
     ```
-    <copy>systemctl stop oracle-dbsec-lab</copy>
+    <copy>sudo systemctl stop oracle-dbsec-lab</copy>
     ```
 
     - Status
 
     ```
-    <copy>systemctl status oracle-dbsec-lab</copy>
+    <copy>sudo systemctl status oracle-dbsec-lab</copy>
     ```
 
     - Restart
 
     ```
-    <copy>systemctl restart oracle-dbsec-lab</copy>
+    <copy>sudo systemctl restart oracle-dbsec-lab</copy>
     ```
 
 ## Appendix 2: External Web Access

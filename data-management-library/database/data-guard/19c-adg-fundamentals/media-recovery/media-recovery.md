@@ -4,7 +4,7 @@
 In this lab, we will see how Active Data Guard Automatic Block media recovery works.
 
 Block corruptions are a common source of database outages. A database block is
-corrupted when its cont-ent has changed from what Oracle Database expects to find. If
+corrupted when its content has changed from what Oracle Database expects to find. If
 not prevented or repaired, block corruption can bring down the database and possibly
 result in the loss of key business data.
 
@@ -71,7 +71,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
     ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-### Create all the sessions accordinghly
+### Create all the sessions accordingly
  In the terminal, connect to the Database. We use the SYS user for this and we can login with ***sqlplus / as sysdba***
 
 
@@ -98,7 +98,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 Then alter your session to connect to the pdb.
 
 ````
-    SQL> alter session set container=mypdb;
+    SQL> <copy>alter session set container=mypdb;</copy>
 
     Session altered.
 
@@ -106,6 +106,8 @@ Then alter your session to connect to the pdb.
 ````
 
 2. On the second session, set the environment and put a tail -f on the alert log.
+
+    > **Note**: in the tail command, modify the directory name "dghol_fra1sw" to reflect your database unique name.
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Public IP Address>>
@@ -129,69 +131,98 @@ To do this, open a new SSH connection to the host as the opc user.
 Next ***sudo su - oracle*** to switch to the Oracle user and then issue the following wget commands:
 
 ````
-wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/01-abmr.sql
+<copy>wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/01-abmr.sql
 wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/02-abmr.sql
-wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/03-abmr.sql
+wget https://oracle.github.io/learning-library/data-management-library/database/data-guard/19c-adg-fundamentals/media-recovery/scripts/03-abmr.sql</copy>
 
 ````
 
 2. This script creates a tablespace, adds a table in it and inserts a row. This will also return the rowID. Take a note of this number as you will need it in step 2, the step that will introduce corruption.
 
     ````
-    SQL> show con_name
+    SQL> <copy>show con_name</copy>
 
     CON_NAME
     ------------------------------
     MYPDB
-    SQL> @01-abmr.sql
-    SQL> set feed on;
-    SQL> Col owner format a20;
-    SQL> var rid varchar2(25);
-    SQL> col segment_name format a20;
-    SQL>
-    SQL> drop tablespace corruptiontest including contents and datafiles;
-    drop tablespace corruptiontest including contents and datafiles
+    ````
+    ````
+    SQL> <copy>@01-abmr.sql</copy>
+    ````
+    ````
+    SQL> <copy>set feed on;</copy>
+    ````
+    ````
+    SQL> <copy>Col owner format a20;</copy>
+    ````
+    ````
+    SQL> <copy>var rid varchar2(25);</copy>
+    ````
+    ````
+    SQL> <copy>col segment_name format a20;</copy>
+    ````
+    ````
+    SQL> <copy>drop tablespace corruptiontest including contents and datafiles;
+    drop tablespace corruptiontest including contents and datafiles</copy>
     *
     ERROR at line 1:
     ORA-00959: tablespace 'CORRUPTIONTEST' does not exist
+    ````
 
-
-    SQL> create tablespace corruptiontest datafile '/home/oracle/corruptiontest01.dbf' size 1m;
+    ````
+    SQL> <copy>create tablespace corruptiontest datafile '/home/oracle/corruptiontest01.dbf' size 1m;</copy>
 
     Tablespace created.
+    ````
 
-    SQL> create table will_be_corrupted(myfield varchar2(50)) tablespace corruptiontest;
+    ````
+    SQL> <copy>create table will_be_corrupted(myfield varchar2(50)) tablespace corruptiontest;</copy>
 
     Table created.
+    ````
 
-    SQL> insert into will_be_corrupted(myfield) values ('This will have a problem') returning rowid into :rid;
+    ````
+    SQL> <copy>insert into will_be_corrupted(myfield) values ('This will have a problem') returning rowid into :rid;</copy>
 
     1 row created.
+    ````
 
-    SQL> print
+    ````
+    SQL> <copy>print</copy>
 
     RID
     --------------------------------------------------------------------------------------------------------------------------------
     AAASGFAANAAAAAPAAA
+    ````
 
-    SQL> Commit;
+    ````
+    SQL> <copy>Commit;</copy>
 
     Commit complete.
+    ````
 
-    SQL> Alter system checkpoint;
+    ````
+    SQL> <copy>Alter system checkpoint;</copy>
 
     System altered.
+    ````
 
-    SQL> select * from will_be_corrupted;
+    ````
+    SQL> <copy>select * from will_be_corrupted;</copy>
 
     MYFIELD
     --------------------------------------------------
     This will have a problem
 
     1 row selected.
+    ````
 
-    SQL> --select owner, segment_name,tablespace_name,file_id,block_id from dba_extents where segment_name='WILL_BE_CORRUPTED'; -- will be segment id
-    SQL> select dbms_rowid.ROWID_BLOCK_NUMBER(ROWID, 'SMALLFILE') FROM will_be_corrupted where myfield='This will have a problem';
+    ````
+    SQL> <copy>--select owner, segment_name,tablespace_name,file_id,block_id from dba_extents where segment_name='WILL_BE_CORRUPTED'; -- will be segment id</copy>
+    ````
+
+    ````
+    SQL> <copy>select dbms_rowid.ROWID_BLOCK_NUMBER(ROWID, 'SMALLFILE') FROM will_be_corrupted where myfield='This will have a problem';</copy>
 
     DBMS_ROWID.ROWID_BLOCK_NUMBER(ROWID,'SMALLFILE')
     ------------------------------------------------
@@ -209,8 +240,10 @@ In this example, you will need to remember the number 15.
     This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created.
 
     ````
-    SQL> @02-abmr.sql
-    SQL> host dd conv=notrunc bs=1 count=2 if=/dev/zero of=/home/oracle/corruptiontest01.dbf seek=$((&block_id*8192+16))
+    SQL> <copy>@02-abmr.sql</copy>
+    ````
+    ````
+    SQL> <copy>host dd conv=notrunc bs=1 count=2 if=/dev/zero of=/home/oracle/corruptiontest01.dbf seek=$((&block_id*8192+16))</copy>
     Enter value for block_id: 15
     2+0 records in
     2+0 records out
@@ -233,12 +266,16 @@ By accessing the table, Oracle will need to read the data. This demo database is
     In the sqlplus window we will see this
 
     ````
-    SQL> @03-abmr.sql
-    SQL> alter system flush buffer_cache;
+    SQL> <copy>@03-abmr.sql</copy>
+    ````
+    ````
+    SQL> <copy>alter system flush buffer_cache;</copy>
 
     System altered.
+    ````
 
-    SQL> select * from will_be_corrupted;
+    ````
+    SQL> <copy>select * from will_be_corrupted;</copy>
 
     MYFIELD
     --------------------------------------------------
@@ -298,7 +335,7 @@ To clean this excercise, just drop the tablespace.
 1. In the sqlplus window, use this command:
 
     ````
-    SQL> drop tablespace corruptiontest including contents and datafiles;
+    SQL> <copy>drop tablespace corruptiontest including contents and datafiles;</copy>
 
     Tablespace dropped.
 
@@ -312,4 +349,4 @@ You have now seen Active Data Guard Automatic Block media recovery working. You 
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021

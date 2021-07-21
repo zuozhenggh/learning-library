@@ -451,4 +451,4 @@ Single row change done via the buffer cache (OLTP style changes), are typically 
 ## Acknowledgements
 
 - **Author** - Vijay Balebail.
-- **Last Updated By/Date** - Oct 2020.
+- **Last Updated By/Date** - Rajeev Rumale.

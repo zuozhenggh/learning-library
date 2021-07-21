@@ -56,15 +56,15 @@ Windows 10 users can use Windows PowerShell to run the workshop.
 
 1. **How to run PowerShell on Windows 10** - Press WindowsKey\+R to open the Run Dialog Box, then type <em>powershell</em> in the text box.  You can click OK \(or press Enter\) to open a regular PowerShell window.
 
-![](./images/WinPowerShell.png " ")
+    ![](./images/WinPowerShell.png " ")
 
 2. Your instructor will provide you with an IP address and a secure key file \(MT-WS-key.priv\).  Use the key and IP address to log in to the SSH client as shown in the following example.  **Remember to use your own IP address.**
 
-```
-ssh -i c:\Users\name\Downloads\MT-WS-key.priv oracle@168.xxx.xx.xxx
-```
+    ```
+    ssh -i c:\Users\name\Downloads\MT-WS-key.priv oracle@168.xxx.xx.xxx
+    ```
 
-![](./images/WinPowerShell2.png " ")
+    ![](./images/WinPowerShell2.png " ")
 
 You are now connected securely using your Windows PowerShell utility.
 
@@ -74,20 +74,20 @@ Mac users typically use their favorite terminal (Terminal.app, iTerm, etc) to ru
 
 1. Your instructor will provide you with an IP address and a secure key file (MT-WS-key.priv).  After downloading the key file, run the following command to change the file permissions to 400 to better secure the key.
 
-````
-<copy>chmod 400 MT-WS-key.priv</copy>
-````
+    ````
+    <copy>chmod 400 MT-WS-key.priv</copy>
+    ````
 2. Use the key and IP address to log in to the SSH client as shown in the following example.  **Remember to use your own IP address.**
 
-````
-ssh -i MT-WS-key.priv oracle@168.xxx.xx.xxx
-````
+    ````
+    ssh -i MT-WS-key.priv oracle@168.xxx.xx.xxx
+    ````
 <p>
 ![](./images/MACsetup.png " ")
 
 You are now connected securely using your Mac terminal utility.
 
-## Workshop Lap Setup.
+## Workshop Lap Setup
 
 Run this command to setup the schema, SSB, you will use for this lab. This script takes about 15 minutes to complete. It downloads the ssb.dmp file and then imports it.
 ````

@@ -5,9 +5,13 @@
 
 ### Lab Preview
 
-Watch a preview video of In-Memory Column Store features.
+Watch a preview videos of In-Memory Column Store features.
 
-[](youtube:eToO3PRIs8k)
+#### Part 1
+[](youtube:P6GZaykqHwI)
+
+#### Part 2
+[](youtube:Du-DNEU_0Y4)
 
 ## Step 1: Querying the In-Memory Column Store
 
@@ -81,7 +85,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     "IM scan CUs memcompress for query low" is the number of IMCUs accessed for each column in the table.
 
-    The above query access 2 columns (lo_ordtotalprice and lo_quantity ) and no where condition. This is indicated by "IM scan CUs columns accessed" = 88. This is because we accessed 2 columns in the query. (2 *44 =88)
+    The above query access 2 columns (lo\_ordtotalprice and lo\_quantity ) and no where condition. This is indicated by "IM scan CUs columns accessed" = 88. This is because we accessed 2 columns in the query. (2 *44 =88)
 
     If the query had a where clause on any other columns, then those CUs would need to accessed  and value of  "IM scan CUs columns accessed" will be a multiple of "IM scan CUs memcompress for query low" and number of distinct columns accessed.
 
@@ -277,7 +281,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
    </copy>    
    ````
 
-   ![](images/num1.png)
+
 
 11. Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  
 
@@ -303,7 +307,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
    </copy>
 ````
 
-   ![](images/num2.png)
+
 
    The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom Filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. The Bloon filter plans start with <b> :BF00X </b> plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan.
 
@@ -333,7 +337,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
    </copy>
    ````
 
-   ![](images/num3.png)
+
 
 13. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  
 
@@ -676,6 +680,6 @@ These significant performance improvements are possible because of Oracle’s un
 ## Acknowledgements
 
 - **Author** - Vijay Balebail , Andy Rivenes
-- **Last Updated By/Date** - Oct 2020.
+- **Last Updated By/Date** Rajeev Rumale Jul 2021.
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).

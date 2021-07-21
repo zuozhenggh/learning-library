@@ -44,7 +44,7 @@
         },
         {
             "title": "Lab: Bitwise Aggregate Functions",
-            "filename": "../../bitwise-agg/bitwise-agg.md"
+            "filename": "../../bitwise-agg/bitwise-agg.md",
             "type": "dbcs"
         },
         {
@@ -83,10 +83,6 @@
         {
             "title": "Lab: Automatic In-Memory",
             "filename": "../../auto-in-mem/auto-in-mem.md"
-        },
-        {
-            "title": "Lab: In-Memory Hybrid Scans",
-            "filename": "../../im-hybrid-scans/im-hybrid-scans.md"
         },
         {
             "title": "Lab: Synchronizing Apps in App PDBs",

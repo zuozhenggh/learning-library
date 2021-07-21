@@ -15,7 +15,8 @@
         {
             "title": "Lab 1: Provision an Autonomous JSON Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../provision/provision.md",
+            "type": "freetier"
         },
         {
             "title": "Lab 2: Introduction to JSON Collections",

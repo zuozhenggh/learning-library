@@ -38,7 +38,7 @@ This lab assumes you have:
    Open the browser and enter the following URI in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/
+    http://localhost:9090/ords/
     ```
 
   If you see `ORACLE REST DATA SERVICES 404 Not Found`, it means that `ORDS` is connected.
