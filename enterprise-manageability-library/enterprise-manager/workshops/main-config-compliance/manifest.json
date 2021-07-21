@@ -4,8 +4,8 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
-      "filename": "./../../intro/intro.md"
+      "description": "Introduction to Database Configuration and Compliance Management Workshop",
+      "filename": "./../../intro/intro-config-compliance.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",

@@ -26,7 +26,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -114,8 +114,12 @@ Before we can transport anything, we need to prepare the FTEX database.
     impdp system/oracle@pdb2 network_link=sourcedb version=12 full=y transportable=always metrics=y exclude=statistics directory=mydir logfile=pdb2.log transport_datafiles='/u02/oradata/CDB2/pdb2/users01.dbf'
     </copy>
     ```
+
+    Please ignore the password warning errors: UDI-28002: operation generated ORACLE error 28002 and ORA-28002: the password will expire within 7 days.
+
     ![](./images/trans_exp_8.png " ")
 
+    THIS IS AN ALTERNATE OPTION ONLY - DON'T EXECUTE IT IF YOU HAVE RUN THE IMPDP ALREADY!
     In the /home/oracle/IMP directory you will find a file called ft.par . This is the parameter file for Data Pump containing the above parameters. You can use it instead of typing the long line above with:
 
     ```
