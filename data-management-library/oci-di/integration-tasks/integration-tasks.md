@@ -767,7 +767,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
     - Change the **Name** to `Load Employees by Regions` and enter the optional **Description**. The value in the **Identifier** field is auto-generated based on the value you enter for Name.
     - In the Data Flow section, click Select. In the **Select a Data Flow** panel, select `Load Employees by Region`, and then click Select.
-    - The Data Flow will be **validated** after the selection and the result should be displayed as **Successful**.
+    - The Data Flow will be **validated**. The warnings that you got when validating the Data Flow in Step 4 will be displayed. *Note: However, since these are not errors which could cause the task to fail, and for the purposes of this workshop, we will ignore these warnings.*
     - Click **Save and Close**.
 
     ![](./images/save-close-int-task.png " ")
