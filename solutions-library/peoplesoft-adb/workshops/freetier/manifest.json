@@ -13,10 +13,9 @@
               "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
           },
           {
-              "title": "Lab 1: Creating Identity and Access Management (IAM) Resources",
-              "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-              "filename": "../../1iam/iam.md"
-          },
+            "title": "Lab 1: Creating Autonomous Database",
+            "filename": "../../1adb/adb.md"
+        },
           {
               "title": "Lab 2: Provisioning the PeopleSoft Cloud Manager using Marketplace",
               "filename": "../../2provision-cm/provision-cm.md"
