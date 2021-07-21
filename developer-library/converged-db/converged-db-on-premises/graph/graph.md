@@ -230,7 +230,13 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
-GraphViz should be accessible at http://localhost:7007/ui
+   - GraphViz should be accessible at 
+    
+    ```
+    <copy>
+    http://localhost:7007/ui
+    </copy>
+    ```
 
 The principal points of entry for the GraphViz application are the query editor and the graph lists.
 When you start GraphViz, the graph list will be populated with the graphs loaded in the graph server. To run queries against a graph, select that graph. The query lets you write PGQL queries that can be visualized. (PGQL is the SQL-like query language supported by GraphViz.)
@@ -377,13 +383,21 @@ Once the query is ready and the desired graph is selected, click Run to execute 
 
     ![](./images/IMGG37.PNG " ")
 
-32. Once you are done using PGViz at host:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
+32. Once you are done using PGViz at localhost:7007/ui and trying some other PGQL queries then execute the below statement at JSHELL prompt to delete the in-memory graph.
 
     ```
     <copy>
     graph.destroy();
     </copy>
     ```
+33. From terminal window, execute the below command to exit from JSHELL.
+    
+    ```
+    <copy>
+    /exit
+    </copy>
+    ```
+
 You may now [proceed to the next lab](#next).
 
 ## **Appendix 1**: Create Graph

@@ -34,15 +34,15 @@ This lab assumes you have:
 
 ## **STEP 1**: Connect to the Pluggable Database (PDB)
 
-1. Open a terminal window and sudo to the user **oracle**
+<!-- 1. Open a terminal window and sudo to the user **oracle**
 
     ```
     <copy>
     sudo su - oracle
     </copy>
-    ```
+    ``` -->
 
-2. Navigate to the JSON directory.
+1. Open a terminal window and Navigate to the JSON directory.
 
     ```
     <copy>
@@ -50,7 +50,7 @@ This lab assumes you have:
     </copy>
     ```
 
-3. Set your environment.
+2. Set your environment.
 
     ```
     <copy>
@@ -58,7 +58,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. When prompted paste the following:
+3. When prompted paste the following:
 
     ```
     <copy>
@@ -66,14 +66,20 @@ This lab assumes you have:
     </copy>
     ```
 
-5. Open sqlplus as the user appjson
+4. Open sqlplus as the user appjson
 
     ```
     <copy>
-       sqlplus appjson/Oracle_4U@JXLPDB
+    sqlplus appjson/Oracle_4U@JXLPDB
     </copy>
     ```
+5. Now exit from SQLPlus, we will use the SQL developer to execute the Json Use case.
 
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
 ## **STEP 2**: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
@@ -375,6 +381,7 @@ For this , we will create two views next
     ```
 
     ![](./images/json_fun_5b.png " ")  
+
 
 You may now [proceed to the next lab](#next).
 
