@@ -32,7 +32,7 @@ In this lab, you will:
 
 You may now **proceed to the next lab.**
 
-## Acknowledgments
+## Acknowledgements
 
 **Created By/Date**   
 * **Author** - Name, Title
