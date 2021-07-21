@@ -3,7 +3,7 @@
 ## About Oracle's Converged Database
 The Oracle Database converges support for multiple data models and workloads into a single database, while supporting popular development tools and techniques like events and REST interfaces. As opposed to using multiple single purpose databases for each data type, using a converged database results in a **unified data tier**, enabling real-time analytics and machine learning on production data.
 
-*Estimated Workshop Time:*  2.5 hours
+*Estimated Workshop Time:*  150 Minutes
 
 ![](images/single-vs-converged.png " ")
 
@@ -25,7 +25,7 @@ Once you complete your setup, the next four labs in this workshop cover these in
 - Lab : Cross Data Types
 - Lab : ORDS as Microservices
 
-You will also download Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
+You will also use Oracle SQL Developer to help execute the programs associated with the lab. We will use Docker containers and demonstrate multiple use cases with a Node.js application.
 
 ### Prerequisites
 - Oracle SQL Developer client
@@ -44,5 +44,3 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Laxmi Amarappanavar, Kanika Sharma, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K., Robbie Ruppel, David Start
 - **Team** - North America Database Specialists
 - **Last Updated By** - Abhinav Srivastava, Principal Product Marketing Director, Oracle Database, July 2020
-
-

@@ -12,7 +12,7 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -42,7 +42,6 @@ This lab assumes you have:
     ```
     Username: <copy>sysman</copy>
     ```
-
     ```
     Password: <copy>welcome1</copy>
     ```
@@ -59,77 +58,128 @@ This lab assumes you have:
 4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
     - Database services (All databases and Standard Listener)
-        ```
-        <copy>
-        systemctl status oracle-database
-        </copy>
-        ```
 
-        ![](images/db-service-status.png " ")
-        ![](images/db-service-status2.png " ")
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    ![](images/db-service-status.png " ")
+    ![](images/db-service-status2.png " ")
 
     - Listener Service (Non-Standard)
-        ```
-        <copy>
-        systemctl status oracle-db-listener
-        </copy>
-        ```
-        ![](images/listener-service-status.png " ")
+
+    ```
+    <copy>
+    systemctl status oracle-db-listener
+    </copy>
+    ```
+
+    ![](images/listener-service-status.png " ")
 
     - Enterprise Manager Services (OMS and emagent)
-        ```
-        <copy>
-        systemctl status oracle-emcc
-        </copy>
-        ```
 
-        ![](images/em-service-status.png " ")
+    ```
+    <copy>
+    systemctl status oracle-emcc
+    </copy>
+    ```
+
+    ![](images/em-service-status.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
-        ```
-        <copy>
-        sudo systemctl restart oracle-database
-        sudo systemctl restart oracle-db-listener
-        </copy>
-        ```
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    sudo systemctl restart oracle-db-listener
+    </copy>
+    ```
 
     - Enterprise Manager Services (OMS and emagent)
 
-        ```
-        <copy>
-        sudo systemctl restart oracle-emcc
-        </copy>
-        ```
+    ```
+    <copy>
+    sudo systemctl restart oracle-emcc
+    </copy>
+    ```
+
 6. Validate *emcli* connectivity. From the terminal session on your remote desktop, run as user *oracle*
 
     ```
+    <copy>
     . ~/.occ_oms.sh
-      <copy>emcli login -username=sysman -password=welcome1</copy>
+    emcli login -username=sysman -password=welcome1
+    </copy>
     ```
 
 ## **STEP 2:** Initialize Enterprise Manager
-### Update the Named Credentials with your SSH Key
 
-1. Navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential; Click Edit. Replace the existing entry with your SSH Private Key and Click on Test and Save.
+### **Generate SSH Keys**
 
-    ![](images/update_ssh_creds.jpg " ")
+1. From your remote desktop session, open a terminal window run the following to generate the key pair
 
-2. Setup oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
+    ```
+    <copy>
+    cd ~
+    ssh-keygen -b 2048 -t rsa
+    </copy>
+    ```
+
+2. Accept defaults for file and passphrase by press *Enter* three times to create a key with no passphrase.
+
+    ![](images/ssh-key-gen.png " ")
+
+3.  Update *`~/.ssh/authorized_keys`* and copy the *private key* to */tmp*.
+
+    ```
+    <copy>
+    cd .ssh
+    cat id_rsa >/tmp/rsa_priv
+    cat id_rsa.pub >>authorized_keys
+    </copy>
+    ```
+
+    ![](images/update_ssh_creds-0.png " ")
+
+### **Update the Named Credentials with the new SSH Key**
+
+4. From the EM Console as *SYSMAN*, navigate to "***Setup menu >> Security>> Named Credential***" and Select ROOT credential;
+
+5. Click Edit. Replace the existing entry with the *SSH Private Key* you copied to *"/tmp"*. Keep the General section unchanged and update the *Credential Properties* as followed:
+
+    - Username: *oracle*
+    - Delete any content from *SSH Public Key* Textbox
+    - Click *Browse* to select the *Private Key*
+
+    ![](images/update_ssh_creds-1.png " ")
+
+6. On the file browser, navigate to *"+Other Locations >> tmp"* and select the file *rsa_priv*
+
+    ![](images/update_ssh_creds-2.png " ")
+
+7. Click *Test and Save*
+
+    ![](images/update_ssh_creds-3.png " ")
+    ![](images/update_ssh_creds-4.png " ")
+
+8. Setup oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
 Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDENTIALS"; Click Submit.
 
     ![](images/named_creds_job.jpg " ")
 
-3. Click Submit again on the Job submission Page
+9. Click Submit again on the Job submission Page
 
     ![](images/named_creds_job_submit.jpg " ")
 
-4. The Job will be submitted successfully. Click on SETUP ORACLE CREDENTIALS Job link to view the Job
+10. The Job will be submitted successfully. Click on SETUP ORACLE CREDENTIALS Job link to view the Job
 
     ![](images/submitted.jpg " ")
 
-5. The Job should show Status **Succeeded**
+11. The Job should show Status **Succeeded**
 
     ![](images/named_creds_job_succeeded.jpg " ")
 
@@ -144,6 +194,7 @@ You may now [proceed to the next lab](#next).
     ```
     <copy>sudo systemctl start oracle-database</copy>
     ```
+
     - Stop
 
     ```
@@ -161,6 +212,7 @@ You may now [proceed to the next lab](#next).
     ```
     <copy>sudo systemctl restart oracle-database</copy>
     ```
+
 2. Listener Service (Non-Standard)
 
     - Start
@@ -186,6 +238,7 @@ You may now [proceed to the next lab](#next).
     ```
     <copy>sudo systemctl restart oracle-db-listener</copy>
     ```
+
 3. Enterprise Manager Service (OMS and emagent)
 
     - Start
@@ -221,21 +274,19 @@ If for any reason you want to login from a location that is external to your rem
     ```
     Username: <copy>sysman</copy>
     ```
-
     ```
     Password: <copy>welcome1</copy>
     ```
-
     ```
     URL: <copy>http://<Your Instance public_ip>:7803/em</copy>
     ```
 
-    - *Note:* You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
+    *Note:* You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
 
     ![](images/login-em-external-1.png " ")
     ![](images/login-em-external-2.png " ")
 
-## Appendix 3: External Terminal Access (using SSH Key Based Authentication)
+<!-- ## Appendix 3: External Terminal Access (using SSH Key Based Authentication)
 
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
@@ -254,7 +305,7 @@ While you will only need the browser to perform all tasks included in this works
 
     ```
     <copy>sudo su - oracle</copy>
-    ```
+    ``` -->
 
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
