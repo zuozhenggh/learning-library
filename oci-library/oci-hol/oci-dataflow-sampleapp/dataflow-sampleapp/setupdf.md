@@ -18,16 +18,14 @@ Before you Begin with Data Flow lab, you must have:
 * An Oracle Cloud Infrastructure account. Trial accounts can be used to demo Data Flow.
 * A Service Administrator role for your Oracle Cloud services. When the service is activated, Oracle sends the credentials and URL to the designated Account Administrator. The Account Administrator creates an account for each user who needs access to the service.
 * A supported browser, such as:
-    * Microsoft Internet Explorer 11.x+
-    * Mozilla Firefox ESR 38+
-    * Google Chrome 42+
+  * Microsoft Internet Explorer 11.x+
+  * Mozilla Firefox ESR 38+
+  * Google Chrome 42+
 * Familiarity with Object Storage Service.
-
-
 
 ## **STEP 1**: Object Store: Setting Up Storage
 
-1. Before running application in Data Flow service, create two storage buckets that are required in object storage. If you   are 
+1. Before running application in Data Flow service, create two storage buckets that are required in object storage. If you are
 
      * A bucket to store the logs (both standard out and standard err) for every application run.Create a standard storage tier bucket called `dataflow-logs` in the Object Store service. The location of the bucket must follow the pattern:
 
