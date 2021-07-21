@@ -183,7 +183,7 @@ In this step we will manually execute each step from the SSH terminal session.
 3. From a browser session to the Administration Service of your deployment as user *oggadmin*, validate the results.
 
     ```
-    URL: <copy> https://localhost/atlanta/adminsrvr </copy>
+    URL: <copy> https://localhost/Atlanta/adminsrvr </copy>
     ```
 
     ```
