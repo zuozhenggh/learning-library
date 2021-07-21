@@ -33,7 +33,7 @@
             "filename": "../../pipelines/pipelines.md"
         },
         {
-            "title": "Lab 5: Schedule and run Pipeline task",
+            "title": "Lab 5: Run Data loader task, schedule and run Pipeline task",
             "filename": "../../schedule-run/schedule-run.md"
         },
         {

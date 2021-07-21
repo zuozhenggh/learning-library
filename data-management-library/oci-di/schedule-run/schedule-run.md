@@ -1,6 +1,6 @@
-# Schedule and run Pipeline task
+# Run Data loader task, schedule and run Pipeline task
 
-# Introduction
+## Introduction
 
 This lab walks you through the steps to **run a Data Loader task**, to create a **task schedule** in your OCI Data Integration application, to **schedule the Pipeline task** and to **run it**.
 After publishing tasks to an Application, you can run a task **manually on-demand**, or you can use schedules and task schedules to **automate the execution** of your tasks.
@@ -14,7 +14,7 @@ In this Lab, you will schedule your Pipeline Task to run daily at 2PM.
 
 ### Objectives
 In this lab, you will:
-* Run a Data Loader task
+* Run the Data Loader task
 * Create a Schedule
 * Schedule the Pipeline Task
 * Run the Pipeline Task
@@ -24,7 +24,7 @@ In this lab, you will:
 * Oracle Cloud Account credentials (Username, Password and Tenant)
 
 
-## **STEP 1**: Run a Data Loader task
+## **STEP 1**: Run the Data Loader task
 In this lab step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.

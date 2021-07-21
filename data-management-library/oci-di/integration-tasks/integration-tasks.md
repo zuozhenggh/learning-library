@@ -92,7 +92,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 
 8. In the **Configure Transformations** section, click **Configure**.
 
-  ![](./images/configure-transf.png " ")
+  ![](./images/configure-transformation.png " ")
 
 9. The Configure Transformations panel opens, showing the metadata information of the data entity and its attributes. You can also view sample data in the **Data** tab.
 
@@ -101,7 +101,7 @@ In this step of the Workshop, you will create a Data Loader task that will load 
 10. Click **Data** to navigate to the Data tab, then locate and select **SRC\_ORDER\_NUMBER**.
 A panel displays, showing the **Data Profile** and the **Attribute Profile** for SRC\_ORDER\_NUMBER. Null Data Percent for SRC\_ORDER\_NUMBER is at 100%.
 
-  ![](./images/src-order-num.png " ")
+  ![](./images/src-order-number-attribute.png " ")
 
 11. From the **transformations icon** (three dots) for SRC\_ORDER\_NUMBER, select **Null Fill Up**.
 
@@ -114,7 +114,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
     - Leave the **Name** and **Data Type** as-is.
     - Click **Apply**.
 
-    ![](./images/null-new.png " ")
+    ![](./images/null-fill-up-selections.png " ")
 
 13. After the **Data** tab refreshes, use the horizontal scrollbar to scroll to the end of the dataset where the updated **SRC\_ORDER\_NUMBER** column is. Notice the values for SRC\_ORDER\_NUMBER have been replaced by the `Not Available` string.
 
@@ -122,7 +122,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 
 14. In the Data tab, look for attribute **ORDER\_DTIME2\_TIMEZONE** by scrolling to the right. Click on the **transformation icon** (three dots) for ORDER\_DTIME2\_TIMEZONE, and then select **Rename**.
 
-  ![](./images/rename-attr.png " ")
+  ![](./images/rename-attribute.png " ")
 
 15. In the **Rename** dialog box, enter a new name for the attribute ORDER\_DTIME2\_TIMEZONE. For this workshop, enter **ORDER\_TIMEZONE** then click **Apply**.
 
@@ -134,7 +134,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 
 17. You can **review the list of transformations** that are applied to the source dataset. If you would want to remove a transformation, you could click the X icon next to a transformed attribute name. For now close the Configure Transformations panel, click **OK**.
 
-  ![](./images/final-transf.png " ")
+  ![](./images/final-transformations.png " ")
 
 18. The number of transformation rules applied is shown in the **Configure Transformations** section.
 
@@ -196,7 +196,7 @@ You will create a data flow to ingest data from **two source files**, containing
     - For **Data Asset**, select `Object_Storage`.
     - For **Connection**, select `Default Connection`.
     ![](./images/source-selections.png " ")
-    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
+    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this workshop, Object Storage serves as the source data asset, this is why you select your bucket here.
     ![](./images/comp-bucket.png " ")
     - For **Data Entity**, click on **Browse by name**. Select `CUSTOMERS.json` and then choose **JSON** for the file type.
     ![](./images/select-file.png " ")
@@ -223,7 +223,7 @@ You will create a data flow to ingest data from **two source files**, containing
     - For **Data Asset**, select `Object_Storage`.
     - For **Connection**, select `Default Connection`.
     ![](./images/source-selections.png " ")
-    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, Object Storage serves as the source data asset, this is why you select your bucket here.
+    - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this workshop, Object Storage serves as the source data asset, this is why you select your bucket here.
     - For **Data Entity**, click on **Browse by name**. Select `REVENUE.csv` and then choose **CSV**  for the file type. Accept the default values for the remaining items.
     ![](./images/revenue-csv.png " ")
 
@@ -427,7 +427,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 
   ![](./images/attributes-not-mapped.png " ")
 
-46. Now drag and drop **FULLNAME** under Source attributes to **FULL_NAME** under Target attributes. All attributes are now mapped.
+46. Now drag and drop **FULLNAME** under Source attributes to **FULL_NAME** under Target attributes. All attributes from target are now mapped.
 
   ![](./images/map-fullname.png " ")
 
@@ -479,20 +479,16 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this tutorial, **Object Storage** serves as the source data asset, this is why you select your bucket here.
     ![](./images/second-data-flow-source.png " ")
     - For **Data Entity**, click on **Select** and then on **Browse by Pattern**.
-
     ![](./images/browse-pattern.png " ")
 
    Write the file pattern `EMPLOYEES_*` and click **Search**. All files from your Object Storage bucket that are found which match this pattern are now displayed: there are three files for employees. Click on **Select Pattern**.
-
-    ![](./images/employees-pattern.png " ")
+   ![](./images/employees-pattern.png " ")
 
    For **File Type**, choose **CSV** and leave the defaults for the other fields that appear. Click **Select**.
-
-    ![](./images/source-entity.png " ")
+   ![](./images/source-entity.png " ")
 
    In the end, your details for the source operator should look like this.
-
-    ![](./images/pattern-source.png " ")
+   ![](./images/pattern-source.png " ")
 
 
 7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.  *Note: Be sure to save often during design time!*
@@ -677,10 +673,10 @@ This Data Flow will load data from **multiple source files** containing Employee
 
     - For **Source Pattern**, use `*_S_NAME`.
     - For **Target Pattern**, use `$1S_NAME`.
-    - Click on **Preview Mapping**. In the table, the mapping for FATHERS_NAME and MOTHERS_NAME attributes is now displayed.
+    - Click on **Preview Mapping**. In the table, the mapping for FATHERS\_NAME and MOTHERS\_NAME attributes is now displayed.
     - Click on **Map**.
 
-   *Note:* For more information on how to use**Mapping by pattern**, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm#operator-target), section Target Operator, **Mapping attributes**.
+   *Note:* For more information on how to use **Mapping by pattern**, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm#operator-target), section Target Operator, **Mapping attributes**.
 
    ![](./images/map-by-pattern.png " ")
 
@@ -698,7 +694,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - For **Staging Location**, select your **Object Storage bucket** (`DI-bucket`)
     - **Merge Key** will automatically get populated with the primary key name of the table, from the database.
 
-   **Make sure you also map all of the columns, same as in steps 35 and 36 of this lab.**
+   **Make sure you also map all of the columns, same as in steps 35, 36 and 37 of this lab.**
 
   ![](./images/employees-northeast-and-south.png " ")
 
@@ -740,8 +736,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     ![](./images/select-df.png " ")
     - The Data Flow will be **validated** after the selection and the result should be displayed as **Successful**.
     - Click **Save and Close**.
-
-  ![](./images/integration-task-save.png " ")
+    ![](./images/integration-task-save.png " ")
 
 6. From the `DI_Workshop` project section **Tasks**, you will now create an Integration Task for your second Data Flow. Click **Create Task** and then select **Integration**.
 
@@ -784,10 +779,9 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 5. On the **Create SQL Task** page, enter:
 
-    - Name: You can use `Procedure DWH Load Stats`
-
+    - Name: You can use `Procedure DWH Load Stats`.
     *Note: The Identifier field is a system-generated value based on what you enter for Name. You can change the value, but after you save the task, you cannot change the value again.*
-    - **Description** (optional)
+    - **Description** (optional).
     - Project **DI_Workshop** is auto-populated because we're creating this task from project details page.
 
     ![](./images/sql-task-input.png " ")
@@ -798,11 +792,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 7. In the **Select SQL** page:
 
-    - **Data Asset**: `Data_Warehouse`
-    - **Connection**: Choose the `Beta Connection`
-    - **Schema**: `BETA` schema on your ADW
+    - **Data Asset**: `Data_Warehouse`.
+    - **Connection**: Choose the `Beta Connection`.
+    - **Schema**: `BETA` schema on your ADW.
     - **Stored Procedure**: Choose the `OCIDI_RESULT` procedure.
-    *Note: The `OCIDI_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure*
+    *Note: The `OCIDI_RESULT` procedure was created in the Autonomous Data Warehouse during Lab 0. It writes into DWH\_LOAD\_STATS target table a new entry in case of success or failure.*
 
     ![](./images/sql-procedure-task.png " ")
 
