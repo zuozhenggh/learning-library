@@ -21,8 +21,9 @@ In this lab, you will:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Deploy OIRI in the local Kubernetes node
+      - Lab 1: Initialize Environment
+      - Lab 2: Deploy Kubernetes Cluster and Start OIG Server
+      - Lab 3: Deploy OIRI in the local Kubernetes Node
 
 ## **STEP 1:** Starting the data load process
 

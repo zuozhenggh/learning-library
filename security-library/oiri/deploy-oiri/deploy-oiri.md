@@ -21,7 +21,8 @@ In this lab, you will:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
+      - Lab 1: Initialize Environment
+      - Lab 2: Deploy Kubernetes Cluster and Start OIG Server
 
 
 ## **STEP 1:** Load the OIRI docker images
