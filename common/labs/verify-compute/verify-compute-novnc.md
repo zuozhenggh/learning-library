@@ -73,7 +73,7 @@ For seamless desktop integration and to make the best use of your display, perfo
     ![](./images/novnc-fullscreen-2.png " ")
     ![](./images/novnc-fullscreen-3.png " ")
 
-## **STEP 4:** Enable Copy/Paste from Local to Remote Desktop
+<!-- ## **STEP 4:** Enable Copy/Paste from Local to Remote Desktop
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. Continuing from the last task above, Select the *clipboard* icon
@@ -84,7 +84,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/novnc-clipboard-2.png " ")
 
-    *Note:* Please make sure you initialize your clipboard with step [1] shown in the screenshot above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function in the context menu grayed out when attempting to paste for the first time.
+    *Note:* Please make sure you initialize your clipboard with step [1] shown in the screenshot above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function in the context menu grayed out when attempting to paste for the first time. -->
 
 You may now [proceed to the next lab](#next).
 

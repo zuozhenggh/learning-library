@@ -24,36 +24,33 @@ This lab assumes you have:
     - Database Listeners
     - Database Server Instances
     - eShop Application (Java Application)
+        ![](./images/convg-novnc-guide.png " ")
+2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
+    - On the *SQL-Developer* window on the right preloaded.
+    ![](./images/convg-novnc-landing.png " ")
 
-2. To launch *Firefox* browser or a *Terminal* client, click on respective icon on the remote desktop
+3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
+    
+    - Go to folder /u01/script
 
-    ![](./images/guacamole-landing.png " ")
+        ```
+        <copy>
+        cd /u01/script
+        </copy>
+        ```
+    - Run the script file to start the components.
 
-## **STEP 1**: Starting Database and eShop Application
-1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
+        ```
+        <copy>
+        ./env_setup_db-workshop.sh
+        </copy>
+        ```
+        ![](./images/convg-terminal.png " ")
 
-2. Go to folder /u01/script
-
-    ```
-    <copy>
-    cd /u01/script
-    </copy>
-    ```
-3. Run the script file to start the components.
-
-    ```
-    <copy>
-    ./env_setup_db-workshop.sh
-    </copy>
-    ```
-
-This will start the database, listener, oracle rest data service and our eShop application. This script could take 2-5 minutes to run
-
-4. Review the output validate the URLs provided at the bottom
-
-## **STEP 2**: Start the WebLogic service
-
-1.	As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
+4. The above command will start the database, listener, oracle rest data service. This script could take 2-5 minutes to run. 
+         
+5. Start the WebLogic service:
+    - As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
 
     ````
     <copy>
@@ -62,19 +59,44 @@ This will start the database, listener, oracle rest data service and our eShop a
     cd $DOMAIN_HOME/bin
     </copy>
     ````
-
-2.	As an oracle user run startWebLogic.sh script. This will start the WebLogic services.
+    - As an oracle user run startWebLogic.sh script. This will start the WebLogic services.
 
     ````
     <copy>
     nohup ./startWebLogic.sh &
     </copy>
     ````
+    ![](./images/weblogic-start.png " ")
+    Check for the "Finished starting servers" status before proceeding next.
 
+    ![](./images/weblogic-final.png " ")
+    If successful, the page above is displayed and as a result your environment is now ready.  
+    
 You may now [proceed to the next lab](#next).
+
+## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, JULY 2021

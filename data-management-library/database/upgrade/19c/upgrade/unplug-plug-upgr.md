@@ -23,7 +23,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -34,34 +34,34 @@ This lab assumes you have:
 
 1. The PDB3 we will utilize in this part of the lab has already been created in CDB1 – but you will need to startup CDB1. PDB3 will start automatically within seconds.
 
-    ````
+    ```
     <copy>
     . cdb1
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
 
-    ````
+    ```
     <copy>
     startup
     show pdbs
     exit
     </copy>
-    ````
+    ```
 ![](./images/unplug_PDB3_02.png " ")
 
 ## **STEP 2**: Analyze the source PDB with AutoUpgrade
 
 1. A config file has been provided already. Please note that you will use the COPY option this time. The source PDB3 will remain in CDB1 but exist upgraded in CDB2 afterwards.
 
-    ````
+    ```
     <copy>
     cat /home/oracle/scripts/PDB3.cfg
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_03.png " ")
 
-    ````
+    ```
     global.autoupg_log_dir=/home/oracle/logs
 
     upg1.source_home=/u01/app/oracle/product/12.2.0.1
@@ -71,37 +71,37 @@ This lab assumes you have:
     upg1.target_cdb=CDB2
     upg1.log_dir=/home/oracle/logs
     upg1.target_pdb_copy_option=file_name_convert=('CDB1', 'CDB2')
-    ````
+    ```
 
 2. Invoke AutoUpgrade to analyze PDB3 in Oracle 12.2.0.1
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -mode analyze -config /home/oracle/scripts/PDB3.cfg
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_04.png " ")
 
     If you get the following error:
 
-    ````
+    ```
     $ java -jar $OH19/rdbms/admin/autoupgrade.jar -mode analyze -config /home/oracle/scripts/PDB3.cfg
 
     Previous execution found loading latest data
     Total jobs recovered: 1
 
     The content of the user config file /home/oracle/scripts/PDB3.cfg was altered after a deploy which may lead to corruption or invalid settings, the AutoUpgrade will stop for safety, make sure to restore the original content of the file prior running the tool again or if you wish to start from the beginning then remove or change the autoupg_log_dir directory
-    ````
+    ```
 
     then please execute the following steps to clear the log history of AutoUpgrade:
 
-    ````
+    ```
     <copy>
     java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PDB3.cfg -clear_recovery_data
     rm -rf /home/oracle/logs
 
     </copy>
-    ````
+    ```
 
     Now run AutoUpgrade with the above "analyze" command again. It should work now.
 
@@ -109,58 +109,54 @@ This lab assumes you have:
 3. Check the output of the analyze run with Mozilla Firefox
 
 
-    ````
+    ```
     <copy>
     firefox /home/oracle/logs/cfgtoollogs/upgrade/auto/status/status.html &
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_05.png " ")
     ![](./images/unplug_PDB3_06.png " ")
 
     There shouldn't be any issue to be fixed by yourself in PDB3. AutoUpgrade will take care on everything for you.
-
-
-
-
 
 ## **STEP 3**: Unplug/Plugin/Upgrade with AutoUpgrade
 
 1. Now you can start AutoUpgade in deploy mode and let the tool unplug and plug and upgrade PDB3 within CDB2
 
 
-    ````
+    ```
     <copy>
     . cdb2
     java -jar $OH19/rdbms/admin/autoupgrade.jar -mode deploy -config /home/oracle/scripts/PDB3.cfg
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_07.png " ")
 
 
 2. Open another xterm and monitor the progress in Mozilla Firefox. The page will refresh automatically every other minute. The entire process will take approximately 15-20 minutes until completion including the PDB3 upgrade.
 
-    ````
+    ```
     <copy>
     firefox /home/oracle/logs/cfgtoollogs/upgrade/auto/state.html &
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_08.png " ")
     ![](./images/unplug_PDB3_09.png " ")
 
 3. Finally open a SQL*Plus session and control whether all PDBs are open read/write. Use the xterm where the upgrade has been run from or open a new xterm.
 
-    ````
+    ```
     <copy>
     . cdb2
     sqlplus / as sysdba
     show pdbs
     </copy>
-    ````
+    ```
     ![](./images/unplug_PDB3_10.png " ")
 
 
     This should be the result now:
-    ````
+    ```
       SQL> show pdbs
 
           CON_ID CON_NAME			  OPEN MODE  RESTRICTED
@@ -169,7 +165,7 @@ This lab assumes you have:
       	 3 PDB1 			  READ WRITE NO
       	 4 PDB2 			  READ WRITE NO
       	 5 PDB3 			  READ WRITE NO
-    ````
+    ```
 
 Congratulations! You completed all stages of this Upgrade to Oracle Database 19c lab successfully!
 
