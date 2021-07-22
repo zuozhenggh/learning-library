@@ -8,7 +8,6 @@ Oracle Database In-Memory accelerates both Data Warehouses and mixed workload OL
 
 Oracle introduced Database In-Memory in Oracle Database Enterprise Edition with the first patch set (12.1.0.2) for Oracle Database 12c Release 1. Database In-Memory has been significantly enhanced in subsequent releases of Oracle Database with additional performance, scalability and manageability features. These features include the ability to automatically manage the contents of the In-Memory column store to maximize the use of memory and increase performance, enhanced mutli-model support, scale-out support with Oracle Real Applications Cluster (RAC) and support for Oracle Multitenant and Oracle Active Data Guard (ADG).
 
-<< The Innovations Slide >>
 
 ## **Dual-Format Database**
 
@@ -17,7 +16,6 @@ Oracle introduced Database In-Memory in Oracle Database Enterprise Edition with 
 
   ![ ](https://github.com/vijaybalebail/learning-library/raw/master/data-management-library/database/in-memory/intro/images/DBIM.png)
 
-<< Update the image >>
 
 Oracle Database has traditionally stored data in a row format. In a row format database, each new transaction or record stored in the database is represented as a new row in a table. That row is made up of multiple columns, with each column representing a different attribute about that record. A row format is ideal for online transaction systems, as it allows quick access to all of the columns in a record since all of the data for a given record are kept together inmemory and on-storage.
 
