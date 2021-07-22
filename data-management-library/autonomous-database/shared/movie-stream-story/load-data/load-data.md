@@ -31,11 +31,11 @@ We will also learn how to exercise features of the DBMS_CLOUD package to link an
 -   Learn now to load data from Object Storage using the DBMS_CLOUD APIs executed from SQL
 
 
-### Pre-requisites
+### Prerequisites
 
 This lab requires you to have access to an autonomous database instance (either ADW or ATP).
 
-The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 4 in this series (Create a Database User) before proceeding.
+The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 3 in this series (Create a Database User) before proceeding.
 
 ## **Step 1**: Configure the Object Storage Connections
 
@@ -53,7 +53,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     ![Click DATA LOAD](images/dataload.png)
 
-5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to Object Store.
+5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to OCI Object Storage.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
@@ -66,7 +66,9 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 -   Leave the Cloud Store selected as **Oracle**
 -   Copy and paste the following URI into the URI + Bucket field:
 
-> https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+```
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+```
 
 -   Select **No Credential** as this is a public bucket
 -   Click on the **Test** button to test the connection. Then click **Create**.
@@ -95,7 +97,7 @@ We now have two cloud storage locations set up.
 
 ## **Step 2:** Load data from files in Object Storage using Data Tools
 
-In this step we will perform some simple data loading tasks, to load in CSV files from Object Store into tables in our autonomous database.
+In this step we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our autonomous database.
 
 1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
@@ -257,9 +259,11 @@ If you scroll to the right, you can see the columns that have been joined from t
 
 ## **Step 4:** Using Database APIs to load richer data files
 
-The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle Object Store, Amazon S3, and Azure Data Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
+The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle OCI Object Storage, Amazon S3, and Microsoft Azure Blob Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
-In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some files with differently structured data.
+In this step, we will use some of the additional features of the DBMS_CLOUD APIs to load in some Parquet and JSON files with differently structured data.
+
+>**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for Moviestream. 
 
 1.  Still in the SQL Worksheet viewer, click on the bin icon on the top toolbar to clear the worksheet.
 
@@ -300,7 +304,7 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on Object Store. [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for Moviestream. 
+    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on Object Store. 
     
 4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
@@ -467,7 +471,9 @@ alter table mv_custsales add constraint cs_studio_json check (studio IS JSON);
 
 16. Click on the **Run Script** button to run the script and create the view.
 
-17. To take a look at the data in the new view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
+> **Note:** This is likely to take a few minutes.
+
+17. To take a look at the data in the new materialized view, click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following statement:
 
 ```
 select * from mv_custsales;
