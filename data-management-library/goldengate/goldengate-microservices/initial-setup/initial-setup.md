@@ -29,8 +29,17 @@ This lab assumes you have:
         - ORCL
     - Oracle GoldenGate ServiceManager
 
+    Run the following for a clean start.
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database OracleGoldenGate
+    sudo systemctl status oracle-database OracleGoldenGate
+    </copy>
+    ```
+
 2. On the *Firefox* window on the right preloaded with *Oracle GoldenGate ServiceManager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
-   
+
     - Username
 
         ```
@@ -186,7 +195,7 @@ While you will only need the browser to perform all tasks included in this works
 1. Select the hamburger menu and select **Compute** > **Instances**
   ![](./images/select-compute.png " ")  
 
-2. Select your compartment. You should see your Compute Instance Public IP address. 
+2. Select your compartment. You should see your Compute Instance Public IP address.
     ![](./images/ip-address.png " ")
 
 1. If needed, refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
