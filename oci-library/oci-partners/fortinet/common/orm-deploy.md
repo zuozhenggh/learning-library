@@ -26,7 +26,7 @@ You will be using Terraform to create your lab environment.
 
 1.  Click on the link below to download the zip file which you need to build your environment.  
 
-    - Click here: [fortigate-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZWbAydMOWcHXFzf9KEs8XQwO2moW5WpVAiwkBBJmPzqzK7q85ZeiKgkXRHc24WVu/n/partners/b/files/o/fortigate-live-labs.zip) 
+    - Click here: [fortigate-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/eg1nHq7cOIjmJjDl-ScNvJu0YZFKJGv5p5L5idrXrJkF0MVsmplUX88EWOas3His/n/partners/b/files/o/fortigate-live-labs.zip) 
         - Packaged terraform **FortiGate High Availability** use-case.
 
 2.  Save in your local machine's downloads folder.
@@ -57,7 +57,9 @@ You will be using Terraform to create your lab environment.
 
     Enter/Select the following minimum information. Some information may already be pre-populated. Do not change the pre-populated info.
 
-    **Compute Compartment**: Select Compute Compartment from drop-down where you would like to create compute instances.  **Please Note**: This use-case recommends selecting either your root compartment or your own compartment which is one level below root to support HA failover on FortiGate instances. 
+    **Compute Compartment**: Select Compute Compartment from drop-down where you would like to create compute instances.  
+    
+    **Note**: This use-case recommends selecting either your root compartment or your own compartment which is one level below root to support HA failover on FortiGate instances. 
 
     **Availability Domain:** Select Appropriate AD from drop-down. 
 
