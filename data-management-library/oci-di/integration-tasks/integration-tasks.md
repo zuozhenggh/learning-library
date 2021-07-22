@@ -181,11 +181,11 @@ You will create a data flow to ingest data from **two source files**, containing
 
    On the left side of the canvas, you can find the data flow operators which represent input sources, output targets, and transformations that can be used. The Shaping Operators currently available are Filter, Join, Expression, Aggregate, Distinct, Sort, Union, Minus, Intersect, Split and Lookup Operator. From the Operators panel, you can drag and drop operators onto the canvas to design a data flow. Then use the Properties panel to configure the properties for each operator. For more details on Data Flow Operators, please see the following [link](https://docs.oracle.com/en-us/iaas/data-integration/using/using-operators.htm).
 
-   ![](./images/df-new.png " ")
+   ![](./images/data-flow-name.png " ")
 
 4. You will add the **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, **drag and drop a Source operator** onto the canvas.
 
-  ![](./images/source-op.png " ")
+  ![](./images/source-operator.png " ")
 
 5. On the canvas, select **SOURCE_1 operator**. The Properties panel now displays the details for this operator.
 
@@ -197,7 +197,7 @@ You will create a data flow to ingest data from **two source files**, containing
     - For **Connection**, select `Default Connection`.
     ![](./images/source-selections.png " ")
     - For **Schema**, select your **compartment** and then your **bucket**. For the purposes of this workshop, Object Storage serves as the source data asset, this is why you select your bucket here.
-    ![](./images/comp-bucket.png " ")
+    ![](./images/compartment-bucket.png " ")
     - For **Data Entity**, click on **Browse by name**. Select `CUSTOMERS.json` and then choose **JSON** for the file type.
     ![](./images/select-file.png " ")
     ![](./images/select-entity.png " ")
@@ -208,7 +208,7 @@ You will create a data flow to ingest data from **two source files**, containing
 
 7. When you complete your selections for **SOURCE\_1**, the operator name becomes **CUSTOMERS\_JSON**, reflecting your data entity selection. In the Identifier field, rename the source operator to **CUSTOMERS**.
 
-  ![](./images/customers.png " ")
+  ![](./images/customers-source.png " ")
 
 8. You will now drag and drop onto the data flow canvas another **source operator**.
 
@@ -273,7 +273,7 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 
     - In the Create Filter Condition panel, enter `STA` in the Incoming attributes search field.
     - Double-click or drag and drop **ORDER\_STATUS** to add it to the filter condition editor.
-    ![](./images/filter-cond.png " ")
+    ![](./images/filter-condition-edit.png " ")
     - In the condition editor, enter `='1-Booked'`, so your condition looks like the following: `FILTER_1.REVENUE_CSV.ORDER_STATUS='1-Booked'`
     - Click **Create**.
 
@@ -289,7 +289,7 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
 
 22. In the Properties panel of FILTER_2, click **Create** for **Filter Condition**.
 
-  ![](./images/new-filter-cond.png " ")
+  ![](./images/new-filter-condition.png " ")
 
 23. You will now add your **filter condition** for **FILTER_2**:
 
@@ -378,7 +378,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 
 37. Select the **JOIN\_1** operator. **Inner Join** as the join type is selected by default. In the Details tab of the Properties panel, click **Create** next to **Join Condition**.
 
-  ![](./images/create-join-cond.png " ")
+  ![](./images/create-join-condition.png " ")
 
 38. In the **Create Join Condition panel**:
 
@@ -389,15 +389,15 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
     ```
     - Click **Create**.
 
-    ![](./images/join-cond.png " ")
+    ![](./images/join-condition.png " ")
 
 39. Your **Join operator properties** should now look like this:
 
-  ![](./images/join-prop.png " ")
+  ![](./images/join-properties.png " ")
 
 40. From the Operators panel, drag and drop a **Target operator** onto the canvas. Connect JOIN\_1 to TARGET\_1. *Note: Be sure to save often during design time!*
 
-  ![](./images/target-op.png " ")
+  ![](./images/target-operator.png " ")
 
 41. Select **TARGET_1** operator on the canvas. The details for this operator are now displayed in the **Properties** bar.
 
@@ -412,7 +412,6 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
     - For **Data Entity**, select `CUSTOMERS_TARGET`.
     ![](./images/target-operator-selections.png " ")
     - For **Staging Location**, select the **Object Storage data asset**, its **default connection** and your **compartment**. Then for **Schema**, select the **Object Storage bucket** that you created before importing the sample data (in Lab 0). Click **Select**.
-
     ![](./images/staging-location.png " ")
 
 43. The properties details for **CUSTOMERS_TARGET operator** should now look like this:
@@ -460,12 +459,12 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 3. The data flow designer opens in a new tab. In the **Properties panel**, for **Name**, enter `Load Employees by Region`, and click **Save**.
 
-  ![](./images/load-emp.png " ")
+  ![](./images/load-employees.png " ")
   ![](./images/save-button.png " ")
 
 4. You will add your **Source operator**. You add source operators to identify the data entities to use for the data flow. From the Operators panel on the left, drag and drop a Source operator onto the canvas.
 
-  ![](./images/source-op-new.png " ")
+  ![](./images/source-operator-new.png " ")
 
 5.  On the canvas, select **SOURCE\_1** operator. The Properties panel now displays the details for this operator.
 
@@ -490,14 +489,13 @@ This Data Flow will load data from **multiple source files** containing Employee
    In the end, your details for the source operator should look like this.
    ![](./images/pattern-source.png " ")
 
-
 7. Drag and drop a **Distinct operator** on the data flow canvas. We use the distinct operator to return distinct rows with unique values. Connect **EMPLOYEES\_SOURCE\_FILES** source to the **DISTINCT\_1** operator.  *Note: Be sure to save often during design time!*
 
   ![](./images/add-distinct.png " ")
 
 8. Drag and drop an **Expression operator** on the data flow canvas. Connect the **DISTINCT\_1** operator to the new **Expression** operator.
 
-  ![](./images/new-expres.png " ")
+  ![](./images/new-expresion-second-df.png " ")
 
 9. In the Properties panel for **EXPRESSION\_1** operator, rename the Identifier to **TRANSFORM\_DATAYPES**.
 
@@ -505,7 +503,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 10. You will now add a **new expression**. Still in the Properties panel, click on **Add Expression**.
 
-  ![](./images/add-exp.png " ")
+  ![](./images/add-expression-second-df.png " ")
 
 11. In the **Add Expression** panel:
 
@@ -520,11 +518,11 @@ This Data Flow will load data from **multiple source files** containing Employee
    This function will covert the **STRING** value of birth date from the source files to a **DATE** data type value, in the specified format. You can also find this function in **Functions** tab, under **Date/Time** section and select it from there. Attributes can be added from **Incoming** tab, by highlighting a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
     - Click **Add**.
 
-    ![](./images/new-exp-details.png " ")
+    ![](./images/new-expression-details.png " ")
 
 12. Your expression for **BIRTH\_DATE** is now displayed. Click again on **Add Expression** to add a new one.
 
-  ![](./images/add-new-exp.png " ")
+  ![](./images/add-new-expression.png " ")
 
 13. In the **Add Expression** panel:
 
@@ -537,7 +535,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    in the **expression** box. This function will transform your string value of year of joining from the files to a number value.
     - Click **Add**.
 
-    ![](./images/new-num-exp.png " ")
+    ![](./images/new-numeric-expression.png " ")
 
 14. The expressions for the **TRANSFORM\_DATAYPES** operator should now look like this:
 
@@ -553,7 +551,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 17. You will now add a new expression. Still in the Properties panel, click on **Add Expression**.
 
-  ![](./images/add-exp-new.png " ")
+  ![](./images/add-expression-new.png " ")
 
 18. In the **Add Expression** panel:
 
@@ -570,7 +568,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    *Note: In case the attributes in the expression don't get automatically highlighted, please replace them, by highlighting in the expression's placeholders and then double-click or drag and drop attributes from the Incoming list.*
     - Click **Add**.
 
-    ![](./images/new-exp-case.png " ")
+    ![](./images/new-expression-case.png " ")
 
 19. You will now add a new expression in the same operator. Still in the Properties panel, click on **Add Expression**.
 
@@ -588,7 +586,7 @@ This Data Flow will load data from **multiple source files** containing Employee
    This function will fill in the null values for phone number with string `Phone Number Not Available`.
     - Click **Add**.
 
-  ![](./images/phone-no-exp.png " ")
+  ![](./images/phone-no-expression.png " ")
 
 21. The two expressions you defined for this operator are now displayed. Click on **Attributes** tab.  *Note: Be sure to save often during design time!*
 
@@ -616,7 +614,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 27. Drag and drop a **Split operator** on the data flow canvas. Connect the **EMPLOYEE\_AGE\_AND\_PHONE operator** to the new **Split operator**. Use the split operator to divide one source of input data into two or more output ports based on split conditions that are evaluated in a sequence. Each split condition has an output port. Data that satisfies a condition is directed to the corresponding output port.  *Note: Be sure to save often during design time!*
 
-  ![](./images/split-op.png " ")
+  ![](./images/split-operator.png " ")
 
 28. In the **Properties** bar of the Split Operator, we will rename it to **SPLIT\_BY\_REGION** and leave the default **Match** option (**First matching condition** means that data that matches the first condition should be removed from further processing by other conditions).
 
@@ -624,7 +622,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 29. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section**.
 
-  ![](./images/add-cond.png " ")
+  ![](./images/add-condition.png " ")
 
 30. In **Add Split Condition** page:
 
@@ -635,11 +633,11 @@ This Data Flow will load data from **multiple source files** containing Employee
     ```
     - Click **Add**.
 
-    ![](./images/midwest-cond.png " ")
+    ![](./images/midwest-west-condition.png " ")
 
 31. The first split condition you defined is now displayed. The Split operator properties should look like this:
 
-  ![](./images/split-op-prop.png " ")
+  ![](./images/split-operator-properties.png " ")
 
 32. Still in Properties bar of the Split Operator, click on **Add** in **Conditions section** to add a new split condition.
 
@@ -679,7 +677,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
 37. Go to **Map** tab of the **EMPLOYEES\_WEST\_MIDWEST** target operator. There are 3 attributes that were not mapped automatically in the target.
 
-  ![](./images/attr-not-mapped.png " ")
+  ![](./images/attributes-not-mapped-west-midwest.png " ")
 
 38. **Manually map** the **E\_Mail** attribute from source  to **EMAIL** attribute from target, with drag and drop.
 
@@ -770,7 +768,7 @@ This Data Flow will load data from **multiple source files** containing Employee
     - The Data Flow will be **validated**. The warnings that you got when validating the Data Flow in Step 4 will be displayed. *Note: However, since these are not errors which could cause the task to fail, and for the purposes of this workshop, we will ignore these warnings.*
     - Click **Save and Close**.
 
-    ![](./images/save-close-int-task.png " ")
+    ![](./images/save-close-integration-task.png " ")
 
 ## **Step 6**: Create a SQL task
 
@@ -780,7 +778,6 @@ When you create a SQL task, you can configure values for **input parameters** on
 
 This SQL task in this workshop will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameter from the pipeline, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in the following lab. To understand better the SQL stored procedure, please check the `OCIDI_RESULT` procedure statement from the SQL script you downloaded and ran on Autonomous Data Warehouse in Lab 0.
 Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking result in the Data Integration Application from OCI Console.
-
 
 1. From your Workspace home page in OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 
@@ -827,22 +824,20 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 9. In the **Configure Parameters** section, click **Configure** to view or configure values for the stored procedure parameters.
 
-  ![](./images/config-params.png " ")
+  ![](./images/configure-params.png " ")
 
 10. In the **Configure Stored Procedure Parameters** page, review the list of parameters in the stored procedure. Only **input parameters** can be configured. You can see here the input parameters **IN\_DI\_RESULT** and **PIPELINE\_NAME\_TASK\_RUN** from the procedure you're using.
 
     - In the row of the input parameter value for IN\_DI\_RESULT, click **Configure**.
-    ![](./images/config-in-par.png " ")
+    ![](./images/configure-in-parameter.png " ")
     - In the Edit Parameter panel, enter value **SUCCESS** (without any apostrophes) for that input parameter and click Save Changes.
-    ![](./images/in-param.png " ")
+    ![](./images/in-parameter.png " ")
     - In the row of the input parameter value for PIPELINE\_NAME\_TASK\_RUN, click **Configure**.
-    ![](./images/config-in-second-param.png " ")
+    ![](./images/configure-in-second-parameter.png " ")
     - In the Edit Parameter panel, enter value **DEFAULT** (without any apostrophes) for that input parameter and click Save Changes.
-    ![](./images/in-second-param.png " ")
+    ![](./images/in-second-parameter.png " ")
     - Click **Done**.
-
-    ![](./images/done-param.png " ")
-
+    ![](./images/done-parameters.png " ")
 
 11. In the **Validate Task** section, click **Validate** to check for errors and warnings in the configured parameter values. When validation is completed, a **Successful** message should appear near Validation.
 
