@@ -1,14 +1,16 @@
-# Loading data from object storage using Data Tools and Scripting
+# Loading data from object storage using Data Tools and scripting
 
 ## Introduction
 
-This lab takes you through the steps needed to load and link data from the MovieStream data lake on Oracle Object Store into an Oracle autonomous database instance in preparation for exploration and analysis.
+This lab takes you through the steps needed to load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure (OCI) Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
-You can load data into your autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, as well as Oracle and 3rd party data integration tools. You can load data:
+You can load data into your Autonomous Database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, as well as Oracle and 3rd party data integration tools. You can load data:
 
 + from files in your local device,
 + from tables in remote databases, or
-+ from files stored in cloud-based object storage (Oracle, S3, Azure, Google)
++ from files stored in cloud-based object storage (OCI Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage)
+
+You can also leave data in place in cloud-based object storage, and link to it from your Autonomous Database.
 
 > **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
@@ -24,10 +26,9 @@ We will also learn how to exercise features of the DBMS_CLOUD package to link an
 ### Objectives
 
 
--   Learn how to define Object Store credentials for your autonomous database
--   Learn how to load data from the Object Store using Data Tools
--   Learn now to load data from the Object Store using the DBMS_CLOUD APIs executed from SQL
-
+-   Learn how to define Object Storage credentials for your autonomous database
+-   Learn how to load data from Object Storage using Data Tools
+-   Learn now to load data from Object Storage using the DBMS_CLOUD APIs executed from SQL
 
 
 ### Pre-requisites
@@ -133,7 +134,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     The job should take about 20 seconds to run.
 
-13. Check that both data load tasks completed successfully, and have green tick icons next to them.
+13. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted.png)
 
@@ -181,7 +182,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     The job should take about 20 seconds to run.
 
-28. Check that all three data load tasks completed successfully, and have green tick icons next to them.
+28. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted2.png)
 
