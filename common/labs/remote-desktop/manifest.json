@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "DB Security Fundamentals",
+  "workshoptitle": "Workshop Guide Selection",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Open Your Workshop Guide",
       "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
-      "filename": "./../../../../../common/labs/open-workshop-guide/open-workshop-guide.md"
+      "filename": "./../open-workshop-guide/open-workshop-guide.md"
     },
     {
       "title": "Need Help?",
