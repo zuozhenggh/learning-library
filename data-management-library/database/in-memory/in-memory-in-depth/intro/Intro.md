@@ -14,7 +14,7 @@ Oracle introduced Database In-Memory in Oracle Database Enterprise Edition with 
 
 **Row Format vs. Column Format**
 
-  ![ ](https://github.com/vijaybalebail/learning-library/raw/master/data-management-library/database/in-memory/intro/images/DBIM.png)
+  ![](images/dbim.png)
 
 
 Oracle Database has traditionally stored data in a row format. In a row format database, each new transaction or record stored in the database is represented as a new row in a table. That row is made up of multiple columns, with each column representing a different attribute about that record. A row format is ideal for online transaction systems, as it allows quick access to all of the columns in a record since all of the data for a given record are kept together inmemory and on-storage.
