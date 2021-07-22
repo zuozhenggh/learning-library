@@ -136,21 +136,21 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     The job should take about 20 seconds to run.
 
-13. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+10. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted.png)
 
-14. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
+11. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
 
     ![Click on Data Load](images/backtodataload.png)
 
-15. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+12. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
-16. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
+13. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
 
     ![Click on Data Load](images/selectlanding.png)
 
-17. From the MOVIESTREAMLANDING location, expand the **customer_extension**, **customer_segment** and **pizza_locations** folders in the tree view and drag the following three files to the right hand pane:
+14. From the MOVIESTREAMLANDING location, expand the **customer_extension**, **customer_segment** and **pizza_locations** folders in the tree view and drag the following three files to the right hand pane:
 
 -   customer_extension.csv
 -   customer_segment.csv
@@ -158,37 +158,37 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Click on Data Load](images/selectfileslanding.png)
 
-18. Again, we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer_extension/customer_extension.csv load task.
+15. Again, we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer_extension/customer_extension.csv load task.
 
-19. Rename the target table to **CUSTOMER_EXTENSION**
+16. Rename the target table to **CUSTOMER_EXTENSION**
 
     ![Click on Data Load](images/editcustext.png)
 
+17. Click **Close** to close the settings editor.
+
+18. Click on the pencil icon to edit the settings for the customer_segment/customer_segment.csv load task.
+
+19. Rename the target table to **CUSTOMER_SEGMENT**
+
 20. Click **Close** to close the settings editor.
 
-21. Click on the pencil icon to edit the settings for the customer_segment/customer_segment.csv load task.
+21. Click on the pencil icon to edit the settings for the pizza_locations/pizza_locations.csv load task.
 
-22. Rename the target table to **CUSTOMER_SEGMENT**
+22. Rename the target table to **PIZZA_LOCATIONS**.
 
 23. Click **Close** to close the settings editor.
 
-24. Click on the pencil icon to edit the settings for the pizza_locations/pizza_locations.csv load task.
-
-25. Rename the target table to **PIZZA_LOCATIONS**.
-
-26. Click **Close** to close the settings editor.
-
-27. Click on the Play button to run the data load job.
+24. Click on the Play button to run the data load job.
 
     ![Run the data load job](images/runload2.png)
 
     The job should take about 20 seconds to run.
 
-28. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+25. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted2.png)
 
-29. Click on the **Done** button in the bottom right of the screen.
+26. Click on the **Done** button in the bottom right of the screen.
 
 ## **Step 3:** Creating the Customer view
 
