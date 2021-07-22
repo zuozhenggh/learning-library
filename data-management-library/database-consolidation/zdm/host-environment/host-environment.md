@@ -45,27 +45,7 @@ Estimate Lab Time: 20 minutes
     ```
 
 ## **STEP 3: Install Zero Downtime Migration**
-1. Switch to the newly created 'zdmuser' and go to the directory 'zdmdownload'.
-
-    ```
-    <copy>
-    sudo su - zdmuser
-    cd /u01/app/zdmdownload
-    </copy>
-    ```
-
-2. Retrieve the ZDM install file, unzip it, and go to the directory.
-
-    ```
-    <copy>
-    cd /u01/app/zdmdownload
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/mvN0sYf5aYnY5Skvy8gCB2gbHgvJ-1Hcwbx2sNgH7lPjSgm46v-PvevSOvV1u4lt/n/frwachlef5nd/b/MV2ADB/o/zdm21.1.zip
-    unzip zdm*.zip
-    cd zdm21.1
-    </copy>
-    ```
-
-3. Check that the following packages are installed:
+1. As 'opc' check that the following packages are installed:
     * expect
     * glib-devel
     * oraclelinux-developer-release-el7
@@ -74,9 +54,9 @@ Estimate Lab Time: 20 minutes
 
     ```
     <copy>
-    rpm -qa | expect
-    rpm -qa | glib-devel
-    rpm -qa | oraclelinux-developer-release-el7
+    rpm -qa | grep expect
+    rpm -qa | grep glib-devel
+    rpm -qa | grep oraclelinux-developer-release-el7
     </copy>
     ```
 
@@ -85,6 +65,26 @@ Estimate Lab Time: 20 minutes
     ```
     <copy>
     sudo yum install <package>
+    </copy>
+    ```
+
+2. Switch to the newly created 'zdmuser' and go to the directory 'zdmdownload'.
+
+    ```
+    <copy>
+    sudo su - zdmuser
+    cd /u01/app/zdmdownload
+    </copy>
+    ```
+
+3. Retrieve the ZDM install file, unzip it, and go to the directory.
+
+    ```
+    <copy>
+    cd /u01/app/zdmdownload
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/mvN0sYf5aYnY5Skvy8gCB2gbHgvJ-1Hcwbx2sNgH7lPjSgm46v-PvevSOvV1u4lt/n/frwachlef5nd/b/MV2ADB/o/zdm21.1.zip
+    unzip zdm*.zip
+    cd zdm21.1
     </copy>
     ```
 
