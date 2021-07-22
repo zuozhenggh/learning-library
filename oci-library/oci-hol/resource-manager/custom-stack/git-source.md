@@ -7,7 +7,7 @@ https://github.com/join
 
 1. In order to create a configuration source provider, you will need an **Personal access token** for GitHub.com.  First you need to login to your GitHub Account and, once logged into gitlab.com, navigate to: "https://github.com/settings/tokens".  Choose **Generate Token** and enter the following details:
 
-    ![](./../resource-manager/images/pat.png " ")
+    ![](./../custom-stack/images/pat.png " ")
 
       - Note
       - Select Scopes: **read:packages**
@@ -17,13 +17,13 @@ https://github.com/join
 
 1. The screen wil display your personal access token at the top of the page. Copy and save the token.
 
-   ![](./../resource-manager/images/gitoken.png " ")
+   ![](./../custom-stack/images/gitoken.png " ")
 
 1. Return to the resource manager console and navigate to configuration source providers.  Click **Create Configuration Source Provider**.
 
 1. Complete the required fields as follows and click **Create**:
 
-    ![](./../resource-manager/images/git-source.png " ")
+    ![](./../custom-stack/images/git-source.png " ")
 
     ...pasting the PAT created in step 1.
 
@@ -50,7 +50,7 @@ https://github.com/join
       - **Create in Compartment:** Select an existing compartment
       - **Terraform Version:** Select 0.13.x
 
-    ![](./../resource-manager/images/git-stack.png " ")
+    ![](./../custom-stack/images/git-stack.png " ")
 
 1. Click **Next**.   
       - **Configure Variables:** Configure the variables for the infrastructure resources that this stack will create when you run the apply job for this execution plan.
@@ -63,13 +63,13 @@ https://github.com/join
         - **Enter your CIDR Block:** 10.0.0.0/16
         - **Enter your Subnet Name:** subnet
 
-        ![](./../resource-manager/images/CreateStack02.png " ")
+        ![](./../custom-stack/images/CreateStack02.png " ")
 
 1. Click **Next**.
       - **Verify your configuration variables**
       - Click **Create**
 
-     ![](./../resource-manager/images/CreateStack03.png " ")
+     ![](./../custom-stack/images/CreateStack03.png " ")
 
 1. On the breadcrumb, click on **Stacks**, and select the first stack by clinking on its hyperlinked name (**HA Load Balanced Simple Web App**)
 
@@ -81,7 +81,7 @@ https://github.com/join
 
 1. Click on **More Actions** button and select **Import State**
 
-     ![](./../resource-manager/images/import-state01.png " ")
+     ![](./../custom-stack/images/import-state01.png " ")
 
 1. Enter the following information:
 
@@ -94,13 +94,13 @@ https://github.com/join
       - **Name:** HA LB App Plan
       - Click **Plan**
 
-    ![](./../resource-manager/images/plan01.png " ")
+    ![](./../custom-stack/images/plan01.png " ")
 
-    ![](./../resource-manager/images/plan02.png " ")
+    ![](./../custom-stack/images/plan02.png " ")
 
     **Note:** Once the modal closes, notice the job's state appears as "Accepted" - which indicates that the platform is spinning up resources needed for executing the command  - followed by "In Progress" and then either "Succeeded" or "Failed".
 
-    ![](./../resource-manager/images/plan03.png " ")
+    ![](./../custom-stack/images/plan03.png " ")
 
   Your new source (GitHub) should contain the same code that was used to create the stack initially.  Therefore, the plan will result in ZERO changes.
 
