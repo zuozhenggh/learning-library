@@ -96,7 +96,7 @@ As user *oracle* run the emctl status commands as shown:
 
   Refer to *Lab: Initialize Environment*
 
-11. Unable to Select Shape for Creating an instance
+11. Unable to Select Shape for Creating an instance (*Free-tier* and *Paid Tenants* only)
 
   Refer to *Lab: Setup Environment*
 

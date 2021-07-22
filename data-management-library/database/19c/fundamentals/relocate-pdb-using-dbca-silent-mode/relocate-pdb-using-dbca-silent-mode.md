@@ -127,18 +127,18 @@ Before you start, be sure that you have done the following:
 
 1. Launch DBCA in silent mode to relocate PDB1 from CDB1 as PDB1 in CDB2.
     ```
-    $ dbca -silent
-        -relocatePDB   
-          -remotePDBName PDB1
-          -remoteDBConnString CDB1
-          -sysDBAUserName SYSTEM
-          -sysDBAPassword Ora4U_1234
-          -remoteDBSYSDBAUserName SYS
-          -remoteDBSYSDBAUserPassword Ora4U_1234
-          -dbLinkUsername c##remote_user
-          -dbLinkUserPassword Ora4U_1234
-          -sourceDB CDB2
-          -pdbName PDB1
+    $ dbca -silent\
+    -relocatePDB\
+    -remotePDBName PDB1\
+    -remoteDBConnString CDB1\
+    -sysDBAUserName SYSTEM\
+    -sysDBAPassword Ora4U_1234\
+    -remoteDBSYSDBAUserName SYS\
+    -remoteDBSYSDBAUserPassword Ora4U_1234\
+    -dbLinkUsername c##remote_user\
+    -dbLinkUserPassword Ora4U_1234\
+    -sourceDB CDB2\
+    -pdbName PDB1
     ```
 
 2. Review the cloning log.
