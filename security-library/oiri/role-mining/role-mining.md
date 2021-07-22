@@ -30,7 +30,7 @@ The New Task page to select the data for creating a new role mining task appears
 
 
 2. In the Users tab you can optionally apply a number of filters and select a group of users that you want to include in the role mining task.
-Let us include all users for this workshop.
+All the users are selected by default if we do not apply any filters. Let us include all users for this workshop.
 
     ![](images/2-mining.png)
 
@@ -50,7 +50,7 @@ The Entitlements tab lists the entitlements that have been assigned to users. Th
 The *Save Task and Mine Roles* dialog box appears with the following options:
   - Name: Enter a name for the role mining task. This is a required field.
   - Description: Enter a description for the role mining task.
-  - Fine-tuning slider: Drag to minimize or maximize the number of candidate roles. Dragging the slider to the left minimizes the number of candidate roles. In other words, more users will get the permissions provided by the roles. Whereas, dragging the slider to the right maximizes the number of candidate roles. In other words, more users will get new entitlements provided by the roles.
+  - Fine-tuning slider: Drag to minimize or maximize the number of candidate roles. Dragging the slider to the left minimizes the number of candidate roles. In other words, more users will get the permissions provided by the roles. Whereas, dragging the slider to the right maximizes the number of candidate roles. In other words, less misaligned entitlements and users provided by the roles.
 
     ![](images/5-mining.png)
 
@@ -63,8 +63,10 @@ The *Save Task and Mine Roles* dialog box appears with the following options:
 
 1. In the Manage Tasks page, search for the role mining task that you submitted.
 
-2. If the task status shows that it has been completed, then click *View Candidate Roles*.
-The Results for role mining task page appears. In this page, the line at the top provides a summary of the role mining task run. It indicates the number of users and entitlements for which the task has been run, and how many candidate roles have been identified
+2. Click on *Refresh* until the task status shows that it has been completed, then click *View Candidate Roles*.
+The Results for role mining task page appears. In this page, the line at the top provides a summary of the role mining task run. It indicates the number of users and entitlements for which the task has been run, and how many candidate roles have been identified.
+
+    ![](images/13-mining.png)
 
     ![](images/7-mining.png)
 

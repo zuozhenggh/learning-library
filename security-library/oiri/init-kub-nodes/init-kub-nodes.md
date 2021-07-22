@@ -66,7 +66,7 @@ In this lab, you will:
     ```
     <copy>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</copy>
     ```
-    Wait for 1-2 minutes and list all the pods and make sure they are in the *Running* state.
+    Wait for 1-2 minutes and list all the pods and make sure they are in the *Running* and *READY 1/1* state.
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -121,7 +121,7 @@ In this lab, you will:
 
     ![](images/13-oig.png)
 
-5. Click on *Manage* on the top right corner. Then, click on *Users* and notice that about 1000 test users have been created with respective roles and entitlements. Also notice that the users are provisioned to the "Document Access" application.
+5. Click on *Manage* on the top right corner. Then, click on *Users* and notice that about 1000 test users have been created with respective roles and entitlements. Click on any user and Click on the *Accounts* tab notice that the users are provisioned to the *Document Access* application.
 
     ![](images/15-oig.png)
 
@@ -130,11 +130,13 @@ In this lab, you will:
     ![](images/17-oig.png)
 
 
-6. Now click on *Home*. Then, click on *Roles and Access policies* and select *Roles*. Notice that the role *OrclOIRIRoleEngineer* is created and assigned to the application user so that the user can login to the OIRI application. In this example, this role is assigned to the *xelsysadm* user.
+6. Now click on *Home*. Then, click on *Roles and Access policies* and select *Roles*. Notice that the *OrclOIRIRoleEngineer* role is created and assigned to the application user so that the user can login to the OIRI application. Click on the *OrclOIRIRoleEngineer* role. Click on the *Members* tab and notice that this role is assigned to the *xelsysadm* user.
 
     ![](images/18-oig.png)
 
     ![](images/19-oig.png)
+
+    ![](images/20-oig.png)
 
 You may now [proceed to the next lab](#next).
 

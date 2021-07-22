@@ -44,7 +44,7 @@ In this lab, you will:
     ![](images/oiri-vnc.png " ")
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
-    - On the Weblogic console, Click on *Servers* under *Environment* and verify that Admin servers are in the ‘RUNNING’ state.
+    - On the Weblogic console, Click on *Servers* under *Environment* and verify that the Admin server is in the ‘RUNNING’ state.
     ![](images/oiri-landing.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  

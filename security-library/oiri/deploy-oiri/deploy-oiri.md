@@ -1,4 +1,4 @@
-  # Deploy OIRI in the local Kubernetes node
+# Deploy OIRI in the local Kubernetes node
 
 ## Introduction
 
@@ -55,6 +55,15 @@ Follow the steps below to load these docker images.
 
     ![](images/1-docker-images.png)
 
+
+    *Note*:
+
+    You can load the Docker images in any one of the following ways:
+    * [Using the OIRI Docker Images from the Shared Zip File](https://docs.oracle.com/en/middleware/idm/identity-role-intelligence/amiri/installing-oracle-identity-role-intelligence.html#GUID-174D3A93-752E-4E5A-AF3F-0648E87BC0F0)
+    * [Using the Docker Images from the Container Registry] (https://docs.oracle.com/en/middleware/idm/identity-role-intelligence/amiri/installing-oracle-identity-role-intelligence.html#GUID-B23F0B59-AF19-4C7F-A268-8B6F3B5FC6B0)
+
+
+
 2. Verify the images.
 
     ```
@@ -67,7 +76,7 @@ Follow the steps below to load these docker images.
 
 Set up the files required for configuring data import (or data ingestion) and Helm chart.
 
-1. Create the directories with appropriate write permissions.
+1. Create the directories on NFS. NFS is a prerequiste and it is used to create persistent volumes for using across the nodes.
 
     ```
     <copy>mkdir /nfs/ding</copy>
@@ -75,9 +84,15 @@ Set up the files required for configuring data import (or data ingestion) and He
     ```
     <copy>mkdir /nfs/oiri</copy>
     ```
+
+    Create the following directory for generating the values.yaml file to be used by the Helm chart. This directory need not be present on the NFS because it is used only to store the values.yaml file, which is not required to be shared in the cluster.
+
     ```
     <copy>mkdir /u01/k8s/</copy>
     ```
+
+    Ensure write permissions on the directories created.
+
     ```
     <copy>chmod -R 775 /nfs/ding/</copy>
     ```
@@ -109,6 +124,10 @@ Set up the files required for configuring data import (or data ingestion) and He
   oiri-cli:12.2.1.4.210423 \
   tail -f /dev/null</copy>
     ```
+
+    Notice *--group-add 54321* where, 54321 is the `GROUP_ID`.
+    `GROUP_ID` is the ID of the group having access to the volumes.
+
 
 4. Copy the Kube config content from the Kubernetes cluster. Copy the contents of the */home/oracle/.kube/config* file into a notepad or clipboard. Make sure to zoom out and copy all the lines in the file.
 
@@ -161,13 +180,12 @@ Set up the files required for configuring data import (or data ingestion) and He
   --oiridbhost <VM IP> \
   --oiridbport 1521 \
   --oiridbsname oiri.livelabs.oraclevcn.com \
-  --useflatfileforetl true \
   --sparkmode k8s \
   --dingnamespace ding \
   --dingimage oiri-ding:12.2.1.4.210423 \
   --k8scertificatefilename ca.crt \
   --sparkk8smasterurl k8s://https://<VM IP>:6443 \
-  --oigserverurl http://<VM IP>:14000 \</copy>
+  --oigserverurl http://<VM IP>:14000</copy>
     ```
 
   For example:
@@ -180,13 +198,12 @@ Set up the files required for configuring data import (or data ingestion) and He
   --oiridbhost 10.0.0.231 \
   --oiridbport 1521 \
   --oiridbsname oiri.livelabs.oraclevcn.com \
-  --useflatfileforetl true \
   --sparkmode k8s \
   --dingnamespace ding \
   --dingimage oiri-ding:12.2.1.4.210423 \
   --k8scertificatefilename ca.crt \
   --sparkk8smasterurl k8s://https://10.0.0.231:6443 \
-  --oigserverurl http://10.0.0.231:14000 \
+  --oigserverurl http://10.0.0.231:14000
     ```
 
     ![](images/7-setup.png)
@@ -452,16 +469,29 @@ Set up the files required for configuring data import (or data ingestion) and He
     <copy>helm install oiri /helm/oiri -f /app/k8s/values.yaml</copy>
     ```
 
-4. List the pods and ensure that all the pods are running.
+    ![](images/19-helm.png)
+
+4. List the pods and ensure that all the pods are running. Additionally, check if the pods under the namespace ding and oiri are RUNNING and READY 1/1 state.
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
     ```
+
+    ```
+    <copy>kubectl get pods -n ding</copy>
+    ```
+
+    ```
+    <copy>kubectl get pods -n oiri</copy>
+    ```
+
     ```
     <copy>exit</copy>
     ```
 
     ![](images/18-pods.png)
+
+    ![](images/20-pods.png)
 
 
 You may now [proceed to the next lab](#next).

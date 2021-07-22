@@ -104,6 +104,8 @@ The task is now approved and is no longer displayed.
 
 7. Select all the requests and click on *Actions* and select *Approve*. Enter appropriate comments and click on *OK*.
 
+    *Note : To Select all requests, select any one request and then press ctrl+A*
+
     ![](images/15-publish-role.png)
 
     ![](images/16-publish-role.png)
@@ -121,6 +123,8 @@ The task is now approved and is no longer displayed.
 11. Click on the role to review the members and access policy associated with the role.
 
     ![](images/19-publish-role.png)
+
+    ![](images/20-publish-role.png)
 
 
 ## **Summary**
