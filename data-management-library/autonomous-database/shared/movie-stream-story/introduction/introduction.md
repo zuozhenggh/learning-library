@@ -25,7 +25,6 @@ Oracle Cloud provides an amazing platform to productively deliver secure, insigh
 MovieStream is only getting started with Oracle Cloud services.  And, this workshop will continue to evolve and highlight more capabilities that will allow MovieStream to improve their operations and profitability.  Keep an eye on this space!
 
 
-
 ## Learn More
 
 * [URL text 1](http://docs.oracle.com)
