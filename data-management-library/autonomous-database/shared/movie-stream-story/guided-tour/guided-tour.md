@@ -2,80 +2,44 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Autonomous Data Warehouse comes with a built-in suite of tools that can help you with many of the typical data warehouse tasks. This tool suite is complementary to various capabilities accessible via the SQL command line, which themselves are covered by other workshops.  To explore how these new built-in tools can make you work smarter and faster you will take on the role of a departmental analyst at MovieStream. As a **departmental analyst** you have been assigned the task of reviewing the sales data from Q2 of fiscal year 2020 and to make recommendations for a marketing campaign based on this analysis.
 
-Estimated Time: n minutes
+  **Note**: MovieStream's financial year is aligned with the calendar year, so FYQ2 is April-June.
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
+Estimated Time: 5 minutes
 
 ### Objectives <optional>
-
-*List objectives for this lab*
 
 In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
 
+### Prerequisites
+- This lab requires completion of the previous lab in the Contents menu on the left.
 
-*This is the "fold" - below items are collapsed by default*
+## **Step 1**: Accessing Autonomous Database Tools via the ADW Console
 
-## **Step 1**: <what is the action in this step>
+There are two ways to access the Autonomous Database built-in tool suite:
 
-(optional) Step 1 opening paragraph.
+* Via the Autonomous Database console page
+* Directly via URL
 
-1. Sub step 1
+1. On the Autonomous Data Warehouse console page, click the **Tools** tab, and in the **Database Actions** card, click the link to **Open Database Actions**:
 
-		![Image alt text](images/sample1.png)
+    ![ALT text is not available for this image](images/2879072598.png)
 
-  To create a link to local file you want the reader to download, use this format:
+2. This will take you to the Autonomous Data Warehouse **Database Actions** home page (shown below). This page has a card for each of the most common tasks that the data warehouse user would want to perform. The cards are grouped by theme. For example, here you see groups for Development and Data Tools. Each card has a title and description.  
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+    ![ALT text is not available for this image](images/2879071279.png)
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+3. If you want more information about each of the tasks related to each card then you can access the online help by clicking the **Question Mark** in the title bar, as indicated in the image below:
 
-2. Sub step 2
+    ![ALT text is not available for this image](images/2879071281.png)
 
-    ![Image alt text](images/sample1.png)
+4. This will pop out a tray containing links to the relevant topics in the Autonomous Data Warehouse documentation. To close the help tray, simply click the  **X**.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** <what is the action in this step>
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    ![ALT text is not available for this image](images/2879071282.png)
 
 ## Learn More
 
@@ -85,6 +49,5 @@ In this lab, you will:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Rick Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Rick Green, July 2021

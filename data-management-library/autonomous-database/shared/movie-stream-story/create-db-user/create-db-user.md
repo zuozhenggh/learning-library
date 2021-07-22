@@ -2,26 +2,19 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, you will create a database user and launch SQL Worksheet.
 
-Estimated Time: n minutes
+Estimated Time: 10 minutes
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
-
-### Objectives <optional>
-
-*List objectives for this lab*
+### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a database user
+* Update the user's profile to grant access to load and store data
+* Log in as the user
+* Launch SQL Worksheet
 
-
-*This is the "fold" - below items are collapsed by default*
-
-## **Step 1**: <what is the action in this step>
+## **Step 1**: Create a Database User
 
 (optional) Step 1 opening paragraph.
 
@@ -45,37 +38,30 @@ In this lab, you will:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** <what is the action in this step>
+## **Step 2:** Update the User's Profile to Grant Accessing
 
-1. Sub step 1 - tables sample
+## **Step 3:** Log In As the User
 
-  Use tables sparingly:
+## **Step 4:** Launch SQL Worksheet 
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+During this part of the workshop, we will use the SQL Worksheet application that is built-in to our data warehouse environment. 
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+1. From your cloud console page, click the **Tools** tab, then click the **Open Database Actions** button:
 
-    - List item 1
-    - List item 2
+    ![Click the Open Database Actions button.](images/3054194717.png)
 
-3. Code examples
+2. On the login screen, enter the username **ADMIN**, then click the blue **Next** button.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+3. Enter the admin password you set up when provisioning the ADW instance.
 
-4. Code examples that include variables
+4. In the **Development** section of the Database Actions page, click the **SQL** card to open a new SQL worksheet:
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    ![Click the SQL card.](images/3054194715.png)
+
+    This will open up a new window that should look something like the screenshot below. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click Next to take a tour through the informational boxes.
+
+    ![Screenshot of initial SQL Worksheet](images/Picture100-sql-worksheet.png)
+
 
 ## Learn More
 
@@ -85,6 +71,5 @@ In this lab, you will:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Rick Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Rick Green, July 2021

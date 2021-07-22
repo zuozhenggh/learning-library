@@ -77,7 +77,7 @@ The picture below represents the summary of the transformations we will be perfo
 1. Go to the browser tab session of the Admin Server for *Boston* Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    <copy>https://localhost/Boston/adminsrvr</copy>
     ```
 
 2. Update REPLICAT IREP parameters by adding the attributes to concatenate `CUST_FIRST_NAME` and `CUST_LAST_NAME` and mapping the combined result into `CUSTOMER_NAME` in the target table. Add the following, after commenting the already existing map statement for CUSTOMERS table with *”--“* or simply delete all previous mappings.
@@ -144,7 +144,7 @@ In this step we will mask the email ID field extracted at the source and replace
 1. Go to the browser tab session of the Admin Server for *Boston* Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    <copy>https://localhost/Boston/adminsrvr</copy>
     ```
 
 2. Update REPLICAT IREP parameters by adding the attributes to pass customer email to *`SQLEXEC()`* for execution of stored procedure and mapping it back to the target table. Add the following, after commenting the already existing map statement for CUSTOMERS table with *"--"* or simply delete all previous mappings.
@@ -247,7 +247,7 @@ In this step we will mask the email ID field extracted at the source and replace
 1. Go to the browser tab session of the Admin Server for *Boston* Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    <copy>https://localhost/Boston/adminsrvr</copy>
     ```
 
 2. Update IREP Replicat parameters by adding the attributes to map the Environment Variables to the audit table. Add the following after `*useridalias` command :

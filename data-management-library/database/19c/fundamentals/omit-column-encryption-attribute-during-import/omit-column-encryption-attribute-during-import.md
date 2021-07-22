@@ -1,13 +1,4 @@
----
-duration: PT0H05M0S
-description: Omit column encryption attribute during import.
-level: Beginner
-roles: Application Developer;Developer;Technology Manager
-lab-id:
-products: en/database/oracle/oracle-database/19
-keywords: Database
-inject-note: true
----
+
 # Omit the Column Encryption Attribute During Import
 
 ## Introduction
@@ -41,42 +32,42 @@ Be sure that the following tasks are completed before you start:
     $ sudo su - oracle
     ```
 
-2. Switch to the **/home/oracle/labs** directory.
+2. Switch to the **/home/oracle/labs/19cnf** directory.
 
     ````
-    $ cd /home/oracle/labs
+    $ cd /home/oracle/labs/19cnf
     ````
-
+<!--
 3. Download the **tab.dmp** file onto your compute instance.
    
     ```
     $ wget https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-dp-import-column-encryption-attribute/files/tab.dmp
     ```
+-->
+3. Before importing the table without its **ENCRYPT** column attribute, verify that the table exported in the **/home/oracle/labs/19cnf/tab.dmp** dump file has an encrypted column.
 
-4. Before importing the table without its **ENCRYPT** column attribute, verify that the table exported in the **/home/oracle/labs/tab.dmp** dump file has an encrypted column.
-
-5. Log in to a test non-CDB as the **system** user.
+4. Log in to a test non-CDB as the **system** user.
 
     ```
     $ sqlplus system/oracle
     ```
 >**Note**: **oracle** is the default password for the **system** user.
 
-6. Create the directory to point to the location of the dump file.
+5. Create the directory to point to the location of the dump file.
 
     ```
-    SQL> CREATE DIRECTORY dp AS '/home/oracle/labs';
+    SQL> CREATE DIRECTORY dp AS '/home/oracle/labs/19cnf';
 
     SQL> EXIT; 
     ```
-7. Generate the SQL file from the Data Pump export **/home/oracle/labs/tab.dmp** dump file by simulating an import into the non-CDB.
+6. Generate the SQL file from the Data Pump export **/home/oracle/labs/19cnf/tab.dmp** dump file by simulating an import into the non-CDB.
 
     ```
     $ impdp system DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log
     ```
 >**Note**: You will be prompted to enter your password.
 
-8. Verify the ouput
+7. Verify the ouput
 
     ```
     $ cat tabenc1.sql
@@ -123,7 +114,7 @@ Be sure that the following tasks are completed before you start:
 
 ## **STEP 2**: Import the table without the **ENCRYPT** Attribute
 
-1. Generate the SQL file from the Data Pump export **/home/oracle/labs/tab.dmp** dump file by simulating an import into the non-CDB omitting the **ENCRYPT** attribute of the LABEL column of the **TEST.TABENC** table into an encrypted tablespace such as **TEST**.
+1. Generate the SQL file from the Data Pump export **/home/oracle/labs/19cnf/tab.dmp** dump file by simulating an import into the non-CDB omitting the **ENCRYPT** attribute of the LABEL column of the **TEST.TABENC** table into an encrypted tablespace such as **TEST**.
 
     ```
     $ impdp DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc2 TRANSFORM=OMIT_ENCRYPTION_CLAUSE:Y REMAP_TABLESPACE=system:test LOGFILE=enc2.log
@@ -153,7 +144,7 @@ Be sure that the following tasks are completed before you start:
 3. Clean the environment.
 
     ```
-    $ rm tab.dmp tabenc*.sql enc*.sql
+    $ rm tabenc*.sql enc*.log
     ```
 ## Learn More
 

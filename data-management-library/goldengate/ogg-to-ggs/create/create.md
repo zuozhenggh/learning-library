@@ -1,127 +1,152 @@
-# Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
+# Create the Oracle Cloud Infrastructure GoldenGate Deployment
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate wallet.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate Deployment.
 
 Estimated Lab Time: 5 minutes
 
-
-### Before You Begin
-
-In order to complete the steps in this lab successfully, you must have the following Environment Variables set up:
-* OGG_HOME set to your Oracle GoldenGate install directory
-* PATH set to $PATH:$OGG_HOME/bin
-* JAVA_HOME set to the location of your JRE
-
-You must also know the Oracle GoldenGate wallet password.
+### About Oracle Cloud Infrastructure GoldenGate Deployments
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
 
 ### Objectives
 
 In this lab, you will:
-* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
-* Restart the Distribution and Receiver Servers
-* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
+* Locate Oracle Cloud Infrastructure GoldenGate in the Console
+* Create a OCI GoldenGate deployment
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
 
-## **STEP 1**: Using Chrome to Download the Root Certificate
+### Prerequisites
 
-The following instructions show you how to download the Root Certificate using a Chrome web browser.
+This lab assumes that you completed all preceding labs.
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+## **STEP 1**: Create a Deployment
 
-2.  After you log in to the Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **GoldenGate**.
+*Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
+
+    ![Select GoldenGate from Oracle Database](images/database-goldengate.png " ")
 
     You're brought to the **Deployments** page.
 
     ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-3.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Verified)**.
+2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL1234-user, select the compartment **LL1234-COMPARTMENT**.
 
-    ![Certificate](images/01-04-certificate.png)
+3.  On the Deployments page, click **Create Deployment**.
 
-4.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
+    ![Click Create Deployment](images/01-02-01.png "Create a deployment")
 
-    Another Certificate window opens, displaying the details for the root DigiCert certificate.
+4.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-    ![DigiCert Root](images/01-04-digicert.png)
+5.  From the Compartment dropdown, select a compartment.
 
-5.  Click **Details**, and then click **Copy to File**.
+6.  For OCPU Count, enter **2**.
 
-    ![Copy to File](images/01-05.png)
+7.  For Subnet, select **Public Subnet**.
 
-6.  In the Certificate Export Wizard, click **Next**.
+8.  For License type, select **Bring You Own License (BYOL)**.
 
-7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+9.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Base-64](images/01-07.png)
+    ![Click Create Deployment](images/01-02-create_deployment_panel.png "Create a deployment")
 
-8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+10. Click **Next**.
 
-9.  Click **Next**, and then click **Finish**.
+11. For GoldenGate Instance Name, enter **ogginstance**.
 
-A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
+12. For Administrator Username, enter **oggadmin**.
 
-## **STEP 2:** Upload the certificate to the Oracle GoldenGate Wallet
+13. For Administrator Password, enter a password. Take note of this password.
 
-1. Open a terminal window. Using the command line, navigate to the Oracle GoldenGate install directory.
+14. Click **Create**.
 
-2. Change directories to the ssl directory.
+You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-3. Under the ssl directory, change directories to your deployment directory.
 
-4. Run orapki to add the certificate to the wallet.
+## **STEP 2:** Review the Deployment details
 
-   ```
-   <copy>orapki wallet add -wallet ./ -trusted_cert -cert ./DigiCertRoot.cer</copy>
-   ```
+On the Deployment Details page, you can:
 
-5. When prompted, enter the wallet password.
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
 
-6. Run the following command to verify the certificate was added:
+    ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-   ```
-   <copy>orapki wallet display -wallet</copy>
-   ```
+## **STEP 3:** Launch the GoldenGate Deployment Console
 
-## **STEP 3:** Restart the Oracle GoldenGate Distribution and Receiver Servers
+1. When the deployment is active, click **Launch Console**.
 
-Stop and start the Distribution and Receiver Servers to pick up the changes made to the wallet.
+    ![Launch Console](images/04-01-ggs-launchconsole.png)
 
-1. Open the Oracle GoldenGate Service Manager in your web browser.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
-2. In the list of Services, locate the Distribution Server and then select **Stop** from its **Action** menu.
+    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
 
-3. Repeat step 2 for the Receiver Server.
+After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-4. When the Status is **Stopped** for both the Distribution and Receiver Servers, you can restart them by selecting **Start** in their respective **Action** menus.
+In this lab, you created an OCI Deployment and reviewed its Deployment details. You can now proceed to the next [lab](#next).
 
-## **STEP 4:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
+## **STEP 4:** Register the Target Database
 
-1. Launch the OCI GoldenGate Deployment Console, sign in, and then use the navigation menu to access the Administration Server's Administrator page.
+Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
-2. Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
+1.  On the Registered Databases page, click **Register Database**.
 
-3. Using the Oracle GoldenGate WebUI, navigate to the Administration Server Configuration screen.
+2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
-4. Under the Database tab, click **Add Credential**, and then complete the following fields:
+3.  From the **Compartment** dropdown, select a compartment.
 
-   * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-   * For **Credential Alias**,  enter a name
-   * For **User ID**, enter the user name of the user you created in step 2. For example, **ggsnet**.
-   * For **Password**, enter the password associated to the user entered for User ID.
-   * For **Verify Password**, re-enter the password for verification purposes.
+4.  Click **Select Database**.
 
-5. Click **Submit**.
+5.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
+6.  Enter the database's password in the Password field, and then click **Register**.
 
+    ![Target Database details](images/02_10-ggs-regDB_target.png)
+
+    The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
+
+## **STEP 4:** Enable the ggadmin user
+
+Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+
+1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+2.  From the list of databases, select **ADWTarget**.
+
+3.  On the ADWTarget Database Details page, click **Tools**, and then click **Open Database Actions**.
+
+4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your lab environment details.
+
+5.  Under **Administration**, click **Database Users**.
+
+6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+
+    ![GGADMIN user](images/02-06-locked.png)
+
+7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+
+    ![Edit user](images/02-07-edit.png)
+
+    Note that the user icon changes from a blue padlock to a green checkmark.
+
+8.  Log out of Database Actions.
+
+## Learn More
+
+* [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He, Database Product Management
-* **Last Updated By/Date** - April 2021
-
-
+* **Contributors** -  Denis Gray, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, June 2021

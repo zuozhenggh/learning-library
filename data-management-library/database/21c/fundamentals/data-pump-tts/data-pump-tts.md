@@ -42,7 +42,7 @@ In this lab, you will:
     Connected.
     ```
     ```
-    SQL> <copy>CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/CDB21/users01.dbf' SIZE 50M;</copy>
+    SQL> <copy>CREATE TABLESPACE users DATAFILE '/u02/app/oracle/oradata/CDB21/users11.dbf' SIZE 50M;</copy>
     Tablespace created.
 
     SQL> <copy>ALTER TABLESPACE users READ ONLY;</copy>

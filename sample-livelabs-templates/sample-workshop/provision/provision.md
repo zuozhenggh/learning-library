@@ -21,23 +21,19 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: <what is the action in this step>
+## **Step 1**: what is the action in this step
 
 (optional) Step 1 opening paragraph.
 
 1. Sub step 1
 
-		![Image alt text](images/sample1.png)
+	![Image alt text](images/sample1.png)
 
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
 
 2. Sub step 2
 
-    ![Image alt text](images/sample1.png)
+  ![Image alt text](images/sample1.png)
 
 4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
@@ -45,7 +41,7 @@ In this lab, you will:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** <what is the action in this step>
+## **Step 2:** what is the action in this step
 
 1. Sub step 1 - tables sample
 

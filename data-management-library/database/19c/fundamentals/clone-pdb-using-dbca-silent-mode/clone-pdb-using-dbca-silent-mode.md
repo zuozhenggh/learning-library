@@ -1,8 +1,7 @@
-# Clone a PDB by Using DBCA in Silent Mode
+# Clone a PDB from a Remote CDB by Using DBCA in Silent Mode
 
 ## Introduction
-Use Database Configuration Assistant (DBCA) to clone a remote pluggable database
-(PDB) into a container database (CDB)
+Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to create a clone of a PDB that resides in a remote CDB (a different CDB than the one in which you are creating the clone). To do this, you use the -createPluggableDatabase command in DBCA with the new parameter called -createFromRemotePDB. In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2.
 
 Estimated Lab Time: 30 minutes
 
@@ -10,222 +9,78 @@ Estimated Lab Time: 30 minutes
 
 Learn how to do the following:
 
-- Switch your PDB to ARCHIVELOG mode
-- Clone remote PDB from CDB
-- Check that PDB is cloned
+- Enable ARCHIVELOG mode on CDB1 and CDB2
+- Start the listeners for CDB1 and CDB2
+- Prepare the PDB before cloning
+- Clone a remote PDB from a CDB
+- Check that the PDB is cloned
+- Reset your environment
+- Disable ARCHIVELOG mode in CDB1 and CDB2
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+Before you start, be sure that you have done the following:
 
-- Obtain an Oracle Cloud account.
-- Create SSH keys.
-- Sign in to Oracle Cloud Infrastructure.
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell
 
 
-## **STEP 1**: Set CDB1 and PDB1 to archivelog mode
+## **STEP 1**: Enable ARCHIVELOG mode on CDB1 and CDB2
 
-1. Connect to the PDB container using SQL*Plus.  
+1. Open a terminal window.  
+>The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
+
+2. Run the enable_ARCHIVELOG.sh script and enter CDB1 at the prompt to enable ARCHIVELOG mode on CDB1. Enter CDB1 at the prompt.
+>The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
+
     ```
-    $ sqlplus /as sysdba
-
-    SQL*Plus: Release 19.0.0.0.0 - Production on Tue Jun 1 14:52:31 2021
-    Version 19.10.0.0.0
-
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
-
-    Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
+    $ $HOME/labs/19cnf/enable_ARCHIVELOG.sh
+    ORACLE_SID = [CDB1] ? CDB1
     ```
 
-2. Check the CDB log mode.
+3. Run the enable_ARCHIVELOG.sh script and enter CDB2 at the prompt to enable ARCHIVELOG mode on CDB2. Enter CDB2 at the prompt.
     ```
-    SQL> select name, open_mode, log_mode from v$database;
-
-    NAME      OPEN_MODE            LOG_MODE
-    --------- -------------------- ------------
-    CDB1      READ WRITE           NOARCHIVELOG
-    ```
-
-3.  Check your parameter values. A container cannot be in archive log mode if there
-there are no values for each parameter.
-    ```
-    SQL> show parameter DB_RECOVERY_FILE        
-
-    NAME                                 TYPE        VALUE
-    ------------------------------------ ----------- ---------------------------
-    db_recovery_file_dest                string      
-    db_recovery_file_dest_size           big integer 0
-    ```
-
-4. Enter values for the parameters.
-    ```
-    SQL> alter system set db_recovery_file_dest_size=50G SCOPE=both;
-
-    System altered.
-
-    SQL> alter system set db_recovery_file_dest='/u01/app/oracle/recovery_area/CDB1' SCOPE=both;
-
-    System altered.
-
-    SQL> alter system set log_archive_dest_1= 'location=use_db_recovery_file_dest' SCOPE=both;
-
-    System altered.
-    ```
-
-5. Ensure your parameters contain values.
-    ```
-    SQL> select * from V$RECOVERY_FILE_DEST
-
-    NAME
-    ----------------------------------------------------------------------------
-    SPACE_LIMIT SPACE_USED SPACE_RECLAIMABLE NUMBER_OF_FILES     CON_ID
-    ----------- ---------- ----------------- --------------- ----------
-    /u01/app/oracle/recovery_area/CDB1
-                         0                 0               0          0
-
-    SQL> show parameter DB_RECOVERY_FILE_DEST        
-
-    NAME                                 TYPE        VALUE
-    ------------------------------------ ----------- ---------------------------
-    db_recovery_file_dest                string      /u01/app/oracle/recovery_area/CDB1
-    db_recovery_file_dest_size           big integer 50G
-    ```
-
-6. Mount your database instance and change it to archive log mode.
-    ```
-    SQL> shutdown immediate
-    Database closed.
-    Database dismounted.
-    ORACLE instance shut down.
-    ```
-    ```
-    SQL> startup mount
-    ORACLE instance started.
-
-    Total System Global Area 9932110488 bytes
-    Fixed Size                  9144984 bytes
-    Variable Size            1509949440 bytes
-    Database Buffers         8388608000 bytes
-    Redo Buffers               24408064 bytes
-    Database mounted.
-    ```
-    ```
-    SQL> alter database archivelog;
-
-    Database altered.
-
-    SQL> alter database open;
-
-    Database altered.
-    ```
-    ```
-    SQL> archive log list
-    Database log mode              Archive Mode
-    Automatic archival             Enabled
-    Archive destination            USE_DB_RECOVERY_FILE_DEST
-    Oldest online log sequence     20
-    Next log sequence to archive   22
-    Current log sequence           22
-    ```
-
-7. Exit SQL*Plus
-    ```
-    SQL> exit
-    ```
-
-8. Login to CDB2 and repeat above steps from Step 1- 7.
-    ```
-    $ . oraenv
+    $ $HOME/labs/19cnf/enable_ARCHIVELOG.sh
     ORACLE_SID = [CDB1] ? CDB2
     ```
-## **STEP 2**: Add the hr.sql script to the admin folder.
-1. Make sure you are in the Oracle instance.
+
+## **STEP 2**: Prepare the listeners for CDB1 and CDB2 and verify that they are ready
+1. Enter listener control and start the listeners.
     ```
-    $ sudo su - oracle
-    Last login: Tue Jun  1 16:35:21 GMT 2021 on pts/0
+    lsnrctl
+
+    LSNRCTL> start LISTCDB1
+
+    LSNRCTL> start LISTCDB2
     ```
 
-2. Change to the /labs directory. Check that the 19cNewFeatures.zip is in the directory.
+2. Check the status of the listeners to ensure that they are ready for CDB1, PDB1 and CDB2.
     ```
-    $ cd ~/labs
-    $ ls
-    19cnf.zip    admin  db.rsp  DW          HA           OBEs  SEC
-                          DB     DIAG    envprep.sh  multitenant  PERF  Videos
+    LSNRCTL> status LISTCDB1
+
+    LSNRCTL> status LISTCDB2
     ```
 
-3. Change to the admin directory. Check to see if the hr.sql script is in the directory.
+3. Exit the listener control.
     ```
-    $cd admin
-    $ls
-    cleanup_PDBs.sh     create_PDB19.sql      hr_code.sql     hr_idx.sql      listener.ora        startup_mount.sql     cleanup_PDBs.sql      create_PDB1.sh      hr_comnt.sql      hr_main_new.sql     profile.sql     startup.sql     cleanup_trace_ORCL.sh     create_PDB1.sql     hr_cre.sql      hr_main.sql     recreate_ORCL.sh      tnsnames.ora      close_TDE.sql     flashback.sql     hr_drop_new.sql     hr_popul.sql      shutdown.sql      create_CDB19.sh     hr_analz.sql      hr_drop.sql     **hr.sql**      sqlnet.ora
+    LSNRCTL> exit
     ```
 
-    >**Note**: If the hr.sql script is already in the directory, you can skip to Step 5.<Ora4U_1234
-
-4. Insert the hr.sql script file in the admin
-    1. Open this [hr.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/clone-pdbs-using-dbca-silent-mode/files/hr.sql) script in a separate tab.
-
-    2. In the cloud shell, create the hr.sql file in the admin directory.
-    ```
-    $ vi hr.sql
-    ```
-
-    3. Once the vi editory opens, copy and paste the hr.sql script from the link
-    into the newly created hr.sql file in the vi editor. It should look something
-    like below.
-    ```
-    CREATE USER hr IDENTIFIED BY Ora4U_1234;
-
-    GRANT dba, unlimited tablespace TO hr;
-    ALTER SESSION SET CURRENT_SCHEMA=HR;
-
-    ALTER SESSION SET NLS_LANGUAGE=American;
-    ALTER SESSION SET NLS_TERRITORY=America;
-
-    CREATE TABLE employees
-    ( employee_id    NUMBER(6)
-    , first_name     VARCHAR2(20)
-    , last_name      VARCHAR2(25)
-    , email          VARCHAR2(25)
-    , phone_number   VARCHAR2(20)
-    , hire_date      DATE
-    , job_id         VARCHAR2(10)
-    , salary         NUMBER(8,2)
-    , commission_pct NUMBER(2,2)
-    , manager_id     NUMBER(6)
-    , department_id  NUMBER(4)) ;
-    **script continues below**
-    ```
-
-    4. Exit the vi editor.
-    ```
-    Press Esc
-    Input :q
-    ```
-
-    5. Check that hr.sql is now in the admin directory.
-    ```
-    $ ls
-    ```
-
-    6. Now that the hr.sql script is the directory, it must be granted permission to execute.
-    ```
-    $ chmod -R +x ~/labs
-    ```
-
-## **STEP 3**: Prepare the PDB before Cloning
-1. Login into the CDB1. If already logged into CDB1, skip to Step 2.
+## **STEP 3**: Prepare the PDB before cloning
+1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
     ```
     $ . oraenv
     ORACLE_SID = [ORCL] ? CDB1
     ```
 
-2. Connect to the PDB1 using SQL*Plus.
+2. Connect to the CDB1 using SQL*Plus.
     ```
     $ sqlplus /as sysdba
+    ```
+
+3. Open PDB1 to enter its environment and change the session environment from CDB1 to PDB1.
+    ```
     SQL> alter pluggable database PDB1 open;
 
     Pluggable database altered.
@@ -235,7 +90,7 @@ there are no values for each parameter.
     Session altered.
     ```
 
-3. Verify that PDB1 contains the HR.EMPLOYEES table.
+4. Verify that PDB1 contains the HR.EMPLOYEES table. After the cloning process, the new PDB should contain HR.EMPLOYEES as PDB1 did. We will check for this in later steps.
     ```
     SQL> SELECT count(*) FROM hr.employees;
 
@@ -243,42 +98,59 @@ there are no values for each parameter.
     ----------
           107
     ```
-
-4. Connect to ORCL as SYSTEM.
+## **STEP 4**: Create a user and grant privileges to clone a database
+1. Connect to CDB1 as SYS.
     ```
-    SQL> CONNECT system@CDB1
+    SQL> CONNECT sys@CDB1 as sysdba
     Enter password: Ora4U_1234
     ```
 
-5. Create a common user in CDB1, used in the database link automatically created to connect to CDB1 during the cloning operation.
+2. Create a common user in CDB.
     ```
     SQL> CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;
     ```
 
-6. Grant the privileges.
+3. Grant the user the necessary privileges for creating a new PDB.
     ```
     SQL> GRANT create session, create pluggable database TO c##remote_user CONTAINER=ALL;
     ```
 
-7. Quit session.
+4. Quit SQL session.
     ```
     SQL> exit
     ```
 
-## **STEP 4**: Use DBCA to Clone a Remote PDB
->In this section, you use DBCA in silent mode to clone PDB1 from CDB1 as PDB2 in CDB2.<
-
+## **STEP 5**: Use DBCA to clone a remote PDB from a CDB
 1. Launch DBCA in silent mode to clone PDB1 from CDB1 as PDB2 in CDB2.
     ```
-    $ dbca -silent -createPluggableDatabase -createFromRemotePDB -remotePDBName PDB1 -remoteDBConnString CDB1 -remoteDBSYSDBAUserName SYS -remoteDBSYSDBAUserPassword Ora4U_1234 -sysDBAUserName sys -sysDBAPassword Ora4U_1234 -dbLinkUsername c##remote_user -dbLinkUserPassword Ora4U_1234 -sourceDB CDB2 -pdbName PDB2
+    $ dbca -silent\
+    -createPluggableDatabase\
+    -pdbName PDB2\
+    -sourceDB CDB2\
+    -createFromRemotePDB\
+    -remotePDBName PDB1\
+    -remoteDBConnString CDB1\
+    -remoteDBSYSDBAUserName SYS\
+    -remoteDBSYSDBAUserPassword Ora4U_1234\
+    -dbLinkUsername c##remote_user\
+    -dbLinkUserPassword Ora4U_1234
     ```
 
-## **STEP 5**: Check that the PDB is Cloned
-1. Connect to CDB2 as SYS
+2. Review the cloning log.
     ```
-    $ sqlplus sys@CDB2 AS SYSDBA
-    Enter password: Ora4U_1234
+    $ cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB2/CDB2.log
     ```
+
+## **STEP 6**: Check that the PDB is cloned and verify that hr.employees correctly cloned.
+1. Set the environment variable to CDB2 and connect to SQL*Plus. Enter CDB2 at the prompt.
+    ```
+    $ . oraenv
+    ORACLE_SID = [CDB1] ? CDB2
+
+    $ sqlplus / as sysdba
+    ```
+
+2. Display the list of PDBs in CDB2 to verify that PDB2 exists.
     ```
     SQL> show pdbs
 
@@ -288,75 +160,58 @@ there are no values for each parameter.
          3 PDB2                           READ WRITE NO
     ```
 
-2. Check that PDB2 contains the HR.EMPLOYEES table as in PDB1.
+3. Change the session environment from CDB2 to PDB2.
     ```
-    SQL> CONNECT hr / as sysdba
-    Enter password: Ora4U_1234
+    SQL> alter session set container = PDB2;
+
+    Session altered.
     ```
+
+4. Check that PDB2 contains the HR.EMPLOYEES table as in PDB1. This command helps us verify that PDB2 is a clone of PDB1 and its contents.
     ```
-    SQL> SELECT count(*) FROM employees;
+    SQL> SELECT count(*) FROM hr.employees;
 
     COUNT(*)
     ----------
            107
     ```
 
-## **STEP 6**: Clean up the Cloned PDB
-1. Connect to CDB2 as SYS.
+5. Exit the session.
     ```
-    SQL> CONNECT sys@CDB2 as sysdba
-    Enter password: Ora4U_1234
+    SQL> exit
     ```
 
-2. Close PDB2.
+## **STEP 7**: Reset your environment
+1. Delete PDB2.
     ```
-    SQL> ALTER PLUGGABLE DATABASE PDB2 CLOSE;
-    ```
-
-3. Drop PDB2.
-    ```
-    DROP PLUGGABLE DATABASE PDB2 INCLUDING DATAFILES;
+    $ $home/oracle/labs/19cnf/cleanup_PDBs.sh
     ```
 
-4. Quit the session.
+2. Reset CDB1 back to it's original state
     ```
-    SQL> EXIT
-    ```
-
-## **STEP 7**: Disable archivelog mode for CDB1 and CDB2.
-1. Set the environment variables for your CDB.
-    ```
-    $ . oraenv
-    ORACLE_SID = [oracle] ? CDB1
+    $ $home/oracle/labs/19cnf/recreate_CDB1.sh
     ```
 
-2. Execute the following statements to disable ARCHIVELOG mode on the database.
+## **STEP 8**: Disable ARCHIVELOG mode for CDB1 and CDB2.
+1. Run the disable_ARCHIVELOG.sh script and enter CDB1 at the prompt to disable ARCHIVELOG mode on CDB1.
+>The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
+
     ```
-    $ sqlplus / as sysdba
-
-    SQL> SHUTDOWN IMMEDIATE;
-
-    SQL> STARTUP MOUNT;
-
-    SQL> ALTER DATABASE noarchivelog;
-
-    SQL> ALTER DATABASE open;
-
-    SQL> SELECT log_mode FROM v$database;
+    $ $HOME/labs/19cnf/disable_ARCHIVELOG.sh
+    ORACLE_SID = [CDB1] ? CDB1
     ```
 
-3. Switch to CDB2 and repeat Step 2.
+2. Run the diable_ARCHIVELOG.sh script and enter CDB2 at the prompt to disable ARCHIVELOG mode on CDB2.
     ```
-    SQL> EXIT
-
-    $ . oraenv
+    $ $HOME/labs/19cnf/disable_ARCHIVELOG.sh
     ORACLE_SID = [CDB1] ? CDB2
     ```
 
 ## Learn More
 
 - [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
-
+- [createPluggableDatabase command Reference](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-6EDDC43D-9BD6-4096-8192-7E548B826360)
+- [Cloning a PDB or non-CDB](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/cloning-a-pdb.html#GUID-05702CEB-A43C-452C-8081-4CA68DDA8007)
 
 ## Acknowledgements
 
