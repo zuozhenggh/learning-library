@@ -23,7 +23,7 @@
             "filename": "../../labs/oci-devops-oke/build-publish-app/build-publish-app.md"
         },
         {
-            "title": "Lab 3: DevOps Pipeline",
+            "title": "Lab 3: Contiuous Delivery with OCI DevOps Pipeline",
             "filename": "../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
         },        
         {

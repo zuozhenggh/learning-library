@@ -1,8 +1,10 @@
-# Publish Artifact
+# Contiuous Delivery with OCI DevOps Pipeline
 
 ## Introduction
 
-In the previous labs, we played the role of a SRE/Platform Engineer that was responsible to provision all the infrastructure used by this project and we also had a developer who published their Cloud Native application into OCIR. In this lab exercise, we will deploy the application into the Kubernetes cluster on OKE through OCI DevOps. This is going to be a coordinated task among the two teams. In this process, developers will create an Artifact in the OCI DevOps project that will start the CD Pipeline automatically for deploying the application to the target environment (OKE). SREs will be responsible for approving the changes as part of the pipeline process.
+In the previous labs, we played the role of a SRE/Platform Engineer that was responsible to provision all the infrastructure used by this project and we also had a developer who published their Cloud Native application into OCIR. In this lab exercise, we will deploy the application into the Kubernetes cluster on OKE through a Continuous Delivery pipeline using OCI DevOps.  
+
+This is going to be a coordinated task among the two teams. In this process, developers will create an Artifact in the OCI DevOps project that will start the CD Pipeline automatically for deploying the application to the target environment (OKE). SREs will be responsible for approving the changes as part of the pipeline process.
 
 ![OCI DevOps](./images/devops-story.png)
 
@@ -70,8 +72,9 @@ Estimated Lab time: 20 minutes
 In this lab, you will:
 
 * Create DevOps Artifacts
-* Create ORM Stack and configuration pointing to a git repository.
-* Provision Infrastructure: Network, IAM, Kubernetes Cluster on OKE, DevOps project
+* Define Pipeline Parameters
+* Create DevOps Pipeline
+* Deploy New Software Version on Kubernetes OKE cluster
 
 ### Prerequisites
 
@@ -79,30 +82,11 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Developers push K8s Manifest to git
+## **STEP 1**: Create Artifacts
 
-As previously defined, all changes to the infrastructure should go into the `oci-devops-platform-deploy`. This is going to make it easier to adopt a "GitOps" workflow, where all changes must be reviewed through a Pull/Merge request process on your favorite Git tool before getting the code merged. This gives more flexibility and agility to the organization as they can continue using well-known Development tools towards their release process.
+Up to this point, the Container Image built by developers is already available in the Oracle Cloud Infrastructure Registry. As SREs, we are responsible for designing the Continuous Delivery workflow in the OCI DevOps service to release the application to our customers. 
 
-You can use your favorite IDE to go over this process on your day-to-day operation. For this lab, let's use the browser.
-
-1. Open `oci-cloud-native-mushop` repo and go to `deploy/complete/kubernetes/manifests`.
-1. You should copy the content of the k8s manifest file `fulfillment-dep.yaml` and we will place it into the `oci-devops-platform-deploy` repository. This file contains the Deployment definitions for fulfillment microservice.
-1. Open `oci-devops-platform-deploy` repository on a different tab/window. Under the Code tab, make sure you are under the root folder.
-1. Click on Add file -> Create new file.
-1. At the new window, name your file `release/dev/fulfillment/fulfillment-dep.yaml`.
-1. Paste the content of the yaml file into the appropriated area.
-![k8s manifest](./images/new-k8s-file.png)
-1. Let's commit the code, but instead of pushing the code to the master repo, we are creating a new feature branch and then we are going to merge the code into the master through Pull Requests when we complete all the changes. Select `Create a new branch for this commit and start a pull request`. Set the branch name to: `release-fulfillment-dev`. Then click on Propose file name to proceed.
-![k8s manifest](./images/fulfillment-initial-pr.png) 
-1. Open a pull request and have someone from the SRE/Platform team to review your code. Make sure you click on Create Pull Request to confirm the operation.
- ![k8s manifest](./images/fulfillment-pull-request.png) 
-1. As a developer, you can just monitor when your code is accepted and merged into the master.
-1. As a SRE, you should review the code and merge the pull request.
-
-
-## **STEP 2**: Create DevOps Artifact
-
-As a SRE, we need to update the DevOps project and add the pipeline to publish and release the fulfillment service through the OKE Kubernetes cluster we provisioned.
+The OCI DevOps project was created automatically by the Terraform template using ORM. Now, we need to create the Artifacts that will contains the Kubernetes manifest files that are used to deploy the fulfillment microservice.
 
 1. Let's open the OCI DevOps project. Go to OCI Navigation Menu -> Developer Services -> DevOps -> Projects. The project name should starts with `hellow_`
 
@@ -112,45 +96,214 @@ As a SRE, we need to update the DevOps project and add the pipeline to publish a
 
     |Property Name|Property Value|
     |--|--|
-    |Name|fulfillment-dep.yaml|
+    |Name|fulfillment-deployment.yaml|
     |Type|Kubernetes Manifest|
     |Artifact Source|Inline|
-    |Value|Paste the content of the file `fulfillment-dep.yaml` that was merged into the oci-devops-platform repository through the PR. Make sure you copy the raw file.|
+    |Value|Paste the content below|
     |Replace parameters used in this artifact|Yes, substitute placeholders|
 
+    
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: fulfillment
+      labels:
+        app.kubernetes.io/name: fulfillment
+        app.kubernetes.io/instance: mushop
+        run: fulfillment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: fulfillment
+          app.kubernetes.io/name: fulfillment
+          app.kubernetes.io/instance: mushop
+          run: fulfillment
+      template:
+        metadata:
+          labels:
+            app: fulfillment
+            version: "1.1.0"
+            app.kubernetes.io/name: fulfillment
+            app.kubernetes.io/instance: mushop
+            run: fulfillment
+          annotations:
+            sidecar.istio.io/rewriteAppHTTPProbers: "true"
+            prometheus.io/scrape: "true"
+            prometheus.io/path: /prometheus
+            prometheus.io/port: "80"
+        spec:
+          containers:
+            - name: fulfillment
+              image: "<region-key>.ocir.io/<tenancy-namespace>/<repository>:<tag>"
+              imagePullPolicy: IfNotPresent
+              ports:
+                - name: http
+                  containerPort: 80
+                  protocol: TCP
+              env:
+                - name: NATS_HOST
+                  value: "nats"
+                - name: NATS_PORT
+                  value: "4222"
+                - name: ORDERS_NEW
+                  value: "orders"
+                - name: ORDERS_SHIPPED
+                  value: "shipments"
+                - name: SIMULATION_DELAY
+                  value: "10000"    
+    ```
 
-    Before saving it, let's replace the original hardcoded container image tag with a [parameter](https://docs.oracle.com/en-us/iaas/devops/using/configuring_parameters.htm):
+    Before saving it, let's replace the hardcoded container image tag with a [parameter](https://docs.oracle.com/en-us/iaas/devops/using/configuring_parameters.htm) that represents the container image tag.
 
     Locate the line with the following snippet:
     ```
     spec:
       containers:
         - name: fulfillment
-          image: "iad.ocir.io/oracle/ateam/mushop-fulfillment:1.1.0"
-          imagePullPolicy: IfNotPresent
-          ports:
-            - name: http
-              containerPort: 80
-    ```
-
-    and replace it with:
-    ```
-    spec:
-      containers:
-        - name: fulfillment
-          image: ${mushop_fulfillment_image}
+          image: "<region-key>.ocir.io/<tenancy-namespace>/<repository>:<tag>"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
     ```
-    Now, we need to create a Pipeline and a Parameter for the Container Image Version which will be applied to the manifest during the pipeline.
-    ![devops artifact](./images/fulfillment-artifact.png) 
+
+    and replace it with the value below, assuming the original container image URL for the tag 1.1.0 was:  `iad.ocir.io/ansh81vru1zp/oci-cloud-native-mushop/mushop-fulfillment:1.1.0`. As the result, we should have the following snippet with the variable
+
+    ```
+    spec:
+      containers:
+        - name: fulfillment
+          image: "iad.ocir.io/ansh81vru1zp/oci-cloud-native-mushop/mushop-fulfillment:${mushop_fulfillment_version}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+    ```
+    
+    
+    
+    ![devops artifact](./images/fulfillment-artifact-deploy.png) 
+
+1. Let's repeat this operation for the following Artifacts:
+
+    > fulfillment-service.yaml
+
+    |Property Name|Property Value|
+    |--|--|
+    |Name|fulfillment-service.yaml|
+    |Type|Kubernetes Manifest|
+    |Artifact Source|Inline|
+    |Value|Paste the content below from `fulfillment-service.yaml`|
+    |Replace parameters used in this artifact|Yes, substitute placeholders|
+
+  
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: fulfillment
+      labels: 
+        app.kubernetes.io/name: fulfillment
+        run: fulfillment
+    spec:
+      selector:
+        app.kubernetes.io/name: fulfillment
+        run: fulfillment
+      ports:
+        - port: 80
+          name: http
+          protocol: TCP
+          targetPort: 80  
+    ```
+
+    > nats-deployment.yaml
+
+    |Property Name|Property Value|
+    |--|--|
+    |Name|nats-deployment.yaml|
+    |Type|Kubernetes Manifest|
+    |Artifact Source|Inline|
+    |Value|Paste the content below from `nats-deployment.yaml`|
+    |Replace parameters used in this artifact|Yes, substitute placeholders|
+
+  
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nats
+      labels:
+        app.kubernetes.io/name: nats
+        run: nats
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: nats
+          app.kubernetes.io/name: nats
+          run: nats
+      template:
+        metadata:
+          labels:
+            app: nats
+            version: "2.1.2"
+            app.kubernetes.io/name: nats
+            run: nats  
+    ```
+
+    > nats-service.yaml
+
+    |Property Name|Property Value|
+    |--|--|
+    |Name|nats-service.yaml|
+    |Type|Kubernetes Manifest|
+    |Artifact Source|Inline|
+    |Value|Paste the content below from `nats-service.yaml`|
+    |Replace parameters used in this artifact|Yes, substitute placeholders|
+
+  
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: nats
+      annotations:
+        prometheus.io/path: "/prometheus"
+      labels:
+        app.kubernetes.io/name: nats
+        app.kubernetes.io/instance: mushop
+        run: nats
+    spec:
+      selector:
+        app.kubernetes.io/name: nats
+        app.kubernetes.io/instance: mushop
+        run: nats
+      ports:
+        - name: client
+          port: 4222
+          protocol: TCP
+          targetPort: 4222
+        - name: routes
+          port: 6222
+          protocol: TCP
+          targetPort: 6222
+        - name: monitoring
+          port: 8222
+          protocol: TCP
+          targetPort: 8222  
+    ```
+
+
+In the next steops, we are going to create a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
+
 
 ## **STEP 3**: Create DevOps Pipeline
 
-Let's create a DevOps pipeline for publishing the mushop fulfillment service. This is going to publish the artifact to our OKE environment. 
+Let's create a DevOps pipeline for publishing the mushop fulfillment service and its dependencies. This is going to publish multiple artifacts to our OKE environment. 
 
 1. Go to Deployment Pipelines (left hand side menu of your DevOps project) and click on Create Pipeline.
 
@@ -166,34 +319,79 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service. Th
 
     |Name|Default Value|Description|
     |--|--|--|
-    |mushop_fulfillment_image|Use the URL of the image published in the OCIR in the format of `<region-key>.ocir.io/<tenancy-namespace>/<repository>:<tag>`|Container Image for Mushop Fulfillment service|
+    |mushop_fulfillment_version|Enter default tag name that was used to publish mushop-fulfillment image. E.g. 1.1.0|
+    |Description|Default version of mushop-fulfillment image. E.g. 1.1.0|
 
 1. Click on the plus button to save the parameter into the table.
     ![Create parameter](./images/devops-create-parameter.png)  
 
-1. Click on the Pipeline tab to design your workflow. Add a Stage to your Pipeline. Click on the plus icon to add a Stage.
+1. Click on the Pipeline tab on the top to design your workflow. Add a Stage to your Pipeline. Click on the plus icon to add a Stage.
     ![DevOps pipeline - add stage](./images/devops-add-stage1.png) 
 
-1. In our use case, we are applying the Kubernetes manifest to our Development environment in OKE. If we needed to enforce more security controls, we could add a stage requesting someone to approve the stage in order to proceed to the next one. In our case, let's select `Apply manifest to your Kubernetes cluster`. Then click on next.
+1. OCI DevOps allow you to enforce more security controls, e.g. pause the deployment while it wait for apprvals. In our case, this is not necessary and just select `Apply manifest to your Kubernetes cluster` in the Deploy section. Then click on next.
 
     ![Filter stage types](./images/devops-add-stage2.png) 
+
+1. We are going to create a Pipeline with 3 Stages to demonstrate how you could apply many Artifacts under the same stage or separately.
+
 
 1. In the next window, enter the following data then click on Add:
 
     |Property Name|Property Value|
     |--|--|
     |Stage Name|fulfillment-deployment|
-    |Description|Deployment of fulfillment service to Dev|
+    |Description|Apply Deployment manifest for fulfillment |
     |Environment|test_oke_env|
-    |Select one or more artifacts|fulfillment-dep.yaml|
+    |Select one or more artifacts|fulfillment-deployment.yaml|
+    |Override Kubernetes namespace|Leave empty|
     |If validation fails, automatically rollback to the last successful version?|Yes|
 
-    ![devops stage](./images/devops-stage-fulfillment.png)
+    ![devops stage](./images/devops-stage-fulfillment-deploy.png)
 
-1. Here is the pipeline we created.
+1. Here is the pipeline we created so far.
 ![devops pipeline deploy carts](./images/devops-pipeline-fulfillment.png) 
 
-## **STEP 4**: Deploy Carts Service to OKE
+  You can either click on the plus icon in the top or the bottom of the stage we created, depending upon you want the Artifact to get applied before or after the current stage. Here is the order we want to deploy the Artifacts to the OKE cluster:
+
+  | Nats Deployment -> Nats Service -> Fulfillment Deployment -> Fulfillment Service
+
+1. Next, let's create a single stage for NATS that should be placed on top of the fulfillment deployment one. Click on the plus sign on top of fulfillment-deployment stage, then Add Stage.
+
+1. Select Apply manifest to your Kubernetes cluster and click Next.
+
+1. In the next window, enter the following data then click on Add:
+
+    |Property Name|Property Value|
+    |--|--|
+    |Stage Name|nats|
+    |Description|Apply Deployment and Service manifest for nats |
+    |Environment|test_oke_env|
+    |Select one or more artifacts|nats-deployment.yaml, nats-service.yaml|
+    |Override Kubernetes namespace|Leave empty|
+    |If validation fails, automatically rollback to the last successful version?|Yes|
+    ![nats stage](./images/nats-stage.png)
+
+1. Finally, we are going to create a stage for the fulfillment service. Click on the plus sign underneath fulfillment-deployment, then Add Stage.
+
+1. Select Apply manifest to your Kubernetes cluster and click Next.
+
+1. In the next window, enter the following data then click on Add:
+
+    |Property Name|Property Value|
+    |--|--|
+    |Stage Name|fulfillment-service|
+    |Description|Apply Service manifest for fulfillment |
+    |Environment|test_oke_env|
+    |Select one or more artifacts|nats-deployment.yaml, nats-service.yaml|
+    |Override Kubernetes namespace|Leave empty|
+    |If validation fails, automatically rollback to the last successful version?|Yes|
+    ![fulfillment-service stage](./images/fulfillment-service-stage.png)
+
+As the result, we have the following DevOps Pipeline:
+
+![fulfillment pipeline](./images/devops-pipeline-fulfillment-final.png)
+
+## **STEP 4**: Deploy Fulfillment Service to OKE
 
 You can run a pipeline directly from the OCI Console or you can build integrations with the API, CLI or some external integrations. 
 
@@ -201,4 +399,18 @@ You can run a pipeline directly from the OCI Console or you can build integratio
 
 1. In the Start Manual Run enter a name for your deployment or leave it as is. 
 
-1. In the Parameters section, set the URL for the container image that you want to deploy. 
+1. In the Parameters section, set the version of the container image that you want to deploy. E.g. 1.1.0
+
+1. You can follow the execution of the pipeline directly in the console. Every stage that is running change its color to yellow or red in case of failure.
+
+1. You can also use Cloud Shell and [set up a connection with your cluster](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#cloudshelldownload), and then use `kubectl` to monitor the deployment of the resources. E.g.:
+```
+kubectl get svc -w
+```
+or
+```
+kubectl get deploy -w
+```
+
+
+## **STEP 5**: Test Fulfillment Service
