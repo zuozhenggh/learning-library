@@ -228,7 +228,6 @@ You will create a data flow to ingest data from **two source files**, containing
     ![](./images/revenue-csv.png " ")
 
    In the end, your details for this new source operator should look like this:
-
    ![](./images/csv-source.png " ")
 
 11. When you complete your selections for **SOURCE\_1**, the operator name becomes **REVENUE\_CSV**, reflecting your data entity selection. In the Identifier field, rename the source operator to **REVENUE**.
@@ -258,7 +257,6 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
     - Click the connector circle at the side of REVENUE.
     ![](./images/revenue-operator.png " ")
     - Drag and drop the connector to FILTER_1.
-
     ![](./images/connect-revenue-filter.png " ")
 
 17. Click on **FILTER_1** on the Data Flow canvas.
@@ -276,7 +274,6 @@ In the Attributes tab, you can view the data entity's attributes and apply **exc
     ![](./images/filter-condition-edit.png " ")
     - In the condition editor, enter `='1-Booked'`, so your condition looks like the following: `FILTER_1.REVENUE_CSV.ORDER_STATUS='1-Booked'`
     - Click **Create**.
-
     ![](./images/filter-condition.png " ")
 
 20. The details for **FILTER_1 operator** should now look like this: *Note: Be sure to save often during design time!*
@@ -360,7 +357,7 @@ The number of attributes in the table are filtered. Only those attributes that m
     <copy>CONCAT(CONCAT(EXPRESSION_1.CUSTOMERS_JSON.FIRST_NAME, ' '),EXPRESSION_1.CUSTOMERS_JSON.LAST_NAME)</copy>
     ```
 
-  in the **expression box**.
+   in the **expression box**.
    You can also highlight a function's placeholders and then double-click or drag and drop attributes from the Incoming list to create an expression.
 
     - Click **Add**.
@@ -777,7 +774,7 @@ A **SQL task** lets you run a SQL stored procedure in pipeline. You create a SQL
 When you create a SQL task, you can configure values for **input parameters** only. If input parameters are configured in a SQL task, you can **override the default values** when you configure the SQL task in a pipeline, and when you run a pipeline that includes the SQL task.
 
 This SQL task in this workshop will write inside a statistics table on the Autonomous Data Warehouse (`DWH_LOAD_STATS`) the successful/ unsuccessful result of a Pipeline task run based on input parameter from the pipeline, but also the pipeline name and task run key. This SQL task will be included in a Pipeline in the following lab. To understand better the SQL stored procedure, please check the `OCIDI_RESULT` procedure statement from the SQL script you downloaded and ran on Autonomous Data Warehouse in Lab 0.
-Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking result in the Data Integration Application from OCI Console.
+Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking the result in the Data Integration Application from OCI Console.
 
 1. From your Workspace home page in OCI Data Integration, click **Open tab** (plus icon), and then select **Projects**.
 
@@ -797,7 +794,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 5. On the **Create SQL Task** page, enter:
 
-    - Name: You can use `Procedure DWH Load Stats`.
+    - Name: Use `Procedure DWH Load Stats`.
     *Note: The Identifier field is a system-generated value based on what you enter for Name. You can change the value, but after you save the task, you cannot change the value again.*
     - **Description** (optional).
     - Project **DI_Workshop** is auto-populated because we're creating this task from project details page.
@@ -858,6 +855,7 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 * [SQL Task in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/sql-tasks.htm)
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

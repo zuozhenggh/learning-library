@@ -1,10 +1,10 @@
-# Create an OCI Data Integration workspace
+# Create an OCI Data Integration Workspace
 
 ## Introduction
 
 This lab will guide you through the steps to set up the necessary **Policies** for OCI Data Integration and to create an OCI Data Integration **Workspace**.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 20 minutes
 
 ### Objectives
 In this lab, you will:
@@ -51,7 +51,6 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
 
   ![](./images/policies-list.png " ")
 
-
 ## **Step 2**: Create an OCI Data Integration workspace
 
 Before you can get started with Data Integration, you must first create a **Workspace** for your data integration solution. A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you can have separate workspaces for development, testing, and production. The workspace is the preliminary component of Oracle Cloud Infrastructure Data Integration.
@@ -65,6 +64,7 @@ Before you can get started with Data Integration, you must first create a **Work
   ![](./images/workspaces.png " ")
 
 3. In the **Create Workspace** panel, complete the fields as follows:
+
     - For **Name**: `DI-workspace`. *You can only use alphanumeric characters, hyphens, periods, and underscores in the name.*
     - **Description**: `Data Integration workspace for the LiveLabs workshop`.
     - Under Network Selection, leave **Enable private network** selected.
@@ -93,6 +93,7 @@ Before you can get started with Data Integration, you must first create a **Work
 * [Policies in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/policies.htm)
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

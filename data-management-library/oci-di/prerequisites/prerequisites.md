@@ -4,7 +4,7 @@
 
 This lab will walk you through the steps to set up the **prerequisites** before starting our Data Integration journey in Oracle Cloud Infrastructure. We'll show you how to create the required Oracle Cloud Infrastructure resources for the workshop, including uploading the source files in an Object Storage bucket and creating the necessary database objects in Autonomous Data Warehouse. Steps 3, 4 and 5 of this Lab are not prerequisites for using OCI Data Integration, but for following the workshop instructions.
 
-*Estimated Lab Time*: 1 hour
+*Estimated Lab Time*: 45 minutes
 
 ### Objectives
 
@@ -21,7 +21,6 @@ In this lab, you will:
 * **OCI user** that is assigned to an **OCI group**.
 
 *Note:* In case you want to create a new OCI user and/or assign the user to a group, please see the following [LiveLabs workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566) about Identity and Access Management.
-
 
 ## **Step 1**: Create an OCI Compartment
 
@@ -56,7 +55,6 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
 
    ![](./images/new-comp.png " ")
 
-
 ## **Step 2**: Create a VCN and Subnet using VCN Wizard
 
 You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data Integration workshop. **Oracle virtual cloud networks** provide customizable and private cloud networks in Oracle Cloud Infrastructure.
@@ -81,7 +79,6 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
     ![](./images/vcn-config.png " ")
 
-
 5. In the **Configure VCN and Subnets** section, leave all the default values and selections. Click **Next**.
 
   ![](./images/vcn-config-subnets.png " ")
@@ -96,8 +93,7 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
 8. The **Virtual Cloud Network Details** page is displayed, and you can see that the VCN has a private and a public Subnet.
 
-  ![](./images/vcn-detail.png " ") 
-
+  ![](./images/vcn-detail.png " ")
 
 ## **Step 3**: Provision an Autonomous Data Warehouse and download Wallet
 
@@ -237,7 +233,6 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
   ![](./images/beta-schema.png " ")
 
-
 ## **Step 5**: Create an Object Storage bucket and upload the sample data
 
 The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform.
@@ -292,6 +287,7 @@ The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale,
 * [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

@@ -37,7 +37,6 @@ In this lab, you will:
 
   ![](./images/notification-ocid-copied.png " ")
 
-
 ## **Step 2**: Create policies for ADW and Object Storage
 
 Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. You must create all the required Object Storage **policies** and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
@@ -83,6 +82,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
   ![](./images/edit-policies.png " ")
 
 6. **Replace** in the new policy statements:
+
     - *"compartment-name"* with the name of your data integration Compartment (`DI-compartment)`.
     - *"group-name"* with the name of the OCI group that your user belongs to (`di-group`).
     - *"workspace-ocid"* with the workspace OCID you copied in Step 1 of this lab.
@@ -96,7 +96,6 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 8. You can now see the list with all the **policy statements** you have defined.
 
   ![](./images/policy-statements.png " ")
-
 
 ## **Step 3**: Get the Tenancy OCID
 
@@ -129,6 +128,7 @@ In this workshop, **Oracle Object Storage** serves as the **source data asset** 
   ![](./images/create-asset-button.png " ")
 
 4. The Create Data Asset dialog box appears. Fill in the following:
+
     - **Name**: `Object_Storage`.
     - **Description**: you can optionally enter a description about your data asset.
     - From the **Type** dropdown, select `Oracle Object Storage`.
@@ -178,6 +178,7 @@ A success or failure message displays, indicating whether the test was successfu
   ![](./images/create-asset-new.png " ")
 
 5. On the **Create Data Asset** page, for **General Information**, set the following:
+
     - **Name**: `Data_Warehouse`.
     - **Identifier**: Auto-generated based on the value you enter for Name.
     - **Description**: It is optional to give a description for your data asset.
@@ -207,7 +208,6 @@ A success or failure message displays, indicating whether the test was successfu
 
   ![](./images/create-asset.png " ")
 
-
    **Congratulations!**  Now you have created the Data Assets for Autonomous Data Warehouse and Object Storage, in OCI Data Integration. You may now [proceed to the next lab](#next).
 
 ## Learn More
@@ -216,6 +216,7 @@ A success or failure message displays, indicating whether the test was successfu
 
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

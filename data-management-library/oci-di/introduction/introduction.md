@@ -64,6 +64,7 @@ You may now [proceed to the next lab](#next).
 
 
 ## Learn More
+
 Use the following links to get more information about OCI Data Integration:
 
 * [OCI Data Integration documentation](https://docs.oracle.com/en-us/iaas/data-integration/using/index.htm)
@@ -71,6 +72,7 @@ Use the following links to get more information about OCI Data Integration:
 
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

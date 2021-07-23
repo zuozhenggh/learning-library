@@ -100,7 +100,7 @@ The Pipeline you will create in this Lab step will orchestrate the execution of 
 Then, an **Expression operator** will add a new field that is populated with the Pipeline name and Task run key **system parameters of the pipeline**.
 The following **SQL task** step will get success/error input configured in the pipeline and the system parameters expression as the **Input parameters**. It will load this information in the Autonomous Data Warehouse, according to the SQL stored procedure logic.
 
-Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking result in the Data Integration Application from OCI Console.
+Any user interested in seeing the successful/ unsuccessful result of the Data Integration Pipeline along with the pipeline name and task run key will be able to either do it in the database by querying the `DWH_LOAD_STATS` table, or by checking the result in the Data Integration Application from OCI Console.
 
 
 1. From the OCI Data Integration Workspace home page, click on **Open tab** (plus icon) in the tab bar and select **Projects**.
@@ -137,10 +137,10 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 9. A page pops up with the selections for the **Integration Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected
-    - The **Workspace** you are currently working in is already selected
-    - For **Application**, make sure you select the `Workshop Application`
-    - Under **Integration Task**, check the `Load Customers Lab` task
+    - The **Compartment** with your OCI Data Integration resources is already selected.
+    - The **Workspace** you are currently working in is already selected.
+    - For **Application**, make sure you select the `Workshop Application`.
+    - Under **Integration Task**, check the `Load Customers Lab` task.
     - Click **Select**.
 
     ![](./images/select-task.png " ")
@@ -159,10 +159,10 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 13. A page pops up with the selections for the **Data Loader Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected
-    - The **Workspace** you are currently working in is already selected
-    - For **Application**, make sure you select the `Workshop Application`
-    - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task
+    - The **Compartment** with your OCI Data Integration resources is already selected.
+    - The **Workspace** you are currently working in is already selected.
+    - For **Application**, make sure you select the `Workshop Application`.
+    - Under **Data Loader Task**, check the `Load Revenue Data into Data Warehouse` task.
     - Click **Select**.
 
     ![](./images/dl-task.png " ")
@@ -189,10 +189,10 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 19. A page pops up with the selections for the **Integration Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected
-    - The **Workspace** you are currently working in is already selected
-    - For **Application**, make sure you select the `Workshop Application`
-    - Under **Integration Task**, check the `Load Employees by Regions` task
+    - The **Compartment** with your OCI Data Integration resources is already selected.
+    - The **Workspace** you are currently working in is already selected.
+    - For **Application**, make sure you select the `Workshop Application`.
+    - Under **Integration Task**, check the `Load Employees by Regions` task.
     - Click **Select**.
 
     ![](./images/new-int-select.png " ")
@@ -214,8 +214,8 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
    In the **Add Expression** panel:
 
-    - Enter name `PIPELINE_NAME_RUN` in the **Identifier** field
-    - Leave the default `VARCHAR` **Data Type** and default **Length**
+    - Enter name `PIPELINE_NAME_RUN` in the **Identifier** field.
+    - Leave the default `VARCHAR` **Data Type** and default **Length**.
     - Copy the following expression and paste it in the **Expression Builder** box. This expression concatenates the PIPELINE\_NAME system parameter with a space character and the TASK\_RUN\_KEY system parameter.
     ```
     <copy>CONCAT(CONCAT(${SYS.PIPELINE_NAME}, ' '),${SYS.TASK_RUN_KEY})</copy>
@@ -235,10 +235,10 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
 26. A page pops up with the selections for the **SQL Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected
-    - The **Workspace** you are currently working in is already selected
-    - For **Application**, make sure you select the `Workshop Application`
-    - Under **SQL Task**, check the `Procedure DWH Load Stats` task
+    - The **Compartment** with your OCI Data Integration resources is already selected.
+    - The **Workspace** you are currently working in is already selected.
+    - For **Application**, make sure you select the `Workshop Application`.
+    - Under **SQL Task**, check the `Procedure DWH Load Stats` task.
     - Click **Select**.
 
   ![](./images/sql-dwh.png " ")
@@ -257,8 +257,8 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
 30. In the new windows that is displayed:
 
-    - Leave the **Assign a value** option checked. This means you will override the default value of this parameter
-    - In Default value box, write **SUCCESS**
+    - Leave the **Assign a value** option checked. This means you will override the default value of this parameter.
+    - In Default value box, write **SUCCESS**.
     - Click **Done**.
 
   ![](./images/config-incoming.png " ")
@@ -294,10 +294,10 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
 37. A page pops up with the selections for the **SQL Task**:
 
-    - The **Compartment** with your OCI Data Integration resources is already selected
-    - The **Workspace** you are currently working in is already selected
-    - For **Application**, make sure you select the `Workshop Application`
-    - Under **Integration Task**, check the `Procedure DWH Load Stats` task
+    - The **Compartment** with your OCI Data Integration resources is already selected.
+    - The **Workspace** you are currently working in is already selected.
+    - For **Application**, make sure you select the `Workshop Application`.
+    - Under **Integration Task**, check the `Procedure DWH Load Stats` task.
     - Click **Select**.
 
   ![](./images/sql-dwh.png " ")
@@ -355,6 +355,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
   ![](./images/save-close.png " ")
 
 ## **Step 4**: Create a Pipeline task
+
 Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
 You will create a Pipeline task for the pipeline you created in the above step.
 
@@ -364,7 +365,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 2. Click **Create Task**, and then select **Pipeline**.
 
-  ![](./images/create-pip-task.png " ")
+  ![](./images/create-pipeline-task.png " ")
 
 3. On the **Create Pipeline Task** page, enter:
 
@@ -372,11 +373,11 @@ You will create a Pipeline task for the pipeline you created in the above step.
     - **Description** (optional)
     - **Project** `DI_Workshop` is auto-populated because we're creating this task from project details page.
 
-    ![](./images/pip-task-name.png " ")
+    ![](./images/pipeline-task-name.png " ")
 
 4. In the **Pipeline** section, click **Select**.
 
-  ![](./images/select-pip.png " ")
+  ![](./images/select-pipeline.png " ")
 
 5. In the **Select a Pipeline** panel, select the `Load DWH Pipeline`	that this task will run. Then, click Select.
 
@@ -384,7 +385,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
 6. After selecting the pipeline, it will automatically be validated. When you see the Validation message as **Successful**, click on **Save and Close**.
 
-  ![](./images/save-pip-task.png " ")
+  ![](./images/save-pipeline-task.png " ")
 
 ## **Step 5**: Publish the Pipeline task
 
@@ -412,6 +413,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 * [Patches in OCI Data Integration Applications](https://docs.oracle.com/en-us/iaas/data-integration/using/patches.htm#patches)
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021
