@@ -442,11 +442,11 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 19. Remap replay connection using below connect string
 
+      ![](images/emratlab3step20.png " ")
+
    ````
    <copy>DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
    ````
-
-      ![](images/emratlab3step20.png " ")
 
 20. Click **Next** using default Replay's Options
 
@@ -470,19 +470,19 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
      <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
     ```
 
-     Enter/Browse **/u01/app/database/product** for Client Oracle Home
+  -  Enter/Browse **/u01/app/database/product** for Client Oracle Home
 
-     Click **Browse** for Client Replay Directory
+  -  Click **Browse** for Client Replay Directory
 
-        ![](images/emratlab3step25.png " ")
+          ![](images/emratlab3step25.png " ")
 
-     Select **DBReplayWorkload_soecap_2** in /home/oracle/script/CAPTURE
+  -  Select **DBReplayWorkload_soecap_2** in /home/oracle/script/CAPTURE
 
         ![](images/emratlab3step25b.png " ")
 
-      Enter username : **System**  Password : **welcome1**
+  -  Enter username : **System**  Password : **welcome1**
 
-      ![](images/emratlab3step25c.png " ")   
+        ![](images/emratlab3step25c.png " ")   
 
 25. Click **Next**
 
@@ -582,17 +582,17 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
 3. Remap the connections for replay
-    ```` <copy> sql
+    ``` <copy>
     begin
     for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
     loop
-      dbms_workload_replay.remap_connection(connection_id=>i.conn_id,
-        replay_connection=>'(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
+      dbms_workload_replay.remap_connection(connection_id =\> i.conn_id,
+        replay_connection =\> '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
      end loop;
      commit;
       end;
       / </copy>
-      ````
+      ```
       ![](images/emratlab4step3.png " ")
 
 4. Prepare the replay with TIME synchronization  and query_only mode
@@ -616,14 +616,14 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
      . 19c.env
      cd /home/oracle/scripts/CAPTURE/lab4con/lab4SH
      wrc system/welcome1
-     Wait for the replay to start (22:41:37)
+
      ```
 
       ![](images/emratlab4step5.png " ")
 
      **SSH Session 1**
 
-        - Start the replay in session 1
+     Start the replay in session 1
 
      ``` sql
      SQL> exec dbms_workload_replay.START_REPLAY
