@@ -104,9 +104,13 @@ To make it simple during this lab, let's make these changes directly through the
     Note: this is required due to the fact that ORM injects the standard provider with the authentication based upon the identity associated with the CLI.
 
 
-1. Let's commit these changes to the code, but instead of pushing the code to the master repo, we are creating a new feature branch and then we are going to merge the code into the master through Pull Requests when we complete all the changes. Select `Create a new branch for this commit and start a pull request`. Set the branch name to: `release-infra`. This will not trigger a new workflow since the workflow is expecting changes to the `master` repo.
+1. Let's commit these changes to the code.
+    - create new feature branch
+    - set the branch name to `release-infra`
+    - select proposed changes to create a pull request
+    
 
-1. Create a pull request, then you need to edit the next file,  `variables.tf`. Remove the following variables:
+1. Next, edit `variables.tf` file. Remove the following variables:
     - user_ocid
     - fingerprint
     - private_key_path
