@@ -232,6 +232,7 @@ The OCI DevOps project was created automatically by the Terraform template using
 
   
     ```yaml
+    ---
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -252,7 +253,27 @@ The OCI DevOps project was created automatically by the Terraform template using
             app: nats
             version: "2.1.2"
             app.kubernetes.io/name: nats
-            run: nats  
+            run: nats
+          annotations:
+            sidecar.istio.io/rewriteAppHTTPProbers: "true"
+            prometheus.io/scrape: "true"
+            prometheus.io/path: /metrics
+            prometheus.io/port: "7777"
+        spec:
+          containers:
+            - name: nats
+              image: "nats:2.1.2"
+              imagePullPolicy: IfNotPresent
+              ports:
+                - name: client
+                  containerPort: 4222
+                  protocol: TCP
+                - name: routes
+                  containerPort: 6222
+                  protocol: TCP
+                - name: monitoring
+                  containerPort: 8222
+                  protocol: TCP
     ```
 
     > nats-service.yaml
@@ -411,6 +432,6 @@ or
 ```
 kubectl get deploy -w
 ```
-
+![devops pipeline succeed](./images/devops-pipeline-succeed.png)
 
 ## **STEP 5**: Test Fulfillment Service
