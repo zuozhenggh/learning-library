@@ -290,7 +290,7 @@ cat <your-pem-public-file>.pem | pbcopy
 
 1. Commit the file. This will trigger the pipeline upon the commit.
 
-1. Click on `Actions` menu and check the progress of `oci-build-platform` workflow. If any additional workflow is available on your actions, you can delete or ignore it at this moment.
+1. Click on `Actions` menu and check the progress of `oci-build-platform` workflow. If Actions are not enabled in your repository, click to enable it. If any additional workflow is available on your actions, you can delete or ignore them at this moment. 
 
 1. After 90s the workflow should complete and it should `FAIL`. This is expected as the Terraform template was originally designed to run through the Terraform CLI, not ORM. You need to make some changes to the terraform configuration to use ORM.
 
