@@ -110,14 +110,14 @@ To make it simple during this lab, let's make these changes directly through the
     - select proposed changes to create a pull request
     
 
-1. Next, edit `variables.tf` file. Remove the following variables:
+1. Next, edit `variables.tf` file. Make sure you selected `release-infra` on the branches selector. Then you can remove the following variables:
     - user_ocid
     - fingerprint
     - private_key_path
 
 1. Commit the change into the `release-infra` branch. This will update the pull request. 
 
-1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progress on the Action tab.
+1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can check the workflow progress on the Action tab.
 
 
 
