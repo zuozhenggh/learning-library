@@ -464,7 +464,9 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
       ![](images/emratlab3step24.png " ")
 
-24. Enter below connect string for Server Connection Identifier
+24. In Client Configuration page :
+
+  -  Enter below connect string for Server Connection Identifier
 
     ```
      <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
@@ -586,8 +588,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     begin
     for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
     loop
-      dbms_workload_replay.remap_connection(connection_id =\> i.conn_id,
-        replay_connection =\> '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
+      dbms_workload_replay.remap_connection(i.conn_id, '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
      end loop;
      commit;
       end;
