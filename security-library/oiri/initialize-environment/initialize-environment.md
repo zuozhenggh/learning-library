@@ -16,9 +16,9 @@ In this lab, you will:
 * Verify the database Status.
 * Verify the status of 12c Domain.
 * You have completed:
-      - Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-      - Lab: Prepare Setup (Free-tier and Paid Tenants only)
-      - Lab: Environment Setup
+      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
+      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
+      - Lab : Environment Setup
 
 ### Prerequisites
 

@@ -21,6 +21,9 @@ In this lab, you will:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * SSH Private Key to access the host via SSH
 * You have completed:
+      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
+      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
+      - Lab : Environment Setup
       - Lab : Initialize Environment
       - Lab : Deploy Kubernetes Cluster and Start OIG Server
 
