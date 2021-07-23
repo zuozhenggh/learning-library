@@ -149,37 +149,26 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## **STEP 5**: Start the database listeners
 
-CDB1 and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to be in `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases.
+The ORCL, CDB1, and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to be in `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases.
 
 When you start the listeners, the output indicates that the listener doesn't support any services. You can ignore this message. After you start up the databases in the labs, the listener will support the services.
 
 The listener for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTCDB1`, and `LISTCDB2` respectively.
 
-1. Start the listener for the ORCL database instance.
+1. Enter the following command to set the environment variable. At the prompt, enter ORCL.
 
     ````
-    $ . oraenv
-    Enter ORCL
-    $ lsnrctl start LISTENER
+    $ <copy>. oraenv</copy>
+    ORCL
     ````
 
-2. Start the listener for the CDB1 database instance.
+2. Start the listeners for the ORCL, CDB1, and CDB2 database instances.
 
     ````
-    $ . oraenv
-    Enter CDB1
-    $ lsnrctl start LISTCDB1
+    $ <copy>lsnrctl start LISTENER</copy>
+    $ <copy>lsnrctl start LISTCDB1</copy>
+    $ <copy>lsnrctl start LISTCDB2</copy>
     ````
-
-3. Start the listener for the CDB2 database instance.
-
-    ````
-    $ . oraenv
-    Enter CDB2
-    $ lsnrctl start LISTCDB2
-    ````
-
-
 
 ## Learn More
 
