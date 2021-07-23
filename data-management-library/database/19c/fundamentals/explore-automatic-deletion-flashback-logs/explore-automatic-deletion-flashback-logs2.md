@@ -200,15 +200,17 @@ Increase the fast recovery area size to 100GB to ensure that there will be no sp
 
     ````
     $ <copy>ls -ltr</copy>
-    total 3310656
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:57 o1_mf_jhmd2vp7_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:59 o1_mf_jhmd2ygg_.flb
+
+    total 409616
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v3ps_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v1jz_.flb
+
     ````
 
 
 ## **STEP 4**: Generate flashback logs
 
-Activity needs to be happening on the database in order for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for approximately 70 minutes. You will see many SQL commands in the output.
+Activity needs to happen on the database for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for approximately 70 minutes. You will see many SQL commands in the output.
 
 1. Double-click the **Terminal** icon on the desktop to open another terminal window. We will refer to this terminal as terminal 2.
 
