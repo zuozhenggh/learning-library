@@ -19,7 +19,7 @@ In this lab, you will:
 * All previous labs have been **successfully completed**
 
 
-## **Step 1**: Get the Workspace OCID
+## **STEP 1:** Get the Workspace OCID
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Big Data, click **Data Integration**.
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
   ![](./images/notification-ocid-copied.png " ")
 
-## **Step 2**: Create policies for ADW and Object Storage
+## **STEP 2:** Create policies for ADW and Object Storage
 
 Data Integration needs specific permissions to **Oracle Object Storage** to access metadata, and read and write data. Also working with **Autonomous Databases** in Data Integration uses Object Storage. You must create all the required Object Storage **policies** and an additional one. This lab step will guide you through the necessary policy statements that you need to add in order to perform the data integration tasks in this workshop.
 
@@ -97,7 +97,7 @@ Data Integration needs specific permissions to **Oracle Object Storage** to acce
 
   ![](./images/policy-statements.png " ")
 
-## **Step 3**: Get the Tenancy OCID
+## **STEP 3:** Get the Tenancy OCID
 
 Most types of Oracle Cloud Infrastructure resources have an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). To create the Oracle Object Storage Data Asset in OCI Data Integration, you will need the **OCID for you tenancy**, which you will get from the OCI Console.
 
@@ -111,7 +111,7 @@ Most types of Oracle Cloud Infrastructure resources have an Oracle-assigned uniq
 
 3. Paste your tenancy OCID to a local notepad, you will need it for the next step of this lab to create the Object Storage data asset in OCI Data Integration.
 
-## **Step 4**: Create Object Storage data asset
+## **STEP 4:** Create Object Storage data asset
 
 In this workshop, **Oracle Object Storage** serves as the **source data asset** for our data integration tasks. In this step you will create the Object Storage data asset in the Data integration workspace.
 
@@ -159,7 +159,7 @@ A success or failure message displays, indicating whether the test was successfu
   ![](./images/create-asset.png " ")
 
 
-## **Step 5**: Create Autonomous Data Warehouse data asset
+## **STEP 5:** Create Autonomous Data Warehouse data asset
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 

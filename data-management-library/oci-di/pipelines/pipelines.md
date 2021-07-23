@@ -20,7 +20,7 @@ In this lab, you will:
 * **Free Tier/ Paid Oracle Cloud Account**
 * All previous labs have been **successfully completed**
 
-## **Step 1**: Create an Application
+## **STEP 1:** Create an Application
 
 In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 
@@ -44,7 +44,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
   ![](./images/my-application.png " ")
 
-## **Step 2**: Publish tasks to Application
+## **STEP 2:** Publish tasks to Application
 
 In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
@@ -92,7 +92,7 @@ You will publish into the Workshop Application all of the tasks that you have cr
 
   ![](./images/all-tasks.png " ")
 
-## **Step 3**: Create a Pipeline
+## **STEP 3:** Create a Pipeline
 
 A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** to facilitate data processing. It manages and orchestrates the execution of a set of related tasks and processes. The pipeline functionality in Oracle Cloud Infrastructure Data Integration helps write complex data pipelines using published tasks from any application, and you can add data loader, integration or SQL tasks. You can create pipelines quickly using a designer similar to the Data Flow designer.
 
@@ -121,15 +121,15 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 5. The **canvas for designing the Pipeline** is now displayed. The **start and end operators** are already added by default to the canvas. You will start by renaming the Pipeline. Under Properties for the Pipeline, on Details section, currently the name is `New Pipeline`. **Rename** to `Load DWH Pipeline`.
 
-  ![](./images/pip-name.png " ")
+  ![](./images/pipeline-name.png " ")
 
 6. Click on **Save** button. The title of the pipeline will change to the pipeline name you have just added.
 
-  ![](./images/pip-renamed.png " ")
+  ![](./images/pipeline-renamed.png " ")
 
 7. To add a task, you will drag and drop a task operator from the Operators Panel. Start with the drag and drop of an **Integration task**. Connect **START\_1** operator to the **Integration task** you added.
 
-  ![](./images/add-int-step.png " ")
+  ![](./images/add-integration-step.png " ")
 
 8. In the Properties tab for **INTEGRATION\_TASK\_1**, Details section, click on Select to choose a published Integration task from your Application.
 
@@ -147,11 +147,11 @@ Any user interested in seeing the successful/ unsuccessful result of the Data In
 
 10. In the properties bar, the **Integration Task** `Load Customers Lab` is now selected. The Identifier has automatically changed with the name of Integration Task you selected. For Incoming Link Condition, leave the default option of **Always run**.  *Note: Be sure to save often during design time!*
 
-  ![](./images/pip-first-op.png " ")
+  ![](./images/pipeline-first-operator.png " ")
 
 11. Drag and drop a **Data Loader** component into the Pipeline canvas. We want this task to be run **in parallel** with the Integration task we have just defined, so connect **START\_1** operator with the **Data Loader task operator**.
 
-  ![](./images/pip-data-loader.png " ")
+  ![](./images/pipeline-data-loader.png " ")
 
 12. On the Properties tab for **DATA\_LOADER\_TASK\_1**, Details section, click on Select to choose a **published Data Loader task from your Application**.
 
@@ -354,7 +354,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
   ![](./images/save-close.png " ")
 
-## **Step 4**: Create a Pipeline task
+## **STEP 4:** Create a Pipeline task
 
 Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
 You will create a Pipeline task for the pipeline you created in the above step.
@@ -387,7 +387,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
   ![](./images/save-pipeline-task.png " ")
 
-## **Step 5**: Publish the Pipeline task
+## **STEP 5:** Publish the Pipeline task
 
 1. On the `DI_Workshop` Project Details page, from the submenu, click **Tasks**.
 

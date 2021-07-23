@@ -24,13 +24,13 @@ In this lab, you will:
 * All previous labs have been **successfully completed**
 
 
-## **Step 1**: Run the Data Loader task
+## **STEP 1:** Run the Data Loader task
 
 In this lab step, you will do a **manual on-demand run** of your **Data Loader task**. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task) in the same manner. The Tasks section of an Application details page shows the list of tasks you have published to the Application. You execute published tasks from the list.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](./images/menu_di.png " ")
+  ![](./images/menu-di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
@@ -56,13 +56,13 @@ In this lab step, you will do a **manual on-demand run** of your **Data Loader t
 
   ![](./images/data-loader-task-successful.png " ")
 
-## **Step 2**: Create a Schedule
+## **STEP 2:** Create a Schedule
 
 You will first create a **Schedule** in the Application that contains the tasks that can be scheduled for automated runs. Set up a schedule by selecting a time zone and configuring a frequency at which associated task schedules should run. You can automate task runs on an hourly schedule, or a daily or monthly schedule.
 
 1. In the Oracle Cloud Infrastructure Console navigation menu, navigate to **Analytics & AI**. Under Data Lake, click **Data Integration**.
 
-  ![](./images/menu_di.png " ")
+  ![](./images/menu-di.png " ")
 
 2. From the Workspaces page, make sure that you are in the compartment you created for data integration (`DI-compartment`). Click on your **Workspace** (`DI-workspace`).
 
@@ -102,7 +102,7 @@ You will first create a **Schedule** in the Application that contains the tasks 
 
   ![](./images/schedules-list.png " ")
 
-## **Step 3**: Schedule the Pipeline task
+## **STEP 3:** Schedule the Pipeline task
 
 You can create **task schedules** to schedule tasks to run on **specific days and times**, and at a **specific frequency**. You create a task schedule for each task that you want to run on an **automated schedule**. A task schedule must be associated with an existing schedule. You can enable or disable a task schedule at any time. In this lab step, you will schedule the Pipeline Task. However, scheduling process is the same for all tasks in OCI Data Integration.
 
@@ -155,7 +155,7 @@ You can create **task schedules** to schedule tasks to run on **specific days an
 
   ![](./images/task-schedule.png " ")
 
-## **Step 4**: Run the Pipeline task
+## **STEP 4:** Run the Pipeline task
 
 In this lab step, you will now do a **manual on-demand run** of your pipeline task. However, you can run all the published tasks in your Application (Integration task, Data Loader task, SQL task, Pipeline task).
 
@@ -175,6 +175,8 @@ In this lab step, you will now do a **manual on-demand run** of your pipeline ta
 
   ![](./images/pipeline-success.png " ")
 
+   **Congratulations!** You have completed all the labs in this workshop.
+   
 ## Learn More
 
 * [Scheduling tasks in OCI Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/using/schedules.htm)
@@ -182,6 +184,7 @@ In this lab step, you will now do a **manual on-demand run** of your pipeline ta
 * [Viewing Executed Task Runs](https://docs.oracle.com/en-us/iaas/data-integration/using/task-runs.htm)
 
 ## Acknowledgements
+
 * **Author** - Theodora Cristea
 * **Contributors** -  Aditya Duvuri, Rohit Saha
 * **Last Updated By/Date** - Theodora Cristea, July 2021

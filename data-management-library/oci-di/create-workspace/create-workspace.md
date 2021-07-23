@@ -16,7 +16,7 @@ In this lab, you will:
 * You have completed **Lab 0 - Setting up the Data Integration prerequisites in Oracle Cloud Infrastructure**
 
 
-## **Step 1**: Create policies for OCI Data Integration
+## **STEP 1:** Create policies for OCI Data Integration
 
 Oracle Cloud Infrastructure Data Integration uses **standard authentication and authorization** offered by Oracle Cloud Infrastructure. **Policies** required for OCI Data Integration will be an addition to the regular policies used in Oracle Cloud Infrastructure for accessing other necessary resources. By default, only the users in the Administrators group can access all Data Integration resources. For everyone else who's involved with Data Integration, the Cloud Administrator must create policies that gives them proper access to Data Integration resources.
 
@@ -51,7 +51,7 @@ Oracle Cloud Infrastructure Data Integration uses **standard authentication and 
 
   ![](./images/policies-list.png " ")
 
-## **Step 2**: Create an OCI Data Integration workspace
+## **STEP 2**: Create an OCI Data Integration workspace
 
 Before you can get started with Data Integration, you must first create a **Workspace** for your data integration solution. A workspace is an organizational construct to keep multiple data integration solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you can have separate workspaces for development, testing, and production. The workspace is the preliminary component of Oracle Cloud Infrastructure Data Integration.
 

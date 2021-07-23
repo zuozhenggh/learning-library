@@ -22,7 +22,7 @@ In this lab, you will:
 
 *Note:* In case you want to create a new OCI user and/or assign the user to a group, please see the following [LiveLabs workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=624&clear=180&session=17214298097566) about Identity and Access Management.
 
-## **Step 1**: Create an OCI Compartment
+## **STEP 1:** Create an OCI Compartment
 
 A **compartment** is a collection of cloud assets. For this workshop, we are creating a new compartment to help organize all of the Data Integration resources. However, if you already have a compartment, you can use that one for this Workshop and skip this step.
 
@@ -55,7 +55,7 @@ A Cloud Administrator can create a compartment in your tenancy. In this lab, as 
 
    ![](./images/new-comp.png " ")
 
-## **Step 2**: Create a VCN and Subnet using VCN Wizard
+## **STEP 2:** Create a VCN and Subnet using VCN Wizard
 
 You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data Integration workshop. **Oracle virtual cloud networks** provide customizable and private cloud networks in Oracle Cloud Infrastructure.
 
@@ -95,7 +95,7 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
   ![](./images/vcn-detail.png " ")
 
-## **Step 3**: Provision an Autonomous Data Warehouse and download Wallet
+## **STEP 3:** Provision an Autonomous Data Warehouse and download Wallet
 
 **Autonomous Data Warehouse** (ADW) is a cloud data warehouse service that eliminates all the complexities of operating a data warehouse, securing data, and developing data-driven applications. It automates provisioning, configuring, securing, tuning, scaling, and backing up of the data warehouse.
 
@@ -174,7 +174,7 @@ You will need a **Virtual Cloud Network** (VCN) for further use in this OCI Data
 
   ![](./images/download-wallet.png " ")
 
-## **Step 4**: Prepare the Autonomous Data Warehouse
+## **STEP 4:** Prepare the Autonomous Data Warehouse
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data integration tasks. In this step you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
 
@@ -233,7 +233,7 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
   ![](./images/beta-schema.png " ")
 
-## **Step 5**: Create an Object Storage bucket and upload the sample data
+## **STEP 5:** Create an Object Storage bucket and upload the sample data
 
 The Oracle Cloud Infrastructure **Object Storage** service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. The Object Storage service can store an unlimited amount of unstructured data of any content type, including analytic data and rich content, like images and videos. With Object Storage, you can safely and securely store or retrieve data directly from the internet or from within the cloud platform.
 
