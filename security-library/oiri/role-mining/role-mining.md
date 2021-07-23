@@ -17,10 +17,10 @@ In this lab, you will:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize Environment
-      - Lab 2: Deploy Kubernetes Cluster and Start OIG Server
-      - Lab 3: Deploy OIRI in the local Kubernetes Node
-      - Lab 4: Import Data into OIRI from OIG
+      - Lab : Initialize Environment
+      - Lab : Deploy Kubernetes Cluster and Start OIG Server
+      - Lab : Deploy OIRI in the local Kubernetes Node
+      - Lab : Import Data into OIRI from OIG
 
 ## **STEP 1:** Create a Role mining task
 
