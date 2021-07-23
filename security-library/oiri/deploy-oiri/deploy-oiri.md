@@ -438,6 +438,8 @@ Set up the files required for configuring data import (or data ingestion) and He
 
     ![](images/17-wallet.png)
 
+    Note: If the verification of wallet fails, use *oiri-cli --config=/app/data/conf/config.yaml wallet update* to fix the entry reported having an issue. 
+
 ## **STEP 6:** Install the OIRI Helm chart
 
 1. Create the following namespaces.
