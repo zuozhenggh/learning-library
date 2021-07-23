@@ -4,7 +4,7 @@
 
 Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private **workshop-installed** image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window, a Firefox browser, and a gedit text editor.
 
-Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser and then download the lab files.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser, download the lab files, and start the listeners for the database listeners.
 
 Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip STEP 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which is covered in STEP 1.
 
@@ -17,7 +17,7 @@ Estimated Lab Time: 15 minutes
 Learn how to do the following:
 
 - Add security rules to your existing VCN
-- Create and apply a stack in Resource Manager
+- Create and apply a stack in Resource Manager to create the workshop-installed compute instance
 - Connect to your compute instance via a browser and set up your desktop
 - Download the labs files
 
@@ -46,11 +46,11 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
-## **STEP 2**: Create and apply a stack in Resource Manager
+## **STEP 2**: Create and apply a stack in Resource Manager to create the workshop-installed compute instance
 
-> **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
+> **Note**: If you are working in the LiveLabs environment, the workshop-installed compute instance is already created for you; therefore, you can skip this step and proceed to STEP 3.
 
-1. Download [19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/UyFdPRkpgtXDamUYzyMeZckjhekdqj1BJ83Jpp8rVC1baCP06xDIKCeVX4gcTwwM/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
+1. Download [db19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/sO1PZkqdsK3-VmPZ8TMQBgKL6Mjy73iNY9O3h00qjI1TEVSVSyqBpOyTucfNbk8z/n/frmwj0cqbupb/b/19cNewFeatures/o/db19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
@@ -62,35 +62,33 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 4. In the **Stack Configuration** area, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
-  ![Stack Information](images/stack-information-page-workshop-installed.png "Stack Information page")
+  ![Stack Information Page](images/stack-information-page-workshop-installed.png "Stack Information page")
 
 5. For **Name**, leave the default stack name as is.
 
 6. For **Description**, leave the default description for the stack as is.
 
-7. Select your compartment to store the stack.
+7. Select your compartment. This compartment will be used to store the stack, the VNC (if you choose to create a new one), and the workshop-compute instance.
 
 8. Click **Next**. The **Configure Variables** page is displayed.
 
-9. In the **Instance** section, make sure the appropriate region is selected.
+9. In the **Main Configuration** section, leave **1** selected for the instance count.
 
-10. Select your compartment.
+10. Select an availability domain.
 
-11. Select an availability domain.
+11. Paste the contents of your public key into the **SSH Public Key** box. Be sure that there are no carriage returns.
 
-12. Select **Paste SSH Key**, and then paste the contents of your public key into the box. Be sure that there are no carriage returns. The key should be all on one line.
+  ![Main Configuration Section](images/main-configuration-section.png "Main Configuration Section")
 
-  ![Instance Configuration](images/instance-configuration.png "Instance Configuration")
+12. In the **Options** section, configure the following:
 
-13. In the **Network** section, choose one of the following options:
+    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, select **VM.Standard.E3.Flex**. Depending on the quota that you have in your tenancy, you can choose a different instance shape.
+    - Leave **2** set as the number of OCPUs per instance. Two OCPUs provides 32 GB of RAM, which is the minimum you need for this workshop. If you increase this value, be sure that you have the capacity available.
+    - Leave the **Use Existing VCN** check box deselected (recommended) if you want Resource Manager to create a VCN for you. If you choose to use your own VCN, select your VCN and and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires the ingress security rules specified in STEP 1 above.
 
-    - **Option 1 (Recommended)**: Leave the default settings as is to create a new VCN.
+    ![Options Section](images/options-section.png "Options Section")
 
-    ![Network Configuration](images/network-configuration.png "Network Configuration")
-
-    - **Option 2**: Select **Use existing VCN** and select an existing VCN and subnet in your tenancy. You may need to select different compartments to locate these items. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires the ingress security rules specified in STEP 1 above.
-
-14. Click **Next**.
+13. Click **Next**.
 
 15. On the **Review** page, verify that the information is correct.
 
@@ -107,7 +105,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
   ![Job Details page](images/job-details-page.png "Job Details page")
 
 
-18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. Copy the URL to the clipboard because you need it in STEP 3. Don't include `remote_desktop =`.
+18. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks.
 
     ![Image URL](images/image-url.png "Image URL")
 
@@ -116,7 +114,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 > **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
 
-1. In a browser, enter the URL to your `workshop-installed` compute instance.
+1. In a browser, enter the URL to your `workshop-installed` compute instance. If your compute instance is not displayed, wait 30 seconds and try again.
 
     You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox, a terminal window, and gedit (text editor). The Oracle Database 19c New Features workshop guide is displayed in Firefox.
 
