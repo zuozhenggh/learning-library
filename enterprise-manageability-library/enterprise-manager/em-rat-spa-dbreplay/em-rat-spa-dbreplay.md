@@ -382,7 +382,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab3step5.png " ")
 
-6. Pick **capsoe** from Search and Select workloads
+6. Pick **soecap** from Search and Select workloads
 
     ![](images/emratlab3step6.png " ")
 
@@ -445,7 +445,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
       ![](images/emratlab3step20.png " ")
 
    ````
-   <copy>DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
+   <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = oltp_cl2.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
    ````
 
 20. Click **Next** using default Replay's Options
@@ -582,8 +582,8 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
 3. Remap the connections for replay
-    ``` <copy>
-    begin
+    ```
+    <copy>begin
     for i in (select conn_id, capture_conn from dba_workload_connection_map m, dba_workload_replays r where replay_id = id and name = 'lab4rep')
     loop
       dbms_workload_replay.remap_connection(i.conn_id, '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = psal_cl1.subnet.vcn.oraclevcn.com)))');
