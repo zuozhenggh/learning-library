@@ -117,7 +117,7 @@ To make it simple during this lab, let's make these changes directly through the
 
 1. Commit the change into the `release-infra` branch. This will update the pull request. 
 
-1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can check the workflow progress on the Action tab.
+1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge.
 
 
 
