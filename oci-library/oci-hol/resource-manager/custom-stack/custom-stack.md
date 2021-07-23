@@ -1,6 +1,8 @@
-# Resource Manager
+# Create Custom Stack
 
 ## Introduction
+
+This lab is very similar to the previous one; however, it uses a custom terraform configuration instead of a provided template to create the stack. For the purposes of this lab, we have provided a terraform configuration which you will download and use to create a custom stack with Resource Manager. 
 
 In this lab, you will create configure identity access manager, create a resource manager stack, and execute the stack job.  As an optional exercise, you can migrate your Terraform configuration to Gitlab and redirect the source of your resource manager stack.
 
@@ -45,7 +47,7 @@ If you are not the administrator, you have to request the admin to give you perm
       - **Create in Compartment:** Select an existing compartment
       - **Terraform Version:** Select 0.13.x
 
-    ![](./../resource-manager/images/CreateStack01.png " ")
+    ![](./../custom-stack/images/CreateStack01.png " ")
 
 3. Click **Next**.   
       - **Configure Variables:** Configure the variables for the infrastructure resources that this stack will create when you run the apply job for this execution plan.
@@ -58,17 +60,17 @@ If you are not the administrator, you have to request the admin to give you perm
         - **Enter your CIDR Block:** 10.0.0.0/16
         - **Enter your Subnet Name:** subnet
 
-        ![](./../resource-manager/images/CreateStack02.png " ")
+        ![](./../custom-stack/images/CreateStack02.png " ")
 
 4. Click **Next**.
       - **Verify your configuration variables**
       - Click **Create**
 
-     ![](./../resource-manager/images/CreateStack03.png " ")
+     ![](./../custom-stack/images/CreateStack03.png " ")
 
 5. Before moving on to executing a job, quickly review the newly configured stack and then click on the hyperlinked stack name.
 
-    ![](./../resource-manager/images/image002.png " ")
+    ![](./../custom-stack/images/image002.png " ")
 
 ## **Step 2:** Execute Jobs: Plan & Apply
 
@@ -81,19 +83,19 @@ From the Stack Details page, we can completely manage the stack's configuration 
       - **Name:** HA LB App Plan
       - Click **Plan**
 
-    ![](./../resource-manager/images/plan01.png " ")
+    ![](./../custom-stack/images/plan01.png " ")
 
-    ![](./../resource-manager/images/plan02.png " ")
+    ![](./../custom-stack/images/plan02.png " ")
 
     **Note:** Once the modal closes, notice the job's state appears as "Accepted" - which indicates that the platform is spinning up resources needed for executing the command  - followed by "In Progress" and then either "Succeeded" or "Failed".
 
-    ![](./../resource-manager/images/plan03.png " ")
+    ![](./../custom-stack/images/plan03.png " ")
 
 2. Once the job succeeded, on the Job Details page review the information and scroll through the logs containing the Terraform output. You may also edit the job or download the Terraform Configuration and logs.
 
 3. Since the previous plan action succeeded, lets go back to the Stack page by clicking Stack Details breadcrumb on top of the page. On the Stack details page you can select the Apply button. Click on **Apply**.
 
-    ![](./../resource-manager/images/apply01.png " ")
+    ![](./../custom-stack/images/apply01.png " ")
 
 4. Enter the following information:
 
@@ -101,17 +103,17 @@ From the Stack Details page, we can completely manage the stack's configuration 
       - **Apply Job Plan Resolution** HA LB App Plan (you can select the latest succeed plan job to apply)
       - Click **Apply**
 
-    ![](./../resource-manager/images/apply02.png " ")
+    ![](./../custom-stack/images/apply02.png " ")
 
 5. The job state is updated as the job execution nears completion:
 
-   ![](./../resource-manager/images/apply03.png " ")
-   ![](./../resource-manager/images/apply04.png " ")
+   ![](./../custom-stack/images/apply03.png " ")
+   ![](./../custom-stack/images/apply04.png " ")
    
 6. Once the apply action succeeds, verify the resources have been provisioned by reading the Terraform output contained with the logs or navigate to Networking and view the different resources that now exist (VCN, load balancer, subnets, etc.) and that the 2 instances are listed in Compute. The Health Status of the Load Balancer will need a few minutes to get into OK status.
 
-    ![](./../resource-manager/images/loadbalancer.png " ")
-    ![](./../resource-manager/images/instances.png " ")
+    ![](./../custom-stack/images/loadbalancer.png " ")
+    ![](./../custom-stack/images/instances.png " ")
 
 7. When you see the Load Balancer status change to OK, copy the **IP Address** and paste it into a new web browser tab.  You should see the sample web page load and atop the page it indicates which web server you are connected to.  Press **F5** a couple of times and see the web server change as you refresh the page.  Congratulations - your sample application deployed successfully.
 
@@ -125,19 +127,19 @@ Now that we've successfully applied our Terraform to build out our cloud resourc
       - **Name:** HA LB App Destroy
       - Click **Destroy**
 
-    ![](./../resource-manager/images/destroy01.png " ")
+    ![](./../custom-stack/images/destroy01.png " ")
 
-    ![](./../resource-manager/images/destroy02.png " ")
+    ![](./../custom-stack/images/destroy02.png " ")
 
 1. Once again, notice that the state change is reflected in the console:  
 
-    ![](./../resource-manager/images/destroy03.png " ")
+    ![](./../custom-stack/images/destroy03.png " ")
     Wait until the status shows **Succeeded** before proceeding.
 
 1. The final step is to delete the stack by clicking on the More Actions button on Stack Details page. Click on **Delete Stack** and confirm it by clicking **Delete** on the modal window.
 
-    ![](./../resource-manager/images/destroy04.png " ")
-    ![](./../resource-manager/images/destroy05.png " ")
+    ![](./../custom-stack/images/destroy04.png " ")
+    ![](./../custom-stack/images/destroy05.png " ")
 
 
 *Congratulations! You have successfully completed the lab.*

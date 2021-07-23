@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps of creating your own virtual cloud network and updating the security list, allowing for future Database access. You will also walk through the steps of creating a vault and encrypted key, and the steps to create an empty Object Storage bucket for use in the migration. The OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. In this lab, Object Storage is used as temporary storage between the source and target databases with Data Pump. For more information visit the *Learn More* tab at the bottom of the page.
+This lab walks you through the steps of creating your own virtual cloud network and updating the security list, allowing for future Database access. You will also walk through the steps of creating a vault, an encrypted key, and the steps to create an empty Object Storage Bucket for use in the migration. The OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. In this lab, Object Storage is used as temporary storage between the source and target databases with Data Pump. For more information visit the *Learn More* tab at the bottom of the page.
 
 For a full understanding of the network components and their relationships view the linked video, or visit the *Learn More* tab below.
 
   [](youtube:mIYSgeX5FkM)
 
-Estimated Lab Time: 20-30 minutes 
+Estimated Lab Time: 20-30 minutes
 
 ### Objectives
 
@@ -95,9 +95,7 @@ You may now [proceed to the next lab](#next).
 
 ## **STEP 3:** Create Vault
 
-These steps walks you through the steps of creating a vault and encrypted key. For more information visit the *Learn More* tab at the bottom of the page. In these steps, you will:
-* Create a vault
-* Create a key
+These steps walks you through the steps of creating a vault and encrypted key. For more information visit the *Learn More* tab at the bottom of the page.
 
 The following task is *optional* if a Vault is already present.
 
