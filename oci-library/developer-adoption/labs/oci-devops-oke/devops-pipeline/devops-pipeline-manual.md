@@ -114,6 +114,7 @@ The OCI DevOps project was created automatically by the Terraform template using
         run: fulfillment
     spec:
       replicas: 1
+      minReadySeconds: 30
       selector:
         matchLabels:
           app: fulfillment
@@ -217,7 +218,7 @@ The OCI DevOps project was created automatically by the Terraform template using
         - port: 80
           name: http
           protocol: TCP
-          targetPort: 80  
+          targetPort: 8082
     ```
 
     > nats-deployment.yaml
@@ -242,6 +243,7 @@ The OCI DevOps project was created automatically by the Terraform template using
         run: nats
     spec:
       replicas: 1
+      minReadySeconds: 30
       selector:
         matchLabels:
           app: nats
@@ -301,7 +303,6 @@ The OCI DevOps project was created automatically by the Terraform template using
     spec:
       selector:
         app.kubernetes.io/name: nats
-        app.kubernetes.io/instance: mushop
         run: nats
       ports:
         - name: client
@@ -420,9 +421,9 @@ You can run a pipeline directly from the OCI Console or you can build integratio
 
 1. In the Start Manual Run enter a name for your deployment or leave it as is. 
 
-1. In the Parameters section, set the version of the container image that you want to deploy. E.g. 1.1.0
+1. In the Parameters section, you can set the version of the container image that you want to deploy in case you don't want to use default value.
 
-1. You can follow the execution of the pipeline directly in the console. Every stage that is running change its color to yellow or red in case of failure.
+1. You can follow the execution of the pipeline directly in the console. Every stage that is running change its color to yellow or red in case of failure. 
 
 1. You can also use Cloud Shell and [set up a connection with your cluster](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#cloudshelldownload), and then use `kubectl` to monitor the deployment of the resources. E.g.:
 ```
@@ -432,6 +433,42 @@ or
 ```
 kubectl get deploy -w
 ```
+
+After completing the execution, all stages should be green.
 ![devops pipeline succeed](./images/devops-pipeline-succeed.png)
 
-## **STEP 5**: Test Fulfillment Service
+## **STEP 5**: (Optional) Test Fulfillment Service
+
+
+1. Open up Cloud Shell, and let's use a nats client using the following command:
+    ```
+    kubectl run -i --rm --tty nats-box --image=synadia/nats-box --restart=Never
+    ```
+
+1. Press enter to gain access into the container shell. Push some data into the message queue with the following commands and json payloads:
+    ```bash
+    nats pub -s nats://nats:4222 mushop-orders '{"orderId":1}'
+    nats pub -s nats://nats:4222 mushop-orders '{"orderId":2}'
+    nats pub -s nats://nats:4222 mushop-orders '{"orderId":3}'
+    ```
+    After sending each message, you should get the following outcome in the shell:
+    ```
+    Published 13 bytes to "mushop-orders"
+    ```
+    Type `exit` to destroy the pod.
+
+1. Let's use a pod with `curl` available to query our microservice. Run the command to create a pod: 
+    ```bash
+    kubectl run -i --rm --tty curl --image=radial/busyboxplus:curl --restart=Never
+    ```
+
+1. Once inside the pod, query the fulfillment service endpoint:
+   ```bash
+    curl http://fulfillment:80/fulfillment/1
+   ````
+
+    Response:
+    ```bash
+    Order 1 is fulfilled
+    ```
+

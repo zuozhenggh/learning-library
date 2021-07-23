@@ -195,6 +195,8 @@ A `Dockerfile` is a document that contains all the commands used to assemble a C
     ENTRYPOINT ["java", "-jar", "/home/app/fulfillment/libs/fulfillment-all.jar", "-Djava.library.path=/app"]
     ```
 
+1. To avoid addiitonal configuration, delete `src/main/resources/application-oraclecloud.yaml` file as we won't be using these resources in this lab.
+
 ## **STEP 5**: (Optional) Run containerized Java application in Cloud Shell
 
 If you want to run this microservice before publihsing it into the OCI registry, you can do it on your own computer or in the [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
