@@ -82,7 +82,7 @@ If you want to use the OCI Console to create the repository, follow the steps in
 
 1. After that, `Open a pull request` page will be presented. In a real scenario, you need to select someone from the SRE/Platform team to review your code, add linked issues, etc. Make sure you are selecting to merge the code to `master` branch from ( <- ) `ocir-onboard` one. Click on Create pull request to confirm the operation.
 
-1. Someone that you (or your project) assigned should review the code. Once approved (someone need to click on `Merge pull request`), it will trigger an automated pipeline that will run the ORM job to provision the OCI Registry repository. After finishing the workflow, the `oci-cloud-native-mushop` repo should be visible in the OCI console.
+1. Someone that you (or your project) assigned should review the code. Once approved (someone need to click on `Merge pull request`), if you are using GitHub Actions (Lab 1b) it will trigger an automated pipeline that will run the ORM job to provision the OCI Registry repository. Otherwise (Lab 1a), you need to go to ORM and apply these changes to your Stack. After that, the `oci-cloud-native-mushop` repo should be visible through the OCI console.
 
 1. In the Console, open the navigation menu and click Developer Services. Under Containers, click Container Registry. Select the `cicd` compartment if not selected and locate `oci-cloud-native-mushop/mushop-fulfillment`.
 
