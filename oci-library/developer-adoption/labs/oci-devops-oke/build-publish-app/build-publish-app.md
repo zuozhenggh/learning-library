@@ -22,7 +22,7 @@ Estimated Lab time: 20 minutes
 In this lab, you will:
 
 * Create OCI Registry repository for the application
-* Containeirize a Java Microservice Application
+* Containerize a Java Microservice Application
 * Publish Java Microservice Container Image to OCI Registry.
 
 ### Prerequisites
@@ -181,7 +181,7 @@ A `Dockerfile` is a document that contains all the commands used to assemble a C
     # Stage 2 : Build the application
     FROM buildenv as appbuild
     # Copy the source code.
-    # This layer is recreated only when there are actual source chnages
+    # This layer is recreated only when there are actual source changes
     COPY src /usr/src/app/src
     # build an executable fat jar
     RUN gradle clean assemble
@@ -195,11 +195,11 @@ A `Dockerfile` is a document that contains all the commands used to assemble a C
     ENTRYPOINT ["java", "-jar", "/home/app/fulfillment/libs/fulfillment-all.jar", "-Djava.library.path=/app"]
     ```
 
-1. To avoid addiitonal configuration, delete `src/main/resources/application-oraclecloud.yaml` file as we won't be using these resources in this lab.
+1. To avoid additional configuration, delete `src/main/resources/application-oraclecloud.yaml` file as we won't be using these resources in this lab.
 
 ## **STEP 5**: (Optional) Run containerized Java application in Cloud Shell
 
-If you want to run this microservice before publihsing it into the OCI registry, you can do it on your own computer or in the [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
+If you want to run this microservice before publishing it into the OCI registry, you can do it on your own computer or in the [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 
 Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell is free to use (within monthly tenancy limits), and provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, a pre-authenticated Ansible installation, and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs.
 
@@ -337,7 +337,7 @@ $ ~/docker-compose --version
 
 ## **STEP 6**: Publish Application to OCI Registry using GitHub Actions
 
-GitHub Actions is a popular Continuous Integration tool. We are going to setup continous integration using a workflow template to generate and publish the Container image to Oracle Cloud Infrastructure Registry (OCIR).
+GitHub Actions is a popular Continuous Integration tool. We are going to setup continuos integration using a workflow template to generate and publish the Container image to Oracle Cloud Infrastructure Registry (OCIR).
 
 1. Go to `oci-cloud-native-mushop\.github\workflows` folder.
 1. Open up the file `java-ci.yml` and replace the existing content with:
@@ -533,7 +533,7 @@ jobs:
 
  (next release, just increase the minor release by 1).
 
-1. Commit the file. Like explalined earlier, you can create a feature branch and make a pull request. For sake of simplicity, Commit on the main branch. This will trigger a workflow under the Actions tab on GitHub.
+1. Commit the file. Like explained earlier, you can create a feature branch and make a pull request. For sake of simplicity, Commit on the main branch. This will trigger a workflow under the Actions tab on GitHub.
 
     ![Publish to OCIR](./images/gh-actions-publish-to-ocir.png)
 

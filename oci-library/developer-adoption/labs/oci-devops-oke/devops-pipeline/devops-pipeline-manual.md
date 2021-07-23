@@ -1,4 +1,4 @@
-# Contiuous Delivery with OCI DevOps Pipeline
+# Continuous Delivery with OCI DevOps Pipeline
 
 ## Introduction
 
@@ -320,7 +320,7 @@ The OCI DevOps project was created automatically by the Terraform template using
     ```
 
 
-In the next steops, we are going to create a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
+In the next steps, we are going to create a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
 
 ## **STEP 3**: Create DevOps Pipeline
@@ -350,7 +350,7 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
 1. Click on the Pipeline tab on the top to design your workflow. Add a Stage to your Pipeline. Click on the plus icon to add a Stage.
     ![DevOps pipeline - add stage](./images/devops-add-stage1.png) 
 
-1. OCI DevOps allow you to enforce more security controls, e.g. pause the deployment while it wait for apprvals. In our case, this is not necessary and just select `Apply manifest to your Kubernetes cluster` in the Deploy section. Then click on next.
+1. OCI DevOps allow you to enforce more security controls, e.g. pause the deployment while it wait for approvals. In our case, this is not necessary and just select `Apply manifest to your Kubernetes cluster` in the Deploy section. Then click on next.
 
     ![Filter stage types](./images/devops-add-stage2.png) 
 
@@ -472,3 +472,4 @@ After completing the execution, all stages should be green.
     Order 1 is fulfilled
     ```
 
+You may now [proceed to the next lab](#next).

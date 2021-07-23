@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab exercise, you will turn into a SRE/Platform Administrator and will provision all the Infrastructure resources used by your applicaitons through Infrastructure As Code (IaC) using [Terraform](https://www.terraform.io) on [Oracle Cloud Infrastructure Resource Manager service (ORM)](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).  
+In this lab exercise, you will turn into a SRE/Platform Administrator and will provision all the Infrastructure resources used by your applications through Infrastructure As Code (IaC) using [Terraform](https://www.terraform.io) on [Oracle Cloud Infrastructure Resource Manager service (ORM)](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).  
 
-If you are not familar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files that will represent the state of your infrastructure. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
+If you are not familiar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files that will represent the state of your infrastructure. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
 
 ![Diagram](./images/sre_infrastructure_onboarding.png)
 
@@ -87,7 +87,7 @@ To make it simple during this lab, let's make these changes directly through the
     - variables.tf
   
   
-1. Edit `providers.tf` file. Delete the code that contains the oci providers (`provider "oci"`). Then paste the following code (yes, we are replacingn 3 providers by 2):
+1. Edit `providers.tf` file. Delete the code that contains the oci providers (`provider "oci"`). Then paste the following code (yes, we are replacing 3 providers by 2):
     ```
     provider "oci" {
       alias        = "home_region"
@@ -113,7 +113,7 @@ To make it simple during this lab, let's make these changes directly through the
 
 1. Commit the change into the `release-infra` branch. This will update the pull request. 
 
-1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progres on the Action tab.
+1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progress on the Action tab.
 
 
 
@@ -150,7 +150,7 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 1. On the left hand side menu, click on `Stacks`, then Create Stack button to open up the Create Stack Wizard page. Make sure the `cicd` compartment is selected under the `List Scope` section.
 ![ORM menu](./images/oci-orm-stack-menu.png)
 
-1. In the Stack information page, select `Source Control System` for the Origin of the Terraform configuration, then select the followingn under Stack Configurations:
+1. In the Stack information page, select `Source Control System` for the Origin of the Terraform configuration, then select the following under Stack Configurations:
 
     |Property|Value|
     |--|--|

@@ -19,11 +19,11 @@
             "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-github-actions.md"
         },
         {
-            "title": "Lab 2: Build and Publish Application - Continous Integration",
+            "title": "Lab 2: Build and Publish Application - Continuos Integration",
             "filename": "../../labs/oci-devops-oke/build-publish-app/build-publish-app.md"
         },
         {
-            "title": "Lab 3: Contiuous Delivery with OCI DevOps Pipeline",
+            "title": "Lab 3: Continuous Delivery with OCI DevOps Pipeline",
             "filename": "../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
         },        
         {

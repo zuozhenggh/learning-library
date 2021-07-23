@@ -19,7 +19,7 @@ These techniques enable loosely coupled systems that are resilient, manageable, 
 ## Oracle DevOps
 
 Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform for developers. It includes *Deployment Pipelines* to automate your software delivery, and deployment process targeting OCI services: 
-- Oracle Container Engine for Kurbernetes (OKE)
+- Oracle Container Engine for Kubernetes (OKE)
 - Oracle Functions (Fn)
 - Compute instances
 
@@ -48,9 +48,9 @@ As a SRE/Platform Engineer:
 - write Infrastructure As Code (IaC) and provision the infrastructure
 - push IaC to a git repository (`deploy` repository)
 - approve/reject pull/merge requests into `main` branch of `deploy` repository
-- approve and onboard applications (new namespace) into the K8s cluster through an automated Continous Delivery (CD) pipeline
+- approve and onboard applications (new namespace) into the K8s cluster through an automated Continuos Delivery (CD) pipeline
 - write K8s manifest files for deploying services/endpoints/security used by application
-- rollout new features/services through the Continous Delivery pipeline
+- rollout new features/services through the Continuos Delivery pipeline
 - rollback to the latest successful pipeline in case of failures
 
 ![Diagram](./images/devops-story-diagram.png "Roles")
@@ -85,4 +85,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Jonathan Schreiber
 * **Contributors** -  Lucas Gomes, Rishi Johari
-* **Last Updated By/Date** - Lucas Gomes, June 2021
+* **Last Updated By/Date** - Lucas Gomes, July 2021

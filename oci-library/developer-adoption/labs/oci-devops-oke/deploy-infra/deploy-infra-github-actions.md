@@ -10,7 +10,7 @@ To deploy/provision application and infrastructure, you need to update your git 
 
 As part of this lab, you will turn into a SRE/Platform Administrator and will provision all the Infrastructure resources used by your applications through Infrastructure As Code (IaC) using [Terraform](https://www.terraform.io) on [Oracle Cloud Infrastructure Resource Manager service (ORM)](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm) with GitHub Actions.  
 
-If you are not familar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
+If you are not familiar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
 
 ![Diagram](./images/sre_infrastructure_onboarding.png)
 
@@ -325,7 +325,7 @@ cat <your-pem-public-file>.pem | pbcopy
 
 1. Commit the change into the `release-infra` branch. This will update the pull request. 
 
-1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progres on the Action tab.
+1. Finally, click on `Merge pull request` button. Provide your comments and then click on Confirm merge. You can finally check the workflow progress on the Action tab.
 
 1. It may take about 20 minutes to complete the provisioning workflow. Upon success, you will have provisioned all the infrastructure resources in the Oracle Cloud Infrastructure. This is the final step we used to provision the infrastructure. You can go back to OCI Console and check the resources that were created, including the OCI DevOps service.
 
