@@ -60,7 +60,7 @@ In this step, you review important initialization parameters, enable `ARCHIVELOG
     db_recovery_file_dest_size	         big integer 50G
     ````
 
-5. Verify that the COMPATIBLE initialization parameter value is set to 19.0.0 or higher. The results indicate that the value is 19.0.0.
+5. Verify that the `COMPATIBLE` initialization parameter value is set to 19.0.0 or higher. The results indicate that the value is 19.0.0.
 
     ````
     SQL> <copy>SHOW PARAMETER COMPATIBLE</copy>
