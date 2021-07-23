@@ -184,19 +184,37 @@ Increase the fast recovery area size to 100GB to ensure that there will be no sp
     System altered.
     ````
 
-2. Exit SQL*Plus.
+2. You can monitor the space availability in the flash recovery area by querying the `v$recovery_file_dest` view:
+
+    ````
+    SQL> <copy>select
+    name,
+    to_char(space_limit, '999,999,999,999') as space_limit,
+    to_char(space_limit - space_used + space_reclaimable,
+   '999,999,999,999') as space_available,
+    round((space_used - space_reclaimable)/space_limit * 100, 1) as pct_full
+    from
+    v$recovery_file_dest;</copy>
+
+    SPACE_LIMIT	     SPACE_AVAILABLE  PCT_FULL
+    ---------------- ---------------- ----------
+    /u01/app/oracle/recovery_area
+    107,374,182,400  68,124,017,664	  36.6
+    ````
+
+3. Exit SQL*Plus.
 
     ````
     SQL> <copy>EXIT</copy>
     ````
 
-3. Change to the `flashback` directory.
+4. Change to the `flashback` directory.
 
     ````
     $ <copy>cd /u01/app/oracle/recovery_area/CDB1/flashback</copy>
     ````
 
-4. List the files in the `flashback` directory.
+5. List the files in the `flashback` directory.
 
     ````
     $ <copy>ls -ltr</copy>
@@ -220,59 +238,52 @@ Activity needs to happen on the database for the database to generate flashback 
     $ <copy>$HOME/labs/19cnf/workload.sh</copy>
     ````
 
-3. Wait 70 minutes. Every now and again, on terminal 1, refresh the list of files in the `flashback` directory to view the accumulating log files.
+3. Wait 70 minutes. Every now and again, on terminal 1, refresh the list of files in the `flashback` directory to view the accumulating log files. In this example, the first log is at 19:30 and the last log is at 20:39, which is within 70 minutes.
 
     ````
     $ <copy>ls -ltr</copy>
 
-    total 5654432
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:57 o1_mf_jhmd2vp7_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:59 o1_mf_jhmd2ygg_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:59 o1_mf_jhmdd64h_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:59 o1_mf_jhmdh4lz_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 17:59 o1_mf_jhmdhxqr_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:00 o1_mf_jhmdjjt5_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:00 o1_mf_jhmdjzh5_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:01 o1_mf_jhmdkvj5_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:01 o1_mf_jhmdlkjo_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:01 o1_mf_jhmdm7k9_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:01 o1_mf_jhmdmomp_.flb
-    -rw-r-----. 1 oracle oinstall 221011968 Jul 22 18:05 o1_mf_jhmdn2mf_.flb
-    -rw-r-----. 1 oracle oinstall 231956480 Jul 22 18:05 o1_mf_jhmdnooo_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:06 o1_mf_jhmdtkto_.flb
-    -rw-r-----. 1 oracle oinstall 209723392 Jul 22 18:06 o1_mf_jhmdvmw6_.flb
-    -rw-r-----. 1 oracle oinstall 210739200 Jul 22 18:06 o1_mf_jhmdwf3o_.flb
-    -rw-r-----. 1 oracle oinstall 218079232 Jul 22 18:07 o1_mf_jhmdx64g_.flb
-    -rw-r-----. 1 oracle oinstall 221331456 Jul 22 18:07 o1_mf_jhmdxw5x_.flb
-    -rw-r-----. 1 oracle oinstall 231260160 Jul 22 18:08 o1_mf_jhmdyp8f_.flb
-    -rw-r-----. 1 oracle oinstall 238551040 Jul 22 18:08 o1_mf_jhmdzhf6_.flb
-    -rw-r-----. 1 oracle oinstall 244572160 Jul 22 18:09 o1_mf_jhmf08kz_.flb
-    -rw-r-----. 1 oracle oinstall 250134528 Jul 22 18:11 o1_mf_jhmf1bqg_.flb
-    -rw-r-----. 1 oracle oinstall 257343488 Jul 22 18:11 o1_mf_jhmf24jx_.flb
-    -rw-r-----. 1 oracle oinstall 240459776 Jul 22 18:12 o1_mf_jhmf610q_.flb
-    -rw-r-----. 1 oracle oinstall 251944960 Jul 22 18:12 o1_mf_jhmf86lf_.flb
-    -rw-r-----. 1 oracle oinstall 246349824 Jul 22 18:12 o1_mf_jhmf73y5_.flb
+    total 16986532
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:31 o1_mf_jhp5v1jz_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp5v3ps_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp68vtw_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7mm15_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7mq40_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7myc0_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7n2b1_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7nh9z_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7nzos_.flb
+    -rw-r-----. 1 oracle oinstall 224043008 Jul 23 19:55 o1_mf_jhp7odok_.flb
+    -rw-r-----. 1 oracle oinstall 251871232 Jul 23 19:56 o1_mf_jhp7osq8_.flb
+    -rw-r-----. 1 oracle oinstall 288407552 Jul 23 19:56 o1_mf_jhp7phyl_.flb
+    -rw-r-----. 1 oracle oinstall 313163776 Jul 23 19:57 o1_mf_jhp7q138_.flb
+    -rw-r-----. 1 oracle oinstall 354869248 Jul 23 19:58 o1_mf_jhp7qqmr_.flb
+    -rw-r-----. 1 oracle oinstall 373309440 Jul 23 19:59 o1_mf_jhp7rgf0_.flb
+    -rw-r-----. 1 oracle oinstall 406568960 Jul 23 20:00 o1_mf_jhp7t999_.flb
+    -rw-r-----. 1 oracle oinstall 435585024 Jul 23 20:01 o1_mf_jhp7wk19_.flb
+    -rw-r-----. 1 oracle oinstall 468090880 Jul 23 20:10 o1_mf_jhp7zc6r_.flb
+    -rw-r-----. 1 oracle oinstall 496328704 Jul 23 20:12 o1_mf_jhp81rjj_.flb
+    -rw-r-----. 1 oracle oinstall 449732608 Jul 23 20:14 o1_mf_jhp8kc2r_.flb
+    -rw-r-----. 1 oracle oinstall 476061696 Jul 23 20:15 o1_mf_jhp8npc0_.flb
+    -rw-r-----. 1 oracle oinstall 493371392 Jul 23 20:17 o1_mf_jhp8rby1_.flb
+    -rw-r-----. 1 oracle oinstall 514662400 Jul 23 20:19 o1_mf_jhp8vsh8_.flb
+    -rw-r-----. 1 oracle oinstall 536797184 Jul 23 20:21 o1_mf_jhp8yxr8_.flb
+    -rw-r-----. 1 oracle oinstall 561537024 Jul 23 20:22 o1_mf_jhp920gk_.flb
+    -rw-r-----. 1 oracle oinstall 575512576 Jul 23 20:24 o1_mf_jhp9600k_.flb
+    -rw-r-----. 1 oracle oinstall 599228416 Jul 23 20:24 o1_mf_jhp992oz_.flb
+    -rw-r-----. 1 oracle oinstall 633700352 Jul 23 20:25 o1_mf_jhp9cx0c_.flb
+    -rw-r-----. 1 oracle oinstall 662503424 Jul 23 20:26 o1_mf_jhp9dbmz_.flb
+    -rw-r-----. 1 oracle oinstall 698908672 Jul 23 20:27 o1_mf_jhp9fgs1_.flb
+    -rw-r-----. 1 oracle oinstall 737828864 Jul 23 20:28 o1_mf_jhp9h9op_.flb
+    -rw-r-----. 1 oracle oinstall 775241728 Jul 23 20:30 o1_mf_jhp9jrnp_.flb
+    -rw-r-----. 1 oracle oinstall 796229632 Jul 23 20:33 o1_mf_jhp9mrth_.flb
+    -rw-r-----. 1 oracle oinstall 819183616 Jul 23 20:35 o1_mf_jhp9qsq8_.flb
+    -rw-r-----. 1 oracle oinstall 841007104 Jul 23 20:38 o1_mf_jhp9w45h_.flb
+    -rw-r-----. 1 oracle oinstall 870170624 Jul 23 20:38 o1_mf_jhpb6fd7_.flb
+    -rw-r-----. 1 oracle oinstall 852779008 Jul 23 20:39 o1_mf_jhpb1c6w_.flb
     ...
-
     ````
 
-4. You can monitor the space availability in the flash recovery area by querying the `v$recovery_file_dest` view:
-
-    ````
-    SQL> <copy>select
-    name,
-    to_char(space_limit, '999,999,999,999') as space_limit,
-    to_char(space_limit - space_used + space_reclaimable,
-   '999,999,999,999') as space_available,
-    round((space_used - space_reclaimable)/space_limit * 100, 1) as pct_full
-    from
-    v$recovery_file_dest;</copy>
-
-    SPACE_LIMIT	     SPACE_AVAILABLE  PCT_FULL
-    ---------------- ---------------- ----------
-    /u01/app/oracle/recovery_area
-    107,374,182,400  68,124,017,664	  36.6
-    ````
 
 ## **STEP 5**: Decrease the flashback retention period to 60 minutes
 
@@ -298,10 +309,50 @@ From this point on, you can work in terminal 1. Keep terminal 2 open to continue
     ````
 
 
-3. List the flashback logs again. Notice that logs generated over 10 minutes ago have automatically been deleted.
+3. List the flashback logs again. Notice that logs generated over 10 minutes ago have automatically been deleted. In this example, the first log is at 19:54 and the last log is at 20:46, which is within 60 minutes. The logs dated beyond the 60 minute mark are automatically deleted.
 
     ````
     $ <copy>ls -ltr /u01/app/oracle/recovery_area/CDB1/flashback</copy>
+
+    total 18511296
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp5v3ps_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp68vtw_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7mm15_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7mq40_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:54 o1_mf_jhp7myc0_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7n2b1_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7nh9z_.flb
+    -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:55 o1_mf_jhp7nzos_.flb
+    -rw-r-----. 1 oracle oinstall 224043008 Jul 23 19:55 o1_mf_jhp7odok_.flb
+    -rw-r-----. 1 oracle oinstall 251871232 Jul 23 19:56 o1_mf_jhp7osq8_.flb
+    -rw-r-----. 1 oracle oinstall 288407552 Jul 23 19:56 o1_mf_jhp7phyl_.flb
+    -rw-r-----. 1 oracle oinstall 313163776 Jul 23 19:57 o1_mf_jhp7q138_.flb
+    -rw-r-----. 1 oracle oinstall 354869248 Jul 23 19:58 o1_mf_jhp7qqmr_.flb
+    -rw-r-----. 1 oracle oinstall 373309440 Jul 23 19:59 o1_mf_jhp7rgf0_.flb
+    -rw-r-----. 1 oracle oinstall 406568960 Jul 23 20:00 o1_mf_jhp7t999_.flb
+    -rw-r-----. 1 oracle oinstall 435585024 Jul 23 20:01 o1_mf_jhp7wk19_.flb
+    -rw-r-----. 1 oracle oinstall 468090880 Jul 23 20:10 o1_mf_jhp7zc6r_.flb
+    -rw-r-----. 1 oracle oinstall 496328704 Jul 23 20:12 o1_mf_jhp81rjj_.flb
+    -rw-r-----. 1 oracle oinstall 449732608 Jul 23 20:14 o1_mf_jhp8kc2r_.flb
+    -rw-r-----. 1 oracle oinstall 476061696 Jul 23 20:15 o1_mf_jhp8npc0_.flb
+    -rw-r-----. 1 oracle oinstall 493371392 Jul 23 20:17 o1_mf_jhp8rby1_.flb
+    -rw-r-----. 1 oracle oinstall 514662400 Jul 23 20:19 o1_mf_jhp8vsh8_.flb
+    -rw-r-----. 1 oracle oinstall 536797184 Jul 23 20:21 o1_mf_jhp8yxr8_.flb
+    -rw-r-----. 1 oracle oinstall 561537024 Jul 23 20:22 o1_mf_jhp920gk_.flb
+    -rw-r-----. 1 oracle oinstall 575512576 Jul 23 20:24 o1_mf_jhp9600k_.flb
+    -rw-r-----. 1 oracle oinstall 599228416 Jul 23 20:24 o1_mf_jhp992oz_.flb
+    -rw-r-----. 1 oracle oinstall 633700352 Jul 23 20:25 o1_mf_jhp9cx0c_.flb
+    -rw-r-----. 1 oracle oinstall 662503424 Jul 23 20:26 o1_mf_jhp9dbmz_.flb
+    -rw-r-----. 1 oracle oinstall 698908672 Jul 23 20:27 o1_mf_jhp9fgs1_.flb
+    -rw-r-----. 1 oracle oinstall 737828864 Jul 23 20:28 o1_mf_jhp9h9op_.flb
+    -rw-r-----. 1 oracle oinstall 775241728 Jul 23 20:30 o1_mf_jhp9jrnp_.flb
+    -rw-r-----. 1 oracle oinstall 796229632 Jul 23 20:33 o1_mf_jhp9mrth_.flb
+   -rw-r-----. 1 oracle oinstall 819183616 Jul 23 20:35 o1_mf_jhp9qsq8_.flb
+    -rw-r-----. 1 oracle oinstall 841007104 Jul 23 20:38 o1_mf_jhp9w45h_.flb
+    -rw-r-----. 1 oracle oinstall 852779008 Jul 23 20:41 o1_mf_jhpb1c6w_.flb
+    -rw-r-----. 1 oracle oinstall 870170624 Jul 23 20:44 o1_mf_jhpb6fd7_.flb
+    -rw-r-----. 1 oracle oinstall 890109952 Jul 23 20:44 o1_mf_jhpbl1v7_.flb
+    -rw-r-----. 1 oracle oinstall 880967680 Jul 23 20:46 o1_mf_jhp5v1jz_.flb
     ````
 
 
