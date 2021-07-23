@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab is very similar to the previous one; however, it uses a custom terraform configuration instead of a provided template to create the stack. For the purposes of this lab, we have provided a terraform configuration which you will download and use to create a custom stack with Resource Manager. 
+
 In this lab, you will create configure identity access manager, create a resource manager stack, and execute the stack job.  As an optional exercise, you can migrate your Terraform configuration to Gitlab and redirect the source of your resource manager stack.
 
 **Note:** *Some of the UIs might look a little different than the screenshots included in the instructions. However, you can still use the instructions to complete the hands-on labs.*

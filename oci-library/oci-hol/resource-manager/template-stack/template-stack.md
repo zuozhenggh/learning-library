@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab details the creation of a stack from one of Oracle's provided templates; however, you can use Lab 3 to learn how to use your own terraform configurations to create a stack. The process for both is very similar but have been split into two labs in order to show the differing steps. 
+
 In this lab, you will create configure identity access manager, create a resource manager stack, and execute the stack job.  As an optional exercise, you can migrate your Terraform configuration to Gitlab and redirect the source of your resource manager stack.
 
 **Note:** *Some of the UIs might look a little different than the screenshots included in the instructions. However, you can still use the instructions to complete the hands-on labs.*
