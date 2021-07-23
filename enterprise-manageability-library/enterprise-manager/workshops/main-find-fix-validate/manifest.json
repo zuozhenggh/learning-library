@@ -4,8 +4,8 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
-      "filename": "./../../intro/intro.md"
+      "description": "Introduction to Database Performance Management Workshop",
+      "filename": "./../../intro/intro-find-fix-validate.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",

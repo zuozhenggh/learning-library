@@ -4,13 +4,8 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
-      "filename": "./../../intro/intro.md"
-    },
-    {
-      "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+      "description": "Introduction to Database Configuration and Compliance Management Workshop",
+      "filename": "./../../intro/intro-config-compliance.md"
     },
     {
       "title": "Lab 1: Environment Setup",

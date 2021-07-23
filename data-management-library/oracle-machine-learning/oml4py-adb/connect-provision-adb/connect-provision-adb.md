@@ -73,7 +73,7 @@ First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
     ![](images/oml-create-user-2.png)
 
-## **Step 3:** Allow OMLUSER to access Database Actions
+## **Step 3:** Allow OMLUSER to Access Database Actions
 
 1. On the tab with your ADW instance, and click on **Open Database Actions**.
 

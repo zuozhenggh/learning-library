@@ -123,17 +123,17 @@ Before you start, be sure that you have done the following:
 ## **STEP 5**: Use DBCA to clone a remote PDB from a CDB
 1. Launch DBCA in silent mode to clone PDB1 from CDB1 as PDB2 in CDB2.
     ```
-    $ dbca -silent
-        -createPluggableDatabase
-          -pdbName PDB2
-          -sourceDB CDB2
-        -createFromRemotePDB
-          -remotePDBName PDB1
-          -remoteDBConnString CDB1
-          -remoteDBSYSDBAUserName SYS
-          -remoteDBSYSDBAUserPassword Ora4U_1234
-          -dbLinkUsername c##remote_user
-          -dbLinkUserPassword Ora4U_1234
+    $ dbca -silent\
+    -createPluggableDatabase\
+    -pdbName PDB2\
+    -sourceDB CDB2\
+    -createFromRemotePDB\
+    -remotePDBName PDB1\
+    -remoteDBConnString CDB1\
+    -remoteDBSYSDBAUserName SYS\
+    -remoteDBSYSDBAUserPassword Ora4U_1234\
+    -dbLinkUsername c##remote_user\
+    -dbLinkUserPassword Ora4U_1234
     ```
 
 2. Review the cloning log.
