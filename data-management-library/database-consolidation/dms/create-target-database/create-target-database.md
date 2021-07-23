@@ -23,7 +23,7 @@ In this lab, you will:
 
 ## **STEP 1**: Add Network Security Group
 
-The following tasks are *optional* if a target autonomous database is already present. In the first phase of DMS\_LA an autonomous database with private IP address is required.
+The following tasks are *optional* if a target autonomous database is already present.
 
 1. You first need to create a Network Security Group for use in a Private IP ADB instance. In the OCI Console Menu, go to **Networking > Virtual Cloud Networks** and pick your VCN.
 
@@ -60,13 +60,13 @@ The following tasks are *optional* if a target autonomous database is already pr
     - Database Name: **TargetATP**
     - Create administrator credentials – Password: *password of your choice*
     - Access Type: **Secure Access from Everywhere**
-    - Choose a license type: **Bring Your Own License (BYOL)**
+    - Choose a license type: **License Included**
 
   ![](images/atp-name.png)
 
   ![](images/atp-password.png)
 
-  ![](images/atp-network-license.png)
+  ![](images/adb-lt.png)
 
 5. Close the dialog by pressing **Create Autonomous Database**.
 
