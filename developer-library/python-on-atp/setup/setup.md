@@ -20,29 +20,25 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.  This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1.  There are two options for running the the workshop labs.  One uses the always free services (compute and ATP) and the other uses non-free services.  You may wish to use the always free version, but if you are already using your always free version, or multiple users are running the workshop in a single tenancy you will need to use the non-free version.  Download either the [free terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf-free.zip) or the [non-free terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/python4atp-tf.zip).
+1. This workshop uses non-free services.
 
-2. Log into the Oracle Cloud and on the OCI console, click on the hamburger menu upper left and scroll down to **Solutions and Platform**. Hover over **Resource Manager** and click on **Stacks**.
+2. Click  [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-ashburn-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/python4atp/o/tf-v1.1.zip)
 
-   ![](images/010.png " ")
 
 3. Make sure the **Compartment** on the left side says root. If not, then change it to root. Then, click **Create Stack**.
 
   ![](images/011.png " ")
 
-4. Select **My Configuration**, choose the **.ZIP FILE** button, Click on **Browse** and find the zipped **python4atp-tf-free.zip** or **python4atp-tf.zip** file if using the non-free version. 
-
-  ![](./images/zip-file.png)
 
   Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
 
 
-5. There are two required variables - **VNC password** and **Database password**.  Enter these noting that the database password must confirm to rules noted on the screen.  All other variables are defaulted in.  **IF others are running this workshop at the same time in the same tenancy you also need to make the database name and the object storage bucket unique**.  Otherwise select Next.
+4. There are three required variables - **Availability Domain** , **VNC password** and **Database password**.  Enter these noting that the database password must confirm to rules noted on the screen.  All other variables are defaulted in.  **IF others are running this workshop at the same time in the same tenancy you also need to make the database name and the object storage bucket unique**.  Otherwise select Next.
 
   ![](images/013.png " ")
 
 
-8. Click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
+5. Click **create**.  Note the screen will freeze for a few seconds before returning..be patient.
 
   ![](images/014.png " ")
 
@@ -276,8 +272,7 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Authors/Contributors** - Derrick Cameron
-- **Last Updated By/Date** - Kay Malcolm, April 2020
-- **Workshop Expiration Date** - April 31, 2021
+- **Last Updated By/Date** - Varun Yadav, July 2021
 
 
 

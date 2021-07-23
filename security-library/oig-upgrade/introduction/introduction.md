@@ -2,7 +2,9 @@
 
 ## About this Workshop
 
-Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. This Workshop provides hands on experience of performing one-hop upgrade of Oracle Identity Manager(OIM) 11g Release 2 (11.1.2.3.0) using the Oracle published "how to upgrade guides". One-hop upgrade enables you to perform the upgrade on the same middle-tier machine or migrate to a new machine as part of the upgrade process. This workshop drives you through step by step process to be performed for upgrading Oracle Identity Manager from 11g Release 2 to Oracle Identity Manager 12c (12.2.1.4.0) directly, using the one-hop upgrade process.
+Oracle Identity Governance(OIG) is a powerful and flexible enterprise identity management system that automatically manages user's access privileges within enterprise IT resources. This Workshop provides hands on experience of performing one-hop upgrade of Oracle Identity Manager(OIM) 11g Release 2 (11.1.2.3.0) using the Oracle published "how to upgrade guides".
+
+One-hop upgrade enables you to perform the upgrade on the same middle-tier machine or migrate to a new machine as part of the upgrade process. This workshop drives you through step by step process to be performed for upgrading Oracle Identity Manager from 11g Release 2 to Oracle Identity Manager 12c (12.2.1.4.0) directly, using the one-hop upgrade process.
 
 *Estimated Lab Time*: 2 hours
 
@@ -25,7 +27,6 @@ In this Workshop, you will:
 ### Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
