@@ -476,7 +476,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
   -  Click **Browse** for Client Replay Directory
 
-  -  Select **DBReplayWorkload_soecap_2** in /home/oracle/script/CAPTURE
+  -  Select **DBReplayWorkload\_soecap\_2** in /home/oracle/script/CAPTURE
 
   -  Enter username : **System**  Password : **welcome1**
 
