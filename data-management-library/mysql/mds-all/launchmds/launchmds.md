@@ -1034,146 +1034,161 @@ ALTER TABLE nation SECONDARY_LOAD;
 
 ## **STEP 12:**   – Create PHP MySQL Application
 
-Step 1 – Install App Server (APACHE)
+Task 1 – Install App Server (APACHE)
 
-1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
-
-$ ssh -i <private_key_file> opc@<new_compute_instance_ip>
+1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH ... be sure replace the  "private key file"  and the "new compute instance ip"
 
 
+     ```` 
+    <copy>ssh -i private_key_file opc@new_compute_instance_ip</copy>
+     ````
 2.	Install app server 
+    
+    ````
+    <copy>sudo yum install httpd</copy>
+    ````
+    
+    ````
+    <copy>sudo systemctl enable httpd</copy>
+    ````
+    
+    ````
+    <copy>sudo systemctl restart httpd</copy>
+    ````
+     
+    ````
+    <copy>sudo firewall-cmd --permanent --add-port=80/tcp</copy>
+    ````
+     
+    ````
+    <copy>sudo firewall-cmd --reload</copy>
+    ````
+    
+3.	From a browser test apache from your loacal machine using the Public IP Address of your Compute Instance
 
-$ sudo yum install httpd
-$ sudo systemctl enable httpd
-$ sudo systemctl restart httpd
-$ sudo firewall-cmd --permanent --add-port=80/tcp
-$ sudo firewall-cmd --reload
+    Example: http://129.213....
 
-3.	From browser test apache from remote machine using the Public IP Address of your Compute Instance
-
-Example: http://129.213....
-
-Step 2 – Install PHP
+Task 2 – Install PHP    
 
 1.	Install php: 
-Find alternantive!!!
-$ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-$ sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-$ sudo yum install yum-utils
-$ sudo yum-config-manager --enable remi-php74
-$ sudo yum install php php-cli php-mysqlnd php-zip php-gd php-mcrypt php-mbstring php-xml php-json php-mysql_xdevapi
-$ php -v
-$ php -m |grep mysql
-$ sudo systemctl restart httpd
-$ sudo nano /var/www/html/info.php
-<?php
+
+    ````
+    <copy> sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm </copy>
+    ````
+    ````
+    <copy>sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm</copy>
+    ````
+    ````
+    <copy>sudo yum install yum-utils</copy>
+    ````
+    ````
+    <copy>sudo yum-config-manager --enable remi-php74</copy>
+    ````
+    ````
+    <copy>sudo yum install php php-cli php-mysqlnd php-zip php-gd php-mcrypt php-mbstring php-xml php-json php-mysql_xdevapi</copy>
+    ````
+    ````
+    <copy>php -v</copy>
+    ````
+    ````
+    <copy>php -m |grep mysql</copy>
+    ````
+    ````
+    <copy>sudo systemctl restart httpd</copy>
+    ````
+
+2.	Create test php file (info.php)
+
+    ```` 
+    <copy>sudo nano /var/www/html/info.php</copy>   
+    ````
+3. Add the following code to the editor and save the file (ctr + o) (ctl + x)
+
+    ````
+    <copy><?php
 phpinfo();
-?>
+?></copy>
+    ````
+4. From your local machine, browse the page info.php
 
-2.	From remote machine, browse the page info.php
+   Example: http://129.213.167.../info.php
 
-Example: http://129.213.167.../info.php
+Task 3 – Create MDS / PHP connect app
 
-Step 3 – Create MDS / PHP connect app
+1.	Security update"   set SELinux to allow Apache to connect to MySQL
 
-1.	Security update: SELinux to allow Apache to connect to MySQL
+    ````
+    <copy> sudo setsebool -P httpd_can_network_connect 1 </copy>
+    ````
 
-$ sudo setsebool -P httpd_can_network_connect 1
-$ sudo setsebool -P httpd_can_network_connect_db 1
 2.	Create config.php
 
-$ cd /var/www/html
-$ sudo nano config.php
+    ````
+    <copy>cd /var/www/html</copy>
+    ````
 
-<?php
-/* Database credentials*/
-define('DB_SERVER', '10.0.1.?');// MySQL Database Service server IP address 
+    ````
+    <copy>sudo nano config.php</copy>
+    ````
+3. Add the following code to the editor and save the file (ctr + o) (ctl + x)
+
+    ````
+    <copy><?php
+// Database credentials
+define('DB_SERVER', '10.0.1...');// MDS server IP address
 define('DB_USERNAME', 'admin');
-define('DB_PASSWORD', 'Welcome1!');
-define('DB_NAME', 'tpch');
-
-/* Attempt to connect to MySQL database */
+define('DB_PASSWORD', 'Welcome#123');
+define('DB_NAME', 'sys');
+//Attempt to connect to MySQL database
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 // Print host information
-//echo "Connect Successfully. Host info: " . mysqli_get_host_info($link);
+echo 'Successfull Connect.';
+echo 'Host info: ' . mysqli_get_host_info($link);
+?> 
+</copy>
+    ````
 
-// Set HeatWave engine access on / off 
-/*$result = mysqli_query($link, "set @@use_secondary_engine=On;");*/
+4.	Create dbtest.php
 
+    ````
+    <copy>cd /var/www/html</copy>
+    ````
 
-/*$result = mysqli_query($link, "set @@use_secondary_engine=Off;");
+    ````
+    <copy>sudo nano dbtest.php</copy>
+    ````
+5. Add the following code to the editor and save the file (ctr + o) (ctl + x)
 
-if ($result = mysqli_query($link, "select @@use_secondary_engine;")) {
-    $row = mysqli_fetch_row($result);
-    printf("use_secondary_engine is %s\n", $row[0]);
-    mysqli_free_result($result);
-}*/
-
-?>
-3.	Save the file config.php
-4.	Create dbhwtest.php
-$ sudo nano dbhwtest.php
-
-<?php
+    ````
+    <copy><?php
 require_once "config.php";
-$query="SELECT  nation, o_year, SUM(amount) AS sum_profit
-FROM (SELECT
-        n_name AS nation,
-        YEAR(o_ORDERdate) AS o_year,
-        l_extendedprice * (1 - l_discount) - ps_supplycost * l_quantity AS amount
-    FROM
-        part
-    STRAIGHT_JOIN partsupp
-    STRAIGHT_JOIN lineitem
-    STRAIGHT_JOIN supplier
-    STRAIGHT_JOIN orders
-STRAIGHT_JOIN nation
-    WHERE
-        s_suppkey = l_suppkey
-            AND ps_suppkey = l_suppkey
-            AND ps_partkey = l_partkey
-            AND p_partkey = l_partkey
-            AND o_ORDERkey = l_ORDERkey
-            AND s_nationkey = n_nationkey
-            ) AS profit
-GROUP BY nation , o_year
-ORDER BY nation , o_year DESC;";
-
+$query = "SELECT mysql_version FROM sys.version;";
 if ($stmt = $link->prepare($query)) {
     $stmt->execute();
-    $stmt->bind_result($nation, $year, $profit);
-    echo "<table>";
-        echo "<tr>";
-        echo "<th>Nation</th>";
-        echo "<th>O_Year</th>";
-        echo "<th>Sum_Profit</th>";
-    echo "</tr>";
-
+    $stmt->bind_result($mysql_version);
+    printf("mysql_version");
     while ($stmt->fetch()) {
-        echo "<tr>";
-           echo "<td>" . $nation ."</td>";
-           echo "<td>" . $year . "</td>";
-           echo "<td>" . $profit . "</td>";
-        echo "</tr>";
-    
+        printf( $mysql_version);
     }
-    
     $stmt->close();
 }
-5.	Save the file dbhwtest.php
+?>
+</copy>
+    ````
 
-6.	From remote machine connect to dbhwtest.php
+6.	From your local  machine connect to dbhwtest.php
 
-Example: http://129.213.167..../dbhwtest.php  
+    Example: http://129.213.167..../dbhwtest.php  
 
-## **STEP 13:**   – Create PHP MySQL Application
+## **STEP 13:**   – Create and Oracle Analytic Cloud
+
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following page and perform this hands-on workshop.
 Analytics - https://luna.oracle.com/?ojr=lab%3Blid%3Da1fc2175-9720-4345-8cb8-c0270a08c9d1
+
 It provides an OCI sandbox for trying the following OAC activities: 
 1.	Get started with Oracle Analytics
 2.	Understand the core features of Oracle Analytics
@@ -1184,109 +1199,85 @@ Please reach out to us if you have any questions or recommendations.
 Oracle Analytics Cloud (OAC) is an enterprise analytics solution for building analytics dashboard, pixel-perfect high quality reports. OAC provides Machine Learning algorithm to exploit insights from your data
 
 In order to build analytics dashboard using OAC on MDS HeatWave, we need to do the following
-
 1.	Create a user account for OAC to MDS
 2.	Provision an OAC instance
 3.	Build OAC project
 
-Step 1 - Create a user account for OAC to MDS
-
+Task 1 - Create a user account for OAC to MDS
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
-$ ssh -i <private_key_file> opc@<new_compute_instance_ip>
-
+    ````
+    <copy>ssh -i <private_key_file> opc@<new_compute_instance_ip></copy>
+    ````
 2.	On command Line, connect to MySQL using the MySQL Shell client tool
 
-mysqlsh -uadmin -p -h10.0.1.3 
-
+    ````
+    <copy>mysqlsh -uadmin -p -h10.0.1..</copy>
+    ````
 3.	Change the MySQL Shell execution mode to SQL
 
-MySQL  10.0.1.3:3306 ssl  JS > \sql
-Switching to SQL mode... Commands end with;
-MySQL  10.0.1.3:3306 ssl  SQL >
+    ````
+    <copy>\sql</copy>
+    ````
+4. Create user oacadmin
 
-MySQL  10.0.1.3:3306 ssl  SQL > 
-CREATE USER 'oacadmin'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome#123';
+    ````
+    <copy>CREATE USER 'oacadmin'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome#123';</copy>
+    ````
+    ````
+    <copy>GRANT all privileges on tpch.* to oacadmin;</copy>
+    ````
+    ````
+    <copy>exit;</copy>
+    ````
 
-MySQL  10.0.1.3:3306 ssl  SQL > GRANT all privileges on tpch.* to oacadmin;
-MySQL  10.0.1.3:3306 ssl  SQL > exit;
-
-Step 2 - Provision an OAC instance
+Task 2 - Provision an OAC instance
 1.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
 2.	On the Create Analytics Instance enter the required information as shown below
-
- 
-
 3.	Wait 30 minutes for OAC instance creation to complete.
 4.	Go down to the resources page and click on the Create Private Access Channel link
 5.	Click the create Private Access Channel button
 6.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-
- 
-
 7.	Click the create Private Access Channel button
 8.	Wait 2 hours then continue to step 3
 
 Step 3 - Build OAC Dashboard
 1.	Navigate to hamburger->Analytics->Analytics Clouds
-
-1.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
-2.	On the Create Analytics Instance enter the required information as shown below
-
- 
-
-3.	Wait 30 minutes for OAC instance creation to complete.
-4.	Go down to the resources page and click on the Create Private Access Channel link
-5.	Click the create Private Access Channel button
-6.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-
- 
-
-7.	Click the create Private Access Channel button
+2.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
+3.	On the Create Analytics Instance enter the required information as shown below
+4.	Wait 30 minutes for OAC instance creation to complete.
+5.	Go down to the resources page and click on the Create Private Access Channel link
+6.	Click the create Private Access Channel button
+7.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
+8.	Click the create Private Access Channel button
 8.	Wait 2 hours then continue to step 3
 
-Step 3 - Build OAC Dashboard
+Step 4 - Build OAC Dashboard
 1.	Navigate to hamburger->Analytics->Analytics Clouds
-
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
 3.	Create a Connection to HeatWave to build a dashboard
-
-
 4.	Search for mysql and select mysql as the database
-
 5.	Specify the connections details Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
-
 6.	Next build the dashboard on MDS HeatWave by selecting Create->Data Set
-
 7.	Select the MySQL Connection created earlier
-
-
 8.	For Add Data Set name to customer_nations
 9.	Select tpch database
-
-
 10.	Click on the “Enter SQL and type in the following sql statement:
-select count(C_CUSTKEY) totcust, n_name 
+
+    ````
+    <copy>select count(C_CUSTKEY) totcust, n_name 
 from  customer c
 join nation n on n.N_NATIONKEY = c.C_NATIONKEY 
 group by n_name 
-order by n_name;
-
+order by n_name;</copy>
+    ````
 11.	Click the blue Add button 
-
-
 12.	On new display page click on the Create Project button
-
-
 13.	On new display page  click on the graph icon, go down the side and select the map icon. Drag the icon to the middle of the page. 
-
 14.	Click the dataset icon and move the totcust field to size and n_name field to Category 
 15.	Click on the bottom + sign to add Canvas 2 and drag the bar icon to the middle of the page
 16.	Click the dataset icon and move the totcust field to Y-axis and n_name field to Category 
-
 17.	Set project name to customer_nations_bargraph 
-
-
 
 ## **STEP 14:** Start, stop, or reboot MySQL DB System
 
