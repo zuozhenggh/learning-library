@@ -97,7 +97,7 @@ Sample Output:
 
  Source deployment completed!
 
-## **STEP 2**: GoldenGate Configuration for Kafka(Target)
+## **STEP 2**: GoldenGate Configuration for Kafka as Target
 1. Login to GoldenGate for BigData console 
 
     Replace IP Address with livelab server generated IP
