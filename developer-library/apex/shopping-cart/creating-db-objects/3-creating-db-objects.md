@@ -4,12 +4,13 @@
 
 In this lab, you will learn how to create database objects to use in your APEX application. This package contains the function and procedures to add products to the shopping cart, create the order, clear the cart and more.
 
-Estimated Time: 5 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
+In this lab, you will:
 - Create a package to manage the Shopping Cart.
 
-## **Step 1** - Creating the Package
+## **STEP 1**: Creating the Package
 Create specification and body for the package.
 
 1. Navigate to **SQL Workshop**, click **Object Browser**.
@@ -226,17 +227,11 @@ END manage_orders;
 
     ![](images/create-body.png " ")
 
-## **Summary**
+
 
 You now know how to create a package to be used in your APEX application.
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Contributors** 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
