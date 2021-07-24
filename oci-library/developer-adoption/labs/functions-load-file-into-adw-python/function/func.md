@@ -210,6 +210,7 @@ This concludes this lab.
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
+- **Author** - Adao Junior
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
-- **Last Updated By/Date** - Adao Junior, October 2020
+- **Sample Author** - Greg Verstraeten
+- **Last Updated By/Date** - Adao Junior, July 2021

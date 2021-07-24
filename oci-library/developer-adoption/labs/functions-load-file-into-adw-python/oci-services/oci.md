@@ -17,7 +17,7 @@ Estimated time: 10 minutes
 - Your Oracle Cloud Trial Account
 - Completed the **Prerequisites for Functions**
 
-## **STEP 1:** Create Object Storage Bucket
+## **STEP 1:** Create Object Storage Bucket for input
 
 You need a `input-bucket` bucket in Object Storage. You will use the `input-bucket` to drop-in the CSV files. The function will process the file and import them into Autonomous Data Warehouse.
 
@@ -36,7 +36,25 @@ Let's create the `input-bucket` first:
 
 ![Create input bucket](./images/create-input-bucket.png)
 
-## **STEP 2:** Create IAM policies
+## **STEP 2:** Create Object Storage Bucket for processed files
+
+You need a `processed-bucket` bucket in Object Storage. The function will upload the processed files to the `processed-bucket`.
+
+Let's create the `processed-bucket`:
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Storage** and select **Buckets** under **Object Storage and Archive Storage**.
+
+ ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+
+1. Select your development compartment (AppDev) from the **Compartment** list.
+1. Click the **Create Bucket**.
+1. Name the bucket **processed-bucket**.
+1. Select the **Standard** storage tier.
+1. Click **Create**.
+
+![Create input bucket](./images/create-input-bucket.png)
+
+## **STEP 3:** Create IAM policies
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
@@ -53,7 +71,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
     `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'`
 
-    Note: the `compartment-name` is your development compartment (the one where you created the VCN and Function Application. e.g.: AppDev).
+    Note: the `compartment-name` is your development compartment (the one where you created the VCN and will be creating a Function Application later in the lab e.g., AppDev)
 
     Example using AppDev Compartment:
 
@@ -67,7 +85,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
-## **STEP 3:** Create an Autonomous Data Warehouse
+## **STEP 4:** Create an Autonomous Data Warehouse
 
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
@@ -145,6 +163,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
+- **Author** - Adao Junior
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
+- **Sample Author** - Greg Verstraeten
 - **Last Updated By/Date** - Adao Junior, July 2021

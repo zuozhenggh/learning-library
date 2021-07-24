@@ -125,6 +125,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
+- **Author** - Adao Junior
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
+- **Sample Author** - Greg Verstraeten
 - **Last Updated By/Date** - Adao Junior, July 2021
