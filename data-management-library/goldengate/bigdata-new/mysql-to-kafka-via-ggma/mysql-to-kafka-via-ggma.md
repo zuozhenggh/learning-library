@@ -199,7 +199,7 @@ In summary, you loaded data in MySQL database `‘ggsource’`, GG extract proce
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
+* [Oracle GoldenGate for Big Data 21c | Oracle](https://docs.oracle.com/en/middleware/goldengate/big-data/21.1/index.html)
 
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Data Integration Team, Oracle, July 2021
