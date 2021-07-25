@@ -72,6 +72,8 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
     `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'`
 
+    `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='processed-bucket'`
+
     Note: the `compartment-name` is your development compartment (the one where you created the VCN and will be creating a Function Application later in the lab e.g., AppDev)
 
     Example using AppDev Compartment:
@@ -79,6 +81,12 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
     ```shell
     <copy>
     Allow dynamic-group functions-dynamic-group to manage objects in compartment AppDev where target.bucket.name='input-bucket'
+    </copy>
+    ```
+
+    ```shell
+    <copy>
+    Allow dynamic-group functions-dynamic-group to manage objects in compartment AppDev where target.bucket.name='processed-bucket'
     </copy>
     ```
 
