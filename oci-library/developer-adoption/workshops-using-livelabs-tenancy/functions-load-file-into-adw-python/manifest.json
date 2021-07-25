@@ -3,12 +3,12 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Getting Started",
-            "filename": "../../../../common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
-        {
             "title": "Introduction",
             "filename": "../../labs/functions-load-file-into-adw-python/intro/intro.md"
+        },
+        {
+            "title": "Getting Started",
+            "filename": "../../../../common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
             "title": "Lab 1: Functions Prerequisites",
