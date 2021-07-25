@@ -32,11 +32,11 @@ If you want to use an existing compartment, skip to the next step. Otherwise, fo
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+  ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
 
 1. From this screen, you will see a list of compartments, click **Create Compartment**.
 
-   ![Compartment Screen](../../common/setup-cloud-env/images/compartment-screen.png " ")
+  ![Compartment Screen](../../common/setup-cloud-env/images/compartment-screen.png " ")
 
 1. Enter the following:
       - Name: Enter **"AppDev".**
@@ -55,7 +55,7 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking** and select **Virtual Cloud Networks**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+  ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 1. Choose a compartment from the previous step.
 1. Click **Start VCN Wizard**, then **VCN with Internet Connectivity**, then **Start VCN Wizard**.
@@ -69,7 +69,7 @@ Log in to the Console as a **tenancy administrator** and under Governance and Ad
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+  ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 1. Select the tenancy's **root compartment**
 1. Click **Create Policy**.
@@ -95,7 +95,7 @@ Before you create a dynamic group, you need to get your development compartment 
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+  ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
 
 1. Find your development compartment (AppDev) from the list, hover over the cell in the OCID column and click **Copy**, to copy the compartment OCID to your clipboard.
 

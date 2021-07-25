@@ -35,7 +35,7 @@ Let's create the `input-bucket` first:
 1. Check the **Emit Object Events** check box.
 1. Click **Create**.
 
-![Create input bucket](./images/create-input-bucket.png)
+    ![Create input bucket](./images/create-input-bucket.png)
 
 ## **STEP 2:** Create Object Storage Bucket for processed files
 
@@ -53,7 +53,7 @@ Let's create the `processed-bucket`:
 1. Select the **Standard** storage tier.
 1. Click **Create**.
 
-![Create processed bucket](./images/create-processed-bucket.png)
+    ![Create processed bucket](./images/create-processed-bucket.png)
 
 ## **STEP 3:** Create Compartment IAM policies for the function
 
@@ -61,7 +61,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
- ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+    ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 1. Click **Create Policy**.
 1. For name, enter `functions-buckets-policy`.
@@ -92,7 +92,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 1. Click **Create**.
 
-![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
+    ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
 ## **STEP 4:** Create Tenancy IAM policies for the Object Storage service
 
@@ -100,7 +100,7 @@ Create a new policy that allows the service Object Storage manage objects. (you 
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
- ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+    ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 1. Click **Create Policy**.
 1. For name, enter `object-storage-service-policy`.
@@ -123,7 +123,7 @@ Create a new policy that allows the service Object Storage manage objects. (you 
 
 1. Click **Create**.
 
-![Create functions-buckets-policy](./images/create-object-storage-policy.png)
+    ![Create functions-buckets-policy](./images/create-object-storage-policy.png)
 
 ## **STEP 5:** Create an Autonomous Data Warehouse
 
@@ -131,7 +131,7 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
 1. Navigate to **Autonomous Data Warehouse**. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 1. Click **Create Autonomous Database**.
 1. From the list, select your development compartment (AppDev).
