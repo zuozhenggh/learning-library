@@ -576,7 +576,9 @@ When you are finished, return to this step.
     
     (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**)
 
-    `$ ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip>;`
+    ````
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip>;</copy>
+    ````
 
     ![Connect](./images/06connect01.png " ")
 
