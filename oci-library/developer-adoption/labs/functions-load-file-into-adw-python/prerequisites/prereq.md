@@ -63,7 +63,7 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 
   ![Create VCN Animation](images/create-fn-vcn.gif " ")
 
-## **STEP 4:** Create policy for Oracle Functions
+## **STEP 4:** Create policy for Oracle Functions Service
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, and do the following:
 
@@ -117,7 +117,7 @@ Before you create a dynamic group, you need to get your development compartment 
     </copy>
     ```
 
-  *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
+  *Note:* Make sure you replace the above value (`ocid1.compartment.oc1..example`) with the compartment OCID you stored earlier.
 
 1. Click **Create**.
 
