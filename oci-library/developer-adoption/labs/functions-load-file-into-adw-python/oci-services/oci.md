@@ -84,6 +84,8 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
     </copy>
     ```
 
+    Press enter to go to a new line (as shown on the picture)
+
     ```shell
     <copy>
     Allow dynamic-group functions-dynamic-group to manage objects in compartment AppDev where target.bucket.name='processed-bucket'
