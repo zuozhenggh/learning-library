@@ -19,17 +19,15 @@ In this lab, you will:
 
 ## **STEP 1:** Download the Source ATP Client Credentials
 
-1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **Service Console**.
+1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
 
     ![Open ATP Service Console](images/02-01.png)
 
-2.  In the Service Console, click **Administration**, and then click **Download Client Credentials (Wallet)**.
+2.  In the DB Connection panel, click **Download Wallet**.
 
     ![ATP Service Console](images/02-02.png)
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
-
-4.  Close the Source ATP Service Console.
 
 ## **STEP 2:** Upload the Source ATP Credentials to Oracle GoldenGate
 
@@ -47,7 +45,7 @@ In this lab, you will:
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
-6.  Upload the wallet\_ATP.zip and extract its contents to a new directory, such as **wallet\_ATP**.
+6.  Upload the wallet\_ATP.zip and then extract its contents to a new directory, such as **wallet\_ATP**.
 
     ```
     <copy>mkdir wallet_ATP
@@ -70,7 +68,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
     ![](images/04-04.png)
 
-5.  In a new browser tab or window, enter **https://&lt;public-ip&gt;:443** to open the Service Manager.
+5.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
 6.  Log in to the Service Manager using **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
 
@@ -93,15 +91,15 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
     ![](images/04-10.png)
 
-14. Click **Connect to Database**.
+11. Click **Connect to Database**.
 
     ![](images/04-14.png)
 
-15. Next to TRANDATA Information, click Add **TRANDATA**.
+12. Next to TRANDATA Information, click Add **TRANDATA**.
 
     ![](images/04-15.png)
 
-16. For **Schema Name**, enter **SRC_OCIGGLL**, and then click **Submit**.
+13. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You can now proceed to the [next lab](#next).
 

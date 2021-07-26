@@ -37,7 +37,7 @@ This lab assumes that you completed all preceding labs.
 
     ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL1234-user, select the compartment **LL1234-COMPARTMENT**.
+2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 3.  On the Deployments page, click **Create Deployment**.
 
@@ -49,7 +49,7 @@ This lab assumes that you completed all preceding labs.
 
 6.  For OCPU Count, enter **2**.
 
-7.  For Subnet, select **Public Subnet**.
+7.  For Subnet, select **&lt;user&gt;pubsubnt**.
 
 8.  For License type, select **Bring You Own License (BYOL)**.
 
@@ -104,23 +104,25 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 *For the purposes of this workshop, registering the Source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
-1.  On the Registered Databases page, click **Register Database**.
+1.  Return to the OCI Console. In the breadcrumb, click GoldenGate, and then Registered Databases.
 
-2.  In the Register Database panel, enter **SourceATP** for Name and Alias.
+2.  On the Registered Databases page, click **Register Database**.
 
-3.  Click **Select Database**.
+3.  In the Register Database panel, enter **SourceATP** for Name and Alias.
 
-4.  For **Database Type**, select **Autonomous Database**.
+4.  Click **Select Database**.
 
-5.  For **Database in &lt;compartment-name&gt;**, select **SourceATP**.
+5.  For **Database Type**, select **Autonomous Database**.
 
-6.  For **Database User Password**, enter a password, and take note of this password for use later in this workshop.
+6.  For **Database in &lt;compartment-name&gt;**, select **SourceATP**.
 
-7.  Click **Register**.
+7.  For **Database User Password**, enter a password, and take note of this password for use later in this workshop. You can use the database passwords provided in the Workshop Details.
 
-    ![Target Database details](images/02_10-ggs-regDB_target.png)
+8.  Click **Register**.
 
-8.  Repeat these steps for the Target Autonomous Database.
+    ![Source Database details](images/reg-sourceATP.png)
+
+9.  Repeat these steps for the Target Autonomous Database.
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
@@ -132,11 +134,11 @@ Although the ggadmin user is created during the database registration process, i
 
     ![](images/05-01.png)
 
-2.  From the list of databases, select **ATPSource**.
+2.  From the list of databases, select **SourceATP**.
 
     ![](images/05-02.png)
 
-3.  On the ATPSource Database Details page, click **Tools**, and then click **Open Database Actions**.
+3.  On the SourceATP Database Details page, click **Tools**, and then click **Open Database Actions**.
 
     ![](images/05-04.png)
 
@@ -156,17 +158,17 @@ Although the ggadmin user is created during the database registration process, i
 
 8.  Open the Database Actions navigation menu (hamburger icon), and then select **SQL**.
 
-    ![SQL Developer](images/01-09.png)
+    ![SQL Developer](images/01-08-sql.png)
 
-10. Enter the following into the worksheet, and then click **Run Script**.
+9.  Enter the following into the worksheet, and then click **Run Script**.
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-11. Log out of Database Actions.
+10. Log out of Database Actions.
 
-12. Repeat steps 1 to 7 to enable the ggadmin user for **ADWTarget**. Log out of Database Actions when you're done.
+11. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
 In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You can now proceed to the [next lab](#next).
 

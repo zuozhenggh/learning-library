@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on premise installation or Marketplace image, then use this set of labs to help guide you through the steps to move data from Oracle GoldenGate to OCI GoldenGate.
+Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on premise installation or Marketplace image, then use this set of labs to help you move data from Oracle GoldenGate to OCI GoldenGate.
 
 Estimated Lab Time: 20 minutes
 
@@ -13,6 +13,7 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that use
 ### Objectives
 
 In this workshop, you will:
+* Create OCI GoldenGate resources
 * Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
 * Create and run a distribution path on Oracle GoldenGate
 
