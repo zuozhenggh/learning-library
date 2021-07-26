@@ -392,10 +392,6 @@ In this lab, you will be guided through the following steps:
 
 ## **STEP 5:** Create Client Virtual Machine
 
-**Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
-
-When you are finished, return to this step.
-
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to the Console, menu Compute, Instances
     ![COMPUTE](./images/05compute01.png " ")
 
@@ -414,12 +410,11 @@ When you are finished, return to this step.
 
 6. Edit Configure placement and hardware
    
-   Select the Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
+   Keed the selected Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
 
-    ![COMPUTE](./images/05compute03.png " ")
-
-   For VCN make sure **MDS-VCN** is selected, "Assign a public IP address" should be set to Yes.  
-    ![COMPUTE](./images/05compute04.png " ")
+   For VCN make sure **MDS-VCN** is selected, "Assign a public IP address" should be set to Yes. 
+   
+      ![COMPUTE](./images/05compute03.png " ")  
 
 7. If you have not already created your SSH key, perform "Lab 1: Create Local SSH Key".  When you are done return to the next line (STEP 5: #8) .
 8. In the Add SSH keys section upload your own public key. 
