@@ -1,10 +1,17 @@
 # In-Memory Queries
 
-## 
+## Introduction
 
-Watch a preview video of In-Memory Column Store features.
 
-[](youtube:eToO3PRIs8k)
+### Lab Preview
+
+Watch a preview videos of In-Memory Column Store features.
+
+#### Part 1
+[](youtube:P6GZaykqHwI)
+
+#### Part 2
+[](youtube:Du-DNEU_0Y4)
 
 ## **STEP 1**: Querying the In-Memory Column Store
 
@@ -109,7 +116,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     In order to confirm that the IM column store was used, we need to examine the session level statistics. Notice that in the INMEMORY run several IM statistics show up (for this lab we have only displayed some key statistics – there are lots more!). The only one we are really interested in now is the "IM scan CUs columns accessed" which highlights IM optimization to further improve performance.
 
 ## **STEP 2**: In-Memory Storage Index
-  In the [*Introduction*](?lab=introduction-overview#3.In-MemoryStorageIndexes), we saw how min-max and dictionary based pruning could work as Index. We will now query the table and filter based on a where condition.
+  In the [*Introduction and Overview*](?lab=introduction-overview#3.In-MemoryStorageIndexes), we saw how min-max and dictionary based pruning could work as Index. We will now query the table and filter based on a where condition.
 
 1.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table.  
 
@@ -196,8 +203,7 @@ With Hybrid Scans, we increase the probability of a query running In-Memory even
       ALTER TABLE lineorder  INMEMORY NO INMEMORY (lo_revenue);
       </copy>
       ````
-
-2. verify the In-Memory parameters at column level.
+2. Verify the In-Memory parameters at column level.
       ````
       <copy>
       set pages 11408506880
@@ -229,7 +235,6 @@ With Hybrid Scans, we increase the probability of a query running In-Memory even
       LINEORDER  LO_SHIPMODE          DEFAULT
 
       ````
-
 3. Rerun the previous query and observe the plan. execution plan shows that the optimizer chose an In-Memory hybrid scan.
       ````
       <copy>
@@ -277,7 +282,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
       </copy>    
       ````
 
-   ![](images/num1.png)
+
 
 2. Join the LINEORDER and DATE_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  In the first one, execute it against the IM column store.  
 
@@ -303,7 +308,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
          </copy>
       ````
 
-   ![](images/num2.png)
+
 
    The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom Filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. The Bloon filter plans start with <b> :BF00X </b> plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan.
 
@@ -333,7 +338,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
       </copy>
       ````
 
-   ![](images/num3.png)
+
 
 4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.  
 
@@ -397,21 +402,20 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 
  1. Run a select statement with an expression without enabling expression optimization.
-
       ````
-      <copy>
-      set timing on
-      SELECT lo_shipmode, SUM(lo_ordtotalprice),
-      SUM(lo_ordtotalprice - (lo_ordtotalprice*(lo_discount/100)) + lo_tax) discount_price
-      FROM LINEORDER
-      GROUP BY lo_shipmode ORDER BY lo_shipmode;
-      set timing off
+         <copy>
+         set timing on
+         SELECT lo_shipmode, SUM(lo_ordtotalprice),
+         SUM(lo_ordtotalprice - (lo_ordtotalprice*(lo_discount/100)) + lo_tax) discount_price
+         FROM LINEORDER
+         GROUP BY lo_shipmode ORDER BY lo_shipmode;
+         set timing off
 
-      select * from table(dbms_xplan.display_cursor());
+         select * from table(dbms_xplan.display_cursor());
 
-      @../imstats.sql
-      </copy>
-      ````
+         @../imstats.sql
+         </copy>
+         ````
    When the query runs in memory with Expression Optimization, a new statistic  <b> IM Scan EU </b> is used.
 
    Notice the following expression in the query:
@@ -426,7 +430,6 @@ This expression is simply an arithmetic expression to find the total price charg
  2. To populate virtual columns in the IM column store we need to ensure that the initialization parameter INMEMORY\_VIRTUAL\_COLUMNS is set to ENABLE.
 
   The default is MANUAL which means that you must explicitly set the virtual columns as INMEMORY enabled. Set it to enable at table level.
-
       ````
       SQL> <copy> show parameter INMEMORY_VIRTUAL_COLUMNS
             alter system set inmemory_virtual_columns=enable;
@@ -439,7 +442,6 @@ This expression is simply an arithmetic expression to find the total price charg
       SQL> alter system set inmemory_virtual_columns=enable;
       System altered.
       ````
-
 3. Next, we will add a virtual column to the LINEORDER table for the expression we identified above and re-populate the table:
 
       ````
@@ -452,7 +454,6 @@ This expression is simply an arithmetic expression to find the total price charg
       ````
 
 4. Now let's re-run our query and see if there is any difference:
-
       ````
       <copy>
       set timing on
@@ -486,8 +487,7 @@ This simple example shows that even relatively simple expressions can be computa
    <b>Automatic IM expressions :</b>
   Optimizer tracks expressions and stores them in a repository called the Expression Statistics Store (ESS). Along with the expression and other information, the number of times the expression was evaluated and the cost of evaluating the expression are tracked. This is exposed in the ALL|DBA|USER\_EXPRESSION\_STATISTICS view and Database In-Memory uses this information to determine the 20 most frequently accessed expressions in either the past 24 hours (i.e. LATEST snapshot) or since database creation (i.e. CUMULATIVE snapshot). The following is an example for the LINEORDER table in my test system for the LATEST snapshot.
 
-6. In order to populate automatically detected IM expressions the INMEMORY\_EXPRESSIONS_USAGE parameter must be set to either ENABLE (the default) or DYNAMIC\_ONLY.
-
+  6. In order to populate automatically detected IM expressions the INMEMORY_EXPRESSIONS_USAGE parameter must be set to either ENABLE (the default) or DYNAMIC_ONLY.
       ````
       <copy> show parameter INMEMORY_EXPRESSIONS_USAGE </copy>
 
@@ -497,7 +497,6 @@ This simple example shows that even relatively simple expressions can be computa
       ````
 
 7.   Let us restore the lineorder table and drop the virtual column.
-
       ````
       <copy>
       alter table lineorder no inmemory;
@@ -530,17 +529,13 @@ The other alternative is to run dbms\_inmemory\_admin.ime\_capture\_expressions(
       @../imstats.sql
       </copy>
       ````
-
 9.  Now capture the sql expressions from shared pool.
-
       ````
       <copy>
       exec dbms_inmemory_admin.ime_capture_expressions('CURRENT');
       </copy>
       ````
-
 10. Now check if the expression is captured.
-
       ````
       <copy>COL OWNER FORMAT a6
       COL TABLE_NAME FORMAT a9
@@ -611,7 +606,7 @@ In-Memory Optimized Arithmetic is controlled by the initialization parameter INM
 
       ````
 
-Note the time time the query took with INMEMORY\_OPTIMIZED\_ARITHMETIC disable.
+Note the time time the query took with INMEMORY\_OPTIMIZED\_ARITHMETIC disable. 
 
 2. Now let us enable and rerun the query.
 
@@ -628,7 +623,6 @@ Note the time time the query took with INMEMORY\_OPTIMIZED\_ARITHMETIC disable.
             System altered.
       ````
 3. Now repopulate Lineorder table.
-
       ````
       <copy>
       alter table lineorder no inmemory;
@@ -658,7 +652,6 @@ Note the time time the query took with INMEMORY\_OPTIMIZED\_ARITHMETIC disable.
       </copy>
       ````
 5.  At this point, we have set INMEMORY\_OPTIMIZED\_ARITHMETIC=enable, and triggered the repopulation of Lineorder table and verified that the loading is complete. Once you see that LINEORDER table status is complete run the query below.
-
       ````
       <copy>
       set timing on
@@ -680,6 +673,7 @@ In our case the query timing reduced from 0.92 to 0.12 seconds. Although its 7 t
 While InMemory Arithemtic is a good feature, since it can only run on "QUERY LOW" , it would take up much more memory. A cost/benefit analysis should be considered before enabling this feature. It depends on how many queries have aggregation/aggregation groupings and amount of memory in the system.
 
 
+
 ## Conclusion
 
 In this lab you had an opportunity to try out Oracle’s In-Memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
@@ -689,4 +683,6 @@ These significant performance improvements are possible because of Oracle’s un
 ## Acknowledgements
 
 - **Author** - Vijay Balebail , Andy Rivenes
-- **Last Updated By/Date** - Kamryn Vinson, July 2021
+- **Last Updated By/Date** Rajeev Rumale, July 2021
+
+

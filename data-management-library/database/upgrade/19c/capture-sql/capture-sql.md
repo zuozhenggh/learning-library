@@ -29,7 +29,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -77,10 +77,12 @@ You can also collect statements directly from the Cursor Cache. This is more res
     ```
     ![](./images/sqlset.png " ")
 
+    It is very likely that you will get different statement counts. One of the reasons could be that often the capture from cursor cache will catch more statements compared to those written down from ASH (Active Session History) into AWR. And it does not play any role for the lab whether the number of statements matches the number in the screenshots or not.
+
 
 ## **STEP 3**: Optional - Export AWR
 
-When you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR remains in the database. This exercise is done for protection but it is not necessary for the flow of the lab.
+When you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR remains in the database. This exercise is done for protection but it is not necessary for the flow of the lab. **You will specify a START and an END snapshot number** to export the AWR data between these two snapshots.
 
 1. Export the AWR by running the sql stored in your Oracle home.
 
