@@ -1,4 +1,4 @@
-# Use Atom Editor to Develop Markdown Content
+# Use A Text Editor to Develop Markdown Content
 
 ## Introduction
 
@@ -14,20 +14,36 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * Preview the content in a browser.
 
 
-### What Do You Need?
-* An IDE, such as Atom.
-* A local web server such as **atom-live-server**, a plugin for `Atom.io`.
+## **STEP 1:** Install Your Text Editor 
 
-## **STEP 1:** Install Atom
+You can use your preferred editor, however we recommend to download either Atom or Visual Studio Code. Below, there are instructions for both.
+
+### **Option 1: Install Atom**
+
 `Atom.io` is a 3rd party IDE freely available under MIT License.
 
 To install Atom:
+
 1. Go to the [Atom](https://github.com/atom/atom/releases/tag/v1.51.0) URL.
 2. Click the zip file  for your operating system, save and extract the zip file.
   ![](./images/use-atom-editor-download.png " ")
 3. From the extracted files, click `atom.exe` to launch Atom.
 
-## **STEP 2:** Install the atom-live-server Plugin
+### **Option 2: Install Visual Studio Code**
+
+To install Visual Studio Code:
+
+1. Visit the [download](https://code.visualstudio.com/download) site and select the zip file for your operating system. In this case, we chose Mac OS.
+  ![](./images/vscode-os-options.png " ")
+3. Double-click the zip file to expand it. The VS Code application will then show in your downloads folder in Finder.
+  ![](./images/vscode-zip-expanded.png " ")
+4. Drag it to the Applications folder and double-click it to launch the text editor.
+  ![](./images/vscode-drag.png " ")
+
+## **STEP 2:** Install Live Server 
+
+### **Option 1: Install Atom's Live Server Package**
+
 You must NOT be connected to Oracle's network or VPN while installing the **atom-live-server** package.
 
 To install **atom-live-server**:
@@ -45,7 +61,16 @@ To install **atom-live-server**:
 The **atom-live-server** plugin is added to the **Packages** menu.
   ![](./images/use-atom-editor-welcome-atom-live-server-package-menu.png " ")
 
-## **STEP 3:** Merge Content from Git Before you Start Editing your Content
+### **Option 2: Install Visual Studio Code's Live Server Extension**
+
+1. Launch VS Code and navigate to the Extensions bar.
+  ![](./images/extensions-tab.png " ")
+2. Type "Live Server" into the search bar and select the first entry, "Live Server 5.6.1".
+  ![](./images/ls-search.png " ")
+3. Click "Install".
+  ![](./images/ls-install.png " ")
+
+## **STEP 3:** Merge Content from Git Before You Start Editing Your Content
   Everyday before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
   Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
@@ -72,7 +97,7 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **STEP 4:** Create your Labs and Workshop Content
+## **STEP 4:** Create Your Labs and Workshop Content
 Leverage the content from the **learning-library\sample-livelabs-templates\sample-workshop** folder to start creating lab and workshop content for your project.
 
 *For screen shots of OCI menu navigation, use the images with absolute links in **Lab 1: Provision an Instance** markdown from the sample-workshop. A preview of the images can be found **[here](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/index.html?lab=provision)** under STEP 0.*
@@ -93,17 +118,17 @@ To create your lab and workshop content:
   ![](./images/lab-folder-structure.png " ")
 
 5. Similarly, copy the **workshops** folder along with its contents from **learning-library\sample-livelabs-templates\sample-workshop** to your project folder. For example, **GitHub\learning-library\sample-livelabs-templates\create-labs\labs**.
-6. To edit the `.md` file of your lab, open **Atom** Editor, click **File > Open Folder** to display the **Open Folder** dialog box.
+6. To edit the `.md` file of your lab, open your text editor (in this case, we're using Atom), click **File > Open Folder** to display the **Open Folder** dialog box. In VS code, you would click **File > Open**.
   ![](./images/use-atom-editor-open-folder.png " ")
 7. Navigate to **GitHub\learning-library\sample-livelabs-templates\create-labs\labs** and click **Select Folder** to open your project folder.
   ![](./images/atom-editor-browse-select-lab.png " ")
-  The project folder along with the labs and **workshops** folder is displayed in **Atom** Editor.
+  The project folder along with the labs and **workshops** folder will then be displayed in your text editor.
     ![](./images/atom-editor-project-folder-displayed.png " ")
 
 8. Select the `.md` file you want to edit, for example, select the `1-labs-git-hub-get-started-install-configure.md` file and edit your lab content. Similarly, edit the `.md` files of the rest of your labs.
     ![](./images/atom-editor-browse-open-mdfile-editing.png " ")
 9. If you want to add images in your lab, then include them within the **images** folder. You can insert images in the respective `.md` file.
-10. Similarly to edit your workshop content, expand the **workshops\freetier** folder in **Atom**, edit the `manifest.json` to list the labs you have added to your workshop (or plan to add) and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
+10. Similarly to edit your workshop content, expand the **workshops\freetier** folder in your text editor, edit the `manifest.json` to list the labs you have added to your workshop (or plan to add) and update the title of the workshop. The `manifest.json` is like your book map file in SDL.
   ![](./images/use-atom-editor-manifest-json.png " ")
 11. If you want to add an introduction to your workshop, then navigate to **learning-library\sample-livelabs-templates\sample-workshop\introduction** and copy the `introduction.md` file to your **workshops\freetier** folder, for example: **GitHub\learning-library\create-labs\labs\workshops\freetier**. You can rename it if you would want to. In this example, we have renamed it to `intro.md`. Update the `intro.md` as per your requirements. Similarly, you can create a `README.md` file with the same `introduction.md` file and update the `README.md` with a summary of your workshop. Note that the `intro.md` and `README.md` files are optional files for your workshop's introduction. The workshop introduction can be treated as another lab.
     ![](./images/use-atom-editor-readme-update.png " ")
@@ -117,10 +142,10 @@ To create your lab and workshop content:
 
 * Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features.
 
-## **STEP 5:** Preview Your Workshop and Labs Using atom-live-server
+## **STEP 5:** Preview Your Workshop and Labs Using Live Server
+### **Option 1: Using Atom**
 
-  To preview your output in a browser:
-1. Start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
+1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
   ![](./images/use-atom-editor-packages-start-live-server.png " ")
 
   By default, the **atom-live-server** opens a browser window that displays the folders inside your project (**labs**) folder.
@@ -132,6 +157,14 @@ To create your lab and workshop content:
   ![](./images/use-atom-editor-workshop-output.png " ")
 
 3. To stop the **atom-live-server**, go back to **Atom**, select  **Packages > atom-live-server > Stop folder-path-at-port-#**.
+
+### **Option 2: Using Visual Studio Code**
+
+1. Within the directory of any workshop you want to view, click the **workshops** folder and then click **freetier** folder.
+  ![](./images/folder-nav.png " ")
+2. Right-click on the index.html file and select "Open with Live Server".
+  ![](./images/right-click.png " ")
+3. The local version of your workshop will then be launched in your web browser. 
 
 You may now [proceed to the next lab](#next).
 
@@ -154,6 +187,6 @@ You may now [proceed to the next lab](#next).
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Yunyidi Han, March 2021
+* **Last Updated By/Date:** Brianna Ambler, July 2021
 
 

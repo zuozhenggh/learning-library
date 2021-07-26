@@ -28,7 +28,6 @@ Before starting the reinstallation of Database Vault, use the [Practice: Deinsta
 
 
     ```
-
     $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword WElcome123#! -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword WElcome123#! </copy>
 
     Enter password for the TDE wallet: <i> password </i>
@@ -108,5 +107,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
-
+* **Last Updated By/Date** -  Tom McGinn, July 2020

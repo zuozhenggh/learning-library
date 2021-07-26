@@ -518,20 +518,20 @@ timestamp,signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal
 ```
 
 #### JSON Format
-The JSON format is also straight-forward, it contains a key `columnLabels` listing all attribute names, and a key `data` to list all acutual values along with timestamp.
+The JSON format is also straight-forward, it contains a key `signalNames` listing all attribute names, and a key `data` to list all actual values along with timestamp.
 
 ```Json
 {
     "requestType": "INLINE",
-    "columnLabels": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
+    "signalNames": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
     "data": [
         {
             "timestamp": "2018-01-03T16:00:01",
-            "value": [ 0.8885, 0.6459, -0.0016, -0.9061, 0.1349, -0.4967, 0.4335, 0.4813, -1.0798, 0.2734 ]
+            "values": [ 0.8885, 0.6459, -0.0016, -0.9061, 0.1349, -0.4967, 0.4335, 0.4813, -1.0798, 0.2734 ]
         },
         {
             "timestamp": "2018-01-03T16:00:02",
-            "value": [ 0.8825, 0.66, -0.01, -0.9161, 0.1349, -0.47, 0.45, 0.4234, -1.1339, 0.3423 ]
+            "values": [ 0.8825, 0.66, -0.01, -0.9161, 0.1349, -0.47, 0.45, 0.4234, -1.1339, 0.3423 ]
         }
       ]
 }
@@ -542,16 +542,16 @@ Here is a simple function to convert the dataframe into this JSON format.
 ```Python
 def convert_df_to_json(df, outfile_name):
 # NOTE: Assume the first column or the index in dataframe is the timestamp, will force to change it as timestamp in output
-    out_json = {'requestType': 'INLINE', 'columnLabels': [], 'data': []}
+    out_json = {'requestType': 'INLINE', 'signalNames': [], 'data': []}
     column_0 = list(df.columns)[0]
     if df.index.name == None:
         df.index = df[column_0]
         df.drop([column_0], inplace=True, axis=1)
-    out_json['columnLabels'] = list(df.columns)
+    out_json['signalNames'] = list(df.columns)
     if df.index.dtype == 'O': # If the new index is string object
-        out_json['data'] = [{'timestamp': index, 'value': list(row.values)} for index, row in df.iterrows()]
+        out_json['data'] = [{'timestamp': index, 'values': list(row.values)} for index, row in df.iterrows()]
     else:
-        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'value': list(row.values)} for index, row in df.iterrows()]
+        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'values': list(row.values)} for index, row in df.iterrows()]
 
     with open(outfile_name, 'w') as file:
         file.write(json.dumps(out_json, indent=2))
@@ -575,4 +575,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Jason Ding - Principal Data Scientist, July 2021

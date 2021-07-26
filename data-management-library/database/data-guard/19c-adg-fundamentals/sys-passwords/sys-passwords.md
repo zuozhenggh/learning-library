@@ -4,7 +4,7 @@
 
 In this lab, we will use the cloud interface to change the passwords.
 
-In a cloud environment it is important to use the provided cloud tooling as much as possible. It is possible to maintain your own passwords, however this can break the automation in the cloud interface. 
+In a cloud environment it is important to use the provided cloud tooling as much as possible. It is possible to maintain your own passwords, however this can break the automation in the cloud interface.
 
 This lab will show you how to correctly change the SYS password in a Data Guard environment.
 
@@ -16,13 +16,9 @@ Estimated Lab Time: 15 Minutes
 - Change the SYS password
 - Log in to the database as the SYS user
 
-### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-
-
 ## **STEP 1**: Change the SYS password
 
-1. Navigate to the HOLDG primary database following 
+1. Navigate to the HOLDG primary database following
 
     Overview
     -> Bare Metal, VM and Exadata
@@ -45,18 +41,15 @@ Estimated Lab Time: 15 Minutes
 
     ![](./images/sys-03.png)
 
-## **STEP 2**: Verify 
+## **STEP 2**: Verify
 
-1. Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password. 
+1. Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password.
 
     ![](./images/sys-04.png)
 
 2. When you specify the new password, the connection succeeds.
 
     ![](./images/sys-05.png)
-
-
-You have now successfully changed the SYS password. You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
