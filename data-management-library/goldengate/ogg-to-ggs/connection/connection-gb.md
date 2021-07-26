@@ -136,4 +136,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - May 2021
+* **Last Updated By/Date** - Jenny Chan, July 2021
