@@ -1,4 +1,4 @@
-# Getting Started with MySQL Database Service Systems 
+# Getting Started with MySQL Database Service and HeatWave
 ![INTRO](./images/00_mds_image.png " ") 
 
 
@@ -30,7 +30,7 @@ In this lab, you will be guided through the following steps:
 - Create Oracle Analytics Cloud and connect to MySQL HeatWave
 - Create a Bastion Host and connect to MySQL Standalone
     * Connect to MySQL Standalone using Workbench
-- Manage MySQL Data Service Systems 
+- Manage MySQL Database Service Systems 
 
 ### Prerequisites
 
@@ -448,7 +448,7 @@ In this lab, you will be guided through the following steps:
 
     Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #11
     
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**) 
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170..**) 
 
 
     ````
@@ -474,13 +474,13 @@ In this lab, you will be guided through the following steps:
 
    **Connect to MySQL Database Service**
 
-4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
+4. From your Compute instance, connect to MDS-SA MySQL using the MySQL Shell client tool. 
    
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
+   The endpoint (IP Address) can be found in the MDS-SA MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
     ![Connect](./images/06connect03.png " ")
 
-5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-DB private IP address at the end of the cammand. Also enter the admin user password
+5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-SA private IP address at the end of the cammand. Also enter the admin user password
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
@@ -517,64 +517,43 @@ In this lab, you will be guided through the following steps:
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## **STEP 7:** Connect to MySQL Database - High Availability
+## **STEP 7:** Connect to MySQL Database and Switchover - High Availability
 
-1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
+1. Linux ad Mac users  use Terminal 
 
-   If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
+   Windows 10 users use Powershell
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
-   
-    and continue to  STEP 6: #2. 
-    ![Connect](./images/06connect0.png" ")
 
-2.  From a terminal window on your local system. Connect to the Compute Instance with the SSH command. 
+2.  From a terminal or powershell window on your local system. Connect to the Compute Instance with the SSH command. 
 
     Indicate the location of the private key you created earlier with **MDS-Client**. 
     
     Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #10
+    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #11
     
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**)
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
+
 
     ````
-    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip>;</copy>
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
     ````
+
 
     ![Connect](./images/06connect01.png " ")
 
-    **Install MySQL Shell on the Compute Instance**
 
-3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine. 
-
- Install MySQL release package  with the following command:
-
- **[opc@...]$**
-    ````
-    <copy>sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
-    ````
-
-    ![Connect](./images/06connect02.png " ")
-
- Install MySQL Shell with the following command 
-
- **[opc@...]$**
-     ````
-    <copy>sudo yum install –y mysql-shell</copy>
-    ````
-
-    ![Connect](./images/06connect03.png " ")
+3. You should have installed MySQL shell in Step 6 
 
    **Connect to MySQL Database Service**
 
-4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
+4. From your Compute instance, connect to MDS-HA MySQL using the MySQL Shell client tool. 
    
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoints" resource. 
+   The endpoint (IP Address) can be found in the MDS-HA MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
-    ![Connect](./images/06connect06.png " ")
+    ![Connect](./images/06connect03.png " ")
 
-5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-DB private IP address at the end of the cammand. Also enter the admin user password
+5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HA private IP address at the end of the cammand. Also enter the admin user password
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
@@ -582,7 +561,7 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
-    ![Connect](./images/06connect07.png " ")
+    ![Connect](./images/06connect04.png " ")
 
 6. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
 
@@ -590,8 +569,6 @@ In this lab, you will be guided through the following steps:
      ````
     <copy>\SQL</copy>
     ````
-    ![Connect](./images/06connect13.png " ")
-
  To display a list of databases, Enter the following command at the prompt:
       ````
     <copy>SHOW DATABASES;</copy>
@@ -611,64 +588,60 @@ In this lab, you will be guided through the following steps:
     ````   
 
   **Final Sceen Shot**
-    ![Connect](./images/06connect14.png " ")
+    ![Connect](./images/06connect05.png " ")
+
+7. **Switchover** - To switch from the current primary instance to one of the secondary instances, do the following:
+
+* Open the navigation menu  Database > MySQL > DB Systems 
+* Choose root Compartment.
+* In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
+    * Save the current endpoint values for a before and after comparisson of the switch
+    ![Connect](./images/07switch01.png " ")  
+    * Select Switchover from the More Actions menu. The Switchover dialog is displayed 
+     ![Connect](./images/07switch02.png " ")   
+    * Switch the PRimary from AD-2 to AD-3  
+    * Click Switchover to begin the switch process.
+    ![Connect](./images/07switch03.png " ")  
+    * The DB System's status changes to Updating, and the selected instance becomes the primary.
+        ![Connect](./images/07switch04.png " ")  
 
 ## **STEP 8:** Connect to MySQL Database - HeatWave
 
-1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
+1. Linux ad Mac users  use Terminal 
 
-   If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
+   Windows 10 users use Powershell
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
-   
-    and continue to  STEP 6: #2. 
-    ![Connect](./images/06connect0.png" ")
 
-2.  From a terminal window on your local system. Connect to the Compute Instance with the SSH command. 
+2.  From a terminal or powershell window on your local system. Connect to the Compute Instance with the SSH command. 
 
     Indicate the location of the private key you created earlier with **MDS-Client**. 
     
     Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #10
+    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #11
     
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**)
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
 
-    `$ ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip>;`
+
+    ````
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
+    ````
+
 
     ![Connect](./images/06connect01.png " ")
 
-    **Install MySQL Shell on the Compute Instance**
 
-3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine. 
-
- Install MySQL release package  with the following command:
-
- **[opc@...]$**
-    ````
-    <copy>sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
-    ````
-
-    ![Connect](./images/06connect02.png " ")
-
- Install MySQL Shell with the following command 
-
- **[opc@...]$**
-     ````
-    <copy>sudo yum install –y mysql-shell</copy>
-    ````
-
-    ![Connect](./images/06connect03.png " ")
+3. You should have installed MySQL shell in Step 6 
 
    **Connect to MySQL Database Service**
 
-4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
+4. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
    
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoints" resource. 
+   The endpoint (IP Address) can be found in the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
-    ![Connect](./images/06connect06.png " ")
+    ![Connect](./images/06connect03.png " ")
 
-5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-DB private IP address at the end of the cammand. Also enter the admin user password
+5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the cammand. Also enter the admin user password
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
@@ -676,7 +649,7 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
-    ![Connect](./images/06connect07.png " ")
+    ![Connect](./images/06connect04.png " ")
 
 6. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
 
@@ -684,8 +657,6 @@ In this lab, you will be guided through the following steps:
      ````
     <copy>\SQL</copy>
     ````
-    ![Connect](./images/06connect13.png " ")
-
  To display a list of databases, Enter the following command at the prompt:
       ````
     <copy>SHOW DATABASES;</copy>
@@ -705,9 +676,9 @@ In this lab, you will be guided through the following steps:
     ````   
 
   **Final Sceen Shot**
-    ![Connect](./images/06connect14.png " ")
+    ![Connect](./images/06connect05.png " ")
 
-## **STEP 7:**  Import the airportdb schema and data using MySQL Shell
+## **STEP 9:**  Import the airportdb schema and data using MySQL Shell
 
 1.	Create the schema airportdb and tables
 
@@ -743,7 +714,7 @@ In this lab, you will be guided through the following steps:
     ```` 
     ![Connect](./images/06connect17.png " ")
 
-## **STEP 8:**  Add a HeatWave Cluster to MySQL Database System
+## **STEP 10:**  Add a HeatWave Cluster to MySQL Database System
 
 1. Open the navigation menu, under Databases -> MySQL, click DB Systems
 2. Choose your Compartment. A list of DB Systems is displayed. 
@@ -771,7 +742,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 12. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/14addheat07.png " ")
 
-## **STEP 9:**  Load TPCH Data into HeatWave Cluster
+## **STEP 11:**  Load TPCH Data into HeatWave Cluster
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -813,7 +784,7 @@ Verify that the tables are loaded in the HeatWave cluster.
 
    ![Connect](./images/15loadheat02.png " ")
 
-## **STEP 10:**  Runn Queries in HeatWave
+## **STEP 12:**  Runn Queries in HeatWave
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -985,7 +956,7 @@ ALTER TABLE nation SECONDARY_LOAD;
 </copy>
     ````
 
-## **STEP 11:**  Connect to HeatWave using Workbench
+## **STEP 13:**  Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
@@ -996,7 +967,7 @@ ALTER TABLE nation SECONDARY_LOAD;
     **MySQL Workbench Use  for MDS HeatWAve**
     ![MDS](./images/06workbench02.png " ") 
 
-## **STEP 12:**   – Create PHP MySQL Application
+## **STEP 14:**   – Create PHP MySQL Application
 
 Task 1 – Install App Server (APACHE)
 
@@ -1148,7 +1119,7 @@ if ($stmt = $link->prepare($query)) {
 
     Example: http://129.213.167..../dbhwtest.php  
 
-## **STEP 13:**   – Create and Oracle Analytic Cloud
+## **STEP 15:**   – Create and Oracle Analytic Cloud
 
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following page and perform this hands-on workshop.
 Analytics - https://luna.oracle.com/?ojr=lab%3Blid%3Da1fc2175-9720-4345-8cb8-c0270a08c9d1
@@ -1243,7 +1214,7 @@ order by n_name;</copy>
 16.	Click the dataset icon and move the totcust field to Y-axis and n_name field to Category 
 17.	Set project name to customer_nations_bargraph 
 
-## **STEP 14:** Start, stop, or reboot MySQL DB System
+## **STEP 16:** Start, stop, or reboot MySQL DB System
 
 Open the navigation menu. Under MySQL, click DB Systems.
 ![MDS](./images/04mysql01.png " ")
@@ -1278,7 +1249,7 @@ Select a shutdown type:
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
 
-## **STEP 15:** Delete MySQL DB System
+## **STEP 17:** Delete MySQL DB System
 
 Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
 
