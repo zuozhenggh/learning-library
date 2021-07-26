@@ -433,28 +433,28 @@ In this lab, you will be guided through the following steps:
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+## **STEP 6:** Connect to MySQL Database - Standalone
 
-1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
+1. Linux ad Mac users  use Terminal 
 
-   If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
+   Windows 10 users use Powershell
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
-   
-    and continue to  STEP 6: #2. 
-    ![Connect](./images/06connect0.png" ")
 
-2.  From a terminal window on your local system. Connect to the Compute Instance with the SSH command. 
+2.  From a terminal or powershell window on your local system. Connect to the Compute Instance with the SSH command. 
 
     Indicate the location of the private key you created earlier with **MDS-Client**. 
     
     Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #10
+    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on Step 5: #11
     
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**)
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170.990**) 
 
-    `$ ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip>;`
+
+    ````
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
+    ````
+
 
     ![Connect](./images/06connect01.png " ")
 
@@ -462,31 +462,23 @@ In this lab, you will be guided through the following steps:
 
 3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine. 
 
- Install MySQL release package  with the following command:
-
- **[opc@...]$**
-    ````
-    <copy>sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
-    ````
-
-    ![Connect](./images/06connect02.png " ")
-
- Install MySQL Shell with the following command 
+ 
+ Install MySQL Shell with the following command (enter y for each question)
 
  **[opc@...]$**
      ````
     <copy>sudo yum install –y mysql-shell</copy>
     ````
 
-    ![Connect](./images/06connect03.png " ")
+    ![Connect](./images/06connect02.png " ")
 
    **Connect to MySQL Database Service**
 
 4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
    
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoints" resource. 
+   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
 
-    ![Connect](./images/06connect06.png " ")
+    ![Connect](./images/06connect03.png " ")
 
 5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-DB private IP address at the end of the cammand. Also enter the admin user password
 
@@ -496,7 +488,7 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
-    ![Connect](./images/06connect07.png " ")
+    ![Connect](./images/06connect04.png " ")
 
 6. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
 
@@ -504,8 +496,6 @@ In this lab, you will be guided through the following steps:
      ````
     <copy>\SQL</copy>
     ````
-    ![Connect](./images/06connect13.png " ")
-
  To display a list of databases, Enter the following command at the prompt:
       ````
     <copy>SHOW DATABASES;</copy>
@@ -525,9 +515,9 @@ In this lab, you will be guided through the following steps:
     ````   
 
   **Final Sceen Shot**
-    ![Connect](./images/06connect14.png " ")
+    ![Connect](./images/06connect05.png " ")
 
-## **STEP 7:** Connect to MySQL Database - Standalone
+## **STEP 7:** Connect to MySQL Database - High Availability
 
 1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
@@ -623,7 +613,7 @@ In this lab, you will be guided through the following steps:
   **Final Sceen Shot**
     ![Connect](./images/06connect14.png " ")
 
-## **STEP 8:** Connect to MySQL Database - High Availability
+## **STEP 8:** Connect to MySQL Database - HeatWave
 
 1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
