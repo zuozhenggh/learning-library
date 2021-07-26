@@ -21,6 +21,8 @@ In this workshop, you will:
 
 To successfully complete this LiveLab, you must have an on premise or Marketplace Oracle GoldenGate installation.
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 ### Lab Breakdown
 
 * Lab 1: Create OCI GoldenGate resources

@@ -197,6 +197,7 @@ In the Oracle GoldenGate Marketplace Distribution Server, verify the Distributio
 
 ![Confirm Distribution Path](images/04-00.png)
 
+In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. You can now proceed to the [next lab](#next).
 
 ## Learn More
 
