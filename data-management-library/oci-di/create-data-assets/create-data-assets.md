@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create **Data assets** for your source and target data sources used in the integration tasks. You will be using **Object Storage** as the source and **Autonomous Data Warehouse** as the target. Data assets can be databases, flat files, and so on.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 25 minutes
 
 ### Objectives
 In this lab, you will:
