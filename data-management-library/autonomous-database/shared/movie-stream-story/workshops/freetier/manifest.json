@@ -16,7 +16,7 @@
           "filename": "../../provision-database/adb-provision-moviestream.md"
         },
         {
-            "title": "Lab 2: Tour of ADB Console",
+            "title": "Lab 2: Quick Tour of ADW",
             "filename": "../../guided-tour/guided-tour.md"
         },
         {
@@ -36,7 +36,7 @@
             "filename": "../../predict-churn/predict-churn.md"
         },
         {
-            "title": "Lab 7: Find Best Location with Spatial",
+            "title": "Lab 7: Find Closest Pizza Shops with Spatial",
             "filename": "../../apply-spatial/apply-spatial.md"
         },
         {
