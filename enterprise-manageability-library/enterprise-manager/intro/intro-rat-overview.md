@@ -9,7 +9,7 @@ Join Oracle's ***Wim Coekaerts***, *senior vice president of software developmen
 
 ## Workshop Description
 The Database Performance Management is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
-- This Workshop VM comes preinstalled with Enterprise Manager 13.4 Release Update 5 and Oracle Database targets - 18.3, 18.8 and 19.7
+- This Workshop VM comes preinstalled with Enterprise Manager 13.5 Release Update 1 and Oracle Database targets - 18.3, 18.8 and 19.7
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
 ### Applicable Enterprise Manager Management Packs
@@ -26,10 +26,10 @@ Oracle Database Performance Management including overall DB performance, SQL ana
 - Use SQL Performance Analyzer Optimizer to gather statistics for validation
 - Use Database Workload Replay to run real workload against your changes for additional validation
 
-## Additional Workshop Supported Use Cases
+### Additional Workshop Supported Use Cases
 
 For additional Enterprise Manager use cases, see below and visit [LiveLabs](http://bit.ly/golivelabs) for the details.
-### 1. Database Lifecycle Automation
+#### 1. Database Lifecycle Automation
 -	Create a Pluggable Database (PDB)
 -	Un-plug/Plug an existing Pluggable Database
 -	Clone an existing Pluggable Database
@@ -37,24 +37,29 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
 
-### 2. Database Fleet Maintenance - Patching
+#### 2. Database Fleet Maintenance - Patching
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
 
-### 3. Database Fleet Maintenance - Upgrade
+#### 3. Database Fleet Maintenance - Upgrade
 * Detect Configuration Pollution
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
     - Cleanup
 
-### 4. Compliance and Drift Management
+#### 4. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 - Host security compliance using custom compliance standard
+
+#### 5. Job System Automation
+* Understand how to create an OS Command Job
+* Create a SQL command Job
+* Create Database Backup Job using Wizard
 
 ## More Information on Oracle Enterprise Manager
 Managing Your Hybrid Database Fleet

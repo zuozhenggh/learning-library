@@ -9,7 +9,7 @@
     {
       "title": "Introduction",
       "description": "Introduction to Database Performance Management Workshop",
-      "filename": "./../../intro/intro-em-monitoring-overview.md"
+      "filename": "./../../intro/intro-rat-overview.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",

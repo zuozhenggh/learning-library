@@ -8,8 +8,8 @@
     },
     {
       "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
-      "filename": "./../../intro/intro.md"
+      "description": "Introduction to EM Database Monitoring Workshop",
+      "filename": "./../../intro/intro-em-monitoring-overview.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
