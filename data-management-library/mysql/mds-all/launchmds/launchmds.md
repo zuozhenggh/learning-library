@@ -39,10 +39,10 @@ In this lab, you will be guided through the following steps:
 
 ## **STEP 1:** Create Virtual Cloud Network
 
-1. On the Navigation Menu, under Core Infrastructure, select Networking -> Virtual Cloud Networks.
+1. Navigation Menu > Core Infrastructure > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
-2. Click on Start VCN Wizard.
+2. Click Start VCN Wizard.
     ![VCN](./images/03vcn02.png " ")
 
 3. Select VCN with Internet Connectivity 
@@ -73,21 +73,22 @@ In this lab, you will be guided through the following steps:
 7. The Virtual Cloud Network creation is completing 
     ![VCN](./images/03vcn05.png " ")
     
-8. Click on "View Virtual Cloud Network" button to display the  created VCN
+8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. On the MDS-VCN page Under Subnets in( (root)) Compartment Click on the  **Private Subnet-MDS-VCN** link. 
-            ![COMPUTE](./images/03vcn07.png " ")
+9. MDS-VCN page Under Subnets in( (root)) Compartment Click on the  **Private Subnet-MDS-VCN** link 
+            ![VCN](./images/03vcn07.png " ")
 
-10.	On the Private Subnet-MDS-VCN page under Security Lists  click on the **Security List for Private Subnet-MDS-VCN** link.
-        ![COMPUTE](./images/03vcn08.png " ")
+10.	Private Subnet-MDS-VCN page under Security Lists  click on the **Security List for Private Subnet-MDS-VCN** link
+        ![VCN](./images/03vcn08.png " ")
 
-11.	On the Security List for Private Subnet-MDS-VCN page click on the **Add Ingress Rules** button
+11.	Security List for Private Subnet-MDS-VCN page click on the **Add Ingress Rules** button
 
-    ![COMPUTE](./images/03vcn09.png " ")
+    ![VCN](./images/03vcn09.png " ")
 
-12.	On the Add Ingress Rules page under Ingress Rule 1, 
- add an Ingress Rule with Source CIDR 
+12.	Add Ingress Rules page under Ingress Rule 1
+ 
+ Add an Ingress Rule with Source CIDR 
     ````
     <copy>0.0.0.0/0</copy>
     ````
@@ -99,23 +100,23 @@ In this lab, you will be guided through the following steps:
      ````
     <copy>MySQL Port Access</copy>
      ````
- Click on Add Ingress Rule.
-    ![COMPUTE](./images/03vcn10.png " ")
+ Click Add Ingress Rule.
+    ![VCN](./images/03vcn10.png " ")
 
 14.	On Security List for Private Subnet-MDS_VCN page
         
      New Ingress Rules will be shown under the Ingress Rules List
-    ![COMPUTE](./images/03vcn11.png " ")
+    ![VCN](./images/03vcn11.png " ")
 
 ## **STEP 2:** Create a MySQL DB System - Standalone.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
 
-2. Click on Create MySQL DB System
+2. Click Create MySQL DB System
     ![MDS](./images/04mysql02.png" ")
 
-3. On Create MySQL DB System dialog complete the fields in each section
+3. Create MySQL DB System dialog complete the fields in each section
 
     - Provide basic information for the DB System
     - Setup your required DB System
@@ -123,31 +124,27 @@ In this lab, you will be guided through the following steps:
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Configure Backups
-    - Show Advanced Options
+    - Exlude Backups
+   
 
-4. On Provide basic information for the DB System:
+4. Provide basic information for the DB System:
    
 
  Select Compartment **(root)**
 
  Enter Name
      ````
-    <copy>MDS-DB</copy>
+    <copy>MDS-SA</copy>
     ````
  Enter Description 
     ````
-    <copy>Standalone Database System ready for HeatWave Cluster attachment</copy>
+    <copy>MySQL Database Service Standalone instance</copy>
     ````
-    
-    ![MDS](./images/04mysql03.png " ")
+ 
+ Select **Standalone** to specify a Standalone DB System
+    ![MDS](./images/04mysql03-1.png " ")
 
-5. On Setup your required DB System 
-   
-    System Select **HeatWave** to specify a HeatWave DB System
-    ![MDS](./images/04mysql04.png " ")
-
-6. On Create Administrator credentials
+6. Create Administrator credentials
 
  Enter Username
     ````
@@ -161,66 +158,55 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>Welcome#12345</copy>
     ````
-    ![MDS](./images/04mysql05.png " ")
+    ![MDS](./images/04mysql04.png " ")
 
-7. On Configure networking Keep default values
+7. Configure networking Keep default values
 
     Virtual Cloud Network: **MDS-VCN**
     
     Subnet: **Private Subnet-MDS-VCN (Regional)**
 
-    ![MDS](./images/04mysql06.png " ")
+    ![MDS](./images/04mysql05.png " ")
 
-8. On Configure placement  keep checked  "Availability Domain"
+8. Configure placement  keep checked  "Availability Domain"
    
     Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
-    ![MDS](./images/04mysql07.png" ")
+    ![MDS](./images/04mysql06-1.png" ")
 
-9. On Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
+9. Configure hardware keep default shape  **MySQL.VM.Standard.E3.1.8GB**
 
-    Data Storage Size (GB) keep default value **1024**
+    Data Storage Size (GB) keep default value **50**
+    ![MDS](./images/04mysql07-1.png" ")
+
+19. Configure Backups, "Enable Automatic Backups"
+    
+    Turn off button to disable automatic backup
+       
     ![MDS](./images/04mysql08.png" ")
-
-19. On Configure Backups, keep  "Enable Automatic Backups" checked
     
-    set Retention period to **7**
-    
-    select "Default Backup Window"
-    
-    ![MDS](./images/04mysql09.png" ")
-    
-20. Click on the **Hide Advanced Options** link 
-
- Select the **Networking** tab
-
-  Enter Hostname
-    ````
-    <copy>mdsdb</copy>
-    ````   
-
-  Click the **Create button** 
-    ![MDS](./images/04mysql10.png" ")
+    Click the **Create button** 
+    ![MDS](./images/04mysql09-1.png" ")
 
 11. The New MySQL DB System will be ready to use after a few minutes. 
 
     The state will be shown as Creating during the creation
-    ![MDS](./images/04mysql11.png" ")
+    ![MDS](./images/04mysql10-1.png" ")
 
 12. The state Active indicates that the DB System is ready to use. 
 
     Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
 
-    ![MDS](./images/04mysql12.png" ")
+    ![MDS](./images/04mysql11-1.png" ")
 
 ## **STEP 3:** Create a MySQL DB System - High Availability.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
 
-2. Click on Create MySQL DB System
+2. Click Create MySQL DB System
     ![MDS](./images/04mysql02.png" ")
 
-3. On Create MySQL DB System dialog complete the fields in each section
+3. Create MySQL DB System dialog complete the fields in each section
 
     - Provide basic information for the DB System
     - Setup your required DB System
@@ -228,31 +214,27 @@ In this lab, you will be guided through the following steps:
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Configure Backups
-    - Show Advanced Options
+    - Exlude Backups
+   
 
-4. On Provide basic information for the DB System:
+4. Provide basic information for the DB System:
    
 
  Select Compartment **(root)**
 
  Enter Name
      ````
-    <copy>MDS-DB</copy>
+    <copy>MDS-HA</copy>
     ````
  Enter Description 
     ````
-    <copy>Standalone Database System ready for HeatWave Cluster attachment</copy>
+    <copy>MySQL Database Service High Availability instance</copy>
     ````
-    
-    ![MDS](./images/04mysql03.png " ")
+ 
+ Select **Standalone** to specify a High Availability DB System
+    ![MDS](./images/04mysql03-2.png " ")
 
-5. On Setup your required DB System 
-   
-    System Select **Standalone** to specify a HeatWave DB System
-    ![MDS](./images/04mysql04.png " ")
-
-6. On Create Administrator credentials
+6. Create Administrator credentials
 
  Enter Username
     ````
@@ -266,57 +248,58 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>Welcome#12345</copy>
     ````
-    ![MDS](./images/04mysql05.png " ")
+    ![MDS](./images/04mysql04.png " ")
 
-7. On Configure networking Keep default values
+7. Configure networking Keep default values
 
     Virtual Cloud Network: **MDS-VCN**
     
     Subnet: **Private Subnet-MDS-VCN (Regional)**
 
-    ![MDS](./images/04mysql06.png " ")
+    ![MDS](./images/04mysql05.png " ")
 
-8. On Configure placement  keep checked  "Availability Domain"
+8. Configure placement  "Availability Domain"
+
+    Select AD-2
    
     Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
-    ![MDS](./images/04mysql07.png" ")
+    ![MDS](./images/04mysql06-2.png" ")
 
-9. On Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
+9. Configure hardware keep default shape  **MySQL.VM.Standard.E3.1.8GB**
 
-    Data Storage Size (GB) keep default value **1024**
+    Data Storage Size (GB) keep default value **50**
+    ![MDS](./images/04mysql07-1.png" ")
+
+19. Configure Backups, "Enable Automatic Backups"
+    
+    Turn off button to disable automatic backup
+       
     ![MDS](./images/04mysql08.png" ")
+    
+    Click the **Create button** 
+    ![MDS](./images/04mysql09-2.png" ")
 
-19. On Configure Backups, uncheck "Enable Automatic Backups" 
-    
-    set Retention period to **7**
-    
-    select "Default Backup Window"
-    
-    ![MDS](./images/04mysql09.png" ")
-    
-20. Click the **Create button** 
-    ![MDS](./images/04mysql10.png" ")
-
-11. The New MySQL DB System will be ready to use after a couple of minutes. 
+11. The New MySQL DB System will be ready to use after a few minutes. 
 
     The state will be shown as Creating during the creation
-    ![MDS](./images/04mysql11.png" ")
+    ![MDS](./images/04mysql10-2.png" ")
 
 12. The state Active indicates that the DB System is ready to use. 
 
     Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
 
-    ![MDS](./images/04mysql12.png" ")
+    ![MDS](./images/04mysql11-2.png" ")
+
 
 ## **STEP 4:** Create a MySQL DB System - HeatWave.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
 
-2. Click on Create MySQL DB System
+2. Click Create MySQL DB System
     ![MDS](./images/04mysql02.png" ")
 
-3. On Create MySQL DB System dialog complete the fields in each section
+3. Create MySQL DB System dialog complete the fields in each section
 
     - Provide basic information for the DB System
     - Setup your required DB System
@@ -324,31 +307,27 @@ In this lab, you will be guided through the following steps:
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Configure Backups
-    - Show Advanced Options
+    - Exlude Backups
+   
 
-4. On Provide basic information for the DB System:
+4. Provide basic information for the DB System:
    
 
  Select Compartment **(root)**
 
  Enter Name
      ````
-    <copy>MDS-DB</copy>
+    <copy>MDS-HW</copy>
     ````
  Enter Description 
     ````
-    <copy>High Availability Database System </copy>
+    <copy>MySQL Database Service HeatWave instance</copy>
     ````
-    
-    ![MDS](./images/04mysql03.png " ")
+ 
+ Select **HeatWave** to specify a HeatWave DB System
+    ![MDS](./images/04mysql03-3.png " ")
 
-5. On Setup your required DB System 
-   
-    System Select **HeatWave** to specify a HeatWave DB System
-    ![MDS](./images/04mysql04.png " ")
-
-6. On Create Administrator credentials
+6. Create Administrator credentials
 
  Enter Username
     ````
@@ -362,56 +341,54 @@ In this lab, you will be guided through the following steps:
     ````
     <copy>Welcome#12345</copy>
     ````
-    ![MDS](./images/04mysql05.png " ")
+    ![MDS](./images/04mysql04.png " ")
 
-7. On Configure networking Keep default values
+7. Configure networking Keep default values
 
     Virtual Cloud Network: **MDS-VCN**
     
     Subnet: **Private Subnet-MDS-VCN (Regional)**
 
-    ![MDS](./images/04mysql06.png " ")
+    ![MDS](./images/04mysql05.png " ")
 
-8. On Configure placement  keep checked  "Availability Domain"
+8. Configure placement "Availability Domain"
    
+    Select AD-3
+
     Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
-    ![MDS](./images/04mysql07.png" ")
+    ![MDS](./images/04mysql06-3.png" ")
 
-9. On Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
+9. Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) keep default value **1024**
-    ![MDS](./images/04mysql08.png" ")
+    Data Storage Size (GB) Set to **4000**
+    ![MDS](./images/04mysql07-3.png" ")
 
-19. On Configure Backups, keep  "Enable Automatic Backups" checked
+19. Configure Backups, "Enable Automatic Backups"
     
-    set Retention period to **7**
-    
-    select "Default Backup Window"
-    
-    ![MDS](./images/04mysql09.png" ")
-    
-20. Click on the **Hide Advanced Options** link 
+    Turn off button to disable automatic backup
 
- Select the **Networking** tab
+20. Click on Hide Advanced Options link
 
-  Enter Hostname
-    ````
-    <copy>mdsdb</copy>
-    ````   
+    Select Networking tab
 
-  Click the **Create button** 
-    ![MDS](./images/04mysql10.png" ")
+    Enter Hostname mdshw
+       
+    ![MDS](./images/04mysql08-3.png" ")
+    
+    Click the **Create button** 
+    ![MDS](./images/04mysql09-3.png" ")
 
 11. The New MySQL DB System will be ready to use after a few minutes. 
 
     The state will be shown as Creating during the creation
-    ![MDS](./images/04mysql11.png" ")
+    ![MDS](./images/04mysql10-3.png" ")
 
 12. The state Active indicates that the DB System is ready to use. 
 
     Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
 
-    ![MDS](./images/04mysql12.png" ")
+    ![MDS](./images/04mysql11-1.png" ")
+
 
 ## **STEP 5:** Create Client Virtual Machine
 
