@@ -15,11 +15,11 @@ Estimated Lab Time: 25 minutes
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **STEP 1:** Prepare your terraform script for execution
+## **STEP 1:** Prepare your Terraform Script for Execution
 
 Terraform provides a reusable process for creating infrastructure. In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects. This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
-1.  We provide an archive containing the Terraform configuration and sample code. You can download it from [here: node-mysql-hol-tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u03/b/labfiles/o/node-mysql-hol-tf.zip)
+1.  We provide an archive containing the Terraform configuration and sample code. You can download it from [here: node-mysql-hol-tf.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/PEGzqKH5DSltrjSSb8B49X4EA-2N36k5DDtSODPmk46j2tpTEUoOFbbG1MqTFo7O/n/c4u04/b/labfiles/o/node-mysql-hol-tf.zip)
 
  *Note: Keep the file around! We will refer to it later!*
 
@@ -31,11 +31,11 @@ Terraform provides a reusable process for creating infrastructure. In some cases
 
   ![](images/011.png " ")
 
-4. Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
+4. Select **My Configuration**, choose the **.ZIP FILE** button, Click on **Browse** and find the zipped **node-mysql-hol-tf.zip** file. Then, you can give your **Stack** a name (or accept default). You can also give a description if you'd like, but it is not necessary. Then click **Next**.
 
-  ![](images/terra01.png " ")
+  ![](./images/zip-file.png)
 
-5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can change it according to your wishes, as long as you fulfill the requirements. **For this Hands-on-Lab the password will not be stored securly. Don't use a password you use elsewhere**.  Select Next.
+5. You can configure different variables on this screen. A password for the MySQL user is suggested. You can change it according to your wishes, as long as you fulfill the requirements. **For this Hands-on-Lab the password will not be stored securely. Don't use a password you use elsewhere**.  Select Next.
 
   ![](images/terra02.png " ")
 
@@ -86,9 +86,3 @@ Copy the information from the different fields, so you have it available fot the
 - **Authors/Contributors** - Johannes Schlüter
 - **Last Updated By/Date** - Johannes Schlüter, October 2020
 - **Workshop Expiration Date** - October, 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one. 
-

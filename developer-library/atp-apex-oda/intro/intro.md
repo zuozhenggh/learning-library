@@ -6,7 +6,7 @@
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
 
-Estimated Workshop Time: 120 minutes
+Estimated Workshop Time: 90 minutes
 
 ### Objectives
 
@@ -27,7 +27,7 @@ Estimated Workshop Time: 120 minutes
     As a **Windows user** you need to type on the **Windows Search** Icon:
 
     ```
-    cmd
+    <copy>cmd</copy>
     ```
 
     and select **Command Prompt**.
@@ -49,7 +49,7 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
 [Download Node.js LTS](https://nodejs.org/en/download/) from the official website. It is fine if the version is higher than the one in the screenshot.
 
-![Node Download](./images/node_download.png)
+![Node Download](./images/node_download2.png)
 
 1. We are going to install on **Windows** but it works in a similar way in **Linux** and **MacOS**.
 
@@ -71,31 +71,26 @@ We are going to **install** Node.js, if you have done this you can skip this ste
 
     Check if the installation went **well**. Open a Command Prompt, or Terminal in Linux and MacOS and run the following commands:
 
-    ```bash
-    node -v
+    ```
+    <copy>node -v</copy>
     ```
 
-    ```bash
-    npm -v
+    ```
+    <copy>npm -v</copy>
     ```
 
-    ```bash
-    npx @oracle/bots-node-sdk -v
+    ```
+    <copy>npx @oracle/bots-node-sdk -v</copy>
     ```
 
     Like this:
 
-    ![Node Versions](./images/node_versions.png)
+    ![Node Versions](./images/node_versions2.png)
 
 At this point, you are ready to start learning!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

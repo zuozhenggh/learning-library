@@ -20,8 +20,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     <copy>
     cd /home/opc/
 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
-
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/C0K_PxLC5D0szNqwB11bJ_xq-L5gfQga9wDDIOMKpDnU5mcmBqmI0DICuS9mWJuE/n/c4u04/b/labfiles/o/nfscripts.zip
+    
     unzip nfscripts.zip;
 
     chmod +x *.sh
@@ -74,7 +74,3 @@ The above copyright notice and this permission notice shall be included in all c
 - **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
 - **Last Updated By/Date** - Kay Malcolm, August 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

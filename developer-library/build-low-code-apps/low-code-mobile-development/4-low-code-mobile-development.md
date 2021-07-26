@@ -36,11 +36,11 @@ Estimated time: 45 minutes
 
     ![](images/step1/3.png " ")
 
-4. Click on **Create Enviornment**.
+4. Click on **Create environment**.
   
     ![](images/step1/4.png " ")
 
-5. Give the name of Enviornment,such as appDevApp.
+5. Give the name of environment,such as appDevApp.
   
     ![](images/step1/5.png " ")
 
@@ -52,7 +52,7 @@ Estimated time: 45 minutes
   
     ![](images/step1/7.png " ")
 
-8. It will take few seconds for enviornment to get ready, once it is ready click on **Designer** tab
+8. It will take few seconds for environment to get ready, once it is ready click on **Designer** tab
 
     ![](images/step1/8.png " ")
 
@@ -341,7 +341,3 @@ Service Connections are REST endpoints pointing to various services. In this ste
 - **Last Updated By/Date** - October 22, 2020
 - **Workshop Expiration Date** - May 31, 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

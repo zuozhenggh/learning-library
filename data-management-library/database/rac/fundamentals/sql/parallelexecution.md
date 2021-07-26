@@ -34,14 +34,14 @@ If your system lacks any of these characteristics, parallel execution might not 
 The benefits of parallel execution can be observed in DSS and data warehouse environments. OLTP systems can also benefit from parallel execution during batch processing and during schema maintenance operations such as creation of indexes. The average simple DML or SELECT statements that characterize OLTP applications would not experience any benefit from being executed in parallel.
 
 ## **STEP 1:**  Grant DBA to the SH user
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-   
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -51,8 +51,11 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
 4.  Switch to the oracle user and connect to the pluggable database, **PDB1** as SYSDBA.  *Replace the welcome password with your database password.*
 
     ````
+    <copy>
     sudo su - oracle
-    sqlplus sys/W3lc0m3#W3lc0m3#@//racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com/pdb1.tfexsubdbsys.tfexvcndbsys.oraclevcn.com as sysdba
+    srvctl config scan
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<PutScanNameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
+    </copy>
     ````
 
 5. Grant DBA to SH and then exit out of sql*plus, the oracle user and switch to the grid user.
@@ -70,8 +73,8 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
 
 ## **STEP 2:** Run a parallel query operation
 
-1. Ensure that the **testy** service created earlier is running on instance 1. 
-   
+1. Ensure that the **testy** service created earlier is running on instance 1.
+
     ````
     <copy>
     crsctl stat res -t
@@ -85,14 +88,14 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     <copy>
     srvctl relocate service -d atfdbvm_dbname -s testy -oldinst aTFdbVm2 -newinst aTFdbVm1   
     crsctl stat res -t
-    
+
     </copy>
     ````
     ![](./images/relocate.png " ")
     ![](./images/testy-node2.png " ")
 
 3. Connect to this service as the SH user. Connect on **node 1**.
-   
+
     ````
     sudo su - oracle
     srvctl status service -d aTFdbVm_replacename -s testy
@@ -103,7 +106,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     ![](./images/ll-num3-1.png " ")
 
 4. Show your connection details
-   
+
     ````
     <copy>
     select sid from v$mystat where rownum=1;
@@ -166,7 +169,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     ````
 
 9.  Your connection details will now be similar to
-   
+
     ````
     col sid format 9999
     col username format a10
@@ -178,7 +181,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     ![](./images/ll-num9.png " ")
 
 10. Choose a new trace file identifier and run the SELECT statement again using *racpx05* as the identifier.  So now that you have relocated the service, let's see where the trace files are created, node 1 or node 2?
-    
+
     ````
     <copy>
     exec dbms_session.set_identifier('racpx05');
@@ -192,8 +195,8 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     </copy>
     ````  
     ![](./images/ll-num10-1.png " ")
-11. Where are the trace files located now?  If you answered node 2, you are correct!  On node 1, only the racpx01 files exist. 
-    
+11. Where are the trace files located now?  If you answered node 2, you are correct!  On node 1, only the racpx01 files exist.
+
     ![](./images/ll-num7-1.png " ")
 
 12. On racnode2, the racpx05 files exist.
@@ -206,10 +209,5 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
-* **Contributors** - Kay Malcolm
-* **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Contributors** - Kay Malcolm, Kamryn Vinson
+* **Last Updated By/Date** - Kamryn Vinson, March 2021

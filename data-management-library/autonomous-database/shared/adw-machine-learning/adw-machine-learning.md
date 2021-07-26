@@ -10,12 +10,6 @@ In this lab, you will be using the Oracle Machine Learning (OML) notebook applic
 -   Learn how to use DBMS\_PREDICTIVE\_ANALYTICS routines
 -   Learn how to use Oracle ML Examples
 
-### Prerequisites
-
--   This lab requires a user with access to the Oracle Machine Learning Notebook application
-
-    *Note: you created such a user in the previous lab.*
-
 ## **STEP 1**: Download the sample notebook for this lab
 The first step is to download the sample notebook and then import it into the Oracle ML notebook application.
 
@@ -92,8 +86,3 @@ Click [here](https://docs.oracle.com/en/database/oracle/oracle-database/20/dmapi
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

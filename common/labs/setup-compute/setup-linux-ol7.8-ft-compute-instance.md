@@ -20,7 +20,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes you hav!e:
+This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
@@ -28,8 +28,9 @@ This lab assumes you hav!e:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Login to your Oracle Cloud account
-2.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**
-![Create a stack](images/db19c-freetier-step1.png " ")
+2.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 3.  In the Browse Solutions window, select **Default VCN**.
     ![Image alt text](images/db19c-freetier-step1-2.png " ")
 
@@ -37,7 +38,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
    ![Image alt text](images/db19c-freetier-step1-3.png " ")
 5.  Enter the name for your VCN:  **livelabsvcn**.  Click **next**.
    ![Image alt text](images/db19c-freetier-step1-4.png " ")
-6. Inspect and then accept all default values in the Configure Variables screen and click **Next**. 
+6. Inspect and then accept all default values in the Configure Variables screen and click **Next**.
    ![Image alt text](images/db19c-freetier-step1-5.png " ")
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
@@ -48,7 +49,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
 2. Select **Apply**
 ![Image alt text](images/db19c-freetier-step1-8.png " ")
-3. Insepct the apply job, accept all defaults and click **Apply**
+3. Inspect the apply job, accept all defaults and click **Apply**
 ![Image alt text](images/db19c-freetier-step1-9.png " ")
 4. The VCN will immediately begin creation.
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
@@ -58,7 +59,8 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
 7. Copy the first subnet id to a notepad and save for the next step.  If you would like to further inspect the VCN, complete #s 8-12.  Otherwise skip to the next section.
 ![Image alt text](images/db19c-freetier-step1-13.png " ")
-8.  Click on the hamburger menu in the upper left corner of your browser.  Select **Networking**->**Virtual Cloud Networks**. ![Image alt text](images/db19c-freetier-step1-14.png " ")
+8.  Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
+![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 9.  The VCN you created should be listed.  Click on the VCN you just created.
 ![Image alt text](images/db19c-freetier-step1-15.png " ")  
 10.  On the VCN homepage notice the 3 subnets that were created.  Each subnet is tied to an Availability Domain.  Click on the first subnet that matches AD-1.
@@ -67,20 +69,24 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
-   
+
 ## **STEP 3**: Setup Compute Instance
 
-1. Click on the hamburger menu in the upper left corner of your browser.  Select **Compute**->**Instance**. ![Image alt text](images/linux-compute-step3-10.png " ")
-2. Click on **Create Instance**. ![](images/setup-linux-ft-create-instance.png " ")
-3. Enter the **Name** for your Compute Instance and choose the **compartment**. ![](images/setup-linux-ft-name-compartment.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+2. Click on **Create Instance**. 
+    ![](images/setup-linux-ft-create-instance.png " ")
+3. Enter the **Name** for your Compute Instance and choose the **compartment**. 
+    ![](images/setup-linux-ft-name-compartment.png " ")
 4. Click on edit and choose the Availability Domain, Image, and Shape of your choice. For this lab, use the default Oracle Linux 7.8 image.
-![](images/setup-linux-ft-choose-image.png " ")
-![](images/setup-linux-ft-choose-image-2.png " ")
-5. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key. Then click create. ![](images/setup-linux-ft-paste-sshkey.png " ")
+    ![](images/setup-linux-ft-choose-image.png " ")
+    ![](images/setup-linux-ft-choose-image-2.png " ")
+5. In the Add SSH keys, select **Paste Public Keys** and paste your public ssh key. Then click create. 
+    ![](images/setup-linux-ft-paste-sshkey.png " ")
 6. The instance will immediately begin provisioning.
-![](images/setup-linux-ft-provisioning.png " ")
+    ![](images/setup-linux-ft-provisioning.png " ")
 7. Once it is provisioned, inspect the instance information and copy the public IP address to notepad.
-![](images/setup-linux-ft-copy-ipaddress.png " ")
+    ![](images/setup-linux-ft-copy-ipaddress.png " ")
 
 ## **STEP 4**: Connect to your instance
 
@@ -89,7 +95,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
@@ -158,14 +164,10 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*. 
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Director, DB Product Management
+- **Author** - Kay Malcolm, DB Product Management
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
 - **Last Updated By/Date** - Anoosha Pilli, October 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files. Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

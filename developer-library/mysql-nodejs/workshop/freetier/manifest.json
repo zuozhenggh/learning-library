@@ -1,8 +1,9 @@
 {
     "workshoptitle": "Develop and Deploy a Modern Application in Node.js on MySQL Database Service",    
-    "tutorials": [
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [	
         {
-            "title": "Prerequisites",
+            "title": "Getting Started",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
         },
         {
@@ -14,7 +15,7 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 2: Exploring and completing the Setup of the Cloud Environment",
+            "title": "Lab 2: Exploring and Completing the Setup of the Cloud Environment",
             "filename": "../../environment/environment.md"
         },
         {
@@ -22,12 +23,17 @@
             "filename": "../../import/import.md"
         },
         {
-            "title": "Lab 4: Build a Microservice and a Web frontend",
+            "title": "Lab 4: Build a Microservice and a Web Frontend",
             "filename": "../../frontend/frontend.md"
         },
         {
-            "title": "Lab 5: Next steps",
+            "title": "Lab 5: Next Steps",
             "filename": "../../next-steps/next-steps.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
 
     ]

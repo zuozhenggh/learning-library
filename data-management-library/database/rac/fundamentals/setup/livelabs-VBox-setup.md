@@ -1,7 +1,7 @@
 # Setup - LiveLabs#
 
 ## Introduction
-This lab will show you how to setup a GI cluster and RAC database on your laptop using Oracle Virual Box.  
+This lab will show you how to setup a GI cluster and RAC database on your laptop using Oracle Virtual Box.  
 
 **PLEASE READ:**  *If you already have a RAC cluster (running the 19c Image) configured, bypass this step.*
 **PLEASE READ:**  *You will need a minimum of 16GB memory and 100GB of disk space to install the cluster and database. The ability to install new software is required*
@@ -183,7 +183,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 ### Connecting via MAC or Windows CYGWIN Emulator
 1.  Go to Compute -> Instance and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -227,8 +227,3 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 - **Author** - Troy Anthony, DB Product Management
 - **Vagrant architecture** - Ruggero Citon, RAC Pack MAA, Cloud Innovation and Solution Engineering Team
 - **Last Updated By/Date** - Troy Anthony, DB Product Management, August 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

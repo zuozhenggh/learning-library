@@ -1,9 +1,16 @@
 # Setup Compute Instance
 
 ## Introduction
+
 This lab will show you how to setup a compute instance running a pre-configured Compute and the corresponding Virtual Cloud Network (VCN).
 
 Estimated Lab Time:  25 minutes
+
+Quick walk through on how to set up your compute instance.
+
+[](youtube:O79UmNZwrWE)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -23,45 +30,56 @@ This lab assumes you have:
 ## **STEP 1**: Setup Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
-1.  Click on the link below to download the Resource Manager zip file you need to build your enviornment.  
-    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
+    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yfXLshLk0N5UXoHbL5ZPeVfqMS7lvxA_Bl-E2t4hdxXGJghQgVjs-MmohR6HDkYi/n/c4u04/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
-4.  Click the **Create a Stack** tile on the homepage.  You may also get to Resource Manager by clicking on the Hamburger **Menu** -> **Solutions and Platform** -> **Resource Manager**.
-   ![Create a stack](images/db19c-freetier-step1.png " ")
-5.  Click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Open**.
-   ![](./images/db19c-freetier-step3-2.png " ")
-6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
+4.  Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+
+5. Click **Create Stack**.
+    ![](./images/create-stack.png " ")
+
+6.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
+
+   ![](./images/zip-file.png " ")
+
+7. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
    ![Create a stack](images/workshop-001.png " ")
-7. Accept the region and select your compartment.  Select an **availabilty domain** from the drop down.
+8. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
    ![Create a stack](images/workshop-002.png " ")
-8. Paste the SSH key you created in the previous lab.
+9. Paste the SSH key you created in the previous lab.
    ![Create a stack](images/workshop-003.png " ")
-9. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
+10. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
     ![Create a stack](images/workshop-004.png " ")
-10. Accept the network and click **Next**.
+11. Accept the network and click **Next**.
     ![Create a stack](images/workshop-005.png " ")
-11. Review the details and click **Next**.
+12. Review the details and click **Create**.
     ![Create a stack](images/workshop-006.png " ")
 
 ## **STEP 2**: Run Stack Apply Job
 
-1. Click the **Terraform Actions** drop down.
+1. Click the **Terraform Actions** drop down. Select **Apply**
     ![Create a stack](images/workshop-007.png " ")
-2. Choose **Apply**
+2. Select **Apply**
     ![Create a stack](images/workshop-008.png " ")
 3. Resource Manager will begin creating the components needed for this workshop.
     ![Create a stack](images/workshop-009.png " ")
 4. Inspect the log, you will notice that 8 resources were created including the compute instance.
    ![Create a stack](images/workshop-010.png " ")
+   ![Create a stack](images/workshop-11.png " ")
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 ## **STEP 3**: Gather compute instance details
-1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**
-   ![Create a stack](images/workshop-011.png " ")
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+
 2. Look for the instance you just created and jot down the public IP address.
-   ![Create a stack](images/workshop-012.png " ")
+    
+    ![Create a stack](images/workshop-012.png " ")
 
 ## **STEP 4**: Connect to your instance
 
@@ -87,8 +105,10 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ````
 
     *Note: The angle brackets <> should not appear in your code.*
-    ![Create a stack](images/workshop-013.png " ")      
 5.  When prompted, answer **yes** to continue connecting.
+
+    ![Create a stack](images/workshop-013.png " ")      
+
 6.  Continue to the *next Step* on the left hand menu.
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
@@ -154,12 +174,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/workshop-014.png " ")
 
-2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
-
-    ![](./images/build-complete.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
-3. Run the following command to verify the database with the SID **ORCL** is up and running
+2. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
     <copy>
@@ -168,7 +185,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/pseforcl.png " ")
 
-4. Verify the listener is running
+3. Verify the listener is running
     ````
     <copy>
     ps -ef | grep tns
@@ -177,7 +194,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/pseftns.png " ")
 
-5. Switch to the oracle user.
+4. Switch to the oracle user.
       ````
     <copy>
     sudo su - oracle
@@ -186,7 +203,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/sudo-oracle.png " ")
 
-6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+5.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
     <copy>
     . oraenv
@@ -195,7 +212,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/oraenv.png " ")
 
-7.  Login using SQL*Plus as the **oracle** user.  
+6.  Login using SQL*Plus as the **oracle** user.  
 
     ````
     <copy>
@@ -221,7 +238,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now *proceed to the next lab*.  
+You may now [proceed to the next lab](#next).
 
 ## Appendix:  Teraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -287,7 +304,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -317,9 +334,7 @@ Reload your browser
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Director, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.

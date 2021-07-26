@@ -18,7 +18,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 
 ## **Step 1:** Create Your Free Trial Account
 
-In this section, you will fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
+In this section, you will fill out the registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
 
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
@@ -67,15 +67,10 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
   ![](images/oci-console-home-page.png " ")
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
 - **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

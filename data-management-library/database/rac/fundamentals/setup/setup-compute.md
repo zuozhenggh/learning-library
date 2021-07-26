@@ -14,14 +14,14 @@ For more information about Terraform and Resource Manager, please see the append
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab: Generate SSH Keys 
+- Lab: Generate SSH Keys
 
 ## **STEP 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-- [dbsystemrac.zip](https://objectstorage.uk-london-1.oraclecloud.com/p/Wg4n8mJxd9bwfANNP1cHyTT95-6R201K0Z2VwDRFKcURy0H9mQhIrjIf8UM5rljE/n/lrojildid9yx/b/labtest_bucket/o/dbsystemrac.zip)
+- [dbsystemrac.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EnvVXteb6IdYuQPVa4h7vv3ub-gjGG2f4scdBTlZ8j-gFGmC9LS_KVxoBfqx6wV2/n/c4u04/b/data-management-library-files/o/dbsystemrac.zip)
 
 2.  Save in your downloads folder.
 3.  Login to Oracle Cloud
@@ -29,13 +29,13 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (db\_system\_rac.zip) that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
 5. Enter the following information:
 
@@ -96,7 +96,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-oci-landing.png " ")
 
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -154,7 +154,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 ## **STEP 2**: Terraform Plan (OPTIONAL)
 This is optional, you may skip directly to [Step 3](#STEP3:TerraformApply).
 
-When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. 
+When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
 
@@ -201,9 +201,9 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 Before logging in, first note down your IP addresses.
 
-1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category. 
+1.  From the hamburger menu, select Bare Metal, VM, Exadata in the Oracle Database category.
 
-  ![](./images/setup-compute-1.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
 2.  Identify your database system and click it.  (Note:  Remember to choose the compartment that you were assigned if running on LiveLabs)
 
@@ -252,7 +252,7 @@ Before logging in, first note down your IP addresses.
 2. You can also log in to the **Public IP Address of node2**
 
     ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node2>
     ````
     ![](./images/em-mac-linux-ssh-login.png " ")
 
@@ -304,7 +304,7 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
 You may now *proceed to the next lab*.  
 
-## Appendix:  Teraform and Resource Manager
+## Appendix:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
@@ -364,7 +364,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -386,7 +386,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -403,8 +403,3 @@ If you have other compute instances you are not using, you can go to those insta
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

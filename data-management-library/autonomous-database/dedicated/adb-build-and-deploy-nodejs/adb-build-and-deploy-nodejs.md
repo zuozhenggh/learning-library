@@ -26,8 +26,9 @@ As an application developer,
 
 ## STEP 1: Instance Setup
 
-- Login to your Oracle Cloud Infrastructure account select *Compute* —>  *Instances* from top left menu.
-    ![](./images/Compute1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Select the right Oracle Developer Cloud image you created in earlier labs. 
 
@@ -73,8 +74,8 @@ Now that you have a sample application setup, lets get your database's secure wa
 
 ## STEP 3: Transfer database wallet to developer client
 
-- Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from the menu.
-    ![](./images/atpd1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -180,7 +181,3 @@ And finally, lets edit the dbconfig.js file in /home/opc/ATPDnode/ATPDnode-maste
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

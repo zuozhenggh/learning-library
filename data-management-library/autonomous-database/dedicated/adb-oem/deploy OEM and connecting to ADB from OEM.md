@@ -67,7 +67,7 @@ As a Database Administrator,
 ## STEP 3: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
-    ![](./images/atpd1.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -177,7 +177,3 @@ As a Database Administrator,
 - **Authors** - Navya M S & Padma Priya Natarajan
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

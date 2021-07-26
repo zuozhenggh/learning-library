@@ -27,8 +27,8 @@ As a database user, DBA or application developer,
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
 - Log into your cloud account using your tenant name, username and password.
-- Click Compute Instance in the left side menu under services.
-    ![](./images/createcompute.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Click create Instance.
     ![](./images/createcomputebutton.png " ")
@@ -277,7 +277,3 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

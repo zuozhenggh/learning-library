@@ -1,4 +1,4 @@
-# Scaling and Performance in Your Autonomous Database
+# Scale Your Autonomous Database
 
 ## Introduction
 
@@ -9,35 +9,29 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 -   Learn how to scale up an ADW or ATP service
 -   Understand the performance and concurrency impacts of scaling your autonomous database service online
 
-### Prerequisites
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account or a LiveLabs account, then you can obtain a new cloud account through the Oracle Free Trial program.
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
-
-
 ## **Step 1**: Scaling your Autonomous Database Instance
 
 1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details page. From the **action menu**, click **Scale Up/Down**.
 
-    ![](./images/Picture300-2.jpg " ")
+    ![Click Scale Up/Down on your database console.](./images/Picture300-2.png " ")
 
 2.  Fill in the form with the following information:
 
     -   **OCPU count :** 8
     -   **Storage (TB):** 2
     -   **Auto-Scaling:** Disabled
-  
+
   *Note: You can scale up/down your autonomous database only if your autonomous database is NOT Always Free.*
 
 3.  Click **Update** after filling in the form. This will take you to the database instance's Details page.
 
-    ![](./images/Picture300-3.jpg " ")
+    ![Click Update.](./images/Picture300-3.png " ")
 
     *Note: Applications can continue running during the scale operation without downtime.*
 
 4.  **Refresh** the page to see the result of the scale operation.
 
-    ![](./images/Picture300-6.png " ")
+    ![A refreshed database console page with updated OCPU count and storage.](./images/Picture300-6.png " ")
 
 ## **Step 2**: Performance and Concurrency Benefits of Dynamic Scaling
 
@@ -47,7 +41,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 2.  In this example, scaling up the number of CPUs from 2 to 8 increased the transaction throughput from 2000 to 7500 transactions per second.
 
-    ![](./images/screenshot-of-increased-transaction-throughput.png " ")
+    ![An example of increased throughput after scaling up the number of CPUs.](./images/screenshot-of-increased-transaction-throughput.png " ")
 
 ## Want to Learn More?
 
@@ -58,9 +52,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - LiveLabs QA Team (Jeffrey Malcolm Jr, Ayden Smith, Arabella Yao)
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-shared). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Last Updated By/Date** - Kamryn Vinson, May 2021

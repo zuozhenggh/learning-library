@@ -1,79 +1,79 @@
 # Provision the Application Database on OCI with DBaaS
 
-## Introduction: 
+## Introduction
 
 This lab with guide you through provisioning a Application Database
 
-Estimated Lab Time: 30-35 min including ~25-30 min provisioning time.
+Estimated Lab Time: 30 to 35 minutes including 25 to 30 minutes provisioning time.
 
 ### Objectives
 
 In this lab you will:
 
-- Provision the Application Database as a Database VM.
-- Create a Security List with proper ports open
+- Provision the application database as a Database Virtual Machine.
+- Create a security list with proper ports open.
 
 
 ## **STEP 1:** Provision the Database System
 
-1. Go to **Database -> Bare Metal, VM and Exadata**
+1. Go to **Database -> Bare Metal, VM and Exadata**.
 
-  <img src="../../provision-app-db/images/provision-db-10.png" width="40%">
+  ![](./images/provision-db-10.png)
 
-2. Click **Create DB System**
+2. Click **Create DB System**.
 
   ![](./images/provision-db-11.png)
 
-3. Make sure you are in the **SOAMPCompartment** and name your **Database System**
+3. Make sure you are in the **SOAMPCompartment** and select a name for your database system.
 
   ![](/images/provision-db-12.png)
 
-4. Select an Availability Domain or keep the default, keep the default **Virtual Machine** and select a **Shape** that is available.
+4. Select an availability domain or keep the default. Use **Virtual Machine** and select a **Shape** that is available.
 
-  <img src="../../provision-app-db/images/provision-db-13-ad-shape.png" width="70%">
+  ![](./images/provision-db-13-ad-shape.png)
 
-5. Keep the defaults for **Total node count** and **Database Edition**
+5. Keep the defaults for **Total node count** and **Database Edition**.
 
-  <img src="../../provision-app-db/images/provision-db-14.png" width="70%">
+  ![](./images/provision-db-14.png)
 
-6. Select **Logical Volume Manager** 
+6. Select **Logical Volume Manager**.
 
-  <img src="../../provision-app-db/images/db-lvm.png" width="70%">
+  ![](./images/db-lvm.png)
 
-7. Keep defaults for **Storage**
+7. Keep the default for **Storage**.
 
-  <img src="../../provision-app-db/images/provision-db-16-storage.png" width="70%">
+  ![](./images/provision-db-16-storage.png)
 
-8. Add your **SSH public key** 
+8. Add your **SSH public key**.
 
-  <img src="../../provision-app-db/images/provision-db-17-ssh.png" width="70%">
+  ![](./images/provision-db-17-ssh.png)
 
-9. Keep the default **License Included**
+9. Keep the default of **License Included**.
 
-  <img src="../../provision-app-db/images/provision-db-18-license.png" width="70%">
+  ![](./images/provision-db-18-license.png)
 
-10. Select the **Virtual cloud network** `SOAMP1VCN`, the **Client subnet** `Private Subnet-SOAMP1VCN(regional)` and set a **Hostname prefix** of `soamp2db`
+10. Select the `SOAMP1VCN` **Virtual cloud network**, the `Private Subnet-SOAMP1VCN(regional)` **Client subnet** and set `soamp2db` as the **Hostname prefix**.
 
-  <img src="../../provision-app-db/images/db-network.png" width="70%">
+  ![](./images/db-network.png)
 
-11. Click **Next**
+11. Click **Next**.
 
-12. Name the Database `SOAMP2DB`
+12. Use `SOAMP2DB` for the database name.
 
-  <img src="../../provision-app-db/images/db-name.png" width="70%">
+  ![](./images/db-name.png)
 
-13. Select the **Database version** `19c`
+13. Select `19c` as the **Database version**.
 
-  <img src="../../provision-app-db/images/db-version.png" width="70%">
+  ![](./images/db-version.png)
 
-14. Name the **PDB** `PDB1`
+14. Use `PDB1` as the **PDB** name.
 
-  <img src="../../provision-app-db/images/db-pdbname.png" width="70%">
+  ![](./images/db-pdbname.png)
 
 
-15. Enter and confirm the **SYS Database password**: 
+15. Enter and confirm the **SYS Database password**.
 
-    you can create your own password followed all instructions or you can copy below
+    You can create your own password or use the following (used in further steps):
 
     ```
     <copy>
@@ -81,31 +81,31 @@ In this lab you will:
     </copy>
     ```
 
-  <img src="../../provision-app-db/images/db-password.png" width="70%">
+  ![](./images/db-password.png)
 
-16. Keep the default of **Transaction Processing** for **Workload type** and **Backup**
+16. Keep the default **Transaction Processing** option for **Workload type** and for **Backup**.
 
-17. Optionally you can select **Enable automatic backups** for the period of `60 days` and scheduling `Anytime` and 
+17. Optionally you can select **Enable automatic backups** for the period of `60 days` and scheduling `Anytime`.
 
   ![](./images/provision-db-21.png)
 
-18. Click **Create DB System**
+18. Click **Create DB System**.
 
   This will usually take up to 40 minutes to provision.
 
   ![](./images/provision-db-22.png)
 
-## **STEP 2:** Check the status of the database provisioning
+## **STEP 2:** Check the Status of the Database Provisioning
 
-Before you can proceed to the next lab, you need to check that the DB has been fully provisioned
+Before you can proceed to the next lab, you need to check that the database has been fully provisioned.
 
-1. Go to **Oracle Databases -> BM, VM, Exadata**
+1. Go to **Oracle Databases -> BM, VM, Exadata**.
 
 2. Make sure you are in the correct Compartment.
 
-3. Check the status of the database is `Available` or wait until it is before proceeding to the next lab.
+3. Check the status of the database is `Available` or wait until it is before proceeding.
 
-  <img src="../../provision-app-db/images/db-available.png" width="70%">
+  ![](./images/db-available.png)
 
 You may proceed to the next lab.
 
@@ -113,6 +113,3 @@ You may proceed to the next lab.
 
  - **Author** - Akshay Saxena, September 2020
  - **Last Updated By/Date** - Akshay Saxena, September 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

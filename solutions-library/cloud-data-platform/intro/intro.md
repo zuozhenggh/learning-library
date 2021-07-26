@@ -20,6 +20,8 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 **Note**: Additionally, as much as possible, do not stray away from the naming conventions used for resources in this workshop. You may run into errors if you do.
 
+Estimated Workshop Time: 3.5 hours
+
 ### Objectives
 - Provision an Autonomous Data Warehouse (ADW) Instance
 - Build an Oracle Application Express (APEX) App
@@ -32,14 +34,14 @@ Here is an example of that Cloud Data Platform Architecture which can be extende
 
 
 
-### Required Artifacts
+### Prerequisites
 - The following lab requires an Oracle Public Cloud account that will either be supplied by your instructor, or can be obtained through the following steps.
 - A cloud tenancy where you have the resources available to provision an ADW instance with 2 OCPUs, an OAC instance with 2 OCPUs, and an ODA instance.
 - Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
-Please proceed to the next lab (right pane).
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-### Acknowledgements
+## Acknowledgements
 
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
@@ -47,8 +49,5 @@ Please proceed to the next lab (right pane).
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, August 2020
 
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.
 

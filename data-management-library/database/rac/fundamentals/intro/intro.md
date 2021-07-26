@@ -20,12 +20,12 @@ Oracle Real Application clusters can be deployed in a variety of ways.  On bare 
 
 In this workshop you will create a 2-node Oracle Real Application Clusters database in the Oracle Cloud.  Oracle Cloud Infrastructure offers 2-node RAC DB systems on virtual machines. When you launch a virtual machine DB system, you choose a shape, which determines the resources allocated to the DB system. After you provision the system, you can change the shape to adapt to new processing capacity requirements.  
 
-You will be using the VM.Standard2.4 shape with 4 OCPUs and 60GB of memory.
+You will be using the VM.Standard2.2 shape with 4 OCPUs and 60GB of memory.
 
 For more about Virtual DB systems, click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm).
 
 ### Workshop Objectives
-- Build a DB System
+- Connect to a DB System
 - Clusterware and Fencing
 - Fast Application Notification
 - Install Sample Schema
@@ -63,9 +63,3 @@ RAC is a key underpinning of MAA.
 
 - **Authors/Contributors** - Troy Anthony, Anil Nair, Kay Malcolm
 - **Last Updated By/Date** - Kay Malcolm, October 2020
-
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-maa-dataguard-rac). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

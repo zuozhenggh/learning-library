@@ -240,7 +240,7 @@ As part of preparation for this lab, a dynamic group and IAM policy was created.
     ![](./../grafana/images/Grafana_008.PNG " ")
 
 12. Switch to Grafana tab and paste the OCID in **Tenancy OCID**. Choose your region for **Default Region**
-Choose **OCI Instance** for Enviornment.
+Choose **OCI Instance** for environment.
     ![](./../grafana/images/Grafana_009.PNG " ")
 
 13. Click **Save & Test** and verify **Data source is working** message is displayed.
@@ -318,9 +318,4 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 

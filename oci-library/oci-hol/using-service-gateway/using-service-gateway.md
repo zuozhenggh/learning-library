@@ -60,9 +60,9 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     ![](./../grafana/images/Grafana_015.PNG " ")
 
-2. From the OCI Services menu, Click **Object Storage**.
+2. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-    ![](./../using-service-gateway/images/SGW_031.PNG " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 3. Ensure correct Compartment (Left side of the OCI console).
 
@@ -121,7 +121,7 @@ Service Gateway alleviates the preceding concerns by enabling the following func
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.
 
-15. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+15. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 16. Fill out the dialog box:
 
@@ -459,7 +459,3 @@ Using Servie Gateway, compute instance was able to access Object stored in Objec
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,16 +1,17 @@
 {
-  "workshoptitle": "Oracle Database Security - Part1 (Baseline)",
-  "tutorials": [
-    {
-      "title": "Prerequisites",
-      "description": "Get a Free Trial",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
+    "workshoptitle": "DB Security Basics",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
     {
       "title": "Introduction",
       "description": "Understand the architecture of this workshop and what it can do",
       "publisheddate": "09/01/2020",
       "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Getting Started",
+      "description": "Get a Free Trial",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
       "title": "Lab 1: Generate SSH Keys",
@@ -33,7 +34,7 @@
       "title": "Lab 4: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
-      "filename": "../../init-start-env/init-start-env.md"
+      "filename": "../../init-start-env/init-start-env-freetier.md"
     },
     {
       "title": "Lab 5: Database Assessment Tool (DBSAT)",
@@ -58,6 +59,17 @@
       "description": "In this lab you can see how to leverage Oracle Unified Auditing",
       "publisheddate": "10/20/2020",
       "filename": "../../unified-auditing/unified-auditing.md"
+    },
+    {
+      "title": "Lab 9: Transparent Sensitive Data Protection (TSDP)",
+      "description": "In this lab you can see how to leverage Oracle Transparent Sensitive Data Protection (TSDP)",
+      "publisheddate": "04/14/2021",
+      "filename": "../../tsdp/tsdp.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

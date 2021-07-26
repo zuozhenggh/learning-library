@@ -28,12 +28,13 @@ Each of the labs is 5 -10 minutes in length, so you will be up and running in no
 ### Prerequisites
 Free Trial or an existing Oracle Cloud account (Not all services in this workshop are Always Free services)
 
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ### **Let's Get Started!**
 
 - Click on **Lab 1** from the menu on the right **[Lab 1: Create SSH Keys](?lab=lab-1-create-ssh-keys)**.
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/MenuButton.png)) at the top right of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top left of the page.
 
 ### Learn More
 
@@ -45,10 +46,4 @@ Free Trial or an existing Oracle Cloud account (Not all services in this worksho
 * **Author** - Gerald Venzl, Master Product Manager, Database Development
 * **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
 * **Contributor** - Arabella Yao, Product Manager Intern, Database Management, June 2020
-* **Last Updated By/Date** - Kamryn Vinson, September 2020
-
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** - Tom McGinn, June 2021

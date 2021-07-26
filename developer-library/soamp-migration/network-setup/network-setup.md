@@ -1,14 +1,14 @@
-# Setup the OCI Network
+# Set Up the Virtual Network
 
 ## Introduction:
 
-This lab with guide you through how to setup Compartments and Virtual Cloud Network (VCN) with the required policies for cloud environment (tenancy)
+This lab with guide you through how to set up a Compartment and a Virtual Cloud Network (VCN) with the required policies for the SOA cloud environment.
 
-Estimated Lab Time: 20 min
+Estimated Lab Time: 20 minutes.
 
 ### Requirements
 
-If you are not an administrator in your tenancy, you will need the administrator to create the compartment and set the following policies in place:
+If you are not an administrator in your tenancy, you will need the administrator to create the compartment and set the following policies:
 
 ```
 <copy>
@@ -24,104 +24,99 @@ allow group soa-migration to use autonomous-database-family in compartment SOAMP
 
 In this lab you will:
 
-- Create a Compartment
-- Create a VCN with private and public subnets
+- Create a Compartment.
+- Create a VCN with private and public subnets.
 
 
 ## **STEP 1:** Create the Compartment
 
-Before we can provision the Application Database (SOADB), we need to provision a **Compartment** where we can setup the Network Layer ,or you can take details of already created **Compartment** from your network administrator.
+Before we can provision the Application Database (SOADB), we need to provision a **Compartment** where we can set up the network layer, or you can get the details of an already created **Compartment** from your network administrator.
 
 1. Go to the menu button on the top left and select **Identity -> Compartment** .
 
-  <img src="../../network-setup/images/menu-compartment.png" width="50%">
+   ![](./images/menu-compartment.png)
 
 2. Click on **Create Compartment**
 
-  <img src="../../network-setup/images/compartment-create-0.png" width="70%">
+   ![](./images/compartment-create-0.png)
 
 3. Provide all the required details and make sure you have relevant permissions from your OCI Administrator to create the **Compartment**.
 
-  <img src="../../network-setup/images/compartment-create.png" width="70%">
+   ![](./images/compartment-create.png)
 
 ## **STEP 2:** Create the VCN
 
-We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigured **public subnet** and **private subnet** with appropriate **Security Lists** to open up the required ports:
+We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigured **public subnet**, and **private subnet** with appropriate **Security Lists** to open up the required ports:
 
-1. Go to the menu button and go to **Networking -> Virtual Cloud Networks**.
+1. Go to **Networking -> Virtual Cloud Networks**.
 
-  <img src="../../network-setup/images/vcn-menu.png" width="50%">
+    ![](./images/vcn-menu.png)
 
-2. Click on **Create VCN** button and then select **VCN with Internet Connectivity** and click on **Start VCN Wizard** button.
+2. Click **Create VCN**, select **VCN with Internet Connectivity** and click **Start VCN Wizard** button.
 
-  <img src="../../network-setup/images/provision-vcn-4.png" width="100%">
+    ![](./images/provision-vcn-4.png)
 
-3. Provide the VCN NAME (we'll use `SOAMP1VCN`) and select the Compartment which you have created earlier.
+3. Provide the VCN NAME (we'll use `SOAMP1VCN`) and select the Compartment that you created earlier.
 
-  <img src="../../network-setup/images/provision-vcn-5.png" width="100%">
+    ![](./images/provision-vcn-5.png)
 
-4. Select the default values for Configure VCN and Subnets unless you have been provided by specific CIDR range from your Network Administrator to use, then click on **Next** button.
+4. Select the default values for **Configure VCN and Subnets** unless you have been provided with a specific CIDR range by your Network Administrator, then click **Next**.
 
-  <img src="../../network-setup/images/provision-vcn-6.png" width="100%">
+    ![](./images/provision-vcn-6.png)
 
-5. Review all the **VCN** ,**Subnet** ,**Gateway**, **Security List** and **Route Table** details and then click on **Create** button.
+5. Review all the **VCN** ,**Subnet** ,**Gateway**, **Security List** and **Route Table** details and click  **Create**.
 
-  Here you can see stack has created two subnets which we we'll use later for creating DB and SOA instance:-
-  A **Private Subnet** with its security list **Security List For Private Subnet-SOAMP1VCN**,
-  A **Public Subnet** with it's security lists **Default Security List for SOAMP1VCN**
+    You can see the stack has created two subnets which we will use later for creating database and SOA instance:
+    - A **Private Subnet** with a security list **Security List For Private Subnet-SOAMP1VCN**.
+    - A **Public Subnet** with a security list **Default Security List for SOAMP1VCN**.
 
-6. Click **Create**
+6. Click **Create**.
 
-  <img src="../../network-setup/images/provision-vcn-7.png" width="100%">
+    ![](./images/provision-vcn-7.png)
 
-7. *If you see any provisioning error, make sure to click* **Retry Provision** *before continuing*
+7. *If you see any provisioning errors, make sure to click* **Retry Provision** *before continuing*
 
-    <img src="../../network-setup/images/retry-provision.png" width="70%">
+    ![](./images/retry-provision.png)
 
-8. When all is clear click **View Virtual Network**
+8. When all is clear, click **View Virtual Network**
 
-## **STEP 3:** Create the required Security Lists
+## **STEP 3:** Create the Required Security Lists
 
-Before we can provision the SOAMP Instance, we need to provision a **Security list** for the database subnet to be reachable from the SOA instances, and open up the required ports: 
+Before we can provision the SOAMP Instance, we need to provision a security list so the database subnet can be reached from the SOA instances. We need to open the following ports: 
 
-  - port 1521 for the database
-  - port 22 for SSH
+  - port 1521 for the database.
+  - port 22 for SSH.
+  - 7001-7004 for SOA weblogic.
+  - 9001-9004 for weblogic internal ports.
 
-As well as open up ports to access the WebLogic and SOA domain servers:
+In this section, we will create a security list for the SOA subnet to reach the database subnet on port 1521 (the Oracle database default port), SSH port 22 and weblogic ports 7001-7004 , 9001-9004 to communicate with the SOA instance.
 
-  - 7001-7004 for SOA weblogic
-  - 9001-9004 for weblogic internal ports
+1. Click **Security Lists**.
 
-In this section we will create a Security List for the SOA subnet to be able to reach the Database subnet on port 1521 (the Oracle Database default port), SSH port 22 and weblogic ports 7001-7004 , 9001-9004 to communicate to SOA instance.
+    ![](./images/sec-lists.png)
 
-1. Click **Security Lists**
+2. Click **Security List for Private Subnet-SOAMP1VCN**.
 
-  <img src="../../network-setup/images/sec-lists.png" width="70%">
+    ![](./images/provision-db-23-sl.png)
 
-2. Click **Security List for Private Subnet-SOAMP1VCN** 
+3. Click **Add Ingress Rules**.
 
-  <img src="../../network-setup/images/provision-db-23-sl.png" width="100%">
+4. Add an ingress rule to open the DB port to the VCN CIDR.
 
-3. Click on **Add Ingress Rules**
+    ![](./images/db-seclist.png)
 
-4. Add an ingress rules to open the DB port to the VCN CIDR.
+5. Add an ingress rule to open the 7001-7004 ports to the VCN CIDR (10.0.0.0/16).
 
-  <img src="../../network-setup/images/db-seclist.png" width="70%">
+    ![](./images/wls-7001-seclist.png)
 
-5. Add an ingress rules to open the 7001-7004 ports to the VCN CIDR (10.0.0.0/16).
+6. Add an ingress rule to open the 9071-9074 ports to the VCN CIDR (10.0.0.0/16).
 
-  <img src="../../network-setup/images/wls-7001-seclist.png" width="70%">
-
-6. Add an ingress rules to open the 9071-9074 ports to the VCN CIDR (10.0.0.0/16).
-
-  <img src="../../network-setup/images/wls-9071-seclist.png" width="70%">
+    ![](./images/wls-9071-seclist.png)
 
 
-You may proceed to the next lab
+You may proceed to the next lab.
+
 ## Acknowledgements
 
  - **Author** - Akshay Saxena, September 2020
  - **Last Updated By/Date** - Akshay Saxena, Septemebr 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.

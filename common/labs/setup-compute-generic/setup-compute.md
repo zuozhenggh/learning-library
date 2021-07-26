@@ -9,6 +9,7 @@ This lab will show you how to setup a Resource Manager stack that will generate 
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
+In this lab, you will:
 -   Create Compute + Networking Resource Manager Stack
 -   Connect to compute instance
 
@@ -18,20 +19,18 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
-## **STEP 1A**: Create Stack:  Compute + Networking
+## **Step 1A**: Create Stack:  Compute + Networking
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
 
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
-4.  Select **My Configuration**, click the **Browse** link and select the zip file (dbsec-lab-mkplc-freetier.zip) that you downloaded. Click **Select**.
+4.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file that you downloaded. Click **Select**.
 
-  ![](./images/em-create-stack-1.png " ")
+  ![](./images/zip-file.png " ")
 
 5. Enter the following information:
 
@@ -42,21 +41,21 @@ This lab assumes you have:
      ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
 6.  Click **Next**.
 
-  ![](./images/em-create-stack-2.png " ")
-
 7. Enter or select the following:
+   ![](./images/em-create-stack-2.png " ")
+
     - **Instance Count:** Accept the default, **1**, unless you intend to create more for a team for instance
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
     ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
-8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
+8. Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes.  We recommend standard shapes unless not available or you have run out of quota (Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota)
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
-9. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
+    - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
+    - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
+9.  If don't have quota for Flex Shapes or you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard2.4
 
   ![](./images/standardshape.png " ")
 
@@ -74,18 +73,16 @@ This lab assumes you have:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **STEP 1B**: Create Stack:  Compute only
+## **Step 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
-***Note:*** *We recommend letting our stack to create the VCN to reduce the potential for error.*
+***Note:*** *We recommend letting our stack create the VCN to reduce the potential for error.*
 
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Choose **Resource Manager > Stacks**.  
 
-  ![](./images/em-oci-landing.png " ")
-
-  ![](./images/em-nav-to-orm.png " ")
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
   ![](./images/em-create-stack.png " ")
 
@@ -112,8 +109,8 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
   ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
-    - **Instance Shape:** Keep the default ***VM.Standard.E3.Flex*** as selected, the only option for Flex shapes.
-    - **Instance OCPUS:** Accept the default (**4**) This will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count in the range [2-24]. Please ensure you have the capacity available before increasing.
+    - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
+    - **Instance OCPUS:** Accept the default shown. e.g. (**4**) will provision 4 OCPUs and 64GB of memory. You may also elect to reduce or increase the count by selecting from the dropdown. e.g. `[2-24]`. Please ensure you have the capacity available before increasing.
     - **Use Existing VCN?:** Check to select.
 
   ![](./images/em-create-stack-2c.png " ")
@@ -128,7 +125,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
 6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
-    - **Instance Shape:** Select VM.Standard.E2.4 (this compute instance requires at least 30 GB of memory to run, make sure to choose accordingly)
+    - **Instance Shape:** Accept the default shown or select from the dropdown. e.g. VM.Standard.E2.4
 
   ![](./images/standardshape-2.png " ")
 
@@ -140,7 +137,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-stack-details-b.png " ")
 
-## **STEP 2**: Terraform Plan (OPTIONAL)
+## **Step 2**: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -157,7 +154,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **STEP 3**: Terraform Apply
+## **Step 3**: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -186,31 +183,65 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **STEP 4**: Connect to your instance
+## **Step 4**: How to Establish a Terminal Connection to your Instance
+Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next labs to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*
 
-### Oracle Cloud Shell
+### **Option 1:** Upload Key to Cloud Shell and Connect
 
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
-  ***Note:*** *Make sure you are in the region you were assigned*
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
-  ![](./images/em-cloudshell.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
 
-2.  If you didn't jot down your compute instances public IP address, go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-4.  Enter the command below to login to your instance.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Change the permissions to 600 and move it into your .ssh directory
+
+    ````
+    <copy>
+    ls
+    </copy>
+    ````
+    ````
+    chmod 600 <<keyname>>
+    mv <<keyname>> .ssh
+    ls .ssh
+    cd ~
+    ````
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+6.  If you didn't jot down your compute instance public IP address, go to *Compute* -> *Instance* and select the instance you created (make sure you choose the correct compartment). Alternatively, you can navigate to *My Reservations* in LiveLabs, click on *Launch Workshop* and get your public IP.
+
+7.  Secure Shell into the compute instance using your uploaded key name
+
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
     ![](./images/em-cloudshell-ssh.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to Step 5 on the left hand menu.
+    *Note:* Make sure you are in the region and compartment you were assigned. If you are unable to ssh in, check out the troubleshooting tips below.
 
-### MAC or Windows CYGWIN Emulator
+8.  When prompted, answer **yes** to continue connecting.
+
+### **Option 2:** MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -222,7 +253,7 @@ Choose the environment where you created your ssh-key in the previous lab (Gener
 
 4.  After successfully logging in, you may *proceed to the next lab*
 
-### Windows using Putty
+### **Option 3:** Windows using Putty
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
@@ -256,9 +287,9 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
-## Appendix:  Teraform and Resource Manager
+## Appendix 1:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
 
 Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, take a watch the video below.
@@ -270,14 +301,15 @@ The Oracle Cloud Marketplace is a catalog of solutions that extends Oracle Cloud
 
 [Link to OCI Marketplace](https://www.oracle.com/cloud/marketplace/)
 
-## Appendix: Troubleshooting Tips
+## Appendix 2: Troubleshooting Tips
 If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
 - Availability Domain Mismatch
-- Limits Exceeded
 - Invalid public key
+- Limits Exceeded
 - Flex Shape Not Found
+- Instance shape selection grayed out
 
-### Issue 1: Availability Domain Mismatch
+### **Issue #1:** Availability Domain Mismatch
 ![](images/error-ad-mismatch.png  " ")
 
 #### Issue #1 Description
@@ -291,7 +323,7 @@ When creating a stack and using an existing VCN, the availability domain and the
 5.  Click **Save Changes**
 6.  Click **Terraform Actions** -> **Apply**
 
-### Issue 2: Invalid public key
+### **Issue #2:** Invalid public key
 ![](images/invalid-ssh-key.png  " ")
 
 #### Issue #2 Description
@@ -307,7 +339,7 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 4.  Click **Save Changes**
 5.  Click **Terraform Actions** -> **Apply**
 
-### Issue 3: Flex Shape Not Found
+### **Issue #3:** Flex Shape Not Found
 ![](images/flex-shape-error.png  " ")
 
 #### Issue #3 Description
@@ -317,7 +349,7 @@ When creating a stack your ability to create an instance is based on the capacit
 If you have other compute instances you are not using, you can go to those instances and delete them.  If you are using them, follow the instructions to check your available usage and adjust your variables.
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 4.  Click on the hamburger menu -> **Resource Manager** -> **Stacks**
 5.  Click on the stack you created previously
@@ -328,7 +360,8 @@ If you have other compute instances you are not using, you can go to those insta
 10. Click **Save Changes**
 11. Click **Terraform Actions** -> **Apply**
 
-### Issue 4: Limits Exceeded
+### **Issue #4:** Limits Exceeded
+
 ![](images/no-quota.png  " ")
 
 #### Issue #4 Description
@@ -341,7 +374,7 @@ If you have other compute instances you are not using, you can go to those insta
 
 1. Click on the Hamburger menu, go to **Governance** -> **Limits, Quotas and Usage**
 2. Select **Compute**
-3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availablity Domain)
+3. These labs use the following compute types.  Check your limit, your usage and the amount you have available in each availability domain (click Scope to change Availability Domain)
 4. Look for Standard.E2, Standard.E3.Flex and Standard2
 5. This workshop requires at least 4 OCPU and a minimum of 30GB of memory.  If you do not have that available you may request a service limit increase at the top of this screen.  If you have located capacity, please continue to the next step.
 6.  Click on the Hamburger menu -> **Resource Manager** -> **Stacks**
@@ -353,13 +386,23 @@ If you have other compute instances you are not using, you can go to those insta
 12. Click **Save Changes**
 13. Click **Terraform Actions** -> **Apply**
 
+### **Issue #5:** Instance Shape LOV Selection Grayed Out
+
+![](images/no-e3flex-in-tenant.png " ")
+
+#### Issue #5 Description
+When creating a stack selected the option *"Use Flexible Instance Shape with Adjustable OCPU Count"* but the *"Instance Shape"* LOV selection is grayed out and the following error message displayed:***"Specify a value that satisfies the following regular expression: ^VM\.(Standard\.E3\.Flex)$"***
+
+This issue is an indication that your tenant is not currently configure to use flexible shapes (e3flex)
+
+#### Fix for Issue #5
+Modify your stack to use fixed shapes instead.
+
+1. Uncheck the option *"Use Flexible Instance Shape with Adjustable OCPU Count"* to use fixed shape instead
+![](./images/standardshape.png " ")
+
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

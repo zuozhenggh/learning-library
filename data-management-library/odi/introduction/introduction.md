@@ -21,7 +21,7 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 
 ### Objectives
 
-- Provision ADB & Link to ODi
+- Provision ADB & Link to ODI
 - Create an ODI instance
 - Work with Mappings
 - Implement Data Quality Control
@@ -29,15 +29,13 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 
 ### Prerequisites
 * Basic knowledge of Oracle Database
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-  
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+
 ## Acknowledgements
 
  - **Author** - Jayant Mahto, July 2020
  - **Contributors** - Troy Anthony
  - **Last Updated By/Date** - Jayant Mahto, September 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

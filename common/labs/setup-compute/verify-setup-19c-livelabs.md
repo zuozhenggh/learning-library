@@ -1,9 +1,16 @@
 # Setup Compute Instance
 
 ## Introduction
+
 This lab will show you how to verify your compute instance has been setup.
 
 Estimated Lab Time: 10 minutes
+
+Quick walk through on how to verify your compute instance setup.
+
+[](youtube:R0J7CPVYmI4)
+
+*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -19,31 +26,81 @@ This lab assumes you have:
 - A LiveLabs Cloud account and assigned compartment
 - The IP address and instance name for your DB19c Compute instance
 - Successfully logged into your LiveLabs account
-- A Valid SSH Key
+- A Valid SSH Key Pair
 
 ## **STEP 1**: Gather compute instance details
-1. Go to the hamburger menu (in the top left corner) and click **Compute** -> **Instances**.
-   ![Create a stack](images/workshop-011.png " ")
-2. Select the compartment that was assigned.
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+2. Select the compartment that was assigned (the compartment assigned begins with the prefix *LL* followed by your user ID)
 3. Look for the instance that was created for you jot down the public IP address.
-   ![Create a stack](images/workshop-012.png " ")
+    ![Create a stack](images/workshop-012.png " ")
+
 
 ## **STEP 2**: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you provided during registration.
 
+- Using Oracle Cloud Shell (recommended)
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
 
+### Upload Key to Cloud Shell and Connect
+
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+
+2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key. Note the private key does not have a `.pub` extension.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+
+3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the half of the key pair that does *not* have a `.pub` extension.  Locate that file on your machine and click **Upload** to process it.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+
+4. Be patient while the key file uploads to your Cloud Shell directory.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+
+
+5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory and change the permissions.
+
+    ```nohighlight
+    <copy>
+    ls
+    </copy>
+    ```
+    ```nohighlight
+    mkdir ~/.ssh
+    mv <<keyname>> ~/.ssh
+    chmod 600 ~/.ssh/<privatekeyname>
+    ls ~/.ssh
+    ```
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+
+7.  Secure Shell into the compute instance using your uploaded key name (the private key).
+
+    ```
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ```
+    ![](./images/em-mac-linux-ssh-login.png " ")
+
+
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    ```
     ![](./images/cloudshellssh.png " ")
 
     ![](./images/cloudshelllogin.png " ")
@@ -58,9 +115,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 1.  Open up putty and create a new connection.
 
-    ````
+    ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
+    ```
     ![](./images/ssh-first-time.png " ")
 
     *Note: The angle brackets <> should not appear in your code.*
@@ -69,7 +126,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root or the user specified in your workshop.
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
@@ -90,56 +147,56 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
 1. Run the following command to verify the database with the SID **ORCL** is up and running.
 
-    ````
+    ```
     <copy>
     ps -ef | grep ORCL
     </copy>
-    ````
+    ```
     ![](./images/pseforcl.png " ")
 
 2. Verify the listener is running
-    ````
+    ```
     <copy>
     ps -ef | grep tns
     </copy>
-    ````
+    ```
 
     ![](./images/pseftns.png " ")
 
 3. Switch to the oracle user.
-      ````
+    ```
     <copy>
     sudo su - oracle
     </copy>
-    ````
+    ```
 
     ![](./images/sudo-oracle.png " ")
 
 4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
-    ````
+    ```
     <copy>
     . oraenv
     </copy>
     ORCL
-    ````
+    ```
     ![](./images/oraenv.png " ")
 
 5.  Login using SQL*Plus as the **oracle** user.  
 
-    ````
+    ```
     <copy>
     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
     </copy>
-    ````
+    ```
     ![](./images/sqlplus.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
 ## **STEP 4**: Exit SQLPLUS
 1.  Exit the sqlplus session.
 
-    ````
+    ```
     SQL> <copy>exit</copy>
-    ````
+    ```
 2. Type exit again to *switch back to the opc user*.
 
     ```
@@ -188,14 +245,11 @@ There may be several reasons why you can't login to the instance.  Here are some
 When creating your SSH Key, if the key is invalid the compute instance stack creation will throw an error.
 
 #### Tips for fixing for Issue #2
-- Go back to the registration page, delete your registraiton and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
+- Go back to the registration page, delete your registration and recreate it ensuring you create and **copy/paste** your *.pub key into the registration page correctly.
 - Ensure you pasted the *.pub file into the window.
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Director, DB Product Management
+- **Author** - Kay Malcolm, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
-- **Last Updated By/Date** - Kay Malcolm, August 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *STEP* in your request.  If you don't see the workshop name listed, please enter it manually. If you would like us to follow up with you, enter your email in the *Feedback Comments* section.    Please include the workshop name and lab in your request.
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021

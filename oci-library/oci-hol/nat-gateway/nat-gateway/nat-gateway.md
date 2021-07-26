@@ -45,7 +45,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 ## **Step 2:** Create and connect to compute instance
 
-1. Got to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
+1. Go to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
 2. Click **Create Instance**. Fill out the dialog box:
 
@@ -243,7 +243,3 @@ appear.
 - **Contributors** - Kamryn Vinson, QA Intern
 - **Last Updated By/Date** - Tom McGinn, August 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oci-networking). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

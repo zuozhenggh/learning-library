@@ -21,9 +21,9 @@ Estimated Lab Time: 20 minutes.
 
 ## **STEP 1**: Create the necessary networking components
 
-1. Inside of the OCI Console, click on the top left menu **hamburger icon**. Then, in the side menu, navigate to **Networking**, then select **Virtual Cloud Networks**.  
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-    ![](./images/1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Make sure you are in the desired compartment of choice to create resources (such as **CloudDataWorkshop**) and proceed by selecting the **Start VCN Wizard** option.
 
@@ -77,9 +77,9 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/12.png " ")
 
-3. Let's import a notebook to see the capabilities of the platform. Download the sample notebook by clicking on this link: [sampleNotebook]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/lumo6G8v-t9GPXu9YIZKqB-QafX_FsHGSbqHGFolaEg/n/c4u03/b/austindatamanagement/o/sampleNotebook.ipynb)
+3. Let's import a notebook to see the capabilities of the platform. Download the sample notebook by clicking on this link: [sampleNotebook]( https://objectstorage.us-ashburn-1.oraclecloud.com/p/uY7nwFRtU7oPi62sVTaspkw7Im3-xhkUzB15JP01U7extqkNrIfvfZx42M7PmWeF/n/c4u04/b/austindatamanagement/o/sampleNotebook.ipynb)
 
-4. Now, let's download the datasets for this project- there are 3 you will download. For the first, download by clicking on this link: [sampleDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kzlWAfDLw_FcbqH2p0g-3XXDK5XUx-VFhWHwbSDASdE/n/c4u03/b/austindatamanagement/o/sampleDataset.csv). For the second, download by clicking on this link: [trainDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Ww8t6qUwY-wfGxnmcX_JNe0sQpeLqMHxUE2zs9R5Rc/n/c4u03/b/austindatamanagement/o/trainDataset.csv). For the third and final dataset, download by clicking on this link: [testDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LtW8KRiCSAe1Jt0FDnzFCmxClCkAd4x3AEY3cN4yvBY/n/c4u03/b/austindatamanagement/o/testDataset.csv)
+4. Now, let's download the datasets for this project- there are 3 you will download. For the first, download by clicking on this link: [sampleDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uK4SPxDcbvK2UHWWaCeIX4QinBhHycfg2SpKzeAnlkuu7kTFyaSbbGO2jzKzBs2P/n/c4u04/b/austindatamanagement/o/sampleDataset.csv). For the second, download by clicking on this link: [trainDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-I4yLdDr2RQnrYGh1zU8-_9YcvOi5o-eY29byXkFQlydOBJdfuDlbbbZ5OrzvBm0/n/c4u04/b/austindatamanagement/o/trainDataset.csv). For the third and final dataset, download by clicking on this link: [testDataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_Er0LvOWP7ZWCFuoQMIHtqWSxOCBQHg-bSiOZxOv5wGD0Vhacbrirzi2mhCrQN39/n/c4u04/b/austindatamanagement/o/testDataset.csv)
 
 5. Then, start by clicking on the **^ icon** to **Upload Files** in the OCI Data Science notebook session interface. Then, select the datasets from the previous step to import it. It may take a minute for them to completely upload the dataset, but it will continue the upload process in the background. You may still continue to the next step.
 
@@ -121,7 +121,7 @@ Estimated Lab Time: 20 minutes.
 
 1. Let's try to deploy our newly created machine learning model using Oracle Functions. This allows us to use a lightweight method, that can be used outside of OCI Data Science, to test payloads for whether or not they are fraud.
 
-2. Download the ADS-Model-Deployment notebook by clicking on this link: [ADS-Model_Deployment.ipynb](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Cx_r1vWda8IvsGLaY3Nqv_vnhCrs_iAlgtGtDpjRmZs/n/c4u03/b/austindatamanagement/o/ADS-Model-Deployment.ipynb). Then, similarly to how you uploaded a file before, begin by clicking on the **^ icon** to **Upload Files** in the OCI Data Science notebook session interface. Then, select the ADS notebook from the previous step to import it.
+2. Download the ADS-Model-Deployment notebook by clicking on this link: [ADS-Model_Deployment.ipynb](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RH-51Z6lopnFuwOBCH5MYnMJ_fBvtCyX8-9b9Z3VCpSF3GiKJkCaI2p7LukYg60s/n/c4u04/b/austindatamanagement/o/ADS-Model-Deployment.ipynb). Then, similarly to how you uploaded a file before, begin by clicking on the **^ icon** to **Upload Files** in the OCI Data Science notebook session interface. Then, select the ADS notebook from the previous step to import it.
 
     ![](./images/12b.png " ")
 
@@ -148,7 +148,4 @@ To learn more about OCI Data Science, feel free to explore the capabilities by c
 - **Author** - NATD Cloud Engineering - Austin (Khader Mohiuddin, Philip Pavlov, Patrick Guha)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, September 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

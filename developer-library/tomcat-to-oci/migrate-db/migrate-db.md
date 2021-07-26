@@ -1,25 +1,23 @@
-# Migrate the On-Premises Database to Autonomous Database
+# Migrate the On-Premises Database to Oracle Autonomous Database
 
 ## Introduction
 
-In this lab, we will migrate the on-premises database to the Autonomous Database on Oracle Cloud Infrastructure.
+In this lab, we will migrate the on-premises database to the Oracle Autonomous Database on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 10min
+Estimated Lab Time: 10 minutes.
 
 ### Objectives
 
-In this lab, you will:
-
-* Move the application database schema over to the Autonomous Database on OCI using datapump and Object Storage as intermediate storage location.
+In this lab, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the Oracle Cloud Infrastructure Object Storage service as intermediate storage location.
 
 
-## **STEP 1:** Install the OCI CLI on the source database
+## **STEP 1:** Install the Oracle Cloud Infrastructure Command Line Interface (CLI) on the source database
 
-This will be needed to get the wallet from the ATP database and put the DB dump file into object storage.
+This will be needed to get the wallet from the database and put the dump file into object storage.
 
-*Note:* You could also do without the CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
+> **Note:** You could also do without the Oracle Cloud Infrastructure (OCI) CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
-1. You should still be inside the oracle database container, otherwise get inside with:
+1. You should still be inside the Oracle Database container, otherwise get inside with:
 
     ```
     <copy>
@@ -27,7 +25,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-1. Install the OCI CLI on the source Database
+1. Install the OCI CLI on the source database:
 
     ```bash
     <copy>
@@ -35,16 +33,16 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    Hit **enter** to use the defaults for all options.
+    Press **enter** to use the defaults for all options.
 
-2. Restart your shell
+2. Restart your shell:
     ```
     <copy>
     exec -l $SHELL
     </copy>
     ```
 
-3. Configure the OCI CLI
+3. Configure the OCI CLI:
 
     ```
     <copy>
@@ -53,30 +51,30 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     ```
 
     You will be prompted for:
-    - Location of the config. Hit **Enter**
-    - `user_ocid`: enter your user OCID
-    - `tenancy_ocid`: enter your tenancy OCID
+    - Location of the config. Press **Enter**.
+    - `user_ocid`: enter your user OCID.
+    - `tenancy_ocid`: enter your tenancy OCID.
     - `region`: enter your region from the list provided.
-    - Generate a RSA key pair: hit **Enter** for Yes (default)
-    - Directory for keys: hit **Enter** for the default
-    - name for the key: hit **Enter** for the default
-    - Passphrase: hit **Enter** for no passphrase
+    - Generate a RSA key pair: press **Enter** for Yes (default).
+    - Directory for keys: press **Enter** for the default.
+    - Name for the key: press **Enter** for the default.
+    - Passphrase: press **Enter** for no passphrase.
 
 
     You should see an output like:
 
     ```bash
     Private key written to: /home/oracle/.oci/oci_api_key.pem
-    Fingerprint: 21:d4:f1:a0:55:a5:c2:ce:e2:c6:88:4f:bf:2f:f3:af
+    Fingerprint: 21:d4:f1:a0:55:a5:c2:ce:...
     Config written to /home/oracle/.oci/config
     ```
 
 
-4. Upload the public key to your OCI account
+4. Upload the public key to your OCI account.
 
-    In order to use the CLI, you need to upload the public key generated to your user account
+    In order to use the CLI, you need to upload the public key generated to your user account.
 
-    Get the key content with 
+    Get the key content with:
 
     ```
     <copy>
@@ -84,20 +82,20 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    and copy the full printed output to clipboard
+    Copy the full printed output to clipboard.
 
-    In the OCI web console:
+    In the Oracle Cloud Console:
 
-    - Under **User -> User Settings**
-    - Click **API Keys**
-    - Click **Add Public Key**
-    - Click **Paste Public Key**
+    - Under **User**, select **User Settings**.
+    - Click **API Keys**.
+    - Click **Add Public Key**.
+    - Click **Paste Public Key**.
     - Paste the key copied above.
-    - Click **Add**
+    - Click **Add**.
 
-    You can verify that the Fingerprint generated matches the fingerprint output of the config.
+    You can verify that the fingerprint generated matches the fingerprint output of the configuration.
 
-5. Test your CLI
+5. Test your OCI CLI:
 
     ```
     <copy>
@@ -105,7 +103,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    This command should output the namespace of your tenancy (usually the name of the tenancy)
+    This command should output the namespace of your tenancy (usually the name of the tenancy):
 
     ```
     {
@@ -113,21 +111,21 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     }
     ```
 
-## **STEP 2:** Create an Object Storage Bucket
+## **STEP 2:** Create an Oracle Cloud Infrastructure Object Storage Bucket
 
-1. Go to **Core Infrastructure -> Object Storage**
+1. Go to **Core Infrastructure** and select **Object Storage**.
 
     ![](./images/migrate-db-oss-1.png)
 
-2. Make sure you are in the compartment where you deployed the resources
+2. Make sure you are in the compartment where you deployed the resources.
 
-3. Click **Create Bucket**
+3. Click **Create Bucket**.
 
-4. Give the bucket the name **atp-upload**
+4. Give the bucket the name **atp-upload**.
 
-5. Click **Create Bucket**
+5. Click **Create Bucket**.
 
-## **STEP 3:** Export the database schema and data
+## **STEP 3:** Export the Database Schema and Data
 
 1. Run the datapump export script `datapump_export.sh`:
 
@@ -138,8 +136,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    This will take a minute or so. 
-    
+    This will take a minute or so.
+
     The log should look like:
 
     ```
@@ -169,7 +167,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     Connected to:
     Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
 
-    SQL> 
+    SQL>
     Directory created.
 
     SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
@@ -179,7 +177,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
 
     Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
-    Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@oracledb:/PDB.us.oracle.com schemas=RIDERS DIRECTORY=export 
+    Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@oracledb:/PDB.us.oracle.com schemas=RIDERS DIRECTORY=export
     Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
     Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
     Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
@@ -208,10 +206,10 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at Fri Oct 9 22:34:04 2020 elapsed 0 00:00:24
 
     ```
-  
-## **STEP 4:** Move the dump file to the Object Storage bucket on OCI
 
-1. Put the dump file in the `atp-upload` bucket
+## **STEP 4:** Move the Dump File to the Object Storage Bucket
+
+1. Put the dump file in the `atp-upload` bucket:
 
     ```
     <copy>
@@ -222,34 +220,34 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    The log shold look like:
+    The log should look like:
 
     ```
     Uploading object  [####################################]  100%
     {
-    "etag": "4170701c-22e9-42b1-9bea-44423eede8b7", 
-    "last-modified": "Fri, 09 Oct 2020 22:36:05 GMT", 
+    "etag": "4170701c-22e9-42b1-9bea-44423eede8b7",
+    "last-modified": "Fri, 09 Oct 2020 22:36:05 GMT",
     "opc-content-md5": "9YvlOURl0QgQBvxFvxKMnQ=="
     }
     ```
 
-## **STEP 5:** Get the OCID of the ATP database
+## **STEP 5:** Get the OCID of the Database
 
-1. Go to **Oracle Database -> Autonomous Transaction Processing**
+1. Go to **Oracle Database** and select **Autonomous Transaction Processing**.
 
-2. Make sure you are in the right compartment and **click** the database you provisioned earlier to get to the details.
+2. Make sure you are in the right compartment and select the database you provisioned earlier to get to the details.
 
-3. **Copy** the **OCID**, and save in a notepad for later use
+3. **Copy** the **OCID**, and save in a notepad for later use.
 
-4. Also gather the **Private Endpoint IP**
+4. Gather the **Private Endpoint IP**.
 
-5. And the **Private Endpoint URL** (i.e. hostname)
+5. And the **Private Endpoint URL** (for example hostname).
 
     ![](./images/db-info.png)
 
-## **STEP 6:** Get the ATP Database wallet
+## **STEP 6:** Get the Database Wallet
 
-1. Using the OCI CLI, download the ATP Database wallet on the source database, replacing the OCID:
+1. Using the Oracle Cloud Infrastructure (OCI) CLI, download the database wallet on the source database, replacing the OCID:
 
     ```bash
     <copy>
@@ -259,7 +257,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
     Replace the OCID of the autonomous database in the command.
 
-2. Unzip the wallet
+2. Unzip the wallet:
 
     ```bash
     <copy>
@@ -267,7 +265,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-3. Set the `DIRECTORY` to point to the wallet location in the `sqlnet.ora` file
+3. Set the `DIRECTORY` to point to the wallet location in the `sqlnet.ora` file.
 
     - Edit the sqlnet.ora file:
 
@@ -277,7 +275,8 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    Replace the directory value as below
+    - Replace the directory value as below:
+
     ```
     <copy>
     WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/oracle/datapump")))
@@ -285,7 +284,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-4. Set the `TNS_ADMIN` environment variable
+4. Set the `TNS_ADMIN` environment variable:
 
     ```
     <copy>
@@ -293,22 +292,23 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-## **STEP 6:** Create a local tunnel to the Autonomous Database through a bastion host
+## **STEP 7:** Create a Local SSH Tunnel to the Database
 
-1. Get the public IP of the bastion host from the terraform output
+1. Get the public IP of the bastion host from the Terraform output:
 
-    If the Tomcat server was deployed in a public subnet, you can use the public IP of the Tomcat server
+    If the Tomcat server was deployed in a public subnet, you can use the public IP of the Tomcat server.
 
 2. Create a tunnel with:
 
-    Configure the Bastion Public IP to go through
     ```bash
     <copy>
+    # Configure the bastion public IP to go through
     export BASTION_IP=<Public IP of the bastion>
     </copy>
     ```
 
-    Then run
+    Then run:
+
     ```bash
     <copy>
     # This DB_HOST is the Private Endpoint IP gathered earlier
@@ -319,7 +319,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
 
     You will be prompted to type `yes` to acknowledge the new host.
 
-3. Edit the `/etc/hosts` to point the *Private Endpoint Host* of the ATP database to 127.0.0.1 (localhost) 
+3. Edit the `/etc/hosts` to point the Private Endpoint Host of the database to 127.0.0.1 (localhost).
 
     ```
     <copy>
@@ -327,7 +327,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     ATP_HOSTNAME=$(sed 's|.*(host=\([a-z0-9.-]*\)).*|\1|;' tnsnames.ora | head -n1)
     sudo su -c "printf \"127.0.0.1  ${ATP_HOSTNAME}\n\"  >> /etc/hosts"
     </copy>
-    ``` 
+    ```
 
     You can verify it was inserted properly with:
 
@@ -350,35 +350,35 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     127.0.0.1  jrhdeexg.adb.us-ashburn-1.oraclecloud.com
     ```
 
-## **STEP 7:** Get an OCI Auth token for ATP
+## **STEP 8:** Get an OCI Auth Token
 
-1. Go to **User -> User Settings**
+1. Go to **User** and select **User Settings**.
 
-2. Take note of your full username
+2. Take note of your full username.
 
     ![](./images/username.png)
 
-3. Go to **Auth Tokens**
+3. Go to **Auth Tokens**.
 
     ![](././images/auth-token.png)
 
-4. Click **Generate Token**
+4. Click **Generate Token**.
 
-5. Give it a name
+5. Give it a name.
 
-6. Click **Generate Token**
+6. Click **Generate Token**.
 
-7. Copy the output of the token to notepad
+7. Copy the output of the token to notepad.
 
-## **STEP 8:** Configure ATP cloud credential
+## **STEP 9:** Configure the Database Cloud Credentials
 
-1. Using SQLPLus Instant Client, connect to the remote ATP database through the tunnel created earlier
+1. Using SQL*Plus Instant Client, connect to the remote database through the tunnel created earlier:
 
     ```
     sqlplus admin@<you_atp_db_name>_high
     ```
 
-    If you followed the naming conventions used in this workshop, this should be
+    If you followed the naming conventions used in this workshop, this should be:
 
     ```
     <copy>
@@ -386,26 +386,27 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-    You'll be prompted for the admin password for the ATP database `atp_admin_password`, which was configured in the `terraform.tfvars` file
+    You'll be prompted for the admin password for the database `atp_admin_password`, which was configured in the `terraform.tfvars` file.
 
-2. You should be logged into a SQL prompt like:
+    Confirm that you are logged into a SQL prompt like:
 
     ```
     SQL*Plus: Release 12.2.0.1.0 Production on Fri Oct 9 22:52:05 2020
 
     Copyright (c) 1982, 2016, Oracle.  All rights reserved.
 
-    Enter password: 
+    Enter password:
 
     Connected to:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 
-    SQL> 
+    SQL>
     ```
 
-3. Create the OCI cloud credential in ATP
+2. Create the OCI cloud credential:
 
-    At the SQL prompt, paste the following command (replacing the `username` and `password` values)
+    At the SQL prompt, paste the following command (replacing the `username` and `password` values):
+
     ```
     <copy>
     SET DEFINE OFF
@@ -420,7 +421,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-4. Set as the default credential
+3. Set as the default credential:
 
     ```
     <copy>
@@ -428,14 +429,14 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-5. Type `exit` to exit SQLPlus
+4. Type `exit` to exit SQL*Plus.
 
 
-## **STEP 9:** Import the dump file into the Autonomous Database
+## **STEP 10:** Import the Dump File into the Database
 
-1. Use datapump to import the data dump into ATP
+Use datapump to import the data dump.
 
-    Define the environment variables below:
+1. Define the environment variables below:
     ```
     <copy>
     export REGION=<your-region ex: us-ashburn-1>
@@ -452,10 +453,10 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     ```bash
     <copy>
     impdp admin/${ATP_PASSWORD}@${ATP_DB_NAME}_low directory=data_pump_dir dumpfile=default_credential:https://objectstorage.${REGION}.oraclecloud.com/n/${NAMESPACE}/b/${BUCKET}/o/${FILENAME} parallel=16 exclude=cluster,db_link
-    </copy> 
+    </copy>
     ```
 
-2. First attempt will fail with an error: `ORA-01950: no privileges on tablespace 'DATA'` and we need to give quota to the created user RIDERS
+2. First attempt will fail with an error: `ORA-01950: no privileges on tablespace 'DATA'` and we need to give quota to the created user RIDERS:
 
     ```
     <copy>
@@ -469,7 +470,7 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     Grant Succeeded
     ```
 
-3. We also need to drop the table `RIDERS.RIDERS` that was created or its data won't be created on the next run
+3. We also need to drop the table `RIDERS.RIDERS` that was created or its data won't be created on the next run:
 
     ```bash
     <copy>
@@ -477,25 +478,19 @@ This will be needed to get the wallet from the ATP database and put the DB dump 
     </copy>
     ```
 
-3. Re-run the import now that the user `RIDERS` has valid quota
+3. Re-run the import now that the user `RIDERS` has valid quota:
 
     ```
     <copy>
     impdp admin/${ATP_PASSWORD}@${ATP_DB_NAME}_low directory=data_pump_dir dumpfile=default_credential:https://objectstorage.${REGION}.oraclecloud.com/n/${NAMESPACE}/b/${BUCKET}/o/${FILENAME} parallel=16 exclude=cluster,db_link
     </copy>
     ```
-    
-    You will still see errors related to the user `RIDERS` and the associated table `RIDERS.RIDERS` already existing. This is normal as we ran the command and first time and then object were created on that first run.
+
+    You will see errors about the user `RIDERS` and the associated table `RIDERS.RIDERS`: the objects already exist as they were created during the first run of the command.
 
 The database has been migrated.
 
-You may proceed to the next lab.
 
 ## Acknowledgements
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020
  - **Last Updated By/Date** - Emmanuel Leroy, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -1,4 +1,4 @@
-# Prerequisites
+# Getting Started
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Before you get started, you will need an Oracle Cloud account. This 5-minute lab
 
 ### Existing Cloud Accounts
 
-If you already have access to an Oracle Cloud Account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
+If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
 
 ### Two Cloud Offers in One
 
@@ -23,85 +23,80 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 
 If you already have a cloud account, skip to **STEP 2**.
 
-1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
-2.  You will be presented with a registration page.
-       ![](images/cloud-infrastructure.png " ")
-3.  Enter the following information to create your Oracle Cloud Free Tier account.
-    * Choose your **Country**
-    * Enter your **Name** and **Email**. 
+1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
 
-4. Once you have entered a valid email address, select the **Verify my email** button. 
+   You will be presented with a registration page.
+       ![](images/cloud-infrastructure.png " ")
+2.  Enter the following information to create your Oracle Cloud Free Tier account.
+    * Choose your **Country**
+    * Enter your **Name** and **Email**.
+
+3. Once you have entered a valid email address, select the **Verify my email** button.
     The screen will appear as follows after you select the button:
        ![](images/verify-email.png " ")
 
-5. Go to your email. You will see an account validation email from Oracle in your inbox. The email will be similar to the following:
+4. Go to your email. You will see an account validation email from Oracle in your inbox. The email will be similar to the following:
        ![](images/verification-mail.png " ")
 
-6. Select the link (if possible) or copy and paste the link into your browser.
+5. Select the link (if possible) or copy and paste the link into your browser.
 
-7. Enter the following information to create your Oracle Cloud Free Tier account.
-       * Choose a **Password**
-       * Enter your **Company Name**
-       * Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
-       * Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up.
-       * Click **Continue**
-       ![](images/account-info.png " ")
+6. Enter the following information to create your Oracle Cloud Free Tier account.
+    - Choose a **Password**
+    - Enter your **Company Name**
+    - Your **Cloud Account Name** will generate automatically based on your inputs, you can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
+    - Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
+    - Click **Continue**
+    ![](images/account-info.png " ")
 
 
-5.  Enter your Address information.  Click **Continue**.
+7.  Enter your Address information.  Click **Continue**.
           ![](images/free-tier-address.png " ")
 
-6.  Choose your country and enter a mobile member for verification.   Click the **Text me a code** button.
+8.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
+          ![](images/free-tier-address-2.png " ")
 
-       ![](images/free-tier-address-2.png " ")
+9. Once you receive your code, enter it and click **Verify My Code**.
+          ![](images/free-tier-address-4.png " ")
 
-7. Once you receive your code, enter it and click **Verify My Code**.
-       ![](images/free-tier-address-4.png " ")
+10. Click the **Add payment verification method** button.
+          ![](images/free-tier-payment-1.png " ")  
 
-8. Click the **Add payment verification method** button.
-       ![](images/free-tier-payment-1.png " ")  
+11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details. *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account.*
 
-9.  Choose the verification method.  In this case click the **Credit Card** button. Enter your information and payment details.  *Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account*.
-       ![](images/free-tier-payment-2.png " ")
+    ![](images/free-tier-payment-2.png " ")
 
-10. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
-       ![](images/free-tier-agreement.png " ")
+12. Once your payment verification is complete.  Review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
 
-11. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
+    ![](images/free-tier-agreement.png " ")
+
+13. Your account is provisioning and should be available soon! You might want to log out as you wait for your account to be provisioned. You'll receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
 ## **STEP 2**: Sign in to Your Account
 
-If you've signed out of the Oracle Cloud, use these steps to sign back in.
-
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and click the **View Accounts** button.
+1. Go to [cloud.oracle.com](https://cloud.oracle.com). Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-oracle.png " ")
 
-2. Click **Sign in to Cloud**.
+2. Click **Continue** to sign in using the *"oraclecloudidentityservice"*.
 
-    ![](images/signin-to-cloud.png " ")
+   ![](images/cloud-login-tenant-single-sigon.png " ")
 
-3. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+   When you sign up for an Oracle Cloud account, a user is created for you in Oracle Identity Cloud Service with the username and password you selected at sign up. You can use this single sign-on option to sign in to Oracle Cloud Infrastructure and then navigate to other Oracle Cloud services without reauthenticating. This user has administrator privileges for all the Oracle Cloud services included with your account.
 
-    ![](images/cloud-login-tenant.png " ")
+3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-4. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+     ![](images/oci-signin-single-signon.png " ")
 
-    ![](images/oci-signin.png " ")
-
-5. You are now signed in to Oracle Cloud!
+4. You are now signed in to Oracle Cloud!
 
     ![](images/oci-console-home-page.png " ")
 
-You may now proceed to the next lab
+You may now [proceed to the next lab](#next).
+
 
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Last Updated By/Date** - Kamryn Vinson, Database Product Management, October 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Last Updated By** - Tom McGinn, June 2021

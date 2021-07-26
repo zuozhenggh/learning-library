@@ -1,9 +1,18 @@
 # Enable In-Memory
 
 ## Introduction
+
+In this lab, you will explore how to enable In-Memory on the Oracle Database and various views to monitor In-Memory.
+
 Watch the video below to get an explanation of enabling the In-Memory column store.
 
 [](youtube:dZ9cnIL6KKw)
+
+Quick walk through on how to enable In-Memory.
+
+[](youtube:oCES149OPeE)
+
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -16,7 +25,7 @@ This lab assumes you have completed the following labs:
 * Lab: Generate SSH Key (FreeTier and Paid accounts)
 * Lab: Environment Setup or Verify Setup
 
-## Step 0: Download the Lab Files
+## **STEP 0:** Download the Lab Files
 
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
 
@@ -28,20 +37,20 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/CQFai9l6Lt2m9g6X3mYnfTJTWrv2Qh62-kPcw2GyRZw/n/c4u03/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ShsITsGuQ3dozDPlAkT0jUHqYFP1zJ2sErvP0mDv_bxWl5g9cAHiZE_uXaEoVQHE/n/c4u04/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
     ````
 
-## **Step 1:** Run the In-Memory Setup Scripts
+## **STEP 1:** Run the In-Memory Setup Scripts
 1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
 
 
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Zc0z9ZcPnNK8U_VrmtwKkfs1s-3fkkLY_8y39YCtk9cNGARAC1leX9xF2cIe0_6o/n/c4u04/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>
@@ -57,7 +66,7 @@ This lab assumes you have completed the following labs:
     ````
     ![](./images/inmemcomplete.png " ") 
 
-## **Step 2:** Logging In and Enabling In-Memory
+## **STEP 2:** Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -72,7 +81,7 @@ This lab assumes you have completed the following labs:
 2. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. Set your oracle environment
 
     ````
-    . oraenv
+    <copy>. oraenv</copy>
     ORCL
     ````
      ![](images/step1num1.png) 
@@ -95,6 +104,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     alter system set inmemory_size=2G scope=spfile;
+    alter system set db_keep_cache_size=2G scope=spfile;
     shutdown immediate;
     startup;
     </copy>
@@ -114,7 +124,7 @@ This lab assumes you have completed the following labs:
     ````
      ![](images/step1num4.png) 
 
-## **Step 3:** Enabling In-Memory
+## **STEP 3:** Enabling In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
 
@@ -190,7 +200,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ````
      ![](images/step2num5.png)   
 
-By default the IM column store is only populated when the object is accessed.
+    By default the IM column store is only populated when the object is accessed.
 
 6.  Let's populate the store with some simple queries.
 
@@ -246,14 +256,11 @@ You also had an opportunity to populate and view objects in the IM column store 
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
-You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, June 2020
+- **Contributors** - Kay Malcolm, Director, DB Product Management
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request. 

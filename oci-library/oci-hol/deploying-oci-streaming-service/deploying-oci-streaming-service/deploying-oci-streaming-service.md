@@ -116,7 +116,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/7lS9G-yeYtB9bsUsW8cy813YjWgThlss2jed_DXKWcA/n/c4u03/b/oci-library/o/stream_example.py
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ZAf-mJ3k6JDbRm0XyWEV__RUdAllNkBp5lRgT6Ef3oEuqpa6URn0Bwo0orWP4aVx/n/c4u04/b/oci-library/o/stream_example.py
     </copy>
     ```
 
@@ -136,7 +136,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/t9ftcmjIBMusNuJ2GPQlXR7LrwHLTGGJqi80amvV0pE/n/c4u03/b/oci-library/o/stream_admin_client_composite_operations.py
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ir9V1SL1nq228R9hwzFDPUY1ru700a1FmmMEYY1TngT3Sao430IeztDAIVAH7CzE/n/c4u04/b/oci-library/o/stream_admin_client_composite_operations.py
     </copy>
     ```
 
@@ -187,7 +187,3 @@ In this lab, we will create a compute instance, download a script to configure s
 - **Last Updated By/Date** - Tom McGinn, August 2020
 - **Valid through** - August 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

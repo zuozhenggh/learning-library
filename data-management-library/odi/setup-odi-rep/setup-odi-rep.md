@@ -9,9 +9,9 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 
 ## **Step 1:** Create an ODI instance from OCI Marketplace
 
-1. Login to the OCI Console and choose **Marketplace -> Applications**
+1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
-    ![](./images/marketplace.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")
 2. OCI Marketplace hosts many applications ready to be deployed.
    Search for “Oracle Data Integrator”.
 
@@ -58,9 +58,9 @@ Make sure you have chosen the correct **COMPARTMENT**
 
 ## **Step 2:** Configure ODI Studio and import training repository
 
-1. From the hamburger menu, open **Compute** -> **Instances**
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-    ![](./images/odi_studio_1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2. Search for your instance by *Display Name*. Ensure you have chosen the correct *Region* and *Compartment*
 
@@ -96,9 +96,9 @@ Open the VNC viewer and enter the Public IP Address for your compute Instance
   ````
   <copy>
   cd /home/oracle/Downloads
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vBJMV8xqU9kHSXst796obVBr65gZVOBr-VQS7FTcEFU/n/c4u03/b/labfiles/o/ODI12c_training_master_repo.zip
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/gigeWSEkMgDfjYDWzXjK2lCkITZh76X_3LPkOU6knC0/n/c4u03/b/labfiles/o/ODI12c_training_work_repo.zip
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/BX0sxMejz7IWOHvX9frw5EPqek2Ryf75TbxrKMjchNk/n/c4u03/b/labfiles/o/ODI12c_Sales_data.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2zBY7hN8wEHIqgDNYa58aT_vlKiHInH86IHd_PE2f9SUVfXBA3W6EJmgiMpjmRMl/n/c4u04/b/labfiles/o/ODI12c_training_master_repo.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/EnOjFKODZ0TpwHvpfpCF2FN4pA9fVQR0hCKoDI66WRb3Y_1b8ee0JphvWoGZuplj/n/c4u04/b/labfiles/o/ODI12c_training_work_repo.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iGuOLSeWINLHWmMUjXpEf0G-iss8zypJg1WVXMgCWGlHdQDGf1UPfWfqJOUPfSSQ/n/c4u04/b/labfiles/o/ODI12c_Sales_data.zip
 
   unzip ODI12c_Sales_data.zip
 
@@ -228,7 +228,3 @@ Congratulations!  Now you have the environment to run the ODI labs.
 - **Author** - Jayant Mahto, July 2020
 - **Last Updated By/Date** - Kamryn Vinson, September 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

@@ -11,7 +11,7 @@ In this lab we will install and configure a workload generation tool called Swin
 
 ### Objectives
 
-As an adminstrator,
+As an administrator,
 1. Install and configure Swingbench to simulate a transaction processing workload.
 2. Configure application side parameters for Transparent Application Continuity.
 3. Trigger a RAC failover operation and observe impact to workload.
@@ -77,7 +77,7 @@ Unless you have already moved the wallet to your Dev Client machine in an earlie
    -  Once Firefox is open go to *cloud.oracle.com*
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
-    ![](./images/atpd1.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -267,7 +267,3 @@ That is it. You are now ready to fire up your transactional workload.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/autonomous-database-dedicated). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

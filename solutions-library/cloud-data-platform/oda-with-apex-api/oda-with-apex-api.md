@@ -4,6 +4,8 @@
 
 In this lab, you will learn how to navigate to an Oracle Digital Assistant instance and design a Skill in which you will implement your APIs from the APEX portion of this workshop.  These APIs will be utilized in order to make REST calls to the Autonomous Data Warehouse to get information on store predictions.  These REST API calls will be tested through interacting with the chatbot dialogue.
 
+Estimated Lab Time: 20 minutes
+
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:I5prg0Ucso4)
@@ -16,10 +18,9 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 -   Learn how to implement REST APIs through Digital Assistant
 -   Learn how to test Digital Assistant Dialogue
 
-### Required Artifacts
+### Prerequisites
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 20 minutes.
 
 ### Extra Resources
 -   To learn more about Oracle Digital Assistant (ODA), feel free to watch the following video: [](youtube:byXa6tIgyKY)
@@ -32,9 +33,9 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/1.png " ")
 
-2. In the side menu, navigate to **Digital Assistant** under Data and AI.
-
-    ![](./images/2.png " ")
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
+	
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-assist.png " ")
 
 3. On the Digital Assistant Instances screen, find the **Compartment** drop down on the left, and select the compartment of your choice from the drop down list.  Here, I am choosing the CloudDataWorkshop compartment.
 
@@ -83,7 +84,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 
     ![](./images/10.png " ")
 
-3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download DemoDigitalAssistantSkill.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MYxOb3NlvZ7F0HQ3AsMrTuXRUoD954Fvq8eZBhPndzw/n/c4u03/b/solutions-library/o/DemoDigitalAssistantSkill.zip)
+3. Before Importing the skill in the next step, please make sure you **download** this file via this text link: [Download DemoDigitalAssistantSkill.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/eiSWKmmaM04kje2UifsfT9mg0jZeSdm8xRsbM-x-lOSUG9JImqMf8bOueegFE9FT/n/c4u04/b/solutions-library/o/DemoDigitalAssistantSkill.zip)
 
 4. On the skill, click on the **Import Skill** button in the top right corner.
 
@@ -146,10 +147,7 @@ In this lab, you will learn how to navigate to an Oracle Digital Assistant insta
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
-- **Last Updated By/Date** - Jess Rein, August 2020
+- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.

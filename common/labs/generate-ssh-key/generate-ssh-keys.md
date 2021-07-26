@@ -8,14 +8,19 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
-### LiveLabs Reservations
+### LiveLabs (Green Button) Reservations - Please Read
 If you are creating an SSH Key for a workshop that will be running *inside a LiveLabs tenancy*, do not select Oracle Cloud Shell.  Select the options that correspond to the OS running on your local laptop.  You will be pasting your key into the LiveLabs reservation page so that we can pre-create your instance for you.
 
 ![](./images/livelabs-reservation.png " ")
 
 ## Option 1:  Oracle Cloud Shell
 
+Watch the video below for an overview of the Generate SSH Keys Cloud Shell option.
+[](youtube:oq2Hk1Yy9Cg)
+
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
+
+*Note:  If you are making a reservation via the LiveLabs Green Button, you will need to choose the option that matches your laptop.  Your tenancy access will be provided AFTER you create your ssh key locally*
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -63,9 +68,12 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-publickey-cloudshell.png " ")
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 2:  MacOS
+
+Watch the video below for an overview of the Generate SSH Keys Mac option.
+[](youtube:0Q6_fvJGgMA)
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
 
@@ -102,9 +110,12 @@ You may now *proceed to the next lab* or paste it in the LiveLabs reservation pa
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 3:  Windows 10
+
+Watch the video below for an overview of the Generate SSH Keys Windows option.
+[](youtube:BHbfxg_ek3Y)
 
 Creating keys for Windows can be interesting as ```ssh-keygen``` was not a native utility for Windows until the release of Windows 10. And it wasn't included in the initial Windows 10 builds. In this section, we'll assume your version of Windows 10 actually has ```ssh-keygen``` installed.  Note that you might have an earlier build that doesn't include ssh-keygen. If you can't find it, either upgrade or try one of the other methods listed for earlier versions of Windows.
 
@@ -155,7 +166,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
@@ -207,7 +218,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 4b: Windows Versions - PuTTY
 
@@ -271,7 +282,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![](images/keylab-023.png " ")
 
-    ![](images/see-IP-address.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
 
@@ -295,7 +306,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Option 5: SSH Keys for Linux
 
@@ -339,14 +350,10 @@ You may now *proceed to the next lab* or paste it in the LiveLabs reservation pa
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now *proceed to the next lab* or paste it in the LiveLabs reservation page.
+You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, October 2020
-* **Workshop (or Lab) Expiry Date** - March 27, 2021
+* **Contributors** - Kay Malcolm, Tom McGinn, Kamryn Vinson, Anil Nair
+* **Last Updated By/Date** - Kamryn Vinson, Database Product Management, March 2021
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

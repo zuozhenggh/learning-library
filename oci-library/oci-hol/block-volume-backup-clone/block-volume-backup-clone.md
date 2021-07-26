@@ -1,3 +1,4 @@
+<!-- Not tested -->
 # Using Backup and Clone Feature of Block Volume Storage
 
 ## Introduction
@@ -8,53 +9,17 @@ Oracle Cloud Infrastructure Block Volume Service lets you dynamically provision 
 
 In this lab you will create and attach Block Volume Storage to a compute instance and verify the added storage capacity.
 
-**Some Key points:**
-
-**We recommend using Chrome or Edge as the browser. Also set your browser zoom to 80%**
-
-
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots. Only use data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-    **Cloud Tenant Name**
-
-    **User Name**
-
-    **Password**
-
-    **Compartment Name (Provided Later)**
-
-    **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
-
 ### Prerequisites
 
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
-
-2. [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
-
-3. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-
-4. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-
-5. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-
-6. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
+* Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment).
+* [OCI Training](https://cloud.oracle.com/en_US/iaas/training)
+* [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+* [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
+* [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
+* [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
 ## **Step 1:** Sign in to OCI Console and create VCN
-
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
-
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
@@ -64,7 +29,7 @@ In this lab you will create and attach Block Volume Storage to a compute instanc
 
     **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**.
+3. Click **VCN with Internet Connectivity** and click **Start VCN Wizard**.
 
 4. Fill out the dialog box:
 
@@ -217,7 +182,7 @@ In this lab you will create and attach Block Volume Storage to a compute instanc
 
      ![](./../block-volume-storage/images/Block_Volume_002.PNG " ")
 
-21. Next we will use Manual Backup feature to create a backup of this block volume. We will then restore the backup as a regular volume in the same availability domain as the compute instance.From OCI services menu Click **Block Volumes** under **Block Storage**, Locate the block volume you created earlier, Click Action icon  and Click **Create Manual Backup**
+21. Next we will use Manual Backup feature to create a backup of this block volume. We will then restore the backup as a regular volume in the same availability domain as the compute instance. From OCI services menu Click **Block Volumes** under **Block Storage**, Locate the block volume you created earlier, Click Action icon  and Click **Create Manual Backup**
 
      ![](./../block-volume-storage/images/Block_Volume_003.PNG " ")
 
@@ -347,7 +312,3 @@ appear.
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, June 2020
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-cloud-infrastructure-fundamentals). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
