@@ -158,7 +158,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* 'i' command lets you insert text into the file.
+2. 'i' command lets you insert text into the file.
 
     ```
     <copy>
@@ -166,9 +166,9 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Paste the config file preview contents that were copied to clipboard into the file.
+3. Paste the config file preview contents that were copied to clipboard into the file.
 
-* Replace '<path to your private keyfile> # TODO' with:
+4. Replace '<path to your private keyfile> # TODO' with:
 
     ```
     <copy>
@@ -176,9 +176,9 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Press the escape key to escape insert.
+5. Press the escape key to escape insert.
 
-* To save and quit vi editor.
+6. To save and quit vi editor.
 
     ```
     <copy>
@@ -186,7 +186,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* If you need to leave vi editor without saving.
+    If you need to leave vi editor without saving.
 
     ```
     <copy>
@@ -194,9 +194,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-2. Copy ''.oci' to 'opc'.
-
-* Switch from 'zdmuser' to 'opc'.
+7. Copy ''.oci' to 'opc'. Start by switching from 'zdmuser' to 'opc'.
 
     ```
     <copy>
@@ -204,7 +202,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Go to root directory and make .oci directory.
+8. Go to root directory and make .oci directory.
 
     ```
     <copy>
@@ -216,7 +214,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Update the config file. Update key_file path to ~/.oci/oci\_api\_key.pem and then save and quit the vi editor.
+9. Update the config file. Update key_file path to ~/.oci/oci\_api\_key.pem and then save and quit the vi editor.
 
     ```
     <copy>
@@ -225,7 +223,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Lock the private key file.
+10. Lock the private key file.
 
     ```
     <copy>
@@ -233,7 +231,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Test OCI CLI as 'opc'.
+11. Test OCI CLI as 'opc'.
 
     ```
     <copy>
@@ -241,7 +239,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-3. Repeat the steps for 'oracle'.
+12. Repeat the steps for 'oracle'.
 
     ```
     <copy>
@@ -257,9 +255,9 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Update the key\_file path to ~/.oci/oci\_api\_key.pem and save and quit vi editor.
+13. Update the key\_file path to ~/.oci/oci\_api\_key.pem and save and quit vi editor.
 
-* Lock private key file.
+14. Lock private key file.
 
     ```
     <copy>
@@ -267,7 +265,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-* Test OCI CLI with 'oracle'.
+15. Test OCI CLI with 'oracle'.
 
     ```
     <copy>
@@ -275,7 +273,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-4. Lock 'zdmuser' private key file and test OCI CLI connection.
+16. Lock 'zdmuser' private key file.
 
     ```
     <copy>
@@ -283,14 +281,6 @@ Estimate Lab Time: 20 minutes
     sudo su - zdmuser
     cd /u01/app/zdmhome/.oci
     chmod go-rwx /u01/app/zdmhome/.oci/oci_api_key.pem
-    </copy>
-    ```
-
-* Test OCI CLI connection for 'zdmuser'.
-
-    ```
-    <copy>
-    oci iam region list
     </copy>
     ```
 
