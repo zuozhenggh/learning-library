@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this lab you will setup the shard database environment using Oracle Resource Manager and Terraform. The terraform script builds the following:
+You can setup the shard database environment using Oracle Resource Manager and Terraform. The terraform script builds the following:
 
 1. Compute service for Shard Directors (based on the shape that user wants to select).
 2. Database service for Shard and Catalog databases (based on the shape that user wants to select).
 
-Estimated Lab Time: 45 minutes.
+Estimated Lab Time: 45 minutes
 
 ### Objectives
-
+In this lab, you will:
 -   Use Terraform and Resource Manager to setup the shard database environment.
 -   Verify the shard database environment
 
