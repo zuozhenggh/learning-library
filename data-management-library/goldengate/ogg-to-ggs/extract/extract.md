@@ -18,7 +18,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Cloud Database System and the target database is Oracle Autonomous Data Warehouse.
+This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
 
 ## **STEP 1:** Add and Run an Extract in Oracle GoldenGate
 

@@ -6,21 +6,20 @@ This lab walks you through the steps to download the root certificate from Oracl
 
 Estimated Lab Time: 5 minutes
 
-
-### Before You Begin
-
-To successfully complete this lab, you must have:
-
-* An on premise or Marketplace Oracle GoldenGate instance running
-* The URL and log in credentials for the Oracle GoldenGate Service Manager
-* The log in credentials for the OCI GoldenGate Deployment Console
-
 ### Objectives
 
 In this lab, you will:
 * Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
 * Add the certificate to your Oracle GoldenGate wallet
 * Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
+
+### Prerequisites
+
+To successfully complete this lab, you must have:
+
+* An on premise or Marketplace Oracle GoldenGate instance running
+* The URL and log in credentials for the Oracle GoldenGate Service Manager
+* The log in credentials for the OCI GoldenGate Deployment Console
 
 ## **STEP 1A**: Using Chrome to Download the Root Certificate
 

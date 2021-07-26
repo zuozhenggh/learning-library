@@ -15,7 +15,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
+Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
 
 ## **STEP 1:** Download the Source ATP Client Credentials
 
@@ -33,7 +33,7 @@ In this lab, you will:
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-    ![](images/02-01_compute.png)
+    ![Open Compute Instances](images/02-01_compute.png)
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
@@ -41,7 +41,7 @@ In this lab, you will:
 
 4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
 
-    ![](images/02-04.png)
+    ![Copy Public IP](images/02-04.png)
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
@@ -58,15 +58,15 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 2.  Open the navigation menu (hamburger icon) and then click **Configuration**.
 
-    ![](images/03-02.png)
+    ![OPen OCI GoldenGate Deployment Console Configuration screen](images/03-02.png)
 
 3.  Copy the SourceATP connection string in the User ID column, and then paste it into a text editor.
 
-    ![](images/03-03.png)
+    ![Copy User ID for SourceATP credential](images/03-03.png)
 
 4.  Edit the SourceATP connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ATP.zip. For example, **/home/opc/wallet\_ATP**.
 
-    ![](images/04-04.png)
+    ![Edit wallet directory](images/04-04.png)
 
 5.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
@@ -78,7 +78,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 8.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![](images/04-07.png)
+    ![Open OGG Administration Server Configuration screen](images/04-07.png)
 
 9.  Click **Add Credential**.
 
@@ -89,15 +89,15 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
     * For **User ID**, paste the ATP connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Source Database.
 
-    ![](images/04-10.png)
+    ![Add credential for source ATP](images/04-10.png)
 
 11. Click **Connect to Database**.
 
-    ![](images/04-14.png)
+    ![Click Connect to Database](images/04-14.png)
 
 12. Next to TRANDATA Information, click Add **TRANDATA**.
 
-    ![](images/04-15.png)
+    ![Add TRANDATA](images/04-15.png)
 
 13. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
