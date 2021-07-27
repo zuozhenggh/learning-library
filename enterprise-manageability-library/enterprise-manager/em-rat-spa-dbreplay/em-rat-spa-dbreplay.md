@@ -752,7 +752,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step5b.png " ")
 
-        - Check Copy Workload to a new Replay Directory, then click <span style="color: red;">Set Credential</span>
+        - Check Copy Workload to a new Replay Directory, then click **Set Credential**
 
     ![](images/emratlab5step5c.png " ")
 
@@ -768,11 +768,15 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step5f.png " ")
 
-        - Check Named Credential, Credential Name ORACLE, Click Browse to eneter path **/home/oracle/scripts/CAPTURE/lab5**
+        - Check Named Credential, Credential Name ORACLE, Click Browse to enter path /home/oracle/scripts/CAPTURE/lab5
 
     ![](images/emratlab5step5g.png " ")
 
     ![](images/emratlab5step5h.png " ")
+
+        - Enter Name: **lab5con_rep1** for new Replay
+
+    ![](images/emratlab5step5h1.png " ")
 
         - Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
 
