@@ -56,7 +56,7 @@ Option ***2*** will copy all the parameter files to ***dirprm*** folder under go
 
 ![](./images/3.png" ")
 
-2. Once Deployment completed. Select **Q** to quit the labmenu  and start the mananger
+2. Once Deployment is completed. Select **Q** to quit the labmenu  and start the mananger
 
 To quit the Lab Menu:
 ```
@@ -168,7 +168,7 @@ jvm.bootoptions=-Xmx512m -Xms32m
 ``` 
 
 ![](./images/20.png" ")
-10. Replicat ***REPKAFKA*** creation completed. Green tick mark will shows Replicat ***REPKAFKA*** up and running
+10. Replicat ***REPKAFKA*** creation completed. Green check mark will shows Replicat ***REPKAFKA*** up and running
 ![](./images/21.png" ")
 11. Load the data to source database MySql.Kindly open a new putty session,choose ***Q*** to quit the lab menu and load the data to MySql database through command ***loadsource***.
 ```
