@@ -35,10 +35,9 @@ In this lab, you will:
 
 ## **STEP 1**: 
 
-
-
-
-## **STEP 2:** 
+## **STEP 2**:
+test  
+    ![](./images/pia.png "")
 
 
 
