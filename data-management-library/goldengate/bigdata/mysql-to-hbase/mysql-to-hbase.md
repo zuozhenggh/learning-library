@@ -281,6 +281,6 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Author** - Brian Elliott, Data Integration Team, Oracle, July 2021
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
