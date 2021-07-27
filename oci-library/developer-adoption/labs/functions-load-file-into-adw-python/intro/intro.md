@@ -27,7 +27,8 @@ Click on the [next lab](#next) in this workshop to get started.
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
+- **Author** - Adao Junior
 - **Adapted by** - Peter Jausovec, Prasenjit Sarkar, Adao Junior
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
-- **Last Updated By/Date** - Adao Junior, June 2021
+- **Sample Author** - Greg Verstraeten
+- **Last Updated By/Date** - Adao Junior, July 2021
