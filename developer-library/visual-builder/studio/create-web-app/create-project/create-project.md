@@ -1,92 +1,113 @@
-# Title of the Lab
+# Create a Project for a New Visual Application
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to create a project for a new visual application, which serves as the foundation to build a web application in Oracle Visual Builder Studio.
 
 Estimated Lab Time: -- minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
 
-### Objectives 
+In this workshop, we'll build a very simple Human Resources visual application, using a _project_ with a _visual application template_ as the starting point. Every project in Visual Builder Studio is devoted to a discrete software effort, and the project we create in this lab is exclusive to the Human Resources visual application. A project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, wikis, and more.
 
-*List objectives for this lab using the format below*
+Once we have our project, we'll create a _workspace_, a completely private area for you to work on your visual application. All your work within this space is stored in a clone of the project's Git repository, and is not visible to others until you share or publish your changes. A workspace also connects you to the development environment where you plan to deploy your application, which must be a separate Visual Builder instance.
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
 
-### Prerequisites (Optional)
+### Prerequisites
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
 This lab assumes you have:
 * An Oracle account
+* A supported browser
 * All previous labs successfully completed
+* The credentials of a user who can deploy to the Visual Builder instance
+
+## **STEP 1:** Create a Project for a New Visual Application
+
+As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this tutorial, we'll assume that you're also the developer who will create the HR web application.
+
+1.  In the web browser, log in to VB Studio. If you're logging in for the first time, you'll see a Welcome screen with a link to an introductory video, along with a news feed of additional screens. You can dismiss the news feed at any time, or keep it around.  
+
+  You are on the Organization page, which has a list of the projects you own or are a member of. Click **\+ Create**.
+
+    ![](images/welcome.png)
+
+2.  On the Details page of the New Project wizard, enter:
+
+    -   **Project Name**: `Tutorial HR Project` (you may want to add your name to the project name if you're in a large organization)
+    -   **Description**: `Tutorial project`
+    -   **Security**: **Private** (the default)
+    -   **Preferred Language**: the language of your choice
+
+    Click **Next**.
+
+3.  On the Template page, select **Visual Application** and click **Next**.
+
+4.  On the Properties page, click **Select an instance** to choose the Visual Builder development instance where you plan to deploy your application. If only one Visual Builder instance is associated with your VB Studio instance, it is automatically selected as your development instance.
+
+5.  Change the **Workspace Name** from the default `Workspace1` to `HR Visual Application`. Also change the **Working Branch Name** from `branch1` to `hrbranch`.
+
+6.  Leave other fields to their default settings and click **Finish**.
+
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to the Designer, as well as to your environments, repositories, and a recent activities feed. On the left are a series of tabs showing all the project components that are available.
+
+    ![](images/project_home.png)
+
+## **STEP 2:** Explore the Project Environment
+
+Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
+
+1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, master and hrbranch, created with initial content for your visual application.  
+
+    ![](images/repo.png)
+
+2.  In the left navigation, click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png)to view the **HR Visual Application** workspace. This workspace contains your working branch, hrbranch, and serves as your _local_ repository. The hrbranch initially has the same set of source files as the master branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+
+    ![](images/workspace.png)
+
+3.  Click **Environments** ![Environments icon](images/vbs_environments_icon.png) in the left navigation to view the Development environment that points to your Visual Builder instance. Here, you can view details of your Development instance and the applications that you deploy to this instance.  
+
+    ![](images/env.png)
+
+4.  Click **Builds** ![Builds icon](images/vbs_builds_icon.png) in the left navigation to view two build jobs that package and deploy your visual application to the Development instance. The Visual-Application-Package job generates the visual application's artifact files. The Visual-Application-Deploy job deploys the artifact files to the Development instance.
+
+    ![](images/build_jobs.png)
+
+5.  On the Builds page, click **Pipelines** to view the sequence of build jobs that package and deploy your application to your Development environment.
+
+    ![](images/build_pipeline.png)
+
+## **STEP: 3** Add Credentials to Deploy the Visual Application
+
+Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the Visual Builder Development instance.
+
+1.  Click **Jobs** on the Builds page, then click **Configure** ![Configure icon](images/vbs_builds_configure_icon.png) for the Visual-Application-Deploy job.
+
+    ![](images/build_auth.png)
+
+2.  On the Job Configuration page, click **Steps**.
+
+3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the Visual Builder Development instance. Click **Save**.
+
+    ![](images/build_auth_credentials.png)
 
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 4:** Add Team Members to the Project
 
-## **STEP 1:** Concise Step Description
+For the purposes of this tutorial, let's assume that other members of your team will work with you on this visual application--which means you'll need to add them to this project. As the project owner, you can restrict what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
-(optional) Step 1 opening paragraph.
+1.  Click **Project Home** ![Project Home icon](images/vbs_project_home_icon.png) in the left navigation.
 
-1. Sub step 1
+2.  On the Project Home page, click **Team**, then **\+ Add Member**.
 
-	![Image alt text](images/sample1.png)
+    ![](images/team.png)
 
-2. Sub step 2
+3.  In the Add Member dialog box, select the new user's membership, enter the username of a teammate, and click **Add**. For demonstration purposes, this tutorial adds Clara Coder with the Developer Limited Access role, which lets her access most project components but limits management actions.
 
-  ![Image alt text](images/sample1.png)
+    ![](images/team_add_member.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    An email containing project details is sent to Clara Coder. Your recent activities feed is also updated.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
+* **Last Updated By/Date** - August 2021
