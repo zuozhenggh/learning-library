@@ -151,7 +151,7 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 16. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**.
     ![](images/sql_job.jpg " ")
 
-17.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
+17.  On the General Tab, Enter **FIX\_OPEN\_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
     ![](images/sql_job2.jpg " ")
 
 18. Check **finance.subnet.vcn.oraclevcn.com**  and click **Select**.
@@ -171,7 +171,7 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 21. On the **Schedule** Tab you can specify whether you want to run the job immediately or at a later time by specifying date, time etc. Click on **One Time (Immediately)**. Click on **Submit** to submit the SQL Script job.     
     ![](images/sql_job2.6.jpg " ")
 
-22. You will get a confirmation dialog at the top of the screen. Click on **FIX_OPEN_CURSOR** to view your job run.
+22. You will get a confirmation dialog at the top of the screen. Click on **FIX\_OPEN\_CURSOR** to view your job run.
     ![](images/sql_job2.4.jpg " ")
 
 23. This will show you the sql command job's successful run.
