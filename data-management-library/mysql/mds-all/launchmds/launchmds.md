@@ -558,6 +558,7 @@ In this lab, you will be guided through the following steps:
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
  **[opc@...]$**
+
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
@@ -646,6 +647,7 @@ In this lab, you will be guided through the following steps:
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
  **[opc@...]$**
+
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
@@ -678,71 +680,92 @@ In this lab, you will be guided through the following steps:
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## **STEP 9:**  Import the airportdb schema and data using MySQL Shell
+## **STEP 9:**  Create airportdb schema and load data using MySQL Shell
 
-1.	Create the schema airportdb and tables
+**Be sure to complete STEP 8 before doing STEP 9**
 
-   Display list of created tables 
+1. If you are not already connected to MDS-Client then do so now
+
     ````
-    <copy>show tables;</copy>
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
     ````
-    ![Connect](./images/06connect16.png " ")
+2. Download the airportdb sample database and unpack it. (6 minutes)
 
-2. On MySQL Shell, switch to JavaScript mode 
-
- Create table  
     ````
-    <copy>\js</copy>
-    ````  
-    ![Connect](./images/06connect15.png " ")
+    <copy>wget https://downloads.mysql.com/docs/airport-db.zip</copy>
+    ````
 
-3.	Import the table data into MySQL Database Service from an external OCI Object Storage 
+    ````
+    <copy>unzip airport-db.zip</copy>
+    ````
+3. List the  airport-db directory to view the unxipped data files
 
-4. Display the count of all records per table in tpch
+    ````
+    <copy>ls /home/opc/airport-db</copy>
+    ````
+    ![Connect](./images/09import01.png " ")
 
- Change to SQL 
-      ````
+4. Start MySQL Shell and connect to the MDS-HW
+
+    ````
+    <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
+    ````
+5. Load the airportdb database into into MDS-HW using the  MySQL Shell Dump Loading Utility (6 minutes)   
+
+    ````
+    <copy>util.loadDump("airport-db", {threads: 16, deferTableIndexes: "all", ignoreVersion: true})</copy>
+    ````
+6. Display the count of all records per table in airportdb 
+
+    ````
     <copy>\sql</copy>
-    ````   
-  List table content 
-      ````
-    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'tpch';</copy>
-    ```` 
-  Exit MySQL Shell 
-      ````
+    ````
+
+    ````
+    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
+    ````
+    ![Connect](./images/09import02.png " ")
+
+7.	Exit MySQL Shell
+
+    ````
     <copy>\q</copy>
-    ```` 
-    ![Connect](./images/06connect17.png " ")
+    ````
+## **STEP 10:**  Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-## **STEP 10:**  Add a HeatWave Cluster to MySQL Database System
+1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
-1. Open the navigation menu, under Databases -> MySQL, click DB Systems
-2. Choose your Compartment. A list of DB Systems is displayed. 
-    ![Connect](./images/14addheat01.png " ")
-3. In the list of DB Systems, click on the **MDS-DB** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
-    ![Connect](./images/14addheat02.png " ")
-4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
+    ![Connect](./images/10addheat00.png " ")
 
-5. Click “Estimate Node Count” button
-    ![Connect](./images/14addheat03.png " ")
+2. Open the navigation menu  Databases > MySQL > DB Systems
+3. Choose the roo Compartment. A list of DB Systems is displayed. 
+    ![Connect](./images/10addheat01.png " ")
+4. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
+    ![Connect](./images/10addheat02.png " ")
+6. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
+
 6. Click “Estimate Node Count” button
-7. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
+    ![Connect](./images/10addheat03.png " ")
+7. Click “Estimate Node Count” button
+8. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
 provisioning advisor to sample the data stored in InnoDB and based on machine learning
 algorithm, it will predict the number of nodes needed.
-    ![Connect](./images/14addheat04.png " ")
+    ![Connect](./images/10addheat04.png " ")
 
-8. Once the estimations are calculated, it shows list of database schemas in MySQL node. If
+9. Once the estimations are calculated, it shows list of database schemas in MySQL node. If
 you expand the schema and select different tables, you will see the estimated memory
 required in the Summary box, There is s Load Command (analytics_load) generated in the text box window, which will change based on the selection of databases/tables
-    ![Connect](./images/14addheat05.png " ")
 
-9. Select the tpch schema and click “Apply Node Count Estimate” to apply the node count
-10. Click “Add HeatWave Cluster” to create the HeatWave cluster
-    ![Connect](./images/14addheat06.png " ")
+10. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
+    ![Connect](./images/10addheat05.png " ")
+
+
+11. Click “Add HeatWave Cluster” to create the HeatWave cluster
+    ![Connect](./images/10addheat06.png " ")
 12. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
-    ![Connect](./images/14addheat07.png " ")
+    ![Connect](./images/10addheat07.png " ")
 
-## **STEP 11:**  Load TPCH Data into HeatWave Cluster
+## **STEP 11:**  Load airportdb Data into HeatWave Cluster
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -751,38 +774,32 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
-3. Change the MySQL Shell execution mode to SQL
+    ````
+    <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
+    ````
 
- Enter the following command at the prompt:
-     ````
+3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
+
+    ````
     <copy>\SQL</copy>
     ````
 
-
-4. Execute the following operations to prepare the tpch sample database tables and load them into the HeatWave cluster. The operations performed include defining string column encodings, defining the secondary engine, and executing a SECONDARY_LOAD operations.
-
- Select database to use:
-     ````
-    <copy>USE airportdb;</copy>
     ````
+    <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
+    ````
+4. The compled load cluster screen should look like this:
 
-   ![Connect](./images/15loadheat01.png " ")
+    ![Connect](./images/11loadcluster01.png " ")
 
+5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
-Verify that the tables are loaded in the HeatWave cluster.
-
- Select performance_schema database:
-     ````
+    ````
     <copy>USE performance_schema;</copy>
     ````
- Enter the following command:
-     ````
+    ````
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ````
-
-   **NOTE:** Loaded tables have an AVAIL_RPDGSTABSTATE load status.
-
-   ![Connect](./images/15loadheat02.png " ")
+    ![Connect](./images/11loadcluster02.png " ")
 
 ## **STEP 12:**  Runn Queries in HeatWave
 
@@ -794,178 +811,184 @@ Verify that the tables are loaded in the HeatWave cluster.
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..**)
 
-3. Change the MySQL Shell execution mode to SQL
-
- Enter the following command at the prompt:
-     ````
+3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt:
+    ````
     <copy>\SQL</copy>
     ````
 
-4.	Change to the tpch database:
-
- Enter the following command at the prompt:
-     ````
+4.	Change to the airport database.  Enter the following command at the prompt:
+    ````
     <copy>USE airportdb;</copy>
     ````
-    ![Connect](./images/15loadheat01.png " ")
+    ![Connect](./images/12hwqueries01.png " ")
 
-5. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
-
- Enter the following command at the prompt:
+ 5. Turn on use secondary engine variable to use HeatWave
      ````
-    <copy>EXPLAIN SELECT SUM(l_extendedprice * l_discount) AS revenue FROM lineitem WHERE l_shipdate >= date '1994-01-01';</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
+    
+6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
-6. After verifying that the query can be offloaded, run the query and note the execution time.
+ 7. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
 
- Enter the following command at the prompt:
+    ````
+    <copy>EXPLAIN SELECT
+    airline.airlinename,
+    AVG(datediff(departure,birthdate)/365.25) as avg_age,
+    count(*) as nb_people
+FROM
+    booking, flight, airline, passengerdetails
+WHERE
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    booking.passenger_id=passengerdetails.passenger_id AND
+    country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+    airline.airlinename
+ORDER BY
+    airline.airlinename, avg_age
+LIMIT 10;</copy>
+    ````
+    ![Connect](./images/12hwqueries02.png " ")
+
+8. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
      ````
-    <copy>SELECT SUM(l_extendedprice * l_discount) AS revenue FROM lineitem WHERE l_shipdate >= date '1994-01-01';</copy>
+    <copy>SELECT
+    airline.airlinename,
+    AVG(datediff(departure,birthdate)/365.25) as avg_age,
+    count(*) as nb_people
+FROM
+    booking, flight, airline, passengerdetails
+WHERE
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    booking.passenger_id=passengerdetails.passenger_id AND
+    country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+    airline.airlinename
+ORDER BY
+    airline.airlinename, avg_age
+LIMIT 10;
+</copy>
     ````
-    ![Connect](./images/16runheat01.png " ")
+     ![Connect](./images/12hwqueries03.png " ")
 
-
-7. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use secondary engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ````
 
- Enter the following command at the prompt:
+ 10. Enter the following command at the prompt:
      ````
-    <copy>SELECT SUM(l_extendedprice * l_discount) AS revenue FROM lineitem WHERE l_shipdate >= date '1994-01-01';</copy>
+    <copy>SELECT
+    airline.airlinename,
+    AVG(datediff(departure,birthdate)/365.25) as avg_age,
+    count(*) as nb_people
+FROM
+    booking, flight, airline, passengerdetails
+WHERE
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    booking.passenger_id=passengerdetails.passenger_id AND
+    country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+    airline.airlinename
+ORDER BY
+    airline.airlinename, avg_age
+LIMIT 10;</copy>
     ````
-    ![Connect](./images/16runheat02.png " ")
+    ![Connect](./images/12hwqueries04.png " ")
 
-8. To see if use_secondary_engine is enabled (=ON)
+ 11. To see if use secondary engine is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
-9. Running additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
+ 12. Running additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
    
-    (Example  **SET SESSION use_secondary_engine=On;**) 
+    (Example  **SET SESSION use secondary engine=On;**) 
 
-    (Example  **SET SESSION use_secondary_engine=Off;**)      
+    (Example  **SET SESSION use secondary engine=Off;**)      
 
- Enter the following command at the prompt
+ 13. Enter the following command at the prompt
      ````
-    <copy>SET SESSION use_secondary_engine=ON;</copy>
+    <copy>SET SESSION use secondary engine=ON;</copy>
     ````
- a.	Run Pricing Summary Report Query:
-     ````
-    <copy>SELECT
-    l_returnflag,
-    l_linestatus,
-    SUM(l_quantity) AS sum_qty,
-    SUM(l_extendedprice) AS sum_base_price,
-    SUM(l_extendedprice * (1 - l_discount)) AS sum_disc_price,
-    SUM(l_extendedprice * (1 - l_discount) * (1 + l_tax)) AS sum_charge,
-    AVG(l_quantity) AS avg_qty,
-    AVG(l_extendedprice) AS avg_price,
-    AVG(l_discount) AS avg_disc,
-    COUNT(*) AS count_order
+ 14. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
+
+    ````
+    <copy> SELECT
+    airline.airlinename,
+    SUM(booking.price) as price_tickets,
+    count(*) as nb_tickets
 FROM
-    lineitem
+    booking, flight, airline, airport_geo
 WHERE
-    l_shipdate <= DATE '1998-12-01' - INTERVAL '90' DAY
-GROUP BY l_returnflag , l_linestatus
-ORDER BY l_returnflag , l_linestatus;
-</copy>
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    flight.from=airport_geo.airport_id AND
+    airport_geo.country = "UNITED STATES"
+GROUP BY
+    airline.airlinename
+ORDER BY
+    nb_tickets desc, airline.airlinename
+LIMIT 10;
+    </copy>
     ````
-Enter the following command at the prompt:
+15. Enter the following command at the prompt:
      ````
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ````
-    Run the Pricing Summary Report Query again:
-    
-   Execution with **use_secondary_engine=ON** result
+    Run Query b again:
 
-   **4 rows in set (0.7509 sec)**
-
-   Execution with **use_secondary_engine=OFF** result:
-
-   **4 rows in set (10.4541 sec)**
-
-
- b.	Shipping Priority Query :
-     ````
-    <copy>SELECT
-    l_orderkey,
-    SUM(l_extendedprice * (1 - l_discount)) AS revenue,
-    o_orderdate,
-    o_shippriority
+    ````
+    <copy> SELECT
+    airline.airlinename,
+    SUM(booking.price) as price_tickets,
+    count(*) as nb_tickets
 FROM
-    customer,
-    orders,
-    lineitem
+    booking, flight, airline, airport_geo
 WHERE
-c_mktsegment = 'BUILDING'
-        AND c_custkey = o_custkey
-        AND l_orderkey = o_orderkey
-        AND o_orderdate < DATE '1995-03-15'
-        AND l_shipdate > DATE '1995-03-15'
-GROUP BY l_orderkey , o_orderdate , o_shippriority
-ORDER BY revenue DESC , o_orderdate
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    flight.from=airport_geo.airport_id AND
+    airport_geo.country = "UNITED STATES"
+GROUP BY
+    airline.airlinename
+ORDER BY
+    nb_tickets desc, airline.airlinename
 LIMIT 10;
-</copy>
+    </copy>
     ````
- c.	Product Type Profit Measure Query :
-     ````
-    <copy>SELECT
-    nation, o_year, SUM(amount) AS sum_profit
-FROM
-    (SELECT
-        n_name AS nation,
-            YEAR(o_ORDERdate) AS o_year,
-            l_extendedprice * (1 - l_discount) - ps_supplycost * l_quantity AS amount
-    FROM
-        part
-    STRAIGHT_JOIN partsupp
-    STRAIGHT_JOIN lineitem
-    STRAIGHT_JOIN supplier
-    STRAIGHT_JOIN orders
-    STRAIGHT_JOIN nation
-    WHERE
-        s_suppkey = l_suppkey
-            AND ps_suppkey = l_suppkey
-            AND ps_partkey = l_partkey
-            AND p_partkey = l_partkey
-            AND o_ORDERkey = l_ORDERkey
-            AND s_nationkey = n_nationkey
-            AND p_name LIKE '%green%') AS profit
-GROUP BY nation , o_year
-ORDER BY nation , o_year DESC;
-</copy>
-    ````
- In case you need to reload HeatWave data, first remove the secondary engine from the definition
+16. Uery c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
- Enter the following command at the prompt:
-     ````
-    <copy>ALTER TABLE nation SECONDARY_ENGINE NULL;</copy>
+    ````
+    <copy>SET SESSION use secondary engine=ON;</copy>
     ````
 
- Then load table:
-     ````
-    <copy>ALTER TABLE nation modify `N_NAME` CHAR(25) NOT NULL COMMENT 'RAPID_COLUMN=ENCODING=SORTED';
-ALTER TABLE nation modify `N_COMMENT` VARCHAR(152) COMMENT 'RAPID_COLUMN=ENCODING=SORTED';
-ALTER TABLE nation SECONDARY_ENGINE=RAPID;
-ALTER TABLE nation SECONDARY_LOAD;
-</copy>
     ````
-
+    <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
+    ````
+    ````
+    <copy>SET SESSION use secondary engine=OFF;</copy>
+    ````
+    
+    ````
+    <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
+    ````
 ## **STEP 13:**  Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
 
     **MySQL Workbench Configuration for MDS HeatWAve**
-    ![MDS](./images/06workbench01.png " ") 
+    ![MDS](./images/13workbench01.png " ") 
    
     **MySQL Workbench Use  for MDS HeatWAve**
-    ![MDS](./images/06workbench02.png " ") 
+    ![MDS](./images/13workbench02.png " ") 
 
 ## **STEP 14:**   – Create PHP MySQL Application
 
