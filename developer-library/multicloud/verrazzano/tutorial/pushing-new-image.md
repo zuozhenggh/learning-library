@@ -1,21 +1,21 @@
-# Push the Docker Image for bobbys-helidon-stock-application to the Oracle Cloud Container Registry #
+# Push the Docker Image for bobbys-helidon-stock-application to the Oracle Cloud Container Registry
 
-## Introduction #
+## Introduction
 
 In Lab 5, we modified bobbys-helidon-stock-application and built a new Docker image. In this Lab, we will push that image into a repository inside the Oracle Cloud Container Registry.
 
-### Objectives ###
+### Objectives
 
 In this lab, you will:
 
 * Generate an Authentication Token to log in to the Oracle Cloud Container Registry.
 * Push bobbys-helidon-stock-application Docker image to your Oracle Cloud Container Registry repository.
 
-### Prerequisites ###
+### Prerequisites
 
 You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified command for running them in the *Cloud Shell*.
 
-## **STEP 1**: Generate an Authentication Token to Login to the Oracle Cloud Container Registry ##
+## **STEP 1**: Generate an Authentication Token to Login to the Oracle Cloud Container Registry
 
 In this step, we are going to generate an *Authentication Token*, that we will use to log in to the Oracle Cloud Container Registry.
 
@@ -39,7 +39,7 @@ In this step, we are going to generate an *Authentication Token*, that we will u
 
     ![Generated Token](images/Lab6/13.png)
 
-## **STEP 2**: Push the bobbys-helidon-stock-application Docker image to your Oracle Cloud Container Registry Repository ##
+## **STEP 2**: Push the bobbys-helidon-stock-application Docker image to your Oracle Cloud Container Registry Repository
 
 
 1. In Lab 5, you opened a URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) and saved the endpoint for your Region name in a text editor. In my case, it is US East (Ashburn).

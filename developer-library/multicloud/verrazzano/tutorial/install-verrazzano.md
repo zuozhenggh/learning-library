@@ -1,10 +1,10 @@
-# Install Verrazzano on a Kubernetes Cluster in the Oracle Cloud Infrastructure (OCI) #
+# Install Verrazzano on a Kubernetes Cluster in the Oracle Cloud Infrastructure (OCI)
 
-## Introduction ##
+## Introduction
 
 This lab walks you through the steps to install Verrazzano on a Kubernetes cluster in the Oracle Cloud Infrastructure.
 
-### About Product/Technology ###
+### About Product/Technology
 
 Verrazzano is an end-to-end enterprise container platform for deploying cloud-native and traditional applications in multicloud and hybrid environments. It is made up of a curated set of open source components – many that you may already use and trust, and some that were written specifically to pull together all of the pieces that make Verrazzano a cohesive and easy to use platform.
 
@@ -17,7 +17,7 @@ Verrazzano includes the following capabilities:
 * Integrated security
 * DevOps and GitOps enablement
 
-### Objectives ###
+### Objectives
 
 In this lab, you will:
 
@@ -25,7 +25,7 @@ In this lab, you will:
 * Install the development (`dev`) profile of Verrazzano.
 * Verify the successful Verrazzano installation.
 
-### Prerequisites ###
+### Prerequisites
 
 Verrazzano requires the following:
 
@@ -34,7 +34,7 @@ Verrazzano requires the following:
 
 In Lab 1, we created a Kubernetes cluster on the Oracle Cloud Infrastructure. We will use that Kubernetes cluster, *cluster1*, for installing the development profile of Verrazzano.
 
-## **STEP 1**: Install the Verrazzano Platform Operator ##
+## **STEP 1**: Install the Verrazzano Platform Operator
 
 Verrazzano provides a platform [operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to manage the life cycle of Verrazzano installations. You can install, uninstall, and update Verrazzano installations by updating the [Verrazzano custom resource](https://verrazzano.io/docs/reference/api/verrazzano/verrazzano/).
 
@@ -69,7 +69,7 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
 
     ![running pod](images/Lab2/3.png)
 
-## **STEP 2**: Installation of the Verrazzano development profile ##
+## **STEP 2**: Installation of the Verrazzano development profile
 
 An installation profile is a well-known configuration of Verrazzano settings that can be referenced by name, which can then be customized as needed.
 
@@ -135,7 +135,7 @@ An ingress controller is something that helps provide access to Docker container
 
     ![wait for installation to complete](images/Lab2/8.png)
 
-## **STEP 3**: Verification of a successful Verrazzano installation ##
+## **STEP 3**: Verification of a successful Verrazzano installation
 
 Verrazzano installs multiple objects in multiple namespaces. Verrazzano components are installed in the namespace *verrazzano-system*.
 

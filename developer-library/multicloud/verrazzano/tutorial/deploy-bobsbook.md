@@ -1,8 +1,8 @@
-# Deploy the Bobs-Books Application Which is Based on WebLogic, Coherence and Helidon #
+# Deploy the Bobs-Books Application Which is Based on WebLogic, Coherence and Helidon
 
-## Introduction ##
+## Introductions
 
-### About Bob's Books Application ###
+### About Bob's Books Application
 
 ![Bob' Books Application](images/Lab3/1.png)
 
@@ -14,13 +14,13 @@
 
 For more information and the source code of this application, see the [Verrazzano Examples](https://github.com/verrazzano/examples).
 
-### Verrazzano and Application Deployment ###
+### Verrazzano and Application Deployment
 
 Verrazzano supports application definition using [Open Application Model (OAM)](https://oam.dev/). Verrrazzano applications are composed of components and application configurations.
 
 When you deploy applications with Verrazzano, the platform sets up connections, network policies, and ingresses in the service mesh, and wires up a monitoring stack to capture the metrics, logs, and traces. Verrazzano employs OAM components to define the functional units of a system that are then assembled and configured by defining associated application configurations.
 
-### Verrazzano components ###
+### Verrazzano components
 
 A Verrazzano OAM component is a [Kubernetes Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) describing an application’s general composition and environment requirements.
 
@@ -80,7 +80,7 @@ A brief description of each field of the component:
 
 You can find the complete component description for bobs' books application in [bobs-books-comp.yaml](https://github.com/verrazzano/verrazzano/blob/master/examples/bobs-books/bobs-books-comp.yaml) file.
 
-### Verrazzano application configurations ###
+### Verrazzano application configurations
 
 A Verrazzano application configuration is a Kubernetes Custom Resource which provides environment specific customizations. The following code shows the application configuration for the Bob's Books example used in this lab. This resource specifies the deployment of the application to the bobs-books namespace.
 
@@ -158,7 +158,7 @@ To explore traits, we can examine the fields of an ingress trait:
 
 This lab walks you through the process of deploying the Bob's Books sample application.
 
-### Objectives ###
+### Objectives
 
 In this lab, you will:
 
@@ -166,7 +166,7 @@ In this lab, you will:
 * Deploy the Bob's Books sample application.
 * Verify the successful deployment of the Bob's Books sample application.
 
-### Prerequisites ###
+### Prerequisites
 
 To run Lab 3, you must have:
 
@@ -174,7 +174,7 @@ To run Lab 3, you must have:
 * Run Lab 2, which installs Verrazzano on the Kubernetes cluster.
 * A text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Accept the license agreement to download the images from the repositories in the Oracle Container Registry ####
+## **STEP 1**: Accept the license agreement to download the images from the repositories in the Oracle Container Registry#
 
 For the deployment of the *Bob's Books* sample application, we will use the example images. Because these images contain Oracle products, you will need to accept the license agreement before using these images in your bobs-books file, `bobs-books-comp.yaml`.
 
@@ -202,7 +202,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Verify License Agreement](images/Lab3/28.png)
 
-## **STEP 2**: Deploy the Bob's Books application ##
+## **STEP 2**: Deploy the Bob's Books application
 
 We need to download the source code, where we have configuration files, `bobs-books-app.yaml` and `bobs-books-comp.yaml`.
 
@@ -331,7 +331,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
 
     ![External IP](images/Lab3/23.png)
 
-## **STEP 3**: Verify the successful deployment of the Bob's Book application ##
+## **STEP 3**: Verify the successful deployment of the Bob's Book application
 
 Verify that the application configuration, domains, Coherence resources, and ingress trait all exist.
 

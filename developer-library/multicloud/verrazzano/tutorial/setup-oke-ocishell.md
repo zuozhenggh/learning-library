@@ -1,21 +1,21 @@
-# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI) #
+# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)
 
-## Introduction ##
+## Introduction
 
 This lab walks you through the steps to create a managed Kubernetes environment on the Oracle Cloud Infrastructure.
 
-### About Product/Technology ###
+### About Product/Technology
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your container applications to the cloud. Use the Container Engine for Kubernetes (sometimes abbreviated OKE) when your development team wants to reliably build, deploy, and manage cloud-native applications. You specify the compute resources that your applications require, and OKE provisions them on the Oracle Cloud Infrastructure in an existing OCI tenancy.
 
-### Objectives ###
+### Objectives
 
 In this lab, you will:
 
 * Create an OKE (Oracle Kubernetes Engine) instance.
 * Open the OCI Cloud Shell and configure `kubectl` to interact with the Kubernetes cluster.
 
-### Prerequisites ###
+### Prerequisites
 
 You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
 
@@ -29,7 +29,7 @@ This tutorial shows you how the *Quick Start* feature creates and configures all
 
 For more information about OKE and custom cluster deployment, see the [Oracle Container Engine](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm) documentation.
 
-## **STEP 1**: Create an OKE cluster ##
+## **STEP 1**: Create an OKE cluster
 
 The *Quick Create* feature uses the default settings to create a *quick cluster* with new network resources as required. This approach is the fastest way to create a new cluster. If you accept all the default values, you can create a new cluster in just a few clicks. New network resources for the cluster are created automatically, along with a node pool and three worker nodes.
 
@@ -53,7 +53,7 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
     * **Name**: The name of the cluster. Leave the default value.
     * **Compartment**: The name of the compartment. Leave the default value.
-    * **Kubernetes version**: The version of Kubernetes. Leave the default value which should be *v1.19.12*.
+    * **Kubernetes version**: The version of Kubernetes. Leave the default value which should be *v1.20.8* or select the latest version available.
     * **Kubernetes API Endpoint**: Are the cluster master nodes going to be routable or not. Select the *Public Endpoint* value.
     * **Kubernetes Worker Nodes**: Are the cluster worker nodes going to be routable or not. Leave the default *Private Workers* value.
     * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select *VM.Standard.E2.4* (which is typically available in Oracle Free Tier Account).
@@ -81,7 +81,7 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 
     ![cluster1](images/Lab1/15.png)
 
-## **STEP 2**: Configure `kubectl` (Kubernetes Cluster CLI) ##
+## **STEP 2**: Configure `kubectl` (Kubernetes Cluster CLI)
 
 Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal, accessible from the Oracle Cloud Console. The Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools (*Git, kubectl, helm, OCI CLI*) to complete the Verrazzano tutorials. The Cloud Shell is accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
 
@@ -115,13 +115,19 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ![kubectl config](images/Lab1/11.png)
 
-5. Now check that `kubectl` is working, for example, using the `get node` command:
+5. Now check that `kubectl` is working, for example, using the `get node` command. you may need to run this command several times until you see the output similar to following.
 
     ```bash
     <copy>kubectl get node</copy>
     ```
 
-    ![get node](images/Lab1/12.png)
+    ```bash
+    $ kubectl get node
+    NAME          STATUS   ROLES   AGE    VERSION
+    10.0.10.112   Ready    node    4m32s   v1.20.8
+    10.0.10.200   Ready    node    4m32s   v1.20.8
+    10.0.10.36    Ready    node    4m28s   v1.20.8
+    ```
 
     > If you see the node's information, then the configuration was successful.
 
