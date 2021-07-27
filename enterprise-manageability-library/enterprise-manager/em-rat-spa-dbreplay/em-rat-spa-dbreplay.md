@@ -37,22 +37,9 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 | **5**  | Database Replay - Consolidation Replay (EM) (Optional) | 20 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.3.                                                                                                                                          |
 
 
+## **STEP 1:** SQL Performance Analyzer
 
-## **STEP 0:** Prepare EM and Databases
-
-1. Setup Oracle Credential
-
-        - Go to Enterprise -> Job -> Library
-        - Pick **SETUP ORACLE CREDENTIALS** and click Submit
-        - Click **Submit**
-
-    ![](images/emratlab0step1a.png " ")
-
-    ![](images/emratlab0step1b.png " ")
-
-    ![](images/emratlab0step1c.png " ")  
-
-2. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com
+1. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com
 
     ![](images/emratlab0step2a.png " ")
 
@@ -64,51 +51,48 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab0step2e.png " ")
 
-3. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com
+2. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com
 
-   Start Database db19c.subnet.vcn.oraclevcn.com
+       Start Database db19c.subnet.vcn.oraclevcn.com
 
-    ![](images/emratlab0step2f.png " ")
+        ![](images/emratlab0step2f.png " ")
 
-    ![](images/emratlab0step2g.png " ")
-
-
-   Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1
-
-    ![](images/emratlab0step2h.png " ")
-
-    ![](images/emratlab0step2i.png " ")
-
-    ![](images/emratlab0step2j.png " ")
-
-    ![](images/emratlab0step2k.png " ")
+        ![](images/emratlab0step2g.png " ")
 
 
-## **STEP 1:** SQL Performance Analyzer
+       Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1
 
-1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
+        ![](images/emratlab0step2h.png " ")
+
+        ![](images/emratlab0step2i.png " ")
+
+        ![](images/emratlab0step2j.png " ")
+
+        ![](images/emratlab0step2k.png " ")
+        
+3. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
     ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
-2. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
+4. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
     ![](images/emratlab1step2.png " ")
 
-3. Here you will notice different databases listed, such as SALES, HR etc., we will work in pluggable database psales inside the sales container database. **Expand** the Sales database from the list, and **Click** sales.subnet.vcn.oraclevcn.com_PSALES
+5. Here you will notice different databases listed, such as SALES, HR etc., we will work in pluggable database psales inside the sales container database. **Expand** the Sales database from the list, and **Click** sales.subnet.vcn.oraclevcn.com_PSALES
 
     ![](images/emratlab1step3.png " ")
 
-4. Go to SQL Tuning Set page by **Click** on Performance menu -> SQL -> SQL Tuning Set. And use SYS_SALES credential name from the database login screen
+6. Go to SQL Tuning Set page by **Click** on Performance menu -> SQL -> SQL Tuning Set. And use SYS_SALES credential name from the database login screen
 
     ![](images/emratlab1step4a.png " ")
 
     ![](images/emratlab1step4b.png " ")
 
-5. Pick SQL Tuning Set 'shsts1' and **Click** Copy To A Database button
+7. Pick SQL Tuning Set 'shsts1' and **Click** Copy To A Database button
 
     ![](images/emratlab1step5.png " ")
 
-6. Enter Copy SQL Tuning Set
+8. Enter Copy SQL Tuning Set
 
        - Pick **db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1** for Destination Database
        - Pick **STSCOPY** for Directory Object
@@ -123,7 +107,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
    View on job page to check status of the Copy STS job. It can take 1.5-2 minutes.
 
-7. After the COPY STS job successfully finished, **Click** Target - Database
+9. After the COPY STS job successfully finished, **Click** Target - Database
 
        - **Click** db19c.subnet.vcn.oraclevcn.com - PDB **PSAL_CLone1**
        - **Click** on menu Performance - SQL - SQL Performance Analyzer
@@ -134,11 +118,11 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step7c.png " ")
 
-8. In SPA (SQL Performance Analyzer) page, **Click** Guided Workflow
+10. In SPA (SQL Performance Analyzer) page, **Click** Guided Workflow
 
     ![](images/emratlab1step8.png " ")
 
-9. Step 1 Create SPA Task  based on STS
+11. Step 1 Create SPA Task  based on STS
 
     ![](images/emratlab1step9a.png " ")
 
@@ -150,7 +134,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
        - **Click** Create and back to **Guided Workflow** page
 
-10. Step 2 Create SQL Trial in Initial Environment
+12. Step 2 Create SQL Trial in Initial Environment
 
     ![](images/emratlab1step10a.png " ")
 
@@ -186,7 +170,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
        - **Check** Trial environment established
        - **Click** Submit
 
-11. Back to SQL Performance Analyzer Home page, to check the status of the task run.
+13. Back to SQL Performance Analyzer Home page, to check the status of the task run.
 
     ![](images/emratlab1step11a.png " ")
 
@@ -194,7 +178,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step11b.png " ")
 
-12. Continue Step 3 in SPA Guided Workflow **SHSPATASK**, and create SQL Trial in Changed Environment
+14. Continue Step 3 in SPA Guided Workflow **SHSPATASK**, and create SQL Trial in Changed Environment
 
     ![](images/emratlab1step12a.png " ")
 
@@ -207,13 +191,13 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step12b.png " ")
 
-13. Back to SQL Performance Analyzer Home page, to check the status of the task run.
+15. Back to SQL Performance Analyzer Home page, to check the status of the task run.
 
     ![](images/emratlab1step13.png " ")
 
        - Continue the Workflow **Click** SHSPATASK
 
-14. Continue Step 4 in SPA Guided Workflow **SHSPATASK**, and compare Step 2 and Step 3
+16. Continue Step 4 in SPA Guided Workflow **SHSPATASK**, and compare Step 2 and Step 3
 
     ![](images/emratlab1step14a.png " ")
 
@@ -224,7 +208,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step14c.png " ")
 
-15. Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
+17. Continue Step 5 in SPA Guided Workflow **SHSPATASK**, View Trial Comparison report
 
     ![](images/emratlab1step15a.png " ")
 

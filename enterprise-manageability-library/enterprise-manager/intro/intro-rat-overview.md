@@ -19,12 +19,12 @@ Labs under this workshop are covered by the following Management Pack.
 - Real Application Testing
 
 ### Content
-Oracle Database Performance Management including overall DB performance, SQL analysis, real-time operation monitoring, and tuning. The following are covered in this workshop:
-- View unified Database Performance via Performance Hub
-- Use Real-time Database Operations Monitoring to view long running database tasks
-- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
-- Use SQL Performance Analyzer Optimizer to gather statistics for validation
-- Use Database Workload Replay to run real workload against your changes for additional validation
+Oracle Real Application Testing option enables you to perform real-world testing of Oracle Database. By capturing production workloads and assessing the impact of system changes on these workloads before production deployment, Oracle Real Application Testing minimizes the risk of instabilities associated with system changes. The following are covered in this workshop:
+- Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
+- Capture workload of 18c Database
+- Run Database Replay of 18c Database Workload in 19c Database
+- Run Consolidation Replay in 2 separate Pluggable Databases
+
 
 ### Additional Workshop Supported Use Cases
 
