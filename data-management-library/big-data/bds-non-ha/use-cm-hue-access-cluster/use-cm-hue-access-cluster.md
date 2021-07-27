@@ -15,7 +15,7 @@ All services are only available on certain ports. For example, in a non-HA clust
 
 In this lab, you will learn how to access CM and Hue directly in a web browser.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -27,18 +27,8 @@ Estimated Lab Time: 30 minutes
 * Add ingress rules to the default security rule that enables you to access both CM and Hue.
 </if>
 
-### What Do You Need?
-
-This lab assumes that you have successfully completed the following labs in the **Contents** menu:
-<if type="freetier">
-+ **Lab 1: Setup the BDS Environment**
-</if>
-<if type="livelabs">
-+ **Lab 1: Review Creating BDS Environment Resources (Optional)**
-</if>
-+ **Lab 2: Create a BDS Hadoop Cluster**
-+ **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
+**Note:**    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ### Video Preview
 
@@ -46,9 +36,9 @@ Watch a video demonstration of using Cloudera Manager and Hue to access a Big Da
 
 [](youtube:dAGD1If39fw)
 
-## **STEP 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
+## **Task 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
-In this step, you will <if type="freetier">add</if> <if type="livelabs">review how to add
+In this task, you will <if type="freetier">add</if> <if type="livelabs">review how to add
 </if> ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
 
 <if type="livelabs">
@@ -111,9 +101,9 @@ _**Note:** All screen captures in this lab show the resources' names used when y
 
   ![](./images/ingress-rules-added.png " ")
 
-## **STEP 2:** Use Cloudera Manager (CM) to Access the Cluster
+## **Task 2:** Use Cloudera Manager (CM) to Access the Cluster
 
-In this step, you will use CM to access the cluster. In a non-HA cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in step 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
+In this task, you will use CM to access the cluster. In a non-HA cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in task 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
@@ -182,9 +172,9 @@ In this step, you will use CM to access the cluster. In a non-HA cluster, CM run
 
     ![](./images/logout-cm.png " ")
 
-## **STEP 3:** Use Hue to Access the Cluster
+## **Task 3:** Use Hue to Access the Cluster
 
-In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
 1. Open a web browser window.
 
@@ -229,7 +219,7 @@ In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 
   ![](./images/hue-logout.png " ")
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -248,4 +238,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021

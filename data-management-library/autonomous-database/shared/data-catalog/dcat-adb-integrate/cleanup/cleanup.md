@@ -55,33 +55,7 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
 7. Click the **Actions** button associated with the **training-bds-policy** policy, and then select **Delete** from the context menu. A confirmation message box is displayed, click **Delete**.
 
-
-## **STEP 3:** Delete Your Object Storage Bucket (remove when access to Marty's tenancy is available via a public bucket or PAR is available)
-
-  1. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
-
-  **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the bucket first.
-
-2. The **Bucket Details** page for the **training** bucket is displayed. Scroll-down to the **Objects** section.
-
-3. On the row for the **biketrips** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
-
-  ![](./images/delete-biketrips.png " ")
-
-4. A confirmation message box is displayed. Enter **biketrips** in the **Type the folder name to confirm deletion** text box, and then click **Delete**. The object is deleted and the **Bucket Details** page is re-displayed.
-
-5. On the row for the **stations** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
-
-6. A confirmation message box is displayed. Enter **stations** in the **Type the folder name to confirm deletion** text box, and then click **Delete**. The object is deleted and the  **Bucket Details** page is re-displayed.
-
-7. On the row for the **weather** object, click the **Actions** button, and then select **Delete Folder** from the context menu.
-
-8. A confirmation message box is displayed. Enter **weather** in the **Type the folder name to confirm deletion** text box, and then click **Delete**. The object is deleted and the  **Bucket Details** page is re-displayed.
-
-9. Scroll up the page, and then click the **Delete** button. A confirmation message box is displayed. Click **Delete**. The bucket is deleted and the **Buckets** page is re-displayed.
-
-
-## **STEP 4:** Delete Your Compartment
+## **STEP 3:** Delete Your Compartment
 
 To delete a compartment, it must be empty of all resources. Before you initiate deleting a compartment, be sure that all its resources have been moved, deleted, or terminated, including any policies attached to the compartment. In this workshop, you created all of the resources in the **`training-dcat-compartment`**; therefore, if you want to re-run this entire workshop from the beginning, you can must delete all of the resources in the compartment as described in the earlier steps of this lab. Next, you can delete the compartment. See [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) in the Oracle Cloud Infrastructure documentation.
 

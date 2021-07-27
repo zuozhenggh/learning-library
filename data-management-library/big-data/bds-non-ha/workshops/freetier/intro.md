@@ -67,4 +67,4 @@ Use these links to get more information about BDS and OCI:
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021

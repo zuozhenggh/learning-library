@@ -73,15 +73,9 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
    ![](./images/create-data-asset-panel.png " ")
 
-   A `Data Asset created successfully` message box is displayed. The data catalog instance **Home** page is re-displayed. The **`training-dcat-instance`** **Home** page is re-displayed.
+   A `Data Asset created successfully` message box is displayed. The **Oracle Object Storage Data Asset** tab is displayed. The details for the new Data Asset are displayed in the **Summary tab**.
 
-   To display the newly created Data Asset, click the **Browse Data Assets** link in the **Quick Actions** section. Alternatively, you can click the **Data Asset(1)** link.
-
-   ![](./images/click-browse-data-asset.png " ")
-
-   The **Browse Data Asset** tab is displayed. The details for the new **`Oracle Object Storage Data Asset`** Data Asset are displayed in the **Summary tab**.
-
-   ![](./images/browse-data-asset-tab.png " ")
+   ![](./images/new-data-asset-tab.png " ")
 
 
 ## **STEP 3**: Add a Connection to the Oracle Object Storage Data Asset
@@ -90,15 +84,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
 Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
 
-1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
-
-2. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance that contains the Data Asset for which you are creating a connection.
-
-3. On the data catalog instance **Home** page, click **Browse Data Assets** in the **Quick Actions** section.
-
-   ![](./images/browse-data-assets.png " ")
-
-   In the **Browse Data Asset** tab, the **Oracle Object Storage: Oracle Object Storage Data Asset** page is displayed. In the **Summary** tab, scroll-down the page to the **Connections** section, and then click **Add Connection**.
+1. On the **Oracle Object Storage Data Asset** tab, in the **Summary** tab, click **Add Connection**.
 
    ![](./images/add-connection.png " ")
 
@@ -108,7 +94,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
        * **Description:** Enter an optional description.
        * **Type:** Select **Resource Principal** from drop-down list.
        * **OCI Region:** Enter your own _region-identifier_ that you identified in **STEP 2** in this lab.
-       * **Compartment OCID:** Enter the compartment's OCID for your Oracle Object Storage resource.    
+       * **Compartment:** Enter the compartment's OCID for your Oracle Object Storage resource.    
 
        To find the compartment OCID for your Oracle Object Storage resource, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**. On the **Compartments** page, In the list of compartments, search for the **`training-dcat-compartment`**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 

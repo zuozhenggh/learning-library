@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-The labs in this workshop walk you through all the steps to get started using **Oracle Cloud Infrastructure (OCI) Data Catalog**.
+The labs in this workshop walk you through all the steps to get access the Data Lake using Autonomous Database and Data Catalog.
 
 Estimated Lab Time: TBD minutes.
 

@@ -4,25 +4,17 @@
 
 In this lab, you will learn how to maintain the new cluster that you created in the previous lab. You will also learn how to add Oracle Cloud SQL to your cluster.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
 * Maintain your cluster.
 * Add Oracle Cloud SQL to your cluster.
 
-### What Do You Need?
+**Note:**    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu:
-<if type="freetier">
-+ **Lab 1: Setup the BDS Environment**
-</if>
-<if type="livelabs">
-+ **Lab 1: Review Creating BDS Environment Resources (Optional)**
-</if>
-+ **Lab 2: Create a BDS Hadoop Cluster**
-
-## **STEP 1:** Maintain the Cluster
+## **Task 1:** Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
@@ -62,7 +54,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
     ![](./images/ll-maintain-cluster-2.png " ")  
     </if>
 
-## **STEP 2:** Add Oracle Cloud SQL to the Cluster
+## **Task 2:** Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
@@ -123,7 +115,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     ![](./images/cs-active.png " ")    
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -137,4 +129,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021
