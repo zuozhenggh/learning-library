@@ -2,24 +2,25 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate wallet.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager.
 
 Estimated Lab Time: 5 minutes
 
-### Before You Begin
+### Objectives
+
+In this lab, you will:
+
+* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
+* Add the certificate to your Oracle GoldenGate wallet
+* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
+
+### Prerequisites
 
 To successfully complete this lab, you must have:
 
 * An on premise or Marketplace Oracle GoldenGate instance running
 * The URL and log in credentials for the Oracle GoldenGate Service Manager
 * The log in credentials for the OCI GoldenGate Deployment Console
-
-### Objectives
-
-In this lab, you will:
-* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
-* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ## **STEP 1A**: Using Chrome to Download the Root Certificate
 
@@ -126,7 +127,7 @@ The following instructions show you how to download the Root Certificate using a
 5.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-    * For **Credential Alias**,  enter a name
+    * For **Credential Alias**,  enter a name, such as **ogg2ggs**.
     * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
@@ -137,8 +138,7 @@ The following instructions show you how to download the Root Certificate using a
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
 
-
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - May 2021
+* **Last Updated By/Date** - Jenny Chan, July 2021
