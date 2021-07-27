@@ -51,25 +51,20 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab0step2e.png " ")
 
-2. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com
+2. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com. Start Database db19c.subnet.vcn.oraclevcn.com. Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1
 
-       Start Database db19c.subnet.vcn.oraclevcn.com
+   ![](images/emratlab0step2f.png " ")
 
-        ![](images/emratlab0step2f.png " ")
+   ![](images/emratlab0step2g.png " ")
 
-        ![](images/emratlab0step2g.png " ")
+   ![](images/emratlab0step2h.png " ")
 
+   ![](images/emratlab0step2i.png " ")
 
-       Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1
+   ![](images/emratlab0step2j.png " ")
 
-        ![](images/emratlab0step2h.png " ")
+   ![](images/emratlab0step2k.png " ")
 
-        ![](images/emratlab0step2i.png " ")
-
-        ![](images/emratlab0step2j.png " ")
-
-        ![](images/emratlab0step2k.png " ")
-        
 3. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
     ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
@@ -138,7 +133,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab1step10a.png " ")
 
-       - Enter SQL Trial Name : **SHSTS_SQL_TRIAL_18C**
+       - Enter SQL Trial Name : **SHSTS\_SQL\_TRIAL\_18C**
        - Enter Description : Sales History 18C run
        - Creation Method: **Execute SQLs Remotely**
 
