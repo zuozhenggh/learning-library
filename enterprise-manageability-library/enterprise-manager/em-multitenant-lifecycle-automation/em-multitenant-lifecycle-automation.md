@@ -267,7 +267,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 13. Then review/enter the Named Credentials for the database and host and Click the Submit button
 
     -  For the database named credentials use: OEM\_SYS (scroll down after Database Credentials to see Host Credentials
-    -  For the host credentials use: ORACLE_HOST
+    -  For the host credentials use: ORACLE\_HOST
 
     ![](images/6ccf17bb69cbc79dae30f95bc508f640.jpg " ")
 
