@@ -7,8 +7,8 @@
             "filename": "../../labs/mushop/intro/intro.md"
         },
         {
-            "title": "Getting Started",
-            "filename": "../../../../common/labs/cloud-login/cloud-login-livelabs2.md"
+            "title": "Login to your OCI Tenancy",
+            "filename": "../../../../common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Setup Cloud Environment",
