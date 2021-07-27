@@ -10,6 +10,8 @@ You can perform and manage a database migration of an individual database or per
 
 The Zero Downtime Migration software is a service with a command line interface that you install and run on a host that you provision. The server where the Zero Downtime Migration software is installed is called the Zero Downtime Migration service host. You can run one or more database migration jobs from the Zero Downtime Migration service host.
 
+Estimated Total Lab Time: 2 hours
+
 ## About Logical Offline Migration
 Zero Downtime Migration supports both online and offline migration, and can perform both physical and logical migrations.
 
