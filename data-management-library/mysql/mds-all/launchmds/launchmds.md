@@ -108,6 +108,12 @@ In this lab, you will be guided through the following steps:
      New Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
+15.	Add HTTP port for Web Application. On Security List for Public Subnet-mds_vcn  page
+16. Click on Default Security List for mds_vcn
+17. Click Add Ingress Rules
+18. Add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 80, Description HTTP port and click  Add Ingress Rule.
+    ![VCN](./images/03vcn12.png " ")
+
 ## **STEP 2:** Create a MySQL DB System - Standalone.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
@@ -978,6 +984,12 @@ LIMIT 10;
     
     ````
     <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
+    ````
+
+17. Keep HeatWave processing enabled
+
+    ````
+    <copy>SET SESSION use secondary engine=ON;</copy>
     ````
 ## **STEP 13:**  Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 

@@ -3,7 +3,12 @@
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Launch MySQL Database Service Systems",
+            "title": "Lab 1: Create Local SSH Key",
+            "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
+        },
+        {
+            "title": "Lab 2: Launch MySQL Database Service Systems",
             "filename": "../../launchmds/launchmds.md"
         },
         {
