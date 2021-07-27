@@ -25,12 +25,11 @@ To successfully complete this LiveLab, you must have an on premise or Marketplac
 
 ### Lab Breakdown
 
-* Lab 1: Set up your environment
-* Lab 2: Create OCI GoldenGate resources
-* Lab 3: Connect Oracle GoldenGate to Autononous Transaction Processing
-* Lab 4: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
-* Lab 5: Send the Oracle GoldenGate Trail File to OCI GoldenGate
-* Lab 6: (Optional) Connect to the Admin Client
+* Lab 1: Create OCI GoldenGate resources
+* Lab 2: Connect Oracle GoldenGate to Autononous Transaction Processing
+* Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
+* Lab 4: Send the Oracle GoldenGate Trail File to OCI GoldenGate
+* Lab 5: (Optional) Connect to the Admin Client
 
 ## Learn More
 
