@@ -34,30 +34,32 @@ This lab assumes you have:
 
     - Username
 
-        ```
-        <copy>osaadmin</copy>
-        ```
+    ```
+    <copy>osaadmin</copy>
+    ```
 
     - Password
 
-        ```
-        <copy>welcome1</copy>
-        ```
+    ```
+    <copy>welcome1</copy>
+    ```
 
     ![](images/ggsa-login.png " ")
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
     - Golden Gate Stream Analytics
+
     ![](images/ggsa-landing.png " ")
 
     - Double click on *Terminal* and execute the below command to check the status for all the services.
-  
-        ```
-        <copy>
-        sudo systemctl | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
-        </copy>
-        ```
+
+    ```
+    <copy>
+    sudo systemctl | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
+    </copy>
+    ```
+
     ![](images/ggsa-terminal-status.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
@@ -68,34 +70,37 @@ This lab assumes you have:
 
     - To check the status for all the service.
 
-        ```
-        <copy>
-        sudo systemctl status | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
-        </copy>
-        ```
+    ```
+    <copy>
+    sudo systemctl status | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
+    </copy>
+    ```
 
-        ![](images/ggsa-terminal2.png " ")
-        ![](images/ggsa-terminal3.png " ")
-        ![](images/ggsa-terminal4.png " ")
+    ![](images/ggsa-terminal2.png " ")
+    ![](images/ggsa-terminal3.png " ")
+    ![](images/ggsa-terminal4.png " ")
 
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Restart all the services.
 
-        ```
-        <copy>
-        sudo systemctl restart | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
-        </copy>
-        ```
+    ```
+    <copy>
+    sudo systemctl restart | grep 'nginx\|mysqld\|spark-master\|spark-slave\|kafka\|kafka-zookeeper\|osa\|ggbd-mgr'
+    </copy>
+    ```
+
     - If you find that a particular service is not running please restart that service using the below command.
 
-        ```
-        <copy>
-        sudo systemctl restart <Service-name>
-        </copy>
-        ```
-    *Note*- The following are the service-name used in this workshop 
+    ```
+    <copy>
+    sudo systemctl restart <Service-name>
+    </copy>
+    ```
+
+    *Note*- The following are the service-name used in this workshop
+
     | Service Name                    |systemctl service             |
     |:-------------                   | :----------------------------|
     | GoldenGate Big Data Manager     | ggbd-mgr.service             |
@@ -106,7 +111,7 @@ This lab assumes you have:
     | The nginx HTTP and reverse proxy| rh-nginx118-nginx.service    |
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
-    
+
     You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
@@ -134,7 +139,9 @@ This lab assumes you have:
     ```
     <copy>sudo systemctl restart <Service-name></copy>
     ```
-    *Note*- The following are the service-name used in this workshop 
+    
+    *Note*- The following are the service-name used in this workshop
+
     | Service Name                    |systemctl service             |
     |:-------------                   | :----------------------------|
     | GoldenGate Big Data Manager     | ggbd-mgr.service             |
@@ -146,26 +153,6 @@ This lab assumes you have:
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
-## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
-
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
-
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-3. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance

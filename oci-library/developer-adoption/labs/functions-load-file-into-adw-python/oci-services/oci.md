@@ -1,4 +1,4 @@
-# Create Bucket and Autonomous Database (ADW)
+# Create Bucket, Policies and Autonomous Database (ADW)
 
 ## Introduction
 
@@ -8,7 +8,8 @@ Estimated time: 10 minutes
 
 ### Objectives
 
-- Create Object Storage Bucket.
+- Create Object Storage Bucket for input files.
+- Create Object Storage Bucket for processed files.
 - Create the IAM policy for the Function to access the Bucket
 - Create an Autonomous Data Warehouse Database.
 
@@ -17,7 +18,7 @@ Estimated time: 10 minutes
 - Your Oracle Cloud Trial Account
 - Completed the **Prerequisites for Functions**
 
-## **STEP 1:** Create Object Storage Bucket
+## **STEP 1:** Create Object Storage Bucket for input
 
 You need a `input-bucket` bucket in Object Storage. You will use the `input-bucket` to drop-in the CSV files. The function will process the file and import them into Autonomous Data Warehouse.
 
@@ -25,7 +26,7 @@ Let's create the `input-bucket` first:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage** and select **Buckets** under **Object Storage and Archive Storage**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+    ![Storage Buckets](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click the **Create Bucket**.
@@ -34,15 +35,33 @@ Let's create the `input-bucket` first:
 1. Check the **Emit Object Events** check box.
 1. Click **Create**.
 
-![Create input bucket](./images/create-input-bucket.png)
+    ![Create input bucket](./images/create-input-bucket.png)
 
-## **STEP 2:** Create IAM policies
+## **STEP 2:** Create Object Storage Bucket for processed files
+
+You need a `processed-bucket` bucket in Object Storage. The function will upload the processed files to the `processed-bucket`.
+
+Let's create the `processed-bucket`:
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Storage** and select **Buckets** under **Object Storage and Archive Storage**.
+
+    ![Storage Buckets](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+
+1. Select your development compartment (AppDev) from the **Compartment** list.
+1. Click the **Create Bucket**.
+1. Name the bucket **processed-bucket**.
+1. Select the **Standard** storage tier.
+1. Click **Create**.
+
+    ![Create processed bucket](./images/create-processed-bucket.png)
+
+## **STEP 3:** Create Compartment IAM policies for the function
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+    ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
 1. Click **Create Policy**.
 1. For name, enter `functions-buckets-policy`.
@@ -53,7 +72,9 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
     `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='input-bucket'`
 
-    Note: the `compartment-name` is your development compartment (the one where you created the VCN and Function Application. e.g.: AppDev).
+    `Allow dynamic-group functions-dynamic-group to manage objects in compartment [compartment-name] where target.bucket.name='processed-bucket'`
+
+    Note: the `compartment-name` is your development compartment (the one where you created the VCN and will be creating a Function Application later in the lab e.g., AppDev)
 
     Example using AppDev Compartment:
 
@@ -63,17 +84,56 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
     </copy>
     ```
 
+    Press enter to go to a new line (as shown on the picture)
+
+    ```shell
+    <copy>
+    Allow dynamic-group functions-dynamic-group to manage objects in compartment AppDev where target.bucket.name='processed-bucket'
+    </copy>
+    ```
+
 1. Click **Create**.
 
-![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
+    ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
-## **STEP 3:** Create an Autonomous Data Warehouse
+## **STEP 4:** Create Tenancy IAM policies for the Object Storage service
+
+Create a new policy that allows the service Object Storage manage objects. (you may not need that policy, here just in case you do not have correct access to your tenancy)
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+
+    ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+
+1. Click **Create Policy**.
+1. For name, enter `object-storage-service-policy`.
+1. For description, enter `Policy that allows Object Storage Service to manage objects 😳`.
+1. Under Compartment, select the `(root)` compartment. (You should see the tenancyName(root) on the lower level, where tenancyName is the name of your tenancy)
+1. Go to the Policy Builder section and turn on the `Show manual editor`.
+1. Enter on the textbox the policy similar to the bellow:
+
+    `Allow service objectstorage-<region-name> to manage object-family in tenancy`
+
+    Note: the `<region-name>` is your deployment tenancy
+
+    Example using us-ashburn-1 (US East (Ashburn)):
+
+    ```shell
+    <copy>
+    Allow service objectstorage-us-ashburn-1 to manage object-family in tenancy
+    </copy>
+    ```
+
+1. Click **Create**.
+
+    ![Create functions-buckets-policy](./images/create-object-storage-policy.png)
+
+## **STEP 5:** Create an Autonomous Data Warehouse
 
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
 1. Navigate to **Autonomous Data Warehouse**. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and select **Autonomous Data Warehouse**.
 
- ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 1. Click **Create Autonomous Database**.
 1. From the list, select your development compartment (AppDev).
@@ -145,6 +205,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
-- **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
+- **Author** - Adao Junior
+- **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior, Sachin Pikle, Mark Mundy
+- **Sample Author** - Greg Verstraeten
 - **Last Updated By/Date** - Adao Junior, July 2021
