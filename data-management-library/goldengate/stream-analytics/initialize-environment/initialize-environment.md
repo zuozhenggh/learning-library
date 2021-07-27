@@ -146,7 +146,7 @@ This lab assumes you have:
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
-## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
 
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
