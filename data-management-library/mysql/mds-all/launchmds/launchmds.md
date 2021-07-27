@@ -1156,20 +1156,11 @@ if ($stmt = $link->prepare($query)) {
 
 ## **STEP 15:**   – Create and Oracle Analytic Cloud
 
-NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following page and perform this hands-on workshop.
-Analytics - https://luna.oracle.com/?ojr=lab%3Blid%3Da1fc2175-9720-4345-8cb8-c0270a08c9d1
-
-It provides an OCI sandbox for trying the following OAC activities: 
-1.	Get started with Oracle Analytics
-2.	Understand the core features of Oracle Analytics
-3.	Blend Data, Visualize and Narrate using data
-4.	Use Machine Learning within Oracle Analytics
-
-Please reach out to us if you have any questions or recommendations.
-Oracle Analytics Cloud (OAC) is an enterprise analytics solution for building analytics dashboard, pixel-perfect high quality reports. OAC provides Machine Learning algorithm to exploit insights from your data
+NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following document:
+Analytics - https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html
 
 In order to build analytics dashboard using OAC on MDS HeatWave, we need to do the following
-1.	Create a user account for OAC to MDS
+1.	Create a user account for OAC to MDS 
 2.	Provision an OAC instance
 3.	Build OAC project
 
@@ -1195,14 +1186,14 @@ Task 1 - Create a user account for OAC to MDS
     <copy>CREATE USER 'oacadmin'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome#123';</copy>
     ````
     ````
-    <copy>GRANT all privileges on tpch.* to oacadmin;</copy>
+    <copy>GRANT all privileges on airportdb.* to oacadmin;</copy>
     ````
     ````
     <copy>exit;</copy>
     ````
 
 Task 2 - Provision an OAC instance
-1.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
+1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds and click Create Instance
 2.	On the Create Analytics Instance enter the required information as shown below
 3.	Wait 30 minutes for OAC instance creation to complete.
 4.	Go down to the resources page and click on the Create Private Access Channel link
@@ -1231,23 +1222,34 @@ Step 4 - Build OAC Dashboard
 6.	Next build the dashboard on MDS HeatWave by selecting Create->Data Set
 7.	Select the MySQL Connection created earlier
 8.	For Add Data Set name to customer_nations
-9.	Select tpch database
-10.	Click on the “Enter SQL and type in the following sql statement:
+9.	Select airportdb database
+10. Find per-company average age of passengers from Switzerland, Italy and France. Click on the “Enter SQL and type in the following sql statement:
+    ````
+    <copy> SELECT
+    airline.airlinename,
+    AVG(datediff(departure,birthdate)/365.25) as avg_age,
+    count(*) as nbpeople
+FROM
+    booking, flight, airline, passengerdetails
+WHERE
+    booking.flight_id=flight.flight_id AND
+    airline.airline_id=flight.airline_id AND
+    booking.passenger_id=passengerdetails.passenger_id AND
+    country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+    airline.airlinename
+ORDER BY
+    airline.airlinename, avg_age
+LIMIT 10;</copy>
+    ````
 
-    ````
-    <copy>select count(C_CUSTKEY) totcust, n_name 
-from  customer c
-join nation n on n.N_NATIONKEY = c.C_NATIONKEY 
-group by n_name 
-order by n_name;</copy>
-    ````
 11.	Click the blue Add button 
 12.	On new display page click on the Create Project button
 13.	On new display page  click on the graph icon, go down the side and select the map icon. Drag the icon to the middle of the page. 
-14.	Click the dataset icon and move the totcust field to size and n_name field to Category 
+14.	Click the dataset icon and move the nbpeople field to size and airlinename field to Category 
 15.	Click on the bottom + sign to add Canvas 2 and drag the bar icon to the middle of the page
-16.	Click the dataset icon and move the totcust field to Y-axis and n_name field to Category 
-17.	Set project name to customer_nations_bargraph 
+16.	Click the dataset icon and move the nbpeople field to Y-axis and airlinename field to Category 
+17.	Set project name to customernationsbargraph 
 
 ## **STEP 16:** Start, stop, or reboot MySQL DB System
 
