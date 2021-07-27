@@ -1,7 +1,7 @@
 # MySql to Kafka via GGMA for BigData
 
 ## Introduction
-This workshop will show you how to  ***Replicate from  mysql to kafka***.
+This workshop will demonstrate you how to  ***Replicate from  mysql to kafka***.
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repkafka’ will read the remote trail files, act as a producer and write the messages to an auto- created topic for each table in the source database.
 
 *Estimated Workshop Time*: 60 minutes
@@ -56,7 +56,7 @@ Option ***2*** will copy all the parameter files to ***dirprm*** folder under go
 
 ![](./images/3.png" ")
 
-2. Once Deployment completed, then select **Q** to quit the labmenu   and start the mananger
+2. Once Deployment completed. Select **Q** to quit the labmenu  and start the mananger
 
 To quit the Lab Menu:
 ```
@@ -75,7 +75,6 @@ To start the manager:
     <copy>start mgr</copy>
 ```
 ![](./images/4.png" ")
-
 3. Execute the obey file to create the GoldenGate process.Obey file contains all the commands to create GoldenGate process
 ```
     <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
@@ -101,6 +100,7 @@ Sample Output:
 1. Login to GoldenGate for BigData console 
 
     Replace IP Address with livelab server generated IP
+    
 ```
     <copy>http://IP Address:16001/?root=account</copy>
 ```
@@ -142,8 +142,10 @@ Trail Subdirectory:
 ![](./images/14.png" ")
 7. Click ***Next*** To navigate **parameter** tab.
 ![](./images/15.png" ")
+
 8. Kindly review the parameter contents and mapping conditions,click ***Next***
 ![](./images/16.png" ")
+
 9. Kindly replace the content of the property file with a below code and click ***Create and Run***
 ```
 <copy>
