@@ -14,7 +14,7 @@ In this tutorial, you will move the application database schema over to the Orac
 
 ## **STEP 1:** Install the Oracle Cloud Infrastructure CLI on the Source Database
 
-This will be needed to get the wallet from the database and put the dump file into object storage.
+This task is required to get the wallet from the database and put the dump file into object storage.
 
 > **Note:** You could also do without the Oracle Cloud Infrastructure (OCI) command line interface (CLI) by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
@@ -51,15 +51,15 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    You will be prompted for:
-    - Location of the configuration. Press **Enter**.
-    - `user_ocid`: enter your user OCID.
-    - `tenancy_ocid`: enter your tenancy OCID.
-    - `region`: enter your region from the list provided.
-    - Generate a RSA key pair: press **Enter** for Yes (default).
-    - Directory for keys: press **Enter** for the default.
-    - Name for the key: press **Enter** for the default.
-    - Passphrase: press **Enter** for no passphrase.
+    Enter the following information:
+    1. Location of the configuration: press **Enter**.
+    2. `user_ocid`: enter your user OCID.
+    3. `tenancy_ocid`: enter your tenancy OCID.
+    4. `region`: enter your region from the list provided.
+    5. Generate a RSA key pair: press **Enter** for Yes (default).
+    6. Directory for keys: press **Enter** for the default.
+    7. Name for the key: press **Enter** for the default.
+    8. Passphrase: press **Enter** for no passphrase.
 
 
     You should see an output like:
@@ -208,7 +208,7 @@ This will be needed to get the wallet from the database and put the dump file in
 
     ```
 
-## **STEP 4:** Move the Dump File to the Object Storage Bucket
+## **STEP 4:** Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Put the dump file in the `atp-upload` bucket:
 

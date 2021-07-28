@@ -84,7 +84,7 @@ For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
     It may take several seconds to deploy, so if you don't see the folder at first, try the `ls -lh` command again.
 
-## **STEP 2:** Configure the Datasource
+## **STEP 2:** Configure the Data Source
 
 1. Open the `server.xml` file in /etc/tomcat/ for editing:
 
