@@ -1,4 +1,4 @@
-# Deploy the Infrastructure
+# Provision the Infrastructure using Resource Manager
 
 ## Introduction
 
