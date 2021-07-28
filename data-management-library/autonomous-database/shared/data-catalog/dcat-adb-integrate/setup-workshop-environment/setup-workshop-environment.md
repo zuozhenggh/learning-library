@@ -24,7 +24,7 @@ In this lab, you will:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * At least one user in your tenancy who wants to work with Data Catalog. This user must be created in the Identity service[URL Text](https://www.oracle.com).
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)
 
 ## **Task 1:** Log in to the Oracle Cloud Console
 
@@ -47,7 +47,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 	 ![](./images/navigate-compartment.png " ")
 
-   **Note:** For faster navigation, you can pin items to make them appear in the **Pinned Links** section of the **Home** tab. To pin an item, hover over the menu item and then click the pin to the left of the item name. The **Recent** section of the **Home** tab shows recently used navigation items. To quickly find navigation menu items, use the **Search** box.
+    >**Note:** For faster navigation, you can pin items to make them appear in the **Pinned Links** section of the **Home** tab. To pin an item, hover over the menu item and then click the pin to the left of the item name. The **Recent** section of the **Home** tab shows recently used navigation items. To quickly find navigation menu items, use the **Search** box.
 
    ![](./images/pin-items.png " ")
 
@@ -90,7 +90,7 @@ Create a new **Administrator** group that will have full access rights to the ne
 
    ![](./images/user-created.png " ")
 
-   **Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
+    >**Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
 ## **Task 4:** Create an IAM Data Catalog Administrators Group and Add the New User to the Group
 
@@ -193,7 +193,7 @@ In this task, you create a new and empty business glossary in the newly created 
 
    ![](./images/expand-all.png " ")
 
-   **Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
+    >**Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
 
 9. Edit the default properties for your **MovieStream Application** glossary to include a description which you didn't specify when you created the glossary. In the **Glossary Hierarchy** pane, click the **MovieStream Application** glossary. In the **Default Properties** section on the right, click **Edit**.
 
@@ -219,7 +219,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
    ![](./images/list-scope.png " ")
 
-   **Note:** Type part of the compartment's name in the **Search compartments** text box. When your compartment is displayed in the list, select it.  
+    >**Note:** Type part of the compartment's name in the **Search compartments** text box. When your compartment is displayed in the list, select it.  
 
    ![](./images/search-compartment.png " ")
 
@@ -233,9 +233,9 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
 
 4. In the **Create Policy** dialog box, provide the following information:
-    * Enter **`training-dcat-admin-policy`** in the **Name** field.
-    - Enter **`Training DCAT Admin Group Policy`** in the **Description** field.
-    - Select **`training-dcat-compartment`** from the **Compartment** drop-down list, if it's not already selected.
+    * **Name:** Enter **`training-dcat-admin-policy`**.
+    - **Description:** Enter **`Training DCAT Admin Group Policy`**.
+    - **Compartment:** Select **`training-dcat-compartment`** from the drop-down list, if it's not already selected.
     - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
 
      ![](./images/create-policy-1-dialog.png " ")
@@ -245,7 +245,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
         ```
         <copy>allow group training-dcat-admin-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
         ```
-        **Note:**
+        >**Note:**
         Data Catalog offers both aggregate and individual resource-types for writing policies. You can use aggregate resource-types to write fewer policies. For example, instead of allowing a group to manage **`data-catalogs`** and **`data-catalog-data-assets`**, you can have a policy that allows the group to manage the aggregate resource-type, **`data-catalog-family`**. See [Data Catalog Policies](https://docs.oracle.com/en-us/iaas/data-catalog/using/policies.htm) in the Oracle Cloud Infrastructure documentation.
 
     + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows Data Catalog service, **`datacatalog`**, to access the network, create instances, and more. Before you can create a private network in your compartment in a later lab in this workshop, you must have the required networking permissions. The following statement allows you to perform all networking operations in any your **training-dcat-compartment** compartment.
@@ -269,7 +269,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
      ![](./images/policies-page-2.png " ")
 
-      **Note:** You can click the name of a policy on this page to view and edit it.
+    >**Note:** You can click the name of a policy on this page to view and edit it.
 
 ## **Task 8:** Create a Dynamic Group
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
@@ -290,8 +290,8 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
 
 5. In the **Create Dynamic Group** dialog box, specify the following:
 
-    + Enter **`moviestream-dynamic-group`** in the **Name** field.
-    + Enter **`Training Compartment Dynamic Group`** in the **Description** field.
+    + **Name:** Enter **`moviestream-dynamic-group`**.
+    + **Description:** Enter **`Training Compartment Dynamic Group`**.
     + In the **Matching Group** section, accept the default **Match any rules defined below** option.
     + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-data-catalog-instance-ocid_ with your **training-dcat-instance** Data Catalog instance OCID that you copied earlier.
 
@@ -388,7 +388,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
        ![](./images/adb-configure-db.png " ")
 
-       **Note:** If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
+       >**Note:** If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
 9. In the **Create administrator credentials** section, specify the following:
 
@@ -398,7 +398,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
        **Important:** Make a note of this _password_ as you will need it to perform later tasks.
        * **Confirm password:** Confirm your password.
 
-       **Note:** The password that you choose must meet the following requirements:
+       >**Note:** The password that you choose must meet the following requirements:
        - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
        - The password cannot contain the username.
        - The password cannot contain the double quote (") character.
@@ -421,7 +421,8 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/adb-provisioning.png " ")
 
-    In a few minutes, the instance status changes to **AVAILABLE**. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+
+    In a few minutes, the instance status changes to **AVAILABLE**. At this point, your Autonomous Data Warehouse database instance is ready to use! Review your instance's details including its name, database version, OCPU count, and storage size.
 
     ![](./images/adb-provisioned.png " ")
 

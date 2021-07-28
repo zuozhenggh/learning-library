@@ -88,7 +88,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
 
    ![](./images/add-connection.png " ")
 
-4. In the **Add Connection** panel, specify the connection details as follows:
+2. In the **Add Connection** panel, specify the connection details as follows:
 
        * **Name:** **`training-data-asset-connection`**.
        * **Description:** Enter an optional description.
@@ -100,7 +100,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
 
          ![](./images/compartment-ocid.png " ")
 
-         **Note:** The two Object Storage buckets that you will use in this lab are located in the **`training-dcat-compartment`** compartment. To view the two buckets, Open the **Navigation** menu and click **Storage**. Under **Object Storage & Archive Storage**, select **Bucket**. The **Buckets** page is displayed and the two buckets that you will use in the harvesting process are displayed.
+         >**Note:** The two Object Storage buckets that you will use in this lab are located in the **`training-dcat-compartment`** compartment. To view the two buckets, Open the **Navigation** menu and click **Storage**. Under **Object Storage & Archive Storage**, select **Bucket**. The **Buckets** page is displayed and the two buckets that you will use in the harvesting process are displayed.
 
          ![](./images/buckets-page.png " ")
 
@@ -122,7 +122,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
 Your data lake typically has a large number of files that represent a single data set. You can group multiple Object Storage files into logical data entities in Data Catalog using filename patterns. A filename pattern is a regular expression that is created to group multiple Object Storage files into a logical data entity that can be used for search and discovery. Using logical data entities, you can organize your data lake content meaningfully and prevent the explosion of your entities and attributes in your Data Catalog.
 If an Object Storage file is matched with multiple filename patterns, it can be part of multiple logical data entities.
 
-**Note:** If you harvest your Object Storage data source files without creating filename patterns, Data Catalog creates an individual logical entity for each file under each root bucket. Imagine this situation with hundreds of files in your data source resulting in hundreds of data entities in your Data Catalog.
+>**Note:** If you harvest your Object Storage data source files without creating filename patterns, Data Catalog creates an individual logical entity for each file under each root bucket. Imagine this situation with hundreds of files in your data source resulting in hundreds of data entities in your Data Catalog.
 
 Create a filename pattern as follows:
 
@@ -138,7 +138,7 @@ Create a filename pattern as follows:
 
       ![](./images/filename-patterns-tab.png " ")
 
-      **Note:** Alternatively, you can also access the **Filenames Pattern** tab from the Data Catalog instance **Home** page. Next, click **Manage Filename Patterns** from the **Quick Actions** tile.
+      >**Note:** Alternatively, you can also access the **Filenames Pattern** tab from the Data Catalog instance **Home** page. Next, click **Manage Filename Patterns** from the **Quick Actions** tile.
 
       ![](./images/manage-filename-patterns.png " ")
 
@@ -202,7 +202,7 @@ Create a filename pattern as follows:
 
       ![](./images/file-pattern-assigned.png " ")
 
-**Note:**    
+>**Note:**    
 When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
 
