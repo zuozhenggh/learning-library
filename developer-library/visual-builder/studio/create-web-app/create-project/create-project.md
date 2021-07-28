@@ -111,5 +111,5 @@ For the purposes of this tutorial, let's assume that other members of your team 
     An email containing project details is sent to Clara Coder. Your recent activities feed is also updated.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, Visual Builder User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
 * **Last Updated By/Date** - August 2021

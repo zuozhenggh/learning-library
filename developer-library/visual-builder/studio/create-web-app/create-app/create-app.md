@@ -1,92 +1,234 @@
-# Title of the Lab
+# Create a Web App in a Visual Application
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to create a web app in your visual application project. It also shows how to add business objects to store your web application's data.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
+Web and mobile applications in VB Studio take shape within the _Designer_, a rich graphical user interface that lets you design and develop your application by dragging and dropping components on a page. Each component depends on a _business object_ for its data. A business object is just a resource -- like a purchase order or invoice -- that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses these business objects through their REST endpoints.
 
-### Objectives 
+In this lab, you'll create the Employee, Department, and Location business objects for the HR web application. Each business object has its own set of fields as shown here:
 
-*List objectives for this lab using the format below*
+![](/images/dbdiagram.png)
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments, and to change that data when necessary.
 
-### Prerequisites (Optional)
+**Note:** Although this lab shows how to build an application using a business object, you can also build applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
+* A supported browser (Google Chrome is recommended)
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 1:** Create a Web App
 
-## **STEP 1:** Concise Step Description
+Add your first web app to the HR visual application that you created in the previous lab. A visual application is a container for all your web and mobile applications. In this step, you add a single web app to your visual application, but you could have more than one, even both web and mobile apps in the same visual application.
 
-(optional) Step 1 opening paragraph.
+1.  On the Project Home page, click **HR Visual Application** under Workspaces.
 
-1. Sub step 1
+    The visual application opens on the Designer's Welcome page.
 
-	![Image alt text](images/sample1.png)
+    ![](images/visual_app_welcome.png)
 
-2. Sub step 2
+    The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**.
 
-  ![Image alt text](images/sample1.png)
+    On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, Source View, and Git Panel.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    Take note of the header elements:
 
-5. Example with bold **text**.
+    ![](images/header.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+    On the left is the name of your current workspace **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace **tutorial-hr-project.git** / **hrbranch**. Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go_to_project_home_icon.png) will take you back to the Project Home page.
 
-## **STEP 2:** Concise Step Description
+    Elements on the right let you perform various other actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search the Git repository for a file. This workshop primarily demonstrates the options to preview a page and publish changes.
 
-1. Sub step 1 - tables sample
+2.  We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
-  Use tables sparingly:
+    The Web Apps pane opens in the navigator.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    ![](images/web_apps.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+3.  Click **\+ Web Application** (or click the **+** sign at the top of the pane).
+4.  In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    - List item 1
-    - List item 2
+    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page. (If you run into the **This dot says that you have made some changes** message, ignore it; we'll explore Git changes in a later lab.)
 
-3. Code examples
+    ![](images/designer.png)
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+    What you see under the main-start tab is your application's main work area. Just under main-start are several other tabs: Page Designer, Actions, Event Listeners, and so on. By default, the page opens in the Page Designer, showing the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
 
-4. Code examples that include variables
+    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the properties pane and expand your work area.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    In the Web Apps pane, expand the **hrwebapp** node, then the **Flows** and **main** nodes to get a tree view of your web application.
+
+## **STEP 2:** Create a Location Business Object and Import Data
+
+Create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see. 
+
+1.  Click **Business Objects** ![Business Objects icon](images/bo_icon.png) in the navigator.
+2.  Click **\+ Business Object**.
+3.  In the New Business Object dialog box, enter `Location` in the **Label** field and click **Create**. `Location` is also filled in automatically as the Name value. When you create a business object, specify the singular form of the noun.
+4.  Click **Fields** for the new Location business object. Every business object you create has five default fields: an id, plus fields that provide information on who created and updated the object and when.
+
+    ![](images/location_bo_fields.png)
+
+5.  Click **\+ Field** to add a field specific to this business object. This is a very simple business object, so we'll only add one new field.
+6.  In the pop-up box, enter:
+
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String](images/bo_string_icon.png) (selected by default)
+
+    Click **Create Field**.
+
+    ![](images/location_bo_name_field.png)
+
+7.  In the **Name** field's properties, select **Required** under Constraints.
+
+    ![](images/location_bo_name_required.png)
+
+    A check mark is displayed in the Required column for the Name field.
+
+8.  Click [this link](./files/Location.csv) and save the `Location.csv` file to your file system. This file contains data representing four locations for the application.
+9.  In the Business Objects pane, click **Menu** ![Menu icon](images/menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
+
+    ![](images/location_bo_data_manager.png)
+
+10.  Click **Import from File**.
+
+    ![](images/location_bo_data_manager_import.png)
+
+11.  In the Import Data dialog box, click the upload box, browse to select `Location.csv`, and click **Import**. When the import succeeds, click **Close**.  
+
+    ![](images/location_bo_import.png)
+
+12.  In the Business Objects pane, click **Location**, then **Data** to view the locations that were added.  
+
+    ![](images/location_bo_data.png)
+
+    In the next step, we'll associate these locations with the departments that are located on these floors.
+
+## **STEP 3:** Create a Department Business Object
+
+Create the Department business object, which will have fields to show a department's name and location. In this step, you'll set up the department's Location field to pull in data from the Location business object you created in the previous step, but you won't actually import data for the Department business object now.
+
+1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
+
+    ![](images/department_bo.png)
+
+2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the Name value.
+3.  Click **Fields**, then **\+ Field**.
+4.  In the pop-up box, enter:
+
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String icon](images/bo_string_icon.png) (selected by default)
+
+    Click **Create Field**.
+
+5.  In the **Name** field's properties, select **Required** under Constraints.
+
+    A check mark is displayed in the Required column for the Name field.
+
+6.  Click **\+ Field** again. In the pop-up box, enter or select:
+
+    -   **Label**: `Location`
+    -   **Field Name**: `location` (automatically populated)
+    -   **Type**: **Reference** ![Reference icon](images/reference_icon.png)
+    -   **Referenced Business Object**: `Location`
+    -   **Display Field**: `Name` (automatically populated)
+
+    Click **Create Field**.
+
+    ![](images/department_bo_reference.png)
+
+    A Reference Type field refers to the key (the Id field) of another business object and links two business objects together. When you create a department now, you'll be able to select its Location (one of the floors). The Display Field indicates that Name (not Id) will be displayed.
+
+
+## **STEP 4:** Create an Employee Business Object
+
+Create the last business object you need, the Employee object, which contains employee names and identifying data. The Employee object also has a Reference type field that refers to the Department object.
+
+1.  In the Business Objects pane, click the **+** sign and select **Business Object**.
+2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the Name value.
+3.  Click **Fields**, then **\+ Field**.
+4.  In the pop-up box, enter:
+
+    -   **Label**: `Name`
+    -   **Field Name**: `name` (automatically populated)
+    -   **Type**: **String** ![String icon](images/bo_string_icon.png) (selected by default)
+
+    Click **Create Field**.
+
+5.  In the **Name** field's properties, select **Required** under Constraints.
+6.  Click **\+ Field** again, then enter or select:
+
+    -   **Label**: `Department`
+    -   **Field Name**: `department` (automatically populated)
+    -   **Type**: **Reference** ![Reference icon](images/reference_icon.png)
+    -   **Referenced Business Object**: `Department`
+    -   **Display Field**: `Name` (automatically populated)
+
+    Click **Create Field**.
+
+7.  Click **\+ Field** again, then enter or select:
+
+    -   **Label**: `Hire Date`
+    -   **Field Name**: `hireDate` (automatically populated)
+    -   **Type**: **Date** ![Date icon](images/date_icon.png)
+
+    Click **Create Field**.
+
+8.  Click **\+ Field** again, then enter or select:
+
+    -   **Label**: `Email`
+    -   **Field Name**: `email` (automatically populated)
+    -   **Type**: **Email** ![Email icon](images/email_icon.png)
+
+    Click **Create Field**.
+
+9.  Click **Endpoints** to view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you'll see endpoints for both objects if you expand the **departmentObject** node.
+
+    ![](images/employee_bo_endpoints.png)
+
+10.  Click the **getall\_Employee** endpoint to see an endpoint viewer, where you can perform operations on the endpoint. For example, you can use the Test tab to test requests and view responses with specified parameter values.
+
+    ![](images/employee_bo_endpoints_getall.png)
+
+    Click ![Back to Table icon](images/backtotable_icon.png) **Endpoints** to return to the main Endpoints page.
+
+11.  Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.
+
+## **STEP 5:** Create a Business Object Diagram
+
+Now that we have our business objects, let's create a diagram that provides a visual representation of business objects and their relationships.
+
+1.  In the Business Objects pane, click **Diagrams**, then **\+ Business Object Diagram**.
+
+    ![](images/bo_diagram.png)
+
+2.  In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
+
+    An empty diagram page opens.
+
+3.  In the Properties pane, click **Select All** to see the three business objects you created and their relationships.
+
+    ![](images/bo_diagram_selectall.png)
+
+    The diagram looks just like the graphic in the Background section.
+
+    So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in later labs.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
+* [Create Visual Applications in VB Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-34F19B2D-3ADD-4910-948D-DC6C14C605C6)
+* [Work with Business Objects](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/working-business-objects1.html#GUID-F23A1FEC-2AF3-487D-8248-01400917E766)
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - August 2021
