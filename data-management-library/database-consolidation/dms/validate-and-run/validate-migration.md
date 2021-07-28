@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database and GoldenGate environments are correctly set up.
+This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database environments are correctly set up.
 
 Estimated Lab Time: 20 minutes
 
@@ -10,6 +10,7 @@ Estimated Lab Time: 20 minutes
 
 In this lab, you will:
 * Validate a migration
+* Run a migration
 
 ### Prerequisites
 
@@ -63,29 +64,23 @@ In this lab, you will:
 
     ![](images/2.png =90%x*)
 
-  3. Press **Start** to begin the Migration
+  3. Press **Start** to begin the Migration. Please note, if a dialog box appears, press **Start** in the dialog box  to begin the migration.
 
-![](images/done.png =90%x*)
+    ![](images/pic.png =90%x*)
 
-  4. The Start Migration dialog is shown. Select the phase **Monitor Replication Lag** in the 'Require User Input After' list. This will cause the replication to run continuously until the Migration is resumed (If nothing is shown continue to number 6).
+  4. Click on **Jobs** in left-hand **Resources** list
 
-  5. Press **Start** to begin the Migration
+  5. Click on most recent Evaluation Job
 
-  6. Click on **Jobs** in left-hand **Resources** list
+  6. Click on **Phases** in left-hand **Resources** list
 
-  7. Click on most recent Evaluation Job
+  7. Job phases are updated as the migration progresses
 
-  8. Click on **Phases** in left-hand **Resources** list
+  8. Wait till all the phases have completed and your screen should look the like picture below.
 
-  9. Job phases are updated as the migration progresses
+  ![](images/FD.png =90%x*)
 
-  10. Wait till all the phases have completed and your screen should look the like picture below.
-
-  ![](FD/2.png =90%x*)
-
-  13. The migration runs the final cleanup phases and shows as **Succeeded** when finished
-
-
+  9. The migration runs the final cleanup phases and shows as **Succeeded** when finished
 
 You may now [proceed to the next lab](#next).
 

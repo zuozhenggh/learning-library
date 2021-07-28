@@ -567,40 +567,40 @@ When you are finished, return to this step.
 3.	Import the table data into MySQL Database Service from an external OCI Object Storage 
 
     
- Laod nation table  
+ Load nation table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fnation.tbl", { schema:"tpch", table:"nation", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ````  
 
- Laod customer table  
+ Load customer table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fcustomer.tbl", { schema:"tpch", table:"customer", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod lineitem table  
+ Load lineitem table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Flineitem.tbl", { schema:"tpch", table:"lineitem", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod orders table  
+ Load orders table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Forders.tbl", { schema:"tpch", table:"orders", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod part table  
+ Load part table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fpart.tbl", { schema:"tpch", table:"part", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
- Laod partsup table  
+ Load partsup table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fpartsupp.tbl", { schema:"tpch", table:"partsupp", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
- Laod region table  
+ Load region table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fregion.tbl", { schema:"tpch", table:"region", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod supplier table  
+ Load supplier table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fsupplier.tbl", { schema:"tpch", table:"supplier", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 

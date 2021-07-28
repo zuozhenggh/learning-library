@@ -18,71 +18,38 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## **STEP 1:** Start And Validate The Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
+    
+    - Database Listeners
+    - Database Server Instances
+    - OAS Services
+    ![](./images/convg-novnc-guide.png " ")
 
-1. Launch your browser to the following URL
+2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
+    - On the *SQL-Developer* window on the right preloaded with saved credential
+    ![](./images/convg-novnc-landing.png " ")
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
+3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
+    
+    - Go to folder /u01/script
 
-2. Provide login credentials
+        ```
+        <copy>
+        cd /u01/script
+        </copy>
+        ```
+    - Run the script file to start the components.
 
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
+        ```
+        <copy>
+        ./env_setup_oas-workshop.sh
+        </copy>
+        ```
+        ![](./images/convg-terminal.png " ")
 
-    ![](./images/guacamole-login.png " ")
-
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. To launch *Firefox* browser or a *Terminal* client, click on respective icon on the desktop
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 1**: Starting Database And OAS Services
-1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
-
-2. Go to folder /u01/script
-
-    ```
-    <copy>
-    cd /u01/script
-    </copy>
-    ```
-3. Run the script file to start the services. All the required services of converged database and OAS will start in 5-6 minutes.
-
-    ![](./images/oas-environment2.PNG " ")
-
-    ```
-    <copy>
-    ./env_setup_oas-workshop.sh
-    </copy>
-    ```
-
-    ![](./images/oas-environment3.PNG " ")
-Check for the "Finished starting servers" status before proceeding next.
+        Check for the "Finished starting servers" status before proceeding next.
+        ![](./images/oas-environment3.png " ")
 
 4. Run "status.sh" file to get the status of all the services required for OAS. The command shows all the service names and their status.
 
@@ -92,30 +59,36 @@ Check for the "Finished starting servers" status before proceeding next.
     /u01/oas/Oracle/middleware/Oracle_Home/user_projects/domains/bi/bitools/bin/status.sh
     </copy>
     ```
-
     ![](./images/oas-environment5.png " ")
-Check for the success status as shown above, before login to OAS screen.
+
+    Check for the success status as shown above, before login to OAS screen.
+
+5. The above command will start the database, listener and OAS server. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
+
+    - Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop. 
+    ![](./images/oas-login.png " ")
+    If successful, the page above is displayed and as a result your environment is now ready.  
 
 ## **STEP 2**: Login To Oracle Analytics Server
 
-1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
+1. Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop.   
 
     ```
     <copy>
-    http://[Instance-public-ip]:9502/dv/ui
+    http://localhost:9502/dv/ui
     </copy>
     ```
-    ![](./images/oas-environment8.png " ")
-
-2. Login with the below credentials;
-
     ```
     Username	: <copy>Weblogic</copy>
     ```
-
     ```
     Password	: <copy>Oracle_4U</copy>
     ```
+
+    ![](./images/oas-login.png " ")
+    click on *Sign In*
+    ![](./images/oas-landing.png " ")
+
 
 ## **STEP 3**: Create A Connection To Database
 
@@ -142,7 +115,28 @@ Check for the success status as shown above, before login to OAS screen.
 
 3. Once connection details are provided click **Save** to save the connection.
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
+
+## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
 

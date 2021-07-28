@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to register a database for use with OCI Database Migration. Registered database resources enable networking and connectivity for the source and target databases
+This lab walks you through the steps to register a database for use with DMS. Registered database resources enable networking and connectivity for the source and target databases
 
 Estimated Lab Time: 20 minutes
 
@@ -101,7 +101,7 @@ For this task you need the following info from previous steps:
     - Database Administrator Username: **system**
     - Database Administrator Password: <*Admin password*>
     - SSH Database Server Hostname: <*DB Node Private IP Address*>
-    - SSH Private Key: Select private key file
+    - SSH Private Key: Select **private** key file
     - SSH Username: **opc**
     - SSH Sudo Location: **/usr/bin/sudo**
 

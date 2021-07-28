@@ -12,7 +12,7 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -25,6 +25,7 @@ This lab assumes you have:
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
+        - LISTENER
     - Database Server Instances
         - FTEX
         - DB12
@@ -43,7 +44,7 @@ This lab assumes you have:
     systemctl status oracle-database
     </copy>
     ```
-    
+
     ![](./images/check-tns-up.png " ")
     ![](./images/check-pmon-up.png " ")
     ![](./images/check-db-service-up.png " ")
@@ -94,7 +95,7 @@ You may now [proceed to the next lab](#next).
     sudo systemctl restart oracle-database
     </copy>
     ```
-## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
+<!-- ## Appendix 2: External Terminal Access (using SSH Key Based Authentication)
 
 While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
 
@@ -113,7 +114,7 @@ While you will only need the browser to perform all tasks included in this works
 
     ```
     <copy>sudo su - oracle</copy>
-    ```
+    ``` -->
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology

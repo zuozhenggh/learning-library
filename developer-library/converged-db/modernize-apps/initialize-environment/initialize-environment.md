@@ -18,51 +18,12 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## **STEP 1:** Start And Validate The Required Processes For The Subsequent Labs.
+1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running.
 
-1. Launch your browser to the following URL
-
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
-
-2. Provide login credentials
-
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-    ![](./images/guacamole-login.png " ")
-
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. Click on *Terminal* icon on the desktop to start a terminal
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 2**: Setup and Initialize Environment
-1.	From any of the terminal session, proceed as shown below as user “*oracle*”
+    ![](./images/convg-novnc-guide.png " ")
+    Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
+    
 2.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
 
   	```
@@ -81,8 +42,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     tail -f nohup.out
     </copy>
   	```
-
-Press `CTRL + C` to end the tail command
+    ![](./images/weblogic-start.png " ") 
+    
+    Press `CTRL + C` to end the tail command
 
 4.	The terminal shows stdout logs for starting the AdminServer.
 3.	Open the Weblogic Admin Console and login with credentials provided below:
@@ -90,7 +52,7 @@ Press `CTRL + C` to end the tail command
     ![](./images/adminconsole.png " ")  
 
     ```
-    Console URL: <copy>http://<Your instance public IP address>:7101/console</copy>
+    Console URL: <copy>http://localhost:7101/console</copy>
     ```
     ```
     username: <copy>weblogic</copy>
@@ -103,7 +65,7 @@ Press `CTRL + C` to end the tail command
 
 	![](./images/deployments.png " ")  
 
-5.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
+5.	Open a new browser tab or session and access the bank application UI with URL `http://localhost:7101/bestbank2020`
 6.	The existence of base version of the sample bestbank application is confirmed.
 7.	Change directory to `/u01/middleware_demo/wls-helidon`
 
@@ -117,10 +79,31 @@ Press `CTRL + C` to end the tail command
   	<copy>ls -alrt</copy>
   	```
 
-You may now *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
+
+## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+
+While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+
+1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+    - From the web session where you completed your provisioning request, do:
+        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
+        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
+    - Authentication OS User - “*opc*”
+    - Authentication method - *SSH RSA Key*
+    - OS User – “*oracle*”.
+
+2. First login as “*opc*” using your SSH Private Key
+
+3. Then sudo to “*oracle*”. E.g.
+
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, July 2021

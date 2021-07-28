@@ -2,89 +2,121 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, you will create a database user and launch SQL Worksheet.
 
-Estimated Time: n minutes
+Estimated Time: 10 minutes
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
-
-### Objectives <optional>
-
-*List objectives for this lab*
+### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create a database user
+* Update the user's profile to grant additional roles
+* Log in as the user
+* Launch SQL Worksheet
+
+## **Step 1**: Create a Database User
+
+When you create a new data warehouse, you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the "New User" wizard within the SQL Worksheet (one of the built-in tools in Autonomous Data Warehouse).
+
+For this workshop we need to create one new user.
+
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provisioning an ADW Instance" lab. In this example, the database is named "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+
+    ![ALT text is not available for this image](images/2878884319.png)
+
+2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
+
+    ![ALT text is not available for this image](images/2878884336.png)
+
+3. On the Database Actions home page, click the **Database Users** card.
+
+    ![ALT text is not available for this image](images/2878884369.png)
+
+4.  You can see that your ADMIN user is listed as the current user.  On the right-hand side, click the **+ Create User** button.
+
+    ![ALT text is not available for this image](images/2878884398.png)
+
+5. The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
+
+ - username: **MOVIESTREAM**
+ - password: create a suitably strong password, and make note of it, as you will be asked for it in an upcoming step.
+
+    **NOTE - Rules for User Passwords** Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
+
+    - Password must be between 12 and 30 characters long
+
+    - Must include at least one uppercase letter, one lowercase letter, and one numeric character
+
+    - Limit passwords to a maximum of 30 characters
+
+    - Cannot contain the username
+
+    - Cannot be one of the last four passwords used for the same username
+
+    - Cannot contain the double quote (") character
+
+    There is more information available in the documentation about password rules and how to create your own password rules; see here: [Create Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-B5846072-995B-4B81-BDCB-AF530BC42847)
+
+- Toggle the **Graph** button to **On**.
+- Toggle the **Web Access** button to **On** and expand **Web access advanced features**. Accept the default alias which is automatically set to moviestream - this allows the user access to our new data warehouse using the Database Actions tools.
+- Leave the **Authorization required** toggle button as on/blue. 
+- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA
+- Leave the **Password Expired** toggle button as off (Note: this controls whether the user will be prompted to change their password when they next login).
+- Leave the **Account is Locked** toggle button as off. 
+- **Do not** toggle the **OML** button to **On**. We will select this and grant other roles in the next step.
+- Click **Create User** at the bottom of the form.
+
+    ![ALT text is not available for this image](images/create-user-dialog.png)
+
+Now that you have created a user with several roles, let's see how easy it is to grant some additional roles.
+
+## **Step 2:** Update the User's Profile to Grant Additional Roles
+
+1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click the 3-dotted ellipsis symbol to the right of the MOVIESTREAM user's name, and select **Edit** from the menu.
+
+    ![ALT text is not available for this image](images/edit-user.png)
+
+2. Click the **Granted Roles** tab at the top of the Edit User form and add the following roles under the **Granted** column: **CONSOLE\_DEVELOPER**, **DWROLE**, and **OML\_DEVELOPER**.
+
+    ![ALT text is not available for this image](images/2878884644.png)
+
+    Notice that two additional roles have already been automatically assigned: **CONNECT** and **RESOURCE**. Click **Apply Changes**. 
+
+## **Step 3:** Log In As the User
+
+Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
+
+1. At the bottom of the card for the MOVIESTREAM user, click the icon with the upward pointing diagonal arrow.
+
+    ![ALT text is not available for this image](images/2878885042.png)
+
+2. Enter the username MOVIESTREAM and the password you defined when you created this user.
+
+    ![ALT text is not available for this image](images/2878885088.png)
+
+3. This will launch the Database Actions home page.
+
+    ![ALT text is not available for this image](images/2878885105.png)
 
 
-*This is the "fold" - below items are collapsed by default*
+## **Step 4:** Launch SQL Worksheet 
 
-## **Step 1**: <what is the action in this step>
+In the next labs, you will use the SQL Worksheet application that is built in to the data warehouse environment. 
 
-(optional) Step 1 opening paragraph.
+1. In the **Development** section of the Database Actions page, click the **SQL** card to open a new SQL worksheet:
 
-1. Sub step 1
+    ![Click the SQL card.](images/3054194715.png)
 
-		![Image alt text](images/sample1.png)
+    This will open up a new window that should look something like the screenshot below. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click Next to take a tour through the informational boxes.
 
-  To create a link to local file you want the reader to download, use this format:
+    ![Screenshot of initial SQL Worksheet](images/Picture100-sql-worksheet.png)
 
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** <what is the action in this step>
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+Please *proceed to the next lab*.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+See the documentation on [Managing Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage.html#GUID-AD7ACC07-AAF7-482A-8845-9C726B1BA86D). This topic describes administration tasks for managing users on Autonomous Database.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Rick Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Rick Green, July 2021

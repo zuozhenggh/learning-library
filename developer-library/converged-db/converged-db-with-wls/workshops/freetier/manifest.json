@@ -25,7 +25,8 @@
     {
       "title": "Lab 3: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "publisheddate": "06/30/2020",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
       "title": "Lab 4: Initialize Environment",

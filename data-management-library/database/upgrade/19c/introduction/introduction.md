@@ -4,7 +4,7 @@
 
 Oracle Database 19c is the *Long Term Support Release* for the Oracle Database 12.2 release family. It is available on all popular on-prem platforms, Oracle Exadata and Oracle Database Appliance, and in the Oracle Cloud. As the latest Long Term Support Release, it offers customers the highest levels of stability and the longest error correction support. And, by upgrading to Oracle Database 19c customers will have Premier Support until end of April 2024, and Extended Support until end of April 2027.  There is a direct upgrade path to Oracle Database 19c from Oracle Database 11.2.0.4, 12.1.0.2, 12.2.0.1 and 18c releases, regardless of the patch bundle applied.
 
-*Estimated Lab Time*: 120 minutes
+*Estimated Lab Time*: 600 minutes
 
 ![](./images/releases_upgrade19c_LAB.png " ")
 
