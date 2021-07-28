@@ -11,7 +11,7 @@ Estimated Completion Time: 5 minutes.
 In this tutorial, you will tear down and clean up resources.
 
 
-## **STEP 1:** Tear Down Terraform Resources
+## Tear Down Terraform Resources
 
 1. Run the Terraform destroy command:
 
@@ -23,7 +23,7 @@ In this tutorial, you will tear down and clean up resources.
 
     You will be prompted to type `yes` to confirm.
 
-## **STEP 2:** Tear Down the Local Docker Environment
+## Tear Down the Local Docker Environment
 
 1. Exit any container you may still be logged into:
 

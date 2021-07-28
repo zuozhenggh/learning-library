@@ -12,7 +12,7 @@ Estimated Completion Time: 10 minutes.
 In this tutorial, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the OCI Object Storage service as intermediate storage location.
 
 
-## **STEP 1:** Install the Oracle Cloud Infrastructure CLI on the Source Database
+## Install the Oracle Cloud Infrastructure CLI on the Source Database
 
 This task is required to get the wallet from the database and put the dump file into object storage.
 
@@ -51,15 +51,15 @@ This task is required to get the wallet from the database and put the dump file 
     </copy>
     ```
 
-    Enter the following information:
-    1. Location of the configuration: press **Enter**.
-    2. `user_ocid`: enter your user OCID.
-    3. `tenancy_ocid`: enter your tenancy OCID.
-    4. `region`: enter your region from the list provided.
-    5. Generate a RSA key pair: press **Enter** for Yes (default).
-    6. Directory for keys: press **Enter** for the default.
-    7. Name for the key: press **Enter** for the default.
-    8. Passphrase: press **Enter** for no passphrase.
+   Enter the following information:
+   1. Location of the configuration: press **Enter**.
+   2. `user_ocid`: enter your user OCID.
+   3. `tenancy_ocid`: enter your tenancy OCID.
+   4. `region`: enter your region from the list provided.
+   5. Generate a RSA key pair: press **Enter** for Yes (default).
+   6. Directory for keys: press **Enter** for the default.
+   7. Name for the key: press **Enter** for the default.
+   8. Passphrase: press **Enter** for no passphrase.
 
 
     You should see an output like:
@@ -112,7 +112,7 @@ This task is required to get the wallet from the database and put the dump file 
     }
     ```
 
-## **STEP 2:** Create an Oracle Cloud Infrastructure Object Storage Bucket
+## Create an Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Go to **Core Infrastructure** and select **Object Storage**.
 
@@ -126,7 +126,7 @@ This task is required to get the wallet from the database and put the dump file 
 
 5. Click **Create Bucket**.
 
-## **STEP 3:** Export the Database Schema and Data
+## Export the Database Schema and Data
 
 1. Run the datapump export script `datapump_export.sh`:
 
@@ -208,7 +208,7 @@ This task is required to get the wallet from the database and put the dump file 
 
     ```
 
-## **STEP 4:** Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
+## Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Put the dump file in the `atp-upload` bucket:
 
@@ -232,7 +232,7 @@ This task is required to get the wallet from the database and put the dump file 
     }
     ```
 
-## **STEP 5:** Get the OCID of the Database
+## Get the OCID of the Database
 
 1. Go to **Oracle Database** and select **Autonomous Transaction Processing**.
 
@@ -244,7 +244,7 @@ This task is required to get the wallet from the database and put the dump file 
 
     ![](./images/db-info.png)
 
-## **STEP 6:** Get the Database Wallet
+## Get the Database Wallet
 
 1. Using the OCI CLI, download the database wallet on the source database, replacing the OCID:
 
@@ -291,7 +291,7 @@ This task is required to get the wallet from the database and put the dump file 
     </copy>
     ```
 
-## **STEP 7:** Create a Local SSH Tunnel to the Database
+## Create a Local SSH Tunnel to the Database
 
 1. Get the public IP of the bastion host from the Terraform output:
 
@@ -349,7 +349,7 @@ This task is required to get the wallet from the database and put the dump file 
     127.0.0.1  jrhdeexg.adb.us-ashburn-1.oraclecloud.com
     ```
 
-## **STEP 8:** Get an OCI Auth Token
+## Get an Oracle Cloud Infrastructure Auth Token
 
 1. Go to **User** and select **User Settings**.
 
@@ -369,7 +369,7 @@ This task is required to get the wallet from the database and put the dump file 
 
 7. Copy the output of the token to notepad.
 
-## **STEP 9:** Configure the Database Cloud Credentials
+## Configure the Database Cloud Credentials
 
 1. Using SQL*Plus Instant Client, connect to the remote database through the tunnel created earlier:
 
@@ -431,7 +431,7 @@ This task is required to get the wallet from the database and put the dump file 
 4. Type `exit` to exit SQL*Plus.
 
 
-## **STEP 10:** Import the Dump File into the Database
+## Import the Dump File into the Database
 
 Use datapump to import the data dump.
 

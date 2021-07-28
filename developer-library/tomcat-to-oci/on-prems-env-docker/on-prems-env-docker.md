@@ -1,4 +1,4 @@
-# Set up a Demo On-Premises Environment Using Docker
+# Set Up a Demo On-Premises Environment Using Docker
 
 ## Introduction
 
@@ -37,9 +37,9 @@ To run this tutorial, you will need:
   [https://hub.docker.com/signup](https://hub.docker.com/signup)
 
 
-## **STEP 1:** Get the Code
+## Get the Code
 
-### **On Linux**
+### **Linux**
 
 Make sure you followed the installation instructions to set up Docker as root and perform the following steps.
 
@@ -87,7 +87,7 @@ Make sure you followed the installation instructions to set up Docker as root an
 
 You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
 
-### **On Mac OS X**
+### **Mac OS X**
 
 1. Get the code with:
 
@@ -115,7 +115,7 @@ You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.
 
 You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
 
-### **On Windows**
+### **Windows**
 
 1. [Download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
 
@@ -123,7 +123,7 @@ You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.
 
 3. Open a terminal and get into the unzipped folder.
 
-## **STEP 2:** Agree to the Terms of the Private Docker Images
+## Agree to the Terms of the Private Docker Images
 
 This repository makes use of Oracle docker images, which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
 
@@ -151,7 +151,7 @@ This repository makes use of Oracle docker images, which are licensed and need t
     </copy>
     ```
 
-## **STEP 3:** Start the Local Environment
+## Start the Local Environment
 
 Start up the local environment stack that will simulate our on-premises environment
 
@@ -187,7 +187,7 @@ pull access denied for store/oracle/database-instantclient, repository does not 
 
 Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
-## **STEP 4:**  Check the Local Environment
+## Check the Local Environment
 
 It may take up to 10 minutes for the app to be up and running.
 
@@ -231,7 +231,7 @@ For the Tomcat container to run the application, the database needs to be ready,
 
     ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
 
-## **STEP 5:** Create an SSH key
+## Create an SSH Key
 
 We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 

@@ -1,4 +1,4 @@
-# Deploy Tomcat on Oracle Cloud Infrastructure with Oracle Autonomous Transaction Processing database
+# Deploy Tomcat on Oracle Cloud Infrastructure with the Oracle Autonomous Transaction Processing database
 
 ## Introduction
 
@@ -21,7 +21,7 @@ For this tutorial, you need:
 * Git installed
 * Terraform installed (If you need guidance to set up Terraform, please visit the [prerequistes](https://github.com/oracle-quickstart/oci-prerequisites) document)
 
-## **STEP 1**: Gather Required Information
+## Gather Required Information
 
 1. Get your `tenancy OCID`:
 
@@ -63,7 +63,7 @@ For this tutorial, you need:
 
         ![](./images/setup-tf-fingerprint.png " ")
 
-## **STEP 2:** Get the Terraform Code
+## Get the Terraform Code
 
 For this step, you may want to open up a separate shell terminal.
 
@@ -85,7 +85,7 @@ For this step, you may want to open up a separate shell terminal.
     </copy>
     ```
 
-## **STEP 3:** Create a `terraform.tfvars` Configuration File
+## Create a `terraform.tfvars` Configuration File
 
 To run the deployment, you need to define a few settings in a file named `terraform.tfvars`.
 
@@ -126,7 +126,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 3. Save the `terraform.tfvars` file.
 
-## **STEP 4:** Run the Deployment
+## Run the Deployment
 
 1. Initialize the project:
 
