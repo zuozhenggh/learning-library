@@ -19,10 +19,8 @@ As part of your project, you'll also create a _workspace_, a completely private 
 
 
 This lab assumes you have:
-* An Oracle account
-* A supported browser
+* A Chrome browser
 * All previous labs successfully completed
-* The credentials of a user who can deploy to the Visual Builder instance
 
 ## **STEP 1:** Create a Project for a New Visual Application
 

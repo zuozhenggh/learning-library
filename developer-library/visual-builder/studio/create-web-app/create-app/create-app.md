@@ -17,13 +17,6 @@ Once you have your business objects, you'll use them to build the HR web applica
 
 **Note:** Although this lab shows how to build an application using a business object, you can also build applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
 
-### Prerequisites
-
-This lab assumes you have:
-* A supported browser (Google Chrome is recommended)
-* All previous labs successfully completed
-
-
 ## **STEP 1:** Create a Web App
 
 Add your first web app to the HR visual application that you created in the previous lab. A visual application is a container for all your web and mobile applications. In this step, you add a single web app to your visual application, but you could have more than one, even both web and mobile apps in the same visual application.
