@@ -11,7 +11,7 @@ Estimated Time: 15 minutes
 * Maintain your cluster.
 * Add Oracle Cloud SQL to your cluster.
 
-**Note:**    
+### Prerequisites
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ## **Task 1:** Maintain the Cluster
@@ -58,7 +58,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
-**Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
+> **Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
 
 1. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button.
 
@@ -75,7 +75,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     ![](./images/add-cloud-sql.png " ")  
 
-    **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
+    > **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
 
 4. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`6`** instead of **`5`**.
 

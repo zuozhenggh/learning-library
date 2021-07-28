@@ -16,7 +16,7 @@ Estimated Time: 45 minutes
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
 
-**Note:**    
+### Prerequisites   
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ## **Task 1:** Gather Information About the Cluster
@@ -80,7 +80,7 @@ In this task, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
     ```
-    **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.
 
     In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
 
@@ -101,7 +101,7 @@ In this task, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export PRIVATE_IP="ip-address"</copy>
     ```
-  **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address. Press the **`[Enter]`** key to run the command.
 
   In our example, we replaced the **_``ip-address``_** with the private IP address of our first master node that we identified in **Task 1** of this lab.
 
@@ -148,7 +148,7 @@ In this task, you will connect to the first master node using SSH as user **`opc
 
 Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH. For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
-**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
+> **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 ```
 <b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
@@ -165,7 +165,8 @@ _If you are already connected to your cluster's first master node using the Open
 1. To SSH into your cluster using your Windows PuTTYgen generated SSH key pair, start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
     + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
-      **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+        > **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+
     + **Port:** **`22`**.
     + **Connection type:** **`SSH`**.   
     + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
@@ -190,7 +191,8 @@ _If you are already connected to your cluster's first master node using the Open
 
 3. In the **Category** pane, select the **Session** parameter, and then click **Save** to save your session for easier future access. Your saved session is displayed in the **Saved Sessions** list.
 
-  **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
+    > **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
+
   <if type="freetier">
   ![](./images/session-saved.png " ")
   </if>
@@ -273,7 +275,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 
     The preceding command creates a new user named **`training`** on each node of the cluster. The **`-g`** option assigns the **`supergroup`** group as the primary group for **`training`**. The **`-G`** option assigns the **`hdfs`**, **`hadoop`**, and **`hive`** groups as the secondary groups for **`training`**.
 
-    **Note:** Since the **`training`** user is part of the **hive** group, it is considered an administrator for Sentry.
+    > **Note:** Since the **`training`** user is part of the **hive** group, it is considered an administrator for Sentry.
 
 4. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
 
@@ -324,8 +326,8 @@ In this task, you log into Hue as an administrator and add the **`training`** us
     ```
     https://<ip-address>:8888
     ```
-  **Note:**    
-  In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in a previous lab.
+    > **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in a previous lab.
 
   In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
@@ -385,7 +387,7 @@ In this task, you log into Hue as an administrator and add the **`training`** us
        ![](./images/hue-logout.png " ")
 
 
-       **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+       > **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
   ![](./images/hue-doc.png " ")
 

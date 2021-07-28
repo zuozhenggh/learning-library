@@ -8,8 +8,7 @@ Big Data Service nodes are by default assigned private IP addresses, which aren'
 * You can set up an SSH tunnel using a bastion host. Only the bastion host is exposed to the public internet. A bastion host provides access to the cluster's private network from the public internet. See [Bastion Hosts Protected Access for Virtual Cloud Networks](https://www.oracle.com/a/ocom/docs/bastion-hosts.pdf).
 * You can also use VPN Connect which provides a site-to-site Internet Protocol Security (IPSec) VPN between your on-premises network and your virtual cloud network (VCN). IPSec VPN is a popular set of protocols used to ensure secure and private communications over IP networks. See [VPN Connect](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm).
 * Finally, you can use OCI FastConnect to access services in OCI without going over the public internet. With FastConnect, the traffic goes over your private physical connection. [See FastConnect](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud/user&id=oci-fastconnect).
-
-**Note:**     
+> **Note:**     
 Using a bastion Host, VPN Connect, and OCI FastConnect provide more private and secure options than making the IP address public.
 
 **Important:**    
@@ -29,7 +28,6 @@ Estimated Time: 45 minutes
 
 ### Prerequisites    
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
-
 
 ## **Task 1:** Gather Information About the Cluster
 
@@ -77,7 +75,7 @@ In this task, you will set three variables using the **`export`** command. The v
 
   ![](./images/cloud-shell-started.png " ")
 
-  **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
+  > **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
 
   ![](./images/change-theme.png " ")
 
@@ -87,7 +85,7 @@ In this task, you will set three variables using the **`export`** command. The v
     $ <copy>export DISPLAY_NAME="display-name"</copy>
     ```
 
-    **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_`display-name`_** with a descriptive name of your choice. Press the **`[Enter]`** key to run the command.
 
     In our example, we will use **`traininun0-public-ip`** for the descriptive name.
 
@@ -99,7 +97,7 @@ In this task, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
     ```
-    **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.  
+    > **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.  
 
     <if type="freetier">
     In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
@@ -123,10 +121,10 @@ In this task, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export PRIVATE_IP="ip-address"</copy>
     ```
-  **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_`ip-address`_** with your first utility node's private IP address. Press the **`[Enter]`** key to run the command.
 
-  <if type="freetier">
-  In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **Task 1** of this lab.
+    <if type="freetier">
+    In our example, we replaced the **_``ip-address``_** with the private IP address of our first utility node that we identified in **Task 1** of this lab.
 
     ```
     $ export PRIVATE_IP="10.0.0.4"
@@ -182,7 +180,7 @@ In this task, you will set two variables using the **`export`** command. Next, y
     $ <copy>export DISPLAY_NAME="traininqs0"</copy>
     ```
 
-    **Note:**    
+    > **Note:**    
     You already set the **`SUBNET_OCID`** variable to your own **`subnet-ocid`** value that you identified in **Task 2** of this lab. You don't need to set this variable again.
 
 2. At the **$** command line prompt, enter the following command, or click **Copy** to copy the command, and then paste it on the command line. Remember, the **`ip-address`** is the private IP address that is assigned to the Cloud SQL node that you want to map to a public IP address.
@@ -199,7 +197,7 @@ In this task, you will set two variables using the **`export`** command. Next, y
     ```
     </if>
 
-    **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own Cloud SQL node's private IP address that you identified in **Task 1** of this lab.
+    > **Note:** In the preceding command, substitute the **_`ip-address`_** shown with your own Cloud SQL node's private IP address that you identified in **Task 1** of this lab.
 
 3.  At the **$** command line prompt, enter the following command exactly as it's shown below **_without any line breaks_**, or click **Copy** to copy the command, and then paste it on the command line.
 
@@ -272,7 +270,7 @@ In this task, you will learn how to edit a public IP address using both the **Cl
 
   ![](./images/public-ip-cli.png " ")
 
-    **Note:** Don't delete any of your public IP addresses as you will need them in this workshop.
+    > **Note:** Don't delete any of your public IP addresses as you will need them in this workshop.
 
 This concludes this lab. You may now proceed to the next lab.
 

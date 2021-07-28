@@ -41,7 +41,7 @@ This workshop requires an active *Oracle account* and a LiveLabs reservation as 
 
 ## Launch the Workshop
 
-_**Note:** It can take up to 20 minutes to create your workshop environment._
+> _**Note:** It can take up to 20 minutes to create your workshop environment._
 
 1. When your LiveLabs workshop reservation is ready, you will receive an email with the subject **Your Livelabs reservation has been created (event #)**.
 
@@ -55,7 +55,7 @@ _**Note:** It can take up to 20 minutes to create your workshop environment._
 
     ![](./images/workshop-details-section.png " ")
 
-    **Note:** The **Let's Get Started - Log in to Oracle Cloud** section on the page displays helpful information on how to log in to the Console using your reserved environment.
+    > **Note:** The **Let's Get Started - Log in to Oracle Cloud** section on the page displays helpful information on how to log in to the Console using your reserved environment.
 
 3. Click **Copy Password** to copy your initial password, and then click **Launch Console** or click the **Login URL**.
 
@@ -73,7 +73,7 @@ _**Note:** It can take up to 20 minutes to create your workshop environment._
 
 This concludes this lab. You may now [proceed to the next lab](#next).
 
-**Notes:**
+> **Notes:**
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
  + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.
 
@@ -96,4 +96,4 @@ Use these links to get more information about BDS and OCI:
 * **Authors:**
     * Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021

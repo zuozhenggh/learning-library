@@ -10,7 +10,7 @@
 
 In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your BDS cluster. The HDFS scripts manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object storage scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object storage scripts uploads the data to a new bucket in Object Storage. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
 
-**Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
+> **Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
 Estimated Time: 45 minutes
 
@@ -22,7 +22,7 @@ Estimated Time: 45 minutes
 * Create Hive databases and tables that represents the data that you uploaded to HDFS, and then query the Hive tables using Hue.
 
 
-**Notes:**    
+### Prerequisites    
 + This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 + In this lab, you will download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
@@ -62,7 +62,7 @@ In this task, you will connect to the first (only one master node in a non-HA cl
 
 In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the Tasks on how to connect to the first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
 
-**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
+> **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 1. Start **PuTTY**. The **PuTTY Configuration** window is displayed. In the **Saved Sessions** section, click the `ssh to traininmn0 on BDS cluster` saved session that you created in **Lab 6**, and then click **Load**.
 
@@ -127,7 +127,7 @@ The stations data file is downloaded (and then manipulated) from the [station in
 
 The weather data is downloaded from a public bucket in Object Storage. Next, the header row in the file is removed. The updated file is then uploaded to a new **`/data/weather`** HDFS directory. Next, a new **`weather`** Hive database and **`weather.weather_ext`** table are created and populated with from the `weather-newark-airport.csv` file in the **`/data/weather`** directory.
 
-**Note:**    
+> **Note:**    
 To view the complete data files that are available, navigate to [Citibike System Data](https://www.citibikenyc.com/system-data) page. In the **Citi Bike Trip Histories** section, click [downloadable files of Citi Bike trip data](https://s3.amazonaws.com/tripdata/index.html). The [Index of bucket "tripdata"](https://s3.amazonaws.com/tripdata/index.html) page displays the available data files. In this lab, you will be using only some of the data files on that page.  
 
 1. Run the following command to download the **`env.sh`** script from a public bucket in Object Storage to the **`training`** working directory. You will use this script to set up your HDFS environment.
@@ -182,7 +182,7 @@ To view the complete data files that are available, navigate to [Citibike System
   ![](./images/ll-env-script.png " ")
   </if>
 
-  **Note:** You will download the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified in the **`env.sh`** and the HDFS scripts: **`biketrips`**, **`stations`**, and **`weather`**.
+    > **Note:** You will download the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified in the **`env.sh`** and the HDFS scripts: **`biketrips`**, **`stations`**, and **`weather`**.
 
 5. Use the **`cat`** command to display the content of the **`download-all-hdfs-data.sh`** script. This script downloads the **`download-citibikes-hdfs.sh`** and **`download-weather-hdfs.sh`** scripts to the local **`training`** working directory, adds execute privilege on both of those scripts, and then runs the two scripts.
 
@@ -285,7 +285,7 @@ To view the complete data files that are available, navigate to [Citibike System
     $ <copy>hadoop fs -ls /data/stations</copy>
     $ <copy>hadoop fs -ls /data/weather</copy>
     ```
-    **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
+    > **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
     <if type="freetier">
     ![](./images/hdfs-directories.png " ")
     </if>
@@ -318,8 +318,8 @@ In this task, you log into Hue as the **`training`** administrator user and quer
     ```
     https://<ip-address>:8888
     ```
-  **Note:**    
-  In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**.
+    > **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**.
 
   In our example, we used the reserved public IP address that is associated with our first utility node as follows:
     <if type="freetier">
@@ -335,7 +335,7 @@ In this task, you log into Hue as the **`training`** administrator user and quer
     </if>
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training123`**.
-**Note:** In the optional **Task 5: Add the training User to Hue (optional)** in **Lab 6**, you added the new `training` user to Hue.
+    > **Note:** In the optional **Task 5: Add the training User to Hue (optional)** in **Lab 6**, you added the new `training` user to Hue.
 
   ![](./images/hue-login-page.png " ")
 
@@ -366,12 +366,12 @@ limit 10;</copy>
 
     ![](./images/query-result.png " ")
 
-    **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+    > **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
   ![](./images/hue-doc.png " ")
 
   <if type="livelabs">
-  **This concludes this lab and the workshop.**
+  **This concludes the workshop.**
   </if>
 
 <if type="freetier">
@@ -387,7 +387,7 @@ In this task, you will download two scripts that will set up your Object Storage
 
     ![](./images/cloud-shell-started.png " ")
 
-    **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
+    > **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
 
     ![](./images/change-theme.png " ")
 
@@ -413,7 +413,7 @@ In this task, you will download two scripts that will set up your Object Storage
 
     ![](./images/vi-env-script-os.png " ")
 
-    **Note:** You will upload the Object Store data to the **`training`** bucket as specified in the `env.sh` file.
+    > **Note:** You will upload the Object Store data to the **`training`** bucket as specified in the `env.sh` file.
 
 6. Press the **[Esc]** key on your keyboard, enter **`:wq`**, and then press the **[Enter]** key on your keyboard to save your changes and quit **vi**.    
 
@@ -484,7 +484,7 @@ In this task, you will download two scripts that will set up your Object Storage
 
     ![](./images/view-object-details.png " ")
 
-    **Note:** To view all the data in a file, select **Download** from the context menu, and then double-click the downloaded file to open it using its native application, MS-Excel (.csv) in this example.  
+    > **Note:** To view all the data in a file, select **Download** from the context menu, and then double-click the downloaded file to open it using its native application, MS-Excel (.csv) in this example.  
 
     </if>
 

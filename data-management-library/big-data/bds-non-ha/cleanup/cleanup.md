@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to delete the resources that you created in this workshop. If you want to run the labs in this workshop again, perform these clean up tasks.
 
-**Note:**    
+> **Note:**    
 If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at least delete the BDS cluster that you created when you complete the workshop, to avoid unnecessary charges.
 
 Estimated Time: 25 minutes
@@ -14,11 +14,10 @@ Estimated Time: 25 minutes
 * Delete your **`training-cluster`** Big Data Service Cluster.
 * Delete the resources that you created in your **`training-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, VCN, reserved IP addresses, object storage bucket and its objects, and so on.
 
-**Note:**
-
+### Prerequisites
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-**Note:**     
+> **Note:**     
 If you want to list the resources in your **`training-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
 ## **Task 1:** Delete Your Big Data Service Cluster
@@ -43,7 +42,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 6. To view the status of the deletion process, click the cluster's name link in the **Name** column to display the **Cluster Details** page. In the **Resources** section at the bottom left-hand side of the page, click **Work Requests**. In the **Work Requests** section, you can see the **% Complete** information.   
 
-    **Note:** For additional details on the deletion process, click **CREATE\_BDS** in the **Operation** column. The **DELETE_BDS** page displays the logs, and errors, if any.
+    > **Note:** For additional details on the deletion process, click **CREATE\_BDS** in the **Operation** column. The **DELETE_BDS** page displays the logs, and errors, if any.
 
 7. Click the **Clusters** link in the breadcrumbs to return to the **Clusters** page. When the cluster is successfully deleted, the status of the cluster in the **State** column changes from **Deleting** to **Deleted**.
 
@@ -121,7 +120,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 1. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
-  **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the bucket first.
+    > **Note:** Before you can delete a bucket that contains objects, you must delete all the objects in the bucket first.
 
 2. The **Bucket Details** page for the **training** bucket is displayed. Scroll-down to the **Objects** section.
 
