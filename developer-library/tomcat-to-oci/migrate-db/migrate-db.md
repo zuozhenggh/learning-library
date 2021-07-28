@@ -265,7 +265,7 @@ This task is required to get the wallet from the database and put the dump file 
 
 3. Set the `DIRECTORY` to point to the wallet location in the `sqlnet.ora` file.
 
-    - Edit the sqlnet.ora file:
+    1. Edit the sqlnet.ora file:
 
     ```
     <copy>
@@ -273,7 +273,7 @@ This task is required to get the wallet from the database and put the dump file 
     </copy>
     ```
 
-    - Replace the directory value as below:
+    2. Replace the directory value as below:
 
     ```
     <copy>

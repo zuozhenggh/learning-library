@@ -25,41 +25,39 @@ For this tutorial, you need:
 
 1. Get your `tenancy OCID`:
 
-    - In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
+    1. In the Oracle Cloud Console, **click** your **User** icon (top right corner), then **Tenancy**.
 
         ![](./images/setup-tf-tenancy.png " ")
 
-    - **Copy** the OCID of the tenancy and paste it in your environment file.
+    2. **Copy** the OCID of the tenancy and paste it in your environment file.
 
         ![](./images/setup-tf-tenancy-ocid.png " ")
 
 2. Get your `compartment OCID`:
 
-    - From the navigation menu, select **Identity** and then select **Compartments**.
+    1. From the navigation menu, select **Identity** and then select **Compartments**.
 
         ![](./images/setup-tf-compartment.png " ")
 
-    - Navigate to the compartment where you want to deploy the infrastructure.
+    2. Navigate to the compartment where you want to deploy the infrastructure.
 
-    - **Copy** the OCID of the compartment.
+    3. Copy the OCID of the compartment.
 
         ![](./images/setup-tf-compartment-ocid.png " ")
 
 3. Get your `user OCID`:
 
-    - In the Oracle Cloud Console, click your **User** icon (top right corner), then click your user name.
+    1. In the Oracle Cloud Console, click your **User** icon (top right corner), then click your user name.
 
         ![](./images/setup-tf-user.png " ")
 
-    - Copy the OCID of your user and paste it in your environment file.
+   2. Copy the OCID of your user and paste it in your environment file.
 
         ![](./images/setup-tf-user-ocid.png " ")
 
-4. Get the OCI public key `fingerprint`:
+4. Get the OCI public key `fingerprint`. In your user settings, under API Keys, you will find the `fingerprint` value.
 
-    - In your user settings, under API Keys, you will find the `fingerprint` value.
-
-    Make sure this is the one matching the OCI public key you created for Terraform.
+    > **Note:** Make sure this is the one matching the OCI public key you created for Terraform.
 
         ![](./images/setup-tf-fingerprint.png " ")
 
