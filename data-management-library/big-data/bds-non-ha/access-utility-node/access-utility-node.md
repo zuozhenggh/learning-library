@@ -27,7 +27,7 @@ Estimated Time: 45 minutes
 * Map the private IP address of a node to a public IP address.
 * Edit a public IP address using both the **Oracle Cloud Console** and the OCI Command Line Interface (CLI).
 
-**Note:**    
+### Prerequisites    
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 
