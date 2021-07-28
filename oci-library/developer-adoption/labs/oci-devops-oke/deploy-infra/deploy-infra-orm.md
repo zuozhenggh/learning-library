@@ -6,7 +6,7 @@ In this lab exercise, you will provision all the Infrastructure resources used b
 
 If you are not familiar with Terraform, this is an open-source tool that allow you to write infrastructure as code using declarative configuration files that will represent the state of your infrastructure. OCI Resource Manager allows you to share and manage Terraform configurations and state files across multiple teams and platforms. You can connect Resource Manager to your Git repository by setting up a Configuration Source Provider.
 
-![Diagram](./images/sre_infrastructure_onboarding.png)
+![Diagram](./images/sre-infrastructure-onboarding.png)
 
 Estimated Lab time: 30 minutes
 
@@ -148,7 +148,7 @@ We are going to create a feature branch and change the code directly through Git
 #### Edit Terraform template files
 
 1. All files we are going to change are located in the `devops_oke` folder which is accessible directly from the `Code` tab on GitHub.
-    ![devops_oke folder](./images/github-devops_oke-folder.png)
+    ![devops_oke folder](./images/github-devops-oke-folder.png)
   
 1. Click on `devops_oke` folder and then click on `providers.tf` file. To start editing a file using the GitHub code editor just click on the pencil icon on the right hand side of the page.
     ![GitHub code editor](./images/github-code-editor.png)
