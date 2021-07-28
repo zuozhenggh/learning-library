@@ -1,92 +1,64 @@
-# Title of the Lab
+# Save a Web Application's Changes to a Remote Branch
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab shows you how to save a web application's changes from your local branch to a remote branch using Visual Builder Studio.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
+While developing the HR web application, you might have noticed a dot in the header next to your Git repository in the header:
 
-### Objectives 
+![](images/git_changes_badge.png)
 
-*List objectives for this lab using the format below*
+This dot indicates you've made changes in your local branch that haven't been saved to the remote branch. It's important to save your changes as often as you can, but first, let's review a few concepts.
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+When you created a workspace early on in this workshop, you created a new branch called hrbranch, which was a copy of the master branch in the project’s Git repository. All the work you've done so far on the HR web application has been automatically saved to hrbranch, but these changes are not visible to others because hrbranch is a local branch in your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
 
-### Prerequisites (Optional)
+Saving changes to a remote branch is a two-step process: _commit_ and _push_. The first step you'll do is "commit". A commit groups the files in your local branch that you want to save to the remote branch and provides a description of the group. Next, you'll "push" your changes. A push saves all the files in the groups that you've "committed" to the remote branch.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+Once you commit and push your changes, all the changes from your local hrbranch become available to others in your project through the remote hrbranch.
 
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+## **STEP 1:** Commit Changes in a Local Branch
+Let's group the changes you've made so far in your local branch for a commit. Ideally, you'll commit your changes as often as you can, so you have a string of commits with messages that clearly describe your updates.
 
+1. Click the Git repository menu in the header and select **Commit**.
 
-*This is the "fold" - below items are collapsed by default*
+  ![](images/commit_menu.png)
 
-## **STEP 1:** Concise Step Description
+2. In the Commit dialog box, enter a message that describes your changes and click **Commit**.
 
-(optional) Step 1 opening paragraph.
+    ![](images/commit.png)
 
-1. Sub step 1
+    A successful message appears on the page. Click ![Close message icon](images/x_icon.png) to close the message.
 
-	![Image alt text](images/sample1.png)
+## **STEP 2:** Push Changes to a Remote Branch
 
-2. Sub step 2
+Push your commits from the local branch in your workspace to the remote branch.
 
-  ![Image alt text](images/sample1.png)
+1.  Click the Git repository menu and select **Push**.
+2.  In the Push dialog box, you'll see 1 commit ready to be pushed from your local branch to the remote branch. Click **Push Changes**.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![](images/push_changes.png)
 
-5. Example with bold **text**.
+    When the successful message appears, click ![Close message icon](images/x_icon.png).
 
-   If you add another paragraph, add 3 spaces before the line.
+## **STEP 3:** View Changes in the Remote Branch
 
-## **STEP 2:** Concise Step Description
+Now that your changes have been pushed, let's check them in the remote hrbranch.
 
-1. Sub step 1 - tables sample
+1.  In the header, click **Go to project page** ![Go to Project Page icon](images/go_to_project_home_icon.png) to return to the project's home page.
+2.  Click **Git** ![Git icon](images/git_icon.png) in the left navigation.
+3.  For the tutorial-hr-project.git repository, select **hrbranch**.
 
-  Use tables sparingly:
+    ![](images/git_view_hrbranch.png)
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    You can see your changes added to the remote hrbranch, indicated by your last commit message. Click the **Logs** tab to see all commits to the remote branch.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+    ![](images/git_view_hrbranch_logs.png)
 
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    Now if a teammate (for example, Clara Coder) wanted to work on this web application, she could use the **Clone From Git** option on the Workspaces page to clone hrbranch in her workspace, then use it as a base for her updates.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - August 2021
