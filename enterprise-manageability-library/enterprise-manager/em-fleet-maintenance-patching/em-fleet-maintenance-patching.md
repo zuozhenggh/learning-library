@@ -3,7 +3,7 @@
 ## Introduction
 The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
 
-*Estimated Lab Time*: 60 minutes
+*Estimated Lab Time*: 75 minutes
 
 ### About Database Fleet Maintenance
 
@@ -286,7 +286,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
          3.  The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
          4.  If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
 
-3. Navigate to Enterprise ***>> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
+3. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
 
     ![](images/e3002b6d99e5a3654676f41911a3766d.png " ")
 
