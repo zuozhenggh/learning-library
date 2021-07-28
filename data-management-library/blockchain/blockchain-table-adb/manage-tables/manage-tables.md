@@ -8,25 +8,24 @@ Blockchain tables enable you to implement a centralized ledger model where all p
 
 A centralized ledger model reduces administrative overheads of setting a up a decentralized ledger network, leads to a relatively lower latency compared to decentralized ledgers, enhances developer productivity, reduces the time to market, and leads to significant savings for the organization. Database users can continue to use the same tools and practices that they would use for other database application development.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature. Then you will generate certificate in compute instance and generate Certificate GUID in your ATP instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-* Create the Blockchain table and insert rows
+* Create the Blockchain table and insert rows into the blockchain table
+* View Blockchain tables and its internal columns
 * Manage blockchain tables and rows in a blockchain table
-* Create a certificate directory and add your certificate
-* Sign a row in the blockchain table
-* Check the validity of rows in the blockchain table with and without signature
+* Verify the rows in a blockchain table without signature
+* Generate Certificate and Certificate GUID
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Provisioned an Oracle Database 21c Instance
-* Have successfully completed the Setup lab
+* Have successfully completed the previous labs
 
 ## **STEP 1:** Create a blockchain table
 
@@ -231,16 +230,6 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/verify.png " ")
 
-<!---
-
-2. DBA view of blockchain tables.
-
-	```
-	<copy>
-	select * from dba_blockchain_tables;
-	</copy>
-	```
---->
 
 ## **STEP 7:** Generate certificate
 
@@ -253,11 +242,17 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
     ```
     <copy>
 	cd ~
-    wget 
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vNvEwmqib41JCCwSk6_mufdLO6OXNZQzvjITnQ4rqe6EkPwvU5m5krwloHgHw2XJ/n/c4u04/b/data-management-library-files/o/blockchain/nodejs.zip
     </copy>
     ```
 
 3.  Unzip the nodejs file.
+
+	```
+	<copy>
+	unzip nodejs.zip
+	</copy>
+	```
 
 4.  Navigate to nodejs folder.
 
@@ -266,17 +261,7 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
     cd nodejs
     </copy>
     ```
-<!---
-2. Create a folder `demo` and navigate into the folder.
 
-	```
-	<copy>
-	cd ~
-	mkdir demo
-	cd demo
-	</copy>
-	```
---->
 5. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
 
 	Press enter after providing each detail - Country Name, State, Locality Name, Organization name, Common name, Email address.
