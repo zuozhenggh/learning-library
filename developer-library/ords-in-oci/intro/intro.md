@@ -17,13 +17,6 @@ In this lab you will create a series of scenarios in OCI where Oracle REST Data 
 This lab assumes you have:
 * Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
 
-
-## **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database
-
-## **STEP 2:** Create a Function to Batch Load Data into the Database using ORDS
-
-## **STEP 3:** Create a Function and Service Connector to Load Logs from the Logging Service into the Database using ORDS
-
 ## Learn More
 
 ### About Oracle REST Data Services

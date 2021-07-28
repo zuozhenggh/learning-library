@@ -53,7 +53,7 @@ This lab assumes you have:
 
         ```
         <copy>
-        sudo Docker pa -a 
+        sudo docker ps -a 
         </copy>
         ```
         ![](images/sharding-docker.png " ")

@@ -22,7 +22,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -79,65 +79,55 @@ In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a sn
 	```
 	![](./images/upgrade_19c_32-2.png " ")
 
-	<!-- ```
-	Specify the Report Type
-	~~~~~~~~~~~~~~~~~~~~~~~
-	Would you like an HTML report, or a plain text report?
-	Enter 'html' for an HTML report, or 'text' for plain text
-	Defaults to 'html'
-	Enter value for report_type:
-	``` -->
 
 2. Click **RETURN**
    ![](./images/upgrade_19c_32.png " ")
    ![](./images/upgrade_19c_33-2.png " ")
 
+    ```
+    Instances in this Workload Repository schema
 
-	<!--```
-	Instances in this Workload Repository schema
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	DB Id      Inst Num	DB Name      Instance	  Host
-	------------ ---------- ---------    ----------   ------
-	* 72245725	 1	UPGR	     UPGR	  localhost.lo
+    DB Id      InstNum	DB Name      Instance	  Host
+    ---------- -------- ------------- --------- -----------------
+    * 72245725	     1	UPGR	        UPGR	    localhost.lo
 
-	Database Id and Instance Number for the First Pair of Snapshots
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Using	72245725 for Database Id for the first pair of snapshots
-	Using	       1 for Instance Number for the first pair of snapshots
+    Database Id and Instance Number for the First Pair of Snapshots
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Using	72245725 for Database Id for the first pair of snapshots
+    Using	       1 for Instance Number for the first pair of snapshots
 
+    Specify the number of days of snapshots to choose from
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Entering the number of days (n) will result in the most recent
+    (n) days of snapshots being listed.  Pressing  without
+    specifying a number lists all completed snapshots.
 
-	Specify the number of days of snapshots to choose from
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Entering the number of days (n) will result in the most recent
-	(n) days of snapshots being listed.  Pressing  without
-	specifying a number lists all completed snapshots.
+    Enter value for num_days:
+    ```
 
-
-	Enter value for num_days:
-	``` -->
-
-3.  Type: **2** and click **RETURN**
+3. Type: **2** and click **RETURN**
    ![](./images/upgrade_19c_34.png " ")
 
-4. Now you need to define the first snapshot interval – therefore, fill in the snapshot ID's you noted down during the first HammerDB run.
-	<!-- ```
-	Enter value for num_days: 2
+4. Now you need to define the first snapshot interval – therefore, **fill in the snapshot ID's you noted down during the first HammerDB run**.
 
-	Listing the last 2 days of Completed Snapshots
-	Instance     DB Name	  Snap Id	Snap Started	Snap Level
-	------------ ------------ ---------- ------------------ ----------
+    ```
+    Enter value for num_days: 2
 
-	UPGR	     UPGR		110  20 Feb 2020 22:12	  1
-					111  20 Feb 2020 22:39	  1
-					112  20 Feb 2020 22:40	  1
-					113  21 Feb 2020 00:05	  1
-					114  21 Feb 2020 00:15	  1
+    Listing the last 2 days of Completed Snapshots
+    Instance     DB Name	  Snap Id	Snap Started	Snap Level
+    ------------ ------------ ---------- ------------------ ----------
+
+    UPGR	     UPGR		110  20 Feb 2020 22:12	  1
+                      111  20 Feb 2020 22:39	  1
+                      112  20 Feb 2020 22:40	  1
+                      113  21 Feb 2020 00:05	  1
+                      114  21 Feb 2020 00:15	  1
 
 
-	Specify the First Pair of Begin and End Snapshot Ids
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Enter value for begin_snap:
-	``` -->
+    Specify the First Pair of Begin and End Snapshot Ids
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Enter value for begin_snap:
+    ```
 
 5. Type: 150. (Your actual snapshot ID may be different – please check your notes!) Hit RETURN.
    ![](./images/upgrade_19c_35.png " ")
