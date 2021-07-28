@@ -135,7 +135,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 Please *proceed to the next lab*.
 
-## Want to Learn More?
+## Learn More
 
 Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 

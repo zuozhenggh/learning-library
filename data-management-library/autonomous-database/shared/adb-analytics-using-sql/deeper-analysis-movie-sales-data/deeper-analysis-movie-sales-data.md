@@ -31,7 +31,7 @@ Estimated Lab Time: 20 minutes
 
  **NOTE:** Different regions organize their day numbers in different ways. In Germany, for example, the week starts on Monday, so that day is assigned as day number one. In the United States, the day numbers start at one on Sunday. Therefore, it’s important to understand these regional differences. Oracle Database provides session settings that allow you to control these types of regional differences by using the **`ALTER SESSION SET`** command.
 
-1. Before we being creating our next SQL, let’s set our territory as being “America” by using the following command:
+1. Before we begin creating our next SQL, let’s set our territory as being “America” by using the following command:
 
     ```
     <copy>ALTER SESSION SET NLS_TERRITORY = America;</copy>
