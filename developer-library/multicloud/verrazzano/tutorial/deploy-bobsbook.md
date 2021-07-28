@@ -174,7 +174,7 @@ To run Lab 3, you must have:
 * Run Lab 2, which installs Verrazzano on the Kubernetes cluster.
 * A text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Accept the license agreement to download the images from the repositories in the Oracle Container Registry#
+## **STEP 1**: Accept the license agreement to download the images from the repositories in the Oracle Container Registry
 
 For the deployment of the *Bob's Books* sample application, we will use the example images. Because these images contain Oracle products, you will need to accept the license agreement before using these images in your bobs-books file, `bobs-books-comp.yaml`.
 
@@ -190,7 +190,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Oracle SSO](images/Lab3/4.png)
 
-4. Select *English* as the language, then click *Continue*.
+4. For example-bobbys-coherence, example-bobbys-front-end, example-bobs-books-order-manager, and example-roberts-coherence repository , select *English* as the language, then click *Continue*.
 
     ![Continue](images/Lab3/5.png)
 
@@ -198,7 +198,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Accept Agreement](images/Lab3/6.png)
 
-6. Verify that you accepted license agreement for the repositories related to Verrazzano.
+6. Verify that you accepted license agreement for the repositories related to Verrazzano as shown in the following image.
 
     ![Verify License Agreement](images/Lab3/28.png)
 
@@ -315,7 +315,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
 
     ![app](images/Lab3/21.png)
 
-12. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace.
+12. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace. It takes around 4-5 minutes.
 
     ```bash
     <copy>kubectl wait --for=condition=Ready pods --all -n bobs-books --timeout=600s</copy>
@@ -326,7 +326,9 @@ We need to download the source code, where we have configuration files, `bobs-bo
 13. Get the `EXTERNAL_IP` address of the istio-ingressgateway service. Copy this `EXTERNAL_IP` in your text editor; we will use it in many places, so you can directly copy it from your text editor.
 
     ```bash
-    <copy>kubectl get service -n "istio-system" "istio-ingressgateway" -o jsonpath={lancer.ingress[0].ip}; echo</copy>
+    <copy>kubectl get service \
+    -n "istio-system" "istio-ingressgateway" \
+    -o jsonpath={.status.loadBalancer.ingress[0].ip}; echo</copy>
     ```
 
     ![External IP](images/Lab3/23.png)
