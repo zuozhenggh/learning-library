@@ -15,13 +15,11 @@ In this lab we will load data in MySQL database `ggsource`, GG extract process `
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
-- You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
-    - Lab: Environment Setup
-    - Lab: Deploy GoldenGate for Big Data
+ - A Free Tier, Paid or LiveLabs Oracle Cloud account
+ - SSH Private Key to access the host via SSH
+ - You have completed:
+-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
 
 ## **STEP 0:** Running your Lab
 
