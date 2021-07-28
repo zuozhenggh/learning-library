@@ -16,7 +16,7 @@ In this tutorial, you will:
 
 For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
-## Move the Application WAR File to the Tomcat Cluster on Oracle Cloud Infrastructure
+## **STEP 1:** Move the Application WAR File to the Tomcat Cluster on Oracle Cloud Infrastructure
 
 1. Gather the Tomcat servers IP addresses from the output of the Terraform.
 
@@ -84,7 +84,7 @@ For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
     It may take several seconds to deploy, so if you don't see the folder at first, try the `ls -lh` command again.
 
-## Configure the Data Source
+## **STEP 2:** Configure the Data Source
 
 1. Open the `server.xml` file in /etc/tomcat/ for editing:
 
@@ -206,11 +206,11 @@ For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
     > **Note:** The first time the application runs, the query may take up to 30 seconds.
 
 
-## Repeat for Each Tomcat Server
+## **STEP 3:** Repeat for Each Tomcat Server
 
 1. Repeat the steps in the "Move the Application WAR File to the Tomcat Cluster on Oracle Cloud Infrastructure" section and "Configure the Datasource" section for each server on the Tomcat cluster if you had more than one.
 
-## Check the Application Served Via the Load Balancer
+## **STEP 4:** Check the Application Served Via the Load Balancer
 
 1. Get the load balancer public IP from the Terraform output.
 
