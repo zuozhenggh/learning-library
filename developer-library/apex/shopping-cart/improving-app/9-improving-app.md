@@ -1,12 +1,13 @@
-# Improve The Application
+# Improve Products Page
 
 ## Introduction
 
 In this lab, you will learn how to enable some pages to be viewed by any user who accesses the app. 
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
+In this lab, you will:
 - Set the following pages as public pages:
     - Products
     - Shopping Cart
@@ -14,7 +15,7 @@ Estimated Time: 10 minutes
 - Disable the Navigation Menu
 - Enhance the Navigation Bar
 
-## **Step 1** - Set Pages to be public
+## **STEP 1**: Set Pages to be Public
 Your customers don't need to login the app in order to shop the products, so let's set the following pages as public:
 - Page  1: Products
 - Page 16: Order Information
@@ -40,7 +41,7 @@ Follow these steps for the four listed pages:
 4. Navigate to Page Finder and go to the next page. 
     ![](images/page-finder.png " ")
 
-## **Step 2** - Cleaning the Navigation Menu
+## **STEP 2**: Cleaning the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 
 In this step, you will turn off displaying the navigation menu.
 
@@ -59,7 +60,7 @@ In this step, you will turn off displaying the navigation menu.
 
 5. Click **Apply Changes**.
 
-## **Step 3** - Enhancing the Navigation Bar List
+## **STEP 3**: Enhancing the Navigation Bar List
 Add a new navigation menu entry to allow:
 - Customers to go directly to the Shopping Cart.
 - Administrators to login and access to administration page.
@@ -103,17 +104,10 @@ Add a new navigation menu entry to allow:
 5. Click **Create List Entry**.
     ![](images/new-entry.png " ")
 
-## **Summary**
 
 You now know how to enhance and mantain both navigation menu and navigation bar.
 
 ## **Acknowledgments**
 
 - **Author** - Monica Godoy, Principal Product Manager
-- **Contributors** - 
 - **Last Updated By/Date** - Monica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

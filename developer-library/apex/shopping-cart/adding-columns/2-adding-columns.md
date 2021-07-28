@@ -1,4 +1,4 @@
-# Adding Columns to Product table
+# Adding Columns to Product Table
 
 ## Introduction
 
@@ -7,9 +7,15 @@ To avoid data redundancy, you will need to create three additional tables to nor
 
 In this lab, you will learn how to add these three new columns to the **PRODUCTS** table and then create lookup tables for those new columns.
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
-## **Step 1** - Adding Columns to the Products Table
+### Objectives
+In this lab, you will:
+- Add new columns to the existing Products table.
+- Create lookup tables.
+- Populate the new lookup tables.
+
+## **STEP 1**: Adding Columns to the Products Table
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -61,7 +67,7 @@ Estimated Time: 10 minutes
 
 15. Click **Finish**.
 
-## **Step 2** - Creating Lookup Tables
+## **STEP 2**: Creating Lookup Tables
 You will create lookup tables based on the new three columns, after you will have created a lookup table, you will notice that a new table was created and the column in the PRODUCTS table has been renamed and the data type was changed to NUMBER.
 
 1. Navigate to **PRODUCTS** Table.
@@ -146,7 +152,7 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/lookup-table4.png " ")
 
-## **Step 3** - Populating Lookup Tables
+## **STEP 3**: Populating Lookup Tables
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -193,25 +199,10 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/script-results.png " ")
     
-## **Summary**
 
 You now know how to create new columns to your existing tables and how to create lookup tables.
-
-## **Learn More** - *Useful Links*
-
-- APEX on Autonomous:   [https://apex.oracle.com/autonomous](https://apex.oracle.com/autonomous)
-- APEX Collateral:   [https://apex.oracle.com](https://apex.oracle.com)
-- Tutorials:   [https://apex.oracle.com/en/learn/tutorials](https://apex.oracle.com/en/learn/tutorials)
-- Community:  [https://apex.oracle.com/community](https://apex.oracle.com/community)
-- External Site + Slack:   [http://apex.world](http://apex.world)
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Contributors** 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

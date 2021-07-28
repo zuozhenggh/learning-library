@@ -11,6 +11,7 @@ Estimated time: 10 minutes
 - Create Object Storage Bucket for input files.
 - Create Object Storage Bucket for processed files.
 - Create the IAM policy for the Function to access the Bucket
+- Create the IAM policy for the Object Storage Service be able to manage objects
 - Create an Autonomous Data Warehouse Database.
 
 ### Prerequisites
