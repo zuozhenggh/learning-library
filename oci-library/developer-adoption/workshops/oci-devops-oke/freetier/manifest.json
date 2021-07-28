@@ -7,8 +7,8 @@
             "filename": "../../labs/oci-devops-oke/intro/intro.md"
         },
         {
-            "title": "Getting Started",
-            "filename": "../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
+            "title": "Getting Started with Free Trial Account",
+            "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Provision the Infrastructure using Resource Manager",
