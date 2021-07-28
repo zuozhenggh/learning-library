@@ -6,7 +6,7 @@ This lab walks you through the steps to get started with Oracle Cloud Infrastruc
 
 This workshop is directed at administrator users because they are granted the required access permissions.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1:** Log in to the Oracle Cloud Console
+## **Task 1:** Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -39,7 +39,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/oracle-cloud-console-home.png " ")
 
-## **STEP 2**: (Optional) Create a Compartment
+## **Task 2**: (Optional) Create a Compartment
 
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Catalog resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Catalog resources that you will use in the workshop.
 
@@ -66,13 +66,13 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
    ![](./images/compartment-created.png " ")
 
 
-## **STEP 3:** Create an IAM User to Be the Data Catalog Administrator
+## **Task 3:** Create an IAM User to Be the Data Catalog Administrator
 
 A Cloud Administrator has complete control over all of the Data Catalog resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more Data Catalog administrators. To create a new Data Catalog administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Catalog administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
 Create a new **Administrator** group that will have full access rights to the new compartment that you created earlier as follows:
 
-1. If you are still on the **Compartments** page from the previous step, click the **Users** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Users**.
+1. If you are still on the **Compartments** page from the previous task, click the **Users** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Users**.
 
 2. On the **Users** page, click **Create User**.
 
@@ -90,13 +90,13 @@ Create a new **Administrator** group that will have full access rights to the ne
 
    ![](./images/user-created.png " ")
 
-   **Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
+   **Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
-## **STEP 4:** Create an IAM Data Catalog Administrators Group and Add the New User to the Group
+## **Task 4:** Create an IAM Data Catalog Administrators Group and Add the New User to the Group
 
 Create a Data Catalog group whose members will be granted permissions to manage the Data Catalog.
 
-1. If you are still on the **Users** page from the previous step, click the **Groups** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Groups**.
+1. If you are still on the **Users** page from the previous task, click the **Groups** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Groups**.
 
 2. On the **Groups** page, click **Create Group**.
 
@@ -123,7 +123,7 @@ Create a Data Catalog group whose members will be granted permissions to manage 
    ![](./images/groups-page.png " ")
 
 
-## **STEP 5**: Create a Data Catalog Instance
+## **Task 5**: Create a Data Catalog Instance
 
 Create a Data Catalog instance using the following steps.
 
@@ -146,9 +146,9 @@ Create a Data Catalog instance using the following steps.
    ![](./images/click-data-catalog.png " ")
 
 
-## **STEP 6**: Create, Import, and Edit a Glossary
+## **Task 6**: Create, Import, and Edit a Glossary
 
-In this step, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
+In this task, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
 
 1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
@@ -210,10 +210,10 @@ In this step, you create a new and empty business glossary in the newly created 
    ![](./images/description-added.png " ")
 
 
-## **STEP 7:** Create IAM Policies for Administering Your Service
+## **Task 7:** Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Data Catalog resources. Before you can create and access a data catalog, you must also create a policy that grants the system access to networking resources.
 
-1. If you are still on the **Groups** page from the previous step, in the **Identity** section on the left, select **Policies**. Alternatively, open the **Navigation** menu and click **Identity & Security**. Under **Identity** click **Policies**.
+1. If you are still on the **Groups** page from the previous task, in the **Identity** section on the left, select **Policies**. Alternatively, open the **Navigation** menu and click **Identity & Security**. Under **Identity** click **Policies**.
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-dcat-compartment`** where the new policies will reside.  
 
@@ -271,10 +271,10 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
       **Note:** You can click the name of a policy on this page to view and edit it.
 
-## **STEP 8:** Create a Dynamic Group
+## **Task 8:** Create a Dynamic Group
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
-In this step, you will first gather the Data Catalog instance's OCID which you will use when you create the Dynamic Group. Next, you create a Dynamic Group that includes the specific data catalog instance OCID as a resource in the group.
+In this task, you will first gather the Data Catalog instance's OCID which you will use when you create the Dynamic Group. Next, you create a Dynamic Group that includes the specific data catalog instance OCID as a resource in the group.
 
 1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, select **Data Catalog**.
 
@@ -316,8 +316,8 @@ In this step, you will first gather the Data Catalog instance's OCID which you w
          ![](./images/dynamic-group-created.png " ")
 
 
-## **STEP 9:** Create an Object Storage Resources Access Policy         
-After you have created a dynamic group, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this step, you create a policy to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
+## **Task 9:** Create an Object Storage Resources Access Policy         
+After you have created a dynamic group, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
 
 Create an access policy to grant ``READ`` permission to the **Object Storage** aggregate resource type ``object-family`` as follows:
 
@@ -352,7 +352,7 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
           ![](./images/moviestream-object-storage-policy-created.png " ")
 
 
-## **STEP 10:** Create an Autonomous Database Instance
+## **Task 10:** Create an Autonomous Database Instance
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -393,9 +393,9 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 9. In the **Create administrator credentials** section, specify the following:
 
        * **Username _Read-Only_:** This read-only field displays the default username, **`ADMIN`**.     
-       **Important:** Make a note of this _username_ as you will need it to perform later steps.
+       **Important:** Make a note of this _username_ as you will need it to perform later tasks.
        * **Password:** Enter a password for the **`ADMIN`** user of your choice such as **`Training4ADB`**.        
-       **Important:** Make a note of this _password_ as you will need it to perform later steps.
+       **Important:** Make a note of this _password_ as you will need it to perform later tasks.
        * **Confirm password:** Confirm your password.
 
        **Note:** The password that you choose must meet the following requirements:
@@ -430,7 +430,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     ![](./images/adb-page.png " ")
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -445,4 +445,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021

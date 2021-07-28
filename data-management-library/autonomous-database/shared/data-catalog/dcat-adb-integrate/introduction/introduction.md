@@ -4,7 +4,7 @@
 
 The labs in this workshop walk you through all the steps to get access the Data Lake using Autonomous Database and Data Catalog.
 
-Estimated Lab Time: TBD minutes.
+Estimated Time: TBD.
 
 ## What is Data Catalog?
 Oracle Cloud Infrastructure Data Catalog is a fully managed, self-service data discovery and governance solution for your enterprise data. With Data Catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata.
@@ -42,7 +42,7 @@ In this workshop, you will:
 
 * At least one Data Catalog user in your tenancy. This user must be created in Oracle Cloud Infrastructure Identity and Access Management (IAM).
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -55,4 +55,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021

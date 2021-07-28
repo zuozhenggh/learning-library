@@ -7,7 +7,7 @@ In this lab, you will learn how to delete some or all of the resources that you 
 **Note:**    
 If you are using a **Free Trial** account to run this workshop, Oracle recommends that you at delete the Data Catalog instance that you created when you successfully complete this workshop, to avoid unnecessary charges. This deletes the Data Catalog instance and all of the resources in this instance.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -15,8 +15,7 @@ Estimated Lab Time: 15 minutes
 * Delete the resources that you created in your **`training-dcat-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, Object Storage buckets and its objects, and so on.
 * Delete the entire **`training-dcat-compartment`** compartment.
 
-### What Do You Need?
-
+**Note:**    
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     
@@ -68,7 +67,7 @@ To delete a compartment, it must be empty of all resources. Before you initiate 
     ![](./images/delete-compartment.png " ")
 
 
-**This concludes this lab and the workshop.**
+This concludes the workshop.
 
 ## Want to Learn More?
 
@@ -81,4 +80,4 @@ To delete a compartment, it must be empty of all resources. Before you initiate 
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributors:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021

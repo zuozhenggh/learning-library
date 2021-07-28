@@ -4,7 +4,7 @@
 
 Harvesting is a process that extracts technical metadata from your data assets into your Data Catalog repository. A data asset represents a data source such as database, an object store, a file or document store, a message queue, or an application. This lab walks you through the steps to create an Oracle Object Storage data asset, add a default connection to the new data asset, create a filename pattern and assign it to your data asset, and finally harvest the data asset and view the harvested data entities.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -15,14 +15,14 @@ In this lab, you will:
 * Harvest the data asset.
 * View the harvested data entities.
 
-## **STEP 1:** Log in to the Oracle Cloud Console
+## **Task 1:** Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-## **STEP 2**: Create an Object Storage Data Asset
+## **Task 2**: Create an Object Storage Data Asset
 
 Register your Oracle Object Storage data sources with Data Catalog as a data asset.
 
@@ -78,7 +78,7 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
    ![](./images/new-data-asset-tab.png " ")
 
 
-## **STEP 3**: Add a Connection to the Oracle Object Storage Data Asset
+## **Task 3**: Add a Connection to the Oracle Object Storage Data Asset
 
 After you register a data source as a data asset in your data catalog, you create a connection to your data asset to be able to harvest it. You can create multiple connections to your data source. At least one connection is needed to be able to harvest a data asset.
 
@@ -93,7 +93,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
        * **Name:** **`training-data-asset-connection`**.
        * **Description:** Enter an optional description.
        * **Type:** Select **Resource Principal** from drop-down list.
-       * **OCI Region:** Enter your own _region-identifier_ that you identified in **STEP 2** in this lab.
+       * **OCI Region:** Enter your own _region-identifier_ that you identified in **Task 2** in this lab.
        * **Compartment:** Enter the compartment's OCID for your Oracle Object Storage resource.    
 
        To find the compartment OCID for your Oracle Object Storage resource, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**. On the **Compartments** page, In the list of compartments, search for the **`training-dcat-compartment`**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
@@ -117,7 +117,7 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
    ![](./images/data-connection-added.png " ")
 
 
-## **STEP 4**: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
+## **Task 4**: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
 
 Your data lake typically has a large number of files that represent a single data set. You can group multiple Object Storage files into logical data entities in Data Catalog using filename patterns. A filename pattern is a regular expression that is created to group multiple Object Storage files into a logical data entity that can be used for search and discovery. Using logical data entities, you can organize your data lake content meaningfully and prevent the explosion of your entities and attributes in your Data Catalog.
 If an Object Storage file is matched with multiple filename patterns, it can be part of multiple logical data entities.
@@ -206,7 +206,7 @@ Create a filename pattern as follows:
 When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
 
-## **STEP 5**: Harvest the Data Asset
+## **Task 5**: Harvest the Data Asset
 
 After you create a data asset in the Data Catalog repository, you harvest the data asset to extract the data structure information into the Data Catalog and view its data entities and attributes.
 
@@ -277,7 +277,7 @@ Harvest the data entities from a data asset as follows:
 
 After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
-## **STEP 6**: View Harvested Data Entities
+## **Task 6**: View Harvested Data Entities
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 
@@ -300,7 +300,7 @@ After you harvest your data asset, you can browse or explore your data asset to 
     ![](./images/custsales-attributes-tab.png " ")
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -314,4 +314,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
 * **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, July 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021
