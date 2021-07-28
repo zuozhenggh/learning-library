@@ -61,7 +61,7 @@ Estimate Lab Time: 15 minutes
 
     ![Stream Status After](./images/stream-status-after.PNG)
 
-6. Switch to the session of your container database ORCLPDB.
+6. Switch the session of your container database to ORCLPDB.
 
     ```
     <copy>
@@ -135,15 +135,23 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-3. View the sample tables.
+3. Check for the table name 'test1'.
 
     ```
     <copy>
     select table_name from user_tables;
+    </copy>
+    ```
+
+4. View the sample table.
+
+    ```
+    <copy>
     select * from test1;
     </copy>
     ```
-4. Exit SQL.
+
+5. Exit SQL.
 
     ```
     <copy>
@@ -151,7 +159,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-5. Exit 'oracle' to 'opc'.
+6. Exit 'oracle' to 'opc'.
 
     ```
     <copy>
