@@ -52,24 +52,25 @@ Estimate Lab Time: 15 minutes
 
 ## **STEP 4: Run Credential Script**
 1. In the script below replace `<oci_user>`, `<oci_tenancy>`, `<api_private_key>`, and `<fingerprint>` with their respective information and paste it into SQL.
-  * `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
-  * `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in command prompt as 'zdmuser':
+
+    `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
+
+    `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in command prompt as 'zdmuser':
 
     ```
     <copy>
-    cd ~
-    cd .oci
+    cd /u01/app/zdmhome/.oci
     cat oci_api_key.pem
     </copy>
     ```
 
-    SQL Script
+    SQL Script. When pasting the API private key only paste the contents, don't include "Begin RSA Private Key" and "End RSA Private Key"
 
     ```
     <copy>
     begin
     DBMS_CLOUD.CREATE_CREDENTIAL (
-    'DEF_CRED_NAME',
+    'CredentialZDM',
     '<oci_user>',
     '<oci_tenancy>',
     '<api_private_key>',
@@ -82,7 +83,7 @@ Estimate Lab Time: 15 minutes
 2. Select 'Run Script'.
     ![Credential Script](./images/cred-script.PNG)
 
-## **STEP 5: Create User in Autonomous**
+## **STEP 5: Create User in Autonomous Database**
 1. You will need to pre-create movedata\_user in the autonomous database.
 
 2. Test to make sure the user doesn't already exist by running the drop command. It is fine if it fails:

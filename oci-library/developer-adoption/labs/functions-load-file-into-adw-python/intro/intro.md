@@ -3,7 +3,7 @@
 
 ## Deploy and Trigger the Event Driven Function
 
-In this workshop you will create an Object Storage Bucket, Oracle Function, Autonomous Database and trigger the function whenever a file is uploaded to the Object Storage. The function will take the file and write it to the database and move it into the second storage bucket.
+In this workshop you will create Object Storage Buckets, Oracle Function, Autonomous Database and trigger the function whenever a file is uploaded to the Object Storage. The function will take the file and write it to the database and move it into the second storage bucket.
 
 Estimated time: 45 minutes
 
@@ -12,7 +12,7 @@ Estimated time: 45 minutes
 In this lab, you will:
 
 - Create the Functions pre-requisites (Policies, VCN, Dynamic Group, Group, Compartment)
-- Provision the OCI services to be used by the Oracle Function (ADW, Object Storage)
+- Provision the OCI services to be used by the Oracle Function (ADW, Object Storage Buckets)
 - Create the Oracle Function (Application and Function)
 - Trigger the Function
 
