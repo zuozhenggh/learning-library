@@ -1,6 +1,6 @@
 # LiveLabs Test Template
 
-*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
+*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DUASPG/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DUASPG/LiveLabs+Markdown+Template+What%27s+New) page.*
 
 ## Introduction
 
@@ -10,7 +10,9 @@
 
   [](youtube:zNKxJjkq0Pw)
 
-Estimated Lab Time: -- minutes
+
+Estimated Time: n minutes
+
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
