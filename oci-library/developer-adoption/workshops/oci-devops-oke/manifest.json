@@ -11,19 +11,11 @@
             "filename": "../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1a: Provision the Infrastructure using Resource Manager",
+            "title": "Lab 1: Provision the Infrastructure using Resource Manager",
             "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-orm.md"
         },
         {
-            "title": "Lab 1b: Provision the Infrastructure using Resource Manager and GitHub Actions",
-            "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-github-actions.md"
-        },
-        {
-            "title": "Lab 2: Build and Publish Application - Continuos Integration",
-            "filename": "../../labs/oci-devops-oke/build-publish-app/build-publish-app.md"
-        },
-        {
-            "title": "Lab 3: Continuous Delivery with OCI DevOps Pipeline",
+            "title": "Lab 2: Continuous Delivery with OCI DevOps Pipeline",
             "filename": "../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
         },        
         {

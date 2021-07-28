@@ -2,7 +2,7 @@
 
 ## Automating the Deployment of Java Apps to Oracle Cloud Infrastructure
 
-You will learn how to build a Java application, containerize your application, and automate the deployment using Kubernetes (K8s) with Oracle Cloud Infrastructure (OCI) DevOps. This lab will also cover CI/CD security and ways to automate your release process with DevOps pipelines.
+You will learn how to build your infrastructure and automate the deployment of a Cloud Native Java application to Oracle Container Engine for Kubernetes (OKE)  using Oracle Cloud Infrastructure (OCI) DevOps. 
 
 Estimated time: 1h:30 minutes
 
@@ -32,28 +32,17 @@ OCI DevOps offers many deployment strategies to meet your needs – you can perf
 
 You are leading a company to build a new e-commerce cloud native application using microservices architecture, Kubernetes and you want to automate the software development lifecycle (SDLC) to quickly innovate, delivery new features to customers constantly and faster. There is a Developers team that is responsible for building and testing the application. There is also a SRE (Site Reliability Engineering)/Platform Engineer team that will be responsible for provisioning the infrastructure and take care of operations to ensure the business can meet their Service Level Objective (SLO).
 
-During this lab you will play both Developer and SRE/Platform Engineer roles and will perform the following activities: 
+During this lab you will play the role of an SRE/Platform Engineer which will be responsible for: 
 
-As a developer:
+- write Infrastructure As Code (IaC) and provision the infrastructure using OCI Resource Manager (Terraform as Service)
 
-- write code (Java, helm charts) and tests
-- push code to a git repository (`application_dev` repository)
-- write K8s manifest files for deploying the application
-- push K8s manifest code to a git repository (`deploy` repository)
-- create pull/merge request from feature branches to main branch in both repositories.
-- run Continuous Integration (CI) pipelines (test, package and publish docker image)
+    ![DevOps](./images/devops-infrastructure-onboard.png "Roles")
 
-
-As a SRE/Platform Engineer:
-- write Infrastructure As Code (IaC) and provision the infrastructure
-- push IaC to a git repository (`deploy` repository)
-- approve/reject pull/merge requests into `main` branch of `deploy` repository
-- approve and onboard applications (new namespace) into the K8s cluster through an automated Continuos Delivery (CD) pipeline
 - write K8s manifest files for deploying services/endpoints/security used by application
 - rollout new features/services through the Continuos Delivery pipeline
 - rollback to the latest successful pipeline in case of failures
 
-![Diagram](./images/devops-story-diagram.png "Roles")
+    ![DevOps](./images/devops-cd.png "Roles")
 
 
 
@@ -62,7 +51,6 @@ As a SRE/Platform Engineer:
 In this lab, you will:
 
 * Provisioning Infrastructure using IaC and OCI Resource Manager 
-* Extend a Java Cloud Native Microservice and publish to OCI Container Registry
 * Deploy a Java Cloud Native Microservice to OKE Kubernetes cluster via DevOps Pipeline
 
 ### Prerequisites
@@ -83,6 +71,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Jonathan Schreiber
-* **Contributors** -  Lucas Gomes, Rishi Johari
+* **Author** - Lucas Gomes
+* **Contributors** -  Jonathan Schreiber, Rishi Johari, Tim Graves
 * **Last Updated By/Date** - Lucas Gomes, July 2021
