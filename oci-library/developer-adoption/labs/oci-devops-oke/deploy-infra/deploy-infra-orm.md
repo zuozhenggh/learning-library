@@ -290,12 +290,14 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 1. In the `Configure Variables` page, change the following variables:
 
     DevOps Project:
+
     |Variable|Value|
     |-|-|
     |Compartment|cicd|
     |Project Name|HelloOCIDevOps|
     |Execute deployment in DevOps Pipeline?|unchecked|
     |Show Advanced Options?|unchecked|
+    
     ![ORM Stack - DevOps Project](./images/oci-orm-stack-devops-project.png)
 
     Policy Settings: No changes required, use default value: Create a Dynamic Group for DevOps Pipelines (checked).

@@ -312,7 +312,7 @@ In this lab, you will:
     ![devops nats service artifact](./images/devops-nats-artifact-svc.png) 
 
 At the end, you will have the following artifacts:
-![devops artifact](./images/devops-artifacts.png) 
+    ![devops artifact](./images/devops-artifacts.png) 
 
 In the next steps, we are going to design a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
@@ -336,7 +336,7 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
 
     |Name|Default Value|Description|
     |--|--|--|
-    |mushop_fulfillment_version|Enter the default tag name that is used to publish mushop-fulfillment image: `1.2.0-SNAPSHOT`|
+    |`mushop_fulfillment_version`|Enter the default tag name that is used to publish mushop-fulfillment image: `1.2.0-SNAPSHOT`|
     |Description|Default version of mushop-fulfillment image.|
 
 1. Click on the plus button to save the parameter into the table.
@@ -369,7 +369,7 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
     |--|--|
     |Stage Name|fulfillment-deployment|
     |Description|Apply Deployment manifest for fulfillment |
-    |Environment|test_oke_env|
+    |Environment|`test_oke_env`|
     |Select one or more artifacts|fulfillment-deployment.yaml|
     |Override Kubernetes namespace|Leave empty|
     |If validation fails, automatically rollback to the last successful version?|Yes|
@@ -397,10 +397,11 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
     |--|--|
     |Stage Name|nats|
     |Description|Apply Deployment and Service manifest for nats |
-    |Environment|test_oke_env|
+    |Environment|`test_oke_env`|
     |Select one or more artifacts|nats-deployment.yaml, nats-service.yaml|
     |Override Kubernetes namespace|Leave empty|
     |If validation fails, automatically rollback to the last successful version?|Yes|
+
     ![nats stage](./images/nats-stage.png)
     ![nats stage pipeline](./images/nats-stage-pipeline.png)
 
@@ -415,10 +416,11 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
     |--|--|
     |Stage Name|fulfillment-service|
     |Description|Apply Service manifest for fulfillment |
-    |Environment|test_oke_env|
+    |Environment|`test_oke_env`|
     |Select one or more artifacts|fulfillment-service.yaml|
     |Override Kubernetes namespace|Leave empty|
     |If validation fails, automatically rollback to the last successful version?|Yes|
+
     ![fulfillment-service stage](./images/fulfillment-service-stage.png)
 
 As the result, we have the following DevOps Pipeline:
@@ -459,7 +461,7 @@ You can run a pipeline directly from the OCI Console or you can build integratio
     ```
 
 1. Press enter to gain access into the container shell. Push some data into the message queue with the following commands and json payloads:
-    ```bash
+    ```
     nats pub -s nats://nats:4222 mushop-orders '{"orderId":1}'
     nats pub -s nats://nats:4222 mushop-orders '{"orderId":2}'
     nats pub -s nats://nats:4222 mushop-orders '{"orderId":3}'
@@ -476,12 +478,12 @@ You can run a pipeline directly from the OCI Console or you can build integratio
     ```
 
 1. Once inside the pod, query the fulfillment service endpoint:
-   ```bash
+    ```
     curl http://fulfillment:80/fulfillment/1
-   ````
+    ````
 
     Response:
-    ```bash
+    ```
     Order 1 is fulfilled
     ```
 
