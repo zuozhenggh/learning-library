@@ -106,12 +106,14 @@ But before jumping into setting up a Configuration Source Provider on ORM,  ther
 
     ![new pat form](./images/github-new-pat.png)
 
-1. In the bottom of the page, you should click on `Generate token` ![Generate token](./images/github-pat-generate-token.png), then copy the token value and store it safely as we are going to use it soon and it won't be displayed again. If you lost your token, you can safely generate a new one and update your configurations.
+1. In the bottom of the page, you should click on `Generate token` ![Generate token](./images/github-pat-generate-token.png)
+
+1. Then copy the token value and store it safely as we are going to use it soon and it won't be displayed again. If you lost your token, you can safely generate a new one and update your configurations.
 
     ![pat created](./images/github-pat-token.png)
 
 
-For more details about PAT, check the GitHub documentation: https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+For more details about PAT, check the [GitHub documentation](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 
 ### Change Terraform template
