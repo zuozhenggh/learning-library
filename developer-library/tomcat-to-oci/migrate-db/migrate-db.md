@@ -51,16 +51,16 @@ This task is required to get the wallet from the database and put the dump file 
     </copy>
     ```
 
-   Enter the following information:
-   1. Location of the configuration: press **Enter**.
-   2. `user_ocid`: enter your user OCID.
-   3. `tenancy_ocid`: enter your tenancy OCID.
-   4. `region`: enter your region from the list provided.
-   5. Generate a RSA key pair: press **Enter** for Yes (default).
-   6. Directory for keys: press **Enter** for the default.
-   7. Name for the key: press **Enter** for the default.
-   8. Passphrase: press **Enter** for no passphrase.
-
+    Enter the following information:
+    
+    1. Location of the configuration: press **Enter**.
+    2. `user_ocid`: enter your user OCID.
+    3. `tenancy_ocid`: enter your tenancy OCID.
+    4. `region`: enter your region from the list provided.
+    5. Generate a RSA key pair: press **Enter** for Yes (default).
+    6. Directory for keys: press **Enter** for the default.
+    7. Name for the key: press **Enter** for the default.
+    8. Passphrase: press **Enter** for no passphrase.
 
     You should see an output like:
 
@@ -69,7 +69,6 @@ This task is required to get the wallet from the database and put the dump file 
     Fingerprint: 21:d4:f1:a0:55:a5:c2:ce:...
     Config written to /home/oracle/.oci/config
     ```
-
 
 4. Upload the public key to your OCI account.
 
