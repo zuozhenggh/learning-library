@@ -114,10 +114,16 @@ Enter Password as ***Wel_Come1***
     <copy>Wel_Come1</copy>
 ```
 ![](./images/9.png" ")
-2. Click on '***+***' to create replicat process for target ***Kafka***
+2. Click on '***+***' to create replicat process for target ***Kafka***.
+
+Replicat is a process that delivers data to a target database. It reads the trail file on the target database, reconstructs the DML or DDL operations, and applies them to the target database.
+
 ![](./images/10.png" ")
 
-3. Click ***Next*** to navigate to **Replicat Options**. We are selecting ***CLassic replicat*** as Replicat type for the workshop
+3. Click ***Next*** to navigate to **Replicat Options**.
+
+We are selecting ***CLassic replicat*** as Replicat type for the workshop.
+
 ![](./images/11.png" ")
 
 4. Enter process name as ***REPKAFKA***.Process Name ***REPKAFKA*** will  be 8 character user defined
@@ -140,10 +146,14 @@ Trail Subdirectory:
 6. Choose target as ***kafka*** from the top-down menu.
 
 ![](./images/14.png" ")
+
 7. Click ***Next*** To navigate **parameter** tab.
+
 ![](./images/15.png" ")
 
-8. Kindly review the parameter contents and mapping conditions,click ***Next***
+
+8. Kindly review the parameter contents and mapping conditions,click ***Next***.
+
 ![](./images/16.png" ")
 
 9. Kindly replace the content of the property file with a below code and click ***Create and Run***
@@ -168,8 +178,11 @@ jvm.bootoptions=-Xmx512m -Xms32m
 ``` 
 
 ![](./images/20.png" ")
-10. Replicat ***REPKAFKA*** creation completed. Green check mark will shows Replicat ***REPKAFKA*** up and running
+
+10. Replicat ***REPKAFKA*** creation completed. Green check mark will shows Replicat ***REPKAFKA*** up and running.
+
 ![](./images/21.png" ")
+
 11. Load the data to source database MySql.Kindly open a new putty session,choose ***Q*** to quit the lab menu and load the data to MySql database through command ***loadsource***.
 ```
 <copy>
@@ -180,9 +193,14 @@ loadsource
 
 ![](./images/23.png" ")
 
-12. Validating the data replicated by ***REPKAFKA*** through **statastics**.Kindly switch to GoldenGate for Bigdata console and click on ***Action*** to choose ***Details*** from top-down menu
+12. Validating the data replicated by ***REPKAFKA*** through **statastics**.Kindly switch to GoldenGate for Bigdata console and click on ***Action*** to choose ***Details*** from top-down menu.
+
 ![](./images/24.png" ")
-13. Click on the tab Statastics tab to view stats of the kafka message
+
+
+
+13. Click on the tab Statastics tab to view stats of the kafka message.
+
 ![](./images/25.png" ")
 
 14.  Viewing the content of the ***kafka topics***
