@@ -117,11 +117,11 @@ Container Engine for Kubernetes (OKE) is an Oracle-managed container orchestrati
 
       ![Quick Create Properties](images/cluster-defaults.png)
 
-**Optional:** Since this is a non-production evaluation cluster, consider reducing the number of worker nodes as shown below to minimize the deployment of underutilized resources. Cloud computing allows for easy scaling up (and down!) to match your exact resource requirements.
+      **Optional:** Since this is a non-production evaluation cluster, consider reducing the number of worker nodes as shown below to minimize the deployment of underutilized resources. Cloud computing allows for easy scaling up (and down!) to match your exact resource requirements.
 
-![Quick Create Properties](images/Node-Count.png)
+      ![Quick Create Properties](images/Node-Count.png)
 
-Select **Next** to review.
+      Select **Next** to review.
 
 
 7.  In the **Quick Create Cluster** review page, select **Create Cluster** to launch the deployment.
@@ -139,62 +139,62 @@ The final step of this section is to launch Cloud Shell, download sample code fi
 
       ![Cloud Shell](images/Cloud-Shell.png)
 
-This will launch a small virtual machine configured with your specific OCI user permissions. A direct shell connection will open in the console window.  You can minimize and maximize this shell as desired.
-      ![Cloud Shell](images/Cloud-Shell-Cluster.png)
+      This will launch a small virtual machine configured with your specific OCI user permissions. A direct shell connection will open in the console window.  You can minimize and maximize this shell as desired.
+            ![Cloud Shell](images/Cloud-Shell-Cluster.png)
 
-Within the Cloud Shell session , download the **sample code** files by executing the following wget command:
+      Within the Cloud Shell session , download the **sample code** files by executing the following wget command:
 
-```
-   wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/-GEEGkMqE-MW-EmQxeFUrAuNdzAnfIxB_G4Vqd8kNMSi-OFLnMRQsvUrWCjVu_q8/n/intrandallbarnes/b/devlive-hol-082022/o/devlive-hol.zip
+      ```
+      wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/-GEEGkMqE-MW-EmQxeFUrAuNdzAnfIxB_G4Vqd8kNMSi-OFLnMRQsvUrWCjVu_q8/n/intrandallbarnes/b/devlive-hol-082022/o/devlive-hol.zip
 
-```
+      ```
 
-Unzip the package by executing the following command:
+      Unzip the package by executing the following command:
 
-```
-    unzip devlive-hol.zip
-```
+      ```
+      unzip devlive-hol.zip
+      ```
 
 2. By this time your OKE cluster should be online and available.  In necessary, wait a few more moments. Navigate to **Developer Services** --> **Kubernetes Clusters (OKE)** if you are not already on this console page.  Click on your cluster name **cluster1** to open the cluster properties page.  Locate and open the **Quick Start** shortcut link on the lower left navigation bar to open the **Quick Start: Deploy Sample App** instructions. 
 
       ![Quick Start](images/Quick-Start.png)
 
-Select **Access Cluster**
-      ![Access Cluster](images/Access-Cluster.png)
+      Select **Access Cluster**
+            ![Access Cluster](images/Access-Cluster.png)
 
-Ensure **Cloud Shell Access** is selected.  You should be able to skip Step 1, unless your Cloud Shell session has closed.  Perform Step 2 by executing the listed command in your Cloud Shell session. 
+      Ensure **Cloud Shell Access** is selected.  You should be able to skip Step 1, unless your Cloud Shell session has closed.  Perform Step 2 by executing the listed command in your Cloud Shell session. 
 
-![Access Cluster](images/kube-config.png)
+      ![Access Cluster](images/kube-config.png)
 
-Click **Close** to exit the Access Your Cluster dialog.
+      Click **Close** to exit the Access Your Cluster dialog.
 
-Continue implementing steps 2 and 3 listed in the **Quick Start: Deploy Sample App** dialog.  This will verify connectivity to your cluster and the ability to deploy apps from your Cloud Shell session.
+      Continue implementing steps 2 and 3 listed in the **Quick Start: Deploy Sample App** dialog.  This will verify connectivity to your cluster and the ability to deploy apps from your Cloud Shell session.
 
-![Continue QuickStart](images/Continue-Quick-Start.png)
+      ![Continue QuickStart](images/Continue-Quick-Start.png)
 
-After completing step 3, verify the deployment is active by executing the following command:
-```
-$ kubectl get deployments
-```
+      After completing step 3, verify the deployment is active by executing the following command:
+      ```
+      $ kubectl get deployments
+      ```
 
-Your output should be similar to the following:
+      Your output should be similar to the following:
 
-```
-NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-nginx-deployment    2/2     2            2          16s
-```
+      ```
+      NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+      nginx-deployment    2/2     2            2          16s
+      ```
 
-Finally, delete the sample deployment by executing the following command:
+      Finally, delete the sample deployment by executing the following command:
 
-```
-$ kubectl delete deployment nginx-deployment
-```
+      ```
+      $ kubectl delete deployment nginx-deployment
+      ```
 
-You should see confirmation similar to the following:
+      You should see confirmation similar to the following:
 
-```
-deployment.apps "nginx-deployment" deleted
-```
+      ```
+      deployment.apps "nginx-deployment" deleted
+      ```
 
  **Congratulations!**  You have completed the **Setup the Environment** Lab. You may proceed to the next lab: **OKE Apps and OCI Logging**
 
@@ -208,8 +208,3 @@ deployment.apps "nginx-deployment" deleted
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
 * **Last Updated Date** - July, 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

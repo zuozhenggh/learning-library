@@ -6,7 +6,7 @@ In the previous lab you learned how to integrate your applications with the OCI 
 
 ![Monitoring Overview](images/Monitoring-Overview.png)
 
-The OCI Monitoring Service is natively integrated with the underlying infrastructure resources your containerized app utilizes at runtime.  Your application code can leverage this service and take advantage of all the built-in featues such as realtime alerting, notifications, metric storage and metric data archival.  This also provides a single unified monitoring framework for all your cloud infrastructure and custom applicaiton resources.
+The OCI Monitoring Service is natively integrated with the underlying infrastructure resources your containerized app utilizes at runtime.  Your application code can leverage this service and take advantage of all the built-in features such as realtime alerting, notifications, metric storage and metric data archival.  This also provides a single unified monitoring framework for all your cloud infrastructure and custom application resources.
 
 Unlike the logging framework, integrating your application code with the Monitoring Service will require making API calls to the regional REST service endpoints.  Fortunately, OCI makes this process easy by offering SDKs, templates and examples for all popular development platforms.  You can also wrap direct API calls within your code without loading SDK libraries.  
 
@@ -99,77 +99,77 @@ You may use the vi command to update the deployment file directly in the shell. 
 ## **STEP 2:** Deploy a Node.js Application to OKE
 
 
-After updating the devlive-metric.yaml file to match your OCID and Service_Endpoint, run the following commands to deploy the application.  
+1. After updating the devlive-metric.yaml file to match your OCID and Service_Endpoint, run the following commands to deploy the application.  
 
-```
-$ kubectl apply -f devlive-metric.yaml
-```
+      ```
+      $ kubectl apply -f devlive-metric.yaml
+      ```
 
-You should receive a response similar to the following:
+      You should receive a response similar to the following:
 
-```
-deployment.apps/devlive-metric created
-```
+      ```
+      deployment.apps/devlive-metric created
+      ```
 
-Verify the application container is online and healthy by executing the following command:
+2. Verify the application container is online and healthy by executing the following command:
 
-```
-$ kubectl get deployments devlive-metric
-```
+      ```
+      $ kubectl get deployments devlive-metric
+      ```
 
-You should recveive a response similar to the following.  You may need to wait a few more seconds for the **READY** status to indicate the deployment is active.  
+      You should receive a response similar to the following.  You may need to wait a few more seconds for the **READY** status to indicate the deployment is active.  
 
-```
-NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-devlive-metric     1/1     1            1           44s
-```
+      ```
+      NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+      devlive-metric     1/1     1            1           44s
+      ```
 
 
 ## **STEP 3:** Examine Ingested Metrics
 
-In the OCI Console, navigate to **Observability & Management** --> **Monitoring** --> **Metrics Explorer** to bring up the explorer page.  
+1. In the OCI Console, navigate to **Observability & Management** --> **Monitoring** --> **Metrics Explorer** to bring up the explorer page.  
 
-![Metrics Explorer](images/Metrics-Explorer.png)
+      ![Metrics Explorer](images/Metrics-Explorer.png)
 
-Below the graph, you have the ability to specifcy the query parameters to locate and display the metrics being published from your application.  The selections are drop-down options with many only containing a single option.  Select values to match the diagram below, then click on **Update Chart**.
+2. Below the graph, you have the ability to specify the query parameters to locate and display the metrics being published from your application.  The selections are drop-down options with many only containing a single option.  Select values to match the diagram below, then click on **Update Chart**.
 
-![Query](images/Query-12.png)
+      ![Query](images/Query-12.png)
 
-Above the graph, locate the **Y-Axis Label** box and enter a meaningful label.
+3. Above the graph, locate the **Y-Axis Label** box and enter a meaningful label.
 
-![Y Axis Label](images/Y-Axis-Label.png)
+      ![Y Axis Label](images/Y-Axis-Label.png)
 
-View your graph, which should resemble the image below.  Although this is simulated data, the process is the same for your live applications. 
+4. View your graph, which should resemble the image below.  Although this is simulated data, the process is the same for your live applications. 
 
-![Graph](images/graph.png)
+      ![Graph](images/graph.png)
 
 ## **STEP 4:** [Optional] Create Metric Alarm
 
-While still reviewing the Metrics Explorer page, locate and select the **Create Alarm** button near the bottom.
+1. While still reviewing the Metrics Explorer page, locate and select the **Create Alarm** button near the bottom.
 
-![Alarm](images/Alarm-11.png)
+      ![Alarm](images/Alarm-11.png)
 
-This will open the **Define Alarm** dialog.  Give your alarm a name and message (Alarm Body).
+2. This will open the **Define Alarm** dialog.  Give your alarm a name and message (Alarm Body).
 
-![Alarm](images/Alarm-02.png)
+      ![Alarm](images/Alarm-02.png)
 
-Continue to select the **Metric Description** boxes to match the query specified in Step 3.
+3. Continue to select the **Metric Description** boxes to match the query specified in Step 3.
 
-![Alarm](images/Alarm-13.png)
+      ![Alarm](images/Alarm-13.png)
 
-Define the **Trigger Rule** as follows:
+4. Define the **Trigger Rule** as follows:
 
-![Alarm](images/Alarm-04.png)
+      ![Alarm](images/Alarm-04.png)
 
-For **Destinations**, you probably do not yet have a Topic [Alarm Message Destination] configured.  Select the **Create a Topic** link to open up the **Create a new topic and subscription** option.  Enter your information (you will have to confirm an automatically generated email to enable this topic.  You can cancel the topic and alarm at any time).
+5. For **Destinations**, you probably do not yet have a Topic [Alarm Message Destination] configured.  Select the **Create a Topic** link to open up the **Create a new topic and subscription** option.  Enter your information (you will have to confirm an automatically generated email to enable this topic.  You can cancel the topic and alarm at any time).
 
-![Alarm](images/Alarm-05.png)
+      ![Alarm](images/Alarm-05.png)
 
-![Alarm](images/Alarm-06.png)
+      ![Alarm](images/Alarm-06.png)
 
-Finally, select **Save alarm** to complete the process.
+6. Finally, select **Save alarm** to complete the process.
 
-![Alarm](images/Alarm-07.png)
+      ![Alarm](images/Alarm-07.png)
 
 **Congratulations** You have completed this section and the Hands On Lab!  If your are done testing, consider terminating your OKE cluster to conserve your free credits.
 
@@ -181,9 +181,3 @@ Finally, select **Save alarm** to complete the process.
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
 * **Last Updated Date** - July, 2021
-
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
