@@ -4,13 +4,15 @@
 
 This lab walks you through the steps to create a project for a new visual application, which serves as the foundation to build a web application in Oracle Visual Builder Studio.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
 ### Background
 
-In this workshop, we'll build a very simple Human Resources visual application, using a _project_ with a _visual application template_ as the starting point. Every project in Visual Builder Studio is devoted to a discrete software effort, and the project we create in this lab is exclusive to the Human Resources visual application. A project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, wikis, and more.
+Visual Builder Studio (VB Studio) is a development platform that helps you plan and manage your application's lifecycle, from design and build right through test and deploy. It lets you create engaging web and mobile applications using a _visual application_ template, which provides everything you need to develop a visual web or mobile application.
 
-Once we have our project, we'll create a _workspace_, a completely private area for you to work on your visual application. All your work within this space is stored in a clone of the project's Git repository, and is not visible to others until you share or publish your changes. A workspace also connects you to the development environment where you plan to deploy your application, which must be a separate Visual Builder instance.
+In this workshop, you'll build a simple Human Resources visual application, using a _project_ as a starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR visual application. The project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more.
+
+As part of your project, you'll also create a _workspace_, a completely private area for you to work on your visual application. All your work within this space is stored in a clone of the project's Git repository, and is not visible to others until you share or publish your changes. A workspace also connects you to the development environment where you plan to host your application, which must be a separate Visual Builder instance.
 
 
 ### Prerequisites
