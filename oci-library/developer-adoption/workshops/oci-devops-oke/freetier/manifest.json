@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../labs/oci-devops-oke/intro/intro.md"
+            "filename": "../../../labs/oci-devops-oke/intro/intro.md"
         },
         {
             "title": "Getting Started with Free Trial Account",
@@ -12,11 +12,11 @@
         },
         {
             "title": "Lab 1: Provision the Infrastructure using Resource Manager",
-            "filename": "../../labs/oci-devops-oke/deploy-infra/deploy-infra-orm.md"
+            "filename": "../../../labs/oci-devops-oke/deploy-infra/deploy-infra-orm.md"
         },
         {
             "title": "Lab 2: Continuous Delivery with OCI DevOps Pipeline",
-            "filename": "../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
+            "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline-manual.md"
         },        
         {
             "title": "Need Help?",
