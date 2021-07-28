@@ -1,92 +1,99 @@
-# Title of the Lab
+# Add Navigation and Data to a Web App
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab shows you how to create navigation buttons in a web application and how to add data to the web application in Visual Builder Studio.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
+With your changes committed to a remote branch, you'll now create buttons that help users navigate between the Departments page and the Employees page in the web application. Each button is associated with an event that sets off a series of actions when you click it. In VB Studio, this sequence of actions is called an _action chain_. You can use and customize predefined actions, or define your own.
 
-### Objectives 
+You'll also populate your business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects here.
 
-*List objectives for this lab using the format below*
+## **STEP 1:** Create an Action Chain to Navigate from the Departments Page to the Employees Page
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+1.  Click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png), then click **HR Visual Application** in the Workspaces table.
+2.  Click **Web Applications** ![Web Applications icon](images/web_applications_icon.png), then **main-departments** under the hrwebapp, Flows, and main nodes.
+3.  In the Page Designer, click **Components** to open the Components palette. Then, drag a **Button** from the Common components to the Toolbar, to the right of the Create Department button on the main-departments page.
 
-### Prerequisites (Optional)
+    ![](images/departments_button.png)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+4.  If necessary, click **Properties**. Then in the General tab of the properties pane, change the **Text** field to `Display Employees`.
+5.  Select the button (if necessary) and click the **Events** tab, then click the **\+ New Event** button. From the menu, select **Quick Start: 'ojAction'**, the default action for a button click.
 
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+    ![](images/departments_button_events.png)
+
+    An action chain with the ID ButtonActionChain is created. It contains only the Start action.
+
+6.  From the Navigation section of the Actions palette, drag the **Navigate** action to the **+** sign pointed to by the Start action.
+7.  In the Navigate action's properties, select **main-employees** from the **Target** list.
+
+    ![](images/departments_button_events_navigate.png)
+
+    The action now has the label `Navigate main-employees`.
+
+8.  Click **Preview** ![Preview icon](images/preview_icon.png) in the header to see how the pages will appear to the user. The application opens in another browser tab.
+9.  Click **Create Department** and add another department (`IT` on `Floor 2`, for example), then click **Save**. A success message is displayed briefly.
+10.  Click **Display Employees**, then click **Create Employee**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the main-departments page from the main-employees page. Close the browser tab.
 
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 2:** Create an Action Chain to Navigate from the Employees Page to the Departments Page
 
-## **STEP 1:** Concise Step Description
+1.  In the Web Apps pane, click **main-employees** under the hrwebapp, Flows, and main nodes. If necessary, click **Reload page** ![Reload page icon](images/reload_icon.png) to display the new employee you created.
+2.  In the Components palette, drag a **Button** component to the Toolbar, to the right of the Create Employee button.
+3.  In the button's properties pane, change the **Text** field to `Display Departments`.
+4.  Select the button (if necessary) and click the **Events** tab, then click **+ New Event** and select **Quick Start: 'ojAction'**.
 
-(optional) Step 1 opening paragraph.
+    Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
-1. Sub step 1
+5.  Drag the **Navigate** action from the Navigation section to the **+** sign pointed to by the Start action.
+6.  In the properties pane, select **main-departments** from the **Target** list.
 
-	![Image alt text](images/sample1.png)
+    The action now has the label `Navigate main-departments`.
 
-2. Sub step 2
+7.  Click **Preview** ![Preview icon](images/preview_icon.png) to test the pages and navigation. The application opens in another browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
+8.  Click **main**, then **Page Flow** to view the application's modified page flow. You can now navigate between the main-departments and main-employees pages.
 
-  ![Image alt text](images/sample1.png)
+    ![](images/page_flow.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+## **STEP 3:** Import Data for the Business Objects
 
-5. Example with bold **text**.
+Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's Data tab to do the same thing.
 
-   If you add another paragraph, add 3 spaces before the line.
+1.  Click [this link](./files/Department.csv) and save the `Department.csv` file to your file system. The file contains six departments for the application.
 
-## **STEP 2:** Concise Step Description
+2.  Click [this link](./files/Employee.csv) and save the `Employee.csv` file to your file system. The file contains nine employees for the application.
 
-1. Sub step 1 - tables sample
+3.  In the navigator, click **Business Objects** ![Business Objects icon](images/bo_icon.png), then **Objects**. The business objects you created are displayed.
 
-  Use tables sparingly:
+4.  Click **Department**, then **Data**.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+5.  Click **Import from File** ![Import from File icon](images/import_icon.png).
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+6.  In the Import Data dialog box, select the **Replace** option if it's not already selected. Then click the upload box, browse to select the `Department.csv` file, and click **Import**.
 
-    - List item 1
-    - List item 2
+   ![](images/department_data_import.png)
 
-3. Code examples
+	Click **Close** after the file has been successfully imported. Six departments are displayed in the table.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+	![](images/department_data_import_result.png)
 
-4. Code examples that include variables
+7.  Click **Employee** under Business Objects, then click **Data**.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+8.  Click **Import from File** ![Import from File icon](images/import_icon.png).
+
+9.  In the Import Data dialog box, select the **Replace** option if it's not already selected. Then click the upload box, browse to select the `Employee.csv` file, and click **Import**.
+
+   Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
+
+	![](images/employees_data_import_result.png)
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Work with Actions and Action Chains](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-1C9CB135-0C1A-48E8-8D0A-AF95A0E1D4A6)
+* [Manage Business Object Data During Development](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/manage-application-data.html#GUID-03F6956C-881A-4E48-B82C-9C427CACC1D9)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - August 2021
