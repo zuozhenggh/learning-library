@@ -33,5 +33,8 @@ Verrazzano includes the following capabilities:
 
 * [Verrazzano](https://verrazzano.io/)
 
-## See an issue?
-Please submit the issue using this [GitHub repository](https://github.com/pandey-ankit/verrazzano-tutorial/issues). Please include the *lab* and *step* in your request.
+## Acknowledgements
+
+* **Author** -  Ankit Pandey
+* **Contributors** - Maciej Gruszka, Peter Nagy
+* **Last Updated By/Date** - Kamryn Vinson, July 2021

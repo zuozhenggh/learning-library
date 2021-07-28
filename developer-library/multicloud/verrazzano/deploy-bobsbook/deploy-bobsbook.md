@@ -4,7 +4,7 @@
 
 ### About Bob's Books Application
 
-![Bob' Books Application](images/Lab3/1.png)
+![Bob' Books Application](images/1.png)
 
 [Bob’s Books](https://verrazzano.io/docs/samples/bobs-books/) consists of three main parts:
 
@@ -180,27 +180,27 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
 1. Click the link for the Oracle Container Registry [https://container-registry.oracle.com/](https://container-registry.oracle.com/) and sign in. For this, you need an Oracle Account.
 
-    ![Sign In](images/Lab3/2.png)
+    ![Sign In](images/2.png)
 
 2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*.
 
-    ![Oracle SSO](images/Lab3/3.png)
+    ![Oracle SSO](images/3.png)
 
 3. On the Home Page, select *Verrazzano*.
 
-    ![Oracle SSO](images/Lab3/4.png)
+    ![Oracle SSO](images/4.png)
 
 4. For example-bobbys-coherence, example-bobbys-front-end, example-bobs-books-order-manager, and example-roberts-coherence repository , select *English* as the language, then click *Continue*.
 
-    ![Continue](images/Lab3/5.png)
+    ![Continue](images/5.png)
 
 5. Click *Accept* to accept the license agreement.
 
-    ![Accept Agreement](images/Lab3/6.png)
+    ![Accept Agreement](images/6.png)
 
 6. Verify that you accepted license agreement for the repositories related to Verrazzano as shown in the following image.
 
-    ![Verify License Agreement](images/Lab3/28.png)
+    ![Verify License Agreement](images/28.png)
 
 ## **STEP 2**: Deploy the Bob's Books application
 
@@ -212,7 +212,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>git clone https://github.com/verrazzano/verrazzano.git</copy>
     ```
 
-    ![Oracle SSO](images/Lab3/7.png)
+    ![Oracle SSO](images/7.png)
 
 2. To view the *verrazzano* folder and its contents, copy the following command and paste it in the *Cloud Shell* to run it.
 
@@ -220,7 +220,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>ls -la verrazzano/examples/bobs-books/</copy>
     ```
 
-    ![Verrazzano Home Folder](images/Lab3/8.png)
+    ![Verrazzano Home Folder](images/8.png)
 
 3. Create a namespace for the Bob's Books example application. Namespaces are a way to organize clusters into virtual sub-clusters. We can have any number of namespaces within a cluster, each logically separated from others but with the ability to communicate with each other.
 
@@ -228,7 +228,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl create namespace bobs-books</copy>
     ```
 
-    ![Verrazzano Home Folder](images/Lab3/9.png)
+    ![Verrazzano Home Folder](images/9.png)
 
 4. Add a label identifying the bobs-books namespace as managed by Verrazzano. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users. Here, for the bobs-book namespace, we are attaching a label to it, which marks this namespace as managed by Verrazzano. The *istio-injection=enabled*, enables an Istio "sidecar", and as such, helps establish an Istio proxy. With an Istio proxy, we can access other Istio services like an Istio gateway and such. To add the label to the bobs-books namespace with the previously mentioned attributes, copy the following command and run it in the *Cloud Shell*
 
@@ -236,7 +236,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl label namespace bobs-books verrazzano-managed=true istio-injection=enabled</copy>
     ```
 
-    ![Verrazzano Home Folder](images/Lab3/10.png)
+    ![Verrazzano Home Folder](images/10.png)
 
 5. The Docker registry  is a way to store and version images, like GitHub for normal code but for containers (which Kubernetes can pull). Here, we will create a docker-registry secret to enable pulling the Bob's Books example image from the Oracle Container Registry. Click *Copy* on the following command, and paste it in any text editor of your choice and replace *THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME*, *THIS TO BE REPLACED WITH YOUR-REGISTRY-PASSWORD*, and *THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL* with the values you use to access the registry. Here *THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME* and *THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL* is your email ID which you used in step 1, for accepting the license agreement for downloading images from the Oracle Container Registry. Then, in the Cloud Shell, paste the modified command as shown:
 
@@ -249,7 +249,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
             -n bobs-books</copy>
     ```
 
-    ![Oracle Account](images/Lab3/11.png)
+    ![Oracle Account](images/11.png)
 
 6. Create and label secrets for the WebLogic domains. In this lab, we are using `weblogic` as `WLS_USERNAME` and we are generating a random password for `WLS_PASSWORD`. Copy and paste these three commands in the *Cloud Shell*.
 
@@ -267,7 +267,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>echo $WLS_PASSWORD</copy>
     ```
 
-    ![mysql](images/Lab3/12.png)
+    ![mysql](images/12.png)
 
     In the Bob's Books application, we have two WebLogic domains *bobby-front-end* and *bobs-bookstore*. The credentials for the WebLogic domain are kept in a Kubernetes Secret where the name of the secret is specified using *webLogicCredentialsSecret* in the WebLogic Domain resource. Also, the domain credentials secret must be created in the namespace where the domain will be running.
 
@@ -277,7 +277,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl create secret generic bobbys-front-end-weblogic-credentials --from-literal=password=$WLS_PASSWORD --from-literal=username=$WLS_USERNAME -n bobs-books</copy>
     ```
 
-    ![weblogic Credential](images/Lab3/13.png)
+    ![weblogic Credential](images/13.png)
 
 8. Create a new secret called *bobs-bookstore-weblogic-credentials*, with a user name value of `weblogic` and a password which is randomly generated in the bobs-books namespace. Copy and paste the following command in the *Cloud Shell* to run it.
 
@@ -285,7 +285,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl create secret generic bobs-bookstore-weblogic-credentials --from-literal=password=$WLS_PASSWORD --from-literal=username=$WLS_USERNAME -n bobs-books</copy>
     ```
 
-    ![weblogic credential](images/Lab3/16.png)
+    ![weblogic credential](images/16.png)
 
 9. Our Bob's Books application uses a *mysql* database. So, we create a new secret called  *mysql-credentials*, with a user name value of `weblogic`, a password which is randomly generated,  and  JDBC URL, *jdbc:mysql://mysql.bobs-books.svc.cluster.local:3306/books* in the bobs-books namespace. Copy and paste the following command in the *Cloud Shell* to run it.
 
@@ -297,7 +297,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
         -n bobs-books</copy>
     ```
 
-    ![mysql](images/Lab3/19.png)
+    ![mysql](images/19.png)
 
 10. We have a Kuberneter cluster, *cluster1*, with three nodes. Now, we want to deploy Bob's Books containerized application on *cluster1*. For this, we need a Kubernetes deployment configuration. This deployment instructs the Kubernetes to create and update instances for the Bob's Books application. Here, we have the `bobs-books-comp.yaml` file, which instructs Kubernetes. To deploy the Bob's Books application, copy and paste the following two commands as shown. The `bobs-books-comp.yaml` file contains definitions of various OAM components, where, an OAM component is a Kubernetes Custom Resource describing an application’s general composition and environment requirements. To learn more about the `bobs-books-comp.yaml` file, review Verrazzano Components in the Introduction section of this Lab 3.
 
@@ -305,7 +305,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl apply -f ~/verrazzano/examples/bobs-books/bobs-books-comp.yaml</copy>
     ```
 
-    ![app](images/Lab3/20.png)
+    ![app](images/20.png)
 
 11. The `bobs-books-app.yaml` file is a Verrazzano application configuration file, which provides environment specific customizations. To learn more about `bobs-books-app.yaml` file, review Verrazzano Application Configuration in the Introduction section of this Lab 3.
 
@@ -313,7 +313,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl apply -f ~/verrazzano/examples/bobs-books/bobs-books-app.yaml</copy>
     ```
 
-    ![app](images/Lab3/21.png)
+    ![app](images/21.png)
 
 12. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace. It takes around 4-5 minutes.
 
@@ -321,7 +321,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>kubectl wait --for=condition=Ready pods --all -n bobs-books --timeout=600s</copy>
     ```
 
-    ![Pods to be ready](images/Lab3/22.png)
+    ![Pods to be ready](images/22.png)
 
 13. Get the `EXTERNAL_IP` address of the istio-ingressgateway service. Copy this `EXTERNAL_IP` in your text editor; we will use it in many places, so you can directly copy it from your text editor.
 
@@ -331,7 +331,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     -o jsonpath={.status.loadBalancer.ingress[0].ip}; echo</copy>
     ```
 
-    ![External IP](images/Lab3/23.png)
+    ![External IP](images/23.png)
 
 ## **STEP 3**: Verify the successful deployment of the Bob's Book application
 
@@ -343,7 +343,7 @@ Verify that the application configuration, domains, Coherence resources, and ing
     <copy>kubectl get ApplicationConfiguration -n bobs-books</copy>
     ```
 
-    ![Application Configuration](images/Lab3/24.png)
+    ![Application Configuration](images/24.png)
 
 2. To verify that both WebLogic domains are created within the bobs-books namespace successfully.
 
@@ -351,7 +351,7 @@ Verify that the application configuration, domains, Coherence resources, and ing
     <copy>kubectl get Domain -n bobs-books</copy>
     ```
 
-    ![WebLogic Domain](images/Lab3/25.png)
+    ![WebLogic Domain](images/25.png)
 
 3. To verify that both Coherence clusters are created within the bobs-books namespace successfully.
 
@@ -359,7 +359,7 @@ Verify that the application configuration, domains, Coherence resources, and ing
     <copy>kubectl get Coherence -n bobs-books</copy>
     ```
 
-    ![Coherence](images/Lab3/29.png)
+    ![Coherence](images/29.png)
 
 4. To get the IngressTrait for the Bob's Book application, run the following command in the *Cloud Shell*.
 
@@ -367,7 +367,7 @@ Verify that the application configuration, domains, Coherence resources, and ing
     <copy>kubectl get IngressTrait -n bobs-books</copy>
     ```
 
-    ![Ingress](images/Lab3/26.png)
+    ![Ingress](images/26.png)
 
 5. Verify that the service pods are successfully created and transition to the *Running* state. Note that this may take a few minutes and that you may see some of the services terminate and restart. Finally, you will observe all the pods associated with the bobs-books namespace are in the *Running* Status. Please copy the pods details for the *bobbys-helidon-stock-application*.
 
@@ -395,3 +395,9 @@ Verify that the application configuration, domains, Coherence resources, and ing
     Note the pod name for **bobbys-helidon-stock-application**. When we redeploy this component, you will notice that this pod will go into a *Terminating* status and new pod will start and come in the *Running* state in Lab 7.
 
 Leave the *Cloud Shell* open; we will use it for the next labs as well.
+
+## Acknowledgements
+
+* **Author** -  Ankit Pandey
+* **Contributors** - Maciej Gruszka, Peter Nagy
+* **Last Updated By/Date** - Kamryn Vinson, July 2021
