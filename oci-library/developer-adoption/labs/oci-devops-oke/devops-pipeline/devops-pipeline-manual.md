@@ -88,10 +88,10 @@ In this lab, you will:
 
 1. Let's open the OCI DevOps project. Go to OCI Navigation Menu -> Developer Services -> DevOps -> Projects. The project name should starts with `hello`. Click on the project name to go to the Project Overview page. Some resources were automatically provisioned through Terraform and we are going to reuse some of them.
 
-  ![devops project overview](./images/devops-project-overview.png) 
+    ![devops project overview](./images/devops-project-overview.png) 
 
 1. Create your Artifact. In the bottom of the page, click `Add artifact` under Latest artifacts section.
-  ![devops add artifact](./images/devops-add-artifact-button.png) 
+    ![devops add artifact](./images/devops-add-artifact-button.png) 
 
 1. Fill ou the form with the following data:
 
@@ -138,7 +138,7 @@ In this lab, you will:
         spec:
           containers:
             - name: fulfillment
-              image: "iad.ocir.io/cloudnative-devrel/micronaut-showcase/mushop/fulfillment-graalvm:${mushop_fulfillment_version}"
+              image: "iad.ocir.io/idi2cuxxbkto/oci-cloud-native-mushop/mushop-fulfillment:${mushop_fulfillment_version}"
               imagePullPolicy: IfNotPresent
               ports:
                 - name: http
@@ -164,7 +164,7 @@ In this lab, you will:
     spec:
       containers:
         - name: fulfillment
-          image: "iad.ocir.io/cloudnative-devrel/micronaut-showcase/mushop/fulfillment-graalvm:${mushop_fulfillment_version}"
+          image: "iad.ocir.io/idi2cuxxbkto/oci-cloud-native-mushop/mushop-fulfillment:${mushop_fulfillment_version}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
