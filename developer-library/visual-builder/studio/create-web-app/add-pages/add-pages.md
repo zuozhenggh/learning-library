@@ -200,10 +200,6 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
-## Learn More
-* [Quick Starts: Add Data to a Table or List](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-B28F1DC5-711F-4BA0-9B44-3DC0A1EA3E12)
-* [Quick Starts: Add a Create Page](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-41301557-B15E-46C5-A532-7DF5E3F127C9)
-
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
 * **Last Updated By/Date** - August 2021

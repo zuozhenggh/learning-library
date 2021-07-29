@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a web app in your visual application project. It also shows how to add business objects to store your web application's data.
+This lab shows you how to create a web app in your visual application project. It also shows how to add business objects that store your web app's data.
 
 Estimated Lab Time: 15 minutes
 
@@ -215,12 +215,6 @@ Now that you have your business objects, create a diagram that visualizes the bu
     The diagram looks just like the graphic in the Background section.
 
     So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in later labs.
-
-## Learn More
-
-* [Create Visual Applications in VB Studio](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-34F19B2D-3ADD-4910-948D-DC6C14C605C6)
-* [Work with Business Objects](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/working-business-objects1.html#GUID-F23A1FEC-2AF3-487D-8248-01400917E766)
-
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance

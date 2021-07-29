@@ -1,13 +1,13 @@
-# Add Navigation and Data to a Web App
+# Add Navigation and Data
 
 ## Introduction
 
-This lab shows you how to create navigation buttons in a web application and how to add data to the web application in Visual Builder Studio.
+This lab shows you how to set up navigation between pages in a web app. It also shows how you can add data to the app.
 
 Estimated Lab Time: 10 minutes
 
 ### Background
-With your changes committed to a remote branch, you'll now create buttons that help users navigate between the Departments page and the Employees page in the web application. Each button is associated with an event that sets off a series of actions when you click it. In VB Studio, this sequence of actions is called an _action chain_. You can use and customize predefined actions, or define your own.
+With your changes committed to a remote branch, you'll now create buttons that help users navigate between the Departments page and the Employees page in the web app. Each button is associated with an event that sets off a series of actions when you click it. In VB Studio, this sequence of actions is called an _action chain_. You can use and customize predefined actions, or define your own.
 
 You'll also populate your business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects here.
 

@@ -17,7 +17,7 @@
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 1: Create a Project for a Visual Application",
+            "title": "Lab 1: Create a Project for a New Visual Application",
             "filename": "../../create-project/create-project.md"
         },
         {
@@ -29,7 +29,7 @@
             "filename": "../../add-pages/add-pages.md"
         },
         {
-            "title": "Lab 4: Save Changes to a Remote Branch",
+            "title": "Lab 4: Save a Web App's Changes to a Remote Branch",
             "filename": "../../save-changes/save-changes.md"
         },
         {
@@ -37,7 +37,7 @@
             "filename": "../../add-data/add-data.md"
         },
         {
-            "title": "Lab 6: Add Pages for Data Manipulation",
+            "title": "Lab 6: Add Pages to Manage a Web App's Data",
             "filename": "../../add-other-pages/add-other-pages.md"
         },
         {
