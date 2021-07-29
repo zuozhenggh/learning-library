@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a web app in your visual application project. It also shows how to add business objects to store your web application's data.
+This lab shows you how to create a web app in your visual application project. It also shows how to add business objects to store your web application's data.
 
 Estimated Lab Time: 15 minutes
 
@@ -15,11 +15,11 @@ In this lab, you'll create the Employee, Department, and Location business objec
 
 Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments, and to change that data when necessary.
 
-**Note:** Although this lab shows how to build an application using a business object, you can also build applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating applications are the same, no matter what form your data takes.
+**Note:** Although this lab shows how to build an application using a business object, you can also build applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating an application are the same, no matter what form your data takes.
 
-## **STEP 1:** Create a Web App
+## **TASK 1:** Create a Web App
 
-Add your first web app to the HR visual application that you created in the previous lab. A visual application is a container for all your web and mobile applications. In this step, you add a single web app to your visual application, but you could have more than one, even both web and mobile apps in the same visual application.
+Add your first web app to the HR visual application that you've just created. A visual application is a container for all your web and mobile applications. In this step, you add a single web app to your visual application, but you can have more than one, even both web and mobile apps in the same visual application.
 
 1.  On the Project Home page, click **HR Visual Application** under Workspaces.
 
@@ -58,7 +58,7 @@ Add your first web app to the HR visual application that you created in the prev
 
     In the Web Apps pane, expand the **hrwebapp** node, then the **Flows** and **main** nodes to get a tree view of your web application.
 
-## **STEP 2:** Create a Location Business Object and Import Data
+## **TASK 2:** Create a Location Business Object and Import Data
 
 Create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see. 
 
@@ -105,7 +105,7 @@ Create your first business object and add data to it by importing a CSV file. Ev
 
     In the next step, we'll associate these locations with the departments that are located on these floors.
 
-## **STEP 3:** Create a Department Business Object
+## **TASK 3:** Create a Department Business Object
 
 Create the Department business object, which will have fields to show a department's name and location. In this step, you'll set up the department's Location field to pull in data from the Location business object you created in the previous step, but you won't actually import data for the Department business object now.
 
@@ -142,7 +142,7 @@ Create the Department business object, which will have fields to show a departme
     A Reference Type field refers to the key (the Id field) of another business object and links two business objects together. When you create a department now, you'll be able to select its Location (one of the floors). The Display Field indicates that Name (not Id) will be displayed.
 
 
-## **STEP 4:** Create an Employee Business Object
+## **TASK 4:** Create an Employee Business Object
 
 Create the last business object you need, the Employee object, which contains employee names and identifying data. The Employee object also has a Reference type field that refers to the Department object.
 
@@ -196,9 +196,9 @@ Create the last business object you need, the Employee object, which contains em
 
 11.  Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.
 
-## **STEP 5:** Create a Business Object Diagram
+## **TASK 5:** Create a Business Object Diagram
 
-Now that we have our business objects, let's create a diagram that provides a visual representation of business objects and their relationships.
+Now that you have your business objects, create a diagram that visualizes the business objects and their relationships.
 
 1.  In the Business Objects pane, click **Diagrams**, then **\+ Business Object Diagram**.
 

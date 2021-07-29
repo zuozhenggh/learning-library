@@ -11,7 +11,7 @@ With your changes committed to a remote branch, you'll now create buttons that h
 
 You'll also populate your business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects here.
 
-## **STEP 1:** Create an Action Chain to Navigate from the Departments Page to the Employees Page
+## **TASK 1:** Create an Action Chain to Navigate from the Departments Page to the Employees Page
 
 1.  Click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png), then click **HR Visual Application** in the Workspaces table.
 2.  Click **Web Applications** ![Web Applications icon](images/web_applications_icon.png), then **main-departments** under the hrwebapp, Flows, and main nodes.
@@ -38,7 +38,7 @@ You'll also populate your business objects by importing data from a file. You di
 10.  Click **Display Employees**, then click **Create Employee**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the main-departments page from the main-employees page. Close the browser tab.
 
 
-## **STEP 2:** Create an Action Chain to Navigate from the Employees Page to the Departments Page
+## **TASK 2:** Create an Action Chain to Navigate from the Employees Page to the Departments Page
 
 1.  In the Web Apps pane, click **main-employees** under the hrwebapp, Flows, and main nodes. If necessary, click **Reload page** ![Reload page icon](images/reload_icon.png) to display the new employee you created.
 2.  In the Components palette, drag a **Button** component to the Toolbar, to the right of the Create Employee button.
@@ -57,7 +57,7 @@ You'll also populate your business objects by importing data from a file. You di
 
     ![](images/page_flow.png)
 
-## **STEP 3:** Import Data for the Business Objects
+## **TASK 3:** Import Data for the Business Objects
 
 Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's Data tab to do the same thing.
 

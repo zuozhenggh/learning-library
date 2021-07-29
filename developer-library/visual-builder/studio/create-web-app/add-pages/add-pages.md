@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*This lab shows you how to create web pages to display the business objects you created in the previous lab.
+This lab shows you how to create web pages to display the business objects you created in the previous lab.
 
 
 Estimated Lab Time: 15 minutes
@@ -11,7 +11,7 @@ Estimated Lab Time: 15 minutes
 
 In the previous lab, you created the Location, Department, and Employee business objects. In this lab, you'll create web pages to display the data from these business objects within your application. You'll also add a **Create** button to each web page to let your users add new records (in other words, create new instances of the business object in the database).
 
-## **STEP 1:** Use the main-start Page to Display Departments
+## **TASK 1:** Use the main-start Page to Display Departments
 
 Create a table using a Table component to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
@@ -63,7 +63,7 @@ Create a table using a Table component to display your departments on the main-s
 
 The main-start page now has a table with three columns: Id, Name, and Location. You won't see any records in your table because we are yet to import data for the Department business object.
 
-## **STEP 2:** Add a Create Page for the Department Business Object
+## **TASK 2:** Add a Create Page for the Department Business Object
 
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
@@ -104,7 +104,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 9.  Click **Design** to return to Design view.
 
-## **STEP 3:** Add a Page to Display Employees
+## **TASK 3:** Add a Page to Display Employees
 
 In this step, you'll create a page to display employees, similar to the one you created for departments.
 
@@ -143,7 +143,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
     ![](images/employees_table.png)
 
-## **STEP 4:** Add a Create Page for the Employee Business Object
+## **TASK 4:** Add a Create Page for the Employee Business Object
 
 Add a Create page that lets your users create new employees.
 
@@ -180,7 +180,7 @@ Add a Create page that lets your users create new employees.
 
 11.  Click **Structure** again.
 
-## **STEP 5:** Change the Name of the main-start Page
+## **TASK 5:** Change the Name of the main-start Page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
 
