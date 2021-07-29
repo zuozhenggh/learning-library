@@ -440,6 +440,7 @@ In this lab, you will be guided through the following steps:
     ![COMPUTE](./images/05compute08.png " ")
 
 ## **STEP 6:** Connect to MySQL Database - Standalone
+MySQL Database Service Standalone has daily automatic backups and is resilient to failures because it leverages Block Volumes to store user data. Consequently, it offers the same durability, security, and performance guarantees. Automatic and manual backups are replicated to another availability domain and can be restored in the event of a disaster or user error. Data loss is limited by the last successful backup.
 
 1. Linux ad Mac users  use Terminal 
 
@@ -500,7 +501,7 @@ In this lab, you will be guided through the following steps:
 
  Enter the following command at the prompt:
      ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
  To display a list of databases, Enter the following command at the prompt:
       ````
@@ -524,6 +525,9 @@ In this lab, you will be guided through the following steps:
     ![Connect](./images/06connect05.png " ")
 
 ## **STEP 7:** Connect to MySQL Database and Switchover - High Availability
+
+A highly available database system is one which guarantees if one instance fails, another takes over, with zero data loss and minimal downtime.
+MySQL Database High Availability uses MySQL Group Replication to provide standby replicas to protect your data and provide business continuity. It is made up of three MySQL instances, a primary, and two secondaries. All data written to the primary instance is also written to the secondaries. In the event of failure of the primary, one of the secondaries is automatically promoted to primary, is set to read-write mode, and resumes availability to client applications with no data loss. This is called a failover. It is also possible to switch manually, and promote a secondary to primary. This is called a switchover.
 
 1. Linux ad Mac users  use Terminal 
 
@@ -613,6 +617,8 @@ In this lab, you will be guided through the following steps:
         ![Connect](./images/07switch04.png " ")  
 
 ## **STEP 8:** Connect to MySQL Database - HeatWave
+
+HeatWave is an add-on to MySQL Database Service. It provides a highly performant and scalable in-memory analytic processing engine optimized for Oracle Cloud Infrastructure. Customers can run HeatWave on data stored in the MySQL database without requiring ETL and without any change to the application. Applications simply access HeatWave via standard MySQL protocols, and the typical administration actions are automated, integrated and accessible via the OCI Web Console, REST API, CLI, or DevOps tools. HeatWave queries achieve orders of magnitude acceleration over the MySQL database.
 
 1. Linux ad Mac users  use Terminal 
 
@@ -921,7 +927,7 @@ LIMIT 10;</copy>
 
  13. Enter the following command at the prompt
      ````
-    <copy>SET SESSION use secondary engine=ON;</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
  14. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
 
@@ -1136,23 +1142,38 @@ echo 'Host info: ' . mysqli_get_host_info($link);
     ````
     <copy><?php
 require_once "config.php";
-$query = "SELECT mysql_version FROM sys.version;";
+$query = "select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking
+where booking.passenger_id = passenger.passenger_id
+and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong')
+and booking.price > 400.00 group by firstname, lastname;";
 if ($stmt = $link->prepare($query)) {
-    $stmt->execute();
-    $stmt->bind_result($mysql_version);
-    printf("mysql_version");
+   $stmt->execute();
+   $stmt->bind_result($firstname,$lastname,$count_bookings);
+   echo "<table>";
+        echo "<tr>";
+        echo "<th>Firstname</th>";
+        echo "<th>Lastname</th>";
+        echo "<th>Count</th>";
+    echo "</tr>";
+
     while ($stmt->fetch()) {
-        printf( $mysql_version);
-    }
+        echo "<tr>";
+           echo "<td>" . $firstname ."</td>";
+           echo "<td>" . $lastname . "</td>";
+           echo "<td>" . $count_bookings . "</td>";
+        echo "</tr>";
+     }
+
     $stmt->close();
 }
 ?>
+
 </copy>
     ````
 
 6.	From your local  machine connect to dbhwtest.php
 
-    Example: http://129.213.167..../dbhwtest.php  
+    Example: http://129.213.167..../dbtest.php  
 
 ## **STEP 15:**   – Create and Oracle Analytic Cloud
 
