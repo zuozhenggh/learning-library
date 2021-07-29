@@ -1,92 +1,84 @@
-# Title of the Lab
+# Publish a Web App
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab shows you how to publish your web app by merging your changes to the project's default branch using VB Studio.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
+When the process of reviewing your HR web application is done, you are ready to publish the application and make your changes public. Publishing an application saves your application's code to a remote branch and then to the project's default (main) branch. You can use the **Commit** and **Push** Git options in your workspace to save your changes to a remote branch (as we did in a previous lab), then use the **Merge** option to push your changes to the main. Or, you can do all of this at the click of a single **Publish** button (as we'll do in this lab).
 
-### Objectives 
+No matter how you decide to save your changes, it's a good idea to always get your code reviewed and approved before you merge it to the project's main branch. Because the main code base is meant to be stable, it is usually protected, requiring code to be reviewed through a merge request. If your project was set up to protect the main branch, merging your changes will require approval. In this lab, you'll create a merge request to review your changes, but for demonstration purposes, you'll merge the code to the main branch without approval.
 
-*List objectives for this lab using the format below*
+Once your changes are successfully merged, VB Studio automatically deploys the web application to your Development environment and creates a permanent URL to access the application.
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+## **TASK 1:** Create a Merge Request for Approval
 
-### Prerequisites (Optional)
+Now that you are ready to publish your changes to the project's main branch, let's create a merge request to get someone to sign off on your changes.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+1.  Click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png), then **HR Visual Application** in the Workspaces table.
+2.  In the header, click **Publish**.
+3.  In the Publish Changes dialog box, click **Merge After Review**.
+4.  Enter a message for your commit, select another project member as a reviewer, and click **Publish Changes**. 
 
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+    ![](images/create_mr.png)
 
+    Once the request to merge your changes from the hrbranch to the main branch is created, click **Close**. Both your reviewer and you will be notified that a new merge request has been created.
 
-*This is the "fold" - below items are collapsed by default*
+    ![](images/create_mr_result.png)
 
-## **STEP 1:** Concise Step Description
+5.  Return to the project home, then click **Merge Requests** ![Merge Requests icon](images/vbs_mergerequest_icon.png) in the left navigation. For a quick summary of the merge request, click **Details** ![Details icon](images/details_icon.png).
+6.  Click **#1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, are shown:
 
-(optional) Step 1 opening paragraph.
+    ![](images/create_mr_view.png)
 
-1. Sub step 1
+    You can't create another merge request within the Designer until your changes are merged, but you can use the **Commit** and **Push** options in the header's Git repository menu to update a merge request that's pending approval.
 
-	![Image alt text](images/sample1.png)
+## **TASK 2:** Merge Changes to the Default Branch
 
-2. Sub step 2
+Let's assume your merge request has been approved. We're now ready to merge your changes to the project's main branch in the remote repository.
 
-  ![Image alt text](images/sample1.png)
+1.  Click **Merge** on the Merge Requests page.
+2.  In the Merge dialog, enter a message, select **Delete branch** if you want to delete the branch after the merge, and click **Create a Merge Commit**.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![](images/merge_mr.png)
 
-5. Example with bold **text**.
+    The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-   If you add another paragraph, add 3 spaces before the line.
+    Once your changes are merged, VB Studio triggers the package and deploy jobs in your pipeline to deploy your web application to the Development environment. Click **Builds** ![Builds
+    icon](./img/vbs_builds_icon.png)to view the progress of your build jobs.
 
-## **STEP 2:** Concise Step Description
+    ![](images/merge_mr_result.png)
 
-1. Sub step 1 - tables sample
+## **TASK 3:** View the Deployed Application
+After your application is successfully deployed to the Development environment, you can view it from your environment's list of deployments.
 
-  Use tables sparingly:
+1.  In the left navigation, click **Environments** ![Environments icon](images/vbs_environments_icon.png), then **Deployments**.
+2.  Expand the **tutorial-hr-project** that shows the **Deployed** status, then click the **hrwebapp** application.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+    ![](images/deployed_application.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+    The application opens in a new browser tab, but without any data. While you can use an empty database in your Development environment, in this tutorial, we'll import data for the application in the next step.
 
-    - List item 1
-    - List item 2
+## **TASK 4:** Import Data to the Deployed Application
+A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the Development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
-3. Code examples
+1.  Click [this link](./files/HR_Application.zip) and download the `HR_Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.
+2.  In the Environments page, click **Actions** ![Actions icon](images/vbs_actions_icon.png) for the deployed tutorial-hr-project and select **Import Data**.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+    ![](images/deployed_application_import_data.png)
 
-4. Code examples that include variables
+3.  In the Import Data dialog box, click the upload box, select the `HR_Application.zip` file you previously downloaded, and click **Import Data**. When the import succeeds, click **Close**.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    ![](images/deployed_application_import_data_1.png)
 
-## Learn More
+4.  Refresh the **hrwebapp** application that you opened previously in a browser tab.
 
-*(optional - include links to docs, white papers, blogs, etc)*
+    The application displays the newly imported data. When you've finished using the application, close the browser tab.
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    If you now want to make changes to your application, you'll need to create a new branch off your project's main branch. You can do this in your existing workspace using the Switch Branch option in the Git repository menu. You can also clone this repository in a new workspace using the Clone From Git option on the Workspaces page and start afresh.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - August 2021

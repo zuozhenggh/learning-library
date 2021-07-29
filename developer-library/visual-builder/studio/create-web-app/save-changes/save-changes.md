@@ -7,13 +7,13 @@ This lab shows you how to save a web application's changes from your local branc
 Estimated Lab Time: 10 minutes
 
 ### Background
-While developing the HR web application, you might have noticed a dot in the header next to your Git repository in the header:
+While developing the HR web application, you might have noticed a yellow dot in the header next to your Git repository:
 
 ![](images/git_changes_badge.png)
 
 This dot indicates you've made changes in your local branch that haven't been saved to the remote branch. It's important to save your changes as often as you can, but first, let's review a few concepts.
 
-When you created a workspace early on in this workshop, you created a new branch called hrbranch, which was a copy of the master branch in the project’s Git repository. All the work you've done so far on the HR web application has been automatically saved to hrbranch, but these changes are not visible to others because hrbranch is a local branch in your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
+When you first created a workspace, you created a new branch called hrbranch, which was a copy of the default branch (main) in the project’s Git repository and contained the same set of source files initially. Since then, all the changes you've made to the HR web app have been automatically saved to hrbranch. But these changes are not visible to others because hrbranch is local to your workspace. To let others view your changes, you'll need to save your changes from the local branch in your workspace to a branch in a remote repository.
 
 Saving changes to a remote branch is a two-step process: _commit_ and _push_. The first step you'll do is "commit". A commit groups the files in your local branch that you want to save to the remote branch and provides a description of the group. Next, you'll "push" your changes. A push saves all the files in the groups that you've "committed" to the remote branch.
 
