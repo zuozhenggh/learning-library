@@ -1,4 +1,4 @@
-# Title of the lab
+# Title of the Lab
 
 ## Introduction
 

@@ -44,7 +44,7 @@ This all sounds very complicated, but using SQL pattern matching, it is very eas
 We can find the customers who watched at least 1 family genre movie during a quarter by using the SQL pattern matching function **`MATCH_RECOGNIZE`**. To map this pattern within our query, we use the following to outline what we are looking for:
 
 ```
-PATTERN (family+)</pre>
+PATTERN (family+)
 ```
 And then the pattern ID defined as follows:
 ```

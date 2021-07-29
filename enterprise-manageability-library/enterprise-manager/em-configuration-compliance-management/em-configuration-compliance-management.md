@@ -26,7 +26,7 @@ In this lab you will perform the following steps:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -387,7 +387,7 @@ A compliance standard rule is a specific test to determine if a configuration da
 
   ![](images/ecm4_db_compliance_library14.png " ")
 
-17. Go to **Compliance Results** page to check the compliance posture.
+17. Go to **Compliance Dashboard** page to check the compliance posture.
 
   ![](images/ecm4_db_compliance_results1.png " ")
 
@@ -474,7 +474,7 @@ Terminology Used in this Compliance specific workshop
 
   ![](images/ecm5_host_compliance_library10.png " ")    
 
-13. Go to Compliance Results page to check the compliance posture.
+13. Go to Compliance Dashboard page to check the compliance posture.
 
   ![](images/ecm5_host_compliance_results1.png " ")
 

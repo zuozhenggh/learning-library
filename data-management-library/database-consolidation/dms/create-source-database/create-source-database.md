@@ -25,7 +25,8 @@ In this lab, you will:
 
 The following task is *optional* if a source database is already present.
 
-1. You will need an SSH key pair for logging into your database and GoldenGate environments. If you don’t already have one, please create one. *Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
+1. You will need an SSH key pair for logging into your database and environments. If you don’t already have one, please create one.
+*Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
 
 2. In the OCI Console Menu, go to **Oracle Database > Bare Metal, VM, and Exadata**.
 
@@ -38,14 +39,14 @@ The following task is *optional* if a source database is already present.
 4. Enter the following values, otherwise leave defaults. You can adjust shapes and storage to your use case requirements and available quota.
     - Name: **SourceDB**
     - Add public SSH keys: *Upload the public key file you use.*
-    - Choose a license type: **BYOL**
+    - Choose a license type: **License Included**
     - Virtual cloud network: **VCN\_DMS\_LA** (Or your VCN name)
     - Client subnet: **Public Subnet-VCN\_DMS\_LA** (Or your subnet name)
     - Hostname prefix: **sourcedb**
 
   ![](images/name-your-source.png)
 
-  ![](images/add-ssh-byol.png)
+  ![](images/dbLT.png)
 
   ![](images/specify-network-info.png)
 
@@ -95,7 +96,7 @@ The following task is *optional* if a source database is already present.
 
 6. Go back to the **DB Systems Details** page of your database and select **Nodes** on the left-hand side **Resources** list.
 
-7. The Nodes list shows the **sourcedb** node. Note the **Public IP Address** and **Private IP Address** of the node into a notepad, in this case **129.213.162.34** and **10.0.0.3**.
+7. The Nodes list shows the **sourcedb** node. Note the **Public IP Address** and **Private IP Address** of the node into a notepad, in this case **129.146.173.28** and **10.0.0.55**.
 
   ![](images/source-db-ip-addresses.png)
 
@@ -115,8 +116,13 @@ The following task is *optional* if a source database is already present.
     ```
     <copy>mkdir /u01/app/oracle/dumpdir</copy>
     ```
+3. Connect as sysdba to alter the streams pool size:
 
-3. Set the streams pool size = 2GB
+    ```
+    <copy>sqlplus / as sysdba</copy>
+    ```
+
+3. Set the streams pool size = 2GB:
 
     ```
     <copy>alter system set streams_pool_size=2G scope=both SID='sourcedb';</copy>

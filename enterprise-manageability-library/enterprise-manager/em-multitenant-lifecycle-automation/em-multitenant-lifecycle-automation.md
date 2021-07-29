@@ -24,7 +24,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
@@ -140,7 +140,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
   ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
 
-12. In the PDB Operations section, select **Create Pluggable Databases** , Click Launch.
+12. In the PDB Operations section, select **Create New Pluggable Databases** , Click Launch.
 
   ![](images/2248640eabc0efa2fb32293ec07fb389.jpg " ")
 
@@ -186,11 +186,11 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
   ![](images/4a1835f78c064502ccac88138075133c.jpg " ")
 
-4.  In the PDB Operations section, select **Create Pluggable Databases**, Click Launch
+4.  In the PDB Operations section, select **Create New Pluggable Databases**, Click Launch
 
   ![](images/2248640eabc0efa2fb32293ec07fb389.jpg " ")
 
-5.  Select clone PDB and select source as CDB186 (if you choose any other CDB, this operation might fail). Please keep Database link box empty. Select named credentials “ORACLE”, Click Next.
+5.  Select **Clone and Existing PDB** PDB and select as source, a PDB from the CDB186 CDB (if you choose any other CDB, this operation might fail). Please keep Database link box empty. Select named credentials “ORACLE”, Click Next.
 
   ![](images/472126037592bdeca5eaa6027ebb57a3.jpg " ")
 
@@ -281,7 +281,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
 15. Once the status changes to Succeeded, Click **Databases >> View >> Expand All** and Click on Your PDB that you choose in the earlier step.
 
-16. Under Administration drop down ,click **Initialization Parameters**, then Scroll down and you will see the “open\_cursors” initialization parameter set to 400 as shown.
+16. On the Database target home page, under Administration drop down menu, click **Initialization Parameters**, then Scroll down and you will see the “open\_cursors” initialization parameter set to 400 as shown.
 
   ![](images/6b842b0948b11c52c1d56d2f9cdf1088.jpg " ")
 
