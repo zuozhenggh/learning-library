@@ -14,7 +14,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * Preview the content in a browser.
 
 
-## **STEP 1:** Install Your Text Editor 
+## Task 1: Install Your Text Editor 
 
 You can use your preferred editor, however we recommend to download either Atom or Visual Studio Code. Below, there are instructions for both.
 
@@ -40,7 +40,7 @@ To install Visual Studio Code:
 4. Drag it to the Applications folder and double-click it to launch the text editor.
   ![](./images/vscode-drag.png " ")
 
-## **STEP 2:** Install Live Server 
+## Task 2: Install Live Server 
 
 ### **Option 1: Install Atom's Live Server Package**
 
@@ -70,7 +70,7 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 3. Click "Install".
   ![](./images/ls-install.png " ")
 
-## **STEP 3:** Merge Content from Git Before You Start Editing Your Content
+## Task 3: Merge Content from Git Before You Start Editing Your Content
   Everyday before you start editing your content, ensure to do a Merge in **GitHub Desktop**.
   Merging synchronizes the content in your cloned repository with the latest content on the **upstream/master** repository and ensures that you have the most recent versions of the templates and other workshops/labs.
 
@@ -89,7 +89,7 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 
   5. When the merge is successfully completed, a **"Successfully merged upstream/master into master"** message is displayed. To push the new commits from the local clone to your forked location, click **Push origin**.
 
-    **Note**: To determine if your clone is up-to-date with **upstream/master** (production), repeat Steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with **upstream/master**".
+    > **Note:** To determine if your clone is up-to-date with **upstream/master** (production), repeat Steps 2 to 4. If both repositories are synchronized, then the following message is displayed: "This branch is up to date with **upstream/master**".
 
     ![](./images/git-hub-merge-branch-up-to-date.png " ")
 
@@ -97,12 +97,12 @@ The **atom-live-server** plugin is added to the **Packages** menu.
 
   ![](./images/git-hub-merge-fetch-origin.png " ")
 
-## **STEP 4:** Create Your Labs and Workshop Content
+## Task 4: Create Your Labs and Workshop Content
 Leverage the content from the **learning-library\sample-livelabs-templates\sample-workshop** folder to start creating lab and workshop content for your project.
 
 *For screen shots of OCI menu navigation, use the images with absolute links in **Lab 1: Provision an Instance** markdown from the sample-workshop. A preview of the images can be found **[here](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/index.html?lab=provision)** under STEP 0.*
 
-**Note**: Ensure to update your clone from the **upstream/master** repository (detailed in **STEP 2**) on a regular basis whenever we are working on the markdown files.
+> **Note:** Ensure to update your clone from the **upstream/master** repository (detailed in **STEP 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
 1. Submit your workshop to the [LiveLabs Workshop Management System](http://bit.ly/oraclelivelabs) BEFORE you begin development.  No github requests will be approved without an approved LWMS ID.
@@ -111,7 +111,7 @@ To create your lab and workshop content:
 4. Go to **learning-library\sample-livelabs-templates\sample-workshop**. This has a few lab folders, such as **analyze**, **query** etc. Every lab folder contains the following: a **files** folder, an **images** folder, and the respective `.md` file.
 5. Copy any lab folder, such as the **query** folder to your project folder. In your project folder, rename the folder **query** and the respective `.md` file within it as per your requirement.  Based on the sample **query** folder, you can create and rename as many labs (folders) and the respective `.md` files as per your requirement.
 
-  **Note**: The **files** folder within every sample lab folder is currently not required and is reserved for future use.
+  > **Note:** The **files** folder within every sample lab folder is currently not required and is reserved for future use.
   ![](./images/lab-files-folder-currently-not-nedded.png " ")
   After you copy the sample folder to your project folder, you can delete your copy of the **files** folder from your project folder.
   Your lab will look similar to this example:
@@ -142,7 +142,7 @@ To create your lab and workshop content:
 
 * Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features.
 
-## **STEP 5:** Preview Your Workshop and Labs Using Live Server
+## Task 5: Preview Your Workshop and Labs Using Live Server
 ### **Option 1: Using Atom**
 
 1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
