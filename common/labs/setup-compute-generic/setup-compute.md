@@ -404,5 +404,4 @@ Modify your stack to use fixed shapes instead.
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
+* **Last Updated By/Date** - LiveLabs Team, September 2020
