@@ -4,6 +4,8 @@
 
 In this lab, let's install Node.js in the compute instance, deploy the application and sign a row in the database from the cloud shell.
 
+Estimated Time: 10 minutes
+
 ### Objectives
 
 In this lab, you will:
@@ -11,87 +13,12 @@ In this lab, you will:
 - Install Node.js in the compute instance
 - Open Firewall for Ports
 - Download and deploy the application
+- Sign the row
 
 ### Prerequisites
 
 - Have successfully completed all the previous labs
-<!---
-## **STEP 1**: Connect to your Compute Instance
 
-There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
-
-- Oracle Cloud Shell
-- MAC or Windows CYCGWIN Emulator
-- Windows Using Putty
-
-### Oracle Cloud Shell
-
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
-
-    ![](./images/cloudshell.png " ")
-
-2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP address for your instance.
-
-    ![](./images/linux-compute-step3-11.png " ")
-4.  Enter the command below to login to your instance.    
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-    *Note: The angle brackets <> should not appear in your code.*
-    ![](./images/linux-compute-step3-12.png " ")
-5.  When prompted, answer **yes** to continue connecting.
-6.  Continue to STEP 5 on the left hand menu.
-
-### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP address for your instance.
-
-3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/cloudshellssh.png " ")
-
-    ![](./images/cloudshelllogin.png " ")
-
-    *Note: The angle brackets <> should not appear in your code.*
-
-4.  After successfully logging in, proceed to STEP 5.
-
-### Windows using Putty
-
-1.  Open up putty and create a new connection.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/ssh-first-time.png " ")
-
-    *Note: The angle brackets <> should not appear in your code.*
-
-2.  Enter a name for the session and click **Save**.
-
-    ![](./images/putty-setup.png " ")
-
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
-
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
-
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
-
-    ![](./images/putty-auth.png " ")
-
-6. The file path for the SSH private key file now displays in the Private key file for authentication field.
-
-7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session STEP.
-
-8. Click Open to begin your session with the instance.
-
-Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
---->
 ## **STEP 1:** Install Node.js in the Compute Instance
 
 Now that the virtual machine is provisioned, let us see how to  install Node.js for the Node.js application to interact with the Autonomous database rest end points.
@@ -146,17 +73,6 @@ To connect to the Autonomous Database instance from the virtual machine we need 
 
 In the Oracle Linux virtual machine, as we the Node.js running, the ports are enabled, let's download and deploy the application.
 
-<!---
-3. Download the Node.js application
-
-    ```
-    <copy>
-    wget 
-    </copy>
-    ```
-
-4.  Unzip the Node.js application.
---->
 1.  Navigate to nodejs folder.
 
     ```
@@ -165,23 +81,39 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
     </copy>
     ```
 
-2.  Open the index.js file in an editor of your choice.
+2.  Modify the index.js file with your ATP instance URL and Certificate GUID.
+
+3.  Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your ATP URL and hit `Enter`.
 
     ```
-    <copy>
-    vi index.js
-    </copy>
+    sed -i 's/atp-url/<paste your atp url>/' index.js
     ```
 
-3.  If you are using vi editor hit the letter `i` to edit and replace the line 12 apex\_server database URl with your autonomous database URL and line 45 existing cert\_guid value that you noted in previous labs.
+    Your command should look like this:
 
-    In this lab, the autonomous database URL saved is `` and the cert_guid is `` . The apex_server value is replaced with `` and the cert_guid is replaced with ``.
+    ```
+    sed -i 's/atp-url/https://c7arcf7q2d0tmld-demoatp.adb.us-ashburn-1.oraclecloudapps.com' index.js
+    ```
 
-4.  Once you have updated the values, save and quit the edit mode. If you are using vi editor press `Esc` and type `:wq` to save and exit the edit mode.
+4.  Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your ATP URL.
 
-5. Duplicate the browser tab with cloud shell window and SSH into the compute instance.
+5.  Copy and paste the below command in notepad, replace `<paste your certificate guid>` in the command below with your Certificate GUID noted earlier.
 
-6.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
+    ```
+    sed -i 's/cert-guid/<paste your certificate guid>/' index.js
+    ```
+
+    Your command should look like this:
+
+    ```
+    sed -i 's/cert-guid/C70CB0B14ADB1A50E0533D11000A1BCB/' index.js
+    ```
+
+6. Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `cert-guid` in the index.js file and replaces with your Certificate GUID.
+
+7. Duplicate the browser tab with cloud shell window and SSH into the compute instance.
+
+8.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
 
     ```
     <copy>
@@ -192,7 +124,7 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 
     If the cursor is idle which means the nodejs application is running.
 
-## **STEP 5:** Sign the row
+## **STEP 4:** Sign the row
 
 1. Navigate back to the previous cloud shell window that does not have the Node.js application running.
 

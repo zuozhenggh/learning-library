@@ -4,12 +4,13 @@
 
 In this lab you will build an application based on the data structures you built in previous labs.
 
-Estimated Time: 15 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
+In this lab, you will:
 - Create an application using the tables and data from previous labs.
 
-## **Step 1** – Creating an App
+## **STEP 1**: Creating an App
 
 1. In the App Builder menu, click **App Builder**.
 
@@ -21,11 +22,11 @@ Estimated Time: 15 minutes
 
     ![](images/new-app.png " ")
 
-## **Step 2** – Naming the App
+## **STEP 2**: Naming the App
 
 1. In the Create Application wizard, for Name enter **ACME Shop**.
  
-## **Step 3** – Add the Dashboard Page
+## **STEP 3**: Add the Dashboard Page
 
 A dashboard page is a great way to show important information using various charts. When you installed the Sample Dataset, it also created a number of views, which joins data from various tables. These views are ideal as the basis for the dashboard charts.
 
@@ -83,7 +84,7 @@ A dashboard page is a great way to show important information using various char
 
 7. Click **Add Page**.
 
-## **Step 4** – Add the Products Page
+## **STEP 4**: Add the Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Faceted Search**.
@@ -104,14 +105,14 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/fs-page.png " ")  
 
-## **Step 5** – Delete Home Page
+## **STEP 5**: Delete Home Page
 
 1. Navigate to Home Page and click on **Edit**.
 2. Click **Delete**.    
 
     ![](images/delete-page.png " ")  
 
-## **Step 6** – Add Multiple Reports
+## **STEP 6**: Add Multiple Reports
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Additional Pages**.
@@ -131,7 +132,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/multiple-reports2.png " ") 
 
-## **Step 7** – Set Multiple Reports as Administration Pages
+## **STEP 7**: Set Multiple Reports as Administration Pages
 
 1. Edit the following pages to set those as an Administration Page:
     - CLOTHING_LOOKUP
@@ -146,7 +147,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/admin-pages.png " ") 
 
-## **Step 8** – Add Manage Products Page
+## **STEP 8**: Add Manage Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Interactive Report**.
@@ -172,11 +173,11 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/ir-page2.png " ") 
 
-## **Step 9** – Set Features
+## **STEP 9**: Set Features
 
 1. Under **Features** section, check **Access Control**.
 
-## **Step 10** – Generate the App
+## **STEP 10**: Generate the App
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -189,7 +190,7 @@ Click **Run Application**.
     
     ![](images/run-app.png " ")
 
-## **Step 11** – Run the Application
+## **STEP 11**: Run the Application
 
 1. Enter your user credentials. Click **Sign In**.
 
@@ -197,16 +198,10 @@ Click **Run Application**.
 
     The new application will be displayed.
 
-## **Summary**
+
 You now know how to create an application, with numerous different page types, based on existing database objects. 
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Contributors** - 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

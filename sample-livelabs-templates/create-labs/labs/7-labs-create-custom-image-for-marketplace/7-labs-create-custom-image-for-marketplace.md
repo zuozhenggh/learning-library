@@ -101,6 +101,7 @@ This lab assumes you have:
     ```
 
 ## Task 2: Cleanup Instance for Image Capture   
+
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -130,6 +131,7 @@ This lab assumes you have:
     sudo sed -i -e 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|g' /etc/passwd
     sudo ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
     sudo ln -sf /root/bootstrap/eachboot.sh /var/lib/cloud/scripts/per-boot/eachboot.sh
+    sudo rm -f /u01/app/osa/non-marketplace-init/system-configured
     sudo rm -f /var/log/audit/audit.log
     EOF
     chmod +x /tmp/cleanup.sh
@@ -139,6 +141,7 @@ This lab assumes you have:
     ```
 
 ## Task 3: Create Custom Image   
+
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
@@ -173,5 +176,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
-* **Contributors** - - -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
