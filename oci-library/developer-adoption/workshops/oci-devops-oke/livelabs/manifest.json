@@ -17,6 +17,10 @@
         {
             "title": "Lab 2: Continuous Delivery with OCI DevOps Pipeline",
             "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline.md"
+        },   
+        {
+            "title": "Lab 3: Release resources created through the workshop",
+            "filename": "../../../labs/oci-devops-oke/devops-pipeline/cleanup.md"
         },        
         {
             "title": "Need Help?",
