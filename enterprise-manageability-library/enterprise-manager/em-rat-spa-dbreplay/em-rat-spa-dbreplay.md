@@ -1,4 +1,4 @@
-# Real Application Testing : SQL Performance Analyzer and Database Replay
+# Get Started with Real Application Testing
 ## Introduction
 Oracle Real Application Testing option enables you to perform real-world testing of Oracle Database. By capturing production workloads and assessing the impact of system changes on these workloads before production deployment, Oracle Real Application Testing minimizes the risk of instabilities associated with system changes.
 
