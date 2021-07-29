@@ -90,19 +90,19 @@ In this lab, you will:
 
     ![devops project overview](./images/devops-project-overview.png) 
 
-1. Create your Artifact. In the bottom of the page, click `Add artifact` under Latest artifacts section.
+1. Create your Artifact. In the bottom of the page, click `Add artifact` under Latest artifacts section and the Add Artifacts page will be presented.
     ![devops add artifact](./images/devops-add-artifact-button.png) 
+    ![devops add artifact form](./images/devops-add-artifact-form.png) 
 
-1. Fill ou the form with the following data:
+1. In the Name field, enter `fulfillment-deployment.yaml`.
 
-    |Property Name|Property Value|
-    |--|--|
-    |Name|fulfillment-deployment.yaml|
-    |Type|Kubernetes Manifest|
-    |Artifact Source|Inline|
-    |Value|Paste the content below|
-    |Replace parameters used in this artifact|Yes, substitute placeholders|
+1. In the Type selector, select `Kubernetes Manifest`.
+    ![devops add artifact select type](./images/devops-add-artifact-type.png) 
 
+1. The `Artifact source` selector will show up in the form, then select `Inline`.
+    ![devops add artifact inline](./images/devops-add-artifact-inline.png) 
+
+1. The `Value` text field should also show up. Paste the content from the K8s Deployment manifest file below. You can leave the `Replace parameters used in this artifact` selector with the default value `Yes, substitute placeholders`.
     
     ```yaml
     apiVersion: apps/v1
@@ -158,37 +158,13 @@ In this lab, you will:
     ```
 
     Before saving it, if you look at the code carefully, you will notice that we are not using a hardcoded container image tag. We specified a [parameter](https://docs.oracle.com/en-us/iaas/devops/using/configuring_parameters.htm) `${mushop_fulfillment_version}` that represents the container image tag and can be defined by the DevOps pipeline itself.
-
-    Here is the snippet
-    ```
-    spec:
-      containers:
-        - name: fulfillment
-          image: "iad.ocir.io/idi2cuxxbkto/oci-cloud-native-mushop/mushop-fulfillment:${mushop_fulfillment_version}"
-          imagePullPolicy: IfNotPresent
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-    ```
     
-    
-    Here is the resulting Artifact. Click on `Add` to save it.
+    Here is how the Artifact form should look like. Click on `Add` to save it.
     ![devops fulfillment artifact](./images/devops-fulfillment-artifact-deploy.png) 
 
-1. Let's repeat this operation for the following Artifacts:
+1. Repeat this process for the following Artifacts:
 
-    > fulfillment-service.yaml
-
-    |Property Name|Property Value|
-    |--|--|
-    |Name|fulfillment-service.yaml|
-    |Type|Kubernetes Manifest|
-    |Artifact Source|Inline|
-    |Value|Paste the content below from `fulfillment-service.yaml`|
-    |Replace parameters used in this artifact|Yes, substitute placeholders|
-
-  
+    > fulfillment-service.yaml  
     ```yaml
     apiVersion: v1
     kind: Service
@@ -210,19 +186,9 @@ In this lab, you will:
     ![devops fulfillment service artifact](./images/devops-fulfillment-artifact-svc.png) 
 
 
-    > nats-deployment.yaml
 
-    |Property Name|Property Value|
-    |--|--|
-    |Name|nats-deployment.yaml|
-    |Type|Kubernetes Manifest|
-    |Artifact Source|Inline|
-    |Value|Paste the content below from `nats-deployment.yaml`|
-    |Replace parameters used in this artifact|Yes, substitute placeholders|
-
-  
+    > nats-deployment.yaml  
     ```yaml
-    ---
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -270,16 +236,6 @@ In this lab, you will:
 
 
     > nats-service.yaml
-
-    |Property Name|Property Value|
-    |--|--|
-    |Name|nats-service.yaml|
-    |Type|Kubernetes Manifest|
-    |Artifact Source|Inline|
-    |Value|Paste the content below from `nats-service.yaml`|
-    |Replace parameters used in this artifact|Yes, substitute placeholders|
-
-  
     ```yaml
     apiVersion: v1
     kind: Service
@@ -317,7 +273,7 @@ At the end, you will have the following artifacts:
 In the next steps, we are going to design a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
 
-## **STEP 3**: Create DevOps Pipeline
+## **STEP 2**: Create DevOps Pipeline
 
 Let's create a DevOps pipeline for publishing the mushop fulfillment service and its dependencies. This is going to publish multiple artifacts to our OKE environment. 
 
@@ -332,7 +288,7 @@ Let's create a DevOps pipeline for publishing the mushop fulfillment service and
 
     ![Create devops pipeline](./images/devops-create-pipeline.png)
 
-1. Before start designing the pipeline stages, we need to create the parameter we used in the Artifact. Click on Parameter tab and enter the following data:
+1. Before start designing the pipeline stages, we need to create the parameter we used in the Artifact. Click on Parameters tab and enter the following data:
 
     |Name|Default Value|Description|
     |--|--|--|
@@ -427,7 +383,7 @@ As the result, we have the following DevOps Pipeline:
 
 ![fulfillment pipeline](./images/devops-pipeline-fulfillment-final.png)
 
-## **STEP 4**: Deploy Fulfillment Service to OKE
+## **STEP 3**: Deploy Fulfillment Service to OKE
 
 You can run a pipeline directly from the OCI Console or you can build integrations with the API, CLI or some external integrations. 
 
@@ -452,7 +408,7 @@ You can run a pipeline directly from the OCI Console or you can build integratio
     kubectl get deploy -w
     ```
 
-## **STEP 5**: (Optional) Test Fulfillment Service
+## **STEP 4**: (Optional) Test Fulfillment Service
 
 
 1. Open up Cloud Shell, and let's use a nats client using the following command:
