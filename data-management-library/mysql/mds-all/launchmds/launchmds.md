@@ -6,7 +6,7 @@
 
 In this hands-on workshop, you will be introduced to MySQL Database Service (MDS), a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure. You will learn how to create and use three different instances of MySQL Database Service Systems, Standalone, High Availability, and HeatWave,  in a secure Oracle Cloud Infrastructure environment.
 
-Estimated Lab Time: 5 hours
+Estimated Lab Time: 6 hours
 
 
 ### Objectives
