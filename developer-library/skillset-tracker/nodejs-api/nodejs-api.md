@@ -21,9 +21,9 @@ To complete this lab, you must have:
 * An OCI Account.
 * A tenancy where you have the resources available to provision a Linux Instance.
 * An existing compartment and a VCN in which the Instance will reside.
-* **Lab 4: Autonomous JSON Database & SODA Collections**
-* **Lab 5: Build an OracleJET Web Application** -> **STEP 1: Creating a Virtual Cloud Network**
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+* **Lab 3: Autonomous JSON Database & SODA Collections**
+* **Lab 4: Build an OracleJET Web Application** -> **STEP 1: Creating a Virtual Cloud Network**
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
 ## **STEP 1:** Creating a Linux Instance in OCI
 
@@ -35,7 +35,7 @@ To complete this lab, you must have:
 
   ![create instance form](./images/create-instance-form.jpg)
 
-3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
+3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH Keys**.
 
   ![add SSH key to instance](./images/create-instance-form-ssh-key.jpg)
 
@@ -150,7 +150,7 @@ To complete this lab, you must have:
     </copy>
     ```
 
-5. Open OCI Console and navigate to the Autonomous Database created in **Lab 4: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
+5. Open OCI Console and navigate to the Autonomous Database created in **Lab 3: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
 
 6. After downloading the wallet to you local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
 
@@ -202,7 +202,7 @@ To complete this lab, you must have:
 
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
-  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
 The final structure of the project you are going to create will look as in the picture below.
 
@@ -417,7 +417,7 @@ The final structure of the project you are going to create will look as in the p
 
     ![Running app in browser](./images/running-application-in-browser.png)
 
-9. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 4: Autonomous JSON Database & SODA Collections**.
+9. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 3: Autonomous JSON Database & SODA Collections**.
 
     ```
     <copy>
