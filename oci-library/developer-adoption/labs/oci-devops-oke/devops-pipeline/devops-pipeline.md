@@ -65,7 +65,7 @@ Pipeline Parameters are names of placeholders that exist in DevOps resources. Th
 
 ---
 
-Estimated Lab time: 30 minutes
+Estimated time: 30 minutes
 
 ### Objectives
 
@@ -93,7 +93,7 @@ In this lab, you will:
 1. Create your Artifact. In the bottom of the page, click `Add artifact` under Latest artifacts section.
     ![devops add artifact](./images/devops-add-artifact-button.png) 
 
-1. Fill ou the form with the following data:
+1. Fill out the form with the following data:
 
     |Property Name|Property Value|
     |--|--|
@@ -317,7 +317,7 @@ At the end, you will have the following artifacts:
 In the next steps, we are going to design a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
 
-## **STEP 3**: Create DevOps Pipeline
+## **STEP 2**: Create DevOps Pipeline
 
 Let's create a DevOps pipeline for publishing the mushop fulfillment service and its dependencies. This is going to publish multiple artifacts to our OKE environment. 
 
@@ -427,7 +427,7 @@ As the result, we have the following DevOps Pipeline:
 
 ![fulfillment pipeline](./images/devops-pipeline-fulfillment-final.png)
 
-## **STEP 4**: Deploy Fulfillment Service to OKE
+## **STEP 3**: Deploy Fulfillment Service to OKE
 
 You can run a pipeline directly from the OCI Console or you can build integrations with the API, CLI or some external integrations. 
 
@@ -452,7 +452,7 @@ You can run a pipeline directly from the OCI Console or you can build integratio
     kubectl get deploy -w
     ```
 
-## **STEP 5**: (Optional) Test Fulfillment Service
+## **STEP 4**: (Optional) Test Fulfillment Service
 
 
 1. Open up Cloud Shell, and let's use a nats client using the following command:
@@ -487,4 +487,10 @@ You can run a pipeline directly from the OCI Console or you can build integratio
     Order 1 is fulfilled
     ```
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+* **Author** - Lucas Gomes
+* **Contributors** -  Jonathan Schreiber, Rishi Johari, Tim Graves
+* **Last Updated By/Date** - Lucas Gomes, July 2021
