@@ -54,9 +54,12 @@ Follow the steps below to install GoldenGate, or optionally you can select â€œIâ
 2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs â€“ this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
     ```
-    <copy>cd /u01/gg4hadoop123010
-    tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar </copy>
+    <copy>
+    cd /u01/gg4hadoop123010
+    tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar
+    </copy>
     ```
+
     **type**
 
     ```
@@ -66,7 +69,9 @@ Follow the steps below to install GoldenGate, or optionally you can select â€œIâ
 
     <copy>exit</copy>
     ```
+
     **type**
+
     ```
     <copy>labmenu</copy>
     ```

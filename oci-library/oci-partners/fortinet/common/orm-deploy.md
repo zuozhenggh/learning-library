@@ -57,7 +57,9 @@ You will be using Terraform to create your lab environment.
 
     Enter/Select the following minimum information. Some information may already be pre-populated. Do not change the pre-populated info.
 
-    **Compute Compartment**: Select Compute Compartment from drop-down where you would like to create compute instances.  **Please Note**: This use-case recommends selecting either your root compartment or your own compartment which is one level below root to support HA failover on FortiGate instances. 
+    **Compute Compartment**: Select Compute Compartment from drop-down where you would like to create compute instances.  
+    
+    **Note**: This use-case recommends selecting either your root compartment or your own compartment which is one level below root to support HA failover on FortiGate instances. 
 
     **Availability Domain:** Select Appropriate AD from drop-down. 
 

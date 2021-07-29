@@ -1,4 +1,4 @@
-# Title of the lab
+# Title of the Lab
 
 ## Introduction
 
@@ -21,7 +21,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: <what is the action in this step>
+## Task 1: <what is the action in this step>
 
 (optional) Step 1 opening paragraph.
 
@@ -45,7 +45,7 @@ In this lab, you will:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** <what is the action in this step>
+## Task 2: <what is the action in this step>
 
 1. Sub step 1 - tables sample
 

@@ -91,5 +91,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm
+* **Contributors** - LiveLabs Team
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

@@ -45,6 +45,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
 - **Last Updated By** - Rene Fontcha, February 2021
 

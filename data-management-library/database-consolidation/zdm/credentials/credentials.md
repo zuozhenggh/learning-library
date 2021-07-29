@@ -1,8 +1,9 @@
-# Creating the Target Autonomous Database Credential
+# Creating the Target Autonomous Database Credentials
 
 ## Introduction
 In this lab, you will be:
   * Creating an authentication token for your Oracle Cloud Infrastructure (OCI) user profile.
+  * Creating an object storage bucket.
   * Logging into your migration target autonomous database and creating the credential file you will need to connect to your OCI user.
   * Creating movedata\_user in the autonomous database.
 
@@ -18,8 +19,23 @@ Estimate Lab Time: 15 minutes
 3. Set a description and click generate token and make sure to write down the token displayed as you cannot get access to it again. If you lose the token you will need to generate a new one.
     ![Token Description](./images/token-desc.PNG)
 
-## **STEP 2: Log Into SQL on the Autonomous Database**
-1. In your OCI Dashboard: select the hamburger menu, Oracle Database. Autonomous Database.
+## **STEP 2: Create an Object Storage Bucket**
+
+1. You will need an object storage bucket for your data during the migration as an intermediary point before being transferred to your target autonomous database. In your OCI Dashboard: select the hamburger menu, Storage -> Buckets.
+    ![Bucket Path](./images/bucket-path.PNG)
+
+2. Select 'Create Bucket'.
+    ![Create Bucket](./images/create-bucket.PNG)
+
+3. Fill in the details. We will be using the name ZDMBucket. Make sure Default Storage Tier is 'Standard' and Encryption is 'Encrypt using Oracle managed keys'. Other than these 3 fields, leave the rest blank and click 'Create'.
+    ![Bucket Form](./images/bucket-form.PNG)
+
+4. On the Details page the two most important pieces of information for us are the bucket name and namespace which we will need later.
+    ![Bucket Page](./images/bucket-page.PNG)
+
+## **STEP 3: Log Into SQL on the Autonomous Database**
+
+1. In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
     ![Autonomous Menu](./images/menu-auton.PNG)
 
 2. Select the target database.
@@ -34,26 +50,27 @@ Estimate Lab Time: 15 minutes
     ![Select SQL](./images/select-sql.PNG)
 
 
-## **STEP 3: Run Credential Script**
+## **STEP 4: Run Credential Script**
 1. In the script below replace `<oci_user>`, `<oci_tenancy>`, `<api_private_key>`, and `<fingerprint>` with their respective information and paste it into SQL.
-  * `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
-  * `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in command prompt as 'zdmuser':
+
+    `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
+
+    `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in command prompt as 'zdmuser':
 
     ```
     <copy>
-    cd ~
-    cd .oci
+    cd /u01/app/zdmhome/.oci
     cat oci_api_key.pem
     </copy>
     ```
 
-    SQL Script
+    SQL Script. When pasting the API private key only paste the contents, don't include "Begin RSA Private Key" and "End RSA Private Key"
 
     ```
     <copy>
     begin
     DBMS_CLOUD.CREATE_CREDENTIAL (
-    'DEF_CRED_NAME',
+    'CredentialZDM',
     '<oci_user>',
     '<oci_tenancy>',
     '<api_private_key>',
@@ -66,7 +83,7 @@ Estimate Lab Time: 15 minutes
 2. Select 'Run Script'.
     ![Credential Script](./images/cred-script.PNG)
 
-## **STEP 4: Create User in Autonomous**
+## **STEP 5: Create User in Autonomous Database**
 1. You will need to pre-create movedata\_user in the autonomous database.
 
 2. Test to make sure the user doesn't already exist by running the drop command. It is fine if it fails:

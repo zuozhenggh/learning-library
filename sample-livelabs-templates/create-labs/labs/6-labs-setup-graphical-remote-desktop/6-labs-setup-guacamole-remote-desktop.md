@@ -12,7 +12,7 @@ This lab will show you how to deploy and Configure a self-contained Guacamole In
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Deploy Guacamole
+## Task 1: Deploy Guacamole
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -326,7 +326,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Configure Desktop   
+## Task 2: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings some settings to ensure a better user experience.
 
 1. Launch your browser to the following URL
@@ -369,7 +369,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     ![](./images/desktop-display-1.png " ")
     ![](./images/desktop-display-2.png " ")
 
-## **STEP 3**: Add Applications to Desktop   
+## Task 3: Add Applications to Desktop   
 For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
 
 1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*
@@ -393,7 +393,7 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-## **STEP 4**: Enable Copy/Paste from Local to Remote Desktop (Guacamole clipboard)
+## Task 4: Enable Copy/Paste from Local to Remote Desktop (Guacamole clipboard)
 Perform the tasks below and Add them to any workshop guide to instruct users on how to enable clipboard on the remote desktop for local-to-remote copy/paste.
 
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
