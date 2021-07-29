@@ -12,7 +12,7 @@ This lab will show you how to prepare a host for custom image capture and create
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Configure Preserved Static hostname
+## Task 1: Configure Preserved Static hostname
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -100,7 +100,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Cleanup Instance for Image Capture   
+## Task 2: Cleanup Instance for Image Capture   
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -138,7 +138,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 3**: Create Custom Image   
+## Task 3: Create Custom Image   
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
