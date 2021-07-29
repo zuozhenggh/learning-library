@@ -73,27 +73,27 @@ An agent configuration provides instructions for both the Logging Service and a 
 
     ![Custom Log](images/Config-Details-1.png)
 
-In **GROUP TYPE** select Dynamic Group, and in the **GROUP** box select the group created in Lab 1: devlivedg. 
+    In **GROUP TYPE** select Dynamic Group, and in the **GROUP** box select the group created in Lab 1: devlivedg. 
 
-![Custom Log](images/Config-Details-2.png)
+    ![Custom Log](images/Config-Details-2.png)
 
-**Note** Your screen may give you the option to create a policy to allow resources to use the logging service.  This was already performed in Lab 1, but go ahead and click **Create** to dismiss the prompt.
+    **Note** Your screen may give you the option to create a policy to allow resources to use the logging service.  This was already performed in Lab 1, but go ahead and click **Create** to dismiss the prompt.
 
 4.  In the **Configure Log Inputs** section choose **INPUT TYPE** Log Path, **INPUT NAME**  okeapplogs, and for **FILE PATHS** use the following path:
 
-```
-/var/log/pods/default_*/*/*.log  
-```
+    ```
+    /var/log/pods/default_*/*/*.log  
+    ```
 
-This is the default filepath for application containers in the current versions of OKE. If you wish to include all container logs (including system and service containers) then remove "default_" from the path and use:
+    This is the default filepath for application containers in the current versions of OKE. If you wish to include all container logs (including system and service containers) then remove "default_" from the path and use:
 
-```
-/var/log/pods/*/*/*.log  
-```
+    ```
+    /var/log/pods/*/*/*.log  
+    ```
 
-Your Agent configuration should look like the following:
+    Your Agent configuration should look like the following:
 
-![Custom Log](images/Config-Details-3.png)
+    ![Custom Log](images/Config-Details-3.png)
 
 6.  Click **Create Custom Log** to complete the task.  You are ready to move on to the next step.
 
@@ -226,8 +226,3 @@ Enter search keywords or phrases in the **Custom Filters** box and review the re
 ## Acknowledgements
 * **Author** - Randall Barnes, Solution Architect, OCI Observability Team
 * **Last Updated Date** - July, 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

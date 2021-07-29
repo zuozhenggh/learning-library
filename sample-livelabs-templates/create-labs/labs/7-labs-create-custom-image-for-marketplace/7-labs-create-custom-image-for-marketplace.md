@@ -100,7 +100,13 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Cleanup Instance for Image Capture   
+## **STEP 2**: Setup Labs and Use Cases (Fresh Setup)  
+
+Now that your desired hostname has been configured to persist across reboots and incarnations of a custom image, you may now proceed to deploy the product(s), labs and use cases that will be covered by the workshop. This step is critical for many products to function properly when instances get generated from the derived custom image.
+
+In summary, for any host dealing with products where the hostname is captured at installation and saved as part of the product settings, a static hostname as described in the previous step must be configured. Otherwise the product will malfunction. e.g. Weblogic, DB listener, and many more
+
+## **STEP 3**: Cleanup Instance for Image Capture   
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -130,6 +136,7 @@ This lab assumes you have:
     sudo sed -i -e 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|g' /etc/passwd
     sudo ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
     sudo ln -sf /root/bootstrap/eachboot.sh /var/lib/cloud/scripts/per-boot/eachboot.sh
+    sudo rm -f /u01/app/osa/non-marketplace-init/system-configured
     sudo rm -f /var/log/audit/audit.log
     EOF
     chmod +x /tmp/cleanup.sh
@@ -138,7 +145,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 3**: Create Custom Image   
+## **STEP 4**: Create Custom Image   
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
@@ -174,4 +181,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 * **Contributors** - - -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

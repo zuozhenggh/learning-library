@@ -675,7 +675,7 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
         tomcat-admin-webapps \
         tomcat-webapps \
         nginx
-
+    EOF
     chmod +x /tmp/remove-guac.sh
     /tmp/remove-guac.sh
 

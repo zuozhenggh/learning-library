@@ -317,7 +317,7 @@ Set up the files required for configuring data import (or data ingestion) and He
     ![](images/11-opc.png)
 
 
-3. Switch back to the terminal session and Generate a keystore inside the *oiri-cli* container.
+3. Generate a keystore inside the *oiri-cli* container.
 
     ```
     <copy>docker exec -it oiri-cli /bin/bash</copy>
@@ -438,7 +438,7 @@ Set up the files required for configuring data import (or data ingestion) and He
 
     ![](images/17-wallet.png)
 
-    Note: If the verification of wallet fails, use *oiri-cli --config=/app/data/conf/config.yaml wallet update* to fix the entry reported having an issue. 
+    Note: If the verification of wallet fails, use *oiri-cli --config=/app/data/conf/config.yaml wallet update* command to fix the entry reported having an issue
 
 ## **STEP 6:** Install the OIRI Helm chart
 

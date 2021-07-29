@@ -61,6 +61,7 @@ This task is required to get the wallet from the database and put the dump file 
     6. Directory for keys: press **Enter** for the default.
     7. Name for the key: press **Enter** for the default.
     8. Passphrase: press **Enter** for no passphrase.
+    
 
     You should see an output like:
 
@@ -92,6 +93,7 @@ This task is required to get the wallet from the database and put the dump file 
     4. Click **Paste Public Key**.
     5. Paste the key copied above.
     6. Click **Add**.
+    
 
     You can verify that the fingerprint generated matches the fingerprint output of the configuration.
 
