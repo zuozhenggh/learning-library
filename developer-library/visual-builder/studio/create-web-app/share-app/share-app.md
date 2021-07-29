@@ -1,92 +1,55 @@
-# Title of the Lab
+# Share a Web App
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab shows how you can share your web app with others using Visual Builder Studio.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### Background
+So far in this workshop, you've built the HR web application to show employees, their departments, and locations. You've also added navigation between the different pages and buttons to view, edit, and delete employee records and departments. Now that your work in the Designer is more or less complete, you can share the application with your team and ask for feedback.
 
-### Objectives 
+Sharing an application, much like the preview option you've used in previous tutorials, lets you try out the application without committing its code to the project's Git repository (in this case, the changes you've made since your last push). But unlike a preview, which is visible only to you, a share action deploys your application to the Development environment and creates a URL that you can pass along to your team. Your team can then test the behavior of your shared application and identify where it can be improved.
 
-*List objectives for this lab using the format below*
+You can share your application as many times as you want to let your teammates test your changes and make sure the application works as expected.
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+## **TASK 1:** Share the Application
 
-### Prerequisites (Optional)
+Share the HR web application you've created to create a URL that your team can use to try out the application.
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+1.  If necessary, click **Workspaces** ![Workspaces icon](images/vbs_workspaces_icon.png)and **HR Visual Application** in the Workspaces table. Then, click **Web Applications** ![Web Applications icon](images/web_applications_icon.png) to get to the **hrwebapp**.
+2.  Click **Menu** ![Options menu icon](images/options_header_menu.png) in the header and select **Share**.
 
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+    ![](images/share.png)
+
+3.  In the Share Visual Application dialog box, you'll see the URL that the hrwebapp will be shared to. (If you want, you can click the Copy icon to copy this URL, but we'll see how to get the URL after the application is shared.) Select **Use development data (my workspace)** to copy Department, Location, and Employee data from your workspace to the Development environment. Click **Share**.
+
+    ![](images/share_application.png)
+
+    A brief confirmation appears, and the application is deployed to your Development environment.
 
 
-*This is the "fold" - below items are collapsed by default*
+## **STEP 2:** View the Shared Application
 
-## **STEP 1:** Concise Step Description
+Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 
-(optional) Step 1 opening paragraph.
+1.  Click **Menu** ![Options menu icon](images/options_header_menu.png) and select **Open Shared Applications**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
 
-1. Sub step 1
+    ![](images/open_shared_application.png)
 
-	![Image alt text](images/sample1.png)
+    The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-2. Sub step 2
+    ![](images/open_shared_application_result.png)
 
-  ![Image alt text](images/sample1.png)
+2.  Make a note of the application's URL to share with your team, then close the browser tab.
+3.  To view the same shared application now deployed to your Development environment, click **Go to Project page** ![Go to Project Page icon](images/go_to_project_home_icon.png) in the header, then click **Environments** ![Environments icon](images/vbs_environments_icon.png) and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![](images/shared_deployment.png)
 
-5. Example with bold **text**.
+    If you click **hrwebapp**, the application opens in a new browser tab, similar to the shared application view from within the Designer. When you've finished using the application, close the browser tab.
 
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+    Project team members like Clara Coder can also open the shared application from the list of deployments, as long as their membership includes access to the Environments page.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - August 2021
