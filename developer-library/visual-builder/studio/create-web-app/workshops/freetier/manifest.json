@@ -13,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Prerequisites",
+            "title": "Provision Instances",
             "filename": "../../provision/provision.md"
         },
         {
