@@ -4,7 +4,7 @@
 
 In this lab we will use the Oracle Analytics Cloud instance we created in the first lab. Oracle Analytics Cloud is embedded with machine learning that will provide you intelligent insights using natural language generation that automatically creates smart textual descriptions of visualizationsand, and the capability to instantly visualize your data which helps oraganizations with root cause investigation, troubleshooting and decision-making process.
 
-### Objectives:
+**Objectives:**
 - Learn how to create your Analytics dashboards using Oracle Analytics Cloud on MySQL Database Service powered by HeatWave
 
 **Time estimated: x mins**
