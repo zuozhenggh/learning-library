@@ -1,27 +1,23 @@
-# Deploy GoldenGate for Big Data using Microservices
+# Deploy GoldenGate for Big Data
 
 ## Introduction
 
-In this lab you will install GoldenGate for Big Data using Microservices in the GG Target Home.
+In this lab you will install GoldenGate for Big Data in the GG Target Home.
 
-*Estimated Lab Time*:  60 minutes
+*Estimated Lab Time*:  30 minutes
 
-**Source GGBD Workshop Architecture**
   ![](./images/image110_1.png " ")
 
-**Target GGBD Microservices Architecture**
-  ![](./images/classic_ggma.png " ")
-
 ### Objectives
-- Deploy GoldenGate for Big Data using Microservices
+- Deploy GoldenGate for Big Data
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
-    - Lab: Prepare Setup
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
 ## **STEP 0:** Running your Lab
@@ -104,8 +100,6 @@ Oracle GoldenGate for Big Data includes Oracle GoldenGate for Java, which enable
 
 Oracle GoldenGate for Big Data’s real-time data streaming platform also allows customers to keep their big data reservoirs, or big data lakes, up to date with their production systems.
 
-Oracle GoldenGate 21.1 Microservices can be used to setup a replication environment by a mix of web page, shell scripts and Rest API interfaces. All labs will use shell scripts to facilitate the building of the environment, at the same time provide insight into how to use the web pages and AdminClient via a Windows or Linux command line
-
 ## Summary
 
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
@@ -121,9 +115,3 @@ You may now *proceed to the next lab*.
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

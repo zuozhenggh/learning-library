@@ -18,11 +18,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
 ## **STEP 0:** Running your Lab
-
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -49,7 +50,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-  
+
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
@@ -186,8 +187,8 @@ Now that the source side is setup, let us configure GG on the target side (for C
     ```
     ```
     <copy>start mgr</copy>
-    ```
-    ```
+    ````
+
     <copy>info all</copy>		
     ```
     ```
@@ -292,9 +293,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/goldengate-on-premises). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
