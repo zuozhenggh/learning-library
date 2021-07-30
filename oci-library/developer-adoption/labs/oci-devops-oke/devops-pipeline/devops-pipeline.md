@@ -1,12 +1,12 @@
-# Continuous Delivery with OCI DevOps Pipeline
+# Continuous Deployment with OCI DevOps Pipeline
 
 ## Introduction
 
-So far, as SRE/Platform Engineer, we were responsible to provision all the infrastructure resources used by this project. In this lab exercise, we are going to deploy a Java Cloud Native application (Mushop fulfillment microservice ) into the Kubernetes Cluster on Oracle Container Engine for Kubernetes (OKE) through a Continuous Delivery pipeline using OCI DevOps.
+So far, as SRE/Platform Engineer, we were responsible to provision all the infrastructure resources used by this project. In this lab exercise, we are going to deploy a Java Cloud Native application (Mushop fulfillment microservice ) into the Kubernetes Cluster on Oracle Container Engine for Kubernetes (OKE) through a Continuous Deployment pipeline using OCI DevOps.
 
 ![Mushop Fulfillment service](./images/mushop-topology.png)
 
-Up to this point, the Container Image built by our development team is already available in the Oracle Cloud Infrastructure Registry. As SREs, we are responsible for designing and updating the Continuous Delivery workflow in the OCI DevOps service to release the application to our customers. 
+Up to this point, the Container Image built by our development team is already available in the Oracle Cloud Infrastructure Registry. As SREs, we are responsible for designing and updating the Continuous Deployment workflow in the OCI DevOps service to release the application to our customers. 
 
 ![OCI DevOps](./images/devops-cd.png)
 
