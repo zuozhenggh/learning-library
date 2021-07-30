@@ -398,6 +398,7 @@ Let's quickly recap what has been covered in this lab:
 
 Please *proceed to the next lab*.
 
+
 ## **Acknowledgements**
 
 - **Author** - Keith Laker, ADB Product Management
