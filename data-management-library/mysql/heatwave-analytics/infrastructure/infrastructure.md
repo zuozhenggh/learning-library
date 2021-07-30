@@ -4,7 +4,7 @@
 
 In this lab we will build up the infrastructure that we will use to run the rest of the workshop on top. the main three elements that we will be creating are a Virtual Cloud Network which helps you define your own data centre network topology inside the Oracle Cloud by defining some of the following components (Subnets, Route Tables, Security Lists, Gateways, etc.), bastion host which is a compute instance that serves as the public entry point for accessing a private network from external networks like the internet, and finally we will create an Oracle Analytics Cloud instance which is embedded with machine learning, that helps organizations to discover unique insights faster with automation and intelligence.
 
-## Objectives:
+### Objectives:
  
 -	Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
 -	Create a compute instance as a bastion host
