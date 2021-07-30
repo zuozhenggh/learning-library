@@ -23,7 +23,10 @@ Estimated time: 20 minutes
 
 In this step, you will create an application and set up Fn CLI in the OCI Cloud Shell.
 
-1. Under Solutions and Platform, select **Developer Services** and click **Functions**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Applications** under the **Functions** section.
+
+    ![Functions](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-functions-applications.png " ")
+
 1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click **Create Application**.
 1. For name, enter `etl-app`.

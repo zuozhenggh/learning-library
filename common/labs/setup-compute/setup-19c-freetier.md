@@ -334,7 +334,7 @@ Reload your browser
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Senior Director, DB Product Management
+- **Author** - LiveLabs Team, Senior Director, DB Product Management
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
 - **Last Updated By/Date** - Kamryn Vinson, June 2021
 

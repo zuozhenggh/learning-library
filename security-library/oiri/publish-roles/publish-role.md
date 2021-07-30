@@ -16,10 +16,14 @@ In this lab, you will:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Deploy OIRI in the local Kubernetes node
-      - Lab 3: Import data into OIRI from OIG
-      - Lab 4: Role Mining
+      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
+      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
+      - Lab : Environment Setup
+      - Lab : Initialize Environment
+      - Lab : Deploy Kubernetes Cluster and Start OIG Server
+      - Lab : Deploy OIRI in the local Kubernetes Node
+      - Lab : Import Data into OIRI from OIG
+      - Lab : Role Mining
 
 ## **STEP 1:** Publish a candidate role
 
@@ -104,6 +108,8 @@ The task is now approved and is no longer displayed.
 
 7. Select all the requests and click on *Actions* and select *Approve*. Enter appropriate comments and click on *OK*.
 
+    *Note : To Select all requests, select any one request and then press ctrl+A*
+
     ![](images/15-publish-role.png)
 
     ![](images/16-publish-role.png)
@@ -121,6 +127,8 @@ The task is now approved and is no longer displayed.
 11. Click on the role to review the members and access policy associated with the role.
 
     ![](images/19-publish-role.png)
+
+    ![](images/20-publish-role.png)
 
 
 ## **Summary**

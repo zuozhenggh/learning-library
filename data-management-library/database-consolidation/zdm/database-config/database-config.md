@@ -3,9 +3,11 @@
 ## Introduction
 In this lab, you will connect to your source database as system database administrator, create two database users to complete the migration, bestow them with the necessary privileges, and create a sample table to track through the migration.
 
-This workshop will utilize a source database instance that will double as the Zero Downtime Migration (ZDM) host instance. You will be using the database instance you created in lab 1 for this purpose. In other use cases you can have a dedicated host instance separate from your source and target databases that you run the ZDM migration through.
-
 The purpose of creating a database user and loading it with sample data is to simulate the user and data we are looking to migrate in a practical application.
+
+ZDM will be running on the same server as the source database for the purpose of this workshop and resource conservation.
+
+Disclaimer: The Zero Downtime Migration service host should be a dedicated system, but it can be shared for other purposes, as it is in this lab; however, the Zero Downtime Migration service host should not have Oracle Grid Infrastructure running on it.
 
 Estimate Lab Time: 15 minutes
 
@@ -61,7 +63,7 @@ Estimate Lab Time: 15 minutes
 
     ![Stream Status After](./images/stream-status-after.PNG)
 
-6. Switch to the session of your container database ORCLPDB.
+6. Switch the session of your container database to ORCLPDB.
 
     ```
     <copy>
@@ -70,14 +72,16 @@ Estimate Lab Time: 15 minutes
     ```
 
 ## **STEP 2: Creating Users for Your Database Migration**
-1. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
+1. Disclaimer: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.  
+
+2. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
     ```
     <copy>
     create user orcl_user identified by WELcome123ZZ;
     </copy>
     ```
 
-2. Grant the user privileges it will need for the migration.
+3. Grant the user privileges it will need for the migration.
     ```
     <copy>
     grant create session to orcl_user;
@@ -89,14 +93,14 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-3. Create the user 'movedata_user'. We are using the password `WELcome123ZZ` again for ease and consistency. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
+4. Create the user 'movedata_user'. We are using the password `WELcome123ZZ` again for ease and consistency. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
     ```
     <copy>
     create user movedata_user identified by WELcome123ZZ;
     </copy>
     ```
 
-4. Grant the user privileges it will need for the migration.
+5. Grant the user privileges it will need for the migration.
 
     ```
     <copy>
@@ -135,15 +139,23 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-3. View the sample tables.
+3. Check for the table name 'test1'.
 
     ```
     <copy>
     select table_name from user_tables;
+    </copy>
+    ```
+
+4. View the sample table.
+
+    ```
+    <copy>
     select * from test1;
     </copy>
     ```
-4. Exit SQL.
+
+5. Exit SQL.
 
     ```
     <copy>
@@ -151,7 +163,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-5. Exit 'oracle' to 'opc'.
+6. Exit 'oracle' to 'opc'.
 
     ```
     <copy>

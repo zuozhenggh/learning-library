@@ -60,6 +60,12 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 * Create a SQL command Job
 * Create Database Backup Job using Wizard
 
+#### 6. Real Application Testing
+* Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
+* Capture workload of 18c Database
+* Run Database Replay of 18c Database Workload in 19c Database
+* Run Consolidation Replay in 2 separate Pluggable Databases
+
 ## Learn More
 Managing Your Hybrid Database Fleet
 [](youtube:TUaAweMX3S4)

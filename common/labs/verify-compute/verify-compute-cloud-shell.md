@@ -112,5 +112,5 @@ There may be several reasons why you can't login to the instance.  Here are some
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm, Tom McGinn
-* **Last Updated By/Date** - Kay Malcolm, May 2021
+* **Contributors** - LiveLabs Team, Tom McGinn
+* **Last Updated By/Date** - LiveLabs Team, May 2021

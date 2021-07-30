@@ -2,26 +2,19 @@
 
 ## Introduction
 
-In this lab, you will provision a Oracle linux compute instance and log into the instance. Then provision the 21c Oracle Autonomous Database (ADB) Always Free instance and connect to the database as new user.
-<!---
-Then you will create a bucket, Oracle Wallet, generate auth token and connect to Autonomous Transaction Processing instance using SQL Developer Web and create a database credential for the users in SQL Developer Web to access the object store.
---->
-Estimated Lab Time: 20 minutes
+In this lab, you will provision a Oracle linux compute instance and log into the instance. Then provision the 21c Oracle Autonomous Database (ADB) instance and connect to the database as new user.
+
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
 
 - Provision a Oracle Linux compute instance and SSH into the instance
-- Provision an Oracle 21c Autonomous Transaction Processing instance 
-- Create a new user using Database Actions
-- Connect to ATP database using SQL Developer Web
-<!---
-- Create a bucket, Oracle Wallet and auth token
-- Connect to ATP with the SQL Developer Web
-- Create a Database Credential for the Users
-- Create a Database user
---->
+- Provision an Oracle 21c Autonomous Transaction Processing instance
+- Create a new database user using Database Actions
+- Connect to ATP database as a new user from SQL Developer Web
+
 ### Prerequisites
 
 - You must have logged in to your own cloud account or a LiveLabs account.
@@ -119,90 +112,6 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 8. Click Open to begin your session with the instance.
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
-<!---
-## **STEP 3:** Create a Bucket
-
-1. Click on the hamburger menu, search for Storage and click on **Buckets** under Object Storage & Archive..
-
-2. Make sure you are in the right compartment where your ATP and compute instance are provisioned and click **Create Bucket**.
-
-3. Give your bucket a name, leave the defaults and click **Create**. In this lab, we name the bucket **demo-bucket**.
-
-4. Once the bucket is created, click on the bucket and make note of the **Bucket Name** and **Namespace**.
-
-## **STEP 4:** Create Oracle Wallet in Cloud Shell
-
-There are multiple ways to create an Oracle Wallet for Autonomous Database. We will be using Oracle Cloud Shell as this is not the focus of this workshop. To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
-
-1.  Click the Cloud Shell icon to start up Cloud Shell.
-
-      ![](./images/cloud-shell.png " ")
-
-2.  Use your **Autonomous Database OCID** to create the Oracle Wallet. You will be setting the wallet password to the same value as the ADB admin password for ease of use: **WElcome123##** Note: This is not a recommended practice and just used for the purposes of this lab.
-
-3.  Copy the command below and paste it into Cloud Shell. *Do not hit enter yet.* Give a space and paste the OCID you noted earlier in step 1 and fill in the autonomous database OCID.
-
-    ````
-    <copy>
-    cd ~
-    oci db autonomous-database generate-wallet --password WElcome123## --file 21c-wallet.zip --autonomous-database-id  </copy> ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx
-    ````
-
-    Your command should look like this
-
-    ```
-    <copy>
-    oci db autonomous-database generate-wallet --password WElcome123## --file 21c-wallet.zip --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.abuwcljr2euv6kvtnbb32lttjidobc6mryiinvmt3zgp5dxk3edypohoz3zq
-    </copy>
-    ```
-
-4.  Click **Enter**. Be patient, it takes about 20 seconds. The wallet file will be downloaded to your cloud shell file system in /home/yourtenancyname
-
-    ![](./images/wallet.png " ")
-
-5. Enter the list command in your cloud shell to verify the *21c-wallet.zip* was created.
-
-    ````
-    <copy>
-    ls
-    </copy>
-    ````
-
-    ![](./images/21cwallet.png " ")
-
-## **STEP 5:** Create Auth Token
-
-1.  Click on the person icon in the upper right corner.
-
-2.  Select **User Settings**
-
-    ![](./images/select-user.png " ")
-
-3.  Copy the **Username**.
-
-4.  Under the **User Information** tab, click the **Copy** button to copy your **User OCID**.
-
-    ![](./images/copy-user-ocid.png " ")
-
-5.  Create your auth token with description `demotoken`. Copy the below command and paste it on the cloud shell. * Do not hit enter.*  Give a space and paste your user OCID.
-
-    *Note: If you already have an auth token, you may get an error if you try to create more than 2 per user*
-
-    ````
-    <copy>
-    oci iam auth-token create --description demotoken --user-id </copy> ocid1.user.oc1..axxxxxxxxxxxxxxxxxxxxxx
-    ````
-
-    Your command should look like this
-
-    ```
-    oci iam auth-token create --description demotoken --user-id ocid1.user.oc1..aaaaaaaaofiwfzgmn6jqsk3lbpr3vhppx2ganh4rdw64s5ssvut5etzehleq
-    ```
-
-    ![](./images/token.png " ")
-
-6.  Identify the line in the output that starts with "token" and copy the value for the **token** somewhere safe, you will need it in step 7.
---->
 
 ## **STEP 3**: Provision an ATP Instance
 
@@ -256,17 +165,9 @@ There are multiple ways to create an Oracle Wallet for Autonomous Database. We w
     ![Database instance homepage.](./images/provision.png " ")
 
     ![Database instance homepage.](./images/provision-2.png " ")
-<!---
-10. From the Autonomous Database Details page, make note of your ATP instance **OCID** by clicking on the **Copy** button. You will need it later in this lab.
---->
+
 ## **STEP 4:** Create a New User Using Database Actions
-<!---
-1. Navigate to your ATP, click on the hamburger menu, search for **Oracle Database** and click **Autonomous Transaction Processing**.
 
-2. Click on the Display Name of your ADB instance to navigate to your ADB instance details page. In this lab, click on the provisioned **DEMOATP** instance.
-
-    *Note:* If you can't find your ADB instance, ensure you are in the correct region, compartment and have chosen the right flavor of your ADB instance.
---->
 1. On the DEMOATP instance details page, click on the **Tools** tab, select **Database Actions**, a new tab will open up.
 
 2. Provide the **Username - ADMIN** and click **Next**.
@@ -296,54 +197,10 @@ There are multiple ways to create an Oracle Wallet for Autonomous Database. We w
     https://c7arcf7q2d0tmld-demoatp.adb.us-ashburn-1.oraclecloudapps.com
     ```
 
-## **STEP 5:** Connect to ATP as a New User
+## **STEP 5:** Connect to ATP as a New User from SQL Developer Web
 
 1. Click on the hamburger menu of the Oracle Database Actions and select **SQL** under Development.
-<!---
-7. Run the below query in the worksheet to grant the DEMOUSER privileges to create directories in a schema.
 
-    ```
-    <copy>
-    GRANT CREATE ANY DIRECTORY TO DEMOUSER;
-    </copy>
-    ```
-
-8. To access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Transaction Processing. This information is only usable for your user schema.
-
-9.  Copy and paste this the code snippet in to SQL Developer worksheet. Specify the credentials for your Oracle Cloud Infrastructure Object Storage service:
-
-	- Credential name: Description of the auth token. In this example, the auth token is created with the description - `demotoken` in step 5.
-	- Username: The username will be the OCI Username. you noted in step 5. Replace the `<username>` with the OCI Username you noted in step 5.
-	- Password: The password will be the OCI Object Store Auth Token. Replace the `<token>` with the token you generated in step 5.
-
-	```
-	<copy>
-	BEGIN
-  		DBMS_CLOUD.CREATE_CREDENTIAL(
-    		credential_name => 'demotoken',
-    		username => '<username>',
-    		password => '<token>'
-  		);
-	END;
-	/
-	</copy>
-	```
-
-    Your procedure should look like this
-
-    ```
-    BEGIN
-      DBMS_CLOUD.CREATE_CREDENTIAL(
-        credential_name => 'demotoken',
-        username => 'admin@gmail.com',
-        password => 'Sl(Y5Lc90JqxrceFS)N7'
-      );
-    END;
-    /
-    ```
-
-10. Click **Run Script** button to run the script. Once the PL/SQL procedure is completed successfully, you are ready to load data from the Object Store.
---->
 2. Click on the the URL of the SQL Developer Web tab, replace `admin` with **demouser** and hit Enter.
 
 3. On the Database Actions sign in page, provide the **Username - DEMOUSER**, **Password - WElcome123##** and click **Sign In**.
