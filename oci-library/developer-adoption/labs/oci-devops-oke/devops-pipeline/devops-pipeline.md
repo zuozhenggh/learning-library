@@ -349,7 +349,7 @@ This is going to publish multiple artifacts to our OKE environment.
 
     ![devops stage](./images/devops-stage-fulfillment-deploy.png)
 
-    *Note*: The target environment will only be available after the Stack job in the Lab 1 provision the OKE environment. If you got up to this point while the Stack was running the job, check the logs and status of the Stack job.
+    *Note*: The target environment will only be available after the Stack job in `Lab 1` completed provisioning the OKE environment. If you got up to this point while the Stack was still running the job, you may have to wait a bit. You can check the logs and status of the Stack job in ORM.
 
 1. Here is how the Deployment pipeline shows up after defining the first Stage:
 ![devops pipeline deploy carts](./images/devops-pipeline-fulfillment.png) 
