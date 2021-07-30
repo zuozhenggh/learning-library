@@ -36,6 +36,16 @@ You should have a text editor, where you can paste the commands and URLs and mod
     ```
 
     ![Clone Repository](images/3.png)
+    
+    Note: Cloud Shell has only JDK8 so we need to use older version of the examples. This is the reason why we need to execute the following extra steps to chose the older version of the examples:
+    
+    ```bash
+    <copy>cd examples</copy>
+    ```
+    
+    ```bash
+    <copy>git checkout -b development caa8a8e58ca8e574a08093ce623e245948d4f291</copy>
+    ```
 
 3. To view the files inside the Bob's Book application, copy the following command and paste it in the *Cloud Shell*.
 
