@@ -12,7 +12,7 @@ This lab will show you how to prepare a host for custom image capture and create
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Configure Preserved Static hostname
+## Task 1: Configure Preserved Static hostname
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -100,13 +100,8 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Setup Labs and Use Cases (Fresh Setup)  
+## Task 2: Cleanup Instance for Image Capture   
 
-Now that your desired hostname has been configured to persist across reboots and incarnations of a custom image, you may now proceed to deploy the product(s), labs and use cases that will be covered by the workshop. This step is critical for many products to function properly when instances get generated from the derived custom image.
-
-In summary, for any host dealing with products where the hostname is captured at installation and saved as part of the product settings, a static hostname as described in the previous step must be configured. Otherwise the product will malfunction. e.g. Weblogic, DB listener, and many more
-
-## **STEP 3**: Cleanup Instance for Image Capture   
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -145,7 +140,8 @@ In summary, for any host dealing with products where the hostname is captured at
     </copy>
     ```
 
-## **STEP 4**: Create Custom Image   
+## Task 3: Create Custom Image   
+
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
@@ -180,5 +176,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
-* **Contributors** - - -
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

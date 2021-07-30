@@ -72,7 +72,6 @@ You may now [proceed to the next lab](#next).
 ## Agradecimentos
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
+- **Contributors** - LiveLabs Team, John Peach
 - **pt_BR Translated by** - André Ambrósio, April 2021
 - **Last Updated By** - André Ambrósio, May 2021
-

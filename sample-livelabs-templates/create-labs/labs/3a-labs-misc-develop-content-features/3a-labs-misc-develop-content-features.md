@@ -34,7 +34,7 @@ Here up some resources front and center in case you missed them in the last lab:
 * An IDE, such as Atom or Visual Studio Code.
 * A local web server such as **atom-live-server** for Atom or **Live Server** for VSC.
 
-## **STEP 1:** Linking to Absolute Path Images (on github)
+## Task 1: Linking to Absolute Path Images (on github)
 Rather than pointing to images within your lab folder or workshop directory with a relative path, you can just as easily point your images to URLs. This comes in handy if you reuse an image a lot, the code you write to display it in markdown will always be the same no matter where the image is in relation to markdown. Using absolute image paths is also handy if you need to keep an image updated, as changing the destination file image will affect every instance where you pointed an image to it. This is the same concept and implementation as using absolute paths for common labs in your manifest.json files.
 
 *For screen shots of OCI menu navigation, use the images with absolute links in **Lab 1: Provision an Instance** markdown from the sample-workshop. A preview of the images can be found **[here](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/index.html?lab=provision)** under STEP 0.*
@@ -52,7 +52,7 @@ Rather than pointing to images within your lab folder or workshop directory with
   ![](./images/touch-cloud.png " ")
 
 
-## **STEP 2:** Using Conditional Formatting
+## Task 2: Using Conditional Formatting
 If your workshop supports multiple instance types, but the bulk of the content stays the same, then conditional formatting can save you a lot of work. Most commonly, if you have differences between the "Free Tier" and "LiveLabs" (Green button) versions such as provisioning a database instance in Free Tier and just checking that it's created properly for LiveLabs, then conditional formatting will allow your workshop to use a singular markdown for both. This will save you immense effort and prevent accidental oversights if you need to update your workshop in the future, since you won't have to maintain a duplicate markdown.
 
   1. Conditional formatting is using the "if" conditional to choose what to display in your markdown, based on an additional attribute "type" you attach to a lab element in your manifest.json file. Take a look at this example to understand the components involved in making conditional formatting work. 
@@ -73,7 +73,7 @@ If your workshop supports multiple instance types, but the bulk of the content s
 
   ![](./images/conditional-note.png " ")
 
-## **STEP 3:** Linking within a Workshop (Hotlinks)
+## Task 3: Linking within a Workshop (Hotlinks)
 Sometime you may want to link to something within your lab or workshop.  Most commonly, this is used in pages to link from the introduction or objectives to a specific section in the lab. This section in particular is hot linked from the introduction to drive home that point. We'll take a look at the "Need Help?" lab to demonstrate how to incorporate this in your workshop.
 
 1. First, take a look at the format of the hotlink. It's the same as when you construct a regular hyperlink, except that you preface the URL section with a **#** and then you use a seemingly condensed version of the section name you want to link to.
@@ -85,7 +85,7 @@ Sometime you may want to link to something within your lab or workshop.  Most co
   ![](./images/hotlink-element.png " ")
 
 
-## **STEP 4:** Adding Videos
+## Task 4: Adding Videos
 Adding videos is very similar to adding images. We most commonly see videos added in the introductions for labs to familiarize the audience with the product before they dive into the workshop. 
 
 1. Take a look at this example of a video linked in the introduction of a workshop. 
@@ -98,7 +98,7 @@ Adding videos is very similar to adding images. We most commonly see videos adde
 
   ![](./images/youtube-url.png " ")
 
-## **STEP 5:** Scaling an Image
+## Task 5: Scaling an Image
 Without using image scaling, all the screen shots you take for your workshop will be of different sizes (unless you're a master of making pixel perfect crops). To remedy this, we HIGHLY recommend you to stick with a scaling and use it throughout your workshop. This will make all the images scale to the same width (if possible) and contribute to a more consistent and polished feel. You can override the default image scaling by applying these manual controls below. **We highly recommend you use #4's format by default.**
 
 1. This is a demo image with no image sizing applied:
@@ -136,7 +136,7 @@ Without using image scaling, all the screen shots you take for your workshop wil
 5. As a final note, it's in your best interest to take as large of a picture as you can and then scale it down using with the parameters above. LiveLabs allows the magnification of images so if you have larger base image, the audience will have more clarity.
 
 
-## **STEP 6:** Using the LintChecker
+## Task 6: Using the LintChecker
 The LintChecker is a great javascript function for QAing that you should take advantage of. It is especially handy in catching some of the more easily overlooked errors such as indentation and syntax errors.
 
 1. To enable the LintChecker, just tack on **?qa=true** to the url. You can do this from the github.io webpage or through LiveServer in your chosen IDE.
@@ -146,7 +146,7 @@ The LintChecker is a great javascript function for QAing that you should take ad
   A box will pop up with any errors that the LintChecker caught. Keep in mind that these are not an exhaustive list of errors, they are only the ones that the function has been programed to catch.  Also keep in mind that even though it lists something as an "error", if it was done intentionally by you, you can by all means just ignore it.
 
 
-## **STEP 7:** Case Sensitivity
+## Task 7: Case Sensitivity
 
 **THIS IS IMPORTANT.** The majority of us use Windows and MacOS which are **Case Insensitive** systems. This means that Windows and MacOS considers "OrAcLe.PnG" to be the same as "oracle.png" or "Oracle.PNG" for file structure. Github and github pages are **Case Sensitive**, and **do** make that distinction. 
 
