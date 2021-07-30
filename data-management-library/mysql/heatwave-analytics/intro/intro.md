@@ -10,7 +10,7 @@ At the end of the workshop you will be able to run some queries on a sample data
 ![](./images/Intro.png)
 
 
-**Key Objectives:**
+**Objectives:**
 
 -	Learn how to deploy MySQL Database Service (MDS) DB System with HeatWave.
 -	Learn how to enable an HeatWave cluster to MDS DB System.
@@ -26,7 +26,9 @@ At the end of the workshop you will be able to run some queries on a sample data
 -  A Cloud tenancy where you have a compartment provisioned in.
   
 
-# Workshop Overview
+
+
+## Workshop Overview
 
 **[Get Started: Sign Up for your Oracle Cloud Free Tier](signup/signup.md)**
 
