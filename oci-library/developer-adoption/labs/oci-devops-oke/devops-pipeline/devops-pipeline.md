@@ -330,7 +330,8 @@ This is going to publish multiple artifacts to our OKE environment.
     - Fulfillment Deployment
 
     They should deploy the Artifacts in the following order:
-    | (1)Nats Deployment -> (2)Nats Service -> (3)Fulfillment Deployment -> (4)Fulfillment Service
+
+    (1) Nats Deployment -> (2) Nats Service -> (3) Fulfillment Deployment -> (4) Fulfillment Service
 
     However, to illustrate the flexibility you have to design your pipeline, we are going to start creating the Stage responsible for deploying the Fulfillment Deployment Artifact (3).
 
@@ -347,13 +348,15 @@ This is going to publish multiple artifacts to our OKE environment.
 
     ![devops stage](./images/devops-stage-fulfillment-deploy.png)
 
+    *Note*: The target environment will only be available after the Stack job in the Lab 1 provision the OKE environment. If you got up to this point while the Stack was running the job, check the logs and status of the Stack job.
+
 1. Here is how the Deployment pipeline shows up after defining the first Stage:
 ![devops pipeline deploy carts](./images/devops-pipeline-fulfillment.png) 
   
 1. Next, let's create a single stage for deploying the NATS Artifact, which should deploy before the Fulfillment Deployment stage. That means, we should create the stage on top of the fulfillment deployment. Click on the plus sign on top of fulfillment-deployment stage, then Add Stage.
 ![devops pipeline add new nats stage](./images/devops-fulfillment-add-new-stage.png) 
 
-1. Select Apply manifest to your Kubernetes cluster and click Next.
+1. Select `OKE:Default (Apply manifest to your Kubernetes cluster)` and click Next.
 
 1. In the next window, enter the following data then click on `Add`:
 
@@ -368,14 +371,16 @@ This is going to publish multiple artifacts to our OKE environment.
 
     ![nats stage](./images/nats-stage.png)
 
-    Note that we are grouping the Artifacts into the same Stage. This will make the DevOps service to submit a request to the Kubernetes Server-Side Apply API in the order the Artifacts were created in the table.
+    Note that we are grouping the Artifacts into the same Stage. This makes the DevOps service to submit a request to the Kubernetes Server-Side Apply API in the order we created the Artifacts in the table. 
+    In case of failure, the DevOps service will roll back *all* Artifacts defined in this Stage, ensuring you have an atomic transaction - all artifacts deploy successfully or fail.
+    
 
     ![nats stage pipeline](./images/nats-stage-pipeline.png)
 
 1. Finally, we are going to create a stage for the fulfillment service. Click on the plus sign underneath fulfillment-deployment, then Add Stage.
     ![fulfillment service new stage](./images/fulfillment-service-new-stage.png)
 
-1. Next, Select `Apply manifest to your Kubernetes cluster` and click Next.
+1. Next, Select `OKE:Default (Apply manifest to your Kubernetes cluster)` and click Next.
 
 1. In the next window, enter the following data then click on `Add`:
 
@@ -412,13 +417,14 @@ You can run a pipeline directly from the OCI Console or you can build integratio
 Finally, click on Start Manual Run to trigger the pipeline.
 
 
-1. You can follow the progression of the pipeline directly from the Deployment page. Every stage that is running/completes change its color to yellow or red in case of failure. You can also visualize some logs from Kubernetes OKE cluster:
+1. You can follow the progression of the pipeline directly from the Deployment page. Every stage that is running change its color to yellow. After completes the stage, it turns into green in case of success or red in case of failure. You can also visualize some logs from Kubernetes OKE cluster on the right hand side of the page:
   ![Deployment Progress](./images/devops-pipeline-deploy-progress.png)
 
-1. After completing the pipeline, all stages should be green.
+1. After completing the pipeline, all stages should be green and the status of the Deployment `Succeeded`.
   ![Devops pipeline succeed](./images/devops-pipeline-succeed.png)
+  
+1. (Optional) You can also use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) to monitor the status of the Kubernetes resources you are deploying using `kubectl`, the [Kubernetes cli](https://kubernetes.io/docs/reference/kubectl/overview/). You first need to [set up a connection with your cluster](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#cloudshelldownload), and then use `kubectl` to monitor the deployment of the resources:
 
-1. (Optional) You can also use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) to monitor the progress of your pipeline using `kubectl` cli. You first need to [set up a connection with your cluster](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengdownloadkubeconfigfile.htm#cloudshelldownload), and then use `kubectl` to monitor the deployment of the resources:
     ```
     kubectl get svc -w
     ```
@@ -427,10 +433,16 @@ Finally, click on Start Manual Run to trigger the pipeline.
     kubectl get deploy -w
     ```
 
+1. You can check the history of all your Deployment Pipelines in the left hand side menu, by clicking on `Deployments`:
+
+    ![Devops pipeline deployments](./images/devops-pipeline-deployments.png)
+
+
 ## **STEP 4**: (Optional) Test Fulfillment Service
 
+The application was deployed for the first time, all stages in the Deployment pipeline are green, now you want to test the application without having to deploy any additional component (e.g. Ingress). The easiest way to do this is connecting to the OKE cluster via Cloud Shell and use a NATS client running in a K8s pod to generate some messages to the NATS service which can then be consumed by the Fulfillment service API.
 
-1. Open up Cloud Shell, and let's use a nats client using the following command:
+1. Open up Cloud Shell, and let's create a nats client pod using the following command:
     ```
     kubectl run -i --rm --tty nats-box --image=synadia/nats-box --restart=Never
     ```
@@ -447,7 +459,7 @@ Finally, click on Start Manual Run to trigger the pipeline.
     ```
     Type `exit` to destroy the pod.
 
-1. Let's use a pod with `curl` available to query our microservice. Run the command to create a pod: 
+1. Let's use another pod with `curl` available to query our Fulfillment service. Run the command to create a pod: 
     ```bash
     kubectl run -i --rm --tty curl --image=radial/busyboxplus:curl --restart=Never
     ```
@@ -457,9 +469,12 @@ Finally, click on Start Manual Run to trigger the pipeline.
     curl http://fulfillment:80/fulfillment/1
     ````
 
+1. If you get the response like in the example below that means your service is up and running and is able to process requests.
+
     Response:
     ```
     Order 1 is fulfilled
-    ```
+    ```    
+    Type `exit` to destroy the pod.
 
 You may now [proceed to the next lab](#next).
