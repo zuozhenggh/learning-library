@@ -5,7 +5,7 @@
 
 HeatWave accelerates MySQL queries by 400X using massively parallel processing to provide real-time analytics. So in this lab will run queries with HeatWave enabled and with out and compare the result.
 
-## Objectives:
+### Objectives:
 -  Import data into MDS and load tables to HeatWave
 -  Execute queries leveraging HeatWave and compare the query execution time with and without HeatWave enabled
 
