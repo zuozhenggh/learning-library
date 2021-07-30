@@ -25,7 +25,7 @@ In this lab, you will be guided through the following tasks:
     * Create Airportdb Database and Import Data
     * Add HeatWave Cluster to MySQL HeatWave
     * Load Airportdb Data into HeatWave
-    * Runn Queries in HeatWave
+    * Run Queries in HeatWave
 - Install Apache and PHP and create PHP / MYSQL Connect Application
 - Create Oracle Analytics Cloud and connect to MySQL HeatWave
 - Create a Bastion Host and connect to MySQL Standalone
@@ -364,9 +364,9 @@ In this lab, you will be guided through the following tasks:
     Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
     ![MDS](./images/04mysql06-3.png" ")
 
-9. Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
+9. Configure hardware keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) Set to **4000**
+    Data Storage Size (GB) Keep default value:  **1024**
     ![MDS](./images/04mysql07-3.png" ")
 
 19. Configure Backups, "Enable Automatic Backups"
@@ -434,7 +434,7 @@ In this lab, you will be guided through the following tasks:
 10. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as Provisioning during the creation
     ![COMPUTE](./images/05compute07.png " ")
 
-11.	The state Running indicates that the Virtual Machine is ready to use. 
+11.	The state Runing indicates that the Virtual Machine is ready to use. 
 
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
@@ -442,7 +442,7 @@ In this lab, you will be guided through the following tasks:
 ## **TASK 6:** Connect to MySQL Database - Standalone
 MySQL Database Service Standalone has daily automatic backups and is resilient to failures because it leverages Block Volumes to store user data. Consequently, it offers the same durability, security, and performance guarantees. Automatic and manual backups are replicated to another availability domain and can be restored in the event of a disaster or user error. Data loss is limited by the last successful backup.
 
-1. Linux ad Mac users  use Terminal 
+1. Linux and Mac users  use Terminal 
 
    Windows 10 users use Powershell
 
@@ -813,7 +813,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ````
     ![Connect](./images/11loadcluster02.png " ")
 
-## **TASK 12:**  Runn Queries in HeatWave
+## **TASK 12:**  Run Queries in HeatWave
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -841,7 +841,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     
 6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
- 7. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
+ 7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
 
     ````
     <copy>EXPLAIN SELECT
@@ -919,7 +919,7 @@ LIMIT 10;</copy>
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Running additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
+ 12. Runing additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
    
     (Example  **SET SESSION use secondary engine=On;**) 
 
@@ -1175,7 +1175,7 @@ if ($stmt = $link->prepare($query)) {
 
     Example: http://129.213.167..../dbtest.php  
 
-## **TASK 15:**  Create and Oracle Analytic Cloud
+## **TASK 15:**  Create an Oracle Analytic Cloud
 
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following document:
 Analytics - https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html
@@ -1286,7 +1286,7 @@ Click **MDS-DB** to open the DB System details page
 
 Select one of the following actions:
 * Start: Starts a stopped DB System. After the DB System is started, the Stop action is enabled and the Start option is disabled.
-* Stop: Stops a running DB System. After the DB System is powered off, the Start action is enabled.
+* Stop: Stops a Runing DB System. After the DB System is powered off, the Start action is enabled.
 * Restart: Shuts down a DB System, and restarts it.
 
 **Note**  Stopping a DB System stops billing for all OCPUs associated with it. 
