@@ -56,6 +56,11 @@
                 "description": "This lab shows you how to create multiple domains for Oracle GoldenGate Veridata",
                 "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
             }
-
+            ,
+            {
+                "title": "Lab 4: Configure Auto Partitions",
+                "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
+                "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
+            }
        ]
   }
