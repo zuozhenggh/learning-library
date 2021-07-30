@@ -20,15 +20,15 @@
         },
         {
             "title": "Lab 2: Deploy FortiGate Firewalls",
-            "filename": "../../fortigate-ha-active-passive/deploy-fortigate.md"
+            "filename": "../../ha-active-passive/deploy-fortigate.md"
         },
         {
             "title": "Lab 3: Configure FortiGate Firewalls",
-            "filename": "../../fortigate-ha-active-passive/config-fortigate.md"
+            "filename": "../../ha-active-passive/config-fortigate.md"
         },
         {
             "title": "Lab 4: Traffic Validation",
-            "filename": "../../fortigate-ha-active-passive/traffic-validation.md"
+            "filename": "../../ha-active-passive/traffic-validation.md"
         },
         {
             "title": "Lab 5: Tear Down Environment",
