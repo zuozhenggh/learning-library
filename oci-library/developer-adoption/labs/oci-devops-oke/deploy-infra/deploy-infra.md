@@ -8,7 +8,7 @@ If you are not familiar with Terraform, this is an open-source tool that allow y
 
 ![Diagram](./images/sre-infrastructure-onboarding.png)
 
-Estimated Lab time: 30 minutes
+Estimated time: 30 minutes
 
 ### Objectives
 
@@ -340,4 +340,10 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 
 Note: in case of quota/service limit/permission issues, Apply job will fail and partial resources will be provisioned. Click on Destroy button will trigger the job to remove provisioned resources. 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+* **Author** - Lucas Gomes
+* **Contributors** -  Jonathan Schreiber, Rishi Johari, Tim Graves
+* **Last Updated By/Date** - Lucas Gomes, July 2021

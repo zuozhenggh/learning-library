@@ -38,7 +38,7 @@ If you prefer you can simply **import** the notebook and then execite each parag
    Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.  
    Note where it is downloaded. 
 
-   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/dN9WXYJWoyjV89xlRm-ARrhQi7GOwzHu0nt7NjAn6eN6RTEHKT5bt67HyxjRUIyx/n/c4u03/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
+   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/t51ZRZZCaEDUD9dehr6legEN9nKGpZGVgtzHZPnBhl0RistNzBJnck_fQCSTQr_h/n/c4u04/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
 
 
 2. Click on the `Notebooks` menu icon and then on the Import Notebook icon on the top right.  

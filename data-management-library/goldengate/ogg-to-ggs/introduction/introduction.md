@@ -2,29 +2,35 @@
 
 ## About this Workshop
 
-Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on premise installation or Marketplace image, then use this set of labs to help guide you through the steps to move data from Oracle GoldenGate to OCI GoldenGate.
+Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on premise installation or Marketplace image, then use this set of labs to help you move data from Oracle GoldenGate to OCI GoldenGate.
 
 Estimated Lab Time: 20 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
-Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that uses Oracle GoldenGate Microservices to help you replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
+
+Oracle Cloud Infrastructure GoldenGate is a fully-managed cloud service that uses Oracle GoldenGate Microservices to replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
+* Create OCI GoldenGate resources
 * Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
 * Create and run a distribution path on Oracle GoldenGate
 
 ### Prerequisites
-To successfully complete this LiveLab, you must have the following:
-* An on premise or Marketplace Oracle GoldenGate installation
-* A Trail File to send to OCI GoldenGate
-* An OCI GoldenGate deployment created, with public IP enabled
+
+To successfully complete this LiveLab, you must have an on premise or Marketplace Oracle GoldenGate installation.
+
+*Note: If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ### Lab Breakdown
 
-* Lab 1: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 2: Send a Trail File from Oracle GoldenGate to OCI GoldenGate
+* Lab 1: Set up your environment
+* Lab 2: Create OCI GoldenGate resources
+* Lab 3: Connect Oracle GoldenGate to Autononous Transaction Processing
+* Lab 4: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
+* Lab 5: Send the Oracle GoldenGate Trail File to OCI GoldenGate
+* Lab 6: (Optional) Connect to the Admin Client
 
 ## Learn More
 
@@ -34,7 +40,5 @@ To successfully complete this LiveLab, you must have the following:
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Werner He, Database Product Management
-* **Last Updated By/Date** - April 2021
-
-
+* **Contributors** -  Werner He and Julien Testut, Database Product Management
+* **Last Updated By/Date** - July 2021

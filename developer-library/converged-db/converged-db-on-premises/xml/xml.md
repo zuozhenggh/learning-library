@@ -36,15 +36,15 @@ This lab assumes you have:
 
 ## **STEP 1**: Connect to the Pluggable Database (PDB)
 
-1. Open a terminal window and sudo to the user **oracle**
+<!-- 1. Open a terminal window and sudo to the user **oracle**
 
     ```
     <copy>
     sudo su - oracle
     </copy>
-    ```
+    ``` -->
 
-2. Navigate to the xml directory.
+1. Use a terminal window and navigate to the xml directory.
 
     ```
     <copy>
@@ -52,7 +52,7 @@ This lab assumes you have:
     </copy>
     ```
 
- 3. Set your environment.
+2. Set your environment.
 
     ```
     <copy>
@@ -60,7 +60,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. When prompted paste the following:
+3. When prompted paste the following:
 
     ```
     <copy>
@@ -68,13 +68,15 @@ This lab assumes you have:
     </copy>
     ```
 
-5. Open SQLPlus as the user appjson
+4. Open SQLPlus as the user appjson
 
     ```
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
     ```
+    ![](./images/xml_input2a.png " ")
+
 
 ## **STEP 2**: Connect to SQL Developer
 
@@ -83,7 +85,7 @@ This lab assumes you have:
   - **Name**: XML
   - **Username**: appxml
   - **Password**: `Oracle_4U`
-  - **Hostname**: PUBLIC-IP
+  - **Hostname**: localhost
   - **Port**: 1521
   - **Service name**: JXLPDB
 
@@ -152,30 +154,7 @@ This lab assumes you have:
 
 
 2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-3. Set your Oracle environment and connect to PDB as **oracle** user.
-
-    ```
-    <copy>
-    . oraenv
-    </copy>
-    ```
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-    ```
-    <copy>
-    cd /u01/workshop/xml
-    </copy>
-    ```
-    ```
-    <copy>
-    sqlplus appxml/Oracle_4U@JXLPDB
-    </copy>
-    ```
-
-    ![](./images/xml_input2a.png " ")
+3. Open a terminal window, execute the below command to insert.
 
     ```
     <copy>
@@ -198,9 +177,9 @@ This lab assumes you have:
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-2. Set your Oracle environment and connect to PDB as **oracle** user.
-
-    ```
+2. Open a terminal window, execute the below command to Update.
+ 
+    <!-- ```
     <copy>
     . oraenv
     </copy>
@@ -222,7 +201,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](./images/xml_input2a.png " ")
+    ![](./images/xml_input2a.png " ") -->
 
     ```
     <copy>
@@ -241,6 +220,14 @@ This lab assumes you have:
     ```
 
     ![](./images/xml_s5_p2.png " ")
+
+4. Switch to terminal and exit from SQLPlus.
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
 
 ## **STEP 6**: Example Queries
 

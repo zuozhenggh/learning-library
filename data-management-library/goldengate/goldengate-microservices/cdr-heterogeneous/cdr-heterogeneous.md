@@ -183,7 +183,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -271,7 +271,7 @@ To resolve the case where the source row was deleted but the target row exists. 
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -383,7 +383,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
 8. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -468,7 +468,7 @@ To resolve the case where the target row is missing. The logical resolution, and
 6. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")

@@ -1,8 +1,8 @@
-# Install Spatial Studio
+# Access Spatial Studio
 
 ## Introduction
 
-This lab walks though the process of accessing Oracle Spatial Studio (Spatial Studio) from an Oracle LiveLabs Reservation. Your environment includes Spatial Studio and an Autonomous Database. On the first login to Spatial Studio you will provide connection information for your Autonomous Database. 
+This lab walks through the process of accessing Oracle Spatial Studio (Spatial Studio) from an Oracle LiveLabs Reservation. Your environment includes Spatial Studio and an Autonomous Database. On the first login to Spatial Studio you will provide connection information for your Autonomous Database. 
 
 Estimated Lab Time: 10 minutes
 

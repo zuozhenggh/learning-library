@@ -15,7 +15,8 @@
         {
             "title": "Lab 1: Provision an ADW Instance",
             "description": "Provision a new ADW instance and connect to the database",
-            "filename": "./../../../adb-provision/adb-provision-livelabs.md"
+            "type": "livelabs",
+            "filename": "./../../../adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Need Help?",

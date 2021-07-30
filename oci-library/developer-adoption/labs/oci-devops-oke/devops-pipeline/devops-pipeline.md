@@ -67,7 +67,7 @@ Pipeline Parameters are names of placeholders that exist in DevOps resources. Th
 
 ---
 
-Estimated Lab time: 30 minutes
+Estimated time: 30 minutes
 
 ### Objectives
 
@@ -97,6 +97,7 @@ In this lab, you will:
     ![devops add artifact form](./images/devops-add-artifact-form.png) 
 
 1. In the Name field, enter `fulfillment-deployment.yaml`.
+
 
 1. In the Type selector, select `Kubernetes Manifest`.
     ![devops add artifact select type](./images/devops-add-artifact-type.png) 
@@ -477,4 +478,10 @@ The application was deployed for the first time, all stages in the Deployment pi
     ```    
     Type `exit` to destroy the pod.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
+
+## Acknowledgements
+
+* **Author** - Lucas Gomes
+* **Contributors** -  Jonathan Schreiber, Rishi Johari, Tim Graves
+* **Last Updated By/Date** - Lucas Gomes, July 2021

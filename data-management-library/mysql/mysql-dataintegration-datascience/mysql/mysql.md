@@ -84,7 +84,7 @@ In this lab, you will:
 
    ![](images/cloud_shell.png)
 
-      - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
+      - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
          <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
@@ -101,9 +101,9 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Enable HeatWave
+## **STEP 3:** Enable HeatWave (Optional)
 
-1. If you have select the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
+1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
 
 2. Go to the **Resources Menu** > **HeatWave**.
 
@@ -113,7 +113,7 @@ In this lab, you will:
 
    ![](images/mds_heatwave_add_cluster.png)
 
-4. Check the values, and click **Add HeatWave Cluster**.
+4. Leave the default values, and click **Add HeatWave Cluster**.
 
    ![](images/mds_heatwave_select_shape.png)
 

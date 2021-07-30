@@ -31,10 +31,11 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 3000           | Node JS Application                   |
 | 3001           | Node JS Application                   |
 | 3003           | Node JS Application                   |
+| 6080           | noVNC Remote Desktop                  |
 | 7007           | Graph UI                              |
 | 7101           | WebLogic Admin Console                |
 | 7102           | WebLogic Admin Console                |
-| 8080           | Tomcat (Guacamole)                    |
+| 8080           | Other Apps on Docker                  |
 | 9090           | ORDS                                  |
 | 9502           | OAS Presentation service              |
 
@@ -53,10 +54,10 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
+You may now [proceed to the next lab](#next).
+
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this lab we will rollback changes we made to production.
+We will rollback changes we made to production.
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
 
-In this lab you will revert changes made to the production environment.
+We will revert changes made to the production environment.
 
 ## **STEP 1:** Rollback
 

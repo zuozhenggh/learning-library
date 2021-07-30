@@ -250,6 +250,6 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Senior Director, DB Product Management
+- **Author** - LiveLabs Team, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
 - **Last Updated By/Date** - Didi Han, DB Product Management, May 2021

@@ -12,7 +12,7 @@ Converting to the help lab pages will allow you to only have to edit 1 or 2 Mark
 
 Implementing the help button will allow users to quickly construct an email pre-filled to direct toward the given address, as well as a pre-filled subject line that describes the workshop they are sending the email from.
 
-## **STEP 1:** Adding a Help Button
+## Task 1: Adding a Help Button
 
 [](youtube:grvsGwSkylg)
 
@@ -61,7 +61,7 @@ This is the result we want. The button bring up a pre-populated email directed t
     ````
 
 
-## **STEP 2:** Add Your "Need Help?" Lab Page to Every Workshop Using an Absolute Path 
+## Task 2: Add Your "Need Help?" Lab Page to Every Workshop Using an Absolute Path 
 
 [](youtube:YXXzJmYBs1g)
 
@@ -87,7 +87,7 @@ The database team's help pages can be found below. We recommend you have seperat
 
 ![](images/search-path.png)
 
-## **STEP 3:** Deleting Instances of the Old "Need Help?" Sections in Every Markdown
+## Task 3: Deleting Instances of the Old "Need Help?" Sections in Every Markdown
 
 [](youtube:_N3CHyrJxMk)
 

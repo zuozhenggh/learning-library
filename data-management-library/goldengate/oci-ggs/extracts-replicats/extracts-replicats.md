@@ -73,7 +73,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## **STEP 2:** Add and Run an Extract
+## **STEP 3:** Add and Run an Extract
 
 1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Extracts.
 
@@ -113,7 +113,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 3**: Add and Run the Replicat
+## **STEP 4**: Add and Run the Replicat
 
 1.  On the GoldenGate Deployment Console Home page, click the plus (+) icon for Replicats.
 
