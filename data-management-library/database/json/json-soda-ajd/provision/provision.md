@@ -16,15 +16,25 @@ In this lab, you will:
 ### Prerequisites
 
 * Logged into your Oracle Cloud Account
-* The labs work on both 19c and 21c AJD database
 
 ## **STEP 1**: Choose AJD from the Services Menu
 
-1. Login to the Oracle Cloud, as shown in the previous lab.
+1. Login to the Oracle Cloud.
+
+<if type="freetier">
 
 2. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
 
     ![Select region on the far upper-right corner of the page.](./images/region.png " ")
+
+</if>
+<if type="livelabs">
+
+2. If you are using a LiveLabs account, you need to be in the region your account was provisioned in. You can see your current default **Region** in the top, right hand corner of the page. Make sure that it matches the region on the LiveLabs Launch page.
+
+    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
+
+</if>
 
 3. Click the navigation menu in the upper left to show top level navigation choices.
 
@@ -34,12 +44,19 @@ In this lab, you will:
 
     ![Click Autonomous JSON Database](./images/adb-json.png " ")
 
-5. Use the __List Scope__ drop-down menu to select a compartment. Make sure your workload type is __JSON Database__.
+5. Use the __List Scope__ drop-down menu on the left to select a compartment. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
+    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+
+</if>
+<if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
+</if>
     ![](./images/workload-type.png " ")
 
-   *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
+<if type="freetier">
+   > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
+</if>
 
 ## **STEP 2**: Creating the AJD Instance
 
@@ -51,11 +68,23 @@ In this lab, you will:
 
 3. Provide basic information for the autonomous database:
 
+<if type="freetier">
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
+</if>
+<if type="livelabs">
+    - __Choose a compartment__ - Use the default compartment that includes your user id.
+</if>
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONDB__.
+<if type="freetier">
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__.
 
     ![Enter the required details.](./images/adb-info.png " ")
+</if>
+<if type="livelabs">
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__ and append you LiveLabs user id. For example, __JSONDB7199__.
+
+    ![](./images/adb-info-livelabs.png)
+</if>
 
 4. Choose a workload type: Select the workload type for your database from the choices:
 
@@ -72,8 +101,13 @@ In this lab, you will:
 
 6. Configure the database:
 
+    <if type="freetier">
     - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - Select a database version from the available versions. Note: This lab works on both 19c and 21c AJD database.
+    </if>
+    <if type="livelabs">
+    - __Always Free__ - For this lab, we recommend you leave Always Free unchecked.
+    </if>
+    - __Choose database version__ - Select 19c from the database version. Note: This lab should work on 21c AJD database as well.
     - __OCPU count__ - Number of OCPUs for your service. For this lab, leave the default __1 OCPU__. If you choose an Always Free database, it comes with 1 OCPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, leave the default __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
@@ -144,6 +178,16 @@ In this lab, you will:
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
     ![](./images/tutorials.png " ")
+    ![](./images/tour2.png " ")
+    ![](./images/tour3.png " ")
+    ![](./images/tour4.png " ")
+    ![](./images/tour5.png " ")
+    ![](./images/tour6.png " ")
+    ![](./images/tour7.png " ")
+    ![](./images/tour8.png " ")
+    ![](./images/tour9.png " ")
+    ![](./images/tour10.png " ")
+    ![](./images/tour11.png " ")
 
 
 
@@ -158,4 +202,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, June 2021
+- **Last Updated By/Date** - Tom McGinn, July 2021

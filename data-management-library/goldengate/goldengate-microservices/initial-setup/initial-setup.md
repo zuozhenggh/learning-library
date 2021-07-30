@@ -20,43 +20,42 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
-### Login to Host using SSH Key based authentication
+## **STEP 1:** Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Select the hamburger menu and select **Compute** > **Instances**
-  ![](./images/select-compute.png " ")  
+    - Database Listener
+        - LISTENER
+    - Database Server instance
+        - ORCL
+    - Oracle GoldenGate ServiceManager
 
-2. Select your compartment. You should see your Compute Instance Public IP address. 
-    ![](./images/ip-address.png " ")
-
-1. If needed, refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-3. Then sudo to “*oracle*”.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 1:** Start the Oracle Database 19c (19.1) and Listener
-1.	Start the container database, all PDB's and the listener
+    Open the terminal on the remote desktop and run the following for a clean start.
 
     ```
     <copy>
-    cd ~/Desktop/Scripts/HOL/Lab1  
-    sh ./startup.sh
+    sudo systemctl restart oracle-database OracleGoldenGate
+    sudo systemctl status oracle-database OracleGoldenGate
     </copy>
     ```
 
-    ![](./images/run-startup-init.png " ")
+2. On the *Firefox* window on the right preloaded with *Oracle GoldenGate ServiceManager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+
+
+    ```
+    Username: <copy>oggadmin</copy>
+    ```
+
+    ```
+    Password: <copy>Welcome1</copy>
+    ```
+
+    ![](./images/goldegate-landing.png" ")
+
+3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
+
+    ![](./images/goldengate-service-mgr.png " ")
+
+    If successful, the page above is displayed and as a result your environment is now ready.  
 
     In the interest of time and for ease of execution, all prerequisite tasks to prepare the database for GoldenGate replication have already been performed on your VM instance. This includes:
       - Enabling Archive Log Mode
@@ -65,7 +64,7 @@ This lab assumes you have:
       - Creating GoldenGate users in the database
 
 
-2. Create some additional tables that we will be using later in our labs for CDR purposes.
+4. Click on *Terminal* icon on the desktop to start a terminal and Create some additional tables that we will be using later in our labs for CDR purposes.
 
     ```
     <copy>
@@ -73,9 +72,107 @@ This lab assumes you have:
     ./db_createTable.sh
     </copy>
     ```
+
     ![](./images/create_tables.png " ")
 
 You may now [proceed to the next lab](#next).
+
+5. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+
+    - Database and Listener
+
+    ```
+    <copy>
+    sudo systemctl status oracle-database
+    </copy>
+    ```
+
+    ![](images/goldengate-database-service.png " ")
+    ![](images/goldengate-database-service2.png " ")
+
+    - Oracle GoldenGate ServiceManager
+
+    ```
+    <copy>
+    sudo systemctl status OracleGoldenGate
+    </copy>
+    ```
+
+    ![](images/oraclegoldengate.png " ")
+
+6. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+
+    - Database and Listener
+
+    ```
+    <copy>
+    sudo sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+    - Oracle GoldenGate ServiceManager
+
+    ```
+    <copy>
+    sudo sudo systemctl restart OracleGoldenGate
+    </copy>
+    ```
+
+    You may now [proceed to the next lab](#next).
+
+## Appendix 1: Managing Startup Services
+
+1. Database Service (Database and Listener).
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start oracle-database</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop oracle-database</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status oracle-database</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart oracle-database</copy>
+    ```
+
+2. Oracle GoldenGate ServiceManager
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start OracleGoldenGate</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop OracleGoldenGate</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status OracleGoldenGate</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart OracleGoldenGate</copy>
+    ```
 
 ## Learn More
 

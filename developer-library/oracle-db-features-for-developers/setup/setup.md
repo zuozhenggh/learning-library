@@ -3,6 +3,8 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
+Estimated Lab Time: 10 minutes
+
 ## **Step**: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
@@ -93,5 +95,5 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Tom McGinn, June 2021
+- **Contributors** - Anoosha Pilli, Kay Malcolm
+- **Last Updated By/Date** - Kamryn Vinson, June 2021

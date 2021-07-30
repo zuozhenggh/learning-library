@@ -95,5 +95,5 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 ## **Acknowledgements**
 
 - **作成者・日時** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha
 - **最終更新日** - Rene Fontcha, February 2021

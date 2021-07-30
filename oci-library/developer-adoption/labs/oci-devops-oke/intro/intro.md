@@ -4,7 +4,7 @@
 
 You will learn how to build your infrastructure and automate the deployment of a Cloud Native Java application to Oracle Container Engine for Kubernetes (OKE)  using Oracle Cloud Infrastructure (OCI) DevOps. 
 
-Estimated time: 1h:30 minutes
+Estimated time: 90 minutes
 
 
 ## Cloud Native Applications Overview

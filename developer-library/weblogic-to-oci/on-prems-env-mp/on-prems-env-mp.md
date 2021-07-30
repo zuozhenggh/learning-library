@@ -25,39 +25,39 @@ Estimated Completion Time: 15 minutes.
 
 2. Click **Get App**.
 
-  ![](./images/get-app.png " ")
+   ![](./images/get-app.png " ")
 
 3. Sign in to your Oracle Cloud Infrastructure account.
 
-  ![](./images/sign-in.png " ")
+   ![](./images/sign-in.png " ")
 
 4. Choose a compartment.
 
-  ![](./images/wls-workshop-mp1.png " ")
+   ![](./images/wls-workshop-mp1.png " ")
 
 5. Accept the Terms and Conditions and click **Launch**.
 
-  ![](./images/wls-workshop-mp2.png " ")
+   ![](./images/wls-workshop-mp2.png " ")
 
 6. Click **Next**.
 
-  ![](./images/next.png " ")
+   ![](./images/next.png " ")
 
 7. Paste your **SSH public key**.
 
    To connect to the WebLogic servers via SSH, you need to provide a public key the server will use to identify your computer.
 
-  ![](./images/ssh-key.png " ")
+   ![](./images/ssh-key.png " ")
 
 8. Click **Next** and then **Create**.
 
-  ![](./images/job-running.png " ")
+   ![](./images/job-running.png " ")
 
-  It will take about 1 to 2 minutes to create the stack.
+   It will take about 1 to 2 minutes to create the stack.
 
 9. When the job finishes, you can find the Public IP address of the instance at the bottom of the logs, or in the **Output** area. Make a note of this information.
 
-  ![](./images/job-output.png " ")
+   ![](./images/job-output.png " ")
 
 ## **STEP 2:**  Check the Local Environment
 
@@ -65,13 +65,13 @@ It will take another 4 to 5 minutes for all the services to come online.
 
 1. The console will be available at `http://PUBLIC-IP:7001/console` (replace `PUBLIC_IP` with the Compute instance public IP) and the WebLogic admin user is `weblogic` with password `welcome1`.
 
-  ![](./images/localhost-admin-console.png " ")
+   ![](./images/localhost-admin-console.png " ")
 
 2. The **SimpleDB** application will be running at `http://PUBLIC-IP:7003/SimpleDB/` (substitute `PUBLIC-IP` with the public IP of the instance). It may take a minute or 2 after the admin console is up for the SimpleDB app to be running.
 
 3. It shows statistics of riders of the Tour de France stored in the database, and looks like this:
 
-  ![](./images/localhost-simpledb-app.png " ")
+   ![](./images/localhost-simpledb-app.png " ")
 
 ## **STEP 3:** Log in to the On-Premises Environment
 
@@ -108,6 +108,7 @@ We'll create a SSH key pair in the default folder.
     ssh-keygen
     </copy>
     ```
+	
     Press `Enter` (default) for all the prompts.
 
 3. You will find two files `id_rsa` and `id_rsa.pub` inside the folder `~/.ssh/` or `/home/oracle/.ssh/`.
