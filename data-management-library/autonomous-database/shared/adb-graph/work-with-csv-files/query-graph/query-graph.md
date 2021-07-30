@@ -19,8 +19,6 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
-
 ## **STEP 1**: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
@@ -40,7 +38,7 @@ If you prefer you can simply **import** the notebook and then execite each parag
    Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.  
    Note where it is downloaded. 
 
-   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/dN9WXYJWoyjV89xlRm-ARrhQi7GOwzHu0nt7NjAn6eN6RTEHKT5bt67HyxjRUIyx/n/c4u03/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
+   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/t51ZRZZCaEDUD9dehr6legEN9nKGpZGVgtzHZPnBhl0RistNzBJnck_fQCSTQr_h/n/c4u04/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
 
 
 2. Click on the `Notebooks` menu icon and then on the Import Notebook icon on the top right.  
@@ -509,5 +507,5 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
-* **Lab Expiry Date** - May 2022
+* **Lab Expiry Date** - May 31, 2022
   

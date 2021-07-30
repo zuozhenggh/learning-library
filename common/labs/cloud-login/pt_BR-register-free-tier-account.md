@@ -25,7 +25,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
     * Select your **country/territory**.
     * Click **Next**.
 
-    ![](images/signup-for-freetier.png " ")
+    ![](images/pt_BR-signup-for-freetier.png " ")
 
 2.  Enter a few details for your new Oracle Cloud account.
     * You can choose almost anything for your Cloud Account Name. Remember what you wrote. You'll need this name later to sign in.
@@ -49,30 +49,29 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com).
 
-    ![](images/cloud-oracle.png " ")
+    ![](images/pt_BR-cloud-oracle.png " ")
 
 2. Click **View Accounts** to bring up a menu.  Click **Sign in to Cloud**.
 
-    ![](images/signin-to-cloud.png " ")
+    ![](images/pt_BR-signin-to-cloud.png " ")
 
 4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
-    ![](images/cloud-login-tenant.png " ")
+    ![](images/pt_BR-cloud-login-tenant.png " ")
 
 5. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-    ![](images/username.png " ")
+    ![](images/pt_BR-username.png " ")
 
 6. You are now signed in to Oracle Cloud!
 
-  ![](images/oci-console-home-page.png " ")
+  ![](images/pt_BR-oci-console-home-page.png " ")
 
 You may now [proceed to the next lab](#next).
 
-## Acknowledgements
+## Agradecimentos
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
+- **Contributors** - LiveLabs Team, John Peach
 - **pt_BR Translated by** - André Ambrósio, April 2021
-- **Last Updated By** - André Ambrósio, April 2021
-
+- **Last Updated By** - André Ambrósio, May 2021

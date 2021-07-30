@@ -9,11 +9,9 @@ Estimated lab Time - 10 minutes
   -   Open the Jaeger User Interface and view traces
   -   Learn how they work
 
-<if type="event-freetier">
 Quick walk through on how you can trace microservice activity using Jaeger.
 
 [](youtube:ku9rzWFpLfA)
-</if>
 
 ## **STEP 1**: Verify tracing
 
@@ -49,7 +47,7 @@ Quick walk through on how you can trace microservice activity using Jaeger.
     ![](images/jaegertracedetail.png " ")
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Author** - Paul Parkinson, Developer Evangelist
                Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon

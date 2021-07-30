@@ -132,7 +132,6 @@ Estimated Lab Time: 15 minutes.
 
 You have just created an Autonomous Database with the latest features of Oracle Databases.
 
-
 ## **Acknowledgements**
 
 - **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development

@@ -1,4 +1,4 @@
-# OPTIONAL - Create Custom OCI Compute Image for Marketplace Publishing
+# Create Custom OCI Compute Image for Marketplace Publishing
 
 ## Introduction
 This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.
@@ -12,7 +12,7 @@ This lab will show you how to prepare a host for custom image capture and create
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Configure Preserved Static hostname
+## Task 1: Configure Preserved Static hostname
 1.  As opc, run *sudo su -* to login as root
 
     ```
@@ -59,7 +59,9 @@ This lab assumes you have:
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
 
     # Add static name to /etc/hosts
-    echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+    echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+
     EOF
     </copy>
     ```
@@ -98,7 +100,8 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Cleanup Instance for Image Capture   
+## Task 2: Cleanup Instance for Image Capture   
+
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -128,6 +131,7 @@ This lab assumes you have:
     sudo sed -i -e 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|g' /etc/passwd
     sudo ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
     sudo ln -sf /root/bootstrap/eachboot.sh /var/lib/cloud/scripts/per-boot/eachboot.sh
+    sudo rm -f /u01/app/osa/non-marketplace-init/system-configured
     sudo rm -f /var/log/audit/audit.log
     EOF
     chmod +x /tmp/cleanup.sh
@@ -136,7 +140,8 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 3**: Create Custom Image   
+## Task 3: Create Custom Image   
+
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
@@ -171,5 +176,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
-* **Contributors** - - -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

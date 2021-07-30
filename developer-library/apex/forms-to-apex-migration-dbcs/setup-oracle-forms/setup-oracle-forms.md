@@ -5,7 +5,7 @@ The Oracle Cloud Infrastructure marketplace provides a pre-built Oracle Forms im
 
 The image is pre-configured with tools and language drivers so that you can change/compile Oracle Forms Applications.
 For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Forms Services'
-    ![](./images/marketplace_forms.png " ")
+    ![](./images/marketplace-forms.png " ")
 
 Estimated Lab Time: 30 minutes
 
@@ -29,9 +29,8 @@ As a database user, DBA or application developer,
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
 1. Log into your cloud account using your tenant name, username and password.
-2. Click the **Navigation Menu** in the upper left and select **Marketplace**.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")	
+2. Click on Hamburger Menu, Select Marketplace and Click on All Applications
+      ![](./images/cloud_marketplace.png " ")
 
 3. Search for Oracle Forms Service.
       ![](./images/oracle_forms.png " ")
@@ -68,150 +67,155 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     ```
     <copy>$ ssh -i <private-key> opc@PublicIP</copy>
     ```
-2. When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N.
+2. When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N
 
     ```
-    Use Oracle Database Cloud Service with this instance? (Y/N) N
-    ****************************************************************
-    *                                                              *
-    *   Please provide the following credentials below:            *
-    *                                                              *
-    *   - VNC password  (Must be 6-8 chars long)                   *
-    *      Should contain numbers and letters.                     *
-    *      Should contain upper and lower case letters.            *
-    *                                                              *
-    *   - Database sys/system password (Must be 8-30 chars long)   *
-    *      Should contain numbers and letters.                     *
-    *      Should contain upper and lower case letters.            *
-    *                                                              *
-    *   - WLS Repository schema password (Must be 8-30 chars long) *
-    *      Should contain upper and lower case letters.            *
-    *      Should contain numbers and letters.                     *
-    *      Only 3 special characters permitted: # $ _              *
-    *                                                              *
-    *   - WLS administrator password (Must be 8-12 chars long)     *
-    *      Should contain numbers and letters.                     *
-    *      Should contain upper and lower case letters.            *
-    *                                                              *
-    ****************************************************************
-    Enter a password for VNC:
-    Enter database sys/system user password:
-    Enter WLS Repository schema password:
-    Enter Weblogic domain administrator password:
 
-    ****************************************************************
-    *      Provisioning Oracle FMW Domain                          *
-    ****************************************************************
+        Use Oracle Database Cloud Service with this instance? (Y/N) N
+        Use Oracle Database Cloud Service with this instance? (Y/N) N
+        ****************************************************************
+        *                                                              *
+        *   Please provide the following credentials below:            *
+        *                                                              *
+        *   - VNC password  (Must be 6-8 chars long)                   *
+        *      Should contain numbers and letters.                     *
+        *      Should contain upper and lower case letters.            *
+        *                                                              *
+        *   - Database sys/system password (Must be 8-30 chars long)   *
+        *      Should contain numbers and letters.                     *
+        *      Should contain upper and lower case letters.            *
+        *                                                              *
+        *   - WLS Repository schema password (Must be 8-30 chars long) *
+        *      Should contain upper and lower case letters.            *
+        *      Should contain numbers and letters.                     *
+        *      Only 3 special characters permitted: # $ _              *
+        *                                                              *
+        *   - WLS administrator password (Must be 8-12 chars long)     *
+        *      Should contain numbers and letters.                     *
+        *      Should contain upper and lower case letters.            *
+        *                                                              *
+        ****************************************************************
+        Enter a password for VNC:
+        Enter database sys/system user password:
+        Enter WLS Repository schema password:
+        Enter Weblogic domain administrator password:
 
-    Oracle Forms Fusion Middleware domain successfully provisioned.
-    All Servers have been started and are ready for use.
-    ```
-    Make a note of all the passwords! 
+        ****************************************************************
+        *      Provisioning Oracle FMW Domain                          *
+        ****************************************************************
 
-3. All the installation details of software installed, ORACLE\_HOME, ORACLE\_SID, MIDDLEWARE\_HOME, FORMS\_PATH can be found in readme file under Desktop folder.
+        Oracle Forms Fusion Middleware domain successfully provisioned.
+        All Servers have been started and are ready for use.
 
     ```
-    $ cd Desktop
-    $ vi Readme
+    Make a note of all the passwords
+3.   All the installation details of software installed, ORACLE_HOME, ORACLE_SID, MIDDLEWARE_HOME, FORMS_PATH
+    can be found in readme file under Desktop folder
 
-    Excerpt from Readme file, make a note off these details.
-    ------------------------------
-    Software Installation Details
-    ------------------------------
-    All software has been installed and is owned by the "opc" user.
-
-    o Software locations:
-        o  Database software is installed only if you choose to have a local database during provisioning.
-        o  Database ORACLE_HOME:  /u01/oracle/database/base/Oracle_Home
-            o Database connect string: orcl
-
-        o  Middleware ORACLE_HOME:  /u01/oracle/middleware/Oracle_Home
-        o  Middleware DOMAIN_HOME:  /u01/oracle/middleware/user_projects/domains/base_domain
-
-            o WebLogic Server repository (RCU) schema prefix: FRM
-            o WebLogic Server Administrator username:  weblogic
-
-        o  JDK 8 HOME: /u01/oracle/jdk
-
-        o  FORMS_PATH in frmbld.sh and default.env includes:  /home/opc/oracle/formsmodules
-
-    ------------------------------
-    Server Information
-    ------------------------------
-    o Server Ports:
-        Database Listener Port:  1521
-        WLS Administration Server : 7001
-        WLS_FORMS : 9001
-        OHS : 7777 & 4443 (7777 & 4443 opened in Linux firewall)
     ```
+        $ cd Desktop
+        $ vi Readme
 
+        Excerpt from Readme file, make a note off these details.
+          ------------------------------
+          Software Installation Details
+          ------------------------------
+          All software has been installed and is owned by the "opc" user.
+
+          o Software locations:
+            o  Database software is installed only if you choose to have a local database during provisioning.
+            o  Database ORACLE_HOME:  /u01/oracle/database/base/Oracle_Home
+                 o Database connect string: orcl
+
+            o  Middleware ORACLE_HOME:  /u01/oracle/middleware/Oracle_Home
+            o  Middleware DOMAIN_HOME:  /u01/oracle/middleware/user_projects/domains/base_domain
+
+                 o WebLogic Server repository (RCU) schema prefix: FRM
+                 o WebLogic Server Administrator username:  weblogic
+
+            o  JDK 8 HOME: /u01/oracle/jdk
+
+            o  FORMS_PATH in frmbld.sh and default.env includes:  /home/opc/oracle/formsmodules
+
+
+          ------------------------------
+          Server Information
+          ------------------------------
+          o Server Ports:
+              Database Listener Port:  1521
+              WLS Administration Server : 7001
+              WLS_FORMS : 9001
+              OHS : 7777 & 4443 (7777 & 4443 opened in Linux firewall)
+
+        ```    
 4.   Start your VNC server with the following command,
 
-    ```
-    <copy>$ vncserver -geometry 1280x1024
-    ```
+        ```
+        <copy>$ vncserver -geometry 1280x1024</copy>
+        ```
 
-    ```
-    VNC Server will be started with below output
-    New 'formstoapexstack:1 (opc)' desktop is formstoapexstack:1
+        ```
+        VNC Server will be started with below output
+        New 'formstoapexstack:1 (opc)' desktop is formstoapexstack:1
 
-    Starting applications specified in /home/opc/.vnc/xstartup
-    Log file is /home/opc/.vnc/formstoapexstack:1.log
-    ```
+        Starting applications specified in /home/opc/.vnc/xstartup
+        Log file is /home/opc/.vnc/formstoapexstack:1.log
+        ```
 
-    Note down what comes after your stack name which is: 1 here.
+         Note down what comes after your stack name which is :1 here.
 
-    Open the Log file to check which port the VNC connection will be listening on and note down the port number which is usually 5901.
+        Open the Log file to check which port the VNC connection will be listening on and note down the port number which is usually 5901 .
 
-    Excerpt from Log file:
-    
-    ```
-    vncext:      VNC extension running!
-    vncext:      Listening for VNC connections on all interface(s), port 5901
-    vncext:      Listening for HTTP connections on all interface(s), port 5801
-    vncext:      created VNC server for screen 0
-    ```
+        Excerpt from Log file:
+        ```
+        vncext:      VNC extension running!
+        vncext:      Listening for VNC connections on all interface(s), port 5901
+        vncext:      Listening for HTTP connections on all interface(s), port 5801
+        vncext:      created VNC server for screen 0
+        ```
 
 5. Your development system may now be ready for accepting VNC connections.
 
       *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
-6. Create a tunnel for VNC through SSH, if you have MAC, in a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
+6. Create a tunnel for VNC through SSH,
 
-    ```
-    ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
-    ```
+   if you have MAC ,
 
-   If you have Windows,
+          In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
+          ```
+          ssh -N -L 5901:127.0.0.1:5901 -i ~/<privatekey> opc@<publicIP>
+          ```
+   if you have Windows,
 
-    You can create SSH tunnels using the PuTTY SSH client.
+      You can create SSH tunnels using the PuTTY SSH client.
 
-        a. In Host Name (or IP address) box, enter the ``<publicIP>`` of the target compute node.
+      a. In Host Name (or IP address) box, enter the ``<publicIP>`` of the target compute node.
 
-        b. Confirm that the Connection type option is set to ``SSH``.
+      b. Confirm that the Connection type option is set to ``SSH``.
 
-        c. In the Category tree, expand Connection if necessary and then click Data.The Data panel is displayed.
+      c. In the Category tree, expand Connection if necessary and then click Data.The Data panel is displayed.
 
-        d. In Auto-login username box, enter ``opc``.
-        Confirm that the When username is not specified option is set to Prompt.
+      d. In Auto-login username box, enter ``opc``.
+      Confirm that the When username is not specified option is set to Prompt.
 
-        e. In the Category tree, expand SSH and then click Auth.The Auth panel is displayed.
+      e. In the Category tree, expand SSH and then click Auth.The Auth panel is displayed.
 
-        f. Click the Browse button next to the ``Private key file`` for authentication box. Then, in the Select private key file window, navigate to and open the private key file that you have used during forms instance creation.
+      f. Click the Browse button next to the ``Private key file`` for authentication box. Then, in the Select private key file window, navigate to and open the private key file that you have used during forms instance creation.
 
-        g. In the Category tree, click ``Tunnels``
+      g. In the Category tree, click ``Tunnels``
 
-        h. In the ``Source Port`` box , enter ``5901`` as the port number.
+      h. In the ``Source Port`` box , enter ``5901`` as the port number.
 
-        i. In the Destination box, enter the ``<publicIP>``, a colon, and the port number to which you want to create a tunnel; for example, ``<publicIP>``:5901.  
+      i. In the Destination box, enter the ``<publicIP>``, a colon, and the port number to which you want to create a tunnel; for example, ``<publicIP>``:5901.  
 
-        k. Confirm that the Local and Auto options are set.
+      k. Confirm that the Local and Auto options are set.
 
-        l. Click Add to add the forwarded port.
+      l. Click Add to add the forwarded port.
 
-        m. In the Category tree, click Session. Enter name for the connection configuration and click ``Save``.
+      m. In the Category tree, click Session. Enter name for the connection configuration and click ``Save``.
 
-        n. Click ``Open`` to open the connection
+      n. Click ``Open`` to open the connection
 
 
 7. Start VNC Viewer on your laptop and configure a client connection using the settings as shown.
@@ -224,17 +228,17 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 9. If all goes well, you should now see a linux desktop in your VNC window.
 
 ## **STEP 3**: Copy the SQL Scripts, Shell Scripts and Sample Forms files to your development system
-1. We have sample forms and sample database scripts that can be downloaded from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/QP5J-CoMLxkdSxU25SaE8_B5t1A18b6qe7j_Xv7TckRgD3yDxilgfJhp-TAJir1V/n/c4u03/b/developer-library/o/setup-oracle-forms.zip)
+1. We have sample forms and sample database scripts that can be downloaded from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fbFOefHYChqsfjw3M1TLkdrks_S7i5-Ufq2dXxCtiZhyvLDHnEICwAYM4v3mXstQ/n/c4u04/b/developer-library/o/setup-oracle-forms.zip)
 
 2. Unzip the files and Copy the files over to your development system from your local Desktop
 
-    ````
-    scp -i  ~/.ssh/<private key> ./files/customers.fmb opc@<public ip>:/home/opc/oracle/formsmodules
-    scp -i  ~/.ssh/<private key> ./files/forms_conversion.sql opc@<public ip>:/home/opc/oracle/formsmodules
-    scp -i  ~/.ssh/<private key> ./files/forms_conversion_data_insert.sql opc@<public ip>:/home/opc/oracle/formsmodules
-    scp -i  ~/.ssh/<private key> ./files/frmf2xml.sh opc@<public ip>:/home/opc/oracle/formsmodules
-    scp -i  ~/.ssh/<private key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules        
-    ````
+      ````
+      <copy>scp -i  ~/.ssh/<privake key> ./files/customers.fmb opc@<public ip>:/home/opc/oracle/formsmodules
+        scp -i  ~/.ssh/<privake key> ./files/forms_conversion.sql opc@<public ip>:/home/opc/oracle/formsmodules
+        scp -i  ~/.ssh/<privake key> ./files/forms_conversion_data_insert.sql opc@<public ip>:/home/opc/oracle/formsmodules
+        scp -i  ~/.ssh/<privake key> ./files/frmf2xml.sh opc@<public ip>:/home/opc/oracle/formsmodules
+        scp -i  ~/.ssh/<privake key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules </copy>       
+      ````
 
 ## **STEP 4**: Connect to your DB in Development system using SQL Developer
 
@@ -245,7 +249,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     *Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry.*
 
     ````
-    <copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64
+    <copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64</copy>
     ````
 
 2. Create an new connection in sql*developer and provide the following information,
@@ -267,18 +271,20 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
 ## **STEP 5**: Run the scripts to create sample schema and insert sample data.
 
-  1.  Open the script  forms\_conversion\_ddl.sql in SQL developer in VNC and execute the script. Make a note of the credential for order user in the script.
-  2.  In the same session connect to orders user and run the insert script forms\_conversion\_data\_insert.sql
+  1.  Open the script  forms_conversion_ddl.sql in SQL developer in VNC and execute the script. Make a note of the credential for order user in the script.
+  2.  In the same session connect to orders user and run the insert script forms_conversion_data_insert.sql
 
 
 ## **STEP 6**: Convert the Forms to XML files
 
-1. Before migrating  to Oracle Applications Express, Forms file have to be converted to XML file using frmf2xml utility provided with Oracle Forms Service Image. In the downloaded scripts, formsXMLconvert.sh script that can be run to convert all the Forms files in the directory where it is run from.
+Before migrating  to Oracle Applications Express, Forms file have to be converted to XML file using frmf2xml utility provided with Oracle Forms Service Image. In the downloaded scripts, formsXMLconvert.sh script that can be run to convert all the Forms files in the directory where it is run from.
 
-    ```
-    cd oracle/formsmodules/sh formsXMLconvert.sh
-    ```  
-2. After the script is run verify that you can see customers_fmb.xml
+    ````
+    <copy>cd oracle/formsmodules/
+      sh formsXMLconvert.sh</copy>
+
+    ````  
+After the script is run verify that you can see customers_fmb.xml
 
 You may now *proceed to the next lab*.
 

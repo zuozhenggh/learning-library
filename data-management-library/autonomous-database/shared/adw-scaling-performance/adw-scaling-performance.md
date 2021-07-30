@@ -1,4 +1,4 @@
-# Scaling and Performance in Your Autonomous Database
+# Scale Your Autonomous Database
 
 ## Introduction
 
@@ -9,17 +9,11 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 -   Learn how to scale up an ADW or ATP service
 -   Understand the performance and concurrency impacts of scaling your autonomous database service online
 
-### Prerequisites
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. If you don't already have your own cloud account or a LiveLabs account, then you can obtain a new cloud account through the Oracle Free Trial program.
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the left.
-
-
 ## **Step 1**: Scaling your Autonomous Database Instance
 
 1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details page. From the **action menu**, click **Scale Up/Down**.
 
-    ![Click Scale Up/Down on your database console.](./images/Picture300-2.jpg " ")
+    ![Click Scale Up/Down on your database console.](./images/Picture300-2.png " ")
 
 2.  Fill in the form with the following information:
 
@@ -31,7 +25,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
 3.  Click **Update** after filling in the form. This will take you to the database instance's Details page.
 
-    ![Click Update.](./images/Picture300-3.jpg " ")
+    ![Click Update.](./images/Picture300-3.png " ")
 
     *Note: Applications can continue running during the scale operation without downtime.*
 
@@ -58,5 +52,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - LiveLabs QA Team (Jeffrey Malcolm Jr, Ayden Smith, Arabella Yao)
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
+- **Last Updated By/Date** - Kamryn Vinson, May 2021

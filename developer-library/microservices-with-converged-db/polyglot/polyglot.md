@@ -12,11 +12,9 @@ This lab will show you how to switch the Inventory microservice to a Python, Nod
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to switch the Inventory microservice to Python while retaining the same application functionality.
 
 [](youtube:zltpjX721PA)
-</if>
 
 ### Objectives
 
@@ -91,7 +89,7 @@ In this step you can choose between three different implementations of the Inven
     ```
 
 ## Acknowledgements
-* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Developer Evangelist
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

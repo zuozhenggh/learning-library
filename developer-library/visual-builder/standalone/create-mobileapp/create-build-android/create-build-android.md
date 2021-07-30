@@ -20,7 +20,7 @@ The following example shows how to create a keystore with a single key that is v
 
 `keytool -genkeypair -v -keystore c:\mykeystore\releasesigning.keystore -alias releaseKeyAlias -keyalg RSA -keysize 2048 -validity 10000`
 
-If you do not want to create a key, right-click [this sample keystore file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_4YtX-KmFJ4sQoaGy3yW-iIZgqYs8-QH_uhNPhHZtDhp9FR4rgq1IQ--wH7X4Vuw/n/ociobenablement/b/hol-labs/o/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
+If you do not want to create a key, right-click [this sample keystore file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TwD3lpEZPD0KKzY7tQ84WKPaP-MoX-8GYAjkFQ0GvNnJjLtGV4P9Gf9bM2hibIQS/n/c4u04/b/developer-library/o/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
 
   -   **Keystore Password**: `vbcsdoc_ks_pass`
   -   **Key alias**: `vbcsdoc_ksalias`
@@ -61,6 +61,6 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     ![](images/vbcsia_mob_bp_result.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - March 2021
+* **Last Updated By/Date** - Sheryl Manoharan, May 2021

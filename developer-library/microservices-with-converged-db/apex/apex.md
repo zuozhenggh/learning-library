@@ -6,11 +6,9 @@ This lab will show you how to create an APEX application that will help make sen
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
 [](youtube:ITtdiqX8nWQ)
-</if>
 
 ### Objectives
 
@@ -55,7 +53,7 @@ You have successfully created an APEX workspace where you can begin creating app
 
 In this step, you will create a new APEX app based on a file that contains a small sample of the type of data that the microservices would collect.
 
-1.  Click the following link to download an Excel file: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/naln4K9wHitqILEbK8mPVK6TDzHjsTpM17RNln4JHVU/n/c4u03/b/developer-library/o/order-items-data.xlsx">order-items-data.xlsx</a>. This is the data we will use to build the application in this lab.
+1.  Click the following link to download an Excel file: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/YMct44aJjBn6nwWcKZiRCUyDbHg_X12XX9GI0jfrf0Xaz0WnSEgZMAc_bdfh0Xd7/n/c4u04/b/developer-library/o/order-items-data.xlsx">order-items-data.xlsx</a>. This is the data we will use to build the application in this lab.
 
 2. Return to your APEX workspace and click the down arrow in the **SQL Workshop** tab, then select **SQL Commands**.
 
@@ -139,7 +137,7 @@ In this step, you will create a new APEX app based on a file that contains a sma
     ![](images/app-home-page.png)
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Author** - Paul Parkinson, Developer Evangelist
                Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon

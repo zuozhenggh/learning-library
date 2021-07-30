@@ -117,20 +117,20 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
   Save the auth token for later.
 
-3. On the User Details page, copy the user OCID and save it for later:
+5. On the User Details page, copy the user OCID and save it for later:
 
   ![Retrieve user OCID](images/user-ocid.png)
 
-4. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
+6. Click on the user icon again and click **Tenancy: <tenancy-name>**, then copy and save the tenancy OCID for later:
 
   ![Retrieve tenancy OCID](images/user-icon-tenancy.png)
   ![Retrieve tenancy OCID](images/tenancy-ocid.png)
 
-5. If you are using a LiveLabs reservation, your compartment OCID is provided on your reservation page. If you are using a Free Trial or Customer-owned tenancy, from your compartment details page, copy the compartment OCID and save it for later.
+7. If you are using a LiveLabs reservation, your compartment OCID is provided on your reservation page. If you are using a Free Trial or Customer-owned tenancy, from your compartment details page, copy the compartment OCID and save it for later.
 
   ![Retrieve compartment OCID](images/compartment-details.png)
 
-6. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
+8. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
 ## **STEP 3:** Create the dragon.config file
 
@@ -182,7 +182,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
 3. Create the DRAGON Stack backend with the employees collection:
 
-    The following command will use the configuration information from the `dragon.config`file in order to deploy an
+    The following command will use the configuration information from the `dragon.config` file in order to deploy an
 
     ```
     $ <copy>./dragon-linux-x86_64-2.0.8 -loadjson</copy>
@@ -287,7 +287,9 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     ![React frontend connected to the backend](images/dragon-react-frontend.png)
 
 
-## **STEP 7:** Cleanup your environment
+## **STEP 7:** Cleanup your environment (Optional)
+
+**_If you wish to continue to Lab 2, then skip this step._**
 
 1. Quit ngrok by pressing `Ctrl-C`.
 

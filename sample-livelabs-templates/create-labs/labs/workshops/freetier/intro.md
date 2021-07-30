@@ -2,6 +2,8 @@
 
 The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs.
 
+*If you are looking for information on creating images for compute instances and storing them in Marketplace, please click this link: [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/).*
+
 ## What are Labs and Workshops?
 A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what the User Assistance community commonly knew as Oracle by example (OBE). Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
 
@@ -24,7 +26,7 @@ through a unique URL.
 ## Oracle GitHub Project and learning-library Repository
 
   ![](./images/git-hub-oracle-projects-learning-library.png " ")
-  **Note**: The term "learning-library" is NOT the same as Oracle Learning Library (OLL) used formerly in the OBE world. The Oracle Learning Library (OLL) is an online resource for content about Oracle products [https://apexapps.oracle.com/pls/apex/f?p=44785:1](https://apexapps.oracle.com/pls/apex/f?p=44785:1), whereas "learning-library" is the GitHub repository that is accessed through a unique URL: [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library).
+  > **Note:** The term "learning-library" is NOT the same as Oracle Learning Library (OLL) used formerly in the OBE world. The Oracle Learning Library (OLL) is an online resource for content about Oracle products [https://apexapps.oracle.com/pls/apex/f?p=44785:1](https://apexapps.oracle.com/pls/apex/f?p=44785:1), whereas "learning-library" is the GitHub repository that is accessed through a unique URL: [https://github.com/oracle/learning-library](https://github.com/oracle/learning-library).
 
 ## GitHub Workflow
 The following flow chart shows the process that your need to follow to set up the environment for developing labs and workshops:
@@ -72,5 +74,3 @@ The following flow chart shows the process that your need to follow to set up th
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 * **Last Updated By/Date:** Anuradha Chepuri, November 2020
-
-

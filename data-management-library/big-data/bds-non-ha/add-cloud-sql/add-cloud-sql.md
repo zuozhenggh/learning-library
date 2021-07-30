@@ -4,25 +4,17 @@
 
 In this lab, you will learn how to maintain the new cluster that you created in the previous lab. You will also learn how to add Oracle Cloud SQL to your cluster.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
 * Maintain your cluster.
 * Add Oracle Cloud SQL to your cluster.
 
-### What Do You Need?
+### Prerequisites
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-This lab assumes that you have successfully completed the following labs in the **Contents** menu:
-<if type="freetier">
-+ **Lab 1: Setup the BDS Environment**
-</if>
-<if type="livelabs">
-+ **Lab 1: Review Creating BDS Environment Resources (Optional)**
-</if>
-+ **Lab 2: Create a BDS Hadoop Cluster**
-
-## **STEP 1:** Maintain the Cluster
+## **Task 1:** Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
@@ -34,9 +26,9 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+	![](./images/big-data.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button to display the context menu.
 
@@ -62,11 +54,11 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
     ![](./images/ll-maintain-cluster-2.png " ")  
     </if>
 
-## **STEP 2:** Add Oracle Cloud SQL to the Cluster
+## **Task 2:** Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
-**Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
+> **Note:** Cloud SQL is not included with Big Data Service. You must pay an extra fee for using Cloud SQL.
 
 1. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button.
 
@@ -83,7 +75,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     ![](./images/add-cloud-sql.png " ")  
 
-    **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
+    > **Note:** For information on the supported Query Server node shapes and block storage size, see [Plan Your Cluster](https://docs.oracle.com/en/cloud/paas/big-data-service/user/plan-your-cluster.html#GUID-0A40FB4C-663E-435A-A1D7-0292DBAC9F1D) in the Using Oracle Big Data Service documentation.
 
 4. Click **Add**. The **Clusters** page is re-displayed. The status of the **`training-cluster`** is now **Updating** and the number of nodes in the cluster is now **`6`** instead of **`5`**.
 
@@ -123,7 +115,7 @@ You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your 
 
     ![](./images/cs-active.png " ")    
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -137,5 +129,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
-
+* **Last Updated By/Date:** Lauran Serhal, July 2021

@@ -20,7 +20,7 @@ The following video provides an overview of the Graph Visualization component (=
 
 ## **STEP 1:** Setup
 
-Open the GraphViz at `https://<public_ip_for_compute>:7007/ui`. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
+Open the GraphViz at `https://<public_ip_for_compute>:7007/ui` **using Firefox**. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
 You should see a screen similar to the screenshot below. Enter the username (`customer_360`) and password you entered when createing the user in SQL Developer Web.
 
@@ -36,7 +36,7 @@ You should see a graph similar to the screenshot below.
 
 ## **STEP 3:** Add highlights
 
-Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wQFPfdrO-aGGUwxBXSQDX2DzjFueYlgUZ40YoXLrP6x0bqIZrgpSBpyHEo3Q-i33/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download a zip file, `highlights.json.zip`. Unzip this file and note where it is unzipped.
+Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download a zip file, `highlights.json.zip`. Unzip this file and note where it is unzipped.
 
 Click on the Load button under Highlights (on the right side of the screen). Browse to the appropriate folder and choose the file and click Open to load that.
 
@@ -87,7 +87,7 @@ The graph should now look like
 
 3. Copy and paste the query into the PGQL Graph Query text input box of the GraphViz application. Click Run.
 
-    The result should look as shown below.
+    The result should look as shown below. In the highlight settings, the accounts starting with `xxx-yyy-` are shown in red (= accounts of the bank), while `xxx-zzz-` are shown in orange (= accounts from another bank). 
 
     ![](images/same-day-transfers.jpg)
 

@@ -10,9 +10,9 @@
 
 In this lab, you will download and run two sets of scripts. First, you will download and run the Hadoop Distributed File System (HDFS) scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to a new local directory on your master node in your BDS cluster. The HDFS scripts manipulates some of the downloaded data files, and then upload them to new HDFS directories. The HDFS scripts also create Hive databases and tables which you will query using Hue. Second, you will download and run the object storage scripts to download data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to your local directory using OCI Cloud Shell. The object storage scripts uploads the data to a new bucket in Object Storage. See the [Data License Agreement](https://www.citibikenyc.com/data-sharing-policy) for information about the Citi Bikes NYC data license agreement.
 
-**Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
+> **Note:** The Object Storage service provides reliable, secure, and scalable object storage. Object storage is a storage architecture that stores and manages data as objects. You can use Object Storage objects and buckets to store and manage data. An object stores any type of data, regardless of the content type. A bucket is a logical container for storing objects.  See [Overview of Object Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm#Overview_of_Object_Storage) in the Oracle Cloud Infrastructure documentation.
 
-Estimated Lab Time: 45 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -22,32 +22,20 @@ Estimated Lab Time: 45 minutes
 * Create Hive databases and tables that represents the data that you uploaded to HDFS, and then query the Hive tables using Hue.
 
 
-### What Do You Need?
-+ This lab assumes that you have successfully completed the following labs in the **Contents** menu:
-    <if type="freetier">
-    + **Lab 1: Setup the BDS Environment**
-    </if>
-    <if type="livelabs">
-    + **Lab 1: Review Creating BDS Environment Resources (Optional)**
-    </if>
-    + **Lab 2: Create a BDS Hadoop Cluster**
-    + **Lab 3: Add Oracle Cloud SQL to the Cluster**
-    + **Lab 4: Access a BDS Node Using a Public IP Address**
-    + **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
-    + **Lab 6: Create a Hadoop Administrator User**
-
-+ Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
+### Prerequisites    
++ This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
++ In this lab, you will download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
 <if type="freetier">
-## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
+## **Task 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. In the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments > training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
+2. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**. In the list of compartments, search for the **training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 
   ![](./images/compartment-ocid.png " ")
 
-3. In the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
+3. Click the **Navigation** menu and navigate to **Networking > Reserved IPs**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
 4. In row for the `traininmn0-public-ip` reserved IP address, copy the reserved public IP address associated with the master node in the **Reserved Public IP** column. Next, paste that IP address to an editor or a file, so that you can retrieve it later in this lab. You might need this IP address to ssh to the master node, if you didn't save your ssh connection in Lab 6.
 
@@ -56,11 +44,11 @@ Estimated Lab Time: 45 minutes
 </if>
 
 <if type="livelabs">
-## **STEP 1:** Gather Information About the Master Node Reserved Public IP Address
+## **Task 1:** Gather Information About the Master Node Reserved Public IP Address
 
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
 
-2. In the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
+2. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
 3. In row for the `traininmn0-public-ip` reserved IP address, copy the reserved public IP address associated with the master node in the **Reserved Public IP** column. Next, paste that IP address to an editor or a file, so that you can retrieve it later in this lab. You might need this IP address to ssh to the master node, if you didn't save your ssh connection in Lab 6.
 
@@ -68,13 +56,13 @@ Estimated Lab Time: 45 minutes
 
 </if>
 
-## **STEP 2:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## **Task 2:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
-In this step, you will connect to the first (only one master node in a non-HA cluster) master node in your cluster using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
+In this task, you will connect to the first (only one master node in a non-HA cluster) master node in your cluster using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
 
-In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the steps on how to connect to the first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
+In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. Refer to **Lab 6: Create a Hadoop Administrator User**, if needed, to review the Tasks on how to connect to the first master node in your cluster. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you will need to use your Linux system or Windows PowerShell as shown in **Lab 6**.
 
-**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
+> **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 1. Start **PuTTY**. The **PuTTY Configuration** window is displayed. In the **Saved Sessions** section, click the `ssh to traininmn0 on BDS cluster` saved session that you created in **Lab 6**, and then click **Load**.
 
@@ -129,9 +117,9 @@ In this lab, we will connect to our cluster using Windows **PuTTY** and provide 
     ![](./images/ll-change-directory.png " ")
     </if>
 
-## **STEP 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
+## **Task 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
 
-In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
+In this task, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
 The Citi Bikes detailed trip data files (in zipped format) are first downloaded to a new local directory. Next, the files are unzipped, and the header row is removed from each file. Finally, the updated files are uploaded to a new **`/data/biketrips`** HDFS directory. Next, a new **`bikes`** Hive database is created with two Hive tables. **`bikes.trips_ext`** is an external table defined over the source data. The **`bikes.trips`** table is created from this source; it is a partitioned table that stores the data in Parquet format. The tables are populated with data from the `.csv` files in the **`/data/biketrips`** directory.
 
@@ -139,7 +127,7 @@ The stations data file is downloaded (and then manipulated) from the [station in
 
 The weather data is downloaded from a public bucket in Object Storage. Next, the header row in the file is removed. The updated file is then uploaded to a new **`/data/weather`** HDFS directory. Next, a new **`weather`** Hive database and **`weather.weather_ext`** table are created and populated with from the `weather-newark-airport.csv` file in the **`/data/weather`** directory.
 
-**Note:**    
+> **Note:**    
 To view the complete data files that are available, navigate to [Citibike System Data](https://www.citibikenyc.com/system-data) page. In the **Citi Bike Trip Histories** section, click [downloadable files of Citi Bike trip data](https://s3.amazonaws.com/tripdata/index.html). The [Index of bucket "tripdata"](https://s3.amazonaws.com/tripdata/index.html) page displays the available data files. In this lab, you will be using only some of the data files on that page.  
 
 1. Run the following command to download the **`env.sh`** script from a public bucket in Object Storage to the **`training`** working directory. You will use this script to set up your HDFS environment.
@@ -194,7 +182,7 @@ To view the complete data files that are available, navigate to [Citibike System
   ![](./images/ll-env-script.png " ")
   </if>
 
-  **Note:** You will download the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified in the **`env.sh`** and the HDFS scripts: **`biketrips`**, **`stations`**, and **`weather`**.
+    > **Note:** You will download the data from [Citi Bikes NYC](https://www.citibikenyc.com/system-data) to the new **`Downloads`** local target directory as specified in the **`env.sh`** file. You will upload the data from the local **`Downloads`** directory to the following new HDFS directories under the new **`/data`** HDFS directory as specified in the **`env.sh`** and the HDFS scripts: **`biketrips`**, **`stations`**, and **`weather`**.
 
 5. Use the **`cat`** command to display the content of the **`download-all-hdfs-data.sh`** script. This script downloads the **`download-citibikes-hdfs.sh`** and **`download-weather-hdfs.sh`** scripts to the local **`training`** working directory, adds execute privilege on both of those scripts, and then runs the two scripts.
 
@@ -297,7 +285,7 @@ To view the complete data files that are available, navigate to [Citibike System
     $ <copy>hadoop fs -ls /data/stations</copy>
     $ <copy>hadoop fs -ls /data/weather</copy>
     ```
-    **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
+    > **Note:** Hit the **[Enter]** key on your keyboard to execute the last command above.
     <if type="freetier">
     ![](./images/hdfs-directories.png " ")
     </if>
@@ -319,9 +307,9 @@ To view the complete data files that are available, navigate to [Citibike System
     ![](./images/ll-view-tripdata.png " ")
     </if>
 
-## **STEP 4:** Query the Uploaded HDFS Data Using Hue
+## **Task 4:** Query the Uploaded HDFS Data Using Hue
 
-In this step, you log into Hue as the **`training`** administrator user and query the Hive tables that were created by the scripts that you ran in the previous step. Remember, in a non-HA BDS cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this task, you log into Hue as the **`training`** administrator user and query the Hive tables that were created by the scripts that you ran in the previous task. Remember, in a non-HA BDS cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
@@ -330,8 +318,8 @@ In this step, you log into Hue as the **`training`** administrator user and quer
     ```
     https://<ip-address>:8888
     ```
-  **Note:**    
-  In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**.
+    > **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**.
 
   In our example, we used the reserved public IP address that is associated with our first utility node as follows:
     <if type="freetier">
@@ -347,11 +335,11 @@ In this step, you log into Hue as the **`training`** administrator user and quer
     </if>
 
 3. If this is the first time you are accessing Hue, the Hue Login screen is displayed. Enter your **`username`** (**`admin`** by default) and the **`password`** that you specified when you created the cluster such as **`Training123`**.
-**Note:** In the optional **STEP 5: Add the training User to Hue (optional)** in **Lab 6**, you added the new `training` user to Hue.
+    > **Note:** In the optional **Task 5: Add the training User to Hue (optional)** in **Lab 6**, you added the new `training` user to Hue.
 
   ![](./images/hue-login-page.png " ")
 
-  The **Hue Editor** page is displayed with the **`default`** Hive database. To display the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous step, click the **`default`** Hive database.
+  The **Hue Editor** page is displayed with the **`default`** Hive database. To display the **`bikes`** and **`weather`** Hive databases that were created when you ran the scripts in the previous task, click the **`default`** Hive database.
 
   ![](./images/hue-home-page.png " ")
 
@@ -378,18 +366,18 @@ limit 10;</copy>
 
     ![](./images/query-result.png " ")
 
-    **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+    > **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
   ![](./images/hue-doc.png " ")
 
   <if type="livelabs">
-  **This concludes this lab and the workshop.**
+  **This concludes the workshop.**
   </if>
 
 <if type="freetier">
-## **STEP 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
+## **Task 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
 
-In this step, you will download two scripts that will set up your Object Storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
+In this task, you will download two scripts that will set up your Object Storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -399,7 +387,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/cloud-shell-started.png " ")
 
-    **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
+    > **Note:** To change the Cloud Shell background color theme from dark to light, click **Settings** ![](./images/settings-icon.png) on the Cloud Shell banner, and then select **Theme > Light** from the **Settings** menu.
 
     ![](./images/change-theme.png " ")
 
@@ -421,11 +409,11 @@ In this step, you will download two scripts that will set up your Object Storage
     ![](./images/view-os-env-script.png " ")
 
 
-5. To input and edit text, press the **[i]** key on your keyboard (insert mode) at the current cursor position. The **INSERT** keyword is displayed at the bottom of the file to indicate that you can now make your edits to this file. Scroll-down to the line that you want to edit. Copy your **training-compartment OCID** value that you identified in **STEP 1**, and then paste it between the **`" "`** in the **`export COMPARTMENT_OCID=""`** command.
+5. To input and edit text, press the **[i]** key on your keyboard (insert mode) at the current cursor position. The **INSERT** keyword is displayed at the bottom of the file to indicate that you can now make your edits to this file. Scroll-down to the line that you want to edit. Copy your **training-compartment OCID** value that you identified in **Task 1**, and then paste it between the **`" "`** in the **`export COMPARTMENT_OCID=""`** command.
 
     ![](./images/vi-env-script-os.png " ")
 
-    **Note:** You will upload the Object Store data to the **`training`** bucket as specified in the `env.sh` file.
+    > **Note:** You will upload the Object Store data to the **`training`** bucket as specified in the `env.sh` file.
 
 6. Press the **[Esc]** key on your keyboard, enter **`:wq`**, and then press the **[Enter]** key on your keyboard to save your changes and quit **vi**.    
 
@@ -480,7 +468,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/data-downloaded-objstore.png " ")
 
-13. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
+13. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
     ![](./images/buckets-page.png " ")
 
@@ -496,12 +484,12 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/view-object-details.png " ")
 
-    **Note:** To view all the data in a file, select **Download** from the context menu, and then double-click the downloaded file to open it using its native application, MS-Excel (.csv) in this example.  
+    > **Note:** To view all the data in a file, select **Download** from the context menu, and then double-click the downloaded file to open it using its native application, MS-Excel (.csv) in this example.  
 
     </if>
 
 <if type="freetier">
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 </if>
 
 
@@ -520,4 +508,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Martin Gubar, Director, Oracle Big Data Product Management
 * **Reviewer:**  
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, August 2021

@@ -2,286 +2,177 @@
 
 ## Introduction
 
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it. Guacamole is also installed to provide a friendly user interface. You can use this compute instance to complete the remaining labs in this workshop.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private **workshop-installed** image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window, a Firefox browser, and a gedit text editor.
 
-You begin in Resource Manager by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs as a downloadable ZIP file and loads a custom image stored in Oracle Cloud Marketplace. After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via a browser and Cloud Shell.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser and then download the lab files.
 
-*If you are working in the LiveLabs tenancy, you can skip STEP 1 because it has already been done for you.*
+Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip STEP 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which is covered in STEP 1.
 
-Estimated Lab Time: 30 minutes
+> **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because they have already been done for you.
+
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-In this lab, you learn how to do the following:
+Learn how to do the following:
 
+- Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
-- Obtain the public IP address of your compute instance
-- Connect to your compute instance via a browser
-- Connect to your compute instance via Cloud Shell
-- Discover the container database (CDB) and pluggable database (PDB) on your compute instance
+- Connect to your compute instance via a browser and set up your desktop
+- Download the labs files
 
 ### Prerequisites
 
-- You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
-- You have created SSH keys.
+Before you start, be sure that you have done the following:
 
-### Assumptions
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell
 
-- You are signed in to Oracle Cloud Infrastructure.
 
-## **STEP 1**: Create and apply a stack in Resource Manager
+## **STEP 1**: Add security rules to your existing VCN
 
-*If you are working in the LiveLabs tenancy, you can skip this step and proceed to STEP 2*.
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521, 1523, and 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
-1. Download [livelabs-db19compute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) to a directory on your local computer. This ZIP file contains the terraform script.
+> **Note**: If you plan to let Resource Manager create a new VCN for you (recommended), you can skip this step and proceed to STEP 2. If you are working in the LiveLabs environment, you can skip this step and STEP 2 and proceed to STEP 3.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed. The **Create Stack** page is displayed.
+1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
+
+2. Select your VCN.
+
+3. Under **Resources**, select **Security Lists**.
+
+4. Click the default security list.
+
+5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
+
+## **STEP 2**: Create and apply a stack in Resource Manager
+
+> **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
+
+1. Download [19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/UyFdPRkpgtXDamUYzyMeZckjhekdqj1BJ83Jpp8rVC1baCP06xDIKCeVX4gcTwwM/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
+
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
   ![Create a stack tile on the home page](images/create-a-stack.png)
 
-3. For **Stack Information**, do the following:
+    The **Create Stack - Stack Information** page is displayed.
 
-  a) Select **My Configuration**.
+3. Select **My Configuration**.
 
-  b) In the **Stack Configuration** area, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded (`livelabs-db19ccompute-0812.zip`), and then click **Open**.
+4. In the **Stack Configuration** area, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
-  c) Scroll down, and in the **NAME** box, enter a name of your choice, for example, **livelabs19c**.
+  ![Stack Information](images/stack-information-page-workshop-installed.png "Stack Information page")
 
-  ![Stack Information](images/stack-information-page.png)
+5. For **Name**, leave the default stack name as is.
 
-  d) Click **Next**.
+6. For **Description**, leave the default description for the stack as is.
 
-4. For **Configure Variables**, do the following:
+7. Select your compartment to store the stack.
 
-  a) Leave **Region** as is.
+8. Click **Next**. The **Configure Variables** page is displayed.
 
-  b) Select the compartment in which you want to create the compute instance.
+9. In the **Instance** section, make sure the appropriate region is selected.
 
-  c) Select an availability domain.
+10. Select your compartment.
 
-  d) Select **Paste SSH Key**, and paste the contents of your public key into the box.
+11. Select an availability domain.
 
-  e) Leave **VMStandard.E2.4** selected as the instance shape. This shape meets the memory requirements for installing Oracle Database 19c.
+12. Select **Paste SSH Key**, and then paste the contents of your public key into the box. Be sure that there are no carriage returns. The key should be all on one line.
 
-  f) Leave the network settings as is.
+  ![Instance Configuration](images/instance-configuration.png "Instance Configuration")
 
-  ![Configure Variables](images/configure-variables-page.png)
+13. In the **Network** section, choose one of the following options:
 
-  g) Click **Next**.
+    - **Option 1 (Recommended)**: Leave the default settings as is to create a new VCN.
 
-5. On the **Review** page, verify that the information is correct.
+    ![Network Configuration](images/network-configuration.png "Network Configuration")
 
-  ![Review page](images/review-page.png)
+    - **Option 2**: Select **Use existing VCN** and select an existing VCN and subnet in your tenancy. You may need to select different compartments to locate these items. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires the ingress security rules specified in STEP 1 above.
 
-6. Click **Create**. Your stack is created and the **Stack Details** page is displayed.
+14. Click **Next**.
 
-  ![Stack Details page](images/stack-details-page.png)
+15. On the **Review** page, verify that the information is correct.
 
-6. From the **Terraform Actions** drop-down, select **Apply**. The **Apply** window is displayed.
+  ![Review page](images/review-page.png "Review page")
 
-7. In the **Apply** window, leave the name as is and the **APPLY JOB PLAN RESOLUTION** set to **Automatically approve**, and click **Apply**. Resource Manager starts a job to deploy your resources.
+16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
-  ![Apply window](images/apply-window.png)
+  ![Run Apply section](images/run-apply-section.png "Run Apply Section")
 
-8. When the job is finished, inspect the log. The last line should read `Apply complete!`.
+17. Click **Create**.
 
-## **STEP 2**: Obtain the public IP address of your compute instance
+    Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
 
-1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
+  ![Job Details page](images/job-details-page.png "Job Details page")
 
-2. Select your compartment.
+18. Scroll down in the log to the last line. This line contains the URL to access your compute instance via a browser. For example, your URL looks similar to the one below, with your own public IP address. Copy the URL (don't include `remote_desktop =`) to the clipboard because you need it in STEP 3.
 
-3. Find the public IP address of the compute instance called **workshop-installed** in the table and jot it down.
-
-4. (Optional) Click the **workshop-installed** compute instance to view all of its details.
-
-
-
-## **STEP 3**: Connect to your compute instance via a browser
-
-1. On your local computer, open a browser, and enter the following url. Replace `compute-public-ip` with the public IP address of your compute instance.
-
-    ```nohighlighting
-    <copy>compute-public-ip:8080/guacamole</copy>
+    ```
+    remote_desktop = http://public-ip-address:6080/index.html?password=s0TGCvFfk9&resize=scale&autoconnect=true&quality=9&reconnect=true
     ```
 
-2. Enter `oracle` as the username and `Guac.LiveLabs_` as the password, and then click Login. Don't forget the underscore at the end of the password!
-    (guacamole-login-page.png)
 
-   You are presented with a Guacamole desktop. The desktop provides shortcuts to Firefox and a terminal window.
+## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
 
-## **STEP 4**: Connect to your compute instance via Cloud Shell
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
 
-1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
+1. In a browser, enter the URL to your `workshop-installed` compute instance.
 
-  ![Cloud Shell icon](images/cloud-shell-icon.png)
+    You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox, a terminal window, and gedit (text editor). The Oracle Database 19c New Features workshop guide is displayed in Firefox.
 
-  A terminal window opens at the bottom of the page.
+    ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
 
-2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance.
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down).
 
-  `cloudshellkey` is the name of the private key file that you created in the [Generate SSH Keys - Cloud Shell](?lab=https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md) lab. If your private key has a different name, then replace `cloudshellkey` with it.
+    ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
-    ```nohighlighting
-    $ <copy>ssh -i ~/.ssh/cloudshellkey opc@public-ip-address</copy>
+    ![Full Screen](images/full-screen.png "Full Screen")
+
+3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+
+
+## **STEP 4**: Download the lab files
+
+1. On the noVNC desktop, open a terminal window.
+
+2. Create a `/home/oracle/labs/19cnf` directory and switch to it.
+
+    ```
+    $ mkdir -p ~/labs/19cnf
+    $ cd ~/labs/19cnf
     ```
 
-    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
+3. Download the lab files into the `19cnf` directory.
 
-3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
-
-  You are now connected to your new compute instance via Cloud Shell.
-
-
-## **STEP 5**: Discover the container database (CDB) and pluggable database (PDB)
-
-1. Switch to the `oracle` user.
-
-    ```nohighlighting
-    [opc@workshop ~]$ <copy>sudo su - oracle</copy>
+    ```
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip
     ```
 
-2. Track the database installation and configuration by viewing the `dbsingle.log` file.
+4. Extract the ZIP file in the `19cnf` directory.
 
-    ```nohighlighting
-    [oracle@workshop ~]$ <copy>tail -f /u01/ocidb/buildsingle.log</copy>
     ```
-    ...
-    INFO (node:workshop): Creating database (ORCL) (Single Instance)
-    ...
-    Prepare for db operation
-    8% complete
-    Copying database files
-    31% complete
-    Creating and starting Oracle instance
-    32% complete
-    36% complete
-    ...
+    $ unzip -q 19cnf-lab-files.zip
     ```
 
-3. Wait for the log to state the following information. It takes *approximately 20-30 minutes* for the database to be configured and ready for use.
+5. View the list of files.
 
-    ```nohighlighting
-    ...
-    21-04-18 22:29:38:[buildsingle:Done :workshop] Building 19c Single Instance
-    2021-04-18 22:29:38:[buildsingle:Time :workshop] Completed successfully in 2367 seconds (0h:39m:27s)
+    ```
+    ls
     ```
 
-4. Run the following command to verify the database is running.
+6. Grant permissions to execute on files in the `19cnf` directory.
 
-    ```nohighlighting
-    $ <copy>ps -ef | grep ORCL</copy>
-
-    ...
-    oracle   12100     1  0 22:40 ?        00:00:00 ora_w00e_ORCL
-    oracle   12104     1  0 22:40 ?        00:00:00 ora_w00f_ORCL
-    opc      12412 10323  0 22:44 pts/1    00:00:00 grep --color=auto ORCL
     ```
-
-5. Verify the listener is running.
-
-    ```nohighlighting
-    $ <copy>ps -ef | grep tns</copy>
-
-    root        61     2  0 21:49 ?        00:00:00 [netns]
-    oracle    4574     1  0 21:50 ?        00:00:00 /u01/app/oracle/product/19c/dbhome_1/bin/tnslsnr LISTENER -inherit
-    opc      12602 10323  0 22:46 pts/1    00:00:00 grep --color=auto tns
+    chmod -R +x ~/labs/19cnf
     ```
-
-6. Set the environment variables to point to the Oracle binaries. When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
-
-    ```nohighlighting
-    $ <copy>. oraenv</copy>
-    ORACLE_SID = [oracle] ? ORCL
-    The Oracle base has been set to /u01/app/oracle
-    [oracle@workshop ~]$
-    ```
-
-7. Using SQLPlus, connect to the `root` container of your database. SQL*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
-
-    ```nohighlighting
-    $ <copy>sqlplus / as sysdba</copy>
-
-    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Apr 14 22:52:11 2021
-    Version 19.10.0.0.0
-
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
-
-    Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
-
-    SQL>
-    ```
-
-8. Verify that you are logged in to the `root` container as the `SYS` user.
-
-    ```nohighlighting
-    SQL> <copy>SHOW user</copy>
-
-    USER is "SYS"
-    SQL>
-    ```
-
-9. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
-
-    ```nohighlighting
-    SQL> <copy>SHOW con_name</copy>
-
-    CON_NAME
-    -------------------
-    CDB$ROOT
-    SQL>
-    ```
-
-10. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
-
-    ```nohighlighting
-    SQL> <copy>COLUMN name FORMAT A8</copy>
-    SQL> <copy>SELECT name, con_id FROM v$containers ORDER BY con_id;</copy>
-
-    NAME         CON_ID
-    -------- ----------
-    CDB$ROOT          1
-    PDB$SEED          2
-    ORCLPDB           3
-    SQL>
-    ```
-
-11. Exit SQL*Plus.
-
-    ```nohighlighting
-    SQL> <copy>EXIT</copy>
-
-    $
-    ```
-12. Using SQL*Plus, connect to the pluggable database `orclpdb` as the `oracle` user.
-
-  *REVIEWER: Why do we say connect as the oracle user? Isn't this the SYSTEM user?*
-
-    ```nohighlighting
-    $ <copy>sqlplus system/Ora_DB4U@localhost:1521/orclpdb</copy>      
-    ```
-13. Exit SQL*Plus.
-
-    ```nohighlighting
-    SQL> <copy>EXIT</copy>
-    Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
-
-    $
-    ```
-Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
-
-You may now [proceed to the next lab](#next).
 
 
 ## Learn More
 
-- [Resource Manager Video](hhttps://youtu.be/udJdVCz5HYs)
+- [Resource Manager Video](https://youtu.be/udJdVCz5HYs)
 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, April 22 2021
+- **Last Updated By/Date** - Jody Glover, Database team, July 9 2021

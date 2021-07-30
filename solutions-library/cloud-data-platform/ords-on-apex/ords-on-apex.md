@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
 
+Estimated Lab Time: 30 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:Zq0qEgF0bMU)
@@ -14,9 +15,8 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 -   Learn how to import SQL queries as APIs in APEX
 -   Learn how to create a REST API using APEX
 
-### Required Artifacts
+### Prerequisites
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 20 minutes.
 
 ### Extra Resources
 -   To learn more about Oracle REST Data Services (ORDS), feel free to explore the capabilities by clicking on this link: [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.4/index.html)
@@ -52,9 +52,11 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/8.png " ")
 
-2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kKVRLnqKZkJCLhySyrSngqQ_5riJ8pGGmbepcgy0c8w/n/c4u03/b/solutions-library/o/ORDS-REST-DEMO.sql). Then, return back to your browser window.
+2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/skySkRjML6D7AMy_dkaT0sNqFslo8lBl8LRPdlfCEMb2-pt6F6UMIC4ptCRIxmX_/n/c4u04/b/solutions-library/o/ORDS-REST-DEMO.sql). Then, return back to your browser window.
 
 3. Click on **Choose File** and select **ORDS-REST-DEMO.sql**, the file you just downloaded for this workshop.
+
+    ![](./images/25.png " ")
 
 4. Finish by clicking on **Import**.
 
@@ -92,9 +94,10 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 7. Change the **Source Type** to **Query**.
 
 8. Then, input the following into the Source box:
-```
-<copy>select * from OOW_DEMO_REGIONS</copy>
-```
+
+    ```
+    <copy>select * from OOW_DEMO_REGIONS</copy>
+    ```
 
 9. Finish by clicking on **Create Handler**.
 
@@ -124,19 +127,19 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 1. Under **warehouseAPI**, click on the **stores** API and copy the **Full URL** and paste it into a separate notes file (i.e. Notepad, Microsoft Word, Apple Notes, etc.) to be used later.
 
-    ![](./images/17v1.png " ")
+    ![](./images/17new.png " ")
 
 2. Next, do the same with the following 2 APIs, copying each **Full URL** and pasting each into that same separate notes file.  Be sure to label which URL is which so that you do not confuse them later.
-```
-<copy>
-product/inventoryForecastingAPI/{store_add}
-</copy>
-```
-```
-<copy>
-product/trendingProductAPI/{store_add}
-</copy>
-```
+    ```
+    <copy>
+    product/inventoryForecastingAPI/{store_add}
+    </copy>
+    ```
+    ```
+    <copy>
+    product/trendingProductAPI/{store_add}
+    </copy>
+    ```
 
    ![](./images/17v2.png " ")
 
@@ -144,7 +147,7 @@ product/trendingProductAPI/{store_add}
 
 ## **STEP 7**: Add API URLs to Web Page Code
 
-1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SM0gd1zQgGI-O7fL3k3fUTP2zjsH7L6AEjc0WS_ckDk/n/c4u03/b/solutions-library/o/WebPage.zip).
+1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RiNrtEdLlGsZEEXq8aK8fYACsPkqvULFhfVgMASf9jg9hp4uDJb0BGGn8_Thgjr_/n/c4u04/b/solutions-library/o/WebPage.zip).
 
 2. Then, go to your Downloads folder and unzip the .zip file.
 
@@ -154,7 +157,7 @@ product/trendingProductAPI/{store_add}
 
 5. Next, copy your ‘Inventory Forecasting’ API URL, from your notes, into the "inventory forecast api url" variable in the code using the **DEFINE INVENTORY FORECAST API REQUEST URL** instructions provided in the code. (Note: Be sure to read the instructions carefully, as they are different than the instructions for the ‘stores’ API URL.)
 
--   **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
+    **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
 
     ![](./images/21version2.png " ")
 
@@ -188,6 +191,6 @@ product/trendingProductAPI/{store_add}
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
-- **Last Updated By/Date** - Kamryn Vinson, QA Specialist, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 
 

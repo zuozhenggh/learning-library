@@ -6,7 +6,7 @@ This lab shows you what you need to do to your compute instance before you can i
 Estimated Lab Time: 15 minutes
 
 ## Objectives
-In this lab, you learn how to do the following:
+Learn how to do the following:
 
 - Run oracle-database-preinstall-19c
 - Make the `oracle` user a sudoer
@@ -19,7 +19,10 @@ In this lab, you learn how to do the following:
 - Download the lab files to your compute instance
 - Configure the /etc/hosts file on your compute instance
 
-## Prerequisites
+### Prerequisites
+
+The following need to be completed before you start:
+
 - You created a compute instance.
 - You have your My Oracle Support username and password. These are required to download OPatch and a release update.
 
@@ -339,7 +342,7 @@ In the Oracle Database 19c New Features workshop, you run many prebuilt scripts.
 2. Use the `wget` command to download a ZIP file containing the lab files to the `labs` directory.
 
     ```nohighlighting
-    $ <copy>wget "https://objectstorage.us-phoenix-1.oraclecloud.com/p/83Tmlx4J_v8iicr-u5G8PYlzpiFmXxxB9qKGBgEVScgZXHjmyb5xSLUOdolnPO0F/n/c4u03/b/ll-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
+    $ <copy>wget "https://objectstorage.us-ashburn-1.oraclecloud.com/p/H9kHHj4bjsvsZ3H3lLQAq8KLHfVcx9K_AorT0HveZVG_LDFOH1zUTsjCUZvp4_FO/n/c4u04/b/II-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
         ```
 
 

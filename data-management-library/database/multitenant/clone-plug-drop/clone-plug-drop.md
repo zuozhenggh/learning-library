@@ -1001,15 +1001,9 @@ The tasks you will accomplish in this step are:
     ```
 
     ```
-    <copy>create pluggable database oe from oe@cdb1_link relocate;</copy>
-    ```
-
-    ```
-    <copy>alter pluggable database oe open;</copy>
-    ```
-
-    ```
-    <copy>show pdbs</copy>
+    <copy>create pluggable database oe from oe@cdb1_link relocate availability max;
+    alter pluggable database oe open;
+    show pdbs</copy>
     ```
 
     ![](./images/step9.2-relocateoe.png " ")

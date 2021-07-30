@@ -6,11 +6,9 @@ This lab will show you how to deploy the microservices on your Kubernetes cluste
 
 Estimated Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
 [](youtube:8gMmjbXSR68)
-</if>
 
 ### Objectives
 
@@ -150,7 +148,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
    ![](images/spatial-delivery.png " ")
 
-6. Hit the back button on your browser to the `Transactional` screen.
+6. Go to the other tab on your browser to view the `Transactional` screen.
 
    ![](images/tx-show-order-67.png " ")
 
@@ -338,7 +336,7 @@ As the deployments in the workshop are configured with `imagePullPolicy: Always`
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
