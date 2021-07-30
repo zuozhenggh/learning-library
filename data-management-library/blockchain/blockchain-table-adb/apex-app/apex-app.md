@@ -4,7 +4,7 @@
 
 In the lab, you will create an APEX workspace, define the rest end points and enable ORDS for the workspace. Then import the APEX application and run the application to test the blockchain functionality.
 
-Estimated lab time: 20 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 
@@ -29,7 +29,7 @@ In this lab, you will:
 
     Click the **Tools** tab. Click **Open APEX**.
 
-4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance. 
+4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance.
 
     In the lab, provide the **password - WElcome123##** for the ADMIN user you created when you provisioned your ADB instance and click **Sign in to Administration** to sign in to APEX Workspace.
 
@@ -60,35 +60,79 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
 
 2. Select **RESTful Services**.
 
-3. <!--Notice that the Schema Alias is `DEMOUSER` and there are no module defined.--> Click [here]() to download the ORDS-REST-Blockchain.sql file that has the SQL Script to REST Enable this schema and also to create modules for the bank_ledger table with the appropriate handlers.
+3. Notice that the Schema Alias is `DEMOUSER` and clicking on modules shows that there are no modules defined.
 
-4. Let's import the modules by clicking on **Import**.
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nlUdle-us1TMJ-yTOL-sVxXazoDqQegCYakiXiA8zIONnFMWsaCt2u3tNHlz4sUx/n/c4u04/b/data-management-library-files/o/blockchain/ORDS-REST-Blockchain.sql) to download the ORDS-REST-Blockchain.sql file that has the SQL Script to REST Enable this schema and also to create modules for the bank_ledger table with the appropriate handlers.
 
-5. Click on **Choose File** and upload the ORDS REST Blockchain file that you just downloaded. Click on **Import**.
+5. Let's import the modules by clicking on **Import**.
 
-6. Click on **Modules** to expand and notice that now you have the `blockchain` module created.
+6. Click on **Choose File** and upload the ORDS REST Blockchain file that you just downloaded. Click on **Import**.
 
-9. Click on the blockchain module to see the Templates - `rowdata` and `signdata` templates.
+7. Click on **Modules** to expand and notice that now you have the `blockchain` module created.
 
-10. Click on `rowdata` and `signdata` templates to expand and view the POST Methods.
+8. Click on the blockchain module to see the Templates - `rowdata` and `signdata` templates.
 
-11. Click on the **POST** under the rowdata to expand. Notice the sign PL/SQL procedure under Source field takes the seqId, instaceId, chainId as input parameters and give the row data when you do a POST.
+9. Click on `rowdata` and `signdata` templates to expand and view the POST Methods.
 
-12. After receiving the rowdata, the Node.js application which will install in the next lab will use that row data to do the signing using the other rest point -  POST method under the signdata.
+10. Click on the **POST** under the rowdata to expand. Notice the sign PL/SQL procedure under Source field takes the seqId, instanceId, chainId as input parameters and give the row data as output response when you do a POST request.
 
-13. Click on the **POST** under the signdata to expand. Notice the sign PL/SQL procedure under Source field takes the cert_guid, chainId, instanceId, sedId as input parameters along with the rowdata to sign the row.
+    View the rowdata PL/SQL procedure that takes the seqId, instanceId, chainId as input parameters and gives the row data as output response for the POST request:
+
+    ```
+    DECLARE
+        row_data BLOB;
+        buffer RAW(4000);
+        inst_id BINARY_INTEGER;
+        chain_id BINARY_INTEGER;
+        sequence_no BINARY_INTEGER;
+        row_len BINARY_INTEGER;
+    BEGIN
+        SELECT ORABCTAB_INST_ID$, ORABCTAB_CHAIN_ID$,
+        ORABCTAB_SEQ_NUM$
+        INTO inst_id, chain_id, sequence_no
+        FROM BANK_LEDGER
+        WHERE ORABCTAB_INST_ID$=:instanceId and
+        ORABCTAB_CHAIN_ID$=:chainId and ORABCTAB_SEQ_NUM$=:seqId;
+        DBMS_BLOCKCHAIN_TABLE.GET_BYTES_FOR_ROW_SIGNATURE('DEMOUSER','BANK_LEDGER',inst_id, chain_id, sequence_no, 1, row_data);
+        row_len := DBMS_LOB.GETLENGTH(row_data);
+        DBMS_LOB.READ(row_data, row_len, 1, buffer);
+        :rowhex := RAWTOHEX(buffer);
+        :status := 200;
+    END;
+    ```
+
+11. After receiving the rowdata, the Node.js application which will install in the next lab will use that row data to do the signing using the other rest point -  POST method under the signdata.
+
+12. Click on the **POST** under the signdata to expand. Notice the sign PL/SQL procedure under Source field takes the cert_guid, chainId, instanceId, seqId as input parameters along with the rowdata to sign the row.
+
+    View the sign row PL/SQL procedure that takes the cert_guid,seqId, instanceId, chainId as input parameters and results the `status - 200` with a `message - Signature has been added to the row successfully.` if the row is signed successfully else it shows the `status - 400` with the `message - Error adding the signature to blockchain table.`
+
+    ```
+    BEGIN
+        DBMS_BLOCKCHAIN_TABLE.SIGN_ROW('DEMOUSER','BANK_LEDGER', :instanceId
+        , :chainId, :seqId, NULL, HEXTORAW(:signature), HEXTORAW(:cert_guid),
+        DBMS_BLOCKCHAIN_TABLE.SIGN_ALGO_RSA_SHA2_256);
+        :signature := :signature;
+        :message := 'Signature has been added to the row successfully.';
+        :status := 200;
+    exception
+    when others then
+        :message := HEXTORAW(:signature)||'Error adding the signature to blockchain table.';
+        :status := 400;
+    END;
+    ```
 
 ## **STEP 3:** Import and Run the APEX Application
 
 Now we the blockchain module, the handlers and templates defined let's import the apex application.
 
-1. Click [here]() to download the blockchain-tables-apex.sql file.
+1. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iKksQSRJLdhamFt0fsQ4Fb0KhipXg-y5OP9hdFHqVH0CCLeSl_H9WV5HlBtujS8U/n/c4u04/b/data-management-library-files/o/blockchain/Blockchain-APEX-Application.sql) to download the Blockchain-APEX-Application.sql.
 
 2.  Click on **App Builder**.
 
 3. Click on **Import**.
 
-4. In the Import page, Drag and drop or click on **Drag and Drop** to upload the blockchain-tables-apex.sql file you just downloaded.
+4. In the Import page, Drag and drop or click on **Drag and Drop** to upload the Blockchain-APEX-Application.sql file you just downloaded.
 
     Leave the default File Type - Database Application, page or Component Export and click **Next**.
 

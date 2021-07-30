@@ -2,20 +2,21 @@
 
 ## Introduction
 
-In this lab, we will migrate the on-premises database to the Oracle Autonomous Database on Oracle Cloud Infrastructure (OCI).
+In this tutorial, we will migrate the on-premises database to the Oracle Autonomous Database on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### Objectives
 
-In this lab, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the Oracle Cloud Infrastructure Object Storage service as intermediate storage location.
+In this tutorial, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the OCI Object Storage service as intermediate storage location.
 
 
-## **STEP 1:** Install the Oracle Cloud Infrastructure Command Line Interface (CLI) on the source database
+## **STEP 1:** Install the Oracle Cloud Infrastructure CLI on the Source Database
 
-This will be needed to get the wallet from the database and put the dump file into object storage.
+This task is required to get the wallet from the database and put the dump file into object storage.
 
-> **Note:** You could also do without the Oracle Cloud Infrastructure (OCI) CLI by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
+> **Note:** You could also do without the Oracle Cloud Infrastructure (OCI) command line interface (CLI) by getting the wallet through the console and uploading the dump file through the console. This requires more manual steps.
 
 1. You should still be inside the Oracle Database container, otherwise get inside with:
 
@@ -33,7 +34,7 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    Press **enter** to use the defaults for all options.
+    Press **Enter** to use the defaults for all options.
 
 2. Restart your shell:
     ```
@@ -50,16 +51,17 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    You will be prompted for:
-    - Location of the config. Press **Enter**.
-    - `user_ocid`: enter your user OCID.
-    - `tenancy_ocid`: enter your tenancy OCID.
-    - `region`: enter your region from the list provided.
-    - Generate a RSA key pair: press **Enter** for Yes (default).
-    - Directory for keys: press **Enter** for the default.
-    - Name for the key: press **Enter** for the default.
-    - Passphrase: press **Enter** for no passphrase.
-
+    Enter the following information:
+    
+    1. Location of the configuration: press **Enter**.
+    2. `user_ocid`: enter your user OCID.
+    3. `tenancy_ocid`: enter your tenancy OCID.
+    4. `region`: enter your region from the list provided.
+    5. Generate a RSA key pair: press **Enter** for Yes (default).
+    6. Directory for keys: press **Enter** for the default.
+    7. Name for the key: press **Enter** for the default.
+    8. Passphrase: press **Enter** for no passphrase.
+    
 
     You should see an output like:
 
@@ -69,10 +71,9 @@ This will be needed to get the wallet from the database and put the dump file in
     Config written to /home/oracle/.oci/config
     ```
 
-
 4. Upload the public key to your OCI account.
 
-    In order to use the CLI, you need to upload the public key generated to your user account.
+    To use the CLI, you need to upload the public key generated to your user account.
 
     Get the key content with:
 
@@ -86,12 +87,13 @@ This will be needed to get the wallet from the database and put the dump file in
 
     In the Oracle Cloud Console:
 
-    - Under **User**, select **User Settings**.
-    - Click **API Keys**.
-    - Click **Add Public Key**.
-    - Click **Paste Public Key**.
-    - Paste the key copied above.
-    - Click **Add**.
+    1. Under **User**, select **User Settings**.
+    2. Click **API Keys**.
+    3. Click **Add Public Key**.
+    4. Click **Paste Public Key**.
+    5. Paste the key copied above.
+    6. Click **Add**.
+    
 
     You can verify that the fingerprint generated matches the fingerprint output of the configuration.
 
@@ -207,7 +209,7 @@ This will be needed to get the wallet from the database and put the dump file in
 
     ```
 
-## **STEP 4:** Move the Dump File to the Object Storage Bucket
+## **STEP 4:** Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Put the dump file in the `atp-upload` bucket:
 
@@ -239,15 +241,13 @@ This will be needed to get the wallet from the database and put the dump file in
 
 3. **Copy** the **OCID**, and save in a notepad for later use.
 
-4. Gather the **Private Endpoint IP**.
-
-5. And the **Private Endpoint URL** (for example hostname).
+4. Gather the **Private Endpoint IP** and the **Private Endpoint URL** (for example, hostname).
 
     ![](./images/db-info.png)
 
 ## **STEP 6:** Get the Database Wallet
 
-1. Using the Oracle Cloud Infrastructure (OCI) CLI, download the database wallet on the source database, replacing the OCID:
+1. Using the OCI CLI, download the database wallet on the source database, replacing the OCID:
 
     ```bash
     <copy>
@@ -267,7 +267,7 @@ This will be needed to get the wallet from the database and put the dump file in
 
 3. Set the `DIRECTORY` to point to the wallet location in the `sqlnet.ora` file.
 
-    - Edit the sqlnet.ora file:
+    1. Edit the sqlnet.ora file:
 
     ```
     <copy>
@@ -275,7 +275,7 @@ This will be needed to get the wallet from the database and put the dump file in
     </copy>
     ```
 
-    - Replace the directory value as below:
+    2. Replace the directory value as below:
 
     ```
     <copy>
@@ -350,11 +350,11 @@ This will be needed to get the wallet from the database and put the dump file in
     127.0.0.1  jrhdeexg.adb.us-ashburn-1.oraclecloud.com
     ```
 
-## **STEP 8:** Get an OCI Auth Token
+## **STEP 8:** Get an Oracle Cloud Infrastructure Auth Token
 
 1. Go to **User** and select **User Settings**.
 
-2. Take note of your full username.
+2. Take note of your full user name.
 
     ![](./images/username.png)
 

@@ -2,14 +2,14 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ... 
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Lab Time: -- minutes
+Estimated Time: -- minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
-### Objectives 
+### Objectives
 
 *List objectives for this lab using the format below*
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 
 *Below, is the "fold"--where items are collapsed by default.*
 
-## **STEP 1:** Concise Step Description
+## Task 1: Concise Step Description
 
 (optional) Step 1 opening paragraph.
 
@@ -41,7 +41,7 @@ This lab assumes you have:
 
   Download the [starter file](files/starter-file.sql) SQL code.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+  > Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
 
 2. Sub step 2
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** Concise Step Description
+## Task 2: Concise Step Description
 
 1. Sub step 1 - tables sample
 
