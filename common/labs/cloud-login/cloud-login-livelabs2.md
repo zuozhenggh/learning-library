@@ -48,5 +48,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Database Product Management, March 2020
-- **Contributors** - Kay Malcolm, Rene Fontcha, Kamryn Vinson, Anoosha Pilli
+- **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli
 - **Last Updated By/Date** - Tom McGinn, Brianna Ambler, June 2021

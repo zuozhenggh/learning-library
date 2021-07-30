@@ -106,6 +106,6 @@ Now you are ready to run the workshop. You may now [proceed to the next lab](#ne
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+- **Contributors** - LiveLabs Team
 - **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 

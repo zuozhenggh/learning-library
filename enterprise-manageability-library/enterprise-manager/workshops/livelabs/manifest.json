@@ -55,6 +55,12 @@
       "filename": "./../../em-job-system-automation/em-job-system-automation.md"
     },
     {
+      "title": "Lab 9: Get Started with Real Application Testing",
+      "description": "This lab provides an overview of Real Application Testing and how to use it to simulate Workload and review Performance before Database Upgrade.",
+      "publisheddate": "7/16/2020",
+      "filename": "./../../em-rat-spa-dbreplay/em-rat-spa-dbreplay.md"
+    },
+    {
       "title": "Appendix: Frequently Asked Questions (FAQ)",
       "description": "Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs",
       "publisheddate": "8/12/2020",

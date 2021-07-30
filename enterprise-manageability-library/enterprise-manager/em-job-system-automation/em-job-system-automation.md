@@ -67,7 +67,12 @@ In this workshop we will first review the Job you ran in STEP 0 to set user *ora
   ![](images/create_job_add_host.jpg " ")
 
 7. In the Create 'OS Command Job' page, **Parameters Tab**, select **Single Operation** and enter the OS Command for the script that needs to be run
-  ![](images/create_job_parameters.jpg " ")
+
+    ```
+    <copy> /bin/sh /home/oracle/scripts/setup_oracle_creds.sh </copy>
+    ```
+
+    ![](images/create_job_parameters.jpg " ")
 
 8. In the Create 'OS Command Job' page, Credentials Tab, select **Preferred** and **Privileged Host Credentials** from the Preferred Credential Name dropdown. Click **Save to Library** to finish creating your Library job for later use/schedule.
   ![](images/create_job2.jpg " ")
@@ -134,7 +139,7 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 12. This will pop up the credentials screen. Select Named Credential **OEM_SYS**; Click **Login**.
   ![](images/finance_init_param1.jpg " ")
 
-13. Scroll down and you will see the **open\_cursors** initialization parameter set to 300 as shown.
+13. Scroll down and you will see the **open\_cursors** initialization parameter set to a value as shown.
   ![](images/finance_init_param2.jpg " ")
 
 14. Navigate to the ***Enterprise menu >> Job >> Activity***.
@@ -146,13 +151,13 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 16. In the **Select Job Type** pop-up, select "**SQL Script**"; Click **Select**.
     ![](images/sql_job.jpg " ")
 
-17.  On the General Tab, Enter **FIX_OPEN_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
+17.  On the General Tab, Enter **FIX\_OPEN\_CURSOR** as Name of the job and Click on **Add** to add Target Instance.
     ![](images/sql_job2.jpg " ")
 
 18. Check **finance.subnet.vcn.oraclevcn.com**  and click **Select**.
     ![](images/sql_job2.1.jpg " ")
 
-19. On the Parameters tab enter the following SQL command to be executed
+19. On the Parameters tab enter the following SQL command to be executed. Modify open_cursors value to 400 or above as shown
 
     ```
     <copy>alter system set open_cursors = 400 scope=both;</copy>
@@ -166,13 +171,13 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 21. On the **Schedule** Tab you can specify whether you want to run the job immediately or at a later time by specifying date, time etc. Click on **One Time (Immediately)**. Click on **Submit** to submit the SQL Script job.     
     ![](images/sql_job2.6.jpg " ")
 
-21. You will get a confirmation dialog at the top of the screen. Click on **FIX_OPEN_CURSOR** to view your job run.
+22. You will get a confirmation dialog at the top of the screen. Click on **FIX\_OPEN\_CURSOR** to view your job run.
     ![](images/sql_job2.4.jpg " ")
 
-22. This will show you the sql command job's successful run.
+23. This will show you the sql command job's successful run.
     ![](images/sql_job2.5.jpg " ")
 
-23. You can go back to the finance database by repeating steps 11-14 to verify the new value of the open_cursors initialization parameter.
+24. You can go back to the finance database by repeating steps 11-14 to verify the new value of the open_cursors initialization parameter as set by your command.
   ![](images/finance_init_param3.jpg " ")
 
 <!-- This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.   -->

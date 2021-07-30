@@ -53,9 +53,9 @@ This lab assumes you successfully completed all preceding labs.
     info all
     ```
 
-    View statistics of your Extract:
+    View statistics of your Replicat:
     ```
-    view stats
+    view stats <replicat-name>
     ```
 
     View the content of a ggserror log file:
@@ -63,7 +63,7 @@ This lab assumes you successfully completed all preceding labs.
     view messages
     ```
 
-    Purge trail files that are no longer used by Extracts:
+    If your deployment had running Extract processes, then you can also purge old unused trail files using:
     ```
     purge exttrail <trail-file-name>
     ```
