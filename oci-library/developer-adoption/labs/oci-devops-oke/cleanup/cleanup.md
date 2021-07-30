@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Congratulations, you complete the workshop. You may want to release the resources created through the workshop using Terraform.
+Congratulations, you complete the workshop. You may want to release the cloud resources created through this workshop.
 
 ---
 
