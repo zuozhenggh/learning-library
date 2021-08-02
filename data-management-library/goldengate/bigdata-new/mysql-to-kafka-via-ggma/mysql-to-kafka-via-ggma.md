@@ -1,7 +1,7 @@
 # MySql to Kafka via GGMA for BigData
 
 ## Introduction
-This workshop will demonstrate you how to  ***Replicate from  mysql to kafka***.
+This workshop will demonstrate how to  ***Replicate from  mysql to kafka***.
 In this lab we will load data in MySQL database ‘ggsource’, GG extract process ‘extmysql’ will capture the changes from MySQL’s binary logs and write them to the local trail file. The pump process ‘pmpmysql’ will route the data from the local trail (on the source) to the remote trail (on the target). The replicat process ‘repkafka’ will read the remote trail files, act as a producer and write the messages to an auto- created topic for each table in the source database.
 
 *Estimated Workshop Time*: 60 minutes
