@@ -62,5 +62,11 @@
                 "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
             }
+            ,
+            {
+                "title": "Lab 5: Configure Database Partitions",
+                "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
+                "filename": "./../../ggv-auto-partitions/ggv-database-partitions.md"
+            }
        ]
   }
