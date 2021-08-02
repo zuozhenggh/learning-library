@@ -1,4 +1,4 @@
-# Send the Oracle GoldenGate Trail file to OCI GoldenGate
+# Send the OCI GoldenGate Trail file to Oracle GoldenGate
 
 ## Introduction
 
@@ -7,20 +7,20 @@ This lab walks you through the steps to capture and send data from OCI GoldenGat
 Estimated Lab Time: 5 minutes
 
 ### About Extracts, Paths, and Replicats
-An Extract is a process that extracts, or captures, data from a source database. A Receiver Path is a target initiated configuration that uses the Receiver Server. A Replicat is a process that delivers data to the target.
+An Extract is a process that extracts, or captures, data from a source database. A Receiver Path is a target-initiated configuration that uses the Receiver Server. A Replicat is a process that delivers data to the target.
 
 ### Objectives
 
 In this lab, you will:
 * Add and run an Extract process to capture data to send to Oracle GoldenGate
 * Add and run a Receiver Server Path to pull the trail file down to Oracle GoldenGate
-* Add and run a Replicate process to consume the trail file sent from OCI GoldenGate
+* Add and run a Replicat process to consume the trail file sent from OCI GoldenGate
 
 ### Prerequisites
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
 
-## **STEP 1:** Add and Run an Extract in Oracle GoldenGate
+## **STEP 1:** Add and Run an Extract in OCI GoldenGate
 
 This Extract process captures data from the source database to send to Oracle GoldenGate.
 
@@ -76,17 +76,17 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 6.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
 
-7.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on premise or Marketplace Oracle GoldenGate instance.
+7.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
     ![](images/02-07.png)
 
-    *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*
+    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https://.*
 
     ![](images/02-07-note.png)
 
-8.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+8.  For **Target Host**, enter the Oracle GoldenGate Internal FQDN.
 
-    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https://.*
+    *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
 
     ![](images/02-08-note.png)
 
@@ -102,13 +102,13 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 13. Click **Create Path**.
 
-14. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
+14. Return to the Receiver Server Overview page, and then select **Start** from the Path's **Action** menu.
 
 15. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
 
     ![](images/02-15-rcvr.png)
 
-In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
+In this lab, you created and ran a Path on your on premise Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
 ## **STEP 3:** Add a Checkpoint table
 

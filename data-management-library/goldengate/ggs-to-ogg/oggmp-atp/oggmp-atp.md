@@ -1,25 +1,25 @@
-# Connect Oracle GoldenGate to Autonomous Transaction Processing
+# Connect Oracle GoldenGate to Autonomous Data Warehouse
 
 ## Introduction
 
-For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ATP.
+For the purposes of this workshop, Oracle Autonomous Data Warehouse (ADW) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ADW.
 
 Estimated lab time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Download the ATP credentials
-* Upload the ATP credentials to the Oracle GoldenGate Marketplace compute instance
-* Add the ATP credentials in the Oracle GoldenGate Administration Server
+* Download the ADW credentials
+* Upload the ADW credentials to the Oracle GoldenGate Marketplace compute instance
+* Add the ADW credentials in the Oracle GoldenGate Administration Server
 
 ### Prerequisites
 
 Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
 
-## **STEP 1:** Download the Source ATP Client Credentials
+## **STEP 1:** Download the Target ADW Client Credentials
 
-1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
+1.  Navigate back to the Target ADW Autonomous Database Details page, and then click **DB Connection**.
 
     ![Open ATP Service Console](images/02-01.png)
 
@@ -27,9 +27,9 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ![ATP Service Console](images/02-02.png)
 
-3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
+3.  In the Download Client Credentials (Wallet) dialog, enter the Target ADW Admin password twice, and then click **Download**.
 
-## **STEP 2:** Upload the Source ATP Credentials to Oracle GoldenGate
+## **STEP 2:** Upload the Target ADW Credentials to Oracle GoldenGate
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
@@ -45,14 +45,14 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
-6.  Upload the wallet\_ATP.zip and then extract its contents to a new directory, such as **wallet\_ATP**.
+6.  Upload the wallet\_ADW.zip and then extract its contents to a new directory, such as **wallet\_ADW**.
 
     ```
-    <copy>mkdir wallet_ATP
-unzip wallet_ATP.zip -d wallet_ATP</copy>
+    <copy>mkdir wallet_ADW
+unzip wallet_ATP.zip -d wallet_ADW</copy>
     ```
 
-## **STEP 3:** Add the Source ATP credential in the Oracle GoldenGate Administration Server
+## **STEP 3:** Add the Target ADW credential in the Oracle GoldenGate Administration Server
 
 1.  Launch the OCI GoldenGate Deployment Console.
 
@@ -64,7 +64,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
     ![Copy User ID for SourceATP credential](images/03-03.png)
 
-4.  Edit the SourceATP connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ATP.zip. For example, **/home/opc/wallet\_ATP**.
+4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
     ![Edit wallet directory](images/04-04.png)
 
@@ -85,9 +85,9 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 10. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **atp46130\_low**.
-    * For **User ID**, paste the ATP connection string from step 4.
-    * For **Password**, enter the ggadmin password created when you registered the Source Database.
+    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **atp46130\_low**.
+    * For **User ID**, paste the ADW connection string from step 4.
+    * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
     ![Add credential for source ATP](images/04-10.png)
 
@@ -101,10 +101,10 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 13. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You can now proceed to the [next lab](#next).
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can now proceed to the [next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
+* **Contributors** -  Julien Testut, Database Product Management
 * **Last Updated By/Date** - Jenny Chan, July 2021
