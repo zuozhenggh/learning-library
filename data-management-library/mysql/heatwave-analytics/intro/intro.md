@@ -1,4 +1,4 @@
-MySQL Database Service powered by HeatWave and Oracle Analytics Cloud
+**MySQL Database Service powered by HeatWave and Oracle Analytics Cloud**
 
 This workshop will walk you through the process to deploy and configure MySQL Database Service & HeatWave to run Analytics workloads in Oracle Cloud. 
  
@@ -27,7 +27,7 @@ At the end of the workshop you will be able to run some queries on a sample data
   
 
 
-**Workshop Overview**
+## **Workshop Overview**
 
 **[Get Started: Sign Up for your Oracle Cloud Free Tier](signup/signup.md)**
 
