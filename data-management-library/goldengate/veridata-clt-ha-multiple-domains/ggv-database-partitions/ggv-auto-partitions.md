@@ -25,29 +25,21 @@ This lab assumes you have:
     * Lab: Initialize Environment
 * From the [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386), the following are required to complete this lab:
     * Source and Target connections are created as described in [Lab: Create Datasource Connections](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
-    * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386). Let the Group Name be **Group_AutoPartition**.
+    * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
     * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
 
 ## **STEP 1:** Configure Automatic Row Partitioning
 To configure Automatic Row Partitioning:
 1. In the Compare Pair Configuration page, click **Manual Mapping**.
-2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
-    * Source schema: **SOURCE**
-    * Target schema: **TARGET**
-    * Source Table: **CHAR_TYPES**
-    * Target Table: **CHAR_TYPES**
-    ![](./images/5-compare-pair-manual-mappng-select-tables.png " ")
-3. Select the **Automatic Row Partitions** check box.
+2. For the selected table pair, select the **Automatic Row Partitions** check box.
 
-4. Enter a numeric value between 2 to 100 in the text field.
+    **Note**: The **Automatic Row Partitions** check box is available only in case of Manual Mapping. You cannot edit compare-pair names that are created using Automatic Row Partitioning.
 
-      Enter:
-        * Automatic Row Partitions: **10**
+3. Enter a numeric value between 2 to 100 in the text field before generating compare-pair. This value decides the number of compare-pairs to be created. Each auto generated compare-pair compares the subset of data from the selected source and target table.
 
-5. Click **Generate Mappings**. The control moves to the **Preview** tab.
+4. After all partitions are mapped, click the **Preview** tab to display the details of compare-pairs generated:
 
-6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
-You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_AutoPartition** Group to this job.
+5. Click **Save** to save the configured Automatic Row Partitions.
 
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
