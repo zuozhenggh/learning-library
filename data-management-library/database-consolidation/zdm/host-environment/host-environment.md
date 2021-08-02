@@ -20,7 +20,16 @@ The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' 
 Estimate Lab Time: 20 minutes
 
 ## **STEP 1: Install OCI CLI**
-1. Return to your compute instance command prompt. As 'opc' install OCI CLI. Respond y at the prompt.
+1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
+    ```
+
+
+2. Install OCI CLI. Respond y at the prompt.
 
     ```
     <copy>

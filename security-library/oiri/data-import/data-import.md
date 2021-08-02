@@ -126,6 +126,8 @@ In this lab, you will:
     <copy>kubectl get pods -n ding</copy>
     ```
 
+    ![](images/14-data-import.png)
+
     Notice that once the dry-run task has completed, the ding driver will move from the status *Running* to *Completed*.
 
 ## **STEP 5:** Validate the data import task

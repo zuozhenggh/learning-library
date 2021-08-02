@@ -354,6 +354,6 @@ You may now [proceed to the next lab](#next) or paste it in the LiveLabs reserva
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - Kay Malcolm, Tom McGinn, Kamryn Vinson, Anil Nair
+* **Contributors** - LiveLabs Team, Tom McGinn, Kamryn Vinson, Anil Nair
 * **Last Updated By/Date** - Kamryn Vinson, Database Product Management, March 2021
 

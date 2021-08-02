@@ -28,7 +28,7 @@ To complete this lab, you must have:
 * An OCI Account.
 * A tenancy where you have the resources available to provision a VCN and a Linux Instance.
 * An existing compartment in which the resources created will reside.
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
 ## **STEP 1:** Creating a Virtual Cloud Network
 
@@ -91,7 +91,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   ![create instance form step 3](./images/create-instance-form-step3.png)
 
-4. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
+4. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH Keys**.
 
   ![create instance form step 4](./images/create-instance-form-step4.png)
 
@@ -175,7 +175,7 @@ After the process of configuring the OCI instance, in order to be able to create
 
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
-  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
 According to [OracleJET Cookbook] (https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=treemap&demo=default), a treemap is an interactive data visualization in which hierarchical data is represented across two dimensions by the size and color of nested rectangular nodes.
 
