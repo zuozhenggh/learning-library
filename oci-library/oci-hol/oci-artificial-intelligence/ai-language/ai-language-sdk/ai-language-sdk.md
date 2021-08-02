@@ -54,68 +54,49 @@ text = "Zoom interface is really simple and easy to use. The learning curve is v
 #https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
 #https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/configuration.html
 
-ai_client = oci.ocas.AIServiceLanguageClient(oci.config.from_file())
+ai_client = oci.ai_language.AIServiceLanguageClient(oci.config.from_file())
 
  
 #Detect Entities
-detect_language_entities_details = oci.ocas.models.DetectLanguageEntitiesDetails(text=text)
+detect_language_entities_details = oci.ai_language.models.DetectLanguageEntitiesDetails(text=text)
 output = ai_client.detect_language_entities(detect_language_entities_details)
 print(output.data)
  
 #Detect Language
-detect_dominant_language_details = oci.ocas.models.DetectDominantLanguageDetails(text=text)
+detect_dominant_language_details = oci.ai_language.models.DetectDominantLanguageDetails(text=text)
 output = ai_client.detect_dominant_language(detect_dominant_language_details)
 print(output.data)
  
 #Detect KeyPhrases
-detect_language_key_phrases_details = oci.ocas.models.DetectLanguageKeyPhrasesDetails(text=text)
+detect_language_key_phrases_details = oci.ai_language.models.DetectLanguageKeyPhrasesDetails(text=text)
 output = ai_client.detect_language_key_phrases(detect_language_key_phrases_details)
 print(output.data)
  
 #Detect Sentiment
-detect_language_sentiments_details = oci.ocas.models.DetectLanguageSentimentsDetails(text=text)
+detect_language_sentiments_details = oci.ai_language.models.DetectLanguageSentimentsDetails(text=text)
 output = ai_client.detect_language_sentiments(detect_language_sentiments_details)
 print(output.data)
  
 #Detect Text Classification
-detect_language_text_classification_details = oci.ocas.models.DetectLanguageTextClassificationDetails(text=text)
+detect_language_text_classification_details = oci.ai_language.models.DetectLanguageTextClassificationDetails(text=text)
 output = ai_client.detect_language_text_classification(detect_language_text_classification_details)
 print(output.data)
 
 ```
+To Know More Visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
 
 #### Java Code Sample
-Below is the Java sample code to access API endpoints.
+Below is an example of how to use detectDominantLanguage API.
 ```
 package com.oracle.pic.ocas.ailanguage;
  
 import com.oracle.bmc.ailanguage.model.DetectedLanguage;
-import com.oracle.bmc.ailanguage.model.KeyPhrase;
-import com.oracle.bmc.ailanguage.model.TextClassification;
-import com.oracle.bmc.ailanguage.requests.DetectLanguageTextClassificationRequest;
-import com.oracle.bmc.ailanguage.responses.DetectLanguageTextClassificationResponse;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.ailanguage.AIServiceLanguageClient;
 import com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails;
 import com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult;
-import com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails;
-import com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult;
-import com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesDetails;
-import com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult;
-import com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsDetails;
-import com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult;
-import com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails;
-import com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult;
-import com.oracle.bmc.ailanguage.model.Entity;
-import com.oracle.bmc.ailanguage.model.SentimentAspect;
 import com.oracle.bmc.ailanguage.requests.DetectDominantLanguageRequest;
-import com.oracle.bmc.ailanguage.requests.DetectLanguageEntitiesRequest;
-import com.oracle.bmc.ailanguage.requests.DetectLanguageKeyPhrasesRequest;
-import com.oracle.bmc.ailanguage.requests.DetectLanguageSentimentsRequest;
 import com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse;
-import com.oracle.bmc.ailanguage.responses.DetectLanguageEntitiesResponse;
-import com.oracle.bmc.ailanguage.responses.DetectLanguageKeyPhrasesResponse;
-import com.oracle.bmc.ailanguage.responses.DetectLanguageSentimentsResponse;
  
 import java.io.IOException;
 import java.util.List;
@@ -134,32 +115,10 @@ public class AIServiceLanguageExample {
         String text = "Zoom interface is really simple and easy to use. The learning curve is very short thanks to the interface. It is very easy to share the Zoom link to join the video conference. Screen sharing quality is just ok. Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people to zoom bomb";
  
         AIServiceLanguageExample aiServiceLanguageExample = new AIServiceLanguageExample();
-        DetectLanguageSentimentsResult sentimentsResult = aiServiceLanguageExample.getLanguageSentiments(text);
-        DetectLanguageEntitiesResult entitiesResult = aiServiceLanguageExample.getLanguageEntities(text);
         DetectDominantLanguageResult dominantLanguageResult = aiServiceLanguageExample.getDominantLanguage(text);
-        DetectLanguageKeyPhrasesResult keyPhrasesResult = aiServiceLanguageExample.getLanguageKeyPhrases(text);
-        DetectLanguageTextClassificationResult textClassificationResult = aiServiceLanguageExample.getLanguageTextClassification(text);
  
-        aiServiceLanguageExample.printSentiments(sentimentsResult);
-        aiServiceLanguageExample.printEntities(entitiesResult);
         aiServiceLanguageExample.printLanguageType(dominantLanguageResult);
-        aiServiceLanguageExample.printKeyPhrases(keyPhrasesResult);
-        aiServiceLanguageExample.printTextClassification(textClassificationResult);
         client.close();
-    }
- 
-    private DetectLanguageSentimentsResult getLanguageSentiments(String text) {
-        DetectLanguageSentimentsDetails sentimentsDetails = DetectLanguageSentimentsDetails.builder().text(text).build();
-        DetectLanguageSentimentsRequest request = DetectLanguageSentimentsRequest.builder().detectLanguageSentimentsDetails(sentimentsDetails).build();
-        DetectLanguageSentimentsResponse response = client.detectLanguageSentiments(request);
-        return response.getDetectLanguageSentimentsResult();
-    }
- 
-    private DetectLanguageEntitiesResult getLanguageEntities(String text) {
-        DetectLanguageEntitiesDetails entitiesDetails = DetectLanguageEntitiesDetails.builder().text(text).build();
-        DetectLanguageEntitiesRequest request = DetectLanguageEntitiesRequest.builder().detectLanguageEntitiesDetails(entitiesDetails).build();
-        DetectLanguageEntitiesResponse response = client.detectLanguageEntities(request);
-        return response.getDetectLanguageEntitiesResult();
     }
  
     private DetectDominantLanguageResult getDominantLanguage(String text) {
@@ -168,41 +127,7 @@ public class AIServiceLanguageExample {
         DetectDominantLanguageResponse response = client.detectDominantLanguage(request);
         return response.getDetectDominantLanguageResult();
     }
- 
-    private DetectLanguageKeyPhrasesResult getLanguageKeyPhrases(String text) {
-        DetectLanguageKeyPhrasesDetails keyPhrasesDetails = DetectLanguageKeyPhrasesDetails.builder().text(text).build();
-        DetectLanguageKeyPhrasesRequest request = DetectLanguageKeyPhrasesRequest.builder().detectLanguageKeyPhrasesDetails(keyPhrasesDetails).build();
-        DetectLanguageKeyPhrasesResponse response = client.detectLanguageKeyPhrases(request);
-        return response.getDetectLanguageKeyPhrasesResult();
-    }
- 
-    private DetectLanguageTextClassificationResult getLanguageTextClassification(String text) {
-        DetectLanguageTextClassificationDetails textClassificationDetails = DetectLanguageTextClassificationDetails.builder().text(text).build();
-        DetectLanguageTextClassificationRequest request = DetectLanguageTextClassificationRequest.builder().detectLanguageTextClassificationDetails(textClassificationDetails).build();
-        DetectLanguageTextClassificationResponse response = client.detectLanguageTextClassification(request);
-        return response.getDetectLanguageTextClassificationResult();
-    }
- 
-    private void printSentiments(DetectLanguageSentimentsResult result) {
-        List<SentimentAspect> aspects = result.getAspects();
-        String printFormat = "%s [%s - %s]";
- 
-        System.out.println();
-        System.out.println("========= Language Aspect Based Sentiment ========");
-        aspects.forEach(aspect -> System.out.println(String.format(printFormat, aspect.getText(), aspect.getSentiment(), aspect.getScores())));
-        System.out.println("========= End ========");
-        System.out.println();
-    }
- 
-    private void printEntities(DetectLanguageEntitiesResult result) {
-        List<Entity> entities = result.getEntities();
-        String printFormat = "%s [%s]";
-        System.out.println("========= Entities ========");
-        entities.forEach(entity -> System.out.println(String.format(printFormat, entity.getText(), entity.getType())));
-        System.out.println("========= End ========");
-        System.out.println();
-    }
- 
+
     private void printLanguageType(DetectDominantLanguageResult result) {
         String printFormat = "%s [%s]";
         System.out.println("========= Dominant Language ========");
@@ -212,28 +137,190 @@ public class AIServiceLanguageExample {
         System.out.println("========= End ========");
         System.out.println();
     }
- 
-    private void printKeyPhrases(DetectLanguageKeyPhrasesResult result) {
-        List<KeyPhrase> keyPhrases = result.getKeyPhrases();
-        System.out.println("========= Language Key Phrases ========");
-        List<String> keyPhrasesStr = keyPhrases.stream().map(keyPhrase -> keyPhrase.getText()+ " ("+keyPhrase.getScore()+")").collect(Collectors.toList());
-        System.out.println(String.join(",", keyPhrasesStr));
-        System.out.println("========= End ========");
-        System.out.println();
-    }
- 
-    private void printTextClassification(DetectLanguageTextClassificationResult result) {
-        List<TextClassification> textClassifications = result.getTextClassification();
-        String printFormat = "%s (%s)";
-        System.out.println("========= Language Topic Labels & Related Words ========");
-        System.out.println("========= Language Topic Labels ========");
-        textClassifications.forEach(textClassification -> System.out.println(String.format(printFormat, textClassification.getLabel(), textClassification.getScore())));
-        System.out.println("========= End ========");
+}
+```
+To Know More Visit [Java OCI-Language](https://docs.oracle.com/en-us/iaas/tools/java/2.3.1/)
+
+#### Go
+Below is an example of how to use detectLanguageKeyPhrases API.
+```
+// This is an automatically generated code sample.
+// To make this code sample work in your Oracle Cloud tenancy,
+// please replace the values for any parameters whose current values do not fit
+// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
+// boolean, number, and enum parameters with values not fitting your use case).
+
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/oracle/oci-go-sdk/v45/ailanguage"
+	"github.com/oracle/oci-go-sdk/v45/common"
+	"github.com/oracle/oci-go-sdk/v45/example/helpers"
+)
+
+func ExampleDetectLanguageKeyPhrases() {
+	// Create a default authentication provider that uses the DEFAULT
+	// profile in the configuration file.
+	// Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file.
+	client, err := ailanguage.NewAIServiceLanguageClientWithConfigurationProvider(common.DefaultConfigProvider())
+	helpers.FatalIfError(err)
+
+	// Create a request and dependent object(s).
+
+	req := ailanguage.DetectLanguageKeyPhrasesRequest{DetectLanguageKeyPhrasesDetails: ailanguage.DetectLanguageKeyPhrasesDetails{Text: common.String("EXAMPLE-text-Value")},
+		OpcRequestId: common.String("LWFJLBWE22RUPXOANJRC<unique_ID>")}
+
+	// Send the request using the service client
+	resp, err := client.DetectLanguageKeyPhrases(context.Background(), req)
+	helpers.FatalIfError(err)
+
+	// Retrieve value from the response.
+	fmt.Println(resp)
+}
+
+```
+To Know More Visit [Go OCI-Language](https://docs.oracle.com/en-us/iaas/tools/go/45.1.0/ailanguage/index.html)
+
+#### Ruby
+Below is an example of how to use detectLanguageTextClassification API.
+
+```
+# This is an automatically generated code sample.
+# To make this code sample work in your Oracle Cloud tenancy,
+# please replace the values for any parameters whose current values do not fit
+# your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
+# boolean, number, and enum parameters with values not fitting your use case).
+
+require 'oci'
+
+# Create a default config using DEFAULT profile in default location
+# Refer to https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File for more info
+config = OCI::ConfigFileLoader.load_config
+
+# Initialize service client with default config file
+ai_language_client =
+  OCI::AiLanguage::AIServiceLanguageClient.new(config: config)
+
+# Send the request to service, some parameters are not required, see API doc for more info
+detect_language_text_classification_response =
+  ai_language_client.detect_language_text_classification(
+    OCI::AiLanguage::Models::DetectLanguageTextClassificationDetails.new(
+      text: 'EXAMPLE-text-Value'
+    )
+  )
+
+# Get the data from response
+puts "#{detect_language_text_classification_response.data}"
+```
+To Know More Visit [Ruby OCI-Language](https://docs.oracle.com/en-us/iaas/tools/ruby/2.14.0/OCI/AiLanguage.html)
+#### Java Script
+Below is an example of how to use detectLanguageSentiment API.
+```
+// This is an automatically generated code sample.
+// To make this code sample work in your Oracle Cloud tenancy,
+// please replace the values for any parameters whose current values do not fit
+// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
+// boolean, number, and enum parameters with values not fitting your use case).
+
+import * as ailanguage from "oci-ailanguage";
+import common = require("oci-common");
+
+// Create a default authentication provider that uses the DEFAULT
+// profile in the configuration file.
+// Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file.
+
+const provider: common.ConfigFileAuthenticationDetailsProvider = new common.ConfigFileAuthenticationDetailsProvider();
+
+(async () => {
+  try {
+    // Create a service client
+    const client = new ailanguage.AIServiceLanguageClient({
+      authenticationDetailsProvider: provider
+    });
+
+    // Create a request and dependent object(s).
+    const detectLanguageSentimentsDetails = {
+      text: "EXAMPLE-text-Value"
+    };
+
+    const detectLanguageSentimentsRequest: ailanguage.requests.DetectLanguageSentimentsRequest = {
+      detectLanguageSentimentsDetails: detectLanguageSentimentsDetails,
+      opcRequestId: "88YBJIFGR20TWOSVKQSI<unique_ID>"
+    };
+
+    // Send request to the Client.
+    const detectLanguageSentimentsResponse = await client.detectLanguageSentiments(
+      detectLanguageSentimentsRequest
+    );
+  } catch (error) {
+    console.log("detectLanguageSentiments Failed with error  " + error);
+  }
+})();
+```
+To Know More Visit [Java Script OCI-Language](https://docs.oracle.com/en-us/iaas/tools/typescript/2.0.1/modules/_ailanguage_index_.html)
+
+#### DOT NET
+Below is an example of how to use detectLanguageEntities API.
+```
+// This is an automatically generated code sample. 
+// To make this code sample work in your Oracle Cloud tenancy, 
+// please replace the values for any parameters whose current values do not fit
+// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and 
+// boolean, number, and enum parameters with values not fitting your use case).
+
+using System;
+using System.Threading.Tasks;
+using Oci.AilanguageService;
+using Oci.Common;
+using Oci.Common.Auth;
+
+namespace Oci.Sdk.DotNet.Example.Ailanguage
+{
+    public class DetectLanguageEntitiesExample
+    {
+        public static async Task Main()
+        {
+            // Create a request and dependent object(s).
+			var detectLanguageEntitiesDetails = new Oci.AilanguageService.Models.DetectLanguageEntitiesDetails
+			{
+				Text = "EXAMPLE-text-Value"
+			};
+			var detectLanguageEntitiesRequest = new Oci.AilanguageService.Requests.DetectLanguageEntitiesRequest
+			{
+				DetectLanguageEntitiesDetails = detectLanguageEntitiesDetails,
+				OpcRequestId = "QT93ZSFEMJAN75ZIQSEX<unique_ID>",
+				ModelVersion = Oci.AilanguageService.Models.NerModelVersion.V11,
+				IsPii = true
+			};
+
+            // Create a default authentication provider that uses the DEFAULT
+            // profile in the configuration file.
+            // Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file. 
+            var provider = new ConfigFileAuthenticationDetailsProvider("DEFAULT");
+            try
+            {
+                // Create a service client and send the request.
+				using (var client = new AIServiceLanguageClient(provider, new ClientConfiguration()))
+				{
+					var response = await client.DetectLanguageEntities(detectLanguageEntitiesRequest);
+					// Retrieve value from the response.
+					var entitiesValue = response.DetectLanguageEntitiesResult.Entities;
+				}
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"DetectLanguageEntities Failed with {e.Message}");
+                throw e;
+            }
+        }
+
     }
 }
 ```
-
-
+To Know More Visit [DOT NET OCI-Langauge](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
 
 Congratulations on completing this lab!
 
