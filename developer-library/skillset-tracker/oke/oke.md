@@ -4,14 +4,14 @@
 
 **Kubernetes** is an open-source container orchestration tool for automating the deployment and management of Cloud Native applications.
 
-The goal of this Lab is to guide you through the steps that need to be followed in order to create a Docker file and deploy the code from **Lab 6: Build NodeJS APIs to make calls to the database** in **Container Engine for Kubernetes (OKE)**.
+The goal of this Lab is to guide you through the steps that need to be followed in order to create a Docker file and deploy the code from **Lab 5: Build NodeJS APIs to make calls to the database** in **Container Engine for Kubernetes (OKE)**.
 
 Estimated Lab Time: 2 hours
 
 ### Objectives
 In this lab, you will:
 * Create a Container Registry and a Kubernetes Cluster (OKE) in OCI.
-* Deploy the application built in **Lab 6: Build NodeJS APIs to make calls to the database** in OKE.
+* Deploy the application built in **Lab 5: Build NodeJS APIs to make calls to the database** in OKE.
 
 ### Prerequisites
 To complete this lab, you must have:
@@ -19,13 +19,13 @@ To complete this lab, you must have:
 * OCI CLI installed and configured to connect to OCI.
 * Docker installed and configured.
 * Kubectl installed.
-* **Lab 4: Autonomous JSON Database & SODA Collections**.
-* **Lab 6: Build NodeJS APIs to make calls to the database**.
+* **Lab 3: Autonomous JSON Database & SODA Collections**.
+* **Lab 5: Build NodeJS APIs to make calls to the database**.
 
 
 ## **STEP 1:** Create a Docker file, Docker Image and Run a Docker Container
 
-As a prerequisite for this step you should have available the code from **Lab 6: Build NodeJS APIs to make calls to the database**. In addition, you should download the Database Wallet as shown in **Lab 4: Autonomous JSON Database & SODA Collections**, extract the content of the archive and move the folder with the Wallet content into the project folder (in our example the Wallet folder is named _Wallet\_SkillsetDB_).
+As a prerequisite for this step you should have available the code from **Lab 5: Build NodeJS APIs to make calls to the database**. In addition, you should download the Database Wallet as shown in **Lab 3: Autonomous JSON Database & SODA Collections**, extract the content of the archive and move the folder with the Wallet content into the project folder (in our example the Wallet folder is named _Wallet\_SkillsetDB_).
 
 1. In the project folder create a new file _Dockerfile_ and paste the following content into it. This are all the commands needed to run in order to install the application on the container.
 

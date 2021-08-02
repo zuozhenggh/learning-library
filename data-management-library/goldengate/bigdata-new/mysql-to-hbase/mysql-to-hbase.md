@@ -228,7 +228,7 @@ Now that the source side is setup, let us configure GG on the target side (HBase
       <copy>dmlsource</copy>
       ```
       ```
-      <copy>countbasetables</copy>
+      <copy>counthbasetables</copy>
       ```
 
 7. Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**

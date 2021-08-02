@@ -127,7 +127,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
       const restUrl = "http://your_public_ip:8000/api/skillset";
       ```
 
-  You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 _.js_ files. Then save each file.
+  You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab5, Step 1, in all the 8 _.js_ files. Then save each file.
 
 7. Open a terminal an go in the **package** folder. Run the command:
 

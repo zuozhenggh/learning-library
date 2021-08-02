@@ -10,9 +10,7 @@
 
   [](youtube:zNKxJjkq0Pw)
 
-
-Estimated Time: n minutes
-
+Estimated Time: -- minutes
 
 ### About <Product/Technology> (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
@@ -35,11 +33,11 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+  > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1:** Standard LiveLabs Images and Text
+## Task 1: Standard LiveLabs Images and Text
 
 <!-- Images -->
 
@@ -249,7 +247,7 @@ This lab assumes you have:
     }</copy>
     ```
 
-## **STEP 2:** Optional Advanced Features
+## Task 2: Optional Advanced Features
 
 <!-- files -->
 

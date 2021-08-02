@@ -108,6 +108,6 @@ Assim que finalizar, não se esqueça de avaliar este workshop!  Nós dependemos
 ## **Agradecimentos**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
 - **pt_BR Translated by** - André Ambrósio, April 2021
 - **Last Updated By** - André Ambrósio, May 2021
