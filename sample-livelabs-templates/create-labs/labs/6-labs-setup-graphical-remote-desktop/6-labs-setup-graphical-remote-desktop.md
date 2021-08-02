@@ -288,7 +288,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## Task 1: Configure Desktop   
+## Task 2: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
 
 1. Launch your browser to the following URL
@@ -361,7 +361,7 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     ![](./images/desktop-display-1.png " ")
     ![](./images/desktop-display-2.png " ")
 
-## Task 1: Add Applications to Desktop   
+## Task 3: Add Applications to Desktop   
 For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
 
 1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*
@@ -385,7 +385,7 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-## Task 1: Add Important Bookmarks to FireFox
+## Task 4: Add Important Bookmarks to FireFox
 Provide convenient access to LiveLabs and any relevant URL to your workshop by adding bookmarks to *FireFox* browser.
 
 1. Launch *FireFox* and delete all default bookmarks shown in the *Bookmarks Toolbar* area. For each item listed, Right-Click to select and Click *Delete* to remove
