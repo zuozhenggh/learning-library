@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle In-Memory In-Depth Workshop",
+    "workshoptitle": "Oracle In-Memory In-Depth",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -10,7 +10,7 @@
         "title": "Introduction",
         "description":"In-Memory Overview",
         "publisheddate": "10/15/2020",
-        "filename":"../../intro/intro.md"
+        "filename":"../../introduction/introduction.md"
     },
     {
         "title": "Lab Setup",
