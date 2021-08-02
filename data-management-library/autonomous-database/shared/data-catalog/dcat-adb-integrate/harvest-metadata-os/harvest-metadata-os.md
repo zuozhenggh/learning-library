@@ -40,17 +40,21 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
        * **Name:** **`Oracle Object Storage Data Asset`**.
        * **Description:** **`Data Asset to access Oracle Object Storage buckets`**.
        * **Type:** Select **Oracle Object Storage** from the drop-down list.
-       * **URL:** Enter the swift URL for your OCI Object Storage resource. The URL format for an OCI Object Storage resource is as follows which includes your own _region-identifier_:
+       * **URL:** Enter the swift URL for the OCI Object Storage resource that you will use in this lab. The URL format for an OCI Object Storage resource is as follows which includes your own _region-identifier_:
 
         ```
-        <copy>https://swiftobjectstorage.&ltregion-identifier&gt.oraclecloud.com</copy>
+        <copy>https://swiftobjectstorage.region-identifier.oraclecloud.com</copy>
         ```
-        Example:
+        >**Note:** In this lab, you will be accessing two Oracle Object Storage buckets that contains the data. The two buckets are located in a tenancy named **adwc4pm** in the **us-ashburn-1** region. In the next step, you'll add a connection to this data asset using pre-authenticated requests (PAR). For information on PAR, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
+
+        Click **Copy** to copy the following URL, and then paste it in the **URL** field:
+
         ```
-        https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
+        <copy>https://swiftobjectstorage.us-ashburn-1.oraclecloud.com</copy>
         ```
 
-        **Note:** In the above example, substitute the **`us-ashburn-1`** _region-identifier_ with your own _region-identifier_.      
+        <!--  
+        >**Note:**    
         To find your own _region-identifier_, from the **Console**, click the **Region** drop-down list, and then click **Manage Regions**.
 
        ![](./images/manage-regions.png " ")
@@ -58,16 +62,19 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
         The **Infrastructure Regions** page is displayed. In the **Region** section, your Home Region to which you are subscribed is displayed along with your **Region Identifier**, `us-ashburn-1`, in our example:
 
        ![](./images/region-identifier.png " ")
+       -->
 
-       * **Namespace:** Enter the _Object Storage Namespace_ for the specified resource.        
+       * **Namespace:** Enter the _Object Storage Namespace_ for the specified resource. In this lab, enter **adwc4pm**.        
 
-       To find your own _Object Storage Namespace_, from the **Console**, click **Profile**, and then select **Tenancy: &ltyour-tenancy-name&gt**. In our example, the _Object Storage Namespace_ is `idrudhdwamji`.
+       <!-- Old information
+       **Note:** To find your own _Object Storage Namespace_, from the **Console**, click **Profile**, and then select **Tenancy: your-tenancy-name**. In our example, the _Object Storage Namespace_ is `idrudhdwamji`.
 
        ![](./images/profile-tenancy.png " ")
 
        In the **Tenancy Information** tab, the **Object Storage Namespace** is listed in the **Object Storage Settings** section.  
 
        ![](./images/object-storage-namespace.png " ")
+       -->
 
 5. Click **Create** in the **Create Data Asset** panel.  
 
@@ -88,13 +95,22 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
 
    ![](./images/add-connection.png " ")
 
-2. In the **Add Connection** panel, specify the connection details as follows:
+2. In the **Add Connection** panel, specify the connection details for the **moviestream_gold** Object Storage bucket data source as follows:
 
-       * **Name:** **`training-data-asset-connection`**.
+       * **Name:** **`training-bucket-1-connection`**.
        * **Description:** Enter an optional description.
-       * **Type:** Select **Resource Principal** from drop-down list.
-       * **OCI Region:** Enter your own _region-identifier_ that you identified in **Task 2** in this lab.
-       * **Compartment:** Enter the compartment's OCID for your Oracle Object Storage resource.    
+       * **Type:** Select **Pre-Authenticated Request** from drop-down list.
+       * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.
+
+        ```
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/S-9E_eBGGoo9xNm3QP-DoNPr8xlmibT52mXsirQdvmiv_FfRTFmAx2ajUqFY5RCW/n/adwc4pm/b/moviestream_gold/o/</copy>
+        ```
+
+       * **OCI Region:** Enter **us-ashburn-1**.
+
+       <!-- old
+       **Compartment:** Enter the compartment's OCID for your Oracle Object Storage
+        resource.    
 
        To find the compartment OCID for your Oracle Object Storage resource, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**. On the **Compartments** page, In the list of compartments, search for the **`training-dcat-compartment`**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 
@@ -103,6 +119,18 @@ Add a connection for your new **`Oracle Object Storage Data Asset`** as follows:
          >**Note:** The two Object Storage buckets that you will use in this lab are located in the **`training-dcat-compartment`** compartment. To view the two buckets, Open the **Navigation** menu and click **Storage**. Under **Object Storage & Archive Storage**, select **Bucket**. The **Buckets** page is displayed and the two buckets that you will use in the harvesting process are displayed.
 
          ![](./images/buckets-page.png " ")
+
+         * **Name:** **`training-bucket-1-connection`**.
+         * **Description:** Enter an optional description.
+         * **Type:** Select **Resource Principal** from drop-down list.
+         * **OCI Region:** Enter your own _region-identifier_ that you identified in **Task 2** in this lab.
+         * **Compartment:** Enter the compartment's OCID for your Oracle Object Storage resource.    
+
+         >**Note:** The two Object Storage buckets that you will use in this lab are located in the **`training-dcat-compartment`** compartment. To view the two buckets, Open the **Navigation** menu and click **Storage**. Under **Object Storage & Archive Storage**, select **Bucket**. The **Buckets** page is displayed and the two buckets that you will use in the harvesting process are displayed.
+
+           ![](./images/buckets-page.png " ")
+
+           -->
 
        * **Make this the default connection for the data asset:** Select the checkbox.
 

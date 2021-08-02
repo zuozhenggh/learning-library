@@ -15,7 +15,7 @@ Estimated Time: 15 minutes
 * Delete the resources that you created in your **`training-dcat-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, Object Storage buckets and its objects, and so on.
 * Delete the entire **`training-dcat-compartment`** compartment.
 
-**Note:**    
+###Prerequisites  
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     
@@ -76,8 +76,6 @@ This concludes the workshop.
 
 ## Acknowledgements
 
-* **Author:**  
-    + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-* **Contributors:**  
-    + Martin Gubar, Director, Oracle Big Data Product Management
+* **Author:**  Lauran Serhal, Principal User Assistance (UA) Developer, Oracle Database and Big Data (UA)
+* **Contributors:** Martin Gubar, Director, Oracle Big Data Product Management
 * **Last Updated By/Date:** Lauran Serhal, August 2021
