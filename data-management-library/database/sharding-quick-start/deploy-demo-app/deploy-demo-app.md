@@ -4,11 +4,11 @@
 
 To learn more about Oracle Sharded Databases, download and deploy the system-managed SDB demo application. The demo application uses the SDB environment and schema you have just created to simulate the workload of an online retail store. 
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you will perform the following steps:
+In this lab, you will:
 - Setup and Configure the sharding demo application
 - Start the workload to load the demo data
 
@@ -369,7 +369,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Start the workload
+## **STEP 2:** Start the Workload
 
 1. Start the workload by executing command: `./run.sh demo`.
 

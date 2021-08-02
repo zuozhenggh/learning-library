@@ -90,7 +90,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-3. Update the following lines in the file. Replace `<Update>` with the information:
+3. Update the following lines in the file. Replace `<Update>` with the information. Be careful and make sure the entire text is pasted as there is a tendency for the first character to sometimes get cut off:
     * TARGETDATABASE\_OCID: On your Autonomous Database home page.
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_TENANTID: On your API key configuration file preview.
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_USERID: On your API key configuration file preview.
