@@ -2,24 +2,24 @@
 
 ## Introduction
 
-In this Lab, you will learn how to launch a MySQL Database Service System on Oracle Cloud Infrastructure and connect to it using the Console.
+In this Lab, you will learn how to launch a MySQL Database Service System on OCI and connect to it using the Console.
 
 Estimated Lab Time: 90 minutes
 
 ### About MySQL Database Service
 
-MySQL Database Service is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
+MySQL Database Service is a fully-managed OCI, developed, managed, and supported by the MySQL team in Oracle.
 
 ### Objectives
 
-In this lab, you will be guided through the following steps:
+In this lab, you will be guided through the following tasks:
 
-- Create Compartment
-- Create Policy
-- Create Virtual Cloud Network
-- Create a MySQL DB System.
-- Create Client Virtual Machine
-- Connect to MySQL Database
+- Create a Compartment
+- Create a Policy
+- Create a Virtual Cloud Network
+- Create a MySQL DB System
+- Create a Client Virtual Machine
+- Connect to a MySQL Database System
 - Start, stop, reboot, or delete a MySQL Database
 
 ### Prerequisites
@@ -28,9 +28,9 @@ In this lab, you will be guided through the following steps:
 - Some Experience with MySQL Shell
 - Complete Lab 1: Create Local SSH Key
 
-## **STEP 1**: Create Compartment
+## **TASK 1**: Create Compartment
 
-You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
+You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
@@ -51,7 +51,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Compartment** 
     ![Compartment4](./images/01compartment04.png " ")
 
-## **STEP 2**: Create Policy
+## **TASK 2**: Create Policy
 1.	Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
@@ -90,7 +90,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Policy Creation**
     ![Policy3](./images/02policy05.png " ")
 
-## **STEP 3:** Create Virtual Cloud Network
+## **TASK 3:** Create Virtual Cloud Network
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -149,7 +149,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
      New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn13.png " ")
 
-## **STEP 4:** Create a MySQL Database System.
+## **TASK 4:** Create a MySQL Database System.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 
@@ -233,11 +233,11 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     ![MDS](./images/04mysql02_11.png" ")
 
-## **STEP 5:** Create Client Virtual Machine
+## **TASK 5:** Create Client Virtual Machine
 
 **Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
 
-When you are finished, return to this step.
+When you are finished, return to this TASK.
 
 1. You will need a client machine to connect to your brand new MySQL database. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
@@ -261,7 +261,7 @@ When you are finished, return to this step.
    For VCN make sure **MDS_VCN** is selected, "Assign a public IP address" should be set to Yes.  
     ![COMPUTE](./images/05compute04.png " ")
 
-7. If you have not already created your SSH key, perform "Lab 1: Create Local SSH Key".  When you are done return to the next line (STEP 5: #8) .
+7. If you have not already created your SSH key, perform "Lab 1: Create Local SSH Key".  When you are done return to the next line (TASK 5: #8) .
 8. In the Add SSH keys section, generate an SSH key pair or upload your own public key. Select one of the following options: 
 * **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.
 * **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.  
@@ -279,15 +279,15 @@ When you are finished, return to this step.
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+## **TASK 6:** Connect to MySQL Database
 
-1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
+1. If you are a Linux, Mac, or  Windows 10 Powershell user go to TASK 6: #2
 
    If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
 
     Click the Git Bash command. This will take you to the Git Bash terminal as shown below 
     
-    and continue to  STEP 6: #2. 
+    and continue to  TASK 6: #2. 
     ![Connect](./images/06connect0.png" ")
 
 2.  From a terminal window on your local system. Connect to the Compute Instance with the SSH command. 
@@ -296,7 +296,7 @@ When you are finished, return to this step.
     
     Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS_Client**  shows the  Public IP Address as mentioned on Step 5: #10
+    Note: The **MDS_Client**  shows the  Public IP Address as mentioned on TASK 5: #10
     
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**)
 
@@ -367,7 +367,7 @@ When you are finished, return to this step.
 
     ![Connect](./images/06workbench02.png " ")
 
-## **STEP 7:** Start, stop, or reboot MySQL Database System
+## **TASK 7:** Start, stop, or reboot MySQL Database System
 
 Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
@@ -401,7 +401,7 @@ Select a shutdown type:
 
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
-## **STEP 8:** Delete MySQL Database System
+## **TASK 8:** Delete MySQL Database System
 
 Deleting a Database System permanently deletes it. Any manual backups associated with the deleted Database System are retained for their retention periods. Automatic backups are deleted with the Database System.
 

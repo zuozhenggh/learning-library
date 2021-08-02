@@ -130,7 +130,7 @@ In this lab, you will be guided through the following tasks:
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Exlude Backups
+    - Exclude Backups
    
 
 4. Provide basic information for the DB System:
@@ -416,7 +416,7 @@ In this lab, you will be guided through the following tasks:
 
 6. Edit Configure placement and hardware
    
-   Keed the selected Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
+   Keep the selected Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
 
    For VCN make sure **MDS-VCN** is selected, "Assign a public IP address" should be set to Yes. 
    
