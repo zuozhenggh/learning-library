@@ -6,7 +6,7 @@ Congratulations, you complete the workshop. You may want to release the cloud re
 
 ---
 
-Estimated Lab time: 10 minutes
+Estimated Lab time: 20 minutes
 
 ### Objectives
 
