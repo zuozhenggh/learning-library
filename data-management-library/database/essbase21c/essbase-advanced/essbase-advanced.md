@@ -26,7 +26,7 @@ This lab requires -
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 * Files: Sample\_Basic.xlsx, Data\_Basic.txt, Dim_Market.txt
 
-## **Step 1:** Dimension build using Rule file
+## **STEP 1:** Dimension build using Rule file
 
 You can edit and map dimensions to an Essbase outline using a rule, rather than manually building empty dimensions in the Essbase outline editor. In this section, we are building build dimension from a flat file, using a rule.
 
@@ -36,7 +36,7 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
 1. Download the dimension metadata file, **Dim_Market.txt**, and open in a formatted text editor. 
    
-   This file is part of workshop artifacts. Steps to download the artifacts are mentioned in **Lab5 -> Step2**.
+   This file is part of workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
    Notice that the file doesn't have a header row and that the file delimiter is a comma.
 
@@ -155,7 +155,7 @@ Click **Close** to return to the home page.
 
 You have now completed building a dimension using a rule.
 
-## **Step 2:** Data Load to Cube
+## **STEP 2:** Data Load to Cube
 
 DataCorp IT group stores data in an Oracle data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 
@@ -165,7 +165,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 1.	Download the data file **Data_Basic.txt**.
  
-    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
+    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
    
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
 
@@ -284,7 +284,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     You have now completed the data load using rule file.
 
-## **Step 3:** Calculating Essbase Cube
+## **STEP 3:** Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter called input data and values that are calculated from input data.
 
@@ -354,7 +354,7 @@ A cube can be calculated using one of two methods:
 
 To verify if the data is aggregated at all the dimension levels for Actual, you can go to excel and build a retrieval sheet using Smart View.
 
-## **Step 4:** Migration Utilities
+## **STEP 4:** Migration Utilities
 
 1. Download and configure CLI:  
 
@@ -395,7 +395,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
    a. Download the file **Sample_Basic.xlsx**. Copy the file to the folder: C:\app\cli.
 
-     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab5 -> Step2**.
+     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
      ![](./images/image14_89.png)
 
@@ -437,7 +437,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     ![](./images/image14_93.png)
 
-## **Step 5:** REST APIs
+## **STEP 5:** REST APIs
 
 REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over HTTP.
 
@@ -478,7 +478,7 @@ To use the Swagger interface,
 9.	Click **Download File** to download zip file containing application log.
 
 10.  You can integrate REST APIs with cURL in order to automate various Essbase tasks. 
-You may proceed to the next lab.
+You may [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology

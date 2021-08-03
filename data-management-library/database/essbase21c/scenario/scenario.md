@@ -38,13 +38,14 @@ The exercises contained within this lesson will allow the user to get acquainted
 
 *	When first created, sandbox member intersections are all virtual and have no physical storage.
 
-## **Step 1:**	Create a Scenario-Enabled Sample Cube
+## **STEP 1:**	Create a Scenario-Enabled Sample Cube
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
 1. Download the worksheet **SandboxApp.xlsx**.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
+   
 
    Open the **SandboxApp.xlsx** file.
 
@@ -69,7 +70,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
     ![](./images/imageSM_02.png "")
 
-## **Step 2:** Lightweight Sandboxes
+## **STEP 2:** Lightweight Sandboxes
 
 **Show that Sandboxes are lightweight**  
 
@@ -77,7 +78,7 @@ This step shows that creating sandboxes has little impact on resource usage such
 
 1. Download **SmartView.xlsx** file.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
    
    Open **SmartView.xlsx** and go to **sheet1** tab.
    ![](./images/imageSM_03.png "")
@@ -99,7 +100,7 @@ This step shows that creating sandboxes has little impact on resource usage such
 
    By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and do not use any extra storage disk space. Only values that are modified as part of a scenario are stored. This makes creating and using scenarios a very light-weight operation.  
 
-## **Step 3:** Scenario Management
+## **STEP 3:** Scenario Management
 This step is geared towards developing an understanding of security for Essbase and also the workflow aspects of Scenario Management.  In addition, you will create a couple of calculation scripts and leverage run-time substitution variables from within Smart View.
 
 1. Add Users:   
@@ -321,7 +322,7 @@ In this step you will create a calculation script to create data for ORCL USA->X
     
 
 
-## **Step 4:** Run-time Substitution Variables
+## **STEP 4:** Run-time Substitution Variables
 
 Upload the Merge calculation script to your database and review it.  Then, in Smart View, execute the script using the selections (mentioned in Point 10e).  After the script has run validate the data in the Base member.
 
@@ -329,7 +330,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
 2. Download the file **Merge.csc**.
 
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **lab5 -> step2**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in ***Lab: Initialize Environment-> step2**.
 
    Launch the database inspector for the database **Sandbx** under application **Sample_Scenario**. 
    
@@ -394,6 +395,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 Note:
 Notice that John having **Database Manager** permission, was able to define who can update the changes in the base(database). Also, Maria after creating scenario was not able to apply the changes to base(database) because she was having only "Database Update" permission.
 
+You may [proceed to the next lab](#next).
 
 
 ## Acknowledgements

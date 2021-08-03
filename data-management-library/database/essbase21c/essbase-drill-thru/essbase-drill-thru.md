@@ -1,5 +1,6 @@
 # Essbase Drill Through Feature
 
+
 ## Introduction
 
 In this lab, you are using Essbase drill-through functionality to display additional detailed data that is retrieved from the external data sources. When you create an Essbase cube, you do not use all the data from an external data source. You choose and summarize the data in the cube for Essbase users to analyze. The additional detailed data is not available in the Essbase cube.
@@ -18,20 +19,20 @@ Estimated Lab Time: *60 minutes*
 ### Prerequisites
 
 * Essbase 21c instance.
-* Database connection details (Refer to Lab5).  
+* Database connection details (Refer to Lab: Initialize Environment).  
 * Smart View plugin for excel.
 * SQL Developer Client(optional)
 * Files: Sample\_Basic\_DT.xlsx
 
 
-## **Step 1:** Create the cube
+## **STEP 1:** Create the cube
 We are creating a variation of the Sample/Basic cube where Market dim has Region in the leaf level and it has no State. We are then loading data from a relational table. The relational table contains Sales data that contains breakdown of Region Sales figures by States. All the Sales numbers for different states in a Region gets added to that Region. The summaries in Essbase enable users to compare Sales figures across Regions. 
 
 1. Log in to Essbase Web user interface.
 
 2. Download the worksheet Sample\_Basic\_DT.xlsx.  
    
-   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab5 -> Step2**.
+   This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
 3. On the Home page, click **Import**.
 
@@ -61,7 +62,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
     ![](./images/imageDT_04.png "")
 
   
-## **Step 2:** Check the data in relational table (optional)
+## **STEP 2:** Check the data in relational table (optional)
 
    **Note**: The data is already loaded in the database.  
 
@@ -94,7 +95,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
   ![](./images/imageDT_07.png "")
 
 
-## **Step 3:** Define a Drill-through Connection
+## **STEP 3:** Define a Drill-through Connection
 1. In Essbase interface, go to Applications. Select the application SampleDT.
 
 2. Launch application inspector, by clicking the icon under Actions for the application selected and choose **Inspect**.
@@ -115,7 +116,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 6. Click **Test** to check that the connection to the database is successful. Click **Create**. 
    ![](./images/imageDT_10.png "")
     
-## **Step 4:** Define Drill-through Datasource
+## **STEP 4:** Define Drill-through Datasource
 
 1. Click **Datasources** on the Sources tab on application inspector. Click **Create Datasource**.
 
@@ -145,7 +146,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 7. Close the application inspector.
 
-## **Step 5:** Define Drill-through Report
+## **STEP 5:** Define Drill-through Report
 1. Navigate to the database inspector for the application SampleDT and database Basic. Click **Scripts**.   
 
 2. Select **Drill Through Reports** in left navigation section. On the Create menu to the right, select **Datasource**.
@@ -173,7 +174,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
    
 
 
-## **Step 6:** Drill-through Color Coding
+## **STEP 6:** Drill-through Color Coding
 1. Go back to Smart View and open the query worksheet **QueryDT.Sample** within Sample\_Basic\_DT.xlsx.
    ![](./images/imageDT_04.png "")
 
@@ -188,7 +189,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
    Next, we are loading data and drill through to the detailed breakdown of data in the Oracle Database table.
 
-## **Step 7:** Load Data
+## **STEP 7:** Load Data
 1. Create Load Rules:     
 
    a) Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
@@ -253,7 +254,7 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
     ![](./images/imageDT_26.png "")
 
 
-## **Step 8:** Execute Drill-through
+## **STEP 8:** Execute Drill-through
 1.	Go back to Smart View. Refresh the query sheet. Observe the Sales figure for the Central region.
    ![](./images/imageDT_27.png "")
 
@@ -275,7 +276,8 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
     ![](./images/imageDT_28.png "")
 
 
-You may proceed to the next lab.
+You may [proceed to the next lab](#next).
+
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology

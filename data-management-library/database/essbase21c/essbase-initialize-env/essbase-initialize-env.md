@@ -87,7 +87,7 @@ While you only need the browser to perform all tasks in this workshop, you can o
 
     ![](./images/ess-environment5.png " ")
 
-You may now *proceed to the next lab*.
+You may [proceed to the next lab](#next).
 
 ## Acknowledgements
 

@@ -27,7 +27,7 @@ This lab requires:
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
 
-## **Step 1:** Creating a Sample Application in Essbase21c
+## **STEP 1:** Creating a Sample Application in Essbase21c
 
 1.	Log in to the Essbase 21c web interface using the Essbase URL. i.e. http://ip:9000/essbase/jet.
     
@@ -56,7 +56,7 @@ This lab requires:
 
 This concludes the creation of sample application from the **Catalog** in the Essbase 21c web interface.
 
-## **Step 2:** Analyzing Essbase data using Smart View Add-ins
+## **STEP 2:** Analyzing Essbase data using Smart View Add-ins
 
 After installing Oracle Smart View for Office, you can create connections to Essbase. 
 
@@ -87,7 +87,7 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
  
 
-## **Step 3:** Create Ad Hoc Grids
+## **STEP 3:** Create Ad Hoc Grids
 
   ![](./images/smartview.png "")
 
@@ -138,7 +138,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
    Now double-click on 'Profit', it will take you to a further next level.
    ![](./images/image14_17.1.png "")
 
-    Now double-click on 'Margin', it will take you further to next level (i.e, at sales level).
+    Now double-click on 'Margin', it will take you further to the next level (i.e, at sales level).
    ![](./images/image14_17.2.png "")
    
    Select 'Sales' and click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest of the members from your sheet.
@@ -213,7 +213,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
     ![](./images/image14_27.png "")
 
 
-## **Step 4:** Install the Smart View Cube Designer Extension
+## **STEP 4:** Install the Smart View Cube Designer Extension
 
 1. On the 'Smart View' ribbon, select 'Options', and then 'Extensions'.
 
@@ -230,7 +230,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
    Note: Please give 1 or 2 minutes for Cube Designer to complete the installation. 
 
 
-## **Step 5:** Creating a cube from tabular data in Cube Designer
+## **STEP 5:** Creating a cube from tabular data in Cube Designer
 
 This workflow uses two sample tabular data excel files to demonstrate the concepts of intrinsic and forced-designation headers. See about [Design and Manage Cubes from Tabular Data](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/design-and-manage-cubes-tabular-data.html)
 
@@ -278,7 +278,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 
   Note: In the above exercise, you saw how a normal flat file excel sheet can be converted into an Essbase application and a cube. You can get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
 
-## **Step 6:** Export a Cube to an Application Workbook
+## **STEP 6:** Export a Cube to an Application Workbook
 1. In Essbase web UI, expand the application: **DynamicCorp** that contains the cube that you want to export.
    
 2. From the Actions menu, to the right of the cube name **Sales**, select **Export to Excel**.
@@ -300,7 +300,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
    File names do not include spaces because files that are imported to Essbase cannot contain spaces in the file name.
 
 
-## **Step 7:** Overview of the WEB-User Interface
+## **STEP 7:** Overview of the WEB-User Interface
 
 ### **Applications**:
 1. Applications tab gives us the information about the Essbase applications and their respective cubes.
@@ -491,7 +491,7 @@ The Console tab is one stop place for Essbase Administrator tools such as:
 
 ![](./images/image14_75.png "")
 
-You may proceed to the next lab.
+You may [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
