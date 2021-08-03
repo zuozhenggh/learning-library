@@ -32,7 +32,7 @@ Provision a service instance of Visual Builder to deploy and host apps created i
 
     When the instance has finished provisioning, you'll receive an email.  
 
-5. From the menu on the Instances page, click **Open Visual Builder Home Page**.
+5. From the Action menu on the Instances page, click **Open Visual Builder Home Page**.
 
    ![](./images/open.png)
 
@@ -55,9 +55,67 @@ Provision a service instance of Visual Builder Studio to design and develop your
 
    ![](./images/confirm_vbs.png)
 
-4. Once the service instance is created, clicking the Action menu icon and select **Access Service Instance**.
+4. Once the service instance is created, click the Action menu icon on the Instances page and select **Access Service Instance**.
 
-   ![](./images/access_instance_vbs.png)  
+   ![](./images/access_instance_vbs.png)
+
+   The Visual Builder Studio console opens on the Organization page. (Close **X** to close the news banner and expand your work area.)
+   ![](./images/vbs_home.png)  
+
+5. Before you can create a project, you'll need to configure some OCI connections; select the **OCI Account** tab, then click **Connect**.
+
+   ![](./images/vbs_oci_tab.png)
+
+6. Configure OCI Account Credentials. You will need the following credentials:
+    - Tenancy OCID
+    - User OCID
+    - Home Region
+    - Private key
+    - Fingerprint
+    - Compartment OCID
+    - Storage Namespace
+
+   First, let's retrieve the **Tenancy OCID**, **Home Region**, and **Storage Namespace**.
+
+7. Return to your Oracle Cloud Home page and in the navigation menu, select **Governance & Administration**, then under **Account Management**, select **Tenancy Details**.
+
+   ![](./images/oci-credentials.png)
+
+8. In a notepad, copy and paste the Tenancy OCID from the **OCID**, Home Region from the **Home Region**, and the Storage Namespace from the **Object Storage Namespace**.
+
+   ![](./images/oci-credentials-tenancydetails.png)
+
+   Now, let's retrieve the **User OCID** and **Fingerprint**.
+
+9. Click the navigation menu again and select **Identity & Security**. Under **Identity**, select **Users**.
+
+   ![](./images/oci-credentials-identity.png)
+
+10. On the Users page, click your Oracle Cloud Identity Service user.
+
+   ![](./images/oci-credentials-users.png)
+
+11. On the Users page, copy the User OCID from **OCID**.
+
+12. To retrieve the fingerprint of the public key associated with your OCI account, scroll down, select API Keys, and copy the fingerprint value.
+
+13. Let's get the Compartment OCID. In the left navigation menu, select **Compartments**.
+
+   ![](./images/oci-credentials-compartments.png)
+
+14. Copy and paste the OCID to your notepad.
+
+15. Finally, let's grab the private key. The private key file was generated and saved on your computer when you created the private-public key pair in the PEM format. As you recall, we copied the private key at the beginning of this lab and pasted it into a notepad. Copy the private key and make sure to include -----BEGIN RSA PRIVATE KEY----- and -----End RSA PRIVATE KEY-----
+
+16. With all of the necessary information copied, go back to Visual Builder Studio and fill out the Configure OCI Account page. After entering the information, check the Visual Builder Studio Requirements box, click **Validate**, then **Save**.
+
+
+
+
+
+
+
+
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance
