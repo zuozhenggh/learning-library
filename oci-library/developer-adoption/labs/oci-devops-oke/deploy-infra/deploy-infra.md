@@ -303,12 +303,16 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
     ![ORM Stack - Policy Settings](./images/oci-orm-stack-policy-settings.png)
 
 
-    OKE Cluster Configuration: No changes required, use Stack default values to create a new OKE cluster.
-    ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
+    OKE Cluster Configuration:
+    
+     * To create a new OKE Cluster, no changes are required, use Stack default values.
+        ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
 
-    OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
-    ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
+        OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
+        ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
 
+    * To re-use an existing OKE Cluster, uncheck `Create new OKE Cluster` and then select the Compartment where the cluster was deployed and Cluster:
+        ![ORM Stack - Select existing OKE custer](./images/oci-orm-select-existing-oke-cluster.png)
     
 1. Click on Next in the bottom of the page to proceed to the `3. Review` page.
     ![ORM Stack - 3.Review](./images/oci-orm-stack-review.png)
