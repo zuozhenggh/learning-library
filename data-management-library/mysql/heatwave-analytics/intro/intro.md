@@ -1,4 +1,4 @@
-**MySQL Database Service powered by HeatWave and Oracle Analytics Cloud**
+# Introduction
 
 This workshop will walk you through the process to deploy and configure MySQL Database Service & HeatWave to run Analytics workloads in Oracle Cloud. 
  
