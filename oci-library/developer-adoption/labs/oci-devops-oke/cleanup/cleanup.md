@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Congratulations, you complete the workshop. You may want to release the cloud resources created through this workshop.
+Congratulations, you complete the workshop. You may want to release the cloud resources created through this workshop. We first delete all resources created manually and then, we use ORM to delete resources managed through Infrastructure As Code/Terraform.
 
 ---
 
-Estimated Lab time: 5 minutes
+Estimated Lab time: 10 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Delete DevOps Pipeline
+## **STEP 1**: Delete DevOps Pipeline Stages
 
 1. In the Console, open the navigation menu, click Developer Services, and then under DevOps, click Projects.
 
@@ -40,7 +40,18 @@ In this lab, you will:
 
 1. Confirm the deletion of the pipeline.
 
-## **STEP 2**: Delete DevOps Artifacts
+
+## **STEP 2**: Delete DevOps Pipeline Parameters
+
+1. In the DevOps Pipeline page, click on the `Parameters` tab.
+
+1. Click on the trash button to delete the `mushop_fulfillment_version` parameter.
+
+    ![Delete Parameter ](./images/devops-parameter-created.png) 
+
+
+
+## **STEP 3**: Delete DevOps Artifacts
 
 1. Go back to the project page.
 
@@ -53,7 +64,7 @@ In this lab, you will:
 1. Repeat the operation for all Artifacts created during the workshop.
 
 
-## **STEP 3**: Release ORM Stack Resources
+## **STEP 4**: Release ORM Stack Resources
 
 All resources provisioned during this workshop that were managed exclusively via Resource Manager can be destroyed running a `Destroy` job associated with your Stack `infrastructure-onboard`.
 
@@ -86,7 +97,7 @@ To view the logs for the job, click the name of the job to display the Job Detai
 
 
 
-## **STEP 4**: Delete ORM Configuration Source Provider
+## **STEP 5**: Delete ORM Configuration Source Provider
 
 The next step is to delete the GitHub Configuration Source Provider in the Oracle Resource Manager.
 
