@@ -67,7 +67,7 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, and do the following:
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
   ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 

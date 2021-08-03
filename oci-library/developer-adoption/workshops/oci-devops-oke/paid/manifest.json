@@ -19,6 +19,10 @@
             "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline.md"
         },        
         {
+            "title": "Lab 3: Release resources created through the workshop",
+            "filename": "../../../labs/oci-devops-oke/cleanup/cleanup.md"
+        },        
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
