@@ -18,12 +18,11 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
 ## **STEP 0:** Running your Lab
+
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -50,7 +49,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-
+  
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
@@ -305,4 +304,5 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
+

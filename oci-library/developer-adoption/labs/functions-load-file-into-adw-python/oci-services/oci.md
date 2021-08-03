@@ -60,7 +60,7 @@ Let's create the `processed-bucket`:
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
     ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
@@ -101,7 +101,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 Create a new policy that allows the service Object Storage manage objects. (you may not need that policy, here just in case you do not have correct access to your tenancy)
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
     ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
@@ -154,7 +154,7 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
     ![RESTful Services and SODA URL](./images/database-ords-url.png)
 
-1. Open OCI Cloud Shell
+1. Go back to the OCI Console and open the OCI Cloud Shell
 
     ![Open OCI Cloud Shell](../../common/setup-cloud-env/images/open-cloud-shell.png)
 
