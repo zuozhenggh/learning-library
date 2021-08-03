@@ -9,7 +9,7 @@ In this lab we will use the Oracle Analytics Cloud instance we created in the fi
 
 **Time estimated: x mins**
 
-## Task 1: Create Oracle Analytics Cloud Instance 
+## **Task 1:** Create Oracle Analytics Cloud Instance 
 
 ### **Task 1.1:**
 
