@@ -25,12 +25,13 @@ This lab requires:
 * Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
-* You have completed:
-   Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-   Lab: Prepare Setup (Free-tier and Paid Tenants only)
-   Lab: Environment Setup
-   Lab: Introduction to Essbase
-   Lab: Initialize Environment
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+
 
 
 ## **STEP 1:** Creating a Sample Application in Essbase21c

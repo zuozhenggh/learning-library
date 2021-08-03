@@ -23,6 +23,14 @@ Estimated Lab Time: *60 minutes*
 * Smart View plugin for excel.
 * SQL Developer Client(optional)
 * Files: Sample\_Basic\_DT.xlsx
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+
+
 
 
 ## **STEP 1:** Create the cube

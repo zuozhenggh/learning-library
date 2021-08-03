@@ -19,6 +19,13 @@ This lab will require the following -
 * Essbase 21c Instance
 
 * [Smartview Plugin](https://docs.oracle.com/en/database/other-databases/essbase/21/ugess/download-and-run-smart-view-installer.html) (Steps provided in this lab)
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+
 
 
 ## **Step 1:** Features of Oracle Essbase

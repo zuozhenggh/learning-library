@@ -25,12 +25,13 @@ This lab requires -
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 * Files: Sample\_Basic.xlsx, Data\_Basic.txt, Dim_Market.txt
-* You have completed:
-   Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-   Lab: Prepare Setup (Free-tier and Paid Tenants only)
-   Lab: Environment Setup
-   Lab: Introduction to Essbase
-   Lab: Initialize Environment
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+
 
 ## **STEP 1:** Dimension build using Rule file
 

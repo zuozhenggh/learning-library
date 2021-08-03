@@ -23,6 +23,13 @@ To understand the following:
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer).
 * Smart View plugin enabled for Excel.
 * Files: SandboxApp.xlsx, SmartView.xlsx, Merge.csc
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+
 
 ## Overview – Understand Scenario
 
