@@ -59,7 +59,7 @@ Provision a service instance of Visual Builder Studio to design and develop your
 
    ![](./images/access_instance_vbs.png)
 
-   The Visual Builder Studio console opens on the Organization page. (Close **X** to close the news banner and expand your work area.)
+   The Visual Builder Studio console opens on the Organization page. When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
    ![](./images/vbs_home.png)  
 
 5. Before you can create a project, you'll need to configure some OCI connections; select the **OCI Account** tab, then click **Connect**.
