@@ -25,6 +25,12 @@ This lab requires -
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 * Files: Sample\_Basic.xlsx, Data\_Basic.txt, Dim_Market.txt
+* You have completed:
+   Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+   Lab: Prepare Setup (Free-tier and Paid Tenants only)
+   Lab: Environment Setup
+   Lab: Introduction to Essbase
+   Lab: Initialize Environment
 
 ## **STEP 1:** Dimension build using Rule file
 
@@ -191,11 +197,11 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	f. Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
 
-	g.As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
+	g. As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
 
-	h.Select **Comma** as the Delimiter value based on the file format.  
+	h. Select **Comma** as the Delimiter value based on the file format.  
 
-	i.	Click **Preview Data**.  
+	i. Click **Preview Data**.  
 
 	  ![](./images/image14_79.png)
 
@@ -272,9 +278,9 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 8. After the job is completed, verify that the input records were processed and loaded.
 
-    a.	Select **Job Details** to check the load data job details.
+    a. Select **Job Details** to check the load data job details.
 
-    b.	Click **Close**.
+    b. Click **Close**.
      ![](./images/image14_83.png)
 
 9.	On the Applications page, click **Actions** to the right of the DynamicCorp - Sales cube and click **Inspect**.
@@ -477,7 +483,8 @@ To use the Swagger interface,
 
 9.	Click **Download File** to download zip file containing application log.
 
-10.  You can integrate REST APIs with cURL in order to automate various Essbase tasks. 
+10.  You can integrate REST APIs with cURL in order to automate various Essbase tasks.
+
 You may [proceed to the next lab](#next).
 
 ## Acknowledgements

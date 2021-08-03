@@ -29,37 +29,32 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
         }, 
         {
-            "title": "Lab 4: Introduction to Essbase",
-            "publisheddate": "09/03/2020",
-            "filename": "../../intro-essbase/intro-essbase.md"
-        },
-        {
-            "title": "Lab 5: Initialize Environment",
+            "title": "Lab 4: Initialize Environment",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-initialize-env/essbase-initialize-env.md"
         },
         {
-            "title": "Lab 6: Essbase Features: Basic",
+            "title": "Lab 5: Essbase Features: Basic",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-basic/essbase-basic.md"
         },
         {
-            "title": "Lab 7: Essbase Features: Advanced",
+            "title": "Lab 6: Essbase Features: Advanced",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-advanced/essbase-advanced.md"
         },
         {
-            "title": "Lab 8: Essbase Drill Through Feature",
+            "title": "Lab 7: Essbase Drill Through Feature",
             "publisheddate": "09/03/2020",
             "filename": "../../essbase-drill-thru/essbase-drill-thru.md"
         },
         {
-            "title": "Lab 9: Scenario Management",
+            "title": "Lab 8: Scenario Management",
             "publisheddate": "09/03/2020",
             "filename": "../../scenario/scenario.md"
         },
         {
-            "title": "Lab 10: Essbase Administration Services(EAS) Lite (Optional)",
+            "title": "Lab 9: Essbase Administration Services(EAS) Lite (Optional)",
             "publisheddate": "19/03/2021",
             "filename": "../../eas/eas.md"
         }

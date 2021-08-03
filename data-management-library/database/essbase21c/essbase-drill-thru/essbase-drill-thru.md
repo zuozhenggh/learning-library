@@ -154,11 +154,11 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 3. Enter Name "SalesBreakdown". 
 
-   a) Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
+   a. Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
    
-   b) Select the Report Columns check boxes for all the rows.
+   b. Select the Report Columns check boxes for all the rows.
    
-   c) Select the data source column name on the left and provide the generation mapping on the right:
+   c. Select the data source column name on the left and provide the generation mapping on the right:
 
       * PRODUCT – Product -> Model[Generation]  
       * MARKET – Market -> Region[Generation]  
@@ -192,14 +192,14 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 ## **STEP 7:** Load Data
 1. Create Load Rules:     
 
-   a) Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
+   a. Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
    
-   b) Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
+   b. Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
    
-   c) Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
+   c. Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
    ![](./images/imageDT_20.png "")
    
-   d) In the drop-down menu, select **Data Load**.    
+   d. In the drop-down menu, select **Data Load**.    
      * In the Name field, provide the name of the rules file as **SalesDataload**.  
      * For Source Type, select Datasource.  
      * Click **Proceed**.   

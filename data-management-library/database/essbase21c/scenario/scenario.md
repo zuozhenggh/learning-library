@@ -106,33 +106,33 @@ This step is geared towards developing an understanding of security for Essbase 
 1. Add Users:   
    Go to **Security** tab to add users.
    
-   a) Under **Users** tab, click on **Add user**.
+   a. Under **Users** tab, click on **Add user**.
    ![](./images/imageSM_05.png "")
    
-   b) Provide the details for adding user: 'John'
+   b. Provide the details for adding user: 'John'
      * Id: John
      * Role: user
      * Password: password
     ![](./images/imageSM_06.png "")
 
-   c) Repeat above steps for adding 'Maria', 'Phillip' & 'Sam'.
+   c. Repeat above steps for adding 'Maria', 'Phillip' & 'Sam'.
     ![](./images/imageSM_07.png "")
 
 2.	Defining Security:  
 
     We will define security roles for several people to be used throughout the next several exercises. Once the security is defined validate the privileges by logging in as each user and pay attention to the differences from user to user.
     
-   a) On the home page, navigate to the **Sample_Scenario** Application. Launch the application inspector by clicking the button under **Actions** and selecting **Inspect**.
+   a. On the home page, navigate to the **Sample_Scenario** Application. Launch the application inspector by clicking the button under **Actions** and selecting **Inspect**.
    ![](./images/imageSM_08.png "")
 
-   b) On the application inspector, click the **Permissions** tab. Click the + icon on this page to add users to this application.
+   b. On the application inspector, click the **Permissions** tab. Click the + icon on this page to add users to this application.
    ![](./images/imageSM_09.png "")
 
-   c) Search for John, Maria, Phillip & Sam and click the **+ icon** next to their ids to add the users to the application.
+   c. Search for John, Maria, Phillip & Sam and click the **+ icon** next to their ids to add the users to the application.
      ![](./images/imageSM_10.png "")
      
 
-   d) By default all users have the Database Access Roles.
+   d. By default all users have the Database Access Roles.
      ![](./images/imageSM_11.png "")
    
    **Note**:  
@@ -142,19 +142,19 @@ This step is geared towards developing an understanding of security for Essbase 
     * **Database Update**: Reads and updates data values based on assigned scope, uses assigned calculations and filters, and creates and deletes scenarios.
     * **Database Access**: Accesses scenarios, reads data values in all cells, and accesses specific data and metadata unless restricted by filters
 
-   e) Assign the following roles to the below users and Click **Close**:
+   e. Assign the following roles to the below users and Click **Close**:
       * John -> Database Manager
       * Phillip -> Database Update
       * Sam -> Database Update
       * Maria -> Database Update
       ![](./images/imageSM_12.png "")
 
-   f) Go to Smartview, click on **more** (as shown below) and then click on 'disconnect' to disconnect from the current connection.
+   f. Go to Smartview, click on **more** (as shown below) and then click on 'disconnect' to disconnect from the current connection.
        
       ![](./images/imageSM_12.0.png "")
       ![](./images/imageSM_12.1.png "")
 
-   g) Click on **->** (arrow mark as shown below) to log in as John.  
+   g. Click on **->** (arrow mark as shown below) to log in as John.  
       ![](./images/imageSM_12.3.png "")
 
       Expand 'Sample_Scenario' application and select 'Sandbx' database. Click 'connect' and then 'Set Active Connection for this Worksheet'. Refresh the data.
@@ -170,19 +170,19 @@ This step is geared towards developing an understanding of security for Essbase 
    
    In this exercise you will log in as Maria and create a new scenario defining Sam as a participant. Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
     
-   a) Go to the web interface, log in as Maria.
+   a. Go to the web interface, log in as Maria.
 
-   b) Navigate to **Scenarios** tab. Click **Create Scenario**.
+   b. Navigate to **Scenarios** tab. Click **Create Scenario**.
       ![](./images/imageSM_13.png "")
 
-   c) Give the scenario a name:**What-If** and a due date. On the **Users** tab, click the '+' icon and add Sam and Phillip. By default a user is added as a Participant. Change Phillip's role to Approver. 
+   c. Give the scenario a name:**What-If** and a due date. On the **Users** tab, click the '+' icon and add Sam and Phillip. By default a user is added as a Participant. Change Phillip's role to Approver. 
       ![](./images/imageSM_14.png "")
       ![](./images/imageSM_15.png "")
 
       ![](./images/imageSM_18.png "")
       Click **Save**.
 
-   d) Once created, click on **What-If** scenario and identify which sandbox member your scenario is using. It would be using sandbox **sb0**.
+   d. Once created, click on **What-If** scenario and identify which sandbox member your scenario is using. It would be using sandbox **sb0**.
      
      ![](./images/imageSM_16.png "")
      ![](./images/imageSM_17.png "")
@@ -193,22 +193,22 @@ This step is geared towards developing an understanding of security for Essbase 
 2. Changing Sandbox Data:
    As Sam, you will change some data for the scenario that was just created and using the Essbase web interface you can see the differences between Base and the scenario.
 
-   a) Open the Smart View.xlsx.
+   a. Open the Smart View.xlsx.
 
-   b) Go to the 'DataSheet' tab and connect to the database as Sam, ensure the POV has the correct sandbox member (sb0).
+   b. Go to the 'DataSheet' tab and connect to the database as Sam, ensure the POV has the correct sandbox member (sb0).
       ![](./images/imageSM_19.png "")
 
-   c) Go to the cell C13 and enter a number (for e.g, 2000) then click 'submit' (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
+   c. Go to the cell C13 and enter a number (for e.g, 2000) then click 'submit' (the intersection updates should be  XXU->FYQ4-FY2015->Automotive->ORCL USA).
 
       Please verify the intersection as mentioned.
 
       ![](./images/imageSM_20.png "")
 
-   d) Go to Essbase web interface, navigate to the **Scenarios** tab. For What-if scenario, click on **Actions**.
+   d. Go to Essbase web interface, navigate to the **Scenarios** tab. For What-if scenario, click on **Actions**.
       
       Note: Maria is logged in web interface.
 
-   e) Click on the **Show Changes** to show the changes in the UI.
+   e. Click on the **Show Changes** to show the changes in the UI.
       ![](./images/imageSM_21.png "")
 
       Verify the changes:
@@ -217,15 +217,15 @@ This step is geared towards developing an understanding of security for Essbase 
 3. Calculations in a Sandbox: 
 In this step you will create a calculation script to create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
-   a) Login in Essbase web interface as John.
+   a. Login in Essbase web interface as John.
 
-   b) Expand the **Sample_Scenario** application and navigate to the database inspector for the **Sandbx** database.
+   b. Expand the **Sample_Scenario** application and navigate to the database inspector for the **Sandbx** database.
     ![](./images/imageSM_22.0.png "")
 
-   c) Click on the **Scripts** tab on the database inspector and select **Calculation Scripts** from the left navigation menu.
+   c. Click on the **Scripts** tab on the database inspector and select **Calculation Scripts** from the left navigation menu.
      ![](./images/imageSM_22.png "")
 
-   d) Click the + icon on the right to create a calculation script. Name the script as **Feed16**, type the below content in the scripts section:
+   d. Click the + icon on the right to create a calculation script. Name the script as **Feed16**, type the below content in the scripts section:
 
 
     ```
@@ -242,20 +242,20 @@ In this step you will create a calculation script to create data for ORCL USA->X
     
     ![](./images/imageSM_23.png "")
 
-   e) Validate the script. Click **Save** and **Close**.
+   e. Validate the script. Click **Save** and **Close**.
 
-   f) To execute the script, navigate to the **Jobs** tab and create a new job by clicking **New Job -> Run Calculation**.
+   f. To execute the script, navigate to the **Jobs** tab and create a new job by clicking **New Job -> Run Calculation**.
      ![](./images/imageSM_24.png "")
 
-   g) Select the Application: **Sample_Scenario** and database: **Sandbx** and the calc script that was just created (**Feed16**). For Variables select the 'sb0' as Value for the sandbox variable.
+   g. Select the Application: **Sample_Scenario** and database: **Sandbx** and the calc script that was just created (**Feed16**). For Variables select the 'sb0' as Value for the sandbox variable.
 
-   h) Click **OK**.
+   h. Click **OK**.
      ![](./images/imageSM_25.png "")
 
-   i) Click **Refresh** to see the job status.
+   i. Click **Refresh** to see the job status.
       ![](./images/imageSM_26.png "")
 
-   j) Go to 'Smart View' and 'DataSheet' tab. Click on 'Set Active connection for this worksheet' and then refresh to retrieve the data.
+   j. Go to 'Smart View' and 'DataSheet' tab. Click on 'Set Active connection for this worksheet' and then refresh to retrieve the data.
    
       ![](./images/imageSM_26.3.png "")
 
@@ -267,7 +267,7 @@ In this step you will create a calculation script to create data for ORCL USA->X
 
       Note: In Smartview you are already logged in as Sam. Also before refreshing any worksheet tab in smartview, always click on "Set Active connection for this worksheet".
 
-   k) Go to Essbase web interface as Sam, Navigate to the **Scenarios** tab. For **What-If** Scenario, click on the icon under **Actions** and select **Show Changes** to show the changes in the UI.
+   k. Go to Essbase web interface as Sam, Navigate to the **Scenarios** tab. For **What-If** Scenario, click on the icon under **Actions** and select **Show Changes** to show the changes in the UI.
       ![](./images/imageSM_27.png "")
 
       Verify the Changes:
@@ -286,32 +286,32 @@ In this step you will create a calculation script to create data for ORCL USA->X
 
    Let’s start:
 
-   a) Login to Essbase web interface as Maria. Navigate to the **Scenarios** tab.
+   a. Login to Essbase web interface as Maria. Navigate to the **Scenarios** tab.
       ![](./images/imageSM_28.png "")
 
-   b) For **What-if** scenario, under **Actions**, click the **->** icon to submit, enter a comment if needed(for e.g., submitted for approval). The status should now be submitted.
+   b. For **What-if** scenario, under **Actions**, click the **->** icon to submit, enter a comment if needed(for e.g., submitted for approval). The status should now be submitted.
       ![](./images/imageSM_29.png "")
 
-   c) Go to Smart View and retrieve data into the Comparison tab.
+   c. Go to Smart View and retrieve data into the Comparison tab.
      
       Note: In Smartview you are already logged in as Sam. Also before refreshing any worksheet tab in smartview, always click on "Set Active connection for this worksheet".
 
-   d) Go to the web interface logging in as Phillip. Navigate to the **Scenarios** tab. 
+   d. Go to the web interface logging in as Phillip. Navigate to the **Scenarios** tab. 
 
-   e) For **What-if** scenario, under **Actions**, click the ![](./images/approveicon.png "") icon to Approve, enter a comment if needed (for e.g., submitted for approval).
+   e. For **What-if** scenario, under **Actions**, click the ![](./images/approveicon.png "") icon to Approve, enter a comment if needed (for e.g., submitted for approval).
       ![](./images/imageSM_30.png "")
       ![](./images/imageSM_31.png "")
 
-   f) Go to Smart View and retrieve data into the Comparison tab.
+   f. Go to Smart View and retrieve data into the Comparison tab.
      
      Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
 
-   g) Login to Essbase web interface as Maria. Navigate to the **Scenarios** tab.
+   g. Login to Essbase web interface as Maria. Navigate to the **Scenarios** tab.
 
-   h) For **What-if** scenario, under **Actions**, click the ![](./images/applyicon.png "")  icon to Apply sandbox "sb0" to the Base, enter a comment if needed(for e.g., applied).
+   h. For **What-if** scenario, under **Actions**, click the ![](./images/applyicon.png "")  icon to Apply sandbox "sb0" to the Base, enter a comment if needed(for e.g., applied).
       ![](./images/imageSM_32.png "")
 
-   i) Go to Smart View and retrieve data into the Comparison tab.
+   i. Go to Smart View and retrieve data into the Comparison tab.
 
     Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
 
@@ -366,14 +366,14 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
    Click on the -> arrow(as shown below) to login as maria.
      ![](./images/imageSM_36.5.png "") 
 
-     a.	Select the **sb0** cell(C2 if unadulterated)  
+     a. Select the **sb0** cell(C2 if unadulterated)  
 
-     b.	Click on **Calculate** on the Essbase ribbon.  
+     b. Click on **Calculate** on the Essbase ribbon.  
             ![](./images/imageSM_36.2.png "")  
 
-     c.	Select the Merge calculation script. 
+     c. Select the Merge calculation script. 
 
-     d.	Change the prompts:  
+     d. Change the prompts:  
 
         i)  Product = XXU  
         ii)  Customer = Automotive (Hint: Use the search feature to find the member)  
@@ -381,7 +381,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
         iv) Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016  
         v)  Sandbox = sb0  
      
-     e.  Notice the default selections and that "sb0" was selected for the Sandbox to merge.
+     e. Notice the default selections and that "sb0" was selected for the Sandbox to merge.
     ![](./images/imageSM_37.png "")
 
 11. Click **launch**.

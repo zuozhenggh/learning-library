@@ -25,6 +25,12 @@ This lab requires:
 * Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
+* You have completed:
+   Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
+   Lab: Prepare Setup (Free-tier and Paid Tenants only)
+   Lab: Environment Setup
+   Lab: Introduction to Essbase
+   Lab: Initialize Environment
 
 
 ## **STEP 1:** Creating a Sample Application in Essbase21c
@@ -135,7 +141,7 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 7. Double-click on 'Measures'. It will zoom into next level. 
    ![](./images/image14_17.0.png "")
    
-   Now double-click on 'Profit', it will take you to a further next level.
+   Now double-click on 'Profit', it will take you to a further to the next level.
    ![](./images/image14_17.1.png "")
 
     Now double-click on 'Margin', it will take you further to the next level (i.e, at sales level).
@@ -322,7 +328,7 @@ This workflow uses two sample tabular data excel files to demonstrate the concep
 4. **Outline Analysis**: 
    The Outline option is equivalent to the EAS console in Essbase on-premises.
 
-  This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the 'Edit' option. Select the 'Outline' option for the 'SpendHistory' cube (or any cube that is already LIVE on the Essbase 21c web interface).
+   This is where you can add new dimensions or members under dimensions at any level, as required, and can make changes to existing cubes quickly using the 'Edit' option. Select the 'Outline' option for the 'SpendHistory' cube (or any cube that is already LIVE on the Essbase 21c web interface).
 
     ![](./images/image14_58.png "")
     ![](./images/image14_59.png "")
