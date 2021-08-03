@@ -115,5 +115,5 @@ Please proceed to the next lab.
 
 - **Authors/Contributors** - Vijay Balebail, Andy Rivenes, Maria Colgan
 - **Reviewers** - Bob Mackowiak, Rajeev Rumale
-- **Last Updated By/Date** - Kamryn Vinson, July 2021
+- **Last Updated By/Date** - Vijay Balebai, Aug 2021
 - **Workshop Expiration Date** - July 31, 2023
