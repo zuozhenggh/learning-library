@@ -52,37 +52,37 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
 4. Now you create the rule file.
 
-    a. From the Actions menu to the right of the cube, click **Inspect**.
-    ![](./images/Dim_1.png)	
+    * From the Actions menu to the right of the cube, click **Inspect**.
+      ![](./images/Dim_1.png)	
 
-    b. Click **Scripts**, and then **Rules**. The rules editor is displayed, showing the currently defined  rules.
+    * Click **Scripts**, and then **Rules**. The rules editor is displayed, showing the currently defined  rules.
 
-    c. Click **Create** and select **Dimension Build (Indexed Based)** to define the build dimension rule. 
+    * Click **Create** and select **Dimension Build (Indexed Based)** to define the build dimension rule. 
     An index-based build dimension rule removes dependency of fields to each other and allows the fields to appear in any order.
-    ![](./images/Dim_2.png)
+      ![](./images/Dim_2.png)
 
 
-    d. In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
+    * In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
 
-    e. Under the Source Type, select **File**.
+    * Under the Source Type, select **File**.
 
-    f. Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click **Open** to select it.
+    * Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click **Open** to select it.
     
-    g. As you saw earlier, the first row of the flat file doesn’t contain header values. Enter the Header Record Number as 0.
+    * As you saw earlier, the first row of the flat file doesn’t contain header values. Enter the Header Record Number as 0.
 
-    h. Specify the Delimiter value as Comma, based on the file format.
+    * Specify the Delimiter value as Comma, based on the file format.
 
-    i. Set the preview data count value to 10.
+    * Set the preview data count value to 10.
 
     
 
-    j. Click **Preview Data**.
+    * Click **Preview Data**.
 
-    ![](./images/Dim_3.png)
+      ![](./images/Dim_3.png)
 
    
 
-    k. Click **Proceed**.
+    * Click **Proceed**.
 
      ![](./images/Dim_3_0.png)
 
@@ -92,12 +92,12 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
 5. On the rules editor page, you can now set up and edit the rule.
 
-   a. On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
+   * On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
 
-   b. Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
+   * Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
 The source file for this rule is in parent-child format. 
 
-   c. Set up the other fields:
+   * Set up the other fields:
 
       * Set Field 2 - **Child**.  
       * Set Field 3 - **Property**, and third row Parent/Child box to Child.
@@ -106,53 +106,53 @@ The source file for this rule is in parent-child format.
       * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
         ![](./images/Dim_4.png)
 
-    d. Now check the field properties for a field. Select the last field column, **Population**.
+    * Now check the field properties for a field. Select the last field column, **Population**.
     
        On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
-      ![](./images/Dim_5.png)
-      ![](./images/Dim_6.png)
+       ![](./images/Dim_5.png)
+       ![](./images/Dim_6.png)
 
 
-  e. Click **Dimensions** under the Global toolbar and select **Market**.
+    * Click **Dimensions** under the Global toolbar and select **Market**.
 
-  f. Go to Advanced and Check Allow Property Changes. Click **OK**.
-    ![](./images/Dim_7_0.png)
+    * Go to Advanced and Check Allow Property Changes. Click **OK**.
+      ![](./images/Dim_7_0.png)
 
-  g. When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
+    * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
 
-  h. Click **Save and Close**.
-    ![](./images/Dim_7.png)
+    * Click **Save and Close**.
+      ![](./images/Dim_7.png)
 
-  i. Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
-Click **Close** to return to the home page.	
+    * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
+      Click **Close** to return to the home page.	
 
 6. Next, you create and run a job to build the dimension using the rule.
 
-   a. On the home page, select Jobs, and then New Job.
+   * On the home page, select Jobs, and then New Job.
 
-   b. Select **Build Dimension**.
-   ![](./images/Dim_8.png)
+   * Select **Build Dimension**.
+     ![](./images/Dim_8.png)
 
-   c. In the Build Dimension dialog box, from the Application list, select 'DynamicCorp' application.
+   * In the Build Dimension dialog box, from the Application list, select 'DynamicCorp' application.
 
-   d. In the Database list, select 'Sales' cube. 
+   * In the Database list, select 'Sales' cube. 
 
-   e. In the Script list, select the build dimension rule that you created, **Dim_market1.rul**.
+   * In the Script list, select the build dimension rule that you created, **Dim_market1.rul**.
 
-   f. For Load Type, select **File**.
+   * For Load Type, select **File**.
 
-   g. In the Data File list, select **Dim_Market.txt** as the data dimension data file. This file is located in the DynamicCorp,Sales folder.
+   * In the Data File list, select **Dim_Market.txt** as the data dimension data file. This file is located in the DynamicCorp,Sales folder.
 
-   h. From the Restructure Options list, select **Preserve Input Data** for the data you want to preserve.
+   * From the Restructure Options list, select **Preserve Input Data** for the data you want to preserve.
 
-   For input data, only blocks that contain data being loaded are preserved. 
-   ![](./images/Dim_9.png)
+     For input data, only blocks that contain data being loaded are preserved. 
+     ![](./images/Dim_9.png)
 
-   i. Click **OK**. The build dimension job is executed.
+   * Click **OK**. The build dimension job is executed.
 
-   j. On the Jobs page, click **Refresh** to monitor the job status.
+   * On the Jobs page, click **Refresh** to monitor the job status.
 
-   k. When the job completes, click **Actions** for the executed job, and select **Job Details** to verify the status of your build job.
+   * When the job completes, click **Actions** for the executed job, and select **Job Details** to verify the status of your build job.
    ![](./images/Dim_10.png)
    ![](./images/Dim_11.png)
 
@@ -182,30 +182,30 @@ Create a rule file that is based on a sample file from the data warehouse.
 3.	On the home page, expand the 'DynamicCorp' application, and select the 'Sales' cube.
 
 4.	Now create the load rule.  
-    a. In the Sales cube, from the right side hamburger, click **Inspect**.  
+    * In the Sales cube, from the right side hamburger, click **Inspect**.  
        ![](./images/image14_77.png)
 
-	b. On the Scripts tab, select **Rules**. The Rules editor shows defined rules.  
+	* On the Scripts tab, select **Rules**. The Rules editor shows defined rules.  
 
-	c. Click **Create** and select **Data Load** to define the load data rule.  
+	* Click **Create** and select **Data Load** to define the load data rule.  
 
 	  ![](./images/image14_78.png)
 
-	d. In the New Rule dialog box, enter **LoadCorp** as the name of rule.
+	* In the New Rule dialog box, enter **LoadCorp** as the name of rule.
 
-	e. Under Source Type, select **File** for flat file input.
+	* Under Source Type, select **File** for flat file input.
 
-	f. Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
+	* Browse the downloaded file **Data_Basic.txt**. Click **Open** to select it.
 
-	g. As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
+	* As you saw earlier, the first row of the flat file doesn't contain header values. Enter the Header Record Number as 0.  
 
-	h. Select **Comma** as the Delimiter value based on the file format.  
+	* Select **Comma** as the Delimiter value based on the file format.  
 
-	i. Click **Preview Data**.  
+	* Click **Preview Data**.  
 
 	  ![](./images/image14_79.png)
 
-    j. Click **Proceed**.
+    * Click **Proceed**.
 
     ![](./images/image14_79_1.png)
 
@@ -219,73 +219,73 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     ![](./images/image14_80.png)
 
-    a. Click **Edit** on Field 1 and map the fields as below:
+    * Click **Edit** on Field 1 and map the fields as below:
 
-    ![](./images/image14_80_1.png)
+      ![](./images/image14_80_1.png)
 
-    * Field 1 - Search Product in member tree and double-click or enter Product under Field Name. Click **Next**.
-    ![](./images/image14_80_2.png)
-    * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
-    * Field 2 - Market
-    * Field 3 - Year
-    * Field 4 - Scenario
-    * Field 5 - Search Sales in member tree and select it as Field Name. Check **Data field** option and select the Storage type as **Sum**. Click **Next**.
-    ![](./images/image14_80_3.png)
+      * Field 1 - Search Product in member tree and double-click or enter Product under Field Name. Click **Next**.
+      ![](./images/image14_80_2.png)
+      * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
+      * Field 2 - Market
+      * Field 3 - Year
+      * Field 4 - Scenario
+      * Field 5 - Search Sales in member tree and select it as Field Name. Check **Data field** option and select the Storage type as **Sum**. Click **Next**.
+        ![](./images/image14_80_3.png)
     Repeat the same as above for Field 6 – Field 11 and enter the Field Name as mentioned below.
 
-    * Field 6 - COGS
-    * Field 7 - Marketing
-    * Field 8 - Payroll
-    * Field 9 - Misc
-    * Field 10 - Opening Inventory
-    * Field 11 - Additions  
+      * Field 6 - COGS
+      * Field 7 - Marketing
+      * Field 8 - Payroll
+      * Field 9 - Misc
+      * Field 10 - Opening Inventory
+      * Field 11 - Additions  
   
        All dimensions must be represented in the load data rule before any data can be loaded.
 
        Click **OK**.
 
-    b. After defining the rule with field options, click **Verify** on the Global toolbar to validate the syntax and then click **Save and Close**.
+    * After defining the rule with field options, click **Verify** on the Global toolbar to validate the syntax and then click **Save and Close**.
 
-    ![](./images/image14_80_4.png)
+      ![](./images/image14_80_4.png)
 
-    c. Click **Refresh**. See that the created rule is now listed in the Rules pane of the Scripts tab.
+    * Click **Refresh**. See that the created rule is now listed in the Rules pane of the Scripts tab.
 
-    d. Click **Close** to return to the Applications home page. Next create a job to load the data using the rule.
+    * Click **Close** to return to the Applications home page. Next create a job to load the data using the rule.
 
 7. On the home page, select **Jobs** and then **New Job**.
     ![](./images/image15_60.png)
 
-    a. Select **Load Data**.
+    * Select **Load Data**.
 
-    b. In the Load Data dialog box, from the Application menu, select the 'DynamicCorp' application.
+    * In the Load Data dialog box, from the Application menu, select the 'DynamicCorp' application.
 
-    c. In the Database list, select the 'Sales' cube.
+    * In the Database list, select the 'Sales' cube.
 
-    d. For Load Type, select **File**.
+    * For Load Type, select **File**.
 
-    e. Select the file **Data-basic.txt** from the Data File list. This file is located in the DataCorp > Sales folder.
+    * Select the file **Data-basic.txt** from the Data File list. This file is located in the DataCorp > Sales folder.
 
-    f. In the Script list, select the load data rule that you created, **LoadCorp.rul**.
+    * In the Script list, select the load data rule that you created, **LoadCorp.rul**.
 
-    g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
+    * Optional: select the Abort on error check box if you want the load to stop if an error occurs.
 
-    h. Click **OK**. The load data job is executed.
+    * Click **OK**. The load data job is executed.
 
-    ![](./images/image14_82.png)
+      ![](./images/image14_82.png)
 
-    i. On the Jobs page, click Refresh to monitor the job status.
+    * On the Jobs page, click Refresh to monitor the job status.
 
 
 8. After the job is completed, verify that the input records were processed and loaded.
 
-    a. Select **Job Details** to check the load data job details.
+    * Select **Job Details** to check the load data job details.
 
-    b. Click **Close**.
-     ![](./images/image14_83.png)
+    * Click **Close**.
+      ![](./images/image14_83.png)
 
 9.	On the Applications page, click **Actions** to the right of the DynamicCorp - Sales cube and click **Inspect**.
 
-1.  Select **Statistics** to view the resulting statistics for the Sales cube.  
+10.  Select **Statistics** to view the resulting statistics for the Sales cube.  
     ![](./images/image15_61.png)
 
     You have now completed the data load using rule file.
@@ -364,18 +364,14 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
 1. Download and configure CLI:  
 
-  a. Log in to Essbase web user interface.  
-  
-  b. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
- 
-  c. Expand the Command Line Tools section.  
-  
-  d. Download the Command-Line Tool by clicking download for "Command-Line Tool".
+  * Log in to Essbase web user interface. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
+
+  * Expand the Command Line Tools section. Download the Command-Line Tool by clicking download for "Command-Line Tool".
      ![](./images/image15_62.png)
 
-  e. Unzip the cli.zip file in a directory e.g. C:\app\cli  
+  * Unzip the cli.zip file in a directory e.g. C:\app\cli  
   
-  f. In your machine, search for Command Prompt. Open it by right-clicking **Run as administrator**.
+  * In your machine, search for Command Prompt. Open it by right-clicking **Run as administrator**.
     Change directory to where you unzipped the CLI tool.  
  
     **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
@@ -384,10 +380,10 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     Note: Please check the links: [link1](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html),  [link2](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) to install jdk8 and above and set JAVA_HOME path.
    
-  g. From the command window type esscs.bat to get a list of the available command. 
+  * From the command window type esscs.bat to get a list of the available command. 
      ![](./images/image15_63.png) 
 
-  h. Use the below command and enter the password to login:
+  * Use the below command and enter the password to login:
       ```
     <copy>        
           esscs login -url http://ip:9000/essbase -u userid
@@ -399,7 +395,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
 2. Import Sample.Basic from CLI:
 
-   a. Download the file **Sample_Basic.xlsx**. Copy the file to the folder: C:\app\cli.
+   * Download the file **Sample_Basic.xlsx**. Copy the file to the folder: C:\app\cli.
 
      This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
@@ -407,18 +403,18 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
       This file is imported using CLI and it is used for rest of the exercise.   
 
-   b. Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **Base**.
+   * Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **Base**.
 
     ```
     <copy> esscs.bat deploy --help
     esscs.bat deploy -a Sample01 -db Basic -file C:\app\cli\Sample_Basic.xlsx </copy>
     ```
 
-    ![](./images/image14_90.png)
+     ![](./images/image14_90.png)
 
-   c. Next, review the newly create cube from the Essbase web interface.
+   * Next, review the newly create cube from the Essbase web interface.
 
-    ![](./images/image14_91.png)
+     ![](./images/image14_91.png)
 
 3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application, deployed in last step, use this command.
 

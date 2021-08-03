@@ -154,18 +154,18 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 3. Enter Name "SalesBreakdown". 
 
-   a. Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
+   * Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
    
-   b. Select the Report Columns check boxes for all the rows.
+   * Select the Report Columns check boxes for all the rows.
    
-   c. Select the data source column name on the left and provide the generation mapping on the right:
+   * Select the data source column name on the left and provide the generation mapping on the right:
 
       * PRODUCT – Product -> Model[Generation]  
       * MARKET – Market -> Region[Generation]  
       * SCENARIO – Scenario -> Level0 [Level]   
       * YEAR – Year -> Months[Generation]   
 
-   ![](./images/imageDT_17.png "")
+     ![](./images/imageDT_17.png "")
 
 4. Select Drillable Regions on the left navigation bar, click the **+** icon and enter **@Children("Market")**.
    ![](./images/imageDT_18.png "")
@@ -192,14 +192,14 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 ## **STEP 7:** Load Data
 1. Create Load Rules:     
 
-   a. Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
+   * Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
    
-   b. Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
+   * Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
    
-   c. Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
-   ![](./images/imageDT_20.png "")
+   * Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
+     ![](./images/imageDT_20.png "")
    
-   d. In the drop-down menu, select **Data Load**.    
+   * In the drop-down menu, select **Data Load**.    
      * In the Name field, provide the name of the rules file as **SalesDataload**.  
      * For Source Type, select Datasource.  
      * Click **Proceed**.   
@@ -238,17 +238,17 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 7.	Next, load the data from Jobs:   
     
-    a. On the home page select Jobs. Click **New Job**.
+    * On the home page select Jobs. Click **New Job**.
 
-    b. Select **Load Data** as the job type.  
+    * Select **Load Data** as the job type.  
 
-    c. Select application SampleDT, cube Basic and SQL as the load type.   
+    * Select application SampleDT, cube Basic and SQL as the load type.   
 
-    d. For Script, select the name of the data load rules file you created, SalesDataload.rul. 
+    * For Script, select the name of the data load rules file you created, SalesDataload.rul. 
 
-    e. Enter the user name and password of your SQL database schema. Click **OK**.
+    * Enter the user name and password of your SQL database schema. Click **OK**.
 
-    ![](./images/imageDT_25.png "")
+      ![](./images/imageDT_25.png "")
 
 8. Click **Refresh** to update the status. Once the job is completed, click **Job Details** from the right side dropdown to check Job execution status. 
     ![](./images/imageDT_26.png "")

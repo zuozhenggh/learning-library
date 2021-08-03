@@ -168,47 +168,47 @@ You use Smart View panel to connect to your Smart View data sources and manage c
 
 11.  Pivot to POV:
 
-    a. Click 'POV' in 'Essbase' ribbon.
+    * Click 'POV' in 'Essbase' ribbon.
 
-    ![](./images/image14_19.png "")
+      ![](./images/image14_19.png "")
 
-    b. Click the down arrow next to Market. Select 'New York'.
+    * Click the down arrow next to Market. Select 'New York'.
 
-    ![](./images/image14_20.png "")
+      ![](./images/image14_20.png "")
 
-    ![](./images/image14_21.png "")
+      ![](./images/image14_21.png "")
 
-    c. Select 'New York' in the POV toolbar, and click **Refresh** to see the figures refreshed in the sheet for New York.
+    * Select 'New York' in the POV toolbar, and click **Refresh** to see the figures refreshed in the sheet for New York.
 
-    ![](./images/image14_22.png "")
+      ![](./images/image14_22.png "")
 
 12. Member Selection:
 
     Note: Revert the last step changes by selecting 'Market' and 'Scenario' in the POV and click on 'refresh'.
 
-    a. Click 'POV' in 'Essbase' ribbon again.
+    * Click 'POV' in 'Essbase' ribbon again.
 
-    ![](./images/image14_23.png "")
+      ![](./images/image14_23.png "")
 
-    b. Click on 'Scenario'.
+    * Click on 'Scenario'.
 
-    c. Click on Member Selection in the Essbase ribbon. Select 'Actual' and 'Refresh'.
+    * Click on Member Selection in the Essbase ribbon. Select 'Actual' and 'Refresh'.
 
-    ![](./images/image14_25.png "")
+      ![](./images/image14_25.png "")
 
-    ![](./images/image14_24.png "")
+      ![](./images/image14_24.png "")
 
     
 
 13. Free Form processing:
 
-    a. You can enter a member combination on a sheet. Click 'Refresh'. The sheet is updated to show the results of the query in your free form sheet.
+    * You can enter a member combination on a sheet. Click 'Refresh'. The sheet is updated to show the results of the query in your free form sheet.
 
-    b. Start by creating Smart View analysis report.
+    * Start by creating Smart View analysis report.
 
-    c. Create the below report by zooming into the Year and Measures dimension.
+    * Create the below report by zooming into the Year and Measures dimension.
 
-    ![](./images/image14_26.png "")
+      ![](./images/image14_26.png "")
 
 14. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
