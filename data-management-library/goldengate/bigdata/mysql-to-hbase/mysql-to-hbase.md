@@ -246,7 +246,7 @@ Now that the source side is setup, let us configure GG on the target side (HBase
       <copy>dmlsource</copy>
       ```
       ```
-      <copy>countbasetables</copy>
+      <copy>counthbasetables</copy>
       ```
 
 7. Let us confirm that GG replicated the data that it captured. In a **GG Home for Hadoop session:**
@@ -300,6 +300,6 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
+* **Author** - Brian Elliott, Data Integration Team, Oracle, July 2021
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021

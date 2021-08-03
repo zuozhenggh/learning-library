@@ -12,10 +12,12 @@ The Zero Downtime Migration software is a service with a command line interface 
 
 Estimated Total Lab Time: 2 hours
 
+For More Information on Zero Downtime Migration: [ZDM Website](https://www.oracle.com/database/technologies/rac/zdm.html)
+
 ## About Logical Offline Migration
 Zero Downtime Migration supports both online and offline migration, and can perform both physical and logical migrations.
 
-* **Online** migration methods incur zero or minimal downtime (typically less than 15 minutes) and can leverage either physical or logical migration methods.
+* **Online** migration methods incur zero or minimal downtime and can leverage either physical or logical migration methods.
 
 * **Offline** migration methods will incur downtime on the source database as part of the migration process. It can leverage either physical or logical migration methods.
 
