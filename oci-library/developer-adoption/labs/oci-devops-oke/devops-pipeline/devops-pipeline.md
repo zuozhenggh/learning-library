@@ -295,8 +295,8 @@ This is going to publish multiple artifacts to our OKE environment.
 
 1. Before start designing the pipeline stages, we need to create the parameter we used in the Artifact. Click on Parameters tab and enter the following data:
 
-    |Name|Default Value|Description|
-    |--|--|--|
+    |Name|Default Value|
+    |--|--|
     |`mushop_fulfillment_version`|Enter the default tag name that is used to publish mushop-fulfillment image: `1.2.0-SNAPSHOT`|
     |Description|Default version of mushop-fulfillment image.|
 
