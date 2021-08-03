@@ -8,6 +8,7 @@ Oracle Database In-Memory accelerates both Data Warehouses and mixed workload OL
 
 Oracle introduced Database In-Memory in Oracle Database Enterprise Edition with the first patch set (12.1.0.2) for Oracle Database 12c Release 1. Database In-Memory has been significantly enhanced in subsequent releases of Oracle Database with additional performance, scalability and manageability features. These features include the ability to automatically manage the contents of the In-Memory column store to maximize the use of memory and increase performance, enhanced mutli-model support, scale-out support with Oracle Real Applications Cluster (RAC) and support for Oracle Multitenant and Oracle Active Data Guard (ADG).
 
+![](images/IMFeatures.png)
 
 ## **Dual-Format Database**
 
