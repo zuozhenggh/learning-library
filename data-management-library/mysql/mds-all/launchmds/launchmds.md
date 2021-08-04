@@ -834,7 +834,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ````
     ![Connect](./images/12hwqueries01.png " ")
 
- 5. Turn on use secondary engine variable to use HeatWave
+ 5. Turn on use_secondary_engine variable to use HeatWave
      ````
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
@@ -885,7 +885,7 @@ LIMIT 10;
     ````
      ![Connect](./images/12hwqueries03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use secondary engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
@@ -913,17 +913,17 @@ LIMIT 10;</copy>
     ````
     ![Connect](./images/12hwqueries04.png " ")
 
- 11. To see if use secondary engine is enabled (=ON)
+ 11. To see if use_secondary_engine is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Runing additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
+ 12. Runing additional queries. Remember to turn on and off the use_secondary_engine  to compare the execution time. 
    
-    (Example  **SET SESSION use secondary engine=On;**) 
+    (Example  **SET SESSION use_secondary_engine=On;**) 
 
-    (Example  **SET SESSION use secondary engine=Off;**)      
+    (Example  **SET SESSION use_secondary_engine=Off;**)      
 
  13. Enter the following command at the prompt
      ````
@@ -978,14 +978,14 @@ LIMIT 10;
 16. Uery c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
     ````
-    <copy>SET SESSION use secondary engine=ON;</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
 
     ````
     <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
     ````
     ````
-    <copy>SET SESSION use secondary engine=OFF;</copy>
+    <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ````
     
     ````
@@ -995,7 +995,7 @@ LIMIT 10;
 17. Keep HeatWave processing enabled
 
     ````
-    <copy>SET SESSION use secondary engine=ON;</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
 ## **TASK 13:**  Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 

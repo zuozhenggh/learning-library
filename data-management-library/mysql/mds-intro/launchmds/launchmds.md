@@ -32,17 +32,19 @@ In this lab, you will be guided through the following tasks:
 
 You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
+1. From the **Navigation Menu** in the upper left, select **Identity & Security** and select **Compartments**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")	
 
-2. On Compartments Page, click Create Compartment. 
+2. Click Create Compartment. 
 
     ![Compartment2](./images/01compartment02.png " ")
 
-   **Note**:  Two Compartments, named Oracle Account Name (root) and a compartment for PaaS, were automatically created by the Oracle Cloud. 
+  >**Note**:  Two Compartments, named Oracle Account Name (root) and a compartment for PaaS, were automatically created by the Oracle Cloud. 
 
-3. On Create Compartment, enter Name **MDS_Sandbox**, Description, select Parent Compartment, and click Create Compartment.ompartment.
+3. In the Create Compartment dialog box, in the Name field, enter **MDS_Sandbox**, and Description.  From the  Parent Compartment drop down list. select Parent Compartment.
+
+Click Create Compartment.ompartment.
 
     ![Compartment3](./images/01compartment03.png " ")
     
@@ -384,7 +386,7 @@ Select one of the following actions:
 * Stop: Stops a running Database System. After the Database System is powered off, the Start action is enabled.
 * Restart: Shuts down a Database System, and restarts it.
 
-**Note**  Stopping a Database System stops billing for all OCPUs associated with it. 
+>**Note**  Stopping a Database System stops billing for all OCPUs associated with it. 
 * Billing continues for storage. 
 * Billing for OCPUs resumes if you restart the Database System.
 * If you selected Stop or Restart, the Stop/Restart MySQL Database System dialog is displayed.
