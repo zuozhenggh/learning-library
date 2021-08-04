@@ -24,6 +24,7 @@ This lab assumes you have:
     * Lab: Create Groups and Compare Pairs.
     * Lab: Create and Execute Jobs
 
+
 ## **STEP 1:** View a Report
 
   To view a report:
