@@ -1,11 +1,11 @@
-# Goldengate for Big Data Workshop
+# Goldengate for Big Data using Microservices Workshop
 
 
 ## How to Prepare for This Workshop 
 
 - Once you are viewing the workshop's gitHub page's website, you can see a list of Lab Guides at any time by clicking on the **Menu Icon**
 
-## Oracle Golgengate for Big Data Workshop
+## Oracle Golgengate for Big Data Microservices Workshop
 
 Welcome to the Golden Gate for Big Data Workshop. The content will give you a basic understanding of Golden Gate and Big Data.
 
