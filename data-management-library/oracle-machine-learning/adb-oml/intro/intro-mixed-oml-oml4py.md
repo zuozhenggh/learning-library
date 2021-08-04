@@ -30,8 +30,6 @@ Choose this path and you will:
 
 Estimated Time: 2 hours
 
-
-
 ### Prerequisites
 
 - An Oracle Cloud Account. Please view this workshop's LiveLabs landing page to see which environments are supported
@@ -40,7 +38,7 @@ Estimated Time: 2 hours
 
 ## Learn More
 
-[Oracle Machine Learning Product Page](https://www.oracle.com/database/technologies/datawarehouse-bigdata/machine-learning.html)
+* [Oracle Machine Learning Product Page](https://www.oracle.com/database/technologies/datawarehouse-bigdata/machine-learning.html)
 * [About Oracle Machine Learning for Python](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-oml4py.html#GUID-D00976CA-3663-4F32-A6A2-B6BF5A843ADC)
 * [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
