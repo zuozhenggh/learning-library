@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a project for a new visual application, which serves as the foundation to build a web application in Oracle Visual Builder Studio.
+This lab shows you how to create a project for a new visual application, which serves as the foundation to build a web application in Oracle Visual Builder Studio.
 
 Estimated Lab Time: 15 minutes
 
 ### Background
 
-Visual Builder Studio lets you create engaging web and mobile applications using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
+You can create engaging web and mobile applications in Visual Builder Studio using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
 
 In this workshop, you'll build a simple Human Resources visual application, using a _project_ as a starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR visual application. The project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more.
 
@@ -39,15 +39,15 @@ As someone who creates a project, you'll automatically become the project's owne
 
     Click **Next**.
 
-3.  On the Template page, select **Visual Application** and click **Next**.
+3.  On the Template page, select **Visual Application**. Click **Next**.
 
-4.  On the Project Properties page, click **Select an instance** to choose the Development VB Instance where you plan to deploy and host your application. When your development environment has only one VB instance, it will be automatically selected as your VB instance.
+4.  On the Project Properties page, click **Development VB Instance** to select the VB instance where you plan to deploy and host your application. When you have only one VB instance provisioned, it will be automatically selected as your environment's deployment instance.
 
 5.  Change the **Workspace Name** from the default `Workspace1` to `HR Visual Application`. Also change the **Working Branch Name** from `branch1` to `hrbranch`.
 
 6.  Leave other fields to their default settings and click **Finish**.
 
-    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to the visual designer in your workspace as well as to your environments, repositories, and a recent activities feed. On the left are a series of tabs showing all the project components that are available.
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace as well as to your environments, repositories, and a recent activities feed. On the left are a series of tabs showing all the project components that are available.
 
     ![](images/project_home.png " ")
 
@@ -55,7 +55,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
-1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` (default) and `hrbranch`, created with initial content for your visual application.  
+1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. (The `main` branch is the default branch created when a new repository is generated and is typically your project's source of truth.)
 
     ![](images/repo.png " ")
 
@@ -63,21 +63,21 @@ Everything you need to start building a visual application is now created for yo
 
     ![](images/workspace.png " ")
 
-3.  Click **Environments** ![Environments icon](images/vbs_environments_icon.png) in the left navigation to view the Development environment that points to your VB instance. Here, you can view details of your Development instance and the applications that you deploy to this instance.  
+3.  Click **Environments** ![Environments icon](images/vbs_environments_icon.png) in the left navigation to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.  
 
     ![](images/env.png " ")
 
-4.  Click **Builds** ![Builds icon](images/vbs_builds_icon.png) in the left navigation to view the default build jobs that package and deploy your visual application to the Development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the Development instance.
+4.  Click **Builds** ![Builds icon](images/vbs_builds_icon.png) in the left navigation to view the default build jobs that package and deploy your visual application to the development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the development instance.
 
     ![](images/build_jobs.png " ")
 
-5.  On the Builds page, click **Pipelines** to view the sequence of build jobs that package and deploy your application to your Development environment.
+5.  On the Builds page, click **Pipelines** to view the sequence of build jobs that package and deploy your application to your development environment.
 
     ![](images/build_pipeline.png " ")
 
 ## **TASK 3:** Add Credentials to Deploy the Visual Application
 
-Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB  Development instance.
+Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB  development instance.
 
 1.  Click **Jobs** on the Builds page, then click **Configure** ![Configure icon](images/vbs_builds_configure_icon.png) for the `Visual-Application-Deploy` job.
 
@@ -85,14 +85,14 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
 2.  On the Job Configuration page, click **Steps**.
 
-3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the VB Development instance. Click **Save**.
+3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the VB development instance. Click **Save**.
 
     ![](images/build_auth_credentials.png)
 
 
 ## **TASK 4:** Add Team Members
 
-For the purposes of this tutorial, let's assume that other members of your team will work with you on this visual application--which means you'll need to add them to this project. As the project owner, you can restrict what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
+For the purposes of this tutorial, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
 1.  Click **Project Home** ![Project Home icon](images/vbs_project_home_icon.png) in the left navigation.
 
