@@ -214,8 +214,6 @@ Now that you have your business objects, create a diagram that visualizes the bu
 
     The diagram looks just like the graphic in the Background section.
 
-    So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in later labs.
-
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
 * **Last Updated By/Date** - August 2021
