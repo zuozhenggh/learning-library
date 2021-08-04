@@ -37,6 +37,8 @@ Lab 6 – MySQL -> Kafka (Json format)
 
 Lab 7 – MySQL -> Cassandra
 
+Lab 8 - MySQL to Kafka using GG Microservices
+
 
 
 

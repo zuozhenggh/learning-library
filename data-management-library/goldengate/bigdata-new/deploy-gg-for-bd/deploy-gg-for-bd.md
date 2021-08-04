@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Big Data
+# Deploy GoldenGate for Big Data (Classic)
 
 ## Introduction
 
