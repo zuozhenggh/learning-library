@@ -20,7 +20,25 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
 
-## **STEP 1:** Add and Run an Extract in OCI GoldenGate
+## **STEP 1:** Add Transaction Data
+
+1.  In the OCI GoldenGate Deployment console, select **Overview** from the navigation menu (hamburger icon), and then click **Configuration**.
+
+    ![](images/02-01-nav-config.png)
+
+2.  Click **Connect to database SourceATP**.
+
+    ![](images/02-02-connect-source.png)
+
+3.  Next to **TRANDATA Information** click **Add TRANDATA**.
+
+    ![](images/02-03-trandata.png)
+
+4.  For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
+
+    ![](images/01-05-trandata.png)
+
+## **STEP 2:** Add and Run an Extract in OCI GoldenGate
 
 This Extract process captures data from the source database to send to Oracle GoldenGate.
 
@@ -56,7 +74,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 2:** Add and Run a Receiver Server Path
+## **STEP 3:** Add and Run a Receiver Server Path
 
 The Receiver Path initiates the process to pull the OCI GoldenGate trail file down o OCI GoldenGate.
 
@@ -66,53 +84,43 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 2.  Click **Add Path** (plus icon).
 
-    ![](images/02-02.png)
-
 3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **GGStoOGG**.
 
 4.  For **Description**, describe the purpose of this Path.
 
-5.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
-
-6.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
-
-7.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
-
-    ![](images/02-07.png)
+5.  For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https://.*
 
+6.  For **Port Number**, enter 443.
+
+7.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
+
     ![](images/02-07-note.png)
 
-8.  For **Target Host**, enter the Oracle GoldenGate Internal FQDN.
+8.  For **Domain**, enter the Domain from Lab 3, Task 3, step 4. For example, **GGSNetwork**.
 
-    *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
+9.  For **Alias**, enter the Alias from Lab 3, Task 3, step 4. For example, **ggs2ogg**.
+
+10. For **Target Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.   
+
+11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
 
     ![](images/02-08-note.png)
 
-9.  For **Port Number**, enter 443.
+12. Click **Create Path**.
 
-10. For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+13. Return to the Receiver Server Overview page, and then select **Start** from the Path's **Action** menu.
 
-11. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
-
-12. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
-
-    ![](images/02-12.png)
-
-13. Click **Create Path**.
-
-14. Return to the Receiver Server Overview page, and then select **Start** from the Path's **Action** menu.
-
-15. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
+14. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
 
     ![](images/02-15-rcvr.png)
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
-## **STEP 3:** Add a Checkpoint table
+## **STEP 4:** Add a Checkpoint table
 
-1.  In the OCI GoldenGate Deployment Console, click **Administration Server**, and then open the navigation menu to select **Configuration**.
+1.  In the Oracle GoldenGate Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
     ![](images/02-01-nav-config.png)
 
@@ -128,11 +136,11 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Rec
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## **STEP 4:** Add and Run a Replicat
+## **STEP 5:** Add and Run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
-1.  Click **Add Replicat** (plus icon).
+1.  Click **Overview**, and then click **Add Replicat** (plus icon).
 
     ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
 
@@ -142,33 +150,31 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 4.  For **Credential Domain**, select **OracleGoldenGate**.
 
-5.  For **Credential Alias**, select **TargetADW**.
+5.  For **Credential Alias**, select **adw&lt;user&gt;_low**.
 
 6.  For **Trail Name**, enter T1.
 
 7.  From the **Checkpoint Table** dropdown, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**.
 
-8.  Under **Managed Options**, enable **Critical to deployment health**.
+8.  Click **Next**.
 
-9.  Click **Next**.
+9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
 
-10. In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+10. Click **Create**.
 
-11. Click **Create**.
-
-12. In the Rep Replicat **Action** menu, select **Start**.
+11. In the Rep Replicat **Action** menu, select **Start**.
 
     ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
 
     The yellow exclamation point icon changes to a green checkmark.  
 
-13. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
+12. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
 
-14. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
+13. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
 
-15. Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
+14. Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
-16. Enter the following inserts, and then click **Run Script**:
+15. Enter the following inserts, and then click **Run Script**:
 
     ```
     <copy>Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1000,'Houston',20,743113);
@@ -183,21 +189,21 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (1009,'Washington D.C.',22,688002);</copy>
     ```
 
-17. In the Oracle GoldenGate Marketplace Administration Server, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+16. In the OCI GoldenGate Deployment Console, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![](images/04-17.png)
 
-18. Navigate to the Oracle GoldenGate Marketplace Distribution Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+17. Navigate to the Oracle GoldenGate Marketplace Receiver Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![](images/04-18.png)
 
-## **STEP 5:** Confirm the Distribution Path is running
+## **STEP 6:** Confirm the Receiver Path is running
 
-In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
+In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
 ![Confirm Distribution Path](images/04-00.png)
 
-In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. You can now proceed to the [next lab](#next).
+In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You can now proceed to the [next lab](#next).
 
 ## Learn More
 

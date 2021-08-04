@@ -49,7 +49,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ```
     <copy>mkdir wallet_ADW
-unzip wallet_ATP.zip -d wallet_ADW</copy>
+unzip wallet_ADW.zip -d wallet_ADW</copy>
     ```
 
 ## **STEP 3:** Add the Target ADW credential in the Oracle GoldenGate Administration Server
@@ -60,9 +60,9 @@ unzip wallet_ATP.zip -d wallet_ADW</copy>
 
     ![OPen OCI GoldenGate Deployment Console Configuration screen](images/03-02.png)
 
-3.  Copy the SourceATP connection string in the User ID column, and then paste it into a text editor.
+3.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
 
-    ![Copy User ID for SourceATP credential](images/03-03.png)
+    ![Copy User ID for TargetADW credential](images/03-03.png)
 
 4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
@@ -85,21 +85,11 @@ unzip wallet_ATP.zip -d wallet_ADW</copy>
 10. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **atp46130\_low**.
+    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **atp&lt;user&gt;\_low**.
     * For **User ID**, paste the ADW connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
     ![Add credential for source ATP](images/04-10.png)
-
-11. Click **Connect to Database**.
-
-    ![Click Connect to Database](images/04-14.png)
-
-12. Next to TRANDATA Information, click Add **TRANDATA**.
-
-    ![Add TRANDATA](images/04-15.png)
-
-13. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can now proceed to the [next lab](#next).
 
