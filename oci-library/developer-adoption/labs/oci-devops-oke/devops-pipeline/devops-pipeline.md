@@ -295,8 +295,8 @@ This is going to publish multiple artifacts to our OKE environment.
 
 1. Before start designing the pipeline stages, we need to create the parameter we used in the Artifact. Click on Parameters tab and enter the following data:
 
-    |Name|Default Value|Description|
-    |--|--|--|
+    |Name|Default Value|
+    |--|--|
     |`mushop_fulfillment_version`|Enter the default tag name that is used to publish mushop-fulfillment image: `1.2.0-SNAPSHOT`|
     |Description|Default version of mushop-fulfillment image.|
 
@@ -321,7 +321,7 @@ This is going to publish multiple artifacts to our OKE environment.
 1. Click on `Add Stage` popup button:
     ![DevOps pipeline - add stage popup](./images/devops-add-stage1-popup.png) 
 
-1. OCI DevOps also allow you to add integrations and control stages to any deployment. For example, you can request an approval before proceeding to the next stage of the pipeline. In our case, we don't need to implement any specific control. Under `Deploy`, select `OKE:Default (Apply manifest to your Kubernetes cluster)`, then click on next.
+1. OCI DevOps also allow you to add integrations and control stages to any deployment. For example, you can request an approval before proceeding to the next stage of the pipeline or use an automatic approval. We are going to use the automatic approval. Under `Deploy`, select `OKE:Default (Apply manifest to your Kubernetes cluster)`, then click on next.
 
     ![Filter stage types](./images/devops-add-stage2.png) 
 

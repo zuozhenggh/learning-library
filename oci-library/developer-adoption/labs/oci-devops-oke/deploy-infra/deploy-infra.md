@@ -120,7 +120,7 @@ For more details about PAT, check the [GitHub documentation](https://docs.github
 
 The existing Terraform template code we imported into the git repository was designed primarily to run through Terraform CLI which uses user/key authentication mode declared in the Terraform OCI provider template. However, when deploying the Terraform template through ORM, the OCI service itself uses an authentication mode based on Service principal, which identify the user and region logged in through the OCI Console (or CLI/API).
 
-Therefore, deploying the template through ORM require us to make some changes to the code to remove the user/key authentication settings.
+Therefore, deploying the template through ORM require us to make some changes to the code to remove the user/key authentication settings. 
 
 There are 2 files we need to change:
     - providers.tf
@@ -189,6 +189,10 @@ We are going to create a feature branch and change the code directly through Git
 
 1. Commit the changes into the `release-infra` branch. 
     ![Commit variables.tf](./images/github-commit-variables-tf.png)
+
+
+`Note`: You can implement these changes to the Terraform provider block across all your Terraform projects to make them compatible with ORM.
+
 
 #### Create a pull request
 
@@ -287,16 +291,11 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 
 1. Click on Next in the bottom of the page to go to the `2. Configure variables` page.
 
-1. In the `Configure Variables` page, change the following variables:
+1. In the `Configure Variables` page:
+    1. select `cicd` compartment
+    1. set project Name `HelloOCIDevOps`
+    1. Make sure both `Execute deployment in DevOps Pipeline?` and `Show Advanced Options?` are unchecked.
 
-    DevOps Project:
-
-    |Variable|Value|
-    |-|-|
-    |Compartment|cicd|
-    |Project Name|HelloOCIDevOps|
-    |Execute deployment in DevOps Pipeline?|unchecked|
-    |Show Advanced Options?|unchecked|
     
     ![ORM Stack - DevOps Project](./images/oci-orm-stack-devops-project.png)
 
@@ -304,12 +303,16 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
     ![ORM Stack - Policy Settings](./images/oci-orm-stack-policy-settings.png)
 
 
-    OKE Cluster Configuration: No changes required, use Stack default values to create a new OKE cluster.
-    ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
+    OKE Cluster Configuration:
+    
+     * To create a new OKE Cluster, no changes are required, use Stack default values.
+        ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
 
-    OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
-    ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
+        OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
+        ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
 
+    * To re-use an existing OKE Cluster, uncheck `Create new OKE Cluster` and then select the Compartment where the cluster was deployed and Cluster:
+        ![ORM Stack - Select existing OKE custer](./images/oci-orm-select-existing-oke-cluster.png)
     
 1. Click on Next in the bottom of the page to proceed to the `3. Review` page.
     ![ORM Stack - 3.Review](./images/oci-orm-stack-review.png)
