@@ -55,6 +55,10 @@ Estimate Lab Time: 15 minutes
 
     `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
 
+    ![Viewing Configuration File Preview](./images/view-config-prev.PNG)
+
+    ![Configuration Preview](./images/config-prev.PNG)
+
     `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in command prompt as 'zdmuser':
 
     ```
@@ -84,7 +88,9 @@ Estimate Lab Time: 15 minutes
     ![Credential Script](./images/cred-script.PNG)
 
 ## **STEP 5: Create User in Autonomous Database**
-1. You will need to pre-create movedata\_user in the autonomous database.
+1. You will need to pre-create movedata\_user in the autonomous database. Start by deleting the script you ran in the last step.
+
+    ![Cleared Script](./images/cleared-sql.PNG)
 
 2. Test to make sure the user doesn't already exist by running the drop command. It is fine if it fails:
 
@@ -93,6 +99,8 @@ Estimate Lab Time: 15 minutes
     drop user movedata_user cascade;
     </copy>
     ```
+
+    ![Drop User](./images/drop-user.PNG)
 
 3. Create the user and grant it privileges:
 
@@ -103,6 +111,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
+    ![Create User](./images/create-user.PNG)
 
 
 ## Acknowledgements
