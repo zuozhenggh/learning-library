@@ -63,6 +63,7 @@
           },
         {
             "title": "Lab 6: Use OML to Predict Customer Churn",
+            "type": "freetier",
             "filename": "../../predict-churn/predict-churn.md"
         },
         {
