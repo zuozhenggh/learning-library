@@ -14,15 +14,15 @@ You'll also populate your business objects by importing data from a file. You di
 ## **TASK 1:** Create an Action Chain to Navigate from the Departments Page to the Employees Page
 
 1.  Click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png), then click **HR Visual Application** in the Workspaces table.
-2.  Click **Web Applications** ![Web Applications icon](images/web_applications_icon.png), then **main-departments** under the hrwebapp, Flows, and main nodes.
+2.  Click **Web Applications** ![Web Applications icon](images/web_applications_icon.png), then **main-departments** under the hrwebapp and main nodes.
 3.  In the Page Designer, click **Components** to open the Components palette. Then, drag a **Button** from the Common components to the Toolbar, to the right of the Create Department button on the main-departments page.
 
-    ![](images/departments_button.png)
+    ![](images/departments_button.png " ")
 
-4.  If necessary, click **Properties**. Then in the General tab of the properties pane, change the **Text** field to `Display Employees`.
-5.  Select the button (if necessary) and click the **Events** tab, then click the **\+ New Event** button. From the menu, select **Quick Start: 'ojAction'**, the default action for a button click.
+4.  If necessary, click **Properties**. Then in the General tab of the Properties pane, change the **Text** field to `Display Employees`.
+5.  Select the button (if necessary) and click the **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action for a button click.
 
-    ![](images/departments_button_events.png)
+    ![](images/departments_button_events.png " ")
 
     An action chain with the ID ButtonActionChain is created. It contains only the Start action.
 
@@ -40,22 +40,22 @@ You'll also populate your business objects by importing data from a file. You di
 
 ## **TASK 2:** Create an Action Chain to Navigate from the Employees Page to the Departments Page
 
-1.  In the Web Apps pane, click **main-employees** under the hrwebapp, Flows, and main nodes. If necessary, click **Reload page** ![Reload page icon](images/reload_icon.png) to display the new employee you created.
+1.  In the Web Apps pane, click **main-employees** under the hrwebapp and main nodes. If necessary, click **Reload page** ![Reload page icon](images/reload_icon.png) to display the new employee you created.
 2.  In the Components palette, drag a **Button** component to the Toolbar, to the right of the Create Employee button.
-3.  In the button's properties pane, change the **Text** field to `Display Departments`.
-4.  Select the button (if necessary) and click the **Events** tab, then click **+ New Event** and select **Quick Start: 'ojAction'**.
+3.  In the button's Properties pane, change the **Text** field to `Display Departments`.
+4.  Select the button (if necessary) and click the **Events** tab, then click **+ New Event** and select **On 'ojAction'**.
 
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
 5.  Drag the **Navigate** action from the Navigation section to the **+** sign pointed to by the Start action.
-6.  In the properties pane, select **main-departments** from the **Target** list.
+6.  In the Properties pane, select **main-departments** from the **Target** list.
 
     The action now has the label `Navigate main-departments`.
 
 7.  Click **Preview** ![Preview icon](images/preview_icon.png) to test the pages and navigation. The application opens in another browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
-8.  Click **main**, then **Page Flow** to view the application's modified page flow. You can now navigate between the main-departments and main-employees pages.
+8.  Click **main**, then **Diagram** to view the application's modified page flow. Click the main-departments page to see two navigation icons (![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png)) appear on the main-employees page, indicating that you can now navigate from  main-departments to main-employees and back.
 
-    ![](images/page_flow.png)
+    ![](images/page_flow.png " ")
 
 ## **TASK 3:** Import Data for the Business Objects
 
@@ -73,11 +73,11 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
 6.  In the Import Data dialog box, select the **Replace** option if it's not already selected. Then click the upload box, browse to select the `Department.csv` file, and click **Import**.
 
-   ![](images/department_data_import.png)
+   ![](images/department_data_import.png " ")
 
 	Click **Close** after the file has been successfully imported. Six departments are displayed in the table.
 
-	![](images/department_data_import_result.png)
+	![](images/department_data_import_result.png " ")
 
 7.  Click **Employee** under Business Objects, then click **Data**.
 
@@ -87,12 +87,7 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
    Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
 
-	![](images/employees_data_import_result.png)
-
-## Learn More
-
-* [Work with Actions and Action Chains](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/develop-applications.html#GUID-1C9CB135-0C1A-48E8-8D0A-AF95A0E1D4A6)
-* [Manage Business Object Data During Development](https://docs-uat.us.oracle.com/en/cloud/paas/visual-builder/visualbuilder-building-applications/manage-application-data.html#GUID-03F6956C-881A-4E48-B82C-9C427CACC1D9)
+	![](images/employees_data_import_result.png " ")
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
