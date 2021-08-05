@@ -1,13 +1,13 @@
 # Introduction
 
-[](youtube:O_BzGrIh5_Y)
 
 ## Let's go on a journey!
-Welcome to Oracle Machine Learning on Oracle Autonomous Database. We have combined two powerful features in Oracle Machine Learning and you will have the opportunity to choose your journey or do both!  Let's get started!
-
+Welcome to Oracle Machine Learning on Oracle Autonomous Database. We have combined two powerful features in Oracle Machine Learning and you will have the opportunity to choose your journey or do both! Let's get started!
 
 [<img src="https://objectstorage.us-ashburn-1.oraclecloud.com/p/33cOHsBUt-iNUtL95pRexHYqvo0iI1U8S4Hz0PO52lGw4YZ4GQ5fXiEgZKGuDaQW/n/idytgywzwo9h/b/ADWCLab/o/oml4sqlOML4SQL.png" width="100">](?lab=intro)
 [<img src="https://objectstorage.us-ashburn-1.oraclecloud.com/p/HoH6izYbWRl3zfeCozD3AAhSBIOZI7Kd5ERW7ciU0-PBoME9a31yxayaubA62DNB/n/idytgywzwo9h/b/ADWCLab/o/oml4pyOML4PY.png" width="100">](?lab=introduction)
+
+[](youtube:1ew-4yzUPuE)
 
 ### Journey A - Oracle Machine Learning on Autonomous Database
 
@@ -23,15 +23,13 @@ Estimated Time: 2 hours
 
 ### Journey B - Oracle Machine Learning for Python on Oracle Autonomous Database
 
-[] (youtube:wciO-5CyS2M)
-
-This workshop introduces you to Oracle Machine Learning for Python (OML4Py) on Oracle Autonomous Database. OML4Py supports scalable in-database data exploration and preparation using native Python syntax, invocation of in-database algorithms for model building and scoring, and embedded execution of user-defined Python functions from Python or REST APIs. OML4Py also includes the AutoML Python API for automated algorithms and feature selection, and hyperparameter tuning. Join us for this tour of OML4Py.
+This workshop introduces you to Oracle Machine Learning for Python (OML4Py) on Oracle Autonomous Database. OML4Py supports scalable in-database data exploration and preparation using native Python syntax, invocation of in-database algorithms for model building and scoring, and embedded execution of user-defined Python functions from Python or REST APIs. OML4Py also includes the AutoML Python API for automated algorithm and feature selection, and hyperparameter tuning. Join us for this tour of OML4Py.
 
 Choose this path and you will:
 * Learn about Oracle Machine Learning Notebooks and connect to an Oracle Autonomous Database from a Python session
 * Perform data selection and manipulation using the OML4Py Transparency Layer
 * Explore In-database algorithms and models from a convenient Python API
-* Store Python objects in the database using OML4Py datastores 
+* Store Python objects in the database using OML4Py datastores  
 * Explore Embedded Python Execution for invoking user-defined Python functions from Python and REST
 * Learn more about AutoML functionality
 

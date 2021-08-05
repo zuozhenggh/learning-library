@@ -1,5 +1,5 @@
 {
-  "workshoptitle":"Oracle Machine Learning with Autonomous Database - Choose your Journey",
+  "workshoptitle":"Machine Learning on ADB - Choose your Journey",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -39,7 +39,7 @@
       },        
       {
         "title": "OML4PY Introduction - B",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml4py-adb/introduction/introduction.md"
+        "filename": "/data-management-library/oracle-machine-learning/oml4py-adb/introduction/introduction.md"
     },
       {
         "title": "Lab B1: Getting Started with OML4Py",
