@@ -2,13 +2,16 @@
 
 
 ## Let's go on a journey!
-Welcome to Oracle Machine Learning on Oracle Autonomous Database. We have combined two powerful features in Oracle Machine Learning and you will have the opportunity to choose your journey or do both! Let's get started!
+Welcome to Oracle Machine Learning on Oracle Autonomous Database. 
+
+[](youtube:1ew-4yzUPuE)
+
+We have combined two powerful features in Oracle Machine Learning and you will have the opportunity to choose your journey or do both! Let's get started!
+
+To explore machine learning for SQL and machine learning for Python, choose the corresponding icons to begin your journey.
 
 [<img src="https://objectstorage.us-ashburn-1.oraclecloud.com/p/33cOHsBUt-iNUtL95pRexHYqvo0iI1U8S4Hz0PO52lGw4YZ4GQ5fXiEgZKGuDaQW/n/idytgywzwo9h/b/ADWCLab/o/oml4sqlOML4SQL.png" width="100">](?lab=intro)
 [<img src="https://objectstorage.us-ashburn-1.oraclecloud.com/p/HoH6izYbWRl3zfeCozD3AAhSBIOZI7Kd5ERW7ciU0-PBoME9a31yxayaubA62DNB/n/idytgywzwo9h/b/ADWCLab/o/oml4pyOML4PY.png" width="100">](?lab=introduction)
-
-Watch the quick video to simplify machine learning by using models built into Oracle Autonomous Database.
-[](youtube:1ew-4yzUPuE)
 
 ### Journey A - Oracle Machine Learning on Autonomous Database
 

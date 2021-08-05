@@ -39,7 +39,7 @@
       },        
       {
         "title": "OML4PY Introduction - B",
-        "filename": "../../../oml4py-adb/introduction/introduction.md"
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml4py-adb/introduction/introduction.md"
     },
       {
         "title": "Lab B1: Getting Started with OML4Py",
