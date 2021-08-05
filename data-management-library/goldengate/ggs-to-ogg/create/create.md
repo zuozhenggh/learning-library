@@ -96,8 +96,6 @@ On the Deployment Details page, you can:
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-In this lab, you created an OCI Deployment and reviewed its Deployment details. You can now proceed to the next [lab](#next).
-
 ## **STEP 4:** Register the Source and Target Database
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
