@@ -42,7 +42,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     c.gender,
     c.age,
     c.income_level,
-    NTILE (5) over (order by sum(m.actual_price)) AS rfm_monetary
+    NTILE (5) OVER (ORDER BY SUM(m.actual_price)) AS rfm_monetary
     FROM custsales m
     INNER JOIN customer c ON c.cust_id = m.cust_id
     GROUP BY m.cust_id,
@@ -61,7 +61,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
 2. This should take approximately 3-4 seconds to run.
 
-    ![Result of query to segment customers into bins](images/analytics-lab-5-step-1-substep-2.png)
+    ![Result of query to segment customers into bins](images/lab-5c-step-1-substep-2.png)
 
     The last column in the report shows the "Bin" value. A value of 1 in this column indicates that a customer is a low spending customer and a value of 5 indicates that a customer is a high spending customer. To see more information about using the `NTILE` function in the SQL documentation, click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
 
@@ -73,15 +73,15 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     ```
     <copy>SELECT 
     cust_id,
-    NTILE (5) over (order by max(day)) AS rfm_recency,
-    NTILE (5) over (order by count(1)) AS rfm_frequency
+    NTILE (5) OVER (ORDER BY max(day_ID)) AS rfm_recency,
+    NTILE (5) OVER (ORDER BY count(1)) AS rfm_frequency
     FROM custsales
     GROUP BY cust_id;</copy>
     ```
 
 2. This should take around 1-2 seconds to complete.
 
-    ![Query result showing how frequently customers watch movies](images/analytics-lab-5-step-2-substep-2.png)
+    ![Query result showing how frequently customers watch movies](images/lab-5c-step-2-substep-2.png)
 
     Now we can identify those customers, based on when they last watched a movie, that watch the fewest number of movies, where the rfm\_frequency is 1, versus those customers that watch the most number of movies, where the rfm\_frequency is 5.
 
@@ -99,7 +99,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     c.gender,
     c.age,
     c.income_level,
-    NTILE (5) over (order by sum(m.actual_price)) AS rfm_monetary
+    NTILE (5) OVER ORDER BY SUM(m.actual_price)) AS rfm_monetary
     FROM custsales m
     INNER JOIN customer c ON c.cust_id = m.cust_id
     GROUP BY m.cust_id,
@@ -112,8 +112,8 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     click_data2 AS (
     -- clicks from application log
     SELECT cust_id,
-    NTILE (5) over (order by max(day)) AS rfm_recency,
-    NTILE (5) over (order by count(1)) AS rfm_frequency
+    NTILE (5) OVER (ORDER BY max(day_id)) AS rfm_recency,
+    NTILE (5) OVER (ORDER BY by count(1)) AS rfm_frequency
     FROM custsales
     GROUP BY cust_id
     )
@@ -136,7 +136,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
 2. The result only shows customers who have significant spend (>= 4) but have not visited the site recently (<= 2).
 
-    ![Query result showing customers with significant spend and having not visited site recently](images/analytics-lab-5-step-3-substep-2.png)
+    ![Query result showing customers with significant spend and having not visited site recently](images/lab-5c-step-3-substep-2.png)
 
 ## Recap
 
@@ -154,4 +154,4 @@ Please *proceed to the next lab*.
 
 - **Author** - Keith Laker, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Keith Laker, August 2 2021
