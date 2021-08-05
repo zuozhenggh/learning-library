@@ -1,5 +1,7 @@
 # Introduction
 
+[] (youtube:P861m__PEMQ)
+
 ## About this Workshop
 This workshop introduces you to Oracle Machine Learning for Python (OML4Py) on Oracle Autonomous Database. OML4Py supports scalable in-database data exploration and preparation using native Python syntax, invocation of in-database algorithms for model building and scoring, and embedded execution of user-defined Python functions from Python or REST APIs. OML4Py also includes the AutoML interface for automated algorithms and feature selection, and hyperparameter tuning. Join us for this tour of OML4Py.
 
@@ -34,4 +36,4 @@ The labs in this workshop focus on the following:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, July 2021
+* **Last Updated By/Date** - Arabella Yao, August 2021

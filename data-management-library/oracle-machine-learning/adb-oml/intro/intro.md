@@ -1,5 +1,7 @@
 # Introduction
 
+[](youtube:vew-4yzUPuE)
+
 ## About this Workshop
 
 Oracle Machine Learning is a powerful technique for analyzing data, and in this sequence of labs, we will show you how to apply it to the most valuable data in your organization - existing enterprise data in Oracle Database. If you are an Oracle data professional but not a data scientist, this workshop will take you through your first machine learning project from data preparation to a successful deployment of a model integrated into an APEX application.
@@ -40,6 +42,6 @@ In this workshop you will:
 
 - **Authors/Contributors** - Derrick Cameron, Leah Bracken, Charlie Berger
 - **Contributors** - Anoosha Pilli, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, LiveLabs QA
-- **Last Updated By/Date** - Anoosha Pilli, March 2021
+- **Last Updated By/Date** - Arabella Yao, August 2021
 - **Workshop Expiration Date** - March 31, 2022
 
