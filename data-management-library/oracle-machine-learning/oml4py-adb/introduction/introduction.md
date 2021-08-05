@@ -5,12 +5,16 @@ This workshop introduces you to Oracle Machine Learning for Python (OML4Py) on O
 
 Python is a major programming language used for data science and machine learning. OML4Py is a new feature on Oracle Autonomous Database that provides Python users access to powerful in-database functionality supporting data scientists for both scalability, performance, and ease of solution deployment. It is essential that Oracle provides adequate training content to introduce users to this technology and support the Oracle Machine Learning Data Scientist Certification Exam.
 
+Watch the video below.
+
 [] (youtube:wciO-5CyS2M)
 
 Estimated Time: 120 minutes
 
 ### About Oracle Machine Learning for Python (OML4Py)
 Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, that includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can run Python functions on data for data exploration and preparation while leveraging Oracle Database as a high-performance computing environment. Oracle Machine Learning Notebooks is available through Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP) and Oracle Autonomous JSON Database (AJD) services.
+
+Watch the video below on introduction to Oracle Machine Learning for Python.
 
 [] (youtube:P861m__PEMQ)
 
