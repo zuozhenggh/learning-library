@@ -13,7 +13,7 @@ In this lab, you'll create the Employee, Department, and Location business objec
 
 ![](/images/dbdiagram.png)
 
-Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments, and to change that data when necessary.
+Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location.
 
 **Note:** Although this lab shows how to build an application using a business object, you can also build applications based on REST services or on databases like Oracle Database Cloud Service. The basic principles of creating an application are the same, no matter what form your data takes.
 
@@ -56,7 +56,7 @@ Add your first web app to the HR visual application that you've just created. A 
 
     By default, a page opens in the Page Designer, with the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
 
-    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the properties pane and expand your work area.
+    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
     In the Web Apps pane, expand the **hrwebapp** node, then the **main** node to get a tree view of your web application.
 

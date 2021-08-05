@@ -2,21 +2,23 @@
 
 ## About this Workshop
 
-This workshop show you how to create a web app in a team environment using Oracle Visual Builder Studio. You'll see how easy it is to design a web app, manage your work as part of a Git repository, and seamlessly deploy the app for your users — all within a short period of time.
+This workshop shows how Oracle Visual Builder Studio can help you create a web app and manage your work in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for  users — all within a short period of time.
+
+In this workshop, you'll create a simple Human Resources web application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments, and to change that data when necessary.
 
 Estimated Workshop Time: 1 hour 45 minutes
 
 ### About Oracle Visual Builder Studio
 
-Oracle Visual Builder Studio — aka VB Studio — is a development platform that helps your team effectively plan and manage your application's lifecycle, right from design and develop through test and deploy. It simplifies development for low-code developers by providing a rich visual designer, even while making the source code available for experienced programmers to modify. With integrated Git repositories that provide a collaborative environment to share and version code; Agile dashboards and issue tracking systems that help teams track progress; and automated builds for continuous integration and delivery pipelines, Visual Builder Studio is a complete solution to simplify application development and accelerate time to market.
+Oracle Visual Builder Studio — aka VB Studio — is a development platform that helps your team effectively plan and manage your application's lifecycle, right from design and develop through test and deploy. It simplifies development for low-code developers by providing a rich visual designer, even while making the source code available for experienced programmers to modify. With integrated Git repositories that provide a collaborative environment to share and version code; Agile dashboards and issue tracking systems that help teams track progress; and automated builds for continuous integration and delivery pipelines, VB Studio is a complete solution to simplify application development and accelerate time to market.
 
 Take a look at this video to learn more, or just dive right into the labs.
   [](youtube:pMmrNIypI7c)
 
 ### Objectives
 
-In this workshop, you will learn how to:
-* Provision instances for your development environment
+In this workshop, you will:
+* Provision instances to obtain a free development environment
 * Create a project for collaborative development
 * Design and develop a web app
 * Share and publish a web app

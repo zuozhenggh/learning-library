@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to save a web application's changes from your local branch to a remote branch using Visual Builder Studio.
+This lab shows you how to save a web application's changes from your local branch to a remote branch, so others can view your work.
 
 Estimated Lab Time: 10 minutes
 
