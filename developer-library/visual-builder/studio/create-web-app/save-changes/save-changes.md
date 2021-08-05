@@ -47,8 +47,15 @@ Push your commits from the local branch in your workspace to the remote branch.
 
 Now that your changes have been pushed, let's check them in the remote `hrbranch`.
 
-1.  In the header, click **Go to project page** ![Go to Project Page icon](images/go_to_project_home_icon.png) to return to the project's home page.
-2.  Click **Git** ![Git icon](images/git_icon.png) in the left navigation.
+1. Click **Git History** at the bottom of your application window to view a summary of your push operation.
+
+   ![](images/git_history.png " ")
+
+   The Git History panel lists all your Git actions and their results and is useful to keep track of what you've done in your workspace. Click ![Close message icon](images/x_icon.png) when you are done.
+
+2.  Now click **Go to project page** ![Go to Project Page icon](images/go_to_project_home_icon.png) in the header to return to the project's home page.
+
+3.  Click **Git** ![Git icon](images/git_icon.png) in the left navigation.
 
    You'll see your changes added to the remote `hrbranch`, indicated by your last commit message.
 
