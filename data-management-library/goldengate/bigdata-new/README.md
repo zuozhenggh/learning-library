@@ -39,6 +39,8 @@ Lab  – MySQL -> Cassandra
 
 Lab  - MySQL to Kafka using GG Microservices
 
+Lab  - GG Microservices Admin Client
+
 
 
 
