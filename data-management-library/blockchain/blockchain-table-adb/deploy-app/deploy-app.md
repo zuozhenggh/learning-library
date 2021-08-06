@@ -21,25 +21,33 @@ In this lab, you will:
 
 ## **STEP 1:** Install Node.js in the Compute Instance
 
-Now that the virtual machine is provisioned, let us see how to  install Node.js for the Node.js application to interact with the Autonomous database rest end points.
+Now that the virtual machine is provisioned, let us see how to install Node.js for the Node.js application to interact with the Autonomous database rest end points.
 
-1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance.
+1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command.
 
-2.  To install Node.js we need to have oracle-release-el7 repo added to the virtual machine as sudo.
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+
+    ![](./images/task1-1.png " ")
+
+2. To install Node.js we need to have oracle-release-el7 repo added to the virtual machine as sudo. This will take about a minute and will say "Complete!" when finished.
 
     ```
     <copy>
     sudo yum install -y oracle-nodejs-release-el7 oracle-release-el7
     </copy>
     ```
+    ![](./images/task1-2.png " ")
 
-3. Run this command to install Node.js to set up the run time environment. Type `y` when prompted.
+3. Run this command to install Node.js to set up the run time environment. Type `y` when prompted. After installing, it will print "Complete!".
 
     ```
     <copy>
     sudo yum install nodejs
     </copy>
     ```
+    ![](./images/task1-3.png " ")
 
 ## **STEP 2:** Open Firewall for Ports
 
@@ -52,6 +60,7 @@ To connect to the Autonomous Database instance from the virtual machine we need 
     sudo firewall-cmd --permanent --zone=public --add-port=8080-8080/tcp
     </copy>
     ```
+    ![](./images/task2-1.png " ")
 
 2.  Reload the firewall to make sure if the port is added.
 
@@ -60,6 +69,7 @@ To connect to the Autonomous Database instance from the virtual machine we need 
     sudo firewall-cmd --reload
     </copy>
     ```
+    ![](./images/task2-2.png " ")
 
 3.  List all the ports to see that port 8080 is available. If it displays 8080/tcp means that the virtual machine firewall that comes by default with Oracle linux has enabled the 8080 port on TCP protocol.
 
@@ -68,6 +78,7 @@ To connect to the Autonomous Database instance from the virtual machine we need 
     sudo firewall-cmd --permanent --zone=public --list-ports
     </copy>
     ```
+    ![](./images/task2-3.png " ")
 
 ## **STEP 3:** Deploy the Application
 
@@ -80,10 +91,9 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
     cd nodejs
     </copy>
     ```
+    ![](./images/task3-1.png " ")
 
-2.  Modify the index.js file with your ATP instance URL and Certificate GUID.
-
-3.  Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your ATP URL and hit `Enter`.
+2.  Now, let's modify the index.js file with your ATP instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your ATP URL and hit `Enter`.
 
     ```
     sed -i 's/atp-url/<paste your atp url>/' index.js
@@ -148,5 +158,5 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 
 * **Author** - Salim Hlayel, Mark Rakhmilevich, Anoosha Pilli
 * **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, July 2021
+* **Last Updated By/Date** - Brianna Ambler, August 2021
 

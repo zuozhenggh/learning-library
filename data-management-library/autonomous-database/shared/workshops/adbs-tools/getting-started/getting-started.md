@@ -19,7 +19,7 @@ In this lab, you will:
 
 To complete this lab, you need to have the following:
 
-- All previous labs successfully completed.
+- All previous labs successfully completed
 
 ## Task 1: Create New Database Users
 
