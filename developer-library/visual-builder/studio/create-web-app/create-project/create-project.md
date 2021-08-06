@@ -55,11 +55,11 @@ As someone who creates a project, you'll automatically become the project's owne
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
-1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. (The `main` branch is the default branch created when a new repository is generated and is typically your project's source of truth.)
+1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. (The `main` branch is the default branch created when a new repository is generated and is the project's source of truth.)
 
     ![](images/repo.png " ")
 
-2.  In the left navigation, click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png)to view the **HR Visual Application** workspace. This workspace contains your working branch, `hrbranch`, and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+2.  In the left navigation, click **Workspaces**![Workspaces icon](images/vbs_workspaces_icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
     ![](images/workspace.png " ")
 
@@ -89,6 +89,9 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
     ![](images/build_auth_credentials.png)
 
+    **Tip:** While on this page, take a quick look at other advanced settings:
+    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to your application URL (for example, https://*host*/*something-else*/0.1/index.html) and is useful to identify multiple versions during development. When your app is ready for production though, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/*host*/*something-else*/live/index.html).
+    - Notice also the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data, so you'll need to manually import your app's data to your development instance -- as we'll see in later labs.
 
 ## **TASK 4:** Add Team Members
 
