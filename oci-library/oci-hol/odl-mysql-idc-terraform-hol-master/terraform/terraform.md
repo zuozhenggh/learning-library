@@ -6,7 +6,7 @@ In this lab, you will retrieve the code for the Terraform infrastructure and lea
 
 Estimated Lab Time: 20 minutes
  
-## **STEP 1**: Getting the code
+## Task 1: Getting the code
 
 1. The code to use with Terraform is located in github [here](https://github.com/lefred/oci-mysql-idc.git)
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 20 minutes
 
 💡 those commands need to be run in the **bash** console (from git for Windows) if you are using that operating system.
 
-## **STEP 2**: Creating terraform.tfvars
+## Task 2: Creating terraform.tfvars
 
 1. The repository includes a template for `terraform.tfvars`, you can copy it to start editing it:
 
@@ -48,7 +48,7 @@ Estimated Lab Time: 20 minutes
     node_shape = "VM.Standard.E2.1"
     ```
 
-## **STEP 3**: tenancy_ocid
+## Task 3: tenancy_ocid
 
 1. You need to edit the new created `terraform.tfvars` file with required information to reach your OCI environment.
 
@@ -58,13 +58,13 @@ Estimated Lab Time: 20 minutes
 
     ![](.././images/gui/02.png)
 
-## **STEP 4**: user_ocid
+## Task 4: user_ocid
 
 1. We also need to provide the `user_ocid`:
 
     ![](.././images/gui/03.png)
 
-## **STEP 5**: fingerprint and API Key
+## Task 5: fingerprint and API Key
 
 1. The private\_key\_path value is the path of oci\_api\_key.pem:
 
@@ -82,7 +82,7 @@ Estimated Lab Time: 20 minutes
 
     ![](.././images/gui/12.png)
 
-## **STEP 6**: region
+## Task 6: region
 
 1. The region of your Free Tier account.
 
@@ -98,7 +98,7 @@ Estimated Lab Time: 20 minutes
     region = "eu-frankfurt-1"
     ```
 
-## **STEP 7**: compartment_ocid
+## Task 7: compartment_ocid
 
 1. You certainly not have any sandbox created, but in case you do, you can go down the compartment tree and pick to one you need. Today you only need to choose one:
 
@@ -106,7 +106,7 @@ Estimated Lab Time: 20 minutes
 
     ![](.././images/gui/06.png)
 
-## **STEP 8**: SSH Keys
+## Task 8: SSH Keys
 
 1. You need to specify the keys that will allow you to connect in ssh to the compute instances (only via the bastion host to the MySQL InnoDB Cluster nodes).
 
@@ -117,7 +117,7 @@ Estimated Lab Time: 20 minutes
     ssh_private_key_path = "/home/fred/.ssh/id_rsa_oci"
     ```
 
-## **STEP 9**: Cluster Information
+## Task 9: Cluster Information
 
 1. You need to provide some information related to the cluster:
 
@@ -128,7 +128,7 @@ Estimated Lab Time: 20 minutes
     * `number_of_nodes`: the amount of nodes to deploy in your MySQL InnoDB Cluster. To achieve automatic HA, 3 nodes are required. For testing the deployment, only one is enough.
 
 
-## **STEP 10**: Node Shape
+## Task 10: Node Shape
 
 1. Finally, you need to specify the Compute Instance's Shape. Of course it depends on your limits.
 

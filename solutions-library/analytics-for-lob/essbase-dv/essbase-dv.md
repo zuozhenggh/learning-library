@@ -21,7 +21,7 @@ This lab will require the following -
 *	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
 
 
-## **Step 1:** Create a Direct Connection in Data Visualizer
+## Task 1: Create a Direct Connection in Data Visualizer
 
 1. In OAC, create a new connection.
 
@@ -41,7 +41,7 @@ The username and password are for the Essbase server credentials. [ This user mu
 
     ![](./images/image18_4.png "")
 
-## **Step 2:** Essbase19c instances using DEMO CERTS
+## Task 2: Essbase19c instances using DEMO CERTS
 
 As an Essbase administrator, when you are managing your Oracle Essbase stack on Oracle Cloud Infrastructure, you may need access to the WebLogic console to perform some administrative tasks.
 
@@ -89,7 +89,7 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
     ![](./images/image18_9.png "")
 
-## **Step 3:** Create Data Sets from Essbase Cubes
+## Task 3: Create Data Sets from Essbase Cubes
 
 After you create Essbase connections, you can use those connections to create data sets. You must create the Essbase connection before you can create a data set for it.
 

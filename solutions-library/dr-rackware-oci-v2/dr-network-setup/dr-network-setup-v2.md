@@ -71,7 +71,7 @@ Estimated Lab Time 45-60 minutes
         └── variables.tf
 
     
-## **STEP 1:** Create Stack    
+## Task 1: Create Stack    
 1. Navigate to the resource manager tab in OCI and select **Stacks**. 
     ![](./images/select-stacks.png)
 
@@ -97,7 +97,7 @@ Estimated Lab Time 45-60 minutes
 7. Review & click on the **Create** button
     ![](./images/ResourceManager-Review.PNG)
 
-## **STEP 2:** Plans
+## Task 2: Plans
 
 1.  Select **Plan** from the Terraform Actions dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -108,7 +108,7 @@ Estimated Lab Time 45-60 minutes
 3.  Wait until the icon turns green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **STEP 3:** Apply
+## Task 3: Apply
 
 1.  Select **Apply** from the Terraform Actions dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)

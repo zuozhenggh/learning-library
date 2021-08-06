@@ -33,7 +33,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: Provision audit and alert policies on your Autonomous Database by using the Activity Auditing wizard
+## Task 1: Provision audit and alert policies on your Autonomous Database by using the Activity Auditing wizard
 
 1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
@@ -172,7 +172,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 2**: View details for an audit trail
+## Task 2: View details for an audit trail
 
 1. In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** (if the audit data is collected).
 
@@ -184,7 +184,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 3**: Enable a custom audit policy on your Autonomous Database
+## Task 3: Enable a custom audit policy on your Autonomous Database
 
 Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomous Database.
 

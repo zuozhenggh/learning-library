@@ -27,7 +27,7 @@ In this lab, you will:
     - The OCID of the target database
 
 
-## **STEP 1:** Register the Target Database on the Data Safe Console
+## Task 1: Register the Target Database on the Data Safe Console
 
 1. Login to the Data Safe Service Console from OCI. 
 
@@ -72,7 +72,7 @@ In this lab, you will:
 Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running assessments to gain additional insight into your EBS data. 
 
 
-## **STEP 2:** Monitor your Target Database with Security and User Assessments
+## Task 2: Monitor your Target Database with Security and User Assessments
 
 In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. 
 
@@ -88,7 +88,7 @@ In this step, we will access the data on the target database we registered. Secu
     ![](./images/12.png " ")
 
 
-## **STEP 3:** Run Data Discovery Jobs
+## Task 3: Run Data Discovery Jobs
 
 Data Discovery allows us to run jobs that discover potentially sensitive data on the database.
 
@@ -118,7 +118,7 @@ Data Discovery allows us to run jobs that discover potentially sensitive data on
     ![](./images/18.png " ")
 
 
-## **STEP 3:** Audit the Target Database with Activity Auditing
+## Task 3: Audit the Target Database with Activity Auditing
 
 Activity Auditing allows users to view activity and data manipulation on the database. 
 

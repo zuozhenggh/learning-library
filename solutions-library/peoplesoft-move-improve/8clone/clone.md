@@ -13,7 +13,7 @@ In this lab you will:
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running on Cloud Manager
 
-## **STEP 1**: Creating a Clone of an Environment
+## Task 1: Creating a Clone of an Environment
 
 1.  Navigate to **Dashboard** > **Environments**. On the environment that we just created (**HCMFT**) click the down arrow and then click **Clone Environment**.
     ![](./images/cloneworkshop.png "")

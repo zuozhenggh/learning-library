@@ -27,7 +27,7 @@ Our service supports CRUD (Create, Read, Update, Delete) actions on the four dif
 The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
 
-### **STEP 1:** Configuration and Connection
+### Task 1: Configuration and Connection
 
 This code snippet showed you how to perform configuration and set up connection before other operations.
 
@@ -67,7 +67,7 @@ ad_client = AnomalyDetectionClient(
     service_endpoint=SERVICE_ENDPOINT)  # /20210101
 ```
 
-### **STEP 2:** Creating a Project
+### Task 2: Creating a Project
 
 ```Python
 print("-*-*-*-PROJECT-*-*-*-")
@@ -92,7 +92,7 @@ time.sleep(5)
 
 ```
 
-### **STEP 3:** Creating the DataAsset
+### Task 3: Creating the DataAsset
 
 ```Python
 print("-*-*-*-DATA ASSET-*-*-*-")
@@ -125,7 +125,7 @@ print(get_da.data)
 time.sleep(5)
 ```
 
-### **STEP 4:** Creating the Train Model
+### Task 4: Creating the Train Model
 ```Python
 print("-*-*-*-MODEL-*-*-*-")
 # CREATE CALL
@@ -159,7 +159,7 @@ while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
 
 ```
 
-### **STEP 5:** Detection with the Model
+### Task 5: Detection with the Model
 ```Python
 print("-*-*-*-DETECT-*-*-*-")
 signalNames = [

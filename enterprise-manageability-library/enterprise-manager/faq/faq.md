@@ -3,7 +3,7 @@
 ## Introduction
 The following are Frequently Asked Questions (FAQ) you may refer to when troubleshooting issues encountered while executing above labs.
 
-## **STEP 1:** Review Frequently Asked Questions (FAQ)
+## Task 1: Review Frequently Asked Questions (FAQ)
 1. How to Check Status of Oracle Management Service, Other Services and Agent
 As user *oracle* run the emctl status commands as shown:
 

@@ -29,7 +29,7 @@ In this lab, you will:
 * A Google Account
 * A Salesforce Developer Account
 
-## **STEP 1**: Configure Salesforce Application
+## Task 1: Configure Salesforce Application
 
 * *Personas*:
     - Administrator
@@ -131,7 +131,7 @@ Note: Please see the step below in case the Org ID value is not shown in the Log
 Salesforce has been configured successfully. The next step is to configure IDCS.
 
 
-## **STEP 2**: Create Salesforce IDCS Application
+## Task 2: Create Salesforce IDCS Application
 
 * *Personas*:
     - Administrator
@@ -182,7 +182,7 @@ Salesforce has been configured successfully. The next step is to configure IDCS.
     ![Image](images/L2023.png)
 
 
-## **STEP 3**: Assign Apps to Group
+## Task 3: Assign Apps to Group
 
 * *Personas*:
     - Administrator
@@ -236,7 +236,7 @@ In IDCS you have the option to assign access to users directly, by direct assign
 
 Now that the account is available in Salesforce and IDCS has the authenticated account you are ready to test.
 
-## **STEP 4**: Request Group Access
+## Task 4: Request Group Access
 
 * *Personas*:
     - End User
@@ -275,7 +275,7 @@ Remember that we have created the *Employee* group into IDCS which is having acc
 
 
 
-## **STEP 5**: Verify SSO Configuration
+## Task 5: Verify SSO Configuration
 
 * *Personas*:
     - End User
@@ -298,7 +298,7 @@ When you submit your IDCS user login credentials, in the background, IDCS prepar
 Salesforce consumes the SAML assertion and maps the user in its local identity store, based upon the federation agreements which had previously been configured.
 ```
 
-## **STEP 6**: Configure Provisioning and Synchronization
+## Task 6: Configure Provisioning and Synchronization
 
 * *Personas*:
     - Administrator

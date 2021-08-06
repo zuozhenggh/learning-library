@@ -35,7 +35,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console.
 
 
-## **STEP 1**: Enable Oracle Data Safe
+## Task 1: Enable Oracle Data Safe
 
 Enable Oracle Data Safe in a region of your tenancy. Usually you enable Oracle Data Safe in your home region.
 
@@ -55,7 +55,7 @@ Enable Oracle Data Safe in a region of your tenancy. Usually you enable Oracle D
 
 
 
-## **STEP 2**: Create a compartment
+## Task 2: Create a compartment
 
 As a tenancy administrator, create a compartment in your tenancy to store an Autonomous Database and Oracle Data Safe resources. This compartment from here on in is referred to as "your compartment."
 
@@ -72,7 +72,7 @@ As a tenancy administrator, create a compartment in your tenancy to store an Aut
 5. Click **Create Compartment**.
 
 
-## **STEP 3**: Create a user group and add the user account to the group
+## Task 3: Create a user group and add the user account to the group
 
 A tenancy administrator needs to create a user group and add your Oracle Cloud account to that group.
 
@@ -95,7 +95,7 @@ A tenancy administrator needs to create a user group and add your Oracle Cloud a
 8. From the drop-down list, select the user for this workshop, and then click **Add**. The user account is listed as a group member.
 
 
-## **STEP 4**: Create an IAM policy for the user group
+## Task 4: Create an IAM policy for the user group
 
 A tenancy administrator needs to create an IAM policy that allows the user group to which you belong to create an Autonomous Database in a compartment and register and use that database with Oracle Data Safe.
 
@@ -128,7 +128,7 @@ A tenancy administrator needs to create an IAM policy that allows the user group
 9. Click **Create**.
 
 
-## **STEP 5**: Grant all Oracle Data Safe privileges to the user group
+## Task 5: Grant all Oracle Data Safe privileges to the user group
 
 A tenancy administrator or an Oracle Data Safe administrator needs to grant the user group to which you belong the `manage` privilege on all Oracle Data Safe features by creating an authorization policy in the Oracle Data Safe Console.
 
@@ -149,7 +149,7 @@ A tenancy administrator or an Oracle Data Safe administrator needs to grant the 
 6. Click **Save**.
 
 
-## **STEP 6**: Provision an Autonomous Transaction Processing database
+## Task 6: Provision an Autonomous Transaction Processing database
 
 Provision an Autonomous Transaction Processing (ATP) database to use with Oracle Data Safe.
 
@@ -184,7 +184,7 @@ Provision an Autonomous Transaction Processing (ATP) database to use with Oracle
 7. Wait a few minutes for your instance to provision. When it is ready, **AVAILABLE** is displayed below the large ATP icon.
 
 
-## **STEP 7**: Verify the setup
+## Task 7: Verify the setup
 
 Verify that you can access your ATP database in your compartment and that its status reads AVAILABLE.
 
