@@ -13,6 +13,10 @@ In this lab, you will:
 -   Create an Oracle Cloud Infrastructure compartment
 -   Provision a new Autonomous Database
 
+### Prerequisites
+
+-   This lab requires completion of the Get Started section in the Contents menu on the left.
+
 ## **Step 1:** Create a Compartment
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
