@@ -83,7 +83,7 @@ In this lab, you will:
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Transaction Processing__ - Alternatively, you could have chosen Transaction Processing as the workload type.
 
-    ![Choose a workload type.](./images/task2-5.png " ")
+    ![Choose a workload type.](./images/task2-4.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
@@ -135,10 +135,10 @@ In this lab, you will:
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 <if type="livelabs">
-    ![Click Create Autonomous Database.](./images/Picture100-27-byol.png " ")
+    ![Click Create Autonomous Database.](./images/task2-9.png " ")
 </if>
 <if type="freetier">
-    ![](./images/license.png " ")
+    ![](./images/task2-9.png " ")
 </if>
 
 10. Click __Create Autonomous Database__.
