@@ -10,9 +10,9 @@ The following is intended to outline our general product direction. It is intend
 - Laptop or desktop computer
 - Web browser
 - Account access to Oracle Cloud Infrastructure
-  - The account is provided to you if it is instructor-led training, otherwise use your account 
+  - The account is provided to you if it is instructor-led training, otherwise use your account
 
-## Step 1 - Log in to Oracle Cloud ##
+## Task 1: Log in to Oracle Cloud ##
 
 1. From your browser go to Oracle Cloud. The URL is [https://www.oracle.com/cloud/sign-in.html](https://www.oracle.com/cloud/sign-in.html)
 2. Enter your cloud account name
@@ -36,4 +36,3 @@ The following is intended to outline our general product direction. It is intend
 ## Acknowledgements ##
 
 - **Author** - Milton Wan, Database Product Management, April 2020
-
