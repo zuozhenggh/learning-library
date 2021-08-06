@@ -31,6 +31,7 @@ This lab requires -
      * Lab: Environment Setup  
      * Lab: Introduction to Essbase  
      * Lab: Initialize Environment  
+     * Lab: Essbase Features: Basic
 
 
 ## **STEP 1:** Dimension build using Rule file
