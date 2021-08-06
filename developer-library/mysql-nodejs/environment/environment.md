@@ -64,7 +64,7 @@ username when asked.
 
   ![](images/putty_connect.png " ")
 
-## **STEP 2:** Use MySQL Shell to Access the MySQL Database Service Instance
+## Task 2: Use MySQL Shell to Access the MySQL Database Service Instance
 
 In the Terraform output you got an URL in the format `mysqlx://` which can be
 used with MySQL Shell. MySQL Shell is an interactive Shell, introduced with
@@ -115,7 +115,7 @@ You can explore the database as you like. You can switch back into
 **JavaScript mode** by typing `\js`, into **Python mode** using `\py`, 
 and when done quit using `\quit`.
 
-## **STEP 3:** Configure the OCI Client
+## Task 3: Configure the OCI Client
 
 Later we are going to deploy serverless functions using the `fn` tool. The `fn`
 tool requires access to OCI APIs for deploying the code.
@@ -211,7 +211,7 @@ Terraform setup:
 Using the `--help` option the OCI tool will provide context sensitive help
 about available APIs.
 
-## **STEP 4:** Configure fn Client for Oracle Functions
+## Task 4: Configure fn Client for Oracle Functions
 
 The application you are going to build, is a serverless application using
 Oracle Functions. Serverless also known as FaaS let's you run an microservice

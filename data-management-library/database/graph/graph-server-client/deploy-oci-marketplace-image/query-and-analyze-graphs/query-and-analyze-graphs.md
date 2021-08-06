@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 
 - This lab assumes you have successfully completed all the previous Labs (Lab 1 through Lab 6) and have the Python client up and running.
 
-## **STEP 1:** Get the Graph on Memory
+## Task 1: Get the Graph on Memory
 
 Assuming that the `customer_360` graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is published, you can also access the graph from the new sessions.
 
@@ -32,7 +32,7 @@ graph = session.get_graph("customer_360")
 
 Now we can query this graph and run some analyses on it.
 
-## **STEP 2:** Pattern Matching
+## Task 2: Pattern Matching
 
 PGQL Query is convenient for detecting specific patterns.
 
@@ -61,7 +61,7 @@ graph.query_pgql("""
 +---------------------------------------------------------------+
 ```
 
-## **STEP 3:** Detection of Cycles
+## Task 3: Detection of Cycles
 
 Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -120,7 +120,7 @@ This result will be visualized in the next section:
 
 ![](images/detection2.jpg)
 
-## **STEP 4:** Influential Accounts
+## Task 4: Influential Accounts
 
 Let's find which accounts are influential in the network. There are various algorithms to score the importance and centrality of the vertices. We'll use the built-in PageRank algorithm as an example.
 
@@ -168,7 +168,7 @@ Let's find which accounts are influential in the network. There are various algo
     +-------------------------------------+
     ```
 
-## **STEP 5:** Community Detection
+## Task 5: Community Detection
 
 Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 

@@ -69,7 +69,7 @@ That is it. You have installed the In-Memory POC tool. Next, we need to connect 
     ````
 You have successfully imported the user defined report.
 
-## **STEP 1**: View the objects loaded In-Memory.
+## Task 1: View the objects loaded In-Memory.
 
 Click on the report "in-memory-objects"
 This displays the tables that are loaded into the In-Memory pool. You should see LINEORDER,PART,CUSTOMER,DATE_DIM and  SUPPLIER. If you don't see all of the above objects, ( they may not all have been populated yet ), run the "Load all inmemory tables" report to force load all the missing tables.
@@ -78,7 +78,7 @@ This displays the tables that are loaded into the In-Memory pool. You should see
 
 The above chart shows space used per table In-Memory, compared to space on disk. Notice, that space In-Memory is less than on disk due to default In-Memory compression.
 
-## **STEP 2**: Run In-Memory Query vs  Buffer Cache.
+## Task 2: Run In-Memory Query vs  Buffer Cache.
 
 1. Click on **In-Memory Query vs  Buffer Cache**.
 2. In the popup , enter the following query to see the performance difference, SQL Plan and stats.
@@ -246,7 +246,7 @@ The above chart shows space used per table In-Memory, compared to space on disk.
 
  Now look at the relevant DB stats to see the In-Memory optimizations.
 
-## **STEP 3**: Run In-Memory Query vs  Buffer Cache with custom session parameters.
+## Task 3: Run In-Memory Query vs  Buffer Cache with custom session parameters.
 
 Some sql queries might need to modify session parameters like Parallel Degree, NLS date formats, HINTS, tuning parameters, etc.
 
@@ -275,7 +275,7 @@ Some sql queries might need to modify session parameters like Parallel Degree, N
   Next we can see other useful reports which could help during a POC.
 
 
-## **STEP 4**: Top InmemorySQL Report
+## Task 4: Top InmemorySQL Report
 
 
 ![](images/topSQLwithInMemory.png)

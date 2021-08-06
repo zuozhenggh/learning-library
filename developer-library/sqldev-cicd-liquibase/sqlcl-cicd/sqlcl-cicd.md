@@ -21,7 +21,7 @@ In this lab, you will:
 * You must have SQLcl 19.2 or later installed.
 
 
-## **STEP 1:** Verify SQLcl and update if necessary
+## Task 1: Verify SQLcl and update if necessary
 
 1. On Oracle Cloud Developer Image you used for the compute node there is SQLcl installed in folder `/opt/oracle/sqlcl`, however it is necessary to update to version 19.2 or superior. Download the latest version from [SQLcl Downloads](https://www.oracle.com/tools/downloads/sqlcl-downloads.html).
 
@@ -66,7 +66,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 2:** Capture initial schema and code
+## Task 2: Capture initial schema and code
 
 1. Create a new folder for database changes in your project main folder, for the first version of your project.
 
@@ -180,7 +180,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 3:** Create new database objects and stored code
+## Task 3: Create new database objects and stored code
 
 1. This is **Developer #2** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -332,7 +332,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 4:** Modify objects, add code, and re-capture changes
+## Task 4: Modify objects, add code, and re-capture changes
 
 1. Now comes **Developer #3** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -472,7 +472,7 @@ In this lab, you will:
 14. On GitHub, click on **cicd-ws-rep00** link in the breadcrumbs at the top of the page. On the right side, under Releases, click Create a new release. Create a Release called '**Version 3 production**', use Tag version '**V3**'. Click **Publish release**.
 
 
-## **STEP 5:** Working on patch that changes columns in table
+## Task 5: Working on patch that changes columns in table
 
 1. Once more, **Developer #1** from your team, pulls the updates from this Git repository on hers/his local development environment, working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -588,7 +588,7 @@ In this lab, you will:
 - Compare & pull request > Create pull request. Merge pull request > Confirm merge. Delete branch.
 
 
-## **STEP 6:** Modify code and use Git to version changes
+## Task 6: Modify code and use Git to version changes
 
 1. Again, **Developer #2** from your team, pulls the updates from this Git repository, to continue working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -720,7 +720,7 @@ In this lab, you will:
 21. Click again Releases. Under **V3.2** click **Compare**, select **V3**. Review Comparing changes.
 
 
-## **STEP 7:** Provision another Development Database (ATP)
+## Task 7: Provision another Development Database (ATP)
 
 1. This is **Developer #3** from your team, that has to work on a new project, using a new database **ATPdev02**. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 

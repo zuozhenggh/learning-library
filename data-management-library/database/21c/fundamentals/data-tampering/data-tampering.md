@@ -33,7 +33,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Execute the `/home/oracle/labs/M104784GC10/setup_SH_tables.sh` shell script to create and load `SH.SALES` and `SH.TIMES` tables.
 
@@ -153,7 +153,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	```
 </if>
 
-## **STEP 2:** Examine data before tampering
+## Task 2: Examine data before tampering
 
 1. At the end of each month and fiscal period, for legislative reasons, there is an audit table that stores what was sold. Verify the amount sold at the end of fiscal year 1998.
 
@@ -248,7 +248,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
     ```
 
-## **STEP 3:** Examine data after tampering
+## Task 3: Examine data after tampering
 
 1. In the initial terminal session, check that no one tampered with old sales.
 

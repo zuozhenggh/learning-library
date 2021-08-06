@@ -10,7 +10,7 @@ Estimated Lab Time: 20 minutes
 In this lab, you will:
 - Create a page that allows users to add products to the Shopping Cart.
 
-## **STEP 1**: Creating a Modal Page
+## Task 1: Creating a Modal Page
 Create a Modal Page to add products to the cart.
 
 1. Navigate to Create button and click **Page**.
@@ -22,7 +22,7 @@ Create a Modal Page to add products to the cart.
 4. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 5. Click **Finish**.
 
-## **STEP 2**: Adding Cards Region for Product Details
+## Task 2: Adding Cards Region for Product Details
 
 1. In the new modal page created, navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section.
@@ -96,7 +96,7 @@ Create a Modal Page to add products to the cart.
     - Under Card section:
         - For Primary Key Column 1 - select **PRODUCT_ID**    
     
-## **STEP 3**: Adding Cards Region for Customer Reviews
+## Task 3: Adding Cards Region for Customer Reviews
 
 1. Navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section under **Product** region.
@@ -140,7 +140,7 @@ Create a Modal Page to add products to the cart.
     - Under Messages:
         - For When No Data Found - enter **There are no customer reviews yet.**
      
-## **STEP 4**: Adding Items and Buttons
+## Task 4: Adding Items and Buttons
 In this step, you will create four page items:
 - PRODUCT_ID: To get the product ID.
 - ACTION: To identify the action (Add / Edit / Delete)made for the customer.
@@ -210,7 +210,7 @@ In this step, you will create four page items:
         - For Style -select **Display as Link**
         - For Spacing Right, select **Large**
 
-## **STEP 5**: Adding Computation to Calculate the Number of Items for a Product
+## Task 5: Adding Computation to Calculate the Number of Items for a Product
 1. In the Rendering tree (left pane), expand the **Pre-Rendering**.
 2. Right-click on **Before Regions** and click **Create Computation**.
      ![](images/computation.png " ")    
@@ -228,7 +228,7 @@ In this step, you will create four page items:
         ```
      ![](images/computation2.png " ")          
 
-## **STEP 6**: Adding Process to Add Products to the Shopping Cart
+## Task 6: Adding Process to Add Products to the Shopping Cart
 
 1. In the Rendering tree (left pane), navigate to **Processing** tab.  
      ![](images/create-process.png " ")    
@@ -254,7 +254,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed - select **Add**      
 
-## **STEP 7**: Adding Process to Edit Products in the Shopping Cart
+## Task 7: Adding Process to Edit Products in the Shopping Cart
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -279,7 +279,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed, select **Edit**
 
-## **STEP 8**: Adding Process to Delete Products from the Shopping Cart
+## Task 8: Adding Process to Delete Products from the Shopping Cart
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -303,7 +303,7 @@ In this step, you will create four page items:
     - Under Server-side Condition section:
         - For When Button Pressed - select **Delete**    
 
-## **STEP 9**: Adding Process to Calculate the Shopping Cart Items
+## Task 9: Adding Process to Calculate the Shopping Cart Items
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click  **Create Process**.
@@ -321,7 +321,7 @@ In this step, you will create four page items:
         </copy>
         ```
 
-## **STEP 10**: Adding Process to Close the Modal Page
+## Task 10: Adding Process to Close the Modal Page
 
 1. In the **Processing** tab.    
 2. Right click on Processing and click **Create Process**.
@@ -333,7 +333,7 @@ In this step, you will create four page items:
     - Under Settings section:
         - For Items to Return - enter **P18\_SHOPPING\_CART\_ITEMS,P18\_PRODUCT\_ID,P18\_ACTION,P18\_QUANTITY** 
 
-## **STEP 11**: Enhance the Modal Page
+## Task 11: Enhance the Modal Page
 
 1. Navigate to **Rendering** tab (left pane).
      ![](images/rendering-tab.png " ")  

@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 1**: Start Database and Application
+## Task 1: Start Database and Application
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script

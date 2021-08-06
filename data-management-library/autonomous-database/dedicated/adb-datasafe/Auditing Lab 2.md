@@ -34,7 +34,7 @@ Follow these general steps:
 **Note:**
 The totals and data in your reports will most likely be different than the reports shown here.
 
-## STEP 1: Explore the All Activity report to view and analyze audit data
+## Task 1: Explore the All Activity report to view and analyze audit data
 
 - In the Oracle Data Safe Console, click the **Reports** tab.
 - On the left, click **Activity Auditing**.
@@ -67,7 +67,7 @@ Logins made by the HCM1 user. To do this, create two filters: <br>
 
    ![](./images/Img131.png " ")
 
-## STEP 2: Explore the All Alerts Report
+## Task 2: Explore the All Alerts Report
 
 Find out who is causing alerts in your target database and what they are doing. The alerts are generated based on the alert conditions configured and audit data retrieved from the audit trail.
 
@@ -103,7 +103,7 @@ All the fields on this screen are retrieved from the target database audit trail
 - Set the status of the first alert to **Closed**. This is an action you can take after you review an alert and decide that the issue is resolved.
 - To view open alerts only, move the slider at the top of the report to the right. The report, by default, is filtered this way.
 
-## STEP 3: Explore the Audit Summary report
+## Task 3: Explore the Audit Summary report
 
 Find out how many client hosts have connected to your target database in the last week.
 - Click the **Reports tab**.
@@ -132,7 +132,7 @@ How many client hosts have connected to your database?
   3. The **Login Activity** chart compares the number of failed and successful logins over time.
   4. The **All Activity** chart compares the total number of events over time.
 
-## STEP 4: Create a failed logins report in PDF format
+## Task 4: Create a failed logins report in PDF format
 
    ![](./images/Img143.png " ")
 - Click the **Reports** tab.
@@ -174,7 +174,7 @@ At the top of the report list, under **Custom Reports**, click the name of your 
    ![](./images/Img152.png " ")
 - When you are finished, close the browser tab for the report.
 
-## STEP 5: Explore the Data Access Report
+## Task 5: Explore the Data Access Report
 
 View this report to find out who viewed the EMPLOYEES table.
 - Click the **Reports** tab.
@@ -185,7 +185,7 @@ View this report to find out who viewed the EMPLOYEES table.
 - Who saw this data?
 - Click a row to see the SQL executed.
 
-## STEP 6: Explore the Data Modification report
+## Task 6: Explore the Data Modification report
 
 View this report to find out who modified key tables, such as the `EMPLOYEES` table. The `EMPLOYEES` table contains sensitive information.
 - Click the **Reports** tab.
@@ -197,7 +197,7 @@ View this report to find out who modified key tables, such as the `EMPLOYEES` ta
 - Click any row and view the SQL text to note the type of change made.
 - Notice that in some cases, `ATILLA` tried to update the `SALARY` data, but failed.
 
-## STEP 7: Explore the Database Schema Changes report
+## Task 7: Explore the Database Schema Changes report
 View this report to identify which schema objects were modified by the ADMIN user.
 - Click the **Reports** tab.
 - In the left pane under **Activity Auditing**, click **Database Schema Changes**.

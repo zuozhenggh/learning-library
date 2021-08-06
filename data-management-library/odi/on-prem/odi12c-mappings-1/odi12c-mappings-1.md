@@ -22,7 +22,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:**  Load TRG\_PROD\_FAMILY Mapping Example
+## Task 1:  Load TRG\_PROD\_FAMILY Mapping Example
 
 1. Purpose and Integration Requirements
 The purpose of the Load TRG\_PROD\_FAMILY mapping is to load the data from the SRC\_PRODUCT table in the *Orders Application* model into the TRG\_PROD\_FAMILY target table in the *Sales Administration* model.
@@ -65,7 +65,7 @@ This section describes the mapping Load TRG\_CUSTOMER that will be created in th
   | FAMILY\_ID       | NA                 | UPPER(SUBSTR(DISTINCT\_.FAMILY_NAME,1,3))      |
 
 
-## **STEP 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load TRG\_PROD\_FAMILY mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
 1. Insert a New Mapping
@@ -86,7 +86,7 @@ This section describes how to create the Load TRG\_PROD\_FAMILY mapping. To crea
 3. An empty mapping window will appear on screen.
   ![](./images/mapping_0.png)
 
-## **STEP 3:** Define the Target
+## Task 3: Define the Target
 
 The target is the element that will be loaded by the mapping. To insert the target in the Load TRG\_CUSTOMER mapping:**
 
@@ -98,7 +98,7 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
   ![](./images/models_tgt.png)
 
-## **STEP 4:** Define the Source
+## Task 4: Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Parameters* models. To add source datastores to the Load SRC\_PRODUCT mapping:
 
@@ -112,7 +112,7 @@ The source datastores contain data used to load the target datastore. Two types 
 
   ![](./images/mapping_1.png)
 
-## **STEP 5:** Distinct Component
+## Task 5: Distinct Component
 
 This section describes how to extract distinct values from the source columns. Distinct component in ODI is used to get the distinct values. To create a distinct in the Load TRG\_PROD\_FAMILY mapping:
 
@@ -132,7 +132,7 @@ This section describes how to extract distinct values from the source columns. D
 
 4.  Click **Save**.
 
-## **STEP 6:** FAMILY\_ID Expression
+## Task 6: FAMILY\_ID Expression
 
 This section describes how to define a custom expression on target columns.
 
@@ -148,7 +148,7 @@ The mapping should be as given below.
 
   ![](./images/mapping_5.png)
 
-## **STEP 7:** Define the Target Integration Type
+## Task 7: Define the Target Integration Type
 
 The target table integration type is defined in this section. These are mainly of two types.
 
@@ -161,7 +161,7 @@ We will use incremental update for this mapping.
 
   ![](./images/mapping_6.png)
 
-## **STEP 8:** Define the Data Loading Strategies (LKM)
+## Task 8: Define the Data Loading Strategies (LKM)
 
 The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowledge Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
@@ -176,7 +176,7 @@ To define the loading strategies:
   ![](./images/load_knowledge_module.png)
 
 
-## **STEP 9:** Define the Data Integration Strategies (IKM)
+## Task 9: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -192,7 +192,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator*.
 
-## **STEP 10:** Define the Data Control Strategy
+## Task 10: Define the Data Control Strategy
 
 In the preceeding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
@@ -212,7 +212,7 @@ To define the data control strategy:
 
 The Load TRG\_PROD\_FAMILY mapping is now ready to be run.
 
-## **STEP 11:** Run the Mapping
+## Task 11: Run the Mapping
 
 1. In the logical section, click on Data to see the data in the table.
 

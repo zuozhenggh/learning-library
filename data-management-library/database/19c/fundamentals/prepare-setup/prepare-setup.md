@@ -24,7 +24,7 @@ In Resource Manager, you create a stack to generate each compute instance. A sta
 - You created SSH Keys.
 
 
-## **STEP 1**: Download Oracle Resource Manager stack ZIP files to your local computer.
+## Task 1: Download Oracle Resource Manager stack ZIP files to your local computer.
 
 Click the following links and download the files to your browser's `Download` folder.
 
@@ -33,7 +33,7 @@ Click the following links and download the files to your browser's `Download` fo
 
 
 
-## **STEP 2**: Create two compute instances by using Resource Manager
+## Task 2: Create two compute instances by using Resource Manager
 
 In this section, you run through the following steps twice. The first time, you create a `workshop-staged` compute instance. The second time, you create a `workshop-installed` compute instance.
 
@@ -89,7 +89,7 @@ In this section, you run through the following steps twice. The first time, you 
 
 
 
-## **STEP 3**: Add an ingress rule to your existing VCN
+## Task 3: Add an ingress rule to your existing VCN
 
 Perform this step only if you opted to use an existing VCN in the previous step. If you let Resource Manager create a new VCN for your compute instances, then you can skip this step.
 

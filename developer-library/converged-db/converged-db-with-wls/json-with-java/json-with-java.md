@@ -37,7 +37,7 @@ This lab assumes you have:
     - Lab: eSHOP Application
     - Lab: Data Type Demonstrator Tool
 
-## **STEP 1**: Retrieve JSON data
+## Task 1: Retrieve JSON data
 
 1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
@@ -58,7 +58,7 @@ This lab assumes you have:
 
 7.	Verify the PID, Details and Title.
 
-## **STEP 2**: Update JSON data
+## Task 2: Update JSON data
 
 1.	In the search result occurring after searching for product 292, update the price of the product from 12$ to 14$ in the text area.
 
@@ -78,7 +78,7 @@ This lab assumes you have:
 
    JSON manipulation function which is supplied out of the box called JSON_MERGEPATCH which is entirely replacing the JSON text with the new text is used within the code to update JSON data.  Similarly, we can re-write the query to update only a particular field and value in JSON by other methods provided to scan through and manipulate JSON key-value pairs in Oracle Converged DB for JSON.
 
-## **STEP 3**: Delete JSON data
+## Task 3: Delete JSON data
 
 1. Search for product with ID **292** and Click on the **Go** button.
 
@@ -102,7 +102,7 @@ This lab assumes you have:
 
      ![](./images/json-product-292-missing.png " ")
 
-## **STEP 4**: Insert JSON data
+## Task 4: Insert JSON data
 
 1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
 
@@ -139,7 +139,7 @@ This lab assumes you have:
 
 10.	Verify the PID, Details and Title.
 
-## **STEP 5**: Update JSON Query and verify
+## Task 5: Update JSON Query and verify
 
 We have searched and handled JSON data based on the product id.  Now what if we want to get the products by ID only if the price of the product is $10?  
 

@@ -19,7 +19,7 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI
 - Familiar with OCI object storage to upload data
 
-## **STEP 1:** Understand Data Requirements
+## Task 1: Understand Data Requirements
 
 The core algorithm of our Anomaly Detection service is a multivariate anomaly detection algorithm, which has two major data quality requirements on the training data:
 
@@ -82,7 +82,7 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 * The training data should not have abnormal conditions, which may contains anomalies.
 * The attributes in the data should be correlated well or belong to the same system or asset. Attributes from different systems are suggested to train separate models.
 
-## **STEP 2:** Download Sample Data
+## Task 2: Download Sample Data
 
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
@@ -92,7 +92,7 @@ Here are two prepared sample datasets to help you to easily understand how the t
     - same 10 signals with timestamp column, 100 observations
 
 
-## **STEP 3:** Upload Data to Object Storage
+## Task 3: Upload Data to Object Storage
 
 You need to upload the sample training data into Oracle object storage, to be prepared for model training in next steps.
 

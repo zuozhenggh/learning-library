@@ -22,7 +22,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Configure GoldenGate
 
-## **STEP 1:** GoldenGate for Oracle
+## Task 1: GoldenGate for Oracle
 
 Open a terminal session
 
@@ -53,7 +53,7 @@ MySQL: ggschema ggadmin
 Set the CHECKPOINTTABLE parameter</copy>
 ````
 
-## **STEP 2:**- GoldenGate for non-Oracle (MySQL)
+## Task 2:- GoldenGate for non-Oracle (MySQL)
 
 Open a terminal session
 ````
@@ -135,7 +135,7 @@ In GGSCI, create the OGG Credential Store by executing the command:
 ````
 
 
-## **STEP 3:**- OGG Master Key and Wallet
+## Task 3:- OGG Master Key and Wallet
 
 1. In the Oracle GGSCI, create the OGG Wallet.
 Command:
@@ -189,7 +189,7 @@ Command:
 Version         Creation Date                            Status
 2020-09-10T15:22:28.000+00:00   Current
 
-## **STEP 4:**- GoldenGate Checkpoint Table
+## Task 4:- GoldenGate Checkpoint Table
 
 ````
 <copy>alter pluggable database PDBEAST open;
@@ -223,7 +223,7 @@ Connect to the target database:
 <copy>add checkpointtable</copy>
 ````
 
-## **STEP 5:**- GoldenGate Heartbeat
+## Task 5:- GoldenGate Heartbeat
 
 1.  OGG Heartbeat
 
@@ -265,7 +265,7 @@ In GGSCI, create and activate OGG Integrated Heartbeat
 ````
 <copy>add heartbeattable, targetonly</copy>
 ````
-## **STEP 6:**- GoldenGate Manager		  
+## Task 6:- GoldenGate Manager		  
 **OGG Manager**
 
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
@@ -318,7 +318,7 @@ startupvalidationdelay 2</copy>
 ./ggsci</copy>
 ```
 
-## **STEP 7:**- Startup GoldenGate
+## Task 7:- Startup GoldenGate
 
 1. Oracle:
 ````

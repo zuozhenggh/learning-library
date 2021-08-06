@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load REGION Mapping Description
+## Task 1: Load REGION Mapping Description
 
 This section contains the following topics:
 
@@ -66,7 +66,7 @@ This section contains the following topics:
 
     * No transformation rules.
 
-## **STEP 2:** Create New Target Datastores
+## Task 2: Create New Target Datastores
 
 1. In Designer Navigator, expand the Sales Administration model, right-click on the datastore TRG_CITY and select the option "Duplicate Selection".
 
@@ -112,7 +112,7 @@ This section contains the following topics:
 
   ![](./images/Capture28.PNG)
 
-## **STEP 3:** Create the Mapping
+## Task 3: Create the Mapping
 
 This section describes how to create the Load TRG\_REGION mapping. To create the Load TRG\_REGION mapping perform the following procedure:
 
@@ -147,7 +147,7 @@ This section describes how to create the Load TRG\_REGION mapping. To create the
 
   ![](./images/Capture9.PNG)
 
-## **STEP 4:** Add the Split, Sort Components
+## Task 4: Add the Split, Sort Components
 
 In this example, the data is split across three different datastores based on the continent.
 
@@ -213,7 +213,7 @@ component
 
   ![](./images/Capture18.PNG)
 
-## **STEP 5:** Setting the Integration Type
+## Task 5: Setting the Integration Type
 Select all the three target tables. In the *properties* window for the target tables, double click on each entry for Integration Type:
 
   * select *Incremental Update* for APAC and EURO datastores.
@@ -221,7 +221,7 @@ Select all the three target tables. In the *properties* window for the target ta
 
    ![](./images/Capture19.PNG)
 
-## **STEP 6:** Define the Data Loading Strategies (LKM)
+## Task 6: Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed.
 
@@ -235,7 +235,7 @@ To define the loading strategies:
 
   ![](./images/Capture20.PNG)
 
-## **STEP 7:** Define the Data Integration Strategies (IKM)
+## Task 7: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -253,7 +253,7 @@ To define the integration strategies:
 
   **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **STEP 8:** Run the Mapping
+## Task 8: Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 

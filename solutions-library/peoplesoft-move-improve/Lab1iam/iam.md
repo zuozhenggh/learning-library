@@ -33,7 +33,7 @@ In this lab, you will:
     - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox, and Internet Explorer 11
     - Please download this file: [Details.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFAPdfoRcY01Baa_b6mv7eCzg3rg6IL9olmt-P6OdlAf-B_0h0LnmI_DARqiK2Qr/n/orasenatdpltoci03/b/TestDrive/o/Details.txt.zip)
 
-## **STEP 1**: Signing in to the Console
+## Task 1: Signing in to the Console
 **Console Overview**  
 Please click this link to download **Details.txt**, a file in which you will be noting down important information throughout the lab. 
 
@@ -65,7 +65,7 @@ In this section, sign in to the Oracle Cloud Infrastructure console using your c
 
 
 
-## **STEP 2:** Verifying Service Limits
+## Task 2: Verifying Service Limits
 
 During the workshop, you might face problems related to service limits. 
 
@@ -86,7 +86,7 @@ Please check that you have the required resources in Availability Domain 1
 
 **Note**: We will be using all 6 (Jumphost is 1, Cloud Manager is 1, PSFT Environment is 2, Cloning Environment is 2), so if you would like to spin up any other compute resources that require Standard2 based VM and BMs for the duration of the trial, be sure to use a different Availability Domain.
 
-## **STEP 3:** Creating a Demo Compartment
+## Task 3: Creating a Demo Compartment
 **Compartments Overview:**
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
@@ -113,7 +113,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3.	You have just created a compartment for all of your work in this Test Drive.
 
-## **STEP 4:** Creating a Group
+## Task 4: Creating a Group
 **Security Overview:** A user's permissions to access services come from the groups to which they belong. Policies define the permissions for a group Policies explain what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups.
 
 We'll create a user, a group, and a security policy to understand the concept.
@@ -144,7 +144,7 @@ We'll create a user, a group, and a security policy to understand the concept.
 
     ![](./images/newgroup.png "")
    
-## **STEP 5:** Creating a Policy
+## Task 5: Creating a Policy
 
 Now, let’s create a security policy that gives your group permissions in your assigned Compartment. In this case, we will create a policy that permits users belonging to group **'oci-group' to provision Peoplesoft Cloud Manager in Compartment 'Demo'**:
 
@@ -190,7 +190,7 @@ Now, let’s create a security policy that gives your group permissions in your 
 
     *NOTE*: If you used a different name for the group or compartment, then you'll need to adjust these statements accordingly.
 
-## **STEP 6:** Creating a User
+## Task 6: Creating a User
 
 Create a **New User**
    
@@ -219,7 +219,7 @@ Create a **New User**
 
     b) Click **Create**.
 
-## **STEP 7:** Managing User
+## Task 7: Managing User
 1. From the same User Details page, copy the OCID by clicking on **copy** and paste it in **Details.txt** (#5). 
 
     ![](./images/ocid.png "")
@@ -270,7 +270,7 @@ Create a **New User**
 
     You are now logged in as local user: **User01**
 
-## **STEP 8:** Generating Keys
+## Task 8: Generating Keys
 
 1. **For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [psftKeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TfT512KHmcXTOfylHmEBrBeZNmjDsjVSB4sjSO0Oq2KN2KVE4Dz4bwvI5nOhzrqB/n/orasenatdpltoci03/b/TestDrive/o/psftKeys.zip)**
 <!-- For your convenience, you can use these pre-generated keys for the purpose of the demo and skip to Step 9: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WxGTfD307h7JLB5lmBmmPT76JB6_nk5b30vVV_PbrrLDOViqCRkSM5ZbxJk8uwwv/n/c4u04/b/solutions-library/o/TestDrivekeys.zip) -->
@@ -329,7 +329,7 @@ If you would like to generate your own keys, continue here:
     
     ![](./images/apikeypub.png "")
 
-## **STEP 9**: Setting API Keys for User01
+## Task 9: Setting API Keys for User01
 
 Verify you have the following 4 keys: 
 * **API Signing keys**: ``api_key`` and ``api_key.pub``
@@ -362,7 +362,7 @@ Verify that you have entries #1-8 filled out in **Details.txt**
 
 
 
-<!-- ## **STEP 10**: Gather Information for the Cloud Manager Stack
+<!-- ## Task 10: Gather Information for the Cloud Manager Stack
 
 Paste the below information in a notepad. You will need it later while creating the stack.
 

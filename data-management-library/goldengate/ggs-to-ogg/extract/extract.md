@@ -20,7 +20,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
 
-## **STEP 1:** Add Transaction Data
+## Task 1: Add Transaction Data
 
 1.  In the OCI GoldenGate Deployment console, select **Overview** from the navigation menu (hamburger icon), and then click **Configuration**.
 
@@ -38,7 +38,7 @@ This lab assumes that you completed all preceding labs. For the purposes of this
 
     ![](images/01-05-trandata.png)
 
-## **STEP 2:** Add and Run an Extract in OCI GoldenGate
+## Task 2: Add and Run an Extract in OCI GoldenGate
 
 This Extract process captures data from the source database to send to Oracle GoldenGate.
 
@@ -74,7 +74,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 3:** Add and Run a Receiver Server Path
+## Task 3: Add and Run a Receiver Server Path
 
 The Receiver Path initiates the process to pull the OCI GoldenGate trail file down o OCI GoldenGate.
 
@@ -118,7 +118,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
-## **STEP 4:** Add a Checkpoint table
+## Task 4: Add a Checkpoint table
 
 1.  In the Oracle GoldenGate Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
@@ -136,7 +136,7 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Rec
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## **STEP 5:** Add and Run a Replicat
+## Task 5: Add and Run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
@@ -197,7 +197,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![](images/04-18.png)
 
-## **STEP 6:** Confirm the Receiver Path is running
+## Task 6: Confirm the Receiver Path is running
 
 In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 

@@ -33,7 +33,7 @@ In this lab you will:
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
 
-## **STEP 1**: Create Micronaut Data entities that map Oracle Database tables
+## Task 1: Create Micronaut Data entities that map Oracle Database tables
 
 In the previous lab Flyway was used to setup the following schema:
 
@@ -182,7 +182,7 @@ A relationship between the `Pet` class and the `Owner` class is also defined usi
 
 With that done it is time to move onto defining repository interfaces to implement queries.
 
-## **STEP 2**: Define Micronaut Data repositories to implement queries
+## Task 2: Define Micronaut Data repositories to implement queries
 
 Micronaut Data supports the notion of defining interfaces that automatically implement SQL queries for you at compilation time using the data repository pattern.
 
@@ -285,7 +285,7 @@ The `findByName` method is also interesting as it uses another important feature
 
 With the data repositories in place let's move on to exposing REST endpoints.
 
-## **STEP 3**: Expose Micronaut Controllers as REST endpoints
+## Task 3: Expose Micronaut Controllers as REST endpoints
 
 REST endpoints in Micronaut are easy to write and are defined as [controllers (as per the MVC pattern)](https://docs.micronaut.io/latest/guide/index.html#httpServer).
 
@@ -381,7 +381,7 @@ class PetController {
 
 This time the `PetRepository` is injected to expose a list of pets and pets by name.
 
-## **STEP 4**: Populate Data on Application Startup
+## Task 4: Populate Data on Application Startup
 
 The next step is to populate some application data on startup. To do this you can use [Micronaut application events](https://docs.micronaut.io/latest/guide/index.html#contextEvents).
 
@@ -459,7 +459,7 @@ If you wish to monitor the SQL queries that Micronaut Data performs you can open
 </copy>
 ```
 
-## **STEP 5**: Run Integration Tests for the Micronaut Application
+## Task 5: Run Integration Tests for the Micronaut Application
 
 The application will already have been setup with a single test that tests the application can startup successfully (and hence will test the logic of the `init` method defined in the previous section).
 
@@ -479,7 +479,7 @@ Alternatively if you chose Maven use the `test` goal:
 </copy>
 ```
 
-## **STEP 6**: Run the Micronaut application locally
+## Task 6: Run the Micronaut application locally
 
 To run the application locally if you are using Gradle using the `run` task to start the application:
 

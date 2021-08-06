@@ -33,7 +33,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Create a new PDB2
+## Task 1: Create a new PDB2
 
 At first, as with every other Transportable Tablespace migration, we need to create a database – or in our case, a PDB – as target as first.
 
@@ -75,7 +75,7 @@ At first, as with every other Transportable Tablespace migration, we need to cre
 
     We will use the database link to allow Data Pump pulling all information via the database link. The task can be done without the database link but then two operations are necessary, an expdp and an impdp.
 
-## **STEP 2**: Prepare FTEX
+## Task 2: Prepare FTEX
 
 Before we can transport anything, we need to prepare the FTEX database.
 
@@ -181,7 +181,7 @@ Before we can transport anything, we need to prepare the FTEX database.
 
 7. Note: You have to switch into the 19c environment to do this. If you execute the same “show” commands from the 11.2 SQL*Plus, you will receive errors.
 
-## **STEP 3**: Migration to Oracle Cloud or Cloud Machine
+## Task 3: Migration to Oracle Cloud or Cloud Machine
 
 The Migration to Oracle Cloud or Cloud Machine feature can be used to migrate to Oracle Cloud or ExaCC machines.
 

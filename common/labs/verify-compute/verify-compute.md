@@ -18,7 +18,7 @@ This lab assumes you have:
 - Successfully logged into your LiveLabs account
 - A Valid SSH Key
 
-## **Step 1:** Gather compute instance details
+## Task 1: Gather compute instance details
 1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
 
    ![](images/ll-launch-workshop.png " ")
@@ -33,7 +33,7 @@ This lab assumes you have:
 
 5. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
-## **Step 2:** Choose a path
+## Task 2: Choose a path
 
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 

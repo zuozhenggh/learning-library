@@ -20,7 +20,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Lab:  Deploy Mushop
 
-## **STEP 1**: Install Service Catalog and Create Credentials
+## Task 1: Install Service Catalog and Create Credentials
 
 1.  Good news! You already installed svc-cat/catalog as part of the umbrella chart during setup. Verify that the chart was installed.
    
@@ -71,7 +71,7 @@ In this lab, you will:
     *Note:* The account used must have sufficient policies in IAM to manage resources provisioned with Service Broker 
 
    
-## **STEP 2**: Add OCI Service Broker and Register Cluster Broker
+## Task 2: Add OCI Service Broker and Register Cluster Broker
 Next, deploy the OCI service broker on your cluster. This is done with the Oracle OCI Service Broker helm chart.
 
 ![](images/setup-service-broker.png)
@@ -109,7 +109,7 @@ Next, deploy the OCI service broker on your cluster. This is done with the Oracl
     </copy>
     ````
 
-## **STEP 3**: Verify Service Broker
+## Task 3: Verify Service Broker
 
 1. Verify that the Service Broker is available and ready by running the command below
    
@@ -128,7 +128,7 @@ Next, deploy the OCI service broker on your cluster. This is done with the Oracl
     </copy>
      ````   
 
-## **STEP 4**: Provision ATP
+## Task 4: Provision ATP
 Follow the steps outlined here to provision an ATP instance and resolve a binding secret with its DB Connection Wallet.
 
 *Note:* The sample files in this exercise are using plain password instead of secrets for the sake of simplicity.
@@ -176,7 +176,7 @@ Resources provisioned (or claimed) by Service Broker are called Service Instance
       </copy>
       ````
 
-## **STEP 5**: Service Binding
+## Task 5: Service Binding
 
 When Service Instances finish Provisioning, secrets in the form of a *ServiceBinding* will be created, and become available for application use.
 
@@ -221,7 +221,7 @@ When Service Instances finish Provisioning, secrets in the form of a *ServiceBin
     </copy>
     ```` 
 
-## **STEP 6**: Run MuShop
+## Task 6: Run MuShop
 
 A new ATP instance is now ready and available. The next step is to configure access secrets, and (re)deploy the application.
 
@@ -274,7 +274,7 @@ A new ATP instance is now ready and available. The next step is to configure acc
     </copy>  
     ````
 
-## **STEP 7**: Under the Hood
+## Task 7: Under the Hood
 
 Once again, the use of helm adds some mystery to the ultimate deployment of the catalogue service. Inspect the following for additional information. 
 
@@ -301,7 +301,7 @@ Once again, the use of helm adds some mystery to the ultimate deployment of the 
     </copy>  
     ````
 
-## **STEP 8**: Full Automation
+## Task 8: Full Automation
 
 1. The processes contained in this exercise may be automated through the use of another helm chart included in the repo.
    

@@ -31,7 +31,7 @@ This lab assumes you have completed the following labs:
 - Launch the workshop (in the Introduction)
 </if>
 
-## **Step 1:** Import ML Notebooks
+## Task 1: Import ML Notebooks
 
 We have built the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the file you can download. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook*. Executing the steps takes only a few minutes.
 
@@ -69,7 +69,7 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/import-super-notebook.png)
 
-## **Step 2:** - Working Unsupervised Auto Claims
+## Task 2: - Working Unsupervised Auto Claims
 
 1.  Select the **Auto Insurance Claims Fraud - Unsupervised Learning** notebook to open it.
 
@@ -95,7 +95,7 @@ We have built the steps that are normally followed when exploring data and build
 
     Click the **Show/Hide the Output** icon again to return to the paragraphs.
 
-## **Step 3:** About this Notebook
+## Task 3: About this Notebook
 
 This step discusses the result of each portion of the notebook.
 

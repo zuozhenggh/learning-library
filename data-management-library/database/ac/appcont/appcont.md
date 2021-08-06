@@ -17,7 +17,7 @@ Watch the video below for an overview of the Application Continuity lab
 - Lab: Services
 
 
-## **STEP 1:**  Install Sample Program and configure services
+## Task 1:  Install Sample Program and configure services
 
 1.  If you aren't already logged in to one of your cluster nodes, connect to a node using either Putty or MAC or Windows CYGWIN Emulator
 
@@ -76,7 +76,7 @@ Watch the video below for an overview of the Application Continuity lab
     chmod +x kill_session.sh
     </copy>
     ````
-## **STEP 2:**  Examine Service Attributes and Program Settings
+## Task 2:  Examine Service Attributes and Program Settings
 
 Application Continuity (whether AC or TAC) is enabled by setting attributes on the database service. For JDBC applications the Replay Driver also has to be used.
 
@@ -142,7 +142,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
       build.xml                     <--- A buildfile for ANT (ANT not installed on these systems)
     ````
 
-## **STEP 3:**  NO Replay
+## Task 3:  NO Replay
 
 1. Run the sample program with NO REPLAY enabled
 
@@ -229,7 +229,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     ![](./images/noreplay_errors_2.png " ")  
 
-## **STEP 4:**  Application Continuity
+## Task 4:  Application Continuity
 
 1.  Examine the ac_replay.properties file to see that we are using a replay datasource *oracle.jdbc.replay.OracleDataSourceImpl* and we have enabled FAN, *fastConnectionFailover=TRUE* and connection tests *validateConnectionOnBorrow=TRUE*. The URL uses the recommended format and connects to the service you created previously, which has AC attributes set.
 
@@ -291,7 +291,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     You should notice that there is a response time increase as services are failed over and connections re-established. But no errors.
 
-## **STEP 5:**  Transparent Application Continuity
+## Task 5:  Transparent Application Continuity
 
 1.  Examine the tac_replay.properties file to see that we are using a replay datasource *oracle.jdbc.replay.OracleDataSourceImpl* and we have enabled FAN, *fastConnectionFailover=TRUE* and connection tests *validateConnectionOnBorrow=TRUE*. The URL uses the recommended format and connects to the service you created previously, which has AC attributes set.
 

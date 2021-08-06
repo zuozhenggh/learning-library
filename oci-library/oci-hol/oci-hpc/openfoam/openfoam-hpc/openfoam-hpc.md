@@ -37,7 +37,7 @@ Before you begin using this lab, make sure to have access to the following:
 5. Access to marketplace image "CFD Ready Cluster". The version of marketplace image used in this DEMO is (Version: 20200625). 
 
 
-## **STEP 1**: Launch marketplace image
+## Task 1: Launch marketplace image
 1. Before user launches the marketplace image, check for the Availability domain where 2 or more HPC nodes with shape BM.HPC2.36 are available. Go to **Menu** -> **Governance** -> **Limits**, **Quotas and Usage**
   ![](./images/01-Service_Limits.png)
 
@@ -84,7 +84,7 @@ Before you begin using this lab, make sure to have access to the following:
 
 
 
-## **STEP 2**: Validate the setup
+## Task 2: Validate the setup
 
 1. Click on "Associate Resources" link on the left of the screen to see the infrastructure resources that were provisioned by this stack. Associate resources can be found at **Menu** -> **Resource Manager** -> **Stacks**(click your stack name) -> **Jobs** (Click on the job name link) -> **Associate Resources**
   ![](./images/15-Stack_Resources.png)
@@ -111,7 +111,7 @@ Before you begin using this lab, make sure to have access to the following:
   ![](./images/22-ListHPCNodes.png)
 
 
-## **STEP 3**: Run simulation workload and Render the output
+## Task 3: Run simulation workload and Render the output
 
 1. On Bastion server, run the following commands that will be needed to render the output using Paraview package.
 

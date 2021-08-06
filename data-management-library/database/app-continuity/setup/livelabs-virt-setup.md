@@ -5,7 +5,7 @@ This lab will show you how to setup a GI cluster and RAC database on your Cloud 
 
 **PLEASE READ:**  *If you already have a cluster and RAC database (running the 19c Image) configured, bypass this step.*
 
-## Step 1: Build a Compute Instance using the KVM Marketplace image
+## Task 1: Build a Compute Instance using the KVM Marketplace image
 
 1. Log in to the Oracle Cloud Console
 
@@ -197,7 +197,7 @@ drwx------.  2 root root 16384 Jul 28 06:45 lost+found
 Filesystem     1K-blocks  Used Available Use% Mounted on
 /dev/sdb1       92759032 57164  87983328   1% /oradiskvdb1
 ````
-## Step 5: Install libvrt
+## Task 5: Install libvrt
 
 1.  On Oracle Linux 7 enable the *ol7_kvm_utils* channel to get the recent version of the packages:
 

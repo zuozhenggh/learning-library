@@ -27,7 +27,7 @@ Before you start, be sure that you have done the following:
 - Created SSH keys in Cloud Shell
 - Obtained and signed in to your workshop-installed compute instance. If not, see Lab 4- Obtain a Compute Image with Oracle Database 19c Installed
 
-## **STEP 1**: Enable ARCHIVELOG mode on CDB1 and CDB2
+## Task 1: Enable ARCHIVELOG mode on CDB1 and CDB2
 
 1. Open a terminal window.  
 
@@ -46,7 +46,7 @@ Before you start, be sure that you have done the following:
     ORACLE_SID = [CDB1] ? CDB2
     ```
 
-## **STEP 2**: Verify that the listeners for CDB1 and CDB2 are started
+## Task 2: Verify that the listeners for CDB1 and CDB2 are started
 1. Enter listener control and check that the listeners are started for CDB1, PDB1 and CDB2.
 Look for 'status READY' for each service in the Service Summary.
     ```
@@ -91,7 +91,7 @@ Look for 'status READY' for each service in the Service Summary.
     LSNRCTL> exit
     ```
 
-## **STEP 3**: Verify that PDB1 has sample data before relocating
+## Task 3: Verify that PDB1 has sample data before relocating
 1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
     ```
     $ <copy>. oraenv</copy>
@@ -123,7 +123,7 @@ Look for 'status READY' for each service in the Service Summary.
             107
     ```
 
-## **STEP 4**: Create a common user and grant it privileges to relocate a database
+## Task 4: Create a common user and grant it privileges to relocate a database
 1. Connect to CDB1 as the `SYS` user.
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
@@ -148,7 +148,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## **STEP 5**: Use DBCA to relocate a remote PDB from a CDB to another CDB
+## Task 5: Use DBCA to relocate a remote PDB from a CDB to another CDB
 >In this section, you use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2.<
 
 1. Run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB1 to CDB2.
@@ -177,7 +177,7 @@ A common user is a database user that has the same identity in the `root` contai
     $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB1/CDB2.log</copy>
     ```
 
-## **STEP 6**: Verify that PDB1 is relocated and that HR.EMPLOYEES still exists
+## Task 6: Verify that PDB1 is relocated and that HR.EMPLOYEES still exists
 1. Set the environment variable to CDB2. Enter CDB2 at the prompt.
     ```
     $ <copy>. oraenv</copy>
@@ -220,7 +220,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## **STEP 7**: Relocate PDB1 back to CDB1
+## Task 7: Relocate PDB1 back to CDB1
 1. Run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1. You should get an error about the database link user.
     ```
     $ <copy>dbca -silent \
@@ -295,7 +295,7 @@ In preparation for the first relocation (PDB1 moving to CDB2), we created the da
     Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/CDB1/PDB1/CDB1.log" for further details.
     ```
 
-## **STEP 8**: Disable ARCHIVELOG mode for CDB1 and CDB2
+## Task 8: Disable ARCHIVELOG mode for CDB1 and CDB2
 1. Run the `disable_ARCHIVELOG.sh` script and enter CDB1 at the prompt to disable `ARCHIVELOG` mode on CDB1.
 
     ```

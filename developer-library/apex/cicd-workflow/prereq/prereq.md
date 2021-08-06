@@ -13,7 +13,7 @@ Estimated Completion Time: 5 minutes.
 - Get the repository template.
 - Install Oracle SQLcl.
 
-## **STEP 1:** Get the Template
+## Task 1: Get the Template
 
 1. Go to the github repository [https://github.com/oracle-quickstart/oci-apex-workflow-template](https://github.com/oracle-quickstart/oci-apex-workflow-template) and click **Use this Template**.
 
@@ -23,7 +23,7 @@ Estimated Completion Time: 5 minutes.
 
 3. Clone your new repository on your local computer.
 
-## **STEP 2:** Download and Install Oracle SQLcl
+## Task 2: Download and Install Oracle SQLcl
 
 1. Download Oracle SQLcl from [https://www.oracle.com/tools/downloads/sqlcl-downloads.html](https://www.oracle.com/tools/downloads/sqlcl-downloads.html)
 

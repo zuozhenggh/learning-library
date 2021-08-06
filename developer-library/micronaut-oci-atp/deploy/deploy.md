@@ -15,7 +15,7 @@ In this lab you will:
 * Upload the application distribution and wallet to an OCI VM
 * Run your application on the OCI VM
 
-## **STEP 1**: Create an Oracle Cloud Compute Instance
+## Task 1: Create an Oracle Cloud Compute Instance
 
 1. From the Oracle Cloud Home Page select "Create a VM Instance":
 
@@ -61,7 +61,7 @@ The following values should be supplied:
 * *Source CIDR:* 0.0.0.0/0
 * *Destination Port Range:*: 8080
 
-## **STEP 2**:  Deploy Micronaut Application to OCI
+## Task 2:  Deploy Micronaut Application to OCI
 
 1. First ensure that you private key you downloaded has the correct permissions:
 
@@ -140,7 +140,7 @@ Finally start the application:
     java -jar application.jar
     </copy>
 
-## **STEP 2**:  Verify Application
+## Task 2:  Verify Application
 
 You can now access `http://[VM IP Address]:8080/pets` for the `/pet` endpoint and `http://[VM IP Address]:8080/owners` for the `/owners` endpoint in a browser or using `curl`:
 
