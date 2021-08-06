@@ -26,14 +26,14 @@ In this lab, you will:
 * Download the Oracle Analytic Desktop with url - [URL Text](https://www.oracle.com/solutions/business-analytics/analytics-desktop/oracle-analytics-desktop.html).
 
 
-## **STEP 1**: Installing Oracle Analytics Desktop on a Windows Desktop
+## Task 1: Installing Oracle Analytics Desktop on a Windows Desktop
 
 1.	Download the latest version of Oracle Analytics Desktop (formerly Data Visualization Desktop) from here.
 2.	After saving the installer executable file, click on the installer and follow the guided steps.
 ![Image alt text](images/OAD1.jpg "Image title")
 ![Image alt text](images/OAD2.jpg "Image title")
 
-## **STEP 2:** Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
+## Task 2: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
 
 ## **STEP 2a**: Creating Rich Data Visualizations
 
@@ -43,7 +43,7 @@ Step 1 Follow the steps shown in the URL "Creating Rich Data Visualizations"
 
 Once the above tutorial is completed return back to this page and proceed further.
 
-## **STEP 3:** Importing of the project in the Oracle Analytic Desktop
+## Task 3: Importing of the project in the Oracle Analytic Desktop
 
 1. Download the project file. Download the [Project file](files/ProfitabilityManagementAnalytics.dva).
 2. Open the Project and import the project in the Oracle Analytic Destop
