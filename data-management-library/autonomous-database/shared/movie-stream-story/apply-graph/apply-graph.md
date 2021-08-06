@@ -23,7 +23,7 @@ In this lab, you will use the Graph Studio feature of Autonomous Database to:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: Log into Graph Studio
+## Task 1: Log into Graph Studio
 
 Graph Studio is a feature of Autonomous Database.   It is available as an option under the **Tools** tab.   You need a graph-enabled user to log into Graph Studio.  In this workshop, user MOVIESTREAM has already been graph-enabled.
 
@@ -46,7 +46,7 @@ Graph Studio is a feature of Autonomous Database.   It is available as an option
     ![Use the credentials for database user MOVIESTREAM](images/GraphStudioLogIn.png)
 
 
-## **STEP 2:** Create a GRAPH
+## Task 2: Create a GRAPH
 
 3. Click on **Expand** and then on **Start Modeling**
    ![Image alt text](images/ExpandMenu.png)
@@ -118,7 +118,7 @@ Graph Studio is a feature of Autonomous Database.   It is available as an option
 
 	![Image alt text](images/modelerm.png)
 
-## **Step 3**: Create a notebook
+## Task 3: Create a notebook
 Create a notebook by clicking on the notebook icon on the left, and clicking on **create**.
 
   ![Image alt text](images/createnotebook1.png)
@@ -136,7 +136,7 @@ You can create a new paragraph by hovering on the bottom of a paragraph and clic
 
 ![Image alt text](images/createnotebookc.png)
 
-## **Step 4**: Run Graph Queries and Analytics
+## Task 4: Run Graph Queries and Analytics
 
 You can copy the PGQL queries and Java code snippets and run them in the Notebook.
 

@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load Customer Re-usable Mapping Description
+## Task 1: Load Customer Re-usable Mapping Description
 
 This section contains the following topics:
 
@@ -74,7 +74,7 @@ This section contains the following topics:
   | AGE\_RANGE     | SRC\_AGE\_GROUP.AGE\_RANGE            | SRC\_AGE\_GROUP.AGE\_RANGE|
   | SALES\_PERS\_ID    |  SRC\_CUSTOMER.SALES\_PERS\_ID   | SRC\_CUSTOMER.SALES\_PERS\_ID  |
 
-## **STEP 2:** Creating the Re-usable Mapping
+## Task 2: Creating the Re-usable Mapping
 
 This section describes how to create the Load Customer re-usable mapping. To create the Load Customer mapping perform the following procedure:  
 
@@ -92,13 +92,13 @@ To create a new mapping:
 
 5. Ensure the *Create Default Input Signature* option is not selected and *Create Default Output Signature* option is checked.
 
-## **STEP 3:** Define the Target
+## Task 3: Define the Target
 
 The target of this mapping is the Output Signature which we have checked while creating the mapping.
 
 1. If you do not create the re-usable mapping with the *Default output signature* option, you can always add an output signature by selecting the appropriate output signature component from the component palette.
 
-## **STEP 4:** Define the Source
+## Task 4: Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Parameters* models.
 
@@ -113,7 +113,7 @@ To add source datastores to the Load Customer mapping:
 
   ![](./images/3.PNG)
 
-## **STEP 5:** Define the Filter
+## Task 5: Define the Filter
 
 In this example, only completed orders should be retrieved. A filter needs to be defined on the SRC\_ORDERS datastore. To define the filter:
 
@@ -138,7 +138,7 @@ In this example, only completed orders should be retrieved. A filter needs to be
 
 5. Click **Save**.
 
-## **STEP 6:** Define the Lookup
+## Task 6: Define the Lookup
 
 This section describes how to create a lookup that defines that the customer's age must be between the minimum and maximum ages in the file. A lookup is a datastore (from a model or the target datastore of a map) - called the *lookup table* - associated to a source datastore - the *driving table* - via a join expression and from which data can be fetched and used in mappings. Lookup tables are added with the Lookup Component.
 
@@ -175,7 +175,7 @@ To create a lookup in the Load Customer mapping:
 
 6.  Click **Save**.
 
-## **STEP 7:** Define the Target Expressions
+## Task 7: Define the Target Expressions
 
 To Auto Map columns from the sources to the target, the connector points need to be dragged and dropped between components.  
 
@@ -219,7 +219,7 @@ To Auto Map columns from the sources to the target, the connector points need to
 
   You can now save and close the re-usable mapping. In the next step we will use it in a regular mapping.
 
-## **STEP 8:** Load TRG\_Customer Mapping Description
+## Task 8: Load TRG\_Customer Mapping Description
 
 This section describes how to create a standard mapping and use a reusable mapping as one of the sources.
 
@@ -260,7 +260,7 @@ This section describes the mapping Load TRG\_Customer that will be created in th
   | CRE\_DATE      | Today's date                         | SYSDATE                 |
   | UPD\_DATE      | Today's date            | SYSDATE                 |
 
-## **STEP 9:** Creating a Mapping
+## Task 9: Creating a Mapping
 
 This section describes how to create the Load TRG\_CUSTOMER mapping. To create the Load TRG\_CUSTOMER mapping perform the following procedure:
 
@@ -276,7 +276,7 @@ This section describes how to create the Load TRG\_CUSTOMER mapping. To create t
 
 5. Ensure the *Create Empty Dataset* option is not selected.
 
-## **STEP 10:** Define the Source
+## Task 10: Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastore from the *Parameters* model and also the *Load Customer* reusable mapping.
 
@@ -288,7 +288,7 @@ To add source datastores to the Load TRG\_CUSTOMER mapping:
 
  ![](./images/Capture19.PNG)
 
-## **STEP 11:** Define Joins between the Source Datastores
+## Task 11: Define Joins between the Source Datastores
 
 This section describes how to define joins between the source datastores. To create the join defined earlier in the mapping definition:
 
@@ -308,7 +308,7 @@ This section describes how to define joins between the source datastores. To cre
 
   ![](./images/Capture20.PNG)
 
-## **STEP 12:** Define the Target
+## Task 12: Define the Target
 
 The target is the element that will be loaded by the mapping. To insert the target in the Load TRG\_CUSTOMER mapping:
 
@@ -320,7 +320,7 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
   ![](./images/Capture21.PNG)
 
-## **STEP 13:** Define the Target Expressions
+## Task 13: Define the Target Expressions
 
 1. To Auto Map from the sources to the target, drag and drop the output connector of the JOIN component onto the input connector of the TRG_CUSTOMER target
 
@@ -370,12 +370,12 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
  ![](./images/Capture26.PNG)
 
-## **STEP 14:** Setting the Integration Type
+## Task 14: Setting the Integration Type
 Select the target table. In the *properties* window for the target table, go to Target tab and set Integration Type to *Incremental Update*.
 
  ![](./images/Capture27.PNG)
 
-## **STEP 15:** Define the Data Loading Strategies (LKM)
+## Task 15: Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed. In the Physical tab you define how to load the data of the source tables into your target environment with a Loading Knowledge Module (LKM).
 
@@ -403,7 +403,7 @@ To define the loading strategies:
 
   ![](./images/Capture31.PNG)
 
-## **STEP 16:** Define the Data Integration Strategies (IKM)
+## Task 16: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -417,7 +417,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **STEP 17:** Run the Mapping
+## Task 17: Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 

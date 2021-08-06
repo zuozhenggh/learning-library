@@ -34,7 +34,7 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
 [](youtube:dIMgaujSydQ)
 
-## **STEP 1:** Login and Identify Database and Instance names
+## Task 1: Login and Identify Database and Instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names.
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 2.  Once you are logged in, open up a 2nd web browser tab.
@@ -77,7 +77,7 @@ You should have already identified your database name and instance name.  Each p
 
     ![](./images/testy-crsctl.png " ")
 
-## **STEP 2:**  Create a Service
+## Task 2:  Create a Service
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
 
@@ -132,7 +132,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ![](./images/scan-node1.png " ")
 
 
-## **STEP 3:** Service Failover
+## Task 3: Service Failover
 
 1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
 
@@ -236,7 +236,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     It has not changed.
     The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
 
-## **STEP 4:** Connection Load Balancing
+## Task 4: Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
 1. Create a uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**

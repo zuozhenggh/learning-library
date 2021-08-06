@@ -32,7 +32,7 @@ This lab assumes you have:
 
 ***Note:***  All the scripts for this lab are stored in the **`/u01/workshop/json`** folder and run as the **oracle** user.
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
 <!-- 1. Open a terminal window and sudo to the user **oracle**
 
@@ -80,7 +80,7 @@ This lab assumes you have:
     exit
     </copy>
     ```
-## **STEP 2**: Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
   - **Name**: JSON
@@ -92,7 +92,7 @@ This lab assumes you have:
 
     ![](./images/sql_developer_json.png " ")
 
-## **STEP 3**: Insert a record.
+## Task 3: Insert a record.
 
 1. Take a count of the rows in the JSON table
 
@@ -154,7 +154,7 @@ This lab assumes you have:
 
     ![](./images/json.png " ")
 
-## **STEP 4**: Update a Table.
+## Task 4: Update a Table.
 1. We can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make a specified JSON document. JSON Merge Patch is an IETF standard.    
 
 2. Copy the following update statement and substitute the ID you saved from the previous step in where it says `ID_copied_from_previous_step`. Run the statement.
@@ -174,7 +174,7 @@ This lab assumes you have:
 
     ![](./images/json_lab7_6.png " ")
 
-## **STEP 5**: Example Queries
+## Task 5: Example Queries
 1. Let's look at customers who ordered products from a specific location. The Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
     ```

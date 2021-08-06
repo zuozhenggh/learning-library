@@ -14,7 +14,7 @@ In this tutorial, you will scale the number of nodes.
 
 For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
-## **STEP 1:** Scale the Number of Nodes
+## Task 1: Scale the Number of Nodes
 
 On your local machine where you ran the Terraform:
 
@@ -46,7 +46,7 @@ On your local machine where you ran the Terraform:
     Once this is complete, you'll get the public IPs of the two Tomcat servers and the load balancer IP.
 
 
-## **STEP 2:** Deploy the Application on the New Server
+## Task 2: Deploy the Application on the New Server
 
 1. Follow the previous *Migrate Tomcat Application* section to re-deploy the application.
 

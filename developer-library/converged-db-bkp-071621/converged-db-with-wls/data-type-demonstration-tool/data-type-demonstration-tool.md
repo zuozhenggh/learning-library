@@ -26,7 +26,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
     - Lab: eSHOP Application
 
-## **STEP 1**:  Access data type code
+## Task 1:  Access data type code
 
   The logic for creating REST end points to access data from converged database is written under controllers   as xxxController.java.  All the java class files collecting such data are named as xxxDao.java files.
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 
 10. Similarly, there are controller and DAO files for different datatypes like XML, SPATIAL and Analytics.  Open the code and verify the flow if interested.
 
-## **STEP 2**: Access the tool code
+## Task 2: Access the tool code
 
 1. Open JDeveloper in **Studio** mode.
 
@@ -70,7 +70,7 @@ This lab assumes you have:
 
 6. Click on **Source** to view code (Optional).
 
-## **STEP 3**: Launch the demonstrator tool
+## Task 3: Launch the demonstrator tool
 
 1. Open the Firefox browser and navigate to `http://localhost:7101/resources/html/endPointChecker.html` OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshop** in Bookmark Toolbar.
 2. Click on the drop-down to see the list of datatypes shown in workshop.

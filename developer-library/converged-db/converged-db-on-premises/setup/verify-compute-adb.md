@@ -18,7 +18,7 @@ This lab assumes you have:
 - Successfully logged into your LiveLabs account
 - A Valid SSH Key
 
-## **Step 1:** Gather compute instance details
+## Task 1: Gather compute instance details
 1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
 
    ![](images/ll-launch-workshop.png " ")
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
-## **Step 2:** How to Establish a Terminal Connection to your Instance
+## Task 2: How to Establish a Terminal Connection to your Instance
 Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next lab(s) to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 ### **Option 1:** MAC or Windows CYGWIN Emulator

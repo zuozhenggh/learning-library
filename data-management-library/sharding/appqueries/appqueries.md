@@ -19,7 +19,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Establish connection to Catalog and to one of the Shards.
+## Task 1: Establish connection to Catalog and to one of the Shards.
 
 1. Open a terminal and execute below as **opc** user to connect to **Catalog**.
 
@@ -50,7 +50,7 @@ This lab assumes you have:
 
     ![](./images/1.JPG " ") 
 
-## **STEP 2**: Application Queries on sharding Database.
+## Task 2: Application Queries on sharding Database.
 
 Run the below each sql query by login into Catalog database as well as one of the shard database(shard3 in this case). You can notice the difference of row count on Shard catalog vs shard-DB (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb and porcl3cdb\_porcl3pdb).
 

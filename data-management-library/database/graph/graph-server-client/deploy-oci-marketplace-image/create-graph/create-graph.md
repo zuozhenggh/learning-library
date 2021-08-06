@@ -17,7 +17,7 @@ Learn how to create a graph from relational data sources by:
 
 - This lab assumes you have successfully completed the lab - Create and populate tables.
 
-## **STEP 1:** Start the Python client
+## Task 1: Start the Python client
 
 Start a client shell instance that connects to the server
 
@@ -35,7 +35,7 @@ Oracle Graph Client Shell 21.1.0
 >>>
 ```
 
-## **STEP 2:** Create the graph
+## Task 2: Create the graph
 
 Set up the create property graph statement, which creates the graph from the existing tables.
 
@@ -79,7 +79,7 @@ session.prepare_pgql(statement).execute()
 False   // This is the expected result
 ```
 
-## **STEP 3:** Check the newly created graph
+## Task 3: Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the Python shell.
 
@@ -165,7 +165,7 @@ graph.query_pgql("""
 +----------------------+
 ```
 
-## **STEP 4:** Publish the graph (optional)
+## Task 4: Publish the graph (optional)
 
 The newly created graph is "private" by default, and is accessible only from the current session. To access the graph from new sessions in future, you can "publish" the graph.
 

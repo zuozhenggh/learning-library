@@ -15,7 +15,7 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 -   Learn how to download and configure a connection wallet
 -   Learn how to connect to your Autonomous Data Warehouse with Oracle SQL Developer
 
-## **Step 1**: Download the Connection Wallet
+## Task 1: Download the Connection Wallet
 
 As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page or from the ADW or ATP service console.
 
@@ -45,7 +45,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
 5.  Once the wallet is downloaded, click **Close** to close the Database Connection dialog.
 
-## **Step 2**: Connect to the database using SQL Developer
+## Task 2: Connect to the database using SQL Developer
 
 Start SQL Developer and create a connection for your database using the default administrator account "ADMIN" by following these steps.
 
@@ -68,7 +68,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 4.  If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
-## **Step 3**: Querying Your Autonomous Database with SQL Developer
+## Task 3: Querying Your Autonomous Database with SQL Developer
 
 The SH schema provides a small data set that you can use to run the sample queries in the <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-1D8E3429-735B-409C-BD16-54004964D89B" target="\_blank">Database Data Warehousing Guide</a>. For example, the following query shows you how the SQL function RANK() works:
 

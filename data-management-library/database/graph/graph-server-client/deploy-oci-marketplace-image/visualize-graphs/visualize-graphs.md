@@ -18,7 +18,7 @@ The following video provides an overview of the Graph Visualization component (=
 
 - This lab assumes you have successfully completed Lab - Graph Query and Analysis with Python and published the graph. It also assumes the GraphViz is up and running on the compute instance on `public_ip_for_compute:7007/ui`. We will use the GraphViz to explore the graph and run some PGQL queries.
 
-## **STEP 1:** Setup
+## Task 1: Setup
 
 Open the GraphViz at `https://<public_ip_for_compute>:7007/ui` **using Firefox**. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
@@ -26,7 +26,7 @@ You should see a screen similar to the screenshot below. Enter the username (`cu
 
 ![](images/ADB_GViz_Login.png)
 
-## **STEP 2:** Modify query
+## Task 2: Modify query
 
 Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.
 
@@ -34,7 +34,7 @@ You should see a graph similar to the screenshot below.
 
 ![](images/show-5-elements.jpg)
 
-## **STEP 3:** Add highlights
+## Task 3: Add highlights
 
 Now let's add some labels and other visual context. These are known as highlights. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download a zip file, `highlights.json.zip`. Unzip this file and note where it is unzipped.
 
@@ -46,7 +46,7 @@ The graph should now look like
 
 ![](images/GraphVizWithHighlights.png)
 
-## **STEP 4:** Pattern matching with PGQL
+## Task 4: Pattern matching with PGQL
 
 1. Next let's run a few PGQL queries.
 

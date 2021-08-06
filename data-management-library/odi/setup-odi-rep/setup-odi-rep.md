@@ -7,7 +7,7 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 * Create an ODI Instance from Marketplace
 * Configure ODI Studio
 
-## **Step 1:** Create an ODI instance from OCI Marketplace
+## Task 1: Create an ODI instance from OCI Marketplace
 
 1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
@@ -56,7 +56,7 @@ Make sure you have chosen the correct **COMPARTMENT**
     Your instance will have your initials as a Prefix (provided you added them as instructed)
     ![](./images/odi_instance_create_2.png " ")
 
-## **Step 2:** Configure ODI Studio and import training repository
+## Task 2: Configure ODI Studio and import training repository
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
@@ -156,7 +156,7 @@ The import will take approximately 5 minutes
 17. Click **Close** after import completes successfully
     ![](./images/odi_studio_9c.png " ")      
 
-## **Step 3:** Configure connections
+## Task 3: Configure connections
 
 1. Open the **Topology** Tab and expand **Physical Architecture \-\> Technologies \-\> Oracle**
 
@@ -192,7 +192,7 @@ and then select **Save**
 
 Use the same connection parameters as used in Step 5. These are defined as two different data servers but point to the same DB schema for simplicity.
 
-## **Step 4:** Import the work Repository
+## Task 4: Import the work Repository
 
 1. Open the **Designer** tab and select **Import**
 
@@ -211,7 +211,7 @@ The import will take approximately 5 minutes
 
     ![](./images/odi_studio_11c.png " ")
 
-## **Step 5:** Test the environment
+## Task 5: Test the environment
 
 1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Data**
 

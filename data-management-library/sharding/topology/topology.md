@@ -31,7 +31,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP 1**: Check for containers in your VM
+## Task 1: Check for containers in your VM
 
 1. Open a terminal window and execute below as **opc** user.
 
@@ -43,7 +43,7 @@ This lab assumes you have:
 
      ![](./images/containers.JPG " ") 
 
-## **STEP 2**: Connect to Shard director
+## Task 2: Connect to Shard director
 
 A **shard director** is a specific implementation of a global service manager that acts as a regional listener for clients that connect to a sharded database. The director maintains a current topology map of the sharded database. Based on the sharding key passed during a connection request, the director routes the connections to the appropriate shard. The key capabilities of shard directors are as follows.
 
@@ -125,7 +125,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     ```
     ![](./images/cdb.JPG " ") 
 
-## **STEP 3**: Connect to Catalog
+## Task 3: Connect to Catalog
 
 **Shard Catalog:** The shard catalog is a special-purpose Oracle Database that is a persistent store for sharded database configuration data and plays a key role in centralized management of a sharded database. All configuration changes, such as adding and removing shards and global services, are initiated on the shard catalog. All DDLs in a sharded database are executed by connecting to the shard catalog.
 
@@ -181,7 +181,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
    ![](./images/query.JPG " ") 
 
-## **STEP 4**: Connect to Shard 1 Database
+## Task 4: Connect to Shard 1 Database
 
 **Sharded Database and Shards** Each shard in the sharded database is an independent Oracle Database instance that hosts a subset of a sharded database's data. Shared storage is not required across the shards.
 

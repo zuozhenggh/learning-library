@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -41,7 +41,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
  3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration  
+## Task 1: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
   ![](./images/labmenu_opt1.png " ")
@@ -79,7 +79,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 Now we need to start the GG manager process on both the source and target. Keep these sessions open for the rest of this lab.
 
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 1. In the first session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
   ![](./images/d2.png " ")
@@ -144,7 +144,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     <copy>info all</copy>
     ```
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 
 Now that the source side is setup, let us configure GG on the target side (HBase).
 
@@ -243,7 +243,7 @@ Now that the source side is setup, let us configure GG on the target side (HBase
       <copy>stats rhbase total</copy>
       ```
 
-## **STEP 4**: GoldenGate Results using HUE
+## Task 4: GoldenGate Results using HUE
 
 1. Open a Browser window from your local machine to visualize data from HUE frontend application.
     - URL

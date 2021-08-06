@@ -16,7 +16,7 @@ Estimated time: 3 minutes
 * Oracle cloud account
 * Provisioned Autonomous Database Shared Instance
 
-## **STEP 1:** Create database roles
+## Task 1: Create database roles
 
 1. Login as the Admin user in SQL Developer Web of the newly created ADB instance.
 
@@ -102,7 +102,7 @@ Estimated time: 3 minutes
     </copy>
     ```
 
-## **STEP 2:** Create a database user
+## Task 2: Create a database user
 
 Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
@@ -130,7 +130,7 @@ GRANT graph_developer TO customer_360;
 - *The `IDENTIFIED BY` clause specifies the password (i.e whatever you replaced <specify_a_password> with)*
 - *The Graph Server uses database authentication ([details](https://docs.oracle.com/en/database/oracle/oracle-database/20/spgdg/using-inmemory-analyst-oracle-database.html)). The user needs at least the graph_developer role.*
 
-## **STEP 3:** Enable SQL Developer Web for the new user
+## Task 3: Enable SQL Developer Web for the new user
 
 Now provide SQL Developer Web access for this user. See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sql-developer-web.html#GUID-4B404CE3-C832-4089-B37A-ADE1036C7EEA) for details.
 

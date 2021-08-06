@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -39,7 +39,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - ggadmin</copy>
     ```
 
-## **STEP 1**: Explore GoldenGate Configuration
+## Task 1: Explore GoldenGate Configuration
 1. At the terminal prompt as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
     ![](./images/labmenu_opt1.png " ")
@@ -82,7 +82,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy> cd /u01/gg4mysql</copy>
     ```
 
-## **STEP 2**: Start GoldenGate Processes
+## Task 2: Start GoldenGate Processes
 
 1. Go to the GG Home for MySQL. You can cd to the directory:
 
@@ -135,7 +135,7 @@ processes:
     ```
     <copy>info all</copy>
     ```
-## **STEP 3**: Load Data into Source Database
+## Task 3: Load Data into Source Database
 
 Now that the GoldenGate extract, pump and replicat processes are running, next you will run a script to load data into the ggsource MySQL database.
 

@@ -37,7 +37,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 
 
-## **STEP 1**: Generate an AWR snapshot
+## Task 1: Generate an AWR snapshot
 
 1. Open a terminal session and set the environment to UPGR using *`. upgr`*, change directory to /home/oracle/scripts and startup the database in SQL*Plus:
 
@@ -65,7 +65,7 @@ This lab assumes you have:
 4. On the remote desktop session, Double-Click on the *HammerDB* icon on the desktop to Launch it
     ![](./images/upgrade_19c_3.png " ")
 
-## **STEP 2**: Load Driver Script and start Virtual Users
+## Task 2: Load Driver Script and start Virtual Users
 
 1. Click on the triangle “TPC-C“
     ![](./images/hammerdb02.png " ")
@@ -77,7 +77,7 @@ This lab assumes you have:
 5. Click on Virtual Users.  Now Double-Click on Create – you should see then 3 Virtual Users being started below the script window.
     ![](./images/hammerdb05.png " ")
 
-## **STEP 3**: Capture SQL, run workload and monitor
+## Task 3: Capture SQL, run workload and monitor
 
 Please start the following script in your SQL*Plus window. With this script you will capture all the SQL statements directly from the cursor cache while HammerDB is running and generating load on your database.
 
@@ -104,7 +104,7 @@ Please start the following script in your SQL*Plus window. With this script you 
 Please WAIT until the capture_cc.sql scripts returns control back to you – DON NOT CTRL-C it!
 
 
-## **STEP 4**: Generate another AWR snapshot
+## Task 4: Generate another AWR snapshot
 
 
 1. In the existing sqlplus create another AWR snapshot. Once the command prompt is visible execute the sql script below.

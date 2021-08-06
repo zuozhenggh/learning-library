@@ -22,7 +22,7 @@ Estimated Lab Time: 6 hours
 * **Lab 3: Autonomous JSON Database & SODA Collections**.
 
 
-## **STEP 1:** Download the full Skillset Tracking application code
+## Task 1: Download the full Skillset Tracking application code
 Before proceeding, you must first download the zip file with the code that can be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K5Wf9wdEs2YrUD_dY7Vt2p0ytXyQxenT5VtcHyUfQq4OonNnm13MgDQ6J3pwheG0/n/c4u04/b/labfiles/o/SkillsetTrackerApplicationCode.zip). After downloading, you can unzip the archive.
 
 In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
@@ -32,7 +32,7 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
   * ***OJET*** - The code containing the interface of the Skillset Tracking application, built using OracleJET. This is an extended version of the application you built in **Lab 4: Build an OracleJET Web Application** and is needed for **STEP 3** in this Lab.
 
 
-## **STEP 2:** Create NodeJS API instance and run the code
+## Task 2: Create NodeJS API instance and run the code
 
 1. The first thing that you need to do is to go through the first step in **Lab 4: Build an OracleJET Web Application**, **Creating a Virtual Cloud Network**.
 
@@ -126,7 +126,7 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
 
 You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.  
 
-## **STEP 3:** Create OracleJET instance and run the code
+## Task 3: Create OracleJET instance and run the code
 
 1. The first thing that you need to do is to go through the second step in **Lab 4: Build an OracleJET Web Application**, **Creating a Linux Instance in OCI**.
 
@@ -399,7 +399,7 @@ You should now be able to see the application running in browser at **http://you
 
     You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
 
-## **STEP 4:** Deploy the NodeJS API code in OKE
+## Task 4: Deploy the NodeJS API code in OKE
 
 1. In order to deploy your API code in Kubernetes, you should follow all the steps described in **Lab 7: Deploy the application on OKE**, but instead of using the code you developed in **Lab 5**, you would use the code downloaded at the beginning of this Lab.
 
@@ -416,7 +416,7 @@ You should now be able to see the application running in browser at **http://you
     ]
     ```
 
-## **STEP 5:** Integrate your application with ODA
+## Task 5: Integrate your application with ODA
 
 1. In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Integration with Oracle Digital Assistant and Slack**, considering the fact that at **STEP 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **STEP 2** of this Lab, or the _External IP_ from **STEP 4** in this Lab.
 

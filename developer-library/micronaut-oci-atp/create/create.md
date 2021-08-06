@@ -29,7 +29,7 @@ In this lab you will:
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
-## **STEP 1**: Create a new Micronaut application
+## Task 1: Create a new Micronaut application
 
 1. There are several ways you can get started creating a new Micronaut application. If you have the Micronaut CLI installed (see the [Installation instructions](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation) for how to install) you can use the `mn` command to create a new application. Which will setup an application that uses the Oracle driver and Micronaut Data JDBC.
 
@@ -62,7 +62,7 @@ In this lab you will:
 
 ![Create with Launch](images/launch.png)
 
-## **STEP 2**: Configure the Micronaut Application
+## Task 2: Configure the Micronaut Application
 
 To configure the Micronaut application to work with Autonomous Database open the `src/main/resources/application.yml` file and modify the default datasource connection settings as follows replacing the `password` entry with the password you chose for the schema user in the previous lab:
 
@@ -89,7 +89,7 @@ To configure the Micronaut application to work with Autonomous Database open the
 
 > **NOTE**: The password you enter should be the Schema user password not the Admin password for the Autonomous Database instance. 
 
-## **STEP 3**: Configure Oracle Autonomous Database JDBC Drivers
+## Task 3: Configure Oracle Autonomous Database JDBC Drivers
 
 If you are using Gradle add the following dependencies to the `build.gradle` file in the root of your project inside the `dependencies` block:
 
@@ -122,7 +122,7 @@ Alternatively if you are using Maven, add the following dependencies to your `po
     </dependency>
     </copy>
 
-## **STEP 4**: Configure Flyway to Create the Schema
+## Task 4: Configure Flyway to Create the Schema
 
 
 Once you have configured the `DataSource`, add a dependency on `micronaut-flyway` to your `build.gradle` configuration inside the `dependencies` block:
@@ -163,7 +163,7 @@ Replace the contents of the file `src/main/resources/application-test.yml` with 
 
 > **NOTE:** that in a real world scenario you would setup a separate database to run your tests against
 
-## **STEP 5**: Defining a SQL Migration Script
+## Task 5: Defining a SQL Migration Script
 
 The next step is to define a SQL migration script that will create the application's initial schema. To do that create a new SQL script in a file called `src/main/resources/db/migration/V1__create-schema.sql` and add the following SQL:
 

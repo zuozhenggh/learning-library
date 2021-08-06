@@ -32,7 +32,7 @@ This lab assumes you have:
     - Lab: eSHOP Application
     - Lab: Data Type Demonstrator Tool
 
-## **STEP 1**: Connect JDeveloper to database
+## Task 1: Connect JDeveloper to database
 
 1. Open JDeveloper in Studio Mode, if not open already.
 2. Click on **Window** select **Database** and then **Databases** to open the databases navigation tab on the left-hand side of the JDeveloper editor.
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 4. Click on **Test Connection** and upon **Success!** message, Click **OK**.
 
-## **STEP 2**: Create SPATIAL Data
+## Task 2: Create SPATIAL Data
 
 1. In the Menu bar, click on **SQL** dropdown and select **spatial**.
 
@@ -135,7 +135,7 @@ This lab assumes you have:
     ![](./images/jdev-select-new-column-spatial-table.png)
 
 
-## **STEP 3**: Modify JEE code for SPATIAL
+## Task 3: Modify JEE code for SPATIAL
 
 1. Under the Projects in **Applications** tab on left Navigation, expand **converge** then **Resources** and double click on **applicationContext.xml** to open the configuration xml. To add the new datasource bean add the code below the `< /bean>` tag of convergejsonxmlds and before ending `< /beans>` tag.
 
@@ -195,7 +195,7 @@ If you change any of it, the code may not compile and lead to errors.  Request y
 
     ![](./images/jdev-spatialcode-redepoy-success.png)
 
-## **STEP 4**: REST end-point for SPATIAL
+## Task 4: REST end-point for SPATIAL
 
 1. In JDeveloper, open **SpatialController.java** under **converge** &#8594; **Application Sources** &#8594; **converge.controllers**. Search for **getAllCities** and check the function code.  The request mapping is done as **`/allCities`**.  The base rest end point being **`/spatial`** for the code declared at the class level.
 
@@ -205,7 +205,7 @@ If you change any of it, the code may not compile and lead to errors.  Request y
 
     ![](./images/spatial-rest-data.png)
 
-## **STEP 5**: Read SPATIAL data
+## Task 5: Read SPATIAL data
 
 1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR  use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
 2. Click on the drop-down to see the list of datatypes shown in workshop.
@@ -216,7 +216,7 @@ If you change any of it, the code may not compile and lead to errors.  Request y
 
 You should see the 4 CITIES listed on the map which we inserted In the `CITY_POINTS` table. Zoom out on the map to view the cities.
 
-## **STEP 6**: Insert SPATIAL data
+## Task 6: Insert SPATIAL data
 
 1. Navigate back to **endpointchecker** tool to try the insert a spatial record.
 
@@ -239,7 +239,7 @@ You should see the 4 CITIES listed on the map which we inserted In the `CITY_POI
 
     ![](./images/jdev-spatial-insert-query.png)
 
-## **STEP 7**: Delete SPATIAL data
+## Task 7: Delete SPATIAL data
 
 1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
 

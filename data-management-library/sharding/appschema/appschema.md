@@ -25,7 +25,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Application Schema and Code Snippet
+## Task 1: Application Schema and Code Snippet
 
 1. User makes a valid http request to server using a rest call from browser.
    
@@ -85,7 +85,7 @@ dbService.getProductByKey(item) – calling model layer function with “item”
         }
     	)
     ```
-## **STEP 2**: Application Connection Details
+## Task 2: Application Connection Details
 
 In Oracle Sharding, database query and DML requests are routed to the shards in two main ways, depending on whether a sharding key is supplied with the request. These two routing methods are called **proxy routing** and **direct routing.**
 

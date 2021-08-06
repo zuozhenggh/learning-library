@@ -12,7 +12,7 @@ Estimated Completion Time: 30 to 35 minutes including 25 to 30 minutes for provi
 - Create a private subnet for the application database.
 - Provision the application database as a database VM.
 
-## **STEP 1:** Create a Security List for the Database Subnet
+## Task 1: Create a Security List for the Database Subnet
 
 Before we can provision the application database, we need to provision a **private subnet** for the **Database System** with appropriate **Security Lists** to open up the required ports:
 
@@ -53,7 +53,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
 8. Click **Create Security List**.
 
-## **STEP 2:** Create the Database Subnet
+## Task 2: Create the Database Subnet
 
 1. Click **Subnets** on the left-side menu.
 
@@ -91,7 +91,7 @@ In this section we will create a security list for the WebLogic subnet to be abl
 
   ![](./images/provision-db-9-subnet7.png " ")
 
-## **STEP 3:** Provision the Database System
+## Task 3: Provision the Database System
 
 1. Go to **Database -> Bare Metal, VM and Exadata**.
 

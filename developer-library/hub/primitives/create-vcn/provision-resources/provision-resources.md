@@ -10,13 +10,13 @@ You may use one of the following methods to deploy the cloud resources for this 
 
 > **Resource Manager** uses Terraform to help install, configure, and manage cloud resources through the "infrastructure-as-code" model. Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm) to learn more about Resource Manager.
 
-### **Step 1:** Sign In to Oracle Cloud Infrastructure Console
+### Task 1: Sign In to Oracle Cloud Infrastructure Console
 
 Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompted to enter your cloud tenant, user name, and password.
 
 > For detailed sign in instructions, refer to the documentation on [*Getting Started with Oracle Cloud*](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-account-oracle-cloud-website.html).
 
-### **Step 2:** Create the Stack
+### Task 2: Create the Stack
 
 Creating a **Stack** involves uploading the Terraform configuration file, providing identifying information for the new stack, and (optionally) setting the variables.
 
@@ -62,7 +62,7 @@ Click **Create** to create the Stack.
 
 6. Verify the Stack creation on the **Stack Details** page.
 
-### **Step 3:** Run a Plan Job
+### Task 3: Run a Plan Job
 
 Running a plan job parses the Terraform configuration (.zip) file and converts it into an execution plan listing resources and actions that will result when an apply job is run. We recommend generating the execution plan before running an apply job.
 
@@ -76,7 +76,7 @@ Running a plan job parses the Terraform configuration (.zip) file and converts i
 
 5. Scroll to the bottom of the plan log and verify there are no errors, and the plan indicates the resources will be added.
 
-### **Step 4:** Run an Apply Job
+### Task 4: Run an Apply Job
 
 When you run an apply job for a Stack, Terraform creates the resources and executes the actions defined in the Terraform configuration (.zip) file. The time required to complete an apply job depends on the number and type of cloud resources to be created.
 

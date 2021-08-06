@@ -94,7 +94,7 @@ Now... if we refresh, fresh queries can be seen getting generated.
     
       ![New Queries](../monitor-adw/images/ociadwhmonitoredsql3.png)
 
-## STEP 2: Ad-hoc scaling up of ADW for optimal OAC experience  
+## Task 2: Ad-hoc scaling up of ADW for optimal OAC experience  
 
 You are going to create a slightly larger OAC report to mimic the performance scenario by adding greater level of granularity.  
 
@@ -153,7 +153,7 @@ The new query generated has taken just a few milliseconds seconds to complete wi
 
     ![Service Console Activity](../monitor-adw/images/ociadwh-scaleup2.png)
 
-## STEP 3: Checking OAC Query Logs  
+## Task 3: Checking OAC Query Logs  
 
 Administrators can examine the **underlying SQL query** requests that are executed.
 

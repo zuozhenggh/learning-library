@@ -32,7 +32,7 @@ We'll go over the template files and how they are arranged together. It can be a
 
 You can also look at the files themselves that are well commented.
 
-## **STEP 1:** The Base Templates
+## Task 1: The Base Templates
 
 The base templates are separated into 3 folders:
 
@@ -52,7 +52,7 @@ This brings another challenge though: if infrastructure resources get renamed (i
 
 We'll look at how resources get patched for each environment, but first let's look at the base templates:
 
-## **STEP 2:** The Base *`infra`* Templates
+## Task 2: The Base *`infra`* Templates
 
 1. The *`infra`* templates:
 
@@ -104,7 +104,7 @@ Note all the resources are named with their base name and the Type, so they are 
 
 5. Finally we have the *`kustomization.yaml`* file and *`kustomizeconfig/custom.yaml`* file. Let's have a closer look at those.
 
-## **STEP 3:** The Base *`kustomization.yaml`* File for *`infra`*
+## Task 3: The Base *`kustomization.yaml`* File for *`infra`*
 
 1. The *`kustomization.yaml`* file contains the following:
 
@@ -202,7 +202,7 @@ Note all the resources are named with their base name and the Type, so they are 
 
     Inversely, kustomize needs to know how regular resources are used in the custom resource. For example, the last bloc explains how a *`Secret`* is referenced within the *`ServiceBinding`* or *`ServiceInstance`* under the *`parametersFrom`* key.
 
-## **STEP 4:** The Base *`app`* Templates
+## Task 4: The Base *`app`* Templates
 
 The same goes for the *`app`* templates:
 
@@ -225,7 +225,7 @@ The same goes for the *`app`* templates:
 
 4. The *`kustomization.yaml`* file is very basic, with only *`resources`*.
 
-## **STEP 5:** The Base *`components`* Templates
+## Task 5: The Base *`components`* Templates
 
 1. The *`base/components`* folder includes components that are used in both *`infra`* and *`app`* deployments.
 
@@ -278,7 +278,7 @@ The same goes for the *`app`* templates:
         - A *`path`* where the value needs to be inserted (here we're adding an entry to the *`volumeMounts`* array; note the *`/-`* syntax to indicate we're adding to an array).
         - A *`value`*, here an object in JSON syntax, which defines the location where credentials need to be mounted for the app.
 
-## **STEP 6:** Overlays
+## Task 6: Overlays
 
 1. With base templates defining the general composition of our 2 different deployments (*`infra`* and *`app`*) for the purpose of separating the deployment of the PaaS services and the app to be developed, we can now build our different environments with overlays.
 
@@ -290,7 +290,7 @@ The same goes for the *`app`* templates:
 
 4. An Overlay uses a Kustomization.yaml file that targets a **base** and then applies patches.
 
-## **STEP 7:** The *`infra`* Overlays
+## Task 7: The *`infra`* Overlays
 
 1. The infra overlay in each environment has the following files:
 
@@ -347,7 +347,7 @@ The same goes for the *`app`* templates:
 
     - We call the components from the base (db-init-container), as well as 2 other components specific to the environment (*`db-creds`* and *`imagePullSecrets`*) as those patch secret names with the proper prefix.
 
-## **STEP 8:** The *`app`* Overlays
+## Task 8: The *`app`* Overlays
 
 1. The *`app`* overlay is very similar to the *`infra`* overlay as it composes the environment with the *`base/app`*, the *`base/components`* and the namespaced specific *`overlay/development/components`*.
 
@@ -380,7 +380,7 @@ The same goes for the *`app`* templates:
 
 5. The *`kafka`* ConfigMap reference is not prefixed as it can be looked up by Kustomize in this case, and we'll take advantage of this later. it is included here as a patch instead of added to each resource that needs it.
 
-## **STEP 9:** The *`components`* Overlays
+## Task 9: The *`components`* Overlays
 
 1. Finally we have the *`components`* used in both *`infra`* and *`app`* overlays, which include patching the PaaS service secret names for the use of the database service, and adding the *`imagePullSecrets`* secret value for all pods, prefixed by the environment name.
 
@@ -416,7 +416,7 @@ The same goes for the *`app`* templates:
           value: {name: dev-ocir-secret }
     ```
 
-## **STEP 10:** Let's Kustomize
+## Task 10: Let's Kustomize
 
 1. By now you probably have yaml overdose, so let's jump to actual commands:
 
@@ -431,7 +431,7 @@ The same goes for the *`app`* templates:
     This will render the full template as shown above and give you a preview of what we will deploy.
 
 
-## **STEP 11:** Deploying with Kustomize
+## Task 11: Deploying with Kustomize
 
 1. Luckily, we only need to read this when we debug. To actually deploy this *`infra`* stack for *`development`*, we can simply pipe it to *`kubectl`* like: 
 
@@ -447,13 +447,13 @@ The same goes for the *`app`* templates:
 
 3. We will actually add another layer to this tool, by using **Skaffold**, which accepts a *`default-repo`* flag when rendering. This will automatically fill in the image repository for us, as well as computed image tags. So just a little more patience before we actually deploy.
 
-## **STEP 12:** streaming.ServiceInstance.yaml Template
+## Task 12: streaming.ServiceInstance.yaml Template
 
 1. As mentioned in step 2.4, the *`base/infra/streaming.ServiceInstance.yaml`* requires the OCID of the compartment the project will live in.
 
   It should have been injected by the Terraform. Have a look to make sure it is correct.
 
-## **STEP 13:** Debugging Templates
+## Task 13: Debugging Templates
 
 1. What's important to understand at this point, is how to check for the effect of a patch. To see what **Kustomize** did to our original templates, we can look at the rendered output in the shell. 
 

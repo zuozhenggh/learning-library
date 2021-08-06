@@ -40,7 +40,7 @@ Before you start, be sure that you have done the following:
 - Signed in to Oracle Cloud Infrastructure
 - Obtained and signed in to the `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
-## **STEP 1**: Set up your environment
+## Task 1: Set up your environment
 
 In this lab, you require two PDBs. The `workshop-installed` compute instance comes with a container database (CDB1) that has one PDB already created called PDB1. In this step, you add another PDB to CDB1 called PDB2. You also create a tablespace called `test` in PDB1 and make sure that there is no tablespace by that name in PDB2.
 
@@ -116,7 +116,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     Tablespace dropped.
     ````
 
-## **STEP 2**: Export the `test` tablespace from `PDB1` in transportable tablespace mode
+## Task 2: Export the `test` tablespace from `PDB1` in transportable tablespace mode
 
 1. Connect to PDB1 in CDB1 as the `SYS` user.
 
@@ -173,7 +173,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     ```
 
 
-## **STEP 3**: Copy PDB1's data files to PDB2's target directory and create the HR user in PDB2
+## Task 3: Copy PDB1's data files to PDB2's target directory and create the HR user in PDB2
 
 1. Connect to PDB2 as the `SYS` user.
 
@@ -208,7 +208,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     ````
 
 
-## **STEP 4**: Import PDB1's `test` tablespace into `PDB2` while keeping the imported tablespace in read-only mode
+## Task 4: Import PDB1's `test` tablespace into `PDB2` while keeping the imported tablespace in read-only mode
 
 1. Run the Oracle Data Pump Import utility, `impdp`, to import PDB1's `test` tablespace into `PDB2`. Set the `TRANSPORTABLE` parameter equal to `KEEP_READ_ONLY`. The `DIRECTORY` parameter specifies the location in which the import job can find the dump file set.
 
@@ -253,7 +253,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 
 
-## **STEP 5**: Import the `test` tablespace from PDB1 into PDB2 without rebuilding bitmaps in the data file
+## Task 5: Import the `test` tablespace from PDB1 into PDB2 without rebuilding bitmaps in the data file
 
 
 1. Still connected to PDB2, drop the `test` tablespace imported into PDB2.
@@ -343,7 +343,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 
 
-## **STEP 6**: Export the `test` tablespace from `PDB1` with the `TTS_CLOSURE_CHECK` parameter set to `DEMO_MODE` to get a timing estimation of the TTS export operation
+## Task 6: Export the `test` tablespace from `PDB1` with the `TTS_CLOSURE_CHECK` parameter set to `DEMO_MODE` to get a timing estimation of the TTS export operation
 
 1. Execute the `create_drop_TBS.sh` shell script. You can ignore the error messages.
 
@@ -407,7 +407,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     ````
     The output indicates that the resulting export dump file is not available for use by the Oracle Data Pump Import utility.
 
-## **STEP 7**: Export the `test` tablespace from `PDB1` with the `TTS_CLOSURE_CHECK` parameter set to `OFF` to skip the closure check
+## Task 7: Export the `test` tablespace from `PDB1` with the `TTS_CLOSURE_CHECK` parameter set to `OFF` to skip the closure check
 
 1. Run the Oracle Data Pump Export transportable operation again with the `TTS_CLOSURE_CHECK` parameter set to `OFF`. This setting skips the closure check. Of course you are sure that the transportable tablespace set is contained!
 
@@ -493,7 +493,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     Job "SYS"."SYS_EXPORT_TRANSPORTABLE_01" successfully completed at Thu Jul 22 01:46:39 2021 elapsed 0 00:00:15
     ````
 
-## **STEP 8**: Verify that you can import the `test` tablespace from PDB1 into PDB2.
+## Task 8: Verify that you can import the `test` tablespace from PDB1 into PDB2.
 
 1. Copy the data files for PDB1's `test` tablespace to PDB2's target directory.
 
@@ -547,7 +547,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     SQL> EXIT
     ```
 
-## **STEP 9**: Reset your environment
+## Task 9: Reset your environment
 
 Run the `cleanup_PDBs_in_CDB1.sh` sell script to recreate PDB1 and remove other PDBs in the container database. You can ignore any error messages.
 

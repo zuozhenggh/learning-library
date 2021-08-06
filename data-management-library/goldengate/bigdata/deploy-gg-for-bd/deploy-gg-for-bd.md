@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -42,7 +42,7 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 
     ![](./images/labmenu_opt1.png " ")
 
-## **STEP 1**: Performing the Install
+## Task 1: Performing the Install
 
 1.  **Select Option 1**
 

@@ -16,7 +16,7 @@ Estimated Workshop Time: 90 minutes
 - Explore modern and quick APEX development 
 - Build secure and powerful REST APIs
 
-## **STEP 1**: Requirements
+## Task 1: Requirements
 
 1. In order to walk through this workshop you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
 
@@ -41,7 +41,7 @@ Estimated Workshop Time: 90 minutes
     [Here you can find a basic guidance of commands that you can use on the terminal.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 
 
-## **STEP 2**: Node.js Installation
+## Task 2: Node.js Installation
 
 We are going to **install** Node.js, if you have done this you can skip this step.
 
