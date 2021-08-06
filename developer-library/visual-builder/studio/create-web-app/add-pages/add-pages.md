@@ -22,7 +22,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     You may want to click the **Web Applications** tab to close the navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this main-start page a title. Click the **Components** tab to open the Components palette, drag the **Heading** component under Common and drop it onto the page.
+3.  Let's give this main-start page a title. From the **Components** palette, drag the **Heading** component under Common and drop it onto the page.
 
     ![](images/department_heading.png " ")
 
@@ -76,7 +76,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
 3.  On the Page Detail page, select **location** (**name** is already selected because it's a required field). Name and Location are the only fields the user needs to specify to create a department.
 
-   ![](images/department_add_create.png) " "
+   ![](images/department_add_create.png " ")
 4.  Leave the Button label and other fields set to their default values. Click **Finish**.
 
     A **Create Department** button appears in a Toolbar component above the table on the main-start page. (Click next to the button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under main.
@@ -166,9 +166,9 @@ Add a Create page that lets your users create new employees.
 
     ![](images/employees_add_create_max_columns.png " ")
 
-    The fields now appear in two columns.
+    The fields now appear in two columns. If you don't see the change, click **Properties** to hide the Properties pane and expand your view.
 
-7.  Click **Live** to make the form active. (To make more room, click **Properties**.) Enter `Leslie Smith` in the **Name** field. Select today's date from the **Hire Date** calendar, and enter `lsmith@example.com` in the **Email** field. Select `Administration` (the only choice) from the **Department** list. (You can use other data if you wish, except for Department, because you have only one department.) Click **Save**.  
+7.  Click **Live** to make the form active. Enter `Leslie Smith` in the **Name** field. Select today's date from the **Hire Date** calendar, and enter `lsmith@example.com` in the **Email** field. Select `Administration` (the only choice) from the **Department** list. (You can use other data if you wish, except for Department, because you have only one department.) Click **Save**.  
 
     VB Studio briefly displays a message and then places you in the main page flow of your application.
 
@@ -194,11 +194,11 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](images/main_start_rename.png " ")
 
 2.  In the Rename dialog box, replace `start` with `departments` in the **ID** field and click **Rename**.
-3.  Click **main**. The page flow Diagram shows the renamed page along with the others.
+3.  Click **main**. The page flow Diagram shows the now renamed page.
 
     ![](images/main_start_rename_mainflow.png " ")
 
-4.  Double-click **main-departments** to go to that page again.
+4.  Double-click the **main-departments** tile to go to that page again.
 5.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source View** ![Source View icon](images/sourceview_icon.png) in the navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
     ![](images/mainflow_json.png " ")
