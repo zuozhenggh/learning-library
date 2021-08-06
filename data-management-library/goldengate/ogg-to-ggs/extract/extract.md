@@ -86,7 +86,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 8.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https://.*
+    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
     ![](images/02-08-note.png)
 
@@ -190,6 +190,10 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 18. Navigate to the Oracle GoldenGate Marketplace Distribution Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
     ![](images/04-18.png)
+
+19. In the OCI GoldenGate Deployment Console, click the name of the Replicat to view its details, and then click Statistics to verify the Replicat applied the rows.
+
+    ![Verfiy Replicat](images/image.png)
 
 ## Task 5: Confirm the Distribution Path is running
 

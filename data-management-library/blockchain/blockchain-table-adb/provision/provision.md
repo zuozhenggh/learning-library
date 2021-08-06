@@ -17,7 +17,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-- You must have logged in to your own cloud account or a LiveLabs account.
+This workshop assumes you have:
+
+- Logged in to your own cloud account or a LiveLabs account.
 
 ## Task 1: Provision a Compute Instance
 
@@ -37,15 +39,19 @@ In this lab, you will:
     - **Availability Domain** - For this lab, leave the default instance Placement to Always Free Eligible or you can click on **Edit** and choose an Availability Domain (AD).
     - **Image and shape** - For this lab, leave the default - Always Free Eligible resource or you can click on **Edit** to change the image and shape.
 
+    ![](./images/task1-4.png " ")
+    
+
 5. In Add SSH keys, choose **Paste public keys** and paste the public key noted earlier in lab 1 and click **Create**.
 
     *Note* - If the instance is not provisioning, choose a different Availability Domain (AD) and repeat 3 to 5 steps.
     ![](./images/task1-5.png " ")
 
-6. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your compute instance is ready to use! Have a look at your instance's details and copy the **Public IP Address** to use later.
+6. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Running. At this point, your compute instance is ready to use! Have a look at your instance's details and copy the **Public IP Address** to use later.
 
     ![](./images/task1-61.png " ")
     ![](./images/task1-62.png " ")
+
 
 ## Task 2: Connect to your Compute instance
 
@@ -217,7 +223,9 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
 7. In the Create User page, under Grant Roles tab, search for all three of these roles: **CONNECT**, **RESOURCE**, **DWROLE**. Check both the Granted Admin and Default checkboxes for each one.
 
-    ![](./images/task4-7.png " ")
+    ![](./images/task4-71.png " ")
+    ![](./images/task4-72.png " ")
+    ![](./images/task4-73.png " ")
 
 8.  Click **Create User**.
 
@@ -241,7 +249,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![](./images/task5-1.png " ")
 
-2. Click on the the URL of the SQL Developer Web tab, replace `admin` with **demouser** and hit Enter.
+2. Click on the the URL of the SQL Developer Web tab, replace `admin` with **DEMOUSER** and hit Enter.
 
     ![](./images/task5-2.png " ")
 
