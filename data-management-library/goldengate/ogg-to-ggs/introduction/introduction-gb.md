@@ -6,9 +6,9 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 ![Diagram](images/onprem2oci.png)
 
-You will be moving between Oracle GoldenGate Marketplace Web UIs and the OCI GoldenGate Deployment Console throughout this workshop. 
+You will be moving between Oracle GoldenGate Marketplace Web UIs and the OCI GoldenGate Deployment Console throughout this workshop.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
 

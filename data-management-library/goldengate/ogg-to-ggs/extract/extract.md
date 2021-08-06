@@ -191,6 +191,10 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![](images/04-18.png)
 
+19. In the OCI GoldenGate Deployment Console, click the name of the Replicat to view its details, and then click Statistics to verify the Replicat applied the rows.
+
+    ![Verfiy Replicat](images/image.png)
+
 ## **STEP 5:** Confirm the Distribution Path is running
 
 In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
