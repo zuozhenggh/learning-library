@@ -46,7 +46,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     The merge request shows as Merged. If you didn't choose to delete the branch, you can do so now if you want.
 
-    Once your changes are merged, VB Studio automatically triggers the package and deploy jobs in your pipeline to deploy your web application to the development environment. Click **Builds** ![Builds icon](./img/vbs_builds_icon.png)to view the progress of your build jobs.
+    Once your changes are merged, VB Studio automatically triggers the package and deploy jobs in your pipeline to deploy your web application to the development environment. Click **Builds** ![Builds icon](images/vbs_builds_icon.png)to view the progress of your build jobs.
 
     ![](images/merge_mr_result.png " ")
 
