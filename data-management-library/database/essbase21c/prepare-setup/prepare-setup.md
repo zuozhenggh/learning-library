@@ -27,7 +27,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 9502           | OAS Presentation service              |
+| 9000           | Essbase              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
