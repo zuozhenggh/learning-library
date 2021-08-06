@@ -84,7 +84,7 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Create Artifacts
+## Task 1: Create Artifacts
 
  First step we need to create the Artifacts that will contains the Kubernetes manifest files that are used to deploy the Application.
 
@@ -276,7 +276,7 @@ At the end, you will have the following artifacts:
 In the next steps, we are going to design a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
 
-## **STEP 2**: Create DevOps Deployment Pipeline
+## Task 2: Create DevOps Deployment Pipeline
 
 Let's create a DevOps Deployment Pipeline for publishing the Mushop fulfillment service and NATS. 
 
@@ -400,7 +400,7 @@ As the result, we have the following DevOps Pipeline:
 
 ![fulfillment pipeline](./images/devops-pipeline-fulfillment-final.png)
 
-## **STEP 3**: Deploy Fulfillment Service to OKE
+## Task 3: Deploy Fulfillment Service to OKE
 
 You can run a pipeline directly from the OCI Console or you can build integrations with the API, CLI or some external integrations. 
 
@@ -439,7 +439,7 @@ Finally, click on Start Manual Run to trigger the pipeline.
     ![Devops pipeline deployments](./images/devops-pipeline-deployments.png)
 
 
-## **STEP 4**: (Optional) Test Fulfillment Service
+## Task 4: (Optional) Test Fulfillment Service
 
 The application was deployed for the first time, all stages in the Deployment pipeline are green, now you want to test the application without having to deploy any additional component (e.g. Ingress). The easiest way to do this is connecting to the OKE cluster via Cloud Shell and use a NATS client running in a K8s pod to generate some messages to the NATS service which can then be consumed by the Fulfillment service API.
 

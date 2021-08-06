@@ -16,7 +16,7 @@ You can run this lab in any Oracle Database with APEX 19.2 installed. This inclu
 
 This lab is designed for a LiveLabs environment. If you haven't already done so, reserve an environment to run this workshop.
 
-## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
+## Task 1: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
 In this step, you will create an *Autonomous Transaction Processing* database, and provision an Oracle APEX Workspace.
 

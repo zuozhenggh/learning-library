@@ -24,7 +24,7 @@ Be sure that the following tasks are completed before you start:
 - A database, either non-CDB or CDB with a PDB.
 
 
-## **STEP 1**: Display the table column **ENCRYPT** attribute before import
+## Task 1: Display the table column **ENCRYPT** attribute before import
 
 1. First, switch to the **oracle** user.
    
@@ -112,7 +112,7 @@ Be sure that the following tasks are completed before you start:
 -->
 
 
-## **STEP 2**: Import the table without the **ENCRYPT** Attribute
+## Task 2: Import the table without the **ENCRYPT** Attribute
 
 1. Generate the SQL file from the Data Pump export **/home/oracle/labs/19cnf/tab.dmp** dump file by simulating an import into the non-CDB omitting the **ENCRYPT** attribute of the LABEL column of the **TEST.TABENC** table into an encrypted tablespace such as **TEST**.
 

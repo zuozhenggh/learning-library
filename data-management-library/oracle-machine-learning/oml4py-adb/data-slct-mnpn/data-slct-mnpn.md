@@ -33,7 +33,7 @@ To download the notebook version of this lab (without screenshots), click [lab2 
 
 [](include:import)
 
-## **Step 1**: Import Libraries and Create Oracle Machine Learning DataFrame Proxy Object
+## Task 1: Import Libraries and Create Oracle Machine Learning DataFrame Proxy Object
 
 To use OML4Py, you must first import the `oml` module and the Pandas library to support OML4Py data manipulation and analysis, data exploration and preparation.
 
@@ -86,7 +86,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library to 
 
     ![Script to list the transparency layer functions](images/transparency_layer_functions.png "Script to list the transparency layer functions")   
 
-## **Step 2:** Select Table Columns using Proxy Object IRIS_TMP
+## Task 2: Select Table Columns using Proxy Object IRIS_TMP
 In this step, you will select the first three records for columns `SEPAL_LENGTH` and `PETAL_LENGTH` from the `IRIS_TMP` table.
 
 1. Run the following script to select specific columns by name and return the first three records with the specified column names.
@@ -124,7 +124,7 @@ In this step, you will select the first three records for columns `SEPAL_LENGTH`
     ![Script to return columns by data type](images/columns_by_data_type.png "Script to return columns by data type")
     The script returns the SPECIES column.
 
-## **Step 3:** Select Table Rows using Proxy Object IRIS_TMP
+## Task 3: Select Table Rows using Proxy Object IRIS_TMP
 
 This step demonstrates how to select table rows using proxy object IRIS_TMP.
 
@@ -168,7 +168,7 @@ This step demonstrates how to select table rows using proxy object IRIS_TMP.
       ![Script for compound row selection using the AND condition](images/compound_row_selection_and.png "Script for compound row selection using the AND condition")
       The script returns the rows where petal length is less than 1.5 and greater than 5.0.
 
-## **Step 4:** Use Pandas DataFrame Objects
+## Task 4: Use Pandas DataFrame Objects
 
 You can join data from `oml.DataFrame` objects that represent database tables by using the `append`, `concat`, and `merge` methods.
   * The `append` method appends or adds the other Oracle Machine Learning data object of the same class to this data object.
@@ -402,7 +402,7 @@ To work with the drop function, first create a demo data table `MY_DF2.`
     ```
     ![Example of how to drop a specific column](images/drop_specific_col.png "Drop specific column")
 
-## **Step 5:** Use the split and KFold Functions
+## Task 5: Use the split and KFold Functions
 
 This lab demonstrates how to use the `split` and `KFold` function using the digits data set after creating an Oracle Machine Learning DataFrame proxy object for the digits data set.
 
@@ -504,7 +504,7 @@ The following tasks are covered in this lab:
 
 **Try it yourself:** Split the digit data set into four even samples of 25% each
 
-## **Step 6:** Use the crosstab and pivot_table Functions on a DataFrame Proxy Object
+## Task 6: Use the crosstab and pivot_table Functions on a DataFrame Proxy Object
 
 This step shows how to use the crosstab method to perform cross-column analysis of an `oml.DataFrame` object and the `pivot_table` method to convert an oml.DataFrame to a spreadsheet style pivot table.
 
@@ -570,7 +570,7 @@ The `pivot_table` method converts a data set into a pivot table. Due to the data
 
     ![Example of pivot_table function to find the minimum and maximum speed](images/max_min_speed.png "Example of pivot table function to find the minimum and maximum speed")
 
-## **Step 7**: Use the oml.boxplot and oml.hist Functions
+## Task 7: Use the oml.boxplot and oml.hist Functions
 
 OML4Py provides functions for rendering graphical displays of data. The `oml.boxplot` and `oml.hist` functions compute the statistics necessary to generate box and whisker plots or histograms in-database for scalability and performance. OML4Py uses the `matplotlib` library to render the output.
 
@@ -608,7 +608,7 @@ This lab demonstrates how to use the `oml.boxplot` and `oml.hist` functions usin
     ```
   ![Histogram](images/histogram.png "Histogram")
 
-## **Step 8**: Manage and Explore Data Using Transparency Layer Functions
+## Task 8: Manage and Explore Data Using Transparency Layer Functions
 
 With the transparency layer classes, you can convert selected Python objects to Oracle Autonomous Database objects and also call a range of familiar Python functions that are overloaded to run the corresponding SQL on tables in the database.
   * `oml.create`&mdash;Creates a table in the database schema from a Python data set.

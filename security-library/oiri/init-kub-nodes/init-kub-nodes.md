@@ -23,7 +23,7 @@ In this lab, you will:
       - Lab : Initialize Environment
 
 
-## **STEP 1:** Initialize the Kubernetes cluster and the pod network add-on
+## Task 1: Initialize the Kubernetes cluster and the pod network add-on
 
 1. Open a terminal session.
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
     ![](images/3-pods.png)
 
-## **STEP 2:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
+## Task 2: Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
 
 <!-- 1. Verify that the OIG Database is running.
 

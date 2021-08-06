@@ -36,7 +36,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Collect Statements from AWR
+## Task 1: Collect Statements from AWR
 
 In order to collect SQL Statements directly from AWR (Automatic Workload Repository) you will call a SQL script which:
 - Creates a SQL Tuning Set (STS)
@@ -53,7 +53,7 @@ In order to collect SQL Statements directly from AWR (Automatic Workload Reposit
 2. The number of statements in SQL Tuning Set “STS_CaptureAWR” will be displayed.
     ![](./images/upgrade_19c_10.png " ")
 
-## **STEP 2**: Collect Statements from Cursor Cache
+## Task 2: Collect Statements from Cursor Cache
 
 You can also collect statements directly from the Cursor Cache. This is more resource intense but helpful in case of OLTP applications. Be careful when you poll the cursor cache too frequently.
 
@@ -80,7 +80,7 @@ You can also collect statements directly from the Cursor Cache. This is more res
     It is very likely that you will get different statement counts. One of the reasons could be that often the capture from cursor cache will catch more statements compared to those written down from ASH (Active Session History) into AWR. And it does not play any role for the lab whether the number of statements matches the number in the screenshots or not.
 
 
-## **STEP 3**: Optional - Export AWR
+## Task 3: Optional - Export AWR
 
 When you migrate databases, exporting and preserving the AWR is important. When you upgrade, the AWR remains in the database. This exercise is done for protection but it is not necessary for the flow of the lab. **You will specify a START and an END snapshot number** to export the AWR data between these two snapshots.
 

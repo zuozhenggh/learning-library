@@ -8,7 +8,7 @@ This tutorial demonstrates how to install the [Traefik](https://traefik.io/) Ing
 
 Estimated Lab Time: 10 minutes
 
-## **STEP 1**: Install the Traefik operator with a Helm chart
+## Task 1: Install the Traefik operator with a Helm chart
 
 
 Create a namespace for Traefik:

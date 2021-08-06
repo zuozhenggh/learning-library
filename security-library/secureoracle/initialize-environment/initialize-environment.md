@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -63,7 +63,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 Follow the steps below to Start/Stop SecureOracle components.
 
-## **STEP 1**: Start and Stop SecureOracle Components
+## Task 1: Start and Stop SecureOracle Components
 
 1.  From any of the terminal session started above, proceed as shown below to start all components as “*oracle*” user
 
@@ -103,7 +103,7 @@ Follow the steps below to Start/Stop SecureOracle components.
     </copy>
     ```
 
-## **STEP 2**: Running Development Tools
+## Task 2: Running Development Tools
 
 The development tools in SecureOracle are aimed to support use cases like editing SOA composites for OIG workflow approvals but also to help in customizing and configuring the different components as needed.
 
@@ -164,7 +164,7 @@ The development tools in SecureOracle are aimed to support use cases like editin
     </copy>
     ```
 
-## **STEP 3**: Admin Consoles, Applications and User Credentials
+## Task 3: Admin Consoles, Applications and User Credentials
 For your convenience, important URLs listed in this step for Admin consoles and Applications used throughout this workshop have been bookmarked and are available on Firefox within your remote desktop session.
 
   ![](./images/guacamole-bookmarks.png " ")
@@ -324,7 +324,7 @@ If you prefer accessing these from your local computer then chose one of the fol
     Password        Oracle123
     ```
 
-## **STEP 4**: Branding SecureOracle (optional)
+## Task 4: Branding SecureOracle (optional)
 Use the following instructions to customize the logo in the OIG Self Service interface. For illustrations we will use a sample logo image staged on your instance. Feel free to use your own image if preferred. Should you elect to use your own logo, ensure follow the recommended size of 145 x 38 pixels.
 
 1. Copy the image file to *`/home/oracle/products/oim/idm/server/apps/oim.ear/iam-consoles-faces.war/images`*

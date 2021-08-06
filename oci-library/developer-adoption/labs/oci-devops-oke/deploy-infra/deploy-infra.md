@@ -24,7 +24,7 @@ In this lab, you will:
 * GitHub account
 * User that belongs to the Administrator group or has granted privileges to manage multiple OCI resources (IAM, ORM, DevOps, OKE, Network, etc).
 
-## **STEP 1**: Create CICD Compartment
+## Task 1: Create CICD Compartment
 
 Compartments are used to organize and isolate your cloud resources. It is always recommended to carefully design your compartment structure and which groups will have access to them. In this lab exercise, we will create the `cicd` compartment for managing all resources created through the cicd pipeline. You can create [IAM Groups and Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) to control who have access to visualize/manage the resources in that compartment.
 
@@ -38,7 +38,7 @@ Otherwise, click through the hierarchy of compartments until you reach the detai
 ![Name/description](./images/create-compartment-form.png)
 
 
-## **STEP 2**: Import Git "deploy" repository 
+## Task 2: Import Git "deploy" repository 
 
 Oracle has published a [Reference Architecture](https://docs.oracle.com/en/solutions/build-pipeline-using-devops/index.html) which contains a [quickstart](https://github.com/oracle-quickstart/oci-arch-devops) repository that contains Terraform templates and we will use them to automate the provisioning of OCI DevOps service and all target services/environments. Let's *import* that repository to your GitHub account.
 
@@ -61,7 +61,7 @@ Oracle has published a [Reference Architecture](https://docs.oracle.com/en/solut
 ![new repository](./images/github-new-repo.png)
 
 
-## **STEP 3**: Setup ORM Configuration Source Provider 
+## Task 3: Setup ORM Configuration Source Provider 
 
 After importing the repository into our GitHub account, we are going to use OCI Resource Manager (ORM) to provision the infrastructure. ORM has a feature that integrates it with Version Control Systems/Platforms like GitHub and GitLab, etc. 
 
@@ -255,7 +255,7 @@ Now we are going to setup the connection between OCI Resource Manager service in
 1. In case of issues with your connection, review your settings. If you are not using a GitHub free account, you may have to change the URL. Check [ORM documentation](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider__exampleurls) for more details.
 
 
-## **STEP 4**: Create ORM Stack
+## Task 4: Create ORM Stack
 
 Next step we are going to create a OCI Resource Manager Stack. The Stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. Each stack resides in the compartment you specify, in a single region; however, resources on a given stack can be deployed across multiple regions. An OCID (unique identifier) is assigned to each stack.
 
@@ -320,7 +320,7 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 1. After Reviewing the variable values that were modified, click on Create button to create the `infrastructure-onboard` Stack.
     ![ORM Stack - infrastructure-onboard](./images/oci-orm-stack-infra.png)
 
-## **STEP 5**: Provisioning the Infrastructure
+## Task 5: Provisioning the Infrastructure
 
 1. After creating the Stack, you can perform some Terraform operations that are also known as `Jobs` in OCI. By clicking on `Plan` button and defining a name for your plan, e.g. `deploy1` Resource Manager will parse your Terraform configuration and creates an execution plan for the associated stack. The execution plan lists the sequence of specific actions planned to provision your Oracle Cloud Infrastructure resources. The execution plan is handed off to the apply job, which then executes the instructions.
     ![ORM Stack - jobs menu](./images/oci-orm-jobs-menu.png)

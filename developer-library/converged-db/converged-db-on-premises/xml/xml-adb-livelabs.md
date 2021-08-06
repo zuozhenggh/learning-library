@@ -36,7 +36,7 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## **STEP 1**: Connect to SQL Developer Web
+## Task 1: Connect to SQL Developer Web
 
 In the previous section, the load script ran commands to grant the appjson user privileges and setup SQL Developer Web using Rest Services (ORDS).  See the appendix for more details on how to set up a user to connect with SQL Developer Web.
 
@@ -50,7 +50,7 @@ The password to all the schemas is *Oracle_4U*.
 3.  At the login screen, enter *appxml* and *Oracle_4U*.
     ![](./images/appxml-signin.png " ") 
 
-## **STEP 2**: XML Query
+## Task 2: XML Query
 
 1. Execute a query to select the XML documents
 
@@ -98,7 +98,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_step3_search.png " ")
 
-## **STEP 3**: Insert XML records
+## Task 3: Insert XML records
 
 1. Issue the query below to count the number rows we have currently and then do a insert
 
@@ -125,7 +125,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_s4_p3.png " ")
 
-## **STEP 4**: Update XML table
+## Task 4: Update XML table
 
 1. Click the link to download the update.sql script from the object store. [Objectstore](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-kQ88-JKc9t246bayH2JeVaLSSaxOyE0i4Npb4TxCW2XdSNPQPvmsQDza-gw5STU/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/Workshop_xml_script_atp.zip)
 
@@ -143,7 +143,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/xml_s5_p2.png " ")
 
-## **STEP 5**: Sample XML Queries
+## Task 5: Sample XML Queries
 
 1. Get the list of customers and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.

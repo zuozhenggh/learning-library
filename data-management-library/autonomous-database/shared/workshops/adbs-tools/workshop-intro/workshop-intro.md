@@ -1,7 +1,7 @@
 ﻿
-# Workshop Introduction
+# Introduction
 
-## Introduction
+## About this Workshop
 
 The purpose of this workshop is to introduce you to the suite of data tools built into the Oracle Autonomous Data Warehouse. The workshop is designed to be used alongside your own cloud account (paid or Bring-Your-Own-License) or you can register and claim free trial credits which provides up to 3,300 hours of cloud time, and 2 TB of storage, which is more than enough time and storage space to run this workshop. 
 

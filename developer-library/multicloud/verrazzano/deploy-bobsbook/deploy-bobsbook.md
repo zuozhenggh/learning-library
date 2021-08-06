@@ -174,7 +174,7 @@ To run Lab 3, you must have:
 * Run Lab 2, which installs Verrazzano on the Kubernetes cluster.
 * A text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Accept the license agreement to download the images from the repositories in the Oracle Container Registry
+## Task 1: Accept the license agreement to download the images from the repositories in the Oracle Container Registry
 
 For the deployment of the *Bob's Books* sample application, we will use the example images. Because these images contain Oracle products, you will need to accept the license agreement before using these images in your bobs-books file, `bobs-books-comp.yaml`.
 
@@ -202,7 +202,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Verify License Agreement](images/28.png)
 
-## **STEP 2**: Deploy the Bob's Books application
+## Task 2: Deploy the Bob's Books application
 
 We need to download the source code, where we have configuration files, `bobs-books-app.yaml` and `bobs-books-comp.yaml`.
 
@@ -333,7 +333,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
 
     ![External IP](images/23.png)
 
-## **STEP 3**: Verify the successful deployment of the Bob's Book application
+## Task 3: Verify the successful deployment of the Bob's Book application
 
 Verify that the application configuration, domains, Coherence resources, and ingress trait all exist.
 

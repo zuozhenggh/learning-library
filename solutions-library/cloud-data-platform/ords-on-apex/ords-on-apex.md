@@ -22,7 +22,7 @@ Estimated Lab Time: 30 minutes
 -   To learn more about Oracle REST Data Services (ORDS), feel free to explore the capabilities by clicking on this link: [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.4/index.html)
 
 
-## **STEP 1**: Access Your APEX App
+## Task 1: Access Your APEX App
 
 1. Navigate to and click on **Oracle APEX** from the development page of your ADW instance service console.
 
@@ -32,7 +32,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/4.png " ")
 
-## **STEP 2**: Enable Oracle Restful Data Services (ORDS)
+## Task 1: Enable Oracle Restful Data Services (ORDS)
 
 1. Click on **SQL Workshop** and then on **RESTful Services**.
 
@@ -46,7 +46,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/7.png " ")
 
-## **STEP 3**: Import APIs
+## Task 1: Import APIs
 
 1. Click on **Import**.
 
@@ -71,7 +71,7 @@ Estimated Lab Time: 30 minutes
     ![](./images/10new.png " ")
 
 
-## **STEP 4**: Create APIs
+## Task 1: Create APIs
 
 1. Click on **warehouseAPI** to show the API template list.
 
@@ -103,7 +103,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/14new.png " ")
 
-## **STEP 5**: Check and Test APIS
+## Task 1: Check and Test APIS
 
 1. You have now imported and created various RESTful APIs with APEX.
 
@@ -123,7 +123,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/18.png " ")
 
-## **STEP 6**: Copy API URLs
+## Task 1: Copy API URLs
 
 1. Under **warehouseAPI**, click on the **stores** API and copy the **Full URL** and paste it into a separate notes file (i.e. Notepad, Microsoft Word, Apple Notes, etc.) to be used later.
 
@@ -145,7 +145,7 @@ Estimated Lab Time: 30 minutes
 
    ![](./images/17v3.png " ")
 
-## **STEP 7**: Add API URLs to Web Page Code
+## Task 1: Add API URLs to Web Page Code
 
 1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RiNrtEdLlGsZEEXq8aK8fYACsPkqvULFhfVgMASf9jg9hp4uDJb0BGGn8_Thgjr_/n/c4u04/b/solutions-library/o/WebPage.zip).
 
@@ -163,7 +163,7 @@ Estimated Lab Time: 30 minutes
 
 6. Once you have replaced the two URLs, you must resave the file. (Note: Make sure that you keep the .js file type when you save the file in your text editor. Also, be sure that when you are saving the updated file, you are replacing the original file in the **WebPage** folder.)
 
-## **STEP 8**: Test API Calls on Web Page
+## Task 1: Test API Calls on Web Page
 
 1. You have now implemented your API URLs from APEX into the code for the HTML Web Page, so your APIs are ready to be consumed!
 
@@ -192,5 +192,3 @@ Estimated Lab Time: 30 minutes
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, June 2021
-
-

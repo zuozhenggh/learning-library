@@ -18,7 +18,7 @@ Estimated Completion Time: 5 minutes.
 
 - An OCI account with a compartment created.
 
-## **STEP 1:** Create a vault
+## Task 1: Create a vault
 
 1. On the **Security** menu, click **Vault**.
 
@@ -34,7 +34,7 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-vault3.png " ")
 
-## **STEP 2:** Create a Key in the Vault
+## Task 2: Create a Key in the Vault
 
 1. Once the vault is provisioned, select the vault.
 
@@ -48,7 +48,7 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-key2.png " ")
 
-## **STEP 3:** Create a Secret for the WebLogic Admin Password
+## Task 3: Create a Secret for the WebLogic Admin Password
 
 1. Once the key is provisioned, click **Secrets**.
 
@@ -66,7 +66,7 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-secret4.png " ")
 
-## **STEP 4:** Create an Auth Token to Access OCI Registry
+## Task 4: Create an Auth Token to Access OCI Registry
 
 1. On the **User** menu, click **User Settings** then click **Auth Tokens** on the left menu.
 
@@ -80,7 +80,7 @@ Estimated Completion Time: 5 minutes.
 
 5. Copy the **output** of the token to clipboard.
 
-## **STEP 5:** Create a Secret with the Auth Token
+## Task 5: Create a Secret with the Auth Token
 
 1. On the **Security** menu, click **Vault** then **Secrets**.
 

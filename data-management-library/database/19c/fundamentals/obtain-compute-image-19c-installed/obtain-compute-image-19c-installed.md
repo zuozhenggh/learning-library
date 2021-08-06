@@ -30,7 +30,7 @@ Before you start, be sure that you have done the following:
 - Created SSH keys in Cloud Shell
 
 
-## **STEP 1**: Add security rules to your existing VCN
+## Task 1: Add security rules to your existing VCN
 
 Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521, 1523, and 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
@@ -46,7 +46,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
-## **STEP 2**: Create and apply a stack in Resource Manager
+## Task 2: Create and apply a stack in Resource Manager
 
 > **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 3.
 
@@ -113,7 +113,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     ```
 
 
-## **STEP 3**: Connect to your compute instance via a browser and set up your desktop
+## Task 3: Connect to your compute instance via a browser and set up your desktop
 
 > **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
 
@@ -132,7 +132,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
 
 
-## **STEP 4**: Download the lab files
+## Task 4: Download the lab files
 
 1. On the noVNC desktop, open a terminal window.
 

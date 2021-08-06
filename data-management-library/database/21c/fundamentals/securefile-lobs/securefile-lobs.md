@@ -38,7 +38,7 @@ In this lab, you will:
 
 
 <if type="dbcs">
-## **STEP 1:** Create a table with a SecureFile LOB
+## Task 1: Create a table with a SecureFile LOB
 
 1. Execute a shell script that creates a tablespace with sufficient space to let the LOB grow and be candidate for shrinking.
 
@@ -126,7 +126,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	  ```
 </if>
 
-## **STEP 2:** Shrink the SecureFile LOB after rows inserted and updated
+## Task 2: Shrink the SecureFile LOB after rows inserted and updated
 
 <if type="atp">
 1.  Create a Large Object table
@@ -242,7 +242,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
   As a result, two blocks are freed.
 </if>
 
-## **STEP 3:** Shrink the SecureFile LOB after rows updated
+## Task 3: Shrink the SecureFile LOB after rows updated
 
 1. Update the CLOB.
 

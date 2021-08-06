@@ -23,9 +23,9 @@ Be sure that the following tasks are completed before you start:
 - Oracle Database 19c installed.
 - If not downloaded, download 19cNewFeatures.zip
 
-## **STEP 0**: Enable ARCHIVELOG mode
+## Task 0: Enable ARCHIVELOG mode
 1. 
-## **STEP 1**: Prepare environment
+## Task 1: Prepare environment
 1. Execute the **/home/oracle/labs/19cnf/cleanup_PDBs.sh** shell script. The shell script drops all PDBs that may have been created by any of the practices in **CDB1**, and finally re-creates **PDB1**.
    
     ```
@@ -49,7 +49,7 @@ Be sure that the following tasks are completed before you start:
     $ /home/oracle/labs/19cnf/glogin.sh
     ```
 
-## **STEP 2**: Create catalog owner and grant privileges 
+## Task 2: Create catalog owner and grant privileges 
 1. To be able to connect to the recovery catalog and to PDB1 as the target database, create a virtual private RMAN catalog (VPC) in PDB19 for groups of databases and users of **CDB1**, **PDB1**, and **PDB2**.
  
 2. Create the catalog owner in **PDB19**. 
@@ -162,7 +162,7 @@ Be sure that the following tasks are completed before you start:
     ```
 
         
-## **STEP 3**: Create VPC users
+## Task 3: Create VPC users
 1. Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will be given access to the metadata of **PDB1** and **PDB2**, respectively.
     ```
     $ sqlplus system@PDB19
@@ -215,7 +215,7 @@ Be sure that the following tasks are completed before you start:
     ```
     RMAN> EXIT
     ```
-## **STEP 4**: Backup **PDB1**
+## Task 4: Backup **PDB1**
 1. Connect to the **PDB1** target PDB and to the recovery catalog as the **VPC_PDB1** user to back up and restore the **PDB1** target PDB.
 
     ```
@@ -287,7 +287,7 @@ Be sure that the following tasks are completed before you start:
     SQL> EXIT
     ```
 
-## **STEP 5**: Revoke privileges and drop the catalog
+## Task 5: Revoke privileges and drop the catalog
 1. Connect as the catalog owner and revoke the **CATALOG FOR PLUGGABLE DATABASE** privilege on **PDB1** and **PDB2** from the VPC Users.
     ```
     $ rman CATALOG catowner@PDB19

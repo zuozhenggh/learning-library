@@ -24,7 +24,7 @@ In this lab you will:
 ### Prerequisites
 - Access to the Cloud Manager console.
 
-## **STEP 1**: Defining a Topology
+## Task 1: Defining a Topology
 
 1.	Navigate to **Cloud Manager Dashboard** > **Topology**
     ![](./images/dashtopology.png "")

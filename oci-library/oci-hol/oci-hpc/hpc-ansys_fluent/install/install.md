@@ -17,7 +17,7 @@ In this lab:
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
-## **STEP 1**: Adding specific libraries
+## Task 1: Adding specific libraries
 
 ***If you used the CFD Ready Cluster from marketplace, this step is not needed***
 
@@ -29,7 +29,7 @@ In this lab:
     </copy>
     ```
 
-## **STEP 2**: Download the binaries
+## Task 2: Download the binaries
 
 You can download the FLUENT installer from the ANSYS website and push it to your machine using scp.
 
@@ -64,7 +64,7 @@ Another possibility is to upload the installer into object storage.
     unzip installer.tgz
     </copy>
     ```
-## **STEP 3**: Install
+## Task 3: Install
 
 1. Launch the installer on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes. Add the IP address to access the license server.
 

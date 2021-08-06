@@ -34,7 +34,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Check Statements
+## Task 1: Check Statements
 
 
 1. Check the number of statements you collected in the SQL Tuning Sets

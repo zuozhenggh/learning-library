@@ -25,7 +25,7 @@ In this lab, you will:
     - The OCID of the target database
 
 
-## **STEP 1:** Download the Privileges Script
+## Task 1: Download the Privileges Script
 
 First, we must download a file from the Data Safe console that will give the created user the roles necessary to act as a Data Safe user.  
 
@@ -74,7 +74,7 @@ First, we must download a file from the Data Safe console that will give the cre
   e. Save and exit by pressing ``ecs`` and then typing in ``:wq``. 
 
 
-## **STEP 2:** Create a Data Safe Admin User on the Target Database
+## Task 2: Create a Data Safe Admin User on the Target Database
 
 In this step, we will create a database user and grant them privileges which will allow them to be used as the Data Safe admin user. 
 

@@ -23,7 +23,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
-## **STEP 1:** Create an Instance of MySQL in the Cloud
+## Task 1: Create an Instance of MySQL in the Cloud
 
 1. Go to **Menu** > **Databases** > **DB Systems**.
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Connect and Create DB
+## Task 2: Connect and Create DB
 
 1. Connect with **Cloud Shell** (if you close it or it is no longer active).
 
@@ -101,7 +101,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Enable HeatWave (Optional)
+## Task 3: Enable HeatWave (Optional)
 
 1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
 

@@ -14,7 +14,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 ## Part 1. Import Notebook File to OML 
 
-### **STEP 1**: Sign into OML
+### Task 1: Sign into OML
 
 1.   Go back to the Cloud Console and Click the **Service Console** button on your Autonomous Data Warehouse details page.
 
@@ -35,7 +35,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 ![](./images/picture400-2.jpeg)
 
 
-### **STEP 2**: Import Notebook File (Flight Delay Prediction.json) to OML
+### Task 2: Import Notebook File (Flight Delay Prediction.json) to OML
 
 1. Once you have successfully signed in to OML the application home page will be displayed. Let's click **Notebooks**. 
 

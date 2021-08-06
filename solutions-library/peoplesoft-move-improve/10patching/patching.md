@@ -13,7 +13,7 @@ In this lab you will:
 - Access to the Cloud Manager console.
 - Environment up and running
 
-## **STEP 1**: Subscribe to Tools Channels
+## Task 1: Subscribe to Tools Channels
 
 1.  Navigate to **Cloud Manager Dashboard** > **Repository**. 
     ![](./images/repo.png "")
@@ -29,7 +29,7 @@ In this lab you will:
     ![](./images/winsubscribe.png "")
     ![](./images/winpatchnum.png "")
 
-## **STEP 2**: Monitor Subscription Progress
+## Task 2: Monitor Subscription Progress
 
 1. To monitor progress, you can go to **Download History**, select **Tools\_858\_Linux** and **Tools\_858\_Windows** to see which packages are in progress and which have been completed.
 
@@ -40,7 +40,7 @@ In this lab you will:
 3. Once you see this, you may apply the patches to your environment:
     ![](./images/858done.png "")
 
-## **STEP 3**: Apply Patch to Environment
+## Task 3: Apply Patch to Environment
 
 1. Navigate to **Cloud Manger Dashboard** > **Environments**
     ![](./images/env.png "")

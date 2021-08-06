@@ -16,7 +16,7 @@ In this lab, you will:
 This lab assumes you have:
 - Provisioned VM Instance configured with noVNC
 
-## **STEP 1:** Enable Full-screen Display
+## Task 1: Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
 
 1. Click on the small gray tab on the middle-left side of your screen to open the control bar.
@@ -28,7 +28,7 @@ For seamless desktop integration and to make the best use of your display, perfo
     ![](./images/novnc-fullscreen-2.png " ")
     ![](./images/novnc-fullscreen-3.png " ")
 
-## **STEP 2:** Enable Copy/Paste from Local to Remote Desktop
+## Task 2: Enable Copy/Paste from Local to Remote Desktop
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. Continuing from the last task above, Select the *clipboard* icon
@@ -41,7 +41,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     *Note:* Please make sure you initialize your clipboard with step [1] shown in the screenshot above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function in the context menu grayed out when attempting to paste for the first time.
 
-## **STEP 3:** Open Your Workshop Guide
+## Task 3: Open Your Workshop Guide
 
 1. If the two *Firefox* browser windows are not already open, click on the icon from the remote desktop. This will launch two windows.
 

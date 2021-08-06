@@ -17,7 +17,7 @@ This is Monday morning, and you discover a new enhancement request waiting on yo
 
 The ER is about the creation of a new microservice to manage **Purchase Orders**. 
 
-## **STEP 1**: Analyze the requirements to load JSON data
+## Task 1: Analyze the requirements to load JSON data
 
 1. Purchase Orders are important to any company and specifically for e-commerce, these data need to be loaded efficiently. 
    Indeed, customers don't want to wait 10 seconds to get their purchase order processed and potentially 10s of thousands 
@@ -80,7 +80,7 @@ This means that you don't want to miss any Purchase Order for your customer and 
 manage can grow quickly over time. Having this in mind early in the design phase can help you to choose the right tool and capabilities
 that will simply your life later.
 
-## **STEP 2**: Choose wisely the features to use for your JSON data
+## Task 2: Choose wisely the features to use for your JSON data
 
 Now that we have studied some reasonable capabilities to have, let's see what can be done using the Oracle Autonomous Database...
 
@@ -108,7 +108,7 @@ disable ACID compliance by providing asynchronous commits. Eventual consistency 
 the future analytic needs (for reporting...) we'll be able to filter on the required documents and use the partition pruning technic that will indeed improve
    the query response time by avoiding to process data not needed.
 
-## **STEP 3**: Implementing our Purchase Order loader
+## Task 3: Implementing our Purchase Order loader
 
 ![New ER](./images/er42-in-progress.png)
 

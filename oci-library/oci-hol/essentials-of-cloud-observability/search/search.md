@@ -22,7 +22,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in Lab 1
 * The Log Group created in Lab 2 and Custom Log created in Lab 3
 
-## **STEP 1**: Select Logs to be included in Search
+## Task 1: Select Logs to be included in Search
 
 1. In the OCI Management Console, ensure you have selected the same Region as the previous Labs.  Navigate to **Logging** --> **Search**.
 
@@ -41,7 +41,7 @@ In this lab, you will:
 
 4.  Click **Continue** to close the panel and return to the search landing page.
 
-## **STEP 2:** Search Content and Explore Logs
+## Task 2: Search Content and Explore Logs
 
 1.  On the log search page, click the **Search** button and review the results in the panel below.  
 

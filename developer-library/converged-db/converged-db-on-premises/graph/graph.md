@@ -29,7 +29,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Connect to Graph Server and Client
+## Task 1: Connect to Graph Server and Client
 
 The graph server has already been setup for you. For more information on the graph server setup see the "Learn More section" of this lab.
 1. For connecting to graph server, open a terminal and execute below steps as oracle user.
@@ -64,13 +64,13 @@ The below screenshot is an example of what a Connection to a PGX server using Js
     </copy>
     ```
 
-## **STEP 2**: Create Graph
+## Task 2: Create Graph
 
 For Step 2 the SQL statements have already been run as a part of the script 03_graphload.jsh.
 If you want to learn more about the Create Graph [Click here](#Appendix1:CreateGraph)
 
 
-## **STEP 3**: Querying Graph using PGQL
+## Task 3: Querying Graph using PGQL
 
 1. Find the edge labels. We used labels here to tag an edge with a relationship type
 
@@ -165,7 +165,7 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
     ![](./images/IMGG15.PNG " ")
 
-## **STEP 4**: Load the Graph into memory and publish it.
+## Task 4: Load the Graph into memory and publish it.
 
 1. Run the below command in jshell prompt. This step will run the script called "04_graphintoMemory.jsh"  which will perform two steps. The first step is loading the graph into memory. The second step is publishing the graph. After running this command we will look at some of the examples about customers and their orders.
 
@@ -226,7 +226,7 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
     ![](./images/IMGG21.PNG " ")
 
-## **STEP 5**: Visualize the Graph
+## Task 5: Visualize the Graph
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 

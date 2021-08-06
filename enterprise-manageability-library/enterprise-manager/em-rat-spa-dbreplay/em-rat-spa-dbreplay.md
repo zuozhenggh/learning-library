@@ -30,7 +30,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
-## **STEP 1:** SQL Performance Analyzer
+## Task 1: SQL Performance Analyzer
 
 1. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com
 
@@ -207,7 +207,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     ![](images/emratlab1step15c.png " ")
 
 
-## **STEP 2:** Database Workload Replay - Capture Workload
+## Task 2: Database Workload Replay - Capture Workload
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -332,7 +332,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab2step17f.png " ")
 
-## **STEP 3:** Database Workload Replay - DB Replay
+## Task 3: Database Workload Replay - DB Replay
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -523,7 +523,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
       ![](images/emratlab3step32f.png " ")
 
 
-## **STEP 4:** Database Workload Replay - API
+## Task 4: Database Workload Replay - API
 
 ### Login to Host using SSH Key based authentication
 In this lab, we are going to use a pre-captured workload of Sales History. The workload located in directory **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
@@ -696,7 +696,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
      ![](images/emratlab4step7n.png " ")
 
 
-## **STEP 5:** Database Consolidation Replay
+## Task 5: Database Consolidation Replay
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 

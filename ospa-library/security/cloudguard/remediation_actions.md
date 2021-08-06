@@ -1,6 +1,6 @@
 # Lab 5: Remediation Actions
 
-## STEP 1: Executing remediation actions
+## Task 1: Executing remediation actions
 
 
 
@@ -39,7 +39,7 @@
     ![](./images/19.png)
 
 
-## STEP 2: Verifying remediation actions
+## Task 2: Verifying remediation actions
 
 1. Open the OCI console. Make sure that you are logged into the same reporting region and where you have created the sanctioned resource.
 

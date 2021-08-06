@@ -28,7 +28,7 @@ Learn how to do the following:
 - Use DBCA to duplicate a CDB with OMF
 - Clean up the CDBs duplicated
 
-## **STEP 1**: To enable ARCHIVELOG mode on CDB1:
+## Task 1: To enable ARCHIVELOG mode on CDB1:
 The CDB must be in `ARCHIVELOG` mode before you can duplicate a CDB by using DBCA in silent mode.
 
 1. Set the environment variable to CDB1.
@@ -42,7 +42,7 @@ $ HOME/labs/19cnf/enable_ARCHIVELOG.sh
    CDB1
 ```
 
-## **STEP 2**: Check the existence of sample data in PDB1
+## Task 2: Check the existence of sample data in PDB1
 
 In this step, you verify that PDB1 has sample data. After you duplicate CDB1 in a later step, you verify that the sample data is also duplicated.
 
@@ -87,7 +87,7 @@ In this step, you verify that PDB1 has sample data. After you duplicate CDB1 in 
     ```
 
 
-## **STEP 3**: Use DBCA to duplicate CDB1 as a single individual database
+## Task 3: Use DBCA to duplicate CDB1 as a single individual database
 
 In this step, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1as a single individual database called DUPCDB1. The database configuration type is set to `SINGLE`, which means single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener, LISTENER.
 
@@ -211,7 +211,7 @@ EXIT
   ```
 
 
-## **STEP 4**: Use DBCA to duplicate CDB1 as OMFCDB1 and enable Oracle Managed Files
+## Task 4: Use DBCA to duplicate CDB1 as OMFCDB1 and enable Oracle Managed Files
 In this step, you use the `-createDuplicateDB` command in `DBCA` to duplicate `CDB1` as a single individual database called `OMFCDB1`. This time when running the `-createDuplicate` command, you enable Oracle Managed Files and create a dynamic listener called `LISTOMFCDB1` that listens on port 1525.
 
 
@@ -361,7 +361,7 @@ $ lsnrctl status LISTENER_OMFCDB1
   EXIT
   ```
 
-## **STEP 5**: Restore your environment
+## Task 5: Restore your environment
 To restore you environment, delete DUPCDB1 and OMFCDB1 and disable ARCHIVELOG mode on CDB1.
 1. Use DBCA to delete DUPCDB1.
 
@@ -450,7 +450,7 @@ $ rm -rfv /u01/app/oracle/recovery_area/DUPCDB1
 ```
 $ rm -rfv /u01/app/oracle/recovery_area/OMFCDB1
 ```
-## **STEP 7**: To disable ARCHIVELOG mode on CDB1:
+## Task 7: To disable ARCHIVELOG mode on CDB1:
 
 1. Set the environment variable to CDB1.
 ```

@@ -12,7 +12,7 @@ Estimated Completion Time: 5 minutes.
 - Gather the database connection string.
 
 
-## **STEP 1:** Gather the OCI Database Information
+## Task 1: Gather the OCI Database Information
 
 1. Once the database system is provisioned, on the **Database System** menu, click **details**.
 

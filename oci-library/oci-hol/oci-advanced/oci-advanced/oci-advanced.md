@@ -4,7 +4,7 @@
 
 Local VCN peering is the process of connecting two VCNs in the same region and tenancy so that their resources can communicate using private IP addresses without routing the traffic over the internet or through your on-premises network. Without peering, a given VCN would need an internet gateway and public IP addresses for the instances that need to communicate with another VCN.
 
-## **Step 1:** Sign in to OCI Console and create VCN
+## Task 1: Sign in to OCI Console and create VCN
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI.
 
@@ -103,7 +103,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 **We have created two VCN with internet gateway for internet traffic, added default rule in the route table, created subnet and added two local peering gateways(one for each VCN). For VCN peering each VCN must have a local peering gateway.**
 
-## **Step 2:** Create two compute instances and configure routing
+## Task 2: Create two compute instances and configure routing
 
 1. From OCI services menu, Click **Compute** -> **Instances**.
 
@@ -215,7 +215,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
 
 **We now have two VCNs with one compute instance in each VCN. These VCNs have been connected using a Local Peering Gateway. Any instance in one VCN can reach an instance in the other VCN. Next we will test the connectivity.**
 
-## **Step 3:** ssh to compute instance and test VCN peering
+## Task 3: ssh to compute instance and test VCN peering
 
 1. Using Cloud Shell, enter the following command:
 
@@ -259,7 +259,7 @@ Local VCN peering is the process of connecting two VCNs in the same region and t
     If ping is successful then we have successfully created VCN peering across two different VCNs.
 
 
-## **Step 4:** Delete the resources
+## Task 4: Delete the resources
 
 1. Switch to  OCI console window.
 

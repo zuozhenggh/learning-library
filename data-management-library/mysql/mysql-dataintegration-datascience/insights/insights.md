@@ -25,7 +25,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
-## **STEP 1:** Create Policies
+## Task 1: Create Policies
 
 1. Create **Dynamic Group**, go to **Menu** > **Identity & Security** > **Dynamic Groups**.
 
@@ -54,7 +54,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Create Policies for Data Science
+## Task 2: Create Policies for Data Science
 
 1. Go to **Menu** > **Identity & Security** > **Policies**.
 
@@ -103,7 +103,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Create a Data Science Project
+## Task 3: Create a Data Science Project
 
 1. Go to **Menu** > **Analytics & AI** > **Data Science**.
 
@@ -154,7 +154,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 4:** Install Libraries
+## Task 4: Install Libraries
 
 1. Welcome to your Jupyter Notebook, click **Terminal**.
 
@@ -172,7 +172,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** Create Jupyter Notebook Environment
+## Task 5: Create Jupyter Notebook Environment
 
 1. **Download** the Notebook <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/7NRyIRdKbZ6x3yNsDxqwTlWOk5s3aEzZ-sxTQ7bAGBGZrtrgtEczXxO2Jg_Uc8da/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-FishSurvey.ipynb" target="\_blank">here</a>.
 

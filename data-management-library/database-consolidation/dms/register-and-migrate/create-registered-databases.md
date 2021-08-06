@@ -25,7 +25,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Create Registered Database for Source CDB
+## Task 1: Create Registered Database for Source CDB
 
 For this task you need the following info from previous steps:
 * Source DB Private IP
@@ -67,7 +67,7 @@ For this task you need the following info from previous steps:
 
   ![](images/1-6.png =50%x*)
 
-## **STEP 2:** Create Registered Database for Source PDB
+## Task 2: Create Registered Database for Source PDB
 
 For this task you need the following info from previous steps:
 * Source DB Private IP
@@ -109,7 +109,7 @@ For this task you need the following info from previous steps:
 
   ![](images/1-6.png =50%x*)
 
-## **STEP 3:** Create Registered Database for Target ADB
+## Task 3: Create Registered Database for Target ADB
 
 For this task you need the following info from previous steps:
 * Database Administrator Password
@@ -142,7 +142,7 @@ For this task you need the following info from previous steps:
   ![](images/3-6.png =50%x*)
 
 
-## **STEP 4**: Create Migration
+## Task 4: Create Migration
 
   1. In the OCI Console Menu ![](images/hamburger.png =22x22), go to **Migration > Migrations**
 

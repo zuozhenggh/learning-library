@@ -33,7 +33,7 @@ In this lab, you will:
 This lab assumes that you have:
 * A Data Science notebook session.
 
-## **STEP 1:** Working with JupyterLab
+## Task 1: Working with JupyterLab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..
 
@@ -41,7 +41,7 @@ Now that JupyterLab is open, it can be seen that the screen is split into two se
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
-## **STEP 2:** Summary of Commands
+## Task 2: Summary of Commands
 
 The following is a summary of the steps that are covered in this lab along with the most important Python commands. You can use it as a reference guide for when you build your own models.
 
@@ -56,7 +56,7 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## **STEP 3:** Install a Conda Package
+## Task 3: Install a Conda Package
 
 A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
@@ -66,7 +66,7 @@ A conda package is a collection of libraries, programs, components and metadata.
 1. Wait for the conda package to be installed.
 
 
-## **STEP 4:** Binary Classification Model
+## Task 4: Binary Classification Model
 
 To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
 
@@ -90,7 +90,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## **STEP 5:** Next Steps
+## Task 5: Next Steps
 
 **Congratulations! You have successfully completed the lab**
 

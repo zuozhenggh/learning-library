@@ -34,7 +34,7 @@ In this lab you will learn:
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
-## **STEP 1:** Prepare Database
+## Task 1: Prepare Database
 Select between *STEP 1A* and *STEP 1B*
 
 ## **STEP 1A:** Prepare Database Using EM Console
@@ -80,7 +80,7 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emopt2start.jpg " ")
 
-## **STEP 2:** Performance Hub
+## Task 2: Performance Hub
 
 1. Click on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
@@ -142,7 +142,7 @@ Select between *STEP 1A* and *STEP 1B*
 
 16. Click on **Save** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
 
-## **STEP 3:** Real-Time Database Operations Monitoring
+## Task 3: Real-Time Database Operations Monitoring
 
 1. From the terminal session on your remote desktop, run as user *oracle*
 
@@ -177,7 +177,7 @@ Now execute the file \@DBOP.sql
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## **STEP 4:** Tuning a SQL in a PDB
+## Task 4: Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -239,7 +239,7 @@ Now execute the file \@DBOP.sql
 
 <!-- This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity. -->
 
-## **STEP 5:** SQL Performance Analyzer Optimizer Statistics
+## Task 5: SQL Performance Analyzer Optimizer Statistics
 
 In this step we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -351,7 +351,7 @@ In this step we need to configure the database to set up optimizer statistics to
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **STEP 6:** Database Workload Replay
+## Task 6: Database Workload Replay
 
 1. Create a Replay Task. You need to open two terminal sessions as user *oracle*.  
 

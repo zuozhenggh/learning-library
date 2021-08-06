@@ -25,7 +25,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1**: Create a Deployment
+## Task 1: Create a Deployment
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
@@ -70,7 +70,7 @@ This lab assumes that you completed all preceding labs.
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 
-## **STEP 2:** Review the Deployment details
+## Task 2: Review the Deployment details
 
 On the Deployment Details page, you can:
 
@@ -84,7 +84,7 @@ On the Deployment Details page, you can:
 
     ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-## **STEP 3:** Launch the GoldenGate Deployment Console
+## Task 3: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
@@ -96,7 +96,7 @@ On the Deployment Details page, you can:
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-## **STEP 4:** Register the Source and Target Database
+## Task 4: Register the Source and Target Database
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
 
@@ -124,7 +124,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## **STEP 5:** Enable the ggadmin user and supplemental logging
+## Task 5: Enable the ggadmin user and supplemental logging
 
 Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
 

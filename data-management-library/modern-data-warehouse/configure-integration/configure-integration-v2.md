@@ -16,7 +16,7 @@ Estimated Lab Time: 60 minutes
 
 - Credentials and details of the EBS database, the source ADW, the target ADW and the ODI repositories.
 
-## **STEP 1:** Use Smart Import to import mappings and other objects
+## Task 1: Use Smart Import to import mappings and other objects
 
 1. Click on the **Designer** tab. Press the dropdown in the top right of the **Designer** pane as shown in the image below. Then, select **Import**.
 
@@ -46,7 +46,7 @@ Estimated Lab Time: 60 minutes
 
     ![](./images/5.9.png " ")
 
-## **STEP 2:** Update EBS Source Configuration
+## Task 2: Update EBS Source Configuration
 
 A data server stores information according to a specific technical logic which is declared into **physical schemas** attached to the data server itself. Every database server or group of flat files that is used in Data Integrator, must be declared as a data server. Smart Import allowed us to import a couple of data servers, but they need to be configured to point to the EBS instance that we spun up and the ADW we intend to use as target.
 
@@ -87,7 +87,7 @@ A data server stores information according to a specific technical logic which i
         
 Now, try logging in as the **apps** user. If you are successfully able to login, test the connection again. If not then you might have to debug the issue.
 
-## **STEP 3:** Update Target Configuration
+## Task 3: Update Target Configuration
 
 1. Similar to how you opened **EBS_SRC** in step 2, **right click** on **ADWC_TRG** and select **Open**. An error will show up complaining about missing credentials. Click on **OK** to close the dialog. Enter the details of the ADW that we spun up in Lab 1 as part of the stack. In the **Definition** tab, enter the details of the **ADMIN** user and click on the **magnifying glass** icon to select the ADW wallet file that we had secure copied (scp) onto the Desktop and select **Open**.
 
@@ -119,7 +119,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
 **Note:** Secure copying the ADW wallet onto the ODI instance is one of the easiest ways in which you can make the credential file of an ADW available to ODI. This method works for any ADW instance regardless of whether it is in the same compartment as the ODI instance or not. We will show an even easier method in Step 5, but it is applicable only to the ADW instances that share the compartment with the ODI instance.
 
-## **STEP 4:** Configure and run the integration
+## Task 4: Configure and run the integration
 
 1.  Return to the **Designer** tab and click on the refresh button. A project name **EBS_ADWC_Data_Migration** will appear.
 
@@ -165,7 +165,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
     
 **Note:** With the completion of this step, you have successfully executed an integration and moved data from EBS onto the target ADW. In addition, you have also created some views on top of the tables. We encourage EBS users to explore the data in the tables and views in the next lab.
 
-## **STEP 5:** Set up another Data Server
+## Task 5: Set up another Data Server
 
 1.  On the **Topology** tab, under **Physical Architecture**, expand **Technologies** and scroll down till you find **Oracle**. Right click on it and then choose **New Data Server**.
 
@@ -193,7 +193,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![](./images/5.45.png " ")
     
-## **STEP 6:** Set up the Destination Data Server
+## Task 6: Set up the Destination Data Server
 
 1.  Right click on the **ADWC_TRG** data server and then click on **New Physical Schema** to create one. Choose the **EBS** schema, since that is where we have created our empty target tables.
 
@@ -205,7 +205,7 @@ Now, try logging in as the **apps** user. If you are successfully able to login,
 
     ![](./images/5.46.png " ")
     
-## **STEP 7:** Create Models for Source and Destination Schemas
+## Task 7: Create Models for Source and Destination Schemas
 
 We will now create models based on the logical schema we created. 
 
@@ -221,7 +221,7 @@ We will now create models based on the logical schema we created.
 
     ![](./images/5.49.png " ")
 
-## **STEP 8:** Set up another Integration Project
+## Task 8: Set up another Integration Project
 
 Now that you have configured your connections to your source and destination, we will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings or variables.
 
@@ -233,7 +233,7 @@ Now that you have configured your connections to your source and destination, we
 
 **Note:** For more about ODI integration projects, click [here](https://docs.oracle.com/middleware/1212/odi/ODIDG/projects.htm#ODIDG311).
 
-## **STEP 9:** Design your Mapping and Run the Integration
+## Task 9: Design your Mapping and Run the Integration
 
 1. Go back to the **Projects** section and expand your project. Under **First Folder**, **right click** on **Mappings** and create a new mapping with a name of your choosing. Make sure to deselect **Create Empty Data Set**.
 

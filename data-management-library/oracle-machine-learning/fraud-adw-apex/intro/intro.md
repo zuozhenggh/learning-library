@@ -30,7 +30,7 @@ After their investigation of the most suspicious claims, we ask them to enter th
 
 <if type="livelabs">
 
-## **Step 1:** Launch the workshop
+## Task 1: Launch the workshop
 
 *Note: it takes approximately 20 minutes to create your workshop environment.*
 
