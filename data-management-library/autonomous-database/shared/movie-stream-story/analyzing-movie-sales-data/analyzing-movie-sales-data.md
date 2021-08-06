@@ -20,7 +20,7 @@ Estimated time: 15 minutes
 - Alternatively, run this script in the SQL Worksheet (TODO)
 CODE GOES HERE?
 
-## STEP 1 - Preparing The Data Warehouse Schema
+## Task 1: Preparing The Data Warehouse Schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
 
  ![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
@@ -99,7 +99,7 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you wil typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next step.
 
 
-## STEP 2 - Learning More About Joins
+## Task 2: Learning More About Joins
 In the previous SQL code we used an inner join to merge time, customer and genre dimensional data with the sales data. However, inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
 
 1. How many news category films were viewed in 2020?
@@ -141,7 +141,7 @@ Unless you had a detailed knowledge of all the available genres you would probab
 **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now we have our time dimension defined as a view and a view to simplify SQL queries against the fact table we can move on to how SQL can help us explore the sales data.
 
 
-## STEP 3 - Exploring Sales Data
+## Task 3: Exploring Sales Data
 
 1. To get started, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
 
@@ -176,7 +176,7 @@ Unless you had a detailed knowledge of all the available genres you would probab
 
     If you want to understand a little bit more about **result cache**, then continue with STEP 2; otherwise, just jump ahead to **STEP 3 - Analyzing Customer Viewing Habits**.
 
-## STEP 4 - Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
+## Task 4: Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
 
 A result cache is an area of memory within our Autonomous Data Warehouse that stores the results of database queries for reuse. The **cached** rows are shared across queries and sessions. What this means is that when we run a query, the first thing the database does is to search its cache memory to determine whether the result already exists in the result cache. If it does, then the database retrieves the result from memory instead of executing the query. If the result is not cached, then the database executes the query, returns the result and stores the result in the result cache so the next time the query is run, the results can simply be returned from the cache.
 
@@ -262,7 +262,7 @@ But, how do you know if the results from a query are returned from the **result 
 
 Now that we have some insight into how Autonomous Data Warehouse manages queries, let's expand our first query and begin to do some analysis of our sales data.
 
-## STEP 5 - Analyzing Customer Viewing Habits
+## Task 5: Analyzing Customer Viewing Habits
 
 1. Switch back to the tab where SQL Worksheet is running.
 
@@ -287,7 +287,7 @@ Here we are using a built-in function, TO_CHAR, to convert the column 'day', whi
 
     This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue for the days in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
 
-## STEP 6 - Calculating Each Day's Contribution
+## Task 6: Calculating Each Day's Contribution
 
 ### Overview
 
@@ -350,7 +350,7 @@ We are going to extend the **```RATIO_TO_REPORT```** function a little further o
 
     We can see that Monday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Friday** are actually providing the highest levels of contribution across the whole week.  Now let's try to drill down and breakout the data across different dimensions to get some more insight. 
 
-## STEP 7 - Breaking Data Out By Specific Genre
+## Task 7: Breaking Data Out By Specific Genre
 
 Let's expand our focus and consider the types of movies that customers are watching each day. To do this, we can use the **SQL CASE** feature (which is similar to the IF() function in Excel) in conjunction with a count for each genre of movie as follows and examine the ratio of people streaming each genre on each day:
 
@@ -384,7 +384,7 @@ From the data we can see that viewing of Reality-TV related movies is definitely
 
 We are starting to get an interesting picture of our customers' viewing habits during the week. The next stage is to drill into this daily analysis and look at how the daily contributions change within each of the four reporting quarters.
 
-## STEP 8 - Breaking Data Out By Quarter
+## Task 8: Breaking Data Out By Quarter
 
 It's most likely that when you are doing this type of analysis on your own data set, the next most obvious step is to look at the same data over time to see if any other interesting patterns pop out.
 
@@ -427,7 +427,7 @@ It's most likely that when you are doing this type of analysis on your own data 
 
     ![Results with addition of PARTITION BY clause](images/lab-5a-step-8-substep-4.png)
 
-## STEP 9 - Creating An Excel-Like Pivot Table
+## Task 9: Creating An Excel-Like Pivot Table
 
 ### Overview
 

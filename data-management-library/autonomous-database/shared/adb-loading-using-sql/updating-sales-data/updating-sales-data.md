@@ -112,7 +112,7 @@ The files for this data load process are stored in a series of regional buckets.
 
 <br><br>
 
-## STEP 2 - Creating The Staging Table For Argentina's Adjustments
+## Task 2: Creating The Staging Table For Argentina's Adjustments
 
 1. Copy and paste the following code into your SQL worksheet - you can get the correct regional URI from the table in the overview section:
 
@@ -165,7 +165,7 @@ The files for this data load process are stored in a series of regional buckets.
     ![Query result showing number of rows](images/3054194697.png)
 <br><br>
 
-## STEP 3 - How Much Space Is The Staging Table Using?
+## Task 3: How Much Space Is The Staging Table Using?
 
 1. To find out how much space our new external table is consuming, we can run the following query in our SQL worksheet:
 
@@ -186,7 +186,7 @@ The files for this data load process are stored in a series of regional buckets.
     This means that our table is not consuming any space within our database.
 <br><br>
 
-## STEP 4 - Updating The Movie Sales Data Using MERGE
+## Task 4: Updating The Movie Sales Data Using MERGE
 
 1. Copy and paste the command below in SQL worksheet and run it:
     ```
@@ -223,7 +223,7 @@ The files for this data load process are stored in a series of regional buckets.
 
 <br><br>
 
-## STEP 5 - Finding Out Space Usage For The Movie Sales Data
+## Task 5: Finding Out Space Usage For The Movie Sales Data
 
 1.  Now we can run the same space calculation query in our SQL worksheet.
 

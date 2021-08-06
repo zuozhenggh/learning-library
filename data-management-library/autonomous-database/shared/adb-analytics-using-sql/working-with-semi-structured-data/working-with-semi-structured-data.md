@@ -171,7 +171,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     As you can see, the data is shown in its native JSON format, i.e. there are no columns in the table for each identifier (movie_id, sku, list price, and so on). So how can we query this table if there is only one column? 
 
-## STEP 2 - A Simple Query Over JSON Data
+## Task 2: A Simple Query Over JSON Data
 
 1. As a first step, let's show you how to query  JSON data using SQL. We can use special notation within our SQL query to convert the content above into a more normal looking table containing columns and rows. This approach is known as Simple Dot Notation and it looks very similar to the way we have constructed previous queries. Here is our first query which you can run in your SQL Worksheet:
 
@@ -215,7 +215,7 @@ Although queries on external data will not be as fast as queries on database tab
 
 Now let's try using some more advanced features that will allow us to convert the list of cast members and crew members into rows and columns of data. These can then be joined with our movie sales data, allowing us to combine unstructured movie JSON data with our structured movie sales data.
 
-## STEP 3 -  Simplifying JSON Queries
+## Task 3:  Simplifying JSON Queries
 
 Your Autonomous Data Warehouse includes a number of helper packages that can simplify access to your JSON data. The **JSON_TABLE** function can be used to automatically translate JSON data into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
 
@@ -283,7 +283,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can s
 
 We can now use this view as the launch point for doing more analysis!
 
-## STEP 4 -  Building A More Sophisticated JSON Query
+## Task 4:  Building A More Sophisticated JSON Query
 
 In this query, we are using the **JSON_TABLE** function again, to convert our JSON data into a more natural row-column resultset.
 
@@ -304,7 +304,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query results showing directors for each movie](images/sql-analytics-lab5-step4-substep2.png)
 
-## STEP 5 - Combining JSON Data And Relational Data
+## Task 5: Combining JSON Data And Relational Data
 
 1. Assuming we want to know how much revenue each movie made in each of the years when it was available, we can use a much simpler query, somthing like this:
 
@@ -339,7 +339,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query result of combining queries](images/sql-analytics-lab5-step5-substep3.png)
 
-## STEP 6 - Ranking Directors Based On Quarterly Movie Revenue
+## Task 6: Ranking Directors Based On Quarterly Movie Revenue
 
 1. We can extend the query by adding a ranking calculation, broken out by quarter within each year, to determine how much each director's films contributed to MovieStream's overall revenue. Note that we are reusing techniques from the previous lab, specifically SQL's window functions. The last column ranks each director based on the annual revenue of his or her movies.
 
@@ -365,7 +365,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query result showing top grossing directors](images/sql-analytics-lab5-step6-substep2.png)
 
-## STEP 7 - Finding The Top 5 Directors Based On Revenue
+## Task 7: Finding The Top 5 Directors Based On Revenue
 
 1. The final part of this query is to add a filter so it only returns the top 5 directors in each quarter:
 
