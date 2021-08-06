@@ -23,7 +23,7 @@ _Estimated Lab Time_: 15 minutes
     * Lab 6: Monitoring and Ad-hoc scaling up ADW activity for optimal OAC experience
     * Lab 7: Building simple Interactive Analysis
 
-## **STEP 1**: Add Additional Data Set
+## Task 1: Add Additional Data Set
 
 Lets bring in a new Data Set with Customer demographics to analyze the issue further.
 
@@ -106,7 +106,7 @@ Click **Apply Script**.
 
      ![Apply Script](../mash-datasets/images/apply-script.png)
 
-## **STEP 2**: Join the Data Sets
+## Task 2: Join the Data Sets
 
 When you add more than one data set to a project, the system tries to find matches for the data that’s added. It automatically matches external dimensions where they share a common name and have a compatible data type with attributes in the existing data set.  
 Lets join the Data Sets using **CUST\_ID** as the join condition between the data sets.
