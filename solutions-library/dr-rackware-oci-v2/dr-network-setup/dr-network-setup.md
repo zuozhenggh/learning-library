@@ -75,7 +75,7 @@ Estimated Lab Time 45-60 minutes
     The ords.war file can be downloaded using the following link [ords](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html)
         ![](rackwaresaleplay/Objectstorage.PNG)
     
-## **Step 1:** Create Stack    
+## Task 1: Create Stack    
 1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
 
 2. Import the zip file into the stack 
@@ -96,7 +96,7 @@ Estimated Lab Time 45-60 minutes
 7. Review 
     ![](./images/ResourceManager-Review.PNG)
 
-## **Step 2:** Plans
+## Task 2: Plans
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -107,7 +107,7 @@ Estimated Lab Time 45-60 minutes
 3.  Wait until the icon to turn green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **Step 3:** Apply
+## Task 3: Apply
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)
@@ -115,7 +115,7 @@ Estimated Lab Time 45-60 minutes
 2.  Wait unitl the icon to turn green.
     ![](./images/ResourceManager-Apply-2.PNG)
 
-## **Step 4:** Destroy
+## Task 4: Destroy
 1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
 2.  Select destroy from the dropdown menu.

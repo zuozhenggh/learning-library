@@ -44,7 +44,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 1**: Register your Autonomous Database with Oracle Data Safe
+## Task 1: Register your Autonomous Database with Oracle Data Safe
 
 1. Make sure that you have the correct region in Oracle Cloud Infrastructure selected.
 
@@ -68,7 +68,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 2**: Run a SQL script using Oracle Database Actions to load sample data into your database
+## Task 2: Run a SQL script using Oracle Database Actions to load sample data into your database
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
@@ -139,7 +139,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 3**: Sign in to the Oracle Data Safe Console and view the list of registered target databases
+## Task 3: Sign in to the Oracle Data Safe Console and view the list of registered target databases
 
 1. Return to the browser tab where you are signed in to **Oracle Cloud Infrastructure**. You last left off on the **Tools** tab for your database. If you navigated away from the **Tools** tab, select **Oracle Database** and then **Autonomous Transaction Processing** from the navigation menu, and then click the name of your database.
 
@@ -182,7 +182,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 4**: View details for your registered target database from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
+## Task 4: View details for your registered target database from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
 The **Registered Databases** page for the Oracle Data Safe service in the Oracle Cloud Infrastructure Console also lists registered target databases to which you have access.
 

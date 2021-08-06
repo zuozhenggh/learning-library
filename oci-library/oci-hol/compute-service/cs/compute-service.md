@@ -12,7 +12,7 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
   
-## **STEP 1**: Creating <if type="freetier">a Web Server on </if>a Compute Instance
+## Task 1: Creating <if type="freetier">a Web Server on </if>a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
@@ -77,7 +77,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <if type="livelabs">
     ![](images/compute-livelabs-running/png)</if>
 
-## **STEP 2**: Connect to the instance <if type="freetier">and install Apache HTTP Server</if>
+## Task 2: Connect to the instance <if type="freetier">and install Apache HTTP Server</if>
 
 1. To connect to the instance, use Cloud Shell and enter the following command:
 

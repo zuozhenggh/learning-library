@@ -42,7 +42,7 @@ e.g: https://111.888.111.888:7803/em
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
 
-## **STEP 0:** Running your Workload
+## Task 0: Running your Workload
 
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
@@ -70,7 +70,7 @@ Navigate to "***Setup >> Security >> Named Credential***" and Select **ROOT** cr
   ![](images/named_creds_job_succeeded.jpg " ")
 
 
-## **STEP 1:** Understand how to create an OS Command Job
+## Task 1: Understand how to create an OS Command Job
 
 In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
@@ -112,7 +112,7 @@ In this workshop we will first review the Job you ran in STEP 0 to set user *ora
 
 Now the Library job created is ready to be used as in STEP 0 to setup user **oracle** Named Credentials.
 
-## **STEP 2:** Create a SQL command Job
+## Task 2: Create a SQL command Job
 
 In this workshop we will create and run a SQL Command Job to determine how many targets are down from the Enterprise Manager Repository
 
@@ -205,7 +205,7 @@ Now let's see how we can run a sql job to alter the initialization parameters of
 This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.  
 
 
-## **STEP 3:** Create Database Backup Job using Wizard
+## Task 3: Create Database Backup Job using Wizard
 
 Jobs can be accessed from the Jobs menu or from within the context of a target. Let's look at it from a Database target perspective.
 

@@ -6,7 +6,7 @@ As part of the following exercise you will use IDCS APIs to make queries to the 
 
 
 
-## STEP 1: Create a confidential app
+## Task 1: Create a confidential app
 
 
 In this section, you register an application in Oracle Identity Cloud Service. This task is required to obtain the credentials (*Client ID and Client Secret*) that are used for authentication in REST API calls. The credentials are equivalent to service credentials (*ID and password*) that your client uses to communicate with Oracle Identity Cloud Service. This task also helps you determine which requests are authorized through the REST API.
@@ -59,7 +59,7 @@ You have created a confidential app to make REST API calls to your Oracle Identi
 ***
 
 
-## STEP 2: Download and Configure Postman
+## Task 2: Download and Configure Postman
 
 
 1. We need first to download the API client. For the purpose of this lab we will use **Postman**. Copy the following URL and past it in Firefox. `https://www.postman.com/downloads/`. Click **Download** and select the version based on your Operating System. 
@@ -156,7 +156,7 @@ You have created a confidential app to make REST API calls to your Oracle Identi
     ![](./images/p_12.png)
 
 
-## STEP 3: Modifying users via Oracle Identity Cloud Service API
+## Task 3: Modifying users via Oracle Identity Cloud Service API
 
 1. On the Collections tab, expand **Users**, and then **Search**.
 2. Click on **Search all users (return specific attributes)**

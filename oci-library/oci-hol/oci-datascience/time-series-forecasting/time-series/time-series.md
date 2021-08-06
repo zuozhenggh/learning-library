@@ -21,7 +21,7 @@ This lab assumes that you have:
 * A Data Science notebook session
 * A working knowledge of Python
 
-## **STEP 1:** Set up Conda Environment
+## Task 1: Set up Conda Environment
 
 1.  After you log into OCI Data Science and create a notebook, go to `File` and select `New Launcher`.  You will see the `Environment Explorer`. When you click on `Environment Explorer`, you will see each Explorer tab allowing you to filter on either the Data Science, Installed, or Published Conda environments.  The Data Science Conda Environments tab shows a list of pre-built conda environments you can install.
 
@@ -48,7 +48,7 @@ This lab assumes that you have:
 
     ![](../images/pick_conda_environ_for_notebook.png " ")
 
-## **STEP 2:** Download Time Series Forecasting JupyterLab Notebook from Object Storage
+## Task 2: Download Time Series Forecasting JupyterLab Notebook from Object Storage
 
 1.  To access the time series forecasting JupyterLab notebook, first open a new terminal window.  Copy and paste the following commands in the terminal window and press “Enter”. The commands will create a folder named 'demo' inside the directory 
 /home/datascience/conda/notebooks/mlcpuv1 and download the time series notebook file time-series-hol.ipynb in there.
