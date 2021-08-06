@@ -19,7 +19,7 @@ Oracle Machine Learning is a powerful tool for analyzing data, and in this seque
 
 Choose this path and you will:
 - Provision an Autonomous Database and load data into that Autonomous Data Warehouse (ADW) database
-- Create a machine learning model
+- Create a machine learning model using the OML4SQL API
 - Migrate that machine learning model into Autonomous Transaction Processing (ATP)
 - Use prediction in an application
 
