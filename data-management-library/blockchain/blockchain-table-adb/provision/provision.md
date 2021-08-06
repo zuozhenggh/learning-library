@@ -22,7 +22,7 @@ In this lab, you will:
 ## Task 1: Provision a Compute Instance
 
 1. Click on hamburger menu, search for **Compute** and select **Instances** under Compute.
-    
+
     ![](./images/task1-1.png " ")
 
 2. Make sure you are in the same region and compartment as the provisioned ATP instance and click on **Create Instance**.
@@ -47,7 +47,7 @@ In this lab, you will:
     ![](./images/task1-61.png " ")
     ![](./images/task1-62.png " ")
 
-## **STEP 2** Connect to your Compute instance
+## Task 2: Connect to your Compute instance
 
 There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
@@ -207,7 +207,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ![](./images/task4-5.png " ")
 
 6. In the Create User page, under User tab, provide the following details:
-    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER** 
+    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER**
     - **Password** - Provide the new user a password and confirm the Password. In this lab, we provide the same password as admin user for ease of use, **Password - WElcome123##** and confirm the password.
     - **Quota on tablespace DATA** - Set a value for the Quota on tablespace DATA for the user. Click the drop-down and choose **500M**.
     - **Web Access** - Turn on the Web Access radio button to access the SQL Developer Web.

@@ -42,7 +42,7 @@ The current version of Vagrant is 2.2.9
 
     ![](./images/vagrant-3.png " ")
 
-## Step 3 Clone the RAC Vagrant project from github
+## Task 3: Clone the RAC Vagrant project from github
 
 1. Create a directory to house the RAC vagrant project
 
@@ -175,7 +175,7 @@ The following values can be changed:
 
 
 
-## Step 3a: Connect to your instance
+## Task 3:a: Connect to your instance
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 

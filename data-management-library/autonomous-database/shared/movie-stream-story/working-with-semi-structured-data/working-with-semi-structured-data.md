@@ -133,7 +133,7 @@ An outer join extends the result of a simple join. An outer join returns all row
 
 
 
-## STEP 2  - Loading JSON Movie Data
+## Task 2: Loading JSON Movie Data
 
 In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 

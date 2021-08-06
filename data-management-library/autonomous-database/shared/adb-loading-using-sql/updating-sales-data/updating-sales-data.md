@@ -91,7 +91,7 @@ The files for this data load process are stored in a series of regional buckets.
 **Note** : In the steps below we will use the same SQL feature used in the earlier data loading lab that allows us to define some variables to simplify this data merge process.
 <br><br>
 
-## STEP 1 - Finding Out Space Usage for the Movie Sales Data
+## Task 1: - Finding Out Space Usage for the Movie Sales Data
 
 1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
 
@@ -243,7 +243,7 @@ The files for this data load process are stored in a series of regional buckets.
 
 <br><br>
 
-## STEP 6 – Adding External Tables For Other Country-Based Adjustments
+## Task 6: – Adding External Tables For Other Country-Based Adjustments
 
 #### Overview
 We have processed the financial adjustments for Argentina. Now we are going to process the adjustments from the other countries using the same approach. (Don't forget to use the 'Copy' button to make it easier to copy and paste the code below into the SQL Worksheet).
