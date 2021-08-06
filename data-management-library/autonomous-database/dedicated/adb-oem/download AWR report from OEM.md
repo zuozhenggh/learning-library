@@ -21,7 +21,7 @@ As a Database Administrator,
    - Successful connection of ATP dedicated database from OEM.
 
 
-## STEP 1: Generate AWR report for ATP dedicated database from OEM.
+## Task 1: Generate AWR report for ATP dedicated database from OEM.
 
 - Login to your OEM from your browser as sysman user.
     ![](./images/us1_1.png " ")

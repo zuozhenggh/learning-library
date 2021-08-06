@@ -20,7 +20,7 @@ In this lab, you will:
       - Lab 2: Pre-Upgrade Requirements
       - Lab 3: One-Hop Upgrade
 
-## **STEP 1**: Start the 12c Admin Server and Managed Servers
+## Task 1: Start the 12c Admin Server and Managed Servers
 
 1. Navigate to the 12c domain directory and Start the servers in the order given below
 
@@ -82,7 +82,7 @@ In this lab, you will:
     <copy>./stopWebLogic.sh</copy>
     ```
 
-## **STEP 2:** Verify the Upgrade Process
+## Task 2: Verify the Upgrade Process
 
 1. Run the *startDomain12c.sh* script to restart the 12c Domain. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 

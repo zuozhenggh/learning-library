@@ -13,7 +13,7 @@ Estimated time: 15 minutes
 
 * Make sure to have your own compartment created
 
-## **Step 1**: Navigate to Virtual Cloud Networks Section
+## Task 1: Navigate to Virtual Cloud Networks Section
 
 Using the top _Hamburger menu_ navigate to the _Networking -> Virtual Cloud Networks_ section. On the left toolbar you will see a Compartment explorer. Make sure it is set to your newly created compartment.
 Use the [+] to expand the Workshop compartment.

@@ -28,7 +28,7 @@ In this lab, you will be guided through the following steps:
 - Some Experience with MySQL Shell
 - Complete Lab 1: Create Local SSH Key
 
-## **STEP 1**: Create Compartment
+## Task 1: Create Compartment
 
 You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
 
@@ -51,7 +51,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Compartment** 
     ![Compartment4](./images/01compartment04.png " ")
 
-## **STEP 2**: Create Policy
+## Task 2: Create Policy
 1.	Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
@@ -90,7 +90,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Policy Creation**
     ![Policy3](./images/02policy05.png " ")
 
-## **STEP 3:** Create Virtual Cloud Network
+## Task 3: Create Virtual Cloud Network
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -149,7 +149,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
      New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn13.png " ")
 
-## **STEP 4:** Create a MySQL Database System.
+## Task 4: Create a MySQL Database System.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 
@@ -233,7 +233,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     ![MDS](./images/04mysql02_11.png" ")
 
-## **STEP 5:** Create Client Virtual Machine
+## Task 5: Create Client Virtual Machine
 
 **Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
 
@@ -279,7 +279,7 @@ When you are finished, return to this step.
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+## Task 6: Connect to MySQL Database
 
 1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
@@ -367,7 +367,7 @@ When you are finished, return to this step.
 
     ![Connect](./images/06workbench02.png " ")
 
-## **STEP 7:** Start, stop, or reboot MySQL Database System
+## Task 7: Start, stop, or reboot MySQL Database System
 
 Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
@@ -401,7 +401,7 @@ Select a shutdown type:
 
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
-## **STEP 8:** Delete MySQL Database System
+## Task 8: Delete MySQL Database System
 
 Deleting a Database System permanently deletes it. Any manual backups associated with the deleted Database System are retained for their retention periods. Automatic backups are deleted with the Database System.
 

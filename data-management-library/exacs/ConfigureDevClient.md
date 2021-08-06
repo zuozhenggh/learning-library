@@ -31,7 +31,7 @@ As a database user, a DBA, or an application developer,
 
 ## Steps
 
-### **Step 1:** Provision an OCI Marketplace Developer Client image instance
+### Task 1: Provision an OCI Marketplace Developer Client image instance
 
 We start by deploying a pre-configured client machine instance from the OCI marketplace
 
@@ -100,7 +100,7 @@ Ensure that the **Assign A Public IP Address** button is selected. You will need
 <br>
 
 
-### **Step 2:** Connect to dev client desktop over VNC
+### Task 2: Connect to dev client desktop over VNC
 
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
@@ -156,7 +156,7 @@ Connect to your VNC desktop and provide the password you changed on the host ear
 You should now see a linux desktop in your VNC window.
 
 
-### **Step 3:** Connect to your database using SQL Developer and SQL Plus
+### Task 3: Connect to your database using SQL Developer and SQL Plus
 
 In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 

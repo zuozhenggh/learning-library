@@ -17,7 +17,7 @@ In this lab, you will:
 - A PeopleSoft Cloud Manager Instance
 - A PeopleSoft Environment Topology and Template 
 
-## **STEP 1**: Creating a New PeopleSoft Environment
+## Task 1: Creating a New PeopleSoft Environment
 
 1. Navigate to Cloud Manager Dashboard > **Environments**  
     ![](./images/1dashenv.png "")
@@ -57,7 +57,7 @@ In this lab, you will:
 
     ![](./images/e4.png "")
 
-## **STEP 2**: Monitoring Infrastructure Creation
+## Task 2: Monitoring Infrastructure Creation
 
 1. Refresh the page, and you'll see the status is **Initiating**.
     ![](./images/6initiating.png "")
@@ -73,7 +73,7 @@ It takes about 10 minutes to see the status change to **Infrastructure Creation 
 
 
 
-## **STEP 3**: Monitoring Deployment of PeopleSoft Environment
+## Task 3: Monitoring Deployment of PeopleSoft Environment
 
 1. Now that the infrastructure has been created, we can deploy our environment. Click the arrow and **Deploy**
     ![](./images/10deploy.png "")
@@ -89,7 +89,7 @@ It takes about 10 minutes to see the status change to **Infrastructure Creation 
 
 Provisioning takes about 90 minutes. You can monitor throughout this time.
 
-## **STEP 4**: Signing in to PeopleSoft Environment
+## Task 4: Signing in to PeopleSoft Environment
 
 1. Once your environment is in the **Running** status, go to **Details** again.
     ![](./images/14details.png "")
@@ -109,7 +109,7 @@ Provisioning takes about 90 minutes. You can monitor throughout this time.
 
 
 
-## **STEP 5**: Cloud Manager Actions for PeopleSoft Environment
+## Task 5: Cloud Manager Actions for PeopleSoft Environment
 
 We will cover Cloud Manager 12 features in depth in the following labs. Here is an **Overview** of the actions you can perform.
 

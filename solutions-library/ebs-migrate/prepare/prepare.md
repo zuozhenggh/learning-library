@@ -36,7 +36,7 @@ In this lab, you will:
         * `apps_password` (In this Lab: apps)
         * `weblogic_password` (In this Lab: welcome1)
 
-## **STEP 1:** Copy API signing key to the source Oracle E-Business Suite environment
+## Task 1: Copy API signing key to the source Oracle E-Business Suite environment
 
 If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
 
@@ -123,7 +123,7 @@ The key file must be placed in a location where it can be referenced by the Orac
         
     ![](./images/7.png " ")
 
-## **STEP 2:** Create Stage and Archive Directories 
+## Task 2: Create Stage and Archive Directories 
 
 These directories will hold:
 
@@ -143,7 +143,7 @@ These directories will hold:
 
     ![](./images/8.png " ")
 
-## **STEP 3:** Enable SSH on all Required Nodes
+## Task 3: Enable SSH on all Required Nodes
 
 All nodes must have SSH enabled. 
 
@@ -214,7 +214,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/14.png " ")
 
-## **STEP 4:** Put the database into Archive Mode
+## Task 4: Put the database into Archive Mode
 
 1.	Stop Apps Tier using the stopapps.sh script.
 

@@ -15,7 +15,7 @@ In this lab, you will:
 * Customize the built-in system intents and the prompts
 * Test the Utterances and Modified Prompt
 
-## **STEP 1**: Change the Invocation Name
+## Task 1: Change the Invocation Name
 
 An important part of configuring any skill is coming up with a good invocation name, which is used in explicit invocation of the skill. Here are the steps to change the invocation name of recently added skill:
 
@@ -24,7 +24,7 @@ An important part of configuring any skill is coming up with a good invocation n
 3. Scroll down to the Interaction Model section of the page and change the **Invocation Name** to *Pizza King*.
 4. Change the example utterance to *Order Pizza*.
 
-## **STEP 2:** Test the Invocation Name
+## Task 2: Test the Invocation Name
 
 Now let’s try various invocation patterns and see whether and how the digital assistant responds:
 
@@ -40,7 +40,7 @@ Now let’s try various invocation patterns and see whether and how the digital 
 10. Now try *Can you use Pizza King to place an order.*
 11. Click **Reset**.
 
-## **STEP 3**: System Intents and Prompts
+## Task 3: System Intents and Prompts
 You can customize the built-in system intents and the prompts that are driven by them.
 
 First, let's add some utterances to the built-in help intent:
@@ -62,7 +62,7 @@ Let's modify the DA's help prompt:
 3. Modify the value of **Digital Assistants Help Prompt** to *Welcome! I can do following things for you:*
 4. Click the Train icon, click **Submit**, and then wait a few seconds for the training to complete.
 
-## **STEP 4**: Test the Utterances and Modified Prompt
+## Task 4: Test the Utterances and Modified Prompt
 
 To see the new utterances and prompt in action:
 

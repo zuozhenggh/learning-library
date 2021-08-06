@@ -19,7 +19,7 @@ In this lab, you will:
 
 In order to complete this lab, you should have completed the preceding lab and have both an Extract and Replicat running.
 
-## **STEP 1**: Using the Performance Metrics Server
+## Task 1: Using the Performance Metrics Server
 
 1.  In the GoldenGate deployment console, click **Performance Metrics Server**.
 
@@ -41,7 +41,7 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 4.  Repeat steps 1-3 to view a snapshot of the Replicat's (named **Rep** in our lab) Database Statistics.
 
-## **STEP 2:** Viewing GoldenGate Metrics in the OCI Console
+## Task 2: Viewing GoldenGate Metrics in the OCI Console
 
 1.  On the OCI GoldenGate Deployments page, select **GGSDeployment**.
 

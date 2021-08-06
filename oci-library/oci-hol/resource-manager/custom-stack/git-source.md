@@ -1,4 +1,4 @@
-## **Step 1:** (OPTIONAL) Migrate source code to GitHub
+## Task 1: (OPTIONAL) Migrate source code to GitHub
 
 As you often hear Terraform referred to as Infrastructure is Code, an optimal strategy includes the use of source control for all Terraform configuration.  With resource manager, you can integrate directly to your source control through the use of **Configuration Source Providers**.  In this section you will create a new configuration source provider using Github and store your configuration.  To test it out, you will make a small change to your code and apply (update) the stack.  Watch as ORM pulls directly from GitHub.
 

@@ -19,7 +19,7 @@ In this lab, you will:
 
 - You must have logged in to your own cloud account or a LiveLabs account.
 
-## **STEP 1**: Provision a Compute Instance
+## Task 1: Provision a Compute Instance
 
 1. Click on hamburger menu, search for **Compute** and select **Instances** under Compute.
     
@@ -132,7 +132,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
-## **STEP 3**: Provision an ATP Instance
+## Task 3: Provision an ATP Instance
 
 1. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
 
@@ -189,7 +189,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![Database instance homepage.](./images/task3-82.png " ")
 
-## **STEP 4:** Create a New User Using Database Actions
+## Task 4: Create a New User Using Database Actions
 
 1. On the DEMOATP instance details page, click on the **Tools** tab, select **Database Actions**, a new tab will open up.
     ![](./images/task4-1.png " ")
@@ -235,7 +235,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ```
     ![](./images/task4-9.png " ")
 
-## **STEP 5:** Connect to ATP as a New User from SQL Developer Web
+## Task 5: Connect to ATP as a New User from SQL Developer Web
 
 1. Click on the hamburger menu of the Oracle Database Actions and select **SQL** under Development.
 

@@ -34,7 +34,7 @@ This lab assumes you have:
 In this lab we will setup GoldenGate Microservices
 
 
-## **STEP 1:** Recreate Deployments Using Adminclient
+## Task 1: Recreate Deployments Using Adminclient
 
  Open a terminal session
 
@@ -54,7 +54,7 @@ Browser to check the deployment
 
 Swingbench to apply transactions
 
-### **STEP 1**: Run a script to perform a rapid deployment.
+### Task 1: Run a script to perform a rapid deployment.
 
 1. Open up a terminal window and change directory to Lab6 and Review script build_all_bi_di.sh.
 
@@ -100,7 +100,7 @@ While it's running note the messages displayed that informs what has been added 
 ![](images/600/Lab600_image6002.PNG)
 
 
-### **STEP 2**: Check the deployment using the AdminClient
+### Task 2: Check the deployment using the AdminClient
 
 This step will be a short introduction to the AdminClient.  If you’re familiar with Classic GoldenGate, this would be like using GGSCI.  However, the advantage with the AdminClient is that you can connect to separate GG deployments from this one interface.  With GGSCI you would need to execute it in each server environment where GG is installed.  
 In this step we will use the AdminClient to check the deployment instead of the web interface.

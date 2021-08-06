@@ -29,7 +29,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Connect to the Database
 
 
-## **STEP 1**: Verify the database roles in the database
+## Task 1: Verify the database roles in the database
 
 1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally.
 
@@ -49,7 +49,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 We can conclude that the Database in AD1 is the primary database and the database in AD2 is the Standby database.
 
 
-## **STEP 2**: Perform the role transition
+## Task 2: Perform the role transition
 
 1. In the OCI console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
 
@@ -78,7 +78,7 @@ We can conclude that the Database in AD1 is the primary database and the databas
 
     > **Note:** If you get an error indicating that the failover failed and you need to open an SR, try again and enter the sys password carefully.
 
-## **STEP 3**: Verify the database roles in the database
+## Task 3: Verify the database roles in the database
 
 1. Using SQL Developer, verify the roles again with following Query:
 

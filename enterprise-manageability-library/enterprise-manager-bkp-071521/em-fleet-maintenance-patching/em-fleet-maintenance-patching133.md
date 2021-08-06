@@ -50,7 +50,7 @@ Watch a preview of database patching using Oracle Enterprise Manager Fleet Maint
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
 | 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
-## **Step 0:** Running your Workload
+## Task 0: Running your Workload
 ### Login to Host using SSH Key based authentication
 Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -99,7 +99,7 @@ In the interest of simplifying the setup and save time, the following steps were
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## **Step 1:** Detect Configuration Pollution
+## Task 1: Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -165,7 +165,7 @@ In the next section we will follow these recommendations to perform the followin
 
   - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
 
-## **Step 2:** Database Server patching with Fleet maintenance
+## Task 2: Database Server patching with Fleet maintenance
 
 ### Database Fleet Maintenance
 

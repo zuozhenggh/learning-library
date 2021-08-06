@@ -16,7 +16,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Access to either a CPU or GPU instance as covered in labs 1 and 2
 
-## **STEP 1**: COCO Annotator
+## Task 1: COCO Annotator
 
 1. [COCO Annotator](https://github.com/jsbroks/coco-annotator) is an open-source tool that manages datasets and allows users to create masks around objects within an image. It is built using web-based frameworks and must be run using docker. Install Docker based on the operating system for your system. The default for OCI is Oracle Linux, which is compatible with the [CentOS distribution of docker.](https://docs.docker.com/engine/install/centos/). After that setup process is complete, install [Docker Compose](https://docs.docker.com/compose/install/) by following the link and clicking on the **Linux** tab. Finally, follow the [Getting Started](https://github.com/jsbroks/coco-annotator/wiki/Getting-Started) installation instructions for COCO annotator. Running the `docker-compose up` command will start the application, which will run on `http://localhost:5000` on the system. To get access on your desktop environment, create an ssh tunnel by opening a new terminal window and entering the command 
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
 	If that doesn't work, check that the application is running on the compute instance with `curl`. Go to the terminal that has an active session with the compute instance and type `curl http://localhost:5000`. If the application is running correctly, raw HTML should be returned.
 
-## **STEP 2**: Detectron2 
+## Task 2: Detectron2 
 
 1. Installation for [Detectron2](https://github.com/facebookresearch/detectron2) is straightforward and can be completed by following [their instructions](https://detectron2.readthedocs.io/tutorials/install.html)
 

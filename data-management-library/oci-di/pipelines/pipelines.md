@@ -20,7 +20,7 @@ In this lab, you will:
 * **Free Tier/ Paid Oracle Cloud Account**
 * All previous labs have been **successfully completed**
 
-## **STEP 1:** Create an Application
+## Task 1: Create an Application
 
 In OCI Data Integration, an **Application** is a container for published tasks, data flows, and their dependencies. You can run published tasks in an Application for testing, or roll them out into production.
 
@@ -44,7 +44,7 @@ In OCI Data Integration, an **Application** is a container for published tasks, 
 
   ![](./images/my-application.png " ")
 
-## **STEP 2:** Publish tasks to Application
+## Task 2: Publish tasks to Application
 
 In Oracle Cloud Infrastructure Data Integration, a **Task** is a design-time resource that specifies a set of actions to perform on data. You create tasks from a project details or folder details page. You then publish the tasks into an Application to test or roll out into production.
 
@@ -92,7 +92,7 @@ You will publish into the Workshop Application all of the tasks that you have cr
 
   ![](./images/all-tasks.png " ")
 
-## **STEP 3:** Create a Pipeline
+## Task 3: Create a Pipeline
 
 A **pipeline** is a set of tasks connected **in a sequence** or **in parallel** to facilitate data processing. It manages and orchestrates the execution of a set of related tasks and processes. The pipeline functionality in Oracle Cloud Infrastructure Data Integration helps write complex data pipelines using published tasks from any application, and you can add data loader, integration or SQL tasks. You can create pipelines quickly using a designer similar to the Data Flow designer.
 
@@ -354,7 +354,7 @@ The expression will concatenate the **PIPELINE\_NAME** system parameter with the
 
   ![](./images/save-close.png " ")
 
-## **STEP 4:** Create a Pipeline task
+## Task 4: Create a Pipeline task
 
 Pipeline tasks let you take your pipeline design and choose the parameter values you want to use at runtime.
 You will create a Pipeline task for the pipeline you created in the above step.
@@ -387,7 +387,7 @@ You will create a Pipeline task for the pipeline you created in the above step.
 
   ![](./images/save-pipeline-task.png " ")
 
-## **STEP 5:** Publish the Pipeline task
+## Task 5: Publish the Pipeline task
 
 1. On the `DI_Workshop` Project Details page, from the submenu, click **Tasks**.
 

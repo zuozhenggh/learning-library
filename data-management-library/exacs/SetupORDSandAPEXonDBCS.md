@@ -60,7 +60,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Steps
 
-### **Step 1:** Install Terraform
+### Task 1: Install Terraform
 
 - Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer **lab 4** in this workshop for more information.
 
@@ -118,7 +118,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 ![](./images/apex/Setup_Terraform_Provider-2.png " ")
 
 
-### **Step 2:** Download the Terraform Script
+### Task 2: Download the Terraform Script
 
 - Download the Terraform script using the below command.
 
@@ -141,7 +141,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ![](./images/apex/Download_Script.png " ")
 
-### **Step 3:** Run the Terraform script
+### Task 3: Run the Terraform script
 
 - Create an ssh key pair or copy your existing key pair along with OCI API private key to the "keys" folder present in the same directory. Please refer the links mentioned below on how to create keys.
 
@@ -328,7 +328,7 @@ http://<IP address of ORDS server>:<ORDS Port>/ords
 
     **Note : If the URL is unreachable then you might have to add a rule in the firewall of the server where ORDS is installed to allow incoming connections on the ORDS port.**
 
-### **Step 4:** Creating the Schema on the DB instance
+### Task 4: Creating the Schema on the DB instance
 
 #### STEP 4-1: Connect to Database instance
 

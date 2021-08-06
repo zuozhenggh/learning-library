@@ -35,7 +35,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Connect to `PDB1` as `HR` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL script to create a table with data.
 
@@ -116,7 +116,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	```
 </if>
 
-## **STEP 2:** Examine the kurtosis of the distribution
+## Task 2: Examine the kurtosis of the distribution
 <if type="dbcs">
 1.  Make some modifications to the display
 
@@ -203,7 +203,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
   `PRICE_SMALL_CITY` has a higher kurtosis compared to `PRICE_BIG_CITY`. Observe whether there is more data in the tails or around the peak in `PRICE_SMALL_CITY` and in `PRICE_BIG_CITY`.
 
-## **STEP 3:** Examine the kurtosis of the distribution after data evolution
+## Task 3: Examine the kurtosis of the distribution after data evolution
 <if type="dbcs">
 1. Insert more rows in the table.
 

@@ -18,7 +18,7 @@ Watch the video below for an overview of the Build a DB System lab
 - An assigned Database Cluster Password
 - Lab: Download SSH Keys
 
-## **STEP 1**: Login to Oracle Cloud
+## Task 1: Login to Oracle Cloud
 
 1.  Login to Oracle Cloud
 2.  Click on the down arrow next to Oracle Cloud Infrastructure Direct Sign in
@@ -45,7 +45,7 @@ Watch the video below for an overview of the Build a DB System lab
 
 11. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment.
 
-## **Step 2:** Choose a path to connect
+## Task 2: Choose a path to connect
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
 Your options are:

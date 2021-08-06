@@ -18,7 +18,7 @@ Estimated Lab Time: 35 minutes
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * SSH Keys
   
-## **STEP 1**: Create a Virtual Cloud Network instance
+## Task 1: Create a Virtual Cloud Network instance
 Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
 
 1. Login to Oracle Cloud
@@ -44,7 +44,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
 6. On the summary screen, click **View Virtual Cloud Network**.
    
-## **STEP 2**: Create a Database Virtual Machine
+## Task 2: Create a Database Virtual Machine
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
@@ -88,7 +88,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
     ![](images/database-VM-created.png " ")
 
-## **STEP 3**: Gather system details and connect to the Database using SSH
+## Task 3: Gather system details and connect to the Database using SSH
 
 1. Go back to the Oracle Cloud Console and click on the DB System you just created.  Note that you have a fully provisioned Database.
 2. In the Databases section, jot down your **Database Unique Name**.  You will need this for the next lab.

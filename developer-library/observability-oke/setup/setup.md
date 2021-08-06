@@ -18,7 +18,7 @@ In this lab, you will:
 * A compatible browser
 
 
-## **STEP 1**: Create an IAM Compartment
+## Task 1: Create an IAM Compartment
 
 A compartment is a virtual container within your Cloud account used to organize and group related resources for easier management.  When creating a compartment, you must provide a unique name and also a description. 
 
@@ -43,7 +43,7 @@ A compartment is a virtual container within your Cloud account used to organize 
     ![Compartment OCID](images/compartment-ocid.png)
 
 
-## **STEP 2:** Create and Configure an IAM Dynamic Group
+## Task 2: Create and Configure an IAM Dynamic Group
 
 Dynamic groups allow you to assign permissions to Virtual Machines and allow these systems to autonomously perform specific actions against Oracle Cloud Infrastructure services. In this manner you allow applications and systems running on your Virtual Machines to use the Logging Service, for example to dynamically push logs to the centralized service in near-real time.  When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
@@ -89,7 +89,7 @@ Dynamic groups allow you to assign permissions to Virtual Machines and allow the
    
 10. Click **Create** to complete the process and close the dialog screen.
 
-## **STEP 3:** Deploy an OKE (Oracle Container Engine for Kubernetes) Cluster
+## Task 3: Deploy an OKE (Oracle Container Engine for Kubernetes) Cluster
 
 Container Engine for Kubernetes (OKE) is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. DevOps engineers can use unmodified, open source Kubernetes for application workload portability and to simplify operations with automatic updates and patching.
 
@@ -131,7 +131,7 @@ Container Engine for Kubernetes (OKE) is an Oracle-managed container orchestrati
 8.  The cluster deployment process may take a few minutes to complete.  In the meantime, let's move on to the final step of your cloud environment setup.
 
  
-## **STEP 4:** Launch Cloud Shell
+## Task 4: Launch Cloud Shell
 
 The final step of this section is to launch Cloud Shell, download sample code files to your Cloud Shell session, and verify your OKE cluster is online and ready.
 

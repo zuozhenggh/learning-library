@@ -11,7 +11,7 @@ Estimated Lab Time: 10 minutes
 In this lab, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and OCI Object Storage as intermediate storage location.
 
 
-## **STEP 1:** Install the OCI CLI on the Source Database
+## Task 1: Install the OCI CLI on the Source Database
 
 The OCI Command Line Interface (CLI) tool will be needed to get the wallet from the database and put the database dump file into object storage.
 
@@ -111,7 +111,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
     }
     ```
 
-## **STEP 2:** Create an OCI Object Storage Bucket
+## Task 2: Create an OCI Object Storage Bucket
 
 1. Go to **Storage -> Object Storage**.
 
@@ -125,7 +125,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 
 5. Click **Create Bucket**.
 
-## **STEP 3:** Export the Database Schema and Data
+## Task 3: Export the Database Schema and Data
 
 1. Run the datapump export script `datapump_export.sh`:
 
@@ -207,7 +207,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 
     ```
   
-## **STEP 4:** Move the Dump File to the Object Storage bucket on OCI
+## Task 4: Move the Dump File to the Object Storage bucket on OCI
 
 1. Put the dump file in the `atp-upload` bucket:
 
@@ -231,7 +231,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
     }
     ```
 
-## **STEP 5:** Get the OCID of the Database
+## Task 5: Get the OCID of the Database
 
 1. Go to **Oracle Database -> Autonomous Transaction Processing**.
 
@@ -247,7 +247,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 
     ![](./images/db-info.png)
 
-## **STEP 6:** Get the Database Wallet
+## Task 6: Get the Database Wallet
 
 1. Using the OCI CLI, download the database wallet on the source database, replacing the OCID:
 
@@ -293,7 +293,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
     </copy>
     ```
 
-## **STEP 6:** Create a Local Tunnel to the Oracle Autonomous Database
+## Task 6: Create a Local Tunnel to the Oracle Autonomous Database
 
 1. Get the public IP of the bastion host from the terraform output.
 
@@ -356,7 +356,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
     127.0.0.1  jrhdeexg.adb.us-ashburn-1.oraclecloud.com
     ```
 
-## **STEP 7:** Get an OCI Auth token
+## Task 7: Get an OCI Auth token
 
 1. Go to **User -> User Settings**.
 
@@ -376,7 +376,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 
 7. Copy the output of the token to notepad.
 
-## **STEP 8:** Configure Database Cloud Credential
+## Task 8: Configure Database Cloud Credential
 
 1. Using SQL*PLus Instant Client, connect to the remote database through the tunnel created earlier:
 
@@ -441,7 +441,7 @@ The OCI Command Line Interface (CLI) tool will be needed to get the wallet from 
 5. Type `exit` to exit SQL*Plus.
 
 
-## **STEP 9:** Import the Dump File into the Database
+## Task 9: Import the Dump File into the Database
 
 Use datapump to import the data dump.
 

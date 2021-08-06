@@ -30,7 +30,7 @@ To complete this lab, you must have:
 * An existing compartment in which the resources created will reside.
 * If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
-## **STEP 1:** Creating a Virtual Cloud Network
+## Task 1: Creating a Virtual Cloud Network
 
 1. Please refer to this [link] (https://oracle-base.com/articles/vm/oracle-cloud-infrastructure-oci-create-a-compartment) if you want to create a new compartment. In this lab will be used an existing compartment called _skillset_.
 
@@ -75,7 +75,7 @@ To complete this lab, you must have:
   ![create subnet form 2](./images/create-subnet-form-2.png)
 
 
-## **STEP 2:** Creating a Linux Instance in OCI
+## Task 2: Creating a Linux Instance in OCI
 
 After the Virtual Cloud Network and its components are provisioned, the next step would be to create a Linux Instance to run the OracleJET code.
 
@@ -97,7 +97,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
 5. Click the **Create** button.
 
-## **STEP 3:** Connecting to the Instance and Installing the Needed Packages
+## Task 3: Connecting to the Instance and Installing the Needed Packages
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
@@ -169,7 +169,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
-## **STEP 4:** Create a Simple OracleJET Application with a Treemap
+## Task 4: Create a Simple OracleJET Application with a Treemap
 
 After the process of configuring the OCI instance, in order to be able to create and run OracleJET application, you will see an example of a basic project that will contain a treemap structure based on a JSON file stored in the project.
 

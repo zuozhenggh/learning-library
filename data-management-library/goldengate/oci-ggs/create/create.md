@@ -21,7 +21,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1:** Create a Deployment
+## Task 1: Create a Deployment
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
@@ -65,7 +65,7 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## **STEP 2:** Review the Deployment details
+## Task 2: Review the Deployment details
 
 On the Deployment Details page, you can:
 
@@ -79,7 +79,7 @@ On the Deployment Details page, you can:
 
     ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-## **STEP 3:** Launch the GoldenGate Deployment Console
+## Task 3: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 

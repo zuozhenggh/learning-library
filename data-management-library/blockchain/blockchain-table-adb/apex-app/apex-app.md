@@ -19,7 +19,7 @@ In this lab, you will:
 
 - Have successfully completed all the previous labs.
 
-## **STEP 1:** Create APEX Workspace
+## Task 1: Create APEX Workspace
 
 1. Navigate back to the tab with Oracle Cloud console. Click on the hamburger menu, search for **Oracle Database** and click **Autonomous Transaction Processing**.
 
@@ -171,7 +171,7 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
 
 
 
-## **STEP 3:** Import and Run the APEX Application
+## Task 3: Import and Run the APEX Application
 
 Now, we have the blockchain module, the handlers, and the templates defined. Let's import the apex application.
 
@@ -202,7 +202,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task3-7.png " ")
 
-## **STEP 4:** Test the Blockchain functionality in APEX Application
+## Task 4: Test the Blockchain functionality in APEX Application
 
 1. Click on **List of Transactions**.
 

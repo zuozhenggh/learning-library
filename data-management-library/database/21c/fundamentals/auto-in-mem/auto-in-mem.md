@@ -18,7 +18,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
-## **STEP 1:** Set up the environment with In-Memory Column Store
+## Task 1: Set up the environment with In-Memory Column Store
 
 1. The shell script configures the IM column store to 110M, creates `NO
 INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tables.
@@ -74,7 +74,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     $
     ```
 
-## **STEP 2:** Configure in-memory tables
+## Task 2: Configure in-memory tables
 
 1. Query the data dictionary to determine whether `HR` tables are specified as `INMEMORY`.
 
@@ -130,7 +130,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     SQL>
     ```
 
-## **STEP 3:** Configure Automatic In-Memory
+## Task 3: Configure Automatic In-Memory
 
 1. Connect to the CDB root, then set `INMEMORY_AUTOMATIC_LEVEL` to `HIGH`, and re-start the database instance.
 
@@ -224,7 +224,7 @@ INMEMORY` tables in `HR` schema in `PDB21`, and finally inserts rows in `HR` tab
     <copy>/home/oracle/labs/M104784GC10/wallet.sh</copy>
     ```
 
-## **STEP 4:** Test
+## Task 4: Test
 
 1. Wait one minute to observe the `HR` tables to be automatically assigned the `INMEMORY` attribute.
 

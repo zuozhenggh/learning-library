@@ -47,7 +47,7 @@ In this lab, you will:
 
 <if type="livelabs">
 
-## **STEP 1:** Launch the workshop
+## Task 1: Launch the workshop
 
 *Note: It takes approximately 20 minutes to create your workshop environment.*
 

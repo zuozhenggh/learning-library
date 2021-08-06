@@ -24,7 +24,7 @@ Learn how to
 
 - The following lab requires an Autonomous Data Warehouse - Shared Infrastructure or Autonomous Transaction Processing - Shared Infrastructure account.
 
-## **STEP 1**: Connect to your Autonomous Database using Graph Studio
+## Task 1: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 3.
 
@@ -56,7 +56,7 @@ Learn how to
 
 5. Then click the "Sign In" button.
 
-## **STEP 2**: Create a Simple Graph using PGQL
+## Task 2: Create a Simple Graph using PGQL
 
 1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They naviagte to the Home, Models, Graphs, Notebooks, and Jobs pages respectively.
 
@@ -104,7 +104,7 @@ Learn how to
 
     ![](./images/query-playground-create-graph-statement.png " ")
 
-## **STEP 3**: Load the Graph into Memory
+## Task 3: Load the Graph into Memory
 
 1. Navigate to the Graphs page:
 
@@ -126,7 +126,7 @@ Learn how to
 
     ![](./images/jobs-first-graph-load-into-memory.png " ")
 
-## **STEP 4**: Create your First Notebook
+## Task 4: Create your First Notebook
 
 1. Navigate to the Notebooks page:
 
@@ -167,7 +167,7 @@ This is my first paragraph
 
     Markdown paragraphs are useful to add explanations to your notebooks and order them into chapters. You can embed images and even videos using Markdown or HTML syntax, give it a try.
 
-## **STEP 5**: Analyze, Query and Visualize the Graph
+## Task 5: Analyze, Query and Visualize the Graph
 
 1. Add another paragraph to the notebook by hovering at the middle of the bottom of the paragrah and clicking the **+** button which appears.
 

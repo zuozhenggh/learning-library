@@ -22,7 +22,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-## **STEP 1**: Create Object Storage Bucket
+## Task 1: Create Object Storage Bucket
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
@@ -48,7 +48,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
   <if type="livelabs">
   ![](images/livelabs-create-bucket-2.png)</if>
 
-## **STEP 2**: Upload Object and create pre authenticated link
+## Task 2: Upload Object and create pre authenticated link
 
 1. Download this file to your local PC: <a href="files/sample-file.txt" download="sample-text" target="_blank">sample-file.txt</a>.
 

@@ -19,7 +19,7 @@ In this lab, you will:
 * All previous labs have been **successfully completed**
 
 
-## **STEP 1:** Create an OCI Data Integration project
+## Task 1: Create an OCI Data Integration project
 
 In Oracle Cloud Infrastructure Data Integration, a **project** is the container for design-time resources, such as tasks or data flows and pipelines.
 
@@ -48,7 +48,7 @@ In Oracle Cloud Infrastructure Data Integration, a **project** is the container 
   ![](./images/di-workshop-project.png " ")
 
 
-## **STEP 2:** Create a Data Loader task
+## Task 2: Create a Data Loader task
 
 A **Data Loader task** helps you load diverse data set into data lakes, data marts, and data warehouses. A data loader task takes a source data entity, applies transformations (optional), and then loads the transformed data into a new target data entity, or updates an existing data entity. A data loader task supports transformations at the metadata and data levels.
 
@@ -162,7 +162,7 @@ A panel displays, showing the **Data Profile** and the **Attribute Profile** for
 
   ![](./images/loader-save.png " ")
 
-## **STEP 3:** Create a Data Flow - 1
+## Task 3: Create a Data Flow - 1
 
 A **data flow** is a logical diagram representing the flow of data from source data assets, such as a database or flat file, to target data assets, such as a data lake or data warehouse.
 The flow of data from source to target can undergo a series of transformations to aggregate, cleanse, and shape the data. Data engineers and ETL developers can then analyze or gather insights and use that data to make impactful business decisions.
@@ -440,7 +440,7 @@ To join the data from expression **CONCAT\_FULL\_NAME** with the data from **FIL
 
   ![](./images/save-df.png " ")
 
-## **STEP 4:** Create a Data Flow - 2
+## Task 4: Create a Data Flow - 2
 
 To further explore the capabilities of Data Flows in OCI Data Integration, you will now create **a new Data Flow** with different transformation rules.
 
@@ -722,7 +722,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
   ![](./images/save-close-button.png " ")
 
-## **STEP 5:** Create Integration Tasks
+## Task 5: Create Integration Tasks
 
 **Integration tasks** in OCI Data Integration let you take your data flow design and choose the parameter values you want to use at runtime. With the help of Integration Tasks, you can create multiple Tasks with distinct configurations for the same Data Flow. You will create Integration tasks for the two Data Flows you created in the previous steps of this Lab.
 
@@ -767,7 +767,7 @@ This Data Flow will load data from **multiple source files** containing Employee
 
     ![](./images/save-close-integration-task.png " ")
 
-## **STEP 6:** Create a SQL task
+## Task 6: Create a SQL task
 
 A **SQL task** lets you run a SQL stored procedure in pipeline. You create a SQL task by selecting a stored procedure that exists in the data source that's associated with a data asset already created in your workspace. The variables defined in a stored procedure are exposed as input, output, and in-out parameters in a SQL task.
 

@@ -11,7 +11,7 @@ In this lab, you will:
 - Create a page to list the products in the Shopping Cart.
 - Create Application Items, Application Processes and Dynamic Actions to manage the Shopping Cart.
 
-## **STEP 1**: Creating Application Items
+## Task 1: Creating Application Items
 These items are needed to count the number of items in the shopping cart and the icon to display in the Navigation Bar.
 
 1. Click on **Shared Components**
@@ -29,7 +29,7 @@ These items are needed to count the number of items in the shopping cart and the
 5. Click **Create Application Item** and create the second item.
     ![](images/create-application-tem.png " ")
 
-## **STEP 2**: Creating Application Process
+## Task 2: Creating Application Process
 This process is needed to refresh the number of items in the Shopping Cart, which will be shown in the navigation bar.
 
 1. Click on **Shared Components**
@@ -64,7 +64,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 6. Click **Next**.        
 7. Click **Create Process**.   
 
-## **STEP 3**: Creating a Normal Page - Shopping Cart
+## Task 3: Creating a Normal Page - Shopping Cart
 
 1. Click on Application Home.  ***The ID of your application may vary***
     ![](images/create-page.png " ") 
@@ -77,7 +77,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 5. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 6. Click **Finish**.
 
-## **STEP 4**: Adding a Cards Region
+## Task 4: Adding a Cards Region
 1. In the new page created, navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section.
     ![](images/create-cards.png " ")
@@ -147,7 +147,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - Under Card section:
         - For Primary Key Column 1 - select **ITEM** 
 
-## **STEP 5**: Adding an Action to the Shopping Cart
+## Task 5: Adding an Action to the Shopping Cart
 
 1. In the Rendering tree (left pane), navigate to **Actions** under **Shopping Cart**.
 2. Right-click on Actions and click **Create Action**.
@@ -165,7 +165,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - For Display Type - select **Text with Icon**
     - For Icon - enter **fa-cart-edit**
 
-## **STEP 6**: Adding Items and Buttons to the Page
+## Task 6: Adding Items and Buttons to the Page
 
 1. Navigate to the **Gallery Menu**.
 2. Drag a **Static Content** region and drop it next to the Shopping Cart region.
@@ -218,7 +218,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
      ![](images/buttons.png " ")      
 
-## **STEP 7**: Adding Validations to the Page
+## Task 7: Adding Validations to the Page
 1. In the Rendering tree (left pane), click on **Processing** tab.
 2. Over Validating, right-click **Create Validation**.
      ![](images/create-validation.png " ")  
@@ -243,7 +243,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
      ![](images/button-condition.png " ")       
     
-## **STEP 8**: Adding Process to Create the Order
+## Task 8: Adding Process to Create the Order
 
 1. On the **Processing** tab (left pane).
 2. Right click on Processing and click **Create Process**.
@@ -269,7 +269,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - For Success Message, enter **Order successfully created: &P17\_ORDER\_ID.**
     - For When Button Pressed, select **Proceed**.
 
-## **STEP 9**: Adding Process to Clear the Shopping Cart
+## Task 9: Adding Process to Clear the Shopping Cart
 
 1. On the **Processing** tab (left pane).
 2. Right click on Processing and click **Create Process**.
@@ -288,7 +288,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
     - For When Button Pressed, select **Clear**.
 
-## **STEP 10**: Adding Branches to the Page
+## Task 10: Adding Branches to the Page
 
 1. On the **Processing** tab (left pane).
 2. Right click on After Processing and click **Create Branch**.
@@ -318,7 +318,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
         - Click **OK**
     - For When Button Pressed, select **Clear**
 
-## **STEP 11**: Adding Dynamic Actions
+## Task 11: Adding Dynamic Actions
 In this step, you will create a dynamic actions to:
 - Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
 - Refresh the shopping cart region.
@@ -389,7 +389,7 @@ In this step, you will create a dynamic actions to:
             </copy>
             ```
 
-## **STEP 12**: Format Products Image Size
+## Task 12: Format Products Image Size
 1. In the Rendering tree (left pane), navigate to **Page 17: Shopping Cart**.
 2. In the Property Editor (right pane), do the following:
     - Under CSS section.
