@@ -37,7 +37,7 @@ Add your first web app to the HR visual application that you've just created. A 
 
     On the left is the name of your current workspace **HR Visual Application**; next to it is the project's Git repository and the branch currently associated with your workspace **tutorial-hr-project.git** / **hrbranch**. Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go_to_project_home_icon.png) will take you back to the Project Home page.
 
-    Elements on the right let you perform various other actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search the Git repository for a file. This workshop primarily demonstrates the options to preview a page and publish changes.
+    Elements on the right let you perform various other actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search the Git repository for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
 
 2.  We want to create a web application, so under **Create Apps**, let's click the **Web Apps** tile.
 
@@ -48,13 +48,13 @@ Add your first web app to the HR visual application that you've just created. A 
 3.  Click **\+ Web Application** (or click the **+** sign at the top of the pane).
 4.  In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page. (Ignore the **This dot says that you have made some changes** message for now; we'll explore Git changes in a later lab.)
+    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page. (You can ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
     ![](images/designer.png " ")
 
     What you see under the main-start tab is your application's main work area. Just under main-start are several other tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page.
 
-    By default, a page opens in the Page Designer, with the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
+    By default, a page opens in the Page Designer, showing the Components and the Structure tabs. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
 
     On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
