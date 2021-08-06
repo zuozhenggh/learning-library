@@ -20,6 +20,13 @@ This lab provides details on how you can optionally manage applications using Es
 ### Prerequisites
 
 * Essbase 21 instance with Service administrator role.
+* You have completed:  
+     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
+     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
+     * Lab: Environment Setup  
+     * Lab: Introduction to Essbase  
+     * Lab: Initialize Environment  
+     
 
 
 ## **STEP 1:** Manage an Application Using EAS Lite
