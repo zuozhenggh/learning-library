@@ -1,7 +1,7 @@
 ## Introduction
    This lab introduces complimentary database features that can be combined with In-Memory to provide additional performance gains to analytic queries.
 
-## **STEP 1**: Approximate Query Processing and In-Memory
+## Task 1: Approximate Query Processing and In-Memory
 
 In-Memory optimization does not improve sorting operations. Sql query performance can further improve performance using "Approximate Query Processing", introduced in Oracle 12c. This feature improve performance of sort operations like DISTINCT, RANK, PERCENTILE, MEDIAN.
 
@@ -89,7 +89,7 @@ Observe that the plan has HASH GROUP BY APPROX instead of "SORT GROUP BY"
 And the InMemory query tool about 28 seconds which is lesser than the previous InMemory runs.
 This feature also speeds up In Buffer runs too. This feature is useful in BI repoers, when we need to build visualization, and summation reports where 95-99% accuracy of data does not alter the overall information conveyed.   
 
-## **STEP 2**: InMemory Materialized Views and Query Rewrite
+## Task 2: InMemory Materialized Views and Query Rewrite
 
 The best SQL plans are the ones that minimize the amount of work it takes to get the result.  As we observed in the previous labs, In-Memory is very efficient at data filtering and Vector Joins for.  However, if aggregated data and joins are precomputed using Materialized Views, the need to perform these tasks In-Memory can be avoided entirely.
 Oracle Materialized Views contain already precomputed aggregates and joins, Oracle Database employs an extremely powerful process called query rewrite to quickly answer queries using materialized views. One of the major benefits of creating and maintaining materialized views is the ability to take advantage of query rewrite, which transforms a SQL statement expressed in terms of tables or views into a statement accessing one or more materialized views that are defined on the detail tables. The transformation is transparent to the end user or application, requiring no intervention and no reference to the materialized view in the SQL statement.

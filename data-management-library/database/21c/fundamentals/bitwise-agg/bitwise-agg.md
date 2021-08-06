@@ -27,7 +27,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Login to database
+## Task 1: Login to database
 
 1. Login to the instance using ssh
 
@@ -77,7 +77,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	  ```
 </if>
 
-## **STEP 2:** Test the bitwise AND function
+## Task 2: Test the bitwise AND function
 
 1.  A bitwise AND is a binary operation that takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits. If both bits in the compared position are 1, the bit in the resulting binary representation is 1, otherwise, the result is 0. Apply the `BIT_AND_AGG` function on two numbers. The bit pattern for the values used in the examples below are 01 for 1, 10 for 2, and 11 for 3.
 
@@ -99,7 +99,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
     </if>
 
-## **STEP 3:** Test the bitwise OR function
+## Task 3: Test the bitwise OR function
 
 A bitwise OR is a binary operation that takes two bit patterns of equal length and performs the logical inclusive OR operation on each pair of corresponding bits. The result in each position is 0 if both bits are 0, otherwise the result is 1.
 
@@ -120,7 +120,7 @@ A bitwise OR is a binary operation that takes two bit patterns of equal length a
     ```
     </if>
 
-## **STEP 4:** Test the bitwise XOR function
+## Task 4: Test the bitwise XOR function
 
 A bitwise XOR is a binary operation that takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. Therefore, the comparison of two bits results in 1 if the two bits are different, and 0 if they are equal.
 

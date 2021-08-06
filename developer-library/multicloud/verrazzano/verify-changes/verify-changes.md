@@ -16,7 +16,7 @@ In this lab, you will:
 
 * You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Verify the Changes in Bob's Books Application
+## Task 1: Verify the Changes in Bob's Books Application
 
 1. Open the Bob's Books tab and select Refresh. If you have closed that tab, then copy and paste the following command in the text editor and replace the XX.XX.XX.XX  with the EXTERNAL_IP for the application. You will notice that the Book Name is in all upper case letters.
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
     ![Bob's Book](images/1.png)
 
-## **STEP 2**: Verify the Changes in the Verrazzano Console
+## Task 2: Verify the Changes in the Verrazzano Console
 
 1. You determined the endpoints for the Verrazzano Console as part of Lab 4, but, if you want to get the link for the Verrazzano console, copy the following command and run it in the *Cloud Shell*.
 
@@ -66,7 +66,7 @@ In this lab, you will:
 
     ![New Repository](images/8.png)
 
-## **STEP 3**: Verify the Changes in the Grafana Console
+## Task 3: Verify the Changes in the Grafana Console
 
 1. Select *Home* to go back to the Verrazzano Home Page.
 

@@ -15,7 +15,7 @@ In this lab, you will:
 - Disable the Navigation Menu
 - Enhance the Navigation Bar
 
-## **STEP 1**: Set Pages to be Public
+## Task 1: Set Pages to be Public
 Your customers don't need to login the app in order to shop the products, so let's set the following pages as public:
 - Page  1: Products
 - Page 16: Order Information
@@ -41,7 +41,7 @@ Follow these steps for the four listed pages:
 4. Navigate to Page Finder and go to the next page. 
     ![](images/page-finder.png " ")
 
-## **STEP 2**: Cleaning the Navigation Menu
+## Task 2: Cleaning the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 
 In this step, you will turn off displaying the navigation menu.
 
@@ -60,7 +60,7 @@ In this step, you will turn off displaying the navigation menu.
 
 5. Click **Apply Changes**.
 
-## **STEP 3**: Enhancing the Navigation Bar List
+## Task 3: Enhancing the Navigation Bar List
 Add a new navigation menu entry to allow:
 - Customers to go directly to the Shopping Cart.
 - Administrators to login and access to administration page.

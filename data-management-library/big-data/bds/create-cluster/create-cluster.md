@@ -23,7 +23,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## **STEP 1:** Create a Cluster
+## Task 1: Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost. See [Compute Shapes](https://docs.cloud.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-dense) in the Oracle Cloud Infrastructure (OCI) documentation.
 
 Your simple HA cluster will have the following profile:
@@ -114,7 +114,7 @@ Create the HA cluster as follows:
 
     ![](./images/status-creating.png " ")
 
-## **STEP 2:** Monitor the Cluster Creation
+## Task 2: Monitor the Cluster Creation
 
 The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
@@ -171,7 +171,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
   **Note:**  
   If you are using a Free Trial account to run this workshop, Oracle recommends that you at least delete the BDS cluster when you complete the workshop to avoid unnecessary charges. You can also complete the optional **Lab 8: Clean up Resources Used in this Workshop** to delete all of the resources that you create in this workshop.
 
-## **STEP 3:** Monitor the Cluster and Nodes Metrics
+## Task 3: Monitor the Cluster and Nodes Metrics
 
   Once your cluster is successfully created, you can monitor the cluster's metrics and the metrics of any of its nodes.
 
@@ -205,7 +205,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
      ![](./images/cluster-details-breadcrumb.png " ")  
 
 
-## **STEP 4:** Review Locations of Services in the Cluster
+## Task 4: Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a highly available (HA) cluster; therefore, the services are distributed as follows:
 

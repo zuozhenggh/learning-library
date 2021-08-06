@@ -22,7 +22,7 @@ As a Database Administrator,
    - A pre-provisioned compute instace of Image type "Enterprise Manager 13c Workshop v3.0"
 
 
-## STEP 1: Create a Compute Instance with OEM installed in it
+## Task 1: Create a Compute Instance with OEM installed in it
 
 - Login to your Oracle Cloud Infrastructure account and select *Compute* —> *Instances* from top left menu.
     ![](./images/Compute1.png " ")
@@ -60,11 +60,11 @@ As a Database Administrator,
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## STEP 2: Connect to Oracle Enterprise Manager from web browser
+## Task 2: Connect to Oracle Enterprise Manager from web browser
 
 - In your browser type the URL as "https://publicipaddress_of_oem_compute:7803/em"
 
-## STEP 3: Transfer database wallet to developer client
+## Task 3: Transfer database wallet to developer client
 
 - Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
@@ -80,7 +80,7 @@ As a Database Administrator,
 
     The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. Store this file in a secure location.
 	
-## STEP 4: Add Autonomous Transaction Processing Database dedicated as Target in OEM
+## Task 4: Add Autonomous Transaction Processing Database dedicated as Target in OEM
 
 - Click "Setup" and select "Add Target" and click on "Add Targets Manually".
     ![](./images/atpd5.png " ")
@@ -119,7 +119,7 @@ As a Database Administrator,
 	
 	![](./images/atpd15.png " ")
 	
-## STEP 5: Test the Connection
+## Task 5: Test the Connection
 
 - Click on "Targets" select "All Targets"
 	![](./images/atpd16.png " ")
@@ -131,7 +131,7 @@ As a Database Administrator,
 	
 - Under Target Name select "ADBEM" 
 
-## STEP 6: Unlock "ADBSNMP" user.
+## Task 6: Unlock "ADBSNMP" user.
 
 - Select "Users" under "Security"
 	![](./images/upd_01.png " ")
@@ -148,7 +148,7 @@ As a Database Administrator,
 - Once the change is saved check under "Users" in "Security". The user "ADBSNMP" will be "Open"
 	![](./images/upd_05.png " ")
 
-## STEP 7: Establish Connection with ATP as "ADBSNMP" user.
+## Task 7: Establish Connection with ATP as "ADBSNMP" user.
 
 - Repeat STEP 4 with the below changes:
 

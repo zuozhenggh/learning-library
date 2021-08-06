@@ -22,7 +22,7 @@ In this lab, you will:
 * SSH Keys for Putty or OpenSSH (id_rsa.ppk or id_rsa, and id_rsa.pub)
 
 
-## **STEP 1:** Create Virtual Cloud Network (VCN)
+## Task 1: Create Virtual Cloud Network (VCN)
 
 1. Login to Oracle cloud console using the URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
@@ -52,7 +52,7 @@ In this lab, you will:
 8. Click **Save Changes**.
 
 
-## **STEP 2:** Provision Compute Node for development
+## Task 2: Provision Compute Node for development
 
 1. Click on main menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
@@ -88,7 +88,7 @@ In this lab, you will:
     ![](./images/putty4.png "")
 
 
-## **STEP 3:** Configure Compute Node for development
+## Task 3: Configure Compute Node for development
 
 For some of the labs we need graphical user interface, and this can be achieved using a Remote Desktop connection.
 
@@ -167,7 +167,7 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
 10. After setting your language and keyboard layout, open a Terminal window using **Right-Click** and **Open Terminal**. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
 
-## **STEP 4:** Provision Oracle Autonomous JSON Database (AJD)
+## Task 4: Provision Oracle Autonomous JSON Database (AJD)
 
 1. Click on main menu ≡, then **Autonomous JSON Database** under Oracle Database. **Create Autonomous Database**.
 
@@ -256,7 +256,7 @@ For some of the labs we need graphical user interface, and this can be achieved 
     https://kndl0dsxmmt29t1-vltajd.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demo/_sdw/?nav=worksheet
 
 
-## **STEP 5:** Deploy Atlas document store on MongoDB Cloud
+## Task 5: Deploy Atlas document store on MongoDB Cloud
 
 One of the objectives of this workshop is to show the integration of Oracle Autonomous JSON Database with existing document stores like MongoDB. This is why you need an existing MongoDB database, and if you don't have one, you can provision it quickly on MondoDB Cloud.
 

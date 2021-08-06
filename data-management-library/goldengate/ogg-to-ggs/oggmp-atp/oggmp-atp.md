@@ -17,7 +17,7 @@ In this lab, you will:
 
 Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
 
-## **STEP 1:** Download the Source ATP Client Credentials
+## Task 1: Download the Source ATP Client Credentials
 
 1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
 
@@ -29,7 +29,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
 
-## **STEP 2:** Upload the Source ATP Credentials to Oracle GoldenGate
+## Task 2: Upload the Source ATP Credentials to Oracle GoldenGate
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
@@ -52,7 +52,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 unzip wallet_ATP.zip -d wallet_ATP</copy>
     ```
 
-## **STEP 3:** Add the Source ATP credential in the Oracle GoldenGate Administration Server
+## Task 3: Add the Source ATP credential in the Oracle GoldenGate Administration Server
 
 1.  Launch the OCI GoldenGate Deployment Console.
 

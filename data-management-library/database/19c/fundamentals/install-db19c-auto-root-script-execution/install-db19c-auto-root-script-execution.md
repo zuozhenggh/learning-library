@@ -24,7 +24,7 @@ Be sure that the following task is completed before you start:
 - Sign in to the `workshop-stage` compute instance. If you do not have a compute instance, see [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
 
 
-## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
+## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
 
 1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
 
@@ -113,7 +113,7 @@ Be sure that the following task is completed before you start:
 
 
 
-## **STEP 2**: Review the response file
+## Task 2: Review the response file
 
 You can continue to use your PuTTY connection for this step.
 
@@ -149,7 +149,7 @@ You can continue to use your PuTTY connection for this step.
 
 
 
-## **STEP 3**: Discover the container database (CDB) and pluggable database (PDB)
+## Task 3: Discover the container database (CDB) and pluggable database (PDB)
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
 

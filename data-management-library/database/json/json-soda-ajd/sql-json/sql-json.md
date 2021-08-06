@@ -97,7 +97,7 @@ In this lab, you will:
 
     *Learn more -* [Oracle SQL Function JSON_SERIALIZE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-667D37FF-F5FB-465D-B8AE-DAE88F191B2F), and [Simple Dot-Notation Access to JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/simple-dot-notation-access-to-json-data.html#GUID-7249417B-A337-4854-8040-192D5CEFD576)
 
-## **STEP 3:** Unnesting JSON arrays
+## Task 3: Unnesting JSON arrays
 
 All above examples extracted singleton values from the JSON data - values that only occurred once per document (like title or price). But JSON can have nested arrays - how can we access those?
 
@@ -151,7 +151,7 @@ All above examples extracted singleton values from the JSON data - values that o
 
     *Learn more -* [SQL NESTED Clause Instead of JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-D870AAFF-58B0-4162-AC11-4DDC74B608A5)
 
-## **STEP 4:** Queries over JSON data
+## Task 4: Queries over JSON data
 
 The 'simple dot notation' as shown in the previous steps is a syntax simplification of the SQL/JSON operators. Compared to the 'simple dot notation' they're a bit more verbose but also allow for more customization. These operators are part of the SQL standard.
 
@@ -382,7 +382,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
 
     *Learn more -* [SQL/JSON Function JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-0172660F-CE29-4765-BF2C-C405BDE8369A)
 
-## **STEP 5:** JSON Updates
+## Task 5: JSON Updates
 
 ### JSON_Mergepatch
 
@@ -459,7 +459,7 @@ JSON\_Transform, like the other SQL/JSON operators, relies on path expressions t
 
     *Learn more -* [Oracle SQL Function JSON_TRANSFORM](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/oracle-sql-function-json_transform.html#GUID-7BED994B-EAA3-4FF0-824D-C12ADAB862C1)
 
-## **STEP 6:** JSON Generation functions
+## Task 6: JSON Generation functions
 
 SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row operators that generate one object/array per input row, and 2 are aggregate operators that generate one object/array for all input rows. These operators come in handy when you want to generate JSON data from existing tables or you want to bring JSON data into a different shape.
 
@@ -597,7 +597,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     *Learn more -* [Generation of JSON Data Using SQL](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/generation.html#GUID-6C3441E8-4F02-4E95-969C-BBCA6BDBBD9A)
 
-## **STEP 7:** JSON Dataguide
+## Task 7: JSON Dataguide
 
 Often, you do not know all the fields that occur in a collection of JSON data, especially if it is from a third party. JSON\_Dataguide lets you retrieve a JSON schema for this data. It tells you all occurring field names, their data types and the paths to access them. It can even automate the generation of a JSON\_Table-based view.
 

@@ -29,7 +29,7 @@ The validation process are:
 
 **Validation Payment, development Steps:**
 
-## **STEP 1**:  Create a new SOA composite application 
+## Task 1:  Create a new SOA composite application 
 
 Let's name the application e2e-1201-composites and the SOA project in JDeveloper called ValidatePayment.
 
@@ -65,7 +65,7 @@ To make sure of the templates, please follow the steps below:
 + Click OK to close the Preferences window.
 
 
-## **STEP 2**:  Use a new template to create the ValidatePayment composite.
+## Task 2:  Use a new template to create the ValidatePayment composite.
 
 Create a new SOA application and project. There are various ways and shortcuts to do this, and in this case choose File > New > Application... from the menu.
 + From the Categories tree, click on General > Applications.
@@ -104,7 +104,7 @@ with their default values:
 + The composite.xml, which defines the structure of the composite, is located directly under the SOA folder. In previous releases, this file was just shown as composite.xml. This became confusing when several composite.xml files from different projects were open at the same time.
 
 
-## **STEP 3**:  Review the various components of the composite.
+## Task 3:  Review the various components of the composite.
 
 + In SOA Suite 12c, the project name is displayed in the navigator and in the composite tab label. It is displayed as ValidatePayment here.
 
@@ -128,7 +128,7 @@ with their default values:
 
 + On the left-side of swim lane, a  validatepaymentprocess_client_ep is the external client web service that input to the BPEL process.
 
-## **STEP 4**:  Add a database connection to Java DB 
+## Task 4:  Add a database connection to Java DB 
 
 The Java DB is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database). Otherwise, Java DB will not be available.
 
@@ -205,7 +205,7 @@ We don’t need an assign activity for the output variable as we will define an 
 
 Ensure to save everything before you continue.
 
-## **STEP 5**: Import a custom activity template with an XSLT map 
+## Task 5: Import a custom activity template with an XSLT map 
 
 This activity is to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order. Step 5 is to calculate payment status using an XSLT map (custom activity template)
 
@@ -316,7 +316,7 @@ One more step to get the map to work -- (remember previously an error message?)
 + ![](images/2/template8.png)
 
 
-## **STEP 6**:  Deploy and test the composite and its project. 
+## Task 6:  Deploy and test the composite and its project. 
 The first design iteration is complete and you are now ready to deploy the composite. This deployment will take place on the embedded Weblogic service in JDeveloper.
 
 **IMPORTANT:** The server has to be RUNNING for this deployment to be successful. If your server is down, please bring it back up before attempting deployment.
@@ -355,7 +355,7 @@ Watch on how to use diagnostic tool in JDeveloper
 <!-- For more details of how to, please refer to Chapter 2, from <ins>**page 43 to 52**</ins> in the [SOAsuite 12c tutorial.pdf](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D62E7C999F2BB9C78C4D8085F6EE42C20DD5FE8D98D7/_SOASuite12c_Tutorial.pdf)
 -->
 
-## **STEP 8**: Optional: Add a composite sensor PaymentStatus application
+## Task 8: Optional: Add a composite sensor PaymentStatus application
 
 * ![](images/2/sensor.png)
 

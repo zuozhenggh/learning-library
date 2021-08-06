@@ -8,7 +8,7 @@ Oracle Database queries are declarative. You can join JSON data with relational 
 
 Estimated Lab Time: 15 minutes
     
-## **Step 1:** Split JSON array in single entries 
+## Task 1: Split JSON array in single entries 
     
 1. You may have noticed the big JSON document lists all cats in the world using a JSON array. At the time this lab was created there were 144 cats in the list. You can split that array into individual JSON documents describing one cat using `JSON_TABLE` function.
     
@@ -107,7 +107,7 @@ Estimated Lab Time: 15 minutes
     select ID, json_serialize(JSON_DOCUMENT pretty) document from "Cats"
     ````
     
-## **Step 2:** Retrieve individual fields from JSON documents
+## Task 2: Retrieve individual fields from JSON documents
     
 1. Select one document to view the fields.
     
@@ -158,7 +158,7 @@ Estimated Lab Time: 15 minutes
     ...
     ````
     
-## **Step 3:** Join JSON fields with relational data
+## Task 3: Join JSON fields with relational data
     
 1. Create a new table that will be used to store relational structured data.
     

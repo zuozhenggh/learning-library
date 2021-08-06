@@ -20,7 +20,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
 
-## **STEP 1:** Add and Run an Extract in Oracle GoldenGate
+## Task 1: Add and Run an Extract in Oracle GoldenGate
 
 This Extract process captures data from the source database to send to OCI GoldenGate.
 
@@ -56,7 +56,7 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## **STEP 2:** Add and Run a Distribution Server Path
+## Task 2: Add and Run a Distribution Server Path
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
@@ -110,7 +110,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
-## **STEP 3:** Add a Checkpoint table
+## Task 3: Add a Checkpoint table
 
 1.  In the OCI GoldenGate Deployment Console, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
@@ -128,7 +128,7 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Dis
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## **STEP 4:** Add and Run a Replicat
+## Task 4: Add and Run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
@@ -191,7 +191,7 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![](images/04-18.png)
 
-## **STEP 5:** Confirm the Distribution Path is running
+## Task 5: Confirm the Distribution Path is running
 
 In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
 

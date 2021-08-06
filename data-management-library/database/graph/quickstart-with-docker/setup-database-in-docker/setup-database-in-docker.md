@@ -20,7 +20,7 @@ In this lab, you will:
 
 * Cloned `oracle-pg` repository on your instance.
 
-## **STEP 1:** Build the Oracle Database Docker image
+## Task 1: Build the Oracle Database Docker image
 
 ### Install Docker build files from GitHub
 
@@ -167,7 +167,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
     Note when the script completes, it lists the new Docker image: `oracle/database:19.3.0-ee`.
 
-## **STEP 2:** Start the containers
+## Task 2: Start the containers
 
 1. Change the directory to `$REPO_HOME/oracle-pg/docker/` and start the containers for **Oracle Database** only.
 
@@ -191,7 +191,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
     Proceed to step 2 the database is up and running.
 
-## **STEP 3:** Configure the database
+## Task 3: Configure the database
 
 1. Connect to the Oracle Database server.
 

@@ -27,7 +27,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Have successfully completed the previous labs
 
-## **STEP 1:** Create a blockchain table
+## Task 1: Create a blockchain table
 
 1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.
 
@@ -58,7 +58,7 @@ In this lab, you will:
 
 	![](./images/task1-3.png " ")
 
-## **STEP 2:** Insert rows into the blockchain table
+## Task 2: Insert rows into the blockchain table
 
 1. Copy and paste the below code snippet in the worksheet and run them to insert records into the `bank_ledger` blockchain table.
 
@@ -88,7 +88,7 @@ In this lab, you will:
 
 	![](./images/task2-2.png " ")
 
-## **STEP 3:** View Blockchain tables and its internal columns
+## Task 3: View Blockchain tables and its internal columns
 
 1. Run the command to view all the blockchain tables.
 
@@ -126,7 +126,7 @@ In this lab, you will:
 
 	![](./images/task3-3.png " ")
 
-## **STEP 4:** Manage Rows in a Blockchain Table
+## Task 4: Manage Rows in a Blockchain Table
 
 When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are within the retention period.
 
@@ -161,7 +161,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 
 	![](./images/task4-3.png " ")
 
-## **STEP 5:** Manage Blockchain Tables
+## Task 5: Manage Blockchain Tables
 
 Similar to managing rows within the retention period, managing the blockchain table using alter, drop will throw an error.
 
@@ -219,7 +219,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/task5-5.png " ")
 
-## **STEP 6:** Verify rows without signature
+## Task 6: Verify rows without signature
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 
@@ -243,7 +243,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	![](./images/task6-1.png " ")
 
 
-## **STEP 7:** Generate certificate
+## Task 7: Generate certificate
 
 Let's connect to Oracle cloud shell to generate your x509 keypair.
 
@@ -312,7 +312,7 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 
 	![](./images/task7-7.png " ")
 
-## **STEP 8:** Generate Certificate GUID
+## Task 8: Generate Certificate GUID
 
 1. Navigate to the tab with SQL Developer Web, copy and paste the below procedure in SQL Worksheet. Replace `-----BEGIN CERTIFICATE----MIIFcjCCA1oCCQC+Rsk9wAYlzDAN………-----END CERTIFICATE-----' with the pem key from the Oracle cloud shell in the previous tab. 
 

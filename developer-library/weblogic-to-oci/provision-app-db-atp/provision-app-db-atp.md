@@ -12,7 +12,7 @@ Estimated Completion Time: 30 to 35 minutes including 25 to 30 minutes of provis
 - Create a private subnet for the application database.
 - Provision the application database.
 
-## **STEP 1:** Create a Network Security Group (NSG) for the Database Subnet
+## Task 1: Create a Network Security Group (NSG) for the Database Subnet
 
 Before we can provision the application database, we need to provision a **private subnet** for the **Database System** with appropriate **Network Security Group** to open up the required port 1522 for the database.
 
@@ -52,7 +52,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
   ![](./images/vcn-nsg3.png " ")
 
 
-## **STEP 2:** Create the Database Subnet
+## Task 2: Create the Database Subnet
 
 1. Click **Subnets** on the left-side menu.
 
@@ -90,7 +90,7 @@ In this section we will create a Network Security Group for the WebLogic subnet 
 
   ![](./images/provision-db-9-subnet7.png " ")
 
-## **STEP 3:** Provision the Autonomous Database System
+## Task 3: Provision the Autonomous Database System
 
 1. Go to **Database -> Autonomous Transaction Processing**.
 

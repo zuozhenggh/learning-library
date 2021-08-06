@@ -5,7 +5,7 @@ In this lab, you will execute a JavaScript code to extend the project tasks once
 
 Estimated Lab Time: 15 minutes
 
-## **STEP 1**: Extend Report with JavaScript Process
+## Task 1: Extend Report with JavaScript Process
 
 1. Navigate to **Page 4** in **Page Designer**. 
 
@@ -60,7 +60,7 @@ Estimated Lab Time: 15 minutes
 
     ![](images/4-extend-tasks.png " ")
 
-## **STEP 2**: Add JavaScript Validation to Form
+## Task 2: Add JavaScript Validation to Form
 
 1. While in **Project Tasks Report** page click on the edit icon.
 

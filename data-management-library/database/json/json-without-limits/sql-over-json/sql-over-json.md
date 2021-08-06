@@ -32,7 +32,7 @@ Let's dig into the power of a **Converged Database**
 
 ![](./images/json-without-limits.png)  
 
-## **STEP 1**: Loading VAT per Country Data
+## Task 1: Loading VAT per Country Data
 
 The very first step will be to initialize our VAT per country relational data.
 
@@ -304,7 +304,7 @@ The very first step will be to initialize our VAT per country relational data.
       </copy>
       ```
 
-## **STEP 2**: Creating INVOICES Relational Table
+## Task 2: Creating INVOICES Relational Table
 
 1. Create the INVOICES table that will contain the computed invoices including the applied VAT according to the country origin of the purchase order:
 
@@ -326,7 +326,7 @@ The very first step will be to initialize our VAT per country relational data.
 
    This table is partitioned the same way as the `purchase_orders` collection.
 
-## **STEP 3**: Generating the _Invoices Data!_
+## Task 3: Generating the _Invoices Data!_
 
 The process will consist of:
 - retrieving the **JSON** documents from the `purchase_orders` collection
@@ -638,7 +638,7 @@ we'll only ask for the results, and the database engine will process data in the
    ![](./images/re-insert.png)
 
 
-## **STEP 4**: Optimizing the Process!
+## Task 4: Optimizing the Process!
 
 ![](./images/batch-insert-too-slow.png)
 
@@ -731,7 +731,7 @@ Let's see how to optimize our batch process...
    The insertion batch took now 6 seconds to generate the 304,000 invoices instead of 11 seconds. And running it a second 
    time took again almost no time because no new purchase orders have been ingested.
 
-## **STEP 5**: Running Everything Together!
+## Task 5: Running Everything Together!
 
 The final step of this lab will consist of running every single capability together:
 - the ingestion process

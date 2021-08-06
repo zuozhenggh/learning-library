@@ -7,7 +7,7 @@ In SOA 12c, SOA composites can use end-to-end JSON. This means that the REST ser
 
 Estimated lab time: 1 hour
 
-## **STEP 1**:   REST-enabled the Service Bus proxy end-point
+## Task 1:   REST-enabled the Service Bus proxy end-point
 
 In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select Expose as REST.
 

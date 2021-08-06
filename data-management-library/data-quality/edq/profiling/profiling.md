@@ -21,7 +21,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **Step 1**: Quickstats Profiler
+## Task 1: Quickstats Profiler
 1.	In the Project Browser, right-click on “Processes” under your project, then select “New Process”.
 
     ![](./images/image1200_25.png " ")
@@ -107,7 +107,7 @@ This lab assumes you have:
 
 17.	Click the “Back” icon in the "Results Browser" panel as many times as needed to return to the results of the “Quickstats Profiler”.
 
-## **Step 2**: Frequency Profiler
+## Task 2: Frequency Profiler
 1.	In the "Tool Palette" find the “Frequency Profiler” processor.
 
     ![](./images/image1200_40.png " ")
@@ -156,7 +156,7 @@ This lab assumes you have:
 
     By now, you will surely see that this dataset needs some fine tuning to make it usable for accurate analytics. For instance, 19.5% of the gender values above are blank.
 
-## **Step 3**: Record Completeness Profiler
+## Task 3: Record Completeness Profiler
 
 1.	Now, Let’s explore record completeness profiler. In the “Profiling Tool Palette" find “Record Completeness” processor and “Record Duplication” processor. Drag and drop each processor to the "Project Canvas".
 

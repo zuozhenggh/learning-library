@@ -26,7 +26,7 @@ This Workshop assumes you have:
     - Workshop: Environment Setup
 
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -49,7 +49,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 ```
 ![](./images/2.png" ")
 
-## **STEP 1**: GoldenGate Configuration for MySQL as Source
+## Task 1: GoldenGate Configuration for MySQL as Source
 1. Select Option **2** ,to deploy GoldenGate Configuration for MySQL(Source)
 
 Option ***2*** will copy all the parameter files to ***dirprm*** folder under goldengate home
@@ -96,7 +96,7 @@ Sample Output:
 
  Source deployment completed!
 
-## **STEP 2**: GoldenGate Configuration for Kafka as Target
+## Task 2: GoldenGate Configuration for Kafka as Target
 1. Login to GoldenGate for BigData console 
 
     Replace IP Address with livelab server generated IP

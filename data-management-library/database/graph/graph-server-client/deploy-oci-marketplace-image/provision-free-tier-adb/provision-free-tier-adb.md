@@ -22,7 +22,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
 * An [Oracle Cloud Account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-## **STEP 1**: Choose ATP from the Services Menu
+## Task 1: Choose ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
 
@@ -48,7 +48,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
     ![](images/Region.png)
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

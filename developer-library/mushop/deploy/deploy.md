@@ -29,7 +29,7 @@ In this lab, you will:
 * An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
 * Completed the **Setup Cloud Environment** lab
 
-## **STEP 1**: Obtain MuShop source code
+## Task 1: Obtain MuShop source code
 
 1. Open up Cloud Shell and clone the github repo.
 
@@ -100,7 +100,7 @@ In this lab, you will:
     </copy>
     ````
 
-## **STEP 2**: Cluster Setup for the App with Helm
+## Task 2: Cluster Setup for the App with Helm
 
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
 
@@ -162,7 +162,7 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
 
 *Note:* When you install the mushop-utils chart release, Kubernetes will create an OCI LoadBalancer to the be used by the ingress kubernetes.
 
-## **STEP 3**: Get Ingress IP Address
+## Task 3: Get Ingress IP Address
 
 Part of the cluster setup includes the installation of an nginx ingress controller. This resource exposes an OCI load balancer, with a public ip address mapped to the OKE cluster.
 
@@ -191,7 +191,7 @@ By default, the mushop helm chart creates an Ingress resource, routing ALL traff
     </copy>
     ````
 
-## **STEP 4**: Deploy the eCommerce App with Helm
+## Task 4: Deploy the eCommerce App with Helm
 
 Remembering that helm provides a way of packaging and deploying configurable charts, next we will deploy the application in "mock mode" where cloud services are mocked, yet the application is fully functional
 
@@ -227,7 +227,7 @@ Remembering that helm provides a way of packaging and deploying configurable cha
 
     ![MuShop Storefront](images/mushop-storefront.png)
 
-## **STEP 5**: Explore the deployed app
+## Task 5: Explore the deployed app
 
 When you create a Deployment, you'll need to specify the container image for your application and the number of replicas that you want to run.
 
@@ -307,7 +307,7 @@ You can use these commands to see when applications were deployed, what their cu
 
     *Note:* You can also start a `bash` session on the Pod's container, just change the `ls` to `bash`. Remember that you need to type `exit` to exit the bash session.
 
-## **STEP 6**: Under the Hood
+## Task 6: Under the Hood
 
 1. To get a better look at all the installed Kubernetes manifests by using the template command.
 

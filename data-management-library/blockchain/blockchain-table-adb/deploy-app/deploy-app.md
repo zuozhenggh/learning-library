@@ -19,7 +19,7 @@ In this lab, you will:
 
 - Have successfully completed all the previous labs
 
-## **STEP 1:** Install Node.js in the Compute Instance
+## Task 1: Install Node.js in the Compute Instance
 
 Now that the virtual machine is provisioned, let us see how to install Node.js for the Node.js application to interact with the Autonomous database rest end points.
 
@@ -49,7 +49,7 @@ Now that the virtual machine is provisioned, let us see how to install Node.js f
     ```
     ![](./images/task1-3.png " ")
 
-## **STEP 2:** Open Firewall for Ports
+## Task 2: Open Firewall for Ports
 
 To connect to the Autonomous Database instance from the virtual machine we need to open firewall ports. Oracle linux compute instance internal firewall do not have any port enabled by default. We need to enable a port.
 
@@ -80,7 +80,7 @@ To connect to the Autonomous Database instance from the virtual machine we need 
     ```
     ![](./images/task2-3.png " ")
 
-## **STEP 3:** Deploy the Application
+## Task 3: Deploy the Application
 
 In the Oracle Linux virtual machine, as we the Node.js running, the ports are enabled, let's download and deploy the application.
 
@@ -134,7 +134,7 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 
     If the cursor is idle which means the nodejs application is running.
 
-## **STEP 4:** Sign the row
+## Task 4: Sign the row
 
 1. Navigate back to the previous cloud shell window that does not have the Node.js application running.
 

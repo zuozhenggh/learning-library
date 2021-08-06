@@ -25,7 +25,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Observe the predefined unified audit policies implemented
+## Task 1: Observe the predefined unified audit policies implemented
 
 1. Connect to `PDB21` as `SYSTEM`.  Enter the password you used to create your DB System, `WElcome123##`.
 
@@ -217,7 +217,7 @@ In this lab, you will:
   
   
 
-## **STEP 2:** Enable all three audit policies for all users
+## Task 2: Enable all three audit policies for all users
 
 1.  Enter the commands below to enable the audit policies.
    
