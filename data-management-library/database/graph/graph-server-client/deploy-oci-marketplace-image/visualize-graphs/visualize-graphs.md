@@ -18,11 +18,7 @@ The following video provides an overview of the Graph Visualization component (=
 
 - This lab assumes you have successfully completed Lab - Graph Query and Analysis with Python and published the graph. It also assumes the GraphViz is up and running on the compute instance on `public_ip_for_compute:7007/ui`. We will use the GraphViz to explore the graph and run some PGQL queries.
 
-<<<<<<< HEAD
 ## Task 1: Login to GraphViz
-=======
-## Task 1: Setup
->>>>>>> upstream/master
 
 Open the GraphViz at `https://<public_ip_for_compute>:7007/ui` using a web browser. Replace `<public_ip_for_compute>` with the one for your Graph Server compute instance.
 
@@ -30,7 +26,6 @@ Since the marketplace image is distributed with a self-signed SSL certificate, y
 
 If you use **Chrome**, type `thisisunsafe` in the warning window to move to the GraphViz screen.
 
-<<<<<<< HEAD
 ![](images/login-chrome.jpg)
 
 Using **Firefox**, click **Advanced** and then **Accep the Risk and Continue**.
@@ -41,8 +36,6 @@ You should see a screen similar to the screenshot below. Enter the username (`cu
 
 ![](images/login.jpg)
 
-=======
->>>>>>> upstream/master
 ## Task 2: Modify query
 
 Modify the query to get the first 5 rows, i.e. change `LIMIT 100` to `LIMIT 5`, and click Run.

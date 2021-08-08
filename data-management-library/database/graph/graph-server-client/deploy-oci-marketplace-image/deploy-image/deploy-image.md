@@ -26,11 +26,7 @@ Estimated time: 7 minutes
     - VCN NAME: e.g. `vcn1`
     - The rest of the items: Do not need to be changed
 
-<<<<<<< HEAD
 3. you need to open port 7007. Go to Virtual Cloud Networks > `vcn1` > `Public Subnet-vcn1` > `Default Security List for vcn1` > `Add Ingress Rules` and create the rule below:
-=======
-## Task 2: Locate the Graph Server and Client in the Oracle Cloud Marketplace
->>>>>>> upstream/master
 
     - Source Type: `CIDR`
     - Source CIDR: `0.0.0.0/0` (This setting is for testing only. Please replace to the IP address of the client machines for actual use.)
