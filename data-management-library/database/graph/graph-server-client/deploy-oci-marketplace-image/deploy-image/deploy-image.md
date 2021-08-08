@@ -26,7 +26,11 @@ Estimated time: 7 minutes
     - VCN NAME: e.g. `vcn1`
     - The rest of the items: Do not need to be changed
 
+<<<<<<< HEAD
 3. you need to open port 7007. Go to Virtual Cloud Networks > `vcn1` > `Public Subnet-vcn1` > `Default Security List for vcn1` > `Add Ingress Rules` and create the rule below:
+=======
+## Task 2: Locate the Graph Server and Client in the Oracle Cloud Marketplace
+>>>>>>> upstream/master
 
     - Source Type: `CIDR`
     - Source CIDR: `0.0.0.0/0` (This setting is for testing only. Please replace to the IP address of the client machines for actual use.)
@@ -83,7 +87,11 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/rmj_2.jpg)
 
+<<<<<<< HEAD
     Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edit the job and change the availability domain and retry. (An always-free compute VM can only be created in your home region. If you have previously created an always-free compute VM then this new VM.Standard.E2.1.Micro instance can only be created in the same availability domain as the previous one.)
+=======
+## Task 3: Upload ADB Wallet, Configure your Compute Instance.
+>>>>>>> upstream/master
 
     ![](images/RMJobCompleted_211.jpg)
 
@@ -112,7 +120,11 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
 Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
+<<<<<<< HEAD
 ## Task 4: Upload and Unzip ADB Wallet
+=======
+## Task 4:  Copy ADB Wallet to the Linux Compute
+>>>>>>> upstream/master
 
 In this step, you need the shell tool to run `scp` and `ssh` commands, e.g. Oracle Cloud Shell, Terminal if you are using MAC, or Gitbash if you are using Windows.
 
