@@ -15,7 +15,7 @@ In this lab, you will:
 
 You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified command for running them in the *Cloud Shell*.
 
-## **STEP 1**: Generate an Authentication Token to Login to the Oracle Cloud Container Registry
+## Task 1: Generate an Authentication Token to Login to the Oracle Cloud Container Registry
 
 In this step, we are going to generate an *Authentication Token*, that we will use to log in to the Oracle Cloud Container Registry.
 
@@ -39,7 +39,7 @@ In this step, we are going to generate an *Authentication Token*, that we will u
 
     ![Generated Token](images/13.png)
 
-## **STEP 2**: Push the bobbys-helidon-stock-application Docker image to your Oracle Cloud Container Registry Repository
+## Task 2: Push the bobbys-helidon-stock-application Docker image to your Oracle Cloud Container Registry Repository
 
 
 1. In Lab 5, you opened a URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) and saved the endpoint for your Region name in a text editor. In my case, it is US East (Ashburn).

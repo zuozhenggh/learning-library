@@ -15,7 +15,7 @@ Estimated time: 7 minutes
 * SSH Keys to use for connecting to a compute instance
 * An ADB instance with the downloaded wallet
 
-## **STEP 1:** Create Network for Graph Server
+## Task 1: Create Network for Graph Server
 
 1. Go to Oracle Cloud console > Networking > Virtual Cloud Networks
 
@@ -38,7 +38,7 @@ Estimated time: 7 minutes
     ![Add Ingress Rule](images/ingress_rule_7007.jpg)
 
 
-## **STEP 2:** Locate the Graph Server and Client in the Marketplace
+## Task 2: Locate the Graph Server and Client in the Marketplace
 
 Oracle Cloud Marketplace is an online platform which offers Oracle and partner software as click-to-deploy solutions that are built to extend Oracle Cloud products and services.
 
@@ -89,7 +89,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ***NOTE:*** *On completion please make a note of `public_ip` and `graphviz_public_url`, so that you can SSH into the running instance and access the graph viz later in this lab.*
 
-## **STEP 3:** Download ADB Wallet
+## Task 3: Download ADB Wallet
 
 1. Go to your Cloud console, under **Oracle Database**, select **Autonomous Transaction Processing**. If you don't see your instance, make sure the **Workload Type** is **Transaction Processing** or **All**.
 
@@ -112,7 +112,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
 Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-## **STEP 4:** Upload and Unzip ADB Wallet
+## Task 4: Upload and Unzip ADB Wallet
 
 In this step, you need the shell tool to run `scp` and `ssh` commands, e.g. Oracle Cloud Shell, Terminal if you are using MAC, or Gitbash if you are using Windows.
 
@@ -128,6 +128,8 @@ In this step, you need the shell tool to run `scp` and `ssh` commands, e.g. Orac
     ```
     scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
     ```
+
+## Task 5: Unzip ADB Wallet
 
 1. Connect to the compute instance via SSH as `opc` user, using the private key you created earlier.
 

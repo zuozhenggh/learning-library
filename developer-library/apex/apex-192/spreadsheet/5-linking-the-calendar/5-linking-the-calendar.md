@@ -34,7 +34,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar2.png " ")
 
-## **STEP 2:** Linking the Calendar
+## Task 2: Linking the Calendar
 When you click on a calendar entry, it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
 1. Navigate to the APEX App Builder, and ensure Page Designer is displayed with Page 6 selected.

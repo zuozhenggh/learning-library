@@ -26,7 +26,7 @@ Watch this short video to preview how to deploy your Oracle E-Business Suite clo
     * `Client_ID`
     * `Client_Secret`
 
-## **STEP 1:** Sign in to the Oracle Cloud Infrastructure Console
+## Task 1: Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
@@ -37,7 +37,7 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
     * **User name**: ``Tenancy Admin User``
     * **Password**: ``Tenancy Admin Password``
 
-## **STEP 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
+## Task 2: Deploy and Configure Oracle E-Business Suite Cloud Manager
 
 You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack creates the following cloud resources:
 
@@ -157,7 +157,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   ![](./images/11.png " ")
 
-## **STEP 3:** Update key-data.txt
+## Task 3: Update key-data.txt
 
 ### **Part 1:** Tenancy Info
 
@@ -190,7 +190,7 @@ Find the following under **Identity** -> **Compartments**
 
 Record the OCID for the compartment that was created in your `key-data.txt` as : `Oracle_Cloud_Compartment_OCID` 
 
-## **STEP 4:** Log in to Oracle E-Business Suite Cloud Manager
+## Task 4: Log in to Oracle E-Business Suite Cloud Manager
 
 Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 

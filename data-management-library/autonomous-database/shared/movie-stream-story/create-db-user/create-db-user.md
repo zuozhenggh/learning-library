@@ -14,7 +14,7 @@ In this lab, you will:
 * Log in as the user
 * Launch SQL Worksheet
 
-## **Step 1**: Create a Database User
+## Task 1: Create a Database User
 
 When you create a new data warehouse, you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the "New User" wizard within the SQL tools.
 
@@ -70,7 +70,7 @@ For this workshop we need to create one new user.
 
 Now that you have created a user with several roles, let's see how easy it is to grant some additional roles.
 
-## **Step 2:** Update the User's Profile to Grant Additional Roles
+## Task 2: Update the User's Profile to Grant Additional Roles
 
 1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click the 3-dotted ellipsis symbol to the right of the MOVIESTREAM user's name, and select **Edit** from the menu.
 
@@ -84,7 +84,7 @@ Now that you have created a user with several roles, let's see how easy it is to
 
     Notice that two additional roles have already been automatically assigned: **CONNECT** and **RESOURCE**. Click **Apply Changes**. 
 
-## **Step 3:** Log In As the User
+## Task 3: Log In As the User
 
 Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
 
@@ -101,7 +101,7 @@ Now you need to switch from the ADMIN user to the MOVIESTREAM user, before start
     ![ALT text is not available for this image](images/2878885105.png)
 
 
-## **Step 4:** Launch SQL Worksheet 
+## Task 4: Launch SQL Worksheet 
 
 In the next labs, you will use the SQL Worksheet application that is built in to the data warehouse environment. 
 

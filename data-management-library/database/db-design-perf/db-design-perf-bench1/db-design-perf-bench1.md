@@ -14,7 +14,7 @@ Estimated lab time: 15 minutes
 
 -   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **STEP 1:** Understand and Run the Benchmark via Cloud Shell
+## Task 1: Understand and Run the Benchmark via Cloud Shell
 
 1. Using Cloud Shell, run the benchmark1 shell script. If you are already in the home directory, you can skip the initial CD command.
 
@@ -69,7 +69,7 @@ Estimated lab time: 15 minutes
 
     At this point, you can press Enter which will commit this parent session, thus releasing the lock on the RESULTS table, and all 8 sessions will commence their benchmark. The calling script will then wait for all 8 sessions to complete before producing a summary. This may take several minutes.
 
-## **STEP 2:** Analyzing the benchmark results
+## Task 2: Analyzing the benchmark results
 
 1. The benchmark will summarize the performance with three metrics:
 

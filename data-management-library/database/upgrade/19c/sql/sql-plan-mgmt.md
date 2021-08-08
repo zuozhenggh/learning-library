@@ -50,7 +50,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Fix A Single Statement
+## Task 1: Fix A Single Statement
 
 1. Run the statements below.
       ```
@@ -111,7 +111,7 @@ This lab assumes you have:
 
 If you like to dig deeper “Why has this plan changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
-## **STEP 2**: Fix all statements
+## Task 2: Fix all statements
 
 Now we pin down all possible statements collected in the SQL Tuning Set STS_CaptureCursorCache – and verify with SQL Performance Analyzer again the effect.
 

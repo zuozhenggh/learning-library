@@ -27,7 +27,7 @@ In this lab, you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Import and run the GlobalFeatureImportance explainer
+## Task 1: Import and run the GlobalFeatureImportance explainer
 
 To use the GlobalFeatureImportance explainer to explain and interpret machine learning models:
 

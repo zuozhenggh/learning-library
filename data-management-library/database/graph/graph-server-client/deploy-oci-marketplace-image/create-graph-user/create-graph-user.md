@@ -16,7 +16,7 @@ Estimated time: 3 minutes
 * Oracle cloud account
 * Provisioned Autonomous Database Shared Instance
 
-## **STEP 1:** Login to Database Actions
+## Task 1: Login to Database Actions
 
 Login as the Admin user in Database Actions of the newly created ADB instance.
 
@@ -40,7 +40,7 @@ Go to **SQL** menu once you logged in as the `ADMIN` user.
 
 ![](images/ADB_SQLDevWebHome.jpg)
 
-## **STEP 2:** Create database roles
+## Taks 2: Create database roles
 
 Now create the roles required for the graph feature. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
 
@@ -99,7 +99,7 @@ GRANT PGX_SESSION_READ_MODEL TO GRAPH_DEVELOPER;
 </copy>
 ```
 
-## **STEP 2:** Create a database user
+## Task 3: Create a database user
 
 Now create the `CUSTOMER_360` user and provide Database Actions access for this user.
 
@@ -127,7 +127,7 @@ For details, see the ["Provide Database Actions Access to Database Users"](https
 
 You may now proceed to the next lab.
 
-## Acknowledgements ##
+## Acknowledgements
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph.
 * **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management.

@@ -151,7 +151,7 @@ If you do not know how to add egress rules, skip to the Appendix to add rules to
 
   ![](./images/em-stack-details-b.png " ")
 
-## **STEP 2**: Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 This is optional, you may skip directly to [Step 3](#STEP3:TerraformApply).
 
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration.
@@ -170,7 +170,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **STEP 3**: Terraform Apply
+## Task 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -197,7 +197,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **STEP 4**: Find your IP Addresses
+## Task 4: Find your IP Addresses
 
 Before logging in, first note down your IP addresses.
 
@@ -222,7 +222,7 @@ Before logging in, first note down your IP addresses.
 - [Step 6: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 7: Putty](#STEP7:WindowsusingPutty)
 
-## **STEP 5**: Oracle Cloud Shell
+## Task 5: Oracle Cloud Shell
 
 1.  To re-start the Oracle Cloud shell, go to your Cloud console and click the Cloud Shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
 
@@ -240,7 +240,7 @@ Before logging in, first note down your IP addresses.
 5.  You may now *proceed to the next lab*.  
 
 
-## **STEP 6**: MAC or Windows CYGWIN Emulator
+## Task 6: MAC or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
 1.  Using one of the Public IP addresses in Step 4, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -258,7 +258,7 @@ Before logging in, first note down your IP addresses.
 
 3. After successfully logging in, you may *proceed to the next lab*
 
-## **STEP 7**: Windows using Putty
+## Task 7: Windows using Putty
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before conneting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.

@@ -75,32 +75,33 @@ This means that the pattern 'family' looks for movies where the genre is set to 
     MATCH_RECOGNIZE
     (PARTITION BY customer_id ORDER BY day_id, genre
     ONE ROW PER MATCH
-    PATTERN (family+ quarter)
+    PATTERN (family+ )
     DEFINE
-    family AS genre = 'Family',
-    quarter AS first(family.quarter_qoy) = last(family.quarter_qoy)
+    family AS genre = 'Family'
+    AND family.quarter_name = FIRST(family.quarter_name)
     );</copy>
     ```
 
-**Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw_movie_sales_fact_2020) is divided into individual partitions for each customer_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
+**Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw\_movie\_sales\_fact\_2020) is divided into individual partitions for each customer_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
 
-3. The result should be similar to that shown below:
+3. The result should be 495,450.
 
-    ![Query result showing the pattern](images/3038282323.png)
 
-    This shows that we have over 1,013,572 customers that match this pattern. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
+This shows that we have over 495,450 customers that match this pattern which is too many for the marketing team's project. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
 
 ## STEP 2 -  Returning More Information About The Pattern
 
 The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*):
+
 
     ```
     MEASURES
     FIRST(family.quarter_name) AS first_quarter,
     LAST(family.quarter_name) AS last_quarter,
     count(family.movie_id) AS family_movies,
-    family.movie_id AS movie,
+    family.movie_id AS movie
     ```
+
 
 1. Copy and paste the following code into your worksheet:
 
@@ -125,17 +126,17 @@ The pattern matching process can return information about the pattern it has dis
     family.movie_id AS movie,
     count(family.movie_id) AS family_movies
     ALL ROWS PER MATCH
-    PATTERN (family+ quarter)
+    PATTERN (family+)
     DEFINE
-    family AS genre = 'Family',
-    quarter AS first(family.quarter_qoy) = last(family.quarter_qoy)
+    family AS genre = 'Family'
+    AND family.quarter_name = FIRST(family.quarter_name)
     ) mr
     order by mr.customer_id, match_number;</copy>
     ```
 
 2. This time we get a lot more information returned by our query. This expanded query shows a row for each occurrence of a customer watching a family movie and it shows the movie. As you scroll through the list of customers, you can see that in some cases each customer watches more than one family movie per month (see the column headed `FAMILY_MOVIES`):
 
-    ![Result of expanded query](images/3038282326.png)
+    ![Result of expanded query](images/lab-5d-step-2-substep-2.png)
 
 ## STEP 3 - Searching For Family And Family-Related Movies
 
@@ -146,12 +147,11 @@ Now that we understand how our pattern matching query is working, we can extend 
     DEFINE
     comedy as genre = 'Comedy',
     crime as genre = 'Crime',
-    drama as genre = 'Drama',
     family as genre = 'Family',
-    quarter as scifi.quarter_num_of_year = comedy.quarter_num_of_year
+    AND FIRST(family.quarter_name) = LAST(family.quarter_name)
     ```
 
-    **Note:** We are defining "family-related" genres as comedy, crime and drama as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, one crime movie, one drama movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
+**Note:** We are defining "family-related" genres as comedy, crime and drama as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, a crime movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
 
 1. If we insert the above into our first pattern matching query, we can then paste the following code into our SQL Worksheet:
 
@@ -167,39 +167,35 @@ Now that we understand how our pattern matching query is working, we can extend 
     last(family.quarter_name) AS last_quarter,
     count(movie_id) AS count_movies
     ALL ROWS PER MATCH
-    PATTERN (comedy+ crime drama family+ quarter)
+    PATTERN (comedy+ crime family+)
     DEFINE
     comedy as genre = 'Comedy',
-    crime as genre = 'Crime',
-    drama as genre = 'Drama',
-    family as genre = 'Family',
-    quarter AS first(family.quarter_qoy) = last(family.quarter_qoy)
+    crome as genre = 'Crime',
+    family as genre = 'Family'
+    AND family.quarter_name = LAST(comedy.quarter_name)
     ) mr
     order by mr.customer_id, match_number;</copy>
     ```
 
-2. This returns around 180,631 customers:
+2. This returns around 2,765 customers:
 
-    ![Query result with additional family related genres](images/3038282324.png)
-
-    Before we do any more work on this query, we should check-in with our marketing team to see if this number is within the range they were expecting.
+Before we do any more work on this query, we should check-in with our marketing team to see if this number is within the range they were expecting.
 
 ## STEP 4 - Changing Requirements
 
-A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list contains too many customers. Ideally, they want to target a much smaller list of customers with the first round of this campaign! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies and very occasionally might watch a horror movie! 
+A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list needs more tweaking. Ideally, they want to target a much smaller list of customers with the first round of this campaign and they need to find customers who like sci-fi movies! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies! 
 
-How can you adapt the previous query to pick out those customers that really enjoy family and sci-fi movies?  All we need to do is tweak our pattern statement! This means our pattern definition will now look like this:
+How can you adapt the previous query to pick out those customers that really enjoy family style movies and sci-fi movies?  All we need to do is tweak our pattern statement! This means our pattern definition will now look like this:
+
 
     ```
-    PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
+    PATTERN (comedy+ crime family+ scifi+)
     DEFINE
     comedy as genre = 'Comedy',
     crime as genre = 'Crime',
-    drama as genre = 'Drama',
     family as genre = 'Family',
-    horror as genre = 'Horror',
-    scifi as genre = 'Sci-Fi',
-    quarter as LAST(scifi.quarter_num_of_year) = FIRST(comedy.quarter_num_of_year)
+    AND family.quarter_name = LAST(comedy.quarter_name)
+    scifi as genre = 'Sci-Fi'
     ```
 
 
@@ -211,21 +207,19 @@ How can you adapt the previous query to pick out those customers that really enj
     MATCH_RECOGNIZE
     (PARTITION BY customer_id ORDER BY day_id, genre
     ONE ROW PER MATCH
-    PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
+    PATTERN (comedy+ drama+ family+  scifi+),
     DEFINE
-    comedy AS genre = 'Comedy',
-    crime AS genre = 'Crime',
-    drama AS genre = 'Drama',
-    family AS genre = 'Family',
-    horror AS genre = 'Horror',
-    scifi AS genre = 'Sci-Fi',
-    quarter AS last(scifi.quarter_qoy) = FIRST(comedy.quarter_qoy)
+    comedy as genre = 'Comedy',
+    drama as genre = 'Drama',
+    family as genre = 'Family'
+    AND family.quarter_name = LAST(comedy.quarter_name),
+    scifi as genre = 'Sci-Fi'
+    ) mr
     );</copy>
     ```
 
-2. The answer is 278. This should be more in line with what the marketing team is expecting so they can run some test campaigns.
+2. The answer is 314. This should be more in line with what the marketing team is expecting so they can run a quick test campaign to gauge the level of feedback.
 
-    ![Query showing how many customers match the new pattern](images/3038282322.png)
 
 3. To help them validate this smaller list of customers, we will add some additional information into our results by showing whether a movie was matched by our pattern as a family or sci-fi movie (this is shown in the **`classifier`** column.)
 
@@ -234,9 +228,7 @@ How can you adapt the previous query to pick out those customers that really enj
     customer_id,
     comedy_movies,
     crime_movies,
-    drama_movies,
     family_movies,
-    horror_movies,
     sf_movies,
     first_quarter,
     last_quarter
@@ -248,33 +240,29 @@ How can you adapt the previous query to pick out those customers that really enj
     last(scifi.quarter_name) AS last_quarter,
     count(comedy.movie_id) AS comedy_movies,
     count(crime.movie_id) AS crime_movies,
-    count(drama.movie_id) AS drama_movies,
     count(family.movie_id) AS family_movies,
-    count(horror.movie_id) AS horror_movies,
     count(scifi.movie_id) AS sf_movies
     ONE ROW PER MATCH
-    PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
+    PATTERN (comedy+ crime family+  scifi+)
     DEFINE
     comedy as genre = 'Comedy',
     crime as genre = 'Crime',
-    drama as genre = 'Drama',
-    family as genre = 'Family',
-    horror as genre = 'Horror',
-    scifi as genre = 'Sci-Fi',
-    quarter as scifi.quarter_qoy = comedy.quarter_qoy
+    family as genre = 'Family'
+    AND family.quarter_name = LAST(comedy.quarter_name),
+    scifi as genre = 'Sci-Fi'
     ) mr
     order by mr.customer_id, first_quarter, family_movies, sf_movies;</copy>
     ```
 
 4. Now we have a much smaller list of customers for our marketing team to review, which should allow them to test out their new campaign.
 
-    ![Query result showing much smaller list of customers](images/3038282321.png)
+    ![Query result showing much smaller list of customers](images/lab-5d-step-4-substep-4.png)
 
 ## STEP 5 - Job Done
 
 1. The marketing team is happy with this smaller list of customers, which means the last step is to share the results with our marketing team. We can simply send them a file by using the  **Download**  feature on the  **Query Result**  panel.
 
-    ![ALT text is not available for this image](images/3038282320.png)
+    ![ALT text is not available for this image](images/lab-5d-step-5-substep-1.png)
 
 
 ## STEP 6 - What About Movies With Multiple Genres?
@@ -283,13 +271,15 @@ The above examples have used a very simple business rule - each movie has a sing
 1. Let's view the movie dimension table:
 
     ```
-    <copy>SELECT * 
+    <copy>SELECT 
+    title,
+    genres
     FROM movie</copy>
     ```
 
 2. Now we can see that each movie has multiple genres.
 
-    ![Query result showing each mvoie having multiple genres](images/3038282321.png)
+    ![Query result showing each mvoie having multiple genres](images/lab-5d-step-6-substep-2.png)
 
 3. Let's create a new view over the sales data joins that with the movie table and incorporates the column containing the genre information:
 
@@ -308,7 +298,6 @@ The above examples have used a very simple business rule - each movie has a sing
     m.MONTH_NAME,
     m.MONTH_ANAME,
     m.QUARTER_NAME,
-    m.QUARTER_QOY,
     m.YEAR_NAME,
     m.CUSTOMER_ID,
     m.STATE_PROVINCE,
@@ -322,7 +311,7 @@ The above examples have used a very simple business rule - each movie has a sing
     m.DISCOUNT_TYPE,
     m.DISCOUNT_PERCENT,
     m.ACTUAL_PRICE,
-    f.genre as GENRE,
+    f.GENRES as GENRE,
     m.MOVIE_ID
     FROM vw_movie_sales_fact m, movie f
     WHERE year_name = '2020'
@@ -343,10 +332,8 @@ In this context, we need to search the column genre for a specific string such a
     SELECT
     customer_id,
     comedy_movies,
-    crime_movies,
     drama_movies,
     family_movies,
-    horror_movies,
     sf_movies,
     first_quarter,
     last_quarter
@@ -358,27 +345,23 @@ In this context, we need to search the column genre for a specific string such a
     last(scifi.quarter_name) AS last_quarter,
     count(comedy.movie_id) AS comedy_movies,
     count(crime.movie_id) AS crime_movies,
-    count(drama.movie_id) AS drama_movies,
     count(family.movie_id) AS family_movies,
-    count(horror.movie_id) AS horror_movies,
     count(scifi.movie_id) AS sf_movies
     ONE ROW PER MATCH
-    PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
+    PATTERN (comedy+ crime family+  scifi+ quarter)
     DEFINE
     comedy AS INSTR(genre, 'Comedy',1,1) > 0,
     crime AS INSTR(genre, 'Crime',1,1) > 0,
-    drama AS INSTR(genre, 'Drama',1,1) > 0,
-    family AS INSTR(genre, 'Family',1,1) > 0,
-    horror AS INSTR(genre, 'Horror',1,1) > 0,
-    scifi AS INSTR(genre,'Sci-Fi',1,1) > 0,
-    quarter as scifi.quarter_qoy = comedy.quarter_qoy
+    family AS INSTR(genre, 'Family',1,1) > 0
+    AND family.quarter_name = LAST(comedy.quarter_name),
+    scifi AS INSTR(genre,'Sci-Fi',1,1) > 0
     ) mr
     order by mr.customer_id, first_quarter, family_movies, sf_movies;</copy>
     ```
 
 5. The result will look like this.
 
-    ![Query result showing results of serching across multiple genres](images/3038282321.png)
+    ![Query result showing results of serching across multiple genres](images/lab-5d-step-6-substep-5.png)
 
 
 
@@ -397,7 +380,6 @@ Let's quickly recap what has been covered in this lab:
 - Sharing results with other data warehouse users
 
 Please *proceed to the next lab*.
-
 
 ## **Acknowledgements**
 

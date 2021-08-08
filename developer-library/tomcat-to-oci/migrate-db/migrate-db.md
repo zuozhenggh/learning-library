@@ -12,7 +12,7 @@ Estimated Completion Time: 10 minutes.
 In this tutorial, you will move the application database schema over to the Oracle Autonomous Database on OCI using datapump and the OCI Object Storage service as intermediate storage location.
 
 
-## **STEP 1:** Install the Oracle Cloud Infrastructure CLI on the Source Database
+## Task 1: Install the Oracle Cloud Infrastructure CLI on the Source Database
 
 This task is required to get the wallet from the database and put the dump file into object storage.
 
@@ -113,7 +113,7 @@ This task is required to get the wallet from the database and put the dump file 
     }
     ```
 
-## **STEP 2:** Create an Oracle Cloud Infrastructure Object Storage Bucket
+## Task 2: Create an Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Go to **Core Infrastructure** and select **Object Storage**.
 
@@ -127,7 +127,7 @@ This task is required to get the wallet from the database and put the dump file 
 
 5. Click **Create Bucket**.
 
-## **STEP 3:** Export the Database Schema and Data
+## Task 3: Export the Database Schema and Data
 
 1. Run the datapump export script `datapump_export.sh`:
 
@@ -209,7 +209,7 @@ This task is required to get the wallet from the database and put the dump file 
 
     ```
 
-## **STEP 4:** Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
+## Task 4: Move the Dump File to the Oracle Cloud Infrastructure Object Storage Bucket
 
 1. Put the dump file in the `atp-upload` bucket:
 
@@ -233,7 +233,7 @@ This task is required to get the wallet from the database and put the dump file 
     }
     ```
 
-## **STEP 5:** Get the OCID of the Database
+## Task 5: Get the OCID of the Database
 
 1. Go to **Oracle Database** and select **Autonomous Transaction Processing**.
 
@@ -245,7 +245,7 @@ This task is required to get the wallet from the database and put the dump file 
 
     ![](./images/db-info.png)
 
-## **STEP 6:** Get the Database Wallet
+## Task 6: Get the Database Wallet
 
 1. Using the OCI CLI, download the database wallet on the source database, replacing the OCID:
 
@@ -292,7 +292,7 @@ This task is required to get the wallet from the database and put the dump file 
     </copy>
     ```
 
-## **STEP 7:** Create a Local SSH Tunnel to the Database
+## Task 7: Create a Local SSH Tunnel to the Database
 
 1. Get the public IP of the bastion host from the Terraform output:
 
@@ -350,7 +350,7 @@ This task is required to get the wallet from the database and put the dump file 
     127.0.0.1  jrhdeexg.adb.us-ashburn-1.oraclecloud.com
     ```
 
-## **STEP 8:** Get an Oracle Cloud Infrastructure Auth Token
+## Task 8: Get an Oracle Cloud Infrastructure Auth Token
 
 1. Go to **User** and select **User Settings**.
 
@@ -370,7 +370,7 @@ This task is required to get the wallet from the database and put the dump file 
 
 7. Copy the output of the token to notepad.
 
-## **STEP 9:** Configure the Database Cloud Credentials
+## Task 9: Configure the Database Cloud Credentials
 
 1. Using SQL*Plus Instant Client, connect to the remote database through the tunnel created earlier:
 
@@ -432,7 +432,7 @@ This task is required to get the wallet from the database and put the dump file 
 4. Type `exit` to exit SQL*Plus.
 
 
-## **STEP 10:** Import the Dump File into the Database
+## Task 10: Import the Dump File into the Database
 
 Use datapump to import the data dump.
 

@@ -24,7 +24,7 @@ Learn how to
 - It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
 
 
-## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
+## Task 1: Connect to the Database Actions for your Autonomous Database instance
 
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
@@ -33,7 +33,7 @@ Learn how to
 2. Click on the Tools tab and then the Database Actions link to open it.
    ![](images/../../query-graph/images/adb-tools-tab-db-actions.png " ")
 
-## **STEP 2**: Login as the graph-enabled user
+## Task 2: Login as the graph-enabled user
 
 1. Login as the graph user (e.g. `GRAPHUSER`) for your Autonomous Database instance. 
    
@@ -45,7 +45,7 @@ Learn how to
     - Click on Create User
     - Turn on the Web-Access and Graph buttons
 
-## **STEP 3**: Download the sample datasets from the ObjectStore
+## Task 3: Download the sample datasets from the ObjectStore
 
 1. Copy and paste the url in your browser for the zip archive, i.e.  
 
@@ -61,7 +61,7 @@ Learn how to
 
 2. **Unzip** the archive into a local directory such as ~/downloads.
 
-## **STEP 4**: Upload using Database Actions Data Load
+## Task 4: Upload using Database Actions Data Load
 
 1. Click on the Data Load card. 
    

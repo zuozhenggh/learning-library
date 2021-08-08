@@ -21,7 +21,7 @@ In this lab, you:
 * A configured project, VCN, and subnet.
 * An account that has permission to create a Data Science notebook session.
 
-## **STEP 1:** Creating a Notebook Session
+## Task 1: Creating a Notebook Session
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
@@ -51,7 +51,7 @@ In this lab, you:
     While the notebook session is being created, you can navigate away from the current page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/creating-ns.png)
 
-## **STEP 2:** Opening a Notebook Session
+## Task 2: Opening a Notebook Session
 
 Once the notebook session has been created the notebook session page shows the notebook in an **Active** or **Inactive** state. To open the notebook:
 

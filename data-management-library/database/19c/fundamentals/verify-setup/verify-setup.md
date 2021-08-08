@@ -21,7 +21,7 @@ Be sure that the following tasks are completed before you start:
 
 
 
-## **STEP 1**: Obtain the public IP addresses of your compute instances
+## Task 1: Obtain the public IP addresses of your compute instances
 
 1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
 
@@ -34,7 +34,7 @@ Be sure that the following tasks are completed before you start:
 
 
 
-## **STEP 2**: Connect to your compute instances
+## Task 2: Connect to your compute instances
 
 Test that you can connect to both of your compute instances. The `compute-staged` instance has a Guacamole desktop available, so you can connect to it via a browser. To connect to the `workshop-installed` compute instance, you can use Cloud Shell in Oracle Cloud Infrastructure.
 
@@ -91,7 +91,7 @@ Test that you can connect to both of your compute instances. The `compute-staged
   You are now connected to your new compute instance via Cloud Shell.
 
 
-## **STEP 3**: Discover the container database (CDB) and pluggable database (PDB) on `workshop-installed`
+## Task 3: Discover the container database (CDB) and pluggable database (PDB) on `workshop-installed`
 
 1. In Cloud Shell, switch to the `oracle` user on the `workshop-installed` compute instance.
 

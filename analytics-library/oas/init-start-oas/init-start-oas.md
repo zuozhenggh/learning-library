@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 1:** Login to Oracle Analytics Server UI
+## Task 1: Login to Oracle Analytics Server UI
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 ### UI Access
@@ -62,14 +62,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 2:** Download and Stage Workshop Artifacts
+## Task 2: Download and Stage Workshop Artifacts
 In order to run this workshop, you will need a set of files that have been conveniently packaged for you. Proceed as indicated below.
 
 1. Download [OAS_Workshop.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6_WvdYP8HOSRFYJpU2958aV8WpEq2sDaqZUP4dJdFlz2NvBPIdlRg8uHyDC0WMyA/n/natdsecurity/b/labs-files/o/OAS_Workshop.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive
 
-## **Step 3:** Managing DB and OAS processes (optional)
+## Task 3: Managing DB and OAS processes (optional)
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below as user *opc* from your SSH terminal session
 
 ### DB Startup/Shutdown

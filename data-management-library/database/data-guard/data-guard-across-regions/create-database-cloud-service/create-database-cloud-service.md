@@ -13,7 +13,7 @@ Estimated wait time: 20 minutes to create database
 - VCN with private subnet
 
 
-## **STEP 1:** Create the Oracle Database Cloud Service
+## Task 1: Create the Oracle Database Cloud Service
 1. Select a region for your primary database.
 2. Select the menu Oracle Databases then Bare Metal, VM, and Exadata.
 3. Select your compartment.

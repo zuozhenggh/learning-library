@@ -56,7 +56,7 @@ select empno, ename, dept from emp where empno = :id
 - Completed the [Create and auto-REST enable a table lab](../create_table/create_table.md)
 - Completed the [Loading Data and Creating Business Objects Lab](../load_data_and_biz_objs/load_data_and_biz_objs.md)
 
-## **STEP 1**: REST Enable a custom SQL Statement
+## Task 1: REST Enable a custom SQL Statement
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -172,7 +172,7 @@ select empno, ename, dept from emp where empno = :id
 
     ![submitted URL and working REST service](./images/rest-24.png)
 
-## **STEP 2**: REST Enable Business Logic (PL/SQL procedure)
+## Task 2: REST Enable Business Logic (PL/SQL procedure)
 
 1. It's now time to REST enable our Business Logic or PL/SQL procedure we created in the previous lab. To start, left click our module com.oracle.livelab.api in the Database Actions breadcrumbs in the upper left of the page.
 

@@ -24,7 +24,7 @@ In this lab, you will:
 * GitHub account
 * User that belongs to the Administrator group or has granted privileges to manage multiple OCI resources (IAM, ORM, DevOps, OKE, Network, etc).
 
-## **STEP 1**: Create CICD Compartment
+## Task 1: Create CICD Compartment
 
 Compartments are used to organize and isolate your cloud resources. It is always recommended to carefully design your compartment structure and which groups will have access to them. In this lab exercise, we will create the `cicd` compartment for managing all resources created through the cicd pipeline. You can create [IAM Groups and Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) to control who have access to visualize/manage the resources in that compartment.
 
@@ -38,7 +38,7 @@ Otherwise, click through the hierarchy of compartments until you reach the detai
 ![Name/description](./images/create-compartment-form.png)
 
 
-## **STEP 2**: Import Git "deploy" repository 
+## Task 2: Import Git "deploy" repository 
 
 Oracle has published a [Reference Architecture](https://docs.oracle.com/en/solutions/build-pipeline-using-devops/index.html) which contains a [quickstart](https://github.com/oracle-quickstart/oci-arch-devops) repository that contains Terraform templates and we will use them to automate the provisioning of OCI DevOps service and all target services/environments. Let's *import* that repository to your GitHub account.
 
@@ -61,7 +61,7 @@ Oracle has published a [Reference Architecture](https://docs.oracle.com/en/solut
 ![new repository](./images/github-new-repo.png)
 
 
-## **STEP 3**: Setup ORM Configuration Source Provider 
+## Task 3: Setup ORM Configuration Source Provider 
 
 After importing the repository into our GitHub account, we are going to use OCI Resource Manager (ORM) to provision the infrastructure. ORM has a feature that integrates it with Version Control Systems/Platforms like GitHub and GitLab, etc. 
 
@@ -120,7 +120,7 @@ For more details about PAT, check the [GitHub documentation](https://docs.github
 
 The existing Terraform template code we imported into the git repository was designed primarily to run through Terraform CLI which uses user/key authentication mode declared in the Terraform OCI provider template. However, when deploying the Terraform template through ORM, the OCI service itself uses an authentication mode based on Service principal, which identify the user and region logged in through the OCI Console (or CLI/API).
 
-Therefore, deploying the template through ORM require us to make some changes to the code to remove the user/key authentication settings.
+Therefore, deploying the template through ORM require us to make some changes to the code to remove the user/key authentication settings. 
 
 There are 2 files we need to change:
     - providers.tf
@@ -190,6 +190,10 @@ We are going to create a feature branch and change the code directly through Git
 1. Commit the changes into the `release-infra` branch. 
     ![Commit variables.tf](./images/github-commit-variables-tf.png)
 
+
+`Note`: You can implement these changes to the Terraform provider block across all your Terraform projects to make them compatible with ORM.
+
+
 #### Create a pull request
 
 Finally, our code is ready to get reviewed and merged into the default base branch. We need to create a Pull request to give opportunity to other team members to review the code and ensure we are following project standard and security practices. 
@@ -251,7 +255,7 @@ Now we are going to setup the connection between OCI Resource Manager service in
 1. In case of issues with your connection, review your settings. If you are not using a GitHub free account, you may have to change the URL. Check [ORM documentation](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider__exampleurls) for more details.
 
 
-## **STEP 4**: Create ORM Stack
+## Task 4: Create ORM Stack
 
 Next step we are going to create a OCI Resource Manager Stack. The Stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. Each stack resides in the compartment you specify, in a single region; however, resources on a given stack can be deployed across multiple regions. An OCID (unique identifier) is assigned to each stack.
 
@@ -287,16 +291,11 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 
 1. Click on Next in the bottom of the page to go to the `2. Configure variables` page.
 
-1. In the `Configure Variables` page, change the following variables:
+1. In the `Configure Variables` page:
+    1. select `cicd` compartment
+    1. set project Name `HelloOCIDevOps`
+    1. Make sure both `Execute deployment in DevOps Pipeline?` and `Show Advanced Options?` are unchecked.
 
-    DevOps Project:
-
-    |Variable|Value|
-    |-|-|
-    |Compartment|cicd|
-    |Project Name|HelloOCIDevOps|
-    |Execute deployment in DevOps Pipeline?|unchecked|
-    |Show Advanced Options?|unchecked|
     
     ![ORM Stack - DevOps Project](./images/oci-orm-stack-devops-project.png)
 
@@ -304,12 +303,16 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
     ![ORM Stack - Policy Settings](./images/oci-orm-stack-policy-settings.png)
 
 
-    OKE Cluster Configuration: No changes required, use Stack default values to create a new OKE cluster.
-    ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
+    OKE Cluster Configuration:
+    
+     * To create a new OKE Cluster, no changes are required, use Stack default values.
+        ![ORM Stack - OKE Cluster Configuration](./images/oci-orm-stack-oke-cluster-configuration.png)
 
-    OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
-    ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
+        OKE Worker Nodes: Change the number of worker nodes from 3 to 1. Use default value for the remaining variables.
+        ![ORM Stack - OKE Worker Nodes](./images/oci-orm-stack-oke-worker-nodes.png)
 
+    * To re-use an existing OKE Cluster, uncheck `Create new OKE Cluster` and then select the Compartment where the cluster was deployed and Cluster:
+        ![ORM Stack - Select existing OKE custer](./images/oci-orm-select-existing-oke-cluster.png)
     
 1. Click on Next in the bottom of the page to proceed to the `3. Review` page.
     ![ORM Stack - 3.Review](./images/oci-orm-stack-review.png)
@@ -317,7 +320,7 @@ Next step we are going to create a OCI Resource Manager Stack. The Stack is a co
 1. After Reviewing the variable values that were modified, click on Create button to create the `infrastructure-onboard` Stack.
     ![ORM Stack - infrastructure-onboard](./images/oci-orm-stack-infra.png)
 
-## **STEP 5**: Provisioning the Infrastructure
+## Task 5: Provisioning the Infrastructure
 
 1. After creating the Stack, you can perform some Terraform operations that are also known as `Jobs` in OCI. By clicking on `Plan` button and defining a name for your plan, e.g. `deploy1` Resource Manager will parse your Terraform configuration and creates an execution plan for the associated stack. The execution plan lists the sequence of specific actions planned to provision your Oracle Cloud Infrastructure resources. The execution plan is handed off to the apply job, which then executes the instructions.
     ![ORM Stack - jobs menu](./images/oci-orm-jobs-menu.png)

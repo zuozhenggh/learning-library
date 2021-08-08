@@ -27,7 +27,7 @@ In this workshop we will be using wrapper scripts to export, move the data to th
 - To have provisioned the target database on OCI.
 - To have gathered information about the passthrough-server to the database, and the database node IP and domain name which is part of the connection string.
 
-## **STEP 1:** Get a Shell Inside the On-Premises Database Instance
+## Task 1: Get a Shell Inside the On-Premises Database Instance
 
 ### If you used the Docker environment:
 
@@ -96,7 +96,7 @@ In this workshop we will be using wrapper scripts to export, move the data to th
       expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
       ```
 
-## **STEP 2:** Export the Source Database
+## Task 2: Export the Source Database
 
 1. Run the `datapump_export.sh` script:
 
@@ -111,7 +111,7 @@ In this workshop we will be using wrapper scripts to export, move the data to th
         ![](./images/migrate-db-1.png " ")
 
 
-## **STEP 3:** Install the OCI CLI on the Source Database
+## Task 3: Install the OCI CLI on the Source Database
 
 This will be needed to get the wallet from the ATP database and put the database dump file into object storage from the source database.
 
@@ -205,7 +205,7 @@ This will be needed to get the wallet from the ATP database and put the database
 
     Make a note of your **namespace** which will be needed later.
 
-## **STEP 4:** Create an Object Storage Bucket
+## Task 4: Create an Object Storage Bucket
 
 1. Go to **Core Infrastructure -> Object Storage**.
 
@@ -219,7 +219,7 @@ This will be needed to get the wallet from the ATP database and put the database
 
 5. Click **Create Bucket**.
 
-## **STEP 5:** Edit the `datapump_import_atp.sh` Script
+## Task 5: Edit the `datapump_import_atp.sh` Script
 
 
 First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI database found in the datapump folder.
@@ -292,7 +292,7 @@ First, we'll need to edit the `datapump_import_atp.sh` script to target the OCI 
 
 17. Save the file (with `CTRL+x` then `y`).
 
-## **STEP 6:** Import the Data into the Target Database
+## Task 6: Import the Data into the Target Database
 
 1. Run the `datapump_import_atp.sh` script you edited at the previous step:
 
@@ -320,7 +320,7 @@ The database is now migrated to OCI, but we also need to set up the wallet on th
 
 If the tunnel closing step reports failure, it is safe to ignore.
 
-## **STEP 7:** Download the Wallet on Each WebLogic Server
+## Task 7: Download the Wallet on Each WebLogic Server
 
 There are 2 ways to download the wallet on to the target WebLogic servers:
 

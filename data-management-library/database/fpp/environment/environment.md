@@ -36,7 +36,7 @@ In this lab, you will:
       - Lab: Get the Public IP of the FPP Server (Livelabs Tenant only)
 
 <if type="livelabs">
-## **Step 0:** Upload Key to Cloud Shell and Connect
+## Task 0: Upload Key to Cloud Shell and Connect
 
 To create your LiveLabs reservation, you used a ssh key that you created on your desktop.  We recommend you run this workshop in Cloud Shell.  We will be uploading the private key you created to Cloud Shell to continue the workshop.  If you do not wish to run in cloud shell, you can connect using the terminal of your choice.
 
@@ -79,7 +79,7 @@ To create your LiveLabs reservation, you used a ssh key that you created on your
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 </if>
-## **Step 1:** Connect to the FPP Server via SSH
+## Task 1: Connect to the FPP Server via SSH
 1. Connect to the FPP Server via SSH using the user `opc` and the private key that you have created during the LiveLab setup.
 As IP address, specify the public address of the FPP Server.
 E.g. if you have a terminal with ssh available:
@@ -99,7 +99,7 @@ E.g. if you have a terminal with ssh available:
       ![](./images/grid.png)
 
 
-## **Step 2:** Verify the Clusterware status and rhpserver status
+## Task 2: Verify the Clusterware status and rhpserver status
 1. Make sure that the Clusterware stack is in a healthy state:
 
       ```
@@ -124,7 +124,7 @@ E.g. if you have a terminal with ssh available:
 
       In particular, the *Transfer port range* has been customized from the default so that is uses a fixed port range (by default it is dynamic and would require permissive firewall rules).
 
-## **Step 3:** Play with the rhpctl inline help
+## Task 3: Play with the rhpctl inline help
 1. `rhpctl` is the command line tool for all FPP Server operations. You can use the switch `-help` to get the available commands along with their syntax:
 
       ```
@@ -146,7 +146,7 @@ E.g. if you have a terminal with ssh available:
       ![](./images/import-image-help2.png)
 
 
-## **Step 4:** Find the rhpserver.log
+## Task 4: Find the rhpserver.log
 1. All the FPP logfiles are stored in /u01/app/grid/crsdata/fpps01/rhp/:
 
       ```

@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes.
     - Docker Setup & Basic Concepts
     - Create an Oracle Database Container and Schema
 
-## **STEP 1:** Deploy application
+## Task 1: Deploy application
 
 In this section, you will deploy an application, twitterfeed, that is stored in the hub.docker.com site under the account wvbirder.  You will then run the rest client using an oracle database as the data source.
 
@@ -82,7 +82,7 @@ In this section, you will deploy an application, twitterfeed, that is stored in 
 
    ![](images/alphaoffice.png " ")
 
-## **STEP 2:** Change application (Container in place modifications)
+## Task 2: Change application (Container in place modifications)
 
 This lab will show how you can share applications and make modifications in the container.
 
@@ -148,7 +148,7 @@ This lab will show how you can share applications and make modifications in the 
 
     ![](images/oldalphaoffice.png " ")
 
-## **STEP 3:** Updating an image to Docker Hub
+## Task 3: Updating an image to Docker Hub
 
 1.  If you were working with a team and needed to get this updated online, you would commit it.  Let's commit this new docker image to your docker hub now.  Wvbirder thanks but we have our own Docker account.  Once commited, list the images.  Note that your image is now listed.
 

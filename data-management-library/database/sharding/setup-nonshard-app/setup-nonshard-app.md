@@ -25,7 +25,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 1:** Create a Non-Shard Service
+## Task 1: Create a Non-Shard Service
 
 1. Connect to the shard3 host, switch to the oracle user.
 
@@ -139,7 +139,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 2:** Create the Demo Schema
+## Task 2: Create the Demo Schema
 
 1. Still in the shard3 host with oracle user. Download the SQL script `nonshard-app-schema.sql`.
 
@@ -458,7 +458,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 3:** Setup and Run the Demo Application
+## Task 3: Setup and Run the Demo Application
 
 1. Connect to the catalog host, switch to the oracle user.
 
@@ -942,7 +942,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 4:** Export the Demo Data and Copy DMP File
+## Task 4: Export the Demo Data and Copy DMP File
 
 In this step, you will export the demo application data and copy the dmp file to the catalog and each of the shard hosts. You will import the data to the shard database in the next lab.
 

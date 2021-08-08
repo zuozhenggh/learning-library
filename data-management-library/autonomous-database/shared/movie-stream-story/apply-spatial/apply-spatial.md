@@ -30,9 +30,9 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Prepare the Data
+## Task 1: Prepare the Data
 
-To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER and PIZZA_LOCATIONS tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
+To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
 
 
 1. As described in Lab 4 Step 3, navigate to a SQL Worksheet as user MOVIESTREAM.
@@ -66,7 +66,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
    </copy>
     ```
 
-2. Next test the function. Since the function returns a point geometry, you can perform a basic distance calculation using function calls to create the input geometries. Operations that do not involve spatial search or filtering, such as distance between 2 points, do not require a spatial index. Therefore you are able to perform this operation now, before spatial metadata and indexes are created. Run the following query to test the function by calculating the distance between a pair of coordinates.
+3. Next test the function. Since the function returns a point geometry, you can perform a basic distance calculation using function calls to create the input geometries. Operations that do not involve spatial search or filtering, such as distance between 2 points, do not require a spatial index. Therefore you are able to perform this operation now, before spatial metadata and indexes are created. Run the following query to test the function by calculating the distance between a pair of coordinates.
 
     ```
     <copy>
@@ -81,12 +81,12 @@ To prepare your data for spatial analyses, you create function-based spatial ind
 
     ![Image alt text](images/spatial-02.png "Test the function")
 
-3. Before creating a spatial index, you must insert a row of metadata for the geometry being indexed. This metadata is stored in a centralized spatial metadata table exposed to users through the view USER\_SDO\_GEOM\_METADATA available to all users. Instead of creating a spatial indexe on a geometry column, you will be creating function-based spatial indexes. Therefore you insert spatial metadata specifying the function instead of a column. It is required that the function name be prefixed with the owner name. Run the following commands to insert spatial metadata for the CUSTOMER and PIZZA_LOCATIONS tables.
+4. Before creating a spatial index, you must insert a row of metadata for the geometry being indexed. This metadata is stored in a centralized spatial metadata table exposed to users through the view USER\_SDO\_GEOM\_METADATA available to all users. Instead of creating a spatial indexe on a geometry column, you will be creating function-based spatial indexes. Therefore you insert spatial metadata specifying the function instead of a column. It is required that the function name be prefixed with the owner name. Run the following commands to insert spatial metadata for the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables.
 
     ```
     <copy>
     INSERT INTO user_sdo_geom_metadata VALUES (
-     'CUSTOMER',
+     'CUSTOMER_CONTACT',
      user||'.LATLON_TO_GEOMETRY(loc_lat,loc_long)',
       sdo_dim_array(
           sdo_dim_element('X', -180, 180, 0.05), --longitude bounds and tolerance in meters
@@ -95,7 +95,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
         );
 
     INSERT INTO user_sdo_geom_metadata VALUES (
-     'PIZZA_LOCATIONS',
+     'PIZZA_LOCATION',
      user||'.LATLON_TO_GEOMETRY(lat,lon)',
       sdo_dim_array(
           sdo_dim_element('X', -180, 180, 0.05), 
@@ -105,23 +105,23 @@ To prepare your data for spatial analyses, you create function-based spatial ind
     </copy>
     ```
 
-4. Now that spatial metadata has been added, spatial indexes can be created. Spatial indexes are typically created on geometry columns. However here you are creating function-based spatial indexes, or in other words spatial indexes on geometries returned from a function. Run the following commands to create function-based spatial indexes for the CUSTOMER and PIZZA_LOCATIONS tables.
+5. Now that spatial metadata has been added, spatial indexes can be created. Spatial indexes are typically created on geometry columns. However here you are creating function-based spatial indexes, or in other words spatial indexes on geometries returned from a function. Run the following commands to create function-based spatial indexes for the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables.
 
     ```
     <copy>
     CREATE INDEX customer_sidx 
-    ON customer (latlon_to_geometry(loc_lat,loc_long))
+    ON customer_contact (latlon_to_geometry(loc_lat,loc_long))
     INDEXTYPE IS mdsys.spatial_index_v2 
        PARAMETERS ('layer_gtype=POINT');
 
-    CREATE INDEX pizza_locations_sidx 
-    ON pizza_locations (latlon_to_geometry(lat,lon))
+    CREATE INDEX pizza_location_sidx 
+    ON pizza_location (latlon_to_geometry(lat,lon))
     INDEXTYPE IS mdsys.spatial_index_v2 
        PARAMETERS ('layer_gtype=POINT');
     </copy>
     ```
 
-## **STEP 2**: Run Spatial Queries
+## Task 2: Run Spatial Queries
 
 Oracle Autonomous Database provides an extensive SQL API for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and more. In this lab you focus on one of those spatial analysis operations; "nearest neighbor" analysis. Nearest neighbor analysis refers to identifying which item(s) are nearest to a location. 
 
@@ -153,7 +153,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     ```
     <copy>
     SELECT b.chain, b.address, b.city, b.state
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.cust_id = 1029765
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -169,7 +169,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     ```
     <copy>
     SELECT b.chain, b.address, b.city, b.state
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.cust_id = 1029765
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -186,7 +186,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     <copy>
     SELECT b.chain, b.address, b.city, b.state, 
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations  b
+    FROM customer_contact a, pizza_location  b
     WHERE a.cust_id = 1029765
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -204,7 +204,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     <copy>
     SELECT b.chain, b.address, b.city, b.state,
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations  b
+    FROM customer_contact a, pizza_location  b
     WHERE a.cust_id = 1029765
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -224,7 +224,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     <copy>
     SELECT a.cust_id, b.chain, b.address, b.city, b.state, 
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.state_province = 'Rhode Island'
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -243,7 +243,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     SELECT a.cust_id, b.chain, b.address, b.city, b.state, 
           round( sdo_nn_distance(1), 1
           ) distance_km
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.state_province = 'Rhode Island'
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -263,7 +263,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     <copy>
     SELECT a.cust_id, b.chain, b.address, b.city, b.state, 
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.state_province = 'Rhode Island'
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -281,7 +281,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     <copy>
     SELECT a.cust_id, b.chain, b.address, b.city, b.state, 
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.country = 'United States'
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -301,7 +301,7 @@ This lab is based on scenario 1.  Scenario 2 requires a slightly different synta
     AS
     SELECT a.cust_id, b.chain, b.address, b.city, b.state, 
            round( sdo_nn_distance(1), 1 ) distance_km
-    FROM customer a, pizza_locations b
+    FROM customer_contact a, pizza_location b
     WHERE a.country = 'United States'
     AND sdo_nn(
          latlon_to_geometry(b.lat, b.lon), 
@@ -316,17 +316,17 @@ Parallel processing is a powerful capability of Oracle database for high perform
 
 In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous.  A feature called "auto-DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations.  So a balance must be reached between optimal performance and sufficient resources for all workloads. Details can be found in the documention [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953).
 
-## **STEP 3**: Purge changes (Optional)
+## Task 3: Purge changes (Optional)
 
 If you would like to purge all changes made in this lab, run the following commands in order.
 
     <copy>
     DROP INDEX customer_sidx;
 
-    DROP INDEX pizza_locations_sidx;
+    DROP INDEX pizza_location_sidx;
 
     DELETE FROM user_sdo_geom_metadata
-    WHERE TABLE_NAME in ('CUSTOMER','PIZZA_LOCATIONS');
+    WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
 
     DROP TABLE customer_nearest_pizza ;
 

@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1**: Starting Database and eShop Application
+## Task 1: Starting Database and eShop Application
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
@@ -83,7 +83,7 @@ This will start the database, listener, oracle rest data service and our eShop a
 
 4. Review the output validate the URLs provided at the bottom
 
-## **STEP 2**: Start the WebLogic service
+## Task 2: Start the WebLogic service
 
 1.	As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
 

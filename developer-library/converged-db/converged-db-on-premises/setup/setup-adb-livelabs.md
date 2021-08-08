@@ -18,7 +18,7 @@ Watch the video below for an overview of Lab 3: Load ADB and Start Application
 - Lab: Generate SSH Keys
 - Lab: Verify Setup of Compute Instance
 
-## **STEP 1:** Create Oracle Wallet
+## Task 1: Create Oracle Wallet
 Verify for ATP Instance created by LiveLabs Green Button by selecting the allocated compartment, region, and workload type ATP, This information is also available in LiveLabs My Reservation screen as seen in Lab 2
 
 ![](./images/checkforatp.png " ")
@@ -63,7 +63,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
       ![](./images/converged-wallet.png " ")
 
-## **STEP 2:** Create Auth Token
+## Task 2: Create Auth Token
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Click on the person icon in the upper right corner.
@@ -85,7 +85,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 6.  Copy the value for the token somewhere safe, you will need it for the next step.
 
 
-## **STEP 3:** Connect to SQL Developer and Create Credentials
+## Task 3: Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
       ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
@@ -114,7 +114,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     ![](./images/sql-run.png " ")
 
-## **STEP 4:**  Load ATP Instance with Application Schemas
+## Task 4:  Load ATP Instance with Application Schemas
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
 2. Enter the command below to login to your compute instance.    
 
@@ -185,7 +185,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     ![](./images/exit.png " ")
 
-## **STEP 5:**  Connect Docker Instance to ATP
+## Task 5:  Connect Docker Instance to ATP
 
 1.  Run the script env\_setup\_script\_adb.sh, this will download the docker application from OKE (Oracle Kubernetes engine) start the eshop application. This script will take 2-5 minutes to run.
 

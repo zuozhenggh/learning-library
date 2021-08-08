@@ -2,7 +2,7 @@
 
 For the purposes of this lab you must have privileges to create two confidential apps in Oracle Identity Cloud Services. For further references about Identity Cloud users and roles, please refer to [About Oracle Identity Cloud Service Applications and Application Roles](https://docs.oracle.com/en/cloud/paas/identity-cloud/uaids/oracle-identity-cloud-service-applications-and-application-roles.html)
 
-## STEP 1: Download the SDK 
+## Task 1: Download the SDK 
 
 
 Download Sample Application [HERE](./nodejs.zip). The package will be downloaded to your **Downloads** directory (*Note: Verify your OS configuration to find the location of your download directory*).

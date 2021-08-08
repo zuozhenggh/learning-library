@@ -36,7 +36,7 @@ OCI Notifications service enables you to set up communication channels for publ
 
 In Steps 1 through 7, you create a notification topic with an email subscription, then create a rule that triggers a message (email) when a database is stopped.
 
-## **STEP 1**: Sign in to OCI Console and Create a Notification Topic
+## Task 1: Sign in to OCI Console and Create a Notification Topic
 
 1. First, you will create a Notification topic. From OCI Services menu, click **Developer Services** -> **Notifications**
   ![ALT text is not available for this image](images/2570118073.png)
@@ -51,7 +51,7 @@ In Steps 1 through 7, you create a notification topic with an email subscription
 
   ![ALT text is not available for this image](images/2569299698.png)
 
-## **STEP 2**: Create a Subscription to the Topic
+## Task 2: Create a Subscription to the Topic
 
 Now that you have created a notification topic, create a subscription to that topic, so that you can receive email alerts when a condition changes. (You will create a rule with conditions in a following step.)
 
@@ -72,7 +72,7 @@ In this lab, you create an email subscription. Subscriptions can be defined to t
 
   ![ALT text is not available for this image](images/2569305971.png)
 
-## **STEP 3**: Respond to the Verification Email
+## Task 3: Respond to the Verification Email
 
 You will receive an email notification of your subscription. You will need to respond to the email's verification request.
 
@@ -84,7 +84,7 @@ You will receive an email notification of your subscription. You will need to re
 
   ![ALT text is not available for this image](images/2587885600.png)
 
-## **STEP 4**: Verify that Subscription Status Has Changed from Pending to Active
+## Task 4: Verify that Subscription Status Has Changed from Pending to Active
 
 Your verification of the email will change the subscription status from pending to active.
 
@@ -94,7 +94,7 @@ Your verification of the email will change the subscription status from pending 
 
 2. You are now subscribed to a Notification topic. Next you will define an event with conditions that, when met, will publish messages to this Notification topic.
 
-## **STEP 5**: Define an Event with Rules that Will Publish Messages
+## Task 5: Define an Event with Rules that Will Publish Messages
 
 Let's define an event that triggers an email notification when an Autonomous Database is stopped.
 
@@ -129,7 +129,7 @@ Let's define an event that triggers an email notification when an Autonomous Dat
 
 You have configured a Notification service and tied an event to it with a specific compartment. When a database is shut down, an email notification will be sent to the email address specified.
 
-## **STEP 6**: Trigger the Event
+## Task 6: Trigger the Event
 
 Now shut down the Autonomous Database to trigger the notification email.
 
@@ -143,7 +143,7 @@ Now shut down the Autonomous Database to trigger the notification email.
 
 3. Wait until the database status changes to **STOPPED**.
 
-## **STEP 7**: Verify that an Email Notification Was Sent
+## Task 7: Verify that an Email Notification Was Sent
 
 Check the email account you specified to verify that a notification email was sent.
 
@@ -157,7 +157,7 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 
 **Note:** For convenience, use the same topic and subscription that you defined in Part 1. You could define new ones, if you prefer.
 
-## **STEP 8**:  Define an Alarm for the CPU Utilization Chart
+## Task 8:  Define an Alarm for the CPU Utilization Chart
 
 1. Navigate to your Autonomous Database's **Details** page. Scroll down to the **Metrics** charts. In the **CPU Utilization** chart, click the **Options** drop-down menu and select **Create an Alarm on this Query**. 
 
@@ -200,12 +200,12 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 
   ![ALT text is not available for this image](images/2619005285.png)
 
-## **Step 9**: Re-run the Procedure in the Auto Scaling Lab to Create a CPU Utilization that Triggers the Alarm
+## Task 9: Re-run the Procedure in the Auto Scaling Lab to Create a CPU Utilization that Triggers the Alarm
 
 1. Return to this workshop's Auto Scaling lab.  
 2. In Part 2 of that lab, perform Step 5. Run the `**test_proc**` procedure concurrently in 3 SQL Developer Web query worksheet instances, which should result in CPU utilization greater than the 30% specified as the triggering level in the alarm. 
 
-## **STEP 10**: Verify that an Email Notification Was Sent
+## Task 10: Verify that an Email Notification Was Sent
 
 Check the email account you specified to verify that a notification email was sent.
 

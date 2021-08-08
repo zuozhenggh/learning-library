@@ -22,14 +22,14 @@ Estimated Lab Time: 5 minutes
 
 
 
-## **STEP 1**: Download the Sample Scripts and Form
+## Task 1: Download the Sample Scripts and Form
 
 1. Download the  sample forms and sample database scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oXLXBhc8t3oFAKawgOOg3HZWhPL06OB9A19LITfmyiq83NKKMS013eoAlxaJ_B2C/n/c4u04/b/developer-library/o/create-apex-forms.zip)
 to use in the lab
 
 2. Unzip the files in your local Desktop
 
-## **STEP 2**: Create Schema Objects: Run the Scripts
+## Task 2: Create Schema Objects: Run the Scripts
 
 In order to start the conversion process, the database objects associated with your Oracle Forms application must reside in the same database as Oracle APEX.
 
@@ -44,7 +44,7 @@ In order to start the conversion process, the database objects associated with y
 4. **Run** the script to create the schema objects for customer and orders form ![](images/scripts_run.png " ")
 
 
-## **STEP 3**: **Create Migration Project**
+## Task 3: **Create Migration Project**
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 

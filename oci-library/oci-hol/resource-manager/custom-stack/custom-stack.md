@@ -24,7 +24,7 @@ If you are not the administrator, you have to request the admin to give you perm
 
 
 
-## **Step 1:** Create Resource Manager Stack
+## Task 1: Create Resource Manager Stack
 
  A Stack represents definitions for a collection of OCI resources within a specific compartment. With this in mind, we're going to configure a new stack in the compartment of your choice and name it "HA Load Balanced Simple Web App". As the stack's name suggests, its configuration files define the load balancing, networking, and compute resources to deploy the target architecture plus an HTTP server.
 
@@ -72,7 +72,7 @@ If you are not the administrator, you have to request the admin to give you perm
 
     ![](./../custom-stack/images/image002.png " ")
 
-## **Step 2:** Execute Jobs: Plan & Apply
+## Task 2: Execute Jobs: Plan & Apply
 
 Jobs perform actions against the Terraform configuration files associated with a stack. You can perform 3 actions and they are plan, apply and destroy. Since Terraform command execution is not atomic, it is crucial to prevent any race conditions or state corruption from occurring due to parallel execution. To prevent this from happening, the Resource Manager ensures only one job can run against a stack at a given time against a single state file.
 
@@ -118,7 +118,7 @@ From the Stack Details page, we can completely manage the stack's configuration 
 7. When you see the Load Balancer status change to OK, copy the **IP Address** and paste it into a new web browser tab.  You should see the sample web page load and atop the page it indicates which web server you are connected to.  Press **F5** a couple of times and see the web server change as you refresh the page.  Congratulations - your sample application deployed successfully.
 
 
-## **Step 3:** Execute Jobs: Destroy
+## Task 3: Execute Jobs: Destroy
 
 Now that we've successfully applied our Terraform to build out our cloud resources (and optionally completed the source migration to Gitlab), let's return to the Stack Details page and use the Resource Manager to tear it all down.
 

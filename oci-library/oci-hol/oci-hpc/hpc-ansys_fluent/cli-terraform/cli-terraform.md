@@ -32,7 +32,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
 
 
 
-## **STEP 1**: Installing ocihpc on macOS/Linux
+## Task 1: Installing ocihpc on macOS/Linux
 
 1. Download the latest release with the following command and extract it:
     ```sh
@@ -60,7 +60,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
     $ ocihpc version 
     ```
 
-## **STEP 2**: Installing ocihpc on Windows
+## Task 2: Installing ocihpc on Windows
 
 1. Download the latest release from [this link](https://github.com/oracle-quickstart/oci-ocihpc/releases/download/v1.0.0/ocihpc_v1.0.0_windows_x86_64.zip) and extract it.
 
@@ -72,7 +72,7 @@ The OCI user account you use in `ocihpc` should have the necessary policies conf
     $ ocihpc.exe version 
     ```
 
-## **STEP 3**: Creating an ssh keypair on the Command Line
+## Task 3: Creating an ssh keypair on the Command Line
 
 Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/creatingkeys.htm) if you are using windows.
 
@@ -98,7 +98,7 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG
 
 
 
-## **STEP 4**: Generate an API Signing Key
+## Task 4: Generate an API Signing Key
 
 Your API requests will be signed with your private key, and Oracle will use the public key to verify the authenticity of the request.
 Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Other) if you are using windows.
@@ -124,7 +124,7 @@ Please refer to [this link](https://docs.cloud.oracle.com/en-us/iaas/Content/API
     $ openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
     ```
 
-## **STEP 5**: Add public key to Oracle Cloud Infrastructure
+## Task 5: Add public key to Oracle Cloud Infrastructure
 
 Now that you have a private / public key combo , you must add it to OCI console under user setting:
 
@@ -139,7 +139,7 @@ Now that you have a private / public key combo , you must add it to OCI console 
 4. Paste Public key which you copied from CLI in Add Public Key
 ![](./images/AddPublicKey.png)
 
-## **STEP 6**: Configure
+## Task 6: Configure
 
 This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality.
 
@@ -161,7 +161,7 @@ This step describes the required configuration for the CLI and includes optional
   An example `config` file would look like this:
   ![](./images/oci_config.png)
 
-## **STEP 7**: List
+## Task 7: List
 
 You can get the list of available stacks by running `ocihpc list`.
 
@@ -178,7 +178,7 @@ Example:
     OpenFOAM
     ```
 
-## **STEP 8**: Initialize
+## Task 8: Initialize
 
 1. Create a folder that you will use as the deployment source.
 
@@ -199,7 +199,7 @@ IMPORTANT: Use a different folder per stack. Do not initialize more than one sta
     ```
 **IMPORTANT**: Edit the contents of the /Users/enjli/ocihpc-test/config.json file before running ocihpc deploy command
 
-## **STEP 9**: Deploy
+## Task 9: Deploy
 
 1. Before deploying, you need to change the values in `config.json` file. The variables depend on the stack you deploy. An example `config.json` for Cluster Network would look like this:
 
@@ -254,7 +254,7 @@ Bastion shape should be filled in already - VM.Standard2.1
       ```
 
 
-## **STEP 10**: Connect
+## Task 10: Connect
 
 When deployment is completed, you will see the the bastion/headnode IP that you can connect to:
 
@@ -266,7 +266,7 @@ When deployment is completed, you will see the the bastion/headnode IP that you 
 
 You can also get the connection details by running `ocihpc get ip` command.
 
-## **STEP 11**: Manage
+## Task 11: Manage
 In addition, you can use cli commands to easily manage and keep tracks of your resources:
 
   1. To generate a list of all the stacks deployed in a specific compartment: `oci resource-manager job list -c [OCID OF COMPARTMENT]`
@@ -280,7 +280,7 @@ In addition, you can use cli commands to easily manage and keep tracks of your r
   5. To move a Stack and it's associated Jobs into a different compartment: `oci resource-manager stack change-compartment -c [OCID OF NEW COMPARTMENT] --stack-id [OCID OF THE STACK]`
 
 
-## **STEP 12**: Delete
+## Task 12: Delete
 When you are done with your deployment, you can delete it by changing to the stack folder and running `ocihpc delete --stack <stack name>`.
 
     Example:

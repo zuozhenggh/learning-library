@@ -19,7 +19,7 @@ Estimated time: 7 minutes
 
 - This lab assumes you have successfully completed the lab - Create and enable a user in Database Actions.
 
-## **STEP 1:** Log in to Database Actions
+## Task 1: Log in to Database Actions
 
 Login as `CUSTOMER_360` using the password you entered when creating the user. The correct URL for Database Actions should contain `/customer_360/`
 
@@ -27,7 +27,7 @@ Login as `CUSTOMER_360` using the password you entered when creating the user. T
 
 ![](images/sdw-c360.jpg)
 
-## **STEP 2:** Drop existing tables if any
+## Task 2: Drop existing tables if any
 
 To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
@@ -45,7 +45,7 @@ DROP TABLE transfer;
 
 ![](images/drop-table.jpg)
 
-## **STEP 3:** Create and populate the `ACCOUNT` table
+## Task 3: Create and populate the `ACCOUNT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -72,7 +72,7 @@ COMMIT;
 
 ![](images/create-table.jpg)
 
-## **STEP 4:** Create and populate the `CUSTOMER` table
+## Task 4: Create and populate the `CUSTOMER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -96,7 +96,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 5:** Create and populate the `MERCHANT` table
+## Task 5: Create and populate the `MERCHANT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -117,7 +117,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 7:** Create and populate the `PARENT_OF` table
+## Task 7: Create and populate the `PARENT_OF` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -134,7 +134,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 8:** Create and populate the `PURCHASED` table
+## Task 8: Create and populate the `PURCHASED` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -163,7 +163,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 9:** Create and populate the `TRANSFER` table
+## Task 9: Create and populate the `TRANSFER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
