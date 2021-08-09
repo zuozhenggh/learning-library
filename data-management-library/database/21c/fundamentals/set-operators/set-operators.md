@@ -36,7 +36,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **Task $1:  1**: Set up the environment
+## Task 1: Set up the environment
 
 In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables.sh` shell script. The shell script creates and loads the `OE.INVENTORIES`, `OE.ORDERS` and `OE.ORDER_ITEMS` tables.
 
@@ -72,7 +72,7 @@ In this step you will execute the `/home/oracle/labs/M104783GC10/setup_oe_tables
 	```
 </if>
 <if type="atp">
-## **Task $1:  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
 There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
@@ -90,7 +90,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 7.  Click on the **SQL** button.
 
 
-## **Task $1:  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the OE user using SQL\*Plus by entering the commands below.
@@ -101,7 +101,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	conn oe/WElcome123##@adb1_high
 	```
 </if>
-## **Task $1:  2**: Test the set operator with the `EXCEPT` clause
+## Task 2: Test the set operator with the `EXCEPT` clause
 
 <if type="dbcs">
 
@@ -196,7 +196,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	```
 	</if>
 
-## **Task $1:  3**: Test the set operator with the `EXCEPT ALL` clause
+## Task 3: Test the set operator with the `EXCEPT ALL` clause
 
 1. Would the usage of ALL in the set operator defined in a query in a previous step mean anything? Run the SQL statement using the *EXCEPT ALL* operator.
 
@@ -256,7 +256,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 
 	The result shows all rows in the `INVENTORIES` table that contain products that were never ordered all inventories. This does not mean anything relevant. The use of `ALL` in operators must be appropriate.
 
-## **Task $1:  4**: Test the set operator with the `INTERSECT` clause
+## Task 4: Test the set operator with the `INTERSECT` clause
 
 1. How many products that were ordered are still orderable? The statement combining the results from two queries with the `INTERSECT` operator returns only those unique rows returned by both queries.
 
@@ -299,7 +299,7 @@ For the subsequent sections you will be pasting sql into the SQL worksheet and p
 	```
 	</if>
 
-## **Task $1:  5**: Test the set operator with the `INTERSECT ALL` clause
+## Task 5: Test the set operator with the `INTERSECT ALL` clause
 
 1. Would the usage of `ALL` in the operator defined in the query in step 8 mean anything?
 
