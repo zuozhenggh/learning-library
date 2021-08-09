@@ -18,7 +18,7 @@ Estimated lab time: 5 minutes
 
 -   This lab requires completion of the prior labs in this workshop: **Prerequisites** and **Provision an Autonomous Database**, in the Contents menu on the left.
 
-## **Task $1::** Connect with SQL Worksheet
+## Task: Connect with SQL Worksheet
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
 1. In your database's details page, click the **Tools** tab.
