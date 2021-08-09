@@ -40,7 +40,7 @@ This lab assumes you have:
          - Employee+Analysis.dva 
 
 
-## **Task $1:** 1: Adding Trend Line, Forecast, Clusters and Outliers to charts
+## Task 1: Adding Trend Line, Forecast, Clusters and Outliers to charts
 This exercise will introduce you to the capability to readily add augmented analytic functions such as Trendline, Forecast, Cluster & Outlier identification to your analysis.
 
 1. Login to Oracle Analytics by entering the OAS URL.
@@ -78,7 +78,7 @@ This exercise will introduce you to the capability to readily add augmented anal
 
 Note: This lab's Step 3 builds on this concept by showing how to identify Clusters & Outliers in your data using a scatter chart.
 
-## **Task $1:** 2: Using OAS Machine Learning to accelerate root cause analysis 
+## Task 2: Using OAS Machine Learning to accelerate root cause analysis 
 
 We will use the data profiling and semantic recommendations functionality to repair and enrich your data. These recommendations are based on the system automatically detecting a specific semantic type during the data profiling step.
 
@@ -300,7 +300,7 @@ We will also leverage the BI Ask functionality as part of data visualization. Th
 
 
 
-## **Task $1:** 3: Leveraging OAS native Machine Learning to predict attrition
+## Task 3: Leveraging OAS native Machine Learning to predict attrition
 
 This exercise explores how self-service machine learning models are available and can be leveraged within OAS to enable various forms of predictive  analysis.   
 
