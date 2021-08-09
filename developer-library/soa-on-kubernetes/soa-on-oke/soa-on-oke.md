@@ -22,7 +22,7 @@ For this lab, you need:
 * Terraform installed.
 * Helm 3.x installed.
 
-## **STEP 1:** Acknowledge Terms of Use for the Docker Images
+## Task 1: Acknowledge Terms of Use for the Docker Images
 
 The chart uses the Oracle SOA Suite Docker image from the Oracle Container Registry. This is a mandatory requirement.
 
@@ -48,7 +48,7 @@ The chart uses the Oracle SOA Suite Docker image from the Oracle Container Regis
     - Fill in your information (if you haven't already).
     - Accept the License.
 
-## **STEP 2:** Get the Terraform Code
+## Task 2: Get the Terraform Code
 
 You'll find the code on Github.com at [https://github.com/oracle-quickstart/oke-soa](https://github.com/oracle-quickstart/oke-soa)
 
@@ -69,7 +69,7 @@ You'll find the code on Github.com at [https://github.com/oracle-quickstart/oke-
     ```
 
 
-## **STEP 3**: Gather Required Information
+## Task 3: Gather Required Information
 
 1. Get your `tenancy OCID`:
 
@@ -93,7 +93,7 @@ You'll find the code on Github.com at [https://github.com/oracle-quickstart/oke-
 
         ![](./images/setup-tf-compartment-ocid.png)
 
-## **STEP 4:** Create a `terraform.tfvars` Config File
+## Task 4: Create a `terraform.tfvars` Config File
 
 To run the deployment, you need to define a few settings in a file named `terraform.tfvars`.
 
@@ -272,7 +272,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 10. Save the `terraform.tfvars` file.
 
-## **STEP 5:** Run the Deployment
+## Task 5: Run the Deployment
 
 1. Initialize the project
 
@@ -325,7 +325,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
     It deploys Oracle SOA on Kubernetes.
 
-## **STEP 6:** Access the Deployment
+## Task 6: Access the Deployment
 
 1. Get the public IP of the load balancer created by the ingress controller
 

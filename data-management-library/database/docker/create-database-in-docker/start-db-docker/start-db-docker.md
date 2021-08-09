@@ -16,7 +16,7 @@ This lab walks you through the steps to start the Docker container and Oracle Da
 * SSH keys
 * A Docker image built with Oracle Database 19c
 
-## **STEP 1**: Start the Docker container
+## Task 1: Start the Docker container
 
 Once the Docker image build is complete, you can start and run the Oracle Database inside a Docker container using the `docker run` command. There a few important parameters:
 - The **`-p`** parameter maps ports inside the container to the outside world. We need to map port 1521 to enable access to the database.
@@ -44,7 +44,7 @@ Once the Docker image build is complete, you can start and run the Oracle Databa
 
   Note the startup script generated a password for the database accounts. In the next step, you can reset the password to one of your choice.
 
-## **STEP 2**: Reset the Database admin accounts password
+## Task 2: Reset the Database admin accounts password
 
 1. In a new terminal window, open another connection to the compute instance:
 

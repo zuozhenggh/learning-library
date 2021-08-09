@@ -16,7 +16,7 @@ Estimated Lab Time: 5 minutes
 - Create a simple Microservices exposing a REST endpoint using Helidon SE. 
 - The goal is to have some initial exposure to Helidon, gain some high-level understandings of Helidon and its development workflow.
 
-## **STEP 1**: Initialize a Helidon project
+## Task 1: Initialize a Helidon project
 
 One can generate the skeleton of a microservice using Helidon Maven archetypes. To simplify things, you will use the Helidon CLI (Command Line Interface), which under the hood uses the same approach, to initialize a simple Helidon project.
 
@@ -31,7 +31,7 @@ One can generate the skeleton of a microservice using Helidon Maven archetypes. 
 
     ![](.././images/lab3-2.png " ")
 
-## **STEP 2**: Build and test an Helidon project
+## Task 2: Build and test an Helidon project
 
 1. You can build the Helidon project using the `mvn package` command in the `java-devlive` directory. 
 
@@ -53,7 +53,7 @@ The sample service is now accessible on locally port 8080 and given that you hav
 
 💡 You might want to use Firefox during this lab as it formats nicely any returned JSON payload.
 
-## **STEP 3**: Check the source code
+## Task 3: Check the source code
 
 Let's now try to grasp how things work by checking the sources.
 
@@ -135,7 +135,7 @@ See [here](https://helidon.io/docs/v2/#/se/webserver/01_introduction) for more d
 * using this webserver, route(s) can be defined,
 * each route should have at least one handler that will process the request(s).
 
-## **STEP 4**: Helidon CLI devloop
+## Task 4: Helidon CLI devloop
 
 You have just used the Helidon CLI to generate the skeleton of an application and used Maven to build it. The application was then executed from the command line using the java launcher.
 

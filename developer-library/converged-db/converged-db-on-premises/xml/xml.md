@@ -34,7 +34,7 @@ This lab assumes you have:
 ***Note:***  All scripts for this lab are stored in the **/u01/workshop/xml** folder and run as the oracle user.
 
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
 <!-- 1. Open a terminal window and sudo to the user **oracle**
 
@@ -78,7 +78,7 @@ This lab assumes you have:
     ![](./images/xml_input2a.png " ")
 
 
-## **STEP 2**: Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -92,7 +92,7 @@ This lab assumes you have:
 
     ![](./images/xml_sql_developer.png " ")
 
-## **STEP 3**: XML Query
+## Task 3: XML Query
 
 1. Getting the number of XML documents.
 
@@ -140,7 +140,7 @@ This lab assumes you have:
 
     ![](./images/xml_step3_search.png " ")
 
-## **STEP 4**: Insert XML record.
+## Task 4: Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -172,7 +172,7 @@ This lab assumes you have:
 
     ![](./images/xml_s4_p3.png " ")
 
-## **STEP 5**: Update XML table
+## Task 5: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
@@ -229,7 +229,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 6**: Example Queries
+## Task 6: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.

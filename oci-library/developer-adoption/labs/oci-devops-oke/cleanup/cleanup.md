@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Congratulations, you complete the workshop. You may want to release the cloud resources created through this workshop.
+Congratulations, you complete the workshop. You may want to release the cloud resources created through this workshop. We first delete all resources created manually and then, we use ORM to delete resources managed through Infrastructure As Code/Terraform.
 
 ---
 
-Estimated Lab time: 5 minutes
+Estimated Lab time: 20 minutes
 
 ### Objectives
 
@@ -20,7 +20,10 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Delete DevOps Pipeline
+## Task 1: Delete DevOps Pipeline
+
+
+### Delete DevOps Pipeline Stages
 
 1. In the Console, open the navigation menu, click Developer Services, and then under DevOps, click Projects.
 
@@ -35,12 +38,26 @@ In this lab, you will:
 
 1. Confirm the deletion of the stage.
 
-1. After deleting all Stages. You can click the Menu icon for the pipeline (3 dots besides `Run pipeline` button), then select `Delete`.
+
+### Delete DevOps Pipeline Parameters
+
+1. In the DevOps Pipeline page, click on the `Parameters` tab.
+
+1. Click on the trash button to delete the `mushop_fulfillment_version` parameter.
+
+    ![Delete Parameter ](./images/devops-parameter-created.png) 
+
+
+### Delete DevOps Pipeline
+
+1. After deleting all Stages and Parameter. You can click the Menu icon for the pipeline (3 dots besides `Run pipeline` button), then select `Delete`.
         ![Delete pipeline](./images/oci-devops-delete-pipeline.png)
 
 1. Confirm the deletion of the pipeline.
 
-## **STEP 2**: Delete DevOps Artifacts
+
+
+## Task 2: Delete DevOps Artifacts
 
 1. Go back to the project page.
 
@@ -53,7 +70,7 @@ In this lab, you will:
 1. Repeat the operation for all Artifacts created during the workshop.
 
 
-## **STEP 3**: Release ORM Stack Resources
+## Task 3: Release ORM Stack Resources
 
 All resources provisioned during this workshop that were managed exclusively via Resource Manager can be destroyed running a `Destroy` job associated with your Stack `infrastructure-onboard`.
 
@@ -71,12 +88,12 @@ All resources provisioned during this workshop that were managed exclusively via
 1. In the Destroy panel, you can enter a name for the job and click Destroy again to confirm your action.
     ![Confirm Destroy Stack](./images/oci-orm-destroy-confirm.png)
 
-You can monitor the status and review the results of a destroy job by viewing the state or the logs.
-    ![Destroy Stack Logs](./images/oci-orm-logs-destroy.png)
+    You can monitor the status and review the results of a destroy job by viewing the state or the logs.
+        ![Destroy Stack Logs](./images/oci-orm-logs-destroy.png)
 
-To view the Terraform state file (shows the state of your resources after running the job), click the name of the job to display the Job Details page, then click View State under Resources.
+    To view the Terraform state file (shows the state of your resources after running the job), click the name of the job to display the Job Details page, then click View State under Resources.
 
-To view the logs for the job, click the name of the job to display the Job Details page, then click Logs under Resources.
+    To view the logs for the job, click the name of the job to display the Job Details page, then click Logs under Resources.
 
 1. At the end, the Destroy job succeeds and your resources were released.
     ![Destroy Completed](./images/oci-orm-destroy-done.png)
@@ -86,7 +103,7 @@ To view the logs for the job, click the name of the job to display the Job Detai
 
 
 
-## **STEP 4**: Delete ORM Configuration Source Provider
+## Task 4: Delete ORM Configuration Source Provider
 
 The next step is to delete the GitHub Configuration Source Provider in the Oracle Resource Manager.
 

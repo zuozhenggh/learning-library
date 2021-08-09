@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 
-## **Step 1:** Create ML User
+## Task 1: Create ML User
 
 1.  Login to Oracle Cloud, select Autonomous Data Warehouse and navigate to your ADW instance.
 
@@ -58,7 +58,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/011.png  " ")
 
-## **Step 2:** Create ML Notebook
+## Task 2: Create ML Notebook
 
 1.  Select the **home icon** upper right.
 
@@ -90,7 +90,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/019.png  " ")
 
-## **Step 3:** Add Content to Your ADW Notebook
+## Task 3: Add Content to Your ADW Notebook
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so.
 
@@ -221,7 +221,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     ![](./images/068.png  " ")
 
-## **Step 4:** Import ML Notebook
+## Task 4: Import ML Notebook
 
 Adding content to a notebook is simple and fast. In this step, we have built the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the file you can download. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
 

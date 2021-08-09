@@ -22,7 +22,7 @@ Estimated Lab Time: 5 minutes
 
 
 
-## **STEP 1**: **Download the Sample Scripts and Form**
+## Task 1: **Download the Sample Scripts and Form**
 
 Download the  sample database DDL  scripts from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/s1jbId1lVW9okGZ0wliLdohdwYD98PQHM4bWzywDN45VaZh6G-O8JNPw7gvVPR1H/n/c4u04/b/developer-library/o/forms_conversion_ddl.sql) and sample data insert scripts from [here](
 https://objectstorage.us-ashburn-1.oraclecloud.com/p/VaBxXaGo2ahhaXJTJeD7lFrFyne2a58rxIzMrDYpyz7ud2YeUJu0CuKwkZ9HUQsy/n/c4u04/b/developer-library/o/conversion_data_insert.sql)
@@ -30,7 +30,7 @@ to use in the lab to your desktop
 
 
 
-## **STEP 2**: **Create Schema Objects**: Run the Scripts
+## Task 2: **Create Schema Objects**: Run the Scripts
 
 In order to start the conversion process, the database objects associated with your Oracle Forms application must reside in the same database as Oracle APEX.
 
@@ -47,7 +47,7 @@ In order to start the conversion process, the database objects associated with y
  ![](images/scripts_run.png " ")
 
 
-## **STEP 3**: Create Migration Project
+## Task 3: Create Migration Project
 
 Create a conversion project by running Create Migration Project Wizard and loading the application metadata extracted from Forms to XML.
 

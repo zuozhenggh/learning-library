@@ -28,7 +28,7 @@ In this lab, you will deploy a sharded database with 2 shard.
 This lab assumes you have already completed the following:
 - Setup environment to provision catalog and shard database.
 
-## **STEP 1:** Configure Shard Hosts
+## Task 1: Configure Shard Hosts
 
 1. Connect to the catalog host and each of the shard hosts with opc user. edit the `/etc/hosts` file.
 
@@ -85,7 +85,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Install Shard Director Software
+## Task 2: Install Shard Director Software
 
 In this workshop we choose to co-locate the shard director software on the same host as the shard catalog database, it must be installed in a separate Oracle Home. 
 
@@ -319,7 +319,7 @@ In this workshop we choose to co-locate the shard director software on the same 
     
 
 
-## **STEP 3:** Setup Catalog Database
+## Task 3: Setup Catalog Database
 
 1. Make sure you are in the catalog database environment.
 
@@ -531,7 +531,7 @@ In this workshop we choose to co-locate the shard director software on the same 
       
 
 
-## **STEP 4:** Setup Shard Databases
+## Task 4: Setup Shard Databases
 
 The following steps need to do in all the shard database side. We only provide steps for shard1. 
 
@@ -843,7 +843,7 @@ The following steps need to do in all the shard database side. We only provide s
 
     
 
-## **STEP 5:** Configure the Shard Database Topology
+## Task 5: Configure the Shard Database Topology
 
 1. Connect to the catalog database host. Switch to oracle user.
 
@@ -1118,7 +1118,7 @@ The following steps need to do in all the shard database side. We only provide s
 
 
 
-## **STEP 6:** Deploy the Sharding Configuration
+## Task 6: Deploy the Sharding Configuration
 
 1. When the sharded database topology has been fully configured, run the `GDSCTL DEPLOY` command to deploy the sharded database configuration.
 

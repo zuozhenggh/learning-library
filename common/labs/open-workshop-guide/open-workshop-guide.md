@@ -6,7 +6,7 @@ This compute instance supports multiple workshops. As a result, it's important t
 ### Objectives
   - Select the correct guide for your workshop
 
-## **STEP 1:** Open the Workshop Guide
+## Task 1: Open the Workshop Guide
 The following example contains screenshots borrowed from the *Enterprise Manager 13c* workshop portfolio and are shown here for illustration purposes only. Please follow the directions accordingly for your workshop.
 
 1. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop

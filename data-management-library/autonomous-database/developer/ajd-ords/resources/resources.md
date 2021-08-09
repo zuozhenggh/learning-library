@@ -8,7 +8,7 @@ The Wikidata Query Service provides a SPARQL endpoint. SPARQL is an RDF query la
 
 Estimated Lab Time: 60 minutes
     
-## **Step 1:** Login to OCI Console
+## Task 1: Login to OCI Console
     
 1. Oracle cloud console URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
     
@@ -16,7 +16,7 @@ Estimated Lab Time: 60 minutes
     - Username: oci-username
     - Password: oci-password
     
-## **Step 2:** Test Wikidata API
+## Task 2: Test Wikidata API
     
 Wikidata is part of the non-profit, multilingual, free-content Wikimedia family. The data in Wikidata is published under the Creative Commons Public Domain Dedication 1.0, allowing the reuse of the data in many different scenarios. You can copy, modify, distribute and perform the data, even for commercial purposes, without asking for permission.
     
@@ -76,7 +76,7 @@ Wikidata is part of the non-profit, multilingual, free-content Wikimedia family.
     SELECT%20?item%20?itemLabel%20%0AWHERE%20%0A%7B%0A%20%20?item%20wdt:P31%20wd:Q146.%0A%20%20SERVICE%20wikibase:label%20%7B%20bd:serviceParam%20wikibase:language%20%22[AUTO_LANGUAGE],en%22.%20%7D%0A%7D
     ````
     
-## **Step 3:** Provision Autonomous JSON Database
+## Task 3: Provision Autonomous JSON Database
     
 1. Click on hamburger menu ≡, then **Autonomous JSON Database** under Oracle Database. **Create Autonomous Database**.
     
@@ -102,7 +102,7 @@ Wikidata is part of the non-profit, multilingual, free-content Wikimedia family.
     
 5. Wait for Lifecycle State to become Available.
     
-## **Step 4:** Create Apex Workspace DEMO
+## Task 4: Create Apex Workspace DEMO
     
 1. On Tools tab, under Oracle Application Express, click **Open APEX**.
     
@@ -128,7 +128,7 @@ Wikidata is part of the non-profit, multilingual, free-content Wikimedia family.
     
 7. **Sign In**.
     
-## **Step 5:** Enable SQL Developer Web for DEMO user
+## Task 5: Enable SQL Developer Web for DEMO user
     
 1. On Oracle Cloud Infrastrucuture Console, on Tools tab, under SQL Developer Web, click **Open SQL Developer Web**.
     
@@ -163,7 +163,7 @@ Wikidata is part of the non-profit, multilingual, free-content Wikimedia family.
     PL/SQL procedure successfully completed.
     ````
     
-## **Step 6:**  Create ACL for DEMO to WikiData
+## Task 6:  Create ACL for DEMO to WikiData
     
 1. The `DBMS_NETWORK_ACL_ADMIN` package provides the interface to administer the network Access Control List (ACL). Grant the **http**, **connect** and **resolve** privileges for host **query.wikidata.org** to DEMO user.
     

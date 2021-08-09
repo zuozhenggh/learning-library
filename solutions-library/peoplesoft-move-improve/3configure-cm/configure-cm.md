@@ -18,7 +18,7 @@ In this lab, you will:
 * Keys generated in Lab 1, Step 8
 
 
-## **STEP 1**: Uploading SSH public key
+## Task 1: Uploading SSH public key
 
 1. Navigate to **Cloud Manager Dashboard** > **My Settings**.
 
@@ -32,7 +32,7 @@ In this lab, you will:
 
     ![](./images/6.png "")
 
-## **STEP 2**: Updating Infrastructure Settings
+## Task 2: Updating Infrastructure Settings
 
 Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**. 
     ![](./images/cmhome.png "")
@@ -50,7 +50,7 @@ Go back to the **Cloud Manager Dashboard** > **Cloud Manager Settings**.
 
 3.	Click **Refresh OCI Metadata** button on top of the page and wait for a few minutes.
 
-## **STEP 3**: Configuring File Server System
+## Task 3: Configuring File Server System
 
 1.	Navigate to **File Server tab** on the left.  Accept the defaults. For Mount Target field, type “**lab**”.
 

@@ -11,7 +11,7 @@ In this lab, you will:
 - Improve both Faceted Search and Cards region. 
 - Add Dynamic Actions to the page.
 
-## **STEP 1**: Adding New Facets
+## Task 1: Adding New Facets
 In the Runtime environment navigate to Products, this is the page where your customers can explore the products and select what they wish to buy.
 As you can see, it's hard to find the products and it would be beneficial to see additional details related to the products.
 
@@ -77,14 +77,14 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](images/color-facet.png " ")
 
-## **STEP 2**: Reorder Facets
+## Task 2: Reorder Facets
 Unit price is not a common search criteria, so you want to put this facet at the bottom.
 
 1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it up until it is under **P1\_COLOR\_ID** then release the mouse.
 
     ![](images/reorder-facet.png " ")
 
-## **STEP 3**: Enhance the Faceted Search 
+## Task 3: Enhance the Faceted Search 
 
 1. In the Rendering tree (left pane), navigate to **Search**.
 2. In the Property Editor (right pane), click Attributes and do the following:
@@ -93,7 +93,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
 
     ![](images/enhance-facet.png " ")    
 
-## **STEP 4**: Enhance the Cards Region
+## Task 4: Enhance the Cards Region
     
 1.  In the Rendering tree (left pane), navigate to **Search Results** and in the Property Editor (right pane), do the following:
     - For SQL Query - enter the following SQL code:
@@ -169,7 +169,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
 
         ![](images/cards.png " ")        
 
-## **STEP 5**: Create Actions 
+## Task 5: Create Actions 
 You need to provide a way for customers to shop the products, so in this step you will add an action to allow customers to learn more about the product.
 
 1. Navigate to **Search Results** (left pane).
@@ -192,7 +192,7 @@ You need to provide a way for customers to shop the products, so in this step yo
 
     ![](images/full-card.png " ")
 
-## **STEP 6**: Adding Dynamic Actions
+## Task 6: Adding Dynamic Actions
 In this step, you will create two dynamic actions:
 - To show success message when a product is added / edited / removed from the shopping cart.
 - To update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
@@ -287,7 +287,7 @@ In this step, you will create two dynamic actions:
             ```
 14. Click **Save an Run Page**.
 
-## **STEP 7**: Run Products Page 
+## Task 7: Run Products Page 
 
 When running products page, you will notice that Department, Clothing and Color facets don't have values as the products are not associated with the corresponding characteristic.
    ![](images/products-facets.png " ")

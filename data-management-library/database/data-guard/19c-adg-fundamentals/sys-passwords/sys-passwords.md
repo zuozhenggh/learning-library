@@ -16,7 +16,7 @@ Estimated Lab Time: 15 Minutes
 - Change the SYS password
 - Log in to the database as the SYS user
 
-## **STEP 1**: Change the SYS password
+## Task 1: Change the SYS password
 
 1. Navigate to the HOLDG primary database following
 
@@ -41,7 +41,7 @@ Estimated Lab Time: 15 Minutes
 
     ![](./images/sys-03.png)
 
-## **STEP 2**: Verify
+## Task 2: Verify
 
 1. Using SQL Developer, try to log in to the database as the SYS user. This will fail if you previously stored the password. The tool prompts you for the new password.
 

@@ -21,7 +21,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
 **Note:**     
 If you want to list the resources in your **`training-dcat-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
-## **STEP 1:** Delete Your Data Catalog Instance
+## Task 1: Delete Your Data Catalog Instance
 
 You can terminate your Data Catalog instance that you created in this workshop as follows:
 
@@ -38,7 +38,7 @@ You can terminate your Data Catalog instance that you created in this workshop a
    The Data Catalog instance goes into a **Deleting** state and all the resources in the Data Catalog instance are permanently deleted.
 
 
-## **STEP 2:** Delete Your IAM Group, IAM User, and IAM Policies
+## Task 2: Delete Your IAM Group, IAM User, and IAM Policies
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Groups**.
 
@@ -54,7 +54,7 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
 7. Click the **Actions** button associated with the **training-bds-policy** policy, and then select **Delete** from the context menu. A confirmation message box is displayed, click **Delete**.
 
-## **STEP 3:** Delete Your Compartment
+## Task 3: Delete Your Compartment
 
 To delete a compartment, it must be empty of all resources. Before you initiate deleting a compartment, be sure that all its resources have been moved, deleted, or terminated, including any policies attached to the compartment. In this workshop, you created all of the resources in the **`training-dcat-compartment`**; therefore, if you want to re-run this entire workshop from the beginning, you can must delete all of the resources in the compartment as described in the earlier steps of this lab. Next, you can delete the compartment. See [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) in the Oracle Cloud Infrastructure documentation.
 

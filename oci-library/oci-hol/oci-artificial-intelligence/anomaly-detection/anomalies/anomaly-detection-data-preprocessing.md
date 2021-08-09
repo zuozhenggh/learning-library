@@ -23,7 +23,7 @@ In this lab, you will:
 - Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default `conda` package on Data Science Platform
 - Download the related data files and this [Python notebook](../files/anomaly-detection-data-preparation-notebook.ipynb)
 
-## **STEP 1:** Preparing Data
+## Task 1: Preparing Data
 
 For the purpose of time-series anomaly detection, the collected data should mainly contain timestamp field, any measurements from signals, sensors, which have values that changes over time etc. Those signals or sensors should naturally come from a coherent and unified system/process that are representing the status of such unified complicated system/process.
 

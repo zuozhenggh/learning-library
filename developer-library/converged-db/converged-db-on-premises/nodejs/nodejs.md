@@ -29,7 +29,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**:  Verify Application
+## Task 1:  Verify Application
 
 1. Open up a web browser and visit the Application URL indicated in your terminal.    
 
@@ -44,7 +44,7 @@ This lab assumes you have:
     URL: <copy>http://localhost:3001/products</copy>
     ```
 
-## **STEP 2**: Launch Postman
+## Task 2: Launch Postman
 
 1. Double Click on *Postman* icon on the desktop to launch it.
 
@@ -88,7 +88,7 @@ This lab assumes you have:
 
     ![](./images/postman_return.png " ")
 
-## **STEP 3**: Using HTTP GET method.
+## Task 3: Using HTTP GET method.
 
 1. Open a new tab
 
@@ -112,7 +112,7 @@ This lab assumes you have:
 
     ![](./images/nodejs-postman5a.png " ")
 
-## **STEP 4**: Using HTTP POST Method
+## Task 4: Using HTTP POST Method
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL
 
     ```

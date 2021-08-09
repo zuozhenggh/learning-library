@@ -19,7 +19,7 @@ Estimated time: 7 minutes
 
 - This lab assumes you have successfully completed the lab - Create and enable a user in SQL Developer Web.
 
-## **STEP 1:** Log in to SQL Developer Web
+## Task 1: Log in to SQL Developer Web
 
 Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user **using Google Chrome**. It is almost the same URL as the one for the Admin user except that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
 
@@ -63,7 +63,7 @@ You can try the following steps:
     <copy>SELECT username, account_status FROM dba_users;</copy>
     ```
 
-## **STEP 2:** Drop existing tables if any
+## Task 2: Drop existing tables if any
 
 To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
@@ -81,7 +81,7 @@ DROP TABLE transfer;
 
 ![](images/drop-table.jpg)
 
-## **STEP 3:** Create and populate the `ACCOUNT` table
+## Task 3: Create and populate the `ACCOUNT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -108,7 +108,7 @@ COMMIT;
 
 ![](images/create-table.jpg)
 
-## **STEP 4:** Create and populate the `CUSTOMER` table
+## Task 4: Create and populate the `CUSTOMER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -132,7 +132,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 5:** Create and populate the `MERCHANT` table
+## Task 5: Create and populate the `MERCHANT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -153,7 +153,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 7:** Create and populate the `PARENT_OF` table
+## Task 7: Create and populate the `PARENT_OF` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -170,7 +170,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 8:** Create and populate the `PURCHASED` table
+## Task 8: Create and populate the `PURCHASED` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -199,7 +199,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 9:** Create and populate the `TRANSFER` table
+## Task 9: Create and populate the `TRANSFER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 

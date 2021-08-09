@@ -16,7 +16,7 @@ In this lab, you will:
 ### Prerequisites
 - This lab requires completion of the previous lab in the Contents menu on the left.
 
-## **Step 1**: Familiarizing with the Autonomous Database Console
+## Task 1: Familiarizing with the Autonomous Database Console
 The Autonomous Data Warehouse console provides a user interface to create and manage autonomous databases, plus database tools to perform typical data warehouse tasks including loading and managing data, and a Performance Hub to monitor real-time and historical performance.
 
 1. Navigate to the Autonomous Database Details page for your new database, My Quick Start ADW. There are 5 buttons across the top, and 3 tabs under those, to navigate among the many functions and tools of the Autonomous Database Console. Click the **More Actions** drop down menu, and note the dozen actions you can perform.
@@ -43,7 +43,7 @@ The Autonomous Data Warehouse console provides a user interface to create and ma
 
     ![ALT text is not available for this image](images/service-console-development-page.png)
 
-## **Step 2**: Examining the Built-in Autonomous Database Tools
+## Task 2: Examining the Built-in Autonomous Database Tools
 Autonomous Data Warehouse comes with a built-in suite of tools that can help you with many of the typical data warehouse tasks. This tool suite is complementary to various capabilities accessible via the SQL command line, which themselves are covered by other workshops. 
 
 There are two ways to access the Autonomous Database built-in tool suite:
@@ -67,7 +67,7 @@ There are two ways to access the Autonomous Database built-in tool suite:
 
     ![ALT text is not available for this image](images/2879071282.png)
 
-## **Step 3**: Checking the Performance Monitoring Features of the Performance Hub
+## Task 3: Checking the Performance Monitoring Features of the Performance Hub
 The Autonomous Data Warehouse console has a built-in performance monitoring tool called Performance Hub. This tool gives us both real-time and historical performance data for our Autonomous Data Warehouse.
 
 1. Switch back to the browser tab showing the Autonomous Database Details page. Click the **Performance Hub** button.

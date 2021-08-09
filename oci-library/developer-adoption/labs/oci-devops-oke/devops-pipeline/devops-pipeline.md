@@ -84,7 +84,7 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Create Artifacts
+## Task 1: Create Artifacts
 
  First step we need to create the Artifacts that will contains the Kubernetes manifest files that are used to deploy the Application.
 
@@ -276,7 +276,7 @@ At the end, you will have the following artifacts:
 In the next steps, we are going to design a Pipeline and define a Parameter for the Container Image Version which will be applied to the manifest during the CD workflow.
 
 
-## **STEP 2**: Create DevOps Deployment Pipeline
+## Task 2: Create DevOps Deployment Pipeline
 
 Let's create a DevOps Deployment Pipeline for publishing the Mushop fulfillment service and NATS. 
 
@@ -295,8 +295,8 @@ This is going to publish multiple artifacts to our OKE environment.
 
 1. Before start designing the pipeline stages, we need to create the parameter we used in the Artifact. Click on Parameters tab and enter the following data:
 
-    |Name|Default Value|Description|
-    |--|--|--|
+    |Name|Default Value|
+    |--|--|
     |`mushop_fulfillment_version`|Enter the default tag name that is used to publish mushop-fulfillment image: `1.2.0-SNAPSHOT`|
     |Description|Default version of mushop-fulfillment image.|
 
@@ -321,7 +321,7 @@ This is going to publish multiple artifacts to our OKE environment.
 1. Click on `Add Stage` popup button:
     ![DevOps pipeline - add stage popup](./images/devops-add-stage1-popup.png) 
 
-1. OCI DevOps also allow you to add integrations and control stages to any deployment. For example, you can request an approval before proceeding to the next stage of the pipeline. In our case, we don't need to implement any specific control. Under `Deploy`, select `OKE:Default (Apply manifest to your Kubernetes cluster)`, then click on next.
+1. OCI DevOps also allow you to add integrations and control stages to any deployment. For example, you can request an approval before proceeding to the next stage of the pipeline or use an automatic approval. We are going to use the automatic approval. Under `Deploy`, select `OKE:Default (Apply manifest to your Kubernetes cluster)`, then click on next.
 
     ![Filter stage types](./images/devops-add-stage2.png) 
 
@@ -400,7 +400,7 @@ As the result, we have the following DevOps Pipeline:
 
 ![fulfillment pipeline](./images/devops-pipeline-fulfillment-final.png)
 
-## **STEP 3**: Deploy Fulfillment Service to OKE
+## Task 3: Deploy Fulfillment Service to OKE
 
 You can run a pipeline directly from the OCI Console or you can build integrations with the API, CLI or some external integrations. 
 
@@ -439,7 +439,7 @@ Finally, click on Start Manual Run to trigger the pipeline.
     ![Devops pipeline deployments](./images/devops-pipeline-deployments.png)
 
 
-## **STEP 4**: (Optional) Test Fulfillment Service
+## Task 4: (Optional) Test Fulfillment Service
 
 The application was deployed for the first time, all stages in the Deployment pipeline are green, now you want to test the application without having to deploy any additional component (e.g. Ingress). The easiest way to do this is connecting to the OKE cluster via Cloud Shell and use a NATS client running in a K8s pod to generate some messages to the NATS service which can then be consumed by the Fulfillment service API.
 

@@ -27,7 +27,7 @@ use ggadmin to log into your new Lab4
 
 ------
 
-### STEP 1: Setting up the Environment For MySQL.
+### Task 1: Setting up the Environment For MySQL.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 

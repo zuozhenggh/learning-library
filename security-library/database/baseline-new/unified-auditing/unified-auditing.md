@@ -37,7 +37,7 @@ This lab assumes you have:
 | 4 | Audit Data Pump Usage | <10 minutes |
 | 5 | Cleanup the Unified Auditing configuration | <5 minutes |
 
-## **STEP 1**: Display the current audit settings
+## Task 1: Display the current audit settings
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -114,7 +114,7 @@ This lab assumes you have:
     - Audit commit delay time is the maximum time that it takes to COMMIT an audit record to the database audit trail
     - If it takes more time to COMMIT an audit record than defined by the audit commit delay time, then a copy of the audit record is written to the operating system (OS) audit trail
 
-## **STEP 2**: Audit Non App Usage
+## Task 2: Audit Non App Usage
 In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outside of the application
 
 1. Identify the connections we trust. We will generate some activity from the Glassfish application and view the session-related information
@@ -234,7 +234,7 @@ In this lab, you will audit who is using the `EMPLOYEESEARCH_PROD` objects outsi
 
    ![](./images/ua-027.png " ")
 
-## **STEP 3**: Audit Database Role Usage
+## Task 3: Audit Database Role Usage
 When you audit a role, Oracle Database audits all system privileges that are directly granted to the role. You can audit any role, including user-defined roles. If you create a common unified audit policy for roles with the ROLES audit option, then you must specify only common roles in the role list.
 
 When such a policy is enabled, Oracle Database audits all system privileges that are commonly and directly granted to the common role. The system privileges that are locally granted to the common role will not be audited. To find if a role was commonly granted, query the `DBA_ROLES` data dictionary view. To find if the privileges granted to the role were commonly granted, query the `ROLE_SYS_PRIVS` view.
@@ -304,7 +304,7 @@ When such a policy is enabled, Oracle Database audits all system privileges that
    ![](./images/ua-025.png " ")
 
 
-## **STEP 4**: Audit Data Pump Usage
+## Task 4: Audit Data Pump Usage
 
 In this lab you will configure the Unified Audit Trail and review an audit of Oracle Data Pump export. This is a feature of Unified Audit that is not available in traditional auditing.
 
@@ -340,7 +340,7 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
 
    ![](./images/ua-030.png " ")
 
-## **STEP 5**: Cleanup the Unified Auditing Configuration
+## Task 5: Cleanup the Unified Auditing Configuration
 
 1. When you have completed the lab, you can run the cleanup script
 

@@ -16,7 +16,7 @@ Estimated time: 7 minutes
 * SSH Keys to use for connecting to a compute instance
 * An ADB instance with the downloaded wallet
 
-## **STEP 1:** Create Network for Graph Server
+## Task 1: Create Network for Graph Server
 
 Oracle Cloud console > Networking > Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity
 
@@ -31,7 +31,7 @@ Public Subnet vcn1
   - Destination port range: `7007`
   - Description: `For Graph Server`
 
-## **STEP 2:** Locate the Graph Server and Client in the Oracle Cloud Marketplace
+## Task 2: Locate the Graph Server and Client in the Oracle Cloud Marketplace
 
 Oracle Cloud Marketplace is an online platform which offers Oracle and partner software as click-to-deploy solutions that are built to extend Oracle Cloud products and services.
 
@@ -116,7 +116,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     *Note: You should remove angle brackets <> from your code.*
 
-## **STEP 3:** Upload ADB Wallet, Configure your Compute Instance.
+## Task 3: Upload ADB Wallet, Configure your Compute Instance.
 
 The steps are as follows:
 
@@ -154,7 +154,7 @@ The steps are as follows:
 
     Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-## **STEP 4:**  Copy ADB Wallet to the Linux Compute
+## Task 4:  Copy ADB Wallet to the Linux Compute
 
 1. On your desktop or laptop (i.e. your machine), we'll assume the ADB wallet was downloaded to ~/Downloads.
 
@@ -171,7 +171,7 @@ The steps are as follows:
     scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
     ```
 
-## **STEP 5:** Unzip ADB Wallet
+## Task 5: Unzip ADB Wallet
 
 1.  Now connect to the compute instance (via SSH) as `opc` user.
 

@@ -23,7 +23,7 @@ In this lab, you will:
 
 - This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## **STEP 1**: Provision an Autonomous Database Instance
+## Task 1: Provision an Autonomous Database Instance
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/provision-2.png " ")
 
-## **STEP 2:** Create OMLUSER in Autonomous Database Instance
+## Task 2: Create OMLUSER in Autonomous Database Instance
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
@@ -110,7 +110,7 @@ In this lab, you will:
 
     ![](./images/create-user-created.png " ")
 
-## **STEP 3**: Grant OMLUSER privileges to Database Actions
+## Task 3: Grant OMLUSER privileges to Database Actions
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
@@ -169,7 +169,7 @@ In this lab, you will:
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 4**: Download the Necessary Data
+## Task 4: Download the Necessary Data
 
 1.  Click the link below to download the Wine Reviews CSV file.
 
@@ -179,7 +179,7 @@ In this lab, you will:
 
     ![](./images/download-csv.png  " ")
 
-## **STEP 5**: Upload the Data File
+## Task 5: Upload the Data File
 
 1. On the tab with your ADB instance, click on **Open Database Actions** under Tools.
 

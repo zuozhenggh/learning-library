@@ -4,7 +4,7 @@
 
 In this lab, you will gain an insight into the abilities of Interactive Reports, and learn how to enhance a form page.
 
-## **STEP 1**: Enhancing the Interactive Report
+## Task 1: Enhancing the Interactive Report
 The **Project Tasks Report** page utilizes an Interactive Report to display the records. Interactive Reports are exceedingly powerful, as they allow _*end users*_ to modify what data is displayed, and various display characteristics. For this report, you will add a column break, a computational column, an aggregate, a chart, then order the data and save the report for everyone to see.
 
 *Note - All of the steps below, except for saving Alternative Reports, can be performed by end users. There are many additional capabilities available to end users which are not covered below.*

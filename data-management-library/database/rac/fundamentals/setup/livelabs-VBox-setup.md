@@ -6,7 +6,7 @@ This lab will show you how to setup a GI cluster and RAC database on your laptop
 **PLEASE READ:**  *If you already have a RAC cluster (running the 19c Image) configured, bypass this step.*
 **PLEASE READ:**  *You will need a minimum of 16GB memory and 100GB of disk space to install the cluster and database. The ability to install new software is required*
 
-## Step 1: Install VirtualBox
+## Task 1: Install VirtualBox
 The latest release of VirtualBox is version 6.1.12.
 
 1.  Open a browser and access the VirtualBox Downloads page:  
@@ -23,7 +23,7 @@ The latest release of VirtualBox is version 6.1.12.
 
 
 
-## Step 2: Install **HashiCorp Vagrant**
+## Task 2: Install **HashiCorp Vagrant**
 The current version of Vagrant is 2.2.9
 
 1.  Install HashiCorp Vagrant.

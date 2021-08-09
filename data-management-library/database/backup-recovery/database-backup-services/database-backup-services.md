@@ -25,7 +25,7 @@ Estimated Lab Time: 2 hours
 - An OCI account with proper privileges to access the object storage in OCI
 
 
-## **STEP 1:** Download the Cloud Backup Module
+## Task 1: Download the Cloud Backup Module
 
 1. Log back in as user **oracle**.
 
@@ -71,7 +71,7 @@ Estimated Lab Time: 2 hours
     OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
     ```
 
-## **STEP 2:** Prepare SSH Keys Pairs and collect data
+## Task 1: Prepare SSH Keys Pairs and collect data
 
 For the Oracle Database Backup Cloud Service, you need to have the identifiers and credentials below.  You will need an OCI user able to call APIs with these credentials.
 
@@ -149,7 +149,7 @@ For the Oracle Database Backup Cloud Service, you need to have the identifiers a
 
   ![](images/compartment-details.png)
 
-## **STEP 3:** Install the Backup Module
+## Task 1: Install the Backup Module
 
 Run the installer, **oci\_install.jar** to install the backup module. This example shows how the installer automatically downloads the Oracle Database Cloud Backup Module for OCI for your operating system, creates a wallet that contains Oracle Database Backup Cloud Service identifiers and credentials, creates the backup module configuration file, and downloads the library necessary for backups and restores to Oracle Cloud Infrastructure.  Provide the required parameters in one line, with each parameter preceded by a hyphen and followed by its value.
 
@@ -206,7 +206,7 @@ It also downloads cwallet.sso an Oracle wallet that securely stores Oracle Objec
       cwallet.sso  cwallet.sso.lck
       ```
 
-## **STEP 4:** Prepare the on premise database
+## Task 1: Prepare the on premise database
 Now, We will set the database to Archivelog mode. Create a user in the pdb and create a new table for testing the backup and recover.
 
 1. Start a SQL\*Plus session
@@ -332,7 +332,7 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
       [oracle@dbhost oci_installer]$
       ```
 
-## **STEP 5:** Configure RMAN to support Cloud Backups
+## Task 1: Configure RMAN to support Cloud Backups
 
    Before we can do backups to the Cloud storage location in your account, you need to configure a number of RMAN properties. These properties define:
 
@@ -449,7 +449,7 @@ Now, We will set the database to Archivelog mode. Create a user in the pdb and c
       RMAN>   
       ```
 
-## **STEP 6:** Backup the On Premise Database
+## Task 1: Backup the On Premise Database
 
 For backup and recovery we could always run the following sequence of commands from a shell script or an RMAN run block, but we’ll be copying and pasting each individual command in sequence so you’ll get a better feel for what is going on.
 
@@ -629,7 +629,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
 7. In the bucket, you can see the file\_chunks of the backup set.
    ![](./images/image-20200410113002589.png " ")
 
-## **STEP 7:** Query and Exit
+## Task 1: Query and Exit
 
 1. Open up a new terminal window and connect to the **johnsmith** schema in the local **orclpdb** container database.
 
@@ -690,7 +690,7 @@ For security reasons, backing up to the Oracle Cloud requires that encryption is
       [oracle@dbhost ~]$
       ```
 
-## **STEP 8:** Restore and Recover the Database to a Point in Time
+## Task 1: Restore and Recover the Database to a Point in Time
 
 We now need to restore the database to the point in time before the **mstar** table was accidentally deleted (:> The backup files stored in cloud will be used.
 
@@ -885,4 +885,3 @@ In case your backup does not complete properly you can clean up the partial back
 - **Author** - Minqiao Wang, Database Product Management, PTS China - April 2020
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Tom McGinn, October 2020
-

@@ -28,7 +28,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in Lab 1 
 
 
-## **STEP 1**: Create Log Group
+## Task 1: Create Log Group
 
 Log groups are logical containers for organizing and managing logs. Logs must always be inside  a log group. You must first create a log group to enable or create logs.  Fortunately, this is a fast and easy activity.
 
@@ -51,7 +51,7 @@ Log groups are logical containers for organizing and managing logs. Logs must al
    
    You are now ready to move on to the next step.
 
-## **STEP 2:** Create Custom Log and Agent Config
+## Task 2: Create Custom Log and Agent Config
 
 An agent configuration provides instructions for both the Logging Service and a specific group of deployed agents to work together.  It is required for custom logs.  Follow these steps to create an agent configuration that will include importing app container log messages from the OKE cluster created in Lab 1.
 
@@ -97,7 +97,7 @@ An agent configuration provides instructions for both the Logging Service and a 
 
 6.  Click **Create Custom Log** to complete the task.  You are ready to move on to the next step.
 
-## **STEP 3:** Review code options and deploy application to OKE
+## Task 3: Review code options and deploy application to OKE
 
 Kubernetes recommends directing app log message to stdout and stderr.
 OCI fluentd-based agents automatically deployed on worker nodes can read these logs and stream them to the OCI Logging Service.  In Steps 1 and 2 you set up the Logging Service with a collection location (custom log) for log data, and you instructed the worker node agents where to look for specific application pod logs (the agent config).  
@@ -175,7 +175,7 @@ Don't worry if you see some *"error occured at:  "* messages mixed in with the r
 
 **Remember to periodically execute the curl command to generate new log entries!**
 
-## **STEP 4:** Examine data format ingested into the OCI Logging Service
+## Task 4: Examine data format ingested into the OCI Logging Service
 
 **1. Locate and review Log**
 

@@ -19,7 +19,7 @@ In this lab, you will:
 
 <!-- *This is the "fold" - below items are collapsed by default* -->
 
-## **STEP 1**: Select Spatial Studio from Marketplace
+## Task 1: Select Spatial Studio from Marketplace
 
 1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
@@ -34,7 +34,7 @@ In this lab, you will:
    ![Image alt text](images/env-marketplace-3.png "Image title")
 
 
-## **STEP 2:** Create Stack Wizard
+## Task 2: Create Stack Wizard
 
 1. Optionally enter a custom name and description for the deployment stack. Then select the Compartment to use for the deployment and click Next
 
@@ -79,7 +79,7 @@ In this lab, you will:
 
    ![Image alt text](images/env-marketplace-9.png "Image title")
 
-## **STEP 3:** Monitor Deployment Progress
+## Task 3: Monitor Deployment Progress
 
 1. The Logs section at the bottom of the Job Details page will show progress. It will initially display a spinner while setting up for deployment. 
 
@@ -93,7 +93,7 @@ In this lab, you will:
 
   ![Image alt text](images/env-marketplace-12.png "Image title")
 
-## **STEP 4:** First-Time Login
+## Task 4: First-Time Login
 
 1. Opening the Spatial Studio public URL for the first time will display a browser warning related to privacy and security. The specific warning depends on your platform and browser. 
 
@@ -125,7 +125,7 @@ In this lab, you will:
 
 
 
-## **STEP 5**: Load Data and Create a Map 
+## Task 5: Load Data and Create a Map 
 
 To verify that Spatial Studio is operating properly, you will load, prepare, and visualize a small data sample. The data contains a list of museums including name and address. You will geocode the data and visualize the data on an interactive map.
 
@@ -199,7 +199,7 @@ To verify that Spatial Studio is operating properly, you will load, prepare, and
 
 Oracle Spatial Studio is now provisioned and tested. The following Lab provides steps to tear down Spatial Studio when no longer needed.
 
-## **STEP 6**: Uninstall Spatial Studio (When No Longer Needed)
+## Task 6: Uninstall Spatial Studio (When No Longer Needed)
 
  **If you would like to fully remove your Marketplace deployment, proceed with the following.**
 

@@ -13,7 +13,11 @@ In this lab, you will:
 -   Create an Oracle Cloud Infrastructure compartment
 -   Provision a new Autonomous Database
 
-## **Step 1:** Create a Compartment
+### Prerequisites
+
+-   This lab requires completion of the Get Started section in the Contents menu on the left.
+
+## Task 1: Create a Compartment
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
@@ -29,7 +33,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
     The compartment has been created, in which you will create an Autonomous Database instance in the next steps.
 
-## **Step 2:** Choose ADW from the Services Menu
+## Task 2: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud Interface.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -57,7 +61,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **Step 3**: Create the ADB instance
+## Task 3: Create the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

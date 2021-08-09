@@ -111,7 +111,7 @@ If you see **ORACLE REST DATA SERVICES 404 Not Found**, it means that **ORDS** i
    ![](./images/ords_lab1_snap5.png " ")
 
     
-## Step 2: AutoREST Enable a Schema and its JSON Table
+## Task 2: AutoREST Enable a Schema and its JSON Table
 
 To enable AutoREST on a schema and a table, perform the following steps:
        

@@ -13,8 +13,8 @@ var track = "https://apex.oraclecorp.com/pls/apex/livelabs-analytics/r/files/sta
 
 let main = function() {
     let manifestFileName = "manifest.json";
-    const expandText = "Expand All Steps";
-    const collapseText = "Collapse All Steps";
+    const expandText = "Expand All Tasks";
+    const collapseText = "Collapse All Tasks";
     const copyButtonText = "Copy";
     const queryParam = "lab";
     const utmParams = [
@@ -1093,7 +1093,7 @@ let main = function() {
         let checkForGerundInTitle = function(manifest) {
             if(manifest.workshoptitle.indexOf("ing ") !== -1) {
                 add_issue("Please use an imperative workshop title instead of a gerund.", "major-error")
-            }            
+            }
         }
 
         let checkForHtmlTags = function(markdown) {
@@ -1114,16 +1114,16 @@ let main = function() {
         let checkImages = function(article) {
             $(article).find('img').each(function() {
                 // skip the modalImg img frame from QA check
-                if ($(this).attr("id") === "modalImg") {                    
+                if ($(this).attr("id") === "modalImg") {
                     return;
-                } 
+                }
                 try {
                     // if ($(this).attr('src').split('/')[$(this).attr('src').split('/').length - 2].indexOf("images") !== 0) {
-                    if ($(this).attr('src').indexOf("/images/") <= 0) {                        
+                    if ($(this).attr('src').indexOf("/images/") <= 0) {
                         add_issue("Your images must be in an <strong>images</strong> folder. Please rename the folder and update your Markdown.");
                         return false; // to break the each loop
                     }
-                } catch (e) {                    
+                } catch (e) {
                     add_issue("Your images must be in an <strong>images</strong> folder. Please rename the folder and update your Markdown.");
                     return false;
                 };
@@ -1178,10 +1178,10 @@ let main = function() {
         let checkImageExists = function(article) {
             $(article).find('img').each(function() {
                 // skip the modalImg img frame from QA check
-                if ($(this).attr("id") === "modalImg") {                    
+                if ($(this).attr("id") === "modalImg") {
                     return;
-                }  
-                let url = $(this).attr('src');              
+                }
+                let url = $(this).attr('src');
                 let url_text = $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1];
                 urlExists(url, function(exists) {
                     if (!exists) {;

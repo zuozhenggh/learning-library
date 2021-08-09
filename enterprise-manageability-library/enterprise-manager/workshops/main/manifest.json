@@ -58,7 +58,7 @@
       "title": "Lab 8: Get Started with Real Application Testing",
       "description": "This lab provides an overview of Real Application Testing and how to use it to simulate Workload and review Performance before Database Upgrade.",
       "publisheddate": "6/15/2021",
-      "filename": "./../../em-rat-spa=dbreplay/em-rat-spa-dbreplay.md"
+      "filename": "./../../em-rat-spa-dbreplay/em-rat-spa-dbreplay.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

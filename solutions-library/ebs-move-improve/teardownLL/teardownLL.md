@@ -14,7 +14,7 @@ Estimated Lab Time: 5 minutes
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
 
-## **STEP 1:** Delete the EBS Environment from Cloud Manager
+## Task 1: Delete the EBS Environment from Cloud Manager
 
 1. Navigate to the Cloud Manager Environments page.
 

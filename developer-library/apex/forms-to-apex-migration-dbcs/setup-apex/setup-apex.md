@@ -27,7 +27,7 @@ You can run this lab in any Oracle Database with APEX 20.2 installed. This inclu
 
 Below are steps on how to provision database on *Database Cloud Service* .
 
-## **STEP 1**:  Create Database in OCI DBCS Service
+## Task 1:  Create Database in OCI DBCS Service
 
 1. Navigate to **Bare Metal, VM, and Exadata**.
 
@@ -70,7 +70,7 @@ Below are steps on how to provision database on *Database Cloud Service* .
   ![](images/node-ip.png " ")
 
 
-## **STEP 2**:  Install Oracle APEX in DBCS.
+## Task 2:  Install Oracle APEX in DBCS.
 
 Oracle APEX is not preinstalled in the database cloud service like how it is done with ATP or ADW , we will go through the install and configuration of APEX
 
@@ -169,7 +169,7 @@ The software packages we will be installing are
     SQL> exit</copy>
     ```
 
-## **STEP 3**:  Install Oracle REST Data Services in DBCS.
+## Task 3:  Install Oracle REST Data Services in DBCS.
 
 1. As user root let’s create the TOMCAT Linux user (we will need it later when we install Tomcat), then make a new directory for ORDS files and unzip it there:
     ```
@@ -250,7 +250,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
     Enter 1 if you wish to start in standalone mode or 2 to exit [1]:2
     ```
 
-## **STEP 4**:  Downloading and installing Tomcat.
+## Task 4:  Downloading and installing Tomcat.
 
 1. Download Tomcat 9 from [HERE](https://tomcat.apache.org/download-90.cgi)  , use the tar.gz link and copy it, then downloaded directly to the cloud database  in a new directory as user root, change it’s owner and unzip it :
     
@@ -352,7 +352,7 @@ As ROOT user (if you are tomcat type exit to become root again) type:
 
   ![](images/admin-Login.png " ")
 
-## **STEP 5**:  Create APEX workspace
+## Task 5:  Create APEX workspace
 
 1. Click **Create Workspace**.
 

@@ -6,7 +6,7 @@ In this final lab, you will use OCI Resource Manager and deploy a stack to creat
 
 Estimated Lab Time: 10 minutes
 
-## **STEP 1**: Download the stack
+## Task 1: Download the stack
 
 You need to download the stack package (zip file) and save it on your disk.
 
@@ -14,7 +14,7 @@ You need to download the stack package (zip file) and save it on your disk.
 
     ![](.././images/stack/03.png)
 
-## **STEP 2**: Create the stack
+## Task 2: Create the stack
 
 1. Please go in OCI's dashboard and select **Resource Manager** and then **Stacks**:
 
@@ -32,7 +32,7 @@ You need to download the stack package (zip file) and save it on your disk.
     ![](.././images/stack/05.png)
 
 
-## **STEP 3**: Plan
+## Task 3: Plan
 
 1. As Resource Manager is also using Terraform, you can plan the new created stack. This will create a new job:
 
@@ -40,7 +40,7 @@ You need to download the stack package (zip file) and save it on your disk.
 
     ![](.././images/stack/07.png)
 
-## **STEP 4**: Apply
+## Task 4: Apply
 
 1. We can now apply our stack:
 
@@ -54,7 +54,7 @@ You need to download the stack package (zip file) and save it on your disk.
 
     ![](.././images/stack/10.png)
 
-## **STEP 5**: Connection
+## Task 5: Connection
 
 1. You can now copy the returned SSH private key and connect to the bastion host:
 
@@ -68,7 +68,7 @@ You need to download the stack package (zip file) and save it on your disk.
 
     💡 The public IP was returned by the apply job and is also available on OCI's Dashboard when checking the Compute Instances. You can always returned to the output logs of the job.
 
-## **STEP 6**: Use your MySQL InnoDB Cluster
+## Task 6: Use your MySQL InnoDB Cluster
 
 You can now use MySQL Shell like you did in Step 2 & 3 of Lab 4.
 

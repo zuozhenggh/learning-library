@@ -27,14 +27,14 @@ Estimated Lab Time: 20 minutes
 -   Additionally, feel free to explore ODA's capabilities by clicking on this link: [ODA Overview](https://www.oracle.com/application-development/cloud-services/digital-assistant/)
 
 
-## **Step 0:** Provisioning a Digital Assistant Instance
+## Task 0: Provisioning a Digital Assistant Instance
 
 1. Inside of the OCI Console, click on the top left menu icon.
 
     ![](./images/1.png " ")
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**. 
-	
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Digital Assistant**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-assist.png " ")
 
 3. On the Digital Assistant Instances screen, find the **Compartment** drop down on the left, and select the compartment of your choice from the drop down list.  Here, I am choosing the CloudDataWorkshop compartment.
@@ -64,7 +64,7 @@ Estimated Lab Time: 20 minutes
 9. Note: feel free to learn more about Oracle Digital Assistant (ODA) by clicking on the following text link: [ODA Overview](https://www.oracle.com/application-development/cloud-services/digital-assistant/)
 
 
-## **Step 1:** Re-sign in to your Oracle Cloud Account.
+## Task 0: Re-sign in to your Oracle Cloud Account.
 
 1. After selecting Service Console, you will be prompted to enter your Cloud Tenant Name.  Here, enter your **Cloud Account Name** associated with your account.  Note: This is not your username, this is the name of your cloud tenancy.
 
@@ -74,7 +74,7 @@ Estimated Lab Time: 20 minutes
 
     ![](./images/8.png " ")
 
-## **Step 2:** Import a Digital Assistant Skill
+## Task 0: Import a Digital Assistant Skill
 
 1. Once you are signed in, you will be taken to the Oracle Digital Assistant home page.  To begin, click the top left hamburger menu.
 
@@ -98,7 +98,7 @@ Estimated Lab Time: 20 minutes
 
 7. Your digital assistant is now imported! You are now ready to implement your APEX APIs.
 
-## **Step 3:** Add REST API URLs to Digital Assistant Code
+## Task 0: Add REST API URLs to Digital Assistant Code
 
 1. After clicking your skill, navigate to the **Flows** tab on the left menu.
 
@@ -124,7 +124,7 @@ Estimated Lab Time: 20 minutes
 
     ![](./images/15.png " ")
 
-## **Step 4:** Test API Calls in Digital Assistant Conversation Flow
+## Task 0: Test API Calls in Digital Assistant Conversation Flow
 
 1. To test the APIs you just implemented, click on the Skill Tester('Play') button on the bottom left of the side menu.
 
@@ -149,5 +149,3 @@ Estimated Lab Time: 20 minutes
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Jeffrey Malcolm, QA Specialist
 - **Last Updated By/Date** - Kamryn Vinson, June 2021
-
-
