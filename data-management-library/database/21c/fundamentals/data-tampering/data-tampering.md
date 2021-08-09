@@ -145,7 +145,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 6.  Enter the username *admin* and password *WElcome123##*
 7.  Click on the **SQL** button.
 
-## **Task $1:  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1.  Open up Cloud Shell below if it isn't already open
 2.  Connect to the OE user using sqlplus by entering the commands below.
     ```
