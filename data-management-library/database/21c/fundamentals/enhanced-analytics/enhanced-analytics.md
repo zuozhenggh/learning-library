@@ -118,7 +118,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     ```
 </if>
 <if type="atp">
-## **Task $1:  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
 There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
