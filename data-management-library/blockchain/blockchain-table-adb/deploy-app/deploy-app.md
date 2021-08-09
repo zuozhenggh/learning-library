@@ -17,6 +17,8 @@ In this lab, you will:
 
 ### Prerequisites
 
+This workshop assumes you have:
+
 - Have successfully completed all the previous labs
 
 ## Task 1: Install Node.js in the Compute Instance
@@ -96,34 +98,40 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 2.  Now, let's modify the index.js file with your ATP instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your ATP URL and hit `Enter`.
 
     ```
-    sed -i 's/atp-url/<paste your atp url>/' index.js
+    sed -i 's,atp-url,<paste your atp url>,g' index.js
     ```
 
     Your command should look like this:
 
     ```
-    sed -i 's/atp-url/https://c7arcf7q2d0tmld-demoatp.adb.us-ashburn-1.oraclecloudapps.com' index.js
+    sed -i 's,atp-url,https://fw8mxn5ftposwuj-demoatp.adb.us-ashburn-1.oraclecloudapps.com,g' index.js
     ```
 
-4.  Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your ATP URL.
+3.  Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your ATP URL.
 
-5.  Copy and paste the below command in notepad, replace `<paste your certificate guid>` in the command below with your Certificate GUID noted earlier.
+    ![](./images/task3-3.png " ")
+
+4.  Copy and paste the below command in notepad, replace `<paste your certificate guid>` in the command below with your Certificate GUID noted earlier.
 
     ```
-    sed -i 's/cert-guid/<paste your certificate guid>/' index.js
+    sed -i 's,cert-guid,<paste your certificate guid>,g' index.js
     ```
 
     Your command should look like this:
 
     ```
-    sed -i 's/cert-guid/C70CB0B14ADB1A50E0533D11000A1BCB/' index.js
+    sed -i 's,cert-guid,C8D2C1F00236AD7CE0533D11000AE2FC,g' index.js
     ```
 
-6. Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `cert-guid` in the index.js file and replaces with your Certificate GUID.
+5. Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `cert-guid` in the index.js file and replaces with your Certificate GUID.
 
-7. Duplicate the browser tab with cloud shell window and SSH into the compute instance.
+    ![](./images/task3-5.png " ")
 
-8.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
+6. Duplicate the browser tab with cloud shell window and SSH into the compute instance.
+
+    ![](./images/task3-6.png " ")
+
+7.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
 
     ```
     <copy>
@@ -131,14 +139,14 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
     node bin/www
     </copy>
     ```
-
     If the cursor is idle which means the nodejs application is running.
+    ![](./images/task3-7.png " ")
 
-## Task 4: Sign the row
+## Task 4: Sign the Row
 
 1. Navigate back to the previous cloud shell window that does not have the Node.js application running.
 
-2. Replace the number 1 for the instanceId, chainId and seqId and update with your noted with instanceId, chainId and seqId values in the below command and hit enter.
+2. Replace the number 1 for the instanceId, chainId and seqId and update with your noted instanceId, chainId and seqId values in the below command and hit enter.
 
     ```
     curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
@@ -147,12 +155,16 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
     After replacing the instanceId, chainId and seqId values in the command, it should look like this:
 
     ```
-    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
+    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":5,"seqId":1}'
     ```
 
 3. Notice JSON message with status 200 and message displayed is `Signature has been added to the row successfully` which means that the row how has been signed successfully.
 
+    ![](./images/task4-3.png " ")    
+
 4. To verify, navigate back to the tab with Blockchain APEX application with the List of Transactions and refresh the tab. Notice that the row with the values Instance ID - , Chain ID - and Seq ID - `IS Signed` column should display a green tick from which indicates that the row is signed successfully.
+
+    ![](./images/task4-4.png " ")
 
 ## Acknowledgements
 
