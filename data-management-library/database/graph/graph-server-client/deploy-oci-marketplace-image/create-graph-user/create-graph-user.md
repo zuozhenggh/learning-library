@@ -16,6 +16,7 @@ Estimated time: 3 minutes
 * Oracle cloud account
 * Provisioned Autonomous Database Shared Instance
 
+<<<<<<< HEAD
 ## Task 1: Login to Database Actions
 
 Login as the Admin user in Database Actions of the newly created ADB instance.
@@ -43,6 +44,99 @@ Go to **SQL** menu once you logged in as the `ADMIN` user.
 ## Taks 2: Create database roles
 
 Now create the roles required for the graph feature. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
+=======
+## Task 1: Create database roles
+
+1. Login as the Admin user in SQL Developer Web of the newly created ADB instance.
+
+    Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+
+	  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+
+    In Autonomous Database Details page, click **Service Console**. Make sure your brower allow pop-up windows.
+
+    ![](images/adb-console.jpg)
+
+    Choose Development from the list on the left, then click the **SQL Developer Web**.
+
+    ![](images/ADB_ConsoleDevTab.png)
+
+    Enter `ADMIN` as Username and go next.
+
+    ![](images/login-1.jpg)
+
+    Input the password (you set up at Lab 2 Step 2, Section 7) and sign in.
+
+    ![](images/login-2.jpg)
+  
+    Logged in as the `ADMIN` user. 
+
+    ![](images/ADB_SQLDevWebHome.jpg)
+
+2. Now create the roles required for the graph feature. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
+
+    Create the roles required by the graph server.
+    ```
+    <copy>
+    DECLARE
+      PRAGMA AUTONOMOUS_TRANSACTION;
+      role_exists EXCEPTION;
+      PRAGMA EXCEPTION_INIT(role_exists, -01921);
+      TYPE graph_roles_table IS TABLE OF VARCHAR2(50);
+      graph_roles graph_roles_table;
+    BEGIN
+      graph_roles := graph_roles_table(
+        'GRAPH_DEVELOPER',
+        'GRAPH_ADMINISTRATOR',
+        'PGX_SESSION_CREATE',
+        'PGX_SERVER_GET_INFO',
+        'PGX_SERVER_MANAGE',
+        'PGX_SESSION_READ_MODEL',
+        'PGX_SESSION_MODIFY_MODEL',
+        'PGX_SESSION_NEW_GRAPH',
+        'PGX_SESSION_GET_PUBLISHED_GRAPH',
+        'PGX_SESSION_COMPILE_ALGORITHM',
+        'PGX_SESSION_ADD_PUBLISHED_GRAPH');
+      FOR elem IN 1 .. graph_roles.count LOOP
+      BEGIN
+        dbms_output.put_line('create_graph_roles: ' || elem || ': CREATE ROLE ' || graph_roles(elem));
+        EXECUTE IMMEDIATE 'CREATE ROLE ' || graph_roles(elem);
+      EXCEPTION
+        WHEN role_exists THEN
+          dbms_output.put_line('create_graph_roles: role already exists. continue');
+        WHEN OTHERS THEN
+          RAISE;
+        END;
+      END LOOP;
+    EXCEPTION
+      when others then
+        dbms_output.put_line('create_graph_roles: hit error ');
+        raise;
+    END;
+    /
+    </copy>
+    ```
+
+    Assign the default permissions to the roles, `GRAPH_DEVELOPER` and `GRAPH_ADMINISTRATOR`, to group multiple permissions together.
+    ```
+    <copy>
+    GRANT PGX_SESSION_CREATE TO GRAPH_ADMINISTRATOR;
+    GRANT PGX_SERVER_GET_INFO TO GRAPH_ADMINISTRATOR;
+    GRANT PGX_SERVER_MANAGE TO GRAPH_ADMINISTRATOR;
+    GRANT PGX_SESSION_CREATE TO GRAPH_DEVELOPER;
+    GRANT PGX_SESSION_NEW_GRAPH TO GRAPH_DEVELOPER;
+    GRANT PGX_SESSION_GET_PUBLISHED_GRAPH TO GRAPH_DEVELOPER;
+    GRANT PGX_SESSION_MODIFY_MODEL TO GRAPH_DEVELOPER;
+    GRANT PGX_SESSION_READ_MODEL TO GRAPH_DEVELOPER;
+    </copy>
+    ```
+
+## Task 2: Create a database user
+
+Now create the `CUSTOMER_360` user. Enter the following commands into the SQL Worksheet and run it while connected as the Admin user.
+
+Note: Replace **<specify_a_password>** with a valid password string after copying and pasting the text below but **before executing** it in SQL Developer Web.
+>>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
 ```
 <copy>
@@ -103,7 +197,11 @@ GRANT PGX_SESSION_READ_MODEL TO GRAPH_DEVELOPER;
 
 Now create the `CUSTOMER_360` user and provide Database Actions access for this user.
 
+<<<<<<< HEAD
 Open the main menu and click "Database Users".
+=======
+## Task 3: Enable SQL Developer Web for the new user
+>>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
 ![](images/user-1.jpg)
 
