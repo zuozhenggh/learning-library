@@ -53,7 +53,7 @@ This lab assumes you have:
      - DVA FILE:
          - EmployeeAttrition_OML.dva 
 
-## **Task $1:** 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
+## Task 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
 In this exercise, we will show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
 
@@ -165,7 +165,7 @@ In this exercise, we will show Oracle Data Miner which enables developers to wor
 27. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking on any node then choosing "Save SQL".
   ![](./images/ml1.24.png " ")
 
-## **Task $1:** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
+## Task 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
 In this exercise we will implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine.
 
 
@@ -225,7 +225,7 @@ In this exercise we will implement essentially that exact workflow using a serie
 
   The next step uses OAS Data Visualization to illustrate how this same query could be run in any application to quickly and effectively “operationalize” machine learning.
 
-## **Task $1:** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
+## Task 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
 In this exercise we will use OAS to illustrate how data, predictions and the supporting metadata like lift and cumulative gain from the OML models trained in the Oracle DB can easily and readily be viewed from any application using SQL statements.  This also illustrates how any application that supports SQL can quickly incorporate the models enabling you to effectively “operationalize” them.
 
 1. Login to Oracle Analytics by entering the URL and login credentials:
