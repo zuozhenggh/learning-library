@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to install sample tables and views from Sample Datasets, which come complete with sample data.
 
-## **Task $1: 1** - Creating the Project Tables
+## Task 1: Creating the Project Tables
 
 1.  From your APEX workspace home page, select **SQL Workshop**, click **Utilities**, and then click **Sample Datasets**.  
 
@@ -18,7 +18,7 @@ In this lab, you will learn how to install sample tables and views from Sample D
 5. Click **Exit**.    
     *Note: You do NOT want to click _Create Application_, as you will manually create an application*
 
-## **Task $1: 2** - Review Database Objects
+## Task 2: Review Database Objects
 
 1. In the App Builder Menu, click **SQL Workshop**.
 2. Click **Object Browser**.  

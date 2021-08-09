@@ -337,7 +337,7 @@ choose Run – Start Server Instance (IntegratedWebLogicServer) in the main menu
 + ![](images/2/terminated-wl.png)
 
 
-## **Task $1: 7** - Optional - use the diagnostic tool within JDeveloper
+## Task 7: Optional - use the diagnostic tool within JDeveloper
    In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
 
 Set breakpoints in the composite by right clicking on an interface and create a Request or Reply Breakpoint or both. For one-directional interfaces, you only get one option.

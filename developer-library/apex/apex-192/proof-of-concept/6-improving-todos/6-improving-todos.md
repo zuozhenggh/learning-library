@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to add additional columns to a report and improve a list of values.
 
-## **Task $1: 1** - Adding Columns to the Report.
+## Task 1: Adding Columns to the Report.
 In the Runtime environment navigate to To Dos and notice that the report includes the Task but not the associated Project and Milestone. To retrieve these values in the report you need to utilize an SQL which ties in the Projects and Milestones tables. This can be done using inner selects or by joining multiple tables together. For simplicity you are going to implement inner select statements.
 
 
@@ -96,7 +96,7 @@ In the Runtime environment navigate to To Dos and notice that the report include
 
     *{Note: You want to save the report as Primary so that it displayed as you see it now to end users when they navigate to the page.}*
 
-## **Task $1: 2** - Updating the Tasks LOV.
+## Task 2: Updating the Tasks LOV.
 If you review the To Dos form page, by clicking an edit icon on the report, you will see that Project and Milestone are not on the form page either. To simplify data entry, you will change the Tasks select list to a Popup LOV and include the Project and Milestone.
 
 This same LOV is used on the Links form page so we can reuse it there as well.

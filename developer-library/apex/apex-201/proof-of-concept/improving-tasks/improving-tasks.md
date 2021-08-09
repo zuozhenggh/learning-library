@@ -15,7 +15,7 @@ Estimated Time: 15 minutes
 - An Oracle Cloud paid account, a LiveLabs account or free trial.
 - An APEX application
 
-## **Task $1: 1** - Improving the Projects List of Values.
+## Task 1: Improving the Projects List of Values.
 In the Runtime environment navigate to Tasks and then click the edit icon on any record to bring up the Task form page. Click the select list for Project to see how the project records are displayed.
 
 ![](images/project-list.png " ")
@@ -97,7 +97,7 @@ It would be beneficial to see additional details related to the project.
 
     *{Note: You can adjust the size of the columns and even sort the columns displayed in the Popup LOV.}*
 
-## **Task $1: 2** - Defining a Cascading List Of Values
+## Task 2: Defining a Cascading List Of Values
 If you review the Milestones select list you will notice that all milestones are listed. The listed values should be restricted to only those that are associated with the selected project. In order to do this, you need to define Milestones (**P8\_MILESTONE_ID**) as a _Cascading LOV_. This requires specifying the Parent Item (**P8\_PROJECT_ID**) within the Milestone LOV, and also creating a new list of values statement that utilizes the Parent Item to limit the Milestones returned.
 
 1. Return to the development environment.
@@ -142,7 +142,7 @@ If you review the Milestones select list you will notice that all milestones are
 
     ![](images/set-p8-lov.png " ")    
 
-## **Task $1: 3** - Updating the Task Form Page
+## Task 3: Updating the Task Form Page
 1. Now you need to hook up the new LOV to the item on Page 8.  
 
     From the List of Values page, in the toolbar, click **Edit Page 8**.

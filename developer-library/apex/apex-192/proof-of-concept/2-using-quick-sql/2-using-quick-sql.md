@@ -22,7 +22,7 @@ Below is a napkin design for collecting project information:
 
 You should notice that the new model allows the assignment of Team Members to Projects, as well as optionally to Tasks, and To Dos. The concept of a Project having Milestones has been introduced, however, it is optional that Tasks are associated with a Milestone. Further, To Dos and Links have been added to Tasks.
 
-## **Task $1: 1** - Open Quick SQL
+## Task 1: Open Quick SQL
 1. Log into your workspace
 2. Click **SQL Workshop**
 3. Click **SQL Scripts**
@@ -33,7 +33,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
     ![](images/go-quick-sql.png " ")
 
-## **Task $1: 2** - Enter Shorthand for Tables
+## Task 2: Enter Shorthand for Tables
 Quick SQL provides an easy way to generate the SQL required to create a relational data model from an indented text document. This tool is designed to reduce the time and effort required to create SQL tables, triggers, and index structures.
 
 *{Note: You will only be entering some of the tables and a few columns for each table. This exercise is designed to teach you the concepts behind Quick SQL, and not a typing exercise. A completed script will be provided later in the Lab.}*
@@ -99,7 +99,7 @@ So far you have defined some basic tables and used the defaults, however, there 
 
     *{Note: You will need to scroll down within the SQL (right pane) to review the team member trigger for the implementation of the _/upper_ on _username_. If you scroll down further, you will see all of the insert statements.}*
 
-## **Task $1: 4** - Enter a Child Table
+## Task 4: Enter a Child Table
 By indenting a table name, you can define the new table as a child table of the table above, and the SQL will generate a foreign key relationship between the two tables.
 
 1. Enter a child table related to Projects.

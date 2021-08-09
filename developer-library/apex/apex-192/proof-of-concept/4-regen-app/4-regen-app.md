@@ -14,7 +14,7 @@ Given that no additional development has been performed in the application, you 
 
 *{Note: If development had been performed in the application then you would lose any changes when you regenerate. To avoid this, you could use the Create Page Wizard to create a new Interactive Grid page, delete the existing report and form, and then modify the navigation lists to point to the new page.}*
 
-## **Task $1: 1** - Delete the Existing Application
+## Task 1: Delete the Existing Application
 It is important to remove the application you just generated to avoid the confusion of having two applications with the same name.
 
 1. Navigate back to the application home page.
@@ -36,7 +36,7 @@ It is important to remove the application you just generated to avoid the confus
 
     ![](images/perm-delete-now.png " ")
 
-## **Task $1: 2** - Load Blueprint
+## Task 2: Load Blueprint
 The Create Application Wizard allows developers to load previously generated application definitions, called _Blueprints_. Utilizing this capability, you can load the previous Projects application blueprint, modify the page for milestones and then regenerate the app.
 
 1. From the App Builder home page, open the **App Builder** menu and then click **Create**.

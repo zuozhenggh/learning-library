@@ -12,7 +12,7 @@ The **apex\_data\_parser** is a PL/SQL package which provides an easy interface 
 
 The **apex\_web\_service.make\_rest\_request\_b** is a PL/SQL function which invokes a RESTful style Web service and returns the results in a BLOB. Utilizing this function within apex\_data\_parser will allow you to load data from a REST API directly into your table.
 
-## **Task $1: 1** - Create a Script
+## Task 1: Create a Script
 
 Rather than running a one-off SQL statement to load the data, writing a SQL Script enables the SQL statement to be run repeatedly.
 
@@ -56,7 +56,7 @@ In November 2020, Results should show **1658 row(s) inserted** and **1 row(s) de
 ![](images/script-results.png)
 *Note: If you do not see 3 statements processed successfully then double check your table definition and the script to populate the table.*
 
-## **Task $1: 2** - Review the Data
+## Task 2: Review the Data
 
 There are several ways to review the data.
 

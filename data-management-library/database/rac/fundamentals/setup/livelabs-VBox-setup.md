@@ -175,7 +175,7 @@ The following values can be changed:
 
 
 
-## Task 3:a: Connect to your instance
+## Task 3a: Connect to your instance
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 

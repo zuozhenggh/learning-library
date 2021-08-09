@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to create a table by defining the data structures in Quick SQL.
 
-## **Task $1: 1** - Open Quick SQL
+## Task 1: Open Quick SQL
 1. Log into your workspace.
 2. Click **SQL Workshop**.
 3. Click **SQL Scripts**.
@@ -15,7 +15,7 @@ In this lab, you will learn how to create a table by defining the data structure
 
     ![](images/go-quick-sql.png " ")
 
-## **Task $1: 2** - Enter Shorthand for Tables
+## Task 2: Enter Shorthand for Tables
 Quick SQL provides an easy way to generate the SQL required to create a relational data model from an indented text document. This tool is designed to reduce the time and effort required to create SQL tables, triggers, and index structures.
 
 1. In Quick SQL (left pane), enter the following.
@@ -67,7 +67,7 @@ At this stage you have created a SQL statement. However, you first need to save 
 
     *Note: If you do not see 1 statements processed then return to Quick SQL and click Generate SQL, reimplement the Setting, resave the script and then run it again. If you still do not see 1 successful, then review the errors displayed in Feedback within the results.*
 
-## **Task $1: 4** - Create the Application
+## Task 4: Create the Application
 Now that you have created the table you can quickly create an application with a report and form.
 
 1. Click **Create App**.

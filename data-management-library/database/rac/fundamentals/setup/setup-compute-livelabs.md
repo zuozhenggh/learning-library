@@ -54,7 +54,7 @@ Your options are:
 3. Task 2C: Connect using Putty *(Requires you to install applications on your machine)*
 
 
-## **Task $1: 2A**: Connect using Oracle Cloud Shell
+## Task 2A: Connect using Oracle Cloud Shell
 
 1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
@@ -106,7 +106,7 @@ Your options are:
 5.  You may now [proceed to the next lab](#next).  
 
 
-## **Task $1: 2B**: Connect using MAC terminal or Windows CYGWIN Emulator
+## Task 2B: Connect using MAC terminal or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -124,7 +124,7 @@ Your options are:
 
 3. After successfully logging in, you may [proceed to the next lab](#next).
 
-## **Task $1: 2C**: Connect using Putty on Windows
+## Task 2C: Connect using Putty on Windows
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.

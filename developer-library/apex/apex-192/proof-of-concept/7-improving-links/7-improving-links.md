@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to modify the URL so that it can be used to display the content listed in a new window.
 
-## **Task $1: 1** - Adding Columns to the Report.
+## Task 1: Adding Columns to the Report.
 In a similar fashion to how you modified the To Dos report, you need to update the Links report to include the Project and Milestone columns.
 
 1. From the runtime application, navigate to the Links report page, and then navigate to Page Designer.
@@ -109,7 +109,7 @@ In a similar fashion to how you modified the To Dos report, you need to update t
 
     *{Note: You want to save the report as Primary so that it displayed as you see it now to end users when they navigate to the page.}*
 
-## **Task $1: 2** - Updating the Form Page.
+## Task 2: Updating the Form Page.
 If you review the Links form page, by clicking an edit icon on the report, you will see that the Task item is not displaying the Project and Milestone. In the previous lab you updated the Tasks LOV to include the extra display columns. Therefore, all you need to do now is update the Task item to be a Popup LOV.
 
 1. From the runtime environment, in the Developer Toolbar, click **Edit Page 12**.

@@ -7,7 +7,7 @@ In the runtime environment, if you navigate to Milestones, and then from the rep
 
 *Note: See how to go to your runtime environment from the previous lab.*
 
-## **Task $1: 1** - Delete Generated App
+## Task 1: Delete Generated App
 Given you are going to regenerate the app from the Create Application Wizard, it is best to delete the app you just generated to avoid confusion.
 
 1. In the runtime environment, within the develop toolbar, click **Application xxxxx**.  
@@ -22,7 +22,7 @@ Given you are going to regenerate the app from the Create Application Wizard, it
 
 3. On the Confirm Delete page, click **Permanently Delete Now**.
 
-## **Task $1: 2** - Reload the Projects App
+## Task 2: Reload the Projects App
 The Create Application Wizard includes the ability to reload apps that you previously generated, making it easy to make some changes and generate a new and improved version of the initial app.
 
 1. From the App Builder Home Page, click **Create**.
@@ -38,7 +38,7 @@ The Create Application Wizard includes the ability to reload apps that you previ
 
     The previously defined app blueprint will be displayed.
 
-## **Task $1: 3** - Replacing the Milestone Pages
+## Task 3: Replacing the Milestone Pages
 Rather than having two ways to maintain milestone records, you will delete the original report and form pages, and then add a new page, and reposition it in the list of pages.
 
 1. In the list of pages, for Milestones, click **Edit**.
@@ -64,7 +64,7 @@ Rather than having two ways to maintain milestone records, you will delete the o
     ![](images/move-milestones.png " ")
 
 
-## **Task $1: 4** - Add the Status Page
+## Task 4: Add the Status Page
 The **EBA\_PROJECT\_STATUS** table is used to maintain project statuses. This table should be maintainable; however, only application administrators should be able to modify records. As such, adding the Status page under Administration is the optimal solution.
 
 1. In the Create Application Wizard, click **Add Page**.
@@ -80,7 +80,7 @@ The **EBA\_PROJECT\_STATUS** table is used to maintain project statuses. This ta
     ![](images/set-status.png " ")
 
 
-## **Task $1: 5** - Completing the App
+## Task 5: Completing the App
 The Create Application Wizard also has the ability to add various features to your app, such as Access Control, Activity Reporting, Feedback, and more, to make your app more functionally complete and "production-ready".
 
 1. In the Create Application Wizard, for Features, click **Check All**

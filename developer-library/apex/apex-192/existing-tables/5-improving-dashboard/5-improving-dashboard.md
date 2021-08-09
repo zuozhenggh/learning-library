@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to manipulate regions in Dashboard using Page Designer.
 
-## **Task $1: 1** - Removing Chart 4
+## Task 1: Removing Chart 4
 Looking at the Dashboard you will see that Chart 4 is based on demo data and should be removed.
 
 1. In the runtime environment, click **Dashboard** (See how to access runtime environment in Lab 3, Step 7, Step 8).
@@ -28,7 +28,7 @@ Looking at the Dashboard you will see that Chart 4 is based on demo data and sho
 
     ![](images/view-dash.png " ")
 
-## **Task $1: 2** - Move Regions
+## Task 2: Move Regions
 Looking at the revised Dashboard page, it would look better to have the Budget versus Cost chart on a line by itself.
 
 1. From the runtime environment, navigate back to the Page Designer in App Builder by clicking **Edit Page 2** in the Developer Toolbar, or by navigating back to the App Builder browser tab manually.
