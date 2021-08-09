@@ -8,7 +8,7 @@ The combined dataset is then used to perform the following common graph query an
 
 The following ER diagram depicts the relationships between the datasets.
 
-![ER Diagram of tables](images/er-diagram.jpg)
+![](images/er-diagram.jpg)
 
 Estimated Lab Time: 10 minutes
 
@@ -128,8 +128,7 @@ Let's find which accounts are influential in the network. There are various algo
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -178,8 +177,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -195,7 +193,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 1)
     ```
 
-    The partition value is stored in a property named `WCC`.
+    The component value is stored in a property named `wcc`.
 
     ```
     <copy>
@@ -215,11 +213,9 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-    In this case, all six accounts form one partition by the WCC algorithm.
+    In this case, all six accounts form one component by the WCC algorithm.
 
-3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
-
-    [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) (SCC) algorithm detects three partitions.
+3. Run a [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) algorithm, SCC Kosaraju, instead. It detects three components.
 
     ```
     <copy>
@@ -229,7 +225,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 3)
     ```
 
-4. List partitions and number of vertices in each
+4. List components and number of vertices in each.
 
     ```
     <copy>
@@ -251,10 +247,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-5. List the other accounts in the same connected component (partition) as John's account.
-
-    The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
-    *John's account_no is xxx-yyy-201 as shown in Lab 6.*
+5. List the other accounts in the same connected component as John's account (= `xxx-yyy-201`). The component ID is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
 
     ```
     <copy>
@@ -275,7 +268,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     | xxx-yyy-202 |
     | xxx-yyy-203 |
     | xxx-yyy-204 |
-    +-------------+]
+    +-------------+
     ```
 
     ![](images/community.jpg)
@@ -288,5 +281,5 @@ You may now proceed to the next Lab.
 
 * **Author** -  Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Ryota Yamanaka, April 2021
+* **Last Updated By/Date** - Ryota Yamanaka, August 2021
 

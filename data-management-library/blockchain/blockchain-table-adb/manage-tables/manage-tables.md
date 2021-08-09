@@ -27,7 +27,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Have successfully completed the previous labs
 
-## Task 1: Create a blockchain table
+## Task 1: Create a Blockchain Table
 
 1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.
 
@@ -58,7 +58,7 @@ In this lab, you will:
 
 	![](./images/task1-3.png " ")
 
-## Task 2: Insert rows into the blockchain table
+## Task 2: Insert Rows into the Blockchain Table
 
 1. Copy and paste the below code snippet in the worksheet and run them to insert records into the `bank_ledger` blockchain table.
 
@@ -88,7 +88,7 @@ In this lab, you will:
 
 	![](./images/task2-2.png " ")
 
-## Task 3: View Blockchain tables and its internal columns
+## Task 3: View Blockchain Tables and Its Internal Columns
 
 1. Run the command to view all the blockchain tables.
 
@@ -219,7 +219,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/task5-5.png " ")
 
-## Task 6: Verify rows without signature
+## **Task 6:** Verify Rows Without Signature
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 
@@ -243,7 +243,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	![](./images/task6-1.png " ")
 
 
-## Task 7: Generate certificate
+## Task 7: Generate Certificate
 
 Let's connect to Oracle cloud shell to generate your x509 keypair.
 
@@ -382,12 +382,14 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 
 	![](./images/task8-1.png " ")
 
-2. Make sure to copy the value of Certificate GUID. It will not be displayed again. Do not generate another Certificate GUID.
+2. Make sure to copy the value of Certificate GUID. It will not be displayed again. 
+
+	> **Note:** Do not run the procedure again to generate another Certificate GUID.
 
 	This output looks like this:
 
 	```
-	Certificate GUID = C70CB0B14ADB1A50E0533D11000A1BCB
+	Certificate GUID = C8D2C1F00236AD7CE0533D11000AE2FC
 	```
 
 3. Run this command to show your certificate.
@@ -397,6 +399,7 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 	SELECT * FROM USER_CERTIFICATES;
 	</copy>
 	```
+	![](./images/task8-3.png " ")
 
 
 You may now [proceed to the next lab](#next).
