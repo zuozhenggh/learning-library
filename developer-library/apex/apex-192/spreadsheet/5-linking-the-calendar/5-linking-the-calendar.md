@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to improve a Calendar and link an existing page (Calendar) to a modal form page.
 
-## **STEP 1** - Improving the Calendar
+## **Task $1: 1** - Improving the Calendar
 The **Calendar** page currently displays the project, rather than the task name, and only shows the start date, instead of displaying duration-based events.
 
 1. In the runtime environment, click **Calendar**.

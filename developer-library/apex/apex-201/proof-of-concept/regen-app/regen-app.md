@@ -25,7 +25,7 @@ Estimated Time: 5 minutes
 - An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
 - An APEX application
 
-## **Step 1** - Delete the Existing Application
+## **Task $1: 1** - Delete the Existing Application
 It is important to remove the application you just generated to avoid the confusion of having two applications with the same name.
 
 1. Navigate back to the application home page.
@@ -47,7 +47,7 @@ It is important to remove the application you just generated to avoid the confus
 
     ![](images/perm-delete-now.png " ")
 
-## **Step 2** - Load Blueprint
+## **Task $1: 2** - Load Blueprint
 The Create Application Wizard allows developers to load previously generated application definitions, called _Blueprints_. Utilizing this capability, you can load the previous Projects application blueprint, modify the page for milestones and then regenerate the app.
 
 1. From the App Builder home page, open the **App Builder** menu and then click **Create**.
@@ -62,7 +62,7 @@ The Create Application Wizard allows developers to load previously generated app
 
     ![](images/load-blueprint.png " ")
 
-## **Step 3** – Update Milestones Page
+## **Task $1: 3** – Update Milestones Page
 Now that you have the original pages reloaded, it is simply a matter of removing the old Milestones page, adding the new page type, and then reordering the new page.
 
 1. In the Create an Application page, under Pages, for Milestones click **Edit**
@@ -92,7 +92,7 @@ Now that you have the original pages reloaded, it is simply a matter of removing
 
 5. To generate the new application click **Create Application**
 
-## **Step 4** – Run the New Application
+## **Task $1: 4** – Run the New Application
 
 1. In Page Designer, click **Run Application**
 

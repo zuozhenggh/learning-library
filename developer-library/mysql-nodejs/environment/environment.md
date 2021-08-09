@@ -18,7 +18,7 @@ Estimated Lab Time: 25 minutes
 - Configure OCI Client and Fn
 
 
-## **STEP 1a:** Using OpenSSH from Command Line
+## **Task $1: 1a:** Using OpenSSH from Command Line
 
 To access the system you need the private ssh key and the IP, which were created by
 Terraform and was shown on the **Application Information** tab in the 
@@ -38,7 +38,7 @@ If you stored the key in a file `ssh_private_key` and the IP of your instance is
     Warning: Permanently added '123.45.67.89' (ECDSA) to the list of known hosts.
     [opc@compute ~]$
 
-## **STEP 1b:** Using PuTTY on Windows
+## **Task $1: 1b:** Using PuTTY on Windows
 
 [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) is a
 ssh client frequently used on Windows. To access the system you need 

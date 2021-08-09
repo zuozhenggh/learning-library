@@ -47,7 +47,7 @@ This lab assumes you have:
      - DVA FILE:
          - EmployeeAttrition_OML.dva 
 
-## **STEP** 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
+## **Task $1:** 1: Using Data Miner GUI to Train, Test and Evaluate a Machine Learning Model
 
 In this step we’ll show Oracle Data Miner which enables developers to work directly with data inside the database using a graphical “drag and drop” workflow editor. Oracle Data Miner (ODMr), an extension to Oracle SQL Developer, captures and documents in graphical analytical workflows the steps users take while exploring data and developing machine learning methodologies.
 
@@ -128,7 +128,7 @@ In this step we’ll show Oracle Data Miner which enables developers to work dir
 23. Lastly, any workflow can be readily output as SQL statements to be run as a script or to incorporate the logic into an application. This is accomplished by simply right clicking any node then choosing "Save SQL".
 ![](./images/ml1.24.png " ")
 
-## **STEP** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
+## **Task $1:** 2: Using SQL to Train, Test and Evaluate a Machine Learning Model
 
 In this step we’ll implement essentially that exact workflow using a series of SQL statements in order to illustrate how developers can readily incorporate machine learning into their applications. Often referred to as “operationalizing” the algorithm(s), this illustrates how to overcome a huge stumbling block that often thwarts the efforts of business to realize value from machine learning. 
 
@@ -188,7 +188,7 @@ In this step we’ll implement essentially that exact workflow using a series of
 
   The next lab uses OAS Data Visualization to illustrate how this same query could be run in any application to quickly and effectively “operationalize” machine learning.
 
-## **STEP** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
+## **Task $1:** 3: Using OAS to Understand the Data Machine and call OML in the Oracle DB
 
 1. Login to Oracle Analytics by entering the URL provided by your instructor.
 ![](./images/ml3.1.png " ")

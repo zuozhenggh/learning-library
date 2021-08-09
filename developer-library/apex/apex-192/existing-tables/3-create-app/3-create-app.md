@@ -4,7 +4,7 @@
 
 In this lab, you will learn how to create the initial app based on existing tables in your Oracle database. In practice, generally you will start with only one or two pages, and then use the Create Page Wizard to add additional pages to your app.
 
-## **STEP 1** - Creating an App
+## **Task $1: 1** - Creating an App
 
 1. In the App Builder menu, click **App Builder**.
 2. Click **Create**.
@@ -15,7 +15,7 @@ In this lab, you will learn how to create the initial app based on existing tabl
 
     ![](images/new-app.png " ")
 
-## **STEP 2** - Naming the App
+## **Task $1: 2** - Naming the App
 1. In the Create Application wizard, for Name enter **Projects**.
 2. Click **Appearance**.  
 
@@ -36,7 +36,7 @@ In this lab, you will learn how to create the initial app based on existing tabl
 
     ![](images/save-appearance.png " ")
 
-## **STEP 3** – Add the Dashboard Page
+## **Task $1: 3** – Add the Dashboard Page
 
 A dashboard page is a great way to show important information using various charts. When you created the Sample Dataset it also created a view **EBA\_PROJECTS_V**, which joins data from various tables. This view is ideal as the basis for the dashboard charts.
 
@@ -76,7 +76,7 @@ A dashboard page is a great way to show important information using various char
 
     *Note: You have not set any values for _Chart 4_, therefore, it will be generated with a chart based on demo data. In a later lab we will remove the additional chart.*
 
-## **STEP 4** – Add the Project Page
+## **Task $1: 4** – Add the Project Page
 Card pages are especially good when there is not a huge number of records, and you only want to display a few details. The **EBA\_PROJECTS** table only has 12 records and would work well as a card page.
 
 1. In the Create Application wizard, click **Add Page**.
@@ -95,7 +95,7 @@ Card pages are especially good when there is not a huge number of records, and y
 
     ![](images/set-cards.png " ")
 
-## **STEP 5** - Add the Milestone Pages
+## **Task $1: 5** - Add the Milestone Pages
 There are 30 records within **EBA\_MILESTONES**, therefore, you will add a report page and an associated form page.
 
 1. In the Create Application wizard, click **Add Page**.
@@ -115,7 +115,7 @@ There are 30 records within **EBA\_MILESTONES**, therefore, you will add a repor
 
     ![](images/set-milestones.png " ")
 
-## **STEP 6** - Add the Task Pages
+## **Task $1: 6** - Add the Task Pages
 The **EBA\_PROJECT_TASKS** table is the primary table, where records will be reviewed and updated the most. Therefore, you will add a Faceted Search page, Report and Form pages, and a Calendar page on this table.
 
 1. In the Create Application wizard, click **Add Page**.
@@ -176,7 +176,7 @@ The **EBA\_PROJECT_TASKS** table is the primary table, where records will be rev
 
 ![](images/object-browser-create-app.png " ")
 
-## **STEP 7** – Generate the App
+## **Task $1: 7** – Generate the App
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -190,7 +190,7 @@ Now that you have added all the pages, it is time to generate the app and review
 
     ![](images/run-app.png " ")
 
-## **STEP 8** – Runtime App
+## **Task $1: 8** – Runtime App
 
 1. Enter your user credentials. Click **Sign In**.
 

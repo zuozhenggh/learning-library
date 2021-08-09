@@ -16,7 +16,7 @@ For more information about Terraform and Resource Manager, please see the append
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Keys
 
-## **STEP 1A**: Create Stack:  Compute + Networking
+## **Task $1: 1A**: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
@@ -82,7 +82,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
 You may now proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)) (skip Step 1B).
 
-## **STEP 1B**: Create Stack:  Compute only
+## **Task $1: 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to [Step 2](#STEP2:TerraformPlan(OPTIONAL)).  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Egress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 

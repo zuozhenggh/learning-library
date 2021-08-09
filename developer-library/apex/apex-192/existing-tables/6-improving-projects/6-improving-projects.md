@@ -4,7 +4,7 @@
 In this lab, you will learn how to use the Create Page Wizard to add additional pages to your app. Then, you will link the new page to the existing card page. You will then learn how to easily manipulate how items are displayed, and finally to create a Dynamic Action.
 
 
-## **STEP 1** - Improving the Cards Display
+## **Task $1: 1** - Improving the Cards Display
 Looking at the Projects Cards region you should notice it is only 3 cards wide, and the icons include initials, which could be displayed better. To improve the page, you will utilize *Live Template Options* directly in the runtime environment. You could also make changes from the App Builder, however, it is much easier to see the results as you make them.
 
 1. In the runtime environment, click the navigation button, then click **Projects**, you will see Projects Cards region.
@@ -23,7 +23,7 @@ Looking at the Projects Cards region you should notice it is only 3 cards wide, 
 
     ![](images/live-template.png " ")
 
-## **STEP 2** - Adding a Form Page
+## **Task $1: 2** - Adding a Form Page
 Currently there is no way to maintain project records in the Projects Cards region. Therefore, you will use the **Create Page Wizard** to create a form page on the **EBA\_PROJECTS** table.
 
 1. Navigate back to the App Builder  by clicking **Application xxxxx** in the Developer Toolbar at the bottom of the page, or by navigating back to the App Builder browser tab manually.
@@ -63,7 +63,7 @@ Currently there is no way to maintain project records in the Projects Cards regi
     ![](images/columns.png " ")
     *Note: This will create **Page 10: Project** if you have followed the previous sections correctly. If not page 10, please repeat Lab 4, and ensure the Interactive Grids for both Milestones and Statuses are created*
 
-## **STEP 3** - Link to Projects Page
+## **Task $1: 3** - Link to Projects Page
 Now to link this new page (Page 10: Project form page) to the Projects Cards page.
 
 *Note: Defining a link for a Card region requires modifying the SQL statement. However, elsewhere in Oracle APEX, defining links is very easy and declarative as you will learn in Lab 8.*
@@ -119,7 +119,7 @@ Now to link this new page (Page 10: Project form page) to the Projects Cards pag
 
     ![](images/view-form.png " ")
 
-## **STEP 4** - Update How Items are Displayed
+## **Task $1: 4** - Update How Items are Displayed
 The way the Status Id, Name, and Project Lead are displayed in Project form page can be easily improved.
 The *Status Id* item is a foreign key to the *EBA\_PROJECT_STATUS* table. Therefore, rather than requiring end users to enter a number, you will update the item to be a list of values based on the lookup table. The Name and Project Lead fields should be updated to Text Fields. Lastly, the audit columns (e.g. Created, Created By, Updated, Updated by columns) should be hidden.
 
@@ -165,7 +165,7 @@ The *Status Id* item is a foreign key to the *EBA\_PROJECT_STATUS* table. Theref
 
     ![](images/set-hidden.png " ")
 
-## **STEP 5** - Improve the Completed Date
+## **Task $1: 5** - Improve the Completed Date
 Currently, a Completed Date can be entered on any project. However, it would greatly improve data quality to only allow the date to be entered if the Status is _COMPLETED_. In order to implement such functionality, it requires JavaScript to dynamically enable / disable the Completed Date item based on the value of Status. Thankfully, as an APEX developer you don't need to write such JavaScript. You can simply define a *Dynamic Action* which allows you to declaratively define such client-side interactively, by specifying the trigger, action, and affected element(s).
 
 1. You need to define the Dynamic Action on the triggering element, which is the Status.

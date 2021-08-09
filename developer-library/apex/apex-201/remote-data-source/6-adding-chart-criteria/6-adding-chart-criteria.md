@@ -13,7 +13,7 @@ To refresh the chart whenever the country in the select list is changed, you nee
 
 In order for the chart to properly utilize the updated value in the select list, then it is necessary to submit that page item when rendering the chart.
 
-## **STEP 1** – Add a Page Item
+## **Task $1: 1** – Add a Page Item
 
 1. From the Runtime environment, in the Developer Toolbar (bottom of the screen), click **Edit Page X**.
 
@@ -43,7 +43,7 @@ In order for the chart to properly utilize the updated value in the select list,
     ![](images/set-item.png " ")
     ![](images/set-item2.png " ")
 
-## **STEP 2** – Add a Dynamic Action
+## **Task $1: 2** – Add a Dynamic Action
 In order for the chart to be refreshed when a country is selected from the new item a Dynamic Action must be defined.
 
 1. In the Rendering tree (left pane), right click on **P4_COUNTRY**, select **Create Dynamic Action**.
@@ -64,7 +64,7 @@ In order for the chart to be refreshed when a country is selected from the new i
 
     ![](images/set-action.png " ")
 
-## **STEP 3** – Update the Chart
+## **Task $1: 3** – Update the Chart
 Currently, all three chart series have the country hard-coded. To ensure the value from the item can be used it must be set in session state. Rather than doing this in each series you can set it once for the chart. Once the item is in session state then it can be utilized in the where condition within each chart series.
 
 1. In the Rendering tree (left pane), under Content Body, click **Country Chart**.
@@ -85,7 +85,7 @@ Currently, all three chart series have the country hard-coded. To ensure the val
 4. In the Rendering tree (left pane), under Series, click **Percentage Difference**.
     In the Property Editor (right pane), for Source > SQL Query, replace **'AUS'** with :**P4\_COUNTRY**.
 
-## **STEP 4** – Improve the Chart Page
+## **Task $1: 4** – Improve the Chart Page
 
 1. In Page Designer, within the Toolbar, click **Save and Run**.
 2. In the Runtime environment, select different Countries.

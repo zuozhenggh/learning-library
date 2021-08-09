@@ -35,7 +35,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Provision VM
 
-### **STEP 1**: Launch a Cloud Compute Instance for Cluster Management
+### **Task $1: 1**: Launch a Cloud Compute Instance for Cluster Management
 
   - Before we can launch a compute instance, we need two things: a Virtual Cloud Network to connect it to, and an SSH key pair to use for authentication. We could create a new VCN, but since the cluster wizard is already going to create one, we will just make use of that. So let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
 
@@ -151,7 +151,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ![](images/LabGuide200-585fa5fe.png)
 
-### **STEP 2**: SSH into your Compute instance 
+### **Task $1: 2**: SSH into your Compute instance 
 
   - Your instance should now be in the **Running** state. Let's SSH into the instance and install the command line utility that will let us interact with our cluster. Still on the instance details page, find the **Public IP Address** and copy it to the clipboard.
     ![](images/200/LabGuide200-3986ce91.png)
@@ -181,7 +181,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Run Your Function Locally
 
-### **STEP 3**: Install Fn Server on Your Virtual Machine
+### **Task $1: 3**: Install Fn Server on Your Virtual Machine
 
 - We are going to use the virtual machine that you created in OCI as our local or development machine for Fn. Return to your **SSH session** either in PuTTY or your terminal window. If you have closed it, start a new one using the same method as you did in Lab 200 (e.g. `cd ~/container-workshop/ssh-keys; ssh -i ssh-key opc@<IP-Address-of-Your-VM>`);
 
@@ -251,7 +251,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 - Looks good, let's move on to creating our first function.
 
-### **STEP 4**: Clone the Function Repository
+### **Task $1: 4**: Clone the Function Repository
 
 - Now we're ready to get a copy of the image resizing function and test it out on our local Fn Server. Clone the Git repository into your home directory using the following command.
 
@@ -263,7 +263,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **NOTE**: Functions deployed to Fn are packaged in Docker containers. You can use any programming language to write your functions, and you can deploy them to any Fn Server -- local, running on your server, or hosted in the cloud. The function you just cloned actually involves no code at all, it is simply a Dockerfile that installs and executes the open source command line tool ImageMagick. Using functions like this is a quick and easy way to convert open source or command line tools to auto-scaling web services.
 
-### **STEP 5**: Deploy the Function Locally
+### **Task $1: 5**: Deploy the Function Locally
 
 - Now that you have the function 'code', you can deploy it to the local Fn Server you started earlier by running the following commands in your terminal window:
 
@@ -275,7 +275,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/500/11.png)
 
-### **STEP 6**: Test the Function Using curl
+### **Task $1: 6**: Test the Function Using curl
 
 - Before we can test our function, we must disable SELinux, as it interferes with the ability of Fn to run containers. Run these commands to **disable SELinux**
 
@@ -304,7 +304,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Deploy Your Function to Fn on Kubernetes
 
-### **STEP 7**: Deploy Fn Server to Kubernetes
+### **Task $1: 7**: Deploy Fn Server to Kubernetes
 
 - We are going to use the Kubernetes Dashboard **Create An App** wizard to deploy Fn to Kubernetes. This is suitable for a test environment, but does not account for production best practices. For a production deployment, consider using [Helm](https://github.com/kubernetes/helm#install) and the [fn-helm chart](https://github.com/fnproject/fn-helm) to bring up your Fn Server.
 
@@ -364,7 +364,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ![](images/LabGuide500-aab88037.png)
 
-### **STEP 8**: Deploy Your Function to Fn Server on Kubernetes
+### **Task $1: 8**: Deploy Your Function to Fn Server on Kubernetes
 
 - In your _SSH session_, change directories to cloned function directory from **STEP 2**.
 
@@ -468,7 +468,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-### **STEP 9**: Test Your Function in the Product Catalog
+### **Task $1: 9**: Test Your Function in the Product Catalog
 
 - Open the **product catalog** website in a browser _on your local machine_. If you don't have the URL, you can look in the Kubernetes dashboard for the **external endpoint** of the product-catalog-service, or you can run the following command from your SSH session:
 

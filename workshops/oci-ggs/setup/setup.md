@@ -20,7 +20,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: Verify the Oracle Database Details
+## **Task $1: 1**: Verify the Oracle Database Details
 
 Ensure that the database is running and that you can connect to it.
 
@@ -46,7 +46,7 @@ Ensure that the database is running and that you can connect to it.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** Create a Deployment
+## **Task 2:** Create a Deployment
 
 1. Sub step 1
 
@@ -78,7 +78,7 @@ Ensure that the database is running and that you can connect to it.
   <copy>ssh -i <ssh-key-file></copy>
   ```
 
-## **STEP 3:** Register a Database
+## **Task 3:** Register a Database
 
 *At the conclusion of the lab add this statement:*
 You may proceed to the next lab.

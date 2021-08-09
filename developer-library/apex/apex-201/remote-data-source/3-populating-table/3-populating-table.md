@@ -11,7 +11,7 @@ The **apex\_data\_parser** is a PL/SQL package which provides an easy interface 
 
 The **apex\_web\_service.make\_rest\_request\_b** is a PL/SQL function which invokes a RESTful style Web service and returns the results in a BLOB. Utilizing this function within apex\_data\_parser will allow you to load data from a REST API directly into your table.
 
-## **STEP 1** - Create a Script
+## **Task $1: 1** - Create a Script
 Rather than running a one-off SQL statement to load the data, writing a SQL Script enables the SQL statement to be run repeatedly.
 
 The Big Mac Data is refreshed every 6 months. Therefore, this script can be used twice a year to keep the data current.
@@ -65,7 +65,7 @@ The Big Mac Data is refreshed every 6 months. Therefore, this script can be used
 
     *Note: If you do not see 3 statements processed successfully then double check your table definition and the script to populate the table.*
 
-## **STEP 2** - Review the Data
+## **Task $1: 2** - Review the Data
 There are several ways to review the data.
 
 1. Navigate to the runtime environment tab or window.

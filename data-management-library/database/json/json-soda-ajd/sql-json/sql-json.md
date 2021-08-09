@@ -23,7 +23,7 @@ In this lab, you will:
 
 * All previous labs have been successfully completed.
 
-## **STEP: 1** SQL Developer Web
+## **Task $1:: 1** SQL Developer Web
 
 1. Click on the navigation menu on the top left and select **SQL** under Development.
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
     *Learn more -* [Use Oracle Database Actions with JSON Collections](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/use-oracle-database-actions-json-collections1.html) and [Use SQL With JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-04377B36-654B-47C4-A480-535E00E46D1F)
 
-## **STEP: 2** JSON_Serialize
+## **Task $1:: 2** JSON_Serialize
 
 1. Because the JSON data is stored in a binary representation (for query and update efficiency) we need to convert it to a human-readable string using JSON_Serialize.
 

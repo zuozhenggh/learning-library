@@ -35,7 +35,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Update Existing Deployment
 
-### **STEP 1**: Update Existing Deployment and Service with Blue Color Labels
+### **Task $1: 1**: Update Existing Deployment and Service with Blue Color Labels
 
 - In a browser, navigate to your forked twitter-feed repository on GitHub. If you've closed the tab, you can get back by going to [GitHub](https://github.com/), scrolling down until you see the **Your repositories** box on the right side of the page, and clicking the **twitter-feed** link.
 
@@ -88,7 +88,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/6.png)
 
-### **STEP 2**: Validate Deployment Color In Kubernetes and Application
+### **Task $1: 2**: Validate Deployment Color In Kubernetes and Application
 
 - Open **[Wercker](https://app.wercker.com)** in a new tab or browser window, or switch to it if you already have it open. In the top navigation bar, click **Pipelines**, then click on your **twitter-feed** application.
 
@@ -114,7 +114,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/13.png)
 
-### **STEP 3**: Increment Application Version and Switch Color to Green
+### **Task $1: 3**: Increment Application Version and Switch Color to Green
 
 - Return to your forked **twitter-feed** repository on [GitHub](https://github.com). Once again, click the **kuberetes.yml.template** file and begin editing it by clicking the **pencil icon**.
 
@@ -134,7 +134,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/6.png)
 
-### **STEP 4**: Validate Blue Deployment Still Serves Traffic
+### **Task $1: 4**: Validate Blue Deployment Still Serves Traffic
 
 - Switch to your **[Wercker](https://app.wercker.com)** browser tab and go to the twitter-feed **Runs tab**. Monitor the execution of your workflow. Within a few minutes, each pipeline should complete successfully.
 
@@ -148,7 +148,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/13.png)
 
-### **STEP 5**: Reconfigure Service to Switch to Green Deployment
+### **Task $1: 5**: Reconfigure Service to Switch to Green Deployment
 
 - To cut over to our green deployment, we will use the Kubernetes dashboard GUI to alter the Kubernetes Service that exposes our twitter feed microservice. In a production setting, you could perform this switch in a number of ways. It could be handled by scripting the commands directly using kubectl, by altering the service definition in version control and having Wercker apply it, or by using a different automation framework such as Jenkins.
 
@@ -168,7 +168,7 @@ This selector will instruct your load balancer to only route traffic to the blue
 
   ![](images/400/20.png)
 
-### **STEP 6**: Validate Green Deployment Now Serves Traffic
+### **Task $1: 6**: Validate Green Deployment Now Serves Traffic
 
 - Switch back to the browser tab with the **product catalog** application. Refresh the page. You'll see that the title bar now indicates that we are using the green pods.
 

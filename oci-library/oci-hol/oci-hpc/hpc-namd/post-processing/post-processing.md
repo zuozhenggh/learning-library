@@ -5,7 +5,7 @@ In this lab, you will use Visual Molecular Dynamics (VMD) software to analyze th
 
 Estimated Lab Time: 5 minutes
 
-## **STEP**: Post-processing
+## **Task $1:**: Post-processing
 
 1. For post-processsing, you can use Visual Molecular Dynamics (VMD) software to analyze the models. Run the following commands to configure VMD:
 

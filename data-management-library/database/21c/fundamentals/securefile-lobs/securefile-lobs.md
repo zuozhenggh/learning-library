@@ -98,7 +98,7 @@ In this lab, you will:
     ```
 </if>
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## **Task $1:  1**: Login to SQL Developer Web on ADB
 There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
@@ -114,7 +114,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 5.  Login with the *hr* user, click **Next**.  Enter the password *WElcome123##*
 6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## **Task $1:  1B**: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the HR user using SQL\*Plus by entering the commands below.

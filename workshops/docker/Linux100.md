@@ -27,11 +27,11 @@ You will use various Docker commands to setup, run and connect into containers. 
 ***To log issues***, click here to go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository issue submission form.
 
 
-## **STEP 1**: Open up a Terminal Window
+## **Task $1: 1**: Open up a Terminal Window
 
 - Make sure you are in a SSH terminal session (`Assumes login via Lab 050`). **You can follow Step 9 in Lab 050 to re-login if you need to...**
 
-## **STEP 2**: Verify that Docker is running
+## **Task $1: 2**: Verify that Docker is running
 
 **NOTE: For the duration of the Labs it's OK that the login user (holuser vs. opc) and the Docker version may vary from the screenshots**
 
@@ -46,7 +46,7 @@ You will use various Docker commands to setup, run and connect into containers. 
 
   ![](images/100Linux/Picture100-2.png " ")
 
-## **STEP 3**: See What is running
+## **Task $1: 3**: See What is running
 
 Let's take a quick look at what is running in the docker engine, if this is a new environment, you should see no docker containers running.
 
@@ -58,7 +58,7 @@ Let's take a quick look at what is running in the docker engine, if this is a ne
 
   ![](images/100Linux/Picture100-3.png " ")
 
-## **STEP 4**: Run the restclient docker image from docker hub
+## **Task $1: 4**: Run the restclient docker image from docker hub
 
 We will now download and create a container based on an existing docker image stored in the Docker Hub. It uses a JSON formatted datafile to serve up test data via its exposed REST service. Docker looks for the designated image locally first before going to Docker HUB.
 
@@ -79,7 +79,7 @@ We will now download and create a container based on an existing docker image st
 
   ![](images/100Linux/Picture100-4.png " ")
 
-## **STEP 5**: Check running containers
+## **Task $1: 5**: Check running containers
 
 Again using the `docker ps` command, we should see our newly spawned docker container
 
@@ -93,7 +93,7 @@ Again using the `docker ps` command, we should see our newly spawned docker cont
 
   ![](images/100Linux/Picture100-5.png " ")
 
-## **STEP 6**: Check the Application with a browser
+## **Task $1: 6**: Check the Application with a browser
 
 - We need the Public IP address to test the deployment. Navigate in a browser to your Oracle Trial account and from the hamburger menu in the upper left hand side of the page select go to **Compute-->Instances**:
 
@@ -121,7 +121,7 @@ Again using the `docker ps` command, we should see our newly spawned docker cont
 
   ![](images/100Linux/Picture100-7.png " ")
 
-## **STEP 7**: Stop the Container
+## **Task $1: 7**: Stop the Container
 
 - Since we started the `restclient` container with the --rm option upon stopping it docker will remove ALL allocated resources
 
@@ -141,7 +141,7 @@ Again using the `docker ps` command, we should see our newly spawned docker cont
 
   ![](images/100Linux/Picture100-7.4.png " ")
 
-## **STEP 8**: Start another Container with a different HOST Port
+## **Task $1: 8**: Start another Container with a different HOST Port
 
 - Start another container using the Host's 18002 port:
 
@@ -157,7 +157,7 @@ Again using the `docker ps` command, we should see our newly spawned docker cont
 
   ![](images/100Linux/Picture100-9.png " ")
 
-## **STEP 9**: Inspect the Container's Network and IP Address
+## **Task $1: 9**: Inspect the Container's Network and IP Address
 
 - You can get various bits of information from the subnet that docker container is running on by inspecting the default network bridge docker creates out-of-the-box. You can create your own networks and assign containers to them but that is out of the scope of this lab.
 

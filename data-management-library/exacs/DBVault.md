@@ -35,7 +35,7 @@ As a database security admin,
 
 ## Steps
 
-### **STEP 1: Set up Application Schema and Users**
+### **Task 1: Set up Application Schema and Users**
 
 Oracle Database vault comes pre-installed with your ExaCS database on dedicated infrastructure. In this lab we will enable Database Vault (DV), add required user accounts and create a DV realm to secure a set of user tables from privileged user access. 
 
@@ -138,13 +138,13 @@ Before we log into the database, let us make some changes to `tnsnames.ora` file
   ```
   ![](./images/dbsec/db_vault/create-appuser.png " ")
 
-### **STEP 2: Configure and enable Database Vault**
+### **Task 2: Configure and enable Database Vault**
 
 We start with creating the two DV user accounts - DV Owner and DV Account Manager. The dv_owner account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, the user 'SYS' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
 
 In this step, we will need to configure and enable database vault in both CDB and PDB of the database.
 
-#### **STEP 2.1: Create Common User Accounts**
+#### **Task $1: 2.1: Create Common User Accounts**
 - Login to the CDB as `SYS` with sysdba privileges.
   ```
   <copy>sqlplus / as sysdba;</copy>
@@ -167,7 +167,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/create-dvusers.png " ")
   
-#### **STEP 2.2: Configure Database Vault in CDB**
+#### **Task $1: 2.2: Configure Database Vault in CDB**
 - Check the configure status of the database vault.
 	```
 	<copy>select * from dba_dv_status;</copy>
@@ -219,7 +219,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/utlrp.png " ")
   
-#### **STEP 2.3: Enable Database Vault in CDB**
+#### **Task $1: 2.3: Enable Database Vault in CDB**
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
   ```
   <copy>conn c##dv_owner1/WElcome_123#;</copy>
@@ -259,7 +259,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/cdb-dv-true.png " ")
 
-#### **STEP 2.4: Configure Database Vault in PDB**
+#### **Task $1: 2.4: Configure Database Vault in PDB**
 - Now, we need to configure the database vault in the pdb. Change to your pdb.
 	```
 	<copy> alter session set container=your-pdb-name;</copy>
@@ -295,7 +295,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/utlrp.png " ")
 
-#### **STEP 2.5: Enable Database Vault in PDB**
+#### **Task $1: 2.5: Enable Database Vault in PDB**
 
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
   ```
@@ -352,7 +352,7 @@ In this step, we will need to configure and enable database vault in both CDB an
 - Now that the database vault is successfully configured and enabled in both CDB and PDB, let us go ahead and create security realms and policies.
 
 
-### **STEP 3: Create Security Realms and Add Schema Objects**
+### **Task 3: Create Security Realms and Add Schema Objects**
 
 Next we create a 'Realm', add objects to it and define access rules for the realm.
 
@@ -407,7 +407,7 @@ Let's create a realm to secure `HR.EMPLOYEES` table from `SYS` and `HR` (table o
   ![](./images/dbsec/db_vault/create-realm.png " ")
 
 
-### **STEP 4: Create Audit Policy to Capture Realm Violations**
+### **Task 4: Create Audit Policy to Capture Realm Violations**
 
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Exadata Cloud Service includes Unified Auditing, we will create a policy to audit database vault activities. For more information on Unified Auditing, refer to the [Database Security Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dbseg/introduction-to-auditing.html)
 
@@ -460,7 +460,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 **Note: The default `SYS` account in the database has access to all objects in the database, but realm objects are now protected from `SYS` access. In fact, even the table owner `HR` does not have access to this table. Only `APPUSER` has access.**
 
-### **STEP 5: Review Realm Violation Audit Trail**
+### **Task 5: Review Realm Violation Audit Trail**
 
 We can query the audit trail to generate a basic report of realm access violations. 
 

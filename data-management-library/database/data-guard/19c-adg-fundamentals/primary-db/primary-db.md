@@ -16,7 +16,7 @@ Estimated Lab Time: 45 Minutes
 ### Objectives
 -   Create the primary database
 
-## **STEP**: Create the primary database
+## **Task $1:**: Create the primary database
 
 To create the primary database we need to follow a wizard.
 1. Click the hamburger menu at the top left then select **Bare Metal, VM and Exadata**

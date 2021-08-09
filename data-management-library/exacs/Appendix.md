@@ -316,9 +316,9 @@ If you backed up your Exadata database using bkup\_api, you can manually restor
 
 In this section you will be provisioning a database on Oracle Cloud Infrastructure using the Cloud Console.
 
-### **Steps**
+### **Task $1:s**
 
-#### **STEP 1: Sign in to Oracle Cloud Infrastructure console**
+#### **Task 1: Sign in to Oracle Cloud Infrastructure console**
 
 - Go to cloud.oracle.com, click Sign In to sign in with your Oracle Cloud account.
 
@@ -338,7 +338,7 @@ In this section you will be provisioning a database on Oracle Cloud Infrastructu
 
 ![](./images/goldengate/myservices.png " ")
 
-#### **STEP 2: Create a Compartment**
+#### **Task 2: Create a Compartment**
 
 - In the Cloud Infrastructure Console, click on the hamburger menu on the top left of the screen. From the pull-out menu, under Identity, click Compartments.
 
@@ -365,7 +365,7 @@ Managing Tags and Tag Namespaces: When you have many resources (for example, ins
 ![](./images/goldengate/CreateCompartment2.jpeg " ")
 
 
-#### **STEP 3: Create a Database Cloud Service Instance**
+#### **Task 3: Create a Database Cloud Service Instance**
 
 -  Click on the hamburger menu icon on the top left of the screen
 
