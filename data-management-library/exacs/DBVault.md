@@ -144,7 +144,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
 In this step, we will need to configure and enable database vault in both CDB and PDB of the database.
 
-#### **Task $1: 2.1: Create Common User Accounts**
+#### **Task 2.1: Create Common User Accounts**
 - Login to the CDB as `SYS` with sysdba privileges.
   ```
   <copy>sqlplus / as sysdba;</copy>
@@ -167,7 +167,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/create-dvusers.png " ")
   
-#### **Task $1: 2.2: Configure Database Vault in CDB**
+#### **Task 2.2: Configure Database Vault in CDB**
 - Check the configure status of the database vault.
 	```
 	<copy>select * from dba_dv_status;</copy>
@@ -219,7 +219,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/utlrp.png " ")
   
-#### **Task $1: 2.3: Enable Database Vault in CDB**
+#### **Task 2.3: Enable Database Vault in CDB**
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
   ```
   <copy>conn c##dv_owner1/WElcome_123#;</copy>
@@ -259,7 +259,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/cdb-dv-true.png " ")
 
-#### **Task $1: 2.4: Configure Database Vault in PDB**
+#### **Task 2.4: Configure Database Vault in PDB**
 - Now, we need to configure the database vault in the pdb. Change to your pdb.
 	```
 	<copy> alter session set container=your-pdb-name;</copy>
@@ -295,7 +295,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ![](./images/dbsec/db_vault/utlrp.png " ")
 
-#### **Task $1: 2.5: Enable Database Vault in PDB**
+#### **Task 2.5: Enable Database Vault in PDB**
 
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
   ```
