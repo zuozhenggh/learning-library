@@ -52,7 +52,6 @@ This workshop assumes you have:
     ![](./images/task1-61.png " ")
     ![](./images/task1-62.png " ")
 
-
 ## Task 2: Connect to your Compute instance
 
 There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
@@ -88,7 +87,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     ![](./images/task2-5.png " ")
 
-6.  Continue to STEP 5 on the left hand menu.
+6.  Proceed to the next task on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
@@ -105,7 +104,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     *Note: The angle brackets <> should not appear in your code.*
 
-4.  After successfully logging in, proceed to STEP 5.
+4.  After successfully logging in, proceed to next task.
 
 ### Windows using Putty
 
