@@ -26,11 +26,7 @@ Estimated time: 7 minutes
     - VCN NAME: e.g. `vcn1`
     - The rest of the items: Do not need to be changed
 
-<<<<<<< HEAD
 3. you need to open port 7007. Go to Virtual Cloud Networks > `vcn1` > `Public Subnet-vcn1` > `Default Security List for vcn1` > `Add Ingress Rules` and create the rule below:
-=======
-## Task 2: Locate the Graph Server and Client in the Oracle Cloud Marketplace
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
     - Source Type: `CIDR`
     - Source CIDR: `0.0.0.0/0` (This setting is for testing only. Please replace to the IP address of the client machines for actual use.)
@@ -56,11 +52,11 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/launch_stack.jpg)
 
-0. **Stack Information**: You do not need to change. Proceed with `Next`.
+3. **Stack Information**: You do not need to change. Proceed with `Next`.
 
     ![](images/create_stack.jpg)
 
-3. **Configure Variables**: You will need to choose or provide the following:
+4. **Configure Variables**: You will need to choose or provide the following:
 
     - Oracle Graph Server Shape: an always free eligible shape is `VM.Standard.E2.1.Micro`
     - SSH Public Key: This is used when you ssh into the provisioned instance later.
@@ -79,7 +75,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
     
     ![](images/configure_variables_3.jpg)
 
-4. Click `Next` to initiate the Resource Manager Job for the stack. The job will take 2-3 minutes to complete.
+5. Click `Next` to initiate the Resource Manager Job for the stack. The job will take 2-3 minutes to complete.
 
     ![](images/rmj_1.jpg)
 
@@ -87,15 +83,7 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
     ![](images/rmj_2.jpg)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Once the job has successfully completed the status will change from "In Progess" to "Succeeded". If you get **"shape VM.Standard.E2.1.Micro not found"** error, the availability domain cannot provide the selected shape. Please edit the job and change the availability domain and retry. (An always-free compute VM can only be created in your home region. If you have previously created an always-free compute VM then this new VM.Standard.E2.1.Micro instance can only be created in the same availability domain as the previous one.)
-=======
-## Task 3: Upload ADB Wallet, Configure your Compute Instance.
->>>>>>> upstream/master
-=======
-## Task 3: Upload ADB Wallet, Configure your Compute Instance.
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
     ![](images/RMJobCompleted_211.jpg)
 
@@ -124,30 +112,22 @@ Oracle Cloud Marketplace stacks are a set of Terraform templates that provide a 
 
 Content in this section is adapted from [Download Client Credentials (Wallets)](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-download-wallet.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Task 4: Upload and Unzip ADB Wallet
-=======
-## Task 4:  Copy ADB Wallet to the Linux Compute
->>>>>>> upstream/master
-=======
-## Task 4:  Copy ADB Wallet to the Linux Compute
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
+## Task 4: Upload ADB Wallet
 
 In this step, you need the shell tool to run `scp` and `ssh` commands, e.g. Oracle Cloud Shell, Terminal if you are using MAC, or Gitbash if you are using Windows.
 
-1. Copy the wallet from your local machine to the Graph Server instance on OCI.
+Copy the wallet from your local machine to the Graph Server instance on OCI.
 
-    ```
-    <copy>
-    scp -i <private_key> <Wallet_database_name>.zip opc@<public_ip_for_compute>:/etc/oracle/graph/wallets
-    </copy>
-    ```
+```
+<copy>
+scp -i <private_key> <Wallet_database_name>.zip opc@<public_ip_for_compute>:/etc/oracle/graph/wallets
+</copy>
+```
 
-    Example:
-    ```
-    scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
-    ```
+Example:
+```
+scp -i key.pem ~/Downloads/Wallet_ATPGRAPH.zip opc@203.0.113.14:/etc/oracle/graph/wallets
+```
 
 ## Task 5: Unzip ADB Wallet
 

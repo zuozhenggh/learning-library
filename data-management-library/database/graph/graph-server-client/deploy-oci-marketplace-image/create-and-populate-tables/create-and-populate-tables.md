@@ -19,11 +19,7 @@ Estimated time: 7 minutes
 
 - This lab assumes you have successfully completed the lab - Create and enable a user in Database Actions.
 
-<<<<<<< HEAD
 ## Task 1: Log in to Database Actions
-=======
-## Task 1: Log in to SQL Developer Web
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
 Login as `CUSTOMER_360` using the password you entered when creating the user. The correct URL for Database Actions should contain `/customer_360/`
 
@@ -31,39 +27,6 @@ Login as `CUSTOMER_360` using the password you entered when creating the user. T
 
 ![](images/sdw-c360.jpg)
 
-<<<<<<< HEAD
-=======
-### Troubleshooting
-
-If you receive a *Service Unavailable* error, it may be that the `CUSTOMER_360` account is locked.
-
-![](images/troubleshooting_login.png)
-
-You can try the following steps:
-
-1. Log in as `ADMIN`, enter and run the command in Worksheet:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
-
-    In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
-
-    ![](images/troubleshoot_query_result.png)
-
-2. If the status is `LOCKED`, enter and run the command to unlock the user:
-
-    ```
-    <copy>ALTER USER customer_360 ACCOUNT UNLOCK;</copy>
-    ```
-
-3. Then, the status should change to `OPEN`. You can check again using command:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
-
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 ## Task 2: Drop existing tables if any
 
 To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.

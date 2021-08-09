@@ -175,11 +175,7 @@ graph.query_pgql("""
 +----------------------+
 ```
 
-<<<<<<< HEAD
 ## Task 4: Publish the graph
-=======
-## Task 4: Publish the graph (optional)
->>>>>>> 38cacb8a6126e3df894bf56e4bf7fe774d9f2e3a
 
 The newly created graph is "private" by default, and is accessible only from the current session. To access the graph from new sessions in future, you can "publish" the graph.
 
