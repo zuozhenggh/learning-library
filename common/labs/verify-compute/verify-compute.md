@@ -38,9 +38,9 @@ This lab assumes you have:
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
 Your options are:
-1. Step 2A: Connect using Cloud Shell *(recommended)*
-2. Step 2B: Connect using MAC or a Windows CYGWIN Emulator
-3. Step 2C: Connect using Putty *(Requires you to install applications on your machine)*
+1. Task 2A: Connect using Cloud Shell *(recommended)*
+2. Task 2B: Connect using MAC or a Windows CYGWIN Emulator
+3. Task 2C: Connect using Putty *(Requires you to install applications on your machine)*
 
 ## Task 2A: Upload Key to Cloud Shell and Connect
 

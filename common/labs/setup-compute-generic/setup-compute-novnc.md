@@ -22,8 +22,8 @@ This lab assumes you have:
 Proceed to deploy your workshop environment using Oracle Resource Manager (ORM) stack
 
 Your options are:
-1. Step 1A: Create Stack:  **Compute + Networking** *(recommended)*
-2. Step 1B: Create Stack:  **Compute Only**
+1. Task 1A: Create Stack:  **Compute + Networking** *(recommended)*
+2. Task 1B: Create Stack:  **Compute Only**
 
 ## Task 1A: Create Stack:  Compute + Networking
 1. Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
