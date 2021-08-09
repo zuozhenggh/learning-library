@@ -34,7 +34,7 @@ Be sure that the following tasks are completed before you start:
 - Obtain a compute instance with Oracle Database 19c installed on it and download the class files. If not, see "Obtain a Compute Image with Oracle Database 19c Installed". [Link to lab](https://www.oracle.com)
 - If not downloaded, download 19cNewFeatures.zip
 
-## **STEP 1**: Enable `ARCHIVELOG` mode
+## **Task 1**: Enable `ARCHIVELOG` mode
 1. To execute this lab, you must enable 'ARCHIVELOG' mod in `CDB1`. To do this, run the following script. When prompted with `ORACLE_SID`, insert `CDB1`.
 
     ```
@@ -42,7 +42,7 @@ Be sure that the following tasks are completed before you start:
     ORACLE_SID = [ORCL] ? CDB1
     ```
 
-## **STEP 2**: Prepare the environment
+## **Task 2**: Prepare the environment
 1. Execute the `$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh` shell script to drop all PDBs in `CDB1` that may have been created by any of the practices, and recreates `PDB1`. You may ignore any error messages that are caused by the script, they are to be expected.
    
     ```
@@ -66,7 +66,7 @@ Be sure that the following tasks are completed before you start:
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
     ```
 
-## **STEP 3**: Create a catalog owner and grant privileges 
+## **Task 3**: Create a catalog owner and grant privileges 
    To connect to the recovery catalog and to PDB1 as the target database, create a virtual private RMAN catalog (VPC) in PDB19 for groups of databases and users of CDB1, PDB1, and PDB2.
 1. Set `$ORACLE_SID` to `CDB1`
    
@@ -99,7 +99,7 @@ Be sure that the following tasks are completed before you start:
     SQL> <copy>EXIT</copy>
     ```
 
-## **STEP 4**: Create the recovery catalog with RMAN and register CDB1
+## **Task 4**: Create the recovery catalog with RMAN and register CDB1
 1. Start RMAN.
     
     ```
@@ -153,7 +153,7 @@ Be sure that the following tasks are completed before you start:
 
     Recovery Manager complete.
     ```
-## **STEP 5**: Grant VPD privileges to the base catalog schema owner
+## **Task 5**: Grant VPD privileges to the base catalog schema owner
 1. Connect to the recovery catalog as the **SYS** user.
 
     ```
@@ -179,7 +179,7 @@ Be sure that the following tasks are completed before you start:
 
     Version 19.11.0.0.0
     ```
-## **STEP 6**: Upgrade the recovery catalog
+## **Task 6**: Upgrade the recovery catalog
 1. Start RMAN.
 
     ```
@@ -217,7 +217,7 @@ Be sure that the following tasks are completed before you start:
     RMAN> <copy>exit</copy>
     ```
        
-## **STEP 7**: Create VPC users
+## **Task 7**: Create VPC users
 Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will be given access to the metadata of `PDB1` and `PDB2`, respectively. Next, as the base catalog owner, give the VPC users access to the metadata of PDB1 and PDB2, respectively.
 1. Connect to the recovery catalog as the **`SYSTEM`** user.
 
@@ -282,7 +282,7 @@ Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will
     ```
     RMAN> <copy>EXIT</copy>
     ```
-## **STEP 8**: Back up and restore PDB1
+## **Task 8**: Back up and restore PDB1
 Connect to the `PDB1` target PDB and to the recovery catalog as the **vpc_pdb1** user to back up and restore the `PDB1` target PDB.
 1. Run RMAN with the following arguments. The `TARGET` keyword takes in a PDB as an argument. The `CATALOG` takes in a recovery catalog as an argument.
 
@@ -365,7 +365,7 @@ Connect to the `PDB1` target PDB and to the recovery catalog as the **vpc_pdb1**
     $ <copy>EXIT;</copy>
     ```
 
-## **STEP 9**: Find the handle value that corresponds to your tag value.
+## **Task 9**: Find the handle value that corresponds to your tag value.
 Next we will query the `RC_BACKUP_PIECE` view, which contains information about backup pieces. This view corresponds to the `V$BACKUP_PIECE` view.
 Each backup set contains one or more backup pieces. Multiple copies of the same backup piece can exist, but each copy has its own record in the control file and its own row in the view.
 
@@ -391,7 +391,7 @@ Each backup set contains one or more backup pieces. Multiple copies of the same 
     SQL> <copy>EXIT</copy>
     ```
 
-## **STEP 10**: Reset your environment
+## **Task 10**: Reset your environment
 To reset your environment, you must revoke catalog privileges from your two VPC users, `vpc_pdb1` and `vpc_pdb2`. Then, you will verify this by attempting to back up PDB1 as `vpc_pdb1`. Finally, you will drop the catalog from `PDB19`.
 
 1. connect to the recovery catalog through RMAN.
@@ -475,7 +475,7 @@ To reset your environment, you must revoke catalog privileges from your two VPC 
     ```
     RMAN> <copy>EXIT;</copy>
     ```
-## **STEP 11**: Disable `ARCHIVELOG` mode
+## **Task 11**: Disable `ARCHIVELOG` mode
 1. To disable `ARCHIVELOG` mode, run the following script. When prompted with `ORACLE_SID`, insert `CDB1`.
 
     ```
