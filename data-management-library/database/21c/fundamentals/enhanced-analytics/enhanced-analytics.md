@@ -135,7 +135,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 5.  Enter the username *report* and password *WElcome123##*
 6.  Click on the **SQL** button.
 
-## **Task $1:  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the REPORT user using sqlplus by entering the commands below.
