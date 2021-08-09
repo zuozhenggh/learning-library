@@ -19,7 +19,7 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
-## **Task $1: 1A**: Create Stack:  Compute + Networking
+## Task 1A: Create Stack:  Compute + Networking
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
@@ -73,10 +73,10 @@ This lab assumes you have:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Task $1: 1B**: Create Stack:  Compute only
+## Task 1B: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
-***Note:*** *We recommend letting our stack create the VCN to reduce the potential for error.*
+> *Note:* We recommend letting our stack create the VCN to reduce the potential for error.
 
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
@@ -95,7 +95,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Description**:  Same as above
     - **Create in compartment**:  Select the correct compartment if not already selected
 
-  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+  > *Note:* If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.
 
 5. Click **Next**.
 
@@ -106,7 +106,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  > *Note:* If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
