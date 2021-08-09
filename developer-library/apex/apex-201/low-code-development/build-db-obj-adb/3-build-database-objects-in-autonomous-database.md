@@ -31,7 +31,7 @@ Below is a napkin design for collecting project information:
 
 You should notice that the new model allows the assignment of Team Members to Projects, as well as optionally to Tasks, and To Dos. The concept of a Project having Milestones has been introduced, however, it is optional that Tasks are associated with a Milestone. Further, To Dos and Links have been added to Tasks.
 
-## **Step 1:** Create database objects using Quick SQL
+## Task 1: Create database objects using Quick SQL
 
 1. Return to your APEX Workspace and click the down arrow in the **SQL Workshop** tab, then select **SQL Scripts**.
 
@@ -140,7 +140,7 @@ You should notice that the new model allows the assignment of Team Members to Pr
 
     ![](images/hol-projects-data.png " ")
 
-## **Step 2:** View database objects in SQL Developer Web
+## Task 2: View database objects in SQL Developer Web
 
 In this step, you will learn how to access SQL Developer Web and then use it to review the current database objects and make some modifications to the data model.
 
@@ -203,7 +203,7 @@ In this step, you will learn how to access SQL Developer Web and then use it to 
 
    ![](images/query-results.png " ")
 
-## **Step 3:** View database objects as a data model
+## Task 3: View database objects as a data model
 
 In this step, you will learn how to create an Entity Relationship Diagram (ERD) using SQL Developer Web.
 
@@ -221,7 +221,7 @@ In this step, you will learn how to create an Entity Relationship Diagram (ERD) 
 
    ![](images/hol-projects-details.png " ")
 
-## **Step 4:** Create a new table and add it to the data model
+## Task 4: Create a new table and add it to the data model
 
 In this step, you will use SQL Developer Web to create a new table. Then you will learn how to edit an existing table and add it to the ERD created in the previous step.
 

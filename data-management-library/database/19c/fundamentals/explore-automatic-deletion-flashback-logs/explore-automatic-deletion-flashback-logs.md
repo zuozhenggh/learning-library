@@ -24,7 +24,7 @@ Be sure that the following tasks are completed before you start:
 - A database, either non-CDB or CDB with a PDB.
 
 
-## **STEP 1**: Verify that **CDB1** is in **FLASHBACK** mode
+## Task 1: Verify that **CDB1** is in **FLASHBACK** mode
 
 1. Verify that **CDB1** is in **FLASHBACK** mode and display the flashback retention period. If the database is not in flashback mode, execute the **/home/oracle/labs/19cnf/admin/flashback.sql** script.
 
@@ -60,7 +60,7 @@ Be sure that the following tasks are completed before you start:
     db_flashback_retention_target    integer     70
     ```
     >**NOTE**: The flashback retention period is set to 70 minutes.
-## **STEP 2**: Increase **FRA** size
+## Task 2: Increase **FRA** size
 
 1. Increase FRA size to ensure that there will be no space pressure that would automatically delete flashback logs.
     
@@ -84,7 +84,7 @@ Be sure that the following tasks are completed before you start:
     ```
     $ /home/oracle/labs/19cnf/workload.sh
     ```
-## **STEP 3**: View flashback logs
+## Task 3: View flashback logs
 1. Back in the initial terminal session, check the flashback logs in the FRA after 30 minutes. 
     ```
     $ ls -ltr /u01/app/oracle/recovery_area/CDB1/

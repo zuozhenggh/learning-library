@@ -28,7 +28,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **Step 1**: Create Pipelines and Adding Stages
+## Task 1: Create Pipelines and Adding Stages
 
 1. In the left navigation bar of the Catalog page make sure Pipelines is checked and make sure that only the VendingMachineManagement pipeline is visible.
 
@@ -46,7 +46,7 @@ There are three sections in the pipeline screen.
 
 Each circular icon represents a Stage in the workflow. A series of stages constitute a Pipeline. This pipeline is called VendingMachineManagement.
 
-## **Step 2**: Create VendingMachineStream Stage
+## Task 2: Create VendingMachineStream Stage
 
 1. In the workflow region click on the left most stage VendingMachineStream and make sure it has been highlighted with the color blue.
 
@@ -58,13 +58,13 @@ This data comes from a csv file as streaming data that we saw in the previous la
 
 The data represents live data that comes from various machines around the world with individual IDs and various error conditions such as `Temp_Level` and `Inv_Level` etc. It also identifies each machine by the `Machine_ID` field
 
-## **Step 3**: Create MachineDetails Stage
+## Task 3: Create MachineDetails Stage
 
 This is static data that comes from a database table as we saw in the previous lab. The fields represent information about each vending machine such as the address, zip code, latitude and longitude, where they are located as well as the `vm_id` which identifies that particular machine.
 
 1. Click on this stage. Notice that you cannot highlight this stage as it is only static data from the database.
 
-## **Step 4**: Create GetVendingMachineDetails Stage
+## Task 4: Create GetVendingMachineDetails Stage
 
 1. Now highlight the *GetVendingMachineDetails* stage. Again, you will see that the data is streaming live in the Live Output region. Once again Pause the streaming data so you can understand the fields.
 
@@ -95,7 +95,7 @@ stages in the next lab.
    ![](./images/getvmmdetailsvisual.png " ")
 
 
-## **Step 5**: Create EightyPercentOfMaxInv Stage
+## Task 5: Create EightyPercentOfMaxInv Stage
 
 1. Highlight the *EightyPercentOfMaxInv* stage and Pause the data. In this stage we are calculating 80% of the maximum inventory for each machine.  
 2. After adding the stage as a query stage with name and description we clicked on the *fx* icon in the middle right part of the screen and filled out the formula:
@@ -112,7 +112,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
   ![](./images/eightypercentmaxinvent.png " ")
 
-## **Step 6**: Create ReplenishRules Stage
+## Task 6: Create ReplenishRules Stage
 
 1. Click on the *ReplenishRules* stage and Pause the data stream to learn this stage. This is a Rule Stage where we get to define a rule setting Replenish to Yes if Inventory level is less than 80% of maximum inventory level.  Effectively we are setting a Replenish flag based on a minimum amount of inventory in each machine.
 
@@ -120,7 +120,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
     ![](./images/replenishrules2.png " ")
 
-## **Step 7**: Create ReplenishOnly Stage
+## Task 7: Create ReplenishOnly Stage
 
 1. Click on the *ReplenishOnly* stage and Pause the stream. This is another Query Stage in which we take the data from the last stage and apply a filter to it.  
 2. Click on the *`Filters`* tab and notice that we added a condition that only includes Replenish conditions that are set to Yes, because we are only interested in data from machines that require replenishment.
@@ -128,7 +128,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
     ```
     Replenish equals (case sensitive) Yes
     ```
-## **Step 8**: Create ReplenishAlert Stage
+## Task 8: Create ReplenishAlert Stage
 
 1. Now click on the *ReplenishAlert* stage and Pause.
 2. In this stage we are adding a target stage that we have defined for a kafka topic replenishAlert.
@@ -139,7 +139,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
     ![](./images/replenishtargetfields.png " ")
 
-## **Step 9**: Create ReplenishStats Stage
+## Task 9: Create ReplenishStats Stage
 
 1. Click on the *ReplenishStats* stage and Pause the stream. In this alternate last stage we would like to keep track of the number of machines that are set to Replenish by city and by `business_name`.
 
@@ -156,7 +156,7 @@ You will get a chance to add stages in the next lab.  In this lab just examine t
 
 The next stage is in a parallel branch of the pipeline where we are interested to get data on machines that are not functioning properly.
 
-## **Step 10**: Create ErrorsInVMs Stage
+## Task 10: Create ErrorsInVMs Stage
 
 1. Click on the *ErrorsInVMS* stage and Pause.  In this stage we would like to filter out all machines that are working correctly because they do not require any maintenance.  
 2. Click on the *`Filters`* tab and see the query condition:
@@ -165,7 +165,7 @@ The next stage is in a parallel branch of the pipeline where we are interested t
     ErrorCode not equals 0
     ```
 
-## **Step 11**: Create ErrorStats Stage
+## Task 11: Create ErrorStats Stage
 
 1. Click on the *ErrorStats* stage and Pause the stream. This is a Query-Group Stream  stage where we like to get some statistics on number of malfunctioning machines by description and also by what city they occur in.
 2. Click on the *Groups* tab.
@@ -175,7 +175,7 @@ The next stage is in a parallel branch of the pipeline where we are interested t
 
 4. Click on the *`Visualization`* tab to see the bar char for the error stats by type and city.
 
-## **Step 12**: Create NotCooling Stage
+## Task 12: Create NotCooling Stage
 
 1. Click on the *NotCooling* stage in the parallel branch and Pause.  
 2. Here we would like to isolate machines that are not cooling well by setting this query condition.Click on the *`Filters`* tab on the right to see the query condition:
@@ -184,13 +184,13 @@ The next stage is in a parallel branch of the pipeline where we are interested t
     Temp_Level greater than 40
     ```
 
-## **Step 13**: Create NotifyMaintenance Stage
+## Task 13: Create NotifyMaintenance Stage
 
 1. Click on the *NotifyMaintenance* stage and Pause the stream. In this last stage we are sending the streaming data to a pre-defined Kafka topic for maintenance purposes.  
 2. Once again, we have mapped the streaming data Output Stream Property values to the kafka topic with Target Property values. We could have also created the topics in this stage as opposed to using a predefined topic.
 
 
-## **Step 14**: Create AverageTempMalfunction Stage
+## Task 14: Create AverageTempMalfunction Stage
 
 1. Finally click on the *AverageTempMalfunction* stage and Pause.  
 2. In this stage we are interested in the Average temperature of malfunctioning machines, so we defined a query stage and added *Summaries* with the AVG - `Temp_Level` of all the machines and then Group by the type of machine which is identified by the `Machine_ID`.  Click on the *AvgTemp* to see the summary.

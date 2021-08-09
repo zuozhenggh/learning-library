@@ -18,7 +18,7 @@ In this lab, you will learn how to:
 * Verify the connection to the Oracle Autonomous Database
 * View help files
 
-## **Step 1**: Create an Oracle Machine Learning User
+## Task 1: Create an Oracle Machine Learning User
 
 An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
 > **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface. To create a user account:
@@ -72,7 +72,7 @@ An administrator creates a new user account and user credentials for Oracle Mach
 </if>
 
 
-## **Step 2:** Access Oracle Machine Learning Notebooks
+## Task 2: Access Oracle Machine Learning Notebooks
 
 You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
@@ -94,7 +94,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     ![Oracle Machine Learning home page](images/oml-notebooks-homepage.png "Oracle Machine Learning home page")
 
-<if type="freetier">## **Step 3:** Create Tables and Views, and Grant Access
+<if type="freetier">## Task 3: Create Tables and Views, and Grant Access
 
 This workshop uses tables and views which need to be created before proceeding with the workshop. To create these tables and views:
 
@@ -122,8 +122,8 @@ To download the notebook version of this lab (without screenshots), click <if ty
 
 [](include:import)
 
-<if type="livelabs">## **Step 4:** Create an Oracle Machine Learning Notebook</if>
-<if type="freetier">## **Step 5:** Create an Oracle Machine Learning Notebook</if>
+<if type="livelabs">## Task 4: Create an Oracle Machine Learning Notebook</if>
+<if type="freetier">## Task 5: Create an Oracle Machine Learning Notebook</if>
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization and collaboration. To create a notebook:
 1. <if type="freetier">Click the hamburger menu, search for Notebooks, and click on it. </if>In the Notebooks page, click **Create.** The Create Notebook window appears.
@@ -163,8 +163,8 @@ The available interpreters are:
   - `%md`&mdash;To call the Markdown interpreter and generate static html from Markdown plain text
   - `%python`&mdash;To call the Python interpreter and run Python scripts
 
-<if type="livelabs">## **Step 5:** Connect to the Python Interpreter</if>
-<if type="freetier">## **Step 6:** Connect to the Python Interpreter</if>
+<if type="livelabs">## Task 5: Connect to the Python Interpreter</if>
+<if type="freetier">## Task 6: Connect to the Python Interpreter</if>
 
 To run Python commands in a notebook, you must first connect to the Python interpreter. This occurs as a result of running your first `%python` paragraph. To use OML4Py, you must import the `oml` module, which automatically establishes a connection to your database.
 In an Oracle Machine Learning notebook, you can add multiple paragraphs, and each paragraph can be connected to different interpreters such as SQL or Python. This example shows you how to:
@@ -197,8 +197,8 @@ In an Oracle Machine Learning notebook, you can add multiple paragraphs, and eac
 
     ![Python command to import oml module](images/import_oml.png "Python command to import oml module")
 
-<if type="livelabs">## **Step 6:** Verify Connection to the Oracle Autonomous Database</if>
-<if type="freetier">## **Step 7:** Verify Connection to the Oracle Autonomous Database</if>
+<if type="livelabs">## Task 6: Verify Connection to the Oracle Autonomous Database</if>
+<if type="freetier">## Task 7: Verify Connection to the Oracle Autonomous Database</if>
 
 Using the default interpreter bindings, OML Notebooks automatically establishes a database connection for the notebook.  
 
@@ -213,8 +213,8 @@ Using the default interpreter bindings, OML Notebooks automatically establishes 
     Once your notebook is connected, the command returns `True`.         
 
 
-<if type="livelabs">## **Step 7:** View Help Files</if>
-<if type="freetier">## **Step 8:** View Help Files</if>
+<if type="livelabs">## Task 7: View Help Files</if>
+<if type="freetier">## Task 8: View Help Files</if>
 
 
 The Python help function is used to display the documentation of packages, modules, functions, classes, and keywords. The help function has the following syntax:

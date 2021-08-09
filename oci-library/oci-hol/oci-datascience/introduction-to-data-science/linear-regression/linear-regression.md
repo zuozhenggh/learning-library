@@ -23,7 +23,7 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## **STEP 1:** Provision OCI Data Science
+## Task 1: Provision OCI Data Science
 
 This guide shows how to use the Resource Manager to provision the service using Resource Manager. This process is mostly automated. However, if you prefer a step-by-step manual approach to control every aspect of the provisioning, please follow the following instructions instead: [manual provisioning steps](https://docs.cloud.oracle.com/en-us/iaas/data-science/data-science-tutorial/tutorial/get-started.htm#concept_tpd_33q_zkb).
 
@@ -113,7 +113,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
     Finally click "Create". The process should finish after about 5 minutes and the status of the notebook will change to "Active".
 
-## **STEP 2:** Open the OCI Data Science notebook
+## Task 2: Open the OCI Data Science notebook
 
 1. Open the notebook that was provisioned
 
@@ -123,7 +123,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    ![](./images/open-notebook2.png)
 
-## **STEP 3:** Install a Conda Package
+## Task 3: Install a Conda Package
 
    A Conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. We are going to use the General Machine Learning for CPUs conda. The following commands will install this Conda.
 
@@ -134,7 +134,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    This will take about 5 minutes.
 
-## **STEP 4:** Prepare the House Sales Data for analysis
+## Task 4: Prepare the House Sales Data for analysis
 
 1. Download the dataset with the house prices and characteristics.
 
@@ -148,7 +148,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    ![Upload Dataset](images/uploaddataset.png)
 
-## **STEP 5:** Start the Python notebook
+## Task 5: Start the Python notebook
 
 1. Open Launcher
 
@@ -158,7 +158,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 
     It is **important** to select the Python environment with the right Conda environment that we just installed. Look for the notebook that uses Conda **"mlcpuv1"** and open it. ![Start Python notebook](images/start-python-notebook.png)
 
-## **STEP 6:** Data Exploration
+## Task 6: Data Exploration
 
 The goals of Data Exploration are to identify what data you have and what is usable, identify issues such as missing values and outliers, and to form ideas of new features that could be calculated (Feature Engineering). Later on we'll use the knowledge that we gain during Data Exploration to decide which data transformations to perform.
 
@@ -457,7 +457,7 @@ The goals of Data Exploration are to identify what data you have and what is usa
 
     We can conclude from this that the values of the Target variable currently deviate from the Normal Distribution. You see that it is left skewed. The regression algorithms that we will use later on has problems with such a distribution. We will have to address this problem.
 
-## **STEP 7:** Data Preparation
+## Task 7: Data Preparation
 
    During Data Exploration, we have realized that several changes must be made to the dataset. Data Preparation is a logical result of Data Exploration; we will now take action based on the insights that we gained earlier.
 
@@ -578,7 +578,7 @@ The goals of Data Exploration are to identify what data you have and what is usa
     </copy>
     ```
 
-## **STEP 8:** Building the model
+## Task 8: Building the model
 
    We will build a simple Linear Regression model. We will use the Scikit-Learn library for this.
 
@@ -611,7 +611,7 @@ The goals of Data Exploration are to identify what data you have and what is usa
     </copy>
     ```
 
-## **STEP 9:** Verifying the performance of the model
+## Task 9: Verifying the performance of the model
 
 How accurate is our model? We will use the Test dataset for this.
 
@@ -679,7 +679,7 @@ How accurate is our model? We will use the Test dataset for this.
     </copy>
     ```
 
-## **STEP 10:** Store the model in the catalog and deploy it
+## Task 10: Store the model in the catalog and deploy it
 
 1. Make sure you have a working model
 

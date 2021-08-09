@@ -22,7 +22,7 @@ As a database user, DBA or application developer:
 - An Oracle Cloud Infrastructure account with two Autonomous Exadata Infrastructure (AEI) created in the tenancy (primary and standby)
 
 
-## STEP 1: Create an ADG enabled ACD
+## Task 1: Create an ADG enabled ACD
 
 - Login to your OCI account as a fleet administrator
 
@@ -54,7 +54,7 @@ As a database user, DBA or application developer:
 
 - Continue to Step 2 once the ACD has finished being created.
 
-## STEP 2: Create an Autonomous Transaction Processing Database
+## Task 2: Create an Autonomous Transaction Processing Database
 
 - Login to your OCI account as a database user
 
@@ -100,7 +100,7 @@ As a database user, DBA or application developer:
 
 
 
-## STEP 3: Configure Swingbench in your new ATP database
+## Task 3: Configure Swingbench in your new ATP database
 
 - Refer to Lab 18 Building 'Always-On' applications on the Autonomous Database to create a Swingbench schema in your new ATP ADB
 - You will need to download the wallet from your new ATP and upload to your client.
@@ -118,7 +118,7 @@ https://oracle.github.io/learning-library/data-management-library/autonomous-dat
 
 
 
-## Step 4: Switchover to the Standby
+## Task 4: Switchover to the Standby
 
 - Once the load has stabilized from starting the **SOE_Client_Side** Swingbench benchmark, log into the cloud console and navigate to your **primary** Autonomous Container Database
 
@@ -141,7 +141,7 @@ https://oracle.github.io/learning-library/data-management-library/autonomous-dat
 
 
 
-## Step 5: Failover to the Standby
+## Task 5: Failover to the Standby
 
  - Once the load has stabilized on the new primary, log into the cloud console and navigate to your **standby** Autonomous container database
 
@@ -162,7 +162,7 @@ https://oracle.github.io/learning-library/data-management-library/autonomous-dat
 
 
 
-## Step 6: Reinstate the disabled standby
+## Task 6: Reinstate the disabled standby
 
  - Log into the cloud console and navigate under Autonomous Database and select Autonomous Container Database.  If your primary and standby database are in the same compartment you should see the following:
  ![](./images/state_overview.png " ")

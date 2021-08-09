@@ -13,7 +13,7 @@ The operator provides several ways to initiate scaling of WebLogic clusters, inc
 
 Estimated Lab Time: 10 minutes
 
-## **STEP 1**: Scaling a WebLogic cluster using domain resource definition
+## Task 1: Scaling a WebLogic cluster using domain resource definition
 
 The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes, edit the *domain.yaml* file and apply the changes using `kubectl`. Use your favorite editor to open the *domain.yaml* file.
 

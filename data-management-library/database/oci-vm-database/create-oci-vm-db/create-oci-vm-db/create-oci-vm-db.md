@@ -12,7 +12,7 @@ You can use a 1-node virtual database system to complete labs and tutorials that
 * SSH Keys
 * A Virtual Cloud Network (VCN)
 
-## **STEP 1**: Create a Database Virtual Machine
+## Task 1: Create a Database Virtual Machine
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
@@ -46,7 +46,7 @@ You can use a 1-node virtual database system to complete labs and tutorials that
 
     ![](images/database-VM-created.png " ")
 
-## **STEP 2**: Connect to the Database using SSH
+## Task 2: Connect to the Database using SSH
 
 1. On the **DB System Details** page, Click **Nodes**.
 

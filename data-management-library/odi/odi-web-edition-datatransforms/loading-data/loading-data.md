@@ -18,7 +18,7 @@ In this lab, you will:
 - All previous labs have been successfully completed.
 - Basic familiarity of Autonomous Database
 
-## **STEP 1:** Load Data from Oracle Object Store to Autonomous Database
+## Task 1: Load Data from Oracle Object Store to Autonomous Database
 
 We need to load the `Movie_Sales_2020.csv` file which is stored in an Object Storage public bucket. We will set up connection to Oracle Object Store and load the file.
 
@@ -59,7 +59,7 @@ When you have completed these details, press **Create**.
 
     ![ALT text is not available for this image](images/3021448426.png)
 
-## **STEP 2:** Inspect the Data 
+## Task 2: Inspect the Data 
 
 1. Navigate to the Data Load main page and press the **Explore** card.
 

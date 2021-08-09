@@ -34,7 +34,7 @@ The below pre-loaded data object is available in Converged Database.
 | ------------- | ------------- | ------------- |
 | FINANCIALS\_REL | Table | Relational  | Data used Explain and Forecast features. |
 
-## **STEP 1**: Create A Data Set From Database
+## Task 1: Create A Data Set From Database
 
 1. In the home screen, click the hamburger to select **Data** and then **Connections** tab. Select the  created connection and browse schema **OASLABS** as shown below.
     ![](./images/aa4.png " ")
@@ -46,12 +46,12 @@ The below pre-loaded data object is available in Converged Database.
 3. Now in Data tab, you can see the added table as a data set.
     ![](./images/aa7.png " ")
 
-## **STEP 2**: Project Creation From Data Set
+## Task 2: Project Creation From Data Set
 
 1. In the **Data** tab, click on the added data set.  This will open screen for project creation.
     ![](./images/aa7.png " ")
 
-## **STEP 3**: Explain Feature
+## Task 3: Explain Feature
 
 Let us now learn the Augmented Analytics of OAS using the  **Explain** feature.
 
@@ -74,7 +74,7 @@ The result is a profile of the data element you have selected with both visualiz
 
 6. Click on **Save** to save the project by providing a name to the project file.
 
-## **STEP 4**: Forecast Feature
+## Task 4: Forecast Feature
 
 Using Forecast you can predict values for the next _n_ future periods.  Number of _n_ next periods can be set as required.
 

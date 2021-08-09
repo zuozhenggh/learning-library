@@ -4,7 +4,7 @@
 
 In this lab, we will create a compute instance, download a script to configure streaming service, publish and consume messages. The Oracle Cloud Infrastructure Streaming service provides a fully managed, scalable, and durable storage solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming can be used for messaging, ingesting high-volume data such as application logs, operational telemetry, web Click-stream data, or other use cases in which data is produced and processed continually and sequentially in a publish-subscribe messaging model.
 
-## **STEP 1**: Download Script to configure Streaming service and Publish messages
+## Task 1: Download Script to configure Streaming service and Publish messages
 
 1. In Oracle Cloud Shell, configure OCI CLI:
     ```
@@ -158,7 +158,7 @@ In this lab, we will create a compute instance, download a script to configure s
 
   ![](images/delete-stream.png)
 
-## **STEP 2**: Delete the resources
+## Task 2: Delete the resources
 
 1. Switch to OCI console window.
 

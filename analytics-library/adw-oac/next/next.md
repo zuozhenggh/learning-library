@@ -5,7 +5,7 @@ In this section you can learn how to upgrade instances to a Paid Model.
 
 Estimated workshop Time: 2 minutes.
 
-## **STEP 1**: Upgrade Instances to Paid
+## Task 1: Upgrade Instances to Paid
 
 ![Oracle Cloud Pricing](./images/next_banner.png)
 
@@ -43,7 +43,7 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
     You have learned how to Upgrade your Always Free Account to a subscription model!
 
-## **STEP 2**: Want to learn more?
+## Task 2: Want to learn more?
 
 If you have enjoyed the workshop, give me a star on Github: [click here](https://github.com/PriscilaIruela/ADW-OAC-HOLs)!
 

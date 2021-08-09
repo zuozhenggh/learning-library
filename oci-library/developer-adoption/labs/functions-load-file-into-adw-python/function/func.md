@@ -16,14 +16,17 @@ Estimated time: 20 minutes
 ### Prerequisites
 
 - Your Oracle Cloud Trial Account
-- Completed the **Prerequisites for Functions**
-- Completed the **OCI Services**
+- Completed the **Prerequisites for Functions** Lab
+- Completed the **Create Bucket, Policies and Autonomous Database (ADW)** Lab
 
-## **STEP 1:** Create an application
+## Task 1: Create an application
 
 In this step, you will create an application and set up Fn CLI in the OCI Cloud Shell.
 
-1. Under Solutions and Platform, select **Developer Services** and click **Functions**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Applications** under the **Functions** section.
+
+    ![Functions](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-functions-applications.png " ")
+
 1. Select your development compartment (AppDev) from the **Compartment** list.
 1. Click **Create Application**.
 1. For name, enter `etl-app`.
@@ -45,7 +48,7 @@ In this step, you will create an application and set up Fn CLI in the OCI Cloud 
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
-## **STEP 2:** Deploy the function
+## Task 2: Deploy the function
 
 In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
@@ -101,7 +104,7 @@ In this step, you will clone the functions source code repository and use the `f
     </copy>
     ```
 
-## **STEP 3:** Create an Event rule
+## Task 3: Create an Event rule
 
 In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
@@ -112,15 +115,18 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 1. For display name, enter `load_CSV_into_ADW`.
 1. For description, enter `Load CSV file into ADW`.
 1. Create three rules.
+
+    Note: Remember to hit `enter` every time you input a new Event Type or Attribute Values
+
     - Enter the first Condition and click **Another Condition** to add more conditions:
 
-        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | Condition | Service/Attribute Name | Event Type |
         | --- | --- | --- |
         | Event Type | Object Storage | Object - Create |
 
     - Enter the Second Condition and click **Another Condition** to add more conditions:
 
-        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | Condition | Service/Attribute Name | Attribute Value |
         | --- | --- | --- |
         | Attribute | compartmentName | AppDev |
 
@@ -128,7 +134,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 
     - Enter the Third Condition:
 
-        | Condition | Service/Attribute Name | Event Type/Attribute Values |
+        | Condition | Service/Attribute Name | Attribute Value |
         | --- | --- | --- |
         | Attribute | bucketName | input-bucket |
 
@@ -141,7 +147,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 
 1. Click **Create Rule**.
 
-## **STEP 4:** Test the function
+## Task 4: Test the function
 
 To test the function, you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or the Cloud Shell using the OCI CLI.
 
@@ -193,23 +199,21 @@ To see the data in the database, follow these steps:
 
     ```shell
     <copy>
-    select json_serialize (
-         JSON_DOCUMENT returning varchar2 pretty 
-       ) 
-    from regionsnumbers;
+    select json_serialize (JSON_DOCUMENT) from regionsnumbers;
     </copy>
     ```
 
-1. Click the green play button to execute the query.
+1. Click the green play button (`Run Script`) to execute the query.
 
     ![Database Actions - SQL - Worksheet](./images/database-actions-sql-worksheet.png)
 
-1. The data from the CSV file is in the **Query Result** tab.
+1. The data from the CSV file is in the **Script Output** tab.
 
 This concludes this lab.
 
 ## Acknowledgements
 
-- **Author** - Greg Verstraeten
+- **Author** - Adao Junior
 - **Contributors** -  Peter Jausovec, Prasenjit Sarkar, Adao Junior
-- **Last Updated By/Date** - Adao Junior, October 2020
+- **Sample Author** - Greg Verstraeten
+- **Last Updated By/Date** - Adao Junior, July 2021

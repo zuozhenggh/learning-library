@@ -13,7 +13,7 @@ Estimated Time: 20-30 minutes
 - Enhance the Interactive Grid
 - Add a Calendar page
 
-## **Step 1:** Create an app from a script
+## Task 1: Create an app from a script
 
 In lab 3, step 1, you used Quick SQL to create a script which you subsequently ran to create several tables. The script's Results page has a button that allows you to create a new application based on the script. APEX will parse the script to identify the tables and then create pages in the new app to view and edit data within those tables. In this part, you will create an app based on the script you previously ran.
 
@@ -63,7 +63,7 @@ In lab 3, step 1, you used Quick SQL to create a script which you subsequently r
 
    ![](images/app-from-a-script-runtime.png " ")
 
-## **Step 2:** Add an Interactive Grid page and create records
+## Task 2: Add an Interactive Grid page and create records
 
 Thus far, you've used high-level wizards to generate applications, first from a spreadsheet and then from a script. In this part, you will work at a lower level to add a new Interactive Grid page to the application. After that, you will use the new Interactive Grid to add some data to the HOL_TODOS table.
 
@@ -117,7 +117,7 @@ Thus far, you've used high-level wizards to generate applications, first from a 
 
    *Note: Don't populate the additional columns yet, you will do that in the next part.*
 
-## **Step 3:** Enhance the Interactive Grid
+## Task 3: Enhance the Interactive Grid
 
 A page in APEX is made up of various components, such as regions, items, and buttons. Once created, these components can be configured via the Page Designer. In this part, you will use the Page Designer to make some changes to the Interactive Grid region created in the previous part.
 
@@ -196,7 +196,7 @@ A page in APEX is made up of various components, such as regions, items, and but
 
    *Note: The data for Team Members and Tasks is sample data created by Quick SQL, and may not be representative of the names your end users would enter. However, such data is invaluable for seeing data in the pages, and so forth.*
 
-## **Step 4:** Add a Calendar Page
+## Task 4: Add a Calendar Page
 
 APEX includes different components for viewing and working with data in different ways, including forms, reports, charts, and much more. One of the easiest ways to visualize data related to dates is with a calendar. In this part, you will create a new calendar page in your application to view data in the HOL\_TASKS table. The HOL\_TASKS table includes both a Start Date and End Date so you could choose to create a duration-based calendar, however, for this lab you are just going to use the Start Date.
 

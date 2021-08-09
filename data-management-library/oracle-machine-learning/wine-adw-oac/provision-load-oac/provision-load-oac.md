@@ -24,7 +24,7 @@ In this lab, you will:
 * Provisioned an Autonomous Database instance
 * Created a Oracle Machine Learning model
 
-## **STEP 1**: Provision an Oracle Analytics Cloud Instance
+## Task 1: Provision an Oracle Analytics Cloud Instance
 
 1. In order to create an Oracle Analytics Cloud instance, you must login to the tenancy as a **Federated User**. Log out of Oracle Cloud and login again using Single Sign-On (SSO).
 
@@ -60,7 +60,7 @@ In this lab, you will:
     ![](./images/create-success2.png " ")
 
 
-## **STEP 2**: Download the Autonomous Database Instance Wallet
+## Task 2: Download the Autonomous Database Instance Wallet
 
 **Oracle Autonomous Database** will only accept secure connections to the database. This requires a **wallet** file that contains the SQL\*NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from **Oracle Autonomous Database** to **Oracle Analytics Cloud**.
 
@@ -95,7 +95,7 @@ In this lab, you will:
 
     ![](./images/close-wallet.png " ")
 
-## **STEP 3**: Establish Connection Between the Autonomous Database and Oracle Analytics Cloud
+## Task 3: Establish Connection Between the Autonomous Database and Oracle Analytics Cloud
 
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**. 
@@ -132,7 +132,7 @@ In this lab, you will:
 
     ![](./images/omluser-connection.png " ")
 
-## **STEP 4**: Register the Oracle Machine Learning Model
+## Task 4: Register the Oracle Machine Learning Model
 
 1. On the top right-hand side of the screen, expand the **Hamburger Button** and then click **Register ML Model**.
 
@@ -150,7 +150,7 @@ In this lab, you will:
 
     ![](./images/svm-connection2.png " ")
 
-## **STEP 5**: Add Datasets
+## Task 5: Add Datasets
 
 1. The click **Create** button to the upper right, and then select **Data Set**.
 

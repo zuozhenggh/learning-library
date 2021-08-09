@@ -88,7 +88,7 @@ As described in the workshop introduction, you need access to an Oracle Database
 
 
 
-## **STEP 1:** Create Tables with Coordinates
+## Task 1: Create Tables with Coordinates
 
 We begin by creating tables with latitude, longitude coordinates. This is a common starting point for creating spatial data, for example coordinates from GPS, or from geocoding street address or IP address.
 
@@ -105,7 +105,7 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
     ![Image alt text](images/refresh-tables-1.png)
 
 
-## **STEP 2:** Create Geometries from Coordinates
+## Task 2: Create Geometries from Coordinates
 
 Geometries can be populated with SQL, for exathis case by specifying the coordinates of point geometries based on  latitude and longitude columns.
 
@@ -144,7 +144,7 @@ Geometries can be populated with SQL, for exathis case by specifying the coordin
     </copy>
     ```
 
-## **STEP 3:** Create Table with Polygon
+## Task 3: Create Table with Polygon
 
 Lines and polygons can be created in the same way. While a point geometry requires one coordinate, lines and polygons require all of the coordinates that define the geometry. In this case we create a table to store a polygon.
 
@@ -186,7 +186,7 @@ Lines and polygons can be created in the same way. While a point geometry requir
     ![Image alt text](images/refresh-tables-2.png)
 
 
-## **STEP 4:**  Add Spatial Metadata and Indexes 
+## Task 4:  Add Spatial Metadata and Indexes 
 Oracle Database provides a native spatial index for high performance spatial operations. Our sample data is so small that a spatial index is not really needed. However we perform the following steps since they are important for typical production data volumes. A spatial index requires a row of metadata for the geometry being indexed. We create this metadata and then the spatial indexes.
 
 

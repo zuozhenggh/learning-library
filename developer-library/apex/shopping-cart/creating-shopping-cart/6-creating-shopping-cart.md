@@ -4,13 +4,14 @@
 
 In this lab, you will create a new page to review the items added to the Shopping Cart.
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
+In this lab, you will:
 - Create a page to list the products in the Shopping Cart.
-- Create Application Items and Application Processes.
+- Create Application Items, Application Processes and Dynamic Actions to manage the Shopping Cart.
 
-## **Step 1** - Creating Application Items
+## Task 1: Creating Application Items
 These items are needed to count the number of items in the shopping cart and the icon to display in the Navigation Bar.
 
 1. Click on **Shared Components**
@@ -28,7 +29,7 @@ These items are needed to count the number of items in the shopping cart and the
 5. Click **Create Application Item** and create the second item.
     ![](images/create-application-tem.png " ")
 
-## **Step 2** - Creating Application Process
+## Task 2: Creating Application Process
 This process is needed to refresh the number of items in the Shopping Cart, which will be shown in the navigation bar.
 
 1. Click on **Shared Components**
@@ -63,7 +64,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 6. Click **Next**.        
 7. Click **Create Process**.   
 
-## **Step 3** - Creating a Normal Page - Shopping Cart
+## Task 3: Creating a Normal Page - Shopping Cart
 
 1. Click on Application Home.  ***The ID of your application may vary***
     ![](images/create-page.png " ") 
@@ -76,7 +77,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 5. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 6. Click **Finish**.
 
-## **Step 4** - Adding a Cards Region
+## Task 4: Adding a Cards Region
 1. In the new page created, navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section.
     ![](images/create-cards.png " ")
@@ -146,7 +147,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - Under Card section:
         - For Primary Key Column 1 - select **ITEM** 
 
-## **Step 5** - Adding an action to the Shopping Cart
+## Task 5: Adding an Action to the Shopping Cart
 
 1. In the Rendering tree (left pane), navigate to **Actions** under **Shopping Cart**.
 2. Right-click on Actions and click **Create Action**.
@@ -164,7 +165,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - For Display Type - select **Text with Icon**
     - For Icon - enter **fa-cart-edit**
 
-## **Step 6** - Adding items and buttons to the Page
+## Task 6: Adding Items and Buttons to the Page
 
 1. Navigate to the **Gallery Menu**.
 2. Drag a **Static Content** region and drop it next to the Shopping Cart region.
@@ -217,7 +218,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
      ![](images/buttons.png " ")      
 
-## **Step 7** - Adding Validations to the Page
+## Task 7: Adding Validations to the Page
 1. In the Rendering tree (left pane), click on **Processing** tab.
 2. Over Validating, right-click **Create Validation**.
      ![](images/create-validation.png " ")  
@@ -242,7 +243,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
      ![](images/button-condition.png " ")       
     
-## **Step 8** - Adding Process to create the order
+## Task 8: Adding Process to Create the Order
 
 1. On the **Processing** tab (left pane).
 2. Right click on Processing and click **Create Process**.
@@ -268,7 +269,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
     - For Success Message, enter **Order successfully created: &P17\_ORDER\_ID.**
     - For When Button Pressed, select **Proceed**.
 
-## **Step 9** - Adding Process to clear the shopping cart
+## Task 9: Adding Process to Clear the Shopping Cart
 
 1. On the **Processing** tab (left pane).
 2. Right click on Processing and click **Create Process**.
@@ -287,7 +288,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 
     - For When Button Pressed, select **Clear**.
 
-## **Step 10** - Adding Branches to the Page
+## Task 10: Adding Branches to the Page
 
 1. On the **Processing** tab (left pane).
 2. Right click on After Processing and click **Create Branch**.
@@ -317,7 +318,7 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
         - Click **OK**
     - For When Button Pressed, select **Clear**
 
-## **Step 11** - Adding Dynamic Actions
+## Task 11: Adding Dynamic Actions
 In this step, you will create a dynamic actions to:
 - Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
 - Refresh the shopping cart region.
@@ -388,7 +389,7 @@ In this step, you will create a dynamic actions to:
             </copy>
             ```
 
-## **Step 12** - Format products image size
+## Task 12: Format Products Image Size
 1. In the Rendering tree (left pane), navigate to **Page 17: Shopping Cart**.
 2. In the Property Editor (right pane), do the following:
     - Under CSS section.
@@ -406,17 +407,11 @@ In this step, you will create a dynamic actions to:
 
 3. Click **Save**.
 
-## **Summary**
+
 
 You now know how to add validations, processes, branches and dynamic actions to your APEX page.
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Contributors** 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

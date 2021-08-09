@@ -92,7 +92,7 @@ The following steps are meant for anyone running this workshop on Windows and us
    - This SSH session must remain alive throughout your connectivity to above remote port.
    - Steps (1)-(2) must be performed for each remote port needed
 
-## **STEP 2:** Validate
+## Task 2: Validate
 Using the corresponding utility indicated in the table above, open a connection to the remote destination by addressing your local computer. While we are using a browser client for this illustration, the same applies to other clients as well. e.g. Using SQL Developer on port 1521 to access the database.  
 
 1. **EM13c OMS Console**
@@ -106,6 +106,6 @@ Now you are ready to run the workshop. You may now [proceed to the next lab](#ne
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+- **Contributors** - LiveLabs Team
 - **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2020
 

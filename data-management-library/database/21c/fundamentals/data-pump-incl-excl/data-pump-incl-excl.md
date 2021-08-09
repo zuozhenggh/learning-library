@@ -13,7 +13,7 @@ Estimated Lab Time: 15 minutes
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Use the `/home/oracle/labs/M104780GC10/create_PDB21_2.sh` shell script to create the `PDB21_2` PDB and the `HR` user in `PDB21_2`.
 
@@ -120,7 +120,7 @@ Estimated Lab Time: 15 minutes
 
 
 
-## **STEP 2:** Export tables excluding their statistics
+## Task 2: Export tables excluding their statistics
 
 Export from `PDB21` two `HR` tables, excluding their statistics.
 
@@ -148,7 +148,7 @@ $
 
 ```
 
-## **STEP 3:** Import tables
+## Task 3: Import tables
 
 1. Create the data pump directory in the database.
 ```

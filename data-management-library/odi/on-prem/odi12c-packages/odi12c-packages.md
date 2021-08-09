@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load Sales Administration Package Example
+## Task 1: Load Sales Administration Package Example
 This section contains the following topics:
   * Purpose
   * Developments Provided with Oracle Data Integrator
@@ -138,7 +138,7 @@ This section contains the following topics:
 
   5.  From the File main menu, select **Save**. The package is now ready to be executed.
 
-## **STEP 3:** Executing Your Development
+## Task 3: Executing Your Development
 This section describes how to execute the Load Sales Administration Package you have just created and the mappings Load TRG\_CUSTOMER and Load TRG\_SALES you have created in the lab *Working with Mappings*. This section also describes how to follow the execution and how to interpret the execution results.
 
 1. Executing the Load Sales Administration Package
@@ -164,7 +164,7 @@ This section describes how to execute the Load Sales Administration Package you 
 
   ![](./images/load_package_session_log.png)
 
-## **STEP 4:** Reviewing your Results
+## Task 4: Reviewing your Results
 
 **Interpreting the Results of the Load TRG\_CUSTOMER Session Step**
 

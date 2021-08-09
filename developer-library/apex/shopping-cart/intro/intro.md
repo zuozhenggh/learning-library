@@ -1,4 +1,5 @@
-## Introduction
+# Introduction
+## About this Workshop
 This workshop walks you through creation a Shopping Cart application that allows managing products, customers, and  stores. The application will have two application roles:
 
 * Administrators
@@ -8,10 +9,10 @@ This workshop walks you through creation a Shopping Cart application that allows
     * To review, add, delete or edit the number of products in the shopping cart
     * To submit orders
 
-Estimated Time: 100 minutes
+Estimated Workshop Time: 1 hour 40 minutes
 
-### Lab Objectives
-
+### Objectives
+In this lab, you will:
 * Obtain a free development environment
 * Install a sample dataset
 * Learn how to create lookup tables
@@ -36,8 +37,6 @@ Estimated Time: 100 minutes
 
 ### **Let's Get Started!**
 
-- Click on **Sign Up for a Free Trial** from the menu on the right. If you already have an Oracle Cloud account, click on **Lab 1: Installing Sample Tables**.
-
 - If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
 
 ### Downloads
@@ -57,10 +56,4 @@ Estimated Time: 100 minutes
 ## Acknowledgments
 
 - **Author** - Monica Godoy, Principal Product Manager
-- **Contributors** - 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

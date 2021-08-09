@@ -8,7 +8,7 @@ The combined dataset is then used to perform the following common graph query an
 
 The following ER diagram depicts the relationships between the datasets.
 
-![ER Diagram of tables](images/er-diagram.jpg)
+![](images/er-diagram.jpg)
 
 Estimated Lab Time: 10 minutes
 
@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 
 - This lab assumes you have successfully completed all the previous Labs (Lab 1 through Lab 6) and have the Python client up and running.
 
-## **STEP 1:** Get the Graph on Memory
+## Task 1: Get the Graph on Memory
 
 Assuming that the `customer_360` graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is published, you can also access the graph from the new sessions.
 
@@ -32,7 +32,7 @@ graph = session.get_graph("customer_360")
 
 Now we can query this graph and run some analyses on it.
 
-## **STEP 2:** Pattern Matching
+## Task 2: Pattern Matching
 
 PGQL Query is convenient for detecting specific patterns.
 
@@ -61,7 +61,7 @@ graph.query_pgql("""
 +---------------------------------------------------------------+
 ```
 
-## **STEP 3:** Detection of Cycles
+## Task 3: Detection of Cycles
 
 Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -120,7 +120,7 @@ This result will be visualized in the next section:
 
 ![](images/detection2.jpg)
 
-## **STEP 4:** Influential Accounts
+## Task 4: Influential Accounts
 
 Let's find which accounts are influential in the network. There are various algorithms to score the importance and centrality of the vertices. We'll use the built-in PageRank algorithm as an example.
 
@@ -128,8 +128,7 @@ Let's find which accounts are influential in the network. There are various algo
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -168,7 +167,7 @@ Let's find which accounts are influential in the network. There are various algo
     +-------------------------------------+
     ```
 
-## **STEP 5:** Community Detection
+## Task 5: Community Detection
 
 Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
@@ -178,8 +177,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -195,7 +193,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 1)
     ```
 
-    The partition value is stored in a property named `WCC`.
+    The component value is stored in a property named `wcc`.
 
     ```
     <copy>
@@ -215,11 +213,9 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-    In this case, all six accounts form one partition by the WCC algorithm.
+    In this case, all six accounts form one component by the WCC algorithm.
 
-3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
-
-    [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) (SCC) algorithm detects three partitions.
+3. Run a [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) algorithm, SCC Kosaraju, instead. It detects three components.
 
     ```
     <copy>
@@ -229,7 +225,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 3)
     ```
 
-4. List partitions and number of vertices in each
+4. List components and number of vertices in each.
 
     ```
     <copy>
@@ -251,10 +247,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-5. List the other accounts in the same connected component (partition) as John's account.
-
-    The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
-    *John's account_no is xxx-yyy-201 as shown in Lab 6.*
+5. List the other accounts in the same connected component as John's account (= `xxx-yyy-201`). The component ID is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
 
     ```
     <copy>
@@ -275,7 +268,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     | xxx-yyy-202 |
     | xxx-yyy-203 |
     | xxx-yyy-204 |
-    +-------------+]
+    +-------------+
     ```
 
     ![](images/community.jpg)
@@ -288,5 +281,5 @@ You may now proceed to the next Lab.
 
 * **Author** -  Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Ryota Yamanaka, April 2021
+* **Last Updated By/Date** - Ryota Yamanaka, August 2021
 

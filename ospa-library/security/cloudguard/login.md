@@ -1,6 +1,6 @@
 # Lab 1: Accessing Cloud Guard
 
-## STEP 1: Login to Cloud Guard
+## Task 1: Login to Cloud Guard
 
 1. Use your credentials to login to the OCI console. *Note: Contact your tenant administrator for further reference on whether you must use standard OCI credentials or SSO.*
 

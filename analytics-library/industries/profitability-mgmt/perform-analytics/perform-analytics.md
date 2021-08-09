@@ -25,7 +25,7 @@ Oracle Analytic Desktop, Oracle Autonomous Database
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: Creating Visualization using the Table View
+## Task 1: Creating Visualization using the Table View
 
 Click on the Visualizations Icon on the left hand side of the Canvas.  Drag drop the Table Visualization on the Canvas.
 ![Image alt text](images/TableView1.jpg "Image title")
@@ -36,7 +36,7 @@ Drag the selected data elements to the middle of the screen.
 ![Image alt text](images/DataView3.jpg "Image title")
 You may Save this project if you need.
 
-## **STEP 2:** Creating Visualization using the Graph View
+## Task 2: Creating Visualization using the Graph View
 
 Click on the Visualizations Icon on the left hand side of the Canvas.  Drag drop the Table Visualization on the Canvas.
 ![Image alt text](images/GraphView1.jpg "Image title")
@@ -47,7 +47,7 @@ Drag the selected data elements to the middle of the screen.
 ![Image alt text](images/GraphView4.jpg "Image title")
 You may Save this project if you need.
 
-## **STEP 3:** Creating Visualization using the Heat View
+## Task 3: Creating Visualization using the Heat View
 
 Click on the Visualizations Icon on the left hand side of the Canvas.  Drag drop the Table Visualization on the Canvas.
 ![Image alt text](images/HeatView1.jpg "Image title")

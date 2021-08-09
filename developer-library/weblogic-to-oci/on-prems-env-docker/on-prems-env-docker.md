@@ -33,7 +33,7 @@ Estimated Completion Time: 30 minutes.
   [https://hub.docker.com/signup](https://hub.docker.com/signup)
 
 
-## **STEP 1:** Get the Code
+## Task 1: Get the Code
 
 ### **On Linux**
 
@@ -119,7 +119,7 @@ You can also download the code here: [https://objectstorage.us-ashburn-1.oraclec
 
 3. Open a terminal and get into the unzipped folder.
 
-## **STEP 2:** Agree to the Terms of the Private Docker Images
+## Task 2: Agree to the Terms of the Private Docker Images
 
 This repository makes use of Oracle docker images which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
 
@@ -153,7 +153,7 @@ This repository makes use of Oracle docker images which are licensed and need to
     </copy>
     ```
 
-## **STEP 3:** Start the Local Environment
+## Task 3: Start the Local Environment
 
 Start up the local environment stack that will simulate our on-premises environment.
 
@@ -187,7 +187,7 @@ pull access denied for store/oracle/database-instantclient, repository does not 
 
 Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
-## **STEP 4:**  Check the Local Environment
+## Task 4:  Check the Local Environment
 
 **It may take up to 10 minutes for the domain to be up and running**.
 
@@ -235,7 +235,7 @@ The weblogic container waits for the database to be ready, and the schemas to be
 
     ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png " ")
 
-## **STEP 5:** Create an SSH key
+## Task 5: Create an SSH key
 
 We'll need an SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 

@@ -2,25 +2,25 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate wallet.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager.
 
 Estimated Lab Time: 5 minutes
 
+### Objectives
 
-### Before You Begin
+In this lab, you will:
+
+* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
+* Add the certificate to your Oracle GoldenGate wallet
+* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
+
+### Prerequisites
 
 To successfully complete this lab, you must have:
 
 * An on premise or Marketplace Oracle GoldenGate instance running
 * The URL and log in credentials for the Oracle GoldenGate Service Manager
 * The log in credentials for the OCI GoldenGate Deployment Console
-
-### Objectives
-
-In this lab, you will:
-* Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
-* Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ## **STEP 1A**: Using Chrome to Download the Root Certificate
 
@@ -80,49 +80,37 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Download PEM](images/01b-06.png)
 
-## **STEP 2:** Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
+## Task 2: Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
 
-1.  Log in to Oracle Cloud Infrastructure.
+Here, you'll upload the certificate to the Marketplace or on-premises Oracle GoldenGate instance to create a trusted connection to OCI GoldenGate.
 
-2.  In the OCI Console Navigation menu, click **Compute**, and then click **Instances**.
-
-3.  Under **List Scope**, select your **Compartment** from the dropdown. You can find your compartment information in the Workshop Details of this LiveLab.
-
-4.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** from the list of instances.
-
-5.  Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key.
-
-6.  In a new browser tab or window, enter **https://&lt;public-ip&gt;:443** to open the Service Manager.
-
-7.  Log in to the Service Manager using **oggadmin** credentials found in **/home/opc/ogg_credentials.json**.
-
-8.  In the navigation menu (hamburger icon), click **Certificate Management**.
+1.  In the Oracle GoldenGate Marketplace Service Manager, open the navigation menu (hamburger icon), and then click **Certificate Management**.
 
     ![Certificate Management](images/02-01-certmgmt.png)
 
-9.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
+2.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
     ![Add CA Certificates](images/02-03-addcert.png)
 
-10. In the Add CA Certificate dialog, enter a **Unique Name**.
+3.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
     ![Unique Name](images/02-04-addcertdialog.png)
 
-11. For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
+4.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
     ![Enter Certificate](images/02-05-entercert.png)
 
-12. If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
+5.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
     ![Upload Certificate](images/02-06-uploadcert.png)
 
-13. Click **Add**.  The certificate now appears in the Shared list.
+6.  Click **Add**.  The certificate now appears in the Shared list.
 
     ![Shared Certificates](images/02-07-certlist.png)
 
-## **STEP 3:** Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
+## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  In the OCI GoldenGate Deployment Console, use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
     ![](images/03-01.png)
 
@@ -132,12 +120,12 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png)
 
-3.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server, and then use the Navigation menu to open the **Configuration** screen.
+3.  Switch to the Oracle GoldenGate Marketplace Administration Server, and use the Navigation menu to open the **Configuration** screen.
 
 4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-    * For **Credential Alias**,  enter a name
+    * For **Credential Alias**,  enter a name, such as **ogg2ggs**.
     * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
@@ -148,8 +136,7 @@ The following instructions show you how to download the Root Certificate using a
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
 
-
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - May 2021
+* **Last Updated By/Date** - Jenny Chan, July 2021
