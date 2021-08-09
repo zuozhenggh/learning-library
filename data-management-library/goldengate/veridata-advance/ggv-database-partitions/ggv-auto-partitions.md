@@ -28,7 +28,7 @@ This lab assumes you have:
     * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
     * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
 
-## **STEP 1:** Configure Automatic Row Partitioning
+## **STEP 1:** Configure Database Row Partitioning
 To configure Automatic Row Partitioning:
 1. In the Compare Pair Configuration page, click **Manual Mapping**.
 2. For the selected table pair, select the **Automatic Row Partitions** check box.

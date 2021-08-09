@@ -34,19 +34,25 @@ To configure Automatic Row Partitioning:
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
-    * Source Table: **CHAR_TYPES**
-    * Target Table: **CHAR_TYPES**
-    ![](./images/5-compare-pair-manual-mappng-select-tables.png " ")
+    * Source Table: **XML**
+    * Target Table: **XMP**
+    ![](./images/1_AP.png " ")
 3. Select the **Automatic Row Partitions** check box.
 
 4. Enter a numeric value between 2 to 100 in the text field.
 
       Enter:
-        * Automatic Row Partitions: **10**
+        * Automatic Row Partitions: **12**
+
+      ![](./images/2_AP.png " ")
 
 5. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
+    ![](./images/3_AP.png " ")
+
 6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+
+    ![](./images/4_AP.png " ")
 You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_AutoPartition** Group to this job.
 
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
