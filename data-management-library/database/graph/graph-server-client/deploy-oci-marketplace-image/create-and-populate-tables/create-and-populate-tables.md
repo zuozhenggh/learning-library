@@ -12,56 +12,20 @@ Estimated time: 7 minutes
 
 ### Objectives
 
-- Learn how to connect to your new Autonomous Database using SQL Developer Web
+- Learn how to connect to your new Autonomous Database using Database Actions
 - Learn how to create tables and insert data using SQL
 
 ### Prerequisites
 
-- This lab assumes you have successfully completed the lab - Create and enable a user in SQL Developer Web.
+- This lab assumes you have successfully completed the lab - Create and enable a user in Database Actions.
 
-## Task 1: Log in to SQL Developer Web
+## Task 1: Log in to Database Actions
 
-Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user **using Google Chrome**. It is almost the same URL as the one for the Admin user except that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
-
-![](images/admin_url.jpg)
-
-Login as `CUSTOMER_360` using the password you entered when creating the user.
-
-*Note: Use the password you choose in Step 2 in Lab 4.*
+Login as `CUSTOMER_360` using the password you entered when creating the user. The correct URL for Database Actions should contain `/customer_360/`
 
 ![](images/login-c360.jpg)
 
 ![](images/sdw-c360.jpg)
-
-### Troubleshooting
-
-If you receive a *Service Unavailable* error, it may be that the `CUSTOMER_360` account is locked.
-
-![](images/troubleshooting_login.png)
-
-You can try the following steps:
-
-1. Log in as `ADMIN`, enter and run the command in Worksheet:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
-
-    In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
-
-    ![](images/troubleshoot_query_result.png)
-
-2. If the status is `LOCKED`, enter and run the command to unlock the user:
-
-    ```
-    <copy>ALTER USER customer_360 ACCOUNT UNLOCK;</copy>
-    ```
-
-3. Then, the status should change to `OPEN`. You can check again using command:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
 
 ## Task 2: Drop existing tables if any
 
@@ -232,5 +196,5 @@ You may now proceed to the next lab.
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Thanks to Jenny Tsai and Arabella Yao for helpful, constructive feedback that improved this workshop.
-* **Last Updated By/Date** - Ryota Yamanaka, May 2021
+* **Last Updated By/Date** - Ryota Yamanaka, August 2021
 
