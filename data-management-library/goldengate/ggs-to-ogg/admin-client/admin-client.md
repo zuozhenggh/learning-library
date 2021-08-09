@@ -74,4 +74,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2021
+* **Last Updated By/Date** - Jenny Chan, August 2021

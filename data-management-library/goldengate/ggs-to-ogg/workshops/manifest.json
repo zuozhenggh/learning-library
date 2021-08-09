@@ -27,8 +27,8 @@
             "filename": "../connection/connection.md"
         },
         {
-            "title": "Lab 4: Send the Oracle GoldenGate Trail File to OCI GoldenGate",
-            "description": "Create an Extract, Distribution Path, and Replicat",
+            "title": "Lab 4: Send the OCI GoldenGate Trail File to Oracle GoldenGate",
+            "description": "Create an Extract, Receiver Path, and Replicat",
             "filename": "../extract/extract.md"
         },
         {

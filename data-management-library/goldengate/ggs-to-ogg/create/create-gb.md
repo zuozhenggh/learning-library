@@ -38,7 +38,7 @@ This lab assumes that you completed all preceding labs.
 
     ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
 
-2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select your compartment.
+2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 3.  On the Deployments page, click **Create Deployment**.
 
@@ -50,7 +50,7 @@ This lab assumes that you completed all preceding labs.
 
 6.  For OCPU Count, enter **2**.
 
-7.  For Subnet, select the public subnet you created in Lab 1.
+7.  For Subnet, select **&lt;user&gt;pubsubnt**.
 
 8.  For License type, select **Bring You Own License (BYOL)**.
 
@@ -91,7 +91,7 @@ On the Deployment Details page, you can:
 
     ![Launch Console](images/04-01-ggs-launchconsole.png)
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you created in Task 1 of this lab, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
     ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
 
@@ -103,7 +103,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 *For the purposes of this workshop, registering the Source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
-1.  In the OCI Console breadcrumb, click **GoldenGate**, and then **Registered Databases**.
+1.  Return to the OCI Console. In the breadcrumb, click GoldenGate, and then Registered Databases.
 
 2.  On the Registered Databases page, click **Register Database**.
 
@@ -159,9 +159,15 @@ Although the ggadmin user is created during the database registration process, i
 
     ![SQL Developer](images/01-08-sql.png)
 
-9. Log out of Database Actions.
+9.  Enter the following into the worksheet, and then click **Run Script**.
 
-10. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+10. Log out of Database Actions.
+
+11. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
 In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You can now proceed to the [next lab](#next).
 
