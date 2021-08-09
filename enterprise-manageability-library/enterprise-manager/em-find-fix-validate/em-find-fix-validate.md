@@ -37,7 +37,7 @@ In this lab you will learn:
 ## Task 1: Prepare Database
 Select between *STEP 1A* and *STEP 1B*
 
-## **STEP 1A:** Prepare Database Using EM Console
+## **Task $1: 1A:** Prepare Database Using EM Console
 
 1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
@@ -67,7 +67,7 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emjobcom.png " ")
 
-## **STEP 1B:** Prepare database Using the terminal
+## **Task $1: 1B:** Prepare database Using the terminal
 
 1. Instead of *STEP 1* above, you may run the block below from the terminal as user *oracle*
 

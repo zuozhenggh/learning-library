@@ -21,7 +21,7 @@ The Oracle WebLogic Server Kubernetes Operator supports three load balancers: Tr
 
 - **Works better with the Chrome browser**.
 
-## **STEP 1**: Install the Traefik operator with a Helm chart  
+## **Task $1: 1**: Install the Traefik operator with a Helm chart  
 
 
 Change to your operator local Git repository folder.
