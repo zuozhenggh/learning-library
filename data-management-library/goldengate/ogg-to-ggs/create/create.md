@@ -120,7 +120,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
     ![Source Database details](images/reg-sourceATP.png)
 
-9.  Repeat these steps for the Target Autonomous Database.
+9.  Repeat these steps for the Target Autonomous Database (**TargetADW**).
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
