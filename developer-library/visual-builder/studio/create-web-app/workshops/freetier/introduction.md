@@ -6,7 +6,7 @@ This workshop shows how Oracle Visual Builder Studio can help you create a web a
 
 In this workshop, you'll create a simple Human Resources web application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments, and to change that data when necessary.
 
-Estimated Workshop Time: 1 hour 45 minutes
+Estimated Workshop Time: 1 hour 55 minutes
 
 ### About Oracle Visual Builder Studio
 
