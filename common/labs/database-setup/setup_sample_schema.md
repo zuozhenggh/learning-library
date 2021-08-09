@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## **Task $1:**: Install Sample Data
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
