@@ -128,7 +128,7 @@ In this lab, you will:
     ```
 </if>
 <if type="atp">
-## **Task $1:  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
