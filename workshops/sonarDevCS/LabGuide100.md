@@ -21,7 +21,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
 ## Run a Build Job in Developer Cloud Service
 
-### **STEP 1**: Configure OCI connection in Developer Cloud Service
+### **Task $1: 1**: Configure OCI connection in Developer Cloud Service
 
 - Navigate back to your MyServices dashboard by selecting the **Hamburger Menu** and clicking **MyServices Dashboard**.
 
@@ -154,7 +154,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
   ![](images/100/18.png)
 
-### **STEP 2**: Create VM Template for Job Execution
+### **Task $1: 2**: Create VM Template for Job Execution
 
 - First though you must create a Virtual Machine template. From the same Nav-bar you selected **OCI Connection**, select **Virtual Machine Templates**.
 
@@ -184,7 +184,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
     ![](images/100/VM_2.png)
 
-### **STEP 3**: Create Developer Cloud Project and Configure Git
+### **Task $1: 3**: Create Developer Cloud Project and Configure Git
 
 - Now that you have several of the tools within Developer Cloud Service setup to handle a project, you can create a project within the service. From the nav-bar select **Projects**. Select **Create**.
 
@@ -218,7 +218,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
   ![](images/100/32.png)
 
-### **STEP 4**: Configure and Run Successful Build Job
+### **Task $1: 4**: Configure and Run Successful Build Job
 
 - You will now see the file structure imported from github on your page, its time to build using your VM template. If the side menu is not open, once more select the hamburger from the top left and select **Builds** and then click on **Create Job**
 

@@ -40,7 +40,7 @@ This all sounds very complicated, but using SQL pattern matching, it is very eas
 First we need to understand how our movies are assigned to genres. In the sales fact table there is foreign key which links the sales data to the genre table. Which means for each movie a customer streams we can identify the genre for that movie.
 
 
-## STEP 1 -  Identifying The Customers Who Watch Family Movies
+## Task 1:  Identifying The Customers Who Watch Family Movies
 
 We can find the customers who watched at least 1 family genre movie during a quarter by using the SQL pattern matching feature: **`MATCH_RECOGNIZE`**. This is a very powerful feature and it's worth spending some time reviewing the simple stick ticker example in the documentation: [click here](https://docs.oracle.com/en/database/oracle/oracle-database/21/dwhsg/sql-pattern-matching-data-warehouses.html#GUID-136DAC89-DA17-45C6-9E37-C9892723AC79).
 
@@ -89,7 +89,7 @@ This means that the pattern 'family' looks for movies where the genre is set to 
 
 This shows that we have over 495,450 customers that match this pattern which is too many for the marketing team's project. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
 
-## STEP 2 -  Returning More Information About The Pattern
+## Task 2:  Returning More Information About The Pattern
 
 The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*):
 
@@ -138,7 +138,7 @@ The pattern matching process can return information about the pattern it has dis
 
     ![Result of expanded query](images/lab-5d-step-2-substep-2.png)
 
-## STEP 3 - Searching For Family And Family-Related Movies
+## Task 3: Searching For Family And Family-Related Movies
 
 Now that we understand how our pattern matching query is working, we can extend the pattern search criteria to include additional family-related genres by simply expanding the definition of our pattern as follows:
 
@@ -181,7 +181,7 @@ Now that we understand how our pattern matching query is working, we can extend 
 
 Before we do any more work on this query, we should check-in with our marketing team to see if this number is within the range they were expecting.
 
-## STEP 4 - Changing Requirements
+## Task 4: Changing Requirements
 
 A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list needs more tweaking. Ideally, they want to target a much smaller list of customers with the first round of this campaign and they need to find customers who like sci-fi movies! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies! 
 
@@ -258,14 +258,14 @@ How can you adapt the previous query to pick out those customers that really enj
 
     ![Query result showing much smaller list of customers](images/lab-5d-step-4-substep-4.png)
 
-## STEP 5 - Job Done
+## Task 5: Job Done
 
 1. The marketing team is happy with this smaller list of customers, which means the last step is to share the results with our marketing team. We can simply send them a file by using the  **Download**  feature on the  **Query Result**  panel.
 
     ![ALT text is not available for this image](images/lab-5d-step-5-substep-1.png)
 
 
-## STEP 6 - What About Movies With Multiple Genres?
+## Task 6: What About Movies With Multiple Genres?
 The above examples have used a very simple business rule - each movie has a single genre. In reality, each movie probably belongs to multiple genres. For example we might categorize Star Wars: Episode IV – A New Hope as being a family, comedy, sci-fi film! Therefore, our pattern matching SQL needs to deal with this situation. Within the MOVIE table each film is assigned multiple categories:
 
 1. Let's view the movie dimension table:

@@ -29,7 +29,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 In this section you will connect the SQL Developer to the ADW instance that you provisioned in Lab 100.
 
 
-### **STEP 1: Download the Connection Wallet**
+### **Task 1: Download the Connection Wallet**
 As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page.
 
 -   Go back to the Cloud Console and open the Instances screen. Find your database, click the action menu and select **DB Connection**.
@@ -45,7 +45,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/200/Picture200-16.jpg)
 
-### **STEP 2: Connect to the database using SQL Developer**
+### **Task 2: Connect to the database using SQL Developer**
 Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 
 -   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
@@ -80,7 +80,7 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 ## Part 2. Load Datasets to the ADW Instance
 
-### **STEP 3: Load Datasets to the ADW Instance**
+### **Task 3: Load Datasets to the ADW Instance**
 
 -   Use the SQLDeveloper to import the [station_info.csv](./files/datasets/station_info.csv) dataset to a table (Station_Info) in the database.
 
@@ -88,7 +88,7 @@ example, if you the database you created was named adwfinance, select adwfinance
 
 
 
-### **STEP 4: Grant Privileges to the OML User to Access Datasets**
+### **Task 4: Grant Privileges to the OML User to Access Datasets**
 In order to avoid running into an access error when you run the code in OML, grant all privleges to the OML user for the tables you created in the database.
 
 -   Under your connection in the SQL Developer, right-click on **Station_Info** table, select **Privileges** and then select **Grant**.
@@ -105,7 +105,7 @@ In order to avoid running into an access error when you run the code in OML, gra
 
 
 
-### **STEP 5: Prepare the Data for Training ML Models in OAC**
+### **Task 5: Prepare the Data for Training ML Models in OAC**
 
 -   Copy and paste the code snipper in [data_prep.sql](./files/scripts/data_prep.sql) file to your SQL Developer worksheet and run the script. This code prepares the portion of data that you will need for training an ML model in OAC .
 

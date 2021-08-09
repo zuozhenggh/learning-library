@@ -18,7 +18,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Deploying the Application to the Oracle Application Cloud Service Instance
 
-### **STEP 1**: Preparing the WAR file to be Deployed
+### **Task $1: 1**: Preparing the WAR file to be Deployed
 - Click Application tab and open Terminal. 
   
     ![](images/200/Terminal.png)
@@ -54,7 +54,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
   Note: You can find generated war file as follows. 
     ![](images/200/Summary.png)
 
-### **STEP 2**: Uploading the war file to the  Application Container Cloud Service
+### **Task $1: 2**: Uploading the war file to the  Application Container Cloud Service
 
 - Log into Oracle Cloud (https://cloud.oracle.com/en_US/sign-in). From Action Menu in the Application Container, select Open Service Control.
   
@@ -78,7 +78,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Verifying the Application Deployment
 
-### **STEP 1**: Verification
+### **Task $1: 1**: Verification
 
 - After Application Container Cloud Service Instance is created, click the link.
 
@@ -92,7 +92,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ![](images/200/10_1.png) 
 
-### **STEP 2**: Scale instance in the Application Container Cloud Service
+### **Task $1: 2**: Scale instance in the Application Container Cloud Service
 
 - Click overview tab inside AlphaOfficeProductCatalog instance.
 

@@ -5,7 +5,7 @@ In this lab, you will learn how to improve a calendar and link an existing page 
 
 Estimated Time: 5 minutes
 
-## **STEP 1** - Improving the Calendar
+## Task 1: Improving the Calendar
 The **Calendar** page currently displays the project, rather than the task name, and only shows the start date, instead of displaying duration-based events.
 
 1. In the runtime environment, click **Calendar**.
@@ -39,7 +39,7 @@ The **Calendar** page currently displays the project, rather than the task name,
 
     ![](images/upd-calendar2.png " ")
 
-## **STEP 2** - Linking the Calendar
+## Task 2: Linking the Calendar
 When you click on a calendar entry then it shows event details. It would be far better to link to the Project Task form page and allow end users to update the details.
 
 1. Navigate to the App Builder, and ensure Page Designer is displayed with Page 6 selected.

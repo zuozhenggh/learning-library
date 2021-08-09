@@ -1,11 +1,11 @@
 # Lab 100: Setup the local (on-premises) environment
 
-## Introduction: 
+## Introduction:
 
 This 30 mins lab walks you through setting up your local environment. Please see Requirements to get the code and the required Docker images.
 
 
-## Step 1) Start the local environment
+## Task 1: Start the local environment
 
 To startup the local environment stack that will simulate our 'on-premises' environment, run:
 ```
@@ -14,7 +14,7 @@ cd on-prems-setup
 docker-compose up -d
 </copy>
 ```
-This step can take several minutes because some images need to be built. 
+This step can take several minutes because some images need to be built.
 
 If you get an error message like:
 ```
@@ -24,7 +24,7 @@ This means you have not accepted the *Terms and Condition* for the specific imag
 
 Go to the appropriate registry and image page, and go through the acknowledgement steps, and/or pull the image as indicated above.
 
-## Step 2)  Check the local environment is up and running
+## Task 1:  Check the local environment is up and running
 
 **It may take several minutes for the domain to be up and running**, because the weblogic container waits for the database to be ready, and the schemas to be created. Be patient.
 
@@ -60,7 +60,7 @@ docker logs -t on-prems-setup_oracledb_1
 </copy>
 ```
 
-Before proceeding, make sure the local environment has been deployed properly and is running. 
+Before proceeding, make sure the local environment has been deployed properly and is running.
 
 ![](./images/localhost-admin-console.png)
 
@@ -71,9 +71,9 @@ It shows statistics of riders of the Tour de France stored in the database, and 
 
 ![](./images/localhost-simpledb-app.png)
 
-## Step 3) Create a SSH key
+## Task 1: Create a SSH key
 
-We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources. 
+We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 
 Since we'll be running all our commands from docker containers, a folder has been mounted on the `~/.ssh/` folder inside both containers, so that it is shared and also accessible from the outside.
 
@@ -103,5 +103,3 @@ and just hit `Enter` (default) for all the prompts
    Note this key will be the default SSH key from within either docker container used for the on-premises environment. If you wanted to SSH to the OCI resources from outside the container, you will need to supply the private key as the identity file in the ssh command, with the `-i <path-to-id_rsa>/id_rsa`
 
 **Note:** This is only to be done once. If you run it again, a new key will overwrite the previous one and you will lose access to any resource provisioned with that key.
-
-

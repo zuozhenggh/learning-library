@@ -5,7 +5,7 @@ To learn more about this workshop please watch the video below.
 
 [![Watch Workshop Overview](images/oraclecode/youtube.png)](https://youtu.be/9n8JMlvjFiw)
 
-### **Step 1**: Acquire an Oracle Cloud Trial or Workshop Account
+### **Task $1: 1**: Acquire an Oracle Cloud Trial or Workshop Account
 
 - The Lab documentation is **best viewed** by using the Workshop's [GitHub Pages site](https://oracle.github.io/learning-library/workshops/container-native-development-with-oke/).
 
@@ -17,7 +17,7 @@ To learn more about this workshop please watch the video below.
 
   ![](images/oraclecode/code_9.png)
 
-### **Step 2**: Navigate to Lab 100
+### **Task $1: 2**: Navigate to Lab 100
 
 - You may proceed to Lab 100
 

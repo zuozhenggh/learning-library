@@ -37,11 +37,11 @@ On the other hand, containers include the application and all of its dependencie
 
 **Note:** At this time, Windows and Linux containers require that they run on their respective kernel base. Therefore, Windows containers cannot run on Linux hosts and vice versa.
 
-## **STEP 1**: Your Oracle Cloud Account
+## **Task $1: 1**: Your Oracle Cloud Account
 
 - You have already applied for and received your Oracle Cloud Free Tier Account and will change the default password...
 
-## **STEP 2**: Log in to your account
+## **Task $1: 2**: Log in to your account
 
 - Once you receive the **Your Cloud Account is fully provisioned** Email, make note of your **Username and Cloud Account Name**. *`Note: Usernames are usually your email address.`* You can login by clicking the Sign In button or access it from any browser.
 
@@ -67,7 +67,7 @@ On the other hand, containers include the application and all of its dependencie
 
   **NOTE**: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-## **STEP 3**: Create a Compartment
+## **Task $1: 3**: Create a Compartment
 
 Compartments are used to isolate resources within your OCI tenant. User-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
@@ -87,7 +87,7 @@ Compartments are used to isolate resources within your OCI tenant. User-based ac
 
   ![](images/compartment-created.png " ") 
 
-## **STEP 4**: Create a Virtual Cloud Network
+## **Task $1: 4**: Create a Virtual Cloud Network
 
 We need a default VCN to define our networking within the `Demo` compartment or the name you used for your compartment. This is where Subnets and Security Lists, to name a couple get defined for each Availability Domains in your Tenancy. Oracle Cloud Infrastructure is hosted in regions and availability domains. A region is a localized geographic area, and an availability domain is one or more data centers located within a region. A region is composed of several availability domains. Availability domains are isolated from each other, fault tolerant, and very unlikely to fail simultaneously. Because availability domains do not share infrastructure such as power or cooling, or the internal availability domain network, a failure at one availability domain is unlikely to impact the availability of the others.
 
@@ -116,7 +116,7 @@ All the availability domains in a region are connected to each other by a low la
 
   ![](images/050Linux/13u1.PNG " ")
 
-## **STEP 5**: Add a Security List entry
+## **Task $1: 5**: Add a Security List entry
 
 A security list provides a virtual firewall for an instance, with ingress and egress rules that specify the types of traffic allowed in and out. Each security list is enforced at the instance level. However, you configure your security lists at the subnet level, which means that all instances in a given subnet are subject to the same set of rules. The security lists apply to a given instance whether it's talking with another instance in the VCN or a host outside the VCN.
 
@@ -153,7 +153,7 @@ For the purposes of the upcoming Docker deployments we need to add five Ingress 
 
   ![](images/050Linux/Linux050-a84ef9f4.png " ")
 
-## **STEP 6**: Create SSH Key Pair (Linux or Mac client)
+## **Task $1: 6**: Create SSH Key Pair (Linux or Mac client)
 
 Before we create the Compute instance that will contain Docker and application deployments we need to create an SSH key pair so we'll be able to securely connect to the instance and do the Docker installation, etc.
 
@@ -173,7 +173,7 @@ Before we create the Compute instance that will contain Docker and application d
 
   ![](images/050Linux/25-4.PNG " ")
 
-## **STEP 7**: Create SSH Key Pair (Windows client)
+## **Task $1: 7**: Create SSH Key Pair (Windows client)
 
 For Windows clients this example will show the use of PuttyGen to generate the keypair. [Putty and PuttyGen](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) are available for download.
 
@@ -193,7 +193,7 @@ For Windows clients this example will show the use of PuttyGen to generate the k
 
   ![](images/050Linux/25-2.PNG " ")
 
-## **STEP 8**: Create a Compute Instance
+## **Task $1: 8**: Create a Compute Instance
 
 You will now create a Linux based Compute instance using the public key you just generated.
 
@@ -237,7 +237,7 @@ You will now create a Linux based Compute instance using the public key you just
 
   ![](images/050Linux/30.PNG " ")
 
-## **STEP 9**: SSH into the Instance
+## **Task $1: 9**: SSH into the Instance
 
 You will need to SSH into the Compute image before you can install Docker and Git.
 
@@ -271,7 +271,7 @@ You will need to SSH into the Compute image before you can install Docker and Gi
     ```
     ![](images/050Linux/37.PNG " ")
 
-## **STEP 10**: Install and configure Docker and Git
+## **Task $1: 10**: Install and configure Docker and Git
 
 Docker and Git are required for the subsuquent labs. You will install the Docker engine, enable it to start on re-boot, grant docker privledges to the `opc` user and finally install Git.
 
@@ -317,7 +317,7 @@ Docker and Git are required for the subsuquent labs. You will install the Docker
 
   ![](images/050Linux/41.PNG " ")
 
-## **STEP 11**: Edit /etc/sysconfig/selinux
+## **Task $1: 11**: Edit /etc/sysconfig/selinux
 
 Set the server to Permissive mode and also ensure that permissive mode survives re-boots by editing `/etc/sysconfig/selinux`
 
