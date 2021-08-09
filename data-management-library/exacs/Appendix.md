@@ -316,7 +316,7 @@ If you backed up your Exadata database using bkup\_api, you can manually restor
 
 In this section you will be provisioning a database on Oracle Cloud Infrastructure using the Cloud Console.
 
-### **Task $1:s**
+### Tasks
 
 #### **Task 1: Sign in to Oracle Cloud Infrastructure console**
 
