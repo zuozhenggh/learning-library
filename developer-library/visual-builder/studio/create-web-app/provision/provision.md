@@ -1,9 +1,8 @@
-# Provision Instances
+# Provision Instances and Set Up Your Cloud Environment
 
 ## Introduction
 
 This lab walks you through the process of provisioning a Visual Builder Studio instance and a separate Visual Builder instance, assuming you don't already have both available to you. If you do, you can skip this lab and move on to the next one.
-
 
 Estimated Lab Time: 20 minutes
 
@@ -66,7 +65,7 @@ Provision a service instance of Visual Builder Studio to design and develop your
 
 ## **Task 3:** Set Up the OCI Account
 
-To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up the OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This also allows you to organize VB Studio resources better because they aren't mixed with your other resources.
+To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up the OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
 
 1. Return to your Oracle Cloud console and click the menu in the upper left corner.
 
@@ -78,12 +77,12 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
        b. Click **Create Compartment**.
        ![](./images/oci_compartments_create.png)
 
-       c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the root compartment. Click **Create Compartment**.
+       c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
        ![](./images/oci_compartments_create_details.png)
 
 3. Create a local user to access the compartment you've created.
 
-      a. From the navigation menu, select **Identity & Security**, then under **Identity**, select **Users**.
+      a. In the navigation menu, select **Identity & Security**, then under **Identity**, select **Users**.
       ![](./images/oci_users.png)
 
       b. Click **Create User**.
@@ -140,14 +139,14 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
     b. Scroll down and click **API Keys**, then click **Add Public Key**.
        ![](./images/oci_add_public_api_key.png)
 
-    c. Click **Paste Public Key** and paste the **oci.api.key.public.pem** that you copied. Click **Add**, then **Close**.
+    c. Click **Paste Public Key** and paste the contents of the public key that you copied. Click **Add**, then **Close**.
        ![](./images/oci_paste_public_api_key.png)
 
 ## **Task 4:** Get OCI Credentials
 
-Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compartment and user, as well as other details of your environment—all of which you can get from the Oracle Cloud console.
+Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compartment and user, as well as other details of your environment. You can get all this information from the Oracle Cloud console.
 
-1. First, let's retrieve the **Tenancy OCID**, **Home Region**, and **Storage Namespace**. In the Oracle Cloud menu, select **Governance & Administration**, then under **Account Management**, select **Tenancy Details**.
+1. First, let's retrieve the Tenancy OCID, Home Region, and Storage Namespace. In the navigation menu, select **Governance & Administration**, then under **Account Management**, select **Tenancy Details**.
 
    ![](./images/oci-credentials.png)
 
@@ -155,7 +154,7 @@ Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identi
 
    ![](./images/oci-credentials-tenancydetails.png)
 
-   Now, let's retrieve the **User OCID** and **Fingerprint**.
+   Now, let's retrieve the User OCID and Fingerprint.
 
 3. Click the navigation menu again and select **Identity & Security**. Under **Identity**, select **Users**.
 
@@ -173,7 +172,7 @@ Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identi
 
    ![](./images/oci-credentials-user-fingerprint.png)
 
-7. Now let's get the Compartment OCID. In the left navigation menu, select **Identity & Security**, then **Compartments** under **Identity**.
+7. Now let's get the Compartment OCID. In the navigation menu, select **Identity & Security**, then **Compartments** under **Identity**.
    ![](./images/oci_compartments.png)
 
 8. On the Compartments page, click **VBStudioCompartment**.
@@ -193,9 +192,12 @@ With all the necessary information copied, connect your VB Studio instance to th
 
 2. Use the information you've copied to fill out the Configure OCI Account page.
 
-   You can leave the Passphrase field empty because we generated the private-public key without a passphrase.
+    - You can leave the Passphrase field empty because we generated the private-public key without a passphrase.
+    - When you enter a private key, the Fingerprint field is automatically populated. Check whether this value matches the fingerprint value that you previously copied. If it doesn't, update it to enter the correct value.
 
 3. Select the Visual Builder Studio Requirements box, click **Validate**, then **Save**.
+
+   ![](./images/oci_account.png)
 
 You are now ready to create a project and run builds in VB Studio.
 
