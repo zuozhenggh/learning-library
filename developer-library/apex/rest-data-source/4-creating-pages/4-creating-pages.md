@@ -5,7 +5,7 @@ In this lab, you will learn how to utilize REST Data Sources as the basis for cr
 
 Estimated Time: 15 minutes
 
-## **Task $1: 1** – Use the Create Page Wizard
+## Task 1: Use the Create Page Wizard
 
 1. Return to the Application Home Page.     
     Click **Create Page**.
@@ -46,7 +46,7 @@ Estimated Time: 15 minutes
 
     ![](images/set-pk.png " ")
 
-## **Task $1: 2** – Improve the Report
+## Task 2: Improve the Report
 The default column order will not be optimal when the page is generated. You can readily reorder the columns and save the report layout.
 
 1. From Page Designer, click the **Save and Run** button in the top right.
@@ -84,7 +84,7 @@ The default column order will not be optimal when the page is generated. You can
 
     ![](images/save-primary.png " ")
 
-## **Task $1: 3** – Update the Form Page
+## Task 3: Update the Form Page
 The form page for editing records also needs some improvement.
 
 1. Click the edit icon on a row.
@@ -148,7 +148,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/save.png " ")
 
-## **Task $1: 4** – Insert a Record
+## Task 4: Insert a Record
 
 1. Navigate back to the Runtime environment.
 
@@ -177,7 +177,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/show-insert.png " ")
 
-## **Task $1: 5** – Update a Record
+## Task 5: Update a Record
 
 1. On the Employees report page, find **BLAKE**, and click the edit icon.
 
@@ -194,7 +194,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/show-update.png " ")
 
-## **Task $1: 6** – Delete a Record
+## Task 6: Delete a Record
 
 1. On the Employees report page, find **TURNER**, and click the edit icon.
 

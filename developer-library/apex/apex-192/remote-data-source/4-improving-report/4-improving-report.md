@@ -14,7 +14,7 @@ If you then subtract the Dollar Exchange Rate from the relative exchange rate, a
 While this is not an exact determination of if a currency is overvalued or undervalued against the US Dollar, it is a good approximation using a product which is generally available in most
 countries.
 
-## **Task $1: 1** – Update the Report Query
+## Task 1: Update the Report Query
 When the application was generated it utilized the standard table columns. By converting it to a SQL Query and updating the SQL you can include the relative exchange rate to make it easier for people to review the data.
 
 1. From Object Browser, in the APEX Builder Toolbar, click **App Builder**, and then select **Database Applications**.  
@@ -58,7 +58,7 @@ When the application was generated it utilized the standard table columns. By co
 
     *Note: The _gdp\_dollar_ column was removed as it is not needed. The inner select is used to get the US price for the same date, in order to calculate the relative exchange rate.*
 
-## **Task $1: 2** – Update the Report Columns
+## Task 2: Update the Report Columns
 Individual report columns need a better format mask to properly display the data.
 
 1. In the Rendering tree (left pane), click **Columns**.
@@ -80,7 +80,7 @@ Individual report columns need a better format mask to properly display the data
     In the Pick Format Mask dialog, select **5,234.1000**.
 
 
-## **Task $1: 3** – Remove Data Entry Components
+## Task 3: Remove Data Entry Components
 Given the data is obtained from an external source (The Economist REST API) users of the application should not update or delete existing records, and should not create new records.
 
 1. Remove the edit icon so end users cannot update or delete records.
@@ -112,7 +112,7 @@ Given the data is obtained from an external source (The Economist REST API) user
 
     *Note: Page Designer will return to displaying Page 1: Home.*
 
-## **Task $1: 4** – Resequence the Report Columns
+## Task 4: Resequence the Report Columns
 To resequence the order in which the columns are displayed you need to run the report, and then rearrange the column order in the runtime environment.
 
 1. In the Page Designer Toolbar, click **Save and Run**.
@@ -127,7 +127,7 @@ To resequence the order in which the columns are displayed you need to run the r
 
     ![](images/move-columns.png " ")
 
-## **Task $1: 5** – Add a Computation
+## Task 5: Add a Computation
 Rather than adding an additional column to the SQL Query for the region, it is also possible to define computational columns from the runtime environment.
 
 The report contains the Dollar Exchange Rate and Relative Exchange Rate columns. If you subtract the Dollar Exchange Rate from the Relative Exchange Rate and then divide that by the Dollar Exchange Rate, you can calculate the valuation of the currency. It is best to display this as a percentage by multiplying the result by 100.
@@ -150,7 +150,7 @@ The report contains the Dollar Exchange Rate and Relative Exchange Rate columns.
 
     *Note: F references Dollar Exchange Rate and I references Relative Exchange Rate as listed under Columns.*
 
-## **Task $1: 6** – Save the Report
+## Task 6: Save the Report
 Currently the changes you have made in the runtime environment can only be seen by you. Further, if you were to log out of the runtime environment and log back in your changes would be lost. In order for everyone to see the revised report you need to save the report as the "Primary" report.
 
 1. In the runtime environment, click **Actions**, select **Report**, then click **Save Report**.
