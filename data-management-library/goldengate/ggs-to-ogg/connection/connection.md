@@ -54,7 +54,7 @@ The following instructions show you how to download the Root Certificate using a
 
 A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
 
-## **Task $1: 1B:** Using FireFox to Download the Root Certificate
+## Task 1B: Using FireFox to Download the Root Certificate
 
 The following instructions show you how to download the Root Certificate using a FireFox web browser.
 
