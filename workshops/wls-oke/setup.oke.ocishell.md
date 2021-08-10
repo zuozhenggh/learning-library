@@ -25,11 +25,11 @@ During this lab, you will Create Oracle Container Engine for Kubernetes (OKE) on
 
 - **Works better with the Chrome browser**.
 
-## **Task $1: 1**: Open the OCI console   
+## Task 1: Open the OCI console   
 
 - If you already opened the OCI console you can proceed step 2. Otherwise, open the OCI console.
 
-## **Task $1: 2**: Create a Compartment for your Kubernetes nodes
+## Task 2: Create a Compartment for your Kubernetes nodes
 
 Compartments are used to isolate resources within your OCI tenant. Role-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
@@ -46,7 +46,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
     ![](images/2/003.png " ")
 
 
-## **Task $1: 3**: Create a policy 
+## Task 3: Create a policy 
 A service policy allows OKE to create resources in your tenancy, such as compute. An OKE resource policy or policies let you specify which groups in your tenancy can perform certain tasks with the OKE API.
 
 Optionally, create more resource policies if you want to control which groups can access different parts of the OKE service.
@@ -71,7 +71,7 @@ Click **Create**.
 
 ![alt text](images/oke/006.create.oke.policy.png)
 
-## **Task $1: 3**: Create an OKE cluster 
+## Task 3: Create an OKE cluster 
 
 The *Quick Create* feature uses the default settings to create a *quick cluster* with new network resources as required. This approach is the fastest way to create a new cluster. If you accept all the default values, you can create a new cluster in just a few clicks. New network resources for the cluster are created automatically, along with a node pool and three worker nodes.
 
@@ -115,7 +115,7 @@ You see the network resources being created for you.
 
 Click **Close** and the new cluster is shown on the *Cluster Details* page. When it has been created, the new cluster has a status of *Active*.
 
-## **Task $1: 4**:  OCI Cloud Shell 
+## Task 4:  OCI Cloud Shell 
 
 Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal, accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools (*Git, kubectl, helm, OCI CLI*) to complete the operator tutorials. Cloud Shell is accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
 
@@ -129,7 +129,7 @@ Wait a few seconds for the Cloud Shell to appear.
 
 You can minimize and restore the terminal size at any time.
 
-## **Task $1: 5**: Configure kubectl
+## Task 5: Configure kubectl
 
 Your Cloud Shell comes with the OCI CLI pre-authenticated, so there’s no setup to do before you can start using it.
 
@@ -159,7 +159,7 @@ If you see the node's information, then the configuration was successful.
 
 ![alt text](images/oke/024.ocishell.config.complete.png)
 
-## **Task $1: 6**:  Set up the RBAC policy for the OKE cluster 
+## Task 6:  Set up the RBAC policy for the OKE cluster 
 
 In order to have permission to access the Kubernetes cluster, you need to authorize your OCI account as a cluster-admin on the OCI Container Engine for Kubernetes cluster. This will require your user OCID.
 

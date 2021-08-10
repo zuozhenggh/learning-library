@@ -27,7 +27,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Task $1: 1**: title
+## Task 1: title
 
 Step 1 opening paragraph.
 

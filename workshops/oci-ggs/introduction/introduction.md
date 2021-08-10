@@ -36,7 +36,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Task $1: 1**: Set up the Oracle Cloud Infrastructure GoldenGate Environment
+## Task 1: Set up the Oracle Cloud Infrastructure GoldenGate Environment
 
 Step 1 opening paragraph.
 

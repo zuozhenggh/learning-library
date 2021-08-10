@@ -20,7 +20,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Task $1: 1**: Verify the Oracle Database Details
+## Task 1: Verify the Oracle Database Details
 
 Ensure that the database is running and that you can connect to it.
 

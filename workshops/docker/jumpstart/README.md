@@ -70,7 +70,7 @@ Once the infrastructure is provisioned you can access your enironment using `VNC
   ![](images/000JumpStart/JS7.PNG)
 
 
-### **Task $1: 1**: Start VNC Viewer
+### Task 1: Start VNC Viewer
 
 Using VNC Viewer to connect to your provisioned account.
 
@@ -92,7 +92,7 @@ Using VNC Viewer to connect to your provisioned account.
 
   ![](images/000JumpStart/JS11.PNG)
 
- ### **Task $1: 2**: Run the AlphaOffice Application
+ ### Task 2: Run the AlphaOffice Application
 
 - Click the **Applications** tab and select **Firefox Web Browser**.
 
@@ -112,7 +112,7 @@ Using VNC Viewer to connect to your provisioned account.
 
 - **Minimize the browser**. Later in this Lab, you make a change to the application and return to this page to see your change.
 
-### **Task $1: 3**: Run Docker Commands
+### Task 3: Run Docker Commands
 
 Run some Docker commands to explore details about the installation and the AlphaOffice containers.
 
@@ -213,7 +213,7 @@ Run some Docker commands to explore details about the installation and the Alpha
 
   ![](images/000JumpStart/JS23.PNG)  
 
-### **Task $1: 4**: Make changes to the AlphaOffice application
+### Task 4: Make changes to the AlphaOffice application
 
 In this step, you make a couple of changes to the AlphaOfficeUI application. One will correct a typo and another will change the background image. The tasks you follow in this step are as follows:
 
@@ -224,7 +224,7 @@ In this step, you make a couple of changes to the AlphaOfficeUI application. One
 - Save (docker commit) a copy of the changes to a NEW docker image
 - Start up and test the AlphaOfficeUI container using the NEW image
 
-#### **Task $1: 4a**: Copy a New Background Image
+#### Task 4a: Copy a New Background Image
 
 Copy a background image file into the running AlphaOfficeUI container. This file is in the `/home/opc/AlphaOfficeSetup` directory.
 
@@ -238,7 +238,7 @@ Copy a background image file into the running AlphaOfficeUI container. This file
 
   Example: `docker cp /home/opc/AlphaOfficeSetup/dark_blue.jpg alphaofficeui:/pipeline/source/public/Images`
 
-#### **Task $1: 4b**: Install the VIM editor in the UI container
+#### Task 4b: Install the VIM editor in the UI container
 
 Even though the original AlphaOfficeUI image could have been set up ahead of time with any needed client tools you will install it now.
 
@@ -264,7 +264,7 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
 
   ![](images/000JumpStart/Picture200-28.1.png)
 
-#### **Task $1: 4c**: Edit the alpha.html file   
+#### Task 4c: Edit the alpha.html file   
 
 - Edit the `alpha.html` file to fix a typo - Note, if you are unfamiliar with `vim`, you will find information at this URL: [VIM](http://vimsheet.com). The commands are very similar to vi.
 
@@ -278,7 +278,7 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
 
 - Save the file and exit by hitting the **ESC** key and then holding the **SHIFT** key down and typing "**Z**" TWICE
 
-#### **Task $1: 4d**: Edit the alpha.css file
+#### Task 4d: Edit the alpha.css file
 
 - **Type** the following:
 
@@ -298,7 +298,7 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
   exit
   ```
 
-#### **Task $1: 4e**: Commit a NEW Docker image
+#### Task 4e: Commit a NEW Docker image
 
 - Save a copy of your modifed docker container and give it a new name. (**NOTE:** You're back out in the HOST now). You can assign whatever <`image-name`> you want.
 **NOTE:** \<image-name> must be in lower case.
@@ -321,7 +321,7 @@ Even though the original AlphaOfficeUI image could have been set up ahead of tim
 
   ![](images/000JumpStart/Picture200-31.png)
 
-#### **Task $1: 4f**: Start a container based on your new image
+#### Task 4f: Start a container based on your new image
 
 **Stop** and **remove** the currently running AlphaOfficeUI container. Then, start a new container based on your changes.
 

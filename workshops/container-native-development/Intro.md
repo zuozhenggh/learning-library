@@ -7,7 +7,7 @@ To learn more about this workshop please watch the video below.
 
 <a href="https://youtu.be/9n8JMlvjFiw" target="\_video">Workshop Overview</a>
 
-### **Task $1: 1**: Acquire an Oracle Cloud Trial or Workshop Account
+### Task 1: Acquire an Oracle Cloud Trial or Workshop Account
 
 - Bookmark this page for future reference.
 
@@ -19,7 +19,7 @@ To learn more about this workshop please watch the video below.
 
 
 
-### **Task $1: 2**: Navigate to Lab 100
+### Task 2: Navigate to Lab 100
 
 - _You can see a list of Lab Guides_ by clicking on the **Menu Icon** in the upper left corner of the browser window. You're now ready to continue with **Lab 100**.
 

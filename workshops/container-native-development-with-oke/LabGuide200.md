@@ -31,7 +31,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Set Up Oracle Cloud Infrastructure
 
-### **Task $1: 1**: Log in to your OCI dashboard
+### Task 1: Log in to your OCI dashboard
 
 - If you are using a Trial Account, **you must wait until you receive this email** indicating that your Cloud Account has been provisioned. _Please note that this email may arrive in your spam or promotions folder pending your email settings._
 
@@ -56,7 +56,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 **NOTE**: If you have used your trial account already, you may have been prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
 
-### **Task $1: 2**: Create a Compartment for your Kubernetes nodes
+### Task 2: Create a Compartment for your Kubernetes nodes
 
 Compartments are used to isolate resources within your OCI tenant. Role-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
@@ -72,7 +72,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/LabGuide200-2b3b6b30.png)
 
-### **Task $1: 3**: Add a Policy Statement for OKE
+### Task 3: Add a Policy Statement for OKE
 
   - Before the Oracle managed Kubernetes service can create compute instances in your OCI tenancy, we must explicitly give it permission to do so using a policy statement. From the OCI Console navigation menu, choose **Identity->Policies**.
 
@@ -94,7 +94,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
     ![](images/200/LabGuide200-bd5bcbd1.png)
 
-### **Task $1: 4**: Provision Kubernetes Using the OCI Console
+### Task 4: Provision Kubernetes Using the OCI Console
 
   - Now we're ready to create our Kubernetes cluster. From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**.
 
@@ -124,7 +124,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
   - Click **Create**. You will be brought to the cluster detail page. Your cluster will take a while to provision, so let's use this time to create a cloud VM that we can use to manage our cluster using the command line.
 
 
-### **Task $1: 5**: Prepare Token using Cloud Shell
+### Task 5: Prepare Token using Cloud Shell
 
   - From the OCI Console navigation menu, select **Developer Services->Container Clusters (OKE)**, then click the name of your cluster, **cluster1**
 
@@ -224,7 +224,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   - In order to interact with your cluster and view the dashboard, you will need to install the Kubernetes command line interface, `kubectl`. We will do that next.
 
-### **Task $1: 6**: Install and Test kubectl on Your Local Machine
+### Task 6: Install and Test kubectl on Your Local Machine
 
 - The method you choose to install `kubectl` will depend on your operating system and any package managers that you may already use. The generic method of installation, downloading the binary file using `curl`, is given below (**run the appropriate command in a terminal or command prompt**). If you prefer to use a package manager such as apt-get, yum, homebrew, chocolatey, etc, please find the specific command in the [Kubernetes Documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
@@ -386,7 +386,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ## Configure and Run Wercker Deployment Pipelines
 
-### **Task $1: 7**: Define Kubernetes Deployment Specification
+### Task 7: Define Kubernetes Deployment Specification
 
 - From a browser, navigate to your forked twitter-feed repository on GitHub. If you've closed the tab, you can get back by going to [GitHub](https://github.com/), clicking the **Repositories** tab at the top of the page, and clicking the **twitter-feed-oke** link.
 
@@ -461,7 +461,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   - Since you've committed to the repository, Wercker will trigger another execution of your workflow. We haven't defined the deployment pipelines yet, so this will just result in a new entry in Wercker's Runs tab and a new image pushed to the container registry. You don't need to do anything with those; you can move on to the next step.
 
-### **Task $1: 8**: Define Wercker Deployment Pipelines
+### Task 8: Define Wercker Deployment Pipelines
 
   - Click the file **wercker.yml** and then click the **pencil** button to begin editing the file.
 
@@ -518,7 +518,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Since you've committed to the repository again, Wercker will once again trigger an execution of your workflow. We still haven't configured the deployment pipelines in Wercker yet, so we'll still end up with a new Run and a new image, but not a deployment to Kubernetes.
 
-### **Task $1: 9**: Set up deployment pipelines in Wercker
+### Task 9: Set up deployment pipelines in Wercker
 
 - Open **[Wercker](https://app.wercker.com)** in a new tab or browser window, or switch to it if you already have it open. In the top navigation bar, click **Pipelines**, then click on your **twitter-feed-oke** application.
 
@@ -544,7 +544,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Now we've got our workflow updated with our deployment pipelines, but there's one more thing we need to do before we can actually deploy. We need to set a few environment variables that tell Wercker the address of our Kubernetes master and provide authentication tokens for Wercker to issue commands to Kubernetes and to OCI.
 
-### **Task $1: 10**: Set up environment variables in Wercker
+### Task 10: Set up environment variables in Wercker
 
 
 - Back in your Wercker browser tab, click the **Environment** tab. In the key field of the empty row below the last environment variable,   enter the key **`KUBERNETES_AUTH_TOKEN`**.
@@ -621,7 +621,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 - Now we're ready to try out our workflow from start to finish. We could do that by making another commit on GitHub, since Wercker is monitoring our source code. We can also trigger a workflow execution right from Wercker. We'll see how in the next step.
 
-### **Task $1: 11**: Trigger a retry of the pipeline
+### Task 11: Trigger a retry of the pipeline
 
 - On your Wercker application page in your browser, click the **Runs** tab. Your most recent run should have a successful build pipeline and a failed push-release pipeline. Click the **push-release** pipeline.
 
@@ -635,7 +635,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/200/42.png)
 
-### **Task $1: 12**: Validate deployment
+### Task 12: Validate deployment
 
 - First we will validate that our Docker image is visible in the OCI Registry. In your **OCI Console** browser tab, select **Registry (OCIR)** from the navigation menu, under the Developer Services category.
 
@@ -697,7 +697,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 ## Deploy and Test the Product Catalog Application
 
-### **Task $1: 13**: Download the Product Catalog Kubernetes YAML file
+### Task 13: Download the Product Catalog Kubernetes YAML file
 
 - From a browser, navigate to your forked twitter-feed repository on GitHub. If you've closed the tab, you can get back by going to [GitHub](https://github.com/), clicking the **Repositories** tab at the top of the page, and clicking the **twitter-feed-oke** link.
 
@@ -713,7 +713,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 **NOTE**: This YAML file contains the configuration for a Kubernetes deployment and service, much like the configuration for our twitter feed microservice. In a normal development environment, the product catalog application would be managed by Wercker as well, so that builds and deploys would be automated. In this workshop, however, you will perform a one-off deployment of a pre-built Docker image containing the product catalog application from within the Kubernetes dashboard.
 
-### **Task $1: 14**: Deploy and test the Product Catalog using the Kubernetes dashboard
+### Task 14: Deploy and test the Product Catalog using the Kubernetes dashboard
 
 - Switch back to your **Kubernetes dashboard** browser tab. If you have closed it, navigate to the Kubernetes dashboard at [**Kubernetes dashboard**](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/)
 
