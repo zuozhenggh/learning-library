@@ -44,7 +44,7 @@ Change the consumer group by simply clicking the downward pointing arrow next to
 ![Select the HIGH consumer group from the pulldown menu.](images/3054194709.png)    
 
 
-## STEP 1 - Exploring Sales Data
+## Task 1: Exploring Sales Data
 
 1. To get started, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
 
@@ -78,7 +78,7 @@ Change the consumer group by simply clicking the downward pointing arrow next to
 
     If you want to understand a little bit more about **result cache**, then continue with STEP 2; otherwise, just jump ahead to **STEP 3 - Analyzing Customer Viewing Habits**.
 
-## STEP 2 - Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
+## Task 2: Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
 
 A result cache is an area of memory within our Autonomous Data Warehouse that stores the results of database queries for reuse. The **cached** rows are shared across queries and sessions. What this means is that when we run a query, the first thing the database does is to search its cache memory to determine whether the result already exists in the result cache. If it does, then the database retrieves the result from memory instead of executing the query. If the result is not cached, then the database executes the query, returns the result and stores the result in the result cache so the next time the query is run, the results can simply be returned from the cache.
 
@@ -163,7 +163,7 @@ But, how do you know if the results from a query are returned from the **result 
 
 Now that we have some insight into how Autonomous Data Warehouse manages queries, let's expand our first query and begin to do some analysis of our sales data.
 
-## STEP 3 - Analyzing Customer Viewing Habits
+## Task 3: Analyzing Customer Viewing Habits
 
 1. Switch back to the tab where SQL Worksheet is running.
 
@@ -188,7 +188,7 @@ Here we are using a built-in function, TO_CHAR, to convert the column 'day', whi
 
     This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue for the days in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
 
-## STEP 4 - Calculating Each Day's Contribution
+## Task 4: Calculating Each Day's Contribution
 
 ### Overview
 
@@ -251,7 +251,7 @@ We are going to extend the **```RATIO_TO_REPORT```** function a little further 
 
     We can see that Monday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Friday** are actually providing the highest levels of contribution across the whole week.  Now let's try to drill down and breakout the data across different dimensions to get some more insight. 
 
-## STEP 5 - Breaking Data Out By Specific Genre
+## Task 5: Breaking Data Out By Specific Genre
 
 Let's expand our focus and consider the types of movies that customers are watching each day. To do this, we can use the **SQL CASE** feature (which is similar to the IF() function in Excel) in conjunction with a count for each genre of movie as follows and examine the ratio of people streaming each genre on each day:
 
@@ -285,7 +285,7 @@ From the data we can see that viewing of Reality-TV related movies is definitely
 
 We are starting to get an interesting picture of our customers' viewing habits during the week. The next stage is to drill into this daily analysis and look at how the daily contributions change within each of the four reporting quarters.
 
-## STEP 6 - Breaking Data Out By Quarter
+## Task 6: Breaking Data Out By Quarter
 
 It's most likely that when you are doing this type of analysis on your own data set, the next most obvious step is to look at the same data over time to see if any other interesting patterns pop out.
 
@@ -328,7 +328,7 @@ It's most likely that when you are doing this type of analysis on your own data 
 
     ![Results with addition of PARTITION BY clause](images/3038282363.png)
 
-## STEP 7 - Creating An Excel-Like Pivot Table
+## Task 7: Creating An Excel-Like Pivot Table
 
 ### Overview
 

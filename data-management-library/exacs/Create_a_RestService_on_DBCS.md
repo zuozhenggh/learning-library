@@ -20,7 +20,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Steps
 
-### **STEP 1: Log into APEX and create a new workspace**
+### **Task 1: Log into APEX and create a new workspace**
 
 - Log into your APEX account using the default workspace.
 

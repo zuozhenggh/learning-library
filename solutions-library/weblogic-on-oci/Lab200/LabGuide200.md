@@ -31,10 +31,10 @@ https://www.oracle.com/
 
 NOTE: You will likely be prompted to change the temporary password listed in the welcome email. In that case, enter the new password in the password field.
 
-These prerequisites only need to be done once to deploy WebLogic stacks. 
+These prerequisites only need to be done once to deploy WebLogic stacks.
 Login to your OCI account
 
-## Step 2. Create a **Vault**
+## Task 2: Create a **Vault**
 
 - Go to **Security -> Vault**
 
@@ -50,7 +50,7 @@ Login to your OCI account
 
    ![](./images/prereq-vault3.png)
 
-## Step 3. Create a **Key** in the vault
+## Task 2: Create a **Key** in the vault
 
 - Once the vault is provisioned, click the vault
 
@@ -64,7 +64,7 @@ Login to your OCI account
 
    ![](./images/prereq-key2.png)
 
-## Step 4. Create a **Secret** for the WebLogic admin password
+## Task 2: Create a **Secret** for the WebLogic admin password
 
 - Once the key is provisioned, click **Secrets**
 
@@ -86,5 +86,3 @@ That is all that's needed to get started.
 
 **Note:**
 If we were migrating a JRF domain (which is not the case here), the Virtual Cloud Network as well as subnets and Security Lists and an Operational Database would need to be provisioned before attempting to provision the WebLogic domain with the Marketplace.
-
-

@@ -29,7 +29,7 @@ Learn how to
 
    ![](images/load-bank-graph-into-memory.png " ")
 
-## **Step 2a**: Alternate and optional step. Import the notebook
+## Task 2a: Alternate and optional step. Import the notebook
 
 The instructions below show you how to create each notebook paragraph, execute it, and modify default visualization settings as needed.  
 If you prefer you can simply **import** the notebook and then execite each paragraph in sequence.   

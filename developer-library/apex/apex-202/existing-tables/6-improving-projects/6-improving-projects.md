@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to use the *Create Page Wizard* to add additional pages to your app. Then, you will link the new page to the existing Card page. You will then learn how to easily manipulate how items are displayed, and finally to create a *Dynamic Action*.
 
-## **STEP 1** - Changing the Cards Region Style
+## Task 1: Changing the Cards Region Style
 Looking at the Projects Card region, you should notice the cards' icons are circle, which could be displayed differently. To change the cards region style, you will utilize **Live Template Options** directly in the runtime environment. You could also make changes from the App Builder; however, it is much easier to make changes as you can see the results.
 
 1. In the runtime environment, click **Projects**.
@@ -21,7 +21,7 @@ Looking at the Projects Card region, you should notice the cards' icons are circ
 
     ![](images/live-template.png " ")
 
-## **STEP 2** - Enhancing Projects Page
+## Task 2: Enhancing Projects Page
 You will notice that the Projects page shows the cards columns based on the current available width. Let's fix the number of grid columns to 4. We will also add the project lead in the subtitle of the card.
 1. In the Developer Toolbar (at the bottom of the runtime environment), click **Edit Page 4**.
     ![](images/enhance-projects-cards-edit-page.png " ")
@@ -33,7 +33,7 @@ You will notice that the Projects page shows the cards columns based on the curr
 3. The Cards Region now show only four projects per row. The Project Lead is added in the subtitle of the card.
     ![](images/enhance-projects-cards-run-page.png " ")
 
-## **STEP 3** - Adding a Form Page
+## Task 3: Adding a Form Page
 Currently there is no way to maintain project records. Therefore, you will use the *Create Page Wizard* to create a form page on the *EBA_PROJECTS* table.
 
 1. Navigate back to the App Builder  by clicking **Application xxxxx** in the Developer Toolbar, or by navigating back to the App Builder browser tab manually.
@@ -74,7 +74,7 @@ Currently there is no way to maintain project records. Therefore, you will use t
     ![](images/columns.png " ")
     *Note: This will create _Page 10: Project_ if you have followed the previous sections correctly. If not Page 10, please repeat Lab 3, and ensure the Interactive Grids for both Milestones and Statuses are created*
 
-## **STEP 4** - Link to Projects Page
+## Task 4: Link to Projects Page
 Now to link this new page to the Project Cards page.    
 *Note: Defining a link for a Card region requires modifying the SQL statement. However, elsewhere in Oracle APEX, defining links is very easy and declarative as you will learn in Lab 7.*
 
@@ -128,7 +128,7 @@ Now to link this new page to the Project Cards page.
 
     ![](images/view-form.png " ")
 
-## **STEP 5** - Update How Items are Displayed
+## Task 5: Update How Items are Displayed
 The way the Status Id, Name, and Project Lead are displayed can be easily improved.
 The **Status Id** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. Therefore, rather than requiring end users to enter a number, you will update the item to be a list of values based on the lookup table. The Name and Project Lead fields should be updated to Text Fields. Lastly, the audit columns (Created, Created By, Updated, Updated by) should be hidden.
 
@@ -175,7 +175,7 @@ The **Status Id** item is a foreign key to the **EBA\_PROJECT\_STATUS** table. T
 
     ![](images/set-hidden.png " ")
 
-## **STEP 6** - Improve the Completed Date
+## Task 6: Improve the Completed Date
 Currently a Completed Date can be entered on any project. However, it would greatly improve data quality to allow the completed date to be entered only if the Status is _COMPLETED_. Implementing such functionality requires JavaScript to dynamically enable / disable the Completed Date item based on the value of Status. Thankfully, as an APEX developer, you don't need to write such JavaScript. You can simply define a *Dynamic Action*, which allows you to declaratively define such client-side interactivity, by specifying the trigger, action, and affected element(s).
 
 1. You need to define the Dynamic Action on the triggering element, which is the Status.        
