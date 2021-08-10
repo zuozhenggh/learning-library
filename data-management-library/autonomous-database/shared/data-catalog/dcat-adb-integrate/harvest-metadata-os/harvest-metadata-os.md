@@ -15,7 +15,7 @@ In this lab, you will:
 * Harvest the data asset.
 * View the harvested data entities.
 
-## **Task 1:** Log in to the Oracle Cloud Console
+## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
