@@ -32,7 +32,7 @@ Watch our short video that explains Lab 3 - Create Oracle Digital Assistant, Lab
 
 [](youtube:kdvjXTMC-PI)
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 10 minutes.
 
 Watch the video below for an overview of the Create Oracle Digital Assistant lab
 [](youtube:-5m8CB3J9fs)
@@ -90,7 +90,7 @@ In this lab, you will:
 
     ![ODA Menu](./images/oda_5_new2.png)
 
-## **STEP 2**: Explore your Digital Assistant
+## **Task 2**: Explore your Digital Assistant
 
 You can always **Watch Videos** on the **Learn** section at the bottom and explore the documentation of Oracle Digital Assistant by following the links on the dashboard.
 

@@ -44,7 +44,7 @@ In this lab, you will:
 
 - This lab assumes you have logged into your to Oracle Cloud account.
 
-## **STEP 1**: Create a new Autonomous Transaction Processing
+## **Task 1**: Create a new Autonomous Transaction Processing
 
 1. Go to the **Autonomous Transaction Processing (ATP)** menu:
 

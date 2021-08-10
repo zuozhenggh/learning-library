@@ -20,9 +20,9 @@ Go to **Digital Assistant Dashboard** as we did on **Lab 3**. As a reminder chec
 
 ![ODA Menu Service Console](./images/oda_lab5_2.png)
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 20 minutes.
 
-## **STEP 1**: Build your first Skill
+## **Task 1**: Build your first Skill
 
 In this workshop, we're starting from scratch. So the first thing you'll do is **create** a new skill.
 
@@ -34,7 +34,7 @@ In this workshop, we're starting from scratch. So the first thing you'll do is *
 
     ![Create Skill](./images/skill_2_2.png)
 
-## **STEP 2**: Import the Custom Component
+## **Task 2**: Import the Custom Component
 
 Import Custom Component is very simple.
 
@@ -73,7 +73,7 @@ Import Custom Component is very simple.
     ![Create Skill](./images/cc_import_6_2.png)
 
 
-## **STEP 3**: Create intents
+## **Task 3**: Create intents
 
 Oracle Digital Assistant's underlying **Natural Language Processing (NLP)** engine doesn't inherently know about the business or task that a skill is supposed to assist with. For the skill to understand what it should react to, you need to define intents and examples (utterances) for how a user would request a specific intent.
 
@@ -91,7 +91,7 @@ Let's create a **Greeting Intent**.
 
     - **Conversation Name**: Greeting
     - **Name**: Greeting
-    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `Hi` and click enter. Wait to be added as part of the intents. Type on the same field `Hello` and wait to be added as before
+    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `Hi` and click enter. Wait to be added as part of the intents. Type on the same field `Hello` and wait to be added as before.
 
     The two **Intents** that you added a few seconds ago will be visible in the page. Check the following screenshot to confirm.
 
@@ -111,7 +111,7 @@ Let's create a **Greeting Intent**.
 
     ![Intent default](./images/intents_5_2.png)
 
-## **STEP 4**: Put everything together
+## **Task 4**: Put everything together
 
 Time to **integrate** your **Custom Component with the Intent** `ListTasks` created before.
 

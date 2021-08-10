@@ -18,9 +18,9 @@ That is exactly what we are going to build.
 
 You can package related **Custom Components** together.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 20 minutes.
 
-## **STEP 1**: Create a Custom Component to integrate with backend services
+## **Task 1**: Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.
 
@@ -28,7 +28,17 @@ Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom co
 
 Ready to create your **Custom Component** scaffolding.
 
-1. Open a **terminal** and type:
+To avoid installing tools on your local computer, we are going to use Cloud Shell. Cloud Shell is a small and free Linux virtual machine with a lot of DevOps tools preinstalled that **Oracle Cloud** offers.
+
+1. Click on the **Cloud Shell** icon on the top-right menu bar from the Oracle Cloud Dashboard.
+    
+    ![Cloud Shell](./images/cloud_shell.png)
+
+    It will provision this small virtual machine, and you will have access to its terminal from the **Oracle Cloud Shell**.
+
+    ![Cloud Shell Opening](./images/cloud_shell_1.png)
+
+2. **Execute** the following command:
 
     ```
     <copy>npx @oracle/bots-node-sdk init tasks-cc --component-name tasks</copy>
@@ -36,7 +46,7 @@ Ready to create your **Custom Component** scaffolding.
 
     Where `tasks-cc` is the name of the custom component module. And `tasks` is the name of our first custom component implementation.
 
-2. The **result** should look like this:
+3. The **result** should look like this:
 
     ```bash
     ---------------------------------------------------------------------
@@ -48,20 +58,23 @@ Ready to create your **Custom Component** scaffolding.
       cd tasks-cc
       npm start    Start a dev server with the component package
     ```
+    ![Cloud Shell NPX instalation](./images/cloud_shell_npx.png)
 
     > NOTE:
     >
     > A new folder `tasks-cc` was created with this hierarchy inside:
     >
-    > ![Custom Component thee](./images/node_tree.png)
-    >
-    > Note you have a `package.json` file and a `components` folder with a file `tasks.js` inside.
+    >![Custom Component tree](./images/cloud_shell_tasks-cc.png)
+    
 
-3. **Change directory** to `tasks-cc` on the Command Prompt or Terminal:
+3. **Change directory** to `tasks-cc` on the Command Prompt:
 
     ```
     <copy>cd tasks-cc</copy>
     ```
+    > Note you have a `package.json` file and a `components` folder with a  file `tasks.js` inside.
+    >
+    >![Cloud Shell Tasks-cc Folder](./images/cloud_shell_tasks-cc_folder.png)
 
     This custom component is going to make REST API calls to fetch information from APEX. To do so, we need to install an extra library called [node-fetch](https://www.npmjs.com/package/node-fetch).
 
@@ -70,22 +83,43 @@ Ready to create your **Custom Component** scaffolding.
     ```
     <copy>npm install node-fetch</copy>
     ```
+    ![Cloud Shell npm Instalation](./images/cloud_shell_npm.png)
+    
 
-5. Edit the file `package.json` in `tasks-cc` folder. You can use your favorite text editor. My choice is [Visual Code](https://code.visualstudio.com/) but feel free to use any. Even Notepad for those Windows user that don't want to install anything else.
+5. Edit the file `package.json` in `tasks-cc` folder. You can use vi or vim to edit files. [Here](http://www.yolinux.com/TUTORIALS/LinuxTutorialAdvanced_vi.html) you have a good link to learn how to use it.
+We cannot cover the use of vi but we will share the commands needed to change the files.
+    
+    ```
+    <copy>vi package.json</copy>
+    ```
+    ![Cloud Shell vi](./images/cloud_shell_vi.png)
 
-    ![Location package.json](./images/node_package_json.png)
+6. We have to **change the name** of the package from the generic `my-component-service` to something more personalized like `tasks-cc`. Check line number 2:
 
-6. We have to **change the name** of the package from the generic `my-custom-component` to something more personalized like `tasks-cc`. Check line number 2:
-
-    ![Package name change](./images/package_name_change.png)
-
-7. **Save** the file with the changes.
+    ![Package name original](./images/cloud_shell_package.json.png)
+    ![Package name change](./images/cloud_shell_package.json_change.png)
+    
+    For editing the file type `i` and edit the content. For saving and closing the file type `:x`. Click `esc` every time that you want to execute a command in vi. **Good luck!**
+    
+    Be sure you have saved the changes, open the file few time to be sure.
 
     Great, we are now ready to **change the code** of our **custom component implementation**.
 
 8. **Open** the file `tasks.js` with your favorite text editor. You can find this file in the **components folder**.
+    
+    ```
+    <copy>cd components</copy>
+    ```
+    ![Cloud Shell tasks.js](./images/cloud_shell_task.js.png)
 
 9. **Edit** the file `tasks.js` and **replace** the whole content with the following code or download it from <a href="./files/tasks.js" target="\_blank">here</a> to download the customer component source code.
+
+    ```
+    <copy>vi tasks.js</copy>
+    ```
+    ![Cloud Shell tasks.js using vi](./images/cloud_shell_task.js_file.png)
+
+    For editing the file type `i` and edit the content. For saving and closing the file type `:x`. For removing full lines use `dd`. Click `esc` every time that you want to execute a command in vi. **Good luck!**
 
     **IMPORTANT**: **Remember** to change the `URL_COPIED_FROM_APEX` with the **URL** copied on **APEX** in **Lab 2**.
 
@@ -145,10 +179,13 @@ Ready to create your **Custom Component** scaffolding.
     const ordsURL =
         "https://xxx-yyy.adb.region.oraclecloudapps.com/ords/tasks/oda/tasks/";
     ```
+    
+    The result of the file after applying changes, should look like this:
+    ![Cloud Shell tasks.js using vi changed](./images/cloud_shell_task.js_file_changed.png)
 
-   1.    Don't forget the **save** tasks.js file.
+    Don't forget the **save** tasks.js file using `:x`.
 
-## **STEP 2**: Deploy the custom component
+## **Task 2**: Deploy the custom component
 
 **Custom Components** can be deployed in different ways:
 
@@ -156,9 +193,28 @@ Ready to create your **Custom Component** scaffolding.
 - **Mobile Hub**: multi-channel environment with mobile extras and shared instance deployment
 - **Node Container**: shared instance but no need for mobile extras
 
-1. We are going to **install** our custom component **locally** as a **component container**. Very simple, we need to pack our code in a single file that contains everything:
+1. We are going to **install** our custom component **locally** as a **component container**. Very simple, we need to pack our code in a single file that contains everything using **Cloud Shell**.
 
-    Package your **Custom Component** by running on your Command Prompt or Terminal:
+    **Be sure** you are on task-cc folder. For checking that use the follow command:
+
+    ```
+    <copy>pwd</copy>
+    ```
+    ![Cloud Shell pwd](./images/cloud_shell_pwd.png)
+
+    If you are still on **components** as I am. Just type:
+
+    ```
+    <copy>cd ..</copy>
+    ``` 
+
+    And check where you are now, using again:
+    ```
+    <copy>pwd</copy>
+    ```
+    ![Cloud Shell cd](./images/cloud_shell_cd.png)
+
+2. Package your **Custom Component** by running on your Command Prompt:
 
     ```
     <copy>npm pack</copy>
@@ -166,14 +222,30 @@ Ready to create your **Custom Component** scaffolding.
 
     The **output** looks like this:
 
-    ![Pack result](./images/node_result.png)
+    ![Cloud Shell Pack result](./images/cloud_shell_node_result.png)
 
-## It works
+3. There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 
-There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
+    ![tgz new file](./images/cloud_shell_node_tgz_file.png)
 
-![tgz new file](./images/node_tgz_file.png)
+    We need to download the tgz file locally. We will use this file on the final Lab of this workshop.
 
+4. Click the hamburguer menu in cloud shell.
+
+    ![Cloud Shell Burguer Menu](./images/cloud_shell_download.png)
+
+5. Type the **filename** that we want to download,**tasks-cc-1.0.0.tgz**. Click **Download**.
+    
+    ```
+    <copy>tasks-cc/tasks-cc-1.0.0.tgz</copy>
+    ```
+    ![Cloud Shell tgz download](./images/cloud_shell_tgz_download.png)
+
+6. Your file will be download in your Downloads folder. Check that the file has been downloaded completly.
+
+    ![Cloud Shell tgz download](./images/cloud_shell_tgz_download_completed.png)
+
+    
 *Congratulations! You are ready to go to the next lab!*
 
 ## **Acknowledgements**
@@ -181,4 +253,3 @@ There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 - **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-

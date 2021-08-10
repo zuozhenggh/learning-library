@@ -60,7 +60,7 @@ Node.js is an asynchronous event-driven JavaScript runtime. **Node.js** is desig
 
     ![Node Versions](./images/node_versions.png)
 
-## **STEP 2**: Create a Custom Component to integrate with backend services
+## **Task 2**: Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.
 
@@ -186,7 +186,7 @@ Ready to create your **Custom Component** scaffolding.
 
 10. Don't forget the **save** tasks.js file.
 
-## **STEP 3**: Deploy the custom component
+## **Task 3**: Deploy the custom component
 
 **Custom Components** can be deployed in different ways:
 
@@ -208,7 +208,7 @@ Ready to create your **Custom Component** scaffolding.
 
     There will be a new file in your `tasks-cc` folder called `tasks-cc-1.0.0.tgz`.
 
-## **STEP 4:** Upload the file to Object Storage
+## **Task 4:** Upload the file to Object Storage
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 

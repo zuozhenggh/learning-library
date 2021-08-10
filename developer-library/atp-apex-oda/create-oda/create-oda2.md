@@ -90,7 +90,7 @@ In this lab, you will:
 
     ![ODA Menu](./images/oda_5_new.png)
 
-## **STEP 2**: Explore your Digital Assistant
+## **Task 2**: Explore your Digital Assistant
 
 You can always **Watch Videos** on the **Learn** section at the bottom and explore the documentation of Oracle Digital Assistant by following the links on the dashboard.
 
