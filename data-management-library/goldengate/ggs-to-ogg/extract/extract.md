@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to capture and send data from OCI GoldenGate to an on premisess or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Receiver Path to initiate pulling the data down to the target, and a Replicat to consume the data received.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 15 minutes
 
 ### About Extracts, Paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Receiver Path is a target-initiated configuration that uses the Receiver Server. A Replicat is a process that delivers data to the target.
