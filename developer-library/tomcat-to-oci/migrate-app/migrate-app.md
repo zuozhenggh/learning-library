@@ -2,21 +2,21 @@
 
 ## Introduction
 
-In this lab, we will migrate the application to the Tomcat cluster on Oracle Cloud Infrastructure (OCI).
+In this tutorial, we will migrate the application to the Tomcat cluster on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 10 minutes.
+Estimated Completion Time: 10 minutes.
 
 ### Objectives
 
-In this lab, you will:
-* Move the application over to the Tomcat cluster on OCI.
-* Configure the datasource used by the application to point to the Oracle Autonomous Database.
+In this tutorial, you will:
+* Move the application over to the Tomcat cluster on OCI
+* Configure the datasource used by the application to point to the Oracle Autonomous Database
 
 ### Prerequisites
 
-For this lab, you need to have provisioned the Tomcat cluster on OCI.
+For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
-## **STEP 1**: Move the Application WAR file to the Tomcat Cluster on OCI
+## Task 1: Move the Application WAR File to the Tomcat Cluster on Oracle Cloud Infrastructure
 
 1. Gather the Tomcat servers IP addresses from the output of the Terraform.
 
@@ -69,7 +69,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     <copy>
     sudo cp SimpleDB.war /var/lib/tomcat/webapps/
     </copy>
-    ``` 
+    ```
 
 5. Check the deployment happened as expected:
 
@@ -84,7 +84,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
 
     It may take several seconds to deploy, so if you don't see the folder at first, try the `ls -lh` command again.
 
-## **STEP 2:** Configure the Datasource
+## Task 2: Configure the Data Source
 
 1. Open the `server.xml` file in /etc/tomcat/ for editing:
 
@@ -112,7 +112,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     </copy>
     ```
 
-    Make sure to replace the `atpdb` name with your info if you didn't use the name `atp_db`.
+    Make sure to replace the `atpdb` name with your information if you didn't use the name `atp_db`.
 
     You should end up with something like:
 
@@ -140,9 +140,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     </GlobalNamingResources>
     ```
 
-3. Save the file:
-
-    Type `CTRL+x`, then `y` to save
+3. Type `CTRL+x`, then `y` to save the file.
 
 4. Open the `context.xml` file for editing:
 
@@ -184,9 +182,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     </Context>
     ```
 
-6. Save the file:
-
-    Type `CTRL+x`, then `y` to save
+6. Type `CTRL+x`, then `y` to save the file.
 
 7. Restart Tomcat:
 
@@ -196,7 +192,7 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     </copy>
     ```
 
-8. You can check that the application is correctly deployed and served by the individual server by tunneling through the bastion with:
+8. Check that the application is correctly deployed and served by the individual server by tunneling through the bastion with:
 
     ```bash
     <copy>
@@ -205,28 +201,25 @@ For this lab, you need to have provisioned the Tomcat cluster on OCI.
     </copy>
     ```
 
-9. You can check the deployment at:
+9. You can check the deployment at `http://localhost:8080/SimpleDB`
 
-    http://localhost:8080/SimpleDB
+    > **Note:** The first time the application runs, the query may take up to 30 seconds.
 
-    Note: The first time the application runs, the query may take up to 30 seconds.
-    
 
-## **STEP 3:** Repeat for each Tomcat Server
+## Task 3: Repeat for Each Tomcat Server
 
-1. Repeat steps 1 and 2 for each server on the Tomcat cluster if you had more than one.
+1. Repeat the steps in the "Move the Application WAR File to the Tomcat Cluster on Oracle Cloud Infrastructure" section and "Configure the Datasource" section for each server on the Tomcat cluster if you had more than one.
 
-## **STEP 4:** Check the Application Served via the Load Balancer
+## Task 4: Check the Application Served Via the Load Balancer
 
-1. Get the load balancer public IP from the Terraform output
+1. Get the load balancer public IP from the Terraform output.
 
-2. In your browser, go to http://*LOAD_BALANCER_IP*/SimpleDB/
+2. In your browser, go to http://*LOAD_BALANCER_IP*/SimpleDB/.
 
 3. Check that you see the application being served.
 
     ![](./images/lb-simpledb-app.png)
 
-You may proceed to the next lab.
 
 ## Acknowledgements
  - **Author** - Subash Singh, Emmanuel Leroy, October 2020

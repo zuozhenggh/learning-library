@@ -21,7 +21,7 @@ In this lab, you:
 
 ### Prerequisites
 
-## **Step 1:** Install the NVIDIA RAPIDS Conda Environment
+## Task 1: Install the NVIDIA RAPIDS Conda Environment
 
 You install the NVIDIA RAPIDS 0.16 conda environment in your notebook session to leverage the RAPIDS collection of libraires in your notebook.
 
@@ -79,7 +79,7 @@ You install the NVIDIA RAPIDS 0.16 conda environment in your notebook session to
    Congratulations! You have completed Step 1 successfully.
 
 
-## **Step 2:** Confirm the Successful Installation of the RAPIDS Environment
+## Task 2: Confirm the Successful Installation of the RAPIDS Environment
 
 You will confirm the successful installation of the RAPIDS environment in your notebook session.
 

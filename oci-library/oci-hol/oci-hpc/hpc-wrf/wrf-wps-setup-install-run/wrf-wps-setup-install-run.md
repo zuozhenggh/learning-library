@@ -49,7 +49,7 @@ The technologies used in this lab are:
 * [Midnight Comander](https://midnight-commander.org/) (Optional) 
 
 
-## **STEP 1**: Setup Gnome Desktop
+## Task 1: Setup Gnome Desktop
 
 1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Ubuntu. The following steps will download, install, and configure Gnome Desktop for our Ubuntu 18.04 instance.
 
@@ -95,7 +95,7 @@ The technologies used in this lab are:
     </copy>
     ```
 
-## **STEP 2**: Connecting to the Gnome Desktop
+## Task 2: Connecting to the Gnome Desktop
 
 We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our instance.
 
@@ -117,7 +117,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 4. You will finally be presented with a gnome desktop and you should continue working from here.  
 ![Screenshot of Gnome Desktop](images/gnomedesktop.png)
 
-## **STEP 3**: Configuring Ubuntu
+## Task 3: Configuring Ubuntu
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Activities on the top left, then click show applications. Search for and open a terminal. Perform the following in the terminal.
     
     ```
@@ -141,7 +141,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     sudo apt install ncview -y   
     </copy>
     ```
-## **STEP 4**: Downloading and Compiling libraries for WRF
+## Task 4: Downloading and Compiling libraries for WRF
 
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
 
@@ -250,7 +250,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     </copy>
     ```
 
-## **STEP 5**: Compiling WRF & WPS
+## Task 5: Compiling WRF & WPS
 
 1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.
 
@@ -539,7 +539,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     ```
     ![Screenshot of ncview](images/nc2.png)
 
-## **STEP 6**: Running Real and WRF
+## Task 6: Running Real and WRF
 
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 

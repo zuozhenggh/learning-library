@@ -17,7 +17,7 @@ Your will need:
 - Goldengate for Bigdata
 - Oracle JDBC Java Driver
 
-### STEP 1: Setting up the Environment For Connection 
+### Task 1: Setting up the Environment For Connection 
 
 1. We already have a trail file created in the GGBD home. We will be using the same trail file to replicate .
 

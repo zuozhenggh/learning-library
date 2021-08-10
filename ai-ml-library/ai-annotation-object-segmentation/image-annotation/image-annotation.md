@@ -16,7 +16,7 @@ In this lab, you will learn about:
 This lab assumes you have:
 - Completed the previous lab, Setting Up the Environment
 
-## **STEP 1**: Downloading Sample COCO Data
+## Task 1: Downloading Sample COCO Data
 
 1. For this example, we will build a simple dataset of apples and oranges. Go to the [COCO dataset explorer](https://cocodataset.org/#explore) and select the filters for `apple` and `orange` and then click `search`. This will return a list of images that fit those categories. The results are not exclusive, so there will be other objects in the images as well. 
 
@@ -33,7 +33,7 @@ This lab assumes you have:
 
 	![Creating the dataset in COCO Annotator](images/coco-annotator-2.png)
 
-## **STEP 2**: Transferring Data to the Instance
+## Task 2: Transferring Data to the Instance
 
 1. The next step is to copy the images downloaded from COCO Explorer and put them into the newly created dataset folder. This can be accomplished by any means you wish, but this guide will demonstrate with secure copy (SCP).
 
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 2. Copy the validation dataset into a folder labelled `fruit-types-val`
 
-## **STEP 3**: Annotating Images
+## Task 3: Annotating Images
 
 1. Return to the COCO annotator and refresh the page. Click on **Datasets** then **fruit-types**. With the **Images** tab selected, your images should be populated in the interface. Click on the first image. On the right you should see the two categories defined earlier `apple` and `orange`. Click the **+** icon next to the category for the outline you'd like to outline with a mask.
 
@@ -80,7 +80,7 @@ This lab assumes you have:
 
 2. Use this interface to define all of the target objects (apples and oranges) in the image. If you are confused about the best way to draw a mask for an object, browse the COCO Explorer for examples.
 
-## **STEP 4**: Exporting Image Annotations
+## Task 4: Exporting Image Annotations
 
 1. You can quickly navigate to the next image in the list by clicking the arrow at the top right next to the image name. When all of the images are complete, return to the fruit-types folder view and click **Export COCO** on the left. Click **Export** on the dialog window that pops up. Leave the *Add a category* field blank to export all categories defined in the annotations. This will create a file to download under the **Exports** tab. Click the green **Download** button in order to get the annotations. 
 
@@ -96,7 +96,7 @@ This lab assumes you have:
 
 	This file will be compatible with any framework that reads COCO annotations. Detectron2 accepts this type of annotation. In the next step we will load the images and annotations and train a model with a script written in Python.
 
-## **STEP 5**: Create a validation dataset
+## Task 5: Create a validation dataset
 
 1. Repeat steps 3-5 for a validation dataset consisting of the 3 test images that are not part of the training dataset.
 

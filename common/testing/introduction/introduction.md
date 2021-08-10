@@ -34,7 +34,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1:** **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
+## Task 1: **TEST**: Create Your Free Trial Account - Pass in a marketing code appended to the free trial link
 
 This test demonstrates that the appended marketing code is passed to other labs.
 
@@ -62,7 +62,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
 6. Click **Review Terms and Conditions**. Read and agree to the Terms & Conditions by checking the box and click **Complete Sign-Up**.
 
 7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
-## **STEP 1**: title
+## Task 1: title
 
 Step 1 opening paragraph.
 
@@ -88,7 +88,7 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** title
+## Task 2: title
 
 1. Sub step 1
 

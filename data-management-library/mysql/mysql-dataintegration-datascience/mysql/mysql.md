@@ -7,8 +7,11 @@
 **MySQL Database Service** is a fully-managed Oracle Cloud Infrastructure service, developed, managed, and supported by the MySQL team in Oracle.
 
 [](youtube:f-fVabi1tRA)
+ 
 
-## Objectives
+Estimated Lab Time: 30 minutes.
+
+### Objectives
 
 In this lab, you will:
 
@@ -16,9 +19,11 @@ In this lab, you will:
 - Connect and create the Database.
 - Enable HeatWave Analytics Engine.
 
-Estimated Lab Time: 30 minutes.
+### Prerequisites
 
-## STEP 1: Create an instance of MySQL in the cloud
+- All previous labs have been successfully completed.
+
+## Task 1: Create an Instance of MySQL in the Cloud
 
 1. Go to **Menu** > **Databases** > **DB Systems**.
 
@@ -30,34 +35,34 @@ Estimated Lab Time: 30 minutes.
 
    ![](images/mysql_create_button.png)
 
-   - Name your MySQL instance: `mysql-analytics`
-   - Description (optional): `MySQL instance for Analytics`
+      - Name your MySQL instance: `mysql-analytics`
+      - Description (optional): `MySQL instance for Analytics`
 
-   Between the three options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
+3. Between the three options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
 
    For Username and password:
 
-   - Username: `root`
-   - Password: `R2d2&C3po!`
-   - Confirm Password: `R2d2&C3po!`
+      - Username: `root`
+      - Password: `R2d2&C3po!`
+      - Confirm Password: `R2d2&C3po!`
 
    ![](images/mysql_create_db_fields.png)
 
-3. **Network** configuration:
+4. **Network** configuration:
 
-   - Virtual Cloud Network: `nature`
-   - Subnet: `Private Subnet-nature (Regional)`
+      - Virtual Cloud Network: `nature`
+      - Subnet: `Private Subnet-nature (Regional)`
 
    ![](images/mysql_vcn_fields.png)
 
-4. Everything else is good by **default**:
+5. Everything else is good by **default**:
 
-   - Configure placement: `AD-1`
-   - Configure hardware: `MySQL.HeatWave.VM.Standard.E3` or Standalone (selected above) `MySQL.VM.Standard.E3.1.8GB`
-   - Data Storage Size (GB): `50`
-   - Configure Backups: `Enable Automatic Backups`
+      - Configure placement: `AD-1`
+      - Configure hardware: `MySQL.HeatWave.VM.Standard.E3` or Standalone (selected above) `MySQL.VM.Standard.E3.1.8GB`
+      - Data Storage Size (GB): `50`
+      - Configure Backups: `Enable Automatic Backups`
 
-5. Click **Create**.
+6. Click **Create**.
 
    ![](images/mysql_shape_fields.png)
 
@@ -67,27 +72,28 @@ Estimated Lab Time: 30 minutes.
 
    ![Active](images/mds-active.png)
 
-6. **Copy the private IP address** from the MySQL DB System Information page. It will look like `10.0.1.xxx`.
+7. **Copy the private IP address** from the MySQL DB System Information page. It will look like `10.0.1.xxx`.
 
    ![](images/mysql_private_ip.png)
 
 ---
 
-## STEP 2: Connect and create DB
+## Task 2: Connect and Create DB
 
 1. Connect with **Cloud Shell** (if you close it or it is no longer active).
 
    ![](images/cloud_shell.png)
 
-   - SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
-   - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
-      ```
-      <copy>curl https://raw.githubusercontent.com/vmleon/mysql-dataintegrator-datascience-workshop/main/mysql/files/create_fish_survey.sql | mysqlsh --sql root@PRIVATE_IP</copy>
-      ```
+      - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
+      - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
+         ```
+         <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
+         ```
+   This command will download the SQL script, and pipe the content to MySQL Shell to be executed as SQL code. We also indicate with `--save-passwords=always` to save the password securely for future uses of MySQL Shell.
 
-   It will ask for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
+2. If the terminal asks for the **password** (`Please provide the password for 'root@PRIVATE_IP':`).
 
-   - Type the MySQL DB password: `R2d2&C3po!`
+      - Type the MySQL DB password: `R2d2&C3po!`
 
    If there is no error on the console, everything is ready to proceed.
 
@@ -95,9 +101,9 @@ Estimated Lab Time: 30 minutes.
 
 ---
 
-## STEP 3: Enable HeatWave
+## Task 3: Enable HeatWave (Optional)
 
-1. If you have select the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
+1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
 
 2. Go to the **Resources Menu** > **HeatWave**.
 
@@ -107,7 +113,7 @@ Estimated Lab Time: 30 minutes.
 
    ![](images/mds_heatwave_add_cluster.png)
 
-4. Check the values, and click **Add HeatWave Cluster**.
+4. Leave the default values, and click **Add HeatWave Cluster**.
 
    ![](images/mds_heatwave_select_shape.png)
 
@@ -127,8 +133,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
-
-## See an issue
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
+- **Last Updated By/Date** - Brianna Ambler, June 2021

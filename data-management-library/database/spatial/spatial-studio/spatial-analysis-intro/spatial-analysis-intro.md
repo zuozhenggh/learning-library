@@ -47,7 +47,7 @@ Estimated Lab Time: 45 minutes
 <!-- *This is the "fold" - below items are collapsed by default*  -->
 
 
-## **STEP 1**: Filter by Proximity
+## Task 1: Filter by Proximity
 
 In this step you use a spatial filter to identify accidents within a specified distance of a selected police station.
 
@@ -83,7 +83,7 @@ In this step you use a spatial filter to identify accidents within a specified d
 
    **Note:** A Layer is just a Dataset rendered in a map. After removing a Layer (our analysis result in this case), the Dataset is still listed in the Data Elements panel and could be re-added to the map. To remove a Dataset from a Project you would right click on the Dataset in the Data Elements panel and select **Remove from project**.
 
-## **STEP 2**: Filter by Containment
+## Task 2: Filter by Containment
 
 In this step you use a spatial filter to identify accidents inside a selected police region.
 
@@ -109,7 +109,7 @@ In this step you use a spatial filter to identify accidents inside a selected po
    
  5.  Before moving on to the next analysis, zoom to the full extent of your data by opening the hamburger menu for the POLICE\_BOUNDS layer and selecting **Zoom to layer** and remove the containment analysis from the map. 
    
-## **STEP 3**: Join by Containment
+## Task 3: Join by Containment
 
 Here you join Datasets based on a spatial relationship. You will join ACCIDENTS to POLICE\_BOUNDS based on containment. You may think of this as enriching or tagging each accident with the police region that contains it. 
 
@@ -134,7 +134,7 @@ Here you join Datasets based on a spatial relationship. You will join ACCIDENTS 
    You now have augmented the crash data with the police region name per item. The results could be used for further analysis is Spatial Studio or accessed by other tools and applications such as Oracle Analytics Cloud for broader analytics.
 
 
-## **STEP 4**: Summarize Items by Region
+## Task 4: Summarize Items by Region
 
 In the previous step, you augmented crash items with police region. In this step, you do the inverse: you augment police regions with a summary of crash info. 
 
@@ -158,7 +158,7 @@ In the previous step, you augmented crash items with police region. In this step
 
    On your own, feel free to add a info window or tooltip with accident counts when clicking or hovering over a police region.  As you did in Lab 2/Step 3, you can also add a Table view and drag in POLICE\_BOUNDS SUMMARIZE to view the info in tabular form.
 
-## **STEP 5**: Identify Nearest Items
+## Task 5: Identify Nearest Items
 
 In this step, you determine the nearest accident to each police station. The result contains each police station augmented with the id and and distance to the nearest accident.  The analysis also provides an option include all columns for the nearest item instead of just the id and distance.
 
@@ -185,7 +185,7 @@ In this step, you determine the nearest accident to each police station. The res
    Finally, save your project to preserve your changes.
 
 
-## **STEP 6**: Access SQL code and GeoJSON endpoint [Optional]
+## Task 6: Access SQL code and GeoJSON endpoint [Optional]
 
   This optional step is for developers interested in accessing results programmatically. Spatial Studio allows you to see the SQL code for spatial analyses and provides a web endpoint that returns results as GeoJSON. This info is available in Dataset Properties and is accessed either in a Project or from the Datasets page. You will access the info from within you Project.
   

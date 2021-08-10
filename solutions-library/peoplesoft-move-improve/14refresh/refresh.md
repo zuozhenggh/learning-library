@@ -1,7 +1,7 @@
 # Refreshing an Environment
 
 ## Introduction
-You can refresh DB Systems environments managed by Cloud Manager from a backup in Object Store or from another DB system managed by Cloud Manager. This lab will take you through the steps to refresh from another DB system. If you are wanting to refresh using a backup from object store or are wanting to refresh an ATP-D environment please visit [https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf](https://docs.oracle.com/cd/F32973_01/psft/pdf/pcd91cmif-b062020.pdf) and navigate to page 144.
+You can refresh DB Systems environments managed by Cloud Manager from a backup in Object Store or from another DB system managed by Cloud Manager. This lab will take you through the steps to refresh from another DB system. If you are wanting to refresh using a backup from object store or are wanting to refresh an ATP-D environment please visit [https://docs.oracle.com/cd/F40091_01/psft/pdf/pcd858cmif-b032021.pdf](https://docs.oracle.com/cd/F40091_01/psft/pdf/pcd858cmif-b032021.pdf) and navigate to page 144.
 
 Estimated Lab Time: 30 minutes + 90 minutes for provisioning + 90 minutes for cloning/backing up/refreshing
 
@@ -14,7 +14,7 @@ In this lab you will:
 ### Prerequisites
 - Access to the Cloud Manager console.
 
-## **STEP 1**: Creating a New Topology With DBaaS
+## Task 1: Creating a New Topology With DBaaS
 
 In order to refresh an environment you will need a topology with DBaaS. If you already have a topology with DBaaS you can skip this step.
 
@@ -44,7 +44,7 @@ In order to refresh an environment you will need a topology with DBaaS. If you a
     
     Click **Save**.
 
-## **STEP 2**: Creating a New Environment Template
+## Task 2: Creating a New Environment Template
 
 In order to refresh an environment you will need an environment template that is using a topology with DBaaS. If you already have this you can skip this step.
 
@@ -89,7 +89,7 @@ In order to refresh an environment you will need an environment template that is
     * Review the details and click **Submit**
     ![](./images/save.png "")
 
-## **STEP 3**: Creating a New Environment
+## Task 3: Creating a New Environment
 
 In order to refresh an environment you will need an environment created from a template with DBaaS. If you already have this you can skip this step.
 
@@ -133,7 +133,7 @@ In order to refresh an environment you will need an environment created from a t
     Once the environment has a green dot with a status of **Running** we are ready to move on to the next step.
     ![](./images/.png "")
 
-## **STEP 4**: Refreshing an Environment
+## Task 4: Refreshing an Environment
 
 1.  First we will create a target environment for our refresh. 
     Navigate to **Dashboard** > **Environment**.

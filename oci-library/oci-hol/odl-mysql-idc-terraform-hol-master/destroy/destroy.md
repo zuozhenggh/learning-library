@@ -6,7 +6,7 @@ In this lab, we will clean up everything. We will terminate the full environment
 
 Estimated Lab Time: 2 minutes
 
-## **STEP**: Destroy
+## **Task $1:**: Destroy
 
 1. The `terraform destroy` command is used to destroy the Terraform-managed infrastructure. All resources will be terminated.
 

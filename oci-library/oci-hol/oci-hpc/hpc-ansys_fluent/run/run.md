@@ -16,7 +16,7 @@ In this final lab:
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
-## **STEP 1:** Running ANSYS Fluent
+## Task 1: Running ANSYS Fluent
 1. Running Fluent is pretty straightforward: You can either start the GUI if you have a VNC session started with
 
     ```
@@ -60,7 +60,7 @@ In this final lab:
     Intel is the prefered MPI for ANSYS Fluent on OCI.
 
 
-## **STEP 2:** Benchmark Example
+## Task 2: Benchmark Example
 
 Performances of Fluent are often measured using the Formula 1 benchmark with 140 Millions cells. The next graph is showing how using more nodes impact the runtime, with a scaling really close to 100%. RDMA network only start to differentiate versus regular TCP runs if the Cells / Core ratio starts to go down. Here is a comparison with AWS C5n HPC machines.
 

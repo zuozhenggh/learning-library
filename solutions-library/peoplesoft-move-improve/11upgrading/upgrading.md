@@ -13,25 +13,25 @@ In this lab you will:
 - Access to the Cloud Manager console.
 - Environment up and running
 
-## **STEP 1**: Subscribe to Tools Channels
+## Task 1: Subscribe to Tools Channels
 
 1.  Navigate to **Cloud Manager Dashboard** > **Repository**. 
     ![](./images/repo.png "")
 
-2.  On **Downloaded Subscriptions**, switch to **Unsubscribed**. Scroll down to find **Tools\_858\_Linux**, click the **V** arrow and then **Subscribe**
+2.  On **Downloaded Subscriptions**, switch to **Unsubscribed**. Scroll down to find **Tools\_859\_Linux**, click the **V** arrow and then **Subscribe**
     ![](./images/lin59subscribe.png "")
 
 
-3. Enter **11** for the minimum patch number, and click **OK**
+3. Enter **01** for the minimum patch number, and click **OK**
     ![](./images/lin59number.png "")
 
-4. Repeat the same steps for **Tools\_858\_Windows**
+4. Repeat the same steps for **Tools\_859\_Windows**
     ![](./images/win59subscribe.png "")
     ![](./images/win59number.png "")
 
-## **STEP 2**: Monitor Subscription Progress
+## Task 2: Monitor Subscription Progress
 
-1. To monitor progress, you can go to **Download History**, select **Tools\_858\_Linux** and **Tools\_858\_Windows** to see which packages are in progress and which have been completed.
+1. To monitor progress, you can go to **Download History**, select **Tools\_859\_Linux** and **Tools\_859\_Windows** to see which packages are in progress and which have been completed.
 
     ![](./images/patchlist59.png "")
 2. You can then look at each patch progress status under **Logs**. Select the **Channel Name**, **Log File**, add **Number of Lines to Display**, and click **Fetch Logs**.
@@ -40,7 +40,7 @@ In this lab you will:
 3. Once you see this, you may apply the patches to your environment:
     ![](./images/859done.png "")
 
-## **STEP 3**: Apply Upgrade to Environment
+## Task 3: Apply Upgrade to Environment
 
 1. Navigate to **Cloud Manger Dashboard** > **Environments**
     ![](./images/env.png "")

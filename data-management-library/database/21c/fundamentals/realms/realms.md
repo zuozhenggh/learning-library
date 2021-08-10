@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
-## **STEP 1:** Configure and enable Database Vault at the CDB and PDB levels
+## Task 1: Configure and enable Database Vault at the CDB and PDB levels
 
 1. Configure and enable Database Vault at the CDB root level and at the PDB level. The script creates the `HR.G_EMP` table in the root container and also the `HR.L_EMP` table in `PDB21`.
 
@@ -120,7 +120,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Test table data accessibility with no realm on common objects
+## Task 2: Test table data accessibility with no realm on common objects
 
 1. Connect to the CDB root as `C##SEC_ADMIN` to verify the status of `DV_ALLOW_COMMON_OPERATION`. This is the default behavior: it allows local users to create Database Vault controls on common users objects.
 
@@ -211,7 +211,7 @@ In this lab, you will:
 
     ```
 
-    SQL> <copy>CONNECT c##test1@PDB21</copy>
+    SQL> <copy>CONNECT c##test2@PDB21</copy>
     Enter password: <i>WElcome123##</i>
     Connected.
     ```
@@ -227,7 +227,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 3:** Test table data accessibility with a common regular or mandatory realm on common objects
+## Task 3: Test table data accessibility with a common regular or mandatory realm on common objects
 
 1. Create a common regular realm on `C##TEST1` tables in the CDB root.
 
@@ -489,7 +489,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 4:** Test table data accessibility on common objects with a PDB regular or mandatory realm
+## Task 4: Test table data accessibility on common objects with a PDB regular or mandatory realm
 
 1. Create a PDB regular realm on `C##TEST1` tables in `PDB21`.
 
@@ -756,7 +756,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 5:** Restrict local users from creating Oracle Database Vault controls on common objects
+## Task 5: Restrict local users from creating Oracle Database Vault controls on common objects
 
 1. Restrict the local users from creating Oracle Database Vault controls on common objects.
 
@@ -787,7 +787,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 6:** Test table data accessibility with a common regular or mandatory realm on common objects
+## Task 6: Test table data accessibility with a common regular or mandatory realm on common objects
 
 1. Create a common regular realm on `C##TEST1` tables in the CDB root.
 
@@ -1056,7 +1056,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 7:** Test table data accessibility on common objects with a PDB regular or mandatory realm
+## Task 7: Test table data accessibility on common objects with a PDB regular or mandatory realm
 
 1. Create a PDB regular realm on `C##TEST1` tables in `PDB21`.
 
@@ -1350,7 +1350,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 8:** Summary
+## Task 8: Summary
 
 Let's summarize the behavior of data access on common users objects in PDBs when you switch the `DV_ALLOW_COMMON_OPERATION` value.
 
@@ -1358,7 +1358,7 @@ Let's summarize the behavior of data access on common users objects in PDBs when
 
 - If local realms had been created when `DV_ALLOW_COMMON_OPERATION` was set to `FALSE`, they would still exist after the new control but enforcement would be ignored.
 
-## **STEP 9:** Disable Database Vault in both the PDB and the CDB root
+## Task 9: Disable Database Vault in both the PDB and the CDB root
 
 1. Run the `disable_DV.sh` script to disable Database Vault in both the PDB and the CDB root.
 

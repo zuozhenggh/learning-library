@@ -12,7 +12,7 @@ In Oracle Visual Builder, you can create buttons for a web page, then specify th
 
 You can also populate your business objects by importing data from a file. You did this for the Location business object in the first tutorial, and you'll do the same for the Department and Employee business objects here.
 
-## **STEP 1**: Create an Action Chain to Navigate from the Departments Page to the Employees Page
+## Task 1: Create an Action Chain to Navigate from the Departments Page to the Employees Page
 
 1.  In the HR Application, click the **Web Applications** ![Web Applications icon](./images/vbcsnd_webapp_icon.png) tab in the Navigator, and click **main-departments** under the **Flows** and **main** nodes. If necessary, click the **Page Designer** tab.
 2.  If necessary, click **Components** in the Page Designer to open the Components palette. Then, drag a **Button** from the **Common** components to the **Toolbar**, to the right of the **Create** button.
@@ -36,7 +36,7 @@ You can also populate your business objects by importing data from a file. You d
 7.  Click **Preview** ![Preview icon](./images/vbcsnd_run_icon.png) in the header to test the pages and navigation. The application opens in another browser tab. Click **Create** and add another department (`IT` on `Floor 2`, for example), then click **Save**. A success message is displayed briefly.
 8.  Click **Display Employees Page**, then click **Create**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the main-departments page from the main-employees page. Close the browser tab.
 
-## **STEP 2**: Create an Action Chain to Navigate from the Employees Page to the Departments Page
+## Task 2: Create an Action Chain to Navigate from the Employees Page to the Departments Page
 
 1.  In the Web Apps pane of the Navigator, click **main-employees** under the **Flows** and **main** nodes. If necessary, click **Reload page** ![Reload page icon](./images/vbcsnd_refresh_icon.png) to display the new employee you created.
 2.  In the Components palette, locate the **Common** components and drag a **Button** component into the **Toolbar**, to the right of the **Create** button.
@@ -56,12 +56,12 @@ You can also populate your business objects by importing data from a file. You d
     ![](./images/vbcsnd_cpc_s9.png)
 
 
-## **STEP 3**: Import Data for the Business Objects
+## Task 3: Import Data for the Business Objects
 
 Instead of using the Data Manager to import data, this time you'll use each business object's **Data** tab to do the same thing.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lhJcJDCHfpvqrjLICvPbQMojBuo2NshPYvF26nE7vLnsHfqs_UFGV1pt8gVM96DY/n/c4u03/b/solutions-library/o/Department.csv) and save the `Department.csv` file. The file contains six departments for the application.
-2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/97_FG5dsJaRTB_FwNYUg_lHokXY4r2IgQgDhiDOARX62krgriYcsFcDL25q1NSbV/n/c4u03/b/solutions-library/o/Employee.csv) and save the `Employee.csv` file. The file contains nine employees for the application.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fi-wiD6trQb9wEpWYMyNHPwN8zN6x0a4N1fI_jzaCz56TT8syaJYAZZGc9-XzZ92/n/c4u04/b/solutions-library/o/Department.csv) and save the `Department.csv` file. The file contains six departments for the application.
+2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/abJOgYP67N5pnLyKHe8-HCrZsxCmO7uibcaDbqneDDB8hzpy6wJDxJiKeJozGOjj/n/c4u04/b/solutions-library/o/Employee.csv) and save the `Employee.csv` file. The file contains nine employees for the application.
 3.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcsnd_bo_icon.png) tab, then click the **Objects** tab.
 4.  Click **Department**, then click the **Data** tab. The business objects you created are displayed.
 5.  Click **Import from File** ![Import from File icon](./images/vbcsnd_import_icon_transp.png).

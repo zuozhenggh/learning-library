@@ -15,11 +15,11 @@ For more information about Terraform and Resource Manager, please see the append
 * An Oracle Livelabs or Paid Oracle Cloud Account.
 * A SSH key-pair ready to use.
 
-## **Step 1:** Create the stack
+## Task 1: Create the stack
 
 1. Click on the link below to download the Resource Manager zip file you need to build your environment.
 
-    [tf-fpp-1.0.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SiXU2m1mrYj_HApnyJ11Ze7r4pcxpVhVBwM1NoBFlMggfi6fqaH8EqtMTS3H1CeW/n/c4u03/b/data-management-library-files/o/tf-fpp-1.0.zip)
+    [tf-fpp-1.0.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o387wRpvG_oMB4lmVNV8e9M5tw3r5mGsS6oCBDxfM8ag34a7bjTnrwVQDlwb-ot6/n/c4u04/b/data-management-library-files/o/tf-fpp-1.0.zip)
 
 2. Login to Oracle Cloud
 3. Select the correct region
@@ -48,7 +48,7 @@ For more information about Terraform and Resource Manager, please see the append
     Your Stack has now been created!
     ![](./images/stack-created.png)
 
-## **Step 2:** Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 This is optional, you may skip directly to Step 3.
 
 When using Resource Manager to deploy an environment, execute a **Terraform plan** to verify the configuration.
@@ -58,7 +58,7 @@ When using Resource Manager to deploy an environment, execute a **Terraform plan
 2. Select the **Plan** button in the bottom right of the screen. This takes about a minute, please be patient.
     ![](./images/plan-job2.png)
 
-## **Step 3:** Terraform Apply
+## Task 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a **Terraform Apply** to actually create the configuration. Let's do that now.
 
 1. At the top of your page, click on **Stack Details**. click the **Apply** button. 

@@ -10,6 +10,8 @@ The Oracle Cloud Infrastructure Object Storage service is an internet-scale, hig
 
 [](youtube:RHIfvO9aTQ0)
 
+Estimated Lab Time: 15 minutes
+
 ### Objectives
 
 In this lab, you will:
@@ -18,9 +20,12 @@ In this lab, you will:
 - Create Bastion Host.
 - Create Object Storage and upload files.
 
-Estimated Lab Time: 15 minutes.
+### Prerequisites
 
-## **STEP 1:** Create Virtual Cloud Network (VCN)
+- Oracle Free Trial Account
+
+
+## Task 1: Create Virtual Cloud Network (VCN)
 
 1. We are going to **create a network with a public subnet** (with access from the Internet) and a **private subnet** (no direct access from the Internet).
 
@@ -44,7 +49,7 @@ Estimated Lab Time: 15 minutes.
 
 5. Change the **VCN name** and leave everything else as **default**.
 
-   - VCN Name: `nature`
+      - VCN Name: `nature`
 
 6. Click **Next**.
 
@@ -66,31 +71,30 @@ Estimated Lab Time: 15 minutes.
 
 10. Click **Security List for Private Subnet-nature**.
 
-    ![VCN Security List](images/vcn_security_list.png)
+   ![VCN Security List](images/vcn_security_list.png)
 
-    We need to open the ports for MySQL and MySQL X protocols: `3306` and `33060`.
+   We need to open the ports for MySQL and MySQL X protocols: `3306` and `33060`.
 
 11. Click **Add Ingress Rules** and fill the form with the following information:
 
-    ![VCN Add Ingress Rule](images/vcn_add_ingress_rules.png)
+   ![VCN Add Ingress Rule](images/vcn_add_ingress_rules.png)
 
-    We are adding an **ingress rule** on those ports from the internal VCN CIDR `10.0.0.0/16`.
+   We are adding an **ingress rule** on those ports from the internal VCN CIDR `10.0.0.0/16`.
 
-    - Source CIDR: `10.0.0.0/16`
-    - Destination Port Range: `3306,33060`
-    - Description: `MySQL and MySQL X Protocol`
-    - Leave the rest of the fields with default values.
+      - Source CIDR: `10.0.0.0/16`
+      - Destination Port Range: `3306,33060`
+      - Description: `MySQL and MySQL X Protocol`
+      - Leave the rest of the fields with default values.
 
-    And click **Add Ingress Rule** to confirm the values.
+   And click **Add Ingress Rule** to confirm the values.
 
-    ![VCN Ingress Rule MySQL](images/vcn_ingress_rule_mysql.png)
+   ![VCN Ingress Rule MySQL](images/vcn_ingress_rule_mysql.png)
 
 12. You can **confirm** the rules are added.
 
-    ![VCN Security List Rules for MySQL](images/vcn_security_list_for_mysql.png)
+   ![VCN Security List Rules for MySQL](images/vcn_security_list_for_mysql.png)
 
-
-## **STEP 2:** Create Bastion Host
+## Task 2: Create Bastion Host
 
 1. We are going to **create a compute instance** in the Public Subnet with a public IP; it will be our access point to public and private resources.
 
@@ -102,26 +106,24 @@ Estimated Lab Time: 15 minutes.
 
    ![Create Intance Button](images/compute_create_instance_button.png)
 
-   - Change the **name** to: `bastion`
+4. Change the **name** to: `bastion`
 
    Make sure the rest of the **properties** are like the following:
 
-   - Image: `Oracle Linux 7.9`
-   - Shape for Always Free: `VM.Standard.E2.1.Micro`
-   - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
-   - Virtual cloud network: `nature`
-   - Subnet: `Public Subnet-nature`
-   - Assign a public IPv4 address: `Yes`
+      - Image: `Oracle Linux 7.9`
+      - Shape for Always Free: `VM.Standard.E2.1.Micro`
+      - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
+      - Virtual cloud network: `nature`
+      - Subnet: `Public Subnet-nature`
+      - Assign a public IPv4 address: `Yes`
 
    ![Instance Values](images/compute_create_values.png)
 
-4. On the section **Add SSH Keys**.
+5. On the section **Add SSH Keys**, make sure **Generate SSH Keypair** is checked.
 
-   Make sure **Generate SSH Keypair** is checked.
+6. Click **Save Private Key** and **Save Public Key**.
 
-5. Click **Save Private Key** and **Save Public Key**.
-
-6. After the files are stored on your computer, click **Create**.
+7. After the files are stored on your computer, click **Create**.
 
    ![Instance Values](images/compute_create_ssh.png)
 
@@ -129,7 +131,7 @@ Estimated Lab Time: 15 minutes.
 
    ![Compute Provisioning](images/compute_provisioning.png)
 
-7. You can **copy** the assigned **Public IP** that we will use to SSH into the instance, also notice that the username is `opc`.
+8. You can **copy** the assigned **Public IP** that we will use to SSH into the instance, also notice that the username is `opc`.
 
    Make sure the Icon turns **green**, and it says "RUNNING".
 
@@ -137,7 +139,7 @@ Estimated Lab Time: 15 minutes.
 
    To avoid install tools on your local computer, we are going to use **Cloud Shell**. Cloud Shell is a small and **free Linux virtual machine** with a lot of DevOps tools preinstalled that Oracle Cloud offers.
 
-8. Click on the **Cloud Shell** icon on the top-right menu bar.
+9. Click on the **Cloud Shell** icon on the top-right menu bar.
 
    ![Cloud Shell](images/compute_cloud_shell.png)
 
@@ -145,95 +147,95 @@ Estimated Lab Time: 15 minutes.
 
    ![Cloud Shell terminal](images/cloud_shell.png)
 
-9. Click on the Cloud Shell **menu** icon and then in **Upload**.
+10. Click on the Cloud Shell **menu** icon and then in **Upload**.
 
    ![Cloud Shell terminal](images/cloud_shell_upload.png)
 
-10. Click on **select from your computer**. And select the private key you downloaded for the compute instance.
+11. Click on **select from your computer**. And select the private key you downloaded for the compute instance.
 
-    > Note: You don't need to upload the public key (`.pub` file), but feel free to do it.
+   > Note: You don't need to upload the public key (`.pub` file), but feel free to do it.
 
-    ![Cloud Shell terminal](images/cloud_shell_select_file.png)
+   ![Cloud Shell terminal](images/cloud_shell_select_file.png)
 
-11. After you Upload the file you can **Hide** the message.
+12. After you Upload the file you can **Hide** the message.
 
-    ![Cloud Shell terminal](images/cloud_shell_select_file_hide.png)
+   ![Cloud Shell terminal](images/cloud_shell_select_file_hide.png)
 
-12. On **Cloud Shell terminal**, create `.ssh` folder for your SSH keys.
+13. On **Cloud Shell terminal**, create `.ssh` folder for your SSH keys.
 
-    ```
-    <copy>mkdir -p .ssh</copy>
-    ```
+      ```
+      <copy>mkdir -p .ssh</copy>
+      ```
 
-13. **Move** the key file to your `.ssh` folder with a different name, `bastion`.
+14. **Move** the key file to your `.ssh` folder with a different name, `bastion`.
 
-    ```
-    <copy>mv ssh-key-*.key .ssh/bastion</copy>
-    ```
+      ```
+      <copy>mv ssh-key-*.key .ssh/bastion</copy>
+      ```
 
-14. **Connect** with your bastion host with SSH. The `PUBLIC_IP` was copied when the bastion host was created.
+15. **Connect** with your bastion host with SSH. The `PUBLIC_IP` was copied when the bastion host was created.
 
-    ```
-    <copy>**ssh** -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
-    ```
+      ```
+      <copy>ssh -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
+      ```
 
-15. To the question `Are you sure you want to continue connecting (yes/no/[fingerprint])?` type `yes` and ENTER.
+16. To the question `Are you sure you want to continue connecting (yes/no/[fingerprint])?` type `yes` and ENTER.
 
-    You will most likely get a `bad permissions` warning. Basically the permissions of the key are too open.
+   You will most likely get a `bad permissions` warning. Basically the permissions of the key are too open.
 
-    ```
-    Warning: Permanently added 'xxx.xxx.xxx.xxx' (ECDSA) to the list of known hosts.
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    Permissions 0644 for '/home/it/.ssh/bastion' are too open.
-    It is required that your private key files are NOT accessible by others.
-    This private key will be ignored.
-    Load key "/home/it/.ssh/bastion": bad permissions
-    Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
-    ```
+      ```
+      Warning: Permanently added 'xxx.xxx.xxx.xxx' (ECDSA) to the list of known hosts.
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      Permissions 0644 for '/home/it/.ssh/bastion' are too open.
+      It is required that your private key files are NOT accessible by others.
+      This private key will be ignored.
+      Load key "/home/it/.ssh/bastion": bad permissions
+      Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+      ```
 
-16. Security first, let's fix the **permissions** to `600` with the following command:
+17. Security first, let's fix the **permissions** to `600` with the following command:
 
-    ```
-    <copy>chmod 600 .ssh/bastion</copy>
-    ```
+      ```
+      <copy>chmod 600 .ssh/bastion</copy>
+      ```
 
-17. **Connect** with SSH again (remember to replace `PUBLIC_IP` with your bastion host IP):
+18. **Connect** with SSH again (remember to replace `PUBLIC_IP` with your bastion host IP):
 
-    ```
-    <copy>ssh -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
-    ```
+      ```
+      <copy>ssh -i ~/.ssh/bastion opc@PUBLIC_IP</copy>
+      ```
 
-    This time you should be inside of the bastion host. This is the machine we will use to access MySQL Database Service that lives in a private subnet.
+   This time you should be inside of the bastion host. This is the machine we will use to access MySQL Database Service that lives in a private subnet.
 
-18. **Update** your Linux (it might take few minutes):
+19. **Update** your Linux (it might take few minutes):
 
-    ```bash
-    <copy>sudo yum update -y</copy>
-    ```
+      ```bash
+      <copy>sudo yum update -y</copy>
+      ```
 
-19. **Install** MYSQL Shell with the following commands:
+20. **Install** MYSQL Shell with the following commands:
 
-    ```bash
-    <copy>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
-    ```
+      ```bash
+      <copy>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
+      ```
 
-    ```
-    <copy>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm</copy>
-    ```
+      ```
+      <copy>sudo yum localinstall -y mysql80-community-release-el7-3.noarch.rpm</copy>
+      ```
 
-    ```
-    <copy>sudo yum install mysql-shell mysql-community-client -y</copy>
-    ```
+      ```
+      <copy>sudo yum install mysql-shell mysql-community-client -y</copy>
+      ```
 
-20. Let's check the **version** of MySQL Shell:
+21. Let's check the **version** of MySQL Shell:
 
-    ```
-    <copy>mysqlsh --version</copy>
-    ```
+      ```
+      <copy>mysqlsh --version</copy>
+      ```
 
-## **STEP 3:** Create Object Storage and upload files
+## Task 3: Create Object Storage and Upload Files
 
 1. Go to **Menu** > **Storage** > **Buckets**.
 
@@ -245,7 +247,7 @@ Estimated Lab Time: 15 minutes.
 
 3. **Change** the bucket name, leave everything else by default.
 
-   - Bucket Name: `bucket-study`
+      - Bucket Name: `bucket-study`
 
 4. Click **Create**.
 
@@ -259,7 +261,7 @@ Estimated Lab Time: 15 minutes.
 
    ![Create Bucket](images/os_object_upload.png)
 
-7. **Download** the dataset <a href="./files/reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
+7. **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/27PK5yRJp6ikvVdli-21D0vTwNywA0Q1aUPD2RQ7G8rtbPQwO2onh7TaZjfjawPj/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
 
 8. Drop the file on **Choose Files from your Computer**. Leave everything else by default.
 
@@ -267,31 +269,26 @@ Estimated Lab Time: 15 minutes.
 
 9. Click **Upload**.
 
-![Object Upload Reef File](images/os_object_reef_upload.png)
+   ![Object Upload Reef File](images/os_object_reef_upload.png)
 
 10. Click **Close**.
 
-    You will see the new file in the Objects list. Click on the three dots contextual menu.
+   You will see the new file in the Objects list. Click on the three dots contextual menu.
 
-    ![Object List with new File](images/os_file_uploaded.png)
+   ![Object List with new File](images/os_file_uploaded.png)
 
 11. On the contextual menu, select **View Object Details**.
 
-    ![Object Details Menu](images/os_object_details_menu.png)
+   ![Object Details Menu](images/os_object_details_menu.png)
 
-12. Take note of the URL you have. We will use it in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use it in the Lab number 3, Create Data Integration Instance.
 
-    ![Object Details URL](images/os_object_details_url.png)
+   ![Object Details URL](images/os_object_details_url.png)
 
 Congratulations! You are ready to go to the next Lab!
-
 
 ## **Acknowledgements**
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
-
-## See an issue
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
+- **Last Updated By/Date** - Brianna Ambler, June 2021

@@ -17,15 +17,15 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 1: Setup the BDS Environment**
 + **Lab 2: Create a BDS Hadoop Cluster**
 
-## **STEP 1:** Maintain the Cluster
+## Task 1: Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+    ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, on the row for **`training-cluster`**, click the **Actions** button. You can use the context menu to view the cluster's details, add nodes, add block storage, add Cloud SQL, rename the cluster, remove Cloud SQL (if it's already added), and terminate the Big Data cluster.
 
@@ -43,7 +43,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
 
     **Note:** Oracle Cloud Infrastructure Tagging allows you to add metadata to resources, which enables you to define keys and values and associate them with resources. You can use the tags to organize and list resources based on your business needs. For additional information, see [Tagging Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm#Tagging_Overview) in the OCI documentation.    
 
-## **STEP 2:** Add Oracle Cloud SQL to the Cluster
+## Task 2: Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 
@@ -104,5 +104,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

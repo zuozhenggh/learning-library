@@ -9,7 +9,7 @@ Estimated Lab Time 45-60 minutes
 - Deploy Terraform to setup necessary architecture for DR
 
 ### Prerequisites
-1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/t2RvGol1cuJOc4lGwlHHp7j7MnknHtDzJeEMWYrP10-5fSWTFOs2yLreGhDjKgAW/n/c4u03/b/solutions-library/o/DR-ORDS-RW-master.zip) to your local machine.
+1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EI0RqkgDQsid-sm5OQP2Z-rzJAHXboftWh0HrWii2duBC8WRaBYF4CglkFkt3mQ3/n/c4u04/b/solutions-library/o/DR-ORDS-RW-master.zip) to your local machine.
 
 2.  Create your own private/public key pair on your local system.
 3.  Zip up all of the files in to a zip folder. The zip file name is not important.
@@ -71,7 +71,7 @@ Estimated Lab Time 45-60 minutes
         └── variables.tf
 
     
-## **STEP 1:** Create Stack    
+## Task 1: Create Stack    
 1. Navigate to the resource manager tab in OCI and select **Stacks**. 
     ![](./images/select-stacks.png)
 
@@ -90,14 +90,14 @@ Estimated Lab Time 45-60 minutes
 5. Copy your public and private key. Make sure you are using the correct format.
     ![](./images/ResourceManager-Keys.PNG)
 
-6. Input the configuration for the object storage. Make sure to copy the following link [apex](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MieIN2uqptIk7iiVZG16a5pabojWpeDrkkk-HMowLlG0joiD6WET0tPA6GPstEVF/n/c4u03/b/solutions-library/o/apex_20.1.zip) into the URL\_APEX\_FILE field.
-   Make sure to copy the following link [ords](https://objectstorage.us-ashburn-1.oraclecloud.com/p/10lp9s-Kd2pNy9otaToA6UloTJjoat5V5IAJB_tUQtcabWvm6OvKkLAYM0-gbeL3/n/c4u03/b/solutions-library/o/ords.war) into the URL\_ORDS\_FILE field.
+6. Input the configuration for the object storage. Make sure to copy the following link [apex](https://objectstorage.us-ashburn-1.oraclecloud.com/p/I3bUrYDk8L2HMDRdRNnh3IPjIvnK81QH2n_XqrdmAiqYMqSXkwH60ijL4h_21V21/n/c4u04/b/solutions-library/o/apex_20.1.zip) into the URL\_APEX\_FILE field.
+   Make sure to copy the following link [ords](https://objectstorage.us-ashburn-1.oraclecloud.com/p/B71llCDFaVYuBQw40SsZ6Bal_VK-e2k658wtmEMyKp3fSX85SVoHBjPQM_Xf2eS3/n/c4u04/b/solutions-library/o/ords.war) into the URL\_ORDS\_FILE field.
     ![](./images/ResourceManager-ObjectStorage.PNG)
 
 7. Review & click on the **Create** button
     ![](./images/ResourceManager-Review.PNG)
 
-## **STEP 2:** Plans
+## Task 2: Plans
 
 1.  Select **Plan** from the Terraform Actions dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -108,7 +108,7 @@ Estimated Lab Time 45-60 minutes
 3.  Wait until the icon turns green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **STEP 3:** Apply
+## Task 3: Apply
 
 1.  Select **Apply** from the Terraform Actions dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)

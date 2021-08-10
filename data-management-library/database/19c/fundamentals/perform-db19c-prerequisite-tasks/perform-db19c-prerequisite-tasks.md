@@ -27,7 +27,7 @@ The following need to be completed before you start:
 - You have your My Oracle Support username and password. These are required to download OPatch and a release update.
 
 
-## **STEP 1**: Run oracle-database-preinstall-19c
+## Task 1: Run oracle-database-preinstall-19c
 
 The preinstaller for Oracle Database 19c performs many pre-installation and pre-configuration tasks for you. It also creates a `dba` and `oinstall` group, creates an `oracle` user, and adds the `oracle` user to the `dba` and `oinstall` groups. If you've already created the `oracle` user and groups, that is fine. This installation will not affect them.
 
@@ -51,7 +51,7 @@ The preinstaller for Oracle Database 19c performs many pre-installation and pre-
     ```
 
 
-## **STEP 2**: Make the `oracle` user a sudoer
+## Task 2: Make the `oracle` user a sudoer
 
 Allow the `oracle` user to perform any operation as `root`. This step gives the `oracle` user root permission without the need for them to know the `root` password. Sudoers must be edited by running `visudo`. You need to do this step so that later when you install Oracle Database 19c in another lab, you can specify the `oracle` user as the sudo user to run configuration scripts.
 
@@ -75,7 +75,7 @@ Allow the `oracle` user to perform any operation as `root`. This step gives the 
 
 
 
-## **STEP 3**: Create the `Oracle base` and `Oracle inventory` directories and assign permissions.
+## Task 3: Create the `Oracle base` and `Oracle inventory` directories and assign permissions.
 
 1. Create the **Oracle base** and **Oracle inventory** directories.
 
@@ -97,7 +97,7 @@ Allow the `oracle` user to perform any operation as `root`. This step gives the 
     ```
 
 
-## **STEP 4**: Increase the swap space on your compute instance to 16GB.
+## Task 4: Increase the swap space on your compute instance to 16GB.
 
 Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The Oracle Database 19c installer requires at least 16GB, so you need to increase the amount.
 
@@ -151,7 +151,7 @@ Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The O
     ```nohighlighting
     <copy>/swapfile swap swap defaults 0 2</copy>
     ```
-## **STEP 5**: Create a `stage` directory to store the Oracle Database 19c (19.3) installer file, OPatch, and the 19.11 release update
+## Task 5: Create a `stage` directory to store the Oracle Database 19c (19.3) installer file, OPatch, and the 19.11 release update
 
 1. Create a `/stage` directory.
 
@@ -166,7 +166,7 @@ Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The O
      ```
 
 
-## **STEP 5**: Download and stage the Oracle Database 19c installer files in the Oracle home directory on your compute instance
+## Task 5: Download and stage the Oracle Database 19c installer files in the Oracle home directory on your compute instance
 
 1. In a browser on your local computer, access the following URL:
 
@@ -244,7 +244,7 @@ Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The O
 
 
 
-## **STEP 6**: Install OPatch to the required version
+## Task 6: Install OPatch to the required version
 
 1. Download the OPatch ZIP file from My Oracle Support. Select release **12.2.0.1.0**. Upload the ZIP to your object storage and get the pre-authenticated request URL.
 
@@ -305,7 +305,7 @@ Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The O
 
 
 
-## **STEP 7**: Download the Database Release Update 19.11.0.0 and extract it into the Oracle home directory
+## Task 7: Download the Database Release Update 19.11.0.0 and extract it into the Oracle home directory
 
 
 1. Use the `wget` command to download the release update ZIP file from My Oracle Support into the `stage` directory. In the following command, replace `MOSusername` and `MOSpassword` with your My Oracle Support username and password.
@@ -327,7 +327,7 @@ Currently, a VM.Standard.E2.4 compute instance has 8GB of free swap space. The O
 4. Verify that the `32545013` directory exists.
 
 
-## **STEP 8**: Download the lab files to your compute instance
+## Task 8: Download the lab files to your compute instance
 
 In the Oracle Database 19c New Features workshop, you run many prebuilt scripts. You can download these scripts from LiveLab's object storage.
 
@@ -342,7 +342,7 @@ In the Oracle Database 19c New Features workshop, you run many prebuilt scripts.
 2. Use the `wget` command to download a ZIP file containing the lab files to the `labs` directory.
 
     ```nohighlighting
-    $ <copy>wget "https://objectstorage.us-phoenix-1.oraclecloud.com/p/83Tmlx4J_v8iicr-u5G8PYlzpiFmXxxB9qKGBgEVScgZXHjmyb5xSLUOdolnPO0F/n/c4u03/b/ll-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
+    $ <copy>wget "https://objectstorage.us-ashburn-1.oraclecloud.com/p/H9kHHj4bjsvsZ3H3lLQAq8KLHfVcx9K_AorT0HveZVG_LDFOH1zUTsjCUZvp4_FO/n/c4u04/b/II-19c/o/19cNewFeaturesLabFiles19cNewFeatures.zip"</copy>
         ```
 
 
@@ -366,7 +366,7 @@ In the Oracle Database 19c New Features workshop, you run many prebuilt scripts.
     ```
 
 
-## **STEP 9**: Configure the `/etc/hosts` file on your compute instance
+## Task 9: Configure the `/etc/hosts` file on your compute instance
 
 Using the vi editor, open the `/etc/hosts` file and add the following line to the end of the file. Replace private-ip-address and host-name with your own values.
 

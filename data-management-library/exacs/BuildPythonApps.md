@@ -28,7 +28,7 @@ As an application developer,
 
 ## Steps
 
-### **Step 1:** Download sample python application
+### Task 1: Download sample python application
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
@@ -77,7 +77,7 @@ Lets download a sample python application for the purpose of this lab,
 <copy>unzip EXACSPython.zip</copy>
 ```
 
-### **Step 2:** Run your python application**
+### Task 2: Run your python application**
 
 
 - Open terminal on your laptop and SSH into linux host machine. Windows users follows instructions provided above to ssh using Putty.

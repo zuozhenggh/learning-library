@@ -26,7 +26,7 @@ To run this lab, you will need:
 - A minimum of 16 GB of RAM.
 - A minimum of 4 CPUs.
 
-## **STEP 1:** Download the SOA Suite 12.2.1.3 VM image
+## Task 1: Download the SOA Suite 12.2.1.3 VM image
 
 1. Download the SOA Suite 12.2.1.3 .ova image file from 
 
@@ -37,7 +37,7 @@ To run this lab, you will need:
     ![](./images/download-soa12213-ova.png)
 
 
-## **STEP 2:** Import the OVA image into VirtualBox
+## Task 2: Import the OVA image into VirtualBox
 
 1. Start Oracle VM VirtualBox .
 
@@ -51,7 +51,7 @@ To run this lab, you will need:
 
     This may take several minutes.
 
-## **STEP 3:** Start the SOA 12.2.1.3 VM.
+## Task 3: Start the SOA 12.2.1.3 VM.
 
 Once the import is successfull;
 
@@ -62,7 +62,7 @@ Once the import is successfull;
     - username: `oracle`
     - password: `oracle`
 
-## **STEP 4:** Install SOA Suite 12.2.1.4 Quick Start
+## Task 4: Install SOA Suite 12.2.1.4 Quick Start
 
 1. Go to [https://www.oracle.com/in/middleware/technologies/soasuite/downloads.html](https://www.oracle.com/in/middleware/technologies/soasuite/downloads.html).
 

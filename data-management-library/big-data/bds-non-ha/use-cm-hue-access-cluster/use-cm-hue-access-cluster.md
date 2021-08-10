@@ -15,7 +15,7 @@ All services are only available on certain ports. For example, in a non-HA clust
 
 In this lab, you will learn how to access CM and Hue directly in a web browser.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -27,18 +27,8 @@ Estimated Lab Time: 30 minutes
 * Add ingress rules to the default security rule that enables you to access both CM and Hue.
 </if>
 
-### What Do You Need?
-
-This lab assumes that you have successfully completed the following labs in the **Contents** menu:
-<if type="freetier">
-+ **Lab 1: Setup the BDS Environment**
-</if>
-<if type="livelabs">
-+ **Lab 1: Review Creating BDS Environment Resources (Optional)**
-</if>
-+ **Lab 2: Create a BDS Hadoop Cluster**
-+ **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
+> **Note:**    
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ### Video Preview
 
@@ -46,19 +36,23 @@ Watch a video demonstration of using Cloudera Manager and Hue to access a Big Da
 
 [](youtube:dAGD1If39fw)
 
-## **STEP 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
+## Task 1: Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
-In this step, you will <if type="freetier">add</if> <if type="livelabs">review how to add
+In this task, you will <if type="freetier">add</if> <if type="livelabs">review how to add
 </if> ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
 
 <if type="livelabs">
-_**Note:** All screen captures in this lab show the resources' names used when you run the workshop in your own tenancy and not the resources' names in your assigned LiveLabs environment._
+> _**Note:** All screen captures in this lab show the resources' names used when you run the workshop in your own tenancy and not the resources' names in your assigned LiveLabs environment._
 </if>
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. <if type="livelabs">_**Note:** If you are using the LiveLabs environment, you do not have administrative privileges._ </if>On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+
+<if type="livelabs">
+    >_**Note:** If you are using the LiveLabs environment, you do not have administrative privileges._ </if>
+
 </if>
 
-2. Click the **Navigation** menu in the upper left, and then navigate to **Networking > Virtual Cloud Networks**.
+2. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
 	![](./images/vcn.png " ")
 
@@ -111,9 +105,9 @@ _**Note:** All screen captures in this lab show the resources' names used when y
 
   ![](./images/ingress-rules-added.png " ")
 
-## **STEP 2:** Use Cloudera Manager (CM) to Access the Cluster
+## Task 2: Use Cloudera Manager (CM) to Access the Cluster
 
-In this step, you will use CM to access the cluster. In a non-HA cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in step 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
+In this task, you will use CM to access the cluster. In a non-HA cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in task 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
@@ -122,8 +116,8 @@ In this step, you will use CM to access the cluster. In a non-HA cluster, CM run
     ```
     https://<ip-address>:7183
     ```
-    **Note:**    
-    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the **Navigation** menu, and then navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
+    > **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the first utility node in your cluster, **`traininun0`**, which you created in the previous lab. To view your reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
     In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
@@ -173,7 +167,7 @@ In this step, you will use CM to access the cluster. In a non-HA cluster, CM run
 
     ![](./images/roles-table.png " ")
 
-    **Note:**    
+    > **Note:**    
     You can hover over any icon in the table to display the name of the service or gateway.
 
     ![](./images/icon-hover.png " ")
@@ -182,9 +176,9 @@ In this step, you will use CM to access the cluster. In a non-HA cluster, CM run
 
     ![](./images/logout-cm.png " ")
 
-## **STEP 3:** Use Hue to Access the Cluster
+## Task 3: Use Hue to Access the Cluster
 
-In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
 1. Open a web browser window.
 
@@ -194,7 +188,7 @@ In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue r
     https://<ip-address>:8888
     ```
 
-    **Note:**    
+    > **Note:**    
     In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in the previous lab.
 
     In our example, we used the reserved public IP address that is associated with our first utility node as follows:
@@ -213,7 +207,7 @@ In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 
 3. On the Hue Login screen, enter your **`username`** which is **`admin`** by default in Hue. For the password, enter the **`password`** that you specified when you created the cluster such as **`Training123`**. Click **Sign In**, or **Create Account** if this is the first time you log in to Hue.
 
-    **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
+    > **Note:** If Hue accounts haven’t been created yet, you can create other user and administrator accounts.
 
     ![](./images/hue-login-page.png " ")
 
@@ -229,7 +223,7 @@ In this step, you will use Hue to access the cluster. In a non-HA cluster, Hue r
 
   ![](./images/hue-logout.png " ")
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -248,4 +242,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Technical Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021

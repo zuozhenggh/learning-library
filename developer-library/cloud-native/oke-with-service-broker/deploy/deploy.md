@@ -1,14 +1,12 @@
-# Deploy an OKE Cluster with OCI Service Broker (OSB)
+# Deploy an OKE Cluster with Oracle Cloud Infrastructure Service Broker
 
 ## Introduction
 
-In this lab we will deploy the Oracle Kubernetes Engine (OKE) cluster with the OCI Service Broker, using the quickstart repository at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
+You will deploy the Oracle Kubernetes Engine (OKE) cluster with the OCI Service Broker, using the quickstart repository at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Clone the repository.
 - Populate parameter files.
@@ -17,13 +15,13 @@ In this lab you will:
 
 ### Prerequisites
 
-For this lab you will need to have installed the required software:
+Before you begin, you must have installed the required software:
 
-- kubectl.
-- Helm.
-- OCI CLI.
+- kubectl
+- Helm
+- OCI CLI
 
-## **STEP 1:** Clone the Repository
+## Task 1: Clone the Repository
 
 1. Clone the repository with the following command:
 
@@ -34,11 +32,11 @@ For this lab you will need to have installed the required software:
     </copy>
     ```
 
-    Or download the code from GitHub at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
+    Alternatively, you can download the code from GitHub at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
 
-## **STEP 2:** Create a `terraform.tfvars` File
+## Task 2: Create a `terraform.tfvars` File
 
-1. Create a `terraform.tfvars` file from the `terraform.tfvars.template` template (make a copy and rename it `terraform.tfvars).
+1. Create a `terraform.tfvars` file from the `terraform.tfvars.template` file (make a copy and rename it `terraform.tfvars).
 
     ```bash
     <copy>
@@ -53,16 +51,16 @@ For this lab you will need to have installed the required software:
     ```hcl
     tenancy_ocid = ""
     compartment_ocid = ""
-    region           = "us-ashburn-1"
+    region = "us-ashburn-1"
     ssh_authorized_key = ""
     secrets_encryption_key_ocid = null
     ```
 
-    - `region` and `tenancy_ocid` should match the values set in `TF_VARS.sh`.
+    - `region` and `tenancy_ocid` should match the values in your environment.
 
-    - `compartment_ocid` is the OCID of the compartment where the stack will be deployed. If you have not created a compartment, create one and get the OCID by going to **Identity -> Compartments** and select the compartment to use to see its details and retrieve the OCID.
+    - `compartment_ocid` is the OCID of the compartment where the stack will be deployed. If you have not created a compartment, create one and get the OCID by going to the Oracle Cloud Console and selecting  **Identity** and then **Compartments**. Select the compartment to use to see its details and retrieve the OCID.
 
-    - `ssh_authorized_key` is the content of your ***public*** key used for ssh. This will give you access to the worker nodes of the Kubernetes cluster if need be.
+    - `ssh_authorized_key` is the content of your public key used for ssh. This will give you access to the worker nodes of the Kubernetes cluster if need be.
 
         You can use the `oci_api_key_public` you created when installing the OCI CLI or your default ssh key usually located at `~/.ssh/id_rsa.pub` on Mac or Linux machines.
 
@@ -76,39 +74,39 @@ For this lab you will need to have installed the required software:
 
         Copy the full output and then paste it into the `terraform.tfvars` file within the quotes.
 
-    - If you wish to encrypt Kubernetes secrets at rest, provide an encryption key OCID for `secrets_encryption_key_ocid`.
+    - If you want to encrypt Kubernetes secrets at rest, then provide an encryption key OCID for `secrets_encryption_key_ocid`.
 
-        You need to have created a **Vault** and an **Encryption Key** to use this feature, you also need to have permission to create a dynamic group, otherwise keep the value `null`.
+        You need to have created a **Vault** and an **Encryption Key** to use this feature, you also need to have permission to create a dynamic group; otherwise, keep the value `null`.
 
-    - If you do not have permission to create users or groups, provide your user_ocid to be used for all users, and ideally provide an auth token when required.
+    - If you do not have permission to create users or groups, provide your user_ocid to be used for all users, and ideally, provide an auth token when required.
 
     ```bash
-    # If you do not have permission to create users, provide the user_ocid of a user 
+    # If you do not have permission to create users, provide the user_ocid of a user
     # that has permission to pull images from OCI Registry
     ocir_puller_user_ocid        = null
 
-    # If the user provided above already has an auth_token to use, provide it here. 
-    # If null a new token will be created. 
+    # If the user provided above already has an auth_token to use, provide it here.
+    # If null a new token will be created.
     # This requires that the user has 1 token at most already (as there is a limit of 2 tokens per user)
     ocir_puller_auth_token = null
 
-    # If you have permission to create users, and a group already exists with policies 
-    # to pull images from OCI Registry, you can provide the group_ocid 
+    # If you have permission to create users, and a group already exists with policies
+    # to pull images from OCI Registry, you can provide the group_ocid
     # and a new user will be created and be made a member of this group
     # Leave null if you are providing a ocir_puller_user_ocid
     ocir_puller_group_ocid = null
 
-    # If you do not have permission to create users, provide the user_ocid of a user 
+    # If you do not have permission to create users, provide the user_ocid of a user
     # that has permission to create Autonomous Database, Object Storage buckets and Streams
     ocir_puller_user_ocid        = null
 
-    # If you have permission to create users, and a group already exists with policies to pull images from OCI Registry, you can provide the group_ocid 
+    # If you have permission to create users, and a group already exists with policies to pull images from OCI Registry, you can provide the group_ocid
     # and a new user will be created and be made a member of this group
     # Leave null if you are providing a osb_user_ocid
     osb_group_ocid = null
     ```
 
-## **STEP 3:** Initialize the Terraform Repository
+## Task 3: Initialize the Terraform Repository
 
 1. Initialize the Terraform project with:
 
@@ -118,7 +116,7 @@ For this lab you will need to have installed the required software:
     </copy>
     ```
 
-## **STEP 4:** Deploy the Stack
+## Task 4: Deploy the Stack
 
 1. If you wish to see the plan for the deployment, use:
 
@@ -140,7 +138,7 @@ For this lab you will need to have installed the required software:
 
     This will take between 20 and 40 minutes.
 
-## **STEP 5:** Verify the Deployment
+## Task 5: Verify the Deployment
 
 If the deployment went smoothly, you should not see errors in the Terraform log, and it should be done within 45 minutes.
 
@@ -220,7 +218,7 @@ If the deployment went smoothly, you should not see errors in the Terraform log,
     clusterservicebroker.servicecatalog.k8s.io/oci-service-broker   https://oci-service-broker.oci-service-broker.svc.cluster.local:8080   Ready    46s
     ```
 
-## **Step 6:** Access the Kubernetes Dashboard
+## Task 6: Access the Kubernetes Dashboard
 
 1. To access the Kubernetes dashboard, run the helper script:
 

@@ -35,7 +35,7 @@ To run this lab, you need to:
 - Have deployed a WebLogic on OCI domain using the marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Locate the Scripts and Application in the Source Environment
+## Task 1: Locate the Scripts and Application in the Source Environment
 
 ### Using the docker on-premises environment:
 
@@ -70,7 +70,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-## **STEP 2:** Copy the Files Over
+## Task 2: Copy the Files Over
 
 1. Package the files into a ZIP archive:
 
@@ -157,7 +157,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-## **STEP 3:** Edit the `gen_env.sh` File
+## Task 3: Edit the `gen_env.sh` File
 
 The `gen_env.sh` files calls the metadata endpoint to populate some of required field automatically, but it doesn't know about the database and data source, which we will need to populate manually.
 
@@ -225,7 +225,7 @@ It pulls the WebLogic information from the metadata endpoint v1 with calls to `c
     </copy>
     ```
 
-## **STEP 4:** Run the Deployment Script
+## Task 4: Run the Deployment Script
 
   ```bash
   <copy>
@@ -235,7 +235,7 @@ It pulls the WebLogic information from the metadata endpoint v1 with calls to `c
 
 ### You're done!
 
-## **STEP 5:** Check the Application Deployed Properly
+## Task 5: Check the Application Deployed Properly
 
 1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel as you did earlier.
 

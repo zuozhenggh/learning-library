@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -72,7 +72,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1:** Launch and Configure ODI Studio
+## Task 1: Launch and Configure ODI Studio
 
 1. A user *Oracle* from the remote desktop session you started above, launch a terminal client and Start the container database, all PDB's and the listener
 
@@ -139,7 +139,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
   ![](./images/odi_studio_5f.png " ")
 
-## **STEP 2:** Import Mappings and Run Initial Load
+## Task 2: Import Mappings and Run Initial Load
 
 1. If you are new to ODI, import these mappings using smart import. Select import to open the import wizard
 
@@ -182,7 +182,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
   ![](./images/odi_env_reset_1d.png " ")  
 
 
-## **STEP 3:** Test the environment
+## Task 3: Test the environment
 
 1. Expand **Model** and right-click on **`SRC_AGE_GROUP`** and select **View Data**
 

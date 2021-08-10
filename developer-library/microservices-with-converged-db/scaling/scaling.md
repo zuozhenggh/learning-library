@@ -6,11 +6,10 @@ This lab will show how the application can be scaled at the application and data
 
 Estimates Lab Time - 10 minutes
 
-<if type="event-freetier">
 Quick walk through on how the application can be scaled at the application and database tiers to maintain optimal performance.
 
 [](youtube:95cW9eH_os4)
-</if>
+
 
 ### Objectives
 -   Start the external load balancer for the order-helidon microservice
@@ -23,7 +22,7 @@ Quick walk through on how the application can be scaled at the application and d
 
 This lab assumes that you have already completed the previous labs.
 
-## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
+## Task 1:  Install a load testing tool and start an external load balancer for the Order service
 
 1. Start an external load balancer for the order service.
 
@@ -45,6 +44,10 @@ This lab assumes that you have already completed the previous labs.
     <copy>export LB='123.123.123.123'</copy>
     ```
 
+<if type="multicloud-freetier">
++ `export LB=$(kubectl get gateway msdataworkshop-order-helidon-appconf-gw -n msdataworkshop -o jsonpath='{.spec.servers[0].hosts[0]}')`
+</if>
+
 2. Install a load testing tool.  
 
     You can use any web load testing tool to drive load.  Here is an example of how to install the k6 tool ((licensed under AGPL v3).  Alternatively, you can use artillery and the script for that is also provided below. To see the scaling impacts we prefer doing this lab with k6.
@@ -61,7 +64,7 @@ This lab assumes that you have already completed the previous labs.
 	<copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
 	```
 
-## **STEP 2**: Load test and scale the application tier
+## Task 2: Load test and scale the application tier
 
 1.  Execute a load test using the load testing tool you have installed.  
 
@@ -147,7 +150,7 @@ This lab assumes that you have already completed the previous labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## **STEP 3**: Load test and scale the database tier
+## Task 3: Load test and scale the database tier
 
 1. To scale the Order DB ATP database to **2 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
@@ -181,7 +184,7 @@ This lab assumes that you have already completed the previous labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## **STEP 4**: Scale down the application and database tiers
+## Task 4: Scale down the application and database tiers
 
 1. To scale the Order DB ATP database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 

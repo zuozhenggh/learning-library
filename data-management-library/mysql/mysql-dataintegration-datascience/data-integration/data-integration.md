@@ -10,20 +10,24 @@ This Lab walks you through the steps to get started using **Data Integration** o
 
 [](youtube:0BN8Ws2qJGQ)
 
-## Objectives
+Estimated Lab Time: 30 minutes.
+
+### Objectives
 
 In this lab, you will:
 
 - Create Your OCI Data Integration Instance.
 - Create the Data Assets.
 
-Estimated Lab Time: 30 minutes.
+### Prerequisites
 
-## STEP 1: Create Your OCI Data Integration Instance
+- All previous labs have been successfully completed.
+
+## Task 1: Create Your OCI Data Integration Instance
 
 1. We need to create some **policies** to allow the Data Integration service to use other services within OCI.
 
-2. Go to **Identity** > **Policies**.
+2. Go to **Identity & Security** > **Policies**.
 
    ![Identity Policy Menu](images/identity_policies_menu.png)
 
@@ -35,13 +39,14 @@ Estimated Lab Time: 30 minutes.
 
 4. Create a new policy:
 
-   - Name: `dataintegration`
-   - Description: `Allow Data Integration Service to use VCN`
-   - Toggle: `Show manual editor`
-   - Policy Builder:
-     ```
-     <copy>allow service dataintegration to use virtual-network-family in tenancy</copy>
-     ```
+      - Name: `dataintegration`
+      - Description: `Allow Data Integration Service to use VCN`
+      - Toggle: `Show manual editor`
+      - Policy Builder:
+      
+      ```
+      <copy>allow service dataintegration to use virtual-network-family in tenancy</copy>
+      ```
 
    ![Policy fields for DI](images/identity_policy_fields.png)
 
@@ -75,9 +80,9 @@ Estimated Lab Time: 30 minutes.
 
 7. **Modify** the following fields, leave the rest as default:
 
-   - Name: `Workspace Nature`
-   - VCN: `nature`
-   - Subnet: `Private subnet-nature`
+      - Name: `Workspace Nature`
+      - VCN: `nature`
+      - Subnet: `Private subnet-nature`
 
 8. Click **Create**.
 
@@ -89,54 +94,57 @@ Estimated Lab Time: 30 minutes.
 
 10. Then click **Copy OCID**.
 
-    ![](images/di_ocid.png)
+   ![](images/di_ocid.png)
 
-11. Go to **Identity** > **Policies**. We are going to add new **policies** for our new Workspace.
+11. Go to **Identity & Security** > **Policies**. We are going to add new **policies** for our new Workspace.
 
-    ![](images/identity_policies_menu.png)
+   ![](images/identity_policies_menu.png)
 
 12. **Click** on the `dataintegration` policy name.
 
-    ![](images/di_policy_link.png)
+   ![](images/di_policy_link.png)
 
 13. Click **Edit Policy Statements**.
 
-    ![](images/di_policy_edit_button.png)
+   ![](images/di_policy_edit_button.png)
 
 14. Click **+ Another Statement**.
-
-    ![](images/di_policy_add_policy.png)
+   
+   ![](images/di_policy_add_policy.png)
 
 15. Add **two more statements** and make sure you replace `DATA_INTEGRATION_WORKSPACE_OCID` with the Workspace OCID:
 
-    - The first statement:
+      - The first statement:
+      
       ```
       <copy>allow any-user to use buckets in tenancy where ALL {request.principal.type='disworkspace', request.principal.id='DATA_INTEGRATION_WORKSPACE_OCID'}</copy>
       ```
-    - The second statement:
+      
+      - The second statement:
+      
       ```
       <copy>allow any-user to manage objects in tenancy where ALL {request.principal.type='disworkspace',request.principal.id='DATA_INTEGRATION_WORKSPACE_OCID'}</copy>
       ```
 
 16. Click **Save Changes**.
 
-    ![](images/di_policy_save_changes.png)
+   ![](images/di_policy_save_changes.png)
 
-17. Come back to **Data Integration**, Click **Menu** > **Analytics & AI** > **Data Integration**.
+17. Come back to **Data Integration** under **Analytics & AI**, click **Menu** > **Analytics & AI** > **Data Integration**.
 
-    ![](images/di_menu.png)
+   ![](images/di_menu.png)
 
 18. Check the **Data Integration Workspace** is `Active` and click the link.
 
-    ![](images/di_active_go_to_workspace.png)
+   ![](images/di_active_go_to_workspace.png)
 
 ---
 
-## STEP 2: Create the Data Assets
+## Task 2: Create the Data Assets
 
 We are going to need the **Object Storage URL** and **Tenancy ID**.
 
-1. ### Keep the Object Storage URL at hand
+1. ### Keep the Object Storage URL that you copied previously at hand
 
    You have this URL from Lab number 1, Underlying Infrastructure. The URL depends on the region you are doing the workshop.
 
@@ -161,16 +169,15 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 2. ### Get Tenancy OCID
 
    Go to **Profile** on the top-right corner.
-
    Click on **Tenancy**.
 
    ![](images/profile_tenancy_menu.png)
 
    **Tenancy** details contain a lot of interesting information, among others:
 
-   - Your **Home** Region.
-   - Your **CSI number** for creating support tickets.
-   - Also, your **Object Storage Namespace**.
+      - Your **Home** Region.
+      - Your **CSI number** for creating support tickets.
+      - Also, your **Object Storage Namespace**.
 
    At this point, we are interested in the **Tenancy OCID**. Copy the OCID by clicking on **Copy**. Write it down for the next step.
 
@@ -200,11 +207,11 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
 6. **Fill** the fields as follows:
 
-   - Name: `bucket-study`
-   - Description: `Object Storage Bucket with fish survey`
-   - Type: `Oracle Object Storage`
-   - URL: `https://objectstorage.<REGION>.oraclecloud.com`
-   - Tenancy OCID: `ocid1.tenancy.oc1..muahahahahahahahaha`
+      - Name: `bucket-study`
+      - Description: `Object Storage Bucket with fish survey`
+      - Type: `Oracle Object Storage`
+      - URL: `https://objectstorage.<REGION>.oraclecloud.com`
+      - Tenancy OCID: `ocid1.tenancy.oc1..muahahahahahahahaha`
 
 7. Click outside the **Tenancy OCID** field, and after few seconds, and **OS Namespace** will be retrieved automatically.
 
@@ -224,37 +231,38 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
 10. Click **Create Data Assets** again.
 
-    ![](images/dataasset_create_button.png)
+   ![](images/dataasset_create_button.png)
 
-    This time we are going to create the **MySQL database asset** with the following values:
+   This time we are going to create the **MySQL database asset** with the following values:
 
-    - Name: `mysql-database`
-    - Description: `MySQL Database for Analytics`
-    - Type: `MySQL`
-    - Host (from MySQL created instance): `10.0.1.x`
-    - Port: `3306`
-    - Database: `nature`
-    - User: `root`
-    - Password: `R2d2&C3po!`
-      ![](images/dataasset_mysql_fields1.png)
+      - Name: `mysql-database`
+      - Description: `MySQL Database for Analytics`
+      - Type: `MySQL`
+      - Host (from MySQL created instance): `10.0.1.x`
+      - Port: `3306`
+      - Database: `nature`
+      - User: `root`
+      - Password: `R2d2&C3po!`
+      
+   ![](images/dataasset_mysql_fields1.png)
 
-    ![](images/dataasset_mysql_fields2.png)
+   ![](images/dataasset_mysql_fields2.png)
 
-    You can test the **connection**.
+   You can test the **connection**.
 
 11. Click **Create**.
 
-    ![](images/dataasset_mysql_test_create.png)
+   ![](images/dataasset_mysql_test_create.png)
 
-    When the data asset is created, go back to **Home**.
+   When the data asset is created, go back to **Home**.
 
-    ![](images/dataasset_mysql_success_go_back_home.png)
+   ![](images/dataasset_mysql_success_go_back_home.png)
 
-## It works
+## Task 3: It Works
 
-Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
+1. Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
 
-![](images/di_dataassets_success.png)
+   ![](images/di_dataassets_success.png)
 
 Congratulations, you are ready for the next Lab!
 
@@ -264,8 +272,4 @@ Congratulations, you are ready for the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Manager
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Kamryn Vinson, May 2021
-
-## See an issue
-
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the **workshop name**, **lab**, and **step** in your request.  If you don't see the workshop name listed, please enter it manually. If you would like for us to follow up with you, enter your email in the **Feedback Comments** section.
+- **Last Updated By/Date** - Brianna Ambler, June 2021

@@ -6,7 +6,7 @@ Anomaly Detection is the identification of rare items, events, or observations i
 
 The core algorithm of our Anomaly Detection service is an Oracle-patented multivariate time-series anomaly detection algorithm originally developed by Oracle Labs and had been successfully used in several industries for prognosis analysis.
 
-The Anomaly Detection Service at OCI (Oracle Cloud Infrastructure) will create customized Machine Learning models by taking the data uploaded by users, using the core algorithm to train the model, and deploying the model into the cloud environment to be ready for detection. Users can then send new data to the detection endpoints to get detected anomaly results.
+The Anomaly Detection Service at OCI (Oracle Cloud Infrastructure) will create customized Machine Learning models by taking the data uploaded by users, using the core algorithm to train the model, and hosted in the cloud to be ready for detection. Users can then send new data to the detection endpoints to get detected anomaly results.
 
 [Anomaly Detection Demonstration Video](youtube:LamMjG3mD-s)
 
@@ -20,13 +20,13 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 
 * Understand a high level overview of the OCI Anomaly Detection Service
 * Understand the full cycle/workflow of services provided in the OCI Anomaly Detection
-* Hand-on activities to experience the whole pipeline of machine learning model development
-* Learn how to deploy the trained model into production for future anomaly detection
+* Hand-on activities to experience the whole pipeline of machine learning model development from training to detecting
 * (In Advanced Sessions) Learn to use REST API to interact with Anomaly Detection service
 * (In Advanced Sessions) Learn basic data analysis preprocessing techniques to prepare data for model training
 
 ### Prerequisites:
 * An Oracle Free Tier, or Paid Cloud Account
+* Grant proper permission for user to use the Anomaly Detection Service
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with services on Oracle Cloud Infrastructure (OCI), such as Object Storage
 * Familiar with machine learning, data processing, statistics is desirable, but not required
@@ -34,23 +34,51 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
 ## Anomaly Detection Service Concepts
-* Project: Projects are collaborative workspaces for organizing data assets, models, deployments, and detection portals .
-* Data Assets: An abstracted data format to contain meta information of the actual data source for model training; it supports multiple types of data sources (currently only Oracle Object Storage is supported, but other formats are on the way).
+* Project: Projects are collaborative workspaces for organizing data assets, models, and detection portals.
+* Data Assets: An abstracted data format to contain meta information of the actual data source for model training; it supports multiple types of data sources (currently  Oracle Object Storage, Oracle Autonomous Transaction Processing, InfluxDB are supported).
 * Model: The ML model that trained by our Oracle patented algorithms that can detect anomalies in multivariate time-series data. A few parameters are exposed so user can choose to select, but also default values are suggested.
-* Deployment: When model training are finished and users are satisfied with the training performance, they can deploy the selected model into a production model to be ready for new API calls for detection.
-* Detection: When a model is deployed, user can use send new data to the API or upload to the cloud portal to get anomaly detection results.
+* Detection: Once a model is trained successfully, it is automatically deployed into the cloud environment os user can use send new data to the API or upload to the cloud portal to get anomaly detection results.
 
 ## Anomaly Detection Process
 
 At a high level, here are the process of completing a full cycle of using anomaly detection service.
 
-1. Create a project. A project is used to include and organize different assets, models, deployments in the same workspace.
-2. Create a data asset. Data asset is an abstracted data representation for a data source. Currently it only supports Oracle object storage; additional source types are in development.
-3. Train a model. After specifying a data asset and the training parameters, you can train an anomaly detection model. It will take 5 minutes or longer depending on the data size and target parameter FAP.
-4. Deploy a model. Once a model is trained successfully, user can deploy it to have a deployment endpoint ready to take any new incoming testing data.
+1. Create a project. A project is used to include and organize different assets, models and private endpoints for ATP or InfluxDB data connection in the same workspace.
+2. Create a data asset. Data asset is an abstracted data representation for a data source. Currently it supports Oracle object storage, Oracle Autonomous Transaction Processing, InfluxDB.
+3. Train a model. After specifying a data asset and the training parameters, you can train an anomaly detection model. It will take 5 minutes or longer depending on the data size and target parameter FAP. Once a model is trained successfully, it is deployed automatically with an endpoint ready to take any new incoming testing data.
 5. Detection with new data. User can send newer data with same attributes of the training data to the deployment endpoint or upload to the deployment UI to get detection result.
 
-Note that one project can have multiple data assets, multiple models, multiple deployments.
+Note that one project can have multiple data assets and multiple models.
+
+## Anomaly Detection Resource
+
+In order for users to create and manage the resource used in Anomaly Detection service, the administrators of the tenancy need to add proper policy to grant permissions to users.
+
+Granting permissions to users can use one of 2 ways: at whole aggregated resource level, or individual resource level.
+
+### Method 1: Granting permissions at aggregated resource level
+
+* ai-service-anomaly-detection-family
+
+Example of policy can be like:
+```
+Allow any-user to manage ai-service-anomaly-detection-family in tenancy
+```
+
+### Method 2: Granting permissions at individual resource level
+
+* ai-service-anomaly-detection-project
+* ai-service-anomaly-detection-model
+* ai-service-anomaly-detection-data-asset
+* ai-service-anomaly-detection-private-endpoint
+
+Example of policy can be like:
+```
+Allow any-user to manage ai-service-anomaly-detection-project in tenancy
+Allow any-user to manage ai-service-anomaly-detection-model in tenancy
+Allow any-user to manage ai-service-anomaly-detection-data-asset in tenancy
+Allow any-user to manage ai-service-anomaly-detection-private-endpoint in tenancy
+```
 
 [Proceed to the next section](#next).
 
@@ -60,4 +88,4 @@ Note that one project can have multiple data assets, multiple models, multiple d
     * Haad Khan - Senior Data Scientist - Oracle AI Services
     * Marianne Liu - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Jason Ding - Principal Data Scientist, July 2021

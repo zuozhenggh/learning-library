@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle Machine Learning for Python on Autonomous Database",
+    "workshoptitle": "Oracle Machine Learning for Python on Oracle Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
     "include": {
         "import": "../../common/import_notebook.md"
@@ -15,7 +15,7 @@
         },
 		{
             "title": "Get Started with LiveLabs",
-            "filename": "../../get-started-livelabs/get-started-livelabs.md"			
+            "filename": "../../get-started-livelabs/get-started-livelabs.md"
         },
         {
             "title": "Lab 1: Getting Started with OML4Py",

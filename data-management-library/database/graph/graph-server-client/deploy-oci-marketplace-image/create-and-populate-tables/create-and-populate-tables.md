@@ -12,58 +12,22 @@ Estimated time: 7 minutes
 
 ### Objectives
 
-- Learn how to connect to your new Autonomous Database using SQL Developer Web
+- Learn how to connect to your new Autonomous Database using Database Actions
 - Learn how to create tables and insert data using SQL
 
 ### Prerequisites
 
-- This lab assumes you have successfully completed the lab - Create and enable a user in SQL Developer Web.
+- This lab assumes you have successfully completed the lab - Create and enable a user in Database Actions.
 
-## **STEP 1:** Log in to SQL Developer Web
+## Task 1: Log in to Database Actions
 
-Open the correct URL for SQL Developer Web for the `CUSTOMER_360` user. It is almost the same URL as the one for the Admin user execpt that `admin` in that url is replaced with the schema-alias we provided, i.e. with `customer_360`.
-
-![](images/admin_url.jpg)
-
-Login as `CUSTOMER_360` using the password you entered when creating the user.
-
-*Note: Use the password you choose in Step 2 in Lab 4.*
+Login as `CUSTOMER_360` using the password you entered when creating the user. The correct URL for Database Actions should contain `/customer_360/`
 
 ![](images/login-c360.jpg)
 
 ![](images/sdw-c360.jpg)
 
-### Troubleshooting
-
-If you receive a *Service Unavailable* error, it may be that the `CUSTOMER_360` account is locked.
-
-![](images/troubleshooting_login.png)
-
-You can try the following steps:
-
-1. Log in as `ADMIN`, enter and run the command in Worksheet:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
-
-    In Query Result, check the account status of `CUSTOMER_360`. The status should be `OPEN`.
-
-    ![](images/troubleshoot_query_result.png)
-
-2. If the status is `LOCKED`, enter and run the command to unlock the user:
-
-    ```
-    <copy>ALTER USER customer_360 ACCOUNT UNLOCK;</copy>
-    ```
-
-3. Then, the status should change to `OPEN`. You can check again using command:
-
-    ```
-    <copy>SELECT username, account_status FROM dba_users;</copy>
-    ```
-
-## **STEP 2:** Drop existing tables if any
+## Task 2: Drop existing tables if any
 
 To ensure a clean slate, drop any existing tables. Copy, paste, and execute the following commands into the SQL Worksheet.
 
@@ -81,7 +45,7 @@ DROP TABLE transfer;
 
 ![](images/drop-table.jpg)
 
-## **STEP 3:** Create and populate the `ACCOUNT` table
+## Task 3: Create and populate the `ACCOUNT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -108,7 +72,7 @@ COMMIT;
 
 ![](images/create-table.jpg)
 
-## **STEP 4:** Create and populate the `CUSTOMER` table
+## Task 4: Create and populate the `CUSTOMER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -132,7 +96,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 5:** Create and populate the `MERCHANT` table
+## Task 5: Create and populate the `MERCHANT` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -153,7 +117,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 7:** Create and populate the `PARENT_OF` table
+## Task 7: Create and populate the `PARENT_OF` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -170,7 +134,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 8:** Create and populate the `PURCHASED` table
+## Task 8: Create and populate the `PURCHASED` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -199,7 +163,7 @@ COMMIT;
 </copy>
 ```
 
-## **STEP 9:** Create and populate the `TRANSFER` table
+## Task 9: Create and populate the `TRANSFER` table
 
 Clear the SQL Worksheet. Copy, paste, and run the following SQL script.
 
@@ -232,5 +196,5 @@ You may now proceed to the next lab.
 
 * **Author** - Jayant Sharma, Product Manager, Spatial and Graph
 * **Contributors** - Thanks to Jenny Tsai and Arabella Yao for helpful, constructive feedback that improved this workshop.
-* **Last Updated By/Date** - Ryota Yamanaka, Product Manager, Spatial and Graph, January 2021
+* **Last Updated By/Date** - Ryota Yamanaka, August 2021
 

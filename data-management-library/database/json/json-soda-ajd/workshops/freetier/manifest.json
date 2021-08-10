@@ -15,11 +15,20 @@
         {
             "title": "Lab 1: Provision an Autonomous JSON Database",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../provision/provision.md",
+            "type": "freetier"
         },
         {
             "title": "Lab 2: Introduction to JSON Collections",
             "filename": "../../json-collection/json-collection.md"
+        },
+        {
+            "title": "Lab 3: SODA for REST",
+            "filename": "../../soda/soda.md"
+        },
+        {
+            "title": "Lab 4: Using SQL to work with JSON",
+            "filename": "../../sql-json/sql-json.md"
         },
         {
             "title": "Need Help?",

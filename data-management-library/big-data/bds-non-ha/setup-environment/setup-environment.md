@@ -11,7 +11,7 @@ _In this LiveLabs version of the workshop, you **don't** have administrative pri
 
 Several of the tasks shown in this lab need to be performed by the Cloud Administrator for your tenancy. There are also optional tasks that make it easier to manage your environment. For example, creating compartments and groups are optional; however, they will simplify administration tasks as your environment expands.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -19,19 +19,18 @@ In this lab, you will review how to perform both the required and optional tasks
 
 | Task                                                             | Purpose                                                                                                                                                                                                                                                                                                                 | Who?                                      | Required? |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
-| [STEP 1: Log in to Oracle Cloud Console](#STEP1:LogintotheOracleCloudConsole)                         | Log in to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
-| [STEP 2: Create a Compartment for BDS Resources](#STEP2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
-| [STEP 3: Create an Identity and Access Management (IAM) User to be the BDS Administrator](#STEP3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you will add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
-| [STEP 4: Create an IAM BDS Administrators Group and Add the New User to the Group](#STEP4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
-| [STEP 5: Create IAM Policies for Administering Your Service](#STEP5:CreateIAMPoliciesforAdministeringYourService) |<ul><li>Create a policy named **`training-admin-policy`** to grant permissions to the BDS Administrator group to manage the cluster.</ul></li><ul><li>Create a second policy named **`training-bds-policy`** to grant permissions to BDS to create clusters in your tenancy.</ul></li>| Cloud Administrator or BDS Administrator   | **Yes**       |
-| [STEP 6: Create a Virtual Cloud Network (VCN)](#STEP6:CreateaVirtualCloudNetwork(VCN))                             | Create a Virtual Cloud Network (VCN) in your tenancy named **`training-vcn`**, to be used by your cluster(s). Alternatively, you can use an existing VCN in the tenancy.                                                                                                                                                              | Cloud Administrator or BDS Administrator | **Yes**       |
+| [Task 1: Log in to Oracle Cloud Console](#Task1:LogintotheOracleCloudConsole)                         | Log in to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
+| [Task 2: Create a Compartment for BDS Resources](#Task2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
+| [Task 3: Create an Identity and Access Management (IAM) User to be the BDS Administrator](#Task3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you will add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
+| [Task 4: Create an IAM BDS Administrators Group and Add the New User to the Group](#Task4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
+| [Task 5: Create IAM Policies for Administering Your Service](#Task5:CreateIAMPoliciesforAdministeringYourService) |<ul><li>Create a policy named **`training-admin-policy`** to grant permissions to the BDS Administrator group to manage the cluster.</ul></li><ul><li>Create a second policy named **`training-bds-policy`** to grant permissions to BDS to create clusters in your tenancy.</ul></li>| Cloud Administrator or BDS Administrator   | **Yes**       |
+| [Task 6: Create a Virtual Cloud Network (VCN)](#Task6:CreateaVirtualCloudNetwork(VCN))                             | Create a Virtual Cloud Network (VCN) in your tenancy named **`training-vcn`**, to be used by your cluster(s). Alternatively, you can use an existing VCN in the tenancy.                                                                                                                                                              | Cloud Administrator or BDS Administrator | **Yes**       |
 
-### What Do You Need?
-
+### Prerequisites    
 Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 
 
-## **STEP 1:** Log in to the Oracle Cloud Console
+## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -40,12 +39,12 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/oracle-cloud-console-home.png " ")    
 
-## **STEP 2:** Create a Compartment
+## Task 2: Create a Compartment
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the lab.
 
-_**Note:** In this LiveLabs version of the workshop, you don't have administrative privileges to create any OCI resources._
+> _**Note:** In this LiveLabs version of the workshop, you don't have administrative privileges to create any OCI resources._
 
-1. Click the **Navigation** menu in the upper left, navigate to **Identity & Security**, and then select **Compartments**.
+1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**.
 
 	 ![](./images/navigate-compartment.png " ")
 
@@ -61,20 +60,22 @@ _**Note:** In this LiveLabs version of the workshop, you don't have administrati
 
    ![](./images/compartment-created.png " ")
 
-## **STEP 3:** Create an IAM User to Be the BDS Administrator
+## Task 3: Create an IAM User to Be the BDS Administrator
 
 A Cloud Administrator has complete control over all of the BDS resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more BDS administrators. To create a new BDS administrator for a service, a Cloud Administrator must create a user and then add that user to a BDS administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
 Create a new **Administrator** group that will have full access rights to the new compartment that you created earlier as follows:
 
-1. If you are still on the **Compartments** page from the previous step, click the **Users** link in the **Identity** section on the left; otherwise, click the **Navigation** menu, and then navigate to **Identity & Security > Users**.
+1. If you are still on the **Compartments** page from the previous task, click the **Users** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and navigate to **Identity & Security > Users**.
 
 2. On the **Users** page, click **Create User**.
 
+   ![](./images/create-users-page.png " ")
+
 3. In the **Create User** dialog box, enter **`training-bds-admin`** in the **Name** field, **`Training BDS Admin User`** in the **Description** field, an optional email address for the user in the **Email** field, and then click **Create**.
 
-  **Note:**
-  An email address can be used as the user name, but it isn't required.
+    > **Note:**
+    An email address can be used as the user name, but it isn't required.
 
    ![](./images/create-user.png " ")
 
@@ -86,13 +87,13 @@ Create a new **Administrator** group that will have full access rights to the ne
 
    ![](./images/user-created.png " ")
 
-   **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
+    > **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this Task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
-## **STEP 4:** Create an IAM BDS Administrators Group and Add the New User to the Group
+## Task 4: Create an IAM BDS Administrators Group and Add the New User to the Group
 
 Create a BDS group whose members will be granted permissions to manage the BDS cluster life cycle.
 
-1. If you are still on the **Users** page from the previous step, click the **Groups** link in the **Identity** section on the left; otherwise, click the **Navigation** menu, and then navigate to **Identity & Security > Groups**.
+1. If you are still on the **Users** page from the previous task, click the **Groups** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and navigate to **Identity & Security > Groups**.
 
 2. On the **Groups** Page, click **Create Group**.
 
@@ -110,8 +111,8 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
    ![](./images/add-user-group.png " ")
 
-    **Note:**
-    If you haven't created the user who will be an administrator yet, go back to **STEP 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this step.
+    > **Note:**
+    If you haven't created the user who will be an administrator yet, go back to **Task 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this Task.
 
 6. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
 
@@ -122,10 +123,10 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
    ![](./images/groups-page.png " ")
 
 
-## **STEP 5:** Create IAM Policies for Administering Your Service
+## Task 5: Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Big Data Service resources. Before you can create a cluster, you must also create a policy that grants the system access to networking resources.
 
-1. If you are still on the **Groups** page from the previous step, click the **Policies** link in the **Identity** section on the left; otherwise, click the **Navigation** menu, and then navigate to **Identity & Security > Policies**.
+1. If you are still on the **Groups** page from the previous task, click the **Policies** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and navigate to **Identity & Security > Policies**.
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-compartment`** where the new policies will reside.  
 
@@ -148,7 +149,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     * Enter **`training-admin-policy`** in the **Name** field.
     - Enter **`Training Admin Group Policy`** in the **Description** field.
     - Select **`training-compartment`** from the **Compartment** drop-down list, if it's not already selected.
-    - In the **Policy Builder** section, click the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
+    - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
 
      ![](./images/create-policy-1-dialog.png " ")
 
@@ -185,7 +186,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
      ![](./images/click-create-button.png " ")
 
-7. Click **Create**. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
+7. The **Policy Detail** page is displayed and the statement in the **training-bds-policy** is displayed in the **Statements** section.
 
        ![](./images/policy-2-detail-page.png " ")
 
@@ -193,15 +194,15 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
       ![](./images/policies-created.png " ")
 
-      **Note:** You can click the name of a policy on this page to view and edit its policy statements.
+      > **Note:** You can click the name of a policy on this page to view and edit its policy statements.
 
 
-## **STEP 6:** Create a Virtual Cloud Network (VCN)
-In this step of the lab, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
+## Task 6: Create a Virtual Cloud Network (VCN)
+In this task, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
 
-1. Click the **Navigation** menu in the upper left, and then navigate to **Networking > Virtual Cloud Networks**.
+1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+	![](./images/navigate-vcn.png " ")
 
 2. On the **Virtual Cloud Networks** page, click **Start VCN Wizard**.  
 
@@ -243,7 +244,7 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 
    ![](./images/vcn-details.png " ")
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 </if>
 
 
@@ -260,23 +261,23 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will practice performing both the required and optional tasks described in the following table for educational purposes. If you have restrictions on what you can create in your setup, you can use your existing resources; however, make a note of your resources' names which you will need when you create your cluster in the next lab.
 
-**Note:** The steps in this lab and any other labs should be performed sequentially.
+### Prerequisites    
+The Tasks in this lab and any other labs should be performed sequentially.
 
 | Task                                                             | Purpose                                                                                                                                                                                                                                                                                                                 | Who?                                      | Required? |
 |------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|-----------|
-| [STEP 1: Log in to Oracle Cloud Console](#STEP1:LogintotheOracleCloudConsole)                         | Log in to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
-| [STEP 2: Create a Compartment for BDS Resources](#STEP2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
-| [STEP 3: Create an Identity and Access Management (IAM) User to be the BDS Administrator](#STEP3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you will add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
-| [STEP 4: Create an IAM BDS Administrators Group and Add the New User to the Group](#STEP4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
-| [STEP 5: Create IAM Policies for Administering Your Service](#STEP5:CreateIAMPoliciesforAdministeringYourService) |<ul><li>Create a policy named **`training-admin-policy`** to grant permissions to the BDS Administrator group to manage the cluster.</ul></li><ul><li>Create a second policy named **`training-bds-policy`** to grant permissions to BDS to create clusters in your tenancy.</ul></li>| Cloud Administrator or BDS Administrator   | **Yes**       |
-| [STEP 6: Create a Virtual Cloud Network (VCN)](#STEP6:CreateaVirtualCloudNetwork(VCN))                             | Create a Virtual Cloud Network (VCN) in your tenancy named **`training-vcn`**, to be used by your cluster(s). Alternatively, you can use an existing VCN in the tenancy.                                                                                                                                                              | Cloud Administrator or BDS Administrator | **Yes**       |
+| [Task 1: Log in to Oracle Cloud Console](#Task1:LogintotheOracleCloudConsole)                         | Log in to the Oracle Cloud Console to create a compartment, a user, a group, policies, a virtual cloud network, and a BDS cluster. | Cloud Administrator                      | No        |
+| [Task 2: Create a Compartment for BDS Resources](#Task2:CreateaCompartment)                         | Create a compartment named **`training-compartment `** in your tenancy to help organize your BDS resources.                                                                                                                                         | Cloud Administrator                      | No        |
+| [Task 3: Create an Identity and Access Management (IAM) User to be the BDS Administrator](#Task3:CreateanIAMUsertoBetheBDSAdministrator)           | Create a user named **`training-bds-admin`** that you will add to the administrators group to become a BDS Administrator.                                                                                                                                                                                                          | Cloud Administrator                      | No        |
+| [Task 4: Create an IAM BDS Administrators Group and Add the New User to the Group](#Task4:CreateanIAMBDSAdministratorsGroupandAddtheNewUsertotheGroup) | <ul><li>Create an administrators group named **`training-bds-admin-group`** with permissions to create and manage your BDS resources.</ul></li><ul> <li>Add the new user to this group to become a BDS Administrator.</ul></li> | Cloud Administrator                      | No        |
+| [Task 5: Create IAM Policies for Administering Your Service](#Task5:CreateIAMPoliciesforAdministeringYourService) |<ul><li>Create a policy named **`training-admin-policy`** to grant permissions to the BDS Administrator group to manage the cluster.</ul></li><ul><li>Create a second policy named **`training-bds-policy`** to grant permissions to BDS to create clusters in your tenancy.</ul></li>| Cloud Administrator or BDS Administrator   | **Yes**       |
+| [Task 6: Create a Virtual Cloud Network (VCN)](#Task6:CreateaVirtualCloudNetwork(VCN))                             | Create a Virtual Cloud Network (VCN) in your tenancy named **`training-vcn`**, to be used by your cluster(s). Alternatively, you can use an existing VCN in the tenancy.                                                                                                                                                              | Cloud Administrator or BDS Administrator | **Yes**       |
 
-### What Do You Need?
-
+### Prerequisites    
 Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 
 
-## **STEP 1:** Log in to the Oracle Cloud Console
+## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -285,10 +286,10 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/oracle-cloud-console-home.png " ")    
 
-## **STEP 2:** Create a Compartment
-A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the lab.
+## Task 2: Create a Compartment
+A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this task, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the workshop.
 
-1. Click the **Navigation** menu in the upper left, navigate to **Identity & Security**, and then select **Compartments**.
+1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**.
 
 	 ![](./images/navigate-compartment.png " ")
 
@@ -304,13 +305,13 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
    ![](./images/compartment-created.png " ")
 
-## **STEP 3:** Create an IAM User to Be the BDS Administrator
+## Task 3: Create an IAM User to Be the BDS Administrator
 
 A Cloud Administrator has complete control over all of the BDS resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more BDS administrators. To create a new BDS administrator for a service, a Cloud Administrator must create a user and then add that user to a BDS administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
 Create a new **Administrator** group that will have full access rights to the new compartment that you created earlier as follows:
 
-1. If you are still on the **Compartments** page from the previous step, click the **Users** link in the **Identity** section on the left; otherwise, click the **Navigation** menu, and then navigate to **Identity & Security > Users**.
+1. If you are still on the **Compartments** page from the previous task, click the **Users** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and navigate to **Identity & Security > Users**.
 
 2. On the **Users** page, click **Create User**.
 
@@ -318,8 +319,8 @@ Create a new **Administrator** group that will have full access rights to the ne
 
 3. In the **Create User** dialog box, enter **`training-bds-admin`** in the **Name** field, **`Training BDS Admin User`** in the  **Description** field, an optional email address for the user in the **Email** field, and then click **Create**.
 
-  **Note:**
-  An email address can be used as the user name, but it isn't required.
+    > **Note:**
+    An email address can be used as the user name, but it isn't required.
 
    ![](./images/create-user.png " ")
 
@@ -331,13 +332,13 @@ Create a new **Administrator** group that will have full access rights to the ne
 
    ![](./images/user-created.png " ")
 
-   **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
+    > **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this Task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
-## **STEP 4:** Create an IAM BDS Administrators Group and Add the New User to the Group
+## Task 4: Create an IAM BDS Administrators Group and Add the New User to the Group
 
 Create a BDS group whose members will be granted permissions to manage the BDS cluster life cycle.
 
-1. If you are still on the **Users** page from the previous step, click the **Groups** link in the **Identity** section on the left; otherwise, click the **Navigation** menu, and then navigate to **Identity & Security > Groups**.
+1. If you are still on the **Users** page from the previous task, click the **Groups** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and  navigate to **Identity & Security > Groups**.
 
 3. On the **Groups** Page, click **Create Group**.
 
@@ -355,8 +356,8 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
 
    ![](./images/add-user-group.png " ")
 
-    **Note:**
-    If you haven't created the user who will be an administrator yet, go back to **STEP 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this step.
+    > **Note:**
+    If you haven't created the user who will be an administrator yet, go back to **Task 3: Create an IAM User to be the BDS Administrator to create the user**, create the user, and then return to this Task.
 
 7. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
 
@@ -367,10 +368,10 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
    ![](./images/groups-page.png " ")
 
 
-## **STEP 5:** Create IAM Policies for Administering Your Service
+## Task 5: Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Big Data Service resources. Before you can create a cluster, you must also create a policy that grants the system access to networking resources.
 
-1. In the **Identity** pane on the left, select **Policies**. Alternatively, in the **Oracle Cloud Console** Home page, click the **Navigation** menu, and then navigate to **Identity & Security > Policies**.
+1. In the **Identity** section on the left, select **Policies**. Alternatively, click the **Navigation** menu and navigate to **Identity & Security > Policies**.
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-compartment`** where the new policies will reside.  
 
@@ -393,7 +394,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     * Enter **`training-admin-policy`** in the **Name** field.
     - Enter **`Training Admin Group Policy`** in the **Description** field.
     - Select **`training-compartment`** from the **Compartment** drop-down list, if it's not already selected.
-    - In the **Policy Builder** section, click the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
+    - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
 
      ![](./images/create-policy-1-dialog.png " ")
 
@@ -438,13 +439,13 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
      ![](./images/policies-created.png " ")
 
-      **Note:** You can click the name of a policy on this page to view and edit it.
+      > **Note:** You can click the name of a policy on this page to view and edit it.
 
 
-## **STEP 6:** Create a Virtual Cloud Network (VCN)
-In this step of the lab, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
+## Task 6: Create a Virtual Cloud Network (VCN)
+In this task, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
 
-1. Click the **Navigation** menu in the upper left, and then navigate to **Networking > Virtual Cloud Networks**.
+1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.
 
 	 ![](./images/navigate-vcn.png " ")
 
@@ -488,7 +489,7 @@ In this step of the lab, you will create a new Virtual Cloud Network (VCN) that 
 
    ![](./images/vcn-details.png " ")
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
    </if>
 
 ## Want to Learn More?
@@ -507,4 +508,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 * **Authors:**
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, May 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021

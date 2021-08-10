@@ -17,7 +17,7 @@ This lab walks you through the steps to get started using Oracle Data Safe on Or
 -	An Oracle Database Service enabled in a region in your tenancy.
 -	A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account.
 
-## **Step 0:** Enable Data Safe for your Tenancy
+## Task 0: Enable Data Safe for your Tenancy
 
 Oracle Data Safe administrators can enable Oracle Data Safe in a region of their tenancy. Be aware that it is not possible to disable Oracle Data Safe after it's enabled.
 
@@ -66,7 +66,7 @@ Oracle Data Safe administrators can enable Oracle Data Safe in a region of their
 12. Collapse
 
 
-## **Step 1:** Registering a Target Database
+## Task 1: Registering a Target Database
 
 You can register an Autonomous Database from its Console in Oracle Cloud Infrastructure Console. From this Console, you can also access the Oracle Data Safe Console.
 
@@ -99,7 +99,7 @@ You can register an Autonomous Database from its Console in Oracle Cloud Infrast
 	![](./images/1.4.png " ")
 
 
-## **Step 2:** Grant User Roles
+## Task 2: Grant User Roles
 
 The roles that you grant to this account determine the Oracle Data Safe features that you can use with your Autonomous Database. These particular roles allow you to assess users and security configurations on your Autonomous Database and start audit trail collection immediately after you register the database.
 
@@ -148,7 +148,7 @@ The following table describes the available roles for Autonomous Databases [here
 
 	**NOTE** These tables are basic HR data containing personal credentials that will be used later throughout the lab. You can use any data you would like, this is just good example data. This provides the ability to replicate the following lab.
 
-## **Step 3:** Assess Database Configurations with Oracle Data Safe
+## Task 3: Assess Database Configurations with Oracle Data Safe
 
 Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues.
 
@@ -207,7 +207,7 @@ Using Oracle Data Safe you can assess the security of a database by using the Se
 	![](./images/2.2.2.png " ")
 
 
-## **Step 4:** Assess Users with Oracle Data Safe
+## Task 4: Assess Users with Oracle Data Safe
 
 Using Oracle Data Safe, assess user security in your target database by using the User Assessment feature and fix issues.
 
@@ -255,7 +255,7 @@ Using Oracle Data Safe, assess user security in your target database by using th
 
 6.	Close the User Details dialog box.
 
-## **Step 5:** Discover Sensitive Data with Oracle Data Safe
+## Task 5: Discover Sensitive Data with Oracle Data Safe
 
 1. Navigate to the Oracle Data Safe Service Console.
 
@@ -369,7 +369,7 @@ Using Oracle Data Safe, assess user security in your target database by using th
 
 	![](./images/4.6.1.png " ")
 
-## **Step 6:** Verify Sensitive Data Model with Oracle Data Safe
+## Task 6: Verify Sensitive Data Model with Oracle Data Safe
 
 Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and by using the Data Discovery wizard.
 
@@ -504,7 +504,7 @@ Using Oracle Data Safe, verify a sensitive data model by using the verification 
 
 35. Click **Save** then **Exit**.
 
-## **Step 7:** Update a Sensitive Data Model with Oracle Data Safe
+## Task 7: Update a Sensitive Data Model with Oracle Data Safe
 
 Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
 
@@ -570,7 +570,7 @@ Using Oracle Data Safe, perform an incremental update to a sensitive data model 
 
 12. Click **Exit**.
 
-## **Step 8:** Create a Sensitive Type and Sensitive Category with Oracle Data Safe
+## Task 8: Create a Sensitive Type and Sensitive Category with Oracle Data Safe
 
 1. In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. On this page you can view predefined sensitive types and manage your own sensitive types.
 
@@ -665,7 +665,7 @@ Using Oracle Data Safe, perform an incremental update to a sensitive data model 
 26. Move the **Hide Oracle Predefined** slider to the right to view your custom sensitive type in the list.
 
 
-## **Step 9:** Mask Sensitive Data with Oracle Data Safe
+## Task 9: Mask Sensitive Data with Oracle Data Safe
 
 1. Open SQL Developer and login as **HCM1** user.
 
