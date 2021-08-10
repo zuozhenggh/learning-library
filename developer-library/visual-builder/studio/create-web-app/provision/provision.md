@@ -67,11 +67,9 @@ Provision a service instance of Visual Builder Studio to design and develop your
 
 To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up the OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
 
-1. Return to your Oracle Cloud console and click the menu in the upper left corner.
+1. Create a separate compartment to host VB Studio resources:
 
-2. Create a separate compartment to host VB Studio resources:
-
-       a. Select **Identity & Security**, then under **Identity**, select **Compartments**.
+       a. Return to your Oracle Cloud console, then click the menu in the upper left corner, select **Identity & Security**, then **Compartments** under **Identity**.
        ![](./images/oci_compartments.png)
 
        b. Click **Create Compartment**.
@@ -80,7 +78,7 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
        c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the default root compartment. Click **Create Compartment**.
        ![](./images/oci_compartments_create_details.png)
 
-3. Create a local user to access the compartment you've created.
+2. Create a local user to access the compartment you've created:
 
       a. In the navigation menu, select **Identity & Security**, then under **Identity**, select **Users**.
       ![](./images/oci_users.png)
@@ -91,7 +89,7 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
       c. Select the IAM user type, then enter `vbstudiouser` as the Name, add a description (for example, `User to access VBStudioCompartment`), and optionally, an email. Click **Create**.
       ![](./images/oci_users_create_details.png)
 
-4. On your computer, generate a private-public key pair in the PEM format.
+3. On your computer, generate a private-public key pair in the PEM format:
 
     a. In the Console header, click the Cloud Shell icon. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
     ![](./images/oci_api_key_shell.png)
@@ -131,7 +129,7 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
 
     g. Click **X** to exit the cloudshell.
 
-5. Upload the public key to the user's details page.
+4. Upload the public key to the user's details page:
 
     a. On the Users page, click **vbstudiouser**.
        ![](./images/oci_users_vbstudiouser.png)
@@ -141,6 +139,47 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
 
     c. Click **Paste Public Key** and paste the contents of the public key that you copied. Click **Add**, then **Close**.
        ![](./images/oci_paste_public_api_key.png)
+
+5. Create a group for the user who can access the VB Studio compartment and add the user to the group:
+
+    a. In the navigation menu, select **Identity & Security**, then select **Groups** under **Identity**.
+       ![](./images/oci-groups.png)
+
+    b. Click **Create Group**.
+       ![](./images/oci-groups-create.png)
+
+    c. Enter `VBStudioGroup` as the Name, add a description (for example, `Group for VB Studio users`), and click **Create**.
+       ![](./images/oci-groups-create-details.png)
+
+    d. On the Group Details page, click **Add User to Group**.
+       ![](./images/oci-groups-addusertogroup.png)
+
+    e. Select the **vbstudiouser** and click **Add**.
+       ![](./images/oci-groups-addusertogroup-vbstudiouser.png)
+
+6. In the **root** compartment, create a policy to allow the group you created access to the VB Studio compartment:
+
+    a. In the navigation menu, select **Identity & Security**, then select **Policies** under **Identity**.
+       ![](./images/oci-policies.png)
+
+    b. Make sure the root compartment is selected in the Compartment list.
+       ![](./images/oci-policies-rootselection.png)
+
+    c. Click **Create Policy**.
+       ![](./images/oci-policies-create.png)
+
+    d. Enter `VBStudioPolicy` as the Name and add a description (for example, `Policy for VB Studio`). Make sure the root compartment is selected as the Compartment.
+
+    e. Under Policy Builder, click **Show manual editor** and enter these statements:
+       ```
+       <copy>
+       Allow group VBStudioGroup to manage all-resources in compartment VBStudioCompartment
+       Allow group VBStudioGroup to read all-resources in tenancy
+       </copy>
+       ```
+       ![](./images/oci-policies-create-details.png)
+
+    f. Click **Create**.
 
 ## **Task 4:** Get OCI Credentials
 
