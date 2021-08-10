@@ -39,7 +39,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/oracle-cloud-console-home.png " ")
 
-## **Task 2**: (Optional) Create a Compartment
+## Task 2: (Optional) Create a Compartment
 
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Catalog resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Catalog resources that you will use in the workshop.
 
@@ -123,7 +123,7 @@ Create a Data Catalog group whose members will be granted permissions to manage 
    ![](./images/groups-page.png " ")
 
 
-## **Task 5**: Create a Data Catalog Instance
+## Task 5: Create a Data Catalog Instance
 
 Create a Data Catalog instance using the following steps.
 
@@ -146,7 +146,7 @@ Create a Data Catalog instance using the following steps.
    ![](./images/click-data-catalog.png " ")
 
 
-## **Task 6**: Create, Import, and Edit a Glossary
+## Task 6: Create, Import, and Edit a Glossary
 
 In this task, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
 
