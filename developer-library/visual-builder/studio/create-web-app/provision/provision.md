@@ -177,9 +177,8 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
        Allow group VBStudioGroup to read all-resources in tenancy
        </copy>
        ```
-       ![](./images/oci-policies-create-details.png)
-
     f. Click **Create**.
+       ![](./images/oci-policies-create-details.png)
 
 ## **Task 4:** Get OCI Credentials
 
