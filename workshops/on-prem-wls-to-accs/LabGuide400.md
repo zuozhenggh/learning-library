@@ -22,7 +22,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 # Exporting a WebLogic Server Domain to Oracle Cloud
 
-### **Task $1: 1**: Create the WebLogic Domain
+### Task 1: Create the WebLogic Domain
 - Download AlphaProductCatalog.war to an on-premises machine.
 - Start WebLogic Server and login to the Weblogic localhost console.
 - Click Lock & Edit.
@@ -108,7 +108,7 @@ Note that the the cluster name (alphaOff_cluster in this example) would be the f
   
    ![](images/400/localhost_alpha_product.png)
 
-### **Task $1: 2**: Install the AppToCloud Tools
+### Task 2: Install the AppToCloud Tools
 - Sign in to the Oracle Cloud My Services dashboard. Follow the instructions in your Welcome email, or go to http://cloud.oracle.com and click Sign In.
   
 - In the Java tile click the Action menu Action Menu Icon, and then select Open Service Console.
@@ -127,7 +127,7 @@ Note: If the Java tile is not visible, click Customize Dashboard.
   
    ![](images/400/400_1_2_3.png)
 
-### **Task $1: 3**: Check the Domain Health
+### Task 3: Check the Domain Health
 
 - Set the JAVA_HOME environment variable to the directory where you have installed the Java SE Development Kit (version 7 or later).
 
@@ -165,7 +165,7 @@ Note: If the Java tile is not visible, click Customize Dashboard.
 
 - If the Health Check fails, refer to the error messages in this tab as well as the Report and Log tabs.
 
-### **Task $1: 4**: Export the Domain
+### Task 4: Export the Domain
 
 - Click the Go To Export button on the Health Check page.
 The Export page is displayed. The Oracle Home and Archive File input fields are set automatically based on the Health Check results
@@ -219,7 +219,7 @@ Tip: You can view the generated export and report files in your specified output
 
 # Creating an Oracle Java Cloud Service Instance with AppToCloud
 
-### **Task $1: 1**: Create an Oracle Database Cloud Service Instance
+### Task 1: Create an Oracle Database Cloud Service Instance
 
 - Sign in to Oracle Cloud My Services.
 - Click  Dashboard menu near the upper left corner of the page, and select
@@ -244,7 +244,7 @@ Tip: You can view the generated export and report files in your specified output
 
 - For this tutorial you do not need Database configurations. If your application needs to connect database, then you remotely connect to the Database Cloud Service instance and use SQL scripts to create the necessary schema, tables and data for the sample application. There are many other ways in which to migrate data to Database Cloud Service.
 
-### **Task $1: 2**: Create an Oracle Java Cloud Service Instance
+### Task 2: Create an Oracle Java Cloud Service Instance
 
 - Return to the Dashboard in Oracle Cloud. Locate the Java tile. Click the Action Menu Action Menu Icon, and then select Open Service Console. If this is the first time you have accessed the service then you may be presented with a Welcome screen. If this happens then you can continue to the console by clicking Go to Console.
 
@@ -302,7 +302,7 @@ When you return to the Java Cloud Service console, you will see your new service
 
 - Periodically refresh this page until the service instance creation is completed.
 
-### **Task $1: 3**: Import Applications into the Service Instance
+### Task 3: Import Applications into the Service Instance
 
 - Perform an import to update the new service instance with the Java EE applications and other resources collected from your on-premises environment.
 
@@ -313,7 +313,7 @@ You may need to scroll through the list of menu options.
 Note: After a few moments, the service instance will have a status of "Service Maintenance". Periodically refresh this page until the service instance is no longer in a maintenance state.
 If the import fails, use the Activity tab to view the log for this operation.
 
-### **Task $1: 4**: Test the Imported Application
+### Task 4: Test the Imported Application
 
 - Click the name of the service instance.
   

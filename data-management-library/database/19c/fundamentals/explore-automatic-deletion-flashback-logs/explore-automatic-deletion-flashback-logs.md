@@ -30,7 +30,7 @@ Learn how to do the following:
 Before you start, be sure that you have obtained and signed in to the `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**. This compute image provides what you need for this lab, which is Oracle Database 19c installed with a CDB and PDB.
 
 
-## **Task 1**: Prepare your environment
+## Task 1: Prepare your environment
 
 In this step, you review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in STEP 2.
 
@@ -111,7 +111,7 @@ In this step, you review important initialization parameters, enable `ARCHIVELOG
 
 
 
-## **Task 2**: Set the flashback retention period to 70 minutes and enable `FLASHBACK` mode on CDB1
+## Task 1: Set the flashback retention period to 70 minutes and enable `FLASHBACK` mode on CDB1
 
 When you set the flashback period to 70 minutes, it means that 70 minutes is the upper limit on how far back in time the database may be flashed back. By default, `DB_FLASHBACK_RETENTION_TARGET` is set to 1 day (1440 minutes). When you enable `FLASHBACK` mode, Oracle copies images of each altered block in every data file into flashback logs stored in the flash recovery area.
 
@@ -174,7 +174,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
     ````
 
 
-## **Task 3**: Increase the fast recovery area size to 100GB
+## Task 1: Increase the fast recovery area size to 100GB
 
 Increase the fast recovery area size to 100GB to ensure that there will be no space pressure that would automatically delete flashback logs.
 
@@ -227,7 +227,7 @@ Increase the fast recovery area size to 100GB to ensure that there will be no sp
     ````
 
 
-## **Task 4**: Generate flashback logs
+## Task 1: Generate flashback logs
 
 Activity needs to happen on the database for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for approximately 70 minutes. You will see many SQL commands in the output.
 
@@ -286,7 +286,7 @@ Activity needs to happen on the database for the database to generate flashback 
     ````
 
 
-## **Task 5**: Decrease the flashback retention period to 60 minutes
+## Task 1: Decrease the flashback retention period to 60 minutes
 
 From this point on, you can work in terminal 1. Keep terminal 2 open to continue running the `workload.sh` script.
 
@@ -358,7 +358,7 @@ From this point on, you can work in terminal 1. Keep terminal 2 open to continue
 
 
 
-## **Task 6**: Reset your environment
+## Task 1: Reset your environment
 
 If you are done with the lab, but the `workshop.sh` script is still running, you can do substeps 1 and 2 to stop the script.
 

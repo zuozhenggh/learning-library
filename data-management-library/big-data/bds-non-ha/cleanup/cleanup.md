@@ -20,7 +20,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
 > **Note:**     
 If you want to list the resources in your **`training-compartment`**, you can use the **Tenancy Explorer** page. From the **Navigation** menu, navigate to **Governance & Administration**. In the  **Governance** section, click **Tenancy Explorer**. On the **Tenancy Explorer** page, in the **Search compartments** field, type **`training`**, and then select **`training-compartment`** from the list of compartments. The resources in the **`training-compartment`** are displayed.
 
-## **Task 1:** Delete Your Big Data Service Cluster
+## Task 1: Delete Your Big Data Service Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used in the workshop.
 
@@ -47,7 +47,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 7. Click the **Clusters** link in the breadcrumbs to return to the **Clusters** page. When the cluster is successfully deleted, the status of the cluster in the **State** column changes from **Deleting** to **Deleted**.
 
 
-## **Task 2:** Delete Your IAM Group, IAM User, and IAM Policies
+## Task 2: Delete Your IAM Group, IAM User, and IAM Policies
 
 1. Click the **Navigation** menu and navigate to **Identity & Security > Groups**.
 
@@ -63,7 +63,7 @@ If you want to list the resources in your **`training-compartment`**, you can us
 
 7. Click the **Actions** button associated with the **training-bds-policy** policy, and then select **Delete** from the context menu. A confirmation message box is displayed, click **Delete**.
 
-## **Task 3:** Delete Your Virtual Cloud Network (VCN)
+## Task 3: Delete Your Virtual Cloud Network (VCN)
 
 To delete a VCN, it must first be empty and have no related resources or attached gateways such as internet gateway, dynamic routing gateway, and so on. To delete a VCN's subnets, they must first be empty too.
 
@@ -100,7 +100,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
   ![](./images/vcn-terminated.png " ")
 
 
-## **Task 4:** Delete Your Reserved Public IP Addresses
+## Task 4: Delete Your Reserved Public IP Addresses
 
 1. Click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The **Reserved Public IP Addresses** page is displayed.
 
@@ -116,7 +116,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 
 6. Click the **Actions** button associated with **`traininun0-public-ip`**. Select **Terminate** from the context menu. A confirmation message box is displayed. Click **Terminate**.
 
-## **Task 5:** Delete Your Object Storage Bucket
+## Task 5: Delete Your Object Storage Bucket
 
 1. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
@@ -141,7 +141,7 @@ To delete a VCN, it must first be empty and have no related resources or attache
 9. Scroll up the page, and then click the **Delete** button. A confirmation message box is displayed. Click **Delete**. The bucket is deleted and the **Buckets** page is re-displayed.
 
 
-## **Task 6:** Delete Your Compartment
+## Task 6: Delete Your Compartment
 
 1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**. From the list of available compartments, search for your **training-compartment**.
 

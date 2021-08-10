@@ -20,7 +20,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
 ## Deploying the Application to Compute Instance
 
-### **Task $1: 1**: Create Build Job to Create and Push Docker Image to Registry
+### Task 1: Create Build Job to Create and Push Docker Image to Registry
 
 - Continuing the previous lab, make sure to be in Developer Cloud Service Instance.
 - Create Build Job. Click on **Builds** in left panel and then click **Create Job**.
@@ -67,7 +67,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
     ![](images/400/10.png)
 
-### **Task $1: 2**: Create Build Job to Run Docker Image in Compute Instance
+### Task 2: Create Build Job to Run Docker Image in Compute Instance
 
 - Create another Build Job. Click on **Builds** in left panel and then click **Create Job**.
 

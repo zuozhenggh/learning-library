@@ -19,7 +19,7 @@ During this lab, you will deploy a WebLogic domain in OKE using WebKogic Kuberne
 
 - **Works better with the Chrome browser**.
 
-## **Task $1: 1**: Prepare the Kubernetes cluster to run WebLogic domains  
+## Task 1: Prepare the Kubernetes cluster to run WebLogic domains  
 Create the domain namespace:
 ```bash
 <copy>kubectl create namespace sample-domain1-ns</copy>
@@ -31,7 +31,7 @@ Create a Kubernetes secret containing the Administration Server boot credentials
   --from-literal=password=welcome1</copy>
 ```
 
-## **Task $1: 2**: Update the Traefik load balancer and operator configuration ####
+## Task 2: Update the Traefik load balancer and operator configuration ####
 
 After you have your domain namespace (the WebLogic domain is not deployed yet), you have to update the load balancer and operator configuration to specify where the domain will be deployed.
 
@@ -61,7 +61,7 @@ To update Traefik, execute the following **helm upgrade** command:
 ```
 Note that in both cases, the only updated parameter is the domain namespace.
 
-## **Task $1: 3**: Deploy a WebLogic domain on Kubernetes ####
+## Task 3: Deploy a WebLogic domain on Kubernetes ####
 
 To deploy WebLogic domain, you need to create a domain resource definition which contains the necessary parameters for the operator to start the WebLogic domain properly.
 
