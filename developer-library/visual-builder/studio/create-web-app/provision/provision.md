@@ -66,7 +66,7 @@ Provision a service instance of Visual Builder Studio to design and develop your
 
 ## **TASK 3:** Set Up the OCI Account
 
-VB Studio requires access to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, so you'll need to set up an OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
+To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up the OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This also allows you to organize VB Studio resources better because they aren't mixed with your other resources.
 
 1. Return to your Oracle Cloud console and click the menu in the upper left corner.
 
@@ -78,7 +78,7 @@ VB Studio requires access to Oracle Cloud Infrastructure (OCI) resources such as
        b. Click **Create Compartment**.
        ![](./images/oci_compartments_create.png)
 
-       c. Enter the required information and click **Create Compartment**.
+       c. Enter `VBStudioCompartment` as the Name, add a description (for example, `VBStudioCompartment for workshop`), and leave the Parent Compartment set to the root compartment. Click **Create Compartment**.
        ![](./images/oci_compartments_create_details.png)
 
 3. Create a local user to access the compartment you've created.
@@ -89,7 +89,7 @@ VB Studio requires access to Oracle Cloud Infrastructure (OCI) resources such as
       b. Click **Create User**.
       ![](./images/oci_users_create.png)
 
-      c. Select the IAM user type, enter the user's details and click **Create**.
+      c. Select the IAM user type, then enter `vbstudiouser` as the Name, add a description (for example, `User to access VBStudioCompartment`), and optionally, an email. Click **Create**.
       ![](./images/oci_users_create_details.png)
 
 4. On your computer, generate a private-public key pair in the PEM format.
