@@ -118,7 +118,7 @@ The `setup_analytic_table.sh` shell script creates in both `PDB21` and `PDB19` t
     ```
 </if>
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
 There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
@@ -135,7 +135,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 5.  Enter the username *report* and password *WElcome123##*
 6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the REPORT user using sqlplus by entering the commands below.

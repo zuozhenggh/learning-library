@@ -98,7 +98,7 @@ You need to upload the sample training data into Oracle object storage, to be pr
 
 Testing json data is not needed to upload to bucket, but is needed in detection UI later.
 
-**STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+**Task 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
 First, From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
@@ -116,7 +116,7 @@ Next, fill out the dialog box:
 Then click Create
 ![](../images/pressbucketbutton.png " ")
 
-**STEP 3b:** Upload the Downloaded training csv data file into Storage Bucket
+**Task 3b:** Upload the Downloaded training csv data file into Storage Bucket
 
 Switch to OCI window and click the Bucket Name.
 

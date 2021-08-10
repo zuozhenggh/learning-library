@@ -15,13 +15,13 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
 
 ## Setup trial account
 
-### **STEP 1**: Acquire an Oracle Cloud Trial or Workshop Account
+### **Task $1: 1**: Acquire an Oracle Cloud Trial or Workshop Account
 
 - Wait until you receive the following email before proceeding to the next steps in the lab. Please make note of your temporary password in this email.
 
     ![](images/050/100_1_1.png)
 
-### **STEP 2**: Login to your Oracle Cloud Account
+### **Task $1: 2**: Login to your Oracle Cloud Account
 
 - From any browser, go to the URL:
     `https://cloud.oracle.com`
@@ -60,7 +60,7 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
 
   ![](images/050/LabGuide050-874df83f.png)
 
-### **STEP 3**: Create the Developer Cloud Service Instance
+### **Task $1: 3**: Create the Developer Cloud Service Instance
 
 - Open the Hamburger menu in the top left corner of the page.
 
@@ -82,7 +82,7 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
 
     ![](images/050/lab050_Devcs_3.png)
 
-### **STEP 4**: Create Compartment
+### **Task $1: 4**: Create Compartment
 
 - Open the **Hamburger Menu** at the top of the page and **Select Compute** to navigate to the OCI Console.
 
@@ -101,7 +101,7 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
     ![](images/050/lab100_Create_Compartment_2.png)
 
 
-### **STEP 5**: Create VCN and Edit Security Rules
+### **Task $1: 5**: Create VCN and Edit Security Rules
 
 - Once the Compartment is ready, we will create VCN. Click on the hamburger menu on the top left, **Networking** and then click on **Virtual Cloud Networks**
 
@@ -143,7 +143,7 @@ Welcome to the Automated Code Inspection workshop. This workshop will walk you t
     ![](images/050/11.png)
 
 
-### **STEP 6**: Create SonarQube Instances
+### **Task $1: 6**: Create SonarQube Instances
 
 - Click on the hamburger menu on top right, then Compute and then click on **Instances**.
 
@@ -169,7 +169,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTmnQPppvuP15M5jzTrRoMzWpERDIV9r0Eq1mj+5rE
 
     ![](images/050/lab100_Create_Instance_3_3.png)
 
-### **STEP 7**: Create Java Web Service
+### **Task $1: 7**: Create Java Web Service
 
   - Before we can launch a compute instance, we need an SSH key pair to use for authentication.let's work on creating an SSH key pair for our instance. The method of generating an SSH key pair will depend on your operating system.
 

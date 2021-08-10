@@ -22,7 +22,7 @@ This lab assumes you have:
 
 - Loaded movie sales data into your Autonomous Data Warehouse database in the previous lab.
 
-## STEP 1 - Adding Constraints
+## Task 1: Adding Constraints
 
 1. Run the following command in the SQL worksheet to enable a data integrity check on the fact table:
 
@@ -32,7 +32,7 @@ This lab assumes you have:
     ```
     **NOTE:**  These two statements may take a 1-2 minutes to complete.
 
-## STEP 2 - Testing that the New Constraint Works
+## Task 2: Testing that the New Constraint Works
 
 1. Check the value of total sales in the `movie_sales_fact` table:
 

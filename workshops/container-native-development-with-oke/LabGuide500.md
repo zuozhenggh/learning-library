@@ -28,7 +28,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 <!-- ## Deploy Your Function to Fn on Kubernetes -->
 
-## **STEP 1**: Configure Cloud Shell to use Oracle Functions and Docker Registry(OCIR)
+## **Task $1: 1**: Configure Cloud Shell to use Oracle Functions and Docker Registry(OCIR)
 
 - Click Launch Cloud Shell, from the navigation bar.
 
@@ -130,7 +130,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
   ```
 
 
-## **STEP 2**: Deploy Fn Server to Kubernetes
+## **Task $1: 2**: Deploy Fn Server to Kubernetes
 
 - We are going to use the Kubernetes Dashboard **Create An App** wizard to deploy Fn to Kubernetes. This is suitable for a test environment, but does not account for production best practices. For a production deployment, consider using [Helm](https://github.com/kubernetes/helm#install) and the [fn-helm chart](https://github.com/fnproject/fn-helm) to bring up your Fn Server.
 
@@ -201,7 +201,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ![](images/LabGuide500-aab88037.png)
 
-## **STEP 3**: Deploy Your Function to Fn Server on Kubernetes
+## **Task $1: 3**: Deploy Your Function to Fn Server on Kubernetes
 
 - In your _Cloud Shell session_, change directories to cloned function directory from **STEP 2**.
 
@@ -253,7 +253,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-## **STEP 4**: Test Your Function in the Product Catalog
+## **Task $1: 4**: Test Your Function in the Product Catalog
 
 - Open the **product catalog** website in a browser _on your local machine_. If you don't have the URL, you can look in the Kubernetes dashboard for the **external endpoint** of the product-catalog-service, or you can run the following command from your _Cloud Shell session_:
 

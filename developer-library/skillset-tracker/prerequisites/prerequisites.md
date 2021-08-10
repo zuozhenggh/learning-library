@@ -39,15 +39,15 @@ Go to [docker.com](https://www.docker.com/products/docker-desktop) and download 
 
 Go to [kubernetes.io](https://kubernetes.io/docs/tasks/tools/) and download the suitable package for your operating system and install it according to the steps described on their website.
 
-## **Step 5:[Optional]** Installing Visual Studio Code
+## **Task 5:[Optional]** Installing Visual Studio Code
 
 Go to [visualstudio.com](https://code.visualstudio.com/Download) and download the proper package for your operating system. Install Visual Studio Code according to the steps in the installation window.
 
-## **Step 6:[Optional]** Installing NodeJS
+## **Task 6:[Optional]** Installing NodeJS
 
 Go to [nodejs.org](https://nodejs.org/en/download/) and download the proper package for your operating system. Install it according to the steps in the installation window.
 
-## **Step 7:[Optional]** Installing OracleJET Tools
+## **Task 7:[Optional]** Installing OracleJET Tools
 
 After installing **NodeJS** open a command line window and run the following command. You might need administration rights to run them.
   ```
@@ -55,7 +55,7 @@ After installing **NodeJS** open a command line window and run the following com
   npm install -g @oracle/ojet-cli
   </copy>
   ```
-## **Step 8:[Optional]** Installing Oracle Instant Client
+## **Task 8:[Optional]** Installing Oracle Instant Client
 Go to [oracle.com](https://www.oracle.com/database/technologies/instant-client/downloads.html) and download the proper package for your operating system. Create a new folder for it (for example _C:\\oracle_). Extract the downloaded archive and copy the contents into this folder. Now, if you navigate to _C:\\oracle\\instantclient\_19\_9_ you should be able to see a _network\\admin_ folder. This is the folder in which you would need to copy the wallet files to connect to the database. If you don't have these two folders, you need to create them.
 
 You should also add _C:\\oracle\\instantclient\_19\_9_ in your environment variables.

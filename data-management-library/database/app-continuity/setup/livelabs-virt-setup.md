@@ -23,7 +23,7 @@ This lab will show you how to setup a GI cluster and RAC database on your Cloud 
 
 6. Click **Create**
 
-## Step 2 Add a Block Volume
+## Task 2: Add a Block Volume
 
 The Grid Infrastructure cluster and RAC database you create later will require approximately 80 GB of shared disk. We will create a block device and attach it to the compute instance.
 
@@ -38,7 +38,7 @@ The Grid Infrastructure cluster and RAC database you create later will require a
 4. Ensure you select the same **Availability Domain** as the Compute Instance you have just created. Select **Custom** for **Size and Performance** and create a **90 GB** Volume
     ![](./images/libvrt-block-volume-3.png " ")   
 
-## Step 3 Attach Block Volume to Compute Instance   
+## Task 3: Attach Block Volume to Compute Instance   
 
 1. Navigate to the Compute Instance you created in **Step 1**
 
@@ -112,7 +112,7 @@ New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 169.254.2.2,3260,-1 iqn.2
 ````
 If successful, the last two commands will just return to the prompt.
 
-## Step 4 Configure disk
+## Task 4: Configure disk
 Ensure you have a terminal open on your Compute Instance (see commands in previous step)
 
 1. If your volume attached as a paravitualised device you can run these steps immediately. If your volume has an ISCSI interface you must connect to the device first as shown in **Step 3**
@@ -229,7 +229,7 @@ sudo usermod -a -G libvirt opc
 
     ![](./images/libvrt-3b.png " ")
 
-## Step 6 Install **Hashicorp Vagrant**
+## Task 6: Install **Hashicorp Vagrant**
 
 The current version of Vagrant is 2.2.9
 
@@ -260,7 +260,7 @@ vagrant plugin install vagrant-libvirt
 ````     
     ![](./images/libvrt-6.png " ")
 
-## Step 7 Install Git and clone the pre-built repository
+## Task 7: Install Git and clone the pre-built repository
 
 1. Install Git
 
@@ -290,7 +290,7 @@ drwxrwxr-x. 7 opc opc 4096 Jul 27 06:21 vagrant-projects/OracleRAC
 ````
     ![](./images/libvrt-9.png " ")  
 
-## Step 8 Install the Oracle Grid Infrastructure and Database software and configure the cluster and database through Vagrant
+## Task 8: Install the Oracle Grid Infrastructure and Database software and configure the cluster and database through Vagrant
 
 1. Download the oracle software into the directory \/home\/opc\/vagrant-projects\/OracleRAC\/ORCL_software:
 
@@ -420,7 +420,7 @@ The following values can be changed:
 * **pdb_name**: Oracle RDBMS pluggable database name
 * **cdb**: Oracle RDBMS database created as container (true or false). Set to **TRUE** for this example
 
-## Step 9 Configure the Storage pool using virsh
+## Task 9: Configure the Storage pool using virsh
 
 **virsh** is a command line interface tool for managing guests and the hypervisor. The virsh tool is built on the libvirt management API.
 
@@ -457,7 +457,7 @@ virsh # pool-autostart Vagrant_KVM_Storage
 virsh # quit
 ````
 
-## Step 10 Connect to your instance and build your cluster and RAC database
+## Task 10: Connect to your instance and build your cluster and RAC database
 From the terminal on your Compute Instance enter the commands:
 
 ````
@@ -481,7 +481,7 @@ node1: INFO: 2020-07-29 07:24:18: Running user-defined post-setup scripts
 node1: -----------------------------------------------------------------
 ````
 
-## Step 11 Connect to one of the GI Nodes
+## Task 11: Connect to one of the GI Nodes
 From your compute instance you can connect to either of the GI nodes (node1 or node2)
 
 1. Use SSH to connect to a GI node

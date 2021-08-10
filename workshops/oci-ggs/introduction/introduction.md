@@ -36,7 +36,7 @@ In this lab, you will:
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: Set up the Oracle Cloud Infrastructure GoldenGate Environment
+## **Task $1: 1**: Set up the Oracle Cloud Infrastructure GoldenGate Environment
 
 Step 1 opening paragraph.
 
@@ -62,7 +62,7 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** title
+## **Task 2:** title
 
 1. Sub step 1
 

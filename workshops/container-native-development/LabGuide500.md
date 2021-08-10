@@ -38,7 +38,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Run Your Function Locally
 
-### **STEP 1**: Start an Fn Server on Your Local Machine
+### **Task $1: 1**: Start an Fn Server on Your Local Machine
 
 - Since you are using the Oracle-provided client image, **Fn is pre-installed** for you. Let's update the CLI to the latest version.
 
@@ -54,7 +54,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/500/9.png)
 
-### **STEP 2**: Clone the Function Repository
+### **Task $1: 2**: Clone the Function Repository
 
 - Now we're ready to get a copy of the image resizing function and test it out on our local Fn Server. From a new **terminal window**, clone the Git repository into the home directory using the following command:
 
@@ -64,7 +64,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **NOTE**: Functions deployed to Fn are packaged in Docker containers. You can use any programming language to write your functions, and you can deploy them to any Fn Server -- local, running on your server, or hosted in the cloud. The function you just cloned actually involves no code at all, it is simply a Dockerfile that installs and executes the open source command line tool ImageMagick. Using functions like this is a quick and easy way to convert open source or command line tools to auto-scaling web services.
 
-### **STEP 3**: Deploy the Function Locally
+### **Task $1: 3**: Deploy the Function Locally
 
 - Now that you have the function 'code', you can deploy it to the local Fn Server you started earlier by running the following command in your terminal window:
 
@@ -74,7 +74,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/500/11.png)
 
-### **STEP 4**: Test the Function Using curl
+### **Task $1: 4**: Test the Function Using curl
 
 - With the function deployed to our local Fn Server, we can use **curl** to test it. Execute the following command while still in the image-resize directory in your terminal window:
 
@@ -92,7 +92,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Deploy Your Function to Fn on Kubernetes
 
-### **STEP 5**: Deploy Fn Server to Kubernetes Using Helm
+### **Task $1: 5**: Deploy Fn Server to Kubernetes Using Helm
 
 - Since you are using the Oracle-provided client image, the **fn-helm installer** has been downloaded for you. Change directories to the installer with the following command:
 
@@ -163,7 +163,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ![](images/500/17.png)
 
-### **STEP 6**: Deploy Your Function to Fn Server on Kubernetes
+### **Task $1: 6**: Deploy Your Function to Fn Server on Kubernetes
 
 - In the same **terminal window** from the previous step, change directories to cloned function directory from **STEP 2**.
 
@@ -205,7 +205,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-### **STEP 7**: Test Your Function in the Product Catalog
+### **Task $1: 7**: Test Your Function in the Product Catalog
 
 - **Close all Firefox windows** that you may have open inside the Virtual Machine. **Update Firefox** by running the following command in a terminal window:
 
