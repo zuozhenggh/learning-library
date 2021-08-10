@@ -36,13 +36,13 @@ This lab assumes you successfully completed all preceding labs.
 2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
 
     ```
-    ./adminclient
+    <copy>./adminclient</copy>
     ```
 
 3.  Connect to the OCI GoldenGate deployment:
 
     ```
-    connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !
+    <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
     ```
     NOTE: The exclamation point (!) is very important. Without it, the command fails and returns an error.
 
@@ -50,22 +50,22 @@ This lab assumes you successfully completed all preceding labs.
 
     Display the status of OCI GoldenGate processes:
     ```
-    info all
+    <copy>info all</copy>
     ```
 
     View statistics of your Replicat:
     ```
-    view stats <replicat-name>
+    <copy>view stats <replicat-name></copy>
     ```
 
     View the content of a ggserror log file:
     ```
-    view messages
+    <copy>view messages</copy>
     ```
 
     If your deployment had running Extract processes, then you can also purge old unused trail files using:
     ```
-    purge exttrail <trail-file-name>
+    <copy>purge exttrail <trail-file-name></copy>
     ```
 
 ## Learn More
