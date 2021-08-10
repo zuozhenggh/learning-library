@@ -12,13 +12,13 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Clean up Oracle Cloud Account
 
-### **Task $1: 1**: Delete Kubernetes Services
+### Task 1: Delete Kubernetes Services
 
 - First we need to delete any load balancers created by Kubernetes outside of the Terraform infrastructure we provisioned. Open an **SSH session** to your cloud VM as documented in Lab 200. _In the SSH session_, run the following command (you may need to switch to `root`):
 
   `kubectl delete svc --all`
 
-### **Task $1: 2**: Delete VM Instance
+### Task 2: Delete VM Instance
 
 - As documented in the other labs, connect into your Oracle Cloud Account, and go to the OCI Console.
 
@@ -34,7 +34,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/Manualcleanup/pic04.png)
 
-### **Task $1: 3**: Delete Kubernetes Cluster
+### Task 3: Delete Kubernetes Cluster
 
 - Log in to the OCI Console as `cluster-admin`.
 
@@ -60,7 +60,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/CleanUp-ebd33f4a.png)
 
-### **Task $1: 4**: Delete the API Key Fingerprint and Auth Tokens
+### Task 4: Delete the API Key Fingerprint and Auth Tokens
 
 - In the user menu in the top right corner, select **User Settings**
 
@@ -76,7 +76,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/ManualCleanUp-970b4a3e.png)
 
-### **Task $1: 5**: Delete Images from Container Registry
+### Task 5: Delete Images from Container Registry
 
   - Log in to the OCI Console as `cluster-admin`.
 
@@ -98,7 +98,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   - Repeat the last three instructions to delete the repository **resize128**.
 
-### **Task $1: 6**: Delete Cluster-Admin User
+### Task 6: Delete Cluster-Admin User
 
 - In the OCI Console navigation menu, select **Identity -> Groups**
 
@@ -124,7 +124,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/ManualCleanUp-f8ca55d6.png)
 
-### **Task $1: 7**: Remove OKE Policy statement
+### Task 7: Remove OKE Policy statement
 
 - In the OCI Console navigation menu, select **Identity -> Policies**
 
@@ -146,7 +146,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/ManualCleanUp-8197b266.png)
 
-### **Task $1: 8**: (Optional) Delete Wercker Application
+### Task 8: (Optional) Delete Wercker Application
 
 - Navigate to the **twitter-feed-oke** application on [app.wercker.com](app.wercker.com)
 
@@ -158,7 +158,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/ManualCleanUp-18bff4f7.png)
 
-### **Task $1: 9**: (Optional) Delete twitter-feed-oke Fork on GitHub
+### Task 9: (Optional) Delete twitter-feed-oke Fork on GitHub
 
 - Navigate to your **twitter-feed-oke fork** on [GitHub](github.com) and click the **Settings tab**
 

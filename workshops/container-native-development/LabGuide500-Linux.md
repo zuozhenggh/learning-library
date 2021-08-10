@@ -37,7 +37,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Run Your Function Locally
 
-### **Task $1: 1**: Install Fn Server on Your Local Machine
+### Task 1: Install Fn Server on Your Local Machine
 
 - Fn has one prerequisite--Docker--that we'll need to install before we begin (unless you already have it). From a browser, navigate to the [Docker CE download page](https://www.docker.com/community-edition). Download and run the installer and follow the prompts to **install Docker**. Be sure to log in with your Docker Hub account, either by clicking the Docker icon in the system tray or by running `docker login` from a terminal.
 
@@ -57,7 +57,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/500/9.png)
 
-### **Task $1: 2**: Clone the Function Repository
+### Task 2: Clone the Function Repository
 
 - Now we're ready to get a copy of the image resizing function and test it out on our local Fn Server. From a new **terminal window**, clone the Git repository into your home directory using the following command. If you choose to clone the repository into a different directory, modify the command in **STEP 8** to reflect your choice.
 
@@ -69,7 +69,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
 **NOTE**: Functions deployed to Fn are packaged in Docker containers. You can use any programming language to write your functions, and you can deploy them to any Fn Server -- local, running on your server, or hosted in the cloud. The function you just cloned actually involves no code at all, it is simply a Dockerfile that installs and executes the open source command line tool ImageMagick. Using functions like this is a quick and easy way to convert open source or command line tools to auto-scaling web services.
 
-### **Task $1: 3**: Deploy the Function Locally
+### Task 3: Deploy the Function Locally
 
 - Now that you have the function 'code', you can deploy it to the local Fn Server you started earlier by running the following command in your terminal window:
 
@@ -79,7 +79,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
   ![](images/500/11.png)
 
-### **Task $1: 4**: Test the Function Using curl
+### Task 4: Test the Function Using curl
 
 - With the function deployed to our local Fn Server, we can use **curl** to test it. Execute the following command while still in the image-resize directory in your terminal window:
 
@@ -103,7 +103,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
 ## Deploy Your Function to Fn on Kubernetes
 
-### **Task $1: 5**: Install Helm on Your Local Machine
+### Task 5: Install Helm on Your Local Machine
 
 - Helm is a package manager for Kubernetes that streamlines installing and managing applications on your Kubernetes cluster. We'll use Helm in this lab to install Fn on our cluster. **Download** the latest release for your operating system from the [Helm releases page](https://github.com/kubernetes/helm/releases/latest) in the **Installation and Upgrading** section.
 
@@ -127,7 +127,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
   ![](images/500/2.png)
 
-### **Task $1: 6**: Deploy Fn Server to Kubernetes Using Helm
+### Task 6: Deploy Fn Server to Kubernetes Using Helm
 
 - Clone the **fn-helm git repository** using the following command.
 
@@ -190,7 +190,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
     ![](images/500/17.png)
 
-### **Task $1: 8**: Deploy Your Function to Fn Server on Kubernetes
+### Task 8: Deploy Your Function to Fn Server on Kubernetes
 
 - In the same **terminal window** from the previous step, change directories to cloned function directory from **STEP 2**.
 
@@ -230,7 +230,7 @@ cd ~ && git clone https://github.com/derekoneil/image-resize.git && cd image-res
 
 - Our function is deployed and available on our remote Fn Server, which is running in our Kubernetes cluster. The last thing to verify is that the product catalog application is able to find and use our function. Let's test out the upload image feature.
 
-### **Task $1: 9**: Test Your Function in the Product Catalog
+### Task 9: Test Your Function in the Product Catalog
 
 - Open the **product catalog** website in a browser. If you don't have the URL, you can look in the Kubernetes dashboard for the **external endpoint** of the product-catalog-service, or you can run the following command from your terminal window:
 
