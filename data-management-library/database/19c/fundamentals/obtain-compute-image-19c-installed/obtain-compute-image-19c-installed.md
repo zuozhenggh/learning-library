@@ -83,17 +83,17 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 12. In the **Options** section, configure the following:
 
-    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, select **VM.Standard.E4.Flex**. Depending on the quota that you have in your tenancy, you can choose a different instance shape.
-    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for this workshop. If you increase this value, be sure that you have the capacity available.
-    - Leave the **Use Existing VCN** check box deselected (recommended) if you want Resource Manager to create a VCN for you. If you choose to use your own VCN, select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above.
+    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, select **VM.Standard.E4.Flex**. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
+    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for this workshop. If you increase the number of OCPUs, be sure that you have the capacity available.
+    - Leave the **Use Existing VCN** check box deselected (recommended) if you want Resource Manager to create a VCN for you. If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected on the **Stack Information** page.
 
-    ![Options Section - redo this image](images/options-section- redo.png "Options Section")
+    ![Options Section](images/options-section.png "Options Section")
 
 13. Click **Next**.
 
 15. On the **Review** page, verify that the information is correct.
 
-  ![Review page - redo this image](images/review-page - redo image.png "Review page")
+  ![Review page](images/review-page.png "Review page")
 
 16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
@@ -108,7 +108,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 18. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks.
 
-    ![Image URL - redo this image](images/image-url - redo this image.png "Image URL")
+    ![Image URL](images/image-url.png "Image URL")
 
 
 ## Task 3: Connect to your compute instance via a browser and set up your desktop
