@@ -200,20 +200,20 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 ## **STEP 7:** Load Data
 1. Create Load Rules:     
 
-   * Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
-   
-   * Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
-   
-   * Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
-     ![](./images/imageDT_20.png "")
-   
-   * In the drop-down menu, select **Data Load**.    
-     * In the Name field, provide the name of the rules file as **SalesDataload**.  
-     * For Source Type, select Datasource.  
-     * Click **Proceed**.   
-    
-   
-   ![](./images/imageDT_21.png "")
+      * Go to Applications in Essbase web interface. Select application SampleDT and cube Basic.   
+      
+      * Launch the database inspector by clicking the icon under Actions and select **Inspect**.   
+      
+      * Click **Scripts**. On the left navigation bar select -> Rules. Click **Create** menu to the right.  
+      ![](./images/imageDT_20.png "")
+      
+      * In the drop-down menu, select **Data Load**.    
+      * In the Name field, provide the name of the rules file as **SalesDataload**.  
+      * For Source Type, select Datasource.  
+      * Click **Proceed**.   
+      
+      
+      ![](./images/imageDT_21.png "")
 
 2. Click **Create** and select **Regular** from the drop-down options. Do the same 4 more times to have 5 fields.
 

@@ -94,39 +94,40 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
 5. On the rules editor page, you can now set up and edit the rule.
 
-      * On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
+   * On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
 
-      * Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
-        The source file for this rule is in parent-child format. 
+   * Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
+     The source file for this rule is in parent-child format. 
 
-      * Set up the other fields:
+   * Set up the other fields:
 
-         * Set Field 2 - **Child**.  
-         * Set Field 3 - **Property**, and third row Parent/Child box to Child.
-         * For Field 4 and 5, set **UDA**, and third row Parent/Child boxes to Child.
-         * For Field 6-9, set **Alias**, third row Alias boxes to ChineseNames, JapaneseNames, RussianNames, and GermanNames respectively; and fourth row boxes to Child.
-         * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
-           ![](./images/Dim_4.png)
+      * Set Field 2 - **Child**.  
+      * Set Field 3 - **Property**, and third row Parent/Child box to Child.
+      * For Field 4 and 5, set **UDA**, and third row Parent/Child boxes to Child.
+      * For Field 6-9, set **Alias**, third row Alias boxes to ChineseNames, JapaneseNames, RussianNames, and GermanNames respectively; and fourth row boxes to Child.
+      * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
+        ![](./images/Dim_4.png)
 
-       * Now check the field properties for a field. Select the last field column, **Population**.
-       
-          On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
-          ![](./images/Dim_5.png)
-          ![](./images/Dim_6.png)
+    * Now check the field properties for a field. Select the last field column, **Population**.
+    
+       On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
+       ![](./images/Dim_5.png)
+       ![](./images/Dim_6.png)
 
 
-       * Click **Dimensions** under the Global toolbar and select **Market**.
+    * Click **Dimensions** under the Global toolbar and select **Market**.
 
-       * Go to Advanced and Check Allow Property Changes. Click **OK**.
-         ![](./images/Dim_7_0.png)
+    * Go to Advanced and Check Allow Property Changes. Click **OK**.
+      ![](./images/Dim_7_0.png)
 
-       * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
+    * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
 
-       * Click **Save and Close**.
-         ![](./images/Dim_7.png)
+    * Click **Save and Close**.
+      ![](./images/Dim_7.png)
 
-       * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
-         Click **Close** to return to the home page.	
+    * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
+      Click **Close** to return to the home page.	
+
 
 6. Next, you create and run a job to build the dimension using the rule.
 
@@ -366,57 +367,57 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
 1. Download and configure CLI:  
 
-     * Log in to Essbase web user interface. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
+  * Log in to Essbase web user interface. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
 
-     * Expand the Command Line Tools section. Download the Command-Line Tool by clicking download for "Command-Line Tool".
-        ![](./images/image15_62.png)
+  * Expand the Command Line Tools section. Download the Command-Line Tool by clicking download for "Command-Line Tool".
+     ![](./images/image15_62.png)
 
-     * Unzip the cli.zip file in a directory e.g. C:\app\cli  
-     
-     * In your machine, search for Command Prompt. Open it by right-clicking **Run as administrator**.
-       Change directory to where you unzipped the CLI tool.  
-    
-       **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
-       **C:\app\cli>esscs.bat**
-       **Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
+  * Unzip the cli.zip file in a directory e.g. C:\app\cli  
+  
+  * In your machine, search for Command Prompt. Open it by right-clicking **Run as administrator**.
+    Change directory to where you unzipped the CLI tool.  
+ 
+    **Tip:  To run the CLI tool you need JAVA\_HOME to be set or you will get this error**
+    **C:\app\cli>esscs.bat**
+    **Install JDK8 and set JAVA_HOME variable to JDK8 installed location**  
 
-       Note: Please check the links: [link1](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html),  [link2](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) to install jdk8 and above and set JAVA_HOME path.
-      
-     * From the command window type esscs.bat to get a list of the available command. 
-        ![](./images/image15_63.png) 
+    Note: Please check the links: [link1](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html),  [link2](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) to install jdk8 and above and set JAVA_HOME path.
+   
+  * From the command window type esscs.bat to get a list of the available command. 
+     ![](./images/image15_63.png) 
 
-     * Use the below command and enter the password to login:
-         ```
-       <copy>        
-             esscs login -url http://ip:9000/essbase -u userid
-   	</copy>
-       ````
-        ![](./images/image15_64.png) 
+  * Use the below command and enter the password to login:
+      ```
+    <copy>        
+          esscs login -url http://ip:9000/essbase -u userid
+	</copy>
+    ````
+     ![](./images/image15_64.png) 
    
 
 
 2. Import Sample.Basic from CLI:
 
-      * Download the file **Sample_Basic.xlsx**. Copy the file to the folder: C:\app\cli.
+   * Download the file **Sample_Basic.xlsx**. Copy the file to the folder: C:\app\cli.
 
-        This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
+     This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
-        ![](./images/image14_89.png)
+     ![](./images/image14_89.png)
 
-         This file is imported using CLI and it is used for rest of the exercise.   
+      This file is imported using CLI and it is used for rest of the exercise.   
 
-      * Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **Base**.
+   * Enter below command to deploy the the Sample cube using the Sample_Basic.xlsx file.  Name the application **Sample01** and cube as **Base**.
 
-        ```
-        <copy> esscs.bat deploy --help
-        esscs.bat deploy -a Sample01 -db Basic -file C:\app\cli\Sample_Basic.xlsx </copy>
-        ```
+    ```
+    <copy> esscs.bat deploy --help
+    esscs.bat deploy -a Sample01 -db Basic -file C:\app\cli\Sample_Basic.xlsx </copy>
+    ```
 
-        ![](./images/image14_90.png)
+     ![](./images/image14_90.png)
 
-      * Next, review the newly create cube from the Essbase web interface.
+   * Next, review the newly create cube from the Essbase web interface.
 
-        ![](./images/image14_91.png)
+     ![](./images/image14_91.png)
 
 3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application, deployed in last step, use this command.
 
