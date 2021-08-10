@@ -39,7 +39,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Steps
 
-### **STEP 1: Set up ORDS and APEX on Oracle Database**
+### **Task 1: Set up ORDS and APEX on Oracle Database**
 
 **Key Objectives**:
 
@@ -47,7 +47,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **Click on Lab 16-1 from the menu on the right.**
 
-### **STEP 2: Create a REST Service using APEX**
+### **Task 1: Create a REST Service using APEX**
 
 **Key Objectives**:
 
@@ -55,7 +55,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **Click on Lab 16-2 from the menu on the right.**
 
-### **STEP 3: Integrating the REST Service in an Python Application and Create a Web Application using APEX with Oracle Database.**
+### **Task 1: Integrating the REST Service in an Python Application and Create a Web Application using APEX with Oracle Database.**
 
 **Key Objectives**:
 

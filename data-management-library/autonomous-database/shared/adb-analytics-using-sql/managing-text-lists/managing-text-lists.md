@@ -14,7 +14,7 @@ Estimated time: 10 minutes
 
 - Learn how to use the LISTAGG function to concatenate string values into a single row
 
-## STEP 1 - Creating Lists of Customers 
+## Task 1: Creating Lists of Customers 
 
 1. Creating this type of list as part of a query is actually very easy to do with Autonomous Data Warehouse because we can use the SQL **`LISTAGG`** function. To get started with this query, we first we need a unique list of customers by education:
 
@@ -54,7 +54,7 @@ Next, we need to group the email addresses by each attribute value of our Educat
 This is a situation with almost every other cloud data warehouse. It returns an error message and there is no way around the problem.
 
 
-## STEP 2 - Efficiently Managing Very Long Strings 
+## Task 2: Efficiently Managing Very Long Strings 
 
 Fortunately, Autonomous Data Warehouse has a unique capability in that it can trap this error directly within the `LISTAGG` function.
 
@@ -83,7 +83,7 @@ Our `LISTAGG` function looks like this:
 
     ![Query result using LISTAGG](images/3038282317.png)
 
-## STEP 3 - Finding Rows That Are Too Long 
+## Task 3: Finding Rows That Are Too Long 
 
 1. That's it! It looks simple, but only Autonomous Data Warehouse can run this query without generating an error and aborting. To understand why, let's tweak the query to show the rows where our string concatenation gets too long. Run the following modified query:
 

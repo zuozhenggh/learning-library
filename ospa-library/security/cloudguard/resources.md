@@ -1,6 +1,6 @@
 # Lab 4: Creating a sanctioned resource
 
-## STEP 1: Adding a new resource
+## Task 1: Adding a new resource
 
 
 1. Log in to OCI with your credentials.

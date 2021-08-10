@@ -16,7 +16,7 @@ This lab will walk you through installing OCI's monitoring agent in an existing 
 
 Estimated Lab Time: 2 hour
 
-## **STEP 1:** Downloading the Agent from Oracle Management Cloud
+## Task 1: Downloading the Agent from Oracle Management Cloud
 
 ### **Navigate to the Agents Page**
 
@@ -36,7 +36,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/3.png "")
 
-## **STEP 2:** Moving and Unzipping the Agent
+## Task 2: Moving and Unzipping the Agent
 
 ### **Installing Cyberduck** 
 
@@ -153,7 +153,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/11.png "")
 
-## **STEP 3:** Discovering MySQL
+## Task 3: Discovering MySQL
 
 ### **Configuring MySQL**
 

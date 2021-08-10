@@ -20,13 +20,13 @@ Estimated Lab Time: 10 minutes.
 - Oracle Marketplace Listings Access
     - **FortiGate** paid listing access required for this **Lab0** 
 
-## **STEP 1: Login and Create Stack using Resource Manager**
+## **Task 1: Login and Create Stack using Resource Manager**
 
 You will be using Terraform to create your lab environment.
 
 1.  Click on the link below to download the zip file which you need to build your environment.  
 
-    - Click here: [fortigate-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/eg1nHq7cOIjmJjDl-ScNvJu0YZFKJGv5p5L5idrXrJkF0MVsmplUX88EWOas3His/n/partners/b/files/o/fortigate-live-labs.zip) 
+    - Click here: [fortigate-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8uWLQjPtDi87VQ5fnkeGmL29Z8S3kj6ZstHND40dbYrSxthYrND0ctiZb7nOupQp/n/partners/b/files/o/fortigate-live-labs.zip) 
         - Packaged terraform **FortiGate High Availability** use-case.
 
 2.  Save in your local machine's downloads folder.
@@ -73,7 +73,7 @@ You will be using Terraform to create your lab environment.
 
     ![](./images/97-Final-Create-Stack.png " ")
 
-## **STEP 2: Terraform Plan and Apply**
+## **Task 2: Terraform Plan and Apply**
 
 When using Resource Manager to deploy an environment, you need to execute a terraform **plan** and **apply**. Let's do that now.
 
@@ -91,7 +91,7 @@ When using Resource Manager to deploy an environment, you need to execute a terr
 
     **Note**: Stack will deploy **FortiGate Next Gen Firewall (4 cores)** paid listing instances to support this use-case.
 
-## **STEP 3: Connect to your instances**
+## **Task 3: Connect to your instances**
 
 1. Based on your laptop config, choose the appropriate steps to connect to your instances. 
 

@@ -5,7 +5,7 @@ In this lab, you will install STAR-CCM+.
 
 Estimated Lab Time: 25 minutes
 
-## **STEP 1**: Adding specific libraries
+## Task 1: Adding specific libraries
 
 ***If you used the CFD Ready Cluster from marketplace, this step is not needed***
 
@@ -15,7 +15,7 @@ Estimated Lab Time: 25 minutes
         sudo yum -y install libSM libX11 libXext libXt
     ```
 
-## **STEP 2**: Download the binaries
+## Task 2: Download the binaries
 
 You can download the STAR-CCM+ installer from the Siemens PLM website or push it to your machine using scp.
 
@@ -44,7 +44,7 @@ Untar or unzip the installer depending on your version
     tar -xf installer.tgz
     unzip installer.tgz
 ```
-## **STEP 3**: Install
+## Task 3: Install
 
 1. Launch the installer on a shared location. By default, an HPC cluster has a NFS-share mounted on all the compute nodes.
 

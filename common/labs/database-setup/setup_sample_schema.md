@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## **Step**: Install Sample Data
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -71,6 +71,6 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Contributors** - Anoosha Pilli, Anoosha Pilli, LiveLabs Team
+- **Last Updated By/Date** - LiveLabs Team, August 2020
 

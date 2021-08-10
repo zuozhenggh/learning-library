@@ -39,7 +39,7 @@ In this lab, you will:
 To complete this lab, you must have:
   * This lab assumes you have an Oracle Cloud account and compartment, user, groups and policies created into it and you are logged in your account. For an overview of compartments, users, groups, policies etc. see this [link](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/users-groups-and-policies1.html#GUID-145DC7BA-2A9B-43BD-90A9-6FDBCAEBB7B0).
 
-## **STEP 1:** Create an Oracle Digital Assistant Service Instance
+## Task 1: Create an Oracle Digital Assistant Service Instance
 
 1. In the Infrastructure Console, click on Hamburger menu on the top left to open the navigation menu, select **Analytics & AI** and select **Digital Assistant** (which appears under the **AI Services** category on the page).
 
@@ -71,7 +71,7 @@ To complete this lab, you must have:
   ![instance creating state](./images/creating-state.png)
   ![instance active state](./images/active-state.png)
 
-## **STEP 2:** Access the Service Instance from the Infrastructure Console
+## Task 2: Access the Service Instance from the Infrastructure Console
 Once you have provisioned an instance, you can access it from the **Infrastructure Console** by following these steps:
 
 1. Select your Digital Assistant Instance.
@@ -87,7 +87,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
   ![login 1](./images/login-1.png)
   ![login 2](./images/login-2.png)
 
-## **STEP 3:** Import Skill
+## Task 3: Import Skill
 
 1. In the Infrastructure Console, click on Hamburger menu on the top left to open the navigation menu, select **Development**, then select **Skills**.
 
@@ -101,7 +101,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 4. Select the downloaded file from your computer then click **Open**
 
-## **STEP 4:** Integrate the Skill with your App
+## Task 4: Integrate the Skill with your App
 
 1. After you import the Skill, you will find it in the Console, under **Development** -> **Skills** category. Now click on it's name, **SkillTracker**.
 
@@ -127,7 +127,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
       const restUrl = "http://your_public_ip:8000/api/skillset";
       ```
 
-  You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab6, Step 1, in all the 8 _.js_ files. Then save each file.
+  You will need to replace **your\_public\_ip** with the public IP address of your instance created in Lab5, Step 1, in all the 8 _.js_ files. Then save each file.
 
 7. Open a terminal an go in the **package** folder. Run the command:
 
@@ -145,7 +145,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
 10. The status will change in **Awaiting Deployment**  then in **Ready**.
 
-## **STEP 5:** Test the Skill with Conversation Tester
+## Task 5: Test the Skill with Conversation Tester
 
 1. After you update the Custom Component, click on **Preview** to test the skill, in the up right corner of the console.
 
@@ -199,7 +199,7 @@ Once you have provisioned an instance, you can access it from the **Infrastructu
 
   After you enter one of the above, you can then press the buttons depending on what do you want to see next.
 
-## **STEP 6:** Integrate your Digital Assistant with Slack
+## Task 6: Integrate your Digital Assistant with Slack
 
 Below are the steps for creating a Slack channel for Digital Assistant.
 
@@ -389,7 +389,7 @@ You add OAuth scopes for permissions that you want to give to the bot and to the
 
   ![success](./images/success.png)
 
-## **STEP 7:** Test Your Bot in Slack
+## Task 7: Test Your Bot in Slack
   With the Slack Channel and messaging configuration complete, you can test your Bot in Slack.
 
 1. Open the Slack Workspace where you have installed the app.

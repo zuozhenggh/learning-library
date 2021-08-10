@@ -8,7 +8,7 @@ To learn more about this workshop please watch the video below.
 
 <a href="https://www.youtube.com/watch?v=ivNEREBsH9k&t=0s&index=3&list=PLPIzp-E1msrYGLKIgW3njO3uUkvXD0bAH" target="_video">Workshop Overview</a>
 
-### **Step 1**: Acquire an Oracle Cloud Trial Account
+### Task 1: Acquire an Oracle Cloud Trial Account
 
 - Bookmark this page for future reference.
 
@@ -29,7 +29,7 @@ To learn more about this workshop please watch the video below.
 
 
 
-### **Step 2**: Navigate to Lab 050
+### Task 2: Navigate to Lab 050
 
 - [Click here to navigate to Lab 50](Linux050.md)
 - _You can see a list of Lab Guides_ by clicking on the **Menu Icon** hamburger in the upper left corner of the browser window. Then, **Select Lab 050: Cloud Infrastructure Configuration**.

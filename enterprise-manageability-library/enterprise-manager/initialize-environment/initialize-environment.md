@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listeners
@@ -116,7 +116,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2:** Initialize Enterprise Manager
+## Task 2: Initialize Enterprise Manager
 
 ### **Generate SSH Keys**
 

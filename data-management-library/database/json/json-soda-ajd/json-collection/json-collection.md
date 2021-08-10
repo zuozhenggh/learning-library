@@ -21,7 +21,7 @@ In this lab, you will:
 
 * Have provisioned an Autonomous JSON Database instance and logged into the JSON
 
-## **STEP 1**: Create Collection
+## Task 1: Create Collection
 
 1. To create a collection, click **Create Collection**.
 
@@ -39,7 +39,7 @@ In this lab, you will:
 
 	![](./images/refreshed.png)
 
-## **STEP 2**: Insert Documents
+## Task 2: Insert Documents
 
 1. Double click **products** collection to show the **JSON-products** worksheet.
 
@@ -134,7 +134,7 @@ In this lab, you will:
 	</copy>
 	```
 
-## **STEP 3:** Finding JSON documents in a collection
+## Task 3: Finding JSON documents in a collection
 
 Documents can be selected based on filter conditions - we call them 'Queries By Example' or 'QBE' for short. A QBE is a JSON document itself and it contains the fields and filter conditions that a JSON document in the collection must satisfy in order to be selected. QBEs are used with SODA (only); you can use SQL functions as an alternative.
 
@@ -211,7 +211,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	```
 	![](./images/less5-movie.png)
 
-## **STEP 4:** JSON and Constraints
+## Task 4: JSON and Constraints
 
 Some values need to be unique, so how do we enforce this?
 

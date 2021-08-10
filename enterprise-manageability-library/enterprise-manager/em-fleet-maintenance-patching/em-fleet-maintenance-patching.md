@@ -3,7 +3,7 @@
 ## Introduction
 The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
 
-*Estimated Lab Time*: 60 minutes
+*Estimated Lab Time*: 75 minutes
 
 ### About Database Fleet Maintenance
 
@@ -45,7 +45,7 @@ In this lab you will perform the following steps:
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## **STEP 1:** Review Tasks Completed in Advance
+## Task 1: Review Tasks Completed in Advance
 
 In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab. Please review accordingly for reference
 
@@ -53,7 +53,7 @@ In the interest of simplifying the setup and save time, the following steps were
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at */home/oracle/fleet*
 
-## **STEP 2:** Detect Configuration Pollution with Software Standardization Advisor
+## Task 2: Detect Configuration Pollution with Software Standardization Advisor
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -126,7 +126,7 @@ Software Standardization Advisor enables administrators to understand various da
 
     - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10 -->
 
-## **STEP 2:** Database Server patching with Fleet maintenance (Overview)
+## Task 2: Database Server patching with Fleet maintenance (Overview)
 
 ### **Database Fleet Maintenance**
 
@@ -146,7 +146,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     You will see ***hr.subnet.vcn.oraclevcn.com*** Container Database has a pluggable database ‘HRPDB’. Both the Container Database and Pluggable database targets have status ‘UP’ and version 18.3.0.0.0. If target status is ‘DOWN’, start the target (using */home/oracle/start\_db\_hr.sh*).
 
-## **STEP 3:** Create Gold Image
+## Task 3: Create Gold Image
 
 1. Review reference home setup *[READ-ONLY– This step has already been implemented]*
 
@@ -231,7 +231,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
     - Applicable and Image has more bug fixes: The image contains more bug fixes than those applied on the database. The list of extra bugs is displayed. The image can be applied on the specified target.
     - Not Applicable: The database contains more bug fixes than those included in the image. The list of missing bugs is displayed. The administrator has to create a new version of the image that includes the missing bugs before the database can uptake the same.
 
-## **STEP 4:** Subscribe Database
+## Task 4: Subscribe Database
 
 1.  Review the flow on subscribing Targets to the Selected Gold Image
 
@@ -250,7 +250,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/ca94c4b76f9c24eee24f4d06b35c6764.png " ")
 
-## **STEP 5:** Deploy Image
+## Task 5: Deploy Image
 
 1.  Review the flow on Gold Image Deployment
 
@@ -286,7 +286,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
          3.  The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
          4.  If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
 
-3. Navigate to Enterprise ***>> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
+3. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
 
     ![](images/e3002b6d99e5a3654676f41911a3766d.png " ")
 
@@ -294,7 +294,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/68541ee5acf4db8b4f26a5a794b1c15c.png " ")
 
-## **STEP 6:** Migrate Listener
+## Task 6: Migrate Listener
 
 1. Review and execute the following command to Migrate the Listener
 
@@ -318,7 +318,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/91d2873ae19a8b7b53a5d31c842b5b9f.png " ")
 
-## **STEP 7:** Update Database – Patch 18.3 to 18.10
+## Task 7: Update Database – Patch 18.3 to 18.10
 
 1.  Review the flow on Update Database task. Once the deploy operation completes successfully. We are ready to run the final UPDATE operation which patches the database by switching it to the newly deployed home.
 
@@ -354,7 +354,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/425da84e806d9024383be869fda527d4.png " ")
 
-## **STEP 8:**  Rollback Database – Reversed Patch 18.10 to 18.3
+## Task 8:  Rollback Database – Reversed Patch 18.10 to 18.3
 
 Once the database is updated, we will perform a rollback to 18.3
 
@@ -385,7 +385,7 @@ below.
 
     ![](images/7afa56b6cb5fee053c57b141a5c08245.png " ")
 
-## **STEP 9:**  Cleanup Old Homes
+## Task 9:  Cleanup Old Homes
 
 1. Clean up Database HR
 

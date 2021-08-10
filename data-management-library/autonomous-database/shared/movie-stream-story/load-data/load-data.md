@@ -37,7 +37,7 @@ This lab requires you to have access to an autonomous database instance (either 
 
 The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 3 in this series (Create a Database User) before proceeding.
 
-## **Step 1**: Configure the Object Storage Connections
+## Task 1: Configure the Object Storage Connections
 
 In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area. 
 
@@ -95,7 +95,7 @@ We now have two cloud storage locations set up.
 
 ![Cloud Storage Locations](images/cloudstoragelocations.png)
 
-## **Step 2:** Load data from files in Object Storage using Data Tools
+## Task 2: Load data from files in Object Storage using Data Tools
 
 In this step we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our autonomous database.
 
@@ -190,7 +190,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 26. Click on the **Done** button in the bottom right of the screen.
 
-## **Step 3:** Creating the Customer view
+## Task 3: Creating the Customer view
 
 We have now created two main tables containing information about MovieStream customers - CUSTOMER_CONTACT and CUSTOMER_EXTENSION. It will be useful to link these tables together to create a view of customer information. We can do this with some simple SQL.
 
@@ -257,7 +257,7 @@ select * from customer;
 
 If you scroll to the right, you can see the columns that have been joined from the **customer_extension** table, such as **age**, **commute_distance** and so on.
 
-## **Step 4:** Using Database APIs to load richer data files
+## Task 4: Using Database APIs to load richer data files
 
 The DBMS_CLOUD package is a feature of the autonomous database that allows us to extend the database to load from, and link to, cloud data storage systems such as Oracle OCI Object Storage, Amazon S3, and Microsoft Azure Blob Storage. This package is used by the Data Load tool we have just used above, but can also be exercised using SQL. For more information see the [DBMS_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 

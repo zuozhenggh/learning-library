@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab walks you through the steps of creating your own virtual cloud network and updating the security list, allowing for future Database access. You will also walk through the steps of creating a vault and encrypted key, and the steps to create an empty Object Storage bucket for use in the migration. The OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. In this lab, Object Storage is used as temporary storage between the source and target databases with Data Pump. For more information visit the *Learn More* tab at the bottom of the page.
+This lab walks you through the steps of creating your own virtual cloud network and updating the security list, allowing for future Database access. You will also walk through the steps of creating a vault, an encrypted key, and the steps to create an empty Object Storage Bucket for use in the migration. The OCI Object Storage service is an internet-scale, high-performance storage platform that offers reliable and cost-efficient data durability. In this lab, Object Storage is used as temporary storage between the source and target databases with Data Pump. For more information visit the *Learn More* tab at the bottom of the page.
 
 For a full understanding of the network components and their relationships view the linked video, or visit the *Learn More* tab below.
 
   [](youtube:mIYSgeX5FkM)
 
-Estimated Lab Time: 20-30 minutes 
+Estimated Lab Time: 20-30 minutes
 
 ### Objectives
 
@@ -26,7 +26,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Create Virtual Cloud Network
+## Task 1: Create Virtual Cloud Network
 
 The following task is *optional* if a suitable VCN is already present.
 
@@ -50,7 +50,7 @@ The following task is *optional* if a suitable VCN is already present.
 
   ![](images/vcn-review-and-create.png)
 
-## **STEP 2:** Update Security List for Virtual Cloud Network Subnet
+## Task 2: Update Security List for Virtual Cloud Network Subnet
 
 This task assumes default permissions in your public subnet. If you disabled or restricted your default permissions such as port 22 SSH access or restricted egress, please add default permissions as needed.
 
@@ -93,11 +93,9 @@ This task assumes default permissions in your public subnet. If you disabled or 
 You may now [proceed to the next lab](#next).
 
 
-## **STEP 3:** Create Vault
+## Task 3: Create Vault
 
-These steps walks you through the steps of creating a vault and encrypted key. For more information visit the *Learn More* tab at the bottom of the page. In these steps, you will:
-* Create a vault
-* Create a key
+These steps walks you through the steps of creating a vault and encrypted key. For more information visit the *Learn More* tab at the bottom of the page.
 
 The following task is *optional* if a Vault is already present.
 
@@ -135,7 +133,7 @@ The following task is *optional* if a Vault is already present.
 
 
 
-## **STEP 4**: Create Object Storage Bucket
+## Task 4: Create Object Storage Bucket
 
 Create an empty Object Storage bucket for use in the migration.
 

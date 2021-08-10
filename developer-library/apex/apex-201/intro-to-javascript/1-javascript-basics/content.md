@@ -12,7 +12,7 @@ Play the video below to learn about this lab.
 
  <a href="https://www.slideshare.net/DanielMcGhan/module-1-javascript-basics" target="\_blank">Click here</a> to view the slides.
 
-## **Step 1:** Using the browser's console
+## Task 1: Using the browser's console
 
 In this part, you will learn how to declare variables and work with different operators in your web browser's console.
 
@@ -71,7 +71,7 @@ In this part, you will learn how to declare variables and work with different op
 
 8.  Refresh the web page and try typing the name of a variable again. They will not show up because each time a page is loaded in the browser, it gets its own new JavaScript context.
 
-## **Step 2:** Variables, data types, and operators
+## Task 2: Variables, data types, and operators
 
 Now that you have a basic working knowledge of the console, it's time to get your hands dirty working with JavaScript.
 
@@ -95,7 +95,7 @@ Now that you have a basic working knowledge of the console, it's time to get you
     | Comparison | `==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=` |
     | Logical | `&&`, `||`, `!` |
 
-## **Step 3:** Conditionals and loops
+## Task 3: Conditionals and loops
 
 Programming wouldn't be possible without conditionals and loops. The basic `if` statement and `for` loop are all you really need to get going with JavaScript.
 
@@ -123,7 +123,7 @@ Programming wouldn't be possible without conditionals and loops. The basic `if` 
 
     Run your code to test it as needed.
 
-## **Step 4:** Objects and functions
+## Task 4: Objects and functions
 
 Objects and functions are used to compose and organize code in JavaScript. It's important to have a basic understanding of how they work before moving on to more complex topics.
 

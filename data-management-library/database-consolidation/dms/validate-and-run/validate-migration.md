@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database and GoldenGate environments are correctly set up.
+This lab walks you through the steps to validate a migration prior to running it. Before you can run a job with a migration resource in OCI Database Migration, the migration resource must be validated. The validation job will check that all associated database environments are correctly set up.
 
 Estimated Lab Time: 20 minutes
 
@@ -10,6 +10,7 @@ Estimated Lab Time: 20 minutes
 
 In this lab, you will:
 * Validate a migration
+* Run a migration
 
 ### Prerequisites
 
@@ -18,7 +19,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Validate Migration
+## Task 1: Validate Migration
 
 1. In the OCI Console Menu ![](images/hamburger.png =22x22), go to **Migration > Migrations**
 
@@ -53,7 +54,7 @@ In this lab, you will:
 
 10. Once all phases show complete, move to the next step.
 
-## **STEP 2**: Run Migration
+## Task 2: Run Migration
 
   1. In the OCI Console Menu ![](images/hamburger.png =22x22), go to **Migration > Migrations**
 
@@ -63,29 +64,23 @@ In this lab, you will:
 
     ![](images/2.png =90%x*)
 
-  3. Press **Start** to begin the Migration
+  3. Press **Start** to begin the Migration. Please note, if a dialog box appears, press **Start** in the dialog box  to begin the migration.
 
-![](images/done.png =90%x*)
+    ![](images/pic.png =90%x*)
 
-  4. The Start Migration dialog is shown. Select the phase **Monitor Replication Lag** in the 'Require User Input After' list. This will cause the replication to run continuously until the Migration is resumed (If nothing is shown continue to number 6).
+  4. Click on **Jobs** in left-hand **Resources** list
 
-  5. Press **Start** to begin the Migration
+  5. Click on most recent Evaluation Job
 
-  6. Click on **Jobs** in left-hand **Resources** list
+  6. Click on **Phases** in left-hand **Resources** list
 
-  7. Click on most recent Evaluation Job
+  7. Job phases are updated as the migration progresses
 
-  8. Click on **Phases** in left-hand **Resources** list
+  8. Wait till all the phases have completed and your screen should look the like picture below.
 
-  9. Job phases are updated as the migration progresses
+  ![](images/FD.png =90%x*)
 
-  10. Wait till all the phases have completed and your screen should look the like picture below.
-
-  ![](FD/2.png =90%x*)
-
-  13. The migration runs the final cleanup phases and shows as **Succeeded** when finished
-
-
+  9. The migration runs the final cleanup phases and shows as **Succeeded** when finished
 
 You may now [proceed to the next lab](#next).
 

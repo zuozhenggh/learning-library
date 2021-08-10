@@ -16,7 +16,7 @@ This lab assumes you have:
 - The IP address and instance name for your Compute instance
 - Successfully logged into your LiveLabs account
 
-## **STEP 1:** Access the Graphical Remote Desktop
+## Task 1: Access the Graphical Remote Desktop
 For ease of execution of this workshop, your VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
@@ -41,7 +41,7 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
     ![](images/novnc-deceptive-site-error.png " ")
 
-## **STEP 2:** Access Your Workshop Guide
+## Task 2: Access Your Workshop Guide
 
 1. Two application windows with at least one for *Firefox* browser should already be opened on your first access, If not, click on the *Firefox* browser icon from the remote desktop to launch.
 
@@ -61,7 +61,7 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
     ![](images/novnc-landing-2.png " ")
 
-## **STEP 3:** Enable Full-screen Display
+## Task 3: Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
 
 1. Click on the small gray tab on the middle-left side of your screen to open the control bar.
@@ -73,7 +73,7 @@ For seamless desktop integration and to make the best use of your display, perfo
     ![](./images/novnc-fullscreen-2.png " ")
     ![](./images/novnc-fullscreen-3.png " ")
 
-<!-- ## **STEP 4:** Enable Copy/Paste from Local to Remote Desktop
+<!-- ## Task 4: Enable Copy/Paste from Local to Remote Desktop
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. Continuing from the last task above, Select the *clipboard* icon
@@ -91,5 +91,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm
+* **Contributors** - LiveLabs Team
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

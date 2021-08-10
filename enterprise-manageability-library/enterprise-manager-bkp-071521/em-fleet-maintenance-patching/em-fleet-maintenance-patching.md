@@ -51,7 +51,7 @@ e.g: https://111.888.111.888:7803/em
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## **STEP 0:** Running your Workload
+## Task 0: Running your Workload
 ### Login to Host using SSH Key based authentication
 1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
     - Authentication OS User - “*opc*”
@@ -119,7 +119,7 @@ In the interest of simplifying the setup and save time, the following steps were
 
   To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## **STEP 1:** Detect Configuration Pollution
+## Task 1: Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -184,7 +184,7 @@ This exercise enables us to analyze the database estate using Software Standardi
 
       - Patch database “hr.subnet.vcn.oraclevcn.com” from 18.3 to 18.10
 
-## **STEP 2:** Database Server patching with Fleet maintenance
+## Task 2: Database Server patching with Fleet maintenance
 
 ### Database Fleet Maintenance
 

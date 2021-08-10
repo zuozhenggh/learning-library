@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1**: Starting Database And OAS Services
+## Task 1: Starting Database And OAS Services
 1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
 
 2. Go to folder /u01/script
@@ -96,7 +96,7 @@ Check for the "Finished starting servers" status before proceeding next.
     ![](./images/oas-environment5.png " ")
 Check for the success status as shown above, before login to OAS screen.
 
-## **STEP 2**: Login To Oracle Analytics Server
+## Task 2: Login To Oracle Analytics Server
 
 1. Open web browser (preferably Chrome) and access the OAS Data Visualization service by the below URL structure.  
 
@@ -117,7 +117,7 @@ Check for the success status as shown above, before login to OAS screen.
     Password	: <copy>Oracle_4U</copy>
     ```
 
-## **STEP 3**: Create A Connection To Database
+## Task 3: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 

@@ -19,7 +19,7 @@ Estimated Completion Time: 15 minutes.
 
 - A compute instance with 4 OCPUs available to run the image.
 
-## **STEP 1:** Launch the Workshop Marketplace Stack
+## Task 1: Launch the Workshop Marketplace Stack
 
 1. Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/82173888).
 
@@ -59,7 +59,7 @@ Estimated Completion Time: 15 minutes.
 
    ![](./images/job-output.png " ")
 
-## **STEP 2:**  Check the Local Environment
+## Task 2:  Check the Local Environment
 
 It will take another 4 to 5 minutes for all the services to come online.
 
@@ -73,7 +73,7 @@ It will take another 4 to 5 minutes for all the services to come online.
 
    ![](./images/localhost-simpledb-app.png " ")
 
-## **STEP 3:** Log in to the On-Premises Environment
+## Task 3: Log in to the On-Premises Environment
 
 Most of the work will be done from the simulated on-premises environment deployed in the compute instance on OCI.
 
@@ -87,7 +87,7 @@ Most of the work will be done from the simulated on-premises environment deploye
 
 2. You will be prompted to add this IP to the list of known hosts. Enter `yes`.
 
-## **STEP 4:** Create an SSH Key
+## Task 4: Create an SSH Key
 
 We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.
 

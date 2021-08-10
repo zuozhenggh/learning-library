@@ -37,7 +37,7 @@ The exercises contained within this lesson will allow the user to get acquainted
 
 *	When first created, sandbox member intersections are all virtual and have no physical storage.
 
-## **Step 1:**	Create a Scenario-Enabled Sample Cube
+## Task 1:	Create a Scenario-Enabled Sample Cube
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
@@ -61,7 +61,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
     ![](./images/extrasmall_1.png "")
 
-## **Step 2:** Creating a Scenario
+## Task 2: Creating a Scenario
 
 **Adding a Scenario to a Sandbox-Enabled Cube**
 
@@ -97,7 +97,7 @@ To create a scenario, you specify general information about your scenario, inclu
 
 12.	Save your change.
 
-## **Step 3:** Lightweight Sandboxes
+## Task 3: Lightweight Sandboxes
 
 **Show that Sandboxes are lightweight**  
 
@@ -123,7 +123,7 @@ This exercise shows that creating sandboxes has little impact on resource usage 
 
 By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and will not use any extra storage disk space. Only values that are modified as part of a scenario will be stored. This makes creating and using most scenarios a very light weight operation.  
 
-## **Step 4:**	Model Data
+## Task 4:	Model Data
 
 As a scenario user, you can model data slices in your own scenario.
 
@@ -149,7 +149,7 @@ As a scenario user, you can model data slices in your own scenario.
 
 8. You will notice updated data will reflect only against sb0 dimension intersection.
 
-## **Step 5:**	Scenario Workflow
+## Task 5:	Scenario Workflow
 
 You can review a scenario using an optional approval workflow.
 

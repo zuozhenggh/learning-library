@@ -27,7 +27,7 @@ Follow these general steps:
   - How much time did the data discovery job take?
   - How much time did the data masking job take?
   
-## STEP 1: Explore Data Safe masking formats and policies
+## Task 1: Explore Data Safe masking formats and policies
 
 Sign in to the Oracle Data Safe Console in your region
 
@@ -62,7 +62,7 @@ Data by Using Default Masking Formats in Oracle Data Safe](https://github.com/la
 - To return to the **Masking Policies** page in the Library, click the browser's **Back** button.
 - If you click **Exit** at the bottom, you are returned to the **Home** page.
   
-## STEP 2: Download your masking policy
+## Task 2: Download your masking policy
 
 - Go to the **Library tab** and click on **Masking Policies**.
 
@@ -81,7 +81,7 @@ Data by Using Default Masking Formats in Oracle Data Safe](https://github.com/la
 - View your list of downloads in your browser and open the masking policy XML file.
 - Review the file, and then close it.
 
-## STEP 3: View the Data Masking report & jobs
+## Task 3: View the Data Masking report & jobs
 - Click the **Reports** tab.
 - On the left, click **Data Masking** and then again **Data Masking**.
 - Click your **Data Masking** report in the content pane to view it.

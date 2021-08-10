@@ -27,7 +27,7 @@ In this lab, you will practice performing both the required and optional tasks d
 Login credentials and a tenancy name for the Oracle Cloud Infrastructure Console.
 
 
-## **STEP 1:** Log in to the Oracle Cloud Console
+## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -39,7 +39,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
    **Note:** Scroll-down to the **Start Exploring** section, and then navigate to the **Key Concepts and Terminology > Learning Modules and Submodules** section. You can use the links in this section to access useful videos and PDF files about topics such as Core Infrastructure, Governance and Administration, and more.
 
 
-## **STEP 2:** Create a Compartment
+## Task 2: Create a Compartment
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Big Data Service resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your BDS resources that you will use in the lab.
 
 1. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**.
@@ -60,7 +60,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
    ![](./images/compartment-created.png " ")
 
-## **STEP 3:** Create an IAM User to Be the BDS Administrator
+## Task 3: Create an IAM User to Be the BDS Administrator
 
 A Cloud Administrator has complete control over all of the BDS resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more BDS administrators. To create a new BDS administrator for a service, a Cloud Administrator must create a user and then add that user to a BDS administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
@@ -88,7 +88,7 @@ Create a new Administrator group that will have full access rights to the new **
    **Note:** In this workshop, you will not login to OCI using the new **`training-bds-admin`** user that you just created in this step; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-bds-admin`** user. The user must change the password when they sign in to the Console. For detailed information on this topic, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
 
-## **STEP 4:** Create an IAM BDS Administrators Group and Add the New User to the Group
+## Task 4: Create an IAM BDS Administrators Group and Add the New User to the Group
 
 Create a BDS group whose members will be granted permissions to manage the BDS cluster life cycle.
 
@@ -124,7 +124,7 @@ Create a BDS group whose members will be granted permissions to manage the BDS c
    ![](./images/groups-page.png " ")
 
 
-## **STEP 5:** Create IAM Policies for Administering Your Service
+## Task 5: Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Big Data Service resources. Before you can create a cluster, you must also create a policy that grants the system access to networking resources.
 
 1. If you are still on the **Groups** page from the previous step, click the **Policies** link in the **Identity** section on the left; otherwise, click the **Navigation** menu and navigate to **Identity & Security > Policies**.
@@ -197,7 +197,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
       **Note:** You can click the name of a policy on this page to view and edit its policy statements.
 
-## **STEP 6:** Create a Virtual Cloud Network (VCN)
+## Task 6: Create a Virtual Cloud Network (VCN)
 In this step, you will create a new Virtual Cloud Network (VCN) that will be used by your Big Data Service cluster. In general, if you already have an existing VCN, you can use it instead of creating a new one; however, your existing VCN must be using a `Regional` subnet and the appropriate ports must be opened. In addition, if you want to make the cluster accessible from the public internet, the subnet must be public.      
 
 1. Click the **Navigation** menu and navigate to **Networking > Virtual Cloud Networks**.

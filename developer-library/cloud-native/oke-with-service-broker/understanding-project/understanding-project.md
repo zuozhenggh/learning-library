@@ -25,7 +25,7 @@ In this lab you will:
 - Review the demo project structure.
 - Provision the required users with Terraform.
 
-## **STEP 1:** Use the Template
+## Task 1: Use the Template
 
 The demo project repository is located at [https://github.com/oracle-quickstart/oke-k8s-atp-boilerplate](https://github.com/oracle-quickstart/oke-k8s-atp-boilerplate)
 
@@ -55,7 +55,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     </copy>
     ```
 
-## **STEP 2:** Review the Project Structure
+## Task 2: Review the Project Structure
 
 1. The project has the following folder structure:
 
@@ -113,7 +113,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
 
 4. The *`terraform`* folder contains templates to create the *`users`* and *`credentials`* needed to publish Docker images to the Oracle Container Image Registry (OCIR) and to access the Oracle Streaming Service, as well as a user that can interact with the Kubernetes cluster to use for Continuous Integration / Continuous Deployment (CI/CD) pipelines.
 
-## **STEP 3:** Get into the Terraform Folder
+## Task 3: Get into the Terraform Folder
 
 1. Get into the terraform folder:
 
@@ -123,7 +123,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     </copy>
     ```
 
-## **STEP 4:** Populate the *`terraform.tfvars`* File
+## Task 4: Populate the *`terraform.tfvars`* File
 
 1. Generate a *`terraform.tfvars`* from the *`terraform.tfvars.template`*:
 
@@ -218,7 +218,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     </copy>
     ```
 
-## **STEP 5:** Run the Terraform Script
+## Task 5: Run the Terraform Script
 
 1. Init the Terraform project:
 
@@ -248,7 +248,7 @@ The demo project repository is located at [https://github.com/oracle-quickstart/
     - A corresponding *`cluster_admin_user_xxxx_oci_config.txt`* file.
     - A *`kubeconfig`* file.
 
-## **STEP 6:** Docker Login 
+## Task 6: Docker Login 
 
 1. The Terraform creates a `creds.env` file on the root of the project.
 

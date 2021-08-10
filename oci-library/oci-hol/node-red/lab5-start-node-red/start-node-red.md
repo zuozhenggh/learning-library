@@ -16,19 +16,19 @@ Estimated Lab time: 20 minutes
 * Node-RED is installed on OAL compute instance  
 * Connected via SSH to the OAL compute instance
 
-## **Step 1**: Start up Node-RED
+## Task 1: Start up Node-RED
 
 In your SSH session, verify that you are on the Node-RED installation directory, for example (`/home/opc/node-red`).
 Execute the following command in the Node-RED installation directory: `npm start`
 
-## **Step 2**: Open Node-RED
+## Task 2: Open Node-RED
 
 Open a browser and navigate to `http://<public_ip_address>:1880` (the IP address of the OAL VM) in your browser. You should see the Node-RED workbench.
 
    ![Node-RED](images/node-red.png " ")
 
 
-## **Step 3**: Implement a test flow
+## Task 3: Implement a test flow
 
 From the palette (the left panel) drag a _inject_ and a _debug_ node into the workspace. Connect the two nodes with each other by dragging between the output port from the inject node to the input port of the debug node. Now click the _Deploy_ button.
 

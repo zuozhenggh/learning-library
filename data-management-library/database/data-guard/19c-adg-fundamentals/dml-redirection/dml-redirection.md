@@ -36,7 +36,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Perform a switchover
 - Perform a failover
 
-## **STEP 1**: Create a common user
+## Task 1: Create a common user
 
 DML redirection for user tables, cannot be done using the SYS user.
 When you try to run a DML statement, it will fail with:  
@@ -75,7 +75,7 @@ So we will create a common user in the Database to learn about this feature.
 
 
 
-## **STEP 2**: Enable the system for ADG DML Redirect
+## Task 2: Enable the system for ADG DML Redirect
 
 Automatic redirection of DML operations to the primary can be configured at the system level or the session level. The session level setting overrides the system level setting.
 
@@ -97,7 +97,7 @@ You can use following alter system command to enable this parameter.
 At this point, the databases are enabled for Active Data Guard DML redirection.
 
 
-## **STEP 3**: Create a table
+## Task 3: Create a table
 
 1. To create a table in the common users's schema, it is necessary to create a connection as the common user. This can be done the same way as described in Lab 3. Instead of specifying the username SYS and role SYSDBA, you now specify C##HOLUSER and leave the role default.
 
@@ -138,7 +138,7 @@ At this point, the databases are enabled for Active Data Guard DML redirection.
     ![](./images/dml08.png)
 
 
-## **STEP 4**: Use DML Redirection
+## Task 4: Use DML Redirection
 
 1. On the standby database try to insert a row in this table with following SQL Statement
 

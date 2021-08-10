@@ -16,7 +16,7 @@ In this lab, you will:
 
 For this lab, you need to have provisioned the WildFly cluster on OCI.
 
-## **STEP 1**: Connect to the WildFly Admin Console
+## Task 1: Connect to the WildFly Admin Console
 
 1. From the output of the WildFly deployment, gather the command to create a SOCKSv5 proxy.
 
@@ -58,7 +58,7 @@ For this lab, you need to have provisioned the WildFly cluster on OCI.
     
 7. Log in with the WildFly admin credentials (from terraform.tfvars)
 
-## **STEP 2:** Locate the WAR File
+## Task 2: Locate the WAR File
 
 1. Since we built the `SimpleDB.war` WAR file inside the Docker container, we can find it on your local machine in the on-premises environment folder under:
 
@@ -68,7 +68,7 @@ For this lab, you need to have provisioned the WildFly cluster on OCI.
     </copy>
     ```
 
-## **STEP 3:** Install the Application in the WildFly Console
+## Task 3: Install the Application in the WildFly Console
 
 1. In the WildFly console, click **Start** under **Deployments**.
 
@@ -93,7 +93,7 @@ For this lab, you need to have provisioned the WildFly cluster on OCI.
     ![](./images/deployment-step4.png)
 
 
-## **STEP 4:** Check the Application is Served via the Load Balancer
+## Task 4: Check the Application is Served via the Load Balancer
 
 1. Get the load balancer public IP from the Terraform output. 
 

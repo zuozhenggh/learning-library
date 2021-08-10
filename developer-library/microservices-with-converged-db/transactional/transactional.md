@@ -18,7 +18,7 @@ Estimated Lab Time - 10 minutes
 
 * Completion of Lab 1 Setup and Lab 2 Microservices Walk-through
 
-## **STEP 1**: Install MongoDB, Postgres, and Kafka, and deploy Order and Inventory services that use them.
+## Task 1: Install MongoDB, Postgres, and Kafka, and deploy Order and Inventory services that use them.
 
 1.  Install MongoDB, Postgres, and Kafka:
 
@@ -46,7 +46,7 @@ Estimated Lab Time - 10 minutes
     ```
 
 
-## **STEP 2**: Run tests against MongoDB, Postgres, Kafka implementations
+## Task 2: Run tests against MongoDB, Postgres, Kafka implementations
 
 
 1. Add Inventory until there is a value of 10 for sushi.
@@ -115,7 +115,7 @@ Estimated Lab Time - 10 minutes
 18. Click the `Get Inventory` button and notice inventory has been reduced to incorrect value of 7 as the duplicate message delivery has reduced inventory twice for the same order.
    ![](images/getinventory7.png " ")
   
-## **STEP 3**: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
+## Task 3: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
 
 1.  Undeploy MongoDB, Postgres, and Kafka backed Order and Inventory implementations and deploy the Oracle + TEQ/AQ backed Order and Inventory implementations by copying and running the following commands.
     
@@ -136,7 +136,7 @@ Estimated Lab Time - 10 minutes
     <copy>msdataworkshop</copy>
     ```
    
-## **STEP 4**: Run tests against Oracle DB + AQ implementations
+## Task 4: Run tests against Oracle DB + AQ implementations
 
 
 1. Add Inventory until there is a value of 10 for sushi.

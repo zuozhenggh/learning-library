@@ -18,7 +18,7 @@ Estimated time: 20 minutes
 - Your Oracle Cloud Trial Account
 - You have already applied for and received your Oracle Cloud Free Tier Account.
 
-## **STEP 1:** Log into OCI Tenancy
+## Task 1: Log into OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
@@ -26,7 +26,7 @@ Estimated time: 20 minutes
 
   ![Landing Screen](images/landingScreen2.png " ")
 
-## **STEP 2:** Basic OCI Infrastructure Setup
+## Task 2: Basic OCI Infrastructure Setup
 
 1. Open the navigation menu. Under Governance and Administration, go to **Identity** and click **Compartments**. From this screen, you will see a list of compartments, click **Create Compartment**.
 
@@ -51,7 +51,7 @@ Estimated time: 20 minutes
 
 Now you are ready to move on to Step 3.
 
-## **STEP 3:** Create OKE Kubernetes Cluster
+## Task 3: Create OKE Kubernetes Cluster
 
 1. To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
 
@@ -79,7 +79,7 @@ Optionally choose visibility type to Private Endpoint to host your Kubernetes en
 
 1. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and display an Active.
 
-## **STEP 4:** Setup OKE Kubernetes Cluster Cloud Shell Access
+## Task 4: Setup OKE Kubernetes Cluster Cloud Shell Access
 
 1. On the **Clusters** view, select the just created cluster and then click on the **Access Cluster** button.
 

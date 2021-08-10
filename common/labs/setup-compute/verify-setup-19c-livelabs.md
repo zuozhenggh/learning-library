@@ -28,7 +28,7 @@ This lab assumes you have:
 - Successfully logged into your LiveLabs account
 - A Valid SSH Key Pair
 
-## **STEP 1**: Gather compute instance details
+## Task 1: Gather compute instance details
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 2. Select the compartment that was assigned (the compartment assigned begins with the prefix *LL* followed by your user ID)
@@ -36,7 +36,7 @@ This lab assumes you have:
     ![Create a stack](images/workshop-012.png " ")
 
 
-## **STEP 2**: Connect to your instance
+## Task 2: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you provided during registration.
 
@@ -142,7 +142,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
-## **STEP 3**: Verify the ORCL database is up
+## Task 3: Verify the ORCL database is up
 
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
 1. Run the following command to verify the database with the SID **ORCL** is up and running.
@@ -191,7 +191,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ![](./images/sqlplus.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
-## **STEP 4**: Exit SQLPLUS
+## Task 4: Exit SQLPLUS
 1.  Exit the sqlplus session.
 
     ```
@@ -250,6 +250,6 @@ When creating your SSH Key, if the key is invalid the compute instance stack cre
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Senior Director, DB Product Management
+- **Author** - LiveLabs Team, Senior Director, DB Product Management
 - **Contributors** - Robert Pastijn, DB Product Management, PTS
 - **Last Updated By/Date** - Didi Han, DB Product Management, May 2021

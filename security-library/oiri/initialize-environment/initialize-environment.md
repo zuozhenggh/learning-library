@@ -15,16 +15,21 @@ In this lab, you will:
 * Initialize the workshop environment.
 * Verify the database Status.
 * Verify the status of 12c Domain.
+* You have completed:
+      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
+      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
+      - Lab : Environment Setup
 
 ### Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * SSH Private Key to access the host via SSH
+*
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
@@ -44,7 +49,7 @@ In this lab, you will:
     ![](images/oiri-vnc.png " ")
 
 3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
-    - On the Weblogic console, Click on *Servers* under *Environment* and verify that Admin servers are in the ‘RUNNING’ state.
+    - On the Weblogic console, Click on *Servers* under *Environment* and verify that the Admin server is in the ‘RUNNING’ state.
     ![](images/oiri-landing.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  

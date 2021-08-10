@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -42,7 +42,7 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 
     ![](./images/labmenu_opt1.png " ")
 
-## **STEP 1**: Performing the Install
+## Task 1: Performing the Install
 
 1.  **Select Option 1**
 
@@ -54,9 +54,12 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 2. To install and configure GoldenGate, we have extracted the GG binaries from a tar file prior to the labs – this file has been copied to /u01 as part of the setup. We will connect to the GoldenGate command line interface (ggsci) and run CREATE SUBDIRS to create the subdirectories in the GoldenGate home.
 
     ```
-    <copy>cd /u01/gg4hadoop123010
-    tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar </copy>
+    <copy>
+    cd /u01/gg4hadoop123010
+    tar -xvf  /u01/gg_binaries/gg4hadoop123010/ggs_Adapters_Linux_x64.tar
+    </copy>
     ```
+
     **type**
 
     ```
@@ -66,7 +69,9 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 
     <copy>exit</copy>
     ```
+
     **type**
+
     ```
     <copy>labmenu</copy>
     ```

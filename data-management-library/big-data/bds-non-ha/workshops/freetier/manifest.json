@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Getting Started with Oracle Big Data Service (non-HA)",
+  "workshoptitle": "Get Started with Oracle Big Data Service (non-HA)",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
       {
@@ -7,7 +7,7 @@
           "description": "Introduction to Oracle Big Data Service",
           "filename": "./intro.md"
       }
-      ,      
+      ,
       {
             "title": "Getting Started",
             "description": "Get a Free Trial",
