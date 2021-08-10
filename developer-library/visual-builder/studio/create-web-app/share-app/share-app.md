@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows how you can share your web app with others using Visual Builder Studio.
+This lab shows how you can share your web app with others using VB Studio.
 
 Estimated Lab Time: 10 minutes
 

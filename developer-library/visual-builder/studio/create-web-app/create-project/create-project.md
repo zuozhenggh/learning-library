@@ -8,7 +8,7 @@ Estimated Lab Time: 15 minutes
 
 ### Background
 
-You can create engaging web and mobile applications in Visual Builder Studio using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
+You can create engaging web and mobile applications in VB Studio using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
 
 In this workshop, you'll build a simple Human Resources visual application, using a _project_ as a starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR visual application. The project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more.
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 
 As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this tutorial, we'll assume that you're also the developer who will create the HR web application.
 
-1.  On Visual Builder Studio's Organization page, click the **Projects** tab, then click **\+ Create**.
+1.  On VB Studio's Organization page, click the **Projects** tab, then click **\+ Create**.
 
     ![](images/welcome.png " ")
 
