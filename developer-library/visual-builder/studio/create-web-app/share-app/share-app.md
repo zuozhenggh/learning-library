@@ -13,7 +13,7 @@ Sharing an application, much like the preview option you've used in previous tut
 
 You can share your application as many times as you want to let your teammates test your changes and make sure the application works as expected.
 
-## **TASK 1:** Share the Application
+## **Task 1:** Share the Application
 
 Share the HR web application you've created to create a URL that your team can use to try out the application.
 

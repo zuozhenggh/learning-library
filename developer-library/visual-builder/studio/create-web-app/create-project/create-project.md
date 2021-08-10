@@ -22,7 +22,7 @@ This lab assumes you have:
 * A Chrome browser
 * All previous labs successfully completed
 
-## **TASK 1:** Create a Project for a Visual Application
+## **Task 1:** Create a Project for a Visual Application
 
 As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this tutorial, we'll assume that you're also the developer who will create the HR web application.
 
@@ -51,7 +51,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     ![](images/project_home.png " ")
 
-## **TASK 2:** Explore the Project Environment
+## **Task 2:** Explore the Project Environment
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
@@ -75,7 +75,7 @@ Everything you need to start building a visual application is now created for yo
 
     ![](images/build_pipeline.png " ")
 
-## **TASK 3:** Add Credentials to Deploy the Visual Application
+## **Task 3:** Add Credentials to Deploy the Visual Application
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB  development instance.
 
@@ -93,7 +93,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
     - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to your application URL (for example, https://*host*/*something-else*/0.1/index.html) and is useful to identify multiple versions during development. When your app is ready for production though, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/*host*/*something-else*/live/index.html).
     - Notice also the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data, so you'll need to manually import your app's data to your development instance -- as we'll see in later labs.
 
-## **TASK 4:** Add Team Members
+## **Task 4:** Add Team Members
 
 For the purposes of this tutorial, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
