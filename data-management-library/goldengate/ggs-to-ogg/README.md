@@ -1,4 +1,4 @@
-# Sending Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate
+# Send Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate
 
 
 ## How to Prepare for This Workshop
