@@ -28,6 +28,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
 | 9000           | Essbase              |
+| 9100           | EAS Console              |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
