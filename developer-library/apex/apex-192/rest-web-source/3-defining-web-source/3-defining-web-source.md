@@ -6,7 +6,7 @@ In this lab, you will learn how to utilize the REST APIs you created in the prev
 
 Estimated Time: 10 minutes
 
-## **Task $1: 1** – Create an App  
+## Task 1: Create an App  
 In a normal development environment, rather than in a lab, at this point you would log out of the remote database, where you defined the REST APIs, and log into your local database where you want to build the application. However, given for this lab you are using the same workspace for both, there is no need to log out and log back in.
 
 1. Return to the APEX Builder tab or window.
@@ -26,7 +26,7 @@ In a normal development environment, rather than in a lab, at this point you wou
 
     *Note: At this stage you do not want to add any pages as you have not yet defined the Web Source module.*
 
-## **Task $1: 2** – Add Web Source for EMP
+## Task 2: Add Web Source for EMP
 
 1. In the Application home page, click **Shared Components**.
 
@@ -62,7 +62,7 @@ In a normal development environment, rather than in a lab, at this point you wou
 
     ![](images/create-web-source.png " ")
 
-## **Task $1: 3** – Adding Operations
+## Task 3: Adding Operations
 Given the URL Endpoint used above, the _Create Web Source_ operation determined that the **GET** and **POST** operations have been defined. You also defined handlers for **GET**, **PUT**, and **DELETE** for a specific employee record. Therefore, it is important to add additional operations for these handlers. If you do not add the operations then the relevant functionality will not be included, such as selecting a single record, updating a record, or deleting a record.
 
 1. On the Web Source Modules page, click **REST EMP Source**.

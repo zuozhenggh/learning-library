@@ -4,7 +4,7 @@
 
 In this lab you will build an application on the data structures you built in the previous lab.
 
-## **Task $1: 1** – Run the Create App Wizard
+## Task 1: Run the Create App Wizard
 
 1. From SQL Scripts > Results, click **Create App**
 
@@ -37,7 +37,7 @@ In this lab you will build an application on the data structures you built in th
 
     ![](images/all-features.png " ")
 
-## **Task $1: 2** – Run the Application
+## Task 2: Run the Application
 
 1. Your new application will be displayed in Page Designer.
 
