@@ -24,7 +24,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
 ## Deploying the Application to the Oracle Java Cloud Service
 
-### **STEP 1**: Create Database Instance in Cloud
+### Task 1: Create Database Instance in Cloud
 
 - Sign in to Oracle Cloud My Services.
 - Click  Dashboard menu near the upper left corner of the page, and select Database Classic.
@@ -45,7 +45,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
    ![](images/300/DB/4.png)
 
-### **STEP 2**: Create Java Cloud Service instance
+### Task 2: Create Java Cloud Service instance
 
 - In Java Cloud Service home page click on create instance.
 
@@ -71,7 +71,7 @@ For this lab you will need Github and Oracle Cloud account Hub Accounts. Use the
 
    ![](images/300/DB/JCS_instance/6.png)
 
-### **STEP 3**: Upload project in Java Cloud Service
+### Task 3: Upload project in Java Cloud Service
 
 - From the menu that's displayed, select Open WebLogic Server Console.
 
@@ -180,7 +180,7 @@ If you see the untrusted security certificate warning, add the certificate to yo
 
  ![](images/300/DB/Upload_to_JCS/product.png)
 
-### **STEP 4**: Scale instance in Java Cloud Service
+### Task 4: Scale instance in Java Cloud Service
 
 - Click Hamburger menu icon and select Scale Up/Down option.
 

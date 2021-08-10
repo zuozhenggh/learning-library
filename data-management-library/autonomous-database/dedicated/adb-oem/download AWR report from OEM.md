@@ -12,7 +12,7 @@ As a Database Administrator,
 1. Learn how to generate AWR report of your ATP Dedicated Database using Oracle Enterprise Manager
 2. Learn how to change retention period of AWR report generated for your ATP Dedicated Database using Oracle Enterprise Manager
 3. Compare the two AWR reports of ATP Dedicated database taken at different intervals, using OEM.
-   
+
 
 ### Required Artifacts
 
@@ -32,15 +32,15 @@ As a Database Administrator,
 - Click on Autonomous Transaction Processing and select "ADBEM" (name of your ATP database)
     ![](./images/us1_3.png " ")
     ![](./images/us1_4.png " ")
-	
+
 - Click on "Performance" select "AWR" and then click on "AWR Report"
     ![](./images/us1_5.png " ")
-  
+
 - Select the "Begin Snapshot" and "End Snapshot" and Click on "Generate Report".
-    ![](./images/us1_6.png " ") 
-    ![](./images/us1_7.png " ") 
-	
-## STEP2: Change the AWR retention period of the report generated
+    ![](./images/us1_6.png " ")
+    ![](./images/us1_7.png " ")
+
+## Task 2: Change the AWR retention period of the report generated
 
 - On the OEM home page click on "Performance" select "AWR" and then click on "AWR Administration"
     ![](./images/us1_8.png " ")
@@ -50,12 +50,12 @@ As a Database Administrator,
 
 - Change the "Retention Period"
     ![](./images/us1_10.png " ")
-	
+
 - Click "OK"
     ![](./images/us1_10.png " ")
     ![](./images/us1_11.png " ")
 
-## STEP3: Compare two AWR reports of different period
+## Task 3: Compare two AWR reports of different period
 
 - Click on "Performance" select "AWR" and then click on "Compare Period Reports".
     ![](./images/us1_12.png " ")
@@ -65,11 +65,9 @@ As a Database Administrator,
 
 - Click on "Generate Report"
     ![](./images/us1_13.png " ")
-    
+
 ## Acknowledgements
 
 *Congratulations! You have successfully completed AWR report analysis using Oracle Enterprise Manager .*
 
 - **Authors** - Navya M S & Padma Priya Natarajan
-
-

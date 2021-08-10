@@ -219,7 +219,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/task5-5.png " ")
 
-## **Task 6:** Verify Rows Without Signature
+## Task 6: Verify Rows Without Signature
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 

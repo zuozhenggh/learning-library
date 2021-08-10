@@ -26,7 +26,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Part 1. Create a Linear Regression Model in OML
 
-### **STEP 1: Import the Notebook to OML**
+### **Task 1: Import the Notebook to OML**
 
 -   Go back to the Cloud Console and open the Instances screen. Find your database, click the action menu and select **Service Console**.
 
@@ -61,13 +61,13 @@ The entire code for creating the model in OML is now accessible in the **Bike Sh
 
 
 
-### **STEP 2: Run the Code in the OML Notebook**
+### **Task 2: Run the Code in the OML Notebook**
 Run the code in the **Bike Share Availability Prediction** notebook to train and validate a linear regression model and apply it to a weather forecast to predict the bike availability for a future day. Go over paragraphs one-by-one and run each at a time. Make sure each paragraph is completed without error. As the result of running the code in this notebook, several tables will be created. We will load a few of those tables in OAC in the next sections in order to generate our desired graphs. Note that running the entire notebook may take about 45 minutes.
 
 
 ## Part 2. Visualize results in OAC
 
-### **STEP 3: Load Results of the OML Model to OAC**
+### **Task 3: Load Results of the OML Model to OAC**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -88,7 +88,7 @@ Run the code in the **Bike Share Availability Prediction** notebook to train and
 
 
 
-### **STEP 4: Add Datasets to the Project**
+### **Task 4: Add Datasets to the Project**
 
 -  Open the **BikeSharePrediction** project that you imported to the OAC instance in **Lab 400**. Under the **Visualize** tab, click on the **+** icon next to the **Data Elements** and select **Add Data Set**.
 
@@ -112,7 +112,7 @@ Run the code in the **Bike Share Availability Prediction** notebook to train and
 
 
 
-### **STEP 5: Create Desired Graphs**
+### **Task 5: Create Desired Graphs**
 
 -   Go back to the **Visualize** tab in the project, add a new Canvas by clicking on the **+** icon.
 

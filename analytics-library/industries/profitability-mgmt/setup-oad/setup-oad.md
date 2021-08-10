@@ -35,7 +35,7 @@ In this lab, you will:
 
 ## Task 2: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
 
-## **STEP 2a**: Creating Rich Data Visualizations
+## Task 2a: Creating Rich Data Visualizations
 
 Step 1 Follow the steps shown in the URL "Creating Rich Data Visualizations"
 

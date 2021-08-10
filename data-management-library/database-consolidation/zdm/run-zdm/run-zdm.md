@@ -6,7 +6,7 @@ In this lab, you will be configuring the template file used to inform your migra
 
 Estimate Lab Time: 25 minutes
 
-## **STEP 1: Copy the Template File**
+## **Task 1: Copy the Template File**
 1. Return to the command prompt connected to your compute instance as 'zdmuser'.
 
     ![ZDMUSER Connection](./images/cloudshell.PNG)
@@ -39,7 +39,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 2: Fill Out the Template**
+## **Task 2: Fill Out the Template**
 1. Go into the migration file and delete all of the existing lines.
 
     ```
@@ -132,7 +132,7 @@ Estimate Lab Time: 25 minutes
 
 4. After the lines are updated save and quit vi editor.
 
-## **STEP 3: Run the Migration Command**
+## **Task 3: Run the Migration Command**
 1. In command prompt as 'zdmuser' run the following command:
 
     ```
@@ -141,7 +141,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 4: Answer the Migration Prompts**
+## **Task 4: Answer the Migration Prompts**
 1. **'orcl_user' password:**
 
     ```
@@ -168,7 +168,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 5: Check on Job Status**
+## **Task 5: Check on Job Status**
 1. Go to the 'scheduled' directory.
 
     ```
@@ -207,7 +207,7 @@ Estimate Lab Time: 25 minutes
 
     ![Job List](./images/job-lists.PNG)
 
-## **STEP 6: Check Job in Autonomous Database**
+## **Task 6: Check Job in Autonomous Database**
 1. In your autonomous database SQL command prompt run the command:
 
     ```

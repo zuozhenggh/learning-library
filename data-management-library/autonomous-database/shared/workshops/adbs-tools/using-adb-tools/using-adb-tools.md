@@ -70,13 +70,13 @@ When user QTEAM was created (in a previous step), a card appeared on the Databas
 1. Click the **copy contents** icon to copy this to your clipboard. This URI may be used to access the Database Actions page of Autonomous Database Tools directly, without needing to use the OCI Console.
   ![ALT text is not available for this image](images/2879073226.png)
 2. In the dialog that appears, sign in as user QTEAM, with the password assigned previously, and click **Sign In**.
-  ![ALT text is not available for this image](images/2879073132.png)
+  ![ALT text is not available for this image](images/qteam-login.png)
 3. This will take you to the Autonomous Data Warehouse **Database Actions** home page (shown below). This page has a card for each of the most common tasks that the data warehouse user would want to perform. The cards are grouped by theme. For example, here you see groups for Development and Data Tools. Each card has a title and description.  
   ![ALT text is not available for this image](images/database-actions.png)
 4. If you want more information about each of the tasks related to each card, then you can access the online help by clicking the **Question Mark** in the title bar, as indicated in the image below:
-  ![ALT text is not available for this image](images/2879071281.png)
+  ![ALT text is not available for this image](images/question-mark.png)
 5. This will pop out a tray containing links to the relevant topics in the Autonomous Data Warehouse documentation. To close the help tray, simply click the  **X**.
-  ![ALT text is not available for this image](images/2879071282.png)
+  ![ALT text is not available for this image](images/help.png)
 
 ### RECAP
 
@@ -106,11 +106,11 @@ Watch a video demonstration of the Data Load tool of Autonomous Database:
 [] (youtube:SJUw4wIvkS4)
 > **Note:** Interfaces in this video may look different from the interfaces you will see.
 
-### Launching Your Data Load Workflow
+### Launch Your Data Load Workflow
 
 Click the **Data Load** card on the **Database Actions** home page.
 
-  ![ALT text is not available for this image](images/2879071271.png)
+  ![ALT text is not available for this image](images/data-load.png)
 
 This will take you to the screen shown below which controls the data loading process - dividing it up in a series of simple questions:
 
@@ -150,16 +150,16 @@ Below are the four files that you will be using during this part of the workshop
 **Before you proceed -**  be sure to take note of the location of the three files that you downloaded earlier to your local computer.
 
 1. To load the files from your local computer, you need to click on the first card in each of the first two rows of cards (in row one - **LOAD DATA** and row two - **LOCAL FILE** ) which will mark each box with a blue tick in the bottom right corner.
-  ![ALT text is not available for this image](images/2879071273.png)
+  ![ALT text is not available for this image](images/load-local.png)
 2. To move forward to the next step in this process, simply click the blue **Next** button. This is where you need to locate the three files (Countries.csv, Days_Months.xlsx and Devices.xlsx) that you downloaded earlier! If they are easily accessible then you can simply drag **ALL THREE** files at one time, and drop them onto to canvas as stated in the text on the screen.
-  ![ALT text is not available for this image](images/2879071274.png)
+  ![ALT text is not available for this image](images/upload.png)
 3. An alternative approach is to click **Select Files** button in the middle of the screen which will open the file explorer on your local computer where you can locate your data files: Countries.csv, Days\_Months.xlsx and Devices.xlsx. **WARNING** - even though you only picked three files, four cards will appear for the data TARGETS to be loaded.
   ![ALT text is not available for this image](images/2879071275.png)
   Why do you have  ***four***  cards listed on the data loading screen? This is because your spreadsheet file **Days\_Months.xlsx** contains two worksheets: one for Days and one for Months. The data loading wizard automatically parsed your spreadsheet and created a separate data loading card for each worksheet. 
   ![ALT text is not available for this image](images/2879071187.png)
 4. Before you load any data, let's review what the data loading wizard has discovered about the data within your data files. Let's focus on the **Countries.csv** file. Click the **pencil icon** on the right side of the card to inspect the data loading properties:
-  ![ALT text is not available for this image](images/2879071276.png)
-5. The data load settings page will appear. Observe that this shows the structural information and intelligent default values that data wizard has created from simply looking at the file.
+  ![ALT text is not available for this image](images/inspect-countries.png)
+5. In the bar on the left there are links for Settings, File, Table, and an Error Log. This screenshot shows the **Settings** page. Observe that this shows the structural information and intelligent default values that data wizard has created from simply looking at the file.
   ![ALT text is not available for this image](images/data-load-settings.png)
 6. How does it do this? Most csv files contain structural information about the data within the file in the first row. Notice that there is a tick box selected, **Get from file header**. 
   ![ALT text is not available for this image](images/get-from-file-header.png)
@@ -169,22 +169,21 @@ Below are the four files that you will be using during this part of the workshop
   > **Note:**  If you look back at the previous section where you loaded the movie sales data for 2020, you will remember that you had to create your movie\_sales\_fact table before you could load your data files. This wizard creates the table for you during the data load process! Notice also that the wizard has automatically mapped the columns. Column mapping looks sensible, both in terms of column names and data types.
 
 9. Click **Close**  in the bottom right to return to the Data Load card and then click the **green button** in the menu panel to start the Data Load job.
-  ![ALT text is not available for this image](images/2879071262.png)
-
-  In the bar on the left there are links for Settings, Data Viewers for source and target, and an error log. This screenshot shows the **Settings** page.
-  ![ALT text is not available for this image](images/2879071263.png)
+  ![ALT text is not available for this image](images/green-button.png)
   The time taken to load each file depends on factors including file size and network speed. The progress of the job can be monitored from the status bar and the ring to the left of each job card. When the ring is complete, the file has uploaded successfully. 
+  ![ALT text is not available for this image](images/loading.png)
+  
 
 Now let's inspect the tables that were automatically created during the data load process.
 
 ### Inspect Your New Data
 
 10. To access the data explorer tool, click the **Data Load** breadcrumb at the upper left of your screen:
-  ![ALT text is not available for this image](images/2879071264.png)
+  ![ALT text is not available for this image](images/click-data-load.png)
 11. Then click the **EXPLORE** card on the main data loading page.
-  ![ALT text is not available for this image](images/2879071265.png)
+  ![ALT text is not available for this image](images/explore-card.png)
 12. This brings up a list of the Tables and Views in this schema of the Autonomous Database. At this stage, all you see are the four tables you just loaded.
-  ![ALT text is not available for this image](images/2879071266.png)
+  ![ALT text is not available for this image](images/explore-tables.png)
 13. Click the table **COUNTRIES** and a data preview panel will appear that will allow you to review the data you just loaded. Note that this is a relatively simple table containing a list countries and their continents. 
 ![ALT text is not available for this image](images/countries-data.png)
 14. Click the **Close** button in the bottom right corner.
@@ -205,7 +204,7 @@ In the previous exercise, you loaded data from files that you located on your lo
 ### Set Up Cloud Location
 
 15. To begin this process, you need to navigate back to the **Data Load** page. From the **Explore** page, click the **Data Load** breadcrumb at the top left corner of the page:
-  ![ALT text is not available for this image](images/2879071268.png)
+  ![ALT text is not available for this image](images/goto-data-load.png)
 16. On the **Data Load** main page, click the **Cloud Locations** card so you can define a new connection to your object store.
   ![ALT text is not available for this image](images/2879071269.png)
 17. Click the **Add Cloud Storage** button on the upper right and define a Cloud Storage location as follows:
@@ -226,7 +225,7 @@ Your completed form should look like the one above. When you have completed thes
 20. As before, you can edit the properties of your new data load job by clicking the **pencil** button on the right-hand side of the card. 
   ![ALT text is not available for this image](images/sales-data.png)
 21. You can use this page to quickly review the properties sheet and make any changes to column names or data types. As soon as you are satisfied with the format, you can close the form and then click the **green arrow** button to start your data load job. 
-  ![ALT text is not available for this image](images/2879071254.png)
+  ![ALT text is not available for this image](images/load-movie-sales.png)
 
 ### Inspect Data In Table MOVIE\_SALES\_2020
 
