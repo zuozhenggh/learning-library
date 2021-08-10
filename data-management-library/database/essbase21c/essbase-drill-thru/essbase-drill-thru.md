@@ -162,21 +162,22 @@ We are creating a variation of the Sample/Basic cube where Market dim has Region
 
 3. Enter Name "SalesBreakdown". 
 
-   * Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
-   
-   * Select the Report Columns check boxes for all the rows.
-   
-   * Select the data source column name on the left and provide the generation mapping on the right:
+      * Click dropdown for Datasource and select the data source **SAMPLEDT.SalesTable**.
+      
+      * Select the Report Columns check boxes for all the rows.
+      
+      * Select the data source column name on the left and provide the generation mapping on the right:
 
-      * PRODUCT – Product -> Model[Generation]  
-      * MARKET – Market -> Region[Generation]  
-      * SCENARIO – Scenario -> Level0 [Level]   
-      * YEAR – Year -> Months[Generation]   
+         * PRODUCT – Product -> Model[Generation]  
+         * MARKET – Market -> Region[Generation]  
+         * SCENARIO – Scenario -> Level0 [Level]   
+         * YEAR – Year -> Months[Generation]   
 
-     ![](./images/imageDT_17.png "")
+        ![](./images/imageDT_17.png "")
 
 4. Select Drillable Regions on the left navigation bar, click the **+** icon and enter **@Children("Market")**.
-   ![](./images/imageDT_18.png "")
+         ![](./images/imageDT_18.png "")         
+
 
 5. Click **Save and Close**. Click **Close** to close the database inspector.
    
