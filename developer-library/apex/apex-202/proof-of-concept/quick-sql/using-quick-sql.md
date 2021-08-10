@@ -75,7 +75,7 @@ Quick SQL provides an easy way to generate the SQL required to create a relation
 
     ![](images/enter-projects.png " ")
 
-## **Task $1: 3** – Improve the Shorthand
+## Task 3: Improve the Shorthand
 So far you have defined some basic tables and used the defaults, however, there are numerous directives and data types you can add to the shorthand to improve the SQL generated.
 
 1. Click **Help**   
@@ -140,7 +140,7 @@ By indenting a table name, you can define the new table as a child table of the 
 
     ![](images/enter-tasks.png " ")
 
-## **Task $1: 5** – Update the Settings
+## Task 5: Update the Settings
 You can define numerous settings to further improve the generated SQL. You can click **Settings** within the toolbar under SQL (right pane), if you only plan to run the script once. As outlined in the **Help**, you can also define settings in Quick SQL (left pane). Settings defined in Quick SQL do not need to be reentered each time you return to Quick SQL to rerun a previously run script.
 
 1. In the SQL (right pane) toolbar, click **Settings**
@@ -161,7 +161,7 @@ You can define numerous settings to further improve the generated SQL. You can c
 
     ![](images/post-settings.png " ")
 
-## **Task $1: 6** – Copy in the Complete Shorthand
+## Task 6: Copy in the Complete Shorthand
 
 1. In Quick SQL (left pane), replace all of the existing shorthand with the following:
 
@@ -220,7 +220,7 @@ You can define numerous settings to further improve the generated SQL. You can c
 
     *{Note: The full shorthand defines all of the required settings. It also includes additional columns on many of the tables, and additional directives and data types. There is also a view defined.}*
 
-## **Task $1: 7** – Implement the Script
+## Task 7: Implement the Script
 At this stage you have created a list of SQL statements. However, you first need to save the statements as a script file and then run the script. This will create the database objects and insert the data.
 
 1. In the SQL (right pane) toolbar, click **Save SQL Script**.

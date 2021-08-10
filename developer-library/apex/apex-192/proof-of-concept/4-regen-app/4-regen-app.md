@@ -51,7 +51,7 @@ The Create Application Wizard allows developers to load previously generated app
 
     ![](images/load-blueprint.png " ")
 
-## **Task $1: 3** – Update Milestones Page
+## Task 3: Update Milestones Page
 Now that you have the original pages reloaded, it is simply a matter of removing the old Milestones page, adding the new page type, and then reordering the new page.
 
 1. In the Create an Application page, under Pages, for Milestones click **Edit**
@@ -81,7 +81,7 @@ Now that you have the original pages reloaded, it is simply a matter of removing
 
 5. To generate the new application click **Create Application**
 
-## **Task $1: 4** – Run the New Application
+## Task 4: Run the New Application
 
 1. In Page Designer, click **Run Application**
 
