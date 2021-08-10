@@ -35,7 +35,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: View and close alerts
+## Task 1: View and close alerts
 
 1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
@@ -112,7 +112,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 2**: Analyze open alerts from the dashboard
+## Task 2: Analyze open alerts from the dashboard
 
 1. Click the **Home** tab.
 
@@ -131,7 +131,7 @@ Before starting, be sure that you have completed the following prerequisite task
     ![All Alerts report filtered](images/all-alerts-report-last-seven-days.png "All Alerts report filtered")  
 
 
-## **STEP 3**: View all audit records for the past week
+## Task 3: View all audit records for the past week
 
 1. Click the **Reports** tab.
 
@@ -146,7 +146,7 @@ Before starting, be sure that you have completed the following prerequisite task
     ![Filters automatically set in All Activity Report](images/filters-table-all-activity-report.png "Filters automatically set in All Activity Report")  
 
 
-## **STEP 4**: View a summary of audit events collected and alerts raised
+## Task 4: View a summary of audit events collected and alerts raised
 
 1. On the left, expand **Summary**, and then click **Audit Summary**.
 
@@ -179,7 +179,7 @@ Before starting, be sure that you have completed the following prerequisite task
     ![Database set as a filter](images/last-one-month-filter.png "Database set as a filter")  
 
 
-## **STEP 5**: Create a logins report
+## Task 5: Create a logins report
 
 1. Click the **Reports** tab.
 

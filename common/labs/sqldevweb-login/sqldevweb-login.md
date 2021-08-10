@@ -8,7 +8,7 @@ In Oracle Autonomous Database databases, the ADMIN user is pre-enabled for SQL D
 
 Estimated time: 5 minutes
 
-## **STEP 1**: Connect to your Autonomous Database using SQL Developer Web
+## Task 1: Connect to your Autonomous Database using SQL Developer Web
 
 1. From the ADB Details page, select the Tools tab
 ![](./images/ADB-details-1.png)

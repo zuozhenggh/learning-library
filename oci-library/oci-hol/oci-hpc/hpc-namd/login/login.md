@@ -5,7 +5,7 @@ In this lab, you will login to the using opc as a username.
 
 Estimated Lab Time: 2 minutes
 
-## **STEP**: Login
+## **Task $1:**: Login
 Login to the using opc as a username:
 
 ```

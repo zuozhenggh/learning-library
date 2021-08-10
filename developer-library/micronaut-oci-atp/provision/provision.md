@@ -14,7 +14,7 @@ In this lab you will:
 ### Prerequisites
 - An Oracle Cloud account, Free Trial, LiveLabs or a Paid account
 
-## **STEP 1**: Create the Autonomous Database Instance
+## Task 1: Create the Autonomous Database Instance
 
 1. Go to the Oracle Cloud Menu and select "Autonomous Transaction Processing" and then "Create Autonomous Database".
 
@@ -36,7 +36,7 @@ In this lab you will:
 
 ![Creating the Autonomous Database Intance](images/db5.png)
 
-## **STEP 2**: Creating an Autonomous Database Schema User
+## Task 2: Creating an Autonomous Database Schema User
 
 1. On the "Autonomous Database Details" page select the "Tools" tab and then click "Open Database Actions".
 
@@ -65,7 +65,7 @@ Once you have pasted the SQL into the worksheet click the "Run script" button to
 ![Creating the Schema user](images/db9.png)
 
 
-## **STEP 3**: Download and Configure Wallet Locally
+## Task 3: Download and Configure Wallet Locally
 
 The Oracle Autonomous Database uses an extra level of security in the form of a wallet containing access keys for your new Database.
 

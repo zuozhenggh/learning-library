@@ -32,7 +32,7 @@ This lab assumes you have:
 
 In this lab we will setup GoldenGate Microservices
 
-## **STEP 1:** Creating Deployments – Atlanta and Boston
+## Task 1: Creating Deployments – Atlanta and Boston
 
 Deployments are a new concept in Oracle GoldenGate Microservices.
 Deployments provide a siloed approach to splitting replication environments between applications, customers, or environments. This allows for greater control over the use of Oracle GoldenGate in larger environments.
@@ -108,7 +108,7 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ![](./images/g7.png " ")
 
-## **STEP 2:** Configure Reverse Proxy
+## Task 2: Configure Reverse Proxy
 
 In this Task, you will configure the NGINX Reverse Proxy.  
 
@@ -160,7 +160,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 
     ![](./images/g10-1.png " ")
 
-## **STEP 3:** Create Credentials and Add Trandata
+## Task 3: Create Credentials and Add Trandata
 The scripts provided and executed in this step are meant to speed up the lab process. If you are interested in creating credentials and adding schematrandata from the portal or AdminClient, access the Administration Service (adminsrvr) and navigate go to `Context Menu -> Configuration -> Credentials -> click on the plus ( + )` sign.
 
 In this step we will manually execute each step from the SSH terminal session.
@@ -224,7 +224,7 @@ In this step we will manually execute each step from the SSH terminal session.
 
     You have now completed configuring schema level supplemental logging needed for use in the replication process
 
-## **STEP 4:** Create Oracle Replication Objects
+## Task 4: Create Oracle Replication Objects
 
 1.	Add Extract for Atlanta Deployment
 

@@ -15,7 +15,7 @@ In this lab, you will:
 
 You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Modify the bobs-books-comp.yaml file
+## Task 1: Modify the bobs-books-comp.yaml file
 
 1. We have an application configuration file, *bobs-books-comp.yaml*. In Lab 2, we downloaded the source code. To change to the *bobs-books* directory, copy the following command and paste it in the *Cloud Shell*.
 
@@ -41,7 +41,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![Insert line](images/3.png)
 
-## **STEP 2**: Apply the Changes using `kubectl`
+## Task 2: Apply the Changes using `kubectl`
 
 1. To apply the changes, copy and paste the following command in the *Cloud Shell*. When you will apply the change, a new pod will initialize for serving requests for new component, while the pod associated with the old component will continue serving requests. Later, after the new pod will reaches to the *Running* state, then the old pod will begin being *Terminated*. Eventually, only the new pod will be in the *Running* state.
 

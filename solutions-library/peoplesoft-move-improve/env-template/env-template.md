@@ -24,7 +24,7 @@ We have already provisioned Cloud Manager in a private subnet and the Jump Host 
 - A PeopleSoft Cloud Manager Instance
 - A downloaded PeopleSoft Image
 
-## **STEP 1**: Creating a New Environment Template
+## Task 1: Creating a New Environment Template
 
 Navigate to Cloud Manager Dashboard -> **Environment Template**.  
   Click **Add New Template** button.

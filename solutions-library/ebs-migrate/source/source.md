@@ -27,7 +27,7 @@ In this lab, you will:
 * A Virtual Cloud Network (VCN) which will be associated with the Oracle E-Business Suite Instance (created as a part of the prerequisite workshop)
 
 
-## **STEP 1:** Create a Subnet for the Source Environment in OCI
+## Task 1: Create a Subnet for the Source Environment in OCI
 
 Follow these steps to create a subnet for your source EBS environment. This subnet will be located within the Virtual Cloud Network that was created as a part of the **OCI EBS Cloud Manager Lab**.
 
@@ -96,7 +96,7 @@ Follow these steps to create a subnet for your source EBS environment. This subn
     ![](./images/6-3.png " ")
 
 
-## **STEP 2:** Create Instance Using an Image from the OCI  Marketplace
+## Task 2: Create Instance Using an Image from the OCI  Marketplace
 
 Follow these steps to create and connect to your Oracle E-Business Suite instance when using an image from the OCI Console Marketplace.
 
@@ -168,7 +168,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
   ![](./images/11.png " ")
 
-## **STEP 3:** Configure and Start the source E-Business Suite Environment
+## Task 3: Configure and Start the source E-Business Suite Environment
 
 These steps will walk through the initial configuration of the source EBS instance and then start the application and database servers on the instance. 
 

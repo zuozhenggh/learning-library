@@ -19,7 +19,7 @@ In this lab, you will:
 
 To complete this lab, you need to have the following:
 
-- All previous labs successfully completed.
+- All previous labs successfully completed
 
 ## Task 1: Create New Database Users
 
@@ -27,13 +27,13 @@ When you create a new data warehouse, you automatically get an account called AD
 
 For this workshop we need to create one new user.
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database is named "My Quick Start Lab." Launch **Database Actions** by clicking the **Tools** tab and then click the button to open the Database Actions home page.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database is named "ADW Finance Mart." Launch **Database Actions** by clicking the **Tools** tab and then click the button to open the Database Actions home page.
 
-  ![ALT text is not available for this image](images/2878884319.png)
+  ![ALT text is not available for this image](images/database-tools.png)
 
 2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse.
 
-  ![ALT text is not available for this image](images/2878884336.png)
+  ![ALT text is not available for this image](images/admin.png)
 
 3. On the Database Actions home page, under Administration, click the **Database Users** card.
 
@@ -41,7 +41,7 @@ For this workshop we need to create one new user.
 
 4.  You can see that your ADMIN user is listed as the current user.  On the right-hand side click the "+ **Create User**" button.
 
-  ![ALT text is not available for this image](images/2878884398.png)
+  ![ALT text is not available for this image](images/create-user.png)
 
 5. The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
 
@@ -79,7 +79,7 @@ Next you will examine the form.
 
 7.  Click on the **Granted Roles** banner at the top of the form and add the role **DWROLE** by checking the box in the first column.
 
-  ![ALT text is not available for this image](images/2878884644.png)
+  ![ALT text is not available for this image](images/dwrole.png)
 
   Notice that two additional roles have already been automatically assigned: **CONNECT** and **RESOURCE**.  
 
@@ -95,7 +95,7 @@ Now you need to switch to working as the user QTEAM, so you can start the next l
 
 2. Enter the username QTEAM and the password you defined in Step 2 when you created this user.
 
-  ![ALT text is not available for this image](images/2878885088.png)
+  ![ALT text is not available for this image](images/qteam-login.png)
 
 3. This will launch the Database Actions home page.
 

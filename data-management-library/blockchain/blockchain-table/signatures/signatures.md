@@ -24,7 +24,7 @@ In this lab, you will:
 * Lab: Create a VCN
 * Lab: Provision a 20c instance
 
-## **STEP 1**: Add your Certificate
+## Task 1: Add your Certificate
 
 1. Upload your certificate. You have to add your certificate into the table before you can use the certificate to sign the data.
 
@@ -72,7 +72,7 @@ In this lab, you will:
     /
     ```
         
-## **STEP 2:** Create Signature Externally
+## Task 2: Create Signature Externally
 
 You will not sign the data in the database, you will sign the data externally.
 
@@ -83,7 +83,7 @@ You will not sign the data in the database, you will sign the data externally.
       openssl dgst -sha256 -sign user01.key -out row1.sha256 row_data1
       ```
 
-## **STEP 3:** Add Signature to a Row
+## Task 3: Add Signature to a Row
 
 Signing a row sets a user signature for a previously created row. A signature provides additional security against tampering.
 
@@ -116,7 +116,7 @@ Oracle Database verifies that the current user owns the row being updated and th
 The procedure has been successfully completed.
 The signature has been added to your row.
 
-## **STEP 4:** Verify Rows with Signature
+## Task 4: Verify Rows with Signature
 
 1. Verify the signature of the Blockchain table row.
 

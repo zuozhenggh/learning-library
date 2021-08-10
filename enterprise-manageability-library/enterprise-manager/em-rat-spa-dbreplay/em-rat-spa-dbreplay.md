@@ -17,8 +17,8 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 | **1**  | SQL Performance Analyzer        | 15 minutes       | The objective of this activity is to demonstrate and use the SQL Performance Analyzer functionality of Real Application Testing capabilities using Enterprise Manager UI.                                                 | **Scenario:**    You've been asked to validate SQL performance before upgrade Database from 18.3 to 19.10. How each SQLs in the application's workload (Sales History) performs in new 19.10 upgrade. Sales History workload SQLs gathered in SQL Tuning Set SHSTS.                                                                                                                                                                                                                                                                                            |
 | **2**  | Database Workload Replay - Capture Workload                          | 10 minutes       | The objective of this activity is to demonstrate how to performs  Workload Capture for Real Application Testing   Database Replay                                                                                                         | **Scenario:**    You've been asked to Capture of  Database Workload before upgrade Database from 18.3 to 19.10 for Database Replay. The Workload simulated using SwingBench for 40 Concurrent Database Users.                                                                                                                                                                                                                                                                                                                                |
 | **3**  | Database Workload Replay - Replay Workload                          | 15 minutes       | The objective of this activity is to demonstrate how to performs  Workload Capture for Real Application Testing   Database Replay                                                                                                         | **Scenario:**    You've been asked to Replay of  Database Workload before upgrade Database from 18.3 to 19.10 for Database Replay. The Workload captured from previous Step*2 from 40 concurrent users workload.                                                                                                                                                                                                                                                                                                                                |
-| **4**  | Database Workload Replay - API, import to Enterprise Manager (Optional)                      | 15 minutes       | The objective of this activity is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities using API PLSQL mode and import Capture and Replay into Enterprise Manager.                                                                                                           | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. How the application's workload (Order Entry) performs in new 19.3 upgrade. Database Replay enables realistic testing of system changes by essentially re-creating the production workload environment on a test system.                                                                                                                                                                                                                                                                                                                                 |
-| **5**  | Database Replay - Consolidation Replay (EM) (Optional) | 20 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.3. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.3.                                                                                                                                          |
+| **4**  | Database Workload Replay - API, import to Enterprise Manager (Optional)                      | 15 minutes       | The objective of this activity is to demonstrate and use the Database Replay functionality of Real Application Testing capabilities using API PLSQL mode and import Capture and Replay into Enterprise Manager.                                                                                                           | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.10. How the application's workload (Order Entry) performs in new 19.3 upgrade. Database Replay enables realistic testing of system changes by essentially re-creating the production workload environment on a test system.                                                                                                                                                                                                                                                                                                                                 |
+| **5**  | Database Replay - Consolidation Replay (EM) (Optional) | 20 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.10. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.10.                                                                                                                                          |
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
@@ -30,7 +30,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
-## **STEP 1:** SQL Performance Analyzer
+## Task 1: SQL Performance Analyzer
 
 1. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com
 
@@ -207,7 +207,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
     ![](images/emratlab1step15c.png " ")
 
 
-## **STEP 2:** Database Workload Replay - Capture Workload
+## Task 2: Database Workload Replay - Capture Workload
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -332,7 +332,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
     ![](images/emratlab2step17f.png " ")
 
-## **STEP 3:** Database Workload Replay - DB Replay
+## Task 3: Database Workload Replay - DB Replay
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -523,7 +523,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
       ![](images/emratlab3step32f.png " ")
 
 
-## **STEP 4:** Database Workload Replay - API
+## Task 4: Database Workload Replay - API
 
 ### Login to Host using SSH Key based authentication
 In this lab, we are going to use a pre-captured workload of Sales History. The workload located in directory **/home/oracle/scripts/CAPTURE/lab4con/lab4SH**
@@ -696,7 +696,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
      ![](images/emratlab4step7n.png " ")
 
 
-## **STEP 5:** Database Consolidation Replay
+## Task 5: Database Consolidation Replay
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -716,45 +716,45 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
 5. Create Consolidation Replay Task
 
-        - Enter Name **lab5con**, Click Add button
+    * Enter Name **lab5con**, Click **Add** button
 
     ![](images/emratlab5step5a.png " ")
 
-        - Highlight **SH** and **soecap** and click **Select** button
+    * Highlight **SH** and **soecap** and click **Select** button
 
     ![](images/emratlab5step5b.png " ")
 
-        - Check Copy Workload to a new Replay Directory, then click **Set Credential**
+    * Check Copy Workload to a new Replay Directory, then click **Set Credential**
 
     ![](images/emratlab5step5c.png " ")
 
-        - Click Ok
+    * Click **Ok**
 
     ![](images/emratlab5step5d.png " ")
 
-        - Click search button to select Host target
+    * Click search button to select Host target
 
     ![](images/emratlab5step5e.png " ")
 
-        - Pick **emcc.marketplace.com** and click **Select**
+    * Pick **emcc.marketplace.com** and click **Select**
 
     ![](images/emratlab5step5f.png " ")
 
-        - Check Named Credential, Credential Name ORACLE, Click Browse to enter path /home/oracle/scripts/CAPTURE/lab5
+    * Check Named Credential, Credential Name **ORACLE**, Click **Browse** to enter path **/home/oracle/scripts/CAPTURE/lab5**
 
     ![](images/emratlab5step5g.png " ")
 
     ![](images/emratlab5step5h.png " ")
 
-        - Enter Name: **lab5con_rep1** for new Replay
+    * Enter Name: **lab5con_rep1** for new Replay
 
     ![](images/emratlab5step5h1.png " ")
 
-        - Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
+    * Click Search for Database Target, and Select **db19c.subnet.vcn.oraclevcn.com**
 
     ![](images/emratlab5step5i.png " ")  
 
-        - Click **Submit**
+    * Click **Submit**
 
     ![](images/emratlab5step5j.png " ")
 
@@ -767,7 +767,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step7.png " ")
 
-8. Check Use an existing directory object point to **/home/oracle/scripts/CAPTURE/lab5**, Click Next
+8. Check Use an existing directory object point to **/home/oracle/scripts/CAPTURE/lab5**, Click **Next**
 
     ![](images/emratlab5step8.png " ")
 
@@ -803,11 +803,11 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab3step22.png " ")  
 
-    Click **Search** in Host
+    * Click **Search** in Host
 
     ![](images/emratlab3step23.png " ")  
 
-    Select **emcc.marketplace.com**
+    * Select **emcc.marketplace.com**
 
     ![](images/emratlab3step24.png " ")
 
@@ -817,19 +817,19 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     <copy>(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = emcc.marketplace.com)(PORT = 1521))(CONNECT_DATA = (SERVICE_NAME = db19c.subnet.vcn.oraclevcn.com)(SERVER = DEDICATED)))</copy>
     ````
 
-    Set **2** Number of Replay Clients
+    * Set **2** Number of Replay Clients
 
-    Enter/Browse **/u01/app/database/product** for Client Oracle Home
+    * Enter/Browse **/u01/app/database/product** for Client Oracle Home
 
-    Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
+    * Click **Browse** for Client Replay Directory, set **/home/oracle/scripts/CAPTURE/lab5** for Client Replay Directory
 
     ![](images/emratlab5step11b.png " ")
 
-    Enter username : **System**  Password : **welcome1**
+    * Enter username : **System**  Password : **welcome1**
 
     ![](images/emratlab5step11c.png " ")
 
-    Click **Next**
+    * Click **Next**
 
     ![](images/emratlab5step11d.png " ")
 
@@ -837,7 +837,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step12a.png " ")
 
-    Click Next
+    * Click **Next**
 
     ![](images/emratlab5step12b.png " ")
 
@@ -853,8 +853,6 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
 You have now learned how to work with Real Application Testing. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
 
-Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
-
 
 This completes the Lab
 
@@ -869,4 +867,4 @@ Thank You!
 ## Acknowledgements
 - **Author** - Daniel Suherman, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud by** -  Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+- **Last Updated By/Date** - Daniel Suherman - Enterprise Manager Product Management, August 2021

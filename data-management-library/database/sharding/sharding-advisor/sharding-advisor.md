@@ -21,7 +21,7 @@ This lab assumes you have already completed the following:
 
 - Setup non-Shard Database Application
 
-## **STEP 1:** Run Sharding Advisor
+## Task 1: Run Sharding Advisor
 
 1. Connect to the non-Shard database with sysdba.
 
@@ -214,7 +214,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Review Sharding Advisor Outputs
+## Task 2: Review Sharding Advisor Outputs
 
 To review the sharding configurations and related information that is owned by the user running Sharding Advisor, you can query the following output database tables, which are stored in the same schema as your source database.
 

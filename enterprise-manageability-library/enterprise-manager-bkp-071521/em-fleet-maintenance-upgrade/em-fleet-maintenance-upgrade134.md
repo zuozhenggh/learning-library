@@ -45,7 +45,7 @@ e.g: https://111.888.111.888:7803/em
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
 | 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
-## **STEP 0**: Running your lab
+## Task 0: Running your lab
 ### Login to Host using SSH Key based authentication
 1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
     - Authentication OS User - “*opc*”
@@ -121,7 +121,7 @@ We recommend that you read through each of the steps, review the emcli command, 
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at /home/oracle/fleet
 
-## **STEP 1:** Detect Configuration Pollution
+## Task 1: Detect Configuration Pollution
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -187,7 +187,7 @@ In the next section we will follow these recommendations to perform the followin
   - Patch database “finance.subnet.vcn.oraclevcn.com” from 18.8 to 18.10 [READ-ONLY– This step has already been implemented]
   - Upgrade “finance.subnet.vcn.oraclevcn.com” from 18.10 to 19.7
 
-## **STEP 2:** Oracle Database Upgrade with Fleet Maintenance
+## Task 2: Oracle Database Upgrade with Fleet Maintenance
 
 ### Database Fleet Maintenance
 

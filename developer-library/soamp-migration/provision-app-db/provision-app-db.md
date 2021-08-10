@@ -14,7 +14,7 @@ In this lab you will:
 - Create a security list with proper ports open.
 
 
-## **STEP 1:** Provision the Database System
+## Task 1: Provision the Database System
 
 1. Go to **Database -> Bare Metal, VM and Exadata**.
 
@@ -95,7 +95,7 @@ In this lab you will:
 
   ![](./images/provision-db-22.png)
 
-## **STEP 2:** Check the Status of the Database Provisioning
+## Task 2: Check the Status of the Database Provisioning
 
 Before you can proceed to the next lab, you need to check that the database has been fully provisioned.
 

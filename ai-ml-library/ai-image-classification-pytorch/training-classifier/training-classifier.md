@@ -18,7 +18,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Access to either a CPU or GPU instance as covered in labs 1 and 2
 
-## **STEP 1**: Set up the environment
+## Task 1: Set up the environment
 
 There are a number of methods to set up a python environment to run PyTorch. You may follow your preferred method or the following set of instructions.
 
@@ -34,7 +34,7 @@ There are a number of methods to set up a python environment to run PyTorch. You
 
 5. [Install PyTorch](https://pytorch.org/) through conda `conda install pytorch torchvision cudatoolkit=10.2 -c pytorch`
 
-## **STEP 2**: CIFAR10 and DataLoader
+## Task 2: CIFAR10 and DataLoader
 
 The full code example is located at the bottom of this page.
 
@@ -71,7 +71,7 @@ GPU utilization can vary, depending primarily on the size of the dataset and the
 
 This example uses two datasets. CIFAR10 is split into a *training* dataset that is iterated over to develop the model and a *test* dataset of unseen data that is used to test the model’s performance. When working with your dataset, consider splitting your raw data into 80 percent used for training and 20 percent used for testing. You should avoid testing with data that’s used to train the model because it limits your ability to detect [overfitting](https://www.kdnuggets.com/2019/12/fighting-overfitting-deep-learning.html), a problem that occurs when your model works well against training data but not new data.
 
-## **STEP 3**: Convolutional Neural Network
+## Task 3: Convolutional Neural Network
 
 [Define a Convolutional Neural Network](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#define-a-convolutional-neural-network), defines the model. The dataset consists of images that are split into three color channels: red, green, and blue. Those values are sent to LCD displays to show different colors in pixels. Splitting the colors into three separate channels allows us to churn them through machine learning functions and create a deep neural network. We do that by running a convolution over each channel multiple times.
 
@@ -141,7 +141,7 @@ Notice that `16 * 5 * 5` is the first input for the `fc1` layer. The second inpu
 
 In the code for the model, each operation is defined in the class initialization, and the order in which the operations are performed on samples is defined in the `forward` method. [F.relu](https://pytorch.org/docs/stable/nn.functional.html?highlight=relu#torch.nn.functional.relu) is an [activation function](https://www.kdnuggets.com/2017/09/neural-network-foundations-explained-activation-function.html). Delving into activation functions is beyond the scope of this post, but in short there are three popular options: Sigmoid, TanH, and ReLU. These three (and more) are useful in different scenarios, but ReLU works for this example. Tensor.view changes the shape of the tensor, in this case flattening it into a 1-dimensional, 400-length array, as described previously.
 
-## **STEP 4**: Loss Function and Optimizer
+## Task 4: Loss Function and Optimizer
 
 ```python
 import torch.optim as optim
@@ -159,7 +159,7 @@ Image credit: [CS231n](https://cs231n.github.io/neural-networks-3/)
 
 The training process generates a gradient that can be likened to a mountain range. As you iterate over data, you want to arrive at the lowest point in the mountain range for a fully trained model, but the problem is you lack a map. The loss function and optimizer help you descend the range, but if you go too fast or use the wrong system, you could get stuck in a local low point instead of the actual minimum.
 
-## **STEP 5**: Training the Model
+## Task 5: Training the Model
 
 With everything prepared, we’re ready to begin training, in which we continually iterate over the data to arrive at our trained model (step 4, [Train the Network](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#train-the-network)). 
 
@@ -212,7 +212,7 @@ A successful output should print out lines in this format, although the loss num
 Finished Training
 ```
 
-## **STEP 6**: Saving the Model and Testing Accuracy
+## Task 6: Saving the Model and Testing Accuracy
 
 ```python
 PATH = './cifar_net.pth'

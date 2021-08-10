@@ -50,7 +50,7 @@ To run this lab, you need to:
 - Have setup the demo 'on-premises' environment as the source domain to migrate.
 - Have deployed a SOA on OCI domain using the marketplace.
 
-## **STEP 1:** Discover the Source SOA Suite Environment
+## Task 1: Discover the Source SOA Suite Environment
 
 1. Open the EM console in the Firefox browser at [http://localhost:7001/em](http://localhost:7001/em)
 in the on-premises environment.
@@ -80,7 +80,7 @@ in the on-premises environment.
 
     The XML needs to be a valid XML file.
 
-## **STEP 2:** Test the Application
+## Task 2: Test the Application
 
 For testing, we'll place a test XML file in the `/tmp/soa/out` folder, wait 5 to 10 seconds to see the file be removed from the `/tmp/soa/out/` folder and moved to the `/tmp/soa/out1` folder as `File_1.txt`.
 
@@ -135,7 +135,7 @@ For testing, we'll place a test XML file in the `/tmp/soa/out` folder, wait 5 to
     File_1.xml
     ```
 
-## **STEP 2:** Prepare Your Source for Migration (Side-by-Side Upgrade)
+## Task 2: Prepare Your Source for Migration (Side-by-Side Upgrade)
 
 In this step we will migrate the application from 12.2.1.3 (current version) to 12.2.1.4 (target version).
 
@@ -264,7 +264,7 @@ We can now deploy the upgraded project as a SAR file.
 
     ![](./images/compilecode12214.png)
 
-## **STEP 3:** Prepare Your Target Environment
+## Task 3: Prepare Your Target Environment
 
 Prepare your target environment by importing or recreating all the configurations of your source. This will ensure successful deployment of the Oracle SOA Suite application on the target instance.
 
@@ -288,7 +288,7 @@ Prepare your target environment by importing or recreating all the configuration
     </copy>
     ```
 
-## **STEP 4:** Re-deploy the Upgraded Application on the Target SOA Domain
+## Task 4: Re-deploy the Upgraded Application on the Target SOA Domain
 
 The tunnel opened earlier creates the connection to the target SOA server, the SOA admin server is accessible on port 7002 on localhost. 
 
@@ -360,7 +360,7 @@ The tunnel opened earlier creates the connection to the target SOA server, the S
     ![](./images/soamp-deployment-9.png)
 
 
-## **STEP 5:** Check the Application on the Target SOA Domain
+## Task 5: Check the Application on the Target SOA Domain
 
 1. Get back in the terminal where you SSH'ed to the target instance.
 

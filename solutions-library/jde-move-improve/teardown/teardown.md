@@ -14,7 +14,7 @@ Estimated Lab Time: 5 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 
-## **STEP 1:** Delete the JDE instance
+## Task 1: Delete the JDE instance
 
 To delete instances:
 
@@ -32,7 +32,7 @@ To delete instances:
 
 5. Wait for the instance to terminate. Once terminated your instance should be gone from the instance list.
 
-## **STEP 2:** Delete the Associated OCI Resources
+## Task 2: Delete the Associated OCI Resources
 
 To delete the Virtual Cloud Network:
 

@@ -2,7 +2,7 @@
 
 In this lab, you learn how to create a NoSQL database.
 
-## **STEP 1:** Create a NoSSQL database table
+## Task 1: Create a NoSSQL database table
 
 To create a NoSQL database table, sign in to the OCI Console, and follow these steps:
 

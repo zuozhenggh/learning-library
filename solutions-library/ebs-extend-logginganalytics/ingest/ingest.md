@@ -18,7 +18,7 @@ In this lab, you will:
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All done in the previous workshop
 
-## **STEP 1:** Setup Logging to Ingest Audit and Network Logs
+## Task 1: Setup Logging to Ingest Audit and Network Logs
 
 1. Navigate to Logging - Log Groups from the OCI Console (verify you are in your ebshol_compartment)
 
@@ -56,7 +56,7 @@ In this lab, you will:
 
   ![](./images/subnetlogs.png " ")
 
-## **STEP 2:** Create Service Connectors for Audit and Network Logs
+## Task 2: Create Service Connectors for Audit and Network Logs
     
 1. Now navigate to Logging - Service Connectors
 
@@ -100,7 +100,7 @@ In this lab, you will:
       
   ![](./images/firstlogexview.png " ")
 
-## **STEP 3:** Install Management Agents on your Hosts
+## Task 3: Install Management Agents on your Hosts
 
 Now we will walk through installing management agents on our hosts. Because we are using linux servers in this lab we will stick to steps for those servers. For further documentation on installing agents and specifically on Windows servers refer to [Install Management Agents Documentation](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html#GUID-5F2A1CEF-1185-469C-AF2E-8A94BC95DC35)
 

@@ -27,7 +27,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Connect to SQL Developer
+## Task 1: Connect to SQL Developer
 
 1. Make a new connection to SQL Developer. Use the details given below or just click on *dmuser* to connect database.
   - **Name**: dmuser
@@ -40,7 +40,7 @@ This lab assumes you have:
    ![](./images/convg-novnc-landing.png " ")
 
 
-## **STEP 2:** Identifying SQL Developer and Data Miner Interface Components
+## Task 2: Identifying SQL Developer and Data Miner Interface Components
 
 Before you create a Data Miner Project and build a Data Miner workflow, it is helpful to examine some of the Data Miner interface components within SQL Developer. You can then structure your working environment to provide simplified access to the necessary Data Miner features.
 

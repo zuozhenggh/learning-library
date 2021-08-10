@@ -39,7 +39,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Connect to `PDB1` as `REPORT` and execute the `/home/oracle/labs/M104784GC10/Houses_Prices.sql` SQL  script to create a table with skewed data.
 
@@ -84,7 +84,7 @@ In this lab, you will:
    ```
 </if>
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
 There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
@@ -102,7 +102,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the *REPORT* user using SQL\*Plus by entering the commands below.
@@ -114,7 +114,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
      ```
 </if>
 
-## **STEP 2:** Examine skewed data
+## Task 2: Examine skewed data
 <if type="dbcs">
 1.  Make some modifications to the display
 
@@ -215,7 +215,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
   *Skewness is important in a situation where `PRICE_BIG_CITY` and `PRICE_SMALL_CITY` represent the prices of houses to buy and you want to determine whether the outliers in data are biased towards the left end or right end of the distribution, that is, if there are more values to the left of the mean when compared to the number of values to the right of the mean.*
 
-## **STEP 3:** Examine skewed data after data evolution
+## Task 3: Examine skewed data after data evolution
 
 <if type="dbcs">
 1. Insert more rows in the table.

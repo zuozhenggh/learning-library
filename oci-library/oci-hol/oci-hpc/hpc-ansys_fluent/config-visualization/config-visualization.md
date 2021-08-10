@@ -17,7 +17,7 @@ In this lab:
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 * Familiarity with networking is helpful
 
-## **STEP 1**: Setting up a VNC on your Bastion
+## Task 1: Setting up a VNC on your Bastion
 
 1. By default, the only access to the Oracle Linux machine is through SSH in a console mode. If you want to see the graphical interface, you will need to set up a VNC connection. The following script will work for the default user opc. The password for the vnc session is set as "HPC_oci1" but it can be edited in the next set of commands. If you are not currently connected to the headnode via SSH, please do so as these commands need to be run on the headnode.
 
@@ -39,7 +39,7 @@ In this lab:
     </copy>
     ```
 
-## **STEP 2**: Add a GPU Instance
+## Task 2: Add a GPU Instance
 
 The below steps are taken Using OpenGL to Enhance GPU Use cases on OCI - refer to the blog for more details.
 

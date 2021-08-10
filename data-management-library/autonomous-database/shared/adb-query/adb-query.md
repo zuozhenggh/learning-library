@@ -11,7 +11,7 @@ Estimated Lab Time: 10 minutes
 -   Learn how to create external tables on top of files residing on the object store
 -   Learn how to query external data by the external tables
 
-## **STEP 1**: Create External Tables with DBMS_CLOUD
+## Task 1: Create External Tables with DBMS_CLOUD
 
 1.  If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
 
@@ -49,7 +49,7 @@ Estimated Lab Time: 10 minutes
 
     Now you have **external tables** for the sample data pointing to files in the object store. Any query against the external tables will return the same result as against the original tables.
 
-## **STEP 2**: Query External Data
+## Task 2: Query External Data
 
 1.  Copy and paste <a href="./files/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Worksheet. Compared to the query in the previous lab, we only replaced the original table names **table\_name** with **table\_name\_ext** in the sample query.
 

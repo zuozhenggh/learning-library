@@ -13,7 +13,7 @@ Estimated Lab Time: 25 minutes
 - Learn about different ways to search for data in the MySQL Document Store and via SQL
 - Learn to modify data in the MySQL Document Store
 
-## **STEP 1:** Understanding API Gateway
+## Task 1: Understanding API Gateway
 
 **API Gateway** provides public access to private APIs. It provides different
 features like rate limiting or authentication to protect your application.
@@ -69,7 +69,7 @@ Time to create a new Function.
 *Note: If you consider the URL ugly you could use your own domain name after
 providing a TLS certificate. We will skip that here.*
 
-## **STEP 2:** Our first Document Search
+## Task 2: Our first Document Search
 
 One task needed is to list the employees per state they are located in.
 For serving the frontend a single function will be used. So let's create it,
@@ -219,7 +219,7 @@ Now you can explore the employees by state. Clicking on **Details** will show yo
 
 Trying to rais a salary or searching by salary will lead to an error though. Let's add that search.
 
-## **STEP 3:** Using SQL for Advanced Queries
+## Task 3: Using SQL for Advanced Queries
 
 Searching by state was relatively easy. A simple match on a specific element of the document
 using a path. Searching the salary in this data structure is a bit more complex. Let's take a look
@@ -298,7 +298,7 @@ setting **X-Mode** to `salary` and **X-Value** to `${request.path[salary]}`.
 
 After applying this the search by salary should work and it's time to raise salaries.
 
-## **STEP 4:** Updating Documents
+## Task 4: Updating Documents
 
 After building a somewhat complex SQL query it's time to go back to a more simple approach using X DevAPI.
 

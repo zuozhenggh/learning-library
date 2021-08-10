@@ -12,7 +12,7 @@ In this lab you will build an interactive application on the data structures you
 - An Oracle Cloud paid account, a LiveLabs account or free trial.
 - Data structures with sample data
 
-## **Step 1** – Run the Create App Wizard
+## **Task $1: 1** – Run the Create App Wizard
 
 1. From SQL Scripts > Results, click **Create App**
 
@@ -45,7 +45,7 @@ In this lab you will build an interactive application on the data structures you
 
     ![](images/all-features.png " ")
 
-## **Step 2** – Run the Application
+## **Task $1: 2** – Run the Application
 
 1. Your new application will be displayed in Page Designer.
 

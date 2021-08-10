@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Create a mandatory profile in the CDB root
+## Task 1: Create a mandatory profile in the CDB root
 
 1. Connect to the CDB root in `CDB21`.
 
@@ -79,7 +79,7 @@ In this lab, you will:
     SQL>
     ```
 
-## **STEP 2:** Set the `MANDATORY_USER_PROFILE` initialization parameter  
+## Task 2: Set the `MANDATORY_USER_PROFILE` initialization parameter  
 
 1. Set the initialization parameter
     ```
@@ -96,7 +96,7 @@ In this lab, you will:
     ```
     *The password verify function of the mandatory profile is envisioned to be always enforced from the `CDB$ROOT` which means that the password resource limit is always fetched and executed from the `CDB$ROOT` and enforced on the PDBs in the entire CDB depending on the `MANDATORY_USER_PROFILE` initialization parameter.*
 
-## **STEP 3:** Replace the password verification functio`n` to enforce the minimum password length.
+## Task 3: Replace the password verification functio`n` to enforce the minimum password length.
 
 1. Replace the verification function
     ```
@@ -120,7 +120,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 4:** Test
+## Task 4: Test
 
 1. Create a new user `JOHN` in `PDB21`.
 
@@ -153,7 +153,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 5:** Reset the configuration
+## Task 5: Reset the configuration
 
 1. Drop the mandatory profile in the root.
 

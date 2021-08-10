@@ -39,7 +39,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: View the initial Security Assessment report for your Autonomous Database
+## Task 1: View the initial Security Assessment report for your Autonomous Database
 
 1. If you are already signed in to the Oracle Data Safe Console, click the **Oracle Data Safe** tab in your browser.
 
@@ -89,7 +89,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 2**: Schedule a Security Assessment job against your database
+## Task 2: Schedule a Security Assessment job against your database
 
 1. Click the **Home** tab, and then click the **Security Assessment** tab.
 
@@ -111,7 +111,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 3**: Run a Security Assessment job immediately against your database and analyze the results
+## Task 3: Run a Security Assessment job immediately against your database and analyze the results
 
 1. Deselect the check box for your database, and then select it again.
 
@@ -131,7 +131,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 4**: View the history of Comprehensive Assessment reports
+## Task 4: View the history of Comprehensive Assessment reports
 
 You can access all of your Comprehensive Assessment reports by viewing the history.
 
@@ -149,7 +149,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 
 
-## **STEP 5**: Set a baseline report and generate a Comparison report
+## Task 5: Set a baseline report and generate a Comparison report
 
 1. Click the **Home** tab, and then click **Security Assessment**.
 
@@ -182,7 +182,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
     ![Comparison Report](images/LL-comparison-report.png "Comparison Report")
 
 
-## **STEP 6**: View the initial User Assessment report for your database
+## Task 6: View the initial User Assessment report for your database
 
 1. Click the **Home** tab, and then click **User Assessment**. The **User Assessment** page is displayed.
 
@@ -216,7 +216,7 @@ You can access all of your Comprehensive Assessment reports by viewing the histo
 
 
 
-## **STEP 7**: Run a User Assessment job immediately and analyze the results
+## Task 7: Run a User Assessment job immediately and analyze the results
 
 1. Click **Back to User Assessment**.
 

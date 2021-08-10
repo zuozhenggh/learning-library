@@ -28,7 +28,7 @@ In this lab, you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Access to the cloud environment and resources configured in Lab 1
 
-## **STEP 1**: Review Code Options for Posting Custom Metrics
+## Task 1: Review Code Options for Posting Custom Metrics
 
 Let's review the example application source files and observe the specific additions required to post metrics to the Monitoring Service.
 
@@ -96,7 +96,7 @@ $ cat devlive-metric.yaml
 You may use the vi command to update the deployment file directly in the shell.  Or, use the menu options in the upper left corner of the shell window to download/upload this file for editing on your workstation.
 
 
-## **STEP 2:** Deploy a Node.js Application to OKE
+## Task 2: Deploy a Node.js Application to OKE
 
 
 1. After updating the devlive-metric.yaml file to match your OCID and Service_Endpoint, run the following commands to deploy the application.  
@@ -125,7 +125,7 @@ You may use the vi command to update the deployment file directly in the shell. 
       ```
 
 
-## **STEP 3:** Examine Ingested Metrics
+## Task 3: Examine Ingested Metrics
 
 1. In the OCI Console, navigate to **Observability & Management** --> **Monitoring** --> **Metrics Explorer** to bring up the explorer page.  
 
@@ -143,7 +143,7 @@ You may use the vi command to update the deployment file directly in the shell. 
 
       ![Graph](images/graph.png)
 
-## **STEP 4:** [Optional] Create Metric Alarm
+## Task 4: [Optional] Create Metric Alarm
 
 1. While still reviewing the Metrics Explorer page, locate and select the **Create Alarm** button near the bottom.
 

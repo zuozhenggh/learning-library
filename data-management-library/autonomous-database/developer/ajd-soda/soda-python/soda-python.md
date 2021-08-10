@@ -18,7 +18,7 @@ In this lab, you will:
 * OCI resources (Introduction)
 * MongoDB Cloud Atlas (Introduction)
 
-## **STEP 1:** Create Python application for MongoDB document store
+## Task 1: Create Python application for MongoDB document store
 
 1. Connect to **[Your Initials]-ClientVM** Compute instance using SSH, if not connected, as user **opc**.
 
@@ -158,7 +158,7 @@ In this lab, you will:
         app.run(host= '0.0.0.0')
     ````
 
-## **STEP 2:** Run the Python application and check results
+## Task 2: Run the Python application and check results
 
 1. Export operating system required environment variables.
 
@@ -239,7 +239,7 @@ In this lab, you will:
 9. Press CTRL+C in the terminal where the application is running, to stop it.
 
 
-## **STEP 3:** Improve Python application adding Oracle AJD document store
+## Task 3: Improve Python application adding Oracle AJD document store
 
 Wallet files, along with the database user ID and password, provide access to data in your Autonomous Database. Store wallet files in a secure location. Share wallet files only with authorized users.
 
@@ -394,7 +394,7 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
     ````
 
 
-## **STEP 4:** Run the application with MongoDB and Oracle AJD support
+## Task 4: Run the application with MongoDB and Oracle AJD support
 
 1. Run the script, with the dot and the space in front of it, to set the necessary values for all environment variables, required for our application.
 
@@ -535,7 +535,7 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
     ````
 
 
-## **STEP 5:** Migrate documents between document stores
+## Task 5: Migrate documents between document stores
 
 As a final step of our lab, we will create a small application that will retrieve documents from MongoDB and insert them in Oracle AJD. This test use case will demonstrate that same data we currently have in MongoDB can be stored in and handled by Oracle AJD. JSON documents will receive a new **key** in Oracle AJD, however, they will also keep the original **id** from MongoDB.
 

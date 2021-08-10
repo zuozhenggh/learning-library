@@ -38,7 +38,7 @@ Estimated lab time: 1 hour
 - Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 - Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
-## **STEP 1:** DNS traffic steering
+## Task 1: DNS traffic steering
 
   ![](./images/2.png " ")
 
@@ -90,7 +90,7 @@ Estimated lab time: 1 hour
 
   ![](./images/14.png " ")
 
-## **STEP 2:** Block & boot volume backup automation with Python
+## Task 2: Block & boot volume backup automation with Python
 
 ### What do the scripts do
 
@@ -117,7 +117,7 @@ Steps in the automation scripts:
 2. copy\_volume\_backups across destination region
 3. restore\_volume in destination region
 
-## **STEP 3 (alternative):** Run the scripts manually
+## **Task $1: 3 (alternative):** Run the scripts manually
 
 ### Run the scripts
 
@@ -140,7 +140,7 @@ Steps in the automation scripts:
 
   ![](./images/16.png " ")
 
-## **STEP 4:** Verify the backups were generated ##
+## Task 4: Verify the backups were generated ##
 
 1. The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to DR region (default schedule is set for 12 hours).
 
@@ -225,7 +225,7 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
 
 Verify the application is working as expected in the Frankfurt DR region by navigating to the load balancer url.
 
-## **STEP 5:** Object Storage Replication
+## Task 5: Object Storage Replication
 
 1. The terraform script will also configure object storage bucket replication across your regions. 
 
@@ -235,7 +235,7 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 4. Now delete the files in your primary region's bucket and verify the files are deleted in your DR region.
 
-## **STEP 6:** File Storage Replication
+## Task 6: File Storage Replication
 
 1. The terraform script will also configure rsync between the file storage systems across the regions. 
 
@@ -249,7 +249,7 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 6. SSH into private server IP of the replication\_compute server, and navigate to '/home/opc/dst\_filestore' and verify the file exists there.
 
-## **STEP 7:** Database Replication
+## Task 7: Database Replication
 
 1. The terraform script also configures active dataguard between the databases in both regions.
 

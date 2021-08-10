@@ -51,7 +51,7 @@ This lab assumes you have:
 
    [](youtube:QnTzm9SShBs)
 
-## STEP 0: Identifying SQL Developer and Data Miner Interface Components
+## Task 0: Identifying SQL Developer and Data Miner Interface Components
 
   Before you create a Data Miner Project and build a Data Miner workflow, it is helpful to examine some of the Data Miner interface components within SQL Developer. You can then structure your working environment to provide simplified access to the necessary Data Miner features.
 
@@ -91,7 +91,7 @@ For example, close both of the SQL Developer tabs mentioned above:
 `Note`: You can re-open the SQL Developer Connections tab (and other interface elements) at any time by using the View menu.
  
 
-## STEP 1: Data Preparation
+## Task 1: Data Preparation
 
 **1. Start creating a Data Miner Project**
 
@@ -525,7 +525,7 @@ We have final three source tables:
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## STEP 2: Regression
+## Task 2: Regression
 
 **Create a Data Miner Project**
 
@@ -830,7 +830,7 @@ o	Create a Data Miner project
 
 o	Build a Workflow document that uses Regression models to predict customer behavior.
 
-## STEP 3: MBA
+## Task 3: MBA
 
 1. Start creating a Data Miner Project
 
@@ -1010,7 +1010,7 @@ o	Identify Data Miner interface components
 o	Create a Data Miner project
 o	Build a Workflow document that uses Market Basket Analysis models to uncover association between items purchased together and identify patterns of co-occurrence.
 
-## STEP 4: Clustering
+## Task 4: Clustering
 
 **1: Start creating a Data Miner Project**
 

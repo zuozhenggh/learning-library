@@ -40,13 +40,13 @@ e.g: https://111.888.111.888:7803/em
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
-## **STEP 0:** Running your Workload
+## Task 0: Running your Workload
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## **STEP 1:** Inventory & Usage Details
+## Task 1: Inventory & Usage Details
 
 ### Overview
 
@@ -89,7 +89,7 @@ All the items in this step are read-only, primary goal is to learn about invento
 
   ![](images/ecm1_inventory_usage_details_report.png " ")
 
-## **STEP 2:** One Time Database Comparison
+## Task 2: One Time Database Comparison
 
 ### Overview
 
@@ -182,7 +182,7 @@ In this step, you will compare two database targets to determine configuration d
 
 In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters.
 
-## **STEP 3:** Database Configuration Drift Management
+## Task 3: Database Configuration Drift Management
 
 ### Overview
 
@@ -306,7 +306,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately.
 
-## **STEP 4:** Database Security Compliance
+## Task 4: Database Security Compliance
 
 ### Overview
 
@@ -411,7 +411,7 @@ A compliance standard rule is a specific test to determine if a configuration da
   All these will give you a security posture of database target
 
 
-  ## **STEP 5:** Host Security Compliance
+  ## Task 5: Host Security Compliance
 
   ### Overview
 

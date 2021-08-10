@@ -20,7 +20,7 @@ This lab assumes you have already completed the following:
 - Create the app schema
 - Deploy the demo applications
 
-## **STEP 1:** Scale the Shard Database
+## Task 1: Scale the Shard Database
 
 1. From the OCI console, click on the left hamburger navigation Menu. Choose **Resource Manager** under **Solutions and Marketplace**.
 
@@ -72,7 +72,7 @@ This lab assumes you have already completed the following:
 
     
 
-## **STEP 2:** Verify the New Shard
+## Task 2: Verify the New Shard
 
 1. Connect to the shard director host, Run the GDSCTL command.
 
@@ -212,7 +212,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 3:** Run the Demo Application
+## Task 3: Run the Demo Application
 
 1. Connect to the catalog database as sysdba with sqlplus. Using your own sys user password.
 
