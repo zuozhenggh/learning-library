@@ -18,7 +18,7 @@ In this lab, you will:
 - Familiar with OCI object storage to upload data
 
 
-## **STEP 1:** Create a Project
+## Task 1: Create a Project
 
 As mentioned, Project is a way to organize multiple data assets, models, deployments to the same workspace. It is the first step to start.
 
@@ -37,7 +37,7 @@ The Create Project button navigates User to a form where they can specify the co
 Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane. From here onwards, select ad_demo.
 ![](../images/4_project_pane.png " ")
 
-## **STEP 2:** Create a Data Asset
+## Task 2: Create a Data Asset
 
 We now need to create a data asset to refer to the previously uploaded object storage.
 

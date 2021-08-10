@@ -25,7 +25,7 @@ Before you Begin with Data Flow lab, you must have:
 
 
 
-## **STEP 1**: Object Store: Setting Up Storage
+## Task 1: Object Store: Setting Up Storage
 
 1. Before running application in Data Flow service, create two storage buckets that are required in object storage. If you   are 
 
@@ -40,7 +40,7 @@ Before you Begin with Data Flow lab, you must have:
       ```
        <copy>oci://dataflow-warehouse@<Object_Store_Namespace>/</copy>
       ```
-## **STEP 2**: Identity: Policy Set Up
+## Task 2: Identity: Policy Set Up
 
 1. **User Policies** : Data Flow requires policies to be set in IAM to access resources in order to manage and run applications. We categorize the Data Flow users into two groups for clear separation of authority administrator and users:
 

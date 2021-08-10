@@ -55,7 +55,7 @@ This lab assumes you have:
 | 6            | Test Java 8 features                   | 10min            | Illustrates how to use the Java streams when querying and processing cache entries                               | How Lambda features can be used in a Cache to simplify common Coherence tasks and how to query and process cache entries       |
 | 7            | Test Asynchronous features             | 10min            | Illustrates how to asynchronously get and put data in a cache                                                    | How to asynchronously process cache entries in Coherence and  how to asynchronously aggregate cache entries                    |
 
-## **STEP 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -98,7 +98,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 1**: Verify Environment
+## Task 1: Verify Environment
 1. Open Two Terminal windows
 2. Set and verify the `JAVA_HOME` for both terminal windows by typing the commands below
 
@@ -124,7 +124,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
      ![](./images/set-env.png " ")
 
-## **STEP 2**: Build JAVA Labs
+## Task 2: Build JAVA Labs
 1. Change Directory to Java Samples in both Terminal Windows (`/u01/middleware/14c/coherence/examples/java`)
 
     ```
@@ -147,7 +147,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>cd $COHERENCE_HOME/examples/java</copy>
     ```
 
-## **STEP 3**: Test Cache with Contacts get & Put
+## Task 3: Test Cache with Contacts get & Put
 This step shows the most basic data access features of Coherence including getting, putting and removing data from a provided contacts.csv file. To start a Coherence Cache and then put and get Contacts to/from the Cache.
 
 ### Start Cache Server:
@@ -175,7 +175,7 @@ This step shows the most basic data access features of Coherence including getti
 
     ![](./images/run-contacts.png " ")  
 
-## **STEP 4**: Test Cache Security Features
+## Task 4: Test Cache Security Features
 This step shows the security feature of accessing Cache securely using role and password. The Coherence security set receives a cache reference that requires a password and attempts cache and invocation service operations that require different roles.
 
 ### Start Cache Server:
@@ -201,7 +201,7 @@ This step shows the security feature of accessing Cache securely using role and 
 
     ![](./images/run-security.png " ")  
 
-## **STEP 5**:  Test Live events in Cache
+## Task 5:  Test Live events in Cache
 This step shows the Events feature of inserting into Cache
 
 How to measure the elapsed time between pre- and post-events which are inserted into a results cache; the semantics of throwing exceptions in pre- and post-commit events, and how partition redistribution events can be logged.
@@ -228,7 +228,7 @@ How to measure the elapsed time between pre- and post-events which are inserted 
 
     ![](./images/run-events.png " ")
 
-## **STEP 6**: Test Java 8 features
+## Task 6: Test Java 8 features
 The Coherence Java 8 features step illustrates how to use the Java streams when querying and processing cache entries. how Lambda features can be used to simplify common Coherence tasks and how to query and process cache entries
 
 The process of adding Lambda features in a Cache to simplify common Coherence tasks and how to query and process cache entries
@@ -255,7 +255,7 @@ The process of adding Lambda features in a Cache to simplify common Coherence ta
 
     ![](./images/run-java8.png " ")
 
-## **STEP 7**: Test Asynchronous features
+## Task 7: Test Asynchronous features
 The Coherence asynchronous features step illustrates how to asynchronously get and put data in a cache.
 
 How to asynchronously process cache entries in Coherence and to asynchronously aggregate cache entries.

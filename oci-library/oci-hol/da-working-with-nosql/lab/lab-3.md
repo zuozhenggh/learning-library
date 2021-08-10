@@ -2,7 +2,7 @@
 
 In this lab, you learn how to connect to a NoSQL database table from a Node.js REST API.
 
-## **STEP 1:** Connect to NoSQL database using NoSQLClient
+## Task 1: Connect to NoSQL database using NoSQLClient
 
 To connect to the NoSQL table, you need to provide credentials. These credentials include the RSA key pair, public key fingerprint, the tenancy's OCID, and the user's OCID you created in one of the previous labs.
 
@@ -36,7 +36,7 @@ const client = new NoSQLClient({
 
 >You could also use the Oracle NoSQL Database Cloud Simulator, which simulates the cloud service and lets you write and test your application locally without accessing OCI. To learn more about the simulator and to download it, see [Developing in Oracle NoSQL Database Cloud Simulator](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnsd/developing-oracle-nosql-database-cloud-simulator.html).
 
-## **STEP 2:** Writing the code
+## Task 2: Writing the code
 
 Create an `index.js` file in the `tasks-app` folder. In this file, connect to the NoSQL table, and create all the REST endpoints.
 
@@ -175,7 +175,7 @@ $ node src/index.js
 Tasks API listening at http://localhost:3000
 ```
 
-## **STEP 3:** Testing the API
+## Task 3: Testing the API
 
 To test the API, open another terminal window and create a task using *curl*:
 

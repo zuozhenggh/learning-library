@@ -31,7 +31,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 - vendor payments.xlsx
 - JRC Americas Group.jpg
 
-## **STEP 1:** Data Visualization and Mash Ups
+## Task 1: Data Visualization and Mash Ups
 1. From the browser session you started in *Lab: Initialize Environment*, Click on *"Create"* at the upper right-hand corner
    ![](./images/asdvff1.png " ")
 
@@ -196,7 +196,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 27. **Save** your project under  /My Folders as `"<your_name>_Project`".
    ![](./images/asdvff34.png " ")
 
-## **STEP 2:** Custom Calculations and Maps
+## Task 2: Custom Calculations and Maps
 The data visualization capabilities in Oracle Analytics Server include mapping and custom calculations. In this exercise we will use both capabilities: we will create custom calculations based on two available metrics, and we will then display the results on a map.
 
 1. In this exercise we will create two custom calculations and then use Oracle’s self-service built in map capabilities to analyze state and average profit per customer.
@@ -261,7 +261,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 13. **Click** the + on the zoom. You have successfully completed custom calculations and mapping. Select "Save" to save and update your project.
    ![](./images/asdvff49.png " ")
 
-## **STEP 3:** Freeform Canvases, Trend Lines, and Custom Backgrounds  
+## Task 3: Freeform Canvases, Trend Lines, and Custom Backgrounds  
 Oracle self-service includes a freeform canvas mode. This allows you to place visualizations and content anywhere on the canvas. In this exercise we will use this capability to display the *"JTC Americas Group"* corporate logo as the background for trendline analysis. Advanced analytic functions such as trendline, forecast, clustering and identifying outliers are as easy as one click or a drag and drop.
 
 1. In this exercise, we will leverage the freeform capabilities of a canvas to create a custom background. Let’s start by adding a new canvas. Click on the "+" icon at the bottom to create a new canvas. On the new canvas click the upside down triangle to the right of its name. Select "Canvas Properties".
@@ -309,7 +309,7 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 11. The result should look something like this. Select "save" to update and save your project.
    ![](./images/asdvff62.png " ")
 
-## **STEP 4:** Uploading a custom visual extension (Read-only)  
+## Task 4: Uploading a custom visual extension (Read-only)  
 *Note:* Tasks listed under this step are for ***reference*** only as they have already been performed on your instance
 
 Oracle Analytics provides users choice and flexibility with deployment.  Users can upload custom visualizations and analytics scrips in order to expand and enhance self-service visualization capabilities. In this step, you will review how to leverage two of our extension options.

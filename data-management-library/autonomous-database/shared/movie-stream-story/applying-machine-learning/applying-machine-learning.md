@@ -22,7 +22,7 @@ To do this analysis, we are going to use a package called **`DBMS_PREDICTIVE_ANA
 
 In this example we are going to use the EXPLAIN procedure to identifies the attributes that are important in explaining the variation in values of a target column. Our input data contains some records where the target value is known (not NULL) and also unknown (NULL). The records where the target value is known are used by the procedure to train a model that calculates the attribute importance. The EXPLAIN procedure creates a result table that lists the attributes in order of their explanatory power.
 
-## STEP 1 - Preparing Our customer Data Set
+## Task 1: Preparing Our customer Data Set
 
 1. The firsts step is to create a view which summarizes the main customer demographic attributes. This means removing the time attributes, transaction attributes and movie attributes from our movie sales data.  Copy and paste the following code into the SQL worksheet window:
 
@@ -88,7 +88,7 @@ In this example we are going to use the EXPLAIN procedure to identifies the attr
 
     Obviously we are interested in all the values in this column, not just the non-zero values. From a machine learning perspective, it is important for this type of analysis to have situations where an event did occur, as well as situations where an event does not occur - we need data to cover both sides of the story. Now that we know we have the right data set in place, we can proceed to building our model.
 
-## STEP 2 - Building The Model
+## Task 2: Building The Model
 
 ### Overview
 
@@ -113,7 +113,7 @@ To run this analysis we need to provide the following information:
 2. The package will return a "PL/SQL procedure successfully completed" message to the log window once it has finished processing - which should take around 20 seconds.
 
 
-## STEP 3 - Reviewing The Output
+## Task 3: Reviewing The Output
 
 1. To view the results from our model, we simply need to view the result table -> customer\_explain\_result:
 
@@ -143,7 +143,7 @@ An explanatory power value of 0 implies there is no useful correlation between t
 
 Simply shows the ranking of explanatory power. Rows with equal values for explanatory_value have the same rank. Rank values are not skipped in the event of ties.
 
-## STEP 4 - Interpreting The Results
+## Task 4: Interpreting The Results
 
 1. Let's use some of the techniques from earlier parts of this workshop to enhance the output:
 

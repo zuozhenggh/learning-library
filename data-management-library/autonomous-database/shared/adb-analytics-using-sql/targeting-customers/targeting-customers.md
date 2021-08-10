@@ -39,7 +39,7 @@ This all sounds very complicated, but using SQL pattern matching, it is very eas
 
 
 
-## STEP 1 -  Identifying The Customers Who Watch Family Movies
+## Task 1:  Identifying The Customers Who Watch Family Movies
 
 We can find the customers who watched at least 1 family genre movie during a quarter by using the SQL pattern matching function **`MATCH_RECOGNIZE`**. To map this pattern within our query, we use the following to outline what we are looking for:
 
@@ -80,7 +80,7 @@ AND first(family.quarter_num_of_year) = last(family.quarter_num_of_year)
 
     This shows that we have over 1,013,572 customers that match this pattern. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
 
-## STEP 2 -  Returning More Information About The Pattern
+## Task 2:  Returning More Information About The Pattern
 
 The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*):
 
@@ -127,7 +127,7 @@ The pattern matching process can return information about the pattern it has dis
 
     ![Result of expanded query](images/3038282326.png)
 
-## STEP 3 - Searching For Family And Family-Related Movies
+## Task 3: Searching For Family And Family-Related Movies
 
 Now that we understand how our pattern matching query is working, we can extend the pattern search criteria to include additional family-related genres by simply expanding the definition of our pattern as follows:
 
@@ -174,7 +174,7 @@ Now that we understand how our pattern matching query is working, we can extend 
 
     Before we do any more work on this query, we should check-in with our marketing team to see if this number is within the range they were expecting.
 
-## STEP 4 - Changing Requirements
+## Task 4: Changing Requirements
 
 A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list contains too many customers. Ideally, they want to target a much smaller list of customers with the first round of this campaign! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies and very occasionally might watch a horror movie! 
 
@@ -260,7 +260,7 @@ How can you adapt the previous query to pick out those customers that really enj
 
     ![Query result showing much smaller list of customers](images/3038282321.png)
 
-## STEP 5 - Job Done
+## Task 5: Job Done
 
 1. The marketing team is happy with this smaller list of customers, which means the last step is to share the results with our marketing team. We can simply send them a file by using the  **Download**  feature on the  **Query Result**  panel.
 

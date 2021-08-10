@@ -36,7 +36,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## **Step 1**: Verify sample data and drop indexes
+## Task 1: Verify sample data and drop indexes
 
 Index structures are an essential feature of database performance. Indexes are critical for OLTP applications, which use large data sets and run millions of SQL statements a day. Indexes are also critical for data warehousing applications, which typically query a relatively small amount of data from very large tables. If you do not update the indexes whenever there are changes in the application workload, the existing indexes can cause the database performance to deteriorate considerably.
 
@@ -131,7 +131,7 @@ This Lab will use the Sales History (SH) sample schema.
 
     ![](./images/step1.4-gatherstats.png " " )
 
-## **Step 2**: Logging In and Examining Schema
+## Task 2: Logging In and Examining Schema
 
 1.  All scripts for this lab are stored in the labs/new-features-for-developers/automaticindexing folder and are run as the oracle user. Let's navigate there now. We recommend you to type the commands to get a feel for working on the lab. But we will also allow you to copy the commands via the COPY button.
 
@@ -178,7 +178,7 @@ This Lab will use the Sales History (SH) sample schema.
     </copy>
     ````
 
-## **Step 3**: Add Schemas
+## Task 3: Add Schemas
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called ORCLPDB you must supply this alias when connecting to the SH account.
 
@@ -267,7 +267,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     This sample report will show Automatic Indexes activity for the last 30 days. If Automatic Indexing were *OFF* during this time, there may be minimal or no information.
 
-## **Step 4**: Run a workload
+## Task 4: Run a workload
 
 Automatic indexing can work with data for OLTP applications, which use large data sets and run millions of SQL statements a day, as well as with data for data warehousing applications.
 In this lab, we don’t have any application running on our database, so we will generate a synthetic workload manually.
@@ -324,7 +324,7 @@ In this lab, we don’t have any application running on our database, so we will
 
     ![](images/ai_stats_gather.png " ")
 
-## **Step 5**: View Advisor Tasks
+## Task 5: View Advisor Tasks
 
 DBA\_ADVISOR\_TASKS displays information about all tasks in the database. The view contains one row for each task. Each task has a name that is unique to the owner. We are interested in the STATUS of the task named SYS\_AUTO\_INDEX\_TASK. This STATUS can be:
 - INITIAL - Initial state of the task; no recommendations are present.
@@ -364,7 +364,7 @@ DBA\_ADVISOR\_TASKS displays information about all tasks in the database. The vi
     </copy>
     ````
 
-## **Step 6**: Generate Workload
+## Task 6: Generate Workload
 
 Automatic indexing improves database performance by managing indexes automatically and dynamically in an Oracle database based on changes in the application workload. This is why we need more workload on our Pluggable Database ORCLPDB, to simulate changes in the application workload.
 
@@ -563,7 +563,7 @@ Automatic indexing improves database performance by managing indexes automatical
 
     ![](images/ai_change_markt_share_results.png " ")
 
-## **Step 7**: Calculate a sales projection
+## Task 7: Calculate a sales projection
 
 You can build a query that projects sales for 2002 based on the sales of 2000 and 2001. Firstly, finds the most percentage changes in sales from 2000 to 2001 and then adds that to the sales of 2002. You can build a subclause that finds the monthly sales per product by country for the years 2000, 2001, and 2002, and then a second subclause finds a list of distinct times at the month level.
 
@@ -665,7 +665,7 @@ You can build a query that projects sales for 2002 based on the sales of 2000 an
     </copy>
     ````
 
-## **Step 8**: Automatic Indexing Results
+## Task 8: Automatic Indexing Results
 
 In this section, you will look at how Automatic Indexing has worked to improve the performance of your queries.
 

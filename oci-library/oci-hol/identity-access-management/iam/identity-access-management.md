@@ -16,7 +16,7 @@ There is a recording of the instructor going through this lab here:
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
  
-## **STEP 1**: Creating Compartments
+## Task 1: Creating Compartments
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
@@ -31,7 +31,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3. You have just created a compartment for all of your work in this Test Drive.
 
-## **STEP 2**: Managing Users, Groups and Policies to Control Access
+## Task 2: Managing Users, Groups and Policies to Control Access
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 

@@ -20,7 +20,7 @@ In this lab, you will:
 * GitHub account
 
 
-## **STEP 1**: Delete DevOps Pipeline
+## Task 1: Delete DevOps Pipeline
 
 
 ### Delete DevOps Pipeline Stages
@@ -57,7 +57,7 @@ In this lab, you will:
 
 
 
-## **STEP 2**: Delete DevOps Artifacts
+## Task 2: Delete DevOps Artifacts
 
 1. Go back to the project page.
 
@@ -70,7 +70,7 @@ In this lab, you will:
 1. Repeat the operation for all Artifacts created during the workshop.
 
 
-## **STEP 3**: Release ORM Stack Resources
+## Task 3: Release ORM Stack Resources
 
 All resources provisioned during this workshop that were managed exclusively via Resource Manager can be destroyed running a `Destroy` job associated with your Stack `infrastructure-onboard`.
 
@@ -103,7 +103,7 @@ All resources provisioned during this workshop that were managed exclusively via
 
 
 
-## **STEP 4**: Delete ORM Configuration Source Provider
+## Task 4: Delete ORM Configuration Source Provider
 
 The next step is to delete the GitHub Configuration Source Provider in the Oracle Resource Manager.
 

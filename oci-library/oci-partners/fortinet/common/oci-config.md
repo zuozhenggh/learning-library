@@ -18,7 +18,7 @@ Estimated Lab Time: 30 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)  
 
-## **STEP 1: Configure Hub VCN**
+## **Task 1: Configure Hub VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
@@ -187,7 +187,7 @@ Estimated Lab Time: 30 minutes.
 
     *service-gateway Service Gateway*
 
-## **STEP 2: Configure Web VCN**
+## **Task 2: Configure Web VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
@@ -242,7 +242,7 @@ Estimated Lab Time: 30 minutes.
 
     *application-private Subnet*
 
-## **STEP 3: Configure DB VCN**
+## **Task 3: Configure DB VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
@@ -296,7 +296,7 @@ Estimated Lab Time: 30 minutes.
 
     *database-private Subnet*
 
-## **STEP 4: Configure Dynamic Routing Gateway**
+## **Task 4: Configure Dynamic Routing Gateway**
 
 1. From the OCI Services menu, click **Dynamic Routing Gateways** under **Networking**. Select your region on right part of the screen:
 
@@ -491,7 +491,7 @@ Estimated Lab Time: 30 minutes.
 
 35. This will update import route distribution to **From-Firewall** route table attached to **Firewall VCN**
 
-## **STEP 5: Configure Route Tables in each VCNs**
+## **Task 5: Configure Route Tables in each VCNs**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
@@ -688,7 +688,7 @@ Estimated Lab Time: 30 minutes.
 
     *Added VCN INGRESS Route table for Firewall_VCN attachment*
 
-## **STEP 6: Launch Compute instances in Web VCN**
+## **Task 6: Launch Compute instances in Web VCN**
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 
@@ -731,7 +731,7 @@ Estimated Lab Time: 30 minutes.
 
 10. Repeat step 5 to 9 based on the **table** provided in **step 4** for another instance.
 
-## **STEP 7: Launch Compute instances in DB VCN**
+## **Task 7: Launch Compute instances in DB VCN**
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 

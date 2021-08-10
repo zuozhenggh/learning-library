@@ -12,7 +12,7 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 
 *Note: OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI*
 
-## **Step 1**: Sign in to OCI Console and Create VCN
+## Task 1: Sign in to OCI Console and Create VCN
 
 1. Sign in using your cloud tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](images/Grafana_015.PNG " ")
@@ -80,7 +80,7 @@ Oracle Cloud Infrastructure File Storage Service provides a durable, scalable, d
 
 10. Click **Add Ingress Rules**
 
-## **Step 2**: Create File System Storage
+## Task 2: Create File System Storage
 
 In this section, we will create File System Storage.
 
@@ -110,7 +110,7 @@ In this section, we will create File System Storage.
 
 We now have a File System Storage created. Next we will use your SSH key pair to connect to a compute instance and mount the file system.
 
-## **Step 3**: Create and Connect to Compute Instance
+## Task 3: Create and Connect to Compute Instance
 
 You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
@@ -182,7 +182,7 @@ You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
 8.  Verify opc@COMPUTE\_INSTANCE\_NAME appears on the prompt
 
-## **Step 4**: Mount the File System Storage to Compute Instance
+## Task 4: Mount the File System Storage to Compute Instance
 
 Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance) can use the command line to connect to a file system and write files. Mount targets serve as file system network access points. After your mount target is assigned an IP address, you can use it to mount the file system. You need to install an NFS client and create a mount point. When you mount the file system, the mount point effectively represents the root directory of the File Storage system, allowing you to write files to the file system from the instance.
 
@@ -245,7 +245,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
 
 You have now mounted Enterprise grade File System Storage created in OCI to your compute instance. You can place files in this file system. All other VM instances that have mounted this file system will have access to it.
 
-## **Step 5**: Delete the Resources
+## Task 5: Delete the Resources
 
 In this section, we will delete all the resources we created in this lab.
 

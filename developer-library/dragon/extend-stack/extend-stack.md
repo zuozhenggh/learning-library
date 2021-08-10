@@ -14,7 +14,7 @@ Estimated Lab Time:  10 minutes
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Prepare your dragon.config file
+## Task 1: Prepare your dragon.config file
 
 This second lab, will contain some new JSON data. These data will be loaded later into the `purchase_orders` collection.
 
@@ -28,7 +28,7 @@ database_collections=purchase_orders
 
 Removing the Lab1 `employees` collection name will avoid loading again the same data a second time. 
 
-## **STEP 2**: Override your existing React stack 
+## Task 2: Override your existing React stack 
 
 Overriding basic stacks is really easy, you'll need to position yourself inside the parent directory of your stack folder (default being: `frontend`) and run the following comand:
  ```
@@ -46,7 +46,7 @@ In details, it will:
 - download and overwrite the `src/App.js` file to add new code and display the JSON data (once loaded) inside a table
 - download and overwrite the `src/ORDS.js` file to add a new function used to load (using pagination) the JSON data
 
-## **STEP 3**: Run the provided commands to update the stack
+## Task 3: Run the provided commands to update the stack
 Following the previous step, the DRAGON Stack manager advises for some commands to run. 
 
 Basically, this consists of going into the frontend folder:
@@ -82,7 +82,7 @@ For [React](https://reactjs.org/) frontend:
 
 ![React Table displaying JSON documents](images/react-table-for-json-documents.png)
 
-## **STEP 4**: Continue by hacking this Lab
+## Task 4: Continue by hacking this Lab
 
 Of course this is only the beginning. You may add more JSON fields to the [React-Table](https://react-table.tanstack.com/) by working with the `src/App.js` file. 
 

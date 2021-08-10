@@ -31,7 +31,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
 
     ```
@@ -72,7 +72,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -85,7 +85,7 @@ This lab assumes you have:
 
     ![](./images/spatial_sql_developer.png " ")
 
-## **STEP 3**: Example Queries
+## Task 3: Example Queries
 
 Note: See [Appendix: Product Details and Setting Up Spatial Environment ](#Appendix:ProductDetailsandSettingUpSpatialEnvironment) to see the SQL executed in advance.
 

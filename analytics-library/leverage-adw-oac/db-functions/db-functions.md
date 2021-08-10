@@ -34,7 +34,7 @@ _Estimated Lab Time_: 30 minutes
     * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
     * Lab 10: Geo Maps and Custom Binning
 
-## **STEP 1**: Enable Evaluate Support Level
+## Task 1: Enable Evaluate Support Level
 
 First step is to check **Evaluate Support Level** for your OAC instance.  
 That specifies who can issue database functions: \_EVALUATE, EVALUATE_ANALYTIC, EVALUATE\_AGGR, and EVALUATE\_PREDICATE.\_
@@ -71,7 +71,7 @@ Click **Navigator** and select **Home**
 6.  You make sure that **Data Access** is set to **Live** for the Data Sets that will be referenced by the Evaluate function.  
 By setting it to Live, you are ensuring that OAC Server always sends the query to the underlying database and does not retrieve results from cache.  
 You have already configured **DCA\_SALES\_DATA** to **Live**.
-## **STEP 2**: Leverage EVALUATE function
+## Task 2: Leverage EVALUATE function
 
 OAC transparently ships heavy-lift work down to the underlying database engines and makes the most of each specific capabilities of each database system, by automatically shipping proper syntaxes.  
 OAC Evaluate function enables users to create powerful analyses by directly invoking database functions. Evaluate provides a syntax to pass the specified database function with optional OA referenced columns as parameters. It is particularly useful when users wants to call a specialized database function to process a heavy calculation directly in the underlying database.
@@ -205,7 +205,7 @@ Click the **Save** icon from top right.
      ![Save](../db-functions/images/save.png)
 
      Click **Go Back** left arrow ![Go Back](../db-functions/images/goback.png)
-## **STEP 3**: Performance impact of function shipping database functions
+## Task 3: Performance impact of function shipping database functions
 
 To demonstrate the performance impact of function shipping database functions, lets open the **SSB schema** on ADW and run a Count Distinct on Supplier Key.  
 The [SSB schema](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8) provides a well-known large sample data set. The SSB schema in the Autonomous Database contains 1 TB of data. You can use this schema to test the performance of your service. The SSB schema contains the tables: lineorder, customer, supplier, part, and dwdate.

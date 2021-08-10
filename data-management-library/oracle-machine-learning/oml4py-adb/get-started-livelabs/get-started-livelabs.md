@@ -16,7 +16,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 > **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 
-<if type="livelabs">## **Step 1:** Launch the Workshop
+<if type="livelabs">## Task 1: Launch the Workshop
 
 > Note: it takes approximately 20 minutes to create your workshop environment.*
 
@@ -32,7 +32,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 
 </if>
 
-## **Step 1:** Provision an Oracle Autonomous Database
+## Task 1: Provision an Oracle Autonomous Database
 
 To provision an Oracle Autonomous Database:
 

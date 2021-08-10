@@ -18,7 +18,7 @@ This lab assumes you have already completed the following:
 - Sharded Database Deployment
 - Create Demo App Schema
 
-## **STEP 1:** Setup and Configure the Sharding Demo Application
+## Task 1: Setup and Configure the Sharding Demo Application
 
 1. Login to the shard director host, switch to oracle user.
 
@@ -369,7 +369,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Start the Workload
+## Task 2: Start the Workload
 
 1. Start the workload by executing command: `./run.sh demo`.
 

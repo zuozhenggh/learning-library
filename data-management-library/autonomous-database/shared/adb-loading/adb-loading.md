@@ -36,11 +36,11 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 - **Loading Method 2**: Create and load two ADW tables with sample data that you stage in an *OCI Object Store*, using the Database Actions DATA LOAD tool.
 - **Loading method 3**: Create ADW tables using SQL Worksheet and load them with sample data that you stage in an *OCI Object Store*, using the PL/SQL *`DBMS_CLOUD`* package.
 
-## **STEP 1**: Download Sample Data for Loading from Local File
+## Task 1: Download Sample Data for Loading from Local File
 
 1. For this step, you will download a .csv file containing CHANNELS information to your local computer, then use it to populate a CHANNELS_LOCAL table in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/pK5PL_ui1Q7OgZE6gh2WgR0Wyw6TiPyz7pkY5KkKUmc8NkmaccIHHHA8u0gbZnmd/n/c4u04/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
-## **STEP 2**: Load Local Data Using the Database Actions DATA LOAD Tool
+## Task 2: Load Local Data Using the Database Actions DATA LOAD Tool
 
 1. In your ADW Finance Mart database's details page, click the **Tools** tab. Click **Open Database Actions**.
 
@@ -86,13 +86,13 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
     ![View the new table in the Explore tool.](./images/view-new-table.png " ")
 
-## **STEP 3**: Download Sample Data for Staging to Object Store
+## Task 3: Download Sample Data for Staging to Object Store
 
 In Steps 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent steps.
 
 1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/FNddNM_ga0qV-01p7an3Gkg4cpApXppFJwWYK_BzsH94qgZHibssWbhOHO87QUMp/n/c4u04/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
 
-## **STEP 4**: Navigate to Object Storage and Create Bucket
+## Task 4: Navigate to Object Storage and Create Bucket
 
 In OCI Object Storage, a bucket is the terminology for a container of multiple files.
 
@@ -114,7 +114,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![Enter the required details and click Create.](images/click-create-to-create-the-bucket.png " ")
 
-## **STEP 5**: Upload Files to Your OCI Object Store Bucket
+## Task 5: Upload Files to Your OCI Object Store Bucket
 
 1. Click your **bucket name** to open it:
 
@@ -132,7 +132,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![The objects section after all files have been uploaded.](images/list-of-uploaded-objects.png " ")
 
-## **STEP 6**: Object Store URL
+## Task 6: Object Store URL
 
 1. Locate the base URL of the objects in your object store. The simplest way to get this URL is to click **View Object Details** in the ellipsis menu to the right of any uploaded file in the Object Store.
 
@@ -148,7 +148,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     `https://objectstorage.<`**region name**`>.oraclecloud.com/n/<`**namespace name**`>/b/<`**bucket name**`>/o`
 
-## **STEP 7**: Creating an Object Store Auth Token
+## Task 7: Creating an Object Store Auth Token
 
 To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the native URI, and the OCI user Auth Token.
 
@@ -178,7 +178,7 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
 6. Click **Close** to close the Generate Token dialog.
 
-## **STEP 8**: Loading Data from the Object Store using Database Actions DATA LOAD Tool
+## Task 8: Loading Data from the Object Store using Database Actions DATA LOAD Tool
 
 In the first part of this lab, you loaded data from a file that you located on your local computer. In this part of the lab, you are going to load some more data, but this time you will load data from 2 of the files you uploaded to the Oracle Object Store. There are two parts to this process and the first part only needs to be performed once. The two parts are:
 
@@ -241,7 +241,7 @@ In the first part of this lab, you loaded data from a file that you located on y
 
 **Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
 
-## **STEP 9**: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
+## Task 9: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
 
 As an alternative to the wizard-guided data load, you can use the PL/SQL package `DBMS_CLOUD` directly. This is the preferred choice for any load automation.
 
@@ -296,7 +296,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 
     ![](./images/sample-query-rel-analytics.png " ")
 
-## **STEP 10**: Troubleshooting DBMS_CLOUD data loads
+## Task 10: Troubleshooting DBMS_CLOUD data loads
 
 1. Connected as your user in SQL Worksheet, run the following query to look at past and current data loads.
     ```

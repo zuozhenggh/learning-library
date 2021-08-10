@@ -15,7 +15,7 @@ In this tutorial, you'll create web pages that display the data from these busin
 
 In this tutorial, you'll create one page to display departments and another to display employees. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, to create a new instance of the business object).  The button is associated with an _event_, and the event sets off an _action chain_, which is a sequence of actions that the application executes.
 
-## **STEP 1**: Use the main-start Page to Display Departments
+## Task 1: Use the main-start Page to Display Departments
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created.
 
@@ -65,7 +65,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
 
 
-## **STEP 2**: Add a Create Page for the Department Business Object
+## Task 2: Add a Create Page for the Department Business Object
 
 A Create page allows you to populate your table with data by creating new instances of a business object.
 
@@ -104,7 +104,7 @@ A Create page allows you to populate your table with data by creating new instan
 
 9.  Click **Design** to return to Design view.
 
-## **STEP 3**: Add a Page to Display Employees
+## Task 3: Add a Page to Display Employees
 
 In this step, you'll create a page to display employees, similar to the one you created for departments.
 
@@ -139,7 +139,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
 12.  In **Columns, Header Text** field, change `Name` to `Department`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.
 
-## **STEP 4**: Add a Create Page for the Employee Business Object
+## Task 4: Add a Create Page for the Employee Business Object
 
 1.  Click the **Quick Start** tab, then click **Add Create Page**.
 2.  On the Select Endpoint page, select the **Employee** business object, if necessary, and click **Next**.
@@ -169,7 +169,7 @@ In this step, you'll create a page to display employees, similar to the one you 
 
 11.  Click **Structure** again to close the structure view.
 
-## **STEP 5**: Change the Name of the main-start Page
+## Task 5: Change the Name of the main-start Page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
 

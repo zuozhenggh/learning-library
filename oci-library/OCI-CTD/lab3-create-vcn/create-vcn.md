@@ -13,7 +13,7 @@ Estimated time: 15 minutes
 
 * Make sure to have your own compartment created
 
-## **Step 1**: Navigate to Virtual Cloud Networks Section
+## Task 1: Navigate to Virtual Cloud Networks Section
 
 Using the top _Hamburger menu_ navigate to the _Networking -> Virtual Cloud Networks_ section. On the left toolbar you will see a Compartment explorer. Make sure it is set to your newly created compartment.
 Use the [+] to expand the Workshop compartment.
@@ -21,7 +21,7 @@ If you do not see your newly created compartment, you want to refresh / reload y
 
 ![](images/compartment-explorer.png " ")
 
-## **Step 2** Creating a VCN
+## **Task $1: 2** Creating a VCN
 
 You have 2 options on how to create your VCN. If this is your first time, it is
 **recommended** to use the Wizard. The Wizard can automatically create the VCN with Subnets for you and also ensure there is an Internet Gateway configured with the correct routing tables for the public subnet.

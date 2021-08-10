@@ -38,7 +38,7 @@ In this lab you will perform the following steps:
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## **STEP 0:** Running your Workload
+## Task 0: Running your Workload
 ### Login to Host using SSH Key based authentication
 1. Refer to *Lab 2* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
     - Authentication OS User - “*opc*”
@@ -115,7 +115,7 @@ In this lab you will perform the following steps:
 
     ![](images/emopt2start.jpg " ")
 
-## **STEP 1:** Performance Hub
+## Task 1: Performance Hub
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -181,7 +181,7 @@ In this lab you will perform the following steps:
 
 16. **Click** on “Save” button on top right corner of the page. This will help you to save this monitored execution in “.html” format, which you can use it to share or to diagnose offline.
 
-## **STEP 2:** Real-Time Database Operations Monitoring
+## Task 2: Real-Time Database Operations Monitoring
 
   - Login as user "opc",
   - Sudo over to user "oracle"
@@ -219,7 +219,7 @@ Now execute the file \@DBOP.sql
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## **STEP 3:** Tuning a SQL in a PDB
+## Task 3: Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -281,7 +281,7 @@ Now execute the file \@DBOP.sql
 
 This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity.
 
-## **STEP 4:** SQL Performance Analyzer Optimizer Statistics
+## Task 4: SQL Performance Analyzer Optimizer Statistics
 
 In this activity we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -394,7 +394,7 @@ You have now learned how to work with SPA. As you can see there are Guided Workf
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **STEP 5:** Database Workload Replay
+## Task 5: Database Workload Replay
 
 1. Create a Replay Task
 You need to open two SSH sessions to your dedicated VM host as user "opc" using the provided SSH key.  

@@ -7,7 +7,7 @@ The Oracle Cloud Infrastructure Notifications service broadcasts messages  to di
 The Notifications service enables you to set up communication channels for publishing messages using topics  and subscriptions . When a message is published to a topic, the Notifications service sends the message to all of the topic's subscriptions.
 In this lab we will verify notifications when a compute instance is launched and deleted.
 
-## **Step 1:** Sign in to OCI Console and configure Notification and Event
+## Task 1: Sign in to OCI Console and configure Notification and Event
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
@@ -64,7 +64,7 @@ In this lab we will verify notifications when a compute instance is launched and
 
 We have now configured Notification service and tied events to it with a specific compartment. When a new compute instance is launched or terminated an email notification will be sent to the email address specified.
 
-## **Step 2:** Create VCN
+## Task 2: Create VCN
 
 1. From the OCI Services menu, under **Networking**, click **Virtual Cloud Networks**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and click **Start VCN Wizard**.
 
@@ -90,7 +90,7 @@ We have now configured Notification service and tied events to it with a specifi
 6. Click **View Virtual Cloud Network** to display your VCN details.
 
 
-## **Step 3:** Create compute instance and verify notification
+## Task 3: Create compute instance and verify notification
 
 1. From OCI services menu, Click **Instances** under **Compute**.
 
@@ -127,7 +127,7 @@ We have now configured Notification service and tied events to it with a specifi
 
 6. Switch to your email account and verify an event indicating compute instance create was received.
 
-## **Step 4:** Delete the resources
+## Task 4: Delete the resources
 
 1. Switch to  OCI console window.
 

@@ -7,6 +7,7 @@ This lab introduces the suite of data tools built into the Oracle Autonomous Dat
 Estimated Time: 1 hour, 15 minutes
 
 ### Objectives
+In this lab, you will:
 - Familiarize with the suite of built-in database tools of the Oracle Autonomous Data Warehouse
 - Load data
 - Learn how to use the Data Transforms tool to correct data errors
@@ -15,7 +16,10 @@ Estimated Time: 1 hour, 15 minutes
 - Use the Catalog tool
 
 ### Prerequisites
-- This lab requires completion of the previous labs in the Contents menu on the left.
+
+To complete this lab, you need to have the following:
+
+- All previous labs successfully completed
 
 ## Task 1: Overview of Built-In Data Tools Suite
 
@@ -374,8 +378,8 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 7. Notice that the business model tool has detected a hierarchy of Countries within Continents, based on the structure and contents of the tables in the Autonomous Data Warehouse. 
   ![ALT text is not available for this image](images/2879071212.png)
 
-8. This is a great head start, but a better term to use for this hierarchy would be geography. Override the default **Hierarchy Name**, **Caption**, and **Description** for this hierarchy with the word **Geography** as shown below. Then click **Save**. 
-  ![ALT text is not available for this image](images/2879071213.png)
+8. This is a great head start, but a better term to use for this hierarchy would be geography. Override the default **Hierarchy Name** with **GEOGRAPHY**. Override **Caption** and **Description** with **Geography** as shown below. Then click **Save**. 
+  ![ALT text is not available for this image](images/geography.png)
 
 9. Clean up hierarchy DAYS:
 
@@ -388,7 +392,7 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
   ![ALT text is not available for this image](images/sort-day.png)
 
 11. Similarly, change the MONTHS dimension as follows:
-  ![ALT text is not available for this image](images/2879071217.png)
+  ![ALT text is not available for this image](images/month.png)
 
 ### Work With Measures
 

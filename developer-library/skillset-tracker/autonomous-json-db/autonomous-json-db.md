@@ -20,7 +20,7 @@ To complete this lab, you must have:
 * An existing compartment in which the ADB will reside.
 * SQL Developer Installed on your local machine.
 
-## **STEP 1:** Understand the Sample JSON Files
+## Task 1: Understand the Sample JSON Files
 In this step you are going to understand the structure of the two sample JSON files (_sample\_skills.json_ and _sample\_users.json_). However, you should know that you can change these ones in any way, depending on your business need.
 
 1. Download the two sample JSON files [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yMnZyy1OnckGYo29oHIqULDWwFKvqtc7uXwsDFyhRxlZO_N1oiRMr6Oj-KYKVQtr/n/c4u04/b/labfiles/o/Lab4-Sample_JSON.zip).
@@ -57,7 +57,7 @@ In this step you are going to understand the structure of the two sample JSON fi
     | MANAGER | Y or N             | Y                |
     | USER    | N                  | N                |
 
-## **STEP 2:** Create Autonomous JSON Database
+## Task 2: Create Autonomous JSON Database
 
 In order to create an Autonomous JSON Database you must first login on the OCI Console, then follow the steps, as described below:
 
@@ -81,7 +81,7 @@ In order to create an Autonomous JSON Database you must first login on the OCI C
 
   ![create ADB form step 3](./images/create-adb-form-3.png)
 
-## **STEP 3:** Download database Wallet & connect to the database
+## Task 3: Download database Wallet & connect to the database
 
 In order to connect to the database using SQL Developer, you must first download the wallet to your local machine.
 
@@ -101,7 +101,7 @@ In order to connect to the database using SQL Developer, you must first download
 
   ![SQL Developer conection form](./images/sql-developer-connection-form.png)
 
-## **STEP 4:** Create New Database User and Grant Needed Roles
+## Task 4: Create New Database User and Grant Needed Roles
 
 Considering the fact that you previously connected to the database using the _ADMIN_ user, you need to run the following commands in order to create a new user _SKILLSET_ which will be used by the application.
 
@@ -127,7 +127,7 @@ Considering the fact that you previously connected to the database using the _AD
       </copy>
       ```
 
-## **STEP 5:** Upload Sample JSON Files in Object Storage & Create PAR URL for Each of Them
+## Task 5: Upload Sample JSON Files in Object Storage & Create PAR URL for Each of Them
 
 In order to be able to create the SODA document collections in the database from the sample JSON files, you must first upload them in a Standard Object Storage Bucket. In this step you will need the two JSON files downloaded at the beginning of this lab (_sample\_skills.json_ and _sample\_users.json_).
 
@@ -156,7 +156,7 @@ In order to be able to create the SODA document collections in the database from
 
   ![PAR URL](./images/create-par-result-url.png)
 
-## **STEP 6:** Create SODA Collections
+## Task 6: Create SODA Collections
 
 Login in SQL Developer using the _**SKILLSET**_ user created at **STEP 4: Create new database user and grant needed roles** and run the following commands to create the two collections (skills and users), as well as unique indexes for the **email** field in each of them.
 
@@ -310,7 +310,7 @@ Login in SQL Developer using the _**SKILLSET**_ user created at **STEP 4: Create
       </copy>
       ```
 
-## **STEP 7:** Create a View on a Collection
+## Task 7: Create a View on a Collection
 
 The application is also using a view (called _SKILLSVIEW_) on the _skillscollection_ and since it would be hard to write the SQL script by hand, you can use the PL/SQL block below to dynamically build the **create view** script and execute it.
 

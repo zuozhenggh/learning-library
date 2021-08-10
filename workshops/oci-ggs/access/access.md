@@ -19,7 +19,7 @@ In this lab, you will locate the Oracle Cloud GoldenGate deployment console and 
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: Accessing the Deployment Console
+## **Task $1: 1**: Accessing the Deployment Console
 
 To access the deployment console:
 

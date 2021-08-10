@@ -24,7 +24,7 @@ To set up the OCI tenancy, in this lab, you will:
 To have the greatest success in completing this lab make sure you meet the following criteria:
 * You have a general knowledge of OCI and its web interface
 
-## **STEP 1**: Generate an SSH Key Pair
+## Task 1: Generate an SSH Key Pair
 
 In this section you will generate a Secure Shell (SSH) key pair that you will use to connect to your instance.
 
@@ -114,7 +114,7 @@ There are many tools available for Windows users to create SSH key pairs and con
 12. Save this file to the same known location with any file name and a .ppk extension (example: OCISSHKey.ppk).
 
 
-## **STEP 2**: Create a Compartment 
+## Task 2: Create a Compartment 
 
 In this part of the lab, we create a compartment to organize the resources we will create.
 
@@ -135,7 +135,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 4.  Choose a Name (e.g. “**TestDrive**”), fill out the form and click the   button. Note: that the parent compartment should be the root compartment.
     ![](./images/test-drive.png " ")
 
-## **STEP 3:**  Create a Virtual Cloud Network (VCN)
+## Task 3:  Create a Virtual Cloud Network (VCN)
 
 To create a VCN on Oracle Cloud Infrastructure:
 
@@ -177,7 +177,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     ![](./images/vcn-button.png " ")
 
  
-## **STEP 4:**  Establish Security List Rules for JDE 
+## Task 4:  Establish Security List Rules for JDE 
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 

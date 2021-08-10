@@ -35,7 +35,7 @@ In this lab, you will:
 
 - This lab assumes you have provisioned your ATP
 
-## **STEP 1**: Create APEX Workspace
+## Task 1: Create APEX Workspace
 
 1. In this part of the workshop we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
 
@@ -75,7 +75,7 @@ In this lab, you will:
 
     ![ORDS](./images/apex_workspace8.png)
 
-## **STEP 2**: Create a Table with Quick SQL
+## Task 2: Create a Table with Quick SQL
 
 Quick SQL reduces the time and effort required to create SQL tables, triggers, and index structures.
 
@@ -130,7 +130,7 @@ Use Cases:
 
     ![Save SQL Script](./images/quick_sql_run_success.png)
 
-## **STEP 3**: Insert rows in the table
+## Task 3: Insert rows in the table
 
 We are going to mock some data to use it later with your Custom Component.
 
@@ -168,7 +168,7 @@ We are going to mock some data to use it later with your Custom Component.
 
     ![Object Browser Data](./images/object_new_rows.png)
 
-## **STEP 4**: REST Enabling the Database Object
+## Task 4: REST Enabling the Database Object
 
 In the main menu, select **SQL Workshop**, click **RESTful Services**.
 

@@ -10,15 +10,15 @@ You will utilize the following three external JavaScrip libraries/modules:
 
 Estimated Lab Time: 20 minutes
 
-## **STEP 1**: Loading External JavaScript Modules
+## Task 1: Loading External JavaScript Modules
 
-1. Expand the drop-down button on **SQL Workshop** and select **SQL Commands**
+1. Click on the green arrow next to **SQL Workshop**
 
     ![](images/0-0-sql-scripts.png " ")
    
    Then click on **SQL Script**
 
-   Click the **Create** button and enter **javascript modules** for Script Name.
+   Click on **Create** button and set the Script Name to **javascript modules**
 
     ![](images/0-1-create-script.png " ")
 
@@ -87,9 +87,8 @@ Estimated Lab Time: 20 minutes
     end;
     </copy>
     ```
-    Then, paste it into the **Script Editor**
-    
-    Click **Run**
+
+    Click on **Run** button
 
     ![](images/0-2-load-external-modules.png " ")
 
@@ -97,7 +96,7 @@ Estimated Lab Time: 20 minutes
 
     
 
-2. Click **Run Now**
+2. Click on **Run Now** Button
     
     ![](images/0-3-load-external-modules.png " ")
 
@@ -105,13 +104,11 @@ Estimated Lab Time: 20 minutes
 
     ![](images/0-4-load-external-modules.png " ")
 
-## **STEP 2**: Preparing the Form
+## Task 2: Preparing the Form
 
 1. Let's add an email column to project_tasks table
 
-    Expand the drop-down button on **SQL Workshop** and select **SQL Commands**
-    
-    Copy and paste the following code in **SQL Commands**:
+    Copy and run the following code in **SQL Commands**:
 
     ```
     <copy>
@@ -119,23 +116,13 @@ Estimated Lab Time: 20 minutes
     </copy>
     ```
 
-    Then click **Run**
-
     ![](images/1-add-columns.png " ")
 
 2. Navigate to **Page 5** in **Page Designer**
 
-    Click **App Builder**
-    
-    Click **Project Tasks**
-    
-    Next Click **5 - Project Task**
-    
-    Now, you are in the **Page Designer** page
-
     ![](images/2-project-task-form.png " ")
 
-3. Click **Rendering** tab, then right click on **Items** and click the **Create Page Item** menu item
+3. Right click on **Items** and click the **Create Page Item** menu item
 
     ![](images/3-create-email.png " ")
 
@@ -159,7 +146,7 @@ Estimated Lab Time: 20 minutes
 
     ![](images/5-status-item.png " ")
 
-6. Click on **P5\_END\_DATE** and hold the **Control** Key if you are using Windows or **Command** Key if you are using Mac and click on **P5_BUDGET**. Both items will be selected now. Update the **Start New Row** value to **disabled**.
+6. Click on **P5\_END\_DATE** and hold the **Control** Key and click on **P5_BUDGET**. Both items will be selected now. Update the **Start New Row** value to **disabled**.
 
     ![](images/6-start-date-budget.png " ")
 
@@ -175,7 +162,7 @@ Estimated Lab Time: 20 minutes
 
     ![](images/8-selector-region.png " ")
 
-9.  Update the property values for the new Sub Region as the following:
+9. Update the property values for the new Sub Region as the following:
 
     **Title** => **Display Selectors** 
     
@@ -188,9 +175,7 @@ Estimated Lab Time: 20 minutes
         
     ![](images/9-selector-region-sub1.png " ")
 
-11. In the Property Editor, enter / select the following: 
-    - Identification > Title: **Main** 
-    - Appearance > Template: **Blank with Attributes**
+11. Call the new Sub Region **Main** and set the **Template** to **Blank with Attributes**
     
     ![](images/9-selector-region-sub1-details.png " ")
 
@@ -230,7 +215,7 @@ Estimated Lab Time: 20 minutes
 
     ![](images/11-page-5.png " ")
 
-## **STEP 3**: Loading External JavaScript Modules
+## Task 3: Loading External JavaScript Modules
 Now that our form is design ready, it is time to create a process that will fetch the JavaScript library from the mle_module table.
 
 1. Go to the **Shared Components** of the application in the **App Builder**
@@ -239,7 +224,7 @@ Now that our form is design ready, it is time to create a process that will fetc
 
     ![](images/12-shared-components.png " ")
 
-2. Click **Create** and change the following:
+2. Click on Create button and set the followings:
    
    **Name** => **Setup MLE**
 
@@ -300,13 +285,13 @@ Now that our form is design ready, it is time to create a process that will fetc
 
     ![](images/15-setup-mle3.png " ")
 
-5. The new process is created and it will run before computations and validations to fetch any required JavaScript module from MLE_MODULE table
+5. The new process is created and it will run before compuations and validations to fetch any required JavaScript module from mle_module table
 
     Click on **Edit Page** button on top right
 
     ![](images/16-setup-mle4.png " ")
 
-## **STEP 4**: Email Validation
+## Task 4: Email Validation
 
 1. In the top of the **Page Designer** type **5** and click **Go** button to start editing Page 5
 
@@ -334,7 +319,7 @@ Now that our form is design ready, it is time to create a process that will fetc
 
     ![](images/20-email-validation3.png " ")
 
-## **STEP 5**: QR Code Generation
+## Task 5: QR Code Generation
 Next you will utilize the QR Code Generation JavaScript module to generate QR Code for the URL page item.
 
 1. Right click on **QR Code** sub region and click on **Create Page Item** menu item
@@ -355,11 +340,9 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
 
     ![](images/22-qr2.png " ")
 
-3. Duplicate the page item, P5_URL by right-clicking and selecting **Duplicate**:
+3. Create another page item with the following property values:
    
    **Name** => **P5_QRCODE**
-
-   **Type** => **Display Image**
 
    **Label** => make this blank
 
@@ -367,7 +350,7 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
 
     ![](images/23-qr3.png " ")
 
-4. Right click on **Region Buttons** under the Buttons in the **Dialog Footer** and click **Create Button** menu item 
+4. Right click on **Region Buttons** and click on **Create Button** menu item 
 
     ![](images/24-qr-button.png " ")
 
@@ -391,8 +374,8 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
 
     ![](images/25-qr-button2.png " ")
 
-6. Navigate to the **Processing** tab at the top-left of the screen
-    
+6. Click on **Processing** tab
+
     Right click on **Processes** and click **Create Process** menu item
 
     ![](images/26-create-process.png " ")
@@ -422,8 +405,6 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
     </copy>
     ```
 
-    **Sequence** => **5**
-
     **When Button Pressed** => **Generate\_QR\_Code**
 
     Finally click **Save** button
@@ -442,12 +423,12 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
 
     ![](images/29-test-qr.png " ")
 
-## **STEP 6**: Markdown Conversion to HTML
-The final step is to create a Project Details page item. The page item will save the project details for the task in Markdown format. 
+## Task 6: Markdown Conversion to HTML
+The final step is to create a Project Details page item. The poge item will save the project details for the task in Markdown format. 
 
 Then you will use the Markdown module to generate and preview the details in HTML.
 
-1. Click **Rendering** tab, then Right Click on **Markdown Details** region and click on **Create Page Item** menu item
+1. Right Click on **Markdown Details** region and click on **Create Page Item** menu item
 
     ![](images/30-project-details.png " ")
 

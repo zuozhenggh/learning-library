@@ -7,10 +7,10 @@ While extending the end date you need to avoid extending tasks that have '**Clos
 
 Estimated Time: 15 minutes
 
-## **STEP 1**: Using SQL Workshop to write Pseudo Code
+## Task 1: Using SQL Workshop to write Pseudo Code
 Reviewing the above requirement, we can test the In-Database JavaScript code using **SQL Commands** under **SQL Workshop**. We will write a pseudo code to extend the **Email Integration** project's tasks.
 
-1. Expand the drop-down button on **SQL Workshop** and Select **SQL Commands**.
+1. Click on the **SQL Workshop** arrow icon and then click on **SQL Commands** menu Item.
   
     ![](images/0-sql-commands.png " ")
 
@@ -31,11 +31,10 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
 
     ![](images/1-query-table.png " ")
 
-4. The code below allows developers to switch the context between PL/SQL and JavaScript. It also allows them to evaluate and run In-Database JavaScript code.
-
-    The code utilizes the DBMS_MLE package in Oracle Database 21c. Copy the code and see how it works in the SQL Commands window.
-    
-    Ensure you clear the content on the previous query before continuing.
+4. Examine the following code. The code is utilizing the DBMS_MLE package in Oracle Database 21c. The package will allow developers to switch the context from PL/SQL to JavaScript.
+   
+   It will allow them as well to evaluate and run In-Database JavaScript code.
+   Copy the code.
 
     ```
     <copy>
@@ -74,7 +73,7 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
 
     ![](images/2-sql_workshop_plsql.png " ")
 
-6. Next, copy and run this query again. This is the same query from Number 2.
+6. Copy and run the following query again.
    
     ```
     <copy>
@@ -115,11 +114,11 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
    
    Click the **Run** button and note the IDs for the extended tasks.
    
-   The code you just pasted is written in native JavaScript.
+   This time the code is written in JavaScript natively.
 
     ![](images/4-sql_workshop_javascript_mle.png " ")
 
-9. Copy and run this query again.
+9. Let's run copy and run the following query again.
     
     Set the **Language** attribute to **PL/SQL**.
    
@@ -129,18 +128,18 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
     </copy>
     ```
     
-    Observe the end dates column values. You will see the dates have been extended by a day. This code produces the same result and is shorter and more organized than the previous code from Number 5.
+    Observe the end dates column values. The dates have been extended by one day. The same effect with less and more organized JavaScript code.
 
     ![](images/4-1-query.png " ")
 
 
 
-## **STEP 2**: Prepare Report
-Now that we have completed testing the pseudocode, let us navigate to the **Project Tasks Report** page and then click on **Edit Page 4** on the developer tool bar.
+## Task 2: Prepare Report
+Now that we have completed testing the pseudo code. Let's navigate to **Project Tasks Report** page and then click on **Edit Page 4** on the developer tool bar.
 
 1. Click **Actions** => **Columns**.
    
-   Select **Project** column from the right side and click on the **Left** arrow button to remove it from the display columns. Then click **Apply**.
+   Select **Project** column from the right side and click on the **Left** arrow button to remove it from the display columns.
 
     ![](images/1-remove-project-column.png " ")
 
@@ -156,7 +155,7 @@ Now that we have completed testing the pseudocode, let us navigate to the **Proj
    
     ![](images/4-edit-page-4.png " ")
 
-5. Right click on the **Content Body** button and then click the **Create Region** menu item to create a new region.
+5. Right click on the **Content Body** and then click on the **Create Region** menu item.
    
    The region will hold the newly to be created Project's select list.
 
@@ -208,7 +207,7 @@ Now that we have completed testing the pseudocode, let us navigate to the **Proj
 
 10. Set the following property values for the new button:
     
-    **Button Name** => **Extend\_Project\_Tasks**
+    **Name** => **Extend\_Project\_Tasks**
     
     **Label** => **Extend Project Tasks**
     
@@ -218,7 +217,7 @@ Now that we have completed testing the pseudocode, let us navigate to the **Proj
 
     ![](images/9-add-button.png " ")
 
-    Click on **Template Options** button under **Appearance**
+    Click on **Template Options** button
 
     Update **Type** => **Warning** and then click **OK** button
 
@@ -230,7 +229,7 @@ Now that we have completed testing the pseudocode, let us navigate to the **Proj
 
     ![](images/11-report-after-prepare.png " ")
 
-11. Navigate back to **Page Designer** for **Page 4** and select the **Project Tasks** report.
+11. Navigate back to **Page Designer** for **Page 4** and select the **Project Task** report.
 
     Update the following property values:
 

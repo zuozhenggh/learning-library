@@ -24,7 +24,7 @@ Watch the end-to-end demonstration:
 
 *Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## **Task $1: 1A**: Create Stack:  Compute + Networking
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
@@ -81,7 +81,7 @@ Enter or select the following:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## **Task $1: 1B**: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Egress rules for the following ports:  9851, 7803, 22          
 
@@ -145,7 +145,7 @@ Enter or select the following:
 
     ![](./images/em-stack-details-b.png " ")
 
-## **Step 2:** Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. You may skip to Step 3.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -162,7 +162,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
     ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3:** Terraform Apply
+## Task 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and instance(s) containing a pre-configured Enterprise Manager 13c with running database targets.
@@ -183,7 +183,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
     ![](./images/em-stack-apply-results-3.png " ")
 
-## **Step 4:** Connect to your instance
+## Task 4: Connect to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
   - *NOTE 1:  If you are using your laptop to connect your corporate VPN may prevent you from logging in.*

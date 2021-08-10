@@ -21,7 +21,7 @@ In this lab, you will:
 ### Prerequisites
 * Capture Oracle Database Changes Introduction
 
-## **STEP 1:** Capture initial schema and code
+## Task 1: Capture initial schema and code
 
 1. Create a new folder for database changes in your project main folder.
 
@@ -82,7 +82,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 2:** Create a master changelog for the project
+## Task 2: Create a master changelog for the project
 
 1. Create a Liquibase master changelog to reference other changelogs in your project. The master changelog is used to break up your entire changelog into more manageable pieces, by creating multiple changelogs to separate your changesets in a way that makes sense for your project. Paste and click Run Script ![](./images/run-script.jpg "").
 
@@ -207,7 +207,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 3:** Create new database objects and stored code
+## Task 3: Create new database objects and stored code
 
 1. This is **Developer #2** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -358,7 +358,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 4:** Modify objects, add code, and re-capture changes
+## Task 4: Modify objects, add code, and re-capture changes
 
 1. Now comes **Developer #3** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -496,7 +496,7 @@ In this lab, you will:
 13. On GitHub, click on **cicd-ws-rep00** link in the breadcrumbs at the top of the page. On the right side, under Releases, click Create a new release. Create a Release called '**Version 3 production**', use Tag version '**V3**'. Click **Publish release**.
 
 
-## **STEP 5:** Working on patch that changes columns in table
+## Task 5: Working on patch that changes columns in table
 
 1. Once more, **Developer #1** from your team, pulls the updates from this Git repository on hers/his local development environment, working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -575,7 +575,7 @@ In this lab, you will:
 15. When finished, you will receive this message: *Pull request successfully merged and closed*. Click **Delete branch**.
 
 
-## **STEP 6:** Modify code and use Git to version changes
+## Task 6: Modify code and use Git to version changes
 
 1. Again, **Developer #2** from your team, pulls the updates from this Git repository, to continue working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -639,7 +639,7 @@ In this lab, you will:
 17. Click again Releases. Under **V3.2** click **Compare**, select **V3**. Review Comparing changes.
 
 
-## **STEP 7:** Provision another Development Database (ATP)
+## Task 7: Provision another Development Database (ATP)
 
 1. On Oracle Cloud Console, click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
 
@@ -726,7 +726,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 8:** Deploy project on a new database
+## Task 8: Deploy project on a new database
 
 1. This is **Developer #3** from your team, that has to work on a new project, using this fresh new database **ATPdev02**. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 

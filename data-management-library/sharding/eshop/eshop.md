@@ -39,7 +39,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Eshop Demonstration
+## Task 1: Eshop Demonstration
 
 1. **eShop URL Access:** When you access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens. 
 
@@ -106,7 +106,7 @@ You can change the address shown in Saved Address if you want to ship products t
  ![](./images/new1.png " ")
 
 
-## **STEP 2**: View Reports
+## Task 2: View Reports
 
 The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
 

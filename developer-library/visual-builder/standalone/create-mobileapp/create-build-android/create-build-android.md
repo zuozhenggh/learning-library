@@ -10,7 +10,7 @@ This lab shows you how to define a build configuration to install a mobile appli
 
 Before you can stage or publish a mobile application, you'll need to create a build configuration that defines deployment information for the Android platform. In this lab, you'll define an Android build configuration, whose settings you'll use to build the mobile application for installation on Android devices in a later lab.
 
-## **STEP 1**: Create a Keystore for Signing the App
+## Task 1: Create a Keystore for Signing the App
 
 Before your mobile application can be deployed to an Android device, it must be signed. Android does not require a certificate authority; an application can instead be self-signed.
 
@@ -26,7 +26,7 @@ If you do not want to create a key, right-click [this sample keystore file](http
   -   **Key alias**: `vbcsdoc_ksalias`
   -   **Key password**: `vbcsdoc_ks_pass`
 
-## **STEP 2**: Define a Build Configuration
+## Task 2: Define a Build Configuration
 
 A build configuration includes deployment configuration and specifies if the build is to be deployed for development or production. Ideally, you'll want to create separate builds: one for development  and another for production with different information for the two environments. For the purposes of this lab, however, we'll only use one build configuration for both.
 

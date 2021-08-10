@@ -29,7 +29,7 @@ This lab assumes you have:
     * Lab: Create Groups and Compare Pairs.
     * Lab: Create and Execute Jobs
 
-## **STEP 1:** Generate SQL Files
+## Task 1: Generate SQL Files
 
 You can generate SQL files only for Jobs that have been configured for datasource connections with the Oracle datatype.
 
@@ -55,7 +55,7 @@ To generate SQL files:
 
       ![](./images/3-view-generated-sql.png " ")
 
-## **STEP 2:** Repair Out-of-Sync Jobs
+## Task 2: Repair Out-of-Sync Jobs
 
   To repair out-of-sync jobs:
   1. From the left navigation pane, click **Finished Jobs** to view the page containing details of all the finished jobs. You can select Jobs, groups, and compare pairs for repairing out-of-sync records.
