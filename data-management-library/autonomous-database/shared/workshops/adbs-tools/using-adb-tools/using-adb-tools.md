@@ -402,7 +402,7 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
     b. Measure PURCHASES is a tally of the number of purchases made.
 
 13. The default aggregation expression for the measures is SUM. Other expressions could be selected, but for the purposes of this workshop, SUM is the appropriate value to select in both cases.
-  ![ALT text is not available for this image](images/2879071218.png)
+  ![ALT text is not available for this image](images/sum.png)
 
 14. Press **Create** and then **Yes** in the confirmation dialog. After a few seconds, the Business Model is successfully created, and represented by a card at the bottom of the screen.
 
