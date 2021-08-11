@@ -20,9 +20,30 @@ In this lab, you will:
 - Understand how to analyze text using OCI Language service via cloud console.
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
-- Familiar with OCI object storage to upload data
-- Tenancy is whitelisted to be able to use AI Language service
+- Tenancy is whitelisted to be able to use OCI Language service
 
+Before you start using OCI Language Service, your tenancy administrator should set up the following policies by following below steps:
+### 1. Navigate to Policies
+Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+![](./images/policy1.png " ")
+### 2. Create Policy
+Click Create Policy
+![](./images/policy2.png " ")
+
+### 3. Create a new policy with the following statements:
+
+If you want to allow all the users in your tenancy to use language service.
+Create a new policy with the below statement:
+```
+allow any-user to use ai-service-language-family in tenancy
+```
+![](./images/policy3.png " ")
+If you want to limit access to a user group.
+Create a new policy with the below statement:
+```
+allow group <group-name> to use ai-service-language-family in tenancy
+```
+![](./images/policy4.png " ")
 
 ## **TASK 1:** Use the Console to analyze text
 
@@ -98,7 +119,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
-    * Rajat Chawla  - Oracle AI Services
-    * Ankit Tyagi -  Oracle AI Services
+    * Rajat Chawla  - Oracle AI OCI Langauge Services
+    * Ankit Tyagi -  Oracle AI OCI Langauge Services
 * **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI Services, July 2021
+    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021

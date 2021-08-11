@@ -35,7 +35,7 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 * Understand a high level overview of the OCI Language Service
 * Understand the full cycle/workflow of services provided in the OCI Language
 * Learn to use REST API to interact with OCI Language service
-* Learn to use CLI to interact with AI Language service
+* Learn to use CLI to interact with OCI Language service
 * Learn to access OCI Language Service in DataScience NotebookSession
 * Learn to access OCI Language Service in Data Flow.
 
@@ -59,7 +59,7 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 
 ## Acknowledgements
 * **Authors**
-    * Rajat Chawla  - Oracle AI Services
-    * Ankit Tyagi -  Oracle AI Services
+    * Rajat Chawla  - Oracle AI OCI Langauge Services
+    * Ankit Tyagi -  Oracle AI OCI Langauge Services
 * **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI Services, July 2021
+    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021

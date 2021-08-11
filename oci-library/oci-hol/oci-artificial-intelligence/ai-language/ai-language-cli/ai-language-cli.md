@@ -1,4 +1,4 @@
-# Lab 2: Access AI Language Service with OCI CLI
+# Lab 2: Access OCI Language Service with OCI CLI
 
 ## Introduction
 
@@ -26,12 +26,7 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-### **TASK 1:** Install CLI
-
-To install and use the CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
-
-
-### **TASK 2:** AI Language Service Pre-Deployed CLI Command
+## **TASK 1:** OCI Language Service Pre-Deployed CLI Command
 
 ```Python
 oci ai language detect-language --text, -? | -h | --help
@@ -49,9 +44,33 @@ oci ai language detect-sentiments --text, -? | -h | --help
 oci ai language detect-text-classification --text, -? | -h | --help
 ```
 
-For information about using the CLI, see [Command Line Interface (CLI)](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm#Command_Line_Interface_CLI).
-For a complete list of flags and options available for CLI commands, see the [Command Line Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/).
+## **TASK 2:** Analyze Text using Cloud Shell
 
+### 1: Navigate to Cloud Shell
+
+Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
+![](./images/cloudShellIcon.png " ")
+
+### 2: Enter Language CLI Command
+
+Enter any one of the Language Pre-Deployed CLI commands you want to execute.
+![](./images/cloudShellCommand.png " ")
+
+### 2: View Result
+
+The Language service displays the results as shown below:
+![](./images/clousShellResult.png " ")
+
+
+
+<!-- ## **TASK 3:**To Install CLI in your Local
+To install and use the CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
+
+
+For information about using the CLI, see [Command Line Interface (CLI)](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm#Command_Line_Interface_CLI).
+For a complete list of flags and options available for CLI commands, see the [Command Line Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/). -->
+
+To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 
 Congratulations on completing this lab!
 
@@ -59,7 +78,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
-    * Rajat Chawla  - Oracle AI Services
-    * Ankit Tyagi -  Oracle AI Services
+    * Rajat Chawla  - Oracle AI OCI Langauge Services
+    * Ankit Tyagi -  Oracle AI OCI Langauge Services
 * **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI Services, July 2021
+    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021

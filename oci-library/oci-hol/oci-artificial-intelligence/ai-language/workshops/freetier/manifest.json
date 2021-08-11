@@ -18,14 +18,24 @@
             "filename": "../../analyze-text/analyze-text.md"
         },
         {
-            "title": "Lab 2: Access AI Language Service with REST API",
-            "description": "Learn how to access AI Language service with REST API",
+            "title": "Lab 2: Access OCI Language Service with OCI CLI",
+            "description": "Learn how to access OCI Language service with CLI",
+            "filename": "../../ai-language-cli/ai-language-cli.md"
+        },
+        {
+            "title": "Lab 3: Access OCI Language Service with Language SDKs",
+            "description": "Learn how to access OCI Language service with Language SDKs",
             "filename": "../../ai-language-sdk/ai-language-sdk.md"
         },
         {
-            "title": "Lab 3: Access AI Language Service with OCI CLI",
-            "description": "Learn how to access AI Language service with CLI",
-            "filename": "../../ai-language-cli/ai-language-cli.md"
+            "title": "Lab 4: Access OCI Language Service with REST API.",
+            "description": "Learn how to access OCI Language Service with REST API.",
+            "filename": "../../oci-language-rest/oci-language-rest.md"
+        },
+        {
+            "title": "Lab 5: Access OCI Language Service in DataScience NotebookSession.",
+            "description": "Learn how to access OCI Language Service in DataScience NotebookSession.",
+            "filename": "../../ai-language-datascience/ai-language-datascience.md"
         },
         {
             "title": "Need Help?",

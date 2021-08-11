@@ -1,4 +1,4 @@
-# Lab 2: Access AI Language Service with REST API
+# Lab 3: Access OCI Language Service with Language SDKs
 
 ## Introduction
 
@@ -7,26 +7,7 @@ Our language services also support to use SDK.
 In this lab session, we will show several code snippets to access our service with SDK.
 
 You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration.
-
-*Estimated Lab Time*: 10 minutes
-
-### Objectives:
-
-* Learn how to use REST API to communicate with our language service endpoints.
-
-### Prerequisites:
-* Familiar with Python programming is required
-* Have a Python environment ready in local
-* Familiar with local editing tools, vi and nano
-* Installed with Python libraries: `oci` and `requests`
-
-## SDK Setup
-
 Oracle Cloud Infrastructure provides a number of Software Development Kits (SDKs) to facilitate development of custom solutions.Software Development Kits (SDKs) Build and deploy apps that integrate with Oracle Cloud Infrastructure services.
-
-
-
-### **TASK 1:** SDK Guides
 
 Each SDK provides the tools you need to develop an app, including code samples and documentation to create, test, and troubleshoot. In addition, if you want to contribute to the development of the SDKs, they are all open source and available on GitHub.
 
@@ -37,14 +18,86 @@ Each SDK provides the tools you need to develop an app, including code samples a
 #### 5. [SDK for Go](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/gosdk.htm#SDK_for_Go)
 #### 6. [SDK for Ruby](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/rubysdk.htm#SDK_for_Ruby)
 
+*Estimated Lab Time*: 10 minutes
+
+### Objectives:
+
+* Learn how to use Language SDKs to communicate with our language service endpoints.
+
+<!-- ### Prerequisites:
+* Familiar with Python programming is required
+* Have a Python environment ready in local
+* Familiar with local editing tools, vi and nano
+* Installed with Python libraries: `oci` and `requests` -->
 
 
-### **TASK 2:** AI Language Service SDK Code Sample
+## **TASK 1:** Setup API Signing Key and Config File
+Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials. 
+Generate an API signing key pair
+### 1. Open User Settings
+Open the Profile menu (User menu icon) and click User Settings.
+![](./images/userProfileIcon.png " ")
 
-The following are a few examples of accessing those API endpoints.
+### 2. Open API Key
+Navigate to API Key and then Click Add API Key.
+![](./images/addAPIButton.png " ")
 
-#### Python Code Sample
-Below is the Python sample code to access API endpoints.
+### 3. Gernerate API Key
+In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
+![](./images/genAPI.png " ")
+
+
+
+### 4. Generate Config File
+Copy the values shown on the console.
+![](./images/conf.png " ")
+
+Create a config file in the .oci folder and paste the values copied.
+Replace the key_file value with the path of your generated API Key.
+![](./images/config2.png " ")
+
+
+
+To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
+
+## **TASK 2:** Prerequisites and Setup for Python
+
+Please follow the steps in the order described.
+Before you go any further, make sure you have Python 3.x version and that it’s available from your command line. You can check this by simply running:
+```
+python --version
+```
+If you do not have Python, please install the latest 3.x version from [python.org ](python.org )
+
+Additionally, you’ll need to make sure you have pip available. You can check this by running:
+```
+$ pip --version
+```
+If you installed Python from source, with an installer from python.org, or via Homebrew you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately.
+
+
+### 1. Create virtualenv
+To create a virtual environment, run the venv module as a script as shown below
+```
+python3 -m venv <name of virtual environment>
+```
+### 2. Activate virtualenv
+Once you’ve created a virtual environment, you may activate it.
+```
+source <name of virtual environment>/bin/activate
+```
+### 3. Install OCI
+Now Install oci by running:
+```
+pip install oci
+```
+
+
+
+
+## **TASK 3:** OCI Language Service SDK Code Sample
+
+#### Python Code
 ```Python
 import oci
  
@@ -83,244 +136,36 @@ output = ai_client.detect_language_text_classification(detect_language_text_clas
 print(output.data)
 
 ```
+Follow Below Steps to Run Python SDK:
+
+### 1. Download Python Code.
+
+Download [this](./files/language.py) file and save it any directory.
+
+### 2. Execute the Code.
+Navigate to the directory where you saved the above file (by default, it should be in the 'Downloads' folder) using your terminal and execute the file by running:
+```
+python language.py
+```
+### 3. Result
+You will see the result as below
+![](./images/result.png " ")
+
+
+
 To Know More Visit [Python OCI-Language](https://docs.oracle.com/en-us/iaas/tools/python/2.43.1/api/ai_language/client/oci.ai_language.AIServiceLanguageClient.html)
 
-#### Java Code Sample
-Below is an example of how to use detectDominantLanguage API.
-```
-package com.oracle.pic.ocas.ailanguage;
- 
-import com.oracle.bmc.ailanguage.model.DetectedLanguage;
-import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
-import com.oracle.bmc.ailanguage.AIServiceLanguageClient;
-import com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails;
-import com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult;
-import com.oracle.bmc.ailanguage.requests.DetectDominantLanguageRequest;
-import com.oracle.bmc.ailanguage.responses.DetectDominantLanguageResponse;
- 
-import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
- 
-public class AIServiceLanguageExample {
- 
-    private static AIServiceLanguageClient client;
- 
-    public AIServiceLanguageExample() throws IOException {
-        ConfigFileAuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider("DEFAULT");
-        client = new AIServiceLanguageClient(provider);
-    }
-    public static void main(String[] args) throws IOException {
- 
-        String text = "Zoom interface is really simple and easy to use. The learning curve is very short thanks to the interface. It is very easy to share the Zoom link to join the video conference. Screen sharing quality is just ok. Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people to zoom bomb";
- 
-        AIServiceLanguageExample aiServiceLanguageExample = new AIServiceLanguageExample();
-        DetectDominantLanguageResult dominantLanguageResult = aiServiceLanguageExample.getDominantLanguage(text);
- 
-        aiServiceLanguageExample.printLanguageType(dominantLanguageResult);
-        client.close();
-    }
- 
-    private DetectDominantLanguageResult getDominantLanguage(String text) {
-        DetectDominantLanguageDetails languageDetails = DetectDominantLanguageDetails.builder().text(text).build();
-        DetectDominantLanguageRequest request = DetectDominantLanguageRequest.builder().detectDominantLanguageDetails(languageDetails).build();
-        DetectDominantLanguageResponse response = client.detectDominantLanguage(request);
-        return response.getDetectDominantLanguageResult();
-    }
 
-    private void printLanguageType(DetectDominantLanguageResult result) {
-        String printFormat = "%s [%s]";
-        System.out.println("========= Dominant Language ========");
-        List<DetectedLanguage> languages = result.getLanguages();
-        List<String> languagesStr = languages.stream().map(language -> language.getName()+ " ("+language.getScore()+")").collect(Collectors.toList());
-        System.out.println(String.join(",", languagesStr));
-        System.out.println("========= End ========");
-        System.out.println();
-    }
-}
-```
-To Know More Visit [Java OCI-Language](https://docs.oracle.com/en-us/iaas/tools/java/2.3.1/)
+To Know About Java SDK Visit [Java OCI-Language](https://docs.oracle.com/en-us/iaas/tools/java/2.3.1/)
 
-#### Go
-Below is an example of how to use detectLanguageKeyPhrases API.
-```
-// This is an automatically generated code sample.
-// To make this code sample work in your Oracle Cloud tenancy,
-// please replace the values for any parameters whose current values do not fit
-// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
-// boolean, number, and enum parameters with values not fitting your use case).
+To Know More Go SDK Visit [Go OCI-Language](https://docs.oracle.com/en-us/iaas/tools/go/45.1.0/ailanguage/index.html)
 
-package main
+To Know More Ruby SDK Visit [Ruby OCI-Language](https://docs.oracle.com/en-us/iaas/tools/ruby/2.14.0/OCI/AiLanguage.html)
 
-import (
-	"context"
-	"fmt"
+To Know More Java Script SDK Visit [Java Script OCI-Language](https://docs.oracle.com/en-us/iaas/tools/typescript/2.0.1/modules/_ailanguage_index_.html)
 
-	"github.com/oracle/oci-go-sdk/v45/ailanguage"
-	"github.com/oracle/oci-go-sdk/v45/common"
-	"github.com/oracle/oci-go-sdk/v45/example/helpers"
-)
 
-func ExampleDetectLanguageKeyPhrases() {
-	// Create a default authentication provider that uses the DEFAULT
-	// profile in the configuration file.
-	// Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file.
-	client, err := ailanguage.NewAIServiceLanguageClientWithConfigurationProvider(common.DefaultConfigProvider())
-	helpers.FatalIfError(err)
-
-	// Create a request and dependent object(s).
-
-	req := ailanguage.DetectLanguageKeyPhrasesRequest{DetectLanguageKeyPhrasesDetails: ailanguage.DetectLanguageKeyPhrasesDetails{Text: common.String("EXAMPLE-text-Value")},
-		OpcRequestId: common.String("LWFJLBWE22RUPXOANJRC<unique_ID>")}
-
-	// Send the request using the service client
-	resp, err := client.DetectLanguageKeyPhrases(context.Background(), req)
-	helpers.FatalIfError(err)
-
-	// Retrieve value from the response.
-	fmt.Println(resp)
-}
-
-```
-To Know More Visit [Go OCI-Language](https://docs.oracle.com/en-us/iaas/tools/go/45.1.0/ailanguage/index.html)
-
-#### Ruby
-Below is an example of how to use detectLanguageTextClassification API.
-
-```
-# This is an automatically generated code sample.
-# To make this code sample work in your Oracle Cloud tenancy,
-# please replace the values for any parameters whose current values do not fit
-# your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
-# boolean, number, and enum parameters with values not fitting your use case).
-
-require 'oci'
-
-# Create a default config using DEFAULT profile in default location
-# Refer to https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File for more info
-config = OCI::ConfigFileLoader.load_config
-
-# Initialize service client with default config file
-ai_language_client =
-  OCI::AiLanguage::AIServiceLanguageClient.new(config: config)
-
-# Send the request to service, some parameters are not required, see API doc for more info
-detect_language_text_classification_response =
-  ai_language_client.detect_language_text_classification(
-    OCI::AiLanguage::Models::DetectLanguageTextClassificationDetails.new(
-      text: 'EXAMPLE-text-Value'
-    )
-  )
-
-# Get the data from response
-puts "#{detect_language_text_classification_response.data}"
-```
-To Know More Visit [Ruby OCI-Language](https://docs.oracle.com/en-us/iaas/tools/ruby/2.14.0/OCI/AiLanguage.html)
-#### Java Script
-Below is an example of how to use detectLanguageSentiment API.
-```
-// This is an automatically generated code sample.
-// To make this code sample work in your Oracle Cloud tenancy,
-// please replace the values for any parameters whose current values do not fit
-// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and
-// boolean, number, and enum parameters with values not fitting your use case).
-
-import * as ailanguage from "oci-ailanguage";
-import common = require("oci-common");
-
-// Create a default authentication provider that uses the DEFAULT
-// profile in the configuration file.
-// Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file.
-
-const provider: common.ConfigFileAuthenticationDetailsProvider = new common.ConfigFileAuthenticationDetailsProvider();
-
-(async () => {
-  try {
-    // Create a service client
-    const client = new ailanguage.AIServiceLanguageClient({
-      authenticationDetailsProvider: provider
-    });
-
-    // Create a request and dependent object(s).
-    const detectLanguageSentimentsDetails = {
-      text: "EXAMPLE-text-Value"
-    };
-
-    const detectLanguageSentimentsRequest: ailanguage.requests.DetectLanguageSentimentsRequest = {
-      detectLanguageSentimentsDetails: detectLanguageSentimentsDetails,
-      opcRequestId: "88YBJIFGR20TWOSVKQSI<unique_ID>"
-    };
-
-    // Send request to the Client.
-    const detectLanguageSentimentsResponse = await client.detectLanguageSentiments(
-      detectLanguageSentimentsRequest
-    );
-  } catch (error) {
-    console.log("detectLanguageSentiments Failed with error  " + error);
-  }
-})();
-```
-To Know More Visit [Java Script OCI-Language](https://docs.oracle.com/en-us/iaas/tools/typescript/2.0.1/modules/_ailanguage_index_.html)
-
-#### DOT NET
-Below is an example of how to use detectLanguageEntities API.
-```
-// This is an automatically generated code sample. 
-// To make this code sample work in your Oracle Cloud tenancy, 
-// please replace the values for any parameters whose current values do not fit
-// your use case (such as resource IDs, strings containing ‘EXAMPLE’ or ‘unique_id’, and 
-// boolean, number, and enum parameters with values not fitting your use case).
-
-using System;
-using System.Threading.Tasks;
-using Oci.AilanguageService;
-using Oci.Common;
-using Oci.Common.Auth;
-
-namespace Oci.Sdk.DotNet.Example.Ailanguage
-{
-    public class DetectLanguageEntitiesExample
-    {
-        public static async Task Main()
-        {
-            // Create a request and dependent object(s).
-			var detectLanguageEntitiesDetails = new Oci.AilanguageService.Models.DetectLanguageEntitiesDetails
-			{
-				Text = "EXAMPLE-text-Value"
-			};
-			var detectLanguageEntitiesRequest = new Oci.AilanguageService.Requests.DetectLanguageEntitiesRequest
-			{
-				DetectLanguageEntitiesDetails = detectLanguageEntitiesDetails,
-				OpcRequestId = "QT93ZSFEMJAN75ZIQSEX<unique_ID>",
-				ModelVersion = Oci.AilanguageService.Models.NerModelVersion.V11,
-				IsPii = true
-			};
-
-            // Create a default authentication provider that uses the DEFAULT
-            // profile in the configuration file.
-            // Refer to <see href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File>the public documentation</see> on how to prepare a configuration file. 
-            var provider = new ConfigFileAuthenticationDetailsProvider("DEFAULT");
-            try
-            {
-                // Create a service client and send the request.
-				using (var client = new AIServiceLanguageClient(provider, new ClientConfiguration()))
-				{
-					var response = await client.DetectLanguageEntities(detectLanguageEntitiesRequest);
-					// Retrieve value from the response.
-					var entitiesValue = response.DetectLanguageEntitiesResult.Entities;
-				}
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"DetectLanguageEntities Failed with {e.Message}");
-                throw e;
-            }
-        }
-
-    }
-}
-```
-To Know More Visit [DOT NET OCI-Langauge](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
+To Know More DOT NET SDK Visit [DOT NET OCI-Langauge](https://docs.oracle.com/en-us/iaas/tools/dotnet/23.1.0/api/Oci.AilanguageService.html)
 
 Congratulations on completing this lab!
 
@@ -328,7 +173,7 @@ Congratulations on completing this lab!
 
 ## Acknowledgements
 * **Authors**
-    * Rajat Chawla  - Oracle AI Services
-    * Ankit Tyagi -  Oracle AI Services
+    * Rajat Chawla  - Oracle AI OCI Langauge Services
+    * Ankit Tyagi -  Oracle AI OCI Langauge Services
 * **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI Services, July 2021
+    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021
