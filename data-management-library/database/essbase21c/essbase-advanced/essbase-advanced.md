@@ -9,9 +9,9 @@ This lab walks you through some of the advanced features of Essbase 21c. For exa
 * Overview of Essbase REST API functionality
 * Dimension build using rule file
 
-Estimated Lab Time: *90 minutes*.
+*Estimated Lab Time:* 90 minutes
 
-### **Objectives**
+### Objectives
 
 * Learn how to build rules, calculations and run corresponding jobs.
 * Understand the migration utilities.
@@ -19,8 +19,7 @@ Estimated Lab Time: *90 minutes*.
 
 ### Prerequisites
 
-This lab requires -
-
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
 * Essbase 21c instance
 * Service administrator role
 * Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
@@ -55,13 +54,13 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 4. Now you create the rule file.
 
     * From the Actions menu to the right of the cube, click **Inspect**.
-      ![](./images/Dim_1.png)	
+      ![](./images/Dim_1.png " ")	
 
     * Click **Scripts**, and then **Rules**. The rules editor is displayed, showing the currently defined  rules.
 
     * Click **Create** and select **Dimension Build (Indexed Based)** to define the build dimension rule. 
     An index-based build dimension rule removes dependency of fields to each other and allows the fields to appear in any order.
-      ![](./images/Dim_2.png)
+      ![](./images/Dim_2.png " ")
 
 
     * In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
@@ -80,13 +79,12 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
     * Click **Preview Data**.
 
-      ![](./images/Dim_3.png)
+      ![](./images/Dim_3.png " ")
 
-   
 
     * Click **Proceed**.
 
-     ![](./images/Dim_3_0.png)
+     ![](./images/Dim_3_0.png " ")
 
     You can now preview the dimension structure in the rules editor, with the columns displayed based on the input flat file.
 
@@ -111,19 +109,19 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
        * Now check the field properties for a field. Select the last field column, **Population**.
        
           On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
-          ![](./images/Dim_5.png)
-          ![](./images/Dim_6.png)
+          ![](./images/Dim_5.png " ")
+          ![](./images/Dim_6.png " ")
 
 
        * Click **Dimensions** under the Global toolbar and select **Market**.
 
        * Go to Advanced and Check Allow Property Changes. Click **OK**.
-         ![](./images/Dim_7_0.png)
+         ![](./images/Dim_7_0.png " ")
 
        * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
 
        * Click **Save and Close**.
-         ![](./images/Dim_7.png)
+         ![](./images/Dim_7.png " ")
 
        * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab. 
          Click **Close** to return to the home page.	
@@ -133,7 +131,7 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
     * On the home page, select Jobs, and then New Job.
 
     * Select **Build Dimension**.
-      ![](./images/Dim_8.png)
+      ![](./images/Dim_8.png " ") 
 
     * In the Build Dimension dialog box, from the Application list, select 'DynamicCorp' application.
 
@@ -148,15 +146,15 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
     * From the Restructure Options list, select **Preserve Input Data** for the data you want to preserve.
 
      For input data, only blocks that contain data being loaded are preserved. 
-     ![](./images/Dim_9.png)
+     ![](./images/Dim_9.png " ")
 
     * Click **OK**. The build dimension job is executed.
 
     * On the Jobs page, click **Refresh** to monitor the job status.
 
     * When the job completes, click **Actions** for the executed job, and select **Job Details** to verify the status of your build job.
-    ![](./images/Dim_10.png)
-    ![](./images/Dim_11.png)
+    ![](./images/Dim_10.png " ")
+    ![](./images/Dim_11.png " ")
 
 
 7.	On the Applications home page, to the right of the Sales cube in the DynamicCorp application, open Actions, and then Outline to verify the dimension hierarchy. 
@@ -177,7 +175,7 @@ Create a rule file that is based on a sample file from the data warehouse.
    
     Open the downloaded data file "Data_Basic.txt". Notice that there's no header row and the file delimiter is a comma.
 
-    ![](./images/image14_76.png)
+    ![](./images/image14_76.png " ")
 
 2.	Sign in to the Essbase web interface.
 
@@ -185,13 +183,13 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 4.	Now create the load rule.  
     * In the Sales cube, from the right side hamburger, click **Inspect**.  
-       ![](./images/image14_77.png)
+       ![](./images/image14_77.png " ")
 
 	* On the Scripts tab, select **Rules**. The Rules editor shows defined rules.  
 
 	* Click **Create** and select **Data Load** to define the load data rule.  
 
-	   ![](./images/image14_78.png)
+	   ![](./images/image14_78.png " ")
 
 	* In the New Rule dialog box, enter **LoadCorp** as the name of rule.
 
@@ -205,11 +203,11 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	* Click **Preview Data**.  
 
-	    ![](./images/image14_79.png)
+	    ![](./images/image14_79.png " ")
 
     * Click **Proceed**.
 
-      ![](./images/image14_79_1.png)
+      ![](./images/image14_79_1.png " ")
 
 5.  You can now see the preview of the data in the rules editor based on the input flat file.
 
@@ -219,20 +217,20 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 6. In the rules editor, you can now set up the rule fields.
 
-    ![](./images/image14_80.png)
+    ![](./images/image14_80.png " ")
 
     * Click **Edit** on Field 1 and map the fields as below:
 
-      ![](./images/image14_80_1.png)
+      ![](./images/image14_80_1.png " ")
 
       * Field 1 - Search Product in member tree and double-click or enter Product under Field Name. Click **Next**.
-      ![](./images/image14_80_2.png)
+      ![](./images/image14_80_2.png " ")
       * Repeat the same as above for Field 2- Field 4 and enter the Field Name as mentioned below.
       * Field 2 - Market
       * Field 3 - Year
       * Field 4 - Scenario
       * Field 5 - Search Sales in member tree and select it as Field Name. Check **Data field** option and select the Storage type as **Sum**. Click **Next**.
-        ![](./images/image14_80_3.png)
+        ![](./images/image14_80_3.png " ")
     Repeat the same as above for Field 6 – Field 11 and enter the Field Name as mentioned below.
 
       * Field 6 - COGS
@@ -248,14 +246,14 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     * After defining the rule with field options, click **Verify** on the Global toolbar to validate the syntax and then click **Save and Close**.
 
-      ![](./images/image14_80_4.png)
+      ![](./images/image14_80_4.png " ")
 
     * Click **Refresh**. See that the created rule is now listed in the Rules pane of the Scripts tab.
 
     * Click **Close** to return to the Applications home page. Next create a job to load the data using the rule.
 
 7. On the home page, select **Jobs** and then **New Job**.
-    ![](./images/image15_60.png)
+    ![](./images/image15_60.png " ")
 
     * Select **Load Data**.
 
@@ -273,7 +271,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
     * Click **OK**. The load data job is executed.
 
-      ![](./images/image14_82.png)
+      ![](./images/image14_82.png " ")
 
     * On the Jobs page, click Refresh to monitor the job status.
 
@@ -283,12 +281,12 @@ Create a rule file that is based on a sample file from the data warehouse.
     * Select **Job Details** to check the load data job details.
 
     * Click **Close**.
-      ![](./images/image14_83.png)
+      ![](./images/image14_83.png " ")
 
 9.	On the Applications page, click **Actions** to the right of the DynamicCorp - Sales cube and click **Inspect**.
 
 10.  Select **Statistics** to view the resulting statistics for the Sales cube.  
-    ![](./images/image15_61.png)
+    ![](./images/image15_61.png " ")
 
     You have now completed the data load using rule file.
 
@@ -308,11 +306,11 @@ A cube can be calculated using one of two methods:
 
 2.	From the Actions menu on the right of the cube, click **Inspect**.
 
-    ![](./images/image14_84.png)
+    ![](./images/image14_84.png " ")
 
 3.	Select **Scripts** tab, and then select **Calculation Scripts** tab.
 
-    ![](./images/image14_85.png)
+    ![](./images/image14_85.png " ")
 
 4.	Click **+** icon to create a new calculation script.
 
@@ -335,7 +333,7 @@ A cube can be calculated using one of two methods:
 
 1. In the name field of script editor give the name to script as **CalcActual**.
 
-    ![](./images/image14_86.png)
+    ![](./images/image14_86.png " ")
 
 7.	Click **Validate** before saving your script. Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
 
@@ -348,13 +346,13 @@ A cube can be calculated using one of two methods:
 
 11.	On the Jobs page, click **New Job** and select **Run Calculation**.
 
-    ![](./images/image14_87.png)
+    ![](./images/image14_87.png " ")
 
 12.	On the Run Calculation dialog box, select the application - **DynamicCorp** and cube – **Sales**.
 
 13.	Select the script – **CalcActual**.
 
-    ![](./images/image14_88.png)
+    ![](./images/image14_88.png " ")
 
 14.	Click **OK** to start the calculation.
 
@@ -369,7 +367,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
      * Log in to Essbase web user interface. Navigate to top left-hand corner, click the hamburger, select **Console** and then **Desktop Tools**.
 
      * Expand the Command Line Tools section. Download the Command-Line Tool by clicking download for "Command-Line Tool".
-        ![](./images/image15_62.png)
+        ![](./images/image15_62.png " ")
 
      * Unzip the cli.zip file in a directory e.g. C:\app\cli  
      
@@ -383,7 +381,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
        Note: Please check the links: [link1](https://confluence.atlassian.com/conf59/setting-the-java_home-variable-in-windows-792499849.html),  [link2](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) to install jdk8 and above and set JAVA_HOME path.
       
      * From the command window type esscs.bat to get a list of the available command. 
-        ![](./images/image15_63.png) 
+        ![](./images/image15_63.png " ") 
 
      * Use the below command and enter the password to login:
          ```
@@ -391,7 +389,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
              esscs login -url http://ip:9000/essbase -u userid
    	</copy>
        ````
-        ![](./images/image15_64.png) 
+        ![](./images/image15_64.png " ") 
    
 
 
@@ -401,7 +399,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
         This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
 
-        ![](./images/image14_89.png)
+        ![](./images/image14_89.png " ")
 
          This file is imported using CLI and it is used for rest of the exercise.   
 
@@ -412,11 +410,11 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
         esscs.bat deploy -a Sample01 -db Basic -file C:\app\cli\Sample_Basic.xlsx </copy>
         ```
 
-        ![](./images/image14_90.png)
+        ![](./images/image14_90.png " ")
 
       * Next, review the newly create cube from the Essbase web interface.
 
-        ![](./images/image14_91.png)
+        ![](./images/image14_91.png " ")
 
 3. LcmExport: The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. To export Sample application, deployed in last step, use this command.
 
@@ -427,7 +425,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
     esscs lcmExport -application Sample01 -zipfilename Sample01.zip </copy>
     ```
 
-    ![](./images/image14_92.png)
+    ![](./images/image14_92.png " ")
 
 4. LcmImport: Restores cube artifacts from a Lifecycle Management (LCM) .zip file.
 
@@ -439,7 +437,7 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
 
     *NOTE:* The mentioned path should not contain spaces.
 
-    ![](./images/image14_93.png)
+    ![](./images/image14_93.png " ")
 
 ## Task 5: REST APIs
 
@@ -461,23 +459,23 @@ To use the Swagger interface,
 
 4.	Under Application logs, click the second **GET** button. (Download Latest Log)
 
-    ![](./images/image14_94.png)
+    ![](./images/image14_94.png " ")
 
-    ![](./images/image14_95.png)
+    ![](./images/image14_95.png " ")
 
 5.	Click **Try it Out**.
 
-    ![](./images/image14_96.png)
+    ![](./images/image14_96.png " ")
 
 6.	Enter the name of application.
 
-    ![](./images/image14_97.png)
+    ![](./images/image14_97.png " ")
 
 7.	Click **Execute**.
 
 8.	Look under the Server response section. If the request was successful, then you should see a 200 response with a body such as the following:
 
-    ![](./images/image14_98.png)
+    ![](./images/image14_98.png " ")
 
 9.	Click **Download File** to download zip file containing application log.
 

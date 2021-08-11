@@ -6,11 +6,11 @@ In this workshop, you will learn how business users can utilize multiple data so
 
 This workshop is designed to give you a hands-on experience with various components of Oracle Essbase.
 
-Estimated Workshop Time: *5.75 hours*.
+*Estimated Workshop Time:* 5.75 hours
 
 ### About Product/Technology
 
-Lines of business are under enormous pressure to generate more insights, faster, from their financial systems and other critical data sources. But for most organizations, far too much time is spent manually sourcing, managing, preparing, and securing data – leaving far too little time for true analysis and insight.
+Lines of business are under enormous pressure to generate more insights, faster, from their financial systems and other critical data sources. But most organizations, spend a lot of time manually sourcing, managing, preparing, and securing data – leaving far too little time for true analysis and insight.
 
 Oracle Essbase is a business analytics solution that uses a proven, flexible, best-in-class architecture for analysis, reporting, and collaboration. Essbase delivers instant value and greater productivity for your business users, analysts, modelers, and decision-makers, across all lines of business within your organization.
 
@@ -34,7 +34,7 @@ Oracle Essbase helps you to build your company’s On-Premise strategy efficient
 
 ### Essbase 21c Architecture
 
-  ![](./images/notionalarchitecture21c.png "")
+  ![](./images/notionalarchitecture21c.png " ")
 
 ### Objectives
 
@@ -80,7 +80,6 @@ With the above stated benefits, it’s certainly worthwhile to understand the ni
 
 
 Note: The steps going forward will have to followed in a Windows operating system.
-
 
 ## Appendix 2: Installing Smart View Plugin
 
