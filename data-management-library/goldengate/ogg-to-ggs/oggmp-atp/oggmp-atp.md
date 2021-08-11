@@ -46,7 +46,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
     ```
-    <copy>sftp -i <private-SSH-key> opc@<ip-address>
+    <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
 6.  Upload the wallet\_ATP.zip and then extract its contents to a new directory, such as **wallet\_ATP**.
