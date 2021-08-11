@@ -934,25 +934,128 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task8.5-rowcountoerefresh.png " ")
 
-6. Close and remove the **OE_DEV** pluggable database.
-
-    ```
-    <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba</copy>
-    ```
-
-    ```
-    <copy>alter pluggable database oe_refresh close;</copy>
-    ```
-
-    ```
-    <copy>drop pluggable database oe_refresh including datafiles;</copy>
-    ```
-
-    ![](./images/step8.6-removeoedev.png " ")
-
 7. Leave the **OE** pluggable database open with the load running against it for the rest of this lab.
 
-## Task 9: PDB Relocation
+## Task 9: PDB Snapshot COPY
+
+You can create a snapshot copy PDB by executing a CREATE PLUGGABLE DATABASE … FROM … SNAPSHOT COPY statement. The source PDB is specified in the FROM clause.
+
+A snapshot copy reduces the time required to create the clone because it does not include a complete copy of the source data files. Furthermore, the snapshot copy PDB occupies a fraction of the space of the source PDB. The snapshot copy can be created in any filesystem like ext3, ext4, ntfs for local disks. It also supports NFS, ZFS, ACFS,etc.
+
+The two main requirements for snapshot copy to work are
+
+    - CLONEDB initialization parameter should be set to TRUE.
+    - The source PDB is in Read Only mode.
+
+Refreshable PDBs need to be in **read only** mode in order to refresh. You can quickly create a Snapshot Clone PDB from the refreshable PDB and use it in reporting, test and dev environments. In our exercise, we will create a **Snapshot Copy PDB** from the read only PDB **OE_REFRESH**.
+
+1. If you're already running SQLcl, then **exit** from SQLcl and set oraenv to CDB2.
+
+    ```
+    <copy>exit
+    . oraenv
+    </copy>
+    CDB2
+    ```
+    ![](./images/task9.1-setenvcdb2.png " ")
+
+2. Launch SQLcl, connect to CDB2 as SYSDBA. Set the SQLcl formatting to make the on-screen output easier to read.  Run the "whoami" script to verify the CDB connection.
+    ```
+    <copy>
+    sql / as sysdba
+    set sqlformat ANSICONSOLE
+    @whoami
+    </copy>
+    ```
+    ![](./images/task9.2-connectcdb2.png " ")
+
+3. Show the status of the PDBs and also verify the setting of the CLONEDB initialization parameter.
+
+    ```
+    <copy>
+    show pdbs
+    show parameter CLONEDB
+    </copy>
+    ```
+
+    ![](./images/task9.1-showparamclonedb.png " ")
+
+
+4. Set the static initialization parameter CLONEDB = TRUE and restart CDB2.
+
+    ```
+    <copy>
+    alter system set CLONEDB = TRUE scope = spfile;
+    shutdown immediate
+    startup
+    show parameter CLONEDB
+    </copy>
+    ```
+    ![](./images/task9.4-restartcdb2.png " ")
+
+5. Snapshot Copy PDBs must be created from a read-only source, so open PDB **OE_REFRESH** read only and create a Snapshot Copy PDB **OE_SNAP**.  
+
+    ```
+    <copy>
+    alter pluggable database OE_REFRESH open read only force;
+    create pluggable database OE_SNAP from OE_REFRESH snapshot copy;
+    show pdbs
+    alter pluggable database OE_SNAP open;
+    show pdbs
+    </copy>
+    ```
+
+    ![](./images/task9.4-restartcdb2.png " ")
+
+6. A PDB Snapshot Copy is a "thin" clone that reads from the source PDB but any DML changes will be written into the snapshot copy.  Insert a row into the **OE_SNAP** database.
+
+   ```
+   <copy>
+   connect soe/soe@localhost:1524/oe_snap
+   select count(*) from sale_orders;
+   insert into sale_orders VALUES (1, SYSDATE, 30);
+   commit;
+   select count(*) from sale_orders;
+   </copy>
+   ```
+   ![](./images/task9.6-dmlpdbsnap.png " ")
+
+7. Now generate a couple of OS commands to show that the **OE_SNAP** PDB uses a fraction of the space compared to the source **OE_REFRESH** database.
+
+   ```
+   <copy>
+   connect sys/oracle@//localhost:1524/cdb2 as sysdba
+   show pdbs
+   select distinct 'host du -h '||SUBSTR(NAME,1,INSTR(NAME,'datafile')+8 ) du_output
+     from v$datafile  
+     where con_id in
+     (select con_id from v$pdbs where name in ('OE_REFRESH','OE_SNAP'));
+   </copy>
+   ```
+
+   ![](./images/task9.7-genhostdu.png " ")
+
+8. Copy and paste separately each of the query output lines to see the difference in disk space consumed between the source PDB and the "thin" PDB Snapshot Copy.
+
+   ![](./images/task9.8-duoutput.png " ")
+
+9. Close and remove the **OE_REFRESH** and **OE_SNAP** pluggable databases.
+
+   ```
+   <copy>
+   show pdbs
+   alter pluggable database oe_snap close;
+   alter pluggable database oe_refresh close;
+   drop pluggable database oe_snap including datafiles;
+   drop pluggable database oe_refresh including datafiles;
+   show pdbs
+   </copy>
+   ```
+   ![](./images/task9.9-pdbcleanup.png " ")
+
+
+
+## Task 10: PDB Relocation
 
 This section looks at how to relocate a pluggable database from one container database to another. One important note, either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
 
@@ -961,12 +1064,13 @@ The tasks you will accomplish in this step are:
 - Relocate the pluggable database **OE** from **CDB1** to **CDB2** with the load still running
 - Once **OE** is open the load should continue working.
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+1. In the **other terminal window** that was opened in Lab Task 8, make sure the write-load script is still running.  If not, you may need to restart the shell script.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>./write-load.sh </copy>
     ```
-1. Connect to the container **CDB2**.
+
+2. Connect to the container **CDB2** and update the LOCAL_LISTENER parameter to point to the listener used by **CDB1**.
     ```
     <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba;</copy>
     ```
@@ -975,9 +1079,9 @@ The tasks you will accomplish in this step are:
     <copy>alter system set local_listener='LISTCDB1' scope=both;</copy>
     ```
 
-    ![](./images/step9.1-changelistener.png " ")
+    ![](./images/task10.1-changelistener.png " ")
 
-2. Connect to **CDB2** and relocate **OE** using the database link **oe@cdb1_link**.
+2. Connect to **CDB2** via the shared listener and relocate **OE** using the database link **oe@cdb1_link**.  Observe that the batch load script will continue after the PDB is moved.
 
     ```
     <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
@@ -989,7 +1093,7 @@ The tasks you will accomplish in this step are:
     show pdbs</copy>
     ```
 
-    ![](./images/step9.2-relocateoe.png " ")
+    ![](./images/task10.2-relocateoe.png " ")
 
 3. Connect to **CDB1** and see what pluggable databases exist there.
 
@@ -1001,31 +1105,11 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step9.3-showcdb1pdbs.png " ")
+    ![](./images/task10.3-checkcdb1.png " ")
 
-4. Close and remove the **OE** pluggable database.
+4.  The load program isn't needed anymore, so CTRL-C out of that program and exit that terminal window.
 
-    ```
-    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba</copy>
-    ```
-
-    ```
-    <copy>alter pluggable database oe close;</copy>
-    ```
-
-    ```
-    <copy>drop pluggable database oe including datafiles;</copy>
-    ```
-
-    ![](./images/step9.4-removeoepdb.png " ")
-
-5. The load program isn't needed anymore and that window can be closed.
-
-6. If you are going to continue to use this environment you will need to change **CDB2** back to use **LISTCDB2**.
-
-    ```
-    <copy>sqlplus /nolog</copy>
-    ```
+5. If you are going to continue to use this environment then you will need to change **CDB2** back to use **LISTCDB2**.
 
     ```
     <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
@@ -1035,23 +1119,20 @@ The tasks you will accomplish in this step are:
     <copy>alter system set local_listener='LISTCDB2' scope=both;</copy>
     ```
 
-    ![](./images/step9.6-changetolistcdb2.png " ")
+    ![](./images/task10.5-resetlistener.png " ")
 
 ## Lab Cleanup
 
 1. Exit from the SQL command prompt and reset the container databases back to their original ports. If any errors about dropping databases appear they can be ignored.
 
     ```
-    <copy>exit</copy>
+    <copy>exit
+    ./resetCDB.sh</copy>
     ```
 
-    ```
-    <copy>./resetCDB.sh</copy>
-    ```
+    ![](./images/labcleanup1.png " ")
 
-    ![](./images/step10-labcleanup1.png " ")
-
-    ![](./images/step10-labcleanup2.png " ")
+    ![](./images/labcleanup2.png " ")
 
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment.
 
@@ -1060,5 +1141,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
-- **Contributors** -  David Start, Anoosha Pilli, Brian McGraw, Quintin Hill, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
+- **Contributors** -  Joseph Bernens, David Start, Anoosha Pilli, Brian McGraw, Quintin Hill, Rene Fontcha
+- **Last Updated By/Date** - Joseph Bernens, Principal Solutions Engineer, NA Technology, August 2021
