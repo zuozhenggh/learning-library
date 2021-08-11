@@ -17,7 +17,7 @@ Estimated Lab Time : 15 minutes
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## **STEP 1** : Create a Keystore
+## Task 1: : Create a Keystore
 
 As the Graph Server will fetch data from an Oracle Database, you would need a database user with the required privileges, and with a password that must be stored in a Java **keystore** file for protection. Graph Server will then access this keystore for authentication.
 
@@ -53,7 +53,7 @@ In this step you will use **keytool** (bundled with the JDK) to generate the **k
     ```
     ![](./images/keytool-list.png)
 
-## **STEP 2** : Install Graph Server
+## Task 2: : Install Graph Server
 
 The package simplifies installation and provides access to the latest graph features and updates.
 
@@ -80,7 +80,7 @@ The package simplifies installation and provides access to the latest graph feat
     ```
     ![](./images/sudo-firewall.png)
 
-## **STEP 3** : Configure Oracle Graph Server
+## Task 3: : Configure Oracle Graph Server
 
 The Graph Server needs to be configured before loading any graphs. Please follow the below instructions to configure Graph Server.
 
@@ -115,7 +115,7 @@ The Graph Server needs to be configured before loading any graphs. Please follow
 
 5. **SAVE** the file and **EXIT**.
 
-## **STEP 4** : Start Graph Server
+## Task 4: : Start Graph Server
 
 Configure the Java environment prior to starting the Graph Server.
 

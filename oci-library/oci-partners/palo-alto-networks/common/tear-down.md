@@ -17,7 +17,7 @@ Estimated Lab Time: 10 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)
 
-## **STEP 1: Delete environment manually**
+## **Task 1: Delete environment manually**
 
 When manually destroying the environment, ensure that one-resource is not tied to another resource.
 
@@ -29,7 +29,7 @@ When manually destroying the environment, ensure that one-resource is not tied t
 
 4. From OCI services menu, Click **Buckets** under **Storage**. Delete the object and bucket which you created earlier to validate the Object Storage Network traffic. 
 
-## **STEP 2: Delete environment using Oracle Resource Manager**
+## **Task 2: Delete environment using Oracle Resource Manager**
 
 When using Resource Manager to destroy the environment, you need to execute a **terraform destroy** and apply. Let's do that now.
 
