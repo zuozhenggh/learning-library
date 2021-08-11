@@ -67,7 +67,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
     </copy>
     ```
 
-2.  Set your oracle environment and connect to **CDB1**.
+2.  Set your oracle environment and connect to **CDB1** using SQLcl.
 
     ```
     <copy>. oraenv</copy>
@@ -76,21 +76,23 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ```
     <copy>
-    sqlplus /nolog
+    sql sys/oracle@localhost:1523/cdb1 as sysdba
     </copy>
     ```
+
+    To make the SQLcl output easier to read on the screen, set the sql format.
 
     ```
     <copy>
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    set sqlformat ANSICONSOLE
     </copy>
     ```
 
-    ![](./images/step1.2-connectoraenv.png " ")
 
-    ![](./images/step1.2-connectcdb1.png " ")
+    ![](./images/task1.2-connectcdb1.png " ")
 
-3. Check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.
+
+3. Create a script to check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.  We'll save this script for future use and call it "whoami.sql".
 
     ```
     <copy>
@@ -105,16 +107,29 @@ This section looks at how to login and create a new PDB. You will create a plugg
       ' / Container: ' ||Nvl(Sys_Context('Userenv', 'Con_Name'), 'n/a')
       "Who am I?"
       from Dual
-      /
+      .
+
+      save whoami.sql
+
     </copy>
     ```
 
-    ![](./images/whoisconnected.png " ")
+    Now, let's run the script.
+
+    ```
+    <copy>
+     @whoami.sql
+    </copy>
+    ```
+
+   ![](./images/task1.3-whoisconnected.png " ")
+
 
 4. Create a pluggable database **PDB2**.
 
     ```
-    <copy>show  pdbs;</copy>
+    <copy>show pdbs
+    </copy>
     ```
 
     ```
@@ -123,15 +138,12 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     alter pluggable database PDB2 open;
 
-    show pdbs;
+    show pdbs
     </copy>
     ```
 
-    ![](./images/showpdbsbefore.png " ")
+    ![](./images/task1.4-createpdb2.png " ")
 
-    ![](./images/createpdb.png " ")
-
-    ![](./images/showpdbsafter.png " ")
 
 5. Change the session to point to **PDB2**.
 
@@ -139,7 +151,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
     <copy>alter session set container = PDB2;</copy>
     ```
 
-    ![](./images/altersession.png " ")
+    ![](./images/task1.5-altertopdb2.png " ")
 
 6. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
 
@@ -153,7 +165,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
     </copy>
     ````
 
-   ![](./images/grantsysdba.png " ")
+   ![](./images/task1.6-grantpdbadminprivs.png " ")
 
 7. Connect as **PDB_ADMIN** to **PDB2**.
 
@@ -171,19 +183,13 @@ This section looks at how to login and create a new PDB. You will create a plugg
     </copy>
     ```
 
-   ![](./images/createtable.png " ")
+   ![](./images/task1.8-createtable_pdbadmin.png " ")
 
 9. Change back to **SYS** in the container database **CDB1** and show the tablespaces and datafiles created.
 
     ```
     <copy>
     connect sys/oracle@localhost:1523/cdb1 as sysdba
-
-    COLUMN "Con_Name" FORMAT A10
-    COLUMN "T'space_Name" FORMAT A12
-    COLUMN "File_Name" FORMAT A120
-    SET LINESIZE 220
-    SET PAGES 9999
 
     with Containers as (
       select PDB_ID Con_ID, PDB_Name Con_Name from DBA_PDBs
@@ -207,18 +213,20 @@ This section looks at how to login and create a new PDB. You will create a plugg
     </copy>
     ```
 
-    ![](./images/step1.9-containers.png " ")
+    ![](./images/task1.9-viewdbfiles.png " ")
 
 ## Task 2: Clone a PDB
-This section looks at how to clone a PDB.
+This lab covers the basics of how to clone a Pluggable Database (PDB).
 
 The tasks you will accomplish in this step are:
 - Clone a pluggable database **PDB2** into **PDB3**
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
 1. Connect to the container **CDB1**.
 
@@ -233,9 +241,8 @@ The tasks you will accomplish in this step are:
     show pdbs</copy>
     ```
 
-   ![](./images/alterplug.png " ")
+   ![](./images/task2.2-alterpdbreadonly.png " ")
 
-   ![](./images/showpdbs.png " ")
 
 3. Create a pluggable database **PDB3** from the read only database **PDB2**.
 
@@ -243,28 +250,23 @@ The tasks you will accomplish in this step are:
     <copy>create pluggable database PDB3 from PDB2;
     alter pluggable database PDB3 open force;
 
+    show pdbs
     </copy>
     ```
 
-    ```
-    <copy>show pdbs</copy>
-    ```
-
-   ![](./images/createpdb3.png " ")
+   ![](./images/task2.3-clonepdb2topdb3.png " ")
 
 4. Change **PDB2** back to read write.
 
     ```
-    <copy>alter pluggable database PDB2 open read write force;</copy>
+    <copy>alter pluggable database PDB2 open read write force;
+    show pdbs</copy>
     ```
 
-    ```
-    <copy>show pdbs</copy>
-    ```
 
-   ![](./images/pdb2write.png " ")
+   ![](./images/task2.4-pdb2readwrite.png " ")
 
-5. Connect to **PDB2** and show the table **MY_TAB**.
+5. Connect to **PDB2** and show the table **MY_TAB**, then run the same SQL against **PDB3** to demonstrate that this is an exact copy of the source PDB.
 
     ```
     <copy>connect pdb_admin/oracle@localhost:1523/pdb2</copy>
@@ -274,10 +276,6 @@ The tasks you will accomplish in this step are:
     <copy>select * from my_tab;</copy>
     ```
 
-   ![](./images/pdb2mytab.png " ")
-
-6. Connect to **PDB3** and show the table **MY_TAB**.
-
     ```
     <copy>connect pdb_admin/oracle@localhost:1523/pdb3</copy>
     ```
@@ -286,19 +284,22 @@ The tasks you will accomplish in this step are:
     <copy>select * from my_tab;</copy>
     ```
 
-   ![](./images/pdb3mytab.png " ")
+   ![](./images/task2.5-comparepdb2pdb3.png " ")
 
 ## Task 3: Unplug a PDB
-This section looks at how to unplug a PDB.
+This section reviews how to unplug a PDB from its container database (CDB) and save the PDB metadata into an XML manifest file.
 
 The tasks you will accomplish in this step are:
 - Unplug **PDB3** from **CDB1**
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
+
 1. Connect to the container **CDB1**.
 
     ```
@@ -320,37 +321,26 @@ The tasks you will accomplish in this step are:
     alter pluggable database PDB3
     unplug into
     '/u01/app/oracle/oradata/CDB1/pdb3.xml';
+    show pdbs
     </copy>
     ```
 
-    ```
-    <copy>show pdbs</copy>
-    ```
 
-   ![](./images/unplugpdb3.png " ")
+   ![](./images/task3.2-unplugpdb3.png " ")
 
 3. Remove **PDB3** from **CDB1**.
 
     ```
-    <copy>drop pluggable database PDB3 keep datafiles;</copy>
+    <copy>drop pluggable database PDB3 keep datafiles;
+    show pdbs
+    </copy>
     ```
 
-    ```
-    <copy>show pdbs</copy>
-    ```
-
-   ![](./images/droppdb3.png " ")
+   ![](./images/task3.3-droppdb3.png " ")
 
 4. Show the datafiles in **CDB1**.
-
     ```
     <copy>
-    COLUMN "Con_Name" FORMAT A10
-    COLUMN "T'space_Name" FORMAT A12
-    COLUMN "File_Name" FORMAT A120
-    SET LINESIZE 220
-    SET PAGES 9999
-
     with Containers as (
       select PDB_ID Con_ID, PDB_Name Con_Name from DBA_PDBs
       union
@@ -373,7 +363,7 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/cdb1data.png " ")
+    ![](./images/task3.4-cdb1dbfiles.png " ")
 
 5. Look at the XML file for the pluggable database **PDB3**.
 
@@ -381,49 +371,38 @@ The tasks you will accomplish in this step are:
     <copy>host cat /u01/app/oracle/oradata/CDB1/pdb3.xml</copy>
     ```
 
-    ![](./images/xmlfile.png " ")
+    ![](./images/task3.5-catxmlfile.png " ")
 
 ## Task 4: Plug in a PDB
 This section looks at how to plug in a PDB.
 
 The tasks you will accomplish in this step are:
-- Plug **PDB3** into **CDB2**
+- Plug the previously-unplugged **PDB3** into **CDB2**
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
-1. Connect to the container **CDB2**.
+
+1. Connect to the container **CDB2** and run the "whoami.sql" script that was saved during Task 1.
     ```
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ```
 
     ```
-    <copy>
-    COLUMN "Who am I?" FORMAT A120
-    select
-      'DB Name: '  ||Sys_Context('Userenv', 'DB_Name')||
-      ' / CDB?: '     ||case
-        when Sys_Context('Userenv', 'CDB_Name') is not null then 'YES'
-        else 'NO'
-        end||
-      ' / Auth-ID: '   ||Sys_Context('Userenv', 'Authenticated_Identity')||
-      ' / Sessn-User: '||Sys_Context('Userenv', 'Session_User')||
-      ' / Container: ' ||Nvl(Sys_Context('Userenv', 'Con_Name'), 'n/a')
-      "Who am I?"
-    from Dual
-    /
-    </copy>
+    <copy>@whoami.sql  </copy>
     ```
 
     ```
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/whoamicdb2.png " ")
+    ![](./images/task4.1-connectcdb2.png " ")
 
-2. Check the compatibility of **PDB3** with **CDB2**.
+2. Check the compatibility of **PDB3** with **CDB2**.  No errors confirms the PDB is compatible with the CDB.
 
     ```
     <copy>
@@ -439,41 +418,32 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/step4.2-compatibility.png " ")
+    ![](./images/task4.2-pdbcompatible.png " ")
 
-3. Plug **PDB3** into **CDB2**.
+3. Plug **PDB3** into **CDB2**, moving the PDBs datafiles under the CDB2 storage location.
 
     ```
     <copy>
     create pluggable database PDB3
     using '/u01/app/oracle/oradata/CDB1/pdb3.xml'
     move;
+
+    show pdbs
     </copy>
     ```
 
     ```
-    <copy>show pdbs</copy>
+    <copy>alter pluggable database PDB3 open;
+    show pdbs
+    </copy>
     ```
 
-    ```
-    <copy>alter pluggable database PDB3 open;</copy>
-    ```
-
-    ```
-    <copy>show pdbs</copy>
-    ```
-
-    ![](./images/createwithxml.png " ")
+    ![](./images/task4.3-pluginpdb3.png " ")
 
 4. Review the datafiles in **CDB2**.
 
     ```
     <copy>
-    COLUMN "Con_Name" FORMAT A10
-    COLUMN "T'space_Name" FORMAT A12
-    COLUMN "File_Name" FORMAT A120
-    SET LINESIZE 220
-    SET PAGES 9999
 
 
     with Containers as (
@@ -498,7 +468,7 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/step4.4-mtdbfcdb2.png " ")
+    ![](./images/task4.3-cdb2datafiles.png " ")
 
 5. Connect as **PDB\_ADMIN** to **PDB3** and look at **MY\_TAB**.
 
@@ -510,7 +480,7 @@ The tasks you will accomplish in this step are:
     <copy>select * from my_tab;</copy>
     ```
 
-    ![](./images/pdb3mytab2.png " ")
+    ![](./images/task4.4-querymytab.png " ")
 
 ## Task 5: Drop a PDB
 This section looks at how to drop a pluggable database.
@@ -518,11 +488,14 @@ This section looks at how to drop a pluggable database.
 The tasks you will accomplish in this step are:
 - Drop **PDB3** from **CDB2**
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
+
 1. Connect to the container **CDB2**.
 
     ```
@@ -547,7 +520,7 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/droppdb.png " ")
+    ![](./images/task5.2-droppdb3.png " ")
 
 
 ## Task 6: Clone an Unplugged PDB
@@ -557,17 +530,20 @@ The tasks you will accomplish in this step are:
 - Create a gold copy of **PDB2** in **CDB1** as **GOLDPDB**
 - Clone **GOLDPDB** into **COPYPDB1** and **COPYPDB2** in **CDB2**
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
+
 1. Connect to the container **CDB1**.
     ```
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
     ```
 
-2. Change **PDB2** to read only.
+2. Open database **PDB2** to read only.
 
     ```
     <copy>alter pluggable database PDB2 open read only force;</copy>
@@ -577,7 +553,7 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.2-pdbreadonly.png " ")
+    ![](./images/task6.2-pdb2readonly.png " ")
 
 3. Create a pluggable database **GOLDPDB** from the read only database **PDB2**.
 
@@ -593,7 +569,7 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.3-goldpdb.png " ")
+    ![](./images/task6.3-creategoldpdb.png " ")
 
 4. Change **PDB2** back to read write.
 
@@ -605,13 +581,10 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.4-mountgoldpdb.png " ")
+    ![](./images/task6.4-pdb2readwrite.png " ")
 
-5. Unplug **GOLDPDB** from **CDB1**.
+5. Unplug your gold copy PDB **GOLDPDB** from **CDB1**.
 
-    ```
-    <copy>show pdbs</copy>
-    ```
 
     ```
     <copy>alter pluggable database GOLDPDB close immediate;</copy>
@@ -626,9 +599,9 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.5-unpluggold.png " ")
+    ![](./images/task6.5-unpluggoldpdb.png " ")
 
-6. Remove **GOLDPDB** from **CDB1**.
+6. Remove **GOLDPDB** from **CDB1** and keep the datafiles for future use.
 
     ```
     <copy>drop pluggable database GOLDPDB keep datafiles;</copy>
@@ -638,15 +611,13 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.6-removegoldpdb.png " ")
+    ![](./images/task6.6-dropgoldpdb.png " ")
 
-7. Connect to **CDB2**.
+7. We want to clone our gold image PDB into another container database.  Connect to **CDB2** and validate **GOLDPDB** is compatible with **CDB2**.
 
     ```
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ```
-
-8. Validate **GOLDPDB** is compatibile with **CDB2**.
 
     ```
     <copy>
@@ -662,9 +633,9 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/step6.8-validategoldpdb.png " ")
+    ![](./images/task6.7-checkcompat.png " ")
 
-9. Create a clone of **GOLDPDB** as **COPYPDB1**.
+8. Create a clone of our unplugged **GOLDPDB** as **COPYPDB1**.
 
     ```
     <copy>
@@ -679,9 +650,9 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.9-clonegold.png " ")
+    ![](./images/task6.8-createcopypdb1.png " ")
 
-10. Create another clone of **GOLDPDB** as **COPYPDB2**.
+9. Create another clone of **GOLDPDB** as **COPYPDB2**.
 
     ```
     <copy>
@@ -696,9 +667,9 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.10-clonegold1.png " ")
+    ![](./images/task6.9-createcopypdb2.png " ")
 
-11. Open all of the pluggable databases.
+10. Open all of the pluggable databases.
 
     ```
     <copy>alter pluggable database all open;</copy>
@@ -708,13 +679,12 @@ The tasks you will accomplish in this step are:
     <copy>show pdbs</copy>
     ```
 
-    ![](./images/step6.11-allopen.png " ")
+    ![](./images/task6.10-openallpdbs.png " ")
 
-12. Look at the GUID for the two cloned databases.
+11. Look carefully at the GUID for the two cloned databases.
 
     ```
     <copy>
-    COLUMN "PDB Name" FORMAT A20
     select PDB_Name "PDB Name", GUID
     from DBA_PDBs
     order by Creation_Scn
@@ -722,23 +692,26 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/step6.12-guid.png " ")
+    ![](./images/task6.11-showguids.png " ")
 
 ## Task 7: PDB Hot Clones
-This section looks at how to hot clone a pluggable database.
+This section looks at how to "hot clone" a pluggable database.  Since Database 12.2, the capability exists to clone a PDB while it is open read write.
 
-The tasks you will accomplish in this step are:
+What you will accomplish in this task:
 - Create a pluggable database **OE** in the container database **CDB1**
 - Create a load against the pluggable database **OE**
 - Create a hot clone **OE_DEV** in the container database **CDB2** from the pluggable database **OE**
 
 [](youtube:djp-ogM71oE)
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
+
 1. Connect to the container **CDB1**.
     ```
     <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
@@ -755,6 +728,10 @@ The tasks you will accomplish in this step are:
     ```
 
     ```
+    <copy>show pdbs</copy>
+    ```
+
+    ```
     <copy>alter session set container = oe;</copy>
     ```
 
@@ -766,7 +743,7 @@ The tasks you will accomplish in this step are:
     <copy>alter user soe quota unlimited on system;</copy>
     ```
 
-    ![](./images/oe.png " ")
+    ![](./images/task7.2-createoe.png " ")
 
 3. Connect as **SOE** and create the **sale_orders** table.
 
@@ -783,7 +760,7 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/step7.3-connectsoe.png " ")
+    ![](./images/task7.3-soetable.png " ")
 
  4. Open a new terminal window, login into your instance, sudo to the oracle user, and execute write-load.sh. Leave this window open and running throughout for the rest of this lab.
 
@@ -807,7 +784,7 @@ The tasks you will accomplish in this step are:
     <copy>./write-load.sh</copy>
     ```
 
-    ![](./images/step7.4-writeloadscript.png " ")
+    ![](./images/task7.4-writeload.png " ")
 
     Leave this window open and running for the next few steps in this lab.
 
@@ -825,7 +802,7 @@ The tasks you will accomplish in this step are:
     <copy>alter pluggable database oe_dev open;</copy>
     ```
 
-    ![](./images/step7.5-createoedev.png " ")
+    ![](./images/task7.5-createoe_dev.png " ")
 
 6. Connect as **SOE** to **OE\_DEV** and check the number of records in the **sale\_orders** table.
 
@@ -837,7 +814,7 @@ The tasks you will accomplish in this step are:
     <copy>select count(*) from sale_orders;</copy>
     ```
 
-    ![](./images/step7.6-checkrecordsoedev.png " ")
+    ![](./images/task7.6-rowcountoedev.png " ")
 
 7. Connect as **SOE** to **OE** and check the number of records in the **sale_orders** table.
 
@@ -865,7 +842,7 @@ The tasks you will accomplish in this step are:
     <copy>drop pluggable database oe_dev including datafiles;</copy>
     ```
 
-    ![](./images/step7.8-closeoedev.png " ")
+    ![](./images/task7.8-dropoedev.png " ")
 
 9. Leave the **OE** pluggable database open with the load running against it for the rest of the steps in this lab.
 
@@ -881,11 +858,14 @@ The tasks you will accomplish in this step are:
 - Create a hot clone **OE_REFRESH**` in the container database **CDB2** from the pluggable database **OE**
 - Refresh the **OE_REFRESH**` pluggable database.
 
-1. Start SQLPLUS if you aren't already in a SQLPLUS session.
+If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
-    <copy>sqlplus /nolog </copy>
+    <copy>sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
+
 1. Connect to the container **CDB2**.
     ```
     <copy>connect sys/oracle@localhost:1524/cdb2 as sysdba</copy>
@@ -901,7 +881,10 @@ The tasks you will accomplish in this step are:
     <copy>alter pluggable database oe_refresh open read only;</copy>
     ```
 
-    ![](./images/step8.2-createoerefresh.png " ")
+    ```
+    <copy>show pdbs</copy>
+    ```
+    ![](./images/task8.2-createoerefresh.png " ")
 
 3. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table.
 
@@ -913,7 +896,7 @@ The tasks you will accomplish in this step are:
     <copy>select count(*) from sale_orders;</copy>
     ```
 
-    ![](./images/step8.3-connectassoe.png " ")
+    ![](./images/task8.3-rowcountoerefresh.png " ")
 
 4. Close the pluggable database **OE_REFRESH** and refresh it from the **OE** pluggable database.
 
@@ -937,7 +920,7 @@ The tasks you will accomplish in this step are:
     <copy>alter pluggable database oe_refresh open read only;</copy>
     ```
 
-    ![](./images/step8.4-closeoerefresh.png " ")
+    ![](./images/task8.4-refreshoerefresh.png " ")
 
 5. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table. You should see the number of records change.
 
@@ -949,7 +932,7 @@ The tasks you will accomplish in this step are:
     <copy>select count(*) from sale_orders;</copy>
     ```
 
-    ![](./images/step8.5-countrecords.png " ")
+    ![](./images/task8.5-rowcountoerefresh.png " ")
 
 6. Close and remove the **OE_DEV** pluggable database.
 
