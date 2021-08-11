@@ -4,21 +4,21 @@
 
 This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 
 * Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
+* Add the certificate to Oracle GoldenGate's Administration Server
 * Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ### Prerequisites
 
 To successfully complete this lab, you must have:
 
-* An on premise or Marketplace Oracle GoldenGate instance running
+* An on premises or Marketplace Oracle GoldenGate instance running
 * The URL and log in credentials for the Oracle GoldenGate Service Manager
 * The log in credentials for the OCI GoldenGate Deployment Console
 
@@ -82,7 +82,7 @@ The following instructions show you how to download the Root Certificate using a
 
 ## Task 2: Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
 
-1.  Open the on premise or Marketplace Oracle GoldenGate Service Manager in a browser window.
+1.  Open the on premises or Marketplace Oracle GoldenGate Service Manager in a browser window.
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 
@@ -110,7 +110,7 @@ The following instructions show you how to download the Root Certificate using a
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  Sign in to the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
     ![](images/03-01.png)
 
@@ -120,15 +120,15 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png)
 
-3.  On the on premise or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premise or Marketplace Administration Server opens in a new browser.
+3.  In the on premises or Marketplace Service Manager, navigate to the Overview page, locate the Administration Server, and then click the link in the Port column. The on premises or Marketplace Administration Server opens in a new browser.
 
-4.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
+4.  Sign in to the on premises or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
 
 5.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
     * For **Credential Alias**,  enter a name, such as **ogg2ggs**.
-    * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
+    * For **User ID**, enter the user name of the user you created in task 2 (ggsnet).
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
 
