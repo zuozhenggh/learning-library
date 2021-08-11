@@ -30,12 +30,10 @@ Learn how to do the following:
 
 Be sure that the following tasks are completed before you start:
 
-- Lab 4 completed.
-- Obtain a compute instance with Oracle Database 19c installed on it and download the class files. If not, see "Obtain a Compute Image with Oracle Database 19c Installed". [Link to lab](https://www.oracle.com)
-- If not downloaded, download 19cNewFeatures.zip
+- Obtain a compute instance with Oracle Database 19c installed on it and download the class files. If not, see "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed".
 
 ## Task 1: Enable `ARCHIVELOG` mode
-1. To execute this lab, you must enable 'ARCHIVELOG' mod in `CDB1`. To do this, run the following script. When prompted with `ORACLE_SID`, insert `CDB1`.
+1. To execute this lab, you must enable `ARCHIVELOG` mode in `CDB1`. To do this, run the following script. When prompted with `ORACLE_SID`, insert `CDB1`.
 
     ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
@@ -293,9 +291,9 @@ Connect to the `PDB1` target PDB and to the recovery catalog as the **vpc_pdb1**
     connected to recovery catalog database
 
     ```
-2. RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more datafiles, archived redo logs, control files, or server parameter file. A backup set contains one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the BACKUP DATABASE command, you can find a handle value and a tag value.   The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format TAGYYYYMMDDTHHMMSS, where YYYYMMDD is a date and HHMMSS is a time of when taking the backup was started. The instance timezone is used.  In a later step, you create a query using your tag value to find the handle value.
+2. RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more datafiles, archived redo logs, control files, or server parameter file. A backup set contains one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the BACKUP DATABASE command, you can find a handle value and a tag value.   The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format TAGYYYYMMDDTHHMMSS, where YYYYMMDD is a date and HHMMSS is a time of when taking the backup was started. The instance timezone is used.  In a later task, you create a query using your tag value to find the handle value.
    
-3. Run the `BACKUP DATABASE;` commmand. This step will fail if you have not enabled `ARCHIVELOG` mode in `CDB1`. If you have not enabled `ARCHIVELOG` mode, please return to Step 1.
+3. Run the `BACKUP DATABASE;` commmand. This step will fail if you have not enabled `ARCHIVELOG` mode in `CDB1`. If you have not enabled `ARCHIVELOG` mode, please return to Task 1.
 
     ```
     RMAN> <copy>BACKUP DATABASE;</copy>
