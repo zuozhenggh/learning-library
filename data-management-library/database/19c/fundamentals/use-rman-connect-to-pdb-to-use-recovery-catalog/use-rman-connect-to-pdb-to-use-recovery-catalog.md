@@ -110,7 +110,7 @@ Be sure that the following tasks are completed before you start:
 
     connected to recovery catalog database
     ```
-
+3. Create the catalog.
     ```
     RMAN> <copy>CREATE CATALOG;</copy>
 
