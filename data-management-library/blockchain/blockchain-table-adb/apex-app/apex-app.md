@@ -17,7 +17,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Have successfully completed all the previous labs.
+This workshop assumes you have:
+
+- All previous labs completed.
 
 ## Task 1: Create APEX Workspace
 
@@ -73,7 +75,7 @@ In this lab, you will:
 	![](./images/task1-111.png " ")
 	![](./images/task1-112.png " ")
 
-## **STEP 2** Define the REST End Points and Enable the Schema
+## Task 2: Define the REST End Points and Enable the Schema
 
 By default the schema is not registered with ORDS. Let's define REST endpoints for the bank_ledger schema and enable the schema.
 
@@ -151,7 +153,7 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
 12. Expand the signdata tab and select **POST**. Notice the sign PL/SQL procedure under Source field takes the cert_guid, chainId, instanceId, seqId as input parameters along with the rowdata to sign the row.
 
     ![](./images/task2-12.png " ")
-    
+
     View the sign row PL/SQL procedure that takes the cert_guid,seqId, instanceId, chainId as input parameters and results the `status - 200` with a `message - Signature has been added to the row successfully.` if the row is signed successfully else it shows the `status - 400` with the `message - Error adding the signature to blockchain table.`
 
     ```
@@ -202,7 +204,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task3-7.png " ")
 
-## Task 4: Test the Blockchain functionality in APEX Application
+## Task 4: Test the Blockchain Functionality in APEX Application
 
 1. Click on **List of Transactions**.
 
@@ -252,7 +254,9 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task4-9.png " ")
 
-10. Make note the Instance ID, Chain ID and Seq ID of a row that you want to sign. In the demo, we are going to sign the row with Instance ID - 1, Chain ID - 1, and Seq ID - 1.
+10. Make note the Instance ID, Chain ID and Seq ID of a row that you want to sign. In the demo, we are going to sign the row with Instance ID - 1, Chain ID - 5, and Seq ID - 1.
+
+   ![](./images/task4-10.png " ")
 <!---
 12. Replace the number 1 for the instanceId, chainId and seqId and update with your notes values in the below command.
 

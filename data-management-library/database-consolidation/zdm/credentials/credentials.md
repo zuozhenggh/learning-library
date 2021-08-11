@@ -9,7 +9,7 @@ In this lab, you will be:
 
 Estimate Lab Time: 15 minutes
 
-## **STEP 1: Create Authentication Token**
+## **Task 1: Create Authentication Token**
 1. Go to your OCI profile by selecting the icon in the top right and clicking user.
     ![Dashboard Profile](./images/dashboard-profile.PNG)
 
@@ -19,7 +19,7 @@ Estimate Lab Time: 15 minutes
 3. Set a description and click generate token and make sure to write down the token displayed as you cannot get access to it again. If you lose the token you will need to generate a new one.
     ![Token Description](./images/token-desc.PNG)
 
-## **STEP 2: Create an Object Storage Bucket**
+## **Task 2: Create an Object Storage Bucket**
 
 1. You will need an object storage bucket for your data during the migration as an intermediary point before being transferred to your target autonomous database. In your OCI Dashboard: select the hamburger menu, Storage -> Buckets.
     ![Bucket Path](./images/bucket-path.PNG)
@@ -33,7 +33,7 @@ Estimate Lab Time: 15 minutes
 4. On the Details page the two most important pieces of information for us are the bucket name and namespace which we will need later.
     ![Bucket Page](./images/bucket-page.PNG)
 
-## **STEP 3: Log Into SQL on the Autonomous Database**
+## **Task 3: Log Into SQL on the Autonomous Database**
 
 1. In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
     ![Autonomous Menu](./images/menu-auton.PNG)
@@ -50,7 +50,7 @@ Estimate Lab Time: 15 minutes
     ![Select SQL](./images/select-sql.PNG)
 
 
-## **STEP 4: Run Credential Script**
+## **Task 4: Run Credential Script**
 1. In the script below replace `<oci_user>`, `<oci_tenancy>`, `<api_private_key>`, and `<fingerprint>` with their respective information and paste it into SQL.
 
     `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
@@ -87,7 +87,7 @@ Estimate Lab Time: 15 minutes
 2. Select 'Run Script'.
     ![Credential Script](./images/cred-script.PNG)
 
-## **STEP 5: Create User in Autonomous Database**
+## **Task 5: Create User in Autonomous Database**
 1. You will need to pre-create movedata\_user in the autonomous database. Start by deleting the script you ran in the last step.
 
     ![Cleared Script](./images/cleared-sql.PNG)

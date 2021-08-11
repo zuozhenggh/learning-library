@@ -27,7 +27,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 In this section you will create an OAC instance.
 
 
-### **STEP 1: Sign in to Oracle Cloud**
+### **Task 1: Sign in to Oracle Cloud**
 
 -   Go to [cloud.oracle.com](https://cloud.oracle.com), click **Sign In** to sign in with your Oracle Cloud account.
 
@@ -43,7 +43,7 @@ In this section you will create an OAC instance.
 
 
 
-### **STEP 2: Create an OAC Instance**
+### **Task 2: Create an OAC Instance**
 
 -   Go to your **Dashboard** page by clicking **Platform Services** from the OCI Console navigation menu then select **Analytics**.
 
@@ -91,7 +91,7 @@ In this section you will create an OAC instance.
 
 ## Part 2. Connect OAC to ADW
 
-### **STEP 3: Connect OAC to ADW**
+### **Task 3: Connect OAC to ADW**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
 
@@ -128,7 +128,7 @@ In this section you will create an OAC instance.
 
 ## Part 3. Import Datasets from ADW to OAC
 
-### **STEP 4: Import the Training Datasets for the ML Model to OAC**
+### **Task 4: Import the Training Datasets for the ML Model to OAC**
 
 -   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 

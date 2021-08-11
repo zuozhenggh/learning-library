@@ -22,7 +22,7 @@ cd ~/datapump
 </copy>
 ```
 
-## Step 2) `datapump_export.sh` script
+## Task 2: `datapump_export.sh` script
 
 The script itself is commented to explain what it does.
 
@@ -49,7 +49,7 @@ expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDE
 ```
 </details>
 
-## Step 3) run the `datapump_export.sh` script
+## Task 3: run the `datapump_export.sh` script
 
 ```
 <copy>
@@ -62,7 +62,7 @@ The output will look like
   ![](./images/migrate-db-1.png)
 
 
-## Step 4) `datapump_import.sh` script
+## Task 4: `datapump_import.sh` script
 
 Once the schema and data was exported, we'll import it into the OCI DBaaS database.
 
@@ -118,7 +118,7 @@ echo "Done!"
 ```
 </details>
 
-## Step 5) Edit the script
+## Task 5: Edit the script
 
    - Enter the `BASTION_IP`
 
@@ -129,7 +129,7 @@ echo "Done!"
 
   - Enter the `TARGET_DB_DOMAIN` name, from the DB connection string. If you followed the name conventions, it should be `nonjrfdbsubnet.nonjrfvcn.oraclevcn.com`
 
-## Step 5) run the `datapump_import.sh` script
+## Task 5: run the `datapump_import.sh` script
 
 ```bash
 <copy>

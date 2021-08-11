@@ -29,37 +29,37 @@ In this lab, you will:
 
 4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+    ![Check the workload type on the left.](images/task1-4.png " ")
     </if>
     <if type="freetier">
-    ![Check the workload type on the left.](images/list-scope-freetier.png " ")
+    ![Check the workload type on the left.](images/task1-4.png " ")
 
    > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
    </if>
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
 
-    ![Autonomous Databases console.](./images/no-adb-freetier.png " ")
+    ![Autonomous Databases console.](./images/task1-5.png " ")
 
 <if type="freetier">
 6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
-    ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
+    ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
 </if>
 
-## Task 2: Creating the ADB instance
+## Task 2: Creating the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
+    ![Click Create Autonomous Database.](./images/task2-1.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
     <if type="livelabs">
-    ![](./images/create-adb-screen-livelabs-default.png " ")
+    ![](./images/task2-2.png " ")
     </if>
     <if type="freetier">
-    ![](./images/create-adb-screen-freetier-default.png " ")
+    ![](./images/task2-2.png " ")
     </if>
 
 3. Provide basic information for the autonomous database:
@@ -71,10 +71,10 @@ In this lab, you will:
     </if><if type="freetier">For this lab, use __ADWFINANCE__.</if>
 
     <if type="livelabs">
-    ![Enter the required details.](./images/Picture100-26-livelabs.png " ")
+    ![Enter the required details.](./images/task2-3.png " ")
     </if>
     <if type="freetier">
-    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
+    ![Enter the required details.](./images/task2-3.png " ")
     </if>
 
 
@@ -83,14 +83,14 @@ In this lab, you will:
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Transaction Processing__ - Alternatively, you could have chosen Transaction Processing as the workload type.
 
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
+    ![Choose a workload type.](./images/task2-4.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
 
-    ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
+    ![Choose a deployment type.](./images/task2-5.png " ")
 
 6. Configure the database:
 
@@ -103,7 +103,7 @@ In this lab, you will:
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+    ![Choose the remaining parameters.](./images/task2-6.png " ")
 
 7. Create administrator credentials:
 
@@ -115,14 +115,14 @@ In this lab, you will:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/Picture100-26d.png " ")
+    ![Enter password and confirm password.](./images/task2-7.png " ")
 
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Private endpoint access only" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
-    ![Choose the network access.](./images/secure-access.png " ")
+    ![Choose the network access.](./images/task2-8.png " ")
 
 <if type="livelabs">
 9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
@@ -135,21 +135,23 @@ In this lab, you will:
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 <if type="livelabs">
-    ![Click Create Autonomous Database.](./images/Picture100-27-byol.png " ")
+    ![Click Create Autonomous Database.](./images/task2-9.png " ")
 </if>
 <if type="freetier">
-    ![](./images/license.png " ")
+    ![](./images/task2-9.png " ")
 </if>
 
 10. Click __Create Autonomous Database__.
 
+    ![](./images/task2-10.png " ")
+
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
-    ![Database instance homepage.](./images/Picture100-32.png " ")
+    ![Database instance homepage.](./images/task2-11.png " ")
 
 Please *proceed to the next lab*.
 
-## Want to Learn More?
+## Learn More
 
 Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
@@ -158,4 +160,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Arabella Yao, August 2021
+- **Last Updated By/Date** - Brianna Ambler, August 2021

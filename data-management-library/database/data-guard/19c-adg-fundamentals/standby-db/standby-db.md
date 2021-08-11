@@ -19,7 +19,7 @@ Estimated Lab Time: 45 Minutes
 ### Prerequisites
 - Create the primary database
 
-## **STEP**: Create the Standby database
+## Task: Create the Standby database
 
 To create the primary database we need to follow a wizard.
 

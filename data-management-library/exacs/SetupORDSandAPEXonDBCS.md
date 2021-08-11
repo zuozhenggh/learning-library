@@ -330,7 +330,7 @@ http://<IP address of ORDS server>:<ORDS Port>/ords
 
 ### Task 4: Creating the Schema on the DB instance
 
-#### STEP 4-1: Connect to Database instance
+#### Task 4:-1: Connect to Database instance
 
 - Connect to your database using the SQL Client or SQL Developer. Please Refer **Lab 4** to know how to setup the connectivity.
 
@@ -340,7 +340,7 @@ http://<IP address of ORDS server>:<ORDS Port>/ords
     sqlplus sys/password@pdbname as sysdba
     ```
 
-#### STEP 4-2: Creating Users and Tables for the users in database
+#### Task 4:-2: Creating Users and Tables for the users in database
 
 Now, since we have provisioned the database instance and connected to it. We will now create a user and create a table to load data into it.
 

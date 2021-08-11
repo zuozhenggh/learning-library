@@ -17,7 +17,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## Task 1A: Create Stack:  Compute + Networking
 
 If you already have a VCN setup, proceed to *Step 1B*.
 
@@ -79,7 +79,7 @@ If you already have a VCN setup, proceed to *Step 1B*.
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## Task 1B: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Ingress rules for the following ports:  3000, 3001, 3003, 1521, 7007, 9090, 22          
 
