@@ -1,13 +1,13 @@
 # Obtain a Compute Image with Staged Oracle Database 19c Installer Files
 
 ## Introduction
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private **workshop-staged** image in Oracle Cloud Marketplace. The image has the Oracle Database 19c installer files staged on it and has a noVNC desktop, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window and a Firefox browser.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-staged` image in Oracle Cloud Marketplace. The image has the Oracle Database 19c installer files staged on it and has a noVNC desktop, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window and a Firefox browser.
 
 Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser.
 
-Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip STEP 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which is covered in STEP 1.
+Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip STEP 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
 
-> **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because they are already done for you.
+> **Note**: If you are working in the LiveLabs environment, you can skip Task 1 and Task 2 because they are already done for you.
 
 Estimated Lab Time: 30 minutes
 

@@ -178,4 +178,4 @@ The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 10 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 11 2021
