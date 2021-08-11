@@ -1,4 +1,4 @@
-# Sending Data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate
+# Send Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate
 
 
 ## How to Prepare for This Workshop
@@ -7,11 +7,11 @@
 
 ## Oracle Cloud Infrastructure GoldenGate Workshops
 
-Welcome to the Sending Data from Oracle GoldenGate to Oracle Cloud Infrastructure (OCI) GoldenGate Workshop. Learn to send data from an Oracle GoldenGate on-premises or Marketplace instance to OCI GoldenGate.
+Welcome to the Sending Data from Oracle Cloud Infrastructure (OCI) GoldenGate to Oracle GoldenGate Workshop. Learn to pull data down from an OCI GoldenGate to an on-premises or Marketplace GoldenGate instance.
 
 ## Introduction
 
-This Workshop explains how to send data from an on-premises or Marketplace Oracle GoldenGate instance to an OCI GoldenGate deployment in the Cloud.
+This Workshop explains how to created a trusted connection between an on-premises or Marketplace Oracle GoldenGate instance and an OCI GoldenGate deployment in the Cloud, and pull a trail file down from OCI GoldenGate to consume in Oracle GoldenGate.
 
 
 ## Workshop Details

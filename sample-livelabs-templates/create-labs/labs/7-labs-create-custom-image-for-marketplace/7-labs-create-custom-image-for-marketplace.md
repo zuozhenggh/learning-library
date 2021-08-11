@@ -112,6 +112,23 @@ This lab assumes you have:
     </copy>
     ```
 
+2. Stop VNC Service to preserve the remote desktop layout before proceeding with custom image creation.
+
+    ```
+    <copy>
+    cat > /tmp/stopvnc.sh <<EOF
+    #!/bin/bash
+    cd /etc/systemd/system
+    for i in \$(ls vncserver_*@*)
+    do
+      sudo systemctl stop \$i
+    done
+    EOF
+    chmod +x /tmp/stopvnc.sh
+    /tmp/stopvnc.sh
+    </copy>
+    ```
+
 2. Create and run script */tmp/cleanup.sh*
 
     ```

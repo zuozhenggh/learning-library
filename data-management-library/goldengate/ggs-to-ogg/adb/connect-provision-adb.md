@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for this set of labs. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
+This lab walks you through the steps to create the required resources you'll use for this workshop. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
 
 *Note: This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
@@ -51,7 +51,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Create Autonomous Database](./images/01-02-create-adb.png)
 
-3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ATPSource** for **Display Name** and **Database Name**.
+3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
 
     ![Complete Database Information](./images/01-03-compartment.png)
 
@@ -138,7 +138,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![Create Autonomous Database](./images/01-02-create-adb.png)
 
-3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
+3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **TargetADW** for **Display Name** and **Database Name**.
 
     ![Complete Database information](./images/01-03-compartment.png)
 
@@ -203,5 +203,5 @@ Please proceed to the next [lab](#next).
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, July 2021
+- **Last Updated By/Date** - Jenny Chan, August 2021
 - **PAR Expiration date** - March 31, 2022
