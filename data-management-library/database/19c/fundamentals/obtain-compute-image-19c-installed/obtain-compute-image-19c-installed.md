@@ -167,8 +167,8 @@ The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default
 
     ````
     $ <copy>lsnrctl start LISTENER</copy>
-    $ <copy>lsnrctl start LISTCDB1</copy>
-    $ <copy>lsnrctl start LISTCDB2</copy>
+    $ <copy>lsnrctl start LISTENER_CDB1</copy>
+    $ <copy>lsnrctl start LISTENER_CDB2</copy>
     ````
 
 ## Learn More
