@@ -172,7 +172,7 @@ Below are the four files that you will be using during this part of the workshop
   ![ALT text is not available for this image](images/green-button.png)
   The time taken to load each file depends on factors including file size and network speed. The progress of the job can be monitored from the status bar and the ring to the left of each job card. When the ring is complete, the file has uploaded successfully. 
   ![ALT text is not available for this image](images/loading.png)
-  
+
 
 Now let's inspect the tables that were automatically created during the data load process.
 
@@ -272,11 +272,11 @@ During data load from Object Storage, Autonomous Data Warehouse creates a number
 34. Drop the tables as follows:
 
     a. Click the **refresh** button (circular arrows) to see the full list of tables in the schema and identify the logging tables.
-    
+
     b. For each table type, drop table {TABLE NAME} in the SQL Worksheet.
-    
+
     c. Click the green **Run** button.
-    
+
     d. Confirm the successful deletion in the Script Output pane.
   ![ALT text is not available for this image](images/drop-table.png)
 
@@ -459,14 +459,14 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
 [] (youtube:pLaZnCQk3Vs)
 > **Note:** Interfaces in this video may look different from the interfaces you will see.
 
-### Generat New Insights
+### Generate New Insights
 
 1. From the Autonomous Database **Tools** home page, click the **Data Insights** card. If this is the first time you've accessed this tool (or any other in the Built-In Tool Suite), you'll see a series of tool tips to show you how to use it.
   ![ALT text is not available for this image](images/2879071206.png)
 2. If the tool tips do not appear, they can be accessed by Clicking the binoculars icon on the upper-right of the screen (under your username). Click **Next** repeatedly to browse through the tool tips for the Data Insights module. (To exit at any time, press X in the upper right of the tool tip.)
 3. In this exercise you're going to follow a procedure exactly as laid out in these tool tips, thus:
 
-    a. Under **Resource**, select Analytic View MOVIE\_SALES\_2020Q2\_MODEL\_AV (which is the basis for the Business Model you created in Step 3). 
+    a. Under **Resource**, select Analytic View MOVIE\_SALES\_2020Q2\_MODEL\_AV (which is the basis for the Business Model you created in Task 3). 
 
     b. Under **Column**, select PURCHASES.
 
