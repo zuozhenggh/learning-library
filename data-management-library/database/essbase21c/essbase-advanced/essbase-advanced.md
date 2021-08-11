@@ -191,7 +191,7 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	* Click **Create** and select **Data Load** to define the load data rule.  
 
-	  ![](./images/image14_78.png)
+	   ![](./images/image14_78.png)
 
 	* In the New Rule dialog box, enter **LoadCorp** as the name of rule.
 
@@ -205,11 +205,11 @@ Create a rule file that is based on a sample file from the data warehouse.
 
 	* Click **Preview Data**.  
 
-	  ![](./images/image14_79.png)
+	    ![](./images/image14_79.png)
 
     * Click **Proceed**.
 
-    ![](./images/image14_79_1.png)
+      ![](./images/image14_79_1.png)
 
 5.  You can now see the preview of the data in the rules editor based on the input flat file.
 
