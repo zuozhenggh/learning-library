@@ -50,7 +50,7 @@ Open the notebook that was provisioned.
 
 
 ### 1. Download and Upload the Files
-Download this [Sentiment Analysis](./files/sentiment.ipynb) and [Named Entitiy Recognition](./files/ner.ipynb) files and upload it in the Notebook. 
+Download this [Sentiment Analysis](./files/Sentiment.ipynb) and [Named Entitiy Recognition](./files/NER.ipynb) files and upload it in the Notebook. 
 Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
 
 ![](./images/uploadFiles.png " ")
