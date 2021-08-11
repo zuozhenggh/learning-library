@@ -470,9 +470,8 @@ LiveLabs compute instance are password-less and only accessible optionally via S
 10. Restart *vncserver* to test.
 
     ```
-    <copy>sudo systemctl restart vncserver_<os-user>@\:1</copy>
+    <copy>sudo systemctl restart vncserver_$(whoami)@\:1</copy>
 
-    e.g sudo systemctl restart vncserver_opc@\:1
     ```
 
     ![](./images/novnc-startup-prog-2.png " ")
@@ -566,9 +565,41 @@ Perform the following to further customize and optimize *Chrome* Browser.
 
     ![](./images/add-bookmarks-07.png " ")
 
+12. Create and run the script below to initialize LiveLabs browser windows.
+
+    ```
+    <copy>
+    cat > /tmp/init_ll_windows.sh <<EOF
+    #!/bin/bash
+    # Initialize LL Windows
+
+    #Drop existing sessions
+
+    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
+    user_data_dir_base="/home/\$(whoami)/.livelabs"
+
+    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
+     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
+    fi
+
+    desktop_guide_url="https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/livelabs"
+    desktop_app1_url="https://oracle.com"
+    desktop_app2_url="https://bit.ly/golivelabs"
+    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,912 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    EOF
+    chmod +x /tmp/init_ll_windows.sh
+    /tmp/init_ll_windows.sh
+    rm -f /tmp/init_ll_windows.sh
+    
+    </copy>
+    ```
+13. Close all browser windows opened.
+
 You may now [proceed to the next lab](#next).
 
-## Appendix 1: Enable VNC Password Reset and Workshop Guide and WebApps URLs for each instance provisioned from the image
+## Appendix 1: Enable VNC Password Reset, and Workshop Guide and WebApps URLs injection for each instance provisioned from the image
 Actions provided in this Appendix are not meant to be performed on the image. They are rather intended as guidance for workshop developers writing terraform scripts to provision instances from an image configured as prescribed in this guide.
 
 Update your Terraform/ORM stack with the tasks below to enable VNC password reset and add workshop URLs for each VM provisioned from the image.
