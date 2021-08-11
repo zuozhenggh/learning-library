@@ -5,7 +5,7 @@
     {
       "title": "Lab 1: Setup Graphical Remote Desktop on Compute Instance",
       "description": "This lab will show you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance.",
-      "filename": "./../../6-labs-setup-graphical-remote-desktop/6-labs-setup-graphical-remote-desktop.md"
+      "filename": "./../../6-labs-setup-graphical-remote-desktop-new/6-labs-setup-graphical-remote-desktop.md"
     },
     {
       "title": "Lab 2: Create Custom Compute Image for OCI Marketplace",
