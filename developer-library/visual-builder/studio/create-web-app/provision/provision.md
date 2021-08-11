@@ -36,7 +36,7 @@ Provision a service instance of Visual Builder to deploy and host apps created i
    ![](./images/open.png)
 
 ## **Task 2:** Create an Instance of Visual Builder Studio
-Provision a service instance of Visual Builder Studio to design and develop your web app. You can create only one Visual Builder Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing Visual Builder Studio instance in your account.
+Provision a service instance of Visual Builder Studio to build and deploy your web app. You can create only one Visual Builder Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing Visual Builder Studio instance in your account.
 
 1. Navigate back to your Cloud Console and click the menu in the upper left corner, click **OCI Classic Services**, then select **Developer**.
 
@@ -182,7 +182,7 @@ To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs 
 
 ## **Task 4:** Get OCI Credentials
 
-Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compartment and user, as well as other details of your environment. You can get all this information from the Oracle Cloud console.
+You now need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compartment and user, as well as other details of your environment to help you connect VB Studio to OCI. You can get all this information from the Oracle Cloud console.
 
 1. First, let's retrieve the Tenancy OCID, Home Region, and Storage Namespace. In the navigation menu, select **Governance & Administration**, then under **Account Management**, select **Tenancy Details**.
 
@@ -206,7 +206,7 @@ Before you can connect VB Studio to OCI, you need the unique Oracle Cloud Identi
 
    ![](./images/oci-credentials-user-ocid.png)
 
-6. To retrieve the fingerprint of the public key associated with the `vbstudiouser` account, scroll down to the Resources section, select API Keys, and copy the fingerprint value.
+6. To retrieve the fingerprint of the private-public key pair associated with the `vbstudiouser` account, scroll down to the Resources section, select API Keys, and copy the fingerprint value.
 
    ![](./images/oci-credentials-user-fingerprint.png)
 
