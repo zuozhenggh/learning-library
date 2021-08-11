@@ -65,13 +65,11 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 -   Leave the Cloud Store selected as **Oracle**
 -   Copy and paste the following URI into the URI + Bucket field:
-
 ```
 <copy>
 https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
 </copy>
 ```
-
 -   Select **No Credential** as this is a public bucket
 -   Click on the **Test** button to test the connection. Then click **Create**.
 
