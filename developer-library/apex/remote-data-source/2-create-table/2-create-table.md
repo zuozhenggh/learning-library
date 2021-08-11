@@ -39,7 +39,7 @@ Quick SQL provides an easy way to generate the SQL required to create a relation
 
     ![](images/enter-table.png " ")
 
-## **Task $1: 3** – Implement the Script
+## Task 3: Implement the Script
 At this stage you have created a SQL statement. However, you first need to save the statement as a script file and then run the script. This will create the database object you defined.
 
 1. In the SQL (right pane) toolbar, click **Save SQL Script**.
