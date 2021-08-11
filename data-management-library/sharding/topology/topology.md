@@ -228,7 +228,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
     ![](./images/query1.JPG " ") 
 
-   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb_porcl1pdb, porcl2cdb_porcl2pdb, porcl3cdb_porcl3pdb).
+   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb, porcl3cdb\_porcl3pdb).
 
 ## **Appendix 1**: Sharding Overview & Architecture
 
@@ -293,7 +293,6 @@ For more details see [Oracle sharding documentation] (https://docs.oracle.com/en
 Below are Sample sharded table DDLs:
 
  ```
-<copy>
     CREATE SHARDED TABLE "CUSTOMER_AUTH"
 	( "USER_ID" NUMBER NOT NULL ENABLE,
 	"EMAIL" VARCHAR2(200 BYTE) NOT NULL ENABLE,
@@ -301,18 +300,15 @@ Below are Sample sharded table DDLs:
 	PRIMARY KEY ("USER_ID")
 	)
     TABLESPACE SET TTTSP_SET_1   PARTITION BY CONSISTENT HASH (USER_ID) PARTITIONS AUTO;
-</copy>
 ```
 
 ```
-<copy>
     CREATE SHARDED TABLE "PRODUCTS"
        ( "SKU" VARCHAR2(255 BYTE) NOT NULL ENABLE,
          "JSON_TEXT" CLOB,
           CHECK ("JSON_TEXT" is json strict) ENABLE,
           PRIMARY KEY ("SKU")
       ) TABLESPACE SET TTTSP_SET_2 PARTITION BY CONSISTENT HASH (SKU) PARTITIONS AUTO;
-</copy>
  ```
 
 You may now [proceed to the next lab](#next).

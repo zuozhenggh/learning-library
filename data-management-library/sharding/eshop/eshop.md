@@ -41,11 +41,11 @@ This lab assumes you have:
 
 ## Task 1: Eshop Demonstration
 
-1. **eShop URL Access:** When you access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens. 
+1. **eShop URL Access:** When you access the application using the URL  (**`http://localhost:3000/`**), the application's home page opens. 
 
-  ![](./images/app1.png " ")
+  ![](./images/app_front.JPG " ")
 
-2. **Log In and Sign Up:** The application has login and new user signup features, but it allows access to a non-logged in application user to some extent. It allows you to search for a product in the catalog and make a purchase based on the product's reviews, sentiment score, and rating.
+2. **Log In and Sign Up:** The application has **login** and new user **signup** features, but it allows access to a non-logged in application user to some extent. It allows you to search for a product in the catalog and make a purchase based on the product's reviews, sentiment score, and rating.
 
   To log in, go to the top right of the navigation bar, click the user profile icon, and select Log In. On the login page, you can log in to an existing account or sign up for a new account.
    
@@ -58,7 +58,7 @@ This lab assumes you have:
 
   After a successful login you are brought back to the home page.
 
-3. **Browse and Search Products:** Click CATALOG in the navigation bar to browse the product list. This page lists all of the products in the store by fetching all of the rows from the Product JSON tables, which are partitioned among the three database shards, along with a picture and price.
+3. **Browse and Search Products:** Click **CATALOG** in the navigation bar to browse the product list. This page lists all of the products in the store by fetching all of the rows from the Product JSON tables, which are partitioned among the three database shards, along with a picture and price.
 
   ![](./images/app3.JPG " ")
 
@@ -82,18 +82,18 @@ This lab assumes you have:
 
   On the product information screen the reviews are sorted by sentiment ratings. You can search for reviews based on the content or keyword.
 
-  On the product information page, click the Add To Cart button to add the product to your cart. If you want to add more item to the cart, you can repeat the procedure.
+  On the product information page, click the **Add To Cart** button to add the product to your cart. If you want to add more item to the cart, you can repeat the procedure.
 
 5. **Go To the Cart:**  Click the Go To Cart button on a product page.
 
   ![](./images/0608.png " ")
 
-  In the cart you can alter the number of a specific product and click Proceed to Checkout.
+  In the cart you can alter the number of a specific product and click **Proceed to Checkout**.
   When you change the product quantity, the cart updates the total price per product calculation. In addition, total value of the cart contents is updated using a query to a table which is sharded across all (3) shard databases.
 
   ![](./images/0626.png " ")
 
-6. **Place Your Order:** In the Review Order page, look over the order and click Place your order. 
+6. **Place Your Order:** In the Review Order page, look over the order and click **Place your order**. 
 You can change the address shown in Saved Address if you want to ship products to a location different from your default address.
 
   ![](./images/bill.png " ")

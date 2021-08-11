@@ -58,7 +58,7 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ```
     <copy>
-    select p.json_text.NAME from PRODUCTS p where contains(json_text, 'fuzzy((sona))', 1) > 0 order by score(1) desc;
+    select p.json_text.NAME from PRODUCTS p where contains(json_text, 'fuzzy((meras))', 1) > 0 order by score(1) desc;
     </copy>
     ```
 
@@ -153,4 +153,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Balasubramanian Ramamoorthy, Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - June 2021
+* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - July 2021
