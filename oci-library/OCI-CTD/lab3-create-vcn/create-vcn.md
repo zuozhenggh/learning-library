@@ -21,7 +21,7 @@ If you do not see your newly created compartment, you want to refresh / reload y
 
 ![](images/compartment-explorer.png " ")
 
-## **Task $1: 2** Creating a VCN
+## Task 2: Creating a VCN
 
 You have 2 options on how to create your VCN. If this is your first time, it is
 **recommended** to use the Wizard. The Wizard can automatically create the VCN with Subnets for you and also ensure there is an Internet Gateway configured with the correct routing tables for the public subnet.

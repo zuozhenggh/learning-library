@@ -6,7 +6,7 @@ In this lab, you will access your cluster.
 Estimated Lab Time: 10 minutes
 
 
-## **Task $1:**: Access your Cluster
+## Task: Access your Cluster
 
 1. The public IP address of the bastion can be found on the lower left menu under Outputs. If you navigate to your instances in the main menu, you will also find your bastion instance as well as the public IP.
 

@@ -643,23 +643,23 @@ In this lab, you will:
 
 1. On Oracle Cloud Console, click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
 
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
-- Database name: [Your Initials]Dev02 (e.g. VLTDev02)
-- Choose a workload type: Transaction Processing
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: disabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
+    - Database name: [Your Initials]Dev02 (e.g. VLTDev02)
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: disabled
 
 2. Under Create administrator credentials:
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Under Choose network access:
 
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
@@ -667,7 +667,7 @@ In this lab, you will:
 
 6. Specify a wallet password.
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 7. Create a new folder and unzip your wallet files.
 
@@ -713,9 +713,9 @@ In this lab, you will:
     ````
 
 13. We have to make 3 changes:
-- Comment out the oracle.net.wallet_location line. 
-- Use TNS_ADMIN environment variable value in javax.net.ssl.trustStore and javax.net.ssl.keyStore. 
-- Set javax.net.ssl.trustStorePassword and javax.net.ssl.keyStorePassword to the wallet password.
+    - Comment out the oracle.net.wallet_location line. 
+    - Use TNS_ADMIN environment variable value in javax.net.ssl.trustStore and javax.net.ssl.keyStore. 
+    - Set javax.net.ssl.trustStorePassword and javax.net.ssl.keyStorePassword to the wallet password.
 
     ````
     #oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=${TNS_ADMIN})))
