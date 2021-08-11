@@ -57,7 +57,7 @@ To complete this lab, you must have:
 
   ![ssh connection](./images/instance-ssh-connection.jpg)
 
-3. After the connection is successful you need to run some commands in order to make the configuration complete.
+3. After the connection is successful you need to run some commands in order to complete the configuration.
 
     * Before beginning to install anything on the instance, run the following command.
 
@@ -152,7 +152,7 @@ To complete this lab, you must have:
 
 5. Open OCI Console and navigate to the Autonomous Database created in **Lab 3: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
 
-6. After downloading the wallet to you local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
+6. After downloading the wallet to your local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
 
     ```
     <copy>
@@ -204,7 +204,7 @@ You can either create and run the following application on your local machine, t
 
   **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
-The final structure of the project you are going to create will look as in the picture below.
+The structure of the project you are going to create will look like the following:
 
   ![Project Structure](./images/nodej-api-project-structure.png)
 

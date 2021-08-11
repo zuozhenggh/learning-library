@@ -79,7 +79,7 @@ To complete this lab, you must have:
 
 After the Virtual Cloud Network and its components are provisioned, the next step would be to create a Linux Instance to run the OracleJET code.
 
-1. In the top-left hamburger menu navigate to **Compute** -> **Instances** and choose **Create Instance**. Chose a name for the instance, in this case it would be _ojet-server_, then select the desired compartment and availability domain.
+1. In the top-left hamburger menu navigate to **Compute** -> **Instances** and choose **Create Instance**. Choose a name for the instance, in this case it would be _ojet-server_, then select the desired compartment and availability domain.
 
   ![create instance form step 1](./images/create-instance-form-step1.png)
 
@@ -87,7 +87,7 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   ![create instance form step 2](./images/create-instance-form-step2.png)
 
-3. Chose the VCN in which the instance will reside, as well as the subnet created previously. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
+3. Choose the VCN in which the instance will reside, as well as the subnet created previously. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
 
   ![create instance form step 3](./images/create-instance-form-step3.png)
 
@@ -327,11 +327,11 @@ In order to see a treemap in your application, use Visual Studio Code and follow
       </copy>
       ```
 
-      After all this changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
+      After all these changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
 
       ![Running app in browser](./images/treemap.png)
 
-14. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
+14. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from your laptop, not on the instance).
 
   **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 
