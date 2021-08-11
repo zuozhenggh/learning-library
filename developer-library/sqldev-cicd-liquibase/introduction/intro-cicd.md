@@ -23,9 +23,9 @@ In this lab, you will:
 
 1. Login to Oracle cloud console using the URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
-- Tenant: oci-tenant
-- Username: oci-username
-- Password: oci-password
+    - Tenant: oci-tenant
+    - Username: oci-username
+    - Password: oci-password
 
 2. Click on main menu ≡, then Networking > **Virtual Cloud Networks**. Select your Region and Compartment assigned by the instructor. 
 
@@ -33,8 +33,8 @@ In this lab, you will:
 
 4. Select **VCN with Internet Connectivity**. Start VCN Wizard.
 
-- VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
-- Compartment: [Your Compartment]
+    - VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
+    - Compartment: [Your Compartment]
 
 5. Click Next and Create.
 
@@ -45,12 +45,12 @@ In this lab, you will:
 
 1. Click on main menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
-- Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
-- Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
-- Virtual cloud network: [Your Initials]-VCN
-- Subnet: Public Subnet
-- Assign a public IP address
-- Add SSH keys: Choose SSH key files > id_rsa.pub
+    - Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
+    - Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
+    - Virtual cloud network: [Your Initials]-VCN
+    - Subnet: Public Subnet
+    - Assign a public IP address
+    - Add SSH keys: Choose SSH key files > id_rsa.pub
 
 2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available.
 
@@ -176,23 +176,23 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
 1. Click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
 
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-Dev01 (e.g. VLT-Dev01)
-- Database name: [Your Initials]Dev01 (e.g. VLTDev01)
-- Choose a workload type: Transaction Processing
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: disabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-Dev01 (e.g. VLT-Dev01)
+    - Database name: [Your Initials]Dev01 (e.g. VLTDev01)
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: disabled
 
 2. Under Create administrator credentials:
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Under Choose network access:
 
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
@@ -205,7 +205,7 @@ From the compute node, we will connect to the Autonomous Database. Wallet files,
 
 2. Specify a wallet password.
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Create a new folder and unzip your wallet files.
 
@@ -300,13 +300,13 @@ For this simple CICD example, we will capture database changes from the HR sampl
 
 1. Create a new connection in SQL Developer to Dev01 ATP.
 
-- Name: hr@Dev01ATP
-- Username: hr
-- Password: DBlearnPTS#21_
-- Save Password: enabled
-- Connection Type: Cloud Wallet
-- Configuration File: click Browse and select Wallet_[Your Initials]Dev01.zip
-- Service: [lowercase-initials]dev01_tp
+    - Name: hr@Dev01ATP
+    - Username: hr
+    - Password: DBlearnPTS#21_
+    - Save Password: enabled
+    - Connection Type: Cloud Wallet
+    - Configuration File: click Browse and select Wallet_[Your Initials]Dev01.zip
+    - Service: [lowercase-initials]dev01_tp
 
 2. Click Test, make sure it returns 'Success', and Save.
 
@@ -468,9 +468,9 @@ GitHub uses Git version control systems (VCS) to handle the collaboration workfl
     ````
 
 9. We have to make 3 changes:
-- Comment out the `oracle.net.wallet_location` line. 
-- Use `TNS_ADMIN` environment variable value in `javax.net.ssl.trustStore` and `javax.net.ssl.keyStore`. 
-- Set `javax.net.ssl.trustStorePassword` and `javax.net.ssl.keyStorePassword` to the wallet password.
+    - Comment out the `oracle.net.wallet_location` line. 
+    - Use `TNS_ADMIN` environment variable value in `javax.net.ssl.trustStore` and `javax.net.ssl.keyStore`. 
+    - Set `javax.net.ssl.trustStorePassword` and `javax.net.ssl.keyStorePassword` to the wallet password.
 
     ````
     #oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=${TNS_ADMIN})))
