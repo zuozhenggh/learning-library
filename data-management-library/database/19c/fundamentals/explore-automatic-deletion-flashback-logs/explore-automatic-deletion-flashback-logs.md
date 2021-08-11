@@ -43,7 +43,7 @@ In this step, you review important initialization parameters, enable `ARCHIVELOG
     CDB1
     ````
 
-3. Connect to CDB1 as the `SYS` user.
+3. Connect to CDB1.
 
     ````
     $ <copy>sqlplus / as sysdba</copy>
@@ -95,7 +95,7 @@ In this step, you review important initialization parameters, enable `ARCHIVELOG
     CDB1
     ````
 
-9. Connect to CDB1 as the `SYS` user.
+9. Connect to CDB1.
 
     ````
     $ <copy>sqlplus / as sysdba</copy>

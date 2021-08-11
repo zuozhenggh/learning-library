@@ -66,7 +66,7 @@ Be sure that the following tasks are completed before you start:
 
 ## Task 3: Create a catalog owner and grant privileges 
    To connect to the recovery catalog and to PDB1 as the target database, create a virtual private RMAN catalog (VPC) in PDB19 for groups of databases and users of CDB1, PDB1, and PDB2.
-1. Set `$ORACLE_SID` to `CDB1`
+1. Set `$ORACLE_SID` to `CDB1`.
    
     ```
     $ <copy>. oraenv</copy>
@@ -116,14 +116,15 @@ Be sure that the following tasks are completed before you start:
 
     recovery catalog created
     ```
-
+3. Exit RMAN.
+   
     ```
     RMAN> <copy>EXIT;</copy>
 
     Recovery Manager complete
     ```
 
-3. Connect to the target (`CDB1`) and the recovery catalog (`PDB19`) through RMAN.
+4. Connect to the target (`CDB1`) and the recovery catalog (`PDB19`) through RMAN.
 
     ```
     $ <copy>rman target / catalog catowner/Ora4U_1234@PDB19</copy>
@@ -136,7 +137,7 @@ Be sure that the following tasks are completed before you start:
     connected to target database: CDB1 (DBID=1051548720)
     connected to recovery catalog database
     ```
-4. Register `CDB1` in the recovery catalog. 
+5. Register `CDB1` in the recovery catalog. 
 
     ```
     RMAN> <copy>REGISTER DATABASE;</copy>
@@ -145,6 +146,7 @@ Be sure that the following tasks are completed before you start:
     starting full resync of recovery catalog
     full resync complete
     ```
+6. Exit RMAN.
 
     ```
     RMAN> <copy>EXIT</copy>
@@ -250,7 +252,7 @@ Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will
     ```
 6. As the base catalog owner, give the VPC users access to the metadata of `PDB1` and `PDB2`, respectively.
 
-7. Connect to RMAN
+7. Connect to RMAN.
 
     ```
     $ <copy>rman</copy> 
@@ -262,20 +264,21 @@ Create the VPC users, **vpc\_pdb1** and **vpc\_pdb2**, in the catalog. They will
 
     connected to recovery catalog database
     ```
-9. give the `vpc_pdb1` user the `GRANT CATALOG` privilege for `PDB1` 
+9. Give the `vpc_pdb1` user the `GRANT CATALOG` privilege for `PDB1`. 
 
     ```
     RMAN> <copy>GRANT CATALOG FOR PLUGGABLE DATABASE PDB1 TO vpc_pdb1;</copy>
 
     Grant succeeded.
     ```
-10. give the `vpc_pdb2` user the `GRANT CATALOG` privilege for `PDB2`
+10. Give the `vpc_pdb2` user the `GRANT CATALOG` privilege for `PDB2`.
 
     ```
     RMAN> <copy>GRANT CATALOG FOR PLUGGABLE DATABASE pdb2 TO vpc_pdb2;</copy>
 
     Grant succeeded.
     ```
+11. Exit RMAN.
 
     ```
     RMAN> <copy>EXIT</copy>
@@ -315,7 +318,7 @@ Connect to the `PDB1` target PDB and to the recovery catalog as the **vpc_pdb1**
 
 4. Save your **TAG** value from the previous ouput, it is located in the third line from the bottom. In the example above, the tag value is TAG20210603T184728.
 
-5. Exit RMAN
+5. Exit RMAN.
 
     ```
     RMAN> <copy>EXIT</copy>
