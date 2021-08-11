@@ -5,7 +5,7 @@ In this lab, you will access your GPU Node.
 
 Estimated Lab Time: 5 minutes
 
-## **Task $1:**: Access your GPU Node
+## Task: Access your GPU Node
 1. Once your job has completed successfully in Resource Manager, you can find the Public IP Addresses for the GPU node and the Private Key on the lower left menu under **Outputs**. 
 
 2. Copy the Private Key onto your local machine, change the permissions of the key and login to the instance:

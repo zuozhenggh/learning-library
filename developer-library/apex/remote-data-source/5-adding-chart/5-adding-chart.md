@@ -10,7 +10,7 @@ The Big Mac Index includes data for countries over the last 20 years. Therefore,
 
 Initially you will create a chart that displays the Dollar Exchange Rate for Australia (COUNTRY_ISO = 'AUS'). Then you will add additional data series.
 
-## **Task $1: 1** – Create a New Page
+## Task 1: Create a New Page
 
 1. From the runtime environment, in The Developer Toolbar (bottom of the screen), click **Application ###**.
 
@@ -67,7 +67,7 @@ Initially you will create a chart that displays the Dollar Exchange Rate for Aus
 
     ![](images/runtime.png " ")
 
-## **Task $1: 2** – Adjust the Chart Attributes
+## Task 2: Adjust the Chart Attributes
 As can be seen by the appearance of the first cut of the chart, there is work to be done. Updating some attributes will help.
 
 1. From the runtime environment, in the Developer Toolbar (bottom of the screen), click **Quick Edit**.
@@ -86,7 +86,7 @@ As can be seen by the appearance of the first cut of the chart, there is work to
 
     ![](images/set-attributes.png " ")
 
-## **Task $1: 3** – Update the Chart Series
+## Task 3: Update the Chart Series
 Time to update the existing chart line (series), and add a few more data series.
 
 1. Within Page Designer, in the Rendering tree (left pane), under **Country Chart**, click **Series 1**.

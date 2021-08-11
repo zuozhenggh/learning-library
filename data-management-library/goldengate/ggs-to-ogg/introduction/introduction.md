@@ -4,6 +4,8 @@
 
 Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on premises installation or Marketplace image, then use this set of labs to help you pull data down from OCI GoldenGate to Oracle GoldenGate.
 
+*For the purposes of this workshop, Autonomous Transaction Processing serves as the source database and Autonomous Data Warehouse serves as the target database.*
+
 Estimated Lab Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
@@ -23,7 +25,7 @@ To successfully complete this LiveLab, you must have:
 
 * An on premises or Marketplace Oracle GoldenGate installation
 * An Oracle Cloud Infrastructure account with access to Netowrking and OCI GoldenGate services
-* Source and target databases provisioned and configured for Oracle GoldenGate (source) and OCI GoldenGate (target)
+* Source and target databases provisioned and configured for Oracle OCI ([source](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html#GUID-384772C7-B327-420C-B6AA-B6CEA727322F)) and Oracle GoldenGate ([target](https://www.oracle.com/middleware/technologies/fusion-certification.html))
 
 *Note: If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
@@ -44,4 +46,4 @@ To successfully complete this LiveLab, you must have:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - July 2021
+* **Last Updated By/Date** - August 2021

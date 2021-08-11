@@ -19,12 +19,12 @@ Estimated lab time: 1 hour
 ### Prerequisites
 
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-  
+
     -   Included Python scripts
     ```
         - block-volume-migration.py
         - boot-volume-migration.py
-        - located: 
+        - located:
         .
       └── pilot-light
         ├── README.md
@@ -34,7 +34,7 @@ Estimated lab time: 1 hour
         │   │   ├── block-volume-migration.py
         │   │   ├── boot-volume-migration.py
     ```
-        
+
 - Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 - Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
@@ -50,11 +50,11 @@ Estimated lab time: 1 hour
 
   ![](./images/4.png " ")
 
-3. This policy will point your DNS to your standby region's load balancer if your primary region's load balancer fails the health check. 
+3. This policy will point your DNS to your standby region's load balancer if your primary region's load balancer fails the health check.
 
   ![](./images/5.png " ")
 
-4. You can get your load balancer IPs from Netowrking -> Load balancers. Make sure you are in the correct regions. 
+4. You can get your load balancer IPs from Netowrking -> Load balancers. Make sure you are in the correct regions.
 
   ![](./images/6.png " ")
 
@@ -64,11 +64,11 @@ Estimated lab time: 1 hour
 
   ![](./images/8.png " ")
 
-6. Input the information like above. 
+6. Input the information like above.
 
   ![](./images/9.png " ")
 
-7. Make sure to attach the health check to your primary region's load balancer, this is what determines if traffic should be re-directed to your standby region. 
+7. Make sure to attach the health check to your primary region's load balancer, this is what determines if traffic should be re-directed to your standby region.
 
   ![](./images/10.png " ")
 
@@ -78,7 +78,7 @@ Estimated lab time: 1 hour
 
 ### Attach a subdomain to the DNS zone
 
-1. You can attach a subdomain to your previously created zone in lab-1. 
+1. You can attach a subdomain to your previously created zone in lab-1.
 
   ![](./images/12.png " ")
 
@@ -97,7 +97,7 @@ Estimated lab time: 1 hour
 1.  Boot Volume script (boot-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region through volume backups.
 
     ```
-    usage: boot-volume-migration.py [-h] 
+    usage: boot-volume-migration.py [-h]
           --compartment-id COMPARTMENT_ID
           --destination-region DESTINATION_REGION
           --availability-domain AVAILABILITY_DOMAIN
@@ -106,7 +106,7 @@ Estimated lab time: 1 hour
 2. Block Volume script (block-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region through volume backups.
 
     ```
-    usage: block-volume-migration.py [-h] 
+    usage: block-volume-migration.py [-h]
           --compartment-id COMPARTMENT_ID
           --destination-region DESTINATION_REGION
           --availability-domain AVAILABILITY_DOMAIN
@@ -117,7 +117,7 @@ Steps in the automation scripts:
 2. copy\_volume\_backups across destination region
 3. restore\_volume in destination region
 
-## **Task $1: 3 (alternative):** Run the scripts manually
+## Task 3 (alternative): Run the scripts manually
 
 ### Run the scripts
 
@@ -144,7 +144,7 @@ Steps in the automation scripts:
 
 1. The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to DR region (default schedule is set for 12 hours).
 
-  **The previous manual step of running the scripts yourself means you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
+  **The previous manual step of running the scripts yourself means you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.**
 
 2. Navigate to OCI Console and verify that both boot volumes and block volumes are copied to DR region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
 
@@ -154,17 +154,17 @@ On the OCI console, change to your specified DR region. Create a new compute ins
 
 1. Click "change image" and select boot volume.
 There select the restore boot volume copied over from the volume backup from the source region, London.
-    
+
   ![](./images/17.PNG " ")
-    
-2. Submit the instance to be created. 
-    
+
+2. Submit the instance to be created.
+
   ![](./images/18.PNG " ")
 
 3. SSH into the newly created instance.
 
     You can verify that the site is working with `curl http://localhost`.
-    
+
         [root@test-backup-1 html]# curl http://localhost
         <html>
         <html>
@@ -176,25 +176,25 @@ There select the restore boot volume copied over from the volume backup from the
         </html>
         </body>
         </html>
-        
+
         [root@test-backup-1 html]#
 
 4. *Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
 
-5. This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file. 
-Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the compute you just created. 
+5. This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file.
+Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the compute you just created.
 
     Click attach block volume and select the restored block volume copied over through volume backup from source region, London.
-    
+
   ![](./images/19.PNG " ")
-    
+
     Select the device path "/dev/oracleoci/oraclevdb".
-    
+
   ![](./images/20.PNG " ")
-    
-    
+
+
   ![](./images/21.PNG " ")
-    
+
         [opc@test-backup-1 html]# sudo iscsiadm -m node -o new -T iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881 -p 169.254.2.2:3260
         New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 169.254.2.2,3260,-1 iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881] added
         [opc@test-backup-1 html]# sudo iscsiadm -m node -o update -T iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881 -n node.startup -v automatic
@@ -209,17 +209,17 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
         ├─sda2 swap         bf8f71d6-5bae-4981-8eae-2171e78524d6 [SWAP]
         ├─sda3 xfs          553c3110-8f96-454c-9399-3c5c18f3d631 /
         └─sda1 vfat         38DB-ABB6                            /boot/efi
-    
+
     Finish the volume attachment.
 
 6. Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
 
 
   ![](./images/22.PNG " ")
-    
+
 
   ![](./images/23.PNG " ")
-    
+
 
   ![](./images/24.PNG " ")
 
@@ -227,7 +227,7 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 ## Task 5: Object Storage Replication
 
-1. The terraform script will also configure object storage bucket replication across your regions. 
+1. The terraform script will also configure object storage bucket replication across your regions.
 
 2. Navigate to OCI Console in your primary region to the object storage bucket and upload one or more files.
 
@@ -237,7 +237,7 @@ Verify the application is working as expected in the Frankfurt DR region by navi
 
 ## Task 6: File Storage Replication
 
-1. The terraform script will also configure rsync between the file storage systems across the regions. 
+1. The terraform script will also configure rsync between the file storage systems across the regions.
 
 2. A CRON job is setup in primary region on the APP-server-1 compute to take snapshot every hour and another CRON job is setup in DR region's replication compute server to do a rsync across region every 30 mins.
 
@@ -274,5 +274,3 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 - **Last Updated by/Date** - Alex MacDonald, November 2020
 - **Workshop Expiry Date** - November 30, 2021
-
-

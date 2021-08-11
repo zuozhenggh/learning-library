@@ -10,7 +10,7 @@ Estimated Time: 10 minutes
 When you ran the script in your first workspace you created a REST
 handler for both the EMP and DEPT tables. You have already created a Web Source module for the EMP table. If you also create a Web Source module for the DEPT table, you can readily define List of Values for each in Shared Components. These can then be utilized within your pages to improve the data displayed and significantly improve data entry and quality.
 
-## **Task $1: 1** – Add Web Source for DEPT
+## Task 1: Add Web Source for DEPT
 
 1. Return to the Application Builder.
 2. Go to the App Builder Home Page.
@@ -54,7 +54,7 @@ handler for both the EMP and DEPT tables. You have already created a Web Source 
 
     ![](images/create-ws.png " ")
 
-## **Task $1: 2** – Creating List of Values
+## Task 2: Creating List of Values
 You now have the Web Source modules which can be used as the basis for List of Values.
 
 1. From the Web Source Modules page, in the breadcrumbs, click **Shared Components**.
@@ -118,7 +118,7 @@ You now have the Web Source modules which can be used as the basis for List of V
 
     Click **Create**.
 
-## **Task $1: 3** – Update the Form
+## Task 3: Update the Form
 If you review the Maintain Employee form page more closely you will see that the Department Number (DEPTNO) and the Manager (MGR) item are both numeric items and expect the end user to know the relevant numbers, rather than select from a list of names.
 
 1. From the Lists of Values page, in the Application Builder toolbar, click **Edit Page 5**.
@@ -150,7 +150,7 @@ If you review the Maintain Employee form page more closely you will see that the
 
     ![](images/save-form.png " ")
 
-## **Task $1: 4** – Update the Report
+## Task 4: Update the Report
 Similarly, the Employees report shows numerical values rather than names.
 
 1. Navigate to Page 4 in Page Designer.     
