@@ -27,7 +27,7 @@ Before you start, be sure that you have done the following:
 - Created SSH keys in Cloud Shell
 - Obtained and signed in to your workshop-installed compute instance. If not, see Lab 4- Obtain a Compute Image with Oracle Database 19c Installed
 
-## Task 1: Enable ARCHIVELOG mode on CDB1 and CDB2
+## **TASK 1**: Enable ARCHIVELOG mode on CDB1 and CDB2
 
 1. Open a terminal window.  
 
@@ -46,7 +46,7 @@ The error  message at the beginning of the script is expected if the CDB is alre
     ORACLE_SID = [CDB1] ? CDB2
     ```
 
-## Task 2: Verify that the listeners for CDB1 and CDB2 are started
+## **TASK 2**: Verify that the listeners for CDB1 and CDB2 are started
 1. Enter listener control and check that the listeners are started for CDB1, PDB1 and CDB2.
 Look for 'status READY' for each service in the Service Summary.
     ```
@@ -80,7 +80,7 @@ Look for 'status READY' for each service in the Service Summary.
     The command completed successfully
     ```
 
-2. Start the listeners, if your listeners are not ready. Skip this step if your listeners are already started.
+2. Start the listeners, if your listeners are not ready. Skip this task if your listeners are already started.
 
     ```
     LSNRCTL> <copy>start LISTCDB1</copy>
@@ -94,7 +94,7 @@ Look for 'status READY' for each service in the Service Summary.
     LSNRCTL> exit
     ```
 
-## Task 3: Verify that PDB1 has sample data before cloning
+## **TASK 3**: Verify that PDB1 has sample data before cloning
 1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
 
     ```
@@ -120,7 +120,7 @@ Look for 'status READY' for each service in the Service Summary.
     Session altered.
     ```
 
-4. Verify that PDB1 contains the `HR.EMPLOYEES` table. After cloning PDB1 on CDB2, the new PDB should contain `HR.EMPLOYEES` as PDB1 did. We will check for this in later steps. This result should show 107.
+4. Verify that PDB1 contains the `HR.EMPLOYEES` table. After cloning PDB1 on CDB2, the new PDB should contain `HR.EMPLOYEES` as PDB1 did. We will check for this in later tasks. This result should show 107.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -129,14 +129,14 @@ Look for 'status READY' for each service in the Service Summary.
     ----------
           107
     ```
-## Task 4: Create a common user and grant it privileges to clone a database
+## **TASK 4**: Create a common user and grant it privileges to clone a database
 1. Connect to CDB1 as `SYS`.
 
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
     Connected.
     ```
-A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this step, we create user called c##remote_user, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
+A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create user called c##remote_user, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
 
 2. Create a common user named c##remote_user in CDB1.
 
@@ -158,7 +158,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## Task 5: Use DBCA to clone a remote PDB from a CDB
+## **TASK 5**: Use DBCA to clone a remote PDB from a CDB
 >In this section, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.<
 
 1. Run the `-createPluggableDatabase` command in DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
@@ -188,7 +188,7 @@ A common user is a database user that has the same identity in the `root` contai
     $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB2/CDB2.log</copy>
     ```
 
-## Task 6: Verify that PDB1 is cloned and that HR.EMPLOYEES exists in PDB2.
+## **TASK 6**: Verify that PDB1 is cloned and that HR.EMPLOYEES exists in PDB2.
 1. Set the environment variable to CDB2. Enter CDB2 at the prompt.
 
     ```
@@ -237,14 +237,14 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## Task 7: Reset your environment
+## **TASK 7**: Reset your environment
 1. Delete PDB2.
 
     ```
     $ <copy>$ORACLE_HOME/bin/dbca -silent -deletePluggableDatabase -sourceDB CDB2 -pdbName PDB2</copy>
     ```
 
-## Task 8: Disable ARCHIVELOG mode for CDB1 and CDB2.
+## **TASK 8**: Disable ARCHIVELOG mode for CDB1 and CDB2.
 1. Run the `disable_ARCHIVELOG.sh` script and enter CDB1 at the prompt to disable `ARCHIVELOG` mode on CDB1.
 
     ```
