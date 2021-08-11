@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to capture and send data from OCI GoldenGate to an on premise or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Receiver Server Path to initiate pulling the data down to the target, and a Replicat to consume the data received.
+This lab walks you through the steps to capture and send data from OCI GoldenGate to an on premisess or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Receiver Path to initiate pulling the data down to the target, and a Replicat to consume the data received.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 15 minutes
 
 ### About Extracts, Paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Receiver Path is a target-initiated configuration that uses the Receiver Server. A Replicat is a process that delivers data to the target.
@@ -12,9 +12,9 @@ An Extract is a process that extracts, or captures, data from a source database.
 ### Objectives
 
 In this lab, you will:
-* Add and run an Extract process to capture data to send to Oracle GoldenGate
-* Add and run a Receiver Server Path to pull the trail file down to Oracle GoldenGate
-* Add and run a Replicat process to consume the trail file sent from OCI GoldenGate
+* Add and run an Extract process to capture data
+* Add and run a Receiver Path to pull the trail file down to Oracle GoldenGate
+* Add and run a Replicat process to consume the trail file received from OCI GoldenGate
 
 ### Prerequisites
 
@@ -116,7 +116,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![](images/02-15-rcvr.png)
 
-In this lab, you created and ran a Path on your on premise Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
+In this lab, you created and ran a Path on your on premisess Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
 ## Task 4: Add a Checkpoint table
 
@@ -207,11 +207,11 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 
 ## Learn More
 
-* [Quickstart - Sending Data from Oracle GoldenGate to OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ogg-premise-cloud.html)
+* [Quickstart - Sending Data from OCI GoldenGate to Oracle GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ggs-ogg-prem.html)
 * [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
-* [Create a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-19B3B506-ADF1-465E-87B5-91121FE44503)
+* [About Target-initiated Paths](https://docs.oracle.com/en/middleware/goldengate/core/21.1/ggmas/overview-target-initiated-paths.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2021
+* **Last Updated By/Date** - Jenny Chan, August 2021

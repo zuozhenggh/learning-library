@@ -46,7 +46,7 @@ Estimated Lab Time: 15 minutes
 
     ![](images/2-javascript-process.png " ")
 
-3. Update the **When Button Pressed** property with **Extend\_Project\_Tasks**
+3. Update the **When Button Pressed** property in the **Server-side Condition** with **Extend\_Project\_Tasks**
 
     This will ensure that the process will not be executed unless the **Extend\_Project\_Tasks** button is clicked.
 
@@ -74,7 +74,7 @@ Estimated Lab Time: 15 minutes
 
     ![](images/6-create-validation.png " ")
 
-3. Update the property values for the new validation as the followings:
+3. In the Property Editor, under Validation, select / enter the following:
 
     **Name** = > **Tasks can't be closed**
 
@@ -94,9 +94,9 @@ Estimated Lab Time: 15 minutes
 
     ![](images/7-complete-validation.png " ")
 
-4. Navigate back to Project Tasks and Report and click on the edit icon of the Complete plan task.
+4. Navigate back to Project Tasks Report and click on the edit icon of the **Complete plan** task.
     
-    Change the Assigned To value and click Apply Changes.
+    For **Assigned To**, enter a name or text of your choice and click **Apply Changes**.
 
     You will receive now the error message that you specified earlier protecting the record from getting updated.
 

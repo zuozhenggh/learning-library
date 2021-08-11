@@ -30,7 +30,7 @@ In the following steps, the scripts will build a SQL query that will identify:
 
 Customers will be categorized into 5 buckets measured (using the NTILE function) in increasing importance. For example, an RFM combined score of 551 indicates that the customer is in the highest tier of customers in terms of recent visits (R=5) and activity on the site (F=5), however the customer is in the lowest tier in terms of spend (M=1). Perhaps this is a customer that performs research on the site, but then decides to buy movies elsewhere! 
 
-## STEP 1 -  Binning Customers Sales By Value
+## Task 1:  Binning Customers Sales By Value
 
 1. Use the following query to segment customers into 5 distinct bins based on the value of their purchases:
 
@@ -66,7 +66,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     The last column in the report shows the "Bin" value. A value of 1 in this column indicates that a customer is a low spending customer and a value of 5 indicates that a customer is a high spending customer. To see more information about using the `NTILE` function in the SQL documentation, click [here](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
 
 
-## STEP 2 -  Binning Customer Sales By Frequency
+## Task 2:  Binning Customer Sales By Frequency
 
 1. The next step is to determine how frequently customers are watching movies on our platform. To do this, we simply calculate the number of movies watched by each customer and then bin that calculation across 5 buckets.
 
@@ -85,7 +85,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
     Now we can identify those customers, based on when they last watched a movie, that watch the fewest number of movies, where the rfm\_frequency is 1, versus those customers that watch the most number of movies, where the rfm\_frequency is 5.
 
-## STEP 3 -  Creating an RFM Query
+## Task 3:  Creating an RFM Query
 
 1. Now we use the **`WITH`** clause to combine these two queries to create an RFM query:
 

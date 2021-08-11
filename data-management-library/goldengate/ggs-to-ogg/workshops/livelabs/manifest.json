@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Sending Data from Oracle GoldenGate to Oracle Cloud Infrastructure GoldenGate",
+    "workshoptitle": "Send Data from Oracle Cloud Infrastructure GoldenGate to Oracle GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -9,7 +9,7 @@
         {
             "title": "Lab 1: Create OCI GoldenGate resources",
             "description": "Create your OCI GoldenGate deployment and database registration",
-            "filename": "../../create/create.md"
+            "filename": "../../create/create-gb.md"
         },
         {
             "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Data Warehouse ",

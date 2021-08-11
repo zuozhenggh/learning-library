@@ -62,7 +62,7 @@ Depending on your needs, there are two different approaches to how you can creat
 
   ![](./images/auth-token.png)
 
-## **STEP 2** : Configure Graph Config JSON File
+## Task 2: : Configure Graph Config JSON File
 
 To define the graph configuration to load, you need a JSON file describing the location and properties of the graph. The file tells the Graph Server's in-memory analytics engine where to source the data from, the data definitions and the Keystore alias to use.
 
