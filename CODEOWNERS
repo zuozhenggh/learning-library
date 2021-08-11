@@ -1,13 +1,13 @@
 # The last matching pattern has the most precedence.
-*                        @flavio-santino @kaymalcolm @tmcginn @kamryn-v @anooshapilli @davidastart
-/common/               @kaymalcolm @tmcginn @flavio-santino @davidastart
-/ai-ml-library/       @kaymalcolm @tmcginn @kamryn-v @troyanthony06 @anooshapilli @davidastart
-/analytics-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart
-/data-management-library/ @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @anooshapilli @davidastart
-/developer-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart @oegentil @flavio-santino
-/enterprise-manageability-library/       @kaymalcolm @tmcginn @rfontcha @kamryn-v @anooshapilli @davidastart
-/oci-library/             @flavio-santino @oegentil @kaymalcolm @tmcginn @davidastart @anooshapilli @kamryn-v
+*                        @flavio-santino @kaymalcolm @tmcginn @kamryn-v @anooshapilli @davidastart @klazarz @malcherm
+/common/               @kaymalcolm @tmcginn @flavio-santino @davidastart @klazarz @malcherm
+/ai-ml-library/       @kaymalcolm @tmcginn @kamryn-v @troyanthony06 @anooshapilli @davidastart @klazarz @malcherm
+/analytics-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart @klazarz @malcherm
+/data-management-library/ @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @anooshapilli @davidastart @klazarz @malcherm
+/developer-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart @oegentil @flavio-santino @klazarz @malcherm
+/enterprise-manageability-library/       @kaymalcolm @tmcginn @rfontcha @kamryn-v @anooshapilli @davidastart @klazarz @malcherm
+/oci-library/             @flavio-santino @oegentil @kaymalcolm @tmcginn @davidastart @anooshapilli @kamryn-v @klazarz @malcherm
 /ospa-library/            @jjking2019 @dankingsley001 @AlejandroCasas-oracle
-/solutions-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart @oegentil @flavio-santino
-/security-library/       @kaymalcolm @tmcginn @troyanthony06 @rfontcha @anooshapilli @kamryn-v @davidastart @flavio-santino @oegentil
-/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @troyanthony06 @davidastart
+/solutions-library/       @kaymalcolm @tmcginn @troyanthony06 @kamryn-v @rfontcha @anooshapilli @davidastart @oegentil @flavio-santino @klazarz @malcherm
+/security-library/       @kaymalcolm @tmcginn @troyanthony06 @rfontcha @anooshapilli @kamryn-v @davidastart @flavio-santino @oegentil @klazarz @malcherm
+/workshops/               @snicholspa @chipbaber @kaymalcolm @tmcginn @troyanthony06 @davidastart @klazarz @malcherm
