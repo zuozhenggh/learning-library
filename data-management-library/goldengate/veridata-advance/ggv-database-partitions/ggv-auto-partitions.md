@@ -1,16 +1,18 @@
 # Configure Auto Partitions
 
 ## Introduction
-This lab describes how to split the large table comparison into multiple partitions and then you  use Automatic Row Partitioning option. The partitioning is possible only when both the source database and target database are Oracle.
+This lab describes how to map existing database partitioning.
 
-The automatic row partition creates configurable partitions and generates compare pairs for each generated partition.
+If you have the database tables partitions defined then, those partitions can be mapped and can be split further using Manual Row Partitions or Automatic Row Partitions. Compare pairs are generated per Table Partitions based on the selected mappings.
+
+The database tables partitions are shown only when both source and target are Oracle and the tables have already partitions defined at database.
 
 
 *Estimated Lab Time*: 15 minutes
 
 ### Objectives
 In this lab, you will:
-* Create Automatic Row Partitioning
+* Create Database Row Partitioning
 
 
 ### Prerequisites
@@ -29,17 +31,34 @@ This lab assumes you have:
     * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
 
 ## **STEP 1:** Configure Database Row Partitioning
-To configure Automatic Row Partitioning:
+To configure Database Row Partitioning:
 1. In the Compare Pair Configuration page, click **Manual Mapping**.
-2. For the selected table pair, select the **Automatic Row Partitions** check box.
+2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
+    * Source schema: **SOURCE**
+    * Target schema: **TARGET**
+    * Source Table: **sales**
+    * Target Table: **sales**
+      ![](./images/1_DB.png " ")
 
-    **Note**: The **Automatic Row Partitions** check box is available only in case of Manual Mapping. You cannot edit compare-pair names that are created using Automatic Row Partitioning.
+3. Select the source and target tables from **Source Table Partitions** and **Target Table Partitions**:
+    * Source Table Partitions: **SALES_Q1_2006**
+    * Target Table Partitions: **SALES_Q1_2006**
 
-3. Enter a numeric value between 2 to 100 in the text field before generating compare-pair. This value decides the number of compare-pairs to be created. Each auto generated compare-pair compares the subset of data from the selected source and target table.
+      ![](./images/2_DB.png " ")
 
-4. After all partitions are mapped, click the **Preview** tab to display the details of compare-pairs generated:
+4. Click **Add Mapping** to map the selected database Table Partitions. You can also map multiple database Table Partitions before generating the compare-pair.
 
-5. Click **Save** to save the configured Automatic Row Partitions.
+    ![](./images/3_DB.png " ")
+
+5. Click **Generate Compare Pair**.
+
+    ![](./images/4_DB.png " ")
+6. Click the **Preview** tab to view the generated compare pairs.
+
+    ![](./images/5_DB.png " ")
+
+
+
 
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
