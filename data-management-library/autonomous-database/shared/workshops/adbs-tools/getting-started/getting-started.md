@@ -94,7 +94,7 @@ Now you need to switch to working as the user QTEAM, so you can start the next l
 
   ![ALT text is not available for this image](images/click-qteam.png)
 
-2. Enter the username QTEAM and the password you defined in Step 2 when you created this user.
+2. Enter the username QTEAM and the password you defined in Task 1 when you created this user.
 
   ![ALT text is not available for this image](images/qteam-login.png)
 
