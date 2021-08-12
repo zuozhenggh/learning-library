@@ -64,15 +64,19 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ![](./images/query2.jpg " ") 
 
-2. Dollar Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
-   
+2. Top Selling Products: Return top Selling products in the store from last two months
+    by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
+
     ```
     <copy>
-    Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l group by l.monthly order by monthly asc;
+    set lines 200 pages 200
+    col SKU for a20
+    col PRODUCT_NAME for a30
+    col BEST_REVIEW for a50
+    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
     </copy>
     ```
-
-    ![](./images/query3.jpg " ") 
+    ![](./images/query1.jpg " ") 
 
 
 3. Select products ordered by maximum sell
@@ -80,7 +84,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     ```
     <copy>
     set lines 200 pages 200
-    col SKU for a20
+    col SKU for a40
     select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
     </copy>
     ```
@@ -114,19 +118,17 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
 
-    Top Selling Products: Return top Selling products in the store from last two months
-    by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
-
+    Dollar Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
+   
     ```
     <copy>
-    set lines 200 pages 200
-    col SKU for a20
-    col PRODUCT_NAME for a30
-    col BEST_REVIEW for a50
-    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
+    Select L.monthly,to_char(l.monthly,'MON') as month,sum(l.value) value from (select TRUNC(date_ordered, 'MON') as Monthly,Product_Cost*Product_Quantity as value, date_ordered from LINE_ITEM order by date_ordered asc) l group by l.monthly order by monthly asc;
     </copy>
     ```
-    ![](./images/query1.jpg " ") 
+
+   ![](./images/query3.jpg " ") 
+
+    
 
 
 This is the end of the Oracle Sharding Workshop.
