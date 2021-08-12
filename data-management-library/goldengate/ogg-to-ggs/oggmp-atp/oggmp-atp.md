@@ -49,7 +49,19 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-6.  Upload the wallet\_ATP.zip and then extract its contents to a new directory, such as **wallet\_ATP**.
+6.  Upload the wallet\_ATP.zip to /home/opc.
+
+    ```
+    <copy>put <local-path>/wallet_ATP.zip</copy>
+    ```
+
+7.  SSH to the compute instance.
+
+    ```
+    <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
+    ```
+
+8.  Extract the contents to a new directory, such as **wallet\_ATP**.
 
     ```
 <copy>mkdir wallet_ATP
