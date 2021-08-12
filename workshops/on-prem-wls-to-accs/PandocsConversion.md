@@ -12,7 +12,7 @@ This document steps through the process required to convert a **Microsoft Word**
 
 ##  Word to Markdown Conversion
 
-### **STEP 1** Issue the Pandoc Command
+### Task 1: Issue the Pandoc Command
 
 -  Open a command prompt and issue the pandoc command
 
@@ -22,7 +22,7 @@ This document steps through the process required to convert a **Microsoft Word**
 
 	![](images/pandocsconversion/image1.png)
 
-### **STEP 2** Review the Pandoc Output
+### Task 2: Review the Pandoc Output
 
 The above **pandoc** command produces the following output, an **images** directory and a **Markdown Document**
 
@@ -32,13 +32,13 @@ The above **pandoc** command produces the following output, an **images** direct
 
 The **Markdown** output file produced by **Pandoc** is not perfect and typically requires the following modifications. You can now use your **Markdown** editor of choice to clean-up the **Markdown** file. **Notepad++** works well for mass find and replace operations , however, there are more advanced **Markdown** editors such as **Visual Studio Code** available.
 
-### **STEP 3**  Cleanup images directory
+### Task 3:Cleanup images directory
 
 The **images** directory contains an extra level, **media**, we do not use. Move all the image files under the desired directory, in this example, **100**, and then delete the **media** directory
 
 ![](images/pandocsconversion/image3.png)
 
-### **STEP 4** Cleanup Markdown Document
+### Task 4: Cleanup Markdown Document
 
 -  Update the image tags to remove the **media** folder name
 

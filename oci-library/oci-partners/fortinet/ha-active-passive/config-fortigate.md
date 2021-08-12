@@ -15,7 +15,7 @@ Estimated Lab Time: 20 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)  
 
-## **STEP 1: Initial Configuration on Primary FortiGate**
+## **Task 1: Initial Configuration on Primary FortiGate**
 
 1. Connect to **FortiGate1** instance public IP on your local machine's web browser: **https://public_ip**. It will ask you to use instance OCID to login the first time as below. 
 
@@ -195,7 +195,7 @@ Estimated Lab Time: 20 minutes.
    ![](../common/images/65-FortiGate1-SDN-Connector.png " ")
 
 
-## **STEP 2: Initial Configuration on Secondary FortiGate**
+## **Task 2: Initial Configuration on Secondary FortiGate**
 
 1. Connect to **FortiGate2** instance public IP on your local machine's web browser: **https://public_ip**. It will ask you to use instance OCID to login the first time as below. 
 

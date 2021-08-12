@@ -19,7 +19,7 @@ For this lab you will need Oracle Cloud account and Developer Cloud service inst
 
 ## Deploying SonarQube Application to Compute Instance
 
-### **STEP 1**: Create Build Job to Deploy SonarQube Docker Image in Compute Instance.
+### Task 1: Create Build Job to Deploy SonarQube Docker Image in Compute Instance.
 
 - **Note:Continuing Lab100, make sure you are in Developer Cloud Service Instance. If not follow the below steps click one Hamburger menu on left top and select Developer, then on the following page click on hamburger menu on right of the instance and the click on Access Service Instance.**
 
@@ -87,7 +87,7 @@ EOF
 
     ![](images/200/lab200_createBuildJob_7.png)
 
-### **STEP 2**: Run the Build Job and Check Server Deployment
+### Task 2: Run the Build Job and Check Server Deployment
 
 - Click on **Build now**
 
@@ -101,7 +101,7 @@ EOF
 
     ![](images/200/lab200_runBuildJob_2.png)
 
-### **STEP 3**: Configure Developer Cloud Service to Use SonarQube
+### Task 3: Configure Developer Cloud Service to Use SonarQube
 
 - Click on **Project Administration** from the left panel and select **Build**.
 
@@ -164,7 +164,7 @@ EOF
 - Check the IP to see the dashboard.
 
 
-### **STEP 4**: Check the Analysis
+### Task 4: Check the Analysis
 
 - To check the analysis done by SonarQube, go to the SONARQUBE_SERVER_URL and port :9000 at the end of url.
 

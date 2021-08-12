@@ -23,7 +23,7 @@ In this lab, you will:
 
 * All previous labs have been successfully completed.
 
-## **STEP: 1** SQL Developer Web
+## Task 1: SQL Developer Web
 
 1. Click on the navigation menu on the top left and select **SQL** under Development.
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
     *Learn more -* [Use Oracle Database Actions with JSON Collections](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/use-oracle-database-actions-json-collections1.html) and [Use SQL With JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-04377B36-654B-47C4-A480-535E00E46D1F)
 
-## **STEP: 2** JSON_Serialize
+## Task 2: JSON_Serialize
 
 1. Because the JSON data is stored in a binary representation (for query and update efficiency) we need to convert it to a human-readable string using JSON_Serialize.
 
@@ -57,7 +57,7 @@ In this lab, you will:
 
     ```
     <copy>
-    select JSON_Serialize(json_document) 
+    select JSON_Serialize(json_document)
     from products p
     where p.json_document.type.string() = 'movie'
     and p.json_document.format.string() = 'DVD'
@@ -107,7 +107,7 @@ All above examples extracted singleton values from the JSON data - values that o
 
     ```
     <copy>
-    select jt.* 
+    select jt.*
     from products p nested json_document columns (id, title, year NUMBER) jt;
     </copy>
     ```
@@ -119,7 +119,7 @@ All above examples extracted singleton values from the JSON data - values that o
 
     ```
     <copy>
-    select jt.* 
+    select jt.*
     from products p nested json_document columns (id, title, year NUMBER, nested starring[*] columns (actor path '$')) jt;
     </copy>
     ```
@@ -131,7 +131,7 @@ All above examples extracted singleton values from the JSON data - values that o
 
     ```
     <copy>
-    select jt.* 
+    select jt.*
     from products p nested json_document.starring[*] columns (actor path '$') jt;
     </copy>
     ```
@@ -251,7 +251,7 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     ```
     <copy>
     select count(1)
-    from products 
+    from products
     where JSON_Exists(json_document, '$.format');
     </copy>
     ```
@@ -326,12 +326,12 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     ```
     <copy>
     select jt.*
-    from products, 
+    from products,
     JSON_TABLE (json_document, '$' columns (
-      title, 
-      nested path '$.starring[*]' 
+      title,
+      nested path '$.starring[*]'
       columns (actor path '$'),
-      nested path '$.genres[*]' 
+      nested path '$.genres[*]'
       columns (genre path '$')
     )) jt;
     </copy>
@@ -346,7 +346,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     <copy>
     create view movie_view as
     select jt.*
-    from products, 
+    from products,
     JSON_TABLE (json_document, '$' columns (
       id NUMBER,
       ProductName varchar2(50) path '$.title',
@@ -472,7 +472,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     ```
     ![](./images/sql8-1.png " ")
 
-    **Note:** Click the refresh button on the left-hand side to view the new table. 
+    **Note:** Click the refresh button on the left-hand side to view the new table.
 
     ```
     <copy>
@@ -548,7 +548,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     ```
     <copy>
-    with 
+    with
     actor_title_map as (
     select jt.id, jt.title, jt.actor
     from products NESTED json_document COLUMNS(
@@ -569,7 +569,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     ```
     <copy>
-    with 
+    with
     actor_title_map as (
     select jt.id, jt.title, jt.actor
     from products NESTED json_document COLUMNS(
@@ -581,13 +581,13 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     where jt.actor is not null
     ),
     distinct_actors as (
-    select distinct actor 
-    from actor_title_map 
+    select distinct actor
+    from actor_title_map
     )
     select JSON_OBJECT(da.actor,
-    'movies' VALUE (	select JSON_ArrayAgg(atm.title) 
+    'movies' VALUE (	select JSON_ArrayAgg(atm.title)
     from actor_title_map atm
-    where atm.actor = da.actor)) 
+    where atm.actor = da.actor))
     from distinct_actors da;
     </copy>
     ```
@@ -654,7 +654,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
     ```
     <copy>
-    select JSON_Query(dg_val, '$.."o:preferred_column_name"' with wrapper) 
+    select JSON_Query(dg_val, '$.."o:preferred_column_name"' with wrapper)
     from tmp_dataguide;
     </copy>
     ```
@@ -671,7 +671,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
     ```
     <copy>
     update tmp_dataguide
-    set dg_val = JSON_Transform(dg_val, 
+    set dg_val = JSON_Transform(dg_val,
     set '$.properties.genres.items."o:preferred_column_name"' = 'genre',
     set '$.properties.starring.items."o:preferred_column_name"' = 'actor'
     );
@@ -705,7 +705,7 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
     ```
     <copy>
-    select distinct "title" 
+    select distinct "title"
     from prod_view
     where "year" = 1988;
     </copy>
@@ -723,10 +723,10 @@ Often, you do not know all the fields that occur in a collection of JSON data, e
 
     ```
     CREATE OR REPLACE FORCE EDITIONABLE VIEW ...
-    AS 
+    AS
     SELECT ...
     FROM "PRODUCTS" RT,
-    JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS 
+    JSON_TABLE("JSON_DOCUMENT", '$[*]' COLUMNS
     "id" number path '$.id',
     "note" varchar2(32) path '$.note',
     "plot" varchar2(2048) path '$.plot',

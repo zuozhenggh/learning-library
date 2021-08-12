@@ -38,11 +38,11 @@ This lab assumes you have:
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
 Your options are:
-1. Step 2A: Connect using Cloud Shell *(recommended)*
-2. Step 2B: Connect using MAC or a Windows CYGWIN Emulator
-3. Step 2C: Connect using Putty *(Requires you to install applications on your machine)*
+1. Task 2A: Connect using Cloud Shell *(recommended)*
+2. Task 2B: Connect using MAC or a Windows CYGWIN Emulator
+3. Task 2C: Connect using Putty *(Requires you to install applications on your machine)*
 
-## **Step 2A:** Upload Key to Cloud Shell and Connect
+## Task 2A: Upload Key to Cloud Shell and Connect
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment).
 
@@ -95,7 +95,7 @@ If you are unable to ssh in, check out the troubleshooting tips below.
 
 You may now [proceed to the next lab](#next).
 
-## **Step 2B:** Connect via MAC or Windows CYGWIN Emulator
+## Task 2B: Connect via MAC or Windows CYGWIN Emulator
 Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next lab(s) to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment)
@@ -109,7 +109,7 @@ Depending on your workshop, you may need to connect to the instance via a secure
 
 You may now [proceed to the next lab](#next).
 
-## **Step 2C:** Connect via Windows using Putty
+## Task 2C: Connect via Windows using Putty
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
 
 1.  Download and install PuTTY. [http://www.putty.org](http://www.putty.org)

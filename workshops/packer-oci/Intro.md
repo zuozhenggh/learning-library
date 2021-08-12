@@ -15,7 +15,7 @@ To learn more about this workshop please watch the video below.
 <a href="https://videohub.oracle.com/media/PackerA+Overview/1_i0algeik" target="video">Workshop Overview Video</a>
 
 
-### **Step 1**: Acquire an Oracle Cloud Trial Account
+### Task 1: Acquire an Oracle Cloud Trial Account
 
 - Bookmark this page for future reference.
 
@@ -25,7 +25,7 @@ To learn more about this workshop please watch the video below.
 
   ![](images/getstarted.png " ")
 
-### **Step 2**: Navigate to Lab 100p
+### Task 2: Navigate to Lab 100p
 
 - [Click here to navigate to Lab 100](Lab100.md)
 - _You can see a list of Lab Guides_ by clicking on the **Menu Icon** hamburger in the upper right corner of the browser window. Then, **Select Lab 100: Cloud Infrastructure Configuration**.

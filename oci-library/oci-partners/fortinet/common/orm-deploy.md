@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes.
 - Oracle Marketplace Listings Access
     - **FortiGate** paid listing access required for this **Lab0** 
 
-## **STEP 1: Login and Create Stack using Resource Manager**
+## **Task 1: Login and Create Stack using Resource Manager**
 
 You will be using Terraform to create your lab environment.
 
@@ -73,7 +73,7 @@ You will be using Terraform to create your lab environment.
 
     ![](./images/97-Final-Create-Stack.png " ")
 
-## **STEP 2: Terraform Plan and Apply**
+## **Task 2: Terraform Plan and Apply**
 
 When using Resource Manager to deploy an environment, you need to execute a terraform **plan** and **apply**. Let's do that now.
 
@@ -91,7 +91,7 @@ When using Resource Manager to deploy an environment, you need to execute a terr
 
     **Note**: Stack will deploy **FortiGate Next Gen Firewall (4 cores)** paid listing instances to support this use-case.
 
-## **STEP 3: Connect to your instances**
+## **Task 3: Connect to your instances**
 
 1. Based on your laptop config, choose the appropriate steps to connect to your instances. 
 
