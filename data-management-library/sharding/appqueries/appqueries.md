@@ -80,7 +80,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     ```
     <copy>
     set lines 200 pages 200
-    col SKU for a20
+    col SKU for a40
     select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
     </copy>
     ```
