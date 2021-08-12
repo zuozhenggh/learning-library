@@ -30,7 +30,7 @@ This lab assumes you have:
     * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).  Let the Group Name be **Group_DBPartition**.
     * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
 
-## **STEP 1:** Configure Database Row Partitioning
+## **Task 1:** Configure Database Row Partitioning
 To configure Database Row Partitioning:
 1. In the Compare Pair Configuration page, click **Manual Mapping**.
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
@@ -59,11 +59,7 @@ To configure Database Row Partitioning:
 
   You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_DBPartition** Group to this job.
 
-  Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
-
-    [](youtube:N28CsAr5kjw)
-
-
+  
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
 [](youtube:N28CsAr5kjw)

@@ -37,36 +37,55 @@
               "filename": "../../initialize-environment/initialize-environment.md"
             }
             ,
-
-        {
-              "title": "Lab 1: Use the Oracle GoldenGate Veridata Command-line Utilities",
-              "description": "This lab walks you through This lab describes how to accomplish the following tasks using Oracle GoldenGate Veridata command-line utilities:",
-              "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
-        }
-        ,
-        {
-              "title": "Lab 2: Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
-              "description": "This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.x) deployed on the Oracle WebLogic Platform for High Availability.",
-              "filename": "./../../ggv_ha_data-server/ggv-ha-data-server.md"
-          }
-          ,
-
-          {
-               "title": "Lab 3: Create Multiple Domains for Oracle GoldenGate Veridata",
-                "description": "This lab shows you how to create multiple domains for Oracle GoldenGate Veridata",
-                "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
+            {
+                "title": "Lab 1: Configure Delta Comparison",
+                "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
+                "filename": "./../../ggv-delta-comparison/ggv-delta-comparison.md"
             }
             ,
+
             {
-                "title": "Lab 4: Configure Auto Partitions",
+                "title": "Lab 2: Configure Auto Partitions",
                 "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
             }
             ,
             {
-                "title": "Lab 5: Configure Database Partitions",
+                "title": "Lab 3: Configure Database Partitions",
                 "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-database-partitions/ggv-db-partitions.md"
             }
+            ,
+
+            {
+                  "title": "Lab 4: Use the Oracle GoldenGate Veridata Command-line Utilities",
+                  "description": "This lab walks you through This lab describes how to accomplish the following tasks using Oracle GoldenGate Veridata command-line utilities:",
+                  "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
+            }
+            ,
+            {
+                  "title": "Lab 5: Set Up the Oracle GoldenGate Veridata Server on the Oracle WebLogic Platform for High Availability",
+                  "description": "This lab shows you how to set up the Oracle GoldenGate Veridata Server (version: 12.2.1.x) deployed on the Oracle WebLogic Platform for High Availability.",
+                  "filename": "./../../ggv_ha_data-server/ggv-ha-data-server.md"
+              }
+              ,
+              {
+                   "title": "Lab 6: Create Multiple Domains for Oracle GoldenGate Veridata",
+                    "description": "This lab shows you how to create multiple domains for Oracle GoldenGate Veridata",
+                    "filename": "./../../ggv-create-multiple-domains/ggv-create-multiple-domains.md"
+              }
+              ,
+              {
+                   "title": "Lab 7: Create Connections to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP)",
+                    "description": "This lab describes how to connect the Oracle GoldenGate Veridata to Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) by using the Oracle Wallet.",
+                    "filename": "./../../ggv-adw-atp/ggv-adw-atp.md"
+                }
+                ,
+                {
+                      "title": "Need Help?",
+                      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+                      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+                }
+
        ]
   }
