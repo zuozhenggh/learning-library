@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "PeopleSoft Migration to Oracle Cloud Infrastructure",
+    "workshoptitle": "PeopleSoft Migration to Oracle Autonomous Database - Shared ",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
           {
@@ -14,7 +14,7 @@
           },
           {
             "title": "Lab 1: Creating Autonomous Database",
-            "filename": "../../1adb/adb.md"
+            "filename": "../../1creating-adb/creating-adb.md"
         },
           {
               "title": "Lab 2: Provisioning the PeopleSoft Cloud Manager using Marketplace",
