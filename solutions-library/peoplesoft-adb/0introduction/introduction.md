@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This hands-on lab provides users with step-by-step instructions for migrating a PeopleSoft database to an Autonomous Transaction Processing Database- Shared, or **ABD-S**. At a high level, during this procedure, we will use Oracle's **MV2ADB** to move data to Autonomous Database in one click. 
+This hands-on lab provides users with step-by-step instructions for migrating a PeopleSoft database to an Oracle Autonomous Transaction Processing Database- Shared, or **ADB-S**. At a high level, during this procedure, we will use Oracle's **MV2ADB** to move data to Autonomous Database in one click. 
 
 
 
-Estimated Lab Time: 
+Estimated Lab Time: 10 hours
 
 To ensure success:
 - The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
@@ -14,31 +14,34 @@ To ensure success:
 - IP addresses and URLs in the screenshots in this workshop may differ from what you use in the labs as these are dynamically generated.
 - The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Peoplesoft Cloud Manager and Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
-### Architecture Diagram
 
-  ![](./images/archnew12.png " ")
 
 
 ### Objectives
 
-In Labs 1-7, you will:
-* Set up an Oracle Cloud Infrastructure Account (Prerequisites) 
-* Create Identity and Access Management (IAM) Resources (Lab 1) 
-* Provision the Peoplesoft Cloud Manager using Marketplace (Lab 2)
-* Configure Cloud Manager Settings (Lab 3)
-* Subscribe to PeopleSoft Channels (Lab 4)
-* Review and Update a Topology (Lab 5)
-* Create a New Environment Template (Lab 6)
-* Deploy a PeopleSoft Environment (Lab 7)
-
+In Labs 1-15, you will :
+* Create an Oracle Autonomous Database shared 
+* Setup My Oracle Support SR for PeopleSoft on ADB-S
+* ADB-S connectivity check on source on-premise PeopleSoft system
+* How to download,setup,install and pre-requisites required for MV2ADB
+* Getting Tablespace Information from source PeopleSoft systems
+* Preparing Target OCI ADB-D database
+* MV2ADB configuration for database migration to ADB-S
+* Installing ADB Schema advisor
+* MV2ADB one click database migration
+* Post import scripts for PeopleSoft
+* Validate PeopleSoft schema objects after database migration
+* PeopleSoft Middle Tier setup on OCI
+* Update TNS and connectivity Test 
+* Configure PeopleSoft Servers on OCI
+* Validate PeopleSoft setup on OCI
 
 
 ### Prerequisites
 * An OCI tenancy with administrator user access. 
-* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). Note down this login credential in a notepad. You will use it later to provision Cloud Manager.
-* Workstation/laptop to access the OCI console, PSFT Cloud Manager, and provisioned instances
+* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). 
+* PeopleSoft Source Database already created on an on-premise system with the following server specifications: Oracle Linux 7, PeopleSoft Campus Solution 9.2 PI 20 with PeopleTools 8.58.10 and Oracle Database version on 19.10. (Note: Peoplesoft Marketplcae images for HR system,Financials,Campus Solution etc can also be used in place of an on-premise PeopleSoft application,Refer to link [here](https://docs.oracle.com/en/applications/peoplesoft/peoplesoft-common/tutorial-deploy-demo-image/index.html#before_you_begin) for creation of new environment on OCI) 
 * The following should be installed:
-    * Firefox to connect to Cloud Manager PIA.
     * A different web browser (i.e. Chrome) to connect to OCI web console. 
     * If you have a windows machine, please download:
         * Git Bash [https://git-scm.com/download/win](https://git-scm.com/download/win)
@@ -57,10 +60,6 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 **Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
 
-**Peoplesoft Cloud Manager (PSFT)** - Oracle Peoplesoft Cloud Manager is a Peoplesoft lifecycle management application used for creating, managing, and configuring Peoplesoft environments on Oracle Cloud Infrastructure.
-
-**PSFT Cloud Manager infrastructure** – Virtual network resources, compute resources, and policies required to run PSFT Cloud Manager on Oracle Cloud Infrastructure.
-
 **Virtual Cloud Network (VCN)** – Networking and compute resources required to run PSFT on Oracle Cloud Infrastructure. The PSFT VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle Peoplesoft on OCI.
 
 **Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
@@ -78,5 +77,5 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 ## Acknowledgments
 * **Authors** - Deepak Kumar M, PeopleSoft Architect
 * **Contributors** - Deepak Kumar M, PeopleSoft Architect
-* **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, May 2021
+* **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, Aug 2021
 
