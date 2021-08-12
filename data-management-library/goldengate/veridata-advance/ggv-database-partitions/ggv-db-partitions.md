@@ -27,7 +27,7 @@ This lab assumes you have:
     * Lab: Initialize Environment
 * From the [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386), the following are required to complete this lab:
     * Source and Target connections are created as described in [Lab: Create Datasource Connections](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
-    * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
+    * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).  Let the Group Name be **Group_DBPartition**.
     * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
 
 ## **STEP 1:** Configure Database Row Partitioning
@@ -50,14 +50,18 @@ To configure Database Row Partitioning:
 
     ![](./images/3_DB.png " ")
 
-5. Click **Generate Compare Pair**.
+5. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
     ![](./images/4_DB.png " ")
-6. Click the **Preview** tab to view the generated compare pairs.
+6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
 
     ![](./images/5_DB.png " ")
 
+  You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_DBPartition** Group to this job.
 
+  Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
+
+    [](youtube:N28CsAr5kjw)
 
 
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
