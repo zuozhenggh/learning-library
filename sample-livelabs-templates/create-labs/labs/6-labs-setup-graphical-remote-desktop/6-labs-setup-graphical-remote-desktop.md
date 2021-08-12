@@ -214,7 +214,7 @@ This lab assumes you have:
     user_data_dir_base="/home/${appuser}/.livelabs"
     desktop_guide_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_guide_url)
     desktop_app1_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app1_url)
-    desktop_app2_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app1_url)
+    desktop_app2_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app2_url)
 
     #Drop existing sessions
     ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
@@ -230,12 +230,12 @@ This lab assumes you have:
 
     # "Launching Web App #1 page"
     if [[ \${desktop_app1_url:0:4} = 'http' ]]; then
-    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble --ignore-certificate-errors --ignore-urlfetcher-cert-requests >/dev/null 2>&1 &
     fi
 
     # "Launching Web App #2 page"
     if [[ \${desktop_app2_url:0:4} = 'http' ]]; then
-    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble --ignore-certificate-errors --ignore-urlfetcher-cert-requests >/dev/null 2>&1 &
     fi
     EOF
 
@@ -592,7 +592,7 @@ Perform the following to further customize and optimize *Chrome* Browser.
     chmod +x /tmp/init_ll_windows.sh
     /tmp/init_ll_windows.sh
     rm -f /tmp/init_ll_windows.sh
-    
+
     </copy>
     ```
 13. Close all browser windows opened.
