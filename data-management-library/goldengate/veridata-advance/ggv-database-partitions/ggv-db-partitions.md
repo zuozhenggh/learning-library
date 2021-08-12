@@ -1,4 +1,4 @@
-# Configure Auto Partitions
+# Configure Database Row Partitions
 
 ## Introduction
 This lab describes how to map existing database partitioning.
