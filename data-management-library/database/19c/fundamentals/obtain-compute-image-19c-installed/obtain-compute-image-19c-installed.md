@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-installed` image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface. On the desktop, there are shortcuts to a terminal window, a Firefox browser, and a gedit text editor.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-installed` image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface.
 
 Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser, download the lab files, and start the database listeners.
 
-Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN needs to have several ingress security rules, which are covered in Task 1.
+Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to follow the recommendation, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN needs to have several ingress security rules, which are covered in Task 1.
 
 > **Note**: If you are working in the LiveLabs environment, you can skip Task 1 and Task 2 because they have already been done for you.
 
@@ -117,13 +117,13 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 1. In a browser, enter the URL to your `workshop-installed` compute instance. If your compute instance is not displayed, wait 30 seconds and try again.
 
-    You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, you can find shortcuts to Firefox, a terminal window, and gedit (text editor). The Oracle Database 19c New Features workshop guide is displayed in Firefox.
+    You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, there are several useful shortcuts.
 
     ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
 
-2. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+2. If the workshop guide is not open on the desktop: Double-click the **Get Started with your Workshop** icon on the desktop.
 
-3. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down).
+3. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down). You can exit full screen mode at any time by pressing the **Escape** key.
 
     ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
@@ -133,6 +133,8 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 
 ## Task 4: Download the lab files
+
+Throughout this workshop, you use pre-built lab files. This task shows you how to download the lab files to your compute instance.
 
 1. On the noVNC desktop, open a terminal window.
 
@@ -150,26 +152,22 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Task 5: Start the database listeners
 
-The ORCL, CDB1, and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to have `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases.
+The ORCL, CDB1, and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to have `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases. The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTENER_CDB1`, and `LISTENER_CDB2` respectively.
 
-When you start the listeners, the output indicates that the listener doesn't support any services. You can ignore this message. After you start up the databases in the labs, the appropriate listeners will support their services.
+1. Enter the following command to set the environment variable. At the prompt, enter CDB1.
 
-The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTCDB1`, and `LISTCDB2` respectively.
-
-1. Enter the following command to set the environment variable. At the prompt, enter ORCL.
-
-    ````
+    ```
     $ <copy>. oraenv</copy>
-    ORCL
-    ````
+    CDB1
+    ```
 
-2. Start the listeners for the ORCL, CDB1, and CDB2 database instances.
+2. Start the listeners for the ORCL, CDB1, and CDB2 database instances. The output indicates that the listeners do not support any services. You can ignore these messages. When you start up the databases in the subsequent labs, the services become supported.
 
-    ````
+    ```
     $ <copy>lsnrctl start LISTENER</copy>
     $ <copy>lsnrctl start LISTENER_CDB1</copy>
     $ <copy>lsnrctl start LISTENER_CDB2</copy>
-    ````
+    ```
 
 ## Learn More
 
