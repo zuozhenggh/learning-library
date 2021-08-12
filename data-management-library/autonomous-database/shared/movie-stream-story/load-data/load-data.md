@@ -67,7 +67,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 -   Copy and paste the following URI into the URI + Bucket field:
 ```
 <copy>
-https://objctstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
 </copy>
 ```
 -   Select **No Credential** as this is a public bucket
@@ -88,7 +88,7 @@ https://objctstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landin
 
 ```
 <copy>
-https://objctstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
 </copy>
 ```
 
@@ -158,7 +158,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 + customer_extension.csv
 + customer_segment.csv
-+ pizza_locations.csv
++ pizza_location.csv
 
     ![Click on Data Load](images/selectfileslanding.png)
 
@@ -176,9 +176,9 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 20. Click **Close** to close the settings editor.
 
-21. Click on the pencil icon to edit the settings for the pizza\_location/pizza_locations.csv load task.
+21. Click on the pencil icon to edit the settings for the pizza\_location/pizza_location.csv load task.
 
-22. Rename the target table to **PIZZA_LOCATIONS**.
+22. Rename the target table to **PIZZA_LOCATION**.
 
 23. Click **Close** to close the settings editor.
 
