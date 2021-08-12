@@ -71,6 +71,7 @@ To complete this lab, you need to have the following:
        **Auto Scaling** - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
 
 4. Create administrator credentials:
+
        * **Password and Confirm Password** - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
 
        * The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
