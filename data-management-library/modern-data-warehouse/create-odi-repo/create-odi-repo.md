@@ -15,9 +15,9 @@ Estimated Lab Time: 30 minutes
 - ADW and ODI instance created in Lab 1.
 - ADW wallet file downloaded in Lab 1.
 - Access to the following file: 
-    - [ModernDW\_Schema.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/zqaUA8691p3f_QwquDdNmlzVLy6cglVISPOmhfEd5k0qpHUemNDaaWC_XwLLSFw4/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/ModernDW_Schema.sql)
+    - [ModernDW\_Schema.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m8jCcDv09syT0jpwNF3nI3YiNEhkBNTOug8eUrx_3aoYisQRLvqt4NxDytMLbh16/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/ModernDW_Schema.sql)
     
-## **STEP 1:** Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
+## Task 1: Create Empty Target Tables and ODI Schema in Autonomous Data Warehouse
 
 1. Connect to the Autonomous Data Warehouse that we created as part of the ODI-ADW-OAC stack as the ADMIN user via SQL Developer. We downloaded the wallet to the local machine in the previous lab.
 
@@ -43,7 +43,7 @@ Estimated Lab Time: 30 minutes
     
 4. Connect to the ADW instance, again, but this time as the EBS user and execute the **ModernDW\_Schema.sql** script to create empty target tables for our integration under the EBS schema. 
    
-## **STEP 2:** Create ODI Master Repository
+## Task 2: Create ODI Master Repository
 
 In order to use ODI, we need to create a master and work repository. For this, we are going to use the Autonomous Data Warehouse that was spun up as part of the stack.
 
@@ -79,7 +79,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
     
     ![](./images/4.9.png " ")
 
-## **STEP 3:** Connect to Master Repository
+## Task 3: Connect to Master Repository
 
 1. Click on **Connect To Repository** and click on the **+** sign in the login prompt to create a new login. 
     
@@ -101,7 +101,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
     
     ![](./images/4.15.png " ")
     
-## **STEP 4:** Create a Work Repository
+## Task 4: Create a Work Repository
 
 1. Click on the **Topology** tab. Expand the repositories section. Under the master repository, you will find Work Repositories. Right click and select **New Work Repository**.
 
@@ -127,7 +127,7 @@ In order to use ODI, we need to create a master and work repository. For this, w
 
 ![](./images/4.22.png " ")
 
-## **STEP 5:** Connect to the Work Repository
+## Task 5: Connect to the Work Repository
 
 1. Select the **Designer** tab and then disconnect from the master repository.
     

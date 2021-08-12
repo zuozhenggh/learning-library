@@ -16,7 +16,7 @@ This video provides an overview of creating and attaching Oracle Cloud Infrastru
   -  Tenant, User name and Password
   -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
  
-## **STEP 1**: Create a Block Volume
+## Task 1: Create a Block Volume
 
 A common usage of Block Volume is adding storage capacity to an Oracle Cloud Infrastructure instance. Once you have launched an instance and set up your cloud network, you can create a block storage volume through the Console or API. Once created, you attach the volume to an instance using a volume attachment. Once attached, you connect to the volume from your instance's guest OS using iSCSI or paravirtualized mode. The volume can then be mounted and used by your instance.
 
@@ -57,7 +57,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
    ![](images/create-livelabs-avail.png)
    </if>
 
-## **STEP 2**: Attaching a Block Volume to an instance
+## Task 2: Attaching a Block Volume to an instance
 
 1. Once the Block Volume is created, you can attach it to the VM instance you just launched on Compute Practice. When you attach a block volume to a VM instance, you have two options for attachment type, iSCSI or paravirtualized.
 

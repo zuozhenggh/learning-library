@@ -1,4 +1,4 @@
-# Creating Rich Data Visualizations
+# Create Rich Data Visualizations
 
 ## Introduction
 
@@ -10,16 +10,9 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 - Learn how to create a simple data visualization project with Oracle Analytics Desktop
 - Learn how to access and gain insights from data in the Autonomous Database
 
+## Task 1: Install Oracle Analytics Desktop on a Windows Desktop
 
-### Prerequisites
-- Obtained an Oracle Cloud account
-- Created a new autonomous database instance in ADW or ATP
-- Installation of Oracle Analytics Desktop (free with Autonomous Data Warehouse). If you already have Oracle Analytics Desktop installed, please check the version. The recommended version is 5.5.0 or greater, to connect to your Oracle Autonomous Database.
-- Access to an existing Autonomous Data Warehouse instance.
-
-## **STEP 1**: Install Oracle Analytics Desktop on a Windows Desktop
-
-1. Download the latest version of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from <a href="http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html" target="\_blank"> here</a>.
+1. Download *version 5.9* of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from Oracle Software Delivery Cloud <a href="https://edelivery.oracle.com/osdc/faces/SoftwareDelivery" target="\_blank"> here</a>. Do not use version 6.x of Oracle Analytics Desktop.
 
 2. After saving the installer executable file, click on the installer and follow the guided steps.
 
@@ -27,7 +20,7 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 
    ![Click Finish.](./images/install_oad_5.jpg " ")
 
-## **STEP 2**: Create a View by Executing the Provided Script in SQL Worksheet
+## Task 2: Create a View by Executing the Provided Script in SQL Worksheet
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP console.
 
@@ -92,7 +85,7 @@ For simplicity's sake, in this exercise, we will use the Oracle Sales History (S
 
    ![Paste the code and click Run Script.](./images/execute_script_in_sql_dev_web_to_create_view.png " ")
 
-## **STEP 3**: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
+## Task 3: Create a Connection to Your Autonomous Database from Oracle Analytics Desktop
 
 As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's Details page, or from the ADW or ATP service console.
 
@@ -127,7 +120,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
    | --------------------- | :--------------------------------------------- |
    | Connection Name:      | Type in '**SALES_HISTORY**'                             |
    | Service Name:         | Scroll the drop-down field and select **adwfinance_high**, or the **high** service level of the database name you specified in Lab 1. |
-   | Client Credentials:   | Click '**Select...**' and select the wallet zip file that you downloaded in Step 3.3. A file with .sso extension will appear in the field.   |
+   | Client Credentials:   | Click '**Select...**' and select the wallet zip file that you downloaded in Task 3.3. A file with .sso extension will appear in the field.   |
    | Username:             | Insert username created in previous labs, likely **ADMIN**.  Same username as SQL Worksheet and SQL Developer credentials. |                                            
    | Password              | Insert password created in previous labs.  Same password as SQL Worksheet and SQL Developer credentials. |
 
@@ -173,7 +166,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
    ![Change the data elements appropriately on the left column.](./images/change_treat_as_from_measure_to_attribute.jpg " ")
 
-## **STEP 4**: Explore the Data in your New Project in Oracle Analytics Desktop
+## Task 4: Explore the Data in your New Project in Oracle Analytics Desktop
 
 No matter what your role is in the organization, access to data timely can provide greater insights to improve the performance of your business.  Whether you’re creating a data warehouse or a data mart for yourself or others, Autonomous Data Warehouse is making it far simpler than ever before.  Easy, fast, and elastic.   This small project demonstrates this.  This is how business users would interact with the Autonomous Data Warehouse.
 
@@ -185,7 +178,7 @@ No matter what your role is in the organization, access to data timely can provi
 
    ![Click Prepare and then click on Visualize.](./images/browse_and_explore_data.jpg " ")
 
-## **STEP 5**: Create Your First Data Visualization
+## Task 5: Create Your First Data Visualization
 
 1. We will now create a very simple visualization project to finish this part of the lab.  Multi-select (ctrl+click) the 5 Data Elements within __SALES\_HISTORY__, including __PROD\_NAME__, __AMOUNT\_SOLD__, __CALENDAR\_YEAR__, __PROD\_CATEGORY__, and __QUANTITY\_SOLD__.  
 
@@ -198,9 +191,9 @@ No matter what your role is in the organization, access to data timely can provi
 
  You may **Save** this project if you need. At this point, with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Oracle Autonomous Database in ADW or ATP is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
-## (Optional) **STEP 6**: Exporting your DVA (project) File
+## (Optional) **Task 6**: Exporting your DVA (project) File
 
-This step enables you to share your project file with colleagues.
+This task enables you to share your project file with colleagues.
 
 1. Click the menu at the top left corner of the screen, and select __Home__.
 

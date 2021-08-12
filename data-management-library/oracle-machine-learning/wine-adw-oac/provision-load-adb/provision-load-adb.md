@@ -23,7 +23,7 @@ In this lab, you will:
 
 - This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## **STEP 1**: Provision an Autonomous Database Instance
+## Task 1: Provision an Autonomous Database Instance
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/provision-2.png " ")
 
-## **STEP 2:** Create OMLUSER in Autonomous Database Instance
+## Task 2: Create OMLUSER in Autonomous Database Instance
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
@@ -110,7 +110,7 @@ In this lab, you will:
 
     ![](./images/create-user-created.png " ")
 
-## **STEP 3**: Grant OMLUSER privileges to Database Actions
+## Task 3: Grant OMLUSER privileges to Database Actions
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your ADB instance.
 
@@ -169,17 +169,17 @@ In this lab, you will:
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 4**: Download the Necessary Data
+## Task 4: Download the Necessary Data
 
 1.  Click the link below to download the Wine Reviews CSV file.
 
-    [WINEREVIEWS130KTEXT.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0dPIVvUpDxQWiDolBn8uJnTKkeoMg-ZNx5DQCXKAI06Vgxm00F5BKuN18iQum9tN/n/c4u03/b/data-management-library-files/o/WINEREVIEWS130KTEXT.csv)
+    [WINEREVIEWS130KTEXT.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/W4wTfn9fQt3zu6MSAtzQFMj_oA4BcrkUTDZxo7_DBH2oG4x1LZCXV-NGdGR0PQql/n/c4u04/b/data-management-library-files/o/WINEREVIEWS130KTEXT.csv)
 
 2.  Save the WINEREVIEWS130KTEXT.csv to a location and note the path for later.
 
     ![](./images/download-csv.png  " ")
 
-## **STEP 5**: Upload the Data File
+## Task 5: Upload the Data File
 
 1. On the tab with your ADB instance, click on **Open Database Actions** under Tools.
 

@@ -23,14 +23,14 @@ In this lab, you will:
 * The following lab requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor. 
 * Provisioning of Oracle Autonomous Database, Connecting Autonomous Database using Sql Developer
 
-## **STEP 1**: Install Oracle Analytics Desktop on a Windows Desktop
+## Task 1: Install Oracle Analytics Desktop on a Windows Desktop
 
 1.	Download the latest version of Oracle Analytics Desktop (formerly Data Visualization Desktop) from [here] (https://www.oracle.com/solutions/business-analytics/analytics-desktop/oracle-analytics-desktop.html).
 2.	After saving the installer executable file, click on the installer and follow the guided steps.
 ![](images/OAD1.jpg)
 ![](images/OAD2.jpg)
 
-## **STEP 2:** Create a Connection to Autonomous Database from Oracle Analytics Desktop
+## Task 2: Create a Connection to Autonomous Database from Oracle Analytics Desktop
 
 1.	Double click on the Data Visualization Desktop icon on local desktop. You will be redirected to the following page, which is the Data Visualization welcome page:
 ![](images/OAD3.jpg)
@@ -64,7 +64,7 @@ In this lab, you will:
 8.	Select the ADMIN schema and first, select your Profitability related file.
 ![](images/OAD10.jpg)
 
-## **STEP 3:** Import Project in the Oracle Analytic Desktop
+## Task 3: Import Project in the Oracle Analytic Desktop
 
 1. Download the project file. Download the [Project file](files/ProfitabilityManagementAnalytics.dva).
 2. Open the Project and import the project in the Oracle Analytic Destop

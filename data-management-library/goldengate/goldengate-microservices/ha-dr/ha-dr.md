@@ -27,7 +27,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
     - Lab: Create One-Way Replication
 
-## **STEP 1**:Generate Transactions with Swingbench
+## Task 1:Generate Transactions with Swingbench
 
 1. As user *oracle* from the SSH terminal session, navigate to `~/Desktop/Scripts/HOL/Lab8` and start Swingbench utility
 
@@ -43,16 +43,16 @@ This lab assumes you have:
 2. Open a browser tab session to the Performance Metrics Server for *Boston* Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
-    ![](./images/h2.png " ")
+    ![](./images/h2.png " 
 
 3. Click on *IREP* Replicat to view detailed live performance metrics
 
     ![](./images/h3.png " ")
 
-## **STEP 2**: Configure Active-Active Replication
+## Task 2: Configure Active-Active Replication
 
 1. Navigate to `~/Desktop/Scripts/HOL/Lab9` and create credentials and alias for Boston GG User
 
@@ -67,7 +67,7 @@ This lab assumes you have:
 2. Go to the browser tab session of the Admin Server for *Atlanta* Deployment and validate
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
     ![](./images/h5.png " ")
 
@@ -84,7 +84,7 @@ This lab assumes you have:
 4. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    <copy>https://localhost/Boston/adminsrvr</copy>
     ```
     ![](./images/h7.png " ")
 
@@ -109,7 +109,7 @@ This lab assumes you have:
 7. Go to the browser tab session of the Admin Server for *Boston* Deployment and validate
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr</copy>
+    <copy>https://localhost/Boston/adminsrvr</copy>
     ```
 
     ![](./images/h11.png " ")
@@ -123,7 +123,7 @@ This lab assumes you have:
     ![](./images/h14.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/distsrvr</copy>
+    <copy>https://localhost/Boston/distsrvr</copy>
     ```
 
     ![](./images/h15.png " ")
@@ -137,7 +137,7 @@ This lab assumes you have:
     ![](./images/h16.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
 
     ![](./images/h17.png " ")
@@ -151,7 +151,7 @@ This lab assumes you have:
     ![](./images/h18.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
 
     ![](./images/h19.png " ")
@@ -164,12 +164,12 @@ This lab assumes you have:
     ![](./images/h20.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
     ![](./images/h21.png " ")
 
 
-## **STEP 3**: Setup Auto CDR
+## Task 3: Setup Auto CDR
 
 1.  Connect to database as sysdba and execute the scripts below to setup auto CDR on oggoow19 and oggoow191 database. The conflict detection and resolution configured by <b>ADD\_AUTO\_CDR</b> procedure is based on the timestamp. The entry with latest timestamp wins.
 
@@ -249,7 +249,7 @@ This lab assumes you have:
     ![](./images/h23.png " ")
 
 
-## **STEP 4**: Generate Load with Swingbench
+## Task 4: Generate Load with Swingbench
 
 In this step we will use a script to invoke Swingbench to apply data to the source (Atlanta) and target (Boston) databases at the same time and then validate performance using the Performance Metric Service.
 
@@ -267,7 +267,7 @@ In this step we will use a script to invoke Swingbench to apply data to the sour
 2. Go to the browser tab session of the Performance Metrics Server for *Atlanta* Deployment and select "*IREP1 > Database Statistics*" to validate
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/pmsrvr</copy>
+    <copy>https://localhost/Atlanta/pmsrvr</copy>
     ```
 
     ![](./images/h26.png " ")
@@ -275,12 +275,12 @@ In this step we will use a script to invoke Swingbench to apply data to the sour
 3. Go to the browser tab session of the Performance Metrics Server for *Boston* Deployment and select "*IREP > Database Statistics*" to validate
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr </copy>
+    <copy>https://localhost/Boston/pmsrvr </copy>
     ```
 
     ![](./images/h27.png " ")
 
-## **STEP 5**: Remove Auto CDR from table
+## Task 5: Remove Auto CDR from table
 
 1. To remove auto cdr from the table, use <b>REMOVE\_AUTO\_CDR</b>  method of DBMS\_GOLDENGATE\_ADM package.
 

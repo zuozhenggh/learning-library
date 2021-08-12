@@ -22,9 +22,9 @@ Estimated lab time: 1 hour
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1:** Quickstart Deployment
+## Task 1: Quickstart Deployment
 
-1. [Download ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Y3e0GVKgbk-Jjkj5U_nxcmjfuqV4GMuQlWQmzKxbhFRoDLBK8mZcT4FW3ZPLI7N4/n/c4u03/b/data-management-library-files/o/resource-manager-bin-dr.zip)
+1. [Download ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bRhYkdkKFxunrMMKHNObtOV10XRTIyxm6KEqw07px425EMe4H7NPxDwsPsnrA73Z/n/c4u04/b/data-management-library-files/o/resource-manager-bin-dr.zip)
 2.  Create your own private/public key pair on your local system.
 3.  Move the key pair to the resource-manager-bin folder.
 4.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.
@@ -89,7 +89,7 @@ Estimated lab time: 1 hour
         ├── terraform.tfvars
         └── variables.tf
     
-## **STEP 2:** Resource Manager
+## Task 2: Resource Manager
 
 The following section will show you how to configure resource manager to make the deployment easier. Anything that is 
 shaded out on the page. You will not be able to configure.
@@ -234,7 +234,7 @@ shaded out on the page. You will not be able to configure.
 
     ![](./images/26.PNG)
  
-## **STEP 3:** Create the DNS zone.
+## Task 3: Create the DNS zone.
 
 ### Create a new DNS zone
 
@@ -250,7 +250,7 @@ shaded out on the page. You will not be able to configure.
 
     ![](./images/18.png)
 
-## **STEP 4:** Adding Html to the compute instances.
+## Task 4: Adding Html to the compute instances.
 
 You can place these HTML files in your app-tier compute nodes to demonstrate the DR working by displaying different HTML pages depending on which region you are hitting. You can see this information in the IP address as well, but this is additional visual stimulation.
 

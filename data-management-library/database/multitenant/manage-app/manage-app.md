@@ -8,7 +8,7 @@ This is a series of 12 hands-on labs designed to familiarize you with the Applic
 
 ### Lab Assumptions
 
-- Each participant has been provided a username and password to the tenancy c4u03.
+- Each participant has been provided a username and password to the tenancy c4u04.
 - Each participant has completed the Environment Setup lab.
 - Each participant has created an OCI compute instance using the database template.
 

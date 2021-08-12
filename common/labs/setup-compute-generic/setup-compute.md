@@ -9,6 +9,7 @@ This lab will show you how to setup a Resource Manager stack that will generate 
 For more information about Terraform and Resource Manager, please see the appendix below.
 
 ### Objectives
+In this lab, you will:
 -   Create Compute + Networking Resource Manager Stack
 -   Connect to compute instance
 
@@ -18,7 +19,7 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## Task 1A: Create Stack:  Compute + Networking
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
@@ -72,10 +73,10 @@ This lab assumes you have:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## Task 1B: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
-***Note:*** *We recommend letting our stack create the VCN to reduce the potential for error.*
+> *Note:* We recommend letting our stack create the VCN to reduce the potential for error.
 
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
@@ -94,7 +95,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Description**:  Same as above
     - **Create in compartment**:  Select the correct compartment if not already selected
 
-  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+  > *Note:* If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.
 
 5. Click **Next**.
 
@@ -105,7 +106,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  > *Note:* If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
@@ -136,7 +137,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/em-stack-details-b.png " ")
 
-## **Step 2**: Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 When using Resource Manager to deploy an environment, execute a terraform **plan** to verify the configuration. This is optional, *you may skip directly to Step 3*.
 
 1.  **[OPTIONAL]** Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -153,7 +154,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
   ![](./images/em-stack-plan-results-4.png " ")
 
-## **Step 3**: Terraform Apply
+## Task 3: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Let's do that now.
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use and existing VCN) and the compute instance.
@@ -182,7 +183,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 4.  Your public IP address and instance name will be displayed.  Note the public IP address, you will need it for the next step.
 
-## **Step 4**: How to Establish a Terminal Connection to your Instance
+## Task 4: How to Establish a Terminal Connection to your Instance
 Depending on your workshop, you may need to connect to the instance via a secure shell client (SSH). If you're instructed in the next labs to execute tasks via an SSH terminal, review the options below and select the one that best meet your needs.
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
@@ -403,5 +404,4 @@ Modify your stack to use fixed shapes instead.
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Kay Malcolm, Product Manager, Database Product Management, September 2020
+* **Last Updated By/Date** - LiveLabs Team, September 2020

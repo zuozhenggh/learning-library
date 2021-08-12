@@ -12,7 +12,7 @@ Estimated Lab Time: 10 Minutes
 - Lab: Fast Application Notification
 - Lab: Install Sample Schema
 - Lab: Services
-  
+
 ### About PL/SQL Packages
 With any PL/SQL operations on RAC you must be aware that the code could execute on any node where its service lives. This could also impact packages like DBMS\_PIPE, UTL\_MAIL, UTL\_HTTP (proxy server source IP rules for example), or even DBMS\_RLS (refreshing policies).
 
@@ -28,16 +28,16 @@ Lastly, the client (text I/O) and server implementations are subject to operatin
 
 UTL\_FILE provides file access both on the client side and on the server side. When run on the server, UTL\_FILE provides access to all operating system files that are accessible from the server. On the client side, UTL\_FILE provides access to operating system files that are accessible from the client.
 
-## **STEP 1:**  Create a DIRECTORY OBJECT and write a file in this location
+## Task 1:  Create a DIRECTORY OBJECT and write a file in this location
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
-2.  Start Cloudshell
-    
+2.  Start Cloud Shell
+
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
     ![](../clusterware/images/start-cloudshell.png " ")
 
-3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+3.  Connect to **node 1** as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
@@ -71,7 +71,7 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     ![](./images/dir-num5.png " " )
 
 
-## **STEP 2:** Reconnect to SQL\*Plus and read the file you just created
+## Task 2: Reconnect to SQL\*Plus and read the file you just created
 
 1. Connect to the pluggable database, **PDB1** as the SH user and read the file **data.txt** 10 or 20 times
 

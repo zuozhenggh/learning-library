@@ -20,7 +20,7 @@ Estimated lab time: 25 minutes
 
 -   This lab requires completion of the prior labs in the Contents menu on the left.
 
-## **STEP 1:** Create a User
+## Task 1: Create a User
 Database administrators perform many tasks. One of their more common tasks is creating database users and assigning them unique usernames. After users log in to the database with their username and password, they can issue database SQL statements to create objects, query objects, and manage the database.
 
 Creating a user is a way to create a schema. In this section, you execute the `CREATE USER` statement to create and configure a database user.
@@ -40,7 +40,7 @@ Creating a user is a way to create a schema. In this section, you execute the `C
 
     `CREATE USER online_shoppe IDENTIFIED BY Lab_practice1;`
 
-## **STEP 2:** Assign Privileges
+## Task 2: Assign Privileges
 When multiple users access database objects, you can control the authorization of the objects with privileges. Privileges control whether a user can modify an object that is owned by another user. They are granted or revoked either by:
 - The instance administrator
 - A user with ADMIN privileges
@@ -82,7 +82,7 @@ Syntax: `GRANT <grant_privilege> TO <user>;`
 
   ![](./images/assign-privileges.png " ")
 
-## **STEP 3:** Provide SQL Worksheet Access to Database Users
+## Task 3: Provide SQL Worksheet Access to Database Users
 The ADMIN user can provide access to SQL Worksheet to other database users.
 
 Database users, who are not service administrators, do not have access to the Autonomous Database service console. The ADMIN user provides access to SQL Worksheet by enabling access for a user and providing a URL to access SQL Worksheet.
@@ -130,7 +130,7 @@ Database users, who are not service administrators, do not have access to the Au
 
 5. Provide the user with the modified URL. To access SQL Worksheet, the user pastes the URL into their browser and then enters the schema's Username and Password in the Sign-in dialog.
 
-## **STEP 4:** Log in to SQL Worksheet as the Database User and Create Tables
+## Task 4: Log in to SQL Worksheet as the Database User and Create Tables
 
 1. You are still connected to SQL Worksheet as administrator. Log out and log back in to SQL Worksheet as your database user `online_shoppe` by pasting into your browser whatever URL you constructed in the previous step, which will be similar to:
 
@@ -204,7 +204,7 @@ Database users, who are not service administrators, do not have access to the Au
 
   ![](./images/create-table-orders.png " ")
 
-## **STEP 5:** Insert, Modify, and Delete Records
+## Task 5: Insert, Modify, and Delete Records
 In this section, you manipulate the records in the tables that you created.
 
 1. **Inserting data**: You execute the `INSERT` statement to add rows of data to a database table.
@@ -245,7 +245,7 @@ In this section, you manipulate the records in the tables that you created.
 
   ![](./images/delete-data.png " ")
 
-## **STEP 6:** Undo and Save Records
+## Task 6: Undo and Save Records
 In this section, you use the `COMMIT` and `ROLLBACK` statements to change data permanently. You use the `ROLLBACK` statement to undo the work that was performed in your current transaction and you use the `COMMIT` statement to save the work that was performed in your current transaction.
 
 1. Execute the `COMMIT` statement to save the data manipulation transactions that you performed in the previous section.
@@ -275,7 +275,7 @@ In this section, you use the `COMMIT` and `ROLLBACK` statements to change data p
 
     **Note**: You cannot undo transactions after you save them permanently with the `COMMIT` statement.
 
-## **STEP 7:** Remove Tables
+## Task 7: Remove Tables
 In this section, you execute the `DROP TABLE` statement to remove a table and its data from the database.
 
 **Syntax**: `DROP TABLE <table>;`
@@ -293,7 +293,7 @@ In this section, you execute the `DROP TABLE` statement to remove a table and it
 
   ![](./images/drop-table-cascade-constraints.png " ")
 
-## **STEP 8:** Revoke Privileges
+## Task 8: Revoke Privileges
 In this section, you execute the `REVOKE` statement to revoke user and role system privileges. To revoke a system privilege or a role, you must be assigned the privilege with the `ADMIN OPTION`.
 
 **Syntax**: `REVOKE <revoke_privilege> FROM <user>;`

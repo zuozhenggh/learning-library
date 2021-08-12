@@ -33,7 +33,7 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Execute the `/home/oracle/labs/M104784GC10/setup_SH_tables.sh` shell script to create and load `SH.SALES` and `SH.TIMES` tables.
 
@@ -128,7 +128,7 @@ In this lab, you will:
     ```
 </if>
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 There are multiple ways to access your Autonomous Database.  You can access it via sqlplus or by using SQL Developer Web.  To access it via sqlplus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
@@ -145,7 +145,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 6.  Enter the username *admin* and password *WElcome123##*
 7.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1.  Open up Cloud Shell below if it isn't already open
 2.  Connect to the OE user using sqlplus by entering the commands below.
     ```
@@ -153,7 +153,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 	```
 </if>
 
-## **STEP 2:** Examine data before tampering
+## Task 2: Examine data before tampering
 
 1. At the end of each month and fiscal period, for legislative reasons, there is an audit table that stores what was sold. Verify the amount sold at the end of fiscal year 1998.
 
@@ -248,7 +248,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
     ```
 
-## **STEP 3:** Examine data after tampering
+## Task 3: Examine data after tampering
 
 1. In the initial terminal session, check that no one tampered with old sales.
 

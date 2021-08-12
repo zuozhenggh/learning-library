@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 
 In this section, you will provision an ADWC database, create an OML user account, and load the data required by the OML notebooks.
 
-## **Step 1:** Create an ADW Instance
+## Task 1: Create an ADW Instance
 
 First, we are going to create an ADW Instance.
 
@@ -55,7 +55,7 @@ First, we are going to create an ADW Instance.
 
     ![](./images/prov-adw-5.png)
 
-## **Step 2:** Create an OML User
+## Task 2: Create an OML User
 
 1. On your instance, click the **Tools** tab, and then click **Open Oracle ML User Administration**.
 
@@ -73,7 +73,7 @@ First, we are going to create an ADW Instance.
 
     ![](images/oml-create-user-2.png)
 
-## **Step 3:** Allow OMLUSER to access Database Actions
+## Task 3: Allow OMLUSER to access Database Actions
 
 1. On the tab with your ADW instance, and click on **Open Database Actions**.
 
@@ -115,17 +115,17 @@ First, we are going to create an ADW Instance.
 
     ![](images/sql-dev-add-omluser-success.png)
 
-## **Step 4:** Download Files to use in next lab
+## Task 4: Download Files to use in next lab
 
 1.  Click the link below to download the install file.
 
-    [claims.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yaGHxlS_7qmrSGfYH33N4VLt6e7K8BPm1iqdyDXy0z2Cr8v0jjDXzuQfL4c9BPrY/n/c4u03/b/data-management-library-files/o/claims.zip)
+    [claims.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ajch-LlyUA2dXoLDXmKm-7W8ix9HGnJ9kjUiXG2o6mAlAddKew_TLYm3KpEMCq5m/n/c4u04/b/data-management-library-files/o/claims.zip)
 
 2.  Save `claims.zip` to a download directory and then unzip the file.
 
     ![](./images/save-claims-zip.png)
 
-## **Step 5**: Upload the two data files to OMLUSER
+## Task 5: Upload the two data files to OMLUSER
 
 1. On the tab with your ADW instance, and click on **Open Database Actions**.
 

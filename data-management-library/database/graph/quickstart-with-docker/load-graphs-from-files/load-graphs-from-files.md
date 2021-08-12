@@ -19,7 +19,7 @@ In this lab, you will:
 
 * This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker.
 
-## **STEP 1:** Add ingress rules and verify setup environment
+## Task 1: Add ingress rules and verify setup environment
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
   ![GraphViz on startup](./images/GraphVizStartup.png)
 
-## **STEP 2:** Graph query and analysis in Apache Zeppelin
+## Task 2: Graph query and analysis in Apache Zeppelin
 
 1. Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
@@ -87,7 +87,7 @@ In this lab, you will:
 
   ![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## **STEP 3:** Graph visualization
+## Task 3: Graph visualization
 
 Now we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
@@ -109,7 +109,7 @@ Now we will use the Graph Visualization component to explore the graph and run s
 
 3. Now let's add some labels and other visual context. These are known as highlights.
 
-4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/o49GH8NXlnrwgfbWO9cDCq-zqhsFBHFNGRGM6uHwnEQkHUH5fo5X-u33SW4H_22J/n/c4u03/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
 5. Click on the Load button under Highlights (on the right side of the screen).
 
@@ -196,7 +196,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 
   ![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
-## **STEP 4:** Graph query and analysis in JShell
+## Task 4: Graph query and analysis in JShell
 
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 

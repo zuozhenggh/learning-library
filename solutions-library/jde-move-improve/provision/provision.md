@@ -27,7 +27,7 @@ To deploy JDE Trial Edition, in this lab, you will:
 *   SSH Key Pair Generated
 *   Familiarity with OCI Console
 
-## **STEP 1**: Provision Trial Edition from OCI Marketplace
+## Task 1: Provision Trial Edition from OCI Marketplace
 
 Create an instance in OCI that is based off the JDE Trial Edition image
 
@@ -138,7 +138,7 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 7.  PuTTY will open a command window. On first connection, a Security Alert window will appear. Click ***Yes*** to accept that you trust the connection to this host.
     ![](./images/trust-connection.png " ")
 
-## **STEP 3:** Perform First-Time Configuration of Trial Edition
+## Task 3: Perform First-Time Configuration of Trial Edition
 
 During the first connection to a Trial Edition instance (after completing Lab3 Step 2), a process will run to verify if any critical updates are required to the OS and the installed software packages on the instance.  If so, the following screen will display noting that the yum update packages are installing.  This process can take anywhere from 5 to 10 minutes to run. 
 

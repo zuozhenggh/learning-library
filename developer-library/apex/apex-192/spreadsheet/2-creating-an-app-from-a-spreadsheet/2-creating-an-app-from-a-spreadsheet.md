@@ -8,7 +8,7 @@ Now that you are logged into your workspace, you can start creating APEX applica
 
 While APEX developers spend the majority of their time in the App Builder, you should also investigate the SQL Workshop, where you can create and maintain database objects, Team Development, where you can track large APEX development projects, and the App Gallery, which contains numerous productivity and sample apps that can be installed within minutes.
 
-## **STEP 1**: Loading project and tasks data  
+## Task 1: Loading project and tasks data  
 
 1.  From your APEX workspace home page, click **App Builder**. Sign in to your account if prompted.
 2.  Click **Create a New App**.
@@ -35,7 +35,7 @@ While APEX developers spend the majority of their time in the App Builder, you s
 
     After clicking **Load Data**, you will see a spinner until the wizard finishes loading the data. Continue to STEP 2 at that point.
 
-## **STEP 2**: Creating an application
+## Task 2: Creating an application
 
 The Data Load wizard has created a new table and populated that table with the records from the sample data. Now you can create an app based on this new table.
 
@@ -63,7 +63,7 @@ The Data Load wizard has created a new table and populated that table with the r
 
     When the wizard finishes creating the application, you will be redirected to the application's home page in the App Builder.
 
-## **STEP 3**: Running and exploring the new app
+## Task 3: Running and exploring the new app
 
 1.  Click **Run Application**. This will open the runtime application in a new browser tab, allowing you to see how end users will view the app.
 

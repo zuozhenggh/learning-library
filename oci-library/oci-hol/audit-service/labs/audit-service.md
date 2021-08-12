@@ -14,7 +14,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
-## **Step 1**: Sign in to OCI Console and Create Object Storage Bucket
+## Task 1: Sign in to OCI Console and Create Object Storage Bucket
 
 
 1. Sign in using your tenant name, user name and password.
@@ -37,7 +37,7 @@ The purpose of this lab is to give you an overview of the Audit Service and an e
 
 5. Click **Create Bucket**.
 
-## **Step 2**: Upload Object and Check Audit logs
+## Task 2: Upload Object and Check Audit logs
 
 1. Open a terminal window on your laptop.
 

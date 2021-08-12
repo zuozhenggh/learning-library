@@ -13,7 +13,7 @@ You will take on 2 Personas during the workshop. The **Lead DevOps Engineer Per
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
 If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
-### **STEP 1**: Acquire an Oracle Cloud Trial or Workshop Account
+### Task 1: Acquire an Oracle Cloud Trial or Workshop Account
 
 - Bookmark this page for future reference.
 
@@ -25,7 +25,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     ***setup a password***
 
-### **STEP 2**: Login to your Oracle Cloud Account
+### Task 2: Login to your Oracle Cloud Account
 - From any browser, go to the URL:
     `https://cloud.oracle.com`
 
@@ -62,7 +62,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 In order to complete the remaining migration labs, we will first create our on-prem application.  We have a pre-created image with an embeded Weblogic Server which will be used for this process.  To import this image, we must first create a network (VNC) that will allow you access into your image and a compartment which will contain your instances.
 
 
-### **STEP 3**: Create Network and Compartment on OCI
+### Task 3: Create Network and Compartment on OCI
 - Click Compute from the Customize Dashboard or from Services. After that from the Menu Click Identity and Compartments. 
   
   ![](images/100/LabGuide100-CreateCompartment.png)
@@ -79,7 +79,7 @@ In order to complete the remaining migration labs, we will first create our on-p
   
   ![](images/100/LabGuide100-CustomImages.png)
 
-### **STEP 4**: Import Custom Image
+### Task 4: Import Custom Image
 
 - Click Import Image button and fill name of import image and  **copy** object storage URL.
   https://objectstorage.us-ashburn-1.oraclecloud.com/p/0wZwJGDzVjygLdY2mMWO6L32dzCO0CxQ2k-c1T3liMI/n/gse00015058/b/PlaceForImages/o/Nov7JDevImage
@@ -96,7 +96,7 @@ In order to complete the remaining migration labs, we will first create our on-p
   
 ![](images/100/LabGuide100-ImageImport3.png)
 
-### **STEP 5**: Create Instance
+### Task 5: Create Instance
 
 - From the Custom Images page, select WeblogicOnPrem image and click Create Instance
   
@@ -144,7 +144,7 @@ cat ~/.oci/oci_api_key_public.pem
   You can view your up and running instance as follows.
   ![](images/100/vnc3.png)
   
-### **STEP 6**: Open JDeveloper Environment
+### Task 6: Open JDeveloper Environment
 
 - Click JDeveloper icon to open JDeveloper Environment
 

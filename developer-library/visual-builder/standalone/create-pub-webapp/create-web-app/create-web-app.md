@@ -18,7 +18,7 @@ Once you have your business objects, you'll use them to build a very simple Huma
 
 **Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
-## **STEP 1**: Create a Web Application
+## Task 1: Create a Web Application
 
 The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
 
@@ -69,7 +69,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
     In the Web Apps pane, expand the **hrwebapp** node to view the web application structure, then expand the **Flows** and **main** nodes to view the main-start page.
 
 
-## **STEP 2**: Create a Location Business Object and Import Data from a File
+## Task 2: Create a Location Business Object and Import Data from a File
 
 In this step, you'll create the Location business object and then import data for it.
 
@@ -99,7 +99,7 @@ In this step, you'll create the Location business object and then import data fo
 
     You can see that there's now a check mark in the **Required** column for the **Name** field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wg-SYyBho4igTK7Q7VRCJvDCadxWLueBiG33POhb7zTHQxtVU5JokCrXQGZ0C2fs/n/c4u03/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xt5U0wu9v1Ce78W2z6ncTyIdrWkZTlTT6e2GkZ4WneP3xaoHVNtnDsSsPjl9yYuo/n/c4u04/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
 9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
 
     ![](./images/vbcsca_imp_s9.png)
@@ -123,7 +123,7 @@ In this step, you'll create the Location business object and then import data fo
     In the next step, we'll associate these locations with the departments that are located on these floors.
 
 
-## **STEP 3**: Create a Department Business Object
+## Task 3: Create a Department Business Object
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
@@ -160,7 +160,7 @@ In this step, you'll create the Location business object and then import data fo
     A Reference field is like a foreign key in a database table: it's a field that refers to the key (the Id field) of another business object to link the two business objects together. When you create a department, you'll specify its Location (one of the floors). The Display Field indicates that the Name field will be displayed, not the Id.
 
 
-## **STEP 4**: Create an Employee Business Object
+## Task 4: Create an Employee Business Object
 
 In this step, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference type field that refers to the Department.
 
@@ -215,7 +215,7 @@ In this step, we'll create the last business object we need, the Employee object
     Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.
 
 
-## **STEP 5**: Create a Business Object Diagram
+## Task 5: Create a Business Object Diagram
 
 Now that we have our business objects, let's create a diagram that provides a visual representation of business objects and their relationships.
 

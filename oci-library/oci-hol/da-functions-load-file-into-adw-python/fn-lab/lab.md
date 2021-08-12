@@ -21,7 +21,7 @@ Estimated time: 30 minutes
 - Your Oracle Cloud Trial Account
 - Completed the **Prerequisites for Functions**
 
-## **STEP 1:** Create an application
+## Task 1: Create an application
 
 In this step, you will create an application and set up Fn CLI on Cloud Shell.
 
@@ -39,7 +39,7 @@ In this step, you will create an application and set up Fn CLI on Cloud Shell.
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
-## **STEP 2:** Create a Dynamic Group
+## Task 2: Create a Dynamic Group
 
 To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 
@@ -65,7 +65,7 @@ Now you're ready to create a dynamic group.
 
   *Note:* Make sure you replace the above value with the compartment OCID you stored earlier.
 
-## **STEP 3:** Create Object Storage Bucket
+## Task 3: Create Object Storage Bucket
 
 You need a `input-bucket` bucket in Object Storage. You will use the `input-bucket` to drop-in the CSV files. The function will process the file and import them into Autonomous Datawarehouse.
 
@@ -81,7 +81,7 @@ Let's create the `input-bucket` first:
 
 ![Create input bucket](./images/create-input-bucket.png)
 
-## **STEP 4:** Create IAM policies
+## Task 4: Create IAM policies
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
@@ -103,7 +103,7 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
 ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
-## **STEP 5:** Create an Autonomous Data Warehouse
+## Task 5: Create an Autonomous Data Warehouse
 
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
@@ -139,7 +139,7 @@ Wait for OCI to provision the Autonomous Database, and then click the **Service 
     {"items":[{"name":"regionsnumbers","properties":{"schemaName":"ADMIN","tableName":"REGIONSNUMBERS","keyColumn":{"name":"ID","sqlType":"VARCHAR2","maxLength":255,"assignmentMethod":"UUID"},"contentColumn":{"name":"JSON_DOCUMENT","sqlType":"BLOB","jsonFormat":"OSON"},"versionColumn":{"name":"VERSION","type":"String","method":"UUID"},"lastModifiedColumn":{"name":"LAST_MODIFIED"},"creationTimeColumn":{"name":"CREATED_ON"},"readOnly":false},"links":[{"rel":"canonical","href":"https://.../ords/admin/soda/latest/regionsnumbers"}]}],"hasMore":false}
     ```
 
-## **STEP 6:** Deploy the function
+## Task 6: Deploy the function
 
 In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
@@ -183,7 +183,7 @@ After you deploy the function, you need to set function configuration values so 
     </copy>
     ```
 
-## **STEP 7:** Create an Event rule
+## Task 7: Create an Event rule
 
 In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
@@ -209,7 +209,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 
 ![Rule](./images/create-rule.png)
 
-## **STEP 8:** Test the function
+## Task 8: Test the function
 
 To test the function, you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or the Cloud Shell using the OCI CLI.
 

@@ -2,19 +2,17 @@
 
 ## Introduction
 
-In this lab we will use the OCI Service Broker to manage the lifecyle of a stream, using Kubernetes.
+You will use the Oracle Cloud Infrastructure (OCI) Service Broker to manage the lifecycle of a stream, using Kubernetes.
 
-Estimated Lab Time: 10 minutes.
+Estimated Time: 10 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Configure a stream instance and binding to deploy on kubernetes.
 - Use kubectl to deploy the instance and provision the stream.
 - Tear down the stream instance.
 
-## **STEP 1:** Get the Template Manifests for Streams
+## Task 1: Get the Template Manifests for Streams
 
 1. Download the example templates:
 
@@ -30,18 +28,18 @@ In this lab you will:
 
 2. How it works:
 
-    - The `create-oss-instance.yaml` defines a stream instance to be created in a specific compartment and optionally in a specific pre-created streaming pool. 
+    - `create-oss-instance.yaml` defines a stream instance to be created in a specific compartment and optionally in a specific pre-created streaming pool.
 
-    - The `create-oss-binding.yaml` creates a binding to retrieve credentials providing access to the stream.
+    - `create-oss-binding.yaml` creates a binding to retrieve credentials providing access to the stream.
 
     - OCI Service Broker will then create a secret named `test-stream-binding` containing the access to the stream.
 
 
-## **STEP 2:** Edit the Manifests
+## Task 2: Edit the Manifests
 
-1. Edit the file called `create-oss-instance.yaml` and replace the mention `CHANGE_COMPARTMENT_OCID_HERE` with the **compartment OCID** of the compartment where you deployed the OKE cluster, and the `CHANGE_PARTITION_COUNT_HERE` with the number of partitions you want (we'll use 1).
+1. Edit `create-oss-instance.yaml` and replace `CHANGE_COMPARTMENT_OCID_HERE` with the compartment OCID of the compartment where you deployed the OKE cluster, and the `CHANGE_PARTITION_COUNT_HERE` with the number of partitions you want (we'll use `1`).
 
-    If you want to use a specific stream pool, uncomment the streampoolId value and provide a stream pool OCID.
+    If you want to use a specific stream pool, uncomment the `streampoolId` value and provide a stream pool OCID.
 
     ```bash
     <copy>
@@ -49,12 +47,12 @@ In this lab you will:
     </copy>
     ```
 
-    ***Note: the stream name needs to be unique across the OCI compartment, even if you deploy on different Kubernetes namespaces.***
+    > **Note:** The stream name needs to be unique across the OCI compartment, even if you deploy on different Kubernetes namespaces.
 
     If you're running this as part of a workshop with multiple users, make sure you modify the name of the bucket to make it unique by replacing the name `teststream` with your unique name both in the `create-oss-instance.yaml` and `create-oss-binding.yaml` files.
 
 
-## **STEP 3:** Deploy
+## Task 3: Deploy
 
 1. To deploy the mainfest use:
 
@@ -66,7 +64,7 @@ In this lab you will:
 
     This will deploy all the manifests in the `streaming` folder.
 
-## **STEP 4:** Check the Deployment
+## Task 4: Check the Deployment
 
 1. Verify the database instance is being provisioned:
 
@@ -99,7 +97,7 @@ In this lab you will:
 
 3. You can also check in the OCI console under **Solution and Platforms -> Analytics -> Streaming** in the compartment where you provisioned and you should see the stream named `teststream` (or the unique name you gave it).
 
-## **STEP 5:** Look at the Content of the Secret
+## Task 5: Look at the Content of the Secret
 
 1. You can view the content of the secret by running:
 
@@ -150,10 +148,10 @@ In this lab you will:
         controller: true
         kind: ServiceBinding
         name: test-stream-binding
-        uid: b26883f5-d6d5-48ac-bb01-9c4994f194dc
+        uid: b26883f5-d6d5...
     resourceVersion: "87133"
     selfLink: /api/v1/namespaces/oci-service-broker/secrets/test-stream-binding
-    uid: bac04231-91ee-4a02-bb51-849aa3609ed9
+    uid: bac04231-91ee-4a02...
     type: Opaque
     ```
 
@@ -161,7 +159,7 @@ In this lab you will:
 
     When mounting the secret as a variable in a pod, this value will be decoded for you.
 
-    To decode the content of the field, you can do:
+    To decode the content of the field, you can use:
 
     ```bash
     echo <field content> | base64 -d
@@ -179,7 +177,7 @@ In this lab you will:
     https://cell-1.streaming.us-ashburn-1.oci.oraclecloud.com
     ```
 
-## **STEP 6:** Usage
+## Task 6: Usage
 
 1. To mount the secret into a pod, use an environment variable like:
 
@@ -277,13 +275,13 @@ In this lab you will:
     A few pointers:
 
     - In order to use streaming with a private stream pool with this stack, you will need to add a security list to allow communication with port 9092.
-    - You can use the kafka SDK to use the stream directly, however you will need to know the stream pool OCID to create the username, and you will need a user with an auth token and policy to use streams.
+    - You can use the Kafka SDK to use the stream directly, however you will need to know the stream pool OCID to create the username, and you will need a user with an auth token and policy to use streams.
     - You can use the OCI SDK to connect to streams, in which case you need a user in a group with proper policies, and you need the public/private key pair for this user, as well as fingerprint to configure the OCI CLI in your container.
 
-    Also: 
+    Also:
     - Before tearing down the stack, you will need to remove the security list from the subnet for the subnet to be deprovisioned properly.
 
-## **STEP 7:** Clean Up
+## Task 7: Clean Up
 
 1. To undeploy, and terminate the stream instance, delete the Kubernetes instances:
 
@@ -292,8 +290,6 @@ In this lab you will:
     kubectl delete -f ./streaming
     </copy>
     ```
-
-You may proceed to the next lab.
 
 ## Acknowledgements
 

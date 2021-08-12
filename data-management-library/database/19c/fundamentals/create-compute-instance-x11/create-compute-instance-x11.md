@@ -36,7 +36,7 @@ In this lab, you learn how to do the following:
 
 - You are signed in to Oracle Cloud Infrastructure.
 
-## **STEP 1**: Create SSH keys
+## Task 1: Create SSH keys
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
@@ -108,7 +108,7 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
 7. Leave the terminal window open.
 
 
-## **STEP 2**: Create a compute instance in Oracle Cloud Infrastructure
+## Task 2: Create a compute instance in Oracle Cloud Infrastructure
 
 1. On the **Home** page in Oracle Cloud Infrastructure, under **Quick Actions**, click **Create a VM instance**.
 
@@ -145,7 +145,7 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
 10. Wait for the status of the compute instance to turn to **RUNNING**.
 
 
-## **STEP 3**: Connect to your compute instance
+## Task 3: Connect to your compute instance
 
 
 1. On the **Instance Information** tab for your compute instance, find the public IP address and copy it to the clipboard. Also, jot down the public IP address so that you can refer to it later.
@@ -165,7 +165,7 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
 
 
 
-## **STEP 4**: Configure X11 forwarding on your compute instance
+## Task 4: Configure X11 forwarding on your compute instance
 
 1. Switch to the `root` user.
 
@@ -209,7 +209,7 @@ The SSH (Secure Shell) protocol is a method for secure remote login from one com
     ```
 
 
-## **STEP 5**: Install an X Server on your local computer
+## Task 5: Install an X Server on your local computer
 
 Set up an X Server on your local computer so that you can run graphical applications on your compute instance. For Windows 10, you can install VcXsrv. For macOS, you can install XQuartz.
 
@@ -291,7 +291,7 @@ Set up an X Server on your local computer so that you can run graphical applicat
 16. *IMPORTANT!* Reboot your local computer.
 
 
-## **STEP 6**: Connect to your compute instance from your local machine
+## Task 6: Connect to your compute instance from your local machine
 
 An `.Xauthority` file is automatically generated the first time you log in to your compute instance. This file stores credentials in cookies used by `xauth` for authentication of X sessions. Once an X session is started, the cookie is used to authenticate connections to that specific display.
 
@@ -420,7 +420,7 @@ Download your private key from Cloud Shell, convert it to PPK file format, and t
 
 
 
-## **STEP 6**: Test X11 forwarding
+## Task 6: Test X11 forwarding
 
 Test that the `opc` user can open a graphical user interface application like `xeyes`.
 
@@ -441,7 +441,7 @@ Test that the `opc` user can open a graphical user interface application like `x
 
 
 
-## **STEP 7**: Configure X11 forwarding for an `oracle` user
+## Task 7: Configure X11 forwarding for an `oracle` user
 
 The Oracle Universal Installer also has a graphical user interface and should be run by the `oracle` user. Therefore, if you plan to do an Oracle Database 19c installation on your compute instance, you need to configure X11 forwarding for the `oracle` user.
 

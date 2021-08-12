@@ -21,7 +21,7 @@ Estimated Lab Time: 10 minutes
 - Completed the [Loading Data and Creating Business Objects Lab](../load_data_and_biz_objs/load_data_and_biz_objs.md)
 - Completed the [REST Enable Business Logic and Custom SQL Lab](../REST_enable_objects/REST_enable_objects.md)
 
-## **STEP 1**: Securing the REST Endpoint
+## Task 1: Securing the REST Endpoint
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -304,7 +304,6 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-
-- **Last Updated By/Date** - April 2021
+- **Last Updated By/Date** - Brianna Ambler, June 2021
 - **Workshop Expiry Date** - April 2022
 

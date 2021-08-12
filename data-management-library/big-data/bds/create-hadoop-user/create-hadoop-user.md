@@ -28,13 +28,13 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 4: Access a BDS Node Using a Public IP Address**
 + **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
 
-## **STEP 1:** Gather Information About the Cluster
+## Task 1: Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
@@ -46,7 +46,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/mn0-private-ip.png " ")
 
-## **STEP 2:** Map the Private IP Address of the First Master Node to a Reserved Public IP Address
+## Task 2: Map the Private IP Address of the First Master Node to a Reserved Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address.
 
@@ -93,12 +93,12 @@ In this step, you will set three variables using the **`export`** command. The v
 
   ![](./images/output-white-mn0-ip-address.png " ")
 
-7.  To view the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > IP Management**. In the **IP Management** section on the left, the **Public IPs** option is selected by default. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
+7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
   ![](./images/mn0-reserved-public-ip.png " ")
 
 
-## **STEP 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## Task 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 The Kerberos Distribution Center (KDC) is running on the cluster's first master node. In this lab, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
@@ -153,7 +153,7 @@ _If you are already connected to your cluster's first master node using the Open
     ![](./images/traininmn0-connected.png " ")
 
 
-## **STEP 4:** Create the training Administrator Kerberos Principal
+## Task 4: Create the training Administrator Kerberos Principal
 
 In this step, you will create a new Kerberos principal named **`training`**. Identities in Kerberos are called principals. Every user and service that uses the Kerberos authentication protocol requires a principal to uniquely identify itself. There are user principals and service principals. User principal names, or UPNs, represent regular users such as **`training`**.
 
@@ -189,7 +189,7 @@ In this step, you will create a new Kerberos principal named **`training`**. Ide
 
     ![](./images/exit.png " ")
 
-## **STEP 5:** Create the training Linux OS Administrator User
+## Task 5: Create the training Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group. Assign **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -231,7 +231,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     ![](./images/id-training.png " ")
 
 
-## **STEP 6:** Access HDFS Using the New training Administrator User
+## Task 6: Access HDFS Using the New training Administrator User
 
 Log into any of the Big Data Service nodes such as the **first master node**, get a Kerberos ticket for the **`training`** user, and then perform a file listing of HDFS.
 
@@ -286,9 +286,9 @@ Log into any of the Big Data Service nodes such as the **first master node**, ge
     The command works because you as user **`training`** now have a valid Kerberos ticket.
 
     ![](./images/no-ticket.png " ")
-    
 
-## **STEP 7:** Add the training User to Hue (optional)
+
+## Task 7: Add the training User to Hue (optional)
 
 In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In an HA-cluster, Hue runs on the second utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -371,5 +371,4 @@ You may now [proceed to the next lab](#next).
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**  
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

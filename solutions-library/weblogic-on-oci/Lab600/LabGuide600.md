@@ -16,7 +16,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
 
 - Copy the files to the target Admin Server, and **update** the clean domain on OCI with the applications and resources discovered on-premises.
 
-## Step 1) Installing WebLogic Deploy Tooling
+## Task 1: Installing WebLogic Deploy Tooling
 
 - If you were in the Database container to perform the previous steps of database migration, exit the database container with 
 
@@ -62,7 +62,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists in 3 steps:
   ```
   </details>
 
-## Step 2) Discover the on-premises domain
+## Task 2: Discover the on-premises domain
 
 <details><summary>View the <code>discover_domain.sh</code> script</summary>
 
@@ -467,7 +467,7 @@ appDeployments:
 
 - Save the `source.yaml` file by typing `CTRL+x` then `y`
 
-## Step 3) Edit the `source.properties` file
+## Task 3: Edit the `source.properties` file
 
   ```bash
   <copy>
@@ -499,7 +499,7 @@ appDeployments:
 
 - Save the file with `CTRL+x` and `y`
 
-## Step 4) Update the WebLogic domain on OCI
+## Task 4: Update the WebLogic domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 

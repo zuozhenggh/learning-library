@@ -12,14 +12,7 @@ Estimated lab time: 15 minutes
 * Learn how to enable and disable Autonomous Data Guard
 * Learn how to switch over and fail over from primary database to a standby database
 
-### Prerequisites
-
-* This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-* Make sure you have completed the previous lab in the Contents menu on the right, **Provision Autonomous Database**, before you proceed with this lab.
-
-**Note:**  This lab uses Autonomous Data Guard, which is not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
-
-**Note:**  Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
+**Note:**  This lab uses Autonomous Data Guard, which is not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy. Autonomous Data Guard is available only in Autonomous Database instances 19c and above.
 
 ### Basic Disaster Recovery Terminology
 **Primary or Source Database**: The main database that is actively being used to read from, and write to, by a user or application.
@@ -47,7 +40,7 @@ Currently, the standby database is created in the same region as the primary dat
 * In regions with a single availability domain, the standby database is provisioned automatically on a different physical machine than the primary database.
 
 
-## **STEP 1**: Enable Autonomous Data Guard
+## Task 1: Enable Autonomous Data Guard
 
 1. If you are not logged in to Oracle Cloud Console, log in and navigate to your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Enable** to enable the Data Guard feature.
@@ -63,7 +56,7 @@ When provisioning completes, the **Peer State** field shows **Available**.
 ![](./images/peer-available.png)
 
 
-## **STEP  2**: Test Switchover to a Standby Database
+## Task 2: Test Switchover to a Standby Database
 After Autonomous Data Guard is enabled, if you perform a switchover operation the primary database becomes the standby database, and the standby database becomes the primary database, with no data loss. A switchover is typically done to test your application's failover procedures when Autonomous Data Guard is enabled.
 
 The Oracle Cloud Infrastructure console shows a switchover link in the Peer State field when both the primary database and the standby database are available. That is, the primary database Lifecycle State field shows Available or Stopped and the standby database is available (the Peer State field shows Available).
@@ -80,7 +73,7 @@ The database Lifecycle State changes to **Updating** and the Peer State field sh
     * The Peer State field will change to Available when the standby is ready. (The standby may go into a Provisioning state first, if necessary, without blocking operations on the Primary.)
     * You can see the time of the last switchover when you hover over the tooltip icon in the **Peer State** field.
 
-## **STEP 3**: (Optional) Disable Autonomous Data Guard
+## Task 3: (Optional) Disable Autonomous Data Guard
 1. If you are not logged in to Oracle Cloud Console, log in and navigate into your Autonomous Database.
 2. Under **Autonomous Data Guard** section, click **Disable** to disable the Autonomous Data Guard.
 ![](./images/adg-disable.png)
@@ -106,4 +99,3 @@ For more information about Standby Databases, see the documentation  [About Stan
 ## Acknowledgements
 * Authors - Vandanadevi Rajamani, Database User Assistance; Nilay Panchal, ADB Product Management
 * Last Updated By/Date -Vandanadevi Rajamani/November 2020
-

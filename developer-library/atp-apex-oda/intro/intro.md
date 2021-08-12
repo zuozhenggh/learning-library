@@ -16,7 +16,7 @@ Estimated Workshop Time: 90 minutes.
 - Explore modern and quick APEX development 
 - Build secure and powerful REST APIs
 
-## **Task 1**: Requirements
+## Task 1: Requirements
 
 1. In order to walk through this workshop you need to develop the integration with **REST API**. We will use **Cloud shell** as part of the DevOps tool preinstalled that the **Oracle Cloud** have ready to use. You can learn more about **Oracle Cloud Shell** [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 

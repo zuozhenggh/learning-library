@@ -18,7 +18,7 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-## **STEP 1:** Loading Data in a Relational Table
+## Task 1: Loading Data in a Relational Table
 
 1. After logging into Database Actions in the previous section, we come to the Getting Started/Database Actions Overview page. Start by clicking the SQL tile.
 
@@ -42,7 +42,7 @@ Estimated Lab Time: 30-45 minutes
 
     **(right-click and download the file with the following link)**
 
-    [Airport Delays 2003-2016](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rQEg_sXqFmCO8Swe5vVesi3-hmiCfLsY0Yc8mr_k0zdX2NWhhm34zrwhs0uvg8K-/n/c4u03/b/developer-library/o/airportDelays.json)
+    [Airport Delays 2003-2016](https://objectstorage.us-ashburn-1.oraclecloud.com/p/oyNY8b6DrjBqzV-eWZdHDUlITAlmxHG_vTDApYbW-WTwUQh38qkPZq60BWFG1yga/n/c4u04/b/developer-library/o/airportDelays.json)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -88,7 +88,7 @@ Estimated Lab Time: 30-45 minutes
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 2**: Working with JSON Data in a Relational Table
+## Task 2: Working with JSON Data in a Relational Table
 
 ### **Part 1 - Simple Dot-Notation Access to JSON Data**
 

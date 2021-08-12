@@ -16,7 +16,7 @@ Estimated time: 20 - 30 min
 This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
 
-## **Step 1**: Provision a Developer Cloud Service Instance
+## Task 1: Provision a Developer Cloud Service Instance
 
 1. Click the hamburger icon on the top left side and select **Platform Services** (under More Oracle Cloud Services Area), then select **Developer**.
 
@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
 
 This process will take some time. Proceed to the next step to gather the data you will need to configure the Developer Cloud Service Instance when it is ready.
 
-## **Step 2**: Gather Key Config Data from the Oracle Cloud Tenancy
+## Task 2: Gather Key Config Data from the Oracle Cloud Tenancy
 
 Before we are able to configure a Developer Cloud Service Instance, let’s gather some key info about our OCI tenancy that will be required throughout the rest of the lab. We recommend that you create a `txt` file where you can store the basic info you will be required to use several times during this lab:
 
@@ -117,7 +117,7 @@ Before we are able to configure a Developer Cloud Service Instance, let’s gath
 
 This concludes the list of OCI tenancy parameters you will require to run next section.
 
-## **Step 3**: Configure a Developer Cloud Service Instance
+## Task 3: Configure a Developer Cloud Service Instance
 
 Now let’s check that Developer Cloud Service has been created so that we can configure it.
 

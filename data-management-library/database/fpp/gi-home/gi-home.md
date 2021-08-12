@@ -35,7 +35,7 @@ In this lab, you will:
       - Lab: Get Acquainted with the Environment and the rhpctl Command line tool
       - Lab: Import Gold Images
 
-## **Step 1:** Prepare the response file
+## Task 1: Prepare the response file
 
 1. On the FPP Server, prepare a response file containing the following content:
 
@@ -64,7 +64,7 @@ In this lab, you will:
       ```
       ![](./images/download.png)
 
-## **Step 2:** Provision the Restart environment on a new target using the response file
+## Task 2: Provision the Restart environment on a new target using the response file
 1. On the FPP Server, run the following command to provision and configure the GI home on the target. The password is `FPPll##123`. (Est. 8 minutes)
 
       ```
@@ -77,7 +77,7 @@ In this lab, you will:
       ![](./images/provision2.png)
       ![](./images/provision3.png)
 
-## **Step 3:** Connect to the target and verify the Restart Environment
+## Task 3: Connect to the target and verify the Restart Environment
 1. From either the FPP Server or your SSH client, connect as `opc` to the FPP target public IP address and become `oracle`. The password is FPPll##123
 
       ```

@@ -25,7 +25,7 @@ This lab assumes you have:
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
-## **Step 1:** Gather compute instance details
+## Task 1: Gather compute instance details
 1. Now that your instance has been provisioned, navigate to ***My Reservations***, find the request you submitted from the list displayed (only one item will be displayed if this is your first request).
 
    ![](images/ll-launch-workshop.png " ")
@@ -40,7 +40,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 4. Click on **Open workshop instructions in a new tab** to access the workshop guides and get started with labs execution.
 
-## **Step 2:** Start Cloud Shell and Upload Key
+## Task 2: Start Cloud Shell and Upload Key
 
 1.  Go to ***Compute >> Instances*** and select the instance you created (make sure you choose the correct compartment).
 
@@ -90,7 +90,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 If you are unable to ssh in, check out the troubleshooting tips below.
 
-You may now [proceed to the next lab](#next).
+You may now *proceed to the next lab*.
 
 ## Appendix: Troubleshooting Tips
 
@@ -112,5 +112,5 @@ There may be several reasons why you can't login to the instance.  Here are some
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm, Tom McGinn
-* **Last Updated By/Date** - Kay Malcolm, May 2021
+* **Contributors** - LiveLabs Team, Tom McGinn
+* **Last Updated By/Date** - LiveLabs Team, May 2021
