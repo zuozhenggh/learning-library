@@ -21,8 +21,8 @@
               "filename": "../../2mos-for-psft-adb/mos-psft.md"
           },
           {
-              "title": "Lab 3: Configuring Cloud Manager Settings",
-              "filename": "../../3configure-cm/configure-cm.md"
+              "title": "Lab 3: ADB connectivity test for PeopleSoft On Premise",
+              "filename": "../../3adb-connectivity-onprem/adb-connectivity-onprem.md"
           },
           {
             "title": "Lab 4: Subscribing to PeopleSoft Download Channels",
