@@ -52,7 +52,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 6.  Upload the wallet\_ATP.zip and then extract its contents to a new directory, such as **wallet\_ATP**.
 
     ```
-    <copy>mkdir wallet_ATP
+<copy>mkdir wallet_ATP
 unzip wallet_ATP.zip -d wallet_ATP</copy>
     ```
 
