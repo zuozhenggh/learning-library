@@ -3,7 +3,7 @@
 ## Introduction
 In this section you can learn how to upgrade instances to a Paid Model.
 
-Estimated Lab Time: 2 minutes
+Estimated Lab Time: 2 minutes.
 
 ## Task 1: Upgrade Instances to Paid
 
