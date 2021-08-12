@@ -27,7 +27,7 @@ To successfully complete this LiveLab, you must have:
 * An Oracle Cloud Infrastructure account with access to Netowrking and OCI GoldenGate services
 * Source and target databases provisioned and configured for Oracle OCI ([source](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html#GUID-384772C7-B327-420C-B6AA-B6CEA727322F)) and Oracle GoldenGate ([target](https://www.oracle.com/middleware/technologies/fusion-certification.html))
 
-***Note:** If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+***Note:** If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. For more information, see the [Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)*
 
 ### Lab Breakdown
 

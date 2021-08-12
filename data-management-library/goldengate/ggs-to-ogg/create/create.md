@@ -83,7 +83,7 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
+  ![Deployment Details page](images/01-03-gg-deployment-details.png)
 
 ## Task 3: Launch the GoldenGate Deployment Console
 
@@ -129,7 +129,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 5: Enable the ggadmin user and supplemental logging
+## Task 5: Enable the ggadmin user
 
 Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
 
@@ -159,13 +159,9 @@ Although the ggadmin user is created during the database registration process, i
 
     Note that the user icon changes from a blue padlock to a green checkmark.
 
-8.  Open the Database Actions navigation menu (hamburger icon), and then select **SQL**.
+8.  Log out of Database Actions.
 
-    ![SQL Developer](images/01-08-sql.png)
-
-9. Log out of Database Actions.
-
-10. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
+9.  Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
 In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You can now proceed to the next lab.
 
