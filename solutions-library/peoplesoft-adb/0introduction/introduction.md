@@ -76,7 +76,7 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 
 ## Acknowledgments
-* **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer; Hayley Allmand, Cloud Engineer
-* **Contributors** - Joowon Cho, Cloud Technologist
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
+* **Authors** - Deepak Kumar M, PeopleSoft Architect
+* **Contributors** - Deepak Kumar M, PeopleSoft Architect
+* **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, May 2021
 
