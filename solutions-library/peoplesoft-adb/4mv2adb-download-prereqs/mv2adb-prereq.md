@@ -1,4 +1,4 @@
-# MV2ADB Installation and Configuration
+# MV2ADB Pre-requisites and Installation 
 
 ## Introduction
 
@@ -13,7 +13,7 @@ In this lab, you will:
 * Download and install MV2ADB on PeopleSoft on-premise system
 * Generate an OCI Auth Token
 * Creating an OCI Bucket
-* Installing and configuring MV2ADB
+
 
 
 ### Prerequisties
@@ -71,7 +71,6 @@ In this lab, you will:
   *Take note of your region, bucket name, and tenancy name for later.*
 
 
-## **STEP 4**: Configuring MV2ADB on the PeopleSoft on-premise system
 
 
 

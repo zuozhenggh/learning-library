@@ -29,17 +29,17 @@
             "filename": "../../4mv2adb-download-prereqs/mv2adb-prereq.md"
           },
           {
-              "title": "Lab 5: Reviewing and Updating the Topology",
-              "filename": "../../5topology/topology.md"
+              "title": "Lab 5: Getting Tablespace information from On-premise PeopleSoft database",
+              "filename": "../../5getting-tablespace-from-source/get-tbspl.md"
           },
           
           {
-              "title": "Lab 6: Creating a new Environment Template",
-              "filename": "../../6env-template/env-template.md"
+              "title": "Lab 6: Configuring  OCI ADB-S Database for PeopleSoft",
+              "filename": "../../6preparing-target-oci-database/configure-target-db.md"
           },
           {
-              "title": "Lab 7: Creating Environment in PeopleSoft",
-              "filename": "../../7psft-env/psft-env.md"
+              "title": "Lab 7: MV2ADB Configuration and ADB Schema Advisor Installation",
+              "filename": "../../7mv2adb-config-install-adb-schema-advisor/mv2adb-adb-advisor-schema.md"
           },
           {
             "title": "Lab 8: Cloning an Environment",
