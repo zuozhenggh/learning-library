@@ -14,7 +14,7 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 
 *Estimated Lab Time*: 20 Minutes
 
-![](./images/app_front.JPG " ")
+![](./images/app_front.jpg " ")
 
 Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 1. **eShop URL Access:** When you access the application using the URL  (**`http://localhost:3000/`**), the application's home page opens. 
 
-  ![](./images/app_front.JPG " ")
+  ![](./images/app_front.jpg " ")
 
 2. **Log In and Sign Up:** The application has **login** and new user **signup** features, but it allows access to a non-logged in application user to some extent. It allows you to search for a product in the catalog and make a purchase based on the product's reviews, sentiment score, and rating.
 
@@ -54,13 +54,13 @@ This lab assumes you have:
 
   **Login email** = demo@eshop.com and **password** = demo
 
-  ![](./images/app2.JPG " ")
+  ![](./images/app2.jpg " ")
 
   After a successful login you are brought back to the home page.
 
 3. **Browse and Search Products:** Click **CATALOG** in the navigation bar to browse the product list. This page lists all of the products in the store by fetching all of the rows from the Product JSON tables, which are partitioned among the three database shards, along with a picture and price.
 
-  ![](./images/app3.JPG " ")
+  ![](./images/app3.jpg " ")
 
   Any of the product tiles on this page can be clicked to take you to the product information tab. 
   Use the Filter options by selecting from the Price and/or Brand filters to get a list of specific products. 
@@ -70,7 +70,7 @@ This lab assumes you have:
    You can click on a selected product to view its details, or you can choose to add the product directly to the cart by clicking on the cart symbol.
 
 
-  ![](./images/searchproduct.JPG " ")
+  ![](./images/searchproduct.jpg " ")
 
    The product search functionality is flexible enough to autocorrect any misspelled search text and provide you with a suggestion list of what you might be looking for.
 
@@ -78,7 +78,7 @@ This lab assumes you have:
 
 4. **Select a Product:** Select a specific product to go to the product information page, where you can find more information about the product and read the reviews and ratings.
 
-  ![](./images/singleproductview.JPG " ")
+  ![](./images/singleproductview.jpg " ")
 
   On the product information screen the reviews are sorted by sentiment ratings. You can search for reviews based on the content or keyword.
 
