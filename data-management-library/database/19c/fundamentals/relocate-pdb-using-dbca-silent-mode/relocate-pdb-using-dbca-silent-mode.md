@@ -95,6 +95,7 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
 
 ## Task 3: Verify that PDB1 has sample data
+
 1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
 
     ```
@@ -112,7 +113,6 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
     ```
     SQL> <copy>alter pluggable database PDB1 open;</copy>
-
     Pluggable database altered.
     ```
 
@@ -120,11 +120,10 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
-
     Session altered.
     ```
 
-5. Verify that PDB1 contains the `HR.EMPLOYEES` table with 107 rows.
+5. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
     After relocating PDB1 to CDB2, it should still contain `HR.EMPLOYEES` as it originally did. We will check for this in a later step.
 
@@ -436,4 +435,4 @@ A common user is a database user that has the same identity in the `root` contai
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 12 2021

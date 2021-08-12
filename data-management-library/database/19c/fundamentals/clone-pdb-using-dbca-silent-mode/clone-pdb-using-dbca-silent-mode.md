@@ -12,7 +12,7 @@ Learn how to do the following:
 
 - Enable `ARCHIVELOG` mode on CDB1 and CDB2
 - Verify that the listeners for CDB1 and CDB2 are started and ready
-- Verify that PDB1 has sample data before cloning
+- Verify that PDB1 has sample data
 - Create a common user and grant it privileges
 - Use DBCA to clone a remote PDB from a CDB
 - Verify that PDB1 is cloned and that `HR.EMPLOYEES` exists in PDB2
@@ -91,7 +91,8 @@ Before you start, be sure that you have obtained and signed in to your `workshop
     LSNRCTL> <copy>exit</copy>
     ```
 
-## Task 3: Verify that PDB1 has sample data before cloning
+## Task 3: Verify that PDB1 has sample data
+
 1. Set the environment variable to CDB1. At the prompt, enter **CDB1**.
 
     ```
@@ -109,7 +110,6 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
     ```
     SQL> <copy>alter pluggable database PDB1 open;</copy>
-
     Pluggable database altered.
     ```
 
@@ -117,11 +117,10 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
-
     Session altered.
     ```
 
-5. Verify that PDB1 contains the `HR.EMPLOYEES` table. The results confirm that there are 107 rows in the table.
+5. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -314,4 +313,4 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 12 2021
