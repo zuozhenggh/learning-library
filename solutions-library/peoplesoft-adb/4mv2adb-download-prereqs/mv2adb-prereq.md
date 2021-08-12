@@ -1,22 +1,27 @@
-# Title
+# MV2ADB Installation and Configuration
 
 ## Introduction
 
-Estimated Lab Time: 
+This lab walks you through the steps to download and install MV2ADB and also completing the pre-requisites to run one-click MV2ADB migration for ADB-S
+
+Estimated Lab Time: 10 minutes
 
 ### Objectives
-The purpose of this lab is to show you how to create a PeopleSoft Cloud Manager instance from the Marketplace. 
+
 
 In this lab, you will:
-* 
-* 
+* Download MV2ADB from My Oracle Support
+* Generate an OCI Auth Token
+* Creating an OCI Bucket
+* Installing and configuring MV2ADB
+
 
 ### Prerequisties
-- Oracle Cloud Infrastructure account credentials.
-    * User
-    * Password
-    * Tenant
-- Admin privileges on your local machine or Windows instance on Cloud.
+* My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). 
+* OCI CLI to be installed on the on-premise PeopleSoft database system,refer to link [here](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm) for installing and configuration
+
+* Root user access on the on-premise PeopleSoft system
+
 
 
 ## **STEP 1**: 
