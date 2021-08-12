@@ -80,9 +80,11 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Receiver Server**.
 
-    ![](images/02-01.png)
+    ![Receiver Server](images/02-01.png)
 
 2.  Click **Add Path** (plus icon).
+
+    ![Add Path](images/02-02-add-path.png)
 
 3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **GGStoOGG**.
 
@@ -90,13 +92,13 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 5.  For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
-    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https://.*
+    *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
+
+    ![GGS Console URL](images/03-05.png)
 
 6.  For **Port Number**, enter 443.
 
-7.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
-
-    ![](images/02-07-note.png)
+7.  Click **Trail Name**, and then select the trail file created in Task 1 above, to send to OCI GoldenGate. For example, select **E1**.
 
 8.  For **Domain**, enter the Domain from Lab 3, Task 3, step 4. For example, **GGSNetwork**.
 
@@ -106,7 +108,9 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
 
-    ![](images/02-08-note.png)
+    ![](images/02-07-note.png)
+
+    ![Add Path](images/03-11b.png)
 
 12. Click **Create Path**.
 
@@ -122,19 +126,21 @@ In this lab, you created and ran a Path on your on premisess Oracle GoldenGate R
 
 1.  In the Oracle GoldenGate Administration Server, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
-    ![](images/02-01-nav-config.png)
+    ![](images/04-01.png)
 
 2.  For TargetADW, click **Connect to Database**.
 
+    ![](images/04-02.png)
+
 3.  Next to Checkpoint, click **Add Checkpoint**.
 
-    ![](images/02-06-add-checkpoint.png)
+    ![](images/04-03.png)
 
 4.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
 
-    ![](images/02-07-checktable.png)
+    ![](images/04-04.png)
 
-To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
+5.  Click **Overview** in the left navigation.
 
 ## Task 5: Add and Run a Replicat
 
@@ -142,7 +148,7 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 1.  Click **Overview**, and then click **Add Replicat** (plus icon).
 
-    ![Click Add Replicat](images/03-01-ggs-add-replicat.png)
+    ![Click Add Replicat](images/05-01.png)
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
@@ -191,11 +197,15 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 16. In the OCI GoldenGate Deployment Console, select **Overview** from the navigation menu (hamburger icon), click the **Extract name (UAEXT)**, and then click **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![](images/04-17.png)
+    ![](images/05-16.png)
+
+    ![](images/05-16b.png)
 
 17. Navigate to the Oracle GoldenGate Marketplace Receiver Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
 
-    ![](images/04-18.png)
+    ![](images/05-17.png)
+
+    ![](images/05-17b.png)
 
 ## Task 6: Confirm the Receiver Path is running
 

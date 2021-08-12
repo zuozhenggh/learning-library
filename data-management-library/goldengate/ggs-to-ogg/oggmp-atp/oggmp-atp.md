@@ -23,7 +23,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 2.  On the Target ADW Autonomous Database Details page, click **DB Connection**.
 
-    ![Open ATP Service Console](images/02-01.png)
+    ![Open ADW Service Console](images/02-01.png)
 
 2.  In the DB Connection panel, click **Download Wallet**.
 
@@ -55,11 +55,23 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-6.  Upload the wallet\_ADW.zip and then extract its contents to a new directory, such as **wallet\_ADW**.
+6.  Upload the wallet\_ATP.zip to /home/opc.
+
+    ```
+    <copy>put <local-path>/Wallet_ADW.zip</copy>
+    ```
+
+7.  SSH to the compute instance.
+
+    ```
+    <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
+    ```
+
+8.  Upload the wallet\_ADW.zip and then extract its contents to a new directory, such as **wallet\_ADW**.
 
     ```
     <copy>mkdir wallet_ADW
-unzip wallet_ADW.zip -d wallet_ADW</copy>
+unzip Wallet_ADW.zip -d wallet_ADW</copy>
     ```
 
 ## Task 3: Add the Target ADW credential in the Oracle GoldenGate Administration Server
@@ -92,10 +104,12 @@ unzip wallet_ADW.zip -d wallet_ADW</copy>
 
 9.  Click **Add Credential**.
 
+    ![](images/03-09.png)
+
 10. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **atp&lt;user&gt;\_low**.
+    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **adw&lt;user&gt;\_low**.
     * For **User ID**, paste the ADW connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
