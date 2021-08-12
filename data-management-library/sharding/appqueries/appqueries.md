@@ -48,7 +48,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](./images/1.JPG " ") 
+    ![](./images/1.jpg " ") 
 
 ## Task 2: Application Queries on sharding Database.
 
@@ -58,11 +58,11 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ```
     <copy>
-    select p.json_text.NAME from PRODUCTS p where contains(json_text, 'fuzzy((sona))', 1) > 0 order by score(1) desc;
+    select p.json_text.NAME from PRODUCTS p where contains(json_text, 'fuzzy((meras))', 1) > 0 order by score(1) desc;
     </copy>
     ```
 
-    ![](./images/query2.JPG " ") 
+    ![](./images/query2.jpg " ") 
 
 2. Dollar Value sale by month: A single query spanning from LINE_ITEM shard table by accessing multiple (3) shard databases.
    
@@ -72,7 +72,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
 
-    ![](./images/query3.JPG " ") 
+    ![](./images/query3.jpg " ") 
 
 
 3. Select products ordered by maximum sell
@@ -84,7 +84,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
     </copy>
     ```
-    ![](./images/query5.JPG " ") 
+    ![](./images/query5.jpg " ") 
 
 4. Customer Average Review and review count
 
@@ -99,7 +99,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     </copy>
     ```
 
-    ![](./images/query6.JPG " ") 
+    ![](./images/query6.jpg " ") 
 
 5.  Let's try one query at **shard2** database. Open another terminal and execute below as **opc** user to connect to **shard2**.
 
@@ -126,7 +126,7 @@ Run the below each sql query by login into Catalog database as well as one of th
     select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
     </copy>
     ```
-    ![](./images/query1.JPG " ") 
+    ![](./images/query1.jpg " ") 
 
 
 This is the end of the Oracle Sharding Workshop.
@@ -153,4 +153,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Balasubramanian Ramamoorthy, Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - June 2021
+* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - July 2021
