@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Our language services also support to use CLI tool.
+OCI Language can be called from the OCI Command Line Interface (CLI).
 
 In this lab session, we will show several code snippets to access our service with CLI.
 
@@ -26,25 +26,7 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 
 
 
-## **TASK 1:** OCI Language Service Pre-Deployed CLI Command
-
-```Python
-oci ai language detect-language --text, -? | -h | --help
- 
- 
-oci ai language detect-entities --text, -? | -h | --help, --is-pii
- 
- 
-oci ai language detect-key-phrases --text, -? | -h | --help
- 
- 
-oci ai language detect-sentiments --text, -? | -h | --help
- 
- 
-oci ai language detect-text-classification --text, -? | -h | --help
-```
-
-## **TASK 2:** Analyze Text using Cloud Shell
+## **TASK 1:** Navigate to the Cloud Shell
 
 ### 1: Navigate to Cloud Shell
 
@@ -69,6 +51,31 @@ To install and use the CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Cont
 
 For information about using the CLI, see [Command Line Interface (CLI)](https://docs.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm#Command_Line_Interface_CLI).
 For a complete list of flags and options available for CLI commands, see the [Command Line Reference](https://docs.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/). -->
+
+
+## **TASK 2:** Try issuing some of the OCI Language commands
+
+### 1. Language Detection
+```
+<copy>oci ai language detect-language --text, -? | -h | --help
+```
+### 2. Named Entity Recognition
+```
+<copy>oci ai language detect-entities --text, -? | -h | --help, --is-pii
+```
+### 3. Key Phrase Extraction
+```
+<copy>oci ai language detect-key-phrases --text, -? | -h | --help
+```
+### 4. Aspect-Based Sentiment Analysis
+```
+<copy>oci ai language detect-sentiments --text, -? | -h | --help
+```
+### 5. Text Classification
+```
+<copy>oci ai language detect-text-classification --text, -? | -h | --help
+```
+
 
 To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 

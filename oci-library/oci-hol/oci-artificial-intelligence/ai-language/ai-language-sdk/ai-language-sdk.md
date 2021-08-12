@@ -2,14 +2,9 @@
 
 ## Introduction
 
-Our language services also support to use SDK.
-
-In this lab session, we will show several code snippets to access our service with SDK.
-
-You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration.
-Oracle Cloud Infrastructure provides a number of Software Development Kits (SDKs) to facilitate development of custom solutions.Software Development Kits (SDKs) Build and deploy apps that integrate with Oracle Cloud Infrastructure services.
-
-Each SDK provides the tools you need to develop an app, including code samples and documentation to create, test, and troubleshoot. In addition, if you want to contribute to the development of the SDKs, they are all open source and available on GitHub.
+Oracle Cloud Infrastructure provides a number of Software Development Kits (SDKs) to facilitate development of custom solutions. SDKs allow you to build and deploy apps that integrate with Oracle Cloud Infrastructure services. Each SDK also includes tools and artifacts you need to develop an app, such as code samples and documentation. In addition, if you want to contribute to the development of the SDKs, they are all open source and available on GitHub.
+ 
+You can invoke OCI Language capabilities through the OCI SDKs.  In this lab session, we will show several code snippets to access OCI Language through the OCI SDKs. You do not need to execute the snippets, but review them to understand what information and steps are needed to implement your own integration.
 
 #### 1. [SDK for Java](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm#SDK_for_Java)
 #### 2. [SDK for Python](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#SDK_for_Python)
@@ -32,7 +27,8 @@ Each SDK provides the tools you need to develop an app, including code samples a
 
 
 ## **TASK 1:** Setup API Signing Key and Config File
-Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials. 
+<b>Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials. </b>
+
 Generate an API signing key pair
 ### 1. Open User Settings
 Open the Profile menu (User menu icon) and click User Settings.
@@ -42,7 +38,7 @@ Open the Profile menu (User menu icon) and click User Settings.
 Navigate to API Key and then Click Add API Key.
 ![](./images/addAPIButton.png " ")
 
-### 3. Gernerate API Key
+### 3. Generate API Key
 In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your .oci directory and then click Add.
 ![](./images/genAPI.png " ")
 
@@ -65,13 +61,13 @@ To Know more visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Conte
 Please follow the steps in the order described.
 Before you go any further, make sure you have Python 3.x version and that it’s available from your command line. You can check this by simply running:
 ```
-python --version
+<copy>python --version</copy>
 ```
-If you do not have Python, please install the latest 3.x version from [python.org ](python.org )
+If you do not have Python, please install the latest 3.x version from [python.org ](https://www.python.org)
 
 Additionally, you’ll need to make sure you have pip available. You can check this by running:
 ```
-$ pip --version
+<copy>pip --version</copy>
 ```
 If you installed Python from source, with an installer from python.org, or via Homebrew you should already have pip. If you’re on Linux and installed using your OS package manager, you may have to install pip separately.
 
@@ -79,17 +75,17 @@ If you installed Python from source, with an installer from python.org, or via H
 ### 1. Create virtualenv
 To create a virtual environment, run the venv module as a script as shown below
 ```
-python3 -m venv <name of virtual environment>
+<copy>python3 -m venv <name of virtual environment></copy>
 ```
 ### 2. Activate virtualenv
 Once you’ve created a virtual environment, you may activate it.
 ```
-source <name of virtual environment>/bin/activate
+<copy>source <name of virtual environment>/bin/activate</copy>
 ```
 ### 3. Install OCI
 Now Install oci by running:
 ```
-pip install oci
+<copy>pip install oci</copy>
 ```
 
 

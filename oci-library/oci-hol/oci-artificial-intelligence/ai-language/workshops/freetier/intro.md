@@ -2,9 +2,7 @@
 
 ## Introduction
 
-Language is serverless and multi-tenant service that is accessible using REST API calls. It provides pretrained models that are frequently retrained and monitored to provide you with the best results.
-
-You can automate sophisticated text analysis at scale without any machine learning expertise.
+OCI Language empowers developers with production ready pre-trained models to automate sophisticated text analysis at scale without requiring any machine learning expertise. It can be accessed through REST APIs and SDKs.
 
 The Language service contains these pretrained language processing capabilities:
 
@@ -15,7 +13,7 @@ Identifies aspects from the given text and classifies each into positive, negati
 Identifies common entities, people, places, locations, email, and so on.
 
 ### 3. Key Phrase Extraction
-Extracts an important set of phrases from a block of text.
+Identify the most salient talking points in your text.
 
 ### 4. Language Detection
 Detects languages based on the given text, and includes a confidence score.
@@ -32,12 +30,13 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 
 ### Objectives:
 
-* Understand a high level overview of the OCI Language Service
+* Understand a high level overview of the OCI Language
 * Understand the full cycle/workflow of services provided in the OCI Language
-* Learn to use REST API to interact with OCI Language service
-* Learn to use CLI to interact with OCI Language service
-* Learn to access OCI Language Service in DataScience NotebookSession
-* Learn to access OCI Language Service in Data Flow.
+* Learn to use REST API to interact with OCI Language
+* Learn to use CLI to interact with OCI Language
+* Learn to use the OCI Language SDKs.
+* Learn to access OCI Language in DataScience NotebookSession
+<!-- * Learn to access OCI Language Service in Data Flow. -->
 
 ### Prerequisites:
 * An Oracle Free Tier, or Paid Cloud Account

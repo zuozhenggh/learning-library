@@ -1,6 +1,7 @@
 # Lab 5: Access OCI Language Service in DataScience NotebookSession.
 
-## Introduction
+## Prerequisites
+- If you don't have a subnet with Internet connectivity then Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option. The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
 
 ## **TASK 1:** Navigate to the NoteBook
 
@@ -27,23 +28,20 @@ Enter name and click Create Button.
 ![](./images/3.png " ")
 
 
-### 4. Create NoteBook Session
-Click Create NoteBook Session to create a new Notebook session.
+### 4. Create Notebook Session
+Click Create Notebook Session to create a new Notebook session.
 ![](./images/4.png " ")
 
 ### 5. Enter Details
 Select a name.
 We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
-Set blockstorage to 50 GByte.
-Select the subset with INternet connectivity.
-If you don't have a subnet then
-Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option.
-The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
-Select defaults for VCN and subnet. These should point to the resources that were created earlier by the resource manager.
+Set block storage to 50 GB.
+Select the subset with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
 ![](./images/5.png " ")
 
 ### 4. Open the OCI Data Science notebook
-Open the notebook that was provisioned.
+The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
+Open the notebook session that was provisioned.
 ![](./images/openNotebook.png " ")
 
 ## **TASK 2:** Invoke the Language Service
@@ -56,7 +54,18 @@ Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
 ![](./images/uploadFiles.png " ")
 
 ### 2. Setup API Signing Key and Config File
-Make sure you create a .oci directory in the Data Science notebook session and upload the config file and the Private Key to your .oci directory.
+Make sure you create a .oci directory in the Data Science notebook session.
+```
+<copy>mkdir ~/.oci</copy>
+```
+
+Upload the config file and the Private Key to Notebook Session and move it to the .oci folder.
+```
+<copy>mv <path of the config file> ~/.oci/</copy>
+```
+```
+<copy>mv <path of the private key> ~/.oci/</copy>
+```
 To More about about how to create API Key and config file, Refer Lab-3(Setup API Signing Key and Config File).
 ![](./images/config.png " ")
 
@@ -72,9 +81,3 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
-* **Authors**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services
-    * Ankit Tyagi -  Oracle AI OCI Langauge Services
-* **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021
