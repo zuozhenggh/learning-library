@@ -21,7 +21,7 @@ To ensure success:
 
 In Labs 1-15, you will :
 * Create an Oracle Autonomous Database shared 
-* Setup My Oracle Support SR for PeopleSoft on ADB-S
+* Create a Service Request for PeopleSoft on ADB-S
 * ADB-S connectivity check on source on-premise PeopleSoft system
 * How to download,setup,install and pre-requisites required for MV2ADB
 * Getting Tablespace Information from source PeopleSoft systems
