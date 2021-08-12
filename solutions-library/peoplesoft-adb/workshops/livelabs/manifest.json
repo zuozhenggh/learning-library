@@ -14,11 +14,11 @@
         },
         {
             "title": "Lab 1: Creating Autonomous Database",
-            "filename": "../../1adb/adb.md"
+            "filename": "../../1creating-adb/creating-adb.md"
         },
         {
-            "title": "Lab 2: Provisioning the PeopleSoft Cloud Manager using Marketplace",
-            "filename": "../../2provision-cm/provision-cm.md"
+            "title": "Lab 2: Create a Service Request for PeopleSoft on ADB-S",
+            "filename": "../../2mos-for-psft-adb/mos-psft.md"
         },
         {
             "title": "Lab 3: Configuring Cloud Manager Settings",
