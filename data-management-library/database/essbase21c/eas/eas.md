@@ -11,7 +11,7 @@ NOTE: EAS Lite supports only features and functionality available in 11g, and no
 This option is available in 21c independent installation and not on the Essbase marketplace.
 
 
-Estimated Lab Time: *10 minutes*.
+*Estimated Lab Time:* 10 minutes
 
 ### Objectives
 
@@ -19,6 +19,7 @@ This lab provides details on how you can optionally manage applications using Es
 
 ### Prerequisites
 
+* A Free Tier, Paid or LiveLabs Oracle Cloud account
 * Essbase 21 instance with Service administrator role.
 * You have completed:  
      * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
@@ -40,22 +41,22 @@ To manage an application using EAS Lite:
    Note: Please replace ip with your instance's ip.
 
 2.	On the Applications tab click **Import** in the Essbase web interface and click **Catalog**. 
-   ![](./images/EAS_0.png)
+   ![](./images/EAS_0.png " ")
 
 
 3.	Select **Demo_Basic.xlsx** file from:
 
    All Files -> Gallery -> Applications ->Demo Samples-> Block Storage.
-   ![](./images/EAS_1.png)
+   ![](./images/EAS_1.png " ")
 
 
 4.	Name the application “EAS_Demo” and name the cube “Sales” and click **OK**.
-   ![](./images/EAS_2.png)
+   ![](./images/EAS_2.png " ")
 
 5.	From the Actions menu to the right of the application EAS_Demo, launch the inspector, and click **Settings**.
 
 6.	From the General tab, select **Managed by Essbase Administration Services**.
-   ![](./images/EAS_3.png)
+   ![](./images/EAS_3.png " ")
 
 7.	Click **Save** then **OK**, and then **Close**.
 
@@ -69,28 +70,28 @@ To manage an application using EAS Lite:
    Note: Please replace ip with your instance's ip.
 
 2.	Click **Launch**. If the EAS Lite console doesn't launch, you may need to configure your browser with a Java Web Start (javaws) plugin that can launch .jnlp files.
-   ![](./images/EAS_4.png)
+   ![](./images/EAS_4.png " ")
 
    Open the downloaded file: easconsole.jnlp. 
    
 1. Once the following propmpt is displayed, click **Run**.
-   ![](./images/eas_run_prompt.png)
+   ![](./images/eas_run_prompt.png " ")
    
 
 4.	Log in with the username and password of your Essbase instance.
-   ![](./images/EAS_5.png)
+   ![](./images/EAS_5.png " ")
 
 5.	Go to Enterprise View-> Essbase Servers-> http: ip:9000/essbase/agent -> Applications -> EAS_Demo.
-   ![](./images/EAS_6.png)
+   ![](./images/EAS_6.png " ")
 
 6.	Expand application “EAS_Demo”. Double-click **Sales**.
 
 7.	Right-click Outline and choose Edit.
-   ![](./images/EAS_7.png)
+   ![](./images/EAS_7.png " ")
 
 
 8.	You can perform all the administrative tasks in the outline as in Essbase 11g version, such as creation of a cube, dimension build, data loading, creation of calculation scripts, rule file, and so on. 
-   ![](./images/EAS_8.png)
+   ![](./images/EAS_8.png " ")
 
    **NOTE**: If you want to switch back and make the application web interface managed, go to Step 1: Point 6 and unselect the option Managed by Essbase Administration Services. You can't manage the application by EAS again, once you uncheck this option.
 
