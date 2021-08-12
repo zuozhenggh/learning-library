@@ -11,7 +11,7 @@ During the subsequent runs of a comparison job, the comparison of the tables can
 
 + **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.2 and higher**
 
-## Task 1: Enable Delta Comparision
+## Task 1: Enable Delta Comparison
 
 
 ## Task 2: Configure Delta Comparison
