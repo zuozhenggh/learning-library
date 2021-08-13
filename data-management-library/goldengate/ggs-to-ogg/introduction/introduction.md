@@ -6,7 +6,7 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 *For the purposes of this workshop, Autonomous Transaction Processing serves as the source database and Autonomous Data Warehouse serves as the target database.*
 
-Estimated Lab Time: 120 minutes
+Estimated Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
 
@@ -27,7 +27,7 @@ To successfully complete this LiveLab, you must have:
 * An Oracle Cloud Infrastructure account with access to Netowrking and OCI GoldenGate services
 * Source and target databases provisioned and configured for Oracle OCI ([source](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html#GUID-384772C7-B327-420C-B6AA-B6CEA727322F)) and Oracle GoldenGate ([target](https://www.oracle.com/middleware/technologies/fusion-certification.html))
 
-*Note: If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+***Note:** If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 ### Lab Breakdown
 
@@ -46,4 +46,4 @@ To successfully complete this LiveLab, you must have:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - August 2021
+* **Last Updated By/Date** - Jenny Chan, August 2021

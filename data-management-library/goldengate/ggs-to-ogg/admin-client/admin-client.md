@@ -4,7 +4,7 @@
 
 This is an optional lab that guides you on how to connect to the on premise or Marketplace Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
 
-Estimated lab time: 5 minutes
+Estimated time: 5 minutes
 
 ### About the Admin Client
 The Admin Client is a command line utility that uses Microservices REST API to control and configure tasks in an Oracle GoldenGate deployment. You can also use the Admin Client to create, modify, and remove processes.
@@ -44,7 +44,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
     <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
     ```
-    NOTE: The exclamation point (!) is very important. Without it, the command fails and returns an error.
+    ***Note:** The exclamation point (!) is very important. Without it, the command fails and returns an error.
 
 4.  After connecting successfully, you can run any of the following commands:
 

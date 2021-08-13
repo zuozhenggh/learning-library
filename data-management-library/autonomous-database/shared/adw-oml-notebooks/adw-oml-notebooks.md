@@ -243,7 +243,7 @@ By default, when you create a notebook, it’s only visible to you. To make it a
 
 ## Task 10: Accessing shared notebooks
 
-1.  Now, repeat the process you followed at Step 8. Sign out of OML as **OMLUSER1** and sign in to OML again as user **OMLUSER2**.
+1.  Now, repeat the process you followed at Task 8. Sign out of OML as **OMLUSER1** and sign in to OML again as user **OMLUSER2**.
 
     First thing to note is that the **Recent Activities** panel below the **Quick Actions** panel now shows all the changes user OMLUSER1 made within the *OML Project [OML Workspace]*.
 

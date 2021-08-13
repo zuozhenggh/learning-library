@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager.
 
-Estimated Lab Time: 10 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -136,7 +136,7 @@ The following instructions show you how to download the Root Certificate using a
 
 6.  Click **Submit**.
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
+In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
