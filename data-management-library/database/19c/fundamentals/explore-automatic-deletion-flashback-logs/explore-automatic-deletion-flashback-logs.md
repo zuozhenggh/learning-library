@@ -3,7 +3,7 @@
 
 ## Introduction
 
-The fast recovery area is critical for databases because it stores backups, online redo logs, archived redo logs, and flashback logs. Because many databases can all use the fast recovery area, multiple databases are impacted when the fast recovery area becomes full.
+The fast recovery area is critical for databases because it stores backups, online redo logs, archived redo logs, and flashback logs. Because many databases can use the fast recovery area at the same time, the databases are impacted when the fast recovery area becomes full.
 
 Starting in Oracle Database 19c, the management of space in the fast recovery area is simplified. Oracle Database monitors flashback logs in the fast recovery area and automatically deletes those that are beyond the retention period. You can set the retention period by configuring the `DB_FLASHBACK_RETENTION_TARGET` initialization parameter. The database retains at least 60 minutes of flashback data even if you specify a value less than 60.
 
@@ -22,92 +22,90 @@ Learn how to do the following:
 - Set the flashback retention period to 70 minutes and enable `FLASHBACK` mode on CDB1
 - Increase the fast recovery area (FRA) size to 100GB
 - Generate flashback logs
-- Decrease the flashback retention period to 60 minutes
+- Decrease the flashback retention period to 60 minutes and observe the changes to the flashback logs
 - Reset your environment
 
 ### Prerequisites
 
-- Obtain a compute instance with Oracle Database 19c installed on it and download the class files. If not, see "Lab 4: Obtain a Compute Image with Oracle Database 19c Installed".
+Before you start, be sure that you have obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
 
 ## Task 1: Prepare your environment
 
-In this step, you review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in STEP 2.
+Review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in Task 2.
 
 1. Open a terminal window. We will refer to this as terminal 1.
 
-2. Set the environment variable to CDB1.
+2. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
 
-    ````
+    ```
     $ <copy>. oraenv</copy>
     CDB1
-    ````
+    ```
 
-3. Connect to CDB1.
+3. Connect to CDB1 as the `SYS` user.
 
-    ````
+    ```
     $ <copy>sqlplus / as sysdba</copy>
-    ````
-
+    ```
 
 4. View the current settings for the `db_recovery_file_dest` and `db_recovery_file_dest_size` initialization parameters. The first parameter defines the location of the fast recovery area. The second specifies the disk quota, or maximum space to use for flash recovery area files for the database.
 
-    ````
+    ```
     SQL> <copy>SHOW PARAMETER db_recovery_file_dest;</copy>
 
-    NAME				                         TYPE	       VALUE
+    NAME                                 TYPE	       VALUE
     ------------------------------------ ----------- ------------------------------
-    db_recovery_file_dest		             string	     /u01/app/oracle/recovery_area
-    db_recovery_file_dest_size	         big integer 50G
-    ````
+    db_recovery_file_dest                string      /u01/app/oracle/recovery_area
+    db_recovery_file_dest_size           big integer 50G
+    ```
 
 5. Verify that the `COMPATIBLE` initialization parameter value is set to 19.0.0 or higher. The results indicate that the value is 19.0.0.
 
-    ````
+    ```
     SQL> <copy>SHOW PARAMETER COMPATIBLE</copy>
 
-    NAME				                         TYPE	       VALUE
-    ------------------------------------ ----------- ------------------------------
-    compatible			                     string	     19.0.0
-    noncdb_compatible		                 boolean	   FALSE
-    ````
+    NAME                                 TYPE        VALUE
+    ------------------------------------ ----------- -----------------------------
+    compatible                           string      19.0.0
+    noncdb_compatible                    boolean     FALSE
+    ```
 
 6. Find out if `ARCHIVELOG` mode is enabled on CDB1. The query results indicate that it is not enabled.
 
-    ````
+    ```
     SQL> <copy>SELECT log_mode from v$database;</copy>
 
     LOG_MODE
     ------------
     NOARCHIVELOG
-    ````
+    ```
 
 7. Exit SQL*Plus.
 
-    ````
+    ```
     SQL> <copy>EXIT</copy>
-    ````
+    ```
 
-8. Run the `enable_ARCHIVELOG.sh` bash script to enable `ARCHIVELOG` mode on CDB1 and open the database. At the prompt, enter **CDB1**.
+8. Run the `enable_ARCHIVELOG.sh` shell script to enable `ARCHIVELOG` mode on CDB1 and open the database. At the prompt, enter **CDB1**.
 
-    ````
+    ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
     CDB1
-    ````
+    ```
 
 9. Connect to CDB1.
 
-    ````
+    ```
     $ <copy>sqlplus / as sysdba</copy>
-    ````
+    ```
 
 10. Open PDB1.
 
-    ````
+    ```
     SQL> <copy>ALTER PLUGGABLE DATABASE PDB1 OPEN;</copy>
-
     Pluggable database altered.
-    ````
+    ```
 
 
 
@@ -118,76 +116,76 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
 
 1. Discover whether `FLASHBACK` mode is enabled. The query result indicates that it is not enabled.
 
-    ````
+    ```
     SQL> <copy>SELECT flashback_on FROM v$database;</copy>
 
     FLASHBACK_ON
     ------------------
     NO
-    ````
+    ```
 
 
 
 2. View the default flashback retention period set on CDB1. The results indicate that the default is 1440 minutes, which is 1 day.
 
-    ````
+    ```
     SQL> <copy>SHOW PARAMETER DB_FLASHBACK_RETENTION_TARGET</copy>
 
     NAME                             TYPE        VALUE
     -------------------------------- ----------- ------------------
     db_flashback_retention_target    integer     1440
-    ````
+    ```
 
 
-2. Set the flashback retention period to 70 minutes.
+3. Set the flashback retention period to 70 minutes.
 
-    ````
+    ```
     SQL> <copy>ALTER SYSTEM SET DB_FLASHBACK_RETENTION_TARGET=70 SCOPE=BOTH;</copy>
     System altered.
-    ````
+    ```
 
-3. Enable `FLASHBACK` mode.
+4. Enable `FLASHBACK` mode.
 
-    ````
+    ```
     SQL> <copy>ALTER DATABASE FLASHBACK ON;</copy>
     Database altered.
-    ````
+    ```
 
-3. Verify that `FLASHBACK` mode is now on by querying the `v$database` view.
+5. Verify that `FLASHBACK` mode is now on by querying the `v$database` view.
 
-    ````
+    ```
     SQL> <copy>SELECT flashback_on FROM v$database;</copy>
 
     FLASHBACK_ON
     ------------------
     YES
-    ````
+    ```
 
-4. Verify that the flashback retention period is set to 70 minutes by querying the `db_flashback_retention_target` initialization parameter.
+6. Verify that the flashback retention period is set to 70 minutes by querying the `db_flashback_retention_target` initialization parameter.
 
-    ````
+    ```
     SQL> <copy>SHOW PARAMETER db_flashback_retention_target</copy>
 
     NAME                             TYPE        VALUE
     -------------------------------- ----------- ------------------
     db_flashback_retention_target    integer     70
-    ````
+    ```
 
 
 ## Task 3: Increase the fast recovery area size to 100GB
 
-Increase the fast recovery area size to 100GB to ensure that there will be no space pressure that would automatically delete flashback logs.
+Increase the fast recovery area size to 100GB to provide enough space for the flashback logs.
 
 1. Set the fast recovery area size to 100GB by configuring the `db_recovery_file_dest_size` initialization parameter.
 
-    ````
+    ```
     SQL> <copy>ALTER SYSTEM SET db_recovery_file_dest_size=100G;</copy>
     System altered.
-    ````
+    ```
 
-2. You can monitor the space availability in the flash recovery area by querying the `v$recovery_file_dest` view:
+2. Query the `v$recovery_file_dest` view to monitor the space availability in the flash recovery area.
 
-    ````
+    ```
     SQL> <copy>select
     name,
     to_char(space_limit, '999,999,999,999') as space_limit,
@@ -197,34 +195,35 @@ Increase the fast recovery area size to 100GB to ensure that there will be no sp
     from
     v$recovery_file_dest;</copy>
 
-    SPACE_LIMIT	     SPACE_AVAILABLE  PCT_FULL
-    ---------------- ---------------- ----------
-    /u01/app/oracle/recovery_area
-    107,374,182,400  68,124,017,664	  36.6
-    ````
+    NAME                           SPACE_LIMIT      SPACE_AVAILABLE  PCT_FULL
+    -----------------------------  ---------------- ---------------- ----------
+    /u01/app/oracle/recovery_area  107,374,182,400  103,730,937,856  36.6
+    ```
+
+    Your values may be different than those shown above.
 
 3. Exit SQL*Plus.
 
-    ````
+    ```
     SQL> <copy>EXIT</copy>
-    ````
+    ```
 
 4. Change to the `flashback` directory.
 
-    ````
+    ```
     $ <copy>cd /u01/app/oracle/recovery_area/CDB1/flashback</copy>
-    ````
+    ```
 
 5. List the files in the `flashback` directory.
 
-    ````
+    ```
     $ <copy>ls -ltr</copy>
 
     total 409616
     -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v3ps_.flb
     -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v1jz_.flb
 
-    ````
+    ```
 
 
 ## Task 4: Generate flashback logs
@@ -233,15 +232,15 @@ Activity needs to happen on the database for the database to generate flashback 
 
 1. Double-click the **Terminal** icon on the desktop to open another terminal window. We will refer to this terminal as terminal 2.
 
-2. In terminal 2, run the `workload.sh` script to generate some flashback logs. Keep the terminal window open and continue to the next step.
+2. In terminal 2, run the `workload.sh` shell script to generate some flashback logs. Keep the terminal window open and continue to the next step.
 
-    ````
+    ```
     $ <copy>$HOME/labs/19cnf/workload.sh</copy>
-    ````
+    ```
 
-3. Wait 70 minutes. Every now and again, on terminal 1, refresh the list of files in the `flashback` directory to view the accumulating log files. In this example, the first log is at 19:30 and the last log is at 20:39, which is within 70 minutes.
+3. Wait 70 minutes. Every now and again, in terminal 1, refresh the list of files in the `flashback` directory to view the accumulating log files. In this example, the first log is at 19:31 and the last log is at 20:39, which is within 70 minutes.
 
-    ````
+    ```
     $ <copy>ls -ltr</copy>
 
     total 16986532
@@ -283,36 +282,36 @@ Activity needs to happen on the database for the database to generate flashback 
     -rw-r-----. 1 oracle oinstall 870170624 Jul 23 20:38 o1_mf_jhpb6fd7_.flb
     -rw-r-----. 1 oracle oinstall 852779008 Jul 23 20:39 o1_mf_jhpb1c6w_.flb
     ...
-    ````
+    ```
 
 
-## Task 5: Decrease the flashback retention period to 60 minutes
+## Task 5: Decrease the flashback retention period to 60 minutes and observe the changes to the flashback logs
 
 From this point on, you can work in terminal 1. Keep terminal 2 open to continue running the `workload.sh` script.
 
 1. In terminal 1, connect to CDB1 as the `SYS` user.
 
-    ````
+    ```
     $ <copy>sqlplus / as sysdba</copy>
-    ````
+    ```
 
 2. Set the `DB_FLASHBACK_RETENTION_TARGET` initialization parameter equal to 60 minutes.
 
-    ````
+    ```
     SQL> <copy>ALTER SYSTEM SET DB_FLASHBACK_RETENTION_TARGET=60;</copy>
     System altered.
-    ````
+    ```
 
-2. Exit SQL*Plus.
+3. Exit SQL*Plus.
 
-    ````
+    ```
     SQL> <copy>EXIT</copy>
-    ````
+    ```
 
 
-3. List the flashback logs again. Notice that logs generated over 10 minutes ago have automatically been deleted. In this example, the first log is at 19:54 and the last log is at 20:46, which is within 60 minutes. The logs dated beyond the 60 minute mark are automatically deleted.
+4. List the flashback logs again. Notice that logs generated over 10 minutes ago have automatically been deleted. In this example, the first log is at 19:54 and the last log is at 20:46, which is within 60 minutes. The logs dated beyond the 60 minute mark are automatically deleted.
 
-    ````
+    ```
     $ <copy>ls -ltr /u01/app/oracle/recovery_area/CDB1/flashback</copy>
 
     total 18511296
@@ -354,57 +353,57 @@ From this point on, you can work in terminal 1. Keep terminal 2 open to continue
     -rw-r-----. 1 oracle oinstall 870170624 Jul 23 20:44 o1_mf_jhpb6fd7_.flb
     -rw-r-----. 1 oracle oinstall 890109952 Jul 23 20:44 o1_mf_jhpbl1v7_.flb
     -rw-r-----. 1 oracle oinstall 880967680 Jul 23 20:46 o1_mf_jhp5v1jz_.flb
-    ````
+    ```
 
 
 
 ## Task 6: Reset your environment
 
-If you are done with the lab, but the `workshop.sh` script is still running, you can do substeps 1 and 2 to stop the script.
+If you are done with the lab, but the `workshop.sh` script is still running, do steps 1 and 2 to stop the shell script.
 
 1. Run the following command to obtain the process id for the `workload.sh` script. At the prompt, enter `workload.sh`.
 
-    ````
+    ```
     $ <copy>pgrep -lf workload</copy>
     <pid> workload.sh
-    ````
+    ```
 
-2. Stop the process. Replace <pid> with your process ID number.
+2. Stop the process. Replace `<pid>` with your process ID number.
 
-    ````
+    ```
     $ <copy>kill -9 <pid></copy>
-    ````
+    ```
 
 3. Connect to CDB1 as the `SYS` user.
 
-    ````
+    ```
     $ <copy>sqlplus / as sysdba</copy>
-    ````
+    ```
 
 4. Disable flashback database logging.
 
-    ````
+    ```
     SQL> <copy>ALTER DATABASE FLASHBACK OFF;</copy>
-    ````
+    ```
 
 5. Exit SQL*Plus.
 
-    ````
+    ```
     SQL> <copy>EXIT</copy>
-    ````
+    ```
 
-6. Disable `ARCHIVELOG` mode by running the `disable_ARCHIVELOG.sh` script. At the prompt, enter **CDB1**.
+6. Disable `ARCHIVELOG` mode by running the `disable_ARCHIVELOG.sh` shell script. At the prompt, enter **CDB1**.
 
-    ````
+    ```
     $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
     CDB1
-    ````
+    ```
 
-7. Rebuild PDB1 with sample data by running the `recreate_PDB1_in_CDB1.sh` script.
+7. Rebuild PDB1 with sample data by running the `recreate_PDB1_in_CDB1.sh` shell script.
 
-    ````
+    ```
     $ <copy>$HOME/labs/19cnf/recreate_PDB1_in_CDB1.sh</copy>
-    ````
+    ```
 
 
 ## Learn More
@@ -420,4 +419,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, you
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, July 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021
