@@ -22,19 +22,15 @@ To ensure success:
 In Labs 1-15, you will :
 * Create an Oracle Autonomous Database shared 
 * Create a Service Request for PeopleSoft on ADB-S
-* ADB-S connectivity check on source on-premise PeopleSoft system
-* How to download,setup,install and pre-requisites required for MV2ADB
-* Getting Tablespace Information from source PeopleSoft systems
-* Preparing Target OCI ADB-D database
-* MV2ADB configuration for database migration to ADB-S
-* Installing ADB Schema advisor
-* MV2ADB one click database migration
-* Post import scripts for PeopleSoft
-* Validate PeopleSoft schema objects after database migration
-* PeopleSoft Middle Tier setup on OCI
-* Update TNS and connectivity Test 
-* Configure PeopleSoft Servers on OCI
-* Validate PeopleSoft setup on OCI
+* ADB connectivity test for PeopleSoft On Premise
+* MV2ADB Download, Install and Pre-requisites
+* Getting Tablespace information from On-premise PeopleSoft database
+* Configuring  OCI ADB-S Database for PeopleSoft
+* MV2ADB Configuration and ADB Schema Advisor Installation
+* MV2ADB Database migration for PeopleSoft
+* PeopleSoft post import scripts for ADB-S
+* Validating Peoplesoft Schema Objects on ADB-S
+* PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI
 
 
 ### Prerequisites
