@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-installed` image in Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-installed` image from Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface.
 
 Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser, download the lab files, and start the database listeners.
 
@@ -69,7 +69,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 6. For **Description**, leave the default description for the stack as is.
 
-7. Select your compartment. This compartment is used to store the stack, the VCN (if you choose to create a new one), and the workshop-compute instance. If you plan to use your own VCN, make sure that it resides in the compartment that you select here.
+7. Select your compartment. This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-installed` compute instance. If you plan to use your own VCN, make sure that it resides in the compartment that you select here.
 
 8. Click **Next**. The **Configure Variables** page is displayed.
 
@@ -113,7 +113,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Task 3: Connect to your compute instance via a browser and set up your desktop
 
-> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your compute instance.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your `workshop-installed` compute instance.
 
 1. In a browser, enter the URL to your `workshop-installed` compute instance. If your compute instance is not displayed, wait 30 seconds and try again.
 
@@ -121,15 +121,13 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
 
-2. If the workshop guide is not open on the desktop: Double-click the **Get Started with your Workshop** icon on the desktop.
-
-3. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down). You can exit full screen mode at any time by pressing the **Escape** key.
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down). You can exit full screen mode at any time by pressing the **Escape** key.
 
     ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
     ![Full Screen](images/full-screen.png "Full Screen")
 
-
+3. If the workshop guide is not open on the desktop, double-click the **Get Started with Your Workshop** icon on the desktop.
 
 
 ## Task 4: Download the lab files

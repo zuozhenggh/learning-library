@@ -361,11 +361,11 @@ From this point on, you can work in terminal 1. Keep terminal 2 open to continue
 
 If you are done with the lab, but the `workshop.sh` script is still running, do steps 1 and 2 to stop the shell script.
 
-1. Run the following command to obtain the process id for the `workload.sh` script. At the prompt, enter `workload.sh`.
+1. In terminal 1, obtain the process id for the `workload.sh` script. In the example below, 12129 is the process ID number for the script. Your number will most likely be different.
 
     ```
     $ <copy>pgrep -lf workload</copy>
-    <pid> workload.sh
+    12129 workload.sh
     ```
 
 2. Stop the process. Replace `<pid>` with your process ID number.
@@ -384,6 +384,7 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
     ```
     SQL> <copy>ALTER DATABASE FLASHBACK OFF;</copy>
+    Database altered.
     ```
 
 5. Exit SQL*Plus.
