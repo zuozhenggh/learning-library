@@ -8,8 +8,8 @@ to capturing the custom image.
 - Deploy NoVNC Remote Desktop
 - Configure Desktop
 - Add Applications Shortcuts to Desktop
-- Add Firefox bookmarks
 - Configure remote clipboard
+- Optimize Browser Settings
 - Enable VNC password reset
 
 ### Prerequisites
@@ -87,6 +87,26 @@ This lab assumes you have:
 
     echo "Proceeding with configuration for OS user \$appuser"
 
+    ll_config_base=/home/\${appuser}/.livelabs
+    epel_cfg=/etc/yum.repos.d/oracle-epel-ol7.repo
+    mkdir -p "\${ll_config_base}"
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Pvux7VWE_Cx0v66TohxVWL7KXv2uFNEzw0JYtfMGCcFWDxrY7pHkS6L7-Bcn5on/n/natdsecurity/b/misc/o/livelabs.ico -O "\${ll_config_base}"/livelabs.ico
+    chown -R \${appuser} "\${ll_config_base}"
+
+    if [[ -f "\${epel_cfg}" ]]; then
+      sed -i -e 's|enabled=.*$|enabled=1|g' "\${epel_cfg}"
+    else
+      cat > "\${epel_cfg}" <<EPEL
+    [ol7_developer_EPEL]
+    name=Oracle Linux \$releasever EPEL Packages for Development (\$basearch)
+    baseurl=https://yum\$ociregion.\$ocidomain/repo/OracleLinux/OL7/developer_EPEL/\$basearch/
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+    gpgcheck=1
+    enabled=1
+    EPEL
+
+    fi
+
     echo "Updating packages ..."
     yum -y update
 
@@ -101,7 +121,8 @@ This lab assumes you have:
 
     yum -y localinstall \
     http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/novnc-1.1.0-6.el7.noarch.rpm \
-    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/python2-websockify-0.8.0-13.el7.noarch.rpm
+    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/python2-websockify-0.8.0-13.el7.noarch.rpm \
+    https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 
     echo "Updating VNC Service ..."
     cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_\${appuser}@:1.service
@@ -167,6 +188,74 @@ This lab assumes you have:
     ${appuser} ALL=(ALL) NOPASSWD:ALL
     EOF
 
+    cat >/usr/local/bin/livelabs-get_started.sh <<EOF
+    #!/bin/bash
+    ################################################################################
+    #
+    # Name: "livelabs-get_started.sh"
+    #
+    # Description:
+    #   Script to Launch web browser window(s) preloaded with workshop guide and related
+    #   web application(s)
+    #
+    #  Pre-requisite: Google Chrome installed.
+    #
+    #  AUTHOR(S)
+    #  -------
+    #  Rene Fontcha, Oracle LiveLabs Platform Lead
+    #
+    #  MODIFIED        Date                 Comments
+    #  --------        ----------           -----------------------------------
+    #  Rene Fontcha    08/07/2021           Initial Creation
+    #
+    # Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
+    ###############################################################################
+
+    user_data_dir_base="/home/${appuser}/.livelabs"
+    desktop_guide_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_guide_url)
+    desktop_app1_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app1_url)
+    desktop_app2_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app1_url)
+
+    #Drop existing sessions
+    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
+
+    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
+     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
+    fi
+
+    # "Launching the workshop guide"
+    if [[ \${desktop_guide_url:0:4} = 'http' ]]; then
+    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,912 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    fi
+
+    # "Launching Web App #1 page"
+    if [[ \${desktop_app1_url:0:4} = 'http' ]]; then
+    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    fi
+
+    # "Launching Web App #2 page"
+    if [[ \${desktop_app2_url:0:4} = 'http' ]]; then
+    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    fi
+    EOF
+
+    cat >/usr/share/applications/livelabs-get_started.desktop <<EOF
+    [Desktop Entry]
+    Version=1.0
+    Encoding=UTF-8
+    GenericName=Get Started
+    Name=Get Started with your Workshop
+    Comment=Launch Apps and Workshop Guide
+    Exec=/usr/local/bin/livelabs-get_started.sh
+    StartupNotify=true
+    Terminal=false
+    Icon=/home/${appuser}/.livelabs/livelabs.ico
+    Type=Application
+    Categories=Network;WebBrowser;
+    MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+    EOF
+
+    chmod +x /usr/local/bin/livelabs-get_started.sh
     chmod +x /usr/local/bin/resetvncpwd.sh
     chmod +x /tmp/novnc-*.sh
     </copy>
@@ -201,18 +290,7 @@ This lab assumes you have:
 
     **Notes:** If the URL fails to load, verify that your VCN contains an *ingress* rule for port *6080*
 
-5. Ensure that the *EPEL* Yum Repo is configured and enabled. i.e. contains the entry *enabled=1*. If not, update it accordingly before proceeding with the next step
-
-    ```
-    <copy>
-    sed -i -e 's|enabled=.*$|enabled=1|g' /etc/yum.repos.d/oracle-epel-ol7.repo
-    cat /etc/yum.repos.d/oracle-epel-ol7.repo|grep enable
-    </copy>
-    ```
-
-    ![](./images/yum-epel-dev-repo.png " ")
-
-6. Run script *novnc-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
+5. Run script *novnc-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
 
     ```
     <copy>
@@ -220,7 +298,7 @@ This lab assumes you have:
     </copy>
     ```
 
-7.  Set password for VNC user.
+6.  Set password for VNC user.
 
     ```
     <copy>
@@ -228,7 +306,7 @@ This lab assumes you have:
     </copy>
     ```
 
-8. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
+7. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
 
     ```
     <copy>
@@ -236,7 +314,7 @@ This lab assumes you have:
     </copy>
     ```
 
-9. Su over to the VNC user account and enforce the password.  when prompted
+8. Su over to the VNC user account and enforce the password.  when prompted
 
     ```
     <copy>
@@ -246,7 +324,7 @@ This lab assumes you have:
     </copy>
     ```
 
-10. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
+9. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
 
     ```
     <copy>
@@ -254,7 +332,7 @@ This lab assumes you have:
     </copy>
     ```
 
-11. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
+10. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
 
     ```
     <copy>
@@ -263,7 +341,7 @@ This lab assumes you have:
     </copy>
     ```
 
-12. Start VNC Server using *systemctl*
+11. Start VNC Server using *systemctl*
 
     ```
     <copy>
@@ -271,7 +349,8 @@ This lab assumes you have:
     systemctl status vncserver_${appuser}@:1.service
     </copy>
     ```
-13. Run script *novnc-2.sh* to finalize
+
+12. Run script *novnc-2.sh* to finalize
 
     ```
     <copy>
@@ -279,7 +358,7 @@ This lab assumes you have:
     </copy>
     ```
 
-14. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+13. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>
@@ -288,16 +367,41 @@ This lab assumes you have:
     </copy>
     ```
 
-## Task 2: Configure Desktop   
-LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
+## Task 2: Add Applications to Desktop   
+For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut called *Get Started with your Workshop* for launching the workshop guide and webapps if any.
 
-1. Launch your browser to the following URL
+1. Launch your browser to the following URL to access the remote desktop
 
     ```
     <copy>http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-2. Follow steps in the screenshot below and run command provided below to resize desktop icons
+2. On the remote desktop, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *Get Started with your Workshop*
+
+    ![](./images/create-shortcut-1.png " ")
+
+3. Right-click on *Get Started with your Workshop* and select *Copy to...*
+
+    ![](./images/create-shortcut-2.png " ")
+
+4. Navigate to *Home > Desktop* and Click on *Select*
+
+    ![](./images/create-shortcut-3.png " ")
+
+5. Double-click on the newly added icon on the desktop and click on *Trust and Launch*
+
+    ![](./images/create-shortcut-4.png " ")
+    ![](./images/create-shortcut-5.png " ")
+
+6. Repeat steps above to add *Google Chrome* browser and any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
+
+    ![](./images/create-shortcut-6.png " ")
+
+
+## Task 3: Configure Desktop   
+LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
+
+1. Follow steps in the screenshot below and run command provided below to resize desktop icons
 
     ```
     <copy>
@@ -306,9 +410,34 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     ```
 
     ![](./images/novnc-resize-desktop-icons-1.png " ")
+
+2. Right-click anywhere on the desktop and select *Organize Desktop by Name*
+
     ![](./images/novnc-resize-desktop-icons-2.png " ")
 
-3. From the same Terminal window, run the following command to open *Startup Programs* configuration
+3. Navigate to "*Applications >> System Tools >> Settings*"
+
+    ![](./images/system-settings.png " ")
+
+4. Click on "*Privacy*" and set **Screen Lock** to *Off*
+
+    ![](./images/privacy-screen-lock.png " ")
+
+5. Click on "*Power*" and set **Blank Screen** under Power Saving to *Never*
+
+    ![](./images/power-saving-off.png " ")
+
+6. Click on "*Notifications*" and set **Notifications Popups**, **Lock Screen Notifications**, and **Automatic Bug Reporting Tool** to *Off*
+
+    ![](./images/desktop-notifications-off-1.png " ")
+    ![](./images/desktop-notifications-off-1.png " ")
+
+7. Scroll-down, Click on "*Devices >> Resolution*" and select **1920 x 1080 (16:9)**
+
+    ![](./images/desktop-display-1.png " ")
+    ![](./images/desktop-display-2.png " ")
+
+8. From the same Terminal window, run the following command to open *Startup Programs* configuration.
 
     ```
     <copy>
@@ -316,87 +445,99 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
     </copy>
     ```
 
-    ![](./images/novnc-startup-prog-1.png " ")
-
-4. Fill in the details as shown below and click *Add* to add *Firefox* to the list of applications to be started automatically on *VNC* Startup
+9. Fill in the details as shown below and click *Add* to add *Get Started with your Workshop* to the list of applications to be started automatically on *VNC* Startup
 
     - Name
 
     ```
-    <copy>Firefox Browser</copy>
+    <copy>Get Started with your Workshop</copy>
     ```
 
     - Command
 
     ```
-    <copy>firefox</copy>
+    <copy>/usr/local/bin/livelabs-get_started.sh</copy>
     ```
 
     - Comment
 
     ```
-    <copy>Launch Firefox on VNC Startup</copy>
+    <copy>Launch Workshop Guide and WebApps</copy>
+    ```
+
+    ![](./images/novnc-startup-prog-1.png " ")
+
+10. Restart *vncserver* to test.
+
+    ```
+    <copy>sudo systemctl restart vncserver_$(whoami)@\:1</copy>
+
     ```
 
     ![](./images/novnc-startup-prog-2.png " ")
 
-5. Navigate to "*Applications >> System Tools >> Settings*"
+11. Click *Connect* to get back into the remote desktop
 
-    ![](./images/system-settings.png " ")
+    ![](./images/novnc-startup-prog-3.png " ")
 
-6. Click on "*Privacy*" and set **Screen Lock** to *Off*
+    *Notes:* Don't worry if the browser window(s) is(are) not loaded as expected on VNC startup at the moment. The required instance metadata is not yet present on the host but will be injected at provisioning to cover the following.
 
-    ![](./images/privacy-screen-lock.png " ")
+    - `DESKTOP_GUIDE_URL` - *required*
+    - `DESKTOP_APP1_URL` - optional
+    - `DESKTOP_APP2_URL` - optional
 
-7. Click on "*Power*" and set **Blank Screen** under Power Saving to *Never*
+    The following is an example from the *GoldenGate Veridata* workshop
 
-    ![](./images/power-saving-off.png " ")
+    ![](./images/novnc-startup-prog-4.png " ")
 
-8. Click on "*Notifications*" and set **Notifications Popups** and **Lock Screen Notifications** to *Off*
+12. If there are no WebApps used in the workshop, configure *Startup Programs* for another application such as *SQL Developer* to open up on the right next to the workshop guide on *VNC* startup
 
-    ![](./images/desktop-notifications-off.png " ")
+    ![](./images/novnc-startup-prog-5.png " ")
+    ![](./images/novnc-startup-prog-6.png " ")
 
-9. Scroll-down, Click on "*Devices >> Resolution*" and select **1920 x 1080 (16:9)**
+## Task 4: Optimize Chrome Browser
+Perform the following to further customize and optimize *Chrome* Browser.
 
-    ![](./images/desktop-display-1.png " ")
-    ![](./images/desktop-display-2.png " ")
+1. Right-click on *Google Chrome* browser icon, select *Properties*
 
-## Task 3: Add Applications to Desktop   
-For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
+    ![](./images/novnc-custom-chrome-0.png " ")
 
-1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*
+2. Update the *command* field with the custom value below
 
-    ![](./images/create-shortcut-1.png " ")
+    ```
+    <copy>
+    /usr/bin/google-chrome --password-store=basic --user-data-dir="/home/<os-user>/.livelabs/chrome-window2" --disable-session-crashed-bubble
+    </copy>
+    ```
 
-2. Right-click on *FireFox* and select *Copy to...*
+    *Notes:* Replace *<os-user>* with the correct OS User that owns the remote desktop session. e.g. *opc* as in this example, or *oracle* for the vast majority
 
-    ![](./images/create-shortcut-2.png " ")
+    ![](./images/novnc-custom-chrome-1.png " ")
 
-3. Navigate to *Home > Desktop* and Click on *Select*
+3. Double-click on *Google Chrome* browser icon to launch, Uncheck *Automatic Usage Statistics & Crash reporting* and click *OK*
 
-    ![](./images/create-shortcut-3.png " ")
+    ![](./images/novnc-custom-chrome-2.png " ")
 
-4. Double-click on the newly added icon on the desktop and click on *Trust and Launch*
+4. Click on *Get Started*, on the next 3 pages click on *Skip*, and finally on *No Thanks*.
 
-    ![](./images/create-shortcut-4.png " ")
-    ![](./images/create-shortcut-5.png " ")
+    ![](./images/novnc-custom-chrome-3.png " ")
+    ![](./images/novnc-custom-chrome-4.png " ")
+    ![](./images/novnc-custom-chrome-5.png " ")
+    ![](./images/novnc-custom-chrome-6.png " ")
 
-5. Repeat steps above to add any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
+5. Click in the *Three dots* at the top right, then select *"Bookmarks >> Show bookmarks bar"*
 
-    ![](./images/create-shortcut-6.png " ")
+    ![](./images/add-bookmarks-01.png " ")
 
-## Task 4: Add Important Bookmarks to FireFox
-Provide convenient access to LiveLabs and any relevant URL to your workshop by adding bookmarks to *FireFox* browser.
+6. Right-click anywhere in the *Bookmarks bar area*, then Uncheck *Show apps shortcuts* and *Show reading list*
 
-1. Launch *FireFox* and delete all default bookmarks shown in the *Bookmarks Toolbar* area. For each item listed, Right-Click to select and Click *Delete* to remove
+    ![](./images/add-bookmarks-04.png " ")
 
-    ![](./images/add-firefox-bookmarks-01.png " ")
+7. Right-click anywhere in the *Bookmarks bar area* and select *Add page*
 
-2. Right-Click in the *Bookmarks Toolbar* area and Click *New Bookmark*
+    ![](./images/add-bookmarks-02.png " ")
 
-    ![](./images/add-firefox-bookmarks-02.png " ")
-
-3. Provide the following two inputs and click *Add* to create a bookmark to *LiveLabs*
+8. Provide the following two inputs, select *Bookmark bar* for destination, and click *Save* to create a bookmark to *LiveLabs*
 
     - Name
 
@@ -404,137 +545,64 @@ Provide convenient access to LiveLabs and any relevant URL to your workshop by a
     <copy>Oracle LiveLabs</copy>
     ```
 
-    - Location
+    - URL
 
     ```
-    <copy>bit.ly/golivelabs</copy>
+    <copy>http://bit.ly/golivelabs</copy>
     ```
 
-    ![](./images/add-firefox-bookmarks-03.png " ")
+    ![](./images/add-bookmarks-03.png " ")
 
-4. Click on the newly added bookmark to confirm successful page loading.
+9. Click on the newly added bookmark to confirm successful page loading.
 
-    ![](./images/add-firefox-bookmarks-04.png " ")
+    ![](./images/add-bookmarks-05.png " ")
 
-5. Right-Click in the *Bookmarks Toolbar* area and Click *New Folder*
+10. Click in the *Three dots* at the top right, then select *Settings*
 
-    ![](./images/add-firefox-bookmarks-08.png " ")
+    ![](./images/add-bookmarks-06.png " ")
 
-7. Provide the following input and click *Add* to create the folder *Workshop Guides*
+11. Scroll down to *On Startup* section, select *open a specific page or set of pages*, and select *Use current pages* or simply add the *LiveLabs* address you set earlier as bookmark.
 
-    - Name
+    ![](./images/add-bookmarks-07.png " ")
 
-    ```
-    <copy>Workshop Guides</copy>
-    ```
-
-    ![](./images/add-firefox-bookmarks-09.png " ")
-
-8. Repeat to create the folder *Workshop Links*
-
-    - Name
-
-    ```
-    <copy>Workshop Links</copy>
-    ```
-
-    ![](./images/add-firefox-bookmarks-10.png " ")
-
-9. Right-Click on *Workshop Guides* and Select *New Bookmark*
-
-
-    ![](./images/add-firefox-bookmarks-11.png " ")
-
-10. Provide details to add a bookmark for your workshop(s). For most workshops this folder will content a single item. If your image is used by multiple workshops then repeat this action to add bookmarks for all relevant listings accordingly.
-
-    - Name
-
-    ```
-    <copy><Your Workshop Name as recorded in WMS></copy>
-    ```
-
-    - Location
-
-    ```
-    <copy><Your Workshop Github URL ending with ./workshop/main></copy>
-    ```
-
-    *Note*: If you are still developing your workshop this URL may not yet be available. In that case, skip adding bookmarks to this folder and return when it's (they are) available.
-
-    The example below is borrowed from the *Upgrade to Oracle Database 19c* Workshop.
-
-    ![](./images/add-firefox-bookmarks-12.png " ")
-    ![](./images/add-firefox-bookmarks-13.png " ")
-
-11. Repeat [9-10] above to add bookmarks to the *Workshop Guides* folder. The example below was borrowed from the *Database Security* portfolio of workshops and shows multiple entries in the two bookmark folders.
-
-    ![](./images/add-firefox-bookmarks-14.png " ")
-    ![](./images/add-firefox-bookmarks-15.png " ")
-
-12. Click on the *Hamburger-Menu* from the upper-right corner and select *Preferences*
-
-    ![](./images/add-firefox-bookmarks-05.png " ")
-
-13. Check *Restore Previous Session* and Make other selections as shown below
-
-    ![](./images/add-firefox-bookmarks-06.png " ")
-
-14. Click on *Home* and make selections as shown below.
-
-
-    ![](./images/add-firefox-bookmarks-07.png " ")
-
-    - Uncheck *Top Sites*, *Highlights*, and *Snippets*
-
-15. Expand *Bookmark Toolbar*, Select an item from the *Workshop Guides* Folder and click on *X* to close *Preferences*
-
-    ![](./images/add-firefox-bookmarks-16.png " ")
-
-16. Click on *+* to open a new tab and confirm that you are getting a clean new tab free of all elements such as *Top Sites* and *Highlights*
-
-    ![](./images/add-firefox-bookmarks-18.png " ")
-
-17. Open a second *Firefox* window and load it with a bookmark from the *Workshop Links* folder.
-
-    ![](./images/add-firefox-bookmarks-17.png " ")
-
-    Alternatively, if there is no relevant link for a second Firefox window or you prefer to use that space for a relevant application. e.g. SQL Developer, JDeveloper, etc., Right click on the respective icon to obtain the details needed to add the entry to the *Startup Programs* configuration in order to enable auto-start on VNC startup just like you did for *Firefox* in *STEP [2]*
-
-    ![](./images/add-firefox-bookmarks-19.png " ")
-
-18. Open a new tab and browse to *about:config*. Click on *Accept the Risk and Continue*
-
-    ![](./images/add-firefox-bookmarks-20.png " ")
-
-19. In the config search field do the following to always get bookmarks to open in tabs:
-    - Type in the following
-    ```
-    <copy>browser.tabs.loadBookmarksInTabs</copy>
-    ```
-    - Double-click on *False* to toggle it to *True*
-    - Click on *X* to close the tab
-    - Click on a link from the *Workshop Guides* toolbar folder to confirm that it's opening in a new tab and not overwriting an existing one.
-
-    ![](./images/add-firefox-bookmarks-21.png " ")
-
-20. From you external SSH Terminal (e.g. PuTTy, MobaXterm, Mac Terminal, Cygwin, etc.), stop VNC Service to preserve the layout before proceeding with custom image creation
+12. Create and run the script below to initialize LiveLabs browser windows.
 
     ```
     <copy>
-    systemctl stop vncserver_${appuser}@:1.service
-    systemctl status vncserver_${appuser}@:1.service
+    cat > /tmp/init_ll_windows.sh <<EOF
+    #!/bin/bash
+    # Initialize LL Windows
+
+    #Drop existing sessions
+
+    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
+    user_data_dir_base="/home/\$(whoami)/.livelabs"
+
+    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
+     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
+    fi
+
+    desktop_guide_url="https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/livelabs"
+    desktop_app1_url="https://oracle.com"
+    desktop_app2_url="https://bit.ly/golivelabs"
+    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,912 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    EOF
+    chmod +x /tmp/init_ll_windows.sh
+    /tmp/init_ll_windows.sh
+    rm -f /tmp/init_ll_windows.sh
+    
     </copy>
     ```
-
-    ![](./images/novnc-stop-vncserver.png " ")
-
+13. Close all browser windows opened.
 
 You may now [proceed to the next lab](#next).
 
-## Appendix 1: Enable VNC Password Reset for each instance provisioned from the image
+## Appendix 1: Enable VNC Password Reset, and Workshop Guide and WebApps URLs injection for each instance provisioned from the image
 Actions provided in this Appendix are not meant to be performed on the image. They are rather intended as guidance for workshop developers writing terraform scripts to provision instances from an image configured as prescribed in this guide.
 
-For added security, update your Terraform/ORM stack with the tasks below to enable VNC password reset for each VM provisioned from the image.
+Update your Terraform/ORM stack with the tasks below to enable VNC password reset and add workshop URLs for each VM provisioned from the image.
 
 1. Add provider *random* to *main.tf* or and any other *TF* file in your configuration if you not using *main.tf*
 
@@ -552,7 +620,30 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     provider "random" {}
     </copy>
     ```
-2. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
+2. Add the following variables to *variables.tf*.
+
+    - `desktop_guide_url`
+    - `desktop_app1_url`
+    - `desktop_app2_url`
+
+    The example below is from the *DB Security - Key Vault* workshop
+
+    ```
+    <copy>
+    variable "desktop_guide_url" {
+      default = "https://oracle.github.io/learning-library/security-library/database/advanced/workshops/main-key-vault"
+    }
+
+    variable "desktop_app1_url" {
+      default = "https://kv"
+    }
+
+    variable "desktop_app2_url" {
+      default = "https://dbsec-lab:7803/em"
+    }
+    </copy>
+    ```
+3. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
 
     ```
     <copy>
@@ -566,18 +657,20 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     </copy>
     ```
 
-3. Add *`random_string`* result to the metadata property for resource *`oci_core_instance`*. This will store the random value generated above as part of the instance metadata that can be queried at any time to reset VNC Password.
+4. Add *`random_string`* result and the URL variables to the metadata property for resource *`oci_core_instance`*. This will store the random value generated above as part of the instance metadata and used on first boot to reset VNC Password. The URLs will be used to preload the workshop guide and webapps on the remote desktop on VNC startup
 
     ```
     <copy>
     metadata = {
-      ssh_authorized_keys = var.ssh_public_key
-      vncpwd              = random_string.vncpwd.result
+      vncpwd            = random_string.vncpwd.result
+      desktop_guide_url = var.desktop_guide_url
+      desktop_app1_url  = var.desktop_app1_url
+      desktop_app2_url  = var.desktop_app2_url
     }
     </copy>
     ```
 
-4. Add the entry *`remote_desktop`* to your *output.tf* to provide the single-click URL for remote desktop access with auto resizable window and auto-login. Replace [instance-name] from the snippet below with your real instance name as provided the resource *`oci_core_instance`* block of *instance.tf*
+5. Add the entry *`remote_desktop`* to your *output.tf* to provide the single-click URL for remote desktop access with auto resizable window and auto-login. Replace [instance-name] from the snippet below with your real instance name as provided the resource *`oci_core_instance`* block of *instance.tf*
 
     ```
     <copy>
@@ -591,7 +684,7 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     }
     </copy>
     ```
-5. Add output entry *`remote_desktop`* to your *schema.yaml* file
+6. Add output entry *`remote_desktop`* to your *schema.yaml* file
 
     ```
     <copy>
@@ -609,7 +702,7 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     </copy>
     ```
 
-6. Add an *ingress* rule to your *network.tf* to enable remote access to port *6080* when the VCN is created
+7. Add an *ingress* rule to your *network.tf* to enable remote access to port *6080* when the VCN is created
 
     ```
     <copy>
@@ -625,11 +718,11 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     </copy>
     ```
 
-7. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
+8. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
 
     ![](./images/orm-output.png " ")
 
-8. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
+9. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
 
     ![](./images/orm-single-click-url.png " ")
 
@@ -688,4 +781,4 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2021

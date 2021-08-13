@@ -35,7 +35,7 @@ In this lab, you will learn how to create the initial app based on existing tabl
 
     ![](images/save-appearance.png " ")
 
-## **Task $1: 3** – Add the Dashboard Page
+## Task 3: Add the Dashboard Page
 
 A dashboard page is a great way to show important information using various charts. When you created the Sample Dataset, it also created a view **EBA\_PROJECTS\_V**, which joins data from various tables. This view is ideal as the basis for the dashboard charts.
 
@@ -75,7 +75,7 @@ A dashboard page is a great way to show important information using various char
 
     *Note: You have not set any values for _Chart 4_; therefore, it will be generated with a chart based on demo data. In a later lab, we will remove this additional chart.*
 
-## **Task $1: 4** – Add the Project Page
+## Task 4: Add the Project Page
 Card pages are especially good when there is not a huge number of records, and you want to display only a few details. The **EBA_PROJECTS** table only has 12 records and would work well as a card page.
 
 1. In the Create Application wizard, click **Add Page**.
@@ -176,7 +176,7 @@ The **EBA\_PROJECT\_TASKS** table is the primary table, where records will be re
 
 ![](images/object-browser-create-app.png " ")
 
-## **Task $1: 7** – Generate the App
+## Task 7: Generate the App
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -190,7 +190,7 @@ Now that you have added all the pages, it is time to generate the app and review
 
     ![](images/run-app.png " ")
 
-## **Task $1: 8** – Runtime App
+## Task 8: Runtime App
 
 1. Enter your user credentials. Click **Sign In**.
 
