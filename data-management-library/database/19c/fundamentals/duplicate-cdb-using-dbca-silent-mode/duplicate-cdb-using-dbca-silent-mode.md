@@ -8,19 +8,20 @@ In this lab, you duplicate CDB1 twice by using the `createDuplicateDB` command o
 
 Estimated Lab Time: 30 minutes
 
-### Prerequisites
-
-Before you start, be sure that you have obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
-
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Enable `ARCHIVELOG` mode on CDB1
 - Verify that PDB1 has sample data
 - Use DBCA to duplicate CDB1 as a single individual database
 - Use DBCA to duplicate CDB1 as OMFCDB1 and enable Oracle Managed Files
 - Restore your environment
+
+### Prerequisites
+
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
 ## Task 1: Enable `ARCHIVELOG` mode on CDB1
 

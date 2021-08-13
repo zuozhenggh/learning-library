@@ -11,7 +11,7 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Prepare your environment
 - Create a recovery catalog database
@@ -28,7 +28,8 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Before you start, be sure that you have obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
 ## Task 1: Prepare your environment
 

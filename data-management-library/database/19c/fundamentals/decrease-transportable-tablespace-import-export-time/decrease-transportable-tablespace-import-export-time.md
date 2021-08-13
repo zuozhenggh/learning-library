@@ -19,7 +19,7 @@ Estimated Lab Time: 40 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Set up your environment
 - Export the `test` tablespace from `PDB1` in transportable tablespace mode
@@ -34,7 +34,8 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Before you start, be sure that you have obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
 ## Task 1: Set up your environment
 

@@ -13,7 +13,7 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
@@ -22,7 +22,7 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Before you start, be sure that you have done the following:
+This lab assumes you have:
 
 - Obtained an Oracle Cloud account
 - Signed in to Oracle Cloud Infrastructure

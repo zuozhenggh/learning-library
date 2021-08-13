@@ -10,7 +10,7 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Install Oracle Database 19c using the new automatic root script execution feature
 - Review the response file
@@ -19,7 +19,8 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Before you start, be sure that you have obtained and signed in to your `workshop-staged` compute instance. If not, see the lab called **Obtain a Compute Image with Staged Oracle Database 19c Installer Files**.
+This lab assumes you have:
+- Obtained and signed in to your `workshop-staged` compute instance. If not, see the lab called **Obtain a Compute Image with Staged Oracle Database 19c Installer Files**.
 
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature

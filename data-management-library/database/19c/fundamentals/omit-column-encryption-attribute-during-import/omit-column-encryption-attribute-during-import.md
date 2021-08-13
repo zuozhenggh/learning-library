@@ -8,18 +8,16 @@ Estimated Lab Time: 5 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Import a table with the `ENCRYPT` attribute
 - Import a table without the `ENCRYPT` attribute
 - Reset your environment
 
-
-
 ### Prerequisites
 
-Before you start, be sure that you have obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**. In this lab, you use PDB1 in CDB1, which is already created for you.
-
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
 ## Task 1: Import a table with the `ENCRYPT` attribute
 
