@@ -366,7 +366,7 @@ Verify that the application configuration, domains, Coherence resources, and ing
     robert-helidon-bfdfb58b8-lkw8m                      2/2     Running   0          11m
     roberts-coherence-0                                 2/2     Running   0          11m
     roberts-coherence-1                                 2/2     Running   0          11m
-    vera_zano@cloudshell:~ (us-ashburn-1)$
+    YOURUSERNAME@cloudshell:~ (us-ashburn-1)$
     ```
 
     Note the pod name for **bobbys-helidon-stock-application**. When we redeploy this component, you will notice that this pod will go into a *Terminating* status and new pod will start and come in the *Running* state in Lab 7.
