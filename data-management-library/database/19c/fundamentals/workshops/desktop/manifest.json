@@ -5,7 +5,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to Oracle Database 19c and the Oracle Database 19c New Features workshop.",
-            "filename": "../../intro/intro.md"
+            "filename": "./../../intro/intro.md"
         },
         {
             "title": "Get Started with noVNC Remote Desktop",
@@ -15,47 +15,47 @@
           {
           "title": "Lab 1: Install Oracle Database 19c with Automatic Root Script Execution",
           "description": "Install Oracle Database 19c with automatic configuration script execution.",
-          "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
+          "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md"
            },
             {
                 "title": "Lab 2: Clone a PDB by Using DBCA in Silent Mode",
                 "description": "Clone a PDB by using DBCA in silent mode.",
-                "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
+                "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md"
             },
             {
                 "title": "Lab 3: Relocate a PDB by Using DBCA in Silent Mode",
                 "description": "Relocate a PDB by using DBCA in silent mode.",
-                "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
+                "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md"
             },
             {
                 "title": "Lab 4: Duplicate a CDB by Using DBCA in Silent Mode",
                 "description": "Duplicate a CDB by using DBCA in silent mode.",
-                "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md",
+                "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md"
             },
             {
                 "title": "Lab 5: Decrease the Transportable Tablespace (TTS) Import and Export Time",
                 "description": "Decrease the transportable tablespace (TTS) import and export time.",
-                "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md",
+                "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md"
             },
             {
                 "title": "Lab 6: Omit the Column Encryption Attribute During Import",
                 "description": "Omit the column encryption attribute during import.",
-                "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md",
+                "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md"
             },
             {
                 "title": "Lab 7: Use RMAN to Connect to a PDB to Use the Recovery Catalog",
                 "description": "Use Resource Manager (RMAN) to connect to a pluggable database (PDB) to use the recovery catalog.",
-                "filename": "./../../use-rman-connect-to-pdb-to-use-recovery-catalog/use-rman-connect-to-pdb-to-use-recovery-catalog.md",
+                "filename": "./../../use-rman-connect-to-pdb-to-use-recovery-catalog/use-rman-connect-to-pdb-to-use-recovery-catalog.md"
             },
             {
                 "title": "Lab 8: Explore Automatic Deletion of Flashback Logs",
                 "description": "Omit the column encryption attribute during import.",
-                "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md",
+                "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md"
             },
-        {
+           {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
-        }
+           }
     ]
 }
