@@ -19,25 +19,23 @@ Learn how to do the following:
 
 ### Prerequisites
 
-Be sure that the following task is completed before you start:
-
-- Sign in to the `workshop-stage` compute instance. If you do not have a compute instance, see [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged).
+Before you start, be sure that you have obtained and signed in to your `workshop-staged` compute instance. If not, see the lab called **Obtain a Compute Image with Staged Oracle Database 19c Installer Files**.
 
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
 
-1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
+1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
 
 2. Change to the Oracle home directory.
 
     ```
-    $ cd /u01/app/oracle/product/19c/dbhome_1
+    $ <copy>cd /u01/app/oracle/product/19c/dbhome_1</copy>
     ```
 
 3. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32545013` directory, which is the Oracle Database release update for 19.11.0.0.
 
     ```
-    ls
+    $ <copy>ls</copy>
     ```
 
 4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
@@ -45,7 +43,7 @@ Be sure that the following task is completed before you start:
   *Important! Enter the command carefully and check that it is correct before you run it.*
 
     ```
-    ./runInstaller -applyRU 32545013
+    $ <copy>./runInstaller -applyRU 32545013</copy>
     ```
 
 5. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
@@ -120,12 +118,12 @@ You can continue to use your PuTTY connection for this step.
 1. Change to the `/tmp` directory where you saved the response file.
 
     ```
-    $ cd /tmp
+    $ <copy>cd /tmp</copy>
     ```
 2. Review the response file (`db.rsp`).
 
     ```
-    $ cat db.rsp
+    $ <copy>cat db.rsp</copy>
 
     ####################################################################
     ## Copyright(c) Oracle Corporation 1998,2019. All rights reserved.##
@@ -142,7 +140,6 @@ You can continue to use your PuTTY connection for this step.
     ## or db administrator who owns this installation.                ##
     ##                                                                ##
     ####################################################################
-
     ...
     ```
 
@@ -153,12 +150,12 @@ You can continue to use your PuTTY connection for this step.
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
 
-  For the `ORACLE_SID` value, enter `orcl`.
+  For the `ORACLE_SID` value, enter `ORCL`.
 
     ```
-    $ . oraenv
+    $ <copy>. oraenv</copy>
 
-    ORACLE_SID = [oracle] ? orcl
+    ORACLE_SID = [oracle] ? ORCL
     The Oracle base has been set to /u01/app/oracle
     $
     ```
@@ -166,7 +163,7 @@ You can continue to use your PuTTY connection for this step.
 2. View the environment variables set by the `. oraenv` command that you just ran.
 
     ```
-    $ set | grep ORACLE
+    $ <copy>set | grep ORACLE</copy>
 
     OLD_ORACLE_BASE=
     ORACLE_BASE=/u01/app/oracle
@@ -179,7 +176,7 @@ You can continue to use your PuTTY connection for this step.
 3. Using SQL\*Plus, connect to the `root` container of your database. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
 
     ```
-    $ sqlplus / as sysdba
+    $ <copy>sqlplus / as sysdba</copy>
 
     SQL*Plus: Release 19.0.0.0.0 - Production on Wed Jul 7 14:58:59 2021
     Version 19.11.0.0.0
@@ -196,7 +193,7 @@ You can continue to use your PuTTY connection for this step.
 4. Check the version of the database.
 
     ```
-    SQL> SELECT banner_full FROM v$version;
+    SQL> <copy>SELECT banner_full FROM v$version;</copy>
 
     BANNER_FULL
     --------------------------------------------------------------------------------
@@ -207,7 +204,7 @@ You can continue to use your PuTTY connection for this step.
 5. Verify that you are logged in to the `root` container as the `SYS` user.
 
     ```
-    SQL> SHOW user
+    SQL> <copy>SHOW user</copy>
 
     USER is "SYS"
     SQL>
@@ -216,7 +213,7 @@ You can continue to use your PuTTY connection for this step.
 6. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
 
     ```
-    SQL> SHOW con_name
+    SQL> <copy>SHOW con_name</copy>
 
     CON_NAME
     -------------------
@@ -227,8 +224,8 @@ You can continue to use your PuTTY connection for this step.
 7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
 
     ```
-    SQL> COLUMN name FORMAT A8
-    SQL> SELECT name, con_id FROM v$containers ORDER BY con_id;
+    SQL> <copy>COLUMN name FORMAT A8</copy>
+    SQL> <copy>SELECT name, con_id FROM v$containers ORDER BY con_id;</copy>
 
     NAME         CON_ID
     -------- ----------
@@ -242,7 +239,7 @@ You can continue to use your PuTTY connection for this step.
 8. Exit SQL*Plus.
 
     ```
-    SQL> EXIT
+    SQL> <copy>EXIT</copy>
 
     $
     ```
@@ -262,4 +259,4 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, July 7 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021
