@@ -1,4 +1,4 @@
-# Send the OCI GoldenGate Trail file to Oracle GoldenGate
+# Send the OCI GoldenGate Trail File to Oracle GoldenGate
 
 ## Introduction
 

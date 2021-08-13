@@ -1,4 +1,4 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Deployment
+# Create the Oracle Cloud Infrastructure GoldenGate Resources
 
 ## Introduction
 
@@ -28,7 +28,7 @@ This lab assumes that you completed all preceding labs.
 
 ## Task 1: Create a Deployment
 
-***Note:** that the compartment names in the screenshots may differ from values that appear in your environment.*
+> ***Note:** that the compartment names in the screenshots may differ from values that appear in your environment.*
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
