@@ -1,8 +1,8 @@
-# PeopleSoft Middle Tier Setup & Configuration in OCI
+# PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI
 
 ## Introduction
 
-This lab walks you through the process of setting up a Middle Tier environment for PeopleSoft on OCI compute system.
+This lab walks you through the process of setting up a Middle Tier environment for PeopleSoft on OCI compute system and later login and test the application.
 
 Estimated Lab Time: 3 hour
 
@@ -15,6 +15,7 @@ In this lab, you will:
 * Test connectivity from OCI compute system to ADB-S
 * Configure Peoplesoft Application domains
 * Configure Peoplesoft Integration Broker and Report Node
+* Login and Test the PeopleSoft system on OCI
 
 ### Prerequisties
 * PeopleSoft Administration Skills to configure and setup PeopleSoft Middle Tier servers
@@ -187,6 +188,19 @@ In this lab, you will:
   ![](./images/ib.png "")
 
   ![](./images/ib-1.png "")
+
+## **STEP 6**: Login and Test the PeopleSoft system on OCI
+
+* To login to the newly created PeopleSoft system use the system name or IP address and append with port number 8000
+  
+  For example you would type: 111.111.111.11:8000 into you browser search bar
+  ![](./images/PIA.png "")
+
+  Click on the * Please click here to PeopleSoft logon page* and provide the credentials of your  PeopleSoft system to login
+  ![](./images/PIA-login.png "")
+
+  Navigate over to the console page and verify if everything is working fine
+  ![](./images/pia1.png "")
 
 You may now **proceed to the next lab.**
 
