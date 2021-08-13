@@ -243,12 +243,13 @@ The Docker registry  is a way to store and version images, like GitHub for norma
             --docker-username=THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME \
             --docker-password=THIS TO BE REPLACED WITH YOUR-REGISTRY-PASSWORD \
             --docker-email=THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL \
-            -n bobs-books</copy>
+            -n bobs-books
+            </copy>
     ```
 
     ![Oracle Account](images/11.png)
 
-4. We need to create to create several Kubernetes secrets with credentials.  In the Bob's Books application, we have two WebLogic domains *bobby-front-end* and *bobs-bookstore*. The credentials for the WebLogic domain are kept in a Kubernetes Secret where the name of the secret is specified using *webLogicCredentialsSecret* in the WebLogic Domain resource. Also, the domain credentials secret must be created in the namespace where the domain will be running. We need to create the secrets called *bobbys-front-end-weblogic-credentials* and *bobs-bookstore-weblogic-credentials* used by WebLogic Server domains, with a user name value of `weblogic` and a password which is randomly generated in the bobs-books namespace. Our Bob's Books application uses a *mysql* database. So, we create a new secret called  *mysql-credentials*, with a user name value of `weblogic`, a password which is randomly generated,  and  JDBC URL, *jdbc:mysql://mysql.bobs-books.svc.cluster.local:3306/books* in the bobs-books namespace.
+4. We need to create several Kubernetes secrets with credentials.  In the Bob's Books application, we have two WebLogic domains *bobby-front-end* and *bobs-bookstore*. The credentials for the WebLogic domain are kept in a Kubernetes Secret where the name of the secret is specified using *webLogicCredentialsSecret* in the WebLogic Domain resource. Also, the domain credentials secret must be created in the namespace where the domain will be running. We need to create the secrets called *bobbys-front-end-weblogic-credentials* and *bobs-bookstore-weblogic-credentials* used by WebLogic Server domains, with a user name value of `weblogic` and a password which is randomly generated in the bobs-books namespace. Our Bob's Books application uses a *mysql* database. So, we create a new secret called  *mysql-credentials*, with a user name value of `weblogic`, a password which is randomly generated,  and  JDBC URL, *jdbc:mysql://mysql.bobs-books.svc.cluster.local:3306/books* in the bobs-books namespace. We will use this values in the JDBC connection string in WebLogic DataSource object.
 Please copy and paste the block of commands into the *Cloud Shell*.
 
     ```bash
