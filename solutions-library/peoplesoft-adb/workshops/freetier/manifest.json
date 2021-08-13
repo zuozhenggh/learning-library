@@ -54,14 +54,9 @@
             "filename": "../../10validate-psft-schema-objects/validate-psft-schema.md"
           },
           {
-            "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration in OCI",
+            "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI",
             "filename": "../../11psft-mt-setup-oci/psft-mt-setup.md"
           },
-          {
-            "title": "Lab 12: Validate PeopleSoft Environment on OCI",
-            "filename": "../../12validate-psft-oci-setup/validate-psft-env.md"
-          },
-
           {
               "title": "Need Help?",
               "description": "Solutions to Common Problems and Directions for Receiving Live Help",
