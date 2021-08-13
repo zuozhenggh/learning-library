@@ -30,7 +30,6 @@
         "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
         "type": "livelabs"
     },
-
         {
         "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
         "description": "Install Oracle Database 19c with automatic configuration script execution.",
