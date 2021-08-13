@@ -73,7 +73,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Leave the default compartment.
+    - __Choose a compartment__ - Select the compartment you just created.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MYQUICKSTART__.
 
@@ -96,7 +96,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 6. Configure the database:
 
     - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - Select a database version from the available versions.
+    - __Choose database version__ - Select 19c as the database version.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
@@ -147,4 +147,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Rick Green, July 2021
+- **Last Updated By/Date** - Rick Green, August 2021

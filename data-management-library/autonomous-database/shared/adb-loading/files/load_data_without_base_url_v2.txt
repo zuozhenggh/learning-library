@@ -1,7 +1,7 @@
 /* Replace <bucket URI> below with the URL you copied from your files in OCI Object Storage at runtime.
 */
 set define on
-define &file_uri_base = '<bucket URI>'
+define file_uri_base = '<bucket URI>'
 
 begin
  dbms_cloud.copy_data(
