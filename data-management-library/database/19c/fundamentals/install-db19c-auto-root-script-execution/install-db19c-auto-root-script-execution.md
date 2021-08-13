@@ -251,7 +251,7 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
 ## Acknowledgements
 
 - **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
-- **Technical Contributors**
+- **Contributors**
     - James Spiller, Consulting User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff

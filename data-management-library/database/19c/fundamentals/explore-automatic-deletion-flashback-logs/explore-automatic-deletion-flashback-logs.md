@@ -420,5 +420,5 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Technical Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Consulting User Assistance Developer
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021

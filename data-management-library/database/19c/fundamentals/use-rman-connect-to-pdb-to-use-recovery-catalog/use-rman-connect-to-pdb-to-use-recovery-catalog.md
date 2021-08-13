@@ -548,5 +548,5 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Technical Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Consulting User Assistance Developer
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021

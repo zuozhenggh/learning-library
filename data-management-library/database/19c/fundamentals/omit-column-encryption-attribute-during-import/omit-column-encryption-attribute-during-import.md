@@ -134,5 +134,5 @@ $ <copy>rm tabenc*.sql enc*.log</copy>
 ## Acknowledgements
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
-- **Technical Contributor** - Jody Glover, Principal User Assistance Developer
+- **Contributor** - Jody Glover, Consulting User Assistance Developer
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021
