@@ -20,7 +20,7 @@ In this lab, you will:
 * Basic knowledge on Unix/shell commands 
 
 
-## **STEP 1**: Unzipping and Configuring the ADB-S Wallet
+## Task 1: Unzipping and Configuring the ADB-S Wallet
 
  * 1. Login as root user to the source on-premise PeopleSoft database system
  * 2. Navigate to the path where ADB-S wallet has been downloaded and create a directory and move the wallet to the directory,below are the commands to proceed with
@@ -66,7 +66,7 @@ In this lab, you will:
 
 
 
-## **STEP 2**: Testing connectivity between On-premise PeopleSoft Database system and ADB-S
+## Task 2: Testing connectivity between On-premise PeopleSoft Database system and ADB-S
 
 * 1. Add environment variables for the current root user, get the $ORACLE_HOME path from the current on-prem installation and add in the environment variables
 

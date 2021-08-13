@@ -20,7 +20,7 @@ To complete this lab, you need to have the following:
 
 
 
-## **STEP 1**: Choosing ATP from the Services Menu
+## Task 1: Choosing ATP from the Services Menu
 1. Login to the Oracle Cloud.
   
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -39,7 +39,7 @@ To complete this lab, you need to have the following:
 
 
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 1. Click Create Autonomous Database to start the instance creation process
 
   

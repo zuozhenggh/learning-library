@@ -15,7 +15,7 @@ In this lab, you will:
 * Root login to the on-premise system and connected to ADB-S database using ADB wallet
 
 
-## **TASK**: Login to ADB-S and perform the SQL execution
+## Task: Login to ADB-S and perform the SQL execution
 
 Login to the on-premise PeopleSoft system as root and connect to the ADB-S database and excute the following SQL commands for post configuration of  the database after performimg the MV2ADB operation
 

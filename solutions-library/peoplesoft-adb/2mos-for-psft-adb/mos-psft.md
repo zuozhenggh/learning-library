@@ -17,7 +17,7 @@ In this lab, you will:
 ### Prerequisties
 * My Oracle Support (MOS) credentials. Please make sure that you can successfully login to [Oracle Support](https://support.oracle.com). 
 
-## **STEP 1**: Service Request creation for PeopleSoft on ADB-S
+## Task: Service Request creation for PeopleSoft on ADB-S
 
 - Login to My Oracle Support and click on create technical SR
  

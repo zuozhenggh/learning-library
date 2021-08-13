@@ -18,7 +18,7 @@ In this lab, you will:
 
 
 
-## **TASK**: Login to ADB-S and perform the SQL execution
+## Task: Login to ADB-S and perform the SQL execution
 
 Login to the on-premise PeopleSoft system as root and connect to the ADB-S database and excute the following SQL commands for preparing the database before performimg the MV2ADB operation
 

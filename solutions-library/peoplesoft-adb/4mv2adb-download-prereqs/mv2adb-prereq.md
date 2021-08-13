@@ -24,7 +24,7 @@ In this lab, you will:
 
 
 
-## **STEP 1**: Download and install MV2ADB  on PeopleSoft on-premise system
+## Task 1: Download and install MV2ADB  on PeopleSoft on-premise system
 
 * 1. On the PeopleSoft  machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
 
@@ -42,7 +42,7 @@ In this lab, you will:
     
 
 
-## **STEP 2**: Generate an OCI Auth Token
+## Task 2: Generate an OCI Auth Token
 
 1. Click on your **Profile** in the top right, and then click your **Username**.
 
@@ -55,7 +55,7 @@ In this lab, you will:
 
   
 
-## **STEP 3**: Creating an OCI Bucket on Object Storage
+## Task 3: Creating an OCI Bucket on Object Storage
 
 1.  Click on the **Menu** in top left and select **Object Storage**.
 

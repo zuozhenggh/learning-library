@@ -15,7 +15,7 @@ In this lab, you will:
 * Root user access on the on-premise PeopleSoft system
 
 
-## **TASK**: MV2ADB Auto run for one click migration
+## Task: MV2ADB Auto run for one click migration
 
 The migration script will export from your source databases, then import into your Autonomous database using data pump. For more information, refer to the official steps from my Oracle support (MOS) [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4).
 

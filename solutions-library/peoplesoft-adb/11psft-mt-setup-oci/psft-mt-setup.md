@@ -36,7 +36,7 @@ In this lab, you will:
 
 
 
-## **STEP 1**: Create an OCI compute system for the PeopleSoft Middle Tier setup
+## Task 1: Create an OCI compute system for the PeopleSoft Middle Tier setup
 
 * There are a number of ways to setup the Middle-Tier system for PeopleSoft, using PUM DPK images downloaded and installed on the target system or doing a Tar of the source Mid-Tier and moving off to target system.
 
@@ -46,7 +46,7 @@ In this lab, you will:
     
     ![](./images/compute.png "")
 
-## **STEP 2**: Transfer files from on-premise Peoplesoft system to the OCI compute system
+## Task 2: Transfer files from on-premise Peoplesoft system to the OCI compute system
 
 * Login as opc and sudo as root to the OCI compute system and create users,groups and directory for Peoplesoft similar to the on-premise peoplesoft system
     
@@ -88,7 +88,7 @@ In this lab, you will:
     ```
 
 
-## **STEP 3**: Install Oracle client 19c on the OCI compute system
+## Task 3: Install Oracle client 19c on the OCI compute system
 
 
 * Run as the root user to install all 3 packages in the given order:
@@ -115,7 +115,7 @@ In this lab, you will:
 
   export ORACLE\_HOME=/usr/lib/oracle/19.10/client64
 
-## **STEP 4**: Test connectivity from OCI compute system to ADB-S
+## Task 4: Test connectivity from OCI compute system to ADB-S
 
 * Download the ADB wallet to the OCI PeopleSoft  Middle-Tier compute system and configure the TNS entries to reflect the change and test the connectivity.
 
@@ -155,7 +155,7 @@ In this lab, you will:
     SQL>
     ```
 
-## **STEP 5**: Configure Peoplesoft Application domains
+## Task 5: Configure Peoplesoft Application domains
 
 * Configure PeopleSoft Application Server:
   
@@ -173,7 +173,7 @@ In this lab, you will:
   ![](./images/web.png "")
 
 
-## **STEP 6**: Configure Peoplesoft Integration Broker and Report Node
+## Task 6: Configure Peoplesoft Integration Broker and Report Node
 
 * Configure Report Node:
  
@@ -189,7 +189,7 @@ In this lab, you will:
 
   ![](./images/ib-1.png "")
 
-## **STEP 6**: Login and Test the PeopleSoft system on OCI
+## Task 7: Login and Test the PeopleSoft system on OCI
 
 * To login to the newly created PeopleSoft system use the system name or IP address and append with port number 8000
   

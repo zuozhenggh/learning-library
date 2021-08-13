@@ -17,7 +17,7 @@ In this lab, you will:
 
 * Root user access on the on-premise PeopleSoft system
 
-## **STEP 1**: Configuring MV2ADB for one click PeopleSoft database migration to ADB-S
+## Task 1: Configuring MV2ADB for one click PeopleSoft database migration to ADB-S
 
 * 1.Encrypt the following passwords using the “mv2adb encpass” command, and save the values to a safe location (Eg: Notepad). Run the command for each password you would like to encrypt.
 
@@ -49,7 +49,7 @@ In this lab, you will:
      ![](./images/config_masked.png "")
      
 
-## **STEP 2**: Installing and running ADB Schema Advisor
+## Task 2: Installing and running ADB Schema Advisor
 
 * The Advisor discovers the schema objects and performs deep analysis to highlight if any differences exist when the object gets created on Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing database.
 

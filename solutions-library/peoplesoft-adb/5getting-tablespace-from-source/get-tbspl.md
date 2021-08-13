@@ -16,7 +16,7 @@ In this lab, you will:
 
 
 
-## **STEP 1**: List of Tablespaces and their mapping with ADB-S
+## Task 1: List of Tablespaces and their mapping with ADB-S
 
 Since there are restrictions in creating the tablespaces on ADB-S, the process would be to list down all the tablespaces including temporary tablespace and do a re-map to map them on the target ADB-S database.
 
@@ -48,7 +48,7 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
 
     ![](./images/tablespace2.png "")
 
-## **STEP 2**: Sorting the list and mapping to DATA and TEMP for MV2ADB configuration
+## Task 2: Sorting the list and mapping to DATA and TEMP for MV2ADB configuration
 
 
 Using notepad or notepad++, do map each of all the list of existing tablespaces from source database to DATA and for temporary tablespace to TEMP to match the target ADB-S database. These commands would be used in the mv2adb configuration file.
