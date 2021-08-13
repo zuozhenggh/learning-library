@@ -40,7 +40,7 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
 4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
 
-  *Important! Enter the command carefully and check that it is correct before you run it.*
+  *Enter the command carefully and check that it is correct before you run it.*
 
     ```
     $ <copy>./runInstaller -applyRU 32545013</copy>
@@ -113,8 +113,6 @@ Before you start, be sure that you have obtained and signed in to your `workshop
 
 ## Task 2: Review the response file
 
-You can continue to use your PuTTY connection for this step.
-
 1. Change to the `/tmp` directory where you saved the response file.
 
     ```
@@ -150,12 +148,12 @@ You can continue to use your PuTTY connection for this step.
 
 1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
 
-  For the `ORACLE_SID` value, enter `ORCL`.
+  For the `ORACLE_SID` value, enter **orcl**.
 
     ```
     $ <copy>. oraenv</copy>
 
-    ORACLE_SID = [oracle] ? ORCL
+    ORACLE_SID = [oracle] ? orcl
     The Oracle base has been set to /u01/app/oracle
     $
     ```
@@ -240,8 +238,6 @@ You can continue to use your PuTTY connection for this step.
 
     ```
     SQL> <copy>EXIT</copy>
-
-    $
     ```
 
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
@@ -253,9 +249,9 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
 - **Technical Contributors**
-    - James Spiller, Principal User Assistance Developer, Database Development
+    - James Spiller, Consulting User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect

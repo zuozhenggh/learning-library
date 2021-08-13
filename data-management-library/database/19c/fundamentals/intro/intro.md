@@ -59,3 +59,8 @@ If you copy text from your local computer, then you need to use the clipboard ut
 5. Position your cursor in the application where you want to paste the text, and click your middle mouse button.
 
 > **Note**: The same method works in reverse. If you want to copy and paste text from your compute instance to your local computer, first paste the text into the **Clipboard** dialog box, and then copy and paste the text from it to your local computer.
+
+## Acknowledgements
+
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021

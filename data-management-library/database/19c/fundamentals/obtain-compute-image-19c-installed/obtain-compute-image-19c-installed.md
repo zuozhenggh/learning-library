@@ -173,5 +173,5 @@ The ORCL, CDB1, and CDB2 database instances are not started by default on the `w
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 11 2021
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021

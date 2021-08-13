@@ -137,5 +137,5 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
 - **Last Updated By/Date** - Jody Glover, Database team, August 13 2021
