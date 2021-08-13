@@ -212,7 +212,7 @@ We need to download the source code, where we have configuration files, `bobs-bo
     <copy>
     curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-app.yaml >~/bobs-books-app.yaml
     curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-comp.yaml >~/bobs-books-comp.yaml
-    
+    cd
     </copy>
     ```
 
@@ -263,7 +263,7 @@ Please copy and paste the block of commands into the *Cloud Shell*.
         --from-literal=password=$WLS_PASSWORD \
         --from-literal=url=jdbc:mysql://mysql.bobs-books.svc.cluster.local:3306/books \
         -n bobs-books
-        
+    cd    
     </copy>
     ```
 
