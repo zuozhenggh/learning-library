@@ -42,38 +42,26 @@
               "filename": "../../7mv2adb-config-install-adb-schema-advisor/mv2adb-adb-advisor-schema.md"
           },
           {
-            "title": "Lab 8: Cloning an Environment",
-            "filename": "../../8clone/clone.md"
+            "title": "Lab 8: MV2ADB Database migration for PeopleSoft",
+            "filename": "../../8mv2adb-db-migration/mv2adb-db-migration.md"
           },
           {
-            "title": "Lab 9: Backing up and Restoring an Environment",
-            "filename": "../../9backup/backup.md"
+            "title": "Lab 9: PeopleSoft post import scripts for ADB-S",
+            "filename": "../../9post-import-scripts-psft/psft-post.md"
           },
           {
-            "title": "Lab 10: Patching an Environment",
-            "filename": "../../10patching/patching.md"
+            "title": "Lab 10: Validating Peoplesoft Schema Objects on ADB-S",
+            "filename": "../../10validate-psft-schema-objects/validate-psft-schema.md"
           },
           {
-            "title": "Lab 11: Upgrading an Environment",
-            "filename": "../../11upgrading/upgrading.md"
+            "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration in OCI",
+            "filename": "../../11psft-mt-setup-oci/psft-mt-setup.md"
           },
           {
-            "title": "Lab 12: Setting Governance Policies",
-            "filename": "../../12governance-policies/policies.md"
+            "title": "Lab 12: Validate PeopleSoft Environment on OCI",
+            "filename": "../../12validate-psft-oci-setup/validate-psft-env.md"
           },
-          {
-            "title": "Lab 13: Selective Adoption",
-            "filename": "../../13selective-adoption/adoption.md"
-          },
-          {
-            "title": "Lab 14: Refreshing an Environment",
-            "filename": "../../14refresh/refresh.md"
-          },
-          
-          {
-              "title": "Windows VM Compute Lab (Optional): Provisioning Windows Compute in OCI",
-              "filename": "../../windows-optional/windows-optional.md"
-          },
+
           {
               "title": "Need Help?",
               "description": "Solutions to Common Problems and Directions for Receiving Live Help",
