@@ -17,7 +17,10 @@ This lab assumes you have:
 - An Oracle Enterprise Linux 7 (OEL) that meets requirement for marketplace publishing
 
 ## Task 1: Deploy noVNC
-1.  As root, download and run the latest setup script.
+1.  As root, download and run the latest setup script. You will be prompted for the following two inputs:
+
+    - Estimated time in minutes for initial processes to fully start after instance boot up. This will be used to delay noVNC startup and prevent situations where workshop attendees may initially be unable to access noVNC until all dependent services on the instance are started. *Default: 5 minutes*
+    - The OS user for which the remote desktop will be configured. *Default: Oracle*
 
     ```
     <copy>
