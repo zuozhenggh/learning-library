@@ -32,7 +32,7 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
      spool off; </copy>
       ```
     
-    ![](./images/tablespace1.jpg "")
+    ![](./images/tablespace1.png "")
 
 * 2.The following SQL commands will provide the list of Temporary Tablespaces needed to map with ‘TEMP’ Tablespace:
 
