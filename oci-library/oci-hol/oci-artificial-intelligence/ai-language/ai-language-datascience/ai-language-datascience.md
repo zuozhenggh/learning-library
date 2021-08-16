@@ -1,7 +1,38 @@
 # Lab 5: Access OCI Language Service in DataScience NotebookSession.
+ 
 
-## Prerequisites
-- If you don't have a subnet with Internet connectivity then Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option. The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
+## **Data Science Prerequisites:**
+
+Before you can start using Data Science, your tenancy administrator should set up the following networking, dynamic group, and policies.
+### 1. Create VCN and Subnets
+Create a VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > VCN with Internet Connectivity option.
+The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
+
+### 2. Create Dynamic Group
+Create a dynamic group with the following matching rule:
+ALL { resource.type = 'datasciencenotebooksession' }
+
+### 3. Create Policies
+Create a policy in the root compartment with the following statements:
+
+3.1 Service Policies
+```
+<copy>allow service datascience to use virtual-network-family in tenancy</copy>
+```
+3.2 Non-Administrator User Policies
+```
+<copy>allow group <data-scientists> to use virtual-network-family in tenancy</copy>
+```
+```
+<copy>allow group <data-scientists> to manage data-science-family in tenancy</copy>
+```
+where data-scientists represents the name of your user group
+
+3.3 Dynamic Group Policies
+```
+<copy>allow dynamic-group <dynamic-group> to manage data-science-family in tenancy</copy>
+```
+where dynamic-group represents the name of your dynamic group
 
 ## **TASK 1:** Navigate to the NoteBook
 
@@ -66,7 +97,9 @@ Upload the config file and the Private Key to Notebook Session and move it to th
 ```
 <copy>mv <path of the private key> ~/.oci/</copy>
 ```
-To More about about how to create API Key and config file, Refer Lab-3(Setup API Signing Key and Config File).
+To More about about how to create API Key and config file, Refer Lab-3(Setup API Signing Key and Config File.
+
+
 ![](./images/config.png " ")
 
 ### 3. Execute the Notebooks

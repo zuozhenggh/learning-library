@@ -56,7 +56,7 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
+### Acknowledgements:
 * **Authors**
     * Rajat Chawla  - Oracle AI OCI Langauge Services
     * Ankit Tyagi -  Oracle AI OCI Langauge Services

@@ -20,7 +20,7 @@ You do not need to execute those codes, but review them to understand what infor
 * Familiar with local editing tools, vi and nano
 * Installed with Python libraries: `oci` and `requests`
 
-## Python CLI Setup
+## CLI Setup
 
 The CLI is a small-footprint tool that you can use on its own or with the Console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend Console functionality.
 
@@ -83,9 +83,4 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
-* **Authors**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services
-    * Ankit Tyagi -  Oracle AI OCI Langauge Services
-* **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021
+

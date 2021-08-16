@@ -79,8 +79,15 @@ To create a virtual environment, run the venv module as a script as shown below
 ```
 ### 2. Activate virtualenv
 Once you’ve created a virtual environment, you may activate it.
+
+Mac OS / Linux:
+
 ```
 <copy>source <name of virtual environment>/bin/activate</copy>
+```
+Windows:
+```
+<copy><name of virtual environment>\Scripts\activate</copy>
 ```
 ### 3. Install OCI
 Now Install oci by running:

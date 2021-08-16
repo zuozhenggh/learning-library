@@ -21,6 +21,8 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Tenancy is whitelisted to be able to use OCI Language
 
+## **Policy Setup**
+
 Before you start using OCI Language, your tenancy administrator should set up the following policies by following below steps:
 ### 1. Navigate to Policies
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
@@ -34,13 +36,13 @@ Click Create Policy
 If you want to allow all the users in your tenancy to use language service.
 Create a new policy with the below statement:
 ```
-allow any-user to use ai-service-language-family in tenancy
+<copy>allow any-user to use ai-service-language-family in tenancy</copy>
 ```
 ![](./images/policy3.png " ")
 If you want to limit access to a user group.
 Create a new policy with the below statement:
 ```
-allow group <group-name> to use ai-service-language-family in tenancy
+<copy>allow group <group-name> to use ai-service-language-family in tenancy</copy>
 ```
 ![](./images/policy4.png " ")
 
@@ -116,9 +118,3 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
-* **Authors**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services
-    * Ankit Tyagi -  Oracle AI OCI Langauge Services
-* **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021
