@@ -1,4 +1,4 @@
-# Set up your environment
+# Set Up Your Environment
 
 ## Introduction
 
@@ -35,11 +35,9 @@ This lab assumes you have completed the Getting Started lab.
 
     ![Start VCN Wizard](./images/00-04.png)
 
-5.  Verify the configuration, and then click **Create**.
+5.  Review the configuration, and then click **Create**.
 
-    ![Verify configuration](./images/00-05.png)
-
-You can click View VCN Details and see both a Public and Private subnet were created.
+You can click **View VCN Details** and to verify both a Public and Private subnet were created.
 
 ## Task 2: Create an ATP Instance
 
@@ -64,8 +62,6 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     ![Deployment Type](./images/01-05-deployment.png)
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
-
-    ![Configure database](./images/01-06-db.png)
 
 7.  Add a password. Take note of the password, you will need it later in this lab.
 
@@ -92,13 +88,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 4.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![Click Tools](./images/02-04-tools.png)
-
     ![Click Open Database Actions](./images/02-04-db-actions.png)
 
 5.  Log in with the ADMIN user and password provided when you created the ATP instance.
-
-    ![Log in to Database Actions](./images/02-05-login.png)
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
@@ -140,27 +132,25 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **TargetADW** for **Display Name** and **Database Name**.
 
-    ![Complete Database information](./images/01-03-compartment.png)
+    ![Complete Database information](./images/04-03-compartment.png)
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
-    ![Workload Type](./images/01-04-workload.png)
+    ![Workload Type](./images/04-04-workload.png)
 
 5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
-    ![Deployment Type](./images/01-05-deployment.png)
+    ![Deployment Type](./images/04-05-shared.png)
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-    ![ADW configuration](./images/01-06-db.png)
-
 7.  Add a password. Note the password down in a notepad, you will need it later in Lab 2.
 
-    ![Database user and password](./images/01-07-pw.png)
+    ![Database user and password](./images/04-07-pw.png)
 
 8.  Under **Choose a license type**, select **License Included**.
 
-    ![License Type](./images/01-08-license.png)
+    ![License Type](./images/04-08-license.png)
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
@@ -172,9 +162,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![Click Tools](./images/02-04-tools.png)
-
-    ![Open Database Actions](./images/02-04-db-actions.png)
+    ![Open Database Actions](./images/05-04-db-actions.png)
 
 3.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
