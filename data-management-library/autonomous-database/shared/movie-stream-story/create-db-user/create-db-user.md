@@ -112,7 +112,7 @@ You learned how to use the Create User dialog to create a new user.  You can als
     begin
     ords_admin.enable_schema (
         p_enabled               => TRUE,
-        p_schema                => '&db_user',
+        p_schema                => 'moviestream',
         p_url_mapping_type      => 'BASE_PATH',
         p_auto_rest_auth        => TRUE
     );
