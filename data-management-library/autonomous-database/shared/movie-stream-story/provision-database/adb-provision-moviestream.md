@@ -80,10 +80,10 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 </if>
 
 <if type="freetier">
-## Task 3: Create the ADB instance
+## Task 3: Create the ADB Instance
 </if>
 <if type="livelabs">
-## Task 2: Create the ADB instance
+## Task 2: Create the ADB Instance
 </if>
 
 1. Click **Create Autonomous Database** to start the instance creation process.
