@@ -57,7 +57,9 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     ```
 
 ## Task 1: Login and Create PDB
-This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
+In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command-line interface to the database.  **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the <TAB> key and more.  You can learn more about **SQLcl** [here](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
+
+In this first task, you will create and explore a new pluggable database **PDB2** in the container database **CDB1**
 
 1. All scripts for this lab are stored in the `labs/multitenant` folder and are run as the oracle user. Let's navigate to the path now.
 
@@ -328,7 +330,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
    ![](./images/task3.2-unplugpdb3.png " ")
 
-3. Remove **PDB3** from **CDB1**.
+3. Remove **PDB3** from **CDB1** but keep the PDB datafiles for future use.
 
     ```
     <copy>drop pluggable database PDB3 keep datafiles;
@@ -338,7 +340,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
    ![](./images/task3.3-droppdb3.png " ")
 
-4. Show the datafiles in **CDB1**.
+4. Show the datafiles in **CDB1** and note that files for PDB3 are no longer part of the container.
     ```
     <copy>
     with Containers as (
@@ -365,7 +367,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task3.4-cdb1dbfiles.png " ")
 
-5. Look at the XML file for the pluggable database **PDB3**.
+5. Look at the XML file for the pluggable database **PDB3**.  Take some time to review the information that is contained in a PDB manifest.
 
     ```
     <copy>host cat /u01/app/oracle/oradata/CDB1/pdb3.xml</copy>
@@ -402,7 +404,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task4.1-connectcdb2.png " ")
 
-2. Check the compatibility of **PDB3** with **CDB2**.  No errors confirms the PDB is compatible with the CDB.
+2. Check the compatibility of **PDB3** with **CDB2**.  If there are no errors then the PDB is compatible with the CDB.
 
     ```
     <copy>
@@ -420,7 +422,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task4.2-pdbcompatible.png " ")
 
-3. Plug **PDB3** into **CDB2**, moving the PDBs datafiles under the CDB2 storage location.
+3. Plug **PDB3** into **CDB2**, moving the PDB's datafiles under the CDB2 storage location.
 
     ```
     <copy>
@@ -555,7 +557,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task6.2-pdb2readonly.png " ")
 
-3. Create a pluggable database **GOLDPDB** from the read only database **PDB2**.
+3. Create a pluggable database **GOLDPDB** from the read only database **PDB2** and then open it.
 
     ```
     <copy>create pluggable database GOLDPDB from PDB2;</copy>
@@ -669,7 +671,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task6.9-createcopypdb2.png " ")
 
-10. Open all of the pluggable databases.
+10. Open all of the pluggable databases in the container database **CDB2**.
 
     ```
     <copy>alter pluggable database all open;</copy>
@@ -681,7 +683,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task6.10-openallpdbs.png " ")
 
-11. Look carefully at the GUID for the two cloned databases.
+11. Look carefully at the GUID for the two cloned databases.  Since they are cloned from the same unplugged PDB, they are very similar.
 
     ```
     <copy>
@@ -740,7 +742,11 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
     ```
 
     ```
-    <copy>alter user soe quota unlimited on system;</copy>
+    <copy>
+    create bigfile tablespace users;
+    alter user soe quota unlimited on users;
+    alter user soe default tablespace users;
+    </copy>
     ```
 
     ![](./images/task7.2-createoe.png " ")
@@ -816,7 +822,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task7.6-rowcountoedev.png " ")
 
-7. Connect as **SOE** to **OE** and check the number of records in the **sale_orders** table.
+7. Connect as **SOE** to **OE** and check the number of records in the **sale_orders** table.  Since the load script is running against this database, there should be more rows in the table than in the PDB you created as a hot clone of **OE**.
 
     ```
     <copy>connect soe/soe@localhost:1523/oe</copy>
@@ -826,7 +832,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
     <copy>select count(*) from sale_orders;</copy>
     ```
 
-    ![](./images/step7.7-checkrecordsoe.png " ")
+    ![](./images/task7.7-rowcountoe.png " ")
 
 8. Close and remove the **OE_DEV** pluggable database.
 
@@ -922,7 +928,7 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
     ![](./images/task8.4-refreshoerefresh.png " ")
 
-5. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table. You should see the number of records change.
+5. Connect as **SOE** to the pluggable database **OE\_REFRESH** and count the number of records in the **sale\_orders** table. You should see the number of records has changed following the refresh from the source PDB.
 
     ```
     <copy>conn soe/soe@localhost:1524/oe_refresh</copy>
@@ -940,12 +946,12 @@ If you're not already running SQLcl, then launch SQLcl and set the formatting to
 
 You can create a snapshot copy PDB by executing a CREATE PLUGGABLE DATABASE … FROM … SNAPSHOT COPY statement. The source PDB is specified in the FROM clause.
 
-A snapshot copy reduces the time required to create the clone because it does not include a complete copy of the source data files. Furthermore, the snapshot copy PDB occupies a fraction of the space of the source PDB. The snapshot copy can be created in any filesystem like ext3, ext4, ntfs for local disks. It also supports NFS, ZFS, ACFS,etc.
+A snapshot copy reduces the time required to create the clone because it does not include a complete copy of the source data files. Furthermore, the snapshot copy PDB occupies a fraction of the space of the source PDB. The snapshot copy can be created in any filesystem like ext3, ext4, ntfs for local disks. It also supports NFS, ZFS, ACFS, and ASM sparse disk groups on Oracle Exadata.
 
-The two main requirements for snapshot copy to work are
+The two main requirements for snapshot copy to work on our Linux filesystem are:
 
-    - CLONEDB initialization parameter should be set to TRUE.
-    - The source PDB is in Read Only mode.
+  - CLONEDB initialization parameter should be set to TRUE.
+  - The source PDB is in Read Only mode.
 
 Refreshable PDBs need to be in **read only** mode in order to refresh. You can quickly create a Snapshot Clone PDB from the refreshable PDB and use it in reporting, test and dev environments. In our exercise, we will create a **Snapshot Copy PDB** from the read only PDB **OE_REFRESH**.
 
@@ -978,7 +984,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     </copy>
     ```
 
-    ![](./images/task9.1-showparamclonedb.png " ")
+    ![](./images/task9.3-showparamclonedb.png " ")
 
 
 4. Set the static initialization parameter CLONEDB = TRUE and restart CDB2.
@@ -993,7 +999,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     ```
     ![](./images/task9.4-restartcdb2.png " ")
 
-5. Snapshot Copy PDBs must be created from a read-only source, so open PDB **OE_REFRESH** read only and create a Snapshot Copy PDB **OE_SNAP**.  
+5. Snapshot Copy PDBs must be created from a read-only source, so open PDB **OE\_REFRESH** read only and create a Snapshot Copy PDB named **OE_SNAP**.  
 
     ```
     <copy>
@@ -1005,9 +1011,9 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     </copy>
     ```
 
-    ![](./images/task9.4-restartcdb2.png " ")
+    ![](./images/task9.5-createpdbsnap.png " ")
 
-6. A PDB Snapshot Copy is a "thin" clone that reads from the source PDB but any DML changes will be written into the snapshot copy.  Insert a row into the **OE_SNAP** database.
+6. A PDB Snapshot Copy is a "thin" clone that reads from the source PDB but any DML changes will be persisted in the snapshot copy PDB.  Insert a row into the **OE_SNAP** database.
 
    ```
    <copy>
@@ -1020,7 +1026,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
    ```
    ![](./images/task9.6-dmlpdbsnap.png " ")
 
-7. Now generate a couple of OS commands to show that the **OE_SNAP** PDB uses a fraction of the space compared to the source **OE_REFRESH** database.
+7. Now generate a couple of OS commands to show that the **OE\_SNAP** PDB uses a fraction of the space compared to the source **OE_REFRESH** database.
 
    ```
    <copy>
@@ -1035,18 +1041,18 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
 
    ![](./images/task9.7-genhostdu.png " ")
 
-8. Copy and paste separately each of the query output lines to see the difference in disk space consumed between the source PDB and the "thin" PDB Snapshot Copy.
+8. Copy and paste separately each of the query output lines to see the difference in disk space consumed between the "thin" PDB Snapshot Copy and the source PDB.
 
    ![](./images/task9.8-duoutput.png " ")
 
-9. Close and remove the **OE_REFRESH** and **OE_SNAP** pluggable databases.
+9. Close and remove the **OE\_REFRESH** and **OE_SNAP** pluggable databases.
 
    ```
    <copy>
    show pdbs
    alter pluggable database oe_snap close;
-   alter pluggable database oe_refresh close;
    drop pluggable database oe_snap including datafiles;
+   alter pluggable database oe_refresh close;
    drop pluggable database oe_refresh including datafiles;
    show pdbs
    </copy>
@@ -1057,12 +1063,12 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
 
 ## Task 10: PDB Relocation
 
-This section looks at how to relocate a pluggable database from one container database to another. One important note, either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
+This section looks at how to relocate a pluggable database from one container database to another. One important note: either both container databases need to be using the same listener in order for sessions to keep connecting or local and remote listeners need to be setup correctly. For this lab we will change **CDB2** to use the same listener as **CDB1**.
 
 The tasks you will accomplish in this step are:
 - Change **CDB2** to use the same listener as **CDB1**
 - Relocate the pluggable database **OE** from **CDB1** to **CDB2** with the load still running
-- Once **OE** is open the load should continue working.
+- Once **OE** is open the load should continue working
 
 1. In the **other terminal window** that was opened in Lab Task 8, make sure the write-load script is still running.  If not, you may need to restart the shell script.
 
@@ -1072,7 +1078,7 @@ The tasks you will accomplish in this step are:
 
 2. Connect to the container **CDB2** and update the LOCAL_LISTENER parameter to point to the listener used by **CDB1**.
     ```
-    <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba;</copy>
+    <copy>conn sys/oracle@localhost:1524/cdb2 as sysdba</copy>
     ```
 
     ```
@@ -1081,14 +1087,14 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.1-changelistener.png " ")
 
-2. Connect to **CDB2** via the shared listener and relocate **OE** using the database link **oe@cdb1_link**.  Observe that the batch load script will continue after the PDB is moved.
+2. Connect to **CDB2** via the shared listener and relocate **OE** using the database link **oe@cdb1_link**.  
 
     ```
     <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
     ```
 
     ```
-    <copy>create pluggable database oe from oe@cdb1_link relocate availability max;
+    <copy>create pluggable database oe from oe@cdb1_link relocate;
     alter pluggable database oe open;
     show pdbs</copy>
     ```
@@ -1107,12 +1113,14 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.3-checkcdb1.png " ")
 
-4.  The load program isn't needed anymore, so CTRL-C out of that program and exit that terminal window.
+4.  Check the other terminal window where the load program is running.  After a timeout, the load program will resume on its own.  If you don't want to wait, enter CTRL-C to break out of the connection timeout and the load program should continue.  Note that the output now shows it is connected to the database in container **CDB2**.    
+
+    The load program isn't needed anymore, so CTRL-C out of that program and exit from the second terminal window.
 
 5. If you are going to continue to use this environment then you will need to change **CDB2** back to use **LISTCDB2**.
 
     ```
-    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba;</copy>
+    <copy>conn sys/oracle@localhost:1523/cdb2 as sysdba</copy>
     ```
 
     ```
@@ -1134,7 +1142,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/labcleanup2.png " ")
 
-Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks that you could leverage when maintaining a large multitenant environment.
+Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks, such as hot cloning and PDB relocation, that you could leverage to more easily maintain a large multitenant environment.
 
 You may now [proceed to the next lab](#next).
 
@@ -1142,4 +1150,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Contributors** -  Joseph Bernens, David Start, Anoosha Pilli, Brian McGraw, Quintin Hill, Rene Fontcha
-- **Last Updated By/Date** - Joseph Bernens, Principal Solutions Engineer, NA Technology, August 2021
+- **Last Updated By/Date** - Joseph Bernens, Principal Solutions Engineer, NA Technology/August 2021
