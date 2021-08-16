@@ -1,13 +1,84 @@
 # Initializing Labs
 
 ## Introduction
-This page contains the script that can be used to create and load the tables required for the labs.  
+The workshop has been designed to run from beginning to end.  However, you may want to skip certain labs - which means that you may have also skipped some prerequisites.  For example, you can't recommend movies to a potential churner (using the Graph lab) until you've predicted those customers that are likely to churn (using the Machine Learning lab).
 
-The workshop has been designed to run from beginning to end.  However, you may want to skip certain labs - which means that you may have also skipped some prerequisites.  You can run the initialization script to ensure that your database environment is in the proper state.  The script will drop and recreate tables required to run the labs.  These are the same tables that are defined in the data loading lab.
+There's a two step process that will allow you to jump to any lab in the workshop:
+
+1. PL/SQL procedures are available that will generate the output of each lab.  You will need to download those scripts from object storage (don't worry, we've made this very easy)
+2. Execute the `run_lab_preq` procedure - passing as a parameter the lab number that you would like to run.  All of the prerequisites for that lab will be run and you're ready to go!
+
+The script drop and recreate the MOVIESTREAM user.  This means that all of the data for that user will be deleted and recreated.
+
+>**<span style="color:red">Warning:</span>  Any custom work that you did in the MOVIESTREAM schema will be deleted - so save your work!**
 
 Estimated Time: 5 minutes
 
-## **Initialization Script** 
+## Task 1:  Create the PL/SQL Procedures that Run the Prerequisite Labs
+```sql
+<copy>
+/*
+    This script will download from object storagethe plsql procedures that are 
+    required to initialize the labs.
+*/
+declare
+    b_plsql_script blob;            -- binary object
+    v_plsql_script varchar2(32000); -- converted to varchar
+    uri varchar2(2000);             -- location of the scripts
+begin
+    -- Scripts have been provided that generate the output of each lab
+    -- This lets you jump to a lab even if you haven't run thru the prior ones
+    -- A JSON file contains the info about the labs and pointers to these scripts
+    
+    -- Run a query to get the labs and the create the procedures that generate the output
+    for lab_rec in (
+        select  json_value (doc, '$.lab_num' returning number) lab_num,
+                json_value (doc, '$.title' returning varchar2(500)) title,
+                json_value (doc, '$.script' returning varchar2(100)) script        
+        from external (
+            ( 
+                doc varchar2(1000 byte)
+            )     
+            type oracle_loader
+            default directory data_pump_dir
+            access parameters
+              ( records ignore_header=0 ignore_blank_lines delimited by detected newline nologfile nobadfile nodiscardfile readsize=10000000 
+                fields terminated by '\n' notrim 
+              )  
+              location
+               ( 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ifl8lb9-1sGvfhhNQL9U6Y4LHpfG3GUD41Nav3xe61EaG19TCPg312__kHKBlBMu/n/adwc4pm/b/moviestream_scripts/o/prerequisites/moviestream-labs.json' 
+               )
+               reject limit unlimited
+            ) ml
+        where json_value (doc, '$.script' returning varchar2(100))  is not null
+        order by 1 asc
+        ) 
+    loop
+        -- The plsql procedure DDL is contained in a file in object store
+        -- Create the procedure
+        dbms_output.put_line(lab_rec.title);
+        dbms_output.put_line('....downloading plsql procedure ' || lab_rec.script);
+            
+        -- download the script into this binary variable        
+        uri := 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_scripts/o/prerequisites/' || lab_rec.script || '.sql';
+        
+        dbms_output.put_line('....the full uri is ' || uri);        
+        b_plsql_script := dbms_cloud.get_object(object_uri => uri);
+        
+        dbms_output.put_line('....creating plsql procedure ' || lab_rec.script);
+        -- convert the blob to a varchar2 and then create the procedure
+        v_plsql_script :=  utl_raw.cast_to_varchar2( b_plsql_script );
+        
+        -- generate the procedure
+        execute immediate v_plsql_script;
+
+    end loop;   
+ end;
+ /
+ </copy>
+```
+
+## Task 2: Execute the `run_lab_preq` procedure
 
 Go to SQL Worksheet in SQL Tools and login as the **moviestream** user.  Then, copy and paste the script below into the SQL Worksheet and click **Run Script**.
 
