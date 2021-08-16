@@ -27,7 +27,7 @@ You will be using Terraform to create your lab environment.
 
 1.  Click on the link below to download the zip file which you need to build your environment.  
 
-    - Click here: [cloudguard-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wd25c0C_XCqouJe9u21MyF6zIBmBKUC9nToLL8vG4Py6CRsN6-b8MCwSfPyIt4sy/n/partners/b/files/o/cisco-live-labs.zip) 
+    - Click here: [cloudguard-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YeAMIiqXbz3bL3dhkNFUPcd7WO52XgoltG-vY3exhGjXKza2qbaiOtE0h4B8u8yi/n/partners/b/files/o/cloudguard-live-labs.zip) 
         - Packaged terraform **CloudGuard High Availability** use-case.
 
 2.  Save in your local machine's downloads folder.

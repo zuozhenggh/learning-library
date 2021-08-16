@@ -14,17 +14,15 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named `workshop-staged` and `workshop-installed`. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+This workshop lets you try out new features in Oracle Database 19c. You use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. The **Install Oracle Database 19c with Automatic Root Script Execution** lab is the only lab that uses the `workshop-staged` compute instance. The rest of the labs use the `workshop-installed` compute instance.
+- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with three CDBs (ORCL, CDB1, and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. ORCL is not used in any of the labs.
 
-To obtain your compute instances, you need to create SSH keys for yourself. When you reserve this workshop in the LiveLabs tenancy, you are asked to provide your public SSH key on the registration page. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances using Resource Manager.
+At the beginning of the workshop in the **Getting Started** lab, you are shown how to create a free trial account and sign in to Oracle Cloud Infrastucture. Next, you learn how to generate SSH keys for yourself in the lab called **Generate SSH Keys**. You need these SSH keys when you obtain your compute instances.  If you plan to work in the LiveLabs tenancy, you need to generate your SSH keys prior to reserving the workshop because the reservation system will ask you to provide your public key.
 
-All labs are independent of each other, so you don't need to do them in any particular order.
-
-## Labs
+All the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your compute instance to run the lab, and each lab ends with instructions on how to restore your compute instance back to its original state.
 
 Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
-
-### General Database Overall Enhancements
 
 The following labs cover general database overall enhancements in Oracle Database 19c:
 
@@ -38,31 +36,11 @@ The following labs cover general database overall enhancements in Oracle Databas
 - Explore Automatic Deletion of Flashback Logs
 
 
-## Cleaning Up PDBs at the beginning of each lab
-
-The `workshop-installed` compute instance consists of three container databases (ORCL, CDB1, and CDB2). You only use CDB1 and CDB2 in this workshop. CDB1 contains one pluggable database (PDB1). CDB2 doesn't contain any pluggable database.
-
-If you need to reset CDB1 back to its original state, you can run the `/home/oracle/labs/19cnf/cleanup_PDBs.sh` shell script. This script drops all PDBs that may have been created during the labs, and re-creates `PDB1` in CDB1. Enter the following command to run the script.
-
-```nohighlighting
-$ <copy>/home/oracle/labs/19cnf/cleanup_PDBs.sh</copy>
-...
-$
-```
-
-In case you need to recreate `CDB1` and `PDB1`, run the `/home/oracle/labs/19cnf/recreate_CDB1.sh` shell script.
-
-```nohighlighting
-$ <copy>/home/oracle/labs/19cnf/recreate_CDB1.sh</copy>
-...
-$
-```
-
 ## Copying and pasting text
 
 The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code from the workshop guide. There are several ways to do this.
 
-If you copy text from an application on the compute instance itself, you can use the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** and **Ctrl+V**. Some instructions in the workshop guide may include a Copy button.
+If you copy text from an application on the compute instance itself, you can use the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** and **Ctrl+V**. Most instructions in the workshop guide include a Copy button.
 
 If you copy text from your local computer, then you need to use the clipboard utility on the compute instance to paste text into an application on the compute instance. Here is how you do it:
 
@@ -81,3 +59,8 @@ If you copy text from your local computer, then you need to use the clipboard ut
 5. Position your cursor in the application where you want to paste the text, and click your middle mouse button.
 
 > **Note**: The same method works in reverse. If you want to copy and paste text from your compute instance to your local computer, first paste the text into the **Clipboard** dialog box, and then copy and paste the text from it to your local computer.
+
+## Acknowledgements
+
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021
