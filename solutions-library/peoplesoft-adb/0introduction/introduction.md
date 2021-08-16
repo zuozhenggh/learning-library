@@ -70,7 +70,7 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 
 
-## Acknowledgments
+## Acknowledgements
 * **Authors** - Deepak Kumar M, PeopleSoft Architect
 * **Contributors** - Deepak Kumar M, PeopleSoft Architect
 * **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, Aug 2021

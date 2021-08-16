@@ -73,7 +73,7 @@ In this lab, you will:
 
 You may now **proceed to the next lab.**
 
-## Acknowledgments
+## Acknowledgements
 * **Authors** - Deepak Kumar M, PeopleSoft Architect
 * **Contributors** - Deepak Kumar M, PeopleSoft Architect
 * **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, Aug 2021
