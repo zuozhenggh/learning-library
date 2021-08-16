@@ -246,7 +246,7 @@ In this step, we will use some of the additional features of the DBMS\_CLOUD API
 
     ![Click on the bin icon](images/binicon.png)
 
-2.  Now, copy and paste the following script into the Worksheet. This script will create the table **ext_custsales**, linking to the files in the **custsales** folder in Object Store.
+2.  Now, copy and paste the following script into the Worksheet. This script will create the table **ext_custsales**, linking to the parquet files in the **custsales** folder in Object Store.
 
 ```
 <copy>
@@ -322,7 +322,7 @@ end;
 </copy>  
 ```
 
-8. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data, including a primary key and format constraints. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+8. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 <copy>
