@@ -4,7 +4,7 @@
 
 For the purposes of this workshop, Oracle Autonomous Data Warehouse (ADW) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ADW.
 
-Estimated lab time: 10 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -19,7 +19,9 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 ## Task 1: Download the Target ADW Client Credentials
 
-1.  Navigate back to the Target ADW Autonomous Database Details page, and then click **DB Connection**.
+1.  In the OCI Console breadcrumb, click **Autonomous Database**, and then select **TargetADW** from the list of databases.
+
+2.  On the Target ADW Autonomous Database Details page, click **DB Connection**.
 
     ![Open ATP Service Console](images/02-01.png)
 
@@ -29,21 +31,29 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Target ADW Admin password twice, and then click **Download**.
 
+4.  Close the DB Connection panel.
+
 ## Task 2: Upload the Target ADW Credentials to Oracle GoldenGate
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-    ![Open Compute Instances](images/02-01_compute.png)
+    ![Open Compute Instances](images/02-01-compute.png)
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
 3.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle**.
+
+    ![Compute instances](images/02-03-compute-instances.png)
 
 4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
 
     ![Copy Public IP](images/02-04.png)
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
+
+    ```
+    <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
+    ```
 
 6.  Upload the wallet\_ADW.zip and then extract its contents to a new directory, such as **wallet\_ADW**.
 
@@ -91,7 +101,7 @@ unzip wallet_ADW.zip -d wallet_ADW</copy>
 
     ![Add credential for source ATP](images/04-10.png)
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can now proceed to the [next lab](#next).
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can now proceed to the next lab.
 
 ## Acknowledgements
 

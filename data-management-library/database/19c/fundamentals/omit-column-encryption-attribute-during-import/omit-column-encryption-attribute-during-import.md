@@ -49,16 +49,20 @@ Before you start, be sure that you have done the following:
 6. Create a directory `dp` that points to the location of the dump file. The following command will specify where the dump file is located, as well as where log files and SQL files will be generated.
     ```
     SQL> <copy>CREATE DIRECTORY dp AS '/home/oracle/labs/19cnf';</copy>
-
-    SQL> EXIT; 
     ```
-7. Generate a SQL file from the Data Pump export `tab.dmp` dump file by simulating an import into PDB1. Note that by using the `SQLFILE` parameter, `impdp` is simply generating the SQL DDL that the utility would otherwise execute without it. 
+
+7. Exit SQL*Plus
+
+    ```
+    SQL> <copy>EXIT;</copy>
+    ```
+8. Generate a SQL file from the Data Pump export `tab.dmp` dump file by simulating an import into PDB1. Note that by using the `SQLFILE` parameter, `impdp` is simply generating the SQL DDL that the utility would otherwise execute without it. 
 
     ```
     $ <copy>impdp SYSTEM/Ora4U_1234@PDB1 DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log</copy>
     ```
 
-8. Verify the ouput. Notice the text `ENCRYPT USING 'AES192' 'SHA-1'` in the `"LABEL"` column definition.
+9.  Verify the ouput. Notice the text `ENCRYPT USING 'AES192' 'SHA-1'` in the `"LABEL"` column definition.
 
     ```
     $ <copy>cat tabenc1.sql</copy>
