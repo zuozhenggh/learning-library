@@ -1,8 +1,7 @@
 # Setup Graphical Remote Desktop
 
 ## Introduction
-This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior
-to capturing the custom image.
+This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior to capturing the custom image.
 
 ### Objectives
 - Deploy NoVNC Remote Desktop
@@ -19,8 +18,8 @@ This lab assumes you have:
 ## Task 1: Deploy noVNC
 1.  As root, download and run the latest setup script. You will be prompted for the following two inputs:
 
-    - Estimated time in minutes for initial processes to fully start after instance boot up. This will be used to delay noVNC startup and prevent situations where workshop attendees may initially be unable to access noVNC until all dependent services on the instance are started. *Default: 5 minutes*
-    - The OS user for which the remote desktop will be configured. *Default: Oracle*
+    - *Estimated time in minutes* for initial processes to fully start after instance boot up. This will be used to delay noVNC startup and prevent situations where workshop attendees may initially be unable to access noVNC until all dependent services on the instance are started. *Default: 5 minutes*
+    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
 
     ```
     <copy>
@@ -100,7 +99,6 @@ For ease of access to desktop applications provided on the instance and needed t
 6. Repeat steps above to add *Google Chrome* browser and any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
 
     ![](./images/create-shortcut-6.png " ")
-
 
 ## Task 3: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
@@ -324,13 +322,15 @@ Update your Terraform/ORM stack with the tasks below to enable VNC password rese
     provider "random" {}
     </copy>
     ```
-2. Add the following variables to *variables.tf*.
+2. Add the following variables to *variables.tf* and *schema.yaml*.
 
     - `desktop_guide_url`
     - `desktop_app1_url`
     - `desktop_app2_url`
 
     The example below is from the *DB Security - Key Vault* workshop
+
+    - variables.tf
 
     ```
     <copy>
@@ -347,6 +347,38 @@ Update your Terraform/ORM stack with the tasks below to enable VNC password rese
     }
     </copy>
     ```
+
+    - schema.yaml
+
+    ```
+    variableGroups:
+      - title: General Configuration
+        visible: false
+        variables:
+        - desktop_guide_url
+        - desktop_app1_url
+        - desktop_app2_url
+
+    desktop_guide_url:
+      type: text
+      required: true
+      title: "Workshop Guide"
+      description: "Workshop Guide on noVNC Desktop"
+
+    desktop_app1_url:
+      type: text
+      required: false
+      title: "Application URL 1"
+      description: "Application URL 1 on noVNC Desktop"
+
+    desktop_app2_url:
+      type: text
+      required: false
+      title: "Application URL 2"
+      description: "Application URL 2 on noVNC Desktop"
+      </copy>
+      ```
+
 3. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
 
     ```
