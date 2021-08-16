@@ -20,11 +20,9 @@ At the end of the workshop you will be able to run some queries on a sample data
 -   Create your own Analytics dashboards on your MDS SB System.
 
 
-
 **Prerequisites:**
--  This workshop requires an Oracle Public Cloud account. You may use a paid cloud account or a trial cloud account.
+-  This workshop requires an Oracle Cloud account, you may check out this <a href="https://www.youtube.com/watch?v=4U-0SumNz6w" target="_blank">video</a> to help you signing up. You may use a paid cloud account or a trial cloud account as well.
 -  A Cloud tenancy where you have a compartment provisioned in.
-  
 
 
 ## **Workshop Overview**
