@@ -60,6 +60,7 @@ Node.js is an asynchronous event-driven JavaScript runtime. **Node.js** is desig
 
     ![Node Versions](./images/node_versions.png)
 
+
 ## Task 2: Create a Custom Component to integrate with backend services
 
 Oracle provides **Oracle Bots Node.js SDK**, a free utility that makes custom components development very easy.

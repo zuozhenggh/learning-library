@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To reduce customer churn, our business has partnered with a pizza chain to offer coupons for free pizza. We will offer this promotion to customers identified as both likely to churn and within reasonable proximity to a pizza chain location. Likelihood to churn is addressed in a separate Machine Learning lab (available soon). In this lab you determine which customers are near one or more pizza chain locations, and for those customers, which location is the closest. Specifically, we will answer the following question: "for customers that are within 10km of pizza chain location(s), which is the closest and what is the distance?"
+To reduce customer churn, our business has partnered with a pizza chain to offer coupons for free pizza. The promotion will be offered to customers identified as both likely to churn and within reasonable proximity to a pizza chain location. Likelihood to churn is covered in Lab 6 (Using Oracle Machine Learning AutoML UI to predict churn). In this lab you determine which customers are near one or more pizza chain locations, and for those customers, which location is the closest. Specifically, we will answer the following question: "for customers that are within 10km of pizza chain location(s), which is the closest and what is the distance?"
 
 Estimated Lab Time: 20 minutes
 
