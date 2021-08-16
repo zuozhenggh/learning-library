@@ -364,7 +364,7 @@ select
     cast(m.doc.budget as number) as budget,
     cast(m.doc.gross as number) gross,
     cast(m.doc.list_price as number) as list_price,
-    cast(m.doc.genre as varchar2(4000)) as genre,
+    cast(m.doc.genre as varchar2(4000)) as genres,
     cast(m.doc.sku as varchar2(30 byte)) as sku,   
     cast(m.doc.year as number) as year,
     to_date(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
