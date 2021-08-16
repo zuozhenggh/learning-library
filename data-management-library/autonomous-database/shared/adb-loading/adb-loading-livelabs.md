@@ -29,7 +29,7 @@ Estimated Lab Time: 30 minutes
 -   Learn how to load data from the Object Store
 -   Learn how to troubleshoot data loads
 
-In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining steps, you will create and load several ADW tables with sample data that you stage to an *OCI Object Store*.
+In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it with sample data from your *local file system*. In the remaining tasks, you will create and load several ADW tables with sample data that you stage to an *OCI Object Store*.
 
 ### You Will Practice Three Loading Methods
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
@@ -38,7 +38,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 ## Task 1: Download Sample Data for Loading from Local File
 
-1. For this step, you will download a .csv file containing CHANNELS information to your local computer, then use it to populate a CHANNELS_LOCAL table in your ADW database in the next step.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/pK5PL_ui1Q7OgZE6gh2WgR0Wyw6TiPyz7pkY5KkKUmc8NkmaccIHHHA8u0gbZnmd/n/c4u04/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
+1. For this task, you will download a .csv file containing CHANNELS information to your local computer, then use it to populate a CHANNELS_LOCAL table in your ADW database in the next task.  Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/pK5PL_ui1Q7OgZE6gh2WgR0Wyw6TiPyz7pkY5KkKUmc8NkmaccIHHHA8u0gbZnmd/n/c4u04/b/data-management-library-files/o/channels.csv" target="\_blank">here</a> to download the sample channels.csv file, saving it to a directory on your local computer.
 
 ## Task 2: Load Local Data Using the Database Actions DATA LOAD Tool
 
@@ -88,7 +88,7 @@ In Steps 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 ## Task 3: Download Sample Data for Staging to Object Store
 
-In Steps 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent steps.
+In Tasks 1 and 2, you downloaded a channels.csv file to your local computer and used the Database Actions DATA LOAD tool to create and load an ADW table. Now, you will download a zip file containing data files that you will stage to an *OCI Object Store*, to populate a number of tables in subsequent tasks.
 
 1. Click <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/FNddNM_ga0qV-01p7an3Gkg4cpApXppFJwWYK_BzsH94qgZHibssWbhOHO87QUMp/n/c4u04/b/data-management-library-files/o/adb_sample_data_files.zip" target="\_blank">here</a> to download a zip file of the sample source files that you will upload to an object store that you will be defining. Unzip it to a directory on your local computer.
 
@@ -120,7 +120,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![Click Upload under Objects section.](images/click-upload-livelabs.png " ")
 
-3. Drag and drop, or click  **select files**,  to select all the files downloaded in Step 3. Click **Upload** and wait for the upload to complete:
+3. Drag and drop, or click  **select files**,  to select all the files downloaded in Task 3. Click **Upload** and wait for the upload to complete:
 
     ![Upload files by drag and drop or manually select files in the wizard and click upload.](images/select-files-and-upload.png " ")
 
@@ -134,7 +134,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![Select View Object Details from the ellipsis on the right of any uploaded file.](images/view-object-details.png " ")
 
-2.  Copy the base URL that points to the location of your files staged in the OCI Object Storage. *Do not include the trailing slash.* Save the base URL in a text notepad. You  will use the base URL in the upcoming steps.
+2.  Copy the base URL that points to the location of your files staged in the OCI Object Storage. *Do not include the trailing slash.* Save the base URL in a text notepad. You  will use the base URL in the upcoming tasks.
 
     ![Copy the base URL.](images/copy-base-url.png " ")
 
@@ -154,7 +154,7 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Click your username.](./images/click-your-username-livelabs.png " ")
 
-2. Make note of this username, as you will need it in an upcoming step. At the bottom left side of the page, in the **Resources** section, click **Auth Tokens**.
+2. Make note of this username, as you will need it in an upcoming task. At the bottom left side of the page, in the **Resources** section, click **Auth Tokens**.
 
     ![Click Auth Tokens under Resources at the bottom left.](./images/click-auth-tokens-livelabs.png " ")
 
@@ -166,7 +166,7 @@ To load data from the Oracle Cloud Infrastructure (OCI) Object Storage, you will
 
     ![Enter Description and click Generate Token.](./images/generate-the-token.png " ")
 
-5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next steps.
+5.  The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save the contents of the clipboard in your text notepad file. You will use it in the next tasks.
 
 > **Note:** You can't retrieve the Auth Token again after closing the dialog box.
 
@@ -204,11 +204,11 @@ In the first part of this lab, you loaded data from a file that you located on y
 6. Complete the **Add Cloud Storage** page.
     + Specify the name **ADWCLab** and a description.
     + Choose **Oracle** as the cloud store, since you will be loading from your Oracle Object Store bucket.
-    + Specify the URI and bucket that you recorded in STEP 6.
+    + Specify the URI and bucket that you recorded in Task 6.
     + Use the default **Create Credential** setting. Specify the credential name **OBJ\_STORE\_CRED**.
     In order to access data in the Object Store, you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth Token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Data Warehouse. This information is only usable for your user schema.
     + Specify your Oracle Cloud Infrastructure user name.
-    + Copy and paste the Auth Token that you generated in STEP 7. Click **Create**.
+    + Copy and paste the Auth Token that you generated in Task 7. Click **Create**.
 
     ![Complete the Add Cloud Storage page.](./images/complete-add-cloud-storage-page-livelabs.png " ")
 
@@ -235,7 +235,7 @@ In the first part of this lab, you loaded data from a file that you located on y
 
     ![Click green arrow button to start data load job.](./images/click-green-arrow-button-start-data-load.png " ")
 
-> **Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next step, you will load a set of tables that will be used in subsequent labs.
+> **Note:** The target tables loaded up to this point were for practice using the Database Tools user interface. In the next task, you will load a set of tables that will be used in subsequent labs.
 
 ## Task 9: Loading Data from the Object Store Using the PL/SQL Package, DBMS_CLOUD
 
@@ -245,14 +245,14 @@ For the fastest data loading experience, Oracle recommends uploading the source 
 
 To load data from files in cloud storage into your autonomous database, use the PL/SQL `DBMS_CLOUD` package. The `DBMS_CLOUD` package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, Amazon AWS S3, Microsoft Azure Cloud Storage, and Google Cloud Storage.
 
-This step shows how to load data from Oracle Cloud Infrastructure Object Storage using two of the procedures in the `DBMS_CLOUD` package:
+This task shows how to load data from Oracle Cloud Infrastructure Object Storage using two of the procedures in the `DBMS_CLOUD` package:
 
 + **create_credential**: Stores the object store credentials in your Autonomous Data Warehouse schema.
     + You will use this procedure to create object store credentials in your ADW admin schema.
 + **copy_data**: Loads the specified source file to a table. The table must already exist in ADW.
     + You will use this procedure to load tables to your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
 
- > **Note:** If you skipped STEP 8, in which you create a credential for object store access, please use your username and auth token from STEP 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed STEP 8, proceed.
+ > **Note:** If you skipped Task 8, in which you create a credential for object store access, please use your username and auth token from Task 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed Task 8, proceed.
 
 1. Click on the SQL tile to open SQL web developer.
 
@@ -268,7 +268,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
 
 2. Download <a href="./files/load_data_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
 
-3. Replace `<file_uri_base>` in the code with the base URL you copied in Step 6. You should make 10 substitutions. The top of the file should look similar to the example below:
+3. Replace `<file_uri_base>` in the code with the base URL you copied in Task 6. You should make 10 substitutions. The top of the file should look similar to the example below:
 
     ```
     begin
@@ -303,7 +303,7 @@ This step shows how to load data from Oracle Cloud Infrastructure Object Storage
     ```
     *Notice how this table lists the past and current load operations in your schema.  Any data copy and data validation operation will have backed-up records in your Cloud.*
 
-2. For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan\_v3\_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./files/load_data_with_errors.txt" target="\_blank">this code snippet</a> to a SQL Worksheet and run the script as your user in SQL Worksheet. Specify the URL that points to the **chan\_v3\_error.dat** file. Use the URL that you have copied and saved in Step 6. Expect to see "Reject limit" errors when loading your data this time.
+2. For an example of how to troubleshoot a data load, we will attempt to load a data file with the wrong format (chan\_v3\_error.dat).  Specifically, the default separator is the | character, but the channels_error.csv file uses a semicolon instead.  To attempt to load bad data, copy and paste <a href="./files/load_data_with_errors.txt" target="\_blank">this code snippet</a> to a SQL Worksheet and run the script as your user in SQL Worksheet. Specify the URL that points to the **chan\_v3\_error.dat** file. Use the URL that you have copied and saved in Task 6. Expect to see "Reject limit" errors when loading your data this time.
 
     ![Paste the code and click Run Script.](images/query_results_after_loading_in_sql_dev_web.jpg " ")
 

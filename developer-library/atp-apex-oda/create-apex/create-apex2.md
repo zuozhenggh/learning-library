@@ -75,6 +75,7 @@ In this lab, you will:
 
     ![ORDS](./images/apex_workspace8.png)
 
+
 ## Task 2: Create a Table with Quick SQL
 
 Quick SQL reduces the time and effort required to create SQL tables, triggers, and index structures.
