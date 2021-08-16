@@ -55,7 +55,7 @@ What if we want to group the days of week into two new custom aggregates, effect
 4. We can now check whether Monday is still the start of the week by simply re-running the same query:
 
     ```
-    <copy>SSELECT to_char(date'2018-01-01', 'd') day_number
+    <copy>SELECT to_char(date'2018-01-01', 'd') day_number
     FROM dual;</copy>
     ```
 
