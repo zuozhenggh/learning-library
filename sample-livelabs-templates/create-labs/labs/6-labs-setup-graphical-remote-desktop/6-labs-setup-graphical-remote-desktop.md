@@ -1,8 +1,7 @@
 # Setup Graphical Remote Desktop
 
 ## Introduction
-This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior
-to capturing the custom image.
+This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior to capturing the custom image.
 
 ### Objectives
 - Deploy NoVNC Remote Desktop
@@ -14,10 +13,13 @@ to capturing the custom image.
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
+- An Oracle Enterprise Linux 7 (OEL) that meets requirement for marketplace publishing
 
 ## Task 1: Deploy noVNC
-1.  As root, create script */tmp/set-os-user.sh* to perform the first set of tasks.
+1.  As root, download and run the latest setup script. You will be prompted for the following two inputs:
+
+    - *Estimated time in minutes* for initial processes to fully start after instance boot up. This will be used to delay noVNC startup and prevent situations where workshop attendees may initially be unable to access noVNC until all dependent services on the instance are started. *Default: 5 minutes*
+    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
 
     ```
     <copy>
@@ -28,329 +30,28 @@ This lab assumes you have:
 
     ```
     <copy>
-    cat > /tmp/set-os-user.sh <<EOF
-    #!/bin/bash
-    echo ""
-    echo "Your input is required!"
-    echo ""
-    read -p 'Press *ENTER* to Accept *oracle* as the OS user to configure for remote desktop access or type in another valid user. If no input is provided *oracle* is assumed: ' appuser
-
-    appuser=\${appuser:-oracle}
-
-    getent passwd \$appuser > /dev/null
-
-    if [ $? -eq 0 ]; then
-      if [[ \${appuser} == root ]]; then
-         echo ""
-         echo "***ERROR****"
-         echo "-- Not allowed for root. -- VNC must be on a non-root account. e.g oracle. Please start over and enter a valid non-root OS user when prompted"
-         echo ""
-         exit 20
-      fi
-       echo \$appuser >/tmp/.appuser
-    else
-        echo ""
-        echo "***ERROR****"
-        echo "-- Invalid OS user. -- Please start over and enter a valid non-root OS user when prompted"
-        echo ""
-    fi
-    EOF
-    chmod +x /tmp/set-os-user.sh
+    cd /tmp
+    rm -rf setup-novnc-livelabs*
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip
+    unzip -o setup-novnc-livelabs.zip
+    chmod +x setup-novnc-livelabs.sh
+    ./setup-novnc-livelabs.sh
+    pwd
 
     </copy>
     ```
 
-2.  Run */tmp/set-os-user.sh* to set the OS user to be configured for remote desktop access. The default user is *oracle*.
+2. Start VNC Server using *systemctl*
 
     ```
     <copy>
-    /tmp/set-os-user.sh
-    </copy>
-    ```
-
-3. Create script */tmp/novnc-1.sh* to perform the first set of tasks.
-
-    ```
-    <copy>
-    export appuser=$(cat /tmp/.appuser)
-    cat > /tmp/novnc-1.sh <<EOF
-    #!/bin/bash
-
-    if [[ -z "\${appuser}" ]]; then
-      echo "A valid OS user must be provided. e.g. oracle "
-      exit 10
-      if [[ \${appuser} == root ]]; then
-        echo "Not allowed for root. VNC must be on non root account. e.g oracle"
-        exit 20
-      fi
-    fi
-
-    echo "Proceeding with configuration for OS user \$appuser"
-
-    ll_config_base=/home/\${appuser}/.livelabs
-    epel_cfg=/etc/yum.repos.d/oracle-epel-ol7.repo
-    mkdir -p "\${ll_config_base}"
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2Pvux7VWE_Cx0v66TohxVWL7KXv2uFNEzw0JYtfMGCcFWDxrY7pHkS6L7-Bcn5on/n/natdsecurity/b/misc/o/livelabs.ico -O "\${ll_config_base}"/livelabs.ico
-    chown -R \${appuser} "\${ll_config_base}"
-
-    if [[ -f "\${epel_cfg}" ]]; then
-      sed -i -e 's|enabled=.*$|enabled=1|g' "\${epel_cfg}"
-    else
-      cat > "\${epel_cfg}" <<EPEL
-    [ol7_developer_EPEL]
-    name=Oracle Linux \$releasever EPEL Packages for Development (\$basearch)
-    baseurl=https://yum\$ociregion.\$ocidomain/repo/OracleLinux/OL7/developer_EPEL/\$basearch/
-    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-    gpgcheck=1
-    enabled=1
-    EPEL
-
-    fi
-
-    echo "Updating packages ..."
-    yum -y update
-
-    echo "Installing X-Server required packages ..."
-    yum -y groupinstall "Server with GUI"
-
-    echo "Installing other required packages ..."
-    yum -y install \
-    tigervnc-server \
-    numpy \
-    mailcap
-
-    yum -y localinstall \
-    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/novnc-1.1.0-6.el7.noarch.rpm \
-    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/python2-websockify-0.8.0-13.el7.noarch.rpm \
-    https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-
-    echo "Updating VNC Service ..."
-    cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_\${appuser}@:1.service
-    sed -i "s/<USER>/\${appuser}/g" /etc/systemd/system/vncserver_\${appuser}@:1.service
-    sed -i "s/After=syslog.target network.target/After=syslog.target network.target resetvncpwd.service cloud-final.service/g" /etc/systemd/system/vncserver_\${appuser}@:1.service
-
-    firewall-cmd --zone=public --permanent --add-service=vnc-server
-    firewall-cmd --zone=public --permanent --add-port=5901/tcp
-    firewall-cmd --permanent --add-port=6080/tcp
-
-    firewall-cmd  --reload
-
-    systemctl daemon-reload
-    systemctl enable vncserver_\${appuser}@:1.service
-    systemctl daemon-reload
-
-    EOF
-    cat >/usr/local/bin/resetvncpwd.sh <<EOF
-    #!/bin/bash
-    # Reset VNC password for user
-
-    mypasswd=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/vncpwd)
-
-    if [[ \${#mypasswd} -ne 10  ]]; then
-      echo "Required Random password string is missing from OCI metadata. No VNC password reset for user ${appuser} will be performed"
-      exit 30
-    else
-      echo \$mypasswd | vncpasswd -f >/home/${appuser}/.vnc/passwd
-      chmod 0600 /home/${appuser}/.vnc/passwd
-      echo "VNC password for user ${appuser} reset successfully"
-    fi
-    EOF
-    cat > /etc/systemd/system/websockify.service <<EOF
-    [Unit]
-    Description=Websockify Service
-    After=network.target cloud-final.service
-
-    [Service]
-    Type=simple
-    User=${appuser}
-    ExecStart=/bin/websockify --web=/usr/share/novnc/ --wrap-mode=respawn 6080 localhost:5901
-    Restart=on-abort
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-    cat > /etc/systemd/system/resetvncpwd.service <<EOF
-    [Unit]
-    Description=ResetVncPwd Service
-    After=syslog.target network.target
-
-    [Service]
-    Type=simple
-    ExecStart=/usr/local/bin/resetvncpwd.sh ${appuser}
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-
-    cat >> /etc/sudoers.d/90-cloud-init-users <<EOF
-
-    # User rules for ${appuser}
-    ${appuser} ALL=(ALL) NOPASSWD:ALL
-    EOF
-
-    cat >/usr/local/bin/livelabs-get_started.sh <<EOF
-    #!/bin/bash
-    ################################################################################
-    #
-    # Name: "livelabs-get_started.sh"
-    #
-    # Description:
-    #   Script to Launch web browser window(s) preloaded with workshop guide and related
-    #   web application(s)
-    #
-    #  Pre-requisite: Google Chrome installed.
-    #
-    #  AUTHOR(S)
-    #  -------
-    #  Rene Fontcha, Oracle LiveLabs Platform Lead
-    #
-    #  MODIFIED        Date                 Comments
-    #  --------        ----------           -----------------------------------
-    #  Rene Fontcha    08/07/2021           Initial Creation
-    #
-    # Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
-    ###############################################################################
-
-    user_data_dir_base="/home/${appuser}/.livelabs"
-    desktop_guide_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_guide_url)
-    desktop_app1_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app1_url)
-    desktop_app2_url=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/desktop_app2_url)
-
-    #Drop existing sessions
-    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
-
-    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
-     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
-    fi
-
-    # "Launching the workshop guide"
-    if [[ \${desktop_guide_url:0:4} = 'http' ]]; then
-    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,912 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    fi
-
-    # "Launching Web App #1 page"
-    if [[ \${desktop_app1_url:0:4} = 'http' ]]; then
-    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble --ignore-certificate-errors --ignore-urlfetcher-cert-requests >/dev/null 2>&1 &
-    fi
-
-    # "Launching Web App #2 page"
-    if [[ \${desktop_app2_url:0:4} = 'http' ]]; then
-    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble --ignore-certificate-errors --ignore-urlfetcher-cert-requests >/dev/null 2>&1 &
-    fi
-    EOF
-
-    cat >/usr/share/applications/livelabs-get_started.desktop <<EOF
-    [Desktop Entry]
-    Version=1.0
-    Encoding=UTF-8
-    GenericName=Get Started
-    Name=Get Started with your Workshop
-    Comment=Launch Apps and Workshop Guide
-    Exec=/usr/local/bin/livelabs-get_started.sh
-    StartupNotify=true
-    Terminal=false
-    Icon=/home/${appuser}/.livelabs/livelabs.ico
-    Type=Application
-    Categories=Network;WebBrowser;
-    MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
-    EOF
-
-    chmod +x /usr/local/bin/livelabs-get_started.sh
-    chmod +x /usr/local/bin/resetvncpwd.sh
-    chmod +x /tmp/novnc-*.sh
-    </copy>
-    ```
-
-4. Create script */tmp/novnc-2.sh* to perform the second set of tasks.
-
-    ```
-    <copy>
-    cat > /tmp/novnc-2.sh <<EOF
-    #!/bin/bash
-
-    #Enable and Start services
-
-    systemctl daemon-reload
-    systemctl enable websockify.service
-    systemctl start websockify.service
-    systemctl enable resetvncpwd.service
-    systemctl start resetvncpwd.service
-
-    echo "noVNC has been successfully deployed on this host. Open the browser and navigate to the URL below to validate"
-    echo ""
-    echo "#================================================="
-    echo "#"
-    echo "# http://`curl -s ident.me`:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true"      
-    echo "#================================================="
-    echo ""
-    EOF
-    chmod +x /tmp/novnc-*.sh
-    </copy>
-    ```
-
-    **Notes:** If the URL fails to load, verify that your VCN contains an *ingress* rule for port *6080*
-
-5. Run script *novnc-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
-
-    ```
-    <copy>
-    /tmp/novnc-1.sh
-    </copy>
-    ```
-
-6.  Set password for VNC user.
-
-    ```
-    <copy>
-    vncpasswd ${appuser}
-    </copy>
-    ```
-
-7. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
-
-    ```
-    <copy>
-    LiveLabs.Rocks_99
-    </copy>
-    ```
-
-8. Su over to the VNC user account and enforce the password.  when prompted
-
-    ```
-    <copy>
-    sudo su - ${appuser}
-    rm -rf $HOME/.vnc
-    vncserver
-    </copy>
-    ```
-
-9. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
-
-    ```
-    <copy>
-    LiveLabs.Rocks_99
-    </copy>
-    ```
-
-10. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
-
-    ```
-    <copy>
-    vncserver -kill :1
-    exit
-    </copy>
-    ```
-
-11. Start VNC Server using *systemctl*
-
-    ```
-    <copy>
+    appuser=$(cat /tmp/.appuser)
     systemctl start vncserver_${appuser}@:1.service
     systemctl status vncserver_${appuser}@:1.service
     </copy>
     ```
 
-12. Run script *novnc-2.sh* to finalize
+3. Run script *novnc-2.sh* to finalize
 
     ```
     <copy>
@@ -358,12 +59,14 @@ This lab assumes you have:
     </copy>
     ```
 
-13. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+4. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>
     rm -rf /tmp/novnc-*.sh
     rm -rf /tmp/set-os-user.sh
+    rm -rf /tmp/setup-novnc-livelabs.sh
+
     </copy>
     ```
 
@@ -396,7 +99,6 @@ For ease of access to desktop applications provided on the instance and needed t
 6. Repeat steps above to add *Google Chrome* browser and any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
 
     ![](./images/create-shortcut-6.png " ")
-
 
 ## Task 3: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
@@ -620,13 +322,15 @@ Update your Terraform/ORM stack with the tasks below to enable VNC password rese
     provider "random" {}
     </copy>
     ```
-2. Add the following variables to *variables.tf*.
+2. Add the following variables to *variables.tf* and *schema.yaml*.
 
     - `desktop_guide_url`
     - `desktop_app1_url`
     - `desktop_app2_url`
 
     The example below is from the *DB Security - Key Vault* workshop
+
+    - variables.tf
 
     ```
     <copy>
@@ -643,6 +347,38 @@ Update your Terraform/ORM stack with the tasks below to enable VNC password rese
     }
     </copy>
     ```
+
+    - schema.yaml
+
+    ```
+    variableGroups:
+      - title: General Configuration
+        visible: false
+        variables:
+        - desktop_guide_url
+        - desktop_app1_url
+        - desktop_app2_url
+
+    desktop_guide_url:
+      type: text
+      required: true
+      title: "Workshop Guide"
+      description: "Workshop Guide on noVNC Desktop"
+
+    desktop_app1_url:
+      type: text
+      required: false
+      title: "Application URL 1"
+      description: "Application URL 1 on noVNC Desktop"
+
+    desktop_app2_url:
+      type: text
+      required: false
+      title: "Application URL 2"
+      description: "Application URL 2 on noVNC Desktop"
+      </copy>
+      ```
+
 3. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
 
     ```

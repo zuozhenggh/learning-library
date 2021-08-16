@@ -33,9 +33,9 @@ In this lab, you will:
 * 2. Login as root and place the MV2ADB rpm file on /tmp path and install the rpm
 
       ```
-     [root@pscs92dmo-lnxdb-2 tmp]# rpm -i mv2adb-2.0.1-114.el7.x86_64.rpm
+     <copy>[root@pscs92dmo-lnxdb-2 tmp]# rpm -i mv2adb-2.0.1-114.el7.x86_64.rpm
      warning: mv2adb-2.0.1-114.el7.x86_64.rpm: Header V4 RSA/SHA1 Signature, key ID 939112d6: NOKEY
-     mv2adb-2.0.1.114 binary has been installed on /opt/mv2adb succesfully!
+     mv2adb-2.0.1.114 binary has been installed on /opt/mv2adb succesfully! </copy>
       ```
 
 
@@ -76,11 +76,10 @@ In this lab, you will:
 
 You may now **proceed to the next lab.**
 
-## Acknowledgments
+## Acknowledgements
 * **Authors** - Deepak Kumar M, PeopleSoft Architect
 * **Contributors** - Deepak Kumar M, PeopleSoft Architect
 * **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, Aug 2021
-
 
 
 ## Need Help?

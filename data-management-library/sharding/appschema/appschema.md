@@ -18,9 +18,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -28,7 +26,7 @@ This lab assumes you have:
 ## Task 1: Application Schema and Code Snippet
 
 1. User makes a valid http request to server using a rest call from browser.
-   
+
 2. Application validates the route and map it to a proper controller as shown below:
 
     ```
@@ -89,11 +87,11 @@ dbService.getProductByKey(item) – calling model layer function with “item”
 
 In Oracle Sharding, database query and DML requests are routed to the shards in two main ways, depending on whether a sharding key is supplied with the request. These two routing methods are called **proxy routing** and **direct routing.**
 
-**Proxy Routing:** Queries that need data from multiple shards, and queries that do not specify a sharding key, cannot be routed directly by the application. Those queries require a proxy to route requests between the application and the shards. Proxy routing is handled by the shard catalog query coordinator. 
+**Proxy Routing:** Queries that need data from multiple shards, and queries that do not specify a sharding key, cannot be routed directly by the application. Those queries require a proxy to route requests between the application and the shards. Proxy routing is handled by the shard catalog query coordinator.
 
 Example: Database connection details:
 
-			module.exports = 
+			module.exports =
 			{
                sharding: {
       			  user: 'SHARDUSERTEST',
