@@ -12,7 +12,7 @@ You can find more details at [Oracle Sharding on Docker](https://github.com/orac
 
  ![](./images/topology.jpg " ")  
 
-As shown in the diagram above, the sharded database is deployed as multiple containers all running within the same Compute VM. 
+As shown in the diagram above, the sharded database is deployed as multiple containers all running within the same Compute VM.
 
 
 ### Objectives
@@ -23,9 +23,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -41,7 +39,7 @@ This lab assumes you have:
     </copy>
     ```
 
-     ![](./images/containers.jpg " ") 
+     ![](./images/containers.jpg " ")
 
 ## Task 2: Connect to Shard director
 
@@ -64,8 +62,8 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/docker.jpg " ") 
-    
+    ![](./images/docker.jpg " ")
+
 2. Verify sharding topology using the  **CONFIG** command.
 
     ```
@@ -74,7 +72,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/config.jpg " ") 
+    ![](./images/config.jpg " ")
 
 3. Lists all of the database shards and the chunks that they contain.
 
@@ -84,7 +82,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/chunks.jpg " ") 
+    ![](./images/chunks.jpg " ")
 
 4. Display information about all table families in the sharded database.
 
@@ -94,7 +92,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/tablefamily.jpg " ") 
+    ![](./images/tablefamily.jpg " ")
 
 5. Show all the services in the user's Global Data Services pool.
 
@@ -104,7 +102,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/service.jpg " ") 
+    ![](./images/service.jpg " ")
 
 6. Check  for DDL statements execution status.
 
@@ -114,7 +112,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/showddl.jpg " ") 
+    ![](./images/showddl.jpg " ")
 
 7. Check list of CDBs in the catalog.
 
@@ -123,17 +121,17 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     gdsctl config cdb
     </copy>
     ```
-    ![](./images/cdb.jpg " ") 
+    ![](./images/cdb.jpg " ")
 
 ## Task 3: Connect to Catalog
 
 **Shard Catalog:** The shard catalog is a special-purpose Oracle Database that is a persistent store for sharded database configuration data and plays a key role in centralized management of a sharded database. All configuration changes, such as adding and removing shards and global services, are initiated on the shard catalog. All DDLs in a sharded database are executed by connecting to the shard catalog.
 
-The shard catalog also contains the master copy of all duplicated tables in a sharded database. The shard catalog uses materialized views to automatically replicate changes to duplicated tables in all shards. The shard catalog database also acts as a query coordinator used to process multi-shard queries and queries that do not specify a sharding key. 
+The shard catalog also contains the master copy of all duplicated tables in a sharded database. The shard catalog uses materialized views to automatically replicate changes to duplicated tables in all shards. The shard catalog database also acts as a query coordinator used to process multi-shard queries and queries that do not specify a sharding key.
 
 A shard catalog serves following purposes.
 
--	Serves as an administrative server for entire shareded database
+-	Serves as an administrative server for entire sharded database
 -	Stores a gold copy of the database schema
 -	Manages multi-shard queries with a multi-shard query coordinator
 -	Stores a gold copy of duplicated table data
@@ -144,14 +142,14 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
     ```
     <copy>
-    sudo docker exec -i -t catalog /bin/bash 
+    sudo docker exec -i -t catalog /bin/bash
     </copy>
     ```
 
-    ![](./images/catalog.jpg " ") 
+    ![](./images/catalog.jpg " ")
 
 2. Connect to the shard schema in catalog server.
-   
+
     ```
     <copy>
     sqlplus SHARDUSERTEST/oracle@PCAT1PDB
@@ -163,7 +161,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     ```
     <copy>
     set pagesize 300;
-    set linesize 300; 
+    set linesize 300;
     col OBJECT_NAME for a30;
     col Sharding for a30;
     select OBJECT_NAME,SHARDED as Sharding from user_objects where SHARDED='Y' and OBJECT_NAME in ('PRODUCTS','REVIEWS','CUSTOMER','CART');
@@ -179,7 +177,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-   ![](./images/query.jpg " ") 
+   ![](./images/query.jpg " ")
 
 ## Task 4: Connect to Shard 1 Database
 
@@ -193,15 +191,15 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
     ```
     <copy>
-    sudo docker exec -i -t shard1 /bin/bash 
+    sudo docker exec -i -t shard1 /bin/bash
     </copy>
     ```
 
 2. Connect to the shard schema in one of the shard database.
-   
+
     ```
     <copy>
-    sqlplus SHARDUSERTEST/oracle@PORCL1PDB 
+    sqlplus SHARDUSERTEST/oracle@PORCL1PDB
     </copy>
     ```
 
@@ -210,7 +208,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     ```
     <copy>
    set pagesize 300;
-   set linesize 300; 
+   set linesize 300;
    col OBJECT_NAME for a30;
    col Sharding for a30;
    select OBJECT_NAME,SHARDED as Sharding from user_objects where SHARDED='Y' and OBJECT_NAME in ('PRODUCTS','REVIEWS','CUSTOMER','CART');
@@ -226,7 +224,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/query1.jpg " ") 
+    ![](./images/query1.jpg " ")
 
    You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb, porcl3cdb\_porcl3pdb).
 
@@ -239,7 +237,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 **Core Components of the Oracle Sharding Architecture**
 
 1. **Partitions, Tablespaces and Chunks:** Distribution of partitions across shards is achieved by creating partitions in tablespaces that reside on different shards.
-   
+
 2. **Tablespace Sets:** Oracle Sharding creates and manages tablespaces as a unit called a TABLESPACE SET.
 
 3. **Sharding Methods:** The following topics discuss sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
@@ -251,11 +249,11 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 **Oracle Sharding Components**
 
 1. **Shard Director:** Shard directors are network listeners that enable high performance connection routing based on a sharding key.
-   
+
 2. **Global Service:** A global service is a database service that is use to access data in a sharded database.
-   
+
 3. **Shard Catalog:** A shard catalog is an Oracle Database that supports automated shard deployment, centralized management of a sharded database, and multi-shard queries.
-   
+
 4. **Sharded Database and Shards:** A sharded database is a collection of shards.
 
 
@@ -279,11 +277,11 @@ Click [here] (https://github.com/alexkovuru/Oracle-Shard-Schema-Design/blob/main
 The following topics discuss sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
 
 - **System-Managed Sharding:** System-managed sharding is a sharding method which does not require the user to specify mapping of data to shards. Data is automatically distributed across shards using partitioning by consistent hash. The partitioning algorithm evenly and randomly distributes data across shards.
-  
+
 - **User-Defined Sharding:** User-defined sharding lets you explicitly specify the mapping of data to individual shards. It is used when, because of performance, regulatory, or other reasons, certain data needs to be stored on a particular shard, and the administrator needs to have full control over moving data between shards.
-  
+
 - **Composite Sharding:** The composite sharding method allows you to create multiple shardspaces for different subsets of data in a table partitioned by consistent hash. A shardspace is set of shards that store data that corresponds to a range or list of key values.
-  
+
 - **Using Subpartitions with Sharding:** Because Oracle Sharding is based on table partitioning, all of the subpartitioning methods provided by Oracle Database are also supported for sharding.
 
 In this demonstration, we choose the **system-managed sharding.**
