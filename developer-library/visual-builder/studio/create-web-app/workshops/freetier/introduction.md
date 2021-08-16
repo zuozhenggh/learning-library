@@ -2,13 +2,13 @@
 
 ## About this Workshop
 
-This workshop shows how you can use Oracle Visual Builder Studio to create web apps and manage your work in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for  users — all within a short period of time.
+This workshop shows how you can create a web app with Oracle Visual Builder Studio in a collaborative team environment. You'll see how easy it is to design a web app, manage its changes as part of a Git repository, and seamlessly deploy it for users — all within a short period of time.
 
-Oracle Visual Builder Studio—aka VB Studio—is a development platform that helps your team plan and manage your application's lifecycle, right from design and develop through test and deploy. A rich visual designer lets you drag and drop UI components to create web apps, progressive web apps, and on-device mobile apps. While this visual development approach lends itself to low-code developers, experienced programmers always have access to the underlying source code.
+Oracle Visual Builder Studio—aka VB Studio—is a development platform that helps your team plan and manage your application's lifecycle, from design and develop right through test and deploy. A rich visual designer lets you drag and drop UI components to create web apps, progressive web apps, and on-device mobile apps. While this visual development approach lends itself to low-code developers, experienced programmers always have access to the underlying source code.
 
-Integrated Git repositories enable a collaborative environment to share and version code; Agile dashboards and issue tracking systems help teams track progress; and automated builds and pipelines support continuous integration and delivery. A separate instance of Oracle Visual Builder provides easy publishing and database options when you’re ready to host your app. All this and more make VB Studio a complete solution to simplify application development and accelerate time to market.
+Integrated Git repositories enable a collaborative environment to share and version code; Agile dashboards and issue tracking systems help teams track progress; and automated builds support continuous integration and delivery pipelines. A separate instance of Oracle Visual Builder provides easy publishing and database options when you’re ready to host your app.
 
-Take a look at this video to learn more, or just dive right into the labs.
+All this and more make VB Studio a complete solution to simplify application development and accelerate time to market. Take a look at this video to learn more, or just dive right into the labs.
   [](youtube:pMmrNIypI7c)
 
 Estimated Workshop Time: 1 hour 55 minutes

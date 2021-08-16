@@ -7,10 +7,10 @@ This lab walks you through the process of provisioning a Visual Builder Studio i
 Estimated Lab Time: 20 minutes
 
 ### Background
-If you just created a new Cloud account following the instructions in Getting Started, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder and Visual Builder Studio. (It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show.) If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
+If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create an instance of Visual Builder and Visual Builder Studio. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
 ## **Task 1**: Create an Instance of Visual Builder
-Provision a service instance of Visual Builder to deploy and host apps created in Visual Builder Studio. The Visual Builder instance serves as the runtime environment for the web app that you will create in Visual Builder Studio.
+Provision a service instance of Visual Builder to host apps created in Visual Builder Studio. The Visual Builder instance serves as the runtime environment for the web app that you will create in Visual Builder Studio. You must provision the Visual Builder instance first, so you have it available for selection when you create a project in Visual Builder Studio.
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
@@ -36,7 +36,7 @@ Provision a service instance of Visual Builder to deploy and host apps created i
    ![](./images/open.png)
 
 ## **Task 2:** Create an Instance of Visual Builder Studio
-Provision a service instance of Visual Builder Studio to build and deploy your web app. You can create only one Visual Builder Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing Visual Builder Studio instance in your account.
+Provision a service instance of Visual Builder Studio to develop and deploy your web app. You can create only one Visual Builder Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing Visual Builder Studio instance in your account.
 
 1. Navigate back to your Cloud Console and click the menu in the upper left corner, click **OCI Classic Services**, then select **Developer**.
 
@@ -61,11 +61,11 @@ Provision a service instance of Visual Builder Studio to build and deploy your w
    The Visual Builder Studio console opens in a new browser tab. When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
    ![](./images/vbs_home.png)
 
-   You are on the Organization page in the Projects tab, but before you can create a project, you'll need to connect your VB Studio instance to an OCI account.
+   You are on the Organization page in the Projects tab, but before you can create a project, you'll need to connect the VB Studio instance to an OCI account in order to access resources.
 
 ## **Task 3:** Set Up the OCI Account
 
-To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up the OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
+To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up your OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
 
 1. Create a separate compartment to host VB Studio resources:
 
