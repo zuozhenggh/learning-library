@@ -23,7 +23,7 @@ In this lab, you will:
 * Login as Oracle user and connect to the sqlplus prompt by entering the below SQL command
 
     ```
-    [oracle@pscs92dmo-lnxdb-2 ~] sqlplus / as sysdba
+    <copy>[oracle@pscs92dmo-lnxdb-2 ~] sqlplus / as sysdba
     SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 22 13:21:00 2021
     Version 19.10.0.0.0
     Copyright (c) 1982, 2020, Oracle. All rights reserved.
@@ -37,7 +37,7 @@ In this lab, you will:
     Session altered
 
     SQL> col owner format a20;
-    SQL> select owner, object_type, count(*) from all_objects where owner in ('PS','PEOPLE','SYSADM') group by owner, object_type order by 1,2;
+    SQL> select owner, object_type, count(*) from all_objects where owner in ('PS','PEOPLE','SYSADM') group by owner, object_type order by 1,2; </copy>
 
     ```
     Output of the above command from on-premise Peoplesoft database is below
@@ -50,7 +50,7 @@ In this lab, you will:
 * Login as root user to the source Peopleoft database system and connect to the ADB-S database and execute the below SQL commands to verify the count of Peoplesoft schema objects
 
     ```
-    [oracle@pscs92dmo-lnxdb-2 ~] sqlplus admin@psadb_high
+    <copy>[oracle@pscs92dmo-lnxdb-2 ~] sqlplus admin@psadb_high
     SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 22 13:21:00 2021
     Version 19.10.0.0.0
     Copyright (c) 1982, 2020, Oracle. All rights reserved.
@@ -62,7 +62,7 @@ In this lab, you will:
 
         
     SQL> col owner format a20;
-    SQL> select owner, object_type, count(*) from all_objects where owner in ('PS','PEOPLE','SYSADM') group by owner, object_type order by 1,2;
+    SQL> select owner, object_type, count(*) from all_objects where owner in ('PS','PEOPLE','SYSADM') group by owner, object_type order by 1,2; </copy>
 
     ```
     Output of the above command from an ADB-S Peoplesoft database is below

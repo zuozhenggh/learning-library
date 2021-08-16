@@ -20,7 +20,7 @@ In this lab, you will:
 Login to the on-premise PeopleSoft system as root and connect to the ADB-S database and excute the following SQL commands for post configuration of  the database after performimg the MV2ADB operation
 
    ```
-[root@pscs92dmo-lnxdb-2 conf]# sqlplus admin@psadb_high
+<copy>[root@pscs92dmo-lnxdb-2 conf]# sqlplus admin@psadb_high
 SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 22 13:21:00 2021
 Version 19.10.0.0.0
 Copyright (c) 1982, 2020, Oracle. All rights reserved.
@@ -60,7 +60,7 @@ SQL> select * from PS.PSDBOWNER;
 DBNAME OWNERID
 -------- --------
 PSADB SYSADM
-
+</copy>
    ```
 
 

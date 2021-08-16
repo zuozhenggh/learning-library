@@ -28,21 +28,21 @@ In this lab, you will:
     * Auth Token.
 
         ```
-        cd /opt/mv2adb
+        <copy>cd /opt/mv2adb
         [root@pscs92dmo-lnxdb-2 mv2adb]# ./mv2adb.bin encpass
         Please enter the password :
         Please re-enter the password :
         67980D06348183D4AF46A94E74859015
-        [root@pscs92dmo-lnxdb-2 mv2adb]#
+        [root@pscs92dmo-lnxdb-2 mv2adb]# </copy>
         ```
      * Create a directory on source database for the dump files to be placed during the mv2adb operation.
 
         ```
-      oracle@pscs92dmo-lnxdb-2 oracle]$ pwd
+      <copy>oracle@pscs92dmo-lnxdb-2 oracle]$ pwd
       /u01/app/oracle
       [oracle@pscs92dmo-lnxdb-2 oracle]$ mkdir db_backup
       [oracle@pscs92dmo-lnxdb-2 oracle]$ ls -ltr db_backup/
-      total 0
+      total 0 </copy>
         ```
      * Edit the configuration file under /opt/mv2adb/conf/ or add a new one with syntax “name.cfg”.A configuration file with name psftatp.cfg has been created and the file is edited with only the required fields for the one click MV2ADB run. Sample configuration file is posted  below for reference.The tablespaces filtered out earlier in **Lab 5 : Getting Tablespace information from On-premise PeopleSoft database** are remapped in the MV2ADB configuration file
 
@@ -56,18 +56,18 @@ In this lab, you will:
 * Download ADB schema advisor from this link [here](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2462677.1) and run the sql script using below command, a new schema created for this advisor on the source DB system.
    
      ```
-     sqlplus SYS AS SYSDBA @install_adb_advisor.sql <Advisor Schema> <Password>
+     <copy>sqlplus SYS AS SYSDBA @install_adb_advisor.sql <Advisor Schema> <Password> </copy>
 
      ```
 * Run ADB Advisor using the below command
     
      ```
-     [root@pscs92dmo-lnxdb-2 opt]# cd /opt/mv2adb
+     <copy>[root@pscs92dmo-lnxdb-2 opt]# cd /opt/mv2adb
      [root@pscs92dmo-lnxdb-2 mv2adb]# ls -ltr
      total 20844
      -rwxr-xr-x 1 root root 21338808 Sep 3 2020 mv2adb.bin
      drwxr-xr-x 2 root root 4096 Apr 22 07:45 conf
-     [root@pscs92dmo-lnxdb-2 mv2adb]# ./mv2adb.bin advisor -conf conf/psftatp.cfg
+     [root@pscs92dmo-lnxdb-2 mv2adb]# ./mv2adb.bin advisor -conf conf/psftatp.cfg </copy>
      ```
 
 * Analysing the output and count of objects from the ADB Advisor job.After a successful run, output of the job will be available under ‘/opt/mv2adb/out/log’ folder

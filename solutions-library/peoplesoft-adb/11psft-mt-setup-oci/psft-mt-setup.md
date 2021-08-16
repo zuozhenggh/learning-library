@@ -52,7 +52,7 @@ In this lab, you will:
     
     Create users,groups,directories
     ```
-    [opc@psadb home]$ sudo su -
+    <copy>[opc@psadb home]$ sudo su -
     [root@psadb etc]# groupadd -g 30004 oinstall
     [root@psadb etc]# groupadd -g 30002 psft
     [root@psadb etc]# groupadd -g 30003 appinst
@@ -68,7 +68,7 @@ In this lab, you will:
     drwxr-xr-x. 5 psadm3 appinst 4096 Apr 14 11:59 psadm3
     drwxr-xr-x. 3 oracle2 oinstall 4096 Apr 14 11:59 oracle2
     drwxr-xr-x. 8 psadm2 oinstall 4096 Apr 14 12:11 psadm2
-    
+    </copy>
 
     ```  
     Files Tar and transfer from on-premise Peoplesoft system to OCI compute system
@@ -76,7 +76,7 @@ In this lab, you will:
 
     Update the $HOME for PeopleSoft users to be in compatible to source.
     ```
-    [root@psadb pt]# ls -ltr
+    <copy>[root@psadb pt]# ls -ltr
     total 24
     drwxr-xr-x. 8 psadm1 oinstall 4096 Sep 16 2020 jdk
     drwxr-xr-x. 11 psadm3 appinst 4096 Apr 8 05:51 ps_app_home
@@ -85,6 +85,7 @@ In this lab, you will:
     drwxr-xr-x. 2 root root 4096 Apr 9 16:35 tools_client
     drwxrwxr-x. 10 psadm1 oinstall 4096 Apr 14 12:01 bea
     [root@psadb pt]#
+    </copy>
     ```
 
 
@@ -99,9 +100,10 @@ In this lab, you will:
 
       Tools Package (ZIP)
      ```
-     [root@psadb ~]#  yum install oracle-instantclient19.10-basic-19.10.0.0.0-1.x86_64.rpm –y
+     <copy>[root@psadb ~]#  yum install oracle-instantclient19.10-basic-19.10.0.0.0-1.x86_64.rpm –y
      [root@psadb ~]#  yum install oracle-instantclient19.10-sqlplus-19.10.0.0.0-1.x86_64.rpm -y
      [root@psadb ~]#  yum install oracle-instantclient19.10-tools-19.10.0.0.0-1.x86_64.rpm –y
+     </copy>
      ```
 * Update the environment variables on the OCI compute system
 
@@ -120,7 +122,7 @@ In this lab, you will:
 * Download the ADB wallet to the OCI PeopleSoft  Middle-Tier compute system and configure the TNS entries to reflect the change and test the connectivity.
 
     ```
-    [oracle2@psadb ~]$ tnsping PSADB
+    <copy>[oracle2@psadb ~]$ tnsping PSADB
     TNS Ping Utility for Linux: Version 12.1.0.2.0 - Production on 23-APR-2021 06:37:01
     Copyright (c) 1997, 2014, Oracle. All rights reserved.
     Used parameter files:
@@ -129,12 +131,12 @@ In this lab, you will:
     Attempting to contact (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=XXX)(host=XXXXXXX))(connect_data=(service_name=XXXXX))(security=(ssl_server_cert_dn=CN=XXXX,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US)))
     OK (60 msec)
 
-    
+    </copy>
     ```
 * Connecting and testing with ADMIN user and PeopleSoft schema SYSADM user
 
     ```
-    [oracle2@psadb ~]$ sqlplus admin@PSADB
+    <copy>[oracle2@psadb ~]$ sqlplus admin@PSADB
     SQL*Plus: Release 12.1.0.2.0 Production on Fri Apr 23 06:37:28 2021
     Copyright (c) 1982, 2014, Oracle. All rights reserved.
     Enter password:
@@ -153,6 +155,7 @@ In this lab, you will:
     Connected to:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
     SQL>
+    </copy>
     ```
 
 ## Task 5: Configure Peoplesoft Application domains

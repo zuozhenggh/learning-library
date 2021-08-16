@@ -23,7 +23,7 @@ In this lab, you will:
 Login to the on-premise PeopleSoft system as root and connect to the ADB-S database and excute the following SQL commands for preparing the database before performimg the MV2ADB operation
 
    ```
-[root@pscs92dmo-lnxdb-2 wallet]# sqlplus admin@psadb_high
+<copy>[root@pscs92dmo-lnxdb-2 wallet]# sqlplus admin@psadb_high
 SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 22 07:25:36 2021
 Version 19.10.0.0.0
 Copyright (c) 1982, 2020, Oracle. All rights reserved.
@@ -77,7 +77,7 @@ Grant succeeded.
 SQL> grant execute on DBMS_OUTPUT to PSADMIN;
 Grant succeeded.
 SQL> GRANT CREATE MATERIALIZED VIEW TO PSADMIN;
-Grant succeeded.
+Grant succeeded. </copy>
    ```
 
 

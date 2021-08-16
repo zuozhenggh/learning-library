@@ -23,13 +23,13 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
 * 1.The following SQL commands will provide the list of Permanent Tablespaces needed to map with ‘DATA’ Tablespace:
 
      ```
-     set heading off;
+     <copy>set heading off;
      set echo off;
      set pages 999;
      set long 90000;
      spool permanent_tablespace.txt;
      select TABLESPACE_NAME||':DATA' From DBA_TABLESPACES Where TABLESPACE_NAME NOT IN ('SYSTEM','SYSAUX','UNDO','UNDO_1') And CONTENTS <> 'TEMPORARY';
-     spool off;
+     spool off; </copy>
       ```
     
     ![](./images/tablespace1.jpg "")
@@ -37,13 +37,13 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
 * 2.The following SQL commands will provide the list of Temporary Tablespaces needed to map with ‘TEMP’ Tablespace:
 
      ```
-     set heading off;
+     <copy>set heading off;
      set echo off;
      set pages 999;
      set long 90000;
      spool temporary_tablespace.txt;
      select TABLESPACE_NAME||'TEMP' From DBA_TABLESPACES Where TABLESPACE_NAME NOT IN ('SYSTEM','SYSAUX','UNDO','UNDO_1') And CONTENTS = 'TEMPORARY';
-     spool off;
+     spool off; </copy>
       ```
 
     ![](./images/tablespace2.png "")
@@ -57,7 +57,7 @@ Using notepad or notepad++, do map each of all the list of existing tablespaces 
 
      
      
-     TLLARGE:DATA,TLWORK:DATA,WAAPP:DATA,PSGTT01:TEMP,PSTEMP:TEMP
+     <copy>TLLARGE:DATA,TLWORK:DATA,WAAPP:DATA,PSGTT01:TEMP,PSTEMP:TEMP</copy>
        
      
       

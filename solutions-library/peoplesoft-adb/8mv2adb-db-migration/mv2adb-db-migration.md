@@ -22,8 +22,8 @@ The migration script will export from your source databases, then import into yo
 1.  As root user on  source Peoplesoft on-premise database instance, run the script in AUTO mode.
   
     ```
-    cd /opt/mv2adb
-    ./mv2adb.bin auto -conf /opt/mv2adb/conf/DBNAME.mv2adb.cfg
+    <copy>cd /opt/mv2adb
+    ./mv2adb.bin auto -conf /opt/mv2adb/conf/DBNAME.mv2adb.cfg </copy>
     ```
     Below are screenshots from the mv2adb auto run:
 
