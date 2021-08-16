@@ -1,0 +1,1 @@
+At any point, you can go **Back** to the previous window or **Cancel** database creation. You can click **Help** to view more information on the current window.
