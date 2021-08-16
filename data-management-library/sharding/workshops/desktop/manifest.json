@@ -4,18 +4,13 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "This lab provides an overview of Oracle Sharding – Hyperscale Globally Distributed Database",
+      "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
       "filename": "../../intro/intro.md"
     },
     {
       "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
-    },
-    {
-      "title": "Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
       "title": "Initialize Environment",
