@@ -18,7 +18,7 @@ In this workshop you will create a `tasks` table, REST enabling it, and make the
 
 ![ORDS and APEX](./images/rest_arch.png)
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 15 minutes.
 
 Watch the video below for an overview of the Create Application and REST API lab
 [](youtube:3C-MJ6NvjnE)

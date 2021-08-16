@@ -10,7 +10,7 @@ You can find more details at [Oracle Sharding on Docker](https://github.com/orac
 
 *Estimated Lab Time*: 20 Minutes
 
- ![](./images/topology.JPG " ")  
+ ![](./images/topology.jpg " ")  
 
 As shown in the diagram above, the sharded database is deployed as multiple containers all running within the same Compute VM. 
 
@@ -41,7 +41,7 @@ This lab assumes you have:
     </copy>
     ```
 
-     ![](./images/containers.JPG " ") 
+     ![](./images/containers.jpg " ") 
 
 ## Task 2: Connect to Shard director
 
@@ -64,7 +64,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/docker.JPG " ") 
+    ![](./images/docker.jpg " ") 
     
 2. Verify sharding topology using the  **CONFIG** command.
 
@@ -74,7 +74,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/config.JPG " ") 
+    ![](./images/config.jpg " ") 
 
 3. Lists all of the database shards and the chunks that they contain.
 
@@ -84,7 +84,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/chunks.JPG " ") 
+    ![](./images/chunks.jpg " ") 
 
 4. Display information about all table families in the sharded database.
 
@@ -94,7 +94,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/tablefamily.JPG " ") 
+    ![](./images/tablefamily.jpg " ") 
 
 5. Show all the services in the user's Global Data Services pool.
 
@@ -104,7 +104,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/service.JPG " ") 
+    ![](./images/service.jpg " ") 
 
 6. Check  for DDL statements execution status.
 
@@ -114,7 +114,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/showddl.JPG " ") 
+    ![](./images/showddl.jpg " ") 
 
 7. Check list of CDBs in the catalog.
 
@@ -123,7 +123,7 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
     gdsctl config cdb
     </copy>
     ```
-    ![](./images/cdb.JPG " ") 
+    ![](./images/cdb.jpg " ") 
 
 ## Task 3: Connect to Catalog
 
@@ -148,7 +148,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/catalog.JPG " ") 
+    ![](./images/catalog.jpg " ") 
 
 2. Connect to the shard schema in catalog server.
    
@@ -179,7 +179,7 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-   ![](./images/query.JPG " ") 
+   ![](./images/query.jpg " ") 
 
 ## Task 4: Connect to Shard 1 Database
 
@@ -226,15 +226,15 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     </copy>
     ```
 
-    ![](./images/query1.JPG " ") 
+    ![](./images/query1.jpg " ") 
 
-   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb_porcl1pdb, porcl2cdb_porcl2pdb, porcl3cdb_porcl3pdb).
+   You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb, porcl3cdb\_porcl3pdb).
 
 ## **Appendix 1**: Sharding Overview & Architecture
 
 **Oracle Sharding** is a feature of Oracle Database that lets you automatically distribute and replicate data across a pool of Oracle databases that share no hardware or software. Oracle Sharding provides the best features and capabilities of mature RDBMS and NoSQL databases.
 
-![](./images/arch.JPG " ")  
+![](./images/arch.jpg " ")  
 
 **Core Components of the Oracle Sharding Architecture**
 
@@ -293,7 +293,6 @@ For more details see [Oracle sharding documentation] (https://docs.oracle.com/en
 Below are Sample sharded table DDLs:
 
  ```
-<copy>
     CREATE SHARDED TABLE "CUSTOMER_AUTH"
 	( "USER_ID" NUMBER NOT NULL ENABLE,
 	"EMAIL" VARCHAR2(200 BYTE) NOT NULL ENABLE,
@@ -301,18 +300,15 @@ Below are Sample sharded table DDLs:
 	PRIMARY KEY ("USER_ID")
 	)
     TABLESPACE SET TTTSP_SET_1   PARTITION BY CONSISTENT HASH (USER_ID) PARTITIONS AUTO;
-</copy>
 ```
 
 ```
-<copy>
     CREATE SHARDED TABLE "PRODUCTS"
        ( "SKU" VARCHAR2(255 BYTE) NOT NULL ENABLE,
          "JSON_TEXT" CLOB,
           CHECK ("JSON_TEXT" is json strict) ENABLE,
           PRIMARY KEY ("SKU")
       ) TABLESPACE SET TTTSP_SET_2 PARTITION BY CONSISTENT HASH (SKU) PARTITIONS AUTO;
-</copy>
  ```
 
 You may now [proceed to the next lab](#next).
