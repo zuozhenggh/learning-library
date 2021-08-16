@@ -27,31 +27,32 @@ Before you start, be sure that you have done the following:
 - Created SSH keys in Cloud Shell
 - Obtained and signed in to your workshop-installed compute instance. If not, see Lab 4- Obtain a Compute Image with Oracle Database 19c Installed
 
-## **STEP 1**: Enable ARCHIVELOG mode on CDB1 and CDB2
+## Task 1: Enable ARCHIVELOG mode on CDB1 and CDB2
 
 1. Open a terminal window.  
 
 2. Run the `enable_ARCHIVELOG.sh` script and enter CDB1 at the prompt to enable `ARCHIVELOG` mode on CDB1.
->The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
+The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
 
     ```
-    $ $HOME/labs/19cnf/enable_ARCHIVELOG.sh
+    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
     ORACLE_SID = [CDB1] ? CDB1
     ```
 
 3. Run the `enable_ARCHIVELOG.sh` script and enter CDB2 at the prompt to enable `ARCHIVELOG` mode on CDB2.
+
     ```
-    $ $HOME/labs/19cnf/enable_ARCHIVELOG.sh
+    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
     ORACLE_SID = [CDB1] ? CDB2
     ```
 
-## **STEP 2**: Verify that the listeners for CDB1 and CDB2 are started
+## Task 2: Verify that the listeners for CDB1 and CDB2 are started
 1. Enter listener control and check that the listeners are started for CDB1, PDB1 and CDB2.
 Look for 'status READY' for each service in the Service Summary.
     ```
-    $ lsnrctl
+    $ <copy>lsnrctl</copy>
 
-    LSNRCTL> status LISTCDB1
+    LSNRCTL> <copy>status LISTCDB1</copy>
     ```
     ```
     Services Summary...
@@ -66,8 +67,9 @@ Look for 'status READY' for each service in the Service Summary.
     The command completed successfully
     ```
     Check the status of listener for CDB2.
+
     ```
-    LSNCRTL> status LISTCDB2
+    LSNCRTL> <copy>status LISTCDB2</copy>
     ```
     ```
     Services Summary...
@@ -79,79 +81,90 @@ Look for 'status READY' for each service in the Service Summary.
     ```
 
 2. Start the listeners, if your listeners are not ready. Skip this step if your listeners are already started.
-    ```
-    LSNRCTL> start LISTCDB1
 
-    LSNRCTL> start LISTCDB2
+    ```
+    LSNRCTL> <copy>start LISTCDB1</copy>
+
+    LSNRCTL> <copy>start LISTCDB2</copy>
     ```
 
 3. Exit the listener control.
+
     ```
     LSNRCTL> exit
     ```
 
-## **STEP 3**: Verify that PDB1 has sample data before cloning
+## Task 3: Verify that PDB1 has sample data before cloning
 1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
+
     ```
-    $ . oraenv
+    $ <copy>. oraenv</copy>
     ORACLE_SID = [ORCL] ? CDB1
     ```
 
 2. Connect to the CDB1 using SQL*Plus.
+
     ```
-    $ sqlplus /as sysdba
+    $ <copy>sqlplus /as sysdba</copy>
     ```
 
 3. Open PDB1 to connect to it.
+
     ```
-    SQL> alter pluggable database PDB1 open;
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
 
     Pluggable database altered.
 
-    SQL> alter session set container = PDB1;
+    SQL> <copy>alter session set container = PDB1;</copy>
 
     Session altered.
     ```
 
 4. Verify that PDB1 contains the `HR.EMPLOYEES` table. After cloning PDB1 on CDB2, the new PDB should contain `HR.EMPLOYEES` as PDB1 did. We will check for this in later steps. This result should show 107.
+
     ```
-    SQL> SELECT count(*) FROM HR.EMPLOYEES;
+    SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
 
       COUNT(*)
     ----------
           107
     ```
-## **STEP 4**: Create a common user and grant it privileges to clone a database
+## Task 4: Create a common user and grant it privileges to clone a database
 1. Connect to CDB1 as `SYS`.
+
     ```
-    SQL> CONNECT sys/Ora4U_1234@CDB1 as sysdba
+    SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
     Connected.
     ```
 A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this step, we create user called c##remote_user, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
 
 2. Create a common user named c##remote_user in CDB1.
+
     ```
-    SQL> CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;
+    SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
     User created.
     ```
 
 3. Grant the user the necessary privileges for creating a new PDB.
+
     ```
-    SQL> GRANT create session, create pluggable database TO c##remote_user CONTAINER=ALL;
+    SQL> <copy>GRANT create session, create pluggable database TO c##remote_user CONTAINER=ALL;</copy>
     Grant succeeded.
     ```
 
 4. Quit SQL session.
+
     ```
     SQL> exit
     ```
 
-## **STEP 5**: Use DBCA to clone a remote PDB from a CDB
+## Task 5: Use DBCA to clone a remote PDB from a CDB
 >In this section, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.<
 
 1. Run the `-createPluggableDatabase` command in DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
+
     ```
-    $ dbca -silent \
+    $ <copy>dbca -silent \
     -createPluggableDatabase \
     -pdbName PDB2 \
     -sourceDB CDB2 \
@@ -161,7 +174,7 @@ A common user is a database user that has the same identity in the `root` contai
     -remoteDBSYSDBAUserName SYS \
     -remoteDBSYSDBAUserPassword Ora4U_1234 \
     -dbLinkUsername c##remote_user \
-    -dbLinkUserPassword Ora4U_1234
+    -dbLinkUserPassword Ora4U_1234</copy>
 
     Create pluggable database using remote clone operation
     100% complete
@@ -170,25 +183,29 @@ A common user is a database user that has the same identity in the `root` contai
     ```
 
 2. Review the cloning log.
+
     ```
-    $ cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB2/CDB2.log
+    $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB2/CDB2.log</copy>
     ```
 
-## **STEP 6**: Verify that PDB1 is cloned and that HR.EMPLOYEES exists in PDB2.
+## Task 6: Verify that PDB1 is cloned and that HR.EMPLOYEES exists in PDB2.
 1. Set the environment variable to CDB2. Enter CDB2 at the prompt.
+
     ```
-    $ . oraenv
+    $ <copy>. oraenv</copy>
     ORACLE_SID = [CDB1] ? CDB2
     ```
 
 2. Connect to SQL*Plus.
+
     ```
-    $ sqlplus / as sysdba
+    $ <copy>sqlplus / as sysdba</copy>
     ```
 
 2. Display the list of PDBs in CDB2 to verify that PDB2 exists.
+
     ```
-    SQL> show pdbs
+    SQL> <copy>show pdbs</copy>
 
     CON_ID CON_NAME                       OPEN MODE  RESTRICTED
     ------ ------------------------------ ---------- ----------
@@ -197,15 +214,17 @@ A common user is a database user that has the same identity in the `root` contai
     ```
 
 3. Change the session environment from CDB2 to PDB2.
+
     ```
-    SQL> alter session set container = PDB2;
+    SQL> <copy>alter session set container = PDB2;</copy>
 
     Session altered.
     ```
 
 4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us verify that PDB2 is a clone of PDB1 and its contents. This result should also show 107.
+
     ```
-    SQL> SELECT count(*) FROM HR.EMPLOYEES;
+    SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
 
     COUNT(*)
     ----------
@@ -213,33 +232,30 @@ A common user is a database user that has the same identity in the `root` contai
     ```
 
 5. Exit the session.
+
     ```
     SQL> exit
     ```
 
-## **STEP 7**: Reset your environment
+## Task 7: Reset your environment
 1. Delete PDB2.
+
     ```
-    $ $home/oracle/labs/19cnf/cleanup_PDBs.sh
+    $ <copy>$ORACLE_HOME/bin/dbca -silent -deletePluggableDatabase -sourceDB CDB2 -pdbName PDB2</copy>
     ```
 
-2. Reset CDB1 back to it's original state
-    ```
-    $ $home/oracle/labs/19cnf/recreate_CDB1.sh
-    ```
-
-## **STEP 8**: Disable ARCHIVELOG mode for CDB1 and CDB2.
+## Task 8: Disable ARCHIVELOG mode for CDB1 and CDB2.
 1. Run the `disable_ARCHIVELOG.sh` script and enter CDB1 at the prompt to disable `ARCHIVELOG` mode on CDB1.
 
     ```
-    $ $HOME/labs/19cnf/disable_ARCHIVELOG.sh
+    $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
     ORACLE_SID = [CDB1] ? CDB1
     ```
 
 2. Run the `disable_ARCHIVELOG.sh` script and enter CDB2 at the prompt to disable `ARCHIVELOG` mode on CDB2.
 
     ```
-    $ $HOME/labs/19cnf/disable_ARCHIVELOG.sh
+    $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
     ORACLE_SID = [CDB1] ? CDB2
     ```
 

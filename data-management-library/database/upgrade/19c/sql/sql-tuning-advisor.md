@@ -35,7 +35,7 @@ This lab assumes you have:
     - Lab: Environment Setup
 		- Lab: Initialize Environment
 
-## **STEP 1**: Generate a Tuning Task
+## Task 1: Generate a Tuning Task
 
 1. Execute the SQL Tuning Advisor script `sta_cc.sql` to create, execute and report a complete tuning task.
 

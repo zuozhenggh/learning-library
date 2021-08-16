@@ -23,7 +23,7 @@ In this lab you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * OCI Data Science service with dependencies (see previous lab)
 
-## **STEP 1:** Understanding the dataset and the architecture of the model
+## Task 1: Understanding the dataset and the architecture of the model
 
 1. Understanding the dataset
 
@@ -41,7 +41,7 @@ In this lab you will:
 
    ![NN Architecture](images/nnarchitecture.png)
 
-## **STEP 2:** Install additional Python library idx2numpy
+## Task 2: Install additional Python library idx2numpy
 
    In this lab we will require two Python library that by default are not installed in this Conda environment. We need `keras` to construct our model. And we need `idx2numpy` to convert the source images from IDX format to a native array format for our Neural Network. We need.
 
@@ -63,7 +63,7 @@ In this lab you will:
    </copy>
    ```
 
-## **STEP 3:** Downloading and unpacking the data
+## Task 3: Downloading and unpacking the data
 
 1. Still in the terminal, download the MNIST data
 
@@ -91,7 +91,7 @@ In this lab you will:
 
     ![MNIST files are now visible in the file explorer](images/mnist-in-explorer.png)
 
-## **STEP 4:** Data Access and Exploration
+## Task 4: Data Access and Exploration
 
 1. Start the Python notebook
 
@@ -209,7 +209,7 @@ In this lab you will:
 
   Indeed, we can see that this is a two.
 
-## **STEP 5:** Data Preparation
+## Task 5: Data Preparation
 
    The Neural Network that we want to build will have an input layer of 784 neurons. See also the architecture picture above. Each of the neurons will represent one pixel in the input image.
 
@@ -259,7 +259,7 @@ In this lab you will:
    </copy>
    ```
 
-## **STEP 6:** Model build and training
+## Task 6: Model build and training
 
 1. Doublecheck the shapes
 
@@ -317,7 +317,7 @@ In this lab you will:
     </copy>
     ```
 
-## **STEP 7:** Check model accuracy
+## Task 7: Check model accuracy
 
 1. Check the accuracy of the last epoch.
 

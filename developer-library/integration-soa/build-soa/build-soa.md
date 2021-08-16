@@ -37,7 +37,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**:  Create a New SOA Composite Application
+## Task 1:  Create a New SOA Composite Application
 
 Let's name the application `e2e-1201-composites` and the SOA project in JDeveloper, ValidatePayment.
 
@@ -72,7 +72,7 @@ To make sure of the templates, please follow the steps below:
 
 8. Click OK to close the Preferences window.
 
-## **STEP 2**:  Use a New Template to Create the ValidatePayment Composite.
+## Task 2:  Use a New Template to Create the ValidatePayment Composite.
 
 Create a new SOA application and project. There are various ways and shortcuts to do this, and in this case choose `File > New > Application...` from the menu.
 1. From the Categories tree, click on `General > Applications`.
@@ -112,7 +112,7 @@ You will see a SOA folder under the project root. This is where all SOA related 
 
 The composite.xml, which defines the structure of the composite, is located directly under the SOA folder. In previous releases, this file was just shown as composite.xml. This became confusing when several composite.xml files from different projects were open at the same time.
 
-## **STEP 3**:  Review the Various Components of the Composite.
+## Task 3:  Review the Various Components of the Composite.
 
 In SOA Suite 12c, the project name is displayed in the navigator and in the composite tab label. It is displayed as ValidatePayment here.
 
@@ -136,7 +136,7 @@ The External References swim lane contains the getpaymentInformation database ad
 
 6. On the left-side of swim lane, a  *`validatepaymentprocess_client_ep`* is the external client web service that input to the BPEL process.
 
-## **STEP 4**:  Add a Database Connection to Java DB
+## Task 4:  Add a Database Connection to Java DB
 
 The Java DB is an embedded database inside JDeveloper 12c. The embedded weblogic requires to be started prior to establishing connection to the embedded database). Otherwise, Java DB will not be available.
 
@@ -212,7 +212,7 @@ We don’t need an assign activity for the output variable as we will define an 
 
 18. Ensure to save everything before you continue.
 
-## **STEP 5**: Import a Custom Activity Template with an XSLT Map
+## Task 5: Import a Custom Activity Template with an XSLT Map
 
 This activity is to determine the payment status (Authorized or Denied), based on the daily limit and the total amount of order. Step 5 is to calculate payment status using an XSLT map (custom activity template)
 
@@ -334,7 +334,7 @@ The expected output is “Successful compilation: 0 errors, 0 warnings”
 
    ![](./images/template8.png " ")
 
-## **STEP 6**:  Deploy and Test the Composite and its Project.
+## Task 6:  Deploy and Test the Composite and its Project.
 The first design iteration is complete and you are now ready to deploy the composite. This deployment will take place on the embedded Weblogic service in JDeveloper.
 
 **IMPORTANT:** The server was started in *Lab: Initialize Environment* and should be RUNNING for this deployment to be successful. If your server is down for some reasons, please bring it back up before attempting deployment.
@@ -359,7 +359,7 @@ The server is stopped when you see [`IntegratedWebLogicServer` terminated]
 
    ![](./images/terminated-wl.png " ")
 
-## **STEP 7**: Optional - Use the Diagnostic Tool within JDeveloper
+## Task 7: Optional - Use the Diagnostic Tool within JDeveloper
 In SOA Suite 12c, there is facility to set breakpoints in the composite editor, BPEL process. You’re able to stop at breakpoints, look at the data, step into, step out and so on. In a BPEL process, you’re also able to change the value of a variable while debugging.
 
 1. Set breakpoints in the composite by right clicking on an interface and create a Request or Reply Breakpoint or both. For one-directional interfaces, you only get one option.
@@ -374,7 +374,7 @@ The breakpoints are little red icons with an arrow pointing in the direction of 
 
    [](youtube:Dw74uW06nWM)
 
-## **STEP 8**: Optional: Add a Composite Sensor PaymentStatus Application
+## Task 8: Optional: Add a Composite Sensor PaymentStatus Application
 
    ![](./images/sensor.png " ")
 

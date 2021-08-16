@@ -19,7 +19,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:**  Ensure Database Vault is enabled before uninstalling
+## Task 1:  Ensure Database Vault is enabled before uninstalling
 
 1. Execute the shell script to configure Database Vault at the CDB level.
 
@@ -145,7 +145,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Disable Database Vault at the PDB and CDB levels
+## Task 2: Disable Database Vault at the PDB and CDB levels
 
 1. Connect to `PDB21` as a user who has been granted the `DV_OWNER` or `DV_ADMIN` role, such as `C##SEC_ADMIN`.
 
@@ -307,7 +307,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 3:** Remove Database Vault metadata at the PDB and CDB levels
+## Task 3: Remove Database Vault metadata at the PDB and CDB levels
 
 1. Run the `dvremov.sql` script to remove Oracle Database Vault related metadata.
 

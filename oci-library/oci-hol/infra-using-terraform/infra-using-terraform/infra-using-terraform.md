@@ -17,7 +17,7 @@ Estimated Time: 30-45 minutes
 4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 5. [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
 
-## **Step 1**: Access OCI Cloud Shell
+## Task 1: Access OCI Cloud Shell
 
 1. From the OCI Console, click on the **cloud shell** icon as shown below. This should launch a cloud shell session for the user.
 
@@ -78,7 +78,7 @@ Estimated Time: 30-45 minutes
 
     ![](images/Terraform_026.png " ")
 
-## **Step 2**: Terraform configuration
+## Task 2: Terraform configuration
 
 1. Next, download the Terraform sample code. Enter the following command into the cloud shell.
 

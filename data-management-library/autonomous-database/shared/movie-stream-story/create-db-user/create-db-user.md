@@ -14,7 +14,7 @@ In this lab, you will:
 * Log in as the user
 * Launch SQL Worksheet
 
-## **Step 1**: Create a Database User
+## Task 1: Create a Database User
 
 When you create a new data warehouse, you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the "New User" wizard within the SQL tools.
 
@@ -22,19 +22,19 @@ For this workshop we need to create one new user.
 
 1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provisioning an ADW Instance" lab. In this example, the database is named "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
 
-    ![ALT text is not available for this image](images/2878884319.png)
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
 
 2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
 
-    ![ALT text is not available for this image](images/2878884336.png)
+    ![Log in dialog for Database Actions](images/2878884336.png " ")
 
 3. On the Database Actions home page, click the **Database Users** card.
 
-    ![ALT text is not available for this image](images/2878884369.png)
+    ![Database Users card of the Database Actions home page](images/2878884369.png " ")
 
 4.  You can see that your ADMIN user is listed as the current user.  On the right-hand side, click the **+ Create User** button.
 
-    ![ALT text is not available for this image](images/2878884398.png)
+    ![Create User button highlighted on the Database Users page](images/2878884398.png " ")
 
 5. The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
 
@@ -66,59 +66,100 @@ For this workshop we need to create one new user.
 - **Do not** toggle the **OML** button to **On**. We will select this and grant other roles in the next step.
 - Click **Create User** at the bottom of the form.
 
-    ![ALT text is not available for this image](images/create-user-dialog.png)
+    ![The Create User dialog](images/create-user-dialog.png " ")
 
 Now that you have created a user with several roles, let's see how easy it is to grant some additional roles.
 
-## **Step 2:** Update the User's Profile to Grant Additional Roles
+## Task 2: Update the User's Profile to Grant Additional Roles
 
-1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click the 3-dotted ellipsis symbol to the right of the MOVIESTREAM user's name, and select **Edit** from the menu.
+You learned how to use the Create User dialog to create a new user.  You can also create and modify users using SQL.  This is very useful when you don't have access to the user interface or you want to run scripts to create/alter many users.  Open the SQL worksheet as the ADMIN user to update the moviestream user you just created.
 
-    ![ALT text is not available for this image](images/edit-user.png)
+1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click **Database Actions** in the upper left corner of the page, to return to the Database Actions launch page.
 
-2. Click the **Granted Roles** tab at the top of the Edit User form and add the following roles under the **Granted** column: **CONSOLE\_DEVELOPER**, **DWROLE**, and **OML\_DEVELOPER**.
+    ![Database Users page showing your new MOVIESTREAM user](images/see-new-moviestream-user.png " ")
 
-    **Note:** You can use the *Filter by role* field to quickly find roles in this long list of roles. For example, filter by "OML".
+2.  In the Development section of the Database Actions page, click the **SQL** card to open a new SQL worksheet:
 
-    ![ALT text is not available for this image](images/2878884644.png)
-
-    Notice that two additional roles have already been automatically assigned: **CONNECT** and **RESOURCE**. Click **Apply Changes**. 
-
-## **Step 3:** Log In As the User
-
-Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
-
-1. At the bottom of the card for the MOVIESTREAM user, click the icon with the upward pointing diagonal arrow.
-
-    ![ALT text is not available for this image](images/2878885042.png)
-
-2. Enter the username MOVIESTREAM and the password you defined when you created this user.
-
-    ![ALT text is not available for this image](images/2878885088.png)
-
-3. This will launch the Database Actions home page.
-
-    ![ALT text is not available for this image](images/2878885105.png)
-
-
-## **Step 4:** Launch SQL Worksheet 
-
-In the next labs, you will use the SQL Worksheet application that is built in to the data warehouse environment. 
-
-1. In the **Development** section of the Database Actions page, click the **SQL** card to open a new SQL worksheet:
-
-    ![Click the SQL card.](images/3054194715.png)
+    ![Click the SQL card.](images/3054194715.png " ")
 
     This will open up a new window that should look something like the screenshot below. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click Next to take a tour through the informational boxes.
 
-    ![Screenshot of initial SQL Worksheet](images/Picture100-sql-worksheet.png)
+    ![Screenshot of initial SQL Worksheet](images/Picture100-sql-worksheet.png " ")
+
+
+3. In the SQL Worksheet, paste in this code and run it using the **Run Script** button:
+
+  ```
+    <copy>-- Uncomment the next 2 lines if you want to drop and recreate your user
+    -- drop user moviestream cascade;
+    -- create user moviestream identified by "YourPassword1234#";
+
+    -- Provide minimal tablespace usage.  Uncomment unlimited tablespace use if desired.
+    alter user moviestream quota 20G ON data;
+    -- grant unlimited tablespace to moviestream;
+
+    -- Grant roles/privileges to user
+    grant connect to moviestream;
+    grant dwrole to moviestream;
+    grant resource to moviestream;
+    grant oml_developer to moviestream;
+    grant graph_developer to moviestream;
+    grant console_developer to moviestream;
+    grant select on v$services to moviestream;
+    grant select on dba_rsrc_consumer_group_privs to moviestream;
+    grant execute on dbms_session to moviestream;
+
+    begin
+    ords_admin.enable_schema (
+        p_enabled               => TRUE,
+        p_schema                => '&db_user',
+        p_url_mapping_type      => 'BASE_PATH',
+        p_auto_rest_auth        => TRUE
+    );
+    commit;
+    end;
+    /</copy>
+    ```
+
+    **Note:** DWROLE includes CREATE ANALYTIC VIEW, CREATE ATTRIBUTE DIMENSION, ALTER SESSION, CREATE HIERARCHY, CREATE JOB, CREATE MINING MODEL, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, and READ,WRITE ON directory DATA\_PUMP\_DIR.
+
+    These commands limit the amount of data that a user can create. The commands also give the user all of the privileges required to work with the console, use machine learning and perform graph analyses.
+
+## Task 3: Log In As the User
+
+Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
+
+1. In the upper right corner of the page, click the drop-down menu for ADMIN, and click **Sign Out**.
+
+    ![Drop down menu to sign out](images/sign-out-from-admin.png " ")
+
+2. On the next screen, click **Sign in**.
+
+    ![Sign in dialog](images/click-sign-in.png " ")
+
+3. Enter the username MOVIESTREAM and the password you defined when you created this user.
+
+    ![Sign in dialog filled with username and password](images/2878885088.png " ")
+
+4. This will launch the Database Actions home page.
+
+    ![The Database Actions home page](images/2878885105.png " ")
+
+
+## Task 4: Launch SQL Worksheet 
+
+In the next labs, you will use the SQL Worksheet application that is built in to the data warehouse environment. 
+
+1. In the **Development** section of the Database Actions page, click the **SQL** card again to open a new SQL worksheet:
+
+    ![Click the SQL card.](images/3054194715.png " ")
 
 2. You don't have any tables yet, but let's run a query that selects the current user and today's date:
 
     ```
     <copy>select user, sysdate from dual;</copy>
     ```
-    ![Run the query to select current user and today's date.](images/query-user-and-date.png)
+    ![Run the query to select current user and today's date.](images/query-user-and-date.png " ")
 
     In the query results, you'll see MOVIESTREAM and today's date.  You've successfully run your first Autonomous Database query!
 

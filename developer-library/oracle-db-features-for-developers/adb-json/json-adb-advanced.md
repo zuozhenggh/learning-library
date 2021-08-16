@@ -21,13 +21,13 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Sales Histroy (SH)* sample schema that is provided by default with an Autonomous Database.
 
-## **Step 1**: Connect to ADB with SQL Developer Web
+## Task 1: Connect to ADB with SQL Developer Web
 
 1.  Open up your SQL Developer Web worksheet, which is connected to your Autonomous Database, from your database OCI Console as you did in [Lab 1](?lab=lab-1-provision-connect-autonomous#STEP3:ConnecttoyourADBwithSQLDeveloperWeb). Sign in, if necessary; here, we are using the **ADMIN** user.
 
     ![](./images/ClearSDW.png " " )
 
-## **Step 2**: Retrieve Sub-Regions Information In JSON Format
+## Task 2: Retrieve Sub-Regions Information In JSON Format
 
 1.  Using a cursor, and the query you like most, we can run a loop, to retrieve the sub-regions for every region in Spain. This procedure will store a JSON document in our table, with the sub-regions, for each region (19 documents).
 
@@ -89,7 +89,7 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
     Now we have the entire geographic division.
 
 
-## **Step 3**: Indexing
+## Task 3: Indexing
 
 1. Above, in Step 2, the *JSON\_TABLE* function unnests the JSON structure into rows with scalar column values. You can also use JSON\_TABLE to extract embedded JSON data from an array. The following JSON_TABLE example extracts every JSON object inside the 'geonames' array. Note the 'FORMAT JSON' expression for the 'geo' column. The expression '$.geonames[\*]' (known as a path expression) iterates over every item (\*) in the 'geonames' array. The column path expression '$' selects the entire item without further navigation. Run the following query which shows this behaviour.
 
@@ -213,7 +213,7 @@ For this lab we will use the *Sales Histroy (SH)* sample schema that is provided
       ![](./images/DomainIndexExplainPlan.png " ")
 
 
-## **Step 4**: JSON_DATAGUIDE - Discover information about the structure and content of JSON documents
+## Task 4: JSON_DATAGUIDE - Discover information about the structure and content of JSON documents
 
 The following shows the **JSON_DATAGUIDE**, a function that analyzes one or more JSON values and provides a schema - a structural summary of the data, the field names, how they are nested and their data type.
 
@@ -285,7 +285,7 @@ You can use a data guide:
 ![](./images/queryview.png " ")
 
 
-## **Step 5**: Retrieve Castles Information In JSON Format
+## Task 5: Retrieve Castles Information In JSON Format
 
   1. In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
@@ -376,7 +376,7 @@ You can use a data guide:
       This query should return 269 rows.
 
 
-## **Step 6**: Syntax simplifications querying JSON Data
+## Task 6: Syntax simplifications querying JSON Data
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -465,7 +465,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
     ![](./images/jsonArray.png " " )
 
 
-## **Step 7**: Updating a JSON Document
+## Task 7: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -599,7 +599,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list to modify the selected documents.
 
 
 
-## **Step 8**: JSON Materialized View Support
+## Task 8: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 

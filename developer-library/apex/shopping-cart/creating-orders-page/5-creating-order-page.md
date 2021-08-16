@@ -10,7 +10,7 @@ Estimated Lab Time: 10 minutes
 In this lab, you will:
 - Create a page to review the items that customer just bought.
 
-## **STEP 1**: Creating a Normal Page - Order Information
+## Task 1: Creating a Normal Page - Order Information
 Create a Normal Page to review the Order that customer has made.
 
 1. In the **App Builder**, click **Create Page**.
@@ -24,7 +24,7 @@ Create a Normal Page to review the Order that customer has made.
 4. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 5. Click **Finish**.
 
-## **STEP 2**: Adding a Region 
+## Task 2: Adding a Region 
 Add a region to the page to display order details.
 
 1. In the new page created, navigate to the **Gallery Menu**.
@@ -37,7 +37,7 @@ Add a region to the page to display order details.
         ![](images/template-options.png " ")
     - For Icon, enter **fa-heart**
 
-## **STEP 3**: Adding Items to the Page
+## Task 3: Adding Items to the Page
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right click on the region and click on **Create Page Item**.
     ![](images/create-item.png " ")
@@ -49,7 +49,7 @@ Add a region to the page to display order details.
 
     ![](images/order-item.png " ")    
     
-## **STEP 4**: Adding Static Content Region
+## Task 4: Adding Static Content Region
 Add a region to contain Order details and items.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
@@ -59,7 +59,7 @@ Add a region to contain Order details and items.
     - For Title - enter **Order: &P16_ORDER.**
     - For Type - select **Static Content**
 
-## **STEP 5**: Adding Order Details Region
+## Task 5: Adding Order Details Region
 Add a region to display Order details.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
@@ -100,7 +100,7 @@ Add a region to display Order details.
             </copy>
             ```
 
-## **STEP 6**: Adding Items Region
+## Task 6: Adding Items Region
 Add a region to display items in the order.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.

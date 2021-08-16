@@ -45,7 +45,7 @@ The first thing to realize about JSON is that it remains a simple text format, w
 
   ![](./images/json_intro.png " ")
 
-## **STEP 1**: Connect to SQL Developer Web
+## Task 1: Connect to SQL Developer Web
 
 In the previous section, the load script ran commands to grant the appjson user privileges and setup SQL Developer Web using Rest Services (ORDS).  See the appendix for more details on how to set up a user to connect with SQL Developer Web.
 
@@ -60,7 +60,7 @@ The password to all the schemas is *Oracle_4U*.
 4.  At the login screen, enter *appjson* and *Oracle_4U*.
   ![](./images/appjson-signin.png " ") 
 
-## **STEP 2**: Insert a record
+## Task 2: Insert a record
 
 1. Take a count of the rows in the JSON table
 
@@ -122,7 +122,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/json.png " ")
 
-## **STEP 3**: Update a Table
+## Task 3: Update a Table
 1. You can use Oracle SQL function json-mergepatch or PL/SQL object-type method json-mergepatch() to update specific portions of a JSON document. In both cases we provide a JSON Merge Patch document, which declaratively specifies the changes to make to a a specified JSON document. JSON Merge Patch is an IETF standard.    
 
 2. Copy the following update statement and substitute the ID you saved from the previous step in where it says `ID_copied_from_previous_step`. Run the statement.
@@ -142,7 +142,7 @@ The password to all the schemas is *Oracle_4U*.
 
     ![](./images/json_lab7_6.png " ")
 
-## **STEP 4**: Example Queries
+## Task 4: Example Queries
 1. Let's look at customers who ordered products from a specific location. The Oracle database allows a simple ‘dotted’ notation to be used to perform a limited set of operations on columns containing JSON. In order to use the dotted notation, a table alias must be assigned to the table in the FROM clause, and any reference to the JSON column must be prefixed with the assigned alias. All data is returned as VARCHAR2(4000).
 
     ```

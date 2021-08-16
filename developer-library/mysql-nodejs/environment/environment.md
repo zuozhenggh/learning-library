@@ -18,7 +18,7 @@ Estimated Lab Time: 25 minutes
 - Configure OCI Client and Fn
 
 
-## **STEP 1a:** Using OpenSSH from Command Line
+## Task 1a: Using OpenSSH from Command Line
 
 To access the system you need the private ssh key and the IP, which were created by
 Terraform and was shown on the **Application Information** tab in the 
@@ -38,7 +38,7 @@ If you stored the key in a file `ssh_private_key` and the IP of your instance is
     Warning: Permanently added '123.45.67.89' (ECDSA) to the list of known hosts.
     [opc@compute ~]$
 
-## **STEP 1b:** Using PuTTY on Windows
+## Task 1b: Using PuTTY on Windows
 
 [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) is a
 ssh client frequently used on Windows. To access the system you need 
@@ -64,7 +64,7 @@ username when asked.
 
   ![](images/putty_connect.png " ")
 
-## **STEP 2:** Use MySQL Shell to Access the MySQL Database Service Instance
+## Task 2: Use MySQL Shell to Access the MySQL Database Service Instance
 
 In the Terraform output you got an URL in the format `mysqlx://` which can be
 used with MySQL Shell. MySQL Shell is an interactive Shell, introduced with
@@ -115,7 +115,7 @@ You can explore the database as you like. You can switch back into
 **JavaScript mode** by typing `\js`, into **Python mode** using `\py`, 
 and when done quit using `\quit`.
 
-## **STEP 3:** Configure the OCI Client
+## Task 3: Configure the OCI Client
 
 Later we are going to deploy serverless functions using the `fn` tool. The `fn`
 tool requires access to OCI APIs for deploying the code.
@@ -211,7 +211,7 @@ Terraform setup:
 Using the `--help` option the OCI tool will provide context sensitive help
 about available APIs.
 
-## **STEP 4:** Configure fn Client for Oracle Functions
+## Task 4: Configure fn Client for Oracle Functions
 
 The application you are going to build, is a serverless application using
 Oracle Functions. Serverless also known as FaaS let's you run an microservice

@@ -23,7 +23,7 @@ To download the notebook version of this lab (without screenshots), click [lab3 
 
 [](include:import)
 
-## **Step 1**: Import Libraries
+## Task 1: Import Libraries
 
 1. Run the following script to import the `oml` package, and the python packages - Pandas, Numpy, and matplotlib:
 
@@ -39,7 +39,7 @@ To download the notebook version of this lab (without screenshots), click [lab3 
     pd.set_option('display.width', 1000)</copy>
     ```
 
-## **Step 2**: Work with Regression Using Generalized Liner Model (GLM)
+## Task 2: Work with Regression Using Generalized Liner Model (GLM)
 This step shows how to predict numerical values using multiple regression. Given demographic, purchase, and affinity card data for a set of customers, predict the number of years a customer remains at the same residence, as found in column `YRS_RESIDENCE` - a continuous variable. This example uses the Generalized Linear Model algorithm.
 
 >**Note:** All processing occurs inside Oracle Autonomous Database.
@@ -210,7 +210,7 @@ In the RES_DF table, the predicted values and the actual years of residence are 
 
     ![RMSE calculation](images/rmse_calculation.png "RMSE calculation")
 
-## **Step 3**: Work with Clustering Using K-Means
+## Task 3: Work with Clustering Using K-Means
 OML4Py supports clustering using several algorithms: k-Means, O-Cluster, and Expectation Maximization. In this lab, we illustrate how to identify natural clusters of customers using the CUSTOMERS dataset and the unsupervised learning K-Means algorithm. Note that data exploration, preparation, and machine learning run inside Oracle Autonomous Database.
 
 1. Run the following script to build a k-Means clustering model with 3 clusters. You do the following in this step:
@@ -317,7 +317,7 @@ The dispersion value is a measure of how compact or how spread out the data is w
     ```
     ![K-means clustering in a Scatter Plot](images/cluster_results_scatterplot.png "K-means clustering in a Scatter Plot")
 
-## **Step 4**: Work with Partitioned Models
+## Task 4: Work with Partitioned Models
 OML4Py enables automatically building an ensemble model comprised of multiple sub-models, one for each data partition. Sub-models exist and are used as one model, which results in simplified scoring using the top-level model only. The proper sub-model is chosen by the system based on partition value(s) in the row of data to be scored. Partitioned models achieve potentially better accuracy through multiple targeted models.
 
 In this lab, we build an Support Vector Machine (SVM) model to predict the number of years a customer resides at their residence but partitioned on customer gender. The model is then used to predict the target, then predict the target with prediction details.
@@ -420,7 +420,7 @@ Here, the data is materialized to table `TEST_DATA` so that it can be queried fr
 
       ![Scoring details](images/scoring_details.png "Scoring details")
 
-## **Step 5**: Rank Attribute Importance using Model Explainability
+## Task 5: Rank Attribute Importance using Model Explainability
 
 Machine Learning Explainability (MLX) is the process of explaining and interpreting machine learning models. The `oml.mlx` Python module supports the ability to help better understand a model's behavior and how it ranks predictors when making predictions. MLX currently provides model-agnostic explanations for classification and regression tasks where explanations treat the ML model as a black-box, instead of using properties from the model to guide the explanation.
 

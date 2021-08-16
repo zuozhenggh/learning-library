@@ -21,7 +21,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Add Network Security Group
+## Task 1: Add Network Security Group
 
 The following tasks are *optional* if a target autonomous database is already present.
 
@@ -45,7 +45,7 @@ The following tasks are *optional* if a target autonomous database is already pr
 
   ![](images/add-security-rules-nsg.png)
 
-## **STEP 2**: Create Target Autonomous Database
+## Task 2: Create Target Autonomous Database
 
 1. Now you can create the ADB instance. In the OCI Console Menu, go to **Oracle Database > Autonomous Transaction Processing**.
 

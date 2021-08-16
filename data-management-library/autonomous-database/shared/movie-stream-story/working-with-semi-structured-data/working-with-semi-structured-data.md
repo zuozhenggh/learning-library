@@ -14,6 +14,9 @@ Estimated time: 15 minutes
 
 - Learn How SQL's analytic functions can be used in queries that also contain JSON data
 
+### Prerequisites
+
+- This lab requires completion of these previous labs: Provision an ADB Instance, Create a Database User, Use Data Tools and Scripting to Load Data.
 
 ## What Is Semi-Structured Data?
 
@@ -25,7 +28,7 @@ Oracle takes a very different approach to managing these different types of data
 
 ### A Converged Database Model For Managing All Your Data
 
-The Autonomous Data Warehouse is based on  a converged database model that has native support for all modern data types and the latest development paradigms built into one product.  It supports spatial data for location awareness, JSON and XML for document store type content streams for IoT device integration, in-memory technologies for real-time analytics, and of course, traditional relational data. By providing support for all of these data types, the converged Autonomous Data Warehouse can run all sorts of workloads from analysis of event streams to discovery of relationships across domains to blockchain processing to time series analysis and machine learning. 
+The Autonomous Data Warehouse is based on  a converged database model that has native support for all modern data types and the latest development paradigms built into one product.  It supports spatial data for location awareness, JSON and XML for document store type content streams for IoT device integration, in-memory technologies for real-time analytics, and of course, traditional relational data. By providing support for all of these data types, the converged Autonomous Data Warehouse can run all sorts of workloads from analysis of event streams to discovery of relationships across domains to blockchain processing to time series analysis and machine learning.
 
 In this section of the workshop, you are going to work with some semi-structured data which is in a common format called **JSON**.
 
@@ -41,16 +44,94 @@ Oracle's SQL language contains specific keywords that help you process JSON data
 
 The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set contains a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of jobs, such as "producer", "director", "writer", along with the names of the individuals. An example of how this information is organized is shown below:
 
-![An example of data in JSON format](images/3038282398.png)
+![An example of data in JSON format](images/3038282398.png " ")
 
 This is in a format known as JSON and you can see that it is organized very differently from some of the other data that you have loaded into your new data warehouse. There is a single entry for "producer" but the corresponding key "names" actually has multiple values. This is referred to as an **array** - specifically a JSON array. Fortunately, the Autonomous Data Warehouse allows you to query this type of data (JSON arrays) using normal SQL as you will see below.
 
 Let's build a query for the marketing team that ranks each writer based on the amount of revenue for each film where they were involved, and look for writers who have suddenly had big hits in 2020 compared to other years. This would allow us to create promotion campaigns to bring attention to their earlier movies.
 
+## Task 1: Preparing The Data Warehouse Schema
 
-## STEP 1  - Loading JSON Movie Data
+If you have already completed the lab **Analyzing Movie Sales Data** then you can skip this step since this is a repetition of Step 1 in that lab. Jump straight to the next step, Step 2.
 
-In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported. 
+The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
+
+![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
+
+The main advantages of star schemas are that they:
+<ul>
+<li>Provide a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
+<li>Provides highly optimized performance for typical data warehouse queries.</li>
+</ul>
+
+
+One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter and year. Therefore we need to expand the current time dimension to include these additional levels.
+
+1. View the time dimension table.
+
+    ```
+    <copy>
+    SELECT
+    *  
+    FROM times;</copy>
+    ```
+
+**NOTE** The TIMES dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
+
+Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
+
+The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
+
+
+2. Creating a view that joins the GENRE, CUSTOMER and TIME dimension tables with the main fact table CUSTSALES.
+
+    ```
+    <copy>CREATE OR REPLACE VIEW vw_movie_sales_fact AS
+    SELECT
+    m.day_id,
+    t.day_name,
+    t.day_dow,
+    t.day_dom,
+    t.day_doy,
+    t.week_wom,
+    t.week_woy,
+    t.month_moy,
+    t.month_name,
+    t.month_aname,  
+    t.quarter_name,  
+    t.year_name,  
+    c.cust_id as customer_id,
+    c.state_province,
+    c.country,
+    c.continent,
+    g.name as genre,
+    m.app,
+    m.device,
+    m.os,
+    m.payment_method,
+    m.list_price,
+    m.discount_type,
+    m.discount_percent,
+    m.actual_price,
+    m.genre_id,
+    m.movie_id
+    FROM custsales m
+    INNER JOIN times t ON m.day_id = t.day_id
+    INNER JOIN customer c ON m.cust_id = c.cust_id
+    INNER JOIN genre g ON m.genre_id = g.genre_id;
+    </copy>
+    ```
+There are lots of different types of joins that can be used within a SQL query to combine rows from one table with rows in another table. Typical examples are:
+
+### A) INNER JOIN
+An inner join, which is sometimes called a simple join, is a join of two or more tables that returns only those rows that satisfy the join condition. In the example above, only rows in the sales fact table will be returned where a corresponding row for day existings in the time dimension table and a corresponding row exists in the customer dimension table and a corresponding row exists in the genre dimension table.
+
+### B) OUTER JOIN
+An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you wil typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next step.
+
+## Task 2: Loading JSON Movie Data
+
+In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 
 Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public Object Storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.
 
@@ -142,7 +223,7 @@ Although queries on external data will not be as fast as queries on database tab
 
 4. You should see a message "PL/SQL procedure successfully completed" in the script output window, something similar to the following:
 
-    ![Script output window showing message PL/SQL procedure successfully completed](images/sql-analytics-lab5-step1-substep2.png)
+    ![Script output window showing message PL/SQL procedure successfully completed](images/sql-analytics-lab5-step1-substep2.png " ")
 
     **Note:** The procedure completed very quickly (milliseconds), because we did not move any data from the Object Store into the data warehouse. The data is still sitting in the Object Store.
 
@@ -153,13 +234,13 @@ Although queries on external data will not be as fast as queries on database tab
     FROM json_movie_data_ext;</copy>
     ```
 
-6. which should return a result something like this:
+6. This should return a result something like this:
 
-    ![Result of querying external table](images/analytics-lab-2-step-1-substep-6.png)
+    ![Result of querying external table](images/analytics-lab-2-step-1-substep-6.png " ")
 
 7. If we now refresh the Navigator panel again, we should see the new table in the tree (**note** your navigation tree may look slightly different to the one shown below in terms of the number of tables shown). Click the arrow to the left of the name, **JSON\_MOVIE\_DATA\_EXT**, to show the list of columns in our table:
 
-    ![See the new table in the tree](images/3038282401.png)
+    ![See the new table in the tree](images/3038282401.png " ")
 
 8. You can see that our table contains only one column! Let's run a simple query to show the rows in the table:
 
@@ -167,11 +248,11 @@ Although queries on external data will not be as fast as queries on database tab
     <copy>select * from json_movie_data_ext;</copy>
     ```
 
-    ![Results of query showing the rows in the table](images/analytics-lab-2-step-1-substep-8.png)
+    ![Results of query showing the rows in the table](images/analytics-lab-2-step-1-substep-8.png " ")
 
-    As you can see, the data is shown in its native JSON format, i.e. there are no columns in the table for each identifier (movie_id, sku, list price, and so on). So how can we query this table if there is only one column? 
+    As you can see, the data is shown in its native JSON format, i.e. there are no columns in the table for each identifier (movie_id, sku, list price, and so on). So how can we query this table if there is only one column?
 
-## STEP 2 - A Simple Query Over JSON Data
+## Task 3: A Simple Query Over JSON Data
 
 1. As a first step, let's show you how to query  JSON data using SQL. We can use special notation within our SQL query to convert the content above into a more normal looking table containing columns and rows. This approach is known as Simple Dot Notation and it looks very similar to the way we have constructed previous queries. Here is our first query which you can run in your SQL Worksheet:
 
@@ -194,7 +275,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     - the column containing our json data - **doc**
 
-    - the name of the json attribute - **movie_id**, **title**, **budget** and **runtime** 
+    - the name of the json attribute - **movie_id**, **title**, **budget** and **runtime**
 
 3. Some of the attributes in our JSON data set contain multiple entries. For example, cast and crew contain lists of names. To include these attributes in our query, we simply tell the SQL engine to loop over and collect all the values. Here is an example of how to extract the list of cast members and the names of the crew that worked on each movie:
 
@@ -211,11 +292,11 @@ Although queries on external data will not be as fast as queries on database tab
 
 4. It will return the following output:
 
-    ![Query result of looping to get lists of multiple values](images/analytics-lab-2-step-2-substep-4.png)
+    ![Query result of looping to get lists of multiple values](images/analytics-lab-2-step-2-substep-4.png " ")
 
 Now let's try using some more advanced features that will allow us to convert the list of cast members and crew members into rows and columns of data. These can then be joined with our movie sales data, allowing us to combine unstructured movie JSON data with our structured movie sales data.
 
-## STEP 3 -  Simplifying JSON Queries
+## Task 4:  Simplifying JSON Queries
 
 Your Autonomous Data Warehouse includes a number of helper packages that can simplify access to your JSON data. The **JSON_TABLE** function can be used to automatically translate JSON data into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
 
@@ -259,7 +340,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
 3. This should return the following:
 
-    ![ALT text is not available for this image](images/analytics-lab-2-step-3-substep-3.png)
+    ![ALT text is not available for this image](images/analytics-lab-2-step-3-substep-3.png " ")
 
  **NOTE**: The number of records has increased compared with our source table (JSON\_MOVIE\_DATA\_EXT): 3,491 to 56,9427. The reason is that we have something called an "array" of data within the JSON document that contains the cast members and crew members associated with each movie. Essentially, this means that each movie has to be translated into multiple rows.
 
@@ -279,11 +360,11 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
 5. This should return 12 rows as follows, where you can see individual rows for each member of the cast, crew members and genre:
 
-    ![Query result showing columns of data containing arrays](images/sql-analytics-lab5-step3-substep5.png)
+    ![Query result showing columns of data containing arrays](images/sql-analytics-lab5-step3-substep5.png " ")
 
 We can now use this view as the launch point for doing more analysis!
 
-## STEP 4 -  Building A More Sophisticated JSON Query
+## Task 5:  Building A More Sophisticated JSON Query
 
 In this query, we are using the **JSON_TABLE** function again, to convert our JSON data into a more natural row-column resultset.
 
@@ -302,22 +383,11 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
 2. This should return the following results:
 
-    ![Query results showing directors for each movie](images/sql-analytics-lab5-step4-substep2.png)
+    ![Query results showing directors for each movie](images/sql-analytics-lab5-step4-substep2.png " ")
 
-## STEP 5 - Combining JSON Data And Relational Data
+## Task 6: Combining JSON Data And Relational Data
 
-1. Assuming we want to know how much revenue each movie made in each of the years when it was available, we can use a much simpler query, somthing like this:
-
-    ```
-    SELECT
-    movie_id,
-    year,
-    sum(ACTUAL_PRICE) as revenue
-    FROM movie_sales_fact
-    GROUP BY movie_id, year;
-    ```
-
-2. If we combine this result set with the previous query against our JSON data, we can see the total revenue by year for each movie director and find the top 5 movie directors within each year. To do this, we can create a query that joins the JSON data set with our movie sales fact table via the `movie_id` column. Run this query in your SQL Worksheet:
+1. If we combine this result set with the previous query against our JSON data, we can see the total revenue by year for each movie director and find the top 5 movie directors within each year. To do this, we can create a query that joins the JSON data set with our movie sales fact table via the `movie_id` column. Run this query in your SQL Worksheet:
 
     ```
     <copy>SELECT
@@ -325,47 +395,47 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
     jt.title,
     jt.job,
     jt.crew,
-    f.year,
-    sum(f.actual_price) as revenue
-    FROM movie_sales_fact f, json_movie_view jt
+    f.year_name,
+    SUM(f.actual_price) as revenue
+    FROM vw_movie_sales_fact f
+    JOIN json_movie_view jt ON jt.movie_id = f.movie_id
     WHERE jt.job = 'director'
-    AND f.year = 2020
-    AND jt.movie_id = f.movie_id
-    GROUP BY jt.movie_id, jt.title, jt.job, jt.crew, f.year
+    AND f.year_name = 2020
+    GROUP BY jt.movie_id, jt.title, jt.job, jt.crew, f.year_name
     ORDER BY 6 desc;</copy>
     ```
 
-3. the output will be shown in the Query Result window:
+2. the output will be shown in the Query Result window:
 
-    ![Query result of combining queries](images/sql-analytics-lab5-step5-substep3.png)
+    ![Query result of combining queries](images/lab-9-step-5-substep-2.png " ")
 
-## STEP 6 - Ranking Directors Based On Quarterly Movie Revenue
+## Task 7: Ranking Directors Based On Quarterly Movie Revenue
 
 1. We can extend the query by adding a ranking calculation, broken out by quarter within each year, to determine how much each director's films contributed to MovieStream's overall revenue. Note that we are reusing techniques from the previous lab, specifically SQL's window functions. The last column ranks each director based on the annual revenue of his or her movies.
 
     ```
     <copy>SELECT
-    f.year,
+    f.year_name,
     f.quarter_name,
     jt.movie_id,
     jt.title,
     jt.job,
     jt.crew,
-    sum(f.actual_price) as revenue,
-    RANK() OVER (PARTITION BY f.quarter_name order by sum(f.actual_price) desc) as rank_rev
-    FROM movie_sales_fact f, json_movie_view jt
+    SUM(f.actual_price) AS revenue,
+    RANK() OVER (PARTITION BY f.quarter_name ORDER BY SUM(f.actual_price) desc) as rank_rev
+    FROM vw_movie_sales_fact f
+    JOIN json_movie_view jt ON jt.movie_id = f.movie_id
     WHERE jt.job = 'director'
-    AND f.year= 2020
-    AND jt.movie_id = f.movie_id
-    GROUP BY f.year, f.quarter_name, jt.movie_id, jt.title, jt.job, jt.crew
+    AND f.year_name = 2020
+    GROUP BY jt.movie_id, jt.title, jt.job, jt.crew, f.year_name, f.quarter_name
     ORDER BY 1,2,7 desc;</copy>
     ```
 
 2. The results should show that our top grossing directors in Q1 were Jennifer Lee and Chris Buck with the film Frozen II:
 
-    ![Query result showing top grossing directors](images/sql-analytics-lab5-step6-substep2.png)
+    ![Query result showing top grossing directors](images/lab-9-step-6-substep-2.png " ")
 
-## STEP 7 - Finding The Top 5 Directors Based On Revenue
+## Task 8: Finding The Top 5 Directors Based On Revenue
 
 1. The final part of this query is to add a filter so it only returns the top 5 directors in each quarter:
 
@@ -394,7 +464,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
 2. This should return the following results:
 
-    ![Query result returning top 5 directors in each year](images/sql-analytics-lab5-step7-substep2.png)
+    ![Query result returning top 5 directors in each year](images/lab-9-step-7-substep-2.png " ")
 
 ## Recap
 
@@ -412,4 +482,4 @@ Please *proceed to the next lab*.
 
 - **Author** - Keith Laker, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Keith Laker, August 3, 2021

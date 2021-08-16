@@ -15,7 +15,7 @@ Estimated time: 5 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1:** Create compartment
+## Task 1: Create compartment
 
 If you want to use an existing compartment, skip this step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 

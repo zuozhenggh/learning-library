@@ -24,7 +24,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
-## **STEP 1**: Setup VCN Stack
+## Task 1: Setup VCN Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Login to your Oracle Cloud account
@@ -43,7 +43,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 7.  Review your selections and click **Next**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
 
-## **STEP 2**: Run VCN Stack Apply Job
+## Task 2: Run VCN Stack Apply Job
 Now that your stack has been created, you will run an *apply* job to create the actual VCN
 1. Click on **Terraform Actions** to expose the drop down menu
 ![Image alt text](images/db19c-freetier-step1-7.png " ")
@@ -70,7 +70,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
 
-## **STEP 3**: Setup Compute Instance
+## Task 3: Setup Compute Instance
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
@@ -88,7 +88,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 7. Once it is provisioned, inspect the instance information and copy the public IP address to notepad.
     ![](images/setup-linux-ft-copy-ipaddress.png " ")
 
-## **STEP 4**: Connect to your instance
+## Task 4: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 

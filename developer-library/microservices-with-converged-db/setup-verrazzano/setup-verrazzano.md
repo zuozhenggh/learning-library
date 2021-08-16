@@ -17,7 +17,7 @@ Estimates Lab Time - 20 minutes
 
 Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
 
-## **STEP 1**: Setup
+## Task 1: Setup
     - Run `./setup-multicloud.sh` (takes ~20 minutes)
     - Takes CLUSTER_NAME as an argument 
     - This will install verrazzano, deploy workshop microservices, and provide URLs for the Frontend microservice and the consoles...
@@ -42,7 +42,7 @@ Note, you will not be able to complete this workshop with the 'Always Free' acco
             verrazzano-system   vmi-system-prometheus      <none>   prometheus.vmi.system.default.158.101.26.111.nip.io      158.101.26.111   80, 443   37h
             verrazzano-system   vmi-system-prometheus-gw   <none>   prometheus-gw.vmi.system.default.158.101.26.111.nip.io   158.101.26.111   80, 443   37h
 
-## **STEP 2**: Walkthrough of consoles...
+## Task 2: Walkthrough of consoles...
 
 
 

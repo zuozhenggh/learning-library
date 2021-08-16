@@ -25,7 +25,7 @@ In this lab, you will:
       - Lab : Import Data into OIRI from OIG
       - Lab : Role Mining
 
-## **STEP 1:** Publish a candidate role
+## Task 1: Publish a candidate role
 
 1. In the Review and Adjust Candidate Role page, click *Looks Good! Publish the role*. The Publish Role dialog box appears.
 
@@ -66,7 +66,7 @@ The list of entitlements in the role along with the associated applications is d
 
     ![](images/8-publish-role.png)
 
-## **STEP 2:** Review published role in OIG
+## Task 2: Review published role in OIG
 
 1. Sign in to Identity Self Service console.
 Open a browser tab and Click on the bookmark *OIG Identity Console*.

@@ -12,7 +12,7 @@ An APEX Workspace is a logical domain where you define APEX applications. Each w
 ### Where to Run the Lab
 This lab is designed for a [a LiveLabs environment](http://bit.ly/golivelabs). If you haven't already done so, reserve an environment to run this workshop.
 
-## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
+## Task 1: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
 In this step, you will create an *Autonomous Transaction Processing* database and provision an Oracle APEX Workspace.
 

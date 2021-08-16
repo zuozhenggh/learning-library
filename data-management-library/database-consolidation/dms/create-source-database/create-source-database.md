@@ -21,7 +21,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Setup the Source Database
+## Task 1: Setup the Source Database
 
 The following task is *optional* if a source database is already present.
 
@@ -74,7 +74,7 @@ The following task is *optional* if a source database is already present.
 8. The provisioning of the database can take **60 or more** minutes. Wait for the Lifecycle State of the database to change to Active.
 
 
-## **STEP 2:** Collect Database Information
+## Task 2: Collect Database Information
 
 1. Open the database system **SourceDB** in the **DB Systems** table.
 
@@ -100,7 +100,7 @@ The following task is *optional* if a source database is already present.
 
   ![](images/source-db-ip-addresses.png)
 
-## **STEP 3:** Adding Data to the Database
+## Task 3: Adding Data to the Database
 
 1. Open a SSH terminal to the database instance. The instructions are for Unix-style ssh command:
 

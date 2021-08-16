@@ -28,28 +28,27 @@ Learn how to do the following:
 - Use DBCA to duplicate a CDB with OMF
 - Clean up the CDBs duplicated
 
-## **STEP 1**: To enable ARCHIVELOG mode on CDB1:
+## Task 1: To enable ARCHIVELOG mode on CDB1:
 The CDB must be in `ARCHIVELOG` mode before you can duplicate a CDB by using DBCA in silent mode.
 
 1. Set the environment variable to CDB1.
 ```
-$ . oraenv
+$ <copy>. oraenv</copy>
 CDB1
 ```
 2. Run the enable_ARCHIVELOG.sh script and enter CDB1 at the prompt. The script shuts down the database according to the user’s ORACLE_SID. Once all of the settings have been set, the database will startup.
 ```
-$ HOME/labs/19cnf/enable_ARCHIVELOG.sh
+$ <copy>HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
    CDB1
 ```
 
-## **STEP 2**: Check the existence of sample data in PDB1
+## Task 2: Check the existence of sample data in PDB1
 
 In this step, you verify that PDB1 has sample data. After you duplicate CDB1 in a later step, you verify that the sample data is also duplicated.
 
 1. After you enable ARCHIVELOG mode, PDB1 is closed, so you can't connect to it right away. You'll need to connect to CDB1 first, open PDB1, and then connect to it.
-
   ```
-  . oraenv
+  <copy>. oraenv</copy>
 
   CDB1
 
@@ -63,14 +62,14 @@ In this step, you verify that PDB1 has sample data. After you duplicate CDB1 in 
 
 2. Log in to `PDB1` in `CDB1` as `SYSTEM`.
     ```
-    sqlplus system@PDB1
+    <copy>sqlplus system@PDB1</copy>
     Enter password: password
     ```
 
 3. Verify that `PDB1` contains data in the `HR.EMPLOYEES` table.
     ```
 
-   SQL> SELECT count(*) FROM hr.employees;
+   SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
     COUNT(*)
     ----------
@@ -83,18 +82,18 @@ In this step, you verify that PDB1 has sample data. After you duplicate CDB1 in 
 5. Quit the session.
 
     ```
-    EXIT
+    <copy>EXIT</copy>
     ```
 
 
-## **STEP 3**: Use DBCA to duplicate CDB1 as a single individual database
+## Task 3: Use DBCA to duplicate CDB1 as a single individual database
 
 In this step, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1as a single individual database called DUPCDB1. The database configuration type is set to `SINGLE`, which means single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener, LISTENER.
 
 1. Run the -createDuplicateDB command.
 
   ```
-  $ dbca -silent \
+  $ <copy>dbca -silent \
   -createDuplicateDB \
   -primaryDBConnectionString workshop-installed.livelabs.oraclevcn.com:1523/CDB1.livelabs.oraclevcn.com \
   -sysPassword Ora4U_1234 \
@@ -102,7 +101,7 @@ In this step, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
   -sid DUPCDB1 \
   -datafileDestination /u01/app/oracle/oradata \
   -databaseConfigType SINGLE \
-  -storageType FS
+  -storageType FS</copy>
 
   RESULT:
   Prepare for db operation
@@ -123,27 +122,27 @@ Now, we can change our environment and connect to `DUPCDB1`.
 2. Set the environment variable to `DUPCDB1`.
 
   ```
-  $ .oraenv
+  $ <copy>.oraenv</copy>
   DUPCDB1
   The Oracle base remains unchanged with value /u01/app/oracle
   ```
 
 3. Connect as the SYS user to DUPCDB1.
 ```
-sqlplus / as sysdba
+<copy>sqlplus / as sysdba</copy>
 ```
 
 4. List the PDBs in DUPCDB1. The results should indicate that PDB1 was duplicated too.
 ```
-SQL> SHOW PDBS
+SQL> <copy>SHOW PDBS</copy>
 ```
 
 5. View the list of data files. Make note of how the files are named. Also notice that the data files for PDB1 are included.
 
   ```
-  SQL> COL name FORMAT A78
+  SQL> <copy>COL name FORMAT A78</copy>
 
-  SQL> SELECT name FROM v$datafile;
+  SQL> <copy>SELECT name FROM v$datafile;</copy>
 
   NAME
   ------------------------------------------------------------------------------
@@ -163,20 +162,20 @@ SQL> SHOW PDBS
   ```
 6. Connect to PDB1 as the HR user.
 ```
-connect HR/Ora4U_1234@PDB1.
+<copy>connect HR/Ora4U_1234@PDB1.</copy>
 ```
 7. Verify that PDB1 has an HR.EMPLOYEES table with data in it.
 ```
-$ SELECT count(*) FROM employees;
+$ <copy>SELECT count(*) FROM employees;</copy>
 ```
 8. Exit SQL*Plus
 ```
-EXIT
+<copy>EXIT</copy>
 ```
 9. View the status of the default listener. Notice that both DUPCDB1 and PDB1 are listed as a service.
 
   ```
-  $ lsnrctl status LISTENER
+  $ <copy>lsnrctl status LISTENER</copy>
 
   LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 16-JUL-2021 19:02:28
 
@@ -211,14 +210,14 @@ EXIT
   ```
 
 
-## **STEP 4**: Use DBCA to duplicate CDB1 as OMFCDB1 and enable Oracle Managed Files
+## Task 4: Use DBCA to duplicate CDB1 as OMFCDB1 and enable Oracle Managed Files
 In this step, you use the `-createDuplicateDB` command in `DBCA` to duplicate `CDB1` as a single individual database called `OMFCDB1`. This time when running the `-createDuplicate` command, you enable Oracle Managed Files and create a dynamic listener called `LISTOMFCDB1` that listens on port 1525.
 
 
 1. Launch `DBCA` in silent mode to duplicate `CDB1` as `OMFCDB1`.
 
   ```
-  $ dbca -silent \
+  $ <copy>dbca -silent \
   -createDuplicateDB \
   -primaryDBConnectionString workshop-installed.livelabs.oraclevcn.com:1523/CDB1.livelabs.oraclevcn.com \
   -sysPassword Ora4U_1234 \
@@ -228,7 +227,7 @@ In this step, you use the `-createDuplicateDB` command in `DBCA` to duplicate `C
   -databaseConfigType SINGLE \
   -storageType FS \
   -createListener LISTENER_OMFCDB1:1565 \
-  -useOMF true
+  -useOMF true</copy>
 
   Prepare for db operation
   22% complete
@@ -248,13 +247,13 @@ In this step, you use the `-createDuplicateDB` command in `DBCA` to duplicate `C
 
 2. Using the file system or vi  editor, open ``$ORACLE_HOME/network/admin/tnsnames.ora`` file, and add the following listener to the bottom of the file. The tnsnames. ora file is a network configuration file that contains network service names mapped to connect descriptors for the local naming method, or net service names mapped to listener protocol addresses. In our case, this entry resolves the `LISTOMFCDB1` alias to the TCP protocol address `workshop-installed.livelabs.oraclevcn.com` on port `1565`.
 ```
-LISTENER_OMFCDB1 =
-(ADDRESS = (PROTOCOL = TCP)(HOST = workshop-installed.livelabs.oraclevcn.com)(PORT = 1565))
+<copy>LISTENER_OMFCDB1 =
+(ADDRESS = (PROTOCOL = TCP)(HOST = workshop-installed.livelabs.oraclevcn.com)(PORT = 1565))</copy>
 ```
 3. Using the file system or the cat command, open the ``$ORACLE_HOME/network/admin/listener.ora`` file and verify that DBCA added the listener information. There should be an entry for LISTENER_OMFCDB1. Dynamic service registration does not make use of the `listener.ora` file; however, you do need to configure the file if you want to manage listeners with the Listener Control utility.
 
   ```
-  $ cat $ORACLE_HOME/network/admin/listener.ora
+  $ <copy>cat $ORACLE_HOME/network/admin/listener.ora</copy>
 
   ...
 
@@ -268,27 +267,27 @@ LISTENER_OMFCDB1 =
 
 4. View the status of the listener.
 ```
-$ lsnrctl status LISTENER_OMFCDB1
+$ <copy>lsnrctl status LISTENER_OMFCDB1</copy>
 ```
 
 5. Set the environment variable to OMFCDB1.
 
   ```
-  $ . oraenv
+  $ <copy>. oraenv</copy>
   OMFCDB1
   The Oracle base remains unchanged with value /u01/app/oracle
   ```
 6. Connect as the SYS user to OMFCDB1.
 
   ```
-  sqlplus / as sysdba
+  <copy>sqlplus / as sysdba</copy>
 
   SQL>
   ```
 7. Verify that DBCA configured the `LOCAL_LISTENER` parameter to `LISTENER_OMFCDB1`. By default, DBCA uses the naming convention `LISTENER_<SID>` when configuring the `LOCAL_LISTENER` parameter value. That is why we used the name `LISTENER_OMFCDB1` when running the `-createDuplicateDB` command in DBCA. Had we used a different name, we would need to update the `LOCAL_LISTENER` parameter value.
 
   ```
-  SQL> SHOW PARAMETER LOCAL_LISTENER
+  SQL> <copy>SHOW PARAMETER LOCAL_LISTENER</copy>
 
   NAME                                               TYPE          VALUE
 
@@ -299,8 +298,8 @@ $ lsnrctl status LISTENER_OMFCDB1
 8. Check if the `LOCAL_LISTENER` parameter is a static or dynamic parameter by querying the `V$PARAMETER` view. The results tell you that you can't change it's value at the session level, but you can at the system level, and the change will take effect immediately. This means that the `LOCAL_LISTENER` parameter is a dynamic system-level parameter.
 
   ```
-  SQL> SELECT isses_modifiable, issys_modifiable FROM v$parameter
-       WHERE name='local_listener';
+  SQL> <copy>SELECT isses_modifiable, issys_modifiable FROM v$parameter
+       WHERE name='local_listener';</copy>
 
   ISSES ISSYS_MOD
 
@@ -313,7 +312,7 @@ $ lsnrctl status LISTENER_OMFCDB1
 
 9. List the PDBs in OMFCDB1. Notice that PDB1 was duplicated too.
   ```
-  SQL> SHOW PDBS
+  SQL> <copy>SHOW PDBS</copy>
 
       CON_ID  CON_NAME                       OPEN MODE RESTRICTED
 
@@ -327,9 +326,9 @@ $ lsnrctl status LISTENER_OMFCDB1
 10.  View the list of data files. Notice how the files are named when Oracle Managed Files is enabled on the CDB versus when it is not (as in DUPCDB1).
 
   ```
-  SQL> COL name FORMAT A78
+  SQL> <copy>COL name FORMAT A78</copy>
 
-  SQL> SELECT name FROM v$datafile;
+  SQL> <copy>SELECT name FROM v$datafile;</copy>
 
   NAME
   ------------------------------------------------------------------------------
@@ -358,15 +357,15 @@ $ lsnrctl status LISTENER_OMFCDB1
 11. Exit SQL*Plus.
 
   ```
-  EXIT
+  <copy>EXIT</copy>
   ```
 
-## **STEP 5**: Restore your environment
+## Task 5: Restore your environment
 To restore you environment, delete DUPCDB1 and OMFCDB1 and disable ARCHIVELOG mode on CDB1.
 1. Use DBCA to delete DUPCDB1.
 
   ```
-  $ $ORACLE_HOME/bin/dbca -silent -deleteDatabase -sourceDB DUPCDB1.livelabs.oraclevcn.com -sid DUPCDB1 -sysPassword Ora4U_1234
+  $ $<copy>ORACLE_HOME/bin/dbca -silent -deleteDatabase -sourceDB DUPCDB1.livelabs.oraclevcn.com -sid DUPCDB1 -sysPassword Ora4U_1234</copy>
 
   [WARNING] [DBT-19202] The Database Configuration Assistant will delete the Oracle instances and datafiles for your database. All information in the database will be destroyed.
   Prepare for db operation
@@ -390,7 +389,7 @@ To restore you environment, delete DUPCDB1 and OMFCDB1 and disable ARCHIVELOG mo
 2. Use DBCA to delete OMFCDB1.
 
   ```
-  $ $ORACLE_HOME/bin/dbca -silent -deleteDatabase -sourceDB OMFCDB1.livelabs.oraclevcn.com -sid OMFCDB1 -sysPassword Ora4U_1234
+  $ $<copy>ORACLE_HOME/bin/dbca -silent -deleteDatabase -sourceDB OMFCDB1.livelabs.oraclevcn.com -sid OMFCDB1 -sysPassword Ora4U_1234</copy>
 
   [WARNING] [DBT-19202] The Database Configuration Assistant will delete the Oracle instances and datafiles for your database. All information in the database will be destroyed.
 
@@ -434,32 +433,32 @@ To restore you environment, delete DUPCDB1 and OMFCDB1 and disable ARCHIVELOG mo
 
 4. Set the environment variable to CDB1.
 ```
-$ . oraenv
+$ <copy>. oraenv</copy>
 CDB1
 ```
 5. Disable ARCHIVELOG mode on CDB1.
 ```
-$HOME/labs/19cnf/disable_ARCHIVELOG.sh
+$<copy>HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
 ```
 6. Remove the /u01/app/oracle/recovery_area/DUPCDB1 directory.
 ```
-$ rm -rfv /u01/app/oracle/recovery_area/DUPCDB1
+$ <copy>rm -rfv /u01/app/oracle/recovery_area/DUPCDB1</copy>
 ```
 
 7.  Remove the /u01/app/oracle/recovery_area/OMFCDB1 directory.
 ```
-$ rm -rfv /u01/app/oracle/recovery_area/OMFCDB1
+$ <copy>rm -rfv /u01/app/oracle/recovery_area/OMFCDB1</copy>
 ```
-## **STEP 7**: To disable ARCHIVELOG mode on CDB1:
+## Task 7: To disable ARCHIVELOG mode on CDB1:
 
 1. Set the environment variable to CDB1.
 ```
-$ . oraenv
+$ <copy>. oraenv</copy>
 CDB1
 ```
 2. Run the disable_ARCHIVELOG.sh script.
 ```
-$ @$HOME/labs/19cnf/disable_ARCHIVELOG.sh
+$ @$<copy>HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
 ```
 
 ## Learn More
@@ -471,4 +470,4 @@ $ @$HOME/labs/19cnf/disable_ARCHIVELOG.sh
 
 ## Acknowledgements
 * **Primary Author: Dominique Jeunot's, Consulting User Assistance Developer**
-* **Last Updated By: Blake Hendricks, Solutions Engineer, 7/21/21**
+* **Last Updated By: Blake Hendricks, Solutions Engineer, 8/10/21**

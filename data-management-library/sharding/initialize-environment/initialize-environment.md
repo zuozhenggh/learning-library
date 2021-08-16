@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Oracle Sharding GSM  Container
@@ -71,7 +71,7 @@ This lab assumes you have:
 
 You may now [proceed to the next lab](#next).
 
-<!-- ## **Step 0**: Running your Lab
+<!-- ## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -114,7 +114,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 1**: Check Application accessibility
+## Task 1: Check Application accessibility
 1. Access the application using the URL  (**`http://<Public IP>:3000/`**), the application's home page opens.
 
 ![](./images/app1.png " ")

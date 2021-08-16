@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes.
 - The following lab requires an Autonomous Data Warehouse - Shared Infrastructure or Autonomous Transaction Processing - Shared Infrastructure account. 
 - It assumes you have completed the first lab which explains how you can access the Graph Studio interface of your database instance and illustrates some basic concepts.
 
-## **STEP 1**: Select the Tables to Create the Graph From
+## Task 1: Select the Tables to Create the Graph From
 
 1. The following screenshot shows Graph Studio user interface with the menu, or navigation, icons on the left. They navigate to the Home, Models, Graphs, Notebooks, and Jobs pages respectively. 
 
@@ -53,7 +53,7 @@ Estimated Lab Time: 30 minutes.
 
     This model can be modified if necessary.
 
-## **STEP 2**: Edit your Graph Model
+## Task 2: Edit your Graph Model
 
 1. Click on the **CHANNELS** vertex table.
 
@@ -124,7 +124,7 @@ Estimated Lab Time: 30 minutes.
 
     You see a summary of the model we created. All the input tables and how we want to map those to a property graph.
 
-## **STEP 3**: Start the Graph Creation Job
+## Task 3: Start the Graph Creation Job
 
 1. Click **Create Graph** on the top right.
 
@@ -154,7 +154,7 @@ Estimated Lab Time: 30 minutes.
 4. Wait for both jobs to complete successfully.
 
 
-## **STEP 4**: Inspect the Created Graph and Model
+## Task 4: Inspect the Created Graph and Model
 
 1. Click on the **Graphs** menu icon.
 

@@ -37,7 +37,7 @@ To complete this lab, you need to have the following:
 
 - Knowledge of basic concepts of OCI console navigation 
 
-## **STEP 1:** Create OCI Policies for ODI Web Edition Deployment
+## Task 1: Create OCI Policies for ODI Web Edition Deployment
 
 1. **NOTE:** If you have already been provided a compartment then skip this step. For the remaining steps, replace compartment name `odi` with your assigned compartment name. Create a compartment `odi` where ODI Web Edition related artifacts will be created. Make sure you have a privilege to create a compartment or request your administrator to give you a compartment. Use this compartment for the rest of the lab. Navigate to **Identity & Security > Compartments** and create a compartment. 
 
@@ -93,7 +93,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018125118.jpg)
 
-## **STEP 2:** Deploy ODI Web Edition
+## Task 2: Deploy ODI Web Edition
 
 1. Starting from the OCI console, navigate to the OCI Marketplace, as follows (and as shown in the screenshot below):
 
@@ -168,7 +168,7 @@ To complete this lab, you need to have the following:
 
   **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 30-40 minutes and launch the Data Transforms tool.** 
 
-## **Step 3:** Launch The Data Transforms Tool
+## Task 3: Launch The Data Transforms Tool
 
 Data Transforms tool can be launched by two methods:
 

@@ -19,13 +19,13 @@ In this lab, you will:
 * SSH Keys for Putty or OpenSSH (`id_rsa.ppk` or `id_rsa`, and `id_rsa.pub`)
 
 
-## **STEP 1:** Create Virtual Cloud Network (VCN)
+## Task 1: Create Virtual Cloud Network (VCN)
 
 1. Login to Oracle cloud console using the URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
-- Tenant: oci-tenant
-- Username: oci-username
-- Password: oci-password
+    - Tenant: oci-tenant
+    - Username: oci-username
+    - Password: oci-password
 
 2. Click on main menu ≡, then Networking > **Virtual Cloud Networks**. Select your Region and Compartment assigned by the instructor. 
 
@@ -33,24 +33,24 @@ In this lab, you will:
 
 4. Select **VCN with Internet Connectivity**. Start VCN Wizard.
 
-- VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
-- Compartment: [Your Compartment]
+    - VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
+    - Compartment: [Your Compartment]
 
 5. Click Next and Create.
 
 6. Click **[Your Initials]-VCN** for details.
 
 
-## **STEP 2:** Provision Compute node for development
+## Task 2: Provision Compute node for development
 
 1. Click on main menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
-- Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
-- Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
-- Virtual cloud network: [Your Initials]-VCN
-- Subnet: Public Subnet
-- Assign a public IP address
-- Add SSH keys: Choose SSH key files > id_rsa.pub
+    - Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
+    - Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
+    - Virtual cloud network: [Your Initials]-VCN
+    - Subnet: Public Subnet
+    - Assign a public IP address
+    - Add SSH keys: Choose SSH key files > id_rsa.pub
 
 2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available.
 
@@ -77,7 +77,7 @@ In this lab, you will:
     ![](./images/putty4.png "")
 
 
-## **STEP 3:** Configure development environment on Compute
+## Task 3: Configure development environment on Compute
 
 For some of the labs we need graphical user interface, and this can be achieved using a Remote Desktop connection.
 
@@ -172,32 +172,32 @@ For some of the labs we need graphical user interface, and this can be achieved 
     > **Note** : Once JDK installation full pathname is set, SQL Developer can be started from **Applications** main menu, and **Programming**.
 
 
-## **STEP 4:** Provision Oracle Autonomous Database (ATP)
+## Task 4: Provision Oracle Autonomous Database (ATP)
 
 1. Click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
 
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-Dev01 (e.g. VLT-Dev01)
-- Database name: [Your Initials]Dev01 (e.g. VLTDev01)
-- Choose a workload type: Transaction Processing
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: disabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-Dev01 (e.g. VLT-Dev01)
+    - Database name: [Your Initials]Dev01 (e.g. VLTDev01)
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: disabled
 
 2. Under Create administrator credentials:
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Under Choose network access:
 
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
 
-## **STEP 5:** Connect to your Autonomous Database
+## Task 5: Connect to your Autonomous Database
 
 From the compute node, we will connect to the Autonomous Database. Wallet files, along with the database user ID and password, provide access to data in your Autonomous Database. Store wallet files in a secure location. Share wallet files only with authorized users.
 
@@ -205,7 +205,7 @@ From the compute node, we will connect to the Autonomous Database. Wallet files,
 
 2. Specify a wallet password.
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Create a new folder and unzip your wallet files.
 
@@ -243,7 +243,7 @@ From the compute node, we will connect to the Autonomous Database. Wallet files,
     ````
 
 
-## **STEP 6:** Install HR Sample Schema
+## Task 6: Install HR Sample Schema
 
 For this simple CICD example, we will capture database changes from the HR sample schema.
 
@@ -296,17 +296,17 @@ For this simple CICD example, we will capture database changes from the HR sampl
     ````
 
 
-## **STEP 7:** Connect to your ATP using SQL Developer
+## Task 7: Connect to your ATP using SQL Developer
 
 1. Create a new connection in SQL Developer to Dev01 ATP.
 
-- Name: hr@Dev01ATP
-- Username: hr
-- Password: DBlearnPTS#21_
-- Save Password: enabled
-- Connection Type: Cloud Wallet
-- Configuration File: click Browse and select Wallet_[Your Initials]Dev01.zip
-- Service: [lowercase-initials]dev01_tp
+    - Name: hr@Dev01ATP
+    - Username: hr
+    - Password: DBlearnPTS#21_
+    - Save Password: enabled
+    - Connection Type: Cloud Wallet
+    - Configuration File: click Browse and select Wallet_[Your Initials]Dev01.zip
+    - Service: [lowercase-initials]dev01_tp
 
 2. Click Test, make sure it returns 'Success', and Save.
 
@@ -325,7 +325,7 @@ For this simple CICD example, we will capture database changes from the HR sampl
 6. If files are modified outside SQL Developer, you need to click the `database` folder and Refresh icon ![](./images/refresh.jpg "") to show those changes.
 
 
-## **STEP 8:** Update Git Client
+## Task 8: Update Git Client
 
 GitHub uses Git version control systems (VCS) to handle the collaboration workflow. This allows developers to create a local copy of the project, makes changes, and merge them back into the central repository.
 
@@ -402,7 +402,7 @@ GitHub uses Git version control systems (VCS) to handle the collaboration workfl
     ````
 
 
-## **STEP 9:** Install Liquibase
+## Task 9: Install Liquibase
 
 1. Access the website, and find the URL for the latest stable Liquibase release for Linux x64. 
 
@@ -468,9 +468,9 @@ GitHub uses Git version control systems (VCS) to handle the collaboration workfl
     ````
 
 9. We have to make 3 changes:
-- Comment out the `oracle.net.wallet_location` line. 
-- Use `TNS_ADMIN` environment variable value in `javax.net.ssl.trustStore` and `javax.net.ssl.keyStore`. 
-- Set `javax.net.ssl.trustStorePassword` and `javax.net.ssl.keyStorePassword` to the wallet password.
+    - Comment out the `oracle.net.wallet_location` line. 
+    - Use `TNS_ADMIN` environment variable value in `javax.net.ssl.trustStore` and `javax.net.ssl.keyStore`. 
+    - Set `javax.net.ssl.trustStorePassword` and `javax.net.ssl.keyStorePassword` to the wallet password.
 
     ````
     #oracle.net.wallet_location=(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=${TNS_ADMIN})))
