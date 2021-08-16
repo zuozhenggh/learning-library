@@ -28,7 +28,8 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 
 + Learn how to define Object Storage credentials for your autonomous database
 + Learn how to load data from Object Storage using Data Tools
-+ Learn now to load data from Object Storage using the DBMS\_CLOUD APIs executed from SQL
++ Learn how to load data from Object Storage using the DBMS\_CLOUD APIs executed from SQL
++ Learn how to enforce data integrity in newly loaded tables
 
 
 ### Prerequisites
@@ -111,147 +112,115 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-3. From the MOVIESTREAMGOLD location, expand the **customer_contact** and **genre** folders in the tree view on the left hand side and drag the following two files to the right hand pane:
+3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
 
--   customer_contact.csv
--   genre.csv
+4. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
-    ![Click on Data Load](images/selectfilesfromgold.png)
 
-> **Note:** We will be loading files from the **custsales** and **movie** folders in later steps.
+5. Click on the pencil icon for the **customer_contact** task to view the settings for this load task.
 
-4. You will notice the target table names are derived from the folder and file names, but in this case we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer\_contact/customer_contact.csv load task.
+    ![View settings for customer_contact load task](images/cc_viewsettings.png)
 
-    ![Edit the load task for customer_contact.csv](images/editcustcontact.png)
+6. Here we can see the list of columns and data types that will be created from the csv file. They all look correct, so click **Close** to close the settings viewer.
 
-5. Rename the target table to **CUSTOMER_CONTACT**
+7. Click on the pencil icon for the **genre** task to view its settings. This should show just two columns to be created - **GENRE_ID** and **NAME**. Click **Close** to close the settings viewer.
 
-    ![Change the target table name to CUSTOMER_CONTACT](images/custcontactname.png)
-
-6. Click **Close** to close the settings editor.
-
-7. Click on the pencil icon to edit the settings for the genre/genre.csv load task.
-
-8. Rename the target table to **GENRE**. Then click **Close**.
-
-9. Click on the Play button to run the data load job.
+8. Now click on the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
 
     The job should take about 20 seconds to run.
 
-10. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+9. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted.png)
 
-11. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
+10. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
 
     ![Click on Data Load](images/backtodataload.png)
 
-12. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
-13. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
+12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
 
     ![Click on Data Load](images/selectlanding.png)
 
-14. From the MOVIESTREAMLANDING location, expand the **customer\_extension**, **customer\_segment** and **pizza\_location** folders in the tree view and drag the following three files to the right hand pane:
+13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
 
-+ customer_extension.csv
-+ customer_segment.csv
-+ pizza_location.csv
+14. Drag the **customer_segment** folder over to the right hand pane and click **OK**.
 
-    ![Click on Data Load](images/selectfileslanding.png)
+15. Drag the **pizza_location** folder over to the right hand pane and click **OK**.
 
-15. Again, we want to name the tables simply according to the file names. First, click on the pencil icon to edit the settings for the customer\_extension/customer_extension.csv load task.
-
-16. Rename the target table to **CUSTOMER_EXTENSION**
-
-    ![Click on Data Load](images/editcustext.png)
-
-17. Click **Close** to close the settings editor.
-
-18. Click on the pencil icon to edit the settings for the customer\_segment/customer_segment.csv load task.
-
-19. Rename the target table to **CUSTOMER_SEGMENT**
-
-20. Click **Close** to close the settings editor.
-
-21. Click on the pencil icon to edit the settings for the pizza\_location/pizza_location.csv load task.
-
-22. Rename the target table to **PIZZA_LOCATION**.
-
-23. Click **Close** to close the settings editor.
-
-24. Click on the Play button to run the data load job.
+16. Click on the Play button to run the data load job.
 
     ![Run the data load job](images/runload2.png)
 
     The job should take about 20 seconds to run.
 
-25. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+17. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](images/loadcompleted2.png)
 
-26. Click on the **Done** button in the bottom right of the screen.
+18. Click on the **Done** button in the bottom right of the screen.
 
-## Task 3: Creating the Customer view
+## Task 3: Creating the Customer table
 
-We have now created two main tables containing information about MovieStream customers - CUSTOMER\_CONTACT and CUSTOMER\_EXTENSION. It will be useful to link these tables together to create a view of customer information. We can do this with some simple SQL.
+We have now loaded a number of tables, including two main tables containing information about MovieStream customers - CUSTOMER\_CONTACT and CUSTOMER\_EXTENSION. It will be useful to link these tables together to create a joined table of customer information. We can do this with some simple SQL.
 
 1. In the **Development** section, click on **SQL** to open a SQL Worksheet.
 
-2. Copy and paste the following script into the Worksheet. This script will create the view **customer**, joining our customer information together.
+2. Copy and paste the following script into the Worksheet. This script will create the table **CUSTOMER**, joining our customer information together.
 
 ```
 <copy>
-create or replace view CUSTOMER
-as
-select  cc.CUST_ID,                
-        cc.LAST_NAME,              
-        cc.FIRST_NAME,             
-        cc.EMAIL,                  
-        cc.STREET_ADDRESS,         
-        cc.POSTAL_CODE,            
-        cc.CITY,                   
-        cc.STATE_PROVINCE,         
-        cc.COUNTRY,                
-        cc.COUNTRY_CODE,           
-        cc.CONTINENT,              
-        cc.YRS_CUSTOMER,           
-        cc.PROMOTION_RESPONSE,     
-        cc.LOC_LAT,                
-        cc.LOC_LONG,               
-        ce.AGE,                    
-        ce.COMMUTE_DISTANCE,       
-        ce.CREDIT_BALANCE,         
-        ce.EDUCATION,              
-        ce.FULL_TIME,              
-        ce.GENDER,                 
-        ce.HOUSEHOLD_SIZE,         
-        ce.INCOME,                 
-        ce.INCOME_LEVEL,           
-        ce.INSUFF_FUNDS_INCIDENTS, 
-        ce.JOB_TYPE,               
-        ce.LATE_MORT_RENT_PMTS,    
-        ce.MARITAL_STATUS,         
-        ce.MORTGAGE_AMT,           
-        ce.NUM_CARS,               
-        ce.NUM_MORTGAGES,          
-        ce.PET,                    
-        ce.RENT_OWN,    
-        ce.SEGMENT_ID,           
-        ce.WORK_EXPERIENCE,        
-        ce.YRS_CURRENT_EMPLOYER,   
-        ce.YRS_RESIDENCE
-from CUSTOMER_CONTACT cc, CUSTOMER_EXTENSION ce
-where cc.cust_id = ce.cust_id;
+create table CUSTOMER
+            as
+            select  cc.CUST_ID,                
+                    cc.LAST_NAME,              
+                    cc.FIRST_NAME,             
+                    cc.EMAIL,                  
+                    cc.STREET_ADDRESS,         
+                    cc.POSTAL_CODE,            
+                    cc.CITY,                   
+                    cc.STATE_PROVINCE,         
+                    cc.COUNTRY,                
+                    cc.COUNTRY_CODE,           
+                    cc.CONTINENT,              
+                    cc.YRS_CUSTOMER,           
+                    cc.PROMOTION_RESPONSE,     
+                    cc.LOC_LAT,                
+                    cc.LOC_LONG,               
+                    ce.AGE,                    
+                    ce.COMMUTE_DISTANCE,       
+                    ce.CREDIT_BALANCE,         
+                    ce.EDUCATION,              
+                    ce.FULL_TIME,              
+                    ce.GENDER,                 
+                    ce.HOUSEHOLD_SIZE,         
+                    ce.INCOME,                 
+                    ce.INCOME_LEVEL,           
+                    ce.INSUFF_FUNDS_INCIDENTS, 
+                    ce.JOB_TYPE,               
+                    ce.LATE_MORT_RENT_PMTS,    
+                    ce.MARITAL_STATUS,         
+                    ce.MORTGAGE_AMT,           
+                    ce.NUM_CARS,               
+                    ce.NUM_MORTGAGES,          
+                    ce.PET,                    
+                    ce.RENT_OWN,    
+                    ce.SEGMENT_ID,           
+                    ce.WORK_EXPERIENCE,        
+                    ce.YRS_CURRENT_EMPLOYER,   
+                    ce.YRS_RESIDENCE
+            from CUSTOMER_CONTACT cc, CUSTOMER_EXTENSION ce
+            where cc.cust_id = ce.cust_id;
 </copy>
 ```
 3. Click on the **Run Script** button (or use the F5 key) to run the script.
 
-    ![Run the script to create the customer view](images/runcustscript.png)
+    ![Run the script to create the customer table](images/runcustscript.png)
 
-4. To check that the view has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
+4. To check that the table has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
 ```
 <copy>
@@ -261,7 +230,7 @@ select * from customer;
 
 5. Click on the Run button to run the statement. You should see customer information, like this.
 
-    ![Run the script to create the customer view](images/custview.png)
+    ![View customer data](images/custview.png)
 
 If you scroll to the right, you can see the columns that have been joined from the **customer\_extension** table, such as **age**, **commute\_distance** and so on.
 
@@ -335,7 +304,7 @@ create table custsales as select * from ext_custsales;
 
 > **Note:** This may take a minute or two, since it will be copying over 25m rows.
 
-7.  Next, we will create an external table to link to the **movies.json** file. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+7. Next, we will create an external table to link to the **movies.json** file. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 <copy>
@@ -378,14 +347,6 @@ select
     cast(m.doc.runtime as number) as runtime,
     substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
 from ext_movie m;
- 
-alter table movie add constraint pk_movie_cust_id primary key ("MOVIE_ID");
-alter table movie add constraint movie_cast_json check (cast IS JSON);
-alter table movie add constraint movie_genre_json check (genre IS JSON);
-alter table movie add constraint movie_crew_json check (crew IS JSON);
-alter table movie add constraint movie_studio_json check (studio IS JSON);
-alter table movie add constraint movie_awards_json check (awards IS JSON);
-alter table movie add constraint movie_nominations_json check (nominations IS JSON);
 </copy>
 ```
 
@@ -430,7 +391,7 @@ add (
 
 ```
 <copy>
-select * from TIME;
+select * from time;
 </copy>  
 ```
 
@@ -438,11 +399,92 @@ select * from TIME;
 
     ![Rows from the TIME table](images/viewtimetable.png)
 
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, and a view that links many of the tables together for further analysis. We will be working with these tables, and the view, in later labs.
+## Task 4: Enforcing Data Integrity
+
+In this task, we will use the Autonomous Database's ability to define and enforce constraints to ensure that the data in the newly loaded tables remains valid. This will be important in later labs.
+
+In this example, we will define primary key constraints for a number of tables, to ensure that all records in each table have a populated and unique value for the key identifying column.
+
+We will also add constraints on the **movie** table to ensure that all the columns that contain JSON data must contain valid JSON, to ensure no bad data can exist in the table.
+
+1. Still in the SQL Worksheet viewer, click on the bin icon to clear the worksheet, then copy and paste and Run the following script:
+
+```
+<copy>
+alter table genre add constraint pk_genre_id primary key("GENRE_ID");
+
+alter table customer add constraint pk_customer_cust_id primary key("CUST_ID");
+alter table customer_extension add constraint pk_custextension_cust_id primary key("CUST_ID");
+alter table customer_contact add constraint pk_custcontact_cust_id primary key("CUST_ID");
+alter table customer_segment add constraint pk_custsegment_id primary key("SEGMENT_ID");
+
+alter table movie add constraint pk_movie_id primary key("MOVIE_ID");
+alter table movie add CONSTRAINT movie_cast_json CHECK (cast IS JSON);
+alter table movie add CONSTRAINT movie_genre_json CHECK (genres IS JSON);
+alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
+alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
+alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
+alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
+
+alter table pizza_location add constraint pk_pizza_loc_id primary key("PIZZA_LOC_ID");
+
+alter table time add constraint pk_day primary key("DAY_ID");
+
+
+-- foreign keys
+alter table custsales add constraint fk_custsales_movie_id foreign key("MOVIE_ID") references movie("MOVIE_ID");
+alter table custsales add constraint fk_custsales_cust_id foreign key("CUST_ID") references customer("CUST_ID");
+alter table custsales add constraint fk_custsales_day_id foreign key("DAY_ID") references time("DAY_ID");
+alter table custsales add constraint fk_custsales_genre_id foreign key("GENRE_ID") references genre("GENRE_ID");
+</copy>
+```
+
+2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click on the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza_location** table:
+
+```
+<copy>
+select count (*) from pizza_location;
+</copy>
+```
+
+This should return a count of 104 rows in the table.
+
+3. Now, copy and paste then Run the following script, which attempts to reload the data from the **pizza_location.csv** file into the same table:
+
+```
+<copy>
+define csv_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
+BEGIN
+DBMS_CLOUD.COPY_DATA (
+table_name => 'pizza_location',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o/pizza_location/pizza_location.csv',
+format => '&csv_format'
+);
+END;
+/
+</copy>
+```
+
+4. Due to the primary key constraint on the **pizza_location** table, we can see that the database returns an error attempting to copy over the same data.
+
+    ![Unique constraint error](images/constrainterror.png)
+
+5. To prove that the **pizza_location** table has been unaffected by this rogue data loading attempt, copy and paste then Run the command to count the rows again:
+
+```
+<copy>
+select count (*) from pizza_location;
+</copy>
+```
+
+The count remains at 104 rows as there were no new rows to copy from the file.
+
+
+This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
 
 ## Acknowledgements
 
 * **Author** - Mike Matthews, Autonomous Database Product Management
 * **Contributors** -  Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, July 2021
+* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, August 2021
