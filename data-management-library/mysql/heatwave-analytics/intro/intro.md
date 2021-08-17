@@ -30,7 +30,7 @@ At the end of the workshop you will be able to run some queries on a sample data
     <iframe style="position: absolute;top: 0;left: 0;width: 40%;height: 40%;" src="https://www.youtube.com/embed/4U-0SumNz6w" title="YouTube video player"  allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
     
-Your account is ready? let's start!
+Your account is ready? let's start learning!
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
