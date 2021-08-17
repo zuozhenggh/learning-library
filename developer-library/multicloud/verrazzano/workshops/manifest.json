@@ -41,7 +41,7 @@
         },
 	    {
             "title": "Lab 5-7: ALTERNATE VERSION with simplified solution",
-            "filename": "../modify-helidonstock/alternate-version.md"
+            "filename": "../alternate-version/alternate-version.md"
         },
 		{
             "title": "Lab 8: Verifying the changes through application access and Curated stack",

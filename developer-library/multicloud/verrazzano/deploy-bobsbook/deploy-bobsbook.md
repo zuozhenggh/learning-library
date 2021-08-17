@@ -80,7 +80,7 @@ A brief description of each field of the component:
 
 You can find the complete component description for bobs' books application in [bobs-books-comp.yaml](https://github.com/verrazzano/verrazzano/blob/master/examples/bobs-books/bobs-books-comp.yaml) file.
 
-### Verrazzano application configurations
+### Verrazzano Application Configurations
 
 A Verrazzano application configuration is a Kubernetes Custom Resource which provides environment specific customizations. The following code shows the application configuration for the Bob's Books example used in this lab. This resource specifies the deployment of the application to the bobs-books namespace.
 
@@ -206,7 +206,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
 We need to download the source code, where we have configuration files, `bobs-books-app.yaml` and `bobs-books-comp.yaml`.
 
-1. Download the Verrazzano OAM component yaml file and Verrazzano application configuration files of Rob's book example. Click *Copy* and paste the command in the Cloud Shell as shown:
+1. Download the Verrazzano OAM component yaml file and Verrazzano Application Configuration files of Bob's Book example. Click *Copy* and paste the command in the Cloud Shell as shown:
 
     ```bash
     <copy>
@@ -216,7 +216,6 @@ We need to download the source code, where we have configuration files, `bobs-bo
     </copy>
     ```
 
-ANKIT TO DO - new screenshot is needed here
     ![Oracle SSO](images/7.png)
 
 2. We will keep all Kubernetes artifacts in the separate namespace. Create a namespace for the Bob's Books example application. Namespaces are a way to organize clusters into virtual sub-clusters. We can have any number of namespaces within a cluster, each logically separated from others but with the ability to communicate with each other.
@@ -229,22 +228,16 @@ Also we need to make Verrazzano aware that we store in that namespace Verrazzano
     </copy>
     ```
 
-ANKIT TO DO - new screenshot here after merged steps - maybe keeping those two screenshots is fine - please make a decision 
     ![Verrazzano Home Folder](images/9.png)
     ![Verrazzano Home Folder](images/10.png)
 
-3. ANKIT TO DO - THIS STEP NEEDS TO BE REPLACED WITH YOUR SCRIPT. This SCRIPT NEED TO BE ADDED to livelabs repo. 
-
-The Docker registry  is a way to store and version images, like GitHub for normal code but for containers (which Kubernetes can pull). Here, we will create a docker-registry secret to enable pulling the Bob's Books example image from the Oracle Container Registry. Click *Copy* on the following command, and paste it in any text editor of your choice and replace *THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME*, *THIS TO BE REPLACED WITH YOUR-REGISTRY-PASSWORD*, and *THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL* with the values you use to access the registry. Here *THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME* and *THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL* is your email ID which you used in step 1, for accepting the license agreement for downloading images from the Oracle Container Registry. Then, in the Cloud Shell, paste the modified command as shown:
+3. Copy the following command to download the script. This script authenticate the user for Oracle Container Registry. If authentication is successful, then it creates the docker registry secret. The Docker registry  is a way to store and version images, like GitHub for normal code but for containers (which Kubernetes can pull). Here, we will create a docker-registry secret to enable pulling the Bob's Books example image from the Oracle Container Registry. Click *Copy* on the following command, and paste it in any text editor of your choice and replace username and password with the email ID and password respectively which you used in step 1, for accepting the license agreement for downloading images from the Oracle Container Registry. Then, in the Cloud Shell, paste the modified command as shown:
 
     ```bash
-    <copy>kubectl create secret docker-registry bobs-books-repo-credentials \
-            --docker-server=container-registry.oracle.com \
-            --docker-username=THIS TO BE REPLACED WITH YOUR-REGISTRY-USERNAME \
-            --docker-password=THIS TO BE REPLACED WITH YOUR-REGISTRY-PASSWORD \
-            --docker-email=THIS TO BE REPLACED WITH YOUR-REGISTRY-EMAIL \
-            -n bobs-books
-            </copy>
+    <copy>
+    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-comp.yaml >~/bobs-books-comp.yaml
+    ./create_secret.sh username password    
+    </copy>
     ```
 
     ![Oracle Account](images/11.png)
