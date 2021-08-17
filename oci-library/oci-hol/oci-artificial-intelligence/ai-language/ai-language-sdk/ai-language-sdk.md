@@ -28,6 +28,15 @@ You can invoke OCI Language capabilities through the OCI SDKs.  In this lab sess
 
 ## **TASK 1:** Setup API Signing Key and Config File
 <b>Prerequisite: Before you generate a key pair, create the .oci directory in your home directory to store the credentials. </b>
+Mac OS / Linux:
+
+```
+<copy>mkdir ~/.oci</copy>
+```
+Windows:
+```
+<copy>mkdir %HOMEDRIVE%%HOMEPATH%\.oci</copy>
+```
 
 Generate an API signing key pair
 ### 1. Open User Settings

@@ -59,6 +59,16 @@ Log into OCI Cloud Console. Using the Burger Menu on the top left corner, naviga
 Paste, or enter your text into the dialog box to analyze.
 ![](./images/text-box.png " ")
 
+Below are some of the examples for the text:
+```
+<copy>The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities.</copy>
+```
+```
+<copy>The Seattle Sounders Football Club recently announced it was looking for a technology partner to provide a reliable, scalable, and secure solution that could ingest, process, and store game and player data. </copy>
+```
+```
+<copy>In 2020 people worldwide moved to working remotely because of the COVID-19 pandemic. As a result, collaborative tools like video conferencing, email and chat have become critical, as they allow employees to perform their jobs from home. </copy>
+```
 
 ### 3: Select the text analysis tools
 
