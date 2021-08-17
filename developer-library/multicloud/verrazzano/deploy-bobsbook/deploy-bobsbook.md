@@ -229,13 +229,13 @@ Also we need to make Verrazzano aware that we store in that namespace Verrazzano
     ```
 
     ![Verrazzano Home Folder](images/9.png)
-    ![Verrazzano Home Folder](images/10.png)
-
+    
 3. Copy the following command to download the script. This script authenticate the user for Oracle Container Registry. If authentication is successful, then it creates the docker registry secret. The Docker registry  is a way to store and version images, like GitHub for normal code but for containers (which Kubernetes can pull). Here, we will create a docker-registry secret to enable pulling the Bob's Books example image from the Oracle Container Registry. Click *Copy* on the following command, and paste it in any text editor of your choice and replace username and password with the email ID and password respectively which you used in step 1, for accepting the license agreement for downloading images from the Oracle Container Registry. Then, in the Cloud Shell, paste the modified command as shown:
 
     ```bash
     <copy>
-    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/create_secret.sh >~/bobs-books-comp.yaml
+    curl -LSs https://raw.githubusercontent.com/pandey-ankit/learning-library/master/developer-library/multicloud/verrazzano/deploy-bobsbook/create_secret.sh >~/create_secret.sh
+    chmod 777 create_secret.sh
     ./create_secret.sh username password    
     </copy>
     ```
@@ -261,19 +261,14 @@ Please copy and paste the block of commands into the *Cloud Shell*.
     </copy>
     ```
 
-ANKIT - TO DO - new screenshots are needed because we grouped all these commands
     ![mysql](images/12.png)
-    ![weblogic Credential](images/13.png)
-    ![weblogic credential](images/16.png)
-    ![mysql](images/19.png)
-
+    
 5. We have a Kuberneter cluster, *cluster1*, with three nodes. Now, we want to deploy Bob's Books containerized application on *cluster1*. For this, we need a Kubernetes deployment configuration. This deployment instructs the Kubernetes to create and update instances for the Bob's Books application. Here, we have the `bobs-books-comp.yaml` file, which instructs Kubernetes. To deploy the Bob's Books application, copy and paste the following two commands as shown. The `bobs-books-comp.yaml` file contains definitions of various OAM components, where, an OAM component is a Kubernetes Custom Resource describing an application’s general composition and environment requirements. To learn more about the `bobs-books-comp.yaml` file, review Verrazzano Components in the Introduction section of this Lab 3.
 
     ```bash
     <copy>kubectl apply -f ~/bobs-books-comp.yaml</copy>
     ```
 
-ANKIT TO DO - new path on screenshot
     ![app](images/20.png)
 
 6. The `bobs-books-app.yaml` file is a Verrazzano application configuration file, which provides environment specific customizations. To learn more about `bobs-books-app.yaml` file, review Verrazzano Application Configuration in the Introduction section of this Lab 3.
@@ -282,7 +277,6 @@ ANKIT TO DO - new path on screenshot
     <copy>kubectl apply -f ~/bobs-books-app.yaml</copy>
     ```
 
-ANKIT TO DO - new path on screenshot
     ![app](images/21.png)
 
 7. Wait for all of the pods in the Bob’s Books example application to be in the *Running* state. You may need to repeat this command several times before it is successful. The WebLogic Server and Coherence pods may take a while to be created and Ready. This *kubectl* command will wait for all the pods to be in the *Running* state within the bobs-books namespace. It takes around 4-5 minutes.

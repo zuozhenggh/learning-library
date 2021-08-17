@@ -23,20 +23,20 @@ In this lab, you will:
 1. Run the following command to download the modified bobs-books-comp-mod.yaml file.
 
     ```bash
-    <copy>curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-comp-mod.yaml >~/bobs-books-comp-mod.yaml</copy>
+    <copy>curl -LSs https://raw.githubusercontent.com/pandey-ankit/learning-library/master/developer-library/multicloud/verrazzano/alternate-version/bobs-books-comp-mod.yaml >~/bobs-books-comp-mod.yaml</copy>
     ```
 
-    ![Apply changes](images/4.png)
+    ![Apply changes](images/1.png)
 
 ## Task 2: Apply the Changes using kubectl
 
 1. To apply the changes, copy and paste the following command in the *Cloud Shell*. When you will apply the change, a new pod will initialize for serving requests for new component, while the pod associated with the old component will continue serving requests. Later, after the new pod will reaches to the *Running* state, then the old pod will begin being *Terminated*. Eventually, only the new pod will be in the *Running* state.
 
     ```bash
-    <copy>kubectl apply -f bobs-books-comp.yaml</copy>
+    <copy>kubectl apply -f ~/bobs-books-comp-mod.yaml</copy>
     ```
 
-    ![Apply changes](images/4.png)
+    ![Apply changes](images/2.png)
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 
