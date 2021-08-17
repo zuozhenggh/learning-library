@@ -431,13 +431,13 @@ However, the challenge here is: it would be much easier if we could have a sprea
 
 **Note:** You don't need to run this block of code:
 
-    ```
-    PIVOT
-    (
-    SUM(CONTRIBUTION) contribution
-    FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
-    )
-    ```
+  ```
+  PIVOT
+  (
+  SUM(CONTRIBUTION) contribution
+  FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
+  )
+  ```
 
 1. If we wrap a **PIVOT** operation around our previous query, this will allow us to swap rows for each quarter into columns so we can focus more easily on the contribution data:
 
