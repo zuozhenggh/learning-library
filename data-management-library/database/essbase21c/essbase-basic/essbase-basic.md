@@ -21,9 +21,9 @@ In this lab, the following topics are covered:
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-   - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-   - Lab: Environment Setup
-   - Lab: Initialize Environment  
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment  
 
 
 ## Task 1: Creating a Sample Application in Essbase21c
