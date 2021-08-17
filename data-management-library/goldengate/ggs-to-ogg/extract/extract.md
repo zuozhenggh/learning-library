@@ -56,6 +56,8 @@ This Extract process captures data from the source database to send to Oracle Go
 
 5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
+    ![Add Extract - Credential Domain](images/02-05-cred-domain.png)
+
 6.  Click **Next**.
 
 7.  In the Extract Parameters screen, add the following to the text area:
@@ -63,6 +65,8 @@ This Extract process captures data from the source database to send to Oracle Go
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
+
+    ![Add Extract - Extract Parameters](images/02-07-ext-param.png)
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 
