@@ -138,9 +138,9 @@ You are now signed in to Oracle Cloud!
 
 ![](images/oracle_cloud_free_tier8.png)
 
-You may now proceed to the [next lab](../infrastructure/infrastructure.md).
+You may now proceed to the next lab.
 
- ## Acknowledgements
+## **Acknowledgements**
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Contributors** -  John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
 - **Last Updated By/Date** -

@@ -1,16 +1,18 @@
 # Introduction
 
+![](./images/Intro.png)
+
+## **Workshop Overview**
+
 This workshop will walk you through the process to deploy and configure MySQL Database Service & HeatWave to run Analytics workloads in Oracle Cloud. 
  
 HeatWave is a new, integrated, high-performance analytics engine for MySQL Database Service. HeatWave accelerates MySQL performance by 400X for analytics queries, scales out to thousands of cores, and is 2.7X faster at one-third the cost of Amazon Redshift. MySQL Database Service, with HeatWave, is the only service that enables database admins and app developers to run OLTP and OLAP workloads directly from their MySQL database, eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. The service is optimized for and exclusively available in Oracle Cloud Infrastructure (OCI). For more information about HeatWave, check this **[Link!](https://www.oracle.com/ie/mysql/heatwave/)**
  
 At the end of the workshop you will be able to run some queries on a sample dataset loaded into MySQL Database Service and compare the execution times with and without HeatWave. Prepare yourself to be surprised! 
  
+**Estimated Workshop Time: 100 minutes**
 
-![](./images/Intro.png)
-
-
-**Objectives:**
+**Objectives**
 
 -	Learn how to deploy MySQL Database Service (MDS) DB System with HeatWave.
 -	Learn how to enable an HeatWave cluster to MDS DB System.
@@ -20,58 +22,17 @@ At the end of the workshop you will be able to run some queries on a sample data
 -   Create your own Analytics dashboards on your MDS SB System.
 
 
-**Prerequisites:**
--  This workshop requires an Oracle Cloud account, you may check out this <a href="https://www.youtube.com/watch?v=4U-0SumNz6w" target="_blank">video</a> to help you signing up. You may use a paid cloud account or a trial cloud account as well.
--  A Cloud tenancy where you have a compartment provisioned in.
+## **Task 1:** Prerequisites
 
-
-## **Workshop Overview**
-
-**[Get Started: Sign Up for your Oracle Cloud Free Tier](signup/signup.md)**
-
-- Create Your Free Trial Account
-- Sign in to Your Account
+-  This workshop requires an Oracle Cloud account, you may check out this <a href="https://www.youtube.com/watch?v=4U-0SumNz6w" target="_blank">video</a> to help you signing up. You also can use a paid cloud account or a trial cloud account as well.
   
+    <div style="position: relative;padding-bottom: 56%;padding-top: 0;height: 0;margin-bottom: -33%;">
+    <iframe style="position: absolute;top: 0;left: 0;width: 40%;height: 40%;" src="https://www.youtube.com/embed/4U-0SumNz6w" title="YouTube video player"  allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    
+Your account is ready? let's start!
 
-## Lab 1 - Infrastructure Configuration 
-
-**Key Objectives:**
- 
--	Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
--	Create a compute instance as a bastion host
--	Connect to the bastion host, install MySQL Shell and download the workshop dataset
--   Create an Oracle Analytics Cloud instance
-
-
-**[Click here for Lab 1](/infrastructure/infrastructure.md)**
-
-
-## Lab 2 - Create MySQL DB System (MDS) with HeatWave 
-
-**Key Objectives:**
-
--  Create an Instance of MySQL in the Cloud
--  Add HeatWave cluster to MySQL Database Service
-
-  
-**[Click here for Lab 2](/dbmds/dbmds.md)**
-
-
-## Lab 3 – Run queries leveraging HeatWave
- 
-**Key Objectives:**
-
--  Import data into MDS and load tables to HeatWave
--  Execute queries leveraging HeatWave and compare the query execution time with and without HeatWave enabled
-  
-**[Click here for Lab 3](/heatwave/heatwave.md)**
-
-
-## Lab 4 – Use Analytics Cloud on MySQL Database Service powered by HeatWave
-
-**Key Objectives:**
-
-- Learn how to create your Analytics dashboards using Oracle Analytics Cloud on MySQL Database Service powered by HeatWave
-
-
-**[Click here for Lab 4](/analytics/analytics.md)**
+## **Acknowledgements**
+- **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director 
+- **Last Updated By/Date** -
