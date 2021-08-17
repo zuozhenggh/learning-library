@@ -7,14 +7,16 @@ This lab walks you through the steps to use and work with datastores.
 Estimated Lab Time: 20 minutes
 
 ### About Datastore
-**Datastores** exist in the user’s Oracle Database schema. A datastore, and the objects it contains, persist in the database until explicitly deleted. By using a datastore, you can store Python objects in a named datastore entry. This named datastore can then be used in subsequent Python sessions, and even be made available to other users or programs by granting/revoking read permissions.
+Datastores exist in the user’s Oracle Database schema. A datastore, and the objects it contains, persist in the database until explicitly deleted. By using a datastore, you can store Python objects in a named datastore entry. This named datastore can then be used in subsequent Python sessions, and even be made available to other users or programs by granting/revoking read permissions.
 
-Python objects, including OML4Py proxy objects, exist for the duration of the current Python session unless you explicitly save them. You can save one or more Python objects, including OML proxy objects, to a named datastore and then load those objects in a later Python session. This is also useful when using embedded Python execution.
+Python objects, including Oracle Machine Learning for Python (OML4Py) proxy objects, exist for the duration of the current Python session unless you explicitly save them. You can save one or more Python objects, including OML proxy objects, to a named datastore and then load those objects in a later Python session. This is also useful when using embedded Python execution.
 By using a datastore, you can:
-* Save OML4Py and other Python objects for use across Python sessions
+* Save OML4Py and other Python objects for use across Python sessions.
 * Grant or revoke read privilege access to a datastore or its objects to one or more users. You can restore the saved objects in another Python session.
-* Easily pass multiple and non-scalar arguments to Python functions for use in embedded Python execution from Python, REST, and SQL  API. **Note:** SQL and REST APIs support passing scalar values, such as datastore name or numeric values, only.
-* List available datastores and explore datastore contents
+* Easily pass multiple and non-scalar arguments to Python functions for use in embedded Python execution from Python, REST, and SQL  API.
+      >**Note:** SQL and REST APIs support passing scalar values, such as datastore name or numeric values, only.
+
+* List available datastores and explore datastore contents.
 
 ### Objectives
 
@@ -30,17 +32,17 @@ In this lab, you will learn how to:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab4_datastores.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab4_datastores.json](./../notebooks/lab4_datastores.json?download=1).
 
 [](include:import)
 
-## **Step 1**: Import libraries supporting OML4Py and create data table
+## Task 1: Import libraries supporting OML4Py and Create Data Table
 
 To use OML4Py, first import the package `oml`. Also import the pandas package for pandas-specific functionality.
 
 >**Note:** This lab requires the `PYQADMIN` role to use some functionalities in this lab, and in the Embedded Python Execution.
 
-1. Run the following commands to imports the `oml` module and the `Pandas` package. Import the Pandas package work with oml DataFrames.
+1. Run the following commands to imports the `oml` module and the `Pandas` package. Import the Pandas package work with `oml` DataFrames.
 
     ```
     <copy>%python
@@ -49,9 +51,9 @@ To use OML4Py, first import the package `oml`. Also import the pandas package fo
     import oml</copy>
     ```  
 
-## **Step 2:** Create Pandas DataFrames and load them into Autonomous Database
+## Task 2: Create Pandas DataFrames and Load them into Oracle Autonomous Database
 
-In this step, you will work with three data set - IRIS data set, Diabetes data set, and Boston data set. You will learn how to:
+In this step, you will work with three data set: IRIS data sets, Diabetes data set, and Boston data set. You will learn how to:
 
 * Load these three data sets and for each combine the target and predictors into a single DataFrame
 * Create and display the columns for each data set
@@ -99,7 +101,7 @@ In this step, you will work with three data set - IRIS data set, Diabetes data s
     ```
     ![Script to create Boston table](images/create_boston_table.png "Script to create Boston table")
 
-## **Step 3:** Save Python objects to datastore
+## Task 3: Save Python Objects to Datastore
 
 In this step, you will save the actual Iris data set and the temporary BOSTON proxy object to a datastore named `ds_pydata`, overwriting if the named datastore already exists.
 
@@ -107,7 +109,7 @@ In this step, you will save the actual Iris data set and the temporary BOSTON pr
 
 By storing the `BOSTON_TMP` object, the temporary table will not be deleted when the session terminates.
 
-1. Run the following script to save the `IRIS` and `BOSTON_TMP` tables in the Autonomous Database:
+1. Run the following script to save the `IRIS` and `BOSTON_TMP` tables in the Oracle Autonomous Database:
 
     ```
     %python
@@ -129,7 +131,7 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
   >**Note:** The condition `append=TRUE` adds the object to the datastore, if it already exists.  The default is `append=False`, and in that case, you will receive an error stating that the datastore exists and it won't be able to create it again.
 
 
-3. Save the `IRIS` table to a new datastore, and then list the datastores. Notice that you see the datastore name, the number of objects in the datastore, the size in bytes consumed, when the datastore was create/updated, and any description provided by the user. The two datastores `ds_iris_data` and `ds_pydata` are present, with the latter containing the three objects you added.
+3. Save the `IRIS` table to a new datastore, and then list the datastores. Notice that you see the datastore name, the number of objects in the datastore, the size in bytes consumed, when the datastore was create or updated, and any description provided by the user. The two datastores `ds_iris_data` and `ds_pydata` are present, with the latter containing the three objects you added.
 
     ```
     %python
@@ -142,7 +144,7 @@ By storing the `BOSTON_TMP` object, the temporary table will not be deleted when
     ```
      ![IRIS table saved in a new datastore](images/iris_df_in_ds.png "IRIS table saved in a new datastore")
 
-## **Step 4:** Save model objects in a datastore
+## Task 4: Save Model Objects in a Datastore
 
 This step illustrates how to store other types of objects in datastores. For this, you will create regression models using sklearn and OML4Py.
 
@@ -180,7 +182,7 @@ This step illustrates how to store other types of objects in datastores. For thi
     ![Saving objects in datastores](images/regr1_regr2.png "Saving objects in datastores")  
 
   >**Note:** `overwrite=True` indicates that the contents of the datastore should be replaced.
-    
+
 3. Now grant the read privilege to all users by specifying `user=None`. Finally, list the datastores to which the read privilege has been granted.
 
     ```
@@ -193,7 +195,7 @@ This step illustrates how to store other types of objects in datastores. For thi
     ```
     ![Granting read privilege](images/grant_read_priv.png "Granting read privilege" )    
 
-## **Step 5:**  Load datastore objects into memory
+## Task 5:  Load Datastore Objects into Memory
 
 In this step, you load all Python objects from a datastore to the global workspace and sort the result by name. Notice that they have the name specified in the dictionary when saved.
 
@@ -220,7 +222,7 @@ In this step, you load all Python objects from a datastore to the global workspa
 
     ![Loading Python object from the datastore to the global workspace](images/load_regr2_gbl_ws.png "Loading Python object from the datastore to the global workspace")
 
-3. Run the following script to view the model details
+3. Run the following script to view the model details:
 
     ```
     %python
@@ -241,7 +243,7 @@ In this step, you load all Python objects from a datastore to the global workspa
     ```
   ![Loading Python object from the datastore to the user's workspace](images/load_regr1_usr_ws.png "Loading Python object from the datastore to the user's workspace")
 
-## **Step 6:** View datastores and other details
+## Task 6: View Datastores and Other Details
 
 This step shows how to work with datastores.
 
@@ -264,7 +266,7 @@ This step shows how to work with datastores.
     ```
     ![Viewing datastores with details about user roles](images/datastore_with_read_priv.png "Viewing datastores with details about user roles")
 
-## **Step 7:** View contents of a datastore
+## Task 7: View Contents of a Datastore
 
 This step shows how to view/describe the content of a datastore. This example shows the `ds_pydata` datastore. Notice that the three proxy objects are listed.
 
@@ -280,7 +282,7 @@ This step shows how to view/describe the content of a datastore. This example sh
 
   The script returns the description of three proxy objects - `iris`, `oml_boston`, and `oml_diabetes`. It lists the class, size, length, row and column count for each object.     
 
-## **Step 8:** Manage datastore privileges
+## Task 8: Manage Datastore Privileges
 
 This step shows how to revoke read privilege, show datastores to which the read privilege has been granted, and again grant read privilege to a user.
 
@@ -308,7 +310,7 @@ This step shows how to revoke read privilege, show datastores to which the read 
     ```
     ![Granting privilege to OMLUSER2](images/grant_priv.png "Granting privilege to OMLUSER2")        
 
-## **Step 9:** Delete Datastore Content
+## Task 9: Delete Datastore Content
 
 This step shows how to use the `oml.ds.delete` function to delete datastores or datastore content.
 

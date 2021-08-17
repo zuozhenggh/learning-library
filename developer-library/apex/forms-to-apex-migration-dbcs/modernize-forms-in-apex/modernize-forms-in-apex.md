@@ -20,7 +20,7 @@ Estimated Lab Time: 30 minutes
 - Have Oracle APEX Workspace defined for the migration project
 
 
-## **STEP 1**: Creating an App
+## Task 1: Creating an App
 
 1. In the App Builder menu, click **App Builder**.
 2. Click **Create**.
@@ -34,7 +34,7 @@ Estimated Lab Time: 30 minutes
 4. Enter the application name, select appearance (template needed for app.) and add pages needed for the application.
     ![](images/create-app.png " ")
 
-## **STEP 2**:Create Oracle APEX page for Customer Form
+## Task 2:Create Oracle APEX page for Customer Form
 
 
 We will be walking through series of steps on how to create Customer Summary Report in Interactive Report and Tree Report along with a modal form to create/update/delete customers. We will also be comparing with APEX migration project on how we can transform the Forms  Blocks/Triggers/LOV and Alerts into APEX.
@@ -84,7 +84,7 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
     Creating Customer Modal Form takes care of **Data Block** conversion and **Items** from Forms to APEX
 
-## **STEP 3**:Create List of Values in Oracle Customer Form APEX page
+## Task 3:Create List of Values in Oracle Customer Form APEX page
 
 
 1. From the App Builder Home Page, click on **Migrations**
@@ -129,7 +129,7 @@ We will be walking through series of steps on how to create Customer Summary Rep
 
 That completes the **List of Values** section of the migration.
 
-## **STEP 4**:Migrate **Alerts** from Forms to APEX  
+## Task 4:Migrate **Alerts** from Forms to APEX  
 
 1. From the App Builder Home Page, Click on **Migrations**.
     ![](images/migration.png " ")
@@ -152,13 +152,13 @@ That completes the **List of Values** section of the migration.
 7. **CONFIRM_ALERT** is handled by Page setting , Change the **Warn on unsaved changes** to **Page Default**
     ![](images/confirm-revert-alert.png " ")
 
-## **STEP 4**:Migrate **Program Units** from Forms to APEX  
+## Task 4:Migrate **Program Units** from Forms to APEX  
     **Program Units** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 5**:Migrate **Triggers** from Forms to APEX  
+## Task 5:Migrate **Triggers** from Forms to APEX  
     **Triggers** logic of customer form does not apply to APEX as it is handled by default processing of APEX.
 
-## **STEP 6**:Recreate Forms Tree Structure **Triggers** from Forms to APEX  
+## Task 6:Recreate Forms Tree Structure **Triggers** from Forms to APEX  
 **Customer Form** in the Oracle Forms Service was represented in a **Tree** Structure , You can easily recreate the tree structure in APEX.
 
 1. From the Application Home Page, click **Create Page** and Click **Next**.
@@ -238,7 +238,7 @@ That completes the **List of Values** section of the migration.
 
   Great Job !! You have successfully completed transforming the **Customer** Form to **Faceted Search Report and Form** in APEX and also recreated the **Tree** Structure similar to **Oracle Forms Structure**.
 
-## **STEP 7**:Additional Enhancements to Customer Form
+## Task 7:Additional Enhancements to Customer Form
 
 We can enhance the customer form in APEX page to utilize the user friendly features in APEX.
 

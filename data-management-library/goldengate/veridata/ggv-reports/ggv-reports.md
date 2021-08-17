@@ -13,10 +13,9 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
+- You have completed:
     * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
@@ -25,7 +24,7 @@ This lab assumes you have:
     * Lab: Create Groups and Compare Pairs.
     * Lab: Create and Execute Jobs
 
-## **STEP 1:** View a Report
+## Task 1: View a Report
 
   To view a report:
 1. From the left navigation pane, click **Reports** to display the Report Selection page.

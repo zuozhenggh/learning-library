@@ -9,7 +9,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 -   Learn how to scale up an ADW or ATP service
 -   Understand the performance and concurrency impacts of scaling your autonomous database service online
 
-## **Step 1**: Scaling your Autonomous Database Instance
+## Task 1: Scaling your Autonomous Database Instance
 
 1. Go back to the Cloud Console you used during the provisioning exercise and open the database instance's Details page. From the **action menu**, click **Scale Up/Down**.
 
@@ -33,7 +33,7 @@ In this lab, you will scale up your Oracle Autonomous Data Warehouse (ADW) or Au
 
     ![A refreshed database console page with updated OCPU count and storage.](./images/Picture300-6.png " ")
 
-## **Step 2**: Performance and Concurrency Benefits of Dynamic Scaling
+## Task 2: Performance and Concurrency Benefits of Dynamic Scaling
 
 1.  Watch a demo of the performance impact of scaling up your instance. It shows how you can dynamically scale up a database while the workload is running, to increase transaction throughput. Scaling up can also provide more concurrency for your users.
 

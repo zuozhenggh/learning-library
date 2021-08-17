@@ -28,7 +28,7 @@ Depending on your needs, there are two different approaches to how you can creat
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## **STEP 1**: Create an Authentication Token for Graph Server
+## Task 1: Create an Authentication Token for Graph Server
 
 1. Start a new SSH session using your private key **labkey**, **{VM IP Address}**, and **opc** user.
 
@@ -62,7 +62,7 @@ Depending on your needs, there are two different approaches to how you can creat
 
   ![](./images/auth-token.png)
 
-## **STEP 2** : Configure Graph Config JSON File
+## Task 2: : Configure Graph Config JSON File
 
 To define the graph configuration to load, you need a JSON file describing the location and properties of the graph. The file tells the Graph Server's in-memory analytics engine where to source the data from, the data definitions and the Keystore alias to use.
 
@@ -87,7 +87,7 @@ The following steps will modify a previously created config file for PGX to load
 
 3. **Save** the file and **Exit** the editor (in vi/vim, press **Esc**, type **:wq** and hit **ENTER**).
 
-## **STEP 3**: Create a Property Graph using Graph Shell
+## Task 3: Create a Property Graph using Graph Shell
 
 1. Connect to Graph Server using Graph Shell (JShell) and the authentication token just created using an **opg-jshell** session.
 

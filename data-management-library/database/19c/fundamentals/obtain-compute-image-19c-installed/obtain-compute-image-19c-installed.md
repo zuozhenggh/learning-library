@@ -2,41 +2,40 @@
 
 ## Introduction
 
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute image that has Oracle Database 19c installed on it.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-installed` image from Oracle Cloud Marketplace. The image has Oracle Database 19c installed on it and noVNC, which provides an easy-to-use browser user interface.
 
-Begin by creating a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After you create the stack, you apply it to start a provisioning job. When the job is completed, you verify that you can connect to your compute instance via a browser and Cloud Shell.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser, download the lab files, and start the database listeners.
 
-Oracle highly recommends that you create a new VCN when configuring the stack, which is the default, to ensure you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to use one of your own existing VCNs when you configure the stack, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules. STEP 1 covers how to configure the security rules. If you accept the default to create a new VCN when configuring the stack, then you can skip STEP 1.
+Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you choose to follow the recommendation, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN needs to have several ingress security rules, which are covered in Task 1.
 
-> **Note**: If you are working in the LiveLabs environment, you can skip STEP 1 and STEP 2 because those steps have already been done for you.
+> **Note**: If you are working in the LiveLabs environment, you can skip Task 1 and Task 2 because they have already been done for you.
 
 Estimated Lab Time: 15 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
 - Add security rules to your existing VCN
-- Create and apply a stack in Resource Manager
-- Obtain the public IP address of your compute instance
-- Connect to your compute instance via Cloud Shell
-- Download the script files for this workshop
-- Start the container databases on the compute instance
-- Discover the container databases and pluggable databases
+- Create and apply a stack in Resource Manager to create the `workshop-installed` compute instance
+- Connect to your compute instance via a browser and set up your desktop
+- Download the labs files
+- Start the database listeners
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+This lab assumes you have:
 
-- Obtain an Oracle Cloud account.
-- Create SSH keys.
-- Sign in to Oracle Cloud Infrastructure.
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell
 
-## **STEP 1**: Add security rules to your existing VCN
 
-Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections and traffic on ports 1521, 1523, and 1524 for the DB Listener.
+## Task 1: Add security rules to your existing VCN
 
-> **Note**: You can skip this step if you plan to create a new VCN when configuring the stack (recommended).
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521, 1523, and 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
+
+> **Note**: If you plan to let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2. If you are working in the LiveLabs environment, you can skip this task and Task 2 and proceed to Task 3.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -46,319 +45,127 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 4. Click the default security list.
 
-5. For each port number (22, 1521, 1523, 1524), do the following:
+5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
 
-    1. Click **Add Ingress Rule**.
+## Task 2: Create and apply a stack in Resource Manager
 
-    2. For **Source CIDR**, enter **0.0.0.0/0**.
+> **Note**: If you are working in the LiveLabs environment, the `workshop-installed` compute instance is already created for you; therefore, you can skip this task and proceed to Task 3.
 
-    3. For **Destination port range**, enter the port number.
+1. Download [db19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/sO1PZkqdsK3-VmPZ8TMQBgKL6Mjy73iNY9O3h00qjI1TEVSVSyqBpOyTucfNbk8z/n/frmwj0cqbupb/b/19cNewFeatures/o/db19cnf-workshop-installed.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
 
-    4. Click **Add Ingress Rule**.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
-## **STEP 2**: Create and apply a stack in Resource Manager
+  ![Create a stack tile on the home page](images/create-a-stack.png)
 
-> **Note**: If you are working in the LiveLabs environment, you can skip this step and proceed to STEP 2.
+    The **Create Stack - Stack Information** page is displayed.
 
-1. Download [db-multitenant-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G7LZB2PC1IU-WlBfrsDzKTgqKL9vbyhE5mWrF01MAyD3Gi589C6detaJdbTESF3F/n/natdsecurity/b/stack/o/db-multitenant-mkplc-freetier.zip) to a directory on your local computer. This ZIP file contains the necessary terraform scripts to create your compute instance and database.
+3. Select **My Configuration**.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
+4. In the **Stack Configuration** area, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
-  ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
+  ![Stack Information Page](images/stack-information-page-workshop-installed.png "Stack Information page")
 
-    The **Create Stack** page is displayed.
+5. For **Name**, leave the default stack name as is.
 
-3. For **Stack Information**, do the following:
+6. For **Description**, leave the default description for the stack as is.
 
-    1. Select **My Configuration**.
+7. Select your compartment. This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-installed` compute instance. If you plan to use your own VCN, make sure that it resides in the compartment that you select here.
 
-    2. In the **Stack Configuration** section, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+8. Click **Next**. The **Configure Variables** page is displayed.
 
-    3. Leave the default values for **Name** and **Description** as is.
+9. In the **Main Configuration** section, leave **1** selected for the instance count.
 
-    4. Select your compartment.
+10. Select an availability domain.
 
-  ![Stack Information page top half](images/stack-information-page-top-half.png "Stack Information page top half")
+11. Paste the contents of your public key into the **SSH Public Key** box. Be sure that there are no carriage returns.
 
-  ![Stack Information page bottom half](images/stack-information-page-bottom-half.png "Stack Information page bottom half")
+  ![Main Configuration Section](images/main-configuration-section.png "Main Configuration Section")
 
-4. Click **Next**.
+12. In the **Options** section, configure the following:
 
-    The **Configure Variables** page is displayed.
+    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, select **VM.Standard.E4.Flex**. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
+    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for this workshop. If you increase the number of OCPUs, be sure that you have the capacity available.
+    - Leave the **Use Existing VCN** check box deselected (recommended) if you want Resource Manager to create a VCN for you. If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected on the **Stack Information** page.
 
-5. In the **Main Configuration** section, do the following:
+    ![Options Section](images/options-section.png "Options Section")
 
-    1. Leave **Instance Count** set to **1**.
+13. Click **Next**.
 
-    2. Select an **availability domain**.
+15. On the **Review** page, verify that the information is correct.
 
-    3. Paste your **SSH Public Key** into the box.
+  ![Review page](images/review-page.png "Review page")
 
-  ![Main Configuration section](images/main-configuration-section.png "Main Configuration section")
+16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
-6. In the **Options** section, do the following:
+    ![Run Apply section](images/run-apply-section.png "Run Apply Section")
 
-    1. Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected.
+17. Click **Create**.
 
-    2. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected.
+    Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
 
-    3. For **Select OCPUs Count per Instance**, leave 2 selected.
-
-    4. (Optional) If you want to use one of your existing VCNs, select **Use Existing VCN**, and then select a VCN that has a regional public subnet and the required security rules. Also select your public subnet.
-
-  ![Options section](images/options-section.png "Options section")
-
-7. Click **Next**.
-
-8. On the **Review** page, review your configuration variables and make sure they are correct. Only the variables that you edited are displayed.
-
-  ![Review page](images/review-page.png)
-
-9. In the **Run Apply on the created stack** section, select **RUN APPLY**.
-
-  ![Run Apply option](images/run-apply-option.png "Run Apply option")
-
-10. Click **Create** to begin the provisioning job.
-
-    The **Job Details** page is displayed showing the job in progress.
-
-11. Wait for the job to be completed. The job is successful when it reads "SUCCEEDED" and the last line of the log file reads `Apply complete!`.
-
-  ![Job Details page with the job marked as succeeded](images/job-details-page-succeeded.png "Job Details page with the job marked as succeeded")
+  ![Job Details page](images/job-details-page.png "Job Details page")
 
 
+18. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks.
 
-## **STEP 3**: Obtain the public IP address of your compute instance
-
-1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
-
-2. Select your compartment.
-
-3. Find the public IP address of the compute instance that starts with **db19-hol-s01-...** in the table and jot it down.
+    ![Image URL](images/image-url.png "Image URL")
 
 
-## **STEP 4**: Connect to your compute instance via Cloud Shell
+## Task 3: Connect to your compute instance via a browser and set up your desktop
 
-1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your `workshop-installed` compute instance.
 
-  ![Cloud Shell icon](images/cloud-shell-icon.png "Cloud Shell icon")
+1. In a browser, enter the URL to your `workshop-installed` compute instance. If your compute instance is not displayed, wait 30 seconds and try again.
 
-  A terminal window is displayed at the bottom of the page.
+    You are automatically logged into your compute instance and presented with a user-friendly desktop. On the desktop, there are several useful shortcuts.
 
-2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance. Replace `cloudshellkey` with the name of your private key file if it has a different name.
+    ![noVNC Desktop](images/noVNC-desktop-workshop-installed.png "noVNC Desktop")
+
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down). You can exit full screen mode at any time by pressing the **Escape** key.
+
+    ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
+
+    ![Full Screen](images/full-screen.png "Full Screen")
+
+3. If the workshop guide is not open on the desktop, double-click the **Get Started with Your Workshop** icon on the desktop.
+
+
+## Task 4: Download the lab files
+
+Throughout this workshop, you use pre-built lab files. This task shows you how to download the lab files to your compute instance.
+
+1. On the noVNC desktop, open a terminal window.
+
+2. Run the following commands to create a `/home/oracle/labs/19cnf` directory, switch to it, download the lab files into the `19cnf` directory and extract the ZIP file, set permissions, and view the list of files.
 
     ```
-    $ ssh -i ~/.ssh/cloudshellkey opc@public-ip-address
-    ```
-
-    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
-
-3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
-
-  You are now connected to your new compute instance via Cloud Shell.
-
-
-## **STEP 5**: Download the script files for this workshop
-
-1. Switch to the `oracle` user.
-
-    ```
-    $ sudo su - oracle
-    ```
-
-2. Switch to the labs directory and confirm your directory
-
-    ```
-    $ cd ~/labs
-    $ pwd
-
-    /home/oracle/labs
-    ```
-
-3. Download the script files for this workshop.
-
-    ```
-    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/iHB8oCR7sve_J-hdridcAIS7-TGJ-cvZdkR5POjqpY0UwYnucbhyonPUhiSqhruY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cNewFeatures.zip
-    ```
-
-4. Extract the ZIP file in the `labs` directory.
-
-    ```
-    $ unzip -q 19cNewFeatures.zip
-    ```
-
-5. Verify that you have the following directories in the `/home/oracle/labs` directory:
-
-    ```
-    ls
-
-    19cNewFeatures.zip  admin  DB   db.rsp   DIAG   DW   envprep.sh   HA  multitenant   OBEs   PERF   SEC   Videos
-    ```
-
-6. Grant permissions to execute on files in the `labs` directory.
-
-    ```
-    chmod -R +x ~/labs
-    ```
-
-## **STEP 6**: Start the container databases on the compute instance
-
-1. Return to the `opc` user.
-
-    ```
-    exit
-    ```
-
-2. Change to the `/tmp` directory
-
-    ```
-    cd /tmp/
-    ```
-
-3. Download a ZIP file that contains initialization scripts.
-
-    ```
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/agZ9XqafKHNCN3rpIegRlFFFJXe6YRPMqO7uHsO49vnLgm_3o0H_I_XTemvaAEXu/n/natdsecurity/b/labs-files/o/db-multitenant-prelab-init.zip
-    ```
-
-4. Extract the ZIP file into the `/tmp/bootstrap` directory.
-
-    ```
-    unzip db-multitenant-prelab-init.zip -d bootstrap
-    ```
-
-6. Change to the `/tmp/bootstrap` directory.
-
-    ```
-    cd bootstrap
-    ```
-
-7. Grant execute permissions on the SSH files in the `bootstrap` directory.
-
-    ```
-    chmod +x *.sh
-    ```
-
-8. Run the `db19-prelab-init.sh` script.
-
-    ```
-    sudo ./db19-prelab-init.sh
-    ```
-
-9. Switch to the `oracle` user.
-
-    ```
-    sudo su - oracle
-    ```
-
-10. Change to the `/tmp/bootstrap` directory.
-
-    ```
-    cd /tmp/bootstrap
-    ```
-
-11. Start the database listeners.
-
-    ```
-    lsnrctl start LISTCDB1
-    lsnrctl start LISTCDB2
-    ```
-
-12. Stop the two container databases (CDB1 an CDB2). Wait until they are both stopped.
-
-    ```
-    ./stop_all.sh
-    ```
-
-13. Start the two container databases.
-
-    ```
-    ./start_all.sh
-    ```
-
-14. View the status of the listeners and verify that the listeners are ready.
-
-    ```
-    lsnrctl status LISTCDB1
-    lsnrctl status LISTCDB2
+    $ <copy>mkdir -p ~/labs/19cnf</copy>
+    $ <copy>cd ~/labs/19cnf</copy>
+    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip</copy>
+    $ <copy>unzip -q 19cnf-lab-files.zip</copy>
+    $ <copy>chmod -R +x ~/labs/19cnf</copy>
+    $ <copy>ls -an</copy>
     ```
 
 
+## Task 5: Start the database listeners
 
-## **STEP 7**: Discover the container databases and pluggable databases
+The ORCL, CDB1, and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to have `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases. The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTENER_CDB1`, and `LISTENER_CDB2` respectively.
 
-
-1. Set the oracle environment and connect to the CDB1 container database. When prompted for the `ORACLE_SID`, enter **CDB1**.
-
-    ```
-    $ . oraenv
-    ORACLE_SID = [ORCL] ? CDB1
-
-    The Oracle base remains unchanged with value /u01/app/oracle
-    ```
-
-2. Connect to the root container using SQL*Plus.
+1. Enter the following command to set the environment variable. At the prompt, enter CDB1.
 
     ```
-    $ sqlplus / as sysdba
-
-    SQL*Plus: Release 19.0.0.0.0 - Production on Wed May 26 20:51:15 2021
-    Version 19.10.0.0.0
-
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
-    Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
+    $ <copy>. oraenv</copy>
+    CDB1
     ```
 
-2. Verify that you are logged in to the `root` container as the `SYS` user.
+2. Start the listeners for the ORCL, CDB1, and CDB2 database instances. The output indicates that the listeners do not support any services. You can ignore these messages. When you start up the databases in the subsequent labs, the services become supported.
 
     ```
-    SQL> SHOW user
-
-    USER is "SYS"
-    SQL>
+    $ <copy>lsnrctl start LISTENER</copy>
+    $ <copy>lsnrctl start LISTENER_CDB1</copy>
+    $ <copy>lsnrctl start LISTENER_CDB2</copy>
     ```
-
-3. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
-
-    ```
-    SQL> SHOW con_name
-
-    CON_NAME
-    -------------------
-    CDB$ROOT
-    SQL>
-    ```
-
-4. List all of the containers in CDB1 by querying the `V$CONTAINERS` view. The results show that there are three containers: the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
-
-    ```
-    SQL> COLUMN name FORMAT A8
-    SQL> SELECT name, con_id FROM v$containers ORDER BY con_id;
-
-    NAME         CON_ID
-    -------- ----------
-    CDB$ROOT          1
-    PDB$SEED          2
-    PDB1              3
-
-    SQL>
-    ```
-
-5. Exit SQL*Plus.
-
-    ```
-    SQL> exit
-
-    $
-    ```
-
-Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
-
-
-
 
 ## Learn More
 
@@ -366,5 +173,5 @@ Congratulations! You have a fully functional Oracle Database 19c instance runnin
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, May 26 2021
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021

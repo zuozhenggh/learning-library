@@ -1,4 +1,4 @@
-# Get Started with LiveLabs
+# Get started with LiveLabs
 
 ## Introduction
 This lab walks you through the steps to create an Oracle Machine Learning notebook and connect to the Python interpreter.
@@ -16,7 +16,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 > **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 
-<if type="livelabs">## **Step 1:** Launch the workshop
+<if type="livelabs">## Task 1: Launch the Workshop
 
 > Note: it takes approximately 20 minutes to create your workshop environment.*
 
@@ -24,7 +24,7 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "")
 
-2. Select the compartment assigned to you from the **List Scope menu** and then click the ADW instance.
+2. Select the compartment assigned to you from the **List Scope** menu and then click the Oracle Autonomous Data Warehouse instance.
 
     ![](images/select-compartment.png)
 
@@ -32,11 +32,11 @@ In this lab, you will learn how to provision an Oracle Autonomous Database.
 
 </if>
 
-## **Step 1:** Provision an Oracle Autonomous Database
+## Task 1: Provision an Oracle Autonomous Database
 
 To provision an Oracle Autonomous Database:
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
+1. From the **Navigation Menu** in the upper left corner, select **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
 	![Autonomous Data Warehouse option under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "Autonomous Data Warehouse option under Oracle Database")
 
@@ -59,15 +59,15 @@ To provision an Oracle Autonomous Database:
 7. For Database configuration, select the following:
 
     - **Choose database version:** Select the database version. The available database version is **19c**.
-    - **OCPU Count:** Enter 1. This is number of CPU cores for your database.
-    - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Enter 1 TB.
+    - **OCPU Count:** Enter ``1`` . This is number of CPU cores for your database.
+    - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Click the arrow to select ``1``.
     - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
 
     ![Configure Database dialog](images/create-adw-config.png "Configure Database dialog")
 
 8. For Administrator credentials, enter and re-confirm a password.
 
-9. For Network Access, select Allow Secure access from everywhere.
+9. For network access, select **Allow secure access from everywhere.**
 
     ![Network Access settings](images/create-adw-network.png "Network Access settings")
 
@@ -75,7 +75,7 @@ To provision an Oracle Autonomous Database:
 
     ![License settings](images/create-adw-license.png "License settings")
 
-11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the hamburger menu to see a list of Oracle Autonomous Database instances in your console.
+11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the navigation to see a list of Oracle Autonomous Database instances in your console.
 
 12. Click the Autonomous Data Warehouse instance you just created.
 

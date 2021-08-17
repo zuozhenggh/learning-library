@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 1**: Log-in
+<!-- ## Task 1: Log-in
 
 1. Launch your browser to the following URL
 
@@ -44,9 +44,9 @@ This lab assumes you have:
 
 3. You should see the home page
 
-    ![](./images/home.png " ")
+    ![](./images/home.png " ") -->
 
-## **Step 2**: Check Version
+## Task 1: GGSA Version
 1. Click on the drop-down menu in the upper right-hand corner of the screen.
 
     ![](./images/about.png " ")
@@ -61,7 +61,7 @@ This lab assumes you have:
 
 3. Click Done.
 
-## **Step 3**: Review System Settings
+## Task 2: Review System Settings
 1. Again, click on the drop-down menu in the upper right-hand corner of the screen but this time click on System Settings
 
     ![](./images/systemsetdropdown.png " ")
@@ -70,7 +70,7 @@ This lab assumes you have:
 
     ![](./images/systemsettings.png " ")
 
-## **Step 4**: Perform User Management
+## Task 3: Perform User Management
 1. Click on the User Management in the navigation bar to the left and **Add User**:
 
     `osauser/osauser`
@@ -79,7 +79,7 @@ This lab assumes you have:
 
     ![](./images/adduser.png " ")
 
-## **Step 5**: Review Catalog
+## Task 4: Review Catalog
 
 1. Click on the Catalog menu on the top right-hand corner of the home page:
 
@@ -91,7 +91,7 @@ This lab assumes you have:
 
 2. Navigate back to the Home page again.
 
-## **Step 6**: Check out Import
+## Task 5: Check out Import
 
 1. Click on Import in Distributed Intelligence for IOT region and see the message that it was imported Successfully.
 
@@ -105,7 +105,7 @@ This lab assumes you have:
 
     ![](./images/resourcesimported.png " ")
 
-## **Step 7**: View "Show Me (Nav Bar)"
+## Task 6: View "Show Me (Nav Bar)"
 
 1. Click on the box next to the Catalog and then click on *View All* on the left Show Me nav bar to hide all the resources. All the resources in the Show Me nav bar should now be unchecked and you should see 0 of 0 Resources in the main page
 
@@ -115,7 +115,7 @@ This lab assumes you have:
 We can now check individual resource types and only see them listed in
 the main page.
 
-## **Step 8**: View Connections
+## Task 7: View Connections
 
 1. Click on the Connections on the left nav bar and verify that only two types of connections are visible.
 
@@ -143,7 +143,7 @@ the main page.
 
     ![](./images/editkafkaconnection.png " ")
 
-## **Step 9**: Review Streams
+## Task 8: Review Streams
 
 1. In the left nav bar uncheck the Connections resource and check Streams instead and verify that only VendingMachineStream is visible.
 
@@ -167,7 +167,7 @@ the main page.
 
     ![](./images/vmeditstream3.png " ")
 
-## **Step 10**: Review References
+## Task 9: Review References
 
 References are typically database tables that might be used to enrich a stream of data.
 
@@ -189,7 +189,7 @@ References are typically database tables that might be used to enrich a stream o
 
 5. In the next page click on `(X)` and exit.
 
-## **Step 11**: Review Targets
+## Task 10: Review Targets
 
 A `Target` is a destination environment downstream that is usually used when we are finished with analysis. In this version the following targets are supported: AWS S3, Coherence, Database Table, Elastic Search, HBase, HDFS, Hive, Ignite Cache, JMS, Kafka, MongoDB, NFS, Notification, Object Storage and REST.
 
@@ -238,4 +238,4 @@ If you selected the **Green Button** for this workshop and still have an active 
 
 * **Author** - Hadi Javaherian, Solution Engineer
 * **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
+* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, July 2021

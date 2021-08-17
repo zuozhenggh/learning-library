@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 - Connect and Provision ADB
 - Create a Machine Learning Model
 
-## **Step 1:** Run the APEX Application
+## Task 1: Run the APEX Application
 
 <if type="freetier">
 1. Download the pre-built APEX application from [here](files/f100.sql).
@@ -104,7 +104,7 @@ This lab assumes you have completed the following labs:
     ![](images/suspicious_claim.png)
 
 
-## **Step 2:** Use the APEX application to make decisions
+## Task 2: Use the APEX application to make decisions
 
 In this step, the experienced Claims Adjuster will focus on the most suspicious claims using their expertise and knowledge.
 
@@ -136,7 +136,7 @@ In this step, the experienced Claims Adjuster will focus on the most suspicious 
 
 6. Keep this browser tab open, as we'll use again.
 
-## **Step 3:** Build a supervised learning classification model
+## Task 3: Build a supervised learning classification model
 
 Finally, we'll build a new model using this "supervised" data to improve the model.
 
@@ -168,7 +168,7 @@ Finally, we'll build a new model using this "supervised" data to improve the mod
 
     ![](images/super-5.png)
 
-## **Step 4:** Analyze key factors of the supervised model
+## Task 4: Analyze key factors of the supervised model
 
 1. On the browser tab with the APEX application, click **Key Factors** from the left to show graphs of the key factors used to predict fraud from this data.
 

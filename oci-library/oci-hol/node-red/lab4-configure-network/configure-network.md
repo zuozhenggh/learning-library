@@ -16,7 +16,7 @@ Estimated Lab Time: 20 minutes
 * A compute instance running OAL
 * Connected via SSH to your compute instance
 
-## **Step 1**: Configure Network Security List
+## Task 1: Configure Network Security List
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**. Select the VCN by clicking on its name
 
@@ -39,7 +39,7 @@ Estimated Lab Time: 20 minutes
 
    ![Add Ingress Rule](images/addIngress1.png " ")
 
-## **Step 2**: Update the OAL Firewall service
+## Task 2: Update the OAL Firewall service
 
 Change to your SSH session. We will now configure the firewall service on OAL to allow incoming traffic on port 1180.
 

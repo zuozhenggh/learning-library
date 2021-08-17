@@ -18,14 +18,14 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
-## **STEP 1**: Create Stack: Choose a Path
+## Task 1: Create Stack: Choose a Path
 Proceed to deploy your workshop environment using Oracle Resource Manager (ORM) stack
 
 Your options are:
-1. Step 1A: Create Stack:  **Compute + Networking** *(recommended)*
-2. Step 1B: Create Stack:  **Compute Only**
+1. Task 1A: Create Stack:  **Compute + Networking** *(recommended)*
+2. Task 1B: Create Stack:  **Compute Only**
 
-## **STEP 1A**: Create Stack:  Compute + Networking
+## Task 1A: Create Stack:  Compute + Networking
 1. Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2. Login to Oracle Cloud
 3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
@@ -82,10 +82,10 @@ Your options are:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **STEP 1B**: Create Stack:  Compute only
+## Task 1B: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
-***Note:*** *We recommend letting our stack create the VCN to reduce the potential for error.*
+> *Note:* We recommend letting our stack create the VCN to reduce the potential for error.
 
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
@@ -104,7 +104,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Description**:  Same as above
     - **Create in compartment**:  Select the correct compartment if not already selected
 
-  ***Note:*** *If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.*
+  > *Note:* If this is a newly provisioned tenant such as freetier with no user created compartment, stop here and first create it before proceeding.
 
 5. Click **Next**.
 
@@ -115,7 +115,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
     - **SSH Public Key**:  Paste the public key you created in the earlier lab
 
-  ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+  > *Note:* If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance
 
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Keep the default as checked (unless you plan on using a fixed shape)
     - **Instance Shape:** Keep the default or select from the list of Flex shapes in the dropdown menu (e.g *VM.Standard.E4.Flex*).
@@ -130,7 +130,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
     - **Select Public Subnet:** Select existing public subnet from above VCN.
 
-   ***Note:*** *For an existing VCN Option to be used successful, review the details at the bottom of this section*
+   > *Note:* For an existing VCN Option to be used successful, review the details at the bottom of this section
 
 6. If you prefer to use fixed shapes, follow the instructions below.  Otherwise skip to the next step.
     - **Use Flexible Instance Shape with Adjustable OCPU Count?:** Unchecked
@@ -146,7 +146,7 @@ If you just completed Step 1A, please proceed to Step 2.  If you have an existin
 
   ![](./images/create-stack-6.png " ")
 
-## **STEP 2**: Terraform Apply
+## Task 2: Terraform Apply
 In the prior steps we elected to trigger the *terraform apply action* on stack creation.
 
 1.  Review the job output.
@@ -157,14 +157,14 @@ In the prior steps we elected to trigger the *terraform apply action* on stack c
 3.  Your public IP address(es), instance name(s), and remote desktop URL are displayed.
 
 
-## **STEP 3:** Access the Graphical Remote Desktop
+## Task 3: Access the Graphical Remote Desktop
 For ease of execution of this workshop, your VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Navigate to **Stack Details**, **Application Information** tab, and click on the remote desktop URL
 
   ![](./images/novnc-stack-apply-2.png " ")
 
-    *Note:* It may take up to 5 minutes for the URL to render. If the page loads and issues an *authentication error*, update the URL and replace the value after *password=* with *LiveLabs.Rocks_99*
+    > *Note:* It may take up to 5 minutes for the URL to render. If the page loads and issues an *authentication error*, update the URL and replace the value after *password=* with *LiveLabs.Rocks_99*
 
     e.g.
 
@@ -176,7 +176,13 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
     ![](./images/novnc-login-1.png " ")
 
-## **STEP 4:** Enable Full-screen Display
+    > *Note:* While rare, you may see an error on the browser - “*Deceptive Site Ahead*” or similar depending on your browser type as shown below.
+
+    Public IP addresses used for LiveLabs provisioning comes from a pool of reusable addresses and this error is due to the fact that the address was previously used by a compute instance long terminated, but that wasn't properly secured, got bridged and was flagged. You can safely ignore and proceed by clicking on *Details*, and finally on *Visit this unsafe site*.
+
+    ![](images/novnc-deceptive-site-error.png " ")
+
+## Task 4: Enable Full-screen Display
 For seamless desktop integration and to make the best use of your display, perform the following tasks to render your remote desktop session in fullscreen mode.
 
 1. Click on the small gray tab on the middle-left side of your screen to open the control bar.
@@ -188,7 +194,7 @@ For seamless desktop integration and to make the best use of your display, perfo
     ![](./images/novnc-fullscreen-2.png " ")
     ![](./images/novnc-fullscreen-3.png " ")
 
-## **STEP 5:** Enable Copy/Paste from Local to Remote Desktop
+## Task 5: Enable Copy/Paste from Local to Remote Desktop
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. Continuing from the last task above, Select the *clipboard* icon
@@ -201,7 +207,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     *Note:* Please make sure you initialize your clipboard with step [1] shown in the screenshot above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function in the context menu grayed out when attempting to paste for the first time.
 
-## **STEP 6:** Open Your Workshop Guide
+## Task 6: Open Your Workshop Guide
 
 1. If the two *Firefox* browser windows are not already open, click on the icon from the remote desktop. This will launch two windows.
 
@@ -461,5 +467,5 @@ To use PuTTYgen to convert a key into .ppk format, complete the following steps:
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
+
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021

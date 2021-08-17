@@ -13,7 +13,7 @@ Here is a case study on using a few preprocessing techniques to prepare raw data
 
 ### Objectives
 In this lab, you will:
-- learn some basic technicals to perform data analysis and preprocessing
+- learn some basic technical skills to perform data analysis and preprocessing
 - Be able to prepare raw data into the format required for model training
 
 ### Prerequisites
@@ -23,7 +23,7 @@ In this lab, you will:
 - Install the following Python libraries, `pandas`, `numpy`, `matplotlib` or using the default `conda` package on Data Science Platform
 - Download the related data files and this [Python notebook](../files/anomaly-detection-data-preparation-notebook.ipynb)
 
-## **STEP 1:** Preparing Data
+## Task 1: Preparing Data
 
 For the purpose of time-series anomaly detection, the collected data should mainly contain timestamp field, any measurements from signals, sensors, which have values that changes over time etc. Those signals or sensors should naturally come from a coherent and unified system/process that are representing the status of such unified complicated system/process.
 
@@ -122,7 +122,7 @@ raw_pressure_df.head(5)
 |3|2019-01-01 10:03:00|building1|pressure_4|101.3393
 |4|2019-01-01 10:03:00|building1|pressure_5|106.3547
 
-#### Step A: Put individual sensor into its own column
+#### Task A: Put individual sensor into its own column
 ```Python
 def convert_df_to_sensor_columns(df):
     # Assume the building name is always same in this df
@@ -144,7 +144,7 @@ new_pressure_df.head()
 |1|2019-01-01 10:03:00|building2|81.6549|104.1187|106.7075|87.4424|91.3143|92.2756
 |2|2019-01-02 10:05:00|building1|96.6993|88.9946|110.9894|85.0375|105.3207|83.4807
 
-#### Step B: Join two dataframes together
+#### Task B: Join two dataframes together
 ```Python
 new_combined_df = new_temperature_df.join(new_pressure_df.set_index(['timestamp', 'building_name']), on=['timestamp', 'building_name'], how='outer')
 new_combined_df = new_combined_df.sort_values(by='timestamp', ignore_index=True)
@@ -411,7 +411,7 @@ plt.show()
 ![](../images/lab2-feature-correlation-heatmap.png =800x800)
 In this heatmap, it seems that sensor8 and sensor9 have a strong correlation; and it was found to be true in real business scenario (the two sensors are physically close).
 
-##  **STEP 3:** Preprocessing Data
+## Task 3: Preprocessing Data
 
 After having basic understanding on the data, we can start to preprocess and clean the data to fit for model training.
 
@@ -518,20 +518,20 @@ timestamp,signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal
 ```
 
 #### JSON Format
-The JSON format is also straight-forward, it contains a key `columnLabels` listing all attribute names, and a key `data` to list all acutual values along with timestamp.
+The JSON format is also straight-forward, it contains a key `signalNames` listing all attribute names, and a key `data` to list all actual values along with timestamp.
 
 ```Json
 {
     "requestType": "INLINE",
-    "columnLabels": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
+    "signalNames": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
     "data": [
         {
             "timestamp": "2018-01-03T16:00:01",
-            "value": [ 0.8885, 0.6459, -0.0016, -0.9061, 0.1349, -0.4967, 0.4335, 0.4813, -1.0798, 0.2734 ]
+            "values": [ 0.8885, 0.6459, -0.0016, -0.9061, 0.1349, -0.4967, 0.4335, 0.4813, -1.0798, 0.2734 ]
         },
         {
             "timestamp": "2018-01-03T16:00:02",
-            "value": [ 0.8825, 0.66, -0.01, -0.9161, 0.1349, -0.47, 0.45, 0.4234, -1.1339, 0.3423 ]
+            "values": [ 0.8825, 0.66, -0.01, -0.9161, 0.1349, -0.47, 0.45, 0.4234, -1.1339, 0.3423 ]
         }
       ]
 }
@@ -542,16 +542,16 @@ Here is a simple function to convert the dataframe into this JSON format.
 ```Python
 def convert_df_to_json(df, outfile_name):
 # NOTE: Assume the first column or the index in dataframe is the timestamp, will force to change it as timestamp in output
-    out_json = {'requestType': 'INLINE', 'columnLabels': [], 'data': []}
+    out_json = {'requestType': 'INLINE', 'signalNames': [], 'data': []}
     column_0 = list(df.columns)[0]
     if df.index.name == None:
         df.index = df[column_0]
         df.drop([column_0], inplace=True, axis=1)
-    out_json['columnLabels'] = list(df.columns)
+    out_json['signalNames'] = list(df.columns)
     if df.index.dtype == 'O': # If the new index is string object
-        out_json['data'] = [{'timestamp': index, 'value': list(row.values)} for index, row in df.iterrows()]
+        out_json['data'] = [{'timestamp': index, 'values': list(row.values)} for index, row in df.iterrows()]
     else:
-        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'value': list(row.values)} for index, row in df.iterrows()]
+        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'values': list(row.values)} for index, row in df.iterrows()]
 
     with open(outfile_name, 'w') as file:
         file.write(json.dumps(out_json, indent=2))
@@ -575,4 +575,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Jason Ding - Principal Data Scientist, July 2021

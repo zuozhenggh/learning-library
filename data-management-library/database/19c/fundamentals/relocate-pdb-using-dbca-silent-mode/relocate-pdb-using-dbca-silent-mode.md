@@ -1,372 +1,439 @@
-# Relocate a PDB by using DBCA in Silent Mode
+# Relocate a PDB to a Remote CDB by using DBCA in Silent Mode
 
 ## Introduction
+Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to relocate a PDB that resides in a remote CDB (a different CDB than the one to which you are relocating). To do this, you use the new `-relocatePDB` command in DBCA. In this lab, you relocate PDB1 from CDB1 to CDB2.
+
+>**Note:** Before you can relocate a PDB from one CDB to another, you need to put your CDBs into `ARCHIVELOG` mode.
 
 Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
-- Switch your PDB to ARCHIVELOG mode
-- Relocate remote PDB from CDB
-- Check that PDB is relocated
+- Enable `ARCHIVELOG` mode for CDB1 and CDB2
+- Verify that the listeners for CDB1 and CDB2 are started
+- Verify that PDB1 has sample data
+- Create a common user and grant it privileges
+- Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
+- Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
+- Relocate PDB1 back to CDB1
+- Reset your environment
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
 
-- Obtain an Oracle Cloud account.
-- Create SSH keys.
-- Sign in to Oracle Cloud Infrastructure.
+## Task 1: Enable `ARCHIVELOG` mode on CDB1 and CDB2
 
+1. On your compute instance, open a terminal window.  
 
-## **STEP 1**: Set CDB1 and PDB1 to archivelog mode
+2. Run the `enable_ARCHIVELOG.sh` script and enter **CDB1** at the prompt to enable `ARCHIVELOG` mode on CDB1. The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
 
-1. Connect to the PDB container using SQL*Plus.  
     ```
-    $ sqlplus /as sysdba
-
-    SQL*Plus: Release 19.0.0.0.0 - Production on Tue Jun 1 14:52:31 2021
-    Version 19.10.0.0.0
-
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-
-
-    Connected to:
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.10.0.0.0
+    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
+    CDB1
     ```
 
-2. Check the CDB log mode.
-    ```
-    SQL> select name, open_mode, log_mode from v$database;
+3. Run the `enable_ARCHIVELOG.sh` script again, and this time, enter **CDB2** at the prompt to enable `ARCHIVELOG` mode on CDB2.
 
-    NAME      OPEN_MODE            LOG_MODE
-    --------- -------------------- ------------
-    CDB1      READ WRITE           NOARCHIVELOG
+    ```
+    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
+    CDB2
     ```
 
-3.  Check your parameter values. A container cannot be in archive log mode if there
-there are no values for each parameter.
-    ```
-    SQL> show parameter DB_RECOVERY_FILE        
+## Task 2: Verify that the listeners for CDB1 and CDB2 are started and ready
 
-    NAME                                 TYPE        VALUE
-    ------------------------------------ ----------- ---------------------------
-    db_recovery_file_dest                string      
-    db_recovery_file_dest_size           big integer 0
+1. Start the Listener Control Utility.
+
+    ```
+    $ <copy>lsnrctl</copy>
     ```
 
-4. Enter values for the parameters.
+2. Check that LISTENER_CDB1 is started. Look for `status READY` for CDB1 and PDB1 in the Service Summary.
+
     ```
-    SQL> alter system set db_recovery_file_dest_size=50G SCOPE=both;
+    LSNRCTL> <copy>status LISTENER_CDB1</copy>
 
-    System altered.
-
-    SQL> alter system set db_recovery_file_dest='/u01/app/oracle/recovery_area/CDB1' SCOPE=both;
-
-    System altered.
-    ```
-
-5. Ensure your parameters contain values.
-    ```
-    SQL> select * from V$RECOVERY_FILE_DEST
-
-    NAME
-    --------------------------------------------------------------------------------
-    SPACE_LIMIT SPACE_USED SPACE_RECLAIMABLE NUMBER_OF_FILES     CON_ID
-    ----------- ---------- ----------------- --------------- ----------
-    /u01/app/oracle/recovery_area/CDB1
-                         0                 0               0          0
-
-    SQL> show parameter DB_RECOVERY_FILE_DEST        
-
-    NAME                                 TYPE        VALUE
-    ------------------------------------ ----------- ---------------------------
-    db_recovery_file_dest                string      /u01/app/oracle/recovery_area/CDB1
-    db_recovery_file_dest_size           big integer 50G
+    Services Summary...
+    Service "CDB1.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "CDB1XDB.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "c6a44dd9e86f6a1de0534d00000acc39.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "pdb1.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB1", status READY, has 1 handler(s) for this service...
+    The command completed successfully
     ```
 
-6. Mount your database instance and change it to archive log mode.
-    ```
-    SQL> shutdown immediate
-    Database closed.
-    Database dismounted.
-    ORACLE instance shut down.
-    ```
-    ```
-    SQL> startup mount
-    ORACLE instance started.
+3. Check that LISTENER_CDB2 is started. Look for `status READY` for CDB2.
 
-    Total System Global Area 9932110488 bytes
-    Fixed Size                  9144984 bytes
-    Variable Size            1509949440 bytes
-    Database Buffers         8388608000 bytes
-    Redo Buffers               24408064 bytes
-    Database mounted.
     ```
-    ```
-    SQL> alter database archivelog;
+    LSNRCTL> <copy>status LISTENER_CDB2</copy>
 
-    Database altered.
-
-    SQL> alter database open;
-
-    Database altered.
-    ```
-    ```
-    SQL> archive log list
-    Database log mode              Archive Mode
-    Automatic archival             Enabled
-    Archive destination            USE_DB_RECOVERY_FILE_DEST
-    Oldest online log sequence     20
-    Next log sequence to archive   22
-    Current log sequence           22
+    Services Summary...
+    Service "CDB2.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "CDB2XDB.livelabs.oraclevcn.com" has 1 instance(s).
+    Instance "CDB2", status READY, has 1 handler(s) for this service...
+    The command completed successfully
     ```
 
-7. Exit SQL*Plus
+4. If the listeners are not started, you can start them by entering the following commands.
+
     ```
-    SQL> exit
+    LSNRCTL> <copy>start LISTENER_CDB1</copy>
+    LSNRCTL> <copy>start LISTENER_CDB2</copy>
     ```
 
-8. Login to CDB2 and repeat above steps from Step 1 - 7.
+5. Exit the Listener Control Utility.
+
     ```
-    $ . oraenv
-    ORACLE_SID = [CDB1] ? CDB2
+    LSNRCTL> <copy>exit</copy>
     ```
 
-## **STEP 2**: Add the hr.sql script to the admin folder.
-1. Make sure you are in the Oracle instance.
+
+## Task 3: Verify that PDB1 has sample data
+
+1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
+
     ```
-    $ sudo su - oracle
-    Last login: Tue Jun  1 16:35:21 GMT 2021 on pts/0
+    $ <copy>. oraenv</copy>
+    CDB1
     ```
 
-2. Change to the /labs directory. Check that the 19cNewFeatures.zip is in the directory.
+2. Connect to CDB1 using SQL*Plus.
+
     ```
-    $ cd ~/labs
-    $ ls
-    19cnf.zip    admin  db.rsp  DW          HA           OBEs  SEC
-                          DB     DIAG    envprep.sh  multitenant  PERF  Videos
+    $ <copy>sqlplus / as sysdba</copy>
     ```
 
-3. Change to the admin directory. Check to see if the hr.sql script is in the directory.
-    ```
-    $cd admin
-    $ls
-    cleanup_PDBs.sh     create_PDB19.sql      hr_code.sql     hr_idx.sql      listener.ora        startup_mount.sql     cleanup_PDBs.sql      create_PDB1.sh      hr_comnt.sql      hr_main_new.sql     profile.sql     startup.sql     cleanup_trace_ORCL.sh     create_PDB1.sql     hr_cre.sql      hr_main.sql     recreate_ORCL.sh      tnsnames.ora      close_TDE.sql     flashback.sql     hr_drop_new.sql     hr_popul.sql      shutdown.sql      create_CDB19.sh     hr_analz.sql      hr_drop.sql     **hr.sql**      sqlnet.ora
-    ```
+3. Open PDB1.
 
-    >**Note**: If the hr.sql script is already in the directory, you can skip to Step 5.<
-
-4. Insert the hr.sql script file in the admin
-    1. Open this [hr.sql](https://docs.oracle.com/en/database/oracle/oracle-database/19/clone-pdbs-using-dbca-silent-mode/files/hr.sql) script in a separate tab.
-
-    2. In the cloud shell, create the hr.sql file in the admin directory.
     ```
-    $ vi hr.sql
-    ```
-
-    3. Once the vi editory opens, copy and paste the hr.sql script from the link
-    into the newly created hr.sql file in the vi editor. It should look something
-    like below.
-    ```
-    CREATE USER hr IDENTIFIED BY Ora4U_1234;
-
-    GRANT dba, unlimited tablespace TO hr;
-    ALTER SESSION SET CURRENT_SCHEMA=HR;
-
-    ALTER SESSION SET NLS_LANGUAGE=American;
-    ALTER SESSION SET NLS_TERRITORY=America;
-
-    CREATE TABLE employees
-    ( employee_id    NUMBER(6)
-    , first_name     VARCHAR2(20)
-    , last_name      VARCHAR2(25)
-    , email          VARCHAR2(25)
-    , phone_number   VARCHAR2(20)
-    , hire_date      DATE
-    , job_id         VARCHAR2(10)
-    , salary         NUMBER(8,2)
-    , commission_pct NUMBER(2,2)
-    , manager_id     NUMBER(6)
-    , department_id  NUMBER(4)) ;
-    **script continues below**
-    ```
-
-    4. Exit the vi editor.
-    ```
-    Press Esc
-    Input :q
-    ```
-
-    5. Check that hr.sql is now in the admin directory.
-    ```
-    $ ls
-    ```
-
-    6. Now that the hr.sql script is the directory, it must be granted permission to execute.
-    ```
-    $ chmod -R +x ~/labs
-    ```
-
-## **STEP 3**: Prepare the PDB Before Relocatiion
-1. Login into the CDB1. If already logged into CDB1, skip to Step 2.
-    ```
-    $ . oraenv
-    ORACLE_SID = [ORCL] ? CDB1
-    ```
-
-2. Connect to the PDB1 using SQL*Plus.
-    ```
-    $ sqlplus /as sysdba
-    SQL> alter pluggable database PDB1 open;
-
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
     Pluggable database altered.
+    ```
 
-    SQL> alter session set container = PDB1;
+4. Connect to PDB1.
 
+    ```
+    SQL> <copy>alter session set container = PDB1;</copy>
     Session altered.
     ```
 
-3. Verify that PDB1 contains the HR.EMPLOYEES table.
+5. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+
+    After relocating PDB1 to CDB2, it should still contain `HR.EMPLOYEES` as it originally did. We will check for this in a later step.
+
     ```
-    SQL> SELECT count(*) FROM hr.employees;
+    SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
 
       COUNT(*)
     ----------
-          107
+            107
     ```
 
-4. Connect to ORCL as SYS.
+## Task 4: Create a common user and grant it privileges
+
+A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root` and within any PDB in which it has privileges. In this task, we create a user called `c##remote_user`, which we will later specify in the `-relocatePDB` command as the database link user of the remote PDB.
+
+1. Connect to CDB1 as the `SYS` user.
+
     ```
-    SQL> CONNECT sys@CDB1 AS SYSDBA
-    Enter password: Ora4U_1234
+    SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
+    Connected.
     ```
 
-5. Create a common user in CDB1, used in the database link automatically created to connect to CDB1 during the relocation operation.
+2. Create a common user named `c##remote_user` in CDB1.
+
     ```
-    SQL> CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;
+    SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+    User created.
     ```
 
-6. Grant the privileges.
+3. Grant the user the necessary privileges to create PDBs.
+
     ```
-    SQL> GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;
+    SQL> <copy>GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;</copy>
+    Grant succeeded.
     ```
 
-7. Quit session.
+4. Exit SQL*Plus.
+
     ```
-    SQL> exit
+    SQL> <copy>exit</copy>
     ```
 
-## **STEP 4**: Use DBCA to Relocate a Remote PDB
->In this section, you use DBCA in silent mode to relocate PDB1 from CDB1 as PDB1_IN_CDB2 in CDB2.<
+## Task 5: Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
 
-1. Launch DBCA in silent mode to relocate PDB1 from CDB1 as PDB1_IN_CDB2 in CDB2.
+1. Run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB1 to CDB2.
+
     ```
-    $ dbca -silent -relocatePDB -remotePDBName PDB1 -remoteDBConnString CDB1 -sysDBAUserName SYSTEM -sysDBAPassword Ora4U_1234 -remoteDBSYSDBAUserName SYS -remoteDBSYSDBAUserPassword Ora4U_1234 -dbLinkUsername c##remote_user -dbLinkUserPassword Ora4U_1234 -sourceDB CDB2 -pdbName PDB1_IN_CDB2
+    $ <copy>dbca -silent \
+    -relocatePDB \
+    -remotePDBName PDB1 \
+    -remoteDBConnString CDB1 \
+    -sysDBAUserName SYSTEM \
+    -sysDBAPassword Ora4U_1234 \
+    -remoteDBSYSDBAUserName SYS \
+    -remoteDBSYSDBAUserPassword Ora4U_1234 \
+    -dbLinkUsername c##remote_user \
+    -dbLinkUserPassword Ora4U_1234 \
+    -sourceDB CDB2 \
+    -pdbName PDB1</copy>
+
+    Create pluggable database using relocate PDB operation
+    100% complete
+    Pluggable database "PDB1" plugged successfully.
+    Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB1/CDB2.log" for further details.
     ```
 
-## **STEP 5**: Check that the PDB is Relocated
-1. Connect to CDB2 as SYS. Check that PDB1 is relocated in CDB2.
+2. Review the relocating log.
+
     ```
-    $ sqlplus sys@CDB2 AS SYSDBA
-    Enter password: Ora4U_1234
+    $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB1/CDB2.log</copy>
     ```
+
+## Task 6: Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
+
+1. Set the environment variable to CDB2. Enter **CDB2** at the prompt.
+
     ```
-    SQL> show pdbs
+    $ <copy>. oraenv</copy>
+    CDB2
+    ```
+
+2. Connect to CDB2 as the `SYS` user.
+
+    ```
+    $ <copy>sqlplus / as sysdba</copy>
+    ```
+
+3. Display the list of PDBs in CDB2 to verify that PDB1 exists.
+
+    ```
+    SQL> <copy>show pdbs</copy>
 
     CON_ID CON_NAME                       OPEN MODE  RESTRICTED
     ------ ------------------------------ ---------- ----------
          2 PDB$SEED                       READ ONLY  NO
-         3 PDB1_IN_CDB2                   READ WRITE NO
+         3 PDB1                           READ WRITE NO
     ```
 
-2. Check that PDB1_IN_CDB2 contains the HR.EMPLOYEES table as in PDB1.
+4. Connect to PDB1 in CDB2.
+
     ```
-    SQL> CONNECT hr@PDB1_IN_CDB2
-    Enter password: Ora4U_1234
+    SQL> <copy>alter session set container = PDB1;</copy>
+    Session altered.
     ```
+
+5. Check that PDB1 still contains the `HR.EMPLOYEES` table with 107 rows. This command helps us verify that PDB1 is relocated with its data to CDB2.
+
     ```
-    SQL> SELECT count(*) FROM employees;
+    SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
     COUNT(*)
     ----------
            107
     ```
 
-3. Connect to ORCL as SYS. Check that PDB1 does not exist in ORCL anymore.
+6. Exit SQL*Plus.
+
     ```
-    SQL> CONNECT sys@ORCL AS SYSDBA
-    Enter password: Ora4U_1234
+    SQL> exit
     ```
+
+## Task 7: Relocate PDB1 back to CDB1
+
+1. Try to run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1. You should get an error about the database link user.
+
     ```
-    SQL> show pdbs
+    $ <copy>dbca -silent \
+    -relocatePDB \
+    -remotePDBName PDB1 \
+    -remoteDBConnString CDB2 \
+    -sysDBAUserName SYS \
+    -sysDBAPassword Ora4U_1234 \
+    -remoteDBSYSDBAUserName SYSTEM \
+    -remoteDBSYSDBAUserPassword Ora4U_1234 \
+    -dbLinkUsername c##remote_user \
+    -dbLinkUserPassword Ora4U_1234 \
+    -sourceDB CDB1 \
+    -pdbName PDB1</copy>
+
+    [FATAL] [DBT-19404] Specified database link user (C##REMOTE_USER) does not exist in the database(CDB2).
+
+    ACTION: Specify an existing database link user.
+    ```
+
+2. Question: Why did you get an error when trying to relocate PDB1 back to CDB1?
+
+    Answer: In preparation for the first relocation (PDB1 moving to CDB2), we created the database link user only on CDB1 because at that time, it was considered the remote CDB. But now, you are trying to move PDB1 back to CDB1, and CDB2 is considered the remote CDB. To fix the problem, you need to create the remote user in CDB2 too.
+
+3. Set the environment variable to CDB2. Enter **CDB2** at the prompt.
+
+    ```
+    $ <copy>. oraenv</copy>
+    CDB2
+    ```
+
+4. Connect to CDB2 as the `SYS` user.
+
+    ```
+    $ <copy>sqlplus sys/Ora4U_1234@CDB2 as sysdba</copy>
+    ```
+
+5. Create a common user named `c##remote_user` in CDB2.
+
+    ```
+    SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+    User created.
+    ```
+
+6. Grant `c##remote_user` the necessary privileges for creating a new PDB.
+
+    ```
+    SQL> <copy>GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;</copy>
+    Grant succeeded.
+    ```
+
+7. Exit SQL*Plus.
+
+    ```
+    SQL> <copy>exit</copy>
+    ```
+
+8. Rerun the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1. This time you shouldn't get any error messages.
+
+    ```
+    $ <copy>dbca -silent \
+    -relocatePDB \
+    -remotePDBName PDB1 \
+    -remoteDBConnString CDB2 \
+    -sysDBAUserName SYS \
+    -sysDBAPassword Ora4U_1234 \
+    -remoteDBSYSDBAUserName SYSTEM \
+    -remoteDBSYSDBAUserPassword Ora4U_1234 \
+    -dbLinkUsername c##remote_user \
+    -dbLinkUserPassword Ora4U_1234 \
+    -sourceDB CDB1 \
+    -pdbName PDB1</copy>
+
+    Create pluggable database using relocate PDB operation
+    100% complete
+    Pluggable database "PDB1" plugged successfully.
+    Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/CDB1/PDB1/CDB1.log" for further details.
+    ```
+
+9. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+
+    ```
+    $ <copy>. oraenv</copy>
+    CDB1
+    ```
+
+10. Connect to CDB1 as the `SYS` user.
+
+    ```
+    $ <copy>sqlplus / as sysdba</copy>
+    ```
+
+11. Display the list of PDBs in CDB1 to verify that PDB1 exists.
+
+    ```
+    SQL> <copy>show pdbs</copy>
 
     CON_ID CON_NAME                       OPEN MODE  RESTRICTED
     ------ ------------------------------ ---------- ----------
          2 PDB$SEED                       READ ONLY  NO
+         3 PDB1                           READ WRITE NO
     ```
 
-## **STEP 6**: Clean up the Cloned PDB
-1. Connect to CDB2 as SYS.
+12. Exit SQL*Plus.
+
     ```
-    SQL> CONNECT sys@CDB2 AS SYSDBA
-    Enter password: Ora4U_1234
+    SQL> <copy>exit</copy>
     ```
 
-2. Close PDB1_IN_CDB2.
-    ```
-    SQL> ALTER PLUGGABLE DATABASE PDB1_IN_CDB2 CLOSE;
-    ```
+## Task 8: Reset your environment
 
-3. Drop PDB1_IN_CDB2.
-    ```
-    DROP PLUGGABLE DATABASE PDB1_IN_CDB2 INCLUDING DATAFILES;
-    ```
+1. Run the `disable_ARCHIVELOG.sh` script and enter **CDB1** at the prompt to disable `ARCHIVELOG` mode on CDB1.
 
-4. Quit the session.
     ```
-    SQL> EXIT
+    $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
+    CDB1
     ```
 
-## **STEP 7**: Disable archivelog mode for CDB1 and CDB2.
-1. Set the environment variables for your CDB.
+2. Run the `disable_ARCHIVELOG.sh` script again, and this time, enter **CDB2** at the prompt to disable `ARCHIVELOG` mode on CDB2.
+
     ```
-    $ . oraenv
-    ORACLE_SID = [oracle] ? CDB1
-    ```
-
-2. Execute the following statements to disable ARCHIVELOG mode on the database.
-    ```
-    $ sqlplus / as sysdba
-
-    SQL> SHUTDOWN IMMEDIATE;
-
-    SQL> STARTUP MOUNT;
-
-    SQL> ALTER DATABASE noarchivelog;
-
-    SQL> ALTER DATABASE open;
-
-    SQL> SELECT log_mode FROM v$database;
+    $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
+  CDB2
     ```
 
-3. Switch to CDB2 and repeat Step 2.
-    ```
-    SQL> EXIT
+4. Set the environment variable to CDB1. At the prompt, enter **CDB1**.
 
-    $ . oraenv
-    ORACLE_SID = [CDB1] ? CDB2
+    ```
+    $ <copy>. oraenv</copy>
+    CDB1
+    ```
+
+5. Connect to CDB1 as the `SYS` user.
+
+    ```
+    $ <copy>sqlplus / as sysdba</copy>
+    ```
+
+6. Drop the common user named `c##remote_user` that you created earlier.
+
+    ```
+    SQL> <copy>DROP USER c##remote_user CASCADE;</copy>
+    User dropped.
+    ```
+
+7. Exit SQL*Plus.
+
+    ```
+    SQL> <copy>exit</copy>
+    ```
+
+8. Set the environment variable to CDB2. At the prompt, enter **CDB2**.
+
+    ```
+    $ <copy>. oraenv</copy>
+    CDB2
+    ```
+
+9. Connect to CDB2 as the `SYS` user.
+
+    ```
+    $ <copy>sqlplus / as sysdba</copy>
+    ```
+
+10. Drop the common user named `c##remote_user` that you created earlier.
+
+    ```
+    SQL> <copy>DROP USER c##remote_user CASCADE;</copy>
+    User dropped.
+    ```
+
+11. Exit SQL*Plus.
+
+    ```
+    SQL> <copy>exit</copy>
     ```
 
 ## Learn More
 
 - [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
-
+- [DBCA Silent Mode Commands](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-EC3C396B-6FFB-4957-BC73-1BE8F4FD852E)
+- [Relocating a PDB](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/relocating-a-pdb.html#GUID-75519361-3DA2-4558-A7E5-64BC16FAFC7D)
 
 ## Acknowledgements
 
-- **Author**- Dominique Jeunot
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, June 2021
+- **Author**- Dominique Jeunot, Consulting User Assistance Developer
+- **Technical Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 13 2021

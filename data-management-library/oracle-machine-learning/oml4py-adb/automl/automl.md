@@ -21,11 +21,11 @@ In this lab, you will learn how to:
 
 ## (Optional) Download and View the Notebook File
 
-To download the notebook version of this lab (without screenshots), click [here](./../notebooks/lab6_automl.json?download=1).
+To download the notebook version of this lab (without screenshots), click [lab6_automl.json](./../notebooks/lab6_automl.json?download=1).
 
 [](include:import)
 
-## **Step 1**: Import libraries supporting OML4Py
+## Task 1: Import Libraries Supporting Oracle Machine Learning for Python (OML4Py)
 
 1. Run the following script to import `oml` module, Pandas package, and `automl` module.
     ```
@@ -47,7 +47,7 @@ To download the notebook version of this lab (without screenshots), click [here]
     ```
     ![This is the output of the oml.sync function](images/oml_sync_wine.png "Output of the oml.sync function")    
 
-## **Step 2:** Automated Algorithm Selection
+## Task 2: Automated Algorithm Selection
 In this step, you prepare the wine data set by separating predictors from the target as conventional for Python model building. This produces two new proxy objects that will be used in AutoML functions.
 1. Run the following script to prepare the wine data set:
     ```
@@ -75,7 +75,7 @@ In this step, you prepare the wine data set by separating predictors from the ta
 
     The script returns the SVM Gaussian, SVM Linear, Neural Network and Random Forest. Among these, SVM Gaussian is ranked first, and we will use that in subsequent AutoML function calls.
 
-## **Step 3:** Automated Feature Selection
+## Task 3: Automated Feature Selection
 In this step, you determine the features that best support the selected algorithm. First define a FeatureSelection object with score metric accuracy. Then call the `reduce` function and specify the desired algorithm, in this case, as determined above and stored in the variable `selected_wine_alg_cl`. Also specify the train and test OML DataFrame proxy objects.
 
 You see the set of selected columns.
@@ -98,10 +98,10 @@ You see the set of selected columns.
     ![Script and its output to define the Feature Selection object fs_wine_cl and the reduce function](images/define_feature_selection_obj.png "Script to Define Feature Selection object fs_wine_cl")
 
 
-### **Try it Yourself**
+**Try it Yourself:**
 Try other algorithms, such as `svm_linear` or `rf` in the first argument of the reduce function see if different columns are selected.
 
-## **Step 4:** Automated Model Tuning
+## Task 4: Automated Model Tuning
 At this point, you are ready to build and tune the models you want to use.
 
 First, you define a `ModelTuning` object for classification.
@@ -157,7 +157,7 @@ Model tuning returns a dictionary with the best model and the evaluation results
     ```
     ![Script to specify a custom search space](images/custom_search_space.png "Script to custom search")
 
-## **Step 5:** Automated Model Selection
+## Task 5: Automated Model Selection
 As a short cut, you may choose to go directly to model selection on the training data. Model Selection automatically selects the best algorithm (using Algorithm Selection) from the set of supported algorithms, then builds, tunes, and returns the model.
 
 1. Run the following script to define a ModelSelection object and call `select` for automatically building the best model on the wine data. It selects the best model for the wine data set:

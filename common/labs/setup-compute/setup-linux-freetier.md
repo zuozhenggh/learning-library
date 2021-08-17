@@ -24,7 +24,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - Lab:  Generate SSH Keys
 
-## **STEP 1**: Setup VCN Stack
+## Task 1: Setup VCN Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Login to your Oracle Cloud account
@@ -44,7 +44,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 7.  Review your selections and click **Create**
    ![Image alt text](images/db19c-freetier-step1-6.png " ")
 
-## **STEP 2**: Run VCN Stack Apply Job
+## Task 2: Run VCN Stack Apply Job
 Now that your stack has been created, you will run an *apply* job to create the actual VCN
 
 1. Click **Apply** on the Stack Details page
@@ -70,7 +70,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 11. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
 
-## **STEP 3**: Setup Compute Stack
+## Task 3: Setup Compute Stack
 1.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, select **Stacks** and click **Create Stack**.
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 2.  Choose **Template** and click on **Select Template**.
@@ -95,7 +95,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 7.   Review your selections and click **Create**
    ![Image alt text](images/linux-compute-step3-5.png " ")
 
-## **STEP 4**: Run Compute Stack Apply Job
+## Task 4: Run Compute Stack Apply Job
 Now that your stack has been created, you will run an *apply* job to create the actual compute instance
 
 1. Click **Apply** on the Stack Details page.
@@ -113,7 +113,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 7.  The compute instance you created should be listed. Note the public IP address.
 ![Image alt text](images/linux-compute-step3-11.png " ")     
 
-## **STEP 5**: Connect to your instance
+## Task 5: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
@@ -192,6 +192,6 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, DB Product Management
+- **Author** - LiveLabs Team, DB Product Management
 - **Contributors** - Jaden McElvey, Anoosha Pilli, Sanjay Narvekar, David Start, Arabella Yao
 - **Last Updated By/Date** - Anoosha Pilli, May 2021

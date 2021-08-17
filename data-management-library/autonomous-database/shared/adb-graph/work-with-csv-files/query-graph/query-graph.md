@@ -19,7 +19,7 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
-## **STEP 1**: Verify that `BANK_GRAPH` is loaded into memory  
+## Task 1: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
    ![](images/radar-chart.svg " ")
@@ -29,7 +29,7 @@ Learn how to
 
    ![](images/load-bank-graph-into-memory.png " ")
 
-## **Step 2a**: Alternate and optional step. Import the notebook
+## Task 2a: Alternate and optional step. Import the notebook
 
 The instructions below show you how to create each notebook paragraph, execute it, and modify default visualization settings as needed.  
 If you prefer you can simply **import** the notebook and then execite each paragraph in sequence.   
@@ -56,7 +56,7 @@ If you prefer you can simply **import** the notebook and then execite each parag
 
    You can execute the paragraphs in sequence and modify visualizations settings as described in **Step 3** of this lab.  
    
-## **Step 2**: Create a notebook
+## Task 2: Create a notebook
 1. Click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
 Name it `Learn/BankGraph: Find Circular Payments`.  
 
@@ -103,7 +103,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
  
 
-## **STEP 3**: Query the `BANK_GRAPH` and visualize the results 
+## Task 3: Query the `BANK_GRAPH` and visualize the results 
 
 1. Copy and paste the following text into this new paragraph.  
 	```

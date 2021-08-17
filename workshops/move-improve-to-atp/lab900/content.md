@@ -16,7 +16,7 @@ A Custom Image can be created from an existing Boot Volume. You can then use thi
 - PuTTY or equivalent
 - SQL Developer 19.1 or higher
 
-## Step 1: Create a Custom Image ##
+## Task 1: Create a Custom Image ##
 
 1. Click on your App Server compute details. Note: you can’t create an image of the Bastion because it is already an Oracle image, ie: the Cloud Developer image.
 2. Select the Actions dropdown menu
@@ -39,7 +39,7 @@ When your custom image is created you should see the Work Requests as below. Wor
 
 You can now use this image to launch another instance by selecting the 3 dots action … menu. You can also export this image to the OCI Object Storage for use by others.
 
-## Step 2: Create a New Instance from Custom Image ##
+## Task 2: Create a New Instance from Custom Image ##
 
 1. Click on the Custom Image 3 dots action menu … on the right
 2. Select Create Instance
@@ -87,7 +87,7 @@ $./charbench -c ../configs/SOE_Server_Side_V2.xml \
 
 Your workload should run as before with your new compute instance.
 
-## Step 3: Clone ATP
+## Task 3: Clone ATP
 
 Let’s now clone the ATP service and run the workload against it. Cloning allows you to clone a complete copy of the database or just the metadata.  We will clone a complete copy.
 
@@ -157,7 +157,7 @@ $./charbench -c ../configs/SOE_Server_Side_V2.xml \
 
 Your workload will now run against the cloned ATP.   
 
-## Step 4: Managing Boot Volumes
+## Task 4: Managing Boot Volumes
 
 Let's now terminate the newly created compute instance from the custom image, but keep the Boot Volume
 
@@ -171,7 +171,7 @@ Let's now terminate the newly created compute instance from the custom image, bu
 
     <img src="./images/boot-volume.png" style="zoom:50%;" />
 
-    ## Step 5: Export the Custom Image to the Object Storage
+    ## Task 5: Export the Custom Image to the Object Storage
 
     Now let’s export your custom image to the Oracle Object Store so it can be used by others.
 
@@ -223,7 +223,7 @@ The following example process describes how to lift a disk image from on prem to
 
 
 
-## Step 7: Create New Block Volume
+## Task 7: Create New Block Volume
 
 Let’s add a non bootable block volume.  Block volumes are useful for expanding your block storage for more data or installing additional applications.
 
@@ -257,7 +257,7 @@ Let’s add a non bootable block volume.  Block volumes are useful for expanding
 
 You now have a block volume that you can attach to your instance. 
 
-## Step 8: Copying Block Volumes Across Regions
+## Task 8: Copying Block Volumes Across Regions
 
 Block volumes can be backed up manually outside of the auto backup policy. Once backed up it can even be copied across regions.
 

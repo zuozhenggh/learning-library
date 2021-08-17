@@ -2,89 +2,37 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In most real-world scenarios, queries against your data warehouse would normally involve the use of a data visualization tool such as Oracle Analytics Cloud (or 3rd party business intelligence products such as Qlik, Tableau, PowerBI, and so on, currently support Autonomous Data Warehouse). Within this part of the workshop we will use SQL commands to query our data using the built-in SQL Worksheet.  
 
-Estimated Time: n minutes
+**Note:** Your Autonomous Data Warehouse also comes complete with a built-in machine learning notebook tool which is launched from the tools menu on the console page. It is aimed at data scientists and data analysts and allows them to build machine learning models using PL/SQL, Python and/or R. This feature is explored in one of our other online labs for Autonomous Data Warehouse.
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
+  *Autonomous Data Warehouse also provides 5 free licenses for Oracle Analytics Desktop, which is the desktop client version of Oracle Analytics Cloud. For more information about Oracle Analytics Cloud [click here](https://www.oracle.com/uk/business-analytics/analytics-cloud.html)*.
 
-### Objectives <optional>
+### Prerequisites
 
-*List objectives for this lab*
+- You will need to have completed the previous labs in this workshop
 
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+Before starting to run the code in this workshop, we need to manage the resources we are going to use to query our sales data. You will notice that when you open SQL Worksheet, it automatically defaults to using the LOW consumer group - this is shown in the top right section of your worksheet.
 
+  ![LOW consumer group shown in worksheet](images/3054194710.png " ")
 
-*This is the "fold" - below items are collapsed by default*
+**NOTE**: Autonomous Data Warehouse comes complete with three built-in consumer groups for managing workloads. The three groups are: HIGH, MEDIUM and LOW. Each consumer group is based on predefined CPU/IO shares based on the number of OCPUs assigned to the ADW. The basic characteristics of these consumer groups are:
 
-## **Step 1**: <what is the action in this step>
+* HIGH: A high priority connection service for reporting and batch workloads. Workloads run in parallel and are subject to queuing.
+* MEDIUM: A typical connection service for reporting and batch workloads. Workloads also run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to 4.
+* LOW: A connection service for all other reporting or batch processing workloads. This connection service does not run with parallelism.
 
-(optional) Step 1 opening paragraph.
+For more information about how to use consumer groups to manage concurrency and prioritization of user requests in Autonomous Data Warehouse, please click the following link: [Manage Concurrency and Priorities on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953). If you want to explore this topic using a workshop, [click here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=618) to launch the **Managing and Monitoring in Autonomous Database** workshop.
 
-1. Sub step 1
+Change the consumer group by simply clicking the downward pointing arrow next to the word LOW, and from the pulldown menu select **HIGH**.
 
-		![Image alt text](images/sample1.png)
+  ![Select the HIGH consumer group from the pulldown menu.](images/3054194709.png " ")    
 
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
-
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
-
-2. Sub step 2
-
-    ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## **STEP 2:** <what is the action in this step>
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+### Get Started!
+This lab is very comprehensive - consisting of many different types of analytic queries. Get started by going to the next section: **Analyzying Movie Sales Data**.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+
+* **Author** - Keith Laker, ADB Product Management
+* **Contributors** -  Richard Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Keith Laker, August 2, 2021

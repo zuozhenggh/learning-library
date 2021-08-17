@@ -19,7 +19,7 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI
 - Familiar with OCI object storage to upload data
 
-## **STEP 1:** Understand Data Requirements
+## Task 1: Understand Data Requirements
 
 The core algorithm of our Anomaly Detection service is a multivariate anomaly detection algorithm, which has two major data quality requirements on the training data:
 
@@ -40,7 +40,11 @@ The testing/detecting data is also required to only contain columns like timesta
 
 ### Data format requirement
 
-The service can accept two types of data: CSV format, and JSON format. The data should only contain one timestamp and other numeric attributes, and timestamp has to be the first column, which satisfy the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
+The service accept multiple types of data source to train model, including Oracle Object Storage, Oracle Autonomous Transaction Processing (ATP), InfluxDB. Detailed document on how to use ATP or InfluxDB as data source can be referred at https://docs.oracle.com/en-us/iaas/Content/services.htm .
+
+Here we will use Oracle Object Storage data source as example to explain the requirement, since the main content are similar across different types of data source.
+
+For Oracle Object Storage data source type, the service accepts two data formats: CSV format and JSON format. The data should only contain one timestamp and other numeric attributes, and timestamp has to be the first column, which satisfy the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
 
 #### CSV format
 CSV-formatted data should have comma-separated lines, with first line as the header, and other lines as data. Note the first column is the timestamp column.
@@ -65,10 +69,10 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 
 ```json
 { "requestType": "INLINE",
-  "columnLabels": ["sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10"],
+  "signalNames": ["sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10"],
   "data": [
-      { "timestamp" : "2012-01-01T08:01:01.000Z", "value" : [1, 2.2, 3, 1, 2.2, 3, 1, 2.2, null, 4] },
-      { "timestamp" : "2012-01-02T08:01:02.000Z", "value" : [1, 2.2, 3, 1, 2.2, 3, 1, 2.2, 3, null] }
+      { "timestamp" : "2012-01-01T08:01:01.000Z", "values" : [1, 2.2, 3, 1, 2.2, 3, 1, 2.2, null, 4] },
+      { "timestamp" : "2012-01-02T08:01:02.000Z", "values" : [1, 2.2, 3, 1, 2.2, 3, 1, 2.2, 3, null] }
   ]
 }
 ```
@@ -78,7 +82,7 @@ Similarly, JSON-formatted data should also contain timestamps and numeric attrib
 * The training data should not have abnormal conditions, which may contains anomalies.
 * The attributes in the data should be correlated well or belong to the same system or asset. Attributes from different systems are suggested to train separate models.
 
-## **STEP 2:** Download Sample Data
+## Task 2: Download Sample Data
 
 Here are two prepared sample datasets to help you to easily understand how the training and testing data looks like, Download the two files to your local machine.
 
@@ -88,13 +92,13 @@ Here are two prepared sample datasets to help you to easily understand how the t
     - same 10 signals with timestamp column, 100 observations
 
 
-## **STEP 3:** Upload Data to Object Storage
+## Task 3: Upload Data to Object Storage
 
 You need to upload the sample training data into Oracle object storage, to be prepared for model training in next steps.
 
 Testing json data is not needed to upload to bucket, but is needed in detection UI later.
 
-**STEP 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
+**Task 3a:** Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
 First, From the OCI Services menu, click Object Storage.
 ![](../images/cloudstoragebucket.png " ")
@@ -112,7 +116,7 @@ Next, fill out the dialog box:
 Then click Create
 ![](../images/pressbucketbutton.png " ")
 
-**STEP 3b:** Upload the Downloaded training csv data file into Storage Bucket
+**Task 3b:** Upload the Downloaded training csv data file into Storage Bucket
 
 Switch to OCI window and click the Bucket Name.
 
@@ -135,4 +139,4 @@ Congratulations on completing this lab!
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Haad Khan - Principal Data Scientist, May 2021
+    * Jason Ding - Principal Data Scientist, July 2021

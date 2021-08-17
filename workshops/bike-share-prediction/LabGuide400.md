@@ -26,7 +26,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Part 1. Create Machine Learning Models in OAC
 
-### **STEP 1: Create a Linear Regression Model in OAC**
+### **Task 1: Create a Linear Regression Model in OAC**
 
 -   In your OAC instance, click on **Create**, then select **Data Flow** in the wizard. Once the list of tables popped up, select the dataset we want to use for training the model (**STATION_ST_WTH_TRAINING** ).
 
@@ -63,7 +63,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **Note:** In this section, you will compare different machine learning models to find the one which fits this problem the best. One way to do this is to repeate **Part 1** three more times and create other built-in machine learning models one by one. However, to simplify the process, we have already created all those models and the comparison between them in a DVA project. Next steps will shoe you how you can import that project and use it as a base for creating more graphs in the next labs.
 
-### **STEP 2: Import the .DVA Project**
+### **Task 2: Import the .DVA Project**
 
 -   Click on the hamburger icon on the top right side of the OAC home page and select **Import Project**.
 

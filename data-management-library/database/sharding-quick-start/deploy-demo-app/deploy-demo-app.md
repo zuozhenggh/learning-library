@@ -4,11 +4,11 @@
 
 To learn more about Oracle Sharded Databases, download and deploy the system-managed SDB demo application. The demo application uses the SDB environment and schema you have just created to simulate the workload of an online retail store. 
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you will perform the following steps:
+In this lab, you will:
 - Setup and Configure the sharding demo application
 - Start the workload to load the demo data
 
@@ -18,7 +18,7 @@ This lab assumes you have already completed the following:
 - Sharded Database Deployment
 - Create Demo App Schema
 
-## **STEP 1:** Setup and Configure the Sharding Demo Application
+## Task 1: Setup and Configure the Sharding Demo Application
 
 1. Login to the shard director host, switch to oracle user.
 
@@ -369,7 +369,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Start the workload
+## Task 2: Start the Workload
 
 1. Start the workload by executing command: `./run.sh demo`.
 
@@ -474,13 +474,13 @@ This lab assumes you have already completed the following:
 
 6. From your laptop, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the shard director host and the port number is 8081.
 
-    ![image-20210123155946840](images/image-20210123155946840.png)
+    ![image-app-monitor](images/image-app-monitor.png)
 
    
 
 7. Scroll down the screen, you can see the Last inserted orders:
 
-    ![image-20210123160029874](images/image-20210123160029874.png)
+    ![image-last-inserted-orders](images/image-last-inserted-orders.png)
 
    
 

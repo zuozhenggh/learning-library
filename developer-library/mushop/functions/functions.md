@@ -26,7 +26,7 @@ In this lab, you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Obtain Oracle Cloud Information
+## Task 1: Obtain Oracle Cloud Information
 
 1.  Create a txt file with the following values.  This step will walk you through how to obtain this information.
     - region:       # Region where resources will be provisioned. (ex: us-phoenix-1)
@@ -36,7 +36,7 @@ In this lab, you will:
     - key:          # Private API Key file path (ex: /Users/jdoe/.oci/oci_key.pem)
     - fingerprint:  # Public API Key fingerprint (ex: 43:65:2c...)
 
-## **STEP 2**: Obtain Mushop source code
+## Task 2: Obtain Mushop source code
 
 1.  Open up Cloud Shell and clone the github repo.
 
@@ -85,7 +85,7 @@ In this lab, you will:
 
     *TIP:* use kubens to switch namespace easily & often from the command line 
 
-## **STEP 3**: OKE Cluster Setup
+## Task 3: OKE Cluster Setup
 MuShop provides an umbrella helm chart called setup, which includes several recommended installations on the cluster. These installations represent common 3rd party services, which integrate with Oracle Cloud Infrastructure or enable certain application features.
 |Chart|Purpose|Option|
 [Prometheus](https://github.com/helm/charts/blob/master/stable/prometheus/README.md) 	Service metrics aggregation 	prometheus.enabled
@@ -112,7 +112,7 @@ MuShop provides an umbrella helm chart called setup, which includes several reco
     </copy>
     ```` 
 
-## **STEP 4**: Hostname Ingress and Deploy with Helm
+## Task 4: Hostname Ingress and Deploy with Helm
 
 Part of the cluster setup includes the installation of an nginx ingress controller. This resource exposes an OCI load balancer, with a public ip address mapped to the OKE cluster.
 
@@ -164,7 +164,7 @@ Configure the mushop helm chart ingress values in cases where traffic must be di
     </copy>
     ```` 
 
-## **STEP 5**: Under the Hood
+## Task 5: Under the Hood
 1.  To get a beter look at all the installed Kubernetes manifests by using the template command.
     ```` 
     <copy>
@@ -174,7 +174,7 @@ Configure the mushop helm chart ingress values in cases where traffic must be di
     ```` 
 2.  Explore the files, and see each output. 
 
-## **STEP 6**: Clean Up
+## Task 6: Clean Up
 1.  To get a beter look at all the installed Kubernetes manifests by using the template command.
     ```` 
     <copy>

@@ -160,7 +160,7 @@ Once you have created connection and uploaded dataset from ADW to OAC successful
 
 ## Part 5. Find Out Which ML Model Fits Flight Delay Prediction the Best 
 
-### **STEP 1**: Import the ML_ModelQuality.dva Project File
+### Task 1: Import the ML_ModelQuality.dva Project File
 You can repeat the same process and create four different ML models for predicting flight delay time, then compare them and find out which model fits our problem the best using statistical methods. However, to simplify the process, we have already created all those models in OAC. And then, we have saved statistical results from each model in the project of  **ML_ModelQuality.dva**. From follwing steps, you will import the project of **ML_ModelQuality.dva**  and find out which model fits our problem the best. 
 
 1. Click [ML_ModelQuality.dva](./files/mlmodel.dva) to download the project file to a directory on your local computer.
@@ -184,7 +184,7 @@ You can repeat the same process and create four different ML models for predicti
 
 ![](./images/picture300-63.png)
 
-### **STEP 2**: Find Out Which ML Model Fits Flight Delay Prediction the Best
+### Task 2: Find Out Which ML Model Fits Flight Delay Prediction the Best
 
 We have created four different ml models in OAC. And then, to find out which model fits our problem the best, we have calculated Mean Absolute Error (MAE) of each model. MAE is commonly used statistics for evaluating the overall quality of model. MAE value ranges from zero to infinity, and smaller MAE value means better model quality. 
 

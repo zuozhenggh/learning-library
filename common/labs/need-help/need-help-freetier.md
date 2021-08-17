@@ -73,7 +73,3 @@ If any of these three conditions are true, some ports in your network may be clo
 2. If you are connected to a corporate network, try switching to a public or a "clear" network if allowed.
 
 3. Alternatively, contact your IT Administrator to see if adding exceptions to your network or firewall would be viable.
-
-## Acknowledgements
-
-* **Author** - Didi Han, Database Product Management

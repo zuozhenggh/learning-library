@@ -16,7 +16,7 @@ Customer Benefits
 - Simplifies the management of customer’s private assets in OCI
 - Common user experience for managing global and private zones – common Console and API
 
-## **Step 1:** Sign in to OCI Console
+## Task 1: Sign in to OCI Console
 You will need the following information to login to your account:
 
 - Tenant Name: {{Cloud Tenant}}
@@ -25,7 +25,7 @@ You will need the following information to login to your account:
 
 This lab assumes you are a tenancy administrator. If you are not, request to the tenancy administrator to provide you the proper permission to manage DNS services, create and manage VCNs, create and manage instances. 
 
-## **Step 2:** Create a compartment (optional)
+## Task 2: Create a compartment (optional)
 
 1. From the OCI services menu, click **Compartments** under **Identity**.
 2. Click on the **Create Compartment** button.
@@ -33,7 +33,7 @@ This lab assumes you are a tenancy administrator. If you are not, request to the
 4. Click on **Create Compartment**.
 
 
-## **Step 3:** Use resource manager to create VCNs and test VM
+## Task 3: Use resource manager to create VCNs and test VM
 
 If you are not the adminstrator, you have to request the admin to give you permissions to manage Resource Manager Stacks by creating the following IAM policies in a compartment of your choice with the following statements:
 
@@ -57,18 +57,18 @@ For DNS Management:
 8. Click **Apply** in the Apply window.
 
 
-## **Step 4:** Create hubzone.com Custom Private Zone
+## Task 4: Create hubzone.com Custom Private Zone
 1. From the OCI services menu, click **DNS Management** under **Networking**.
 2. Under DNS Management, click on **Zones**, and then **Private Zones**.
 You should see the private zones that are created automatically for your subnets.
 3. Click on **Create Zone** and create zone **hubzone.com**. Select **Selecting existing DNS Private View** and name it **hub_vcn**.
 ![](../images/create_custom_zone_hub_vcn.png)
 
-## **Step 5:** View automatically generated records
+## Task 5: View automatically generated records
 1. After the zone is created, select **Records** to view the automatically generated NS and SOA records.
 ![](../images/automatic_created_records_hub_vcn.png)
 
-## **Step 6:** Create A record in hubvcn.com 
+## Task 6: Create A record in hubvcn.com 
 1. Click on **Add Record** button.
 2. Select Record Type **A - IPv4 Address**.
 3. Set Name to **server01**.
@@ -78,14 +78,14 @@ You should see the private zones that are created automatically for your subnets
 ![](../images/server_record_hub_vcn.png)
 7. Click on **Publish Changes** and then **Publish Changes** again in the new window.
 
-## **Step 7:** Create spokezone.com Custom Private Zone on the hub VCN
+## Task 7: Create spokezone.com Custom Private Zone on the hub VCN
 1. From the OCI services menu, click **DNS Management** under **Networking**.
 2. Under DNS Management, click on **Zones** and then **Private Zones**.
 You are able to see the private zones that are created automatically for your subnets.
 3. Click on **Create Zone** and create zone **spokezone.com**. Select **Selecting existing DNS Private View** and name it **spoke_vcn**.
 ![](../images/create_custom_zone_spoke_vcn.png)
 
-## **Step 8:** Create A record in spokevcn.com
+## Task 8: Create A record in spokevcn.com
 1. Click on **Add Record** button.
 2. Select Record Type **A - IPv4 Address**.
 3. Set Name to **server01**.
@@ -95,7 +95,7 @@ You are able to see the private zones that are created automatically for your su
 ![](../images/server_record_spoke_vcn.png)
 7. Click on **Publish Changes** and then **Publish Changes** again in the new window.
 
-## **Step 9:** SSH into the compute instance testVM
+## Task 9: SSH into the compute instance testVM
 1. From cloud shell, ssh to the testVM
 
 `ssh  -f my_key opc@<testVM public IP>`
@@ -125,7 +125,7 @@ You are able to see the private zones that are created automatically for your su
 
 The zone is not associated with any of the VCN's view leave cloud shell connect to the instace. we'll be back on it shortly.
 
-## **Step 9**: Associate the Private view to a VCN
+## Task 9: Associate the Private view to a VCN
 1. From the OCI services menu, click **Virtual Cloud Networks** under **Networking**
 2. Click on **hub_vcn** from the VCNs' list
 3. Locate the **DNS Resolver** and click on **hub_vcn**

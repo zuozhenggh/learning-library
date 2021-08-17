@@ -1,20 +1,20 @@
-# Scaling the Apache Tomcat Cluster
+# Scale the Apache Tomcat Cluster
 
 ## Introduction
 
-In this lab, we will explain how to scale the number of Tomcat nodes on Oracle Cloud Infrastructure (OCI).
+In this tutorial, we will explain how to scale the number of Tomcat nodes on Oracle Cloud Infrastructure (OCI).
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
 
-In this lab, you will scale the number of nodes.
+In this tutorial, you will scale the number of nodes.
 
 ### Prerequisites
 
-For this lab, you need to have provisioned the Tomcat cluster on OCI.
+For this tutorial, you need to have provisioned the Tomcat cluster on OCI.
 
-## **STEP 1:** Scale the Number of Nodes
+## Task 1: Scale the Number of Nodes
 
 On your local machine where you ran the Terraform:
 
@@ -43,12 +43,12 @@ On your local machine where you ran the Terraform:
     </copy>
     ```
 
-    Once this is complete, you'll get the public IPs of the two Tomcat servers, as well as the load balancer IP.
+    Once this is complete, you'll get the public IPs of the two Tomcat servers and the load balancer IP.
 
 
-## **STEP 2:** Deploy the Application on the New Server
+## Task 2: Deploy the Application on the New Server
 
-1. Follow the previous *Migrate Tomcat Application* lab to re-deploy the application.
+1. Follow the previous *Migrate Tomcat Application* section to re-deploy the application.
 
     Since you may not have the source Tomcat server to scp the war file from, you may first download it from the current deployment.
 
@@ -60,9 +60,7 @@ On your local machine where you ran the Terraform:
     scp opc@${TOMCAT_IP_1}:~/SimpleDB.war opc@${TOMCAT_IP_2}:~/
     ```
 
-2. Follow the steps to deploy the application and configure the datasource from the *Migrate Tomcat Application* lab.
-
-You're done!
+2. Follow the steps to deploy the application and configure the data source from the *Migrate the Tomcat Application* section.
 
 
 ## Acknowledgements

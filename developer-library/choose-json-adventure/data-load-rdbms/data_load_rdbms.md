@@ -18,7 +18,7 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-## **STEP 1:** Loading Data in a Relational Table
+## Task 1: Loading Data in a Relational Table
 
 1. After logging into Database Actions in the previous section, we come to the Getting Started/Database Actions Overview page. Start by clicking the SQL tile.
 
@@ -88,7 +88,7 @@ Estimated Lab Time: 30-45 minutes
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 2**: Working with JSON Data in a Relational Table
+## Task 2: Working with JSON Data in a Relational Table
 
 ### **Part 1 - Simple Dot-Notation Access to JSON Data**
 

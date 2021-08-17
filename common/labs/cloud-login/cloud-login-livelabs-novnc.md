@@ -8,7 +8,7 @@ If you already have an Oracle Cloud account, you can skip to Step 2.
 
 If you already have a reservation, skip to the next lab to start your workshop!
 
-## STEP 1: **Create an Oracle Account**
+## Task 1: **Create an Oracle Account**
 
 Creating an Oracle account can be summarized in the following two simple steps.
 
@@ -20,7 +20,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![](images/create-account-oracle-2.png " ")
 
-## STEP 2: **Request Workshop Reservation**
+## Task 2: **Request Workshop Reservation**
 
 1. Using your *Oracle Account Login* go to [LiveLabs 2.0](http://bit.ly/golivelabs) and click  ![](images/reserve.png) to request a reservation for this workshop.
 
@@ -63,5 +63,5 @@ If you still have an active reservation, you can also rate by going to My Reserv
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - Kay Malcolm, Rene Fontcha, Kamryn Vinson, Anoosha Pilli
+- **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli
 - **Last Updated By/Date** - Anoosha Pilli, April 2021

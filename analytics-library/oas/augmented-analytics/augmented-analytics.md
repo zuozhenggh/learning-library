@@ -30,7 +30,7 @@ The following files downloaded in *"Lab: Initialize Environment"* are required t
 - Attrition Training v3.xlsx
 - Employee_Analysis.dva
 
-## **STEP 1:** Using Machine Learning to Accelerate Root Cause Analysis
+## Task 1: Using Machine Learning to Accelerate Root Cause Analysis
 In this exercise we are going to import a data set containing a number of employee records with various attributes that record employee experience, performance, and incentive. The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
 
   - Note the attrition column, a binary indicator.  
@@ -178,7 +178,7 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
 23. Save your analysis.
 
-## **STEP 2:** Leverage machine learning to predict voluntary termination
+## Task 2: Leverage machine learning to predict voluntary termination
 This exercise will explore how self-service machine learning enables predictive analytics. We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization. For this we will be using a Binary Classification model. Before we venture any further let us try to understand briefly what binary classification is.  
 
 Binary classification is a technique of classifying elements of a given dataset into two groups on the basis of classification rules for example Employee Attrition Prediction, i.e. whether the employee is expected to Leave or Not Leave. These classification rules are generated when we train a model using training dataset which contains information about the employees and whether the employee has left the company or not.

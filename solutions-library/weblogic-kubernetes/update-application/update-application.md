@@ -8,7 +8,7 @@ For the purpose of this lab, we created another image that contains a domain and
 
 Estimated Lab Time: 15 minutes
 
-## **STEP 1**: Upgrade WebLogic container packaged application using domain resource definition
+## Task 1: Upgrade WebLogic container packaged application using domain resource definition
 
 Edit  your domain resource definition (*domain.yaml*) and modify the image location. The modified line with image should appear as follows:
 ```yaml

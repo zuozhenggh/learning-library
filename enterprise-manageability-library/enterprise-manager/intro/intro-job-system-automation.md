@@ -5,6 +5,8 @@ The Job System Automation workshop is a fully functional Oracle Enterprise Manag
 - This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
+*Estimated Time:* 60 minutes
+
 ## About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
@@ -57,6 +59,12 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 * Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 * Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 * Host security compliance using custom compliance standard
+
+#### 6. Real Application Testing
+* Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
+* Capture workload of 18c Database
+* Run Database Replay of 18c Database Workload in 19c Database
+* Run Consolidation Replay in 2 separate Pluggable Databases
 
 ## Learn More
 Managing Your Hybrid Database Fleet

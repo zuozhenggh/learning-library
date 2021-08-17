@@ -24,7 +24,7 @@ For this lab you need:
 - A bare metal compute instance with at least 4 OCPUs (8 preferred) available to run the image.
 - Microsoft Remote Desktop Client (or similar RDP client) installed to connect to the demo environment.
 
-## **STEP 1:** Launch the Workshop Marketplace Stack
+## Task 1: Launch the Workshop Marketplace Stack
 
 1. Navigate to [Workshop Environment Marketplace Stack](https://cloudmarketplace.oracle.com/marketplace/listing/84694612)
 
@@ -74,7 +74,7 @@ For this lab you need:
 
   ![](./images/outputs-mp-demo.png)
 
-## **STEP 2:** Connect to the Demo Environment
+## Task 2: Connect to the Demo Environment
 
 *It will take another 4 to 5 minutes for all the services to come online.*.
 
@@ -88,7 +88,7 @@ Connect to the instance using your RDP Client (the follwoing steps show the proc
 
 3. If you have issues with display sizing, edit the connection and go to `Display` settings to adjust screen size.
 
-## **STEP 3:** Launch the SOA Domain
+## Task 3: Launch the SOA Domain
 
 1. Click `SOA and Compact Domain` on the VM desktop.
 
@@ -111,7 +111,7 @@ Connect to the instance using your RDP Client (the follwoing steps show the proc
     ![](./images/soa-soa-console.png)
 
 
-## **STEP 4:** Check the Local Environment
+## Task 4: Check the Local Environment
 
 1. Once the domains are started, open the Firefox web browser and select the bookmark for EM (Enterprise Manager), which points to `http://localhost:7001/em` to open the EM console.
 

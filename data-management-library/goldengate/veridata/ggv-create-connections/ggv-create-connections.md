@@ -16,16 +16,15 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
+- You have completed:
     * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
 
-## **STEP 1:** Login to Oracle GoldenGate Veridata
+## Task 1: Login to Oracle GoldenGate Veridata
   To login to GoldenGate Veridata:
   1. From the *Firefox* window opened in the previous lab and if not already connected, Click on *Workshop Links* toolbar folder and select *GoldenGate Veridata Server* to load the page and login using the saved credentials.
 
@@ -52,7 +51,7 @@ This lab assumes you have:
 
   *Note*: After you login, you may see a this pop-up screen about **Memory Check**. Click **Ok** or close.
 
-## **STEP 2:** Create a Connection
+## Task 2: Create a Connection
 To get started with Oracle GoldenGate Veridata, you must define a connection to the source and target databases that contain the data that you want to compare. Oracle GoldenGate Veridata Server uses the connection information to communicate with Oracle GoldenGate Veridata Agent.
 
 **Note**: Ensure that you have the Administrator or the Power User roles to create and configure connections.

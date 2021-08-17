@@ -18,7 +18,7 @@ Estimated Lab Time: 10 minutes
 - Completed the [User Setups Lab](../user-setups/user_setups.md)
 - Completed the [Create and auto-REST enable a table lab](../create_table/create_table.md)
 
-## **STEP 1**: Load data into the Database
+## Task 1: Load data into the Database
 
 1. Start by again using the cURL slide out on our REST enabled table.
 

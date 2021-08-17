@@ -15,7 +15,7 @@ Follow these general steps:
 3. Sign in to the Oracle Data Safe Console in your region.
 4. In the Oracle Data Safe Console, update your sensitive data model against your target database by using the update option in the Data Discovery wizard. What does the update test find?
 
-## STEP 1: Add a sensitive column to a table
+## Task 1: Add a sensitive column to a table
 
 Connect to ATP-D DB using SQL Developer Web
 
@@ -35,7 +35,7 @@ In SQL Developer Web, add an `AGE` column to the `HCM1.EMPLOYEES` table in your 
 ```
 - Keep this tab open to be returned to later.
 
-## STEP 2: Update your sensitive data model
+## Task 2: Update your sensitive data model
 
 Sign in to the Oracle Data Safe Console in your region
 

@@ -28,7 +28,7 @@ In this lab you will:
 - Create a VCN with private and public subnets.
 
 
-## **STEP 1:** Create the Compartment
+## Task 1: Create the Compartment
 
 Before we can provision the Application Database (SOADB), we need to provision a **Compartment** where we can set up the network layer, or you can get the details of an already created **Compartment** from your network administrator.
 
@@ -44,7 +44,7 @@ Before we can provision the Application Database (SOADB), we need to provision a
 
    ![](./images/compartment-create.png)
 
-## **STEP 2:** Create the VCN
+## Task 2: Create the VCN
 
 We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigured **public subnet**, and **private subnet** with appropriate **Security Lists** to open up the required ports:
 
@@ -80,7 +80,7 @@ We need to provision a **VCN** by choosing **Start VCN Wizard** with preconfigur
 
 8. When all is clear, click **View Virtual Network**
 
-## **STEP 3:** Create the Required Security Lists
+## Task 3: Create the Required Security Lists
 
 Before we can provision the SOAMP Instance, we need to provision a security list so the database subnet can be reached from the SOA instances. We need to open the following ports: 
 

@@ -13,7 +13,7 @@ We will do the following:
 
 * The lab requires an Oracle Public Cloud account with Autonomous Transaction Processing Cloud Service.
 
-## **Step 1:** Sign in to OCI Console and create an Autonomous Transaction Processing Cloud instance
+## Task 1: Sign in to OCI Console and create an Autonomous Transaction Processing Cloud instance
 
 1. In Oracle Cloud, click Sign In. Sign in using your tenant name. Then click Continue.
 
@@ -63,7 +63,7 @@ We will do the following:
 
 6. Click **Create Autonomous Database**. Wait for State to change to Available (few minutes).
 
-## **Step 2:** Start using SQL Developer Web
+## Task 2: Start using SQL Developer Web
 
 1. Click the **Tools** tab.
 
@@ -102,7 +102,7 @@ We will do the following:
 
       ![](images/Query_not_redacted.png " ")
 
-## **Step 3:** Audit Data
+## Task 3: Audit Data
 
 1. The table TEST.CUSTOMERS holds columns whose data is sensitive. You want to audit the UPDATE actions on the table.
 

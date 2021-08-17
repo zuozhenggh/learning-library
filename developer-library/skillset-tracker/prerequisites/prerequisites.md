@@ -23,31 +23,31 @@ In this lab, you will:
 To complete this lab, you must have:
 * Login to Oracle Cloud account.
 
-## **Step 1:** Installing SQL Developer
+## Task 1: Installing SQL Developer
 
 Go to [oracle.com](https://www.oracle.com/tools/downloads/sqldev-downloads.html) and download the proper package for your operating system. It is recommended that you choose the version with the JDK included. You might need to login using an Oracle account in order to start downloading the installation files.
 
-## **Step 2:** Installing OCI CLI
+## Task 2: Installing OCI CLI
 
 Go to [oracle.com](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm) and follow the steps for installing and configuring the OCI CLI on your local machine. After installing it, you can run the ``oci setup config`` command and follow the steps to configure it. Test your configuration using the command: ``oci os ns get``.
 
-## **Step 3:** Installing Docker
+## Task 3: Installing Docker
 
 Go to [docker.com](https://www.docker.com/products/docker-desktop) and download the package suitable for your operating system. Install Docker and Sign In or create a new account.
 
-## **Step 4:** Installing Kubectl
+## Task 4: Installing Kubectl
 
 Go to [kubernetes.io](https://kubernetes.io/docs/tasks/tools/) and download the suitable package for your operating system and install it according to the steps described on their website.
 
-## **Step 5:[Optional]** Installing Visual Studio Code
+## **Task 5:[Optional]** Installing Visual Studio Code
 
 Go to [visualstudio.com](https://code.visualstudio.com/Download) and download the proper package for your operating system. Install Visual Studio Code according to the steps in the installation window.
 
-## **Step 6:[Optional]** Installing NodeJS
+## **Task 6:[Optional]** Installing NodeJS
 
 Go to [nodejs.org](https://nodejs.org/en/download/) and download the proper package for your operating system. Install it according to the steps in the installation window.
 
-## **Step 7:[Optional]** Installing OracleJET Tools
+## **Task 7:[Optional]** Installing OracleJET Tools
 
 After installing **NodeJS** open a command line window and run the following command. You might need administration rights to run them.
   ```
@@ -55,7 +55,7 @@ After installing **NodeJS** open a command line window and run the following com
   npm install -g @oracle/ojet-cli
   </copy>
   ```
-## **Step 8:[Optional]** Installing Oracle Instant Client
+## **Task 8:[Optional]** Installing Oracle Instant Client
 Go to [oracle.com](https://www.oracle.com/database/technologies/instant-client/downloads.html) and download the proper package for your operating system. Create a new folder for it (for example _C:\\oracle_). Extract the downloaded archive and copy the contents into this folder. Now, if you navigate to _C:\\oracle\\instantclient\_19\_9_ you should be able to see a _network\\admin_ folder. This is the folder in which you would need to copy the wallet files to connect to the database. If you don't have these two folders, you need to create them.
 
 You should also add _C:\\oracle\\instantclient\_19\_9_ in your environment variables.
