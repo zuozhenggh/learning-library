@@ -240,7 +240,7 @@ You can use either of these interpreters (or the %md interpreter for text) in th
     </copy>
     ```
 
-    ![Image alt text](images/notebook8.pn
+    ![Image alt text](images/notebook8.png)
 
 ## Learn More
 
