@@ -235,7 +235,7 @@ Also we need to make Verrazzano aware that we store in that namespace Verrazzano
 
     ```bash
     <copy>
-    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/bobs-books-.yaml >~/bobs-books-comp.yaml
+    curl -LSs https://raw.githubusercontent.com/verrazzano/verrazzano/master/examples/bobs-books/create_secret.sh >~/bobs-books-comp.yaml
     ./create_secret.sh username password    
     </copy>
     ```
