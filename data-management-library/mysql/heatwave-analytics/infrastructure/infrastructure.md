@@ -39,7 +39,8 @@ _Note: If you have not picked a compartment, you can pick the root compartment w
 ![](./images/task1.4.png)
 
 ### **Task 1.5:**
-- Now you need to complete some information and set the configuration for the VCN. In the _**VCN Name**_ field enter the value **analytics_vcn_test** (or any name at your convenience), and make sure that the selected compartment is the right one. Leave all the rest as per default, Click **Next**.
+- Now you need to complete some information and set the configuration for the VCN. In the _**VCN Name**_ field enter the value 
+**`analytics_vcn_test`** (or any name at your convenience), and make sure that the selected compartment is the right one. Leave all the rest as per default, Click _**Next**_.
 
 ![](./images/task1.5.png)
 
@@ -54,13 +55,13 @@ _Note: If you have not picked a compartment, you can pick the root compartment w
 ![](./images/task1.7.png)
 
 ### **Task 1.8:** 
-- Click on the _**Public_Subnet-analytics_vcn_test**_ link. 
+- Click on the _**`Public_Subnet-analytics_vcn_test`**_. 
 
 ![](./images/task1.8.png)
 
 ### **Task 1.9:** 
 - Earlier we set up the subnet to use the VCN's default security list, that has default rules, which are designed to make it easy to get started with Oracle Cloud Infrastructure. 
- Now we will customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking on  _**Default_Security_List_for_analytics_vcn_test**_.
+ Now we will customize the default security list of the VCN to allow traffic through MySQL Database Service ports by clicking on  _**`Default_Security_List_for_analytics_vcn_test`**_.
 
 ![](./images/task1.9.png)
 
@@ -103,7 +104,7 @@ The _**Placement and Hardware section**_ is the section where you can change Ava
 ![](./images/task2.3.png)
 
 
-- As you scroll down you can see the **Networking** section, check that your previously created **VCN** is selected, and select your PUBLIC subnet (_**Public Subnet - analytics_vcn_test(Regional)**_) from the dropdown menu.
+- As you scroll down you can see the **Networking** section, check that your previously created **VCN** is selected, and select your PUBLIC subnet _**`Public Subnet-analytics_vcn_test(Regional)`**_ from the dropdown menu.
   
 ![](./images/task2.3-1.png)
 
@@ -157,8 +158,15 @@ To access cloud shell, click on the shell icon next to the name of the OCI regio
 
 - In order to establish an ssh connection with the bastion host using the Public IP, execute the following commands:
 ```
+<copy>
 chmod 600 <private-key-file-name>.key
+</copy>
+```
+
+```
+<copy>
 ssh -i <private-key-file-name>.key opc@<compute_instance_public_ip>
+</copy>
 ```
 ![](./images/task3.4-1.png)
 
@@ -172,25 +180,25 @@ Now that you have connected to the instance you can proceed to the next Task.
 - From the established ssh connection, install MySQL Shell and MySQL client executing the following commands and the expected outputput should be as following:
   
 ```
-wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+<copy>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
 ```
 ![](./images/task3.5.png)
 ```
-sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
+<copy>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm</copy>
 ```
 ![](./images/task3.5-1.png)
 
 _**when prompted a warning about the public key type "y"**_
 
 ```
-sudo yum install mysql-shell  
+<copy>sudo yum install mysql-shell</copy>  
 ```
 ![](./images/task3.5-2.png)
 
 _**when prompted a warning about the public key type "y"**_
 
 ```
-sudo yum install mysql-community-client
+<copy>sudo yum install mysql-community-client</copy>
 ```
 
 ![](./images/task3.5-3.png)
@@ -201,11 +209,13 @@ _**when prompted a warning about the public key type "y"**_
 ### **Task 3.6:**
 - Launch MySQL Shell executing the following command:
 ```
-mysqlsh
+<copy>mysqlsh</copy>
 ```
 When you see the MySQL Shell colorful prompt, exit with the following command:
 ```
+<copy>
 \q
+</copy>
 ```
 ![](./images/task3.6.png)
 
@@ -213,17 +223,19 @@ When you see the MySQL Shell colorful prompt, exit with the following command:
 ### **Task 3.7:**
 - Download and unzip the workshop material using the following commands:
 ```
+<copy>
 cd /home/opc
+</copy>
 ```
 
 ```
-wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Ufty1RlzG7jobFAsNTsyaEgDVBgSLfiPGcxLscTxVOUxDN8MX6Jswj85_Iw7_bS2/n/odca/b/workshops-livelabs-do-not-delete/o/heatwave_workshop.zip
+<copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Ufty1RlzG7jobFAsNTsyaEgDVBgSLfiPGcxLscTxVOUxDN8MX6Jswj85_Iw7_bS2/n/odca/b/workshops-livelabs-do-not-delete/o/heatwave_workshop.zip</copy>
 ```
 
 ![](./images/task3.7.png)
 
 ```
-unzip heatwave_workshop.zip
+<copy>unzip heatwave_workshop.zip</copy>
 ```
 
 ![](./images/task3.7-1.png)
@@ -235,13 +247,13 @@ After it is done extracting the files you can move to the next Task and test it.
 - Verify the extracted material executing _**ll**_ command.
 Among the output, you should see the following file names:
 
-  **tpch_dump**
+  **`tpch_dump`**
 
-  **tpch_offload.sql**
+  **`tpch_offload.sql`**
 
-  **tpch_queries_mysql.sql**
+  **`tpch_queries_mysql.sql`**
 
-  **tpch_queries_rapid.sql**
+  **`tpch_queries_rapid.sql`**
 
 ![](./images/task3.8.png)
 
@@ -283,9 +295,9 @@ If your user does not contain the identity provider (**oracleidentitycloudprovid
 
 ![](./images/task4.3.png)
 
-  - Name: OACDemo
-  - OCPU: 2
-  - License Type: License Included
+  - Name: _**OACDemo**_
+  - OCPU: _**2**_
+  - License Type: _**License Included**_
   
 _**Note:**_ It takes about _**15-20 minutes**_ to create the OAC instance.
 
@@ -297,7 +309,7 @@ _**Note:**_ It takes about _**15-20 minutes**_ to create the OAC instance.
 ![](./images/task4.4.png)
 
 ### **Task 4.5:**
-- In the next window you first need to fill the name for the channel **PrivateChannel**. Then, choose the VCN created earlier **analytics_vcn_test**, and make sure you select the correct subnet, **Public Subnet-analytics_vcn_test**, otherwise you won't be able to connect!
+- In the next window you first need to fill the name for the channel **PrivateChannel**. Then, choose the VCN created earlier **`analytics_vcn_test`**, and make sure you select the correct subnet, **`Public Subnet-analytics_vcn_test`**, otherwise you won't be able to connect!
 Check _**Virtual Cloud Network's domain name as DNS zone**_, and remove the additional _**DNS Zone**_, using the X icon on the right side of the DNS Zone section, and finally click _**Configure**_.  
 
 _**Note:**_ It will take up to _**50 minutes**_ to create the private channel so go get a nice cup of tea to kill the time! 
@@ -315,5 +327,5 @@ _**Note:**_ It will take up to _**50 minutes**_ to create the private channel so
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Product Strategy Manager 
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
 - **Last Updated By/Date** -

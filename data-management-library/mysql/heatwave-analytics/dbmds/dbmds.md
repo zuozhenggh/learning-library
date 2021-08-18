@@ -36,18 +36,20 @@ Look at the compartment selector on the left and check that you are using the sa
 - In the _**Create Administrator Credential**_ section enter the following information:
   
 ```
+<copy>
 username: admin
 password: Oracle.123
+</copy>
 ```
-- In the _**Configure Networking**_ section make sure you select the same subnet which you have used to create the Compute Instance (Public-Subnet-analytics_vcn_test(Regional)).
+- In the _**Configure Networking**_ section make sure you select the same subnet which you have used to create the Compute Instance _**`Public-Subnet-analytics_vcn_test(Regional)`**_.
 
 - Leave the default availability domain and proceed to the _**Configure Hardware**_ section.
  
   ![](./images/task1.4.png)
 
 ### **Task 1.5:**
-- Confirm that in the _**Configure Hardware**_ section, the selected shape is MySQL.HeatWave.VM.Standard.E3, CPU Core Count: 16, Memory Size: 512 GB, Data Storage Size: 1024.
-In the _**Configure Backup**_ section leave the default backup window of 7 days.
+- Confirm that in the _**Configure Hardware**_ section, the selected shape is **MySQL.HeatWave.VM.Standard.E3**, CPU Core Count: **16**, Memory Size: **512 GB**, Data Storage Size: **1024**.
+In the _**Configure Backup**_ section leave the default backup window of **7** days.
 
 ![](./images/task1.5.png)
 
@@ -74,8 +76,8 @@ In the _**Configure Backup**_ section leave the default backup window of 7 days.
 - Go to the Networking tab, in the Hostname field enter _**mysql-analytics-test**_ (same as DB System Name). 
 Check that port configuration corresponds to the following:
 
-    - MySQL Port: 3306
-    - MySQL X Protocol Port: 33060
+    - MySQL Port: **3306**
+    - MySQL X Protocol Port: **33060**
       
 Once done, click the _**Create**_ button.
 
@@ -120,5 +122,5 @@ So now let's connect to MySQL DB System and run some queries before we enable th
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Product Strategy Manager 
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
 - **Last Updated By/Date** -

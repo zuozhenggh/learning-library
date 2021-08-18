@@ -17,17 +17,18 @@ In this lab we will use the Oracle Analytics Cloud instance we created in the In
 - From the Cloud shell connect to MySQL DB System:
   
 ```
-mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=tpch --sql
+<copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=tpch --sql</copy>
 ```
 ![](./images/task1.1.png)
 
 - Run the following query to create a virtual table _**myAnalyticsView**_ that will include data from other tables from the database:
 
 ```
+<copy>
 CREATE VIEW myAnalyticsView AS SELECT * 
     FROM customer JOIN orders ON customer.C_CUSTKEY=orders.O_CUSTKEY
     JOIN nation ON customer.C_NATIONKEY=nation.N_NATIONKEY;
-    
+</copy>    
 ```
 ![](./images/task1.1-1.png)
 
@@ -62,7 +63,7 @@ By now the status of the instance should have changed to _Active_, click on the 
 
 In the new window we have a lot of information we need to provide. Host name is a little bit tricky, we need to provide the Internal FQDN (fully qualified domain name) of the MySQL Database Instance. To find this out, you need to go back to the MySQL instance details.
 
-Go to Databases section on your Cloud Home Page and select DB Systems and finally select mysql-analytics-test instance that we created previously and you will find all the information required such as Internal FQDN and MySQL Port in the Endpoint section.
+Go to Databases section on your Cloud Home Page and select **DB Systems** and finally select **mysql-analytics-test** instance that we created previously and you will find all the information required such as **Internal FQDN** and **MySQL Port** in the _Endpoint section_.
 
 ![](./images/task1.4.png) 
 
@@ -71,19 +72,19 @@ Go to Databases section on your Cloud Home Page and select DB Systems and finall
 
 - To create the connection, fill out with the following information:
 
-    - **Connection Name**: MySQL_Connection
+    - **Connection Name**: _**`MySQL_Connection`**_
 
-    - **Host**: Copy the information from Internal FQDN here. ex: mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com
+    - **Host**: Copy the information from Internal FQDN here. ex: _mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com_
 
-    - **Port**: Copy the information from MySQL Port. It should be 3306.
+    - **Port**: Copy the information from MySQL Port. It should be _3306_.
 
-    - **Database Name**: tpch
+    - **Database Name**: _tpch_
 
-    - **Username**: admin
+    - **Username**: _admin_
 
-    - **Password**: Oracle.123
+    - **Password**: _Oracle.123_
   
-After you filled out the information, click Save.
+After you filled out the information, click _**Save**_.
 
 ![](./images/RW4.PNG)
 
@@ -138,9 +139,9 @@ Click on the _**tpch**_ database in the left side of the dashboard.
 
 ### **Task 2.5:** 
 
-- From the left side of the dashbaord, select the column **N_NAME**, and then while pressing CTRL (or Comamnd if you are on Mac) click
+- From the left side of the dashbaord, select the column **`N_NAME`**, and then while pressing CTRL (or Comamnd if you are on Mac) click
   
-   **O_TOTALPRICE**, and right click and select **Create Best Visualization**.
+   **`O_TOTALPRICE`**, and right click and select _**Create Best Visualization**_.
 
 ![](./images/RW12.PNG)
 
@@ -154,15 +155,15 @@ Click on the _**tpch**_ database in the left side of the dashboard.
  
 ![](./images/maps1.png)
 
- On the duplicated visual, click on Visualization Type and choose Map.
+ On the duplicated visual, click on **Visualization Type** and choose **Map**.
 
 ![](./images/maps2.png)
 
 ![](./images/task2.5.png)
 
- Our new map appears on the screen. Now let’s analyze the trend of prices by time. On the Explorer pane on the left, expand the column **O_ORDERDATE**, 
+ Our new map appears on the screen. Now let’s analyze the trend of prices by time. On the Explorer pane on the left, expand the column **`O_ORDERDATE`**, 
  
- then click on Year, hold CTRL and click on **O_TOTALPRICE**. Right-click and choose **Create Best Visualization**.
+ then click on Year, hold CTRL and click on **`O_TOTALPRICE`**. Right-click and choose _**Create Best Visualization**_.
 
 ![](./images/maps3.png)
 
@@ -170,7 +171,7 @@ Click on the _**tpch**_ database in the left side of the dashboard.
 
 ![](images/maps4.png)
 
- The visual now shows the forecasted O_TOTALPRICE based on the Machine Learning applied to the data from the MySQL database. 
+ The visual now shows the forecasted **`O_TOTALPRICE`** based on the Machine Learning applied to the data from the MySQL database. 
  It looks like we will recover from this drop.
 
 ![](./images/maps5.png)
@@ -186,7 +187,7 @@ Click on the _**tpch**_ database in the left side of the dashboard.
 ### **Task 2.6:**
 - You can also share your project by email or social media. Have a look at the possibilities.
 
- Select the Share icon and select File or Print.
+ Select the **Share** icon and select **File** or **Print**.
 
 ![](./images/print1.png)
 
@@ -198,7 +199,7 @@ Click on the _**tpch**_ database in the left side of the dashboard.
 
 ![](./images/task2.6.png)
 
- When you select Print, you can choose which parts of your project to include in the Printed output, such as All Canvas, only the Active Canvas or the Active Visual, etc.
+ When you select **Print**, you can choose which parts of your project to include in the Printed output, such as All Canvas, only the Active Canvas or the Active Visual, etc.
 
 ![](./images/print4.png)
 
@@ -213,5 +214,5 @@ Click on the _**tpch**_ database in the left side of the dashboard.
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Product Strategy Manager
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager
 - **Last Updated By/Date** -

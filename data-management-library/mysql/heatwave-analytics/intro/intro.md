@@ -26,13 +26,13 @@ At the end of the workshop you will be able to run some queries on a sample data
 
 -  This workshop requires an Oracle Cloud account with available credits, you may check out this <a href="https://www.youtube.com/watch?v=4U-0SumNz6w" target="_blank">video</a> to help you signing up. You also can use a paid cloud account or a trial cloud account as well.
   
-    <div style="position: relative;padding-bottom: 56%;padding-top: 0;height: 0;margin-bottom: -33%;">
-    <iframe style="position: absolute;top: 0;left: 0;width: 40%;height: 40%;" src="https://www.youtube.com/embed/4U-0SumNz6w" title="YouTube video player"  allowfullscreen frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-    </div>
+  [](youtube:4U-0SumNz6w)
+
+
     
 Your account is ready? let's start learning!
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Product Strategy Manager 
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
 - **Last Updated By/Date** -
