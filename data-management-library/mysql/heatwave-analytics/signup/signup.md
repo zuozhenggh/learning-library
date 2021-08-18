@@ -93,6 +93,7 @@ Click the **Add payment verification method** button.
 ### **Task 1.11:**
 
 Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details. 
+
 _Note: This is a free credit promotion account. You will not be charged unless you elect to upgrade the account._
 
 ![](images/oracle_cloud_free_tier4_5.png)
