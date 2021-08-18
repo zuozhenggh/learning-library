@@ -36,7 +36,7 @@ In this lab, you will:
     <copy>kubectl apply -f ~/bobs-books-comp-mod.yaml</copy>
     ```
 
-    ![Apply changes](images/2.png)
+    ![Apply changes 1](images/2.png)
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 
