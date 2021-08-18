@@ -1,4 +1,4 @@
-# Provision Instances and Set Up Your Cloud Environment
+# Provision Your Instances 
 
 ## Introduction
 

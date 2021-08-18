@@ -26,6 +26,11 @@ This lab assumes you have:
 * An Oracle account
 * A browser (works best in Chrome)
 
+## Learn More
+
+* [Documentation](https://docs.oracle.com/en/cloud/paas/visual-builder/index.html)
+* [VB Studio](https://blogs.oracle.com/vbcs/visual-builder-studio-2) and [Visual Builder blogs](https://blogs.oracle.com/vbcs/)
+
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
 * **Last Updated By/Date** - August 2021

@@ -13,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Provision Instances and Set Up Cloud Environment",
+            "title": "Provision Your Instances",
             "filename": "../../provision/provision.md"
         },
         {
@@ -29,7 +29,7 @@
             "filename": "../../add-pages/add-pages.md"
         },
         {
-            "title": "Lab 4: Save a Web App's Changes to a Remote Branch",
+            "title": "Lab 4: Save Changes to a Remote Branch",
             "filename": "../../save-changes/save-changes.md"
         },
         {
@@ -37,7 +37,7 @@
             "filename": "../../add-data/add-data.md"
         },
         {
-            "title": "Lab 6: Add Pages to Manage a Web App's Data",
+            "title": "Lab 6: Add Pages to Manage Data",
             "filename": "../../add-other-pages/add-other-pages.md"
         },
         {
