@@ -68,7 +68,7 @@ Enter the following information to create your Oracle Cloud Free Tier account.
 
 ### **Task 1.7:**
 
-Enter your Address information. Click Continue. 
+Enter your **Address** information. Click **Continue**. 
 
 ![](images/oracle_cloud_free_tier4_1.png)
 
