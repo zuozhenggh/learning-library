@@ -53,10 +53,9 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
 
 Using notepad or notepad++, do map each of all the list of existing tablespaces from source database to DATA and for temporary tablespace to TEMP to match the target ADB-S database. These commands would be used in the mv2adb configuration file.
 
-  Sample sorted list mapped to DATA & TEMP:
+*  Sample sorted list mapped to DATA & TEMP:
 
-     
-     
+         
      <copy>TLLARGE:DATA,TLWORK:DATA,WAAPP:DATA,PSGTT01:TEMP,PSTEMP:TEMP</copy>
        
      
