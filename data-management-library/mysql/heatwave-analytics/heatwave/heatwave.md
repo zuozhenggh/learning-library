@@ -230,5 +230,5 @@ diff -y heatwave_rt_profiles.log mysql_rt_profiles.log
 
 ## **Acknowledgements**
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director 
+- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Product Strategy Manager 
 - **Last Updated By/Date** -
