@@ -15,7 +15,7 @@ At the end of the workshop you will be able to run some queries on a sample data
 **Objectives**
 
 -	Learn how to deploy MySQL Database Service (MDS) DB System with HeatWave.
--	Learn how to enable an HeatWave cluster to MDS DB System.
+-	Learn how to enable a HeatWave cluster to MDS DB System.
 -	Learn how to import data into MDS from an external data source.
 -	Understand how tables are loaded to HeatWave.
 -	Learn how to run queries on MDS leveraging or not HeatWave.
