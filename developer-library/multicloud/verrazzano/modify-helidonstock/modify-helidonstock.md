@@ -15,7 +15,7 @@ In this lab, you will:
 
 You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Modify bobbys-helidon-stock-application
+## Task 1: Modify bobbys-helidon-stock-application
 
 1. Select the Bob's Book tab, then click *Books*, and then click on the image for *The Hobbit* book, as shown:
 
@@ -28,15 +28,12 @@ You should have a text editor, where you can paste the commands and URLs and mod
 2. We want to convert the book name to upper case letters (THE HOBBIT). We need to download the source code for the Bob's Books application. Make sure, you are in the home folder. Copy the following commands and paste it in the *Cloud Shell*.
 
     ```bash
-    <copy>cd ~</copy>
-    ```
-
-    ```bash
-    <copy>git clone https://github.com/verrazzano/examples.git</copy>
+    <copy>cd ~
+    git clone -b v0.16.0 https://github.com/verrazzano/examples.git</copy>
     ```
 
     ![Clone Repository](images/3.png)
-
+    
 3. To view the files inside the Bob's Book application, copy the following command and paste it in the *Cloud Shell*.
 
     ```bash
@@ -65,7 +62,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![Save changes](images/7.png)
 
-## **STEP 2**: Create a new Docker image for the bobbys-helidon-stock-application
+## Task 2: Create a new Docker image for the bobbys-helidon-stock-application
 
 1. Because we are going to build a new Docker image for *bobbys-helidon-stock-application*, which has dependencies on *bobbys-coherence-application*, we run a *Maven* command to clean the existing bobbys-coherence-application archive and compile, build, package, and install a new bobby-coherence-application archive in a local Maven repository. To change to the *bobbys-coherence* directory folder, copy the following command and paste it in the *Cloud Shell*.
 

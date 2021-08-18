@@ -22,7 +22,7 @@ You will run a basic query on the `SSB` data set which is a 1 terabyte data set 
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample data set
 
-## **STEP 1**: Connect with SQL Worksheet
+## Task 1: Connect with SQL Worksheet
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP console.
 
@@ -57,7 +57,7 @@ Although you can connect to your autonomous database using local PC desktop tool
 
     ![SQL Worksheet.](./images/Picture100-sql-worksheet.png " ")
 
-## **STEP 2**: Run Scripts in SQL Worksheet
+## Task 2: Run Scripts in SQL Worksheet
 
 Run a Query on a Sample Autonomous Database Data set.
 

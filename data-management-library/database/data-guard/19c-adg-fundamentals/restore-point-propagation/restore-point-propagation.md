@@ -24,7 +24,7 @@ Estimated Lab Time: 20 Minutes
 - Connect to the Database
 - Enable Active Data Guard DML Redirection
 
-## **STEP 1**: Create a restore point in the primary
+## Task 1: Create a restore point in the primary
 
 1. Download the 2 textfiles with the sql commands.
 
@@ -61,7 +61,7 @@ Estimated Lab Time: 20 Minutes
 
 The restore point drop is now replicated to the standby and has been suffixed with `_PRIMARY` and the replicated column on the primary indicates this has been performed.
 
-## **STEP 2**: Drop the restore point
+## Task 2: Drop the restore point
 
 1. Next, drop the restore point in the primary database with following query
     ````

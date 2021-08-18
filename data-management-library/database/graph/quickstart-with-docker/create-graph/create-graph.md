@@ -15,7 +15,7 @@ In the lab, you will:
 
 * This lab assumes that you have successfully completed the labs - Setup a Property Graph Analysis Environment in Docker, Setup Oracle Database in Docker, Create and Populate Database Tables
 
-## **STEP 1:** Create the Customer 360 Property Graph
+## Task 1: Create the Customer 360 Property Graph
 
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 
@@ -133,7 +133,7 @@ In the lab, you will:
 
   Note: The execute() above will return `false` on completion since the first result is not a ResultSet.
 
-## **STEP 2:** Check if the graph was created
+## Task 2: Check if the graph was created
 
 1. You can check the graph by executing the following code and query (= PGQL on RDBMS) in the JShell.
 

@@ -29,7 +29,7 @@ This lab assumes you have:
 | 3 | Enable the network encryption | 5 minutes |
 | 4 | (Optional) Disable the network encryption | <5 minutes |
 
-## **STEP 1**: Check the current network configuration
+## Task 1: Check the current network configuration
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -62,7 +62,7 @@ This lab assumes you have:
    ![](./images/nne-002.png " ")
 
 
-## **STEP 2**: Generate and capture SQL traffic
+## Task 2: Generate and capture SQL traffic
 
 1. Run tcpdump on the traffic to analyze the packets in transit on the network
 
@@ -114,7 +114,7 @@ This lab assumes you have:
 
 6. When you have seen the un-encrypted data, use "`[Ctrl]+C`" to stop the `nne_capt_empsearch_traffic.sh` script
 
-## **STEP 3**: Enable the network encryption
+## Task 3: Enable the network encryption
 You will enable SQL*Net encryption with the `REQUESTED` value for `SQLNET.ENCRYPTION_SERVER`
 
 1. To begin with, we use this option because it will allow non-encrypted connections to still connect. While this rarely has an impact, it is often important to do this so the change does not interfere with production systems that cannot encrypt between the client and the database!
@@ -181,7 +181,7 @@ You will enable SQL*Net encryption with the `REQUESTED` value for `SQLNET.ENCRYP
 
 6. When you have seen the encrypted data, use "`[Ctrl]+C`" to stop the `nne_capt_empsearch_traffic.sh` script
 
-## **STEP 4**: (Optional) Disable the network encryption
+## Task 4: (Optional) Disable the network encryption
 
 1. When you have completed the lab, you can return the Native Network Encryption to the default settings
 

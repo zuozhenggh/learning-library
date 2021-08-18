@@ -23,7 +23,7 @@ To complete this lab, you must have:
 * **Lab 5: Build NodeJS APIs to make calls to the database**.
 
 
-## **STEP 1:** Create a Docker file, Docker Image and Run a Docker Container
+## Task 1: Create a Docker file, Docker Image and Run a Docker Container
 
 As a prerequisite for this step you should have available the code from **Lab 5: Build NodeJS APIs to make calls to the database**. In addition, you should download the Database Wallet as shown in **Lab 3: Autonomous JSON Database & SODA Collections**, extract the content of the archive and move the folder with the Wallet content into the project folder (in our example the Wallet folder is named _Wallet\_SkillsetDB_).
 
@@ -76,7 +76,7 @@ As a prerequisite for this step you should have available the code from **Lab 5:
 
 4. Test that the command executed successfully by opening a browser and accessing ``localhost:8000/api/skillset``. You should see the following message _...OJET Skillset APIs are running..._.
 
-## **STEP 2:** Create an Oracle Database Secret and a YAML file for the Project
+## Task 2: Create an Oracle Database Secret and a YAML file for the Project
 
 1. In the project folder create a new folder _k8s-yaml_.
 
@@ -174,7 +174,7 @@ As a prerequisite for this step you should have available the code from **Lab 5:
       </copy>
       ```
 
-## **STEP 3:** Push the Image to OCI Container Registry (OCIR)
+## Task 3: Push the Image to OCI Container Registry (OCIR)
 
 1. Open the OCI Console and from the top left hamburger menu navigate to **Developer Services** -> **Container Registry**.
 
@@ -191,7 +191,7 @@ As a prerequisite for this step you should have available the code from **Lab 5:
       </copy>
       ```
 
-## **STEP 4:** Migrate Docker Container App to OKE
+## Task 4: Migrate Docker Container App to OKE
 
 1. Open the OCI Console and from the top left hamburger menu navigate to **Developer Services** -> **Kubernetes Clusters (OKE)** and click **Create Cluster**.
 

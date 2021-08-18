@@ -22,7 +22,7 @@ This lab assumes you have:
     - Lab: Develop SOA Composite App Validate Payment
     - Lab: Register Validate Payment App to the Service Bus
 
-## **STEP 1**: REST-Enabled the Service Bus Proxy End-Point
+## Task 1: REST-Enabled the Service Bus Proxy End-Point
 
 1. In the Components swimlane, right-click the left wired connection of validatePaymentProcess, and select **Expose as REST**.
 
@@ -32,7 +32,7 @@ Watch this video on how to enable REST-API for SOA composite, start at 3:25
 
    [](youtube:50i0b8ry-z8)
 
-## **STEP 2**: Review Post workshop
+## Task 2: Review Post workshop
 
 Congratulations you've completed developing the validate payment service using SOA composite app; register it to Oracle Service Bus. You've also enabled the app so it can be invoked using https protocol, REST api.
 

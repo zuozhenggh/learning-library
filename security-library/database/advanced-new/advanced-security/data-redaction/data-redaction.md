@@ -15,9 +15,7 @@ Dynamically redact sensitive data preventing it from being displayed outside the
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -29,7 +27,7 @@ This lab assumes you have:
 | 2 | Contextualize an existing Data Redaction policy | 5 minutes |
 | 3 | (Optional) Drop the Data Redaction policy | <5 minutes |
 
-## **STEP 1**: Create a basic Data Redaction policy
+## Task 1: Create a basic Data Redaction policy
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -67,7 +65,7 @@ This lab assumes you have:
 
    ![](./images/dr-003.png " ")
 
-## **STEP 2**: Contextualize an existing Data Redaction policy
+## Task 2: Contextualize an existing Data Redaction policy
 
 1. Now, modify the redaction policy to only redact non-Glassfish queries (**Expression with "Rule Set"**)
 
@@ -93,7 +91,7 @@ This lab assumes you have:
 
    ![](./images/dr-006.png " ")
 
-## **STEP 3**: (Optional) Drop the Data Redaction policy
+## Task 3: (Optional) Drop the Data Redaction policy
 
 1. When you are finished with the lab, you can drop the redaction policy
 

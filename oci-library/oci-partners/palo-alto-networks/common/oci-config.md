@@ -18,11 +18,11 @@ Estimated Lab Time: 30 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)
 
-## **STEP 1: Configure Hub VCN**
+## **Task 1: Configure Hub VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
-   ![](../common/images/1-VCN-Home.PNG " ")
+   ![](../common/images/1-VCN-Home.png " ")
 
 2. Below table represents what you will be creating. Click on **Create VCN** icon to create new **Virtual Cloud Network**:
 
@@ -30,7 +30,7 @@ Estimated Lab Time: 30 minutes.
       |---------------------------------------|----------------|------------------------------------------------------------|
       | firewall-vcn                          | 192.168.0.0/16 | Hub Virtual Cloud Networks; Firewalls will be part of this |
       
-   ![](../common/images/2-VCN-Create.PNG " ")
+   ![](../common/images/2-VCN-Create.png " ")
 
 3. Fill out the dialog box:
 
@@ -38,7 +38,7 @@ Estimated Lab Time: 30 minutes.
       - **COMPARTMENT**: Ensure your compartment is selected
       - **VCN CIDR BLOCK**: Provide a CIDR block (192.168.0.0/16)
 
-   ![](../common/images/3-Create-Hub-VCN.PNG " ")
+   ![](../common/images/3-Create-Hub-VCN.png " ")
 
 4. Verify all the information and Click **Create VCN**.
 
@@ -187,11 +187,11 @@ Estimated Lab Time: 30 minutes.
 
     *service-gateway Service Gateway*
 
-## **STEP 2: Configure Web VCN**
+## **Task 2: Configure Web VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
-   ![](../common/images/1-VCN-Home.PNG " ")
+   ![](../common/images/1-VCN-Home.png " ")
 
 2. Below table represents what you will be creating. Click on **Create VCN** icon to create new **Virtual Cloud Network**:
 
@@ -199,7 +199,7 @@ Estimated Lab Time: 30 minutes.
       |---------------------------------------|----------------|------------------------------------------------------------|
       | web-vcn                               | 10.0.0.0/24    | Web Virtual Cloud Networks; Web VMs will be present here   |
       
-   ![](../common/images/2-VCN-Create.PNG " ")
+   ![](../common/images/2-VCN-Create.png " ")
 
 3. Fill out the dialog box:
 
@@ -207,7 +207,7 @@ Estimated Lab Time: 30 minutes.
       - **COMPARTMENT**: Ensure your compartment is selected
       - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/24)
 
-   ![](../common/images/4-Create-Web-VCN.PNG " ")
+   ![](../common/images/4-Create-Web-VCN.png " ")
 
 4. Verify all the information and Click **Create VCN**.
 
@@ -234,7 +234,7 @@ Estimated Lab Time: 30 minutes.
       - **DHCP Options**: Default DHCP Options in your case.
       - **Security List**: Default Security List in your case.
 
-   ![](../common/images/6-Create-Web-Private-Subnet.PNG " ")
+   ![](../common/images/6-Create-Web-Private-Subnet.png " ")
 
 9. Verify all the information and Click **Create Subnet**.
 
@@ -242,11 +242,11 @@ Estimated Lab Time: 30 minutes.
 
     *application-private Subnet*
 
-## **STEP 3: Configure DB VCN**
+## **Task 3: Configure DB VCN**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
-   ![](../common/images/1-VCN-Home.PNG " ")
+   ![](../common/images/1-VCN-Home.png " ")
 
 2. Below table represents what you will be creating. Click on **Create VCN** icon to create new **Virtual Cloud Network**:
 
@@ -254,7 +254,7 @@ Estimated Lab Time: 30 minutes.
       |---------------------------------------|----------------|-----------------------------------------------------------------|
       | db-vcn                                | 10.0.1.0/24    | DB Virtual Cloud Networks; DB Systems/VMs will be present here  |
 
-   ![](../common/images/2-VCN-Create.PNG " ")
+   ![](../common/images/2-VCN-Create.png " ")
 
 3. Fill out the dialog box:
 
@@ -262,7 +262,7 @@ Estimated Lab Time: 30 minutes.
       - **COMPARTMENT**: Ensure your compartment is selected
       - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
 
-   ![](../common/images/5-Create-DB-VCN.PNG " ")
+   ![](../common/images/5-Create-DB-VCN.png " ")
 
 4. Verify all the information and Click **Create VCN**.
 
@@ -288,7 +288,7 @@ Estimated Lab Time: 30 minutes.
       - **DHCP Options**: Default DHCP Options in your case.
       - **Security List**: Default Security List in your case.
 
-   ![](../common/images/7-Create-DB-Private-Subnet.PNG " ")
+   ![](../common/images/7-Create-DB-Private-Subnet.png " ")
 
 9. Verify all the information and Click **Create Subnet**.
 
@@ -296,11 +296,11 @@ Estimated Lab Time: 30 minutes.
 
     *database-private Subnet*
 
-## **STEP 4: Configure Dynamic Routing Gateway**
+## **Task 4: Configure Dynamic Routing Gateway**
 
 1. From the OCI Services menu, click **Dynamic Routing Gateways** under **Networking**. Select your region on right part of the screen:
 
-   ![](../common/images/13-DRG-Home.PNG " ")
+   ![](../common/images/13-DRG-Home.png " ")
 
 2. Below table represents what you will be creating. Click on **Create Dynamic Routing Gateway** icon to create new **Dynamic Routing Gateway**:
 
@@ -308,14 +308,14 @@ Estimated Lab Time: 30 minutes.
       |--------------|
       | firewall-drg |
       
-   ![](../common/images/14-DRG-Create.PNG " ")
+   ![](../common/images/14-DRG-Create.png " ")
 
 3. Fill out the dialog box:
 
       - **DRG NAME**: Provide a name
       - **COMPARTMENT**: Ensure your compartment is selected
 
-   ![](../common/images/15-Create-Hub-DRG.PNG " ")
+   ![](../common/images/15-Create-Hub-DRG.png " ")
 
 4. Verify all the information and Click **Create Dynamic Routing Gateway**.
 
@@ -491,11 +491,11 @@ Estimated Lab Time: 30 minutes.
 
 35. This will update import route distribution to **From-Firewall** route table attached to **Firewall VCN**
 
-## **STEP 5: Configure Route Tables in each VCNs**
+## **Task 5: Configure Route Tables in each VCNs**
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select your region on right part of the screen:
 
-   ![](../common/images/1-VCN-Home.PNG " ")
+   ![](../common/images/1-VCN-Home.png " ")
 
 2. Select **web-vcn** which you created earlier. You will be updating default route table within this VCN. Make sure you choose right Compartment from drop down on your left screen **COMPARTMENT** section. 
 
@@ -688,7 +688,7 @@ Estimated Lab Time: 30 minutes.
 
     *Added VCN INGRESS Route table for Firewall_VCN attachment*
 
-## **STEP 6: Launch Compute instances in Web VCN**
+## **Task 6: Launch Compute instances in Web VCN**
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 
@@ -731,7 +731,7 @@ Estimated Lab Time: 30 minutes.
 
 10. Repeat step 5 to 9 based on the **table** provided in **step 4** for another instance.
 
-## **STEP 7: Launch Compute instances in DB VCN**
+## **Task 7: Launch Compute instances in DB VCN**
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 

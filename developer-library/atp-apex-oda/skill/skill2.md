@@ -37,7 +37,7 @@ In this lab, you will:
 
 - This lab assumes you have successfully completed all the previous labs
 
-## **STEP 1**: Build your first Skill
+## Task 1: Build your first Skill
 
 In this workshop, we're starting from scratch. So the first thing you'll do is **create** a new skill.
 
@@ -53,7 +53,7 @@ In this workshop, we're starting from scratch. So the first thing you'll do is *
 
     ![Create Skill](./images/cc_import_1_new.png)
 
-## **STEP 2**: Import the Custom Component
+## Task 2: Import the Custom Component
 
 Import Custom Component is very simple.
 
@@ -90,7 +90,7 @@ Import Custom Component is very simple.
 
     ![Create Skill](./images/cc_import_6.png)
 
-## **STEP 3**: Create intents
+## Task 3: Create intents
 
 Oracle Digital Assistant's underlying **Natural Language Processing (NLP)** engine doesn't inherently know about the business or task that a skill is supposed to assist with. For the skill to understand what it should react to, you need to define intents and examples (utterances) for how a user would request a specific intent.
 
@@ -128,7 +128,7 @@ Let's create a **Greeting Intent**.
 
     ![Intent default](./images/intents_5.png)
 
-## **STEP 4**: Put everything together
+## Task 4: Put everything together
 
 Time to **integrate** your **Custom Component with the Intent** `ListTasks` created before.
 
@@ -183,7 +183,7 @@ Time to **integrate** your **Custom Component with the Intent** `ListTasks` crea
     > The **result** should be something like this:
     > ![View Logs](./images/service_log.png)
 
-## **STEP 5:** Add a new item and test
+## Task 5: Add a new item and test
 
 To see how we **request** against the **database**, we can **add** a new item.
 

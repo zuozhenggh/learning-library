@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Start And Validate The Required Processes are Up and Running.
+## Task 1: Start And Validate The Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
     
     - Database Listeners
@@ -69,7 +69,7 @@ This lab assumes you have:
     ![](./images/oas-login.png " ")
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-## **STEP 2**: Login To Oracle Analytics Server
+## Task 2: Login To Oracle Analytics Server
 
 1. Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop.   
 
@@ -90,7 +90,7 @@ This lab assumes you have:
     ![](./images/oas-landing.png " ")
 
 
-## **STEP 3**: Create A Connection To Database
+## Task 3: Create A Connection To Database
 
 1. From Home screen, click on **Create** button and select **Connection**.
 

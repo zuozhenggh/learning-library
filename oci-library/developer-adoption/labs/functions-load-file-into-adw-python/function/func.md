@@ -19,7 +19,7 @@ Estimated time: 20 minutes
 - Completed the **Prerequisites for Functions** Lab
 - Completed the **Create Bucket, Policies and Autonomous Database (ADW)** Lab
 
-## **STEP 1:** Create an application
+## Task 1: Create an application
 
 In this step, you will create an application and set up Fn CLI in the OCI Cloud Shell.
 
@@ -48,7 +48,7 @@ In this step, you will create an application and set up Fn CLI in the OCI Cloud 
 
 This involves launching Cloud Shell, updating the Fn context, generating an auth token for the registry, and logging into the Oracle Cloud Infrastructure Registry.
 
-## **STEP 2:** Deploy the function
+## Task 2: Deploy the function
 
 In this step, you will clone the functions source code repository and use the `fn deploy` command to build the Docker image, push the image to OCIR, and deploy the function to Oracle Functions in your application.
 
@@ -104,7 +104,7 @@ In this step, you will clone the functions source code repository and use the `f
     </copy>
     ```
 
-## **STEP 3:** Create an Event rule
+## Task 3: Create an Event rule
 
 In this step, you will configure a Cloud Event to trigger the function when you drop the files into the `input-bucket`.
 
@@ -147,7 +147,7 @@ In this step, you will configure a Cloud Event to trigger the function when you 
 
 1. Click **Create Rule**.
 
-## **STEP 4:** Test the function
+## Task 4: Test the function
 
 To test the function, you can upload a `.csv` file to the `input-bucket`. You can do that from the Console UI or the Cloud Shell using the OCI CLI.
 

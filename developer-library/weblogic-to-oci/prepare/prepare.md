@@ -17,7 +17,7 @@ Estimated Completion Time: 5 minutes.
 
 - an OCI account with a compartment created.
 
-## **STEP 1:** Create a Vault
+## Task 1: Create a Vault
 
 1. Go to **Security -> Vault**.
 
@@ -33,7 +33,7 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-vault3.png " ")
 
-## **STEP 2:** Create a Key in the Vault
+## Task 2: Create a Key in the Vault
 
 1. Once the vault is provisioned, select the vault.
 
@@ -47,7 +47,7 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-key2.png " ")
 
-## **STEP 3:** Create a Secret for the WebLogic Admin Password
+## Task 3: Create a Secret for the WebLogic Admin Password
 
 1. Once the key is provisioned, click **Secrets**.
 

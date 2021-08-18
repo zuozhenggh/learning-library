@@ -54,7 +54,7 @@ Watch the video below for an overview on how to migrate databases real time usin
 ## Steps
 
 
-### **STEP 1: Provision a Goldengate Microservice from OCI Marketplace**
+### **Task 1: Provision a Goldengate Microservice from OCI Marketplace**
 
 1. Connect to your OCI tenancy and select **Marketplace** from top left menu.
 
@@ -87,7 +87,7 @@ Next, paste your public key and hit **Create**
 
 Your Goldengate instance should be ready in a few mins and we will come back to configure it. 
 
-### **STEP 2: Configure the source database**
+### **Task 2: Configure the source database**
 
 It is assumed that you either have an Oracle 12c database configured as source or know how to provision a 12c DBCS instance in OCI
 
@@ -149,7 +149,7 @@ alter user appschema quota unlimited on users;
 
 The source database is all set. Next, lets setup the target ExaCS instance.
 
-### **STEP 3: Configure the target ExaCS  database**
+### **Task 3: Configure the target ExaCS  database**
 
 - Connect to the ExaCS database instance you created earlier as user **sys** as sysdba
 
@@ -195,7 +195,7 @@ CREATE TABLE appschema.COMMENTS
 
 That is it! Your target DB is now ready.
 
-### **STEP 4: Configure Goldengate service**
+### **Task 4: Configure Goldengate service**
 
 By now, your Goldengate service instance must be deployed. On your OCI console navigate to **Compute** from top left menu and **choose your compartment**
 

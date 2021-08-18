@@ -13,7 +13,7 @@ In this lab, you will:
 * Evaluate routing behaviors
 
 
-## **STEP 1**: No Match
+## Task 1: No Match
 
 1. Open the tester by clicking the tester icon. ![](./images/test_button.png " ")
 2. In the tester's **Message** field, type *I want a burger* and press Enter.
@@ -24,7 +24,7 @@ In this lab, you will:
 3. Click **Reset**.
 
 
-## **STEP 2:** Implicit Invocation
+## Task 2: Implicit Invocation
 
 1. In the tester's **Message** field, type *Send money* and press Enter.
   Notice that the routing resolves to the Digital Bank candidate skill and its **Send Money** intent:
@@ -40,7 +40,7 @@ In this lab, you will:
 **Note**: In these examples, you might get slightly different results than what are shown here, especially in the confidences scores (given in percentages) when resolving intents. And in some cases, the resolved intents could vary, should the differing confidence scores push those intents above or below the given confidence thresholds. The cause of this variance is the non-deterministic nature of the AI behind the natural language processing and the fact that these bots have a limited number of training utterances (in order to make the lab simpler).
 
 
-## **STEP 3**: Explicit Invocation
+## Task 3: Explicit Invocation
 
 1. In the tester's **Message** field, type *I want to send money from Digital Bank* and press Enter.
   Here’s the user’s input and the digital assistant’s initial response:
@@ -54,7 +54,7 @@ In this lab, you will:
 
 3. Click **Reset**.
 
-## **STEP 4**: Ambiguous Utterance
+## Task 4: Ambiguous Utterance
 1. In the tester's **Message** field, type *What is my balance?* and press Enter.
   Here’s the conversation:
   ![](./images/ambiguous-utterance.png " ")
@@ -71,7 +71,7 @@ In this lab, you will:
 
 3. Click **Reset**.
 
-## **STEP 5**: Context Awareness
+## Task 5: Context Awareness
 1. In the tester, type *What is my balance?* and press Enter.
   Here’s the conversation:
   ![](./images/context-awareness.png " ")
@@ -98,7 +98,7 @@ So, even though there are matching intents from the Sport Store skill, they are 
 ![](./images/intent-calls.png " ")
 
 
-## **STEP 6**: Non sequitur
+## Task 6: Non sequitur
 Non sequitur refers to interrupting a conversation flow by changing the subject. Here's an example where such interruptions occur because the user needs info from one skill to complete the flow in another skill.
 
 1. In the tester, type *I want to order a small meaty pizza* and press Enter.
@@ -124,7 +124,7 @@ Non sequitur refers to interrupting a conversation flow by changing the subject.
 
   In this sequence, you started ordering a pizza, confirmed you had enough money in your account, and finished ordering the pizza.
 
-## **STEP 7**: Non sequitur – Complex Conversation
+## Task 7: Non sequitur – Complex Conversation
 Let’s try a more complex conversation:
 
 1. In the tester, type *I want to order a large pizza at 9:00 PM today* and press Enter.

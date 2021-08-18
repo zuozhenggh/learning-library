@@ -25,7 +25,7 @@ Estimated Lab Time: 15 minutes
 * No previous experience with Oracle Spatial is required.
 
 
-## **STEP 1:** Load Accidents data
+## Task 1: Load Accidents data
 
 You begin by loading a set of traffic accident data from a GeoJSON file. The data are  are fictitious and were generated for random locations along roadways in South Africa.. 
 
@@ -46,7 +46,7 @@ Observe the ACCIDENTS dataset now listed with no warnings, meaning that is prepa
 ![Image alt text](images/load-data-5.png)
 
 
-## **STEP 2:** Load Police Station data
+## Task 2: Load Police Station data
 Next you load South African Police Servce (SAPS) Stations and Station Boundaries from Shapefiles stored in a single zip file. 
 
 1. Download zip file containing Shapefiles to a convenient location: <a href="https://objectstorage.us-ashburn-1.oraclecloud.com/p/VA5KnilzQqGqLdQEjymb9AkNTFdkHp6r9bTp8zeaGNS6ClS8JROr8qIDhuV6mhJx/n/c4u04/b/data-management-library-files/o/SAPS_police.zip"> SAPS_police.zip </a>  
