@@ -39,7 +39,7 @@ _Note: If you have not picked a compartment, you can pick the root compartment w
 ![](./images/task1.4.png)
 
 ### **Task 1.5:**
-- Now you need to complete some information and set the configuration for the VCN. In the _**VCN NAME**_ field enter the value _**analytics_vcn_test**_ (or any name at your convenience), and make sure that the selected compartment is the right one. Leave all the rest as per default, Click **Next**.
+- Now you need to complete some information and set the configuration for the VCN. In the _**VCN Name**_ field enter the value **analytics_vcn_test** (or any name at your convenience), and make sure that the selected compartment is the right one. Leave all the rest as per default, Click **Next**.
 
 ![](./images/task1.5.png)
 
