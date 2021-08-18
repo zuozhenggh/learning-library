@@ -18,19 +18,12 @@ To understand the following:
 *	Scenario Workflow
 
 ### Prerequisites
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* Essbase 21c instance with Service administrator role.
-* Windows Operating System for Essbase add-ins (Smart View and Cube Designer).
-* Smart View plugin enabled for Excel.
-* Files: SandboxApp.xlsx, SmartView.xlsx, Merge.csc
-* You have completed:  
-     * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)  
-     * Lab: Prepare Setup (Free-tier and Paid Tenants only)  
-     * Lab: Environment Setup  
-     * Lab: Introduction to Essbase  
-     * Lab: Initialize Environment  
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment  
 
 ## Overview – Understand Scenario
 
@@ -53,7 +46,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 1. Download the worksheet **SandboxApp.xlsx**.
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
-   
+
 
    Open the **SandboxApp.xlsx** file.
 
@@ -61,19 +54,19 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
    ![](./images/imageDT_01.0.png " ")
 
-3.	Navigate to the 'Cube.Settings' sheet and in the 'properties' section, check the Scenario Sandboxes properties. Here you are verifying that this is scenario enabled cube because 10 Scenario Sandboxes (scenario-based members) are there. 
+3.	Navigate to the 'Cube.Settings' sheet and in the 'properties' section, check the Scenario Sandboxes properties. Here you are verifying that this is scenario enabled cube because 10 Scenario Sandboxes (scenario-based members) are there.
 
     ![](./images/imageSM_01.png " ")
 
-4. Save your file as **SandboxApp.xlsx** and close it. 
+4. Save your file as **SandboxApp.xlsx** and close it.
 
 5. Go to the Essbase web interface and click on **Import**.
-   
+
    ![](./images/imageSM_01.0.png " ")
 
 6. Click on **File Browser**, and browse to select **SandboxApp.xlsx** worksheet.
    ![](./images/imageSM_01.1.png " ")
-  
+
   Make sure to check that Load Data option is selected under Advanced Option. Click **OK**.
 
     ![](./images/imageSM_02.png " ")
@@ -87,18 +80,18 @@ This step shows that creating sandboxes has little impact on resource usage such
 1. Download **SmartView.xlsx** file.
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in **Lab: Initialize Environment-> step2**.
-   
+
    Open **SmartView.xlsx** and go to **sheet1** tab.
    ![](./images/imageSM_03.png " ")
 
 2. Go to the Smart View, Create a private connection to Essbase: http://IP:9000/essbase/smartview.
-   
+
    Note: Replace the IP with your instance's ip.
 
    Login and expand 'Sample_Scenario' Application and Select the 'Sandbx' Cube. Click 'Connect'.
-   
+
    ![](./images/imageSM_04.0.png " ")
-   
+
    In order to query the selected Cube, choose the option -> **Set Active Connection for this Worksheet**.
 
 3. Refresh the data.
@@ -114,7 +107,7 @@ This step is geared towards developing an understanding of security for Essbase 
 1. Add Users:   
       * Go to **Security** tab to add users. Under **Users** tab, click on **Add user**.
         ![](./images/imageSM_05.png " ")
-      
+
       * Provide the details for adding user: 'John'
         * Id: John
         * Role: user
@@ -127,7 +120,7 @@ This step is geared towards developing an understanding of security for Essbase 
 2.	Defining Security:  
 
       We will define security roles for several people to be used throughout the next several exercises. Once the security is defined validate the privileges by logging in as each user and pay attention to the differences from user to user.
-      
+
       * On the home page, navigate to the **Sample_Scenario** Application. Launch the application inspector by clicking the button under **Actions** and selecting **Inspect**.
       ![](./images/imageSM_08.png " ")
 
@@ -136,11 +129,11 @@ This step is geared towards developing an understanding of security for Essbase 
 
       * Search for John, Maria, Phillip & Sam and click the **+ icon** next to their ids to add the users to the application.
       ![](./images/imageSM_10.png " ")
-      
+
 
       * By default all users have the Database Access Roles.
       ![](./images/imageSM_11.png " ")
-      
+
       **Note**:  
       There are four predefined application-level roles:
       * **Application Manager**: Creates, deletes, and modifies databases, application settings, and scenarios in an assigned application. Also assigns users to an application.
@@ -156,7 +149,7 @@ This step is geared towards developing an understanding of security for Essbase 
          ![](./images/imageSM_12.png " ")
 
       * Go to Smartview, click on **more** (as shown below) and then click on 'disconnect' to disconnect from the current connection.
-         
+
          ![](./images/imageSM_12.0.png " ")
          ![](./images/imageSM_12.1.png " ")
 
@@ -173,15 +166,15 @@ This step is geared towards developing an understanding of security for Essbase 
 
 
 3. Creating Scenarios:
-      
+
       In this exercise you will log in as Maria and create a new scenario defining Sam as a participant. Validate the impact of the security changes for each user John, Maria, Sam and Phillip.  Without logging out from Smart View, make Phillip a Scenario Approver, then refresh the data in Smart View validate the change to his security.
-      
+
       * Go to the web interface, log in as Maria.
 
       * Navigate to **Scenarios** tab. Click **Create Scenario**.
          ![](./images/imageSM_13.png " ")
 
-      * Give the scenario a name:**What-If** and a due date. On the **Users** tab, click the '+' icon and add Sam and Phillip. By default a user is added as a Participant. Change Phillip's role to Approver. 
+      * Give the scenario a name:**What-If** and a due date. On the **Users** tab, click the '+' icon and add Sam and Phillip. By default a user is added as a Participant. Change Phillip's role to Approver.
          ![](./images/imageSM_14.png " ")
          ![](./images/imageSM_15.png " ")
 
@@ -189,7 +182,7 @@ This step is geared towards developing an understanding of security for Essbase 
          Click **Save**.
 
       * Once created, click on **What-If** scenario and identify which sandbox member your scenario is using. It would be using sandbox **sb0**.
-      
+
       ![](./images/imageSM_16.png " ")
       ![](./images/imageSM_17.png " ")
 
@@ -210,7 +203,7 @@ This step is geared towards developing an understanding of security for Essbase 
          ![](./images/imageSM_20.png " ")
 
       * Go to Essbase web interface, navigate to the **Scenarios** tab. For What-if scenario, click on **Actions**.
-         
+
          Note: Maria is logged in web interface.
 
       * Click on the **Show Changes** to show the changes in the UI.
@@ -219,7 +212,7 @@ This step is geared towards developing an understanding of security for Essbase 
          Verify the changes:
          ![](./images/imageSM_21.1.png " ")
 
-5. Calculations in a Sandbox: 
+5. Calculations in a Sandbox:
 In this step you will create a calculation script to create data for ORCL USA->XXU->Automotive in 2016 by increasing 2014 data by 15%.
 
       * Login in Essbase web interface as John.
@@ -244,7 +237,7 @@ In this step you will create a calculation script to create data for ORCL USA->X
 
          </copy>
          ````
-      
+
       ![](./images/imageSM_23.png " ")
 
       * Validate the script. Click **Save** and **Close**.
@@ -261,13 +254,13 @@ In this step you will create a calculation script to create data for ORCL USA->X
          ![](./images/imageSM_26.png " ")
 
       * Go to 'Smart View' and 'DataSheet' tab. Click on 'Set Active connection for this worksheet' and then refresh to retrieve the data.
-      
+
          ![](./images/imageSM_26.3.png " ")
 
          ![](./images/imageSM_26.1.png " ")
-      
+
       Go to the Comparison tab. Click again on 'Set Active connection for this worksheet' and then refresh.
-         
+
          ![](./images/imageSM_26.2.png " ")
 
          Note: In Smartview you are already logged in as Sam. Also before refreshing any worksheet tab in smartview, always click on "Set Active connection for this worksheet".
@@ -279,7 +272,7 @@ In this step you will create a calculation script to create data for ORCL USA->X
          ![](./images/imageSM_27.1.png " ")
 
 6. Scenario Workflow:
-   
+
       At this point two things happened with our Sandbox. Sam entered some data using Smart View and John run a calc script that created some data for 2016. Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. The flow that we will simulate is:
 
       * Maria is submitting the data for approval.
@@ -298,17 +291,17 @@ In this step you will create a calculation script to create data for ORCL USA->X
          ![](./images/imageSM_29.png " ")
 
       * Go to Smart View and retrieve data into the Comparison tab.
-      
+
          Note: In Smartview you are already logged in as Sam. Also before refreshing any worksheet tab in smartview, always click on "Set Active connection for this worksheet".
 
-      * Go to the web interface logging in as Phillip. Navigate to the **Scenarios** tab. 
+      * Go to the web interface logging in as Phillip. Navigate to the **Scenarios** tab.
 
       * For **What-if** scenario, under **Actions**, click the ![](./images/approveicon.png " ") icon to Approve, enter a comment if needed (for e.g., submitted for approval).
          ![](./images/imageSM_30.png " ")
          ![](./images/imageSM_31.png " ")
 
       * Go to Smart View and retrieve data into the Comparison tab.
-      
+
       Note: In Smartview you are already logged in as Sam. Also before refreshing any excelsheet tab in smartview, always click on "set Active connection for this worksheet".
 
       * Login to Essbase web interface as Maria. Navigate to the **Scenarios** tab.
@@ -335,8 +328,8 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 
    This file is part of Workshop artifacts. Steps to download the artifacts are mentioned in ***Lab: Initialize Environment-> step2**.
 
-   Launch the database inspector for the database **Sandbx** under application **Sample_Scenario**. 
-   
+   Launch the database inspector for the database **Sandbx** under application **Sample_Scenario**.
+
    ![](./images/imageSM_33.0.png " ")
 
    Select **Files** tab and click **Upload Files**.
@@ -359,22 +352,22 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
 8. Click on **Roles** tab. Click on the + icon and add Maria.
    ![](./images/imageSM_36.1.png " ")
 
-9. Click **Close** to close the database inspector. 
+9. Click **Close** to close the database inspector.
 
 10.  Go to Smart View and on the Comparison tab.  
 
    Disconnect from the current connection by clicking 'More' and then 'Disconnect'.
-     ![](./images/imageSM_36.4.png " ") 
-   
+     ![](./images/imageSM_36.4.png " ")
+
    Click on the -> arrow(as shown below) to login as maria.
-     ![](./images/imageSM_36.5.png " ") 
+     ![](./images/imageSM_36.5.png " ")
 
      * Select the **sb0** cell(C2 if unadulterated)  
 
      * Click on **Calculate** on the Essbase ribbon.  
             ![](./images/imageSM_36.2.png " ")  
 
-     * Select the Merge calculation script. 
+     * Select the Merge calculation script.
 
      * Change the prompts:  
 
@@ -383,7 +376,7 @@ Upload the Merge calculation script to your database and review it.  Then, in Sm
         iii) Region = USA  
         iv) Periods = FYQ1-FY2016, FYQ2-FY2016, FYQ3-FY2016, FYQ4-FY2016  
         v)  Sandbox = sb0  
-     
+
      * Notice the default selections and that "sb0" was selected for the Sandbox to merge.
     ![](./images/imageSM_37.png " ")
 
@@ -406,4 +399,3 @@ You may [proceed to the next lab](#next).
 * **Authors** -Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Eshna Sachar, Jyotsana Rawat, Kowshik Nittala, Venkata Anumayam
 * **Last Updated By/Date** - Jyotsana Rawat, Solution Engineer, Analytics, NA Technology, August 2021
-

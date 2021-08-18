@@ -89,34 +89,39 @@ You learned how to use the Create User dialog to create a new user.  You can als
 
 3. In the SQL Worksheet, paste in this code and run it using the **Run Script** button:
 
-  ```
-    <copy>-- Uncomment the next 2 lines if you want to drop and recreate your user
+    ```
+    <copy>-- Run this script as ADMIN user
+    -- Uncomment the next 2 lines if you want to drop and recreate your user
     -- drop user moviestream cascade;
     -- create user moviestream identified by "YourPassword1234#";
 
-    -- Provide minimal tablespace usage.  Uncomment unlimited tablespace use if desired.
-    alter user moviestream quota 20G ON data;
-    -- grant unlimited tablespace to moviestream;
-
-    -- Grant roles/privileges to user
-    grant connect to moviestream;
-    grant dwrole to moviestream;
-    grant resource to moviestream;
+    -- Add the OML access
+    alter user moviestream grant connect through OML$PROXY;
     grant oml_developer to moviestream;
-    grant graph_developer to moviestream;
-    grant console_developer to moviestream;
+
+    -- Allow user to change resource privileges (LOW/MEDIUM/HIGH)
     grant select on v$services to moviestream;
     grant select on dba_rsrc_consumer_group_privs to moviestream;
     grant execute on dbms_session to moviestream;
 
+    -- Here are other privileges that you already granted in the UI
+    grant unlimited tablespace to moviestream;
+    grant connect to moviestream;
+    grant dwrole to moviestream;
+    grant resource to moviestream;
+    grant graph_developer to moviestream;
+    alter user moviestream grant connect through GRAPH$PROXY_USER;
+    grant console_developer to moviestream;
+
+    -- Enable access to SQL Tools
     begin
-    ords_admin.enable_schema (
-        p_enabled               => TRUE,
-        p_schema                => '&db_user',
-        p_url_mapping_type      => 'BASE_PATH',
-        p_auto_rest_auth        => TRUE
-    );
-    commit;
+        ords_admin.enable_schema (
+            p_enabled               => TRUE,
+            p_schema                => 'moviestream',
+            p_url_mapping_type      => 'BASE_PATH',
+            p_auto_rest_auth        => TRUE   
+        );
+        commit;
     end;
     /</copy>
     ```

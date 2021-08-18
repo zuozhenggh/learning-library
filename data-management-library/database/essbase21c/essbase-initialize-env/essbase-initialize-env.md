@@ -12,9 +12,7 @@ This lab provides detailed instructions of connecting to Essbase 21c using Web U
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
@@ -29,7 +27,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     ```
     <copy>http://[Instance-public-ip]:9000/essbase/jet</copy>
     ```
-    
+
     ![](./images/ess-environment1.png " ")
 
 ***Note:*** While application processes are automatically started upon instance boot up, it takes approximately 15 minutes for this URL to become active after all processes have fully started. If the URL remains inactive even after 15 minutes, refer to Task 2** below for manual start-up.
@@ -46,7 +44,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 ## Task 2: Download and Stage Workshop Artifacts
 
 
-1. Download [`essbase_21c_labfiles.zip`](./files/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
+1. Download [`essbase_21c_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/51DwosGpWuwiHMYKbcgWcxsHkBaYipTRlGh-bcMSTVaCfVBwDwYoRfA4VpPSh7LR/n/natdsecurity/b/labs-files/o/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
 
 2. Uncompress the ZIP archive.
 
@@ -59,7 +57,7 @@ While you only need the browser to perform all tasks in this workshop, you can o
 ​Your workshop instance is configured to automatically start all processes needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in Task1**.
 
 1. Launch your browser to the following URL to access noVnc web UI.
-   
+
     ```
     <copy>http://[Instance-public-ip]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
@@ -72,7 +70,7 @@ While you only need the browser to perform all tasks in this workshop, you can o
     ```
 
     Use the clipboard on the left menu to paste on the clipboard and use shift+Insert key on the terminal.
-    
+
     ![](./images/ess-environment3.png " ")
 
 3.  Start the "env_startup_script" to start all the services of Database and Essbase.
@@ -94,4 +92,3 @@ You may [proceed to the next lab](#next).
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
 - **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam
 - **Last Updated By/Date** - Kowshik Nittala, Associate Solution Engineer, Analytics, NA Technology, August 2021
-

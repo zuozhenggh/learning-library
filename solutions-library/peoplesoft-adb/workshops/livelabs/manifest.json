@@ -18,7 +18,7 @@
       },
         {
             "title": "Lab 2: Create a Service Request for PeopleSoft on ADB-S",
-            "filename": "../../2mos-for-psft-adb/mos-psft.md"
+            "filename": "../../2mos-for-psft-adb/mos-for-psft-adb.md"
         },
         {
             "title": "Lab 3: ADB connectivity test for PeopleSoft On Premise",
@@ -26,16 +26,16 @@
         },
         {
           "title": "Lab 4: MV2ADB Download, Install and Pre-requisites",
-          "filename": "../../4mv2adb-download-prereqs/mv2adb-prereq.md"
+          "filename": "../../4mv2adb-download-prereqs/mv2adb-download-prereqs.md"
         },
         {
             "title": "Lab 5: Getting Tablespace information from On-premise PeopleSoft database",
-            "filename": "../../5getting-tablespace-from-source/get-tbspl.md"
+            "filename": "../../5getting-tablespace-from-source/getting-tablespace-from-source.md"
         },
         
         {
             "title": "Lab 6: Configuring  OCI ADB-S Database for PeopleSoft",
-            "filename": "../../6preparing-target-oci-database/configure-target-db.md"
+            "filename": "../../6preparing-target-oci-database/preparing-target-oci-db.md"
         },
         {
             "title": "Lab 7: MV2ADB Configuration and ADB Schema Advisor Installation",
@@ -47,17 +47,17 @@
         },
         {
           "title": "Lab 9: PeopleSoft post import scripts for ADB-S",
-          "filename": "../../9post-import-scripts-psft/psft-post.md"
+          "filename": "../../9post-import-scripts-psft/9post-import-scripts-psft.md"
         },
         {
           "title": "Lab 10: Validating Peoplesoft Schema Objects on ADB-S",
-          "filename": "../../10validate-psft-schema-objects/validate-psft-schema.md"
+          "filename": "../../10validate-psft-schema-objects/validate-psft-schema-objects.md"
         },
         {
-            "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI",
-            "filename": "../../11psft-mt-setup-oci/psft-mt-setup.md"
-          },
-
+          "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI",
+          "filename": "../../11psft-mt-setup-oci/psft-mt-setup-oci.md"
+        },
+        
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

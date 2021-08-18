@@ -29,8 +29,7 @@
         "description": "Obtain a compute instance wtih staged Oracle Database 19c installer files by using Resource Manager.",
         "filename": "./../../obtain-compute-image-19c-staged/obtain-compute-image-19c-staged.md",
         "type": "livelabs"
-    },
-
+       },
         {
         "title": "Lab 3: Install Oracle Database 19c with Automatic Root Script Execution",
         "description": "Install Oracle Database 19c with automatic configuration script execution.",
