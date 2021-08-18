@@ -25,7 +25,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment  
     - Lab: Essbase Features: Basic
-     
+
 
 ## Task 1: Manage an Application Using EAS Lite
 
@@ -33,9 +33,13 @@ Before you can connect to an application in EAS Lite, you must set it as an EAS 
 
 To manage an application using EAS Lite:
 
-1.	Log in to the Essbase web interface using the Essbase URL, i.e. http://ip:9000/essbase/jet.
+1.	Log in to the Essbase 21c web interface using the Essbase URL.
 
-   Note: Please replace ip with your instance's ip.
+    ```
+    <copy>
+    http://[Instance-Public-IP]:9000/essbase/jet
+    </copy>
+    ```
 
 2.	On the Applications tab click **Import** in the Essbase web interface and click **Catalog**.
    ![](./images/EAS_0.png " ")
