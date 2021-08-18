@@ -20,6 +20,7 @@ In this lab, the following topics are covered:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
+- Local Computer (Windows/Mac) with Microsoft Excel
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
@@ -27,10 +28,17 @@ This lab assumes you have:
 
 
 ## Task 1: Creating a Sample Application in Essbase21c
+Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on the remote desktop. As a result, if you're reading this from the remote desktop session, return to your local computer/workstation to proceed.
 
-1.	Log in to the Essbase 21c web interface using the Essbase URL. i.e. http://ip:9000/essbase/jet.
+*Note:* Please replace *`[Instance-Public-IP]`* with your instance's public IP Address wherever referenced in this guide.
 
-    Note: Please replace ip with your instance's IP Address.
+1.	Log in to the Essbase 21c web interface using the Essbase URL.
+
+    ```
+    <copy>
+    http://[Instance-Public-IP]:9000/essbase/jet
+    </copy>
+    ```
 
 2.	On the Applications tab, click **Import** option in the Essbase web interface as shown below.
 
@@ -67,7 +75,11 @@ After installing Oracle Smart View for Office, you can create connections to Ess
 
     ![](./images/image14_6.png " ")
 
-3. Enter the URL to create a connection. URL syntax: `http://ip:9000/essbase/smartview`
+3. Enter the URL to create a connection.
+
+    ```
+    URL syntax: <copy>http://[Instance-Public-IP]:9000/essbase/smartview</copy>
+    ```
 
 4. Click **Go**.
 
@@ -394,7 +406,6 @@ the background as a unique thread. Each job has a unique id.
 
    Job details include information such as script names, data file names, user names, number of records processed and rejected, and completion status. You can also setup and run new jobs
    from this window, as well as re-run previously executed job.
-
 
 
    You can create and run new jobs using this tab by clicking on **New Job** as shown below.
