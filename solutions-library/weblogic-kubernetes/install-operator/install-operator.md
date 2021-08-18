@@ -8,7 +8,7 @@ This lab walks you through the steps to prepare OCI Cloud shell (client) environ
 
 Estimated Lab Time: 15 minutes
 
-## **STEP 1**: Prepare the Kubernetes environment
+## Task 1: Prepare the Kubernetes environment
 Kubernetes distinguishes between the concept of a user account and a service account for a number of reasons. The main reason is that user accounts are for humans while service accounts are for processes, which run in pods. The operator also requires service accounts.  If a service account is not specified, it defaults to `default` (for example, the namespace's default service account). If you want to use a different service account, then you must create the operator's namespace and the service account before installing the operator Helm chart.
 
 Thus, create the operator's namespace in advance:
@@ -25,7 +25,7 @@ Finally, add the weblogic-operator repository to Helm.
 <copy>helm repo add weblogic-operator https://oracle.github.io/weblogic-kubernetes-operator/charts --force-update</copy>
 ```
 
-## **STEP 2**: Install the operator using Helm
+## Task 2: Install the operator using Helm
 
 Use the `helm install` command to install the operator Helm chart. As part of this, you must specify a "release" name for their operator.
 

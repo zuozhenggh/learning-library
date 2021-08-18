@@ -28,7 +28,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Steps
 
-### **STEP 1: Download the Python Applications**
+### **Task 1: Download the Python Applications**
 
 - For this lab, we will download the applications to your developer client, from in the following repositories. These applications will help us load data into our database.
 
@@ -88,7 +88,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
     **Note : This Application will store the data in "JSONTWEETS" table which which was created in part 1 of this lab**
 
-### **STEP 2: Setting up the configuration file for the first application**
+### **Task 2: Setting up the configuration file for the first application**
 
 - The Python Application you installed is going to load the tweets from tweets stores in JSON format into the Oracle Database.
 
@@ -123,7 +123,7 @@ sys_password=<Database SYS Password></copy>
 
 ![](./images/apex/paramfile.png " ")
 
-### **STEP 3: Running the Python Applications**
+### **Task 3: Running the Python Applications**
 
 - Make sure you are in the folder with the name "jsonapp".
 
@@ -199,7 +199,7 @@ sys_password=<Database SYS Password></copy>
 
 - Now lets log in to APEX installed on Oracle Database and create an application.
 
-### **STEP 4: Create an APEX Application**
+### **Task 4: Create an APEX Application**
 
 - Login to APEX using the following URL : 
    

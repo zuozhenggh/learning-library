@@ -14,7 +14,7 @@ You are going to use an **Oracle Analytics Cloud** instance to give your end use
 
 Estimated Lab Time: 75 minutes.
 
-## **STEP 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
+## Task 1: Create the connection from Oracle Analytics Cloud to Autonomous Database
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a **'wallet'** file that contains the SQL\*NET
 configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this
@@ -33,7 +33,7 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
     > **Note**: Oracle recommends you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-	
+
 	![Oracle Console SignIn](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     You can see all the **ADW** instances that you have **created**.
@@ -88,20 +88,20 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
     I recommend selecting first the autonomous database wallet zip file you just downloaded in ***Client Credentials*** field. It will automatically extract the required *cwallet.sso* and then **autocomplete** several of the fields for you. Later on you just have to review and modify them if need it.
 
     - **Connection Name**: WORKSHOPADWOAC
-    
+
     - **Service Name**: Choose the name of your database followed by the \_high suffix.
-    
+
     - **Client Credentials**: Use the Browse button to upload the **wallet zip > file** that you downloaded. It will automatically extract the cwallet.sso file from this zip bundle.
-    
+
     - **Username**: `ADMIN` -- We have created this user on the ADW instance creation.
-    
+
     - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop. `ADWwelcome-1234`.
 
     ![Connection Creation - ADW - WORKSHOPADWOAC](./images/lab300_11.png)
 
 10. Select **Save** to save your new connection **information**.
 
-## **STEP 2**: Prepare the dataset
+## Task 1: Prepare the dataset
 
 When you create a project, you add one or more **data sets** containing the data that you want to **visualize and explore**. Data sets contain data
 from subject areas, Oracle Applications, databases, or uploaded data files such as spreadsheets. You can also add multiple data sets to your
@@ -119,7 +119,7 @@ existing projects.
 
     The **SH schema** provides a small data set you can use to run the sample queries in the [Oracle Database Data Warehousing Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-1D8E3429-735B-409C-BD16-54004964D89B).
 
-    For more information on the SH schema see [*Sample Schemas*](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/introduction-to-sample-schemas.html#GUID-844E92D8-A4C8-4522-8AF5-761D4BE99200) and [*Schema Diagrams*](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/schema-diagrams.html#GUID-D268A4DE-BA8D-428E-B47F-80519DC6EE6E). 
+    For more information on the SH schema see [*Sample Schemas*](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/introduction-to-sample-schemas.html#GUID-844E92D8-A4C8-4522-8AF5-761D4BE99200) and [*Schema Diagrams*](https://docs.oracle.com/en/database/oracle/oracle-database/19/comsc/schema-diagrams.html#GUID-D268A4DE-BA8D-428E-B47F-80519DC6EE6E).
 
     ![Data Set Creation - WORKSHOPADWOAC SH Schema](./images/lab300_14.png)
 
@@ -152,7 +152,7 @@ existing projects.
 6. Use the following **information** to configure your **Data Set**:
 
     - **Data Access**: Live
-    
+
     - **Name**: SH&#95;SALES
 
 7. Then click **Add** to create the **Data Set**.
@@ -161,7 +161,7 @@ existing projects.
 
 8. The **Data Set** was successfully **added**.
 
-## **STEP 3**: Create Visualizations using your data sets
+## Task 1: Create Visualizations using your data sets
 
 1. Create a new project by clicking **Create Project**.
 
@@ -281,7 +281,7 @@ existing projects.
     Use the following information to configure your **Data Set**:
 
     - **Data Access**: Live
-    
+
     - **Name**: SH&#95;PRODUCTS
 
 18. Then click **Add** to create the **Data Set**.

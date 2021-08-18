@@ -1,6 +1,6 @@
 # Pre-Requisites
 
-## STEP 1: Creating the Cloud Guard User and Group
+## Task 1: Creating the Cloud Guard User and Group
 
 Create a user with administrator privileges to work with Cloud Guard.
 
@@ -17,7 +17,7 @@ Create a user with administrator privileges to work with Cloud Guard.
 11. From the drop-down, select the group created in step 3 above, and then click Add.
 
 
-## STEP 2: Policy Statement
+## Task 2: Policy Statement
 
 Add a policy statement that enables the Cloud Guard users group you defined to manage Cloud Guard resources.
 
@@ -27,7 +27,7 @@ Add the policy statement below to enable all users in the `CloudGuardUsers` grou
 
 With this policy in place, the user you created is now ready to proceed with Enabling Cloud Guard.
 
-## STEP 3: Enabling Cloud Guard
+## Task 3: Enabling Cloud Guard
 
 
 1. Log in to the OCI Console as the Oracle Cloud Guard user you created in Prerequisites, in the "Creating the Cloud Guard User and Group" section.

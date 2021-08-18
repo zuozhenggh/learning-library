@@ -15,7 +15,7 @@ In this lab, you will:
 - Train and test the skill.
 - Publish the skill so that it can be used in a digital assistant.
 
-## **STEP 1**: Explore and Test the Skill
+## Task 1: Explore and Test the Skill
 
 The conversational AI use case you are working with is a skill for ordering pizza. To familiarize yourself with the designer and the skill itself, try it out by following these steps:
 
@@ -37,7 +37,7 @@ The conversational AI use case you are working with is a skill for ordering pizz
 
 13. Click the **Reset** button at the top of the tester window and then close the tester.
 
-## **STEP 2:** Add a Composite Bag Entity
+## Task 2: Add a Composite Bag Entity
 
 When a customer orders a pizza, details such as toppings, size, and crust need to be specified. In PizzaSkill, each of these variables is represented by an entity.
 
@@ -105,7 +105,7 @@ In this step, we’ll create a composite bag entity, which is a special entity t
   Here is what the PizzaBag composite bag should look like in the designer:
   ![](./images/pizza-bag-entity.png " ")
 
-## **STEP 3**: Associate the Entity with the Intent
+## Task 3: Associate the Entity with the Intent
 
 Now we need to associate the PizzaBag composite entity to the OrderPizza intent so that we can extract the key words and phrases from the user input.
 
@@ -114,7 +114,7 @@ Now we need to associate the PizzaBag composite entity to the OrderPizza intent 
 3. Click the Add entity dropdown button and select **PizzaBag** from the dropdown. See this screenshot to help locate the button:
   ![](./images/associate-entity.png " ")
 
-## **STEP 4**: Implement the Pizza Ordering Logic
+## Task 4: Implement the Pizza Ordering Logic
 
 Next we need to write logic for the skill to understand the user query and respond accordingly. We'll do this in the dialog flow where we can choreograph the interaction between the skill and its users.
 
@@ -178,7 +178,7 @@ Next we need to write logic for the skill to understand the user query and respo
 Once all the entities are resolved, we output the pizza details in the **showPizzaOrder** state.
 - The **maxError** state is called if the number of attempts for an entity in the bag has reached the value of maxPrompts.
 
-## **STEP 5**: Validate and Train PizzaSkill
+## Task 5: Validate and Train PizzaSkill
 
 1. Click the **Validate** button to validate the skill.
   (The Validate button is in the top navigation.)
@@ -186,7 +186,7 @@ Once all the entities are resolved, we output the pizza details in the **showPiz
 2. If validation fails, delete the code in the dialog flow, replace it with the contents of the PizzaSkill_BotML.txt file, and validate the flow again.
 3. Click **Train**, click **Submit**, and then wait a few seconds for the training to complete.
 
-## **STEP 6**: Test PizzaSkill
+## Task 6: Test PizzaSkill
 1. Find the Bot Tester icon on the top of the page and click it. ![](./images/test_button.png " ")
 2. Type *I want to order a medium pizza* in the **Message** field and click **Send**.
 3. Click the **Intent/Q&A** tab and observe the Entity Matches section.
@@ -220,7 +220,7 @@ Once all the entities are resolved, we output the pizza details in the **showPiz
 
   Using the composite entity, we are able to resolve all the entities in a single customer query!
 
-## **STEP 7**: Publish the Skill
+## Task 7: Publish the Skill
 Now that we are done building the skill, we'd like to add it to our digital assistant.
 
 However, to make the skill available to be added to a digital assistant, we first need to publish it:

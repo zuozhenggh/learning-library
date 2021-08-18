@@ -19,7 +19,7 @@ Prepared OCI tenancy with:
 - A Key.
 - A Secret for the WebLogic Admin password.
 
-## **STEP 1:** Provision the Stack through the Marketplace
+## Task 1: Provision the Stack through the Marketplace
 
 1. Go to **Solutions and Platforms -> Marketplace -> Applications**.
 
@@ -172,7 +172,7 @@ Prepared OCI tenancy with:
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
-## **STEP 2:** Gather Deployment Information and Check WebLogic Status
+## Task 2: Gather Deployment Information and Check WebLogic Status
 
 1. Go to **Outputs** (or you can find the same information at the bottom of the logs).
 

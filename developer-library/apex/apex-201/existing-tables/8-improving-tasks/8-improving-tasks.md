@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to define a shared *List of Values* and use it to improve the Faceted Searches and Interactive Report pages for Tasks. You will also learn how easy it is to link the Calendar to the Tasks Form page.
 
-## **STEP 1** - Defining a Shared List of Values
+## Task 1: Defining a Shared List of Values
 In the Runtime environment, navigate to **Tasks Search** and review the page. Notice that Is Complete column simply displays "Y" or "N". Now navigate to **Tasks Report**, and you will notice the same issue. It would be far better to display "Yes" or "No". This can readily be achieved by defining a *List of Values (LOV)*
 
 You can define a LOV directly on a page. However, if you require the same LOV on multiple pages, as you do here, it is far better to define it once as a *Shared Component*.
@@ -48,7 +48,7 @@ You can define a LOV directly on a page. However, if you require the same LOV on
 
     ![](images/lov-values.png " ")
 
-## **STEP 2** - Updating the Faceted Search
+## Task 2: Updating the Faceted Search
 Now that you have defined the shared component, you need to utilize it on the Faceted Search page.
 
 1. In the breadcrumbs, click **Application xxxxx**
@@ -101,7 +101,7 @@ Now that you have defined the shared component, you need to utilize it on the Fa
 
     ![](images/facet-complete.png " ")
 
-## **STEP 3** - Updating the Interactive Report
+## Task 3: Updating the Interactive Report
 The Tasks Report also needs the Is Complete column updated.
 
 1. In the Runtime environment, click **Tasks Report** in the menu.  
@@ -126,7 +126,7 @@ The Tasks Report also needs the Is Complete column updated.
     Notice that Is Complete uses a Switch so no need to modify the Form page.   
     *Note: The Form page is Page 7 which we will need in the next part*
 
-## **STEP 4** - Linking the Calendar
+## Task 4: Linking the Calendar
 The Tasks Calendar page shows numerous tasks; however, there is no way to directly modify a record. Therefore, you should add a link to the existing Project Task Form page.
 
 1. In the runtime environment, within the Navigation Menu, click **Tasks Calendar**

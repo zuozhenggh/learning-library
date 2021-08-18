@@ -37,7 +37,7 @@ This lab assumes you have:
 | 5 | Ops Control | 5 minutes |
 | 6 | Disabling Database Vault | <5 minutes |
 
-## **STEP 1**: Enable Database Vault
+## Task 1: Enable Database Vault
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -73,7 +73,7 @@ This lab assumes you have:
 
 5. Now, Database Vault is enabled in the container database as well as pdb1!
 
-## **STEP 2**: Create a Simple Realm
+## Task 2: Create a Simple Realm
 
 1. Open a web browser and launch the Glassfish app by navigating to this URL: *`http://<YOUR_DBSEC-LAB_VM_PUBLIC_IP>:8080/hr_prod_pdb1`*
 
@@ -147,7 +147,7 @@ This lab assumes you have:
 
    ![](./images/dv-007b.png " ")
 
-## **STEP 3**: Create a Trusted Path / Multi-factor Authorization
+## Task 3: Create a Trusted Path / Multi-factor Authorization
 
 1. Go back to your Glassfish app as *`hradmin`*
 
@@ -239,7 +239,7 @@ This lab assumes you have:
 
    ![](./images/dv-026.png " ")
 
-## **STEP 4**: Simulation Mode
+## Task 4: Simulation Mode
 
 1. First, query the simulation log to show that it has no current values
 
@@ -299,7 +299,7 @@ This lab assumes you have:
 
    ![](./images/dv-012c.png " ")
 
-## **STEP 5**: Ops Control
+## Task 5: Ops Control
 
 1. Check the status of Database Vault and Operations Control
 
@@ -370,7 +370,7 @@ This lab assumes you have:
 
    ![](./images/dv-018b.png " ")
 
-## **STEP 6**: Disabling Database Vault
+## Task 6: Disabling Database Vault
 
 1. Disable the pluggable database **pdb1**
 

@@ -18,7 +18,7 @@ Estimated Lab Time: 20 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)
 
-## **STEP 1: North-South Inbound Traffic**
+## **Task 1: North-South Inbound Traffic**
 
 1. Connect to **FortiGate1** instance public IP on your local machine's web browser: **https://public_ip** using **admin/fortinet** or **password** which you have setup in **Lab3**
 
@@ -88,7 +88,7 @@ Estimated Lab Time: 20 minutes.
 
    ![](../common/images/76-Verify-North-South-Inbound-Traffic2.png " ")
 
-## **STEP 2: North-South Outbound Traffic**
+## **Task 2: North-South Outbound Traffic**
 
 1. Connect to **FortiGate1** instance public IP on your local machine's web browser: **https://public_ip** using **admin/fortinet** or **password** which you have setup in **Lab3**
 
@@ -131,7 +131,7 @@ Estimated Lab Time: 20 minutes.
 
    ![](../common/images/79-Verify-North-South-Inbound-Traffic2.png " ")
 
-## **STEP 3: East-West Traffic (Web to Database & Database to Web)**
+## **Task 3: East-West Traffic (Web to Database & Database to Web)**
 
 1. Connect to **FortiGate1** instance public IP on your local machine's web browser: **https://public_ip** using **admin/fortinet** or **password** which you have setup in **Lab3**
 
@@ -174,7 +174,7 @@ Estimated Lab Time: 20 minutes.
 
    ![](../common/images/82-Verify-East-West-Traffic2.png " ")
 
-## **STEP 4: East-West Traffic (Web & DB Application to Oracle Services Network)**
+## **Task 4: East-West Traffic (Web & DB Application to Oracle Services Network)**
 
 1. From the OCI Services menu, click **Buckets** under **Storage**. Select your region on right part of the screen:
 
@@ -249,7 +249,7 @@ Estimated Lab Time: 20 minutes.
 
    ![](../common/images/82-Verify-East-West-Traffic2.png " ")
 
-## **STEP 5: High Availability Failover Validation**
+## **Task 5: High Availability Failover Validation**
 
 1. Navigate to **FortiGate1** instance attached VNIC details page and verify that **Untrust** and/or **Trust** interface has floating secondary IPs are available on primary instance. 
 

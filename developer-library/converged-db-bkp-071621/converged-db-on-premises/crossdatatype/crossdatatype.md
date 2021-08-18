@@ -29,7 +29,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
 1. As oracle user set oracle Environment and connect to the PDB.
 
@@ -51,7 +51,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -66,7 +66,7 @@ This lab assumes you have:
     ![](./images/cross_sql_developer.png " ")
 
 
-## **STEP 3**: JSON with Relational
+## Task 3: JSON with Relational
 
 **JSON_TABLE** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data
 
@@ -114,7 +114,7 @@ Below are the examples using **JSON_TABLE**.
     ```
     ![](./images/cd3.png)
 
-## **STEP 4**: XML with Relational
+## Task 4: XML with Relational
 
 **XMLTABLE:** Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -140,7 +140,7 @@ Below are the examples using **XMLTABLE**
 
     ![](./images/cd11.png)
 
-## **STEP 5**: JSON with Spatial
+## Task 5: JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.

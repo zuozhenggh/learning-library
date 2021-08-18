@@ -22,7 +22,7 @@ This lab walks you through the steps to integrate your third party app with Orac
 
 Estimated Lab Time: 2 hour
 
-## **STEP 1:** Establish connections in Oracle Integration Cloud
+## Task 1: Establish connections in Oracle Integration Cloud
 
 ### **Install OIC Connectivity Agent on MySQL**
 
@@ -284,7 +284,7 @@ Click "Done" if all information is correct.
 
 	![](./images/24.png "")
 
-## **STEP 2:** Connect your app to Oracle Analytics Cloud
+## Task 2: Connect your app to Oracle Analytics Cloud
 
 ### **Create an OAC Instance**
 

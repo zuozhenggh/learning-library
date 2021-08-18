@@ -22,7 +22,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 
 
-## **STEP 1:** Prepare the Shard Database
+## Task 1: Prepare the Shard Database
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Resource Manager > Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
 
@@ -55,7 +55,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
     ![](./images/step1.7-stackcreated.png " ")
 
-## **STEP 2:** Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** to verify the configuration. This is an optional STEP in this lab.
 
@@ -69,7 +69,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     ![](./images/planjob1.png " ")
 
-## **STEP 3:** Terraform Apply
+## Task 3: Terraform Apply
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** and **Apply**. Let's do that now.
 
@@ -100,7 +100,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     
 
-## **STEP 4:** Connect to your Instance
+## Task 4: Connect to your Instance
 
 ### MAC or Windows CYGWIN Emulator
 
@@ -146,7 +146,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 8.  Click Open to begin your session with the instance.
 
-## **STEP 5:** Verify the Database is Up
+## Task 5: Verify the Database is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 

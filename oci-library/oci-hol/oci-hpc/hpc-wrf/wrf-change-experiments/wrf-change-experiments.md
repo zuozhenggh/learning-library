@@ -30,7 +30,7 @@ This lab assumes you have:
         ```
 
 
-## **STEP 1**: Connecting to the Gnome Desktop
+## Task 1: Connecting to the Gnome Desktop
 We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our instance.
 
 1. Open a local terminal
@@ -53,7 +53,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
 5. You will finally be presented with a gnome desktop and you should continue working from here.  
     ![Screenshot of Gnome Desktop](images/gnomedesktop.png)
 
-## **STEP 2**: Creating Geographical area / Domain
+## Task 2: Creating Geographical area / Domain
 1. We need to adjust the namelist.wps file to zero in on a location of choice. It will be a small grid (10,000 x 10,000 meters) with Houston Texas USA as the centerpoint.  
    
     ```
@@ -134,7 +134,7 @@ We will be using [TigerVNC Viewer](https://tigervnc.org/) to connect to our inst
     ![Screenshot of ncview](images/nc21.png)
 
 
-## **STEP 3**: Adding Meteorological Data to Geographical area / Domain
+## Task 3: Adding Meteorological Data to Geographical area / Domain
 After setting up our geographic area or domain. We now need to obtain meteorological data to overlay on to the domain.
 
 1. In a web browser navigate to  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
@@ -242,7 +242,7 @@ After setting up our geographic area or domain. We now need to obtain meteorolog
     ```
     ![Screenshot of ncview](images/nc22.png)
 
-## **STEP 4**: Running Real and WRF
+## Task 4: Running Real and WRF
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 
     ```

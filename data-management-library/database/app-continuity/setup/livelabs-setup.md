@@ -5,7 +5,7 @@ This lab will show you how to login to the cloud and setup your environment usin
 
 **PLEASE READ:**  *If you already have a RAC DB System (running the DB19c Image) configured, go directly to Step 3b run it, skip Step 3c, then run Step 3d.*
 
-## Step 1: Login and Create Stack using Resource Manager
+## Task 1: Login and Create Stack using Resource Manager
 You will be using Terraform to create your database environment.
 
 1.  Click on the link below to download the zip file you need to build your environment.  
@@ -85,7 +85,7 @@ You will be using Terraform to create your database environment.
 
 
 
-## Step 2: Terraform Plan and Apply
+## Task 2: Terraform Plan and Apply
 When using Resource Manager to deploy an environment, execute a terraform **plan** and **apply**.  Let's do that now.
 
 1.  [OPTIONAL]Click **Terraform Actions** -> **Plan** to validate your configuration.  This takes about a minute, please be patient.
@@ -105,7 +105,7 @@ When using Resource Manager to deploy an environment, execute a terraform **plan
 
 
 
-## Step 3a: Connect to your instance
+## Task 3a: Connect to your instance
 
 Based on your laptop config, choose the appropriate step to connect to your instance.  
 
@@ -153,7 +153,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
 
 
 
-## Step 3b: Download the Setup Scripts
+## Task 3b: Download the Setup Scripts
 
 1.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
 
@@ -166,7 +166,7 @@ NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporat
     /home/opc/setuprac.sh
     ````
 
-## Step 3c: Run Setup Scripts
+## Task 3c: Run Setup Scripts
 If this is a new compute instance, run the following script to configure the 19c database.  Copy the following commands into your terminal.  This script runs in the background so you should be able to exit out while it's running, it takes approximately 25 minutes to run.  
 
 Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
@@ -180,7 +180,7 @@ Note: If you are running in windows using putty, ensure your Session Timeout is 
     ````
     tail -f /home/opc/setupdb.out
     ````
-## Step 3d: Run the Multitenant Setup Scripts
+## Task 3d: Run the Multitenant Setup Scripts
 The setupcdb.sh takes 60 minutes to run and is also setup to run in the background.
 
 1.  Once the database software has been configured, run the script to create the container databases and pluggable databases needed for the Multitenant lab.

@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0**: Running your Lab
+## Task 0: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -59,7 +59,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **Step 1**: Review EDQ Instance
+## Task 1: Review EDQ Instance
 
 1. From the remote desktop session, Click on the "*Firefox*" icon to launch the browser.
 
@@ -89,7 +89,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     ![](images/weblogic_3.png " ")
 
-## **Step 2**: Create New Project in EDQ
+## Task 2: Create New Project in EDQ
 
 1.	On the desktop, double click on *Director* icon.
 
@@ -141,7 +141,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 The “Exploring Customer Data” project now appears in the Projects list!
 
-## **Step 3**: Create Data Store and Snapshot
+## Task 3: Create Data Store and Snapshot
 Now that we have created a project, the next step is creating a Data Store. A Data Store is a connection to a source of data, whether the data is stored in a database or in one or more files.
 
 1.	Expand the newly created project “Exploring Customer Data”, right click “Data Stores”, and select “New Data Store” to launch the wizard.

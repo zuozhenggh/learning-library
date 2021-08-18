@@ -19,7 +19,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Display the password file format of CDB21
+## Task 1: Display the password file format of CDB21
 
 1. Display the password file format of CDB21
 
@@ -33,7 +33,7 @@ In this lab, you will:
 
 	```
 
-## **STEP 2:** Change `SYS` password and verify that the password is now case-sensitive
+## Task 2: Change `SYS` password and verify that the password is now case-sensitive
 
 1. Change the `SYS` user password in the password file.
 

@@ -18,9 +18,7 @@ The details provided here are merely to serve as an example.
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -31,7 +29,7 @@ This lab assumes you have:
 | 1 | Simple CRM Application | 10 minutes |
 | 2 | Protect Glassfish Application | 20 minutes |
 
-## **STEP 1**: Simple CRM Application
+## Task 1: Simple CRM Application
 
 ### **Before Getting Started**
 
@@ -147,7 +145,7 @@ Different applications have different purposes:
 
    ![](./images/ols-006.png " ")
 
-## **STEP 2**: Protect Glassfish Application
+## Task 2: Protect Glassfish Application
 
 1. First, setup the Glassfish App environment ... and makes sure you don't already have the OLS changes deployed to the application
 

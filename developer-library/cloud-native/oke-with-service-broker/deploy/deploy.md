@@ -21,7 +21,7 @@ Before you begin, you must have installed the required software:
 - Helm
 - OCI CLI
 
-## **STEP 1:** Clone the Repository
+## Task 1: Clone the Repository
 
 1. Clone the repository with the following command:
 
@@ -34,7 +34,7 @@ Before you begin, you must have installed the required software:
 
     Alternatively, you can download the code from GitHub at [https://github.com/oracle-quickstart/oke-with-service-broker](https://github.com/oracle-quickstart/oke-with-service-broker).
 
-## **STEP 2:** Create a `terraform.tfvars` File
+## Task 2: Create a `terraform.tfvars` File
 
 1. Create a `terraform.tfvars` file from the `terraform.tfvars.template` file (make a copy and rename it `terraform.tfvars).
 
@@ -106,7 +106,7 @@ Before you begin, you must have installed the required software:
     osb_group_ocid = null
     ```
 
-## **STEP 3:** Initialize the Terraform Repository
+## Task 3: Initialize the Terraform Repository
 
 1. Initialize the Terraform project with:
 
@@ -116,7 +116,7 @@ Before you begin, you must have installed the required software:
     </copy>
     ```
 
-## **STEP 4:** Deploy the Stack
+## Task 4: Deploy the Stack
 
 1. If you wish to see the plan for the deployment, use:
 
@@ -138,7 +138,7 @@ Before you begin, you must have installed the required software:
 
     This will take between 20 and 40 minutes.
 
-## **STEP 5:** Verify the Deployment
+## Task 5: Verify the Deployment
 
 If the deployment went smoothly, you should not see errors in the Terraform log, and it should be done within 45 minutes.
 
@@ -218,7 +218,7 @@ If the deployment went smoothly, you should not see errors in the Terraform log,
     clusterservicebroker.servicecatalog.k8s.io/oci-service-broker   https://oci-service-broker.oci-service-broker.svc.cluster.local:8080   Ready    46s
     ```
 
-## **Step 6:** Access the Kubernetes Dashboard
+## Task 6: Access the Kubernetes Dashboard
 
 1. To access the Kubernetes dashboard, run the helper script:
 

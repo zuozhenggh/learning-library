@@ -24,7 +24,7 @@ This lab assumes you have:
     * Lab: Create Groups and Compare Pairs.
     * Lab: Create and Execute Jobs
 
-## **STEP 1:** View a Report
+## Task 1: View a Report
 
   To view a report:
 1. From the left navigation pane, click **Reports** to display the Report Selection page.

@@ -18,9 +18,7 @@ Watch a preview of "*Understanding Oracle Transparent Data Encryption (TDE) - Pa
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -38,7 +36,7 @@ This lab assumes you have:
 | 8 | View Keystore Details | 5 minutes |
 | 9 | (Optional) Restore Before TDE | 5 minutes |
 
-## **STEP 1**: Allow DB Restore
+## Task 1: Allow DB Restore
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -66,7 +64,7 @@ This lab assumes you have:
        - If you have executed this script before and there is an existing backup file, the script will not complete
        - You must manually manage the existing backup (delete or move) before running this script again
 
-## **STEP 2**: Create Keystore
+## Task 2: Create Keystore
 
 1. Run this script to create the Keystore directories on the Operating System
 
@@ -94,7 +92,7 @@ This lab assumes you have:
 
 4. Now, your Oracle Wallet has been created!
 
-## **STEP 3**: Create Master Key
+## Task 3: Create Master Key
 
 1. To create the container database TDE Master Key (**MEK**), run the following command
 
@@ -122,7 +120,7 @@ This lab assumes you have:
 
 4. Now, you have a master key and you can begin encrypting tablespaces or column!
 
-## **STEP 4**: Create Auto-login Wallet
+## Task 4: Create Auto-login Wallet
 
 1. Run the script to view the Oracle Wallet content on the Operating System
 
@@ -168,7 +166,7 @@ This lab assumes you have:
 
 6. Now your Autologin is created!
 
-## **STEP 5**: Encrypt Existing Tablespace
+## Task 5: Encrypt Existing Tablespace
 
 1. Use the Linux command, strings, to view the data in the data file, `empdata_prod.dbf` that is associated with the `EMPDATA_PROD` tablespace. This is an operating system command that bypasses the database to view the data. This is called a 'side-channel attack' because the database is unaware of it.
 
@@ -196,7 +194,7 @@ This lab assumes you have:
 
 4. You see that all of the data is now encrypted and no longer visible!
 
-## **STEP 6**: Encrypt All New Tablespaces
+## Task 6: Encrypt All New Tablespaces
 
 1. First, check the existing initialization parameters
 
@@ -224,7 +222,7 @@ This lab assumes you have:
 
 4. Now, your new Tablespaces will be encrypted by default!
 
-## **STEP 7**: Rekey Master Key
+## Task 7: Rekey Master Key
 
 1. To rekey the container database TDE Master Key (MEK), run the following command
 
@@ -270,7 +268,7 @@ This lab assumes you have:
 
 4. Now that you have a master key, you can begin encrypting tablespaces or column!
 
-## **STEP 8**: View Keystore Details
+## Task 8: View Keystore Details
 
 1. Once you have a keystore, you can run either of these scripts. You will notice there are multiple copies of the **ewallet.p12** file. Every time you make a change, including create or rekey, the ewallet.p12 file is backed up. You will also see the contents of the Oracle Wallet file by using **orapki**
 
@@ -286,7 +284,7 @@ This lab assumes you have:
       <copy>./tde_view_wallet_in_db.sh</copy>
       ````
 
-## **STEP 9**: (Optional) Restore Before TDE
+## Task 9: (Optional) Restore Before TDE
 **Attention: DO NOT run this lab if you want perfoming Oracle Key Vault labs later!**
 
 1. First, execute this script to restore the pfile

@@ -19,7 +19,7 @@ In this lab, you will:
 * Run Lab 3, which deploys the Bob's Book application.
 * You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## **STEP 1**: Access the Bob's Book application
+## Task 1: Access the Bob's Book application
 
 1. We need an `EXTERNAL_IP` address through which we can access the Bob's Book application. To get the `EXTERNAL_IP` address of the istio-ingressgateway service, copy the following command and paste it in the *Cloud Shell*.
 
@@ -88,7 +88,7 @@ In this lab, you will:
 
    ![Verify Order](images/11.png)
 
-## **STEP 2**: Explore the Verrazzano Console
+## Task 2: Explore the Verrazzano Console
 
 Verrazzano installs several consoles. The endpoints for an installation are stored in the `Status` field of the installed Verrazzano Custom Resource.
 
@@ -158,7 +158,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
     ![configuration](images/24.png)
 
-## **STEP 3**: Explore the Grafana Console
+## Task 3: Explore the Grafana Console
 
 1. Select *Home* to go back to Verrazzano Console Home Page.
 

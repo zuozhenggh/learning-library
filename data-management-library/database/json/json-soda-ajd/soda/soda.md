@@ -17,7 +17,7 @@ In this lab, you will:
 
 * Have successfully created a JSON collection in Autonomous JSON Database and have inserted few documents
 
-## **STEP 1:** Perform Simple REST Operations in Oracle Cloud Shell
+## Task 1: Perform Simple REST Operations in Oracle Cloud Shell
 
 1. A simple REST request can be done from the browser - open a new window and copy the URL from the 'JSON Workshop' or the 'SQL Developer Web' into it.
 
@@ -155,7 +155,7 @@ In this lab, you will:
 
 	![](./images/proof.png)	
 
-## **STEP 2:** Insert Data into the Collection
+## Task 2: Insert Data into the Collection
 
 1. Now, let's do a bulk load to insert more data. Navigate back to the tab with Oracle Cloud Shell.
 

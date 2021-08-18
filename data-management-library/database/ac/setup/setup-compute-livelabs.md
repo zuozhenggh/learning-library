@@ -18,7 +18,7 @@ Watch the video below for an overview of the Build a DB System lab
 - An assigned Database Cluster Password
 - The SSH Key you supplied when registering for LiveLabs
 
-## **STEP 1**: Login to Oracle Cloud
+## Task 1: Login to Oracle Cloud
 
 1.  Login to Oracle Cloud
 2.  Open up the hamburger menu in the left hand corner.  
@@ -49,7 +49,7 @@ Watch the video below for an overview of the Build a DB System lab
 - [Step 3: MAC or Windows CYGWIN Emulator](#STEP6:MACorWindowsCYGWINEmulator)
 - [Step 4: Putty](#STEP7:WindowsusingPutty)
 
-## **STEP 2**: Oracle Cloud Shell
+## Task 2: Oracle Cloud Shell
 
 1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
@@ -102,7 +102,7 @@ Watch the video below for an overview of the Build a DB System lab
 9.  You may now *proceed to the next lab*.  
 
 
-## **STEP 3**: MAC or Windows CYGWIN Emulator
+## Task 3: MAC or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -120,7 +120,7 @@ Watch the video below for an overview of the Build a DB System lab
 
 3. After successfully logging in, you may *proceed to the next lab*
 
-## **STEP 4**: Windows using Putty
+## Task 4: Windows using Putty
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.

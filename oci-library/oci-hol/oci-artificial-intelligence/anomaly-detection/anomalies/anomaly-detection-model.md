@@ -18,7 +18,7 @@ In this lab, you will:
 - Understand basic model terminology FAP - False Alarm Probability
 
 
-## **STEP 1:** Create a Model
+## Task 1: Create a Model
 
 Creating a model is requiring the 3 actions to kick off training the AD model.
 
@@ -66,7 +66,7 @@ Click Submit. For this demo dataset, it takes **5 minutes** to finish training a
 
 Once the model is trained successfully, it is automatically ready for detecting anomalies from new data. User can either use the cloud Console (next step) or the endpoint to send new testing data.
 
-## **STEP 2:** Detect Anomaly with new Data
+## Task 2: Detect Anomaly with new Data
 
 ### Upload to UI
 

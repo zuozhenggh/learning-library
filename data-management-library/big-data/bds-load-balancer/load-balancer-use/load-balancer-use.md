@@ -9,7 +9,7 @@ This lab assumes you have successfully completed **Lab 3 Create the Load Balance
 
 Estimated lab time: 10 minutes
 
-## STEP 1: Access the Services on the Cluster
+## Task 1: Access the Services on the Cluster
 
 To access the services configured with this load balancer:
 

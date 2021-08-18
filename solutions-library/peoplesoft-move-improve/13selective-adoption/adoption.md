@@ -12,7 +12,7 @@ In this lab you will:
 ### Prerequisites
 - Two PeopleSoft environments up and running. One that will be used as a source environment and one that will be used as a target environment. The source environment must have a newer image version than the target environment.
 
-## **STEP 1**: Create PUM Connection
+## Task 1: Create PUM Connection
 
 1.  Navigate to **Dashboard** > **Environments**. On your source environment click the down arrow button and then click **Details**.
     ![](./images/sourcedetails.png "")
@@ -27,7 +27,7 @@ In this lab you will:
     ![](./images/.png "")
     ![](./images/.png "")
 
-## **STEP 2**: Logging into PUM Source
+## Task 2: Logging into PUM Source
 
 If you want to apply packages to the target DB you can use the PIA URL to log into the PUM source and manually apply a change package. 
 

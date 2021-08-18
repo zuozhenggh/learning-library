@@ -7,7 +7,7 @@ This lab will show you how to create an ODI instance from a Marketplace image an
 * Create an ODI Instance from Marketplace
 * Configure ODI Studio
 
-## **Step 1:** Create an ODI instance from OCI Marketplace
+## Task 1: Create an ODI instance from OCI Marketplace
 
 1. Click the **Navigation Menu** in the upper left and select **Marketplace**.
 
@@ -56,7 +56,7 @@ Make sure you have chosen the correct **COMPARTMENT**
     Your instance will have your initials as a Prefix (provided you added them as instructed)
     ![](./images/odi_instance_create_2.png " ")
 
-## **Step 2:** Configure ODI Studio and import training repository
+## Task 2: Configure ODI Studio and import training repository
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
@@ -96,9 +96,9 @@ Open the VNC viewer and enter the Public IP Address for your compute Instance
   ````
   <copy>
   cd /home/oracle/Downloads
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2zBY7hN8wEHIqgDNYa58aT_vlKiHInH86IHd_PE2f9SUVfXBA3W6EJmgiMpjmRMl/n/c4u04/b/labfiles/o/ODI12c_training_master_repo.zip
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/EnOjFKODZ0TpwHvpfpCF2FN4pA9fVQR0hCKoDI66WRb3Y_1b8ee0JphvWoGZuplj/n/c4u04/b/labfiles/o/ODI12c_training_work_repo.zip
-  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iGuOLSeWINLHWmMUjXpEf0G-iss8zypJg1WVXMgCWGlHdQDGf1UPfWfqJOUPfSSQ/n/c4u04/b/labfiles/o/ODI12c_Sales_data.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/InvWQ9bUBrf4PPnRhrFBdW9k9SB_FekDLh00JqqmJzHSgxQ3YELC_sEHW8UAsz4f/n/c4u04/b/labfiles/o/ODI12c_training_master_repo.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/cd-MoWCWYOgrbpuQ3U7aPIbxOFyoL2wpF48m3MzcOj-Tb7SY6OpoLse8gNSCL2g8/n/c4u04/b/labfiles/o/ODI12c_training_work_repo.zip
+  wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/dUlENjeAXknfd_HEzR7dTyG9f5W-yglD0JyZwlqmPO-Qjio6Lq2yRJ2IaDA5zeAp/n/c4u04/b/labfiles/o/ODI12c_Sales_data.zip
 
   unzip ODI12c_Sales_data.zip
 
@@ -156,7 +156,7 @@ The import will take approximately 5 minutes
 17. Click **Close** after import completes successfully
     ![](./images/odi_studio_9c.png " ")      
 
-## **Step 3:** Configure connections
+## Task 3: Configure connections
 
 1. Open the **Topology** Tab and expand **Physical Architecture \-\> Technologies \-\> Oracle**
 
@@ -192,7 +192,7 @@ and then select **Save**
 
 Use the same connection parameters as used in Step 5. These are defined as two different data servers but point to the same DB schema for simplicity.
 
-## **Step 4:** Import the work Repository
+## Task 4: Import the work Repository
 
 1. Open the **Designer** tab and select **Import**
 
@@ -211,7 +211,7 @@ The import will take approximately 5 minutes
 
     ![](./images/odi_studio_11c.png " ")
 
-## **Step 5:** Test the environment
+## Task 5: Test the environment
 
 1. Expand **Model** and right-click on **SRC\_AGE\_GROUP** and select **View Data**
 
