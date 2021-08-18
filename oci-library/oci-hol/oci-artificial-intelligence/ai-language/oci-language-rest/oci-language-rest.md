@@ -21,7 +21,7 @@ Download the [OCI Environment](./files/OCI_Environment.postman_environment.json)
 ![](./images/import.png " ")
 
 ### 2. Set the Variables
-Open and Edit the newly imported environment(OCI_Environment) by clcking the eye button, and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same as what we collected in the Lab 3 (SDK Setup section) above.
+Open and Edit the newly imported environment(OCI_Environment) by clicking the eye button, and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same as what we collected in the Lab 3 (SDK Setup section) above.
 
 Also, make sure to set both Initial Value and Current Value of the variables. 
 
