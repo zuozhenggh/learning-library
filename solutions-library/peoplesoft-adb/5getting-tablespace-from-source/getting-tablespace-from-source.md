@@ -32,7 +32,7 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
      spool off; </copy>
       ```
     
-    ![](./images/tablespace1.png "")
+    ![](./images/table1.png "")
 
 * 2.The following SQL commands will provide the list of Temporary Tablespaces needed to map with ‘TEMP’ Tablespace:
 
@@ -46,7 +46,7 @@ Since there are restrictions in creating the tablespaces on ADB-S, the process w
      spool off; </copy>
       ```
 
-    ![](./images/tablespace2.png "")
+    ![](./images/table2.png "")
 
 ## Task 2: Sorting the list and mapping to DATA and TEMP for MV2ADB configuration
 
