@@ -22,7 +22,7 @@ In this workshop, you will:
 * Share and publish the web app
 
 ### Prerequisites
-This lab assumes you have:
+This workshop assumes you have:
 * An Oracle account
 * A browser (works best in Chrome)
 

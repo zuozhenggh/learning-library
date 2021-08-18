@@ -19,7 +19,13 @@ Saving changes to a remote branch is a two-step process: _commit_ and _push_. Th
 
 Once you commit and push your changes, all the changes from your local `hrbranch` become available to others in your project through the remote `hrbranch`.
 
-## **Task 1:** Commit Changes in a Local Branch
+### Prerequisites
+
+This lab assumes you have:
+* A Chrome browser
+* All previous labs successfully completed
+
+## Task 1: Commit Changes in a Local Branch
 Let's group the changes you've made so far in your local branch for a commit. Ideally, you'll commit your changes as often as you can, so you have a string of commits with messages that clearly describe your updates.
 
 1. Click the Git repository menu in the header and select **Commit**.
@@ -32,7 +38,7 @@ Let's group the changes you've made so far in your local branch for a commit. Id
 
     A successful message appears on the page. Click ![Close message icon](images/x_icon.png) to close the message.
 
-## **Task 2:** Push Changes to a Remote Branch
+## Task 2: Push Changes to a Remote Branch
 
 Push your commits from the local branch in your workspace to the remote branch.
 
@@ -43,7 +49,7 @@ Push your commits from the local branch in your workspace to the remote branch.
 
     When the successful message appears, click ![Close message icon](images/x_icon.png).
 
-## **Task 3:** View Changes in the Remote Branch
+## Task 3: View Changes in the Remote Branch
 
 Now that your changes have been pushed, let's check them in the remote `hrbranch`.
 
@@ -66,6 +72,9 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
     ![](images/git_view_hrbranch_logs.png " ")
 
     Now if a teammate (for example, Clara Coder) wanted to work on this web application, she could use the **Clone From Git** option on the Workspaces page to clone `hrbranch` in her workspace, then use it as a base for her updates.
+
+    You may now [proceed to the next lab](#next).
+
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance

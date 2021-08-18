@@ -13,7 +13,13 @@ Sharing an application, much like the preview option you've used in previous tut
 
 You can share your application as many times as you want to let your teammates test your changes and make sure the application works as expected.
 
-## **Task 1:** Share the Application
+### Prerequisites
+
+This lab assumes you have:
+* A Chrome browser
+* All previous labs successfully completed
+
+## Task 1: Share the Application
 
 Share the HR web application you've created to create a URL that your team can use to try out the application.
 
@@ -29,7 +35,7 @@ Share the HR web application you've created to create a URL that your team can u
     A brief confirmation appears, and the application is deployed to your VB instance.
 
 
-## **STEP 2:** View the Shared Application
+## Task 2: View the Shared Application
 
 Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 
@@ -49,6 +55,9 @@ Now that you've shared your application, you need to get its URL so you can pass
     If you click **hrwebapp**, the application opens in a new browser tab, similar to the shared application view from within the Designer. When you've finished using the application, close the browser tab.
 
     Project team members like Clara Coder can also open the shared application from the list of deployments, as long as their membership includes access to the Environments page.
+
+    You may now [proceed to the next lab](#next).
+
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance

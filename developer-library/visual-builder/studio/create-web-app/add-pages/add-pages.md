@@ -1,4 +1,4 @@
-# Create Pages for a Web Application
+# Create Pages for a Web App
 
 ## Introduction
 
@@ -13,7 +13,13 @@ In the previous lab, you created the Location, Department, and Employee business
 
 You'll also add a **Create** button to each web page to let your users add new records (in other words, create new instances of the business object in the database).
 
-## **Task 1:** Use the main-start Page to Display Departments
+### Prerequisites
+
+This lab assumes you have:
+* A Chrome browser
+* All previous labs successfully completed
+
+## Task 1: Use the main-start Page to Display Departments
 
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
@@ -66,9 +72,9 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![](images/department_table_location_name_rename.png " ")
 
-The main-start page now has a table with three columns: Id, Name, and Location. You won't see any records in your table because we are yet to import data for the Department business object.
+     The main-start page now has a table with three columns: Id, Name, and Location. You won't see any records in your table because we are yet to import data for the Department business object.
 
-## **Task 2:** Add a Create Page for the Department Business Object
+## Task 2: Add a Create Page for the Department Business Object
 
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
@@ -107,7 +113,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 9.  Click **Design** to return to Design view.
 
-## **Task 3:** Add a Page to Display Employees
+## Task 3: Add a Page to Display Employees
 
 We'll now create a page to display employees, similar to the one you created to show departments.
 
@@ -144,11 +150,11 @@ We'll now create a page to display employees, similar to the one you created to 
 
 12.  In the **Columns, Header Text** field, change `Name` to `Department`, then click ![Back to Table icon](images/backtotable_icon.png) **Table** to return to the main **Data** tab.
 
-    The main-employees page now has a table with five columns: Id, Name, Hire Date, Email, and Department. You won't see any information in the table until we import data for the Employee business object in a later lab.
+     The main-employees page now has a table with five columns: Id, Name, Hire Date, Email, and Department. You won't see any information in the table until we import data for the Employee business object in a later lab.
 
-    ![](images/employees_table.png " ")
+     ![](images/employees_table.png " ")
 
-## **Task 4:** Add a Create Page for the Employee Business Object
+## Task 4: Add a Create Page for the Employee Business Object
 
 Add a Create page that lets your users create new employees.
 
@@ -185,7 +191,7 @@ Add a Create page that lets your users create new employees.
 
 11.  Click **Structure** again.
 
-## **Task 5:** Change the Name of the main-start Page
+## Task 5: Change the Name of the main-start Page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
 
@@ -204,6 +210,9 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](images/mainflow_json.png " ")
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
+
+    You may now [proceed to the next lab](#next).
+
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
