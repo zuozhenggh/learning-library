@@ -37,7 +37,7 @@ Review important initialization parameters, enable `ARCHIVELOG` mode on your dat
 
 1. Open a terminal window. We will refer to this as terminal 1.
 
-2. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -420,5 +420,5 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021

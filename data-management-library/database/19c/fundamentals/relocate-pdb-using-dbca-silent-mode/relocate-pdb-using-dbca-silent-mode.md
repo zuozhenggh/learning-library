@@ -97,7 +97,7 @@ This lab assumes you have:
 
 ## Task 3: Verify that PDB1 has sample data
 
-1. Ensure the environment variable is set to CDB1. Enter CDB1 at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -199,7 +199,7 @@ A common user is a database user that has the same identity in the `root` contai
 
 ## Task 6: Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
 
-1. Set the environment variable to CDB2. Enter **CDB2** at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -273,7 +273,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     Answer: In preparation for the first relocation (PDB1 moving to CDB2), we created the database link user only on CDB1 because at that time, it was considered the remote CDB. But now, you are trying to move PDB1 back to CDB1, and CDB2 is considered the remote CDB. To fix the problem, you need to create the remote user in CDB2 too.
 
-3. Set the environment variable to CDB2. Enter **CDB2** at the prompt.
+3. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -328,7 +328,7 @@ A common user is a database user that has the same identity in the `root` contai
     Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/CDB1/PDB1/CDB1.log" for further details.
     ```
 
-9. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+9. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -374,7 +374,7 @@ A common user is a database user that has the same identity in the `root` contai
   CDB2
     ```
 
-4. Set the environment variable to CDB1. At the prompt, enter **CDB1**.
+4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -400,7 +400,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> <copy>exit</copy>
     ```
 
-8. Set the environment variable to CDB2. At the prompt, enter **CDB2**.
+8. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -435,5 +435,5 @@ A common user is a database user that has the same identity in the `root` contai
 ## Acknowledgements
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
-- **Technical Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Technical Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 13 2021

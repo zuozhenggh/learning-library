@@ -72,7 +72,7 @@ Create a PDB named PDB19 to act as the recovery catalog database. This database 
 
 In PDB19, create a recovery catalog owner named `catowner` and grant it privileges.
 
-1. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -548,5 +548,5 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021

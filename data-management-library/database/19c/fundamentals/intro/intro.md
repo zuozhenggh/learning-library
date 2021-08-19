@@ -62,5 +62,5 @@ If you copy text from your local computer, then you need to use the clipboard ut
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
 - **Last Updated By/Date** - Jody Glover, Database team, August 13 2021

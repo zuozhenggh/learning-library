@@ -27,7 +27,7 @@ This lab assumes you have:
 
 CDB1 must be in `ARCHIVELOG` mode before you can duplicate it by using DBCA in silent mode.
 
-1. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -89,7 +89,7 @@ CDB1 must be in `ARCHIVELOG` mode before you can duplicate it by using DBCA in s
 
 ## Task 3: Use DBCA to duplicate CDB1 as a single individual database
 
-In this step, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1 as DUPCDB1. The database configuration type is set to `SINGLE`, which instructs DBCA to create a single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener.
+In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1 as DUPCDB1. The database configuration type is set to `SINGLE`, which instructs DBCA to create a single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener.
 
 1. Run the `-createDuplicateDB` command.
 
@@ -118,7 +118,7 @@ In this step, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
     Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/DUPCDB1/DUPCDB1.log" for further details.
     ```
 
-2. Set the environment variable to `DUPCDB1`. Enter **DUPCDB1** at the prompt.
+2. Set the Oracle environment variables. At the prompt, enter **DUPCDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -313,7 +313,7 @@ In this step, you use the `-createDuplicateDB` command in DBCA to duplicate CDB1
     The command completed successfully
     ```
 
-6. Set the environment variable to OMFCDB1. Enter **OMFCDB1** at the prompt.
+6. Set the Oracle environment variables. At the prompt, enter **OMFCDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -470,5 +470,5 @@ To restore you environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG` 
 
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By** - Blake Hendricks, Solutions Engineer, August 13 2021

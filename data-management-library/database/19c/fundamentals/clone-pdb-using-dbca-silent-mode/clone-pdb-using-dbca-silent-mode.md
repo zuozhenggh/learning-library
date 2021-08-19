@@ -94,7 +94,7 @@ This lab assumes you have:
 
 ## Task 3: Verify that PDB1 has sample data
 
-1. Set the environment variable to CDB1. At the prompt, enter **CDB1**.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -198,7 +198,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 ## Task 6: Verify that PDB1 is cloned and that `HR.EMPLOYEES` exists in PDB2
 
-1. Set the environment variable to CDB2. Enter **CDB2** at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -278,7 +278,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     ORACLE_SID = [CDB2] ? CDB2
     ```
 
-4. Set the environment variable to CDB1. At the prompt, enter **CDB1**.
+4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -313,5 +313,5 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 13 2021

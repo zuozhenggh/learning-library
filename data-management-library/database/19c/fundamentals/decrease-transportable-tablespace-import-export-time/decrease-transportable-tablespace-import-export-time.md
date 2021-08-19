@@ -43,7 +43,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 1. Open a terminal window.
 
-2. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     <copy>. oraenv</copy>
@@ -565,5 +565,5 @@ $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 ## Acknowledgements
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
 - **Last Updated By**: Blake Hendricks, Solutions Engineer, August 13 2021

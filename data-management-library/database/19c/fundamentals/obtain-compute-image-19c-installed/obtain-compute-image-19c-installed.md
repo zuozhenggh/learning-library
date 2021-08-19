@@ -101,14 +101,14 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 17. Click **Create**.
 
-    Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
+    Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job takes approximately 5 minutes to complete and is finished when the state reads **Succeeded**.
 
   ![Job Details page](images/job-details-page.png "Job Details page")
 
 
 18. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks.
 
-    ![Image URL](images/image-url.png "Image URL")
+    ![Image URL](images/image-url-wait.png "Image URL")
 
 
 ## Task 3: Connect to your compute instance via a browser and set up your desktop
@@ -152,7 +152,7 @@ Throughout this workshop, you use pre-built lab files. This task shows you how t
 
 The ORCL, CDB1, and CDB2 database instances are not started by default on the `workshop-installed` image. This is by design because several of the labs need the databases to have `ARCHIVELOG` mode disabled, which requires a database shut down at the beginning of the lab. The labs include instructions on how and when to start up the databases. The listeners for the ORCL, CDB1, and CDB2 databases are `LISTENER` (the default listener), `LISTENER_CDB1`, and `LISTENER_CDB2` respectively.
 
-1. Enter the following command to set the environment variable. At the prompt, enter CDB1.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -173,5 +173,5 @@ The ORCL, CDB1, and CDB2 database instances are not started by default on the `w
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
 - **Last Updated By/Date** - Jody Glover, Database team, August 13 2021

@@ -25,6 +25,8 @@ This lab assumes you have:
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
 
+Be sure that you are using the `workshop-staged` compute instance for this lab.
+
 1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
 
 2. Change to the Oracle home directory.
@@ -37,6 +39,22 @@ This lab assumes you have:
 
     ```
     $ <copy>ls</copy>
+
+    32545013    diagnostics    lib      PatchSearch.xml  slax
+    addnode     dmu            md       perl             sqldeveloper
+    apex        drdaas         mgw      plsql            sqlj
+    assistants  dv             network  precomp          sqlpatch
+    bin         env.ora        nls      QOpatch          sqlplus
+    clone       has            odbc     R                srvm
+    crs         hs             olap     racg             suptools
+    css         install        OPatch   rdbms            ucp
+    ctx         instantclient  opmn     relnotes         usm
+    cv          inventory      oracore  root.sh          utl
+    data        javavm         ord      root.sh.old      wwg
+    dbjava      jdbc           ords     root.sh.old.1    xdk
+    dbs         jdk            oss      runInstaller
+    deinstall   jlib           oui      schagent.conf
+   demo        ldap           owm      sdk
     ```
 
 4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
@@ -67,7 +85,7 @@ This lab assumes you have:
     - Create as Container database (selected)
     - Pluggable database name: `orclpdb`
 
-  ![Typical Install Configuration page](images/typical-install-configuration-page.png "Typical Install Configuration page")
+  ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
 
 
 8. On the **Create Inventory** page, leave the default settings as is, and click **Next**. The following values will be configured:
@@ -147,9 +165,7 @@ This lab assumes you have:
 
 ## Task 3: Discover the container database (CDB) and pluggable database (PDB)
 
-1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
-
-  For the `ORACLE_SID` value, enter **orcl**.
+1. Set the Oracle environment variables. At the prompt, enter **orcl**. You need to set these each time you open a new terminal window and want to access your database.
 
     ```
     $ <copy>. oraenv</copy>
@@ -159,7 +175,7 @@ This lab assumes you have:
     $
     ```
 
-2. View the environment variables set by the `. oraenv` command that you just ran.
+2. View the Oracle environment variables set by the `. oraenv` command that you just ran.
 
     ```
     $ <copy>set | grep ORACLE</copy>
@@ -189,7 +205,7 @@ This lab assumes you have:
     SQL>
     ```
 
-4. Check the version of the database.
+4. Verify that the version of the database is 19.11.
 
     ```
     SQL> <copy>SELECT banner_full FROM v$version;</copy>
@@ -250,7 +266,7 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
 - **Contributors**
     - James Spiller, Consulting User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
