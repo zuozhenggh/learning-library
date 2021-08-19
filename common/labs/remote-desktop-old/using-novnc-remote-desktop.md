@@ -43,14 +43,13 @@ During the execution of your labs you may need to copy text from your local PC/M
 
 ## Task 3: Open Your Workshop Guide
 
-1. If the *Web* browser window(s) is(are) not already open side-by-side, double-click on the *Get Started with your Workshop* icon from the remote desktop. This will launch one or two windows depending on the workshop.
+1. If the two *Firefox* browser windows are not already open, click on the icon from the remote desktop. This will launch two windows.
 
-    ![](./images/novnc-launch-get-started-1.png " ")
+    ![](./images/firefox-launch-1.png " ")
 
-2. On the left windows is your workshop guide and depending on your workshop, you may also one or two browser tabs loaded with webapps. e.g. Weblogic console, Enterprise Manager Cloud Console, or a relevant application to your workshop such as SQL Developer, JDeveloper, etc.
+2. On the left windows is a workshop guide that may or may not be the correct guide as many VM images are shared by multiple workshops. To ensure that the guide displayed is the correct one, click on *Workshop Guides* from the browser toolbar bookmarks area and select the appropriate guide for your workshop.
 
-    ![](./images/novnc-launch-get-started-2.png " ")
-    ![](./images/novnc-launch-get-started-3.png " ")
+    ![](./images/firefox-launch-2.png " ")
 
 You may now [proceed to the next lab](#next).
 
