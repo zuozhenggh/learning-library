@@ -28,15 +28,13 @@ Be sure to select the **home region** of your tenancy.  Setup will only work in 
 ## Task 3: Create group and IAM policies
 A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
-If you are not an administrator on your tenancy, you must insure that additional policies have been added to the group you are a member of or ask your admin to create a separate group for you with additional policies. 
-
-The group will have IAM policies to create and manage the resources in the compartment.
+If you are not an administrator on your tenancy, you must insure that additional policies have been added to the group you are a member of or ask your admin to create a separate group for you with additional policies. This group will have IAM policies to create and manage the resources in the compartment.
 
 Here are the steps for creating a new group and assigning security policy required for this workshop (only a user with the admin account will be able to perform the below steps):
 
-1. Lets create compartment grabdish as shown.
+1. Lets create compartment **grabdish** as shown.
   ![](images/create-comp.png " ")
-  
+
 2. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
   ![](images/id-groups.png " ")
 
@@ -44,9 +42,9 @@ Here are the steps for creating a new group and assigning security policy requir
   ![](images/create-group.png " ")
 
 4. In the Create Group dialog box, enter the following:
- - Name: Enter a unique name for your group such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
- - Description: Enter a description (for example, “New group for microservices workshop”).
- - Click Create.
+ - **Name**: Enter a unique name for your group such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
+ - **Description**: Enter a description (for example, “New group for microservices workshop”).
+ - Click **Create**.
   ![](images/new-group.png " ")
 
   ![](images/get-new-group.png " ")
