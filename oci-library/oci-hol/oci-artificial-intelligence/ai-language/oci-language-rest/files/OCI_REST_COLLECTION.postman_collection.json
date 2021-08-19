@@ -310,7 +310,7 @@
 					"raw": "{\r\n\"text\" : \"The Delta variant, first identified in India, is likely behind the current uptick in cases. The US is now averaging more than 23,000 new Covid-19 cases each day, according to Johns Hopkins University, almost double two weeks ago. The average number of daily cases is rising in 46 states. And we're seeing 261 new Covid-19 deaths each day -- a 21% increase from last week. Again, deaths that are largely preventable.\"\r\n}"
 				},
 				"url": {
-					"raw": "https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageSentiments",
+					"raw": "https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageTextClassification",
 					"protocol": "https",
 					"host": [
 						"language",
