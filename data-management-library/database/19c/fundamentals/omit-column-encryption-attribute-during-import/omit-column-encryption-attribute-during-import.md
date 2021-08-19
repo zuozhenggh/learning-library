@@ -2,7 +2,9 @@
 # Omit the Column Encryption Attribute During Import
 
 ## Introduction
-In the Oracle Public Cloud environment, data is encrypted by default using Transparent Data Encryption (TDE) and the encrypted tablespace feature, but not the encrypted column feature. If an exported table holds encrypted columns, there must be a method to import the table and suppress the encryption clause associated with the table creation during the import operation. In this lab, you use the Oracle Data Pump Import utility to simulate an import into a PDB, once with the `ENCRYPT` attribute, and once without it.
+In the Oracle Public Cloud environment, data is encrypted by default using Transparent Data Encryption (TDE) and the encrypted tablespace feature, but not the encrypted column feature. If an exported table holds encrypted columns, there must be a method to import the table and suppress the encryption clause associated with the table creation during the import operation.
+
+In this lab, you use the Oracle Data Pump Import utility to simulate an import into a PDB, once with the `ENCRYPT` attribute, and once without it.
 
 Estimated Lab Time: 5 minutes
 
@@ -17,11 +19,11 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+- Obtained and signed in to your `workshop-installed` compute instance.
 
 ## Task 1: Import a table with the `ENCRYPT` attribute
 
-1. On your compute instance, open a terminal window.
+1. Open a terminal window on the desktop.
 
 2. Switch to the `$HOME/labs/19cnf` directory.
 
@@ -135,4 +137,4 @@ $ <copy>rm tabenc*.sql enc*.log</copy>
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 19 2021

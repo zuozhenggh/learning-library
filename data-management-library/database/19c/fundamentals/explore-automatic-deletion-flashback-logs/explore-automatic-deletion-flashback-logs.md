@@ -28,14 +28,14 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+- Obtained and signed in to your `workshop-installed` compute instance.
 
 
 ## Task 1: Prepare your environment
 
 Review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in Task 2.
 
-1. Open a terminal window. We will refer to this as terminal 1.
+1. Open a terminal window on the desktop. We will refer to this as terminal 1.
 
 2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
@@ -421,4 +421,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 19 2021

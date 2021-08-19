@@ -11,7 +11,7 @@ Estimated Lab Time: 30 minutes
 In this lab, you will:
 
 - Enable `ARCHIVELOG` mode on CDB1 and CDB2
-- Verify that the listeners for CDB1 and CDB2 are started and ready
+- Verify that the default listener is started
 - Verify that PDB1 has sample data
 - Create a common user and grant it privileges
 - Use DBCA to clone a remote PDB from a CDB
@@ -21,76 +21,77 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+- Obtained and signed in to your `workshop-installed` compute instance.
 
 ## Task 1: Enable `ARCHIVELOG` mode on CDB1 and CDB2
 
-1. On your compute instance's desktop, open a terminal window.  
+1. Open a terminal window on the desktop.
 
 2. Run the `enable_ARCHIVELOG.sh` script and enter **CDB1** at the prompt to enable `ARCHIVELOG` mode on CDB1. The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
 
     ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
-    ORACLE_SID = [CDB1] ? CDB1
+    CDB1
     ```
 
 3. Run the `enable_ARCHIVELOG.sh` script again, and this time, enter **CDB2** at the prompt to enable `ARCHIVELOG` mode on CDB2.
 
     ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
-    ORACLE_SID = [CDB1] ? CDB2
+    CDB2
     ```
 
-## Task 2: Verify that the listeners for CDB1 and CDB2 are started and ready
+## Task 2: Verify that the default listener is started
 
-1. Start the Listener Control Utility.
-
-    ```
-    $ <copy>lsnrctl</copy>
-    ```
-
-2. Check that LISTENER_CDB1 is started. Look for `status READY` for CDB1 and PDB1 in the Service Summary.
+1. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
 
     ```
-    LSNRCTL> <copy>status LISTENER_CDB1</copy>
+    LSNRCTL> <copy>lsnrctl status</copy>
 
+    LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 19-AUG-2021 19:34:04
+
+    Copyright (c) 1991, 2021, Oracle.  All rights reserved.
+
+    Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+    STATUS of the LISTENER
+    ------------------------
+    Alias                     LISTENER
+    Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+    Start Date                19-AUG-2021 18:58:56
+    Uptime                    0 days 0 hr. 35 min. 8 sec
+    Trace Level               off
+    Security                  ON: Local OS Authentication
+    SNMP                      OFF
+    Listener Parameter File   /u01/app/oracle/product/19c/dbhome_1/network/admin/listener.ora
+    Listener Log File         /u01/app/oracle/diag/tnslsnr/workshop-installed/listener/alert/log.xml
+    Listening Endpoints Summary...
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5504))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5500))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5501))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB2/xdb_wallet))(Presentation=HTTP)(Session=RAW))
     Services Summary...
     Service "CDB1.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB1", status READY, has 1 handler(s) for this service...
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
     Service "CDB1XDB.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB1", status READY, has 1 handler(s) for this service...
-    Service "c6a44dd9e86f6a1de0534d00000acc39.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB1", status READY, has 1 handler(s) for this service...
-    Service "pdb1.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB1", status READY, has 1 handler(s) for this service...
-    The command completed successfully
-    ```
-
-3. Check that LISTENER_CDB2 is started. Look for `status READY` for CDB2.
-
-    ```
-    LSNRCTL> <copy>status LISTENER_CDB2</copy>
-
-    Services Summary...
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
     Service "CDB2.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB2", status READY, has 1 handler(s) for this service...
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
     Service "CDB2XDB.livelabs.oraclevcn.com" has 1 instance(s).
-    Instance "CDB2", status READY, has 1 handler(s) for this service...
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "c9d86333ac737d59e0536800000ad4f1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "pdb1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
     The command completed successfully
     ```
 
-4. If the listeners are not started, you can start them by entering the following commands.
+2. If LISTENER is not started, start it now.
 
     ```
-    LSNRCTL> <copy>start LISTENER_CDB1</copy>
-    LSNRCTL> <copy>start LISTENER_CDB2</copy>
+    LSNRCTL> <copy>lsnrctl start</copy>
     ```
 
-5. Exit the Listener Control Utility.
-
-    ```
-    LSNRCTL> <copy>exit</copy>
-    ```
 
 ## Task 3: Verify that PDB1 has sample data
 
@@ -101,27 +102,14 @@ This lab assumes you have:
     ORACLE_SID = [ORCL] ? CDB1
     ```
 
-2. Connect to CDB1 using SQL*Plus.
+2. Connect to PDB1.
 
     ```
-    $ <copy>sqlplus / as sysdba</copy>
-    ```
-
-3. Open PDB1.
-
-    ```
-    SQL> <copy>alter pluggable database PDB1 open;</copy>
-    Pluggable database altered.
-    ```
-
-4. Connect to PDB1.
-
-    ```
-    SQL> <copy>alter session set container = PDB1;</copy>
+    SQL> <copy>sqlplus system/Ora4U_1234@PDB1</copy>
     Session altered.
     ```
 
-5. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+3. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -202,7 +190,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     $ <copy>. oraenv</copy>
-    ORACLE_SID = [CDB1] ? CDB2
+    CDB2
     ```
 
 2. Connect to CDB2 as the `SYS` user.
@@ -314,4 +302,4 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 13 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 19 2021
