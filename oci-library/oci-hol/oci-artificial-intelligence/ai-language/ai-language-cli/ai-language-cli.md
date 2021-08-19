@@ -36,7 +36,12 @@ Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and cl
 ### 2: Enter Language CLI Command
 
 Enter any one of the Language Pre-Deployed CLI commands you want to execute.
+
 ![](./images/cloudShellCommand.png " ")
+Below is the command for Language Detection used in the above image:
+```
+<copy>oci ai language detect-language --text "Zoom interface is really simple and easy to use. The learning curve is very short thanks to the interface. It is very easy to share the Zoom link to join the video conference. Screen sharing quality is just ok. Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people to zoom bomb"</copy>
+```
 
 ### 2: View Result
 

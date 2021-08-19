@@ -1,4 +1,4 @@
-# Lab 5: Access OCI Language Service in DataScience NotebookSession.
+# Lab 5: Access OCI Language Service in DataScience Notebook Session.
  
 
 ## **Data Science Prerequisites:**
@@ -34,7 +34,7 @@ where data-scientists represents the name of your user group
 ```
 where dynamic-group represents the name of your dynamic group
 
-## **TASK 1:** Navigate to the NoteBook
+## **TASK 1:** Navigate to the Data Science Notebook Session
 
 Follow the below steps to open Notebook in DataScience:
 ### 1. Navigate to Data Science Service
@@ -53,7 +53,7 @@ Click Create Project to create a new project.
 <!-- Select the Project named 'oci-language-livelabs' -->
 ![](./images/2.png " ")
 
-### 3. Create Notebook
+### 3. Enter Project Details
 Enter name and click Create Button.
 <!-- Select the Notebook named 'Livelabs Notebook' -->
 ![](./images/3.png " ")
@@ -63,7 +63,7 @@ Enter name and click Create Button.
 Click Create Notebook Session to create a new Notebook session.
 ![](./images/4.png " ")
 
-### 5. Enter Details
+### 5. Enter Notebook Details
 Select a name.
 We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
 Set block storage to 50 GB.
@@ -106,7 +106,7 @@ To More about about how to create API Key and config file, Refer Lab-3(Setup API
 
 Open the Notebook that you've just uploaded
 
-Now go through each of the cells and run them one by one.
+Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
 These notebooks demonstrates how you can be more productive by using the various Language services.
 
