@@ -58,7 +58,7 @@ Here are the steps for creating a new group and assigning security policy requir
 ```
 <copy>
 Allow group MicroservicesAdmin to inspect users in tenancy
-Allow group MicroservicesAdmin to inspect all-resource in tenancy
+Allow group MicroservicesAdmin to inspect all-resources in tenancy
 
 Allow group MicroservicesAdmin to manage vaults in tenancy
 Allow group MicroservicesAdmin to manage buckets in tenancy
