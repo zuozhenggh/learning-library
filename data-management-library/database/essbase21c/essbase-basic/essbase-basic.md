@@ -39,7 +39,13 @@ Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on
     http://[Instance-Public-IP]:9000/essbase/jet
     </copy>
     ```
-
+    ```
+    Username : <copy>Weblogic</copy>
+    ```
+    ```
+    Password : <copy>Oracle_4U</copy>
+    ```
+    ![](./images/image14_7.png " ")
 2.	On the Applications tab, click **Import** option in the Essbase web interface as shown below.
 
     ![](./images/image14_1.png " ")
