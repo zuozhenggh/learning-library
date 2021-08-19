@@ -1,4 +1,4 @@
-# Lab 3: Access OCI Language Service with Language SDKs
+# Lab 3: Access OCI Language with Language SDKs
 
 ## Introduction
 

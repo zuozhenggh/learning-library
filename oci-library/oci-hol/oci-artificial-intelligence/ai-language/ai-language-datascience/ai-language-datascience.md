@@ -1,4 +1,4 @@
-# Lab 5: Access OCI Language Service in DataScience Notebook Session.
+# Lab 5: Access OCI Language in DataScience Notebook Session.
  
 
 ## **Data Science Prerequisites:**

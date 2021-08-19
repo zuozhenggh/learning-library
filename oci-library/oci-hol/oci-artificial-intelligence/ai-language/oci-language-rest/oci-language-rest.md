@@ -1,4 +1,4 @@
-# Lab 4: Access OCI Language Service with REST APIs
+# Lab 4: Access OCI Language with REST APIs
 
 ## Introduction
 
@@ -76,4 +76,4 @@ https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/det
 
 ```
 
-
+[Proceed to the next section](#next).
