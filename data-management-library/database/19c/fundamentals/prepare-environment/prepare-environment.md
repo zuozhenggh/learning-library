@@ -85,7 +85,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 10. Verify that the information is correct.
 
-  ![Review page for workshop-staged](images/review-workshop-staged.png "Review page for workshop-staged")
+    ![Review page for workshop-staged](images/review-workshop-staged.png "Review page for workshop-staged")
 
 11. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
@@ -148,7 +148,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 10. Verify that the information is correct.
 
-  ![Review page for workshop-installed](images/review-workshop-installed.png "Review page for workshop-installed")
+    ![Review page for workshop-installed](images/review-workshop-installed.png "Review page for workshop-installed")
 
 11. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
@@ -164,7 +164,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 14. In a browser, paste the URL to your `workshop-installed` compute instance.
 
-   You are automatically logged in to your compute instance and presented with a user-friendly desktop.
+    You are automatically logged in to your compute instance and presented with a user-friendly desktop.
 
 
 
