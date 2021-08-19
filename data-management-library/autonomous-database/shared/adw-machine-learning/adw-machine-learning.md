@@ -39,7 +39,7 @@ The first step is to download the sample notebook and then import it into the Or
 
 ## Task 5: Select the lab notebook .json file you downloaded earlier
 
-1. Select the lab notebook **Basic\_Machine\_Learning.json** file you downloaded previously in Step 1.
+1. Select the lab notebook **Basic\_Machine\_Learning.json** file you downloaded previously in Task 1.
 
     ![](./images/snap0014523.jpg " ")
 

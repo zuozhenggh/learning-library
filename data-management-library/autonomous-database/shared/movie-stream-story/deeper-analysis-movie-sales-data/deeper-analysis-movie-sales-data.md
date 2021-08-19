@@ -55,14 +55,13 @@ What if we want to group the days of week into two new custom aggregates, effect
 4. We can now check whether Monday is still the start of the week by simply re-running the same query:
 
     ```
-    <copy>SSELECT to_char(date'2018-01-01', 'd') day_number
+    <copy>SELECT to_char(date'2018-01-01', 'd') day_number
     FROM dual;</copy>
     ```
 
     It will now return the value of 2.
 
     This is because in America the week starts on Sunday, making Monday day 2.
-
 
 ## Task 2: Revenue Analysis by Weekdays vs. Long Weekends
 
@@ -106,15 +105,13 @@ Now we know which day is the first day of the week we can move on. In spreadshee
 
 2. This will generate the following output:
 
-    ![Result of query using MODEL clause](images/lab-5b-step-2-substep-2.png)
+    ![Result of query using MODEL clause](images/lab-5b-step-2-substep-2.png " ")
 
 See how easy it is to build upon existing discoveries using SQL to extend our understanding of the data! The concept of being able to add new rows using a spreadsheet-like approach within SQL is unique to Oracle. The MODEL clause creates two new rows that we identify as **day 8** and **day 9**. These new rows are assigned names -  day\_name\[8\] = 'Weekday' and day\_name\[9\] = 'Long Weekend'. The calculation of revenue for these two new rows uses a similar approach to many spreadsheets: revenue for day \[8\] is derived from adding together revenue for day \[3\]+ revenue for \[4\] + revenue for day \[5\].
-
 
 ## Task 3: Revenue and Contribution Analysis by Weekdays vs. Long Weekends
 
 If we tweak and extend the last query we can expand the MODEL clause to also calculate contribution using a similar syntax to a spreadsheet:
-
 
     contribution[1] = trunc((revenue[1])/(revenue[1]+revenue[2]+revenue[3]+revenue[4]+revenue[5]+revenue[6]+revenue[7])*100,2)
 
@@ -167,7 +164,7 @@ This statement calculates the contribution for Sunday (day 1) by taking the reve
 
 2. This will generate the following output:
 
-    ![Result of query using MODEL clause](images/lab-5b-step-3-substep-2.png)
+    ![Result of query using MODEL clause](images/lab-5b-step-3-substep-2.png " ")
 
 
 3. As with earlier examples, we can pivot the results and the final pivoted version of our code looks like this:
@@ -225,7 +222,7 @@ This statement calculates the contribution for Sunday (day 1) by taking the reve
 
 4. The final output looks like this, where we can now see that over 60% of revenue is generated over those days within a Long Weekend! Conversely, the other three days in our week (Tuesday, Wednesday, Thursday) are generating nearly 40% of our weekly revenue, which means that on work/school nights we are still seeing strong demand for streaming movies. This type of information might be useful for our infrastructure team so they can manage their resources more effectively and our marketing team could use this information to help them drive new campaigns.
 
-    ![Final query output using Pivot](images/lab-5b-step-3-substep-4.png)
+    ![Final query output using Pivot](images/lab-5b-step-3-substep-4.png " ")
 
 
 ### Recap

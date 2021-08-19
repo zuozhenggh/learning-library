@@ -70,7 +70,7 @@ For this workshop we need to create one new user.
   - Select **UNLIMITED** from the drop down menu for Quota on tablespace DATA
   - Leave the **Password Expired** toggle button as off (note this controls whether the user will be prompted to change their password when they next login).
   - Leave the **Account is locked **toggle button as off. 
-  
+
 Next you will examine the form.
 
 6. When you examine the form, it should look like this:
@@ -93,7 +93,7 @@ Now you need to switch to working as the user QTEAM, so you can start the next l
 
   ![ALT text is not available for this image](images/click-qteam.png)
 
-2. Enter the username QTEAM and the password you defined in Step 2 when you created this user.
+2. Enter the username QTEAM and the password you defined in Task 1 when you created this user.
 
   ![ALT text is not available for this image](images/qteam-login.png)
 
