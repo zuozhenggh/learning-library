@@ -57,15 +57,21 @@ Here are the steps for creating a new group and assigning security policy requir
 
 ```
 <copy>
-Allow group MicroservicesAdmin to manage users in compartment grabdish
+Allow group MicroservicesAdmin to inspect users in tenancy
+Allow group MicroservicesAdmin to inspect all-resource in tenancy
+
+Allow group MicroservicesAdmin to manage vaults in tenancy
+Allow group MicroservicesAdmin to manage buckets in tenancy
+Allow group MicroservicesAdmin to manage objects in tenancy
+
 Allow group MicroservicesAdmin to manage keys in compartment grabdish
 Allow group MicroservicesAdmin to manage secret-family in compartment grabdish
 Allow group MicroservicesAdmin to manage instance-family in compartment grabdish
 Allow group MicroservicesAdmin to inspect all-resources in compartment grabdish
 
-Allow group MicroservicesAdmin to use virtual-network-family in compartment grabdish
+Allow group MicroservicesAdmin to use virtual-network-family in tenancy
 Allow group MicroservicesAdmin to inspect tenancies in compartment grabdish
-Allow group MicroservicesAdmin to use volume-family in compartment grabdish
+Allow group MicroservicesAdmin to use volume-family in tenancy
 
 Allow group MicroservicesAdmin to manage cluster-family in compartment grabdish
 Allow group MicroservicesAdmin to manage load-balancers in compartment grabdish
@@ -73,9 +79,6 @@ Allow group MicroservicesAdmin to manage autonomous-database-family in compartme
 Allow group MicroservicesAdmin to manage autonomous-database in compartment grabdish
 Allow group MicroservicesAdmin to use virtual-network-family in compartment grabdish
 
-Allow group MicroservicesAdmin to manage vaults in tenancy
-Allow group MicroservicesAdmin to manage buckets in tenancy
-Allow group MicroservicesAdmin to manage objects in tenancy
 </copy>
 ```
 7. And finally, make sure your user account has been added to the group created above.
