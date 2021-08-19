@@ -1,0 +1,1 @@
+The `runInstaller` command from Oracle home starts the database installer with the Configuration Option window.
