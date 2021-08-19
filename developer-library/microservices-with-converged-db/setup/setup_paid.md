@@ -25,11 +25,67 @@ Be sure to select the **home region** of your tenancy.  Setup will only work in 
 
   ![](images/home-region.png " ")
 
-## Task 3: Check Your Tenancy Service Limits
+## Task 3: Create group and IAM policies
+A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
-If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step.
+If you are not an administrator on your tenancy, you must insure that additional policies have been added to the group you are a member of or ask your admin to create a separate group for you with additional policies. This group will have IAM policies to create and manage the resources in the compartment.
 
-If, however, you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table.
+Here are the steps for creating a new group and assigning security policy required for this workshop (only a user with the admin account will be able to perform the below steps):
+
+1. Lets create compartment **grabdish** as shown.
+  ![](images/create-comp.png " ")
+
+2. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
+  ![](images/id-groups.png " ")
+
+3. Click Create Group.
+  ![](images/create-group.png " ")
+
+4. In the Create Group dialog box, enter the following:
+ - **Name**: Enter a unique name for your group such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
+ - **Description**: Enter a description (for example, “New group for microservices workshop”).
+ - Click **Create**.
+  ![](images/new-group.png " ")
+
+  ![](images/get-new-group.png " ")
+
+ 6. Now, let’s create security policies that give your group permissions to execute the setup steps for this workshop
+
+  ![](images/create-policy.png " ")
+
+  Using **Edit Policy Statement** option, add all the below statements to the policy created above.
+
+```
+<copy>
+Allow group MicroservicesAdmin to inspect users in tenancy
+Allow group MicroservicesAdmin to inspect all-resources in tenancy
+
+Allow group MicroservicesAdmin to manage vaults in tenancy
+Allow group MicroservicesAdmin to manage buckets in tenancy
+Allow group MicroservicesAdmin to manage objects in tenancy
+
+Allow group MicroservicesAdmin to manage keys in compartment grabdish
+Allow group MicroservicesAdmin to manage secret-family in compartment grabdish
+Allow group MicroservicesAdmin to manage instance-family in compartment grabdish
+Allow group MicroservicesAdmin to inspect all-resources in compartment grabdish
+
+Allow group MicroservicesAdmin to use virtual-network-family in tenancy
+Allow group MicroservicesAdmin to inspect tenancies in compartment grabdish
+Allow group MicroservicesAdmin to use volume-family in tenancy
+
+Allow group MicroservicesAdmin to manage cluster-family in compartment grabdish
+Allow group MicroservicesAdmin to manage load-balancers in compartment grabdish
+Allow group MicroservicesAdmin to manage autonomous-database-family in compartment grabdish
+Allow group MicroservicesAdmin to manage autonomous-database in compartment grabdish
+Allow group MicroservicesAdmin to use virtual-network-family in compartment grabdish
+
+</copy>
+```
+7. And finally, make sure your user account has been added to the group created above.
+
+## Task 4: Check Your Tenancy Service Limits
+
+If you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table.
 
 | Service          | Scope  | Resource                                             | Available | Free Account Limit |
 |------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
@@ -49,7 +105,7 @@ The Tenancy Explorer may be used to locate existing resources: **Governance & Ad
 
 It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
-## Task 4: Launch the Cloud Shell
+## Task 5: Launch the Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
@@ -57,7 +113,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/open-cloud-shell.png " ")
 
-## Task 5: Create a Folder to Contain the Workshop Code
+## Task 6: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
@@ -75,7 +131,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## Task 6: Make a Clone of the Workshop Setup Script and Source Code
+## Task 7: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -95,7 +151,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## Task 7: Start the Setup
+## Task 8: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -128,17 +184,21 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/example-user-ocid.png " ")
 
-3. The setup will automatically upload an Auth Token to your tenancy so that docker can login to the OCI Registry.  If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room.  This can be done through the OCI console.
+3. The setup will ask for you to enter your Compartment OCID.
+
+  ![](images/get-comp-ocid.png " ")
+
+4. The setup will automatically upload an Auth Token to your tenancy so that docker can login to the OCI Registry.  If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room.  This can be done through the OCI console.
 
   ![](images/get-user-ocid.png " ")
 
   ![](images/delete-auth-token.png " ")
 
-4. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
+5. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-5. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
+6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-## Task 8: Monitor the Setup
+## Task 9: Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -157,7 +217,7 @@ You can monitor the setup progress from a different browser window or tab.  It i
 
    ![](images/select-compartment.png " ")
 
-## Task 9: Complete the Setup
+## Task 10: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
@@ -181,7 +241,7 @@ Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, 
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata, Irina Granat, , Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
