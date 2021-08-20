@@ -32,7 +32,7 @@
             "filename": "../extract/extract.md"
         },
         {
-            "title": "Lab 5: (Optional) Use the Admin Client to View Extract Statistics and Log messages",
+            "title": "Lab 5: (Optional) Use the Admin Client to View Extract Statistics and Log Messages",
             "description": "Connect to the Marketplace Oracle GoldenGate Admin Client",
             "filename": "../admin-client/admin-client.md"
         },
