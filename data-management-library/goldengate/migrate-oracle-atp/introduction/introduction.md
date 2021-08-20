@@ -56,5 +56,5 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 ## Acknowledgements
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
-* **Contributors** - 
+* **Contributors** - Vahidin Qerimi - Principal Solution Engineer
 * **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021
