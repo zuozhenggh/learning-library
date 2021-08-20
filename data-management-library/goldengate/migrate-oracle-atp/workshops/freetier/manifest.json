@@ -5,7 +5,7 @@
         {
             "title": "Introduction",
             "description": "Welcome to migrate HR database application to Cloud using OCI GoldenGate Service workshop.",
-            "filename": "../../../introduction/introduction.md"
+            "filename": "./../../introduction/introduction.md"
         },
         {
           "title": "Getting Started",
@@ -15,19 +15,19 @@
         {
             "title": "Lab 1: Set Up the Environment",
             "description": "Provision work environment using Terraform automation script.",
-            "filename": "../../../terraform/terraform.md"
+            "filename": "./../../terraform/terraform.md"
         },
         {
             "title": "Lab 2: Prepare the target ADB environment",
-            "filename": "../../../prepare-target/prepare-target.md"
+            "filename": "./../../prepare-target/prepare-target.md"
         },
         {
             "title": "Lab 3: Migration",
-            "filename": "../../../migration/migration.md"
+            "filename": "./../../migration/migration.md"
         },
         {
             "title": "Bonus Lab 4: Import HR application to APEX",
-            "filename": "../../../bonus/bonus.md"
+            "filename": "./../../bonus/bonus.md"
         },
         {
             "title": "Need Help?",

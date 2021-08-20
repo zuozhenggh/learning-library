@@ -6,9 +6,21 @@ In this workshop, we will migrate the sample HR database application to an Auton
 
 *Estimated total Workshop Time*: 1.5 hours
 
-### About HR database
+### About HR schema
+
+We are about to migrate Oracle's famous sample schema HR to the Oracle Autonomous Database. This sample database schema will represent our on-premises source database and consists of multiple tables. 
 
 ### About GoldenGate Service
+
+Oracle Cloud Infrastructure (OCI) GoldenGate is a managed service providing a real-time data mesh platform, which uses replication to keep data highly available, and enabling real-time analysis. You can design, execute and monitor their data replication and stream data processing solutions without the need to allocate or manage compute environments, it is fully managed service. Today we will explore it's capabilities and migrate our source database to target.
+
+### About Autonomous Database
+
+This is self-driving, converged, multimodel database and machine learning based automation takes care of it's operational lifecycle management. Auto provisioning and auto tuning to simplify the creation and optimization of all data stores in the cloud. You can start with the lowest cost and commitment, and autoscale as the business grows. Today we will use this 19c database as our target database.
+
+### About Application Express (APEX)
+
+First of all Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. Also APEX is built-in tool of the Autonomous Database and we will explore the best capabilities in the bonus step.
 
 ### About Terraform 
 
