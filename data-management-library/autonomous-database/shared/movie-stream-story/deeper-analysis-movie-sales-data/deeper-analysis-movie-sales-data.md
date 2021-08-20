@@ -12,6 +12,13 @@ Estimated Lab Time: 10 minutes
 
 - Understand how to define new calculations using a spreadsheet-like syntax
 
+### Prerequisites
+- This lab requires completion of the previous labs in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ### Going A Little Deeper
 
@@ -224,6 +231,7 @@ This statement calculates the contribution for Sunday (day 1) by taking the reve
 
     ![Final query output using Pivot](images/lab-5b-step-3-substep-4.png " ")
 
+You may now [proceed to the next lab](#next).
 
 ### Recap
 
@@ -232,9 +240,6 @@ Let's quickly recap what has been covered in this lab:
 - Explored power of Oracle's built in spreadsheet-like SQL Model clause to add new rows to our results
 
 - Learned how to combine spreadsheet-like operations with other SQL features such as PIVOT
-
-
-Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 
