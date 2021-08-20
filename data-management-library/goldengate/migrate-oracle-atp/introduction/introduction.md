@@ -1,4 +1,4 @@
-# Migrate HR database application to Oracle Cloud using OCI GoldenGate Service
+# Migrate HR database application to OCI
 
 ## Introduction
 
