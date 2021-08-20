@@ -23,7 +23,7 @@ This lab assumes you have:
 - SSH Keys
 - Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
 
-## **STEP 1**: Create Stack:  Compute + ADB + Networking
+## Task 1: Create Stack:  Compute + ADB + Networking
 
 If you already have a VCN setup, please visit the appendix to see how to optionally create a stack with just Compute + ADB.
 
@@ -90,7 +90,7 @@ If you already have a VCN setup, please visit the appendix to see how to optiona
 
 
 
-## **STEP 2**: Terraform Apply
+## Task 2: Terraform Apply
 When using Resource Manager to deploy an environment, execute a terraform **apply** to actually create the configuration.  Typically you would execute a Terraform Plan first.  This is an optional step that we've included in the Appendix.  Please see the Appendix to run the plan step to validate the configuration.  Otherwise let's proceed and create your stack.  
 
 1.  At the top of your page, click on **Stack Details**.  click the button, **Terraform Actions** -> **Apply**.  This will create your network (unless you opted to use an existing VCN) and the compute instance.
@@ -118,7 +118,7 @@ When using Resource Manager to deploy an environment, execute a terraform **appl
 
 3.  Note your admin password, your autonomous database ocid (Oracle Cloud ID) and Instance IP.  You will need that for the subsequent sections.  Copy this information into a text pad or note or you can reference it directly.
 
-## **STEP 3**: Verify connection to your instance
+## Task 3: Verify connection to your instance
 
 Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys)
 ***Note:*** *If you are not using Cloud Shell and are using your laptop to connect your corporate VPN may prevent you from logging in.*

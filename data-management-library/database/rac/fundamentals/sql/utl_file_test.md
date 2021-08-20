@@ -28,7 +28,7 @@ Lastly, the client (text I/O) and server implementations are subject to operatin
 
 UTL\_FILE provides file access both on the client side and on the server side. When run on the server, UTL\_FILE provides access to all operating system files that are accessible from the server. On the client side, UTL\_FILE provides access to operating system files that are accessible from the client.
 
-## **STEP 1:**  Create a DIRECTORY OBJECT and write a file in this location
+## Task 1:  Create a DIRECTORY OBJECT and write a file in this location
 
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
@@ -71,7 +71,7 @@ UTL\_FILE provides file access both on the client side and on the server side. W
     ![](./images/dir-num5.png " " )
 
 
-## **STEP 2:** Reconnect to SQL\*Plus and read the file you just created
+## Task 2: Reconnect to SQL\*Plus and read the file you just created
 
 1. Connect to the pluggable database, **PDB1** as the SH user and read the file **data.txt** 10 or 20 times
 

@@ -8,7 +8,7 @@ This lab will demonstrate both provisioning and configuration of your infrastruc
 
   **Note:** The OCI UI is regularly being enhanced.  Therefore, some screenshots in the instructions might be different than actual user interface.
 
-## **Step 1:** Getting started with Ansible
+## Task 1: Getting started with Ansible
 In this section we will download sample Ansible resources and configure it to work with our OCI tenancy. Before starting this section, make sure you have cloud shell open as you executed in the previous section.
 
 1. Download and unzip the sample files.
@@ -117,7 +117,7 @@ In this section we will download sample Ansible resources and configure it to wo
 9.  Open a new tab in the web browser and paste in the IP address; press enter.  You should encounter an error because nothing has been installed on the server yet.  Proceed to the next section.
 
 
-## **Step 4:** Deploying applications and code with Ansible
+## Task 4: Deploying applications and code with Ansible
 Now that we have provisioned our infrastructure, it is time to deploy an application (Apache) and some code (a simple HTML page).
 
 1. Return to your SSH terminal session.
@@ -137,7 +137,7 @@ In this tutorial, Ansible is deploying a simple HTML page. You can make modifica
 
 When finished, refresh your browser to see the changes.
 
-## **Step 4:** Cleaning up your environment
+## Task 4: Cleaning up your environment
 In this exercise, all of the resources provisioned by Ansible were also tagged. The sample ``teardown.yaml`` script leverages these tags to find and destroy all the resources that were created.
 
 1. Run the following command to remove all the resources.

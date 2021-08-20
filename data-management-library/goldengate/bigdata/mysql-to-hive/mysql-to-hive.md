@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -40,7 +40,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
  3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration
+## Task 1: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
 2. Select **R** to reset the lab then Option **4**
@@ -86,7 +86,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 Now we need to start the GG manager process on both the source and target. Keep these sessions open for the rest of this lab.
 
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 
 4. In the first or `source` terminal session, go to the **GG Home for MySQL**, and start the manager process. You can cd to the directory:
 
@@ -165,7 +165,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     <copy> info all</copy>
     ```
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 
 Now that the source side is setup, let us configure GG on the target side (Hive Avro format).
 
@@ -218,7 +218,7 @@ Now that the source side is setup, let us configure GG on the target side (Hive 
     ```
     <copy> info all</copy>
     ```
-## **STEP 4**:GoldenGate Hive Target
+## Task 4:GoldenGate Hive Target
 
 Now that GG processes have been created and started on both the source and target, let’s take a look at what’s in the Hive directories (schema & data) – they should be empty. Then we’ll load some data on the MySQL database `ggsource` and GG will extract and write it to the Hive target. GG will create a subdirectory for each table in the base directory `/user/ggtarget/hive/data`.
 
@@ -250,7 +250,7 @@ Now that GG processes have been created and started on both the source and targe
 
 **Notes**:Starting with GG version 12.2.0.1.1, GG automatically creates the Hive tables with .avsc schema file. Let us take a look at the contents of the tables
 
-## **STEP 5**: GoldenGate Results using HUE
+## Task 5: GoldenGate Results using HUE
 
 1. Open a Browser window from your local machine to visualize data from HUE frontend application.
     - URL

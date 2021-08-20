@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
 * Lab: Configure the Project to Match the Kubernetes Cluster
 * Lab: Test the Implementation
 
-## **Step 1**: Clone a Skill
+## Task 1: Clone a Skill
 
 In this lab, we're starting from an existing one. So, the first thing you will do is clone an existing skill.
 
@@ -72,7 +72,7 @@ In this lab, we're starting from an existing one. So, the first thing you will d
 
 As we don’t have enough time, we will skip this step.
 
-## **Step 2**: Modify the Dialog Flow
+## Task 2: Modify the Dialog Flow
 
 *The dialog flow is a conversation blueprint that defines interactions users may have with the skill. Each interaction is defined as a state. Each state references a component, which renders a skill response, receives user input, sets and resets variables, resolves user intents, or authenticates users.*
 
@@ -170,7 +170,7 @@ Besides, you can click the debug icon (![debug icon](./images/image192.png)), wh
 
 If you have gotten into a jam and can’t get anything to work, open the [flow.txt](https://docs.oracle.com/en/cloud/paas/digital-assistant/tutorial-skill/files/your-first-dialog-flow.txt), and replace the content in your dialog flow with the content from the file.
 
-## **Step 3**: Orders against our microservices
+## Task 3: Orders against our microservices
 
 Currently, our orders are being stored on a shared database. Now, we will modify the flow to point to our database.
 
@@ -190,7 +190,7 @@ Currently, our orders are being stored on a shared database. Now, we will modify
 
   ![](./images/image194.png " ")
 
-## **Step 4**: Test Your Skill
+## Task 4: Test Your Skill
 
 Now that all of the skill's pieces are in place let's test its behavior.
 

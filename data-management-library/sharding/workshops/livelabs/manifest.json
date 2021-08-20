@@ -8,37 +8,32 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
-    },
-    {
-      "title": "Lab 1: Environment Setup",
+      "title": "Environment Setup",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab 4: Initialize Environment",
+      "title": "Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: About Eshop",
+      "title": "About Eshop",
       "description": "About Eshop",
       "filename": "../../eshop/eshop.md"
     },
     {
-      "title": "Lab 6: Exploring Sharding Topology",
+      "title": "Exploring Sharding Topology",
       "description": "Exploring Sharding Topology",
       "filename": "../../topology/topology.md"
     },
     {
-      "title": "Lab 7: Eshop Application Schema & Code Snippet (read-only)",
+      "title": "Eshop Application Schema & Code Snippet (read-only)",
       "description": "Eshop App schema & Code Snippet",
       "filename": "../../appschema/appschema.md"
     },
     {
-      "title": "Lab 8: Application Queries on Sharded Database",
+      "title": "Application Queries on Sharded Database",
       "description": "Application Queries on sharding Database",
       "filename": "../../appqueries/appqueries.md"
     },

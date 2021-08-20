@@ -16,9 +16,7 @@ In this lab, you will be able to play with the DBSAT and understand how it works
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -40,7 +38,7 @@ This lab assumes you have:
 |12| Processing DBSAT report JSON output | 10 minutes |
 |13| (Optional) Uninstalling DBSAT | <5 minutes |
 
-## **STEP 1**: Installing DBSAT
+## Task 1: Installing DBSAT
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -72,7 +70,7 @@ This lab assumes you have:
     - For this lab, the DBSAT zip file has already been downloaded to DBSec-Lab VM into the folder **/u01/app/sources**
     - But Oracle DBSAT can be found officially at [Oracle Support Document 2138254.1](https://support.oracle.com/epmos/faces/DocumentDisplay?id=2138254.1)
 
-## **STEP 2**: Collect data
+## Task 2: Collect data
 
 1. Go to the dbsat directory just created
 
@@ -120,7 +118,7 @@ This lab assumes you have:
     - In order to collect complete data, as it executes operating system commands to collect process and file system information, the DBSAT collector must run on the server that contains the database
     - In addition, the DBSAT collector must be run as an OS user with read permissions on files and directories under `ORACLE_HOME`, and if set up, `TNS_ADMIN`
 
-## **STEP 3**: Generate the report
+## Task 3: Generate the report
 1. Let’s run dbsat to analyze data from the pdbhol file
 
       ````
@@ -164,7 +162,7 @@ This lab assumes you have:
 
 6. **Copy the URL provided as the output fo the next step!**
 
-## **STEP 4**: Analyze the Report - Summary
+## Task 4: Analyze the Report - Summary
 In this exercise, you will learn how to how to analyze the **Database Security Risk Assessment Report**. We will dive into the summary table, different types of risks, the anatomy of a finding and the actual findings.
 
 Please take a couple of minutes to scroll through the HTML report. You can click the links in the summary table to go to a specific section or use the navigation arrows at the bottom right.
@@ -189,7 +187,7 @@ Please take a couple of minutes to scroll through the HTML report. You can click
     - If you run DBSAT against ADW/ATP or run the collector remotely you will get less than 80 findings
     - The main reason for this is that we skip the collection of OS related findings and findings that depend on reading files from the operating system
 
-## **STEP 5**: Analyze the Report - Findings
+## Task 5: Analyze the Report - Findings
 
 In this exercise, you will learn what a **Finding** is.
 
@@ -221,7 +219,7 @@ If the finding is related to a CIS Oracle Database Benchmark 12c v2.0.0 recommen
 
    ![](./images/dbsat-008.png " ")
 
-## **STEP 6**: Analyze the Report - Details
+## Task 6: Analyze the Report - Details
 
 In this exercise, you will be guided by relevant DBSAT findings. This will provide you with knowledge on what DBSAT validates and the value it provides
 
@@ -404,7 +402,7 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
 
 25. **Congratulations, so far you have learned how to use DBSAT collector and reporter to Assess your Database Security!**
 
-## **STEP 7**: Discover Sensitive Data
+## Task 7: Discover Sensitive Data
 In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discoverer will connect to the database and collect data needed for analysis based on settings specified in the configuration and sensitive pattern files.
 
 1. Go to the scripts directory
@@ -495,7 +493,7 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 
     **Note**: For real life cases you won’t need to copy file to glassfish, just unzip the files and open the html!
 
-## **STEP 8**: Analyze the Discoverer Report - Summary
+## Task 8: Analyze the Discoverer Report - Summary
 In this exercise, you will learn how to analyze the **Sensitive Data Assessment Report**. We will dive into the different sections of the report and in subsequent exercises in more detail about the value the discovery parameters provide. Please take a couple of minutes to scroll through the HTML report (you can use the navigation arrows at the bottom right to navigate between different sections)
 
 1. Initial Section
@@ -560,7 +558,7 @@ In this exercise, you will learn how to analyze the **Sensitive Data Assessment 
 
     **Note**: DBSAT discoverer csv output file can be used to help Oracle Audit Vault and Database Firewall understand what sensitive data you have and provide you with reports on who is accessing sensitive data – Privacy reports
 
-## **STEP 9**: Advanced Discoverer - Getting into dbsat.config Discovery parameters
+## Task 9: Advanced Discoverer - Getting into dbsat.config Discovery parameters
 In this exercise, you will learn how **dbsat.config** parameters determine the behavior of DBSAT Discoverer:
     - Use the `EXCLUDE_LIST_FILE` parameter to exclude a column from the report
     - Use the `SCHEMA_SCOPE` parameter to focus the analysis on a specific schema
@@ -695,7 +693,7 @@ In this exercise, you will learn how **dbsat.config** parameters determine the b
 
    ![](./images/dbsat-043.png " ")
 
-## **STEP 10**: Advanced Discoverer - Getting into Pattern files, Sensitive Types, and Categories
+## Task 10: Advanced Discoverer - Getting into Pattern files, Sensitive Types, and Categories
 
 1. Let's start by adding some sample data to work with in the next exercise. For that you will create the schema `FINACME` and insert some sample **Company Financial Information**
 
@@ -761,7 +759,7 @@ In this exercise, you will learn how **dbsat.config** parameters determine the b
 
 7. You are all set now!
 
-## **STEP 11**: Advanced Discoverer - Pattern Files
+## Task 11: Advanced Discoverer - Pattern Files
 
 DBSAT uses pattern files and the regexes that are there defined to find sensitive data
 
@@ -916,7 +914,7 @@ DBSAT uses pattern files and the regexes that are there defined to find sensitiv
 
    ![](./images/dbsat-049.png " ")
 
-## **STEP 12**: Processing DBSAT report JSON output
+## Task 12: Processing DBSAT report JSON output
 In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "`dbsat_extract`"), the JSON output report, and how to get a relational view from it. The primary purpose of the JSON report is to open DBSAT reporter to integration with 3rd party tools. Another use case could be to build a model to load data from multiple databases and be able to compare/generate side-by-side reports.
 
 **Note**: These sample utilities can be downloaded from My Oracle Support Doc **ID 2138254.1** but the zip file is included in the DBSec Lab VM image for your convenience
@@ -1040,7 +1038,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
 
     - Type "*`exit`*"
 
-## **STEP 13**: (Optional) Uninstalling DBSAT
+## Task 13: (Optional) Uninstalling DBSAT
 
 1. Go to the scripts directory
 

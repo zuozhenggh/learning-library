@@ -16,7 +16,7 @@ Estimated Lab Time: 10 Minutes
 Watch the video below for an overview of the SQL and PL/SQL Sequences lab
 [](youtube:x8UkHPBkwJo)
 
-## **STEP 1:**  Build Tom Kyte's RUNSTATS package
+## Task 1:  Build Tom Kyte's RUNSTATS package
 
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
@@ -162,7 +162,7 @@ Watch the video below for an overview of the SQL and PL/SQL Sequences lab
 
     ![](./images/seq-step1-num4.png " ")
 
-## **STEP 2:** Sequence Test
+## Task 2: Sequence Test
 
 1. Open a connection to the pluggable database PDB1 as SYS on each node. We are forcing connections to a given instance.
 

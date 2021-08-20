@@ -44,7 +44,7 @@ To download the notebook version of this lab (without screenshots), click [lab5 
 
 [](include:import)
 
-## **Step 1**: Import OML4Py and Supporting Libraries and Create Data Table
+## Task 1: Import OML4Py and Supporting Libraries and Create Data Table
 
 In Step 1 to Step 5, you learn about Embedded Python Execution.
 In step 6 to 15, you will work with Python Script Repository.
@@ -80,7 +80,7 @@ In step 6 to 15, you will work with Python Script Repository.
     ```
     ![IRIS table](images/iris_table.png "IRIS table")
 
-## **Step 2:** Build and Score a Linear Model from sklearn in Python
+## Task 2: Build and Score a Linear Model from sklearn in Python
 In this step, you will validate your Python script, validate the user-defined function before calling the embedded Python APIs.  You will also build a linear regression model LinearRegression.
 When working with embedded Python execution, a typical workflow is:
 
@@ -150,7 +150,7 @@ When working with embedded Python execution, a typical workflow is:
 
    ![Generating a scatter plot](images/scatterplot_iris.png "Scatter plot")
 
-## **Step 3:** Build the Model Using Embedded Python Execution
+## Task 3: Build the Model Using Embedded Python Execution
 In this step, you will build the same linear model, but using the embedded Python execution Python engines under control of the Oracle Autonomous Database environment. You will perform the following tasks:
 
 * Define the function `build_lm_1`, that returns the model as the result. This is referred to as a user-defined function.
@@ -275,7 +275,7 @@ In this step, you will build the same linear model, but using the embedded Pytho
     ```
     ![Using the row_apply function](images/row_apply.png "Using the row_apply function")
 
-## **Step 4:** Build One Model per Species Using Group_Apply Function
+## Task 4: Build One Model per Species Using Group_Apply Function
 This step shows how to use the `oml.group_apply` function for model building. The `group_apply` function passes the `oml.DataFrame` specified by the data argument to the user-defined function as its first argument. The index argument `oml.group_apply` specifies the columns of `oml.DataFrame` by which the database groups the data for processing by the user-defined Python function. The `group_apply` function can use data-parallel execution, in which one or more Python engines perform the same Python function on different groups of data.
 
 In this step, you build three models, one specific to each species and return them as a dictionary. These models are indexed by their corresponding index value.
@@ -376,7 +376,7 @@ Use the `group_apply` function to count the number of each species in the data s
 **Try it yourself:**
 Use the `group_apply` function to count the number of each species in the data set.
 
-## **Step 5:** Return Multiple Images from Embedded Python Execution
+## Task 5: Return Multiple Images from Embedded Python Execution
 This step shows how to create a function `RandomRedDots` that creates a simple DataFrame and generates two plots of random red dots. You create a function named `RandomRedDots` in the Python Script Repository, and then run the native Python function.
 
 >**Note:** To know about **Python Script Repository**, go to step 6 in this lab.
@@ -469,7 +469,7 @@ Run the following script to define the `RandomRedDots2` function that generates 
     ![Scatter plot of RandomRedDots2](images/randomreddots2.png "Scatter plot of RandomRedDots2")
 
 
-## **Step 6:** Use the Python Script Repository
+## Task 6: Use the Python Script Repository
 Step 6 to 15, you will work with Python Script Repository.
 
 OML4Py stores named user-defined functions called scripts in the script repository.  You can make scripts either private or global. A private script is available only to the owner. A global script is available to any user. For private scripts, the owner of the script may grant the read privilege to other users or revoke that privilege.
@@ -513,7 +513,7 @@ To illustrate using the Python Script Repository, you will define a function `bu
     ```
     ![Viewing the build_lm_str string](images/view_build_lm_str.png "Viewing the build_lm_str string")
 
-## **Step 7:** Create Scripts in Repository
+## Task 7: Create Scripts in Repository
 In this step, you will use the function `oml.script.create` to create a script `MyLM_function`.
 
 1. Run the `oml.script.drop` script first to check if a script by the name `MyLM_function` exists, and drop it if it exists. Then use the `oml.script.create` script to create the script `MyLM_function`. Note that we have the `overwrite` argument set to `True` in case the function already exists.
@@ -604,7 +604,7 @@ In this step, you will use the function `oml.script.create` to create a script `
     ```
     ![Using Embedded Python Execution function oml.table_apply to call the function build_lm_str](images/mod2_coef.png "Using Embedded Python Execution function oml.table_apply to call the function loaded_str")
 
-## **Step 8:** Store a Function as a Global  Function
+## Task 8: Store a Function as a Global  Function
 
 A global function is one that can be accessed by any user.
 
@@ -645,7 +645,7 @@ In this step, you will define and save a global function `build_lm3`. You will t
     ```
     ![Running the user-defined function MyGlobalML_function](images/res_coef.png "Running the user-defined function MyGlobalML_function")
 
-## **Step 9:** Drop Scripts from the Script Repository
+## Task 9: Drop Scripts from the Script Repository
 In this step, you will perform the following:
 
 * Drop one of the private scripts.

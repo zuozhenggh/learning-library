@@ -18,7 +18,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
-## **STEP 1:** Create the users and a procedure
+## Task 1: Create the users and a procedure
 
 1. Connect to `PDB21` as `SYSTEM` and verify which predefined unified audit policies are implemented.
 
@@ -93,7 +93,7 @@ In this lab, you will:
 	
 	```
 
-## **STEP 2:** Create and enable an audit policy 
+## Task 2: Create and enable an audit policy 
 
 1. In `PDB21`, create and enable an audit policy so as to audit any query on `HR.EMPLOYEES` table executed by the login user `U2`.
 
@@ -117,7 +117,7 @@ In this lab, you will:
 	
 	```
 
-## **STEP 3:** Test
+## Task 3: Test
 
 1. Connect to `PDB21` as the user `U2` and execute the `U1.PROCEMP` procedure.
 

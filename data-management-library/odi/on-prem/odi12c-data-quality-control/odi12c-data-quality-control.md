@@ -32,7 +32,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Creating Constraints
+## Task 1: Creating Constraints
 This step describes how to create the following constraints:
 
   * Age Constraint
@@ -100,7 +100,7 @@ Creating an age constraints consists in adding a data validity condition on a co
 
 11.  Select **File** \> **Save** to save this reference.
 
-## **STEP 2:** Run the Static Control
+## Task 2: Run the Static Control
 
 Running the static control verifies the constraints defined on a datastore. You can now verify the data in the SRC\_CUSTOMER datastore against the constraints defined in *Creating Constraints*.
 
@@ -121,7 +121,7 @@ To run the static control:
 
 Oracle Data Integrator automatically generates all of the code required to check your data and start an execution session.
 
-## **STEP 3:** Follow the Execution of the Control in Operator Navigator
+## Task 3: Follow the Execution of the Control in Operator Navigator
 
 Through Operator Navigator, you can view your execution results and manage your development executions in the sessions.
 To view the execution results of your control:
@@ -141,7 +141,7 @@ The log comprises 3 levels:
   * Step (corresponds to a checked datastore, a mapping, a procedure or a step in a package or in a scenario)
   * Task (corresponds to an elementary task of the mapping, process or check)
 
-## **STEP 4:** Interpreting the Results in Operator Navigator
+## Task 4: Interpreting the Results in Operator Navigator
 This section describes how to determine the invalid records. These are the records that do not satisfy the constraints and has been rejected by the static control.
 
 1. Determining the Number of Invalid Records
@@ -153,7 +153,7 @@ This section describes how to determine the invalid records. These are the recor
 
 The number of invalid records is listed in the No. of Errors field. Note that the static control of the SRC\_CUSTOMER table has revealed **6** invalid records. These records have been isolated in an error table. See next section on *Reviewing the Invalid Records* for more information.
 
-## **STEP 5:** Reviewing the Invalid Records
+## Task 5: Reviewing the Invalid Records
 You can access the invalid records by right-clicking on the table in your model and selecting **Control** \> **Errors\...**
 To review the error table of the static control on the SRC\_CUSTOMER table:
 

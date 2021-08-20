@@ -22,7 +22,7 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## **STEP 1:** Provision Autonomous Transaction Processing
+## Task 1: Provision Autonomous Transaction Processing
 
 1. On the left hand menu, choose Autonomous Transaction Processing.
 
@@ -73,7 +73,7 @@ In this lab you will:
 
      This process typically completes within about 5 minutes, after which you will see the status "AVAILABLE".
 
-## **STEP 2:** Prepare the APEX workspace
+## Task 2: Prepare the APEX workspace
 
    The following assumes that you've already provisioned an Autonomous Transaction Processing instance (see Step 1).
 
@@ -101,7 +101,7 @@ In this lab you will:
 
    The workspace (and database user) *must be* named "WORKSHOPATP" (there is some hardcoding in the installation scripts to use this schema name). Keep a note of the password as you will need it later. ![](images/create-workspace-02.png)
 
-## **STEP 3:** Import the APEX application
+## Task 3: Import the APEX application
 
 1. Download prepared application
 
@@ -131,7 +131,7 @@ In this lab you will:
 
    ![](images/import-04.png)
 
-## **STEP 4:** Review the APEX application (situation before ML)
+## Task 4: Review the APEX application (situation before ML)
 
 1. Start the application that you just imported
 
@@ -157,7 +157,7 @@ In this lab you will:
 
    ![](images/customer-details-with-goal.png)
 
-## **STEP 5:** Create an Oracle Machine Learning user
+## Task 5: Create an Oracle Machine Learning user
 
    We will develop the machine learning model using Zeppelin, which comes included in the autonomous database. Zeppelin is a web-based notebook environment that allows us to analyze and experiment with data. In our case we will be using it to build a machine learning model.
    First we will set up a user for Zeppelin.
@@ -210,7 +210,7 @@ In this lab you will:
 
    ![](images/create-notebook.png)
 
-## **STEP 6:** Build the machine learning model with Zeppelin
+## Task 6: Build the machine learning model with Zeppelin
 
    Our goal is to predict which customers are interested in buying Y Box Games. In this case we will build a model by letting it learn from existing customers purchasing behavior.
 
@@ -296,7 +296,7 @@ In this lab you will:
 
    ![](images/create-model.png)
 
-## **STEP 7:** Validate the results and the quality of the model (using test set)
+## Task 7: Validate the results and the quality of the model (using test set)
 
    We would like to know in what percentage of the cases, the model makes a correct prediction of Y Box Games ownership.
    This is where the test set, that we created earlier, comes in handy. Since the test set contains real customers, we know whether they actually own Y Box Games.
@@ -363,7 +363,7 @@ In this lab you will:
     </copy>
     ```
 
-## **STEP 8:** Run the prediction
+## Task 8: Run the prediction
 
 1. Choose between batch and single prediction
 
@@ -389,7 +389,7 @@ In this lab you will:
 
       Feel free to review the resulting table before we move on.
 
-## **STEP 9:** Integrate the result into the APEX application
+## Task 9: Integrate the result into the APEX application
 
 Now let's tie it all together by modifying the APEX application.
 
@@ -483,7 +483,7 @@ Remember, we want to show a recommendation to our employee when the customer he'
 
    ![](images/save-page.png)
 
-## **STEP 10:** Review the ML-enabled APEX application
+## Task 10: Review the ML-enabled APEX application
 
 1. Run the APEX application again
 
@@ -501,7 +501,7 @@ Remember, we want to show a recommendation to our employee when the customer he'
 
    ![](images/interested-customer.png)![](images/lab200-recommendation.png)
 
-## **STEP 11:** Conclusion
+## Task 11: Conclusion
 
    One added column in an application might not look like much, but the value to the business can be significant.
    In this case an employee receives very valuable advise on which customer to try to upsell a product to and he/she can use that to be more effective.

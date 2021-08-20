@@ -34,7 +34,7 @@ Watch a preview video of querying the In-Memory Column Store
 It is clear by now that the IM column store can dramatically improve performance of all types of queries but very few database environments are read-only. For the IM column store to be truly effective in modern database environments it has to handle both analytical reports AND online transaction processing (OLTP).
 We will test how the Oracle Database In-Memory is the only in-memory column store that can handle both Analytical queries  and online transaction processing today.
 
-## **STEP 1**: BULK LOADS and In-Memory tables.
+## Task 1: BULK LOADS and In-Memory tables.
 Bulk data loads occur most commonly in Data Warehouse environments and are typically use direct path load. A direct path load parses the input data, converts the data for each input field to its corresponding Oracle data type, and then builds a column array structure for the data. These column array structures are used to format Oracle data blocks and build index keys. The newly formatted database blocks are then written directly to the database, bypassing the standard SQL processing engine and the database buffer cache.
 Once the load operation (direct path or non-direct path) has been committed, the IM column store is instantly aware it does not have all of the data populated for the object. The size of the missing data will be visible in the BYTES\_NOT\_POPULATED column of V$IM_SEGMENTS. If the object has a PRIORITY specified on it then the newly added data will be automatically populated into the IM column store. Otherwise the next time the object is queried, the background worker processes will be triggered to begin populating the missing data, assuming there is free space in the IM column store.
 
@@ -150,7 +150,7 @@ Once the load operation (direct path or non-direct path) has been committed, the
 
   Note: If the table does not have PRIORITY ENABLED and you execute another Bulk Load, then those segments will be populated either during the next query or when you execute DBMS_INMEMORY.POPULATE (Step 10).
 
-## **STEP 2**: DML and Trickle repopulation.
+## Task 2: DML and Trickle repopulation.
 
  We now understand that the Data population to InMemory happens to new extents (Bulk Load and Direct Path Loads). However, if data is not inserted into new data extents on disks, but inserted or updated in the existing data blocks in the free space within the data blocks, then this data is not immediately loaded into In-Memory. Oracle creates  a transactional journal. The Snapshot Metadata Unit (SMU) associated with each IMCU tracks row modifications in a transaction journal. If a query accesses the data, and discovers modified rows, then it can obtain the corresponding rowids from the transaction journal, and then retrieve the modified rows from the buffer cache. As the number of modifications increase, so do the size of SMUs, and the amount of data that must be fetched from the transaction journal or database buffer cache. To avoid degrading query performance through journal access, background processes repopulate modified objects.
 
@@ -261,7 +261,7 @@ Note : When inserting data through direct path load, the data is inserted into n
 
   In this section, we discussed how data is transparently loaded into In-Memory. Next we will discuss the impact of DML on In-Memory queries.
 
-## **STEP 3**: In-Memory workload Query Performance.
+## Task 3: In-Memory workload Query Performance.
 
   In mixed workload environments, DML I/O operations have little impact on In-Memory queries as In-Memory operations are mainly CPU and memory bound.
   To demonstrate this we will run the following 4 scenarios:

@@ -13,7 +13,7 @@ Watch a preview videos of In-Memory Column Store features.
 #### Part 2
 [](youtube:Du-DNEU_0Y4)
 
-## **STEP 1**: Querying the In-Memory Column Store
+## Task 1: Querying the In-Memory Column Store
 
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
@@ -115,7 +115,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     In order to confirm that the IM column store was used, we need to examine the session level statistics. Notice that in the INMEMORY run several IM statistics show up (for this lab we have only displayed some key statistics – there are lots more!). The only one we are really interested in now is the "IM scan CUs columns accessed" which highlights IM optimization to further improve performance.
 
-## **STEP 2**: In-Memory Storage Index
+## Task 2: In-Memory Storage Index
   In the [*Introduction and Overview*](?lab=introduction-overview#3.In-MemoryStorageIndexes), we saw how min-max and dictionary based pruning could work as Index. We will now query the table and filter based on a where condition.
 
 1.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table.  
@@ -187,7 +187,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     You can see that the *TABLE ACCESS INMEMORY FULL*  is used even through there is an INDEX on lo_orderkey. In fact, INMEMORY may reduce the need to have multiple indexes on the Database.
     *This not only speeds up analytic query with fewer indexes, but also improve DML and load performance due to fewer indexes.*
 
-## **STEP 3**: In-Memory Hybrid Scans
+## Task 3: In-Memory Hybrid Scans
 An In-Memory hybrid scan accesses a table in the IM column store when not all columns are populated.
 
 ![](images/IMHybridscan.png)  
@@ -269,7 +269,7 @@ With Hybrid Scans, we increase the probability of a query running In-Memory even
       ````
 
 
-## **STEP 4**: In-Memory Joins and In-Memory Aggregation
+## Task 4: In-Memory Joins and In-Memory Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the  fact table, LINEORDER, and a dimension table and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond the basic performance benefits of scanning data in a columnar format.
 
@@ -373,7 +373,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
    This is where Oracle’s 30 plus years of database innovation kicks in. By embedding the column store into Oracle Database we can take advantage of all of the optimizations that have been added to the database. In this case, the Optimizer has switched from its typically left deep tree to create a right deep tree using an optimization called ‘swap\_join\_inputs’.
 
-## **STEP 5**: In-Memory Join Group
+## Task 5: In-Memory Join Group
 
    A new In-Memory feature called Join Groups was introduced with the Database In-Memory Option in Oracle Database 12.2.  Join Groups can be created to significantly speed up hash join performance in an In-Memory execution plan.  Creating a Join Group involves identifying up-front the set of join key columns (across any number of tables) likely to be joined with by subsequent queries.  
     For the above example, we can create a In-Memory Join Group on the join column l.lo\_orderdate = d.d\_datekey.
@@ -389,7 +389,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
   This will improve query performance further and reduce CPU cycles to to join tables.
 
-## **STEP 6**: In-Memory Expressions
+## Task 6: In-Memory Expressions
 
 ![](images/IMExpression.png)
 
@@ -568,7 +568,7 @@ The other alternative is to run dbms\_inmemory\_admin.ime\_capture\_expressions(
    How to tell if the IM expression has actually been populated? There is another view, V$IM\_IMECOL\_CU that shows the columns populated and number of IMEUs they occupy.
    To drop expressions, DBMS\_INMEMORY\_ADMIN.IME\_DROP\_ALL\_EXPRESSIONS procedure drops all SYS\_IME expression virtual columns in the database. The DBMS\_INMEMORY.IME\_DROP\_EXPRESSIONS procedure drops a specified set of SYS\_IME virtual columns from a table.
 
-## **STEP 7**: In-Memory Optimized Arithmetic
+## Task 7: In-Memory Optimized Arithmetic
 
 Using the native binary representation of numbers rather than the full precision Number format means that certain aggregation and arithmetic operations are tens of times faster than in previous version of In-Memory as we are
 able to take advantage of the SIMD Vector processing units on CPUs

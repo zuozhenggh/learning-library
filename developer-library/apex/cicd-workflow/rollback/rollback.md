@@ -10,7 +10,7 @@ Estimated Completion Time: 5 minutes.
 
 We will revert changes made to the production environment.
 
-## **STEP 1:** Rollback
+## Task 1: Rollback
 
 Rolling back consists in going back to a previous state. Using our release branches it's easy to rollback to a given version
 
@@ -32,7 +32,7 @@ Rolling back consists in going back to a previous state. Using our release branc
 
     *`rollback` is not the same as `update` as the schema change history is also reverted. Applying an `update` from an older version to the latest production environment would in fact cause issues with history tracking.*
 
-## **STEP 2:** Verify the Changes were Rolled Back
+## Task 2: Verify the Changes were Rolled Back
 
 1. Log in to Oracle Autonomous Transaction Processing database for `prd` and sign in to the workspace with the `WS_ADMIN` user as before.
 

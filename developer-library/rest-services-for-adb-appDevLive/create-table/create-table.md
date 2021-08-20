@@ -16,7 +16,7 @@ Estimated Lab Time: 15 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - Completed the [User Setups Lab](../user-setups/user_setups.md)
 
-## **STEP 1**: Load data into the Database
+## Task 1: Load data into the Database
 
 1. After signing in as **admin** from the previous lab (connecting to Database Actions/SQL Developer Web), we end up on the overview page. Click the SQL tile.
 
@@ -90,7 +90,7 @@ Estimated Lab Time: 15 minutes
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 2:** Auto-REST Enable a Table
+## Task 2: Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 

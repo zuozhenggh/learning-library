@@ -20,7 +20,7 @@ Estimated Lab Time: 15 minutes
 
 **Note:** Please download the file above before continuing.
 
-## **STEP 1:** Set up the Analytics Project in OAC 
+## Task 1: Set up the Analytics Project in OAC 
 
 As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
 
@@ -72,7 +72,7 @@ As previously mentioned, when you spin up the stack the links to some resources 
 
     ![](./images/6.15.png " ")
 
-## **STEP 2:** Establish a connection to the Destination Database as ADMIN
+## Task 2: Establish a connection to the Destination Database as ADMIN
 
 As you might remember, we loaded the data from the EBS instance into the **ADMIN** schema of the destination ADW and from the Source ADW into the **EBS** schema. We will now create a connection to the database as the **ADMIN** user.
 
@@ -92,7 +92,7 @@ As you might remember, we loaded the data from the EBS instance into the **ADMIN
 
     ![](./images/6.19.png " ")
 
-## **STEP 3:** Create Data Sets in OAC
+## Task 3: Create Data Sets in OAC
 
 1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**. On the next page, you will see all the available schemas including the **ADMIN** and **EBS** schemas.
 

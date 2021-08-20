@@ -35,7 +35,7 @@ In this lab, you will:
 
 
 <if type="dbcs">
-## **STEP 1:** Use SQL Macro as a scalar expression
+## Task 1: Use SQL Macro as a scalar expression
 
 
 1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the 21c instance in DB Systems.  Switch to the oracle user.
@@ -132,7 +132,7 @@ In this lab, you will:
 </if>  
 
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
 There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
@@ -150,7 +150,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
 2. Open up Cloud Shell
 3. Connect to the HR user using SQL\*Plus by entering the commands below.
@@ -162,7 +162,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 </if>
 
-## **STEP 2**: Explore SQL Macros
+## Task 2: Explore SQL Macros
 <if type="atp">
 1. Create the SQM as a scalar expression.
 
@@ -248,7 +248,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
     </if>
 
-## **STEP 3:** Use SQL Macro as a table expression
+## Task 3: Use SQL Macro as a table expression
 <if type="notused">
 1.  Login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
 

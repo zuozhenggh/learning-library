@@ -24,7 +24,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
 [](youtube:Q6hxMaAPghI)
 
-## **STEP 1**: Choosing ADW from the Services Menu
+## Task 1: Choosing ADW from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -49,7 +49,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -121,7 +121,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
     ![](./images/Picture100-32.png " ")
 
 
-## **Step 3:** Populating ADW Database with Seed Data
+## Task 3: Populating ADW Database with Seed Data
 
 1. Ensure your ADW instance is available:
   ![](./images/adw-available.png " ")
@@ -141,7 +141,7 @@ Watch a video demonstration of provisioning a new autonomous data warehouse:
 
     ![](./images/Picture100-16b.png " ")
 
-6. Click on the link [User-Seed-SQL.ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0OjpmhNMSua8gMz5sqSpNfsYbQhsKDDrAC1-2sBX6R29ID9nt4C7no8SoMDliKEK/n/c4u04/b/labfiles/o/ODI_User-Seed-SQL.zip) to download a ZIP file containing:
+6. Click on the link [User-Seed-SQL.ZIP](https://objectstorage.us-ashburn-1.oraclecloud.com/p/7XU8ktuvMIUbvSKWf1QKyV3yMooq-iizLFWUdoSR2eN3R2JRPlss91u5IIvRMgX2/n/c4u04/b/labfiles/o/ODI_User-Seed-SQL.zip) to download a ZIP file containing:
   * User_setup.sql
   * Seed_data.sql   
 

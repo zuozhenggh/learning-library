@@ -25,7 +25,7 @@ Quick walk through on how to switch the Inventory microservice to Python while r
 
 This lab assumes you have already completed the previous labs.
 
-## **STEP 1**: Undeploy the Java Helidon MP Inventory Microservice
+## Task 1: Undeploy the Java Helidon MP Inventory Microservice
 
 1. To undeploy the Inventory Helidon MP service, open the Cloud Shell and go to the
     inventory-helidon folder, using the following command.
@@ -36,7 +36,7 @@ This lab assumes you have already completed the previous labs.
 
    ![](images/undeploy-inventory-helidon-mp.png " ")
 
-## **STEP 2**: Deploy an alternate implementation of the Inventory Microservice
+## Task 2: Deploy an alternate implementation of the Inventory Microservice
 
 In this step you can choose between six different implementations of the Inventory Microservice: PL/SQL, Python, NodeJS, .NET, Go, or Java Helidon SE.
 
@@ -78,11 +78,11 @@ In this step you can choose between six different implementations of the Invento
     <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
-## **STEP 3**: Verify application functionality
+## Task 3: Verify application functionality
 
 1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation.  You will need to use different order ID's, for example 166 and 167.
 
-## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
+## Task 4: Re-deploy the Java Helidon MP Inventory Microservice
 
 1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following commands.
 

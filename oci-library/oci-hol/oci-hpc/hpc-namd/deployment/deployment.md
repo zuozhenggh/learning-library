@@ -5,7 +5,7 @@ In this lab, you will Deploy the architecture on OCI via Resource Manager or the
 
 Estimated Lab Time: 20 minutes
 
-## **STEP**: Deployment
+## Task: Deployment
 Deploying this architecture on OCI can be done in different ways:
 
 - The [Resource Manager](https://github.com/oci-hpc/oci-hpc-runbook-namd/blob/master/Documentation/ResourceManager.md#deployment-through-resource-manager) lets you deploy the infrastructure from the console. Only relevant variables are shown but others can be changed in the zip file.

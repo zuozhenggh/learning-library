@@ -25,7 +25,7 @@ In this lab, you will:
       - Lab : Deploy OIRI in the local Kubernetes Node
       - Lab : Import Data into OIRI from OIG
 
-## **STEP 1:** Create a Role mining task
+## Task 1: Create a Role mining task
 
 1. On the Identity Role Intelligence home page, in the Start something new tile, click *Create a new Task*. Alternatively, you can click the Application Navigation menu icon, and click *All Tasks*, and then click New Task on the top right of the page.
 The New Task page to select the data for creating a new role mining task appears.
@@ -63,7 +63,7 @@ The *Save Task and Mine Roles* dialog box appears with the following options:
     ![](images/6-mining.png)  
 
 
-## **STEP 2:** Review candidate roles
+## Task 2: Review candidate roles
 
 1. In the Manage Tasks page, search for the role mining task that you submitted.
 

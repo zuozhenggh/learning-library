@@ -27,7 +27,7 @@ Depending on the path you choose, there are different requirements:
 
 - For the Docker environment, you will need a machine with at least 3 CPUs and 6 GB of memory to allocate to the Docker engine.
 
-## **STEP 1:** Choose a Path
+## Task 1: Choose a Path
 
 Choose the option that best suits your needs:
 

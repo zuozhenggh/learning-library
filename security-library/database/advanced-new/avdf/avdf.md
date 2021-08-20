@@ -19,9 +19,7 @@ Watch a preview of "*Introducing Oracle Audit Vault and Database Firewall 20 upd
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -52,7 +50,7 @@ This lab assumes you have:
 |17| (Optional) Linux Audit Collection | 10 minutes|
 |18| (Optional) LDAP/Active Directory Configuration | <5 minutes|
 
-## **STEP 1**: Audit Vault - Run the Deploy Agent
+## Task 1: Audit Vault - Run the Deploy Agent
 
 1. Before beginning the Audit Vault labs, you must run this script to enable the pre-configure Audit Vault Server for this workshop
 
@@ -128,7 +126,7 @@ This lab assumes you have:
 
     **Note**: Notice the output says "**RUNNING**" for the Agent Status column
 
-## **STEP 2**: Audit Vault - Register a Pluggable Database as Target
+## Task 2: Audit Vault - Register a Pluggable Database as Target
 
 1. Use the avcli utility to register the pluggable database **pdb1** as an AV target (the password asked here is "*`Oracle123`*")
 
@@ -146,7 +144,7 @@ This lab assumes you have:
     - You could also perform this register from the Audit Vault Web Console
     - This script will use the database user **AVAUDITUSER** that was created, and granted the appropriate privileges, to perform database audit collection and clean-up and has `SELECT` access on several dictionary tables (for more information please see the Oracle Audit Vault and Database Firewall documentation)
 
-## **STEP 3**: Audit Vault - Register an Audit Trail
+## Task 3: Audit Vault - Register an Audit Trail
 
 1. First, use the avcli utility to register the Unified Audit Trail for the pluggable database **pdb1** to collect audit data
 
@@ -204,7 +202,7 @@ This lab assumes you have:
 
 4. You have completed the lab to register the Unified Audit Trail for pdb1 with Audit Vault
 
-## **STEP 4**: Audit Vault - Manage Unified Audit Settings
+## Task 4: Audit Vault - Manage Unified Audit Settings
 
 You will retrieve and provision the Unified Audit settings for the **pdb1** pluggable database
 
@@ -265,7 +263,7 @@ You will retrieve and provision the Unified Audit settings for the **pdb1** plug
 
 8. If you want, you can re-do the previous steps and make changes to the Unified Audit Policies. For example, don't enable the **Center for Internet Security (CIS) Configuration** and re-run the two shell scripts to see what changes!
 
-## **STEP 5**: Audit Vault - Retrieve User Entitlements
+## Task 5: Audit Vault - Retrieve User Entitlements
 
 1. Go back to Audit Vault Web Console as *`AVAUDITOR`*
 
@@ -296,7 +294,7 @@ You will retrieve and provision the Unified Audit settings for the **pdb1** plug
 
        ![](./images/avdf-018.png " ")
 
-## **STEP 6**: Audit Vault - Access Rights and User Activity on Sensitive Data
+## Task 6: Audit Vault - Access Rights and User Activity on Sensitive Data
 
 In this lab you will use the results from a **Database Security Assessment Tool (DBSAT)** collection job to identify the sensitive data with the pluggable database **pdb1**. For ease of execution, the required step from the DBSAT lab was performed and the output saved. The first step here will help download and stage it accordingly.
 
@@ -386,7 +384,7 @@ In this lab you will use the results from a **Database Security Assessment Tool 
 
    ![](./images/avdf-024.png " ")
 
-## **STEP 7**: Audit Vault - Tracking Data Changes (Auditing "Before-After" Values)
+## Task 7: Audit Vault - Tracking Data Changes (Auditing "Before-After" Values)
 
 **About Oracle Audit Vault Transaction Log Audit Trail Collection**
 
@@ -624,7 +622,7 @@ The first thing we need to do is to set up the database to be ready for Golden G
     - The Timezone of your Audit Trail is correctly set to your VM Timezone
     - Your Audit Trail is up and running
 
-## **STEP 8**: Audit Vault - Create Alert Policies
+## Task 8: Audit Vault - Create Alert Policies
 
 In this lab you will modify the Database Firewall connection for the pluggable database **pdb1**
 
@@ -691,7 +689,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
 
     **Note**: Once you understand how to create an alert, feel free to create another and test it manually
 
-## **STEP 9**: DB Firewall - Add the DB Firewall Monitoring
+## Task 9: DB Firewall - Add the DB Firewall Monitoring
 
 1. Before beginning the DB Firewall labs, you must run this script to enable the pre-configure DB Firewall Server for this workshop
 
@@ -804,7 +802,7 @@ In this lab you will modify the Database Firewall connection for the pluggable d
           - This will connect to the pluggable database `pdb1` **through the proxy** on the port `15223` (DB Firewall Monitoring) we just configured
           - You should see that the connection shows `10.0.0.152` which is the IP Address of the DB Firewall VM
 
-## **STEP 10**: DB Firewall - Configure and Verify the Glassfish App to Use the DB Firewall
+## Task 10: DB Firewall - Configure and Verify the Glassfish App to Use the DB Firewall
 
 In this lab you will modify the Glassfish connection (instead of connecting directly to the pluggable database **pdb1**, Glassfish will connect through the Oracle DB Firewall so we can monitor, and block, SQL commands)
 
@@ -867,7 +865,7 @@ In this lab you will modify the Glassfish connection (instead of connecting dire
 
        ![](./images/avdf-119.png " ")
 
-## **STEP 11**: DB Firewall - Train the DB Firewall for Expected SQL Traffic
+## Task 11: DB Firewall - Train the DB Firewall for Expected SQL Traffic
 In this lab you will use the Glassfish Application to connect through the Oracle Database Firewall so we can monitor, and block, SQL commands
 
 1. Go back to Audit Vault Web Console as *`AVADMIN`*
@@ -991,7 +989,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 26. Feel free to continue to explore the captured SQL statements and once you are comfortable, please continue the labs!
 
-## **STEP 12**: DB Firewall - Build and Test the DB Firewall Allow-List Policy
+## Task 12: DB Firewall - Build and Test the DB Firewall Allow-List Policy
 
 1. Before we build our policy we have to make sure DB Firewall has logged the SQL Statements from the **Train the Database Firewall for expected SQL traffic** Lab as well as SQL statements from our SQL*Plus scripts
 
@@ -1184,7 +1182,7 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
     **Note**: Remember, this is because the DB Firewall policy substitute the result by "`SELECT 100 FROM dual WHERE 1=2`" for "unofficial" queries from the HR App, although you are still logged in with an authorized DB user (here SYSTEM)!
 
-## **STEP 13**: DB Firewall - Block a SQL Injection Attack
+## Task 13: DB Firewall - Block a SQL Injection Attack
 
 **SQL Injection (SQLi)** is a well-known cyber attack. Its ability to exploit security holes can be very powerful if properly exploited. It exploits security holes in an application that interacts with a database. The SQL Injection attack consists of modifying a current SQL query by injecting an unanticipated piece of the query, often through a form. The hacker can thus access the database, but also modify the content and thus compromise the security of the system.
 There are different types of SQL Injection:
@@ -1291,7 +1289,7 @@ In this lab you will perform a "**UNION-based**" SQL Injection attack and see ho
         - The output should return "**no rows**"
         - Remember, this is because the UNION query has not been added into the Allow-list in the DB Firewall policy... as simple as that!
 
-## **STEP 14**: DB Firewall - Detect Data Exfiltration Attempts
+## Task 14: DB Firewall - Detect Data Exfiltration Attempts
 
 In this lab, you will detect sensitive data exfiltration attempts by capturing the number of rows returned for SELECT statements. Typically, when an application behaves normally, it's to display a single or maybe 50-100 rows per page displayed. But if you suddenly see a return of 1000 rows or more, this is definitely not normal application behavior. It's really important to know this automatically in real time, with no impact on the performance, to determine whether it's normal or not.
 
@@ -1455,7 +1453,7 @@ In this lab you will create the policy `PII Exfiltration Monitor` to monitor the
 
 31. Now you know how to detect a sensitive data exfiltration with no impact on the performance thanks to Database Firewall!
 
-## **STEP 15**: DB Firewall - (Optional) Restore the Glassfish App Configuration to Use Direct Mode
+## Task 15: DB Firewall - (Optional) Restore the Glassfish App Configuration to Use Direct Mode
 
 In this lab you will restore the Glassfish connection in order to connecting directly to the pluggable database **pdb1** without the Database Firewall
 
@@ -1467,7 +1465,7 @@ In this lab you will restore the Glassfish connection in order to connecting dir
 
    ![](./images/avdf-144.png " ")
 
-## **STEP 16**: Advanced Labs - (Optional) PostgreSQL Audit Collection
+## Task 16: Advanced Labs - (Optional) PostgreSQL Audit Collection
 The objective of this lab is to collect audit log records from PostgreSQL databases (with pgaudit configured) into Oracle Audit Vault and Database Firewall:
 - Ensure to that **pgaudit** is installed extension:
     - The PostgreSQL Audit Extension (or pgaudit) provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL
@@ -1580,7 +1578,7 @@ The objective of this lab is to collect audit log records from PostgreSQL databa
 
    ![](./images/avdf-213.png " ")
 
-## **STEP 17**: Advanced Labs - (Optional) Linux Audit Collection
+## Task 17: Advanced Labs - (Optional) Linux Audit Collection
 
 The objective of this lab is to collect event log from the Operating System
 
@@ -1667,7 +1665,7 @@ The objective of this lab is to collect event log from the Operating System
 
    ![](./images/avdf-223.png " ")
 
-## **STEP 18**: Advanced Labs - (Optional) LDAP/Active Directory Configuration
+## Task 18: Advanced Labs - (Optional) LDAP/Active Directory Configuration
 
 Important: before performing this lab, you must have:
 - an Microsoft Active Directory Server 2016 or higher available in the same VCN as the DBSecLab VMs

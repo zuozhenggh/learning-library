@@ -39,7 +39,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 ## Create Wercker Application
 
-### **STEP 1**: Fork Java Application on GitHub
+### Task 1: Fork Java Application on GitHub
 
 - From any browser, go to:
 
@@ -51,7 +51,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
   **NOTE:** If prompted, choose to fork the repository to your account (this may occur if your account is also a member of an organization on GitHub).
 
-### **STEP 2**: Create a Wercker account
+### Task 2: Create a Wercker account
 
   **NOTE** If you already have a Wercker account, use your account to log into Wercker, and proceed to **STEP 3**. If you have not associated your existing Wercker account with your GitHub account, you can do so in the **Settings->Git Connections** menu, found in the user dropdown in the top right corner of Wercker.
 
@@ -74,7 +74,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ![](images/100/5.png)
 
-### **STEP 3**: Create a Wercker Application
+### Task 3: Create a Wercker Application
 
 - If this is your first Wercker application, click the blue **Create your first application** button. If you already have applications in your Wercker account, click the **plus button** in the upper right hand corner of the browser and select **Add application**:
 
@@ -101,7 +101,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 ## Create and Run Wercker Build Pipeline
 
-### **STEP 4**: Configure Pipelines and Workflow in Wercker
+### Task 4: Configure Pipelines and Workflow in Wercker
 
 - Navigate to the Wercker page for your newly-created application (you will already be on that page if you just completed **STEP 3**). Notice that you are viewing the **Runs** tab. This is where any executions of your workflow will be recorded.
 
@@ -133,7 +133,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 - Now that we've got a workflow configured that will build and store a Docker image containing our application, we need to define exactly how to do that in a file called **wercker.yml**, which we will store in our application's Git repository.
 
-### **STEP 5**: Define Wercker Build Pipeline
+### Task 5: Define Wercker Build Pipeline
 
 - Switch back to your GitHub browser tab, showing your forked copy of the **twitter-feed** repository, and click **Create new file**
 
@@ -192,7 +192,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 - Our next step is to define the second part of our workflow, the **push-release** pipeline, which will store our container image in a Docker repository (OCIR) after a successful **build**. This pipeline will make use of some environment variables, so let's get those set up first.
 
-### **STEP 6**: Set Environment Variables in Wercker
+### Task 6: Set Environment Variables in Wercker
 
 - In your Wercker browser tab, click the **Environment** tab.
 
@@ -225,7 +225,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
 - This is all of the environment variables that we can fill in at this point. However, we will need to provide one more piece of information to Wercker before we can successfully push an image to the OCIR Docker repository -- an OCI authentication token. We will log in to the OCI console and generate that token in Lab 200. For now, let's finish setting up the `push-release` pipeline in Wercker so that it will be ready to go once we have the token.
 
-### **STEP 7**: Define Wercker Publish Pipeline
+### Task 7: Define Wercker Publish Pipeline
 
 - Switch to your Github browser tab, click on the **wercker.yml** file, and click the **pencil icon** to begin editing.
 
@@ -262,7 +262,7 @@ For this lab you will need a Github account. Use the following link to set one u
 
   ![](images/100/29.png)
 
-### **STEP 8**: Validate Workflow Execution
+### Task 8: Validate Workflow Execution
 
 - As we learned earlier, we do not yet have enough information to enable Wercker to push the Docker image to OCIR -- we still need to generate an OCI authentication token and store it in a Wercker environment variable. Let's look at what happened to our workflow execution. Switch to your Wercker browser tab and click the **Runs** tab within Wercker. You'll see the workflow executing as a result of your Git commit.
 

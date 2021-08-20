@@ -17,7 +17,7 @@ In this lab, you will:
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All done in the previous workshop
 
-## **STEP 1:** Sample Audit Queries
+## Task 1: Sample Audit Queries
 
 1. 'Log Source' = 'OCI Audit Logs' and Status not in ('null') | link Status, 'User Name', Event, Method | stats unique('User Name'), unique(Status), unique(Method), unique(Event), unique(Method) | classify topcount = 300 'Group Duration', Status
 
@@ -37,7 +37,7 @@ In this lab, you will:
 
 7. ‘Log Source’ = ‘OCI Audit Logs’ and ‘User Name’ not in (‘null’, cloudguard) and ‘OCI Resource Name’ != null | stats count by ‘User Name’, ‘OCI Resource Name’
 
-## **STEP 2:** Sample VCN Queries
+## Task 2: Sample VCN Queries
 
 1. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | stats count by Entity
 
@@ -51,7 +51,7 @@ In this lab, you will:
 
 6. ‘Entity Type’ = ‘OCI VCN Virtual Network Interface Card’ and ‘Log Source’ = ‘OCI VCN Flow Unified Schema Logs’ | eval vol = ‘Content Size Out’ / (1024 * 1024) | timestats perhour(‘Packets In’) as ‘Packet Rate (per hr)’ by ‘OCI Subnet OCID’
 
-## **STEP 3:** Sample Instance Queries
+## Task 3: Sample Instance Queries
 
 1. ‘Log Source’ = ‘Linux Secure Logs’ and Service = sudo | stats count by ‘User Name (Originating)’
 

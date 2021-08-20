@@ -30,7 +30,7 @@ This lab assumes you have:
 
 
 
-## **STEP 1:** Start creating a Data Miner Project
+## Task 1: Start creating a Data Miner Project
 Before you begin working on a Data Miner Workflow, you must create a Data Miner Project, which serves as a container for one or more Workflows.
 Create a SQL Developer connection for a data mining user named dmuser. This user has access to the sample data that you will be mining.
 
@@ -50,7 +50,7 @@ To create a Data Miner Project, perform the following steps.
 
     ![](./images/mba3.jpg " ")
 
-## **STEP 2:** Data Miner Workflow (Optional)
+## Task 2: Data Miner Workflow (Optional)
 
 A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
 
@@ -69,7 +69,7 @@ A workflow.
 
 To create the workflow for this process, perform the below steps.
 
-## **STEP 3:** Create a Workflow and Add data for the workflow
+## Task 3: Create a Workflow and Add data for the workflow
 
 1. Right-click on your project (Retail\_Data\_Analysis) and select New Workflow from the menu. 
  
@@ -127,7 +127,7 @@ To create the workflow for this process, perform the below steps.
 
     ![](./images/mba13.jpg " ")
 
-## **STEP 4:** Build the Models
+## Task 4: Build the Models
 
 In this section, you will build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -172,7 +172,7 @@ A common data mining practice is to build (or train) your model against part of 
 
     ![](./images/mba24.jpg " ")
 
-## **STEP 5:** Interpreting the results of the market basket analysis
+## Task 5: Interpreting the results of the market basket analysis
 
 Referring to the association rules of the relational data table, there are almost 1386 association rules generated from the analysis we performed. That is a lot. Therefore, we can basically interpret the results shown in the Data Miner with rationale such as:
 

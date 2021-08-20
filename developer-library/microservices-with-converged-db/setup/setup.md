@@ -15,17 +15,17 @@ Estimates Lab Time - 25 minutes
 * Clone the setup and microservices code
 * Execute setup
 
-## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
+## Task 1: Login to the OCI Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
 
-## **STEP 2**: Select the Home Region
+## Task 2: Select the Home Region
 
 Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
   ![](images/home-region.png " ")
 
-## **STEP 3**: Check Your Tenancy Service Limits
+## Task 3: Check Your Tenancy Service Limits
 
 If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step.
 
@@ -49,15 +49,15 @@ The Tenancy Explorer may be used to locate existing resources: **Governance & Ad
 
 It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
-## **STEP 4**: Launch the Cloud Shell
+## Task 4: Launch the Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
-2. Click the Cloud Shell icon in the top-right corner of the Console.
+1. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
-## **STEP 5**: Create a Folder to Contain the Workshop Code
+## Task 5: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
@@ -75,7 +75,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## **STEP 6**: Make a Clone of the Workshop Setup Script and Source Code
+## Task 6: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -95,7 +95,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## **STEP 7**: Start the Setup
+## Task 7: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -138,7 +138,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 5. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-## **STEP 8**: Monitor the Setup
+## Task 8: Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -157,7 +157,7 @@ You can monitor the setup progress from a different browser window or tab.  It i
 
    ![](images/select-compartment.png " ")
 
-## **STEP 9**: Complete the Setup
+## Task 9: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 

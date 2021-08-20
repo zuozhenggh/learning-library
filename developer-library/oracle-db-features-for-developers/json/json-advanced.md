@@ -23,7 +23,7 @@ This lab assumes you have completed the following labs:
 
 For this lab we will use the *Order Entry (OE)* sample schema that is provided with the Oracle Database installation. If you have completed the setup previously you will already have the *OE* schema installed.
 
-## **Step 1**: Connect to the environment
+## Task 1: Connect to the environment
 
 If you have logged out of the Cloud Shell, perform the commands below.
 
@@ -68,7 +68,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
     </copy>
     ````
 
-## **Step 2**: Retrieve Sub-Regions Information In JSON Format
+## Task 2: Retrieve Sub-Regions Information In JSON Format
 
 1.  Using a cursor, and the query you like most, we can run a loop, to retrieve the sub-regions for every region in Spain. This procedure will store a JSON document in our table, with the sub-regions, for each region (19 documents).
 
@@ -136,7 +136,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
 
     Now we have the entire geographic division.
 
-## **Step 3**: Retrieve Castles Information In JSON Format
+## Task 3: Retrieve Castles Information In JSON Format
 
 1.  In order to retrieve information about castles from GeoNames web service, we have to create a new function. The input for this function is the ISO country code, the code of the region, and the code of the sub-region. The output is a JSON document with all castles in that sub-region.
 
@@ -231,7 +231,7 @@ If you have logged out of the Cloud Shell, perform the commands below.
 
     This query should return 269 rows.
 
-## **Step 4**: JSON_DATAGUIDE - discover information about the structure and content of JSON documents
+## Task 4: JSON_DATAGUIDE - discover information about the structure and content of JSON documents
 
 The following shows the **JSON_DATAGUIDE**, a function that analyzes one or more JSON values and provides a schema - a structural summary of the data, the field names, how they are nested and their data type.
 
@@ -364,7 +364,7 @@ We will use the **castles** example to illustrate the JSON Data Guide
     </copy>
     ````
 
-## **Step 5**: Syntax simplifications querying JSON Data
+## Task 5: Syntax simplifications querying JSON Data
 
 In Oracle Database 19c, there were some improvements in the simplicity of querying JSON documents using SQL. Other improvements were made as well in generating JSON documents on the fly from relational data.
 
@@ -405,7 +405,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
     This requires more time and code to be written.
 
-## **Step 6**: JSON Query Improvements In Oracle 19C
+## Task 6: JSON Query Improvements In Oracle 19C
 
 1.  In Oracle 19c, function *JSON\_OBJECT* can generate JSON objects receiving as argument just a relational column name, possibly preceded by a table name or alias, or a view name followed by a dot. For example *TABLE.COLUMN*, or just *COLUMN*.
 
@@ -429,7 +429,7 @@ In Oracle Database 19c, there were some improvements in the simplicity of queryi
 
 In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows what is allowed for column names and wildcards in a SQL SELECT query.
 
-## **Step 7**: Using Custom Types And Wildcard
+## Task 7: Using Custom Types And Wildcard
 
 1.  There are some cases, exceptions, where wildcards are not accepted for tables with columns of certain custom data types, like our table **CUSTOMERS**, for example.
 
@@ -494,7 +494,7 @@ In conclusion, in Oracle 19c we can say that the *JSON\_OBJECT* function follows
 
 In conclusion, instead of passing SQL expressions that are used to define individual JSON object members, you can pass a single instance of a user-defined SQL object type. This produces a JSON object whose field names are taken from the object attribute names and whose field values are taken from the object attribute values (to which JSON generation is applied recursively). Or use an asterisk (\*) wildcard as a shortcut to explicitly specifying all of the columns of a given table or view to produce object members. The resulting object field names are the uppercase column names. You can use a wildcard with a table, a view, or a table alias.
 
-## **Step 8**: Updating a JSON Document
+## Task 8: Updating a JSON Document
 
 You can now update a JSON document declaratively using the new SQL function **JSON_MERGEPATCH**. You can apply one or more changes to multiple documents by using a single statement. This feature improves the flexibility of JSON update operations.
 
@@ -673,7 +673,7 @@ You can use *JSON_MERGEPATCH* in a SELECT list, to modify the selected documents
 
     Updating JSON documents inside the Oracle Database is that simple.
 
-## **Step 9**: JSON Materialized View Support
+## Task 9: JSON Materialized View Support
 
 Materialized views query rewriting has been enhanced so that queries with *JSON\_EXISTS*, *JSON\_VALUE* and other functions can utilize a materialized view created over a query that contains a *JSON\_TABLE* function.
 
@@ -819,7 +819,7 @@ Significant performance gains can often be achieved using query rewrite and mate
 
     If the query is too simple, there may not be a query rewrite, in this case it will not be eligible to be rewritten to use the materialized view.
 
-## **Step 10**: JSON-Object Mapping
+## Task 10: JSON-Object Mapping
 
 This feature enables the mapping of JSON data to and from user-defined SQL object types and collections. You can convert JSON data into an instance of a SQL object type using SQL/JSON function *JSON\_VALUE*. In the opposite direction, you can generate JSON data from an instance of a SQL object type using SQL/JSON function *JSON\_OBJECT* or *JSON\_ARRAY*.
 

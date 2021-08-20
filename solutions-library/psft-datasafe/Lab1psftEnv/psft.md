@@ -15,7 +15,7 @@ In this lab you will:
 - Access to the PSFT Cloud Manager console
 
 
-## **STEP 1**: Defining a Topology
+## Task 1: Defining a Topology
 
 1. Navigate to **Dashboard** > **Topology**.
     ![](./images/1.png "")
@@ -70,7 +70,7 @@ In this lab you will:
     When you have something like this, click **Save**. 
     ![](./images/7.png "")
 
-## **STEP 2**: Creating a New Environment Template
+## Task 2: Creating a New Environment Template
    Navigate to Cloud Manager Dashboard -> **Environment Template**
    ![](./images/8.png "")
 
@@ -148,7 +148,7 @@ In this lab you will:
     ![](./images/23.png "")
 
 
-## **STEP 3**: Creating a New PeopleSoft Environment
+## Task 3: Creating a New PeopleSoft Environment
 
 1. Navigate to Dashboard --> **Environments**  
   ![](./images/24.png "")

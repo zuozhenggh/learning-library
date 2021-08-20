@@ -15,7 +15,7 @@ This lab assumes you have:
 - Completed the previous labs
 - Have a GPU-enabled instance
 
-## **STEP 1**: Enabling GPU Acceleration
+## Task 1: Enabling GPU Acceleration
 
 1. After the imports, add this line of code:
 
