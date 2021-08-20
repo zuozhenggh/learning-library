@@ -120,12 +120,12 @@ Graph Studio is a feature of Autonomous Database.   It is available as an option
 
 
     Scroll down and click on **Graph Studio**.
-    ![Scroll down and click on Graph Studio](images/GraphStudio.png " ")
+    ![Scroll down and click on Graph Studio](images/graphstudio.png " ")
 
 
 2. Log in to Graph Studio.  Use the credentials for the database user MOVIESTREAM.
 
-    ![Use the credentials for database user MOVIESTREAM](images/GraphStudioLogIn.png " ")
+    ![Use the credentials for database user MOVIESTREAM](images/graphstudiologin.png " ")
 
 
 ## Task 3: Create a GRAPH
@@ -210,7 +210,7 @@ This is the Graph Studio interface for modeling a graph.  You will create a grap
 
     You now have a notebook to use to run graph queries and graph analytics.  You have three interpreters available: **%md** for markdown, **%pgql-pgx** to run PGQL graph queries, and **%java-pgx** to run graph analytics using the Java API.
 
-    ![This is your notebook](images/createnotebookb.png " ")
+    ![This is your notebook](images/createnotebook2.png " ")
 
 3. You can create a new paragraph by hovering on the bottom of a paragraph and clicking on the + button.
 
