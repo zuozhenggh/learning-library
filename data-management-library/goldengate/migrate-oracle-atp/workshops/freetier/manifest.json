@@ -5,7 +5,7 @@
         {
             "title": "Introduction",
             "description": "Welcome to migrate HR database application to Cloud using OCI GoldenGate Service workshop.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "./introduction/introduction.md"
         },
         {
           "title": "Getting Started",
@@ -23,7 +23,7 @@
         },
         {
             "title": "Lab 3: Migration",
-            "filename": "../../migration/migration.md"
+            "filename": "./../migration/migration.md"
         },
         {
             "title": "Bonus Lab 4: Import HR application to APEX",
