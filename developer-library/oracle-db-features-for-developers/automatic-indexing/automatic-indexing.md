@@ -5,7 +5,11 @@ In this lab you will explore the various features and benefits of Oracle's Autom
 
 Estimated Lab Time: 20 minutes
 
-## About Automatic Indexing
+Watch the video below to view the benefits of the Automatic Indexing feature.
+
+[](youtube:vde8buK9kVk)
+
+### About Automatic Indexing
 
 The automatic indexing feature automates index management tasks based on changes in the application workload. This feature improves database performance by managing indexes automatically in an Oracle database.
 
@@ -16,9 +20,9 @@ Automatic indexing addresses these issues. It is not a simple advisor, but inste
 Here is a summary of the workflow:
   ![](images/ai_flow.png " ")
 
-Watch the video below to view the benefits of the Automatic Indexing feature.
+Watch the video below to view the Automatic Indexing in Action.
 
-[](youtube:vde8buK9kVk)
+[](youtube:5ZNlmw0rGU0)
 
 ### Objectives
 
