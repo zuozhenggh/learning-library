@@ -121,11 +121,11 @@ Graph Studio is a feature of Autonomous Database.   It is available as an option
 
     Scroll down and click on **Graph Studio**.
 
-    ![Scroll down and click on Graph Studio](images/graphstudio.png " ")
+    ![Scroll down and click on Graph Studio](images/graphstudiofixed.png " ")
 
 2. Log in to Graph Studio.  Use the credentials for the database user MOVIESTREAM.
 
-    ![Use the credentials for database user MOVIESTREAM](images/graphstudiologin.png " ")
+    ![Use the credentials for database user MOVIESTREAM](images/graphstudiologinfixed.png " ")
 
 ## Task 3: Create a GRAPH
 
