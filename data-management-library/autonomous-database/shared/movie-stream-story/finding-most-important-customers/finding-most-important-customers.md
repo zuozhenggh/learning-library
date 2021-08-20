@@ -16,6 +16,14 @@ Estimated time: 10 minutes
 
 - Learn about binning as an analytical technique
 
+### Prerequisites
+- This lab requires completion of the previous labs in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+
 ### Overview Of Business Problem
 
 This next example will enrich our existing understanding of customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
@@ -119,6 +127,8 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
     ![Query result showing customers with significant spend and having not visited site recently](images/lab-5c-task-3-step-2.png " ")
 
+You may now [proceed to the next lab](#next).
+
 ## Recap
 
 Let's quickly recap what has been covered in this lab:
@@ -128,8 +138,6 @@ Let's quickly recap what has been covered in this lab:
 - How to use the `WITH` clause to combine SQL queries
 
 - How to create a Recency Frequency Monetary query
-
-Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 
