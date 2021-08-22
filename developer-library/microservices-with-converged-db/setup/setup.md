@@ -53,7 +53,7 @@ It may be necessary to delete some resources in order to make space to run the w
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
-2. Click the Cloud Shell icon in the top-right corner of the Console.
+1. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
