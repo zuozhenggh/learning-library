@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes.
 * Create a docker hub [account](http://hub.docker.com)
 * Successfully have setup docker on compute instance
 
-## **STEP 1:** Create an Oracle Database container
+## Task 1: Create an Oracle Database container
 
 1. Login to the instance using ssh.
 
@@ -73,7 +73,7 @@ Estimated Lab Time: 15 minutes.
     - --name is the name of the container
     - v maps the directory where you downloaded the setup files to the /dbfiles directory inside the container
 
-## **STEP 2:** Follow the progress of container creation
+## Task 2: Follow the progress of container creation
 
 1.  To watch the progress type the following command passing the name of the container:  orcl.  This takes time, **please be patient**.
 
@@ -90,7 +90,7 @@ Estimated Lab Time: 15 minutes.
     ![](images/section5step4b.png " ")
 
 
-## **STEP 3:** Create a schema in container running Oracle Database and login to EM Express
+## Task 3: Create a schema in container running Oracle Database and login to EM Express
 
 1.  To create the schema we need to "login" to the container.  Type the following:
 

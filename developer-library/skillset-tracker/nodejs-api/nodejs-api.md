@@ -21,11 +21,11 @@ To complete this lab, you must have:
 * An OCI Account.
 * A tenancy where you have the resources available to provision a Linux Instance.
 * An existing compartment and a VCN in which the Instance will reside.
-* **Lab 4: Autonomous JSON Database & SODA Collections**
-* **Lab 5: Build an OracleJET Web Application** -> **STEP 1: Creating a Virtual Cloud Network**
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+* **Lab 3: Autonomous JSON Database & SODA Collections**
+* **Lab 4: Build an OracleJET Web Application** -> **STEP 1: Creating a Virtual Cloud Network**
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
-## **STEP 1:** Creating a Linux Instance in OCI
+## Task 1: Creating a Linux Instance in OCI
 
 1. From the top-left hamburger menu, locate and select **Compute -> Instances**. Click the blue button **Create Instance**.
 
@@ -35,13 +35,13 @@ To complete this lab, you must have:
 
   ![create instance form](./images/create-instance-form.jpg)
 
-3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
+3. Since you will need to connect to the instance, you should also upload your SSH public key. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH Keys**.
 
   ![add SSH key to instance](./images/create-instance-form-ssh-key.jpg)
 
 4. Click the **Create** button.
 
-## **STEP 2:** Connecting to the Instance and Installing the Needed Packages
+## Task 2: Connecting to the Instance and Installing the Needed Packages
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
@@ -57,7 +57,7 @@ To complete this lab, you must have:
 
   ![ssh connection](./images/instance-ssh-connection.jpg)
 
-3. After the connection is successful you need to run some commands in order to make the configuration complete.
+3. After the connection is successful you need to run some commands in order to complete the configuration.
 
     * Before beginning to install anything on the instance, run the following command.
 
@@ -105,7 +105,7 @@ To complete this lab, you must have:
 
   Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
-## **STEP 3:** Installing Oracle Instant Client
+## Task 3: Installing Oracle Instant Client
 
 1. Before downloading **Instant Client**, create a new directory for it and navigate to that directory.
 
@@ -150,9 +150,9 @@ To complete this lab, you must have:
     </copy>
     ```
 
-5. Open OCI Console and navigate to the Autonomous Database created in **Lab 4: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
+5. Open OCI Console and navigate to the Autonomous Database created in **Lab 3: Autonomous JSON Database & SODA Collections**. Download the database wallet by choosing **DB Connection**, then select **Instance Wallet** for the **Wallet Type** field and click **Download Wallet**.
 
-6. After downloading the wallet to you local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
+6. After downloading the wallet to your local machine, extract the archive. Now all its content can be copied to the instance using the following commands (these should be ran from your local machine).
 
     ```
     <copy>
@@ -198,13 +198,13 @@ To complete this lab, you must have:
 
   **Note**: If you want to run the code developed in the next step on your local machine as well, consider the fact that you should have Instant Client installed and you should also copy the content of the wallet directory to **your\_path\_to\_instant\_client/network/admin** and check the **sqlnet.ora** file as mentioned at point 10.
 
-## **STEP 4:** Create a Simple NodeJS Application with APIs
+## Task 4: Create a Simple NodeJS Application with APIs
 
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
-  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **Oracle Instant Client** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
-The final structure of the project you are going to create will look as in the picture below.
+The structure of the project you are going to create will look like the following:
 
   ![Project Structure](./images/nodej-api-project-structure.png)
 
@@ -417,7 +417,7 @@ The final structure of the project you are going to create will look as in the p
 
     ![Running app in browser](./images/running-application-in-browser.png)
 
-9. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 4: Autonomous JSON Database & SODA Collections**.
+9. Let's connect the application to the database. In the project folder, create a new file _.env_ and add the connection details for your database. Here we are using the Autonomous JSON Database created in **Lab 3: Autonomous JSON Database & SODA Collections**.
 
     ```
     <copy>
@@ -708,7 +708,7 @@ The final structure of the project you are going to create will look as in the p
 
     You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.
 
-## **STEP 5:** Testing APIs Using Postman
+## Task 5: Testing APIs Using Postman
 
 In this step you are going to make two types of API calls: ***GET*** and ***POST***. Since in the previous steps of this lab you only created paths for the GET operation, you must first update the code of the application.
 

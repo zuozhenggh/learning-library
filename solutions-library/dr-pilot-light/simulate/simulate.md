@@ -18,7 +18,7 @@ Estimated lab time: 1 hour
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 
-## **STEP 1:** The Disaster
+## Task 1: The Disaster
 
 ### Drain connections from Primary Region Load Balancer
 
@@ -50,7 +50,7 @@ Estimated lab time: 1 hour
 7. If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
 8. Now, enter your DNS url in your web browswer, you should see the HTML indicating you are now seeing traffic steered to your standby region. 
 
-## **STEP 2:** Scaling the standby region compute node
+## Task 2: Scaling the standby region compute node
 
 ### Run Python scripts
 

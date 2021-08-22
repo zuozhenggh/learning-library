@@ -12,7 +12,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Clean up Oracle Cloud Account
 
-### **STEP 1**: Delete Instances
+### Task 1: Delete Instances
 
 - As documented in the other labs, connect into your Oracle Cloud Account, and go to the Cloud Console.
 - From the Cloud Console, select **Compute > Images** from the top menu option
@@ -29,7 +29,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 - Repeat the previous steps to delete the other two instances, and wait until the instances show **Terminated**.
 
-### **STEP 2**: Delete Load Balancers
+### Task 2: Delete Load Balancers
 
   ![](images/manualcleanup/pic05.png)
 
@@ -49,7 +49,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/pic09.png)
 
-### **STEP 3**: Delete the Virtual Network
+### Task 3: Delete the Virtual Network
 
 - Using the top menu bar, go to **Networking > Virtual Cloud Networks**.
 
@@ -59,7 +59,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/manualcleanup/pic11.png)
 
-### **STEP 4**: Delete the API Key Fingerprint
+### Task 4: Delete the API Key Fingerprint
 
 - Using the top menu bar, go to **Identity > Users**.
 

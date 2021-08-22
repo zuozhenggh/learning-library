@@ -1,15 +1,16 @@
-# Creating Order Page
+# Creating the Order Page
 
 ## Introduction
 
 In this lab, you will create a new page that will allow customers to identify the details of their recent order.
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
+In this lab, you will:
 - Create a page to review the items that customer just bought.
 
-## **Step 1** - Creating a Normal Page - Order Information
+## Task 1: Creating a Normal Page - Order Information
 Create a Normal Page to review the Order that customer has made.
 
 1. In the **App Builder**, click **Create Page**.
@@ -23,7 +24,7 @@ Create a Normal Page to review the Order that customer has made.
 4. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 5. Click **Finish**.
 
-## **Step 2** - Adding a region 
+## Task 2: Adding a Region 
 Add a region to the page to display order details.
 
 1. In the new page created, navigate to the **Gallery Menu**.
@@ -36,7 +37,7 @@ Add a region to the page to display order details.
         ![](images/template-options.png " ")
     - For Icon, enter **fa-heart**
 
-## **Step 3** - Adding items to the page
+## Task 3: Adding Items to the Page
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right click on the region and click on **Create Page Item**.
     ![](images/create-item.png " ")
@@ -48,7 +49,7 @@ Add a region to the page to display order details.
 
     ![](images/order-item.png " ")    
     
-## **Step 4** - Adding Static Content Region
+## Task 4: Adding Static Content Region
 Add a region to contain Order details and items.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
@@ -58,7 +59,7 @@ Add a region to contain Order details and items.
     - For Title - enter **Order: &P16_ORDER.**
     - For Type - select **Static Content**
 
-## **Step 5** - Adding Order Details region
+## Task 5: Adding Order Details Region
 Add a region to display Order details.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
@@ -99,7 +100,7 @@ Add a region to display Order details.
             </copy>
             ```
 
-## **Step 6** - Adding Items region
+## Task 6: Adding Items Region
 Add a region to display items in the order.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
@@ -155,17 +156,11 @@ Add a region to display items in the order.
 
 5. Click **Save**.
 
-## **Summary**
+
 
 You now know how to add more pages to your existing APEX Application.
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Contributors** 
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/oracle-apex-development-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

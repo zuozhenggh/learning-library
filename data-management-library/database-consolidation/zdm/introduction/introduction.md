@@ -10,10 +10,14 @@ You can perform and manage a database migration of an individual database or per
 
 The Zero Downtime Migration software is a service with a command line interface that you install and run on a host that you provision. The server where the Zero Downtime Migration software is installed is called the Zero Downtime Migration service host. You can run one or more database migration jobs from the Zero Downtime Migration service host.
 
+Estimated Total Lab Time: 2 hours
+
+For More Information on Zero Downtime Migration: [ZDM Website](https://www.oracle.com/database/technologies/rac/zdm.html)
+
 ## About Logical Offline Migration
 Zero Downtime Migration supports both online and offline migration, and can perform both physical and logical migrations.
 
-* **Online** migration methods incur zero or minimal downtime (typically less than 15 minutes) and can leverage either physical or logical migration methods.
+* **Online** migration methods incur zero or minimal downtime and can leverage either physical or logical migration methods.
 
 * **Offline** migration methods will incur downtime on the source database as part of the migration process. It can leverage either physical or logical migration methods.
 

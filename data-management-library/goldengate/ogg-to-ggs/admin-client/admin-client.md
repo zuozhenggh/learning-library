@@ -19,7 +19,7 @@ In this lab, you will:
 
 This lab assumes you successfully completed all preceding labs.
 
-## **STEP 1:** Retrieve the OCI GoldenGate Deployment URL
+## Task 1: Retrieve the OCI GoldenGate Deployment URL
 
 1.  Log in to Oracle Cloud Infrastructure.
 
@@ -29,7 +29,7 @@ This lab assumes you successfully completed all preceding labs.
 
 4.  In the Deployment Details page, next to **Console URL** click **Copy**.
 
-## **STEP 2:** Connect to the Admin Client
+## Task 2: Connect to the Admin Client
 
 1.  SSH into the Marketplace Oracle GoldenGate instance.
 
@@ -53,9 +53,9 @@ This lab assumes you successfully completed all preceding labs.
     info all
     ```
 
-    View statistics of your Extract:
+    View statistics of your Replicat:
     ```
-    view stats
+    view stats <replicat-name>
     ```
 
     View the content of a ggserror log file:
@@ -63,7 +63,7 @@ This lab assumes you successfully completed all preceding labs.
     view messages
     ```
 
-    Purge trail files that are no longer used by Extracts:
+    If your deployment had running Extract processes, then you can also purge old unused trail files using:
     ```
     purge exttrail <trail-file-name>
     ```

@@ -29,7 +29,7 @@ As a database user, DBA or application developer,
 In this section you will be provisioning a database using the cloud console.
 ## Steps
 
-### **Step 1:** Create an Exadata Cloud Service Database
+### Task 1: Create an Exadata Cloud Service Database
 
 **Login to your OCI account as a database user**
 

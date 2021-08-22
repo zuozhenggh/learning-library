@@ -52,7 +52,7 @@ In this lab, you will:
     ```
     If not installed, please install Go (see https://golang.org/doc/)
 
-## **STEP 1**: Configure API.js
+## Task 1: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -101,7 +101,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   	- Save the modified API.js file
 
-## **STEP 2**: Run in Dev Mode then Build for Production
+## Task 2: Run in Dev Mode then Build for Production
 
 1. In the project directory, run the app in the development mode <br />
 
@@ -131,7 +131,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **STEP 3**: Hosting on the Oracle Cloud's object storage
+## Task 3: Hosting on the Oracle Cloud's object storage
 
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.

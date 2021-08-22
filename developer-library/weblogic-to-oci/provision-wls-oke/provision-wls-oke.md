@@ -21,7 +21,7 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 - A Secret for the OCI Registry Auth Token.
 
 
-## **STEP 1:** Provision the Stack Through the Marketplace
+## Task 1: Provision the Stack Through the Marketplace
 
 1. Go to **Solutions and Platforms**.
 
@@ -140,7 +140,7 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
 Once the stack is provisioned, you can find the information regarding the URL and IP of the WebLogic Admin server in the logs, or in the **Outputs** left-side menu.
 
-## **STEP 2:** Gather Deployment Information
+## Task 2: Gather Deployment Information
 
 Go to **Outputs** (or you can find the same information at the bottom of the logs).
 
@@ -158,7 +158,7 @@ To access the WebLogic Admin console, you will need to create a tunnel through t
 
 We'll need to set up a tunnel through the Bastion Instance, with a dynamic port to connect to the Admin Console and the Jenkins UI with the browser.
 
-## **STEP 3:** Set Up Connectivity
+## Task 3: Set Up Connectivity
 
 1. Extract the SSH key from the on-premises environment:
 
@@ -222,7 +222,7 @@ We'll need to set up a tunnel through the Bastion Instance, with a dynamic port 
 
       ![](./images/firefox-proxy2.png " ")
 
-## **Step 4:** Check the Deployment
+## Task 4: Check the Deployment
 
 1. Find the private load balancer IP under the following menu settings: **Core Infrastructure**, **Networking**, **Load Balancers**.
 

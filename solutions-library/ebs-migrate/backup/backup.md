@@ -38,7 +38,7 @@ In this lab, you will:
 
 
 
-## **STEP 1:** Create a Backup with the Oracle E-Business Suite Cloud Backup Module
+## Task 1: Create a Backup with the Oracle E-Business Suite Cloud Backup Module
 
 **FOLLOW ALONG AND READ CLOSELY, THERE ARE MANY VALUES AND STEPS THAT MUST BE COMPLETED ACCURATELY TO CREATE THE BACKUP.**
 

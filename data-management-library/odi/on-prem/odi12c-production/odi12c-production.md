@@ -28,7 +28,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **Step 1:** Scenario Creation
+## Task 1: Scenario Creation
 To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sales Administration Package:
 
 1.  In the Project accordion, expand Sales Administration and then Packages.
@@ -43,7 +43,7 @@ To generate the LOAD\_SALES\_ADMINISTRATION scenario that executes the Load Sale
 
   ![](./images/load_sales_admin.png)
 
-## **Step 2:**Run the Scenario
+## Task 2:Run the Scenario
 Scenarios can be executed in several ways:
   * Executing a Scenario from ODI Studio
   * Executing a Scenario from a Command Line
@@ -64,7 +64,7 @@ To start the LOAD\_SALES\_ADMINISTRATION scenario from Oracle Data Integrator St
 
 4.  The Session Started Information Dialog is displayed. Click **OK**. The scenario is executed.
 
-## **Step 3:** Follow the Execution of the Scenario
+## Task 3: Follow the Execution of the Scenario
 You can review the scenario execution in Operator Navigator, and find the same results as those obtained when the package was executed as described in Lab *Run the Package*.
 It is also possible to review the scenario execution report in Designer Navigator.
 

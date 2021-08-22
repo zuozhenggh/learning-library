@@ -23,7 +23,7 @@ Estimated Lab Time: 40 Minutes
 - Connect to the Database
 
 
-## **STEP 1**: Set the environment
+## Task 1: Set the environment
 
 First download the 3 sql scripts we will need in this Lab.
 
@@ -121,7 +121,7 @@ Then alter your session to connect to the pdb.
 
 Repeat these steps on the standby consoles.
 
-## **Step 2**: Setup the environment
+## Task 2: Setup the environment
 
 1. In the SQL Plus console from the primary database, run the 01-abmr.sql script.
     You can open this script and copy/paste this or copy it over to the host, just as you prefer.
@@ -235,7 +235,7 @@ wget https://oracle.github.io/learning-library/data-management-library/database/
 
 In this example, you will need to remember the number 15.
 
-## **Step 3**: Corrupt the datafile
+## Task 3: Corrupt the datafile
 1. In the same session, execute script 02-abmr.sql.
     This script will ask for a number. This is the number from the first step and this will be used to corrupt the datafile which the first script has created.
 
@@ -255,7 +255,7 @@ In this example, you will need to remember the number 15.
 At this point, we have a corrupt datafile, but the database is not aware of it yet.
 
 
-## **Step 4**: Access the table
+## Task 4: Access the table
 
 By accessing the table, Oracle will need to read the data. This demo database is not very active, so it will be necessary to flush the caches before we access the table. That way, the data needs to be read from disk. This data is corrupt and without any error returned to the user, Active Data Guard will repair the corrupt block before returning the query result.
 
@@ -329,7 +329,7 @@ By accessing the table, Oracle will need to read the data. This demo database is
     ...
     ````
 
-## **Step 5**: Cleanup
+## Task 5: Cleanup
 
 To clean this excercise, just drop the tablespace.
 1. In the sqlplus window, use this command:

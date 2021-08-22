@@ -33,7 +33,7 @@ In this lab, you will:
       - Lab: Install the Oracle Database homes (working copies)
       - Lab: Provision a new database
 
-## **Step 1:** Run the patching evaluation
+## Task 1: Run the patching evaluation
 Like all the disruptive FPP commands, `rhpctl move database` can be run with the `-eval` switch to evaluate the basic requirements before executing the actual patching.
 It is recommended to use `-eval` whenever possible. For patching, it is a good idea to run it hours or days before the intervention, so that any errors or missing requirements can be fixed in time.
 
@@ -55,7 +55,7 @@ It is recommended to use `-eval` whenever possible. For patching, it is a good i
     PRGO-1619 : The groups "OSOPER=oper" of the source home are not configured in the patched working copy.\nPRGO-1618 : The groups "OSBACKUP=backupdba,OSDG=dgdba,OSKM=kmdba,OSRAC=racdba" of the source home do not match the groups "OSBACKUP=dba,OSDG=dba,OSKM=dba,OSRAC=dba" of the patched working copy.
     ```
 
-## **Step 2:** Patch the database
+## Task 2: Patch the database
 1. The command is the same as before, but without the `-eval` switch:
 
     ```
@@ -66,7 +66,7 @@ It is recommended to use `-eval` whenever possible. For patching, it is a good i
   ![](./images/move2.png)
 
 
-## **Step 3:** Verify that the DB is patched and running in the new Oracle Home
+## Task 3: Verify that the DB is patched and running in the new Oracle Home
 1. Connect to the target node as `oracle`:
 
     ```

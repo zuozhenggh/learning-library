@@ -19,7 +19,7 @@ Estimated time: 45 minutes
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:uty6BgUWeeA)
   
-## **STEP 1**: Create Project and setup Build VM
+## Task 1: Create Project and setup Build VM
 1.  Navigate to Visual Builder Studio by selecting **Platform Services**->**Developer**
 
   ![](images/44-1.png " ")
@@ -85,7 +85,7 @@ Once the Project services are provisioned, you land on the Project Home Page. Fr
   ![](images/46-f.png " ")
 
 
-## **STEP 2**: Create build job to build and deploy docker container
+## Task 2: Create build job to build and deploy docker container
 
 In this step, you will clone the application code, edit the Kubernetes secret file for ATP username and password. Next, create and setup build job configuration to containerize java microservice code, push the docker image to Oracle Cloud Infrastructure Registry (OCIR) and deploy the image to run pod and service in Oracle Kubernetes Engine.
 

@@ -42,7 +42,7 @@ We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP.
 
 Each table stores location using Oracle's native spatial data type, SDO\_GEOMETRY. A location can be stored as a point in an SDO\_GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
 
-## **STEP 1**: Connect to SQL Developer Web
+## Task 1: Connect to SQL Developer Web
 In the Load Data lab, the load script ran commands to grant the appjson user privileges and setup SQL Developer Web using Rest Services (ORDS).  See the appendix for more details on how to set up a user to connect with SQL Developer Web.
 
 The password to all the schemas is *Oracle_4U*.
@@ -55,7 +55,7 @@ The password to all the schemas is *Oracle_4U*.
 3.  At the login screen, enter *appspat* and *Oracle_4U*.
   ![](./images/appspat-signin.png " ") 
 
-## **STEP 2**: Environment Setup for Spatial
+## Task 2: Environment Setup for Spatial
 
 * Tables are already created for CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP
 Notice that each has a column of type SDO\_GEOMETRY to store location.
@@ -146,7 +146,7 @@ The elements of the constructor are:
     </copy>
     ```
 
-## **STEP 3**: Run Spatial Queries
+## Task 3: Run Spatial Queries
 
 1. Find the five customers closest to the warehouse whose warehouse name  is 'Ferndale Facility'
 

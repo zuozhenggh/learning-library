@@ -14,7 +14,7 @@ Estimated Lab Time: 10 minutes
 * An open port (1521) on your Oracle Virtual Cloud Network (VCN)
 * [Oracle SQL Developer](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
 
-## **STEP 1**: Create a connection through SQL Developer
+## Task 1: Create a connection through SQL Developer
 
 1. If you do not have Oracle SQL Developer installed in your computer, first download it using the above link and install it on your computer.
 

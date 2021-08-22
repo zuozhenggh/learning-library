@@ -20,7 +20,7 @@ Estimated Lab Time: 30 Minutes
 - Create a database connection to the primary database
 - Create a database connection to the standby database
 
-## **STEP 1**: Create the Connection to the primary
+## Task 1: Create the Connection to the primary
 
 <if type="livelabs">
 1.  Open up the hamburger menu in the left hand corner.  
@@ -82,7 +82,7 @@ Estimated Lab Time: 30 Minutes
   > **Note:** If the Status is failed with the error "**The Network adapter could not establish the connection**" disconnect from your company's VPN and try again.
 
 
-## **STEP 2**: Create the Connection to the Standby
+## Task 2: Create the Connection to the Standby
 
 1. First, we need to know the service name from the standby Database and the IP address it listens to.
 

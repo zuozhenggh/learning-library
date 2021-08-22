@@ -30,7 +30,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab : Environment setup
 
-## **STEP 1**: Start ORDS in standalone mode
+## Task 1: Start ORDS in standalone mode
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
@@ -45,7 +45,7 @@ This lab assumes you have:
   ![](./images/ords_lab1_snap5.png " ")
 
 
-## **STEP 2**: Create RESTful Services for JSON data
+## Task 2: Create RESTful Services for JSON data
 
    `AutoREST Enable a Schema and its JSON Table`
 
@@ -435,7 +435,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
     ```
     ![](./images/ordsl50.png " ")
 
-## **STEP 3**: Create RESTful Services for XML data
+## Task 3: Create RESTful Services for XML data
 
 `AutoREST Enable a Schema and its XML Table`
 
@@ -788,7 +788,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
     ```
    ![](./images/ordslab2.39.png " ")
 
-## **STEP 4**: Create RESTful Services for Spatial data
+## Task 4: Create RESTful Services for Spatial data
 
 `AutoREST Enable a Schema and its Spatial Table`
 

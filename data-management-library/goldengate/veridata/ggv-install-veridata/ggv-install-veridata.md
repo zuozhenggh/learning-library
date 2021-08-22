@@ -32,14 +32,14 @@ This lab assumes you have:
     * Java 1.8 or higher
     * [Oracle GoldenGate Veridata Software](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)
 
-## **STEP 1:** Install and Configuring the Back End Servers and Infrastructure
+## Task 1: Install and Configuring the Back End Servers and Infrastructure
 In a nutshell, the installation process includes the following four major tasks. After completing these steps, you can configure the Oracle GoldenGate Veridata Agents:
 1. WebLogic Server and Infrastructure file needed for Oracle GoldenGate Veridata. Install the WebLogic Server infrastructure (formerly known as JRF) files on top of an existing 12.2.1.4.0 WebLogic Server install. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_infrastructure_generic.jar`.
 2. Oracle GoldenGate Veridata Server + Oracle GoldenGate Veridata Agent. It is a jar file, and works on all supported platforms except NonStop. Select a required combination. For this lab, the choice was **complete** to get everything installed in one pass. Invoke this by using the command: `java -jar fmw_12.2.1.4.0_ogg.jar`.
 3. Run the Repository Creation Utility (RCU). It gets installed as a part of the WLS+JRF install in Step 1. You can run it once for all the products (WebLogic Server and Oracle GoldenGate Veridata.) The RCU location in this demo (and the sample VM) is: `/home/opc/VDT/oracle_common/bin/rcu`.
 4. Configure the Oracle WebLogic Server and Oracle GoldenGate Veridata domains. You can run this once for all products. To configure the WebLogic Server, use the command: `/home/opc/VDT/oracle_common/common/bin/config.sh`.
 
-## **STEP 2:** Install the Fusion Middleware Infrastructure
+## Task 2: Install the Fusion Middleware Infrastructure
 1. Open a terminal session. Run the following command: `java -jar fmw_12.2.1.4.0_infrastructure_generic.jar`
     ![](./images/1FMW_Welcome_screen1.png " ")
 2. Click **Next** to continue to the **Auto Updates** section. Leave the default option **Skip Auto Updates** selected and click **Next**.
@@ -60,7 +60,7 @@ In a nutshell, the installation process includes the following four major tasks.
     ![](./images/8FMWScreen8_InstallationComplete.png " ")
 11. Click **Finish**.
 
-## **STEP 3**: Install Oracle GoldenGate Veridata
+## Task 3: Install Oracle GoldenGate Veridata
 To install and configure Oracle GoldenGate Veridata:
 1. Open the terminal session and run the installer with the following command: `java -jar fmw_12.2.1.4.0_ogg.jar` to display the splash screen.
     ![](./images/9VeridataInstall_Welcome1.png " ")
@@ -84,7 +84,7 @@ To install and configure Oracle GoldenGate Veridata:
 10. Click **Next** to continue to the **Installation Complete** screen. Note that the **Next Steps** that are required to run the Repository Creation Utility (RCU) and then run the Configuration Wizard, are mentioned in the **Installation Complete** screen.
     ![](./images/17VeridataInstall_InstallComplete_Screen9.png " ")
 
-## **STEP 4**: Apply a Patch (Optional Step)
+## Task 4: Apply a Patch (Optional Step)
 This is an optional step. You can skip this step if you do not want to apply a patch.
 
 You need to apply a patch on the current release of Oracle GoldenGate Veridata only if you want to avail any or all of the following benefits:
@@ -105,7 +105,7 @@ To apply a patch on an Oracle GoldenGate Veridata release:
 3. Run `opatch apply` to replace the binaries of the main release with the patch binaries. After the patch is successfully applied, the **OPatch succeeded** message is displayed.
 4. Run `opatch lsinventory` to verify the version/patch ID of the applied patch.
 
-## **STEP 5**: Configure RCU
+## Task 5: Configure RCU
 The Repository Creation Utility (RCU) presumes that you have already installed a compatible database to house the repository. This example assumes that it is an Oracle 19c Database.
 To configure the RCU:
 1. Open a terminal session. Start the RCU with this command: `/home/opc/VDT/oracle_common/bin/rcu`.
@@ -131,7 +131,7 @@ To configure the RCU:
       ![](./images/22RCU_CompleteSummary_Screen8.png " ")
 15. Click **Close** to continue.
 
-## **STEP 6**: Create the Domain
+## Task 6: Create the Domain
 The Configuration Wizard can either create a new domain or extend an existing domain. This example shows how to create a new domain.
 1. Open a terminal session. Invoke the Configuration wizard by entering `/home/opc/VDT/oracle_common/common/bin/config.sh`.
 
@@ -171,7 +171,7 @@ The Configuration Wizard can either create a new domain or extend an existing do
       Note the URLs to use from a web browser to reach the WebLogic Administration Console: an http URL which is insecure, and an https URL which uses SSL for increased security.
       ![](./images/33CreatingDomain_Completion_Screen12.png " ")
 
-## **STEP 7**: Deploy Agents
+## Task 7: Deploy Agents
 For each database instance, you need its corresponding Oracle GoldenGate Veridata Agent installed.
 This Agent can be installed and deployed either on the same database host or on a remote host system. The Agent installation requires only the `fmw_12.2.1.4.0_ogg.jar` file. The Agent must be deployed on to a non Oracle Home location.
 **Assumptions**:

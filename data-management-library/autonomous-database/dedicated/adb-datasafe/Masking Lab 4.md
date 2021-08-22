@@ -30,7 +30,7 @@ Follow these general steps:
 15. Sign in to your ATP-D database as the `ADMIN` user with SQL Developer Web.
 16. In SQL Developer Web, verify that the data is masked according to your masking policy.
 
-## STEP 1: Launch Data Masking Wizard
+## Task 1: Launch Data Masking Wizard
 Sign in to the Oracle Data Safe Console in your region
 
 Refer [Lab - Register a Target Database (ATP-D) with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Register%20a%20Target%20Database.md)
@@ -72,7 +72,7 @@ Launch the Data Masking wizard and discover Sensitive Data
 
    ![](./images/Img96.png " ")
 
-## STEP 2: Configure a variety of masking format
+## Task 2: Configure a variety of masking format
 
 Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numbers between 100,000,000 and 899,999,999
 
@@ -173,7 +173,7 @@ Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numb
 
    ![](./images/Img107.png " ")
 
-## STEP 2: Schedule the masking job
+## Task 2: Schedule the masking job
 
 Schedule the data masking job to run immediately and then view the masking report
 
@@ -198,7 +198,7 @@ Connect to ATP-D DB using SQL Developer Web
 
 Refer Step 5 from [Lab - Assess Users with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Assessment%20Lab%202.md)
 
-## STEP 3: Verify masked data using SQL Developer
+## Task 3: Verify masked data using SQL Developer
 
 In SQL Developer Web, verify that the data is masked according to your masking policy
 

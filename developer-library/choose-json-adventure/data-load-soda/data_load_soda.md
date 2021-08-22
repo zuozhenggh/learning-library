@@ -22,7 +22,7 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-## **STEP 1:** Creating a Collection
+## Task 1: Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -119,7 +119,7 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
     Cache-Control: private,must-revalidate,max-age=0
     ```
 
-## **STEP 2:** Loading JSON Data into a Collection
+## Task 2: Loading JSON Data into a Collection
 
 In this section, you will start by building up a URL that will allow you to access the SODA for REST APIs. You will then stage a file and use the newly created URL via cURL to load the file into the collection.
 
@@ -211,7 +211,7 @@ In this section, you will start by building up a URL that will allow you to acce
 
     indicating that all 4408 JSON documents have been loaded.
 
-## **STEP 3**: Working with JSON Data in a Document Store: QBEs
+## Task 3: Working with JSON Data in a Document Store: QBEs
 
 A filter specification is a pattern expressed in JSON. You use it to select, from a collection, the JSON documents whose content matches it, meaning that the condition expressed by the pattern evaluates to true for the content of (only) those documents.
 

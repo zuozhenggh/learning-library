@@ -10,7 +10,7 @@
     {
       "title": "Get Started with noVNC Remote Desktop",
       "description": "Using noVNC Remote Desktop",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop-old/using-novnc-remote-desktop.md"
     },
     {
       "title": "Lab 1: Initialize Environment",
@@ -53,6 +53,12 @@
       "description": "This lab provides an overview of the Enterprise Manager Job System and how to use it to automate routine administrative tasks such as backup, SQL scripts, OS jobs etc.",
       "publisheddate": "6/15/2021",
       "filename": "./../../em-job-system-automation/em-job-system-automation.md"
+    },
+    {
+      "title": "Lab 8: Get Started with Real Application Testing",
+      "description": "This lab provides an overview of Real Application Testing and how to use it to simulate Workload and review Performance before Database Upgrade.",
+      "publisheddate": "6/15/2021",
+      "filename": "./../../em-rat-spa-dbreplay/em-rat-spa-dbreplay.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",

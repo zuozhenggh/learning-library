@@ -8,27 +8,26 @@ Blockchain tables enable you to implement a centralized ledger model where all p
 
 A centralized ledger model reduces administrative overheads of setting a up a decentralized ledger network, leads to a relatively lower latency compared to decentralized ledgers, enhances developer productivity, reduces the time to market, and leads to significant savings for the organization. Database users can continue to use the same tools and practices that they would use for other database application development.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature. Then you will generate certificate in compute instance and generate Certificate GUID in your ATP instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-* Create the Blockchain table and insert rows
+* Create the Blockchain table and insert rows into the blockchain table
+* View Blockchain tables and its internal columns
 * Manage blockchain tables and rows in a blockchain table
-* Create a certificate directory and add your certificate
-* Sign a row in the blockchain table
-* Check the validity of rows in the blockchain table with and without signature
+* Verify the rows in a blockchain table without signature
+* Generate Certificate and Certificate GUID
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Provisioned an Oracle Database 21c Instance
-* Have successfully completed the Setup lab
+* Have successfully completed the previous labs
 
-## **STEP 1:** Create a blockchain table
+## Task 1: Create a Blockchain Table
 
 1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.
 
@@ -43,9 +42,11 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/table-created.png " ")
+	![](./images/task1-1.png " ")
 
 2. Click on the Refresh button in the Navigator tab to view that the table is created.
+
+	![](./images/task1-2.png " ")
 
 3. Run the query to describe the `bank_ledger` blockchain table to view the columns. Note that the description displays only the visible columns.
 
@@ -55,9 +56,9 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/describe.png " ")
+	![](./images/task1-3.png " ")
 
-## **STEP 2:** Insert rows into the blockchain table
+## Task 2: Insert Rows into the Blockchain Table
 
 1. Copy and paste the below code snippet in the worksheet and run them to insert records into the `bank_ledger` blockchain table.
 
@@ -75,7 +76,7 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/insert.png " ")
+	!![](./images/task2-1.png " ")
 
 2. Query the `bank_ledger` blockchain table to show the records.
 
@@ -85,9 +86,9 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/select-all.png " ")
+	![](./images/task2-2.png " ")
 
-## **STEP 3:** View Blockchain tables and its internal columns
+## Task 3: View Blockchain Tables and Its Internal Columns
 
 1. Run the command to view all the blockchain tables.
 
@@ -96,6 +97,8 @@ In this lab, you will:
 	select * from user_blockchain_tables;
 	</copy>
 	```
+
+	![](./images/task3-1.png " ")
 
 2. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
@@ -106,6 +109,8 @@ In this lab, you will:
 	ORDER BY internal_column_id;
 	</copy>
 	```
+
+	![](./images/task3-2.png " ")
 
 3. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
 
@@ -119,7 +124,9 @@ In this lab, you will:
 	</copy>
 	```
 
-## **STEP 4:** Manage Rows in a Blockchain Table
+	![](./images/task3-3.png " ")
+
+## Task 4: Manage Rows in a Blockchain Table
 
 When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are within the retention period.
 
@@ -131,7 +138,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/update.png " ")
+	![](./images/task4-1.png " ")
 
 2. Delete a record in the `bank_ledger` blockchain table.
 
@@ -141,7 +148,8 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/delete.png " ")
+	![](./images/task4-2.png " ")
+
 
 3. Truncating the table `bank_ledger`.
 
@@ -151,9 +159,9 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/truncate.png " ")
+	![](./images/task4-3.png " ")
 
-## **STEP 5:** Manage Blockchain Tables
+## Task 5: Manage Blockchain Tables
 
 Similar to managing rows within the retention period, managing the blockchain table using alter, drop will throw an error.
 
@@ -165,7 +173,8 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/drop.png " ")
+	![](./images/task5-1.png " ")
+
 
 2. Alter the table `bank_ledger` to not delete the rows until 20 days after insert.
 
@@ -175,9 +184,9 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-1.png " ")
+	![](./images/task5-2.png " ")
 
-3. Create another table `bank_ledger_2`.
+3. Create another table `bank_ledger_2`. Click the refresh button to view the new table.
 
 	```
 	<copy>
@@ -188,7 +197,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/create-new-table.png " ")
+	![](./images/task5-3.png " ")
 
 4. Alter the table `bank_ledger_2` by specifying that the rows cannot be deleted until 20 days after they were inserted.
 
@@ -198,7 +207,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-new-table.png " ")
+	![](./images/task5-4.png " ")
 
 5. Run the command to view all the blockchain tables.
 
@@ -208,7 +217,9 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-## **STEP 6:** Verify rows without signature
+	![](./images/task5-5.png " ")
+
+## Task 6: Verify Rows Without Signature
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 
@@ -229,35 +240,39 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/verify.png " ")
+	![](./images/task6-1.png " ")
 
-<!---
 
-2. DBA view of blockchain tables.
-
-	```
-	<copy>
-	select * from dba_blockchain_tables;
-	</copy>
-	```
---->
-
-## **STEP 7:** Generate certificate
+## Task 7: Generate Certificate
 
 Let's connect to Oracle cloud shell to generate your x509 keypair.
 
-1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance.
+1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command.
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+
+	![](./images/task7-1.png " ")
 
 2. Download the nodejs.zip file.
 
     ```
     <copy>
 	cd ~
-    wget 
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vNvEwmqib41JCCwSk6_mufdLO6OXNZQzvjITnQ4rqe6EkPwvU5m5krwloHgHw2XJ/n/c4u04/b/data-management-library-files/o/blockchain/nodejs.zip
     </copy>
     ```
+	![](./images/task7-2.png " ")
 
 3.  Unzip the nodejs file.
+
+	```
+	<copy>
+	unzip nodejs.zip
+	</copy>
+	```
+	![](./images/task7-3.png " ")
 
 4.  Navigate to nodejs folder.
 
@@ -266,17 +281,9 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
     cd nodejs
     </copy>
     ```
-<!---
-2. Create a folder `demo` and navigate into the folder.
 
-	```
-	<copy>
-	cd ~
-	mkdir demo
-	cd demo
-	</copy>
-	```
---->
+	![](./images/task7-4.png " ")
+
 5. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
 
 	Press enter after providing each detail - Country Name, State, Locality Name, Organization name, Common name, Email address.
@@ -287,13 +294,15 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 	</copy>
 	```
 
+	![](./images/task7-5.png " ")
+
 6.	List the files and notice that your *user01.key*, *user01.pem* key pair is created.
 
 	```
 	<copy>ls</copy>
 	```
 
-	![](./images/pem.png " ")
+	![](./images/task7-6.png " ")
 
 7. `cat` the *user01.pem* key.
 
@@ -301,7 +310,9 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 	<copy>cat user01.pem</copy>
 	```
 
-## **STEP 8:** Generate Certificate GUID
+	![](./images/task7-7.png " ")
+
+## Task 8: Generate Certificate GUID
 
 1. Navigate to the tab with SQL Developer Web, copy and paste the below procedure in SQL Worksheet. Replace `-----BEGIN CERTIFICATE----MIIFcjCCA1oCCQC+Rsk9wAYlzDAN………-----END CERTIFICATE-----' with the pem key from the Oracle cloud shell in the previous tab. 
 
@@ -369,17 +380,32 @@ Let's connect to Oracle cloud shell to generate your x509 keypair.
 	/
 	```
 
-2. Make sure to copy the value of Certificate GUID. It will not be displayed again. Do not generate another Certificate GUID.
+	![](./images/task8-1.png " ")
+
+2. Make sure to copy the value of Certificate GUID. It will not be displayed again. 
+
+	> **Note:** Do not run the procedure again to generate another Certificate GUID.
 
 	This output looks like this:
 
 	```
-	Certificate GUID = C70CB0B14ADB1A50E0533D11000A1BCB
+	Certificate GUID = C8D2C1F00236AD7CE0533D11000AE2FC
 	```
+
+3. Run this command to show your certificate.
+
+	```
+	<copy>
+	SELECT * FROM USER_CERTIFICATES;
+	</copy>
+	```
+	![](./images/task8-3.png " ")
+
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Rayes Huang, Mark Rakhmilevich, Anoosha Pilli
 * **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, July 2021
+* **Last Updated By/Date** - Brianna Ambler, August 2021

@@ -18,7 +18,7 @@ Watch this short video to preview how to prepare your tenancy for Oracle E-Busin
 * Tenancy Admin User
 * Tenancy Admin Password
 
-## **STEP 1:** Create the EBS Cloud Manager Administrators group and user in IDCS
+## Task 1: Create the EBS Cloud Manager Administrators group and user in IDCS
 
 1. As the Tenancy Administrator, log in to the Oracle Cloud Infrastructure console.
     ![](./images/login-oci.png " ")
@@ -105,7 +105,7 @@ Watch this short video to preview how to prepare your tenancy for Oracle E-Busin
 
     ![](./images/logout.png " ")
 
-## **STEP 2:** Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
+## Task 2: Register Oracle E-Business Suite Cloud Manager as a Confidential Application in IDCS
 
 ```
 Note: The ebscm.admin@example.com performs the tasks in this section.
