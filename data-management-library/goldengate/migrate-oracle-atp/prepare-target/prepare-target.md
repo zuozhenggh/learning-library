@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, ATP. 
+Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
 
 *Estimated lab time*: 10 minutes
 
@@ -10,17 +10,13 @@ Up to now we have created all of the necessary resources using Terraform in OCI.
 
 We need to create our target tables for our GoldenGate migration and enable GGADMIN for replication to the Autonomous Database.
 
-For a technical overview of this lab step, please watch the following video:
-
-[](youtube:K89v3fprzpg)
-
 ### Prerequisites
 
 * This lab assumes that you completed all preceding labs.
 
 ## **Step 1**: Open SQL Developer Web 
 
-1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **HOL Target ATP** database.
+1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **Target ATP** database.
 
 	![](/images/2.atp.PNG)
 
