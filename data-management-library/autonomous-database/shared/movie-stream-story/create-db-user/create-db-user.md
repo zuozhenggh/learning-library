@@ -184,4 +184,5 @@ See the documentation on [Managing Users on Autonomous Database](https://docs.o
 
 ## Acknowledgements
 * **Author** - Rick Green, Principal Developer, Database User Assistance
+* **Contributors** - Marty Gubar
 * **Last Updated By/Date** - Rick Green, August 2021
