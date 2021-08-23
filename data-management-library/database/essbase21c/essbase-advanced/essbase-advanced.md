@@ -47,37 +47,28 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 4. Now you create the rule file.
 
     * From the Actions menu to the right of the cube, click **Inspect**.
-      ![](./images/Dim_1.png " ")
+
+    ![](./images/Dim_1.png " ")
 
     * Click **Scripts**, and then **Rules**. The rules editor is displayed, showing the currently defined  rules.
+    * Click **Create** and select **Dimension Build (Indexed Based)** to define the build dimension rule.  An index-based build dimension rule removes dependency of fields to each other and allows the fields to appear in any order.
 
-    * Click **Create** and select **Dimension Build (Indexed Based)** to define the build dimension rule.
-    An index-based build dimension rule removes dependency of fields to each other and allows the fields to appear in any order.
-      ![](./images/Dim_2.png " ")
+    ![](./images/Dim_2.png " ")
 
 
     * In the New Rule dialog box, enter **Dim_market1** as the name of the rule file.
-
     * Under the Source Type, select **File**.
-
     * Click the browse icon and locate the file **Dim_Market.txt** that you downloaded and click **Open** to select it.
-
     * As you saw earlier, the first row of the flat file doesn’t contain header values. Enter the Header Record Number as 0.
-
     * Specify the Delimiter value as Comma, based on the file format.
-
     * Set the preview data count value to 10.
-
-
-
     * Click **Preview Data**.
 
-      ![](./images/Dim_3.png " ")
-
+    ![](./images/Dim_3.png " ")
 
     * Click **Proceed**.
 
-     ![](./images/Dim_3_0.png " ")
+    ![](./images/Dim_3_0.png " ")
 
     You can now preview the dimension structure in the rules editor, with the columns displayed based on the input flat file.
 
@@ -85,39 +76,39 @@ You can build a dimension to add or modify dimensions, but you can’t use it to
 
 5. On the rules editor page, you can now set up and edit the rule.
 
-      * On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
+    * On Preview page for the new rule, in the first field (column), click **Dimension**, and select **Market** as dimension name. Market dimension is now assigned to all fields.
+    * Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
+      The source file for this rule is in parent-child format.
+    * Set up the other fields:
 
-      * Under Market, in the first field, it, click **Type**, and select the dimension type, **Parent**.
-        The source file for this rule is in parent-child format.
+      * Set Field 2 - **Child**.  
+      * Set Field 3 - **Property**, and third row Parent/Child box to Child.
+      * For Field 4 and 5, set **UDA**, and third row Parent/Child boxes to Child.
+      * For Field 6-9, set **Alias**, third row Alias boxes to ChineseNames, JapaneseNames, RussianNames, and GermanNames respectively; and fourth row boxes to Child.
+      * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
 
-      * Set up the other fields:
+      ![](./images/Dim_4.png)
 
-         * Set Field 2 - **Child**.  
-         * Set Field 3 - **Property**, and third row Parent/Child box to Child.
-         * For Field 4 and 5, set **UDA**, and third row Parent/Child boxes to Child.
-         * For Field 6-9, set **Alias**, third row Alias boxes to ChineseNames, JapaneseNames, RussianNames, and GermanNames respectively; and fourth row boxes to Child.
-         * Set Field 10 - **Attribute Member**, third row box to Population, and fourth row box to Child.
-           ![](./images/Dim_4.png)
+    * Now check the field properties for a field. Select the last field column, **Population**.
 
-       * Now check the field properties for a field. Select the last field column, **Population**.
-
-          On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
-          ![](./images/Dim_5.png " ")
-          ![](./images/Dim_6.png " ")
+    On the Field options toolbar, click **Properties** and verify that Case is set to No Operation. This means that uppercase and lowercase text aren’t handled differently here than they were in the source text file.
+    
+    ![](./images/Dim_5.png " ")
+    ![](./images/Dim_6.png " ")
 
 
-       * Click **Dimensions** under the Global toolbar and select **Market**.
+    * Click **Dimensions** under the Global toolbar and select **Market**.
 
-       * Go to Advanced and Check Allow Property Changes. Click **OK**.
-         ![](./images/Dim_7_0.png " ")
+    * Go to Advanced and Check Allow Property Changes. Click **OK**.
+     ![](./images/Dim_7_0.png " ")
 
-       * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
+    * When you have finished defining the rule, click **Verify** in the Global toolbar, to validate the rule syntax.
 
-       * Click **Save and Close**.
-         ![](./images/Dim_7.png " ")
+    * Click **Save and Close**.
+     ![](./images/Dim_7.png " ")
 
-       * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab.
-         Click **Close** to return to the home page.
+    * Click **Refresh**. See that your created rule is now listed in the rules pane of the Scripts tab.
+     Click **Close** to return to the home page.
 
 6. Next, you create and run a job to build the dimension using the rule.
 
@@ -379,8 +370,8 @@ To verify if the data is aggregated at all the dimension levels for Actual, you 
      * Use the below command and enter the password to login:
          ```
        <copy>        
-             esscs login -url http://ip:9000/essbase -u userid
-   	</copy>
+             esscs login -url http://[Instance-Public-IP]:9000/essbase -u userid
+   	   </copy>
        ````
         ![](./images/image15_64.png " ")
 
@@ -444,9 +435,9 @@ The Swagger interface for Essbase REST enables you to try out REST requests in a
 
 To use the Swagger interface,
 
-1. Log in to Essbase web interface with url. For example: http://ip:9000/essbase/jet
+1. Log in to Essbase web interface with url. For example: http://[Instance-Public-IP]:9000/essbase/jet
 
-2. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. For example, change the URL to:  **http://ip:9000/essbase/rest/doc/**
+2. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. For example, change the URL to:  **http://[Instance-Public-IP]:9000/essbase/rest/doc/**
 
 3. On Swagger web interface, you are presented with a number of REST APIs.  
 

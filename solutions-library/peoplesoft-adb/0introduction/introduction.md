@@ -12,7 +12,7 @@ Notes:
 - The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
 - Follow all naming conventions (compartment, group, etc..) and passwords as directed.   
 - IP addresses and URLs in the screenshots in this workshop may differ from what you use in the labs as these are dynamically generated.
-- The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Peoplesoft Cloud Manager and Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
+- The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
 
 
