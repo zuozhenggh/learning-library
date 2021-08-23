@@ -16,9 +16,12 @@ Estimated time: 15 minutes
 - Learn how to pivot data rows into columns to make analysis easier
 
 ### Prerequisites
-- You will need to have completed the previous labs in this workshop
-- Alternatively, run this script in the SQL Worksheet (TODO)
-CODE GOES HERE?
+- This lab requires completion of Labs 1-4 in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## Task 1: Preparing The Data Warehouse Schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
@@ -39,7 +42,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. Current
     <copy>
     SELECT
     *  
-    FROM times;</copy>
+    FROM time;</copy>
     ```
 
 **NOTE** The TIMES dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
@@ -81,7 +84,7 @@ The code below uses a technique called **INNER JOIN** to join the dimension tabl
     m.genre_id,
     m.movie_id
     FROM custsales m
-    INNER JOIN times t ON m.day_id = t.day_id
+    INNER JOIN time t ON m.day_id = t.day_id
     INNER JOIN customer c ON m.cust_id = c.cust_id
     INNER JOIN genre g ON m.genre_id = g.genre_id;
     </copy>
@@ -92,7 +95,7 @@ There are lots of different types of joins that can be used within a SQL query t
 An inner join, which is sometimes called a simple join, is a join of two or more tables that returns only those rows that satisfy the join condition. In the example above, only rows in the sales fact table will be returned where a corresponding row for day exists in the time dimension table and a corresponding row exists in the customer dimension table and a corresponding row exists in the genre dimension table.
 
 ### B) OUTER JOIN
-An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next step.
+An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next task.
 
 
 ## Task 2: Learning More About Joins
@@ -170,7 +173,7 @@ Unless you had a detailed knowledge of all the available genres you would probab
 
     When we executed the query the first time, Autonomous Data Warehouse executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Data Warehouse simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
 
-    If you want to understand a little bit more about **result cache**, then continue with STEP 2; otherwise, just jump ahead to **STEP 3 - Analyzing Customer Viewing Habits**.
+    If you want to understand a little bit more about **result cache**, then continue with Task 4; otherwise, just jump ahead to ** Task 5 - Analyzing Customer Viewing Habits**.
 
 ## Task 4: Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
 
@@ -382,7 +385,7 @@ We are starting to get an interesting picture of our customers' viewing habits d
 
 ## Task 8: Breaking Data Out By Quarter
 
-It's most likely that when you are doing this type of analysis on your own data set, the next most obvious step is to look at the same data over time to see if any other interesting patterns pop out.
+It's most likely that when you are doing this type of analysis on your own data set, the obvious next step is to look at the same data over time to see if any other interesting patterns pop out.
 
 1. Let's dig a little deeper into the numbers by breaking out the data by year. With SQL, all we need to do is add the additional column name into the **SELECT** clause, **GROUP BY** clause and most importantly the **ORDER BY** clause as well:
 
@@ -479,7 +482,7 @@ In this section, you have looked at the following key features of your Autonomou
 
 - Transforming data from rows into columns to make comparisons easier by using **PIVOT**
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
