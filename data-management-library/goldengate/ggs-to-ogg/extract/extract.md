@@ -48,11 +48,15 @@ This Extract process captures data from the source database to send to Oracle Go
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
+    ![Select Integrated Extract](images/02-02-add-extract.png)
+
 3.  For **Process Name**, enter a name for this Extract process, such as UAEXT.
+
+    ![Extract Name](images/02-03-extract-name.png)
 
 4.  For **Trail Name**, enter a two-character name for the Trail file, such as E1.
 
-    ![Add Extract - Basic Information](images/02-04-ggs-basic-info.png)
+    ![Trail name](images/02-04-trailname.png)
 
 5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
@@ -92,7 +96,11 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
 3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **GGStoOGG**.
 
+    ![Path Name](images/03-03-path-name.png)
+
 4.  For **Description**, describe the purpose of this Path.
+
+    ![Description](images/03-04-path-desc.png)
 
 5.  For **Source Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
@@ -100,21 +108,33 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![GGS Console URL](images/03-05.png)
 
+    ![Source host](images/03-05-source-host.png)
+
 6.  For **Port Number**, enter 443.
+
+    ![Source Port](images/03-06-port-no.png)
 
 7.  Click **Trail Name**, and then select the trail file created in Task 1 above, to send to OCI GoldenGate. For example, select **E1**.
 
+    ![Trail name](images/03-07-trailname.png)
+
 8.  For **Domain**, enter the Domain from Lab 3, Task 3, step 4. For example, **GGSNetwork**.
+
+    ![Domain](images/03-08-domain.png)
 
 9.  For **Alias**, enter the Alias from Lab 3, Task 3, step 4. For example, **ggs2ogg**.
 
-10. For **Target Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.   
+    ![Alias](images/03-09-alias.png)
+
+10. For **Target Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+
+    ![Target Trail](images/03-10-target-trail.png)
 
 11. For **Generated Target URI**, click **Edit** (pencil icon), and then replace the IP address with the Oracle GoldenGate Internal FQDN. *You can copy the Internal FQDN from the Oracle GoldenGate Marketplace Compute instance in the OCI Console.*    
 
     ![](images/02-07-note.png)
 
-    ![Add Path](images/03-11b.png)
+    ![Add Path](images/03-11b-target-uri.png)
 
 12. Click **Create Path**.
 
@@ -148,7 +168,7 @@ In this lab, you created and ran a Path on your on premisess Oracle GoldenGate R
 
 ## Task 5: Add and Run a Replicat
 
-This Replicat process consumes the trail file sent from Oracle GoldenGate.
+This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 1.  Click **Overview**, and then click **Add Replicat** (plus icon).
 
@@ -156,19 +176,31 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
+    ![Nonintegrated Replicat](images/05-02-nonint-rep.png)
+
 3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
+
+    ![Replicat name](images/05-03-rep-name.png)
 
 4.  For **Credential Domain**, select **OracleGoldenGate**.
 
 5.  For **Credential Alias**, select **adw&lt;user&gt;_low**.
 
+    ![Credential Domain](images/05-04-cred.png)
+
 6.  For **Trail Name**, enter T1.
 
+    ![Trail name](images/05-05-trail.png)
+
 7.  From the **Checkpoint Table** dropdown, select **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**.
+
+    ![Checkpoint Table](images/05-07-checkpt.png)
 
 8.  Click **Next**.
 
 9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+
+    ![Replicat Param](images/05-09.png)
 
 10. Click **Create**.
 
