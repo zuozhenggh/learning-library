@@ -1,4 +1,4 @@
-# Oracle Database CI/CD for Developers
+# Oracle Database CI/CD for Developers - Lab 3: Clone and Create a Github Repository
 
 ## Introduction
 
@@ -14,9 +14,8 @@ Estimated Lab Time: 30-45 minutes
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- You have completed the user setups steps.
+- You have completed [Lab 1, Clone and Create a Github Repository](../repo/repo.md).
+- You have completed [Lab 2, Create an Autonomous Database](../createdb/createdb.md).
 
 ## Task 1: XXX
 
