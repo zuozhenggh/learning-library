@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "Expanding Oracle REST Data Services into Oracle Cloud Infrastructure",
+  "workshoptitle": "Oracle Database CI/CD for Developers",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Expanding Oracle REST Data Services into Oracle Cloud Infrastructure",
+            "description": "Oracle Database CI/CD for Developers",
             "filename": "../../intro/intro.md"
         },
         {
@@ -12,19 +12,19 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Setups",
-            "description": "Setup your OCI Account and Create an Oracle Autonomous Database",
-            "filename": "../../setups/setups.md"
+            "title": "Lab 1: Clone and Create a Github Repository",
+            "description": "Clone and Create a Github Repository",
+            "filename": "../../repo/repo.md"
         },
         {
-            "title": "Lab 2: Create a Function to Batch Load Data into the Database Using ORDS",
-            "description": "Create a Function to Batch Load Data into the Database Using ORDS",
-            "filename": "../../csv-function/csv-function.md"
+            "title": "Lab 2: Create an Autonomous Database",
+            "description": "Create an Autonomous Database",
+            "filename": "../../createdb/createdb.md"
         },
         {
-            "title": "Lab 3: Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
-            "description": "Create a Function and Service Connector to Load Logs from the Logging Service into the Database Using ORDS",
-            "filename": "../../json-logging/json-logging.md"
+            "title": "Lab 3: Use SQLcl and Liquibase for CI/CD",
+            "description": "Use SQLcl and Liquibase for CI/CD",
+            "filename": "../../cicd/cicd.md"
         },
         {
             "title": "Need Help?",
