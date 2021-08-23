@@ -2,12 +2,13 @@
 
 ## Introduction
 
-In this lab you will review the methods used in the previous labs to see how we can expose data for application development from REST endpoints.
+In this lab you will start by creating a compartment in OCI. Once the compartment is created, you will then create an Autonomous Database in that compartment.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
+- Create a Compartment
 - Create an Autonomous Database
 
 ### Prerequisites
