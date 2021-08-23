@@ -36,30 +36,10 @@ This lab assumes you have:
     unzip -o setup-novnc-livelabs.zip
     chmod +x setup-novnc-livelabs.sh
     ./setup-novnc-livelabs.sh
-    pwd
 
     </copy>
     ```
-
-2. Start VNC Server using *systemctl*
-
-    ```
-    <copy>
-    appuser=$(cat /tmp/.appuser)
-    systemctl start vncserver_${appuser}@:1.service
-    systemctl status vncserver_${appuser}@:1.service
-    </copy>
-    ```
-
-3. Run script *novnc-2.sh* to finalize
-
-    ```
-    <copy>
-    /tmp/novnc-2.sh
-    </copy>
-    ```
-
-4. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+2. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>
