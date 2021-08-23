@@ -1,10 +1,22 @@
-# Oracle Database CI/CD for Developers
+# Oracle Database CI/CD for Developers - Lab 1: Clone and Create a Github Repository
 
 ## Introduction
 
 In this lab you will review the methods used in the previous labs to see how we can expose data for application development from REST endpoints.
 
 Estimated Lab Time: 10 minutes
+
+### Objectives
+
+- Fork a GitHub Project
+- Clone a GitHub Project
+
+### Prerequisites
+
+- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
+- You have a [GitHub Account](https://github.com)
+- You have configured the GitHub account for [SSH access](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+- SSH Access to GitHub has been tested and is working on your local environment
 
 ## Clone and Create a Github Repository
 
