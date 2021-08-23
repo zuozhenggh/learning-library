@@ -29,11 +29,11 @@ When you first access APEX you will need to log in as an APEX instance administr
 
 2. Enter the password for the Administration Services and click **Sign In to Administration**. The password should match the one you used when creating the ATP instance.
 
-    ![](images/log-in-as-admin.png)
+    ![](images/log-in-as-admin-inv.png)
 
 3. Click **Create Workspace**.
 
-   ![](images/welcome-create-workspace.png)
+   ![](images/welcome-create-workspace-inv.png)
 
 4. Set **Database User** to **INVENTORYUSER** and then click **Create Workspace**.
 
