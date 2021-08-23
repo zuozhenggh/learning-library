@@ -37,7 +37,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ShsITsGuQ3dozDPlAkT0jUHqYFP1zJ2sErvP0mDv_bxWl5g9cAHiZE_uXaEoVQHE/n/c4u04/b/labfiles/o/multiscripts.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/4JXw4Xlu8tLKn5iypGCV3QqEvxGyoslHuwwlKrnyJqMety5g_ImRuE-yZY0f27CA/n/c4u04/b/labfiles/o/multiscripts.zip
     unzip multiscripts.zip; chmod +x *.sh
     /home/opc/setupenv.sh
     </copy>
@@ -50,7 +50,7 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Zc0z9ZcPnNK8U_VrmtwKkfs1s-3fkkLY_8y39YCtk9cNGARAC1leX9xF2cIe0_6o/n/c4u04/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iqwKnLwXAfgpXwrJCJzpG1VWi1AjJW7JL8Bzl9OP00VCEzzG5NhPn201Sj5qVLWC/n/c4u04/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>

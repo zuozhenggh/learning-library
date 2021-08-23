@@ -16,9 +16,12 @@ Estimated time: 15 minutes
 - Learn how to pivot data rows into columns to make analysis easier
 
 ### Prerequisites
-- You will need to have completed the previous labs in this workshop
-- Alternatively, run this script in the SQL Worksheet (TODO)
-CODE GOES HERE?
+- This lab requires completion of Labs 1-4 in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## Task 1: Preparing The Data Warehouse Schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
@@ -39,7 +42,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. Current
     <copy>
     SELECT
     *  
-    FROM times;</copy>
+    FROM time;</copy>
     ```
 
 **NOTE** The TIMES dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
@@ -81,7 +84,7 @@ The code below uses a technique called **INNER JOIN** to join the dimension tabl
     m.genre_id,
     m.movie_id
     FROM custsales m
-    INNER JOIN times t ON m.day_id = t.day_id
+    INNER JOIN time t ON m.day_id = t.day_id
     INNER JOIN customer c ON m.cust_id = c.cust_id
     INNER JOIN genre g ON m.genre_id = g.genre_id;
     </copy>
@@ -431,13 +434,13 @@ However, the challenge here is: it would be much easier if we could have a sprea
 
 **Note:** You don't need to run this block of code:
 
-    ```
-    PIVOT
-    (
-    SUM(CONTRIBUTION) contribution
-    FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
-    )
-    ```
+  ```
+  PIVOT
+  (
+  SUM(CONTRIBUTION) contribution
+  FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
+  )
+  ```
 
 1. If we wrap a **PIVOT** operation around our previous query, this will allow us to swap rows for each quarter into columns so we can focus more easily on the contribution data:
 
@@ -479,7 +482,7 @@ In this section, you have looked at the following key features of your Autonomou
 
 - Transforming data from rows into columns to make comparisons easier by using **PIVOT**
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
