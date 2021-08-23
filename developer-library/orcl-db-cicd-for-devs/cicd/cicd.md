@@ -1,4 +1,4 @@
-# Oracle Database CI/CD for Developers - Lab 3: Clone and Create a Github Repository
+# Oracle Database CI/CD for Developers - Lab 3: Use SQLcl and Liquibase for CI/CD
 
 ## Introduction
 
