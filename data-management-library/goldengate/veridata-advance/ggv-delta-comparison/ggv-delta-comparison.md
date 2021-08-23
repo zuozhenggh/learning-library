@@ -12,6 +12,32 @@ During the subsequent runs of a comparison job, the comparison of the tables can
 + **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.2 and higher**
 
 ## Task 1: Enable Delta Comparison
+1. In the Compare Pair Configuration page, click **Manual Mapping**.
+2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping.
+Enter:
+    * Source schema: **SOURCE**
+    * Target schema: **TARGET**
+    * Source Table: **DELTA_TEST1**
+    * Target Table: **DELTA_TEST1**
+    ![](./images/1DP.png " ")
+3. Click **Generate Compare Pair**.
+    ![](./images/2DP.png " ")
+4. Click **Save** to save the generated compare pairs on the **Preview** tab.
+5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1=DELTA_TEST1**, and click **Enable Delta Processing**.
+    ![](./images/3DP.png " ")
+
+4. Select the **Enable Delta Processing** check box and click **Save**.
+
+    ![](./images/3DP_selectEnableDelta.png " ")
+
+    The metadata information gets saved:
+
+    ![](./images/5DP.png " ")
+
+    Delta Processing is enabled. Notice the changed status o the compare pairs on the **Enable Delta Processing** tab:
+    ![](./images/6DP.png " ")
+    
+5.     
 
 
 ## Task 2: Configure Delta Comparison
