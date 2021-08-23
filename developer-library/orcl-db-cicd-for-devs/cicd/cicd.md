@@ -18,61 +18,8 @@ Estimated Lab Time: 30-45 minutes
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-## Task 1: Loading Data in a Relational Table
+## Task 1: XXX
 
-Hello Repo
-
-Again referring to our process flow and example, we need to create a baseline or main release so that our developers all start with the same code. To do this, we need to use SQLcl and Liquibase.
-
-Setups Needed
-
-For the examples we will be going over, we will be using git at the command line with our SSH keys pre-set, our repository in GitHub and the project name being db-cicd-project.
-
-You have two choices here:
-
-Manually create the repository or fork the repository that has been pre-created for this article. I would suggest forking it from here:
-
-https://github.com/Mmm-Biscuits/db-cicd-project
-
- 
-
-Next, set up SSH connection via the following document:
-
-Connecting to GitHub with SSH
-
-A GitHub desktop GUIs is also available.
-
-Now we need to clone it to our local machine/computer/laptop. Navigate to a directory where you would like to store your git repositories locally and issue the clone command:
-
-> git clone git@github.com:YOUR_GITHUB_USERNAME/db-cicd-project.git
-
- 
-
-The above command will create a directory called db-cicd-project for you and pull any code that was in the repository. It is now time to fill this repository with database goodness.
-The First Genschema
-The following repository directory structure is what the sample repository that you forked contains:
-
-db-cicd-project
-
-    apps
-    database
-    etc
-        presetup
-        setup
-        postsetup
-    static
-        css
-        html
-        images
-        js
-    ut
-        utPLSQL
-    README.md
-    version.txt
-
-Note: This directory structure assumes a few things (and we all know what assuming does). The assumption is that the apps directory may contain Application Express apps, so sub directories would be f101 for example. If not using APEX, you could consolidate the static directory and apps directory into a single directory.
-
-Using this directory structure, we are going to start to work with the database and SQLcl now. Using our free ADB, we need to download the wallet that contains all the information for SQLcl to connect to the database. You can look here for the steps to download the wallet.
 
 Once the ADB wallet is downloaded, at a command line, change the directory to the database directory in our repository project. We should be at db-cicd-project -> database. Start SQLcl but do not log into a database yet:
 
