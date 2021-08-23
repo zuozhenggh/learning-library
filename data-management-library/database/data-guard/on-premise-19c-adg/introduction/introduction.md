@@ -1,7 +1,7 @@
 # Introduction
 
 ## About this Workshop
-In this Lab, You will learn how to setup Active Data Guard. You will using a compute instance in OCI to simulate the primary database, which is deployed in one region (For example: Seoul). Another compute instance in OCI to simulate the standby database which can be deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet. 
+This workshop focuses on Creating Active Data Guard 19c on cloud compute systems. It will be similar to creating Active Data Guard on-premises. After creating the systems, you can proceed to the Active Data Guard Fundamentals LiveLab to explore the features such as DML redirect, automatic block media recovery. In this Lab, You will using a compute instance in OCI to simulate the primary database, which is deployed in one region (For example: Seoul). Another compute instance in OCI to simulate the standby database which can be deployed in another region (For example: Tokyo). The primary and the standby database communicate through public internet. 
 
 Estimated Lab Time: 4 hours. 
 

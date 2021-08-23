@@ -191,8 +191,8 @@ There are several ways to check the lag between the primary and standby.
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/ data-management-library-files/o/workload.sh
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/ data-management-library-files/o/scn.sql
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
     </copy>
     ```
 
@@ -201,8 +201,8 @@ There are several ways to check the lag between the primary and standby.
 2. From primary side, run as **oracle** user, download scripts using the command you copied.
 
     ```
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/ data-management-library-files/o/workload.sh
-    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/ GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/ data-management-library-files/o/workload.sh
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
+    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1. oraclecloud.com)... 134.70.31.247, 134.70.27.247, 134.70.35.189
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1. oraclecloud.com)|134.70.31.247|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -213,8 +213,8 @@ There are several ways to check the lag between the primary and standby.
     
     2020-10-31 02:48:09 (10.5 MB/s) - ‘workload.sh’ saved [1442/1442]
     
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/ data-management-library-files/o/scn.sql
-    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/ A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/ data-management-library-files/o/scn.sql
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
+    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1. oraclecloud.com)... 134.70.35.189, 134.70.31.247, 134.70.27.247
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1. oraclecloud.com)|134.70.35.189|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -227,9 +227,9 @@ There are several ways to check the lag between the primary and standby.
     
     [oracle@primary ~]$  
     ```
+
    
-   
-   
+
 3. Change mode of the `workload.sh` file and run the workload. Ignore the error message of drop table. Keep this window open and running for the next few STEP s in this lab.
 
     ```
@@ -325,9 +325,9 @@ There are several ways to check the lag between the primary and standby.
     -----------
         2784330
     ```
+
    
-   
-   
+
 6. From standby site, query the `v$dataguard_stats` view to check the lag.
 
     ```
@@ -527,5 +527,4 @@ You may proceed to the next lab.
 * **Author** - Minqiao Wang, Oct 2020 
 * **Last Updated By/Date** - Minqiao Wang, Aug 2021
 * **Workshop Expiry Date** - Nov 30, 2021
-
 

@@ -260,6 +260,17 @@ If you encounter the Warning: ORA-16809: multiple warnings detected for the memb
     SQL> 
     ```
 
+
+
+Now, You have completed the fundamentals of the ADG labs. If you are interested, you can perform the following common labs for ADG:
+
+1.  [Enable ADG DML Redirection](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
+2. [Automatic Block Media Recovery](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
+3. [Restore Point Propagation](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
+
+
+
 ## Acknowledgements
+
 * **Author** - Minqiao Wang, Oct 2020 
 * **Last Updated By/Date** - Minqiao Wang, Aug 2021

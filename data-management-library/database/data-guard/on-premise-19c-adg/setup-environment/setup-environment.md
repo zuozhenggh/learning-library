@@ -4,7 +4,7 @@
 
 In this lab you will setup 2 Oracle Cloud network (VCNs) and 2 compute instances using Oracle Resource Manager and Terraform. One simulate the primary site and another simulate the standby site. You can setup the primary and standby hosts using the related scripts. The primary and the standby hosts are in different VCN. You can setup primary and standby hosts in the same region or in different region.
 
-Estimated Lab Time: 60 minutes.
+Estimated Lab Time: 40 minutes.
 
 ### Objectives
 
@@ -25,16 +25,14 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 ## **STEP 1:** Prepare the Primary Database
 
-1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Resource Manager > Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
+1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Developer Sevices**, under **Resource Manager** choose **Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. 
 
-    ![](./images/cloud-homepage.png " ")
-    
-    ![](./images/resource.png " ")
+    ![](images/image-20210816144420716.png " ")
     
     
     
     ![](./images/step1.3-createstackpage.png " ")
-
+    
 2. Check the **ZIP FILE**, Click the **Browse** link and select the primary database setup zip file (`db19c-primary-num.zip`) that you downloaded. Click **Select** to upload the zip file.
 
     ![](images/image-20201030094139692.png)
@@ -95,7 +93,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
     ````
-    ssh -i ~/.ssh/optionskey opc@<Your Compute Instance Public IP Address>
+    ssh -i labkey opc@<Your Compute Instance Public IP Address>
     ````
 
 2. After successfully logging in, proceed to STEP 5.
