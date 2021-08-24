@@ -95,7 +95,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
@@ -121,7 +121,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Stack Configuration for workshop-installed](images/stack-configuration-workshop-installed.png "Stack Configuration for workshop-installed")
 
-5. In the **Stack Information** section, leave **Name** and **Description** for the stack as is, and select your compartment.
+5. In the **Stack Information** section, leave the **Name** and **Description** for the stack as is, and select your compartment.
 
     This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-staged` compute instance. If you plan to use your own VCN, make sure that it resides in this compartment too.
 
@@ -158,7 +158,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
