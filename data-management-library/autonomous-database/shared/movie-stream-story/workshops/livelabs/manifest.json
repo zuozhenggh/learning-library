@@ -12,7 +12,7 @@
       },
       {
         "title": "Lab 1: Provision an ADB Instance",
-        "type": "freetier",
+        "type": "livelabs",
         "filename": "../../provision-database/adb-provision-moviestream.md"
       },
       {
@@ -67,7 +67,7 @@
       },
       {
           "title": "Lab 7: Use OML to Predict Customer Churn",
-          "type": "freetier",
+          "type": "livelabs",
           "filename": "../../predict-churn/predict-churn.md"
       },
       {
