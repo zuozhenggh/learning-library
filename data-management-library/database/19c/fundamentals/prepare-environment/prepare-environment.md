@@ -111,7 +111,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 1. Download [db19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/p3azd6JsGn1R0_YBobDvkH9-gCkzdYwiexUsxAKUySC86DjRvs6c_SfP5S7E35Q4/n/c4u04/b/labfiles/o/db19cnf-workshop-installed.zip) to a directory on your local computer.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
     ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
 
