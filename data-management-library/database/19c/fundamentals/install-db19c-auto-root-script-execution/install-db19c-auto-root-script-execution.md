@@ -4,7 +4,7 @@
 
 Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password.
 
-In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer on the workshop-staged compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer on the `workshop-staged` compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
 
 Estimated Lab Time: 30 minutes
 
@@ -20,7 +20,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-staged` compute instance.
+- Obtained and signed in to your `workshop-staged` compute instance
 
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
