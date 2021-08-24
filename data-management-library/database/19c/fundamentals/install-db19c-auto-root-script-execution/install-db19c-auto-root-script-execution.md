@@ -274,4 +274,4 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 19 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021

@@ -566,4 +566,4 @@ $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 19 2021
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 24 2021

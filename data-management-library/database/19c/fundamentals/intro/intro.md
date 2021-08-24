@@ -40,4 +40,4 @@ You can try the following labs:
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 19 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021

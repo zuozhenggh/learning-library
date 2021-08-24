@@ -429,4 +429,4 @@ A common user is a database user that has the same identity in the `root` contai
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 19 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021
