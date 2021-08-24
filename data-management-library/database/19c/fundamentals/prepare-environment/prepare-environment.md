@@ -99,9 +99,9 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-staged` compute instance.
+14. In a browser, paste the URL to your `workshop-staged` compute instance and wait a minute or two.
 
-   You are automatically logged in to your compute instance and presented with a user-friendly desktop.
+   You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time, wait a minute and then try again.
 
 
 
@@ -162,9 +162,9 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-installed` compute instance.
+14. In a browser, paste the URL to your `workshop-installed` compute instance and wait a minute or two.
 
-    You are automatically logged in to your compute instance and presented with a user-friendly desktop.
+    You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time, wait a minute and then try again.
 
 
 
