@@ -71,7 +71,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
     </copy>
     ```
 
@@ -94,7 +94,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
     </copy>
     ```
 
@@ -255,7 +255,7 @@ In this step, we will use some of the additional features of the DBMS\_CLOUD API
 
     ```
     <copy>
-    define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+    define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o'
     define parquet_format = '{"type":"parquet",  "schema": "all"}'
 
     begin
@@ -313,7 +313,7 @@ In this step, we will use some of the additional features of the DBMS\_CLOUD API
 
     ```
     <copy>
-    define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
+    define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o'
     define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
     begin
         dbms_cloud.create_external_table(
@@ -463,7 +463,7 @@ We will also add constraints on the **movie** table to ensure that all the colum
     BEGIN
     DBMS_CLOUD.COPY_DATA (
     table_name => 'pizza_location',
-    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o/pizza_location/pizza_location.csv',
+    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o/pizza_location/pizza_location.csv',
     format => '&csv_format'
     );
     END;
