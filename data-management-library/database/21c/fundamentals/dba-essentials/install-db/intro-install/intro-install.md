@@ -1,16 +1,16 @@
-# Oracle Database Administration Essentials - an Introduction
+# Oracle Database Administration Essentials
 
 ## Introduction
 
-**Oracle Database Administration Essentials** is a task-oriented, quick start approach to familiarize you with Oracle Database administration tasks. It features the basic know-hows of Oracle Database and helps you perform various tasks necessary to keep the database operational.
+**Oracle Database Administration Essentials** is a task-oriented, quick start approach to familiarize you with Oracle Database administration. It features the basic know-hows of Oracle Database and helps you perform various tasks necessary to keep the database operational.
 
-Watch this video to learn about the core Oracle Database Breakthrough Innovations.
+Watch this video to learn about the core *Oracle Database Breakthrough Innovations*.
 
 [](youtube:sFQqiGCSh9c)
 
-> You can read the blog on Oracle Database 21c by following this link - [Introducing Oracle Database 21c](https://blogs.oracle.com/database/introducing-oracle-database-21c).
+> Read the blog on the core Oracle Database 21c features - [Introducing Oracle Database 21c](https://blogs.oracle.com/database/introducing-oracle-database-21c).
 
-> ![img-Introducing Oracle Database 21c](images/intro-db21-vp-blog.png)
+> ![Introducing Oracle Database 21c](images/intro-db21-vp-blog.png)
 
 ### Objective
 
@@ -20,42 +20,48 @@ In this workshop, you will learn different ways of installing and configuring Or
 
 Setting up Oracle Database is a two-step process, which involves installing the Oracle Database software and creating a database.
 
- - Install the Oracle Database software and configure your database using Oracle Database Setup Wizard (Installer). 
+ - Install the Oracle Database software and configure your database using Oracle Database Setup Wizard (Installer).
  - Create additional databases using Oracle Database Configuration Assistant (Oracle DBCA).
 
- The detailed procedure for installation using these options is explained in the subsequent labs. 
+	## About Oracle Database Setup Wizard (Installer)
 
-	## About Oracle Database Setup Wizard (Installer) 
-
-	The database installer is a graphical user interface utility to step-by-step install the Oracle Database software and create the database through a wizard. Depending on the type of installation the installer can launch Oracle DBCA automatically, or you can run Oracle DBCA manually after the installation.
+	The database installer is a graphical user interface utility to systematically install the Oracle Database software and create the database through a wizard. Depending on the type of installation, the installer can launch Oracle DBCA automatically. However, you can also run Oracle DBCA manually after the installation.
 
 	During the installation:
-	
-	- If you select **Create and configure a single instance database**, the setup wizard not only installs the database software but also invokes Oracle DBCA automatically to create a single instance database.
 
-	- But if you choose **Set Up Software Only**, the setup wizard installs only the software but does not create the database. You need to run Oracle DBCA manually to create and configure your Oracle Database.
+	- If you select *Create and configure a single instance database*, the setup wizard not only installs the Oracle Database software but also invokes Oracle DBCA automatically to create a single instance database.
+
+	- [](include:sw-only)
+
+	<!--
+
+	- Whereas if you choose **Set Up Software Only**, the setup wizard installs only the software but does not create the database. You need to run Oracle DBCA manually to create and configure your Oracle Database.
+
+	-->
 
 	## About Oracle Database Configuration Assistant (Oracle DBCA)
 
-	Like the database installer, the Oracle DBCA tool helps you create and configure your Oracle Database but does not install the database software. 
-	
+	Like the database installer, the Oracle DBCA tool helps you create and configure your Oracle Database but does not install the database software.
+
 	Consider the scenarios:
 
 	- **Case#1** You have installed only the database software with the database installer. Then you need to run Oracle DBCA to create your Oracle Database.
 
 	- **Case#2** Along with the software, you have also created an Oracle Database with the installer. You can still use Oracle DBCA to create additional databases.
 
+    > You can run Oracle DBCA only after you install the Oracle Database software using the database installer.  
+
 	Oracle DBCA offers two database creation modes - typical and advanced.
 
-	With the **Advanced** mode, you can customize the configurations of Oracle Database, such as storage locations, initialization parameters, management options, database options, passwords for administrator accounts, and so on.
+	With the *Advanced* mode, you can customize the configurations of Oracle Database, such as storage locations, initialization parameters, management options, database options, passwords for administrator accounts, and so on.
 
-	Whereas if you select the **Typical** mode, though it gives fewer choices to configure, you can create an Oracle Database very quickly.
+	Whereas if you select the *Typical* mode, though it gives fewer choices to configure, you can create an Oracle Database very quickly.
 
-Let us install Oracle Database as explained in the subsequent labs and explore these options in detail.
-	
+Let us install Oracle Database 21c as explained in the subsequent labs and explore these options in detail.
+
 ## Installation Prerequisites
 
-Before installing the Oracle Database software, the installer performs several automated checks to verify if the hardware and the software required for installation are available. If your computer does not meet any specific requirement, a corresponding error message is displayed. The requirements may vary depending upon the computer and the operating system you are using.
+Before installing the Oracle Database software, the installer performs several automated checks to verify whether the hardware and the software required for installation are available. If your computer does not meet any specific requirement, it displays a corresponding error message. The requirements may vary depending upon the computer and the operating system you are using.
 
 ### Minimum recommendations
 
@@ -66,17 +72,16 @@ Before installing the Oracle Database software, the installer performs several a
  - Access to Oracle Database 21c installer
  - General knowledge about product installation
 
-Oracle Database Enterprise Edition requires 7.8 GB of local disk storage space to install the Oracle Database software.
+Oracle Database Enterprise Edition requires *7.8 GB* of local disk storage space to install the Oracle Database software.
 
-> Oracle recommends that you allocate approximately 100 GB to allow additional space for applying any future patches on top of the existing Oracle home.
+> Oracle recommends that you allocate approximately *100 GB* to allow additional space for applying any future patches on top of the existing Oracle home.
+
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-<!-- 
-[](include:acknowledgements.md)
-
-Add to manifest:
-“include”: {“acknowledgements”: “file_path_from_manifest”}
+<!--
+[](include:acknowledge)
 -->
 
 - **Author**: Manish Garodia, Principal User Assistance Developer, Database Technologies
