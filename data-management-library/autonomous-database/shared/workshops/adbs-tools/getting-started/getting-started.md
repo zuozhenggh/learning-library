@@ -11,7 +11,7 @@ Estimated Time: 10 minutes
 
 In this lab, you will:
 
-- Create a database user that you will use in the next lab
+- Create the database user that you will use in the next lab
 - Update the user's profile to grant access to load and store data
 - Log in as the user
 
