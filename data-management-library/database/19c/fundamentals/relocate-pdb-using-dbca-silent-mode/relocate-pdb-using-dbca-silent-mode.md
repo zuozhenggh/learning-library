@@ -419,6 +419,8 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> <copy>exit</copy>
     ```
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 - [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
@@ -429,4 +431,4 @@ A common user is a database user that has the same identity in the `root` contai
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 19 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021

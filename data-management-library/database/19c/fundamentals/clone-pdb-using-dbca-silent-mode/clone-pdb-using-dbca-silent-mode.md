@@ -292,6 +292,8 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     SQL> <copy>exit</copy>
     ```
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 - [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
@@ -302,4 +304,4 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 19 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021

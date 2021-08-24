@@ -429,6 +429,7 @@ To restore you environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG` 
 
 6.  Replace the modified `tnsnames.ora` and `listener.ora` files with the originals. You can find the originals in the `/home/oracle/labs/19cnf` directory.
 
+You may now proceed to the next lab.
 
 ## Learn More
 - [dbca -createDuplicateDB command](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-7F4B1A64-5B08-425A-A62E-854542B3FD4E)
@@ -438,4 +439,4 @@ To restore you environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG` 
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 19 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 24 2021
