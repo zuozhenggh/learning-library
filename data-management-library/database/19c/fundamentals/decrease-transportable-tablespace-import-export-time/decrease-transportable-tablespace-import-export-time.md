@@ -556,6 +556,7 @@ Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other
 $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 ```
 
+You may now proceed to the next lab.
 
 ## Learn More
 

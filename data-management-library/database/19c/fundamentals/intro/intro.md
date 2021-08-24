@@ -36,7 +36,6 @@ You can try the following labs:
 - Explore Automatic Deletion of Flashback Logs
 
 
-
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development

@@ -261,6 +261,8 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
 
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 - [Get Started with Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/)
