@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastucture.
+In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
 
-Estimated Lab Time: 15-minutes
+Estimated time: 15-minutes
 
 ### Understanding the ReactJS application
 
@@ -124,7 +124,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 		```
 	It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
 
-    ![](images/Run-build.png " ")
+    	![](images/Run-build.png " ")
 
 	The build is minified and the filenames include the hashes.<br />
 	Your app is ready to be deployed!
