@@ -1,6 +1,6 @@
 {
   "workshoptitle": "SailGP Workshop",
-  "help": "livelabs-help-db_us@oracle.com",
+  "help": "livelabs-help-analytics_us@oracle.com”",
   "tutorials": [
     {
       "title": "Introduction",
@@ -25,11 +25,11 @@
       "filename": "../../prepare-schema/prepare-schema.md"
     },
     {
-      "title": "Lab 4: Analytics: Basic statistics",
+      "title": "Lab 4: Analytics: Basic Statistics",
       "filename": "../../analytics/analytics.md"
     },
     {
-      "title": "Lab 5: Analytics: The start of the race",
+      "title": "Lab 5: Analytics: The Start Of The Race",
       "filename": "../../analytics2/analytics2.md"
     },
     {

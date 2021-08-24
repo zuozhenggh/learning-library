@@ -1,10 +1,8 @@
 # SailGP Data Analysis
 
-![Banner](images/banner.jpg)
-
 ## Introduction
 
-In this lab you'll continue your post-race analysis of the Bermuda race.
+In this lab, you will continue your post-race analysis of the Bermuda race.
 
 We will look closely at the **start** of the race. Often, who will win the race is decided in these crucial first moments. Teams want to position themselves as well as possible during the count down to the start signal. For example, they try to
 
@@ -13,19 +11,22 @@ We will look closely at the **start** of the race. Often, who will win the race 
 
 Our goal is to help the sailing teams to perform better in the upcoming race!
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 10 minutes
+
+![Banner](images/banner.jpg)
 
 ### Objectives
 - Learn how a SailGP Data Athlete extracts valuable insights from sensor data
 - Learn how to use Oracle Analytics Cloud to prepare and analyze data
 
 ### Prerequisites
+This lab assumes you have:
 - An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
-- Oracle Analytics Cloud
-- Autonomous Data Warehouse
-- You've completed the first SailGP analytics Lab
+- Provisioned Oracle Analytics Cloud
+- Provisioned Autonomous Data Warehouse
+- Completed the first SailGP analytics Lab
 
-## **STEP 1**: Investigate start performance - part 1
+## **TASK 1**: Investigate Start Performance (Part 1)
 
 <!--
 To give you an impression, have a look at this video. You can see how teams are trying to get in the best possible position and with the highest speeds.
@@ -41,15 +42,15 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/open-dataset.png)
 
-   Find the `LATITUDE` column (towards the end), and change **Treat As** to **Attribute**.
+2. Find the `LATITUDE` column (towards the end), and change **Treat As** to **Attribute**.
 
    ![pic2](images/latitude.png)
 
-   Next, click on the ribbon next to the `LATITUDE` field and choose **Location Details**.
+3. Click on the ribbon next to the `LATITUDE` field and choose **Location Details**.
 
    ![pic2](images/loc-details2.png)
 
-   Make sure that the Location Details configuration is as follows. **It's important to press Ok, even if you don't make changes.**
+4. Make sure that the Location Details configuration is as follows. **It's important to press Ok, even if you don't make changes.**
 
    ![pic2](images/latitude3.png)
 
@@ -61,11 +62,11 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/loc-details3.png)
 
-   Now we're ready to create a project for this data. Save the changes to the data set if you're being asked to.
+5. Now we're ready to create a project for this data. Save the changes to the data set if you're being asked to.
 
    ![pic2](images/create-project2.png)
 
-   Now we want to visualize our coordinates (comprised of Latitude and Longitude). **Select** the `LATITUDE` and `LONGITUDE` columns (use Control to select multiple columns). Then **drag** them to the right canvas.
+6. Now we want to visualize our coordinates (comprised of Latitude and Longitude). **Select** the `LAT` and `LON` columns (use Control to select multiple columns). Then **drag** them to the right canvas.
 
    ![pic2](images/drag-latlon.png)
 
@@ -73,35 +74,35 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/first-map.png)
 
-   We want to be able to distinguish the path of each team separately. Let's color-code each team. Drag the `B_NAME` column to the **Color** field.
+7. We want to be able to distinguish the path of each team separately. Let's color-code each team. Drag the `B_NAME` column to the **Color** field.
 
    ![pic2](images/drag-bname-color.png)
 
-   This shows each team as a separate color. However, it's still a lot of data to digest. How do we zoom in on only the data that's relevant for that start? Let's filter the data to show only the first seconds of the race.
+8. This shows each team as a separate color. However, it's still a lot of data to digest. How do we zoom in on only the data that's relevant for that start? Let's filter the data to show only the first seconds of the race.
 
    Drag `TIME_GRP` to the Filter area.
 
    ![pic2](images/drag-filter.png)
 
-   Set the filter type to **RANGE**.
+9. Set the filter type to **RANGE**.
 
    ![pic2](images/filter-range.png)
 
-   Choose only the 10 seconds before and after the start. In the filter parameters, **Start** will be `-10` and **End** will be `10`.
+10. Choose only the 10 seconds before and after the start. In the filter parameters, **Start** will be `-10` and **End** will be `10`.
 
    ![pic2](images/start-seconds.png)
 
    This still isn’t perfect, because we cannot see the starting line. We have no context of the race course (starting line, marks, et cetera).
 
-   Our next task will be to bring in the geographical elements for starting line, marks, et cetera. First Save, the project as `Performance analysis`.
+11. Our next task will be to bring in the geographical elements for starting line, marks, et cetera. First **Save** the project as `Performance analysis`.
 
    ![pic2](images/save-project3.png)
 
-   Then, go back to the **Home Page**.
+12. Then, go back to the **Home Page**.
 
    ![pic2](images/to-homepage4.png)
 
-## **STEP 2**: Add geographical data of the race course
+## **TASK 2**: Add Geographical Data Of The Race Course
 
 1. **Download** a file that contains all the geographical elements (such as starting line, waypoints and finish line) from <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/XfJRoExhW_0WX_aspj4H1U2Ce8vDA45SRZFW_27KmXYRFXbyRNhjvvU98cB5FbVG/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_bermuda.geojson" target="\_blank">File with Bermuda geo elements</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.geojson`.
 
@@ -123,7 +124,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/trackelements.png)
 
-   Check the "Trackelement" field.
+   Check the "Trackelement" field. Click **Add**.
 
    ![pic2](images/add-map-layer.png)
 
@@ -133,15 +134,15 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/open-dataset.png)
 
-8. Click the `BDE_LEG_NUM_UNK` column (towards the end). This contains the current leg that each boat is sailing at a particular moment in time. Set **Treat As** to Attribute.
+8. Click the `BDE_LEG_NUM_UNK` column (towards the end). This contains the current leg that each boat is sailing at a particular moment in time. Set **Treat As** to **Attribute**.
 
    ![pic2](images/config-leg.png)
 
-9. Next, go to the Location Details of this column.
+9. Next, go to the **Location Details** of this column.
 
    ![pic2](images/loc-details.png)
 
-10. Select the `sailgp bermuda` map to connect to this column. You will notice that the values in our data set ("Your Data") line up perfectly with the values in the map information that we uploaded earlier ("Match").
+10. Select the `bermuda` map to connect to this column. You will notice that the values in our data set ("Your Data") line up perfectly with the values in the map information that we uploaded earlier ("Match"). Click **OK**.
 
    ![pic2](images/map-data.png)
 
@@ -149,7 +150,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/to-homepage3.png)
 
-## **STEP 3**: Investigate start performance - part 2
+## **TASK 3**: Investigate Start Performance (Part 2)
 
    Now we're ready to include the geographical elements such as starting line, waypoints and finish line.
 
@@ -161,11 +162,11 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/add-layer.png)
 
-3. Drag the `BDE_LEG_NUM_UNK` column to the Category (Location) field of the new layer.
+3. Drag the `BDE_LEG_NUM_UNK` column to the _Category (Location)_ field of the new layer.
 
    ![pic2](images/drag-leg.png)
 
-4. Select the `sailgp bermuda` layer.
+4. Select the `bermuda` layer.
 
    ![pic2](images/select-bermuda-map-layer.png)
 
@@ -175,11 +176,11 @@ To give you an impression, have a look at this video. You can see how teams are 
 
 6. Our next goal is to highlight the positions of the teams at the very start of the race.
 
-	 Right click on the `TIME_GRP` column and select "Create Best Visualization".
+	 Right click on the `TIME_GRP` column and select **Create Best Visualization**.
 
    ![pic2](images/time-grp-viz.png)
 
-8. In the resulting table, click on the "0" to highlight the positions at `TIME_GRP` = 0.
+8. In the resulting table, click on the "0" to highlight the positions at `TIME_GRP` = **0**.
 
    ![pic2](images/select-time-grp-0.png)
 
@@ -192,10 +193,10 @@ To give you an impression, have a look at this video. You can see how teams are 
 
 <!--10. Bonus: Evaluate the speed of the teams at the very start of the race. Which teams have the highest speed? Which teams could try to improve their speed at the start in the next race?-->
 
-Congratulations on completing this lab! Now you're ready to move on to the next part of the post-race analysis: Analyzing the maneuvers (tacking/gybing).
+Congratulations on completing this lab!
+
+You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
-
-- **Author** - Jeroen Kloosterman, Technology Product Strategy Director
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributor** - Priscila Iruela

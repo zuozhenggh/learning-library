@@ -9,8 +9,6 @@ then use SQL to add quota: ALTER USER sailor13 QUOTA UNLIMITED ON Data
 
 # Machine Learning on SailGP data: Predicting the best sailing direction
 
-![Banner](images/banner.jpg)
-
 ## Introduction
 
 In this lab, you will use machine learning to solve a very common challenge in sailing: finding the best direction to sail. With the optimal direction, we mean **which angle to the wind the boat must sail** to **obtain the highest boat speed** in the target direction, given a particular wind speed.
@@ -19,7 +17,9 @@ You will train a machine learning model that will find the relationship between 
 
 The machine learning that takes place in the Autonomous Data Warehouse and Oracle Analytics Cloud will pick up the resulting predictions from the database and visualize them.
 
-_Estimated Lab Time:_ 25 minutes
+_Estimated Time:_ 25 minutes
+
+![Banner](images/banner.jpg)
 
 ### Objectives
 
@@ -28,13 +28,13 @@ In this lab, you will:
 - Learn how you can perform machine learning in Autonomous Data Warehouse, and analyze the results in Oracle Analytics Cloud, without having to be a data science expert!
 
 ### Prerequisites
-
+This lab assumes you have:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-- Oracle Analytics Cloud
-- Autonomous Data Warehouse
+- Provisioned Oracle Analytics Cloud
+- Provisioned Autonomous Data Warehouse
 - A configured connection between Oracle Analytics Cloud and Autonomous Data Warehouse
 
-## **STEP 1:** Planning our approach
+## **TASK 1:** Plan Your Approach
 
 For this case, we will imagine that our **goal is to try to sail upwind** (into the direction of the source of the wind) as fast as possible. Different angles result in different boat speeds, for example:
 - Going directly upwind with angle 0 (straight into the wind) is not possible at all.
@@ -51,7 +51,7 @@ We will attack the problem in two phases:
 
 2) Decompose the boat speed and extract its "vertical" component (purple) towards the wind. This is the speed we're finally interested in. It's nice for the boat to go fast, but only the vertical speed (up towards the wind) is what counts.
 
-## **STEP 2:** Machine Learning - Data Exploration
+## **TASK 2:** Explore The Data (Prepare For Machine Learning)
 
 Predict boat speed (green) based on wind speed (red) and wind angle (blue).
 
@@ -70,7 +70,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
 3. Let's have a look at our measurements.
 
-   Create a new **Data Set**.
+   **Create** a new **Data Set**.
 
    ![pic1](images/create-dataset.png)
 
@@ -92,7 +92,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![pic1](images/pk-attribute.png)
 
-8. **Save** the Data Set and name it `Sail History`.
+8. **Save** the Data Set and name it `Sail History`. Click **OK**.
 
    ![pic1](images/save-dataset2.png)
 
@@ -104,7 +104,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![pic1](images/investigate-windspeed-boatspeed.png)
 
-   Conclusion: There appears to be some correlation between wind -speed and boat speed, as you would expect. But it's not just a simple straight line!
+   Conclusion: There appears to be some correlation between wind speed and boat speed, as you would expect. But it's not just a simple straight line!
 
    ![pic1](images/result1.png)
 
@@ -128,7 +128,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    But luckily for us, Machine Learning is great at extracting these type of patterns! It is able to cut through the noise and find relationships between variables!
 
-## **STEP 3:** Machine Learning - Setup the Machine Learning user
+## **TASK 3:** Set Up The Machine Learning User
 
 1. Open the Autonomous Data Warehouse.
 
@@ -160,7 +160,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    Press **Save**. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
 
-## **STEP 4:** Machine Learning - Building the model
+## **TASK 4:** Build The Machine Learning Model
 
 <!--1. Open the Autonomous Data Warehouse.
 
@@ -181,7 +181,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![pic1](images/start-oml.png)
 
-3. Sign in with the user `SAILOR`, password `Oracle_12345`.
+3. Sign in with the user `sailor`, password `Oracle_12345`.
 
    ![pic1](images/sign-in-sailor.png)
 
@@ -195,17 +195,14 @@ In the past we've gone onto the water with our boat many times in different wind
 
 6. Now we have to select how to train our model.
 
+   We want to predict **boat speed** from **wind speed** and **wind angle**, therefore configure the experiment as follows.
+
    - Name: `Predict F50 Speed`
    - Data Source: `SAILOR.SGP_SAIL_HISTORY`, choose `SAILOR` and `SGP_SAIL_HISTORY` on the popup window.
-   
-   We want to predict **boat speed** from **wind speed** and **wind angle**, therefore:
-
    - Predict: `BOAT_SPEED`
    - Case ID: `PK`
-
-   In the features make sure `WIND_ANGLE` and `WIND_SPEED` are selected.
-
-   Configure the Experiment as follows:
+   - `WIND_ANGLE`: checked
+   - `WIND_SPEED`: checked
 
    ![pic1](images/configure-experiment.png)
 
@@ -233,13 +230,13 @@ In the past we've gone onto the water with our boat many times in different wind
 
    **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
-## **STEP 5:** Machine Learning - Predicting boat speed in Oracle Analytics Cloud
+## **TASK 5:** Predict The Boat Speed In Oracle Analytics Cloud
 
 Now it's time to make predictions with the model. We will make a prediction for a combination of wind speeds (5, 10, 15, 20 and 25 mph) and range of wind angles (0-180 degrees with 1 degree increments).
 
-The following assumes you already have Oracle Analytics Cloud open in your browser. If not, you can find instructions in Step 2 on how to open it.
+The following assumes you already have Oracle Analytics Cloud open in your browser. If not, you can find instructions in Task 2 on how to open it.
 
-1. Create a new **Data Set**.
+1. **Create** a new **Data Set**.
 
    ![pic1](images/create-dataset.png)
 
@@ -257,7 +254,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
    ![pic1](images/click-table.png)
 
-5. **Save** the Data Set, call it `To Predict`.
+5. **Save** the Data Set, call it `To Predict`. Click **OK**.
 
    ![pic1](images/save-dataset.png)
 
@@ -276,7 +273,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
 9. Now it's time to predict the boat speeds for all the combinations of wind speed and wind angle in the "To Predict" dataset. We can do this with Data Flows. Data Flows let us create a series of steps in which we can manipulate data in sequence, or in this case, apply a ML model to data.
 
-   Create a new **Data Flow**.
+   **Create** a new **Data Flow**.
 
    ![pic1](images/create-df.png)
 
@@ -381,7 +378,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
    Conclusion: We can now see clear patterns in how boat speed changes as a result of wind speed and wind angle. The angles to reach the highest boat speed are different depending on the wind speed.
 
-## **STEP 6:** Machine Learning - Extract boat speed towards our upwind target
+## **TASK 6:** Extract The Boat Speed Towards Our Upwind Target
 
 At this point, we can use the previous chart to pick the best angle to sail to obtain the highest boat speed for a certain wind speed. In other words, what we can now predict is the green line in this diagram, based on wind speed and wind angle.
 
@@ -391,7 +388,7 @@ However, this is not so useful by itself. Remember, what we -really- want to kno
 
 Luckily, we can easily do this by converting the chart into a polar diagram.
 
-1. Change the visualization of the chart to "Radar Line".
+1. Change the visualization of the chart to **Radar Line**.
 
    ![pic1](images/radar-line2.png)
 
@@ -407,7 +404,7 @@ Luckily, we can easily do this by converting the chart into a polar diagram.
 
    Another example, imagine the current wind speed is 25 knots. This is the purple ellipse. In this case, the highest vertical point on the line shows that we can obtain a boat speed of 22 knots towards our target if we choose the perfect wind angle of 44 degrees.
 
-## **STEP 7:** Conclusions
+## **TASK 7:** Draw Conclusions
 In this lab we predicted what the boat speed will be based on wind speed and wind angle. We did this by training a ML model on historical measurements of wind conditions and resulting boat speed. Machine Learning was able to find the complicated relationship that exists between these variables. Something that's not easy to do for human beings!
 
 By displaying these predictions in a smart way in a radar chart, it allowed us to read the optimal angle to take with a certain wind speed, in order to reach our goal as fast as possible!
@@ -415,6 +412,5 @@ By displaying these predictions in a smart way in a radar chart, it allowed us t
 Congratulations on completing the lab! Now you've learned the basics of machine learning, hopefully you are inspired to apply it to many more challenges!
 
 ## **Acknowledgements**
-- **Author** - Jeroen Kloosterman, Technology Product Strategy Director
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributor** - Priscila Iruela

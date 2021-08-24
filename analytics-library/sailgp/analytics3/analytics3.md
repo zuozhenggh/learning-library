@@ -1,28 +1,29 @@
 # SailGP Data Analysis
 
-![Banner](images/banner.jpg)
-
 ## Introduction
 
-In this lab you'll continue your post-race analysis of the Bermuda race.
+In this lab, you will continue your post-race analysis of the Bermuda race.
 
 When a boat changing the side that's facing the wind, we call this a Tack or a Gybe. Although these maneuvers are necessary to reach the waypoints, in general teams try to **minimize the number** of maneuvers. The reason: Maneuvers will slow down the boat for a little while.
 
 The **quality** of the maneuvers is also very important. Ideally, during a maneuver the team loses as little speed as possible. This requires very good technique and coordination between the team members.
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 10 minutes
+
+![Banner](images/banner.jpg)
 
 ### Objectives
 - Learn how a SailGP Data Athlete extracts valuable insights from sensor data
 - Learn how to use Oracle Analytics Cloud to prepare and analyze data
 
 ### Prerequisites
+This lab assumes you have:
 - An Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
-- Oracle Analytics Cloud
-- Autonomous Data Warehouse
-- You've completed the first two SailGP analytics Labs
+- Provisioned Oracle Analytics Cloud
+- Provisioned Autonomous Data Warehouse
+- Completed the first two SailGP analytics Labs
 
-## **STEP 1**: Investigating the number of maneuvers
+## **TASK 1**: Investigate The Number Of Maneuvers
 
 <!--	 
 	 We're oversimplifying here, because often maneuvers are also done for tactical/strategical reasons.
@@ -55,7 +56,7 @@ _Estimated Lab Time:_ 10 minutes
    **Conclusion**: Count the number of places where each team changes direction. Notice how the French team makes one more maneuver compared to Great Britain?
 	The French team could learn from this that they could improve the planning of how they navigate the leg. We have to be careful with this conclusion though, there may be tactical/strategical advantages in tacking/gybing more than strictly necessary (e.g. compete with other boats).
 
-## **STEP 2**: Investigating the quality of the maneuvers
+## **TASK 2**: Investigate The Quality Of The Maneuvers
 
 1. Let's see how France's maneuvers compare to those of the winner of the race, GBR.
 
@@ -67,15 +68,15 @@ _Estimated Lab Time:_ 10 minutes
 
 	Now, let's look into the quality of the maneuvers.
 
-	Create a new Line Chart by **clicking** on the Graph icon (second icon from the top left), then **drag** the Line icon to just left of the existing map visualization.
-   
+2. Create a new Line Chart by clicking on the **Graph icon** (second icon from the top left), then drag the **Line icon** to just left of the existing map visualization.
+
    ![pic4](images/create-line-chart.png)
 
-	Go back to the fields by **clicking** on the database icon.
+3. Go back to the fields by clicking on the **database icon**.
 
 	![pic4](images/back-to-fields.png)
 
-   In this chart we want to see how well the boats are able to keep out of the water during a maneuver. The boats try to not hit the water during a maneuver, to prevent losing speed. The column `LENGTH_RH_BOW_MM` indicates the "flying height", the distance that the boat is out of the water. The `TWA_SGP_DEG` column indicates the wind direction, so we can see exactly when the boat is at the middle of its maneuver.
+4. In this chart we want to see how well the boats are able to keep out of the water during a maneuver. The boats try to not hit the water during a maneuver, to prevent losing speed. The column `LENGTH_RH_BOW_MM` indicates the "flying height", the distance that the boat is out of the water. The `TWA_SGP_DEG` column indicates the wind direction, so we can see exactly when the boat is at the middle of its maneuver.
 
 	Configure the chart as follows by **dragging** the fields from the left to the chart configuration.
 
@@ -89,7 +90,7 @@ _Estimated Lab Time:_ 10 minutes
 
    ![pic4](images/maximize-chart.png)
 
-   The way that the flight height has been configured, at a value of `0,4` the boat hits the water. Let's include a reference line to indicate this. Click the ribbon menu, select **Add Statistics** and click **Add reference line** as follows:
+   The way that the flight height has been configured, at a value of `0,4` the boat hits the water. Let's include a reference line to indicate this. Click the ribbon menu, select **Add Statistics** and click **Reference Line** as follows:
 
    ![pic4](images/add-reference-line.png)
 
@@ -105,10 +106,9 @@ _Estimated Lab Time:_ 10 minutes
 
 Congratulations on completing this lab! You have made the first steps towards a full post-race analysis. This is just the beginning; there are many more sensor values to explore and insights to find with which we can improve the teams' performance. We hope you feel inspired to continue experimenting with this data, or even start with the analysis of your own data!
 
-Now you are ready to go to the next Lab.
+You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 
-- **Author** - Jeroen Kloosterman, Technology Product Strategy Director
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributor** - Priscila Iruela
