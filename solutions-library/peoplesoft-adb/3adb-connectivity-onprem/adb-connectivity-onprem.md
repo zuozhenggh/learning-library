@@ -27,10 +27,10 @@ In this lab, you will:
 
 
        ```
-               [root@pscs92dmo-lnxdb-2 ~]# ls -ltr Wallet_PSADB.zip
+               <copy>[root@pscs92dmo-lnxdb-2 ~]# ls -ltr Wallet_PSADB.zip
                -rw-rw-r-- 1 opc opc 20550 Apr 22 06:51 Wallet_PSADB.zip
                [root@pscs92dmo-lnxdb-2 ~]# mkdir wallet
-               [root@pscs92dmo-lnxdb-2 ~]# mv Wallet_PSADB.zip wallet/
+               [root@pscs92dmo-lnxdb-2 ~]# mv Wallet_PSADB.zip wallet/ </copy>
 
        ```
 
@@ -38,7 +38,7 @@ In this lab, you will:
 
 
        ```
-               [[root@pscs92dmo-lnxdb-2 ~]# cd wallet/
+               <copy>[root@pscs92dmo-lnxdb-2 ~]# cd wallet/
                [root@pscs92dmo-lnxdb-2 wallet]# unzip Wallet_PSADB.zip
                Archive: Wallet_PSADB.zip
                inflating: README
@@ -48,7 +48,7 @@ In this lab, you will:
                inflating: ojdbc.properties
                inflating: sqlnet.ora
                inflating: ewallet.p12
-               inflating: keystore.jks
+               inflating: keystore.jks </copy>
 
        ```
 
@@ -56,12 +56,12 @@ In this lab, you will:
 
 
        ```
-               [root@pscs92dmo-lnxdb-2 wallet]# pwd
+               <copy>[root@pscs92dmo-lnxdb-2 wallet]# pwd
                /root/wallet
                [root@pscs92dmo-lnxdb-2 wallet]# vi sqlnet.ora
                [root@pscs92dmo-lnxdb-2 wallet]# cat sqlnet.ora
                WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/root/wallet")))
-               SSL_SERVER_DN_MATCH=yes
+               SSL_SERVER_DN_MATCH=yes </copy>
        ```
 
 
@@ -72,14 +72,14 @@ In this lab, you will:
 
 
       ```
-               [root@pscs92dmo-lnxdb-2 ~]# cd $HOME
+               <copy>[root@pscs92dmo-lnxdb-2 ~]# cd $HOME
                [root@pscs92dmo-lnxdb-2 ~]# vi .bashrc
                [root@pscs92dmo-lnxdb-2 wallet]# cat .bashrc
                ORACLE_HOME=/u01/app/oracle/product/19.0.0.0/dbhome_1; export ORACLE_HOME
                PATH=$PATH:/u01/app/oracle/product/19.0.0.0/dbhome_1/bin; export PATH
                LD_LIBRARY_PATH=/u01/app/oracle/product/19.0.0.0/dbhome_1/lib; export LD_LIBRARY_PATH
                export TNS_ADMIN=/root/wallet
-               [root@pscs92dmo-lnxdb-2 wallet]# source .bashrc
+               [root@pscs92dmo-lnxdb-2 wallet]# source .bashrc </copy>
        ```
 
 
@@ -87,7 +87,7 @@ In this lab, you will:
 * 2. Do a connectivity test using sqlplus and provide the admin credentials
 
       ```
-               [root@pscs92dmo-lnxdb-2 wallet]# sqlplus admin@psadb_high
+               <copy>[root@pscs92dmo-lnxdb-2 wallet]# sqlplus admin@psadb_high
                SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 22 07:00:09 2021
                Version 19.10.0.0.0
                Copyright (c) 1982, 2020, Oracle. All rights reserved.
@@ -95,14 +95,14 @@ In this lab, you will:
                Connected to:
                Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
                Version 19.5.0.0.0
-               SQL>
+               SQL>  </copy>
       ```
 
 You may now **proceed to the next lab.**
 
 
 
-## Acknowledgments
+## Acknowledgements
 * **Authors** - Deepak Kumar M, PeopleSoft Architect
 * **Contributors** - Deepak Kumar M, PeopleSoft Architect
 * **Last Updated By/Date** - Deepak Kumar M, PeopleSoft Architect, Aug 2021

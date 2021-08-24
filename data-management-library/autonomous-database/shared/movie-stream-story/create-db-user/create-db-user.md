@@ -14,6 +14,14 @@ In this lab, you will:
 * Log in as the user
 * Launch SQL Worksheet
 
+### Prerequisites
+- This lab requires completion of Lab 1, **Provisioning an ADB Instance**, in the Contents menu on the left.
+- You can complete the prerequisite lab in two ways:
+
+    a. Manually run through Lab 1.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the required database objects.
+
 ## Task 1: Create a Database User
 
 When you create a new data warehouse, you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data completely separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the "New User" wizard within the SQL tools.
@@ -89,41 +97,46 @@ You learned how to use the Create User dialog to create a new user.  You can als
 
 3. In the SQL Worksheet, paste in this code and run it using the **Run Script** button:
 
-  ```
-    <copy>-- Uncomment the next 2 lines if you want to drop and recreate your user
+    ```
+    <copy>-- Run this script as ADMIN user
+    -- Uncomment the next 2 lines if you want to drop and recreate your user
     -- drop user moviestream cascade;
     -- create user moviestream identified by "YourPassword1234#";
 
-    -- Provide minimal tablespace usage.  Uncomment unlimited tablespace use if desired.
-    alter user moviestream quota 20G ON data;
-    -- grant unlimited tablespace to moviestream;
-
-    -- Grant roles/privileges to user
-    grant connect to moviestream;
-    grant dwrole to moviestream;
-    grant resource to moviestream;
+    -- Add the OML access
+    alter user moviestream grant connect through OML$PROXY;
     grant oml_developer to moviestream;
-    grant graph_developer to moviestream;
-    grant console_developer to moviestream;
+
+    -- Allow user to change resource privileges (LOW/MEDIUM/HIGH)
     grant select on v$services to moviestream;
     grant select on dba_rsrc_consumer_group_privs to moviestream;
     grant execute on dbms_session to moviestream;
 
+    -- Here are other privileges that you already granted in the UI
+    grant unlimited tablespace to moviestream;
+    grant connect to moviestream;
+    grant dwrole to moviestream;
+    grant resource to moviestream;
+    grant graph_developer to moviestream;
+    alter user moviestream grant connect through GRAPH$PROXY_USER;
+    grant console_developer to moviestream;
+
+    -- Enable access to SQL Tools
     begin
-    ords_admin.enable_schema (
-        p_enabled               => TRUE,
-        p_schema                => '&db_user',
-        p_url_mapping_type      => 'BASE_PATH',
-        p_auto_rest_auth        => TRUE
-    );
-    commit;
+        ords_admin.enable_schema (
+            p_enabled               => TRUE,
+            p_schema                => 'moviestream',
+            p_url_mapping_type      => 'BASE_PATH',
+            p_auto_rest_auth        => TRUE   
+        );
+        commit;
     end;
     /</copy>
     ```
 
     **Note:** DWROLE includes CREATE ANALYTIC VIEW, CREATE ATTRIBUTE DIMENSION, ALTER SESSION, CREATE HIERARCHY, CREATE JOB, CREATE MINING MODEL, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, and READ,WRITE ON directory DATA\_PUMP\_DIR.
 
-    These commands limit the amount of data that a user can create. The commands also give the user all of the privileges required to work with the console, use machine learning and perform graph analyses.
+    These commands give the user all of the privileges required to work with the console, use machine learning and perform graph analyses. The commands also allow the user to change the consumer group for the session (LOW, MEDIUM or HIGH) -  altering levels of performance and concurrency. [See here for more details](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-service-concurrency.html#GUID-400B1460-E44D-4BA5-B216-0B185BE55F8E).
 
 ## Task 3: Log In As the User
 
@@ -163,7 +176,7 @@ In the next labs, you will use the SQL Worksheet application that is built in to
 
     In the query results, you'll see MOVIESTREAM and today's date.  You've successfully run your first Autonomous Database query!
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -171,4 +184,5 @@ See the documentation on [Managing Users on Autonomous Database](https://docs.o
 
 ## Acknowledgements
 * **Author** - Rick Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Rick Green, July 2021
+* **Contributors** - Marty Gubar
+* **Last Updated By/Date** - Rick Green, August 2021
