@@ -46,7 +46,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 1. Download [db19cnf-workshop-staged.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IB0_i443bk4fdA7XvxA-bVeljmAiqcTWWwjruTbYR8R0Q0PE2gfbOjXhgExL6D8/n/c4u04/b/labfiles/o/db19cnf-workshop-staged.zip) to a directory on your local computer.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
     ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
 
@@ -58,7 +58,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Stack Configuration for workshop-staged](images/stack-configuration-workshop-staged.png "Stack Configuration for workshop-staged")
 
-5. In the **Stack Information** section, leave **Name** and **Description** for the stack as is, and select your compartment.
+5. In the **Stack Information** section, leave the **Name** and **Description** for the stack as is, and select your compartment.
 
     This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-staged` compute instance. If you plan to use your own VCN, make sure that it resides in this compartment too.
 
