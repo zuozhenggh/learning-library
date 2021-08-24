@@ -95,7 +95,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
@@ -158,7 +158,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
