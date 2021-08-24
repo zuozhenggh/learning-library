@@ -92,7 +92,9 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
   ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
 
 
-9. On the **Create Inventory** page, leave the default settings as is, and click **Next**. The following values will be configured:
+9. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+
+    The following values will be configured:
 
     - Inventory Directory: `/u01/app/oraInventory`
     - oraInventory Group Name: `oinstall`
