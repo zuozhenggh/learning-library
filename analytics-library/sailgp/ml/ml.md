@@ -5,6 +5,8 @@ only select OML
 (don't do web)
 then after do REST enable with separate option
 then use SQL to add quota: ALTER USER sailor13 QUOTA UNLIMITED ON Data
+
+4 spaces version
 -->
 
 # Machine Learning on SailGP data: Predicting the best sailing direction
@@ -195,40 +197,40 @@ In the past we've gone onto the water with our boat many times in different wind
 
 6. Now we have to select how to train our model.
 
-   We want to predict **boat speed** from **wind speed** and **wind angle**, therefore configure the experiment as follows.
+    We want to predict **boat speed** from **wind speed** and **wind angle**, therefore configure the experiment as follows.
 
-   - Name: `Predict F50 Speed`
-   - Data Source: `SAILOR.SGP_SAIL_HISTORY`, choose `SAILOR` and `SGP_SAIL_HISTORY` on the popup window.
-   - Predict: `BOAT_SPEED`
-   - Case ID: `PK`
-   - `WIND_ANGLE`: checked
-   - `WIND_SPEED`: checked
+    - Name: `Predict F50 Speed`
+    - Data Source: `SAILOR.SGP_SAIL_HISTORY`, choose `SAILOR` and `SGP_SAIL_HISTORY` on the popup window.
+    - Predict: `BOAT_SPEED`
+    - Case ID: `PK`
+    - `WIND_ANGLE`: checked
+    - `WIND_SPEED`: checked
 
-   ![pic1](images/configure-experiment.png)
+    ![pic1](images/configure-experiment.png)
 
 7. Lastly, in the **Additional Settings**, set Database Service Level to `High`. This will help us build the model faster.
 
-   ![pic1](images/service-level.png)
+    ![pic1](images/service-level.png)
 
 8. Now start the training of the model.
 
-   On the top right choose **Start** > **Faster Results**.
+    On the top right choose **Start** > **Faster Results**.
 
-   ![pic1](images/save-start.png)
+    ![pic1](images/save-start.png)
 
 9. Use the three small dots to open the window with progress of the training process.
 
-   ![pic1](images/learning-summary.png)
+    ![pic1](images/learning-summary.png)
 
 10. The training will take several minutes. During this time, AutoML tries out several different ML algorithms, with different configurations.
 
-   The value under **Negative Mean Squared Error** is an indicator of the accuracy of the model.
+    The value under **Negative Mean Squared Error** is an indicator of the accuracy of the model.
 
-   ![pic1](images/svmg.png)
+    ![pic1](images/svmg.png)
 
-   We will use the **Support Vector Machine (Gaussian) model**.
+    We will use the **Support Vector Machine (Gaussian) model**.
 
-   **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
+    **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
 ## **TASK 5:** Predict The Boat Speed In Oracle Analytics Cloud
 
@@ -279,7 +281,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
 10. Select the **To Predict** Data Set as the input for the Data Flow and click **Add**.
 
-   ![pic1](images/select-to-predict.png)
+    ![pic1](images/select-to-predict.png)
 
 11. Click on the **+** icon next to the **To Predict** Data Set and add an **Apply Model** step.
 
@@ -307,76 +309,76 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
 16. Complete the formula `CASE WHEN wind_angle<=180 THEN prediction ELSE 0 END`.
 
-   When typing the field names wind_angle and prediction, make sure that you confirm the field names by clicking on the suggestions by the editor.
+    When typing the field names wind_angle and prediction, make sure that you confirm the field names by clicking on the suggestions by the editor.
 
-   ![pic1](images/formula1.png)
-   ![pic1](images/formula2.png)
+    ![pic1](images/formula1.png)
+    ![pic1](images/formula2.png)
 
-   If all is well, `WIND_ANGLE` and `PREDICTION` will be shown in blue.
+    If all is well, `WIND_ANGLE` and `PREDICTION` will be shown in blue.
 
-   Now Apply the transformation.
+    Now Apply the transformation.
 
 17. Finally, add a step to save the resulting data to a new Data Set. Select **Save Data**.
 
-   ![pic1](images/save-data2.png)
+    ![pic1](images/save-data2.png)
 
 18. Fill in the following details on the **Save Data** step.
 
-   - Data Set: `Predicted Boat speed`
-   - Table: `SGP_PREDICTED`
+    - Data Set: `Predicted Boat speed`
+    - Table: `SGP_PREDICTED`
 
-   ![pic1](images/config-save.png)
+    ![pic1](images/config-save.png)
 
-   Then press **Save**.
+    Then press **Save**.
 
 19. Give the Data Flow the name `Prediction Data Flow`.
 
-   ![pic1](images/save-df2.png)
+    ![pic1](images/save-df2.png)
 
 20. On the top right, click on the **Play** button to start the Data Flow.
 
-   ![pic1](images/run-df.png)
+    ![pic1](images/run-df.png)
 
-   This may take a few minutes. You should see a message that the Data Flow completed successfully.
+    This may take a few minutes. You should see a message that the Data Flow completed successfully.
 
 21. Go back to the **Home Page**.
 
-   ![pic1](images/to-homepage2.png)
+    ![pic1](images/to-homepage2.png)
 
 22. Open the new Data Set by clicking on **Data**, then on the ribbon of **Predicted Boat Speed** and select **Open**.
 
-   ![pic1](images/open-predicted.png)
+    ![pic1](images/open-predicted.png)
 
 23. Change the **Treat As** of the 4 columns to be as follows:
 
-   - `WIND_SPEED`: `Attribute`
-   - `WIND_ANGLE`: `Attribute`
-   - `PK`: `Attribute`
-   - `Prediction`: `Measure`
+    - `WIND_SPEED`: `Attribute`
+    - `WIND_ANGLE`: `Attribute`
+    - `PK`: `Attribute`
+    - `Prediction`: `Measure`
 
-   Ignore any message regarding the Data Flow by clicking **OK**.
+    Ignore any message regarding the Data Flow by clicking **OK**.
 
-   The result should look like this.
+    The result should look like this.
 
-   ![pic1](images/column-types.png)
+    ![pic1](images/column-types.png)
 
 24. **Save** the Data Set and click **Create Project** after.
 
-   ![pic1](images/save-and-create.png)
+    ![pic1](images/save-and-create.png)
 
 25. Now it's time to visualize the predictions.
 
-   Select `WIND_SPEED`, `WIND_ANGLE` and `Prediction` (control-click for multi-select) and Right Click. Then choose **Pick Visualization** and choose **Line** chart.
+    Select `WIND_SPEED`, `WIND_ANGLE` and `Prediction` (control-click for multi-select) and Right Click. Then choose **Pick Visualization** and choose **Line** chart.
 
-   ![pic1](images/create-line-chart.png)
+    ![pic1](images/create-line-chart.png)
 
 26. Make sure that the Line Chart is configured as indicated with the red boxes.
 
-   ![pic1](images/resulting-line-chart.png)
+    ![pic1](images/resulting-line-chart.png)
 
-   > If you see a different chart be sure you have the correct order as showed in the picture.
+    > If you see a different chart be sure you have the correct order as showed in the picture.
 
-   Conclusion: We can now see clear patterns in how boat speed changes as a result of wind speed and wind angle. The angles to reach the highest boat speed are different depending on the wind speed.
+    Conclusion: We can now see clear patterns in how boat speed changes as a result of wind speed and wind angle. The angles to reach the highest boat speed are different depending on the wind speed.
 
 ## **TASK 6:** Extract The Boat Speed Towards Our Upwind Target
 
