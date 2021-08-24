@@ -229,20 +229,14 @@ Also we need to make Verrazzano aware that we store in that namespace Verrazzano
     ```
 
     ![Verrazzano Home Folder](images/9.png)
-    
+
 3. Copy the following command to download the script. This script authenticate the user for Oracle Container Registry. If authentication is successful, then it creates the docker registry secret. The Docker registry  is a way to store and version images, like GitHub for normal code but for containers (which Kubernetes can pull). Here, we will create a docker-registry secret to enable pulling the Bob's Books example image from the Oracle Container Registry. Click *Copy* on the following command, and paste it in any text editor of your choice and replace username and password with the email ID and password respectively which you used in step 1, for accepting the license agreement for downloading images from the Oracle Container Registry. Then, in the Cloud Shell, paste the modified command as shown:
 
     ```bash
     <copy>
-<<<<<<< HEAD
     curl -LSs https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/multicloud/verrazzano/deploy-bobsbook/create_secret.sh >~/create_secret.sh
     chmod 777 create_secret.sh
     ./create_secret.sh username password    
-=======
-    curl -LSs https://raw.githubusercontent.com/pandey-ankit/learning-library/master/developer-library/multicloud/verrazzano/deploy-bobsbook/create_secret.sh >~/create_secret.sh
-    chmod 777 ~/create_secret.sh
-    ~/create_secret.sh username password    
->>>>>>> 9ed376c365117cadc4e7680ac48010b239eefe9b
     </copy>
     ```
 
