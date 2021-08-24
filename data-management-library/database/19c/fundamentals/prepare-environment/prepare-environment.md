@@ -54,7 +54,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Select **My Configuration**.
 
-4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the `db19cnf-workshop-staged.zip` file that you just downloaded, and then click **Open**.
 
     ![Stack Configuration for workshop-staged](images/stack-configuration-workshop-staged.png "Stack Configuration for workshop-staged")
 
@@ -119,7 +119,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Select **My Configuration**.
 
-4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the `db19cnf-workshop-installed.zip` file that you just downloaded, and then click **Open**.
 
     ![Stack Configuration for workshop-installed](images/stack-configuration-workshop-installed.png "Stack Configuration for workshop-installed")
 
