@@ -59,7 +59,7 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
    demo        ldap           owm      sdk
     ```
 
-5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
+5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
 
   *Enter the command carefully and check that it is correct before you run it.*
 
@@ -75,7 +75,9 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
 
   ![Select System Class page](images/select-system-class-page.png "Select System Class page")
 
-8. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes. The following values will be configured:
+8. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes, and then click **Next**.
+
+    The following values will be configured:
 
     - Oracle base: `/u01/app/oracle`
     - Database file location: `/u01/app/oracle/oradata`
