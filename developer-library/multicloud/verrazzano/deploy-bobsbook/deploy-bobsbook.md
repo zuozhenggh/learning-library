@@ -234,9 +234,15 @@ Also we need to make Verrazzano aware that we store in that namespace Verrazzano
 
     ```bash
     <copy>
+<<<<<<< HEAD
     curl -LSs https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/multicloud/verrazzano/deploy-bobsbook/create_secret.sh >~/create_secret.sh
     chmod 777 create_secret.sh
     ./create_secret.sh username password    
+=======
+    curl -LSs https://raw.githubusercontent.com/pandey-ankit/learning-library/master/developer-library/multicloud/verrazzano/deploy-bobsbook/create_secret.sh >~/create_secret.sh
+    chmod 777 ~/create_secret.sh
+    ~/create_secret.sh username password    
+>>>>>>> 9ed376c365117cadc4e7680ac48010b239eefe9b
     </copy>
     ```
 
