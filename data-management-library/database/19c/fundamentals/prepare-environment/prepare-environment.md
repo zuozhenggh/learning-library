@@ -5,7 +5,7 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the 
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
 - `workshop-installed` - You use this compute instance for all of the other labs.
 
-To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
+To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
 
 
 Estimated Lab Time: 15 minutes
@@ -44,7 +44,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Task 2: Create a `workshop-staged` compute instance
 
-1. Download [db19cnf-workshop-staged.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8ymA1czX8XRytfobEBedr8guxJfPwZ9gRUH2PZjbk2AeQBnFHMM06si6NSitFeqY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-staged.zip) to a directory on your local computer.
+1. Download [db19cnf-workshop-staged.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IB0_i443bk4fdA7XvxA-bVeljmAiqcTWWwjruTbYR8R0[…]/c4u04/b/labfiles/o/db19cnf-workshop-staged.zip) to a directory on your local computer.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
@@ -107,7 +107,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Task 3: Create a `workshop-installed` compute instance
 
-1. Download [db19cnf-workshop-installed.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8ymA1czX8XRytfobEBedr8guxJfPwZ9gRUH2PZjbk2AeQBnFHMM06si6NSitFeqY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-staged.zip) to a directory on your local computer.
+1. Download [db19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/p3azd6JsGn1R0_YBobDvkH9-gCkzdYwiexUsxAKUySC86[…]u04/b/labfiles/o/db19cnf-workshop-installed.zip) to a directory on your local computer.
 
 2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
@@ -177,4 +177,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 19 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
