@@ -2,23 +2,23 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 
 * Download the root certificate for Oracle Cloud Infrastructure from your web browser to your local machine
-* Add the certificate to your Oracle GoldenGate wallet
+* Add the certificate to Oracle GoldenGate's Administration Server
 * Create a credential on Oracle GoldenGate to connect to OCI GoldenGate
 
 ### Prerequisites
 
 To successfully complete this lab, you must have:
 
-* An on premise or Marketplace Oracle GoldenGate instance running
+* An on premises or Marketplace Oracle GoldenGate instance running
 * The URL and log in credentials for the Oracle GoldenGate Service Manager
 * The log in credentials for the OCI GoldenGate Deployment Console
 
@@ -80,9 +80,11 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Download PEM](images/01b-06.png)
 
-## Task 2: Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
+## Task 2: Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
 
-1.  Open the on premise or Marketplace Oracle GoldenGate Service Manager in a browser window.
+1.  Open the on premises or Marketplace Oracle GoldenGate Service Manager in a browser window.
+
+> ***Note:** To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the OCI Console, and then enter `<public-ip>:<port 443>` in your browser address bar.*
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 
@@ -110,7 +112,7 @@ The following instructions show you how to download the Root Certificate using a
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
-1.  Launch the OCI GoldenGate Deployment Console, sign in, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
+1.  Sign in to the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
     ![](images/03-01.png)
 
@@ -120,7 +122,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png)
 
-3.  On the on premise or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premise or Marketplace Administration Server opens in a new browser.
+3.  On the on premise or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premises or Marketplace Administration Server opens in a new browser.
 
 4.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
 
@@ -136,7 +138,7 @@ The following instructions show you how to download the Root Certificate using a
 
 6.  Click **Submit**.
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next [lab](#next).
+In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

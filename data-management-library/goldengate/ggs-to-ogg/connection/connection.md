@@ -80,9 +80,11 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Download PEM](images/01b-06.png)
 
-## Task 2: Upload the certificate to the on premise or Marketplace Oracle GoldenGate Service Manager
+## Task 2: Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
 
 1.  Open the on premises or Marketplace Oracle GoldenGate Service Manager in a browser window.
+
+> ***Note:** To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the OCI Console, and then enter `<public-ip>:<port 443>` in your browser address bar.*
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 

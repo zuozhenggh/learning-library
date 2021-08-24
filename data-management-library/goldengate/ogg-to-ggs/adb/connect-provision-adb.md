@@ -1,10 +1,10 @@
-# Set up your environment
+# Set Up Your Environment
 
 ## Introduction
 
 This lab walks you through the steps to create the required resources you'll use for this set of labs. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
 
-*Note: This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> ***Note:** This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
 Estimated Lab Time: 20 mins
 
@@ -18,7 +18,7 @@ Estimated Lab Time: 20 mins
 
 This lab assumes you have completed the Getting Started lab.
 
-*Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> ***Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
 ## Task 1: Create a VCN and subnet
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
@@ -65,8 +65,6 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
 
-    ![Configure database](./images/01-06-db.png)
-
 7.  Add a password. Take note of the password, you will need it later in this lab.
 
     ![Database user and password](./images/01-07-pw.png)
@@ -92,13 +90,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 4.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![Click Tools](./images/02-04-tools.png)
-
     ![Click Open Database Actions](./images/02-04-db-actions.png)
 
 5.  Log in with the ADMIN user and password provided when you created the ATP instance.
-
-    ![Log in to Database Actions](./images/02-05-login.png)
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
@@ -144,15 +138,13 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 4.  Under **Choose a workload type**, select **Data Warehouse**.
 
-    ![Workload Type](./images/01-04-workload.png)
+    ![Workload Type](./images/04-04-workload.png)
 
 5.  Under **Choose a deployment type**, select **Shared Infrastructure**.
 
     ![Deployment Type](./images/01-05-deployment.png)
 
 6.  Under **Configure the database**, leave **Choose database version** and **Storage (TB)** and **OCPU Count** as they are.
-
-    ![ADW configuration](./images/01-06-db.png)
 
 7.  Add a password. Note the password down in a notepad, you will need it later in Lab 2.
 
@@ -172,9 +164,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-    ![Click Tools](./images/02-04-tools.png)
-
-    ![Open Database Actions](./images/02-04-db-actions.png)
+		![Open Database Actions](./images/05-04-db-actions.png)
 
 3.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -198,10 +188,10 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
-Please proceed to the next [lab](#next).
+Please proceed to the next lab.
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, July 2021
+- **Last Updated By/Date** - Jenny Chan, August 2021
 - **PAR Expiration date** - March 31, 2022
