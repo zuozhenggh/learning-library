@@ -26,7 +26,7 @@ Enter:
 5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1=DELTA_TEST1**, and click **Enable Delta Processing**.
     ![](./images/3DP.png " ")
 
-4. Select the **Enable Delta Processing** check box and click **Save**.
+6. Select the **Enable Delta Processing** check box and click **Save**.
 
     ![](./images/3DP_selectEnableDelta.png " ")
 
@@ -34,10 +34,52 @@ Enter:
 
     ![](./images/5DP.png " ")
 
-    Delta Processing is enabled. Notice the changed status o the compare pairs on the **Enable Delta Processing** tab:
+    Delta Processing is enabled. Notice the changed status of the compare pairs on the **Enable Delta Processing** tab:
     ![](./images/6DP.png " ")
-    
-5.     
+
+7.   Create a job and name it **Job_Delta_Processing** and run this job.
+
+     ![](./images/7DP.png " ")
+
+8.   Run the terminal.
+9.   Run the following command:
+
+    ```
+    <copy>
+    cd /home/opc/stage/scripts
+     source env_setup.sh
+     sqlplus   <\copy>
+     
+    ```  
+10.  Enter the following credentials:
+      * **User Name**: source
+      * **Password**: source
+11. Enter the following INSERT query:
+
+      ```
+      <copy>
+      insert into delta_test1 values ('2000',2000);
+      insert into delta_test1 values ('2001',2001);
+      insert into delta_test1 values ('2002',2002);
+      insert into delta_test1 values ('2003',2003);
+      insert into delta_test1 values ('2004',2004);
+      commit;<\copy>
+     ```
+8.   In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
+
+9. Click **Select...** under **Delta Base Value** to select the delta-base value from the list to perform delta processing.
+
+      ![](./images/8DP.png " ")
+
+10. In the **Delta Base Time Selection** page, enter a number, for example 5 in **Number of Runs to Show**, select the **Only Consider Delta Enabled Comparisons** check box, click **Apply Filter**. Select the record and click **Select** to display the **Run Configuration** page.
+
+      ![](./images/9DP.png " ")
+
+11. Select the record and click the **out-of-sync** icon to display the **Run Configuration** page.
+
+      ![](./images/10DP.png " ")
+
+      ![](./images/11DP.png " ")
 
 
 ## Task 2: Configure Delta Comparison
