@@ -6,15 +6,6 @@ In this lab you will use graph analytics to identify movies to recommend to cust
 
 Estimated Time: 30 minutes
 
-### Prerequisites
-
-- This lab requires completion of Labs 1-4, and Lab 7 Use OML to Predict Customer Churn, in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
-
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
-
 ### About Graph
 When you model your data as a graph, you can run graph algorithms on your data to analyze your data based on the connections and relationships in your data.  You can also use graph queries to find patterns in your data, such as cycles, paths between vertices, anomalous patterns, and so on.  Graph algorithms are invoked using a Java or Python API, and graph queries are run using PGQL (Property Graph Query Language, see [pgql-lang.org](https://pgql-lang.org)).
 
@@ -33,12 +24,12 @@ In this lab, you will use the Graph Studio feature of Autonomous Database to:
 
 ### Prerequisites
 
-- This lab requires completion of Labs 1-4 in the Contents menu on the left.
+- This lab requires completion of Labs 1-4, and Lab 7 Use OML to Predict Customer Churn, in the Contents menu on the left.
 - You can complete the prerequisite labs in two ways:
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the results of having run Labs 1-4 and Lab 7.
 
 ## Task 1: Prepare Data for Graph Analysis
 
