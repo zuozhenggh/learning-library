@@ -19,13 +19,14 @@ from oci.ai_anomaly_detection.models.data_item import DataItem
 from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import InlineDetectAnomaliesRequest
 
 # change the following constants accordingly
-## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
-CONFIG_FILENAME = "/Users/home/.oci/config"
-SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-phoenix-1.oci.oraclecloud.com"
-NAMESPACE = "id5zdxxxxa"
-BUCKET_NAME = "my-bucket"
+# ## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
+CONFIG_FILENAME = "/home/<USERNAME>/.oci/config" # TODO: Update USERNAME
+SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update propery if different
+NAMESPACE = "idehhejtnbtc" # Need to Update propery if different
+BUCKET_NAME = "anomaly-detection-bucket" # Need to Update propery if different
+training_file_name="demo-training-data.csv" # Need to Update propery if different
 
-compartment_id = "ocid1.compartment.oc1..<Compartment ID>" #Compartment of the project
+compartment_id = "ocid1.tenancy.oc1..aaaaaaaasuvbdyacvuwg7p5zdccy564al2bnlizwdabjoebpefmvksqve3na" #Compartment of the project, Need to Update propery if different
 config = from_file(CONFIG_FILENAME)
 
 ad_client = AnomalyDetectionClient(
@@ -68,7 +69,7 @@ dDetails = DataSourceDetails(data_source_type="ORACLE_OBJECT_STORAGE")
 dObjDeatils = DataSourceDetailsObjectStorage(
     namespace=NAMESPACE,
     bucket_name=BUCKET_NAME,
-    object_name="training_ata.json",
+    object_name=training_file_name,
 )
 
 da_details = CreateDataAssetDetails(
