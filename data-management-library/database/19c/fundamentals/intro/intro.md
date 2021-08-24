@@ -14,15 +14,7 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out new features in Oracle Database 19c. You use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
-- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
-- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs.
-
-All of the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your environment to run the lab, and each lab ends with instructions on how to restore your environment back to its original state.
-
-### General Database Overall Enhancements
-
-Currently, we have a set of labs that cover general database overall enhancements in Oracle Database 19c. Over time, more labs will be added to this workshop.
+This workshop lets you try out new features in Oracle Database 19c. Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
 
 You can try the following labs:
 
@@ -34,6 +26,13 @@ You can try the following labs:
 - Omit the Column Encryption Attribute During Import
 - Use RMAN to Connect to a PDB to Use the Recovery Catalog
 - Explore Automatic Deletion of Flashback Logs
+
+During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
+- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs.
+
+All of the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your environment to run the lab, and each lab ends with instructions on how to restore your environment back to its original state.
+
 
 
 ## Acknowledgements
