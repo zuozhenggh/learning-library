@@ -17,7 +17,7 @@ In this lab, you will:
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All setup in previous labs
 
-## **STEP 1:** Onboard Logging Analytics Service
+## Task 1: Onboard Logging Analytics Service
 
 1. Enable Logging Analytics
     
@@ -31,7 +31,7 @@ In this lab, you will:
 
     c. Click **Continue**
 
-## **STEP 2:** (Optional) Create Logging Analytics Super Admin Group
+## Task 2: (Optional) Create Logging Analytics Super Admin Group
 
 (Optional) You can also use existing administrator user group. 
     
@@ -73,7 +73,7 @@ Create Logging Analytics Group Logging Analytics Super Admins
 
   e. Click **Add Mapping**
 
-## **STEP 3:** Create Logging Analytics Dynamic Group: Management Agent Admins
+## Task 3: Create Logging Analytics Dynamic Group: Management Agent Admins
     
 1. Now navigate to Identity - Dynamic Groups 
 
@@ -95,7 +95,7 @@ Create Logging Analytics Group Logging Analytics Super Admins
 
   f. Click **Create**
     
-## **STEP 4:** Create Logging Analytics Policy
+## Task 4: Create Logging Analytics Policy
 
 1. Go to Identity - Policies
 
@@ -157,7 +157,7 @@ allow service loganalytics to {VNIC_READ} in tenancy
 
 ![](./images/policies.png " ")
 
-## **STEP 5:** Create Log Groups
+## Task 5: Create Log Groups
 
 1. Go to Logging Analytics - Administration - Log Groups
 

@@ -12,7 +12,7 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 - To sign in to the Console, you need the following:
   - Tenant, User name and Password
   
-## **STEP 1**: Creating <if type="freetier">a Web Server on </if>a Compute Instance
+## Task 1: Creating <if type="freetier">a Web Server on </if>a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
@@ -21,7 +21,9 @@ Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instance
 
 An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
-1. Navigate to the **Compute** tab and select **Instances**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 <if type="livelabs">
 2. Select the Compartment that you were assigned when the reservation was created.
@@ -75,7 +77,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <if type="livelabs">
     ![](images/compute-livelabs-running/png)</if>
 
-## **STEP 2**: Connect to the instance <if type="freetier">and install Apache HTTP Server</if>
+## Task 2: Connect to the instance <if type="freetier">and install Apache HTTP Server</if>
 
 1. To connect to the instance, use Cloud Shell and enter the following command:
 

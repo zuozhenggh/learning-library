@@ -17,7 +17,7 @@ Estimated workshop time: 60 minutes (exluding model training)
 
 - Complete Lab 1 to Lab 4
 
-## **Step 1:** Connect to the VNC Desktop
+## Task 1: Connect to the VNC Desktop
 
 1.  Create a SSH tunnel to the VNC server using the following command (where private-key is your private OpenSSH key and public_ip the private IP address from your Ubuntu compute instance):
 
@@ -34,7 +34,7 @@ Estimated workshop time: 60 minutes (exluding model training)
 Your remote Ubuntu desktop will open up.
 ![](images/vncdesktop.PNG " ")
 
-## **Step 2:** Open Faceswap on the VNC Desktop
+## Task 2: Open Faceswap on the VNC Desktop
 
 1.  Open a terminal by right-clicking on the desktop and selecting **Open Terminal here**.
     ![](images/open-terminal.PNG " ")
@@ -69,7 +69,7 @@ The Faceswap GUI opens up.
 
 ![](images/faceswapGUI.PNG " ")
 
-## **Step 3:** Copy your training data to the compute instance
+## Task 3: Copy your training data to the compute instance
 
 To train the Faceswap GAN, you need to provide pictures or a video of person A and person B from who you want to swap faces. In this example, we will copy two videos from person A and person B from our local machine to the remote Ubuntu instance using WinSCP.
 
@@ -96,7 +96,7 @@ To train the Faceswap GAN, you need to provide pictures or a video of person A a
 12. Create the folder **src** in your remote folder by right clicking in the field on the right side, selecting **New -> Directory** and typing the name of your folder **src**.
 13. Select your two videos on the left side (local machine) and drag them to the **src** folder on the right side (remote machine).
 
-## **Step 4:** Extract the faces from the photos and videos
+## Task 4: Extract the faces from the photos and videos
 
 The first step, is to extract the faces from video A and video B.
 
@@ -130,7 +130,7 @@ The first step, is to extract the faces from video A and video B.
 
 ![](images/extract-terminal.PNG " ")
 
-## **Step 5:** Train the GAN
+## Task 5: Train the GAN
 
 Now that we have extracted the faces for person A and person B from the videos, we can train the Faceswap GAN.
 
@@ -179,7 +179,7 @@ In the **Analysis** tab, you can check the value _EGs/sec_ in the last column wh
 
 10. Optional: It is possible to boost the application performance by increasing GPU core and memory clock rates. Please visit the Nvidia blog post about [Nvidia GPU boost](https://developer.nvidia.com/blog/increase-performance-gpu-boost-k80-autoboost/) for more information.
 
-## **Step 6:** Convert your video with the swapped face
+## Task 6: Convert your video with the swapped face
 
 If your training is finished, you can convert your video and swap face A in your source video with face B.
 

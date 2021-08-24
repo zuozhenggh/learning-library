@@ -40,7 +40,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 - This lab requires the completion of lab 1 and the provision of the OCI components.
 
 
-## **STEP 1**: Set values for workshop environment variables
+## Task 1: Set values for workshop environment variables
 
 1. Set the root directory of the workshop
 	```
@@ -54,7 +54,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 	<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
 	```
 
-## **STEP 2**: Build and push the Docker images to the OCI Registry
+## Task 2: Build and push the Docker images to the OCI Registry
 
 1. Ensure that the "DOCKER_REGISTRY" variable is set
 
@@ -103,7 +103,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
    ![](images/Public-access.png " ")
 
-## **STEP 3**: Deploy on Kubernetes and Check the Status
+## Task 3: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 
@@ -140,7 +140,7 @@ $ kubectl get services
   Returns:
   http://130.61.66.27/todolist
 
-## **STEP 4**: UnDeploy (optional)
+## Task 4: UnDeploy (optional)
 
   If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
@@ -151,7 +151,7 @@ $ kubectl get services
 2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 
-## **STEP 5**: Configure the API Gateway
+## Task 5: Configure the API Gateway
 
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
@@ -193,7 +193,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 	![](images/Route-2.png " ")
 
 
-## **STEP 6**: Testing the backend application through the API Gateway
+## Task 6: Testing the backend application through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail an copy the endpoint
    ![](images/Gateway-endpoint.png " ")

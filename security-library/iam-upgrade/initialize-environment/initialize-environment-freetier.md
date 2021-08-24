@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Access the Graphical Remote Desktop (Preferred)
+## Task 1: Access the Graphical Remote Desktop (Preferred)
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Launch your browser to the following URL
@@ -44,7 +44,7 @@ For ease of execution of this workshop, your instance has been pre-configured fo
 
     ![](./images/guacamole-landing.png " ")
 
-## **STEP 2:**  Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
+## Task 2:  Enable Copy/Paste from local to remote desktop (Guacamole clipboard)
 During the execution of your labs you may need to copy text from your local PC/Mac to the Guacamole remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. From your remote desktop session, enter CTRL+ALT+SHIFT (*Windows*) or CTRL+CMD+SHIT (*Mac*)
@@ -65,7 +65,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/guacamole-clipboard-3.png " ")
 
-## **STEP 3:** Open Workshop Guide from the Remote Desktop
+## Task 3: Open Workshop Guide from the Remote Desktop
 LiveLabs workshop guides make an extensive use of *Click-to-Copy* function, providing convenient and effective way to quickly copy a predefined text or block of text without the need to first highlight it. This also help avoid mistakes that may occur when doing it manually such as copying extra or fewer characters than intended.
 
 As a result, launching your workshop guide from the remote desktop will further enhance your experience. It will greatly help speed up your labs execution by removing the need to constantly switch between the guide from your local computer and the remote desktop, and minimize the need for the 3-steps *copy/paste/paste* described in *STEP 2* above.
@@ -82,7 +82,7 @@ As a result, launching your workshop guide from the remote desktop will further 
 
     ![](./images/livelabs-search-workshop-1.png " ")
 
-## **STEP 4:** Start Oracle IAM 11.1.2.3 Components
+## Task 4: Start Oracle IAM 11.1.2.3 Components
 
 1.  From any of the terminal session started above, proceed as shown below to start all components as “*oracle*” user
 
@@ -135,7 +135,25 @@ As a result, launching your workshop guide from the remote desktop will further 
     <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
     ```
 
-## **STEP 5:** Login to Host using SSH Key based authentication (Optional)
+## Task 5: Review the ReadMe.txt and Binaries
+
+1. Review environment details to learn more about the setup. Navigate to the file browser as shown below and open *ReadMe.txt*.
+
+    ![](./images/open-readme.png " ")
+
+2. For your convenience, all software binaries needed throughout the workshop have been staged on the instance. Refer to the details below to review
+
+    - Review 12c Binaries
+    ```
+    <copy>ls -ltrh /home/oracle/Downloads/12cbits </copy>
+    ```
+    - Review 11g Binaries
+    ```
+    <copy>ls -ltrh /home/oracle/Downloads/11gbits </copy>
+    ```
+    ![](./images/staged-software-2.png " ")
+
+## Task 6: Login to Host using SSH Key based authentication (Optional)
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
 
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):

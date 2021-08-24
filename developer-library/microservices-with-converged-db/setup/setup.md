@@ -5,29 +5,27 @@
 In this lab we will provision and setup the resources to execute microservices in your tenancy.  
 
 Estimates Lab Time - 25 minutes
+<if type="multicloud-freetier">
+- Estimates Lab Time - 25 minutes
++ Estimates Lab Time - 25 minutes
+</if>
 
 ### Objectives
 
 * Clone the setup and microservices code
 * Execute setup
 
-### Prerequisites
-
-* An Oracle Cloud paid account or free trial with credits. To sign up for a trial account with $300 in credits for 30 days, click [here](#previous).
-
-Note, you will not be able to complete this workshop with the 'Always Free' account. Make sure that you select the free trial account with credits.
-
-## **STEP 1**: Login to the OCI Console and Launch the Cloud Shell
+## Task 1: Login to the OCI Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
 
-## **STEP 2**: Select the Home Region
+## Task 2: Select the Home Region
 
 Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
   ![](images/home-region.png " ")
 
-## **STEP 3**: Check Your Tenancy Service Limits
+## Task 3: Check Your Tenancy Service Limits
 
 If you have a **fresh** free trial account with credits then you can be sure that you have enough quota to complete this workshop and you can proceed to the next step.
 
@@ -51,15 +49,15 @@ The Tenancy Explorer may be used to locate existing resources: **Governance & Ad
 
 It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
-## **STEP 4**: Launch the Cloud Shell
+## Task 4: Launch the Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
-2. Click the Cloud Shell icon in the top-right corner of the Console.
+1. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
-## **STEP 5**: Create a Folder to Contain the Workshop Code
+## Task 5: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
@@ -77,12 +75,12 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## **STEP 6**: Make a Clone of the Workshop Setup Script and Source Code
+## Task 6: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 1.4 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.6.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -97,7 +95,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## **STEP 7**: Start the Setup
+## Task 7: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -119,11 +117,11 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask for you to enter your User OCID.  
-    
-   Be sure to provide the user OCID and not the user name or tenancy OCID. 
-   
+
+   Be sure to provide the user OCID and not the user name or tenancy OCID.
+
    The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
-   
+
    This can be found in the OCI console.  Note that in some cases the name link may be inactive in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
   ![](images/get-user-ocid.png " ")
@@ -140,7 +138,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 5. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-## **STEP 8**: Monitor the Setup
+## Task 8: Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -159,7 +157,7 @@ You can monitor the setup progress from a different browser window or tab.  It i
 
    ![](images/select-compartment.png " ")
 
-## **STEP 9**: Complete the Setup
+## Task 9: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
@@ -178,10 +176,6 @@ Their log files are located in the $GRABDISH_LOG directory.
 ls -al $GRABDISH_LOG
 </copy>
 ```
-
-<if type="multicloud-freetier">
-+ **MULTICLOUD_FREETIER INSTRUCTIONSS HERE**
-</if>
 
 Once the setup has completed you are ready to [move on to Lab 2](#next).  Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 

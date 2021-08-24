@@ -30,7 +30,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab : Environment setup
 
-## **STEP 1**: Start ORDS in standalone mode
+## Task 1: Start ORDS in standalone mode
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
@@ -38,14 +38,14 @@ This lab assumes you have:
    Open the browser and enter the following URI in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/
+    http://localhost:9090/ords/
     ```
 
   If you see `ORACLE REST DATA SERVICES 404 Not Found`, it means that `ORDS` is connected.
   ![](./images/ords_lab1_snap5.png " ")
 
 
-## **STEP 2**: Create RESTful Services for JSON data
+## Task 2: Create RESTful Services for JSON data
 
    `AutoREST Enable a Schema and its JSON Table`
 
@@ -85,11 +85,10 @@ This lab assumes you have:
 
     ![](./images/ordsl8.png " ")
 
-9.	The RESTful Services Wizard will appear. Enter the following and click **Next**.
-
-    ![](./images/ordsl9.png " ")
-
+9.	The RESTful Services Wizard will appear. Enter the below details and click **Next**.
+        
     ![](./images/ordsl10.png " ")
+    <!-- ![](./images/ordsl9.png " ") -->
 
 10.	This screen gives a summary of the selected operations. Click the SQL tab.
 
@@ -107,7 +106,7 @@ This lab assumes you have:
 
 13.	Retrieve Purchase_order table data.  Open the browser and enter the following URL in the address bar:
      ```
-     http://<instance_IP_address>:9090/ords/JXLPDB/appjson/purchase_order/
+     http://localhost:9090/ords/JXLPDB/appjson/purchase_order/
      ```
 
      The URL corresponds to the following:
@@ -122,11 +121,11 @@ This lab assumes you have:
 
    Perform the following STEPS to create your first RESTful Service
 
-14. Expand Rest Data Services and right click **Modules** and select **New Module.**
+1.  Expand Rest Data Services and right click **Modules** and select **New Module.**
 
     ![](./images/ordsl15.png " ")
 
-15. **The RESTful Services Wizard** appears which will assist you to define a resource module and a resource template. Enter the following values in the wizard and click **Next**.
+2.  **The RESTful Services Wizard** appears which will assist you to define a resource module and a resource template. Enter the following values in the wizard and click **Next**.
      ```
      <copy>
      Module Name: cnvg 	
@@ -140,7 +139,7 @@ This lab assumes you have:
      ![](./images/ordsl16.png " ")
 
 
-16. The RESTful Services Wizard - `STEP 2 of 3` displays the Resource Template attributes. Enter the following values in the wizard.
+3.  The RESTful Services Wizard - `STEP 2 of 3` displays the Resource Template attributes. Enter the following values in the wizard.
 
     ```
     <copy>
@@ -205,7 +204,7 @@ This lab assumes you have:
 
 27. Let’s test the Restful Service. Open the Postman.Enter
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/200
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/200
     ```
     for URL, and select **GET** for HTTP Method. Then, click **Send** icon located next to the URL field on the top right side.
 
@@ -213,7 +212,7 @@ This lab assumes you have:
 
 28. Open the browser and test the following URL in the address bar:
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/200
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/200
     ```
     ![](./images/ordsl29.png " ")
 
@@ -240,7 +239,7 @@ This lab assumes you have:
 33. Let’s test the Restful Service. Open the Postman.Enter
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/
     ```
     for URL, and select **GET** for HTTP Method. Then, click **Send** icon located next to the URL field on the top right side.
 
@@ -249,7 +248,7 @@ This lab assumes you have:
 34. Open the browser and test the following URL in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/
     ```
     ![](./images/ordsl35.png " ")
 
@@ -281,7 +280,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 38.	Test the Restful Service. Provide following values in the Postman.Enter
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/  
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/  
     ```
     for URL, and select POST for HTTP Method. For the **body** select **raw** and **JSON** from dropdown, enter below PO document in the body section Then, click Send icon located next to the URL field on the top right side.
 
@@ -342,7 +341,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 39. Open the browser and test the following URL in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
     ```
     ![](./images/ordsl40.png " ")
 
@@ -377,7 +376,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 43.	Test the Restful Service. Provide following values in the Postman. Enter
 
     ```
-    http://<instance_IP_address>:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
     ```
   for URL, and select PUT for HTTP Method. For the **body** select **raw** and JSON from dropdown, update Requester name as below in the body section Then, click Send icon located next to the URL field on the top right side.
 
@@ -391,7 +390,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 44.	Open the browser and test the following URL in the address bar. Check the requester name , it is changed to dummy_user.
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
     ```
     ![](./images/ordsl45.png " ")
 
@@ -421,7 +420,7 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 48. Test the Restful Service. Provide following values in the Postman.Enter
 
     ```
-    http://<instance_IP_address>:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
     ```
  for URL, and select DELETE for HTTP Method. Then, click Send icon located next to the URL field on the top right side.
  Once we get the Status:200 OK, DELETE is successfully done.
@@ -431,11 +430,11 @@ The resource handler editor POST cnvg/ is displayed on the right-side. Enter the
 49.	Open the browser and test the following URL in the address bar. Check for the PONumber 10020 and its deleted.
 
     ```
-    http://<Instance_ip_address>:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appjson/cnvg/cnvg/10020
     ```
     ![](./images/ordsl50.png " ")
 
-## **STEP 3**: Create RESTful Services for XML data
+## Task 3: Create RESTful Services for XML data
 
 `AutoREST Enable a Schema and its XML Table`
 
@@ -568,7 +567,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 
 19. Open the browser and test the following URL in the address bar:                                       
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/200
+    http://localhost:9090/ords/jxlpdb/appxml/cnvg/cnvg/200
     ```
 
     ![](./images/ordslab2.18.png " ")
@@ -602,7 +601,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 25. Open the browser and test the following URL in the address bar:                                       
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/
+    http://localhost:9090/ords/jxlpdb/appxml/cnvg/cnvg/
     ```
     ![](./images/ordslab2.24.png " ")
 
@@ -698,7 +697,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 30. Open the browser and test the following URL in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
     ```
     ![](./images/ordslab2.29.png " ")
 
@@ -743,7 +742,7 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
 35. Open the browser and test the following URL in the address bar. Check the requester name , it is changed to dummy_user.
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
     ```
     ![](./images/ordslab2.34.png " ")
 
@@ -784,11 +783,11 @@ The resource handler editor POST cnvg/:id is displayed on the right-side. Enter 
    Check for the PONumber 10020 and its deleted.
 
     ```
-    http://Instance_ip_address:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
+    http://localhost:9090/ords/jxlpdb/appxml/cnvg/cnvg/10020
     ```
    ![](./images/ordslab2.39.png " ")
 
-## **STEP 4**: Create RESTful Services for Spatial data
+## Task 4: Create RESTful Services for Spatial data
 
 `AutoREST Enable a Schema and its Spatial Table`
 
@@ -903,7 +902,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 19. Open the browser and test the following URL in the address bar:
 
     ```
-    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/2
+    http://localhost:9090/ords/sgrpdb/appspat/cnvg/cnvg/2
     ```
     ![](./images/ordslab3.18.png " ")
 
@@ -936,7 +935,7 @@ Refer **"Define Resource Module, Resource Template" section from STEP 2** to cre
 25. Open the browser and test the following URL in the address bar:  
 
     ```
-    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/
+    http://localhost:9090/ords/sgrpdb/appspat/cnvg/cnvg/
     ```
 
     ![](./images/ordslab3.24.png " ")
@@ -1001,7 +1000,7 @@ Then, click **Send** icon located next to the URL field on the top right side.
 
      ```
     <copy>
-    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
+    http://localhost:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
     </copy>
     ```
     ![](./images/ordslab3.29.png " ")
@@ -1053,7 +1052,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 35. Open the browser and test the following URL in the address bar. Check the warehouse name , it is changed to “put\_new\_warehouse"
 
     ```
-    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
+    http://localhost:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
     ```
     ![](./images/ordslab3.34.png " ")
 
@@ -1092,7 +1091,7 @@ For the body select **raw** and **JSON** from dropdown, update warehouse name as
 40. Open the browser and test the following URL in the address bar. Check for the warehouse with id 5 and its deleted.
 
     ```
-    http://Instance_ip_address:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
+    http://localhost:9090/ords/sgrpdb/appspat/cnvg/cnvg/5
     ```
     ![](./images/ordslab3.39.png " ")
 

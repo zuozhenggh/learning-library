@@ -1,4 +1,4 @@
-# Using Oracle Machine Learning Notebooks
+# Use Oracle Machine Learning Notebooks
 
 ## Introduction
 
@@ -25,13 +25,7 @@ In this lab, you will use the Oracle Machine Learning (OML) SQL notebook applica
 -   Learn how to share notebooks
 -   Learn how to create and run SQL scripts
 
-### Prerequisites
-
--   This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Public Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
-
-## **STEP 1**: Creating OML Users
+## Task 1: Creating OML Users
 
 The first step is to create two new users.
 
@@ -75,7 +69,7 @@ The first step is to create two new users.
 
     You will use these two users later in this workshop.
 
-## **STEP 2**: Sign in into OML and Explore Home Page
+## Task 2: Sign in into OML and Explore Home Page
 
 1.  Using the link from your welcome email, from Oracle Global Accounts, you can now sign in to OML. Copy and paste the **application link** from the email into your browser and sign in to OML.
 
@@ -97,7 +91,7 @@ The first step is to create two new users.
 
 5.  All of your work is automatically saved –  there is no “Save” button when you are writing scripts and/or queries.
 
-## **STEP 3**: Opening a New SQL Query Scratchpad to Run a SQL Statement
+## Task 3: Opening a New SQL Query Scratchpad to Run a SQL Statement
 
 1.  From the home page, click the “**Run SQL Statements**” link in the Quick Actions panel to open a new SQL Query Scratchpad.
 
@@ -121,7 +115,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-20.png " ")
 
-## **STEP 4**: Changing the Report Type
+## Task 4: Changing the Report Type
 
 1.  Using the report menu bar, you can change the table to a *graph* and/or export the result report to a CSV or TSV file.
 
@@ -141,7 +135,7 @@ The first step is to create two new users.
 
 6.  To remove a column from the **Keys**, **Groups**, or **Values** panel, just click on the **x** next to the column name displayed in the relevant panel.
 
-## **STEP 5**: Changing the Layout of the Graph
+## Task 5: Changing the Layout of the Graph
 
 1.  With the graph settings panel visible:
 
@@ -154,7 +148,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-24.png " ")
 
-## **STEP 6**: Tidying Up the Report
+## Task 6: Tidying Up the Report
 
 1.  Click the **settings** link to hide the layout controls.
 
@@ -166,7 +160,7 @@ The first step is to create two new users.
 
     ![](./images/Picture700-26.png " ")
 
-## **STEP 7**: Saving the Scratchpad as a New Notebook
+## Task 7: Saving the Scratchpad as a New Notebook
 
 The SQL Scratchpad in the previous section is simply a default type notebook with a system generated name. But we can change the name of the scratchpad we just created, **SQL Query Scratchpad**.
 
@@ -200,7 +194,7 @@ The SQL Scratchpad in the previous section is simply a default type notebook wit
 
     ![](./images/Picture700-34.png " ")
 
-## **STEP 8**: Logging in to OML as the Second OML User (OMLUSER2) and Sharing Notebooks
+## Task 8: Logging in to OML as the Second OML User (OMLUSER2) and Sharing Notebooks
 
 By default, when you create a notebook, it’s only visible to you. To make it available to other users, you need to share the workspace containing the notebook. You can create new workspaces and projects to organize your notebooks for ease of use and to share with other users. To demonstrate the sharing process, let’s begin by logging in to OML as our second OML user (OMLUSER2) and checking if any notebooks are available.
 
@@ -222,7 +216,7 @@ By default, when you create a notebook, it’s only visible to you. To make it a
 
 4.  Repeat the previous steps to sign out OML as **OMLUSER2** and sign into OML as **OMLUSER1**.
 
-## **STEP 9**: Changing Workspace Permissions
+## Task 9: Changing Workspace Permissions
 
 1.  From the OML home page, click the **OML Project [OML Workspace]** link in the top right corner to display the project-workspace menu. Then select **Workspace Permissions...**.
 
@@ -247,9 +241,9 @@ By default, when you create a notebook, it’s only visible to you. To make it a
 
 6.  Finally, click the **OK** button.
 
-## **STEP 10**: Accessing shared notebooks
+## Task 10: Accessing shared notebooks
 
-1.  Now, repeat the process you followed at Step 8. Sign out of OML as **OMLUSER1** and sign in to OML again as user **OMLUSER2**.
+1.  Now, repeat the process you followed at Task 8. Sign out of OML as **OMLUSER1** and sign in to OML again as user **OMLUSER2**.
 
     First thing to note is that the **Recent Activities** panel below the **Quick Actions** panel now shows all the changes user OMLUSER1 made within the *OML Project [OML Workspace]*.
 
@@ -263,7 +257,7 @@ By default, when you create a notebook, it’s only visible to you. To make it a
 
     ![](./images/Picture700-44.png " ")
 
-## **STEP 11**: Getting Started with SQL Scripts
+## Task 11: Getting Started with SQL Scripts
 
 1.  Log out from user **OMLUSER2** and log in as **OMLUSER1**.
 The “Run SQL Statements” link on the home page allows you to run a single query in a paragraph. To be able to run scripts, you can use the “Run SQL Scripts” link on the home page.
@@ -278,7 +272,7 @@ The “Run SQL Statements” link on the home page allows you to run a single qu
 
     Notice that the script paragraph does not have any menus to control the display and formatting of the output. You can, however, use SQL *SET* commands to control how data is formatted for display.
 
-## **STEP 12**: Creating and Running a SQL Script
+## Task 12: Creating and Running a SQL Script
 
 In this section, we are going to use a script from a SQL pattern matching tutorial, <a href="https://livesql.oracle.com/apex/livesql/file/tutorial_EWB8G5JBSHAGM9FB2GL4V5CAQ.html" target="\_blank">Sessionization with MATCH\_RECOGNIZE and JSON</a>, on the free [Oracle Live SQL] (http://livesql.oracle.com) site. This script shows how to use the SQL pattern matching **MATCH\_RECOGNIZE** feature for sessionization analysis based on **JSON** web log files.
 
@@ -303,4 +297,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-

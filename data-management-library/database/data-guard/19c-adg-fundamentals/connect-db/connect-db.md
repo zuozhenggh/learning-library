@@ -5,10 +5,10 @@ In this lab, we will create the connection to primary & standby databases.
 
 ### Connection to the Databases
 
-We will use SQL Developer to connect to our new database system with a primary and a standby database. 
+We will use SQL Developer to connect to our new database system with a primary and a standby database.
 You can run this tool from any desktop that has network connectivity to the database system.
 
-You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html) 
+You can download SQL Developer from this link: [SQL Developer Home page](https://www.oracle.com/be/database/technologies/appdev/sqldeveloper-landing.html)
 
 When you first open SQL Developer, the screen looks like this:
 
@@ -20,117 +20,128 @@ Estimated Lab Time: 30 Minutes
 - Create a database connection to the primary database
 - Create a database connection to the standby database
 
-### Prerequisites
-- An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab 2: Create the Standby Database
+## Task 1: Create the Connection to the primary
+
+<if type="livelabs">
+1.  Open up the hamburger menu in the left hand corner.  
+
+2.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category.
+
+  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
+
+3. In the List Scope section on the left, enter the first part of the compartment assigned to you in the Search field, then click on the compartment name.
+
+  ![](images/select-compartment-livelabs.png)
 
 
-## **STEP 1**: Create the Connection to the primary
+   There are two Database Systems created for you. The system prefixed with `ADGHOLD1` is your primary database, and the system prefixed with `ADGHOLD2` is your secondary database.
 
-First, we need to know the service name from the primary Database and the IP address it listens to. 
+</if>
 
-To get that information, navigate to the Overview
--> Bare Metal, VM and Exadata
--> DB Systems
--> DB System Details
--> Database Details
+1. Click on the name of the primary database (`ADGHOLD1`).
 
-![](./images/db-details.png)
+  ![](images/db-systems-livelabs.png)
 
-There you click the **DB Connection** button and the Database Connection information window opens.
+2. Scroll down and click on the database name `DGHOL` to get to the database details screen.
 
-![](./images/db-connection.png)
+  ![](./images/select-database.png)
 
-Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
+  There you click the **DB Connection** button and the Database Connection information window opens.
 
-The second thing we need to connect to the database is the IP Address from the host it is running on.
+  ![](./images/db-details.png)
 
-To get that information, navigate to the Overview
--> Bare Metal, VM and Exadata
--> DB Systems (Select the **ADGHOLAD1** DB System)
--> DB System Details
+3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
 
-Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
-The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
+  ![](./images/db-connection.png)
 
-![](./images/nodes-1.png)
+4. The second thing we need to connect to the database is the IP Address from the host it is running on.
 
-Then we go back to SQL Developer.
+  To get that information, navigate to the Overview
+  -> Bare Metal, VM and Exadata
+  -> DB Systems (Select the **ADGHOLAD1** DB System)
+  -> DB System Details
 
-To add the connection, click the **Green Plus icon** at the top left.
-The wizard opens.
+  Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
+  The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down.
 
-To add the connection, use following information:
+  ![](./images/nodes-1.png)
 
-    * Name: sys@ADGHOLAD1
-    * Username: sys
-    * Password: WElcome123##
-    * Role: SYSDBA
-    * Hostname: The Public IP Address you found in the step above
-    * Service name: The service name you found in the step above (the part after the / (slash)).
+5. Then we go back to SQL Developer to add the connection. Click the **Green Plus icon** at the top left.
 
-![](./images/add-connection.png)
+  To add the connection, use following information:
 
-Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
+      * Name: sys@ADGHOLAD1
+      * Username: sys
+      * Password: WElcome123##
+      * Save Password: checked
+      * Role: SYSDBA
+      * Hostname: The Public IP Address you found in the step above
+      * Service name: The service name you found in the step above (the part after the / (slash)).
 
-![](./images/test.png)
+  ![](./images/add-connection.png)
 
+6. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
 
-## **STEP 2**: Create the Connection to the Standby
+  ![](./images/test.png)
 
-First, we need to know the service name from the standby Database and the IP address it listens to. 
-
-To get that information, navigate to the Overview
--> Bare Metal, VM and Exadata
--> DB Systems  (Select the **ADGHOLAD2** DB System)
--> DB System Details
--> Database Details
-
-![](./images/db-details-2.png)
-
-There you click the **DB Connection** button and the Database Connection information window opens.
-
-![](./images/db-connection-2.png)
-
-Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
-
-The second thing we need to connect to the database is the IP Address from the host it is running on.
-
-To get that information, navigate to the Overview
--> Bare Metal, VM and Exadata
--> DB Systems
--> DB System Details
-
-Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
-The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down. 
-
-![](./images/nodes-2.png)
-
-Then we go back to SQL Developer.
-
-To add the connection, click the **Green Plus icon** at the top left.
-The wizard opens.
-
-To add the connection, use following information:
-
-    * Name: sys@ADGHOLAD2
-    * Username: sys
-    * Password: WElcome123##
-    * Role: SYSDBA
-    * Hostname: The Public IP Address you found in the step above
-    * Service name: The service name you found in the step above (the part after the / (slash)).
-
-![](./images/add-connection-2.png)
-
-Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
-
-![](./images/test-2.png)
+  > **Note:** If the Status is failed with the error "**The Network adapter could not establish the connection**" disconnect from your company's VPN and try again.
 
 
-You have now successfully created a database connection to the primary and the standby database. You may now [proceed to the next lab](#next).
+## Task 2: Create the Connection to the Standby
+
+1. First, we need to know the service name from the standby Database and the IP address it listens to.
+
+  To get that information, navigate to the Overview
+  -> Bare Metal, VM and Exadata
+  -> DB Systems  (Select the **ADGHOLAD2** DB System)
+  -> DB System Details
+  -> Database Details
+
+  ![](./images/db-details-2.png)
+
+2. There you click the **DB Connection** button and the Database Connection information window opens.
+
+  ![](./images/db-connection-2.png)
+
+3. Click the **Show** Hyperlink from the Easy Connect format and make a note of the connection string. The part after the / (slash) is the service name. Make a copy of this on the clipboard or make sure to have this information noted down. Then close this window.
+
+4. The second thing we need to connect to the database is the IP Address from the host it is running on.
+
+  To get that information, navigate to the Overview
+  -> Bare Metal, VM and Exadata
+  -> DB Systems
+  -> DB System Details
+
+  Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
+  The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down.
+
+  ![](./images/nodes-2.png)
+
+5. Then we go back to SQL Developer.
+
+  To add the connection, click the **Green Plus icon** at the top left.
+  The wizard opens.
+
+  To add the connection, use following information:
+
+      * Name: sys@ADGHOLAD2
+      * Username: sys
+      * Password: WElcome123##
+      * Save Password: checked
+      * Role: SYSDBA
+      * Hostname: The Public IP Address you found in the step above
+      * Service name: The service name you found in the step above (the part after the / (slash)).
+
+  ![](./images/add-connection-2.png)
+
+6. Then click the **Test** button and this connection should be successful. When it is successful, click the save button and click the **Connect** button.
+
+  ![](./images/test-2.png)
+
+You have now successfully created a database connection to the primary and the standby database.
 
 ## Acknowledgements
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Tom McGinn, July 2021

@@ -28,21 +28,21 @@ In this lab, you will be guided through the following steps:
 - Some Experience with MySQL Shell
 - Complete Lab 1: Create Local SSH Key
 
-## **STEP 1**: Create Compartment
+## Task 1: Create Compartment
 
-You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log-in to the Console as an Administrator.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")	
 
-2. On Compartments Page, click on Create Compartment. 
+2. On Compartments Page, click Create Compartment. 
 
     ![Compartment2](./images/01compartment02.png " ")
 
    **Note**:  Two Compartments, named Oracle Account Name (root) and a compartment for PaaS, were automatically created by the Oracle Cloud. 
 
-3. On Create Compartment, enter Name **MDS_Sandbox**, Description, select Parent Compartment, and click on Create Compartment.ompartment.
+3. On Create Compartment, enter Name **MDS_Sandbox**, Description, select Parent Compartment, and click Create Compartment.ompartment.
 
     ![Compartment3](./images/01compartment03.png " ")
     
@@ -51,12 +51,12 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Compartment** 
     ![Compartment4](./images/01compartment04.png " ")
 
-## **STEP 2**: Create Policy
+## Task 2: Create Policy
 1.	Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
 
-2.	On Policies Page, under List Scope, select the Compartment(root) and click on the Create Policy button.
+2.	On Policies Page, under List Scope, select the Compartment(root) and click the Create Policy button.
     ![Policy2](./images/02policy02.png " ")
 
 3.	On Create Policy, enter Name **MDS_Policy**, Description, select Root comaprtment. On Policy Builder turn on the “Show manual editor”  switch. 
@@ -90,18 +90,18 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Policy Creation**
     ![Policy3](./images/02policy05.png " ")
 
-## **STEP 3:** Create Virtual Cloud Network
+## Task 3: Create Virtual Cloud Network
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
-2. Click on Start VCN Wizard.
+2. Click Start VCN Wizard.
     ![VCN](./images/03vcn02.png " ")
 
 3. Select VCN with Internet Connectivity 
 
-    click on Button Start VCN Wizard 
+    click Button Start VCN Wizard 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -123,25 +123,25 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 7. The Virtual Cloud Network creation is completing 
     ![VCN](./images/03vcn05.png " ")
     
-8. Click on "View Virtual Cloud Network" button to display the  created VCN
+8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. Click on the VCN Name **MDS_VCN**. 
+9. Click the VCN Name **MDS_VCN**. 
             ![COMPUTE](./images/03vcn08.png " ")
 
-10.	On the Virtual Cloud Network Details page, under Resources, click on Security Lists (2).
+10.	On the Virtual Cloud Network Details page, under Resources, click Security Lists (2).
         ![COMPUTE](./images/03vcn09.png " ")
 
-11.	On Security Lists in <Compartment Name> Compartment, click on Security List for Private Subnet-MDS_VCN.
+11.	On Security Lists in <Compartment Name> Compartment, click Security List for Private Subnet-MDS_VCN.
 
     ![COMPUTE](./images/03vcn10.png " ")
 
-12.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click on Add Ingress Rules.
+12.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click Add Ingress Rules.
     ![COMPUTE](./images/03vcn11.png " ")
 
 13.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 3306, 33060 
 
-    Click on Add Ingress Rule.
+    Click Add Ingress Rule.
     ![COMPUTE](./images/03vcn12.png " ")
 
 14.	On Security List for Private Subnet-MDS_VCN page
@@ -149,19 +149,19 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
      New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn13.png " ")
 
-## **STEP 4:** Create a MySQL DB System.
+## Task 4: Create a MySQL Database System.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-2. Click on Create MySQL DB System
+2. Click Create MySQL Database System
     ![MDS](./images/04mysql02.png" ")
 
-3. On Create MySQL DB System dialog complete the fields in each section
+3. On Create MySQL Database System dialog complete the fields in each section
 
-    - Provide basic information for the DB System
-    - Setup your required DB System
+    - Provide basic information for the Database System
+    - Setup your required Database System
     - Create Administrator credentials
     - Configure Networking
     - Configure placement
@@ -169,7 +169,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     - Configure Backups
     - Show Advanced Options
 
-4. On Provide basic information for the DB System:
+4. On Provide basic information for the Database System:
       
     Select Compartment **MDS_Sandbox**
       
@@ -179,9 +179,9 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     ![MDS](./images/04mysql02_02.png " ")
 
-5. On Setup your required DB System 
+5. On Setup your required Database System 
     
-    System Select **Standalone** to specify a single-instance DB System
+    System Select **Standalone** to specify a single-instance Database System
     ![MDS](./images/04mysql02_03.png " ")
 
 6. On Create Administrator credentials
@@ -203,7 +203,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
 8. On Configure placement  keep checked  "Availability Domain"
     
-    Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
+    Do not check "Choose a Fault Domain" for this Database System. Oracle will chooses the best placement for you.
     ![MDS](./images/04mysql02_06.png" ")
 
 9. On Configure hardware keep default shape  **MySQL.VM.Standard.E3.1.8GB**
@@ -219,21 +219,21 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     
     ![MDS](./images/04mysql02_08.png" ")
     
-20. Click on Create button 
+20. Click Create button 
     ![MDS](./images/04mysql02_09.png" ")
 
-11. The New MySQL DB System will be ready to use after a few minutes. 
+11. The New MySQL Database System will be ready to use after a few minutes. 
 
     The state will be shown as Creating during the creation
     ![MDS](./images/04mysql02_10.png" ")
 
-12. The state Active indicates that the DB System is ready to use. 
+12. The state Active indicates that the Database System is ready to use. 
 
-    Check the MySQL endpoint (Address) under Instances in the MySQL DB System Details page. 
+    Check the MySQL endpoint (Address) under Instances in the MySQL Database System Details page. 
 
     ![MDS](./images/04mysql02_11.png" ")
 
-## **STEP 5:** Create Client Virtual Machine
+## Task 5: Create Client Virtual Machine
 
 **Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
 
@@ -243,7 +243,7 @@ When you are finished, return to this step.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
-2. On Instances in **MDS_Sandbox** Compartment, click on Create Instance.
+2. On Instances in **MDS_Sandbox** Compartment, click Create Instance.
     ![COMPUTE](./images/05compute02.png " ")
 
 3. On Create Compute Instance enter **MDS_Client**  for the instance Name. 
@@ -279,13 +279,13 @@ When you are finished, return to this step.
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+## Task 6: Connect to MySQL Database
 
 1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
    If you are a Windows user click Start menu from your windows machine for Git which should include the Git Bash command.
 
-    Click on the Git Bash command. This will take you to the Git Bash terminal as shown below 
+    Click the Git Bash command. This will take you to the Git Bash terminal as shown below 
     
     and continue to  STEP 6: #2. 
     ![Connect](./images/06connect0.png" ")
@@ -304,7 +304,7 @@ When you are finished, return to this step.
 
     ![Connect](./images/06connect01.png " ")
 
-3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine. 
+3. You will need a MySQL client tool to connect to your new MySQL Database System from your client machine. 
 
     Install MySQL release package  with the following command:
 
@@ -319,7 +319,7 @@ When you are finished, return to this step.
  
 4. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
     
-   The endpoint (IP Address) can be found in the MySQL DB System Details page, under the "Endpoints" resource. 
+   The endpoint (IP Address) can be found in the MySQL Database System Details page, under the "Endpoints" resource. 
 
     ![Connect](./images/06connect06.png " ")
 
@@ -367,30 +367,30 @@ When you are finished, return to this step.
 
     ![Connect](./images/06workbench02.png " ")
 
-## **STEP 7:** Start, stop, or reboot MySQL DB System
+## Task 7: Start, stop, or reboot MySQL Database System
 
-Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-List DB Systems
+List Database Systems
 ![MDS](./images/04mysql02_06.png " ")
 Choose  **MDS_Sandbox** Compartment 
 
-Click **MDS_DB** to open the DB System details page
+Click **MDS_DB** to open the Database System details page
 ![MDS](./images/04mysql07.png " ")
 
 Select one of the following actions:
-* Start: Starts a stopped DB System. After the DB System is started, the Stop action is enabled and the Start option is disabled.
-* Stop: Stops a running DB System. After the DB System is powered off, the Start action is enabled.
-* Restart: Shuts down a DB System, and restarts it.
+* Start: Starts a stopped Database System. After the Database System is started, the Stop action is enabled and the Start option is disabled.
+* Stop: Stops a running Database System. After the Database System is powered off, the Start action is enabled.
+* Restart: Shuts down a Database System, and restarts it.
 
-**Note**  Stopping a DB System stops billing for all OCPUs associated with it. 
+**Note**  Stopping a Database System stops billing for all OCPUs associated with it. 
 * Billing continues for storage. 
-* Billing for OCPUs resumes if you restart the DB System.
-* If you selected Stop or Restart, the Stop/Restart MySQL DB System dialog is displayed.
+* Billing for OCPUs resumes if you restart the Database System.
+* If you selected Stop or Restart, the Stop/Restart MySQL Database System dialog is displayed.
 
 Select a shutdown type:
-* Fast: Flushes dirty pages before shutting down the DB System. 
+* Fast: Flushes dirty pages before shutting down the Database System. 
 
     Some flush operations must be performed during next startup, potentially increasing the duration of the startup process.
 * Slow: Flushes dirty pages and purges undo log pages for older transactions. 
@@ -401,26 +401,26 @@ Select a shutdown type:
 
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
-## **STEP 8:** Delete MySQL DB System
+## Task 8: Delete MySQL Database System
 
-Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
+Deleting a Database System permanently deletes it. Any manual backups associated with the deleted Database System are retained for their retention periods. Automatic backups are deleted with the Database System.
 
-Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **DB Systems**.
+Click the **Navigation Menu** in the upper left, navigate to **Databases**, and select **Database Systems**.
 ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbsys.png " ")
 
-List DB Systems
+List Database Systems
 ![MDS](./images/04mysql02_06.png " ")
 Choose  **MDS_Sandbox** Compartment 
 
-Click **MDS_DB** to open the DB System details page
+Click **MDS_DB** to open the Database System details page
 ![MDS](./images/04mysql07.png " ")
 
-Click on "More Actions" drop down list and select **Delete**
+Click "More Actions" drop down list and select **Delete**
 ![MDS](./images/04mysql08.png " ")
 
 A prompt is displayed asking you to confirm the deletion.
 ![MDS](./images/04mysql08_1.png " ")
-Enter the word, all caps, "DELETE" and click "Delete 1 MySQL DB System" button.
+Enter the word, all caps, "DELETE" and click "Delete 1 MySQL Database System" button.
 
 When delete process is done **MDS_DB** will be set to Delete status.
 ## Learn More
@@ -428,9 +428,9 @@ When delete process is done **MDS_DB** will be set to Delete status.
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
 * [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
-* **Author** -  Airton Lastori, MySQL Principal Product Manager, MySQL Product Management 
-* **Contributors** -  Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, April 2021
+* **Author** -  Perside Foster, MySQL Solution Engineering 
+* **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
 
 
 

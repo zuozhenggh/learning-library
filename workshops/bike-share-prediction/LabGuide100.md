@@ -28,7 +28,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 In this section you will be provisioning an ADW instance using the cloud console.
 
 
-### **STEP 1: Sign in to Oracle Cloud**
+### **Task 1: Sign in to Oracle Cloud**
 
 - From any browser go to oracle.com to access the Oracle Cloud.
 
@@ -46,7 +46,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 
     ![](images/hamburger.png)  
 
-### **STEP 2: Create an ADW Instance**
+### **Task 2: Create an ADW Instance**
 
 -   Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**
 
@@ -91,7 +91,7 @@ In this section you will be provisioning an ADW instance using the cloud console
 ## Part 2. Creating an OML Users
 
 
-### **STEP 3: Creating OML Users**
+### **Task 3: Creating OML Users**
 
 - Click the **Service Console** button on your Autonomous Data Warehouse details page.
 

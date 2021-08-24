@@ -20,7 +20,7 @@ In this lab you will:
 - Learn about the different deployment modes in **Skaffold**.
 
 
-## **STEP 1:** The *`skaffold.yaml`* Base Config File
+## Task 1: The *`skaffold.yaml`* Base Config File
 
 1. The *`skaffold.yaml`* file configures the different modes **Skaffold** can be used for:
 
@@ -102,7 +102,7 @@ In this lab you will:
     Which select the default environment (`development`) and default Image Registry defined in the `global.env` file to name the images in Pods.
 
 
-## **STEP 2:** Multi-Stage Dockerfiles
+## Task 2: Multi-Stage Dockerfiles
 
 1. In this step we will look at the Docker images, as it is relevant to the profile section we'll see next.
 
@@ -169,7 +169,7 @@ In this lab you will:
     - The *`debug`* image will be used to attach the debugger.
     - The *`prod`* image is the final stage and is what will be built when no build stage is specified.
 
-## **STEP 3:** The Skaffold Profiles
+## Task 3: The Skaffold Profiles
 
 1. The next section of the *`skaffold.yaml`* includes profiles. Just like Kustomize templates, skaffold config uses patches to modify the base config.
 
@@ -207,7 +207,7 @@ In this lab you will:
 
 4. The other profiles define profiles for *`debug`* which we will cover later, and regular *`development`* versions, *`staging`* and *`production`*, as well as similar profiles for the *`infra`* image.
 
-## **STEP 4:** Deploying the *`infra`* Templates with Skaffold
+## Task 4: Deploying the *`infra`* Templates with Skaffold
 
 *This steps shows the skaffold command we use. Don't run those directly: this step shows how skaffold is used, but the template makefile we'll describe next wraps these commands for you.*
 
@@ -225,7 +225,7 @@ In this lab you will:
 
 3. This is quite a bit to type and remember, so use the **makefile** to run these commands.
 
-## **STEP 5:** Using the Makefile
+## Task 5: Using the Makefile
 
 1. Check the makefile help by running:
 
@@ -280,7 +280,7 @@ In this lab you will:
 
 7. Note that the *`deploy-infra`* task actually calls *`clean-all-jobs`* before running, because **Skaffold** adds *`runIds`* to each resource labels, however **Jobs** are immutable and the call would fail unless the db-init Job is cleaned up before deploying.
 
-## **STEP 6:** Verify the Infra Deployment
+## Task 6: Verify the Infra Deployment
 
 1. You can verify the deployment was successful by checking out the resources:
 
@@ -299,7 +299,7 @@ In this lab you will:
     ![](.image/stream.png)
 
 
-## **STEP 7:** Developing Remote Containers
+## Task 7: Developing Remote Containers
 
 1. *`skaffold run`* builds and deploys the stack with image tagged with the git hash, and then stops.
 

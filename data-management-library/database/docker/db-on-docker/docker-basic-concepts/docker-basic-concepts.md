@@ -34,7 +34,7 @@ In this lab, you will:
 * Install JSON Extension on Chrome Browser [click here](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)
 * Successfully completed the lab - Setup Compute Instance
 
-## **STEP 1:** Setup Docker on compute instance
+## Task 1: Setup Docker on compute instance
 
 1. If you are not logged into you compute instance as an `opc` user, using the terminal of your choice (we recommend using the Oracle Cloud Shell) login to the instance you created using secure shell (ssh).
 
@@ -85,7 +85,7 @@ In this lab, you will:
     </copy>
     ````
 
-7. Next, as the root user, we are going to install git using yum (package management tool for Linux). We will need git in the next lab. Enter `y` when asked.
+7. Next, as the root user, we are going to install git using yum (package management tool for Linux). We will need git in the next lab. Enter `y` when prompted.
 
     ````
     <copy>
@@ -129,7 +129,7 @@ In this lab, you will:
     </copy>
     ````
 
-## **STEP 2:** Docker basic concepts
+## Task 2: Docker basic concepts
 
 1. Check the version of docker.
 
@@ -141,13 +141,14 @@ In this lab, you will:
 
     ![](images/dockerversion2.png " ")
 
-2. Start your application, restclient, in docker on port 8002 in json format.
+2. Start your application, restclient, in docker on port 8002 in json format and verify if containers are running.
 
 
     ````
     <copy>
     docker ps
     docker run -d -it --rm --name restclient -p=8002:8002 -e DS='json' wvbirder/restclient
+    docker ps -a
     </copy>
     ````
 
@@ -199,7 +200,7 @@ In this lab, you will:
     ![](images/18002.png " ")
 
 
-## **STEP 3:** Docker networking basics
+## Task 3: Docker networking basics
 
 Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 

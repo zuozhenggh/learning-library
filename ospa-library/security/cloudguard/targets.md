@@ -1,6 +1,6 @@
 # Lab 3: Registering a new target
 
-## STEP 1: Managing targets
+## Task 1: Managing targets
 
 1.  Login to Cloud Guard using your Credentials. You can use the following URL instead (https://console.us-phoenix-1.oraclecloud.com/cloud-guard/overview) to access the console directly.
    

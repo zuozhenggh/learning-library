@@ -101,7 +101,7 @@ In this lab, you will:
     ```
 **Note:** This is **not** configured for a production environment. **This is just for demo purposes.**
 
-## **STEP 1:** Deploying with OCI Resource Manager
+## Task 1: Deploying with OCI Resource Manager
 
 The following section will show you how to configure resource manager to make the deployment easier. You will not be able to configure anything that is shaded out on the page.
 
@@ -181,7 +181,7 @@ The following section will show you how to configure resource manager to make th
 
   ![](./screenshots/setup-screenshots/secondary-app-server.png)
  
-## **STEP 2:** Configuring the DNS for Failover
+## Task 2: Configuring the DNS for Failover
 
 1. Create a Health Check
 

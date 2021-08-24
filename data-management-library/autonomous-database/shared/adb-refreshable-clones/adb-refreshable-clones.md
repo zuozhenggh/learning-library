@@ -1,5 +1,5 @@
 ﻿
-# Creating Refreshable Clones in Autonomous Database
+# Create Refreshable Clones in Autonomous Database
 
 ## Introduction
 
@@ -36,18 +36,9 @@ In this lab, you'll:
 - Define a refresh point timestamp of the source database and refresh the clone. 
 - Confirm that the additional data in the source database is pulled into the clone.
 
-### Prerequisites
-
-To complete this lab, you need to have the following:
-
-- Access to an Oracle Cloud account
-- Completion of this workshop's &quot;Getting Started&quot; lab that provisions an Oracle Autonomous Database instance in Autonomous Data Warehouse (an Autonomous Database with Data Warehouse workload)
-
-    - Alternatively, your own Autonomous Database instance
-
 **Note:**  This lab uses refreshable clones, which are not available with Oracle's Always Free databases. You can run the lab by reserving a hosted Livelabs environment, or by signing up for free trial credits, or by using your own tenancy.
 
-## **STEP 1**: Create a Table in the Source Database
+## Task 1: Create a Table in the Source Database
 
 1. Navigate to your existing **ADW Finance Mart** database instance that you created in this workshop's &quot;Getting Started&quot; lab. (Alternatively, create a new database as your source.) Insert a line of data into this source database before you clone it, by opening a Database Actions worksheet via the **Tools** tab in the Autonomous Database Details page of the OCI console. Connect to Database Actions as the user named **admin** with the password you created for the admin user in the Getting Started lab. On the Database Actions page, under the **Development** heading, click **SQL**.
 
@@ -64,7 +55,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/2676056294.png)
 
-## **STEP 2**: Create a Refreshable Clone from the Autonomous Database Instance
+## Task 2: Create a Refreshable Clone from the Autonomous Database Instance
 
 Now that you have created a table in the source database and populated it with a row of data, you will create a refreshable clone from the source database.
 
@@ -88,7 +79,7 @@ Now that you have created a table in the source database and populated it with a
 5. Open a Database Actions SQL worksheet from the **refreshable clone's** OCI console<ins>,</ins> and query the database. It shows the table **refreshclonetests **that you created in the source, with the single row of data that you inserted.
   ![ALT text is not available for this image](images/2676058068.png)
 
-## **STEP 3**: Insert Additional Data into the Source Database
+## Task 3: Insert Additional Data into the Source Database
 
 You have proven that the refreshable clone contains the source database's table with one row of data. Now add a second row of data to the source, and see how to refresh the clone to pick up that second row.
 
@@ -103,7 +94,7 @@ You have proven that the refreshable clone contains the source database's table 
 
     ![ALT text is not available for this image](images/2696552059.png)
 
-## **STEP 4**: Refresh the Clone to View New Data
+## Task 4: Refresh the Clone to View New Data
 
 Now see how easy it is to refresh the clone with the new data you just added to the source.
 
@@ -145,5 +136,3 @@ You may now proceed to the next lab.
 - **Author** - Rick Green, Principal Developer, Database User Assistance
 - **Contributor** - Nilay Panchal, ADB Product Management
 - **Last Updated By/Date**  - Kamryn Vinson, May 2021
-
-

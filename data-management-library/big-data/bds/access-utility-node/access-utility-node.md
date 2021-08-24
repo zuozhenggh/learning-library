@@ -34,13 +34,13 @@ This lab assumes that you have successfully completed the following labs in the 
 + **Lab 2: Create a BDS Hadoop Cluster**
 + **Lab 3: Add Oracle Cloud SQL to the Cluster**
 
-## **STEP 1:** Gather Information About the Cluster
+## Task 1: Gather Information About the Cluster
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
@@ -52,7 +52,7 @@ This lab assumes that you have successfully completed the following labs in the 
 
   ![](./images/private-ips.png " ")
 
-## **STEP 2:** Map the Private IP Address of the First Utility Node to a Reserved Public IP Address
+## Task 2: Map the Private IP Address of the First Utility Node to a Reserved Public IP Address
 
 In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
@@ -108,11 +108,11 @@ In this step, you will set three variables using the **`export`** command. The v
 
   ![](./images/output-white-ip-address.png " ")
 
-7.  To view the newly created reserved public IP address in the console, click the Navigation menu, and then navigate to **Core Infrastructure > Networking > IP Management**. In the **IP Management** section on the left, the **Public IPs** option is selected by default. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as **publicip_nnnnnnnnn_** is generated.
+7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page. If you did specify a descriptive name as explained earlier, that name will appear in the **Name** column; Otherwise, a name such as **publicip_nnnnnnnnn_** is generated.
 
   ![](./images/reserved-public-ip-un0.png " ")
 
-## **STEP 3:** Map the Private IP Address of the Second Utility Node to a Reserved Public IP Address
+## Task 3: Map the Private IP Address of the Second Utility Node to a Reserved Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **second utility node** to a new public IP address.
 
@@ -147,13 +147,13 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
     ![](./images/output-white-ip-address-2.png " ")
 
-  5.  To view the newly created reserved public IP address in the console, click the Navigation menu, and then navigate to **Core Infrastructure > Networking > IP Management**. Make sure that the **Public IPs** option in the **IP Management** section on the left is selected. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
+  5.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
 
     ![](./images/reserved-public-ip-un1.png " ")
 
 
-## **STEP 4:** Map the Private IP Address of the Cloud SQL Node to a Reserved Public IP Address
+## Task 4: Map the Private IP Address of the Cloud SQL Node to a Reserved Public IP Address
 
 In this step, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **Cloud SQL node** to a new public IP address.
 
@@ -182,15 +182,15 @@ In this step, you will set two variables using the **`export`** command. Next, y
 
     ![](./images/output-white-ip-address-3.png " ")
 
-5.  To view the newly created reserved public IP address in the console, click the Navigation menu, and then navigate to **Core Infrastructure > Networking > IP Management**. Make sure that the **Public IPs** option in the **IP Management** section on the left is selected. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
+5.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
 
       ![](./images/reserved-public-ip-qs0.png " ")
 
-## **STEP 5:** Edit a Reserved Public IP Address
+## Task 5: Edit a Reserved Public IP Address
 
 In this step, you will learn how to edit a reserved public IP address using both the **Cloud Console** and the **Cloud Shell**.
 
-1. On the **Oracle Cloud Console** banner at the top of the page, click the Navigation menu, and then navigate to **Core Infrastructure > Networking > IP Management**. Select the **Public IPs** option in the **IP Management** section on the left, if not already selected. The three new reserved public IP addresses that you created in this lab are displayed in the **Reserved Public IP Addresses** page.
+1. To view the newly created reserved public IP addresses in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP addresses are displayed in the **Reserved Public IP Addresses** page.
 
   ![](./images/list-public-ip.png " ")
 
@@ -245,5 +245,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
 * **Contributors:**
     + Martin Gubar, Director, Oracle Big Data Product Management
     + Ben Gelernter, Principal User Assistance Developer, DB Development - Documentation  
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

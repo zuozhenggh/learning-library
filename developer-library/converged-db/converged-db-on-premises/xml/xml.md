@@ -34,17 +34,17 @@ This lab assumes you have:
 ***Note:***  All scripts for this lab are stored in the **/u01/workshop/xml** folder and run as the oracle user.
 
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
-1. Open a terminal window and sudo to the user **oracle**
+<!-- 1. Open a terminal window and sudo to the user **oracle**
 
     ```
     <copy>
     sudo su - oracle
     </copy>
-    ```
+    ``` -->
 
-2. Navigate to the xml directory.
+1. Use a terminal window and navigate to the xml directory.
 
     ```
     <copy>
@@ -52,7 +52,7 @@ This lab assumes you have:
     </copy>
     ```
 
- 3. Set your environment.
+2. Set your environment.
 
     ```
     <copy>
@@ -60,7 +60,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4. When prompted paste the following:
+3. When prompted paste the following:
 
     ```
     <copy>
@@ -68,29 +68,31 @@ This lab assumes you have:
     </copy>
     ```
 
-5. Open SQLPlus as the user appjson
+4. Open SQLPlus as the user appjson
 
     ```
     <copy>
     sqlplus appxml/Oracle_4U@JXLPDB
     </copy>
     ```
+    ![](./images/xml_input2a.png " ")
 
-## **STEP 2**: Connect to SQL Developer
+
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
   - **Name**: XML
   - **Username**: appxml
   - **Password**: `Oracle_4U`
-  - **Hostname**: PUBLIC-IP
+  - **Hostname**: localhost
   - **Port**: 1521
   - **Service name**: JXLPDB
 
 
     ![](./images/xml_sql_developer.png " ")
 
-## **STEP 3**: XML Query
+## Task 3: XML Query
 
 1. Getting the number of XML documents.
 
@@ -138,7 +140,7 @@ This lab assumes you have:
 
     ![](./images/xml_step3_search.png " ")
 
-## **STEP 4**: Insert XML record.
+## Task 4: Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -152,30 +154,7 @@ This lab assumes you have:
 
 
 2. The insert query is available as a SQL file in the directory “**/u01/workshop/xml**”. The script is called as **insert.sql.** You can run this connecting to the SQL prompt.
-3. Set your Oracle environment and connect to PDB as **oracle** user.
-
-    ```
-    <copy>
-    . oraenv
-    </copy>
-    ```
-    ```
-    <copy>
-    convergedcdb
-    </copy>
-    ```
-    ```
-    <copy>
-    cd /u01/workshop/xml
-    </copy>
-    ```
-    ```
-    <copy>
-    sqlplus appxml/Oracle_4U@JXLPDB
-    </copy>
-    ```
-
-    ![](./images/xml_input2a.png " ")
+3. Open a terminal window, execute the below command to insert.
 
     ```
     <copy>
@@ -193,14 +172,14 @@ This lab assumes you have:
 
     ![](./images/xml_s4_p3.png " ")
 
-## **STEP 5**: Update XML table
+## Task 5: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
 
-2. Set your Oracle environment and connect to PDB as **oracle** user.
-
-    ```
+2. Open a terminal window, execute the below command to Update.
+ 
+    <!-- ```
     <copy>
     . oraenv
     </copy>
@@ -222,7 +201,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](./images/xml_input2a.png " ")
+    ![](./images/xml_input2a.png " ") -->
 
     ```
     <copy>
@@ -242,7 +221,15 @@ This lab assumes you have:
 
     ![](./images/xml_s5_p2.png " ")
 
-## **STEP 6**: Example Queries
+4. Switch to terminal and exit from SQLPlus.
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+
+## Task 6: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.

@@ -6,7 +6,7 @@ In this lab, you will learn how to utilize Web Source modules as the basis for c
 
 Estimated Time: 15 minutes
 
-## **STEP 1** – Use the Create Page Wizard
+## Task 1: Use the Create Page Wizard
 
 1. Return to the Application Home Page.  
 
@@ -48,7 +48,7 @@ Estimated Time: 15 minutes
 
     ![](images/set-pk.png " ")
 
-## **STEP 2** – Improve the Report
+## Task 2: Improve the Report
 The default column order will not be optimal when the page is generated. You can readily reorder the columns and save the report layout.
 
 1. From Page Designer, click **Save and Run**.
@@ -85,7 +85,7 @@ The default column order will not be optimal when the page is generated. You can
 
     ![](images/save-primary.png " ")
 
-## **STEP 3** – Update the Form Page
+## Task 3: Update the Form Page
 The form page for editing records also needs some improvement.
 
 1. Click the edit icon on a row.
@@ -145,7 +145,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/drag-comm.png " ")
 
-## **STEP 4** – Insert a Record
+## Task 4: Insert a Record
 
 1. Navigate back to the Runtime environment.
 2. Refresh the browser.
@@ -170,7 +170,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/show-insert.png " ")
 
-## **STEP 5** – Update a Record
+## Task 5: Update a Record
 
 1. On the Employees report page, find **BLAKE**, and click the edit icon.
 
@@ -187,7 +187,7 @@ The form page for editing records also needs some improvement.
 
     ![](images/show-update.png " ")
 
-## **STEP 6** – Delete a Record
+## Task 6: Delete a Record
 
 1. On the Employees report page, find **TURNER**, and click the edit icon.
 

@@ -25,7 +25,7 @@ _Estimated Lab Time_: 20 minutes
     * Lab 7: Building simple Interactive Analysis
     * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
 
-## **STEP 1**: Custom Binning
+## Task 1: Custom Binning
 
 Lets analyze the issue of losing customers further with the new Data Set.
 
@@ -104,7 +104,7 @@ Click **Above 130** to move to the Selections. Click anywhere in the Filter are.
 
      ![Higher Income Group](../geo-maps/images/replacewithincomegroup3.png)
 
-## **STEP 2**: Geo Visual
+## Task 2: Geo Visual
 
 You can use geographical information to enhance the analysis of your data
 Lets create a geo visual using state and customers and use it as a filter for other visuals.

@@ -24,7 +24,7 @@ Learn how to
 - It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
 
 
-## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
+## Task 1: Connect to the Database Actions for your Autonomous Database instance
 
 1. Open the service detail page for your Autonomous Database instance in the OCI console.  
 
@@ -33,7 +33,7 @@ Learn how to
 2. Click on the Tools tab and then the Database Actions link to open it.
    ![](images/../../query-graph/images/adb-tools-tab-db-actions.png " ")
 
-## **STEP 2**: Login as the graph-enabled user
+## Task 2: Login as the graph-enabled user
 
 1. Login as the graph user (e.g. `GRAPHUSER`) for your Autonomous Database instance. 
    
@@ -45,22 +45,23 @@ Learn how to
     - Click on Create User
     - Turn on the Web-Access and Graph buttons
 
-## **STEP 3**: Download the sample datasets from the ObjectStore
+## Task 3: Download the sample datasets from the ObjectStore
 
-1. Use `wget` or `curl` to download the sample data to you computer. Or copy and paste the url in your browser for the zip archive, i.e.  
+1. Copy and paste the url in your browser for the zip archive, i.e.  
 
     ```
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
-    A sample `curl` request is:
+   Or use `wget` or `curl` to download the sample data to you computer.   
+   A sample `curl` request is:
     ```
-    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HRJM7Q18cpSP2T5whvDSrpGrlb45qK9BnKFpqeT_mcT_GcxzftAPXY66Gxht0Ad_/n/c4u03/b/data-management-library-files/o/random-acct-txn-data.zip
+    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
     ```
 
 2. **Unzip** the archive into a local directory such as ~/downloads.
 
-## **STEP 4**: Upload using Database Actions Data Load
+## Task 4: Upload using Database Actions Data Load
 
 1. Click on the Data Load card. 
    

@@ -10,7 +10,7 @@ This lab shows you how to define a build configuration to install a mobile appli
 
 Before you can stage or publish a mobile application, you'll need to create a build configuration that defines deployment information for the Android platform. In this lab, you'll define an Android build configuration, whose settings you'll use to build the mobile application for installation on Android devices in a later lab.
 
-## **STEP 1**: Create a Keystore for Signing the App
+## Task 1: Create a Keystore for Signing the App
 
 Before your mobile application can be deployed to an Android device, it must be signed. Android does not require a certificate authority; an application can instead be self-signed.
 
@@ -20,13 +20,13 @@ The following example shows how to create a keystore with a single key that is v
 
 `keytool -genkeypair -v -keystore c:\mykeystore\releasesigning.keystore -alias releaseKeyAlias -keyalg RSA -keysize 2048 -validity 10000`
 
-If you do not want to create a key, right-click [this sample keystore file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_4YtX-KmFJ4sQoaGy3yW-iIZgqYs8-QH_uhNPhHZtDhp9FR4rgq1IQ--wH7X4Vuw/n/ociobenablement/b/hol-labs/o/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
+If you do not want to create a key, right-click [this sample keystore file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TwD3lpEZPD0KKzY7tQ84WKPaP-MoX-8GYAjkFQ0GvNnJjLtGV4P9Gf9bM2hibIQS/n/c4u04/b/developer-library/o/vbcsdoc.keystore) and download it to your file system to use in this lab. Here are the credentials for the keystore file:
 
   -   **Keystore Password**: `vbcsdoc_ks_pass`
   -   **Key alias**: `vbcsdoc_ksalias`
   -   **Key password**: `vbcsdoc_ks_pass`
 
-## **STEP 2**: Define a Build Configuration
+## Task 2: Define a Build Configuration
 
 A build configuration includes deployment configuration and specifies if the build is to be deployed for development or production. Ideally, you'll want to create separate builds: one for development  and another for production with different information for the two environments. For the purposes of this lab, however, we'll only use one build configuration for both.
 

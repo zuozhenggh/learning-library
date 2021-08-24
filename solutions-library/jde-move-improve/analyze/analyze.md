@@ -24,7 +24,7 @@ In this lab, you will:
 *   JDE Trial Edition Provisioned
 *   JDE Trial Edition Configured
 
-## **STEP 1**: Connect to EnterpriseOne HTML Server
+## Task 1: Connect to EnterpriseOne HTML Server
 
 HTML Server is the primary interface to the EnterpriseOne system.  
 
@@ -59,7 +59,7 @@ To access the EnterpriseOne HTML server:
     At this point, the JD Edwards EnterpriseOne HTML Client is ready for use.
         ![](./images/jde-html-landing-page.png " ")
 
-## **STEP 2**:  Connect to EnterpriseOne Orchestrator Studio
+## Task 2:  Connect to EnterpriseOne Orchestrator Studio
 
 The EnterpriseOne Orchestrator Studio is an interface to help create orchestrations.
 
@@ -94,7 +94,7 @@ To access the Orchestrator Studio:
     At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
         ![](./images/orchestrator-landing-page.png " ")
 
-## **STEP 3**: Explore JDE Service Commands 
+## Task 3: Explore JDE Service Commands 
 After you have successfully deployed your Trial Edition instance in the Oracle Cloud Infrastructure, all services are automatically started for each JD Edwards EnterpriseOne server type, which includes the Database Server, Enterprise Server, HTML Web Servers, BI Publisher Server, and ADF/AIS server.
 
 After initial startup, all these services can be manually started and stopped by the root user.  The JDE Trial Edition is equipped with command line features for easy status checking and start/stop capabilities.  This Exercise will walk through running these commands to find status and start/stop services.
@@ -155,7 +155,7 @@ To utilize the jde service commands:
         
     * BIP Server:  **jde-bip start**
 
-## **STEP 4**: Connect to EnterpriseOne ADF Container
+## Task 4: Connect to EnterpriseOne ADF Container
 
 The EnterpriseOne ADF Container is utilized by EnterpriseOne for select UX One applications. For those applications to function correctly, the self-signed certificate needs to be approved separately by the client browser.  
 
@@ -187,7 +187,7 @@ To access the ADF container:
 
     At this point, ADF applications should function normally when run through the JD Edwards EnterpriseOne HTML Client.
 
-## **STEP 5**:  Connect to Oracle BI Publisher Server for OVR
+## Task 5:  Connect to Oracle BI Publisher Server for OVR
 
 The Oracle BI Publisher Server for OVR is a reporting tool.
 
@@ -225,7 +225,7 @@ To access the Oracle BI Publisher Server:
 
 
 
-## **STEP 6:**  Learn Where Additional Resources are Located
+## Task 6:  Learn Where Additional Resources are Located
 
 For additional information, refer to these resources:
 

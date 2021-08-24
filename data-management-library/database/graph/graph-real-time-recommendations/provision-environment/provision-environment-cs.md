@@ -21,13 +21,13 @@ The lab environment for the workshop consists of :
 
 ![](./images/lab-environment.png)
 
-## **STEP 1** : Sign In to Oracle Cloud Infrastructure Console
+## Task 1: : Sign In to Oracle Cloud Infrastructure Console
 
 Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompted to enter the cloud tenant, user name, and password.
 
 >If this is your first time signing in to Oracle Cloud Infrastructure, or for detailed sign in instructions, refer to [Getting Started with Oracle Cloud](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-cloud-account.html).
 
-## **STEP 2** : Start OCI Cloud Shell
+## Task 2: : Start OCI Cloud Shell
 
 **OCI Cloud Shell** is a web browser-based terminal accessible from the Oracle Cloud Console to all OCI users. It is free to use (within monthly tenancy limits), and provides access to a Linux shell, with a pre-authenticated OCI CLI, Terraform & Ansible installations, along with a few other useful tools (refer to [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellgettingstarted.htm)  documentation for details).
 
@@ -46,7 +46,7 @@ Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompte
 
   ![](./images/cloud-shell-toolbar.png)
 
-## **STEP 3** : Create an SSH Key Pair
+## Task 3: : Create an SSH Key Pair
 
 You will be utilizing Oracle Cloud Infrastructure Compute instance (aka lab VM) for installing the Oracle software required for this lab. OCI Compute instances use SSH keys instead of passwords to authenticate remote users and to encrypt the communications between network endpoints.
 
@@ -77,7 +77,7 @@ You will be utilizing Oracle Cloud Infrastructure Compute instance (aka lab VM) 
 
 4. **IMPORTANT :** If you plan on using a different SSH client than **Cloud Shell** (e.g. PuTTY), copy the private key and (optionally) convert it to the destination tool's format. For example, PuTTY requires a PPK format which you can generate from the OpenSSH PEM key format using PuTTYgen. **Ensure the key remains intact during copy/paste.**
 
-## **STEP 4** : Download Setup Scripts
+## Task 4: : Download Setup Scripts
 
 A set of Terraform scripts have been pre-created to provision the lab environment. The scripts will create the following Oracle Cloud Infrastructure resources in your tenancy :
 
@@ -117,7 +117,7 @@ A set of Terraform scripts have been pre-created to provision the lab environmen
 
   ![](./images/post-terraform-untar.png)
 
-## **STEP 5** : Provision the Lab Environment
+## Task 5: : Provision the Lab Environment
 
 ### Gather the Required Information
 
@@ -191,7 +191,7 @@ Run the bash script as follows.
 |ADB Service Name TP|{ADB Service Name TP}|Database Service Name for TP
 |VM IP Address|{VM IP Address}|IP Address of the OCI VM
 
-## **STEP 6** : Validate Provisioning
+## Task 6: : Validate Provisioning
 
 ### Log In to the Compute Instance
 

@@ -1,158 +1,133 @@
 # Obtain a Compute Image with Staged Oracle Database 19c Installer Files
 
 ## Introduction
-In this lab, you use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly create a compute instance that has the Oracle Database 19c installer files staged on it. This lab creates the environment that you will use in the [Install ORacle Database 19c using Automatic Root Script Execution](?lab="install-db19c-auto-config-script-execution.md") lab
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy a compute instance with the private `workshop-staged` image from Oracle Cloud Marketplace. The image has the Oracle Database 19c installer files staged on it and has a noVNC desktop, which provides an easy-to-use browser user interface.
 
-In Resource Manager, you begin by creating a stack, which is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use in this lab is provided by LiveLabs and loads a custom image stored in Oracle Cloud Marketplace. Guacomole is installed on the image to provide a friendly user interface. You can also access a terminal window on the image. After you create the stack, you apply it to start the provisioning job in OCI. When the job is completed, you log in to your compute instance through a browser.
+Begin by creating and applying a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. The Terraform configuration that you use here loads a custom image stored in Oracle Cloud Marketplace and creates a virtual cloud network (VCN). After your compute instance is created, you can log into it via a browser.
 
-*If you are working in the LiveLabs tenancy, you can skip STEP 1 because it has already been done for you.*
+Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instance and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
+
+> **Note**: If you are working in the LiveLabs environment, you can skip Task 1 and Task 2 because they are already done for you.
 
 Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you learn how to do the following:
+In this lab, you will:
 
+- Add security rules to your existing VCN
 - Create and apply a stack in Resource Manager
-- Obtain the public IP address of your compute instance
-- Connect to your compute instance from a browser
-- Enable copying and pasting from your local computer to your Guacamole desktop
-- Connect to your compute instance from Cloud Shell
+- Connect to your compute instance from a browser and set up your desktop
+
 
 ### Prerequisites
 
-- You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
-- You have created SSH keys.
+This lab assumes you have:
 
-### Assumptions
+- Obtained an Oracle Cloud account
+- Signed in to Oracle Cloud Infrastructure
+- Created SSH keys in Cloud Shell
 
-- You are signed in to Oracle Cloud Infrastructure.
+## Task 1: Add security rules to your existing VCN
 
-## **STEP 1**: Create and apply a stack in Resource Manager
+Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521 to 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
 
-*If you are working in the LiveLabs tenancy, you can skip this step and proceed to STEP 2*.
+> **Note**: If you plan to let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2. If you are working in the LiveLabs environment, you can skip this task and Task 2 and proceed to Task 3.
 
-1. Download [livelabs-db19installed-0421.zip](https://apexapps-stage.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=667) to a directory on your local computer. This ZIP file contains the terraform script.
+1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed. The **Create Stack** page is displayed.
+2. Select your VCN.
+
+3. Under **Resources**, select **Security Lists**.
+
+4. Click the default security list.
+
+5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
+
+## Task 2: Create and apply a stack in Resource Manager
+
+> **Note**: If you are working in the LiveLabs environment, the `workshop-staged` compute instance is already created for you; therefore, you can skip this task and proceed to Task 3.
+
+1. Download [db19cnf-workshop-staged.zip](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8ymA1czX8XRytfobEBedr8guxJfPwZ9gRUH2PZjbk2AeQBnFHMM06si6NSitFeqY/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-workshop-staged.zip) to a directory on your local computer. This ZIP file contains the terraform script that you use with Resource Manager.
+
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
 
   ![Create a stack tile on the home page](images/create-a-stack.png)
 
-3. For **Stack Information**, do the following:
+    The **Create Stack - Stack Information** page is displayed.
 
-  a) Select **My Configuration**.
+3. Select **My Configuration**.
 
-  b) In the **Stack Configuration** area, select **.ZIP file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+4. In the **Stack Configuration** area, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
 
-  c) Scroll down, and in the **NAME** box, enter a name for the stack, for example, **livelabs19cstaged**.
+  ![Stack Information Page](images/stack-information-page-workshop-installed-needs-updating.png "Stack Information page")
 
-  ![Stack Information](images/stack-information-page.png)
+5. For **Name**, leave the default stack name as is.
 
-  d) Click **Next**.
+6. For **Description**, leave the default description for the stack as is.
 
-4. For **Configure Variables**, do the following:
+7. Select your compartment. This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-staged` compute instance. If you plan to use your own VCN, make sure that it resides in the compartment that you select here.
 
-  a) Leave **Region** as is.
+8. Click **Next**. The **Configure Variables** page is displayed.
 
-  b) Select the compartment in which you want to create the compute instance.
+9. In the **Main Configuration** section, leave **1** selected for the instance count.
 
-  c) Select an availability domain.
+10. Select an availability domain.
 
-  d) Select **Paste SSH Key**, and paste the contents of your public key into the box.
+11. Paste the contents of your public key into the **SSH Public Key** box. Be sure that there are no carriage returns.
 
-  e) Leave **VMStandard.E2.4** selected as the instance shape. This shape meets the memory requirements for installing Oracle Database 19c.
+  ![Main Configuration Section](images/main-configuration-section.png "Main Configuration Section")
 
-  f) Leave the network settings as is.
+12. In the **Options** section, configure the following:
 
-  ![Configure Variables](images/configure-variables-page.png)
+    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, select **VM.Standard.E4.Flex**. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
+    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for this workshop. If you increase the number of OCPUs, be sure that you have the capacity available.
+    - Leave the **Use Existing VCN** check box deselected (recommended) if you want Resource Manager to create a VCN for you. If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected on the **Stack Information** page.
 
-  g) Click **Next**.
+    ![Options Section](images/options-section.png "Options Section")
 
-5. On the **Review** page, verify that the information is correct.
+13. Click **Next**.
 
-  ![Review page](images/review-page.png)
+15. On the **Review** page, verify that the information is correct.
 
-6. Click **Create**. Your stack is created and the **Stack Details** page is displayed.
+  ![Review page](images/review-page-needs-updating.png "Review page")
 
-  ![Stack Details page](images/stack-details-page.png)
+16. In the **Run Apply on the created stack** section, select **Run Apply** to immediately provision the resources.
 
-6. From the **Terraform Actions** drop-down, select **Apply**. The **Apply** window is displayed.
+    ![Run Apply section](images/run-apply-section.png "Run Apply Section")
 
-7. In the **Apply** window, leave the name as is and the **APPLY JOB PLAN RESOLUTION** set to **Automatically approve**, and click **Apply**. Resource Manager starts a job to deploy your resources.
+17. Click **Create**.
 
-  ![Apply window](images/apply-window.png)
+    Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**.
 
-8. When the job is finished, inspect the log. The last line should read `Apply complete!`.
-
-
-## **STEP 2**: Obtain the public IP address of your compute instance
-
-1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Compute**, and then **Instances**.
-
-2. Select your compartment.
-
-3. Find the public IP address of the compute instance called **workshop-staged** in the table and jot it down.
-
-4. (Optional) Click the **workshop-staged** compute instance to view all of its details.
+  ![Job Details page](images/job-details-page-needs-updating.png "Job Details page")
 
 
-## **STEP 3**: Connect to your compute instance via a browser
+18. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks.
 
-1. On your local computer, open a browser, and enter the following url. Replace `compute-public-ip` with the public IP address of your compute instance.
-
-    ```nohighlighting
-    <copy>compute-public-ip:8080/guacamole</copy>
-    ```
-
-2. Enter `oracle` as the username and `Guac.LiveLabs_` as the password, and then click Login. Don't forget the underscore at the end of the password!
-    (guacamole-login-page.png)
-
-   You are presented with a Guacamole desktop. The desktop provides shortcuts to Firefox and a terminal window.
+    ![Image URL](images/image-url-needs-updating.png "Image URL")
 
 
-## **STEP 4**: Enable copying and pasting from your local computer to your Guacamole desktop
-During your labs you may need to copy text from your local PC or Mac to the remote Guacamole desktop. For example, you may want to copy commands from the lab guide and paste them into the terminal window. While such direct copying and pasting isn't supported on the Guacamole desktop, you can enable an alternative local-to-remote clipboard by using the Input Text field.
 
-1. On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac).
+## Task 3: Connect to your compute instance via a browser and set up your desktop
 
-2. Select **Text Input**.
+> **Note**: If you are working in the LiveLabs tenancy, you are provided the URL to your `workshop-staged` compute instance.
 
-  A black Text Input field is added to the bottom of your screen. In this field, you can paste any text copied from your local environment.
+1. In a browser, enter the URL to your `workshop-staged` compute instance.
 
-  ![](./images/guacamole-clipboard-2.png " ")
+   You are automatically logged in to your compute instance and presented with a user-friendly desktop.
 
-3. Test copy and pasting the following text. Prior to pasting, ensure that the cursor is placed at the location where you want to paste the text, then right-click inside the black **Text Input** field, and paste the text.
+    ![noVNC Desktop](images/noVNC-desktop-needs-updating.png "noVNC Desktop")
 
-    ```nohighlighting
-    <copy>echo "This text was copied from my local desktop on to my remote session"</copy>
-    ```
-    ![](./images/guacamole-clipboard-3.png " ")
+2. To enable full screen display: Click the small gray tab on the middle-left side of your screen to open the control bar. Next, click the **Fullscreen** icon (6th button down).
 
+    ![Small Grey Tab](images/small-grey-tab.png "Small Grey Tab")
 
-## **STEP 5**: Connect to your compute instance via Cloud Shell
+    ![Full Screen](images/full-screen.png "Full Screen")
 
-1. On the toolbar in Oracle Cloud Infrastructure, click the Cloud Shell icon to launch Cloud Shell.
-
-  ![Cloud Shell icon](images/cloud-shell-icon.png)
-
-  A terminal window opens at the bottom of the page.
-
-2. Enter the following `ssh` command to connect to your compute instance. Replace `public-ip-address` with the public IP address of your compute instance.
-
-  `cloudshellkey` is the name of the private key file that you created in the [Generate SSH Keys - Cloud Shell](?lab=https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md) lab. If your private key has a different name, then replace `cloudshellkey` with it.
-
-    ```nohighlighting
-    $ <copy>ssh -i ~/.ssh/cloudshellkey opc@public-ip-address</copy>
-    ```
-
-    A message states that the authenticity of your compute instance can't be established. Do you want to continue connecting?
-
-3. Enter **yes** to continue. The public IP address of your compute instance is added to the list of known hosts on your Cloud Shell machine.
-
-  You are now connected to your new compute instance via Cloud Shell.
+3. If the workshop guide is not open on the desktop, double-click the **Get Started with Your Workshop** icon on the desktop.
 
 
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -162,5 +137,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, April 21 2021
+- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021
