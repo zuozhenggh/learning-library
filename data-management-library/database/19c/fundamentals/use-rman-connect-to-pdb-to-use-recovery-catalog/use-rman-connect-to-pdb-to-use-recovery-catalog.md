@@ -542,6 +542,8 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 
     ```
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 - [Database New Features Guide (Release 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
