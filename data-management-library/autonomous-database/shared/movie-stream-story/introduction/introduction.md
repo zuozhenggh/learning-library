@@ -13,7 +13,7 @@ Oracle MovieStream is a fictitious movie streaming service - similar to those th
 
 Oracle Cloud provides an amazing platform to productively deliver secure, insightful, scalable and performant solutions. MovieStream designed their solution leveraging the world class Autonomous Database and OCI Data Lake services. Their data architecture is following the Oracle Reference Architecture [Enterprise Data Warehousing - an Integrated Data Lake](https://docs.oracle.com/en/solutions/oci-curated-analysis/index.html#GUID-7FF7A024-5EB0-414B-A1A5-4718929DC7F2) - which is used by Oracle customers around the world. It's worthwhile to review the architecture so you can understand the value of integrating the data lake and data warehouse - as it allows you to answer more complex questions using all your data.
 
-In this workshop, we'll start with two key components of MovieSteam's architecture. MovieStream is storing their data across Oracle Object Storage and Autonomous Database. Data is captured from vaious sources into a landing zone in object storage. This data is then processed (cleansed, transformed and optimized) and stored in a gold zone on object storage.  Once the data is curated, it is loaded into Autonomous Database where it is analyzed by many (and varied) members of the user community.
+In this workshop, we'll start with two key components of MovieSteam's architecture. MovieStream is storing their data across Oracle Object Storage and Autonomous Database. Data is captured from various sources into a landing zone in object storage. This data is then processed (cleansed, transformed and optimized) and stored in a gold zone on object storage.  Once the data is curated, it is loaded into an Autonomous Database where it is analyzed by many (and varied) members of the user community.
 
 ![architecture](images/architecture.png)
 
@@ -21,7 +21,7 @@ You will learn how they built their solution and performed sophisticated analyti
 
 ### Objectives
 * Deploy an Autonomous Database instance
-* Integrate Autonous Database with the Data Lake
+* Integrate Autonomous Database with the Data Lake
 * Use advanced SQL to uncover issues and possibilities
 * Predict customer churn using with Machine Learning
 * Use spatial analyses to help provide localized promotions
