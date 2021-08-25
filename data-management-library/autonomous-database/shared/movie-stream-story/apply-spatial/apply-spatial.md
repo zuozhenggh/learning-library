@@ -33,7 +33,7 @@ In this lab, you will:
 
     b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
-**Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Task 1: Prepare the Data
 
@@ -324,18 +324,20 @@ In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism 
 
 If you would like to purge all changes made in this lab, run the following commands in order.
 
-    <copy>
-    DROP INDEX customer_sidx;
+```
+<copy>
+DROP INDEX customer_sidx;
 
-    DROP INDEX pizza_location_sidx;
+DROP INDEX pizza_location_sidx;
 
-    DELETE FROM user_sdo_geom_metadata
-    WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
+DELETE FROM user_sdo_geom_metadata
+WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
 
-    DROP TABLE customer_nearest_pizza ;
+DROP TABLE customer_nearest_pizza ;
 
-    DROP FUNCTION latlon_to_geometry;
-    </copy>
+DROP FUNCTION latlon_to_geometry;
+</copy>
+```
 
 You may now [proceed to the next lab](#next).
 

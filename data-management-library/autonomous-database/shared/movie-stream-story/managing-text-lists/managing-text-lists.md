@@ -62,7 +62,9 @@ Fortunately, Autonomous Data Warehouse has a unique capability in that it can tr
 
 Our `LISTAGG` function looks like this:
 
-<pre>LISTAGG(email, ',' ON OVERFLOW TRUNCATE '...' WITH COUNT) WITHIN GROUP (ORDER BY last_name, first_name) AS customer_list</pre>
+```
+LISTAGG(email, ',' ON OVERFLOW TRUNCATE '...' WITH COUNT) WITHIN GROUP (ORDER BY last_name, first_name) AS customer_list
+```
 
 1. If we wrap this around our original query, we can use the following syntax to create the report we need:
 

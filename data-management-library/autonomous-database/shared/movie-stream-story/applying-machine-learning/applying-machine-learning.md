@@ -79,7 +79,7 @@ In this example we are going to use the EXPLAIN procedure to identifies the attr
 
     ![Query result showing what the table data set looks like](images/lab-5e-step-1-substep-4.png " ")
 
-    **NOTE:** Unlike the movie sales data, we now have a single row per customer and you can see that in the column **insufficient\_funds\_incidents** there are single numeric values determining the status of this column.
+    > **Note:** Unlike the movie sales data, we now have a single row per customer and you can see that in the column **insufficient\_funds\_incidents** there are single numeric values determining the status of this column.
 
 5. Run the following query to show that the column contains only four values:
 
@@ -108,7 +108,7 @@ To run this analysis we need to provide the following information:
 
 - Name of the output table - this gets created automatically by the procedure so just needs a name of table that doesn't exist
 
-**NOTE:**  The input table contains the column `CUSTOMER_ID` to make the data easier to validate once we get a final result. However, under normal circumstances this column would not be included as an input to the machine learning model, since every row is unique. Fortunately, the machine learning features in Autonomous Data Warehouse are smart enough to automatically ignore these types of columns and focus on the other more "interesting" columns.
+> **Note:**  The input table contains the column `CUSTOMER_ID` to make the data easier to validate once we get a final result. However, under normal circumstances this column would not be included as an input to the machine learning model, since every row is unique. Fortunately, the machine learning features in Autonomous Data Warehouse are smart enough to automatically ignore these types of columns and focus on the other more "interesting" columns.
 
 1. Now that we understand the required inputs, let's run the model:
 
