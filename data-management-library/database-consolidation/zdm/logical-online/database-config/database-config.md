@@ -48,7 +48,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-    ![Stream Status Before](./images/stream-status-before.PNG)
+    ![Stream Status Before](./images/stream-status-before.png)
 
     Set the parameter:
     ```
@@ -64,7 +64,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-    ![Stream Status After](./images/stream-status-after.PNG)
+    ![Stream Status After](./images/stream-status-after.png)
 
     Enable database minimal supplemental logging:
 
@@ -104,7 +104,7 @@ Estimate Lab Time: 15 minutes
     alter database open;
     </copy>
     ``` 
-    ![archive log enabled](./images/archivelog.PNG)   
+    ![archive log enabled](./images/archivelog.png)   
 
 
     Enable FORCE LOGGING for the database:
