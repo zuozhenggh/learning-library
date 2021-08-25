@@ -17,9 +17,7 @@ No video for the moment
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -31,7 +29,7 @@ This lab assumes you have:
 | 2 | Create a TSDP Policy | 5 minutes |
 | 3 | (Optional) Reset the TSDP Labs Environment | <5 minutes |
 
-## **STEP 1**: Prepare the TSDP Environment for the Labs
+## Task 1: Prepare the TSDP Environment for the Labs
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -53,7 +51,7 @@ This lab assumes you have:
 
    ![](./images/tsdp-001.png " ")
 
-## **STEP 2**: Create a TSDP Policy
+## Task 2: Create a TSDP Policy
 
 1. Create the Sensitive Type "`CREDIT_CARD_TYPE`"
 
@@ -129,7 +127,7 @@ This lab assumes you have:
     - Now, you can see that the credit card numbers have been redacted with the format `****-****-9999-9999`
     - As you can see, TSDP redacts sensitive data **immediatly** and you **don't need rebooting or rewriting SQL query**!
 
-## **STEP 3**: (Optional) Reset the TSDP Labs Environment
+## Task 3: (Optional) Reset the TSDP Labs Environment
 
 1. Once you are comfortable with the TSDP concept, you can reset the environment
 

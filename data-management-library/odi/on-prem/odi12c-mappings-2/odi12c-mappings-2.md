@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:**  Load TRG\_PRODUCT Mapping Example
+## Task 1:  Load TRG\_PRODUCT Mapping Example
 
 1. Purpose and Integration Requirements
 The purpose of the Load TRG\_PRODUCT mapping is to load the data from the SRC\_PRODUCT table in the *Orders Application* model into the TRG\_PRODUCT target table in the *Sales Administration* model.
@@ -65,7 +65,7 @@ The Load TRG\_PRODUCT mapping uses the following data and transformations:
 | Joiner Output  | This component is used to eliminate duplicates | NA  |
 
 
-## **STEP 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load TRG\_PRODUCT mapping. To create the Load TRG\_PRODUCT mapping perform the following procedure:
 1. Insert a New Mapping
@@ -85,7 +85,7 @@ This section describes how to create the Load TRG\_PRODUCT mapping. To create th
 
 3. An empty mapping window will appear on screen.
 
-## **STEP 3:** Define the Target
+## Task 3: Define the Target
 
 The target is the element that will be loaded by the mapping. To insert the target in the Load TRG\_PRODUCT mapping:
 
@@ -97,7 +97,7 @@ The target is the element that will be loaded by the mapping. To insert the targ
 
   ![](./images/models_tgt.png)
 
-## **STEP 4:** Define the Source
+## Task 4: Define the Source
 
 The source datastores contain data used to load the target datastore. Two types of datastores can be used as a mapping source: datastores from the models and reusable mappings. This example uses datastores from the *Orders Application* and *Sales Administration* models.
 
@@ -115,7 +115,7 @@ To add source datastores to the Load TRG\_PRODUCT mapping:
   ![](./images/mapping_1.png)
 
 
-## **STEP 5:** Define the Join between the Source Datastores and use Distinct
+## Task 5: Define the Join between the Source Datastores and use Distinct
 
 This section describes how to define a join between the source datastores and use distinct. To create the join defined in Step 1 above and remove duplicates:
 
@@ -145,7 +145,7 @@ This section describes how to define a join between the source datastores and us
 
   ![](./images/mapping_4.png)
 
-## **STEP 6:** Define the Target Integration Type
+## Task 6: Define the Target Integration Type
 
 The target table integration type is defined in this section. These are mainly of two types.
 
@@ -158,7 +158,7 @@ We will use control append for this mapping.
 
   ![](./images/mapping_5.png)
 
-## **STEP 7:** Define the Data Loading Strategies (LKM)
+## Task 7: Define the Data Loading Strategies (LKM)
 
 The data loading strategies are defined in the Physical tab of the Mapping Editor. Oracle Data Integrator automatically computes the flow depending on the configuration in the mapping's diagram. It proposes default Knowledge Modules (KMs) for the data flow. The Physical tab enables you to view the data flow and select the KMs used to load and integrate data.
 
@@ -172,7 +172,7 @@ To define the loading strategies:
 
   ![](./images/load_knowledge_module.png)
 
-## **STEP 8:** Define the Data Integration Strategies (IKM)
+## Task 8: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -188,7 +188,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.For more information on importing KMs into your Projects, see *Importing a KM* in the *Oracle Fusion Middleware Developer's Guide for Oracle Data Integrator*.
 
-## **STEP 9:** Define the Data Control Strategy
+## Task 9: Define the Data Control Strategy
 
 In the preceding steps you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
@@ -208,7 +208,7 @@ To define the data control strategy:
 
 The Load TRG\_PRODUCT mapping is now ready to be run.
 
-## **STEP 10:** Run the Mapping
+## Task 10: Run the Mapping
 
 1. In the logical section, click on Data to see the data in the table.
 

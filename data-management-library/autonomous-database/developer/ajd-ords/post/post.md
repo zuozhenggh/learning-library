@@ -8,7 +8,7 @@ Oracle RESTful Data Services supports POST as the HTTP method. In POST method, i
 
 Estimated Lab Time: 15 minutes
     
-## **Step 1:** Create table and new module for POST
+## Task 1: Create table and new module for POST
     
 1. Open SQL Developer Web on Tools tab, and login to AJD as DEMO user.
     
@@ -113,7 +113,7 @@ Estimated Lab Time: 15 minutes
     
 19. Copy Full URL value https://kndl0dsxmmt29t1-vltajd.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demo/auth-cats/orders/ in your notes.
     
-## **Step 2:** Use POST method to submit orders
+## Task 2: Use POST method to submit orders
     
 1. Let's submit some orders from ADW into AJD using this new POST method. Open SQL Developer Web on Tools tab, and login to ADW as ADMIN user.
     
@@ -196,7 +196,7 @@ Estimated Lab Time: 15 minutes
     END;
     ````
     
-## **Step 3:** Secure POST method with authentication
+## Task 3: Secure POST method with authentication
     
 1. Add authentication to the new web service to secure this POST method.
     

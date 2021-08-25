@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -34,7 +34,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - oracle</copy>
     ```
-## **STEP 1**: Oracle GoldenGate Configuration
+## Task 1: Oracle GoldenGate Configuration
 
 1. Review the trail file located in the GGBD home. We will be using the same trail file to replicate .
 

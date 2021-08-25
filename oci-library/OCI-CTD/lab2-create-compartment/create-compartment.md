@@ -13,7 +13,7 @@ Estimated Lab Time: 10 minutes
 ### Prerequisites
 * Logged in to OCI
 
-## **Step 1**: Identity Service
+## Task 1: Identity Service
 
 Navigate to the _Identity Service_ and click on the submenu _Compartments_. If you do not see the Identity service in the menu, you have to scroll down using 2 fingers on your touch pad or your middle mouse wheel. Alternatively, you can also use your _Arrow Down_ key.
 
@@ -23,7 +23,7 @@ You will be shown a list of existing compartments. Click on the Workshop compart
 
 **IMPORTANT: Make sure you are inside the workshop compartment, as this is the only area where you have full administrator privileges.**
 
-## **Step 2**: Child compartments
+## Task 2: Child compartments
 
 ![](images/child-compartment.png " ")
 

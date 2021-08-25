@@ -12,7 +12,7 @@ Disclaimer: The Zero Downtime Migration service host should be a dedicated syste
 Estimate Lab Time: 15 minutes
 
 
-## **STEP 1: Connect to Your Database**
+## **Task 1: Connect to Your Database**
 1. Verify that you are user 'opc' in your instance.
 
 2. Switch from 'opc' user to user 'oracle'.
@@ -71,7 +71,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-## **STEP 2: Creating Users for Your Database Migration**
+## **Task 2: Creating Users for Your Database Migration**
 1. Disclaimer: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.  
 
 2. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
@@ -112,7 +112,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-## **STEP 3: Load Sample Table**
+## **Task 3: Load Sample Table**
 1. Connect to your database user. Enter password `WELcome123ZZ` at the prompt that you set for your user.
     ```
     <copy>

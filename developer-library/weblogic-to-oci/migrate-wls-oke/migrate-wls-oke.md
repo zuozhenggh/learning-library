@@ -35,7 +35,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists of 4 steps:
 - Have deployed a WebLogic on OCI domain using the Oracle Cloud Marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## Task 1: Installing WebLogic Deploy Tooling
 
 ### Using the docker on-premises environment:
 
@@ -82,7 +82,7 @@ cd ~/wdt
 
 This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
 
-## **STEP 2:** Discover the On-Premises Domain
+## Task 2: Discover the On-Premises Domain
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate three files:
 
@@ -188,7 +188,7 @@ Extracting those files and updating paths in the model file...
   adding: wlsdeploy/applications/SimpleDB.ear (deflated 62%)
 ```
 
-## **STEP 3:** Edit the `source.yaml` File
+## Task 3: Edit the `source.yaml` File
 
 The extracted `source.yaml` file looks like the following:
 
@@ -459,7 +459,7 @@ appDeployments:
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
-## **STEP 4:** Edit the `source.properties` File
+## Task 4: Edit the `source.properties` File
 
   ```bash
   <copy>
@@ -491,7 +491,7 @@ appDeployments:
 
 3. Save the file with `CTRL+x` and `y`.
 
-## **STEP 5:** Copy the Model Files over to the Shared File System
+## Task 5: Copy the Model Files over to the Shared File System
 
 1. Export the `BASTION_IP` variable:
 
@@ -523,7 +523,7 @@ appDeployments:
 
     This will copy the files to the folder `/u01/shared/` in the shared file system, accessible to Jenkins.
 
-## **STEP 6:** Run the `update-domain` Build Job on Jenkins
+## Task 6: Run the `update-domain` Build Job on Jenkins
 
 1. Go to the Jenkins UI at `http://PRIVATE_LOAD_BALANCER_IP/jenkins` using the tunnel set up earlier.
 
@@ -576,7 +576,7 @@ appDeployments:
     ![](./images/jenkins5.png " ")
 
 
-## **STEP 7:** Check the Application Deployed Properly
+## Task 7: Check the Application Deployed Properly
 
 1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/console` under **Deployment** you should see the two applications listed.
 

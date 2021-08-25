@@ -11,7 +11,7 @@ Estimated Lab Time: 10 minutes
 * Succesfully login to OCI
 * Explorer the OCI Console
 
-## **Step 1**: Log in to OCI and explorer OCI Console
+## Task 1: Log in to OCI and explorer OCI Console
 
 Please go to [oci-workshop.com](https://www.oci-workshop.com/login) and select the correct region for your workshop. This link will take you to the login page of the cloud tenancy you will use during this workshop.
 

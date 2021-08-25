@@ -1,4 +1,4 @@
-# Oracle Spatial 
+# Oracle Spatial
 
 ## Introduction
 
@@ -10,22 +10,22 @@ This lab walks you through the steps of setting up the environment for Spatial l
 This lab assumes you have completed the following labs:
 - Lab 1:  Login to Oracle Cloud
 - Lab 2:  Generate SSH Key
-- Lab 3:  Create Compute instance 
+- Lab 3:  Create Compute instance
 - Lab 4:  Environment setup
 
-### About Oracle SPATIAL 
+### About Oracle SPATIAL
 
 Oracle Spatial is an integrated set of functions, procedures, data types, and data models that support spatial analytics. The spatial features enable spatial data to be stored, accessed, and analyzed quickly and efficiently in an Oracle database.
 
 Oracle Spatial is designed to make spatial data management easier and more natural to users of location-enabled applications and geographic information system (GIS) applications. Once spatial data is stored in an Oracle database, it can be easily manipulated, retrieved, and related to all other data stored in the database.
 
-A common example of spatial data can be seen in a road map. A road map is a two-dimensional object that contains points, lines, and polygons that can represent cities, roads, and political boundaries such as states or provinces. A road map is a visualization of geographic information. 
+A common example of spatial data can be seen in a road map. A road map is a two-dimensional object that contains points, lines, and polygons that can represent cities, roads, and political boundaries such as states or provinces. A road map is a visualization of geographic information.
 
 The data that indicates the Earth location (such as longitude and latitude) of these rendered objects is the spatial data. When the map is rendered, this spatial data is used to project the locations of the objects on a two-dimensional piece of paper.
 
  [](youtube:Q2jm93Rm95g)
 
-Oracle Spatial consists of the following: 
+Oracle Spatial consists of the following:
 
 -	Schema (MDSYS)
 -	A spatial indexing mechanism  	
@@ -42,7 +42,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
 
 
-## Step: Connect to the Pluggable Database (PDB)
+## Task: Connect to the Pluggable Database (PDB)
 1. Set the Oracle environment    
     ````
     <copy>
@@ -69,7 +69,7 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
     ````
 
 1. Make a connection to sqldeveloper.  Provide the details as below and click on connect.
-   
+
     ````
     <copy>
     Name    : Spatial
@@ -81,8 +81,8 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 
     </copy>
     ````
- 
-  ![](./images/spatial_enva.png " ") 
+
+  ![](./images/spatial_enva.png " ")
 
 ## Acknowledgements
 
@@ -91,7 +91,3 @@ Each table stores location using Oracle's native spatial data type, SDO\_GEOMETR
 - **Team** - North America Database Specialists.
 - **Last Updated By** - Kay Malcolm, Database Product Management, June 2020
 - **Expiration Date** - June 2021   
-
-
-      
- 

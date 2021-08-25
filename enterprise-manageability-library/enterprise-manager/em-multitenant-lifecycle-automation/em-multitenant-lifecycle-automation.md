@@ -33,7 +33,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## **STEP 1:** Create Pluggable Database (PDB)
+## Task 1: Create Pluggable Database (PDB)
 
 1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
@@ -96,7 +96,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
   ![](images/657ef309d7087942b8d871256a359050.jpg " ")
 
-## **STEP 2:** Unplug/Plug an existing Pluggable Database (PDB)
+## Task 2: Unplug/Plug an existing Pluggable Database (PDB)
 
 1. Navigate to the ***Enterprise menu >> Provisioning and Patching >> Database provisioning***.
 
@@ -172,7 +172,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
   *Note*: You do not have to wait until the steps complete and move on to the next section.
 
-## **STEP 3:** Clone an existing Pluggable Database (PDB)
+## Task 3: Clone an existing Pluggable Database (PDB)
 
 1.  Navigate to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -212,7 +212,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
 10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
-## **STEP 4:** Compliance Management for Pluggable Database
+## Task 4: Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
@@ -287,7 +287,7 @@ Now database administrator applies a Corporate Standard on the newly created PDB
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## **STEP 5:** Self-Service to Request PDB Using PDBaaS
+## Task 5: Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
@@ -423,7 +423,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg " ")
 
-## **STEP 6:**  Setup  PDB-as-a-Service (PDBaaS)
+## Task 6:  Setup  PDB-as-a-Service (PDBaaS)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 

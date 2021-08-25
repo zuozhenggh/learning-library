@@ -42,7 +42,7 @@ We will be using three tables – CUSTOMERS, WAREHOUSES and WAREHOUSES\_DTP.
 
 Each table stores location using Oracle's native spatial data type, SDO\_GEOMETRY. A location can be stored as a point in an SDO\_GEOMETRY column of a table. The customer's location is associated with longitude and latitude values on the Earth's surface—for example, -63.13631, 52.485426.
 
-## **Step 0:** Running the Workshop
+## Task 0: Running the Workshop
 ### Setup SSH Tunnel(s)
 As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
@@ -64,7 +64,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
 ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
-## **Step 1:** Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 1. Open a terminal window and sudo to the user **oracle**
 
     ````
@@ -95,7 +95,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
     </copy>
     ````
 
-## **Step 2:** Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -108,7 +108,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
   ![](./images/spatial_sql_developer.png " ")
 
-## **Step 3:** Example Queries
+## Task 3: Example Queries
 
 Note: See [Reference: Setting Up Spatial](#Reference:SettingUpSpatial) to see the SQL executed in advance.
 

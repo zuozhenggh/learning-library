@@ -28,14 +28,12 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Generate a Tuning Task
+## Task 1: Generate a Tuning Task
 
 1. Execute the SQL Tuning Advisor script `sta_cc.sql` to create, execute and report a complete tuning task.
 

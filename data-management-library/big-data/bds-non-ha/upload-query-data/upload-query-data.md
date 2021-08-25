@@ -27,7 +27,7 @@ Estimated Time: 45 minutes
 + In this lab, you will download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
 <if type="freetier">
-## **Task 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
+## Task 1: Gather Information About the Compartment and the Master Node Reserved Public IP Address
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
@@ -44,7 +44,7 @@ Estimated Time: 45 minutes
 </if>
 
 <if type="livelabs">
-## **Task 1:** Gather Information About the Master Node Reserved Public IP Address
+## Task 1: Gather Information About the Master Node Reserved Public IP Address
 
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
 
@@ -56,7 +56,7 @@ Estimated Time: 45 minutes
 
 </if>
 
-## **Task 2:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## Task 2: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 In this task, you will connect to the first (only one master node in a non-HA cluster) master node in your cluster using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
 
@@ -117,7 +117,7 @@ In this lab, we will connect to our cluster using Windows **PuTTY** and provide 
     ![](./images/ll-change-directory.png " ")
     </if>
 
-## **Task 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
+## Task 3: Download and Run HDFS Scripts to Set Up the HDFS Data
 
 In this task, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
@@ -307,7 +307,7 @@ To view the complete data files that are available, navigate to [Citibike System
     ![](./images/ll-view-tripdata.png " ")
     </if>
 
-## **Task 4:** Query the Uploaded HDFS Data Using Hue
+## Task 4: Query the Uploaded HDFS Data Using Hue
 
 In this task, you log into Hue as the **`training`** administrator user and query the Hive tables that were created by the scripts that you ran in the previous task. Remember, in a non-HA BDS cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
@@ -375,7 +375,7 @@ limit 10;</copy>
   </if>
 
 <if type="freetier">
-## **Task 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
+## Task 5: Download and Run Object Storage Scripts to Set Up the Object Storage Data
 
 In this task, you will download two scripts that will set up your Object Storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 

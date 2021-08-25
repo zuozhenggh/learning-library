@@ -36,7 +36,7 @@ This lab assumes you have completed the following labs:
 
 In this section, you will be provisioning an ADW database and an ATP database using the cloud console.
 
-## **STEP 1:** Create an ADW Instance
+## Task 1: Create an ADW Instance
 
 First, we are going to create an ADW Instance.
 
@@ -76,7 +76,7 @@ First, we are going to create an ADW Instance.
 
 You now have created your first ADW instance. Now, we are going to work on very similar steps to create an ATP Database.
 
-## **STEP 2:** Create an ATP Instance
+## Task 2: Create an ATP Instance
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -114,7 +114,7 @@ You now have created your first ADW instance. Now, we are going to work on very 
 
 You now have created your first ATP instance.
 
-## **STEP 3:** Create ML User in ADW
+## Task 3: Create ML User in ADW
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 	
@@ -146,7 +146,7 @@ You now have created your first ATP instance.
 
     ![](./images/ml-user-created.png " ")
 
-## **STEP 4:** Grant Privileges to ML_USER to access Database Actions
+## Task 4: Grant Privileges to ML_USER to access Database Actions
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 	
@@ -207,7 +207,7 @@ You now have created your first ATP instance.
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 5:** Download the Necessary Files
+## Task 5: Download the Necessary Files
 
 1.  Click the link below to download the install file.
 
@@ -217,7 +217,7 @@ You now have created your first ATP instance.
 
     ![](./images/060.png  " ")
 
-## **STEP 6**: Upload the data files to ML_USER
+## Task 6: Upload the data files to ML_USER
 
 1. On the tab with your ADW instance, click on **Open Database Actions** under Tools.
 

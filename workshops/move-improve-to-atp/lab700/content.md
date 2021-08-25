@@ -17,7 +17,7 @@ The sample application we will use is Swingbench with an associated database to 
 - Soedump18C_1G.dmp file (provided by Instructor if instructor-led class)
 - OCI Auth Token password (provided by Instructor if instructor-led class)
 
-## Step 1: Install Swingbench on the App Server ##
+## Task 1: Install Swingbench on the App Server ##
 
 Swingbench is a popular application that can be set up to drive a workload against the Oracle database. We will configure it to drive many OLTP transactions so it saturates the database CPU cores to near 100% utilization.
 
@@ -75,7 +75,7 @@ The application is now installed. You should see the Swingbench application file
 
 Now we will install the Oracle Instant Client software which has tools to help us move the on premise database to the Oracle Cloud.   
 
-## Step 2: Install the Oracle Instant Client 
+## Task 2: Install the Oracle Instant Client 
 
 To prepare for moving the Swingbench database to ATP, we need the Data Pump import tool. It’s in the Oracle Instant Client software. We will install the Oracle Instant Client software packages from the yum server.
 
@@ -115,7 +115,7 @@ $ sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sq
 
 
 
-## Step 3: Configure the Instant Client software
+## Task 3: Configure the Instant Client software
 
  1. Locate the ATP wallet and unzip it to a wallet folder. Note the extracted files cwallet.sso, sqlnet.ora and tnsnames.ora. 
 
@@ -189,7 +189,7 @@ Note: You can use the Data Pump procedure for your own database and migration pr
 
 
 
-## Step 4: Set Credential for ATP to access the Object Store
+## Task 4: Set Credential for ATP to access the Object Store
 
 In order for ATP to access the Oracle Object Storage we need to create a credential and then set the credential in the ATP database. 
 
@@ -233,7 +233,7 @@ While we are in SQL Developer check to see if you have the SOE schema in the Oth
 
 
 
-## Step 6: Import the Dump File to the Autonomous Database
+## Task 6: Import the Dump File to the Autonomous Database
 
 Once you have the database dump file in the Object Storage you can import it into ATP. To run the Data Pump Import you will log in to the App Server compute with the Instant Client software and the wallet to your ATP. 
 

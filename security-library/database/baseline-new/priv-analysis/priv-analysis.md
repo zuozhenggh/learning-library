@@ -17,9 +17,7 @@ Watch a preview of "*Understanding Privilege Analysis (January 2019)*" [](youtub
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -31,7 +29,7 @@ This lab assumes you have:
 | 2 | Analyze the workload caputred | 5 minutes |
 | 3 | (Optional) Drop the capture | <5 minutes |
 
-## **STEP 1**: Capture the workload to analyze
+## Task 1: Capture the workload to analyze
 
 1. Open a SSH session on your **DBSec-Lab VM as *oracle* user**
 
@@ -77,7 +75,7 @@ This lab assumes you have:
 
    ![](./images/pa-003.png " ")
 
-## **STEP 2**: Analyze the workload captured
+## Task 2: Analyze the workload captured
 
 1.  Generating the report
 
@@ -99,7 +97,7 @@ This lab assumes you have:
 
    ![](./images/pa-005.png " ")
 
-## **STEP 3**: (Optional) Drop the capture
+## Task 3: (Optional) Drop the capture
 
 1. Once we have reviewed our report and we are comfortable with Privilege Analysis, we can drop the capture we created
 

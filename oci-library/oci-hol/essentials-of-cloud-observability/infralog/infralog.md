@@ -19,7 +19,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in Lab 1 
 
 
-## **STEP 1**: Create Log Group
+## Task 1: Create Log Group
 
 Log groups are logical containers for organizing and managing logs. Logs must always be inside  a log group. You must first create a log group to enable or create logs.  Fortunately, this is a fast and easy activity.
 
@@ -42,7 +42,7 @@ Log groups are logical containers for organizing and managing logs. Logs must al
    
    You are now ready to move on to the next step.
 
-## **STEP 2:** Enable Network Flow Log
+## Task 2: Enable Network Flow Log
 
 Many core cloud infrastructure services have built-in logging capabilities.  Now that you have created a Log Group in Step 1, let's select one of our core services and enable logging.  In this step, you will enable logging on the **Virtual Cloud Network** created in Lab 1.
 

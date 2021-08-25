@@ -40,7 +40,7 @@ This lab assumes you have completed the following labs:
 - Login to Oracle Cloud/Sign Up for Free Tier Account
 - Connect and Provision ADB
 
-## **STEP 1:** Create ML User in ADW
+## Task 1: Create ML User in ADW
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 	
@@ -72,7 +72,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/ml-user-created.png " ")
 
-## **STEP 2:** Grant Privileges to ML_USER to access Database Actions
+## Task 2: Grant Privileges to ML_USER to access Database Actions
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Data Warehouse** and navigate to your ADW instance.
 	
@@ -134,7 +134,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 3:** Create ML Notebook
+## Task 3: Create ML Notebook
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse** and navigate to your instance.
 
@@ -184,7 +184,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/new-notebook.png " ")
 
-## **STEP 4:** Add Content to Your ADW Notebook
+## Task 4: Add Content to Your ADW Notebook
 
 It is simple to create content in Zeppelin Notebooks, and the following exercise will give you experience in doing so.
 
@@ -315,7 +315,7 @@ It is simple to create content in Zeppelin Notebooks, and the following exercise
 
     ![](./images/anamoly-detection.png  " ")
 
-## **STEP 5:** Import ML Notebook
+## Task 5: Import ML Notebook
 
 Adding content to a notebook is simple and fast. In this step, we have built the steps that are normally followed when exploring data and building a machine learning model. This has been saved to the file you can download. We will import this notebook and review it. It is important to note that you *must execute all the steps in this notebook if you wish to continue with lab 3 and 4*. Executing the steps takes only a few minutes.
 
@@ -361,7 +361,7 @@ Adding content to a notebook is simple and fast. In this step, we have built the
 
     ![](./images/step4.9-031.png  " ")
 
-## **STEP 6:** About this Notebook
+## Task 6: About this Notebook
 
 The rest of this lab will be done interactively in the notebook. This step discusses the result of each portion of the notebook.
 

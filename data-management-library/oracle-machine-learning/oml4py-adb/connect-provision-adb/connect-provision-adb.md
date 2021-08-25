@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 
 In this section, you will provision an Oracle Autonomous Data Warehouse (ADWC) database, create an OML user account, and load the data required by the OML notebooks.
 
-## **Step 1:** Create an Oracle Autonomous Data Warehouse Instance
+## Task 1: Create an Oracle Autonomous Data Warehouse Instance
 
 First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
@@ -55,7 +55,7 @@ First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
     ![](./images/prov-adw-5.png)
 
-## **Step 2:** Create an Oracle Machine Learning User
+## Task 2: Create an Oracle Machine Learning User
 
 1. On your instance, click the **Tools** tab, and then click **Open Oracle ML User Administration**.
 
@@ -73,7 +73,7 @@ First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
     ![](images/oml-create-user-2.png)
 
-## **Step 3:** Allow OMLUSER to Access Database Actions
+## Task 3: Allow OMLUSER to Access Database Actions
 
 1. On the tab with your ADW instance, and click on **Open Database Actions**.
 
@@ -115,7 +115,7 @@ First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
     ![](images/sql-dev-add-omluser-success.png)
 
-## **Step 4:** Download Files to use in next lab
+## Task 4: Download Files to use in next lab
 
 1.  Click the link below to download the install file.
 
@@ -125,7 +125,7 @@ First, we are going to create an Oracle Autonomous Data Warehouse Instance.
 
     ![](./images/save-claims-zip.png)
 
-## **Step 5**: Upload the two data files to OMLUSER
+## Task 5: Upload the two data files to OMLUSER
 
 1. On the tab with your ADW instance, and click on **Open Database Actions**.
 

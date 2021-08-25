@@ -41,7 +41,7 @@ Estimated Lab Time (with DBCS creation): 90 minutes.
 * Access to ExaCS network via jump server or VPN.
 * VNC Viewer or other suitable VNC client on your laptop.
 
-## **STEP 1:** Provision a Goldengate Microservice from OCI Marketplace
+## Task 1: Provision a Goldengate Microservice from OCI Marketplace
 
 1. Connect to your OCI tenancy and select **Marketplace** from top left menu. Browse for **Oracle Goldengate 19c for Oracle**. You may set a filter on Type on the left. Select **Stack** from the dropdown and the image should be easier to find. The image is a terraform orchestration that deploys Goldengate on a compute image along with required resources.
 
@@ -69,7 +69,7 @@ Estimated Lab Time (with DBCS creation): 90 minutes.
 
 10. Your Goldengate instance should be ready in a few mins and we will come back to configure it.
 
-## **STEP 2:** Configure the Source Database
+## Task 2: Configure the Source Database
 
 It is assumed that you either have an Oracle 12c database configured as source or know how to provision a 12c DBCS instance in OCI
 
@@ -127,7 +127,7 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 
 6. The source database is all set. Next, lets setup the target ExaCS instance.
 
-## **STEP 3:** Configure the Target ExaCS  Database
+## Task 3: Configure the Target ExaCS  Database
 
 1. Connect to the ExaCS database instance you created earlier as user **sys** as sysdba. *Note: You will need to be VPN'd into the network or VNC to a jump server.*
 
@@ -168,7 +168,7 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 
 5. That is it! Your target DB is now ready.
 
-## **STEP 4:** Configure Goldengate Service
+## Task 4: Configure Goldengate Service
 
 1. By now, your Goldengate service instance must be deployed. On your OCI console navigate to **Compute** from top left menu and **choose your compartment**
 

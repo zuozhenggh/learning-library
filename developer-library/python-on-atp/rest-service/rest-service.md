@@ -9,7 +9,7 @@
 
 In Lab 2 you also continue to play the role of Derek, but now you get to the fun part, building out Python apps.  You have been asked to enhance the customer experience by providing customer access to modify their profiles and enable customers to maintain their own profiles.  You will use Oracle's cx_Oracle Python interface to enable connectivity to the Autonomous Transaction Processing Database, and use the open source technologies Flask micro web framework, Bokeh interactive visualization library, and ReactJS  to support web site development.
 
-## **Step 1:** Configure project in Visual Studio Code
+## Task 1: Configure project in Visual Studio Code
 
 1. First we add the Visual Studio Code in the favorites so it can be easily accessible. Click on **Applications** and then click on **Activity Overview**
 
@@ -79,7 +79,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
   ![](images/8.png " ")
 
-## **Step 2:** Run python web service
+## Task 2: Run python web service
 
 1. Leave the terminal open. Click on **config.py** file from the left pane and change the password in the file with your Autonomous Transaction Processing Database password and save the file.
 
@@ -94,7 +94,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
     
   ![](images/11.png " ")
 
-## **Step 3:** Run frontend application
+## Task 3: Run frontend application
 
 1. Open **customwebapp** in Visual Studio Code by opening the project in a new window: click on **File** and then click on **New Window**. The frontend application is created using ReactJS.
 
@@ -124,7 +124,7 @@ In Lab 2 you also continue to play the role of Derek, but now you get to the fun
 
 ![](images/13.png " ")
 
-## **Step 4:** Create and view customer info
+## Task 4: Create and view customer info
 
 1. Open the browser and go to localhost:3000 to see the website.  Put the customer ID in the search bar. Here for example we entered 1 and then click on **search**.
 

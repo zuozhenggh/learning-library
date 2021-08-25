@@ -14,7 +14,7 @@ To complete this lab, you need to have the following:
 - Login credentials for Wercker
 - Login credentials for Github
 
-## **STEP 1**: Sign in to Oracle Cloud Infrastructure
+## Task 1: Sign in to Oracle Cloud Infrastructure
 
 - From any browser, enter the following url:
 
@@ -33,7 +33,7 @@ To complete this lab, you need to have the following:
   ![](./images/oci-sign-in.png " ")
 
 
-## **STEP 2**: Get Authentication Token to use Oracle Cloud Infrastructure Registry (OCIR)
+## Task 2: Get Authentication Token to use Oracle Cloud Infrastructure Registry (OCIR)
 
 - Once you logged in click your name on top-rigth corner and select **User Settings**. 
 
@@ -60,7 +60,7 @@ To complete this lab, you need to have the following:
 
  ![](images/100/ocir_token_save.png " ")
 
-## **STEP 3**: Sign in to Docker Account
+## Task 3: Sign in to Docker Account
 
 - Click [`Docker Login`](https://hub.docker.com/sso/start)
 
@@ -72,7 +72,7 @@ To complete this lab, you need to have the following:
 
   ![](./images/docker-sign-up.png " ") 
 
-## **STEP 4**: Accept Licence Agreement to use Oracle WebLogic Server image from Docker Store
+## Task 4: Accept Licence Agreement to use Oracle WebLogic Server image from Docker Store
 
 - If you have not used the base image [`Oracle WebLogic Server`](https://hub.docker.com/_/oracle-weblogic-server-12c) before, you will need to visit the [Docker Store web interface](https://hub.docker.com/_/oracle-weblogic-server-12c) and accept the license agreement before the Docker Store will give you permission to pull that image.
 
@@ -93,7 +93,7 @@ Open [https://hub.docker.com/_/oracle-weblogic-server-12c](https://hub.docker.co
 
 ![](images/100/05.docker.store.login.png " ")
 
-## **STEP 5**: Sign in to Github Account
+## Task 5: Sign in to Github Account
 
 - Click [`Github Login`](https://github.com/login)
 
@@ -105,7 +105,7 @@ Open [https://hub.docker.com/_/oracle-weblogic-server-12c](https://hub.docker.co
 
   ![](./images/github-sign-up.png " ") 
 
-## **STEP 6**: Pull Docker images for the operator and push to Oracle Cloud Infrastructure Registry (OCIR)
+## Task 6: Pull Docker images for the operator and push to Oracle Cloud Infrastructure Registry (OCIR)
 
 In this step you will fork the tutorial's source repository. The source repository contains the demo application deployed on top of WebLogic server, configuration yaml to quickly create Oracle Container Pipelines(CI/CD) application to build custom WebLogic image and few additional Kubernetes configuration files to deploy the custom WebLogic image.
 

@@ -22,7 +22,7 @@ Quick walk through on how the application can be scaled at the application and d
 
 This lab assumes that you have already completed the previous labs.
 
-## **STEP 1**:  Install a load testing tool and start an external load balancer for the Order service
+## Task 1:  Install a load testing tool and start an external load balancer for the Order service
 
 1. Start an external load balancer for the order service.
 
@@ -64,7 +64,7 @@ This lab assumes that you have already completed the previous labs.
 	<copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
 	```
 
-## **STEP 2**: Load test and scale the application tier
+## Task 2: Load test and scale the application tier
 
 1.  Execute a load test using the load testing tool you have installed.  
 
@@ -150,7 +150,7 @@ This lab assumes that you have already completed the previous labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## **STEP 3**: Load test and scale the database tier
+## Task 3: Load test and scale the database tier
 
 1. To scale the Order DB ATP database to **2 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
@@ -184,7 +184,7 @@ This lab assumes that you have already completed the previous labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## **STEP 4**: Scale down the application and database tiers
+## Task 4: Scale down the application and database tiers
 
 1. To scale the Order DB ATP database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 

@@ -14,7 +14,7 @@ Estimated Time: 10 minutes.
 
 Note: OCI Service Broker provisions an Autonomous Transaction Processing database with a public endpoint. It is currently not possible to provision the database in a private subnet via OCI Service Broker.
 
-## **STEP 1:** Get the Template Manifests for Autonomous Transaction Processing
+## Task 1: Get the Template Manifests for Autonomous Transaction Processing
 
 1. Download the example templates:
 
@@ -49,14 +49,14 @@ Note: OCI Service Broker provisions an Autonomous Transaction Processing databas
 
         This secret contains the content of the wallet to access the Autonomous Transaction Processing database.
 
-## **STEP 2:** Edit the Manifests
+## Task 2: Edit the Manifests
 
 1. Edit `atp-instance.yaml` and replace `CHANGE_COMPARTMENT_OCID_HERE` with the **compartment OCID** of the compartment where you deployed the OKE cluster.
 
 2. Edit `atp-demo.yaml` and replace `<USER_APPLICATION_IMAGE>` with `nginx` and replace the `apiVersion` to be `apps/v1`.
 
 
-## **STEP 3:** Deploy
+## Task 3: Deploy
 
 1. To deploy the mainfest use:
 
@@ -68,7 +68,7 @@ Note: OCI Service Broker provisions an Autonomous Transaction Processing databas
 
     This will deploy all the manifests in the `atp` folder.
 
-## **STEP 4:** Check the Deployment
+## Task 4: Check the Deployment
 
 1. Verify the database instance is being provisioned:
 
@@ -115,7 +115,7 @@ Note: OCI Service Broker provisions an Autonomous Transaction Processing databas
     If it does not show, then it is likely that the database is not fully provisioned yet. Check in the console and be patient.
 
 
-## **STEP 5:** Check the Wallet Content in the Demo App
+## Task 5: Check the Wallet Content in the Demo App
 
 The demo application doesn't do anything: it uses a generic nginx container that has not interaction with the database. It is solely to demonstrate how to get the wallet credentials inside the container.
 
@@ -154,7 +154,7 @@ You can verify the wallet is now accessible inside the demo app container by loo
 
     Now you know how to get the credentials for a dynamically provisioned Autonomous Transaction Processing database, and you can build your own app connecting to the database.
 
-## **STEP 5:** Clean Up
+## Task 5: Clean Up
 
 1. To undeploy, and terminate the Autonomous Transaction Processing instance, delete the Kubernetes instances with:
 

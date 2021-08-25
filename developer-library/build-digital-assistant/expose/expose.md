@@ -16,7 +16,7 @@ In this lab, you will:
 * Add a Chat Widget to the Web Page
 * Test the DA on the Web Channel
 
-## **STEP 1**: Create a New Channel
+## Task 1: Create a New Channel
 
 1. Click the main menu icon to open the side menu.
 2. Click **Development** and select **Channels**.
@@ -44,7 +44,7 @@ In this lab, you will:
   You will use it later on this lab while running the sample client application.
 
 
-## **STEP 2:** Set Up a Web Page
+## Task 2: Set Up a Web Page
 
 To create the web page from which users can access the DA:
 
@@ -54,7 +54,7 @@ To create the web page from which users can access the DA:
 
 3. Copy **native-client-sdk-js/web-sdk.js** from your Oracle Web SDK folder and put it in the **scripts** subfolder.
 
-## **STEP 3**: Add a Chat Widget to the Web Page
+## Task 3: Add a Chat Widget to the Web Page
 
 Now we'll add the chat widget to the web page:
 
@@ -105,7 +105,7 @@ Now we'll add the chat widget to the web page:
 4. Save your changes.
   Notice that the last <script\> element references the **web-sdk.js** file, which contains functions that enable you to programmatically send messages.
 
-## **STEP 4**: Test the DA on the Web Channel
+## Task 4: Test the DA on the Web Channel
 
 Let's try out the chat widget.
 

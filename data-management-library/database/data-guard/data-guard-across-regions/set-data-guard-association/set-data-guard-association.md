@@ -23,7 +23,7 @@ Estimated lab time:  10 minutes
 - Route Rules and Security Lists are configured for secure communication between primary and standby VCNs
 
 
-## **STEP 1:** Enable Data Guard by Association
+## Task 1: Enable Data Guard by Association
 1. Navigate to your Database Cloud Service in your primary region.
 
 
@@ -77,7 +77,7 @@ Data Guard is defaulted to Maximum Performance Protection Mode which means the r
 
 Because the networking and remote peering connection is configured, the standby database and Data Guard will automatically be created.
 
-## **STEP 2:** Check your standby region.  
+## Task 2: Check your standby region.  
 1. Ensure the standby database is provisioning.
 
   ![dbstby-provisioning](./images/dbstby-provisioning-copy.png)

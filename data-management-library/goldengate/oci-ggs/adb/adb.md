@@ -18,7 +18,7 @@ In this lab, you will:
 * Create the target Autonomous Data Warehouse database and its schema
 
 
-## **STEP 1**: Create the Autonomous Transaction Processing instance
+## Task 1: Create the Autonomous Transaction Processing instance
 
 1. Log in to the [Oracle Cloud Infrastructure Console](https://login.us-phoenix-1.oraclecloud.com/) with your username and password.
 
@@ -38,7 +38,7 @@ In this lab, you will:
 
    If you can access the SQL Page successfully, then you can proceed to the next section.
 
-## **STEP 2:** Verify the target Autonomous Data Warehouse connection details
+## Task 2: Verify the target Autonomous Data Warehouse connection details
 
 1. Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 

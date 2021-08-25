@@ -27,7 +27,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 1:** Re-Design and Create the Demo Schema
+## Task 1: Re-Design and Create the Demo Schema
 
 Before the existing database can be migrated to the sharded database, you must decide how to organize the sharded database. You must decide which tables in the application are sharded and which tables are duplicated tables. In this lab, we have already created a scripts for the sharded demo schema. It creates a sharded table family: `Customers-->Orders-->LineItems` using the sharding key `CustId`, and the `Products` is the duplicated table.
 
@@ -430,7 +430,7 @@ Before the existing database can be migrated to the sharded database, you must d
 
     
 
-## **STEP 2:** Verify the Sharded Demo Schema
+## Task 2: Verify the Sharded Demo Schema
 
 Now, we can verify the sharded demo schema which created in the previous step. 
 
@@ -820,7 +820,7 @@ Now, we can verify the sharded demo schema which created in the previous step.
 
 
 
-## **STEP 3:** Migrate Data to the Sharded Tables
+## Task 3: Migrate Data to the Sharded Tables
 
 Now, we will load data into sharded database using the dump file which created in the previous lab. 
 
@@ -965,7 +965,7 @@ Loading the data directly into the database shards is much faster, because each 
 
     
 
-## **STEP 4:** Setup and Run the Demo Application
+## Task 4: Setup and Run the Demo Application
 
 Migrate application to the sharded database a slight change to the application code.  In this workshop, the demo application is designed for sharded database. You need to create additional objects needed by the demo application.
 

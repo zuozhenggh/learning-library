@@ -25,7 +25,7 @@ We have already provisioned Cloud Manager in a private subnet (cm) and the Jump 
 - A PeopleSoft Cloud Manager Instance
 - A downloaded PeopleSoft Image
 
-## **STEP 1**: Creating a New Environment Template and General Details
+## Task 1: Creating a New Environment Template and General Details
 
 Navigate to Cloud Manager Dashboard -> **Environment Template**
     ![](./images/1dashtemp.png "")
@@ -44,7 +44,7 @@ Click **Add New Template** button.
 
   Click **Next** when you have this:
     ![](./images/3tempname.png "")
-## **STEP 2**: Select Topology
+## Task 2: Select Topology
 1. Click the **search icon** and select **PUM Fulltier** for the topology
 2. Expand **Custom Attributes** and select **PUM Fulltier** again from the drop down.
 3. Click on **Edit Custom Attributes**
@@ -75,7 +75,7 @@ Click **Add New Template** button.
 
 Click **Next**
 
-## **STEP 3**: Security and Policies
+## Task 3: Security and Policies
 
 Now, we'll select the Zone and Role Names
 
@@ -97,7 +97,7 @@ When you see this, click **Next**
   ![](./images/17next.png "")
 
 
-## **STEP 4**: Summary
+## Task 4: Summary
 
 Review the Environment Template and click **Submit**
     ![](./images/18submit.png "")

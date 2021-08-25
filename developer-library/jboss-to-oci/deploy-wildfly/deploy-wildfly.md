@@ -21,7 +21,7 @@ For this lab, you need:
 * Git installed.
 * Terraform installed. If you need guidance to setup Terraform, please visit the [prerequistes](https://github.com/oracle-quickstart/oci-prerequisites) document.
 
-## **STEP 1**: Gather Required Information
+## Task 1: Gather Required Information
 
 1. Get your `tenancy OCID`.
 
@@ -64,7 +64,7 @@ For this lab, you need:
     ![](./images/setup-tf-fingerprint.png)
 
 
-## **STEP 2:** Get the Terraform Code
+## Task 2: Get the Terraform Code
 
 For this step, you should open a separate shell terminal, so you are on your local machine (not the docker container).
 
@@ -108,7 +108,7 @@ For this step, you should open a separate shell terminal, so you are on your loc
     </copy>
     ```
 
-## **STEP 3:** Create a `terraform.tfvars` Config File
+## Task 3: Create a `terraform.tfvars` Config File
 
 To run the deployment, you need to define a few settings in a file named `terraform.tfvars`.
 
@@ -148,7 +148,7 @@ To run the deployment, you need to define a few settings in a file named `terraf
 
 3. Save the `terraform.tfvars` file.
 
-## **STEP 4:** Run the Deployment
+## Task 4: Run the Deployment
 
 1. Initialize the project:
 

@@ -10,7 +10,7 @@ Estimated Lab Time: 5 minutes
 In this lab, you will:
 - Create a package to manage the Shopping Cart.
 
-## **STEP 1**: Creating the Package
+## Task 1: Creating the Package
 Create specification and body for the package.
 
 1. Navigate to **SQL Workshop**, click **Object Browser**.

@@ -12,15 +12,13 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 
-*Note:* All screenshots for SSH terminal type tasks featured throughout this workshop were captured using the *MobaXterm* SSH Client as described in this step. As a result when executing such tasks from within the graphical remote desktop session you can skip steps requiring you to login as user *oracle* using *sudo su - oracle*, the reason being that the remote desktop session is under user *oracle*.
+*Note:* All screenshots for SSH terminal type tasks featured throughout this workshop were captured using the *MobaXterm* SSH Client as described in this step. As a result when executing such tasks from within the graphical remote desktop session, skip steps requiring you to login as user *oracle* using *sudo su - oracle*, the reason being that the remote desktop session is under user *oracle*.
 
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
@@ -30,14 +28,7 @@ This lab assumes you have:
     - Enterprise Manager - Management Agent (emagent)
     - My HR Applications on Glassfish
 
-2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, do the following:
-    - Click on the *Workshop Links* folder in the *Firefox* toolbar area
-    - Open the *Common to All Workshops* folder
-    - Click on *Open All in Tabs*.  
-
-    ![](images/open-all-links.png " ")
-
-    - Optionally, If you want to further validate login for *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+2. On the web browser window on the right is a tab preloaded with *Enterprise Manager*, login with the credentials below to validate that it's operational. If the login page is not displayed on first login to the remote desktop, refresh to reload. It takes ~15 minutes for all processes to fully start.
 
     ```
     Username: <copy>sysman</copy>
@@ -49,11 +40,31 @@ This lab assumes you have:
 
     ![](images/em-login.png " ")
 
-3. Confirm successful rendering of *EM 13c Console* and *My HR Applications* in 3 new tabs. Please note that it takes about 10 minutes after instance provisioning for all processes to fully start.
+3. Open new browser tabs and confirm successful rendering of *My HR Applications* listed below.
+
+    - PDB1
+
+    ```
+    Prod: <copy>http://dbsec-lab:8080/hr_prod_pdb1</copy>
+    ```
+
+    ```
+    Dev: <copy>http://dbsec-lab:8080/hr_dev_pdb1</copy>
+    ```
+
+    - PDB2
+
+    ```
+    Prod: <copy>http://dbsec-lab:8080/hr_prod_pdb2</copy>
+    ```
+
+    ```
+    Dev: <copy>http://dbsec-lab:8080/hr_dev_pdb2</copy>
+    ```
 
     If all are successful, then your environment is ready.  
 
-4. If you are still unable to get all 3 links to render successfully, open a terminal session and proceed as indicated below to validate the services.
+4. If you are still unable to get all *Enterprise Manager* and all links above to render successfully, open a terminal session and proceed as indicated below to validate the services.
 
     - Database services (All databases and Standard Listener)
 
@@ -180,28 +191,8 @@ If for any reason you want to login from a location that is external to your rem
       - Prod        : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_prod_pdb2`  (menu: red)
       - Dev         : `http://<YOUR_DBSECLAB-VM_PUBLIC-IP>:8080/hr_dev_pdb2`   (bg: red & menu: red)
 
-## Appendix 3: External Terminal Access (using SSH Key Based Authentication)
-
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
-
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
 
 ## Acknowledgements
 - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
 - **Contributors** - Hakim Loumi
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2021

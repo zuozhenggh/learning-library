@@ -18,7 +18,7 @@ In this lab, you will:
 - Understand basic model terminology FAP - False Alarm Probability
 
 
-## **STEP 1:** Create a Model
+## Task 1: Create a Model
 
 Creating a model is requiring the 3 actions to kick off training the AD model.
 
@@ -61,12 +61,12 @@ Train Fraction Ratio specifies the ratio of the whole training data used for our
 In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
 ![](../images/create_and_train_model.png " ")
 
-Click Submit. For this demo dataset, it takes **5 minutes** to finish training a model.
+Click Submit. For this demo dataset, it takes **10-15 minutes** to finish training a model.
 ![](../images/model_creation.png " ")
 
 Once the model is trained successfully, it is automatically ready for detecting anomalies from new data. User can either use the cloud Console (next step) or the endpoint to send new testing data.
 
-## **STEP 2:** Detect Anomaly with new Data
+## Task 2: Detect Anomaly with new Data
 
 ### Upload to UI
 
