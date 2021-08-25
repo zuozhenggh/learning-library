@@ -9,7 +9,7 @@ In this lab, you will get started with the Oracle Autonomous Database on Oracle 
 
 You will provision a new Autonomous Data Warehouse (ADW) instance.
 
-**Note:** While this lab uses ADW, the tasks are identical for creating an ATP database.
+> **Note:** While this lab uses ADW, the tasks are identical for creating an ATP database.
 
 _Estimated Time:_ 5 minutes
 
@@ -27,7 +27,7 @@ This lab assumes you have:
 
 - Logged into your Oracle Cloud Account
 
-## **TASK 1**: Provision ADW
+## Task 1: Provision ADW
 
 1. Go to **Menu** > **Oracle Database** > **Autonomous Data Warehouse**.
 
@@ -85,4 +85,5 @@ You may now *proceed to the next lab*.
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributor** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

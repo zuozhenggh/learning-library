@@ -16,6 +16,8 @@ _Estimated Time:_ 10 minutes
 ![Banner](images/banner.jpg)
 
 ### Objectives
+In this lab, you will:
+
 - Learn how a SailGP Data Athlete extracts valuable insights from sensor data
 - Learn how to use Oracle Analytics Cloud to prepare and analyze data
 
@@ -26,7 +28,7 @@ This lab assumes you have:
 - Provisioned Autonomous Data Warehouse
 - Completed the first SailGP analytics Lab
 
-## **TASK 1**: Investigate Start Performance (Part 1)
+## Task 1: Investigate Start Performance (Part 1)
 
 <!--
 To give you an impression, have a look at this video. You can see how teams are trying to get in the best possible position and with the highest speeds.
@@ -102,7 +104,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/to-homepage4.png)
 
-## **TASK 2**: Add Geographical Data Of The Race Course
+## Task 2: Add Geographical Data of the Race Course
 
 1. **Download** a file that contains all the geographical elements (such as starting line, waypoints and finish line) from <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/XfJRoExhW_0WX_aspj4H1U2Ce8vDA45SRZFW_27KmXYRFXbyRNhjvvU98cB5FbVG/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_bermuda.geojson" target="\_blank">File with Bermuda geo elements</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.geojson`.
 
@@ -150,7 +152,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/to-homepage3.png)
 
-## **TASK 3**: Investigate Start Performance (Part 2)
+## Task 3: Investigate Start Performance (Part 2)
 
    Now we're ready to include the geographical elements such as starting line, waypoints and finish line.
 
@@ -180,7 +182,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/time-grp-viz.png)
 
-8. In the resulting table, click on the "0" to highlight the positions at `TIME_GRP` = **0**.
+7. In the resulting table, click on the **0** to highlight the positions at `TIME_GRP` = 0.
 
    ![pic2](images/select-time-grp-0.png)
 
@@ -199,4 +201,5 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributor** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

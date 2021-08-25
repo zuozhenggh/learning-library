@@ -23,16 +23,17 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
+
 - An Oracle Free Trial Account
 
-## **TASK 1:** Understand The Types Of Users In Oracle Cloud
+## Task 1: Understand the Types of Users in Oracle Cloud
 
 1. Oracle Cloud has two types of users:
 
    - **OCI Native users**: represent users like you, or applications that can perform operations on OCI native services
    - **OCI Federated users**: users with Identity Cloud Service (IDCS). IDCS is an Identity Provider included with Oracle Cloud to manage Identity services beyond basic users, groups and roles capabilities. For example, OAuth2.0, Multi Factor Authentication, etc
 
-   **NOTE:** Oracle Analytics Cloud (OAC) requires a Federated user.
+   > **Note:** Oracle Analytics Cloud (OAC) requires a Federated user.
 
 2. Go to **Profile** on the top-right corner and make sure your user has the name **oracleidentitycloudservice/** appended before your email, like in the picture:
 
@@ -52,7 +53,7 @@ This lab assumes you have:
 
    For more information about federated users, see [User Provisioning for Federated Users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 
-## **TASK 2:** Create An Oracle Analytics Cloud (OAC) Instance
+## Task 2: Create an Oracle Analytics Cloud (OAC) Instance
 
 1. Return to the Home Page and go to the **Menu** > **Analytics & AI** > **Analytics Cloud**.
 
@@ -77,7 +78,7 @@ This lab assumes you have:
 
    ![pic3](images/oac-creating.png)
 
-   **NOTE:** Provisioning an Oracle Analytics Cloud instance can take from 10 (most likely) to 40 minutes.
+   > **Note:** Provisioning an Oracle Analytics Cloud instance can take from 10 (most likely) to 40 minutes.
 
    We will get back to your Oracle Analytics Cloud instance later in the workshop.
 
@@ -85,4 +86,5 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributor** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

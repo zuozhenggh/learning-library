@@ -8,14 +8,19 @@ _Estimated Time:_ 10 minutes
 ![Banner](images/banner.jpg)
 
 ### Objectives
+
+In this lab, you will:
+
 - Learn how to load data into the data warehouse, so you can analyze it later.
 
 ### Prerequisites
+
 This lab assumes you have:
+
 - Logged into your Oracle Cloud Account
 - Provisioned Autonomous Data Warehouse
 
-## **TASK 1**: Create A New Database User/Schema In Autonomous Data Warehouse
+## Task 1: Create a New Database User/Schema in Autonomous Data Warehouse
 
 This new user/schema will hold the SailGP data.
 
@@ -76,19 +81,20 @@ This new user/schema will hold the SailGP data.
    Confirm by clicking "Rest Enable User".
 -->
 
-## **TASK 2**: Upload SailGP Data To Autonomous Data Warehouse
+## Task 2: Upload SailGP Data to Autonomous Data Warehouse
 
 1. **Download** the three files that contain the data that we'll use in our analysis:
 
-   - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/azjOfz91f8jdUPfvkxVzVUFtb2n-Jj_lXYaWQhvgCLsnOMMPvpLruqaAf5sJduNc/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_strm_pivot.csv" target="\_blank">File 1</a>
-   - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5yCpZHlzTE70fotF5LS7sYpIQfOi-XdSQ8DhQRSVsClX7cxIq7YvpmSS8wxX5gaM/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_sail_history.csv" target="\_blank">File 2</a>
-   - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/s-A4eEJl4OxSdt02-TcTyz-bQvC_IGczI_PLRflfXx_gzosdKk5t97qMp2UtZ_OU/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_windspeed_and_windangles.csv" target="\_blank">File 3</a>
+    - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/azjOfz91f8jdUPfvkxVzVUFtb2n-Jj_lXYaWQhvgCLsnOMMPvpLruqaAf5sJduNc/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_strm_pivot.csv" target="\_blank">File 1</a>
+    - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5yCpZHlzTE70fotF5LS7sYpIQfOi-XdSQ8DhQRSVsClX7cxIq7YvpmSS8wxX5gaM/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_sail_history.csv" target="\_blank">File 2</a>
+    - <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/s-A4eEJl4OxSdt02-TcTyz-bQvC_IGczI_PLRflfXx_gzosdKk5t97qMp2UtZ_OU/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_sgp_windspeed_and_windangles.csv" target="\_blank">File 3</a>
 
    Save the files on your local machine. Make sure that the files are saved with extension `.csv`.
 
+
 2. Next, come back to your `SAILGP` ADW console, go to **Tools** tab and click **Open Database Actions**.
 
-   > You should still have a browser tab open with the main page of the Autonomous Data Warehouse service. If not, navigate to this page first. Then, open Database Actions.
+   You should still have a browser tab open with the main page of the Autonomous Data Warehouse service. If not, navigate to this page first. Then, open Database Actions.
 
    **_IMPORTANT_: This time, login with user `SAILOR`, password `Oracle_12345` (Don't login with ADMIN)**
 
@@ -102,7 +108,7 @@ This new user/schema will hold the SailGP data.
 
     ![Start Data Load](images/start-data-load.png)
 
-5. Click "Select Files" and select the 3 files that you downloaded earlier.
+5. Click **Select Files** and select the 3 files that you downloaded earlier.
 
     ![Select Files](images/select-files.png)
 
@@ -120,4 +126,5 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributor** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021
