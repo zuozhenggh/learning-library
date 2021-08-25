@@ -19,7 +19,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
-> **Note**: Interfaces in the following screenshots may be different from interfaces you will see.
+> **Note**: Interfaces in the following screenshots may look different from the interfaces you will see.
 
 ## Task 1: Create Your Free Trial Account
 

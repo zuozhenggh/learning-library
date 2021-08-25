@@ -555,7 +555,7 @@ Data is capital and the built-in Catalog tool allows you to maximize its value. 
 
 ### Change the Filter
 
-7. On the upper left of the screen, just above the cards, is the **filter** icon. If it is not highlighted, click this.
+7. On the upper left of the screen, just above the cards, is the **filter** icon. If it is not highlighted, click it.
 8. Under Entity Type, click **More...** and check the boxes for Analytic View and Business Model. Then click **Apply**.
   ![ALT text is not available for this image](images/filter.png)
 9. You now see that the Entity Type list at the top has been expanded correspondingly, and that four cards are displayed. Besides the two tables you saw initially, there are now cards for the Business Model and the Analytic View on which it's based. 
