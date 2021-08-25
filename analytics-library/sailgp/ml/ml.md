@@ -415,5 +415,5 @@ Congratulations on completing the lab! Now you've learned the basics of machine 
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela, Arabella Yao
+- **Contributors** - Priscila Iruela, Arabella Yao
 - **Last Updated By** - Arabella Yao, August 2021
