@@ -12,7 +12,6 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [dbsec-basics-v3-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uInBuHTWiaS9QMSUZCMUhefu74NqaYtAlQEHDYgjMCLj924MUNnGwP6GEk5XZkTv/n/natdsecurity/b/stack/o/dbsec-basics-v3-freetier.zip)
@@ -29,6 +28,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 22             | SSH                                   |
 | 80             | Application (http)                    |
 | 443            | Application (https)                   |
+| 6080           | Remote Desktop (noVNC)                |
 | 7803           | Oracle Enterprise Manager             |
 | 8080           | Glassfish Application                 |
 | 50002          | Golden Gate Administration Service    |

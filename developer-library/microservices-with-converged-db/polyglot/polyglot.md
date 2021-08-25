@@ -38,9 +38,15 @@ This lab assumes you have already completed the previous labs.
 
 ## Task 2: Deploy an alternate implementation of the Inventory Microservice
 
-In this step you can choose between three different implementations of the Inventory Microservice: (1) Java Helidon SE, (2) Python, or (3) Node.js
+In this step you can choose between six different implementations of the Inventory Microservice: PL/SQL, Python, NodeJS, .NET, Go, or Java Helidon SE.
 
 1. Select one of the alternate implementations and deploy the service for the selected implementation.  
+
+  If you selected **PL/SQL**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-plsql; ./deploy.sh</copy>
+    ```
 
    If you selected **Python**, deploy this service:
 
@@ -82,7 +88,7 @@ In this step you can choose between three different implementations of the Inven
 
     ```
     <copy>
-    for i in inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME
     </copy>
@@ -93,4 +99,4 @@ In this step you can choose between three different implementations of the Inven
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Last Updated By/Date** - Richard Exley, August 2021
