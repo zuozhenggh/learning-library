@@ -423,7 +423,7 @@ Estimate Lab Time: 20 minutes
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.PNG)
+    ![Update Key File Path](./images/update-keyfile-path.png)
 
 4. To save and quit vi editor.
 
