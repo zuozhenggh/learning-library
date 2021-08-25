@@ -15,14 +15,14 @@ In this lab, you will:
 * Harvest the data asset.
 * View the harvested data entities.
 
-## **Task 1:** Log in to the Oracle Cloud Console
+## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-## **Task 2**: Create an Object Storage Data Asset
+## Task 2: Create an Object Storage Data Asset
 
 Register your Oracle Object Storage data sources with Data Catalog as a data asset.
 
@@ -171,7 +171,7 @@ Add a connection to the **moviestream_gold** bucket to your new **`Oracle Object
    ![](./images/data-connection-added.png " ")
 
 
-## **Task 4**: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
+## Task 4: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
 
 Your data lake typically has a large number of files that represent a single data set. You can group multiple Object Storage files into logical data entities in Data Catalog using filename patterns. A filename pattern is a regular expression that is created to group multiple Object Storage files into a logical data entity that can be used for search and discovery. Using logical data entities, you can organize your data lake content meaningfully and prevent the explosion of your entities and attributes in your Data Catalog.
 If an Object Storage file is matched with multiple filename patterns, it can be part of multiple logical data entities.
@@ -266,7 +266,7 @@ Create a filename pattern as follows:
 When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
 
-## **Task 5**: Harvest the Data Asset
+## Task 5: Harvest the Data Asset
 
 After you create a data asset in the Data Catalog repository, you harvest the data asset to extract the data structure information into the Data Catalog and view its data entities and attributes. In this task, you will harvest the **moviestream\_landing** and **moviestream\_gold** Oracle Object Storage buckets that contain the data.
 
@@ -332,7 +332,7 @@ Harvest the data entities from the **moviestream\_landing** data asset as follow
 
 After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
-## **Task 6**: View Harvested Data Entities
+## Task 6: View Harvested Data Entities
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 

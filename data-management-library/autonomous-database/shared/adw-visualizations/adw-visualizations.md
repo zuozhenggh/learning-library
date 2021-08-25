@@ -12,7 +12,7 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 
 ## Task 1: Install Oracle Analytics Desktop on a Windows Desktop
 
-1. Download the latest version of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from <a href="http://www.oracle.com/technetwork/middleware/oracle-data-visualization/downloads/oracle-data-visualization-desktop-2938957.html" target="\_blank"> here</a>.
+1. Download *version 5.9* of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from Oracle Software Delivery Cloud <a href="https://edelivery.oracle.com/osdc/faces/SoftwareDelivery" target="\_blank"> here</a>. Do not use version 6.x of Oracle Analytics Desktop.
 
 2. After saving the installer executable file, click on the installer and follow the guided steps.
 
@@ -120,7 +120,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
    | --------------------- | :--------------------------------------------- |
    | Connection Name:      | Type in '**SALES_HISTORY**'                             |
    | Service Name:         | Scroll the drop-down field and select **adwfinance_high**, or the **high** service level of the database name you specified in Lab 1. |
-   | Client Credentials:   | Click '**Select...**' and select the wallet zip file that you downloaded in Step 3.3. A file with .sso extension will appear in the field.   |
+   | Client Credentials:   | Click '**Select...**' and select the wallet zip file that you downloaded in Task 3.3. A file with .sso extension will appear in the field.   |
    | Username:             | Insert username created in previous labs, likely **ADMIN**.  Same username as SQL Worksheet and SQL Developer credentials. |                                            
    | Password              | Insert password created in previous labs.  Same password as SQL Worksheet and SQL Developer credentials. |
 
@@ -191,9 +191,9 @@ No matter what your role is in the organization, access to data timely can provi
 
  You may **Save** this project if you need. At this point, with very few steps, you now have something that can further bring your data to life and you can begin to make some data-driven decisions.  As you share this with others, more people will want to gain access to and benefit from the data. To enable this, the Oracle Autonomous Database in ADW or ATP is easy to use, fast, elastic, and will be able to quickly scale to meet your growing data and user base.
 
-## (Optional) **STEP 6**: Exporting your DVA (project) File
+## (Optional) **Task 6**: Exporting your DVA (project) File
 
-This step enables you to share your project file with colleagues.
+This task enables you to share your project file with colleagues.
 
 1. Click the menu at the top left corner of the screen, and select __Home__.
 

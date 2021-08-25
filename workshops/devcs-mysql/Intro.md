@@ -8,7 +8,7 @@ To learn more about this workshop please watch the video below.
 
 <a href="https://videohub.oracle.com/media/Devops+and+IaC+Overview/1_5froypa9" target="video">Workshop Overview</a>
 
-### **Step 1**: Acquire an Oracle Cloud Trial Account
+### Task 1: Acquire an Oracle Cloud Trial Account
 
 - Bookmark this page for future reference.
 
@@ -18,7 +18,7 @@ To learn more about this workshop please watch the video below.
 
   ![](images/100/code_9.png)
 
-### **Step 2**: Navigate to Lab 100
+### Task 2: Navigate to Lab 100
 
 - _You can see a list of Lab Guides_ by clicking on the **Menu Icon** hamburger in the upper left corner of the browser window. Then, **Select Lab 100: Infrastructure as Code**.
 

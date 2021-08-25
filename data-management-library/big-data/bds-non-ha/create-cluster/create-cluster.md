@@ -28,7 +28,7 @@ Watch a video demonstration of creating a simple non-HA Hadoop cluster:
 [](youtube:zpASc1xvKOY)
 
 
-## **Task 1:** Create a Cluster
+## Task 1: Create a Cluster
 There are many options when creating a cluster. You will need to understand the sizing requirements based on your use case and performance needs. In this lab, you will create a small testing and development cluster that is not intended to process huge amounts of data. It will be based on small Virtual Machine (VM) shapes that are perfect for developing applications and testing functionality at a minimal cost.
 
 Your simple non-HA cluster will have the following profile:
@@ -173,7 +173,7 @@ Create the cluster as follows:
     ![](./images/status-creating.png " ")
 
 
-## **Task 2:** Monitor the Cluster Creation
+## Task 2: Monitor the Cluster Creation
 
 The process of creating the cluster takes approximately one hour to complete; however, you can monitor the cluster creation progress as follows:
 
@@ -248,7 +248,7 @@ The process of creating the cluster takes approximately one hour to complete; ho
 > _**Note:**_  
 _If you are using a Free Trial account to run this workshop, Oracle recommends that you delete the BDS cluster when you complete the workshop to avoid unnecessary charges._    
 
-## **Task 3:** Review Locations of Services in the Cluster
+## Task 3: Review Locations of Services in the Cluster
 
   The `training-cluster` cluster is a non-highly available (non-HA) cluster; therefore, the services are distributed as follows:
 

@@ -75,7 +75,7 @@ This workshop assumes you have:
 	![](./images/task1-111.png " ")
 	![](./images/task1-112.png " ")
 
-## **STEP 2** Define the REST End Points and Enable the Schema
+## Task 2: Define the REST End Points and Enable the Schema
 
 By default the schema is not registered with ORDS. Let's define REST endpoints for the bank_ledger schema and enable the schema.
 

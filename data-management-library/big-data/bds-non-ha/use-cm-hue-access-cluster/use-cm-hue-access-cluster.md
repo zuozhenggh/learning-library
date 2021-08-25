@@ -36,7 +36,7 @@ Watch a video demonstration of using Cloudera Manager and Hue to access a Big Da
 
 [](youtube:dAGD1If39fw)
 
-## **Task 1:** Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
+## Task 1: Create Ingress Security Rules (and Open Ports) for Cloudera Manager and Hue
 
 In this task, you will <if type="freetier">add</if> <if type="livelabs">review how to add
 </if> ingress security rules to the default security list in your cluster's VCN. This will allow access from anywhere on the internet to Cloudera Manager on port **`7183`** and Hue on port **`8888`**.
@@ -105,7 +105,7 @@ In this task, you will <if type="freetier">add</if> <if type="livelabs">review h
 
   ![](./images/ingress-rules-added.png " ")
 
-## **Task 2:** Use Cloudera Manager (CM) to Access the Cluster
+## Task 2: Use Cloudera Manager (CM) to Access the Cluster
 
 In this task, you will use CM to access the cluster. In a non-HA cluster, CM runs on the first utility node, **`traininun0`**. You will use the reserved public IP address that is associated with **`traininun0`** that you created in task 2 of **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -176,7 +176,7 @@ In this task, you will use CM to access the cluster. In a non-HA cluster, CM run
 
     ![](./images/logout-cm.png " ")
 
-## **Task 3:** Use Hue to Access the Cluster
+## Task 3: Use Hue to Access the Cluster
 
 In this task, you will use Hue to access the cluster. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun0`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
