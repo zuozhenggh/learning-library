@@ -1,18 +1,17 @@
 # Clone a PDB from a Remote CDB by Using DBCA in Silent Mode
 
 ## Introduction
-Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to create a clone of a PDB that resides in a remote CDB (a different CDB than the one in which you are creating the clone). To do this, you use the `-createPluggableDatabase` command in DBCA with the new parameter called `-createFromRemotePDB`. In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2.
->**Note:** Before you can clone a PDB to another CDB, you need to put your CDBs into `ARCHIVELOG` mode.
+Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to create a clone of a PDB that resides in a remote CDB (a different CDB than the one in which you are creating the clone). To do this, you use the `-createPluggableDatabase` command in DBCA with the new parameter called `-createFromRemotePDB`. Before you can clone a PDB to another CDB, you need to put your CDBs into `ARCHIVELOG` mode.
 
-Estimated Lab Time: 30 minutes
+In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-installed` compute instance.
+
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-- Enable `ARCHIVELOG` mode on CDB1 and CDB2
-- Verify that the default listener is started
-- Verify that PDB1 has sample data
+- Prepare your environment
 - Create a common user and grant it privileges
 - Use DBCA to clone a remote PDB from a CDB
 - Verify that PDB1 is cloned and that `HR.EMPLOYEES` exists in PDB2
@@ -23,7 +22,9 @@ In this lab, you will:
 This lab assumes you have:
 - Obtained and signed in to your `workshop-installed` compute instance.
 
-## Task 1: Enable `ARCHIVELOG` mode on CDB1 and CDB2
+## Task 1: Prepare your environment
+
+To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify that the default listener is started, and verify that PDB1 has sample data.
 
 1. Open a terminal window on the desktop.
 
@@ -41,9 +42,14 @@ This lab assumes you have:
     CDB2
     ```
 
-## Task 2: Verify that the default listener is started
+4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
-1. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
+    ```
+    $ <copy>. oraenv</copy>
+    ORACLE_SID = [ORCL] ? CDB1
+    ```
+
+5. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -86,30 +92,19 @@ This lab assumes you have:
     The command completed successfully
     ```
 
-2. If LISTENER is not started, start it now.
+6. If the default listener is not started, start it now.
 
     ```
     LSNRCTL> <copy>lsnrctl start</copy>
     ```
 
-
-## Task 3: Verify that PDB1 has sample data
-
-1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
-
-    ```
-    $ <copy>. oraenv</copy>
-    ORACLE_SID = [ORCL] ? CDB1
-    ```
-
-2. Connect to PDB1.
+7. Connect to PDB1.
 
     ```
     SQL> <copy>sqlplus system/Ora4U_1234@PDB1</copy>
-    Session altered.
     ```
 
-3. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+8. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -121,11 +116,18 @@ This lab assumes you have:
           107
     ```
 
-## Task 4: Create a common user and grant it privileges to clone a database
+9. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+
+    ```
+    SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
+    ```
+
+
+## Task 2: Create a common user and grant it privileges to clone a database
 
 A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create a user called `c##remote_user`, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
 
-1. Connect to CDB1 as `SYS`.
+1. Connect to CDB1 as the `SYS` user.
 
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
@@ -153,7 +155,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## Task 5: Use DBCA to clone a remote PDB from a CDB
+## Task 3: Use DBCA to clone a remote PDB from a CDB
 
 In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
@@ -184,7 +186,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB2/CDB2.log</copy>
     ```
 
-## Task 6: Verify that PDB1 is cloned and that `HR.EMPLOYEES` exists in PDB2
+## Task 4: Verify that PDB1 is cloned and that `HR.EMPLOYEES` exists in PDB2
 
 1. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
@@ -214,7 +216,6 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     SQL> <copy>alter session set container = PDB2;</copy>
-
     Session altered.
     ```
 
@@ -234,7 +235,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     SQL> <copy>exit</copy>
     ```
 
-## Task 7: Reset your environment
+## Task 5: Reset your environment
 
 1. Delete PDB2.
 
@@ -304,4 +305,4 @@ You may now proceed to the next lab.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 25 2021
