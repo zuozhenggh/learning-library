@@ -16,23 +16,26 @@ We provide some scripts and steps below that can be used to allow invoking OCI R
 
 ### 1. Import the environment into Postman
 
-Download the [OCI Environment](./files/OCI_Environment.postman_environment.json) and Import the environment into Postman using the 'Import' button at the top, and activate it by selecting it from the top right drop-down as shown below
+Download the [OCI Environment](./files/OCI_Environment.postman_environment.json) and Import the environment into Postman using the 'Import' button at the top.
 
-![](./images/import.png " ")
+![](./images/importENV.png " ")
+
+Make sure to set OCI_Environment as the active environment
+![](./images/setActive.png " ")
 
 ### 2. Set the Variables
-Open and Edit the newly imported environment(OCI_Environment) by clicking the eye button, and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same as what we collected in the Lab 3 (SDK Setup section) above.
+Open and Edit the newly imported environment(OCI_Environment), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same as what we collected in the Lab 3 (SDK Setup section) above.
 
 Also, make sure to set both Initial Value and Current Value of the variables. 
 
-![](./images/eye.png " ")
+![](./images/setVar.png " ")
 
 ### 3. Import the Collections
 Download and import [OCI REST INITIALIZATION](./files/OCI_REST_INITIALIZATION.postman_collection.json) and [OCI REST COLLECTION](./files/OCI_REST_COLLECTION.postman_collection.json) into Postman using the 'Import' button at the top.
 
 ### 4. Execute OCI REST Initializer
 From the OCI REST INITIALIZATION collection, invoke the Initializer GET for 'jsrsasign-all-min.js' , which imports and initializes a required library jsrsasign for encryption and digital signatures. This is a one-time setup task. 
-![](./images/3.png " ")
+![](./images/initializeREST.png " ")
 
 <!-- ### 5. Add Request in OCI REST COLLECTION
 
@@ -54,7 +57,7 @@ Enter the text you want to analyze in the body as shown below:
 }<copy>
 ```
 Below in the example shown to invoke Detect Language Service.
-![](./images/request.png " ")
+![](./images/collectionREST.png " ")
 
 OCI Language Service EndPoints for all the services:
 
