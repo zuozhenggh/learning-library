@@ -18,7 +18,7 @@ Estimated Lab Time: 10 minutes
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 
 ### Going A Little Deeper
@@ -137,8 +137,6 @@ This statement calculates the contribution for the new row LONG WEEKEND by takin
 3. This will generate the following output:
 
     ![Result of query using MODEL clause](images/lab-5b-task-3-step-3.png)
-
-
 
 
 
