@@ -21,7 +21,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1**: Remove Deployments.
+## Task 1: Remove Deployments.
 
 1. If you don't have a terminal window opened yet, right click on the Desktop of the VNC session and se
 
@@ -79,14 +79,14 @@ Below example will guide to how to delete the deployment **"Source"** - (***Atla
         Successfully Setup Software.
         [oracle@OGG181DB183 Reset]$
 
-## **STEP 2**: Create Deployments (if needed)
+## Task 2: Create Deployments (if needed)
 
 1. Run the **build_deployments.sh** script.  This script does the following:
 
     -   Creates the ***Atlanta*** and  ***SanFran*** deployments using a response file for OGGCA.
     -   Creates the Credentials for the deployments for uni-directional replication (Atlanta to SanFran).
 
-## **STEP 3**: Refresh Databases (if needed)
+## Task 3: Refresh Databases (if needed)
 
 In this step you will run several scripts.
 

@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Start And Validate The Required Processes For The Subsequent Labs.
+## Task 1: Start And Validate The Required Processes For The Subsequent Labs.
 1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running.
 
     ![](./images/convg-novnc-guide.png " ")

@@ -27,7 +27,7 @@ This lab assumes you have:
     - Lab: Data Auditing
 
 
-## **Step 1:** Normalize Whitespace
+## Task 1: Normalize Whitespace
 
 1.	Create a New Process under your project in the “Project Browser” by right-clicking on “Processes” and clicking “New Process…”.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 6.	Click the “Run” icon to start the process.
 
-## **Step 2:** Enhance from Map
+## Task 2: Enhance from Map
 1.	Find the “Enhance from Map” processor from the “Tool Palette” (you can use the "Search" field, type "Enhance"). Drag and drop the processor to the "Process Canvas". Double click the “Enhance from Map” and rename it to “Country from City”.
 
     ![](./images/image1200_91.png " ")
@@ -72,7 +72,7 @@ This lab assumes you have:
 
     ![](./images/image1200_96.png " ")
 
-## **Step 3:** Replace
+## Task 3: Replace
 
 1.	Go back to the “Tool Palette” and search for the “Replace” processor. Drag and drop the “Replace” processor to the “Project Canvas”. Rename “Replace” processor to “Standardize Country”.
 
@@ -92,7 +92,7 @@ This lab assumes you have:
 
 5.	Click the “Run” icon to start the process.
 
-## **Step 4:** Merge
+## Task 4: Merge
 
 1.	Return to the “Tool Palette” and search for “Merge”. Drag and drop the “Merge Attributes” processor onto the “Project Canvas” and rename it to “Create Best Country Attribute”.
 
@@ -110,7 +110,7 @@ This lab assumes you have:
 
     Notice how the two columns, “Country.Replaced” and “Derived Country” have now been merged to a single column “Best Country”.
 
-## **Step 5:** Writer
+## Task 5: Writer
 
 1.	In the “Tool Palette”, search for “Writer”. This processor enables an EDQ process to write data to different types of data stores, for example, Staged Data. Drag and drop the “Writer” to the right of the “Create Best Country Attribute” processor on the Project Canvas.
 

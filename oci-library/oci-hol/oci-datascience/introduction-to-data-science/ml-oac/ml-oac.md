@@ -26,7 +26,7 @@ In this lab you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 
-## **STEP 1:** Provision and Start Oracle Analytics Cloud
+## Task 1: Provision and Start Oracle Analytics Cloud
 
 You will provision Oracle Analytics Cloud.
 
@@ -74,7 +74,7 @@ You will provision Oracle Analytics Cloud.
 
       It's useful to add a Bookmark in your browser to this URL.
 
-## **STEP 2:** Data preparation
+## Task 2: Data preparation
 
    First we have to upload the data that's required for our model. In this case, the dataset with historical credit assessments is mostly ready to go, without requiring any changes.
 
@@ -110,7 +110,7 @@ You will provision Oracle Analytics Cloud.
    Oracle Analytics records all changes you make in a script. This allows it to easily repeat the process in case data is reloaded. For now, apply the script that has been created by clicking "Apply Script". This makes the change to recid effective.
    ![](images/img7.jpg)
 
-## **STEP 3:** Data exploration
+## Task 3: Data exploration
 
    As you know, this phase in the Data Science process is for us to get to know our data, identify which columns are useful, detect any problems with the data, et cetera.
 
@@ -163,7 +163,7 @@ You will provision Oracle Analytics Cloud.
 
     At the is point you are doing with the investigation of the dataset and move on the next task
 
-## **STEP 4:** Train the model
+## Task 4: Train the model
 
    Our goal is to build a model that can correctly assess the credit of an application for a loan with either "Good" or "Bad".
    In Oracle Analytics, this is done by creating a so-called "Data Flow". A "Data Flow" specifies the source of the data for the training, any data transformations, and a step for the actual model training.
@@ -207,7 +207,7 @@ You will provision Oracle Analytics Cloud.
    Next, we can finally execute the Data Flow. Effectively this will train the model. Click on "Run Data Flow" (top right). This could take a few minutes. A message will appear saying that the data flow was run successfully.
    ![](images/img38.jpg)
 
-## **STEP 5:** Evaluate the model
+## Task 5: Evaluate the model
 
    Now that you have built the model, you need to assess how good it is and decide if you are happy with it. Oracle Analytics Cloud machine learning provides quality metrics to allow you to evaluate how good the trained models are.
 
@@ -222,7 +222,7 @@ You will provision Oracle Analytics Cloud.
    Go to "Quality" tab to see the quality metrics associated with your model. You can see that the model doesn't predict all cases correctly. You can play with the hyperparameters to improve these results and find the best trade off for your case.
    ![](images/img51.jpg)
 
-## **STEP 6:** Make predictions (apply the model)
+## Task 6: Make predictions (apply the model)
 
    We have a file with new credit applications that we would like to assess. Instead of doing this the manual (HUMAN) way, we'll use our freshly trained model.
 
@@ -279,7 +279,7 @@ You will provision Oracle Analytics Cloud.
    Run the new Data Flow. This typically takes a few minutes.
    ![](images/runapply.png)
 
-## **STEP 7:** Verify the predictions
+## Task 7: Verify the predictions
 
    Our goal is to visualize the results of the prediction. The prediction Data Flow will have created a new dataset called "Scored New Applications", as we specified.
 

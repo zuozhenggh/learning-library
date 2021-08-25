@@ -9,7 +9,7 @@ This lab walks you through the steps to create an instance of an Oracle 20c Prev
 * SSH Keys
 * A Virtual Cloud Network (VCN)
 
-## **STEP 1**: Create a Database Virtual Machine
+## Task 1: Create a Database Virtual Machine
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
@@ -52,7 +52,7 @@ This lab walks you through the steps to create an instance of an Oracle 20c Prev
     ![](images/provisioning.png " ")
     ![](images/available.png " ")
 
-## **STEP 2**: Connect to the Database using SSH
+## Task 2: Connect to the Database using SSH
 
 1. On the **DB System Details** page, scroll down and click **Nodes**.
 

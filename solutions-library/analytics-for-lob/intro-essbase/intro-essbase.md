@@ -21,7 +21,7 @@ This lab will require the following -
 * [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
 
-## **Step 1:** Features of Oracle Essbase
+## Task 1: Features of Oracle Essbase
 
 1. Oracle Essbase provides a complete set of tools and features for deriving and sharing data insights.
 
@@ -37,11 +37,11 @@ This lab will require the following -
 
 7. We can use Essbase to collect collaborative data, create scenarios, and perform what-if analysis using Smart View.
 
-## **Step 2:** Essbase Architecture on OCI
+## Task 2: Essbase Architecture on OCI
 
   ![](./images/notionalarchitecture.png "")
 
-## **Step 3:** Working with Essbase
+## Task 3: Working with Essbase
 
 During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in California, Bay Area. Dynamic Corp., has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
 
@@ -77,7 +77,7 @@ With the above stated benefits, it’s certainly worthwhile to understand the ni
 
 Note: The steps going forward will have to followed in a Windows operating system
 
-## **Step 4:** Installing Smart View Plugin
+## Task 4: Installing Smart View Plugin
 
 #### Smart View Prerequisites
 1. The latest release of Smart View

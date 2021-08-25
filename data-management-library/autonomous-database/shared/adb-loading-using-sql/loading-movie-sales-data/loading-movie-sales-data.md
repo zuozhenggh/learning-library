@@ -40,7 +40,7 @@ A wide range of file formats are supported including Excel, comma-separated, tab
 
 **Note** -  *All timings for data loading in this workshop assume an ADW instance is co-located in the same data center or close to one of the regional data centers containing the public buckets. If this is not the case then your timings for specific steps may vary*.
 
-## STEP 1 - Launching SQL Worksheet 
+## Task 1: Launching SQL Worksheet 
 
 During this part of the workshop, we will use the SQL Worksheet application that is built-in to our data warehouse environment. 
 
@@ -61,7 +61,7 @@ During this part of the workshop, we will use the SQL Worksheet application that
     ![Screenshot of initial SQL Worksheet](images/3054194690.png)
 
 
-## STEP 2 - Creating A New Table
+## Task 2: Creating A New Table
 
 1. Below is the script to help you create the sales fact table, **"MOVIE\_SALES\_FACT"**. Simply copy and paste this code into your SQL Worksheet.
 
@@ -160,7 +160,7 @@ During this part of the workshop, we will use the SQL Worksheet application that
 
 Now we are ready to start loading the sales data.
 
-## STEP 3 - Loading Sales Data
+## Task 3: Loading Sales Data
 
 ### Background
 

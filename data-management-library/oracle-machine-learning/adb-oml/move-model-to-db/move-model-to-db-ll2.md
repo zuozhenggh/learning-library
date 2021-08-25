@@ -34,7 +34,7 @@ This lab assumes you have completed the following labs:
 - Connect and Provision ADB
 - Create a Machine Learning Model
 
-## **STEP 1:** Export the machine learning model
+## Task 1: Export the machine learning model
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse** and navigate to your instance.
 
@@ -109,7 +109,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/blob-length.png  " ")
 
-## **STEP 2:** Create ML User in ATP
+## Task 2: Create ML User in ATP
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -141,7 +141,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp-ml-user-created.png " ")
 
-## **STEP 3:** Grant Privileges to ML_USER to access Database Actions
+## Task 3: Grant Privileges to ML_USER to access Database Actions
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -203,7 +203,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/storage-privileges.png " ")
 
-## **STEP 4:** Download ADW Credentials Wallet
+## Task 4: Download ADW Credentials Wallet
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse** and navigate to your instance.
 
@@ -229,7 +229,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/unzip-wallet.png  " ")
 
-## **STEP 5:** Create a Bucket and Upload Your Data
+## Task 5: Create a Bucket and Upload Your Data
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
@@ -259,7 +259,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/copy-uri-path.png  " ")
 
-## **STEP 6:** Generate the Auth Token
+## Task 6: Generate the Auth Token
 
 To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload data) to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
 
@@ -281,7 +281,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/copy-token.png  " ")
 
-## **STEP 7:** Copy Machine Learning Models between ADW and ATP
+## Task 7: Copy Machine Learning Models between ADW and ATP
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -397,7 +397,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/adwlink-test.png  " ")
 
-## **STEP 8:** Copy tables from ADW to ATP
+## Task 8: Copy tables from ADW to ATP
 
 1.  First, copy the credit\_scoring\_100k table into ML\_USER in ATP. Normally, this table would already exist in the production system. We could have loaded this table to ATP in lab 1 when we loaded the table into ADW. But, since we were going to create this database link, we can just copy it from ADW. Run the following statement to copy credit\_scoring\_100k table into ML\_USER in ATP.
 
@@ -419,7 +419,7 @@ To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will n
 
     ![](./images/create-mluser-temp.png  " ")
 
-## **STEP 9:** Import the ML model
+## Task 9: Import the ML model
 
 1.  Copy the SQL Developer URL from the browser and paste it in another tab. Change the user in the SQL Developer URL from ADMIN to **ml\_user** and hit enter to log in as ML\_USER. Copy the URL to a notepad - you will need it later.
 

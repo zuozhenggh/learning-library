@@ -7,7 +7,7 @@
 This lab will show you that how to start database instance and listener from putty window,also this covers how to setup vncserver and sqldeveloper etc. 
 
 
-## Step 1: Start the Database
+## Task 1: Start the Database
 
 1. Open up putty and create a new connection. Enter the IP address assigned to your instance.
 
@@ -182,7 +182,7 @@ Press Esc and type as below
    ````
 ![](./images/putty_snap14.png " ")
 
-## Step 2: Start VNC  
+## Task 2: Start VNC  
 
 1. Run the below command and start vncserver as **oracle** user. 
 

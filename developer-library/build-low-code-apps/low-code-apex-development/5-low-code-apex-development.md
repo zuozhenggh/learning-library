@@ -19,7 +19,7 @@ Estimated time: 30 minutes
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:RWjzYN3PpdM)
 
-## **STEP 1:** Log into your OCI Tenancy
+## Task 1: Log into your OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
@@ -41,7 +41,7 @@ Estimated time: 30 minutes
     
   ![](../images/common/username.png " ")  
 
-## **STEP 2:** Create an API Gateway to Access the REST Service
+## Task 2: Create an API Gateway to Access the REST Service
 
 1. Due to ATP restrictions regarding access to web services we will use the **API Gateway** to address this.  Navigate to the **API Gateway** through the console menu - **Developer Services**.
 
@@ -87,7 +87,7 @@ Estimated time: 30 minutes
 
   ![](images/080.png " ")
 
-## **STEP 3:** Create a New APEX Workspace
+## Task 3: Create a New APEX Workspace
 
 1. Navigate to your ATP instance.
 
@@ -137,7 +137,7 @@ Estimated time: 30 minutes
 
   ![](images/013.png " ")
 
-## **STEP 4:** Create a New APEX Application from a csv File
+## Task 4: Create a New APEX Application from a csv File
 
 Steve has been using spreadsheets to create product forecasts.  He will take one of the existing spreadsheets and use that to build out a new APEX application.
 
@@ -270,7 +270,7 @@ Steve has been using spreadsheets to create product forecasts.  He will take one
   ![](images/045.png " ")
 
 
-## **STEP 5:** Configure a New Web Server and Application and Create a New Page to Access the Data using the API Gateway you created in Step 2
+## Task 5: Configure a New Web Server and Application and Create a New Page to Access the Data using the API Gateway you created in Step 2
 
 1. Select Application tab on the bottom.
 
@@ -352,7 +352,7 @@ Steve has been using spreadsheets to create product forecasts.  He will take one
 
   ![](images/070.png " ")
 
-## **STEP 6:** Push APEX Application to Production using DevCS CI/CD
+## Task 6: Push APEX Application to Production using DevCS CI/CD
 
 1. Navigate to Visual Builder Studio.
 

@@ -22,14 +22,12 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Generate Load
+## Task 1: Generate Load
 
 1.  Open an xterm or reuse the previous one. Now, since the database has been upgraded, the environment needs to be switched to 19c:
 	```
@@ -66,7 +64,7 @@ This lab assumes you have:
 6. Please NOTE down the snapshot number of the second snapshot. It may be different than the one in the screenshot below.
    ![](./images/upgrade_19c_31.png " ")
 
-## **STEP 2**: AWR Diff Report
+## Task 2: AWR Diff Report
 
 In the AWR Diff Report you will compare a snapshot period BEFORE upgrade to a snapshot period AFTER upgrade.
 

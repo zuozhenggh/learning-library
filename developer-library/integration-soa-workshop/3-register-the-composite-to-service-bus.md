@@ -14,7 +14,7 @@ Estimated lab time: 1 hour
 
 ## Development Steps
 
-## **STEP 1**:  Create a service bus application and new project **Validate Payment**. 
+## Task 1:  Create a service bus application and new project **Validate Payment**. 
 
 + Create a new Service Bus application. There are various ways and shortcuts to do this, and in this case choose File > New > Application... from the menu.
 + From the Categories tree, click on General > Applications
@@ -52,7 +52,7 @@ fields, leaving the others with their default values:
 [//]: # (images/2/continue-to-create-application-wizard.png)
 
 [//]: # (Remove Steps 2 and 3)
-## **STEP 2**: Create folders and import artifacts, WSDL and XSD resource click **Create App**.
+## Task 2: Create folders and import artifacts, WSDL and XSD resource click **Create App**.
 
 In Service Bus applications, Folders are leveraged to organize artifacts within a Project. For brand new applications, we encourage you to create folders that align with the default folders in your Composite application.
 
@@ -110,7 +110,7 @@ For this project, we will keep the structure simple since there are only a few a
 
 
 
-## **STEP 3**: Configure a business service for the ValidatePayment composite and review properties.
+## Task 3: Configure a business service for the ValidatePayment composite and review properties.
 
 In this section, you will configure a Business Service to represent your validatePayment composite.
 There are different ways to create artifacts in Service Bus in JDeveloper:
@@ -165,7 +165,7 @@ Double-click on your new Business Service in the overview and review the setting
 There are settings for General Properties, Performance (Result Caching), Transport details, Policies for Security. 
 + + ![](images/2/createbizsvc8.png)
 
-## **STEP 4**: Configure proxy and pipeline and wire to the business service. 
+## Task 4: Configure proxy and pipeline and wire to the business service. 
 
 Please review starting page 71 on the tutorial document.
 
@@ -209,7 +209,7 @@ The Pipeline wizard will walk you through the next steps. The title will show yo
 + Click the Save All icon on top left of your screen.
 + 
 
-## **STEP 5**: Run diagnostic of the composite application.
+## Task 5: Run diagnostic of the composite application.
 
 To deploy and test end-to-end, ensire the Integrated Server is running.
 
@@ -221,7 +221,7 @@ To deploy and test end-to-end, ensire the Integrated Server is running.
     ![](images/2/Deploy-and-Test.png)
 
 
-## **STEP 6**:   Test Console
+## Task 6:   Test Console
 
 + The Test Console will activate as one of your windows in JDeveloper on Windows. On Linux, this may start a new browser window outside of JDeveloper. Make this window active by clicking on the title bar.
 

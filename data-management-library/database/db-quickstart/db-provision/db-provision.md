@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 
 -   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
 
-## **STEP 1:** Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW or ATP from the Services Menu
 
 1. Log in to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -45,7 +45,7 @@ Estimated Lab Time: 10 minutes
 
     ![](./images/Region.png " ")
 
-## **STEP 2:** Creating the Autonomous Database Instance
+## Task 2: Creating the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

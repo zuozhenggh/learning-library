@@ -29,7 +29,7 @@ Estimated Time: 45 minutes
 ### Prerequisites    
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-## **Task 1:** Gather Information About the Cluster
+## Task 1: Gather Information About the Cluster
 
 <if type="livelabs">
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
@@ -67,7 +67,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
   ![](./images/ll-private-ips.png " ")
 </if>
 
-## **Task 2:** Map the Private IP Address of the First Utility Node to a Public IP Address
+## Task 2: Map the Private IP Address of the First Utility Node to a Public IP Address
 
 In this task, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first utility node** to a new public IP address.
 
@@ -170,7 +170,7 @@ In this task, you will set three variables using the **`export`** command. The v
   </if>
 
 
-## **Task 3:** Map the Private IP Address of the Cloud SQL Node to a Public IP Address
+## Task 3: Map the Private IP Address of the Cloud SQL Node to a Public IP Address
 
 In this task, you will set two variables using the **`export`** command. Next, you use the **`oci network`** command to map the private IP address of the **Cloud SQL node** to a new public IP address.
 
@@ -228,7 +228,7 @@ In this task, you will set two variables using the **`export`** command. Next, y
       </if>
 
 
-## **Task 4:** Edit a Public IP Address
+## Task 4: Edit a Public IP Address
 
 In this task, you will learn how to edit a public IP address using both the **Cloud Console** and the **Cloud Shell**.
 

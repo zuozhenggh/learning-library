@@ -26,7 +26,7 @@ This lab assumes you have:
     - Lab: Data Standardization
 
 
-## **Step 1:**  Export Cleansed Data
+## Task 1:  Export Cleansed Data
 We will create a job that runs data through the process we just created. This job can be called from an ODI package to automate the Data Quality project.
 1.	The first step is direct EDQ to export the output file. Navigate to the “Project Browser” on the left side of the screen and right-click on "Clean Customers” under the “Staged Data” category (expand the “Staged Data” category if you do not see it). Right click on it and select “Export Staged Data…”.
 
@@ -48,7 +48,7 @@ We will create a job that runs data through the process we just created. This jo
 
     ![](images/image1200_113.png " ")
 
-## **Step 2:** EDQ Jobs
+## Task 2: EDQ Jobs
 
 1.	We now need to create a job that could be invoked externally. Navigate to the “Project Browser”, and select the “Jobs” category, right-click on it and select “New Job…”.
 

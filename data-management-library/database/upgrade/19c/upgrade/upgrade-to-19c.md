@@ -24,14 +24,12 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Preparation
+## Task 1: Preparation
 
 1. The only task you will have to do when using the AutoUpgrade is to prepare a config file for the database(s).
 2. The environment variable $OH19 is created only for your convenience. It always points to the Oracle 19c Home.
@@ -98,7 +96,7 @@ This lab assumes you have:
     ```
     ![](./images/upgrade_19c_21.png " ")
 
-## **STEP 2**: Analyze Phase
+## Task 2: Analyze Phase
 
 1. It is best practice to run AutoUpgrade in analyze mode at first. Once the analyze phase is passed without issues, the database can be upgraded automatically (the below command is a one-line command!).
 
@@ -139,7 +137,7 @@ This lab assumes you have:
 
     Then close Firefox.
 
-## **STEP 3**: Upgrade
+## Task 3: Upgrade
 
 1. When you initiate the upgrade with -mode deploy, the tool will repeat the analyze phase, but add the fixups, upgrade and postupgrade steps.
 

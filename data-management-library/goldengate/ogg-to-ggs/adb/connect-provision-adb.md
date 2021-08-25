@@ -20,7 +20,7 @@ This lab assumes you have completed the Getting Started lab.
 
 *Note: You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
-## **STEP 1:** Create a VCN and subnet
+## Task 1: Create a VCN and subnet
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
@@ -41,7 +41,7 @@ This lab assumes you have completed the Getting Started lab.
 
 You can click View VCN Details and see both a Public and Private subnet were created.
 
-## **STEP 2:** Create an ATP Instance
+## Task 2: Create an ATP Instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -78,7 +78,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## **STEP 3:** Load the ATP schema
+## Task 3: Load the ATP schema
 
 1.  Click the following link to download the database schema.
 
@@ -128,7 +128,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-## **STEP 4:** Create an ADW Instance
+## Task 4: Create an ADW Instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -164,7 +164,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-## **STEP 5:** Load the ADW schema
+## Task 5: Load the ADW schema
 
 1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
 

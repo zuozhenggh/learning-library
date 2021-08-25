@@ -44,7 +44,7 @@ This lab assumes you have:
      - Lab :  JSON
 
 
-## **STEP 1**: Connect to your Database from Python
+## Task 1: Connect to your Database from Python
 
 We will be using the Oracle Cloud Shell for this lab.  The Oracle Cloud Shell is preconfigured with Python3 and cx\_Oracle for us to connect to our database using python.  You can find more information about cx\_Oracle as well as how to install it at the following [blog](https://oracle.github.io/python-cx_Oracle/) site.
 
@@ -175,7 +175,7 @@ We will also use the wallet-file we called *converged-wallet.zip* that we alread
     ![](./images/soda1_3.png " ")
 
 
-## **STEP 2**: Insert a SODA Collection into the Database
+## Task 2: Insert a SODA Collection into the Database
 
 Now that your environment is configured and you can connect to database from Python, you are ready to get started with SODA.  
 
@@ -366,7 +366,7 @@ Now that your environment is configured and you can connect to database from Pyt
 
 
 
-## **STEP 3**: Viewing your SODA Collection from the Database
+## Task 3: Viewing your SODA Collection from the Database
 
 In this section you will connect to the Oracle database you provisioned in your previous lab. This is the database environment that you configured your Python programs to connect to.
 

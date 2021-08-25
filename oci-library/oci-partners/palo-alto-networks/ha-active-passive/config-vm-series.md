@@ -15,7 +15,7 @@ Estimated Lab Time: 20 minutes.
 
 - Oracle Cloud Infrastructure paid account credentials (User, Password, Tenant, and Compartment)  
 
-## **STEP 1: Initial Configuration on Primary VM Series Firewall**
+## **Task 1: Initial Configuration on Primary VM Series Firewall**
 
 1. Setup initial **admin** user password using **CLI**. Connect to **vm-series-firewall-1** instance using your ssh private key which you used earlier via **admin** user:  
 
@@ -137,7 +137,7 @@ Estimated Lab Time: 20 minutes.
 
    ![](../common/images/125-Reboot-Device.png " ")
 
-## **STEP 2: Initial Configuration on Secondary VM Series Firewall**
+## **Task 2: Initial Configuration on Secondary VM Series Firewall**
 
 1. Setup initial **admin** user password using **CLI**. Connect to **vm-series-firewall-2** instance using your ssh private key which you used earlier via **admin** user:  
 

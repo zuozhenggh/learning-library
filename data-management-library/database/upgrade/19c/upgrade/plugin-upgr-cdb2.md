@@ -39,14 +39,12 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Preparation of UPGR as non-CDB
+## Task 1: Preparation of UPGR as non-CDB
 
 1. Switch to the UPGR database in 19c environment.
 
@@ -97,7 +95,7 @@ This lab assumes you have:
     ```
     ![](./images/plugin_upgr_5.png " ")
 
-## **STEP 2**: Compatibility check
+## Task 2: Compatibility check
 
 1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO only.
 
@@ -118,7 +116,7 @@ This lab assumes you have:
 
 2. If the result is “NO” (and it is NO very often), then check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. In this case, the result should be “YES“.
 
-## **STEP 3**: Plugin Operation
+## Task 3: Plugin Operation
 
 1. Plugin UPGR with its new name PDB1 – from this point there is no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 

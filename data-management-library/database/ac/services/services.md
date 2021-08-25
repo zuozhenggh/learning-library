@@ -32,7 +32,7 @@ For more information on Oracle Database Services visit [http://www.oracle.com/go
 
  [](https://youtu.be/dIMgaujSydQ)
 
-## **STEP 1:** Login and Identify Database and Instance names
+## Task 1: Login and Identify Database and Instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names.
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 2.  Once you are logged in, open up a 2nd webbrowser tab.
@@ -72,7 +72,7 @@ You should have already identified your database name and instance name.  Each p
 
     ![](./images/db-crsctl.png " ")
 
-## **STEP 2:**  Create a Service
+## Task 2:  Create a Service
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
 
@@ -131,7 +131,7 @@ EZConnect does not support all service characteristics. A fully specified URL or
     ![](./images/scan-node1.png " ")
 
 
-## **STEP 3:** Service Failover
+## Task 3: Service Failover
 
 1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
 
@@ -220,7 +220,7 @@ EZConnect does not support all service characteristics. A fully specified URL or
     It has not changed.
     The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
 
-## **STEP 4:** Services configured for Application Continuity
+## Task 4: Services configured for Application Continuity
 
 FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other features and operations are predicated on the use of services. Do not use the default database service (the service created automatically with the same name as the database or PDB) as this service cannot be disabled, relocated, or restricted and so has no high availability support. The services you use are associated with a specific primary or standby role in a Data Guard environment. Do not use the initialization parameter *service_names* for application usage.
 

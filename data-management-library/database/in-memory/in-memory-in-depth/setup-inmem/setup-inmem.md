@@ -8,7 +8,7 @@ It is important to remember that after the In-Memory option is enabled at the in
 
 ## In-Memory Pool
 
-## **STEP 1**: Enabling In-Memory
+## Task 1: Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -76,7 +76,7 @@ It is important to remember that after the In-Memory option is enabled at the in
     </copy>
     ````
 
-## **STEP 2**: Enable Objects  In-Memory
+## Task 2: Enable Objects  In-Memory
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account.
 
@@ -266,7 +266,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     We have learnt to how to add In-Memory attributes to tables, add priority and compress options. Oracle Database In-Memory is designed to be completely and seamlessly compatible with existing applications. No changes are required to use it with any application or tool that runs against Oracle Database. Analytic queries are automatically routed to the column store by the SQL optimizer, and transactional semantics are guaranteed by the database.
 
-## **STEP 3**: Partial In-Memory Data
+## Task 3: Partial In-Memory Data
 
 ### Partition In-Memory
 1. In order to conserve the In-Memory pool in SGA, we need not load all the data. In case of a Big partitioned table, we can load only the partition that is relevant.
@@ -339,7 +339,7 @@ For example, to enable an existing table for the IM column store, you would use 
 
  ![](images/IMHybrid.png)
 
-## **STEP 4**: In-Memory External Tables
+## Task 4: In-Memory External Tables
 In-Memory External Tables builds on the theme of expanding analytic queries to all data, not just Oracle native data. Oracle Database already supports accessing external data with features like External Tables and Big Data SQL to allow fast and secure SQL query on all types of data. In-Memory External Tables allow essentially any type of data to be populated into the IM column store. This means non-native Oracle data can be analyzed with any data in Oracle Database using Oracle SQL and its rich feature set and also get the benefit of using all of the performance enhancing features of Database In-Memory.
 Until 19c , this feature is licensed for only Oracle Cloud databases and  Engineered Systems. We can still test the feature on EE after setting  "\_exadata\_feature_on" to true. This feature is available in 21c EE releases.
 
@@ -470,7 +470,7 @@ Note that in the above plan *EXTERNAL TABLE ACCESS FULL* would mean that oracle 
 Notice that the plan changed from *EXTERNAL TABLE ACCESS FULL* to *EXTERNAL TABLE ACCESS INMEMORY FULL*.
 Note that if you append data to the external file, you will have to repopulate to In-Memory.
 
-## **STEP 5**: In-Memory FastStart
+## Task 5: In-Memory FastStart
 
 ![](images/IMFaststart.png)
 

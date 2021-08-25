@@ -17,7 +17,7 @@ This lab assumes you have completed the following labs:
 * Lab: Sign up for a Free Trial
 * Lab: Provision a DevCS Instance
 
-## **Step 1**: Configure Virtual Machines Templates in DevCS
+## Task 1: Configure Virtual Machines Templates in DevCS
 
 1. Now we need to configure one or two VM servers to be able to build your project developments. We will create a VM Build Server to be used to compile and Build Microservices components and another to compile and Build Fn Function (Serverless) components that will require a different set of Software components:
 
@@ -70,7 +70,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/image47.png " ")
 
-## **Step 2**: Build Virtual Machines configuration in DevCS
+## Task 2: Build Virtual Machines configuration in DevCS
 
 1. NNow we have to create a couple of real VM in OCI based on the Virtual Machine template we just created. So, we will select the **Virtual Machines** Tab and will click **Create**:
 

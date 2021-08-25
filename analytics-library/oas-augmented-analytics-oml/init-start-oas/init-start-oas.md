@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Environment Access
+## Task 1: Environment Access
 This lab has been designed to be executed end-to-end with any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 ### Login to Oracle Analytics Server UI
@@ -110,7 +110,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 2:** Download and Stage Workshop Artifacts (optional)
+## Task 2: Download and Stage Workshop Artifacts (optional)
 We recommend running this workshop end-to-end from the remote desktop session for all tasks requiring either *SQL Developer* or *Web browser*. Should you elect to use these tools locally on your PC/Mac then proceed as indicated below.
 
 1. Download [`OAS_OML_Workshop_LabFiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/upY4mzN1N2Oq3PrWIr_PaaAw5hLK3XesrlIehHBFqvobSJTKF309EnZSuLUTlXFt/n/natdsecurity/b/labs-files/o/OAS_OML_Workshop_LabFiles.zip) and save to a staging area on your laptop or workstation.
@@ -119,7 +119,7 @@ We recommend running this workshop end-to-end from the remote desktop session fo
 
   ***Note***: If you are running the labs exclusively from the remote desktop session as recommended, the content of *`OAS_OML_Workshop_LabFiles.zip`* is already unpacked and staged at *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`/*
 
-## **STEP 3:** Managing DB and OAS processes (optional)
+## Task 3: Managing DB and OAS processes (optional)
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below as user *opc* from your SSH terminal session
 
 ### DB Startup/Shutdown

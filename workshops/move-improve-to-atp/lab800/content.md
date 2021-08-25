@@ -11,7 +11,7 @@ The Swingbench workload on the App Server runs against ATP through the Service G
 - PuTTY or equivalent
 - SQL Developer 19.1 or higher
 
-## Step 1: Run Swingbench Workload ##
+## Task 1: Run Swingbench Workload ##
 
 ​	1. Open a SQL Developer connection to your ATP
 
@@ -117,7 +117,7 @@ Sample run with 3 cores show below.
 
 
 
-## Step 2: Performance Monitoring
+## Task 2: Performance Monitoring
 
 	1. Go to the ATP Service Console and examine your Performance Monitor data.
 	2. Select Activity from the menu

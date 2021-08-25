@@ -92,7 +92,7 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/image16_15.png "")
 
-## **Step 2:** Uploading data file to ADW
+## Task 2: Uploading data file to ADW
 
 This section demonstrates how to import a table to ADW instance.
 
@@ -134,7 +134,7 @@ This section demonstrates how to import a table to ADW instance.
 
     ![](./images/image16_24.png "")
 
-## **Step 3:** Create a Connection and Datasource for Oracle Autonomous Data Warehouse
+## Task 3: Create a Connection and Datasource for Oracle Autonomous Data Warehouse
 
 For reference - [Click Here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/ugess/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
 
@@ -202,7 +202,7 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
     ![](./images/image16_32.png "")
 
-## **Step 4:** Build Dimensions Using SQL Datasource with ADW
+## Task 4: Build Dimensions Using SQL Datasource with ADW
 
 1. We will delete some members from Sample Basic, and then create a load rule to rebuild the Market dimension from the ADW table.
 
@@ -294,7 +294,7 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 30. Inspect the outline to verify that your dimensions were built (verify that Connecticut, New Hampshire, and Massachusetts exist as children under East).
 
-## **Step 5:** Load ADW Data to Essbase Using SQL Datasource
+## Task 5: Load ADW Data to Essbase Using SQL Datasource
 
 This task flow demonstrates how to clear data from a cube, create data load rules, load data (using SQL) from an ADW instance, and verify in Smart View that the data was loaded.
 
@@ -380,7 +380,7 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
     ![](./images/image16_54.png "")
 
-## **Step 6:** Create Drill Through Reports with ADW data
+## Task 6: Create Drill Through Reports with ADW data
 
 When you want more information than what you can see in the Essbase cube, you can use drill through reports to access external data sources.
 

@@ -18,7 +18,7 @@ Watch the video below for an overview of the Build a DB System lab
 - An assigned Database Cluster Password
 - Lab: Download SSH Keys
 
-## **STEP 1**: Login to Oracle Cloud
+## Task 1: Login to Oracle Cloud
 
 1.  Login to Oracle Cloud
 2.  Click on the down arrow next to Oracle Cloud Infrastructure Direct Sign in
@@ -45,16 +45,16 @@ Watch the video below for an overview of the Build a DB System lab
 
 11. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment.
 
-## **Step 2:** Choose a path to connect
+## Task 2: Choose a path to connect
 Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
 Your options are:
-1. Step 2A: Connect using Cloud Shell *(recommended)*
-2. Step 2B: Connect using MAC or a Windows CYGWIN Emulator
-3. Step 2C: Connect using Putty *(Requires you to install applications on your machine)*
+1. Task 2A: Connect using Cloud Shell *(recommended)*
+2. Task 2B: Connect using MAC or a Windows CYGWIN Emulator
+3. Task 2C: Connect using Putty *(Requires you to install applications on your machine)*
 
 
-## **STEP 2A**: Connect using Oracle Cloud Shell
+## Task 2A: Connect using Oracle Cloud Shell
 
 1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
@@ -106,7 +106,7 @@ Your options are:
 5.  You may now [proceed to the next lab](#next).  
 
 
-## **STEP 2B**: Connect using MAC terminal or Windows CYGWIN Emulator
+## Task 2B: Connect using MAC terminal or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -124,7 +124,7 @@ Your options are:
 
 3. After successfully logging in, you may [proceed to the next lab](#next).
 
-## **STEP 2C**: Connect using Putty on Windows
+## Task 2C: Connect using Putty on Windows
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.

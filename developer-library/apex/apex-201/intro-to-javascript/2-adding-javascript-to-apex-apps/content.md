@@ -12,7 +12,7 @@ Play the video below to learn about for this lab.
 
 <a href="https://www.slideshare.net/DanielMcGhan/module-2-adding-javascript-to-apex-apps" target="\_blank">Click here</a> to view the slides.
 
-## **Step 1:** Using Dynamic Actions
+## Task 1: Using Dynamic Actions
 
 Dynamic Actions are the easiest way to add JavaScript to an application in APEX. Often times, they can be completely declarative (no code needed). In this step, you will create a Dynamic Action that hides and shows page components based on the value of an item.
 
@@ -70,7 +70,7 @@ Dynamic Actions are the easiest way to add JavaScript to an application in APEX.
 
     ![](images/product-details-2.png)
 
-## **Step 2:** Using Dynamic Actions with JavaScript hooks
+## Task 2: Using Dynamic Actions with JavaScript hooks
 
 The Dynamic Action framework provides various JavaScript hooks, or features that are geared toward developers that know a little JavaScript. These features can make the framework much more powerful and flexible.
 
@@ -152,7 +152,7 @@ In this step, you will use these features in the Dynamic Action you created in t
 
 12. Save your changes and re-open the form page. Everything should work exactly as before. Hopefully you will agree that the declarative options are much simpler than using the JavaScript hooks. However, when you need the flexibility they provide, you will be glad the hooks are there!
 
-## **Step 3:** Using Page and Component level attributes
+## Task 3: Using Page and Component level attributes
 
 In addition to Dynamic Actions, there are various attributes at the page and component level that are made for JavaScript. In this step, you will learn where those attributes are and how they are used.
 
@@ -221,7 +221,7 @@ In addition to Dynamic Actions, there are various attributes at the page and com
 
     ![](images/sales-by-category-3.png)
 
-## **Step 4:** Using Static Files
+## Task 4: Using Static Files
 
 In the last step, you added JavaScript code directly to page and component level attributes. For performance and reusability reasons, it can be beneficial to move JavaScript code to Static Files instead. While you don't have enough JavaScript code in the Sample Database Application to realize those benefits, in this step, you will move the code added previously to Static Files to see how it's done.
 

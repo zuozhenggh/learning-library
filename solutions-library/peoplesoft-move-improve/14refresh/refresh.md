@@ -14,7 +14,7 @@ In this lab you will:
 ### Prerequisites
 - Access to the Cloud Manager console.
 
-## **STEP 1**: Creating a New Topology With DBaaS
+## Task 1: Creating a New Topology With DBaaS
 
 In order to refresh an environment you will need a topology with DBaaS. If you already have a topology with DBaaS you can skip this step.
 
@@ -44,7 +44,7 @@ In order to refresh an environment you will need a topology with DBaaS. If you a
     
     Click **Save**.
 
-## **STEP 2**: Creating a New Environment Template
+## Task 2: Creating a New Environment Template
 
 In order to refresh an environment you will need an environment template that is using a topology with DBaaS. If you already have this you can skip this step.
 
@@ -89,7 +89,7 @@ In order to refresh an environment you will need an environment template that is
     * Review the details and click **Submit**
     ![](./images/save.png "")
 
-## **STEP 3**: Creating a New Environment
+## Task 3: Creating a New Environment
 
 In order to refresh an environment you will need an environment created from a template with DBaaS. If you already have this you can skip this step.
 
@@ -133,7 +133,7 @@ In order to refresh an environment you will need an environment created from a t
     Once the environment has a green dot with a status of **Running** we are ready to move on to the next step.
     ![](./images/.png "")
 
-## **STEP 4**: Refreshing an Environment
+## Task 4: Refreshing an Environment
 
 1.  First we will create a target environment for our refresh. 
     Navigate to **Dashboard** > **Environment**.
