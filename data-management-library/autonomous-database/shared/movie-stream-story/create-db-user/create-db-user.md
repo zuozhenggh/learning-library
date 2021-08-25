@@ -20,7 +20,7 @@ In this lab, you will:
 
     a. Manually run through Lab 1.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the required database objects.
 
 ## Task 1: Create a Database User
 
