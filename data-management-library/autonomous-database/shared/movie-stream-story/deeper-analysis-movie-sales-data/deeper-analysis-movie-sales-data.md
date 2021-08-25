@@ -18,7 +18,7 @@ Estimated Lab Time: 10 minutes
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 
 ### Going A Little Deeper
@@ -99,7 +99,7 @@ If we tweak the last query we can switch the MODEL clause to calculate contribut
 
 This statement calculates the contribution for the new row LONG WEEKEND by taking the revenue for MONDAY, FRIDAY, SATURDAY and SUNDAY and dividing it by the combined revenue from all seven days.
 
-1. Use the code below to amend the view created in Task 1 so that it includes the function RAIO\_TO\_REPORT to calculate the quarterly contribution for each day:
+1. Use the code below to amend the view created in Task 1 so that it includes the function RATIO\_TO\_REPORT to calculate the quarterly contribution for each day:
 
     ```
     <copy>CREATE OR REPLACE VIEW vw_spreadsheet_data AS
@@ -186,7 +186,7 @@ Let's quickly recap what has been covered in this lab:
 - Learned how to combine spreadsheet-like operations with other SQL features such as PIVOT
 
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
