@@ -28,4 +28,3 @@ _At this point, you are ready to start learning! Please proceed._
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao
-- **Last Updated By** - Arabella Yao, August 2021
