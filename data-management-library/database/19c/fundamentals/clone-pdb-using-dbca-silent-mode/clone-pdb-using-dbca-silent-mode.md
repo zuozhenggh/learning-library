@@ -92,7 +92,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     The command completed successfully
     ```
 
-6. If LISTENER is not started, start it now.
+6. If the default listener is not started, start it now.
 
     ```
     LSNRCTL> <copy>lsnrctl start</copy>
@@ -115,6 +115,13 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     ----------
           107
     ```
+
+9. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+
+    ```
+    SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
+    ```
+
 
 ## Task 2: Create a common user and grant it privileges to clone a database
 
@@ -298,4 +305,4 @@ You may now proceed to the next lab.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 25 2021
