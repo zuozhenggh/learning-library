@@ -64,7 +64,7 @@ Review important initialization parameters, enable `ARCHIVELOG` mode on your dat
 5. Verify that the `COMPATIBLE` initialization parameter value is set to 19.0.0 or higher. The results indicate that the value is 19.0.0.
 
     ```
-    SQL> <copy>SHOW PARAMETER COMPATIBLE</copy>
+    SQL> <copy>SHOW PARAMETER COMPATIBLE;</copy>
 
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- -----------------------------
@@ -130,7 +130,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
 2. View the default flashback retention period set on CDB1. The results indicate that the default is 1440 minutes, which is 1 day.
 
     ```
-    SQL> <copy>SHOW PARAMETER DB_FLASHBACK_RETENTION_TARGET</copy>
+    SQL> <copy>SHOW PARAMETER DB_FLASHBACK_RETENTION_TARGET;</copy>
 
     NAME                             TYPE        VALUE
     -------------------------------- ----------- ------------------
@@ -165,7 +165,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
 6. Verify that the flashback retention period is set to 70 minutes by querying the `db_flashback_retention_target` initialization parameter.
 
     ```
-    SQL> <copy>SHOW PARAMETER db_flashback_retention_target</copy>
+    SQL> <copy>SHOW PARAMETER db_flashback_retention_target;</copy>
 
     NAME                             TYPE        VALUE
     -------------------------------- ----------- ------------------
@@ -173,7 +173,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
     ```
 
 
-## Task 3: Increase the fast recovery area size to 100GB
+## Task 3: Increase the fast recovery area size (FRA) to 100GB
 
 Increase the fast recovery area size to 100GB to provide enough space for the flashback logs.
 
@@ -421,4 +421,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 24 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 25 2021

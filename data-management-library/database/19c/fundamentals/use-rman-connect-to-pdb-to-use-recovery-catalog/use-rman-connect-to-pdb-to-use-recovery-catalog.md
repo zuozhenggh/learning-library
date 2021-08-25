@@ -7,7 +7,7 @@ Oracle Database 19c provides complete backup and recovery flexibility for multit
 
 In this lab, you create a PDB named PDB19 to act as the recovery catalog database for all other PDBs in CDB1. `ARCHIVELOG` mode must be enabled on CDB1.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -232,10 +232,10 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
     DBMS_RCVCAT package upgraded to version
     ```
 
-5. Exit RMAN
+5. Exit RMAN.
 
     ```
-    RMAN> <copy>exit</copy>
+    RMAN> <copy>EXIT</copy>
     ```
 
 
@@ -395,7 +395,7 @@ In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database a
 
     The backup fails again because `vpc_pdb2` is not allowed to access metadata for PDB1. The VPC user can perform operations only on the target PDB to which the user is granted access.
 
-8.  Exit RMAN
+8.  Exit RMAN.
 
     ```
     $ <copy>EXIT</copy>
@@ -424,7 +424,7 @@ Each backup set contains one or more backup pieces. Multiple copies of the same 
     backupset/2021_07_19/o1_mf_nnndf_TAG20210719T154436_jhc7h49j_.bkp
     ```
 
-2. Exit SQL*Plus
+2. Exit SQL*Plus.
 
     ```
     SQL> <copy>EXIT</copy>

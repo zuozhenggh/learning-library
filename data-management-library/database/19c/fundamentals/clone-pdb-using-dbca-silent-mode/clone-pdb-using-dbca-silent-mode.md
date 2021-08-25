@@ -95,16 +95,30 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 6. If the default listener is not started, start it now.
 
     ```
-    LSNRCTL> <copy>lsnrctl start</copy>
+    $ <copy>lsnrctl start</copy>
     ```
 
-7. Connect to PDB1.
+7. Connect to CDB1 as the `SYS` user.
 
     ```
-    SQL> <copy>sqlplus system/Ora4U_1234@PDB1</copy>
+    $ <copy>sqlplus / as sysdba</copy>
     ```
 
-8. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+8. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
+
+    ```
+    SQL> <copy>alter pluggable database PDB1 open; </copy>
+    Pluggable database altered.
+    ```
+
+9. Connect to PDB1.
+
+    ```
+    SQL> <copy>alter session set container = PDB1;</copy>
+    Session altered.
+    ```
+
+10. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -116,7 +130,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
           107
     ```
 
-9. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
 
     ```
     SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>

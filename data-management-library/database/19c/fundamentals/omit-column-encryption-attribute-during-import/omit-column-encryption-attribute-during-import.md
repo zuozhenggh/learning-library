@@ -33,7 +33,7 @@ This lab assumes you have:
 
 3. Verify that `tab.dmp` exists in this directory.
 
-    The `tab.dmp` file was generated via the Oracle Data Pump Export utility (edpm). It contains table data and database metadata and is written in a proprietary format.
+    The `tab.dmp` file was generated via the Oracle Data Pump Export utility. It contains table data and database metadata and is written in a proprietary format.
 
     ```                
     $ <copy>ls tab.dmp</copy>
