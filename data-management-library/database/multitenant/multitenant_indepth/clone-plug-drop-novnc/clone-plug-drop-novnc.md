@@ -17,57 +17,11 @@ In this lab, you will:
 * Maintain up-to-date copies of production databases by periodically topping them up with incremental transactions.
 
 
-### Prerequisites
-
-This lab assumes you have:
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-    - Lab: Generate SSH Keys (*Free Tier* and *Paid Tenancies* only)
-    - Lab: Prepare Setup (*Free Tier* and *Paid Tenancies* only)
-    - Lab: Environment Setup
 
 
-## **Step 1:** Initialize Environment
-Proceed as indicated below to Initialize your workshop instance prior to executing any subsequent step or lab.
+## **Step 1:** Login & reset the SYS user password
 
-Refer to *Lab Environment Setup* for the detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-
-1. First login as “*opc*” using your SSH Private Key
-
-2.  Download and execute pre-labs init scripts.
-
-    ```
-    <copy>
-    cd /tmp/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/agZ9XqafKHNCN3rpIegRlFFFJXe6YRPMqO7uHsO49vnLgm_3o0H_I_XTemvaAEXu/n/natdsecurity/b/labs-files/o/db-multitenant-prelab-init.zip
-    unzip db-multitenant-prelab-init.zip -d bootstrap
-    cd bootstrap; chmod +x *.sh
-    sudo ./db19-prelab-init.sh
-    </copy>
-    ```
-
-3.  Sudo to “*oracle*” user, start the listeners and restart the two container databases.
-
-    ```
-    <copy>
-    sudo su - oracle
-    cd /tmp/bootstrap
-    lsnrctl start LISTCDB1
-    lsnrctl start LISTCDB2
-    ./stop_all.sh
-    ./start_all.sh
-    lsnrctl status LISTCDB1
-    lsnrctl status LISTCDB2
-    cd
-
-    </copy>
-    ```
-
-## **Step 2:** Login and Create PDB
-This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
+In this lab, we have two CDBs (CDB1 & CDB2) created, and listing on different port using listner (LISTCDB1 & LISTCDB2)
 
 1. All scripts for this lab are stored in the `labs/multitenant` folder and are run as the oracle user. Let's navigate to the path now.
 
@@ -77,8 +31,34 @@ This section looks at how to login and create a new PDB. You will create a plugg
     </copy>
     ```
 
-2.  Set your oracle environment and connect to **CDB1**.
+2.  Login and reset the SYS password
 
+    Note: SYS and SYSTEM username/password are common across all CDBs and PDBs. If you need a customized Global user across CDBs and PDBs we can create user having username starting with "C##" at the CDB level. i.e., "C##<username>" or C##vijay
+
+    For this lab we will reset the password of SYS user to 'oracle' on CDB2 and CDB2 instances
+
+    Reset password on CDB2
+    ```
+    <copy>. oraenv</copy>
+    CDB2
+    ```
+
+    ```
+    <copy>
+    sqlplus /nolog
+    </copy>
+    ```
+
+    ```
+    <copy>
+    connect / as sysdba
+    alter user sys identified by oracle;
+    connect sys/oracle@localhost:1521/cdb2 as sysdba
+    exit
+    </copy>
+    ```
+
+    Reset password on CDB1
     ```
     <copy>. oraenv</copy>
     CDB1
@@ -92,15 +72,23 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ```
     <copy>
+    connect / as sysdba
+    alter user sys identified by oracle;
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    exit
+    </copy>
+    ```
+    ```
+    <copy>
     connect sys/oracle@localhost:1523/cdb1 as sysdba
     </copy>
     ```
 
-    ![](./images/step1.2-connectoraenv.png " ")
 
-    ![](./images/step1.2-connectcdb1.png " ")
+## **Step 2:**  Create PDB
+This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
 
-3. Check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.
+1. Check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.
 
     ```
     <copy>
@@ -121,7 +109,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ![](./images/whoisconnected.png " ")
 
-4. Create a pluggable database **PDB2**.
+2. Create a pluggable database **PDB2**.
 
     ```
     <copy>show  pdbs;</copy>
@@ -143,7 +131,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ![](./images/showpdbsafter.png " ")
 
-5. Change the session to point to **PDB2**.
+3. Change the session to point to **PDB2**.
 
     ```
     <copy>alter session set container = PDB2;</copy>
@@ -151,7 +139,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
     ![](./images/altersession.png " ")
 
-6. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
+4. Grant **PDB_ADMIN** the necessary privileges and create the **USERS** tablespace for **PDB2**.
 
     ```
     <copy>
@@ -165,13 +153,13 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
    ![](./images/grantsysdba.png " ")
 
-7. Connect as **PDB_ADMIN** to **PDB2**.
+5. Connect as **PDB_ADMIN** to **PDB2**.
 
     ```
     <copy>connect pdb_admin/oracle@localhost:1523/pdb2</copy>
     ```
 
-8. Create a table **MY_TAB** in **PDB2**.
+6. Create a table **MY_TAB** in **PDB2**.
 
     ```
     <copy>
@@ -183,7 +171,7 @@ This section looks at how to login and create a new PDB. You will create a plugg
 
    ![](./images/createtable.png " ")
 
-9. Change back to **SYS** in the container database **CDB1** and show the tablespaces and datafiles created.
+7. Change back to **SYS** in the container database **CDB1** and show the tablespaces and datafiles created.
 
     ```
     <copy>
