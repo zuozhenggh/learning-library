@@ -578,7 +578,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 
  Enter the following command at the prompt:
      ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
  To display a list of databases, Enter the following command at the prompt:
       ````
@@ -669,7 +669,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
 
  Enter the following command at the prompt:
      ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
  To display a list of databases, Enter the following command at the prompt:
       ````
@@ -793,7 +793,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
 
     ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
 
     ````
@@ -825,7 +825,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 
 3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt:
     ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
 
 4.	Change to the airport database.  Enter the following command at the prompt:
@@ -1221,7 +1221,7 @@ Subtask 2 - Provision an OAC instance
 5.	Click the create Private Access Channel button
 6.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
 7.	Click the create Private Access Channel button
-8.	Wait 2 hours then continue to TASK 3
+8.	Wait 30 minutes then continue to Subtask 3
 
 Subtask 3 - Build OAC Dashboard
 1.	Navigate to hamburger->Analytics->Analytics Clouds
@@ -1232,7 +1232,7 @@ Subtask 3 - Build OAC Dashboard
 6.	Click the create Private Access Channel button
 7.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
 8.	Click the create Private Access Channel button
-8.	Wait 2 hours then continue to Subtask 3
+9.	Wait 90 minutes then continue to Subtask 4
 
 Subtask 4 - Build OAC Dashboard
 1.	Navigate to hamburger->Analytics->Analytics Clouds
