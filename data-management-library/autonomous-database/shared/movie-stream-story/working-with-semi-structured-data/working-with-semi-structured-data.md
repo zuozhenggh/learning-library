@@ -21,7 +21,7 @@ Estimated time: 15 minutes
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## What Is Semi-Structured Data?
 
@@ -148,7 +148,7 @@ Although queries on external data will not be as fast as queries on database tab
     BEGIN
     DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
     table_name => 'json_movie_data_ext',
-    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o/movie/*.json',
+    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/movie/*.json',
     column_list => 'doc varchar2(32000)',
     field_list => 'doc char(30000)',
     format => json_object('delimiter' value '\n')
