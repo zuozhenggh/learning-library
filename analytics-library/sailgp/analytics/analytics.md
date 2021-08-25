@@ -12,11 +12,13 @@ The tool that will make this possible is **Oracle Analytics Cloud** (OAC), which
 [](youtube:Sf5MkI9pTn0)
 -->
 
-__Estimated Time:__ 15 minutes
+_Estimated Time:_ 15 minutes
 
 ![Banner](images/banner.jpg)
 
 ### Objectives
+In this lab, you will:
+
 - Learn how a SailGP Data Athlete extracts valuable insights from sensor data
 - Learn how to use Oracle Analytics Cloud to prepare and analyze data
 
@@ -26,7 +28,7 @@ This lab assumes you have:
 - Provisioned Oracle Analytics Cloud
 - Provisioned Autonomous Data Warehouse
 
-## **TASK 1**: Create The Connection From Oracle Analytics Cloud To Autonomous Database
+## Task 1: Create the Connection from Oracle Analytics Cloud to Autonomous Database
 
 **Oracle Analytics Cloud** will be the tool which you use to analyze your data. **Autonomous Data Warehouse** is used to store and organize the data.
 Therefore we need to create a connection from Oracle Analytics Cloud to Autonomous Data Warehouse first. To be able to create this connection, OAC will need to use a so-called "wallet" file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible. The "wallet" file can be obtained from the database menus.
@@ -42,7 +44,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 2. We will download the wallet file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible.
 
-   **NOTE:** Store wallet files in a secure location. Share wallet files only with authorized users.
+   > **Note:** Store wallet files in a secure location. Share wallet files only with authorized users.
 
 3. On the ADW detail page,click **DB Connection**.
 
@@ -89,17 +91,17 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    Use the following information to configure your **connection**.
 
-	 - Connection Name: `SAILGP`
-	 - Client Credentials: Use the Browse button to upload the **wallet ZIP file** that you downloaded (it will automatically extract the `cwallet.sso` file from this zip bundle)
-	 - Username: `sailgp`
-	 - Password: `Oracle_12345`
-   - Service Name: Keep the default, the name of your database followed by the `_high` suffix
+    - Connection Name: `SAILGP`
+    - Client Credentials: Use the Browse button to upload the **wallet ZIP file** that you downloaded (it will automatically extract the `cwallet.sso` file from this zip bundle)
+    - Username: `sailgp`
+    - Password: `Oracle_12345`
+    - Service Name: Keep the default, the name of your database followed by the `_high` suffix
 
-   ![Connection Creation](images/oac-adw-connection-details-admin.png)
+    ![Connection Creation](images/oac-adw-connection-details-admin.png)
 
 10. Select **Save** to save your new connection **information**.
 
-## **TASK 2:** Add The Dataset To Oracle Analytics Cloud
+## Task 2: Add the Dataset to Oracle Analytics Cloud
 
 We're going to take a deep dive on the SailGP regatta that took place in Bermuda in April 2021. In particular, we are going to have a look at race 4 (out of 7 in total). We're going to do a post race analysis with the goal of helping the teams perform better in the upcoming race.
 
@@ -173,7 +175,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    ![Set name and save data set](images/save-dataset.png)
 
-## **TASK 3:** Find Out Who The Winners Of The Race Are
+## Task 3: Find out Who the Winners of the Race Are
 
 1. Still in the data set editor, on the top right, click **Create Project**.
 
@@ -183,9 +185,9 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 	Now you are in the Visualization area!
 
-	**NOTE:** As a general note, keep in mind that you can use the Undo/Redo buttons at the top right of the screen if you make any mistake in this section.
-   >
-   > ![Undo](images/undo.png)
+	> **Note:** As a general note, keep in mind that you can use the Undo/Redo buttons at the top right of the screen if you make any mistake in this section.
+   
+   ![Undo](images/undo.png)
 
 2. Create a chart with race winners
 
@@ -225,7 +227,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    You can see that the boats that finished last were France and Denmark, we will now compare France and Denmark to Great Britain to see how they are different. Hopefully we will find some indicators on where France and Denmark can make improvements.
 
-## **TASK 4:** Compare Maximum Boat Speeds
+## Task 4: Compare Maximum Boat Speeds
 
 1. Find out which teams are able to obtain the maximum boat speed.
 
@@ -252,7 +254,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    ![pic2](images/conclusion.png)
 
-## **TASK 5:** Investigate How Much The Teams Are Foiling
+## Task 5: Investigate How Much the Teams Are Foiling
 
 1. Introduction
 
@@ -310,4 +312,5 @@ You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributors** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

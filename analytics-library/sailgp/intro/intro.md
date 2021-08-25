@@ -27,4 +27,4 @@ _At this point, you are ready to start learning! Please proceed._
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributors** - Priscila Iruela, Arabella Yao
