@@ -77,5 +77,5 @@ This concludes the workshop.
 ## Acknowledgements
 
 * **Author:**  Lauran Serhal, Principal User Assistance (UA) Developer, Oracle Database and Big Data (UA)
-* **Contributors:** Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, August 2021
+* **Contributors:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL
+* **Last Updated By/Date:** Lauran Serhal, September 2021

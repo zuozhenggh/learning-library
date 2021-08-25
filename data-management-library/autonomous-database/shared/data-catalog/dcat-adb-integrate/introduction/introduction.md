@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-The labs in this workshop walk you through all the steps to get access the Data Lake using Autonomous Database and Data Catalog.
+The labs in this workshop walk you through all the steps to access the Data Lake using Autonomous Database (ADB) and Data Catalog. You will learn how to Synchronize ADB and Data Catalog so that you can query Oracle Object Storage buckets from ADB.
 
 Estimated Time: TBD.
 
@@ -54,5 +54,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, August 2021
+* **Contributor:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL    
+* **Last Updated By/Date:** Lauran Serhal, September 2021

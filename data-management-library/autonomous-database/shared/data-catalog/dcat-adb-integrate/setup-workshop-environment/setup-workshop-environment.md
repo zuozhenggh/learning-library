@@ -213,7 +213,7 @@ In this task, you create a new and empty business glossary in the newly created 
 ## Task 7: Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Data Catalog resources. Before you can create and access a data catalog, you must also create a policy that grants the system access to networking resources.
 
-1. If you are still on the **Groups** page from the previous task, in the **Identity** section on the left, select **Policies**. Alternatively, open the **Navigation** menu and click **Identity & Security**. Under **Identity** click **Policies**.
+1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Policies**.
 
 2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-dcat-compartment`** where the new policies will reside.  
 
@@ -293,7 +293,7 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
     + **Name:** Enter **`moviestream-dynamic-group`**.
     + **Description:** Enter **`Training Compartment Dynamic Group`**.
     + In the **Matching Group** section, accept the default **Match any rules defined below** option.
-    + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-data-catalog-instance-ocid_ with your **training-dcat-instance** Data Catalog instance OCID that you copied earlier.
+    + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-data-catalog-instance-ocid_ with your **training-dcat-instance** Data Catalog instance OCID that you copied earlier but make sure you don't delete the single quotation marks around the ocid.
 
         ```
         <copy>Any {resource.id = 'your-data-catalog-instance-ocid'}</copy>
@@ -445,5 +445,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, August 2021
+* **Contributor:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL    
+* **Last Updated By/Date:** Lauran Serhal, September 2021

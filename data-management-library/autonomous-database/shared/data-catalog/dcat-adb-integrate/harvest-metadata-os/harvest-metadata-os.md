@@ -10,7 +10,7 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * Create an Oracle Object Storage data asset.
-* Add one default connection for the newly created data asset.
+* Add two Object Storage connections for the newly created data asset.
 * Create a Filename Pattern and assign it to the Oracle Object Storage data asset.
 * Harvest the data asset.
 * View the harvested data entities.
@@ -206,7 +206,7 @@ Create a filename pattern as follows:
         <copy>{bucketName:[A-Za-z0-9\.\-_]+}/{logicalEntity:[^/]+}/\S+$</copy>
         ```
 
-        >**Note:** You can click **View Pattern Examples** for examples on filenames, pattern expressions, and the logical data entity names that are derived based on the pattern expression. The examples show both
+        >**Note:** You can click **View Pattern Examples** for examples on filenames, pattern expressions, and the logical data entity names that are derived based on the pattern expression.
 
        Here's the explanation of the preceding regular expression:      
 
@@ -332,7 +332,58 @@ Harvest the data entities from the **moviestream\_landing** data asset as follow
 
 After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
+<<<<<<< Updated upstream
 ## Task 6: View Harvested Data Entities
+=======
+<!-- second bucket -->
+
+Harvest the data entities from the **moviestream\_gold** data asset as follows:
+
+1. You should already be on the **Oracle Object Storage: Oracle Object Storage Data Asset** page from the previous step.
+
+      ![](./images/click-harvest.png " ")
+
+2. Click **Harvest**. The **Select a Connection** page of the **Harvest** wizard (Step 1 of 3) is displayed in the **Harvest Data Entities** tab. Select the **`moviestream-gold-bucket-connection`** from the **Select a connection for the data asset you want to harvest** drop-down list. Click **Next**.
+
+      ![](./images/harvest-gold-step-1.png " ")
+
+6. The **Select Data Entities** page of the **Harvest** wizard (Step 2 of 3) is displayed. The **`moviestream-gold`** bucket is already displayed in the **Available Bucket** section. Click the ![](./images/add-entity-icon.png>) icon to add it to the **Selected Bucket / Data Entities** section to include it in the harvest job.
+
+      ![](./images/harvest-gold-step-2-1.png " ")
+
+      >**Note:** You can use this page to view and add the bucket(s) and/or data entities you want to harvest from the **Available Buckets** section. Click the ![](./images/add-entity-icon.png>) icon for each data entity you want to include in the harvest job. Click a bucket link to display its nested data entities. Click the ![](./images/add-entity-icon.png>) icon next to each data entity that you want to include in the harvest job. You can also search for a bucket or entity using the **Filter Bucket** and **Filter Bucket / data entities** search boxes.  
+
+7. Click **Next**. The **Create Job** page of the **Harvest** wizard (Step 3 of 3) is displayed. Specify the following for the job details:
+
+      * **Job Name:** Accept the default name.
+      * **Job Description:** Enter an optional description.
+      * **Incremental Harvest:** Leave this check box selected (default).
+      * **Include Unrecognized Files:** Leave this check box unchecked.
+      * **Include matched files only:** Select this check box.
+      * **Time of Execution:** Select the **Run job now** option.
+
+      ![](./images/harvest-gold-step-3-1.png " ")
+
+9. Click **Create Job**.      
+
+    ![](./images/click-create-job.png " ")
+
+    The harvest job is created successfully and the **Jobs** tab is displayed. Click the job name link in the **Name** column.
+
+    ![](./images/harvest-job-completed.png " ")
+
+10. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details.  The **Logical data entities harvested** field shows **13** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** and **`moviestream_gold`** root buckets. There are **37** corresponding files under the sub-folders under the root buckets.
+
+    ![](./images/job-details.png " ")
+
+11. Drill-down on the **Log Messages** icon to display the job log.
+
+    ![](./images/job-log-messages.png " ")
+
+    After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
+
+## **Task 6**: View Harvested Data Entities
+>>>>>>> Stashed changes
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 
@@ -368,5 +419,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Contributor:** Martin Gubar, Director, Oracle Big Data Product Management    
-* **Last Updated By/Date:** Lauran Serhal, August 2021
+* **Contributor:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL    
+* **Last Updated By/Date:** Lauran Serhal, September 2021
