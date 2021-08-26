@@ -121,7 +121,7 @@ Estimate Lab Time: 15 minutes
 
     ```
     <copy>    
-    create user c##ggadmin identified by password default tablespace users temporary tablespace temp;
+    create user c##ggadmin identified by WELcome##1234 default tablespace users temporary tablespace temp;
     grant connect, resource to c##ggadmin;
     grant unlimited tablespace to c##ggadmin;
     alter user c##ggadmin quota 100M ON USERS;
@@ -147,7 +147,7 @@ Estimate Lab Time: 15 minutes
 
     ```
     <copy>    
-    create user ggadmin identified by password default tablespace users temporary tablespace temp;
+    create user ggadmin identified by WELcome##1234 default tablespace users temporary tablespace temp;
     grant connect, resource to ggadmin;
     alter user ggadmin quota 100M ON USERS;
     grant unlimited tablespace to ggadmin;

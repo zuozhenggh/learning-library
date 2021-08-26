@@ -253,6 +253,6 @@ You may now close any Oracle GoldenGate Service Manager leftover tab and [procee
 
 
 ## Acknowledgements
-* **Authors** - <Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration>
-* **Authors** - <Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration>
-* **Last Updated By/Date** - <Ricardo Gonzalez, August 2021>
+* **Authors** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
+* **Authors** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
+* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
