@@ -62,7 +62,7 @@ The setup should have  two container databases running:
 - CDB1 running on port 1523
 - CDB2 running on port 1524
 
-## **Task 1:** Creating an Application Root
+## Task 1: Creating an Application Root
 
    Creating an Application Root is similar to creating a normal PDB, just with an extra parameter. The source of the Application Root can be an existing database or the SEED database on CDB level.
 
@@ -89,7 +89,7 @@ The setup should have  two container databases running:
 
 
 
-##  **Step 2:** Manage Applications
+##  Task 2: Manage Applications
 
    Applications are managed in the application root container using the `APPLICATION` clause of the `ALTER PLUGGABLE DATABASE` command, described below.
 
@@ -115,7 +115,7 @@ The setup should have  two container databases running:
 
    For more information see [documentation](http://docs.oracle.com/database/122/ADMIN/administering-application-containers-with-sql-plus.htm). You will see there is a lot of detail about this functionality.
 
-##  **Step 3:** Creating an User Application
+##  Task 3: Creating an User Application
 
    We can create one or more user Applications within the Application Root container. When an Application is created, you need to give it a version number and a name. All statements that are executed after the initial 'BEGIN' clause of the application are captured and can be replayed in the target APP PDB.
 
@@ -177,7 +177,7 @@ The setup should have  two container databases running:
 
    The Application can be installed in an Application PDB.
 
-## **Task 4:** Creating an Application PDB
+## Task 4: Creating an Application PDB
 
    An Application PDB is a child of APPS_ROOT PDB. The source could either be the regular CDB SEED, an existing application PDB or a special Application Seed PDB. For this example we will use the regular CDB SEED (PDB$SEED) pluggable database.
 
@@ -209,7 +209,7 @@ The setup should have  two container databases running:
 
 
 
-## **Task 5:** Installing an User Application in an Application PDB
+## Task 5: Installing an User Application in an Application PDB
 
    Installing, upgrading or patching an application in an Application PDB is basically running the statements that have been captured during the initial INSTALL command in the Application Root. The running of the statements is called 'Syncing' to a particular version of the application. If no version has been specified during the **SYNC** process, the system will run all commands up to the latest version of the Application.
 
@@ -274,7 +274,7 @@ The setup should have  two container databases running:
 
 
 
-## **Task 6:** Patching an Application and Pushing the Changes
+## Task 6: Patching an Application and Pushing the Changes
 
    Patching means changing the application in a non-destructive way. Basically, do anything that would not result in data loss. For example, we can add a new table, procedures, functions  to the application, add a column to an existing table or add data into the existing tables. Dropping a table would not be allowed as this would mean data loss. Minor changes to an application constitute application patches. If you consider the changes to be major and will affect you application compatibility, then use upgrade instead of patching. Here is an example of Patching:
 
@@ -347,7 +347,7 @@ The setup should have  two container databases running:
 
 
 
-##  **Step 7:** Upgrade Applications
+##  Task 7: Upgrade Applications
 
 ###  Upgrade APP01 in APP\_ROOT  from 1.0 to 2.0
 
@@ -602,7 +602,7 @@ As you can see, From APP\_ROOT, you cannot see data inserted in APP\_PDB1.
 
 
 
-## **Task 8:** SQL CONTAINERS Clause
+## Task 8: SQL CONTAINERS Clause
 
 When a metadata-linked table is queried using the CONTAINERS clause in the application root, a UNION ALL of the table rows from the application root and all the opened application PDBs is returned. Thus, by leveraging the CONTAINERS clause, the user-created data can be aggregated across many application PDBs from one single place; i.e., the application root. If we need to retrieve data from a subset of the PDBs, we can include a filter on CON_ID or CON\$NAME in the WHERE clause. These are pseudo columns that can be queried or used in where clause. This clause also helps us to do DML operations on all open App PDBs or specific  App PDBs.
 
@@ -639,7 +639,7 @@ In some application in a Multitenant environment , It may **not be possible** to
 
 
 
-## **Task 9:** PROXY PDBs
+## Task 9: PROXY PDBs
 
 ![](./images/MT_proxyPDB.png " ")
 
@@ -762,7 +762,7 @@ select * from proxy_test;
 
 
 
-## **Task 10:** Synchronizing an Application Root Replica with a Proxy PDB
+## Task 10: Synchronizing an Application Root Replica with a Proxy PDB
 
  With Application Containers, you can install applications in an Application Root and synchronize the application to Application PDBs. On the other hand, a Proxy PDB provides location transparency; this is useful when we want to access data or objects remotely from another Container Database (CDB). An advantage of a Proxy PDB is that we don’t have to copy all the data to the remote CDB in order to access the objects and its data, however this is also a disadvantage. If the network  fails or If something goes wrong with the Application Root in the Master Application Container, all the remote Proxy PDBs will  not work. To avoid this, we would probably want to have a physical replica of all the objects and data in another remote Container Database. Here is where a new feature called “Application Root Replica”
 
@@ -1084,7 +1084,7 @@ in_cdb1-app_root
 
 Table created during the upgrade of APP01 from 2.0 to 20.0 in APP\_ROOT has successfully replicated. This demonstrates that we can have **one Master Application root container and push changes to all the  Root replicas** and inturn help manage application PDBs.
 
-## **Task 11:** Version Control and Compatibility.
+## Task 11: Version Control and Compatibility.
 
 In Order to upgrade the application PDBs, we need to login to the PDBS and SYNC to a version. If we do not SYNC, they will be on the previous version. This will give use better Version Control Ability. In Addition, you could have more than one Application Module in one App root. Each of the Application could be different modules of the same application like HR,ERP,Sales, reporting. It could be totally different applications as well. The advantage of having multiple applications with in the same App root is that there could be applications that will need to access tables or packages from another application.  This could be a use case for micro services where you could isolate each microservice to its own application. But at the same time applications can cross reference other application's data if required.
 
