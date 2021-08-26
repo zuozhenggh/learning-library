@@ -156,7 +156,8 @@ Below are the four files that you will be using during this part of the workshop
 4. This is where you need to locate the three files (Countries.csv, Days_Months.xlsx and Devices.xlsx) that you downloaded earlier! If they are easily accessible, then you can simply drag **ALL THREE** files at one time, and drop them onto to canvas as stated in the text on the screen.
   ![ALT text is not available for this image](images/upload.png)
 5. An alternative approach is to click **Select Files** button in the middle of the screen, which will open the file explorer on your local computer where you can locate your data files: Countries.csv, Days\_Months.xlsx, and Devices.xlsx. 
-  >**Note:** Even though you only picked three files, four cards will appear for the data TARGETS to be loaded.
+    >**Note:** Even though you only picked three files, four cards will appear for the data TARGETS to be loaded.
+  
   ![ALT text is not available for this image](images/2879071275.png)
   Why do you have  ***four***  cards listed on the data loading screen? This is because your spreadsheet file **Days\_Months.xlsx** contains two worksheets: one for Days and one for Months. The data loading wizard automatically parsed your spreadsheet and created a separate data loading card for each worksheet. 
   ![ALT text is not available for this image](images/2879071187.png)
@@ -492,13 +493,13 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
     The Data Insights tool is now scouring through the data in your business model, looking for hidden patterns, anomalies, and outliers in the data set. You may be interested to know that these queries employ many of the built-in analytical capabilities of Oracle Database. A typical example is **Regression Slope**. Note that this process can take several minutes to complete, since a very large number of queries are being executed. This might be a good time to stretch, get a refreshment, and let Autonomous Database do the hard work for you! You can monitor the progress bar towards the upper left of the screen. While it is processing, the screen will refresh automatically as various insights appear on the screen. At any point, it is possible to disable auto-refresh to freeze a particular set of "gauges on the dashboard". This technique allows you to drill into a specific insight, while processing continues. You'll notice that it's possible to toggle between these two modes of *Enable Auto Refresh* and *Disable Auto Refresh*. When the search has completed, you'll see a dashboard with a bar chart (gauge) for each of the top twenty insights, as defined by the data patterns found to be most anomalous in the data set.
   ![ALT text is not available for this image](images/insight.png)
 
-  > **Note:** The whole process will take approximately 10 minutes.
+  > **Note:** Searching for Data Insights is CPU-intensive, and the time to complete the process is dependent in part on the CPU count of your Autonomous Database. If you use the always-free tier, which is limited to a single OCPU, the search may take 10 minutes or more. The time to complete the search for Data Insights can be dramatically reduced if you run with a higher CPU count, preferably with auto-scale enabled.
 
-4. Scroll down if necessary, click on one of these, such as the bar chart for "GENRE in June" (fifth item on the third row in this screenshot). This drills down into a detailed view of this Insight, similar to this:
+4. Scroll down if necessary, click on one of these, such as the bar chart for "GENRE in June" (fifth item on the third row in the above screenshot). This drills down into a detailed view of this Insight, similar to this:
   ![ALT text is not available for this image](images/june.png)
   This chart shows actual purchases (blue bars) vs expected purchases (green lines) of various movie genres in the month of June. Three segments have bold black borders. These indicate the most anomalous values, showing that the consumption of:
 
-    a. Comedies and Romances are higher than expected, and
+    a. Comedies and Romances is higher than expected, and
 
     b. Sci-Fi is lower than expected.
 
@@ -511,9 +512,10 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
 In this exercise, you have run the Data Insights tool for what may be the first time. Over time it's likely that Data Insights will be run repeatedly over various data sets. You've also seen that, because of the vast number of queries that are involved in running the Data Insights tool, it can take some time to complete searching for Insights on a new data set. For these reasons, it can be very useful to be able to retrieve insights that have already been run. You'll walk through this process now in the following steps:
 
 7. Return to the home page, by clicking **Database Actions**.
-8. Click the **Data Insights** card to return to the Data Insights screen. 
-9. Click the three-bar menu to the upper right to open the list of **Recent Searches**. 
-10. Select the appropriate search from the list that appears. (There's only one in this example.) The data for this search will be retrieved. 
+8. Click the **Data Insights** card to return to the Data Insights screen.
+9. The most recent search will show up.
+10. If it does not show up, or if you want to retrieve other recent searches, you can click the three-bar menu to the upper right to open the list of **Recent Searches**. 
+11. Select the appropriate search from the list that appears. (There's only one in this example.) The data for this search will be retrieved. 
   ![ALT text is not available for this image](images/recent-search.png)
 
 ### Run Insights against Tables
