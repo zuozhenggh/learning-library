@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Automate the Deployment of Java Apps to Oracle Cloud Infrastructure",
+    "workshoptitle": "Deploy a Highly Available OCI Container Enginer for Kubernetes Cluster",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
