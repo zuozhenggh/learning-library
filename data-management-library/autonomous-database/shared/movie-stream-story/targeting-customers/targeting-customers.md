@@ -2,17 +2,6 @@
 
 ## Introduction
 
-<style>
-    .unselectable {
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    color: black !important;
-    }
-</style>
-
 Patterns are everywhere in business but what is a pattern? They are usually defined as a repetitive series or sequence of specific events or actions and they occur everywhere in business. The ability to find, analyze and quantify individual or groups of patterns within a data set is now a key business requirement. It can help you gain a better understanding of your customers’ behavior and associated operational activities, seek out new opportunities to drive additional revenue streams and even help identify malicious activities that could lead to your business incurring significant costs.
 
 Autonomous Data Warehouse comes complete with native pattern matching capabilities. This brings the simplicity and efficiency of the most common data analysis language (SQL) to the process of identifying patterns within a data set. It offers significant gains in term of performance, maintainability and scalability compared to the legacy ways of solving pattern matching-like problems.
@@ -30,6 +19,14 @@ Estimated time: 15 minutes
 - Learn how to define frequency criteria for patterns
 
 - Learn how to define search criteria for patterns
+
+### Prerequisites
+- This lab requires completion of the previous labs in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ### Overview Of Business Problem
 
@@ -284,7 +281,7 @@ The above examples have used a very simple business rule - each movie has a sing
     ```
     <copy>SELECT
     title,
-    genre
+    genres
     FROM movie</copy>
     ```
 
@@ -371,7 +368,7 @@ The above examples have used a very simple business rule - each movie has a sing
 
     ![Query result showing results of searching across multiple genres](images/lab-5d-task-6-step-5.png " ")
 
-
+You may now [proceed to the next lab](#next).
 
 ## Recap
 
@@ -386,8 +383,6 @@ Let's quickly recap what has been covered in this lab:
 - Calculating useful information from data inside your pattern
 
 - Sharing results with other data warehouse users
-
-Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 

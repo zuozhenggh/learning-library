@@ -25,7 +25,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 1. Connect to the both hosts with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
     ```
-    ssh -i labkey opc@xxx.xxx.xxx.xxx
+    <copy>ssh -i labkey opc@xxx.xxx.xxx.xxx</copy>
     ```
 
 2. Copy and run the following command to open the 1521 port on both side.
@@ -77,8 +77,10 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 2. Add the primary and standby host public ip and hostname in the file like the following:
 
     ```
+    <copy>
     xxx.xxx.xxx.xxx primary.subnet1.primaryvcn.oraclevcn.com primary
     xxx.xxx.xxx.xxx  standby.subnet1.standbyvcn.oraclevcn.com standby
+    </copy>
     ```
 
    
@@ -100,7 +102,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     - From the primary side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub
 
     ```
-    [oracle@primary ~]$ ssh-keygen -t rsa
+    [oracle@primary ~]$ <copy>ssh-keygen -t rsa</copy>
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/oracle/.ssh/id_rsa): 
     Enter passphrase (empty for no passphrase): 
@@ -145,7 +147,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     - From primary side, test the connection from the primary to the standby, using the public ip or hostname of the standby hosts.
 
     ```
-    [oracle@primary ~]$ ssh oracle@standby echo Test success
+    [oracle@primary ~]$ <copy>ssh oracle@standby echo Test success</copy>
     The authenticity of host '158.101.136.61 (158.101.136.61)' can't be established.
     ECDSA key fingerprint is SHA256:c3ghvWrZxvOnJc6aKWIPbFC80h65cZCxvQxBVdaRLx4.
     ECDSA key fingerprint is MD5:a8:34:53:0f:3e:56:64:56:72:a1:cb:47:18:44:ac:4c.
@@ -160,7 +162,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     - From the standby side, generate the ssh key, and cat the public key, copy all the content in the id_rsa.pub.
 
     ```
-    [oracle@standby ~]$ ssh-keygen -t rsa
+    [oracle@standby ~]$ <copy>ssh-keygen -t rsa</copy>
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/oracle/.ssh/id_rsa): 
     Enter passphrase (empty for no passphrase): 
@@ -201,7 +203,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     - From the standby side, test the connection from standby to primary, using the public ip or hostname of the primary hosts.
 
     ```
-    [oracle@standby ~]$ ssh oracle@primary echo Test success
+    [oracle@standby ~]$ <copy>ssh oracle@primary echo Test success</copy>
     The authenticity of host '140.238.18.190 (140.238.18.190)' can't be established.
     ECDSA key fingerprint is SHA256:1GMD9btUlIjLABsTsS387MUGD4LrZ4rxDQ8eyASBc8c.
     ECDSA key fingerprint is MD5:ff:8b:59:ac:05:dd:27:07:e1:3f:bc:c6:fa:4e:5d:5c.
@@ -211,7 +213,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     [oracle@standby ~]$ 
     ```
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 
