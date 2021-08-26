@@ -39,14 +39,14 @@ Here are the steps for creating a new group and assigning security policy requir
   ![](images/create-group.png " ")
 
 3. In the Create Group dialog box, enter the following:
- - **Name**: Enter a unique name for your group such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
+ - **Name**: Enter a unique name for your group, e.g. "MicroservicesAdmin”. Note that the group name cannot contain spaces.
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
   ![](images/new-group.png " ")
 
   ![](images/get-new-group.png " ")
 
- 4. Now, let’s create security policies that give your group permissions to execute the setup steps for this workshop
+ 4. Now, let’s create a security policy that give your group permissions to execute the setup steps for this workshop, e.g. "Microservices-Policies".
 
   ![](images/create-policy.png " ")
 
