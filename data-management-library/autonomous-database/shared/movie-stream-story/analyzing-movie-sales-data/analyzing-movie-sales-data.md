@@ -21,7 +21,7 @@ Estimated time: 15 minutes
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## Task 1: Preparing The Data Warehouse Schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
@@ -29,10 +29,9 @@ The MovieStream data warehouse uses an design approach called a 'star schema'. A
 ![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
 
 The main advantages of star schemas are that they:
-<ul>
-<li>Provide a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
-<li>Provides highly optimized performance for typical data warehouse queries.</li>
-</ul>
+
+* Provide a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
+* Provides highly optimized performance for typical data warehouse queries.</li>
 
 One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter and year. Therefore we need to expand the current time dimension to include these additional levels.
 
@@ -45,7 +44,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. Current
     FROM time;</copy>
     ```
 
-**NOTE** The TIMES dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
+> **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
 
 Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
 
@@ -118,7 +117,7 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
     ![Result from an inner join](images/lab-5a-step-2-substep-2.png " ")
 
-Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification". This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data sensification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
+    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification". This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data sensification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
 
 3. Modify the above SQL to use an outer join:
 
@@ -137,7 +136,7 @@ Unless you had a detailed knowledge of all the available genres you would probab
 
     ![Result from an inner join](images/lab-5a-step-2-substep-4.png " ")
 
-**Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now we have our time dimension defined as a view and a view to simplify SQL queries against the fact table we can move on to how SQL can help us explore the sales data.
+    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now we have our time dimension defined as a view and a view to simplify SQL queries against the fact table we can move on to how SQL can help us explore the sales data.
 
 
 ## Task 3: Exploring Sales Data
@@ -216,7 +215,7 @@ But, how do you know if the results from a query are returned from the **result 
 
     ![Explain Plan shown in a tree-form](images/lab-5a-step-4-substep-5.png " ")
 
-    **Note**: The plan above shows a lot of information that can be very helpful in terms of understanding how your query has been run by Autonomous Data Warehouse. However, at this point the information shown is not the main focus area for this workshop.
+    > **Note**: The plan above shows a lot of information that can be very helpful in terms of understanding how your query has been run by Autonomous Data Warehouse. However, at this point the information shown is not the main focus area for this workshop.
 
 6. Now simply run the query again:
 
@@ -255,7 +254,7 @@ But, how do you know if the results from a query are returned from the **result 
 
     ![Click the SQL Monitoring tab.](images/lab-5a-step-4-substep-10.png " ")
 
-    **Note:** The first two queries in the list will be the queries we just executed - (*you can identify them by looking at database times if the two queries are not grouped together*). The first execution of our query (row two in the table above) shows that we used 8 parallel execution servers to execute the query and this resulted in 2,470 I/O requests to retrieve data stored on disk. So it's clear that we had to use some database resources to run our query the first time. Now look at the performance monitoring data for the second execution (the first row in the table above) - no parallel resources were used, no I/O requests were made and the database time was insignificant. This tells us that the database was able to reuse the results from a previous execution of the same query. Essentially there was zero cost in running the same query a second time.
+    > **Note:** The first two queries in the list will be the queries we just executed - (*you can identify them by looking at database times if the two queries are not grouped together*). The first execution of our query (row two in the table above) shows that we used 8 parallel execution servers to execute the query and this resulted in 2,470 I/O requests to retrieve data stored on disk. So it's clear that we had to use some database resources to run our query the first time. Now look at the performance monitoring data for the second execution (the first row in the table above) - no parallel resources were used, no I/O requests were made and the database time was insignificant. This tells us that the database was able to reuse the results from a previous execution of the same query. Essentially there was zero cost in running the same query a second time.
 
     This is a typical real-world scenario where users are viewing pre-built reports on dashboards and in their data visualization tools. Result cache is one of the many transparent performance features that helps Autonomous Data Warehouse efficiently and effectively run data warehouse workloads.
 
@@ -278,7 +277,7 @@ Now that we have some insight into how Autonomous Data Warehouse manages queries
     GROUP BY day_dow, day_name
     ORDER BY day_dow;</copy>
     ```
-Here we are using a built-in function, TO_CHAR, to convert the column 'day', which is defined as a date and has values such as 01-01-2020, into a number between 1 and 7 and also the name of the day.
+    Here we are using a built-in function, TO_CHAR, to convert the column 'day', which is defined as a date and has values such as 01-01-2020, into a number between 1 and 7 and also the name of the day.
 
 3. This should return something similar to the following:
 
@@ -296,7 +295,7 @@ Let's start by defining the total for each day:   **```SUM(actual_price * quanti
 
 Then we can add the total revenue for all days by using a standard SQL operation called a window function that extends the **SUM** function. This means adding an additional keyword **OVER** as follows:  **```SUM(actual_price * quantity_sold) OVER ()```**  to calculate a grand total for all rows.
 
-  **NOTE:** If you want to read more about window functions, look at this topic in the [Oracle Data Warehouse Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-2877E1A5-9F11-47F1-A5ED-D7D5C7DED90A).
+If you want to read more about window functions, look at this topic in the [Oracle Data Warehouse Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-2877E1A5-9F11-47F1-A5ED-D7D5C7DED90A).
 
 Now we can combine these two calculations to compute the contribution for each day: **SUM(actual\_price * quantity\_sold) / SUM(actual\_price * quantity\_sold) OVER ()** which is easy to understand having slowly built up the SQL, step-by-step. However, the calculation does look a little complicated!
 
@@ -306,7 +305,7 @@ Now we can combine these two calculations to compute the contribution for each d
 
 This approach looks much neater, easier to read, and much simpler!
 
-**Note:**  the function **```RATIO_TO_REPORT```** returns results in the format where 1 equals 100%. Therefore, the code below multiplies the result by 100 to return a typical percentage value.
+> **Note:**  the function **```RATIO_TO_REPORT```** returns results in the format where 1 equals 100%. Therefore, the code below multiplies the result by 100 to return a typical percentage value.
 
 We are going to extend the **```RATIO_TO_REPORT```** function a little further on in this workshop so you will get some more insight regarding the flexibility and power of this type of calculation.
 
@@ -355,7 +354,9 @@ Let's expand our focus and consider the types of movies that customers are watch
 
 For each genre where we know how many movies of that type were watched, we include the following code:
 
-<pre>CASE genre WHEN 'crime' THEN 1 ELSE null END</pre>
+```
+CASE genre WHEN 'crime' THEN 1 ELSE null END
+```
 
 1. We can take this formula and wrap it within a contribution calculation (**```RATIO_TO_REPORT```**), applying the formatting technique we just used above. Let's focus on a specific range of genres: crime, documentary, news and reality-tv genres.
 
@@ -432,7 +433,7 @@ It's most likely that when you are doing this type of analysis on your own data 
 
 However, the challenge here is: it would be much easier if we could have a spreadsheet-like view of our result set, where the quarters are across the top of the report. Spreadsheets (along with many BI/data visualization tools) make this very easy to achieve through the use of pivot tables. Fortunately, SQL provides an almost identical feature:  **[PIVOT](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-05BB22CD-0F53-4C90-AE84-CE3F88DBD591)** function (you may need to scroll down to find the section on PIVOT). In the code snippet below, we are telling SQL to break out the contribution column into separate columns for each quarter (where each column will be named as Q1, Q2, Q3 and Q4):
 
-**Note:** You don't need to run this block of code:
+> **Note:** You don't need to run this block of code:
 
   ```
   PIVOT

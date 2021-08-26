@@ -273,12 +273,11 @@ while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
 ### 5. Detection with the Model
 ```Python
 print("-*-*-*-DETECT-*-*-*-")
-signalNames = ["sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10", "sensor11"]
-
+signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
 payloadData = []
 for i in range(10):
     timestamp = datetime.strptime(f"2020-07-13T20:4{i}:46Z", "%Y-%m-%dT%H:%M:%SZ")
-    values = [ 10.0*i, 0.4713, 1.0, 0.5479, 1.291, 0.8059, 1.393, 0.0293, 0.1541, 0.2611, 0.4098 ]
+    values = [ 0.3*i, 0.04713*(i-2)**2, 1.0, 0.5479, 1.291, 0.8059, 1.393, 0.0293, 0.1541, 0.2611]
     dItem = DataItem(timestamp=timestamp, values=values)
     payloadData.append(dItem)
 

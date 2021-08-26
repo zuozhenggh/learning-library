@@ -35,15 +35,15 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+- Obtained and signed in to your `workshop-installed` compute instance.
 
 ## Task 1: Set up your environment
 
 In this lab, you require two PDBs. The `workshop-installed` compute instance comes with a container database (CDB1) that has one PDB already created called PDB1. In this task, you add another PDB to CDB1 called PDB2. You also create a tablespace called `test` in PDB1 and make sure that there is no tablespace by that name in PDB2.
 
-1. Open a terminal window.
+1. Open a terminal window on the desktop.
 
-2. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     <copy>. oraenv</copy>
@@ -556,6 +556,7 @@ Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other
 $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 ```
 
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -565,5 +566,5 @@ $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 ## Acknowledgements
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 13 2021
+- **Contributor** - Jody Glover, Principal User Assistance Developer
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 24 2021
