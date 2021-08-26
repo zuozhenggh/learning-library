@@ -6,13 +6,17 @@ In this lab we will create a MySQL DB system and add a heatewave cluster to it. 
 
  By enabling HeatWave you will deploy a standalone DB System characterized by a HeatWave-compatible shape (MySQL.HeatWave.VM.Standard.E3) and 1TB of data storage that will accelerate processing of analytic queries. For more information, check **[HeatWave Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/heatwave1.html#GUID-9401C69A-B379-48EB-B96C-56462C23E4FD)**. 
 
-**Objectives** 
+Estimated Lab Time: 20 minutes
+
+### Objectives
 
 -  Create an Instance of MySQL DB Systems
 -  Add HeatWave cluster to MySQL Database Service
 
+### Prerequisites
 
-**Estimated Lab Time: 20 minutes**
+  - All previous labs have been successfully completed.
+
 
 ## **Task 1:** Create an Instance of MySQL in the Cloud
 
@@ -117,7 +121,9 @@ Once done, click the _**Create**_ button.
 
 
 As a recap, in this lab we have created a MySQL DB System node includes a HeatWave plugin that is responsible for cluster management, query scheduling, and returning query results to the MySQL DB System. 
-So now let's connect to MySQL DB System and run some queries before we enable the HeatWave cluster in the next lab! 
+ 
+Well done, you can now proceed to the next lab!
+
 
 
 ## **Acknowledgements**
