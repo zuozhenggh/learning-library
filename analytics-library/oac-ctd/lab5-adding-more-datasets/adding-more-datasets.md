@@ -30,10 +30,10 @@ Donwload the file: [OAC_TD_Agreements.xlsx] (https://objectstorage.eu-frankfurt-
 To confirm that Hotel had already an agreement and the savings they have to claim to the hotel chain, you need to add that information from another excel with the list of vendor agreements.
 1. Click on the plus icon at the top right of the Explorer menu and select “Add Data Set”
 
-![](images/2_create_data_set.png " ")
+    ![](images/2_create_data_set.png " ")
 
-You need to upload this new file.
-1. Click “Create Data Set”
+    You need to upload this new file.
+2. Click “Create Data Set”
 
 ![](images/3_upload_file.png " ")
 
