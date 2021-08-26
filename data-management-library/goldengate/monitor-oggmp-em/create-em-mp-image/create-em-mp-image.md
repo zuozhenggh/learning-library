@@ -27,7 +27,7 @@ This lab assumes you have:
 * The following are required to complete this lab:
     * Introduction and Prerequisites
 
-**STEP 1:** Open the Oracle GoldenGate Services Ports from the OCI Console
+**Task 1:** Open the Oracle GoldenGate Services Ports from the OCI Console
 
 Before you begin to discover the Oracle GoldenGate instances, you need to open all the Oracle GoldenGate Services port from the Oracle Cloud Infrastructure (OCI) console, and the Proxy ports on Oracle GoldenGate Microservices Marketplace instance. If the Service Manager, Administration Server, Distribution Server, Receiver Server, Performance Metrics server ports are not opened, then the Oracle Enterprise Manager Plug-in cannot discover the instances.
 
@@ -45,13 +45,13 @@ For more information, see [Security Lists](https://docs.oracle.com/en-us/iaas/Co
     <pre>sudo firewall-cmd --list-ports
     sudo firewall-cmd --add-port=*<OGG Process port number>*/tcp</pre>
 
-**STEP 2**: Install Oracle GoldenGate Enterprise Manager Plug-in
+**Task 2**: Install Oracle GoldenGate Enterprise Manager Plug-in
 
 1. Download Oracle GoldenGate Enterprise Manager Plug-in from [Oracle GoldenGate Downloads](https://www.oracle.com/in/middleware/technologies/goldengate-downloads.html).
 2. Copy the Oracle GoldenGate Enterprise Manager Plug-in to Oracle Marketplace on which, Enterprise Manager is installed.
 3. See [Deploying Oracle GoldenGate Enterprise Manager Plug-in](https://docs.oracle.com/en/middleware/goldengate/emplugin/13.4.2/install/deploying-plug.html#GUID-D024EC6B-75A8-4333-BCEF-04B154614C6F) to install Oracle GoldenGate Enterprise Manager Plug-in.
 
-**STEP 3:** Discover Oracle GoldenGate Microservices instances in Oracle Enterprise Manager on Marketplace
+**Task 3:** Discover Oracle GoldenGate Microservices instances in Oracle Enterprise Manager on Marketplace
 
 After you have created an Enterprise Manager instance on Marketplace, you can discover the Oracle GoldenGate instances on the Oracle Enterprise Manager Plug-in UI:
 
@@ -169,4 +169,4 @@ Watch this video if you want to know more about Setting Credentials for Oracle G
 
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Nisharahmed Soneji (PM), Sarvanan Vetrivel (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, September 2021
