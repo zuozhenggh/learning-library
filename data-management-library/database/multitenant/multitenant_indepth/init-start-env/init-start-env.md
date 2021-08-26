@@ -13,7 +13,7 @@ This lab assumes you have:
 - a Livelabs hosted workshop in Oracle Cloud.
 - you have a desktop and a browser
 
-## **STEP 1:** Access the Graphical Remote Desktop (Preferred)
+## **Task 1:** Access the Graphical Remote Desktop (Preferred)
 For ease of execution of this workshop, your InMemory VM instance has been pre-configured with a remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
 1. Open the workshop URL shown.
@@ -27,7 +27,7 @@ For ease of execution of this workshop, your InMemory VM instance has been pre-c
 
     ![](./images/novnc-landing.png " ")
 
-## **STEP 2:** Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
+## **Task 2:** Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
 During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
 
 1. From your remote desktop session, click on the small gray tab on the middle-left side of your screen to open the control bar
@@ -44,7 +44,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     *Note:* Please make sure you initialize your clipboard with steps *[1-3]* shown above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function grayed out in step 4 when attempting to paste.
 
-## **STEP 3:** Open Workshop Guide in the Remote Desktop
+## **Task 3:** Open Workshop Guide in the Remote Desktop
 LiveLabs workshop guides make an extensive use of *Click-to-Copy* function, providing convenient and effective way to quickly copy a predefined text or block of text without the need to first highlight it. This also help avoid mistakes that may occur when doing it manually such as copying extra or fewer characters than intended.
 
 As a result, launching your workshop guide from the remote desktop will further enhance your experience. It will greatly help speed up your labs execution by removing the need to constantly switch between the guide from your local computer and the remote desktop, and minimize the need for the 3-steps *copy/paste/paste* described in *STEP 2* above.
