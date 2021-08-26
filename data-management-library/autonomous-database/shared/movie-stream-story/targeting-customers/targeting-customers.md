@@ -54,7 +54,7 @@ We can find the customers who watched at least 1 family genre movie during a qua
 To map this pattern within our query, we use the following to outline what we are looking for:
 ```
 PATTERN (family+)
- ```
+```
 
 This implies that we are searching for at least 1 occurrence of a pattern called family as we search through the data set. And then the pattern 'family' is defined as follows:
 
@@ -88,7 +88,7 @@ This means that the pattern 'family' looks for movies where the genre is set to 
     );</copy>
     ```
 
-**Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw\_movie\_sales\_fact\_2020) is divided into individual partitions for each customer_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
+    > **Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw\_movie\_sales\_fact\_2020) is divided into individual partitions for each customer\_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
 
 3. The result should be 495,450.
 
@@ -162,7 +162,7 @@ Now that we understand how our pattern matching query is working, we can extend 
     AND FIRST(family.quarter_name) = LAST(family.quarter_name)</code>
     ```
 
-**Note:** We are defining "family-related" genres as comedy and crime as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, a crime movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
+    > **Note:** We are defining "family-related" genres as comedy and crime as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, a crime movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
 
 2. If we insert the above into our first pattern matching query, we can then paste the following code into our SQL Worksheet:
 

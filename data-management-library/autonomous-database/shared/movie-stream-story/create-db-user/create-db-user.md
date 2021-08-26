@@ -49,7 +49,7 @@ For this workshop we need to create one new user.
  - username: **MOVIESTREAM**
  - password: create a suitably strong password, and make note of it, as you will be asked for it in an upcoming step.
 
-    **NOTE - Rules for User Passwords** Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
+    >**Note:** Rules for User Passwords: Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
 
     - Password must be between 12 and 30 characters long
 
@@ -134,7 +134,7 @@ You learned how to use the Create User dialog to create a new user.  You can als
     /</copy>
     ```
 
-    **Note:** DWROLE includes CREATE ANALYTIC VIEW, CREATE ATTRIBUTE DIMENSION, ALTER SESSION, CREATE HIERARCHY, CREATE JOB, CREATE MINING MODEL, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, and READ,WRITE ON directory DATA\_PUMP\_DIR.
+    >**Note:** DWROLE includes CREATE ANALYTIC VIEW, CREATE ATTRIBUTE DIMENSION, ALTER SESSION, CREATE HIERARCHY, CREATE JOB, CREATE MINING MODEL, CREATE PROCEDURE, CREATE SEQUENCE, CREATE SESSION, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, and READ,WRITE ON directory DATA\_PUMP\_DIR.
 
     These commands give the user all of the privileges required to work with the console, use machine learning and perform graph analyses. The commands also allow the user to change the consumer group for the session (LOW, MEDIUM or HIGH) -  altering levels of performance and concurrency. [See here for more details](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-service-concurrency.html#GUID-400B1460-E44D-4BA5-B216-0B185BE55F8E).
 

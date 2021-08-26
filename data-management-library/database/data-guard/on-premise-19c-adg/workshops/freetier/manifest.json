@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "19c Active Data Guard Fundamentals for General Systems",
+    "workshoptitle": "Setting Up Active Data Guard For On-Premises",
     "tutorials": [
         {           
             "title": "Introduction",
@@ -11,7 +11,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {            
-            "title": "Lab 1: Environment Setup",
+            "title": "Lab 1: Setup Primary and Standby Compute Instance",
             "filename": "../../setup-environment/setup-environment.md"
         },
         {            
