@@ -5,12 +5,17 @@
 
 HeatWave accelerates MySQL queries by 400X using massively parallel processing to provide real-time analytics. So in this lab we will run queries with HeatWave enabled and without and finally observe the results.
 
-**Objectives**
+Estimated Lab Time: 20 minutes
+
+### Objectives
 -  Import data into MDS and load tables to HeatWave
 -  Execute queries leveraging HeatWave and compare the query execution time with and without HeatWave enabled
 
+### Prerequisites
 
-  **Estimated Lab Time: 20 minutes**
+  - All previous labs have been successfully completed.
+
+  
   
 ## **Task 1:** Import data into MDS and load tables to HeatWave
 
@@ -257,9 +262,9 @@ diff -y heatwave_rt_profiles.log mysql_rt_profiles.log
 
 ![](./images/task2.4-2.png)
 
-- As we observe the execution time obtained using HeatWave and without, such as the first query using HeatWave it took approximately 0.07 sec in comparison with 9.39 sec that the query took to process which is relatively much longer than when a HeatWave cluster is enabled. 
- 
- In the next lab you will learn how to use Oracle Analytics Cloud on MySQL Database Service powered by HeatWave.
+As we observe the execution time obtained using HeatWave and without, such as the first query using HeatWave it took approximately 0.07 sec in comparison with 9.39 sec that the query took to process which is relatively much longer than when a HeatWave cluster is enabled. 
+
+Well done, you can now proceed to the next lab!
 
 
 
