@@ -14,7 +14,6 @@ A Highly Available Kubernetes cluster is about setting up Kubernetes without a s
 
 During this lab, you will take advantage of OCI and Kubernetes components in deploying a highly available data plane for your Kubernetes cluster. 
 
-- write Infrastructure As Code (IaC) and provision the infrastructure using OCI Resource Manager (Terraform as Service)
 
     ![KubeArch](./images/kubernetesarch.png " ")
 
