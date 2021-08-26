@@ -55,7 +55,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 1.	Click the **Navigation Menu** in the upper-left corner, navigate to **Identity & Security** and select **Policies**.
 	   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")	
 
-2.	On the Policies page, in the **List Scope** section, select the Compartment(root) and click **Create Policy**.
+2.	On the Policies page, in the **List Scope** section, select the Compartment (root) and click **Create Policy**.
 
     ![Policies page](./images/02policy02.png " ")
 
@@ -69,17 +69,17 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     - Policy statement 1:
 
-    ```
+     ```
     Allow group Administrators to {COMPARTMENT_INSPECT} in tenancy
     ```
 
     - Policy statement 2:
 
-    ```
+     ```
     Allow group Administrators to {VCN_READ, SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH} in tenancy
     ```
 
-   - Policy statement 3:
+    - Policy statement 3:
 
     ```
     Allow group Administrators to manage mysql-family in tenancy
@@ -171,7 +171,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     - Configure backups
     - Show advanced options
 
-4. In **Provide basic information for the DB System**, select the **MDS_Sandbox** Compartment, in the **Name** field, enter **MDS_DB** and in the **Description** field, enter **MDS_DB**.
+4. In **Provide basic information for the DB System**, select the **MDS Sandbox** Compartment, in the **Name** field and **Description** field, enter **MDS_DB**.
 
     ![MDS](./images/04mysql02_02.png " ")
 
@@ -183,7 +183,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     
     ![MDS](./images/04mysql02_04.png " ")
 
-7. In **Configure networking**, keep default values **MDS_VCN** for the VCH and **Private Subnet-MDS_VCN (Regional)** for the subnet. 
+7. In **Configure networking**, keep default values **MDS VCN** for the VCH and **Private Subnet-MDS VCN (Regional)** for the subnet. 
 
     ![MDS](./images/04mysql02_05.png " ")
 
@@ -235,11 +235,11 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
  
 6. In the **Configure placement and hardware** section, select the **Availability Domain** and select  **VM.Standard.E2.1.Micro** for the **Shape**.
 
-    ![COMPUTE](./images/05compute03.png " ")
+   ![COMPUTE](./images/05compute03.png " ")
 
    > **Note:** For the **Virtual cloud network**, make sure **MDS_VCN** is selected and **Assign a public IPv4 address** is set to **Yes**.  
    
-    ![COMPUTE](./images/05compute04.png " ")
+     ![COMPUTE](./images/05compute04.png " ")
 
 7. If you have not already created your SSH key, complete the **Create Local SSH Key** lab. When you are done, continue on to the next step.
 
@@ -277,7 +277,7 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
     
 4. Enter the user name `opc` and the public **IP Address**.
 
-    > **Note:** The **MDS_Client** shows the Public IP Address as mentioned in **Task 5: Create the Client Virtual Machine**, step 10. For example, **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**
+    > **Note:** The **MDS Client** shows the Public IP Address as mentioned in **Task 5: Create the Client Virtual Machine**, step 10. For example, **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**
 
     ```$ ssh -i ~/.ssh/id_rsa opc@&<your_compute_instance_ip>;```
 
@@ -293,13 +293,13 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
 
     ```[opc@...]$ sudo yum install –y mysql-shell```
     
-    ![Connect](./images/06connect05.png " ")
+     ![Connect](./images/06connect05.png " ")
  
 4. From your compute instance, connect to MySQL using the MySQL Shell client tool. 
     
    > **Note:** The endpoint (IP Address) can be found on the MySQL Database System Details page, under **Endpoints**. 
 
-    ![Connect](./images/06connect06.png " ")
+     ![Connect](./images/06connect06.png " ")
 
 5.  Use the following command to connect to MySQL using the MySQL Shell client tool. For example,  **mysqlsh -uadmin -p -h132.145.170.990**.
     
@@ -331,11 +331,11 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
    
    - MySQL Workbench configuration for MySQL MySQL Database Service:
 
-    ![Connect](./images/06workbench01.png " ")
+     ![Connect](./images/06workbench01.png " ")
 
    - MySQL Workbench launched for MySQL Database Service:
 
-    ![Connect](./images/06workbench02.png " ")
+     ![Connect](./images/06workbench02.png " ")
 
 ## Task 7: Start, Stop, or Reboot MySQL Database System
 
@@ -353,14 +353,14 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
 
 3. Select one of the following actions:
 
-   - Start: Starts a stopped database system. After the database system is started, the **Stop** action is enabled and the **Start** option is disabled.
-   - Stop: Stops a running database system. After the database system is powered off, the **Start** action is enabled.
-  - Restart: Shuts down a database system, and restarts it.
+   - Start: Starts a stopped database system. After the database system is started, the **Stop** action      is enabled and the **Start** option is disabled.
+   - Stop: Stops a running database system. After the database system is powered off, the **Start**          action is enabled.
+   - Restart: Shuts down a database system, and restarts it.
 
-   > **Note:**  Stopping a database system stops billing for all OCPUs associated with it. 
-     - Billing continues for storage. 
-     - Billing for OCPUs resumes if you restart the database system.
-     - If you selected **Stop** or **Restart**, the Stop/Restart MySQL Database System dialog box is displayed.
+    > **Note:**  Stopping a database system stops billing for all OCPUs associated with it. 
+      - Billing continues for storage. 
+      - Billing for OCPUs resumes if you restart the database system.
+      - If you selected **Stop** or **Restart**, the Stop/Restart MySQL Database System dialog box is displayed.
 
 4. Select a shutdown type:
 
@@ -394,7 +394,7 @@ Deleting a database system is permanent. Any manual backups associated with the 
 
    > **Note:** A prompt is displayed, asking you to confirm the deletion.
 
-   ![MDS](./images/04mysql08_1.png " ")
+    ![MDS](./images/04mysql08_1.png " ")
 
 6. Enter the word, all caps, `DELETE` and click **Delete 1 MySQL Database System**.
 
