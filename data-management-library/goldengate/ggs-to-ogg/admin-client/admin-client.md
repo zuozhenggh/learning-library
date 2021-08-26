@@ -52,7 +52,7 @@ This lab assumes you successfully completed all preceding labs.
     ```
     <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
     ```
-    > ***Note:** The exclamation point (!) is very important. Without it, the command fails and returns an error.*
+    > **Note:** *The exclamation point (!) is very important. Without it, the command fails and returns an error.*
 
 4.  After connecting successfully, you can run any of the following commands:
 
