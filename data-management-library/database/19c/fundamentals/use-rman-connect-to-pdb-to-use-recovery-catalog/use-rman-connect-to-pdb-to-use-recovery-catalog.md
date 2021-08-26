@@ -29,24 +29,26 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance. If not, see the lab called **Obtain a Compute Image with Oracle Database 19c Installed**.
+- Obtained and signed in to your `workshop-installed` compute instance.
 
 ## Task 1: Prepare your environment
 
-1. Run the `enable_ARCHIVELOG.sh` shell script to enable `ARCHIVELOG` mode in CDB1. Enter **CDB1** at the prompt.
+1. Open a terminal window on your desktop.
+
+2. Run the `enable_ARCHIVELOG.sh` shell script to enable `ARCHIVELOG` mode in CDB1. Enter **CDB1** at the prompt.
 
     ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
     CDB1
     ```
 
-2. Run the `cleanup_PDBs_in_CDB1.sh` shell script to drop all PDBs in CDB1 that may have been created in other labs, and recreate PDB1. You can ignore any error messages that are caused by the script. They are expected.
+3. Run the `cleanup_PDBs_in_CDB1.sh` shell script to drop all PDBs in CDB1 that may have been created in other labs, and recreate PDB1. You can ignore any error messages that are caused by the script. They are expected.
 
     ```
     $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
     ```
 
-3. Run the `create_PDB2_in_CDB1.sh` shell script to create PDB2 in CDB1. You can ignore any error messages that are caused by the script. They are expected.
+4. Run the `create_PDB2_in_CDB1.sh` shell script to create PDB2 in CDB1. You can ignore any error messages that are caused by the script. They are expected.
 
     ```
     $ <copy>$HOME/labs/19cnf/recreate_PDB2_in_CDB1.sh</copy>
@@ -72,7 +74,7 @@ Create a PDB named PDB19 to act as the recovery catalog database. This database 
 
 In PDB19, create a recovery catalog owner named `catowner` and grant it privileges.
 
-1. Set the environment variable to CDB1. Enter **CDB1** at the prompt.
+1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>. oraenv</copy>
@@ -142,7 +144,7 @@ Create a virtual private catalog (VPC), also referred to simply as "recovery cat
     $ <copy>rman target / catalog catowner/Ora4U_1234@PDB19</copy>
 
     Recovery Manager: Release 19.0.0.0.0 - Production on Thu Jul 15 12:07:26 2021
-    Version 19.11.0.0.0
+    Version 19.12.0.0.0
 
     Copyright (c) 1982, 2019, Oracle and/or its affiliates. All rights reserved.
 
@@ -195,7 +197,7 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
 
     Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 
-    Version 19.11.0.0.0
+    Version 19.12.0.0.0
     ```
 
 ## Task 6: Upgrade the recovery catalog
@@ -225,8 +227,8 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
     ```
     RMAN> <copy>UPGRADE CATALOG;</copy>
 
-    recovery catalog upgraded to version 19.11.00.00.00
-    DBMS_RCVMAN package upgraded to version 19.11.00.00
+    recovery catalog upgraded to version 19.12.00.00.00
+    DBMS_RCVMAN package upgraded to version 19.12.00.00
     DBMS_RCVCAT package upgraded to version
     ```
 
@@ -540,6 +542,8 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 
     ```
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 - [Database New Features Guide (Release 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
@@ -548,5 +552,5 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Consulting User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 13 2021
+- **Contributor** - Jody Glover, Principal User Assistance Developer
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 24 2021

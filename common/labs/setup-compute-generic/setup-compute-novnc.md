@@ -68,10 +68,10 @@ Your options are:
 
   ![](./images/create-stack-novnc-5.png " ")
 
-You may now proceed to Step 2 (skip Step 1B).
+You may now proceed to Task 2 (skip Task 1B).
 
 ## Task 1B: Create Stack:  Compute only
-If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
+If you just completed Task 1A, please proceed to Task 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements. Refer to *Lab: Prepare Setup*       
 
   *Note:* We recommend letting our stack create the VCN to reduce the potential for error.
 

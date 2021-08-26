@@ -14,17 +14,9 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out new features in Oracle Database 19c. You use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
-- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. The **Install Oracle Database 19c with Automatic Root Script Execution** lab is the only lab that uses the `workshop-staged` compute instance. The rest of the labs use the `workshop-installed` compute instance.
-- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with three CDBs (ORCL, CDB1, and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. ORCL is not used in any of the labs.
+This workshop lets you try out new features in Oracle Database 19c. Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
 
-At the beginning of the workshop in the **Getting Started** lab, you are shown how to create a free trial account and sign in to Oracle Cloud Infrastucture. Next, you learn how to generate SSH keys for yourself in the lab called **Generate SSH Keys**. You need these SSH keys when you obtain your compute instances.  If you plan to work in the LiveLabs tenancy, you need to generate your SSH keys prior to reserving the workshop because the reservation system will ask you to provide your public key.
-
-All the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your compute instance to run the lab, and each lab ends with instructions on how to restore your compute instance back to its original state.
-
-Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
-
-The following labs cover general database overall enhancements in Oracle Database 19c:
+You can try the following labs:
 
 - Install Oracle Database 19c with Automatic Root Script Execution
 - Clone a PDB by Using DBCA in Silent Mode
@@ -35,32 +27,73 @@ The following labs cover general database overall enhancements in Oracle Databas
 - Use RMAN to Connect to a PDB to Use the Recovery Catalog
 - Explore Automatic Deletion of Flashback Logs
 
+## About Your Workshop Environment
 
-## Copying and pasting text
+During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
 
-The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code from the workshop guide. There are several ways to do this.
+- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
+- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs.
 
-If you copy text from an application on the compute instance itself, you can use the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** and **Ctrl+V**. Most instructions in the workshop guide include a Copy button.
+For most of the steps in the labs, you enter a command in the Terminal window, which you can access on the desktop. All of the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your environment to run the lab, and each lab ends with instructions on how to restore your environment back to its original state.
 
-If you copy text from your local computer, then you need to use the clipboard utility on the compute instance to paste text into an application on the compute instance. Here is how you do it:
+### Starting the Default Listener
 
-1. Copy text from your local machine.
+CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start on boot. Should you need to start the listener again, you can follow the instructions below.
 
-2. On your compute instance, click the small grey arrow on the middle-left side of your screen to open the control bar.
+1. Use the Listener Control Utility to verify whether the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
 
-    ![Small grey tab](images/small-grey-tab.png "Small grey tab")
+    ```
+    LSNRCTL> <copy>lsnrctl status</copy>
 
-3. On the control bar, click the **Clipboard** icon (5th button down).
+    LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 19-AUG-2021 19:34:04
 
-    ![Clipboard](images/clipboard.png "Clipboard")
+    Copyright (c) 1991, 2021, Oracle.  All rights reserved.
 
-4. In the **Clipboard** dialog box, paste the copied text using **Ctrl+v** or the **Paste** option on your speed menu. The text is displayed in the Clipboard dialog box.
+    Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+    STATUS of the LISTENER
+    ------------------------
+    Alias                     LISTENER
+    Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+    Start Date                19-AUG-2021 18:58:56
+    Uptime                    0 days 0 hr. 35 min. 8 sec
+    Trace Level               off
+    Security                  ON: Local OS Authentication
+    SNMP                      OFF
+    Listener Parameter File   /u01/app/oracle/product/19c/dbhome_1/network/admin/listener.ora
+    Listener Log File         /u01/app/oracle/diag/tnslsnr/workshop-installed/listener/alert/log.xml
+    Listening Endpoints Summary...
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5504))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5500))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5501))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB2/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+    Services Summary...
+    Service "CDB1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "CDB1XDB.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "CDB2.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "CDB2XDB.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "c9d86333ac737d59e0536800000ad4f1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "pdb1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    The command completed successfully
+    ```
 
-5. Position your cursor in the application where you want to paste the text, and click your middle mouse button.
+2. If the default listener is not started, execute the following command to start it.
 
-> **Note**: The same method works in reverse. If you want to copy and paste text from your compute instance to your local computer, first paste the text into the **Clipboard** dialog box, and then copy and paste the text from it to your local computer.
+    ```
+    LSNRCTL> <copy>lsnrctl start</copy>
+    ```
+
+
+
+
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 13 2021
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 25 2021
