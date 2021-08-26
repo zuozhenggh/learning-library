@@ -4,11 +4,15 @@
 
 In this lab we will use the Oracle Analytics Cloud instance we created in the Infrastructure lab. Oracle Analytics Cloud is embedded with machine learning that will provide you intelligent insights using natural language generation that automatically creates smart textual descriptions of visualizations and instantly visualize your data, which helps organizations with root cause investigation, troubleshooting and decision-making process.
 
-**Objectives**
+Estimated Lab Time: 30 minutes
+
+### Objectives
 
 - Learn how to create your Analytics dashboards using Oracle Analytics Cloud on MySQL Database Service powered by HeatWave
 
-**Estimated Lab Time: 30 minutes**
+### Prerequisites
+
+  - All previous labs have been successfully completed.
 
 ## **Task 1:** Create Oracle Analytics Cloud Instance 
 
