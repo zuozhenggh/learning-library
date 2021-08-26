@@ -1,5 +1,22 @@
 # Query Data Across ADB and the Data Lake
 
+## Introduction
+
+Estimated Time: 45 minutes
+
+### Objectives
+
+In this lab, you will:
+* Query joined data from both the Data Warehouse and Object Storage.
+
+### Prerequisites
+
+This lab assumes you have:
+* An Oracle account
+* Completed all previous labs successfully
+
+## Task 1: Query Data from the Data Warehouse and Object Storage
+
 1. Query the customers information in the Data Warehouse.
 
     ```
@@ -50,3 +67,17 @@
     group by genre, income_level, age, marital_status, education, job_type, has_children, gender;
     </copy>
     ```
+
+## Learn More
+
+* [Using Oracle Autonomous Database on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/index.html)
+* [Connect with Built-in Oracle Database Actions](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql-developer-web.html#GUID-102845D9-6855-4944-8937-5C688939610F)
+* [DBMS_DCAT Package](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-dbms_dcat-package.html#GUID-4D927F21-E856-437B-B42F-727A2C02BE8D)
+* [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
+* [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
+* [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
+
+## Acknowledgements
+* **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
+* **Contributor:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL    
+* **Last Updated By/Date:** Lauran Serhal, September 2021

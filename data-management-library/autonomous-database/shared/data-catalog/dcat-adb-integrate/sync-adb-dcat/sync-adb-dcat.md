@@ -21,7 +21,7 @@ This lab assumes you have:
 * An Oracle account
 * Completed all previous labs successfully
 
-## **Task 1:** Gather Information About your Data Catalog Instance
+## Task 1: Gather Information About your Data Catalog Instance
 
 In this task, you'll gather information about the Data Catalog instance which you will need in the next task. Save this information in a text editor of your choice such as Notepad in Windows so that you can easily copy and paste this information.
 
@@ -57,7 +57,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
     ![](./images/compartment-ocid.png " ")
 
 
-## **Task 2:** Access the Autonomous Database SQL Worksheet
+## Task 2: Access the Autonomous Database SQL Worksheet
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
@@ -98,7 +98,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     * Query the generated schemas and external tables.
 
 
-## **Task 3:** Connect to Data Catalog
+## Task 3: Connect to Data Catalog
 
 1. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet_**.
 
@@ -178,7 +178,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     ![](./images/view-dcat-connection.png " ")
 
 
-## **Task 4:** Display Data Assets, Folders, and Entities     
+## Task 4: Display Data Assets, Folders, and Entities     
 
 1. Display the available Data Assets in the connected Data Catalog instance. The result should include the **Asset Type** which provides the ability to filter to only Oracle Object Storage sources in this example.
 
@@ -234,7 +234,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     ![](./images/view-asset-entities.png " ")
 
 
-## **Task 5:** Synchronize Autonomous Database with Data Catalog    
+## Task 5: Synchronize Autonomous Database with Data Catalog    
 
 1. Synchronize Data Catalog with Autonomous Database using the **`dbms_dcat.run_sync`** PL/SQL package procedure. Synchronize all of the available Data Assets.
 
@@ -294,6 +294,8 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     </copy>
     ```
 
+    ![](./images/add-image.png " ")
+
 6. Load the **`oci$phx_gold.genre`** data that will be queried frequently into a new database table named **`genre`**.
 
     ```
@@ -303,6 +305,8 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     from oci$phx_gold.genre;
     </copy>
     ```
+
+    ![](./images/add-image.png " ")
 
 7.  Load the **`oci$phx_gold.movie`** data that will be queried frequently into a new database table named **`movie`**. The **`oci$phx_gold.movie`** data is in JSON format.
 
@@ -331,6 +335,8 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
         from oci$phx_gold.movie m;
         </copy>
     ```
+
+    ![](./images/add-image.png " ")
 
 You may now proceed to the next lab.
 
