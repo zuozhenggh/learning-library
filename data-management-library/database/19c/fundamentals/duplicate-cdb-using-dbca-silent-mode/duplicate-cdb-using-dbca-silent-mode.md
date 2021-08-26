@@ -101,6 +101,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1, verify that the d
 
     ```
     SQL> <copy>alter pluggable database PDB1 open; </copy>
+
     Pluggable database altered.
     ```
 
@@ -108,6 +109,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1, verify that the d
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
+
     Session altered.
     ```
 
@@ -518,14 +520,20 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
     $ <copy>cp /home/oracle/labs/19cnf/listener.ora $ORACLE_HOME/network/admin/listener.ora</copy>
     ```
 
+7. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
+    ```
+
 You may now proceed to the next lab.
 
 ## Learn More
 - [dbca -createDuplicateDB command](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-7F4B1A64-5B08-425A-A62E-854542B3FD4E)
-- [Oracle Managed Files](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/using-oracle-managed-files.html#GUID-4A3C4616-0D81-4BBA-8EAD-FCAA8AD5C15A)
+- [Using Oracle Managed Files](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/using-oracle-managed-files.html#GUID-4A3C4616-0D81-4BBA-8EAD-FCAA8AD5C15A)
 
 
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 24 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 26 2021

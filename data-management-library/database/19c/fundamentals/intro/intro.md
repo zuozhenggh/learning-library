@@ -36,7 +36,7 @@ During the workshop, you use two Linux compute instances named `workshop-staged`
 
 For most of the steps in the labs, you enter a command in the Terminal window, which you can access on the desktop. All of the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your environment to run the lab, and each lab ends with instructions on how to restore your environment back to its original state.
 
-### Starting the Default Listener
+### Default Listener
 
 CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start on boot. Should you need to start the listener again, you can follow the instructions below.
 
@@ -96,4 +96,4 @@ CDB1, PDB1, and CDB2 are configured to use the default listener, which is called
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 25 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 26 2021

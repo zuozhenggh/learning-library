@@ -9,9 +9,9 @@ Starting in Oracle Database 19c, the management of space in the fast recovery ar
 
 When you reduce the retention period, flashback logs that are dated beyond the retention period are deleted immediately. In scenarios where a sudden workload spike causes a large number of flashback logs to be created, the workload is monitored for a few days before deleting flashback logs that are beyond the retention period. This avoids the overhead of recreating the flashback logs, if another peak workload occurs soon after. The `COMPATIBLE` initialization parameter must be set to 19.0.0 or higher for flashback logs to be automatically deleted.
 
-In this lab, you enable `FLASHBACK` on CDB1 and set the flashback retention period to 70 minutes. You monitor the logs coming in for 70 minutes and then decrease the flashback retention period to 60 minutes and observe the changes to the logs.
+In this lab, you enable `FLASHBACK` mode on CDB1 and set the flashback retention period to 70 minutes. You monitor the logs coming in for 70 minutes and then decrease the flashback retention period to 60 minutes and observe the changes to the logs. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 80 minutes
+Estimated Lab Time: 85 minutes
 
 
 ### Objectives
@@ -33,9 +33,9 @@ This lab assumes you have:
 
 ## Task 1: Prepare your environment
 
-Review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in Task 2.
+To prepare your environment, review important initialization parameters, enable `ARCHIVELOG` mode on your database, and open PDB1. It's important that CDB1 and PDB1 are open before you enable `FLASHBACK` mode in Task 2.
 
-1. Open a terminal window on the desktop. We will refer to this as terminal 1.
+1. Open a terminal window on the desktop. Let's call this terminal 1.
 
 2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
@@ -105,6 +105,7 @@ Review important initialization parameters, enable `ARCHIVELOG` mode on your dat
 
     ```
     SQL> <copy>ALTER PLUGGABLE DATABASE PDB1 OPEN;</copy>
+
     Pluggable database altered.
     ```
 
@@ -142,6 +143,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
 
     ```
     SQL> <copy>ALTER SYSTEM SET DB_FLASHBACK_RETENTION_TARGET=70 SCOPE=BOTH;</copy>
+
     System altered.
     ```
 
@@ -149,6 +151,7 @@ When you set the flashback period to 70 minutes, it means that 70 minutes is the
 
     ```
     SQL> <copy>ALTER DATABASE FLASHBACK ON;</copy>
+
     Database altered.
     ```
 
@@ -181,10 +184,11 @@ Increase the fast recovery area size to 100GB to provide enough space for the fl
 
     ```
     SQL> <copy>ALTER SYSTEM SET db_recovery_file_dest_size=100G;</copy>
+
     System altered.
     ```
 
-2. Query the `v$recovery_file_dest` view to monitor the space availability in the flash recovery area.
+2. Query the `v$recovery_file_dest` view to monitor the space availability in the flash recovery area. Your values may be different than those shown below.
 
     ```
     SQL> <copy>select
@@ -200,8 +204,6 @@ Increase the fast recovery area size to 100GB to provide enough space for the fl
     -----------------------------  ---------------- ---------------- ----------
     /u01/app/oracle/recovery_area  107,374,182,400  103,730,937,856  36.6
     ```
-
-    Your values may be different than those shown above.
 
 3. Exit SQL*Plus.
 
@@ -223,7 +225,6 @@ Increase the fast recovery area size to 100GB to provide enough space for the fl
     total 409616
     -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v3ps_.flb
     -rw-r-----. 1 oracle oinstall 209723392 Jul 23 19:24 o1_mf_jhp5v1jz_.flb
-
     ```
 
 
@@ -231,7 +232,7 @@ Increase the fast recovery area size to 100GB to provide enough space for the fl
 
 Activity needs to happen on the database for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for approximately 70 minutes. You will see many SQL commands in the output.
 
-1. Double-click the **Terminal** icon on the desktop to open another terminal window. We will refer to this terminal as terminal 2.
+1. Double-click the **Terminal** icon on the desktop to open another terminal window. Let's call this terminal 2.
 
 2. In terminal 2, run the `workload.sh` shell script to generate some flashback logs. Keep the terminal window open and continue to the next step.
 
@@ -300,6 +301,7 @@ From this point on, you can work in terminal 1. Keep terminal 2 open to continue
 
     ```
     SQL> <copy>ALTER SYSTEM SET DB_FLASHBACK_RETENTION_TARGET=60;</copy>
+
     System altered.
     ```
 
@@ -366,10 +368,11 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
     ```
     $ <copy>pgrep -lf workload</copy>
+
     12129 workload.sh
     ```
 
-2. Stop the process. Replace `<pid>` with your process ID number.
+2. Stop the process. Replace `<pid>` with your process ID number. In terminal 2, you should see "Killed" as the output.
 
     ```
     $ <copy>kill -9 <pid></copy>
@@ -385,6 +388,7 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
     ```
     SQL> <copy>ALTER DATABASE FLASHBACK OFF;</copy>
+
     Database altered.
     ```
 
@@ -407,18 +411,22 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
     $ <copy>$HOME/labs/19cnf/recreate_PDB1_in_CDB1.sh</copy>
     ```
 
+8. Run the following command in both terminal windows to close them.
+
+    ```
+    $ <copy>exit</copy>
+    ```
 
 ## Learn More
 
 - [Using Flashback Database (Oracle Database 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/using-flasback-database-restore-points.html#GUID-4E96DB60-3616-4680-866A-F38A6049053A)
 - [`DB_FLASHBACK_RETENTION_TARGET` (Database Reference)](https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/DB_FLASHBACK_RETENTION_TARGET.html#GUID-33F44036-F1BB-4CBF-8AF3-486415E58F2B)
-- [19c Auto Space Management for Flashback Logs in the Fast Recovery Area](https://support.oracle.com/epmos/faces/SearchDocDisplay?_adf.ctrl-state=z275r64r9_4&_afrLoop=402847760189906#BODYTEXT) - My Oracle Support Note - demo of changing the retention and changing the time
-- [Clear Flashback Logs Periodically for Increased Fast Recovery Area Size Predictability](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/new-features.html#GUID-4DE9FA4A-BA27-434A-A68E-0B58D8FD686B) - Scroll down to the topic.
-- [Performing Flashback and Database Point-in-Time Recovery](https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-performing-flashback-dbpitr.html#GUID-5463669A-DC89-4FF4-ACCE-136A72DF687B) - Backup and Recovery User's Guide for Oracle Database 19c
+- [Clear Flashback Logs Periodically for Increased Fast Recovery Area Size Predictability](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/new-features.html#GUID-4DE9FA4A-BA27-434A-A68E-0B58D8FD686B)
+- [Performing Flashback and Database Point-in-Time Recovery](https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-performing-flashback-dbpitr.html#GUID-5463669A-DC89-4FF4-ACCE-136A72DF687B)
 
 
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 25 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 26 2021

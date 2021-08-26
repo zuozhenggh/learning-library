@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you relocate PDB1 from CDB1 to CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -47,7 +47,7 @@ To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify th
 
     ```
     $ <copy>. oraenv</copy>
-    ORACLE_SID = [ORCL] ? CDB1
+    CDB1
     ```
 
 5. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
@@ -109,6 +109,7 @@ To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify th
 
     ```
     SQL> <copy>alter pluggable database PDB1 open; </copy>
+
     Pluggable database altered.
     ```
 
@@ -116,6 +117,7 @@ To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify th
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
+
     Session altered.
     ```
 
@@ -145,6 +147,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
+
     Connected.
     ```
 
@@ -152,6 +155,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+
     User created.
     ```
 
@@ -159,6 +163,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;</copy>
+
     Grant succeeded.
     ```
 
@@ -228,6 +233,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
+
     Session altered.
     ```
 
@@ -291,6 +297,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+
     User created.
     ```
 
@@ -298,6 +305,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>GRANT create session, create pluggable database, sysoper TO c##remote_user CONTAINER=ALL;</copy>
+
     Grant succeeded.
     ```
 
@@ -372,7 +380,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
-  CDB2
+    CDB2
     ```
 
 4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
@@ -392,6 +400,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>DROP USER c##remote_user CASCADE;</copy>
+
     User dropped.
     ```
 
@@ -418,6 +427,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>DROP USER c##remote_user CASCADE;</copy>
+
     User dropped.
     ```
 
@@ -425,6 +435,12 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>exit</copy>
+    ```
+
+12. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
     ```
 
 You may now proceed to the next lab.
@@ -439,4 +455,4 @@ You may now proceed to the next lab.
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 25 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 26 2021
