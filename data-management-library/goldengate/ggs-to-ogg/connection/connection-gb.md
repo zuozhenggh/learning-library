@@ -82,7 +82,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![Download PEM](images/01b-06.png)
 
-## Task 2: Upload the certificate to the Oracle GoldenGate Marketplace Service Manager
+## Task 2: Upload the Certificate to the Oracle GoldenGate Marketplace Service Manager
 
 1.  In the Oracle GoldenGate Marketplace Service Manager, open the navigation menu (hamburger icon), and then click **Certificate Management**.
 
@@ -134,7 +134,7 @@ The following instructions show you how to download the Root Certificate using a
 
 5.  Click **Submit**.
 
-In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You can now proceed to the next lab.
+In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance

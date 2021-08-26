@@ -74,7 +74,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 unzip Wallet_ADW.zip -d wallet_ADW</copy>
     ```
 
-## Task 3: Add the Target ADW credential in the Oracle GoldenGate Administration Server
+## Task 3: Add the Target ADW Credential in the Oracle GoldenGate Administration Server
 
 1.  Launch the OCI GoldenGate Deployment Console.
 
@@ -115,7 +115,7 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
     ![Add credential for source ATP](images/04-10.png)
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can now proceed to the next lab.
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can **may proceed to the next lab**.
 
 ## Acknowledgements
 

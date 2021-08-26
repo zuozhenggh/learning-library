@@ -4,9 +4,9 @@
 
 This lab walks you through the steps to create the required resources you'll use for this workshop. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
 
-> ***Note:** This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
-Estimated time: 20 mins
+Estimated time: 20 minutes
 
 ### Objectives
 
@@ -18,9 +18,9 @@ Estimated time: 20 mins
 
 This lab assumes you have completed the Getting Started lab.
 
-> ***Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
+> **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
-## Task 1: Create a VCN and subnet
+## Task 1: Create a VCN and Subnet
 1.  Open the **Navigation Menu**, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
@@ -49,7 +49,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Create Autonomous Database](./images/01-02-create-adb.png)
 
-3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **SourceATP** for **Display Name** and **Database Name**.
+3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **SourceATP** for **Display Name** and **Database Name**.)
 
     ![Complete Database Information](./images/01-03-compartment.png)
 
@@ -74,7 +74,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## Task 3: Load the ATP schema
+## Task 3: Load the ATP Schema
 
 1.  Click the following link to download the database schema.
 
@@ -130,7 +130,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![Create Autonomous Database](./images/01-02-create-adb.png)
 
-3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **TargetADW** for **Display Name** and **Database Name**.
+3. Select **Compartment** by clicking on the drop-down list. Note that yours will be different - do not select **ManagedCompartmentforPaaS**. Enter **TargetADW** for **Display Name** and **Database Name**.
 
     ![Complete Database information](./images/04-03-compartment.png)
 
@@ -154,7 +154,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-## Task 5: Load the ADW schema
+## Task 5: Load the ADW Schema
 
 1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
 
@@ -186,7 +186,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
-You can now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -20,7 +20,7 @@ In this lab, you will:
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 * Register the source and target databases
-* Enable the ggadmin user and supplemental logging
+* Enable the GGADMIN user and supplemental logging
 
 ### Prerequisites
 
@@ -28,7 +28,7 @@ This lab assumes that you completed all preceding labs.
 
 ## Task 1: Create a Deployment
 
-> ***Note:** that the compartment names in the screenshots may differ from values that appear in your environment.*
+> **Note:** *The compartment names in the screenshots may differ from values that appear in your environment.*
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
@@ -71,7 +71,7 @@ This lab assumes that you completed all preceding labs.
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
 
-## Task 2: Review the Deployment details
+## Task 2: Review the Deployment Details
 
 On the Deployment Details page, you can:
 
@@ -129,9 +129,9 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 5: Enable the ggadmin user
+## Task 5: Enable the GGADMIN User
 
-Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+Although the GGADMIN user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the GGADMIN user.
 
 1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
 
@@ -163,7 +163,7 @@ Although the ggadmin user is created during the database registration process, i
 
 9.  Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
-In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You can now proceed to the next lab.
+In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You may now **proceed to the next lab**.
 
 ## Learn More
 

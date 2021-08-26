@@ -82,9 +82,9 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## Task 3: Add and Run a Receiver Server Path
+## Task 3: Add and Run a Receiver Path
 
-The Receiver Path initiates the process to pull the OCI GoldenGate trail file down o OCI GoldenGate.
+The Receiver Path initiates the process to pull the OCI GoldenGate trail file down to OCI GoldenGate.
 
 1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Receiver Server**.
 
@@ -243,13 +243,13 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![](images/05-17b.png)
 
-## Task 6: Confirm the Receiver Path is running
+## Task 6: Confirm the Receiver Path is Running
 
 In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
 ![Confirm Distribution Path](images/04-00.png)
 
-In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You can now proceed to the next lab.
+In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You may now **proceed to the next lab**.
 
 ## Learn More
 
