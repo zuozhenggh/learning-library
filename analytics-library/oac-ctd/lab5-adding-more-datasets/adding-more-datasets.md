@@ -2,7 +2,7 @@
 
 ## Scenario
 
-“Wait a sec! I remember this Hotel. And I know we have a discount on it because I spent my last summer holidays there. I can save a good money to the company. I’m sure this is my ticket to a management position… well knowing my boss I might just get a kudos email if anything :-S”
+“Wait a sec! I remember this Hotel. And I know we have a discount on it because I spent my last summer holidays there. I can save a good money to the company. I’m sure this is my ticket to a management position… well knowing my boss I might just get a kudos email if anything :-) ”
 
 __SUMMARY__
 
@@ -23,7 +23,7 @@ Estimated Lab Time: 30 minutes
 
 ## **Task 1**: Add additional data set
 
-Donwload the file: [OAC_TD_Agreements.xlsx](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/2xRhwR73IN2bldJ2QXb5YMYnfHseehXiH06xvYTJORSDM7WFPSvEjH0P46z9W6Dk/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Agreements.xlsx
+Donwload the file: [OAC_TD_Agreements.xlsx] (https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/2xRhwR73IN2bldJ2QXb5YMYnfHseehXiH06xvYTJORSDM7WFPSvEjH0P46z9W6Dk/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Agreements.xlsx)
 
 ![](images/1_add_data_set.png " ")
 
