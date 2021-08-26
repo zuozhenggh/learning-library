@@ -28,20 +28,17 @@ Be sure to select the **home region** of your tenancy.  Setup will only work in 
 ## Task 3: Create group and IAM policies
 A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
-If you are not an administrator on your tenancy, you must insure that additional policies have been added to the group you are a member of or ask your admin to create a separate group for you with additional policies. This group will have IAM policies to create and manage the resources in the compartment.
+If you are not an administrator on your tenancy, you must insure that additional policies have been added to the group you are a member of or ask your admin to create a separate group for you with additional policies. This group will have IAM policies for creating and managing the resources within the compartment that will be created by workshop setup scripts.
 
 Here are the steps for creating a new group and assigning security policy required for this workshop (only a user with the admin account will be able to perform the below steps):
 
-1. Lets create compartment **grabdish** as shown.
-  ![](images/create-comp.png " ")
-
-2. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
+1. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
   ![](images/id-groups.png " ")
 
-3. Click Create Group.
+2. Click Create Group.
   ![](images/create-group.png " ")
 
-4. In the Create Group dialog box, enter the following:
+3. In the Create Group dialog box, enter the following:
  - **Name**: Enter a unique name for your group such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
@@ -49,39 +46,27 @@ Here are the steps for creating a new group and assigning security policy requir
 
   ![](images/get-new-group.png " ")
 
- 6. Now, let’s create security policies that give your group permissions to execute the setup steps for this workshop
+ 4. Now, let’s create security policies that give your group permissions to execute the setup steps for this workshop
 
   ![](images/create-policy.png " ")
 
-  Using **Edit Policy Statement** option, add all the below statements to the policy created above.
+  Using **Edit Policy Statement** option, add the below statements to the policy created above.
 
 ```
 <copy>
-Allow group MicroservicesAdmin to inspect users in tenancy
-Allow group MicroservicesAdmin to inspect all-resources in tenancy
+Allow group MicroservicesAdmin to use cloud-shell in tenancy
+Allow group MicroservicesAdmin to manage users in tenancy
+Allow group MicroservicesAdmin to manage all-resources in tenancy
 
 Allow group MicroservicesAdmin to manage vaults in tenancy
 Allow group MicroservicesAdmin to manage buckets in tenancy
 Allow group MicroservicesAdmin to manage objects in tenancy
 
-Allow group MicroservicesAdmin to manage keys in compartment grabdish
-Allow group MicroservicesAdmin to manage secret-family in compartment grabdish
-Allow group MicroservicesAdmin to manage instance-family in compartment grabdish
-Allow group MicroservicesAdmin to inspect all-resources in compartment grabdish
-
-Allow group MicroservicesAdmin to use virtual-network-family in tenancy
-Allow group MicroservicesAdmin to inspect tenancies in compartment grabdish
-Allow group MicroservicesAdmin to use volume-family in tenancy
-
-Allow group MicroservicesAdmin to manage cluster-family in compartment grabdish
-Allow group MicroservicesAdmin to manage load-balancers in compartment grabdish
-Allow group MicroservicesAdmin to manage autonomous-database-family in compartment grabdish
-Allow group MicroservicesAdmin to manage autonomous-database in compartment grabdish
-Allow group MicroservicesAdmin to use virtual-network-family in compartment grabdish
-
 </copy>
 ```
-7. And finally, make sure your user account has been added to the group created above.
+![](images/policy-statements.png " ")
+
+5. And finally, make sure your user account has been added to the group created in step#2.
 
 ## Task 4: Check Your Tenancy Service Limits
 
