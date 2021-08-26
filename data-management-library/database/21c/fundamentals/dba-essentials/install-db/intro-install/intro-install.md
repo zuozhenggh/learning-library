@@ -4,6 +4,8 @@
 
 **Oracle Database Administration Essentials** is a task-oriented, quick start approach to familiarize you with Oracle Database administration. It features the basic know-hows of Oracle Database and helps you perform various tasks necessary to keep the database operational.
 
+Estimated Workshop Time: 2 hours 
+
 Watch this video to learn about the core *Oracle Database Breakthrough Innovations*.
 
 [](youtube:sFQqiGCSh9c)
@@ -15,6 +17,8 @@ Watch this video to learn about the core *Oracle Database Breakthrough Innovatio
 ### Objective
 
 In this workshop, you will learn different ways of installing and configuring Oracle Database 21c.
+
+[](include:note-always-free)
 
 ## How to Install Oracle Database?
 
@@ -32,12 +36,6 @@ Setting up Oracle Database is a two-step process, which involves installing the 
 	- If you select *Create and configure a single instance database*, the setup wizard not only installs the Oracle Database software but also invokes Oracle DBCA automatically to create a single instance database.
 
 	- [](include:sw-only)
-
-	<!--
-
-	- Whereas if you choose **Set Up Software Only**, the setup wizard installs only the software but does not create the database. You need to run Oracle DBCA manually to create and configure your Oracle Database.
-
-	-->
 
 	## About Oracle Database Configuration Assistant (Oracle DBCA)
 
@@ -79,10 +77,6 @@ Oracle Database Enterprise Edition requires *7.8 GB* of local disk storage space
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-
-<!--
-[](include:acknowledge)
--->
 
 - **Author**: Manish Garodia, Principal User Assistance Developer, Database Technologies
 
