@@ -203,7 +203,7 @@ This is the Graph Studio interface for modeling a graph.  You will create a grap
 
     You now have a notebook to use to run graph queries and graph analytics.  You have three interpreters available: **%md** for markdown, **%pgql-pgx** to run PGQL graph queries, and **%java-pgx** to run graph analytics using the Java API.
 
-    ![This is your notebook](images/createnotebookb.png " ")
+    ![This is your notebook](images/createnotebook-task4-step2.png " ")
 
 3. You can create a new paragraph by hovering on the bottom of a paragraph and clicking on the + button.
 

@@ -63,7 +63,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     In the **Name** field, enter 'MovieStreamLanding'
 
-    **Note:** Take care not to use spaces in the name.
+    > **Note:** Take care not to use spaces in the name.
 
     Leave the Cloud Store selected as **Oracle**.
 
@@ -87,7 +87,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 - In the **Name** field, enter 'MovieStreamGold'
 
-    **Note:** Take care not to use spaces in the name.
+    > **Note:** Take care not to use spaces in the name.
 
 - Leave the Cloud Store selected as **Oracle**
 - Copy and paste the following URI into the URI + Bucket field:
