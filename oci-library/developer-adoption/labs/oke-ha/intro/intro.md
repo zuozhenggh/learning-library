@@ -13,8 +13,6 @@ Estimated time: 60 minutes
 A Highly Available Kubernetes cluster is about setting up Kubernetes without a single point of failure. OKE is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to OCI. There are best practices to ensure your OKE data plane is highly available.
 
 During this lab, you will take advantage of OCI and Kubernetes components in deploying a highly available data plane for your Kubernetes cluster. 
-
-
     ![KubeArch](./images/kubernetesarch.png " ")
 
 
