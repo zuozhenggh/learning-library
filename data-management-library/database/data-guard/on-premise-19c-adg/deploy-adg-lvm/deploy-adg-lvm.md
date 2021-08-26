@@ -27,7 +27,7 @@ The standby host has the database software only installed. You need do some STEP
 1. Connect to the standby VM hosts with opc user. Use putty tool (Windows) or command line (Mac, Linux).
 
     ```
-    ssh -i labkey opc@xxx.xxx.xxx.xxx
+    <copy>ssh -i labkey opc@xxx.xxx.xxx.xxx</copy>
     ```
 
    
@@ -35,7 +35,7 @@ The standby host has the database software only installed. You need do some STEP
 2. Swtich to **oracle** user.
 
     ```
-    sudo su - oracle
+    <copy>sudo su - oracle</copy>
     ```
 
    
@@ -43,7 +43,7 @@ The standby host has the database software only installed. You need do some STEP
 3. Modify the `.bash_profile` environment file.
 
     ```
-    [oracle@standby ~]$ vi .bash_profile
+    [oracle@standby ~]$ <copy>vi .bash_profile</copy>
     ```
 
    
@@ -73,7 +73,7 @@ The standby host has the database software only installed. You need do some STEP
 7. Start the listener.
 
     ```
-    [oracle@standby ~]$ lsnrctl start
+    [oracle@standby ~]$ <copy>lsnrctl start</copy>
     
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 08-JUN-2021 05:44:32
     
@@ -142,7 +142,7 @@ A static listener is needed for initial instantiation of a standby database. The
     - Reload the listener.
     
     ```
-    [oracle@primary ~]$ lsnrctl reload
+    [oracle@primary ~]$ <copy>lsnrctl reload</copy>
     
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 31-JAN-2020 11:27:23
     
@@ -190,7 +190,7 @@ A static listener is needed for initial instantiation of a standby database. The
     - Reload the listener
     
     ```
-    [oracle@standby ~]$ lsnrctl reload
+    [oracle@standby ~]$ <copy>lsnrctl reload</copy>
     
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 31-JAN-2020 11:39:12
     
@@ -236,7 +236,7 @@ A static listener is needed for initial instantiation of a standby database. The
 3. From the standby side, switch as **oracle** user, edit the `tnsnames.ora`
 
     ```
-    vi $ORACLE_HOME/network/admin/tnsnames.ora
+    <copy>vi $ORACLE_HOME/network/admin/tnsnames.ora</copy>
     ```
 
 4. Add the following lines to the file.  It's looks like the following. Save the file.  
@@ -321,7 +321,7 @@ The standby database can be duplicated from the primary database.
 4. Start the database in NOMOUNT status using the init parameter file you create in the previous STEP .
 
     ```
-    [oracle@standby dbs]$ sqlplus / as sysdba
+    [oracle@standby dbs]$ <copy>sqlplus / as sysdba</copy>
     
     SQL*Plus: Release 19.0.0.0.0 - Production on Fri Nov 6 04:13:11 2020
     Version 19.10.0.0.0
@@ -330,7 +330,7 @@ The standby database can be duplicated from the primary database.
     
     Connected to an idle instance.
     
-    SQL> startup nomount pfile='/u01/app/oracle/product/19c/dbhome_1/dbs/initorclstby.ora'
+    SQL> <copy>startup nomount pfile='/u01/app/oracle/product/19c/dbhome_1/dbs/initorclstby.ora'</copy>
     ORACLE instance started.
     
     Total System Global Area  251656872 bytes
@@ -605,7 +605,7 @@ The standby database can be duplicated from the primary database.
     - From the primary side,
 
      ```
-     SQL> show parameter dg_broker_config_file;
+     SQL> <copy>show parameter dg_broker_config_file;</copy>
      
      NAME				     TYPE	 VALUE
      ------------------------------------ ----------- ------------------------------
@@ -622,7 +622,7 @@ The standby database can be duplicated from the primary database.
      
      System altered.
      
-     SQL> select pname from v$process where pname like 'DMON%';
+     SQL> <copy>select pname from v$process where pname like 'DMON%';</copy>
      
      PNAME
      -----
@@ -634,7 +634,7 @@ The standby database can be duplicated from the primary database.
     - From the standby side
 
      ```
-     SQL> show parameter dg_broker_config_file
+     SQL> <copy>show parameter dg_broker_config_file</copy>
      
      NAME				     TYPE	 VALUE
      ------------------------------------ ----------- ------------------------------
@@ -649,11 +649,11 @@ The standby database can be duplicated from the primary database.
      NAME				     TYPE	 VALUE
      ------------------------------------ ----------- ------------------------------
      dg_broker_start 		     boolean	 FALSE
-     SQL> alter system set dg_broker_start=true;
+     SQL> <copy>alter system set dg_broker_start=true;</copy>
      
      System altered.
      
-     SQL> select pname from v$process where pname like 'DMON%';
+     SQL> <copy>select pname from v$process where pname like 'DMON%';</copy>
      
      PNAME
      -----
@@ -665,7 +665,7 @@ The standby database can be duplicated from the primary database.
 3. Register the database via DGMGRL. You can run the DGMGRL command from primary site or standby site.
 
     ```
-    [oracle@primary ~]$ dgmgrl sys/Ora_DB4U@ORCL
+    [oracle@primary ~]$ <copy>dgmgrl sys/Ora_DB4U@ORCL</copy>
     DGMGRL for Linux: Release 19.0.0.0.0 - Production on Sat Feb 1 03:51:49 2020
     Version 19.10.0.0.0
     
@@ -674,13 +674,13 @@ The standby database can be duplicated from the primary database.
     Welcome to DGMGRL, type "help" for information.
     Connected to "ORCL"
     Connected as SYSDBA.
-    DGMGRL> CREATE CONFIGURATION adgconfig AS PRIMARY DATABASE IS ORCL CONNECT IDENTIFIER IS ORCL;
+    DGMGRL> <copy>CREATE CONFIGURATION adgconfig AS PRIMARY DATABASE IS ORCL CONNECT IDENTIFIER IS ORCL;</copy>
     Configuration "adgconfig" created with primary database "orcl"
-    DGMGRL> ADD DATABASE ORCLSTBY AS CONNECT IDENTIFIER IS ORCLSTBY MAINTAINED AS PHYSICAL;
+    DGMGRL> <copy>ADD DATABASE ORCLSTBY AS CONNECT IDENTIFIER IS ORCLSTBY MAINTAINED AS PHYSICAL;</copy>
     Database "orclstby" added
-    DGMGRL> ENABLE CONFIGURATION;
+    DGMGRL> <copy>ENABLE CONFIGURATION;</copy>
     Enabled.
-    DGMGRL> SHOW CONFIGURATION;
+    DGMGRL> <copy>SHOW CONFIGURATION;</copy>
     
     Configuration - adgconfig
     
@@ -699,7 +699,7 @@ If there is a warning message, Warning: ORA-16809: multiple warnings detected fo
 
 Now, the Data Guard is ready. The standby database is in mount status.
 
-You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 

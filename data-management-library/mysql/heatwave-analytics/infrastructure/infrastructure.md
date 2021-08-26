@@ -4,15 +4,20 @@
 
 In this lab we will build the infrastructure that we will use to run the rest of the workshop. The main three elements that we will be creating are a Virtual Cloud Network which helps you define your own data centre network topology inside the Oracle Cloud by defining some of the following components (Subnets, Route Tables, Security Lists, Gateways, etc.), bastion host which is a compute instance that serves as the public entry point for accessing a private network from external networks like the internet, and finally we will create an Oracle Analytics Cloud instance which is embedded with machine learning, that helps organizations to discover unique insights faster with automation and intelligence.
 
-**Objectives**
+Estimated Lab Time: 30 minutes
+
+### Objectives
  
 -	Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
--	Create a compute instance as a bastion host
+-	Create a bastion host compute instance 
 -	Connect to the bastion host, install MySQL Shell and download the workshop dataset
 - Create an Oracle Analytics Cloud instance
 
+### Prerequisites
 
-**Estimated Lab Time: 30 minutes**
+  - Oracle Free Trial Account.
+
+
 
 ## **Task 1**: Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
 
@@ -84,7 +89,7 @@ At the end click the blue button _**Add Ingress Rules**_.
 
 
 
-## **Task 2:** Create a compute instance as a bastion host
+## **Task 2:** Create a bastion host compute instance  
 
 
 ### **Task 2.1:**
@@ -172,7 +177,7 @@ ssh -i <private-key-file-name>.key opc@<compute_instance_public_ip>
 
 If prompted to accept the finger print, type _**yes**_ and hit enter, then you will get a Warning.
 
-_**Warning: Permanently added '130.******' (ECDSA) to the list of known hosts.**_
+_**Warning: Permanently added '130. . . ' (ECDSA) to the list of known hosts.**_
 
 Now that you have connected to the instance you can proceed to the next Task.
 
@@ -318,10 +323,10 @@ _**Note:**_ It will take up to _**50 minutes**_ to create the private channel so
 
 
 
-  As a recap we have created a VCN and added an additional Ingress rules to the Security list, and created a compute instance that serves as a bastion host and launched the cloud shell to import the private keys to connect to the compute instance, we also installed MySQL Shell and MySQL client, and downloaded the dataset that will be used later on for benchmark analysis.
-  Finally, we created an Oracle Analytics Cloud instance which we will eventually use later in this workshop.
+As a recap we have created a VCN and added an additional Ingress rules to the Security list, and created a compute instance that serves as a bastion host and launched the cloud shell to import the private keys to connect to the compute instance, we also installed MySQL Shell and MySQL client, and downloaded the dataset that will be used later on for benchmark analysis.
+Finally, we created an Oracle Analytics Cloud instance which we will eventually use later in this workshop.
 
-  Now you can proceed to the next lab!
+Well done, you can now proceed to the next lab!
 
  
 
