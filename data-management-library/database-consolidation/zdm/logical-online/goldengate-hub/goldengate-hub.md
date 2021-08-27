@@ -3,7 +3,7 @@
 ## Introduction
 
 #### Logical Online Migration with Backup Location
-ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Microservices, one Extract and One Replicat. These two microservices's task is to keep both Source and Target in Sync during the migration and during the graceful switchover. The overall logical workflow architecture, as discussed in this workshop's introduction, is as follows:0
+ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Microservices, one Extract and One Replicat. These two microservices's task is to keep both Source and Target in Sync during the migration and during the graceful switchover. The overall logical workflow architecture, as discussed in this workshop's introduction, is as follows:
 
 ![](./images/logical-online-backup-workflow.png " ")
 

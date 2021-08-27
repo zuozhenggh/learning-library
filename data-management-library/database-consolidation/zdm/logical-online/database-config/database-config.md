@@ -122,17 +122,16 @@ Estimate Lab Time: 15 minutes
     ```
     <copy>    
     create user c##ggadmin identified by WELcome##1234 default tablespace users temporary tablespace temp;
-    grant connect, resource to c##ggadmin;
+    grant connect, resource to c##ggadmin container=all;
+    grant select any dictionary to c##ggadmin container=all;
     grant unlimited tablespace to c##ggadmin;
     alter user c##ggadmin quota 100M ON USERS;
     grant select any dictionary to c##ggadmin;
-    grant create view to c##ggadmin;
-    grant execute on dbms_lock to c##ggadmin;
+    grant create view to c##ggadmin container=all;
+    grant execute on dbms_lock to c##ggadmin container=all;
     exec dbms_goldengate_auth.GRANT_ADMIN_PRIVILEGE('c##ggadmin',container=>'all');
     </copy>
     ```
-
-
 
 
 2. Switch the session of your container database to ORCLPDB.
@@ -157,7 +156,7 @@ Estimate Lab Time: 15 minutes
     exec dbms_goldengate_auth.GRANT_ADMIN_PRIVILEGE('ggadmin');
     </copy>
     ```
-  
+
 
 4. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
     ```
