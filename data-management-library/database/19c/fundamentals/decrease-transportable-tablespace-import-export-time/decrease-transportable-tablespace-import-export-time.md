@@ -12,10 +12,10 @@ When Oracle Data Pump Import runs in transportable tablespace mode, the metadata
 
 To export in transportable tablespace mode with Oracle Data Pump Export, your tablespaces need to be in read-only mode. Starting in Oracle Database 19c, Oracle Data Pump Export has a new parameter, `TTS_CLOSURE_CHECK`, that can decrease export time. When `TTS_CLOSURE_CHECK` is set to `TEST_MODE`, you can keep your tablespaces in READ WRITE mode during the export and obtain timing requirements for the export operation. Keep in mind that `TEST_MODE` is for testing purposes only and the resulting dump file is unavailable for import. Setting the `TTS_CLOSURE_CHECK` to `OFF` skips the closure check and is another way to decrease export time. A closure check is unnecessary when the DBA knows that the transportable set is self-contained.
 
-In this lab, you use Oracle Data Pump Export and Oracle Data Pump Import to export a transportable tablespace from PDB1 (in CDB1) and import it into PDB2. You experiment with read-only mode for the tablespace, and try out some of the parameters that help to decrease export and import time. Use the `workshop-installed` compute instance. Use the `workshop-installed` compute instance.
+In this lab, you use Oracle Data Pump Export and Oracle Data Pump Import to export a transportable tablespace from PDB1 (in CDB1) and import it into PDB2. You experiment with read-only mode for the tablespace, and try out some of the parameters that help to decrease export and import time. Use the `workshop-installed` compute instance.
 
 
-Estimated Lab Time: 25 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -50,7 +50,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     CDB1
     ```
 
-3. Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other PDBs in the container database if they exist. You can ignore any error messages.
+3. Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other PDBs in CDB1 if they exist. You can ignore any error messages.
 
     ```
     $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
@@ -65,7 +65,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 5. Run the `create_drop_TBS.sh` shell script.
 
-    The first part of this script connects to PDB1 and creates a `test` tablespace, adds an `HR.TABTEST` table to that tablespace and populates it, and then defines a Oracle Data Pump dump file directory called `dp_pdb1` as `/tmp`. The second part of the script connects to PDB2 and deletes the `TEST` tablespace. You can ignore any error messages.
+    The first part of this script connects to PDB1 and creates a `test` tablespace, adds an `HR.TABTEST` table to that tablespace and populates it, and then defines an Oracle Data Pump dump file directory called `dp_pdb1` as `/tmp`. The second part of the script connects to PDB2 and deletes the `TEST` tablespace. You can ignore any error messages.
 
     ```
     $ <copy>$HOME/labs/19cnf/create_drop_TBS.sh</copy>
@@ -91,7 +91,6 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
     ```
     $ <copy>CONNECT system/Ora4U_1234@PDB2</copy>
-
     Connected.
     ```
 
@@ -123,7 +122,6 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
     ```
     $ <copy>CONNECT system/Ora4U_1234@PDB1</copy>
-
     Connected.
     ```
 
@@ -191,7 +189,7 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     Directory created.
     ```
 
-3. Create the `HR` user in PDB2. You need to pre-create the users that have objects in the transportable tablespace.
+3. Create an `HR` user in PDB2. You need to pre-create the users that have objects in the transportable tablespace.
 
     ```
     SQL> <copy>CREATE USER hr IDENTIFIED BY Ora4U_1234;</copy>
@@ -577,4 +575,4 @@ You may now proceed to the next lab.
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 26 2021
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 27 2021
