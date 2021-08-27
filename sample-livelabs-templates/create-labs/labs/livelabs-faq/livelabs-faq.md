@@ -60,7 +60,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 5.	How to create a custom image from the Marketplace?
     -	Refer to [this](https://rpastijn.github.io/stuff/?lab=custom-image-mp-image) documentation on Github.
 6. Where can I locate the Self QA Checklist?
-    -   When you're ready to Self-QA, change your workshop status to "Self QA". This will trigger an e-mail containing the Self QA Checklist. It can also be found [here](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D5385E6AE8CA617113BE4F6D862E696CB42A09614240).
+    -   When you're ready to Self-QA, change your workshop status to "Self QA". This will trigger an e-mail containing the Self QA Checklist. It can also be found [here](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/fileview/D2D9318C996ADCA1CAABCD38DF6BDE66E69D46E18FB1/_LiveLabs_QA_Instructions_v5_July_2021.docx).
 7. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
     - Instructions to delete a forked repo on Github:
         - Go to Settings of Repo you want to unfork
