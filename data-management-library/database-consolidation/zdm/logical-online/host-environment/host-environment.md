@@ -593,6 +593,27 @@ Oracle GoldenGate Hub uses a self-signed certificate which can cause an issue, i
 
 8. Executing the Script correctly will trigger the ZDM Service to stop and then start again, wait for some minutes for this operation to complete succesfully.        
 
+
+
+## **Task 9: Updating IPTables on the Source DB Server**
+
+It is important to update the IPTables on the Source DB Server. In order to do so: 
+
+1. Switch to the opcuser, verify the Cloud Shell prompt is on __opc@workshop__ after entering exit: 
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+
+2. Then proceed to run the following command in Cloud Shell:    
+    ```
+    <copy>
+    sudo iptables -A IN_public_allow -p tcp -m tcp --dport 1521 -m conntrack --ctstate NEW,UNTRACKED -j ACCEPT
+    </copy>
+    ```
+
 You may now [proceed to the next lab](#next). 
 
 

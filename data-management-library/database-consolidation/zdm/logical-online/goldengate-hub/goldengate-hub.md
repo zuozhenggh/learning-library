@@ -28,7 +28,7 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 
 ![](./images/ogg-security-list.png " ")
 
-4.  Scroll down to the __Ingress Rules__ section. If there are no rules for __Port 443__, they must be added. The absence of rules would look like this:
+4.  Scroll down to the __Ingress Rules__ section. If there are no rules for __Port 443__ and __Port 1521__, they must be added. The absence of rules would look like this:
 
 ![](./images/ogg-no-rules.png " ")
 
@@ -47,6 +47,18 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 ![](./images/ogg-add-rules.png " ")
 
 6. Click on the __Add Ingress Rules__ button on the bottom:
+
+7. Once you have added a rule for __Port 443__, proceed with a rule for __Port 1521__. Click on the __Add Ingress Rules__ button, an __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
+
+- Stateless - __Left Unchecked__
+- Source Type - __CIDR__
+- Source CIDR - __0.0.0.0/0__
+- IP Protocol - __TCP__
+- Source Port Range - __Left as is__
+- Destination Port Range - __1521__
+- Description - __Oracle DB__
+
+8. Click on the __Add Ingress Rules__ button on the bottom:
 
 ![](./images/ogg-yes-rules.png " ")
 

@@ -10,7 +10,7 @@ Estimate Lab Time: 40 minutes
 
 
 ## **Task 1: Learn About the Response File**
-Oracle Zero Downtime Migration uses a response file to parse information relevant for your migration. The response file contains an important number of parameters that are user defined, which will guide ZDM throughout the database migration process. In this Lab, you will learn the fundamentals of ZDM response file and also the basic parameters that will be used during this specific migration.
+Oracle Zero Downtime Migration uses a response file to parse information relevant for your migration. The response file contains an important number of parameters that are user defined, which will guide ZDM throughout the database migration process. In this Lab, you will learn the fundamentals of ZDM response file and also the basic parameters that will be used during this specific migration. Please bear in mind that Oracle Zero Downtime Migration's Response File is extense and provides ample options for flexibility and each specific use case, hence, for the purposes of this workshop only the fundamental parameters will be covered.
 
 __Response File Parameters Required for this Migration__
 
@@ -301,7 +301,7 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     MIGRATION_METHOD=ONLINE_LOGICAL
     DATA_TRANSFER_MEDIUM=OSS
 
-    TARGETDATABASE_OCID= target_database_ocid
+    TARGETDATABASE_OCID=<UPDATE>
     TARGETDATABASE_ADMINUSERNAME=ADMIN
 
     SOURCEDATABASE_ADMINUSERNAME=SYSTEM
@@ -316,15 +316,14 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     OCIAUTHENTICATIONDETAILS_REGIONID=<UPDATE>
 
     TARGETDATABASE_GGADMINUSERNAME=GGADMIN
-    TARGETDATABASE_CONNECTIONDETAILS_BASTIONDETAILS_PORT=22
     SOURCEDATABASE_GGADMINUSERNAME=GGADMIN
-    SOURCEDATABASE_CONNECTIONDETAILS_BASTIONDETAILS_PORT=22
+
     SOURCECONTAINERDATABASE_ADMINUSERNAME=SYSTEM
     SOURCECONTAINERDATABASE_GGADMINUSERNAME=C##GGADMIN
     SOURCECONTAINERDATABASE_CONNECTIONDETAILS_HOST=<UPDATE>
     SOURCECONTAINERDATABASE_CONNECTIONDETAILS_PORT=1521
     SOURCECONTAINERDATABASE_CONNECTIONDETAILS_SERVICENAME=ORCL
-    SOURCECONTAINERDATABASE_CONNECTIONDETAILS_BASTIONDETAILS_PORT=22
+
 
     GOLDENGATEHUB_ADMINUSERNAME=oggadmin
     GOLDENGATEHUB_URL=<UPDATE>
@@ -332,8 +331,7 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     GOLDENGATEHUB_TARGETDEPLOYMENTNAME=Target
     GOLDENGATEHUB_COMPUTEID=<UPDATE>
 
-    SOURCECONTAINERDATABASE_CONNECTIONDETAILS_SERVICENAME=<UPDATE>
-    SOURCECONTAINERDATABASE_CONNECTIONDETAILS_BASTIONDETAILS_PORT=22
+
 
     DATAPUMPSETTINGS_DATAPUMPPARAMETERS_IMPORTPARALLELISMDEGREE=1
     DATAPUMPSETTINGS_DATAPUMPPARAMETERS_EXPORTPARALLELISMDEGREE=1
@@ -346,7 +344,6 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     DATAPUMPSETTINGS_JOBMODE=SCHEMA
     DATAPUMPSETTINGS_DELETEDUMPSINOSS=TRUE
     DATAPUMPSETTINGS_FIXINVALIDOBJECTS=TRUE
-    DATAPUMPSETTINGS_DATAPUMPPARAMETERS_ENCRYPTION=ALL
     DATAPUMPSETTINGS_DATAPUMPPARAMETERS_IMPORTPARALLELISMDEGREE=1
     DATAPUMPSETTINGS_DATAPUMPPARAMETERS_EXPORTPARALLELISMDEGREE=1
     DATAPUMPSETTINGS_METADATAREMAPS-1=type:REMAP_TABLESPACE,oldValue:USERS,newValue:DATA
@@ -354,37 +351,43 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     DATAPUMPSETTINGS_OMITENCRYPTIONCLAUSE=TRUE
     DATAPUMPSETTINGS_SECUREFILELOB=TRUE
     DATAPUMPSETTINGS_SKIPDEFAULTTRANSFORM=FALSE
+    DATAPUMPSETTINGS_CREATEAUTHTOKEN=false
 
     DUMPTRANSFERDETAILS_PARALLELCOUNT=3
     DUMPTRANSFERDETAILS_RETRYCOUNT=3
-    DUMPTRANSFERDETAILS_SOURCE_OCIHOME=/usr
-    DUMPTRANSFERDETAILS_TARGET_USEOCICLI=FALSE
     </copy>
     ```
 
 3. Update the following lines in the file. Replace `<Update>` with the information. Be careful and make sure the entire text is pasted as there is a tendency for the first character to sometimes get cut off:
     * TARGETDATABASE\_OCID: On your Autonomous Database home page.
-    ![Configuration Autonomous](./images/config-autonomous.PNG)
+    ![TargetDatabase OCID](./images/config-autonomous.png)
+    * SOURCEDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
+    ![Source DB Connection Details](./images/source-db-connection.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_TENANTID: On your API key configuration file preview.
-    ![Configuration Tenancy](./images/config-tenancy.PNG)
+    ![Configuration Tenancy](./images/config-tenancy.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_USERID: On your API key configuration file preview.
-    ![Configuration User ID](./images/config-user.PNG)
+    ![Configuration User ID](./images/config-user.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_FINGERPRINT: On your API key configuration file preview.
-    ![Configuration Fingerprint](./images/config-fingerprint.PNG)
+    ![Configuration Fingerprint](./images/config-fingerprint.png)
     * OCIAUTHENTICATIONDETAILS\_REGIONID: On your API key configuration file preview.
-    ![Configuration Region](./images/config-region.PNG)
+    ![Configuration Region](./images/config-region.png)
+    * SOURCECONTAINERDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
+    ![Source DB Connection Details](./images/source-db-connection.png)
+    * GOLDENGATEHUB\_URL: On your GG Hub Compute Instance home page for the hostname and on your VCN page for the DNS Domain Name. The URL is composed of __https://__ + the OGG Hub hostname + __.__ + the domain name. An example of how the URL can look like is  __https://oggzdm.labvcn.oraclevcn.com__
+    ![GoldenGate HUB URL](./images/gg-hostname.png)
+    ![GoldenGate HUB URL 2](./images/gg-dns-domain-name.png)
+    * GOLDENGATEHUB\_COMPUTEID: On your GG Hub Compute Instance home page. Copy the OCID value.
+    ![GoldenGate Compute ID](./images/gg-compute-id.png)
     * DATAPUMPSETTINGS_DATABUCKET\_NAMESPACENAME: On your object storage bucket homepage.
-    ![Bucket Namespace](./images/bucket-namespace.PNG)
+    ![Bucket Namespace](./images/bucket-namespace.png)
     * DATAPUMPSETTINGS_DATABUCKET\_BUCKETNAME: On your object storage bucket homepage.
-    ![Bucket Name](./images/bucket-name.PNG)
+    ![Bucket Name](./images/bucket-name.png)
 
-    For easy access go back under your OCI user profile, API Keys, select the ellipses under your fingerprint, and 'View Configuration File'.
 
-    ![Configuration Preview](./images/view-config-prev.PNG)
 
 4. After the lines are updated save and quit vi editor.
 
-
+You may now [proceed to the next lab](#next). 
 
 ## Acknowledgements
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration

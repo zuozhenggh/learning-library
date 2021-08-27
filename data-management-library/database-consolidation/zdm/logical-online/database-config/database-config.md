@@ -251,13 +251,35 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-6. Exit 'oracle' to 'opc'.
+## **Task 4: Change the Source Database System Password**
+
+In order to perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
+
+1. Connect to your source database. 
+    ```
+    <copy>
+    sqlplus system/Ora_DB4U@localhost:1521/orcl
+    </copy>
+    ```
+
+2. Change your password to __WELcome##1234__ by copying and executing the following in SQLPLUS
+   
+    ```
+    <copy>
+    ALTER USER system IDENTIFIED BY WELcome##1234;
+    </copy>
+    ```
+
+3. The password has been changed. Exit SQL.
 
     ```
     <copy>
     exit
     </copy>
     ```
+
+
+
 
 Please *proceed to the next lab*.
 
