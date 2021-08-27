@@ -14,9 +14,13 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out new features in Oracle Database 19c. Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
+This workshop lets you try out new features in Oracle Database 19c. All of the labs are independent of each other, so you don't need to do them in any particular order. If needed, a lab starts with instructions on how to prepare your environment, and ends with instructions on how to restore your environment back to its original state. For most lab steps, you enter a command in the Terminal window. For database actions, you use SQL*Plus.
 
-You can try the following labs:
+> **Note**: Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
+
+### General Database Overall Enhancement Labs
+
+The following labs are available:
 
 - Install Oracle Database 19c with Automatic Root Script Execution
 - Clone a PDB by Using DBCA in Silent Mode
@@ -31,24 +35,22 @@ You can try the following labs:
 
 During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
 
-- The `workshop-staged` compute instance has the Oracle Database 19c installer files staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
-- The `workshop-installed` compute instance has Oracle Database 19c already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start on boot. Lab files are stored in the `/home/oracle/labs/19cnf` directory.
+- The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
+- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start on boot. Lab files are stored in the `/home/oracle/labs/19cnf` directory.
 
- All of the labs are independent of each other, so you don't need to do them in any particular order. Each lab starts with instructions on how to set up your environment to run the lab, and each lab ends with instructions on how to restore your environment back to its original state. For most of the steps in the labs, you enter a command in the Terminal window, which you can access on the desktop. For database actions, you use SQL*Plus.
+On both compute instances, you work as the `oracle` user (password is `Ora4U_1234`).
 
 ## Troubleshooting the `workshop-staged` compute instance
 
-If you made an error while installing the database, you cannot easily undo the changes made to the compute instance. It is best to obtain a fresh `workshop-staged` compute instance and try the lab again.
+If you made an error while installing the database during the **Install Oracle Database 19c with Automatic Root Script Execution** lab, you cannot easily undo the changes made to the compute instance. It is fastest to obtain a fresh `workshop-staged` compute instance and try the lab again.
 
 ## Troubleshooting the `workshop-installed` compute instance
-
-This section contains troubleshooting information that may not be included in the lab instructions.
 
 ### Start the default listener
 
 In the event that you are unable to connect to CDB1, PDB1, or CDB2 on your `workshop-installed` compute instance, you can do the following to check the status of the default listener and start it if needed:
 
-1. Use the Listener Control Utility to verify whether the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
+1. Use the Listener Control Utility to verify whether the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -103,7 +105,7 @@ In the event that you accidentally changed one or more of your lab files on your
 
 1. Open a terminal window.
 
-2. Change to the ~/labs/19cnf directory.
+2. Change to the `~/labs/19cnf` directory.
 
     ```
     $ <copy>cd ~/labs/19cnf</copy>
@@ -115,7 +117,7 @@ In the event that you accidentally changed one or more of your lab files on your
     $ <copy>unzip -o 19cnf-lab-files.zip</copy>
     ```
 
-4. Set the execute permission on all of the files.
+4. Set the execute permission on all of the lab files.
 
     ```
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
