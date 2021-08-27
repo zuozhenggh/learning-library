@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Starting with Oracle Database 19c, you can duplicate a container database by using the `createDuplicateDB` command in silent mode in Database Configuration Assistant (DBCA). A container database must be in `ARCHIVELOG` mode before you can duplicate it by using DBCA in silent mode.
+Starting with Oracle Database 19c, you can duplicate a container database (CDB) by using the `createDuplicateDB` command in silent mode in Database Configuration Assistant (DBCA). A CDB must be in `ARCHIVELOG` mode before you can duplicate it by using DBCA in silent mode.
 
 In this lab, you duplicate CDB1 twice by using the `createDuplicateDB` command of DBCA in silent mode. First, you duplicate CDB1 as a single individual database named DUPCDB1 with a basic configuration that uses the default listener. Next, you duplicate CDB1 as OMFCDB1 with Oracle Managed Files (OMF) enabled and create a new listener at the same time. Oracle Managed Files simplifies the creation of databases as Oracle does all OS operations and file naming. Use the `workshop-installed` compute instance.
 
@@ -141,7 +141,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1, verify that the d
 
 In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1 as DUPCDB1. The database configuration type is set to `SINGLE`, which instructs DBCA to create a single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener.
 
-1. Run the `-createDuplicateDB` command.
+1. Run the `-createDuplicateDB` command. This step takes a few minutes to complete.
 
     ```
     $ <copy>dbca -silent \
@@ -219,6 +219,7 @@ In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
 
     ```
     SQL> <copy>connect HR/Ora4U_1234@PDB1</copy>
+    Connected.
     ```
 
 7. Verify that PDB1 has an `HR.EMPLOYEES` table with data in it.
@@ -240,7 +241,7 @@ In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
 9. View the status of the default listener. Notice that both DUPCDB1 and PDB1 are listed as a service.
 
     ```
-    $ <copy>lsnrctl status LISTENER</copy>
+    $ <copy>lsnrctl status</copy>
 
     LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 25-AUG-2021 21:36:51
 
@@ -290,10 +291,10 @@ In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
 
 ## Task 3: Use DBCA to duplicate CDB1 as OMFCDB1 with Oracle Managed Files enabled
 
-Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single individual database called OMFCDB1. This time, enable Oracle Managed Files and create a dynamic listener called LISTENER_OMFCDB1 that listens on port 1525.
+Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single individual database called OMFCDB1. This time, enable Oracle Managed Files and create a dynamic listener called LISTENER_OMFCDB1 that listens on port 1565.
 
 
-1. Launch DBCA in silent mode to duplicate CDB1 as OMFCDB1.
+1. Launch DBCA in silent mode to duplicate CDB1 as OMFCDB1. This step takes a few minutes to complete.
 
     ```
     $ <copy>dbca -silent \
@@ -322,7 +323,7 @@ Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single ind
     Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/OMFCDB1/OMFCDB1.log" for further details.
     ```
 
-2. View the `$ORACLE_HOME/network/admin/listener.ora` file and verify that DBCA added the listener information. There should be an entry for `LISTENER_OMFCDB1`.
+2. View the `listener.ora` file and verify that DBCA added the listener information for `LISTENER_OMFCDB1`.
 
     Dynamic service registration does not make use of the `listener.ora` file; however, your listeners needs to be listed in this file if you want to manage them with the Listener Control Utility.
 
@@ -337,7 +338,7 @@ Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single ind
     ...
     ```
 
-3. View the status of the listener.
+3. View the status of `LISTENER_OMFCDB1`. OMFCDB1 should be listed as a service.
 
     ```
     $ <copy>lsnrctl status LISTENER_OMFCDB1</copy>
@@ -437,7 +438,7 @@ Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single ind
 10. Exit SQL*Plus.
 
     ```
-  SQL> <copy>EXIT</copy>
+    SQL> <copy>EXIT</copy>
     ```
 
 ## Task 4: Restore your environment
@@ -514,7 +515,7 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
     CDB1
     ```
 
-6.  Replace the modified `listener.ora` file with the original. The original resides in the `/home/oracle/labs/19cnf` directory.
+6.  Replace the modified `listener.ora` file with the original. A copy of the original is stored with the lab files.
 
     ```
     $ <copy>cp /home/oracle/labs/19cnf/listener.ora $ORACLE_HOME/network/admin/listener.ora</copy>
