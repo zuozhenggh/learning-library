@@ -319,7 +319,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Learn More
 
