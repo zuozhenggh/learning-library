@@ -7,7 +7,7 @@ Oracle Database 19c provides complete backup and recovery flexibility for multit
 
 In this lab, you create a PDB named PDB19 to act as the recovery catalog database for all other PDBs in CDB1. `ARCHIVELOG` mode must be enabled on CDB1. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 
@@ -48,7 +48,7 @@ This lab assumes you have:
     $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
     ```
 
-4. Run the `create_PDB2_in_CDB1.sh` shell script to create PDB2 in CDB1. You can ignore any error messages that are caused by the script. They are expected.
+4. Run the `recreate_PDB2_in_CDB1.sh` shell script to create PDB2 in CDB1. You can ignore any error messages that are caused by the script. They are expected.
 
     ```
     $ <copy>$HOME/labs/19cnf/recreate_PDB2_in_CDB1.sh</copy>
@@ -143,10 +143,10 @@ Create a virtual private catalog (VPC), also referred to simply as "recovery cat
     Recovery Manager complete.
     ```
 
-5. Connect to CDB1 and the recovery catalog (PDB19) through RMAN.
+5. Using RMAN, connect to CDB1 (the target) and the recovery catalog database (PDB19) as the recovery catalog owner (`catowner`).
 
     ```
-    $ <copy>rman target / catalog catowner/Ora4U_1234@PDB19</copy>
+    $ <copy>rman TARGET / CATALOG catowner/Ora4U_1234@PDB19</copy>
 
     connected to target database: CDB1 (DBID=1051548720)
     connected to recovery catalog database
@@ -180,9 +180,7 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
     $ <copy>sqlplus sys/Ora4U_1234@PDB19 AS SYSDBA</copy>
     ```
 
-2. Enable the VPD model for the recovery catalog by running the `dbmsrmanvpc.sql` script with the `–vpd` option.
-
-    The following command enables the VPD model for the recovery catalog owned by the user `catowner`.
+2. Run the `dbmsrmanvpc.sql` script with the `–vpd` option to enable the VPD model for the recovery catalog owned by the user `catowner`.
 
     ```
     SQL> <copy>@/$ORACLE_HOME/rdbms/admin/dbmsrmanvpc.sql -vpd catowner</copy>
@@ -224,7 +222,7 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
     enter UPGRADE CATALOG command again to confirm catalog upgrade
     ```
 
-4. Enter the command again to confirm that you want to upgrade the catalog.
+4. Enter the command again to confirm that you want to upgrade the recovery catalog.
 
     ```
     RMAN> <copy>UPGRADE CATALOG;</copy>
@@ -244,7 +242,7 @@ Oracle Virtual Private Database (VPD) creates security policies to control datab
 
 ## Task 7: Create VPC users
 
-Connect to the recovery catalog database as the `SYSTEM` user and create the VPC users `vpc_pdb1` and `vpc_pdb2`. Grant the users the `CREATE SESSION` privilege. Next, connect to the recovery catalog database as the base catalog owner and grant the `vpc_pdb1` and `vpc_pdb2` users access to the metadata of PDB1 and PDB2, respectively.
+Connect to the recovery catalog database as the `SYSTEM` user and create two VPC users named `vpc_pdb1` and `vpc_pdb2`. Grant the users the `CREATE SESSION` privilege. Next, connect to the recovery catalog database as the base catalog owner and grant the `vpc_pdb1` and `vpc_pdb2` users access to the metadata of PDB1 and PDB2, respectively.
 
 1. Connect to the recovery catalog database as the `SYSTEM` user.
 
@@ -316,15 +314,17 @@ Connect to the recovery catalog database as the `SYSTEM` user and create the VPC
 
     ```
     RMAN> <copy>EXIT</copy>
+
+    Recovery Manager complete.
     ```
 
 ## Task 8: Back up and restore PDB1
 
-RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set contains one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance timezone is used.  In a later task, you create a query using your tag value to find the handle value.
+RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set consists of one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance's timezone is used.  In a later task, you create a query using your tag value to find the handle value.
 
-In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database as the `vpc_pdb1` user to back up and restore PDB1. Next, try to back up PDB1 as user `vpc_pdb2` and observe what happens.
+In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database as the `vpc_pdb1` user to back up and restore PDB1. Next, try to back up PDB1 as the `vpc_pdb2` user and observe what happens.
 
-1. Run RMAN with the following arguments. The `TARGET` keyword takes in the target PDB as an argument. The `CATALOG` keyword takes in the recovery catalog database as an argument.
+1. Using RMAN, connect to PDB1 (the target) and the recovery catalog database (PDB19) as the `vpd_pdb1` user.
 
     ```
     $ <copy>rman TARGET sys/Ora4U_1234@PDB1 CATALOG vpc_pdb1/Ora4U_1234@PDB19</copy>
@@ -366,7 +366,7 @@ In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database a
     Recovery Manager complete.
     ```
 
-5. Using RMAN, connect to PDB1 and the recovery catalog database as the `vpc_pdb2` user.
+5. Using RMAN, connect to PDB1 (the target) and the recovery catalog database (PDB19) as the `vpc_pdb2` user.
 
     ```
     $ <copy>rman TARGET sys/Ora4U_1234@PDB1 CATALOG vpc_pdb2/Ora4U_1234@PDB19</copy>
@@ -445,7 +445,7 @@ Each backup set contains one or more backup pieces. Multiple copies of the same 
 
 ## Task 10: Revoke privileges from the VPC users and drop the recovery catalog
 
-Revoke recovery catalog privileges from the two VPC users, `vpc_pdb1` and `vpc_pdb2`. Verify that the users no longer have privileges by attempting to back up PDB1 as `vpc_pdb1`. Next, drop the recovery catalog from PDB19.
+Revoke recovery catalog privileges from the two VPC users, `vpc_pdb1` and `vpc_pdb2`. Test that the `vpc_pdb1` can no longer back up PDB1. Next, drop the recovery catalog from PDB19.
 
 1. Connect to the recovery catalog database as the recovery catalog owner.
 
@@ -479,7 +479,7 @@ Revoke recovery catalog privileges from the two VPC users, `vpc_pdb1` and `vpc_p
     Recovery Manager complete.
     ```
 
-5. Connect to `PDB1` and the recovery catalog database as the `vpc_pdb1` user through RMAN.
+5. Using RMAN, connect to PDB1 (the target) and the recovery catalog database (PDB19) as the `vpc_pdb1` user.
 
     ```
     $ <copy>rman TARGET sys/Ora4U_1234@PDB1 CATALOG vpc_pdb1/Ora4U_1234@PDB19</copy>
@@ -556,7 +556,7 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
     $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
     CDB1
     ```
-2. Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other PDBs in the container database if they exist. You can ignore any error messages.
+2. Run the `cleanup_PDBs_in_CDB1.sh` shell script to recreate PDB1 and remove other PDBs in CDB1 if they exist. You can ignore any error messages.
 
     ```
     $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
@@ -579,4 +579,4 @@ You may now proceed to the next lab.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 26 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021
