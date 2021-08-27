@@ -25,7 +25,7 @@ This lab assumes you have:
 
 ## Task 1: Prepare your environment
 
-To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify that the default listener is started, and verify that PDB1 has sample data. CDB1, PDB1, and CDB2 all use the default listener.
+To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify that the default listener is started, and verify that PDB1 has sample data. CDB1, PDB1, and CDB2 all use the default listener.
 
 1. Open a terminal window on the desktop.
 
@@ -108,7 +108,7 @@ To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify th
 8. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
 
     ```
-    SQL> <copy>alter pluggable database PDB1 open; </copy>
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
 
     Pluggable database altered.
     ```

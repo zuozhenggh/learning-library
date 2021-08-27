@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -107,7 +107,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 8. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
 
     ```
-    SQL> <copy>alter pluggable database PDB1 open; </copy>
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
 
     Pluggable database altered.
     ```
@@ -120,7 +120,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     Session altered.
     ```
 
-10. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+10. Query the `HR.EMPLOYEES` table. The result shows that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -141,13 +141,12 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 
 ## Task 2: Create a common user and grant it privileges to clone a database
 
-A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create a user called `c##remote_user`, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
+A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create a common user called `c##remote_user`, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
 
 1. Connect to CDB1 as the `SYS` user.
 
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
-
     Connected.
     ```
 
@@ -239,7 +238,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     Session altered.
     ```
 
-4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us verify that PDB2 is a clone of PDB1 and its contents. The result should show 107 rows.
+4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>

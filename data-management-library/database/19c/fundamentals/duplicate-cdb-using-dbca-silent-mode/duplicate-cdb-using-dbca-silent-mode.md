@@ -100,7 +100,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1, verify that the d
 7. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
 
     ```
-    SQL> <copy>alter pluggable database PDB1 open; </copy>
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
 
     Pluggable database altered.
     ```
