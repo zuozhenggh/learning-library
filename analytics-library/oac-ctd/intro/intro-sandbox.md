@@ -36,6 +36,6 @@ Estimated time: 120 minutes
 
 ## Acknowledgements
 
-- **Author** - Mahira Galal and Aydin Heydari
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
 - **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
-- **Last Updated By/Date** - Alex Chiru, April 2021
+- **Last Updated By/Date** - Sushil Mule, August 2021
