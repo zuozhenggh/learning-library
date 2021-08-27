@@ -288,4 +288,4 @@ You may now proceed to the next lab.
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 26 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021

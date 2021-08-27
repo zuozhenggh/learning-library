@@ -452,4 +452,4 @@ You may now proceed to the next lab.
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 26 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 27 2021
