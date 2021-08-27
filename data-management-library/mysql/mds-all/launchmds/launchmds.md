@@ -693,6 +693,9 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
     ![Connect](./images/06connect05.png " ")
 
 ## **TASK 9:**  Create airportdb schema and load data using MySQL Shell
+The airportdb data files were produced using the MySQL Shell Schema Dump Utility. For information about this utility, see Instance Dump Utility, Schema Dump Utility, and Table Dump Utility.
+
+Data files produced by the MySQL Shell Schema Dump Utility include DDL files for creating the schema structure, compressed .tsv files that contain the data, and .json metadata files.
 
 **Be sure to complete TASK 8 before doing TASK 9**
 
@@ -1224,17 +1227,6 @@ Subtask 2 - Provision an OAC instance
 8.	Wait 30 minutes then continue to Subtask 3
 
 Subtask 3 - Build OAC Dashboard
-1.	Navigate to hamburger->Analytics->Analytics Clouds
-2.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
-3.	On the Create Analytics Instance enter the required information as shown below
-4.	Wait 30 minutes for OAC instance creation to complete.
-5.	Go down to the resources page and click on the Create Private Access Channel link
-6.	Click the create Private Access Channel button
-7.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-8.	Click the create Private Access Channel button
-9.	Wait 90 minutes then continue to Subtask 4
-
-Subtask 4 - Build OAC Dashboard
 1.	Navigate to hamburger->Analytics->Analytics Clouds
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
 3.	Create a Connection to HeatWave to build a dashboard
