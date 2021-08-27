@@ -296,7 +296,7 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
  
 4. From your compute instance, connect to MySQL using the MySQL Shell client tool. 
     
-   > **Note:** The endpoint (IP Address) can be found on the MySQL Database System Details page, under **Endpoints**. 
+    > **Note:** The endpoint (IP address) can be found on the MySQL Database System Details page, under **Endpoints**. 
 
    ![Connect](./images/06connect06.png " ")
 
@@ -348,12 +348,12 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
 
 3. Select the **MDS\_Sandbox** Compartment and click **MDS\_DB** to open the Database System Details page.
 
-   ![MDS](./images/04mysql07.png " ")
+    ![MDS](./images/04mysql07.png " ")
 
 3. Select one of the following actions:
 
-   - Start: Starts a stopped database system. After the database system is started, the **Stop** action      is enabled and the **Start** option is disabled.
-   - Stop: Stops a running database system. After the database system is powered off, the **Start**          action is enabled.
+   - Start: Starts a stopped database system. After the database system is started, the **Stop** action is enabled and the **Start** option is disabled.
+   - Stop: Stops a running database system. After the database system is powered off, the **Start** action is enabled.
    - Restart: Shuts down a database system, and restarts it.
 
     > **Note:**  Stopping a database system stops billing for all OCPUs associated with it. 
@@ -363,9 +363,9 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
 
 4. Select a shutdown type:
 
-   - Fast: Flushes dirty pages before shutting down the database system. Some flush operations must be performed during the next startup, potentially increasing the duration of the start-up process.
-   - Slow: Flushes dirty pages and purges undo log pages for older transactions. The shutdown itself can take longer, but the subsequent startup is faster.
-   - Immediate: Does not flush dirty pages and does not purge any undo log pages. Stops MySQL immediately. Page flushes and log purging will take place during the next startup, increasing the duration of the start-up process.
+    - Fast: Flushes dirty pages before shutting down the database system. Some flush operations must        be performed during the next startup, potentially increasing the duration of the start-up     process.
+    - Slow: Flushes dirty pages and purges undo log pages for older transactions. The shutdown itself can take longer, but the subsequent startup is faster.
+    - Immediate: Does not flush dirty pages and does not purge any undo log pages. Stops MySQL immediately. Page flushes and log purging will take place during the next startup, increasing the duration of the start-up process.
 
 5. Select the required shutdown type and click **Stop** or **Restart**, depending on the action chosen.
 
