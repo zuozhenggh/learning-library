@@ -133,7 +133,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
         
      ![COMPUTE](./images/03vcn09.png " ")
 
-11.	In the **Security Lists in _Compartment Name_ Compartment** section, click **Security List for Private Subnet-MDS_VCN**.
+11.	In the **Security Lists in _Compartment\_Name_ Compartment** section, click **Security List for Private Subnet-MDS_VCN**.
 
     ![COMPUTE](./images/03vcn10.png " ")
 
