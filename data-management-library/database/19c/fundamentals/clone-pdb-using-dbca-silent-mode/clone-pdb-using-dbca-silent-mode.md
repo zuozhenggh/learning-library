@@ -170,7 +170,7 @@ A common user is a database user that has the same identity in the `root` contai
 4. Exit SQL*Plus.
 
     ```
-    SQL> exit
+    SQL> <copy>exit</copy>
     ```
 
 ## Task 3: Use DBCA to clone a remote PDB from a CDB
@@ -319,7 +319,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     $ <copy>exit</copy>
     ```
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+
 
 ## Learn More
 
