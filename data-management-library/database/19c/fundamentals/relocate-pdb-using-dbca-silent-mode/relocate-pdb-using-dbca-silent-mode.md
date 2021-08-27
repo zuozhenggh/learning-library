@@ -121,9 +121,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     Session altered.
     ```
 
-10. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
-
-    After relocating PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
+10. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows. After relocating PDB1 to CDB2 in a later step, the new PDB should also contain the `HR.EMPLOYEES` table and its data.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -147,7 +145,6 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>CONNECT sys/Ora4U_1234@CDB1 as sysdba</copy>
-
     Connected.
     ```
 
@@ -255,7 +252,7 @@ A common user is a database user that has the same identity in the `root` contai
 
 ## Task 5: Relocate PDB1 back to CDB1
 
-1. Try to run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1. You should get an error about the database link user.
+1. Try to run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1.
 
     ```
     $ <copy>dbca -silent \
@@ -278,7 +275,7 @@ A common user is a database user that has the same identity in the `root` contai
 
 2. Question: Why did you get an error when trying to relocate PDB1 back to CDB1?
 
-    Answer: In preparation for the first relocation (PDB1 moving to CDB2), we created the database link user only on CDB1 because at that time, it was considered the remote CDB. But now, you are trying to move PDB1 back to CDB1, and CDB2 is considered the remote CDB. To fix the problem, you need to create the remote user in CDB2 too.
+    Answer: In preparation for the first relocation (PDB1 moving to CDB2), we created the database link user only in CDB1 because at that time, it was considered the remote CDB. But now, you are trying to move PDB1 back to CDB1, and CDB2 is considered the remote CDB. To fix the problem, you need to create the remote user in CDB2 too.
 
 3. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
