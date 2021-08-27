@@ -4,7 +4,7 @@
 
 In this  lab, you will configure your development environment and collect information that will be used later throughout this workshop.
 
-Estimated Lab Time: ~25 minutes
+Estimated time: 30 minutes
 
 ### Objectives
 
@@ -43,6 +43,8 @@ Estimated Lab Time: ~25 minutes
     </copy>
     ````
 
+  ![](images/clone.png " ")
+
   You should now see `mtdrworkshop` in your root directory
 
 3. Change to `mtdrworkshop` directory.
@@ -65,7 +67,7 @@ Estimated Lab Time: ~25 minutes
 
 ## Task 2: Create an OCI compartment and an OKE cluster in that compartment
 
- 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
+ 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity & Security> Compartments**.
 
   	![](images/15-identity-compartments.png " ")
 
@@ -92,7 +94,9 @@ Estimated Lab Time: ~25 minutes
 
        `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
-  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters**.
+       ![](images/compartmentid.png " ")
+
+  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters (OKE)**.
 
     ![](images/27-dev-services-oke.png " ")
 
@@ -105,6 +109,8 @@ Estimated Lab Time: ~25 minutes
     ![](images/29-create-oke-wizard.png " ")
 
   9. Change the name of the cluster to `mtdrworkshopcluster`, accept all the other defaults, and click **Next** to review the cluster settings.
+
+    ![](images/mtdrworkshopcluster.png " ")
 
 
   10. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
@@ -188,32 +194,56 @@ Estimated Lab Time: ~25 minutes
 	- Stay in mtdrwokshop/setup-dev-environment directory and launch
 		sql with /nolog option
 
-		![](images/SQLCl-Cloud-Shell.png " ")
+      ```
+      <copy>sql /nolog</copy>
+      ```
+
+	  ![](images/SQLCl-Cloud-Shell.png " ")
 
 	- Point the tool at your wallet.zip file
-		SQL> set cloudconfig wallet.zip
 
-     SQL> show tns
+      ```
+      <copy>set cloudconfig wallet.zip</copy>
+      ```
+
+      ```
+      <copy>show tns</copy>
+      ```
+
      ![](images/Show-tns.png " ")
 
      - Connect to mtdrdb_tp service, as database ADMIN user (remember the
        password given to ADMIN above)
 
-      SQL> connect ADMIN@mtdrdb_tp
+      ```
+      <copy>connect ADMIN@mtdrdb_tp</copy>
+      ``` 
+
+     ![](images/connect.png " ")
 
       - Create TODOUSER (replace <password> by a strong password).
 
         ```
         <copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
+
+     ![](images/create-user.png " ")
+
        - Grant some privileges to TODOUSER by executing the following command
         
         ```
         <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
         ```
 
+     ![](images/grant.png " ")        
+
       - Connect as TODOUSER
-        SQL> connect todouser@mtdrdb_tp
+
+        ```
+        <copy> connect todouser@mtdrdb_tp</copy>
+        ```
+
+     ![](images/connect-todouser.png " ")
 
       - Create TODOITEM table
 
@@ -229,6 +259,8 @@ Estimated Lab Time: ~25 minutes
           );</copy>
          ```
 
+     ![](images/create-table.png " ")
+
       - Insert the first row, manually into TODOITEM table
         
         ```
@@ -240,6 +272,7 @@ Estimated Lab Time: ~25 minutes
         ```
         <copy>commit;</copy>
         ```
+     ![](images/commit-complete.png " ")
 
 ## Task 4: Create an OCI Registry and Auth key
 
@@ -250,7 +283,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
   ![](images/21-dev-services-registry.png " ")
 
 
-2. Take note of the namespace (for example, `axkcsk2aiatb` shown in the image below).
+2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
 
   ![](images/22-create-repo.png " ")
 
@@ -258,19 +291,21 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 	- Repository Name: `<tenancy name>/mtdrworkshop`
 		- Access: `Public`
 
-  	Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments
+  ![](images/create-repository.png " ")
 
+  	Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments
 		```
 		<copy>./addOCIRInfo.sh <namespace> <repository_name></copy>
 		```
+  	For example `./addOCIRInfo.sh axhpdrizd2ai treehacks01/mtdrworkshop`
 
-  	For example `./addOCIRInfo.sh axkcsk2aiatb mtdrworkshop.user1/mtdrworkshop`
+  ![](images/add-info.png " ")
 
 4. You will now create the Auth token by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
 
   ![](images/23-user-settings.png " ")
 
-5. Click on **Auth Tokens** and select **Generate Token**.
+5. Scroll down, click on **Auth Tokens** and select **Generate Token**.
 
   ![](images/24-gen-auth-token.png " ")
 
@@ -325,7 +360,9 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
     ```
 
-2. Navigate to **Developer Services > Kubernetes Clusters**
+2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
+
+    ![](images/27-dev-services-oke.png " ")
 
 3. Copy the mdtrworkshopcluster id and paste into the newly created file
   ![](images/mtdrworkshop-cluster-id.png " ")
@@ -343,7 +380,10 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
 ## Task 7: Configuring Network Security Rules
 1. The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
-2. Navigate to **Developer Services > Kubernetes Clusters**
+2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
+
+    ![](images/27-dev-services-oke.png " ")
+
    	- Click on the **mtdrworkshopcluster**
 
 3. Click on VCN Name
@@ -368,4 +408,4 @@ Congratulations, you have completed lab 1; you may now [proceed to the next lab]
 
 * **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Anoosha Pilli, Database Product Management,  April 2021
+* **Last Updated By/Date** - Kamryn Vinson, August 2021

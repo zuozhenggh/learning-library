@@ -4,9 +4,9 @@
 
 Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password.
 
-In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer on the workshop-staged compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer on the `workshop-staged` compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 40 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-staged` compute instance.
+- Obtained and signed in to your `workshop-staged` compute instance
 
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
@@ -59,7 +59,7 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
    demo        ldap           owm      sdk
     ```
 
-5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12.0, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
+5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
 
   *Enter the command carefully and check that it is correct before you run it.*
 
@@ -69,13 +69,15 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
 
 6. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
-  ![Select Configuration Option page](images/select-configuration-option-page.png "Select Configuration Option page")
+    ![Select Configuration Option page](images/select-configuration-option-page.png "Select Configuration Option page")
 
 7. On the **System Class** page, leave **Desktop Class** selected, and click **Next**.
 
-  ![Select System Class page](images/select-system-class-page.png "Select System Class page")
+    ![Select System Class page](images/select-system-class-page.png "Select System Class page")
 
-8. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes. The following values will be configured:
+8. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes, and then click **Next**.
+
+    The following values will be configured:
 
     - Oracle base: `/u01/app/oracle`
     - Database file location: `/u01/app/oracle/oradata`
@@ -87,15 +89,17 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     - Create as Container database (selected)
     - Pluggable database name: `orclpdb`
 
-  ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
+    ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
 
 
-9. On the **Create Inventory** page, leave the default settings as is, and click **Next**. The following values will be configured:
+9. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+
+    The following values will be configured:
 
     - Inventory Directory: `/u01/app/oraInventory`
     - oraInventory Group Name: `oinstall`
 
-  ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
+    ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
 
 10. On the **Root script execution** page, do the following, and then click **Next**.
 
@@ -106,25 +110,30 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     - Enter the password for the `oracle` user, which is `Ora4U_1234`.
 
 
-  ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
+    ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
 
 11. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
 
-  ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png "Perform Prerequisite Checks page")
+    ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png "Perform Prerequisite Checks page")
 
-  ![Summary page](images/summary-page.png "Summary page")
+    ![Summary page](images/summary-page.png "Summary page")
 
 12. On the **Summary** page, click **Save Response File**. The **Save Response File** dialog box is displayed. Browse to and select the `/tmp` directory. Leave **db.rsp** as the name, and click **Save**.
 
 13. Click **Install** to begin installing the software.
 
-14. On the **Install Product** page, monitor the progress of the steps being executed.
+14. On the **Install Product** page, monitor the progress of the steps being executed.  When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes approximately 26 minutes to complete.
 
-  ![Install Product page](images/install-product-page.png "Install Product page")
+    ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png "Run configuration scripts prompt")
 
-15. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes between 15 to 20 minutes to complete.
 
-  ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png "Run configuration scripts prompt")
+15. Watch for the two lines in the progress information that pertain to automatic root script execution:
+
+    - Execute Root Scripts
+    - Running root scripts using specified configuration method
+
+    ![Install Product page](images/install-product-page.png "Install Product page")
+
 
 16. On the **Finish** page, click **Close**. The installation is finished.
 
@@ -134,7 +143,7 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
 
 ## Task 2: Review the response file
 
-1. Change to the `/tmp` directory where you saved the response file.
+1. In the terminal window, change to the `/tmp` directory where you saved the response file.
 
     ```
     $ <copy>cd /tmp</copy>
@@ -190,7 +199,7 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     ```
 
 
-3. Using SQL\*Plus, connect to the `root` container of your database. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
+3. Using SQL\*Plus, connect to the `root` container of your database as the `SYS` user. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
 
     ```
     $ <copy>sqlplus / as sysdba</copy>
@@ -224,7 +233,6 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     SQL> <copy>SHOW user</copy>
 
     USER is "SYS"
-    SQL>
     ```
 
 6. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
@@ -235,7 +243,6 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     CON_NAME
     -------------------
     CDB$ROOT
-    SQL>
     ```
 
 7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
@@ -249,7 +256,6 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     CDB$ROOT          1
     PDB$SEED          2
     ORCLPDB           3
-    SQL>
     ```
 
 
@@ -259,7 +265,15 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     SQL> <copy>EXIT</copy>
     ```
 
+9. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
+    ```
+
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
+
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -274,4 +288,4 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 19 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 26 2021

@@ -37,7 +37,7 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## Task 1: Configure the Object Storage Connections
 
@@ -63,7 +63,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     In the **Name** field, enter 'MovieStreamLanding'
 
-    **Note:** Take care not to use spaces in the name.
+    > **Note:** Take care not to use spaces in the name.
 
     Leave the Cloud Store selected as **Oracle**.
 
@@ -87,7 +87,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 - In the **Name** field, enter 'MovieStreamGold'
 
-    **Note:** Take care not to use spaces in the name.
+    > **Note:** Take care not to use spaces in the name.
 
 - Leave the Cloud Store selected as **Oracle**
 - Copy and paste the following URI into the URI + Bucket field:

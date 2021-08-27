@@ -8,7 +8,7 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the 
 To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
 
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -44,9 +44,9 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 ## Task 2: Create a `workshop-staged` compute instance
 
-1. Download [db19cnf-workshop-staged.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IB0_i443bk4fdA7XvxA-bVeljmAiqcTWWwjruTbYR8R0[…]/c4u04/b/labfiles/o/db19cnf-workshop-staged.zip) to a directory on your local computer.
+1. Download [db19cnf-workshop-staged.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IB0_i443bk4fdA7XvxA-bVeljmAiqcTWWwjruTbYR8R0Q0PE2gfbOjXhgExL6D8/n/c4u04/b/labfiles/o/db19cnf-workshop-staged.zip) to a directory on your local computer.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
     ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
 
@@ -54,11 +54,11 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Select **My Configuration**.
 
-4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the `db19cnf-workshop-staged.zip` file that you just downloaded, and then click **Open**.
 
     ![Stack Configuration for workshop-staged](images/stack-configuration-workshop-staged.png "Stack Configuration for workshop-staged")
 
-5. In the **Stack Information** section, leave **Name** and **Description** for the stack as is, and select your compartment.
+5. In the **Stack Information** section, leave the **Name** and **Description** for the stack as is, and select your compartment.
 
     This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-staged` compute instance. If you plan to use your own VCN, make sure that it resides in this compartment too.
 
@@ -95,21 +95,23 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-staged` compute instance.
+14. In a browser, paste the URL to your `workshop-staged` compute instance and wait a minute or two.
 
-   You are automatically logged in to your compute instance and presented with a user-friendly desktop.
+    You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
+
+    ![workshop-staged noVNC desktop](images/workshop-staged-noVNC-desktop.png "workshop-staged noVNC desktop")
 
 
 
 ## Task 3: Create a `workshop-installed` compute instance
 
-1. Download [db19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/p3azd6JsGn1R0_YBobDvkH9-gCkzdYwiexUsxAKUySC86[…]u04/b/labfiles/o/db19cnf-workshop-installed.zip) to a directory on your local computer.
+1. Download [db19cnf-workshop-installed.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/p3azd6JsGn1R0_YBobDvkH9-gCkzdYwiexUsxAKUySC86DjRvs6c_SfP5S7E35Q4/n/c4u04/b/labfiles/o/db19cnf-workshop-installed.zip) to a directory on your local computer.
 
-2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**. The **Create Stack** page is displayed.
+2. On the home page in Oracle Cloud Infrastructure, click **Create a stack**.
 
     ![Create a stack tile on the home page](images/create-a-stack.png "Create a stack tile on the home page")
 
@@ -117,11 +119,11 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Select **My Configuration**.
 
-4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the ZIP file that you just downloaded, and then click **Open**.
+4. In the **Stack Configuration** section, select **.Zip file**, click **Browse**, select the `db19cnf-workshop-installed.zip` file that you just downloaded, and then click **Open**.
 
     ![Stack Configuration for workshop-installed](images/stack-configuration-workshop-installed.png "Stack Configuration for workshop-installed")
 
-5. In the **Stack Information** section, leave **Name** and **Description** for the stack as is, and select your compartment.
+5. In the **Stack Information** section, leave the **Name** and **Description** for the stack as is, and select your compartment.
 
     This compartment is used to store the stack, the VCN (if you choose to create a new one), and the `workshop-staged` compute instance. If you plan to use your own VCN, make sure that it resides in this compartment too.
 
@@ -137,7 +139,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 8. In the **Options** section, configure the following:
 
     - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
-    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for labs. If you increase the number of OCPUs, be sure that you have the capacity available.
+    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for these labs. If you increase the number of OCPUs, be sure that you have the capacity available.
     - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected in the **Stack Information** section.
 
     ![Options Section for workshop-installed](images/options-workshop-installed.png "Options Section for workshop-installed")
@@ -158,13 +160,15 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of your log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-installed` compute instance.
+14. In a browser, paste the URL to your `workshop-installed` compute instance and wait a minute or two.
 
-    You are automatically logged in to your compute instance and presented with a user-friendly desktop.
+    You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
+
+    ![workshop-installed noVNC desktop](images/workshop-installed-noVNC-desktop.png "workshop-installed noVNC desktop")
 
 
 
