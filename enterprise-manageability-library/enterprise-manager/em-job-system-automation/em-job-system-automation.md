@@ -35,7 +35,7 @@ In this lab you will learn:
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed on the Enterprise Manager console (browser)
 
-## **STEP 1:** Understand how to create an OS Command Job
+## Task 1: Understand how to create an OS Command Job
 
 In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
@@ -92,7 +92,7 @@ In this workshop we will first review the Job you ran in STEP 0 to set user *ora
 
 Now the Library job created is ready to be used.
 
-## **STEP 2:** Create a SQL command Job
+## Task 2: Create a SQL command Job
 
 In this workshop we will create and run a SQL Command Job to determine how many targets are down from the Enterprise Manager Repository
 
@@ -182,7 +182,7 @@ Now let us see how we can run a sql job to alter the initialization parameters o
 
 <!-- This workshop shows how you can use the Job System to automate SQL commands on databases including the Enterprise Manager Repository and schedule them as needed.   -->
 
-## **STEP 3:** Create Database Backup Job using Wizard
+## Task 3: Create Database Backup Job using Wizard
 
 Jobs can be accessed from the Jobs menu or from within the context of a target. Let us look at it from a Database target perspective.
 

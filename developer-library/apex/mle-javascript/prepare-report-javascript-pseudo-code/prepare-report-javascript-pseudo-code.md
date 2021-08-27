@@ -7,7 +7,7 @@ While extending the end date you need to avoid extending tasks that have '**Clos
 
 Estimated Time: 15 minutes
 
-## **STEP 1**: Using SQL Workshop to write Pseudo Code
+## Task 1: Using SQL Workshop to write Pseudo Code
 Reviewing the above requirement, we can test the In-Database JavaScript code using **SQL Commands** under **SQL Workshop**. We will write a pseudo code to extend the **Email Integration** project's tasks.
 
 1. Click on the **SQL Workshop** arrow icon and then click on **SQL Commands** menu Item.
@@ -134,7 +134,7 @@ Reviewing the above requirement, we can test the In-Database JavaScript code usi
 
 
 
-## **STEP 2**: Prepare Report
+## Task 2: Prepare Report
 Now that we have completed testing the pseudo code. Let's navigate to **Project Tasks Report** page and then click on **Edit Page 4** on the developer tool bar.
 
 1. Click **Actions** => **Columns**.

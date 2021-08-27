@@ -11,7 +11,7 @@ Estimates Lab Time - 20 minutes
 * Clone the setup and microservices code
 * Execute setup
 
-## **STEP 1**: Select Your Compartment
+## Task 1: Select Your Compartment
 
 You have been assigned your own OCI compartment for running this workshop.  The name of the compartment is shown on the Launch page.
 
@@ -33,21 +33,21 @@ You have been assigned your own OCI compartment for running this workshop.  The 
 
 ![](images/correct-comp-name.png " ")
 
-## **STEP 2**: Launch the Cloud Shell
+## Task 2: Launch the Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
 
-Click the Cloud Shell icon in the top-right corner of the Console.
+1. Click the Cloud Shell icon in the top-right corner of the Console.
 
   ![](images/open-cloud-shell.png " ")
 
 
-## **STEP 3**: Make a Clone of the Workshop Setup Script and Source Code
+## Task 3: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.6.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.8.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -62,7 +62,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
     </copy>
     ```
 
-## **STEP 4**: Start the Setup
+## Task 4: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -115,7 +115,7 @@ Click the Cloud Shell icon in the top-right corner of the Console.
 
 6. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface.  Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
 
-## **STEP 5**: Complete the Setup
+## Task 5: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 

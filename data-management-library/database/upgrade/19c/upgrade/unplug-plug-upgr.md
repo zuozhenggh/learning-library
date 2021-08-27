@@ -23,14 +23,12 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Preparation work in CDB1
+## Task 1: Preparation work in CDB1
 
 1. The PDB3 we will utilize in this part of the lab has already been created in CDB1 – but you will need to startup CDB1. PDB3 will start automatically within seconds.
 
@@ -50,7 +48,7 @@ This lab assumes you have:
     ```
 ![](./images/unplug_PDB3_02.png " ")
 
-## **STEP 2**: Analyze the source PDB with AutoUpgrade
+## Task 2: Analyze the source PDB with AutoUpgrade
 
 1. A config file has been provided already. Please note that you will use the COPY option this time. The source PDB3 will remain in CDB1 but exist upgraded in CDB2 afterwards.
 
@@ -119,7 +117,7 @@ This lab assumes you have:
 
     There shouldn't be any issue to be fixed by yourself in PDB3. AutoUpgrade will take care on everything for you.
 
-## **STEP 3**: Unplug/Plugin/Upgrade with AutoUpgrade
+## Task 3: Unplug/Plugin/Upgrade with AutoUpgrade
 
 1. Now you can start AutoUpgade in deploy mode and let the tool unplug and plug and upgrade PDB3 within CDB2
 

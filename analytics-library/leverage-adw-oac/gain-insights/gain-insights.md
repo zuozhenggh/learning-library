@@ -21,7 +21,7 @@ _Estimated Lab Time:_ 20 minutes
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
 
-## **STEP 1**: Gain Insights with Visuals
+## Task 1: Gain Insights with Visuals
 
 1.  **Search** for your Data Set.  
 Lets go back in the web mode; in the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged to **ask** your business questions using natural language.  
@@ -62,7 +62,7 @@ Change **"# Customers"** to the second Y Axis > Go to the **Grammar Panel**, und
     
     ![Loose Customers over Mobile Phone](../gain-insights/images/valuebysalesweekforcustomersbychannel-y2axis3.png)
 
-## **STEP 2**: Use Advanced Analytics  
+## Task 2: Use Advanced Analytics  
 
 You've created your visual to explore and find patterns with Value and Customers by Sales Week and Channel, and to understand the split over Categories. You spot it a decrease over Mobile Phones category.  
 Now you need to enhance the insights is the data displayed and add Advanced Analytics functions as easy as the right-click of a mouse.

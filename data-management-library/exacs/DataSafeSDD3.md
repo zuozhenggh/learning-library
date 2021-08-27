@@ -27,10 +27,10 @@ Follow these general steps:
 
 ## Steps
 
-### **Step 1:** Connect to your ExaCS database as the SYS user with SQL Developer
+### Task 1: Connect to your ExaCS database as the SYS user with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
-### **Step 2:** In SQL Developer, add an `AGE` column to the `HCM1.EMPLOYEES` table in your ExaCS database
+### Task 2: In SQL Developer, add an `AGE` column to the `HCM1.EMPLOYEES` table in your ExaCS database
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
@@ -49,7 +49,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 <copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
-### **Step 3:** Sign in to the Oracle Data Safe Console in your region
+### Task 3: Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -64,7 +64,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### **Step 4:** Update your sensitive data model against your database by using the update option in the Data Masking wizard
+### Task 4: Update your sensitive data model against your database by using the update option in the Data Masking wizard
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click Data Discovery. The Select Target for **Data Discovery** page is displayed.
 

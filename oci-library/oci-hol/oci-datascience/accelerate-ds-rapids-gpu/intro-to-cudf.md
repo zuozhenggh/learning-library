@@ -22,7 +22,7 @@ This lab assumes that you have:
 * A Data Science notebook session running on a GPU VM shape.
 * The NVIDIA RAPIDS 0.16 conda environment installed in the notebook session. 
 
-## **STEP 1:** Download the cuDF Notebook
+## Task 1: Download the cuDF Notebook
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..
 
@@ -55,7 +55,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
    ![](./../accelerate-ds-rapids-gpu/images/file-in-file-browser.png)
 
 
-## **STEP 2:** Open the Notebook
+## Task 2: Open the Notebook
 
 1. Open the file `intro_to_cudf.ipynb` by double-clicking on it. This operation may take a couple of seconds depending on your browser. A new tab opens with the notebook:
 
@@ -97,7 +97,7 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
   These two windows are useful to monitor and confirm that the GPU and the CPUs are being truly utilized by various commands. It's also useful to monitor Python processes in general to diagnose potential issues at runtime.
 
-## **STEP 3:** Running the cuDF notebook
+## Task 3: Running the cuDF notebook
 
 1. Click on the `intro_to_cudf.ipynb` notebook tab. This will activate the notebook file.
 

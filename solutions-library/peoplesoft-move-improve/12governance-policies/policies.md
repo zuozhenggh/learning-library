@@ -15,7 +15,7 @@ In this lab you will:
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running
 
-## **STEP 1**: Creating a Policy Group
+## Task 1: Creating a Policy Group
 
 Before creating any policies we will create a policy group. Policy groups are optional and are used to group policies together for display.
 
@@ -25,7 +25,7 @@ Before creating any policies we will create a policy group. Policy groups are op
 2.  Under name, enter the name of the PeopleSoft environment that this policy group is for. For demo purposes we will be using the **HCMFT** environment. Enter a description, then click save.
     ![](./images/policysave.png "")
 
-## **STEP 2**: Creating Policies
+## Task 2: Creating Policies
 
 1.  Navigate to **Dashboard** > **Governance**. Click **PolicyEditor** on the side menu then click **Add Policy**    
     ![](./images/policyadd.png "")
@@ -60,7 +60,7 @@ Before creating any policies we will create a policy group. Policy groups are op
 4.  On the side menu select **Policies**. Here you will be able to see all the policies we recently created for this environment.
     ![](./images/addpolicy.png "")
 
-## **STEP 3**: Executing Policies
+## Task 3: Executing Policies
 
 1.  Now we will execute our stop policy. If you want a policy to execute immediately you can set the start date for a time in the past. Navigate to **Dashboard** > **Governance**. Click **Policy Editor** on the side menu then click the arrow under **View/Edit** next to our **HCMFT Stop** policy.
     ![](./images/stoppolicy.png "")

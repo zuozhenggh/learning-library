@@ -19,8 +19,17 @@ The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' 
 
 Estimate Lab Time: 20 minutes
 
-## **STEP 1: Install OCI CLI**
-1. Return to your compute instance command prompt. As 'opc' install OCI CLI. Respond y at the prompt.
+## **Task 1: Install OCI CLI**
+1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
+    ```
+
+
+2. Install OCI CLI. Respond y at the prompt.
 
     ```
     <copy>
@@ -28,7 +37,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 2: Set ZDM Group and User and Create Directories**
+## **Task 2: Set ZDM Group and User and Create Directories**
 1. Run code below to add the group zdm, create the user zdmuser, and add directories for the ZDM.
 
     ```
@@ -44,7 +53,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 3: Install Zero Downtime Migration**
+## **Task 3: Install Zero Downtime Migration**
 1. As 'opc' check that the following packages are installed:
     * expect
     * glib-devel
@@ -115,7 +124,7 @@ Estimate Lab Time: 20 minutes
 
     ![Check Status](./images/check-status.PNG)
 
-## **STEP 4: Generating API Keys**
+## **Task 4: Generating API Keys**
 1. As 'zdmuser' go to 'zdmhome' directory.
 
     ```
@@ -148,7 +157,7 @@ Estimate Lab Time: 20 minutes
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
     ![Configuration File Preview](./images/config-file-preview.PNG)
 
-## **STEP 5: Creating Your Configuration File and Copying Your Directory**
+## **Task 5: Creating Your Configuration File and Copying Your Directory**
 1. Back in your command prompt create your config file.
 
     ```
@@ -301,7 +310,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 6: Creating RSA Keys**
+## **Task 6: Creating RSA Keys**
 
 1. As 'zdmuser' go to root directory and generate RSA keys. Hit enter key 3 times for no password and to save to /home/zdmuser/.ssh/id_rsa.
 

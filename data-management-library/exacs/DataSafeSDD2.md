@@ -31,11 +31,11 @@ In this lab, you learn how to do the following:
 
 ## Steps
 
-### **Step 1:** Connect to ExaCS DB using SQL Developer
+### Task 1: Connect to ExaCS DB using SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### **Step 2:** In SQL Developer, add a column to the `EMPLOYEES` table in your database
+### Task 2: In SQL Developer, add a column to the `EMPLOYEES` table in your database
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
@@ -54,7 +54,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Keep this tab open because you return to it in a later step.
 
-### **Step 3:** Sign in to the Oracle Data Safe Console in your region
+### Task 3: Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -69,7 +69,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### **Step 4:** Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
+### Task 4: Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Data Models**.
 - Select the check box for your sensitive data model that you created in Discovery Lab 1 - Discover Sensitive Data with Oracle Data Safe (**<username> SDM1**).
@@ -92,7 +92,7 @@ The verification job is started.
 
 - Click **Continue**.
 
-### **Step 5:** Manually add the AGE column to your sensitive data model
+### Task 5: Manually add the AGE column to your sensitive data model
 
 - On the Sensitive Data Model: **<username> SDM1** page, click **Add**. The **Add Sensitive Columns** dialog box is displayed.
 
@@ -116,7 +116,7 @@ Your sensitive data model is updated to include the `AGE` column.
 - Click **Save and Continue**.
 - Click **Exit**.
 
-### **Step 6:** Drop the AGE column in your database
+### Task 6: Drop the AGE column in your database
 
 - Return to SQL Developer.
 - On the SQL Worksheet, run the following commands to drop the `HCM1.EMPLOYEES.AGE` column.
@@ -139,7 +139,7 @@ Your sensitive data model is updated to include the `AGE` column.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
 
-### **Step 7:** Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
+### Task 7: Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
 
 - Return to Oracle Data Safe.
 - Click the **Home** tab, and then click **Data Discovery**.
@@ -168,7 +168,7 @@ The Data Discovery wizard identifies the `AGE` column as missing from the databa
 ![](./images/dbsec/datasafe/discovery/missing.png " ")
 
 
-### **Step 8:** Manually update your sensitive data model from the Library
+### Task 8: Manually update your sensitive data model from the Library
 
 You can manually update your sensitive data model while continuing to work in the Data Discovery wizard. In which case, you simply deselect your sensitive column and save your sensitive data model. This part, however, shows you another way to do it from the Library.
 - Click **Exit** to exit the Data Discovery wizard.

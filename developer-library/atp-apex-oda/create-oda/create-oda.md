@@ -32,7 +32,7 @@ Watch our short video that explains Lab 3 - Create Oracle Digital Assistant, Lab
 
 [](youtube:kdvjXTMC-PI)
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 10 minutes.
 
 Watch the video below for an overview of the Create Oracle Digital Assistant lab
 [](youtube:-5m8CB3J9fs)
@@ -46,7 +46,7 @@ In this lab, you will:
 
 - This lab assumes you have logged into your to Oracle Cloud account.
 
-## **STEP 1**: Create a Digital Assistant instance
+## Task 1: Create a Digital Assistant instance
 
 **Create** a Digital Assistant instance to start working with bots. You can find advance set up steps on the [official documentation](https://docs.oracle.com/en/cloud/paas/digital-assistant/use-chatbot/order-service-and-provision-instance.html#GUID-7E4F1CE5-FB40-45DF-B0F0-949289F5E184).
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
     ![ODA Menu](./images/oda_5_new2.png)
 
-## **STEP 2**: Explore your Digital Assistant
+## Task 2: Explore your Digital Assistant
 
 You can always **Watch Videos** on the **Learn** section at the bottom and explore the documentation of Oracle Digital Assistant by following the links on the dashboard.
 

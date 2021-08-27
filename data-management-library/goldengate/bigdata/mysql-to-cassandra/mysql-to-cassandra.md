@@ -18,12 +18,11 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
-    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
+
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -40,7 +39,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
  3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration  
+## Task 1: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
   **By default ggadmin will automatically start in the labmenu**
@@ -50,7 +49,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-
+  
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
@@ -88,7 +87,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
 Now we need to start the GG manager process on both the source and target. Keep these sessions opened for the rest of this lab.
 
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 
 1. In the first or `source` terminal session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
@@ -166,7 +165,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
 Now that the source side is setup, let us configure GG on the target side (for Cassandra).
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 
 1. In the GG for Hadoop session, you will need to modify the Cassandra properties byremoving the `---` prefixes from the highlighted values::
 
@@ -216,7 +215,7 @@ Now that the source side is setup, let us configure GG on the target side (for C
     <copy>info all</copy>
     ```
 
-## **STEP 4**: Cassandra Replication
+## Task 4: Cassandra Replication
 
 Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
@@ -305,4 +304,5 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
+

@@ -31,7 +31,7 @@ This lab assumes you have:
     - Lab: eSHOP Application
 
 
-## **STEP 1**: Observe eSpeedShop analytical data
+## Task 1: Observe eSpeedShop analytical data
 
 1. Open a web browser, type *`http://localhost:7101/`* and hit enter to go to eSpeedShop application home page.
 
@@ -43,7 +43,7 @@ This lab assumes you have:
 
     ![](./images/lab10-step1-3.png)
 
-## **STEP 2**: Modify data access code
+## Task 2: Modify data access code
 
 1. Open JDeveloper in Studio Mode, if not open already.
 
@@ -79,7 +79,7 @@ This lab assumes you have:
 
 9. Once done, save the changes using **`Ctrl + s`**.
 
-## **STEP 3**: Build and redeploy eSpeedShop application
+## Task 3: Build and redeploy eSpeedShop application
 
 1.	In JDeveloper, go to the project panel and right click on the project folder (converge).
 
@@ -96,7 +96,7 @@ This lab assumes you have:
     ![](./images/lab10-step3-4.png)
 
 
-## **STEP 4**: Re-check analytical data
+## Task 4: Re-check analytical data
 
 1.	Go to the browser.
 2.	Open the eSpeedShop application by entering the URL – localhost:7101.

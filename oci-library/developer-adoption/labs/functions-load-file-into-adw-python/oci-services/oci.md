@@ -19,7 +19,7 @@ Estimated time: 10 minutes
 - Your Oracle Cloud Trial Account
 - Completed the **Prerequisites for Functions**
 
-## **STEP 1:** Create Object Storage Bucket for input
+## Task 1: Create Object Storage Bucket for input
 
 You need a `input-bucket` bucket in Object Storage. You will use the `input-bucket` to drop-in the CSV files. The function will process the file and import them into Autonomous Data Warehouse.
 
@@ -38,7 +38,7 @@ Let's create the `input-bucket` first:
 
     ![Create input bucket](./images/create-input-bucket.png)
 
-## **STEP 2:** Create Object Storage Bucket for processed files
+## Task 2: Create Object Storage Bucket for processed files
 
 You need a `processed-bucket` bucket in Object Storage. The function will upload the processed files to the `processed-bucket`.
 
@@ -56,11 +56,11 @@ Let's create the `processed-bucket`:
 
     ![Create processed bucket](./images/create-processed-bucket.png)
 
-## **STEP 3:** Create Compartment IAM policies for the function
+## Task 3: Create Compartment IAM policies for the function
 
 Create a new policy that allows the dynamic group (`functions-dynamic-group`) to manage objects in the bucket.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
     ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
@@ -97,11 +97,11 @@ Create a new policy that allows the dynamic group (`functions-dynamic-group`) to
 
     ![Create functions-buckets-policy](./images/create-fn-bucket-policy.png)
 
-## **STEP 4:** Create Tenancy IAM policies for the Object Storage service
+## Task 4: Create Tenancy IAM policies for the Object Storage service
 
 Create a new policy that allows the service Object Storage manage objects. (you may not need that policy, here just in case you do not have correct access to your tenancy)
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
     ![Policies](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
@@ -128,7 +128,7 @@ Create a new policy that allows the service Object Storage manage objects. (you 
 
     ![Create functions-buckets-policy](./images/create-object-storage-policy.png)
 
-## **STEP 5:** Create an Autonomous Data Warehouse
+## Task 5: Create an Autonomous Data Warehouse
 
 The function accesses the Autonomous Database using SODA (Simple Oracle Document Access) for simplicity. You can use the other type of access by modifying the function.
 
@@ -154,7 +154,7 @@ The function accesses the Autonomous Database using SODA (Simple Oracle Document
 
     ![RESTful Services and SODA URL](./images/database-ords-url.png)
 
-1. Open OCI Cloud Shell
+1. Go back to the OCI Console and open the OCI Cloud Shell
 
     ![Open OCI Cloud Shell](../../common/setup-cloud-env/images/open-cloud-shell.png)
 

@@ -10,7 +10,7 @@ The following is intended to outline our general product direction. It is intend
 - Web browser
 
 
-## Step 1: Generate the Auth Token ##
+## Task 1: Generate the Auth Token ##
 
 1. View the user's details:
 

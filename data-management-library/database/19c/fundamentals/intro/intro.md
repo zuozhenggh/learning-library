@@ -14,19 +14,13 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 ## About the Oracle Database 19c New Features Workshop
 
-This workshop lets you try out many of the Oracle Database 19c new features, including general, security, performance, Big Data and Data Warehouse, and diagnose-ability enhancements. When you reserve this workshop in the LiveLabs tenancy, you are provided two Linux compute instances named `workshop-staged` and `workshop-installed`. One instance has the Oracle Database 19c installer files staged on it; the other has Oracle Database 19c already installed. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
+This workshop lets you try out new features in Oracle Database 19c. All of the labs are independent of each other, so you don't need to do them in any particular order. If needed, a lab starts with instructions on how to prepare your environment, and ends with instructions on how to restore your environment back to its original state. For most lab steps, you enter a command in the Terminal window. For database actions, you use SQL*Plus.
 
-To obtain your compute instances, you need to create SSH keys for yourself. When you reserve this workshop in the LiveLabs tenancy, you are asked to provide your public SSH key on the registration page. For help on generating SSH keys, see the lab called Generate SSH Keys. If you are working in your own tenancy, whether free or paid, you are guided through the steps to create the two compute instances using Resource Manager.
+> **Note**: Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
 
-All labs are independent of each other, so you don't need to do them in any particular order.
+### General Database Overall Enhancement Labs
 
-## Labs
-
-Currently, we have a set of labs that cover general database overall enhancements. Over time, more labs will be added to this workshop.
-
-### General Database Overall Enhancements
-
-The following labs cover general database overall enhancements in Oracle Database 19c:
+The following labs are available:
 
 - Install Oracle Database 19c with Automatic Root Script Execution
 - Clone a PDB by Using DBCA in Silent Mode
@@ -37,47 +31,100 @@ The following labs cover general database overall enhancements in Oracle Databas
 - Use RMAN to Connect to a PDB to Use the Recovery Catalog
 - Explore Automatic Deletion of Flashback Logs
 
+## About Your Workshop Environment
 
-## Cleaning Up PDBs at the beginning of each lab
+During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface.
 
-The `workshop-installed` compute instance consists of three container databases (ORCL, CDB1, and CDB2). You only use CDB1 and CDB2 in this workshop. CDB1 contains one pluggable database (PDB1). CDB2 doesn't contain any pluggable database.
+- The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
+- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start on boot. Lab files are stored in the `/home/oracle/labs/19cnf` directory.
 
-If you need to reset CDB1 back to its original state, you can run the `/home/oracle/labs/19cnf/cleanup_PDBs.sh` shell script. This script drops all PDBs that may have been created during the labs, and re-creates `PDB1` in CDB1. Enter the following command to run the script.
+On both compute instances, you work as the `oracle` user (password is `Ora4U_1234`).
 
-```nohighlighting
-$ <copy>/home/oracle/labs/19cnf/cleanup_PDBs.sh</copy>
-...
-$
-```
+## Troubleshooting the `workshop-staged` compute instance
 
-In case you need to recreate `CDB1` and `PDB1`, run the `/home/oracle/labs/19cnf/recreate_CDB1.sh` shell script.
+If you made an error while installing the database during the **Install Oracle Database 19c with Automatic Root Script Execution** lab, you cannot easily undo the changes made to the compute instance. It is fastest to obtain a fresh `workshop-staged` compute instance and try the lab again.
 
-```nohighlighting
-$ <copy>/home/oracle/labs/19cnf/recreate_CDB1.sh</copy>
-...
-$
-```
+## Troubleshooting the `workshop-installed` compute instance
 
-## Copying and pasting text
+### Start the default listener
 
-The instructions include a lot of code that you need to enter into a terminal window. Rather than enter the code manually, which often takes a long time and is prone to errors, you can copy and paste code from the workshop guide. There are several ways to do this.
+In the event that you are unable to connect to CDB1, PDB1, or CDB2 on your `workshop-installed` compute instance, you can do the following to check the status of the default listener and start it if needed:
 
-If you copy text from an application on the compute instance itself, you can use the **Copy** and **Paste** options on the speed menu. You can also use **Ctrl+C** and **Ctrl+V**. Some instructions in the workshop guide may include a Copy button.
+1. Use the Listener Control Utility to verify whether the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
 
-If you copy text from your local computer, then you need to use the clipboard utility on the compute instance to paste text into an application on the compute instance. Here is how you do it:
+    ```
+    LSNRCTL> <copy>lsnrctl status</copy>
 
-1. Copy text from your local machine.
+    LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 19-AUG-2021 19:34:04
 
-2. On your compute instance, click the small grey arrow on the middle-left side of your screen to open the control bar.
+    Copyright (c) 1991, 2021, Oracle.  All rights reserved.
 
-    ![Small grey tab](images/small-grey-tab.png "Small grey tab")
+    Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+    STATUS of the LISTENER
+    ------------------------
+    Alias                     LISTENER
+    Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+    Start Date                19-AUG-2021 18:58:56
+    Uptime                    0 days 0 hr. 35 min. 8 sec
+    Trace Level               off
+    Security                  ON: Local OS Authentication
+    SNMP                      OFF
+    Listener Parameter File   /u01/app/oracle/product/19c/dbhome_1/network/admin/listener.ora
+    Listener Log File         /u01/app/oracle/diag/tnslsnr/workshop-installed/listener/alert/log.xml
+    Listening Endpoints Summary...
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5504))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5500))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB1/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+      (DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=workshop-installed.livelabs.oraclevcn.com)(PORT=5501))(Security=(my_wallet_directory=/u01/app/oracle/product/19c/dbhome_1/admin/CDB2/xdb_wallet))(Presentation=HTTP)(Session=RAW))
+    Services Summary...
+    Service "CDB1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "CDB1XDB.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "CDB2.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "CDB2XDB.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB2", status READY, has 1 handler(s) for this service...
+    Service "c9d86333ac737d59e0536800000ad4f1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    Service "pdb1.livelabs.oraclevcn.com" has 1 instance(s).
+      Instance "CDB1", status READY, has 1 handler(s) for this service...
+    The command completed successfully
+    ```
 
-3. On the control bar, click the **Clipboard** icon (5th button down).
+2. If the default listener is not started, run the following command to start it.
 
-    ![Clipboard](images/clipboard.png "Clipboard")
+    ```
+    LSNRCTL> <copy>lsnrctl start</copy>
+    ```
 
-4. In the **Clipboard** dialog box, paste the copied text using **Ctrl+v** or the **Paste** option on your speed menu. The text is displayed in the Clipboard dialog box.
+### Restore your lab files
 
-5. Position your cursor in the application where you want to paste the text, and click your middle mouse button.
+In the event that you accidentally changed one or more of your lab files on your `workshop-installed` compute instance and need to restore them, you can follow these steps:
 
-> **Note**: The same method works in reverse. If you want to copy and paste text from your compute instance to your local computer, first paste the text into the **Clipboard** dialog box, and then copy and paste the text from it to your local computer.
+1. Open a terminal window.
+
+2. Change to the `~/labs/19cnf` directory.
+
+    ```
+    $ <copy>cd ~/labs/19cnf</copy>
+    ```
+
+3. Unzip the `19cnf-lab-files.zip` file and replace the files in the directory.
+
+    ```
+    $ <copy>unzip -o 19cnf-lab-files.zip</copy>
+    ```
+
+4. Set the execute permission on all of the lab files.
+
+    ```
+    $ <copy>chmod -R +x ~/labs/19cnf</copy>
+    ```
+
+
+## Acknowledgements
+
+- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021

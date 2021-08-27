@@ -37,7 +37,7 @@ In this lab, you will:
 * Uploaded data
 
 
-## **STEP 1**: Upload Notebook to Oracle Machine Learning
+## Task 1: Upload Notebook to Oracle Machine Learning
 
 1.  From the hamburger menu, select **Autonomous Data Warehouse** and navigate to your Autonomous Database instance.
 
@@ -85,7 +85,7 @@ In this lab, you will:
 
     ![](./images/notebook.png " ")
 
-## **STEP 2**: Run the Notebook
+## Task 2: Run the Notebook
 
 1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right. 
 
@@ -103,7 +103,7 @@ In this lab, you will:
 
     ![](./images/run-all-paragraphs.png " ")
 
-## **STEP 3**: Explore the Notebook
+## Task 3: Explore the Notebook
 ### Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
 
 ![](./images/explore.png " ")

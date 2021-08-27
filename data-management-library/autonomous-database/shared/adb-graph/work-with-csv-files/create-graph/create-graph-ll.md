@@ -20,7 +20,7 @@ Learn how to
 - The following lab requires an Autonomous Database - Shared Infrastructure account. 
 - And that the Graph-enabled user has been created. That is, a database user with the correct roles and privileges exists.
 
-## **STEP 1**: Connect to your Autonomous Database using Graph Studio
+## Task 1: Connect to your Autonomous Database using Graph Studio
 
 1. If you have the Graph Studio URL then proceed to step 4. 
 
@@ -51,7 +51,7 @@ Learn how to
     The Jobs page ![](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
 
 
-## **Step 2**: Create a small 2Gb execution environment
+## Task 2: Create a small 2Gb execution environment
 
 1. Before creating a graph we will **create an execution environment** for running notebook paragraphs and loading the graph into an in-memory representation.   
    
@@ -65,7 +65,7 @@ Learn how to
 
    ![](images/ll-create-env-status.png " ")
 
-## **STEP 3**: Create a graph of accounts and transactions from the corresponding tables
+## Task 3: Create a graph of accounts and transactions from the corresponding tables
 
 1. Click on the Models icon to navigate to the start of the modeling workflow.  
    Then click on `Create`.  

@@ -1,6 +1,6 @@
 # Lab 2: Dectectors and Responders
 
-## STEP 1: Tailoring Detectors
+## Task 1: Tailoring Detectors
 
 1. We will need the compartment name that you will be using as part of this lab. You can use your **root** compartment or create a new one for this lab purposes. For further information on how to create a compartment, please refer to [Creating an Oracle Cloud Infrastructure Compartment
 ](https://docs.oracle.com/en/cloud/paas/integration-cloud/oracle-integration-oci/creating-cloud-storage-compartment.html)
@@ -24,7 +24,7 @@
     
     ![](./images/7.png)
 
-## STEP 2: Tailoring Responders
+## Task 2: Tailoring Responders
 
 1. Now, You will create your own responder recipe. Make sure that you are at the root compartment and select **Responder Recipes**.
    

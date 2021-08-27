@@ -10,7 +10,7 @@ You will utilize the following three external JavaScrip libraries/modules:
 
 Estimated Lab Time: 20 minutes
 
-## **STEP 1**: Loading External JavaScript Modules
+## Task 1: Loading External JavaScript Modules
 
 1. Click on the green arrow next to **SQL Workshop**
 
@@ -104,7 +104,7 @@ Estimated Lab Time: 20 minutes
 
     ![](images/0-4-load-external-modules.png " ")
 
-## **STEP 2**: Preparing the Form
+## Task 2: Preparing the Form
 
 1. Let's add an email column to project_tasks table
 
@@ -215,7 +215,7 @@ Estimated Lab Time: 20 minutes
 
     ![](images/11-page-5.png " ")
 
-## **STEP 3**: Loading External JavaScript Modules
+## Task 3: Loading External JavaScript Modules
 Now that our form is design ready, it is time to create a process that will fetch the JavaScript library from the mle_module table.
 
 1. Go to the **Shared Components** of the application in the **App Builder**
@@ -291,7 +291,7 @@ Now that our form is design ready, it is time to create a process that will fetc
 
     ![](images/16-setup-mle4.png " ")
 
-## **STEP 4**: Email Validation
+## Task 4: Email Validation
 
 1. In the top of the **Page Designer** type **5** and click **Go** button to start editing Page 5
 
@@ -319,7 +319,7 @@ Now that our form is design ready, it is time to create a process that will fetc
 
     ![](images/20-email-validation3.png " ")
 
-## **STEP 5**: QR Code Generation
+## Task 5: QR Code Generation
 Next you will utilize the QR Code Generation JavaScript module to generate QR Code for the URL page item.
 
 1. Right click on **QR Code** sub region and click on **Create Page Item** menu item
@@ -423,7 +423,7 @@ Next you will utilize the QR Code Generation JavaScript module to generate QR Co
 
     ![](images/29-test-qr.png " ")
 
-## **STEP 6**: Markdown Conversion to HTML
+## Task 6: Markdown Conversion to HTML
 The final step is to create a Project Details page item. The poge item will save the project details for the task in Markdown format. 
 
 Then you will use the Markdown module to generate and preview the details in HTML.

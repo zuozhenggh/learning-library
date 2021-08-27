@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1**: Running your Lab
+## Task 1: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
 
@@ -61,7 +61,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 2**: Setup and Initialize Environment
+## Task 2: Setup and Initialize Environment
 1.	From any of the terminal session, proceed as shown below as user “*oracle*”
 2.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
 

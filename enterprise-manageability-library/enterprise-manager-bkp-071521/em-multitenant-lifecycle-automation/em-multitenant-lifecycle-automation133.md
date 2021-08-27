@@ -38,14 +38,14 @@ e.g: https://111.888.111.888:7803/em
 | 5    | Self- service to request a PDB using PDBaaS            | 10min                     | Request PDB pluggable database using Service Catalog. (Private Cloud) Resize the PDB and then Delete the PDB while preserving the contents.                                                      | Review self-service option to provision PDB, which only requires minimal inputs.                                                                                                                                                        |
 | 6    | Administrative Setup for PDBaaS (Private Cloud)- Review only               | 10min                     | An overview of the administrative setup involved for PDBaaS (Private Cloud) which includes setting up a PaaS Infrastructure Zone, Pluggable Database Pool, Data Sources, Service Template, etc. | Setup private cloud using Enterprise Manager where admin can define resources and EM’s placement algorithm and make sure that resources are utilized to their best. It is complimented by metering, and show back/chargeback capabilities. |
 
-## **Step 0:** Running your Workload
+## Task 0: Running your Workload
 
 ### Login to OMS Console
 Login to your Enterprise Manager console using the OMS URL and the super-user credentials as indicated above
 
 You may see an error on the browser while accessing the Web Console - “*Your connection is not secure*”. Ignore and add the exception to proceed. Access this URL and ensure that you are able to access Enterprise Manager Web Console.
 
-## **Step 1:** Create Pluggable Database (PDB)
+## Task 1: Create Pluggable Database (PDB)
 
 1.  Log into your Enterprise Manager as **sysman** as indicated in the Prerequisites step if not already done.
 
@@ -99,7 +99,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
   ![](images/657ef309d7087942b8d871256a359050.jpg " ")
 
-## **Step 2:** Un-plug/Plug an Existing Pluggable Database (PDB)
+## Task 2: Un-plug/Plug an Existing Pluggable Database (PDB)
 
 1. **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -175,7 +175,7 @@ You may see an error on the browser while accessing the Web Console - “*Your c
 
 **Note**: You do not have to wait until the steps complete and move on to the next section.
 
-## **Step 3:** Clone an Existing Pluggable Database (PDB)
+## Task 3: Clone an Existing Pluggable Database (PDB)
 
 1.  **Navigate** to the “***Enterprise menu >> Provisioning and Patching >> Database provisioning***”.
 
@@ -215,7 +215,7 @@ Optionally, you can select the postscript as we did in the creation flow. **Clic
 
 10.  Once the procedure is completed,  Navigate to ***Targets >> Databases***, then **Click** on CDB186 and you will see the newly created PDB
 
-## **Step 4:** Compliance Management for Pluggable Database
+## Task 4: Compliance Management for Pluggable Database
 
 Now database administrator applies a Corporate Standard on the newly created PDB database, which results in a “Violation”. Then, the DBA fixes the issue using corrective actions. Let us examine how a DBA applies the fixes in the following steps.
 
@@ -290,7 +290,7 @@ The job will take about a minute to complete. Click on refresh icon if the job d
 
  Now that you have gone through PDB life cycle operations, we will switch focus and cover the use case of building a private cloud using Enterprise Manager and how to quickly provision (with minimal inputs) and manage PDBs using PDB-as-a-service (PDBaaS).
 
-## **Step 5:** Self-Service to Request PDB Using PDBaaS
+## Task 5: Self-Service to Request PDB Using PDBaaS
 
 With the Self-Service Portal, cloud users can request an  Pluggable Database through a simple process, monitor resource consumptions, and manage the pluggable database through an intuitive graphical user interface. Expiry time is provided while requesting the PDB instance and PDB is automatically deleted based on the expiry time.
 
@@ -418,7 +418,7 @@ indicates that PDB database was successfully created. The new PDB database shoul
 
   ![](images/2b44dd4c41f594cddd9adc74dd193297.jpg " ")
 
-## **Step 6:** Administrative setup for PDB-as-a-Service (Private Cloud)
+## Task 6: Administrative setup for PDB-as-a-Service (Private Cloud)
 
 Previous exercises demonstrated the process of requesting PDBs using available service templates as performed by a Self-Service user. In this section, we will see the Administrative setup for PDBaaS.
 

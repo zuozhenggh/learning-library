@@ -25,7 +25,7 @@ su - ggadmin/oracle
 ![](images/700/Lab7Menu.png)
 
 
-### STEP 1: Setting up the Environment For Connection to Cassandra using Goldengate.
+### Task 1: Setting up the Environment For Connection to Cassandra using Goldengate.
     
 If already at a Unix prompt, you can access the Lab Menu by typing the alias ‘labmenu’
 

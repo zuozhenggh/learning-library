@@ -24,7 +24,7 @@ GraphViz can visualize graphs that are have been loaded into the in-memory analy
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## **STEP 1**: Compute PageRank
+## Task 1: Compute PageRank
 
 Before attempting any visualizations with GraphViz, let's run a Page Rank algorithm to gather additional knowledge about the retail graph.
 
@@ -83,7 +83,7 @@ In addition, the walk in PPR discovers similar/related products because they wer
     ```
     ![](./images/get-session-id.png)
 
-## **STEP 2**: Login to GraphViz
+## Task 2: Login to GraphViz
 
 The Graph Server automatically runs graph visualization application on port 7007 in embedded mode.
 
@@ -105,7 +105,7 @@ The Graph Server automatically runs graph visualization application on port 7007
 
   ![](./images/graph-viz-home.png)
 
-## **STEP 3**: Analyze the Graph
+## Task 3: Analyze the Graph
 
 1. Copy/paste the PGQL query below to see the paths between the customer **cust\_12353** and the top recommended product shown earlier (**prod\_23166**).
 
@@ -128,7 +128,7 @@ The Graph Server automatically runs graph visualization application on port 7007
 
   ![](./images/run-pgql.png)
 
-## **STEP 4**: Add Highlights to the Graph
+## Task 4: Add Highlights to the Graph
 
 - The Highlights tab includes customization options that let you modify the appearance of edges and vertices. Highlighting can be applied based on conditions (filters) on single or multiple elements.
 

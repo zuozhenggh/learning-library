@@ -10,14 +10,11 @@ In most real-world scenarios, queries against your data warehouse would normally
 
 ### Prerequisites
 
-- You will need to have completed the previous labs in this workshop
-- Alternatively, run this script in the SQL Worksheet (TODO)
-CODE GOES HERE?
+- You will need to have completed the previous labs in this workshop, shown in the Contents menu on the left.
 
 Before starting to run the code in this workshop, we need to manage the resources we are going to use to query our sales data. You will notice that when you open SQL Worksheet, it automatically defaults to using the LOW consumer group - this is shown in the top right section of your worksheet.
 
-![LOW consumer group shown in worksheet](images/3054194710.png)
-
+  ![LOW consumer group shown in worksheet](images/3054194710.png " ")
 
 **NOTE**: Autonomous Data Warehouse comes complete with three built-in consumer groups for managing workloads. The three groups are: HIGH, MEDIUM and LOW. Each consumer group is based on predefined CPU/IO shares based on the number of OCPUs assigned to the ADW. The basic characteristics of these consumer groups are:
 
@@ -29,13 +26,13 @@ For more information about how to use consumer groups to manage concurrency and 
 
 Change the consumer group by simply clicking the downward pointing arrow next to the word LOW, and from the pulldown menu select **HIGH**.
 
-![Select the HIGH consumer group from the pulldown menu.](images/3054194709.png)    
+  ![Select the HIGH consumer group from the pulldown menu.](images/3054194709.png " ")    
 
 ### Get Started!
-This lab is very comprehensive - consisting of many different types of analytic queries.  Get started by going to the next section: **Analyzying Movie Sales Data**.
+The next few labs are very comprehensive - consisting of many different types of analytic queries. Get started by going to the next lab:  [Analyzying Movie Sales Data](#next).
 
 ## Acknowledgements
 
 * **Author** - Keith Laker, ADB Product Management
 * **Contributors** -  Richard Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Keith Laker, July 2021
+* **Last Updated By/Date** - Keith Laker, August 2, 2021

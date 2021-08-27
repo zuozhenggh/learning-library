@@ -41,7 +41,7 @@ Oracle XML DB also supports the SQL/XML standard, which allows SQL-centric devel
 
 Oracle XML DB allows an organization to manage XML content in the same way that ii manages traditional relational data. This allows organizations to save costs and improve return on investment by using a single platform to manage and secure all of their mission critical data. Oracle XML DB was first released with Oracle 9iR2, and it has been enhanced in each subsequent major release of the database.
 
-## **Step 0:** Running the Workshop
+## Task 0: Running the Workshop
 ### Setup SSH Tunnel(s)
 As per security policies all external connections to this workshop instance are to be done over SSH. As a result, prior to executing this workshop, establish SSH tunnels over the instance public IP for port(s) 1521 as detailed in the table below. Please refer to *Lab 2 - Setup SSH Tunnel* for detailed instructions.
 
@@ -63,7 +63,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
 ***Note:*** Any SSH session you established in *Lab 2 - Setup SSH Tunnel* for SSH port forwarding can also be used for any task requiring SSH terminal access.
 
-## **Step 1:** Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
 1. Open a terminal window and sudo to the user **oracle**
     ````
@@ -101,7 +101,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
     </copy>
     ````
 
-## **Step 2:** Connect to SQL Developer
+## Task 2: Connect to SQL Developer
 
 1. Make a connection to SQL Developer. Use the details as below and click on connect.
 
@@ -114,7 +114,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
   ![](./images/xml_sql_developer.png " ")
 
-## **Step 3:** XML Query
+## Task 3: XML Query
 
 1. Getting the number of XML documents.
     ````
@@ -161,7 +161,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
 
     ![](./images/xml_step3_search.png " ")
 
-## **Step 4:** Insert XML record.
+## Task 4: Insert XML record.
 
 1. Let's take a count of the rows we have currently and then do a insert.
 
@@ -214,7 +214,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
     ````
     ![](./images/xml_s4_p3.png " ")
 
-## **Step 5:** Update XML table
+## Task 5: Update XML table
 
 1. The update query is available as a sql file in the directory “**/u01/workshop/xml**”.
   The script is called as **update.sql**. You can run this connecting to the SQL prompt.
@@ -260,7 +260,7 @@ Refer to *Lab 1 - Verify Setup* for detailed instructions relevant to your SSH c
     ````
     ![](./images/xml_s5_p2.png " ")
 
-## **Step 6:** Example Queries
+## Task 6: Example Queries
 
 1. Get the list of the customer and their purchased information from a geo graphical location.  
     **XMLEXISTS** is an SQL/XML operator that you can use to query XML values in SQL, in a regular query I can use the xmlexists function to look if a specific value is present in an xmltype column.

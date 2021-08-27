@@ -16,7 +16,7 @@ Estimated Lab Time: 20 minutes.
 
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 
-## **Step 0**: Provision a Management Cloud Instance
+## Task 0: Provision a Management Cloud Instance
 
 1. Inside of the OCI (Oracle Cloud Infrastructure) Console, click on the top left menu icon.
 
@@ -44,7 +44,7 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/omc7.png " ")
 
-## **STEP 1**: Gather the Following Information Using the OCI Console
+## Task 0: Gather the Following Information Using the OCI Console
 
 1. First you will need to capture your **Tenancy OCID**.  To do so, click on the **profile icon** on the top right of your Oracle Cloud Infrastructure (OCI) console and select your **tenancy name**.
 
@@ -92,7 +92,7 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/omc18.png " ")
 
-## **STEP 2**: Create the Discovery Profile in OMC
+## Task 0: Create the Discovery Profile in OMC
 
 1. In the OCI Console, click on the top left menu icon, then navigate to **Platform Services**, then select **Management Cloud**.
 
@@ -121,7 +121,7 @@ Estimated Lab Time: 20 minutes.
     ![](./images/omc24.png " ")
 
 
-## **STEP 3**: Validate Databases
+## Task 0: Validate Databases
 
 1. Click on the **Oracle** logo on the top left of your screen to navigate back to OMC's main console.
 
@@ -141,7 +141,7 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/omc31.png " ")
 
-## **STEP 4**: Oracle Database Suite
+## Task 0: Oracle Database Suite
 
 1. Click on the **Oracle** logo on the top left of your screen to navigate back to OMC's main console.
 
@@ -169,7 +169,7 @@ Estimated Lab Time: 20 minutes.
 
     ![](./images/omc35.png " ")
 
-## **STEP 5**: Infrastructure Monitoring
+## Task 0: Infrastructure Monitoring
 
 1. On the left navigation menu, click on the **back** button until you can select **Monitoring**.
 
@@ -206,5 +206,3 @@ To learn more about monitoring Autonomous Databases in Oracle Management cloud, 
 
 - **Author** - NA Cloud Engineering - Austin (Khader Mohiuddin, Jess Rein, Parshwa Shah, Tanvi Varadhachary)
 - **Last Updated By/Date** - Jess Rein, Cloud Engineer, September 2020
-
-

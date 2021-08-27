@@ -12,7 +12,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Download the DRAGON Stack manager
+## Task 1: Download the DRAGON Stack manager
 
 1. Launch the cloud shell terminal.
   ![Launch Cloud Shell terminal](images/launch-cloud-shell.png)
@@ -92,7 +92,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 6. Copy the public key (from the BEGIN RSA PUBLIC KEY to the end of END RSA PUBLIC KEY, including the dashes).
   ![Copy the public key](images/copy-key.png)
 
-## **STEP 2:** Gather Data you need
+## Task 2: Gather Data you need
 
 1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add API Key**.
    ![Select user in OCI Console](./images/select-user.png " ")
@@ -132,7 +132,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
 8. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
-## **STEP 3:** Create the dragon.config file
+## Task 3: Create the dragon.config file
 
 1. Create a `dragon.config` file using vi, nano or your favorite editor:
 
@@ -161,7 +161,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     *Remark: we provide a sample JSON file for initializing a JSON collection during the deployment of the stack.*
 
 
-## **STEP 4:** Deploy the DRAGON Stack backend
+## Task 4: Deploy the DRAGON Stack backend
 
 1. Use the `-help` to see the parameters that DRAGON accepts:
 
@@ -209,7 +209,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     </copy>
     ```
 
-## **STEP 5:** Using DRAGON
+## Task 5: Using DRAGON
 
 1. Copy and paste the link into a browser and connect to SQL Developer Web:
 
@@ -239,7 +239,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
 
   ![View a JSON document](images/employees-values.png)
 
-## **STEP 6:** Create the front end React application
+## Task 6: Create the front end React application
 
 1. In Cloud Shell, generate the front-end project:
 
@@ -287,7 +287,7 @@ The DRAGON Stack manager is designed to speed up as much as possible the develop
     ![React frontend connected to the backend](images/dragon-react-frontend.png)
 
 
-## **STEP 7:** Cleanup your environment (Optional)
+## Task 7: Cleanup your environment (Optional)
 
 **_If you wish to continue to Lab 2, then skip this step._**
 

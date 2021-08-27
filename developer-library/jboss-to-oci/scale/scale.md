@@ -14,7 +14,7 @@ In this lab, you will scale the number of nodes.
 
 For this lab, you need to have provisioned the JBoss/WildFly cluster on OCI.
 
-## **STEP 1:** Scale the Number of Nodes
+## Task 1: Scale the Number of Nodes
 
 On your local machine where you ran the terraform.
 
