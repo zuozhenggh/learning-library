@@ -537,4 +537,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 26 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 27 2021
