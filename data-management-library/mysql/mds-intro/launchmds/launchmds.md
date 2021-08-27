@@ -1,7 +1,6 @@
 # Launch Your First MySQL Database Service System
 
 ## Introduction
-
 In this lab, you will learn how to launch a MySQL Database Service System on Oracle Cloud Infrastructure (OCI) and connect to it using the Oracle Cloud Console.
 
 Estimated Time: 90 minutes
@@ -81,7 +80,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     - Policy statement 3:
 
-    ```
+     ```
     Allow group Administrators to manage mysql-family in tenancy
     ```
     
@@ -134,7 +133,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
         
      ![COMPUTE](./images/03vcn09.png " ")
 
-11.	In the **Security Lists in _Compartment Name_ Compartment** section, click **Security List for Private Subnet-MDS_VCN**.
+11.	In the **Security Lists in _Compartment\_Name_ Compartment** section, click **Security List for Private Subnet-MDS_VCN**.
 
     ![COMPUTE](./images/03vcn10.png " ")
 
@@ -171,7 +170,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     - Configure backups
     - Show advanced options
 
-4. In **Provide basic information for the DB System**, select the **MDS Sandbox** Compartment, in the **Name** field and **Description** field, enter **MDS_DB**.
+4. In **Provide basic information for the DB System**, select the **MDS\_Sandbox** Compartment, in the **Name** field and **Description** field, enter **MDS_DB**.
 
     ![MDS](./images/04mysql02_02.png " ")
 
@@ -183,7 +182,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     
     ![MDS](./images/04mysql02_04.png " ")
 
-7. In **Configure networking**, keep default values **MDS VCN** for the VCH and **Private Subnet-MDS VCN (Regional)** for the subnet. 
+7. In **Configure networking**, keep default values **MDS\_VCN** for the VCH and **Private Subnet-MDS\_VCN (Regional)** for the subnet. 
 
     ![MDS](./images/04mysql02_05.png " ")
 
@@ -237,9 +236,9 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
    ![COMPUTE](./images/05compute03.png " ")
 
-   > **Note:** For the **Virtual cloud network**, make sure **MDS_VCN** is selected and **Assign a public IPv4 address** is set to **Yes**.  
+    > **Note:** For the **Virtual cloud network**, make sure **MDS_VCN** is selected and **Assign a public IPv4 address** is set to **Yes**.  
    
-     ![COMPUTE](./images/05compute04.png " ")
+   ![COMPUTE](./images/05compute04.png " ")
 
 7. If you have not already created your SSH key, complete the **Create Local SSH Key** lab. When you are done, continue on to the next step.
 
@@ -277,7 +276,7 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
     
 4. Enter the user name `opc` and the public **IP Address**.
 
-    > **Note:** The **MDS Client** shows the Public IP Address as mentioned in **Task 5: Create the Client Virtual Machine**, step 10. For example, **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**
+    > **Note:** The **MDS\_Client** shows the public IP Address as mentioned in **Task 5: Create the Client Virtual Machine**, step 10. For example, **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**
 
     ```$ ssh -i ~/.ssh/id_rsa opc@&<your_compute_instance_ip>;```
 
@@ -299,7 +298,7 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
     
    > **Note:** The endpoint (IP Address) can be found on the MySQL Database System Details page, under **Endpoints**. 
 
-     ![Connect](./images/06connect06.png " ")
+   ![Connect](./images/06connect06.png " ")
 
 5.  Use the following command to connect to MySQL using the MySQL Shell client tool. For example,  **mysqlsh -uadmin -p -h132.145.170.990**.
     
@@ -347,7 +346,7 @@ If you are a Linux, Mac, or  Windows 10 Powershell user, start at step 2.
 
    ![MDS](./images/04mysql02_06.png " ")
 
-3. Choose the **MDS_Sandbox** Compartment and click **MDS_DB** to open the Database System Details page.
+3. Select the **MDS\_Sandbox** Compartment and click **MDS\_DB** to open the Database System Details page.
 
    ![MDS](./images/04mysql07.png " ")
 
@@ -394,7 +393,7 @@ Deleting a database system is permanent. Any manual backups associated with the 
 
    > **Note:** A prompt is displayed, asking you to confirm the deletion.
 
-    ![MDS](./images/04mysql08_1.png " ")
+   ![MDS](./images/04mysql08_1.png " ")
 
 6. Enter the word, all caps, `DELETE` and click **Delete 1 MySQL Database System**.
 
