@@ -141,7 +141,7 @@ Click Create Compartment.ompartment.
 12.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click Add Ingress Rules.
     ![COMPUTE](./images/03vcn11.png " ")
 
-13.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 3306, 33060 
+13.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0, Destination Port Name 3306, 33060, and Description  
 
     Click Add Ingress Rule.
     ![COMPUTE](./images/03vcn12.png " ")
