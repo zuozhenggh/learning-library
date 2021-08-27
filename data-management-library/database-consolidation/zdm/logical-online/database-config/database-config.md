@@ -287,4 +287,5 @@ Please *proceed to the next lab*.
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
 * **Author** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
+* **Contributors** - LiveLabs Team, ZDM Development Team
 * **Last Updated By/Date** - Ricardo Gonzalez, August 2021

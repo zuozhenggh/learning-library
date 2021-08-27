@@ -620,4 +620,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
 - **Contributors** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
+* **Contributors** - LiveLabs Team, ZDM Development Team
 * **Last Updated By/Date** - Ricardo Gonzalez, August 2021

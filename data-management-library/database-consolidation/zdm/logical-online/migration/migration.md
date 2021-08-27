@@ -111,15 +111,64 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     </copy>
     ```    
 
-3. You will now evaluate the migration job until completion, using the command provided above. Remember to replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter.
+3. You will now evaluate the migration job until completion, using the command provided above. Remember to replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter. You will have to use this command several times to actively monitor your migration.
 
     ```
     <copy>
     /u01/app/zdmhome/bin/zdmcli query job -jobid idnumber
     </copy>
     ```
+    ![](./images/zdm-job-pending.png " ")
+
+    ![](./images/zdm-job-completed.png " ")
+
+4. Congratulations, your database has now been migrated using Oracle Zero Downtime Migration Logical Online workflow. Let's go to the Target Autonomous Database and check its contents.
+
+5.  In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
+    ![Autonomous Menu](./images/menu-auton.png)
+
+6. Select the target database.
+    ![Select Autonomous](./images/select-auton.png)
+
+7. In the database menu go to __Tools__ -> __Open Database Actions__.
+    ![Database Action](./images/db-action.png)
+
+8. A new tab will open requesting for credentials. Fill in ADMIN for the username and the password will be `WELcome##1234`.
+
+9. Select SQL
+    ![Select SQL](./images/select-sql.png)
+
+
+10. Copy the query below and paste it on the Worksheet: 
+
+    ```
+    <copy>
+    SELECT * FROM ZDML.EMPL;
+    </copy>
+    ```
+
+11. This query will show us the contents of the table EMPL. If you remember, in Lab 3, we connected to the source database and ran a script that created the EMPL table and filled it with 1000 records. If the migration was succesful, the table and the same records will show here. Select 'Run Script'.
+    ![Run Query](./images/run-query.png)
+
+12. The result now shows on the __Query Result__ pane below.
+    ![query result](./images/query-result.png)
+
+
+## **Summary**
+
+Congratulations, you have finished the Zero Downtime Logical Online Migration to ADB LiveLab.
+You have learned about Oracle Zero Downtime Migration (ZDM), its features and functionality and how to migrate, step-by-step, a database to the Oracle Cloud.
+
+__Learn More About Zero Downtime Migration (ZDM)__
+
+* [Oracle Zero Downtime Migration - Product Page](http://www.oracle.com/goto/zdm)
+* [Oracle Zero Downtime Migration - Product Documentation](https://docs.oracle.com/en/database/oracle/zero-downtime-migration/)
+* [Oracle Zero Downtime Migration - Logical Migration Step by Step Guide](https://www.oracle.com/a/tech/docs/oracle-zdm-logical-migration-step-by-step-guide.pdf)
+* [Oracle Zero Downtime Migration - Physical Migration Step by Step Guide](https://www.oracle.com/a/tech/docs/oracle-zdm-step-by-step-guide.pdf)
+
 
 
 ## Acknowledgements
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
+* **Contributors** - LiveLabs Team, ZDM Development Team
 * **Last Updated By/Date** - Ricardo Gonzalez, August 2021
