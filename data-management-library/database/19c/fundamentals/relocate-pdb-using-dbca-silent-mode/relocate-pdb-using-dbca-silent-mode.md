@@ -1,19 +1,17 @@
 # Relocate a PDB to a Remote CDB by using DBCA in Silent Mode
 
 ## Introduction
-Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to relocate a PDB that resides in a remote CDB (a different CDB than the one to which you are relocating). To do this, you use the new `-relocatePDB` command in DBCA. In this lab, you relocate PDB1 from CDB1 to CDB2.
+Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to relocate a PDB that resides in a remote CDB (a different CDB than the one to which you are relocating). To do this, you use the new `-relocatePDB` command in DBCA. Before you can relocate a PDB from one CDB to another, you need to put your CDBs into `ARCHIVELOG` mode.
 
->**Note:** Before you can relocate a PDB from one CDB to another, you need to put your CDBs into `ARCHIVELOG` mode.
+In this lab, you relocate PDB1 from CDB1 to CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-- Enable `ARCHIVELOG` mode for CDB1 and CDB2
-- Verify that the listeners for CDB1 and CDB2 are started
-- Verify that PDB1 has sample data
+- Prepare your environment
 - Create a common user and grant it privileges
 - Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
 - Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
@@ -25,7 +23,9 @@ In this lab, you will:
 This lab assumes you have:
 - Obtained and signed in to your `workshop-installed` compute instance.
 
-## Task 1: Enable `ARCHIVELOG` mode on CDB1 and CDB2
+## Task 1: Prepare your environment
+
+To prepare you environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify that the default listener is started, and verify that PDB1 has sample data. CDB1, PDB1, and CDB2 all use the default listener.
 
 1. Open a terminal window on the desktop.
 
@@ -43,9 +43,14 @@ This lab assumes you have:
     CDB2
     ```
 
-## Task 2: Verify that the default listener is started
+4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
-1. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
+    ```
+    $ <copy>. oraenv</copy>
+    ORACLE_SID = [ORCL] ? CDB1
+    ```
+
+5. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -88,32 +93,22 @@ This lab assumes you have:
     The command completed successfully
     ```
 
-2. If LISTENER is not started, start it now.
+6. If the default listener is not started, start it now.
 
     ```
     LSNRCTL> <copy>lsnrctl start</copy>
     ```
 
 
-## Task 3: Verify that PDB1 has sample data
-
-1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
-
-    ```
-    $ <copy>. oraenv</copy>
-    ORACLE_SID = [ORCL] ? CDB1
-    ```
-
-2. Connect to PDB1.
+7. Connect to PDB1.
 
     ```
     SQL> <copy>sqlplus system/Ora4U_1234@PDB1</copy>
-    Session altered.
     ```
 
-3. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+8. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
 
-    After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
+    After relocating PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -123,13 +118,13 @@ This lab assumes you have:
           107
     ```
 
-4. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+9. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
 
     ```
     SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
     ```
 
-## Task 4: Create a common user and grant it privileges
+## Task 2: Create a common user and grant it privileges
 
 A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root` and within any PDB in which it has privileges. In this task, we create a user called `c##remote_user`, which we will later specify in the `-relocatePDB` command as the database link user of the remote PDB.
 
@@ -160,7 +155,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> <copy>exit</copy>
     ```
 
-## Task 5: Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
+## Task 3: Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
 
 1. Run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB1 to CDB2.
 
@@ -190,7 +185,7 @@ A common user is a database user that has the same identity in the `root` contai
     $ <copy>cat /u01/app/oracle/cfgtoollogs/dbca/CDB2/PDB1/CDB2.log</copy>
     ```
 
-## Task 6: Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
+## Task 4: Verify that PDB1 is relocated to CDB2 and that the `HR.EMPLOYEES` table still exists in PDB1
 
 1. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
@@ -239,7 +234,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> exit
     ```
 
-## Task 7: Relocate PDB1 back to CDB1
+## Task 5: Relocate PDB1 back to CDB1
 
 1. Try to run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB2 back to CDB1. You should get an error about the database link user.
 
@@ -351,7 +346,7 @@ A common user is a database user that has the same identity in the `root` contai
     SQL> <copy>exit</copy>
     ```
 
-## Task 8: Reset your environment
+## Task 6: Reset your environment
 
 1. Run the `disable_ARCHIVELOG.sh` script and enter **CDB1** at the prompt to disable `ARCHIVELOG` mode on CDB1.
 
@@ -431,4 +426,4 @@ You may now proceed to the next lab.
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 24 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 25 2021

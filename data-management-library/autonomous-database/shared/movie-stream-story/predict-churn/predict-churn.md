@@ -12,7 +12,7 @@ Estimated Time: 90 minutes
 
 ### About Product
 
-In this lab, we will learn more about the Autonomous Database's built-in Oracle Machine Learning components, including:
+In this lab, we will learn more about the Autonomous Database's built-in [Oracle Machine Learning](https://www.oracle.com/goto/machinelearning) components, including:
 - Oracle Machine Learning Notebooks - see [OML Notebooks documentation](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/index.html).
 - Oracle Machine Learning for Python - see [OML4Py documentation](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/index.html).
 - Oracle Machine Learning AutoML UI - see [OML AutoML UI documentation](https://docs.oracle.com/en/database/oracle/machine-learning/oml-automl-ui/index.html).
@@ -37,7 +37,7 @@ In this lab, you will:
 
     b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Task 1: Understanding customer churn and preparing the OML environment
 
@@ -438,7 +438,7 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
 6. Create an auto-generated notebook with the model selected in the Leaderboard
  
-    The next option available is the **Create Notebook** button, which generates a Python-based notebook using the Oracle Machine Learning for Python interface. This notebook conwill contain the hyperparameters selected by the AutoML process and allows you to create the model explicitly using OML4Py.
+    The next option available is the **Create Notebook** button, which generates a Python-based notebook using the Oracle Machine Learning for Python interface. This notebook will contain the hyperparameters selected by the AutoML process and allows you to create the model explicitly using OML4Py.
 
     While still making sure the best model is selected (row highlighted in a blue hue), click on the **Create Notebook** button to open a dialog window where you specify the name you want for this notebook. This step is also optional for this **Workshop**.
 
@@ -446,9 +446,11 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     Upon successful **Notebook** creation, a notice at the top of the screen will indicate that, as shown below.
 
-    ![Churn AutoML Step 4 Leader Board Create Notebook message](images/oml-churn-automl-leader-notebook-message.png " ")   
+    ![Churn AutoML Step 4 Leader Board Create Notebook message](images/oml-churn-automl-leader-notebook-message.png " ")  
 
-7. Rename the model in preparation for Scoring
+    If you were to open the Notebook from the **OML Notebooks** menu, you would see that the entire code for building the exact model you have chosen is there,  written in Python using OML4Py capabilities, so that a Data Scientist can study and modify the model at their will, as well as do batch scoring. 
+
+7. Rename the model in preparation for Scoring via SQL
    
     Finally, there is an option to **Rename** the model, which **we will need to do** in order to continue with the scoring later. Click on the **Rename** button and give your model a name.
 
@@ -526,9 +528,9 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
 **CONGRATULATIONS!!!**
 
-You now have deployed a new table called `POTENTIAL_CHURNERS` containing each customer likelihood to churn and the decision suggested by the Model.
+You now have deployed a new table called `POTENTIAL_CHURNERS` containing each customer's likelihood to churn and the decision (will the customer churn or not?) suggested by the Model.
 
-Now other professionals can take advantage of both the deployment you have just made in order to contact the customers at risk with an offer, as well as use your SQL Scoring code to put the model into Production and run the scoring in batch every time there is a new refresh of the data, be it daily, weekly or monthly.
+Now other professionals can take advantage of both the deployment you have just made in order to contact the customers at risk with an offer, as well as use your SQL Scoring code to put the model into production and run the scoring in batch every time there is a new refresh of the data, be it hourly, daily, weekly or monthly.
 
 You may now [proceed to the next lab](#next).
 
@@ -542,5 +544,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Marcos Arancibia, Oracle Machine Learning Product Management
-* **Contributors** -  Mark Hornick, Marty Gubar, Kevin Lazarz, Nilay Panchal, Jie Liu, Sherry LaMonica, Richard Green
+* **Contributors** -  Mark Hornick, Marty Gubar, Kevin Lazarz, Nilay Panchal, Jayant Sharma, Jie Liu, Sherry LaMonica, Richard Green
 * **Last Updated By/Date** - Marcos Arancibia, August 2021
