@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -46,10 +46,10 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 
     ```
     $ <copy>. oraenv</copy>
-    ORACLE_SID = [ORCL] ? CDB1
+    CDB1
     ```
 
-5. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Service Summary.
+5. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -95,16 +95,32 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 6. If the default listener is not started, start it now.
 
     ```
-    LSNRCTL> <copy>lsnrctl start</copy>
+    $ <copy>lsnrctl start</copy>
     ```
 
-7. Connect to PDB1.
+7. Connect to CDB1 as the `SYS` user.
 
     ```
-    SQL> <copy>sqlplus system/Ora4U_1234@PDB1</copy>
+    $ <copy>sqlplus / as sysdba</copy>
     ```
 
-8. Query the `HR.EMPLOYEES` table. The results show that the table exists and has 107 rows.
+8. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
+
+    ```
+    SQL> <copy>alter pluggable database PDB1 open;</copy>
+
+    Pluggable database altered.
+    ```
+
+9. Connect to PDB1.
+
+    ```
+    SQL> <copy>alter session set container = PDB1;</copy>
+
+    Session altered.
+    ```
+
+10. Query the `HR.EMPLOYEES` table. The result shows that the table exists and has 107 rows.
 
     After cloning PDB1 on CDB2 in a later step, the new PDB should also contain `HR.EMPLOYEES`.
 
@@ -116,7 +132,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
           107
     ```
 
-9. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
 
     ```
     SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
@@ -125,7 +141,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 
 ## Task 2: Create a common user and grant it privileges to clone a database
 
-A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create a user called `c##remote_user`, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
+A common user is a database user that has the same identity in the `root` container and in every existing and future pluggable database (PDB). Every common user can connect to and perform operations within the `root`, and within any PDB in which it has privileges. In this task, we create a common user called `c##remote_user`, which we will later specify in the `-createPluggableDatabase` command as the database link user of the remote PDB.
 
 1. Connect to CDB1 as the `SYS` user.
 
@@ -139,6 +155,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>CREATE USER c##remote_user IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+
     User created.
     ```
 
@@ -146,6 +163,7 @@ A common user is a database user that has the same identity in the `root` contai
 
     ```
     SQL> <copy>GRANT create session, create pluggable database TO c##remote_user CONTAINER=ALL;</copy>
+
     Grant succeeded.
     ```
 
@@ -216,10 +234,11 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     SQL> <copy>alter session set container = PDB2;</copy>
+
     Session altered.
     ```
 
-4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us verify that PDB2 is a clone of PDB1 and its contents. The result should show 107 rows.
+4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -257,14 +276,14 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
-    ORACLE_SID = [CDB2] ? CDB1
+    CDB1
     ```
 
 3. Run the `disable_ARCHIVELOG.sh` script again, and this time, enter **CDB2** at the prompt to disable `ARCHIVELOG` mode on CDB2.
 
     ```
     $ <copy>$HOME/labs/19cnf/disable_ARCHIVELOG.sh</copy>
-    ORACLE_SID = [CDB2] ? CDB2
+    CDB2
     ```
 
 4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
@@ -284,6 +303,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     SQL> <copy>DROP USER c##remote_user CASCADE;</copy>
+
     User dropped.
     ```
 
@@ -291,6 +311,12 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
     ```
     SQL> <copy>exit</copy>
+    ```
+
+8. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
     ```
 
 You may now proceed to the next lab.
@@ -305,4 +331,4 @@ You may now proceed to the next lab.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 25 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 26 2021
