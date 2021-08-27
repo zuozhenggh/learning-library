@@ -564,7 +564,6 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
     $ <copy>exit</copy>
     ```
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
 
 ## Learn More
 

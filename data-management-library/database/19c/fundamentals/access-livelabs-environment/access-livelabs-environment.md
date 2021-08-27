@@ -38,7 +38,7 @@ This lab assumes you have:
 
 4. Click the **workshop-installed** link. A browser is opened and you are automatically signed in to the `workshop-installed` compute instance as the `oracle` user.
 
-**This concludes this lab. Please proceed to the next lab in the Contents menu.**
+
 
 ## Acknowledgements
 

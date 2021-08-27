@@ -273,7 +273,7 @@ This lab assumes you have:
 
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 
