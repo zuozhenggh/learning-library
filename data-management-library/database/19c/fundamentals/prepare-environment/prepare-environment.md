@@ -23,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account
+- Obtained a free or paid Oracle Cloud account
 - Signed in to Oracle Cloud Infrastructure
 
 ## Task 1: Add security rules to your existing VCN
@@ -181,4 +181,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021
