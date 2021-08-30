@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Sample Python Application with Oracle Cloud Infrastructure Data Flow",
+    "workshoptitle": "Sample Applications with Oracle Cloud Infrastructure Data Flow",
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
       {
@@ -23,6 +23,14 @@
         "description" : "Sample Python Application to conver CSV into Parquet",
         "filename": "../../dataflow-sampleapp/sampleapp.md"
     }
+
+    {
+        "title": "Lab 2: Build a Datapipline with DataFlow and Metastore",
+        "description" : "Build a Datapipline with DataFlow and Metastore",
+        "filename": "../../dataflow-sampleapp/samplehiveexternaltable.md"
+    }
+
+
 
     ]
 }
