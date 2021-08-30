@@ -17,8 +17,8 @@ In this lab, you will:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Pre-Upgrade Requirements
+      - Lab : Initialize the workshop Environment
+      - Lab : Pre-Upgrade Requirements
 
 ## Task 1: Identify existing schemas available for upgrade
 

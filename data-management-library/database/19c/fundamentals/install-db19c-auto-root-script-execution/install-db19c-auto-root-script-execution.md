@@ -265,6 +265,12 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     SQL> <copy>EXIT</copy>
     ```
 
+9. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
+    ```
+
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
 
 You may now proceed to the next lab.
@@ -282,4 +288,4 @@ You may now proceed to the next lab.
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021

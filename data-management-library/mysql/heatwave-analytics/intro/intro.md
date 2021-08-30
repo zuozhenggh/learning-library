@@ -10,9 +10,9 @@ HeatWave is a new, integrated, high-performance analytics engine for MySQL Datab
  
 At the end of the workshop you will be able to run some queries on a sample dataset loaded into MySQL Database Service and compare the execution times with and without HeatWave. Prepare yourself to be surprised! 
  
-**Estimated Workshop Time: 100 minutes**
+Estimated Workshop Time: 100 minutes
 
-**Objectives**
+### Objectives
 
 -	Learn how to deploy MySQL Database Service (MDS) DB System with HeatWave.
 -	Learn how to enable a HeatWave cluster to MDS DB System.
@@ -22,9 +22,9 @@ At the end of the workshop you will be able to run some queries on a sample data
 -   Create your own Analytics dashboards on your MDS SB System.
 
 
-## **Task 1:** Prerequisites
+### Prerequisites
 
--  This workshop requires an Oracle Cloud account with available credits, you may check out this <a href="https://www.youtube.com/watch?v=4U-0SumNz6w" target="_blank">video</a> to help you signing up. You also can use a paid cloud account or a trial cloud account as well.
+-  This workshop requires an Oracle Cloud account with available credits, you may check out this **[video](https://www.youtube.com/watch?v=4U-0SumNz6w)** to help you signing up. You also can use a paid cloud account or a trial cloud account as well.
   
   [](youtube:4U-0SumNz6w)
 
@@ -32,7 +32,7 @@ At the end of the workshop you will be able to run some queries on a sample data
     
 Your account is ready? let's start learning!
 
-## **Acknowledgements**
+## Acknowledgements
 - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
 - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
-- **Last Updated By/Date** -
+- **Last Updated By/Date** - Rawan Aboukoura, August 2021
