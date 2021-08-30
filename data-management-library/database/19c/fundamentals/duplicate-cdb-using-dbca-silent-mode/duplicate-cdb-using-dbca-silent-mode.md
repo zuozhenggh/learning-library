@@ -527,7 +527,7 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 - [dbca -createDuplicateDB command](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-7F4B1A64-5B08-425A-A62E-854542B3FD4E)

@@ -175,7 +175,7 @@ This lab assumes you have:
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 

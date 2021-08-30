@@ -568,7 +568,7 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 
