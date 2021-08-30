@@ -13,7 +13,7 @@ Estimated Lab Time: 10 minutes
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set the parameters
+## Task 1: Set the parameters
 
 1. Log in to `CDB1` as `SYSTEM.`
 
@@ -129,7 +129,7 @@ Estimated Lab Time: 10 minutes
 
       ```
 
-## **STEP 2:** Restart the CDB
+## Task 2: Restart the CDB
 
 1. Restart the CDB instance.
 

@@ -14,7 +14,7 @@ The following three security elements need to be configured for you to use a dat
 - One or more Oracle Data Safe roles granted to the Oracle Data Safe service account on the Autonomous database. The roles enable Oracle Data Safe features on the database. By default, the Oracle Data Safe service account on an Autonomous Database has all of the roles granted, except for Data Masking.
 - An authorization policy in the Oracle Data Safe Console that grants you privileges to use one or more features with your Autonomous Database. By default, when you register an Autonomous Database, your user account is automatically granted Oracle Data Safe privileges for that database. The privileges granted depend on whether you are a regular user or an administrator. A regular user can use the User Assessment, Security Assessment, and Activity Auditing features with the database. A tenancy administrator or an Oracle Data Safe administrator can use all of the Oracle Data Safe features on any database.
 
-> **Note**: In an Oracle-provided environment, your are not granted privileges to use the Data Discovery and Data Masking features with your database.
+> **Note**: In an Oracle-provided environment, you are not granted privileges to use the Data Discovery and Data Masking features with your database.
 
 Begin by registering your Autonomous Transaction Database (ATP). After you register it, run the `load-data-safe-sample-data_admin.sql` SQL script to load sample data into your database. This script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database. Keep in mind, however, that to use Data Masking with your database, it is not enough to just enable Data Masking on the database. You also require the Discovery and Masking privilege on your database in the Oracle Data Safe Console.
 
@@ -29,7 +29,7 @@ You learn how to perform the following tasks:
 - Register your ATP database with Oracle Data Safe
 - Run a SQL script using Oracle Database Actions to load sample data into your database
 - Sign in to the Oracle Data Safe Console and view the list of registered target databases
-- View the list of registered target databases from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
+- View details for your registered target database from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 1**: Register your Autonomous Database with Oracle Data Safe
+## Task 1: Register your Autonomous Database with Oracle Data Safe
 
 1. Make sure that you have the correct region in Oracle Cloud Infrastructure selected.
 
@@ -68,7 +68,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 
 
-## **STEP 2**: Run a SQL script using Oracle Database Actions to load sample data into your database
+## Task 2: Run a SQL script using Oracle Database Actions to load sample data into your database
 
 1. On the **Autonomous Database Details** page, click the **Tools** subtab.
 
@@ -86,7 +86,7 @@ Before starting, be sure that you have completed the following prerequisite task
 
 6. If a help note is displayed, click the **X** button to close it.
 
-7. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/W0JmKtImWp4e_FXSg4gj0wlwnAEf3OJ75cCpCdicH38ly55qrPaaZbO1el3ayfyR/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
+7. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Y5Wmkg4hP-ijM96-6IR6gIwxkVc8ejvWoDtzyFsOw6uMaU6fcXO_52jd2_mL_tzc/n/c4u04/b/security-library/o/load-data-safe-sample-data_admin.zip) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
 
 8. Copy the entire script to the clipboard and then paste it into a worksheet in Database Actions.
 
@@ -133,13 +133,13 @@ Before starting, be sure that you have completed the following prerequisite task
     - `REGIONS` - 4 rows
     - `SUPPLEMENTAL_DATA` - 149 rows
 
-16. If your data is different than what is specified above, rerun the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/W0JmKtImWp4e_FXSg4gj0wlwnAEf3OJ75cCpCdicH38ly55qrPaaZbO1el3ayfyR/n/c4u03/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
+16. If your data is different than what is specified above, rerun the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Y5Wmkg4hP-ijM96-6IR6gIwxkVc8ejvWoDtzyFsOw6uMaU6fcXO_52jd2_mL_tzc/n/c4u04/b/security-library/o/load-data-safe-sample-data_admin.zip) script.
 
 17. Sign out of Database Actions and close the tab.
 
 
 
-## **STEP 3**: Sign in to the Oracle Data Safe Console and view the list of registered target databases
+## Task 3: Sign in to the Oracle Data Safe Console and view the list of registered target databases
 
 1. Return to the browser tab where you are signed in to **Oracle Cloud Infrastructure**. You last left off on the **Tools** tab for your database. If you navigated away from the **Tools** tab, select **Oracle Database** and then **Autonomous Transaction Processing** from the navigation menu, and then click the name of your database.
 
@@ -162,7 +162,7 @@ Before starting, be sure that you have completed the following prerequisite task
 5. Click each top tab and review the content on the page.
 
     - The **Home** tab shows a dashboard.
-    - The **Targets** tab lists your registered target databases.
+    - The **Targets** tab lists registered target databases to which you have access.
     - The **Library** tab lets you access repository resources, which are used for discovering and masking sensitive data. Resources include sensitive types, sensitive data models, masking formats, and masking policies.
     - The **Reports** tab lets you access prebuilt and custom built reports for all Oracle Data Safe features.
     - The **Alerts** tab shows you all open alerts for the past week, by default. If you need to view more alerts, you can remove the filters.
@@ -180,20 +180,9 @@ Before starting, be sure that you have completed the following prerequisite task
 
 7. Click the **Targets** tab. Notice that your database is listed as a target database. Registered databases are referred to as *target databases* in the Oracle Data Safe Console.
 
-8. Click the name of your target database to view its details.
-
-9. In the **Target Details** dialog box, review the connection information for your database. The information is read only.
-
-    - You cannot edit the registration details for an Autonomous Database.
-    - You can view the compartment to which the database belongs. The compartment for an Autonomous Database is the same compartment in Oracle Cloud Infrastructure in which the database resides.
-    - Oracle Data Safe connects to your Autonomous Database via a TLS connection.
-
-10. Click **Cancel** to close the **Target Details** dialog box.
 
 
-
-
-## **STEP 4**: View the list of registered target databases from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
+## Task 4: View details for your registered target database from the Oracle Data Safe service page in the Oracle Cloud Infrastructure Console
 
 The **Registered Databases** page for the Oracle Data Safe service in the Oracle Cloud Infrastructure Console also lists registered target databases to which you have access.
 
@@ -207,11 +196,17 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
     - There is a message in the upper-right corner stating that **Data Safe is enabled**.
     - If there is an error on the page, you need to sign in again to Oracle Cloud Infrastructure.
 
-4. On the left, click **Registered Databases**. Your registered database is listed.
+4. On the left, click **Target Databases**. Your registered target database is listed.
 
-5. Click the three dots to the right of your database's name, and select **Service Console**. This is another way that you can access the Oracle Data Safe Console.
+5. Click the name of your target database to view its registration details.
 
-    ![Registered Databases tab in OCI](images/access-data-safe-console-from-registered-databases-tab.png "Registered Databases tab in OCI")
+    - On the **Target Database Details** tab, you can view the target database name and description, OCID, when the target database was registered and the compartment to where the target database was registered.
+
+    - You can also view connection information, such as database service name, the protocol (TCP or TLS), and so on. The connection information varies depending on the target database type.
+
+    - The **Target Database Details** page provides options to edit the target database name and description, edit connection details, update the Oracle Data Safe service account and password on the target database (applicable to non-Autonomous Databases), and download a SQL privilege script that enables features on your target database.
+
+    - From the **More Actions** menu, you can choose to move the target database to a different compartment, add tags, deactivate your target database, and deregister your target database.
 
 
 ## Learn More
@@ -223,4 +218,4 @@ The **Registered Databases** page for the Oracle Data Safe service in the Oracle
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, May 28 2021
+  * **Last Updated By/Date** - Jody Glover, June 15 2021

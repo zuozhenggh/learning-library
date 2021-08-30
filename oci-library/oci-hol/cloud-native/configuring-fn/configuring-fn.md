@@ -15,7 +15,7 @@ Estimated Time: 75 minutes
 * Free Trial, LiveLabs or Paid Oracle Cloud account
 
 
-## **STEP 1**: Create a Virtual Cloud Network
+## Task 1: Create a Virtual Cloud Network
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from the drop down menu on the left side of the screen(you may need to scroll down to see the dropdown) and Click **Start VCN Wizard**.
 
@@ -59,7 +59,7 @@ Estimated Time: 75 minutes
 
     ![](images/Function_003.png)
 
-## **STEP 2**: Create and Connect to a Compute Instances
+## Task 2: Create and Connect to a Compute Instances
 1. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute**.
 
     ![](images/HAApplication_008.png)
@@ -138,7 +138,7 @@ Estimated Time: 75 minutes
 
     ![](images/Function_007.png)
 
-## **STEP 3**: Install and Configure OCI CLI
+## Task 3: Install and Configure OCI CLI
 1. Install OCI CLI on the compute instance by entering the following command. When prompted for the install directory press enter(leave default). When prompted for the oci executable directory press enter(leave default). When prompted for the OCI script directory press enter(leave default). When prompted to install optional packages press enter(leave default). When prompted to update your $PATH enter `Y`.
 
     ```
@@ -199,7 +199,7 @@ Estimated Time: 75 minutes
 
     ![](images/Terraform_026.png)
 
-## **STEP 4**: Install Docker
+## Task 4: Install Docker
 
 1. Next we need to generate an Auth token its an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
@@ -326,7 +326,7 @@ Estimated Time: 75 minutes
 
     You may want to minimize the oracle cloud shell for the next step, but don't close it because you will need it again later.
 
-## **STEP 5**: Create a Function Application
+## Task 5: Create a Function Application
 
 1. From the OCI services menu click **Policies** under **Identity**.
 
@@ -388,7 +388,7 @@ Estimated Time: 75 minutes
 
     ![](images/Function_051.png)
 
-## **STEP 6**: Configure and Invoke a Function
+## Task 6: Configure and Invoke a Function
 
 1. Open the oracle cloud shell. If you are no longer connected to your instance use the following command to reconnect to your instance. Otherwise skip this command.
 
@@ -545,7 +545,7 @@ Estimated Time: 75 minutes
 
 Congratulations! You've just created, deployed, and invoked your first function using Oracle Functions!
 
-## **STEP 7**: Delete the Resources
+## Task 7: Delete the Resources
 1. From the OCI services menu click **Instances** under **Compute**.
 
     ![](images/HAApplication_008.png)

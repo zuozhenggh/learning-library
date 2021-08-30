@@ -26,7 +26,7 @@ Required Artifacts:
   4. A pre-generated Auth Token from the console.
 
 
-## **STEP 1**: Downloading ADB Wallet to Your Local Machine
+## Task 1: Downloading ADB Wallet to Your Local Machine
 
 ***Probably add a few steps here to be consistent with other WS***
 1. Navigate to your Autonomous Database and click on **DB Connection**.
@@ -46,7 +46,7 @@ Required Artifacts:
   ![](./images/download_wallet_4.png)
 
 
-## **STEP 2**: Generating an Auth Token and Creating a Bucket
+## Task 2: Generating an Auth Token and Creating a Bucket
 
 1. Click on your **Profile** in the top right, and then click your **Username**.
 
@@ -74,7 +74,7 @@ Required Artifacts:
   *Take note of your region, bucket name, and tenancy name for later.*
 
 
-## **STEP 3**: Installing Instance Client on the Source Database Instances
+## Task 3: Installing Instance Client on the Source Database Instances
 
 1. Navigate [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) to find the links for the most recent instant client. Copy the file links of the following Instant Client packages by right clicking and selecting "Copy Link Address". Paste each one on your preferred text editor.
     - Basic Package (ZIP)
@@ -129,7 +129,7 @@ Required Artifacts:
 
   ![](./images/sql_imp_exp_unzip.png)
 
-## **STEP 4**: Transferring the ADB Wallet on Your Local Machine to Both Source Database Instances
+## Task 4: Transferring the ADB Wallet on Your Local Machine to Both Source Database Instances
 
 1. Using your preferred sftp client, connect to both Source database instances as opc user.
 
@@ -152,7 +152,7 @@ Required Artifacts:
 
   ![](./images/wallet_unzip.png)
 
-## **STEP 5**: Verifying Both Source Database Instances Can Connect to the ADB Database
+## Task 5: Verifying Both Source Database Instances Can Connect to the ADB Database
 
 1. View the connect string via the tnsnames.ora from the ADB wallet on both Source database instances.
     
@@ -189,7 +189,7 @@ Required Artifacts:
 
   ![](./images/sqlplus_connectivity.png)
 
-## **STEP 6**: Download and Install MV2ADB on Both Source Database Instances.
+## Task 6: Download and Install MV2ADB on Both Source Database Instances.
 
 1. On your local machine, download the MV2ADB rpm file [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4). Platform specific rpm can be downloaded under the History Tab.
 
@@ -221,7 +221,7 @@ Required Artifacts:
   
   ![](./images/mv2adb_verify.png)
 
-## **STEP 7**: Encrypt Passwords of Both Source Database Instances, Target Database, and Auth Token.
+## Task 7: Encrypt Passwords of Both Source Database Instances, Target Database, and Auth Token.
 
 1.  Encrypt the following passwords using the “mv2adb encpass” command, and save the values to a safe location (Eg: Notepad). Run the command for each password you would like to encrypt.
 
@@ -238,7 +238,7 @@ Required Artifacts:
 
   *Note: If you get an error saying it cannot find the command, you may have to run the mv2adb.bin without any parameters to first initialize it! (./mv2adb.bin)*
 
-## **STEP 8**: Configure the MV2ADB Script on Both Source Database Instances
+## Task 8: Configure the MV2ADB Script on Both Source Database Instances
 
 1. Backup the existing configuration file on both Source database instances.
   
@@ -377,7 +377,7 @@ show con_name
 ![](./images/comp_config.png)
 
 
-## **STEP 9**: Run the MV2ADB Migration Script on Both Source Database Instances
+## Task 9: Run the MV2ADB Migration Script on Both Source Database Instances
 
 The migration script will export from your source databases, then import into your Autonomous database using data pump. For more information, refer to the official steps from my Oracle support (MOS) [here](https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=291097898074822&id=2463574.1&_afrWindowMode=0&_adf.ctrl-state=v0102jx12_4).
 
@@ -392,7 +392,7 @@ The migration script will export from your source databases, then import into yo
 
   ![](./images/autorun_1.png)
 
-## **STEP 10**: Validate the Data Migration
+## Task 10: Validate the Data Migration
 
   1. On both source database instances, run the mv2adb report.
 

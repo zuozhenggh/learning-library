@@ -4,7 +4,7 @@
 
 Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development to production workflow. Oracle Cloud Infrastructure Registry makes it easy for you as a developer to store, share, and manage development artifacts like Docker images. And the highly available and scalable architecture of Oracle Cloud Infrastructure ensures you can reliably deploy your applications.
 
-## **Step 1**: Sign in to OCI Console and create VCN, Auth token and Docker Registry
+## Task 1: Sign in to OCI Console and create VCN, Auth token and Docker Registry
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
        ![](./../grafana/images/Grafana_015.PNG " ")
@@ -57,7 +57,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 *We now have a Docker registry and Auth token (to validate login to the registry). Next we will use Cloud Shell to test pushing and pulling images from the registry.*
 
-## **Step 2**: Create compute instance install Docker and push images to registry
+## Task 2: Create compute instance install Docker and push images to registry
 
 1. From the OCI Console, click on the **cloud shell** icon as shown below. This should launch a cloud shell session for the user.
 
@@ -175,7 +175,7 @@ Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables 
 
 *We now have a working Docker registry and can successfully push and pull images to/from it.*
 
-## **Step 3:** Delete the resources
+## Task 3: Delete the resources
 
 1. Switch to  OCI console window
 

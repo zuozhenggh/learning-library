@@ -26,7 +26,7 @@ Estimated time: 30 minutes
 [](youtube:vo_doCpX0KQ)
 
 
-## **STEP 1:** Create User Auth Token, Storage Bucket and Upload Data Pump export file.
+## Task 1: Create User Auth Token, Storage Bucket and Upload Data Pump export file.
 
 1.  Navigate to the user details page from the top, right-hand menu item as shown below
 
@@ -70,7 +70,7 @@ Estimated time: 30 minutes
 
       ![](images/image32.png " ")
 
-## **STEP 2:** Setup Product Catalog MicroService Data in ATP
+## Task 2: Setup Product Catalog MicroService Data in ATP
 
 1.  Navigate to **Autonomous Transaction Processing**
 
@@ -202,7 +202,7 @@ Estimated time: 30 minutes
      ![](images/image18.png " ")
 
 
-## **STEP 3:** Setup User Catalog MicroService Data in ATP
+## Task 3: Setup User Catalog MicroService Data in ATP
 
 1.  Navigate to **Autonomous Transaction Processing**
 
@@ -262,7 +262,7 @@ Estimated time: 30 minutes
      ![](images/image36.png " ")
 
 
-## **STEP 4:** Grant Access to Alpha user to SQL Developer Web (Optional)
+## Task 4: Grant Access to Alpha user to SQL Developer Web (Optional)
 
 This step is optional and can be done in both the Product and User ATP instances.
 

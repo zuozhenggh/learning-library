@@ -23,13 +23,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
-- Lab 3: Create Data Integration Instance
-- Lab 4: Design and Run your ETL Pipeline
+- All previous labs have been successfully completed.
 
-## **STEP 1:** Create Policies
+## Task 1: Create Policies
 
 1. Create **Dynamic Group**, go to **Menu** > **Identity & Security** > **Dynamic Groups**.
 
@@ -39,7 +35,7 @@ In this lab, you will:
 
    ![](images/ds_dynamic_group_create_button.png)
 
-3. Set the following **values**:
+3. Set the following **Values**:
 
       - Name: `datascience`
       - Description: `Data Science Dynamic Group`
@@ -58,7 +54,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Create Policies for Data Science
+## Task 2: Create Policies for Data Science
 
 1. Go to **Menu** > **Identity & Security** > **Policies**.
 
@@ -70,7 +66,7 @@ In this lab, you will:
 
    ![](images/ds_policies_create_button.png)
 
-3. Use the following **information**:
+3. Use the following information:
 
       - Name: `datascience`
       - Description: `Data Science to use network resources`
@@ -107,7 +103,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Create a Data Science Project
+## Task 3: Create a Data Science Project
 
 1. Go to **Menu** > **Analytics & AI** > **Data Science**.
 
@@ -117,7 +113,7 @@ In this lab, you will:
 
    ![](images/ds_create_project_button.png)
 
-3. Set the **name** and **description** as follows:
+3. Set the **Name** and **Description** as follows:
 
       - Name: `Nature`
       - Description: `Fish Survey notebook`
@@ -130,7 +126,7 @@ In this lab, you will:
 
    ![](images/ds_create_notebook.png)
 
-6. Set the following **values**:
+6. Set the following **Values**:
 
       - Name: `Fish Survey`
       - Compute Instance Shape (but other compatible shapes would work as well): `VM.Standard.E2.2`
@@ -142,7 +138,7 @@ In this lab, you will:
 
    ![](images/ds_create_notebook_create.png)
 
-8. The **status** icon will change from Creating to Active:
+8. The **Status** icon will change from Creating to Active:
 
    ![Creating](images/datascience-creating.png)
 
@@ -158,13 +154,13 @@ In this lab, you will:
 
 ---
 
-## **STEP 4:** Install Libraries
+## Task 4: Install Libraries
 
 1. Welcome to your Jupyter Notebook, click **Terminal**.
 
    ![](images/ds_notebook_terminal.png)
 
-2. Type the following **command**:
+2. Type the following command:
 
    ```
       <copy>pip install mysql-connector-python pandas seaborn</copy>
@@ -176,40 +172,40 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** Create Jupyter Notebook Environment
+## Task 5: Create Jupyter Notebook Environment
 
-1. **Download** the Notebook <a href="./files/FishSurvey.ipynb" target="\_blank">here</a>.
+1. **Download** the Notebook <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/7NRyIRdKbZ6x3yNsDxqwTlWOk5s3aEzZ-sxTQ7bAGBGZrtrgtEczXxO2Jg_Uc8da/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-FishSurvey.ipynb" target="\_blank">here</a>.
 
 2. Click **Upload files**.
 
    ![](images/ds_notebook_upload.png)
 
-3. **Select** `FishSurvey.ipynb` from your disk. Wait for the upload to **complete**.
+3. **Select** `mds-di-ds-FishSurvey.ipynb` from your disk. Wait for the upload to **complete**.
 
-4. Your `FishSurvey.ipynb` will be **loaded** on the side panel.
+4. Your `mds-di-ds-FishSurvey.ipynb` will be **loaded** on the side panel.
 
    ![](images/ds_notebook_fish_notebook.png)
 
-5. **Double click** on **FishSurvey.ipynb**.
+5. **Double click** on **mds-di-ds-FishSurvey.ipynb**.
 
 6. Make sure you **modify** `PRIVATE_IP` on the following code in the **Notebook** with the P**rivate IP from your MySQL Database Service**.
 
    ```
-   <copy>cnx = mysql.connector.connect(
+   cnx = mysql.connector.connect(
       host="PRIVATE_IP",
       user="root",
       passwd="R2d2&C3po!",
       database="nature"
-   )</copy>
+   )
    ```
 
    ![](images/ds_notebook_fish_notebook_run.png)
 
-7. **Select** the rest paragraph (called Cell) of the Notebook and run the **Notebook** cell by cell by clicking the **play** icon over and over until you reach the end.
+7. **Select** the first paragraph (called Cell) with all the `import` statements in the Notebook and run the **Notebook** cell by cell by clicking the **Play** icon over and over until you reach the end.
 
    ![](images/ds_notebook_fish_notebook_head.png)
 
-8. Check the **plot**.
+8. Check the **plot** where you can see the population of fish by water depth.
 
    ![](images/ds_notebook_fish_notebook_plot.png)
 

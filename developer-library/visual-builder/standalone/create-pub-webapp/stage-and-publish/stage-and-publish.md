@@ -14,7 +14,7 @@ Oracle Visual Builder provides different databases for the development, staging,
 
 This tutorial shows you how to stage, publish, and access those apps within the Designer. You can also perform these operations from the application's Options menu on the Visual Applications page. 
 
-## **STEP 1**: Stage the Application
+## Task 1: Stage the Application
 
 Stage the application so that other users can test its behavior.
 
@@ -41,11 +41,11 @@ Stage the application so that other users can test its behavior.
     When you have finished using the application, close the browser tab to return to the  application in the Designer.
 
 
-## **STEP 2**: Import Data Into the Application (Optional)
+## Task 2: Import Data Into the Application (Optional)
 
 You can import data for the Department and Employee business objects from a zip file. You can skip directly to the publishing step if you wish.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9qg3_BmDXmLGMwpnyTZmZRA4lA91PEwdNxXWdmcHam67wD5Gny6ypqAhbU2Ra5ly/n/c4u03/b/solutions-library/o/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kcwuO0EddkCHQQnigbOXMoxJDD4xNLT6azZzK_dRbejWKG5XHRVra7DUO6K2dF2V/n/c4u04/b/solutions-library/o/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
 3.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
     ![](./images/vbcssp_imp_s3.png)
@@ -69,7 +69,7 @@ You can import data for the Department and Employee business objects from a zip 
     ![](./images/vbcssp_imp_s9.png)
 
 
-## **STEP 3**: Publish the Application
+## Task 3: Publish the Application
 
 After you have successfully tested the staged application, you can publish it and make the application live. The live application is visible to users with proper credentials.
 

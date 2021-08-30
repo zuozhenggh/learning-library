@@ -18,7 +18,7 @@ In this lab you will:
 
 - We'll use the 'on-premises' environment as our working environment from which we'll connect to the newly deployed environment, so we'll need to create an SSH key pair there.
 
-## **STEP 1:** Create an SSH Key Pair 
+## Task 1: Create an SSH Key Pair 
 
 Create a SSH key in the on-premises environment (whether you chose to provision via the demo marketplace or with a local VirtualBox VM)
 
@@ -71,7 +71,7 @@ Create a SSH key in the on-premises environment (whether you chose to provision 
 4. Copy the content to clipboard, it will be used during the SOA stack provisioning.
 
 
-## **STEP 2:** Provision the Stack Through the Marketplace
+## Task 2: Provision the Stack Through the Marketplace
 
 1. Go to **Solutions and Platforms -> Marketplace -> Applications**.
 
@@ -223,7 +223,7 @@ Once the stack is provisioned, you can find the information regarding the URL an
 To save some time you may proceed to the next lab and move to first steps of migrating the demo application, however you will need to come back and gather the info and create the tunnel connection to proceed further.
 
 
-## **STEP 3:** Gather the Necessary SOA Stack Information
+## Task 3: Gather the Necessary SOA Stack Information
 
 
 1. In the job **Outputs** (left menu).
@@ -244,7 +244,7 @@ To save some time you may proceed to the next lab and move to first steps of mig
       ![](./images/bastion-ip.png)
 
 
-## **STEP 4:** Connect to the SOA Console Through the Bastion Host.
+## Task 4: Connect to the SOA Console Through the Bastion Host.
 
 Since the stack is deployed in a **private subnet**, accessing the console is achieve by tunneling through the bastion host.
 

@@ -15,19 +15,7 @@ Watch a video demonstration of connecting to an autonomous database instance usi
 -   Learn how to download and configure a connection wallet
 -   Learn how to connect to your Autonomous Data Warehouse with Oracle SQL Developer
 
-### Prerequisites
-
--   The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-
--   Oracle SQL Developer 19.2 or later is recommended (see <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target="\_blank">Oracle SQL Developer Downloads site</a>).
-    Please use SQL Developer version 18.3 or later, as this version contains enhancements for key Autonomous Data Warehouse features, including using ADW behind a VPN or Firewall.
-
-    *Note:* If you are a Windows user on a 64-bit platform, download the "Windows 64-bit with JDK 8 included" distribution, as it includes both Java 8 and the Java Cryptography Extension (JCE) files necessary to run SQL Developer and to connect to your Autonomous Data Warehouse.
-    If you are a non-Windows user, download and install the appropriate [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for your Operating System. Download and extract the [Java Cryptography Extension](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) to the directory as indicated in the README.txt.
-
--   This lab assumes you have completed the **Prerequisites** and **Provision Autonomous Database** labs seen in the Contents menu on the right.
-
-## **Step 1**: Download the Connection Wallet
+## Task 1: Download the Connection Wallet
 
 As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page or from the ADW or ATP service console.
 
@@ -42,7 +30,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
     ![](./images/dbconnection.png " ")
 
 3.  Use the Database Connection dialog to download client credentials.
-    - Wallet Type - For this lab, select **Instance Wallet**. This wallet type is for a single database only. This provides a database-specific wallet. 
+    - Wallet Type - For this lab, select **Instance Wallet**. This wallet type is for a single database only. This provides a database-specific wallet.
     - Click **Download Wallet**.
 
     ![](./images/Picture100-15.png " ")
@@ -57,7 +45,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
 5.  Once the wallet is downloaded, click **Close** to close the Database Connection dialog.
 
-## **Step 2**: Connect to the database using SQL Developer
+## Task 2: Connect to the database using SQL Developer
 
 Start SQL Developer and create a connection for your database using the default administrator account "ADMIN" by following these steps.
 
@@ -80,7 +68,7 @@ Start SQL Developer and create a connection for your database using the default 
 
 4.  If you are behind a VPN or Firewall and this Test fails, make sure you have <a href="https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html" target="\_blank">SQL Developer 18.3</a> or higher. This version and above will allow you to select the "Use HTTP Proxy Host" option for a Cloud Wallet type connection. While creating your new ADW connection here, provide your proxy's Host and Port. If you are unsure where to find this, you may look at your computer's connection settings or contact your Network Administrator.
 
-## **Step 3**: Querying Your Autonomous Database with SQL Developer
+## Task 3: Querying Your Autonomous Database with SQL Developer
 
 The SH schema provides a small data set that you can use to run the sample queries in the <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-1D8E3429-735B-409C-BD16-54004964D89B" target="\_blank">Database Data Warehousing Guide</a>. For example, the following query shows you how the SQL function RANK() works:
 
@@ -112,4 +100,3 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Richard Green, DB Docs Team
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-

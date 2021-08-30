@@ -1,4 +1,4 @@
-# Auto Scaling an Autonomous Database
+# Apply Auto Scaling on an Autonomous Database
 
 ## **Introduction**
 
@@ -30,12 +30,6 @@ The customer is charged only for the actual average number of OCPUs used per hou
 -   Learn how to enable and disable auto scaling
 -   Examine the performance benefits of auto scaling
 
-### Prerequisites
-
-- This lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- Make sure you have completed the previous lab in the Contents menu on the left, *Provision Autonomous Database*, before you proceed with this lab, if you want to apply auto scaling to an existing ADW database. Otherwise, proceed with this lab to try auto scaling with a new Autonomous Database.
-- **Note** Auto scaling is not available with Oracle's **Always Free** databases.
-
 ### How You Will Test a Real-World Auto Scaling Example in this Lab
 
 The **business case** we want to answer here is to **summarize orders by month and city, for customers in the US, in the Fall of 1992** over our benchmark <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-sample-data.html#GUID-4BB2B49B-0C20-4E38-BCC7-A61D3F45390B" target="\_blank">SSB dataset</a> containing 1 TB of data.
@@ -44,9 +38,9 @@ The **business case** we want to answer here is to **summarize orders by month a
 - **Test 2**: You will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
 ## **Test 1 - Auto Scaling Disabled**
-In steps 1 through 3, with auto scaling **disabled**, you will have 3 SQL Developer Web sessions executing queries sharing the CPU and IO resources, and you will examine query times.
+In tasks 1 through 3, with auto scaling **disabled**, you will have 3 SQL Developer Web sessions executing queries sharing the CPU and IO resources, and you will examine query times.
 
-## **STEP 1**: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
+## Task 1: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
 
 1. You created an Autonomous Data Warehouse database in an earlier lab named *Provision Autonomous Database*. Go to the details page for the database, click the  **Scale Up/Down** button, and deselect the **Auto Scaling** checkbox to disable auto scaling if you have not done so already.
 
@@ -61,8 +55,8 @@ In steps 1 through 3, with auto scaling **disabled**, you will have 3 SQL Develo
     ![](./images/click-sql.png)
 
 3. Create and save 4 SQL Developer Web worksheets. In SQL Developer Web worksheets, you choose the consumer group from the drop-down menu in the upper-right corner.:
-    - Save the first worksheet with the name **Setup**. You will use this worksheet with the LOW consumer group in STEP 2, to run the setup that creates a procedure for running test queries. The LOW consumer group is appropriate for non-CPU-intensive tasks such as this creation of a procedure.
-    - Save the other 3 worksheets with the names **Query 1**, **Query 2**, and **Query 3**. In later steps, you will use these 3 worksheets to simultaneously run the test queries using the HIGH consumer group. For real production workloads, you will typically use the MEDIUM or HIGH consumer groups, since they have higher parallelism and lower concurrency. A worksheet using the HIGH consumer group gets top priority. You may read [more about consumer groups here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/manage-priorities.html#GUID-80E464A7-8ED4-45BB-A7D6-E201DD4107B7).
+    - Save the first worksheet with the name **Setup**. You will use this worksheet with the LOW consumer group in Task 2, to run the setup that creates a procedure for running test queries. The LOW consumer group is appropriate for non-CPU-intensive tasks such as this creation of a procedure.
+    - Save the other 3 worksheets with the names **Query 1**, **Query 2**, and **Query 3**. In later tasks, you will use these 3 worksheets to simultaneously run the test queries using the HIGH consumer group. For real production workloads, you will typically use the MEDIUM or HIGH consumer groups, since they have higher parallelism and lower concurrency. A worksheet using the HIGH consumer group gets top priority. You may read [more about consumer groups here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/manage-priorities.html#GUID-80E464A7-8ED4-45BB-A7D6-E201DD4107B7).
 
   ![](./images/save-worksheets.png " ")
 
@@ -70,8 +64,8 @@ In steps 1 through 3, with auto scaling **disabled**, you will have 3 SQL Develo
 
   ![](./images/create-four-worksheets.png " ")
 
-## **STEP 2**: Create the `test_proc` Procedure to Generate the Test Workload
-In this step, you run a script that will:
+## Task 2: Create the `test_proc` Procedure to Generate the Test Workload
+In this task, you run a script that will:
 - Create the procedure **test\_proc** for the workload used in the test.
     - When this procedure is executed, it will run a query in a loop 2 times, to answer the business case from our [SSB database](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-sample-data.html#GUID-4BB2B49B-0C20-4E38-BCC7-A61D3F45390B): Aggregate orders by month and city, for customers in the US, in the Fall of 1992.
     - After performing this lab, you may go back and increase the `i_executions` number for further testing.)
@@ -183,7 +177,7 @@ In this step, you run a script that will:
     </copy>
     ```
 
-## **STEP 3**: Run the `test_proc` Procedure Concurrently in Three Worksheets
+## Task 3: Run the `test_proc` Procedure Concurrently in Three Worksheets
 
 1. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go to the OCI console's Details page for your database, open the **Tools** tab and click the **Open Database Actions** button on the console 3 times. Each time you click it, a new SQL Developer Web instance will open in a tab in the browser.
 
@@ -237,18 +231,18 @@ In this step, you run a script that will:
 
     ![](./images/test-one-results.png " ")
 
-  In the next steps, let's see if auto scaling reduces query time and increases CPU and IO usage.
+  In the next tasks, let's see if auto scaling reduces query time and increases CPU and IO usage.
 
 ## **Test 2 - Auto Scaling Enabled, Providing 3x the Amount of CPU and IO Resources**
-In steps 4 through 6, you will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
+In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
-## **STEP 4**: Enable Auto Scaling
+## Task 4: Enable Auto Scaling
 
 1. Enable auto scaling, to allow you to use 3X the amount of base CPU and IO. Go to the details page for the database, click the  **Scale Up/Down** button, and select the **Auto Scaling** checkbox to **re-enable** auto scaling.
 
     ![](images/enable-auto-scaling.png " ")
 
-## **STEP 5**: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
+## Task 5: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
 
 1. Once again, go to your 3 SQL Developer Web **"Query"** worksheet instances (re-open 3 instances if you closed the tabs from before) which are using the HIGH consumer group. Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
 
@@ -264,7 +258,7 @@ In steps 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 
     ![](images/procedure-successfully-completed.png " ")
 
-## **STEP 6**: Review the Improved Performance After Enabling Auto Scaling
+## Task 6: Review the Improved Performance After Enabling Auto Scaling
 
 1. When the procedures have completed, run this script to see the test results:
 
@@ -330,4 +324,3 @@ For more information about auto scaling, see the documentation [Use Auto Scaling
 - **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
 - **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, May 2021
-

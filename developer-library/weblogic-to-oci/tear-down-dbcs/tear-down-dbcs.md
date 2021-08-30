@@ -4,28 +4,28 @@
 
 Congratulations! You've come so far and completed the workshop, and you might wonder how to clean up resources.
 
-Estimated Lab Time: 15 minutes
+Estimated Completion Time: 15 minutes
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: since the DB and WebLogic credentials are publically available it would be a security issue.*
 
 ### Objectives
 
-In this lab you will tear down the infrastructure provisioned.
+- Tear down the infrastructure provisioned.
 
-## **STEP 1:** Cleaning up the on-premises environment
+## Task 1: Cleaning up the on-premises environment
 
-### If you used docker
+### If you used Docker
 
-1. stop the services and remove containers:
+Stop the services and remove containers:
 
-    ```
-    <copy>
-    bash
-    docker-compose down
-    </copy>
-    ```
+```
+<copy>
+bash
+docker-compose down
+</copy>
+```
 
-> **Note:** the ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
+> **Note:** The ssh folder with the ssh key pair will remain locally. Key the ssh key pair securely if you intend to access the environment after destroying the demo environment.
 
 ### If you used the workshop image from the Oracle Cloud Marketplace
 
@@ -51,7 +51,7 @@ To destroy the demo VM:
 
    ![](./images/delete-stack.png " ")
 
-## **STEP 2:** Tear down the Application Database on OCI
+## Task 2: Tear down the Application Database on OCI
 
 1. Go to the **Bare Metal, VM and Exadata Menu**.
 
@@ -81,7 +81,7 @@ To destroy the demo VM:
 
 > **Note:** You won't be able to proceed until the DB System itself has been terminated.
 
-## **STEP 3:** Tear down the WebLogic environment
+## Task 3: Tear down the WebLogic environment
 
 You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
 

@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Data Profiling
     - Lab: Reference Data
 
-## **Step 1:** No Data Check
+## Task 1: No Data Check
 
 ### Auditing Data
 
@@ -67,7 +67,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 **Note**: If desired, we can continue to develop this process using one or more of the end point output data stream triangles from the Processor by choosing “Data”, “No Data” or “All".
 
-## **Step 2**: Pattern Check
+## Task 2: Pattern Check
 
 1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Cell Number in Right Format” by double clicking on processor.
 
@@ -97,7 +97,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
     Notice that there are 5424 Valid Records and 14 Invalid Records.
 
-## **Step 3**: List Check
+## Task 3: List Check
 
 1.	Return to the "Tool Palette" and find the “List Check” processor. Drag and drop it onto the "Project Canvas".
 

@@ -27,13 +27,15 @@ In this lab, you will:
 </if>
 
 <if type="dbcs">
-## **STEP 1:** Login to database
+## Task 1: Login to database
 
 1. Login to the instance using ssh
+
 2. Switch to the oracle user
-   ````
-    sudo su - oracle
-   ````
+    ```
+    <copy>sudo su - oracle</copy>
+    ```
+
 3. Connect to `PDB21` as `SYSTEM` to query values with numbers and bitwise aggregate functions.
 
     ```
@@ -46,9 +48,9 @@ In this lab, you will:
 </if>
 
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 
-There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
+There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Task 1B](#TASK1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
       ![](../set-operators/images/21c-home-adb.png " ")
@@ -61,21 +63,21 @@ There are multiple ways to access your Autonomous Database.  You can access it v
       ![](../set-operators/images/tools.png " ")
 
 5.  Login using the username *hr* and password *WElcome123##*
-6.  Click on the **SQL** button. 
+6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
-2. Open up Cloud Shell 
+2. Open up Cloud Shell
 3. Connect to the HR user using SQL\*Plus by entering the commands below.
-   
+
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn hr/WElcome123##@adb1_high
-	```
+	  conn hr/WElcome123##@adb1_high
+	  ```
 </if>
 
-## **STEP 2:** Test the bitwise AND function
+## Task 2: Test the bitwise AND function
 
 1.  A bitwise AND is a binary operation that takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits. If both bits in the compared position are 1, the bit in the resulting binary representation is 1, otherwise, the result is 0. Apply the `BIT_AND_AGG` function on two numbers. The bit pattern for the values used in the examples below are 01 for 1, 10 for 2, and 11 for 3.
 
@@ -83,18 +85,21 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     SQL> <copy>
     WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
     SELECT BIT_AND_AGG(c1) FROM x;</copy>
-    <if type="atp">
     ```
+
+    <if type="atp">
     ![](./images/step2-1.png " ")
     </if>
+
     <if type="dbcs">
+    ```
     BIT_AND_AGG(C1)
     ---------------
                   2
     ```
     </if>
 
-## **STEP 3:** Test the bitwise OR function
+## Task 3: Test the bitwise OR function
 
 A bitwise OR is a binary operation that takes two bit patterns of equal length and performs the logical inclusive OR operation on each pair of corresponding bits. The result in each position is 0 if both bits are 0, otherwise the result is 1.
 
@@ -103,18 +108,19 @@ A bitwise OR is a binary operation that takes two bit patterns of equal length a
     ```
     SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
     SELECT BIT_OR_AGG(c1) FROM x;</copy>
-    <if type="atp">
     ```
+    <if type="atp">
     ![](./images/step3-1.png " ")
     </if>
     <if type="dbcs">
+    ```
     BIT_OR_AGG(C1)
     --------------
                 3
     ```
     </if>
-    
-## **STEP 4:** Test the bitwise XOR function
+
+## Task 4: Test the bitwise XOR function
 
 A bitwise XOR is a binary operation that takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. Therefore, the comparison of two bits results in 1 if the two bits are different, and 0 if they are equal.
 
@@ -123,11 +129,13 @@ A bitwise XOR is a binary operation that takes two bit patterns of equal length 
     ```
     SQL> <copy>WITH x AS (SELECT 2 c1 FROM dual UNION ALL SELECT 3 FROM dual)
     SELECT BIT_XOR_AGG(c1) FROM x;</copy>
-    <if type="atp">
     ```
+    <if type="atp">
     ![](./images/step4-1.png " ")
     </if>
+
     <if type="dbcs">
+    ```
     BIT_XOR_AGG(C1)
     ---------------
                   1
@@ -141,11 +149,12 @@ A bitwise XOR is a binary operation that takes two bit patterns of equal length 
     ```
     <copy>EXIT</copy>
     ```
-</if> 
+</if>
+
 <if type="atp">
 2.  Click on the down arrow in the upper left corner of the SQL Developer Web, click **Sign Out**
 </if>
-    
+
 You may now [proceed to the next lab](#next).
 
 
@@ -157,5 +166,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Didi Han, Database Product Management
-* **Last Updated By/Date** -  Didi Han, April 2021
-
+* **Last Updated By/Date** - Tom McGinn, July 2021

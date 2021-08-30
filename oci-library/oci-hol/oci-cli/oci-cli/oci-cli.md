@@ -6,7 +6,7 @@ Automation is a critical component when it comes to managing Cloud workloads at 
 
 In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled) to create and list resources. Upon completion of this lab you should have a good understanding of how to use the OCI CLI to automate common tasks in OCI.
 
-## **STEP 1**: Use the CLI to create a VCN with one public subnet
+## Task 1: Use the CLI to create a VCN with one public subnet
 
 1. In the Cloud Shell, enter the following command:
 
@@ -215,7 +215,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
 22. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
 
-## **STEP 2**: Delete the resources
+## Task 2: Delete the resources
 
 1. Switch to  OCI console window.
 

@@ -22,7 +22,7 @@ This lab assumes you have:
     - Lab: Create One-Way Replication
     - Lab: Create HA/DR Replication
 
-## **STEP 1**: INSERTROWEXISTS with the USEMAX Resolution
+## Task 1: INSERTROWEXISTS with the USEMAX Resolution
 
 To resolve an insert where the row exists in the source and target, but some or all row values are different.
 
@@ -138,7 +138,7 @@ To resolve an insert where the row exists in the source and target, but some or 
 
 
 
-## **STEP 2**: UPDATEROWEXISTS with USEDELTA and USEMAX
+## Task 2: UPDATEROWEXISTS with USEDELTA and USEMAX
 
 To resolve the condition where a target row exists on UPDATE but non-key columns are different. We will use two different resolution methods (<b>USEDELTA</b> and <b>USEMAX</b>) to handle this conflict.
 
@@ -183,7 +183,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -193,7 +193,7 @@ To resolve the condition where a target row exists on UPDATE but non-key columns
 
 
 
-## **STEP 3**: DELETEROWEXISTS with OVERWRITE Resolution
+## Task 3: DELETEROWEXISTS with OVERWRITE Resolution
 
 To resolve the case where the source row was deleted but the target row exists. In this case, the OVERWRITE resolution applies the delete to the target.
 
@@ -271,7 +271,7 @@ To resolve the case where the source row was deleted but the target row exists. 
 5. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -280,7 +280,7 @@ To resolve the case where the source row was deleted but the target row exists. 
 
 
 
-## **STEP 4**: DELETEROWMISSING with DISCARD Resolution
+## Task 4: DELETEROWMISSING with DISCARD Resolution
 
 To resolve the case where the target row is missing. In the case of a delete on the source, it is acceptable for the target row not to exist (it would need to be deleted anyway), so the resolution is to discard the DELETE operation that is in the trail.
 
@@ -383,7 +383,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
 8. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")
@@ -391,7 +391,7 @@ To resolve the case where the target row is missing. In the case of a delete on 
     ![](./images/drm_pm_db_2.png " ")
 
 
-## **STEP 5**: UPDATEROWMISSING with OVERWRITE Resolution
+## Task 5: UPDATEROWMISSING with OVERWRITE Resolution
 
 To resolve the case where the target row is missing. The logical resolution, and the one used, is to overwrite the row into the target so that both databases are in sync again.
 
@@ -468,7 +468,7 @@ To resolve the case where the target row is missing. The logical resolution, and
 6. Open a browser tab session to the Performance Metrics Server for Boston Deployment
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/pmsrvr</copy>
+    <copy>https://localhost/Boston/pmsrvr</copy>
     ```
 
     ![](./images/pm_irep_boston.png " ")

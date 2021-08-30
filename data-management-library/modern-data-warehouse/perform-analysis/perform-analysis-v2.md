@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualisations. You will then connect to the destination ADW to explore the data.
+In this lab, you will get started with the analysis of the EBS data in Oracle Analytics Cloud. To get you started with an analytics project, we will use a dva file to set up an Analytics project and use the Source ADW to supply data for the visualizations. You will then connect to the destination ADW to explore the data.
 
 Estimated Lab Time: 15 minutes
 
@@ -16,11 +16,11 @@ Estimated Lab Time: 15 minutes
 
 - The source and destination Autonomous Data Warehouses (ADW) and Analytics Cloud (OAC) instance.
 - Access to the ModernDW file needed to recreate an analytics project.
-    - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_DhuXYUewHtA48gaEaBEZSH-L7MjSe309RqyHDTgActtB9hVZeDSJc1KGqWs3KKC/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/ModernDW.dva)
+    - [ModernDW.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4CYxFxh-zXj8Ke32RMTnGQa0mEoiHsAgBO0Kc7qbqQUTtkFD8YpJN25ybT4Amr83/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/ModernDW.dva)
 
 **Note:** Please download the file above before continuing.
 
-## **STEP 1:** Set up the Analytics Project in OAC 
+## Task 1: Set up the Analytics Project in OAC 
 
 As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
 
@@ -72,7 +72,7 @@ As previously mentioned, when you spin up the stack the links to some resources 
 
     ![](./images/6.15.png " ")
 
-## **STEP 2:** Establish a connection to the Destination Database as ADMIN
+## Task 2: Establish a connection to the Destination Database as ADMIN
 
 As you might remember, we loaded the data from the EBS instance into the **ADMIN** schema of the destination ADW and from the Source ADW into the **EBS** schema. We will now create a connection to the database as the **ADMIN** user.
 
@@ -92,7 +92,7 @@ As you might remember, we loaded the data from the EBS instance into the **ADMIN
 
     ![](./images/6.19.png " ")
 
-## **STEP 3:** Create Data Sets in OAC
+## Task 3: Create Data Sets in OAC
 
 1. To the right of the connection's name an ellipses button will appear. Click on it. In the menu that appears, select **Create Data Set**. On the next page, you will see all the available schemas including the **ADMIN** and **EBS** schemas.
 

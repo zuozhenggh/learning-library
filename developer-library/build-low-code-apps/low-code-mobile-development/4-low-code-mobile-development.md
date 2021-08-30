@@ -22,7 +22,7 @@ Estimated time: 45 minutes
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:X-B180moN-k)
 
-## **STEP 1**: Configure Visual Builder Studio to create Mobile App
+## Task 1: Configure Visual Builder Studio to create Mobile App
 
 1. Click on the hamburger menu on top left , hover on **Platform Services**, and then click on **Developer**
 
@@ -68,7 +68,7 @@ Estimated time: 45 minutes
 
     ![](images/step1/11.png " ")
 
-## **STEP 2**: Create Service Connections
+## Task 2: Create Service Connections
 
 Service Connections are REST endpoints pointing to various services. In this step you will reference REST endpoints from the application deployment you created in Lab 300. We will create endpoints for GET, GET/{id}, POST.
 
@@ -146,7 +146,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
     ![](images/step2/12.png " ")
 
 
-## **STEP 3**: Import Mobile Application
+## Task 3: Import Mobile Application
 
 1. First we will download the skeleton framework to create Mobile Application. Download from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/spw-appDev-DevOps-files/o/alphaMobileAppSkeleton.zip)
 
@@ -212,7 +212,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
     ![](images/step3/12.png " ")
 
-## **STEP 4**: Configure Main page with all products information
+## Task 4: Configure Main page with all products information
 
 1. Click on Variables and then click on **+Variable** to create new variable. Here we are creating variable to store all the product information we fetch from the rest endpoint. Give some meaningful name like getProducts and make sure type is **Service Data Provider** and then click **Create**
 
@@ -239,7 +239,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
     ![](images/step4/6.png " ")
 
 
-## **STEP 5**: Configure details page to show product details
+## Task 5: Configure details page to show product details
 
 1. In this step we are configuring product details page where we can see information of single product. For that we need to configure the page with REST Endpoint to fetch the single record.
 
@@ -269,7 +269,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
 
     ![](images/1.png " ")
 
-## **STEP 6**: Configure request more info page to submit product information request
+## Task 6: Configure request more info page to submit product information request
 
 1. In this Step we will configure request more info page.
 
@@ -294,7 +294,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
     ![](images/step6/7.gif " ")
 
 
-## **STEP 7**: Test
+## Task 7: Test
 
 1. Now let's test the app to make sure everything works fine. Click on Play button in Navigation Bar 
 
@@ -316,7 +316,7 @@ Service Connections are REST endpoints pointing to various services. In this ste
   
     ![](images/step7/4.png " ")
 
-## **STEP 8**: Save the app using Git
+## Task 8: Save the app using Git
 
 - From the navigation bar, click on git master, and form dropdown select push.
     

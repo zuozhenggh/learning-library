@@ -14,7 +14,7 @@ In this lab you will:
 - Access to the Cloud Manager console
 - A PeopleSoft Environment up and running on Cloud Manager
 
-## **STEP 1**: Backing up an Environment
+## Task 1: Backing up an Environment
 
 1.  Navigate to **Dashboard** > **Environments**. On the environment that we just created (**HCMFT**) click the down arrow and then click **Backup and Restore**. 
     ![](./images/backuprestore.png "")
@@ -37,7 +37,7 @@ In this lab you will:
     Once **Status** changes to a green check mark (like the picture below) you can continue on with this lab. 
     ![](./images/green.png "")   
 
-## **STEP 2**: Restoring an Environment
+## Task 2: Restoring an Environment
 
 1.  Navigate to **Dashboard** > **Environments**. On the environment that we just created (**HCMFT**) click the down arrow and then click **Backup and Restore**. 
     ![](./images/backuprestore.png "")

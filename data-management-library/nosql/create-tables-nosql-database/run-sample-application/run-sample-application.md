@@ -24,7 +24,7 @@ Oracle NoSQL Database Cloud Service is a fully managed database cloud service th
 * The OCID of your user account
 * A recent version of the java jdk installed locally on your computer
 
-## **Step 1:** Download the Oracle NoSQL SDK
+## Task 1: Download the Oracle NoSQL SDK
 
 1. Open the [Oracle Cloud Download](https://www.oracle.com/downloads/cloud/oracle-cloud-downloads.html) page in a browser and click **Download Oracle NoSQL Java SDK**.
 
@@ -53,9 +53,9 @@ Oracle NoSQL Database Cloud Service is a fully managed database cloud service th
 
     ![](images/unzip-result.png)
 
-## **Step 2:** Download, build and run the sample application
+## Task 2: Download, build and run the sample application
 
-1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qCpBRv5juyWwIF4dv9h98YWCDD50574Y6OwsIHhEMgI/n/c4u03/b/data-management-library-files/o/HelloWorld.java) file and move it to your home directory.
+1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IuFbulh0nbFM91-CTJRy00yvrAT8pe76fIHTVOVt5G48RAE5O_HsnzMDZzYUs8l/n/c4u04/b/data-management-library-files/o/HelloWorld.java) file and move it to your home directory.
 
 2. Review the sample application. You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 
@@ -105,7 +105,7 @@ Oracle NoSQL Database Cloud Service is a fully managed database cloud service th
 
     Note: In the main method of `HelloWorld.java`, the `dropTable(handle)` is commented out to allow you to see the result of creating the tables in the Oracle Cloud Console.
 
-## **Step 3:** Explore tables using the Oracle Cloud Infrastructure Console
+## Task 3: Explore tables using the Oracle Cloud Infrastructure Console
 
 1. On the left hand menu, click **NoSQL Database**.
 

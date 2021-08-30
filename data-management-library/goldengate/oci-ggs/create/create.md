@@ -21,13 +21,13 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1**: Create a Deployment
+## Task 1: Create a Deployment
 
 *Note that the compartment names in the screenshots may differ from values that appear in your environment.*
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-goldengate.png " ")
+    ![Select GoldenGate from Oracle Database](images/database-goldengate.png " ")
 
     You're brought to the **Deployments** page.
 
@@ -51,7 +51,7 @@ This lab assumes that you completed all preceding labs.
 
 8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Create GoldenGate Deployment](images/02_07_ggs-createdeployment.png "Create GoldenGate Deployment")
+    ![Create GoldenGate Deployment](images/01-02-02_create_deployment_panel.png "Create GoldenGate Deployment")
 
 9.  Click **Next**.
 
@@ -65,7 +65,7 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-## **STEP 2:** Review the Deployment details
+## Task 2: Review the Deployment details
 
 On the Deployment Details page, you can:
 
@@ -79,7 +79,7 @@ On the Deployment Details page, you can:
 
     ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
 
-## **STEP 3:** Launch the GoldenGate Deployment Console
+## Task 3: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 

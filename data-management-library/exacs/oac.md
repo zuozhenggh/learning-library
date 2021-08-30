@@ -30,7 +30,7 @@ As a LOB user
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
-## **Step 1:** Connect to dev client desktop over VNC
+## Task 1: Connect to dev client desktop over VNC
 
 First, we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -78,7 +78,7 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
 
   - If all goes well, you should now see a linux desktop in your VNC window.
 
-## **Step 2:** Download, install and configure Remote Data Gateway
+## Task 2: Download, install and configure Remote Data Gateway
 
 1. Download OAC Data Gateway 5.6.0+ from [here](https://www.oracle.com/middleware/technologies/oac-downloads.html).
 
@@ -215,7 +215,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
     ![](./images/oac/RDC-installer13.png " ")
 
 
-## **Step 3:** Configure Remote Data Connectivity and connect ExaCS Database to Oracle Analytics Cloud
+## Task 3: Configure Remote Data Connectivity and connect ExaCS Database to Oracle Analytics Cloud
 
 
 

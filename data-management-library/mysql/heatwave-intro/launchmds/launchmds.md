@@ -33,7 +33,7 @@ In this lab, you will be guided through the following steps:
 - Some Experience with MySQL Shell
 - Complete Lab 1: Create Local SSH Key
 
-## **STEP 1**: Create Compartment
+## Task 1: Create Compartment
 
 You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL DB System. Make sure to log-in to the Console as an Administrator.
 
@@ -69,7 +69,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Compartment** 
     ![Compartment4](./images/01compartment04.png " ")
 
-## **STEP 2**: Create Policy
+## Task 2: Create Policy
 1.	On the Navigation Menu, under Governance and Administration, select Identity & Security -> Policies. 
     ![Policy1](./images/02policy01.png " ")
 
@@ -115,7 +115,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
     **Completed Policy Creation**
     ![Policy3](./images/02policy05.png " ")
 
-## **STEP 3:** Create Virtual Cloud Network
+## Task 3: Create Virtual Cloud Network
 
 1. On the Navigation Menu, under Core Infrastructure, select Networking -> Virtual Cloud Networks.
     ![VCN](./images/03vcn01.png " ")
@@ -187,7 +187,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
      New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn11.png " ")
 
-## **STEP 4:** Create a MySQL DB System.
+## Task 4: Create a MySQL DB System.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -291,7 +291,7 @@ You must have an OCI tenancy subscribed to your home region and enough limits co
 
     ![MDS](./images/04mysql12.png" ")
 
-## **STEP 5:** Create Client Virtual Machine
+## Task 5: Create Client Virtual Machine
 
 **Important:** If you have not already completed "Lab 1: Create Local SSH Key", please do so now. 
 
@@ -339,7 +339,7 @@ When you are finished, return to this step.
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## **STEP 6:** Connect to MySQL Database
+## Task 6: Connect to MySQL Database
 
 1. If you are a Linux, Mac, or  Windows 10 Powershell user go to STEP 6: #2
 
@@ -433,7 +433,7 @@ When you are finished, return to this step.
   **Final Sceen Shot**
     ![Connect](./images/06connect14.png " ")
 
-## **STEP 7:**  Import the TPCH schema and data using MySQL Shell
+## Task 7:  Import the TPCH schema and data using MySQL Shell
 
 1.	Create the schema tpch and tables
  
@@ -567,40 +567,40 @@ When you are finished, return to this step.
 3.	Import the table data into MySQL Database Service from an external OCI Object Storage 
 
     
- Laod nation table  
+ Load nation table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fnation.tbl", { schema:"tpch", table:"nation", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ````  
 
- Laod customer table  
+ Load customer table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fcustomer.tbl", { schema:"tpch", table:"customer", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod lineitem table  
+ Load lineitem table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Flineitem.tbl", { schema:"tpch", table:"lineitem", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod orders table  
+ Load orders table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Forders.tbl", { schema:"tpch", table:"orders", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod part table  
+ Load part table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fpart.tbl", { schema:"tpch", table:"part", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
- Laod partsup table  
+ Load partsup table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fpartsupp.tbl", { schema:"tpch", table:"partsupp", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
- Laod region table  
+ Load region table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fregion.tbl", { schema:"tpch", table:"region", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
 
- Laod supplier table  
+ Load supplier table  
     ````
     <copy>util.importTable("https://objectstorage.us-ashburn-1.oraclecloud.com/n/idazzjlcjqzj/b/bucket-20201125-1020/o/tpch%2Fsupplier.tbl", { schema:"tpch", table:"supplier", fieldsTerminatedBy:"|", bytesPerChunk:"100M", threads:16, skipRows:1})</copy>
     ```` 
@@ -620,7 +620,7 @@ When you are finished, return to this step.
     ```` 
     ![Connect](./images/06connect17.png " ")
 
-## **STEP 8:**  Add a HeatWave Cluster to MySQL Database System
+## Task 8:  Add a HeatWave Cluster to MySQL Database System
 
 1. Open the navigation menu, under Databases -> MySQL, click DB Systems
 2. Choose your Compartment. A list of DB Systems is displayed. 
@@ -648,7 +648,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 12. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/14addheat07.png " ")
 
-## **STEP 9:**  Load TPCH Data into HeatWave Cluster
+## Task 9:  Load TPCH Data into HeatWave Cluster
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -772,7 +772,7 @@ Verify that the tables are loaded in the HeatWave cluster.
 
    ![Connect](./images/15loadheat02.png " ")
 
-## **STEP 10:**  Runn Queries in HeatWave
+## Task 10:  Runn Queries in HeatWave
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -944,7 +944,7 @@ ALTER TABLE nation SECONDARY_LOAD;
 </copy>
     ````
  
-## **STEP 11:**  Connect to HeatWave using Workbench
+## Task 11:  Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
@@ -955,7 +955,7 @@ ALTER TABLE nation SECONDARY_LOAD;
     **MySQL Workbench Use  for MDS HeatWAve**
     ![MDS](./images/06workbench02.png " ") 
 
-## **STEP 12:** Start, stop, or reboot MySQL DB System
+## Task 12: Start, stop, or reboot MySQL DB System
 
 Open the navigation menu. Under MySQL, click DB Systems.
 ![MDS](./images/04mysql01.png " ")
@@ -990,7 +990,7 @@ Select a shutdown type:
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
 
-## **STEP 13:** Delete MySQL DB System
+## Task 13: Delete MySQL DB System
 
 Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
 

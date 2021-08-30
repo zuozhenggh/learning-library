@@ -18,7 +18,7 @@ This lab assumes you have already completed the following labs:
 - Deploy Active Data Guard with LVM or ASM
 - Test with Active Data Guard
 
-## **STEP 1:** Setup the Current Primary Database Flashback
+## Task 1: Setup the Current Primary Database Flashback
 
 In the previous lab, you have done the Data Guard switch over. Now, the current primary database is the DBCS and the current standby database in the on-premise database.
 
@@ -87,7 +87,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     [oracle@dbstby ~]$ 
     ```
 
-## **STEP 2:** Failover
+## Task 2: Failover
 
 1. Connect with DGMGRL, validate the primary and standby database
 
@@ -174,7 +174,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
   Now, the primary is the on-premise database, and the standby database is disabled, which needs to be reinstated.
 
-## **STEP 3:** Reinstate the Previous Primary Database
+## Task 3: Reinstate the Previous Primary Database
 
 1. Connect to the cloud side(the previous primary), replace `ORCL_nrt1d4` with your previous primary db unique name. Shutdown the database and startup mount before reinstating. 
 

@@ -16,12 +16,12 @@ Estimated Lab Time: 60 minutes
 
 - Terminal on Unix/Linux or Putty on Windows.
 - Access to the following files:
-    - [etl\_audit\_tbl.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FBxg5-Eac3jlPXPddxo9FYHPJxUDmC1lJ3PIfG-koiFTCBKr-sUzOdqrQVOiIySm/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/etl_audit_tbl.sql)
-    - [controlling\_project\_expenditure.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1-UhNagNzes6rDY22uGAR6-CpnJvOAxY6h6YsWX8JTjQpbPVaJeijwJdkKJ3vtVJ/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/controlling_project_expenditure.sql)
+    - [etl\_audit\_tbl.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/M6q0ToabTSEejZK0qKhtZww2QwAPXXVZoTXeOokmaAmMxWJeOEtbfBd4Xn6XIMpJ/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/etl_audit_tbl.sql)
+    - [controlling\_project\_expenditure.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/qHPSlLsj02iO13nZ2OJChrK4G9v9A2AO8yCZjcL1knbXVWecqgKhRWzEbY5DtrpT/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/controlling_project_expenditure.sql)
     
 **Note:** Please download the files above before continuing.
 
-## **STEP 1:** Create a new security list and a public subnet in VCN
+## Task 1: Create a new security list and a public subnet in VCN
 
 In order to keep the ODI instance and the EBS instance that we are about to provision in separate subnets, we will create a new public subnet in the virtual cloud network (VCN) that was created in Lab 1.
 
@@ -71,7 +71,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
     
     ![](./images/2.16.png " ")
     
-## **STEP 2:** Provision EBS on OCI
+## Task 2: Provision EBS on OCI
     
 1. Go to navigation menu using the menu button in the top left. Scroll down to the **Solutions and Platform** section. Under **Marketplace**, select **All Applications**.
     
@@ -101,7 +101,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
     ![](./images/2.23.png " ")
 
-## **STEP 3:** SSH into the EBS instance and configure EBS
+## Task 3: SSH into the EBS instance and configure EBS
 
 1. Open a terminal and scp the **etl_audit_tbl.sql** file onto the EBS instance with the following command:
 
@@ -226,7 +226,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
 
     ![](./images/2.42.png " ")
     
-## **STEP 4:** Provision Autonomous Data Warehouse
+## Task 4: Provision Autonomous Data Warehouse
 
 1. Go to the navigation menu using the menu button in the top left.
 
@@ -264,7 +264,7 @@ In order to keep the ODI instance and the EBS instance that we are about to prov
     
     ![](./images/2.52.png " ")
         
-## **STEP 5:** Creating Tables in Database
+## Task 5: Creating Tables in Database
 
 1. Use SQL Developer to connect to your newly created Autonomous Database. Instructions for connecting to an Autonomous Database via SQL Developer can be found [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-sql-dev182.html#GUID-14217939-3E8F-4782-BFF2-021199A908FD).
 

@@ -18,11 +18,11 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 * 有効なメールアドレス
 * SMSテキスト認証を受信する機能（メールが登録されていない場合のみ）
 
-## **STEP 1**: Free Trialアカウントの作成
+## Task 1: Free Trialアカウントの作成
 
 すでにクラウドアカウントをお持ちの方は、**STEP2**へお進みください。
 
-1. Webブラウザを開いて、 [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en)のOracle Cloudアカウント登録フォームにアクセスします。
+1. Webブラウザを開いて、 [oracle.com/cloud/free](https://signup.cloud.oracle.com)のOracle Cloudアカウント登録フォームにアクセスします。
 2.  登録ページが表示されます.
        ![](images/ja-jp-cloud-infrastructure.png " ")
 3.  次の情報を入力して、Oracle Cloud Free Tierアカウントを作成します。
@@ -30,7 +30,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
     * **氏名**と**メールアドレス**
 
 4. 有効なメールアドレスを入力したら、 **電子メールの検証** ボタンを選択します。ボタンを選択すると以下のような画面が表示されます。
-    ボタンを選択すると以下のような画面が表示されます:<br> 
+    ボタンを選択すると以下のような画面が表示されます:<br>
        ![](images/ja-jp-verify-email.png " ")
 
 5. 電子メールを確認します。受信トレイにオラクルからのアカウント検証メールが表示されます。メールは以下のような内容になります:<br>
@@ -69,7 +69,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 14. あなたのアカウントはプロビジョニング中となり、数秒で利用可能になります。準備ができたら、自動的にサインイン・ページに移動します。また、オラクルから2通のメールが届きます。1つは、プロビジョニングが進行中であることを最初に通知するメールです。もう1通は、プロビジョニングが完了したことを通知するメールです。こちらが最終通知のコピーです:<br>
        ![](images/account-provisioned.png " ")
 
-## **STEP 2**: アカウントへのサインイン
+## Task 2: アカウントへのサインイン
 
 Oracle Cloudからサインアウトした場合は、以下の手順を使用してサインインし直してください。
 
@@ -91,22 +91,9 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 
 [次のラボ](#next)に進んでください。
 
-## **このワークショップを評価する**
-ワークショップが終わったら、このワークショップを評価をお願いします。私たちはこのフィードバックを頼りに、LiveLabsカタログを改善し、より良いものにしていきます。評価を提出するには、以下の手順に従ってください。
-
-1.  LiveLabsの**ワークショップのホームページ**に戻り、「Launch」ボタンをクリックしてください。
-2.  **茶色のボタン**をクリックして、ワークショップに再アクセスしてください。  
-
-    ![](images/workshop-homepage-2.png " ")
-
-3. **Rate this workshop**をクリックしてこのワークショップを評価してください。
-
-    ![](images/rate-this-workshop.png " ")
-
 
 ## **Acknowledgements**
 
 - **作成者・日時** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha
 - **最終更新日** - Rene Fontcha, February 2021
-

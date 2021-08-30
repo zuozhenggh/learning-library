@@ -34,7 +34,7 @@ The data is provided in CSV format and your objective is to convert this data to
 * Basic understanding of Python and PySpark
 
 
-## **STEP 1**: Create sample python application
+## Task 1: Create sample python application
 
 1. Begin by importing the python modules
     
@@ -202,7 +202,7 @@ The data is provided in CSV format and your objective is to convert this data to
      </copy>
     ```
 
-## **STEP 2**: Upload application and data to the Object store
+## Task 2: Upload application and data to the Object store
 
 *Note: If you not familar on how to upload the content to object, it is recommended that you refer to this [lab](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=655) to learn more.*
 
@@ -222,7 +222,7 @@ The data is provided in CSV format and your objective is to convert this data to
 
      ![](../images/objectstore_csv.png " ")
 
-## **STEP 3**: Run the application locally
+## Task 3: Run the application locally
 
  1. Run the sample python application - locally first before running it on the Oracle Cloud Data Flow service. As input, supply the location of the CSV file 
     as input to the sample app. It prints the count of the missing values in each column as well as prints the missing values after cleanup and finally 
@@ -231,7 +231,7 @@ The data is provided in CSV format and your objective is to convert this data to
    ![](../images/sample-app-local.png " ") 
     
       
-## **STEP 4**: Create a PySpark application in Oracle Cloud Infrastructure Data Flow 
+## Task 4: Create a PySpark application in Oracle Cloud Infrastructure Data Flow 
 
 1. Create an Application, and select the Python type. In the `Resource Configuration`. Leave all these values as their defaults.  
    
@@ -261,7 +261,7 @@ The data is provided in CSV format and your objective is to convert this data to
 
    ![](../images/sample-app-list.png " ")
 
-## **STEP 5**: Run the Oracle Cloud Infrastructure Data Flow application
+## Task 5: Run the Oracle Cloud Infrastructure Data Flow application
 
 1. Highlight your Application in the list, click the **Actions** icon, and click **Run**
 

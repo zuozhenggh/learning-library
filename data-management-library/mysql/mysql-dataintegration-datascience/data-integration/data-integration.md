@@ -21,15 +21,13 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
+- All previous labs have been successfully completed.
 
-## **STEP 1:** Create Your OCI Data Integration Instance
+## Task 1: Create Your OCI Data Integration Instance
 
 1. We need to create some **policies** to allow the Data Integration service to use other services within OCI.
 
-2. Go to **Identity** > **Policies**.
+2. Go to **Identity & Security** > **Policies**.
 
    ![Identity Policy Menu](images/identity_policies_menu.png)
 
@@ -98,7 +96,7 @@ In this lab, you will:
 
    ![](images/di_ocid.png)
 
-11. Go to **Identity** > **Policies**. We are going to add new **policies** for our new Workspace.
+11. Go to **Identity & Security** > **Policies**. We are going to add new **policies** for our new Workspace.
 
    ![](images/identity_policies_menu.png)
 
@@ -132,7 +130,7 @@ In this lab, you will:
 
    ![](images/di_policy_save_changes.png)
 
-17. Come back to **Data Integration**, Click **Menu** > **Analytics & AI** > **Data Integration**.
+17. Come back to **Data Integration** under **Analytics & AI**, click **Menu** > **Analytics & AI** > **Data Integration**.
 
    ![](images/di_menu.png)
 
@@ -142,11 +140,11 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Create the Data Assets
+## Task 2: Create the Data Assets
 
 We are going to need the **Object Storage URL** and **Tenancy ID**.
 
-1. ### Keep the Object Storage URL at hand
+1. ### Keep the Object Storage URL that you copied previously at hand
 
    You have this URL from Lab number 1, Underlying Infrastructure. The URL depends on the region you are doing the workshop.
 
@@ -260,7 +258,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![](images/dataasset_mysql_success_go_back_home.png)
 
-## **STEP 3:** It Works
+## Task 3: It Works
 
 1. Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
 

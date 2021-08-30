@@ -23,7 +23,7 @@ In this lab, you will:
 - Admin privileges on your local machine or Windows instance on Cloud.
 
 
-## **STEP 1**: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
+## Task 1: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
 
 To obtain the PeopleSoft Cloud Manager stack:
 
@@ -49,7 +49,7 @@ Click **Launch Stack**.
 
     Continue with the steps in Enter Cloud Manager Instance Variables.
 
-## **STEP 2**: Configure Cloud Manager Instance Variables
+## Task 2: Configure Cloud Manager Instance Variables
 
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
@@ -64,7 +64,7 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
     ![](./images/vars1v2.png "")
 
-## **STEP 3**: Enter Cloud Manager Passwords
+## Task 3: Enter Cloud Manager Passwords
 
 1. Enter following password values:
 
@@ -83,13 +83,13 @@ The Create Stack, Configure Variables page includes a list of the parameters nee
 
     ![](./images/varscm2.png "")
 
-## **STEP 4**: Enter My Oracle Support Credentials
+## Task 4: Enter My Oracle Support Credentials
 
 1. My Oracle Support (MOS) credentials are the same as the username and password you enter when you access [http://support.oracle.com](http://support.oracle.com). Please sign in now to ensure that you have an account and the accurate credentials for My Oracle Support. This is required to download DPKs and PRPs automatically. 
 
     ![](./images/varscmmos.png "")
 
-## **STEP 5**: Enter Networking Information
+## Task 5: Enter Networking Information
 
 We will be provisioning our Cloud Manager instance in Private Cloud. Click [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/install_cloud_manager_resource_manager_psft_cm_oci/index.html#EnterValuesforaNewVirtualCloudNetwork) for more information on the default subnets and ports that will automatically get created in the following steps.
 
@@ -108,7 +108,7 @@ We will be provisioning our Cloud Manager instance in Private Cloud. Click [here
 10. Review the configuration variables, and then click **Create**.  
     ![](./images/review1v2.png "")
 
-## **STEP 6**: Monitor Stack Creation and Gather Outputs
+## Task 6: Monitor Stack Creation and Gather Outputs
 
 This page shows the terraform job status and details. Under the yellow box that has **RMJ** (Resource Manager Job), you'll see the status is **"Accepted"** 
     ![](./images/rmjaccepted.png "")
@@ -132,7 +132,7 @@ Over these few minutes, you can refresh the page until you see the **RMJ** has s
 
 Depending on your workstation, choose Step 7 (for Mac) OR Step 8 (for Windows)
 
-## **STEP 7**: FOR MAC USERS- Accessing Cloud Manager using SSH 
+## Task 7: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
 SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was downloaded/created in Lab 1: IAM, Step 8: Generating Keys. 
 
@@ -180,7 +180,7 @@ SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud M
 
 You may skip down to Step 9 while waiting for Cloud Manager to finish deploying.
 
-## **STEP 8**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
+## Task 8: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
 Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those if you haven't already.
 
 1. Open up PuTTYgen. Click **Conversions** --> **Import key**. 
@@ -262,7 +262,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 You may complete Step 9 while waiting for Cloud Manager to finish deploying.
 
 
-## **STEP 9**: Set up SOCKS Proxy to Access Cloud Manager in Browser
+## Task 9: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
 **NOTE**: Make sure you are off VPN. 
 
@@ -294,7 +294,7 @@ You may complete Step 9 while waiting for Cloud Manager to finish deploying.
     -   The overall format of the command should look like this:
     ssh -i id_rsa -D 8123 -f -C -q -N opc@jumphost\_public\_ip
 
-## **STEP 10**: Sign-In to Cloud Manager via Browser
+## Task 10: Sign-In to Cloud Manager via Browser
 1. Once Cloud Manager has finished deploying, launch terminal (Mac) or Git Bash (Windows) and navigate to the keys folder again. Then, run the command we just edited to create the SOCKS proxy.
 
     *Example:* ``` ssh -i id_rsa -D 8123 -f -C -q -N opc@XXX.XXX.XXX.XXX ```
@@ -323,7 +323,7 @@ You may now **proceed to the next lab.**
 
 **Created By/Date**   
 * **Authors** - Megha Gajbhiye, Cloud Solutions Engineer; Sara Lipowsky, Cloud Engineer
-* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, April 2021
+* **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, May 2021
 
 
 ## Need Help?

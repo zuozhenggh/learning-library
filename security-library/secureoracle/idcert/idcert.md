@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Validate Access to required components and applications
+## Task 1: Validate Access to required components and applications
 1. Make sure you can access the OIM Admin and Self Service consoles, Roundcube email client and My HR Application. The links below are also bookmarked on Firefox running on your remote desktop. Refer to *Lab: Initialize Environment* for more
 
     Oracle Identity Manager Admin Console:
@@ -59,7 +59,7 @@ This lab assumes you have:
 	Password    Oracle123
     ```
 
-## **STEP 2**: User Certification with Custom Reviewers
+## Task 2: User Certification with Custom Reviewers
 User certification allows managers to certify employee access to roles, accounts, and entitlements. Typically, each manager in an organization reviews the access-privileges of the people who report directly to that manager. Alternatively, custom reviewers for user certifications can be specified by defining certification rules in the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table in the Oracle Identity Manager database.
 
 In the SecureOracle environment, My IGA Application contains a custom UI to maintain the **`CERT_CUSTOM_ACCESS_REVIEWERS`** table, so administrators can easily define custom reviewers.

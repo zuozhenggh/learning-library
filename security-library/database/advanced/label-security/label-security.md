@@ -31,7 +31,7 @@ This lab assumes you have:
 | 1 | Simple CRM Application | 10 minutes |
 | 2 | Protect Glassfish Application | 20 minutes |
 
-## **STEP 1**: Simple CRM Application
+## Task 1: Simple CRM Application
 
 ### **Before Getting Started**
 
@@ -147,7 +147,7 @@ Different applications have different purposes:
 
    ![](./images/ols-006.png " ")
 
-## **STEP 2**: Protect Glassfish Application
+## Task 2: Protect Glassfish Application
 
 1. First, setup the Glassfish App environment ... and makes sure you don't already have the OLS changes deployed to the application
 

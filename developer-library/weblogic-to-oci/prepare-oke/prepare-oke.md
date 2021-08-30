@@ -2,13 +2,11 @@
 
 ## Introduction
 
-In this lab we will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
+We will prepare the OCI environment to provision WebLogic Server for Oracle Cloud Infrastructure (OCI) from the Oracle Cloud Marketplace.
 
-Estimated Lab Time: 5 minutes.
+Estimated Completion Time: 5 minutes.
 
 ### Objectives
-
-In this lab you will:
 
 - Create a Vault.
 - Create a Key.
@@ -18,11 +16,9 @@ In this lab you will:
 
 ### Prerequisites
 
-For this lab you will need:
-
 - An OCI account with a compartment created.
 
-## **STEP 1:** Create a vault
+## Task 1: Create a vault
 
 1. On the **Security** menu, click **Vault**.
 
@@ -38,7 +34,7 @@ For this lab you will need:
 
    ![](./images/prereq-vault3.png " ")
 
-## **STEP 2:** Create a Key in the Vault
+## Task 2: Create a Key in the Vault
 
 1. Once the vault is provisioned, select the vault.
 
@@ -52,7 +48,7 @@ For this lab you will need:
 
    ![](./images/prereq-key2.png " ")
 
-## **STEP 3:** Create a Secret for the WebLogic Admin Password
+## Task 3: Create a Secret for the WebLogic Admin Password
 
 1. Once the key is provisioned, click **Secrets**.
 
@@ -60,17 +56,17 @@ For this lab you will need:
 
 2. Click **Create Secret**.
 
-  ![](./images/prereq-secret2.png " ")
+   ![](./images/prereq-secret2.png " ")
 
 3. Name the **Secret** as `WebLogicAdminPassword`, select the `WebLogicKey` created at the previous step as the **Encryption Key**, keep the default `plaintext` option and type `welcome1` or any WebLogic compliant password (at least 8 chars and 1 uppercase or number) in the **Secret Content** text field, and click **Create Secret**.
 
-  ![](./images/prereq-secret3.png " ")
+   ![](./images/prereq-secret3.png " ")
 
 4. Click the `WebLogicAdminPassword` **Secret** you just created and **make a note** of its **OCID**.
 
    ![](./images/prereq-secret4.png " ")
 
-## **STEP 4:** Create an Auth Token to Access OCI Registry
+## Task 4: Create an Auth Token to Access OCI Registry
 
 1. On the **User** menu, click **User Settings** then click **Auth Tokens** on the left menu.
 
@@ -84,7 +80,7 @@ For this lab you will need:
 
 5. Copy the **output** of the token to clipboard.
 
-## **STEP 5:** Create a Secret with the Auth Token
+## Task 5: Create a Secret with the Auth Token
 
 1. On the **Security** menu, click **Vault** then **Secrets**.
 

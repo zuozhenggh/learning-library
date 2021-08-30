@@ -1,22 +1,25 @@
 # Setup Graphical Remote Desktop
 
 ## Introduction
-This lab will show you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior
-to capturing .
+This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance prior to capturing the custom image.
 
 ### Objectives
 - Deploy NoVNC Remote Desktop
 - Configure Desktop
 - Add Applications Shortcuts to Desktop
 - Configure remote clipboard
+- Optimize Browser Settings
 - Enable VNC password reset
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
+- An Oracle Enterprise Linux 7 (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Deploy noVNC
-1.  As root, create script */tmp/set-os-user.sh* to perform the first set of tasks.
+## Task 1: Deploy noVNC
+1.  As root, download and run the latest setup script. You will be prompted for the following two inputs:
+
+    - *Estimated time in minutes* for initial processes to fully start after instance boot up. This will be used to delay noVNC startup and prevent situations where workshop attendees may initially be unable to access noVNC until all dependent services on the instance are started. *Default: 5 minutes*
+    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
 
     ```
     <copy>
@@ -27,278 +30,72 @@ This lab assumes you have:
 
     ```
     <copy>
-    cat > /tmp/set-os-user.sh <<EOF
-    #!/bin/bash
-    echo ""
-    echo "Your input is required!"
-    echo ""
-    read -p 'Press *ENTER* to Accept *oracle* as the OS user to configure for remote desktop access or type in another valid user. If no input is provided *oracle* is assumed: ' appuser
-
-    appuser=\${appuser:-oracle}
-
-    getent passwd \$appuser > /dev/null
-
-    if [ $? -eq 0 ]; then
-      if [[ \${appuser} == root ]]; then
-         echo ""
-         echo "***ERROR****"
-         echo "-- Not allowed for root. -- VNC must be on a non-root account. e.g oracle. Please start over and enter a valid non-root OS user when prompted"
-         echo ""
-         exit 20
-      fi
-       echo \$appuser >/tmp/.appuser
-    else
-        echo ""
-        echo "***ERROR****"
-        echo "-- Invalid OS user. -- Please start over and enter a valid non-root OS user when prompted"
-        echo ""
-    fi
-    EOF
-    chmod +x /tmp/set-os-user.sh
+    cd /tmp
+    rm -rf setup-novnc-livelabs*
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip
+    unzip -o setup-novnc-livelabs.zip
+    chmod +x setup-novnc-livelabs.sh
+    ./setup-novnc-livelabs.sh
 
     </copy>
     ```
-
-2.  Run */tmp/set-os-user.sh* to set the OS user to be configured for remote desktop access. The default user is *oracle*.
-
-    ```
-    <copy>
-    /tmp/set-os-user.sh
-    </copy>
-    ```
-
-3. Create script */tmp/novnc-1.sh* to perform the first set of tasks.
-
-    ```
-    <copy>
-    export appuser=$(cat /tmp/.appuser)
-    cat > /tmp/novnc-1.sh <<EOF
-    #!/bin/bash
-
-    if [[ -z "\${appuser}" ]]; then
-      echo "A valid OS user must be provided. e.g. oracle "
-      exit 10
-      if [[ \${appuser} == root ]]; then
-        echo "Not allowed for root. VNC must be on non root account. e.g oracle"
-        exit 20
-      fi
-    fi
-
-    echo "Proceeding with configuration for OS user \$appuser"
-
-    echo "Updating packages ..."
-    yum -y update
-
-    echo "Installing X-Server required packages ..."
-    yum -y groupinstall "Server with GUI"
-
-    echo "Installing other required packages ..."
-    yum -y install \
-    tigervnc-server \
-    numpy \
-    mailcap
-
-    yum -y localinstall \
-    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/novnc-1.1.0-6.el7.noarch.rpm \
-    http://mirror.dfw.rax.opendev.org:8080/rdo/centos7-master/deps/latest/noarch/python2-websockify-0.8.0-13.el7.noarch.rpm
-
-    echo "Updating VNC Service ..."
-    cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver_\${appuser}@:1.service
-    sed -i "s/<USER>/\${appuser}/g" /etc/systemd/system/vncserver_\${appuser}@:1.service
-    sed -i "s/After=syslog.target network.target/After=syslog.target network.target resetvncpwd.service/g" /etc/systemd/system/vncserver_\${appuser}@:1.service
-
-    firewall-cmd --zone=public --permanent --add-service=vnc-server
-    firewall-cmd --zone=public --permanent --add-port=5901/tcp
-    firewall-cmd --permanent --add-port=6080/tcp
-
-    firewall-cmd  --reload
-
-    systemctl daemon-reload
-    systemctl enable vncserver_\${appuser}@:1.service
-    systemctl daemon-reload
-
-    EOF
-    cat >/usr/local/bin/resetvncpwd.sh <<EOF
-    #!/bin/bash
-    # Reset VNC password for user
-
-    mypasswd=\$(curl -s -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/metadata/vncpwd)
-
-    if [[ \${#mypasswd} -ne 10  ]]; then
-      echo "Required Random password string is missing from OCI metadata. No VNC password reset for user ${appuser} will be performed"
-      exit 30
-    else
-      echo \$mypasswd | vncpasswd -f >/home/${appuser}/.vnc/passwd
-      chmod 0600 /home/${appuser}/.vnc/passwd
-      echo "VNC password for user ${appuser} reset successfully"
-    fi
-    EOF
-    cat > /etc/systemd/system/websockify.service <<EOF
-    [Unit]
-    Description=Websockify Service
-    After=network.target cloud-final.service
-
-    [Service]
-    Type=simple
-    User=${appuser}
-    ExecStart=/bin/websockify --web=/usr/share/novnc/ --wrap-mode=respawn 6080 localhost:5901
-    Restart=on-abort
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-    cat > /etc/systemd/system/resetvncpwd.service <<EOF
-    [Unit]
-    Description=ResetVncPwd Service
-    After=syslog.target network.target
-
-    [Service]
-    Type=simple
-    ExecStart=/usr/local/bin/resetvncpwd.sh ${appuser}
-
-    [Install]
-    WantedBy=multi-user.target
-    EOF
-
-    chmod +x /usr/local/bin/resetvncpwd.sh
-    chmod +x /tmp/novnc-*.sh
-    </copy>
-    ```
-
-4. Create script */tmp/novnc-2.sh* to perform the second set of tasks.
-
-    ```
-    <copy>
-    cat > /tmp/novnc-2.sh <<EOF
-    #!/bin/bash
-
-    #Enable and Start services
-
-    systemctl daemon-reload
-    systemctl enable websockify.service
-    systemctl start websockify.service
-    systemctl enable resetvncpwd.service
-    systemctl start resetvncpwd.service
-
-    echo "noVNC has been successfully deployed on this host. Open the browser and navigate to the URL below to validate"
-    echo ""
-    echo "#================================================="
-    echo "#"
-    echo "# http://`curl -s ident.me`:6080/index.html?resize=remote"      
-    echo "# or"
-    echo "# http://`curl -s ident.me`:6080/index.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true"      
-    echo "#================================================="
-    echo ""
-    EOF
-    chmod +x /tmp/novnc-*.sh
-    </copy>
-    ```
-
-5. Ensure that the *EPEL* Yum Repo is configured and enabled. i.e. contains the entry *enabled=1*. If not, update it accordingly before proceeding with the next step
-
-    ```
-    <copy>
-    sed -i -e 's|enabled=.*$|enabled=1|g' /etc/yum.repos.d/oracle-epel-ol7.repo
-    cat /etc/yum.repos.d/oracle-epel-ol7.repo|grep enable
-    </copy>
-    ```
-
-    ![](./images/yum-epel-dev-repo.png " ")
-
-6. Run script *novnc-1.sh* with the desired VNC user as the sole input parameter. e.g. *oracle*
-
-    ```
-    <copy>
-    /tmp/novnc-1.sh
-    </copy>
-    ```
-
-7.  Set password for VNC user.
-
-    ```
-    <copy>
-    vncpasswd ${appuser}
-    </copy>
-    ```
-
-8. Provide password as prompted. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
-
-    ```
-    <copy>
-    LiveLabs.Rocks_99
-    </copy>
-    ```
-
-9. Su over to the VNC user account and enforce the password.  when prompted
-
-    ```
-    <copy>
-    sudo su - ${appuser}
-    vncserver
-    </copy>
-    ```
-
-10. Provide the same password as you did above. e.g. "*LiveLabs.Rocks_99*". When prompted with *Would you like to enter a view-only password (y/n)?*, enter **N**
-
-    ```
-    <copy>
-    LiveLabs.Rocks_99
-    </copy>
-    ```
-
-11. Stop the newly started VNC Server running on "**:1**" and exit (or *CTRL+D*) the session as vnc user to go back to *root*
-
-    ```
-    <copy>
-    vncserver -kill :1
-    exit
-    </copy>
-    ```
-
-12. Start VNC Server using *systemctl*
-
-    ```
-    <copy>
-    systemctl start vncserver_${appuser}@:1.service
-    systemctl status vncserver_${appuser}@:1.service
-    </copy>
-    ```
-13. Run script *novnc-2.sh* to finalize
-
-    ```
-    <copy>
-    /tmp/novnc-2.sh
-    </copy>
-    ```
-
-14. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+2. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>
     rm -rf /tmp/novnc-*.sh
     rm -rf /tmp/set-os-user.sh
+    rm -rf /tmp/setup-novnc-livelabs.sh
+
     </copy>
     ```
 
-## **STEP 2**: Configure Desktop   
-LiveLabs compute instance are password-less and only accessible via SSH keys. As result it's important to adjust session settings some settings to ensure a better user experience.
+## Task 2: Add Applications to Desktop   
+For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut called *Get Started with your Workshop* for launching the workshop guide and webapps if any.
 
-1. Launch your browser to the following URL
-
-    ```
-    <copy>http://[your instance public-ip address]:6080/index.html?resize=remote</copy>
-    ```
-
-    ![](./images/novnc-login-1.png " ")
-
-
-2. Copy/Paste the Password below to login
+1. Launch your browser to the following URL to access the remote desktop
 
     ```
-    <copy>LiveLabs.Rocks_99</copy>
+    <copy>http://[your instance public-ip address]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
     ```
 
-    ![](./images/novnc-login-2.png " ")
+2. On the remote desktop, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *Get Started with your Workshop*
+
+    ![](./images/create-shortcut-1.png " ")
+
+3. Right-click on *Get Started with your Workshop* and select *Copy to...*
+
+    ![](./images/create-shortcut-2.png " ")
+
+4. Navigate to *Home > Desktop* and Click on *Select*
+
+    ![](./images/create-shortcut-3.png " ")
+
+5. Double-click on the newly added icon on the desktop and click on *Trust and Launch*
+
+    ![](./images/create-shortcut-4.png " ")
+    ![](./images/create-shortcut-5.png " ")
+
+6. Repeat steps above to add *Google Chrome* browser and any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
+
+    ![](./images/create-shortcut-6.png " ")
+
+## Task 3: Configure Desktop   
+LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
+
+1. Follow steps in the screenshot below and run command provided below to resize desktop icons
+
+    ```
+    <copy>
+    gsettings set org.gnome.nautilus.icon-view default-zoom-level small
+    </copy>
+    ```
+
+    ![](./images/novnc-resize-desktop-icons-1.png " ")
+
+2. Right-click anywhere on the desktop and select *Organize Desktop by Name*
+
+    ![](./images/novnc-resize-desktop-icons-2.png " ")
 
 3. Navigate to "*Applications >> System Tools >> Settings*"
 
@@ -312,60 +109,182 @@ LiveLabs compute instance are password-less and only accessible via SSH keys. As
 
     ![](./images/power-saving-off.png " ")
 
-6. Click on "*Notifications*" and set **Notifications Popups** and **Lock Screen Notifications** to *Off*
+6. Click on "*Notifications*" and set **Notifications Popups**, **Lock Screen Notifications**, and **Automatic Bug Reporting Tool** to *Off*
 
-    ![](./images/desktop-notifications-off.png " ")
+    ![](./images/desktop-notifications-off-1.png " ")
+    ![](./images/desktop-notifications-off-1.png " ")
 
 7. Scroll-down, Click on "*Devices >> Resolution*" and select **1920 x 1080 (16:9)**
 
     ![](./images/desktop-display-1.png " ")
     ![](./images/desktop-display-2.png " ")
 
-## **STEP 3**: Add Applications to Desktop   
-For ease of access to desktop applications provided on the instance and needed to perform the labs, follow the steps below to add shortcuts to the desktop. In the example below, we will be adding a shortcut of *FireFox* browser.
-
-1. On the desktop from the previous setup, click on *Home > Other Locations*, then navigate to *`/usr/share/applications`* and scroll-down to find *FireFox*
-
-    ![](./images/create-shortcut-1.png " ")
-
-2. Right-click on *FireFox* and select *Copy to...*
-
-    ![](./images/create-shortcut-2.png " ")
-
-3. Navigate to *Home > Desktop* and Click on *Select*
-
-    ![](./images/create-shortcut-3.png " ")
-
-4. Double-click on the newly added icon on the desktop and click on *Trust and Launch*
-
-    ![](./images/create-shortcut-4.png " ")
-    ![](./images/create-shortcut-5.png " ")
-
-5. Repeat steps above to add any other required Application the workshop may need to the Desktop (e.g. Terminal, SQL Developer, etc...)
-
-    ![](./images/create-shortcut-6.png " ")
-
-## **STEP 4**: Enable Copy/Paste from Local to Remote Desktop (noVNC clipboard)
-Perform the tasks below and add them to any workshop guide to instruct users on how to enable clipboard on the remote desktop for local-to-remote copy/paste.
-
-During the execution of your labs you may need to copy text from your local PC/Mac to the remote desktop, such as commands from the lab guide. While such direct copy/paste isn't supported as you will realize, you may proceed as indicated below to enable an alternative local-to-remote clipboard with Input Text Field.
-
-1. From your remote desktop session, click on the small gray tab on the middle-left side of your screen to open the control bar
-
-    ![](./images/novnc-clipboard-1.png " ")
-
-2. Select the *clipboard* icon, Copy the sample text below and paste into the clipboard widget, then finally open up the desired application and paste accordingly using *mouse controls*
+8. From the same Terminal window, run the following command to open *Startup Programs* configuration.
 
     ```
-    <copy>echo "This text was copied from my local computer"</copy>
+    <copy>
+    gnome-session-properties
+    </copy>
     ```
 
-    ![](./images/novnc-clipboard-2.png " ")
+9. Fill in the details as shown below and click *Add* to add *Get Started with your Workshop* to the list of applications to be started automatically on *VNC* Startup
 
-    *Note:* Please make sure you initialize your clipboard with steps *[1-3]* shown above before opening the target application in which you intend to paste the text. Otherwise will find the *paste* function grayed out in step 4 when attempting to paste.
+    - Name
 
-## **STEP 5**: Enable VNC Password Reset for each instance provisioned from the image
-For added security, update your Terraform/ORM stack with the tasks below to enable VNC password reset for each VM provisioned from the image.
+    ```
+    <copy>Get Started with your Workshop</copy>
+    ```
+
+    - Command
+
+    ```
+    <copy>/usr/local/bin/livelabs-get_started.sh</copy>
+    ```
+
+    - Comment
+
+    ```
+    <copy>Launch Workshop Guide and WebApps</copy>
+    ```
+
+    ![](./images/novnc-startup-prog-1.png " ")
+
+10. Restart *vncserver* to test.
+
+    ```
+    <copy>sudo systemctl restart vncserver_$(whoami)@\:1</copy>
+
+    ```
+
+    ![](./images/novnc-startup-prog-2.png " ")
+
+11. Click *Connect* to get back into the remote desktop
+
+    ![](./images/novnc-startup-prog-3.png " ")
+
+    *Notes:* Don't worry if the browser window(s) is(are) not loaded as expected on VNC startup at the moment. The required instance metadata is not yet present on the host but will be injected at provisioning to cover the following.
+
+    - `DESKTOP_GUIDE_URL` - *required*
+    - `DESKTOP_APP1_URL` - optional
+    - `DESKTOP_APP2_URL` - optional
+
+    The following is an example from the *GoldenGate Veridata* workshop
+
+    ![](./images/novnc-startup-prog-4.png " ")
+
+12. If there are no WebApps used in the workshop, configure *Startup Programs* for another application such as *SQL Developer* to open up on the right next to the workshop guide on *VNC* startup
+
+    ![](./images/novnc-startup-prog-5.png " ")
+    ![](./images/novnc-startup-prog-6.png " ")
+
+## Task 4: Optimize Chrome Browser
+Perform the following to further customize and optimize *Chrome* Browser.
+
+1. Right-click on *Google Chrome* browser icon, select *Properties*
+
+    ![](./images/novnc-custom-chrome-0.png " ")
+
+2. Update the *command* field with the custom value below
+
+    ```
+    <copy>
+    /usr/bin/google-chrome --password-store=basic --user-data-dir="/home/<os-user>/.livelabs/chrome-window2" --disable-session-crashed-bubble
+    </copy>
+    ```
+
+    *Notes:* Replace *<os-user>* with the correct OS User that owns the remote desktop session. e.g. *opc* as in this example, or *oracle* for the vast majority
+
+    ![](./images/novnc-custom-chrome-1.png " ")
+
+3. Double-click on *Google Chrome* browser icon to launch, Uncheck *Automatic Usage Statistics & Crash reporting* and click *OK*
+
+    ![](./images/novnc-custom-chrome-2.png " ")
+
+4. Click on *Get Started*, on the next 3 pages click on *Skip*, and finally on *No Thanks*.
+
+    ![](./images/novnc-custom-chrome-3.png " ")
+    ![](./images/novnc-custom-chrome-4.png " ")
+    ![](./images/novnc-custom-chrome-5.png " ")
+    ![](./images/novnc-custom-chrome-6.png " ")
+
+5. Click in the *Three dots* at the top right, then select *"Bookmarks >> Show bookmarks bar"*
+
+    ![](./images/add-bookmarks-01.png " ")
+
+6. Right-click anywhere in the *Bookmarks bar area*, then Uncheck *Show apps shortcuts* and *Show reading list*
+
+    ![](./images/add-bookmarks-04.png " ")
+
+7. Right-click anywhere in the *Bookmarks bar area* and select *Add page*
+
+    ![](./images/add-bookmarks-02.png " ")
+
+8. Provide the following two inputs, select *Bookmark bar* for destination, and click *Save* to create a bookmark to *LiveLabs*
+
+    - Name
+
+    ```
+    <copy>Oracle LiveLabs</copy>
+    ```
+
+    - URL
+
+    ```
+    <copy>http://bit.ly/golivelabs</copy>
+    ```
+
+    ![](./images/add-bookmarks-03.png " ")
+
+9. Click on the newly added bookmark to confirm successful page loading.
+
+    ![](./images/add-bookmarks-05.png " ")
+
+10. Click in the *Three dots* at the top right, then select *Settings*
+
+    ![](./images/add-bookmarks-06.png " ")
+
+11. Scroll down to *On Startup* section, select *open a specific page or set of pages*, and select *Use current pages* or simply add the *LiveLabs* address you set earlier as bookmark.
+
+    ![](./images/add-bookmarks-07.png " ")
+
+12. Create and run the script below to initialize LiveLabs browser windows.
+
+    ```
+    <copy>
+    cat > /tmp/init_ll_windows.sh <<EOF
+    #!/bin/bash
+    # Initialize LL Windows
+
+    #Drop existing sessions
+
+    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
+    user_data_dir_base="/home/\$(whoami)/.livelabs"
+
+    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
+     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
+    fi
+
+    desktop_guide_url="https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/livelabs"
+    desktop_app1_url="https://oracle.com"
+    desktop_app2_url="https://bit.ly/golivelabs"
+    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,912 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    EOF
+    chmod +x /tmp/init_ll_windows.sh
+    /tmp/init_ll_windows.sh
+    rm -f /tmp/init_ll_windows.sh
+
+    </copy>
+    ```
+13. Close all browser windows opened.
+
+You may now [proceed to the next lab](#next).
+
+## Appendix 1: Enable VNC Password Reset, and Workshop Guide and WebApps URLs injection for each instance provisioned from the image
+Actions provided in this Appendix are not meant to be performed on the image. They are rather intended as guidance for workshop developers writing terraform scripts to provision instances from an image configured as prescribed in this guide.
+
+Update your Terraform/ORM stack with the tasks below to enable VNC password reset and add workshop URLs for each VM provisioned from the image.
 
 1. Add provider *random* to *main.tf* or and any other *TF* file in your configuration if you not using *main.tf*
 
@@ -383,7 +302,64 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     provider "random" {}
     </copy>
     ```
-2. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
+2. Add the following variables to *variables.tf* and *schema.yaml*.
+
+    - `desktop_guide_url`
+    - `desktop_app1_url`
+    - `desktop_app2_url`
+
+    The example below is from the *DB Security - Key Vault* workshop
+
+    - variables.tf
+
+    ```
+    <copy>
+    variable "desktop_guide_url" {
+      default = "https://oracle.github.io/learning-library/security-library/database/advanced/workshops/main-key-vault"
+    }
+
+    variable "desktop_app1_url" {
+      default = "https://kv"
+    }
+
+    variable "desktop_app2_url" {
+      default = "https://dbsec-lab:7803/em"
+    }
+    </copy>
+    ```
+
+    - schema.yaml
+
+    ```
+    variableGroups:
+      - title: General Configuration
+        visible: false
+        variables:
+        - desktop_guide_url
+        - desktop_app1_url
+        - desktop_app2_url
+
+    desktop_guide_url:
+      type: text
+      required: true
+      title: "Workshop Guide"
+      description: "Workshop Guide on noVNC Desktop"
+
+    desktop_app1_url:
+      type: text
+      required: false
+      title: "Application URL 1"
+      description: "Application URL 1 on noVNC Desktop"
+
+    desktop_app2_url:
+      type: text
+      required: false
+      title: "Application URL 2"
+      description: "Application URL 2 on noVNC Desktop"
+      </copy>
+      ```
+
+3. Add a *random* resource in your *instance.tf* or any *TF* of your choice to generate a 10 characters random password with a mix of Number/Uppercase/Lowercase characters.
 
     ```
     <copy>
@@ -397,18 +373,20 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
     </copy>
     ```
 
-3. Add *`random_string`* result to the metadata property for resource *`oci_core_instance`*. This will store the random value generated above as part of the instance metadata that can be queried at any time to reset VNC Password.
+4. Add *`random_string`* result and the URL variables to the metadata property for resource *`oci_core_instance`*. This will store the random value generated above as part of the instance metadata and used on first boot to reset VNC Password. The URLs will be used to preload the workshop guide and webapps on the remote desktop on VNC startup
 
     ```
     <copy>
     metadata = {
-      ssh_authorized_keys = var.ssh_public_key
-      vncpwd              = random_string.vncpwd.result
+      vncpwd            = random_string.vncpwd.result
+      desktop_guide_url = var.desktop_guide_url
+      desktop_app1_url  = var.desktop_app1_url
+      desktop_app2_url  = var.desktop_app2_url
     }
     </copy>
     ```
 
-4. Add the entry *`remote_desktop`* to your *output.tf* to provide the single-click URL for remote desktop access with auto resizable window and auto-login. Replace [instance-name] from the snippet below with your real instance name as provided the resource *`oci_core_instance`* block of *instance.tf*
+5. Add the entry *`remote_desktop`* to your *output.tf* to provide the single-click URL for remote desktop access with auto resizable window and auto-login. Replace [instance-name] from the snippet below with your real instance name as provided the resource *`oci_core_instance`* block of *instance.tf*
 
     ```
     <copy>
@@ -417,12 +395,12 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
         oci_core_instance.[instance-name].public_ip,
         ":6080/index.html?password=",
         random_string.vncpwd.result,
-        "&resize=remote&autoconnect=true"
+        "&resize=scale&autoconnect=true&quality=9&reconnect=true"
       )
     }
     </copy>
     ```
-5. Add output entry *`remote_desktop`* to your *schema.yaml* file
+6. Add output entry *`remote_desktop`* to your *schema.yaml* file
 
     ```
     <copy>
@@ -439,19 +417,84 @@ For added security, update your Terraform/ORM stack with the tasks below to enab
 
     </copy>
     ```
-6. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
+
+7. Add an *ingress* rule to your *network.tf* to enable remote access to port *6080* when the VCN is created
+
+    ```
+    <copy>
+    ingress_security_rules {
+      protocol = "6"
+      source   = "0.0.0.0/0"
+      tcp_options {
+        min = 6080
+        max = 6080
+      }
+    }
+
+    </copy>
+    ```
+
+8. Test out your ORM Stack and verify the output for *`remote_desktop`* as shown below
 
     ![](./images/orm-output.png " ")
 
-7. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
+9. From to the *Application Information Tab* as shown above, click on the single-click URL to test it out.
 
     ![](./images/orm-single-click-url.png " ")
 
     **Note:** Your source image instance is now configured to generate a random VNC password for every instance created from it, provided that the provisioning requests include the needed metadata storing the random string.
 
-You may now [proceed to the next lab](#next).
+## Appendix 2: Removing Guacamole from a previously configured LiveLabs image
+
+Prior to noVNC some images were configured with *Apache Guacamole*. If this applies to your image, proceed as detailed below to remove it prior to deploying noVNC
+
+1.  As root, create and run script */tmp/remove-guac.sh*.
+
+    ```
+    <copy>
+    sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+    cat > /tmp/remove-guac.sh <<EOF
+    #!/bin/sh
+    # Copyright (c) 2019 Oracle and/or its affiliates. All rights reserved.
+
+    cd /etc/systemd/system
+
+    for i in `ls vncserver_*.service`
+      do
+    systemctl stop $i
+    done
+
+    cd /tmp
+
+    systemctl disable guacd tomcat
+    systemctl stop guacd tomcat
+
+    yum -y remove \
+    	guacd \
+        libguac \
+        libguac-client-ssh \
+        libguac-client-vnc \
+    	tomcat \
+        tomcat-admin-webapps \
+        tomcat-webapps \
+        nginx
+    EOF
+    chmod +x /tmp/remove-guac.sh
+    /tmp/remove-guac.sh
+
+    rm -rf /etc/guac*
+    rm -rf /etc/nginx*
+    rm -f /tmp/remove-guac.sh
+    </copy>
+    ```
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2021

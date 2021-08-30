@@ -41,7 +41,7 @@ Before starting, be sure that you have completed the following prerequisite task
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## **STEP 1**: View sensitive data in your database
+## Task 1: View sensitive data in your database
 
 Use Oracle Database Actions to query sensitive data in your database. You can access Database Actions from your database's Console.
 
@@ -98,7 +98,7 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
 
 
-## **STEP 2**: Discover sensitive data by using Data Discovery
+## Task 2: Discover sensitive data by using Data Discovery
 
 The Data Discovery wizard generates a sensitive data model that contains sensitive columns in your target database. When working in the wizard, you select the sensitive types that you want to discover in your target database.
 
@@ -185,7 +185,7 @@ The Data Discovery wizard generates a sensitive data model that contains sensiti
 21. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
 
 
-## **STEP 3**: Mask sensitive data by using Data Masking
+## Task 3: Mask sensitive data by using Data Masking
 
 The Data Masking wizard generates a masking policy for your target database based on a sensitive data model. In the wizard, you select the sensitive columns that you want to mask and the masking formats to use.
 
@@ -243,7 +243,7 @@ The Data Masking wizard generates a masking policy for your target database base
     ![Data Masking report](images/data-masking-report.png "Data Masking report")
 
 
-## **STEP 4**: Create a PDF of the Data Masking report
+## Task 4: Create a PDF of the Data Masking report
 
 1. At the top of the report, click **Generate Report**. The **Generate Report** dialog box is displayed.
 
@@ -264,7 +264,7 @@ The Data Masking wizard generates a masking policy for your target database base
   ![Data Masking report in PDF format](images/data-masking-report-pdf.png "Data Masking report in PDF format")
 
 
-## **STEP 5**: Validate the masked data in your database
+## Task 5: Validate the masked data in your database
 
 1. Return to Oracle Database Actions. You should have a SQL Worksheet open.
 

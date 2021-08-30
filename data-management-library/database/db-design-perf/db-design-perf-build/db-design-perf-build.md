@@ -18,7 +18,7 @@ Estimated lab time: 15 minutes
 
 -   This lab requires completion of the prior labs in this workshop: **Getting Started** and **Provision an Autonomous Database**, in the Contents menu on the left.
 
-## **STEP 1:** Obtain Database Credentials
+## Task 1: Obtain Database Credentials
 
 In order to perform a secure connection to your autonomous database, you need a database wallet which securely holds those credentials. These can be download from the console of your autonomous database.
 1. In your database's details page, click the **DB Connection** button.
@@ -33,7 +33,7 @@ In order to perform a secure connection to your autonomous database, you need a 
 
     ![](./images/connect3.png " ")
 
-## **STEP 2:** Launch Cloud Shell
+## Task 2: Launch Cloud Shell
 
 Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, a pre-authenticated Ansible installation, and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs.
 1. In your database's details page, click the **Cloud Shell** button at the top right. The bottom portion of the browser page should initiate a cloud shell session.
@@ -84,13 +84,13 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
     </copy>
     ```
 
-## **STEP 3:** Create the initial schema
+## Task 3: Create the initial schema
 
 1. Retrieve the zip file that contains all of the supporting files for this lab.
 
     ```nohighlight
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/R4AaqF1zdF4liPA6OZmbtzc3vjTjCOoDg9PX2cgkWnTUUHj3Kd9u4uh2F238PYl1/n/c4u03/b/data-management-library-files/o/devlivelab.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/e_IV9-DqpdZnLLqjIFhlXea6g4qykmwfjsnEwC8zb28ciomA1SRsRF-CfS6YkEpP/n/c4u04/b/data-management-library-files/o/devlivelab.zip
     unzip devlivelab.zip
     ls -l
     </copy>
@@ -123,7 +123,7 @@ Oracle Cloud Infrastructure Cloud (OCI) Shell is a web browser-based terminal ac
     ![](./images/seed3.png " ")
 
 
-## **STEP 4:** View the data model with Database Actions
+## Task 4: View the data model with Database Actions
 
 Note: This step is not mandatory for your performance benchmark investigation, but offers a glimpse at the web based tools *other* than Cloud Shell in order to interact with your database.
 

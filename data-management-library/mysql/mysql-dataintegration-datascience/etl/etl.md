@@ -24,12 +24,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
-- Lab 1: Underlying Infrastructure 
-- Lab 2: Create MySQL Database Service
-- Lab 3: Create Data Integration Instance
+- All previous labs have been successfully completed.
 
-## **STEP 1:** Create the Data Flow
+## Task 1: Create the Data Flow
 
 1. Click **Create Data Flow**.
 
@@ -38,10 +35,11 @@ In this lab, you will:
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
       - Name: `CSV to MySQL`
-      - Project or Folder: `My First Project`
       - Description: `Data Flow from CSV on Object Storage to MySQL Database`
 
-3. To select the **Project**, click on `My First Project` and **Select**.
+3. To select the **Project or Folder**, click on `My First Project` and **Select**.
+
+      - Project or Folder: `My First Project`
 
    ![](images/dataflow_select_project.png)
 
@@ -53,50 +51,39 @@ In this lab, you will:
 
    ![](images/dataflow_source_dnd.png)
 
-5. Set the **Identifier** and the rest of the info in the **Details** tab from the Source **Properties** panel:
-
-      - Identifier: `FISH_SURVEY`
-      - Data Asset: `bucket-study`
-      - Connection: `Default Connection`
-      - Schema: `bucket-study`
-      - Data entity: Click **Browse By Name** and select `reef_life_survey_fish.csv`
-      - All the default values are good
-
-   Click **Select**.
-
-6. Set the **Identifier** and then go to **Data Asset** and click **Select**.
+5. Set the **Identifier** as `FISH_SURVEY` in the **Details** tab from the Source **Properties** panel. Then go to **Data Asset** and click **Select**.
 
    ![](images/dataflow_source_id.png)
 
-7. From the **dropdown**, select `bucket-study`. **Select** `Default Connection` and for **Schema** the name of the bucket `bucket-study`,
+6. From the **dropdown**, select `bucket-study`.
 
    ![](images/dataflow_source_data_asset_bucket.png)
 
-8. Finally, select the **Data Entity**.
+7. **Select** `Default Connection`. Then go to **Schema**, click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
 
    ![](images/dataflow_source_data_entity.png)
 
-9. Browse by **Name**:
+8. Browse by **Name**:
 
    ![](images/dataflow_source_data_entity_browse.png)
 
-10. **Select** `reef_life_survey_fish.csv` file.
+9. **Select** `mds-di-ds-reef_life_survey_fish.csv` file.
 
    ![](images/dataflow_source_data_entity_file.png)
 
-11. And click **Select**.
+10. And click **Select**.
 
    ![](images/dataflow_source_data_entity_file_select.png)
 
-12. On the dropdown for **File Type**, pick `CSV`.
+11. On the dropdown for **File Type**, pick `CSV`.
 
    ![](images/dataflow_source_data_entity_file_type.png)
 
-13. Then click **Select**.
+12. Then click **Select**.
 
    ![](images/dataflow_source_data_entity_file_type_csv.png)
 
-14. At this point, your source has access to the **Attributes**, where you can see the different fields of your dataset.
+13. At this point, your source has access to the **Attributes**, where you can see the different fields of your dataset.
 
    ![](images/dataflow_source_data_entity_attributes.png)
 
@@ -104,61 +91,55 @@ In this lab, you will:
 
    Let's move into the target for our **MySQL Database**.
 
-15. Drag and Drop the **Target** icon into the canvas.
+14. Drag and Drop the **Target** icon into the canvas.
 
    ![](images/dataflow_target_dnd.png)
 
-16. Set the **Identifier** and the rest of the info in the **Target**:
-
-       - Identifier: `MySQL DB`
-       - Data Asset: `mysql-database`
-       - Connection: `Default Connection`
-       - Schema: `nature`
-       - Data entity: `fish`
+15. Set the **Identifier** as `MySQL_DB` in the **Target**, and leave **Integration Strategy** as `Insert`:
 
    ![](images/dataflow_target_id.png)
 
-17. This time, pick the `mysql-database` **data asset**. And `Default Connection` one more.
+16. This time, pick the `mysql-database` **Data Asset**. Also select **Connection** as `Default Connection`.
 
    ![](images/dataflow_target_data_asset_mysql.png)
 
-18. For the **Schema**, select `nature`.
+17. For the **Schema**, select `nature`.
 
    ![](images/dataflow_target_data_asset_schema_nature.png)
 
-19. For **Data Entity**, we select the table `fish`.
+18. For **Data Entity**, we select the table `fish`.
 
    ![](images/dataflow_target_data_asset_data_entity.png)
 
    ![](images/dataflow_target_data_asset_data_entity_fish.png)
 
-20. At this point, we can **confirm** we see the attributes from the table.
+19. At this point, we can see the fields of the table under the **Attributes** tab.
 
    ![](images/dataflow_target_attributes.png)
 
-21. Time to **wire source and target**. Draw the link between `FISH_SURVEY` and `MYSQL_DB`. Starting from the circle in `FISH_SURVEY` source box and finishing over `MYSQL_DB` target box.
+20. Time to **wire Source and Target**. Draw the link between `FISH_SURVEY` and `MYSQL_DB`. Starting from the circle in `FISH_SURVEY` source box and finishing over `MYSQL_DB` target box.
 
    ![](images/dataflow_source_to_target.png)
 
-22. The **final result** should look like the following.
+21. The **final result** should look like the following.
 
    ![](images/dataflow_source_to_target_linked.png)
 
-23. **Make sure** `MYSQL_DB` target is selected (green border) and click on the **Map** tab on the **Properties** panel and drag and drop the fields with NO `Auto` in the row. **Do it until they are all mapped**.
+22. **Make sure** `MYSQL_DB` target is selected (green border) and click on the **Map** tab on the **Properties** panel and drag and drop the fields with NO `Auto` in the mapping column (from left to right). **Do it until they are all mapped**.
 
    ![](images/dataflow_source_to_target_map.png)
 
-24. **Make** sure `Not Mapped` in yellow is **0**.
+23. Make sure the yellow indicator of `Not Mapped` contains **0**, meaning there is no left fields unmapped.
 
    ![](images/dataflow_source_to_target_map_completed.png)
 
-25. The **final step** is to **validate** the Data flow. Click **Validate**, check there are no warnings or errors and click **Save and Close**.
+24. The **final step** is to **validate** the Data flow. Click **Validate**, check there are no warnings or errors and click **Save and Close**.
 
    ![](images/dataflow_validate.png)
 
 ---
 
-## **STEP 2:** Create the Integration Task
+## Task 2: Create the Integration Task
 
 1. Go back to **Home** and Click **Create Integration Task**.
 
@@ -173,13 +154,13 @@ In this lab, you will:
 
    ![](images/integrationtask_fields.png)
 
-3. Wait for the **Validation** of the Data Flow and click **Save and Close**.
+3. Wait for the **Validation** to be **Successful** on the Data Flow and click **Save and Close**.
 
    ![](images/integrationtask_save.png)
 
 ---
 
-## **STEP 3:** Publish the Integration Task
+## Task 3: Publish the Integration Task
 
 1. Go to **Projects** on the home screen.
 
@@ -203,7 +184,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 4:** Run the Task
+## Task 4: Run the Task
 
 1. Go back to the **Home** screen and click **Applications**.
 
@@ -213,7 +194,7 @@ In this lab, you will:
 
    ![](images/di_application_integration_dots.png)
 
-3. Click on the **context menu** (three dots) and click **Run**.
+3. Click on the **Context Menu** (three dots) and click **Run**.
 
    ![](images/di_application_integration_run.png)
 
@@ -231,15 +212,15 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** It Works
+## Task 5: It Works
 
-1. On the bastion host in **Cloud Shell** (reconnect if timed out), run the **MySQL docker** image and in the `bash` **Terminal**, run:
+1. On the bastion host in **Cloud Shell** (reconnect from Cloud Shell to the bastion host if timed out: `ssh -i .ssh/bastion opc@PUBLIC_IP`), run the **MySQL Shell** in the `bash` **Terminal** with:
 
    ```
    <copy>mysqlsh --sql root@PRIVATE_IP</copy>
    ```
 
-2. Put the MySQL **password**:
+2. If requested, put the MySQL **Password**:
 
    ```
    <copy>R2d2&C3po!</copy>
@@ -251,11 +232,15 @@ In this lab, you will:
    <copy>use nature;</copy>
    ```
 
-4. Count the **number** of rows in the table `fish`.
+   The result message says `Default schema set to nature.` And `Fetching table and column names from nature for auto-completion... Press ^C to stop.` You can continue.
+
+4. Count the **number** of rows in the table `fish` by running the following query.
 
    ```sql
    <copy>select count(1) from fish;</copy>
    ```
+
+   You should see 3493 as result.
 
 5. **Exit** with:
 

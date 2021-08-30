@@ -4,7 +4,7 @@
 
 In this lab we will use Custom image feature of OCI. Using this feature an existing Compute instance with software packages and updates installed can be used to created additional compute instance.  These new compute instances will come with all the software packages and updates pre-installed.
 
-## **STEP 1**: Sign in to OCI Console and create VCN
+## Task 1: Sign in to OCI Console and create VCN
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](images/Custom_Image_005.PNG " ")
@@ -34,7 +34,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## **STEP 2**: Create a compute instance
+## Task 2: Create a compute instance
 
 1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
@@ -104,7 +104,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
 12.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## **STEP 3**: Install httpd on compute instance and create custom image
+## Task 3: Install httpd on compute instance and create custom image
 
 1. Switch to ssh session to compute install. Install httpd server, Enter Command:
     ```
@@ -140,7 +140,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 8. Fill out the dialog box and Click **Create Custom Image**. VMs status will change to **Creating Image**.
      ![](images/Custom_Image_003.PNG " ")
 
-## **STEP 4**: Start a custom image
+## Task 4: Start a custom image
 
 1.  Navigate to main Instances page under compute and Click **Custom Images**. Locate your custom image, Click the Action icon and then **Create Instance**.
      ![](images/Custom_Image_004.PNG " ")
@@ -165,7 +165,7 @@ In this lab we will use Custom image feature of OCI. Using this feature an exist
 
     A compute instance can have a lot more applications installed and this custom image feature facilitates launching new compute instances with these applications pre-installed.
 
-## **STEP 5**: Delete the resources
+## Task 5: Delete the resources
 
 1. Switch to  OCI console window.
 

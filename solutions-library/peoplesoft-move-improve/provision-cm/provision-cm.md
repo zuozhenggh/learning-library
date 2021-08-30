@@ -23,14 +23,14 @@ In this lab, you will:
 - Admin privileges on your local machine or Windows instance on Cloud.
 
 
-## **STEP 1**: Generating Keys
+## Task 1: Generating Keys
 
-**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ayiPYT9IgCE8e4fT1qc3jjyyMKgdIbC-t_zn7TUsx8Lhlqp_W-gSJ0I2r-2c7LU9/n/c4u03/b/solutions-library/o/TestDrivekeys.zip)
+**Option A:** For your convenience, you can use these pre-built keys for the purpose of the demo and skip to Step 2: [TestDrivekeys.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WxGTfD307h7JLB5lmBmmPT76JB6_nk5b30vVV_PbrrLDOViqCRkSM5ZbxJk8uwwv/n/c4u04/b/solutions-library/o/TestDrivekeys.zip)
 
 **Option B:** If you would like to generate your own keys, continue here:
 1. Ensure Git Bash is installed on your laptop/workstation.
 
-2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4siaoXfcndYoTXRI9y7evzGbNLgCcLt1YjMpb76eW87EAVGoGJCkzFxWk1S-EMn8/n/c4u03/b/solutions-library/o/make_keys.sh)
+2. Download the following script: [make_keys.sh](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_1rr44ieeEs_O4vzHcvCD9Lv_gbzcLMXEmS1ti79tcqcBtLTVA5XHwQ3KKVE0qLM/n/c4u04/b/solutions-library/o/make_keys.sh)
 
 3. Launch Terminal for Mac or Git Bash for Windows command line and navigate to the folder where the file was downloaded. For example, if the file was downloaded in the Downloads folder, you can type the following command:
 
@@ -77,7 +77,7 @@ In this lab, you will:
     ```
     ![](./images/apikeypub.png "")
 
-## **STEP 2**: Setting API Keys for User01
+## Task 2: Setting API Keys for User01
 
 Verify you have the following 4 keys: 
 * **API Signing keys**: ``api_key`` and ``api_key.pub``
@@ -107,7 +107,7 @@ Verify you have the following 4 keys:
 
     ![](./images/apipaste.png "")
 
-## **STEP 3**: Gather Information for the Cloud Manager Stack
+## Task 3: Gather Information for the Cloud Manager Stack
 
 Paste the below information in a notepad. You will need it later while creating the stack.
 
@@ -119,7 +119,7 @@ Paste the below information in a notepad. You will need it later while creating 
 
     ![](./images/homeregion.png "")
 
-## **STEP 4**: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
+## Task 4: Obtain the PeopleSoft Cloud Manager Stack from the Marketplace
 
 To obtain the PeopleSoft Cloud Manager stack:
 
@@ -145,7 +145,7 @@ Click **Launch Stack**.
 
     Continue with the steps in Enter Cloud Manager Instance Values.
 
-## **STEP 5**: Enter Cloud Manager Instance Values and provision PSFT Cloud
+## Task 5: Enter Cloud Manager Instance Values and provision PSFT Cloud
 
 The Create Stack, Configure Variables page includes a list of the parameters needed to create and configure the Cloud Manager instance.
 
@@ -238,7 +238,7 @@ This name will be used as part of the URL you use to access Cloud Manager in a b
 
 Depending on your workstation, choose Step 6 (for Mac) or 7 (for Windows)
 
-## **STEP 6**: FOR MAC USERS- Accessing Cloud Manager using SSH 
+## Task 6: FOR MAC USERS- Accessing Cloud Manager using SSH 
 
 SSH key pair  (``` id_rsa ``` & ```id_rsa.pub ```) is required to access Cloud Manager instance which was created in Step 1 of Lab 2. 
 
@@ -265,7 +265,7 @@ For example: ```cd ~/Downloads/keys ```
     ssh –p 2222 opc@localhost -i id_rsa
     </copy>
     ```
-## **STEP 7**: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
+## Task 7: FOR WINDOWS USERS- Accessing Cloud Manager using SSH 
 Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those if you haven't already.
 
 1. Open up PuTTYgen. Click **Conversions** --> **Import key**. 
@@ -325,7 +325,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
 
 
 
-## **STEP 8**: Monitoring Cloud Manager
+## Task 8: Monitoring Cloud Manager
 
 1. SSH into Cloud Manager instance to check status of the deployment.  Monitor Cloud Manager bootstrap installation using the below command.
 
@@ -353,7 +353,7 @@ Reminder of Prerequisites: PuTTY, Git Bash, and Firefox. Please download those i
     *NOTE: Usually, it takes an hour for Cloud Manager to finish the bootstrap script. Till the script is successfully executed and you get the above message, you won't be able to access cloud manager URL. This is a long process. 
 
 
-## **STEP 9**: Set up SOCKS Proxy to Access Cloud Manager in Browser
+## Task 9: Set up SOCKS Proxy to Access Cloud Manager in Browser
 
 **NOTE**: Make sure you are off VPN. 
 

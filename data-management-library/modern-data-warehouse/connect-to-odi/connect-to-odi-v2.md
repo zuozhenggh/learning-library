@@ -22,7 +22,7 @@ Estimated Lab Time: 15 minutes
 - ADW wallet file downloaded in Lab 1.
 - VNC Viewer or any similar application.
 
-## **STEP 1:** SSH into Bastion Node, connect to ODI instance and secure copy ADW wallet file onto it
+## Task 1: SSH into Bastion Node, connect to ODI instance and secure copy ADW wallet file onto it
 
 1. Open a Terminal and alter the permissions of the private key file to make it read-only for the current user. Assuming the key file is saved as **odi\_adw\_oac** in a folder named **odi-adw-oac** in the current working directory, run the following command:
 
@@ -62,9 +62,9 @@ Estimated Lab Time: 15 minutes
 
         sudo su - oracle
         
-        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/26qfKZW8shBK4e9A8nrS2xoWoYtlJDhExmG38rDPNxHU3k6O0-RdiWCJS9s_RmPM/n/c4u03/b/data-management-library-files/o/modern-data-warehouse/EBS_ODI_ADW.xml
+        wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/bRXa47PIVqrTX4ChvQW_92fmk75fQnK3O_P_dHA5Q4Vto9a8DRZQ-Wr9P4tjhpUI/n/c4u04/b/data-management-library-files/o/modern-data-warehouse/EBS_ODI_ADW.xml
         
-## **STEP 2:** Access ODI Studio
+## Task 2: Access ODI Studio
 
 1. Start VNC Viewer on your local machine. Since, we have a tunnel from the local machine to the ODI node, we will use the IP **localhost:1** as the URL.  **Enter** or click on **Connect** depending on the application you are using.
 
