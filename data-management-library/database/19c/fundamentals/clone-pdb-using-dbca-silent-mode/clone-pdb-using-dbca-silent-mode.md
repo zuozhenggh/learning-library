@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 

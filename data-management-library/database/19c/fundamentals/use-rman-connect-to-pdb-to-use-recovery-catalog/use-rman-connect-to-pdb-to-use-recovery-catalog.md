@@ -7,7 +7,7 @@ Oracle Database 19c provides complete backup and recovery flexibility for multit
 
 In this lab, you create a PDB named PDB19 to act as the recovery catalog database for all other PDBs in CDB1. `ARCHIVELOG` mode must be enabled on CDB1. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
