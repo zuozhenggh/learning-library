@@ -20,9 +20,9 @@
             "type": "freetier"
         },
         {
-            "title": "Lab 2: Verify Your Environment",
-            "description": "Steps to verify the workshop-installed compute instance.",
-            "filename": "./../../verify-environment/verify-environment.md",
+            "title": "Lab 2: Initialize Your Environment",
+            "description": "Steps to verify the workshop-installed compute instance and download the lab files.",
+            "filename": "./../../initialize-environment/initialize-environment.md",
             "type": "freetier"
         },
         {
