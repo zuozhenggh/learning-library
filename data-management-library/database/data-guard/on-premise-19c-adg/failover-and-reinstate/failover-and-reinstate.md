@@ -17,7 +17,7 @@ This lab assumes you have already completed the following labs:
 - Deploy Active Data Guard
 - Test with Active Data Guard
 
-## **STEP 1:** Setup the current primary database flashback on
+## **Task 1:** Setup the current primary database flashback on
 
 In the previous lab, you have done the Data Guard switch over. Now, the current primary database is the **ORCLSTBY** and the current standby database is the **ORCL**.
 
@@ -95,7 +95,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     [oracle@dbstby ~]$ 
     ```
 
-## **STEP 2:** Failover
+## **Task 2:** Failover
 
 1. Connect with DGMGRL, validate the primary and standby database
 
@@ -189,7 +189,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
 Now, the primary is the back to the **ORCL** database, and the standby database is disabled, which needs to be reinstated.
 
-## **STEP 3:** Reinstate the previous primary database
+## **Task 3:** Reinstate the previous primary database
 
 1. Connect  to the current standby database, shutdown the database and startup mount before reinstating. 
 
