@@ -57,10 +57,10 @@ Estimated Time: 30 minutes
 3. We will need to modify **terraform.tfvars** file. Enter the following command.
 
     ```
-    cd terraform-demo
+    cd terraform_demo
     ```
 
-4. Now edit the terraform.tfvars file. We will update these variables :- tenancy_ocid, region, compartment_ocid.
+4. Now edit the terraform.tfvars file. We will update these variables :- tenancy_ocid, region, compartment_ocid. Keep the ssk_public_key blank and as it is.
 
 Make sure to have the values ready which was saved in earlier steps.
 

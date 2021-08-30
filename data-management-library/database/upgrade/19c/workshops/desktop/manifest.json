@@ -14,48 +14,48 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Initialize Environment",
+      "title": "Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Generate AWR Snapshot",
+      "title": "Generate AWR Snapshot",
       "filename": "../../awr-snapshot/awr-snapshot.md"
     },
     {
-      "title": "Lab 3: Capture and Preserve SQL",
+      "title": "Capture and Preserve SQL",
       "filename": "../../capture-sql/capture-sql.md"
     },
     {
-      "title": "Lab 4: AutoUpgrade",
+      "title": "AutoUpgrade",
       "filename": "../../upgrade/upgrade-to-19c.md"
     },
     {
-      "title": "Lab 5: AWR Compare Report",
+      "title": "AWR Compare Report",
       "filename": "../../awr-compare/awr-compare.md"
     },
     {
-      "title": "Lab 6: SQL Performance Analyzer",
+      "title": "SQL Performance Analyzer",
       "filename": "../../sql/sql-perf-analyzer.md"
     },
     {
-      "title": "Lab 7: SQL Plan Management",
+      "title": "SQL Plan Management",
       "filename": "../../sql/sql-plan-mgmt.md"
     },
     {
-      "title": "Lab 8: SQL Tuning Advisor",
+      "title": "SQL Tuning Advisor",
       "filename": "../../sql/sql-tuning-advisor.md"
     },
     {
-      "title": "Lab 9: Plugin UPGR into CDB2",
+      "title": "Plugin UPGR into CDB2",
       "filename": "../../upgrade/plugin-upgr-cdb2.md"
     },
     {
-      "title": "Lab 10: Transportable Export/Import",
+      "title": "Transportable Export/Import",
       "filename": "../../migrate-ftex/migrate-ftex.md"
     },
     {
-      "title": "Lab 11: Unplug Plug Upgrade",
+      "title": "Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
     },
     {
