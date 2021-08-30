@@ -1,7 +1,7 @@
 # Prepare Setup
 
 ## Introduction
-This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Oracle Enterprise Manager 13c Marketplace image with monitored database targets and a Virtual Cloud Network (VCN).
+This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance and a Virtual Cloud Network (VCN).
 
 *Estimated Lab Time:* 15 minutes
 
@@ -27,7 +27,6 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 7803           | Enterprise Manager 13c Server         |
 | 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -42,10 +41,12 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 ## Task 3: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
--  Create Stack:  *Compute + Networking*
--  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+  -  Create Stack:  *Compute + Networking*
+  -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-  - **Contributors** -  
+  - **Contributors** - Manish Garodia, Database UA Development
   - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
