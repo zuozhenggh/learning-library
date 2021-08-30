@@ -4,7 +4,7 @@
 
 This lab walks you through the steps for installing Oracle Database 21c with <if type="desktop">minimal</if><if type="server">detailed</if> configuration.
 
-Estimated Lab Time: <if type="desktop">20</if><if type="server">30</if> minutes
+Estimated Time: <if type="desktop">20</if><if type="server">30</if> minutes
 
 ### Objective
 
@@ -254,7 +254,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 Click **Close** to exit Oracle Database Setup Wizard.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

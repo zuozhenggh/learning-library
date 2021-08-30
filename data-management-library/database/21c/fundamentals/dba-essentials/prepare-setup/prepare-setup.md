@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Oracle Enterprise Manager 13c Marketplace image with monitored database targets and a Virtual Cloud Network (VCN).
 
-*Estimated Lab Time:* 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 -   Download ORM stack
@@ -30,7 +30,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 7803           | Enterprise Manager 13c Server         |
 | 6080           | noVNC Remote Desktop                  |
 
-1.  Go to *Networking >> Virtual Cloud Networks*
+1.  Go to **Networking >> Virtual Cloud Networks**
 2.  Choose your network
 3.  Under Resources, select Security Lists
 4.  Click on Default Security Lists under the Create Security List button
@@ -41,11 +41,10 @@ This workshop requires a certain number of ports to be available, a requirement 
 7.  Click the Add Ingress Rules button
 
 ## Task 3: Setup Compute   
-Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
--  Create Stack:  *Compute + Networking*
--  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+Using the details from the two steps above, proceed to the lab **Environment Setup** to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
+-  Create Stack:  **Compute + Networking**
+-  Create Stack:  **Compute only** with an existing VCN where security lists have been updated as per **Step 2** above
 
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-  - **Contributors** -  
   - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
