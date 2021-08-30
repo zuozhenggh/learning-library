@@ -1,11 +1,11 @@
 # Prepare Your Environment
 
 ## Introduction
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the following two compute instances (using virtual machines) for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access via a browser.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the following two compute instances for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access via a browser.
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
 - `workshop-installed` - You use this compute instance for all of the other labs.
 
-To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
+To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stacks for this workshop to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, then you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
 
 
 Estimated Time: 30 minutes
@@ -23,14 +23,15 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained a free or paid Oracle Cloud account
+- Obtained a free or paid Oracle Cloud account (Always Free accounts are not supported for this workshop)
 - Signed in to Oracle Cloud Infrastructure
+
 
 ## Task 1: Add security rules to your existing VCN
 
 To be able to access your compute instances, you need to configure egress and ingress security rules in your VCN's security list.
 
-> **Note**: If you let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2.
+> **Note**: If you let Resource Manager create a new VCN for you when you create your compute instances (recommended), you can skip this task and proceed to Task 2.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
