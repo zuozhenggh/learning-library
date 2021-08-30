@@ -4,7 +4,7 @@
 
 This lab shows how to create a single instance container database with <if type="typical">typical</if><if type="advanced">advanced</if> configuration. It does not install the Oracle Database software.
 
-Estimated Lab Time: <if type="typical">20</if><if type="advanced">30</if> minutes
+Estimated Time: <if type="typical">20</if><if type="advanced">30</if> minutes
 
 ### Objective
 
@@ -36,7 +36,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 1. The Database Operation window opens with the default option **Create a database** selected. Click **Next**.
 
-    ![Create Database](../common/common-images/dbca21c-common-001-createdb.png)
+    ![Create Database](../common/images/dbca21c-common-001-createdb.png)
 
 	> With Oracle DBCA, you can perform other administrative tasks, such as configure or delete an existing Oracle Database and manage PDBs and templates.
 
@@ -72,7 +72,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
    ![Advanced Configuration](images/dbca21c-adv-002-advmode.png)
 
 3. You can select the database type and a template suitable for your Oracle Database in the Deployment Type window.  
-	For this lab, leave the default type *Oracle Single Instance database* and the template **General Purpose or Transaction Processing**. Click **Next**.
+	For this lab, leave the default type *Oracle Single Instance database* and the template *General Purpose or Transaction Processing*. Click **Next**.
 
    ![Deployment Type](images/dbca21c-adv-003-template.png)
 
@@ -128,9 +128,10 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	The Fast Recovery Option window displays the default parameters pre-filled.  
 	 **Recovery files storage type** - *File System*  
 	 **Fast Recovery Area** the directory for recovery-related files  
-	 **Fast Recovery Area size** the size of the recovery area
+	 **Fast Recovery Area size** the size of the recovery area  
+	 For this lab, leave the default values.
 
-	The **Enable archiving** checkbox allows archiving the online redo log files. These files are useful during Oracle Database recovery.
+	The **Enable archiving** checkbox allows archiving the online redo log files. These files are useful during Oracle Database recovery. For this lab, do not select this option.
 
 7. Select the listener for your Oracle Database in the Network Configuration window.  
 
@@ -226,15 +227,15 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	In the Finish window, click **Password Management** to view the status of Oracle Database user accounts. Except SYS and SYSTEM, all other users are initially in locked state.
 
-	![Password Management](../common/common-images/dbca21c-common-002-pwd-mgmt.png)
+	![Password Management](../common/images/dbca21c-common-002-pwd-mgmt.png)
 
 	> To unlock a user, click the **Lock Account** column. You can also change the default password for the users in this window. However, you can do these tasks later.
 
-	Click **OK** to close the Password Management window.
+	Click **OK** to save any changes you made and to close the Password Management window.
 
 Click **Close** to exit Oracle Database Configuration Assistant.
 
-<if type="typical">You may now [proceed to the next lab](#next).</if>
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

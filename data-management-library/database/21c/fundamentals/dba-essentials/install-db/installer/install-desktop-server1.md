@@ -4,7 +4,7 @@
 
 This lab walks you through the steps for installing Oracle Database 21c with <if type="desktop">minimal</if><if type="server">detailed</if> configuration.
 
-Estimated Lab Time: <if type="desktop">20</if><if type="server">30</if> minutes
+Estimated Time: <if type="desktop">20</if><if type="server">30</if> minutes
 
 ### Objective
 
@@ -34,7 +34,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 1. The Configuration Option window opens with the default option **Create and configure a single instance database** selected. This option helps you create a starter database. Click **Next**.
 
-   ![Configuration Option](../common/common-images/db21c-common-001-createdb.png)
+   ![Configuration Option](../common/images/db21c-common-001-createdb.png)
 
 	> [](include:sw-only)
 
@@ -186,7 +186,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 17.	The Install Product window displays the status of Oracle Database installation process.	Run the scripts displayed in the Execute Configuration Scripts window as the root user. Do not close this window.
 
-   ![Execute Scripts](../common/common-images/db21c-common-002-rootscript.png)
+   ![Execute Scripts](../common/images/db21c-common-002-rootscript.png)
 
     A. Open a new terminal window and log in as root.
 
@@ -254,7 +254,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 Click **Close** to exit Oracle Database Setup Wizard.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

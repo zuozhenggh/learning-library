@@ -8,7 +8,7 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the 
 To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
 
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
@@ -23,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account
+- Obtained a free or paid Oracle Cloud account
 - Signed in to Oracle Cloud Infrastructure
 
 ## Task 1: Add security rules to your existing VCN
@@ -139,7 +139,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 8. In the **Options** section, configure the following:
 
     - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
-    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for labs. If you increase the number of OCPUs, be sure that you have the capacity available.
+    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for these labs. If you increase the number of OCPUs, be sure that you have the capacity available.
     - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected in the **Stack Information** section.
 
     ![Options Section for workshop-installed](images/options-workshop-installed.png "Options Section for workshop-installed")
@@ -181,4 +181,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021

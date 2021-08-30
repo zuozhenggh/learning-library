@@ -4,7 +4,7 @@
 
 Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password.
 
-In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer on the `workshop-staged` compute instance. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created. Use the `workshop-staged` compute instance.
 
 Estimated Lab Time: 40 minutes
 
@@ -25,7 +25,7 @@ This lab assumes you have:
 
 ## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
 
-Be sure that you are using the `workshop-staged` compute instance for this lab.
+*Be sure that you are using the `workshop-staged` compute instance.*
 
 1. In the **Oracle Database 19c New Features** workshop book on your desktop, click the lab named **Install Oracle Database 19c with Automatic Root Script Execution**.
 
@@ -61,7 +61,7 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
 
 5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
 
-  *Enter the command carefully and check that it is correct before you run it.*
+  *Enter the command carefully and check that it is correct before you run it! If you make an error while installing the database, you cannot easily undo the changes made to the compute instance. It is fastest to obtain a fresh `workshop-staged` compute instance and try the lab again.*
 
     ```
     $ <copy>./runInstaller -applyRU 32904851</copy>
@@ -265,9 +265,15 @@ Be sure that you are using the `workshop-staged` compute instance for this lab.
     SQL> <copy>EXIT</copy>
     ```
 
+9. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
+    ```
+
 Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 
@@ -282,4 +288,4 @@ You may now proceed to the next lab.
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021

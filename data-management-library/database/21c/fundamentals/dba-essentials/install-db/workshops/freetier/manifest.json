@@ -1,26 +1,27 @@
 {
-    "workshoptitle" : "Installing Oracle Database 21c on OCI Compute",
+    "workshoptitle" : "Install Oracle Database 21c on OCI Compute",
     "help": "livelabs-help-db_us@oracle.com",
     "include": {
-        "admin-pwd": "../../common/common-files/admin-pwd.md", 
-        "charset": "../../common/common-files/char-set.md", 
-        "emcc": "../../common/common-files/register-emcc.md", 
-        "global-db": "../../common/common-files/global-db-name.md", 
-        "oracle-sid": "../../common/common-files/oracle-sid.md", 
-        "std-pwd": "../../common/common-files/std-pwd.md", 
-        "sw-only": "../../common/common-files/sw-only.md"
+        "admin-pwd": "../../common/files/admin-pwd.md", 
+        "charset": "../../common/files/char-set.md", 
+        "emcc": "../../common/files/register-emcc.md", 
+        "global-db": "../../common/files/global-db-name.md", 
+        "note-always-free": "../../../common/files/note-always-free.md", 
+        "oracle-sid": "../../common/files/oracle-sid.md", 
+        "std-pwd": "../../common/files/std-pwd.md", 
+        "sw-only": "../../common/files/sw-only.md"
     },
 	"tutorials": [
-		{
-			"title": "Getting Started",
-			"description": "Get a Free Trial",
-			"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-		},
         {
             "title": "Introduction",
             "description": "The workshop on Oracle Database Administration Essentials for Oracle Database 21c.",
             "filename": "./../../intro-install/intro-install.md"
         },
+		{
+			"title": "Get Started",
+			"description": "Get a Free Trial",
+			"filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+		},
 		{
 			"title": "Lab 1: Generate SSH Keys",
 			"description": "Generate SSH Key",

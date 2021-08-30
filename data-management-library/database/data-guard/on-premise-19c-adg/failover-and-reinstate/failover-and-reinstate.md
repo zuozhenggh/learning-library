@@ -17,14 +17,14 @@ This lab assumes you have already completed the following labs:
 - Deploy Active Data Guard
 - Test with Active Data Guard
 
-## **STEP 1:** Setup the current primary database flashback on
+## **Task 1:** Setup the current primary database flashback on
 
 In the previous lab, you have done the Data Guard switch over. Now, the current primary database is the **ORCLSTBY** and the current standby database is the **ORCL**.
 
 1. From the current primary side. Check the flashback status of the current primary database
 
     ```
-    [oracle@standby ~]$ sqlplus / as sysdba
+    [oracle@standby ~]$ <copy>sqlplus / as sysdba</copy>
     
     SQL*Plus: Release 19.0.0.0.0 - Production on Wed Feb 5 05:31:25 2020
     Version 19.10.0.0.0
@@ -36,7 +36,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
     Version 19.10.0.0.0
     
-    SQL> select open_mode,database_role,flashback_on from v$database;
+    SQL> <copy>select open_mode,database_role,flashback_on from v$database;</copy>
     
     OPEN_MODE	     DATABASE_ROLE    FLASHBACK_ON
     -------------------- ---------------- ------------------
@@ -48,11 +48,11 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 2. If the flashback is not enabled you need to setup database flashback on, otherwise you won't be able to reinstate the primary after the failover.
 
     ```
-    SQL> shutdown immediate;
+    SQL> <copy>shutdown immediate;</copy>
     Database closed.
     Database dismounted.
     ORACLE instance shut down.
-    SQL> startup mount;
+    SQL> <copy>startup mount;</copy>
     ORACLE instance started.
     
     Total System Global Area 1.6106E+10 bytes
@@ -62,45 +62,45 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     Redo Buffers		   24399872 bytes
     Database mounted.
     
-    SQL> !mkdir -p /u01/app/oracle/fra/ORCL
-    SQL> ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10G SCOPE=BOTH;
+    SQL> <copy>!mkdir -p /u01/app/oracle/fra/ORCL</copy>
+    SQL> <copy>ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10G SCOPE=BOTH;</copy>
     
     System altered.
     
-    SQL> ALTER SYSTEM SET DB_RECOVERY_FILE_DEST = '/u01/app/oracle/fra/ORCL' SCOPE=BOTH;
+    SQL> <copy>ALTER SYSTEM SET DB_RECOVERY_FILE_DEST = '/u01/app/oracle/fra/ORCL' SCOPE=BOTH;</copy>
     
     System altered.
     
-    SQL> alter database flashback on;
+    SQL> <copy>alter database flashback on;</copy>
     
     Database altered.
     
-    SQL> alter database open;
+    SQL> <copy>alter database open;</copy>
     
     Database altered.
     
-    SQL> alter pluggable database all open;
+    SQL> <copy>alter pluggable database all open;</copy>
     
     Pluggable database altered.
     
-    SQL> select open_mode,database_role,flashback_on from v$database;
+    SQL> <copy>select open_mode,database_role,flashback_on from v$database;</copy>
     
     OPEN_MODE	     DATABASE_ROLE    FLASHBACK_ON
     -------------------- ---------------- ------------------
     READ WRITE	     PRIMARY	      YES
     
-    SQL> exit
+    SQL> <copy>exit</copy>
     Disconnected from Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
     Version 19.10.0.0.0
     [oracle@dbstby ~]$ 
     ```
 
-## **STEP 2:** Failover
+## **Task 2:** Failover
 
 1. Connect with DGMGRL, validate the primary and standby database
 
     ```
-    [oracle@standby ~]$ dgmgrl sys/Ora_DB4U@orcl
+    [oracle@standby ~]$ <copy>dgmgrl sys/Ora_DB4U@orcl</copy>
     DGMGRL for Linux: Release 19.0.0.0.0 - Production on Wed Feb 5 05:41:24 2020
     Version 19.10.0.0.0
     
@@ -109,7 +109,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     Welcome to DGMGRL, type "help" for information.
     Connected to "ORCL"
     Connected as SYSDBA.
-    DGMGRL> show configuration
+    DGMGRL> <copy>show configuration</copy>
     
     Configuration - adgconfig
     
@@ -123,7 +123,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
     Configuration Status:
     SUCCESS   (status updated 56 seconds ago)
     
-    DGMGRL> validate database orclstby
+    DGMGRL> <copy>validate database orclstby</copy>
     
       Database Role:    Primary database
     
@@ -137,7 +137,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
         Validating static connect identifier for the primary database orclstby...
         The static connect identifier allows for a connection to database "orclstby".
     
-    DGMGRL> validate database orcl
+    DGMGRL> <copy>validate database orcl</copy>
     
       Database Role:     Physical standby database
       Primary Database:  orclstby
@@ -166,10 +166,10 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 2. Failover to current standby.
 
     ```
-    DGMGRL> failover to orcl
+    DGMGRL> <copy>failover to orcl</copy>
     Performing failover NOW, please wait...
     Failover succeeded, new primary is "orcl"
-    DGMGRL> show configuration
+    DGMGRL> <copy>show configuration</copy>
     
     Configuration - adgconfig
     
@@ -189,7 +189,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
 Now, the primary is the back to the **ORCL** database, and the standby database is disabled, which needs to be reinstated.
 
-## **STEP 3:** Reinstate the previous primary database
+## **Task 3:** Reinstate the previous primary database
 
 1. Connect  to the current standby database, shutdown the database and startup mount before reinstating. 
 
@@ -239,7 +239,7 @@ If you encounter the Warning: ORA-16809: multiple warnings detected for the memb
 3. Check the status of the new standby database
 
     ```
-    [oracle@standby ~]$ sqlplus / as sysdba
+    [oracle@standby ~]$ <copy>sqlplus / as sysdba</copy>
     
     SQL*Plus: Release 19.0.0.0.0 - Production on Wed Feb 5 05:53:48 2020
     Version 19.10.0.0.0
@@ -251,7 +251,7 @@ If you encounter the Warning: ORA-16809: multiple warnings detected for the memb
     Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
     Version 19.10.0.0.0
     
-    SQL> select open_mode,database_role from v$database;
+    SQL> <copy>select open_mode,database_role from v$database;</copy>
     
     OPEN_MODE	     DATABASE_ROLE
     -------------------- ----------------
@@ -264,9 +264,9 @@ If you encounter the Warning: ORA-16809: multiple warnings detected for the memb
 
 Now, You have completed the fundamentals of the ADG labs. If you are interested, you can perform the following common labs for ADG:
 
-1.  [Enable ADG DML Redirection](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
-2. [Automatic Block Media Recovery](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
-3. [Restore Point Propagation](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3&session=4012899922265)
+1. [Lab 6: Enable ADG DML Redirection](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3)
+2. [Lab 7: Automatic Block Media Recovery](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3)
+3. [Lab 8: Restore Point Propagation](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=625&p210_type=3)
 
 
 
