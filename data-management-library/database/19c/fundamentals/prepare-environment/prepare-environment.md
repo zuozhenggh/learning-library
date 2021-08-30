@@ -5,7 +5,7 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the 
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
 - `workshop-installed` - You use this compute instance for all of the other labs.
 
-To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
+To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
 
 
 Estimated Lab Time: 30 minutes
@@ -28,9 +28,9 @@ This lab assumes you have:
 
 ## Task 1: Add security rules to your existing VCN
 
-Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521 to 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
+To be able to access your compute instances, you need to configure egress and ingress security rules in your VCN's security list.
 
-> **Note**: If you plan to let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2.
+> **Note**: If you let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -38,9 +38,49 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Under **Resources**, select **Security Lists**.
 
-4. Click the default security list.
+4. Click the your security list.
 
-5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
+    Under **Resources** on the left, you can click **Ingress Rules** or **Egress Rules**. To add an egress rule, click **Egress Rules**, and then click the **Add Egress Rules** button. To add an ingress rule, click **Ingress Rules**, and then click the **Add Ingress Rules** button.
+
+5. Add an egress rule with the following settings to allow outbound TCP traffic on all ports:
+
+    - DESTINATION TYPE: CIDR
+    - DESTINATION CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: All
+
+6. Add an ingress rule with the following settings to allow inbound SSH traffic on port 22:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: 22
+
+7. Add an ingress rule with the following settings to allow inbound TCP traffic on port 6080:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: 6080
+
+8. Add an ingress rule with the following settings to allow inbound ICMP traffic:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: ICMP
+    - TYPE: 3
+    - CODE: 4
+
+
+9. Add an ingress rule with the following settings to allow inbound traffic for all IP protocols on IP addresses 10.0.0.0 to 10.0.255.255.
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 10.0.0.0/16
+    - IP PROTOCOL: All Protocols
+
 
 ## Task 2: Create a `workshop-staged` compute instance
 
