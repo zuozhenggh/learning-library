@@ -23,7 +23,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 
 
-## **STEP 1:** Prepare the Primary Database
+## **Task 1:** Prepare the Primary Database
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Developer Sevices**, under **Resource Manager** choose **Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. 
 
@@ -54,9 +54,9 @@ Click on the link below to download the Resource Manager zip files you need to b
 
     ![](./images/step1.7-stackcreated.png " ")
 
-## **STEP 2:** Terraform Plan (OPTIONAL)
+## **Task 2:** Terraform Plan (OPTIONAL)
 
-When using Resource Manager to deploy an environment, execute a terraform **Plan** to verify the configuration. This is an optional STEP in this lab.
+When using Resource Manager to deploy an environment, execute a terraform **Plan** to verify the configuration. This is an optional Task in this lab.
 
 1.  [OPTIONAL] Click **Terraform Actions** -> **Plan** to validate your configuration. Click **Plan**. This takes about a minute, please be patient.
 
@@ -68,7 +68,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     
     ![](./images/planjob1.png " ")
 
-## **STEP 3:** Terraform Apply
+## **Task 3:** Terraform Apply
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** and **Apply**. Let's do that now.
 
@@ -86,7 +86,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     ![](images/image-output.png)
 
-## **STEP 4:** Connect to your Instance
+## **Task 4:** Connect to your Instance
 
 ### MAC or Windows CYGWIN Emulator
 
@@ -96,7 +96,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     <copy>ssh -i labkey opc@<Your Compute Instance Public IP Address></copy>
     ````
 
-2. After successfully logging in, proceed to STEP 5.
+2. After successfully logging in, proceed to Task 5.
 
     ```
     ssh -i labkey opc@xxx.xxx.xxx.xxx
@@ -128,11 +128,11 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 6.  The file path for the SSH private key file now displays in the Private key file for authentication field.
 
-7.  Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session STEP .
+7.  Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session Task .
 
 8.  Click Open to begin your session with the instance.
 
-## **STEP 5:** Verify the Database is Up
+## **Task 5:** Verify the Database is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 
@@ -143,7 +143,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     ````
     ![](./images/tailOfBuildDBInstanceLog.png " ")
 
-2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes). You can do the **STEP 6** to setup the standby environment while waiting the primary database ready .
+2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes). You can do the **Task 6** to setup the standby environment while waiting the primary database ready .
 
     ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
 
@@ -197,9 +197,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary DB.
 
-## **STEP 6:** Prepare the standby host
+## **Task 6:** Prepare the standby host
 
-Repeat from the STEP 1 to STEP 4 to prepare the standby host. This time please choose the `db19c-standby-nodb.zip` file in the Resource Manager. And you can choose another region and compartment for the standby database.
+Repeat from the Task 1 to Task 4 to prepare the standby host. This time please choose the `db19c-standby-nodb.zip` file in the Resource Manager. And you can choose another region and compartment for the standby database.
 
 After complete, you have a standby host which has the database software only been installed and no database created.
 

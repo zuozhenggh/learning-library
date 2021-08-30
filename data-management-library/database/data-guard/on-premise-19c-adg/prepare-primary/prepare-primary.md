@@ -22,7 +22,7 @@ Now you have 2 VM hosts:
 
 
 
-## **STEP 1:** Enable achivelog and flashback
+## **Task 1:** Enable achivelog and flashback
 
 1. Connect to the primary VM hosts with opc user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -113,7 +113,7 @@ Now you have 2 VM hosts:
     SQL>
     ```
 
-## **STEP 2:** Change redo log size and create standby log
+## **Task 2:** Change redo log size and create standby log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
@@ -216,7 +216,7 @@ Now you have 2 VM hosts:
 
 
 
-## **STEP 3:** Modify the init parameters for best practice
+## **Task 3:** Modify the init parameters for best practice
 
 1. Modify some init parameters for best practice.
 
