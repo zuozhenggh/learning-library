@@ -4,7 +4,7 @@
 
 In this lab you will setup 2 Oracle Cloud network (VCNs) and 2 compute instances using Oracle Resource Manager and Terraform. One simulate the primary site and another simulate the standby site. You can setup the primary and standby hosts using the related scripts. The primary and the standby hosts are in different VCN. You can setup primary and standby hosts in the same region or in different region.
 
-Estimated Lab Time: 40 minutes.
+Estimated Time: 40 minutes
 
 ### Objectives
 
@@ -16,16 +16,16 @@ This lab assumes you have already completed the following:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Create a SSH Keys pair
 
-Click on the link below to download the Resource Manager zip files you need to build your enviornment.
+Click on the link below to download the Resource Manager zip files you need to build your environment.
 
 - [db19c-primary-num.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/eh9lN2b7DkH1nI6AJfIrLK6e9sHdyZnPJ1j8fEE7RjTbQLiXuOxJlcfS7XOuAiPr/n/c4u04/b/data-management-library-files/o/db19c-primary-num.zip) - Packaged terraform primary database instance creation script
 - [db19c-standby-nodb.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/7L_vvCai1gDM4dl56QEUYqjwFX3o3mLXrgOV7hPUITZjzTHmk3jy4lIzQoHtVYDq/n/c4u04/b/data-management-library-files/o/db19c-standby-nodb.zip) - Packaged terraform standby database instance creation script
 
 
 
-## **Task 1:** Prepare the Primary Database
+## Task 1: Prepare the Primary Database
 
-1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Developer Sevices**, under **Resource Manager** choose **Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. 
+1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Developer Services**, under **Resource Manager** choose **Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. 
 
     ![](images/image-resourcemanager.png " ")
     
@@ -54,7 +54,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
     ![](./images/step1.7-stackcreated.png " ")
 
-## **Task 2:** Terraform Plan (OPTIONAL)
+## Task 2: Terraform Plan (OPTIONAL)
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** to verify the configuration. This is an optional Task in this lab.
 
@@ -68,7 +68,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     
     ![](./images/planjob1.png " ")
 
-## **Task 3:** Terraform Apply
+## Task 3: Terraform Apply
 
 When using Resource Manager to deploy an environment, execute a terraform **Plan** and **Apply**. Let's do that now.
 
@@ -86,7 +86,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     ![](images/image-output.png)
 
-## **Task 4:** Connect to your Instance
+## Task 4: Connect to your Instance
 
 ### MAC or Windows CYGWIN Emulator
 
@@ -132,7 +132,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 8.  Click Open to begin your session with the instance.
 
-## **Task 5:** Verify the Database is Up
+## Task 5: Verify the Database is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 
@@ -197,13 +197,13 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary DB.
 
-## **Task 6:** Prepare the standby host
+## Task 6: Prepare the standby host
 
 Repeat from the Task 1 to Task 4 to prepare the standby host. This time please choose the `db19c-standby-nodb.zip` file in the Resource Manager. And you can choose another region and compartment for the standby database.
 
 After complete, you have a standby host which has the database software only been installed and no database created.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020

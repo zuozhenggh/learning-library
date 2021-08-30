@@ -9,7 +9,7 @@ During the workshop, you use two Linux compute instances named `workshop-staged`
 
 In this lab, you verify that your `workshop-installed` compute instance is properly started and download the lab files.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
