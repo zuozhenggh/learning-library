@@ -5,9 +5,9 @@
 During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user (password is `Ora4U_1234`).
 
 - The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
-- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start up on boot. The lab files are stored in the `/home/oracle/labs/19cnf` directory.
+- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start up on boot.
 
-In this lab, you verify that your `workshop-installed` compute instance is properly started.
+In this lab, you verify that your `workshop-installed` compute instance is properly started and download the lab files.
 
 Estimated Lab Time: 5 minutes
 
@@ -17,6 +17,7 @@ In this lab, you will:
 
 - Verify that the default listener (LISTENER) is started on the `workshop-installed` compute instance
 - Verify that you can connect to CDB1, PDB1, and CDB2 on the `workshop-installed` compute instance
+- Download the lab files onto the `workshop-installed` compute instance
 
 ### Prerequisites
 
@@ -126,12 +127,27 @@ This lab assumes that you have:
     SQL> <copy>exit</copy>
     ```
 
-8. Close the terminal window.
+
+
+## Task 3: Download the lab files onto the `workshop-installed` compute instance
+
+1. Run the following commands to download the lab files to a `/home/oracle/labs/19cnf` directory.
+
+    ```
+    $ <copy>mkdir -p ~/labs/19cnf</copy>
+    $ <copy>cd ~/labs/19cnf</copy>
+    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip</copy>
+    $ <copy>unzip -q 19cnf-lab-files.zip</copy>
+    $ <copy>chmod -R +x ~/labs/19cnf</copy>
+    $ <copy>ls -an</copy>
+    ```
+
+
+2. Close the terminal window.
 
     ```
     $ <copy>exit</copy>
     ```
-
 
 ## Appendix A: Restore your lab files
 
@@ -139,21 +155,11 @@ In the event that you accidentally change one or more of your lab files on your 
 
 1. Open a terminal window.
 
-2. Change to the `~/labs/19cnf` directory.
+2. Run the following commands.
 
     ```
     $ <copy>cd ~/labs/19cnf</copy>
-    ```
-
-3. Unzip the `19cnf-lab-files.zip` file and replace the files in the directory.
-
-    ```
     $ <copy>unzip -o 19cnf-lab-files.zip</copy>
-    ```
-
-4. Set the execute permission on all of the lab files.
-
-    ```
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
     ```
 
@@ -161,4 +167,4 @@ In the event that you accidentally change one or more of your lab files on your 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021
+- **Last Updated By/Date** - Jody Glover, Database team, August 30 2021

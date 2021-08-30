@@ -1,7 +1,7 @@
 # Prepare Your Environment
 
 ## Introduction
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the following two compute instances for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access via a browser.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the following two compute instances (using virtual machines) for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access via a browser.
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
 - `workshop-installed` - You use this compute instance for all of the other labs.
 
