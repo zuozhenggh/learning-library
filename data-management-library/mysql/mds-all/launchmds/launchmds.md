@@ -39,6 +39,8 @@ In this lab, you will be guided through the following tasks:
 
 ## **TASK 1:** Create Virtual Cloud Network
 
+Estimated Time: 10 minutes
+
 1. Navigation Menu > Core Infrastructure > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
@@ -115,6 +117,8 @@ In this lab, you will be guided through the following tasks:
     ![VCN](./images/03vcn12.png " ")
 
 ## **TASK 2:** Create a MySQL DB System - Standalone.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -205,6 +209,8 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-1.png" ")
 
 ## **TASK 3:** Create a MySQL DB System - High Availability.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -298,6 +304,8 @@ In this lab, you will be guided through the following tasks:
 
 
 ## **TASK 4:** Create a MySQL DB System - HeatWave.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -398,6 +406,8 @@ In this lab, you will be guided through the following tasks:
 
 ## **TASK 5:** Create Client Virtual Machine
 
+Estimated Time: 10 minutes
+
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to the Console, menu Compute, Instances
     ![COMPUTE](./images/05compute01.png " ")
 
@@ -440,6 +450,9 @@ In this lab, you will be guided through the following tasks:
     ![COMPUTE](./images/05compute08.png " ")
 
 ## **TASK 6:** Connect to MySQL Database - Standalone
+
+Estimated Time: 10 minutes
+
 MySQL Database Service Standalone has daily automatic backups and is resilient to failures because it leverages Block Volumes to store user data. Consequently, it offers the same durability, security, and performance guarantees. Automatic and manual backups are replicated to another availability domain and can be restored in the event of a disaster or user error. Data loss is limited by the last successful backup.
 
 1. Linux and Mac users  use Terminal 
@@ -525,6 +538,8 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
     ![Connect](./images/06connect05.png " ")
 
 ## **TASK 7:** Connect to MySQL Database and Switchover - High Availability
+
+Estimated Time: 10 minutes
 
 A highly available database system is one which guarantees if one instance fails, another takes over, with zero data loss and minimal downtime.
 MySQL Database High Availability uses MySQL Group Replication to provide standby replicas to protect your data and provide business continuity. It is made up of three MySQL instances, a primary, and two secondaries. All data written to the primary instance is also written to the secondaries. In the event of failure of the primary, one of the secondaries is automatically promoted to primary, is set to read-write mode, and resumes availability to client applications with no data loss. This is called a failover. It is also possible to switch manually, and promote a secondary to primary. This is called a switchover.
@@ -618,6 +633,8 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 
 ## **TASK 8:** Connect to MySQL Database - HeatWave
 
+Estimated Time: 15 minutes
+
 HeatWave is an add-on to MySQL Database Service. It provides a highly performant and scalable in-memory analytic processing engine optimized for Oracle Cloud Infrastructure. Customers can run HeatWave on data stored in the MySQL database without requiring ETL and without any change to the application. Applications simply access HeatWave via standard MySQL protocols, and the typical administration actions are automated, integrated and accessible via the OCI Web Console, REST API, CLI, or DevOps tools. HeatWave queries achieve orders of magnitude acceleration over the MySQL database.
 
 1. Linux ad Mac users  use Terminal 
@@ -693,6 +710,9 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
     ![Connect](./images/06connect05.png " ")
 
 ## **TASK 9:**  Create airportdb schema and load data using MySQL Shell
+
+Estimated Time: 15 minutes
+
 The airportdb data files were produced using the MySQL Shell Schema Dump Utility. For information about this utility, see Instance Dump Utility, Schema Dump Utility, and Table Dump Utility.
 
 Data files produced by the MySQL Shell Schema Dump Utility include DDL files for creating the schema structure, compressed .tsv files that contain the data, and .json metadata files.
@@ -748,6 +768,8 @@ Data files produced by the MySQL Shell Schema Dump Utility include DDL files for
     ````
 ## **TASK 10:**  Add a HeatWave Cluster to MDS-HW MySQL Database System
 
+Estimated Time: 15 minutes
+
 1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
     ![Connect](./images/10addheat00.png " ")
@@ -781,6 +803,9 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ![Connect](./images/10addheat07.png " ")
 
 ## **TASK 11:**  Load airportdb Data into HeatWave Cluster
+
+Estimated Time: 15 minutes
+
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -817,6 +842,8 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ![Connect](./images/11loadcluster02.png " ")
 
 ## **TASK 12:**  Run Queries in HeatWave
+
+Estimated Time: 15 minutes
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -1001,6 +1028,9 @@ LIMIT 10;
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
 ## **TASK 13:**  Connect to HeatWave using Workbench
+
+Estimated Time: 5 minutes
+
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
@@ -1012,6 +1042,8 @@ LIMIT 10;
     ![MDS](./images/13workbench02.png " ") 
 
 ## **TASK 14:**  Create PHP MySQL Application
+
+Estimated Time: 20 minutes
 
 Subtask 1 – Install App Server (APACHE)
 
@@ -1180,6 +1212,8 @@ if ($stmt = $link->prepare($query)) {
 
 ## **TASK 15:**  Create an Oracle Analytic Cloud
 
+Estimated Time: 20 minutes
+
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following document:
 Analytics - https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html
 
@@ -1266,6 +1300,8 @@ LIMIT 10;</copy>
 
 ## **TASK 16:** Start, stop, or reboot MySQL DB System
 
+Estimated Time: 10 minutes
+
 Open the navigation menu. Under MySQL, click DB Systems.
 ![MDS](./images/04mysql01.png " ")
 
@@ -1300,6 +1336,8 @@ Select the required shutdown type and click the Stop or Restart button, dependin
 
 
 ## **TASK 17:** Delete MySQL DB System
+
+Estimated Time: 10 minutes
 
 Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
 
