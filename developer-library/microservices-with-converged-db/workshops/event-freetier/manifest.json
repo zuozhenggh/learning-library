@@ -30,7 +30,7 @@
         "type": "event-freetier"
       },
       {
-        "title": "Lab 5: Tracing Using Jaeger",
+        "title": "Lab 5: Observability",
         "filename": "../../observability/observability.md",
         "type": "event-freetier"
       },

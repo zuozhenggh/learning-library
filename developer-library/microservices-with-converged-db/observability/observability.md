@@ -90,7 +90,7 @@ Estimated lab Time - 25 minutes
     Confirm successful import.
     
 
-## Task 3: Use Grafana to Analyze metrics, tracing, and logs and correlate between them
+## Task 3: Use Grafana to Analyze metrics, tracing, and logs and the integration to correlate between them
 
 
 1. Select the four squares icon on the left-hand side and select 'Dashboards'
@@ -105,7 +105,7 @@ Estimated lab Time - 25 minutes
  
 4. 
 
-## Task 4: Understand Oracle DB Metrics Exporter (Study)
+## Task 4: Understand App and Oracle DB tier metrics (Study)
 
 1. Additional modifications can be made to the following files
    
@@ -113,7 +113,7 @@ Estimated lab Time - 25 minutes
        db-metrics-inventorypdb-exporter-metrics.toml
     and `./createMonitorsAndDBExporters.sh` can be run  to apply them
     
-## Task 5: Understand tracing (Study)
+## Task 5: Understand App and Oracle DB tier tracing (Study)
 
 1. Notice @Traced annotations on `placeOrder` method of `$GRABDISH_HOME/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
@@ -122,7 +122,7 @@ Estimated lab Time - 25 minutes
 
 
     
-## Task 6: Understand logging (Study)
+## Task 6: Understand App and Oracle DB tier logging (Study)
 
 1. Notice @Traced annotations on `placeOrder` method of `$GRABDISH_HOME/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
@@ -132,8 +132,4 @@ Estimated lab Time - 25 minutes
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
-               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Last Updated By/Date** - Paul Parkinson, August 2021
