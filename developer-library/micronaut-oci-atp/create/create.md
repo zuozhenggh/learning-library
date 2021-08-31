@@ -16,7 +16,6 @@ If you were unable to setup the Autonomous Database and necessary cloud resource
     git clone -b lab2-h2 https://github.com/graemerocher/micronaut-hol-example.git
     </copy>
 
-
 Estimated Lab Time: 15 minutes
 
 ### Objectives
@@ -33,14 +32,12 @@ In this lab you will:
 
 1. There are several ways you can get started creating a new Micronaut application. If you have the Micronaut CLI installed (see the [Installation instructions](https://micronaut-projects.github.io/micronaut-starter/latest/guide/#installation) for how to install) you can use the `mn` command to create a new application. Which will setup an application that uses the Oracle driver and Micronaut Data JDBC.
 
-
     ```
     <copy>
       mn create-app example-atp --jdk 11 --features oracle,data-jdbc
     cd example-atp
     </copy>
     ```
-
 
 > **NOTE:** By default Micronaut will use the [Gradle](https://gradle.org/) build tool, however you can add `--build maven` if you prefer Maven.
 
@@ -49,7 +46,7 @@ In this lab you will:
     ```
     <copy>
     curl https://launch.micronaut.io/example-atp.zip\?javaVersion\=JDK_11\&features\=oracle,data-jdbc -o example-atp.zip
-    unzip example-atp.zip -d example-atp
+    unzip example-atp.zip
     cd example-atp
     </copy>
     ```
@@ -84,10 +81,10 @@ To configure the Micronaut application to work with Autonomous Database open the
         data-source-properties:
           oracle:
             jdbc:
-              fanEnabled: false     
-    </copy>   
+              fanEnabled: false
+    </copy>
 
-> **NOTE**: The password you enter should be the Schema user password not the Admin password for the Autonomous Database instance. 
+> **NOTE**: The password you enter should be the Schema user password not the Admin password for the Autonomous Database instance.
 
 ## Task 3: Configure Oracle Autonomous Database JDBC Drivers
 
@@ -123,7 +120,6 @@ Alternatively if you are using Maven, add the following dependencies to your `po
     </copy>
 
 ## Task 4: Configure Flyway to Create the Schema
-
 
 Once you have configured the `DataSource`, add a dependency on `micronaut-flyway` to your `build.gradle` configuration inside the `dependencies` block:
 
@@ -174,8 +170,6 @@ The next step is to define a SQL migration script that will create the applicati
     </copy>
 
 The SQL above will create `owner` and `pet` tables to store data for owners and their pets in Autonomous Database.
-
-
 
 You may now *proceed to the next lab*.
 

@@ -16,7 +16,7 @@ In this lab you will:
 
 ## Task 1: Create the Autonomous Database Instance
 
-1. Go to the Oracle Cloud Menu and select "Autonomous Transaction Processing" and then "Create Autonomous Database".
+1. Go to the Oracle Cloud Menu and select "Oracle Database" and then "Autonomous Transaction Processing", then click "Create Autonomous Database".
 
 ![Click Autonomous Transaction Processing](images/db1.png)
 
@@ -64,7 +64,6 @@ Once you have pasted the SQL into the worksheet click the "Run script" button to
 
 ![Creating the Schema user](images/db9.png)
 
-
 ## Task 3: Download and Configure Wallet Locally
 
 The Oracle Autonomous Database uses an extra level of security in the form of a wallet containing access keys for your new Database.
@@ -75,23 +74,23 @@ To connect locally you need to download and configure the ATP Wallet locally.
 
     ![ATP menu](images/atp-menu.png)
 
-3. Find the newly created instance and click on it.
+2. Find the newly created instance and click on it.
 
     ![ATP instance](images/atp-instance-list.png)
 
-4. In the instance details, click on 'DB Connection'.
+3. In the instance details, click on 'DB Connection'.
 
     ![DB Connection](images/db-connection-btn.png)
 
-5. In the 'Database Connection' dialog, select 'Instance Wallet' and click 'Download Wallet'.
+4. In the 'Database Connection' dialog, select 'Instance Wallet' and click 'Download Wallet'.
 
     ![Wallet dialog](images/wallet-dialog.png)
 
-6. Enter (and confirm) the Admin password you used to create the Autonomous Database instance in the previous lab.
+5. Enter (and confirm) the Admin password you used to create the Autonomous Database instance in the previous lab.
 
     ![Wallet password](images/wallet-password.png)
 
-7. After the wallet zip has been downloaded, unzip it and move it to `/tmp/wallet`. You can do this with a single command in a terminal window on a Unix system, however the file can be extracted to a location of your choosing:
+6. After the wallet zip has been downloaded, unzip it and move it to `/tmp/wallet`. You can do this with a single command in a terminal window on a Unix system, however the file can be extracted to a location of your choosing:
 
     ```
     <copy>
@@ -99,7 +98,7 @@ To connect locally you need to download and configure the ATP Wallet locally.
     </copy>
     ```
 
-8. Once downloaded your wallet directory should contain the following files:
+7. Once downloaded your wallet directory should contain the following files:
 
    ![Wallet dir](images/tmp-wallet-dir.png)
 
