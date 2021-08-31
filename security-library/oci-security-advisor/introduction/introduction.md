@@ -2,10 +2,9 @@
 
 ## About this Workshop
 
-Oracle IAM comprising of Oracle Identity Manager (OIM/OIG), Oracle Access Manager (OAM) and Oracle Directory Services (OID/OUD) can be deployed in several ways and Customers have choices on how to upgrade them. This upgrade workshop demonstrates an In-Place upgrade of a single node deployment of Oracle IAM 11gPS3 to 12cPS4. The workshop offers you the real-life experience of a full upgrade cycle using the Oracle published "upgrade advisor" and supporting documentation and tools. The full upgrade can be completed within the time allotted for the workshop!
+This lab walks you through the steps to create a Secure Bucket using Security Advisor. It involves creating not only the bucket but also create a vault and key which will be used to encrypt the bucket and meets minimum security requirements established by security zones. Existing key can also be used to import in a vault and use to create a secure bucket.
 
-### About Oracle Identity and Access Management (IAM)
-Oracle Identity Management provides a unified, integrated security platform designed to manage user lifecycle and provide secure access across the enterprise resources, both within and beyond the firewall and into the cloud. The Oracle Identity Management platform provides scalability with an industry-leading suite of solutions for identity governance, access management and directory services.
+
 
 *Estimated Lab Time:* 48-72 Hours
 
