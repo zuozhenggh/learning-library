@@ -111,39 +111,40 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 7. Your screen should look similar to the following
     ![VCN](./images/03vcn044.png " ")
   
-9. Click the Next button at the bottom of the screen 
+8. Click the Next button at the bottom of the screen 
 
-10. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
+9. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
          
-11. Click Create button to create the VCN
+10. Click Create button to create the VCN
     ![VCN](./images/03vcn04.png " ")
 
-12. The Virtual Cloud Network creation is completing 
+11. The Virtual Cloud Network creation is completing 
     ![VCN](./images/03vcn05.png " ")
     
-13. Click "View Virtual Cloud Network" button to display the  created VCN
+12. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-14. Click the VCN Name **MDS_VCN**. 
+13. Click the VCN Name **MDS_VCN**. 
             ![COMPUTE](./images/03vcn08.png " ")
 
-15.	On the Virtual Cloud Network Details page, under Resources, click Security Lists (2).
+14.	On the Virtual Cloud Network Details page, under Resources, click Security Lists (2).
         ![COMPUTE](./images/03vcn09.png " ")
 
-16.	On Security Lists in <Compartment Name> Compartment, click Security List for Private Subnet-MDS_VCN.
+15.	On Security Lists in <Compartment Name> Compartment, click Security List for Private Subnet-MDS_VCN.
 
     ![COMPUTE](./images/03vcn10.png " ")
 
-17.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click Add Ingress Rules.
+16.	On Security List for Private Subnet-MDS_VCN  page, under Ingress Rules, click Add Ingress Rules.
     ![COMPUTE](./images/03vcn11.png " ")
 
-18.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0, Destination Port Name 3306, 33060, and Description  
+17.	On Add Ingress Rule, add an Ingress Rule with Source CIDR 0.0.0.0/0, Destination Port Name 3306, 33060, and Description  
 
-19. Click Add Ingress Rule.
+18. Click Add Ingress Rule.
     ![COMPUTE](./images/03vcn12.png " ")
 
-20.	On Security List for Private Subnet-MDS_VCN page
- - New Ingress Rules will be shown under the Ingress Rules List
+19.	On Security List for Private Subnet-MDS_VCN page
+ 
+ New Ingress Rules will be shown under the Ingress Rules List
     ![COMPUTE](./images/03vcn13.png " ")
 
 ## **TASK 4:** Create a MySQL Database System.
@@ -247,27 +248,33 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 4. Make sure **MDS_Sandbox** compartment is selected. 
  
 5. Choose an operating system or image source 
-    - for this lab , select Oracle Linux
+    
+    for this lab , select Oracle Linux
  
 6. Edit Configure placement and hardware
    
 7. Select the Availability Domain and Instance Shape
-    - select VM.Standard.E2.1.Micro
+
+    select VM.Standard.E2.1.Micro
     ![COMPUTE](./images/05compute03.png " ")
 
 8. For VCN make sure **MDS_VCN** is selected, "Assign a public IP address" should be set to Yes.  
     ![COMPUTE](./images/05compute04.png " ")
 
 9. If you have not already created your SSH key
- - perform **Lab 1: Create Local SSH Key**.  
- - When you are done return to the next line.
+
+    * Perform Lab 1: Create Local SSH Key
+
+    * When you are done return to the next line
+
 10. In the Add SSH keys section, generate an SSH key pair or upload your own public key. 
+
 11. Select one of the following options: 
-- **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.
-- **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.  
-- **Choose SSH key files:** Upload the public key portion of your key pair. Either browse to the key file that you want to upload, or drag and drop the file into the box. To provide multiple keys, press and hold down the Command key (on Mac) or the CTRL key (on Windows) while selecting files.
-- **Paste SSH keys:** Paste the public key portion of your key pair in the box.
-- **No SSH keys:** Do NOT select this option! You will not be able to connect to the Compute Instance using SSH.
+    * **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.
+    * **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.  
+    * **Choose SSH key files:** Upload the public key portion of your key pair. Either browse to the key file that you want to upload, or drag and drop the file into the box. To provide multiple keys, press and hold down the Command key (on Mac) or the CTRL key (on Windows) while selecting files.
+    * **Paste SSH keys:** Paste the public key portion of your key pair in the box.
+    * **No SSH keys:** Do NOT select this option! You will not be able to connect to the Compute Instance using SSH.
      ![COMPUTE](./images/05compute06.png " ")
 
 12. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as Provisioning during the creation
@@ -293,11 +300,13 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
     
 6. Enter the username **opc** and the Public **IP Address**.
 
-- Note: The **MDS_Client**  shows the  Public IP Address as mentioned on TASK 5: #10
+    * Note: The **MDS_Client**  shows the  Public IP Address as mentioned on TASK 5: #10
     
-- (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**)
+    * (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170.990**)
 
-    `$ ssh -i ~/.ssh/id_rsa opc@&<your_compute_instance_ip>;`
+     ````
+    <copy>ssh -i ~/.ssh/id_rsa opc@&<your_compute_instance_ip>;</copy>
+     ````
 
     ![Connect](./images/06connect01.png " ")
 
@@ -305,49 +314,60 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 
 8. Install MySQL release package  with the following command:
 
-    `[opc@...]$ sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm`
+      ````
+    <copy>sudo yum -y install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
+     ````   
 
     ![Connect](./images/06connect03.png " ")
 
 9. Install MySQL Shell with the following command 
 
-    `[opc@...]$ sudo yum install –y mysql-shell`
+     ````
+    <copy>sudo yum install –y mysql-shell</copy>
+     ````
+
     ![Connect](./images/06connect05.png " ")
  
 10. From your Compute instance, connect to MySQL using the MySQL Shell client tool. 
     
-   - The endpoint (IP Address) can be found in the MySQL Database System Details page, under the "Endpoints" resource. 
+    The endpoint (IP Address) can be found in the MySQL Database System Details page, under the "Endpoints" resource. 
 
     ![Connect](./images/06connect06.png " ")
 
 11.  Use the following command to connect to MySQL using the MySQL Shell client tool.
 
-    (Example  **mysqlsh -uadmin -p -h132.145.170.990**)
-    
-    `[opc@...]$ mysqlsh -u<MDS_admin_username> -p -h<MDS_endpoint>`
+    (Example  **mysqlsh -uadmin -p -h132.145.170....**)
+
+     ````
+    <copy>mysqlsh -u<MDS_admin_username> -p -h<MDS_endpoint> </copy>
+     ````
 
     ![Connect](./images/06connect07.png " ")
 
 12. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
 
 13. Type the following command at the prompt:
-    
-    `\SQL`
+
+    **\sql**
 
     ![Connect](./images/06connect13.png " ")
 
 14. To display a list of databases, type the following command at the prompt:
-   
-    `SHOW DATABASES;`
+
+     ````
+    <copy>SHOW DATABASES;</copy>
+     ````   
     
 15. To display the database version, current_date, and user type the following command at the prompt:
-
-    `SELECT VERSION(), CURRENT_DATE, USER();`
+     ````
+    <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
+     ````
 
 16. To display MysQL user and host from user table type the following command at the prompt:
-    
-    `SELECT USER, HOST FROM mysql.user;`
-
+   
+     ````
+    <copy>SELECT USER, HOST FROM mysql.user;</copy>
+     ````
 17. (Optional) At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 18. In your pre installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
@@ -373,21 +393,21 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 ![MDS](./images/04mysql07.png " ")
 
 5. Select one of the following actions:
-- Start: Starts a stopped Database System. After the Database System is started, the Stop action is enabled and the Start option is disabled.
-- Stop: Stops a running Database System. After the Database System is powered off, the Start action is enabled.
-- Restart: Shuts down a Database System, and restarts it.
-- Note: Stopping a Database System stops billing for all OCPUs associated with it. 
-- Billing continues for storage. 
-- Billing for OCPUs resumes if you restart the Database System.
-- If you selected Stop or Restart, the Stop/Restart MySQL Database System dialog is displayed.
+    * Start: Starts a stopped Database System. After the Database System is started, the Stop action is enabled and the Start option is disabled.
+    * Stop: Stops a running Database System. After the Database System is powered off, the Start action is enabled.
+    * Restart: Shuts down a Database System, and restarts it.
+    * Note: Stopping a Database System stops billing for all OCPUs associated with it. 
+    * Billing continues for storage. 
+    * Billing for OCPUs resumes if you restart the Database System.
+    * If you selected Stop or Restart, the Stop/Restart MySQL Database System dialog is displayed.
 
 6. Select a shutdown type:
-- Fast: Flushes dirty pages before shutting down the Database System. 
-- Some flush operations must be performed during next startup, potentially increasing the duration of the startup process.
-- Slow: Flushes dirty pages and purges undo log pages for older transactions. 
--  The shutdown itself can take longer, but the subsequent startup is faster.
-- Immediate: Does not flush dirty pages and does not purge any undo log pages. 
-- Stops MySQL immediately. Page flushes and log purging will take place during the next startup, increasing the duration of the startup process.
+    * Fast: Flushes dirty pages before shutting down the Database System. 
+    * Some flush operations must be performed during next startup, potentially increasing the duration of the startup process.
+    * Slow: Flushes dirty pages and purges undo log pages for older transactions. 
+    * The shutdown itself can take longer, but the subsequent startup is faster.
+    * Immediate: Does not flush dirty pages and does not purge any undo log pages. 
+    * Stops MySQL immediately. Page flushes and log purging will take place during the next startup, increasing the duration of the startup process.
 
 7. Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
