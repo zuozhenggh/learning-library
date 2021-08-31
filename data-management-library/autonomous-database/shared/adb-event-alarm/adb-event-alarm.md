@@ -34,7 +34,7 @@ OCI Notifications service enables you to set up communication channels for publ
 
 **Message**: The content that is published to a topic. Each message is delivered at least once per subscription.
 
-In Steps 1 through 7, you create a notification topic with an email subscription, then create a rule that triggers a message (email) when a database is stopped.
+In Tasks 1 through 7, you create a notification topic with an email subscription, then create a rule that triggers a message (email) when a database is stopped.
 
 ## Task 1: Sign in to OCI Console and Create a Notification Topic
 
@@ -53,7 +53,7 @@ In Steps 1 through 7, you create a notification topic with an email subscription
 
 ## Task 2: Create a Subscription to the Topic
 
-Now that you have created a notification topic, create a subscription to that topic, so that you can receive email alerts when a condition changes. (You will create a rule with conditions in a following step.)
+Now that you have created a notification topic, create a subscription to that topic, so that you can receive email alerts when a condition changes. (You will create a rule with conditions in a following task.)
 
 In this lab, you create an email subscription. Subscriptions can be defined to trigger emails or pager notifications (for on-call staff whose phones will be paged.)
 
@@ -153,7 +153,7 @@ Check the email account you specified to verify that a notification email was se
 
 ## **PART 2 - Define an Alarm that Will Email a Notification When CPU Utilization Exceeds a Specific Percentage**
 
-In Steps 8 through 10, define an alarm that triggers an email when CPU utilization exceeds a percentage level that you set.
+In Tasks 8 through 10, define an alarm that triggers an email when CPU utilization exceeds a percentage level that you set.
 
 **Note:** For convenience, use the same topic and subscription that you defined in Part 1. You could define new ones, if you prefer.
 
@@ -196,14 +196,14 @@ In Steps 8 through 10, define an alarm that triggers an email when CPU utilizati
 
 - **DESTINATION SERVICE:** Select **Notifications Service**
 - **COMPARTMENT**: Select your compartment.
-- **TOPIC**: Select the topic you defined earlier in Part 1 > Step 1 of this lab.Click **Save alarm**.
+- **TOPIC**: Select the topic you defined earlier in Part 1 > Task 1 of this lab. Click **Save alarm**.
 
   ![ALT text is not available for this image](images/2619005285.png)
 
 ## Task 9: Re-run the Procedure in the Auto Scaling Lab to Create a CPU Utilization that Triggers the Alarm
 
 1. Return to this workshop's Auto Scaling lab.  
-2. In Part 2 of that lab, perform Step 5. Run the `**test_proc**` procedure concurrently in 3 SQL Developer Web query worksheet instances, which should result in CPU utilization greater than the 30% specified as the triggering level in the alarm. 
+2. In Part 2 of that lab, perform Task 5. Run the `**test_proc**` procedure concurrently in 3 SQL Developer Web query worksheet instances, which should result in CPU utilization greater than the 30% specified as the triggering level in the alarm. 
 
 ## Task 10: Verify that an Email Notification Was Sent
 

@@ -583,9 +583,8 @@ In this lab, you will:
 15. Click **Compare & pull request** > **Create pull request**. **Merge pull request** > **Confirm merge**. 
 
 16. When finished, you will receive this message: *Pull request successfully merged and closed*. Click **Delete branch**.
-
-- on GitHub click on cicd-ws-rep00 to refresh page
-- Compare & pull request > Create pull request. Merge pull request > Confirm merge. Delete branch.
+    - on GitHub click on cicd-ws-rep00 to refresh page
+    - Compare & pull request > Create pull request. Merge pull request > Confirm merge. Delete branch.
 
 
 ## Task 6: Modify code and use Git to version changes
@@ -725,32 +724,28 @@ In this lab, you will:
 1. This is **Developer #3** from your team, that has to work on a new project, using a new database **ATPdev02**. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
 2. On Oracle Cloud Console, click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
-
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
-- Database name: [Your Initials]Dev02 (e.g. VLTDev02)
-- Choose a workload type: Transaction Processing
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: disabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
+    - Database name: [Your Initials]Dev02 (e.g. VLTDev02)
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: disabled
 
 3. Under Create administrator credentials:
-
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 4. Under Choose network access:
-
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 5. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
 6. Download and unzip the client credentials `Wallet_[Your Initials]Dev02.zip` file, selecting instance wallet file, on the ClientVM. If you use the Firefox browser on the Remote Desktop connection, it will be downloaded in folder `/home/oracle/Downloads/`.
 
 7. Specify a wallet password.
-
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 8. Set the location of your wallet file for your **Dev02** ATP service.
 

@@ -21,7 +21,7 @@ For this lab you will need Oracle Cloud account and Developer Cloud service inst
 
 ## Fixing the issue in code
 
-### **Task $1: 1**: Check for the Issue in SonarQube
+### Task 1: Check for the Issue in SonarQube
 
 - Continuing the previous lab, go to the issues page in sonarQube, for this workshop we will solve the issue type **Bug**.
 
@@ -35,7 +35,7 @@ For this lab you will need Oracle Cloud account and Developer Cloud service inst
 
     ![](images/300/3.png)
 
-### **Task $1: 2**: Create issue in Developer Cloud Service
+### Task 2: Create issue in Developer Cloud Service
 
 - Go back to Oracle Cloud, navigate back to your MyServices dashboard by selecting the **Hamburger Menu** and clicking **MyServices Dashboard**.
 
@@ -71,7 +71,7 @@ For this lab you will need Oracle Cloud account and Developer Cloud service inst
 
     ![](images/300/Lab300_bug.png)
 
-### **Task $1: 3**: Edit Code in DevCS Git Repo
+### Task 3: Edit Code in DevCS Git Repo
 
 - Click on **Git** in left panel to see the code repository.
 
@@ -93,7 +93,7 @@ Reason of error: Using return, break, throw, and so on from a finally block supp
 
     ![](images/300/10.png)
 
-### **Task $1: 4**: Check the SonarQube for Issue Fix
+### Task 4: Check the SonarQube for Issue Fix
 
 - With the job already configured to run automatically on commit, go to SonarQube server dashboard. And you can see there are zero bugs shown.
 
@@ -103,7 +103,7 @@ Reason of error: Using return, break, throw, and so on from a finally block supp
 
     ![](images/300/12.png)
 
-### **Task $1: 5**: Close the Issue in Developer Cloud Service
+### Task 5: Close the Issue in Developer Cloud Service
 
 - Go back to Developer cloud service and click on **Issues** in left panel.
 

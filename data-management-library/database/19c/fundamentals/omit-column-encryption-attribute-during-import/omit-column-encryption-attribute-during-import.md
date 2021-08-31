@@ -4,154 +4,188 @@
 ## Introduction
 In the Oracle Public Cloud environment, data is encrypted by default using Transparent Data Encryption (TDE) and the encrypted tablespace feature, but not the encrypted column feature. If an exported table holds encrypted columns, there must be a method to import the table and suppress the encryption clause associated with the table creation during the import operation.
 
-Estimated Lab Time: 5 minutes
+In this lab, you use the Oracle Data Pump Import utility (impdp) to simulate an import into a PDB, once with the `ENCRYPT` attribute, and once without it. Use the `workshop-installed` compute instance.
+
+Estimated Time: 5 minutes
 
 ### Objectives
 
-Learn how to do the following:
+In this lab, you will:
 
-- Display the table column **ENCRYPT** attribute before import
-- Import the table without the **ENCRYPT** Attribute
-
-
+- Import a table with the `ENCRYPT` attribute
+- Import a table without the `ENCRYPT` attribute
+- Reset your environment
 
 ### Prerequisites
 
-Be sure that the following tasks are completed before you start:
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance.
 
-- Lab 4 completed.
-- Oracle Database 19c installed
-- A database, either non-CDB or CDB with a PDB.
+## Task 1: Import a table with the `ENCRYPT` attribute
 
+1. Open a terminal window on the desktop.
 
-## Task 1: Display the table column **ENCRYPT** attribute before import
-
-1. First, switch to the **oracle** user.
-   
-    ```
-    $ sudo su - oracle
-    ```
-
-2. Switch to the **/home/oracle/labs/19cnf** directory.
-
-    ````
-    $ cd /home/oracle/labs/19cnf
-    ````
-<!--
-3. Download the **tab.dmp** file onto your compute instance.
-   
-    ```
-    $ wget https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-dp-import-column-encryption-attribute/files/tab.dmp
-    ```
--->
-3. Before importing the table without its **ENCRYPT** column attribute, verify that the table exported in the **/home/oracle/labs/19cnf/tab.dmp** dump file has an encrypted column.
-
-4. Log in to a test non-CDB as the **system** user.
+2. Switch to the `$HOME/labs/19cnf` directory.
 
     ```
-    $ sqlplus system/oracle
-    ```
->**Note**: **oracle** is the default password for the **system** user.
-
-5. Create the directory to point to the location of the dump file.
-
-    ```
-    SQL> CREATE DIRECTORY dp AS '/home/oracle/labs/19cnf';
-
-    SQL> EXIT; 
-    ```
-6. Generate the SQL file from the Data Pump export **/home/oracle/labs/19cnf/tab.dmp** dump file by simulating an import into the non-CDB.
-
-    ```
-    $ impdp system DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log
-    ```
->**Note**: You will be prompted to enter your password.
-
-7. Verify the ouput
-
-    ```
-    $ cat tabenc1.sql
-    ```
-    ```
-    ...
-    CREATE TABLE "TEST"."TABENC" 
-    (    "C1" NUMBER, 
-    "LABEL" VARCHAR2(50 BYTE) ENCRYPT USING 'AES192' 'SHA-1'
-    ) SEGMENT CREATION IMMEDIATE 
-    PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
-    NOCOMPRESS LOGGING
-    STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-    PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-    BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-    TABLESPACE "SYSTEM" ;
-    ...
-    ```
->**Note**: Notice the **ENCRYPT USING 'AES192' 'SHA-1'** in the **LABEL** column definition.
-<!--
-5. If you have substeps, still use numbered steps:
-
-    1. Substep 1.
-
-    2. Substep 2.
-
-6. If you have a graphic, please include the ALT info in the square brackets and the title info in the double-quotes.
-
-  ![Stack Information](images/stack-information-page.png "Stack Information page")
-
-
-5. If you have a note, please use this format:
-
-    > **Note**: This is a note.
-
-6. If you have code, please use this format without any copy tags or highlightjs info. You can include prompts.
-
-    ```
-    $ Code line 1
-    # Code line 2
-    ```
--->
-
-
-## Task 2: Import the table without the **ENCRYPT** Attribute
-
-1. Generate the SQL file from the Data Pump export **/home/oracle/labs/19cnf/tab.dmp** dump file by simulating an import into the non-CDB omitting the **ENCRYPT** attribute of the LABEL column of the **TEST.TABENC** table into an encrypted tablespace such as **TEST**.
-
-    ```
-    $ impdp DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc2 TRANSFORM=OMIT_ENCRYPTION_CLAUSE:Y REMAP_TABLESPACE=system:test LOGFILE=enc2.log
+    $ <copy>cd $HOME/labs/19cnf</copy>
     ```
 
-2. Verify
+3. Verify that `tab.dmp` exists in this directory. The `tab.dmp` file was generated via the Oracle Data Pump Export utility. It contains table data and database metadata and is written in a proprietary format.
+
+    ```                
+    $ <copy>ls tab.dmp</copy>
+
+    tab.dmp
+    ```
+
+4. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
-    $ cat tabenc2.sql
+    $ <copy>. oraenv</copy>
+    CDB1
     ```
 
-    ```
-    ...
-    CREATE TABLE "TEST"."TABENC" 
-    (    "C1" NUMBER, 
-        "LABEL" VARCHAR2(50 BYTE)
-     ) SEGMENT CREATION IMMEDIATE 
-    PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
-    NOCOMPRESS LOGGING
-    STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-    PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-    BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-    TABLESPACE "TEST" ;
-    ...
-    ```
-    >**Note**: The **ENCRYPT** attribute of the **LABEL** column in the **TEST.TABENC** table is not set.
-3. Clean the environment.
+
+5. Connect to PDB1 as the `SYSTEM` user.
 
     ```
-    $ rm tabenc*.sql enc*.log
+    $ <copy>sqlplus system/Ora4U_1234@PDB1</copy>
     ```
+
+6. Create a directory called `dp` that points to the location of the dump file. Later, this directory is also used for storing generated log and SQL files.
+
+    ```
+    SQL> <copy>CREATE DIRECTORY dp AS '/home/oracle/labs/19cnf';</copy>
+
+    Directory created.
+    ```
+
+7. Exit SQL*Plus.
+
+    ```
+    SQL> <copy>EXIT</copy>
+    ```
+
+8. Generate a SQL file from the Oracle Data Pump Export `tab.dmp` dump file by simulating an import into PDB1. By using the `SQLFILE` parameter, `impdp` simply generates the SQL DDL that the utility would otherwise execute without it.
+
+    ```
+    $ <copy>impdp SYSTEM/Ora4U_1234@PDB1 DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log</copy>
+
+    Import: Release 19.0.0.0.0 - Production on Thu Aug 26 16:08:45 2021
+    Version 19.12.0.0.0
+
+    Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+    Connected to: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Master table "SYSTEM"."SYS_SQL_FILE_FULL_01" successfully loaded/unloaded
+    Starting "SYSTEM"."SYS_SQL_FILE_FULL_01":  SYSTEM/********@PDB1 DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc1 LOGFILE=enc.log
+    Processing object type TABLE_EXPORT/TABLE/TABLE
+    Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+    Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
+    Job "SYSTEM"."SYS_SQL_FILE_FULL_01" successfully completed at Thu Aug 26 16:08:53 2021 elapsed 0 00:00:04
+    ```
+
+9.  View the `tabenc1.sql` file to verify that the `ENCRYPT` attribute is set on the `LABEL` column. Look for this line in the file: `"LABEL" VARCHAR2(50 BYTE) ENCRYPT USING 'AES192' 'SHA-1'`.
+
+    ```
+    $ <copy>cat tabenc1.sql</copy>
+
+    -- CONNECT SYSTEM
+    ALTER SESSION SET EVENTS '10150 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10904 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '25475 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10407 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10851 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '22830 TRACE NAME CONTEXT FOREVER, LEVEL 192 ';
+    -- new object type path: TABLE_EXPORT/TABLE/TABLE
+    CREATE TABLE "TEST"."TABENC"
+       (  "C1" NUMBER,
+	    "LABEL" VARCHAR2(50 BYTE) ENCRYPT USING 'AES192' 'SHA-1'
+       ) SEGMENT CREATION IMMEDIATE
+      PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+     NOCOMPRESS LOGGING
+      STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+      PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+      BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+      TABLESPACE "SYSTEM" ;
+    -- new object type path: TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+    -- new object type path: TABLE_EXPORT/TABLE/STATISTICS/MARKER
+    ```
+
+## Task 2: Import the table without the `ENCRYPT` attribute
+
+1. Generate the SQL file from the Oracle Data Pump Export `tab.dmp` dump file by simulating an import into PDB1. The following command removes the `ENCRYPT` clause via `TRANSFORM=OMIT_ENCRYPTION_CLAUSE:Y`. You can also remap an unencrypted tablespace to an encrypted tablespace. In this step, we remap `system` to `test`.
+
+    ```
+    $ <copy>impdp SYSTEM/Ora4U_1234@PDB1 DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc2 TRANSFORM=OMIT_ENCRYPTION_CLAUSE:Y REMAP_TABLESPACE=system:test LOGFILE=enc2.log</copy>
+
+    Import: Release 19.0.0.0.0 - Production on Thu Aug 26 16:16:10 2021
+    Version 19.12.0.0.0
+
+    Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+    Connected to: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Master table "SYSTEM"."SYS_SQL_FILE_FULL_01" successfully loaded/unloaded
+    Starting "SYSTEM"."SYS_SQL_FILE_FULL_01":  SYSTEM/********@PDB1 DIRECTORY=dp DUMPFILE=tab.dmp SQLFILE=tabenc2 TRANSFORM=OMIT_ENCRYPTION_CLAUSE:Y REMAP_TABLESPACE=system:test LOGFILE=enc2.log
+    Processing object type TABLE_EXPORT/TABLE/TABLE
+    Processing object type TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+    Processing object type TABLE_EXPORT/TABLE/STATISTICS/MARKER
+    Job "SYSTEM"."SYS_SQL_FILE_FULL_01" successfully completed at Thu Aug 26 16:16:14 2021 elapsed 0 00:00:03
+    ```
+
+2. View the `tabenc2.sql` file to verify that the `ENCRYPT` attribute of the `LABEL` column in the `TEST.TABENC` table is not set. Look for this line in the file: `"LABEL" VARCHAR2(50 BYTE)`. Notice that the `ENCRYPT` attribute is not set on the `LABEL` column.
+
+    ```
+    $ <copy>cat tabenc2.sql</copy>
+
+    -- CONNECT SYSTEM
+    ALTER SESSION SET EVENTS '10150 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10904 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '25475 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10407 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '10851 TRACE NAME CONTEXT FOREVER, LEVEL 1';
+    ALTER SESSION SET EVENTS '22830 TRACE NAME CONTEXT FOREVER, LEVEL 192 ';
+    -- new object type path: TABLE_EXPORT/TABLE/TABLE
+    CREATE TABLE "TEST"."TABENC"
+       ("C1" NUMBER,
+      "LABEL" VARCHAR2(50 BYTE)
+       ) SEGMENT CREATION IMMEDIATE
+      PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+     NOCOMPRESS LOGGING
+      STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+      PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+      BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+      TABLESPACE "TEST" ;
+    -- new object type path: TABLE_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+    -- new object type path: TABLE_EXPORT/TABLE/STATISTICS/MARKER
+    ```
+
+## Task 3: Reset your environment
+
+1. Run the following  command to remove the files generated by the Oracle Data Pump Import utility. Be sure to execute the command exactly as it appears below or you may risk deleting SQL files critical to this workshop.
+
+    ```
+    $ <copy>rm tabenc*.sql enc*.log</copy>
+    ```
+
+2. Close the terminal window.
+
+    ```
+    $ <copy>exit</copy>
+    ```
+
+
+
 ## Learn More
 
-- [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
+- [Database New Features Guide (Release 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
+- [Oracle Data Pump Import](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/datapump-import-utility.html#GUID-D11E340E-14C6-43B8-AB09-6335F0C1F71B)
+- [Oracle Data Pump Export](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-5F7380CE-A619-4042-8D13-1F7DDE429991)
+- [Using Oracle Data Pump with CDBs](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-overview.html#GUID-BD76463C-0867-477E-983F-4329610EC458)
 
 ## Acknowledgements
 
-* **Author**- Dominique Jeunot, tbd, tbd
-* **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, June 2021
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in
+- **Author**- Dominique Jeunot, Consulting User Assistance Developer
+- **Contributor** - Jody Glover, Principal User Assistance Developer
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021

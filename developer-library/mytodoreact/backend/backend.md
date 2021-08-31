@@ -4,7 +4,7 @@
 
 In this lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
 
-Estimated time: ~25-minutes.
+Estimated time: 25-minutes
 
 ### Understanding the Java/backend application
 
@@ -63,9 +63,9 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 2. Make sure to be in backend/target/classes/wallet directory then execute
 	
-   ```
-	<copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
-	```
+      ```
+	   <copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+	   ```
 
 3. Pick mtdrb_tp service alias (see the list of aliases in
    ./backend/target/classes/wallet/tnsnames.ora)
@@ -96,6 +96,8 @@ The backend is implemented using the following Java classes (under ./backend/src
     - Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
+    ![](images/21-dev-services-registry.png " ")
+
    ![](images/Registry-root-compart.png " ")
 
 9. Mark Access as Public  (if Private)  
@@ -111,12 +113,9 @@ The backend is implemented using the following Java classes (under ./backend/src
 	<copy>cd $MTDRWORKSHOP_LOCATION/backend; ./deploy.sh</copy>
 	```
 
-	--> service/todolistapp-helidon-se-service created
-	
-	--> deployment.apps/todolistapp-helidon-se-deployment created
+   ![](images/deploy-sh.png " ")
 
-2. Check the status using the following commands
-$ kubectl get services
+2. Check the status using the following commands:
 
 	The following command returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API
 	```
@@ -148,6 +147,9 @@ $ kubectl get services
 	```
 		<copy>cd $MTDRWORKSHOP_LOCATION/backend; ./undeploy.sh</copy>
 	```
+
+   ![](images/deploy-sh.png " ")
+
 2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 
@@ -156,24 +158,27 @@ $ kubectl get services
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the hamburger  menu navigate **Developer Services** > **API Management > Create Gateway**
-   ![](images/API-Gateway-menu.png " ")
+1. From the hamburger menu navigate to **Developer Services** > **Gateways**
+   ![](images/gateways.png " ")
+
+2. Select **Create Gateway**
+   ![](images/click-create-gateway.png " ")
 
 2. Configure the basic info: name, compartment, VCN and Subnet
-    - VCN: pick on of the vitual circuit network
+    - VCN: pick one of the virtual circuit networks
     - Subnet pick the public subnet   
 	
-	The click "Create".
-  	![](images/Basic-gateway.png " ")
+	Then click "Create".
+   ![](images/create-gateway.png " ")
 
-3. Click on Todolist gateway
-    ![](images/Gateway.png " ")
+3. The todolist gateway was successfully created.
+    ![](images/gateway.png " ")
 
 4. Click on Deployments
-   ![](images/Deployment-menu.png " ")
+   ![](images/deployment-menu.png " ")
 
-5. Create a todolist deployment
-   ![](images/Deployment.png " ")
+5. Click **Create Deployment**
+   ![](images/deployment.png " ")
 
 6. Configure Cross-origin resource sharing (CORS) policies.
 	- CORS is a security mechanism that will prevent running application loaded from origin A  from using resources from another origin B.
@@ -195,8 +200,8 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
 ## Task 6: Testing the backend application through the API Gateway
 
-1. Navigate to the newly create Gateway Deployment Detail an copy the endpoint
-   ![](images/Gateway-endpoint.png " ")
+1. Navigate to the newly created Gateway Deployment Detail and copy the endpoint
+   ![](images/gateway-endpoint.png " ")
 
 2. Testing through the API Gateway endpoint
   postfix the gateway endpoint with "/todolist" as shown in the image below
@@ -210,4 +215,4 @@ Congratulations, you have completed lab 2; you may now [proceed to the next lab]
 
 * **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Anoosha Pilli, Database Product Management,  April 2021
+* **Last Updated By/Date** - Kamryn Vinson, July 2021

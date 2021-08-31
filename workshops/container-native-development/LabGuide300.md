@@ -33,7 +33,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Fix Java Microservice
 
-### **Task $1: 1**: Modify Java code and commit to GitHub
+### Task 1: Modify Java code and commit to GitHub
 
 - Open **[Wercker](https://app.wercker.com)** in a new tab or browser window, or switch to it if you already have it open. In the top navigation bar, click **Pipelines**, then click on your **twitter-feed** application.
 
@@ -67,7 +67,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/300/9.png)
 
-### **Task $1: 2**: Verify Execution of Wercker Workflow
+### Task 2: Verify Execution of Wercker Workflow
 
 - Switch to your **Wercker** browser tab. You will see that the workflow execution is already in progress, having been triggered by a webhook when you committed your code change. Wait for the **deploy-to-cluster** pipeline to begin executing.
 
@@ -85,7 +85,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
   ![](images/300/11.png)
 
-### **Task $1: 3**: Validate Product Catalog application functionality
+### Task 3: Validate Product Catalog application functionality
 
 - Still in the Kubernetes dashboard, click **Services** from the left side navigation menu. Then click the **External endpoint URL** for the **product-catalog-service**.
 

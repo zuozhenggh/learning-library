@@ -4,7 +4,7 @@ Welcome to the Oracle Database Cloud Service Workshop. This particular version i
 
 ## Steps
 
-### **Task $1: 1**: Acquire an Oracle Cloud trial account
+### Task 1: Acquire an Oracle Cloud trial account
 
 1. If you already have an Oracle Cloud trial account, you may skip to the next part.
 
@@ -14,7 +14,7 @@ Welcome to the Oracle Database Cloud Service Workshop. This particular version i
 
    ![](images/0/get-started-email.png " ")
 
-### **Task $1: 2**: Navigate to Lab 1
+### Task 2: Navigate to Lab 1
 
 - [Click here](1.md) to navigate to Lab 1. Alternatively, you can click the navigation menu icon in the upper-left corner of the browser window to see a list of modules in the lab.
 

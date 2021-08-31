@@ -20,7 +20,7 @@ Go to **Digital Assistant Dashboard** as we did on **Lab 3**. As a reminder chec
 
 ![ODA Menu Service Console](./images/oda_lab5_2.png)
 
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 20 minutes.
 
 ## Task 1: Build your first Skill
 
@@ -91,7 +91,7 @@ Let's create a **Greeting Intent**.
 
     - **Conversation Name**: Greeting
     - **Name**: Greeting
-    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `Hi` and click enter. Wait to be added as part of the intents. Type on the same field `Hello` and wait to be added as before
+    - **Utterances to Add**: In this field is where you have ti type the different Greetings that you want to include as part of the Intent. Type on this field `Hi` and click enter. Wait to be added as part of the intents. Type on the same field `Hello` and wait to be added as before.
 
     The two **Intents** that you added a few seconds ago will be visible in the page. Check the following screenshot to confirm.
 

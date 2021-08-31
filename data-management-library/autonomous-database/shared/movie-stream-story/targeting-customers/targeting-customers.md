@@ -4,7 +4,7 @@
 
 Patterns are everywhere in business but what is a pattern? They are usually defined as a repetitive series or sequence of specific events or actions and they occur everywhere in business. The ability to find, analyze and quantify individual or groups of patterns within a data set is now a key business requirement. It can help you gain a better understanding of your customers’ behavior and associated operational activities, seek out new opportunities to drive additional revenue streams and even help identify malicious activities that could lead to your business incurring significant costs.
 
-Autonomous Data Warehouse comes complete with native pattern matching capabilities. This brings the simplicity and efficiency of the most common data analysis language (SQL) to the process of identifying patterns within a data set. It offers significant gains in term of performance, maintainability and scalability compared to the legacy ways of solving pattern matching-like problems. 
+Autonomous Data Warehouse comes complete with native pattern matching capabilities. This brings the simplicity and efficiency of the most common data analysis language (SQL) to the process of identifying patterns within a data set. It offers significant gains in term of performance, maintainability and scalability compared to the legacy ways of solving pattern matching-like problems.
 
 Estimated time: 15 minutes
 
@@ -20,16 +20,23 @@ Estimated time: 15 minutes
 
 - Learn how to define search criteria for patterns
 
+### Prerequisites
+- This lab requires completion of the previous labs in the Contents menu on the left.
+- You can complete the prerequisite labs in two ways:
+
+    a. Manually run through the labs.
+
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ### Overview Of Business Problem
 
 The marketing team at MovieStream are planning their next campaign which is to promote a new package of carefully selected comedy-family-sci-fi movies to specific customers.
 
-The campaign will be driven by an email blast containing a limited-time discount code. The team has a specific customer profile they want to target, which is customers that watch a lot of family movies each quarter and the occasional sci-fi movie within the same quarter. They have asked you to find the list of customers who meet this very precise profile. How will you find those customers? 
+The campaign will be driven by an email blast containing a limited-time discount code. The team has a specific customer profile they want to target, which is customers that watch a lot of family movies each quarter and the occasional sci-fi movie within the same quarter. They have asked you to find the list of customers who meet this very precise profile. How will you find those customers?
 
 The business requirement breaks down as follows:
 
-1. Search for customers who have watched at least one family genre movie within a quarter during 2020. 
+1. Search for customers who have watched at least one family genre movie within a quarter during 2020.
 
 2. Filter the customers by those who have watched at least some additional family-related genre movies within a quarter during 2020.
 
@@ -40,12 +47,11 @@ This all sounds very complicated, but using SQL pattern matching, it is very eas
 First we need to understand how our movies are assigned to genres. In the sales fact table there is foreign key which links the sales data to the genre table. Which means for each movie a customer streams we can identify the genre for that movie.
 
 
-## Task 1:  Identifying The Customers Who Watch Family Movies
+## Task 1: Identifying The Customers Who Watch Family Movies
 
-We can find the customers who watched at least 1 family genre movie during a quarter by using the SQL pattern matching feature: **`MATCH_RECOGNIZE`**. This is a very powerful feature and it's worth spending some time reviewing the simple stick ticker example in the documentation: [click here](https://docs.oracle.com/en/database/oracle/oracle-database/21/dwhsg/sql-pattern-matching-data-warehouses.html#GUID-136DAC89-DA17-45C6-9E37-C9892723AC79).
+We can find the customers who watched at least 1 family genre movie during a quarter by using the SQL pattern matching feature: **`MATCH_RECOGNIZE`**. This is a very powerful feature and it's worth spending some time reviewing the simple stock ticker example in the documentation: [click here](https://docs.oracle.com/en/database/oracle/oracle-database/21/dwhsg/sql-pattern-matching-data-warehouses.html#GUID-136DAC89-DA17-45C6-9E37-C9892723AC79).
 
 To map this pattern within our query, we use the following to outline what we are looking for:
-
 ```
 PATTERN (family+)
 ```
@@ -82,28 +88,30 @@ This means that the pattern 'family' looks for movies where the genre is set to 
     );</copy>
     ```
 
-**Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw\_movie\_sales\_fact\_2020) is divided into individual partitions for each customer_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
+    > **Note**: we have already seen concepts such as PARTITION BY and ORDER BY in earlier queries. These keywords enforce similar types of operations when used with pattern matching. In the above example, the data set (vw\_movie\_sales\_fact\_2020) is divided into individual partitions for each customer\_id and the data within each partition is ordered by day and genre to help present the data to the pattern matching process in the most efficient way.
 
 3. The result should be 495,450.
 
+    This shows that we have over 495,450 customers that match this pattern which is too many for the marketing team's project. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
 
-This shows that we have over 495,450 customers that match this pattern which is too many for the marketing team's project. Before we refine our pattern, let's try and get a little bit more information about these customers by extending our query.
+## Task 2: Returning More Information About The Pattern
 
-## Task 2:  Returning More Information About The Pattern
+The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie\_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*). To provide more insight the code below includes two built-in measures called *classifier*  and *match_number*:
 
-The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*):
-
+1. Here is an example of how to extend the data points returned by the pattern matching query (*note you don't have to run the code in this step*):
 
     ```
+    <code class="unselectable">
     MEASURES
     FIRST(family.quarter_name) AS first_quarter,
     LAST(family.quarter_name) AS last_quarter,
     count(family.movie_id) AS family_movies,
     family.movie_id AS movie
+    match_number() as match_number
+    classifier() as classifier</code>
     ```
 
-
-1. Copy and paste the following code into your worksheet:
+2. Copy and paste the following expanded code into your worksheet:
 
     ```
     <copy>SELECT
@@ -130,30 +138,33 @@ The pattern matching process can return information about the pattern it has dis
     DEFINE
     family AS genre = 'Family'
     AND family.quarter_name = FIRST(family.quarter_name)
-    ) mr
-    order by mr.customer_id, match_number;</copy>
+    )
+    order by customer_id, match_number;</copy>
     ```
 
-2. This time we get a lot more information returned by our query. This expanded query shows a row for each occurrence of a customer watching a family movie and it shows the movie. As you scroll through the list of customers, you can see that in some cases each customer watches more than one family movie per month (see the column headed `FAMILY_MOVIES`):
+3. This time we get a lot more information returned by our query. This expanded query shows a row for each occurrence of a customer watching a family movie and it shows the movie. As you scroll through the list of customers, you can see that in some cases each customer watches more than one family movie per month (see the column headed `FAMILY_MOVIES`):
 
-    ![Result of expanded query](images/lab-5d-step-2-substep-2.png)
+    ![Result of expanded query](images/lab-5d-step-2-substep-2.png " ")
 
 ## Task 3: Searching For Family And Family-Related Movies
 
-Now that we understand how our pattern matching query is working, we can extend the pattern search criteria to include additional family-related genres by simply expanding the definition of our pattern as follows:
+Now that we understand how our pattern matching query is working, we can extend the pattern search criteria to include a broader definition of the term family movie. This means including additional genres: comedy and crime. We do this by simply expanding the definition the pattern as follows:
+
+1. The code below shows the newly expanded definition for the PATTERN and DEFINE clauses (*note you don't have to run the code in this step*)
 
     ```
+    <code class="unselectable">
     PATTERN (comedy+ crime drama family+  quarter)
     DEFINE
     comedy as genre = 'Comedy',
     crime as genre = 'Crime',
     family as genre = 'Family',
-    AND FIRST(family.quarter_name) = LAST(family.quarter_name)
+    AND FIRST(family.quarter_name) = LAST(family.quarter_name)</code>
     ```
 
-**Note:** We are defining "family-related" genres as comedy, crime and drama as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, a crime movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
+    > **Note:** We are defining "family-related" genres as comedy and crime as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, a crime movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
 
-1. If we insert the above into our first pattern matching query, we can then paste the following code into our SQL Worksheet:
+2. If we insert the above into our first pattern matching query, we can then paste the following code into our SQL Worksheet:
 
     ```
     <copy>SELECT COUNT(*)
@@ -170,36 +181,36 @@ Now that we understand how our pattern matching query is working, we can extend 
     PATTERN (comedy+ crime family+)
     DEFINE
     comedy as genre = 'Comedy',
-    crome as genre = 'Crime',
+    crime as genre = 'Crime',
     family as genre = 'Family'
     AND family.quarter_name = LAST(comedy.quarter_name)
     ) mr
     order by mr.customer_id, match_number;</copy>
     ```
 
-2. This returns around 2,765 customers:
+3. This returns around 2,765 customers:
 
 Before we do any more work on this query, we should check-in with our marketing team to see if this number is within the range they were expecting.
 
 ## Task 4: Changing Requirements
 
-A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list needs more tweaking. Ideally, they want to target a much smaller list of customers with the first round of this campaign and they need to find customers who like sci-fi movies! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies! 
+A quick Zoom call with the marketing team reveals that they are really pleased to have the list of customers so quickly! However, they think the list needs more tweaking. Ideally, they want to target a much smaller list of customers with the first round of this campaign and they need to find customers who like sci-fi movies! So we need to identify only those customers that have more than a *specific* interest in watching family-related movies, but also like to watch sci-fi movies! The marketing team has also decided that it would be better to swap drama based movies for comedy movies in the search criteria.
 
 How can you adapt the previous query to pick out those customers that really enjoy family style movies and sci-fi movies?  All we need to do is tweak our pattern statement! This means our pattern definition will now look like this:
 
+1. The code below shows the revised definition for the PATTERN and DEFINE clauses (*note you don't have to run the code in this step*)
 
     ```
-    PATTERN (comedy+ crime family+ scifi+)
+    <code class="unselectable">
+    PATTERN (comedy+ drama+ family+ scifi+)
     DEFINE
     comedy as genre = 'Comedy',
-    crime as genre = 'Crime',
+    drama as genre = 'Drama',
     family as genre = 'Family',
-    AND family.quarter_name = LAST(comedy.quarter_name)
-    scifi as genre = 'Sci-Fi'
+    scifi as genre = 'Sci-Fi' AND family.quarter_name = LAST(comedy.quarter_name)</code>
     ```
 
-
-1. We can run the following query to see how many customers match this new pattern:
+2. We can run the following query to see how many customers match this new pattern:
 
     ```
     <copy>SELECT count(*)
@@ -207,27 +218,25 @@ How can you adapt the previous query to pick out those customers that really enj
     MATCH_RECOGNIZE
     (PARTITION BY customer_id ORDER BY day_id, genre
     ONE ROW PER MATCH
-    PATTERN (comedy+ drama+ family+  scifi+),
+    PATTERN (comedy+ drama+ family+  scifi+)
     DEFINE
     comedy as genre = 'Comedy',
     drama as genre = 'Drama',
-    family as genre = 'Family'
-    AND family.quarter_name = LAST(comedy.quarter_name),
-    scifi as genre = 'Sci-Fi'
-    ) mr
+    family as genre = 'Family',
+    scifi as genre = 'Sci-Fi' AND family.quarter_name = LAST(comedy.quarter_name)
     );</copy>
     ```
 
-2. The answer is 314. This should be more in line with what the marketing team is expecting so they can run a quick test campaign to gauge the level of feedback.
+3. The answer is 424. This should be more in line with what the marketing team is expecting so they can run a quick test campaign to gauge the level of feedback.
 
 
-3. To help them validate this smaller list of customers, we will add some additional information into our results by showing whether a movie was matched by our pattern as a family or sci-fi movie (this is shown in the **`classifier`** column.)
+4. To help them validate this smaller list of customers, we will add some additional information into our results by showing whether a movie was matched by our pattern as a family or sci-fi movie (this is shown in the **`classifier`** column.)
 
     ```
     <copy>SELECT
     customer_id,
     comedy_movies,
-    crime_movies,
+    drama_movies,
     family_movies,
     sf_movies,
     first_quarter,
@@ -239,30 +248,29 @@ How can you adapt the previous query to pick out those customers that really enj
     first(family.quarter_name) AS first_quarter,
     last(scifi.quarter_name) AS last_quarter,
     count(comedy.movie_id) AS comedy_movies,
-    count(crime.movie_id) AS crime_movies,
+    count(drama.movie_id) AS drama_movies,
     count(family.movie_id) AS family_movies,
     count(scifi.movie_id) AS sf_movies
     ONE ROW PER MATCH
-    PATTERN (comedy+ crime family+  scifi+)
+    PATTERN (comedy+ drama+ family+  scifi+)
     DEFINE
     comedy as genre = 'Comedy',
-    crime as genre = 'Crime',
-    family as genre = 'Family'
-    AND family.quarter_name = LAST(comedy.quarter_name),
-    scifi as genre = 'Sci-Fi'
-    ) mr
-    order by mr.customer_id, first_quarter, family_movies, sf_movies;</copy>
+    drama as genre = 'Drama',
+    family as genre = 'Family',
+    scifi as genre = 'Sci-Fi' AND family.quarter_name = LAST(comedy.quarter_name)
+    )
+    order by customer_id, first_quarter, family_movies, sf_movies;</copy>
     ```
 
-4. Now we have a much smaller list of customers for our marketing team to review, which should allow them to test out their new campaign.
+5. Now we have a much smaller list of customers for our marketing team to review, which should allow them to test out their new campaign.
 
-    ![Query result showing much smaller list of customers](images/lab-5d-step-4-substep-4.png)
+    ![Query result showing much smaller list of customers](images/lab-5d-task-4-step-5.png " ")
 
 ## Task 5: Job Done
 
 1. The marketing team is happy with this smaller list of customers, which means the last step is to share the results with our marketing team. We can simply send them a file by using the  **Download**  feature on the  **Query Result**  panel.
 
-    ![ALT text is not available for this image](images/lab-5d-step-5-substep-1.png)
+    ![The Download drop-down menu](images/lab-5d-task-5-step-1.png " ")
 
 
 ## Task 6: What About Movies With Multiple Genres?
@@ -271,7 +279,7 @@ The above examples have used a very simple business rule - each movie has a sing
 1. Let's view the movie dimension table:
 
     ```
-    <copy>SELECT 
+    <copy>SELECT
     title,
     genres
     FROM movie</copy>
@@ -279,10 +287,9 @@ The above examples have used a very simple business rule - each movie has a sing
 
 2. Now we can see that each movie has multiple genres.
 
-    ![Query result showing each mvoie having multiple genres](images/lab-5d-step-6-substep-2.png)
+    ![Query result showing each movie having multiple genres](images/lab-5d-step-6-substep-2.png " ")
 
 3. Let's create a new view over the sales data joins that with the movie table and incorporates the column containing the genre information:
-
 
     ```
     <copy>CREATE OR REPLACE VIEW vw_movie_sales_gfact_2020 AS
@@ -318,14 +325,13 @@ The above examples have used a very simple business rule - each movie has a sing
     AND m.movie_id = f.movie_id;</copy>
     ```
 
-Next we need to modify the original pattern definition to use the SQL INSTR function which allows us to search for a specific string within a row:
+    Next we need to modify the original pattern definition to use the SQL INSTR function which allows us to search for a specific string within a row:
 
-![format of the INSTR function](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/img/instr.gif)
+    ![format of the INSTR function](https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/img/instr.gif)
 
-In this context, we need to search the column genre for a specific string such as 'Comedy' or 'Crime' starting at position 1 and we only need to find the first occurrence. If the function finds the string it returns the starting position for the search string.
+    In this context, we need to search the column genre for a specific string such as 'Comedy' or 'Drama' starting at position 1 and we only need to find the first occurrence. If the function finds the string it returns the starting position for the search string.
 
-
-4. Next we modify the previous pattern definition to use the INSTR functionas follow:
+4. Next we modify the previous pattern definition to use the INSTR function as follows:
 
     ```
     <copy>
@@ -344,26 +350,25 @@ In this context, we need to search the column genre for a specific string such a
     first(family.quarter_name) AS first_quarter,
     last(scifi.quarter_name) AS last_quarter,
     count(comedy.movie_id) AS comedy_movies,
-    count(crime.movie_id) AS crime_movies,
+    count(drama.movie_id) AS drama_movies,
     count(family.movie_id) AS family_movies,
     count(scifi.movie_id) AS sf_movies
     ONE ROW PER MATCH
-    PATTERN (comedy+ crime family+  scifi+ quarter)
+    PATTERN (comedy+ drama+ family+  scifi+)
     DEFINE
     comedy AS INSTR(genre, 'Comedy',1,1) > 0,
-    crime AS INSTR(genre, 'Crime',1,1) > 0,
-    family AS INSTR(genre, 'Family',1,1) > 0
-    AND family.quarter_name = LAST(comedy.quarter_name),
-    scifi AS INSTR(genre,'Sci-Fi',1,1) > 0
-    ) mr
-    order by mr.customer_id, first_quarter, family_movies, sf_movies;</copy>
+    drama AS INSTR(genre, 'Drama',1,1) > 0,
+    family AS INSTR(genre, 'Family',1,1) > 0,
+    scifi AS INSTR(genre,'Sci-Fi',1,1) > 0 AND family.quarter_name = LAST(comedy.quarter_name)
+    )
+    order by customer_id, first_quarter, family_movies, sf_movies;</copy>
     ```
 
 5. The result will look like this.
 
-    ![Query result showing results of serching across multiple genres](images/lab-5d-step-6-substep-5.png)
+    ![Query result showing results of searching across multiple genres](images/lab-5d-task-6-step-5.png " ")
 
-
+You may now [proceed to the next lab](#next).
 
 ## Recap
 
@@ -379,10 +384,8 @@ Let's quickly recap what has been covered in this lab:
 
 - Sharing results with other data warehouse users
 
-Please *proceed to the next lab*.
-
 ## **Acknowledgements**
 
 - **Author** - Keith Laker, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Keith Laker, August 2021
