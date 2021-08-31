@@ -49,7 +49,7 @@ Enter:
     cd /home/opc/stage/scripts
      source env_setup.sh
      sqlplus   <\copy>
-     
+
     ```  
 10.  Enter the following credentials:
       * **User Name**: source
@@ -76,6 +76,7 @@ Enter:
       ![](./images/9DP.png " ")
 
 11. Select the record and click the **out-of-sync** icon to display the **Run Configuration** page.
+
 
       ![](./images/10DP.png " ")
 
