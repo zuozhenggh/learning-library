@@ -2,34 +2,29 @@
     "workshoptitle": "Oracle Database 19c New Features",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
-        {
-            "title": "Introduction",
-            "description": "Introduction to Oracle Database 19c and the Oracle Database 19c New Features Workshop.",
-            "filename": "../../intro/intro.md"
-        },
-        {
-            "title": "Getting Started",
-            "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
-        {
-            "title": "Lab 1: Generate SSH Keys - Cloud Shell",
-            "description": "Steps to generate SSH keys using Cloud Shell.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md",
-            "type": "freetier"
-        },
-          {
-              "title": "Lab 2: Obtain a Compute Image with Oracle Database 19c Installed",
-              "description": "Obtain a compute instance that has Oracle Database 19c already installed by using Resource Manager",
-              "filename": "./../../obtain-compute-image-19c-installed/obtain-compute-image-19c-installed.md",
-              "type": "freetier"
-          },
-          {
-              "title": "Lab 3: Name of lab 3",
-              "description": "Description",
-              "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
-              "type": "freetier"
-          },
+      {
+          "title": "Introduction",
+          "description": "Introduction to Oracle Database 19c and the Oracle Database 19c New Features Workshop.",
+          "filename": "../../intro/intro.md"
+      },
+      {
+          "title": "Getting Started",
+          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md",
+          "type": "freetier"
+      },
+      {
+          "title": "Prepare Your Environment",
+          "description": "Steps to create the workshop-staged and workshop-installed compute instances.",
+          "filename": "./../../prepare-environment/prepare-environment.md",
+          "type": "freetier"
+      },
+      {
+          "title": "Verify Your Environment",
+          "description": "Steps to verify the workshop-installed compute instance.",
+          "filename": "./../../verify-environment/verify-environment.md",
+          "type": "freetier"
+      },
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",

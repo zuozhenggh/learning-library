@@ -3,7 +3,7 @@
 ## Introduction
 In this lab you will setup Active Data Guard from a Single Instance database to another Single Instance database. 
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 - Prepare the standby database.
@@ -20,9 +20,9 @@ This lab assumes you have already completed the following labs:
 
 
 
-## **STEP 1:** Prepare the standby host
+## Task 1: Prepare the standby host
 
-The standby host has the database software only installed. You need do some STEP s to prepare the standby host.
+The standby host has the database software only installed. You need do some Task s to prepare the standby host.
 
 1. Connect to the standby VM hosts with opc user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -32,7 +32,7 @@ The standby host has the database software only installed. You need do some STEP
 
    
 
-2. Swtich to **oracle** user.
+2. Switch to **oracle** user.
 
     ```
     <copy>sudo su - oracle</copy>
@@ -107,7 +107,7 @@ The standby host has the database software only installed. You need do some STEP
    
    
 
-## **STEP 2:** Configure Static Listeners 
+## Task 2: Configure Static Listeners 
 
 A static listener is needed for initial instantiation of a standby database. The static listener enables remote connection to an instance while the database is down in order to start a given instance. See MOS 1387859.1 for additional details.  A static listener for Data Guard Broker is optional. 
 
@@ -207,7 +207,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## **STEP 3:** TNS Entries for Redo Transport 
+## Task 3: TNS Entries for Redo Transport 
 
 1. From the primary side, switch as **oracle** user, edit the `tnsnames.ora`
 
@@ -271,7 +271,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## **STEP 4:** Duplicate the Database to Standby  
+## Task 4: Duplicate the Database to Standby  
 
 The standby database can be duplicated from the primary database.
 
@@ -318,7 +318,7 @@ The standby database can be duplicated from the primary database.
 
    
 
-4. Start the database in NOMOUNT status using the init parameter file you create in the previous STEP .
+4. Start the database in NOMOUNT status using the init parameter file you create in the previous Task .
 
     ```
     [oracle@standby dbs]$ <copy>sqlplus / as sysdba</copy>
@@ -585,7 +585,7 @@ The standby database can be duplicated from the primary database.
 
 
 
-## **STEP 5:** Configure Data Guard broker
+## Task 5: Configure Data Guard broker
 
 1. Copy the following command.
 
@@ -699,7 +699,7 @@ If there is a warning message, Warning: ORA-16809: multiple warnings detected fo
 
 Now, the Data Guard is ready. The standby database is in mount status.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 

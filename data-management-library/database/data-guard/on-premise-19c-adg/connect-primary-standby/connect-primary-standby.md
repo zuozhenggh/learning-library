@@ -3,7 +3,7 @@
 ## Introduction
 In a Data Guard configuration, information is transmitted in both directions between the primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases site. 
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 - Open the 1521 port for both hosts.
@@ -20,7 +20,7 @@ This lab assumes you have already completed the following labs:
 
 In this Lab, you can use 2 terminal windows, one connected to the primary host, the other connected to the standby host. 
 
-## **STEP 1:** Open the 1521 port for both database hosts
+## Task 1: Open the 1521 port for both database hosts
 
 1. Connect to the both hosts with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -40,7 +40,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 
    
 
-## **STEP 2:** Enable ssh connect for the oracle user
+## Task 2: Enable ssh connect for the oracle user
 
 1. Work as opc user, edit the ssh configure file on both side
 
@@ -64,7 +64,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
     ```
 
 
-## **STEP 3:** Name Resolution Configure
+## Task 3: Name Resolution Configure
 
 1. Connect as the opc user. Edit `/etc/hosts` on both sides.
 
@@ -87,7 +87,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 
 
 
-## **STEP 4:** Prompt-less SSH configure
+## Task 4: Prompt-less SSH configure
 
 Now you will configure the prompt-less ssh for oracle users between the primary and the standby.
 
@@ -213,7 +213,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     [oracle@standby ~]$ 
     ```
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 

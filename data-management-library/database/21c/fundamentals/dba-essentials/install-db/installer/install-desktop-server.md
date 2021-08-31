@@ -36,7 +36,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Configuration Option](../common/images/db21c-common-001-createdb.png)
 
-	> [](include:sw-only)
+	> If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
 
 	>> For this lab, do not select this option.
 
@@ -51,13 +51,13 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
   ![Typical Configuration](images/db21c-desk-003-config.png)
 
-	[](include:admin-pwd)
+	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	[](include:std-pwd)
+	**Note**: The password must conform to the Oracle recommended standards. 
 
-	> [](include:global-db)
+	> You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
 
-	Along with CDB, Oracle DBCA also creates a PDB as per the **Pluggable database name** field. Click **Next**.
+	Along with CDB, Oracle DBCA also creates a PDB as per the **Pluggable database name** field. For this lab, leave the defaults and click **Next**.
 
 </if>
 
@@ -105,7 +105,12 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Oracle SID](images/db21c-srv-007-id.png)
 
-	[](include:oracle-sid)
+	> _**Oracle SID**_ is a unique name given to an Oracle Database. It distinguishes this instance of Oracle Database from other instances on the host.
+
+	>> You cannot create multiple Oracle Databases on a host with the same SID. If an Oracle Database with the specified SID already exists, enter a different SID, for example, *orcl3*. 
+
+	> Similarly, specify a *unique Global database name* for each Oracle Database on the same host.
+
 
 8. In the Configuration Options window, you can specify the amount of memory you want to allocate and select the character sets.
 
@@ -116,9 +121,9 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
 	
-		> [](include:charset) 
-	
-     ![Character sets](images/db21c-srv-008b-charset.png)
+	    > *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
+
+	 ![Character sets](images/db21c-srv-008b-charset.png)
 
 	For this lab, leave the defaults and click **Next**.
 
@@ -133,7 +138,9 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
     ![Register with EMCC](images/db21c-srv-010-emcc.png)
 
-	[](include:emcc)
+	> If you have Oracle EMCC details, such as OMS hostname, port number, and the admin credentials, you can specify in this window and register your Oracle Database.  
+
+	>> However, instead of registering from this window, it is much easier to use the discovery process from Oracle EMCC and add your Oracle Database 21c as a managed target.
 
    <!-- Add a link to WS2 lab on how to add managed targets.
    For more information on managed targets, see [Manage your targets in EMCC](?lab=lab-2-manage-your-targets).
@@ -151,7 +158,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	> After you install Oracle Database, enter the admin username and use this password to connect to the database. 
 
-	[](include:std-pwd)
+	**Note**: The password must conform to the Oracle recommended standards. 
  
 13. In the Privileged Operating System groups window, you can grant your user account administrative access to Oracle Database. For this, you select the value for each OS Group listed below. The values represent the OS groups to which your user belong.  
 
