@@ -4,12 +4,12 @@
 
 This lab will show you can trace microservice activity using Jaeger.
 
-Estimated lab Time - 20 minutes
+Estimated lab Time - 25 minutes
 
   -   Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
   -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the applicaiotn and Oracle database tier.
 
-## Task 1: Install software
+## Task 1: Install and configure observability software as well as metrics and log exporters
 
 1. Run the install script to install Prometheus, Loki, Promtail, Jaeger, and Grafana
    
@@ -17,75 +17,95 @@ Estimated lab Time - 20 minutes
     <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
     ```
 
-2. Run the `/applyMonitorsAndExporter.sh` script. This will do the following
-   - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices
+2. Run the `/applyMonitorsAndExporter.sh` script. This will do the following...
+   - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices.
    - Create Prometheus ServiceMonitors to scrape the Order PDB, and Inventory PDB metric exporter services.
-   - Create deployments and services for PDB metrics exporters
-   - Create deployments and services for PDB log exporters
+   - Create deployments and services for PDB metrics exporters.
+   - Create deployments and services for PDB log exporters.
    
     ```
     <copy>cd $GRABDISH_HOME/observability;./applyMonitorsAndExporter.sh</copy>
     ```
 
-3. Open Grafana. 
+## Task 2: Configure Grafana
 
-`kubectl get service stable-grafana -n msdataworkshop`
- login: admin/prom-operator
-This is stored in `stable-grafana` secret.
+1. Identify the IP address of Ingress Controller Service by executing the following command:
+   
+       ```
+       <copy>services</copy>
+       ```
+   
+       ![](images/ingress-nginx-loadbalancer-externalip.png " ")
 
-Select `Configuration` gear and `DataSources` and datasources and URLs
+2. Open a new browser tab and enter the external IP URL followed by "grafana":
+   
+     `https://<EXTERNAL-IP>/grafana`
+   
+      Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-    http://loki-stack.loki-stack:3100
-    http://jaeger-query-nodeport.msdataworkshop:80
-    http://stable-kube-prometheus-sta-prometheus:9090/
+3.  Login using the default username `admin` and password `prom-operator` 
+    (This value is stored in the `stable-grafana` secret and can be modified there is necessary).
     
-#
-Derived Fields
+4. Select the `Configuration` gear icon on the left-hand side and select `Plugins`.
 
-Name: traceIDFromSpanReported
-Regex: Span reported: (\w+)
-Query: ${__value.raw}
-Internal link: Jaeger
+    In the search field type `Jaeger` and when `Jaeger` is shown click it to install.
+    
+    Repeat the process for `Loki`.
+    
+5. Select the `Data sources` tab and select `Loki` 
+    
+    Enter `http://loki-stack.loki-stack:3100` in the URL field and create the two Derived Fields shown in the picture below.
+    The values are as follows:
+    
+        - Name: `traceIDFromSpanReported`
+        - Regex: `Span reported: (\w+)`
+        - Query: `${__value.raw}`
+        - Internal link enabled and `Jaeger` selected from the drop-down list.
+        
+        - Name: `traceIDFromECID`
+        - Regex: `ecid=(\w+)`
+        - Query: `${__value.raw}`
+        - Internal link enabled and `Jaeger` selected from the drop-down list
+        
+    Click the `Save and test` button and verify successful connection message.
+        
+    Click the `Back` button.
+    
+6. Select the `Data sources` tab and select `Jaeger` 
+    
+    Enter `http://jaeger-query.msdataworkshop:80` in the URL field and select `Loki` in the `Data source` drop down under the `Trace to logs` section.
+        
+    Click the `Save and test` button and verify successful connection message.
+        
+    Click the `Back` button.
+    
+7. Install the GrabDish Dashboard
 
-#
-Install Dashboard
-Different dashboards for different uses... diagnostics, performance, lower or upper level arch focus, etc.
+    Select the `+` icon on the left-hand side and select `Import`
+    
+    Copy the contents of the GrabDish Dashboard JSON found here: https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json
+    
+    Paste the contents in the `Import via panel json` text field and click the `Load` button
+    
+    Confirm successful import.
+    
 
-#
-Conduct Queries and Drill-downs
-
-
-#sample queries
-https://grafana.com/docs/loki/latest/logql/
-
-#grafana alerts
-https://grafana.com/docs/grafana/latest/alerting/
-
-* it may be possible to provide grafana.ini if we want to remove manual steps
-https://grafana.com/docs/grafana/latest/administration/provisioning/#datasources
+## Task 3: Use Grafana to Analyze metrics, tracing, and logs and correlate between them
 
 
+1. Select the four squares icon on the left-hand side and select 'Dashboards'
 
+2. In the `Dashboards` panel select `GrabDish Dashboard`
 
-From https://docs.oracle.com/cd/E18283_01/server.112/e17120/monitoring001.htm#insertedID1 ...
-https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/view-alert-logs-and-check-errors-using-dbaas-monitor.html
+3. Notice the collapsible panels for each microservices and their content which includes
+    - Metrics about the kubernetes microservice runtime (CPU load, etc.)
+    - Metrics about the kubernetes microservice specific to that microservice (`PlaceOrder Count`, etc.)
+    - Metrics about the PDB used by the microservice (open sessions, etc.)
+    - Metrics about the PDB specific to that microservice (inventory count)
+ 
+4. 
 
-The alert log is a chronological log of messages and errors, and includes the following items:
-
-All internal errors (ORA-00600), block corruption errors (ORA-01578), and deadlock errors (ORA-00060) that occur
-
-Administrative operations, such as CREATE, ALTER, and DROP statements and STARTUP, SHUTDOWN, and ARCHIVELOG statements
-
-Messages and errors relating to the functions of shared server and dispatcher processes
-
-Errors occurring during the automatic refresh of a materialized view
-
-The values of all i
-
-
-
-
-## Task 7: Understand Oracle DB Metrics Exporter (Study)
+## Task 4: Understand Oracle DB Metrics Exporter (Study)
 
 1. Additional modifications can be made to the following files
    
@@ -93,38 +113,22 @@ The values of all i
        db-metrics-inventorypdb-exporter-metrics.toml
     and `./createMonitorsAndDBExporters.sh` can be run  to apply them
     
-## Task 8: Understand tracing (Study)
+## Task 5: Understand tracing (Study)
 
 1. Notice @Traced annotations on `placeOrder` method of `$GRABDISH_HOME/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
    Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
 
    ![](images/ordertracingsrc.png " ")
 
-2. Place an order if one was not already created successfully in Lab 2 Step 3.
 
-3. Identify the external IP address of the Jaeger Load Balancer by executing the following command:
+    
+## Task 6: Understand logging (Study)
 
-    ```
-    <copy>services</copy>
-    ```
+1. Notice @Traced annotations on `placeOrder` method of `$GRABDISH_HOME/frontend-helidon/src/main/java/io/helidon/data/examples/FrontEndResource.java` and `placeOrder` method of `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java`
+   Also notice the additional calls to set tags, baggage, etc. in this `OrderResource.placeOrder` method.
 
-    ![](images/jaegerservice.png " ")
+   ![](images/ordertracingsrc.png " ")
 
-4. Open a new browser tab and enter the external IP URL:
-
-  `https://<EXTERNAL-IP>`
-
-   Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
-
-5. Select `frontend.msdataworkshop` from the `Service` dropdown menu and click **Find Traces**.
-
-    ![](images/jaegertrace.png " ")
-
-   Select a trace with a large number of spans and drill down on the various spans of the trace and associated information. In this case we see placeOrder order, saga, etc. information in logs, tags, and baggage.
-
-   *If it has been more than an hour since the trace you are looking for, select a an appropriate value for Lookback and click Find Traces.*
-
-    ![](images/jaegertracedetail.png " ")
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
