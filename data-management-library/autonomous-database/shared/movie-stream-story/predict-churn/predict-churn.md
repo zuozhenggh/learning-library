@@ -235,10 +235,12 @@ We will finish up in **Task 3** using **OML AutoML UI** to create a machine lear
 
     We created the **target** column based on the assumption that for the Business Manager, if a customer did not have any interaction in the last month of data, the customer is considered as **churned**.
 
-    In that sense, we created a query that has a new attribute called **TARGET** that is defined as follows:  
-    `For all customers that had transactions on every month between M3 and M14`
-    `1` - If the customer did not have any transactions in Month 0 (December 2020)
-    `0` - Otherwise
+    In that sense, we created a query that has a new attribute called **TARGET** that is defined as follows:
+    ```
+    For all customers that had transactions on every month between M3 and M14:
+    TARGET = "1" -> "Churner" if the customer had no transactions in Month 1 (December 2020)
+    TARGET = "0" -> "Non-Churner" otherwise
+    ```
 
     That means that because of our requirement of existing transactions on all those months, customers that just started or that churned inside the M14 to M3 range will be excluded, so that our model can concentrate on identifying **churner** vs. **non-churner** behavior in that same historical subset of time.
 
