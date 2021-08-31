@@ -4,7 +4,7 @@
 
 This lab shows how to create a single instance container database with <if type="typical">typical</if><if type="advanced">advanced</if> configuration. It does not install the Oracle Database software.
 
-Estimated Lab Time: <if type="typical">20</if><if type="advanced">30</if> minutes
+Estimated Time: <if type="typical">20</if><if type="advanced">30</if> minutes
 
 ### Objective
 
