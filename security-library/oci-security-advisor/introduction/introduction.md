@@ -2,31 +2,39 @@
 
 ## About this Workshop
 
-This lab walks you through the steps to create a Secure Bucket using Security Advisor. It involves creating not only the bucket but also create a vault and key which will be used to encrypt the bucket and meets minimum security requirements established by security zones. Existing key can also be used to import in a vault and use to create a secure bucket.
+This hands-on workshop provides users with step-by-step instructions on provisioning compute and storage resources on Oracle Cloud Infrastructure(OCI) using Oracle Cloud Security Advisor and Workflows. It provides detailed steps to use customer managed high length encryption keys while creating OCI resources like storage bucket, block volumes and compute machines. 
 
 
 
-*Estimated Lab Time:* 48-72 Hours
+*Estimated Lab Time:* 1 Hour
 
-### Objectives
-In this lab, you will:
-* Initialize the Oracle IAM 11.1.2.3 baseline environment
-* Upgrade the Oracle IAM 11.1.2.3 environment to 12.2.1.4
+
+
+### Workshop Objectives
+In this lab, you will learn how to:
+* Create a Maximum Security Zone and Maximum Secure Compartment
+* Grant security access in policy to create resources in the compartment
+* Create OCI Key Vault
+* Invoke and use OCI Security Advisor Workflows
+* Create secure Object Storage Bucket using Oracle Cloud Security Advisor
+* Create Secure Block Volume using Oracle Cloud Security Advisor
+* Create Secure Virtual Machine Instance using Oracle Cloud Security Advisor
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Knowledge of Oracle IAM 11.1.2.3
+* Some understanding of cloud and security terms is helpful
+* Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-- You can find more information about the latest version of Oracle IAM [here](https://docs.oracle.com/en/middleware/idm/suite/12.2.1.4/index.html)
-- You can find more information about the upgrade strategies [here](https://docs.oracle.com/en/middleware/fusion-middleware/iamus/place-upgrade-strategies.html#GUID-9F906AE2-5BDF-426D-A97C-AC546ABFBD28)
+- You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)
+
 
 ## Technical support
-For any technical issues related to the IAM upgrade process itself, please contact Oracle support through the same Proactive SR that was created to initiate this lab. SMEs will monitor the SR and respond to any questions or issues.
+For any technical issues related to OCI and Security Advisor, please contact Oracle support through OCI cloud console support or help button. SMEs will monitor the SR and respond to any questions or issues.
 
 ## Acknowledgements
-* **Author** - Anbu Anbarasu, Director, Cloud Platform COE  
-* **Contributors** -  Eric Pollard - Sustaining Engineering, Ajith Puthan - IAM Support, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2021
+* **Author** - Sanjay Rahane, Senior Cloud Engineer, NA Cloud Engineering
+* **Contributors** -  Sanjay Rahane, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Sanjay Rahane, Senior Cloud Engineer, NA Cloud Engineering, September 2021
