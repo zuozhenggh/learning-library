@@ -1,15 +1,6 @@
 {
     "workshoptitle" : "Install Oracle Database 21c on OCI Compute",
     "help": "livelabs-help-db_us@oracle.com",
-    "include": {
-        "admin-pwd": "../../install-db/common/files/admin-pwd.md", 
-        "charset": "../../install-db/common/files/char-set.md", 
-        "emcc": "../../install-db/common/files/register-emcc.md", 
-        "global-db": "../../install-db/common/files/global-db-name.md", 
-        "oracle-sid": "../../install-db/common/files/oracle-sid.md", 
-        "std-pwd": "../../install-db/common/files/std-pwd.md", 
-        "sw-only": "../../install-db/common/files/sw-only.md"
-    },
 	"tutorials": [
         {
             "title": "Introduction",
