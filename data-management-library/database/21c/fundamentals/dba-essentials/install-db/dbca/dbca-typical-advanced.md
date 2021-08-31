@@ -54,13 +54,13 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	> You cannot create multiple Oracle Databases with the same Global database name. If an Oracle Database with the specified name already exists, enter a different name.  
 
-	[](include:admin-pwd)
+	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	[](include:std-pwd)
+	**Note**: The password must conform to the Oracle recommended standards. 
 
 	The default **Database Character set** for Oracle Database is *AL32UTF8 - Unicode UTF-8 Universal character set*. 
 	
-	> [](include:charset)
+	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
 
 </if>
 
@@ -82,8 +82,6 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	- **Automatic** and allow Oracle clusterware to manage your database automatically, or
 	- **Rank**, if you want to define ranks for your database.
 
-	[](include:gen-purpose-template.md)
-
 	Removed this note as per review comments from Malai Stalin
 
 	**Note**: The General Purpose or Transaction Processing template and the Data Warehouse template create an Oracle Database with the `COMPATIBLE` initialization parameter set to `12.2.0.0.0`. This ensures that the new features in Oracle Database 21c are compatible with older versions of the database up to version 12c Release 2.  
@@ -101,7 +99,11 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	![Oracle SID](images/dbca21c-adv-004-id.png)
 
-	[](include:oracle-sid)
+	> _**Oracle SID**_ is a unique name given to an Oracle Database. It distinguishes this instance of Oracle Database from other instances on the host.
+
+	>> You cannot create multiple Oracle Databases on a host with the same SID. If an Oracle Database with the specified SID already exists, enter a different SID, for example, *orcl3*. 
+
+	> Similarly, specify a *unique Global database name* for each Oracle Database on the same host.
 
 5. The Storage Option window displays the default option **Use template file for database storage attributes** selected. This option allows Oracle Database to use the directory information specified in the *General Purpose or Transaction Processing* template.
 
@@ -176,7 +178,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	C. **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
 
-	> [](include:charset)
+	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
 
     ![Character Sets](images/dbca21c-adv-009c-charset.png)
 
@@ -184,13 +186,15 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
     ![Connection Mode](images/dbca21c-adv-009d-connmode.png)
 
-10. The Management Options window allows you to configure EM Express and register your Oracle Database with EMCC. 
+10. The Management Options window allows you to configure EM Express and register your Oracle Database with Oracle EMCC. 
 
 	For this lab, de-select the checkbox **Configure Enterprise Manager (EM) database express** and leave the checkbox **Register with Enterprise Manager (EM) Cloud Control** unselected. Click **Next**.
 
     ![Register with EMCC](images/dbca21c-adv-010-emcc.png)
 
-	[](include:emcc)
+	> If you have Oracle EMCC details, such as OMS hostname, port number, and the admin credentials, you can specify in this window and register your Oracle Database.  
+
+	>> However, instead of registering from this window, it is much easier to use the discovery process from Oracle EMCC and add your Oracle Database 21c as a managed target.
 
 	<!-- Add a link to WS2 lab on how to add managed targets.
 	For more information on managed targets, see [Manage your targets in EMCC](?lab=lab-2-manage-your-targets).
@@ -202,7 +206,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	![Set Admin Password](images/dbca21c-adv-011-syspwd.png)
 
-	[](include:std-pwd)
+	**Note**: The password must conform to the Oracle recommended standards. 
 
 12. The Creation Option window displays the default option **Create database** selected.  
 	For the remaining fields, leave the defaults and click **Next**.

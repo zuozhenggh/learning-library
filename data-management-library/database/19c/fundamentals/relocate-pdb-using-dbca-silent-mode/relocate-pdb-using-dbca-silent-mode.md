@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you relocate PDB1 from CDB1 to CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -247,7 +247,7 @@ A common user is a database user that has the same identity in the `root` contai
 6. Exit SQL*Plus.
 
     ```
-    SQL> exit
+    SQL> <copy>exit</copy>
     ```
 
 ## Task 5: Relocate PDB1 back to CDB1
@@ -440,7 +440,6 @@ A common user is a database user that has the same identity in the `root` contai
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
 
 ## Learn More
 
