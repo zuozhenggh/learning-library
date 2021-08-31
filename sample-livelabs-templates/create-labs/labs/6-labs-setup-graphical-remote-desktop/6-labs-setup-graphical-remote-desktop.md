@@ -45,7 +45,7 @@ This lab assumes you have:
     <copy>
     rm -rf /tmp/novnc-*.sh
     rm -rf /tmp/set-os-user.sh
-    rm -rf /tmp/setup-novnc-livelabs.sh
+    rm -rf /tmp/setup-novnc-livelabs*
 
     </copy>
     ```
