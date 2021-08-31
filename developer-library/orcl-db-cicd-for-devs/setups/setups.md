@@ -234,7 +234,41 @@ We are going to create a **Compartment** for this lab so that our database is in
 
 8. Back on the **Create New DevOps Project** slider, with the **Project Name** and **Topic** selected, click the **Create DevOps Project** button.
 
-   ![Create DevOps Project** button](./images/devops-12.png)
+   ![Create DevOps Project button](./images/devops-12.png)
+
+9. On the **Project Details** page, in the **Quick Actions** section, click the **Create repository** tile.
+
+   ![Create repository tile](./images/devops-13.png)
+
+10. Using the **Create Repository** slider,
+
+   ![Create Repository slider](./images/devops-14.png)
+
+   name the repository **cicdRepository**
+
+     **Repository name:** cicdRepository
+
+    ````
+    <copy>
+    cicdRepository
+    </copy>
+    ````
+   ![Repository name field](./images/devops-15.png)
+
+11. When finished naming the repository, click the **Create Repository button** on the bottom of the slider.
+
+   ![Create Repository button](./images/devops-16.png)
+
+
+bspendol@cloudshell:~ (eu-frankfurt-1)$ mkdir livelabs
+bspendol@cloudshell:~ (eu-frankfurt-1)$ cd livelabs/
+bspendol@cloudshell:livelabs (eu-frankfurt-1)$ git clone ssh://devops.scmservice.eu-frankfurt-1.oci.oraclecloud.com/namespaces/adexacs2/projects/cicdProject/repositories/cicdRepository
+Cloning into 'cicdRepository'...
+The authenticity of host 'devops.scmservice.eu-frankfurt-1.oci.oraclecloud.com (147.154.159.40)' can't be established.
+RSA key fingerprint is SHA256:fwLRv5ojwvj3htlkB8VnMqU/8a6x9YXsTT1pFKiu/2c.
+RSA key fingerprint is MD5:c5:48:fc:57:d1:c5:fb:82:91:2c:48:81:9b:d9:d6:24.
+Are you sure you want to continue connecting (yes/no)? yes
+
 
 ## Conclusion
 
