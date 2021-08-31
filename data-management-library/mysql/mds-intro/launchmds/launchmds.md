@@ -233,7 +233,7 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 ## **TASK 5:** Create Client Virtual Machine
 
 **Important:** If you have not already completed **Lab 1: Create Local SSH Key**, please do so now. 
-- When you are finished, return to this TASK.
+- When you are finished, return to this TASK 5 #1.
 
 1. You will need a client machine to connect to your brand new MySQL database. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**
 
@@ -258,11 +258,10 @@ You must have an Oracle Cloud Infrastructure service (OCI) tenancy subscribed to
 8. For VCN make sure **MDS_VCN** is selected, "Assign a public IP address" should be set to Yes.  
     ![COMPUTE](./images/05compute04.png " ")
 
-9. If you have not already created your SSH key, perform **Lab 1: Create Local SSH Key**.  
- - When you are done return to the next line (TASK 5: #10) .
-
+9. If you have not already created your SSH key
+ - perform **Lab 1: Create Local SSH Key**.  
+ - When you are done return to the next line.
 10. In the Add SSH keys section, generate an SSH key pair or upload your own public key. 
-
 11. Select one of the following options: 
 - **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.
 - **Generate SSH keys:** Oracle Cloud Infrastructure generates an RSA key pair for the instance. Click Save Private Key, and then save the private key on your computer. Optionally, click Save Public Key and then save the public key.  
