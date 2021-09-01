@@ -1,6 +1,6 @@
 # Getting Started
 
-## Build scalable ETL data piple with Dataflow and Data Catalog MetaStore
+## Introduction
 
 Today, the most successful and fastest growing companies are generally data-driven organizations. Taking advantage of data is pivotal to answering many pressing business problems; however, this can prove to be overwhelming and difficult to manage due to data’s increasing diversity, scale, and complexity. One of the most popular technologies that businesses use to overcome these challenges and harness the power of their growing data is OCI Data flow that provides serverless Apache Spark at scale.
 
@@ -20,17 +20,19 @@ In this lab, you will do the following :
 
 2. Build a sample PySpark application that will create the database and DDL to create HIVE Managed Table. We run some select/ aggregation queries to see that the metadata about the data is stored in the metaStore and all subsequent data flow Runs, can leverage the DDL created once and query the data.
 
-3. Navigates to Data Flow Console and creates the Data Flow Application using the PySpark application created in #4 above and selects the metastore that needs to be associated with the template.
+3. Navigates to Data Flow Console and creates the Data Flow Application using the PySpark application created in #2 above and selects the metastore that needs to be associated with the template.
 
 4. User navigates to Data Flow Console and runs the Application.
 
-5. User navigates to OAC to visualize the raw data.
+5. User Navigates to the Object store to inspect the transformed data in the Metastore.
+
+6. User navigates to OAC to visualize the data.
 
 Your dataset is the [Yelp Review and Business Dataset](https://www.kaggle.com/yelp-dataset/yelp-dataset), downloaded from the Kaggle website under the terms of the Creative Commons CC0 1.0 Universal (CC0 1.0) "Public Domain Dedication" license.
 
 The dataset is in JSON format and it is stored  in object store for downstream processing.
 
-This lab guides you step by step, and provides the parameters you need. The python application is uploaded to the [Bucket](https://objectstorage.us-ashburn-1.oraclecloud.com/n/bigdatadatasciencelarge/b/dataflow-code/o/data-cleansing%2Fdatacleaning.py)
+This lab guides you step by step, and provides the parameters you need. The python application is uploaded to the [Bucket](https://console.us-ashburn-1.oraclecloud.com/object-storage/buckets/idehhejtnbtc/workshop-scripts/objects)
 
   ![Lab Overview](../images/ " ")
 
@@ -61,15 +63,15 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
  2. For this workshop, we are reusing existing buckets `workshop-scripts` that contains all the input python files and `workshop-data` that contains the Input JSON File  in compartment  `dataflow-demo`. The process to upload the files is as described [File Upload](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage).
 
- 3. In the `workshop-scripts` find the `hiveexample.py` file
+ 3. In the bucket `workshop-scripts` find the `hive-example.py` file
 
      ![Files](../images/Hive-Example.png " ")
 
- 4. In the `workshop-data` find the input JSON files ```yelp_business_yelp_academic_dataset_business.json``` in the folder `yelp_business` and the file ```yelp_review_yelp_academic_dataset_review.json``` in the folder ```yelp_review```
+ 4. In the bucket `workshop-data` find the input JSON files ```yelp_business_yelp_academic_dataset_business.json``` in the folder `yelp_business` and the file ```yelp_review_yelp_academic_dataset_review.json``` in the folder ```yelp_review```
 
      ![Yelp JSON Files](../images/Yelp-Input-JSON-Dataset.png " ")
 
-## **STEP 2**: Inspect the Hive MetaStore
+## **STEP 2**: Inspect the MetaStore
 
 1. In the Console, open the navigation menu and click ```Analytics & AI```. Click ```Data Catalog```.
 
@@ -101,7 +103,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
     3.1 Choose `Language` as `Python`
 
-    3.2 In `Select a File` pick the Object Storage File Name bucket as `Field-Training` and file name as `hiveexample.py`
+    3.2 In `Select a File` pick the Object Storage File Name bucket as `Field-Training` and file name as `hive-example.py`
 
     3.3 Leave the `Main class Name` and the `Archive URI` empty
 
@@ -109,8 +111,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
     for e.g. `oci://workshop-data@idehhejtnbtc/yelp_review/yelp_review_yelp_academic_dataset_review.json oci://workshop-data@idehhejtnbtc/yelp_business/yelp_business_yelp_academic_dataset_business.json FieldTrainingDB`
 
-    3.5 In the `Metastore in dataflow-demo` choose ```DF-metastore`` and you should the path of the Managed table getting populated automatically.
-
+    3.5 In the `Metastore in dataflow-demo` choose ```DF-metastore``` and you should see the path of the Managed table getting populated automatically.
 4. Double-check your Application configuration, and confirm it is similar to the following
 
    ![Sample Application Configuration](../images/Hive-MetaStore-Application.png " ")
@@ -133,7 +134,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 3. You are automatically redirected to the Apache Spark UI, which is useful for debugging and performance tuning.
 
-   ![Spark UI](../images/SparkUI-Hive-MetaStore..png " ")
+   ![Spark UI](../images/SparkUI-Hive-MetaStore.png " ")
 
 4. After few mins your `Data Flow Run`  should show successful completion with a State of Succeeded:
 
@@ -173,7 +174,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 2. In the main function we start with the program logic. The main function is a starting point of any python program. When the program is run, the python interpreter runs the code sequentially. As input we pass the the location of the object storage location that has the  netflix csv file.
 
-     ```python
+    ```python
      <copy>
          if __name__ == "__main__":
          main()
@@ -533,15 +534,19 @@ def build_hive_ddl(df, table_name, location):
 5. On the console first we create a dataset
 
    1. Click ```Connect to Your Data```
+
        ![OAC Console ](../images/OAC-Connect-to-your-Data.png " ")
 
    2. Select the OAC instance ```DF-Workshop-1```
-       ![OAC Console ](../images/OAC-Connect-to-your-Data.png " ")
+
+       ![OAC Console ](../images/OAC-Create-Data-Set.png " ")
 
    3. It should show the databases that we created in Python Application. On this screen select ```Manual Query```
+
        ![OAC Console ](../images/OAC-DB.png " ")
 
    4. Click the ```Manual Query``` option on the editor and right click on the ```Manual Query``` box and click ```Edit Definition```
+
         ![OAC Console ](../images/OAC-Manual-Query.png " ")
 
    5. On the Query Editor enter the following query (Replace the Database name with your DB Name)
