@@ -2,10 +2,14 @@
 
 ## About this Workshop
 
-This hands-on workshop provides users with step-by-step instructions on provisioning compute and storage resources on Oracle Cloud Infrastructure(OCI) using Oracle Cloud Security Advisor and Workflows. It provides detailed steps to use customer managed high length encryption keys while creating OCI resources like storage bucket, block volumes and compute machines. 
+This hands-on workshop provides users with step-by-step instructions on provisioning compute and storage resources on Oracle Cloud Infrastructure(OCI) using Oracle Cloud Security Advisor and Workflows. It provides detailed technical steps to use customer managed high length encryption keys while creating OCI resources like storage bucket, block volumes and compute machines. 
 
+Security Advisor only allows you to create master encryption key with 4096 bits in length and fulfils the requirements of the tenancy by Security Zones configurations. It provides an interactive walkthrough and graphical user interface and comes as a complementary offering of Oracle Maximum Security Zones service.
 
+**Security Advisor Workflow :**
 
+  ![](./images/advisor-workflow.png " ")
+  
 *Estimated Lab Time:* 1 Hour
 
 
