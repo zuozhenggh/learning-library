@@ -13,7 +13,7 @@ Estimated Lab Time: 20 minutes
 - Create an Autonomous Database
 - Create a Notification Topic
 - Create a DevOps Project and Repository
-- Set up SSH for the OCI DevOps Code Repository
+- Cloning the OCI DevOps Code Repository
 
 ### Prerequisites
 
