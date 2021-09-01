@@ -60,7 +60,7 @@ What is a Code Repository?
 There are many code repositories available to us such as Git, GitHub, GitLab and BitBucket. These repositories will help us store our files and provide versioning, accountability and visibility into our development process. But we are starting from scratch here, we have no repository or code release to work with. We will need to create a baseline with a Change Management/Tracking tool.
 How can I do Change Management/Tracking with Oracle?
 
-### SQLcl with Liquibase
+### SQLcl and Liquibase
 
 **What’s SQLcl?**
 
@@ -101,12 +101,12 @@ Either cloud based or local, virtualization technologies can also give developer
 
 ### Objectives
 
-In this lab you will learn to use SQLcl, Liquibase and git to track and apply changes across databases for CI/CD processes.
+In this lab you will learn to use SQLcl and git to track and apply changes across databases for a CI/CD processes.
 
 - Create an autonomous database and sameple schemas
-- Use SQLcl and Liquibase to create a baseline of an Oracle Database schema
+- Use SQLcl to create a baseline of an Oracle Database schema
 - Commit the baseline to a git repository
-- Create and track database object changes with SQLcl and Liquibase
+- Create and track database object changes with SQLcl
 - Apply the changes to a new schema and see the results
 
 ### Prerequisites
