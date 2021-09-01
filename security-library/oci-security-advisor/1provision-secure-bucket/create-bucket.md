@@ -22,7 +22,7 @@ This lab assumes you have:
 - IAM policies to create resources in the compartment
 
 
-##  **Task 1**: Create a Maximum Security Zone and Maximum Security Compartment
+##  Task 1: Create a Maximum Security Zone and Maximum Security Compartment
 
 1. Login to the Oracle Cloud.
 
@@ -47,7 +47,7 @@ This lab assumes you have:
   ![](./images/image4.png " ")
 
 
-##  **Task 2**: Grant security access in policy to create resources in the compartment
+##  Task 2: Grant security access in policy to create resources in the compartment
 
 - To use Oracle Cloud Infrastructure, you must be granted security access in a policy  by an administrator.
 - As an Administrator, please create below polices:
@@ -61,7 +61,7 @@ This lab assumes you have:
   </copy>
     ```  
 
-##  **Task 3**: Create OCI Key Vault
+##  Task 3: Create OCI Key Vault
 
 1. Open the navigation menu, click Identity & Security, and then click Vault.
 
@@ -81,7 +81,7 @@ This lab assumes you have:
 
 
 
-##  **Task 4**: Create a Secure Object Storage Bucket
+##  Task 4: Create a Secure Object Storage Bucket
 
 1. Open the navigation menu, click **Identity & Security**, and then click **Security Advisor**
 
@@ -133,7 +133,7 @@ This pre-requisite steps are taken care in Task 2. Review the details and click 
 
   ![](./images/bucket-image8.png " ")
 
-
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)

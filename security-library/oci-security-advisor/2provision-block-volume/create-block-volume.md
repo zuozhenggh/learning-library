@@ -19,7 +19,7 @@ This lab assumes you have:
 - A Free or LiveLabs Oracle Cloud account
 - IAM policies to create resources in the compartment
 
-##  **Task 1**: Create a Secure Block Volume
+##  Task : Create a Secure Block Volume
 
 1. Open the navigation menu, click **Identity & Security**, and then click **Security Advisor**
 
@@ -70,7 +70,7 @@ This pre-requisite steps are taken care in Lab 1, Task 1 of this workshop. Revie
 
   ![](./images/bvimage9.png " ")
 
-
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)

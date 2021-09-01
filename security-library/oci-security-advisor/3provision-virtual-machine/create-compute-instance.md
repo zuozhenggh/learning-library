@@ -19,7 +19,7 @@ This lab assumes you have:
 - A Free or LiveLabs Oracle Cloud account
 - IAM policies to create resources in the compartment
 
-##  **Task 1**: Create a Secure Virtual Machine Instance
+##  Task : Create a Secure Virtual Machine Instance
 
 1. Open the navigation menu, click **Identity & Security**, and then click **Security Advisor**
 
