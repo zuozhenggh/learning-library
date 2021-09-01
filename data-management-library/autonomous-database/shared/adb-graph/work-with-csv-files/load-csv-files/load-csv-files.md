@@ -144,7 +144,7 @@ Learn how to
    ![](./images/db-actions-sql-script-output.png " ")
   
 
-Please *proceed to the next lab* to create a graph from these tables.
+Please [proceed to the next lab](#next) to create a graph from these tables.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
