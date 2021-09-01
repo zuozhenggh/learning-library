@@ -4,7 +4,7 @@
 
 This lab walks you through the steps for installing Oracle Database 21c with <if type="desktop">minimal</if><if type="server">detailed</if> configuration.
 
-Estimated Time: <if type="desktop">20</if><if type="server">30</if> minutes
+Estimated Lab Time: <if type="desktop">20</if><if type="server">30</if> minutes
 
 ### Objective
 
@@ -36,7 +36,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Configuration Option](../common/images/db21c-common-001-createdb.png)
 
-	> [](include:sw-only)
+	> If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
 
 	>> For this lab, do not select this option.
 
@@ -51,13 +51,13 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
   ![Typical Configuration](images/db21c-desk-003-config.png)
 
-	[](include:admin-pwd)
+	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	[](include:std-pwd)
+	**Note**: The password must conform to the Oracle recommended standards.
 
-	> [](include:global-db)
+	> You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
 
-	Along with CDB, Oracle DBCA also creates a PDB as per the **Pluggable database name** field. Click **Next**.
+	Along with CDB, Oracle DBCA also creates a PDB as per the **Pluggable database name** field. For this lab, leave the defaults and click **Next**.
 
 </if>
 
@@ -105,7 +105,12 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Oracle SID](images/db21c-srv-007-id.png)
 
-	[](include:oracle-sid)
+	> _**Oracle SID**_ is a unique name given to an Oracle Database. It distinguishes this instance of Oracle Database from other instances on the host.
+
+	>> You cannot create multiple Oracle Databases on a host with the same SID. If an Oracle Database with the specified SID already exists, enter a different SID, for example, *orcl3*. 
+
+	> Similarly, specify a *unique Global database name* for each Oracle Database on the same host.
+
 
 8. In the Configuration Options window, you can specify the amount of memory you want to allocate and select the character sets.
 
@@ -114,11 +119,11 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
      ![Memory](images/db21c-srv-008a-memory.png)
 
-	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
-	
-		> [](include:charset) 
-	
-     ![Character sets](images/db21c-srv-008b-charset.png)
+	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default.
+
+	    > *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
+
+	 ![Character sets](images/db21c-srv-008b-charset.png)
 
 	For this lab, leave the defaults and click **Next**.
 
@@ -126,14 +131,16 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
     ![Storage File System](images/db21c-srv-009-storagefilesys.png)
 
-	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups. 
+	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups.
 	>> For this lab, do not select this option.
 
 10. In the Management Options window, do not select the checkbox **Register with Enterprise Manager (EM) Cloud Control**. Leave the default settings and click **Next**.
 
     ![Register with EMCC](images/db21c-srv-010-emcc.png)
 
-	[](include:emcc)
+	> If you have Oracle EMCC details, such as OMS hostname, port number, and the admin credentials, you can specify in this window and register your Oracle Database.  
+
+	>> However, instead of registering from this window, it is much easier to use the discovery process from Oracle EMCC and add your Oracle Database 21c as a managed target.
 
    <!-- Add a link to WS2 lab on how to add managed targets.
    For more information on managed targets, see [Manage your targets in EMCC](?lab=lab-2-manage-your-targets).
@@ -151,8 +158,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	> After you install Oracle Database, enter the admin username and use this password to connect to the database. 
 
-	[](include:std-pwd)
- 
+	**Note**: The password must conform to the Oracle recommended standards.
+
 13. In the Privileged Operating System groups window, you can grant your user account administrative access to Oracle Database. For this, you select the value for each OS Group listed below. The values represent the OS groups to which your user belong.  
 
     For this lab, select the Database Operator group as *dba*. For rest of the groups, *dba* is selected by default.
@@ -164,7 +171,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 </if>
 
-14. You need to run root scripts to configure your Oracle Database.  
+14. You need to run root scripts to configure your Oracle Database. 
 	<!--If you select **Automatically run configuration scripts** then skip step 7-A.-->
 	For this lab, do not select the checkbox and run the scripts manually as explained in step <if type="desktop">8</if><if type="server">17</if>. Click **Next**.
 
@@ -201,7 +208,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	 $ <copy>/u01/app/oraInventory/orainstRoot.sh</copy>
 	 ```
 
-	 It returns the following output. 
+	 It returns the following output.
 
 	 ```
 	 Changing permissions of /u01/app/oraInventory.
@@ -217,8 +224,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	 ```
 	 $ <copy>/u01/app/oracle/product/21.0.0/dbhome_1/root.sh</copy>
 	 ```
-	 
-	 It returns the following output. 
+
+	 It returns the following output.
 
 	 ```
      The following environment variables are set as:
@@ -226,7 +233,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
      ORACLE_HOME=  /u01/app/oracle/product/21.0.0/dbhome_1
 
 	 Enter the full pathname of the local bin directory: [/usr/local/bin]: Enter
-	 
+
 	 /usr/local/bin is read only.  Continue without copy (y/n) or retry (r)? [y]: y
 
      Warning: /usr/local/bin is read only. No files will be copied.
@@ -254,7 +261,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 Click **Close** to exit Oracle Database Setup Wizard.
 
-You may now **proceed to the next lab**.
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
