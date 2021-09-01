@@ -63,7 +63,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
  2. For this workshop, we are reusing existing buckets `workshop-scripts` that contains all the input python files and `workshop-data` that contains the Input JSON File  in compartment  `dataflow-demo`. The process to upload the files is as described [File Upload](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage).
 
- 3. In the bucket `workshop-scripts` find the `hiveexample.py` file
+ 3. In the bucket `workshop-scripts` find the `hive-example.py` file
 
      ![Files](../images/Hive-Example.png " ")
 
@@ -103,7 +103,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
     3.1 Choose `Language` as `Python`
 
-    3.2 In `Select a File` pick the Object Storage File Name bucket as `Field-Training` and file name as `hiveexample.py`
+    3.2 In `Select a File` pick the Object Storage File Name bucket as `Field-Training` and file name as `hive-example.py`
 
     3.3 Leave the `Main class Name` and the `Archive URI` empty
 
@@ -111,8 +111,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
     for e.g. `oci://workshop-data@idehhejtnbtc/yelp_review/yelp_review_yelp_academic_dataset_review.json oci://workshop-data@idehhejtnbtc/yelp_business/yelp_business_yelp_academic_dataset_business.json FieldTrainingDB`
 
-    3.5 In the `Metastore in dataflow-demo` choose ```DF-metastore`` and you should the path of the Managed table getting populated automatically.
-
+    3.5 In the `Metastore in dataflow-demo` choose ```DF-metastore``` and you should see the path of the Managed table getting populated automatically.
 4. Double-check your Application configuration, and confirm it is similar to the following
 
    ![Sample Application Configuration](../images/Hive-MetaStore-Application.png " ")
@@ -135,7 +134,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 3. You are automatically redirected to the Apache Spark UI, which is useful for debugging and performance tuning.
 
-   ![Spark UI](../images/SparkUI-Hive-MetaStore..png " ")
+   ![Spark UI](../images/SparkUI-Hive-MetaStore.png " ")
 
 4. After few mins your `Data Flow Run`  should show successful completion with a State of Succeeded:
 
@@ -175,7 +174,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 2. In the main function we start with the program logic. The main function is a starting point of any python program. When the program is run, the python interpreter runs the code sequentially. As input we pass the the location of the object storage location that has the  netflix csv file.
 
-     ```python
+    ```python
      <copy>
          if __name__ == "__main__":
          main()
@@ -535,15 +534,19 @@ def build_hive_ddl(df, table_name, location):
 5. On the console first we create a dataset
 
    1. Click ```Connect to Your Data```
+
        ![OAC Console ](../images/OAC-Connect-to-your-Data.png " ")
 
    2. Select the OAC instance ```DF-Workshop-1```
-       ![OAC Console ](../images/OAC-Connect-to-your-Data.png " ")
+
+       ![OAC Console ](../images/OAC-Create-Data-Set.png " ")
 
    3. It should show the databases that we created in Python Application. On this screen select ```Manual Query```
+
        ![OAC Console ](../images/OAC-DB.png " ")
 
    4. Click the ```Manual Query``` option on the editor and right click on the ```Manual Query``` box and click ```Edit Definition```
+
         ![OAC Console ](../images/OAC-Manual-Query.png " ")
 
    5. On the Query Editor enter the following query (Replace the Database name with your DB Name)
