@@ -3,24 +3,25 @@
   "help": "livelabs-help-us@oracle.com",
   "tutorials": [
     {
-      "title": "Getting Started",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-    },
-    {
       "title": "Introduction",
       "filename": "../../introduction/introduction.md"
     },
     {
+      "title": "Getting Started",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+
+    {
       "title": "Lab 1: Create a Secure Bucket",
-      "filename": "../../secure-bucket/create-bucket.md"
+      "filename": "../../provision-secure-bucket/create-bucket.md"
     },
     {
       "title": "Lab 2: Create a Secure Block Volume",
-      "filename": "../../prepare-setup/prepare-setup.md"
+      "filename": "../../provision-block-volume/create-block-volume.md"
     },
     {
-      "title": "Lab 3: Create a Secure Compute Machine Instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute.md"
+      "title": "Lab 3: Create a Secure Virtual Machine Instance",
+      "filename": "../../provision-virtual-machine/create-compute-instance.md"
     },
     {
       "title": "Need Help?",
