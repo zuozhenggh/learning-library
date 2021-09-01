@@ -1,35 +1,37 @@
 {
-  "workshoptitle": "Oracle IAM 11.1.2.3 to 12.2.1.4 In-Place Upgrade Workshop",
-  "help": "livelabs-help-iam_us@oracle.com",
+  "workshoptitle": "Getting started with Oracle Cloud Infrastructure Security Advisor",
+  "help": "livelabs-help-us@oracle.com",
   "tutorials": [
     {
-      "title": "Getting Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
-    {
       "title": "Introduction",
-      "description": "Introduction",
-      "filename": "../../introduction/introduction.md"
+      "description": "Introduction about the Workshop and Labs",
+      "filename": "../../0introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Environment Setup (Verify Only) - Optional",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+      "title": "Getting Started",
+      "description": "Details about How to Register for Free Tier Account on OCI",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+    },
+
+    {
+      "title": "Lab 1: Create a Secure Bucket",
+      "description": "Step by step instruction on creating a Secure Bucket",
+      "filename": "../../1provision-secure-bucket/create-bucket.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
-      "description": "Lab to Initialize IAM 11.1.2.3 Environment",
-      "filename": "../../initialize-environment/initialize-environment.md"
+      "title": "Lab 2: Create a Secure Block Volume",
+      "description": "Step by step instruction on creating a Secure Block Volume",
+      "filename": "../../2provision-block-volume/create-block-volume.md"
     },
     {
-      "title": "Lab 3: Upgrade Oracle IAM 11.1.2.3 to Oracle IAM 12.2.1.4",
-      "filename": "../../upgrade/upgradelcm.md"
+      "title": "Lab 3: Create a Secure Virtual Machine Instance",
+      "description": "Step by step instruction on creating a Secure Virtual Machine Instance",
+      "filename": "../../3provision-virtual-machine/create-compute-instance.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
-    }
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+  }
   ]
 }

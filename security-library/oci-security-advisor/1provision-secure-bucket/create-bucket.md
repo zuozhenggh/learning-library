@@ -52,14 +52,14 @@ This lab assumes you have:
 - To use Oracle Cloud Infrastructure, you must be granted security access in a policy  by an administrator.
 - As an Administrator, please create below polices:
  
-   ```
+      ```
   <copy>
   allow group CreateSecureOSBucketGroup to manage object-family in compartment compartment_name
   allow group CreateSecureOSBucketGroup to manage vaults in compartment compartment_name
   allow group CreateSecureOSBucketGroup to manage keys in compartment compartment_name
   allow service ObjectStorage to use keys in compartment compartment_name
   </copy>
-    ```  
+      ```  
 
 ##  Task 3: Create OCI Key Vault
 
