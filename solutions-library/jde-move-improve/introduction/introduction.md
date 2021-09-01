@@ -2,11 +2,11 @@
 
 ## About This Workshop
 
-This tutorial will serve as a foundation for the rest of the workshop and provide you with the tools necessary to complete the steps required to migrate JD Edwards(JDE) to Oracle Cloud Infrastructure(OCI).
+This tutorial will serve as a foundation for the rest of the workshop and provide you with the tools necessary to complete the steps required to migrate JD Edwards (JDE) to Oracle Cloud Infrastructure (OCI).
 
 The workshop will also demonstrate how to deploy JD Edwards EnterpriseOne Release 9.2 Trial Edition to OCI.
 
-Upon completion of this tutorial, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on a fully functional suite of interconnected virtual machines. You can use it to verify functionality and to investigate proofs of concept(POC).
+Upon completion of this tutorial, you will have a working deployment of JD Edwards EnterpriseOne Trial Edition with Tools Release 9.2 and Applications Release 9.2 on a fully functional suite of interconnected virtual machines. You can use it to verify functionality and to investigate proofs of concept (POC).
 
 Estimated Time: 2 hours (additional time may be needed for first-time users)
 
