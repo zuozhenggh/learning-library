@@ -15,9 +15,6 @@ Estimated Lab Time: 20 minutes
 - Create a DevOps Project and Repository
 - Cloning the OCI DevOps Code Repository
 
-### Prerequisites
-
-- You have completed [Lab 1, Clone and Create a Github Repository](../repo/repo.md).
 
 ## Task 1: Create a Compartment
 
@@ -122,24 +119,24 @@ We are going to create a **Compartment** for this lab so that our database is in
     ![Create Autonomous Database button](./images/adb-3.png)
 
 
-4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **ORDS ADB** as the Display Name.
+4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **Livelabs ADB** as the Display Name.
 
-    **Display Name:** ORDS ADB
+    **Display Name:** Livelabs ADB
 
     ````
     <copy>
-    ORDS ADB
+    Livelabs ADB
     </copy>
     ````
     ![Display Name Field](./images/adb-4.png)
 
-    For the **Database Name**, we can use **ORDSADB**.
+    For the **Database Name**, we can use **LABADB**.
 
-      **Database Name:** ORDSADB
+      **Database Name:** LABADB
 
     ````
     <copy>
-    ORDSADB
+    LABADB
     </copy>
     ````
     ![Display Name Field](./images/adb-5.png)  

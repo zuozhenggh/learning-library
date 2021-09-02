@@ -1,24 +1,156 @@
-# Oracle Database CI/CD for Developers - Lab 3: Use SQLcl and Liquibase for CI/CD
+# Oracle Database CI/CD for Developers - Lab 1: Use SQLcl for Database Change Management/Tracking
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Database and load JSON data into relational tables. You will then work with this data to understand how it is accessed and stored.
+In this lab you will use the SQLcl to create object in an Autonomous Database. Once the objects are created, SQLcl will be used to export the object definitions so that we can commit them to our OCI Code Repository.
 
 Estimated Lab Time: 30-45 minutes
 
 ### Objectives
 
-- Load JSON data into relational tables
-- Understand how Oracle stores JSON data in relations tables
-- Work with the JSON data with SQL
+- Create a baseline for your database schema
+- Commit the objects to your OCI Repository
 
 ### Prerequisites
 
-- You have completed [Lab 1, Clone and Create a Github Repository](../repo/repo.md).
-- You have completed [Lab 2, Create an Autonomous Database](../createdb/createdb.md).
+- You have completed the [Setups](../setups/setups.md).
 
-## Task 1: XXX
+## Task 1: Log into your Autonomous Database
 
+To access our Autonomous Database, we first must download the wallet that contains the connection information. We can do this in two ways.
+
+### Download the wallet via a web browser
+
+1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
+
+    ![ADB from the menu](./images/adb-1.png)
+
+2. On the Autonomous Database page, change your compartment to the livelabs compartment using the **Compartment** dropdown on the left side of the page.
+
+    ![ADB compartment dropdown](./images/adb-2.png)
+
+3. In the list of Autonomous Databases, find the **Livelabs ADB** database we created and click on the **Display Name**.
+
+    ![click on the Display Name](./images/adb-3.png)
+
+4. On the **Autonomous Database Details Page**, click the **DB Connection button** on the upper part of the page.
+
+    ![DB Connection button](./images/adb-4.png)
+
+
+5. The **Database Connection slider** will appear. 
+
+    ![Database Connection slider](./images/adb-5.png)
+
+   Use this slider to set the **Wallet Type Select List** to **Instance Wallet**
+
+    ![Instance Wallet value](./images/adb-6.png)
+
+   and then click the **Download Wallet button**.
+
+    ![Download Wallet button](./images/adb-7.png)
+
+6. Using the **Download Wallet modal**, enter and confirm a password for the wallet and click **download**.
+
+    ![Download Wallet modal](./images/adb-8.png)
+
+    Note where you saved this file and close the **Download Wallet modal** and the **Database Connection slider**.
+
+7. Open an **OCI Cloud Shell session** if one is not already running.
+
+    ![OCI Cloud Shell session](./images/shell-2.png)
+
+8. In the cloud shell ensure you are in your home directory. You can do this by issuing a **cd** from the command prompt and then verifying you are in your home directory by issuing a *pwd* from the command prompt.
+
+   ![OCI Cloud Shell session](./images/shell-3.png)
+
+   the directory should be **/home/YOUR_USER_NAME**
+
+9. Find where you saved the **Autonomous Database Wallet** on your local environment and **drag and drop it** into the **cloud shell window**.
+
+   ![drag and drop wallet](./images/shell-4.png)
+
+   and you will see the **upload progress** in the upper right of the cloud shell session window
+
+   ![upload progress](./images/shell-5.png)
+
+   When done, you can hide the progress window.
+
+10. In your home directory, you can issue an **ls** at the cloud shell prompt to see the file.
+
+   ![ls at the prompt](./images/shell-6.png)
+
+### Download the wallet via OCI CLI
+
+We can issue an OCI CLI command to download the Autonomous Database wallet. 
+
+1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
+
+    ![ADB from the menu](./images/adb-1.png)
+
+2. On the Autonomous Database page, change your compartment to the livelabs compartment using the **Compartment** dropdown on the left side of the page.
+
+    ![ADB compartment dropdown](./images/adb-2.png)
+
+3. In the list of Autonomous Databases, find the **Livelabs ADB** database we created and click on the **Display Name**.
+
+    ![click on the Display Name](./images/adb-3.png)
+
+4. Open an **OCI Cloud Shell session** if one is not already running.
+
+    ![OCI Cloud Shell session](./images/shell-2.png)
+
+5. At the cloud shell prompt, we will issue ab OCI CLI command using the autonomous-database generate-wallet api. 
+
+The format of the api is:
+
+```
+oci db autonomous-database generate-wallet --autonomous-database-id ADB_OCID --file FILENAME.ZIP --password MY_PASSWORD
+```
+
+where we supply the Autonomous Database OCID, a filename and a password.
+
+6. At the **Cloud Shell prompt**, copy and paste the following to start building our command
+
+````
+<copy>
+oci db autonomous-database generate-wallet --autonomous-database-id 
+</copy>
+````
+   ![copy and paste the following to start building our command](./images/ocid-1.png)
+
+
+7. Using the **Autonomous Database Details Page**, click the **Copy** link next to the **OCID label** in the **Autonomous Database Information** section.
+
+   ![click the Copy link next to the OCID label](./images/ocid-2.png)
+
+   and paste it into the cloud shell ensuring there is a space between --autonomous-database-id and the OCID you are pasting.
+
+   ![paste the OCID](./images/ocid-3.png)
+
+8. We can now add the rest of the command. **Copy and paste the following** into the cloud shell after the OCID you just pasted. Make sure there is a space between the OCID and the command we are about to paste in.
+
+   ````
+   <copy>
+   --file Wallet_LABADB.zip --password S3cr3tPassw0rd!!
+   </copy>
+   ````
+
+   when the command **looks like the following**
+
+   ![full command](./images/ocid-4.png)
+
+   press **enter** and you will see the **wallet download**
+
+   ![paste the OCID](./images/ocid-5.png)
+
+9. In your home directory, you can issue an **ls** at the cloud shell prompt to see the file.
+
+   ![ls at the prompt](./images/ocid-6.png)
+
+
+
+6. We can now construct the OCI CLI command.
 
 Once the ADB wallet is downloaded, at a command line, change the directory to the database directory in our repository project. We should be at db-cicd-project -> database. Start SQLcl but do not log into a database yet:
 
