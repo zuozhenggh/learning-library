@@ -1,8 +1,8 @@
-# Verify Your Environment
+# Initialize Your Environment
 
 ## Introduction
 
-During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user (password is `Ora4U_1234`).
+During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user.
 
 - The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
 - The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start up on boot.
@@ -30,7 +30,14 @@ This lab assumes that you have:
 
 1. On the desktop of your `workshop-installed` compute instance, open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user.
 
-2. Use the Listener Control Utility to verify that the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
+2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
+
+    ```
+    $ <copy>. oraenv</copy>
+    CDB1
+    ```
+
+3. Use the Listener Control Utility to verify that the default listener is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -73,7 +80,7 @@ This lab assumes that you have:
     The command completed successfully
     ```
 
-3. If the default listener is not started, run the following command to start it.
+4. If the default listener is not started, run the following command to start it.
 
     ```
     LSNRCTL> <copy>lsnrctl start</copy>
@@ -81,20 +88,22 @@ This lab assumes that you have:
 
 ## Task 2: Verify that you can connect to CDB1, PDB1, and CDB2 on the `workshop-installed` compute instance
 
-1. Set the Oracle environment variables. At the prompt, enter **CDB1**.
-
-    ```
-    $ <copy>. oraenv</copy>
-    CDB1
-    ```
-
-2. Using SQL*Plus, connect to CDB1 as the `SYS` user.
+1. Using SQL*Plus, test that you can connect to CDB1 as the `SYS` user. If you have the same output as below, you are connected to CDB1.
 
     ```
     $ <copy>sqlplus / as sysdba</copy>
+
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 1 18:14:45 2021
+    Version 19.12.0.0.0
+
+    Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.12.0.0.0
     ```
 
-3. Connect to PDB1.
+2. Test that you can connect to PDB1. If you have the same output as below, you are connected to PDB1.
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
@@ -102,46 +111,57 @@ This lab assumes that you have:
     Session altered.
     ```
 
-4. Exit SQL*Plus.
+3. Exit SQL*Plus.
 
     ```
     SQL> <copy>exit</copy>
+
+    Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.12.0.0.0
     ```
 
-5. Set the Oracle environment variables. At the prompt, enter **CDB2**.
+4. Set the Oracle environment variables. At the prompt, enter **CDB2**.
 
     ```
     $ <copy>. oraenv</copy>
     CDB2
     ```
 
-6. Using SQL*Plus, connect to CDB1.
+5. Using SQL*Plus, test that you can connect to CDB2. If you have the same output as below, you are connected to CDB2.
 
     ```
     $ <copy>sqlplus / as sysdba</copy>
+
+    SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 1 18:18:09 2021
+    Version 19.12.0.0.0
+
+    Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+    Connected to:
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.12.0.0.0
     ```
 
-7. Exit SQL*Plus.
+6. Exit SQL*Plus.
 
     ```
     SQL> <copy>exit</copy>
+    Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.12.0.0.0
     ```
-
-
 
 ## Task 3: Download the lab files onto the `workshop-installed` compute instance
 
-1. Run the following commands to download the lab files to a `/home/oracle/labs/19cnf` directory.
+1. Run the following commands to download the lab files to a new `/home/oracle/labs/19cnf` directory. The last command lists the lab files.
 
     ```
     $ <copy>mkdir -p ~/labs/19cnf</copy>
     $ <copy>cd ~/labs/19cnf</copy>
-    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/AFqOJPH1zeb-VgwvBphlRuUz7P28KTo5xQ6LFz6VukqKgDcpsTAcpDMcRN_tCZKS/n/frmwj0cqbupb/b/19cNewFeatures/o/19cnf-lab-files.zip</copy>
+    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/69xu1SJ57wn73nV-T9dsSTDyY-w71d2o4iCoNkM2ceW9-rkqPFUqCbp7LeFwXQje/n/c4u04/b/labfiles/o/19cnf-lab-files.zip</copy>
     $ <copy>unzip -q 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
     $ <copy>ls -an</copy>
     ```
-
 
 2. Close the terminal window.
 
@@ -161,10 +181,11 @@ In the event that you accidentally change one or more of your lab files on your 
     $ <copy>cd ~/labs/19cnf</copy>
     $ <copy>unzip -o 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
+    $ <copy>ls -an</copy>
     ```
 
 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 30 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
