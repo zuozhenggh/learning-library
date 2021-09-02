@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f3cb8acb-59f9-4503-ab42-65f3dd4eb3be",
+		"_postman_id": "5c23dd73-733a-4961-8870-ffc74a4ac8c4",
 		"name": "OCI_REST_COLLECTION",
 		"description": "This is a sample collection for invoking OCI REST APIs via POSTMAN",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -310,7 +310,7 @@
 					"raw": "{\r\n\"text\" : \"The Delta variant, first identified in India, is likely behind the current uptick in cases. The US is now averaging more than 23,000 new Covid-19 cases each day, according to Johns Hopkins University, almost double two weeks ago. The average number of daily cases is rising in 46 states. And we're seeing 261 new Covid-19 deaths each day -- a 21% increase from last week. Again, deaths that are largely preventable.\"\r\n}"
 				},
 				"url": {
-					"raw": "https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageTextClassification",
+					"raw": "https://language.aiservice.us-ashburn-1.oci.oraclecloud.com/20210101/actions/detectLanguageSentiments",
 					"protocol": "https",
 					"host": [
 						"language",
@@ -372,7 +372,7 @@
 					"    ",
 					"    //pm.environment.set(\"length\", body.length);",
 					"    ",
-					"    var content_length_header = \"content-length: \"+ body.length ; ",
+					"    var content_length_header = \"content-length: \" + Buffer.byteLength(body, \"utf8\"); ",
 					"    var content_type_header = \"content-type: application/json\";",
 					"    ",
 					" ",
