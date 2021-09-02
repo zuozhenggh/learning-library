@@ -37,11 +37,11 @@ In this lab, you will:
 
 ### Prerequisites
 
-* OCI supports the latest versions of Google Chrome and Firefox(Firefox is preferred).
+* OCI supports the latest versions of Google Chrome and Firefox (Firefox is preferred).
 * Valid email address.
 * Credit card: *You will not be charged*
-* Phone(Oracle will send you an SMS based text message for verification purposes).
-* *For Windows users only:* A Windows SSH utility is required to generate SSH key pairs on the client machine and to connect to the Linux based server using Secure Shell (SSH). We suggest either you either download and install the PuTTY tool (http://www.putty.org), or Git BASH (https://gitforwindows.org/).  Installation instructions are included in this tutorial.
+* Phone (Oracle will send you an SMS based text message for verification purposes).
+* *For Windows users only:* A Windows SSH utility is required to generate SSH key pairs on the client machine and to connect to the Linux based server using Secure Shell (SSH). We suggest either you either download and install the PuTTY tool (http://www.putty.org), or Git BASH (https://gitforwindows.org/). Installation instructions are included in this tutorial.
 
 ## Summary
 
@@ -49,10 +49,10 @@ In this lab, you will:
 
 JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud. This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2, Update 4 and Tools Release 9.2.5.0 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
 
-* New industry modules
-* One View Financial Statements
-* Internet of Things Orchestrator
-* UX One Content and Foundation
+* New industry modules.
+* One view financial statements.
+* Internet of Things orchestrator.
+* UX one content and foundation.
 
 ### Before You Begin
 
