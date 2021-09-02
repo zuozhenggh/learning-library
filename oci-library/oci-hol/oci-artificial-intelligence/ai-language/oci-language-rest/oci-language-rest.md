@@ -24,9 +24,11 @@ Make sure to set OCI_Environment as the active environment
 ![](./images/setActive.png " ")
 
 ### 2. Set the Variables
-Open and Edit the newly imported environment(OCI_Environment), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same as what we collected in the Lab 3 (SDK Setup section) above.
+Open and Edit the newly imported environment (OCI_Environment), and set the variables tenancyId, authUserId, keyFingerprint and private Key. These are same that are found in the .oci file you created in the Lab 3 (Task 3>Step4).
 
-Also, make sure to set both Initial Value and Current Value of the variables. 
+Make sure to set both Initial Value and Current Value of the variables.
+
+Click the Save button to commit your changes to the environment.
 
 ![](./images/setVar.png " ")
 

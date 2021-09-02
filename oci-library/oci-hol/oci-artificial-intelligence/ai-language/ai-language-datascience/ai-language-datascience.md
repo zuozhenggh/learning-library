@@ -67,7 +67,7 @@ Click Create Notebook Session to create a new Notebook session.
 Select a name.
 We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
 Set block storage to 50 GB.
-Select the subset with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
+Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
 ![](./images/5.png " ")
 
 ### 4. Open the OCI Data Science notebook
@@ -85,22 +85,26 @@ Download this [Dataset](./files/Data.csv) and upload it in the Notebook.
 ![](./images/uploadFiles.png " ")
 
 ### 2. Setup API Signing Key and Config File
-Make sure you create a .oci directory in the Data Science notebook session.
+Open the Terminal by clicking the Terminal icon in the Launcher Tab.
+
+In the terminal, create a .oci directory in the Data Science notebook session.
 ```
 <copy>mkdir ~/.oci</copy>
 ```
 
-Upload the config file and the Private Key to Notebook Session and move it to the .oci folder.
+Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon
+
+In the terminal, move those files to the .oci folder you just created in Lab 3 (Setup API Signing Key and Config File.)
 ```
 <copy>mv <path of the config file> ~/.oci/</copy>
 ```
 ```
 <copy>mv <path of the private key> ~/.oci/</copy>
 ```
-To More about about how to create API Key and config file, Refer Lab-3(Setup API Signing Key and Config File.
+To More about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
 
 
-![](./images/config.png " ")
+![](./images/ociFolder.jpg " ")
 
 ### 3. Execute the Notebooks
 
