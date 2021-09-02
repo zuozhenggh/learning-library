@@ -416,14 +416,15 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-3. Add entries for the source, target and OGG Hub. For example:
+3. Add entries for the source, target and OGG Hub. Use the following as an example but update with the values current for your environment:
 
     ```
     <copy>
-    ~/.oci/oci_api_key.pem
+    source_host_ip source_host_address source_host_domain_name
+    target_host_ip target_host_address target_host_domain_name
+    ogg_host_ip ogg_host_address ogg_host_domain_name 
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.png)
 
 4. To save and quit vi editor.
 
