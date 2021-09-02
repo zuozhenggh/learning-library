@@ -8,6 +8,8 @@ Estimated Lab Time: 30-45 minutes
 
 ### Objectives
 
+- Download the Autonomous Database wallet
+- Login to your Autonomous Database with SQLcl
 - Create a baseline for your database schema
 - Commit the objects to your OCI Repository
 
@@ -15,7 +17,7 @@ Estimated Lab Time: 30-45 minutes
 
 - You have completed the [Setups](../setups/setups.md).
 
-## Task 1: Log into your Autonomous Database
+## Task 1: Download the Autonomous Database Wallet
 
 To access our Autonomous Database, we first must download the wallet that contains the connection information. We can do this in two ways.
 
@@ -150,7 +152,15 @@ oci db autonomous-database generate-wallet --autonomous-database-id
 
 
 
-6. We can now construct the OCI CLI command.
+## Task 2: Login to your Autonomous Database with SQLcl
+
+
+
+
+
+
+
+
 
 Once the ADB wallet is downloaded, at a command line, change the directory to the database directory in our repository project. We should be at db-cicd-project -> database. Start SQLcl but do not log into a database yet:
 
