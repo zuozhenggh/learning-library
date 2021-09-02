@@ -1239,7 +1239,7 @@ In order to build analytics dashboard using OAC on MDS HeatWave, we need to do t
 2.	Provision an OAC instance
 3.	Build OAC project
 
-Subtask 1 - Create a user account for OAC to MDS
+**Subtask 1 - Create a user account for OAC to MDS**
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     ````
@@ -1267,7 +1267,7 @@ Subtask 1 - Create a user account for OAC to MDS
     <copy>exit;</copy>
     ````
 
-Subtask 2 - Provision an OAC instance
+**Subtask 2 - Provision an OAC instance**
 1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds 
  ![MDS](./images/15oac01.png " ") 
 
@@ -1311,11 +1311,7 @@ Name:
     <copy>mdsoacpac</copy>
 ````
 DNS Zones: 
-
-````
-    <copy>mdsoacpac</copy>
-````
-Virtual Cloud Network's domain name as DNS zone (mdsvcn.oraclevcn.com)
+**Check Virtual Cloud Network's domain name as DNS zone (mdsvcn.oraclevcn.com)**
 
 Description:
 
@@ -1327,14 +1323,38 @@ Description:
 8.	Click the **Create** button
 ![MDS](./images/15oac05.png " ") 
 
-9.	Wait 30 minutes then continue to Subtask 3
+9.	Wait 30 minutes for the process to finish, then continue to Subtask 3
+![MDS](./images/15oac06.png " ") 
 
-Subtask 3 - Build OAC Dashboard
+
+**Subtask 3 - Get HeatWave DB Hostname **
+
+1. Before starting go to Menu Databases > DB Systems
+
+2. Select HeatWave database: MDS-HW  
+
+3. Go to Resources and click on the Endpoinst Link
+![MDS](./images/15oac10.png " ") 
+4. Save the Hostname for use with OAC
+
+Example : **mdshw.sub09012.....mdsvcn.oraclevcn.com**
+
+5. Continue to Subtask 4
+
+**Subtask 4 - Build OAC Dashboard**
 1.	Navigate to hamburger->Analytics->Analytics Clouds
+
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
+![MDS](./images/15oac07.png " ") 
+
 3.	Create a Connection to HeatWave to build a dashboard
+![MDS](./images/15oac08.png " ") 
+
 4.	Search for mysql and select mysql as the database
-5.	Specify the connections details Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
+![MDS](./images/15oac09.png " ") 
+
+5.	Specify the connections details 
+Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
 6.	Next build the dashboard on MDS HeatWave by selecting Create->Data Set
 7.	Select the MySQL Connection created earlier
 8.	For Add Data Set name to customer_nations
