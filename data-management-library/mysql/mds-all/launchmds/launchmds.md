@@ -78,7 +78,7 @@ Estimated Time: 10 minutes
 8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. MDS-VCN page Under Subnets in( (root)) Compartment Click on the  **Private Subnet-MDS-VCN** link
+9. MDS-VCN page Under Subnets in( (**(root)**)) Compartment Click on the  **Private Subnet-MDS-VCN** link
             ![VCN](./images/03vcn07.png " ")
 
 10.	Private Subnet-MDS-VCN page under Security Lists  click on the **Security List for Private Subnet-MDS-VCN** link
@@ -94,7 +94,7 @@ Estimated Time: 10 minutes
     ````
     <copy>0.0.0.0/0</copy>
     ````
- Destination Port Name
+ Destination Port Range
      ````
     <copy>3306,33060</copy>
      ````
@@ -110,10 +110,27 @@ Estimated Time: 10 minutes
      New Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
-15.	Add HTTP port for Web Application. On Security List for Public Subnet-mds_vcn  page
-16. Click on Default Security List for mds_vcn
-17. Click Add Ingress Rules
-18. Add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 80, Description HTTP port and click  Add Ingress Rule.
+15.	Add HTTP port for Web Application.
+
+16. Click  Security List for Public Subnet-mds_vcn
+
+17. Click on Default Security List for mds_vcn
+
+18.	Click Add Ingress Rules page under Ingress Rule 1
+
+ Add an Ingress Rule with Source CIDR
+    ````
+    <copy>0.0.0.0/0</copy>
+    ````
+ Destination Port Range
+     ````
+    <copy>80</copy>
+     ````
+    Description
+     ````
+    <copy>HTTP port</copy>
+     ````
+
     ![VCN](./images/03vcn12.png " ")
 
 ## Task 2: Create a MySQL DB System - Standalone.
@@ -525,7 +542,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -604,7 +621,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -619,7 +636,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 7. **Switchover** - To switch from the current primary instance to one of the secondary instances, do the following:
 
 * Open the navigation menu  Database > MySQL > DB Systems
-* Choose root Compartment.
+* Choose **(root)** Compartment.
 * In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
     * Save the current endpoint values for a before and after comparisson of the switch
     ![Connect](./images/07switch01.png " ")  
@@ -697,7 +714,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -775,7 +792,7 @@ Estimated Time: 15 minutes
     ![Connect](./images/10addheat00.png " ")
 
 2. Open the navigation menu  Databases > MySQL > DB Systems
-3. Choose the roo Compartment. A list of DB Systems is displayed.
+3. Choose the **(root)** Compartment. A list of DB Systems is displayed.
     ![Connect](./images/10addheat01.png " ")
 4. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
     ![Connect](./images/10addheat02.png " ")
@@ -864,7 +881,7 @@ Estimated Time: 15 minutes
     ````
     ![Connect](./images/12hwqueries01.png " ")
 
- 5. Turn on use_secondary_engine variable to use HeatWave
+ 5. Turn on `use_secondary_engine` variable to use HeatWave
      ````
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
@@ -1212,7 +1229,7 @@ if ($stmt = $link->prepare($query)) {
 
 ## **TASK 15:**  Create an Oracle Analytic Cloud
 
-Estimated Time: 20 minutes
+Estimated Time: 20 minutes minus intallation time
 
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following document:
 Analytics - https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html
@@ -1222,7 +1239,7 @@ In order to build analytics dashboard using OAC on MDS HeatWave, we need to do t
 2.	Provision an OAC instance
 3.	Build OAC project
 
-Subtask 1 - Create a user account for OAC to MDS
+**Subtask 1 - Create a user account for OAC to MDS**
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     ````
@@ -1250,22 +1267,94 @@ Subtask 1 - Create a user account for OAC to MDS
     <copy>exit;</copy>
     ````
 
-Subtask 2 - Provision an OAC instance
-1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds and click Create Instance
-2.	On the Create Analytics Instance enter the required information as shown below
-3.	Wait 30 minutes for OAC instance creation to complete.
-4.	Go down to the resources page and click on the Create Private Access Channel link
-5.	Click the create Private Access Channel button
-6.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-7.	Click the create Private Access Channel button
-8.	Wait 30 minutes then continue to Subtask 3
+**Subtask 2 - Provision an OAC instance**
+1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds
+ ![MDS](./images/15oac01.png " ")
 
-Subtask 3 - Build OAC Dashboard
+2. Click Create Instance
+ ![MDS](./images/15oac02.png " ")
+
+3.	On the Create Analytics Instance enter the required information as shown below
+
+Name:
+
+````
+    <copy>mdsoac</copy>
+````
+
+Description:
+
+````
+    <copy>Oracle Analytics Cloud HeatWave Test</copy>
+````
+Capacity: select **OCPU** and select **4**
+
+License Type: select **License Included**
+
+Click the **Create** button
+
+ ![MDS](./images/15oac03.png " ")
+
+4.	Wait 30 minutes for OAC instance creation to complete.
+
+![MDS](./images/15oac04.png " ")
+
+5.	Go down to the resources page and click on the **Configure Private Access Channel**  button
+
+6.	Click the create Private Access Channel button
+
+7.	On the create Private Access Channel page enter the following:
+
+Name:
+
+````
+    <copy>mdsoacpac</copy>
+````
+DNS Zones:
+**Check Virtual Cloud Network's domain name as DNS zone (mdsvcn.oraclevcn.com)**
+
+Description:
+
+````
+    <copy>Testing</copy>
+````
+**Remove second  DNS Zone entry**
+
+8.	Click the **Create** button
+![MDS](./images/15oac05.png " ")
+
+9.	Wait 30 minutes for the process to finish, then continue to Subtask 3
+![MDS](./images/15oac06.png " ")
+
+
+**Subtask 3 - Get HeatWave DB Hostname **
+
+1. Before starting go to Menu Databases > DB Systems
+
+2. Select HeatWave database: MDS-HW  
+
+3. Go to Resources and click on the Endpoinst Link
+![MDS](./images/15oac10.png " ")
+4. Save the Hostname for use with OAC
+
+Example : **mdshw.sub09012.....mdsvcn.oraclevcn.com**
+
+5. Continue to Subtask 4
+
+**Subtask 4 - Build OAC Dashboard**
 1.	Navigate to hamburger->Analytics->Analytics Clouds
+
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
+![MDS](./images/15oac07.png " ")
+
 3.	Create a Connection to HeatWave to build a dashboard
+![MDS](./images/15oac08.png " ")
+
 4.	Search for mysql and select mysql as the database
-5.	Specify the connections details Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
+![MDS](./images/15oac09.png " ")
+
+5.	Specify the connections details
+Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
 6.	Next build the dashboard on MDS HeatWave by selecting Create->Data Set
 7.	Select the MySQL Connection created earlier
 8.	For Add Data Set name to customer_nations

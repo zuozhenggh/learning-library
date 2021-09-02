@@ -13,9 +13,9 @@
             "filename": "./../../access-livelabs-environment/access-livelabs-environment.md"
         },
         {
-            "title": "Verify Your Environment",
-            "description": "Steps to verify the workshop-installed compute instance.",
-            "filename": "./../../verify-environment/verify-environment.md"
+            "title": "Initialize Your Environment",
+            "description": "Steps to initialize the workshop-installed compute instance and download the lab files.",
+            "filename": "./../../initialize-environment/initialize-environment.md"
         },
           {
           "title": "Install Oracle Database 19c with Automatic Root Script Execution",
