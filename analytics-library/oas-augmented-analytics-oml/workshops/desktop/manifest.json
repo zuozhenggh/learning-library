@@ -8,6 +8,11 @@
       "filename": "../../intro/intro.md"
     },
     {
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+    },
+    {
       "title": "Initialize Environment",
       "description": "Initialize Environment Lab",
       "filename": "../../init-start-oas/init-start-oas.md",
