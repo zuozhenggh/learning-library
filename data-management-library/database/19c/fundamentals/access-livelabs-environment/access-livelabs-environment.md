@@ -43,4 +43,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
