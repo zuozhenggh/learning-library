@@ -22,11 +22,11 @@
         "title": "Lab 1: Sample Python Application to convert CSV into Parquet",
         "description" : "Sample Python Application to conver CSV into Parquet",
         "filename": "../../dataflow-sampleapp/sampleapp.md"
-    }
+    },
 
     {
-        "title": "Lab 2: Build a Datapipline with DataFlow and Metastore",
-        "description" : "Build a Datapipline with DataFlow and Metastore",
+        "title": "Lab 2: Build a Datapipeline with OCI DataFlow and Metastore",
+        "description" : "Build a Datapipeline with OCI DataFlow and Metastore",
         "filename": "../../dataflow-sampleapp/samplehiveexternaltable.md"
     }
 
