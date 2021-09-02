@@ -62,7 +62,13 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
        ![](../prepare-setup/images/adb-set_012.png " ")
 
-    - Enter the admin Password you specified when creating the database (here *`WElcome_123#`*) and click [**Sign in**]
+    - Enter the admin Password you specified when creating the database (here *`WElcome_123#`*)
+    
+      ````
+      <copy>WElcome_123#</copy>
+      ````
+
+    - Click [**Sign in**]
 
        ![](../prepare-setup/images/adb-set_013.png " ")
 
@@ -108,7 +114,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
    ![](./images/adb-dbv_005.png " ")
 
-    **Note:** `DV_CONFIGURE_STATUS` must be TRUE
+    **Note:** `DV_CONFIGURE_STATUS` must be **TRUE**
 
 5. Now, enable Database Vault
 
@@ -132,7 +138,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
        ![](./images/adb-dbv_008.png " ")
 
-    **Note:** `DV_ENABLE_STATUS` must be TRUE
+    **Note:** `DV_ENABLE_STATUS` must be **TRUE**
 
 7. Now, Database Vault is enabled!
 
@@ -282,6 +288,7 @@ Next we create a realm to secure HR.CUSTOMERS table from ADMIN and HR (table own
 
           ![](./images/adb-dbv_011.png " ")
 
+      **Note:** APPUSER must be the only user who has access to the table from now!
 
 ## Step 3: Create an Audit Policy to Capture Realm Violations
 
@@ -412,7 +419,10 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 1. First, query the simulation log to show that it has no current values
 
       ````
-      <copy>SELECT VIOLATION_TYPE, USERNAME, MACHINE, COMMAND, DV$_MODULE, SQLTEXT FROM DBA_DV_SIMULATION_LOG;</copy>
+      <copy>
+         SELECT violation_type, username, machine, object_owner, object_name, command, dv$_module
+         FROM dba_dv_simulation_log;
+      </copy>
       ````
 
    ![](./images/adb-dbv_022.png " ")
@@ -464,7 +474,10 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 4. Now, we query the simulation log again as "**ADMIN**" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
 
       ````
-      <copy>SELECT violation_type, username, machine, command, dv$_module, sqltext FROM dba_dv_simulation_log;</copy>
+      <copy>
+         SELECT violation_type, username, machine, object_owner, object_name, command, dv$_module
+         FROM dba_dv_simulation_log;
+      </copy>
       ````
 
    ![](./images/adb-dbv_027.png " ")
@@ -529,7 +542,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        ![](./images/adb-dbv_031.png " ")
 
-    **Note:** `DV_ENABLE_STATUS` must be FALSE
+    **Note:** `DV_ENABLE_STATUS` must be **FALSE**
 
 3. Now, because DB Vaut is disabled, you can drop the Database Vault owner and account manager users
 
@@ -611,5 +624,5 @@ Video:
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
-- **Contributors** - Alan Williams, Gian Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
+- **Contributors** - Alan Williams, Rene Fontcha
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - September 2021

@@ -102,17 +102,23 @@ Although you can connect to your autonomous database using local PC desktop tool
 
     ![](./images/adb-set_012.png " ")
 
-4. Enter the admin Password you specified when creating the database (here *`WElcome_123#`*) and click [**Sign in**]
+4. Enter the admin Password you specified when creating the database (here *`WElcome_123#`*)
+
+      ````
+      <copy>WElcome_123#</copy>
+      ````
 
     ![](./images/adb-set_013.png " ")
 
-5. The Database Actions page opens. In the Development box, click [**SQL**]
+ 5. Click [**Sign in**]
+ 
+ 6. The Database Actions page opens. In the Development box, click [**SQL**]
 
     ![](./images/adb-set_014.png " ")
 
   **Note:** The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click [**Next**] to take a tour through the informational boxes
 
-6. Run the init scripts into SQL Worksheet
+7. Run the init scripts into SQL Worksheet
 
     - Copy/Paste the following SQL queries
 
@@ -148,12 +154,11 @@ Although you can connect to your autonomous database using local PC desktop tool
 
          ![](./images/adb-set_015.png " ")
 
+         ![](./images/adb-set_016.png " ")
 
     - Check that there are no errors
 
-         ![](./images/adb-set_016.png " ")
-
-7. **Your environment is ready to use!** and you may now [proceed to the next lab](#next)
+8. **Your environment is ready to use!** and you may now [proceed to the next lab](#next)
 
 ## Want to Learn More?
 
