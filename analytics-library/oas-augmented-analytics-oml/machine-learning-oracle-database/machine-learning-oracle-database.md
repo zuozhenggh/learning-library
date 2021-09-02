@@ -59,7 +59,7 @@ In this exercise, we will show Oracle Data Miner which enables developers to wor
 2. Expand biworkshopuser01 to open a connection, Right-Click on Tables, then select Import Data.
     ![](./images/ml1.2.png " ")
 
-3. Drag and drop, or browse and select the file **Employee\_Attrition.csv** from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`*</if>
+3. Drag and drop, or browse and select the file **EMPLOYEE\_ATTRITION.csv** from *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles`*
 
     Accept all defaults but name the table "EMPLOYEE\_ATTRITION" when prompted
 
@@ -71,7 +71,7 @@ In this exercise, we will show Oracle Data Miner which enables developers to wor
 
     ![](./images/ml1.4.png " ")
 
-5. Repeat step (3 and 4) above but this time select the file "Employee\_Data.csv", and click Open to import/create table "EMPLOYEE\_DATA".  
+5. Repeat step (3 and 4) above but this time select the file "**Employee\_Data.csv**", and click Open to import/create table "EMPLOYEE\_DATA".  
    Accept all defaults but name the table "EMPLOYEE\_DATA" when prompted.
 
     ![](./images/ml1.5.png " ")
@@ -90,10 +90,11 @@ In this exercise, we will show Oracle Data Miner which enables developers to wor
 
     ![](./images/ml1.8-1.png " ")
 
-9. Now navigate to the lab file "Employee Attriton.xml" and Open it.  
+9. Now navigate to *`/opt/oracle/stage/OAS_OML_Workshop_LabFiles/DataMiner`*, select the file "**Employee Attriton.xml**" and Open it.  
 
     Accept the defaults and import the workflow.
-    ![](./images/ml1.8.png " ")
+    ![](./images/ml1.8-2.png " ")
+    ![](./images/ml1.8-3.png " ")
 
 10.  Right click on the "EMPLOYEE\_ATTRITION" data source node then select "View Data".
     ![](./images/ml1.9.png " ")
@@ -177,7 +178,7 @@ In this exercise we will implement essentially that exact workflow using a serie
     This pulls back all columns for all rows from the table "EMPLOYEE\_ATTRITON".  The table contains employees that we will use to train our machine learning models and contains an ATTRITION column indicating employees who have left the organization as well as those who have not.  
 
     The next lab uses OAS Data Visualization to create a series of charts to help us gain a better business understanding of the data.
-    
+
 3. Open the next file "Step02\_Attrit\_AttribImport.sql" and run the script using the 2nd icon (Run Script) on the tool bar or by pressing _F5_.
   ![](./images/ml2.3.png " ")
 

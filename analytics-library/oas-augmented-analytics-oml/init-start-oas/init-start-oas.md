@@ -7,7 +7,7 @@ This lab provides detailed instructions of connecting to Oracle Analytics Server
 
 ### Objectives
 - Validate that the environment has been initialized and is ready
-<if type="external">- Download and stage workshop artifacts</if> 
+<if type="external">- Download and stage workshop artifacts</if>
 
 ### Prerequisites
 This lab assumes you have:
@@ -50,7 +50,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
     <if type="external">
-    **Notes:** If for any reasons you prefer to bypass the remote desktop and access the OAS UI directly from your local computer/workstation, launch your browser to the following URL
+    **Notes:** If for any reasons you prefer to bypass the remote desktop and access the OAS UI directly from your local computer/workstation, launch your browser to the following URL. Do however keep in mind that you will need to use the remote desktop for several tasks requiring the pre-configured installation of Oracle SQL Developer.
 
     ```
     URL: <copy>http://[your instance public-ip address]:9502/dv/ui</copy>
