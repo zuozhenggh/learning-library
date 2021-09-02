@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage/OAS_Workshop`*</if> are required to complete this lab.
+The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
 - Attrition Training v3.xlsx
 - Employee_Analysis.dva
 
@@ -44,7 +44,7 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
     ![](./images/hr2.png " ")
 
-3. Add the data set. From <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage/OAS_Workshop`*</if>, drag and drop, or browse and select the file *“Attrition Training v3.xlsx”*
+3. Add the data set. From <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>, drag and drop, or browse and select the file *“Attrition Training v3.xlsx”*
 
     ![](./images/hr3.png " ")
 
@@ -235,7 +235,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2_13.png " ")
 
-14. Drag and drop, or browse and select the *“Employee_Analysis.dva”* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage/OAS_Workshop`*</if>.
+14. Drag and drop, or browse and select the *“Employee_Analysis.dva”* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
 
     ![](./images/hr2_14.png " ")
 

@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage/OAS_Workshop`*</if> are required to complete this lab.
+The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
 - inventory.xlsx
 - vendor payments.xlsx
 - JRC Americas Group.jpg
@@ -54,29 +54,31 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 
 7. Now, let’s try to dig deeper and find out why audio’s profit ratio is lower compared to our other product types. Let’s see how the products under "Audio" have been doing over time.
 
-   Expand Time, Products and Profit Metrics, **CTRL-Click** *Product*, *Month* and *Profit Ratio %* Then, **drag them** to the left of Donut chart.
+    Expand Time, Products and Profit Metrics, **CTRL-Click** *Product*, *Month* and *Profit Ratio %* Then, **drag them** to the left of Donut chart.
 
-   A dark blue line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right or top or bottom.
+    A dark blue line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right or top or bottom.
     ![](./images/asdvff7.png " ")
 
 8. In order to review each product separately, **Move** "Products" to **Trellis Rows**. You should  see an individual line chart for each product as shown in the image.
     ![](./images/asdvff8.png " ")
 
-   Since we are concerned about the profit % of the Audio product type, we will filter down to the product level. To do this, **drag** "Products - Product Type" to the filters section and select "Audio"
+    Since we are concerned about the profit % of the Audio product type, we will filter down to the product level. To do this, **drag** "Products - Product Type" to the filters section and select "Audio"
 
-   Observe that "MicroPod" has declining profit ratios and "SoundX Nano" could also be improved. There could be any number of reasons why this is the case.
+    Observe that "MicroPod" has declining profit ratios and "SoundX Nano" could also be improved. There could be any number of reasons why this is the case.
     ![](./images/asdvff9.png " ")
 
 9. We believe there may be an issue with our current levels of inventory. JTC America utilizes a third-party system which captures the current stock of products and the demand. We want to mashup inventory data with our current analysis in order to derive more insights.  
 
-   Click on "+" and "Add Data Set" to import the inventory dataset into your current project
+    Click on "+" and "Add Data Set" to import the inventory dataset into your current project
     ![](./images/asdvff10.png " ")
 
 10. **Click** on "Create Data Set" >> "Drop data file here or click to browse"
     ![](./images/asdvff11.png " ")
 
-   Drag and drop, or browse and select the file *“Inventory.xlsx”* from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage/OAS_Workshop`*</if>
-    ![](./images/asdvff12.png " ")
+    Drag and drop, or browse and select the file *“Inventory.xlsx”* from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)
+
+    ![](./images/asdvff12.png " ")</if> <if type="desktop"> *`/opt/oracle/stage`*
+    ![](./images/asdvff12-d.png " ")</if>
 
 11. Oracle Analytics Server includes its own light weight data preparation capabilities. When you import the spreadsheet, you will navigate to the preparation tab before adding the data to the project.  Here you can make some modifications to the data elements or make modifications to your data based upon any recommendations Oracle Analytics knowledge service suggests.  Additionally, you can define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
 
@@ -116,10 +118,9 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
     ![](./images/asdvff62.6.png " ")
 
 
-
 12. Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp. Now, in order to do a mashup of the data sets, **hold control** and **select** "Product -> Product" from the subject area and "Stock" and "Demand" from the spreadsheet source.
 
-      - **Right Click** and **Select** "Pick Visualization". Explore the data elements panel on the left.  
+    - **Right Click** and **Select** "Pick Visualization". Explore the data elements panel on the left.  
 
     ![](./images/asdvff16.png " ")
 
@@ -129,12 +130,12 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 
 13. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image. Looking at the bar chart, it can be easily seen that for *"MicroPod"* and *"SoundNano"*, the demand is greater than the current stock level.
 
-   For other products, the relationship between Stock and Demand is not significantly different. We are curious why the stock levels of both products is less than the current demand.
+    For other products, the relationship between Stock and Demand is not significantly different. We are curious why the stock levels of both products is less than the current demand.
     ![](./images/asdvff18.png " ")
 
 14. We decide to investigate payables and receivables. In order to continue our analysis, we import our Vendor Outstanding Payment spreadsheet which we obtained from our financial system.
 
-   **Import** the *Vendor Payments.xlsx* spreadsheet and repeat the steps from 10 and 11, including match. You should now see the data set for Vendor Payments appear in the data elements panel of the project.
+    **Import** the *Vendor Payments.xlsx* spreadsheet and repeat the steps from 10 and 11, including match. You should now see the data set for Vendor Payments appear in the data elements panel of the project.
     ![](./images/asdvff19.png " ")
 
 15. Let’s create a visualization to understand which products have more outstanding vendor payments. Expand Products and Vendor Payments, **CTRL-Click** *Product* and *OutstandingPayment* Then, **Right-Click** and **select** "Pick Visualization."
@@ -145,17 +146,17 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 
 17. You should see a new visualization on the canvas. The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments. It is quite possible that the vendors might not be willing to ship the order quantities if there substantial outstanding payments on the account.
 
-   We must take action to clear up these payment issues.
+    We must take action to clear up these payment issues.
     ![](./images/asdvff22.png " ")
 
 18. Let’s play with a couple of options.
 
-   On the bar chart, **right click** on the Green bar (Demand) and **Sort** -> "Product by Demand Low to High."
+    On the bar chart, **right click** on the Green bar (Demand) and **Sort** -> "Product by Demand Low to High."
 
-   See that the graph sorts itself with Demand in order from lowest to highest demand.
+    See that the graph sorts itself with Demand in order from lowest to highest demand.
     ![](./images/asdvff23.png " ")
 
-   You can filter the entire canvas by using "Keep Selected". To show this **Right Click** on the "Audio" pie slice and **select** "Keep Selected".
+    You can filter the entire canvas by using "Keep Selected". To show this **Right Click** on the "Audio" pie slice and **select** "Keep Selected".
     ![](./images/asdvff24.png " ")
 
 19. See that the whole canvas gets filtered for the Audio Product Type
@@ -172,7 +173,7 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 
 23. **Select** the "Circle Pack," which is a custom visualization.
 
-   *Note:* if you are interested in learning how to upload custom visualization types, please see the section at the end of this document.
+    *Note:* if you are interested in learning how to upload custom visualization types, please see the section at the end of this document.
 
    **Drag** "Products" from Color to the Rows section.
     ![](./images/asdvff29.png " ")
@@ -183,10 +184,10 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 25. Now, let’s look at revenue by date by leveraging another custom Visualization type called "Calendar Heatmap." Expand Time and Revenue Metrics, **CTRL-Click** *Date* and *Revenue* Then, **right click** and **select** the "Calendar Heatmap" visual.  
     ![](./images/asdvff31.png " ")
 
-   Recall in the previous activity, the calendar map visualization was not available for selection. Oracle Analytics determined the calendar heatmap to be an appropriate visualization option because date and revenue were selected by the user.
+    Recall in the previous activity, the calendar map visualization was not available for selection. Oracle Analytics determined the calendar heatmap to be an appropriate visualization option because date and revenue were selected by the user.
 
-   We now see a new visual appear next to the Circle Pack visual.
-   [](./images/asdvff32.png " ")
+    We now see a new visual appear next to the Circle Pack visual.
+    ![](./images/asdvff32.png " ")
 
 26. **Click** on the "Save" icon at the top right of the screen to save your project.
     ![](./images/asdvff33.png " ")
@@ -199,9 +200,9 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
 1. In this exercise we will create two custom calculations and then use Oracle’s self-service built in map capabilities to analyze state and average profit per customer.
 
-   Let’s start by adding a new canvas.
+    Let’s start by adding a new canvas.
 
-   **Click** on the "+" icon at the bottom to create a new canvas.
+    **Click** on the "+" icon at the bottom to create a new canvas.
     ![](./images/asdvff35.png " ")
 
 2. **Right Click** on the "My Calculations" folder.  **Select** "Add Calculation".
@@ -214,19 +215,19 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 4. **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from
 "Revenue Metrics" after "/." Click Validate. Click Save.
 
-   You have successfully created your own custom calculation that can be used like any other metric.
+    You have successfully created your own custom calculation that can be used like any other metric.
     ![](./images/asdvff38.png " ")
 
 5. Let’s utilize our custom calculation in a couple of visualizations.
 
-   Select "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
+    Select "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." Filter to "United States" by typing "uni" and select "United States".
 
     ![](./images/asdvff40.png " ")
 
 6. Select "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit.
     ![](./images/asdvff62.8.png " ")
 
-   Let’s see what this looks like on a map.
+    Let’s see what this looks like on a map.
 
 7. On the upper right corner of the visual, click the menu hamburger and select "Edit" and then "Duplicate Visualization".
 
@@ -234,7 +235,7 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
 8. Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
 
-   Select map.
+    Select map.
     ![](./images/asdvff62.10.png " ")
 
 9. Let’s change the default color scheme to a red to green gradient. From Color, click on the down arrow > Manage Assignments
@@ -242,10 +243,10 @@ The data visualization capabilities in Oracle Analytics Server include mapping a
 
 10. Scroll to Series, and locate the calculation you created : Profit by Customer Count measure
 
-      - **Click** the edit option (the pen) for Profit by Customer Count.
-      - **Click** the Down arrow next to the color bar
-      - **Select** the red to green gradient second from the bottom right.
-      - **Click** "Done".
+    - **Click** the edit option (the pen) for Profit by Customer Count.
+    - **Click** the Down arrow next to the color bar
+    - **Select** the red to green gradient second from the bottom right.
+    - **Click** "Done".
 
     ![](./images/asdvff47.png " ")
 
@@ -271,7 +272,7 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 
 3. **Select** "Profit Ratio %", "Revenue" and "Month." Pick Visualization. **Select** "Combo."
 
-   Notice in freeform mode the entire canvas is not utilized automatically.
+    Notice in freeform mode the entire canvas is not utilized automatically.
     ![](./images/asdvff52.png " ")
 
 4. **Right click** "Profit Ratio %" and select "Y2 Axis." Enlarge the visualization for a better view.
@@ -282,14 +283,15 @@ Oracle self-service includes a freeform canvas mode. This allows you to place vi
 
 6. You have now created a management report that shows both Revenue and Profit Ratio % with their corresponding trendlines all with no coding.
 
-   **Drag** and **drop** "Forecast" on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
+    **Drag** and **drop** "Forecast" on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
     ![](./images/asdvff55.png " ")
 
-   Review the properties box. Notice the forecast has predicted revenue and profit ratio % for the next 3 months. These variables may be modified as needed by the user.
+    Review the properties box. Notice the forecast has predicted revenue and profit ratio % for the next 3 months. These variables may be modified as needed by the user.
     ![](./images/asdvff56.png " ")
 
 7. Next we will add the JTC Americas logo to our canvas.
-   **Click** the Visualizations menu on the left side of the pane. **Select** "Image" and **drag** and **drop** it on the canvas. Click "Select Image" and upload the *"JTC Americas Group.jpg"* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage/OAS_Workshop`*</if>.
+
+    **Click** the Visualizations menu on the left side of the pane. **Select** "Image" and **drag** and **drop** it on the canvas. Click "Select Image" and upload the *"JTC Americas Group.jpg"* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
 
     ![](./images/asdvff57.png " ")
 
@@ -314,7 +316,7 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 
 1. Navigate to the Analytics Library to view custom visualization plugins which are available for import
 
-   [https://www.oracle.com/business-analytics/data-visualization/extensions.html](https://www.oracle.com/business-analytics/data-visualization/extensions.html)
+    [https://www.oracle.com/business-analytics/data-visualization/extensions.html](https://www.oracle.com/business-analytics/data-visualization/extensions.html)
 
     ![](./images/uscve1.png " ")
 
