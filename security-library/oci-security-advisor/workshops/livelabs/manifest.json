@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "Introduction about the Workshop and Labs",
-      "filename": "../../0introduction/introduction.md"
+      "filename": "../../introduction/introduction.md"
     },
     {
       "title": "Getting Started",
@@ -16,22 +16,22 @@
     {
       "title": "Lab 1: Create a Secure Bucket",
       "description": "Step by step instruction on creating a Secure Bucket",
-      "filename": "../../1provision-secure-bucket/create-bucket.md"
+      "filename": "../../provision-secure-bucket/create-bucket.md"
     },
     {
       "title": "Lab 2: Create a Secure Block Volume",
       "description": "Step by step instruction on creating a Secure Block Volume",
-      "filename": "../../2provision-block-volume/create-block-volume.md"
+      "filename": "../../provision-block-volume/create-block-volume.md"
     },
     {
       "title": "Lab 3: Create a Secure Virtual Machine Instance",
       "description": "Step by step instruction on creating a Secure Virtual Machine Instance",
-      "filename": "../../3provision-virtual-machine/create-compute-instance.md"
+      "filename": "../../provision-virtual-machine/create-compute-instance.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+      "filename": "../../need-help/need-help.md"
   }
   ]
 }
