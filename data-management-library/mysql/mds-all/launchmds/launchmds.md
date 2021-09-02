@@ -31,6 +31,7 @@ In this lab, you will be guided through the following tasks:
 - Create a Bastion Host and connect to MySQL Standalone
     * Connect to MySQL Standalone using Workbench
 - Manage MySQL Database Service Systems 
+- Create a Bastion Host and connect to MySQL
 
 ### Prerequisites
 
@@ -1448,6 +1449,51 @@ A prompt is displayed asking you to confirm the deletion.
 Enter the word, all caps, "DELETE" and click "Delete 1 MySQL DB System" button.
 
 When delete process is done **MDS-DB** will be set to Delete status.
+
+## **TASK 18:**  Create a Bastion Host and Connect to MySQL
+1. Now we will create a new Bastion Service that will allow us to create a SSH Tunnel to our MySQL DB System
+
+2. Open the navigation menu Identity & Security > Bastion
+
+    ![MDS](./images/10bastion01.png " ") 
+
+3. Click 'Create Bastion'
+
+   ![MDS](./images/10bastion02.png " ") 
+
+4. On Create Bastion page, complete the fields
+
+    - Bastion Name: MDSBastion
+    - Select the Target Virtual Cloud Network in root
+    - Select the Target Subnet in root
+    - Add the CIDR Block Allowlist: 0.0.0.0/0
+    
+    ![MDS](./images/10bastion03.png " ") 
+
+5. Click on Create Bastion
+
+6. Start the Cloud Shell and generate a SSH Key that will be used for the tunnel's session
+
+    ![MDS](./images/10bastion04.png " ") 
+
+7. In the Cloud Shell, create the SSH Key with the following command:
+
+    ````
+    <copy>
+    $ ssh-keygen -t rsa
+    </copy>
+    ````
+
+8. You will find the public key stored in ~/.ssh/id_rsa.pub
+
+  ![MDS](./images/10bastion05.png " ") 
+
+9. On MDS-Bastion page, under sessions, click on 'Create Session'
+
+  ![MDS](./images/10bastion06.png " ") 
+
+10. 
+
 ## Learn More
 
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
