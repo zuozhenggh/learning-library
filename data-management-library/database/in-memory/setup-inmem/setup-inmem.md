@@ -12,7 +12,7 @@ Quick walk through on how to enable In-Memory.
 
 [](youtube:oCES149OPeE)
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -89,8 +89,23 @@ This lab assumes you have completed the following labs:
     ````
     <copy>
     sqlplus / as sysdba
+    </copy>
+    ````
+
+    ````
+    <copy>
     show sga;
+    </copy>
+    ````
+
+    ````
+    <copy>
     show parameter inmemory; 
+    </copy>
+    ````
+
+    ````
+    <copy>
     show parameter keep;
     </copy>
     ````
@@ -256,7 +271,7 @@ You also had an opportunity to populate and view objects in the IM column store 
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

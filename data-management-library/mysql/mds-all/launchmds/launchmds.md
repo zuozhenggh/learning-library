@@ -1,4 +1,4 @@
-# Getting Started with MySQL Database Service and HeatWave
+# Getting Started with MySQL Database Service High Availability and HeatWave
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -25,7 +25,7 @@ In this lab, you will be guided through the following tasks:
     * Create Airportdb Database and Import Data
     * Add HeatWave Cluster to MySQL HeatWave
     * Load Airportdb Data into HeatWave
-    * Runn Queries in HeatWave
+    * Run Queries in HeatWave
 - Install Apache and PHP and create PHP / MYSQL Connect Application
 - Create Oracle Analytics Cloud and connect to MySQL HeatWave
 - Create a Bastion Host and connect to MySQL Standalone
@@ -37,7 +37,9 @@ In this lab, you will be guided through the following tasks:
 - An Oracle Trial, or Paid Cloud Account
 - Some Experience with MySQL Shell
 
-## Task 1: Create Virtual Cloud Network
+## **TASK 1:** Create Virtual Cloud Network
+
+Estimated Time: 10 minutes
 
 1. Navigation Menu > Core Infrastructure > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
@@ -76,7 +78,7 @@ In this lab, you will be guided through the following tasks:
 8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. MDS-VCN page Under Subnets in( (root)) Compartment Click on the  **Private Subnet-MDS-VCN** link 
+9. MDS-VCN page Under Subnets in( (**(root)**)) Compartment Click on the  **Private Subnet-MDS-VCN** link 
             ![VCN](./images/03vcn07.png " ")
 
 10.	Private Subnet-MDS-VCN page under Security Lists  click on the **Security List for Private Subnet-MDS-VCN** link
@@ -92,7 +94,7 @@ In this lab, you will be guided through the following tasks:
     ````
     <copy>0.0.0.0/0</copy>
     ````
- Destination Port Name 
+ Destination Port Range 
      ````
     <copy>3306,33060</copy>
      ````
@@ -108,13 +110,32 @@ In this lab, you will be guided through the following tasks:
      New Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
-15.	Add HTTP port for Web Application. On Security List for Public Subnet-mds_vcn  page
-16. Click on Default Security List for mds_vcn
-17. Click Add Ingress Rules
-18. Add an Ingress Rule with Source CIDR 0.0.0.0/0 and Destination Port Name 80, Description HTTP port and click  Add Ingress Rule.
+15.	Add HTTP port for Web Application. 
+
+16. Click  Security List for Public Subnet-mds_vcn 
+
+17. Click on Default Security List for mds_vcn
+
+18.	Click Add Ingress Rules page under Ingress Rule 1
+ 
+ Add an Ingress Rule with Source CIDR 
+    ````
+    <copy>0.0.0.0/0</copy>
+    ````
+ Destination Port Range 
+     ````
+    <copy>80</copy>
+     ````
+    Description 
+     ````
+    <copy>HTTP port</copy>
+     ````
+
     ![VCN](./images/03vcn12.png " ")
 
-## Task 2: Create a MySQL DB System - Standalone.
+## **TASK 2:** Create a MySQL DB System - Standalone.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -130,7 +151,7 @@ In this lab, you will be guided through the following tasks:
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Exlude Backups
+    - Exclude Backups
    
 
 4. Provide basic information for the DB System:
@@ -204,7 +225,9 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/04mysql11-1.png" ")
 
-## Task 3: Create a MySQL DB System - High Availability.
+## **TASK 3:** Create a MySQL DB System - High Availability.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -297,7 +320,9 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-2.png" ")
 
 
-## Task 4: Create a MySQL DB System - HeatWave.
+## **TASK 4:** Create a MySQL DB System - HeatWave.
+
+Estimated Time: 10 minutes
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -364,9 +389,9 @@ In this lab, you will be guided through the following tasks:
     Do not check "Choose a Fault Domain" for this DB System. Oracle will chooses the best placement for you.
     ![MDS](./images/04mysql06-3.png" ")
 
-9. Configure hardware keep default shape  **MySQL.HeatWave.VM.Standard.E3**
+9. Configure hardware keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) Set to **4000**
+    Data Storage Size (GB) Keep default value:  **1024**
     ![MDS](./images/04mysql07-3.png" ")
 
 19. Configure Backups, "Enable Automatic Backups"
@@ -396,7 +421,9 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-1.png" ")
 
 
-## Task 5: Create Client Virtual Machine
+## **TASK 5:** Create Client Virtual Machine
+
+Estimated Time: 10 minutes
 
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to the Console, menu Compute, Instances
     ![COMPUTE](./images/05compute01.png " ")
@@ -416,7 +443,7 @@ In this lab, you will be guided through the following tasks:
 
 6. Edit Configure placement and hardware
    
-   Keed the selected Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
+   Keep the selected Availability Domain, Instance Shape (select VM.Standard.E2.1.Micro).
 
    For VCN make sure **MDS-VCN** is selected, "Assign a public IP address" should be set to Yes. 
    
@@ -434,15 +461,18 @@ In this lab, you will be guided through the following tasks:
 10. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as Provisioning during the creation
     ![COMPUTE](./images/05compute07.png " ")
 
-11.	The state Running indicates that the Virtual Machine is ready to use. 
+11.	The state Runing indicates that the Virtual Machine is ready to use. 
 
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page. 
     ![COMPUTE](./images/05compute08.png " ")
 
-## Task 6: Connect to MySQL Database - Standalone
+## **TASK 6:** Connect to MySQL Database - Standalone
+
+Estimated Time: 10 minutes
+
 MySQL Database Service Standalone has daily automatic backups and is resilient to failures because it leverages Block Volumes to store user data. Consequently, it offers the same durability, security, and performance guarantees. Automatic and manual backups are replicated to another availability domain and can be restored in the event of a disaster or user error. Data loss is limited by the last successful backup.
 
-1. Linux ad Mac users  use Terminal 
+1. Linux and Mac users  use Terminal 
 
    Windows 10 users use Powershell
 
@@ -512,7 +542,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -524,7 +554,9 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## Task 7: Connect to MySQL Database and Switchover - High Availability
+## **TASK 7:** Connect to MySQL Database and Switchover - High Availability
+
+Estimated Time: 10 minutes
 
 A highly available database system is one which guarantees if one instance fails, another takes over, with zero data loss and minimal downtime.
 MySQL Database High Availability uses MySQL Group Replication to provide standby replicas to protect your data and provide business continuity. It is made up of three MySQL instances, a primary, and two secondaries. All data written to the primary instance is also written to the secondaries. In the event of failure of the primary, one of the secondaries is automatically promoted to primary, is set to read-write mode, and resumes availability to client applications with no data loss. This is called a failover. It is also possible to switch manually, and promote a secondary to primary. This is called a switchover.
@@ -578,7 +610,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 
  Enter the following command at the prompt:
      ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
  To display a list of databases, Enter the following command at the prompt:
       ````
@@ -589,7 +621,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -604,7 +636,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 7. **Switchover** - To switch from the current primary instance to one of the secondary instances, do the following:
 
 * Open the navigation menu  Database > MySQL > DB Systems 
-* Choose root Compartment.
+* Choose **(root)** Compartment.
 * In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
     * Save the current endpoint values for a before and after comparisson of the switch
     ![Connect](./images/07switch01.png " ")  
@@ -616,7 +648,9 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
     * The DB System's status changes to Updating, and the selected instance becomes the primary.
         ![Connect](./images/07switch04.png " ")  
 
-## Task 8: Connect to MySQL Database - HeatWave
+## **TASK 8:** Connect to MySQL Database - HeatWave
+
+Estimated Time: 15 minutes
 
 HeatWave is an add-on to MySQL Database Service. It provides a highly performant and scalable in-memory analytic processing engine optimized for Oracle Cloud Infrastructure. Customers can run HeatWave on data stored in the MySQL database without requiring ETL and without any change to the application. Applications simply access HeatWave via standard MySQL protocols, and the typical administration actions are automated, integrated and accessible via the OCI Web Console, REST API, CLI, or DevOps tools. HeatWave queries achieve orders of magnitude acceleration over the MySQL database.
 
@@ -669,7 +703,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
 
  Enter the following command at the prompt:
      ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
  To display a list of databases, Enter the following command at the prompt:
       ````
@@ -680,7 +714,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MysQL user and host from user table enter the following command at the prompt:
+ To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
@@ -692,7 +726,13 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## Task 9:  Create airportdb schema and load data using MySQL Shell
+## **TASK 9:**  Create airportdb schema and load data using MySQL Shell
+
+Estimated Time: 15 minutes
+
+The airportdb data files were produced using the MySQL Shell Schema Dump Utility. For information about this utility, see Instance Dump Utility, Schema Dump Utility, and Table Dump Utility.
+
+Data files produced by the MySQL Shell Schema Dump Utility include DDL files for creating the schema structure, compressed .tsv files that contain the data, and .json metadata files.
 
 **Be sure to complete TASK 8 before doing TASK 9**
 
@@ -743,14 +783,16 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
     ````
     <copy>\q</copy>
     ````
-## Task 10:  Add a HeatWave Cluster to MDS-HW MySQL Database System
+## **TASK 10:**  Add a HeatWave Cluster to MDS-HW MySQL Database System
+
+Estimated Time: 15 minutes
 
 1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
     ![Connect](./images/10addheat00.png " ")
 
 2. Open the navigation menu  Databases > MySQL > DB Systems
-3. Choose the roo Compartment. A list of DB Systems is displayed. 
+3. Choose the **(root)** Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
 4. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
     ![Connect](./images/10addheat02.png " ")
@@ -777,7 +819,10 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 12. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
-## Task 11:  Load airportdb Data into HeatWave Cluster
+## **TASK 11:**  Load airportdb Data into HeatWave Cluster
+
+Estimated Time: 15 minutes
+
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -793,7 +838,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
 
     ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
 
     ````
@@ -813,7 +858,9 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ````
     ![Connect](./images/11loadcluster02.png " ")
 
-## Task 12:  Runn Queries in HeatWave
+## **TASK 12:**  Run Queries in HeatWave
+
+Estimated Time: 15 minutes
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -825,7 +872,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 
 3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt:
     ````
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ````
 
 4.	Change to the airport database.  Enter the following command at the prompt:
@@ -834,14 +881,14 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ````
     ![Connect](./images/12hwqueries01.png " ")
 
- 5. Turn on use secondary engine variable to use HeatWave
+ 5. Turn on `use_secondary_engine` variable to use HeatWave
      ````
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
     
 6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
- 7. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
+ 7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
 
     ````
     <copy>EXPLAIN SELECT
@@ -885,7 +932,7 @@ LIMIT 10;
     ````
      ![Connect](./images/12hwqueries03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use secondary engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
@@ -913,17 +960,17 @@ LIMIT 10;</copy>
     ````
     ![Connect](./images/12hwqueries04.png " ")
 
- 11. To see if use secondary engine is enabled (=ON)
+ 11. To see if use_secondary_engine is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Running additional queries. Remember to turn on and off the use of secondary engine  to compare the execution time. 
+ 12. Runing additional queries. Remember to turn on and off the use_secondary_engine  to compare the execution time. 
    
-    (Example  **SET SESSION use secondary engine=On;**) 
+    (Example  **SET SESSION use_secondary_engine=On;**) 
 
-    (Example  **SET SESSION use secondary engine=Off;**)      
+    (Example  **SET SESSION use_secondary_engine=Off;**)      
 
  13. Enter the following command at the prompt
      ````
@@ -978,14 +1025,14 @@ LIMIT 10;
 16. Uery c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
     ````
-    <copy>SET SESSION use secondary engine=ON;</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
 
     ````
     <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
     ````
     ````
-    <copy>SET SESSION use secondary engine=OFF;</copy>
+    <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ````
     
     ````
@@ -995,9 +1042,12 @@ LIMIT 10;
 17. Keep HeatWave processing enabled
 
     ````
-    <copy>SET SESSION use secondary engine=ON;</copy>
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
-## Task 13:  Connect to HeatWave using Workbench
+## **TASK 13:**  Connect to HeatWave using Workbench
+
+Estimated Time: 5 minutes
+
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box. 
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH. 
@@ -1008,7 +1058,9 @@ LIMIT 10;
     **MySQL Workbench Use  for MDS HeatWAve**
     ![MDS](./images/13workbench02.png " ") 
 
-## Task 14:  Create PHP MySQL Application
+## **TASK 14:**  Create PHP MySQL Application
+
+Estimated Time: 20 minutes
 
 Subtask 1 – Install App Server (APACHE)
 
@@ -1175,7 +1227,9 @@ if ($stmt = $link->prepare($query)) {
 
     Example: http://129.213.167..../dbtest.php  
 
-## Task 15:  Create and Oracle Analytic Cloud
+## **TASK 15:**  Create an Oracle Analytic Cloud
+
+Estimated Time: 20 minutes minus intallation time
 
 NOTE:   the following exercise is quite complicated. To learn how to use OAC go to the following document:
 Analytics - https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorials.html
@@ -1185,7 +1239,7 @@ In order to build analytics dashboard using OAC on MDS HeatWave, we need to do t
 2.	Provision an OAC instance
 3.	Build OAC project
 
-Subtask 1 - Create a user account for OAC to MDS
+**Subtask 1 - Create a user account for OAC to MDS**
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     ````
@@ -1213,33 +1267,94 @@ Subtask 1 - Create a user account for OAC to MDS
     <copy>exit;</copy>
     ````
 
-Subtask 2 - Provision an OAC instance
-1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds and click Create Instance
-2.	On the Create Analytics Instance enter the required information as shown below
-3.	Wait 30 minutes for OAC instance creation to complete.
-4.	Go down to the resources page and click on the Create Private Access Channel link
-5.	Click the create Private Access Channel button
-6.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-7.	Click the create Private Access Channel button
-8.	Wait 2 hours then continue to TASK 3
+**Subtask 2 - Provision an OAC instance**
+1.	From the OCI console, navigate to Analytics & AI-> Analytics Clouds 
+ ![MDS](./images/15oac01.png " ") 
 
-Subtask 3 - Build OAC Dashboard
-1.	Navigate to hamburger->Analytics->Analytics Clouds
-2.	From the OCI console, navigate to Analytics-> Analytics Clouds and click Create Instance
+2. Click Create Instance
+ ![MDS](./images/15oac02.png " ") 
+
 3.	On the Create Analytics Instance enter the required information as shown below
-4.	Wait 30 minutes for OAC instance creation to complete.
-5.	Go down to the resources page and click on the Create Private Access Channel link
-6.	Click the create Private Access Channel button
-7.	On the create Private Access Channel page enter the required … use  MDS_VCN  for virtual cloud network
-8.	Click the create Private Access Channel button
-8.	Wait 2 hours then continue to Subtask 3
 
-Subtask 4 - Build OAC Dashboard
+Name:
+
+````
+    <copy>mdsoac</copy>
+````
+
+Description: 
+
+````
+    <copy>Oracle Analytics Cloud HeatWave Test</copy>
+````
+Capacity: select **OCPU** and select **4**
+
+License Type: select **License Included**
+
+Click the **Create** button
+
+ ![MDS](./images/15oac03.png " ") 
+
+4.	Wait 30 minutes for OAC instance creation to complete.
+
+![MDS](./images/15oac04.png " ") 
+
+5.	Go down to the resources page and click on the **Configure Private Access Channel**  button
+
+6.	Click the create Private Access Channel button
+
+7.	On the create Private Access Channel page enter the following:
+
+Name:
+
+````
+    <copy>mdsoacpac</copy>
+````
+DNS Zones: 
+**Check Virtual Cloud Network's domain name as DNS zone (mdsvcn.oraclevcn.com)**
+
+Description:
+
+````
+    <copy>Testing</copy>
+````
+**Remove second  DNS Zone entry**
+
+8.	Click the **Create** button
+![MDS](./images/15oac05.png " ") 
+
+9.	Wait 30 minutes for the process to finish, then continue to Subtask 3
+![MDS](./images/15oac06.png " ") 
+
+
+**Subtask 3 - Get HeatWave DB Hostname **
+
+1. Before starting go to Menu Databases > DB Systems
+
+2. Select HeatWave database: MDS-HW  
+
+3. Go to Resources and click on the Endpoinst Link
+![MDS](./images/15oac10.png " ") 
+4. Save the Hostname for use with OAC
+
+Example : **mdshw.sub09012.....mdsvcn.oraclevcn.com**
+
+5. Continue to Subtask 4
+
+**Subtask 4 - Build OAC Dashboard**
 1.	Navigate to hamburger->Analytics->Analytics Clouds
+
 2.	Select the OAC instance you provisioned to access the OAC console by clicking on Analytics Home Page
+![MDS](./images/15oac07.png " ") 
+
 3.	Create a Connection to HeatWave to build a dashboard
+![MDS](./images/15oac08.png " ") 
+
 4.	Search for mysql and select mysql as the database
-5.	Specify the connections details Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
+![MDS](./images/15oac09.png " ") 
+
+5.	Specify the connections details 
+Specify the hostname of MDS in FQDN such as mysql-xxx.oraclevpn.com and be sure to use the oacadmin mysql user and password Welcome#123
 6.	Next build the dashboard on MDS HeatWave by selecting Create->Data Set
 7.	Select the MySQL Connection created earlier
 8.	For Add Data Set name to customer_nations
@@ -1272,7 +1387,9 @@ LIMIT 10;</copy>
 16.	Click the dataset icon and move the nbpeople field to Y-axis and airlinename field to Category 
 17.	Set project name to customernationsbargraph 
 
-## Task 16: Start, stop, or reboot MySQL DB System
+## **TASK 16:** Start, stop, or reboot MySQL DB System
+
+Estimated Time: 10 minutes
 
 Open the navigation menu. Under MySQL, click DB Systems.
 ![MDS](./images/04mysql01.png " ")
@@ -1286,7 +1403,7 @@ Click **MDS-DB** to open the DB System details page
 
 Select one of the following actions:
 * Start: Starts a stopped DB System. After the DB System is started, the Stop action is enabled and the Start option is disabled.
-* Stop: Stops a running DB System. After the DB System is powered off, the Start action is enabled.
+* Stop: Stops a Runing DB System. After the DB System is powered off, the Start action is enabled.
 * Restart: Shuts down a DB System, and restarts it.
 
 **Note**  Stopping a DB System stops billing for all OCPUs associated with it. 
@@ -1307,7 +1424,9 @@ Select a shutdown type:
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
 
-## Task 17: Delete MySQL DB System
+## **TASK 17:** Delete MySQL DB System
+
+Estimated Time: 10 minutes
 
 Deleting a DB System permanently deletes it. Any manual backups associated with the deleted DB System are retained for their retention periods. Automatic backups are deleted with the DB System.
 
