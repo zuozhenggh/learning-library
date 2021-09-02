@@ -18,13 +18,13 @@ In this lab, you will do the following :
 
 1. Navigate to Data Catalog Console and creates new MetaStore Instance under a Compartment.
 
-2. Build a sample PySpark application that will create the database and DDL to create HIVE Managed Table. We run some select/ aggregation queries to see that the metadata about the data is stored in the metaStore and all subsequent data flow Runs, can leverage the DDL created once and query the data.
+2. Build a sample PySpark application that will create the database and DDL to create HIVE Tables. We run some Select/Aggregation queries to see that the metadata about the data is stored in the MetaStore and all subsequent data flow Runs, can leverage the DDL created once and query the data.
 
 3. Navigates to Data Flow Console and creates the Data Flow Application using the PySpark application created in #2 above and selects the metastore that needs to be associated with the template.
 
 4. User navigates to Data Flow Console and runs the Application.
 
-5. User Navigates to the Object store to inspect the transformed data in the Metastore.
+5. User navigates to the Object store to inspect the transformed data in the Metastore.
 
 6. User navigates to OAC to visualize the data.
 
@@ -59,11 +59,12 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 ## **STEP 1**: Inspect the Input JSON DataSet
 
  1. From the Console navigate to the object storage
+
    ![Object Store](../images/upload_objecstorage.png " ")
 
- 2. For this workshop, we are reusing existing buckets `workshop-scripts` that contains all the input python files and `workshop-data` that contains the Input JSON File  in compartment  `dataflow-demo`. The process to upload the files is as described [File Upload](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage).
+ 2. For this workshop, we are reusing existing buckets `workshop-scripts` that contains all the input python files and `workshop-data` that contains all the Input JSON files  in compartment  `dataflow-demo`. The process to upload the files is as described [File Upload](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingbuckets.htm#Putting_Data_into_Object_Storage).
 
- 3. In the bucket `workshop-scripts` find the `hive-example.py` file
+ 3. In the bucket `workshop-scripts` find the `hive-example.py` and `query_metastore` files
 
      ![Files](../images/Hive-Example.png " ")
 
@@ -85,11 +86,11 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
    ![MetaStore Compartment](../images/Metastore-Change-Compartment.png " ")
 
-4. Should list the MetaStores in  ```dataflow-demo``` Compartment and you should find the ```DF-metastore``` metastore that we will use for the lab
+4. Should list the MetaStores in  ```dataflow-demo``` Compartment and you should find the ```DF-metastore``` Metastore that we will use for the workshop
 
     ![Show MetaStore](../images/metastore-compartment.png " ")
 
-5. Open the metastore ```DF-metastore```  to inspect the location of the Managed table for the MetaStore. This will hold the data for the Managed table that we create later.
+5. Open the metastore ```DF-metastore```  to inspect the location of the table for the MetaStore. This will hold the data for the tables that we create later.
 
     ![DF Metastore](../images/DF-metastore.png " ")
 
@@ -107,7 +108,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
     3.3 Leave the `Main class Name` and the `Archive URI` empty
 
-    3.4 In the `Argument` field enter the path for the JSON files (seperated by space) that we saw in Step#3 and name of Hive DB (give your UUID + "DB"). The format of path is as following ```oci://<<bucketname@namespace/folder-path>>```
+    3.4 In the `Argument` field enter the path for the JSON files (seperated by space) that we saw in Step#1 above and name of Hive DB (give your UUID + "DB"). The format of path is as following ```oci://<<bucketname@namespace/folder-path>>```
 
     for e.g. `oci://workshop-data@idehhejtnbtc/yelp_review/yelp_review_yelp_academic_dataset_review.json oci://workshop-data@idehhejtnbtc/yelp_business/yelp_business_yelp_academic_dataset_business.json FieldTrainingDB`
 
@@ -118,7 +119,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
    ![Sample Application Configuration](../images/Hive-MetaStore-Application-2.png " ")
 
-5. When done, click **Create**. When the Application is created, you see it in the Application list.
+5. When done, click **Create**. When the Application is created, you should see it in the Application list.
 
    ![Sample Application](../images/MetaStore-App.png " ")
 
@@ -136,7 +137,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
    ![Spark UI](../images/SparkUI-Hive-MetaStore.png " ")
 
-4. After few mins your `Data Flow Run`  should show successful completion with a State of Succeeded:
+4. After few mins the  `Data Flow Run`  should complete and the State should change to ```Succeeded```:
 
    ![Run Succeeded](../images/hive-metastore-run-success.png " ")
 
@@ -481,7 +482,7 @@ def build_hive_ddl(df, table_name, location):
     </copy>    
    ```
 
-2. The above python file is already present in bucket ```workshop-scripts``` as ```query_metastore.py```
+2. The above python file is present in bucket ```workshop-scripts``` as ```query_metastore.py```
 
    ![Query MetaStore ](../images/query-metastore.png " ")
 
@@ -509,17 +510,17 @@ def build_hive_ddl(df, table_name, location):
 
    8. Application status changes from ```Accepted``` to ```In-Progress``` and ```Succeeded```
 
-   9. Open the logs and should see the results as shown below
+   9. Open the logs and you should see the results as  below
 
     ![Query MetaStore Logs ](../images/Query-metastore-run-application.png " ")
 
 ## **STEP 6**: Connect to the table from Oracle Analytics Cloud (OAC)
 
-1. From the Console navigate to the Analytics Cloud
+1. From the Console navigate to  ```Analytics Cloud```
 
    ![OAC Navigation ](../images/OAC-Navigation.png " ")
 
-2. In the ```dataflow-demo``` compartment you should see the following Instances created that are created for the lab
+2. In the ```dataflow-demo``` compartment you should see the following instances created that are created for the workshop
 
    ![OAC Instances ](../images/OAC-Instances.png " ")
 
