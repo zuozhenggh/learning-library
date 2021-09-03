@@ -86,7 +86,7 @@ Estimate Lab Time: 15 minutes
 
     ```
     <copy>    
-    shutdown immeidate;
+    shutdown immediate;
     </copy>
     ```
     ```
