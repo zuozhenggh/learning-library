@@ -267,6 +267,19 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
    You should now be connected to the database.
 
+   If you **did not** set the wallet location with the cloudconfig command, you will see an error similar to the following:
+   ```
+   SQL> conn admin@LABADB_high
+      Password? (**********?) **************
+      USER          = admin
+      URL           = jdbc:oracle:thin:@LABADB_high
+      Error Message = IO Error: Unknown host specified  (CONNECTION_ID=SFPhQvISQv2G/WV4VNMOjA==)
+      USER          = admin
+      URL           = jdbc:oracle:thin:@LABADB_high:1521/LABADB_high
+      Error Message = IO Error: Unknown host specified  (CONNECTION_ID=lCiUbeENR4a/9HZDREoVIg==)
+   ```   
+   Just go back a step and set the wallet location.
+
 6. Time to **create a schema/user, give that schema some permissions and then database objects** for committing to our code repository. 
 
    Run the following commands at our SQLcl prompt to create and configure the livelabs user
@@ -444,49 +457,85 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
 ## Task 3: Use SQLcl and git to commit the code to the repository
 
+Now that we have objects in our database, let's create a baseline and commit it to our code repository.
+
+### **Jeff's Tips** At anytime in the SQLcl prompt, you can issue a **cl scr** to clear the screen!
 
 
-SQL > @../demo_scripts/create_table.sql
+1. While **still logged into the database as our livelabs user**, we are going to use SQLcl to take a baseline of the objects in this schema. To do this, we issue a **Liquibase command at the SQLcl prompt**. The command **lb genschema -split** will pull all the Data Definition Language (DDL) for our database objects and put them into folders that correspond to their types (tables, indexes, triggers, etc). **Copy and paste the following command** then press enter.
 
-SQL > @../demo_scripts/insert_data.sql
+   ````
+   <copy>
+   lb genschema -split
+   </copy>
+   ```` 
+   ![run liquibase](./images/sql-10.png)
 
-SQL > @../demo_scripts/create_logic.sql
+2. Once this is finished, we can **exit out of SQLcl** and start to commit our changes to the repository. To exit SQLcl just type **exit** and press return.
 
- 
+   ````
+   <copy>
+   exit
+   </copy>
+   ```` 
 
-This has created us a table, some data in the table, a trigger with some logic and two procedures. Let’s say this is the base of our application we are going to create. Its now time to use Liquibase to create our baseline and commit it to the repository.
+   ![exit sqlcl](./images/sql-11.png)
 
-At the SQL prompt, issue the following command:
+3. If you take a quick look around the database directory, you will now see **folders for indexes, tables and procedures**; all the objects we just created. We also have a **controller.xml** file. This file is a change log that includes all files in each directory and in the proper order to allow the schema to be deployed correctly to other databases, our CI process. Issue an **ls** at the Cloud Shell to see the directories.
 
-SQL> lb genschema -split
+   ````
+   <copy>
+   ls
+   </copy>
+   ```` 
+   ![view directories](./images/sql-12.png)
 
- 
+4. To commit our code to the repository, change your directory to the top level of the project (the cicdRepository directory). To do this, issue a **cd ..** at the Cloud Shell.
 
-Once this is finished, we can exit out of SQLcl and start to commit our changes to the repository.
+   ````
+   <copy>
+   cd ..
+   </copy>
+   ```` 
+5. In the **cicdRepository directory**, we are going to run **git add .** at the Cloud Shell. A **git add** command adds our new files to the local staging area.
 
-SQL> exit
+   ````
+   <copy>
+   git add .
+   </copy>
+   ```` 
+   ![git add](./images/sql-13.png)
 
- 
+6. A **git commit** command takes a snapshot of your local repository or you can think of it as saving the current state. Issue a **git commit -m "V1.0"** at the Cloud Shell. The **-m** sets the commit message with the message following the flag and being in double quotes. We will set the message to **v1.0**, our code baseline.
 
-If you take a quick look around the database directory, you will now see folders for indexes, tables, procedures and triggers; all the objects we just created. We also have a controller.xml file. This file is a change log that includes all files in each directory and in the proper order to allow the schema to be deployed correctly to other databases, our CI process.
+   ````
+   <copy>
+   git commit -m "v1.0"
+   </copy>
+   ```` 
 
-Time to commit our code to the repository. Change your directory to the top level of the project (the db-cicd-project directory) and run the following command:
+   ![git commit](./images/sql-14.png)
 
-> git add .
+Finally, lets **push** these files up to the GitHub file repository. The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our OCI code repository.
+   ````
+   <copy>
+   git push origin master
+   </copy>
+   ```` 
 
- 
+   ![git push](./images/sql-15.png)
 
-This command adds our new files to the local staging area. Now we commit the files
+   Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step.
 
-> git commit -m "v1.0"
+   ![user/password for push](./images/sql-16.png)
 
- 
+7. You can view the files in the OCI Cloud Console on the **repository details page**.
 
-A git commit in takes a snapshot of your local repository or you can think of it as saving the current state. Finally, lets push these files up to the GitHub file repository
+   ![repository details page](./images/sql-16.png)
 
-> git push
+   Congratulations, you have just created your code baseline or version 1.0!
 
- 
+
 
 The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our repository on GitHub. Congratulations, you have just created your code baseline or version 1.0!
 
