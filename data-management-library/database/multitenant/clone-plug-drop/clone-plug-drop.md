@@ -57,7 +57,7 @@ Refer to *Lab Environment Setup* for the detailed instructions relevant to your 
     ```
 
 ## Task 1: Login and Create PDB
-In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command-line interface to the database.  **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the <TAB> key and more.  You can learn more about **SQLcl** [here](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
+In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command-line interface to the database.  **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the TAB key and more.  You can learn more about **SQLcl** [here](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
 
 In this first task, you will create and explore a new pluggable database **PDB2** in the container database **CDB1**
 
