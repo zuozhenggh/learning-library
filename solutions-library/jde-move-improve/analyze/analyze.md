@@ -30,7 +30,7 @@ The HTML Server is the primary interface to the EnterpriseOne system.
 
 1.	To access the EnterpriseOne HTML server, open a supported browser from any workstation connected to the internet.
 
-2.  Using the Public IP Address for the instance and port number (Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
+2.  Using the public IP address for the instance and port number (Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
         https://"ip address:port"/jde/owhtml/index.html
 
@@ -49,6 +49,7 @@ The HTML Server is the primary interface to the EnterpriseOne system.
         ![](./images/ssl-certificate.png " ")
 
 4.	Click **Confirm Security Exception** to add the URL to the trusted location list for the browser.
+
     ![](./images/confirm-security-exception.png " ")
 
 5.	In the JD Edwards EnterpriseOne HTML Server sign-on page, sign in using these credentials:
@@ -87,15 +88,18 @@ The EnterpriseOne Orchestrator Studio is an interface to help create orchestrati
        ![](./images/ssl-certificate-2.png " ")
 
 4.	Click **Confirm Security Exception** to add the URL to the trusted location list for the browser.
+
     ![](./images/confirm-security-exception-2.png " ")
 
 5.	In the JD Edwards EnterpriseOne Orchestrator Studio sign-on page, sign in using these credentials:
 
     *	User name: **JDE**
     *	Password: **JDE_Rules1** (this is the password defined in the final configuration in Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3).
+
     ![](./images/orchestrator-sign-in.png " ")
 
     At this point, the JD Edwards EnterpriseOne Orchestrator Studio is ready for use.
+
     ![](./images/orchestrator-landing-page.png " ")
 
 ## Step 3: Explore JDE Service Commands
@@ -188,6 +192,7 @@ The EnterpriseOne ADF Container is utilized by EnterpriseOne for select UX One a
        ![](./images/ssl-certificate-3.png " ")
 
 4.	Click **Confirm Security Exception** to add the URL to the trusted location list for the browser.
+
     ![](./images/confirm-security-exception-3.png " ")
 
 5.	The ADF Container page will appear. It is a blank page with a ? and X in the upper right-hand corner.
@@ -221,11 +226,12 @@ The Oracle BI Publisher Server for OVR is a reporting tool.
         ![](./images/ssl-certificate-4.png " ")
 
 4.	Click **Confirm Security Exception** to add the URL to the trusted location list for the browser.
+
     ![](./images/confirm-security-exception-4.png " ")
 
 5.	In the Oracle BI Publisher sign-on page, sign in using these credentials:
-    *	Username: weblogic
-    *	Password: JDE_Rules1 (this is the password defined in the final configuration in Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3)
+    *	User name: **weblogic**
+    *	Password: **JDE_Rules1** (this is the password defined in the final configuration in Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3)
 
         ![](./images/bi-publisher-sign-in.png " ")
 
