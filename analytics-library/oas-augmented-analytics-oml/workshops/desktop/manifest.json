@@ -8,27 +8,27 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
       "title": "Initialize Environment",
       "description": "Initialize Environment Lab",
       "filename": "../../init-start-oas/init-start-oas.md",
-      "type": "external"
+      "type": "desktop"
     },
     {
       "title": "OAS Augmented Analytics and Data Visualization",
       "description": "OAS Augmented Analytics and Data Visualization",
       "filename": "../../oas-augmented-analytics/oas-augmented-analytics.md",
-      "type": "external"
+      "type": "desktop"
     },
     {
       "title": "Machine Learning in the Oracle Database",
       "description": "Machine Learning in the Oracle Database",
       "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md",
-      "type": "external"
+      "type": "desktop"
     },
     {
       "title": "Need Help?",
