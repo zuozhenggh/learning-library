@@ -491,6 +491,8 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
     rm -rf /etc/guac*
     rm -rf /etc/nginx*
     rm -f /tmp/remove-guac.sh
+    rm -rf /opt/guac*
+    cd
     </copy>
     ```
 
