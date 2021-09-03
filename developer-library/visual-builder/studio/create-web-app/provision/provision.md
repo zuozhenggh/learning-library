@@ -248,4 +248,4 @@ You may now [proceed to the next lab](#next) to create a project and run builds 
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - August 2021
+**Last Updated** - September 2021

@@ -94,7 +94,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     A check mark is displayed in the Required column for the Name field.
 
-8.  Click [this link](./files/Location.csv) and save the `Location.csv` file to your file system. This file contains data representing four locations for the application.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Unl8NtQyShVKE9NjPrSvMCt__q9lCbdrMCVp-eVOmtwb4EUzTijveJ75wPDh6Pb0/n/c4u03/b/oci-library/o/WMS7601-Location.csv) and save the `Location.csv` file to your file system. This file contains data representing four locations for the application.
 9.  In the Business Objects pane, click **Menu** ![Menu icon](images/menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
     ![](images/location_bo_data_manager.png " ")
@@ -225,4 +225,4 @@ Now that you have your business objects, create a diagram that visualizes the bu
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - August 2021
+* **Last Updated By/Date** - September 2021

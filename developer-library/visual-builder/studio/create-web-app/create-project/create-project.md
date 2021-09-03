@@ -111,4 +111,4 @@ For the purposes of this tutorial, let's assume that other members of your team 
     You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - August 2021
+* **Last Updated By/Date** - September 2021

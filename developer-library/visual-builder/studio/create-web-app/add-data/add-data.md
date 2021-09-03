@@ -67,9 +67,9 @@ This lab assumes you have:
 
 Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's Data tab to do the same thing.
 
-1.  Click [this link](./files/Department.csv) and save the `Department.csv` file to your file system. The file contains six departments for the application.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/j1n-byE7426PGyqNj45YCdChr96rDHZ6QglebWEK0fFrs34_fiSV_BYlWMaLQszx/n/c4u03/b/oci-library/o/WMS7601-Department.csv) and save the `Department.csv` file to your file system. The file contains six departments for the application.
 
-2.  Click [this link](./files/Employee.csv) and save the `Employee.csv` file to your file system. The file contains nine employees for the application.
+2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VxjVFSn6YZBie6bD9l-JMYGwY5cZkBbiHb8z65AZAVVuI5s1hRKGx3dORVG6YM9M/n/c4u03/b/oci-library/o/WMS7601-Employee.csv) and save the `Employee.csv` file to your file system. The file contains nine employees for the application.
 
 3.  In the navigator, click **Business Objects** ![Business Objects icon](images/bo_icon.png), then **Objects**. The business objects you created are displayed.
 
@@ -100,4 +100,4 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - August 2021
+* **Last Updated By/Date** - September 2021
