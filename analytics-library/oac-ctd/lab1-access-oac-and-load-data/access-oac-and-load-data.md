@@ -33,6 +33,21 @@ On the OAC Home Page
 
 NOTE that you probably won’t have the same list of projects and datasets.
 
+Try Out or Switch to Oracle's Redwood Theme
+
+On the home page you will presented with the pop up box with option to preview Oracle Analytics Redwood look.
+Click on Preview it.
+
+![](images/2a_redwood_preview.png " ")
+
+To switch on the Redwood theme for everyone, go to the System Settings page and set the Preview Redwood Theme property.
+
+Click on Preview option in system setting page.
+
+![](images/2b_preview_redwood_theme.png " ")
+
+Note:In the future, Oracle's Redwood theme will be the default look and feel and you won't be able to switch it on or off.
+
 ## **Task 2**: Load an excel file
 
 Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/N7XvXLfts5Ld2YMVPhwg7uxnaLLSsP3D6d2Bis9VKa7EBiTWf7FE25EPiNg_UVEq/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Expenses.xlsx)
