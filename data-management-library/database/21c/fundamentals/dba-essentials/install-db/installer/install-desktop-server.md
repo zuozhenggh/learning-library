@@ -53,7 +53,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	**Note**: The password must conform to the Oracle recommended standards. 
+	**Note**: The password must conform to the Oracle recommended standards.
 
 	> You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
 
@@ -119,8 +119,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
      ![Memory](images/db21c-srv-008a-memory.png)
 
-	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
-	
+	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default.
+
 	    > *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
 
 	 ![Character sets](images/db21c-srv-008b-charset.png)
@@ -131,7 +131,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
     ![Storage File System](images/db21c-srv-009-storagefilesys.png)
 
-	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups. 
+	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups.
 	>> For this lab, do not select this option.
 
 10. In the Management Options window, do not select the checkbox **Register with Enterprise Manager (EM) Cloud Control**. Leave the default settings and click **Next**.
@@ -158,8 +158,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	> After you install Oracle Database, enter the admin username and use this password to connect to the database. 
 
-	**Note**: The password must conform to the Oracle recommended standards. 
- 
+	**Note**: The password must conform to the Oracle recommended standards.
+
 13. In the Privileged Operating System groups window, you can grant your user account administrative access to Oracle Database. For this, you select the value for each OS Group listed below. The values represent the OS groups to which your user belong.  
 
     For this lab, select the Database Operator group as *dba*. For rest of the groups, *dba* is selected by default.
@@ -171,7 +171,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 </if>
 
-14. You need to run root scripts to configure your Oracle Database.  
+14. You need to run root scripts to configure your Oracle Database. 
 	<!--If you select **Automatically run configuration scripts** then skip step 7-A.-->
 	For this lab, do not select the checkbox and run the scripts manually as explained in step <if type="desktop">8</if><if type="server">17</if>. Click **Next**.
 
@@ -208,7 +208,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	 $ <copy>/u01/app/oraInventory/orainstRoot.sh</copy>
 	 ```
 
-	 It returns the following output. 
+	 It returns the following output.
 
 	 ```
 	 Changing permissions of /u01/app/oraInventory.
@@ -224,8 +224,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	 ```
 	 $ <copy>/u01/app/oracle/product/21.0.0/dbhome_1/root.sh</copy>
 	 ```
-	 
-	 It returns the following output. 
+
+	 It returns the following output.
 
 	 ```
      The following environment variables are set as:
@@ -233,7 +233,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
      ORACLE_HOME=  /u01/app/oracle/product/21.0.0/dbhome_1
 
 	 Enter the full pathname of the local bin directory: [/usr/local/bin]: Enter
-	 
+
 	 /usr/local/bin is read only.  Continue without copy (y/n) or retry (r)? [y]: y
 
      Warning: /usr/local/bin is read only. No files will be copied.

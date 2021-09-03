@@ -56,11 +56,11 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	**Note**: The password must conform to the Oracle recommended standards. 
+	**Note**: The password must conform to the Oracle recommended standards.
 
-	The default **Database Character set** for Oracle Database is *AL32UTF8 - Unicode UTF-8 Universal character set*. 
-	
-	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
+	The default **Database Character set** for Oracle Database is *AL32UTF8 - Unicode UTF-8 Universal character set*.
+
+	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
 
 </if>
 
@@ -87,7 +87,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	**Note**: The General Purpose or Transaction Processing template and the Data Warehouse template create an Oracle Database with the `COMPATIBLE` initialization parameter set to `12.2.0.0.0`. This ensures that the new features in Oracle Database 21c are compatible with older versions of the database up to version 12c Release 2.  
 	-->
 
-	> For more complex environments, you can select the Custom Database option. This option does not use any templates and it usually increases the time taken to create an Oracle Database. 
+	> For more complex environments, you can select the Custom Database option. This option does not use any templates and it usually increases the time taken to create an Oracle Database.
 	>> For this lab, do not select this option.
 
 4. The Database Identification window displays pre-filled names and the System Identifier (SID) for Oracle Database.  
@@ -176,9 +176,9 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
     ![Size](images/dbca21c-adv-009b-size.png)
 
-	C. **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
+	C. **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default.
 
-	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
+	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
 
     ![Character Sets](images/dbca21c-adv-009c-charset.png)
 
@@ -206,7 +206,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	![Set Admin Password](images/dbca21c-adv-011-syspwd.png)
 
-	**Note**: The password must conform to the Oracle recommended standards. 
+	**Note**: The password must conform to the Oracle recommended standards.
 
 12. The Creation Option window displays the default option **Create database** selected.  
 	For the remaining fields, leave the defaults and click **Next**.
