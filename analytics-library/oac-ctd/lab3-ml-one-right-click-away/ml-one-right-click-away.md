@@ -114,3 +114,9 @@ Sales Department, Hotels, and Out of Policy are the topics to review deeper in o
 ![](images/8_select_canvas.png " ")
 
 ## End of Exercise 3
+
+## Acknowledgements
+
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
+- **Last Updated By/Date** - Sushil Mule, August 2021

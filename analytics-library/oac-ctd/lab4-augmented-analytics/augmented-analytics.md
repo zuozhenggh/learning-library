@@ -141,4 +141,11 @@ Someone could say you have finish, but you are a professional that looks for out
 You try to walk the extra mile in the next exercise.
 
 ![](images/17_root_cause_final.png " ")
+
 ## End of Exercise 4
+
+## Acknowledgements
+
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
+- **Last Updated By/Date** - Sushil Mule, August 2021

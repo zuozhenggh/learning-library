@@ -89,3 +89,9 @@ Good, this is getting interesting. Search bar is great for a quick answer, but i
 ![](images/8_exlore_as_project.png " ")
 
 ## End of Exercise 2
+
+## Acknowledgements
+
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
+- **Last Updated By/Date** - Sushil Mule, August 2021

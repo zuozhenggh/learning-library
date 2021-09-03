@@ -221,5 +221,10 @@ Great. This is a nice dashboard now. You can save your work.
 ![](images/34_final_project.png " ")
 
 
-
 ## End of Exercise 5
+
+## Acknowledgements
+
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
+- **Last Updated By/Date** - Sushil Mule, August 2021

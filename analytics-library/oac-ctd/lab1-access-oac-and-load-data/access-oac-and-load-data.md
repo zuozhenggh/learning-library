@@ -147,4 +147,11 @@ So, time for a coffee or a short talk from your instructor.
 
 ![](images/17_home.png " ")
 
+
 ## End of Exercise 1
+
+## Acknowledgements
+
+- **Author** - Mahira Galal, Aydin Heydari and Sushil Mule
+- **Adapted by** -  Mahira Galal, Aydin Heydari, Alex Chiru
+- **Last Updated By/Date** - Sushil Mule, August 2021
