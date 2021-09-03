@@ -332,11 +332,11 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
    4. Drag and drop or double click ```yelp_data``` to the editor on the righthand side. It should load the data for ```yelp_data```. It can take few mins for the data to show up
 
-        ![OAC Console ](../images/OAC-Manual-Query.png " ")
+        ![OAC Console ](../images/yelp-data-set.png " ")
 
    5. Enter a name for Dataset and Save.
 
-   6. Open the Dataset and it should look as below
+   6. Open the Dataset and it explore the data
         ![OAC DataSet ](../images/OAC-yelp-dataset.png " ")
 
 6. (Optional) Create a project to Visualize the data in Map Interface as described in [tutorial](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background) and selecting ```state``` and ```average_start``` columns from  the dataset
