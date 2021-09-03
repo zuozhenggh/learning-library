@@ -306,7 +306,145 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ![provide the password](./images/sql-8.png)
  
 
-Its time to create some sample datababase object for our repository. Run the following scripts included in the sample repository to create some objects:
+8. It's time to create some datababase object for our repository. Run the following code.
+
+   **Create a table**
+   ````
+   <copy>
+   CREATE TABLE trees
+      ( tree_id           NUMBER(6)
+      , tree_name         VARCHAR2(200)
+      , tree_street       VARCHAR2(500)
+      , tree_city         VARCHAR2(200)
+      , tree_state        VARCHAR2(200)
+      , tree_zip          NUMBER
+      , tree_description  VARCHAR2(4000)
+      , submitter_name    VARCHAR2(500)
+      , submitter_email   VARCHAR2(500)
+      , submition_date    timestamp
+      ) ;
+   </copy>
+   ```` 
+
+   **Create a procedure**
+   ````
+   <copy>
+   CREATE OR REPLACE PROCEDURE admin_email_set
+   IS
+   BEGIN
+         update trees
+            set submitter_email = 'jeff@thatjeff.com'
+         where submitter_email is null;
+
+   end admin_email_set;
+   /
+   </copy>
+   ```` 
+
+   **Create an index**
+   ````
+   <copy>
+   CREATE UNIQUE INDEX tree_id_pk
+   ON trees (tree_id);
+   </copy>
+   ```` 
+
+   **Insert some data**
+   ````
+   <copy>
+   PROMPT INSERTING into TREES
+   set define off
+   begin
+   INSERT INTO trees VALUES 
+         ( 1
+         , 'Cool Tree'
+         , '43 West Street'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'This tree is super cool'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );
+   INSERT INTO trees VALUES 
+         ( 2
+         , 'Christmas Tree red cedar'
+         , '112 Wilkinson Ave'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'Its about 25 feet tall'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );
+   INSERT INTO trees VALUES 
+         ( 3
+         , 'Dawn Redwood tree'
+         , '313 N Academy St'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'These 15 beautiful trees are not Cypress, they are Dawn Redwoods'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );
+   INSERT INTO trees VALUES 
+         ( 4
+         , 'Blackjack Oak at the Arts Center'
+         , '101 Dry Ave'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'At one time (approximately 1992 to 2011) the Capital Trees Program recorded and listed the champion trees in Wake County.'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );
+   INSERT INTO trees VALUES 
+         ( 5
+         , 'Test Tree'
+         , '4 East Street'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'Test Tree please delete'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );
+   INSERT INTO trees VALUES 
+         ( 6
+         , 'Tree with Cat'
+         , '2220 W Marilyn Cir'
+         , 'Cary'
+         , 'NC'
+         , 27511
+         , 'Tree with a cat in it'
+         , 'Jeff'
+         , 'jeff@thatjeff.com'
+         , systimestamp
+         );        
+   end;
+   /
+   </copy>
+   ```` 
+
+
+   To verify the code was successful, we can count the records from the trees table. Copy and run the following SQL Statement at the SQLcl prompt.
+   ````
+   <copy>
+   select count(*) from trees;
+   </copy>
+   ```` 
+
+   ![check the records](./images/sql-9.png)
+
+## Task 3: Use SQLcl and git to commit the code to the repository
+
+
 
 SQL > @../demo_scripts/create_table.sql
 
