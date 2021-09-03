@@ -154,15 +154,72 @@ oci db autonomous-database generate-wallet --autonomous-database-id
 
 ## Task 2: Login to your Autonomous Database with SQLcl
 
+Once the ADB wallet is downloaded, is time to connect to the database.
 
+1. At a **command line**, get back to your home directory if not already there. You can do this by issuing a **cd** at the command prompt.
 
+   ````
+   <copy>
+   cd
+   </copy>
+   ````
 
+   ![cd at the prompt](./images/dir-1.png)
 
+   then, **change the directory** to our code repository directory.
 
+   ````
+   <copy>
+   cd livelabs/cicdRepository/
+   </copy>
+   ````
 
+   ![cd to the code repo at the prompt](./images/dir-2.png)
 
+   issue a **pwd** at the command prompt to ensure you are in the correct directory
 
-Once the ADB wallet is downloaded, at a command line, change the directory to the database directory in our repository project. We should be at db-cicd-project -> database. Start SQLcl but do not log into a database yet:
+   ````
+   <copy>
+   pwd
+   </copy>
+   ````
+
+   ![pwd at the prompt](./images/dir-3.png)
+
+2. In the cicdRepository directory, **create a database directory** at the command line. You can do this by issuing a **mkdir database** at the prompt.
+
+   ````
+   <copy>
+   mkdir database
+   </copy>
+   ````
+   ![mkdir database at the prompt](./images/dir-4.png)
+
+   and then enter that directory by issuing a **cd database** at the command prompt in the Cloud Shell
+
+   ````
+   <copy>
+   cd database
+   </copy>
+   ````
+   ![cd database at the prompt](./images/dir-5.png)
+
+   as before, issue a **pwd** at the command prompt to ensure you are in the correct directory
+
+   ````
+   <copy>
+   pwd
+   </copy>
+   ````   
+   ![pwd again at the prompt](./images/dir-6.png)
+
+   you should be **in the database directory in the code repository directory** (USER_NAME will be your user name)
+
+   ```
+   /home/USER_NAME/livelabs/cicdRepository/database
+   ```
+
+ 3. Start SQLcl but do not log into a database yet:
 
 > sql /nolog
 
