@@ -345,6 +345,8 @@ You may now [proceed to the next lab](#next).
 * [Spatial product portal](https://www.oracle.com/database/spatial/)
 * [Spatial documention](https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/index.html)
 * [Spatial blogs](https://blogs.oracle.com/oraclespatial/)
+* [Performing spatial analyses on Latitude, Longitude data in Oracle Database](https://blogs.oracle.com/oraclespatial/performing-spatial-analyses-on-latitude-longitude-data-in-oracle-database)
+* [Tips on tuning SDO_NN (nearest neighbor) queries](https://blogs.oracle.com/oraclespatial/tips-on-tuning-sdonn-nearest-neighbor-queries)
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
