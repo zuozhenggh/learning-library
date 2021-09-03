@@ -1,7 +1,7 @@
 # Introduction
 
 ## About this Workshop
-This lab will introduce you to a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure(OCI). You will learn how to create your first MySQL Database Service System in a secure OCI environment. You will also learn how to connect and use your MySQL Database Service System with the MySQL Shell tool.
+This lab will introduce you to a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure (OCI). You will learn how to create your first MySQL Database Service System in a secure OCI environment. You will also learn how to connect and use your MySQL Database Service System with the MySQL Shell tool.
 
 Estimated Lab Time: 60 minutes 
 
