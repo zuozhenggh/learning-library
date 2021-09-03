@@ -203,7 +203,7 @@ The EnterpriseOne ADF Container is utilized by EnterpriseOne for select UX One a
 
 ## Step 5:  Connect to Oracle BI Publisher Server for OVR
 
-The Oracle BI Publisher Server for OVR is a reporting tool.
+The Oracle BI Publisher Server for One View Reporting (OVR) is a reporting tool.
 
 1.	To access the Oracle BI Publisher Server, open a supported browser from any workstation connected to the internet.
 
