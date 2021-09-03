@@ -11,7 +11,7 @@ When you reduce the retention period, flashback logs that are dated beyond the r
 
 In this lab, you enable `FLASHBACK` mode on CDB1 and set the flashback retention period to 70 minutes. You monitor the logs coming in for 70 minutes and then decrease the flashback retention period to 60 minutes and observe the changes to the logs. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 85 minutes
+Estimated Time: 85 minutes
 
 
 ### Objectives
@@ -428,4 +428,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 2 2021

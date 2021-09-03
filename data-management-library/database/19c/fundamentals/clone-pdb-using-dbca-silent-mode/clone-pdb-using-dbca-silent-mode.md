@@ -5,7 +5,7 @@ Starting in Oracle Database 19c, you can use the Oracle Database Configuration A
 
 In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -132,7 +132,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
           107
     ```
 
-11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`. After running the script, connect to CDB1 as the `SYS` user.
 
     ```
     SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
@@ -170,7 +170,7 @@ A common user is a database user that has the same identity in the `root` contai
 4. Exit SQL*Plus.
 
     ```
-    SQL> exit
+    SQL> <copy>exit</copy>
     ```
 
 ## Task 3: Use DBCA to clone a remote PDB from a CDB
@@ -319,7 +319,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 
@@ -331,4 +331,4 @@ You may now proceed to the next lab.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 27 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 2 2021

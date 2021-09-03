@@ -45,7 +45,7 @@ This lab assumes you have:
     <copy>
     rm -rf /tmp/novnc-*.sh
     rm -rf /tmp/set-os-user.sh
-    rm -rf /tmp/setup-novnc-livelabs.sh
+    rm -rf /tmp/setup-novnc-livelabs*
 
     </copy>
     ```
@@ -491,6 +491,8 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
     rm -rf /etc/guac*
     rm -rf /etc/nginx*
     rm -f /tmp/remove-guac.sh
+    rm -rf /opt/guac*
+    cd
     </copy>
     ```
 

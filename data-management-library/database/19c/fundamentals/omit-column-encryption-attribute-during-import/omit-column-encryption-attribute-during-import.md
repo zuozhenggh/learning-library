@@ -6,7 +6,7 @@ In the Oracle Public Cloud environment, data is encrypted by default using Trans
 
 In this lab, you use the Oracle Data Pump Import utility (impdp) to simulate an import into a PDB, once with the `ENCRYPT` attribute, and once without it. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -175,7 +175,7 @@ This lab assumes you have:
     $ <copy>exit</copy>
     ```
 
-You may now proceed to the next lab.
+
 
 ## Learn More
 
@@ -188,4 +188,4 @@ You may now proceed to the next lab.
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 2 2021
