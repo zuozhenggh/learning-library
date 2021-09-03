@@ -421,7 +421,6 @@ Estimate Lab Time: 20 minutes
     ```
     <copy>
     source_host_ip source_host_address source_host_domain_name
-    target_host_ip target_host_address target_host_domain_name
     ogg_host_ip ogg_host_address ogg_host_domain_name 
     </copy>
     ```
