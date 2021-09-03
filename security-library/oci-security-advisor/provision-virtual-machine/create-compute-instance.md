@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a Secure Virtual Machine Instance using Security Advisor. It involves creating not only the virtual machine but also create a vault and key which will be used to encrypt the virtual machine data and meets minimum security requirements established by security zones. Existing key can also be used to import in a vault and use to create a secure virtual machine instance.
 
-*Estimated Time*:  15 Minutes
+Estimated Time:  15 Minutes
 
 
 
@@ -79,7 +79,7 @@ This pre-requisite steps are taken care in Lab 1, Task 2 of this workshop. Revie
 
   ![](./images/instanceimage11.png " ")
 
-    **Congratulations !!! You Have Completed This Workshop Successfully.**
+    **Congratulations !!! You Have Completed Successfully The Workshop .**
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)

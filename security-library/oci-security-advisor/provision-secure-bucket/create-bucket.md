@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a Secure Bucket using Security Advisor. It involves creating not only the bucket but also create a vault and key which will be used to encrypt the bucket and meets minimum security requirements established by security zones. Existing key can also be used to import in a vault and use to create a secure bucket.
 
-*Estimated Time*:  30 Minutes
+Estimated Time:  30 Minutes
 
 
 
@@ -133,7 +133,7 @@ This pre-requisite steps are taken care in Task 2. Review the details and click 
 
   ![](./images/bucket-image8.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)
