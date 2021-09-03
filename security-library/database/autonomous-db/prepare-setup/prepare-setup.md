@@ -11,7 +11,7 @@ Estimated time: 5 minutes
 -   Learn how to provision a new Autonomous Database
 -   Create owner and load dataset to perform the lab
 
-## Step 1: Provisioning an Autonomous DB
+## Task 1: Provisioning an Autonomous DB
 
   **Note:** If you plan to use an existing ADB database in your own tenancy, or you are using an Oracle-provided environment, you can skip this step.
 
@@ -86,7 +86,7 @@ Estimated time: 5 minutes
     ![](./images/adb-set_009.png " ")
 
 
-## Step 2: Set up Application Schema and Users
+## Task 2: Set up Application Schema and Users
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP
 

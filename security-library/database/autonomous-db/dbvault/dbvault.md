@@ -34,7 +34,7 @@ This lab assumes you have:
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Disabling Database Vault | <5 minutes |
 
-## Step 1: Enable Database Vault
+## Task 1: Enable Database Vault
 
 Oracle Database vault comes pre-installed with your Autonomous database on dedicated infrastructure. In this lab we will enable Database Vauly (DV), add required user accounts and create a DV realm to secure a set of user tables from priviledged user access.
 
@@ -142,7 +142,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
 7. Now, Database Vault is enabled!
 
-## Step 2: Create a Simple Realm
+## Task 2: Create a Simple Realm
 
 Next we create a realm to secure HR.CUSTOMERS table from ADMIN and HR (table owner) and grant access to APPUSER only.
 
@@ -290,7 +290,7 @@ Next we create a realm to secure HR.CUSTOMERS table from ADMIN and HR (table own
 
       **Note:** APPUSER must be the only user who has access to the table from now!
 
-## Step 3: Create an Audit Policy to Capture Realm Violations
+## Task 3: Create an Audit Policy to Capture Realm Violations
 
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Autonomous Database includes Unified Auditing, we will create a policy to audit database vault activities
 
@@ -414,7 +414,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 6. Now, you have no longer audit policy and DV realm!
 
-## Step 4: Simulation Mode
+## Task 4: Simulation Mode
 
 1. First, query the simulation log to show that it has no current values
 
@@ -518,7 +518,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    ![](./images/adb-dbv_029.png " ")
 
 
-## Step 5: Disabling Database Vault
+## Task 5: Disabling Database Vault
 
 1. Disable DB Vault on the Autonomous Database
 
