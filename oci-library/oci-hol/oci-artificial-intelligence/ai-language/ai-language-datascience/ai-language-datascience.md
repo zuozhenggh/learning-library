@@ -92,16 +92,16 @@ In the terminal, create a .oci directory in the Data Science notebook session.
 <copy>mkdir ~/.oci</copy>
 ```
 
-Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon
+Upload the Config file and the Private Key to the Notebook Session by clicking on the Upload Files Icon you just created in Lab 3 (Setup API Signing Key and Config File.)
 
-In the terminal, move those files to the .oci folder you just created in Lab 3 (Setup API Signing Key and Config File.)
+In the terminal, move those files to the .oci folder.
 ```
 <copy>mv <path of the config file> ~/.oci/</copy>
 ```
 ```
 <copy>mv <path of the private key> ~/.oci/</copy>
 ```
-To More about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
+To Know more about about how to create API Key and config file, Refer Lab-3 (Setup API Signing Key and Config File).
 
 
 ![](./images/ociFolder.jpg " ")
