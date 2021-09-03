@@ -531,7 +531,7 @@ Finally, lets **push** these files up to the GitHub file repository. The push co
 
 7. You can view the files in the OCI Cloud Console on the **repository details page**.
 
-   ![repository details page](./images/sql-16.png)
+   ![repository details page](./images/sql-17.png)
 
    Congratulations, you have just created your code baseline or version 1.0!
 
