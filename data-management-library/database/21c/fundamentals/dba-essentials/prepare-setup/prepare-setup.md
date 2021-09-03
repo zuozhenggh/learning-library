@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Oracle Enterprise Manager 13c Marketplace image with monitored database targets and a Virtual Cloud Network (VCN).
 
-Estimated Time: 15 minutes
+*Estimated Time:* 15 minutes
 
 ### Objectives
 -   Download ORM stack
@@ -12,14 +12,13 @@ Estimated Time: 15 minutes
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [emcc-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CaJ4NdhHpEknQAWzpTf94WshzRVfl_yel0AIfU382AWrSGzOm7j9LUxz8ByAmKxD/n/natdsecurity/b/stack/o/emcc-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [instdb21c-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mZMIb1j-Ne-DYQ4wH1ZjkfIDjX3deu5NSvlDsQjFZ4sInFIBSFpFJtpEUP2gCSRe/n/natdsecurity/b/stack/o/instdb21c-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
-We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
+We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Task 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next task as indicated below to update your existing VCN with the required Egress rules.
 
 ## Task 2: Adding Security Rules to an Existing VCN   
 This workshop requires a certain number of ports to be available, a requirement that can be met by using the default ORM stack execution that creates a dedicated VCN. In order to use an existing VCN the following ports should be added to Egress rules
@@ -27,7 +26,6 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 7803           | Enterprise Manager 13c Server         |
 | 6080           | noVNC Remote Desktop                  |
 
 1.  Go to **Networking >> Virtual Cloud Networks**
@@ -43,8 +41,8 @@ This workshop requires a certain number of ports to be available, a requirement 
 ## Task 3: Setup Compute   
 Using the details from the two steps above, proceed to the lab **Environment Setup** to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
 -  Create Stack:  **Compute + Networking**
--  Create Stack:  **Compute only** with an existing VCN where security lists have been updated as per **Step 2** above
+-  Create Stack:  **Compute only** with an existing VCN where security lists have been updated as per **Task 2** above
 
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
