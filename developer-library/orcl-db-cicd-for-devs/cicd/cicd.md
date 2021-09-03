@@ -287,16 +287,23 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ![grant the permissions](./images/sql-6.png)
  
 
-Now connect as this user:
+7. Now we are going to connect as the livelabs user. Issue the following command at the SQLcl prompt
 
-SQL> conn demo@ADB_high
+   ````
+   <copy>
+   conn livelabs@LABADB_high
+   </copy>
+   ```` 
+   ![connect as livelabs](./images/sql-7.png)
 
- 
+   And then provide the password we used to create the user at the password prompt.
 
-And then provide the password at the password prompt:
-
-Password? (**********?)
-
+   ````
+   <copy>
+   PAssw0rd11##11
+   </copy>
+   ```` 
+   ![provide the password](./images/sql-8.png)
  
 
 Its time to create some sample datababase object for our repository. Run the following scripts included in the sample repository to create some objects:
