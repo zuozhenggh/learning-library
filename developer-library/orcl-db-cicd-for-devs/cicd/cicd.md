@@ -154,7 +154,7 @@ oci db autonomous-database generate-wallet --autonomous-database-id
 
 ## Task 2: Login to your Autonomous Database with SQLcl
 
-Once the ADB wallet is downloaded, is time to connect to the database.
+Once the Autonomous Database wallet is downloaded, is time to connect to the database.
 
 1. At a **command line**, get back to your home directory if not already there. You can do this by issuing a **cd** at the command prompt.
 
@@ -219,56 +219,72 @@ Once the ADB wallet is downloaded, is time to connect to the database.
    /home/USER_NAME/livelabs/cicdRepository/database
    ```
 
- 3. Start SQLcl but do not log into a database yet:
+ 3. Start SQLcl but do not log into a database yet. SQLcl is already installed so all you need to do is issue the following command
+      ````
+      <copy>
+      sql /nolog
+      </copy>
+      ````
+      ![sql at the prompt](./images/sql-1.png)
 
-> sql /nolog
+4. Next, we have to tell SQLcl where to look for the Autonomous Database wallet. Remember, we downloaded it in our home directory and we can use the following command to set its location. Just remember to replace USER_NAME with your username. You can look at previous commands we ran to find the exact location if needed.
 
- 
+   ````
+   <copy>
+   set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
+   </copy>
+   ````
+   ![set cloudconfig at the prompt](./images/sql-2.png)
 
-Next, we have to tell SQLcl where to look for the ADB wallet. First, remember where you downloaded it and we can use the following command to set its location:
+5. Time to connect to the database. The syntax is:
+   ```
+   SQL> conn USERNAME@DB_NAME_high/medium/low/tp/tpurgent
+   ```
+   The **high/medium/low/tp/tpurgent** provide different levels of performance for various clients or applications to connect into the database. From the documentation:
 
-SQL> set cloudconfig /DIRECTORY_WHERE_WALLET_IS/WALLET.zip
+   - **tpurgent**: The highest priority application connection service for time critical transaction processing operations. This connection service supports manual parallelism.
+   - **tp**: A typical application connection service for transaction processing operations. This connection service does not run with parallelism.
+   - **high**: A high priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
+   - **medium**: A typical application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to four (4).
+   - **low**: A lowest priority application connection service for reporting or batch processing operations. This connection service does not run with parallelism.
 
- 
+   With our database being named LABADB and connecting as the admin user, we would have the following connect command:
 
-The naming of the wallet is in the format of Wallet_DB_NAME.zip. So, if I named my database ADB, the wallet name would be Wallet_ADB.zip. And if I put the wallet in my downloads folder and the full command would be:
+   ```
+   SQL> conn admin@LABADB_high
+   ```
+   Run this command at your SQLcl command prompt
+   ````
+   <copy>
+   conn admin@LABADB_high
+   </copy>
+   ````  
+   ![connect to the database in SQLcl](./images/sql-3.png)
 
-SQL> set cloudconfig /Users/bspendol/Downloads/Wallet_ADB.zip
+   And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
 
- 
+   ![connected to the database in SQLcl](./images/sql-4.png)
 
-Next, we need to connect to the database. The syntax is:
+   You should now be connected to the database.
 
-SQL> conn USERNAME@DB_NAME_high/medium/low/tp/tpurgent
+6. Time to **create a schema/user, give that schema some permissions and then database objects** for committing to our code repository. 
 
- 
+   Run the following commands at our SQLcl prompt to create and configure the livelabs user
+   ````
+   <copy>
+   create user livelabs identified by "PAssw0rd11##11" quota unlimited on data;
+   </copy>
+   ````  
+   ![create the user](./images/sql-5.png)
 
-The high/medium/low/tp/tpurgent provide different levels of performance for various clients or applications to connect into the database. From the documentation:
+   Give our livelabs users some permissions to connect and create objects in the database
 
-    tpurgent: The highest priority application connection service for time critical transaction processing operations. This connection service supports manual parallelism.
-    tp: A typical application connection service for transaction processing operations. This connection service does not run with parallelism.
-    high: A high priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
-    medium: A typical application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to four (4).
-    low: A lowest priority application connection service for reporting or batch processing operations. This connection service does not run with parallelism.
-
-For what we want to do, the high-performance service name will be fine. We also want to connect as the admin user so we can setup a schema and permissions on that schema. With our database being named ADB, we would have the following connect command:
-
-SQL> conn admin@ADB_high
-
- 
-
-And then provide the password you used when creating the ADB at the password prompt:
-
-Password? (**********?)
-
- 
-
-And we are in. Time to create a schema, give that schema some permissions and then setup a sample for using Liquibase with. Run the following commands:
-
-SQL> create user demo identified by "PAssw0rd11##11" quota unlimited on data;
-
-SQL> grant connect, resource to demo;
-
+   ````
+   <copy>
+   grant connect, resource to livelabs;
+   </copy>
+   ````  
+   ![grant the permissions](./images/sql-6.png)
  
 
 Now connect as this user:
