@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, a JDE Trial Edition will be created in Oracle Cloud Infrastructure (OCI). The JD Edwards (JDE) Trial Edition will be provisioned and connected to.
+In this tutorial, a JD Edwards (JDE) Trial Edition will be created in Oracle Cloud Infrastructure (OCI). The JDE Trial Edition will be provisioned and connected to.
 
 Estimated Time: 40 minutes
 
@@ -40,7 +40,7 @@ On the Oracle Cloud Console home page, click the **Navigation** Menu Button in t
 
     ![](./images/jde-trial-edition-image.png " ")
 
-3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version **(9.2.5.0 – default)** to deploy and the compartment (you created a compartment in Set Up OCI for JDE Trial Edition Deployment, Step 2: Create a Compartment) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click **Launch Instance**.
+3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version **(9.2.5.0 – default)** to deploy and the compartment (you created a compartment in Set Up Oracle Cloud Infrastructure for JDE Trial Edition Deployment, Step 2) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click **Launch Instance**.
 
     ![](./images/launch-instance.png " ")
 
@@ -74,7 +74,7 @@ On the Oracle Cloud Console home page, click the **Navigation** Menu Button in t
 
        ![](./images/boot-size.png " ")
 
-    8. In the Add SSH keys section, select the **Choose SSH Key file** radio button. Browse to select the public SSH key file you created earlier (Set Up OCI for JDE Trial Edition Deployment, STEP 1: Generate an SSH Key Pair) by navigating to the location where the SSH files are stored. Alternatively, drag and drop the .pub file to the window.
+    8. In the Add SSH keys section, select the **Choose SSH Key file** radio button. Browse to select the public SSH key file you created earlier (Set Up OCI for JDE Trial Edition Deployment, STEP 1) by navigating to the location where the SSH files are stored. Alternatively, drag and drop the .pub file to the window.
 
        ![](./images/ssh-upload.png " ")
 
@@ -93,14 +93,14 @@ On the Oracle Cloud Console home page, click the **Navigation** Menu Button in t
 To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance. The user name on the instance is **opc**.  There isn’t a password, the account can only be accessed using the SSH private key.
 
 
-### Connect to an Oracle Cloud Infrastructure Compute Instance using a Mac, Linux, Unix based machine using Command Line SSH
+###  Connect to an Oracle Cloud Infrastructure Compute Instance using a Mac, Linux or Unix based machine using Command Line SSH
 
 
-Mac OS X includes a command-line SSH client as part of the operating system. To use it, go to **Finder**, and select Go and select **Utilities** from the top menu. Then look for **Terminal**. To connect over SSH you can use the following command on a Linux or UNIX style system:
+Mac OS X includes a command-line SSH client as part of the operating system. To use it, go to **Finder**, select **Go** and select **Utilities** from the top menu. Then look for **Terminal**. To connect over SSH you can use the following command on a Linux or UNIX style system:
 
     $ ssh –l opc –i </path/to/privateKey> <PublicIP_Address>
 
-Example:
+For example:
 
     $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
 
@@ -114,11 +114,11 @@ Once connected, you can continue to Step 3.
 
     ![](./images/git-bash.png " ")
 
-2.  To connect over SSH you can use the following command on a Linux/UNIX style system.
+2.  To connect over SSH you can use the following command on a Linux or UNIX style system.
 
         $ ssh –l opc –i </path/to/privateKey> <PublicIP_Address>
 
-    Example:
+    For example:
 
         $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
 
@@ -138,9 +138,9 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 
     ![](./images/putty.png " ")
 
-2. Within the PuTTY session, under the **Session** category, enter the Public IP Address (for example, 132.145.187.16) from the instance information in the **Host Name** field, and then select **Connection** and select **Data**.
+2. Within the PuTTY session, under the **Session** category, enter the public IP address (for example, 132.145.187.16) from the instance information in the **Host Name** field, and then select **Connection** and select **Data**.
 
-    ![](./images/putty_configuration.png " ")
+   ![](./images/putty-configuration.png " ")
 
 3.  In the **Auto-login username** field, enter **opc**. From the Category navigation tree, select **Connection**, select **SSH**, and then select **Auth**.
 
@@ -164,11 +164,11 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 
 ## Step 3: Perform First-Time Configuration of the Trial Edition
 
-During the first connection to a Trial Edition instance (after completing Connecting to JDE Trial Edition, Step 2), a process will run to verify if any critical updates are required to the OS and the installed software packages on the instance.  If so, the following screen will display noting that the yum update packages are installing.  This process can take anywhere from 5 to 10 minutes to run.
+During the first connection to a Trial Edition instance (after completing Connect to JDE Trial Edition, Step 2), a process will run to verify if any critical updates are required to the OS and the installed software packages on the instance. If so, the following screen will display noting that the yum update packages are installing. This process can take anywhere from 5 to 10 minutes to run.
 
- Once complete, you will need to establish a new SSH session with the server. If your subsequent connections are refused or if the connection displays this same screen (shown below) then the updates are still running.   
+ Once complete, you will need to establish a new SSH session with the server. If your subsequent connections are refused or if the connection displays this same screen (shown below) then the updates are still running.
 
-    ![](./images/image-update.png " ")
+   ![](./images/image-update.png " ")
 
  On the first connection to the instance after the yum update has completed, the initial configuration script will be triggered and needs to be run prior to anything working.
 
@@ -191,7 +191,7 @@ During the first connection to a Trial Edition instance (after completing Connec
 
     ![](./images/jde-user-password.png " ")
 
-4.	Enter a Weblogic admin password and confirmation): **JDE_Rules1**. Please follow the same password guidelines.
+4.	Enter a Weblogic admin password (and confirmation): **JDE_Rules1**. Please follow the same password guidelines.
 
     ![](./images/weblogic-admin-password.png " ")
 
@@ -200,7 +200,7 @@ During the first connection to a Trial Edition instance (after completing Connec
 
 Configuration will take between 25 to 30 minutes. The configuration will go through and change all necessary database records and files on the system for the system information and options entered, as well as start all necessary services. Once complete, the JD Edwards EnterpriseOne Trial Edition is ready for use. Watch for the status “Successfully completed u01/vmScripts/EOne_Sync.sh”.
 
-    ![](./images/configuration-screen.png " ")
+   ![](./images/configuration-screen.png " ")
 
 ## Summary
 At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use.
