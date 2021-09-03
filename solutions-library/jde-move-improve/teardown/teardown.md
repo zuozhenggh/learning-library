@@ -11,14 +11,14 @@ Estimated Time: 5 minutes
 * Destroy all associated Oracle Cloud Infrastructure (OCI) resources.
 
 ### Prerequisites
-* Tenancy admin user
+* Tenancy admin user name
 * Tenancy admin password
 
 ## Step 1: Delete the JDE instance
 
 1. To delete instances, if you are not already, sign in to the OCI tenancy.
 
-2. On the Oracle Cloud Console home page, click the navigation menu in the upper-left corner and open **Compute** then select **Instances**.
+2. On the Oracle Cloud Console home page, click the navigation menu in the upper-left corner and open **Compute** and then select **Instances**.
 
 3. Navigate to your Compartment. Select the JDE trial instance in the list of instances.
 
