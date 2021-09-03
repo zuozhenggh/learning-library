@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab provides detailed instructions of connecting to Essbase 21c using Web UI. This machine comes with Essbase installed and configured with Oracle database and also starts its services on its own start-up.
+This lab provides detailed instructions of connecting to Essbase 21c using Web UI. This compute instance comes with Essbase installed and configured with Oracle database, both managed using Unix/Linux *systemd* services to automatically start and shutdown as required.
 
 *Estimated Lab Time:* 10 Minutes.
 
@@ -12,6 +12,7 @@ This lab provides detailed instructions of connecting to Essbase 21c using Web U
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
+- Local Computer (Windows/Mac) with Microsoft Excel
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
@@ -47,8 +48,6 @@ This lab assumes you have:
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-    You may now [proceed to the next task](#task-2-download-and-stage-workshop-artifacts).
-
 4. If you are still unable to login or the login page is not functioning after reloading the application URL, open a terminal session and proceed as indicated below to validate the services.
 
     - Database and Listener
@@ -64,7 +63,7 @@ This lab assumes you have:
     - WLS Admin Server and Essbase Server
     ```
     <copy>
-    sudo systemctl status essbase.service
+    sudo systemctl status essbase
     </copy>
     ```
 
@@ -84,14 +83,12 @@ This lab assumes you have:
 
     ```
     <copy>
-    sudo sudo systemctl restart essbase.service
+    sudo sudo systemctl restart essbase
     </copy>
     ```
 
-You may now [proceed to the next task](#task-2-download-and-stage-workshop-artifacts).
-
-
-## Task 2: Download and Stage Workshop Artifacts
+## Task 2: Download and Stage Workshop Artifacts (on local PC/Mac)
+Due to the requirements for *Microsoft Excel*, some tasks cannot be performed on the remote desktop. As a result, return to your local computer/workstation and perform the following:
 
 1. Download [`essbase_21c_labfiles.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/51DwosGpWuwiHMYKbcgWcxsHkBaYipTRlGh-bcMSTVaCfVBwDwYoRfA4VpPSh7LR/n/natdsecurity/b/labs-files/o/essbase_21c_labfiles.zip) and save to a staging area on your laptop or workstation.
 
@@ -99,43 +96,7 @@ You may now [proceed to the next task](#task-2-download-and-stage-workshop-artif
 
 You may now [proceed to the next Lab](#next)
 
-## Appendix 1: Login to Host for manual startup (Optional)
-While you only need the browser to perform all tasks in this workshop, you can optionally use your preferred SSH client to connect to the instance to perform any troubleshooting task such as restarting processes, rebooting the instance, or to just look around.
-
-### Start Script
-
-​Your workshop instance is configured to automatically start all processes needed for the labs. Perform these steps only if you are unable to launch Essbase 21c UI in Task1**.
-
-1. Launch your browser to the following URL to access noVnc web UI.
-
-    ```
-    <copy>http://[Instance-public-ip]:6080/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true</copy>
-    ```
-   ​![](./images/ess-environment2.png " ")
-
-2.  Open the terminal on the desktop and go to folder /u01/scripts to find the manual startup script.
-
-    ```
-    <copy>cd /u01/scripts/</copy>
-    ```
-
-    Use the clipboard on the left menu to paste on the clipboard and use shift+Insert key on the terminal.
-
-    ![](./images/ess-environment3.png " ")
-
-3.  Start the "env_startup_script" to start all the services of Database and Essbase.
-
-    ```
-    <copy>./env_start_script.sh</copy>
-    ```
-
-    ![](./images/ess-environment4.png " ")
-
-4.  Your services should be started. Wait for the confirmation.
-
-    ![](./images/ess-environment5.png " ")
-
-## Appendix 2: Managing Startup Services
+## Appendix 1: Managing Startup Services
 
 1. Database Service (Database and Listener).
 
@@ -168,29 +129,29 @@ While you only need the browser to perform all tasks in this workshop, you can o
     - Start
 
     ```
-    <copy>sudo systemctl start essbase.service</copy>
+    <copy>sudo systemctl start essbase</copy>
     ```
 
     - Stop
 
     ```
-    <copy>sudo systemctl stop essbase.service</copy>
+    <copy>sudo systemctl stop essbase</copy>
     ```
 
     - Status
 
     ```
-    <copy>sudo systemctl status essbase.service</copy>
+    <copy>sudo systemctl status essbase</copy>
     ```
 
     - Restart
 
     ```
-    <copy>sudo systemctl restart essbase.service</copy>
+    <copy>sudo systemctl restart essbase</copy>
     ```
 
 ## Acknowledgements
 
 - **Authors** - Sudip Bandyopadhyay, Manager, Analytics Platform Specialist Team, NA Technology
-- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam
-- **Last Updated By/Date** - Kowshik Nittala, Associate Solution Engineer, Analytics, NA Technology, August 2021
+- **Contributors** - Kowshik Nittala, Eshna Sachar, Jyotsana Rawat, Venkata Anumayam, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, August 2021
