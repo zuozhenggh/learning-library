@@ -841,7 +841,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.3-openarrs.png " ")
 
-4. Since the databases in CDB2 register with a listener with a non-default port (in this case, port 1524) you will need to update the ARRs with that port information.  This is critical, since the proxy PDBs you will require this configuration in order to communicate with their target PDBs.
+4. Since the databases in CDB2 register with a listener with a non-default port (in this case, port 1524) you will need to update the ARRs with that port information.  This is critical, since the proxy PDBs you will create require this configuration in order to communicate with their target PDBs.
 
     ```
     <copy>connect system/oracle@localhost:1524/wmStore_International</copy>
@@ -1107,7 +1107,7 @@ The tasks you will accomplish in this step are:
 - Relocate Tahoe to wmStore_West
 - Run the report again
 
-1. Review the report output from the previous step.
+1. Review the report output from the previous task.
 
     ![](./images/task6.17-reportmaster.png " ")
 
