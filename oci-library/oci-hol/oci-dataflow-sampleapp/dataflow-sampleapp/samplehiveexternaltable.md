@@ -330,7 +330,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
        ![OAC Console ](../images/OAC-DB.png " ")
 
-   4. Drag and drop or double click ```yelp_review``` to the editor on the righthand side. It should load the data for ```yelp_review```. It can take few mins for the data to show up
+   4. Drag and drop or double click ```yelp_data``` to the editor on the righthand side. It should load the data for ```yelp_data```. It can take few mins for the data to show up
 
         ![OAC Console ](../images/OAC-Manual-Query.png " ")
 
