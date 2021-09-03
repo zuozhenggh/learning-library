@@ -1,4 +1,4 @@
-# Getting Started with MySQL Database Service and HeatWave
+# Turbocharge Business Insights with MySQL Database Service and HeatWave
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
