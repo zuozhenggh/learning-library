@@ -360,28 +360,28 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
 
 3. Update the following lines in the file. Replace `<Update>` with the information. Be careful and make sure the entire text is pasted as there is a tendency for the first character to sometimes get cut off:
     * TARGETDATABASE\_OCID: On your Autonomous Database home page.
-    ![TargetDatabase OCID](./images/config-autonomous.png)
+    ![TargetDatabase OCID](./images/config-autonomous-1.png)
     * SOURCEDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
-    ![Source DB Connection Details](./images/source-db-connection.png)
+    ![Source DB Connection Details](./images/source-db-connection-1.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_TENANTID: On your API key configuration file preview.
-    ![Configuration Tenancy](./images/config-tenancy.png)
+    ![Configuration Tenancy](./images/config-tenancy-1.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_USERID: On your API key configuration file preview.
-    ![Configuration User ID](./images/config-user.png)
+    ![Configuration User ID](./images/config-user-1.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_FINGERPRINT: On your API key configuration file preview.
-    ![Configuration Fingerprint](./images/config-fingerprint.png)
+    ![Configuration Fingerprint](./images/config-fingerprint-1.png)
     * OCIAUTHENTICATIONDETAILS\_REGIONID: On your API key configuration file preview.
-    ![Configuration Region](./images/config-region.png)
+    ![Configuration Region](./images/config-region-1.png)
     * SOURCECONTAINERDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
-    ![Source DB Connection Details](./images/source-db-connection.png)
+    ![Source DB Connection Details](./images/source-db-connection-1.png)
     * GOLDENGATEHUB\_URL: On your GG Hub Compute Instance home page for the hostname and on your VCN page for the DNS Domain Name. The URL is composed of __https://__ + the OGG Hub hostname + __.__ + the domain name. An example of how the URL can look like is  __https://oggzdm.labvcn.oraclevcn.com__
-    ![GoldenGate HUB URL](./images/gg-hostname.png)
-    ![GoldenGate HUB URL 2](./images/gg-dns-domain-name.png)
+    ![GoldenGate HUB URL](./images/gg-hostname-1.png)
+    ![GoldenGate HUB URL 2](./images/gg-dns-domain-name-1.png)
     * GOLDENGATEHUB\_COMPUTEID: On your GG Hub Compute Instance home page. Copy the OCID value.
-    ![GoldenGate Compute ID](./images/gg-compute-id.png)
+    ![GoldenGate Compute ID](./images/gg-compute-id-1.png)
     * DATAPUMPSETTINGS_DATABUCKET\_NAMESPACENAME: On your object storage bucket homepage.
-    ![Bucket Namespace](./images/bucket-namespace.png)
+    ![Bucket Namespace](./images/bucket-namespace-1.png)
     * DATAPUMPSETTINGS_DATABUCKET\_BUCKETNAME: On your object storage bucket homepage.
-    ![Bucket Name](./images/bucket-name.png)
+    ![Bucket Name](./images/bucket-name-1.png)
 
 
 
