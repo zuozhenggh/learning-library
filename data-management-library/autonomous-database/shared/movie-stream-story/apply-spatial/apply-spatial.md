@@ -31,9 +31,9 @@ In this lab, you will:
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
-**Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Task 1: Prepare the Data
 
@@ -324,18 +324,20 @@ In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism 
 
 If you would like to purge all changes made in this lab, run the following commands in order.
 
-    <copy>
-    DROP INDEX customer_sidx;
+```
+<copy>
+DROP INDEX customer_sidx;
 
-    DROP INDEX pizza_location_sidx;
+DROP INDEX pizza_location_sidx;
 
-    DELETE FROM user_sdo_geom_metadata
-    WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
+DELETE FROM user_sdo_geom_metadata
+WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
 
-    DROP TABLE customer_nearest_pizza ;
+DROP TABLE customer_nearest_pizza ;
 
-    DROP FUNCTION latlon_to_geometry;
-    </copy>
+DROP FUNCTION latlon_to_geometry;
+</copy>
+```
 
 You may now [proceed to the next lab](#next).
 
@@ -343,6 +345,8 @@ You may now [proceed to the next lab](#next).
 * [Spatial product portal](https://www.oracle.com/database/spatial/)
 * [Spatial documention](https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/index.html)
 * [Spatial blogs](https://blogs.oracle.com/oraclespatial/)
+* [Performing spatial analyses on Latitude, Longitude data in Oracle Database](https://blogs.oracle.com/oraclespatial/performing-spatial-analyses-on-latitude-longitude-data-in-oracle-database)
+* [Tips on tuning SDO_NN (nearest neighbor) queries](https://blogs.oracle.com/oraclespatial/tips-on-tuning-sdonn-nearest-neighbor-queries)
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle

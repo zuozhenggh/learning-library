@@ -61,7 +61,8 @@ Log into OCI Cloud Console. Using the Burger Menu on the top left corner, naviga
 
 ### 2. Create Policy
 
-Click Create Policy button.
+Click Create Policy button. **Note only tenancy administrators or user in administrator group have permissions to create new policies.**
+
 ![](../images/policy-create-button.png " ")
 
 ### 3. Create a new policy with the following statements:
@@ -71,13 +72,22 @@ If you want to allow all the users in your tenancy to use anomaly detection serv
 ```
 <copy>allow any-user to manage ai-service-anomaly-detection-family in tenancy</copy>
 ```
+
 ![](../images/policy-creating-process.png " ")
 
-If you want to limit access to a user group. Create a new policy with the below statement:
+If you want to limit access to a user group, you can create a new policy with the below statement:
 
 ```
 <copy> allow group <group-name> to manage ai-service-anomaly-detection-family in tenancy</copy>
 ```
+
+**Note:** The anomaly detection service need data to build customized models, therefore, user also need to add policy to grant permissions to access data.
+For example, in this lab session, we will use Oracle object storage as data source, so the administrators also need to add the following policy:
+
+```
+<copy>allow any-user to manage object-family in tenancy</copy>
+```
+
 
 [Proceed to the next section](#next).
 

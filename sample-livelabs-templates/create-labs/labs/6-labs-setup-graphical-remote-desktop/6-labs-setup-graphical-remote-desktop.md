@@ -36,36 +36,16 @@ This lab assumes you have:
     unzip -o setup-novnc-livelabs.zip
     chmod +x setup-novnc-livelabs.sh
     ./setup-novnc-livelabs.sh
-    pwd
 
     </copy>
     ```
-
-2. Start VNC Server using *systemctl*
-
-    ```
-    <copy>
-    appuser=$(cat /tmp/.appuser)
-    systemctl start vncserver_${appuser}@:1.service
-    systemctl status vncserver_${appuser}@:1.service
-    </copy>
-    ```
-
-3. Run script *novnc-2.sh* to finalize
-
-    ```
-    <copy>
-    /tmp/novnc-2.sh
-    </copy>
-    ```
-
-4. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
+2. After validating successful setup from URL displayed by above script, remove all setup scripts from "*/tmp*"
 
     ```
     <copy>
     rm -rf /tmp/novnc-*.sh
     rm -rf /tmp/set-os-user.sh
-    rm -rf /tmp/setup-novnc-livelabs.sh
+    rm -rf /tmp/setup-novnc-livelabs*
 
     </copy>
     ```
@@ -511,6 +491,8 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
     rm -rf /etc/guac*
     rm -rf /etc/nginx*
     rm -f /tmp/remove-guac.sh
+    rm -rf /opt/guac*
+    cd
     </copy>
     ```
 

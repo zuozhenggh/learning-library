@@ -6,15 +6,6 @@ In this lab you will use graph analytics to identify movies to recommend to cust
 
 Estimated Time: 30 minutes
 
-### Prerequisites
-
-- This lab requires completion of Labs 1-4, and Lab 7 Use OML to Predict Customer Churn, in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
-
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
-
 ### About Graph
 When you model your data as a graph, you can run graph algorithms on your data to analyze your data based on the connections and relationships in your data.  You can also use graph queries to find patterns in your data, such as cycles, paths between vertices, anomalous patterns, and so on.  Graph algorithms are invoked using a Java or Python API, and graph queries are run using PGQL (Property Graph Query Language, see [pgql-lang.org](https://pgql-lang.org)).
 
@@ -33,12 +24,12 @@ In this lab, you will use the Graph Studio feature of Autonomous Database to:
 
 ### Prerequisites
 
-- This lab requires completion of Labs 1-4 in the Contents menu on the left.
+- This lab requires completion of Labs 1-4, and Lab 7 Use OML to Predict Customer Churn, in the Contents menu on the left.
 - You can complete the prerequisite labs in two ways:
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the results of having run Labs 1-4 and Lab 7.
 
 ## Task 1: Prepare Data for Graph Analysis
 
@@ -62,46 +53,49 @@ Connect to Autonomous Database tool as the MOVIESTREAM user:
 
     ```
     <copy>
-    -- Create a sampling of customers
-    -- Let's focus on the customers in the US that have the highest likelihood to churn
-    -- Plus a random sampling of other US customers
-    create table customer_promotions as
-    with
-        -- cust_ids of potential churners in the US - top 500
-        us_potential_churners as (
-            select c.*
-            from customer c, potential_churners p
-            where c.cust_id = p.cust_id
-            and p.will_churn = 1
-            and c.country_code = 'US'
-            order by p.prob_churn desc
-            fetch first 500 rows only),
+
+        -- Create a sampling of customers
+        -- Let's focus on the customers in the US that have the highest likelihood to churn
+        -- Plus a random sampling of other US customers
+        create table customer_promotions as
+        with
+            -- cust_ids of potential churners in the US - top 500
+            us_potential_churners as (
+                select c.*
+                from customer c, potential_churners p
+                where c.cust_id = p.cust_id
+                and p.will_churn = 1
+                and c.country_code = 'US'
+                order by p.prob_churn desc
+               fetch first 500 rows only),
         -- Random sample of customers in the US - not including the churners
         customer_sample as (    
             select *
-            from customer sample(10) seed(7)
+            from customer
             where country_code='US'
             and cust_id not in (select cust_id from us_potential_churners)
-        )  
-    -- Combine sample with the top 500 potential churners in the US
-    select * from customer_sample
-    union all
-    select * from us_potential_churners
+            and ora_hash(cust_id, 9) = 7
+        )
+        select * from customer_sample
+        union all
+        select * from us_potential_churners
     ;
 
     -- Next, let's get the rental info from those customers
-    create table custsales_promotions as
-    select *
-    from custsales c
-    where c.cust_id in (select p.cust_id from customer_promotions p);
+       create table custsales_promotions as
+       select *
+       from custsales c
+       where c.cust_id in (select p.cust_id from customer_promotions p);
 
     -- Finally, we'll add the constraints that are used to enforce the vertex and edge rules
-    alter table customer_promotions add constraint customer_promotions_pk primary key(cust_id);
-    alter table custsales_promotions add constraint fk_custsales_promotions_cust_id foreign key(cust_id) references customer_promotions(cust_id);
-    alter table custsales_promotions add constraint fk_custsales_promotions_movie_id foreign key(movie_id) references movie(movie_id);
-    alter table custsales_promotions add primary key (cust_id, movie_id, day_id);
+       alter table customer_promotions add constraint customer_promotions_pk primary key(cust_id);
+       alter table custsales_promotions add constraint fk_custsales_promotions_cust_id foreign key(cust_id) references customer_promotions(cust_id);
+       alter table custsales_promotions add constraint fk_custsales_promotions_movie_id foreign key(movie_id) references movie(movie_id);
+       alter table custsales_promotions add primary key (cust_id, movie_id, day_id);
+
     </copy>
     ```
+
     SQL worksheet is displayed below:
     ![Run code to prepare data](images/run-prepare-tables.png " ")
 
@@ -191,7 +185,7 @@ This is the Graph Studio interface for modeling a graph.  You will create a grap
 
     ![Click on Create Graph](images/m16.png " ")
 
-10. Type in a Graph name.  Ensure that **Load into Memory** radio button is on, and click **Create**.
+10. Type in a Graph name, in this lab we will use **MOVIE_RECOMMENDATIONS**.  Ensure that **Load into Memory** radio button is on, and click **Create**.
 
     This step will take about 3 minutes to create a graph.  The graph has approximately 8k vertices and 800k edges.
 
@@ -203,13 +197,13 @@ This is the Graph Studio interface for modeling a graph.  You will create a grap
 
     ![Click on the notebook icon](images/createnotebook1.png " ")
 
-2. Type in a notebook name and click **Create**.
+2. Type in a notebook name and click **Create**.   In this lab we use the same name as we used for the graph, **MOVIE_RECOMMENDATIONS**.
 
     ![Type in a notebook name and click create](images/createnotebook2.png " ")
 
     You now have a notebook to use to run graph queries and graph analytics.  You have three interpreters available: **%md** for markdown, **%pgql-pgx** to run PGQL graph queries, and **%java-pgx** to run graph analytics using the Java API.
 
-    ![This is your notebook](images/createnotebook2.png " ")
+    ![This is your notebook](images/createnotebook-task4-step2.png " ")
 
 3. You can create a new paragraph by hovering on the bottom of a paragraph and clicking on the + button.
 
@@ -225,21 +219,21 @@ This is the Graph Studio interface for modeling a graph.  You will create a grap
 
 - The **%md** interpreter is for displaying text.
 
-Let us consider the customer **Margery Humphrey**.  The OML lab has identified her as one among several potential customers who might leave the service (churn).   
+    Let us consider the customer **Ricky Rogers**.  The OML lab has identified him as one among several potential customers who might leave the service (churn).   
 
-1.  The first query is a simple PGQL query that selects some of the movies (limit to 10) that **Margery Humphrey** has rented.     
+1.  The first query is a simple PGQL query that selects some of the movies (limit to 10) that **Ricky Rogers** has rented.     
     ```
     <copy>
     %pgql-pgx
     select c, e, m from match (c)-[e]->(m) on MOVIE_RECOMMENDATIONS
-    where c.FIRST_NAME = 'Margery' and c.LAST_NAME = 'Humphrey'
+    where c.FIRST_NAME = 'Ricky' and c.LAST_NAME = 'Rogers'
     limit 10
     </copy>
     ```
 
-    ![PGQL query to find 10 queries Margery Humphrey has rented](images/q1-1.png " ")
+    ![PGQL query to find 10 queries Ricky Rogers has rented](images/q1-1.png " ")
 
-Now let us visually display some information about the vertices and edges.
+    Now let us visually display some information about the vertices and edges.
 
 2. Click on the **Settings** icon to open the Settings dialog box
 
@@ -269,22 +263,22 @@ Now let us visually display some information about the vertices and edges.
 
     ![Right click on a vertex or edge to see all the properties of that vertex or edge](images/q1-8.png " ")
 
-9. As explained in Task 3, hover your mouse over the bottom boundary of the paragraph to get the + sign to create a new paragraph for the next query.
+9. As explained in Task 4, hover your mouse over the bottom boundary of the paragraph to get the + sign to create a new paragraph for the next query.
 
-10. The second PGQL query selects some movies (limit 100) that both **Margery Humphrey** and another customer **Terrell Benson** have rented. Terrell Benson is a customer from the sampled list of customers). The query limits the result to 100 edges, where each edge represents a movie both customers have rented.
+10. The second PGQL query selects some movies (limit 100) that both **Ricky Rogers** and another customer **Blanca Diaz** have rented. Blanca Diaz is a customer from the sampled list of customers, and she has watched a lot of movies. The query limits the result to 100 edges, where each edge represents a movie both customers have rented.
 
     ```
     <copy>
     %pgql-pgx
     select c1, e, m, e1, c2
     from match (c1)-[e]->(m)<-[e1]-(c2) on MOVIE_RECOMMENDATIONS
-    where c1.FIRST_NAME = 'Margery' and c1.LAST_NAME = 'Humphrey' and
-    c2.FIRST_NAME = 'Terrell' and c2.LAST_NAME = 'Benson'
+    where c1.FIRST_NAME = 'Ricky' and c1.LAST_NAME = 'Rogers' and
+    c2.FIRST_NAME = 'Blanca' and c2.LAST_NAME = 'Diaz'
     limit 100
     </copy>
     ```
 
-    ![Find 100 movies that both Margery Humphrey and Terrell Benson have rented](images/q2-1.png " ")
+    ![Find 100 movies that both Ricky Rogers and Blanca Diaz have rented](images/q2-1.png " ")
 
 11. As before, you can visualize a property of the vertex by opening the **Settings** dialog box. In this case we will choose the FIRST_NAME of the customer.
 
@@ -292,7 +286,7 @@ Now let us visually display some information about the vertices and edges.
 
 12. Select **Visualization** and scroll down to selecting a **Vertex Label** and **Edge Label**.
 
-    Select **FIRST_NAME** as the vertex label.
+    Select **FIRST\_NAME** as the vertex label.  You can start typing **FIRST** and the vertex label **FIRST\_NAME** will appear (easier than scrolling through a long list of properties).
 
     ![Select Visualization and scroll down and select FIRST_NAME as the Vertex Label](images/q2-2.png " ")
 
@@ -304,13 +298,13 @@ Now let us visually display some information about the vertices and edges.
 
     ![The graph displays with the selected vertex labels](images/q2-4.png " ")
 
-15. You can drag the customer vertices (labeled Margery and Terrell) to the left so that you can visualize this as a bipartite graph.  Product recommendation graphs are typically bipartite graphs.
+15. You can drag the customer vertices (labeled Ricky and Blanca) to the left so that you can visualize this as a bipartite graph.  Product recommendation graphs are typically bipartite graphs.
 
     ![Drag the customer vertices to the left](images/q2-5.png " ")
 
-Now, instead of only looking at two customers and comparing the movies they have rented, let us analyze the whole graph. We will use the **%java-pgx** interpreter.
+    Now, instead of only looking at two customers and comparing the movies they have rented, let us analyze the whole graph. We will use the **%java-pgx** interpreter.
 
-16. Get a handle to the graph in memory. After running the following code snippet, the output shows that the graph has been loaded into memory, and has 8750 vertices and 878202 edges.
+16. Get a handle to the graph in memory. After running the following code snippet, the output shows that the graph has been loaded into memory, and has 8919 vertices and 906117 edges.
 
     ```
     <copy>
@@ -323,12 +317,12 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
 
     ![Get a handle to the graph in memory](images/q3-1.png " ")
 
-17. We will now run the pre-built algorithm WhomToFollow for the customer **Margery Humphrey** who is danger of leaving. This algorithm is used in social network analysis. This algorithm clusters customers into communities based on the movies they have rented. Then, based on the community the vertex belongs to, the algorithm identifies the movies they should recommend for this customer.   Rather than looking at one or two similar customers to identify movie recommendations, this algorithm identifies communities of customers, and uses the movie choices of the entire community **Margery Humphrey** belongs to, to make recommendations.
+17. We will now run the pre-built algorithm WhomToFollow for the customer **Ricky Rogers** who is in danger of leaving. This algorithm is used in social network analysis. This algorithm clusters customers into communities based on the movies they have rented. Then, based on the community the vertex belongs to, the algorithm identifies the movies they should recommend for this customer.   Rather than looking at one or two similar customers to identify movie recommendations, this algorithm identifies communities of customers, and uses the movie choices of the entire community **Ricky Rogers** belongs to, to make recommendations.
 
     ```
     <copy>
     %java-pgx
-    var queryR2 = cpGraph.queryPgql("select v from match(v) where v.first_name = 'Margery' and v.last_name = 'Humphrey'");
+    var queryR2 = cpGraph.queryPgql("select v from match(v) where v.first_name = 'Ricky' and v.last_name = 'Rogers'");
     out.println("Num rows: " + queryR2.getNumResults());
     queryR2.first();
     PgxVertex<Long> cust = queryR2.getVertex("v");
@@ -341,9 +335,9 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
     </copy>
     ```
 
-    ![Run the WhomToFollow algorithm, with the Margery Humphrey vertex as the input argument](images/q4-1.png " ")
+    ![Run the WhomToFollow algorithm, with the Ricky Rogers vertex as the input argument](images/q4-1.png " ")
 
-18. WhomToFollow returns two lists. One, the list of customers in the community that **Margery Humphrey** belongs to, and two, the movies recommended for **Margery Humphrey** based on her community.  
+18. WhomToFollow returns two lists. One, the list of customers in the community that **Ricky Rogers** belongs to, and two, the movies recommended for **Ricky Rogers** based on his community.  
 
     ```
     <copy>
@@ -357,7 +351,7 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
 
     ![The WhomToFollow algorithm returns two lists](images/q5-1.png " ")
 
-19. List the customers in the cluster that **Margery Humphrey** belongs to. The screenshot only shows a few.
+19. List the customers in the cluster that **Ricky Rogers** belongs to. The screenshot only shows a few.
     ```
     <copy>
 		%java-pgx
@@ -367,9 +361,9 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
     </copy>
     ```
 
-    ![List of customers in the cluster Margery Humphrey belongs to](images/q6-1.png " ")
+    ![List of customers in the cluster Ricky Rogers belongs to](images/q6-1.png " ")
 
-20. List the movies recommended for **Margery Humphrey**.
+20. List the movies recommended for **Ricky Rogers**.
     ```
     <copy>
     %java-pgx
@@ -379,23 +373,23 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
     </copy>
     ```
 
-    ![List of movies recommended for Margery Humphrey](images/q7-1.png " ")
+    ![List of movies recommended for Ricky Rogers](images/q7-1.png " ")
 
-21. Let us consider one of the movies recommended, *Captain Marvel*. We can check whether **Margery Humphrey** has ever watched this movie, using a PGQL query.
+21. Let us consider one of the movies recommended, *Captain Marvel*. We can check whether **Ricky Rogers** has ever watched this movie, using a PGQL query.
 
     ```
     <copy>
     %pgql-pgx
     select v,e, m.title from match (v)-[e:RENTED]->(m) on MOVIE_RECOMMENDATIONS
-    where v.FIRST_NAME = 'Margery' and v.LAST_NAME = 'Humphrey' and m.title='Captain Marvel'
+    where v.FIRST_NAME = 'Ricky' and v.LAST_NAME = 'Rogers' and m.title='Captain Marvel'
     </copy>
     ```
 
-22. We see that she has not watched this movie. The query returns no results.
+22. We see that he has not watched this movie. The query returns no results.
 
-    ![Has Margery Humphrey rented the movie Captain Marvel?  No.](images/q7-2a.png " ")
+    ![Has Ricky Rogers rented the movie Captain Marvel?  No.](images/q7-2a.png " ")
 
-23. Other members in the community (that **Margery Humphrey** belongs to), such as Sang Hoffman, **has** watched the movie *Captain Marvel*, multiple times as seen by the multiple edges. So *Captain Marvel* is a good recommendation to make for **Margery Humphrey**.  
+23. Other members in the community (that **Ricky Rogers** belongs to), such as Sang Hoffman, **have** watched the movie *Captain Marvel*.  Sang Hoffman has watched it multiple times as seen by the multiple edges. So *Captain Marvel* is a good recommendation to make for **Ricky Rogers**.  
 
     ```
     <copy>
@@ -409,28 +403,28 @@ PgxGraph cpGraph = session.getGraph("MOVIE_RECOMMENDATIONS");
 
     ![Sang Hoffman has watched the movie Captain Marvel](images/q7-3a.png " ")
 
-24. We see that Margery Humphrey *has not* watched the movie *The Lion King*.
+24. We also see that Ricky Rogers has not watched the movie *Toy Story 4*.
 
     ```
     <copy>
     %pgql-pgx
     select v,e, m.title from match (v)-[e:RENTED]->(m) on MOVIE_RECOMMENDATIONS
-    where v.FIRST_NAME = 'Margery' and v.LAST_NAME = 'Humphrey' and m.title='The Lion King'
+    where v.FIRST_NAME = 'Ricky' and v.LAST_NAME = 'Rogers' and m.title='Toy Story 4'
     </copy>
     ```
-    ![Has Margery Humphrey rented the movie The Lion King?  No.](images/q7-4.png " ")
+    ![Has Ricky Rogers rented the movie Toy Story 4?  No.](images/q7-4.png " ")
 
-25. Sang Hoffman in her community *has* watched it, multiple times.
+25. Sang Hoffman in his community **has** watched it, multiple times.
 
     ```
     <copy>
     %pgql-pgx
     select v,e, m.title from match (v)-[e:RENTED]->(m) on MOVIE_RECOMMENDATIONS
-    where v.FIRST_NAME = 'Sang' and v.LAST_NAME = 'Hoffman' and m.title='The Lion King'
+    where v.FIRST_NAME = 'Sang' and v.LAST_NAME = 'Hoffman' and m.title='Toy Story 4'
     </copy>
     ```
 
-    ![Sang Hoffman has watched the movie The Lion King](images/q7-5.png " ")
+    ![Sang Hoffman has watched the movie Toy Story 4](images/q7-5.png " ")
 
 ## Learn More
 
