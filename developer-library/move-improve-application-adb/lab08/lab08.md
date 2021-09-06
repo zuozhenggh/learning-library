@@ -8,7 +8,7 @@ The sample application we will use is Swingbench with an associated database to 
 
 ![](./images/move-improve-flow-diagram.png)
 
-Estimated Lab Time: 2 hours
+Estimated Time: 2 hours
 
 ### Objectives
 
@@ -33,7 +33,7 @@ Install and configure the Swingbench application on the App Server.
 ​	1. SSH to your App Server. Replace with your SSH key and private IP address.
 
 ```
-$ ssh -i privatekey opc@10.0.1.2
+$ <copy>ssh -i privatekey opc@10.0.1.2</copy>
 ```
 
 By default, Java is not installed on the compute VM so we will need to install it via yum. We’ll need to update yum first.
@@ -41,13 +41,13 @@ By default, Java is not installed on the compute VM so we will need to install i
 ​	2. From your App Server session execute the following.
 
 ```
-$ sudo yum makecache fast
+$ <copy>sudo yum makecache fast</copy>
 ```
 
 ​	3. Then install Java and its dependencies
 
 ```
-$ sudo yum install java-1.8.0-openjdk-headless.x86_64
+$ <copy>sudo yum install java-1.8.0-openjdk-headless.x86_64</copy>
 ```
 
 •      Type **y**
@@ -57,23 +57,23 @@ $ sudo yum install java-1.8.0-openjdk-headless.x86_64
 ​	4. Let’s check the version and make sure that java works correctly.
 
 ```
-$ java -version
+$ <copy>java -version</copy>
 ```
 
 ​	5. We can now pull the Swingbench code from the website
 
 ```
-$ curl 'https://www.dominicgiles.com/swingbench/swingbenchlatest.zip' -H 'User-Agent: Mozilla/5.0' -H 'Referer: https://www.dominicgiles.com/downloads.html' -o swingbench.zip
+$ <copy>curl 'https://www.dominicgiles.com/swingbench/swingbenchlatest.zip' -H 'User-Agent: Mozilla/5.0' -H 'Referer: https://www.dominicgiles.com/downloads.html' -o swingbench.zip</copy>
 ```
 
 ​	6. Unzip it and check the files
 
 ```
-$ unzip swingbench.zip
+$ <copy>unzip swingbench.zip</copy>
 
-$ cd swingbench/bin
+$ <copy>cd swingbench/bin</copy>
 
-$ ls
+$ <copy>ls</copy>
 ```
 
 The application is now installed. You should see the Swingbench application files.
@@ -91,31 +91,31 @@ To prepare for moving the Swingbench database to ATP, we need the Data Pump impo
     Make sure you get the end quote for the export.
 
 ```
-$ cd /etc/yum.repos.d
+$ <copy>cd /etc/yum.repos.d</copy>
 
-$ export REGION=`curl http://169.254.169.254/opc/v1/instance/ -s | jq -r '.region'| cut -d '-' -f 2`
+$ <copy>export REGION=`curl http://169.254.169.254/opc/v1/instance/ -s | jq -r '.region'| cut -d '-' -f 2`</copy>
 
-$ echo $REGION
+$ <copy>echo $REGION</copy>
 
-$ sudo -E wget http://yum-$REGION.oracle.com/yum-$REGION-ol7.repo
+$ <copy>sudo -E wget http://yum-$REGION.oracle.com/yum-$REGION-ol7.repo</copy>
 ```
 
 ​	3. Enable the Instant Client repository
 
 ```
-$ sudo yum-config-manager --enable ol7_oracle_instantclient
+$ <copy>sudo yum-config-manager --enable ol7_oracle_instantclient</copy>
 ```
 
 ​	4. List the packages
 
 ```
-$ sudo yum list oracle-instantclient*
+$ <copy>sudo yum list oracle-instantclient*</copy>
 ```
 
 ​	5. Install the version 18.5 Instant Client Basic, SQL Plus, Tools RPM packages.
 
 ```
-$ sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sqlplus oracle-instantclient18.5-tools
+$ <copy>sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sqlplus oracle-instantclient18.5-tools</copy>
 ```
 
 
@@ -127,35 +127,35 @@ $ sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sq
     Replace the names below with your own files.  ie: replace the sample Wallet_ATPLABTEST with your own wallet.
 
 ```
-$ cd /home/opc
+ $ <copy>cd /home/opc</copy>
 
- $ mkdir Wallet_ATPLABTEST
+ $ <copy>mkdir Wallet_ATPLABTEST</copy>
 
- $ mv Wallet_ATPLABTEST.zip Wallet_ATPLABTEST
+ $ <copy>mv Wallet_ATPLABTEST.zip Wallet_ATPLABTEST</copy>
 
- $ cd Wallet_ATPLABTEST
+ $ <copy>cd Wallet_ATPLABTEST</copy>
 
- $ unzip Wallet_ATPLABTEST.zip
+ $ <copy>unzip Wallet_ATPLABTEST.zip</copy>
 
- $ ls
+ $ <copy>ls</copy>
 ```
 
 ​	2. Copy sqlnet.ora and tnsnames.ora to /usr/lib/oracle/18.5/client64/lib/network/admin directory
 
 ```
- $ ls /usr/lib/oracle/18.5/client64/lib/network/admin
+ $ <copy>ls /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
 
- $ sudo cp sqlnet.ora /usr/lib/oracle/18.5/client64/lib/network/admin/sqlnet.ora
+ $ <copy>sudo cp sqlnet.ora /usr/lib/oracle/18.5/client64/lib/network/admin/sqlnet.ora</copy>
 
- $ sudo cp tnsnames.ora /usr/lib/oracle/18.5/client64/lib/network/admin/tnsnames.ora
+ $ <copy>sudo cp tnsnames.ora /usr/lib/oracle/18.5/client64/lib/network/admin/tnsnames.ora</copy>
 
- $ cd /usr/lib/oracle/18.5/client64/lib/network/admin
+ $ <copy>cd /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
 ```
 
 ​	2. Edit the sqlnet.ora
 
 ```
-$ sudo vi sqlnet.ora
+$ <copy>sudo vi sqlnet.ora</copy>
 ```
 
 3. Set the WALLET_LOCATION parameter to point to the wallet directory containing the cwallet.sso file as shown by the example below
@@ -169,13 +169,13 @@ $ sudo vi sqlnet.ora
  	7. Test the Instant Client with SQLPlus, the username is admin, but enter your password and service name
 
 ```
-$ more tnsnames.ora
+$ <copy>more tnsnames.ora</copy>
 
-$ export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH
+$ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
 
-$ export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib
+$ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
 
-$ sqlplus admin/<password>@<service_tp>
+$ <copy>sqlplus admin/<password>@<service_tp></copy>
 ```
 
 ### Move the On Premise Database to Oracle Cloud ###
@@ -206,7 +206,7 @@ From the SQL Developer worksheet create a credential for ATP to access the objec
 
 
 ```
-BEGIN
+<copy>BEGIN
 
  DBMS_CLOUD.CREATE_CREDENTIAL(
 
@@ -221,6 +221,7 @@ BEGIN
 END;
 
 /
+</copy>
 ```
 
 ​	5. Run the script
@@ -244,7 +245,7 @@ Execute the impdb statement below from your compute with Instant Client software
 4. Set parallel import to 2 since we can use 2 the OCPU cores in ATP.
 
 ```
-$ impdp admin/<password>@<My_ATP_high> directory=data_pump_dir credential=<credential name> schemas=soe dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/p/2BWjXdKY935En1yDxUpP9_8tdgkfBrGCIg0jdPlCbLDRYvsG1mcTpY--nEeHw_dy/n/c4u04/b/labfiles/o/soedump18C_1G.dmp logfile=import.log parallel=2
+$ <copy>impdp admin/<password>@<My_ATP_high> directory=data_pump_dir credential=<credential name> schemas=soe dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/p/2BWjXdKY935En1yDxUpP9_8tdgkfBrGCIg0jdPlCbLDRYvsG1mcTpY--nEeHw_dy/n/c4u04/b/labfiles/o/soedump18C_1G.dmp logfile=import.log parallel=2</copy>
 ```
 
 It should take about 15-25 minutes to import.  If successful, you will see a similar output like the following:
@@ -344,9 +345,9 @@ In SQL Developer check to see if you have the SOE schema in the Other Users fold
 Upon import, there was a compilation issue. To fix the issue, the following SQLs grant the missing privilege and recompile the ORDERENTRY package.
 
 ```
-SQL> GRANT EXECUTE ON DBMS_LOCK TO SOE;
+SQL> <copy>GRANT EXECUTE ON DBMS_LOCK TO SOE;</copy>
 
-SQL> ALTER PACKAGE SOE.ORDERENTRY COMPILE;
+SQL> <copy>ALTER PACKAGE SOE.ORDERENTRY COMPILE;</copy>
 ```
 
 
@@ -354,7 +355,7 @@ SQL> ALTER PACKAGE SOE.ORDERENTRY COMPILE;
 (Optional) To view the import.log you must put it into an Oracle Object Store bucket and then download it to your laptop and view with a text editor.  An example of putting the file in the Object Store bucket is shown below.  
 
 ```
-BEGIN
+<copy>BEGIN
 
 DBMS_CLOUD.PUT_OBJECT(
 
@@ -366,12 +367,14 @@ file_name=>'import.log');
 
 END;
 
-/
+/</copy>
 ```
 
 
 
 Now that we have both the application installed on the App Server and the database imported to ATP we are ready to run the workload.
+
+You may now proceed to the next lab.
 
 
 

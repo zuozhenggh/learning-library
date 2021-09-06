@@ -6,7 +6,7 @@
 
 The Swingbench workload on the App Server runs against ATP through the Service Gateway. Throughout the run, CPU is saturated at 100% utilization, so it’s a good test to scale the cores. First let’s open SQL Developer tool to check the core count.
 
-Estimated Lab Time: 2 hours
+Estimated Time: 2 hours
 
 ### Objectives
 
@@ -28,7 +28,7 @@ Estimated Lab Time: 2 hours
 ​	2. From SQL Developer worksheet, check your cpu count by typing in the worksheet
 
 ```
-show parameter cpu
+<copy>show parameter cpu</copy>
 ```
 
 ​	3. Reconnect to ATP if SQL Developer has lost the connection.
@@ -50,15 +50,15 @@ There are 128 concurrent users making inserts and updates. We will measure users
 Note that the schema is **soe**.  ie: -u soe.  The soe schema password is **Welcome#2018**. If you want to change the password or the user is locked, log in to sqlplus or SQL Developer and enter:
 
 ```
-ALTER USER soe IDENTIFIED BY <new password> ACCOUNT UNLOCK;
+<copy>ALTER USER soe IDENTIFIED BY <new password> ACCOUNT UNLOCK;</copy>
 ```
 
 <u>Troubleshooting</u>: If you are having trouble running the script, put it all in one line without the \ .
 
 ```
-$ cd ~/swingbench/bin
+$ <copy>cd ~/swingbench/bin</copy>
 
-$./charbench -c ../configs/SOE_Server_Side_V2.xml \
+$<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
 -cs atplabtest_tp \
 -u soe \
@@ -70,7 +70,7 @@ $./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -max 0 \
 -uc 128 \
 -di SQ,WQ,WA \
--rt 0:1.30
+-rt 0:1.30</copy>
 ```
 
 Note your results for TPM and TPS.  You should get about 1000 transactions per second (tps).  We will compare them later.  Hitting CTRL-C will stop the workload.
@@ -85,7 +85,7 @@ Sample run with 2 cores show below.
 ​	8. Now run the workload by changing –rt option to 30 minutes. Ie: -rt 0:30:00
 
 ```
-$ ./charbench -c ../configs/SOE_Server_Side_V2.xml \
+$ <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
 -cs atplabtest_tp \
 -u soe \
@@ -97,7 +97,7 @@ $ ./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -max 0 \
 -uc 128 \
 -di SQ,WQ,WA \
--rt 0:30.00
+-rt 0:30.00</copy>
 ```
 
 ​	9. After about 3 minutes scale ATP up to 3 cores. Do not enable Auto Scaling yet. We will scale manually first.
@@ -110,7 +110,7 @@ The ATP service will take a few seconds to scale. Notice the status of SCALING I
 ​	10. From SQL Developer worksheet, check your cpu count
 
 ```
-Show parameter cpu
+<copy>Show parameter cpu</copy>
 
 ```
 ![](./images/sql-developer-show-cpu-count-6.png)
@@ -146,13 +146,13 @@ Let’s look at the auto scaling feature. Auto scaling automatically scales your
 ​	2. From SQL Developer worksheet, check your cpu count. With one core you should see 2 cpu threads.  Notice the scaling is very fast even before the console UI updates its status.
 
 ```
-Show parameter cpu
+<copy>Show parameter cpu</copy>
 ```
 
 ​	3. Run the charbench again for 30 minutes if the workload has stopped.  You may see some java connection warnings. You can ignore this.
 
 ```
-./charbench -c ../configs/SOE_Server_Side_V2.xml \
+<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
 -cs atplabtest_tp \
 -u soe \
@@ -164,7 +164,7 @@ Show parameter cpu
 -max 0 \
 -uc 128 \
 -di SQ,WQ,WA \
--rt 0:30.00
+-rt 0:30.00</copy>
 ```
 
 
@@ -178,7 +178,7 @@ After the scaling is completed you should see Auto Scaling enabled. Note your tr
 ​	5. From SQL Developer worksheet, check your cpu count
 
 ```
-Show parameter cpu
+<copy>Show parameter cpu</copy>
 ```
 
 Note that ATP has automatically scaled to 3 cores, the 3X maximum that it will scale to. Note the 3X increase in transactions per second and minutes. Check your performance monitor from the service console again.  We are still at 100% CPU utilization so this workload needs more CPUs :)  But you have just examined one of the autonomous features of ATP - auto scaling.
@@ -193,7 +193,7 @@ In a few minutes ATP will scale back down automatically.
 ​	7. From SQL Developer worksheet, check your core count.
 
 ```
-Show parameter cpu
+<copy>Show parameter cpu</copy>
 ```
 
 Why is the cpu count still the same even with the scale down after the workload stops?
@@ -211,16 +211,16 @@ We are going to set up two connections, one running the Swingbench workload and 
 ​	3. From SQL Developer worksheet, check your cpu count is 4 (ie: 2 cores thus 4 Hyper-threads)
 
 ```
-Show parameter cpu
+<copy>Show parameter cpu</copy>
 ```
 
 ​	4. From SQL Developer worksheet, run the following query 5 times and note the completion time with your MEDIUM service.
 
 ```
-select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
+<copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
 from ssb.customer c_high
 group by c_city, c_region
-order by count(*);
+order by count(*);</copy>
 
 You should have gotten similar completion times: 0.524, 0.406, 0.332, 0.357, 0.376 seconds
 
@@ -228,7 +228,7 @@ You should have gotten similar completion times: 0.524, 0.406, 0.332, 0.357, 0.3
 ​5. Now run both the Swingbench workload and the query together.  Remember to use your wallet names and service names.
 
 ```
-./charbench -c ../configs/SOE_Server_Side_V2.xml \
+<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
 -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
 -cs atplabtest_tp \
 -u soe \
@@ -240,16 +240,16 @@ You should have gotten similar completion times: 0.524, 0.406, 0.332, 0.357, 0.3
 -max 0 \
 -uc 128 \
 -di SQ,WQ,WA \
--rt 0:30.00
+-rt 0:30.00</copy>
 ```
 
 ​	6. Wait until the workload goes into a steady state with full transactions, about 3 minutes, then from SQL Developer run the query
 
 ```
-select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
+<copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
 from ssb.customer c_high
 group by c_city, c_region
-order by count(*);
+order by count(*);</copy>
 ```
 
 Note your completion times. They should be longer like this: 1.259, 1.007, 1.25, 1.115, 1.008 seconds
@@ -260,9 +260,11 @@ What do you think of the results?
 
 By setting ATP database service, you can control the resources and the response times for different connections.  Analyze your performance activity from the ATP console.
 
+You may now proceed to the next lab.
 
 
-END OF LAB
+
+
 
 ## Acknowledgements ##
 

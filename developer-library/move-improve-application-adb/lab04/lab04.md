@@ -6,7 +6,7 @@ In this lab you will create a Virtual Cloud Network (VCN) and related network re
 
 ![](./images/lab-architecture-diagram.png)
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -33,7 +33,7 @@ If this is an instructor-led lab we are sharing the same tenancy account with mu
 
 
 
-## Task 1 - Select your Cloud Region ##
+## Task 1: Select your Cloud Region ##
 
 In this step you will create a VCN with the quick start wizard. This will create all the related network resources including a public subnet, private subnet, internet gateway, NAT gateway, Service gateway, default security lists, and default route rules and table.
 
@@ -53,7 +53,7 @@ We are taking the quick option, but there is also a custom option to create reso
 
 ![](./images/start-vcn-wizard.PNG)
 
-## Task 2 - Create the Network  ##
+## Task 2: Create the Network  ##
 
 1. Select VCN and Internet Connectivity
 
@@ -112,6 +112,8 @@ You will see a number of resources created including public, private subnets, de
 Below is a diagram of what has been created by the Networking Quickstart.  All these resources were created in seconds.
 
 ![](./images/lab-architecture-created.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 

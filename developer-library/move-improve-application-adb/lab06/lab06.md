@@ -6,7 +6,7 @@ Oracle Autonomous Transaction Processing (ATP) is a fully managed Oracle databas
 
 The following lab guide shows how to provision and securely connect to ATP.
 
-Estimated Lab Time: 1 hour
+Estimated Time: 1 hour
 
 ### Objectives
 
@@ -179,6 +179,8 @@ AND sales.cust_id=customers.cust_id
 
 You have successfully provisioned and connected SQL Developer to Autonomous Database (ATP) and validated the connection.
               ![](./images/atp-diagram.png)
+
+You may now proceed to the next lab.
 
 
 

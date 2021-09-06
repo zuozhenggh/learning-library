@@ -4,7 +4,7 @@
 
 Oracle Cloud computes come in many shapes.  They can be virtual machines or bare metal hardware.  In this lab we will create two virtual machines.  One will be a bastion server, sometimes called a "jump server", and it will be created in your public subnet, and the second will be the application server and it will created in your private subnet.
 
-Estimated Lab Time: 40 minutes
+Estimated Time: 40 minutes
 
 ### Objectives
 
@@ -215,6 +215,8 @@ Let's see how your security list are set up to ensure they allow the right traff
 ![](./images/seclist-ingress-private-subnet.png)
 
 ![](./images/security-list-egress-private-subnet.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
