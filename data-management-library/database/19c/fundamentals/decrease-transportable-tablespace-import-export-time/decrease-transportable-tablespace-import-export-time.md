@@ -574,4 +574,4 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 27 2021
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, September 2 2021
