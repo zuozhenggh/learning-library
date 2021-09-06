@@ -20,17 +20,17 @@ Estimated Lab Time: 30 minutes.
 
 - From the Cloud shell connect to MySQL DB System:
   
-```
-<copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
-```
+  ```
+  <copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
+  ```
 ![connect to mysql shell](./images/Lab4-task1.1.png)
 
 - Run the following query to create a virtual table **`view_analytics`** that will include data from other tables from the database:
 
-```
-<copy>
-CREATE VIEW view_analytics AS
-SELECT b.booking_id,
+  ```
+  <copy>
+  CREATE VIEW view_analytics AS
+  SELECT b.booking_id,
   f.flight_id,
   pd.passenger_id,
   pd.sex,
@@ -40,13 +40,13 @@ SELECT b.booking_id,
   f.flightno,
   f.departure,
   f.arrival
-FROM booking b
+  FROM booking b
   JOIN passengerdetails pd ON pd.passenger_id = b.passenger_id
   JOIN flight f ON f.flight_id = b.flight_id
   JOIN airport ato ON ato.airport_id = f.to
   LIMIT 200000;
-</copy>    
-```
+  </copy>    
+  ```
 ![creating view analytics for OAC](./images/Lab4-task1.1-1.png)
 
 ### **Task 1.2:**
@@ -66,36 +66,43 @@ By now the status of the instance should have changed to _Active_, click on the 
 
 - On the top right corner click _**Create**_, then click _**Connection**_.
   
-![Oracle Analytics dashboard connection](./images/Lab4-task1.3-1.png)
+  ![Oracle Analytics dashboard connection](./images/Lab4-task1.3-1.png)
 
 ### **Task 1.4:**
 
 - Browse the connection type or simply type in the search section _**MySQL**_, and Click it.
   
-![Oracle Analytics dashboard connection creation](./images/Lab4-task1.4.png)
+  ![Oracle Analytics dashboard connection creation](./images/Lab4-task1.4.png)
 
-In the new window we have a lot of information we need to provide. Host name is a little bit tricky, we need to provide the Internal FQDN (fully qualified domain name) of the MySQL Database Instance. To find this out, you need to go back to the MySQL instance details.
+  In the new window we have a lot of information we need to provide. Host name is a little bit tricky, we need to provide the Internal FQDN (fully qualified domain name) of the MySQL Database Instance. To find this out, you need to go back to the MySQL instance details.
 
-Go to Databases section on your Cloud Home Page and select **DB Systems** and finally select **mysql-analytics-test** instance that we created previously and you will find all the information required such as **Internal FQDN** and **MySQL Port** in the _Endpoint section_.
+  Go to Databases section on your Cloud Home Page and select **DB Systems** and finally select **mysql-analytics-test** instance that we created previously and you will find all the information required such as **Internal FQDN** and **MySQL Port** in the _Endpoint section_.
 
-![MySQL DB system dashboard](./images/Lab4-task1.4-1.png) 
+  ![MySQL DB system dashboard](./images/Lab4-task1.4-1.png) 
 
 
 ### **Task 1.5:**
 
 - To create the connection, fill out with the following information:
 
-    - **Connection Name**: _**`MySQL_Connection`**_
-
-    - **Host**: Copy the information from Internal FQDN here. ex: _mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com_
-
-    - **Port**: Copy the information from MySQL Port. It should be _3306_
-
-    - **Database Name**: _airportdb_
-
-    - **Username**: _admin_
-
-    - **Password**: _Oracle.123_
+  ```
+  Connection Name: <copy>MySQL_Connection</copy>
+  ```
+  ```
+  Host: Copy the information from Internal FQDN here. ex: mysql-analytics-test.@#$%^&*0.analyticsvcntes.oraclevcn.com
+  ```
+  ```
+  Port: Copy the information from MySQL Port. It should be <copy>3306</copy>
+  ```
+  ```
+  Database Name: <copy>airportdb</copy>
+  ```
+  ```
+  Username: <copy>admin</copy>
+  ```
+  ```
+  Password: <copy>Oracle.123</copy>
+  ```
   
 After you filled out the information, click _**Save**_.
 
