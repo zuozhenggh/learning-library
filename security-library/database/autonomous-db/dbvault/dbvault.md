@@ -91,7 +91,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
       ````
 
     **Note:**
-       - Copy/Paste the following SQL queires into SQL Worksheet
+       - Copy/Paste the following SQL queries into SQL Worksheet
        - Press [**F5**] or click on the "Run Scripts" icon
        - Check that there are no errors
 
@@ -106,7 +106,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
    ![](./images/adb-dbv_004.png " ")
 
 
-4. Verify if Database Vault is configured
+4. Verify that Database Vault is configured but not yet enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
@@ -138,18 +138,18 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
        ![](./images/adb-dbv_008.png " ")
 
-    **Note:** `DV_ENABLE_STATUS` must be **TRUE**
+    **Note:** `DV_ENABLE_STATUS` should be **TRUE**
 
 7. Now, Database Vault is enabled!
 
 ## Task 2: Create a Simple Realm
 
-Next we create a realm to secure HR.CUSTOMERS table from ADMIN and HR (table owner) and grant access to APPUSER only.
+Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and HR (table owner) and grant access to APPUSER only.
 
 1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
     - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-       **Note: Attention, only one SQL Worksheet session can be open at the same time, hence open each of your sessions in the "Incognito mode"!**
+       **Note: Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence open each of your sessions in a new browser windows using the "Incognito mode"!**
 
     - Copy/Paste and execute the following query
 
@@ -328,7 +328,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 3. Like in Step 2, to demonstrate the effects of the audit, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-    **Note: Attention, only one SQL Worksheet session can be open at the same time, hence open each of your sessions in the "Incognito mode"!**
+    **Note: Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence open each of your sessions in a separate browser window the "Incognito mode"!**
 
     - Copy/Paste and execute the following query
 
@@ -352,7 +352,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        ![](./images/adb-dbv_011.png " ")
 
-    **Note:** ADMIN and HR users cannot acces to the HR.CUSTOMERS table and should generate a log into the audit trail table!
+    **Note:** ADMIN and HR users cannot access the HR.CUSTOMERS table and should generate an audit record of their failed attempt to violate policy!
 
 4. Review realm violation audit trail in SQL Worksheet as "**ADMIN**" user
 
@@ -427,7 +427,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_022.png " ")
 
-2. Next, create a Command Rule that will simulate blocking all SELECT to the HR.COUNTRIES table
+2. Next, create a Command Rule that will simulate blocking all SELECT from the HR.COUNTRIES table
 
       ````
       <copy>
@@ -447,7 +447,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 3. Like in Step 2, to demonstrate the effects of the simulation, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-    **Note: Attention, only one SQL Worksheet session can be open at the same time, hence open each of your sessions in the "Incognito mode"!**
+    **Note: Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence open each of your sessions in a separate browser window using the "Incognito mode"!**
 
     - Copy/Paste and execute several time the following SELECT query to HR.COUNTRIES table
 
@@ -469,7 +469,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        ![](./images/adb-dbv_026.png " ")
 
-    **Note:** All the users can acces to the HR.CUSTOMERS table!
+    **Note:** All the users can access the HR.CUSTOMERS table!
       
 4. Now, we query the simulation log again as "**ADMIN**" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
 
@@ -493,7 +493,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
       -- Purge simulation logs
       DELETE FROM DVSYS.SIMULATION_LOG$;
 
-      -- Current simulation logs after pruging
+      -- Current simulation logs after purging
       SELECT count(*) FROM dba_dv_simulation_log;
       </copy>
       ````
@@ -520,7 +520,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 ## Task 5: Disabling Database Vault
 
-1. Disable DB Vault on the Autonomous Database
+1. Log as "**ADMIN**" user and disable DB Vault on the Autonomous Database
 
       ````
       <copy>EXEC DBMS_CLOUD_MACADM.DISABLE_DATABASE_VAULT;</copy>
@@ -559,13 +559,13 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 ## **Appendix**: About the Product
 ### **Overview**
-Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data and to prevent unauthorized database changes.
+Oracle Database Vault provides controls to prevent unauthorized privileged users from accessing sensitive data. It also prevents unauthorized database changes.
 
-The Oracle Database Vault security controls protect application data from unauthorized access, and comply with privacy and regulatory requirements.
+The Oracle Database Vault security controls protect application data from unauthorized access, and help you comply with privacy and regulatory requirements.
 
    ![](./images/dv-concept.png " ")
 
-You can deploy controls to block privileged account access to application data and control sensitive operations inside the database using trusted path authorization.
+You can deploy controls to block privileged account access to application data and control sensitive operations inside the database with Database Vault.
 
 Through the analysis of privileges and roles, you can increase the security of existing applications by using least privilege best practices.
 
@@ -587,7 +587,7 @@ Command rules must work with rule sets to determine whether the statement is all
 
 - **Factors**
 
-A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use as a trusted path.
+A factor is a named variable or attribute, such as a user location, database IP address, or session user, which Oracle Database Vault can recognize and use to make access control decisions.
 You can use factors in rules to control activities such as authorizing database accounts to connect to the database or the execution of a specific database command to restrict the visibility and manageability of data.
 Each factor can have one or more identities. An identity is the actual value of a factor.
 A factor can have several identities depending on the factor retrieval method or its identity mapping logic.
@@ -602,17 +602,17 @@ The rule within a rule set is a PL/SQL expression that evaluates to true or fals
 
 A secure application role is a special Oracle Database role that can be enabled based on the evaluation of an Oracle Database Vault rule set.
 
-To augment these components, Oracle Database Vault provides a set of PL/SQL interfaces and packages.
+Oracle Database Vault provides a set of PL/SQL interfaces and packages that let you configure these components.
 In general, the first step you take is to create a realm composed of the database schemas or database objects that you want to secure.
-You can further secure the realm by creating rules, command rules, factors, identities, rule sets, and secure application roles.
+You can further secure your database by creating rules, rule sets, command rules, factors, identities, and secure application roles.
 In addition, you can run reports on the activities these components monitor and protect.
 
 ### **Benefits of using Database Vault**
-- Addresses compliance regulations to security awareness
-- Protects privileged user accounts from many security breaches and data steal, both external and internal
-- Helps you design flexible security policies for your database
-- Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data to those without a true need-to-know
-- Works in a Multitenant Environment increasing security for consolidation
+- Addresses compliance regulations to minimize access to data
+- Protects data against misused or compromised privileged user accounts
+- Design and enforce flexible security policies for your database
+- Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data by those without a true need-to-know
+- Protect access to your sensitive data by creating a trusted path (see more by performing the [Full Database Vault lab](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=682&clear=180&session=4531599220675))
 
 ## Want to Learn More?
 Technical Documentation:
