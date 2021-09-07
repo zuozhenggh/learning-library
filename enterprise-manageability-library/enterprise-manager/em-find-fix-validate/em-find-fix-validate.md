@@ -148,9 +148,8 @@ Select between *STEP 1A* and *STEP 1B*
 
     ```
     <copy>
-    cd scripts
     source SALESENV
-    cd load/frame/queries/awrv</copy>
+    cd scripts/load/frame/queries/awrv</copy>
     ```
 
 2. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
@@ -173,7 +172,7 @@ Now execute the file \@DBOP.sql
 
     ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg " ")
 
-6.  Click on the **Activity** tab. You will see all the activity for this operation.
+6.  Click on the **Metric** tab. You will see all the activity for this operation.
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
