@@ -18,13 +18,9 @@ Estimated Lab Time: 30-45 minutes
 
 - You have completed the [Setups](../setups/setups.md).
 
-## Task 1: Download the Autonomous Database Wallet
+## Task 1: Ready, Set, Branch
 
-The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our repository on GitHub. Congratulations, you have just created your code baseline or version 1.0!
-
-Ready, Set, Branch
-
-We have our main code line for our application in the repository. We can now have our developers clone the repository and start their assigned tickets/task in this development cycle or sprint. The issue with this is that they would all be committing to main and probably stepping all over each other. This requires each developer to create a branch of the repository that they can work in and commit their code to.
+We have our main code line for our database objects in the repository. We can now have our developers clone the repository and start their assigned tickets/task in this development cycle or sprint. The issue with this is that they would all be committing to main and probably stepping all over each other. This requires each developer to create a branch of the repository that they can work in and commit their code to.
 
 Let’s pretend we are developer who has been given the URL to clone the repository and start coding. They start by using git to clone to their local machine:
 

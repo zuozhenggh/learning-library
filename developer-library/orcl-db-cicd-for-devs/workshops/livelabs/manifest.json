@@ -19,12 +19,12 @@
         {
             "title": "Lab 1: Use SQLcl for Database Change Management/Tracking",
             "description": "Use SQLcl for Database Change Management/Tracking",
-            "filename": "../../change/change.md"
+            "filename": "../../sqlcl/sqlcl.md"
         },
         {
-            "title": "Lab 2: Use SQLcl and Liquibase for CI/CD",
-            "description": "Use SQLcl and Liquibase for CI/CD",
-            "filename": "../../cicd/cicd.md"
+            "title": "Lab 2: Change Management/Tracking across Databases",
+            "description": "Change Management/Tracking across Databases",
+            "filename": "../../change/change.md"
         },
         {
             "title": "Need Help?",

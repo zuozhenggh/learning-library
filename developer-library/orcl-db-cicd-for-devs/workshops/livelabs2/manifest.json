@@ -12,19 +12,19 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs.md"
         },
         {
-            "title": "Lab 1: Clone and Create a Github Repository",
-            "description": "Clone and Create a Github Repository",
-            "filename": "../../repo/repo.md"
+            "title": "Setups",
+            "description": "Setup your environment for this lab",
+            "filename": "../../setups/setups.md"
         },
         {
-            "title": "Lab 2: Create an Autonomous Database",
-            "description": "Create an Autonomous Database",
-            "filename": "../../createdb/createdb.md"
+            "title": "Lab 1: Use SQLcl for Database Change Management/Tracking",
+            "description": "Use SQLcl for Database Change Management/Tracking",
+            "filename": "../../sqlcl/sqlcl.md"
         },
         {
-            "title": "Lab 3: Use SQLcl and Liquibase for CI/CD",
-            "description": "Use SQLcl and Liquibase for CI/CD",
-            "filename": "../../cicd/cicd.md"
+            "title": "Lab 2: Change Management/Tracking across Databases",
+            "description": "Change Management/Tracking across Databases",
+            "filename": "../../change/change.md"
         },
         {
             "title": "Need Help?",
