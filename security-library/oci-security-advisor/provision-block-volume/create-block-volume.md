@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a Secure Block Volume using Security Advisor. It involves creating not only the block volume but also create a vault and key which will be used to encrypt the block volume data and meets minimum security requirements established by security zones. Existing key can also be used to import in a vault and use to create a secure block volume.
 
-*Estimated Time*:  15 Minutes
+Estimated Time:  15 Minutes
 
 
 
@@ -70,7 +70,7 @@ This pre-requisite steps are taken care in Lab 1, Task 1 of this workshop. Revie
 
   ![](./images/bvimage9.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)
