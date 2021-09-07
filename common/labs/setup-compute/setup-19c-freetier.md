@@ -4,7 +4,7 @@
 
 This lab will show you how to setup a compute instance running a pre-configured Compute and the corresponding Virtual Cloud Network (VCN).
 
-Estimated Lab Time:  25 minutes
+Estimated Time:  25 minutes
 
 Quick walk through on how to set up your compute instance.
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yfXLshLk0N5UXoHbL5ZPeVfqMS7lvxA_Bl-E2t4hdxXGJghQgVjs-MmohR6HDkYi/n/c4u04/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iO4PFcWBTMu5tTmocKSYw2zFv-ruHik0VGQSRTdr80A1So8UTWGf7Ggl02f4UKuN/n/c4u04/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
 4.  Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
@@ -60,7 +60,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 ## Task 2: Run Stack Apply Job
 
-1. Click the **Terraform Actions** drop down. Select **Apply**
+1. Select **Apply**
     ![Create a stack](images/workshop-007.png " ")
 2. Select **Apply**
     ![Create a stack](images/workshop-008.png " ")
@@ -96,7 +96,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP addresss for your instance.
+3.  On the instance homepage, find the Public IP address for your instance.
 
     ![](./images/db19c-freetier-step5-1.png " ")
 4.  Enter the command below to login to your instance.    
@@ -115,7 +115,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 

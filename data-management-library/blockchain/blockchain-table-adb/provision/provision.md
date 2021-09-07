@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will provision a Oracle linux compute instance and log into the instance. Then provision the 21c Oracle Autonomous Database (ADB) instance and connect to the database as new user.
+In this lab, you will provision a Oracle linux compute instance and log into the instance. Then provision the Oracle Autonomous Database (ADB) instance and connect to the database as new user.
 
 Estimated Time: 20 minutes
 
@@ -11,7 +11,7 @@ Estimated Time: 20 minutes
 In this lab, you will:
 
 - Provision a Oracle Linux compute instance and SSH into the instance
-- Provision an Oracle 21c Autonomous Transaction Processing instance
+- Provision an Oracle Autonomous Transaction Processing instance
 - Create a new database user using Database Actions
 - Connect to ATP database as a new user from SQL Developer Web
 
@@ -24,7 +24,7 @@ This workshop assumes you have:
 ## Task 1: Provision a Compute Instance
 
 1. Click on hamburger menu, search for **Compute** and select **Instances** under Compute.
-    
+
     ![](./images/task1-1.png " ")
 
 2. Make sure you are in the same region and compartment as the provisioned ATP instance and click on **Create Instance**.
@@ -52,7 +52,7 @@ This workshop assumes you have:
     ![](./images/task1-61.png " ")
     ![](./images/task1-62.png " ")
 
-## Task 2: Connect to your Compute Instance
+## Task 2: Connect to your Compute instance
 
 There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
@@ -169,7 +169,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     - **Choose a workload type** - For this lab, choose __Transaction Processing__ as the workload type.
     - **Choose a deployment type** - For this lab, choose **Shared Infrastructure** as the deployment type.
     - **Always Free** - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you to check **Always Free**.
-    - **Choose database version** - Select **21c** database version from the available database versions.
+    - **Choose database version** - Select a database version from the available database versions.
     - **OCPU count** - Number of CPUs for your service. Leave as it is. An Always Free databas comes with 1 CPU.
     - **Storage (TB)** - Storage capacity in terabytes. Leave as it is. An Always Free database comes with 20 GB of storage.
     - **Auto Scaling** - For this lab, leave auto scaling unchecked.
@@ -212,7 +212,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ![](./images/task4-5.png " ")
 
 6. In the Create User page, under User tab, provide the following details:
-    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER** 
+    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER**
     - **Password** - Provide the new user a password and confirm the Password. In this lab, we provide the same password as admin user for ease of use, **Password - WElcome123##** and confirm the password.
     - **Quota on tablespace DATA** - Set a value for the Quota on tablespace DATA for the user. Click the drop-down and choose **500M**.
     - **Web Access** - Turn on the Web Access radio button to access the SQL Developer Web.
@@ -220,7 +220,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![](./images/task4-6.png " ")
 
-7. In the Create User page, under Grant Roles tab, search for all three of these roles: **CONNECT**, **RESOURCE**, **DWROLE**. Check both the Granted Admin and Default checkboxes for each one.
+7. In the Create User page, under Grant Roles tab, search for all three of these roles: **CONNECT**, **RESOURCE**, **DWROLE**. Check both the Granted and Default checkboxes for each one.
 
     ![](./images/task4-71.png " ")
     ![](./images/task4-72.png " ")

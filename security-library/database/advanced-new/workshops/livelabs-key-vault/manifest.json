@@ -9,23 +9,18 @@
       "filename": "../../intro/intro-key-vault.md"
     },
     {
-      "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
-    },
-    {
-      "title": "Lab 1: Environment Setup",
+      "title": "Environment Setup",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
+      "title": "Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../../common/init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 3: Key Vault (OKV)",
+      "title": "Key Vault (OKV)",
       "description": "In this lab you can see how to leverage Oracle Key Vault (OKV)",
       "publisheddate": "10/20/2020",
       "filename": "../../key-vault/key-vault.md"

@@ -43,7 +43,7 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
 1. Copy the following command and paste it in the *Cloud Shell* to run it.
 
     ```bash
-    <copy>kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v0.16.0/operator.yaml</copy>
+    <copy>kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.0.0/operator.yaml</copy>
     ```
 
     ![verrazzano operator](images/1.png)

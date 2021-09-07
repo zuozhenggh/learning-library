@@ -14,7 +14,7 @@ Estimated Time: 15 minutes
 ### Prerequisites
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-## **Task 1:** Maintain the Cluster
+## Task 1: Maintain the Cluster
 
 You can use the **Clusters** and **Cluster Details** pages to maintain your clusters.
 
@@ -54,7 +54,7 @@ You can use the **Clusters** and **Cluster Details** pages to maintain your clus
     ![](./images/ll-maintain-cluster-2.png " ")  
     </if>
 
-## **Task 2:** Add Oracle Cloud SQL to the Cluster
+## Task 2: Add Oracle Cloud SQL to the Cluster
 
 You can add Oracle Cloud SQL to a cluster so that you can use SQL to query your big data sources. When you add Cloud SQL support to a cluster, a query server node is added and big data cell servers are created on all worker nodes. For information about using Cloud SQL with Big Data Service see [Use Cloud SQL with Big Data Service](https://docs.oracle.com/en/cloud/paas/big-data-service/user/use-cloud-sql-big-data-service.html).
 

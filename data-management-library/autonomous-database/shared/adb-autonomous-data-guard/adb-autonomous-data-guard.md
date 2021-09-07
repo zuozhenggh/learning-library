@@ -56,7 +56,7 @@ When provisioning completes, the **Peer State** field shows **Available**.
 ![](./images/peer-available.png)
 
 
-## **STEP  2**: Test Switchover to a Standby Database
+## Task 2: Test Switchover to a Standby Database
 After Autonomous Data Guard is enabled, if you perform a switchover operation the primary database becomes the standby database, and the standby database becomes the primary database, with no data loss. A switchover is typically done to test your application's failover procedures when Autonomous Data Guard is enabled.
 
 The Oracle Cloud Infrastructure console shows a switchover link in the Peer State field when both the primary database and the standby database are available. That is, the primary database Lifecycle State field shows Available or Stopped and the standby database is available (the Peer State field shows Available).

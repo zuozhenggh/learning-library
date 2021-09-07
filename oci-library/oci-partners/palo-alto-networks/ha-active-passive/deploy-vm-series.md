@@ -22,7 +22,7 @@ Estimated Lab Time: 30 minutes.
     - **VM Series Firewall** paid listing or BOYL access required for this **Lab**
         - You would need a valid license from Palo Alto Networks if you want to monitor traffic using BOYL image.
 
-## **STEP 1: Launch VM Series Firewall Instances**
+## **Task 1: Launch VM Series Firewall Instances**
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 
@@ -71,7 +71,7 @@ Estimated Lab Time: 30 minutes.
 
    ![](../common/images/37-Firewall2-Hub-VCN-Instance.png " ")
 
-## **STEP 2: Add Interfaces on VM Series Firewall Instances**
+## **Task 2: Add Interfaces on VM Series Firewall Instances**
 
 1. Click on **forgiate1** instance and navigate to **Attached VNIC** under Resources section of the instance details page. You will be adding **untrust**, **trust** and **ha** interfaces respectively:
 
@@ -185,7 +185,7 @@ Estimated Lab Time: 30 minutes.
 
     *ha interface on VM Series Firewall 2 instance*
 
-## **STEP 3: Assign Secondary IP Addresses on Primary VM Series Firewall Instance**
+## **Task 3: Assign Secondary IP Addresses on Primary VM Series Firewall Instance**
 
 1. Click on **forgiate1** instance and navigate to **Attached VNIC** under Resources section of the instance details page. You will be assigning additional IP addresses to **untrust** and **trust** interfaces of **vm-series-firewall-1** VM. You will be using them to route traffic to/from firewall:
 
@@ -224,7 +224,7 @@ Estimated Lab Time: 30 minutes.
 
     *assign secondary IP address to trust interface on VM-Series-Firewall-1 instance*
 
-## **STEP 4: Configure Dynamic Groups and Required Policies**
+## **Task 4: Configure Dynamic Groups and Required Policies**
 
 1. From the OCI Services menu, click **Dynamic Groups** under **Identity & Security**. Select your region on right part of the screen:
 
@@ -290,7 +290,7 @@ Estimated Lab Time: 30 minutes.
 
    ![](../common/images/57-All-Instances.png " ")
 
-## **STEP 5: Update Route Tables on Firewall-VCN**
+## **Task 5: Update Route Tables on Firewall-VCN**
 
 1. Navigate to the **firewall-vcn** and select **VCN-INGRESS** route table. 
 
@@ -365,7 +365,7 @@ Estimated Lab Time: 30 minutes.
 
 17. Click **Add Route Rules** to finish.
 
-## **STEP 6: Verify Route Tables associated to Subnets and Gateways**
+## **Task 6: Verify Route Tables associated to Subnets and Gateways**
 
 1. Below table includes neccessary subnets in each **VCNs** and make sure **Route Table** are attached to right subnets and service gateway. 
 

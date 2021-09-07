@@ -43,6 +43,7 @@ sample-workshop/
 
 * "FreeTier" - includes Free Trials, Paid Accounts and for some workshops, Always Free accounts (brown button)
 * "LiveLabs" - these are workshops that use Oracle provided tenancies (green button)
+* "Desktop"  - this is a new deployment where the workshop is encapsulated in a NoVNC environment running in a compute instance
 
 ### About the Workshop
 
@@ -51,6 +52,8 @@ The workshop includes all 6 of the individual labs in a single sequence.
 The folder structure includes a Introduction "lab" that describes the workshop as a complete set of 6 labs. Note: you may not need to have a different introduction for each of the parent and child versions of the workshops, this is illustrative only.
 
 Look at the product-name-workshop/freetier folder and look at the manifest.json file to see the structure.
+
+> **Note:** The use "Lab n:" in the titles is optional
 
 The Prerequisite "lab" is the first lab in a common folder on the oracle/learning-library repo. Because this lab already exists, we can use a RAW/absolute URL instead:
 

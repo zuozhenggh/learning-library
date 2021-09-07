@@ -12,7 +12,7 @@ The following is intended to outline our general product direction. It is intend
 - Account access to Oracle Cloud Infrastructure
   - The account is provided to you if it is instructor-led training, otherwise use your account 
 
-## Step 1 - Log in to Oracle Cloud ##
+## Task 1: Log in to Oracle Cloud ##
 
 1. From your browser go to Oracle Cloud. The URL is [https://console.ap-seoul-1.oraclecloud.com](https://console.ap-seoul-1.oraclecloud.com)
 2. Enter your Cloud Tenant or account name:  **oraclepartnersas**

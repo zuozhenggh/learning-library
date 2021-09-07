@@ -24,7 +24,7 @@ Watch the end-to-end demonstration:
 
 *Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
 
-## **Step 1A**: Create Stack:  Compute + Networking
+## Task 1A: Create Stack:  Compute + Networking
 If you already have a VCN setup, proceed to *Step 1B*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
@@ -81,7 +81,7 @@ Enter or select the following:
 
 You may now proceed to Step 2 (skip Step 1B).
 
-## **Step 1B**: Create Stack:  Compute only
+## Task 1B: Create Stack:  Compute only
 If you just completed Step 1A, please proceed to Step 2.  If you have an existing VCN and are comfortable updating VCN configurations, please ensure your VCN meets the minimum requirements.  
 - Egress rules for the following ports:  9851, 7803, 22          
 

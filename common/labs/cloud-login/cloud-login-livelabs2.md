@@ -4,7 +4,7 @@
 
 To get started, you need to have an active Oracle Cloud account and a LiveLabs reservation. An Oracle Cloud account is free and needed to gain access to your LiveLabs reservation, Oracle Support, and other Oracle publicly-accessible content.
 
-If you already have an Oracle Cloud account, you can skip to Step 2.
+If you already have an Oracle Cloud account, you can skip to Task 2.
 
 If you already have a reservation, skip to the next lab to start your workshop!
 
