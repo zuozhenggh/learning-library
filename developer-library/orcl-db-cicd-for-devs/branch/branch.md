@@ -123,66 +123,66 @@ This requires us to create a branch of the repository that we can work in and co
 
 10. To commit our code to the repository on this new branch, change your directory to the top level of the project (the cicdRepository directory). To do this, issue a **cd ..** at the Cloud Shell.
 
-   ````
-   <copy>
-   cd ..
-   </copy>
-   ```` 
+      ````
+      <copy>
+      cd ..
+      </copy>
+      ```` 
 
-   ![back up to the cicdRepository directory](./images/branch-9.png)
+      ![back up to the cicdRepository directory](./images/branch-9.png)
 
 11. In the **cicdRepository directory**, just as in lab 1, we are going to run **git add .** at the Cloud Shell.
 
-   ````
-   <copy>
-   git add .
-   </copy>
-   ```` 
-   ![git add](./images/branch-10.png)
+      ````
+      <copy>
+      git add .
+      </copy>
+      ```` 
+      ![git add](./images/branch-10.png)
 
 12. Issue a **git commit -m "V2.0"** at the Cloud Shell. This will indicate that we are working on a **new version** of the code in our developer branch.
 
-   ````
-   <copy>
-   git commit -m "v2.0"
-   </copy>
-   ```` 
+      ````
+      <copy>
+      git commit -m "v2.0"
+      </copy>
+      ```` 
 
-   ![git commit](./images/branch-11.png)
+      ![git commit](./images/branch-11.png)
 
 13. Then we **push** the new code up to our repository. This push will be slightly different because we are pushing to a branch. Our push command will be slightly different because we have to create the branch on the push. **Issue the following command** at the Cloud Shell prompt.
 
-   ````
-   <copy>
-   git push --set-upstream origin developerBranch
-   </copy>
-   ```` 
-   ![git push with branch](./images/branch-12.png)
+      ````
+      <copy>
+      git push --set-upstream origin developerBranch
+      </copy>
+      ```` 
+      ![git push with branch](./images/branch-12.png)
 
-   Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step as well as in Lab 1 when we pushed the code to the repository.
+      Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step as well as in Lab 1 when we pushed the code to the repository.
 
-   ![user/password for push](./images/branch-13.png)
+      ![user/password for push](./images/branch-13.png)
 
 14. You can view the files in the OCI Cloud Console on the **repository details page**. There will now be 2 branches.
 
-   ![repository details page](./images/branch-14.png)
+      ![repository details page](./images/branch-14.png)
 
 15. On the left side of the page, find the Compare ,menu item and click it.
 
-   ![compare menu item](./images/branch-15.png)
+      ![compare menu item](./images/branch-15.png)
 
 16. If you select **developerBranch for the Source** and **master for the target**
 
-   ![set source and target for compare](./images/branch-16.png)
+      ![set source and target for compare](./images/branch-16.png)
 
-   You will see that the following XML is new in the developerBranch that does not exist in main showing the change we made on the table and committed to our developer branch.
-   ```
-   <COL_LIST_ITEM>
-      <NAME>TREE_PICTURE</NAME>
-      <DATATYPE>BLOB</DATATYPE>
-   </COL_LIST_ITEM>
-   ```
-   ![new XML](./images/branch-17.png)
+      You will see that the following XML is new in the developerBranch that does not exist in main showing the change we made on the table and committed to our developer branch.
+      ```
+      <COL_LIST_ITEM>
+         <NAME>TREE_PICTURE</NAME>
+         <DATATYPE>BLOB</DATATYPE>
+      </COL_LIST_ITEM>
+      ```
+      ![new XML](./images/branch-17.png)
 
 
 ## Acknowledgements
