@@ -1,119 +1,78 @@
-# Create MySQL DB Service (MDS) with HeatWave 
+# Lab 2: Enable HeatWave & Configure Private Access Channel
 
 ## Introduction
 
-In this lab we will create a MySQL DB system and add a heatewave cluster to it. The DB System and HeatWave cluster must use the same shape, the shape defines the number of CPU cores, the amount of RAM, and so on. The size of the HeatWave cluster needed depends on tables and columns required to load, and the compression achieved in memory for this data.
+In this lab we will enable the HeatWave cluster and configure a private access channel for the Oracle Analytics instance.
+The DB System and HeatWave cluster must use the same shape, the shape defines the number of CPU cores, the amount of RAM, and so on. The size of the HeatWave cluster needed depends on tables and columns required to load, and the compression achieved in memory for this data.
+By enabling HeatWave you will deploy a standalone DB System characterized by a HeatWave-compatible shape (MySQL.HeatWave.VM.Standard.E3) and 1TB of data storage that will accelerate processing of analytic queries. For more information, check **[HeatWave Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/heatwave1.html#GUID-9401C69A-B379-48EB-B96C-56462C23E4FD)**. 
 
- By enabling HeatWave you will deploy a standalone DB System characterized by a HeatWave-compatible shape (MySQL.HeatWave.VM.Standard.E3) and 1TB of data storage that will accelerate processing of analytic queries. For more information, check **[HeatWave Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/heatwave1.html#GUID-9401C69A-B379-48EB-B96C-56462C23E4FD)**. 
-
-Estimated Time: 20 minutes
+Estimated Lab Time: 15 minutes.
 
 ### Objectives
 
--  Create an Instance of MySQL DB Systems
--  Add HeatWave cluster to MySQL Database Service
+-  Enable HeatWave Cluster to MySQL Database Service
+-  Configure Private Access Channel - OAC
 
 ### Prerequisites
 
   - All previous labs have been successfully completed.
 
-
-## Task 1: Create an Instance of MySQL in the Cloud
-
-1. From the main menu on the left select **Databases >> DB Systems**
-  
-    ![](./images/task1.1.png)
-
-2. The previous Task will bring you to the DB System creation page. 
-Look at the compartment selector on the left and check that you are using the same compartment used to create the VCN and the Compute Instance. Once done, click on **Create MySQL DB System**.
-
-    ![](./images/task1.2.png)
-
-3. Start creating the DB System. Cross check again the compartment and assign to the DB System the name **mysql-analytics-test** and select the HeatWave box. This will allow to create a MySQL DB System which will be HeatWave-ready. Ignore other boxes.
-  
-    ![](./images/task1.3.png)
-
-4. In the **Create Administrator Credential** section enter the following information:
-  
-    ```
-    <copy>
-    username: admin
-    password: Oracle.123
-    </copy>
-    ```
-  In the **Configure Networking** section make sure you select the same subnet which you have used to create the Compute Instance **`Public-Subnet-analytics_vcn_test(Regional)`**.
-
-  Leave the default availability domain and proceed to the **Configure Hardware** section.
- 
-    ![](./images/task1.4.png)
-
-5. Confirm that in the **Configure Hardware** section, the selected shape is **MySQL.HeatWave.VM.Standard.E3**, CPU Core Count: **16**, Memory Size: **512 GB**, Data Storage Size: **1024**.
-  In the **Configure Backup** section leave the default backup window of **7** days.
-
-    ![](./images/task1.5.png)
-
-6. To select a Configuration, scroll down and click on **Show Advanced Options**. 
-  
-    ![](./images/task1.6.png)
+## **Task 1:** Add HeatWave Cluster to MySQL Database Service
 
 
-  In the Configuration tab click on **Select Configuration**. 
+### **Task 1.1:**
+   - We will need to wait for the DB System which you have just created until its status turns  _**Active**_, it would takes around 10 minutes.
 
-    ![](./images/task1.6-1.png)
+    Once it is active you can take note of the _**Private IP Address**_ of the MySQL DB System which we will use later in the workshop.
 
-7. In the **Browse All Configurations** window, select **MySQL.HeatWave.VM.Standard.E3.Standalone**, and click the button **Select a Configuration**. 
+  ![MySQL DB System dashboard](./images/Lab2-task1.1.png)
 
-    ![](./images/task1.7.png)
+### **Task 1.2:**
+   - From the menu on the left bottom side select _**HeatWave**_, and click on the button _**Add HeatWave Cluster**_ located on the right.
+     
+   ![Add Heatwave Cluster](./images/Lab2-task1.2.png)
 
-  If everything is correct you should see something corresponding to the below:
+   - Check that Shape looks as per picture below and that Node Count is set to 2, and then click the button _**Add HeatWave Cluster**_.
 
-    ![](./images/task1.7-1.png)
+   ![Heatwave Cluster enable](./images/Lab2-task1.2-1.png)
 
-8. Go to the Networking tab, in the Hostname field enter **mysql-analytics-test** (same as DB System Name). Check that port configuration corresponds to the following:
+### **Task 1.3:**
+   - You will be brought back to the main page where you can check for the creation status. After some seconds you should see the nodes in _**Creating**_ status.
+     
+   ![Heatwave Cluster creating status](./images/Lab2-task1.3.png)
 
-    - MySQL Port: **3306**
-    - MySQL X Protocol Port: **33060**
-      
-  Once done, click the **Create** button.
+   - After completion, the node status will switch to _**Active**_ status. The process will take some time to be completed. You can go to the next Task in the meantime. 
 
-    ![](./images/task1.8.png)
-
-
-  The MySQL DB System will have **CREATING** state (as per picture below). 
-  
-    ![](./images/task1.8-1.png)
-
-
-## Task 2: Add HeatWave cluster to MySQL Database Service
-
-1. We will need to wait for the DB System which you have just created until its status turns  **Active**, it would takes around 10 minutes.
-
- Once it is active you can take note of the **Private IP Address** of the MySQL DB System which we will use later in the workshop.
-
-    ![](./images/task2.1.png)
-
-2. From the menu on the left bottom side select **HeatWave**, and click on the button **Add HeatWave Cluster** located on the right.
-  
-    ![](./images/task2.2.png)
-
-  Check that Shape looks as per picture below and that Node Count is set to 2, and then click the button **Add HeatWave Cluster**.
-
-    ![](./images/task2.2-1.png)
-
-3. You will be brought back to the main page where you can check for the creation status. After some seconds you should see the nodes in **Creating** status.
-  
-    ![](./images/task2.3.png)
-
-  After completion, the node status will switch to **Active** status. The process will take some time to be completed. 
+## **Task 2:** Configure Private Access Channel - OAC
 
 
-As a recap, in this lab we have created a MySQL DB System node includes a HeatWave plugin that is responsible for cluster management, query scheduling, and returning query results to the MySQL DB System. 
- 
-Well done, you can now proceed to the next lab!
+### **Task 2.1:**
+
+   - Back to the Analytics Cloud from _**hamburger menu**_ in the upper left corner and click on _**Analytics & AI -> Analytics Cloud**_ by now the status of the instance should have changed to _Active_. 
+
+   ![OCI Console](./images/Lab2-task2.1.png)
+
+   - Click on the instance _**OACDemo**_ to go to the details page.
+
+   - Click on the button _**Configure Private Access Channel**_ under the Private Access Channel section to create a private access to the MySQL Database Service Instance.
+
+   ![Configuring private channel OAC](./images/Lab2-task2.1-1.png)
+
+### **Task 2.2:**
+   - In the next window you first need to fill the name for the channel **PrivateChannel**. Then, choose the VCN created earlier **`analytics_vcn_test`**, and make sure you select the correct subnet, **`Public Subnet-analytics_vcn_test`**, otherwise you won't be able to connect!
+   Check _**Virtual Cloud Network's domain name as DNS zone**_, and remove the additional _**DNS Zone**_, using the X icon on the right side of the DNS Zone section, and finally click _**Configure**_.  
+
+   _**Note:**_ It will take up to _**50 minutes**_ to create the private channel so go ahead and proceed to the next Lab! 
+
+   ![Configuring private channel OAC](./images/Lab2-task2.2.png)
+
+   As a recap, in this lab we have enabled HeatWave cluster to MySQL Database Service, and configured Private Access Channel for the Oracle Analytics Cloud instance created in Lab 1. 
+    
+   Well done, you can now proceed to the next lab!
 
 
 
-## Acknowledgements
-- **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
-- **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
-- **Last Updated By/Date** - Kamryn Vinson, August 2021
+## **Acknowledgements**
+   - **Author** - Rawan Aboukoura - Technology Product Strategy Manager, Vittorio Cioe - MySQL Solution Engineer
+   - **Contributors** - Priscila Iruela - Technology Product Strategy Director, Victor Martin - Technology Product Strategy Manager 
+   - **Last Updated By/Date** -
