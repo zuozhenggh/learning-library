@@ -14,11 +14,11 @@ Estimated Lab Time: 30 minutes.
 
   - All previous labs have been successfully completed.
 
-## **Task 1:** Create Oracle Analytics Cloud Instance 
+## **Task 1:** Connect to Oracle Analytics Cloud Instance 
 
 ### **Task 1.1:**
 
-  - From the Cloud shell connect to MySQL DB System:
+  - From the bastion host connect to MySQL DB System:
     
     ```
     <copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>

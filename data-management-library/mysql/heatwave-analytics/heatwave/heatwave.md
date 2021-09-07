@@ -1,6 +1,5 @@
 # Lab 3: Run queries leveraging HeatWave
- 
-   
+
 ## Introduction
 
 HeatWave accelerates MySQL queries by 400x using massively parallel processing to provide real-time analytics. So in this lab we will run queries with HeatWave enabled and without and finally observe the results.
