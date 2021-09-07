@@ -1,5 +1,5 @@
 
-# Oracle Database CI/CD for Developers - Lab 2: Change Management/Tracking across Databases
+# Oracle Database CI/CD for Developers - Lab 2: Create a Branch and a Database Change
 
 ## Introduction
 
