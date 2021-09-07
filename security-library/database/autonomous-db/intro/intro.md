@@ -4,21 +4,21 @@
 ### Overview
 *Estimated Time to complete the workshop*: 35 minutes
 
-This workshop is the THIRD PART of the Hands-On Labs dedicated to the Oracle Database Security features and functionalities - please refer to the *DB Security Basics* for the first workshop and *DB Security Fundamentals* for the second.
+This workshop is the Hands-On Labs dedicated to the Oracle Database Security features and functionalities.
 
-Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test DB Security use cases in a complete environment already pre-configured by the Oracle Database Security Product Manager Team.
+Based on an OCI architecture, deployed in a few minutes with a simple internet connection, it allows you to test Autonomous Database with DB Vault use cases in a complete environment already pre-configured by the Oracle Database Security Product Manager Team.
 
-Now, you no longer need important resources on your PC (storage, CPU or memory), nor complex tools to master, making you completely autonomous to discover at your rhythm all new DB Security features.
+Now, you no longer need important resources on your PC (storage, CPU or memory), nor complex tools to master, making you completely autonomous to discover at your leisure how to use Database Vault to better protect your Autonomous Database.
 
 ## Objectives
 
 In this workshop, you learn how to perform the following tasks:
 
-- Provision an Autonomous Database on OCI
-- Enable/Disable Database Vault in an Autonomous DB
-- Protect sensitive data using a Database Vault realm
-- Create an audit policy to capture realm violations
-- Test Database Vault Controls with Simulation mode
+- Enable Database Vault
+- Protect data against a compromised administrator account
+- Audit Database Vault violations
+- Use simulation mode to reduce the operational impact of Database Vault
+- Disable Database Vault
 
 The entire DB Security PMs Team wishes you an excellent workshop!
 
