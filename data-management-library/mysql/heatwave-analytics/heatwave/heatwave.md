@@ -171,7 +171,7 @@ In this lab, you will:
     ```
   	![load db into Heatwave](./images/Lab3-task2.1-2.png)
 
-  	Let's verify that the tables are loaded in the HeatWave cluster, and the loaded tables have an AVAIL_RPDGSTABSTATE load status.
+  	Let's verify that the tables are loaded in the HeatWave cluster, and the loaded tables have an `AVAIL_RPDGSTABSTATE` load status.
     ```
     <copy>USE performance_schema;</copy>
     ```
