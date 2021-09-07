@@ -1,16 +1,16 @@
 # Generate Auth Token #
 
-## introduction
+## Introduction
 
 Auth tokens are Oracle-generated token strings that you can use to authenticate with third-party APIs or to Oracle services like the Oracle Object Store. Each user created in the IAM service automatically has the ability to create, update, and delete their own auth tokens in the Console or the API.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
-### Objectives
+### Objective
 
-* Generate Auth token
+* Generate Auth token.
 
-### Prerequisites
+### Prerequisite
 
 * Web browser
 
@@ -46,7 +46,9 @@ The following is intended to outline our general product direction. It is intend
 
 6. Copy the token string immediately, because you can't retrieve it again after closing the dialog box.
 
-If you're an administrator creating an auth token for another user, you need to securely deliver it to the user by providing it verbally, printing it out, or sending it through a secure email service.
+   If you're an administrator creating an auth token for another user, you need to securely deliver it to the user by providing it verbally, printing it out, or sending it through a secure email service.
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 

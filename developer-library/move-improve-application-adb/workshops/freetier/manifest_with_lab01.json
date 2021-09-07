@@ -8,9 +8,14 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Getting Started",
+            "title": "Getting Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Login to Oracle Cloud",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../lab01/lab01.md"
         },
         {
             "title": "Lab 2: Generate SSH Keys",
@@ -19,35 +24,35 @@
         },
         {
             "title": "Lab 3: Generate the Auth Token",
-            "filename": "../../generate-auth-token/generate-auth-token.md"
+            "filename": "../../lab03/lab03.md"
         },
         {
             "title": "Lab 4: Create the Virtual Cloud Network",
-            "filename": "../../create-vcn/create-vcn.md"
+            "filename": "../../lab04/lab04.md"
         },
         {
             "title": "Lab 5: Create the Computes",
-            "filename": "../../create-compute/create-compute.md"
+            "filename": "../../lab05/lab05.md"
         },
         {
             "title": "Lab 6: Create Autonomous Database",
-            "filename": "../../create-autonomous-database/create-autonomous-database.md"
+            "filename": "../../lab06/lab06.md"
         },
         {
             "title": "Lab 7: Copy SSH Key and Wallet",
-            "filename": "../../copy-sshkey-wallet/copy-sshkey-wallet.md"
+            "filename": "../../lab07/lab07.md"
         },
         {
             "title": "Lab 8: Install the Application and Migrate the Database",
-            "filename": "../../install-application-migrate-database/install-application-migrate-database.md"
+            "filename": "../../lab08/lab08.md"
         },
         {
             "title": "Lab 9: Run the Application Workload",
-            "filename": "../../load-application-test-performance/load-application-test-performance.md"
+            "filename": "../../lab09/lab09.md"
         },
         {
             "title": "Lab 10: Managing Storage and Images",
-            "filename": "../../managing-storage-volume/managing-storage-volume.md"
+            "filename": "../../lab10/lab10.md"
         },
 
         {

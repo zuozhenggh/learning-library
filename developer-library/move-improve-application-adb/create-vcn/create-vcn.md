@@ -6,11 +6,11 @@ In this lab you will create a Virtual Cloud Network (VCN) and related network re
 
 ![](./images/lab-architecture-diagram.png)
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
-### Objectives
+### Objective
 
-* create virtual cloud network
+* Create virtual cloud network
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ If this is an instructor-led lab we are sharing the same tenancy account with mu
 
 
 
-## Task 1 - Select your Cloud Region ##
+## Task 1: Select your Cloud Region ##
 
 In this step you will create a VCN with the quick start wizard. This will create all the related network resources including a public subnet, private subnet, internet gateway, NAT gateway, Service gateway, default security lists, and default route rules and table.
 
@@ -51,9 +51,9 @@ We are taking the quick option, but there is also a custom option to create reso
 
 5. Click Start VCN Wizard
 
-![](./images/start-vcn-wizard.PNG)
+  ![](./images/start-vcn-wizard.PNG)
 
-## Task 2 - Create the Network  ##
+## Task 2: Create the Network  ##
 
 1. Select VCN and Internet Connectivity
 
@@ -70,48 +70,49 @@ We are taking the quick option, but there is also a custom option to create reso
 
 6. Enter the public subnet CIDR block of 10.0.0.0/24
 
-7. Enter the private subnet CIDR block of 10.0.1.0/24. Note: A private subnet is not visible to the internet and is accessible from inside the VCN only.
+7. Enter the private subnet CIDR block of 10.0.1.0/24. Note: A private subnet is not visible to the
+   internet and is accessible from inside the VCN only.
 
 8. Select use DNS hostnames
 
 9. Click Next
 
-![](./images/vcn-configuration-info.png)
+  ![](./images/vcn-configuration-info.png)
 
-A summary is displayed.
+  A summary is displayed.
 
-You can view the default security and route rules that will be created.
+  You can view the default security and route rules that will be created.
 
-​	10. Scroll to Security List and click Show Rules
+10.  Scroll to Security List and click Show Rules
 
-![](./images/security-rules.png)
+   ![](./images/security-rules.png)
 
-![](./images/route-rules.png)
+   ![](./images/route-rules.png)
 
 
-​	11. Click Create.
+11. Click Create.
 
-The VCN is created instantaneously with all the default network resources.
+    The VCN is created instantaneously with all the default network resources.
 
-![](./images/vcn-summary-info.png)
 
-​
-
+   ![](./images/vcn-summary-info.png)
 12. Click View Virtual Cloud Network to see the details and what has been created.
 
-![](./images/view-vcn-config.png)
+   ![](./images/view-vcn-config.png)
 
 
 
-You will see a number of resources created including public, private subnets, default security list, default route table, and the gateways.
+    You will see a number of resources created including public, private subnets, default security list, default route table, and the gateways.
 
-![](./images/vcn-details.png)
+    ![](./images/vcn-details.png)
 
 
 
-Below is a diagram of what has been created by the Networking Quickstart.  All these resources were created in seconds.
+    Below is a diagram of what has been created by the Networking Quickstart.  All these resources were created in seconds.
 
-![](./images/lab-architecture-created.png)
+    ![](./images/lab-architecture-created.png)
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
