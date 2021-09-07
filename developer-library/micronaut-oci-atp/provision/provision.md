@@ -102,6 +102,47 @@ To connect locally you need to download and configure the ATP Wallet locally.
 
    ![Wallet dir](images/tmp-wallet-dir.png)
 
+## Task 4: Configure Oracle Cloud Vault for Password Storage (Optional)
+
+Micronaut supports using Oracle Cloud Vault as a distributed configuration source. You'll use a Vault to store database passwords so they're not visible in cleartext in your application configuration files.
+
+To securely store your passwords you need to create a vault and an encryption key, and create secrets in the vault.
+
+1. Go to the Oracle Cloud Menu and select "Identity & Security" and then "Vault".
+
+![Vault menu](images/vault1.png)
+
+2. Click "Create Vault":
+
+![Create Vault](images/vault2.png)
+
+3. Enter "mn-oci-vault" as the vault name and click "Create Vault":
+
+![Create Vault](images/vault3.png)
+
+4. Click the vault in the list, then in the vault details page click the "Copy" link in the **OCID** row; this is the unique identifier for your vault and you'll need it later.
+
+![Copy the vault OCID](images/vault4.png)
+
+5. Click "Master Encryption Keys" under "Resources", then click "Create Key":
+
+![Create Key](images/vault5.png)
+
+6. Enter "mn-oci-encryption-key" as the name, and change "Protection Mode" to "Software", then click "Create Key":
+
+![Create Key](images/vault6.png)
+
+7. Once the key has finished provisioning, click "Secrets" under "Resources", then click "Create Secret":
+
+![Create Secret](images/vault7.png)
+
+8. Enter "ATP\_ADMIN\_PASSWORD" as the name. Select the encryption key you created, and enter the admin password you created earlier in the "Secret Contents" field, then click "Create Secret":
+
+![Create Secret](images/vault8.png)
+
+9. Create another secret, using "ATP\_USER\_PASSWORD" as the name. Select the encryption key you created, and enter the user password you created earlier in the "Secret Contents" field, then click "Create Secret":
+
+![Create Secret](images/vault9.png)
 
 You may now *proceed to the next lab*.
 
