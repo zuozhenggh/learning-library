@@ -19,7 +19,7 @@ Estimated Lab Time: 20 minutes.
 
 ### **Task 1.1:**
 
-  - Back to the ssh connection at the cloud shell, if it is disconnected, type the following command to connect again to the instance using the publec IP address of the compute instance.
+  - Back to the ssh connection at the cloud shell, if it is disconnected, type the following command to connect again to the instance using the public IP address of the compute instance.
 
 
     ```
@@ -171,7 +171,7 @@ Estimated Lab Time: 20 minutes.
     ```
   ![load db into Heatwave](./images/Lab3-task2.1-2.png)
 
-  - Let's verify that the tables are loaded in the HeatWave cluster, and the loaded tables have an AVAIL_RPDGSTABSTATE load status.
+  - Let's verify that the tables are loaded in the HeatWave cluster, and the loaded tables have an `AVAIL_RPDGSTABSTATE` load status.
     ```
     <copy>USE performance_schema;</copy>
     ```
