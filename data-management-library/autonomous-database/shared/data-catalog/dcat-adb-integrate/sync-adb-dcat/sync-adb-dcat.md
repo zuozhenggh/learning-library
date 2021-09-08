@@ -2,18 +2,17 @@
 
 ## Introduction
 
-Autonomous Database can leverage the Data Catalog metadata to dramatically simplify management for access to your data lake's object storage. By synchronizing with Data Catalog metadata, Autonomous Database automatically creates external tables for each logical entity harvested by Data Catalog. These external tables are defined in database schemas that are fully managed by the metadata synchronization process. Users can immediately query data without having to manually derive the schema for external data sources and manually create external tables.
+Autonomous Database can leverage the Data Catalog metadata to dramatically simplify management for access to your data lake's object storage. By synchronizing with Data Catalog metadata, Autonomous Database automatically creates external tables for each logical entity harvested by Data Catalog. These external tables are defined in database schemas that are created and fully managed by the metadata synchronization process. You can immediately query data without having to manually derive the schema for external data sources and manually create external tables.
 
 Estimated Time: 45 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Access the ADB SQL Worksheet and run the appropriate scripts
-* Connect to your Data Catalog instance and query its objects
-* Synchronize Autonomous Database with Data Catalog
+* Access the ADB SQL Worksheet
+* Connect your ADB instance to your Data Catalog instance
+* Synchronize your ADB instance with your Data Catalog instance
 * Query the generated log, schemas, and external tables
-
 
 ### Prerequisites
 
@@ -39,20 +38,29 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
    ![](./images/region-identifier.png " ")
 
-3. On the **Data Catalogs** page, click the **training-dcat-instance** link in **Name** column to display your Data Catalog instance. In the **Home** tab, click the **Data Assets** link.
+4. Open the **Navigation** menu and click **Storage**. Under **Object Storage and Archive Storage**, click **Buckets**.
 
-    ![](./images/data-assets-link.png " ")
-
-4. On the **Data Assets** page, click the **Oracle Object Storage Data Asset** link.
-
-    ![](./images/click-data-asset.png " ")
-
-5. On the **Oracle Object Storage: Oracle Object Storage Data Asset**, copy the **Data asset key** value, and then paste it to an editor or a file, so that you can easily retrieve it later in this task.
-
-    ![](./images/data-asset-details.png " ")
+    ![](./images/buckets.png " ")
 
 
-4. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**. In the list of compartments, search for your **training-dcat-compartment**. In the row for the compartment, in the **OCID** column, hover over the **OCID** link and then click **Copy**. The status changes from **Copy** to **Copied**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this task.
+5. On the **Buckets** page, click the **`moviestream_gold`** link in the **Name** column.
+
+    ![](./images/click-moviestream-gold.png " ")
+
+6. On the **moviestream_gold** **Bucket Detail** page, scroll-down to the **Objects** section.
+
+    ![](./images/bucket-details.png " ")
+
+7. Click **`customer_contact.csv`**, click the **Actions** icon, and then click **View Object Details** from the context menu.
+
+    ![](./images/view-object-details.png " ")
+
+8. In the **Object Details** panel, in the **URL Path (URI)** field, copy the URL to and including the **/o** such as the following in our example:
+**`https://objectstorage.ca-montreal-1.oraclecloud.com/n/oraclebigdatadb/b/moviestream_gold/o`**
+
+    ![](./images/url.png " ")
+
+9. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**. In the list of compartments, search for your **training-dcat-compartment**. In the row for the compartment, in the **OCID** column, hover over the **OCID** link and then click **Copy**. The status changes from **Copy** to **Copied**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this task.
 
     ![](./images/compartment-ocid.png " ")
 
@@ -90,92 +98,120 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 8. In the **Development** section, click the **SQL** card. The **SQL Worksheet** is displayed.   
 
-    ![](./images/sql-worksheet.png " ")
+    ![](./images/start-sql-worksheet.png " ")
 
     > **Note:** In the remaining tasks in this lab, you will use the SQL Worksheet to run the necessary SQL statements to:
-    * Connect to your Data Catalog instance and query its objects.
+    * Connect to your Data Catalog instance from ADB and query its assets.
     * Synchronize your ADB instance with your Data Catalog instance.
-    * Query the generated schemas and external tables.
+    * Query the generated logs, schemas and external tables.
 
 
 ## Task 3: Connect to Data Catalog
 
-1. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet_**.
-
-    ```
-    <copy>
-    define dcat_credential = 'CRED_OCI'
-    define dcat_ocid = 'enter-your-dcat-ocid-here'
-    define dcat_region='enter-your-region-identifier-here'
-    define dcat_asset_key='enter-your-dcat-asset-key-here'  
-    define dcat_compartment = 'enter-your-dcat-compartment-ocid-here'
-    </copy>
-    ```
-
-    ![](./images/dcat-connection-details.png " ")
-
-2. Replace the values of the **`dcat_ocid`**, **`dcat_region`**, **`dcat_asset-key`**, and **`dcat_compartment`** with the values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. Place the cursor on any line of code, and then click the **Run Statement** ![](./images/run-statement-icon.png>) icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
-
-    ![](./images/dcat-connection-example.png " ")
-
-
-3. Display all current Data Catalog connections. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. In this example, you have not connected to Data Catalog yet; therefore, the result of the query is **`No items to display`**. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
-
-    ```
-    <copy>
-    select *
-    from dcat_connections;
-    </copy>
-    ```
-
-    ![](./images/dcat-connection.png " ")
-
-    >**Note:** To disconnect from Data Catalog, use the **`dbms_dcat.unset_data_catalog_conn`** PL/SQL package procedure. This procedure removes an existing Data Catalog connection. It drops all of the protected schemas and external tables that were created as part of your previous synchronizations; however, it does not remove the metadata in Data Catalog. You should perform this action only when you no longer plan on using Data Catalog and the external tables that are derived, or if you want to start the entire process from the beginning.
+1. Disconnect (initialize) from Data Catalog, if already connected, by using the **`dbms_dcat.unset_data_catalog_conn`** PL/SQL package procedure. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. This procedure removes an existing Data Catalog connections. It drops all of the protected schemas and external tables that were created as part of your previous synchronizations; however, it does not remove the metadata in Data Catalog. You should perform this action only when you no longer plan on using Data Catalog and the external tables that are derived, or if you want to start the entire process from the beginning.
 
     ```
     <copy>
     exec dbms_dcat.unset_data_catalog_conn;
     </copy>
     ```
+    If you are not connected to Data Catalog, an **ORA-20008: No data catalog connections found. ORA-06512** message is displayed in the **Script Output** tab at the bottom of the worksheet.
 
-4. Review the credentials that you will use in this task using the **`all_credentials`** view. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then and then click **Run Statement** in the Worksheet toolbar.
+    ![](./images/unset-data-catalog.png " ")
+
+2. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet_**.
 
     ```
     <copy>
-    select * from all_credentials;
+    define dcat_credential = 'OCI$RESOURCE_PRINCIPAL`
+    define dcat_ocid = 'enter-your-dcat-ocid-here'
+    define dcat_region='enter-your-region-identifier-here'
+    define uri_root = 'Enter the url to the moviestream_gold Object Storage bucket'
     </copy>
     ```
 
-    ![](./images/all-credentials.png " ")
+    ![](./images/dcat-connection-details.png " ")
 
-5. Create a connection to your Data Catalog instance using the `dbms_dcat.set_data_catalog_conn` PL/SQL package procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. See [SET\_DATA\_CATALOG\_CONN Procedure](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-7734C568-076C-4BC5-A157-6DE11F548D2B). The credentials must have access to your Data Catalog Asset and the data in the **`moviestream_landing`** and **`moviestream_gold`** Oracle Object Storage buckets that you use in this workshop. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+
+3. Replace the values of the **`dcat_ocid`**, **`dcat_region`**, and **`uri_root`** with the values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+
+    ![](./images/define-variables.png " ")
+
+4. Enable the resource principal support. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
     ```
     <copy>
-    exec dbms_dcat.set_data_catalog_conn(-
-    region => '&dcat_region', -
-    endpoint => NULL, -
-    catalog_ocid => '&dcat_ocid', -
-    oci_credential => '&dcat_credential');
+    exec dbms_cloud_admin.enable_resource_principal();
+    </copy>
+    ```
+
+    ![](./images/enable-resource-principal.png " ")
+
+    >**Note:** You can use an Oracle Cloud Infrastructure resource principal with Autonomous Database. You or your tenancy administrator define the Oracle Cloud Infrastructure policies and a dynamic group that allows you to access Oracle Cloud Infrastructure resources with a resource principal. You do not need to create a credential object and Autonomous Database creates and secures the resource principal credentials you use to access the specified Oracle Cloud Infrastructure resources. See [Use Resource Principal to Access Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/resource-principal.html#GUID-E283804C-F266-4DFB-A9CF-B098A21E496A) 
+
+5. Confirm that the resource principal was enabled. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
+
+    ```
+    <copy>
+    select *
+    from dba_credentials
+    where credential_name='OCI$RESOURCE_PRINCIPAL' and owner='ADMIN';
+    </copy>
+    ```
+
+    ![](./images/query-resource-principal.png " ")
+
+
+6. Query the Object Storage bucket to test the principal and privileges.
+
+    ```
+    <copy>
+    select *
+    from dbms_cloud.list_objects('&oci_credential', '&uri_root/');
+    </copy>
+    ```
+
+    ![](./images/query-bucket.png " ")
+
+
+7. Set the credentials to use for Object Storage and Data Catalog.
+
+    ```
+    <copy>
+    exec dbms_dcat.set_data_catalog_credential(credential_name => '&oci_credential');
+    exec dbms_dcat.set_object_store_credential(credential_name => '&oci_credential');
+    </copy>
+    ```
+
+    ![](./images/set-credentials.png " ")
+
+8. Create a connection to your Data Catalog instance using the `dbms_dcat.set_data_catalog_conn` PL/SQL package procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. See [SET\_DATA\_CATALOG\_CONN Procedure](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-7734C568-076C-4BC5-A157-6DE11F548D2B). The credentials must have access to your Data Catalog Asset and the data in the **`moviestream_landing`** and **`moviestream_gold`** Oracle Object Storage buckets that you use in this workshop. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+
+    ```
+    <copy>
+    begin
+    dbms_dcat.set_data_catalog_conn (
+    region => '&dcat_region',
+    catalog_id => '&dcat_ocid');
     end;
     /
     </copy>
     ```
 
-    ![](./images/set-dcat-connections.png " ")
+    ![](./images/connect-dcat.png " ")
 
     >**Note:** The above code references the substitution variables that you defined in step 1 by preceding the name of the variables by one **_`&`_**. When SQL*Plus encounters a substitution variable in a command, it executes the command as though it contained the value of the substitution variable, rather than the variable itself.
 
-5. Display all of your current Data Catalog connections. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. At this time, you should see your new Data Catalog connection from the previous step.
+9. Review your current Data Catalog connections. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
 
     ```
     <copy>
     select *
-    from dcat_connections;
+    from all_dcat_connections;
     </copy>
     ```
 
-    ![](./images/view-dcat-connection.png " ")
+    ![](./images/query-dcat-connection.png " ")
 
 
 ## Task 4: Display Data Assets, Folders, and Entities     
