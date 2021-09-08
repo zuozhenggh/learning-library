@@ -132,7 +132,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 3. Change the Compartment to the ```dataflow-demo```
 
-   ![MetaStore Compartment](../images/Metastore-Change-Compartment.png " ")
+   ![MetaStore Compartment](../images/MetaStore-Change-Compartment.png " ")
 
 4. Should list the MetaStores in  ```dataflow-demo``` Compartment and you should find the ```DF-metastore``` Metastore that we will use for the workshop
 
