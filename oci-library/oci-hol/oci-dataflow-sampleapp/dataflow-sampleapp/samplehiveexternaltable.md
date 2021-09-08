@@ -343,7 +343,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
 4. You should be re-directed to the OAC Console
 
-   ![OAC Console ](../images/OAC-Console.png " ")
+   ![OAC Console ](../images/OAC-console.png " ")
 
 5. On the console first we create a dataset
 
