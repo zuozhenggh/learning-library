@@ -37,20 +37,24 @@ Enter:
     Delta Processing is enabled. Notice the orange triangular icon next to the compare pairs on the **Existing Compare Pairs** tab:
     ![](./images/6DP.png " ")
 
-7.   Create a job and name it **Job_Delta_Processing** and run this job.
+7.  Create a job and name it **Job_Delta_Processing** and run this job.
+      <Insert Screen>
+8.  Click out-of-sync link (later we need to add the number).
 
      ![](./images/7DP.png " ")
 
-8.   Run the terminal.
-9.   Run the following command:
+    Note that for the 1st job run, the out-of-sync is 800 rows with 800-Inserts. Next, let's insert 5 more Inserts to the source db from the Terminal.
 
-    ```
+9.   Open the terminal.
+10.  Run the following command:
+
+      ```
     <copy>
     cd /home/opc/stage/scripts
      source env_setup.sh
      sqlplus   <\copy>
 
-    ```  
+     ```  
 10.  Enter the following credentials:
       * **User Name**: source
       * **Password**: source
