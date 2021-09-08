@@ -12,7 +12,6 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [emcc-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CaJ4NdhHpEknQAWzpTf94WshzRVfl_yel0AIfU382AWrSGzOm7j9LUxz8ByAmKxD/n/natdsecurity/b/stack/o/emcc-mkplc-freetier.zip)

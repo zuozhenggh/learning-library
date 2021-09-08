@@ -13,13 +13,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Initialize Environment",
+      "title": "Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Job System Automation",
+      "title": "Job System Automation",
       "description": "This lab provides an overview of the Enterprise Manager Job System and how to use it to automate routine administrative tasks such as backup, SQL scripts, OS jobs etc.",
       "publisheddate": "6/15/2021",
       "filename": "./../../em-job-system-automation/em-job-system-automation.md"
