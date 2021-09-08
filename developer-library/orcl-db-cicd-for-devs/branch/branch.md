@@ -9,16 +9,15 @@ Estimated Lab Time: 30-45 minutes
 
 ### Objectives
 
-- Download the Autonomous Database wallet
-- Login to your Autonomous Database with SQLcl
-- Create a baseline for your database schema
-- Commit the objects to your OCI Repository
+- Create a branch of your code repository
+- Create a change in the database
+- Commit the branch and change to the code repository
 
 ### Prerequisites
 
 - You have completed the [Setups](../setups/setups.md).
 
-## Task 1: Ready, Set, Branch
+## Task 1:Create and Commit a Branch
 
 We have our main code line for our database objects in the repository. Let's now pretend we are a developer and need to clone the repository and start an assigned tickets/task in this development cycle or sprint. The task at hand is to add a column to our trees table so that people can upload a photo of the tree.
 
