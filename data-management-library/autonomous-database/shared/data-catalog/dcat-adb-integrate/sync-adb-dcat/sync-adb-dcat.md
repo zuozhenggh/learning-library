@@ -119,7 +119,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/unset-data-catalog.png " ")
 
-2. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet_**.
+2. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet. Complete the next step first._**
 
     ```
     <copy>
@@ -137,7 +137,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/define-variables.png " ")
 
-4. Enable the resource principal support. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
+4. Enable Resource Principal to access Oracle Cloud Infrastructure Resources for the ADB instance. This creates the credential **`OCI$RESOURCE_PRINCIPAL`**. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -147,7 +147,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/enable-resource-principal.png " ")
 
-    >**Note:** You can use an Oracle Cloud Infrastructure resource principal with Autonomous Database. You or your tenancy administrator define the Oracle Cloud Infrastructure policies and a dynamic group that allows you to access Oracle Cloud Infrastructure resources with a resource principal. You do not need to create a credential object and Autonomous Database creates and secures the resource principal credentials you use to access the specified Oracle Cloud Infrastructure resources. See [Use Resource Principal to Access Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/resource-principal.html#GUID-E283804C-F266-4DFB-A9CF-B098A21E496A) 
+    >**Note:** You can use an Oracle Cloud Infrastructure Resource Principal with Autonomous Database. You or your tenancy administrator define the Oracle Cloud Infrastructure policies and a dynamic group that allows you to access Oracle Cloud Infrastructure resources with a resource principal. You do not need to create a credential object. Autonomous Database creates and secures the resource principal credentials you use to access the specified Oracle Cloud Infrastructure resources. See [Use Resource Principal to Access Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/resource-principal.html#GUID-E283804C-F266-4DFB-A9CF-B098A21E496A)
 
 5. Confirm that the resource principal was enabled. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
@@ -162,7 +162,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     ![](./images/query-resource-principal.png " ")
 
 
-6. Query the Object Storage bucket to test the principal and privileges.
+6. Query the Object Storage bucket to ensure that the resource principal and privilege work. Use the `list_objects` function to list objects in the specified location on object storage, **`moviestream_gold`** bucket in our example. The results include the object names and additional metadata about the objects such as size, checksum, creation timestamp, and the last modification timestamp. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -174,7 +174,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
     ![](./images/query-bucket.png " ")
 
 
-7. Set the credentials to use for Object Storage and Data Catalog.
+7. Set the credentials to use with Data Catalog and Object Storage. The **`set_data_catalog_credential`** procedure sets the Data Catalog access credential that is used for all access to the Data Catalog. The **`set_object_store_credential`** procedure sets the credential that is used by the external tables for accessing the Object Storage. Changing the Object Storage access credential alters all existing synced tables to use the new credential. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -185,7 +185,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/set-credentials.png " ")
 
-8. Create a connection to your Data Catalog instance using the `dbms_dcat.set_data_catalog_conn` PL/SQL package procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. See [SET\_DATA\_CATALOG\_CONN Procedure](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-7734C568-076C-4BC5-A157-6DE11F548D2B). The credentials must have access to your Data Catalog Asset and the data in the **`moviestream_landing`** and **`moviestream_gold`** Oracle Object Storage buckets that you use in this workshop. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+8. Create a connection to your Data Catalog instance using the `set_data_catalog_conn` procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. See [SET\_DATA\_CATALOG\_CONN Procedure](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-7734C568-076C-4BC5-A157-6DE11F548D2B). The credentials must have access to your Data Catalog Asset and the data in the **`moviestream_landing`** and **`moviestream_gold`** Oracle Object Storage buckets that you use in this workshop. Click **Copy** to copy the following code, paste it into the SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
 
     ```
     <copy>
@@ -216,63 +216,48 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 ## Task 4: Display Data Assets, Folders, and Entities     
 
-1. Display the available Data Assets in the connected Data Catalog instance. The result should include the **Asset Type** which provides the ability to filter to only Oracle Object Storage sources in this example.
+1. Display all of Data Assets in the connected Data Catalog instance. Copy the following code, paste it into the SQL Worksheet, place the cursor on the line of code, and then click the **Run Statement** icon.
 
     ```
     <copy>
-    select asset_key,
-           asset_name,
-           description,
-           decode(type, '3ea65bc5-f60d-477a-a591-f063665339f9', 'object storage','autonomous database') as type,
-           namespace,
-           url,
-           tags,
-           last_updated,
-           oracle_schema_prefix
+    select *
     from all_dcat_assets;
-    </copy>
+    </copy>    
     ```
+
+    The row for the **`Oracle Object Storage Data Asset`** Data Asset that you created in Data Catalog is displayed in the **Query Result** tab.
 
     ![](./images/view-dcat-assets.png " ")
 
 
-2. Display the Data Assets folders that were harvested from the **`phoenixObjStore`** Oracle Object Storage.
+2. Display all Data Assets folders that were harvested from the **`Oracle Object Storage Data Asset`** Data Asset. Copy the following code, paste it into the SQL Worksheet, place the cursor on the line of code, and then click the **Run Statement** icon.
+
+    The **`moviestream_gold`** and **`moviestream_landing`** folders are displayed in the **Query Result** tab.
 
     ```
     <copy>
-    select asset_name,
-           folder_name,
-           tags,
-           last_updated,
-           oracle_schema
-    from all_dcat_folders
-    where asset_name = 'phoenixObjStore';
+    select *
+    from all_dcat_folders;
     </copy>
     ```
 
     ![](./images/view-asset-folders.png " ")
 
-3. Display the entities in the folders coming from the **`phoenixObjStore`** Oracle Object Storage.
+3. Display all the entities in the folders originating from Oracle Object Storage buckets referenced in the **`Oracle Object Storage Data Asset`** Data Asset.
 
     ```
     <copy>
-    select folder_name,
-           entity_name,
-           pattern,
-           tags,
-           oracle_schema,
-           oracle_name
-    from all_dcat_entities
-    where asset_name = 'phoenixObjStore';
+    select *
+    from all_dcat_entities;
     </copy>
     ```
 
-    ![](./images/view-asset-entities.png " ")
+    ![](./images/view-entities.png " ")
 
 
 ## Task 5: Synchronize Autonomous Database with Data Catalog    
 
-1. Synchronize Data Catalog with Autonomous Database using the **`dbms_dcat.run_sync`** PL/SQL package procedure. Synchronize all of the available Data Assets.
+1. Synchronize Data Catalog with Autonomous Database using the **`dbms_dcat.run_sync`** PL/SQL package procedure. Synchronize all of the available Data Assets in your Data Catalog instance.
 
     ```
     <copy>
