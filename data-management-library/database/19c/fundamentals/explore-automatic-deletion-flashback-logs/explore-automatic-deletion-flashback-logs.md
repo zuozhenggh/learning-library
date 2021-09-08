@@ -428,4 +428,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 2 2021
