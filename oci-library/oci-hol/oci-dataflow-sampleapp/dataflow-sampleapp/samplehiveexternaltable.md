@@ -195,7 +195,7 @@ Perform the following steps to create an application
 
 1. Launch the Application that was created in Step#3 above. The status of the application should be ```Active```
 
-   [Run Sample Application](../images/Launch-Sample-Application.png " ")
+   ![Run Sample Application](../images/Launch-Sample-Application.png " ")
 
    Notice the application has the correct values for ```Metastore``` and ```Arguments```
 
