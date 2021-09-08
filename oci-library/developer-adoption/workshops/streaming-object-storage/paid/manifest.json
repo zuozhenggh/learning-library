@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../../labs/oke-ha/intro/intro.md"
+            "filename": "../../../labs/streaming-object-storage/intro/intro.md"
         },
         {
             "title": "Getting Started with Free Trial Account",
