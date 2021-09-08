@@ -257,7 +257,7 @@ Perform the following steps to create an application
 
 11. Navigate to the Object Store Bucket ```DF-default-storage``` that was used as location for the tables.
 
-    ![Application logs](../images/Hive-MetaStore-Bucket.png " ")
+    ![Application logs](../images/Hive-Metastore-Bucket.png " ")
 
 12. Click open the Bucket ```DF-default-storage``` to show the content of the bucket and scrolls to bottom of the page  
 
