@@ -100,9 +100,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 ### What is not covered in the lab
 
-* Policies and other Identity management related setup for OCI Data Flow or OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the [documentation](https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm).
-
-* OCI Data Flow Interactive SQL server cluster setup and the related policies.They are already setup in the lab tenancy. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
+* Policies and other Identity management related setup for OCI Data Flow, OCI Data Interactive SQL and OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the [documentation](https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm) and the [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide.pdf)
 
 * Connection between OAC and  OCI Data Flow Interactive SQL server cluster is already setup. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
 
