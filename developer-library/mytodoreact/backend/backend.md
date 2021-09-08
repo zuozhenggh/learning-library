@@ -40,7 +40,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 - This tutorial requires the completion of the **Setup Dev Environment** tutorial  and the provision of the Orace Cloud Infrastructure (OCI) components.
 
 
-## **STEP 1**: Set Values for Workshop Environment Variables
+## **Task 1**: Set Values for Workshop Environment Variables
 
 1. Set the root directory of the workshop.
 	```bash
@@ -54,7 +54,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 	<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
 	```
 
-## **STEP 2**: Build and Push the Docker Image to the OCI Registry
+## **Task 2**: Build and Push the Docker Image to the OCI Registry
 
 1. Ensure that the "DOCKER_REGISTRY" variable is set
 
@@ -139,7 +139,7 @@ The backend is implemented using the following Java classes (under ./backend/src
   Returns
   http://130.61.66.27/todolist
 
-## **STEP 4**: UnDeploy (optional)
+## **Task 4**: UnDeploy (optional)
 
   If you make changes to the image then you need to delete the service and the pods by running undeploy.sh then redo the following steps: **Build and Push the Docker Image to the OCI Registry** and **Deploy in Kubernetes and Check the Status**.
 
@@ -150,7 +150,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 2. Rebuild the image and deploy and reconfigure the API Gateway
 
 
-## **STEP 5**: Configure the API Gateway
+## **Task 5**: Configure the API Gateway
 
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics, and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
@@ -200,7 +200,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
     ![route 2](images/Route-2.png " ")
 
 
-## **STEP 6**: Test the Backend Application through the API Gateway
+## **Task 6**: Test the Backend Application through the API Gateway
 
 1. Navigate to the newly created **Gateway Deployment Detail** and copy the endpoint.
 

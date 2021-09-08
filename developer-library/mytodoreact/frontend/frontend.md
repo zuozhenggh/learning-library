@@ -50,7 +50,7 @@ In this tutorial, you will:
     ```
 5. If `Go lang` is not installed, see https://golang.org/doc/
 
-## **STEP 1**: Configure API.js
+## **Task 1**: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -99,7 +99,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   	- Save the modified API.js file.
 
-## **STEP 2**: Run in Dev Mode then Build for Production
+## **Task 2**: Run in Dev Mode then Build for Production
 
 1. In the project directory, run the app in the development mode <br />:
 
@@ -113,11 +113,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - The page will reload if you make edits.<br />
     - You will also see any lint errors in the console.
 
-4. Cancel the developer mode execution and build the app for production into the `build` folder.<br />
+3. Cancel the developer mode execution and build the app for production into the `build` folder.<br />
 
-	4.1. Press **Ctrl-c** to cancel the developer mode executions.
+	3.1. Press **Ctrl-c** to cancel the developer mode executions.
 
-	4.2. Execute `npm run build`.
+	3.2. Execute `npm run build`.
 
 		```bash
 		<copy>npm run build</copy>
@@ -131,7 +131,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **STEP 3**: Host on the Oracle Cloud Infrastructure Object Storage
+## **Task 3**: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
 **Object Storage** and then select **Object Storage**.
