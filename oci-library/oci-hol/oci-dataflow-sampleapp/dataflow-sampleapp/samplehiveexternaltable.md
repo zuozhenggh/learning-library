@@ -66,7 +66,7 @@ As a Data Scientist
   
    2. Build a sample machine learning model to explore to predict sentiment given a review text. Classifiy Yelp reviews as positive / negative and identify most relevant phrases based on the textual content .
   
-As a Data Aalyst navigate to :
+As a Data Analyst navigate to :
 
 * OAC to explore the dataset that was created by the data engineer.
 
