@@ -317,7 +317,7 @@ As a Data scientist, we create another OCI Data Flow Application. This applicati
 
        ![Query MetaStore Logs ](../images/Query-metastore-run-application-log.png " ")
 
-   11. Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithams. The higher the F1 score the better.
+   11. Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithms. The higher the F1 score the better.
 
        We can see here that the terms that are most positive include ‘friendly staff’, ‘delicious’, ‘great customer service’, ‘great food’. This indicates that the important features for customer’s satisfaction is staff, food taste, and service.
 
