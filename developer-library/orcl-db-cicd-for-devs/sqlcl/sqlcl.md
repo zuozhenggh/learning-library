@@ -518,7 +518,7 @@ Now that we have objects in our database, let's create a baseline and commit it 
 
    ![git commit](./images/sql-14.png)
 
-Finally, lets **push** these files up to the GitHub file repository. The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our OCI code repository.
+   Finally, lets **push** these files up to the GitHub file repository. The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our OCI code repository.
    ````
    <copy>
    git push origin master
@@ -649,12 +649,7 @@ Finally, lets **push** these files up to the GitHub file repository. The push co
 
    ![tables command](./images/apply-11.png)
 
-
-lb update -changelog controller.xml
-
-We need to be in the database directory of our local project. We can use some of SQLcl built in functionality to get there if not already there. We can navigate directories with the cd command. If you are in the tables directory under the database directory, you can simply issue a:
-
-lb update -changelog controller.xml
+   You now have a new schema that has all the objects from our livelabs schema we can use in our upcoming change managment tasks in the next sections of this lab.
 
 ## Acknowledgements
 
