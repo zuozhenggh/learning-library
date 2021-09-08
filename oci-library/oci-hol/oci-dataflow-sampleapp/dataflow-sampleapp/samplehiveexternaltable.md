@@ -162,7 +162,7 @@ Perform the following steps to create an application
 
 2. Click ```Create Application``` from the page to launch the ```Create Application```  page
 
-   ![Create Application](../images/Dataflow-Create-Application" ")
+   ![Create Application](../images/Dataflow-Create-Application.png " ")
 
 3. On the ```Create Application``` page, provide a `Name` and `Description`
 
