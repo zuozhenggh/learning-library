@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Launch Your First MySQL Database Service System",
+  "workshoptitle": "Turbocharge Business Insights with MySQL Database",
     "tutorials": [
         {
             "title": "Prerequisites",
@@ -17,8 +17,13 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-local/generate-ssh-keys-local.md"
         },
         {
-            "title": "Lab 2: Launch Your First MySQL Database Service System",
+            "title": "Lab 2: Launch MySQL Database Service Systems",
             "filename": "../../launchmds/launchmds.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }
