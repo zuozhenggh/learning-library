@@ -23,18 +23,18 @@ Enter:
 3. Click **Generate Compare Pair**.
     ![](./images/2DP.png " ")
 4. Click **Save** to save the generated compare pairs on the **Preview** tab.
-5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1=DELTA_TEST1**, and click **Enable Delta Processing**.
+5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1=DELTA_TEST1**, and click **Edit** under **Column Mapping**.
     ![](./images/3DP.png " ")
 
-6. Select the **Enable Delta Processing** check box and click **Save**.
+6.  Click the **Delta Processing** tab, select the **Enable Delta Processing** check box, and then click **Save**.
 
     ![](./images/3DP_selectEnableDelta.png " ")
 
-    The metadata information gets saved:
+7. Notice the successful operation and then click the **Compare Pair Configuration** link.
 
     ![](./images/5DP.png " ")
 
-    Delta Processing is enabled. Notice the changed status of the compare pairs on the **Enable Delta Processing** tab:
+    Delta Processing is enabled. Notice the orange triangular icon next to the compare pairs on the **Existing Compare Pairs** tab:
     ![](./images/6DP.png " ")
 
 7.   Create a job and name it **Job_Delta_Processing** and run this job.
@@ -63,7 +63,8 @@ Enter:
       insert into delta_test1 values ('2002',2002);
       insert into delta_test1 values ('2003',2003);
       insert into delta_test1 values ('2004',2004);
-      commit;<\copy>
+      commit;
+      <\copy>
      ```
 8.   In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
 
