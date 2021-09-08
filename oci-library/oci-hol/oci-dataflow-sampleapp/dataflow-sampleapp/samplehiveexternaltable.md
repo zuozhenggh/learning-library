@@ -66,9 +66,7 @@ As a Data Scientist
   
    2. Build a sample machine learning model to explore to predict sentiment given a review text. Classifiy Yelp reviews as positive / negative and identify most relevant phrases based on the textual content .
   
-   3. Demonstrates that metastore acts like a unified store for data platform allowing applications and different personas to share data and metadata.
-
-As a data analyst navigate to :
+As a Data Aalyst navigate to :
 
 * OAC to explore the dataset that was created by the data engineer.
 
