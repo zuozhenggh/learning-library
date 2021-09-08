@@ -38,7 +38,7 @@ Here's the summary of what you’d do in the workshop :
 
 As a Data Engineer
 
-* Navigate to the Data Catalog Console and expore the Metastore Instance under a Compartment.
+* Navigate to the Data Catalog Console and explore the Metastore Instance under a Compartment.
 
 * Build an OCI Data Flow Python batch application that does the following:
 
@@ -150,13 +150,13 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 As a Data engineer we start by building a Python based batch application the application calls a script that does the following :
 
-      1. Reads the raw Yelp JSON data from Object Store into a spark dataframe
-      
-      2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
-      
-      3. Creates managed tables by the name yelp_business_raw and yelp_review in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
-      
-      4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data analayst to create visaulization and reports on top of the data.
+1. Reads the raw Yelp JSON data from Object Store into a spark dataframe
+
+2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
+
+3. Creates managed tables by the name yelp_business_raw and yelp_review in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
+
+4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data analayst to create visaulization and reports on top of the data.
 
 Perform the following steps to create an application
 
