@@ -1,146 +1,255 @@
 
+# Oracle Database CI/CD for Developers - Lab 3: Apply Database Changes with SQLcl
 
-Now issue the following git command:
+## Introduction
 
-> git checkout master
+XXXXXX
 
- 
+Estimated Lab Time: 30-45 minutes
 
-And look at the employees_table.xml again. You can see that the last column in this file is SUBMITION_DATE and no longer TREE_PICTURE.
+### Objectives
 
-         <COL_LIST_ITEM>
-            <NAME>SUBMITION_DATE</NAME>
-            <DATATYPE>TIMESTAMP</DATATYPE>
-            <SCALE>6</SCALE>
-         </COL_LIST_ITEM>
-      </COL_LIST>
+- Apply a database change to the dbuser schema
+- Review the changelog tables
+- Merge the branches and commit our change to the main branch
 
- 
+### Prerequisites
 
-Why is that? It’s because you switched branches to the master branch where we have our baseline code. We have yet to merge this code into that main branch so the new column change only exists in our development branch. Let’s use this to our advantage. While on the master branch, start up SQLcl and login as the admin user:
+- You have completed the [Setups](../setups/setups.md).
+- You have completed [Lab 1](../sqlcl/sqlcl.md).
+- You have completed [Lab 2](../branch/branch.md).
 
-> sql /nolog
+## Task 1: Apply the database change to the dbuser schema
 
-SQL> set cloudconfig /Users/bspendol/Downloads/Wallet_ADB.zip
+We have our table change in the developerBranch code branch and it is committed to our OCI code repository. It is now time to apply this change into our dbuser schema simulating how we would apply it to other databases in our enterprise or how a CICD pipeline would apply it to a test environment.
 
-SQL> conn admin@ADB_high
+1. To start, we need to ensure we are in the database directory in the cicdRepository directory. Start by ensuring you are in cicdRepository/database directory. If you remember, its located at
 
- 
+   ```
+   /home/USER_NAME/livelabs/cicdRepository/database
+   ```
 
-And we will create a new schema
+   To get there, you can issue a **cd /home/USER_NAME/livelabs/cicdRepository/database** but remember to **replace USER_NAME with your username**.
 
-SQL> create user test identified by "PAssw0rd11##11" quota unlimited on data;
+   ````
+   <copy>
+   cd /home/USER_NAME/livelabs/cicdRepository/database
+   </copy>
+   ````
+   ![change directories](./images/change-1.png)
 
-SQL> grant connect, resource to test;
+2. Let's check to see what branch we are using in git so that we are pulling from the developerBranch where our change is and not the master branch. Issue a **git status** at the Cloud Shell prompt.
+   ````
+   <copy>
+   git status
+   </copy>
+   ````
+   ![use SQLcl](./images/change-2.png)
+   
+   and you should see that you are on the developerBranch branch.
 
-SQL> conn test@ADB_high
-Password? (**********?) **************
-Connected.
+2. Now, use **SQLcl** to log into our Autonomous Database.
 
- 
+   ````
+   <copy>
+   sql /nolog
+   </copy>
+   ````
+   ![use SQLcl](./images/change-3.png)
 
-We need to be in the database directory of our local project. We can use some of SQLcl built in functionality to get there if not already there. We can navigate directories with the cd command. If you are in the tables directory under the database directory, you can simply issue a:
+3. Tell SQLcl where to look for the Autonomous Database wallet as we have done a few times before. Remember, we downloaded it in our home directory and we can use the following command to set its location. Just remember to **replace USER_NAME with your username**. You can look at the previous lab to find the exact location if needed.
 
-SQL> host cd ..
+      ### **Jeff's Tips** SQLcl remembers the commands you ran! Use the up arrow on your keyboard to find the command that you previously used to set the wallet location.
 
- 
+      ````
+      <copy>
+      set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
+      </copy>
+      ````
+      ![set cloudconfig at the prompt](./images/change-4.png)
 
-And move up a directory into the database directory in our project home. We can also use the host command with SQLcl to see where we are:
+4. Use the following command to **log into the database** as the dbuser.
 
-SQL> host pwd
-/Users/bspendol/git/db-cicd-project/database
+   ````
+   <copy>
+   conn dbuser@LABADB_high
+   </copy>
+   ```` 
+   ![connect as livelabs](./images/change-5.png)
 
- 
+   And then provide the password we used to create the user at the password prompt.
 
-Ensure you are in the /db-cicd-project/database directory where mine would be as above:
-/Users/bspendol/git/db-cicd-project/database
+   ````
+   <copy>
+   PAssw0rd11##11
+   </copy>
+   ```` 
+   ![provide the password](./images/change-6.png)
 
-You can also issue a host ls command to see the files in that directory:
+5. At the SQLcl prompt, lets look at the TREES table. Issue a **desc trees** at the SQLcl prompt.
+   ````
+   <copy>
+   desc trees
+   </copy>
+   ```` 
+   ![desc trees](./images/change-7.png)
 
-SQL> host ls
-controller.xml        index            table
-database_files_here    procedure        trigger
+   This command will show us the columns in the TREES table
+   ```   
+   SQL> desc trees
+      Name             Null? Type           
+      ---------------- ----- -------------- 
+      TREE_ID                NUMBER(6)      
+      TREE_NAME              VARCHAR2(200)  
+      TREE_STREET            VARCHAR2(500)  
+      TREE_CITY              VARCHAR2(200)  
+      TREE_STATE             VARCHAR2(200)  
+      TREE_ZIP               NUMBER         
+      TREE_DESCRIPTION       VARCHAR2(4000) 
+      SUBMITTER_NAME         VARCHAR2(500)  
+      SUBMITTER_EMAIL        VARCHAR2(500)  
+      SUBMITION_DATE         TIMESTAMP(6) 
+   ```
+   And we can see that the new column we created TREE_PICTURE **is not** present.
 
- 
+6. To **apply this change and track it** via SQLcl and Liquibase, we can issue the following command at the SQLcl prompt
+   ````
+   <copy>
+   lb update -changelog controller.xml
+   </copy>
+   ```` 
 
-we are looking to use the controller.xml file.
+   ![use lb to apply the change](./images/change-8.png)
 
-Quick checkpoint: We are logged into our database as the test user we just made, we are on the master code branch in the local repository and we are in the database directory in our project home. Once here, we are going to use Liquibase to create the objects from our master branch. Issue the following command:
+7. At the SQLcl prompt, lets look at the TREES table again to see if we have the new column. Issue a **desc trees** at the SQLcl prompt.
+   ````
+   <copy>
+   desc trees
+   </copy>
+   ```` 
 
-SQL> lb update -changelog controller.xml
+   ![desc trees 2](./images/change-9.png)
 
- 
+   This command will show us the columns in the TREES table
+   ```   
+   SQL> desc trees
+      Name             Null? Type           
+      ---------------- ----- -------------- 
+      TREE_ID                NUMBER(6)      
+      TREE_NAME              VARCHAR2(200)  
+      TREE_STREET            VARCHAR2(500)  
+      TREE_CITY              VARCHAR2(200)  
+      TREE_STATE             VARCHAR2(200)  
+      TREE_ZIP               NUMBER         
+      TREE_DESCRIPTION       VARCHAR2(4000) 
+      SUBMITTER_NAME         VARCHAR2(500)  
+      SUBMITTER_EMAIL        VARCHAR2(500)  
+      SUBMITION_DATE         TIMESTAMP(6)
+      TREE_PICTURE           BLOB
+   ```
+   And we can see that the new column we created TREE_PICTURE **is** present.
 
-Once you issue this command, you will see all our objects being created in the database.
+8. Let's now take a look at the DATABASECHANGELOG_ACTIONS table to see what exactly happened here. Issue the following SQL at the SQLcl prompt.
 
-SQL> lb update -changelog controller.xml
-ScriptRunner Executing: table/trees_table.xml::96726c6d630653c9a9169df8b67089f2cdee1135::(DEMO)-Generated -- DONE
-ScriptRunner Executing:
-procedure/admin_email_set_procedure.xml::9d1175a5b6ca6d0c969a2eb183062e0a873ee226::(DEMO)-Generated -- DONE
-ScriptRunner Executing: index/tree_id_pk_index.xml::b4dd6c2359e7f1e881b55ba728056510d537967a::(DEMO)-Generated -- DONE
-ScriptRunner Executing: trigger/set_date_bi_trigger.xml::3b0d8da4c19a11b80f035a748c9b40752f010110::(DEMO)-Generated -- DONE
+   ````
+   <copy>
+   select id, sql from DATABASECHANGELOG_ACTIONS;
+   </copy>
+   ````
 
-######## ERROR SUMMARY ##################
-Errors encountered:0
+   ![select from DATABASECHANGELOG_ACTIONS ](./images/change-10.png)
 
-######## END ERROR SUMMARY ##################
+   ```  
+   SQL> select id, sql from DATABASECHANGELOG_ACTIONS;
 
- 
+                                          ID                                                                                 SQL 
+   ___________________________________________ ___________________________________________________________________________________ 
+   44c07f52821c21ab608d547db432d9668ab63b53    CREATE TABLE "TREES"
+                                                (    "TREE_ID" NUMBER(6,0),
+                                                   "TREE_NAME" VARCHAR2(200) COLL    
+   55e1505accad35790ef4d506170551b1b98575cf    CREATE OR REPLACE EDITIONABLE PROCEDURE "ADMIN_EMAIL_SET" 
+                                                IS
+                                                BEGIN
+                                                      update    
+   ca96dfab3d41fb76367f4f3c21d04ff74064b759    CREATE UNIQUE INDEX "TREE_ID_PK" ON "TREES" ("TREE_ID")
+                                                PCTFREE 10 INITRANS 20    
+   55e1505accad35790ef4d506170551b1b98575cf    --skipped                                                                           
+   ca96dfab3d41fb76367f4f3c21d04ff74064b759    --skipped                                                                           
+   c2061de0bf0b92cb094a4103fd0c072707579bad    ALTER TABLE "TREES" ADD ("TREE_PICTURE" BLOB)
+                                                LOB ("TREE_PICTURE") STORE AS SEC    
 
-Now, we can move to our development branch and apply that to this schema. Exit out of SQLcl:
+   6 rows selected. 
+   ```  
 
-SQL> exit
+   We can see when we initial created the objects in the schema with the first 3 rows. What is of note is the last row. We see that SQLcl and Liquibase saw that the table already existed but that a new column was present. So instead of dropping and recreating the table, it was smart enough to just issue an alter table to add the new column.
 
- 
+9. **Exit out of SQLcl** by issuing an exit at the SQLcl prompt.
 
-Change branches (remember your branch will be named different, unless you are a clone of me with the same name..if so email me please):
+   ````
+   <copy>
+   exit
+   </copy>
+   ````
+   ![exit SQLcl](./images/change-11.png)
 
-> git checkout sprint1_brian.spendolini
-Switched to branch 'sprint1_brian.spendolini'
-Your branch is up to date with 'origin/sprint1_brian.spendolini'.
+## Task 2: Merge the code
 
- 
+Now that we have a working developer branch, its time to merge this change with the main or master branch.
 
-And log back into the database as this test user:
+1. Start by going to the top level directory of our repository in Cloud Shell. The path is similar to the following
 
-> sql /nolog
+   ```
+   /home/YOUR_USER_NAME/livelabs/cicdRepository/
+   ```
 
-SQL> set cloudconfig /Users/bspendol/Downloads/Wallet_ADB.zip
+   To get there, you can issue a **cd /home/USER_NAME/livelabs/cicdRepository/** but remember to **replace USER_NAME with your username**.
 
-SQL> conn test@ADB_high
+   ````
+   <copy>
+   cd /home/USER_NAME/livelabs/cicdRepository/
+   </copy>
+   ````
+   ![go to home directory](./images/merge-1.png)
 
- 
+2. Issue a git status at the Cloud Shell prompt to see what branch we are on. We should be on the developerBranch branch.
+   ````
+   <copy>
+   git status
+   </copy>
+   ````
+   ![git status](./images/merge-2.png)
 
-And now, using our development branch, we will apply the changes to this schema:
+3. To merge our code into the master branch, we need to switch or checkout the branch. Issue a **git checkout master** at the Cloud Shell prompt.
+   ````
+   <copy>
+   git checkout master
+   </copy>
+   ````
+   ![git checkout master](./images/merge-3.png)
 
-SQL> lb update -changelog controller.xml
-ScriptRunner Executing: table/trees_table.xml::f81a149311b20a5a1dfe95a35108b8728df33b7f::(DEMO)-Generated -- DONE
+4. We now issue a **git merge** at the Cloud Shell prompt indicating we want to merge the developerBranch branch into Master.
+   ````
+   <copy>
+   git merge developerBranch
+   </copy>
+   ````
+   ![git merge](./images/merge-4.png)
 
-######## ERROR SUMMARY ##################
-Errors encountered:0
+5. Finally, let's **push the code** back up to our OCI Code Repository
+   ````
+   <copy>
+   git push
+   </copy>
+   ````
+   Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step, in Lab 1 when we pushed the code to the repository as well as in Lab 2 when we pushed up the new branch.
 
-######## END ERROR SUMMARY ##################
+7. Using the **OCI Web Console and the DevOps Code Repository details page**, if we drill into our master branch we can see that the tables directory is at **version 2.0** 
 
- 
+   ![OCI Web Console and the DevOps Code Repository details page](./images/merge-6.png)
 
-There are 2 tables that Liquibase uses to track changes, DATABASECHANGELOG and DATABASECHANGELOG_ACTIONS. There is also a view that combines these tables for a more readable format, DATABASECHANGELOG_DETAILS. If we take a look at the DATABASECHANGELOG_DETAILS view, we can see that only an alter table was done and that the table was not dropped and recreated in the SQL column:
+   and contains the new column in the trees_table.xml file
 
-SQL
---------------------------------------------
-ALTER TABLE "TREES" ADD ("TREE_PICTURE" BLOB)
-
- 
-
-This would be not only the behavior you would see in say a production instance, but more importantly the behavior you would expect a change management tool to be executing.
-
-Merge Ahead
-
-You now have the tools to start change management with SQLcl, Liquibase and a git repository for your development group or organization. As with all new processes, start slow. Maybe start with just getting everyone used to committing code to a central repository using git. But once we start adding these building blocks, we can continue down the CICD road to the next stages.
-
-This process also allows you to start combining your database sprint code with stateless application code in the same repository setting the entire development team up for a CICD process. No longer are database developers and DBAs left out in the cold being called legacy when they can now uptake the same change management and repository practices that other development teams have enjoyed.
-
-In part 2, we will be discussing the automated pipelines we should be using for testing this code; in essence, once a commit or merge request happens, we test the code on a new database.
-
+   ![new column in the trees_table.xml file](./images/merge-7.png)
 
 
 ## Acknowledgements
