@@ -12,6 +12,8 @@ Estimated Lab Time: 30-45 minutes
 - Login to your Autonomous Database with SQLcl
 - Create a baseline for your database schema
 - Commit the objects to your OCI Repository
+- Apply the baseline to a new schema
+
 
 ### Prerequisites
 
@@ -535,6 +537,124 @@ Finally, lets **push** these files up to the GitHub file repository. The push co
 
    Congratulations, you have just created your code baseline or version 1.0!
 
+
+## Task 4: Create a new schema and apply the code with SQLcl
+
+1. To simulate applying our code in a new database without needing to create a new database we can use a new schema. We will be creating this new schema/user just as we did previously with our livelabs user. Start by ensuring you are in cicdRepository/database directory. If you remember, its located at
+
+   ```
+   /home/USER_NAME/livelabs/cicdRepository/database
+   ```
+
+   To get there, you can issue a **cd /home/USER_NAME/livelabs/cicdRepository/database** but remember to **replace USER_NAME with your username**.
+
+   ````
+   <copy>
+   cd /home/USER_NAME/livelabs/cicdRepository/database
+   </copy>
+   ````
+   ![change directories](./images/apply-1.png)
+
+2. Use **SQLcl** to log into our Autonomous Database.
+
+   ````
+   <copy>
+   sql /nolog
+   </copy>
+   ````
+   ![use SQLcl](./images/apply-2.png)
+
+3. We have to tell SQLcl where to look for the Autonomous Database wallet. Remember, we downloaded it in our home directory and we can use the following command to set its location. Just remember to **replace USER_NAME with your username**. You can look at the previous lab to find the exact location if needed.
+
+      ### **Jeff's Tips** SQLcl remembers the commands you ran! Use the up arrow on your keyboard to find the command that you previously used to set the wallet location.
+
+      ````
+      <copy>
+      set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
+      </copy>
+      ````
+      ![set cloudconfig at the prompt](./images/apply-3.png)
+
+
+4. Now we are going to **connect as the admin user**. Issue the following command at the SQLcl prompt
+
+   ````
+   <copy>
+   conn admin@LABADB_high
+   </copy>
+   ```` 
+   ![connect as livelabs](./images/apply-4.png)
+
+   And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
+
+   ![connected to the database in SQLcl](./images/apply-5.png)
+
+   You should now be connected to the database.
+
+
+5. Next, we will **create a new schema** to apply out code base to. Run the following command at the SQLcl prompt.
+
+   ````
+   <copy>
+   create user dbuser identified by "PAssw0rd11##11" quota unlimited on data;
+   </copy>
+   ```` 
+
+   ![connect as livelabs](./images/apply-6.png)
+
+   and grant that user some roles so they can connect to the database and create objects.
+
+   ````
+   <copy>
+   grant connect, resource to dbuser;
+   </copy>
+   ```` 
+
+   ![connect as livelabs](./images/apply-7.png)
+
+6. We do not need to log out of SQLcl and log back in to change users. All you need to do is **issue a connect command**. Use the following command to log into the database as our new user.
+
+   ````
+   <copy>
+   conn dbuser@LABADB_high
+   </copy>
+   ```` 
+   ![connect as livelabs](./images/apply-8.png)
+
+   And then provide the password we used to create the user at the password prompt.
+
+   ````
+   <copy>
+   PAssw0rd11##11
+   </copy>
+   ```` 
+   ![provide the password](./images/apply-9.png)
+
+7. We can apply the code base we created and committed to our repository in this schema with the following Liquibase command: **lb update -changelog controller.xml**. Now run this command at your SQLcl prompt.
+
+   ````
+   <copy>
+   lb update -changelog controller.xml
+   </copy>
+   ```` 
+   ![apply code with liquibase](./images/apply-10.png)
+
+8. While still at the SQLcl prompt, we can issue a tables command and see our trees table as well as the tables Liquibase uses to apply and track our database changes.
+
+   ````
+   <copy>
+   tables
+   </copy>
+   ```` 
+
+   ![tables command](./images/apply-11.png)
+
+
+lb update -changelog controller.xml
+
+We need to be in the database directory of our local project. We can use some of SQLcl built in functionality to get there if not already there. We can navigate directories with the cd command. If you are in the tables directory under the database directory, you can simply issue a:
+
+lb update -changelog controller.xml
 
 ## Acknowledgements
 
