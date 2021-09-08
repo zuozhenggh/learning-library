@@ -12,7 +12,7 @@ This lab walks you through the steps for installing Oracle Database 21c and conf
 
 > To install both system classes on the same host, you need different Oracle home locations.  
 
->> For this workshop, select any one of these. 
+>> For this workshop, select any one of these.
 
 ### Objectives
 
@@ -22,7 +22,6 @@ Install the Oracle Database software and create a starter database for Desktop c
 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-	- Lab: Create SSH Keys
 	- Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
 	- Lab: Setup Compute Instance
 
@@ -42,11 +41,11 @@ Install the Oracle Database software and create a starter database for Desktop c
 	$ <copy>./runInstaller</copy>
 	```
 
-Now, select one of the following options to install Oracle Database. 
+Now, select one of the following options to install Oracle Database.
 
 ## Option 1: Install Oracle Database (Desktop Class)
 
-Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window. 
+Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window.
 
 At any point, you can go **Back** to the previous window or **Cancel** the installation. You can click **Help** to view more information on the current window.
 
@@ -64,7 +63,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	The *Server class* option is used for advanced installation with detailed configuration.
 
-3. The Typical Install Configuration window displays pre-filled names and values for configuration parameters. 
+3. The Typical Install Configuration window displays pre-filled names and values for configuration parameters.
 
 	For this lab, enter the following.  
 	**OSDBA group** - *dba*  
@@ -77,10 +76,10 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
    ![Typical Configuration](images/db21c-desk-003-config.png)
 
 	> You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
-	
+
 	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	**Note:** The password must conform to the Oracle recommended standards. 
+	**Note:** The password must conform to the Oracle recommended standards.
 
 	Along with CDB, Oracle DBCA also creates a PDB as per the Pluggable database name.
 
@@ -92,7 +91,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	> If you have installed Oracle Database earlier, the next time you run the database installer, it does not display the Create Inventory window. The inventory location for Oracle Database is already set. 
 
-5. You need to run root scripts to configure your Oracle Database.  
+5. You need to run root scripts to configure your Oracle Database. 
 	<!--If you select **Automatically run configuration scripts** then skip step 7-A.-->
 	For this lab, do not select the checkbox and run the scripts manually as explained in the later steps. Click **Next**.
 
@@ -125,7 +124,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	$ <copy>/u01/app/oraInventory/orainstRoot.sh</copy>
 	```
 
-	It returns the following output. 
+	It returns the following output.
 
 	```
 	Changing permissions of /u01/app/oraInventory.
@@ -141,8 +140,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	```
 	$ <copy>/u01/app/oracle/product/21.0.0/dbhome_1/root.sh</copy>
 	```
-	
-	It returns the following output. 
+
+	It returns the following output.
 
 	```
     The following environment variables are set as:
@@ -150,7 +149,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
     ORACLE_HOME=  /u01/app/oracle/product/21.0.0/dbhome_1
 
 	Enter the full pathname of the local bin directory: [/usr/local/bin]: Enter
-	
+
 	/usr/local/bin is read only.  Continue without copy (y/n) or retry (r)? [y]: y
 
     Warning: /usr/local/bin is read only. No files will be copied.
@@ -177,11 +176,11 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 Click **Close** to exit Oracle Database Setup Wizard.
 
-If you have installed Oracle Database using Option 1, skip Option 2 and **proceed to the next lab**. 
+If you have installed Oracle Database using Option 1, skip Option 2 and **proceed to the next lab**.
 
 ## Option 2: Install and Configure Oracle Database (Server Class)
 
-Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window. 
+Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window.
 
 At any point, you can go **Back** to the previous window or **Cancel** the installation. You can click **Help** to view more information on the current window.
 
@@ -233,7 +232,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	**Global database name** - Specify a unique name, for example, *orcl.us.oracle.com*  
 	**Oracle system identifier (SID)** - *orcl*  
 	**Pluggable database name** - *orclpdb*  
-	
+
 	The values may differ depending on the system you are using.
 
    ![Oracle SID](images/db21c-srv-007-id.png)
@@ -253,7 +252,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
      ![Memory](images/db21c-srv-008a-memory.png)
 
-	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
+	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default.
 
 	 ![Character sets](images/db21c-srv-008b-charset.png)
 
@@ -265,7 +264,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
     ![Storage File System](images/db21c-srv-009-storagefilesys.png)
 
-	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups. 
+	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups.
 	>> For this lab, do not select this option.
 
 10. In the Management Options window, do not select the checkbox **Register with Enterprise Manager (EM) Cloud Control**. Leave the default settings and click **Next**.
@@ -292,8 +291,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	> After you install Oracle Database, enter the admin username and use this password to connect to the database. 
 
-	**Note:** The password must conform to the Oracle recommended standards. 
- 
+	**Note:** The password must conform to the Oracle recommended standards.
+
 13. In the Privileged Operating System groups window, you can grant your user account administrative access to Oracle Database. For this, select the value for each OS Group listed below. The values represent the OS groups to which your user belong.  
 
     For this lab, select *dba* for all groups and click **Next**.
@@ -303,7 +302,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 <!--13. You need to run a root script to configure the database. If you select **Automatically run configuration scripts** skip step 16-A.  
 	For this lab, do not select this option and run the script manually as root user. Click **Next**.-->
 
-14. You need to run root scripts to configure your Oracle Database.  
+14. You need to run root scripts to configure your Oracle Database. 
 	<!--If you select **Automatically run configuration scripts** then skip step 7-A.-->
 	For this lab, do not select the checkbox and run the scripts manually as explained in the later steps. Click **Next**.
 
@@ -336,7 +335,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	$ <copy>/u01/app/oraInventory/orainstRoot.sh</copy>
 	```
 
-	It returns the following output. 
+	It returns the following output.
 
 	```
 	Changing permissions of /u01/app/oraInventory.
@@ -352,8 +351,8 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 	```
 	$ <copy>/u01/app/oracle/product/21.0.0/dbhome_1/root.sh</copy>
 	```
-	
-	It returns the following output. 
+
+	It returns the following output.
 
 	```
     The following environment variables are set as:
@@ -361,7 +360,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
     ORACLE_HOME=  /u01/app/oracle/product/21.0.0/dbhome_1
 
 	Enter the full pathname of the local bin directory: [/usr/local/bin]: Enter
-	
+
 	/usr/local/bin is read only.  Continue without copy (y/n) or retry (r)? [y]: y
 
     Warning: /usr/local/bin is read only. No files will be copied.

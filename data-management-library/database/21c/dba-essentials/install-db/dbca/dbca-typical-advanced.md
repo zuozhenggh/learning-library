@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows how to create a single instance container database. It does not install the Oracle Database software. You can create container database in the following modes. 
+This lab shows how to create a single instance container database. It does not install the Oracle Database software. You can create container database in the following modes.
 - *Typical*  
 - *Advanced*  
 
@@ -16,10 +16,9 @@ Create additional Oracle Databases with typical configuration and advanced confi
 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-	- Lab: Create SSH Keys
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Setup Compute Instance
-	- Lab: Install Oracle Database
+    - Lab: Install Oracle Database
 
 ## Task 1: Start Oracle DBCA
 
@@ -43,7 +42,7 @@ Now, perform the following tasks to create container databases.
 
 ## Task 2: Create a Container Database (Typical Mode)
 
-Run Oracle DBCA from `$ORACLE_HOME/bin` as explained in *Task 1*. Oracle DBCA starts with the Database Operation window. 
+Run Oracle DBCA from `$ORACLE_HOME/bin` as explained in *Task 1*. Oracle DBCA starts with the Database Operation window.
 
 At any point, you can go **Back** to the previous window or **Cancel** database creation. You can click **Help** to view more information on the current window.
 
@@ -59,7 +58,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	**Global database name** - Specify a unique name, for example, *orcl1.us.oracle.com*  
 	**Administrative password** - Set the password for admin user accounts  
 	**Pluggable database name** - *orclpdb1*  
-	
+
 	The values may differ depending on the system you are using. For the remaining fields, leave the defaults and click **Next**.
 
     ![Typical Configuration](images/dbca21c-typical-002-typmode.png)
@@ -68,11 +67,11 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
-	**Note:** The password must conform to the Oracle recommended standards. 
+	**Note:** The password must conform to the Oracle recommended standards.
 
-	The default **Database Character set** for Oracle Database is *AL32UTF8 - Unicode UTF-8 Universal character set*. 
-	
-	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
+	The default **Database Character set** for Oracle Database is *AL32UTF8 - Unicode UTF-8 Universal character set*.
+
+	> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
 
 	Along with CDB, Oracle DBCA also creates a PDB as per the Pluggable database name.
 
@@ -96,11 +95,11 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	Click **OK** to save any changes you made and to close the Password Management window.
 
-Click **Close** to exit Oracle Database Configuration Assistant. You can start Oracle DBCA again to create another container database with advanced configuration. 
+Click **Close** to exit Oracle Database Configuration Assistant. You can start Oracle DBCA again to create another container database with advanced configuration.
 
 ## Task 3: Create and Configure a Container Database (Advanced Mode)
 
-Run Oracle DBCA from `$ORACLE_HOME/bin` as explained in *Task 1*. Oracle DBCA starts with the Database Operation window. 
+Run Oracle DBCA from `$ORACLE_HOME/bin` as explained in *Task 1*. Oracle DBCA starts with the Database Operation window.
 
 At any point, you can go **Back** to the previous window or **Cancel** database creation. You can click **Help** to view more information on the current window.
 
@@ -131,7 +130,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	**Note:** The General Purpose or Transaction Processing template and the Data Warehouse template create an Oracle Database with the `COMPATIBLE` initialization parameter set to `12.2.0.0.0`. This ensures that the new features in Oracle Database 21c are compatible with older versions of the database up to version 12c Release 2.  
 	-->
 
-	> For environments that are more complex, you can select the Custom Database option. This option does not use any templates and it usually increases the time taken to create an Oracle Database. 
+	> For environments that are more complex, you can select the Custom Database option. This option does not use any templates and it usually increases the time taken to create an Oracle Database.
 	>> For this lab, do not select this option.
 
 4. The Database Identification window displays pre-filled names and the System Identifier (SID) for Oracle Database.  
@@ -186,8 +185,8 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 	For this lab, de-select the existing listener if already selected. Select the checkbox **Create a new listener** and enter the following values:  
 	 **Listener name** - *LISTENER1*  
 	 **Listener port** - *1526*
-	 
-	 The values may differ depending on the system you are using. 
+
+	 The values may differ depending on the system you are using.
 
     ![Listener Selection](images/dbca21c-adv-007-listener.png)
 
@@ -224,11 +223,11 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 		> While using predefined templates, the **Block size** option is not enabled. Oracle DBCA creates an Oracle Database with the default block size of *8 KB*.
 
-	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default. 
+	- **Character sets** - The *Use Unicode (AL32UTF8)* option is selected by default.
 
 		![Character Sets](images/dbca21c-adv-009c-charset.png)
 
-		> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world. 
+		> *AL32UTF8* is Oracle's name for the standard Unicode encoding UTF-8, which enables universal support for virtually all languages of the world.
 
 	- **Connection mode** - *Dedicated server mode* allows a dedicated server process for each user process.
 
@@ -254,7 +253,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	![Set Admin Password](images/dbca21c-adv-011-syspwd.png)
 
-	**Note:** The password must conform to the Oracle recommended standards. 
+	**Note:** The password must conform to the Oracle recommended standards.
 
 12. The Creation Option window displays the default option **Create database** selected.  
 	For the remaining fields, leave the defaults and click **Next**.

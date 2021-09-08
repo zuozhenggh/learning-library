@@ -1,4 +1,4 @@
-# Launch Your First MySQL Database Service With HeatWave System
+# Turbocharge Business Insights with MySQL Database
 
 ## About this Workshop
 
