@@ -36,7 +36,7 @@ This lab assumes you have:
 - Provisioned Autonomous Data Warehouse
 - A configured connection between Oracle Analytics Cloud and Autonomous Data Warehouse
 
-## **TASK 1:** Plan Your Approach
+## Task 1: Plan Your Approach
 
 For this case, we will imagine that our **goal is to try to sail upwind** (into the direction of the source of the wind) as fast as possible. Different angles result in different boat speeds, for example:
 - Going directly upwind with angle 0 (straight into the wind) is not possible at all.
@@ -53,7 +53,7 @@ We will attack the problem in two phases:
 
 2) Decompose the boat speed and extract its "vertical" component (purple) towards the wind. This is the speed we're finally interested in. It's nice for the boat to go fast, but only the vertical speed (up towards the wind) is what counts.
 
-## **TASK 2:** Explore The Data (Prepare For Machine Learning)
+## Task 2: Explore the Data (Prepare for Machine Learning)
 
 Predict boat speed (green) based on wind speed (red) and wind angle (blue).
 
@@ -130,7 +130,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    But luckily for us, Machine Learning is great at extracting these type of patterns! It is able to cut through the noise and find relationships between variables!
 
-## **TASK 3:** Set Up The Machine Learning User
+## Task 3: Set up the Machine Learning User
 
 1. Open the Autonomous Data Warehouse.
 
@@ -162,7 +162,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    Press **Save**. You've now enabled the `SAILOR` user to use the Machine Learning functionality of Autonomous Data Warehouse.
 
-## **TASK 4:** Build The Machine Learning Model
+## Task 4: Build the Machine Learning Model
 
 <!--1. Open the Autonomous Data Warehouse.
 
@@ -232,7 +232,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
     **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
-## **TASK 5:** Predict The Boat Speed In Oracle Analytics Cloud
+## Task 5: Predict the Boat Speed in Oracle Analytics Cloud
 
 Now it's time to make predictions with the model. We will make a prediction for a combination of wind speeds (5, 10, 15, 20 and 25 mph) and range of wind angles (0-180 degrees with 1 degree increments).
 
@@ -380,7 +380,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
     Conclusion: We can now see clear patterns in how boat speed changes as a result of wind speed and wind angle. The angles to reach the highest boat speed are different depending on the wind speed.
 
-## **TASK 6:** Extract The Boat Speed Towards Our Upwind Target
+## Task 6: Extract the Boat Speed towards Our Upwind Target
 
 At this point, we can use the previous chart to pick the best angle to sail to obtain the highest boat speed for a certain wind speed. In other words, what we can now predict is the green line in this diagram, based on wind speed and wind angle.
 
@@ -406,7 +406,7 @@ Luckily, we can easily do this by converting the chart into a polar diagram.
 
    Another example, imagine the current wind speed is 25 knots. This is the purple ellipse. In this case, the highest vertical point on the line shows that we can obtain a boat speed of 22 knots towards our target if we choose the perfect wind angle of 44 degrees.
 
-## **TASK 7:** Draw Conclusions
+## Task 7: Draw Conclusions
 In this lab we predicted what the boat speed will be based on wind speed and wind angle. We did this by training a ML model on historical measurements of wind conditions and resulting boat speed. Machine Learning was able to find the complicated relationship that exists between these variables. Something that's not easy to do for human beings!
 
 By displaying these predictions in a smart way in a radar chart, it allowed us to read the optimal angle to take with a certain wind speed, in order to reach our goal as fast as possible!
@@ -415,4 +415,5 @@ Congratulations on completing the lab! Now you've learned the basics of machine 
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributors** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

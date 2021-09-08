@@ -13,6 +13,8 @@ _Estimated Time:_ 10 minutes
 ![Banner](images/banner.jpg)
 
 ### Objectives
+In this lab, you will:
+
 - Learn how a SailGP Data Athlete extracts valuable insights from sensor data
 - Learn how to use Oracle Analytics Cloud to prepare and analyze data
 
@@ -23,7 +25,7 @@ This lab assumes you have:
 - Provisioned Autonomous Data Warehouse
 - Completed the first two SailGP analytics Labs
 
-## **TASK 1**: Investigate The Number Of Maneuvers
+## Task 1: Investigate the Number of the Maneuvers
 
 <!--	 
 	 We're oversimplifying here, because often maneuvers are also done for tactical/strategical reasons.
@@ -56,7 +58,7 @@ This lab assumes you have:
    **Conclusion**: Count the number of places where each team changes direction. Notice how the French team makes one more maneuver compared to Great Britain?
 	The French team could learn from this that they could improve the planning of how they navigate the leg. We have to be careful with this conclusion though, there may be tactical/strategical advantages in tacking/gybing more than strictly necessary (e.g. compete with other boats).
 
-## **TASK 2**: Investigate The Quality Of The Maneuvers
+## Task 2: Investigate the Quality of the Maneuvers
 
 1. Let's see how France's maneuvers compare to those of the winner of the race, GBR.
 
@@ -76,29 +78,29 @@ This lab assumes you have:
 
 	![pic4](images/back-to-fields.png)
 
-4. In this chart we want to see how well the boats are able to keep out of the water during a maneuver. The boats try to not hit the water during a maneuver, to prevent losing speed. The column `LENGTH_RH_BOW_MM` indicates the "flying height", the distance that the boat is out of the water. The `TWA_SGP_DEG` column indicates the wind direction, so we can see exactly when the boat is at the middle of its maneuver.
+4. In this chart, we want to see how well the boats are able to keep out of the water during a maneuver. The boats try to not hit the water during a maneuver, to prevent losing speed. The column `LENGTH_RH_BOW_MM` indicates the "flying height", the distance that the boat is out of the water. The `TWA_SGP_DEG` column indicates the wind direction, so we can see exactly when the boat is at the middle of its maneuver.
 
 	Configure the chart as follows by **dragging** the fields from the left to the chart configuration.
 
    ![pic4](images/configure-line-chart.png)
 
-   Currently we can hardly see the flying height because its values (between 0 and 1,4m) are much smaller than the wind angle (between 0 and 360). Let's add a secondary Y axis to solve that. You can find these settings on the bottom left of the screen.
+5. Currently we can hardly see the flying height because its values (between 0 and 1,4m) are much smaller than the wind angle (between 0 and 360). Let's add a secondary Y axis to solve that. You can find these settings on the bottom left of the screen.
 
    ![pic4](images/second-y-axis.png)
 
-   Maximize the chart to see it better:
+6. Maximize the chart to see it better:
 
    ![pic4](images/maximize-chart.png)
 
-   The way that the flight height has been configured, at a value of `0,4` the boat hits the water. Let's include a reference line to indicate this. Click the ribbon menu, select **Add Statistics** and click **Reference Line** as follows:
+7. The way that the flight height has been configured, at a value of `0,4` the boat hits the water. Let's include a reference line to indicate this. Click the ribbon menu, select **Add Statistics** and click **Reference Line** as follows:
 
    ![pic4](images/add-reference-line.png)
 
-   Configure the reference line as follows (bottom left of the screen):
+8. Configure the reference line as follows (bottom left of the screen):
 
    ![pic4](images/configure-reference-line.png)
 
-   Now, scroll through the resulting chart and compare how well each team manages to stay out of the water during maneuvers.
+9. Now, scroll through the resulting chart and compare how well each team manages to stay out of the water during maneuvers.
 
    ![pic4](images/compare-maneuver-quality.png)
 
@@ -111,4 +113,5 @@ You may now *proceed to the next lab*.
 ## **Acknowledgements**
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
-- **Contributor** - Priscila Iruela
+- **Contributors** - Priscila Iruela, Arabella Yao
+- **Last Updated By** - Arabella Yao, August 2021

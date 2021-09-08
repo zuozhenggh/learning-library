@@ -16,9 +16,9 @@ In this lab, you will:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Pre-Upgrade Requirements
-      - Lab 3: One-Hop Upgrade
+      - Lab : Initialize the workshop Environment
+      - Lab : Pre-Upgrade Requirements
+      - Lab : One-Hop Upgrade
 
 ## Task 1: Start the 12c Admin Server and Managed Servers
 

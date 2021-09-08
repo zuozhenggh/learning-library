@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, You will check and modify the status of the primary site database, make it ready to ADG.
 
-Estimated Lab Time: 30 minutes.
+Estimated Time: 30 minutes
 
 ### Objectives
 - Enable achivelog and flashback for the primary database.
@@ -22,19 +22,21 @@ Now you have 2 VM hosts:
 
 
 
-## **STEP 1:** Enable achivelog and flashback
+## Task 1: Enable achivelog and flashback
 
 1. Connect to the primary VM hosts with opc user. Use putty tool (Windows) or command line (Mac, Linux).
 
     ```
-    ssh -i labkey opc@xxx.xxx.xxx.xxx
+    <copy>ssh -i labkey opc@xxx.xxx.xxx.xxx</copy>
     ```
 
 2. Swtich to **oracle** user, and connect to the database with sysdba
 
     ```
+    <copy>
     sudo su - oracle
     sqlplus / as sysdba
+    </copy>
     ```
 
    
@@ -42,7 +44,7 @@ Now you have 2 VM hosts:
 3. Check the achivelog mode, you can find it's disable now.
 
     ```
-    SQL> archive log list
+    SQL> <copy>archive log list</copy>
     Database log mode	       No Archive Mode
     Automatic archival	       Disabled
     Archive destination	       USE_DB_RECOVERY_FILE_DEST
@@ -54,12 +56,12 @@ Now you have 2 VM hosts:
 2. Enable the archive mode and flashback on.
 
     ```
-    SQL> shutdown immediate
+    SQL> <copy>shutdown immediate</copy>
     Database closed.
     Database dismounted.
     ORACLE instance shut down.
     
-    SQL> startup mount
+    SQL> <copy>startup mount</copy>
     ORACLE instance started.
     
     Total System Global Area 6845104048 bytes
@@ -69,29 +71,29 @@ Now you have 2 VM hosts:
     Redo Buffers		    7626752 bytes
     Database mounted.
     
-    SQL> alter database archivelog;
+    SQL> <copy>alter database archivelog;</copy>
     
     Database altered.
     
-    SQL> !mkdir -p /u01/app/oracle/fra/ORCL
-    SQL> ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10G SCOPE=BOTH SID='*';
-    SQL> ALTER SYSTEM SET DB_RECOVERY_FILE_DEST = '/u01/app/oracle/fra/ORCL' SCOPE=BOTH SID='*';
+    SQL> <copy>!mkdir -p /u01/app/oracle/fra/ORCL</copy>
+    SQL> <copy>ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE = 10G SCOPE=BOTH SID='*';</copy>
+    SQL> <copy>ALTER SYSTEM SET DB_RECOVERY_FILE_DEST = '/u01/app/oracle/fra/ORCL' SCOPE=BOTH SID='*';</copy>
     
-    SQL> alter database flashback on;
+    SQL> <copy>alter database flashback on;</copy>
     
     Database altered.
     
-    SQL> alter database open;
+    SQL> <copy>alter database open;</copy>
     
     Database altered.
     
     SQL> 
     ```
 
-3. Check the status again, it's enable now.
+3. Check the status again, it's enabled now.
 
     ```
-    SQL> archive log list
+    SQL> <copy>archive log list</copy>
     Database log mode	       Archive Mode
     Automatic archival	       Enabled
     Archive destination	       USE_DB_RECOVERY_FILE_DEST
@@ -104,19 +106,19 @@ Now you have 2 VM hosts:
 4. Enable force logging.
 
     ```
-    SQL> alter database force logging;
+    SQL> <copy>alter database force logging;</copy>
     
     Database altered.
     
     SQL>
     ```
 
-## **STEP 2:** Change redo log size and create standby log
+## Task 2: Change redo log size and create standby log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
     ```
-    SQL> select group#, bytes, status from v$log;
+    SQL> <copy>select group#, bytes, status from v$log;</copy>
     
         GROUP#	BYTES STATUS
     ---------- ---------- ----------------
@@ -147,7 +149,7 @@ Now you have 2 VM hosts:
 4. Check the status again.
 
     ```
-    SQL> select group#, bytes, status from v$log;
+    SQL> <copy>select group#, bytes, status from v$log;</copy>
     
         GROUP#	BYTES STATUS
     ---------- ---------- ----------------
@@ -166,15 +168,15 @@ Now you have 2 VM hosts:
 5. When the first 3 groups status is INACTIVE, you can drop these group now.
 
     ```
-    SQL> alter database drop logfile group 1; 
+    SQL> <copy>alter database drop logfile group 1;</copy> 
     
     Database altered.
     
-    SQL> alter database drop logfile group 2; 
+    SQL> <copy>alter database drop logfile group 2;</copy> 
     
     Database altered.
     
-    SQL> alter database drop logfile group 3; 
+    SQL> <copy>alter database drop logfile group 3;</copy> 
     
     Database altered.
     
@@ -184,23 +186,23 @@ Now you have 2 VM hosts:
 6. Create 4 standby log group.
 
     ```
-    SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo01.log' size 1024M;
+    SQL> <copy>alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo01.log' size 1024M;</copy>
     
     Database altered.
     
-    SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo02.log' size 1024M;
+    SQL> <copy>alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo02.log' size 1024M;</copy>
     
     Database altered.
     
-    SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo03.log' size 1024M;
+    SQL> <copy>alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo03.log' size 1024M;</copy>
     
     Database altered.
     
-    SQL> alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo04.log' size 1024M;
+    SQL> <copy>alter database add standby logfile thread 1 '/u01/app/oracle/oradata/ORCL/srl_redo04.log' size 1024M;</copy>
     
     Database altered.
     
-    SQL> select group#,thread#,bytes from v$standby_log;
+    SQL> <copy>select group#,thread#,bytes from v$standby_log;</copy>
     
         GROUP#    THREAD#	   BYTES
     ---------- ---------- ----------
@@ -214,29 +216,29 @@ Now you have 2 VM hosts:
 
 
 
-## **STEP 3:** Modify the init parameters for best practice
+## Task 3: Modify the init parameters for best practice
 
 1. Modify some init parameters for best practice.
 
     ```
-    SQL> alter system set STANDBY_FILE_MANAGEMENT=AUTO scope=both;
+    SQL> <copy>alter system set STANDBY_FILE_MANAGEMENT=AUTO scope=both;</copy>
     
     System altered.
     
-    SQL> alter system set DB_LOST_WRITE_PROTECT=TYPICAL scope=both;
+    SQL> <copy>alter system set DB_LOST_WRITE_PROTECT=TYPICAL scope=both;</copy>
     
     System altered.
     
-    SQL> alter system set FAST_START_MTTR_TARGET=300 scope=both;
+    SQL> <copy>alter system set FAST_START_MTTR_TARGET=300 scope=both;</copy>
     
     System altered.
     
-    SQL> exit;
+    SQL> <copy>exit;</copy>
     ```
 
 
 
-You may proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 

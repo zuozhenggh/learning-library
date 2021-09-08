@@ -21,7 +21,7 @@ Estimated time: 15 minutes
 
     a. Manually run through the labs.
 
-    b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 ## What Is Semi-Structured Data?
 
@@ -81,7 +81,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. When do
     FROM time;</copy>
     ```
 
-**NOTE** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
+    > **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
 
 Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
 
@@ -161,7 +161,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     ![Script output window showing message PL/SQL procedure successfully completed](images/sql-analytics-lab5-step1-substep2.png " ")
 
-    **Note:** The procedure completed very quickly (milliseconds), because we did not move any data from the Object Store into the data warehouse. The data is still sitting in the Object Store.
+    > **Note:** The procedure completed very quickly (milliseconds), because we did not move any data from the Object Store into the data warehouse. The data is still sitting in the Object Store.
 
 3. This external table behaves just like an ordinary table so we can run a query to see how many rows are in the file. Run this query in your SQL Worksheet:
 
@@ -206,7 +206,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     ![Result of query using Simple Dot Notation](images/analytics-lab-2-step-2-substep-2.png " ")
 
-    **Note:** Each column has three components:
+    > **Note:** Each column has three components:
 
     - the name of the source table - **json\_movie\_data\_ext** which is referenced using the letter **m**
 
@@ -279,7 +279,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ![ALT text is not available for this image](images/analytics-lab-2-step-3-substep-3.png " ")
 
- **NOTE**: The number of records has increased compared with our source table (JSON\_MOVIE\_DATA\_EXT): 3,491 to over 56,000 values. The reason is that we have something called an "array" of data within the JSON document that contains the cast members and crew members associated with each movie. Essentially, this means that each movie has to be translated into multiple rows.
+     > **Note**: The number of records has increased compared with our source table (JSON\_MOVIE\_DATA\_EXT): 3,491 to over 56,000 values. The reason is that we have something called an "array" of data within the JSON document that contains the cast members and crew members associated with each movie. Essentially, this means that each movie has to be translated into multiple rows.
 
 4. Run the following query, which will return the columns of data that contain the arrays, i.e. multiple values, in the original JSON document:
 
