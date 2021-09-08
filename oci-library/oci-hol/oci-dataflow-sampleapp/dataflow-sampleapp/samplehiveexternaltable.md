@@ -64,7 +64,7 @@ As a Data Scientist
   
    1. Queries the data and metadata that are stored in the metastore #2 above.
   
-   2. Build a sample machine learning model to explore to predict sentiment given a review text
+   2. Build a sample machine learning model to explore to predict sentiment given a review text. Classifiy Yelp reviews as positive / negative and identify most relevant phrases based on the textual content .
   
    3. Demonstrates that metastore acts like a unified store for data platform allowing applications and different personas to share data and metadata.
 
@@ -323,7 +323,11 @@ As a Data scientist, we create another OCI Data Flow Application. This applicati
 
    11. Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithams. The higher the F1 score the better.
 
-    ![Query MetaStore Logs ](../images/Query-metastore-run-application-fscore.png " ")
+       We can see here that the terms that are most positive include ‘friendly staff’, ‘delicious’, ‘great customer service’, ‘great food’. This indicates that the important features for customer’s satisfaction is staff, food taste, and service.
+
+       The terms that are most negative include ‘minutes’, ‘over priced’, ‘bland’, ‘food was ok’, ‘nothing special’. This suggests that negative reviews are driven by long wait times, overpriced food, bad food taste, an experience that isn’t deemed as anything special.
+
+       ![Query MetaStore Logs ](../images/Query-metastore-run-application-fscore.png " ")
 
 ## **STEP 6**: Connect to the Metastore from Oracle Analytics Cloud (OAC)
 
@@ -369,7 +373,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
         ![OAC DataSet ](../images/OAC-yelp-dataset.png " ")
 
-6. (Optional) Create a project to Visualize the data in Map Interface as described in [tutorial](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background) and selecting ```state``` and ```average_start``` columns from  the
+6. (Optional) Create a project to Visualize the data in Map Interface as described in [tutorial](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background) and selecting ```state``` and ```average_star``` columns from  the
 
    1. Add a new ```calculation``` by right clicking ```My Calcuation``` and then ```Add Calculation```
 
