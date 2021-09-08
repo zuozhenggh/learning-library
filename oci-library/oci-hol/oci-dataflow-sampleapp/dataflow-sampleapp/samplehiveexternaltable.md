@@ -38,9 +38,9 @@ Here's the summary of what you’d do in the workshop :
 
 As a Data Engineer
 
-* Navigate to the Data Catalog Console and create a new Metastore Instance under a Compartment.
+* Navigate to the Data Catalog Console and expore the Metastore Instance under a Compartment.
 
-* As a Data engineer Build an OCI Data Flow Python batch application that does the following:
+* Build an OCI Data Flow Python batch application that does the following:
 
    1. Read the raw JSON dataset from the object store bucket
   
@@ -52,7 +52,7 @@ As a Data Engineer
   
    5. Create a view in OCI Data Catalog Metastore which is then made available to OAC.
 
-* Navigate to Data Flow Console and creates the Data Flow Application using the PySpark application created in #2 above and selects the metastore that needs to be associated with the template
+* Navigate to Data Flow Console and creates the Data Flow Application using the PySpark application created in above and selects the metastore that needs to be associated with the application
 
 * Navigate to Data Flow Console and runs the Application.
 
@@ -70,8 +70,9 @@ As a Data Scientist
 
 As a data analyst navigate to :
 
-* OAC to explore the data and build visualization
-* Write custom queries to create reports
+* OAC to explore the dataset that was created by the data engineer.
+
+* Write custom queries to create build visualization
 
 Your dataset is the [Yelp Review and Business Dataset](https://www.kaggle.com/yelp-dataset/yelp-dataset), downloaded from the Kaggle website under the terms of the Creative Commons CC0 1.0 Universal (CC0 1.0) "Public Domain Dedication" license.
 
@@ -104,6 +105,8 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 * Policies and other Identity management related setup for OCI Data Flow or OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the [documentation](https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm).
 
 * OCI Data Flow Interactive SQL server cluster setup and the related policies.They are already setup in the lab tenancy. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
+
+* Connection between OAC and  OCI Data Flow Interactive SQL server cluster is already setup. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
 
 ## **STEP 1**: Inspect the Input JSON files and the scripts for the lab
 
@@ -324,7 +327,7 @@ As a Data scientist, we create another OCI Data Flow Application. This applicati
 
 ## **STEP 6**: Connect to the Metastore from Oracle Analytics Cloud (OAC)
 
-As a Data analyst, we want to build visualization on top of the raw data that was created by the data engineer. OAC can connect to the OCI Metastore via Data Flow Interactive (DFI) SQL Cluster. For this workshop DFI SQL Cluster is already setup. And the connection between DFI Cluster and OAC via Oracle Remote Data Gateway (RDG) is also established. At the time of writing this workshop OAC doesn't natively supports DFI as a data source instead uses JDBC to establish the connection vis RDG.
+As a Data analyst, we want to build visualization on top of the raw data that was created by the data engineer. OAC can connect to the OCI Metastore via Data Flow Interactive (DFI) SQL Cluster. For this workshop DFI SQL Cluster is already setup. And the connection between DFI Cluster and OAC via Oracle Remote Data Gateway (RDG) is also established. 
 
 1. From the Console navigate to  ```Analytics Cloud```
 
