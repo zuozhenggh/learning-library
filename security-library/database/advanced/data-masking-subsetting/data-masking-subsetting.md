@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager. It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
-*Estimated Lab Time:* 65 minutes
+*Estimated Lab Time:* 85 minutes
 
 *Version tested in this lab:* Oracle Enterprise Manager 13.4
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 |15 | Compare the Pre-Subsetted Data vs. the Post-Subsetted Data | 5 minutes |
 |16 | (Optional) Reset the Labs Environment | <5 minutes |
 
-## **STEP 1**: Import Schema Structure
+## Task 1: Import Schema Structure
 
 1. Open a Web Browser at the URL *`https://<DBSecLab-VM_@IP-Public>:7803/em`*
 
@@ -109,7 +109,7 @@ This lab assumes you have:
 
 12. Once the job completes, the `EMPLOYEE_ADM` will no longer be in a locked, uneditable status. Check the status by refreshing this page (**refresh icon**) and move forward when the Most Recent Jobs Status of the `Employee_ADM` has "**Succeeded**"!
 
-## **STEP 2**: Enhance the Meta-Model
+## Task 2: Enhance the Meta-Model
 
 1. Once you've created the ADM in Step 1, highlight the `Employee_ADM` Model and click the [**Edit**] button
 
@@ -148,7 +148,7 @@ This lab assumes you have:
 
 7. Now, your ADM is created!
 
-## **STEP 3**: Use Pre-Defined Sensitive Column Types
+## Task 3: Use Pre-Defined Sensitive Column Types
 
 1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
@@ -171,7 +171,7 @@ This lab assumes you have:
         - This process uses Oracle Regular Expressions which is compatible with the IEEE Portable Operating System Interface (POSIX) regular expression standard and to the Unicode Regular Expression Guidelines of the Unicode Consortium
         - In this case, the **Search Type** has been set as an **Or** condition, so if any of the conditions listed above are met, it will result in a match
 
-## **STEP 4**: Create a New Sensitive Column Type
+## Task 4: Create a New Sensitive Column Type
 
 1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and click [**Create...**] to add a custom Sensitive Column Type
 
@@ -190,7 +190,7 @@ This lab assumes you have:
 
       ![](./images/dms-020.png " ")
 
-## **STEP 5**: Create a New Sensitive Column Type using Pre-Defined Templates
+## Task 5: Create a New Sensitive Column Type using Pre-Defined Templates
 
 1. Navigate to the sub-menu **Sensitive column types** as described in Step 3 previously and select the Sensitive Column Type template that you want to duplicate (here `EMAIL_ID`)
 
@@ -212,7 +212,7 @@ This lab assumes you have:
 
       ![](./images/dms-023.png " ")
 
-## **STEP 6**: Create a New Masking Format
+## Task 6: Create a New Masking Format
 
 1. To create a masking format in the format library, navigate to the Data Masking Formats page from the menu **Enterprise > Quality Management > Data Masking Formats Library** as follow:
 
@@ -267,7 +267,7 @@ This lab assumes you have:
 
       ![](./images/dms-033.png " ")
 
-## **STEP 7**: Manually Identify Sensitive Columns
+## Task 7: Manually Identify Sensitive Columns
 
 1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Application Data Modeling** as follow:
 
@@ -330,7 +330,7 @@ This lab assumes you have:
 
 16. Your sensitive data are now identified!
 
-## **STEP 8**: Create Data Masking Definitions
+## Task 8: Create Data Masking Definitions
 
 1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Masking Definitions** as follow:
 
@@ -372,7 +372,7 @@ This lab assumes you have:
 
     **Note** Colums that have this icon do not have a masking format defined
 
-## **STEP 9**: Format Columns Using the Format Library and Masking Primitive
+## Task 9: Format Columns Using the Format Library and Masking Primitive
 
 1. In the Data Masking Definitions page definied previously in Step 8, select *`DEMO_HR_EMPLOYEES.EMAIL`*
 
@@ -567,7 +567,7 @@ This lab assumes you have:
 
    ![](./images/dms-077.png " ")
 
-## **STEP 10**: Generate Data Masking Scripts
+## Task 10: Generate Data Masking Scripts
 
 1. Once you've defined all the data masking formats in Step 9, the status of your masking definition is "**Script Not Generated**"
 
@@ -640,7 +640,7 @@ This lab assumes you have:
 
 12. Click [**Return**] to return to the Data Masking Definitions screen
 
-## **STEP 11**: Execute the Data Masking Scripts
+## Task 11: Execute the Data Masking Scripts
 
 **Recommendation:** To execute the Data Masking script you will need a SSH key-pair. Do not use a putty key-pair, instead use a RSA preferably created in a linux environment.
 
@@ -716,7 +716,7 @@ This lab assumes you have:
 
    ![](./images/dms-092.png " ")
 
-## **STEP 12**: Compare the Pre-Masked Data vs. the Post-Masked Data
+## Task 12: Compare the Pre-Masked Data vs. the Post-Masked Data
 
 1. Once the job successfully completes, query the masked data in the Development and Production environments for a before and after comparison
 
@@ -800,7 +800,7 @@ This lab assumes you have:
 
 8. **Now, your sensitive data has been masked!**
 
-## **STEP 13**: Create Data Subsetting Definitions
+## Task 13: Create Data Subsetting Definitions
 
 1. Navigate to the Application Data Models page from the Quality Management submenu by selecting the menu **Enterprise > Quality Management > Data Subsetting Definitions** as follow:
 
@@ -910,7 +910,7 @@ This lab assumes you have:
 
 13. Click [**Return**]
 
-## **STEP 14**: Generate Data Subsetting Scripts
+## Task 14: Generate Data Subsetting Scripts
 
 Once you've defined all the data subsetting definitions in Step 13, it's time to generate the Subsetting scripts
 
@@ -986,7 +986,7 @@ Once you've defined all the data subsetting definitions in Step 13, it's time to
 
    ![](./images/dms-157.png " ")
 
-## **STEP 15**: Compare the Pre-Subsetted Data vs. the Post-Subsetted Data
+## Task 15: Compare the Pre-Subsetted Data vs. the Post-Subsetted Data
 
 1. Once the job successfully completes, query the subsetted data in the Development and Production environments for a before and after comparison
 
@@ -1106,7 +1106,7 @@ Once you've defined all the data subsetting definitions in Step 13, it's time to
 
 8. **Now, your sensitive data has been subsetted and masked in same time!**
 
-## **STEP 16**: (Optional) Reset the Labs Environment
+## Task 16: (Optional) Reset the Labs Environment
 
 1. Restore the `EMPLOYEESEARCH_DEV` tables on pdb1 by cloning data from `EMPLOYEESEARCH_PROD` schema
 

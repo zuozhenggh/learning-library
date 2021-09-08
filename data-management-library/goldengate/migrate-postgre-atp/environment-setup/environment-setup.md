@@ -32,7 +32,7 @@ For a technical overview of this lab step, please watch the following video:
 
 * Successfully completed **Lab 0: Prerequisites** and ready to continue
 
-## **Step 1**: Clone Lab Repository
+## Task 1: Clone Lab Repository
 
 1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
@@ -46,14 +46,13 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/1.Git.PNG)
 
-## **Step 2**: Create Terraform Variables
+## Task 2: Create Terraform Variables
 
 1. Now we need to create a file to help terraform understand your environment. Let's modify the following parameters in your notepad and copy them.
 
 	```
 	<copy>
 	tenancy_ocid  = "your_tenancy_value_here"
-	ssh_public_key  = "~/.ssh/oci.pub"
 	region = "your-region-value here"
 	compartment_ocid = "your-tenancy-value_here"
 	</copy>
@@ -71,7 +70,7 @@ For a technical overview of this lab step, please watch the following video:
 
 3. Good practice is, always keep it in your side notepad.
 
-## **Step 3**: Terraform 
+## Task 3: Terraform 
 
 1. It is time to initialize terraform. Run the below command to download necessary terraform files from the OCI provider.
 

@@ -36,7 +36,7 @@ In this lab, you will:
         * `apps_password` (In this Lab: apps)
         * `weblogic_password` (In this Lab: welcome1)
 
-## **STEP 1:** Copy API signing key to the source Oracle E-Business Suite environment
+## Task 1: Copy API signing key to the source Oracle E-Business Suite environment
 
 If you would like to use a different API key for the Source EBS instance you can follow the steps in these short tutorials. See [How to Generate an API Signing Key](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How), [How to Get the Key's Fingerprint](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#How3), and "To Upload an API Signing Key" in [Using the Console](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#three).
 
@@ -123,24 +123,27 @@ The key file must be placed in a location where it can be referenced by the Orac
         
     ![](./images/7.png " ")
 
-## **STEP 2:** Create stage area directories for the Application tier and Database Tier
+## Task 2: Create Stage and Archive Directories 
 
 These directories will hold:
 
   * **Apps Stage Area directory** - temporary files used during the application tier backup process as well as the application tier backup file in zip or tar format that is created locally before it is uploaded to Oracle Cloud Infrastructure Object Storage.
   * **DB Stage Area directory** - backup utilities and the temporary files used to process the backup.
 
+  * **Archive directory** - archive .dbf files for the database
+
     ```
     <copy>
     mkdir /u01/install/APPS/stage
     mkdir /u01/install/APPS/stage/appsStage
     mkdir /u01/install/APPS/stage/dbStage
+    mkdir /u01/install/APPS/archive
     </copy>
     ```
 
     ![](./images/8.png " ")
 
-## **STEP 3:** Enable SSH on all Required Nodes
+## Task 3: Enable SSH on all Required Nodes
 
 All nodes must have SSH enabled. 
 
@@ -211,7 +214,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/14.png " ")
 
-## **STEP 4:** Put the database into Archive Mode
+## Task 4: Put the database into Archive Mode
 
 1.	Stop Apps Tier using the stopapps.sh script.
 
@@ -227,8 +230,8 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
         
     ```
     <copy>
-    cd /u01/install/APPS/12.1.0/
-    . ./ebsdb_apps.env
+    cd /u01/install/APPS/19.0.0/
+    . ./ebscdb_apps.env run
     sqlplus / as sysdba
     </copy>
     ```
@@ -258,7 +261,17 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/18.png " ")
 
-5. Confirm that the Database is in Archive mode and close the Database connection.
+5. Change the log archive destination. 
+
+    ```
+    <copy>
+    alter system set log_archive_dest_1='LOCATION=/u01/install/APPS/archive';
+    </copy>
+    ```
+
+    ![](./images/18-1.png " ")
+
+6. Confirm that the Database is in Archive mode and close the Database connection.
 
     ```
     <copy>
@@ -269,7 +282,7 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/19.png " ")
 
-6. Start the applications tier by running the startapps.sh script.
+7. Start the applications tier by running the startapps.sh script.
 
     ```
     <copy>
@@ -293,6 +306,6 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

@@ -22,9 +22,9 @@ In this workshop, you will:
 * Must have provisioned a Virtual DB system.
 * Created SSH keys in your local machine
 
-## **STEP 1:** Gather DB System Details
+## Task 1: Gather DB System Details
 
-1. On the Oralce home page, click on the hamburger menu and click on  **Bare Metal, VM and Exadata**.
+1. On the Oracle home page, click on the hamburger menu and click on  **Bare Metal, VM and Exadata**.
 
     ![](./images/vm.png " ")
 
@@ -48,7 +48,7 @@ In this workshop, you will:
 
     ![](./images/ipaddress.png " ")
 
-## **STEP 2:** Create a New SSH Host in SQL Developer
+## Task 2: Create a New SSH Host in SQL Developer
 
 1. Open SQL Developer, click on **View**, and select **SSH** from the drop-down list.
 
@@ -95,7 +95,7 @@ In this workshop, you will:
 
     ![](./images/connect-ssh2.png " ")
 
-## **STEP 3:** Create a New Database Connection in SQL Developer
+## Task 3: Create a New Database Connection in SQL Developer
 
 1. Once you have successfully created the new SSH host connection, click on the green `+` on the top left corner of the window to create a new database connection.
 
@@ -124,7 +124,7 @@ In this workshop, you will:
 
     ![](./images/connected.png " ")
 
-## **STEP 4:** Verify the Database Connection
+## Task 4: Verify the Database Connection
 
 1. To verify the new database connection, click on your database - db21c `+` symbol to drill-down and click on the `+` symbol before Tables to view the tables in the database.
 
@@ -146,4 +146,3 @@ In this workshop, you will:
 
 * **Author** - Anoosha Pilli, Product Manager, Database Product Management
 * **Last Updated By/Date** - Anoosha Pilli, February 2021
-

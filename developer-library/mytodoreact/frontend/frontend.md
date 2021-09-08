@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this tutorial you will deploy a pre-built ReactJS application locally then build it for production and host it on the Oracle Cloud Infrastucture (OCI).
+In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
 
-Estimated Time: 15 minutes
+Estimated time: 15-minutes
 
 ### Understand the ReactJS Application
 
@@ -50,7 +50,7 @@ In this tutorial, you will:
     ```
 5. If `Go lang` is not installed, see https://golang.org/doc/
 
-## **Task 1**: Configure API.js
+## Task 1: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -99,7 +99,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   	- Save the modified API.js file.
 
-## **Task 2**: Run in Dev Mode then Build for Production
+## Task 2: Run in Dev Mode then Build for Production
 
 1. In the project directory, run the app in the development mode <br />:
 
@@ -124,14 +124,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 		```
 	 `npm` correctly bundles React in production mode (in the build folder) and optimizes the build for best performance.
 
-    ![run build](images/Run-build.png " ")
+    	![run build](images/Run-build.png " ")
 
 	The build is minified and the file name include the hashes.<br />
 	Your app is ready to be deployed!
 
 	See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **Task 3**: Host on the Oracle Cloud Infrastructure Object Storage
+## Task 3: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
 **Object Storage** and then select **Object Storage**.

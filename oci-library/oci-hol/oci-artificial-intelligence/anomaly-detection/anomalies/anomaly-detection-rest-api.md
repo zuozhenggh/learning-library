@@ -2,247 +2,290 @@
 
 ## Introduction
 
-Our anomaly detection services also support to use CLI tool `oci` or REST API calls to perform model and data operations.
+Our anomaly detection services also support to use CLI (Command Line Interface) tool `oci` and SDKs with different programming languages to make REST API calls to perform model and data operations.
 
-In this lab session, we will show several code snippets to integrate with our service endpoints.
+In this lab session, we will show you how to set up authentication method in order to use the Python SDK to integrate with our service endpoints;
 
-You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration. 
+You can set up those configuration and execute those codes in the Oracle Cloud Shell.
 
 *Estimated Lab Time*: 45 minutes
 
 ### Objectives:
 
-* Learn how to use REST API to communicate with our anomaly detection service endpoints.
+* Learn how to set up API Signing Key and Configure file
+* Lear to use Python SDK to communicate with our anomaly detection service endpoints
 
 ### Prerequisites:
 * Familiar with Python programming is required
-* Have a Python environment ready in local or use our [Data Science Platform](https://www.oracle.com/data-science/)
-* Familiar with local editing tools, vi and nano
-* Installed with Python libraries: `oci` and `requests`
-
-## REST API Endpoints
-
-Our service supports CRUD (Create, Read, Update, Delete) actions on the four different resource types involved, including Project, Data Asset, Model, and Deployment.
-
-The following are a few examples of accessing those API endpoints using Python. The complete code file can be [downloaded here](../../files/anomaly_detection_rest_api_example.py).
+* Have a Python environment ready in local machine or use our Cloud Shell, or Oracle [Data Science Platform](https://www.oracle.com/data-science/)
+* Familiar with local editing tools, such as vi and nano, or editing IDEs, such as VS Code or Sublime
+* If using cloud shell, be familiar with Oracle Cloud Shell. Refer [docs here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
+* You have permission to use cloud shell; ask tenancy administrator to add policy if not.
+* If using your local machine, be sure to install/Update to the most updated version of Python library `oci` (version 2.42.0 or higher)
 
 
-### **STEP 1:** Authentication
+**Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
-This code snippet showed you how to perform authentication before other operations.
+## **TASK 1:** Setup API Signing Key
+
+We need to generate proper authentication configuration (API Signing Key pair) in order to use OCI CLI to communicate properly to the services on your behalf.
+
+### 1. Open User Settings
+Open the Profile menu (User menu icon) on the top right corner and click User Settings.
+![](../images/user-profile-icon.png " ")
+
+### 2. Open API Key
+Navigate to API Key and then Click Add API Key.
+![](../images/add-api-button.png " ")
+
+### 3. Generate API Key
+In the dialog, select Generate API Key Pair. Click Download Private Key and save the key to your local computer, and we will upload it later to the Cloud Shell.
+
+**You can rename this `pem` file as `oci-api-key.pem` .**
+
+Then click the Add button.
+![](../images/generate-api.png " ")
+
+### 4. Generate Config File
+After click the Add button, a configuration file window pop up.
+Copy the values shown on the console, and save in your local computer, again later it will be used in the Cloud Shell.
+
+![](../images/oci-config-sample.png " ")
+
+The configuration content will be like the following:
+```
+<copy>[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaarssh232crtgy6md7xrvuwenlfv5gttjkq
+fingerprint=12:34:56:78:90:21:f1:90:55:25:17:12:84:ea:83:71
+tenancy=ocid1.tenancy.oc1..aaaaaaaagkbzgg6lpzrf47xzy4rjoxg4de6ncfiq2
+region=us-ashburn-1
+key_file=<path to your private keyfile> # TODO </copy>
+```
+
+
+To know more about API key and config file, please visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
+
+## **TASK 2:** Activate Cloud Shell with Configuration
+
+### 1. Get permission to Use Cloud shell
+
+If you do not have permission to use cloud shell, ask your tenancy administrators to add the following policy:
+```
+<copy>allow any-user to use cloud-shell in tenancy</copy>
+```
+For details, you can refer to the [Cloud Shell Doc](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) .
+
+### 2. Navigate to Cloud Shell
+
+Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
+![](../images/cloud-shell-position.png " ")
+
+It may take up to 30 seconds for the Cloud Shell to be ready, like the following screenshot.
+![](../images/cloud-shell-activated.png " ")
+
+### 3. Set up API Key and Configuration File
+
+On the Cloud Shell, type the following command to create `.oci` folder and Enter:
+```
+<copy>mkdir .oci</copy>
+```
+
+Now, upload the `oci-api-key.pem` file you generated and downloaded earlier to the Cloud Shell host.
+![](../images/cloud-shell-upload-pem.png " ")
+
+Once it is uploaded, it may landed in the home folder, you can move it to the `.oci` folder with the following command and change it permission to be accessible by owner ONLY:
+```
+<copy>mv oci-api-key.pem .oci/ ;
+chmod 600 .oci/oci-api-key.pem </copy>
+```
+
+Next, let setup the configuration file using `nano` tool, paste the content copied from earlier step, and only update the last TODO line.
+```
+<copy>nano .oci/config </copy>
+```
+Now paste the configuration content, and update the last line as:
+```
+<copy>key_file=~/.oci/oci-api-key.pem</copy>
+```
+Then save the file (CTRL+X), and update the file permission to be accessible by owner only:
+```
+<copy>chmod 600 .oci/config </copy>
+```
+
+The final structure of `.oci` folder will be like this:
+![](../images/cloud-shell-oci-folder.png " ")
+
+## **TASK 3:** Python SDK Code Snippets
+
+The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
+
+You need to update one place (marked with TODO) with your username in Cloud Shell, and then upload the to the Cloud Shell to run it.
+```
+<copy>CONFIG_FILENAME = "/home/<USERNAME>/.oci/config" # TODO: Update USERNAME </copy>
+```
+
+In Cloud Shell, run the following to get your username:
+```
+<copy>whoami</copy>
+```
+
+Then upload this script `anomaly_detection_rest_api_example.py` to the Cloud Shell, excute the following command to run all the actions of building a model and run detection.
+```
+<copy>python3 anomaly_detection_rest_api_example.py</copy>
+```
+
+More detailed information of the code are explaineda s follows.
+
+
+### 1. Configuration and Connection
+
+This code snippet showed you how to perform configuration and set up connection before other operations.
 
 ```Python
 import oci
+import time
 import json
-import requests
+from datetime import datetime
 
-# replace with the location of your oci config file
-CONFIG_FILENAME = "~/.oci/config"
-config = oci.config.from_file(CONFIG_FILENAME, profile_name="DEFAULT")
+from oci.config import from_file
+from oci.ai_anomaly_detection.models import *
+from oci.ai_anomaly_detection.anomaly_detection_client import AnomalyDetectionClient
 
-auth = oci.signer.Signer(
-  tenancy=config['tenancy'],
-  user=config['user'],
-  fingerprint=config['fingerprint'],
-  private_key_file_location=config['key_file'],
-  pass_phrase=config['pass_phrase'])
+from oci.ai_anomaly_detection.models.create_project_details import CreateProjectDetails
+from oci.ai_anomaly_detection.models.create_data_asset_details import CreateDataAssetDetails
+from oci.ai_anomaly_detection.models.data_source_details import DataSourceDetails
+from oci.ai_anomaly_detection.models.data_source_details_object_storage import DataSourceDetailsObjectStorage
 
-# Initialize some constants
-CLOUD_ENV_URL = "https://aiservicepreprod.us-ashburn-1.oci.oraclecloud.com"
-COMPARTMENT_ID = "YOUR_COMPARYMENY_ID"
+from oci.ai_anomaly_detection.models.create_model_details import CreateModelDetails
+from oci.ai_anomaly_detection.models.model_training_details import ModelTrainingDetails
+
+from oci.ai_anomaly_detection.models.data_item import DataItem
+from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import InlineDetectAnomaliesRequest
+
+# change the following constants accordingly
+# ## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
+CONFIG_FILENAME = "/home/<USERNAME>/.oci/config" # TODO: Update USERNAME
+SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update propery if different
+NAMESPACE = "idehhejtnbtc" # Need to Update propery if different
+BUCKET_NAME = "anomaly-detection-bucket" # Need to Update propery if different
+training_file_name="demo-training-data.csv" # Need to Update propery if different
+
+compartment_id = "ocid1.tenancy.oc1..aaaaaaaasuvbdyacvuwg7p5zdccy564al2bnlizwdabjoebpefmvksqve3na" #Compartment of the project, Need to Update propery if different
+config = from_file(CONFIG_FILENAME)
+
+ad_client = AnomalyDetectionClient(
+    config,
+    service_endpoint=SERVICE_ENDPOINT)  # /20210101
+```
+
+### 2. Creating a Project
+
+```Python
+print("-*-*-*-PROJECT-*-*-*-")
+
+# CREATE CALL
+proj_details = CreateProjectDetails(
+    display_name="Test Project",
+    description="Test Project description",
+    compartment_id=compartment_id,
+)
+create_res = ad_client.create_project(create_project_details=proj_details)
+print("----CREATING----")
+print(create_res.data)
+time.sleep(5)
+project_id = create_res.data.id
+
+# GET CALL
+get_proj = ad_client.get_project(project_id=project_id)
+print("----READING---")
+print(get_proj.data)
+time.sleep(5)
 
 ```
 
-### **STEP 2:** Creating a Project
+### 3. Creating the DataAsset
 
 ```Python
-PROJECT_URL = f"{CLOUD_ENV_URL}/20210101/projects"
+print("-*-*-*-DATA ASSET-*-*-*-")
+# CREATE CALL
+dDetails = DataSourceDetails(data_source_type="ORACLE_OBJECT_STORAGE")
 
-payload = { "displayName": "Sample Project",
-                 "compartmentId": COMPARTMENT_ID,
-                 "description" : "SAMPLE PROJECT FOR ANOMALY DETECTION" }
-headers = { 'Content-Type': 'application/json', 'User-Agent': 'any-user' }
+dObjDeatils = DataSourceDetailsObjectStorage(
+    namespace=NAMESPACE,
+    bucket_name=BUCKET_NAME,
+    object_name=training_file_name,
+)
 
-session = requests.Session()
-create_project_res = session.request("POST", PROJECT_URL, headers=headers, data=json.dumps(payload),
-                                             allow_redirects=True, auth=auth)
-create_project_json = json.loads(create_project_res.text)
-print(create_project_res.text)
-project_id = create_project_json["id"]
+da_details = CreateDataAssetDetails(
+    display_name="Test DataAsset",
+    description="description DataAsset",
+    compartment_id=compartment_id,
+    project_id=project_id,
+    data_source_details=dObjDeatils,
+)
+create_res = ad_client.create_data_asset(create_data_asset_details=da_details)
+print("----CREATING----")
+print(create_res.data)
+time.sleep(5)
+da_id = create_res.data.id
 
-# This loop waits for project to be created (upto 10 mins)
-timeout = time.time() + 60 * 10
-while True:
-    view_project_res = session.request("GET", f"{PROJECT_URL}/{project_id}", headers=headers,
-                                       allow_redirects=True, auth=auth)
-    view_project_json = json.loads(view_project_res.text)
-    if time.time() > timeout:
-        print("TIMEOUT")
-        break
-    elif view_project_json["lifecycleState"] == "ACTIVE":
-        print("SUCCESS")
-        break
-    elif view_project_json["lifecycleState"] == "CREATING":
-        print("Still creating...")
-    elif view_project_json["lifecycleState"] == "FAILED":
-        print("FAILED...")
-        break
-    time.sleep(10)
+# READ CALL
+get_da = ad_client.get_data_asset(data_asset_id=da_id)
+print("----READING----")
+print(get_da.data)
+time.sleep(5)
 ```
 
-### **STEP 3:** Creating the DataAsset
-
+### 4. Creating the Train Model
 ```Python
-DATA_ASSET_URL = f"{CLOUD_ENV_URL}/20210101/dataAssets"
-BUCKET_NAME = "Your bucket name of the object"
-NAME_SPACE = "Your namespace of the object"
-OBJECT_FILE_NAME = "Your object file name in Oracle OCI Object Storage"
+print("-*-*-*-MODEL-*-*-*-")
+# CREATE CALL
+dataAssetIds = [da_id]
+mTrainDetails = ModelTrainingDetails(
+    target_fap=0.02, training_fraction=0.7, data_asset_ids=dataAssetIds
+)
+mDetails = CreateModelDetails(
+    display_name="DisplayNameModel",
+    description="description Model",
+    compartment_id=compartment_id,
+    project_id=project_id,
+    model_training_details=mTrainDetails,
+)
 
-dataasset_payload = {
-  "displayName": "Sample dataAsset",
-  "compartmentId": COMPARTMENT_ID,
-  "projectId": project_id,
-  "description": "oracle object storage data asset",
-  "dataSourceDetails": {
-    "dataSourceType": "ORACLE_OBJECT_STORAGE",
-    "bucketName": BUCKET_NAME,
-    "namespace": NAME_SPACE,
-    "objectName": OBJECT_FILE_NAME
-  }
-}
+create_res = ad_client.create_model(create_model_details=mDetails)
+print("----CREATING----")
+print(create_res.data)
+time.sleep(60)
+model_id = create_res.data.id
 
-session = requests.Session()
-create_dataasset_res = session.request("POST", DATA_ASSET_URL, headers=headers, data=json.dumps(dataasset_payload),
-                                             allow_redirects=True, auth=auth)
-create_dataasset_json = json.loads(create_dataasset_res.text)
-print(create_dataasset_res.text)
-dataasset_id = create_dataasset_json["id"]
+# READ CALL
+get_model = ad_client.get_model(model_id=model_id)
+print("----READING----")
+print(get_model.data)
+time.sleep(60)
+while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
+    get_model = ad_client.get_model(model_id=model_id)
+    time.sleep(60)
+    print(get_model.data.lifecycle_state)
 
-# This loop waits for dataasset to be created (upto 10 mins)
-timeout = time.time() + 60 * 10
-while True:
-    view_dataasset_res = session.request("GET", f"{DATA_ASSET_URL}/{dataasset_id}", headers=headers,
-                                       allow_redirects=True, auth=auth)
-    view_dataasset_json = json.loads(view_dataasset_res.text)
-    if time.time() > timeout:
-        print("TIMEOUT")
-        break
-    elif view_dataasset_json["lifecycleState"] == "ACTIVE":
-        print("SUCCESS")
-        break
-    elif view_dataasset_json["lifecycleState"] == "CREATING":
-        print("Still creating...")
-    elif view_dataasset_json["lifecycleState"] == "FAILED":
-        print("FAILED...")
-        break
-    time.sleep(10)
 ```
 
-### **STEP 4:** Creating the Train Model
+### 5. Detection with the Model
 ```Python
-TRAIN_URL = f"{CLOUD_ENV_URL}/20210101/models"
+print("-*-*-*-DETECT-*-*-*-")
+signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
+payloadData = []
+for i in range(10):
+    timestamp = datetime.strptime(f"2020-07-13T20:4{i}:46Z", "%Y-%m-%dT%H:%M:%SZ")
+    values = [ 0.3*i, 0.04713*(i-2)**2, 1.0, 0.5479, 1.291, 0.8059, 1.393, 0.0293, 0.1541, 0.2611]
+    dItem = DataItem(timestamp=timestamp, values=values)
+    payloadData.append(dItem)
 
-param_fap = 0.01 # Model parameter: False Acceptance Percentage, have to be in range [0.01, 0.05]
-param_trainingFac = 0.7 # Model parameter: Training Fraction, a percentage to split data into training and test, value range [0.7, 0.9]
+inline = InlineDetectAnomaliesRequest( model_id=model_id, request_type="INLINE", signal_names=signalNames, data=payloadData)
 
-train_payload = {
-  "compartmentId": COMPARTMENT_ID,
-  "displayName": "Test model",
-  "description": "Creating a model test",
-  "projectId": project_id,
-  "modelCreationDetails": {
-    "modelType": "ANOMALY_MULTIVARIATE",
-    "fap": param_fap,
-    "trainingFraction": param_trainingFac,
-    "dataAssets": [ dataasset_id ]
-  }
-}
-
-session = requests.Session()
-create_train_res = session.request("POST", TRAIN_URL, headers=headers, data=json.dumps(train_payload),
-                                             allow_redirects=True, auth=auth)
-create_train_json = json.loads(create_train_res.text)
-print(create_train_res.text)
-model_id = create_train_json["id"]
-
-# This loop waits for train to be created (upto 15 mins) depending on your training data size u might want to wait longer
-timeout = time.time() + 60 * 15
-while True:
-    view_train_res = session.request("GET", f"{TRAIN_URL}/{model_id}", headers=headers,
-                                       allow_redirects=True, auth=auth)
-    view_train_json = json.loads(view_train_res.text)
-    if time.time() > timeout:
-        print("TIMEOUT")
-        break
-    elif view_train_json["lifecycleState"] == "ACTIVE":
-        print("SUCCESS")
-        break
-    elif view_train_json["lifecycleState"] == "CREATING":
-        print("Still creating...")
-    elif view_train_json["lifecycleState"] == "FAILED":
-        print("FAILED")
-        break
-    time.sleep(10)
-```
-
-### **STEP 5:** Deploying the Model
-```Python
-DEPLOY_URL = f"{CLOUD_ENV_URL}/20210101/modelDeployments"
-deploy_payload = {
-  "compartmentId": COMPARTMENT_ID,
-  "displayName": "Anomaly Multivariate Model Shared Deployment",
-  "description": "E2E Testing MSET Model Shared Deployment",
-  "modelId": model_id,
-  "config": { "sku": "SHARED", "coreCount": "1" }
-}
-
-session = requests.Session()
-create_deploy_res = session.request("POST", DEPLOY_URL, headers=headers, data=json.dumps(deploy_payload),
-                                             allow_redirects=True, auth=auth)
-create_deploy_json = json.loads(create_deploy_res.text)
-print(create_deploy_res.text)
-deploy_id = create_deploy_json["id"]
-
-# This loop waits for deploy to be created (upto 15 mins)
-timeout = time.time() + 60 * 15
-while True:
-    view_deploy_res = session.request("GET", f"{DEPLOY_URL}/{deploy_id}", headers=headers,
-                                       allow_redirects=True, auth=auth)
-    view_deploy_json = json.loads(view_deploy_res.text)
-    if time.time() > timeout:
-        print("TIMEOUT")
-        break
-    elif view_deploy_json["lifecycleState"] == "ACTIVE":
-        print("SUCCESS")
-        break
-    elif view_deploy_json["lifecycleState"] == "CREATING":
-        print("Still creating...")
-    elif view_deploy_json["lifecycleState"] == "FAILED":
-        print("FAILED")
-        break
-    time.sleep(10)
-```
-
-### **STEP 6:** Detection with the Model
-```Python
-DETECT_URL = f"{CLOUD_ENV_URL}/20210101/modelDeployments/{deploy_id}/actions/detectAnomalies"
-
-data_payload = {
-  "requestType": "INLINE",
-  "columnLabels": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
-  "data": [
-    {
-      "timestamp": "2020-10-01T09:22:59.000Z",
-      "value": [ 0.8885, 0.975, 1.25, 0.01, 0, 0.8885, 0.975, 1.25, 0.01, -2165 ]
-    }
-  ]
-}
-
-session = requests.Session()
-detect_res = session.request("POST", DETECT_URL, headers=headers, data=json.dumps(data_payload),
-                              allow_redirects=True, auth=auth)
-print(detect_res.json())
-print(detect_res.headers)
+detect_res = ad_client.detect_anomalies(detect_anomalies_details=inline)
+print("----DETECTING----")
+print(detect_res.data)
 ```
 
 Congratulations on completing this lab!
@@ -254,4 +297,4 @@ Congratulations on completing this lab!
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, May 2021
+    * Jason Ding - Principal Data Scientist, August 2021

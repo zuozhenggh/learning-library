@@ -23,7 +23,7 @@ In this 3 parts lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier or Paid Cloud Account
 
 You may now [proceed to the next lab](#next).
 

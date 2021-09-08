@@ -1,7 +1,7 @@
 # Securing a Third-Party app with Oracle Identity Cloud Service
 
 
-## STEP 1: Register the Sample Web Application with Oracle Identity Cloud Service 
+## Task 1: Register the Sample Web Application with Oracle Identity Cloud Service 
 
 The sample web application needs a Client ID and Secret to establish communication with Oracle Identity Cloud Service. You also need to configure API permissions that must be granted to the sample web application. This section explains how to register the sample web application with Oracle Identity Cloud Service.
 
@@ -54,7 +54,7 @@ The success message The SDK Web Application application has been activated appea
 
 
 
-## STEP 2: Update the Sample Web Application
+## Task 2: Update the Sample Web Application
 
 *Important: The sample web application isn't meant to be published to production and isn't concerned about the language’s specific best practices, such as data handling, patterns, security, and so on. The sole purpose of the sample web application is to address the recommended approach to integrate Oracle Identity Cloud Service and a custom application using the SDK.*
 
@@ -110,7 +110,7 @@ The data withing the `auth.js` file should looks similar to the below example.
 
 *Note: It is important to update the fields above accordingly before continuing to the next sections.*
 
-## STEP 3: Provisioning the App
+## Task 3: Provisioning the App
 
 In order to allow your user to consume the app, you must first provisioning the object to your account. 
 
@@ -139,7 +139,7 @@ https://idcs-<your_tenant_id>.identity.oraclecloud.com/ui/v1/myconsole
 
 ![](./images/app_4.png)
 
-## STEP 4: Run the Sample Web Application
+## Task 4: Run the Sample Web Application
 
 In this section of the tutorial, you will prepare, run, and test the sample web application.
 
@@ -238,7 +238,7 @@ kill $(lsof -t -i:8080)
 The `post_logout_redirect_uri` parameter value must match the Post Logout Redirect URL parameter value you set during Register the Sample Web Application with Oracle Identity Cloud Service
 
 
-## STEP 5: Testing Single Sign-On capabilities
+## Task 5: Testing Single Sign-On capabilities
 
 Let's test Oracle Identity Cloud Service Single Sign-On capabilities. 
 

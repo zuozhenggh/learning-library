@@ -18,7 +18,7 @@ In this lab, you will:
 - Permissions to create compute instances in OCI
 - Remote Desktop Connection downloaded
 
-## **STEP 1**: Create Windows Instance
+## Task 1: Create Windows Instance
 
 1. On the Oracle Cloud Infrastructure console home page, click Create a VM Instance under Quick Action
 
@@ -50,11 +50,11 @@ In this lab, you will:
 
   ![](./images/wdetail.png "")
 
-## **STEP 2:** Access the Windows Instance with Remote Desktop Connection
+## Task 2: Access the Windows Instance with Remote Desktop Connection
 
 1. Launch Remote Desktop Connection, for example from the Start menu of a local machine.
 
-  NOTE: If you have not installed Remote Desktop Connection, please do so throught this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps)
+  NOTE: If you have not installed Remote Desktop Connection, please do so through this [link](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps)
 
 2. **Steps for Windows machine**: In the Computer field, enter the Public IP address of the Microsoft Windows VM that you noted in the previous section. Enter opc in the User name field. 
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
 You may proceed to the next lab.
 
-## Acknowledgements
+## Acknowledgments
 * **Authors** - Rich Konopka, Peoplesoft Specialist, Megha Gajbhiye, Cloud Solutions Engineer
 * **Contributor** -  Sara Lipowsky, Cloud Engineer
 * **Last Updated By/Date** - Sara Lipowsky, Cloud Engineer, February 2021

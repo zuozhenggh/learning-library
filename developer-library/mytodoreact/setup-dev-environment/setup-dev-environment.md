@@ -45,6 +45,8 @@ Estimated time: 30 minutes
 
   ![clone](images/clone.png " ")
 
+  ![](images/clone.png " ")
+
   You should now see `mtdrworkshop` in your root directory
 
 4. Change to `mtdrworkshop` directory.
@@ -66,9 +68,9 @@ Estimated time: 30 minutes
     * If you are disconnected or logged off and return to Cloud shell, make sure you are back in the ~/mtdrworkshop directory.
 
 
-## **Task 2**: Create an Oracle Cloud Infrastructure compartment and an OKE cluster in that compartment
+## Task 2: Create an OCI compartment and an OKE cluster in that compartment
 
- 1. Open up the navigation menu in the top-left corner of the Console then select **Identity** and select **Compartments**.
+ 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity & Security> Compartments**.
 
   	![Compartment](images/15-identity-compartments.png " ")
 
@@ -95,9 +97,9 @@ Estimated time: 30 minutes
 
        `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
-       ![compartmentid](images/compartmentid.png " ")
+       ![compartment id](images/compartmentid.png " ")
 
-  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services** then select **Kubernetes Clusters (OKE)**.
+  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters (OKE)**.
 
     ![OKE Service](images/27-dev-services-oke.png " ")
 
@@ -111,7 +113,8 @@ Estimated time: 30 minutes
 
   9. Change the name of the cluster to `mtdrworkshopcluster`, accept all the other defaults, and click **Next** to review the cluster settings.
 
-  10. Once reviewed, click **Create Cluster**, and you will see the resource creation progress.
+    ![mtdrworkshopcluster](images/mtdrworkshopcluster.png " ")
+
 
     ![create OKE wizard](images/31-create-oke-wizard3.png " ")
 
@@ -130,7 +133,7 @@ Estimated time: 30 minutes
 
 ## **Task 3**: Create the Oracle Autonomous Processing database, TODOUSER and the TODOITEM table
 
-    ![create autonomous](images/create-autonomous.png " ")
+## Task 3: Create the ATP database, TODOUSER and the TODOITEM table
 
 3. Set the **Compartment, Display Name** and **Database Name**.
 
@@ -189,6 +192,10 @@ Note: The database creation will take a few minutes.
       <copy>sql /nolog</copy>
       ```
 
+      ```
+      <copy>sql /nolog</copy>
+      ```
+
 	  ![SQLcl](images/SQLCl-Cloud-Shell.png " ")
 
 	- Point the tool at your wallet.zip file
@@ -208,6 +215,8 @@ Note: The database creation will take a few minutes.
       ```
       <copy>connect ADMIN@mtdrdb_tp</copy>
       ``` 
+
+     ![](images/connect.png " ")
 
      ![connect](images/connect.png " ")
 
@@ -229,9 +238,17 @@ Note: The database creation will take a few minutes.
 
      ![grant](images/grant.png " ")        
 
+     ![](images/grant.png " ")        
+
       - Connect as TODOUSER
 
+        ```bash
+        <copy> connect todouser@mtdrdb_tp</copy>
         ```
+
+     ![](images/connect-todouser.png " ")
+
+        ```bash
         <copy> connect todouser@mtdrdb_tp</copy>
         ```
 
@@ -251,6 +268,8 @@ Copy and paste the following command in the worksheet and execute it.
 
      ![create-table](images/create-table.png " ")
 
+     ![](images/create-table.png " ")
+
       - Insert the first row, manually into TODOITEM table
         
         ```sql
@@ -262,9 +281,9 @@ Copy and paste the following command in the worksheet and execute it.
         ```
         <copy>commit;</copy>
         ```
-     ![commit-complete](images/commit-complete.png " ")
+     ![](images/commit-complete.png " ")
 
-## **Task 4**: Create an OCI Registry and a pre-authentication key
+## Task 4: Create an OCI Registry and a pre-authentication key
 
 You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an Auth key. The OCI Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
@@ -274,11 +293,13 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 
 2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
 
-    ![create repo](images/22-create-repo.png " ")
+2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
 
 3. Click **Create Repository**, specify the following details for your new repository, and click **Create Repository**.
     * Repository Name: `<tenancy name>/mtdrworkshop`
     * Access: `Public`
+
+  ![create repository](images/create-repository.png " ")
 
   ![create repository](images/create-repository.png " ")
 
@@ -288,7 +309,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 		```
   	For example `./addOCIRInfo.sh axhpdrizd2ai treehacks01/mtdrworkshop`
 
-  ![add-info](images/add-info.png " ")
+  ![add info](images/add-info.png " ")
 
 5. You will now create the authentication token by going back to the User Settings page. Click the Profile icon in the top-right corner of the Oracle Cloud Console and select **User Settings**.
 
@@ -322,7 +343,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
     <copy>docker images </copy>
     ```
 
-## **Task 5**: Install GraalVM in Cloud Shell
+## Task 5: Install GraalVM in Cloud Shell
 
  We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build the Helidon image.
 
@@ -342,7 +363,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
       <copy>./installGraalVM.sh</copy>
       ```
 
-## **Task 6**: Access OKE from the Cloud Shell
+## Task 6: Access OKE from the Cloud Shell
 
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
@@ -350,7 +371,9 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
     <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
     ```
 
-2. Navigate to **Developer Services** and select **Kubernetes Clusters (OKE)**
+2. Navigate to **Developer Services** and select  **Kubernetes Clusters (OKE)**
+
+    ![dev services oke](images/27-dev-services-oke.png " ")
 
     ![dev services](images/27-dev-services-oke.png " ")
 
@@ -369,11 +392,11 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 
 ## Task 7: Configuring Network Security Rules
 1. The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
-2. Navigate to **Developer Services** and select **Kubernetes Clusters (OKE)**
+2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
 
     ![dev services oke](images/27-dev-services-oke.png " ")
 
-   	- Click  **mtdrworkshopcluster**
+   	- Click **mtdrworkshopcluster**
 
 4. Click the VCN named starting with **oke-svclbsubnet-quick-mtdrworkshpcluster**.
   ![OKE svclbsubnet](images/oke-svclbsubnet.png " ")

@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## **Step**: Install Sample Data
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -20,8 +20,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     <copy>
     cd /home/opc/
 
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
-
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/C0K_PxLC5D0szNqwB11bJ_xq-L5gfQga9wDDIOMKpDnU5mcmBqmI0DICuS9mWJuE/n/c4u04/b/labfiles/o/nfscripts.zip
+    
     unzip nfscripts.zip;
 
     chmod +x *.sh
@@ -71,6 +71,6 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, August 2020
+- **Contributors** - Anoosha Pilli, Anoosha Pilli, LiveLabs Team
+- **Last Updated By/Date** - LiveLabs Team, August 2020
 

@@ -17,7 +17,7 @@ Estimated workshop time: 30 minutes
 
 - Complete Lab 1 to Lab 3
 
-## **Step 1:** Install CUDA Toolkit (optional)
+## Task 1: Install CUDA Toolkit (optional)
 
 In this step, we will install the CUDA Toolkit that includes the CUDA SDK, GUI tools and the Nvidia driver.
 
@@ -55,7 +55,7 @@ The nvidia-smi output will look like this:
 
 ![](images/nvidia-smi.PNG " ")
 
-## **Step 2:** Install Faceswap
+## Task 2: Install Faceswap
 
 1. Download the latest version of the Faceswap installer.
 

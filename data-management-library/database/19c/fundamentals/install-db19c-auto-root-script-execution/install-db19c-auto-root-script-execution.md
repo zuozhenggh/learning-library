@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this lab, you learn how to use a new feature in the Oracle Database 19c installer that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password. In this lab, you configure the `oracle` user to run the scripts, which has already been configured as a sudoer on your compute instance. After the database is installed, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created.
+Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password.
 
-Because you install release 19.3 and upgrade to 19.11 at the same time in this lab, you create the CDB and PDB after you complete the installation. This avoids any post-installation tasks.
+In this lab, you run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer. Next, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created. Use the `workshop-staged` compute instance.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 40 minutes
 
 ### Objectives
 
-In this lab, you learn how to do the following:
+In this lab, you will:
 
 - Install Oracle Database 19c using the new automatic root script execution feature
 - Review the response file
@@ -19,151 +19,136 @@ In this lab, you learn how to do the following:
 
 ### Prerequisites
 
-- You have an Oracle account. You can obtain a free account by using Oracle Free Tier or you can use a paid account provided to you by your own organization.
-- You have a compartment in Oracle Cloud Infrastructure.
-
-### Assumptions
-
-You obtained a compute instance one of the following ways:
-  - You completed the [Obtain a Compute Image with Staged Oracle Database 19c Installer Files](?lab=obtain-compute-image-19c-staged.md) lab.
-  - You created your own compute instance in Oracle Cloud Infrastructure by following the steps in [Appendix A: Create a Compute Instance with X11 Forwarding](?lab="create-compute-instance-x11") and [Appendix B: Perform Oracle Database 19c Prerequisite Tasks](?lab="perform-db19c-prerequisite-tasks").
-
-### Tip
-To copy and paste text from your local machine into an application on your Guacamole desktop, you can do the following:
-1.  On your compute instance, enter **CTRL+ALT+SHIFT** (Windows) or **CTRL+CMD+SHIFT** (Mac).
-
-2. Select **Text Input**.
-
-  A black Text Input field is displayed at the bottom of the Guacamole desktop.
-
-3. Position your cursor where you want to paste the text.
-
-4. Copy text from your local machine.
-
-5. Paste the copied text into the black Text Input field.
+This lab assumes you have:
+- Obtained and signed in to your `workshop-staged` compute instance
 
 
-## **STEP 1**: Install Oracle Database 19c using the new automatic root script execution feature
+## Task 1: Install Oracle Database 19c using the new automatic root script execution feature
 
-1. Open a terminal window.
+*Be sure that you are using the `workshop-staged` compute instance.*
 
-  - If you are using the Guacamole desktop provided for this lab, you can double-click the **Terminal Window** shortcut on the desktop.
-  - If you created your own custom compute instance, then open a terminal window on your local machine and connect to your compute instance.
+1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
 
-2. Switch to the `oracle` user, and enter the password `Ora4U_1234`.
+2. Change to the Oracle home directory.
 
-  *If you are using the Guacamole desktop, you can skip this step because you are automatically signed in as the `oracle` user in the terminal window.*
-
-    ```nohighlighting
-    $ <copy>su - oracle</copy>
     ```
-
-3. Change to the Oracle home directory.
-
-    ```nohighlighting
     $ <copy>cd /u01/app/oracle/product/19c/dbhome_1</copy>
     ```
 
-4. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32545013` directory, which is the Oracle Database release update for 19.11.0.0.
+3. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32904851` directory, which is the Oracle Database release update for 19.12.0.0.
 
-    ```nohighlighting
-    <copy>ls</copy>
+    ```
+    $ <copy>ls</copy>
+
+    32904851    diagnostics    lib      PatchSearch.xml  slax
+    addnode     dmu            md       perl             sqldeveloper
+    apex        drdaas         mgw      plsql            sqlj
+    assistants  dv             network  precomp          sqlpatch
+    bin         env.ora        nls      QOpatch          sqlplus
+    clone       has            odbc     R                srvm
+    crs         hs             olap     racg             suptools
+    css         install        OPatch   rdbms            ucp
+    ctx         instantclient  opmn     relnotes         usm
+    cv          inventory      oracore  root.sh          utl
+    data        javavm         ord      root.sh.old      wwg
+    dbjava      jdbc           ords     root.sh.old.1    xdk
+    dbs         jdk            oss      runInstaller
+    deinstall   jlib           oui      schagent.conf
+   demo        ldap           owm      sdk
     ```
 
-5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.11.0.0. The installer first applies the patch (this takes up about seven minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.11.0, you can leave out the -`applyRU` parameter and value.
+4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. To apply the Oracle Database release update for 19.12.0.0, you can include the `applyRU` parameter. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch the database to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will be installed.
 
-  It's important that you run the `runInstaller` command from the Oracle home directory and as the `oracle` user.
+  *Enter the command carefully and check that it is correct before you run it! If you make an error while installing the database, you cannot easily undo the changes made to the compute instance. It is fastest to obtain a fresh `workshop-staged` compute instance and try the lab again.*
 
-    ```nohighlighting
-    <copy>./runInstaller -applyRU 32545013</copy>
+    ```
+    $ <copy>./runInstaller -applyRU 32904851</copy>
     ```
 
-6. On the **Select Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
+5. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
-  ![Select Configuration Option page](images/select-configuration-option-page.png)
+    ![Select Configuration Option page](images/select-configuration-option-page.png "Select Configuration Option page")
 
-7. On the **Select System Class** page, leave **Desktop Class** selected, and click **Next**.
+6. On the **System Class** page, leave **Desktop Class** selected, and click **Next**.
 
-  ![Select System Class page](images/select-system-class-page.png)
+    ![Select System Class page](images/select-system-class-page.png "Select System Class page")
 
-8. On the **Typical Installation** page, leave all the default values as is, except for the following:
+7. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes, and then click **Next**.
 
-  a) In the **Global database name** box, enter the following name. Make sure to capitalize `ORCL`.
+    The following values will be configured:
 
-    ```nohighlighting
-    <copy>ORCL.livelabs.oraclevcn.com</copy>
+    - Oracle base: `/u01/app/oracle`
+    - Database file location: `/u01/app/oracle/oradata`
+    - Database edition: Enterprise Edition
+    - Character set: Unicode (AL32UTF8)
+    - OSDBA group: `dba`
+    - Global database name: `orcl.livelabs.oraclevcn.com`
+    - Password: `Ora4U_1234`
+    - Create as Container database (selected)
+    - Pluggable database name: `orclpdb`
+
+    ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
+
+
+8. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+
+    The following values will be configured:
+
+    - Inventory Directory: `/u01/app/oraInventory`
+    - oraInventory Group Name: `oinstall`
+
+    ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
+
+9. On the **Root script execution** page, do the following, and then click **Next**.
+
+    - Select the **Automatically run configuration scripts** check box. *This is the new feature!*
+
+    - Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
+
+    - Enter the password for the `oracle` user, which is `Ora4U_1234`.
+
+
+    ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
+
+10. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
+
+    ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png "Perform Prerequisite Checks page")
+
+    ![Summary page](images/summary-page.png "Summary page")
+
+11. On the **Summary** page, click **Save Response File**. The **Save Response File** dialog box is displayed. Browse to and select the `/tmp` directory. Leave **db.rsp** as the name, and click **Save**.
+
+12. Click **Install** to begin installing the software.
+
+13. On the **Install Product** page, monitor the progress of the steps being executed.  When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes approximately 26 minutes to complete.
+
+    ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png "Run configuration scripts prompt")
+
+
+14. Watch for the two lines in the progress information that pertain to automatic root script execution:
+
+    - Execute Root Scripts
+    - Running root scripts using specified configuration method
+
+    ![Install Product page](images/install-product-page.png "Install Product page")
+
+
+15. On the **Finish** page, click **Close**. The installation is finished.
+
+    ![Finish page](images/finish-page.png "Finish page")
+
+
+
+## Task 2: Review the response file
+
+1. In the terminal window, change to the `/tmp` directory where you saved the response file.
+
     ```
-
-    *If you are using your own custom compute instance, be sure that you properly configured the `/etc/hosts` file as outlined in [Appendix B: Perform Oracle Database 19c Prerequisite Tasks](?lab="perform-db19c-prerequisite-tasks") for this workshop. The `hosts` file needs to contain the following line, otherwise the installation will fail. Replace `private-ip-address` and `compute-instance-name` with your own values.*
-
-    ```nohighlighting
-    private-ip-address   compute-instance-name.livelabs.oraclevcn.com    compute-instance-name
-    ```
-
-  b) In the **Password** and **Confirm Password** boxes, enter `Ora4U_1234`. This will be the password for the `admin` database user.
-
-  c) In the **Pluggable database name** box, enter **PDB1**.
-
-    ![Typical Install Configuration page](images/typical-install-configuration-page.png)
-
-9. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
-
-  ![Create Inventory page](images/create-inventory-page.png)
-
-10. On the **Root script execution configuration** page, do the following:
-
-  a) Select the **Automatically run configuration scripts** check box. *This is the new feature!*
-
-  b) Select **Use sudo**. The `oracle` user is automatically configured as the sudo user. The sudo user name must be the username of the user installing the database.
-
-  c) Enter the password for the `oracle` user (`Ora4U_1234`).
-
-  c) Click **Next**.
-
-  ![Root script execution configuration page](images/root-script-execution-configuration-page.png)
-
-11. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
-
-  ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png)
-
-  ![Summary page](images/summary-page.png)
-
-12. On the **Summary** page, save the response file.
-
-  a) Click **Save Response File**. The **Save Response File** dialog box is displayed.
-
-  b) Browse to and select the `/tmp` directory.
-
-  c) Leave **db.rsp** as the name, and click **Save**.
-
-13. Click **Install** to begin installing the software.
-
-14. On the **Install Product** page, monitor the progress of the steps being executed.
-
-  ![Install Product page](images/install-product-page.png)
-
-15. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes between 15 to 20 minutes to complete.
-
-  ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png)
-
-16. On the **Finish** page, click **Close**. The installation is finished.
-
-    ![Finish page](images/finish-page.png)
-
-
-
-## **STEP 2**: Review the response file
-
-You can continue to use your PuTTY connection for this step.
-
-1. Change to the `/tmp` directory where you saved the response file.
-
-    ```nohighlighting
     $ <copy>cd /tmp</copy>
     ```
 2. Review the response file (`db.rsp`).
 
-    ```nohighlighting
+    ```
     $ <copy>cat db.rsp</copy>
 
     ####################################################################
@@ -181,86 +166,75 @@ You can continue to use your PuTTY connection for this step.
     ## or db administrator who owns this installation.                ##
     ##                                                                ##
     ####################################################################
-
     ...
     ```
 
 
 
 
-## **STEP 3**: Discover the container database (CDB) and pluggable database (PDB)
+## Task 3: Discover the container database (CDB) and pluggable database (PDB)
 
-1. Set the Oracle environment variables. You need to set these each time you open a new terminal window and want to access your database.
+1. Set the Oracle environment variables. At the prompt, enter **orcl**. You need to set these each time you open a new terminal window and want to access your database.
 
-  For the `ORACLE_SID` value, enter `ORCL` (in uppercase).
-
-    ```nohighlighting
+    ```
     $ <copy>. oraenv</copy>
 
-    ORACLE_SID = [oracle] ? ORCL
+    ORACLE_SID = [oracle] ? orcl
     The Oracle base has been set to /u01/app/oracle
     $
     ```
 
-2. View the environment variables set by the `. oraenv` command that you just ran.
+2. View the Oracle environment variables set by the `. oraenv` command that you just ran.
 
-    ```nohighlighting
+    ```
     $ <copy>set | grep ORACLE</copy>
 
     OLD_ORACLE_BASE=
     ORACLE_BASE=/u01/app/oracle
     ORACLE_HOME=/u01/app/oracle/product/19c/dbhome_1
-    ORACLE_SID=ORCL
+    ORACLE_SID=orcl
     $
     ```
 
 
-3. Using SQL\*Plus, connect to the `root` container of your database. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
+3. Using SQL\*Plus, connect to the `root` container of your database as the `SYS` user. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation. Notice the database version in the output. In the example below, the version is 19.12.0.0.0.
 
-    ```nohighlighting
+    ```
     $ <copy>sqlplus / as sysdba</copy>
 
-    SQL*Plus: Release 19.0.0.0.0 - Production on Sun May 2 14:58:59 2021
-    Version 19.11.0.0.0
+    SQL*Plus: Release 19.0.0.0.0 - Production on Thu Aug 19 16:55:34 2021
+    Version 19.12.0.0.0
 
-    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
     Connected to:
     Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.11.0.0.0
+    Version 19.12.0.0.0
 
     SQL>
     ```
 
-4. Check the version of the database.
+4. Verify that you are logged in to the `root` container as the `SYS` user.
 
-    ```nohighlighting
-    SQL> <copy>SELECT * FROM v$version;</copy>
     ```
-
-5. Verify that you are logged in to the `root` container as the `SYS` user.
-
-    ```nohighlighting
     SQL> <copy>SHOW user</copy>
 
     USER is "SYS"
-    SQL>
     ```
 
-6. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
+5. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
 
-    ```nohighlighting
+    ```
     SQL> <copy>SHOW con_name</copy>
 
     CON_NAME
     -------------------
     CDB$ROOT
-    SQL>
     ```
 
-7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`PDB1`).
+6. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The output lists three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
 
-    ```nohighlighting
+    ```
     SQL> <copy>COLUMN name FORMAT A8</copy>
     SQL> <copy>SELECT name, con_id FROM v$containers ORDER BY con_id;</copy>
 
@@ -268,22 +242,24 @@ You can continue to use your PuTTY connection for this step.
     -------- ----------
     CDB$ROOT          1
     PDB$SEED          2
-    PDB1              3
-    SQL>
+    ORCLPDB           3
     ```
 
 
-8. Exit SQL*Plus.
+7. Exit SQL*Plus.
 
-    ```nohighlighting
-    SQL> <copy>EXIT</copy>
-
-    $
+    ```
+    SQL> <copy>exit</copy>
     ```
 
-Congratulations! You have a fully functional Oracle Database 19c instance running on a compute instance in Oracle Cloud Infrastructure.
+8. Close the terminal window.
 
-You may now [proceed to the next lab](#next).
+    ```
+    $ <copy>exit</copy>
+    ```
+
+Congratulations! You successfully installed Oracle Database 19c using the automatic root script execution feature.
+
 
 
 ## Learn More
@@ -294,8 +270,9 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Technical Contributors**
-    - James Spiller, Principal User Assistance Developer, Database Development
+- **Contributors**
+    - James Spiller, Consulting User Assistance Developer, Database Development
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
-- **Last Updated By/Date** - Jody Glover, Database team, April 22 2021
+    - Rene Fontcha, Master Principal Solutions Architect
+- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021

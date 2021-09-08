@@ -5,6 +5,11 @@
 This lab walks you through the use and functioning of Application Continuity.
 
 Estimated Lab Time: 60 Minutes
+
+Watch the video below for an overview of the Application Continuity lab
+[](youtube:KkwxbwII3O4)
+
+
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
@@ -12,7 +17,7 @@ Estimated Lab Time: 60 Minutes
 - Lab: Services
 
 
-## **STEP 1:**  Install Sample Program and configure services
+## Task 1:  Install Sample Program and configure services
 
 1.  If you aren't already logged in to one of your cluster nodes, connect to a node using either Putty or MAC or Windows CYGWIN Emulator
 
@@ -71,7 +76,7 @@ Estimated Lab Time: 60 Minutes
     chmod +x kill_session.sh
     </copy>
     ````
-## **STEP 2:**  Examine Service Attributes and Program Settings
+## Task 2:  Examine Service Attributes and Program Settings
 
 Application Continuity (whether AC or TAC) is enabled by setting attributes on the database service. For JDBC applications the Replay Driver also has to be used.
 
@@ -137,7 +142,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
       build.xml                     <--- A buildfile for ANT (ANT not installed on these systems)
     ````
 
-## **STEP 3:**  NO Replay
+## Task 3:  NO Replay
 
 1. Run the sample program with NO REPLAY enabled
 
@@ -162,6 +167,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     <copy>
     srvctl status service -d `srvctl config database` -s noac
+    </copy>
     ````    
 
     This will return an instance name, for example:
@@ -223,7 +229,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     ![](./images/noreplay_errors_2.png " ")  
 
-## **STEP 4:**  Application Continuity
+## Task 4:  Application Continuity
 
 1.  Examine the ac_replay.properties file to see that we are using a replay datasource *oracle.jdbc.replay.OracleDataSourceImpl* and we have enabled FAN, *fastConnectionFailover=TRUE* and connection tests *validateConnectionOnBorrow=TRUE*. The URL uses the recommended format and connects to the service you created previously, which has AC attributes set.
 
@@ -285,7 +291,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     You should notice that there is a response time increase as services are failed over and connections re-established. But no errors.
 
-## **STEP 5:**  Transparent Application Continuity
+## Task 5:  Transparent Application Continuity
 
 1.  Examine the tac_replay.properties file to see that we are using a replay datasource *oracle.jdbc.replay.OracleDataSourceImpl* and we have enabled FAN, *fastConnectionFailover=TRUE* and connection tests *validateConnectionOnBorrow=TRUE*. The URL uses the recommended format and connects to the service you created previously, which has AC attributes set.
 
@@ -483,20 +489,25 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 JNI ERROR
 
-    ![](./images/Issue1_java_mismatch.png  " ")
+    ![](./images/issue1_java_mismatch.png  " ")
 
 #### Fix for Issue #1
 1.  Recompile and re-package ACDemo with the installed JDK
     ````
-    cd /home/oracle/acdemo/src/acdemo
-    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java
-    mv *.class ../classes/acdemo
-    cd ../classes
-    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF
-    mv acdemo.jar ../lib
+    cd /home/oracle/acdemo/src/acdemo  
+
+    $ORACLE_HOME/jdk/bin/javac  -classpath ../../lib/ucp-19.10.0.0.jar:../../lib/ojdbc8-19.10.0.0.jar:../../lib/ons-19.10.0.0.jar:../../lib/oraclepki-19.10.0.0.jar:../..//lib/osdt_cert-19.10.0.0.jar:../../lib/osdt_core-19.10.0.0.jar:.  ACDemo.java Worker.java PrintStatThread.java  
+
+    mv *.class ../classes/acdemo  
+
+    cd ../classes  
+
+    $ORACLE_HOME/jdk/bin/jar -cvf acdemo.jar acdemo ../MANIFEST.MF  
+
+    mv acdemo.jar ../lib  
     ````
 ### Issue 2 Instance not restarting
-    ![](./images/InstanceDown_error.png  " ")
+    ![](./images/instance_down_error.png  " ")
 
 #### Fix for Issue #2
 1. After crashing an instance a number of times (in a short period), it may not automatically restart. If you notice an instance down, manually restart it (this can lead to application timeouts on failover, as the instance may not start before the application abandons connection attempts)

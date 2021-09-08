@@ -1,4 +1,4 @@
-# OPTIONAL - Publish Custom Image to OCI Marketplace
+# Publish Custom Image to OCI Marketplace
 
 ## Introduction
 This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.
@@ -11,7 +11,7 @@ This lab will show you how to create an OCI marketplace compute based artifact f
 This lab assumes you have completed:
 - Lab: 7-labs-create-custom-image-for-marketplace
 
-## **STEP 1**: Create Marketplace Artifacts   
+## Task 1: Create Marketplace Artifacts   
 At this point, it's assumed that the test instance created in the previous lab has been successfully validated and can be submitted to OCI marketplace. This also assume that you have the required access for OCI Partner Portal. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI Marketplace Partner Portal, then navigate to *"Compute > Instances"*
@@ -54,7 +54,7 @@ At this point, it's assumed that the test instance created in the previous lab h
 
     ![](./images/create-artifact-6.png " ")
 
-## **STEP 2**: Create Marketplace Listing   
+## Task 2: Create Marketplace Listing   
 1. Click on the 2nd icon on the top left to access the Listings section
 
     ![](./images/create-listing-1.png " ")
@@ -147,4 +147,3 @@ At this point, it's assumed that the test instance created in the previous lab h
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
 * **Contributors** - - -
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
-

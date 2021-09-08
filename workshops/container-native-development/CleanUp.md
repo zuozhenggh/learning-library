@@ -31,7 +31,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Clean up Oracle Cloud Account
 
-### **STEP 1**: Destroy all Oracle Cloud Infrastructure
+### Task 1: Destroy all Oracle Cloud Infrastructure
 
 - First we need to delete any load balancers created by Kubernetes outside of the Terraform infrastructure we provisioned. From a **terminal window** where you have the `KUBECONFIG` environment variable correctly set, run the following command:
 
@@ -51,36 +51,36 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Clean up Locally Installed Software
 
-### **STEP 2**: Remove Fn
+### Task 2: Remove Fn
 
   `rm /usr/local/bin/fn`
 
-### **STEP 3**: Remove Helm and the fn-helm Installer
+### Task 3: Remove Helm and the fn-helm Installer
 
   `cd ~/Downloads/helm/*/fn-helm && ../helm delete --purge my-release`
   `rm -rf ~/Downloads/helm`
 
-### **STEP 5**: Remove terraform-kubernetes-installer
+### Task 5: Remove terraform-kubernetes-installer
 
   **NOTE**: Do not remove this directory until you have successfully destroyed your infrastructure following the instructions in **STEP 1**. Terraform will not be able to automate the destruction of your infrastructure once you delete this directory.
 
   `rm -rf ~/terraform-kubernetes-installer`
 
-### **STEP 6**: Remove Terraform
+### Task 6: Remove Terraform
 
   `rm /usr/local/bin/terraform`
 
-### **STEP 7**: Remove OCI API Keys
+### Task 7: Remove OCI API Keys
 
   **NOTE**: Do not remove this directory until you have successfully destroyed your infrastructure following the instructions in **STEP 1**. Terraform will not be able to automate the destruction of your infrastructure once you delete this directory.
 
   `rm -rf ~/.oci`
 
-### **STEP 8**: Remove image-resize Function
+### Task 8: Remove image-resize Function
 
   `rm -rf ~/image-resize`
 
-### **STEP 9**: Uninstall Docker
+### Task 9: Uninstall Docker
 
   **MacOS**: `/Applications/Docker.app/Contents/MacOS/Docker --uninstall`
   **Linux**:

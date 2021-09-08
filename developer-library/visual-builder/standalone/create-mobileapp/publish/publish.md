@@ -10,7 +10,7 @@ This lab shows you how to publish a mobile application.
 
 After you successfully test the staged application, you can publish it and make the application live. Users who have the proper credentials can view the live application. You can’t make changes to an application once it's published. Instead, you must create and edit a new version.
 
-## **STEP 1**: Enable Build Configurations for Release
+## Task 1: Enable Build Configurations for Release
 
 If you built the mobile app for installation on Android and iOS devices, you'll need to release the build configuration before you can publish the app. If you built the mobile app only as a PWA, jump to step 2.
 
@@ -23,7 +23,7 @@ If you built the mobile app for installation on Android and iOS devices, you'll 
 
     **Note:** Remember that  for demonstration purposes, we're using the same builds for development and production. When defining your build configurations for a mobile application, make sure you create different builds for the different environments.  
 
-## **STEP 2**: Publish the Application
+## Task 2: Publish the Application
 
 1.  Click **Oracle Visual Builder** to return to the Visual Applications page:
 
@@ -44,6 +44,6 @@ If you built the mobile app for installation on Android and iOS devices, you'll 
 
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, April 2021

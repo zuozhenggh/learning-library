@@ -4,7 +4,7 @@
 
 This lab will show you how to setup a compute instance running a pre-configured Compute and the corresponding Virtual Cloud Network (VCN).
 
-Estimated Lab Time:  25 minutes
+Estimated Time:  25 minutes
 
 Quick walk through on how to set up your compute instance.
 
@@ -27,37 +27,40 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **STEP 1**: Setup Stack
+## Task 1: Setup Stack
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment.  
-    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/R_vJuMUIrsFofKYcTuJOsDiXl2xdSjHNQU7yjQPtnh4/n/c4u03/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
+    - [livelabs-db19ccompute-0812.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iO4PFcWBTMu5tTmocKSYw2zFv-ruHik0VGQSRTdr80A1So8UTWGf7Ggl02f4UKuN/n/c4u04/b/labfiles/o/livelabs-db19ccompute-0812.zip) - Packaged terraform instance creation script for creating instance running the 19c Oracle Database
 2.  Save in your downloads folder.
 3.  Login to your Oracle Cloud account.
 4.  Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
-5.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
+5. Click **Create Stack**.
+    ![](./images/create-stack.png " ")
+
+6.  Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the zip file (livelabs-db19ccompute-0812.zip) that you downloaded. Click **Select**.
 
    ![](./images/zip-file.png " ")
 
-6. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
+7. Enter the name of your choice.  We suggest livelabs19c.  Click **Next**.
    ![Create a stack](images/workshop-001.png " ")
-7. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
+8. Accept the region and select your compartment.  Select an **availability domain** from the drop down.
    ![Create a stack](images/workshop-002.png " ")
-8. Paste the SSH key you created in the previous lab.
+9. Paste the SSH key you created in the previous lab.
    ![Create a stack](images/workshop-003.png " ")
-9. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
+10. Scroll down and select the **VMStandard.E2.4**.  *Note: Make sure you select the 2.4 version.  It has enough memory to run the database 19c binaries*
     ![Create a stack](images/workshop-004.png " ")
-10. Accept the network and click **Next**.
+11. Accept the network and click **Next**.
     ![Create a stack](images/workshop-005.png " ")
-11. Review the details and click **Create**.
+12. Review the details and click **Create**.
     ![Create a stack](images/workshop-006.png " ")
 
-## **STEP 2**: Run Stack Apply Job
+## Task 2: Run Stack Apply Job
 
-1. Click the **Terraform Actions** drop down. Select **Apply**
+1. Select **Apply**
     ![Create a stack](images/workshop-007.png " ")
 2. Select **Apply**
     ![Create a stack](images/workshop-008.png " ")
@@ -65,10 +68,11 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     ![Create a stack](images/workshop-009.png " ")
 4. Inspect the log, you will notice that 8 resources were created including the compute instance.
    ![Create a stack](images/workshop-010.png " ")
+   ![Create a stack](images/workshop-11.png " ")
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
-## **STEP 3**: Gather compute instance details
+## Task 3: Gather compute instance details
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
@@ -77,7 +81,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
     
     ![Create a stack](images/workshop-012.png " ")
 
-## **STEP 4**: Connect to your instance
+## Task 4: Connect to your instance
 
 There are multiple ways to connect to your cloud instance.  Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
@@ -92,7 +96,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
     ![](./images/cloudshell.png " ")
 
 2.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-3.  On the instance homepage, find the Public IP addresss for your instance.
+3.  On the instance homepage, find the Public IP address for your instance.
 
     ![](./images/db19c-freetier-step5-1.png " ")
 4.  Enter the command below to login to your instance.    
@@ -111,7 +115,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP addresss for your instance.
+2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -159,7 +163,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
-## **STEP 5**: Verify the ORCL database is up
+## Task 5: Verify the ORCL database is up
 
 Once you deploy your compute instance, tail the log to determine when the database has been configured and is available for use.
 1.  From your connected session of choice **tail** the last 10 lines of the **dbsingle.log** file.  This file configures the database.  
@@ -170,12 +174,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/workshop-014.png " ")
 
-2.  After *approximately 20 minutes*, you will see a notice that says the database setup is complete.  Please see troubleshooting tips if you have issues here.
-
-    ![](./images/build-complete.png " ")
 *Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
-3. Run the following command to verify the database with the SID **ORCL** is up and running
+2. Run the following command to verify the database with the SID **ORCL** is up and running
 
     ````
     <copy>
@@ -184,7 +185,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/pseforcl.png " ")
 
-4. Verify the listener is running
+3. Verify the listener is running
     ````
     <copy>
     ps -ef | grep tns
@@ -193,7 +194,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/pseftns.png " ")
 
-5. Switch to the oracle user.
+4. Switch to the oracle user.
       ````
     <copy>
     sudo su - oracle
@@ -202,7 +203,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
 
     ![](./images/sudo-oracle.png " ")
 
-6.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+5.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
     ````
     <copy>
     . oraenv
@@ -211,7 +212,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
     ![](./images/oraenv.png " ")
 
-7.  Login using SQL*Plus as the **oracle** user.  
+6.  Login using SQL*Plus as the **oracle** user.  
 
     ````
     <copy>
@@ -333,7 +334,7 @@ Reload your browser
 
 
 ## Acknowledgements
-- **Author** - Kay Malcolm, Senior Director, DB Product Management
+- **Author** - LiveLabs Team, Senior Director, DB Product Management
 - **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021
+- **Last Updated By/Date** - Kamryn Vinson, June 2021
 

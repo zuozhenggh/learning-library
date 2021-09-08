@@ -19,9 +19,7 @@ Learn how to
 
 - Previous labs of this workshop. That is, the graph has been created and you are logged into Graph Studio. 
 
-**Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
-
-## **STEP 1**: Verify that `BANK_GRAPH` is loaded into memory  
+## Task 1: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` has been loaded into memory. Click the `Graphs` menu icon 
    ![](images/radar-chart.svg " ")
@@ -31,7 +29,7 @@ Learn how to
 
    ![](images/load-bank-graph-into-memory.png " ")
 
-## **Step 2a**: Alternate and optional step. Import the notebook
+## Task 2a: Alternate and optional step. Import the notebook
 
 The instructions below show you how to create each notebook paragraph, execute it, and modify default visualization settings as needed.  
 If you prefer you can simply **import** the notebook and then execite each paragraph in sequence.   
@@ -40,7 +38,7 @@ If you prefer you can simply **import** the notebook and then execite each parag
    Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.  
    Note where it is downloaded. 
 
-   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/dN9WXYJWoyjV89xlRm-ARrhQi7GOwzHu0nt7NjAn6eN6RTEHKT5bt67HyxjRUIyx/n/c4u03/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
+   `https://objectstorage.us-ashburn-1.oraclecloud.com/p/t51ZRZZCaEDUD9dehr6legEN9nKGpZGVgtzHZPnBhl0RistNzBJnck_fQCSTQr_h/n/c4u04/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb`
 
 
 2. Click on the `Notebooks` menu icon and then on the Import Notebook icon on the top right.  
@@ -58,7 +56,7 @@ If you prefer you can simply **import** the notebook and then execite each parag
 
    You can execute the paragraphs in sequence and modify visualizations settings as described in **Step 3** of this lab.  
    
-## **Step 2**: Create a notebook
+## Task 2: Create a notebook
 1. Click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
 Name it `Learn/BankGraph: Find Circular Payments`.  
 
@@ -105,7 +103,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
  
 
-## **STEP 3**: Query the `BANK_GRAPH` and visualize the results 
+## Task 3: Query the `BANK_GRAPH` and visualize the results 
 
 1. Copy and paste the following text into this new paragraph.  
 	```
@@ -405,7 +403,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	</copy>
 	```
 
-	![](images/56-compare-top-ten.png " ")
+	![](images/56-md-compare-top-ten.png " ")
 
 18. Then add a paragraph to show the top ten accounts by PageRank.  
  
@@ -509,5 +507,5 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
 * **Last Updated By/Date** - Jayant Sharma, May 2021
-* **Lab Expiry Date** - May 2022
+* **Lab Expiry Date** - May 31, 2022
   

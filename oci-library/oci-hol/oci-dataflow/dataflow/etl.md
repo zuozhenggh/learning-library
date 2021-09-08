@@ -23,7 +23,7 @@ The data is provided in CSV format and your first step is to convert this data t
 * Basic understanding of Java
 
 
-## **STEP 1**: Create Java Application
+## Task 1: Create Java Application
 
 1. Navigate to the Data Flow service in the Console by expanding the hamburger menu on the top left and scrolling to the bottom
 
@@ -82,13 +82,15 @@ The data is provided in CSV format and your first step is to convert this data t
     At this stage your application Configuration should look like this :
     ![](../images/step2_add_args_java_app.png " ")
 
+
   *Note: The output path should point to your bucket in the tenancy*
+
 
 7. When done, click **Create**. When the Application is created, you see it in the Application list.
 
    ![](../images/step1_created_java_app.png " ")
 
-## **STEP 2**: Run the Data Flow Java Application
+## Task 2: Run the Data Flow Java Application
 
 1. Highlight your Application in the list, click the **Actions** icon, and click **Run**
 

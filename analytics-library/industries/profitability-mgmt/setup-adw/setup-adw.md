@@ -28,7 +28,7 @@ In this lab, you will:
   
 * Upload the Data in Tables using the Oracle SQL Developer web.  Download the [Data file](files/starter-file.sql) SQL code.
 
-## **STEP 1**: Provisioning Oracle Autonomous Database
+## Task 1: Provisioning Oracle Autonomous Database
 
 1. On the Dashboard Home page, click either the Create a data warehouse instance area:
 ![Image alt text](images/ADW1.JPG "Image title")
@@ -77,7 +77,7 @@ Also tick the License Included Subscribe to new Oracle Database software license
 ![Image alt text](images/ADW11.JPG "Image title")
 ![Image alt text](images/ADW12.JPG "Image title")
 
-## **STEP 2:** Connect to Autonomous Database using SQL Developer
+## Task 2: Connect to Autonomous Database using SQL Developer
 
 1. The first step in accessing the credentials is to log in to the Service Console associated to your ADW instance. To do that, click on the Service Console button in the OACDEMO3 overview.
 ![Image alt text](images/ADW13.JPG "Image title")
@@ -122,7 +122,7 @@ Note: If you are behind a Proxy, please also fill in the details within the Prox
 8. If the test is successful Save the connection and afterwards click Connect to access the database. 
 We have now connected to our database. The next step will be to load data into the ADWC instance by also using the Oracle SQL Developer tool.
 
-## **STEP 3:** Import Data Files into the Autonomous Database
+## Task 3: Import Data Files into the Autonomous Database
 
 1. Import the Data Files in Tables using the Oracle SQL Developer. Download the Data Files
    [Financial Data file](files/Financial.xlsx),

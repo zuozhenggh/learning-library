@@ -12,7 +12,7 @@ After you define build configurations that define deployment information for the
 
 In this lab, you'll rebuild the mobile application to generate QR codes and installation files for both the Android and iOS platforms. The steps to build a mobile application for installation on any one platform (either Android or iOS) are identical, except that a QR code and an installation file are only generated for the specified platform.
 
-## **STEP 1**: Build a Mobile Application
+## Task 1: Build a Mobile Application
 
 After you create the build configuration for both Android and iOS, you can generate QR codes and build the installation files (APK for an Android device and IPA for an iOS device) to install the mobile application on those devices.   
 
@@ -39,6 +39,6 @@ After you create the build configuration for both Android and iOS, you can gener
 7. Try out the app on the device to test its functionality. When you are done, close the app. Remember to also close the preview tab or window.
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - April 2021
+* **Last Updated By/Date** - Sheryl Manoharan, April 2021

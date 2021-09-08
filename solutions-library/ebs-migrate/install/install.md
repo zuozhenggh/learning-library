@@ -21,7 +21,7 @@ In this lab, you will:
 
 * `MOS_Email_Address` (typically your tenancy admin user)
 
-## **STEP 1:** Install the Oracle E-Business Suite Cloud Backup Module
+## Task 1: Install the Oracle E-Business Suite Cloud Backup Module
 
 This section describes how to install the Oracle E-Business Suite Cloud Backup Module on the Linux server that you have chosen to use as the backup module server, which can be located either on-premises or in OCI Compute. It can be one of the Oracle E-Business Suite nodes or another server that resides in your intranet. The backup module server must have at least 500 MB of free space and must have the wget libraries installed.
 
@@ -99,6 +99,6 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

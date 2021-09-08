@@ -12,7 +12,7 @@ The following is intended to outline our general product direction. It is intend
 - Web Browser
 - SQL Developer 19.1 or higher
 
-## Step 1: Login to Oracle Cloud ##
+## Task 1: Login to Oracle Cloud ##
 
 ​	1. From your browser login into Oracle Cloud
 
@@ -24,7 +24,7 @@ Always ensure you are in your correct Region and Compartment.
 
 If this is an instructor-led lab we are sharing the same tenancy account with multiple students, please create a unique name for your OCI resources that you can identify with. Ie: Use your name or other identifier unique to you to name your cloud resources.
 
-## Step 2: Provision ATP ##
+## Task 2: Provision ATP ##
 
 Provision the Autonomous Transaction Processing database (ATP) with the steps below.
 
@@ -98,7 +98,7 @@ You can check the status of the provisioning in the Work Request.
 
 ![](./images/provision-atp-9.png)
 
-## Step 3: Download the Wallet
+## Task 3: Download the Wallet
 
 Once your ATP service is running we can connect a client to ATP securely with the Oracle Wallet.
 
@@ -124,7 +124,7 @@ Once your ATP service is running we can connect a client to ATP securely with th
 
 
 
-## Step 4: Connect to ATP using SQL Developer
+## Task 4: Connect to ATP using SQL Developer
 
 In this lab section you will connect to the ATP with Oracle SQL Developer and browse the ATP configuration. SQL Developer is an Oracle DBA and developer client tool.
 

@@ -4,7 +4,7 @@
 
 In this lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
 
-Estimated time: ~25-minutes.
+Estimated time: 25-minutes
 
 ### Understand the Java backend application
 
@@ -40,7 +40,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 - This tutorial requires the completion of the **Setup Dev Environment** tutorial  and the provision of the Orace Cloud Infrastructure (OCI) components.
 
 
-## **Task 1**: Set Values for Workshop Environment Variables
+## Task 1: Set values for workshop environment variables
 
 1. Set the root directory of the workshop.
 	```bash
@@ -54,7 +54,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 	<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
 	```
 
-## **Task 2**: Build and Push the Docker Image to the OCI Registry
+## Task 2: Build and push the Docker images to the OCI Registry
 
 1. Ensure that the "DOCKER_REGISTRY" variable is set
 
@@ -64,9 +64,9 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 2. Make sure to be in backend/target/classes/wallet directory and then execute
 	
-   ```bash
-	<copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
-	```
+      ```
+	   <copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+	   ```
 
 3. Select the mtdrb_tp service alias (see the list of aliases in
    ./backend/target/classes/wallet/tnsnames.ora)
@@ -97,13 +97,16 @@ The backend is implemented using the following Java classes (under ./backend/src
 8. Check your container registry from the root compartment
         Go to the Oracle Cloud Console, click the navigation menu in the top-left corner and open **Developer Services** then  **Container Registry**.
 
-   ![registry root](images/Registry-root-compart.png " ")
+    ![dev services reg](images/21-dev-services-registry.png " ")
+
+   ![registry root comp](images/Registry-root-compart.png " ")
 
 9. Mark **Access** as **Public**  (if **Private**)  
    9.1 From the Actions drop-down list, select **Actions** and **Change to Public**.
 
-    ![public access](images/Public-access.png " ")
-## **STEP 3**: Deploy in Kubernetes and Check the Status
+   ![public access](images/Public-access.png " ")
+
+## Task 3: Deploy on Kubernetes and Check the Status
 
 1. Run the `deploy.sh` script
 
@@ -111,9 +114,9 @@ The backend is implemented using the following Java classes (under ./backend/src
 	<copy>cd $MTDRWORKSHOP_LOCATION/backend; ./deploy.sh</copy>
 	```
 
-	**service/todolistapp-helidon-se-service created**
-	
-	**deployment.apps/todolistapp-helidon-se-deployment**
+   ![deploy -sh](images/deploy-sh.png " ")
+
+2. Check the status using the following commands:
 
 2. Check the status using the following command; it returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API
     **$ kubectl get services**
@@ -139,7 +142,7 @@ The backend is implemented using the following Java classes (under ./backend/src
   Returns
   http://130.61.66.27/todolist
 
-## **Task 4**: UnDeploy (optional)
+## Task 4: UnDeploy (optional)
 
   If you make changes to the image then you need to delete the service and the pods by running undeploy.sh then redo the following steps: **Build and Push the Docker Image to the OCI Registry** and **Deploy in Kubernetes and Check the Status**.
 
@@ -147,29 +150,38 @@ The backend is implemented using the following Java classes (under ./backend/src
 	```bash
 		<copy>cd $MTDRWORKSHOP_LOCATION/backend; ./undeploy.sh</copy>
 	```
-2. Rebuild the image and deploy and reconfigure the API Gateway
+
+   ![deploy-sh](images/deploy-sh.png " ")
+
+2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 
-## **Task 5**: Configure the API Gateway
+## Task 5: Configure the API Gateway
 
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics, and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the navigation  menu navigate to **Developer Services**, select **API Management**, and then select **Create Gateway**.
+1. From the hamburger menu navigate to **Developer Services** > **Gateways**
+   ![gateway](images/gateways.png " ")
 
-    ![api gateway menu](images/API-Gateway-menu.png " ")
+2. Select **Create Gateway**
+   ![click create gateway](images/click-create-gateway.png " ")
 
-2. Configure the basic info: name, compartment, VCN and subnet
-    - VCN: select one of the virtual circuit networks
-    - Subnet: select the public subnet   
+2. Configure the basic info: name, compartment, VCN and Subnet
+    - VCN: pick one of the virtual circuit networks
+    - Subnet pick the public subnet   
+	
+	Then click "Create".
+   ![create gateway](images/create-gateway.png " ")
 
-	2.1 **click "Create"**.
-   
-    ![basic gateway](images/Basic-gateway.png " ")
+3. The todolist gateway was successfully created.
+    ![gateway](images/gateway.png " ")
 
-3. Click **Todolist**. 
+4. Click on Deployments
+   ![deployment-menu](images/deployment-menu.png " ")
 
-    ![gateway](images/Gateway.png " ")
+5. Click **Create Deployment**
+   ![deployment](images/deployment.png " ")
 
 4. Click **Deployments**
 
@@ -197,14 +209,10 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
     - /todolist/{id} for the remaining three APIs: GET, PUT, DELETE
 
-    ![route 2](images/Route-2.png " ")
+## Task 6: Testing the backend application through the API Gateway
 
-
-## **Task 6**: Test the Backend Application through the API Gateway
-
-1. Navigate to the newly created **Gateway Deployment Detail** and copy the endpoint.
-
-   ![](images/Gateway-endpoint.png " ")
+1. Navigate to the newly created Gateway Deployment Detail and copy the endpoint
+   ![gateway endpoint](images/gateway-endpoint.png " ")
 
 2. Testing through the **API Gateway endpoint**.
    Postfix the gateway endpoint with "/todolist" as shown in the following screen shot.
@@ -219,4 +227,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Anoosha Pilli, Database Product Management,  April 2021
+* **Last Updated By/Date** - Kamryn Vinson, July 2021

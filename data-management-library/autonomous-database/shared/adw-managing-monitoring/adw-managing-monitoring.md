@@ -1,4 +1,4 @@
-# Monitoring Your Autonomous Database Instance using the Cloud Console
+# Monitor Your Autonomous Database Instance using the Cloud Console
 
 ## Introduction
 
@@ -14,17 +14,12 @@ This lab covers using the Database Service Console, OCI Monitoring Console, and 
 
 The ADW or ATP Service Console provides dashboards to monitor the real-time and historical CPU and storage utilization, as well as database activity, like the number of running or queued statements. It also provides Real-Time SQL Monitoring to look at current and past long-running SQL statements in your instance and allows you to cancel long-running queries or set thresholds for ADW or ATP to automatically cancel them for you.
 
-
-### Prerequisites
-
-This lab assumes you have completed the preceding labs shown in the Contents menu on the right.
-
 ### Video Preview
 Watch a video demonstration of monitoring an autonomous database in the Autonomous Data Warehouse cloud service.
 
 [](youtube:Imxl2JiYicQ)
 
-## **STEP 1**: Navigate to the Service Console
+## Task 1: Navigate to the Service Console
 
 The first facility that we will look at for monitoring your autonomous database is the Database Service Console.
 
@@ -36,16 +31,16 @@ The first facility that we will look at for monitoring your autonomous database 
 
 2. In your ADW Finance Mart **Database Details** page, click the **Service Console** button.
 
-    ![](images/click-service-console.jpg " ")
+    ![](images/click-service-console.png " ")
 
-## **STEP 2**: Examine the Console Overview Page
+## Task 2: Examine the Console Overview Page
 The **Overview** and **Activity** tabs show real-time and historical information about the service's utilization. The Service Console opens on the Overview tab by default.
 
 1. Examine the components of the Overview page: Storage used, CPU utilization, Running SQL statements, Number of OCPUs allocated, SQL statement response times.
 
     ![](images/examine-console-overview-page.jpg " ")
 
-## **STEP 3**: Examine the Console Activity Page
+## Task 3: Examine the Console Activity Page
 
 1. To access detailed information about the service's performance, click the **Activity** tab in the Service Console.
 
@@ -63,7 +58,7 @@ The **Overview** and **Activity** tabs show real-time and historical information
 
     ![](images/calendar-and-time-slider.jpg " ")
 
-## **STEP 4**: Monitor SQL Statements
+## Task 4: Monitor SQL Statements
 
 1. Click the **Monitored SQL** tab to see information about current and past monitored SQL statements.
 
@@ -79,25 +74,25 @@ The **Overview** and **Activity** tabs show real-time and historical information
 
     ![](images/metrics-tab-of-details-pop-up.jpg " ")
 
-## **STEP 5**: Examine the OCI Monitoring Console
+## Task 5: Examine the OCI Monitoring Console
 
 Another facility for monitoring your autonomous database is the OCI Monitoring Console.
 
 1. Go back to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![](images/click-navigation-menu.jpg " ")
+    ![](images/click-navigation-menu.png " ")
 
-2. Scroll down the navigation menu. Under **Solutions and Platform**, click **Monitoring**. Click **Service Metrics**.
+2. Scroll down the navigation menu. Click **Observability & Management**, click **Service Metrics**.
 
-    ![](images/click-service-metrics.jpg " ")
+    ![](images/click-service-metrics.png " ")
 
 3. Choose a **Compartment** that you have permission to work in. Choose a **Metric Namespace** in the drop-down menu to the right of the compartment. If you're not sure which compartment and namespace to use, contact an administrator. Click the **edit** symbol next to **Dimensions**.
 
-    ![](images/click-edit-dimensions-icon.jpg " ")
+    ![](images/click-edit-dimensions-icon.png " ")
 
 4. In the **Edit dimensions** pop-up dialog, select a **Deployment Type**. Click **Done**.
 
-    ![](images/select-a-deployment-type.jpg " ")
+    ![](images/select-a-deployment-type.png " ")
 
 5. The page updates to display only the resources in that compartment and namespace. Scroll down this very long page. It shows the following metrics:
     -   CPU Utilization
@@ -122,12 +117,12 @@ Another facility for monitoring your autonomous database is the OCI Monitoring C
 
     ![](images/metrics-explorer-alarms-health-checks.jpg " ")
 
-## **STEP 6**: View Performance Data from the Performance Hub
+## Task 6: View Performance Data from the Performance Hub
 You can view real-time and historical performance data from the Performance Hub. Performance Hub shows information about Active Session History (ASH) analytics, SQL monitoring, and workload.
 
 1. In your ADW Finance Mart **Database Details** page, click **Performance Hub**.
 
-    ![](images/click-performance-hub.jpg " ")
+    ![](images/click-performance-hub.png " ")
 
 2. The Performance Hub page is displayed. This page has the following sections:
     -   The time selector.
@@ -170,4 +165,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 ## **Acknowledgements**
 
 - **Author** - Richard Green, DB Docs Team
-- **Last Updated By/Date** - Richard Green, April 2021
+- **Last Updated By/Date** - Kamryn Vinson, May 2021

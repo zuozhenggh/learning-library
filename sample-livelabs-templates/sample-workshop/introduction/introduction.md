@@ -2,12 +2,9 @@
 
 ## About this Workshop
 
-This introduction covers the complete "parent" workshop. The objectives are written to cover all of the labs included in the workshop.
+This introduction covers the complete "parent" workshop. Use this text to set up the story for the workshop. Be engaging - what will the learner get from spending their time on this workshop?
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
-
-### About Product/Technology
-Enter background information here....
+Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
 
 *You may add an option video, using this format: [](youtube:YouTube video id)*
 
@@ -15,31 +12,25 @@ Enter background information here....
 
 ### Objectives
 
-*List objectives for the lab - if this is the intro lab, list objectives for the workshop, for example:*
+*List objectives for the workshop*
 
-In this lab, you will:
+In this workshop, you will learn how to:
 * Provision
 * Setup
-* Data Load
+* Load
 * Query
-* Analyze
-* Visualize
 
-### Prerequisites
+### Prerequisites (Optional)
 
-*Use this section to describe any prerequisites, including Oracle Cloud accounts, set up requirements, etc.*
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
 
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* Item no 2 with url - [URL Text](https://www.oracle.com).
-
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
 
 *This is the "fold" - below items are collapsed by default*
 
 In general, the Introduction does not have Steps.
-
-*At the conclusion of the lab add this statement: Note how you can link to whatever lab follows by using #next as the target*
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 
@@ -51,7 +42,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
-
-
+* **Last Updated By/Date** - <Name, Month Year>

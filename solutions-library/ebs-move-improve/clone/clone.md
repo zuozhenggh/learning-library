@@ -18,7 +18,7 @@ Watch this short video to preview how to clone Oracle E-Business Suite using clo
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
 
-## **STEP 1:** Access the Clone Environment Page
+## Task 1: Access the Clone Environment Page
 
 1. Navigate to the Cloud Manager Environments page.
 
@@ -80,7 +80,7 @@ Watch this short video to preview how to clone Oracle E-Business Suite using clo
 
 8. You can check the status of the activity to clone the environment in the Activities page. The new environment is listed on the Environments page.
 
-## **STEP 2:** Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
+## Task 2: Configure Local Host Files for the Cloned Environment and Log in to Oracle E-Business Suite
 
 1. Now click the Cloud Manager Environment: "ebsholenv2"
 
@@ -155,6 +155,6 @@ Watch this short video to preview how to clone Oracle E-Business Suite using clo
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

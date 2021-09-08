@@ -17,7 +17,7 @@ Learn how to
 
 - The following lab requires an Autonomous Data Warehouse - Shared Infrastructure or Autonomous Transaction Processing - Shared Infrastructure account. 
 
-## **STEP 1**: Connect to the Database Actions for your Autonomous Database instance
+## Task 1: Connect to the Database Actions for your Autonomous Database instance
 
 **Note: Right-click on a screenshot to open it in a new tab or window to view it in full resolution.**
 
@@ -29,7 +29,7 @@ Learn how to
    
    ![](images/adb-tools-tab-db-actions.png " ")
 
-## **STEP 2**: Create the web access and graph-enabled user
+## Task 2: Create the web access and graph-enabled user
 
 1. Login as the ADMIN user for your Autonomous Database instance. 
 
@@ -105,7 +105,7 @@ Learn how to
 
 
 
-Please **proceed to the next lab** to learn how to create and analyze graphs in ADB.
+Please [proceed to the next lab](#next) to learn how to create and analyze graphs in ADB.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Development

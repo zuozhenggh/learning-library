@@ -8,13 +8,14 @@ The SQL Performance Analyzer reports overall showed good results for the run in 
 
 You could now try to fix a specific plan which has been changed or just write down all the plans from the SQL Tuning Set into the SQL Plan Baseline in Oracle 19c. Let us see if the results are good or if it is a better option to allow the optimizer to find newer paths.
 
-![](./images/sql-plan-mgmt.png " ")
+*Estimated Lab Time:* 20 minutes
+
+![](./images/performance_prescription_05.png " ")
 
 In this lab we use scripts written by Carlos Sierra.
 
-*Estimated Lab Time:* 30 minutes
-
 ### About SQL Plan Management
+
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.
 
 SQL plan management uses a mechanism called a SQL plan baseline, which is a set of accepted plans that the optimizer is allowed to use for a SQL statement.
@@ -42,39 +43,38 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Fix A Single Statement
+## Task 1: Fix A Single Statement
 
 1. Run the statements below.
-      ````
+      ```
       <copy>
       . upgr19
       cd /home/oracle/scripts
       sqlplus / as sysdba
       </copy>
-      ````
+      ```
       ![](./images/fix_a_1.png " ")
 
 2. Here we will use one of Carlos Sierra’s scripts: spb_create.sql:
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spb_create.sql
+      @spb_create.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_2.png " ")
 
-3. The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it will display the potential plans:
+3. *Please be aware that the following example often will show only one plan, and hence the script may not work as intended*
+   The script asks you for the SQL_ID first.  Type in: **7m5h0wf6stq0q**.  Then it should display the potential plans:
       ![](./images/fix_a_3.png " ")
       ![](./images/fix_a_4.png " ")
 
-    <!-- ````
+    ```
       PLANS PERFORMANCE
       ~~~~~~~~~~~~~~~~~
 
@@ -89,74 +89,83 @@ This lab assumes you have:
       Select up to 3 plans:
       1st Plan Hash Value (req): 3642382161
       2nd Plan Hash Value (opt): 1075826057
-      ```` -->
+      ```
 
-4. Hit RETURN, RETURN and again RETURN.  Verify if the plans have been accepted:
+4. Hit RETURN, RETURN and again RETURN (and maybe a forth time).  Verify if the plans have been accepted. If there was only one plan listed above, the following query will return no rows.
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_6.png " ")
 
-      <!-- SQL_HANDLE                     PLAN_NAME                      ENA ACC
-      —————————— —————————— — —
+      ```
+      SQL_HANDLE                     PLAN_NAME                      ENA ACC
+      -----------------------------  ------------------------------ --- ---
       SQL_59a879455619c567           SQL_PLAN_5ma3t8pb1mjb766511f85 YES YES
 
-      ```` -->
+      ```
+
 If you like to dig deeper “Why has this plan changed?”, Franck Pachot has done an excellent showcase on the basis of the lab to find out what exact optimizer setting has caused this plan change.
 
-## **STEP 2**: Fix all statements
+## Task 2: Fix all statements
 
 Now we pin down all possible statements collected in the SQL Tuning Set STS_CaptureCursorCache – and verify with SQL Performance Analyzer again the effect.
 
 1. Use spm\_load\_all.sql
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spm_load_all.sql
+      @spm_load_all.sql
       </copy>
-      ````
+      ```
       ![](./images/fix_a_7.png " ")
 
 2. Observe the changes that have taken place
 
-      ````
+      ```
       <copy>
       SELECT sql_handle, plan_name, enabled, accepted FROM dba_sql_plan_baselines;
       </copy>
-      ````
+      ```
       ![](./images/fix_a_8.png " ")
-      
+
 3. You ACCEPTED all previous plans from before the upgrade and added them to the SQL Plan Baseline.  Once you “fixed” the plans, use the SQL Performance Analyzer to verify the plans and the performance.
 
-      ````
+      ```
       <copy>
-      @/home/oracle/scripts/spa_cpu.sql
-      @/home/oracle/scripts/spa_report_cpu.sql
+      @spa_cpu.sql
+      @spa_report_cpu.sql
       </copy>
-      ````
-      ````
+      ```
+      ```
       <copy>
-      @/home/oracle/scripts/spa_elapsed.sql
-      @/home/oracle/scripts/spa_report_elapsed.sql
+      @spa_elapsed.sql
+      @spa_report_elapsed.sql
       </copy>
-      ````
+      ```
 
-4. Open a remote desktop( guacamole) and compare the two resulting reports again. Then compare them to the two examples from the previous run.
-      ![](./images/sql_per_5.png " ")
+4. Compare the two resulting reports again. Then compare them to the two examples from the previous run.
 
-      Do you realize that fixing all statements resulting in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c was better!
-      This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
+    ```
+    <copy>
+    cd /home/oracle/scripts
+    firefox compare_spa_* &
+    </copy>
+    ```
+    ![](./images/sql_per_5.png " ")
 
-      What is the outcome?
-      Allow the new release to find new, sometimes better plans. Even though your most critical statements should be stable at first, you should allow changes to benefit from better performance.
+    It may happen that "fixing" ALL statements results in worse CPU_TIME compared to 11.2.0.4 – the initial run in 19c may have been better!
+    This is one of the reasons why you should test your plans instead of just “fixing them to behave as before”.
 
-      The idea of testing is that you identify the really bad statements and plans, and fix them. But not all of them.
+    What is the outcome?
+    Allow the new release to find new, sometimes better plans. Even though your most critical statements should be stable at first, you should allow changes to benefit from better performance.
+
+    The idea of testing is that you identify the really bad statements and plans, and fix them. But not all of them.
 
 
-      Carlos Sierra: Plan Stability
+    Carlos Sierra: Plan Stability
 
 You may now [proceed to the next lab](#next).
 
@@ -172,6 +181,6 @@ White Paper:
 [SQL Plan Management with Oracle Database 12c Release 2](http://www.oracle.com/technetwork/database/bi-datawarehousing/twp-sql-plan-mgmt-12c-1963237.pdf)
 
 ## Acknowledgements
-* **Author** - Mike Dietrich, Carlos Sierra
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Author** - Mike Dietrich - Scripts provided by: Carlos Sierra
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021

@@ -6,7 +6,7 @@
 
 This workshop walks you through the steps to use **Autonomous Database** and **Application Express (APEX)** to store information, offer a **REST API** with **Oracle REST Data Services (ORDS)** and enable you to interact with your customers by keeping a conversation with **Digital Assistant**.
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 90 minutes.
 
 ### Objectives
 
@@ -16,82 +16,17 @@ Estimated Workshop Time: 90 minutes
 - Explore modern and quick APEX development 
 - Build secure and powerful REST APIs
 
-## **STEP 1**: Requirements
+## Task 1: Requirements
 
-1. In order to walk through this workshop you need to develop the integration with **REST API**. You need [Node.js](https://nodejs.org/en/) for that.
+1. An Oracle Trail Account. 
+Here's a video to help with signing up:[](youtube:4U-0SumNz6w)
 
-2. Node.js is an asynchronous event-driven JavaScript runtime. **Node.js** is designed to build scalable network applications.
-
-3. Additionally you need to be familiar with the use of **Command Prompt/Terminal** so we will show you briefly the way to use it for Windows users.
-
-    As a **Windows user** you need to type on the **Windows Search** Icon:
-
-    ```
-    <copy>cmd</copy>
-    ```
-
-    and select **Command Prompt**.
-
-    ![Windows search Terminal](./images/cmd_1.png)
-
-    That will open the Command Prompt/Terminal so you are ready to go.
-
-    ![Terminal](./images/cmd_2.png)
-
-    [Here you can find a basic guidance of commands that you can use on the terminal.](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
-
-
-## **STEP 2**: Node.js Installation
-
-We are going to **install** Node.js, if you have done this you can skip this step.
-
-![Node.js](./images/nodejs.png)
-
-[Download Node.js LTS](https://nodejs.org/en/download/) from the official website. It is fine if the version is higher than the one in the screenshot.
-
-![Node Download](./images/node_download.png)
-
-1. We are going to install on **Windows** but it works in a similar way in **Linux** and **MacOS**.
-
-    ![Node Install Start](./images/node_install_start.png)
-
-    You can go with the default setup for the installation.
-
-2. Final step, click **Install**:
-
-    ![Node Install](./images/node_install.png)
-
-3. Installation **completed**.
-
-    ![Node Install End](./images/node_install_end.png)
-
-4. The last step sometimes take a while on Windows because the lack of libraries, plus sometimes perform a Windows Update. Another reminder to swap to Linux ;) Be patient and carry on.
-
-    ![Node Native Modules Installation](./images/node_native_module.png)
-
-    Check if the installation went **well**. Open a Command Prompt, or Terminal in Linux and MacOS and run the following commands:
-
-    ```
-    <copy>node -v</copy>
-    ```
-
-    ```
-    <copy>npm -v</copy>
-    ```
-
-    ```
-    <copy>npx @oracle/bots-node-sdk -v</copy>
-    ```
-
-    Like this:
-
-    ![Node Versions](./images/node_versions.png)
+2. In order to walk through this workshop you need to develop the integration with **REST API**. We will use **Cloud shell** as part of the DevOps tool preinstalled that the **Oracle Cloud** have ready to use. You can learn more about **Oracle Cloud Shell** [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 
 At this point, you are ready to start learning!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin - Principal Cloud Engineer | Priscila Iruela - Database Business Development
+- **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-

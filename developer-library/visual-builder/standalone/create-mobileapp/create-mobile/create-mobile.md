@@ -13,7 +13,7 @@ You’ll create a business object and a mobile application that you'll later use
 
 ![](./images/vbmca_dbdiagram.png)
 
-## **STEP 1:** Create a Mobile Application
+## Task 1: Create a Mobile Application
 
 1.  In the web browser, sign in to Oracle Visual Builder.
 
@@ -43,7 +43,7 @@ You’ll create a business object and a mobile application that you'll later use
     ![](./images/vbmca_cra_07.png)
 
 
-## **STEP 2**: Create a Department Business Object
+## Task 2: Create a Department Business Object
 
 1.  Click the **Business Objects** ![](./images/vbmca_bo_icon.png) tab.
 2.  Click **\+ Business Object**.
@@ -76,6 +76,6 @@ You’ll create a business object and a mobile application that you'll later use
     ![](./images/vbmca_cde_s9.png)
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan
+* **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - February 2021
+* **Last Updated By/Date** - Sheryl Manoharan, February 2021

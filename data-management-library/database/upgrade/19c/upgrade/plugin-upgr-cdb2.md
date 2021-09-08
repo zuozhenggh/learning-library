@@ -4,34 +4,22 @@
 
 In this Lab, you will plugin UPGR into CDB2.
 
-We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: target_cdb=CDB2). But we rather decided that you should do these steps manually to understand the implications.
+We could have done this with AutoUpgrade already – you can see this in the OPTIONAL AutoUpgrade exercise (Parameter: `target_cdb`=CDB2). But we rather decided that you should do these steps manually to understand the implications.
 
 CDB2 is a Multitenant Container database. UPGR will be converted into a PDB, and then become a pluggable database.
 
-The key is, that – in order to plugin a non-CDB such as the UPGR database – it has to be upgraded first to the same release as the CDB it gets plugged into.
+You will complete the lab step-by-step even though the entire action could be fully automated with AutoUpgrade as well.
 
-*Estimated Lab Time:* 20 minutes
+*Estimated Lab Time:* 30 minutes
 
 ### About Oracle Multitenant
 The multitenant architecture enables an Oracle database to function as a multitenant container database (CDB).
-
-![](./images/containers.png " ")
-
-A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.
 
 Every CDB has the following containers:
 
  Exactly one CDB root container
 
 - The CDB root is a collection of schemas, schema objects, and nonschema objects to which all PDBs belong .
-
-Exactly one system container
-
-- The system container includes the root CDB and all PDBs in the CDB. Thus, the system container is the logical container for the CDB itself.
-
-Zero or more application containers
-
-- An application container consists of exactly one application root, and the PDBs plugged in to this root.
 
 Zero or more user-created PDBs
 
@@ -51,69 +39,67 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-		- Lab: Initialize Environment
+    - Lab: Initialize Environment
 
-## **STEP 1**: Preparation of UPGR as non-CDB
+## Task 1: Preparation of UPGR as non-CDB
 
 1. Switch to the UPGR database in 19c environment.
 
-    ````
+    ```
     <copy>
     . upgr19
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_1.png " ")
 
 2. Shutdown UPGR and start it as read only.
 
-    ````
+    ```
     <copy>
     shutdown immediate
     startup open read only;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_2.png " ")
 
 3. Create the XML manifest file describing UPGR’s layout and information.
 
-    ````
+    ```
     <copy>
     exec DBMS_PDB.DESCRIBE('/home/oracle/pdb1.xml');
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_3.png " ")
 
 4. Shutdown UPGR.
 
-    ````
+    ```
     <copy>
     shutdown immediate
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_4.png " ")
 
 5. Switch to CDB2.
 
-    ````
+    ```
     <copy>
     . cdb2
     sqlplus / as sysdba
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_5.png " ")
 
-## **STEP 2**: Compatibility check
+## Task 2: Compatibility check
 
-1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO compatibility check.
+1. Ideally you do a compatibility check before you plugin finding out about potential issues. This step is not mandatory but recommended. The check will give you YES or NO only.
 
-    ````
+    ```
     <copy>
     set serveroutput on
 
@@ -125,12 +111,12 @@ This lab assumes you have:
     END;
     /
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_6.png " ")
 
 2. If the result is “NO” (and it is NO very often), then check for TYPE='ERROR' in PDB\_PLUG\_IN\_VIOLATIONS. In this case, the result should be “YES“.
 
-## **STEP 3**: Plugin Operation
+## Task 3: Plugin Operation
 
 1. Plugin UPGR with its new name PDB1 – from this point there is no UPGR database anymore. In a real world environment, you would have a backup or use a backup/copy to plug in. In our lab the database UPGR will stay in place and become PDB1 as part of CDB2.
 
@@ -139,25 +125,25 @@ This lab assumes you have:
 
     ![](./images/plugin_upgr_7.png " ")
 
-    ````
+    ```
     <copy>
     create pluggable database PDB1 using '/home/oracle/pdb1.xml' nocopy tempfile reuse;
     show pdbs;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_10.png " ")
 
-    As you couldn not execute a compatibility check beforehand, you will open the PDB now and you will recognize that it opens only with errors.
+    If you didn't execute a compatibility check beforehand, you will open the PDB now and recognize that it opens only with errors.
 
-    ````
+    ```
     <copy>
     alter pluggable database PDB1 open;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_11.png " ")
-    
-    To find the above issue
-    ````
+
+    To find the above issue execute:
+    ```
     <copy>
     column message format a50
     column status format a9
@@ -167,26 +153,27 @@ This lab assumes you have:
     select con_id, type, message, status from PDB_PLUG_IN_VIOLATIONS
     where status<>'RESOLVED' order by time;
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_12.png " ")
+
 
 2. As you can see, a lot of the reported issues aren’t really issues. This is a known issue. Only in the case you see ERROR in the first column you need to solve it.  The only real ERROR says:
 
     **PDB plugged in is a non-CDB, requires noncdb\_to\_pdb.sql be run.**
-    
-3. Kick off this sanity script to adjust UPGR and make it a “real” pluggable database PDB1 with noncdb\_to\_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
 
-    ````
+3. Kick off this transformation script to assimilate UPGR and make it a “real” pluggable database PDB1 with noncdb\_to\_pdb.sql. Runtime will vary between 10-20 minutes. Take a break while it is running. The forced recompilation takes quite a bit.
+
+    ```
     <copy>
     alter session set container=PDB1;
     @?/rdbms/admin/noncdb_to_pdb.sql
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_13.png " ")
 
 4. Now SAVE STATE. This ensures, that PDB1 will be opened automatically whenever you restart CDB2. Before you must restart the PDB or else it opens only in RESTRICTED mode.
 
-    ````
+    ```
     <copy>
     shutdown
     startup
@@ -195,28 +182,60 @@ This lab assumes you have:
     show pdbs
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_14.png " ")
 
-5. Try to connect directly to PDB1 – notice that you cannot just connect without specifying the service name, as PDB1 is not visible on the OS level.
+5. Try to connect directly to PDB1 – please notice that you are using the service name. Otherwise you'd connect to the CDB$ROOT instead as PDB1 is not visible on the OS level.
 
-    ````
+    ```
     <copy>
     sqlplus "sys/oracle@pdb1 as sysdba"
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_15.png " ")
 
 6. As an alternative you could also use the EZconnect (speak: Easy Connect)
 
-    ````
+    ```
     <copy>
     sqlplus "sys/oracle@//localhost:1521/pdb1 as sysdba"
     exit
     </copy>
-    ````
+    ```
     ![](./images/plugin_upgr_16.png " ")
+
+
+## Appendix 1: Plugin Operation with AutoUpgrade
+
+DON'T USE THIS IF YOU HAVE DONE THE PLUGIN WITH THE ABOVE STEPS ALREADY.
+
+You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
+
+   ```
+   <copy>
+   global.autoupg_log_dir=/home/oracle/logs
+
+   upg1.source_home=/u01/app/oracle/product/19
+   upg1.target_home=/u01/app/oracle/product/19
+   upg1.sid=UPGR
+   upg1.target_sid=CDB2
+   upg1.target_pdb_name=PDB1
+   upg1.log_dir=/home/oracle/logs
+   </copy>
+   ```
+
+   Save the file under /home/oracle/scripts/PLUG.cfg.
+
+   You start AutoUpgrade now, and let it plugin your database as a new PDB.
+
+
+   ```
+   <copy>
+   java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PLUG.cfg -mode deploy
+   </copy>
+   ```
+
 
 You may now [proceed to the next lab](#next).
 
@@ -226,5 +245,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Mike Dietrich
-* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta
-* **Last Updated By/Date** - Kay Malcolm, February 2021
+* **Contributors** -  Roy Swonger, Sanjay Rupprel, Cristian Speranta, Kay Malcolm
+* **Last Updated By/Date** - Mike Dietrich, July 2021
