@@ -16,8 +16,9 @@ Estimated Lab Time: 30-45 minutes
 ### Prerequisites
 
 - You have completed the [Setups](../setups/setups.md).
+- You have completed [Lab 1](../sqlcl/sqlcl.md).
 
-## Task 1:Create and Commit a Branch
+## Task 1: Create and Commit a Branch
 
 We have our main code line for our database objects in the repository. Let's now pretend we are a developer and need to clone the repository and start an assigned tickets/task in this development cycle or sprint. The task at hand is to add a column to our trees table so that people can upload a photo of the tree.
 
@@ -28,6 +29,14 @@ This requires us to create a branch of the repository that we can work in and co
    ```
    /home/YOUR_USER_NAME/livelabs/cicdRepository
    ```
+   To get there, you can issue a **cd /home/USER_NAME/livelabs/cicdRepository** but remember to **replace USER_NAME with your username**.
+
+   ````
+   <copy>
+   cd /home/USER_NAME/livelabs/cicdRepository
+   </copy>
+   ````
+
 
 2. Now that we are in our **repository directory**, we need to **create a branch** of our code to work in. To do this, **issue the following command** at the Cloud Shell:
 
