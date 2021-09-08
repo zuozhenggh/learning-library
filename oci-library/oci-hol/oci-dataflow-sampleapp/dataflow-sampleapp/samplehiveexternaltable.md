@@ -380,6 +380,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
         ![OAC My Calculation ](../images/OAC-New-Calculation-Formula.png " ")
 
    3. Click ```Save``` and the new Calculation should be displayed under ```My Calculations``
+
          ![OAC My Calculation Save ](../images/OAC-New-Calculation-Save.png " ")
 
    4. Click on ```Visualize``` on the top left hand and drop the map on the right side
