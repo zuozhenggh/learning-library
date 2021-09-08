@@ -150,7 +150,7 @@ As a Data engineer we start by building a Python based batch application the app
 
 2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
 
-3. Creates managed tables by the name yelp_business_raw and yelp_review in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
+3. Creates managed tables by the name ```yelp_business_raw``` and ```yelp_review``` in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
 
 4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data Analyst to create visualization and reports on top of the data.
 
