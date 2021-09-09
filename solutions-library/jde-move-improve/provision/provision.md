@@ -27,7 +27,7 @@ To deploy JDE Trial Edition, in this tutorial, you will:
 *   SSH Key pair generated.
 *   Familiarity with Oracle Cloud Console.
 
-## Step 1: Provision Trial Edition from Oracle Cloud Infrastructure Marketplace
+## Task 1: Provision Trial Edition from Oracle Cloud Infrastructure Marketplace
 
 Create an instance in OCI that is based off the JDE Trial Edition image.
 
@@ -88,7 +88,7 @@ On the Oracle Cloud Console home page, click the **Navigation** Menu Button in t
 
     ![](./images/finished-instance.png " ")
 
-##  Step 2:  Access the Oracle Cloud Infrastructure Instance
+## Task 2:  Access the Oracle Cloud Infrastructure Instance
 
 To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance. The user name on the instance is **opc**.  There isn’t a password, the account can only be accessed using the SSH private key.
 
@@ -162,7 +162,7 @@ For Windows, you can also use a tool like PUTTY to set up PuTTY to connect to an
 
     ![](./images/trust-connection.png " ")
 
-## Step 3: Perform First-Time Configuration of the Trial Edition
+## Task 3: Perform First-Time Configuration of the Trial Edition
 
 During the first connection to a Trial Edition instance (after completing Connect to JDE Trial Edition, Step 2), a process will run to verify if any critical updates are required to the OS and the installed software packages on the instance. If so, the following screen will display noting that the yum update packages are installing. This process can take anywhere from 5 to 10 minutes to run.
 

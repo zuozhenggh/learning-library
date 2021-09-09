@@ -23,7 +23,7 @@ To set up the OCI tenancy, in this tutorial, you will:
 
 To have the greatest success in completing this tutorial make sure you have a general knowledge of OCI and its web interface.
 
-## Step 1: Generate an SSH Key Pair
+## Task 1: Generate an SSH Key Pair
 
 In this section you will generate a Secure Shell (SSH) key pair that you will use to connect to your instance.
 
@@ -120,7 +120,7 @@ There are many tools available for Windows users to create SSH key pairs and con
 12. Save this file to the same known location with any file name and a .ppk extension (for example, OCISSHKey.ppk).
 
 
-## Step 2: Create a Compartment
+## Task 2: Create a Compartment
 
 In this part of the tutorial, we create a compartment to organize the resources we will create.
 
@@ -146,7 +146,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
     ![](./images/test-drive.png " ")
 
-## Step 3:  Create a VCN
+## Task 3:  Create a VCN
 
 1.	To create a VCN on OCI, on the Oracle Cloud Console home page, under **Quick Actions**, click **Set up a network with a wizard**.
 
@@ -185,7 +185,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
     ![](./images/vcn-button.png " ")
 
 
-## Step 4:  Establish Security List Rules for JDE
+## Task 4:  Establish Security List Rules for JDE
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN.
 

@@ -14,7 +14,7 @@ Estimated Time: 5 minutes
 * Tenancy admin user name
 * Tenancy admin password
 
-## Step 1: Delete the JDE instance
+## Task 1: Delete the JDE instance
 
 1. To delete instances, if you are not already, sign in to the OCI tenancy.
 
@@ -30,7 +30,7 @@ Estimated Time: 5 minutes
 
 5. Wait for the instance to terminate. Once terminated, your instance should be gone from the instance list.
 
-## Step 2: Delete the Associated Oracle Cloud Infrastructure Resources
+## Task 2: Delete the Associated Oracle Cloud Infrastructure Resources
 
 1. To delete the virtual cloud network (VCN), on the Oracle Cloud Console home page, click the navigation menu in the upper-left corner and open **Networking** and then select **Virtual Cloud Networks**.
 
