@@ -18,7 +18,7 @@ This lab assumes you have:
 * Privileges to use Oracle Cloud resources
 
 
-## **Task 1**: Create MySQL Database System in Oracle Cloud
+## Task 1: Create MySQL Database System in Oracle Cloud
 
 1. Login into OCI console, Navigate to **Databases** menu and click on DB Systems under **MySQL**.
 
