@@ -4,7 +4,7 @@
 
 This lab will help you in experiencing performance difference in MySQL HeatWave Cluster by executing SQL Query.
 
-Estimated Time: -- 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ This lab assumes you have:
 * You have enough privileges to use OCI
 * All previous labs successfully completed
 
-## **TASK 4**: Execute SQL Queries to See the difference
+## **Task 4**: Execute SQL Query to see the Performance Differences
 
 1. Now we have **airportdb** database loaded into **HeatWave Cluster** engine. We will execute query on one of the table named **weatherdata** table to see the difference in execution time. Since the table is already loaded into HeatWave Cluster. You can see it from table defination.
 
@@ -69,9 +69,14 @@ This lab assumes you have:
 
 **NOTE**: As we can see time difference in execution time on **Normal** MySQL Database System, the same query took approx. **0.4383** seconds However the same query took **0.0237** when running with HeatWave Cluster enabled.
 
-**This completes the Lab 4 Set Up here!**
+**This completes the Task 4 here!**
 
 **Conclusion :**
 As you have experienced that HeatWave Engine accelerates MySQL performance for queries using HeatWave Engine. HeatWave can improve performance by **5400x** for analytics queries, scales out to thousands of cores, and is **6.5x** faster at **one-half** the cost of Amazon Redshift AQUA. MySQL Database Service, with HeatWave, is the only service for running OLTP and OLAP workloads directly from their MySQL database.
 
-**Hope you enjoined this Lab - Happy Learnning OCI**
+**Hope you enjoyed this Lab - Happy Learnning OCI**
+
+## Acknowledgements
+* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Jitender Singh, September 2021

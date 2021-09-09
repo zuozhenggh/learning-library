@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to enable **HeatWave** Cluster in MySQL Database System that we have created in **Lab 1**.
 
-Estimated Time: -- 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -18,9 +18,9 @@ This lab assumes you have:
 * You have enough privileges to use Oracle Cloud resources
 * All previous labs successfully completed
 
-## **TASK 2**: Enable HeatWave Cluster to MySQL Database System
+## **Task 2**: Enable HeatWave Cluster in MySQL Database System
 
-1. In Lab 1, we have created MySQL Database System. **Navigate** to MySQL DB System under **Database** section
+1. In Task 1, we have created MySQL Database System. **Navigate** to MySQL DB System under **Database** section
 and you will see newly created MySQL DB System in **Active** state. Now **Click** on the DB System and you will see HeatWave is disabled. Now to enable **HeatWave** engine click on **Enable**.
 
 	![enable-heatwave](images/enable-heatwave.png)
@@ -39,6 +39,11 @@ and you will see newly created MySQL DB System in **Active** state. Now **Click*
 
 **NOTE**: At this stage we have our MySQL Database System **Active** and **HeatWave** Cluster is also enabled.
 
-**This completes the Lab 2**
+**This completes the Task 2**
 
 **You are ready to proceed to Lab 3**
+
+## Acknowledgements
+* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Jitender Singh, September 2021

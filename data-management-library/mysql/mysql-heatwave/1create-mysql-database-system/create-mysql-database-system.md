@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create **MySQL Database System** in Oracle Cloud Infrastructure.
 
-Estimated Time: -- 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ This lab assumes you have:
 * Privileges to use Oracle Cloud resources
 
 
-## **TASK 1**: Create MySQL Database System on Oracle Cloud Console
+## **Task 1**: Create MySQL Database System in Oracle Cloud
 
 1. Login into OCI console, Navigate to **Databases** menu and click on DB Systems under **MySQL**.
 
@@ -51,6 +51,11 @@ This lab assumes you have:
 
 **NOTE:** At this stage we have learnt how to create MySQL Database System However HeatWave Engine is still disable. To enable HeatWave engine we will proceed to Lab 2.
 
-**This completes the Lab 1**
+**This completes the Task 1**
 
 **You are ready to proceed to Lab 2**
+
+## Acknowledgements
+* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Jitender Singh, September 2021

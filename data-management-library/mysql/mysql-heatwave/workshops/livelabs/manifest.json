@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Getting started with MySQL-HeatWave and feel the difference",
+    "workshoptitle": "Get Started with MySQL-HeatWave and Feel the Difference",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -17,11 +17,11 @@
             "filename": "../../2enable-heatwave-cluster/enable-heatwave-cluster.md"
         },
         {
-            "title": "Lab 3: Upload some dummy data in HeatWave Cluster",
+            "title": "Lab 3: Upload data into MySQL HeatWave Cluster Engine",
             "filename": "../../3upload-data-into-heatwave/upload-data-into-heatwave.md"
         },
         {
-            "title": "Lab 4: Execute SQL Query to see the performance differences",
+            "title": "Lab 4: Execute SQL Query to see the Performance Differences",
             "filename": "../../4execute-sql-queries/execute-sql-queries.md"
         },
         {
