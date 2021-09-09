@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to upload data into HeatWave Cluster in MySQL Database System that we have enabled in Lab 2.
 
-Estimated Time: -- 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -19,9 +19,9 @@ This lab assumes you have:
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
 * All previous labs successfully completed
 
-## **TASK 3**: Upload data into MySQL HeatWave Cluster Engine
+## Task 1: Upload data into MySQL HeatWave Cluster Engine
 
-1. In Lab 2, we have already enabled **MySQL HeatWave Cluster** Database System and noted down the **Endpoint** IP address of our MySQL Database System.
+1. Since we have already enabled **MySQL HeatWave Cluster** Database System and noted down the **Endpoint** IP address of our MySQL Database System.
 
    ![endpoint](images/endpoint.png)
 
@@ -78,6 +78,11 @@ This lab assumes you have:
 
 	 ![load-summery](images/load-summery.png)
 
-	 **This completes the Lab 3 here!**
+	 **This completes the Task here!**
 
-	 **You are ready to proceed to Lab 4 to execute SQL queries and see the difference**
+	 **You are ready to proceed to Lab 4**
+
+## Acknowledgements
+* **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Contributors** -  Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Jitender Singh, September 2021
