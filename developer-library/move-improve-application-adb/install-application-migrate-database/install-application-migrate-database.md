@@ -34,50 +34,47 @@ Estimated Time: 2 hours
 
 1. SSH to your App Server. Replace with your SSH key and private IP address.
 
-   ```
-   $ <copy>ssh -i privatekey opc@10.0.1.2</copy>
-   ```
+    ```
+    $ <copy>ssh -i privatekey opc@10.0.1.2</copy>
+    ```
 
     By default, Java is not installed on the compute VM so we will need to install it via yum.
     We’ll need to update yum first.
 
 2.  From your App Server session execute the following.
 
-    ```
-    $ <copy>sudo yum makecache fast</copy>
-    ```
+     ```
+     $ <copy>sudo yum makecache fast</copy>
+     ```
 
 3. Then install Java and its dependencies
 
-  ```
-  $ <copy>sudo yum install java-1.8.0-openjdk-headless.x86_64</copy>
-  ```
+    ```
+    $ <copy>sudo yum install java-1.8.0-openjdk-headless.x86_64</copy>
+    ```
 
-•      Type **y**
-
-  ![](./images/java-install.png)
+      Type **y**  
+                                               ![](./images/java-install.png)
 
 4. Let’s check the version and make sure that java works correctly.
 
-  ```
-  $ <copy>java -version</copy>
-  ```
+    ```
+    $ <copy>java -version</copy>
+    ```
 
 5. We can now pull the Swingbench code from the website
 
-  ```
-  $ <copy>curl 'https://www.dominicgiles.com/swingbench/swingbenchlatest.zip' -H 'User-Agent: Mozilla/5.0' -H 'Referer: https://www.dominicgiles.com/downloads.html' -o swingbench.zip</copy>
-  ```
+    ```
+    $ <copy>curl 'https://www.dominicgiles.com/swingbench/swingbenchlatest.zip' -H 'User-Agent: Mozilla/5.0' -H 'Referer: https://www.dominicgiles.com/downloads.html' -o swingbench.zip</copy>
+    ```
 
 6. Unzip it and check the files
 
-  ```
-  $ <copy>unzip swingbench.zip</copy>
-
-  $ <copy>cd swingbench/bin</copy>
-
-  $ <copy>ls</copy>
-  ```
+    ```
+    $ <copy>unzip swingbench.zip</copy>
+    $ <copy>cd swingbench/bin</copy>
+    $ <copy>ls</copy>
+    ```
 
 The application is now installed. You should see the Swingbench application files.
 
@@ -93,33 +90,33 @@ Now we will install the Oracle Instant Client software which has tools to help u
 
     Make sure you get the end quote for the export.
 
-  ```
-  $ <copy>cd /etc/yum.repos.d</copy>
+    ```
+    $ <copy>cd /etc/yum.repos.d</copy>
 
-  $ <copy>export REGION=`curl http://169.254.169.254/opc/v1/instance/ -s | jq -r '.region'| cut -d '-' -f 2`</copy>
+    $ <copy>export REGION=`curl http://169.254.169.254/opc/v1/instance/ -s | jq -r '.region'| cut -d '-' -f 2`</copy>
 
-  $ <copy>echo $REGION</copy>
+    $ <copy>echo $REGION</copy>
 
-  $ <copy>sudo -E wget http://yum-$REGION.oracle.com/yum-$REGION-ol7.repo</copy>
-  ```
+    $ <copy>sudo -E wget http://yum-$REGION.oracle.com/yum-$REGION-ol7.repo</copy>
+    ```
 
 3. Enable the Instant Client repository
 
-  ```
-  $ <copy>sudo yum-config-manager --enable ol7_oracle_instantclient</copy>
-  ```
+    ```
+    $ <copy>sudo yum-config-manager --enable ol7_oracle_instantclient</copy>
+    ```
 
 4. List the packages
 
-  ```
-  $ <copy>sudo yum list oracle-instantclient*</copy>
-  ```
+    ```
+    $ <copy>sudo yum list oracle-instantclient*</copy>
+    ```
 
 5. Install the version 18.5 Instant Client Basic, SQL Plus, Tools RPM packages.
 
-  ```
-  $ <copy>sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sqlplus oracle-instantclient18.5-tools</copy>
- ```
+    ```
+    $ <copy>sudo yum install -y oracle-instantclient18.5-basic oracle-instantclient18.5-sqlplus oracle- instantclient18.5-tools</copy>
+    ```
 
 
 
@@ -130,42 +127,39 @@ Now we will install the Oracle Instant Client software which has tools to help u
 
      Replace the names below with your own files.  ie: replace the sample Wallet_ATPLABTEST with your own wallet.
 
-   ```
-   $ <copy>cd /home/opc</copy>
+     ```
+     $ <copy>cd /home/opc</copy>
 
-   $ <copy>mkdir Wallet_ATPLABTEST</copy>
+     $ <copy>mkdir Wallet_ATPLABTEST</copy>
 
-   $ <copy>mv Wallet_ATPLABTEST.zip Wallet_ATPLABTEST</copy>
+     $ <copy>mv Wallet_ATPLABTEST.zip Wallet_ATPLABTEST</copy>
 
-   $ <copy>cd Wallet_ATPLABTEST</copy>
+     $ <copy>cd Wallet_ATPLABTEST</copy>
 
-   $ <copy>unzip Wallet_ATPLABTEST.zip</copy>
+     $ <copy>unzip Wallet_ATPLABTEST.zip</copy>
 
-   $ <copy>ls</copy>
-  ```
+     $ <copy>ls</copy>
+     ```
 
 2. Copy sqlnet.ora and tnsnames.ora to /usr/lib/oracle/18.5/client64/lib/network/admin directory
 
-  ```
-   $ <copy>ls /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
-
-   $ <copy>sudo cp sqlnet.ora /usr/lib/oracle/18.5/client64/lib/network/admin/sqlnet.ora</copy>
-
-   $ <copy>sudo cp tnsnames.ora /usr/lib/oracle/18.5/client64/lib/network/admin/tnsnames.ora</copy>
-
-   $ <copy>cd /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
- ```
+    ```
+    $ <copy>ls /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
+    $ <copy>sudo cp sqlnet.ora /usr/lib/oracle/18.5/client64/lib/network/admin/sqlnet.ora</copy>
+    $ <copy>sudo cp tnsnames.ora /usr/lib/oracle/18.5/client64/lib/network/admin/tnsnames.ora</copy>
+    $ <copy>cd /usr/lib/oracle/18.5/client64/lib/network/admin</copy>
+    ```
 
 3. Edit the sqlnet.ora
 
-   ```
-   $ <copy>sudo vi sqlnet.ora</copy>
-   ```
+    ```
+    $ <copy>sudo vi sqlnet.ora</copy>
+    ```
 
 4. Set the WALLET_LOCATION parameter to point to the wallet directory containing
    the cwallet.sso file as shown by the example below
 
-  ![](./images/vi-sqlnet.png)
+    ![](./images/vi-sqlnet.png)
 
 4. Exit and save the file                               
 
@@ -173,15 +167,15 @@ Now we will install the Oracle Instant Client software which has tools to help u
 6. Export the bin path
 7. Test the Instant Client with SQLPlus, the username is admin, but enter your password and service name
 
-  ```
-  $ <copy>more tnsnames.ora</copy>
+    ```
+    $ <copy>more tnsnames.ora</copy>
 
-  $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
+    $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
 
-  $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
+    $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
 
-  $ <copy>sqlplus admin/<password>@<service_tp></copy>
-  ```
+    $ <copy>sqlplus admin/<password>@<service_tp></copy>
+    ```
 
 ### Move the On Premise Database to Oracle Cloud ###
 
@@ -190,7 +184,11 @@ There are a number of ways to move or migrate your existing on premise Oracle da
 The .dmp file has been copied to the Object Storage.  You will use this in a later step.
 
 AShburn, US East:
+```
+<copy>
 https://objectstorage.us-ashburn-1.oraclecloud.com/p/2BWjXdKY935En1yDxUpP9_8tdgkfBrGCIg0jdPlCbLDRYvsG1mcTpY--nEeHw_dy/n/c4u04/b/labfiles/o/soedump18C_1G.dmp
+</copy>
+```
 
 Note: You can use the Data Pump procedure for your own database and migration projects.
 
@@ -200,46 +198,38 @@ Note: You can use the Data Pump procedure for your own database and migration pr
 
 1. Connect to your ATP from SQL Developer
 
-  From the SQL Developer worksheet create a credential for ATP to access the object store. You will need to run the DBMS\_CLOUD.CREATE\_CREDENTIAL package below from your ATP session. Replace the names with your own names.
+   From the SQL Developer worksheet create a credential for ATP to access the object store. You will need to run the DBMS\_CLOUD.CREATE\_CREDENTIAL package below from your ATP session. Replace the names with your own names.
 
 2. Give the credential a name
 
 3. Provide your OCI login username
 
 4. Provide the OCI Auth Token password to access the Object Storage.
-   You should have created this in the earlier lab.  For the instructor-led class this password will be provided to you.
+   You should have created this in the earlier lab.  
+   For the instructor-led class this password will be provided to you.
 
+    ```
+    <copy>
+    BEGIN
+    DBMS_CLOUD.CREATE_CREDENTIAL(
+    credential_name => '<credential name>',
+    username => '<your oci login username>',
+    password => '<auth token password>'
+    );
+    END;
 
-
-  ```
-  <copy>BEGIN
-
-  DBMS_CLOUD.CREATE_CREDENTIAL(
-
-  credential_name => '<credential name>',
-
-  username => '<your oci login username>',
-
-  password => '<auth token password>'
-
-  );
-
- END;
-
- /
- </copy>
- ```
+    /</copy>
+    ```
 
 5. Run the script
-  ![](./images/create-credential-object-store.png)
-
-
+      ![](./images/create-credential-object-store.png)
 
   While we are in SQL Developer check to see if you have the SOE schema in the Other Users folder. You should not see it.  We will import this Swingbench database schema later.
+
       ![](./images/sql-devloper-other-schema.png)
 
 
-## Task 6: Import the Dump File to the Autonomous Database
+## Task 5: Import the Dump File to the Autonomous Database
 
 Once you have the database dump file in the Object Storage you can import it into ATP. To run the Data Pump Import you will log in to the App Server compute with the Instant Client software and the wallet to your ATP.
 
@@ -251,131 +241,126 @@ Execute the impdb statement below from your compute with Instant Client software
 3. Your dumpfile will point to the object store uri with the soedump18C_1G.dmp file.
 4. Set parallel import to 2 since we can use 2 the OCPU cores in ATP.
 
-  ```
-  $ <copy>impdp admin/<password>@<My_ATP_high> directory=data_pump_dir credential=<credential name> schemas=soe dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/p/2BWjXdKY935En1yDxUpP9_8tdgkfBrGCIg0jdPlCbLDRYvsG1mcTpY--nEeHw_dy/n/c4u04/b/labfiles/o/soedump18C_1G.dmp logfile=import.log parallel=2</copy>
-  ```
+    ```
+    $ <copy>impdp admin/<password>@<My_ATP_high> directory=data_pump_dir credential=<credential name> schemas=soe dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/p/2BWjXdKY935En1yDxUpP9_8tdgkfBrGCIg0jdPlCbLDRYvsG1mcTpY--nEeHw_dy/n/c4u04/b/labfiles/o/soedump18C_1G.dmp logfile=import.log parallel=2</copy>
+    ```
 
   It should take about 15-25 minutes to import.  If successful, you will see a similar output like the following:
 
-```
-Import: Release 18.0.0.0.0 - Production on Tue Dec 24 19:21:02 2019
+    ```
+    Import: Release 18.0.0.0.0 - Production on Tue Dec 24 19:21:02 2019
 
-Version 18.5.0.0.0
-
-
-
-Copyright (c) 1982, 2019, Oracle and/or its affiliates. All rights reserved.
+    Version 18.5.0.0.0
 
 
 
-Connected to: Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
+    Copyright (c) 1982, 2019, Oracle and/or its affiliates. All rights reserved.
 
 
 
-Master table "ADMIN"."SYS_IMPORT_SCHEMA_01" successfully loaded/unloaded
-
-Starting "ADMIN"."SYS_IMPORT_SCHEMA_01": admin/********@atp18c_high directory=data_pump_dir credential=STORAGE_CREDENTIAL schemas=soe dumpfile=https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/STAGEBUCKET/o/soedump18C_1G.dmp logfile=import.log parallel=2
-
-Processing object type SCHEMA_EXPORT/USER
-
-Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
-
-Processing object type SCHEMA_EXPORT/ROLE_GRANT
-
-Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
-
-Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
-
-Processing object type SCHEMA_EXPORT/PASSWORD_HISTORY
-
-Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
-
-Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
-
-Processing object type SCHEMA_EXPORT/TABLE/TABLE
-
-Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
-
-. . imported "SOE"."PRODUCT_INFORMATION"         187.1 KB  1000 rows
-
-. . imported "SOE"."LOGON"                57.91 MB 2686349 rows
-
-. . imported "SOE"."ADDRESSES"              116.5 MB 1585588 rows
-
-. . imported "SOE"."CARD_DETAILS"            67.87 MB 1585457 rows
-
-. . imported "SOE"."ORDERS"               149.4 MB 1657624 rows
-
-. . imported "SOE"."WAREHOUSES"             35.34 KB  1000 rows
-
-. . imported "SOE"."INVENTORIES"             15.18 MB 896376 rows
-
-. . imported "SOE"."PRODUCT_DESCRIPTIONS"        220.0 KB  1000 rows
-
-. . imported "SOE"."CUSTOMERS"              117.5 MB 1085457 rows
-
-. . imported "SOE"."ORDERENTRY_METADATA"         5.617 KB    4 rows
-
-. . imported "SOE"."ORDER_ITEMS"             258.0 MB 4991509 rows
-
-Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
-
-Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
-
-Processing object type SCHEMA_EXPORT/VIEW/VIEW
-
-Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY
-
-Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
-
-Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
-
-Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
-
-Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
-
-Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
-
-Processing object type SCHEMA_EXPORT/POST_SCHEMA/PROCACT_SCHEMA
-
-ORA-39082: Object type PACKAGE BODY:"SOE"."ORDERENTRY" created with compilation warnings
+    Connected to: Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production
 
 
 
-Job "ADMIN"."SYS_IMPORT_SCHEMA_01" completed with 1 error(s) at Tue Dec 24 19:25:42 2019 elapsed 0 00:04:36
-```
+    Master table "ADMIN"."SYS_IMPORT_SCHEMA_01" successfully loaded/unloaded
+
+    Starting "ADMIN"."SYS_IMPORT_SCHEMA_01": admin/********@atp18c_high directory=data_pump_dir credential=STORAGE_CREDENTIAL schemas=soe dumpfile=https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/STAGEBUCKET/o/soedump18C_1G.dmp logfile=import.log parallel=2
+
+    Processing object type SCHEMA_EXPORT/USER
+
+    Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+
+    Processing object type SCHEMA_EXPORT/ROLE_GRANT
+
+    Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+
+    Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+
+    Processing object type SCHEMA_EXPORT/PASSWORD_HISTORY
+
+    Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+
+    Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+
+    Processing object type SCHEMA_EXPORT/TABLE/TABLE
+
+    Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+
+    . . imported "SOE"."PRODUCT_INFORMATION"         187.1 KB  1000 rows
+
+    . . imported "SOE"."LOGON"                57.91 MB 2686349 rows
+
+    . . imported "SOE"."ADDRESSES"              116.5 MB 1585588 rows
+
+    . . imported "SOE"."CARD_DETAILS"            67.87 MB 1585457 rows
+
+    . . imported "SOE"."ORDERS"               149.4 MB 1657624 rows
+
+    . . imported "SOE"."WAREHOUSES"             35.34 KB  1000 rows
+
+    . . imported "SOE"."INVENTORIES"             15.18 MB 896376 rows
+
+    . . imported "SOE"."PRODUCT_DESCRIPTIONS"        220.0 KB  1000 rows
+
+    . . imported "SOE"."CUSTOMERS"              117.5 MB 1085457 rows
+
+    . . imported "SOE"."ORDERENTRY_METADATA"         5.617 KB    4 rows
+
+    . . imported "SOE"."ORDER_ITEMS"             258.0 MB 4991509 rows
+
+    Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC
+
+    Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC
+
+    Processing object type SCHEMA_EXPORT/VIEW/VIEW
+
+    Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY
+
+    Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+
+    Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+
+    Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+
+    Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+
+    Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
+
+    Processing object type SCHEMA_EXPORT/POST_SCHEMA/PROCACT_SCHEMA
+
+    ORA-39082: Object type PACKAGE BODY:"SOE"."ORDERENTRY" created with compilation warnings
+
+
+
+    Job "ADMIN"."SYS_IMPORT_SCHEMA_01" completed with 1 error(s) at Tue Dec 24 19:25:42 2019 elapsed 0 00:04:36
+    ```
 
 
 
 In SQL Developer check to see if you have the SOE schema in the Other Users folder now. You should see that it has been imported.
 
 Upon import, there was a compilation issue. To fix the issue, the following SQLs grant the missing privilege and recompile the ORDERENTRY package.
-
-```
-SQL> <copy>GRANT EXECUTE ON DBMS_LOCK TO SOE;</copy>
-
-SQL> <copy>ALTER PACKAGE SOE.ORDERENTRY COMPILE;</copy>
-```
-
+   ```
+   SQL><copy>GRANT EXECUTE ON DBMS_LOCK TO SOE;</copy>
+   SQL><copy>ALTER PACKAGE SOE.ORDERENTRY COMPILE;</copy>
+   ```
 
 
 (Optional) To view the import.log you must put it into an Oracle Object Store bucket and then download it to your laptop and view with a text editor.  An example of putting the file in the Object Store bucket is shown below.  
 
-```
-<copy>BEGIN
+    ```
+    <copy>
+    BEGIN
+    DBMS_CLOUD.PUT_OBJECT(
+    credential_name=>'STORAGE_CREDENTIAL_NAME',
+    object_uri=>'https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/bucket_name/o/import.log', directory_name=>'DATA_PUMP_DIR',
+    file_name=>'import.log');
+    END;
 
-DBMS_CLOUD.PUT_OBJECT(
+    /
+    </copy>
+    ```
 
-credential_name=>'STORAGE_CREDENTIAL_NAME',
-
-object_uri=>'https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/bucket_name/o/import.log', directory_name=>'DATA_PUMP_DIR',
-
-file_name=>'import.log');
-
-END;
-
-/</copy>
-```
 
 
 
@@ -387,4 +372,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021

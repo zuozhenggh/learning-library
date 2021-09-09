@@ -67,32 +67,29 @@ Estimated Time: 1 hour 30 minutes
 8. Ping 8.8.8.8 to check network access to internet, then run the workload again.
 
    We just did a lift and shift to another compute instance with the same Swingbench workload software!
-
-  ```
-  $ <copy>ls</copy>
-
-  $ <copy>ping 8.8.8.8</copy>
-
-  $ <copy>cd swingbench/bin</copy>
-  ```
+      ```
+      $ <copy>ls</copy>
+      $ <copy>ping 8.8.8.8</copy>
+      $ <copy>cd swingbench/bin</copy>
+      ```
 
   Replace the script below with your wallet and service name.
 
-  ```
-  $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
-  -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
-  -cs atplabtest_tp \
-  -u soe \
-  -p Welcome#2018 \
-  -v users,tpm,tps \
-  -intermin 0 \
-  -intermax 0 \
-  -min 0 \
-  -max 0 \
-  -uc 128 \
-  -di SQ,WQ,WA \
-  -rt 0:30.00</copy>
-  ```
+      ```
+      $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+      -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+      -cs atplabtest_tp \
+      -u soe \
+      -p Welcome#2018 \
+      -v users,tpm,tps \
+      -intermin 0 \
+      -intermax 0 \
+      -min 0 \
+      -max 0 \
+      -uc 128 \
+      -di SQ,WQ,WA \
+      -rt 0:30.00</copy>
+      ```
 
  Your workload should run as before with your new compute instance.
 
@@ -105,9 +102,9 @@ Estimated Time: 1 hour 30 minutes
 2. Select Create Clone from the Actions menu
 
 3. Create a Full Clone from database instance, which will clone data and metadata
-  ![](./images/clone-atp-1.png)
+    ![](./images/clone-atp-1.png)
 
-  ![](./images/clone-atp-2.png)
+    ![](./images/clone-atp-2.png)
 
 
 4. Select database version 19c, 2 cores, 1 TB
@@ -140,29 +137,29 @@ The Clone will be created in 15-20 minutes.  It will have a new Wallet.  Notice 
 
  *  Troubleshooting: Test the connection with SQLPlus.
 
-  ```
-  $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
+    ```
+    $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
 
-  $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
+    $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
 
-  $ <copy>sqlplus admin/<password>@<service_tp></copy>
-  ```
+    $ <copy>sqlplus admin/<password>@<service_tp></copy>
+    ```
 
- ```
- $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
- -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
- -cs atplabtest_tp \
- -u soe \
- -p Welcome#2018 \
- -v users,tpm,tps \
- -intermin 0 \
- -intermax 0 \
- -min 0 \
- -max 0 \
- -uc 128 \
- -di SQ,WQ,WA \
- -rt 0:30.00</copy>
- ```
+     ```
+     $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+     -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+     -cs atplabtest_tp \
+     -u soe \
+     -p Welcome#2018 \
+     -v users,tpm,tps \
+     -intermin 0 \
+     -intermax 0 \
+     -min 0 \
+     -max 0 \
+     -uc 128 \
+     -di SQ,WQ,WA \
+     -rt 0:30.00</copy>
+     ```
 
 Your workload will now run against the cloned ATP.   
 
@@ -297,4 +294,4 @@ Your workload will now run against the cloned ATP.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021

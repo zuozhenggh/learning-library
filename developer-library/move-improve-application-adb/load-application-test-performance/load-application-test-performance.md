@@ -1,8 +1,7 @@
 # Run the Application Workload
 
 ## Introduction
-
-  ![](./images/run-swingbench-diagram.PNG)
+  ![](./images/run-swingbench-diagram.png)
 
   The Swingbench workload on the App Server runs against ATP through the Service Gateway. Throughout the run, CPU is saturated at 100% utilization, so it’s a good test to scale the cores. First let’s open SQL Developer tool to check the core count.
 
@@ -27,9 +26,9 @@
 
 2. From SQL Developer worksheet, check your cpu count by typing in the worksheet
 
-  ```
-  <copy>show parameter cpu</copy>
-  ```
+    ```
+    <copy>show parameter cpu</copy>
+    ```
 
 3. Reconnect to ATP if SQL Developer has lost the connection.
 
@@ -51,29 +50,28 @@
    Note that the schema is **soe**.  ie: -u soe.  The soe schema password is **Welcome#2018**.
    If you want to change the password or the user is locked, log in to sqlplus or SQL Developer and enter:
 
-   ```
-   <copy>ALTER USER soe IDENTIFIED BY <new password> ACCOUNT UNLOCK;</copy>
-   ```
+     ```
+     <copy>ALTER USER soe IDENTIFIED BY <new password> ACCOUNT UNLOCK;</copy>
+     ```
 
     <u>Troubleshooting</u>: If you are having trouble running the script, put it all in one line without the \ .
 
-   ```
-   $ <copy>cd ~/swingbench/bin</copy>
-
-   $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
-   -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
-   -cs atplabtest_tp \
-   -u soe \
-   -p Welcome#2018 \
-   -v users,tpm,tps \
-   -intermin 0 \
-   -intermax 0 \
-   -min 0 \
-   -max 0 \
-   -uc 128 \
-   -di SQ,WQ,WA \
-   -rt 0:1.30</copy>
-   ```
+      ```
+      $<copy>cd ~/swingbench/bin</copy>
+      $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+      -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+      -cs atplabtest_tp \
+      -u soe \
+      -p Welcome#2018 \
+      -v users,tpm,tps \
+      -intermin 0 \
+      -intermax 0 \
+      -min 0 \
+      -max 0 \
+      -uc 128 \
+      -di SQ,WQ,WA \
+      -rt 0:1.30</copy>
+      ```
 
    Note your results for TPM and TPS.  You should get about 1000 transactions per second (tps).  We will compare them later.  Hitting CTRL-C will stop the workload.
 
@@ -86,21 +84,21 @@
 
 8. Now run the workload by changing –rt option to 30 minutes. Ie: -rt 0:30:00
 
-  ```
-  $ <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
-  -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
-  -cs atplabtest_tp \
-  -u soe \
-  -p Welcome#2018 \
-  -v users,tpm,tps \
-  -intermin 0 \
-  -intermax 0 \
-  -min 0 \
-  -max 0 \
-  -uc 128 \
-  -di SQ,WQ,WA \
-  -rt 0:30.00</copy>
-  ```
+    ```
+    $ <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+    -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+    -cs atplabtest_tp \
+    -u soe \
+    -p Welcome#2018 \
+    -v users,tpm,tps \
+    -intermin 0 \
+    -intermax 0 \
+    -min 0 \
+    -max 0 \
+    -uc 128 \
+    -di SQ,WQ,WA \
+    -rt 0:30.00</copy>
+    ```
 
 9. After about 3 minutes scale ATP up to 3 cores. Do not enable Auto Scaling yet. We will scale manually first.
 
@@ -111,10 +109,9 @@
 
 10. From SQL Developer worksheet, check your cpu count
 
-  ```
-  <copy>Show parameter cpu</copy>
-
-  ```
+    ```
+    <copy>Show parameter cpu</copy>
+    ```
   ![](./images/sql-developer-show-cpu-count-6.png)
   Note your runtime TPM and TPS. You should see a lot more transactions!
 
@@ -131,13 +128,13 @@
 
    From the Service Console Activity you can see both runs were at 100% CPU utilization. Which means we can still add cores to increase performance. Note the rapid dip in cpu utilization as it transitions to more cpu’s. It’s near instantaneous and the server is still running.
 
-  ![](./images/performance-monitoring.PNG)
+   ![](./images/performance-monitoring.PNG)
 
   You can hit crtl-C to stop the workload run.
 
-### Auto Scaling
+## Task 2.1: Auto Scaling
 
-  Let’s look at the auto scaling feature. Auto scaling automatically scales your cores to a maximum of 3 times the initially core count when the CPU utilization is high.
+   Let’s look at the auto scaling feature. Auto scaling automatically scales your cores to a maximum of 3 times the initially core count when the CPU utilization is high.
 
 1. Scale your ATP back down to 1 core and click update. No auto scale yet.
 
@@ -148,28 +145,28 @@
 2. From SQL Developer worksheet, check your cpu count. With one core you should see 2 cpu threads.
    Notice the   scaling is very fast even before the console UI updates its status.
 
-  ```
-  <copy>Show parameter cpu</copy>
-  ```
+    ```
+    <copy>Show parameter cpu</copy>
+    ```
 
 3. Run the charbench again for 30 minutes if the workload has stopped.
    You may see some java connection warnings. You can ignore this.
 
-  ```
-  <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
-  -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
-  -cs atplabtest_tp \
-  -u soe \
-  -p Welcome#2018 \
-  -v users,tpm,tps \
-  -intermin 0 \
-  -intermax 0 \
-  -min 0 \
-  -max 0 \
-  -uc 128 \
-  -di SQ,WQ,WA \
-  -rt 0:30.00</copy>
-  ```
+    ```
+    <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+    -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+    -cs atplabtest_tp \
+    -u soe \
+    -p Welcome#2018 \
+    -v users,tpm,tps \
+    -intermin 0 \
+    -intermax 0 \
+    -min 0 \
+    -max 0 \
+    -uc 128 \
+    -di SQ,WQ,WA \
+    -rt 0:30.00</copy>
+    ```
 
 
 
@@ -177,17 +174,17 @@
         ![](./images/auto-scale-ui.png)
 
     After the scaling is completed you should see Auto Scaling enabled. Note your transactions continue to run as scaling begins.  There is no down time.
-   ![](./images/atp-details-auto-scale.png)
+     ![](./images/atp-details-auto-scale.png)
 
 5. From SQL Developer worksheet, check your cpu count
 
-  ```
-  <copy>Show parameter cpu</copy>
-  ```
+    ```
+    <copy>Show parameter cpu</copy>
+    ```
 
   Note that ATP has automatically scaled to 3 cores, the 3X maximum that it will scale to. Note the 3X increase in transactions per second and minutes. Check your performance monitor from the service console again.  We are still at 100% CPU utilization so this workload needs more CPUs :)  But you have just examined one of the autonomous features of ATP - auto scaling.
 
-   ![](./images/sample-run-with-auto-scale.png)
+     ![](./images/sample-run-with-auto-scale.png)
 
 
 6. Stop the Swingbench run with ctrl-C
@@ -196,15 +193,16 @@
 
 7. From SQL Developer worksheet, check your core count.
 
-  ```
-  <copy>Show parameter cpu</copy>
-  ```
+    ```
+    <copy>Show parameter cpu</copy>
+    ```
 
   Why is the cpu count still the same even with the scale down after the workload stops?
 
-### Show the Effects of Database Services
+##Task 2.2: Show the Effects of Database Services
 
-  We are going to set up two connections, one running the Swingbench workload and the other running a query on another schema.
+
+   We are going to set up two connections, one running the Swingbench workload and the other running a query on another schema.
 
 1. Scale the ATP back to 2 cores and disable the auto scale.
 
@@ -215,50 +213,50 @@
 
 3. From SQL Developer worksheet, check your cpu count is 4 (ie: 2 cores thus 4 Hyper-threads)
 
-  ```
-  <copy>Show parameter cpu</copy>
-  ```
+    ```
+    <copy>Show parameter cpu</copy>
+    ```
 
 4. From SQL Developer worksheet, run the following query 5 times and note the completion time with
    your MEDIUM service.
 
-  ```
-  <copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
-  from ssb.customer c_high
-  group by c_city, c_region
-  order by count(*);</copy>
+    ```
+    <copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
+    from ssb.customer c_high
+    group by c_city, c_region
+    order by count(*);</copy>
 
-  You should have gotten similar completion times: 0.524, 0.406, 0.332, 0.357, 0.376 seconds
+    You should have gotten similar completion times: 0.524, 0.406, 0.332, 0.357, 0.376 seconds
 
-  ```
+    ```
 5. Now run both the Swingbench workload and the query together.  
    Remember to use your wallet names and service names.
 
-  ```
-  <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
-  -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
-  -cs atplabtest_tp \
-  -u soe \
-  -p Welcome#2018 \
-  -v users,tpm,tps \
-  -intermin 0 \
-  -intermax 0 \
-  -min 0 \
-  -max 0 \
-  -uc 128 \
-  -di SQ,WQ,WA \
-  -rt 0:30.00</copy>
-  ```
+    ```
+    <copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
+    -cf ~/Wallet_ATPLABTEST/Wallet_ATPLABTEST.zip \
+    -cs atplabtest_tp \
+    -u soe \
+    -p Welcome#2018 \
+    -v users,tpm,tps \
+    -intermin 0 \
+    -intermax 0 \
+    -min 0 \
+    -max 0 \
+    -uc 128 \
+    -di SQ,WQ,WA \
+    -rt 0:30.00</copy>
+    ```
 
 6. Wait until the workload goes into a steady state with full transactions, about 3 minutes,
    then from SQL Developer run the query
 
-  ```
-  <copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
-  from ssb.customer c_high
-  group by c_city, c_region
-  order by count(*);</copy>
-  ```
+    ```
+    <copy>select /*+NO_RESULT_CACHE*/ c_city, c_region, count(*)
+    from ssb.customer c_high
+    group by c_city, c_region
+    order by count(*);</copy>
+    ```
 
    Note your completion times. They should be longer like this: 1.259, 1.007, 1.25, 1.115, 1.008 seconds
 
@@ -276,4 +274,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021

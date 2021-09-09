@@ -42,11 +42,10 @@ Estimated Time: 30 minute
 10. Click **Yes**
 11. Copy both the ATP wallet and the private SSH key for the App Server to the Bastion. Be sure to copy the key for Linux, not the .ppk, because your app server is a Linux compute.
 
-   ![](./images/winscp-4.PNG)
+      ![](./images/winscp-4.PNG)
 
 ## Task 2: Copy the ATP Wallet to the App Server ##
-
-   ![](./images/copy-wallet-diagram.PNG)
+  ![](./images/copy-wallet-diagram.png)
 
 
 
@@ -56,49 +55,49 @@ We are now going to copy the ATP Wallet to the App Server. The App Server will b
 2. ssh to the Bastion with PuTTy or your ssh client
    From Bastion session:
 
-   ```
-   $<copy>ls –al</copy>
-   ```
+     ```
+     $<copy>ls –al</copy>
+     ```
 
 3. Restrict the permissions of labkey or your own key
 
-  ```
-  $<copy>chmod 0700 labkey</copy>
-  ```
+    ```
+    $<copy>chmod 0700 labkey</copy>
+    ```
 
 4. Copy your ATP wallet from the Bastion to the App Server
 
    (Replace the below commands with your SSH private key, wallet name, and private IP address of your App Server)
 
-   ```
-   $<copy> scp -C -i labkey -r Wallet_ATPLABTEST.zip opc@10.0.1.2:/home/opc</copy>
-   ```
+    ```
+    $<copy> scp -C -i labkey -r Wallet_ATPLABTEST.zip opc@10.0.1.2:/home/opc</copy>
+    ```
 
  5. Type **yes** if you see the message below:
 
-    ![](./images/ssh-to-app-server.PNG)
+     ![](./images/ssh-to-app-server.PNG)
 
 
 
     Connect to App Server with the private key. Replace the private key and private IP address with yours.
 
-  ```
-  $<copy> ssh –i labkey opc@10.0.1.2</copy>
-  $ <copy>ls</copy>
-  ```
+    ```
+    $<copy> ssh –i labkey opc@10.0.1.2</copy>
+    $ <copy>ls</copy>
+    ```
 
     Let’s test you can reach the internet through the NAT gateway, ping something like the Google DNS. We will need to install software from the internet through the NAT later.
 
     From the App Server session
 
-```
-$ <copy>ping 8.8.8.8</copy>
-```
+    ```
+    $ <copy>ping 8.8.8.8</copy>
+    ```
 
-![](./images/ping.PNG)
+   ![](./images/ping.PNG)
 
 You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021

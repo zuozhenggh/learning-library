@@ -12,7 +12,7 @@ Estimated Time: 40 minutes
 * Create Application server.
 * Connect Application server through compute instance.
 
-## Requirements ##
+### Prerequisites
 
 * Web browser
 * SSH public and private keys
@@ -104,7 +104,9 @@ Use PuTTy or SSH to connect to your bastion compute. Connect with the compute pu
 
 For Linux SSH:
 
-`sh –i ~/../privatekey opc@<your compute public IP address>`
+```
+<copy>`sh –i ~/../privatekey opc@<your compute public IP address>`</copy>
+```
 
 For PuTTY:
 
@@ -126,11 +128,11 @@ For PuTTY:
 
 5. Login as **opc**
 
-  ![](./images/putty-session.png)
+   ![](./images/putty-session.png)
 
 ## Task 3: Create your Application Server
 
- ![](./images/app-server-diagram.png)
+  ![](./images/app-server-diagram.png)
 
 1. On the Private subnet create a compute for your application server
 2. Name your instance as your app server
@@ -154,21 +156,21 @@ For PuTTY:
 
 10. Click Create
 
-  ![](./images/create-app-server-3.PNG)
+    ![](./images/create-app-server-3.PNG)
 
 
 
    You can see the work request and status of the compute being provisioned in the compute details and Work Requests page.
 
-   ![](./images/create-app-server-5.PNG)
+     ![](./images/create-app-server-5.PNG)
 
 
 
    Once your compute App Server instance is running, view other details. Note the compute is provisioned on the private subnet, you only get a private IP address.  There is no public IP address.  From the private subnet we have a secure App Server that will connect to ATP.
 
-   ![](./images/app-server-details.png)
+    ![](./images/app-server-details.png)
 
-Now we need to turn off VNIC source/destination check to allow packets to be forwarded.  Otherwise if the packet is not for the VNIC it will be dropped.
+   Now we need to turn off VNIC source/destination check to allow packets to be forwarded.  Otherwise if the packet is not for the VNIC it will be dropped.
 
 ## Task 4: Turn off VNIC source/destination check
 
@@ -194,7 +196,7 @@ Now we need to turn off VNIC source/destination check to allow packets to be for
 
 Let's see how your security list are set up to ensure they allow the right traffic.
 
-![](./images/security-list-diagram.png)
+  ![](./images/security-list-diagram.png)
 
 1. Navigate to your Network VCN details
 
@@ -205,13 +207,11 @@ Let's see how your security list are set up to ensure they allow the right traff
 		- Allow TCP ingress on port 22. (port 22 is for SSH)
 		- Allow all egress to all destinations, ie: 0.0.0.0/0
 
-​	  ICMP is defaulted and is TCP/IP layer protocol for control and error messages.
+  ​	    ICMP is defaulted and is TCP/IP layer protocol for control and error messages.
+              ![](./images/vcn-details.png)
 
-   ![](./images/vcn-details.png)
-
-​	  ![](./images/ingress-rules.png)
-
-   ![](./images/egress-rules.png)
+  ​	           ![](./images/ingress-rules.png)
+              ![](./images/egress-rules.png)
 
 4. Check security list for private subnet.
 
@@ -227,4 +227,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021
