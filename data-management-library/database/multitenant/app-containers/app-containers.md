@@ -1540,7 +1540,7 @@ The tasks you will accomplish in this step are:
 
     alter pluggable database application wmStore sync to patch 301;
 
-    connect system/oracle@localhost:1523/Tulsa
+    connect system/oracle@localhost:1524/Japan
 
     alter pluggable database application wmStore sync to patch 301;
     </copy>
@@ -1704,14 +1704,19 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
+    ![](./images/task11.1-createindex.png " ")
+
+
 2. Attempt the sync and observe that it fails.
 
     ```
     <copy>
     connect system/oracle@localhost:1523/NYC
-    alter pluggable database application wmStore sync;
+    alter pluggable database application wmStore sync to patch 301;
     </copy>
     ```
+
+    ![](./images/task11.2-syncerror.png " ")
 
 3. Check for dba_app_errors.
 
@@ -1720,6 +1725,9 @@ The tasks you will accomplish in this step are:
     select * from DBA_App_Errors;
     </copy>
     ```
+
+    ![](./images/task11.3-apperrors.png " ")
+
 4. Correct the issue and try the sync again.
 
     ```
@@ -1730,9 +1738,11 @@ The tasks you will accomplish in this step are:
 
     connect system/oracle@localhost:1523/NYC
 
-    alter pluggable database application wmStore sync;
+    alter pluggable database application wmStore sync to patch 301;
     </copy>
     ```
+
+    ![](./images/task11.4-syncsuccess.png " ")
 
 ## Task 12: Container Map
 This section we explore another location transparency technology: Container Map. Here we follow the expansion of Walt's Malts through the acquisition of a formerly independent distributor of Walt's Malts products. This company is named Terminally Chill, and their niche was selling Walt's Malts products through a number of small kiosks in various airports globally. The Terminally Chill application has a different design from the original wmStore application. Whereas wmStore was originally designed for standalone deployment, Terminally Chill used a single database to manage data for all kiosks in all airports. The application server tiers are designed to connect directly to a single database, with query predicates to retrieve data for the right airport and kiosk. In this lab, we'll see how Container Map can help accommodate applications of this design.
