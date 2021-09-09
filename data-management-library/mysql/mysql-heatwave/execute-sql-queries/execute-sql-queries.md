@@ -1,4 +1,4 @@
-# Execute SQL Queries to see the difference
+# Execute SQL Query to View the Performance Differences
 
 ## Introduction
 
@@ -49,7 +49,7 @@ This lab assumes you have:
 
    ![disable](images/disable.png)
 
-	 NOTE: When you disable **use_secondary_engine** and run query, the said query will not use **HeatWave** engine.
+	 NOTE: When you disable **use\_secondary\_engine** and run query, the said query will not use **HeatWave** engine.
 
 5.	To verify the same, we will again run **Explain** command to see that query is using normal MySQL engine and not HeatWave Cluster engine.
 
@@ -67,7 +67,7 @@ This lab assumes you have:
 
 	![execute-again](images/execute-again.png)
 
-**NOTE**: As we can see time difference in execution time on **Normal** MySQL Database System, the same query took approx. **0.4383** seconds However the same query took **0.0237** when running with HeatWave Cluster enabled.
+> **Note:** As we can see time difference in execution time on **Normal** MySQL Database System, the same query took approx. **0.4383** seconds However the same query took **0.0237** when running with HeatWave Cluster enabled.
 
 **This completes the Task here!**
 

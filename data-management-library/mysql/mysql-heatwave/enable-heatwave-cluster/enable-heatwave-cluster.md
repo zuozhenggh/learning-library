@@ -1,4 +1,4 @@
-# Enable HeatWave Cluster to MySQL Database System
+# Enable HeatWave Cluster in MySQL Database System
 
 ## Introduction
 
@@ -37,11 +37,9 @@ and you will see newly created MySQL DB System in **Active** state. Now **Click*
 
    ![endpoint](images/endpoint.png)
 
-**NOTE**: At this stage we have our MySQL Database System **Active** and **HeatWave** Cluster is also enabled.
+> **Note:** At this stage we have our MySQL Database System **Active** and **HeatWave** Cluster is also enabled.
 
-**This completes the Task**
-
-**You are ready to proceed to Lab 3**
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
