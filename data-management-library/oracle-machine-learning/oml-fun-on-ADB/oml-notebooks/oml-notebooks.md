@@ -36,46 +36,69 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** on the left.
 
-	![Image alt text](images/sample1.png)
-
-  To create a link to local file you want the reader to download, use this format:
-
-  Download the [starter file](files/starter-file.sql) SQL code.
+	![Development option in ADW Service Console](images/adw_development.png)
 
 
 2. Click **Oracle Machine Learning Notebooks.**
 
-  ![Image alt text](images/sample1.png)
+  ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
 
-4. Enter your user credentials and click **Sign in**.  Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+4. Enter your user credentials and click **Sign in**.
+
 	> **Note:** If you are using a LiveLabs tenancy, then the username is ``OMLUSER`` and the password is ``AAbbcc123456``.
 
+	![Oracle Machine Learning Notebooks Signin page](images/oml_signin_page.png)
 
 5. Click **Notebooks** in the Quick Actions section.
 
-   If you add another paragraph, add 3 spaces before the line.
+	![Notebooks option in OML homepage](images/homepage_notebooks.png)
+
 
 ## Task 2: Create a Notebook and define paragraphs the md, SQL, and Python interpreters
 To create a notebook:
 
-1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
+1. On the Oracle Machine Learning homepage, click **Notebooks**. The Notebooks page opens.
+
+	![Notebooks option in OML homepage](images/homepage_notebooks.png)
+
 2. On the Notebooks page, click **Create**. The Create Notebook window appears.
+	![Image alt text](images/sample1.png)
+
 3. In the Name field, enter **Test** Notebook.
+
 4. In the **Comments** field, enter comments, if any.
+
 5. In the **Connections** field, select a connection in the drop-down list. By default, the **Global Connection Group** is assigned.
+
 6. Click **OK**. Your notebook is created and it opens in the notebook editor.
+
 
 You can now use it to create an md paragraph, SQL paragraph, and python paragraph and do the following:
 
 ### Task 2.1: Call the Markdown interpreter and generate static html from Markdown plain text
 To call the Markdown interpreter and generate static html from Markdown plain text:
 
-1. Type ``%md``
+1. Type ``%md``.
+
 2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as seen in the screenshot below.
-3. You can format the text in bold and italics. To display the text in bold, write the same text inside the tag **Hello World** and click Run
+
+	![Markdown tags for plain text](images/md_text.png)
+
+3. You can format the text in bold and italics. To display the text in bold, write the same text inside the tag **Hello World** and click Run.
+
+	![Markdown tags for bold](images/md_bold.png)
+
 4. To display the text in italics, write the same text inside the a an asterisk pair or underscore pair as shown in the screenshot, and click Run.
+
+	![Markdown tags for italics](images/md_italics.png)
+
 5. To display the text in a bulleted list, prefix * (asterisk) to the text, as shown in the screenshot below:
-6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix 1, 2, and 3 hashes respectively
+
+	![Markdown tags for bulleted points](images/md_bullets.png)
+
+6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix 1, 2, and 3 hashes respectively.
+
+	![Markdown tags for headings](images/md_heading_tags.png)
 
 
 
@@ -85,6 +108,7 @@ To call the SQL interpreter and run SQL statements
 1. Edit the paragraph tag and type %sql to call the SQL interpreter.
 2. Type select `table_name` from ``user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
 
+	![SQL commands](images/sql_commands.png)
 
 
 ### Task 2.3: Call the PL/SQL Interpreter and run PL/SQL Scripts
@@ -111,6 +135,9 @@ To call the PL/SQL interpreter and run PL/SQL scripts:
 			COMMIT;
 			END; </copy>
      ```
+
+		 ![PL/SQL script](images/plsql_script.png)
+
 		The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
 		  	- The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
 				- The second part of the script begins with the keyword ``BEGIN``. It inserts 100 rows in to the table ``small_table``
@@ -134,22 +161,40 @@ To call the Python interpreter and run python statements:
 		```
 		The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here:
 
+		![Python script](images/python_commands.png)
 
 ## Task 3: Create a Notebook using a Template Example
 
 This step demonstrates how to create a notebook based on an Example template:
 
 1. Sign into your OML Notebook instance and click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
+
+		![OML homepage](images/homepage_examples.png)
+
 2. Navigate to the **OML4Py Classification DT** example template notebook, click it and then click **Create Notebook**.
+
+
+
 3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **Classification_DT**.
 
 		> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
+		![Create notebook from example template](images/create_notebook_dialog.png)
+
+
 4. Once the notebook is created, the message _Notebook Classification_DT created in project USER1 Project_ is displayed, as shown in the screenshot.
+
+		![Create notebook message](images/create_notebook_dialog.png)
+
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
 
+		![Notebooks in left navigation menu](images/notebooks_left_nav.png)
+
+
 6. The notebook Classification_DT is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
+
+		![Notebook listed](images/notebook_listed.png)
 
 This completes the task of creating a notebook from an Example template.
 
@@ -174,26 +219,21 @@ This is the initial binding order of the interpreters. You can change the order 
 In this step, you learn how to set the interpreter bindings:
 1. Open the **Classification_DT** notebook, and click ![gear icon](images/gear.png) on the top right corner in the notebook. This opens the interpreter settings.
 
-![Gear icon](images/interpreter_binding_icon.png)
+	![Gear icon](images/interpreter_binding_icon.png)
 
 2. Click **medium** and drag and drop it on top of the list.
 
-![Drag and drop an interpreter binding](images/drag_int_binding.png)
+	![Drag and drop an interpreter binding](images/drag_int_binding.png)
 
 >**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue).
 
-![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
+	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
 
 3. Once you successfully drag and drop it on top of the list, click **Save**.
 
-![Save interpreter binding order](images/save_order.png)
+	![Save interpreter binding order](images/save_order.png)
 
 Clicking **Save** hides the interpreter settings. You can verify it again by clicking the gear icon. This completes the task of changing the interpreter binding order.
-
-
-
-
-
 
 
 ## Learn More
