@@ -124,7 +124,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Check Status](./images/check-status.PNG)
+    ![Check Status](./images/check-status.png)
 
 ## **Task 4: Generating API Keys**
 1. As 'zdmuser' go to 'zdmhome' directory.
