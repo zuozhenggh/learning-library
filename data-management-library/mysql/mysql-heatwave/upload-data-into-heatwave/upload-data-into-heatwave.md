@@ -19,7 +19,7 @@ This lab assumes you have:
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
 * All previous labs successfully completed
 
-## **Task 1**: Upload data into MySQL HeatWave Cluster Engine
+## Task 1: Upload data into MySQL HeatWave Cluster Engine
 
 1. Since we have already enabled **MySQL HeatWave Cluster** Database System and noted down the **Endpoint** IP address of our MySQL Database System.
 
