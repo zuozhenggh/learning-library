@@ -18,7 +18,7 @@ In this lab, you will:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 * SSH Private Key to access the host via SSH
 * You have completed:
-      - Lab 1: Initialize the workshop Environment
+      - Lab : Initialize the workshop Environment
 
 
 ## Task 1: Create a non-SYSDBA user

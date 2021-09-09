@@ -47,7 +47,8 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
-  ![](images/frontend-service.png " ")
+    ![](images/ingress-nginx-loadbalancer-externalip.png " ")
+  
 
   Alternatively, you can execute the `services` shortcut command.
 
