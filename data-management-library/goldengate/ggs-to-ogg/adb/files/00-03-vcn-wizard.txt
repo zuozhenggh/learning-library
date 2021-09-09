@@ -1,0 +1,1 @@
+This illustration shows the VCN Wizard with the option, VCN with Internet Connectivity selected. Click Start VCN Wizard to proceed.

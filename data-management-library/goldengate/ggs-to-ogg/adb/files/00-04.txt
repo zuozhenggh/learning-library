@@ -1,0 +1,1 @@
+This illustration shows the Create a VCN with Internet Connetivity page open. The VCN Name and Compartment fields in the Basic Information section are highlighted. Click Next to continue.
