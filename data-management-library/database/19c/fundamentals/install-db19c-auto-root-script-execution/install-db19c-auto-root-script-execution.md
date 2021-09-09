@@ -6,7 +6,7 @@ Oracle Database 19c installer has a new feature that automatically runs `root` c
 
 In this lab, you run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer. Next, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created. Use the `workshop-staged` compute instance.
 
-> **Note:** This lab is not available in the LiveLabs tenancy (green button option).
+> **Note:** This lab is available for free and paid tier environments only.
 
 Estimated Time: 40 minutes
 
