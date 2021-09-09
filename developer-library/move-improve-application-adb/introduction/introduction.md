@@ -4,7 +4,7 @@
 
 In this workshop you will move or migrate an existing application and database solution to the Oracle Cloud and Autonomous Database. You will be using many of the features of the Oracle Cloud including virtual cloud networking, security lists, route rules, gateways, and private subnets. After migrating the solution, you will enable ATP features like auto scaling to improve the performance of your application. This workshop covers key practices for moving and improving your own applications to OCI and ATP.
 
-Estimated Workshop Time: 8 hours 00 minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 8 hours 
 
 
 ### Objectives
