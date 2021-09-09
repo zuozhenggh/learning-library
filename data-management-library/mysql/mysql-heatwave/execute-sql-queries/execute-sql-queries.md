@@ -18,7 +18,7 @@ This lab assumes you have:
 * You have enough privileges to use OCI
 * All previous labs successfully completed
 
-## **Task 1**: Execute SQL Query to see the Performance Differences
+## Task 1: Execute SQL Query to see the Performance Differences
 
 1. Now we have **airportdb** database loaded into **HeatWave Cluster** engine. We will execute query on one of the table named **weatherdata** table to see the difference in execution time. Since the table is already loaded into HeatWave Cluster. You can see it from table defination.
 
