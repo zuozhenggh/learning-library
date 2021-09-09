@@ -70,7 +70,7 @@ Estimated time: 30 minutes
 
 ## Task 2: Create an OCI compartment and an OKE cluster in that compartment
 
- 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity & Security> Compartments**.
+ 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select **Identity & Security** then select  **Compartments**.
 
   	![Compartment](images/15-identity-compartments.png " ")
 
@@ -97,9 +97,9 @@ Estimated time: 30 minutes
 
        `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
-       ![compartment id](images/compartmentid.png " ")
+       ![compartment id](images/compartmentid.png " ")hi
 
-  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters (OKE)**.
+  6.  To create an OKE cluster, return to the OCI console and open up the navigation menu in the top-left corner of the Console and go to **Developer Services** and select **Kubernetes Clusters (OKE)**.
 
     ![OKE Service](images/27-dev-services-oke.png " ")
 
@@ -392,7 +392,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 
 ## Task 7: Configuring Network Security Rules
 1. The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
-2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
+2. Navigate to **Developer Services** then select **Kubernetes Clusters (OKE)**
 
     ![dev services oke](images/27-dev-services-oke.png " ")
 
