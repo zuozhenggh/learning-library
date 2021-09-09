@@ -1,0 +1,1 @@
+This illustration shows the Certificate Management page and Add CA Certificates (plus icon) highlighted.

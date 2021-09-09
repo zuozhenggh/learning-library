@@ -1,0 +1,1 @@
+This illustration shows the Add CA Certificate dialog and the certificate details pasted into the text area.

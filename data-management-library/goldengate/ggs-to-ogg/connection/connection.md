@@ -88,37 +88,37 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 
-    ![Certificate Management](images/02-01-certmgmt.png "Click Certificate Management")
+    ![](images/02-01-certmgmt.png " ")
 
 3.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
-    ![Add CA Certificates](images/02-03-addcert.png "Add CA Certificates")
+    ![](images/02-03-addcert.png " ")
 
 4.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
-    ![Unique Name](images/02-04-addcertdialog.png "Enter a name")
+    ![](images/02-04-addcertdialog.png " ")
 
 5.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
-    ![Enter Certificate](images/02-05-entercert.png "Copy the certificate details and paste into the Enter text area")
+    ![](images/02-05-entercert.png " ")
 
 6.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
-    ![Upload Certificate](images/02-06-uploadcert.png "Click Upload, and then Browse")
+    ![](images/02-06-uploadcert.png " ")
 
 7.  Click **Add**.  The certificate now appears in the Shared list.
 
-    ![Shared Certificates](images/02-07-certlist.png "Click Add")
+    ![](images/02-07-certlist.png " ")
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
 1.  Sign in to the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
-    ![](images/03-01.png "Administrator page")
+    ![](images/03-01.png " ")
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
 
-    ![](images/03-02.png "Add a user with the Operator role")
+    ![](images/03-02.png " ")
 
     ![](images/03-02b.png " ")
 
@@ -134,7 +134,7 @@ The following instructions show you how to download the Root Certificate using a
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
 
-    ![](images/03-04.png "Add user credential")
+    ![](images/03-04.png " ")
 
 6.  Click **Submit**.
 

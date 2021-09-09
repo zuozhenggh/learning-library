@@ -1,0 +1,1 @@
+This illustration shows the Certificate Export Wizard with Base-64 encoded X.509 (.CER) selected.

@@ -1,0 +1,1 @@
+This illustration shows the SQL interface with the contents of OCIGGLL_OCIGGS_SETUP_USERS_ADW.sql pasted into the worksheet.
