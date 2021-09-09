@@ -21,11 +21,11 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
 
-    ![Open ATP Service Console](images/02-01.png)
+    ![](images/02-01.png " ")
 
 2.  In the DB Connection panel, click **Download Wallet**.
 
-    ![ATP Service Console](images/02-02.png)
+    ![](images/02-02.png " ")
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
 
@@ -33,7 +33,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-    ![Open Compute Instances](images/02-01_compute.png)
+    ![](images/02-01_compute.png " ")
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
@@ -41,7 +41,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
 
-    ![Copy Public IP](images/02-04.png)
+    ![](images/02-04.png " ")
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
@@ -72,15 +72,15 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 1.  In the OCI GoldenGate Deployment Console, open the navigation menu (hamburger icon) and then click **Configuration**.
 
-    ![OPen OCI GoldenGate Deployment Console Configuration screen](images/03-02.png)
+    ![](images/03-02.png " ")
 
 2.  Copy the SourceATP connection string in the User ID column, and then paste it into a text editor.
 
-    ![Copy User ID for SourceATP credential](images/03-03.png)
+    ![](images/03-03.png " ")
 
 3.  Edit the SourceATP connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ATP.zip. For example, **/home/opc/wallet\_ATP**.
 
-    ![Edit wallet directory](images/04-04.png)
+    ![](images/04-04.png " ")
 
 4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
@@ -88,11 +88,11 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 6.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![Open Admin server](images/04-03.png)
+    ![](images/04-03.png " ")
 
 7.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![Open OGG Administration Server Configuration screen](images/04-07.png)
+    ![](images/04-07.png " ")
 
 8.  Click **Add Credential**.
 
@@ -103,24 +103,24 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
     * For **User ID**, paste the modified ATP connection string from step 4.
     * For **Password**, enter the Source Database password from the Workshop details.
 
-    ![Add credential for source ATP](images/04-10.png)
+    ![](images/04-10.png " ")
 
 10. Click **Connect to Database**.
 
-    ![Click Connect to Database](images/04-14.png)
+    ![](images/04-14.png " ")
 
 11. Next to TRANDATA Information, click Add **TRANDATA**.
 
-    ![Add TRANDATA](images/04-15.png)
+    ![](images/04-15.png " ")
 
 12. For **Schema Name**, enter **SRC\_OCIGGLL**, and then click **Submit**. *You only need to click Submit once. Click Search, and then enter SRC_OCIGGLL to verify.*
 
-    ![](images/01-05-trandata.png)
+    ![](images/01-05-trandata.png " ")
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You can now proceed to the [next lab](#next).
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You may now proceed to the next lab.
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, July 2021
+* **Last Updated By/Date** - Jenny Chan, September 2021

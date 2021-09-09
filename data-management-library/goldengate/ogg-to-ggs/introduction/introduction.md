@@ -47,4 +47,4 @@ To successfully complete this LiveLab, you must have:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - August 2021
+* **Last Updated By/Date** - Jenny Chan, September 2021
