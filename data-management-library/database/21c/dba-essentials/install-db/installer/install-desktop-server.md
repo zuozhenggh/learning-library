@@ -4,15 +4,13 @@
 
 This lab walks you through the steps for installing Oracle Database 21c and configuring it. With the database installer, you can perform two types of installation.
 
-- **Option 1:** *Desktop class* with minimal configuration  
+-  *Desktop class* with minimal configuration  
   Estimated Time: 20 minutes
 
-- **Option 2:** *Server class* with advanced configuration  
+- *Server class* with advanced configuration  
   Estimated Time: 30 minutes
 
-> To install both system classes on the same host, you need different Oracle home locations.  
-
->> For this workshop, select any one of these.
+To install both system classes on the same host, you need different Oracle home locations.  
 
 ### Objectives
 
@@ -41,9 +39,10 @@ Install the Oracle Database software and create a starter database for Desktop c
 	$ <copy>./runInstaller</copy>
 	```
 
-Now, select one of the following options to install Oracle Database.
+## Task 2: Options to Install Oracle Database
+You can now select Task 2A or Task 2B options to install Oracle Database.
 
-## Option 1: Install Oracle Database (Desktop Class)
+## Task 2A: Install Oracle Database (Desktop Class)
 
 Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window.
 
@@ -53,9 +52,9 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Configuration Option](../common/images/db21c-common-001-createdb.png)
 
-	> If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
+	If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
 
-	>> For this lab, do not select this option.
+	For this lab, do not select this option.
 
 2. The System Class window displays the default option **Desktop class** selected. Using this option, you can perform the installation with minimal configuration. Click **Next**.
 
@@ -66,16 +65,16 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 3. The Typical Install Configuration window displays pre-filled names and values for configuration parameters.
 
 	For this lab, enter the following.  
-	**OSDBA group** - *dba*  
-	**Global database name** - Specify a unique name, for example, *orcl.us.oracle.com*  
-	**Password** - Set the password for admin user accounts  
-	**Pluggable database name** - *orclpdb*  
+	* **OSDBA group** - *dba*  
+	* **Global database name** - Specify a unique name, for example, *orcl.us.oracle.com*  
+	* **Password** - Set the password for admin user accounts  
+	* **Pluggable database name** - *orclpdb*  
 
 	The values may differ depending on the system you are using. For the remaining fields, leave the defaults and click **Next**.
 
    ![Typical Configuration](images/db21c-desk-003-config.png)
 
-	> You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
+	You cannot create multiple Oracle Databases on a host with the same **Global database name**. If an Oracle Database with the specified name already exists, enter a different name, for example, *orcl2.us.oracle.com*.  
 
 	The password created in this window is associated with admin user accounts, namely SYS, SYSTEM, and PDBADMIN. After you create Oracle Database, enter the admin username and use this password to connect to the database.
 
@@ -89,7 +88,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	![oraInventory Location](images/db21c-desk-004-inventory.png)
 
-	> If you have installed Oracle Database earlier, the next time you run the database installer, it does not display the Create Inventory window. The inventory location for Oracle Database is already set. 
+	If you have installed Oracle Database earlier, the next time you run the database installer, it does not display the Create Inventory window. The inventory location for Oracle Database is already set. 
 
 5. You need to run root scripts to configure your Oracle Database. 
 	<!--If you select **Automatically run configuration scripts** then skip step 7-A.-->
@@ -162,7 +161,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	Close the terminal window.  
 
-	> This step is applicable for Linux and UNIX operating systems only. If you have installed Oracle Database earlier, the next time you run the database installer, it displays only one script `root.sh`.
+	This step is applicable for Linux and UNIX operating systems only. If you have installed Oracle Database earlier, the next time you run the database installer, it displays only one script `root.sh`.
 
 	<!--B. If you provided the privileged user credentials in step 13, click **Yes** in the dialog box to run the configuration script automatically.
 
@@ -178,7 +177,7 @@ Click **Close** to exit Oracle Database Setup Wizard.
 
 If you have installed Oracle Database using Option 1, skip Option 2 and **proceed to the next lab**.
 
-## Option 2: Install and Configure Oracle Database (Server Class)
+## Task 2B: Install and Configure Oracle Database (Server Class)
 
 Run the database installer from Oracle home as explained in *Task 1*. The installer starts with the Configuration Option window.
 
@@ -188,9 +187,9 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
    ![Configuration Option](../common/images/db21c-common-001-createdb.png)
 
-	> If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
+	If you select *Set Up Software Only*, the setup wizard installs only the Oracle Database software but does not create the database. To create a container database, run Oracle DBCA after you complete the software installation.
 
-	>> For this lab, do not select this option.
+	For this lab, do not select this option.
 
 2. Select **Server class** in the System Class window to customize your installation and perform advanced configuration. Click **Next**.
 
@@ -214,7 +213,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	![oraInventory Location](images/db21c-srv-005-inventory.png)
 
-	> If you have installed Oracle Database earlier, the next time you run the database installer, it does not display the Create Inventory window. The inventory location for Oracle Database is already set. 
+	If you have installed Oracle Database earlier, the next time you run the database installer, it does not display the Create Inventory window. The inventory location for Oracle Database is already set. 
 
 6. The Configuration Type window displays the default option **General Purpose / Transaction Processing** selected. Click **Next**.
 
@@ -229,19 +228,19 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 7. The Database Identifiers window displays pre-filled names and the System Identifier (SID) for Oracle Database.
 
 	For this lab, enter the following and click **Next**.  
-	**Global database name** - Specify a unique name, for example, *orcl.us.oracle.com*  
-	**Oracle system identifier (SID)** - *orcl*  
-	**Pluggable database name** - *orclpdb*  
+	* **Global database name** - Specify a unique name, for example, *orcl.us.oracle.com*  
+	* **Oracle system identifier (SID)** - *orcl*  
+	* **Pluggable database name** - *orclpdb*  
 
 	The values may differ depending on the system you are using.
 
    ![Oracle SID](images/db21c-srv-007-id.png)
 
-	> _**Oracle SID**_ is a unique name given to an Oracle Database. It distinguishes this instance of Oracle Database from other instances on the host.
+	_**Oracle SID**_ is a unique name given to an Oracle Database. It distinguishes this instance of Oracle Database from other instances on the host.
 
-	>> You cannot create multiple Oracle Databases on a host with the same SID. If an Oracle Database with the specified SID already exists, enter a different SID, for example, *orcl3*. 
+	You cannot create multiple Oracle Databases on a host with the same SID. If an Oracle Database with the specified SID already exists, enter a different SID, for example, *orcl3*. 
 
-	> Similarly, specify a *unique Global database name* for each Oracle Database on the same host.
+	Similarly, specify a *unique Global database name* for each Oracle Database on the same host.
 
 
 8. In the Configuration Options window, you can allocate the memory and select the character sets.
@@ -264,16 +263,16 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
     ![Storage File System](images/db21c-srv-009-storagefilesys.png)
 
-	> Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups.
-	>> For this lab, do not select this option.
+	Oracle Automatic Storage Management (Oracle ASM) allows you to store your data files in ASM disk groups.
+	For this lab, do not select this option.
 
 10. In the Management Options window, do not select the checkbox **Register with Enterprise Manager (EM) Cloud Control**. Leave the default settings and click **Next**.
 
     ![Register with EMCC](images/db21c-srv-010-emcc.png)
 
-	> If you have Oracle EMCC details, such as OMS hostname, port number, and the admin credentials, you can specify in this window and register your Oracle Database.  
+	If you have Oracle EMCC details, such as OMS hostname, port number, and the admin credentials, you can specify in this window and register your Oracle Database.  
 
-	>> However, instead of registering from this window, it is much easier to use the discovery process from Oracle EMCC and add your Oracle Database 21c as a managed target.
+	However, instead of registering from this window, it is much easier to use the discovery process from Oracle EMCC and add your Oracle Database 21c as a managed target.
 
    <!-- Add a link to WS2 lab on how to add managed targets.
    For more information on managed targets, see [Manage your targets in EMCC](?lab=lab-2-manage-your-targets).
@@ -289,7 +288,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	![Set Admin Password](images/db21c-srv-012-syspwd.png)
 
-	> After you install Oracle Database, enter the admin username and use this password to connect to the database. 
+	After you install Oracle Database, enter the admin username and use this password to connect to the database. 
 
 	**Note:** The password must conform to the Oracle recommended standards.
 
@@ -373,7 +372,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	Close the terminal window.  
 
-	> This step is applicable for Linux and UNIX operating systems only. If you have installed Oracle Database earlier, the next time you run the database installer, it displays only one script `root.sh`.
+	This step is applicable for Linux and UNIX operating systems only. If you have installed Oracle Database earlier, the next time you run the database installer, it displays only one script `root.sh`.
 
 	<!--B. If you provided the privileged user credentials in step 13, click **Yes** in the dialog box to run the configuration script automatically.
 
