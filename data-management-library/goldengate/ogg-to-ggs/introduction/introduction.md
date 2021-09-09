@@ -33,9 +33,10 @@ To successfully complete this LiveLab, you must have:
 
 * Lab 1: Set Up Your Environment
 * Lab 2: Create OCI GoldenGate Resources
-* Lab 3: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 4: Send the Oracle GoldenGate Trail File to OCI GoldenGate
-* Lab 5: (Optional) Connect to the Admin Client View Extract Statistics and Log Messages
+* Lab 3: Connect Oracle GoldenGate to Autononous Transaction Processing
+* Lab 4: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
+* Lab 5: Send the Oracle GoldenGate Trail File to OCI GoldenGate
+* Lab 6: (Optional) Connect to the Admin Client View Extract Statistics and Log Messages
 
 ## Learn More
 

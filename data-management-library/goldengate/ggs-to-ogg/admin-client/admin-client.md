@@ -25,13 +25,13 @@ This lab assumes you successfully completed all preceding labs.
 
 2.  From the navigation menu, under **Oracle Database**, select **GoldenGate**.
 
-    ![](images/01-01.png)
+    ![](images/01-01.png "Select Oracle Database and then click GoldenGate")
 
 3.  From the list of OCI GoldenGate deployments, select the deployment you created for this LiveLab.
 
 4.  In the Deployment Details page, next to **Console URL** click **Copy**.
 
-    ![Copy Console URL](images/01-04.png)
+    ![Copy Console URL](images/01-04.png "Copy Console URL")
 
 ## Task 2: Connect to the Admin Client
 
@@ -82,4 +82,4 @@ This lab assumes you successfully completed all preceding labs.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, August 2021
+* **Last Updated By/Date** - Jenny Chan, September 2021

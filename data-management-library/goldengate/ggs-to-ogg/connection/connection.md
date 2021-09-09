@@ -30,23 +30,23 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
 
-    ![Certificate](images/01-04-certificate.png)
+    ![Certificate](images/01-04-certificate.png "View certificate details")
 
 3.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
-    ![DigiCert Root](images/01-04-digicert.png)
+    ![DigiCert Root](images/01-04-digicert.png "View certificate")
 
 4.  Click **Details**, and then click **Copy to File**.
 
-    ![Copy to File](images/01-05.png)
+    ![Copy to File](images/01-05.png "Copy to file")
 
 5.  In the Certificate Export Wizard, click **Next**.
 
 6.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
-    ![Base-64](images/01-07.png)
+    ![Base-64](images/01-07.png "Save as Base-64 encoded X.509")
 
 7.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
@@ -62,23 +62,23 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
 
-    ![Show connection details](images/01b-02.png)
+    ![Show connection details](images/01b-02.png "Show connection details")
 
 3.  In the **Connection Security** dialog, click **More information**.
 
-    ![More information](images/01b-03.png)
+    ![More information](images/01b-03.png "View more information")
 
 4.  In the **Page info** window, click **View Certificate**.
 
-    ![Page info](images/01b-04.png)
+    ![Page info](images/01b-04.png "View certificate")
 
 5.  On the **Certificate** page, click **DigiCert Global Root CA**.
 
-    ![Certificate page](images/01b-05.png)
+    ![Certificate page](images/01b-05.png "Click DigiCert Global Root CA")
 
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
-    ![Download PEM](images/01b-06.png)
+    ![Download PEM](images/01b-06.png "Save as PEM")
 
 ## Task 2: Upload the Certificate to the Oracle GoldenGate Marketplace Service Manager
 
@@ -88,39 +88,39 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 
-    ![Certificate Management](images/02-01-certmgmt.png)
+    ![Certificate Management](images/02-01-certmgmt.png "Click Certificate Management")
 
 3.  On the Certificate Management page, click **Add CA Certificates** (plus icon).
 
-    ![Add CA Certificates](images/02-03-addcert.png)
+    ![Add CA Certificates](images/02-03-addcert.png "Add CA Certificates")
 
 4.  In the Add CA Certificate dialog, enter a **Unique Name**.
 
-    ![Unique Name](images/02-04-addcertdialog.png)
+    ![Unique Name](images/02-04-addcertdialog.png "Enter a name")
 
 5.  For **Certificate PEM**, if you downloaded the root certificate from Chrome, open it in a text editor, and then copy and paste the key into the **Enter** text area.
 
-    ![Enter Certificate](images/02-05-entercert.png)
+    ![Enter Certificate](images/02-05-entercert.png "Copy the certificate details and paste into the Enter text area")
 
 6.  If you downloaded the root certificate from FireFox, click **Upload**, and then click **Browse**. Locate and select the PEM file on your local machine, and then click **Upload**.
 
-    ![Upload Certificate](images/02-06-uploadcert.png)
+    ![Upload Certificate](images/02-06-uploadcert.png "Click Upload, and then Browse")
 
 7.  Click **Add**.  The certificate now appears in the Shared list.
 
-    ![Shared Certificates](images/02-07-certlist.png)
+    ![Shared Certificates](images/02-07-certlist.png "Click Add")
 
 ## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
 
 1.  Sign in to the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
-    ![](images/03-01.png)
+    ![](images/03-01.png "Administrator page")
 
 2.  Click **Add User** and create a user account that Oracle GoldenGate will use to connect to OCI GoldenGate. For example, name the user **ggsnet** and assign the user the Operator role.
 
-    ![](images/03-02.png)
+    ![](images/03-02.png "Add a user with the Operator role")
 
-    ![](images/03-02b.png)
+    ![](images/03-02b.png " ")
 
 3.  In the on premises or Marketplace Service Manager, navigate to the Overview page, locate the Administration Server, and then click the link in the Port column. The on premises or Marketplace Administration Server opens in a new browser.
 
@@ -134,7 +134,7 @@ The following instructions show you how to download the Root Certificate using a
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
 
-    ![](images/03-04.png)
+    ![](images/03-04.png "Add user credential")
 
 6.  Click **Submit**.
 
@@ -143,4 +143,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, August 2021
+* **Last Updated By/Date** - Jenny Chan, September 2021

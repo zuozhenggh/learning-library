@@ -32,7 +32,7 @@ This lab assumes that you completed all preceding labs.
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![Select GoldenGate from Oracle Database](images/database-goldengate.png " ")
+    ![Select GoldenGate from Oracle Database](images/database-goldengate.png "Locate GoldenGate in the OCI navigation menu")
 
     You're brought to the **Deployments** page.
 
@@ -89,11 +89,11 @@ On the Deployment Details page, you can:
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch Console](images/04-01-ggs-launchconsole.png)
+    ![Launch Console](images/04-01-ggs-launchconsole.png "Click Launch Console")
 
 2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
+    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png "Enter GoldenGate credentials and then click Sign In")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
@@ -105,11 +105,11 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 1.  In the OCI Console breadcrumb, click **GoldenGate**, and then click **Registered Databases**.
 
-    ![OCI Console Breadcrumb](images/04-01-breadcrumb.png)
+    ![OCI Console Breadcrumb](images/04-01-breadcrumb.png "Click GoldenGate in the breadcrumb")
 
 2.  On the Registered Databases page, click **Register Database**.
 
-    ![Registered Databases](images/04-02-register-db.png)
+    ![Registered Databases](images/04-02-register-db.png "Click Register Database")
 
 3.  In the Register Database panel, enter **SourceATP** for Name and Alias.
 
@@ -123,7 +123,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 8.  Click **Register**.
 
-    ![Source Database details](images/reg-sourceATP.png)
+    ![Source Database details](images/reg-sourceATP.png "Click Register")
 
 9.  Repeat these steps for the Target Autonomous Database.
 
@@ -135,15 +135,15 @@ Although the GGADMIN user is created during the database registration process, i
 
 1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
 
-    ![](images/05-01.png)
+    ![](images/05-01.png "Locate Autonomous Database in the OCI navigation menu")
 
 2.  From the list of databases, select **SourceATP**.
 
-    ![](images/05-02.png)
+    ![](images/05-02.png "Select the source database")
 
 3.  On the SourceATP Database Details page, click **Tools**, and then click **Open Database Actions**.
 
-    ![](images/05-04.png)
+    ![](images/05-04.png "Click Tools and then click Open Database Actions")
 
 4.  Sign in to Database Actions using the ADMIN user details from the Workshop Details.
 
@@ -151,24 +151,24 @@ Although the GGADMIN user is created during the database registration process, i
 
 6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
-    ![GGADMIN user](images/02-06-locked.png)
+    ![GGADMIN user](images/02-06-locked.png "Edit the GGADMIN user")
 
 7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
-    ![Edit user](images/02-07-edit.png)
+    ![Edit user](images/02-07-edit.png "Deselect Account is Locked to enable GGADMIN")
 
     The user icon changes from a an orange padlock to a green checkmark.
 
 8.  Open the Database Actions navigation menu (hamburger icon), and then select **SQL**.
 
-    ![SQL Developer](images/01-08-sql.png)
+    ![SQL Developer](images/01-08-sql.png "Open SQL Developer")
 
 9.  Enter the following into the worksheet, and then click **Run Script**.
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
-    ![SQL Developer](images/05-09.png)
+    ![SQL Developer](images/05-09.png "Add supplemental logging")
 
 10. Log out of Database Actions.
 
@@ -184,4 +184,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, August 2021
+* **Last Updated By/Date** - Jenny Chan, September 2021
