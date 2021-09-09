@@ -11,7 +11,8 @@ During the subsequent runs of a comparison job, the comparison of the tables can
 
 + **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.2 and higher**
 
-## Task 1: Enable Delta Comparison
+## Task 1: Configure Delta Comparison
+
 1. In the Compare Pair Configuration page, click **Manual Mapping**.
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping.
 Enter:
@@ -43,7 +44,7 @@ Enter:
 
      ![](./images/7DP.png " ")
 
-    Note that for the 1st job run, the out-of-sync is 800 rows with 800-Inserts. Next, let's insert 5 more Inserts to the source db from the Terminal.
+    Note that for the 1st job run, the out-of-sync is 800 rows with 800-Inserts. Next, let's insert 5 more **Inserts** to the source database from the Terminal.
 
 9.   Open the terminal.
 10.  Run the following command:
@@ -70,25 +71,27 @@ Enter:
       commit;
       <\copy>
      ```
-8.   In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
+12.  Go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs. In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
 
-9. Click **Select...** under **Delta Base Value** to select the delta-base value from the list to perform delta processing.
+13. Click **Select...** under **Delta Base Time** to select the delta-base time from the list to perform delta processing.
 
       ![](./images/8DP.png " ")
 
-10. In the **Delta Base Time Selection** page, enter a number, for example 5 in **Number of Runs to Show**, select the **Only Consider Delta Enabled Comparisons** check box, click **Apply Filter**. Select the record and click **Select** to display the **Run Configuration** page.
+14. In the **Delta Base Time Selection** page, select **Base Time** and then click **Select**.
 
       ![](./images/9DP.png " ")
 
-11. Select the record and click the **out-of-sync** icon to display the **Run Configuration** page.
+15. Notice the Delta Base Time has been updated to the time slot selected in the previous step. (highlight the Delta Base Time - Aug 13).
 
+    ![](./images/10DP.png " ")
 
-      ![](./images/10DP.png " ")
+16. Run the Job.
+
+    To add a screen showing Finished Jobs status.
+
+17. Click **Out-of-Sync** link (number to be included later).    
 
       ![](./images/11DP.png " ")
-
-
-## Task 2: Configure Delta Comparison
 
 
 
