@@ -75,142 +75,29 @@ To start the manager:
     <copy>start mgr</copy>
 ```
 ![](./images/4.png" ")
-3. Execute the obey file to create the GoldenGate process.Obey file contains all the commands to create GoldenGate process
-```
+3. Execute the obey file to create the GoldenGate process. Obey file contains all the commands to create GoldenGate process:
+
+ 
+    ```
     <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
-```
-![](./images/5.png" ")
+    ```
+
+    ![](./images/5.png" ")
 Sample Output:
 ![](./images/6.png" ")
 
-4. Start all GoldenGate process.Start with wildcard '*' will start all the GoldenGate process
-```
+4. Start all GoldenGate processes. Start with wildcard '*' will start all the GoldenGate processes:
+    ```
     <copy>
     info all
 
     start *
     </copy>
-```
+    ```
 ![](./images/8.png" ")
 
 
- Source deployment completed!
 
-## **STEP 2**: GoldenGate Configuration for Kafka as Target
-1. Login to GoldenGate for BigData console 
-
-    Replace IP Address with livelab server generated IP
-    
-```
-    <copy>http://IP Address:16001/?root=account</copy>
-```
-Enter username as ***oggadmin***
-
-```
-    <copy>oggadmin</copy>
-```
-Enter Password as ***Wel_Come1***
-```
-    <copy>Wel_Come1</copy>
-```
-![](./images/9.png" ")
-2. Click on '***+***' to create replicat process for target ***Kafka***.
-
-Replicat is a process that delivers data to a target database. It reads the trail file on the target database, reconstructs the DML or DDL operations, and applies them to the target database.
-
-![](./images/10.png" ")
-
-3. Click ***Next*** to navigate to **Replicat Options**.
-
-We are selecting ***CLassic replicat*** as Replicat type for the workshop.
-
-![](./images/11.png" ")
-
-4. Enter process name as ***REPKAFKA***.Process Name ***REPKAFKA*** will  be 8 character user defined
-```
-    <copy>REPKAFKA</copy>
-```
-![](./images/12.png" ")
-5. Update Trail Name and Trail Subdirectory as shown below
-
-Trail Name ***rt*** is generated from goldengate for mysql
-Trail Name:
-```
-    <copy>rt</copy>
-```
-Trail Subdirectory:
-```
-    <copy>/u01/gg4mysql/dirdat</copy>
-```
-![](./images/13.png" ")
-6. Choose target as ***kafka*** from the top-down menu.
-
-![](./images/14.png" ")
-
-7. Click ***Next*** To navigate **parameter** tab.
-
-![](./images/15.png" ")
-
-
-8. Kindly review the parameter contents and mapping conditions,click ***Next***.
-
-![](./images/16.png" ")
-
-9. Kindly replace the content of the property file with a below code and click ***Create and Run***
-```
-<copy>
-# Properties file for Replicat rtest
-#Kafka Handler Template
-gg.handlerlist=kafkahandler
-gg.handler.kafkahandler.type=kafka
-#TODO: Set the name of the Kafka producer properties file.
-gg.handler.kafkahandler.kafkaProducerConfigFile=custom_kafka_producer.properties
-#TODO: Set the template for resolving the topic name.
-gg.handler.kafkahandler.topicMappingTemplate=${tablename}
-gg.handler.kafkahandler.keyMappingTemplate=${primaryKeys}
-gg.handler.kafkahandler.mode=op
-gg.handler.kafkahandler.format=json
-gg.handler.kafkahandler.format.metaColumnsTemplate=${objectname[table]},${optype[op_type]},${timestamp[op_ts]},${currenttimestamp[current_ts]},${position[pos]}
-#TODO: Set the location of the Kafka client libraries.
-gg.classpath=/home/ggadmin/kafka_2.13-2.8.0/libs/*
-jvm.bootoptions=-Xmx512m -Xms32m
-</copy>
-``` 
-
-![](./images/20.png" ")
-
-10. Replicat ***REPKAFKA*** creation completed. Green check mark will shows Replicat ***REPKAFKA*** up and running.
-
-![](./images/21.png" ")
-
-11. Load the data to source database MySql.Kindly open a new putty session,choose ***Q*** to quit the lab menu and load the data to MySql database through command ***loadsource***.
-```
-<copy>
-loadsource
-</copy>
-```
-
-
-![](./images/23.png" ")
-
-12. Validating the data replicated by ***REPKAFKA*** through **statastics**.Kindly switch to GoldenGate for Bigdata console and click on ***Action*** to choose ***Details*** from top-down menu.
-
-![](./images/24.png" ")
-
-
-
-13. Click on the tab Statastics tab to view stats of the kafka message.
-
-![](./images/25.png" ")
-
-14.  Viewing the content of the ***kafka topics***
-```
-<copy>
-consumetopic emp
-</copy>
-```
-
-![](./images/26.png" ")
 
 ## Summary
 In summary, you loaded data in MySQL database `‘ggsource’`, GG extract process `‘extmysql’` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `‘pmpmysql’` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `‘repkafka’` read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
