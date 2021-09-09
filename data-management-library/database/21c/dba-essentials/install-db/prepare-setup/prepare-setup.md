@@ -44,5 +44,5 @@ Using the details from the two steps above, proceed to the lab **Environment Set
 -  Create Stack:  **Compute only** with an existing VCN where security lists have been updated as per **Task 2** above
 
 ## Acknowledgements
-  - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+- **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
