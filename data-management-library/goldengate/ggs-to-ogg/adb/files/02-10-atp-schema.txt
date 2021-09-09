@@ -1,1 +1,0 @@
-This illustration shows the SQL interface with the contents of OCIGGLL_OCIGGS_SRC_USER_SEED_DATA.sql pasted into the worksheet.

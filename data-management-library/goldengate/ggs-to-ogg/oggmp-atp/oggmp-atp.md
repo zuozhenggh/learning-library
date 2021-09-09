@@ -23,11 +23,11 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 2.  On the Target ADW Autonomous Database Details page, click **DB Connection**.
 
-    ![Open DB Connection](images/02-01.png "DB Connection")
+    ![](images/02-01.png " ")
 
 2.  In the DB Connection panel, click **Download Wallet**.
 
-    ![ATP Service Console](images/02-02.png "Download Wallet")
+    ![](images/02-02.png " ")
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Target ADW Admin password twice, and then click **Download**.
 
@@ -37,17 +37,17 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-    ![Open Compute Instances](images/02-01-compute.png "Compute instances")
+    ![](images/02-01-compute.png " ")
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
 3.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle**.
 
-    ![Compute instances](images/02-03-compute-instances.png "Select OGG compute instance")
+    ![](images/02-03-compute-instances.png " ")
 
 4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
 
-    ![Copy Public IP](images/02-04.png "Copy the instance's Public IP Address")
+    ![](images/02-04.png " ")
 
 5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
 
@@ -80,15 +80,15 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 2.  Open the navigation menu (hamburger icon) and then click **Configuration**.
 
-    ![OPen OCI GoldenGate Deployment Console Configuration screen](images/03-02.png "Open Configuration page")
+    ![](images/03-02.png " ")
 
 3.  Copy the TargetADW connection string in the User ID column, and then paste it into a text editor.
 
-    ![Copy User ID for TargetADW credential](images/03-03.png "Copy the Target database connection string")
+    ![](images/03-03.png " ")
 
 4.  Edit the TargetADW connection string, replacing the value for **MY\_WALLET\_DIRECTORY** with the location where you unzipped the wallet_ADW.zip. For example, **/home/opc/wallet\_ADW**.
 
-    ![Edit wallet directory](images/04-04.png "Edit the connection string")
+    ![](images/04-04.png " ")
 
 5.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
@@ -96,15 +96,15 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
 7.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
-    ![Open Admin server](images/04-03.png " ")
+    ![](images/04-03.png " ")
 
 8.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![Open OGG Administration Server Configuration screen](images/04-07.png " ")
+    ![](images/04-07.png " ")
 
 9.  Click **Add Credential**.
 
-    ![](images/03-09.png "Add Credential")
+    ![](images/03-09.png " ")
 
 10. Enter the following information, and then click **Submit**:
 
@@ -113,7 +113,7 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
     * For **User ID**, paste the ADW connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
-    ![Add credential for source ATP](images/04-10.png "Credential details")
+    ![](images/04-10.png " ")
 
 In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can **may proceed to the next lab**.
 

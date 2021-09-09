@@ -1,1 +1,0 @@
-This illustration shows the DigiCert Global Root CA Certificate details with PEM (cert) highlighted.

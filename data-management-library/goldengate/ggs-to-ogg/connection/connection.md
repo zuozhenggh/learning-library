@@ -30,23 +30,23 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
 
-    ![Certificate](images/01-04-certificate.png "View certificate details")
+    ![](images/01-04-certificate.png " ")
 
 3.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
-    ![DigiCert Root](images/01-04-digicert.png "View certificate")
+    ![](images/01-04-digicert.png " ")
 
 4.  Click **Details**, and then click **Copy to File**.
 
-    ![Copy to File](images/01-05.png "Copy to file")
+    ![](images/01-05.png " ")
 
 5.  In the Certificate Export Wizard, click **Next**.
 
 6.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
-    ![Base-64](images/01-07.png "Save as Base-64 encoded X.509")
+    ![](images/01-07.png " ")
 
 7.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
@@ -62,23 +62,23 @@ The following instructions show you how to download the Root Certificate using a
 
 2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
 
-    ![Show connection details](images/01b-02.png "Show connection details")
+    ![](images/01b-02.png " ")
 
 3.  In the **Connection Security** dialog, click **More information**.
 
-    ![More information](images/01b-03.png "View more information")
+    ![](images/01b-03.png " ")
 
 4.  In the **Page info** window, click **View Certificate**.
 
-    ![Page info](images/01b-04.png "View certificate")
+    ![](images/01b-04.png " ")
 
 5.  On the **Certificate** page, click **DigiCert Global Root CA**.
 
-    ![Certificate page](images/01b-05.png "Click DigiCert Global Root CA")
+    ![](images/01b-05.png " ")
 
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
-    ![Download PEM](images/01b-06.png "Save as PEM")
+    ![](images/01b-06.png " ")
 
 ## Task 2: Upload the Certificate to the Oracle GoldenGate Marketplace Service Manager
 

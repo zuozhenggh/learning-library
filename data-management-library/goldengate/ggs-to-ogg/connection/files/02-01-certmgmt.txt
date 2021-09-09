@@ -1,1 +1,0 @@
-This illustration shows the on premises or Marketplace Oracle GoldenGate Service Manager with Certificate Management in the navigation menu highlighted.
