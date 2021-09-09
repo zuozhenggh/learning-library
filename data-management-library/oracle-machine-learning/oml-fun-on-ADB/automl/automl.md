@@ -1,13 +1,13 @@
-# Title of the Lab
+# Using Oracle Machine Learning AutoML UI
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to xxx.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 15 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### About Oracle Machine Learning Notebooks
+Oracle Machine xxx.
 
 ### Objectives
 
