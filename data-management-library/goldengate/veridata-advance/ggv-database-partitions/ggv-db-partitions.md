@@ -36,11 +36,11 @@ To configure Database Row Partitioning:
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
-    * Source Table: **sales**
-    * Target Table: **sales**
+    * Source Table: **SALES**
+    * Target Table: **SALES**
       ![](./images/1_DB.png " ")
 
-3. Select the source and target tables from **Source Table Partitions** and **Target Table Partitions**:
+3. Select the source and target partitions from **Source Table Partitions** and **Target Table Partitions**:
     * Source Table Partitions: **SALES_Q1_2006**
     * Target Table Partitions: **SALES_Q1_2006**
 
@@ -50,16 +50,18 @@ To configure Database Row Partitioning:
 
     ![](./images/3_DB.png " ")
 
-5. Click **Generate Mappings**. The control moves to the **Preview** tab.
+5. Click **Generate Compare Pairs**. The control moves to the **Preview** tab.
+
 
     ![](./images/4_DB.png " ")
 6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+Notice the compare pairs that have been generated with Database Row Partition
 
     ![](./images/5_DB.png " ")
 
   You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_DBPartition** Group to this job.
 
-  
+
 Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
 
 [](youtube:N28CsAr5kjw)

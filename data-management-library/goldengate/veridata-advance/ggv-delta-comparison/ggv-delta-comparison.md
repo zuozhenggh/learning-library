@@ -24,7 +24,7 @@ Enter:
 3. Click **Generate Compare Pair**.
     ![](./images/2DP.png " ")
 4. Click **Save** to save the generated compare pairs on the **Preview** tab.
-5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1=DELTA_TEST1**, and click **Edit** under **Column Mapping**.
+5. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1 =DELTA_TEST1**, and click **Edit** under **Column Mapping**.
     ![](./images/3DP.png " ")
 
 6.  Click the **Delta Processing** tab, select the **Enable Delta Processing** check box, and then click **Save**.
@@ -60,7 +60,6 @@ Enter:
       * **User Name**: source
       * **Password**: source
 11. Enter the following INSERT query:
-
       ```
       <copy>
       insert into delta_test1 values ('2000',2000);
@@ -69,9 +68,12 @@ Enter:
       insert into delta_test1 values ('2003',2003);
       insert into delta_test1 values ('2004',2004);
       commit;
+
       <\copy>
      ```
-12.  Go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs. In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
+    Next, go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs.
+
+12.  In the **Run/Execute Job** page, select **Job_Delta_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.
 
 13. Click **Select...** under **Delta Base Time** to select the delta-base time from the list to perform delta processing.
 
@@ -81,7 +83,7 @@ Enter:
 
       ![](./images/9DP.png " ")
 
-15. Notice the Delta Base Time has been updated to the time slot selected in the previous step. (highlight the Delta Base Time - Aug 13).
+15. Notice the Delta Base Time has been updated to the time slot selected in the previous step.
 
     ![](./images/10DP.png " ")
 
@@ -93,10 +95,12 @@ Enter:
 
       ![](./images/11DP.png " ")
 
-
+Now, Out-of-Sync is 6 Rows with 6 Inserts (1+delta).
 
 ## Want to Learn More?
-
+* [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)
+* [Using Oracle GoldenGate Veridata](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/intro-veridata.html#GUID-5E0D122D-913C-4307-97FB-DF815409FB14)
+* [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/index.html)
 
 
 ## Acknowledgements

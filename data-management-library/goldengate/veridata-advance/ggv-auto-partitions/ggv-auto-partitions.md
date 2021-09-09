@@ -34,15 +34,16 @@ To configure Automatic Row Partitioning:
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
-    * Source Table: **XML**
-    * Target Table: **XMP**
+    * Source Table: **XMLTABLE**
+    * Target Table: **XMLTABLE**
     ![](./images/1_AP.png " ")
 3. Select the **Automatic Row Partitions** check box.
 
 4. Enter a numeric value between 2 to 100 in the text field.
 
       Enter:
-        * Automatic Row Partitions: **12**
+
+      * **Automatic Row Partitions**: **12**
 
       ![](./images/2_AP.png " ")
 
