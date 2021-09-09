@@ -5,24 +5,24 @@
         {
             "title": "Introduction",
             "description": "MySQL Database HeatWave Cloud Services Workshop for OCI Lab Introduction.",
-            "filename": "../../0introduction/introduction.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Lab 1: Create MySQL Database System in Oracle Cloud",
             "description": "Create MySQL Database System first so that later we can enable HeatWave Cluster",
-            "filename": "../../1create-mysql-database-system/create-mysql-database-system.md"
+            "filename": "../../create-mysql-database-system/create-mysql-database-system.md"
         },
         {
             "title": "Lab 2: Enable HeatWave Cluster in MySQL Database System",
-            "filename": "../../2enable-heatwave-cluster/enable-heatwave-cluster.md"
+            "filename": "../../enable-heatwave-cluster/enable-heatwave-cluster.md"
         },
         {
             "title": "Lab 3: Upload data into MySQL HeatWave Cluster Engine",
-            "filename": "../../3upload-data-into-heatwave/upload-data-into-heatwave.md"
+            "filename": "../../upload-data-into-heatwave/upload-data-into-heatwave.md"
         },
         {
             "title": "Lab 4: Execute SQL Query to see the Performance Differences",
-            "filename": "../../4execute-sql-queries/execute-sql-queries.md"
+            "filename": "../../execute-sql-queries/execute-sql-queries.md"
         },
         {
             "title": "Need Help?",
