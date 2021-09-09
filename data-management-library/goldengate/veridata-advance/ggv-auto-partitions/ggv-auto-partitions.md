@@ -52,6 +52,7 @@ To configure Automatic Row Partitioning:
     ![](./images/3_AP.png " ")
 
 6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+  Notice the compare pairs that have been generated with Automatic Row Partition.
 
     ![](./images/4_AP.png " ")
 You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_AutoPartition** Group to this job.
