@@ -1,4 +1,4 @@
-# Create MySQL Database System
+# Create MySQL Database System in Oracle Cloud
 
 ## Introduction
 
@@ -49,11 +49,9 @@ This lab assumes you have:
 
 	 ![active-db](images/active-db.png)
 
-**NOTE:** At this stage we have learnt how to create MySQL Database System However HeatWave Engine is still disable. To enable HeatWave engine we will proceed to Lab 2.
+> **Note:** At this stage we have learnt how to create MySQL Database System. However, HeatWave Engine is still disable. To enable HeatWave engine we will proceed to Lab 
 
-**This completes the Task 1**
-
-**You are ready to proceed to Lab 2**
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering

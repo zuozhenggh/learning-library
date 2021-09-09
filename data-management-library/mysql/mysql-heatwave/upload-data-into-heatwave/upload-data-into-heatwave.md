@@ -1,4 +1,4 @@
-# Upload Data into HeatWave Cluster Engine.
+# Upload Data into MySQL HeatWave Cluster Engine
 
 ## Introduction
 
@@ -78,9 +78,7 @@ This lab assumes you have:
 
 	 ![load-summery](images/load-summery.png)
 
-	 **This completes the Task here!**
-
-	 **You are ready to proceed to Lab 4**
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
