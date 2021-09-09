@@ -95,7 +95,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	Click **OK** to save any changes you made and to close the Password Management window.
 
-Click **Close** to exit Oracle Database Configuration Assistant. You can start Oracle DBCA again to create another container database with advanced configuration.
+	Click **Close** to exit Oracle Database Configuration Assistant. You can start Oracle DBCA again to create another container database with advanced configuration.
 
 ## Task 3: Create and Configure a Container Database (Advanced Mode)
 
@@ -279,7 +279,7 @@ At any point, you can go **Back** to the previous window or **Cancel** database 
 
 	Click **OK** to save any changes you made and to close the Password Management window.
 
-Click **Close** to exit Oracle Database Configuration Assistant.
+	Click **Close** to exit Oracle Database Configuration Assistant.
 
 Congratulations! You have successfully completed this workshop on *Oracle Database 21c installation*.
 
