@@ -136,7 +136,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 ![](./images/ogg-hub-create.png " ")
 
-13. Upon creation, scroll down to the bottom of the logs and copy the ogg_instance_id OCID and the ogg_public_ip. Save them for later use, you will require it during the migration
+13. Upon creation, scroll down to the bottom of the logs and copy the __ogg\_instance\_id__ __ogg\_instance_\id__ and the __ogg\_public\_ip__. Save them for later use, you will require it during the migration
 
 ![](./images/ogg-copy-ocid.png " ")
 
@@ -144,7 +144,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 1. Open CloudShell
 
-2. Connect to the GoldenGate Hub, replace __<ogg_public_ip>__ with the GoldenGate Hub public ip copied above. Enter yes at the prompt
+2. Connect to the GoldenGate Hub, replace __ogg\_public\_ip__ with the GoldenGate Hub public ip copied above. Enter yes at the prompt
 
     ```
     <copy>
