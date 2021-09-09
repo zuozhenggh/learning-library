@@ -1113,9 +1113,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.3-checkcdb1.png " ")
 
-4.  Check the other terminal window where the load program is running.  After a timeout, the load program will resume on its own.  If you don't want to wait, enter CTRL-C to break out of the connection timeout and the load program should continue.  Note that the output now shows it is connected to the database in container **CDB2**.   
-
-In real-world scenarios, Oracle customers may be able to leverage **Application Continuity**.  Oracle **Application Continuity** masks outages from end users and applications by recovering the in-flight work for impacted database sessions following outages.  You can learn more about **Application Continuity** [here](https://www.oracle.com/database/technologies/high-availability/app-continuity.html).  
+4.  Check the other terminal window where the load program is running.  After a timeout, the load program will resume on its own.  If you don't want to wait, enter CTRL-C to break out of the connection timeout and the load program should continue.  Note that the output now shows it is connected to the database in container **CDB2**.  In real-world scenarios, Oracle customers may be able to leverage **Application Continuity**.  Oracle **Application Continuity** masks outages from end users and applications by recovering the in-flight work for impacted database sessions following outages.  You can learn more about **Application Continuity** [here](https://www.oracle.com/database/technologies/high-availability/app-continuity.html).  
 
 
 

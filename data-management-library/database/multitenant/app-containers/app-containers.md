@@ -55,11 +55,16 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 1. Start SQLcl, set the sqlformat for easier on-screen viewing, and connect to **CDB1**.
 
     ```
-    <copy>sql /nolog</copy>
+    <copy>
+    sql /nolog
+    set sqlformat ANSICONSOLE
+    </copy>
     ```
 
     ```
-    <copy>connect sys/oracle@localhost:1523/cdb1 as sysdba</copy>
+    <copy>
+    connect sys/oracle@localhost:1523/cdb1 as sysdba
+    </copy>
     ```
 
     ![](./images/task1.1-connectcdb1.png " ")
@@ -246,7 +251,7 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ![](./images/task1.3.4-insertvalues.png " ")
 
-4. Create the application seed, which will be used to create additional application PDBs.
+4. Create the application seed PDB, which will be used to create additional application PDBs.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -392,7 +397,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task2.3-failsetroot.png " ")
 
-4. You can connect directly as the various local users. Keep in mind these are local users, it just happens to be that they have the same password. Notice that the local user for California cannot use the Tulsa container because it is local to the California container.
+4. You can connect directly to application PDBs as the various local users. Keep in mind these are local users, it just happens to be that they have the same password. Notice that the local user for California cannot use the Tulsa container because it is local to the California container.
 
     ```
     <copy>connect wm_admin/oracle@localhost:1523/Tulsa;</copy>
@@ -466,7 +471,7 @@ The tasks you will accomplish in this step are:
 In this section you have observed how each application PDB has its own data through queries directly against each application PDB.  In an upcoming lab, you will learn how to run queries from the Application Root across multiple Application Tenant PDBs.
 
 ## Task 3: Upgrade from v1 to v2
-This section we upgrade Application wmStore from v1 to v2. Despite each franchise having a separate tenant PDB, there is only one master application definition to be upgraded – in Application Root. We run the upgrade script only once, against the Application Root. It is then simply a matter of synchronizing the tenant PDBs for each franchise for them to be upgraded to the new version. Note that this model allows for granular (per tenant/franchise) upgrade schedules.
+In this section we'll upgrade Application wmStore from v1 to v2. Despite each franchise having a separate tenant PDB, there is only one master application definition to be upgraded – in the Application Root. We run the upgrade script only once, against the Application Root. It is then simply a matter of synchronizing the tenant PDBs for each franchise for them to be upgraded to the new version. Note that this model allows for granular (per tenant/franchise) upgrade schedules.
 
 The tasks you will accomplish in this step are:
 - Upgrade application wmStore to v2
@@ -606,7 +611,7 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/task3.4-lookupgradedpdb.png " ")
+    ![](./images/task3.4-lookupgradepdb.png " ")
 
 5. Look at the application PDB **NYC** where the upgrade was not applied, comparing the table definitions and data to the application PDB that was upgraded.
 
@@ -625,7 +630,7 @@ The tasks you will accomplish in this step are:
     </copy>
     ```
 
-    ![](./images/task3.5-looknotupgradedpdb.png " ")
+    ![](./images/task3.5-looknotupgradepdb.png " ")
 
 ## Task 4: Containers Queries
 In this section we introduce a very powerful cross-container aggregation capability: **containers()** queries. Containers() queries allow an application administrator to connect to the Application Root and aggregate data with a single query across some or all Application Tenants (Franchises). This is another example of how Multitenant, with Application Containers, allows you to manage many Application Tenants as one, when needed. Notice values in the column Franchise come from Con$Name. Remember that containers() queries are executed in Root and all containers plugged into it.
@@ -650,10 +655,6 @@ The tasks you will accomplish in this step are:
     where con$name in ('TULSA','NYC')
     order by 1,2;
     </copy>
-    ```
-
-    ```
-    <copy>set echo off</copy>
     ```
 
     ![](./images/task4.2-products.png " ")
@@ -685,10 +686,6 @@ The tasks you will accomplish in this step are:
     group by con$name, Product_Name
     order by 1, 3 desc, 2;
     </copy>
-    ```
-
-    ```
-    <copy>set echo off</copy>
     ```
 
     ![](./images/task4.4-ordervolume.png " ")
@@ -1387,7 +1384,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task8.4-querymaster.png " ")
 
-5. Query against the container Tulsa.  Note the the data is visible but some is being shared from master container.
+5. Query against the container Tulsa.  Note all the data is visible but some data is being shared from the application master.
 
     ```
     <copy>connect wmStore_Admin/oracle@localhost:1523/Tulsa</copy>
@@ -1999,7 +1996,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task12.5.1-dataload2.png " ")
 
-6. Review the query results utilizing the Container Map.  A "CONTAINERS" clause is not needed in the query, which fetches results from each Application PDB.
+6. Review the query results utilizing the Container Map: a "CONTAINERS" clause is not needed in the query, although it still fetches results from each Application PDB.
 
     ```
     <copy>
