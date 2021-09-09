@@ -133,7 +133,7 @@ Estimated lab Time - 25 minutes
       
       ![](images/importsidemenu.png " ")
     
-    Copy the contents of the GrabDish Dashboard JSON found here: https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json
+    Copy the contents of the GrabDish Dashboard JSON found [here](https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json) 
     
     Paste the contents in the `Import via panel json` text field and click the `Load` button
       ![](images/jsondashboardupload.png " ")
