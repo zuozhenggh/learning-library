@@ -103,7 +103,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 9.  Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **SourceATP**.
+    * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **atp&lt;user&gt;_low**.
     * For **User ID**, paste the modified ATP connection string from step 4.
     * For **Password**, enter the Source Database password from the Workshop details.
 
