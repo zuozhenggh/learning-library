@@ -280,10 +280,11 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
 
     ```
     <copy>
+    user_data_dir_base="/home/$(whoami)/.livelabs"
     desktop_app1_url="https://kv"
     desktop_app2_url="https://dbsec-lab:7803/em"
-    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic ${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic ${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
     </copy>
     ```
 
@@ -297,7 +298,7 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
     <copy>
     sudo sed -i "/^After=/ s/$/ oracle-emcc.service/" /etc/systemd/system/vncserver_$(whoami)@\:1.service
     sudo systemctl daemon-reload
-    cat /etc/systemd/system/vncserver_oracle@\:1.service |grep After
+    cat /etc/systemd/system/vncserver_$(whoami)@\:1.service |grep After
     </copy>
     ```
 
