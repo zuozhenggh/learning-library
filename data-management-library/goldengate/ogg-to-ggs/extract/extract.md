@@ -70,15 +70,15 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![](images/02-01.png " ")
 
-3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
+2.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
 
-4.  For **Description**, describe the purpose of this Path.
+3.  For **Description**, describe the purpose of this Path.
 
-5.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
+4.  Click **Source**, and then select the Extract created in STEP 1 above. For example, select **UAEXT**.
 
-6.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
+5.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
 
-7.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on premise or Marketplace Oracle GoldenGate instance.
+6.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on premise or Marketplace Oracle GoldenGate instance.
 
     ![](images/02-07.png " ")
 
@@ -86,29 +86,29 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![](images/02-07-note.png " ")
 
-8.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
+7.  For **Target Host**, enter the OCI GoldenGate hostname in the following format: **&lt;domain&gt;.deployment.goldengate.us-&lt;region&gt;-1.oci.oraclecloud.com**.
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
     ![](images/02-08-note.png " ")
 
-9.  For **Port Number**, enter 443.
+8.  For **Port Number**, enter 443.
 
-10. For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+9.  For **Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
 
-11. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
+10. For **Target Domain**, enter the domain name you created in Oracle GoldenGate. For example, **GGSNetwork**.
 
-12. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
+11. For **Target Alias**, enter the alias name you created in Oracle GoldenGate. For example, **ogg2ggs**.
 
     ![](images/02-12.png " ")
 
-13. Click **Create Path**.
+12. Click **Create Path**.
 
-14. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
+13. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
 
     ![](images/02-14.png " ")
 
-15. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
+14. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
 
     ![](images/02-15-rcvr.png " ")
 
