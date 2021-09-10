@@ -32,7 +32,7 @@ This lab assumes you have:
 | 2 | Create a Simple Realm | 10 minutes |
 | 3 | Audit Policy to Capture Realm Violations | 5 minutes |
 | 4 | Simulation Mode | 10 minutes |
-| 5 | Disabling Database Vault | <5 minutes |
+| 5 | Disable Database Vault | <5 minutes |
 
 ## Task 1: Enable Database Vault
 
@@ -42,7 +42,7 @@ The HR schema contains multiple tables such as CUSTOMERS table which contains se
 
    ![](./images/adb-dbv_001.png " ")
 
-We start with creating the two DV user accounts - DV Owner and DV Account Manager. The dv_owner account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
+We start with creating the two DV user accounts - DV Owner and DV Account Manager. The DV Owner account is mandatory as an owner of DV objects. DV Account Manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV Account Manager, it is recommended to maintain separation of duties via two different accounts.
 
 1. Open a SQL Worksheet on your **ADB Security** as *admin* user
     
@@ -83,10 +83,19 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
       -- Create dbv_owner
       CREATE USER dbv_owner IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_owner;
+      GRANT DV_OWNER TO dbv_owner;
+      GRANT SELECT ANY DICTIONARY TO dbv_owner;
         
       -- Create dbv_acctmgr
       CREATE USER dbv_acctmgr IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_acctmgr;
+      GRANT DV_ACCTMGR TO dbv_acctmgr;
+
+      -- Enable SQL Worksheet for dbv_owner user
+      BEGIN
+         ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('dbv_owner'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('dbv_owner'), p_auto_rest_auth => TRUE);
+      END;
+      /
       </copy>
       ````
 
@@ -147,8 +156,8 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and HR (table owner) and grant access to APPUSER only.
 
 1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
-    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
-   
+    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER) as shown in Task1 previously
+    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
           - As reminder, the password of these users is the same (here *`WElcome_123#`*)
@@ -181,7 +190,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
           **Note:** These 3 users can see the HR.CUSTOMERS table!
 
-2. Now, let's create a realm to secure HR tables by executing this query as "**ADMIN**" user
+2. Now, let's create a realm to secure HR tables by executing this query below as "**DBV_OWNER**" user. So, please **open a 4th web-browser window using the "Incognito mode"!**
 
       ````
       <copy>
@@ -256,7 +265,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
        **Note:** No one can access on it with a "insufficient privileges" error, even the DBA user (ADMIN) and the owner (HR)!
 
-5. Now, make sure you have an authorized application user (APPUSER) in the realm by executing this query as "**ADMIN**" user
+5. Now, go back to your window logged as "**DBV_OWNER**" user and make sure you have an authorized application user (APPUSER) in the realm by executing this query
 
       ````
       <copy>
@@ -282,15 +291,15 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user **ADMIN**
 
           ![](./images/adb-dbv_014.png " ")
 
-       - as user "**HR**"
+       - as user **HR**
 
           ![](./images/adb-dbv_015.png " ")
 
-       - as user "**APPUSER**"
+       - as user **APPUSER**
 
           ![](./images/adb-dbv_011.png " ")
 
@@ -334,13 +343,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 3. Like in Step 2, to demonstrate the effects of the audit, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-       **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
-          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
-    
-             ````
-             <copy>WElcome_123#</copy>
-             ````
+    **Note: Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence open each of your sessions in a separate browser window the "Incognito mode"!**
 
     - Copy/Paste and execute the following query
 
@@ -352,15 +355,15 @@ You may also want to capture an audit trail of unauthorized access attempts to y
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user **ADMIN**
 
        ![](./images/adb-dbv_014.png " ")
 
-       - as user "**HR**"
+       - as user **HR**
 
        ![](./images/adb-dbv_015.png " ")
 
-       - as user "**APPUSER**"
+       - as user **APPUSER**
 
        ![](./images/adb-dbv_011.png " ")
 
@@ -469,15 +472,15 @@ You may also want to capture an audit trail of unauthorized access attempts to y
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user **ADMIN**
 
        ![](./images/adb-dbv_024.png " ")
 
-       - as user "**HR**"
+       - as user **HR**
 
        ![](./images/adb-dbv_025.png " ")
 
-       - as user "**APPUSER**"
+       - as user **APPUSER**
 
        ![](./images/adb-dbv_026.png " ")
 
@@ -530,7 +533,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    ![](./images/adb-dbv_029.png " ")
 
 
-## Task 5: Disabling Database Vault
+## Task 5: Disable Database Vault
 
 1. Log as "**ADMIN**" user and disable DB Vault on the Autonomous Database
 
