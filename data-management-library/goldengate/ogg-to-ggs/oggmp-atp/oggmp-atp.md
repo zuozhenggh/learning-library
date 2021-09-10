@@ -35,7 +35,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-![](images/02-01_compute.png " ")
+    ![](images/02-01_compute.png " ")
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
