@@ -107,7 +107,7 @@ When creating an Experiment, you must define the data source and the target of t
 
 2. Click **Create**. The Create Experiments page opens.
 
-3. In the **Name** field, enter Customers 360.
+3. In the **Name** field, enter **Customers 360**.
 
 	![Create Experiment dialog](images/create_experiment.png)
 
@@ -117,7 +117,8 @@ When creating an Experiment, you must define the data source and the target of t
 
 6. In the Predict drop-down list, select the column **AFFINITY_CARD** from the CUSTOMERS360 table. This is the target for your prediction.
 
-7. In the Prediction Type field, the prediction type is automatically selected based on your data definition. However, you can override the prediction type from the drop-down list, if data type permits. In this example, **Classification** is automatically chosen as the prediction type.
+7. In the **Prediction Type** field, the prediction type is automatically selected based on your data definition. However, you can override the prediction type from the drop-down list, if data type permits. In this example, **Classification** is automatically chosen as the prediction type.
+
 Supported Prediction Types are:
 
 * Classification: For non-numeric data type, Classification is selected by default.
@@ -131,7 +132,7 @@ To adjust additional settings of this experiment:
 
 1. Expand the Additional Settings section on the Experiments page, and make the following changes:
 
-2. 
+
 
 
 
@@ -141,39 +142,119 @@ To adjust additional settings of this experiment:
 
 
 ## Task 4: Deploy Top Model to OML Services
+When you deploy a model using the OML AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. OML Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
 
+To deploy a model:  
+
+1. Open the Customer 360 experiment.
+
+2. Scroll down to the Leader Board, select the Naive Bayes model row and click **Deploy**. The Deploy Model dialog opens.
+
+	![Deploy Model option in Leader Board](images/deploy_model_lb.png)
+
+	>**Note:** You can also deploy a model from the Models page. You can access the Models page from the home page and the left navigation menu.  
+
+3. In the Deploy Models dialog, enter the following details:
+
+	![Deploy Model dialog](images/deploy_model.png)
+
+4. In the **Name** field, the system generated model name is displayed here by default. Edit this name to change it to **CUST360_NB**. The model name must be a unique alphanumeric name with a maximum of 50 characters.
+
+5. In the **URI** field, enter **cust360nb**. The URI must be alphanumeric, and the length must be max 200 characters.
+
+6. In the **Version** field, enter **1.0**. The version must be in the format ``xx.xx`` where x is a number.
+
+7. In the **Namespace** field, enter **DEMO**. This is the name for the model namespace. You can specify any name here to create different namespaces.
+
+8. Click **Shared** to allow users with access to the database schema to view and deploy the model.
+
+9. Click **OK**. After a model is successfully deployed, it is listed on the Deployments page. To go to the Deployments page, click click **Models** in the left navigation menu. Alternatively, you can click **Models** on the home page.    
+
+	![List of deployed models on the Deployments page](images/deployed_models.png)
+
+This completes the task of deploying the top model Naive Bayes to OML Services.
 
 
 ## Task 5: View OML Models with Deployed Metadata and JSON Endpoint
 
+The deployed models are listed under Deployments on the Models page. To view the metadata of the deployed model **CUST360_NB**:
 
+1. To go to Deployments, click the hamburger icon and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.  
+
+2. On the Models page, click **Deployments**.
+
+2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI on the Deployments page.
+
+	![List of deployed models on the Deployments page](images/deployed_models.png)
+
+3. To view the metadata of the deployed model, click the name **CUST360_NB**. The model metadata is listed in the Model metadata for <name> dialog.
+
+	![View model metadata](images/cust360_nb_metadata.png)
+
+4. To view the endpoint JSON, click the URI **cust360nb**. All details of the deployed model are listed in the OPEN API Specification for <deployed_model_name> dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
+
+	![View JSON endpoints](images/cust360_nb_endpoint.png)
+
+
+This completes the task of viewing the metadata of the deployed model, and its endpoint.
 
 ## Task 6: Create a Notebook for the Top Model
+You can create notebooks based on the top models produced in the experiment. This recreates the selected model using the same settings. This option is helpful if you want to use the code to re-create a similar machine learning model. To create a notebook:
 
+1. Go to the AutoML page and click the Customers 360 experiment.  
+
+2. Scroll down to the Leader Board, select the Naive Bayes model, and click **Create Notebook**. The Create Notebook dialog opens.
+
+ 	![Create Notebook option in Leader Board](images/create_notebook_lb.png)
+
+3. In the Create Notebook dialog, enter **NB Customers 360** in the **Notebook Name** field.
+
+	![Create Notebook from model dialog](images/create_notebook_from_mod.png)
+
+4. Click **OK**. The notebook is created and listed in the Notebooks page. The message _Notebook NB Customer 360 successfully created_ is also displayed.
+
+	![Notebook creation message](images/nb customer message.png)
+
+This completes the task of creating the notebook NB Customer 360 based on the Naive Bayes model that is created by the AutoML experiment Customers 360.
 
 
 ## Task 7: View Generated Notebook and Individual Paragraphs
+To view the generated notebook Customer 360:
 
+1. Click the hamburger icon to open the left navigation menu and click **Notebooks**.
 
+2. The Notebooks page opens with all the notebooks listed in it. Click the **NB Customers 360** notebook to open it.
 
+ 	![Generated Notebook](images/notebooks_generated.png)
 
+3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Scroll down to view all the paragraphs in the notebook.
 
+* The first paragraph contains the code to get proxy object for the selected data. The second paragraph contains the code to prepare the training data.
 
+	![Generated Notebook](images/generated_nb_1.png)
 
+	Run the first paragraph  to view the metadata from the experiment. It shows the Customer 360 table. This screenshot shows the output after you run the first paragraph.
 
+	![Generated Notebook](images/generated_nb_1_run.png)
 
+* The third paragraph builds the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The fourth paragraph contains the code to view the model details.
 
+	![Generated Notebook](images/generated_nb_2.png)
 
+* The fifth paragraph contains the code to score the data, and the last paragraph to view the model quality metric.
+
+	![Generated Notebook](images/generated_nb_3.png)
+
+This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
 
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, September, 2021
