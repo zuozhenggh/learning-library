@@ -5,10 +5,10 @@ Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the 
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
 - `workshop-installed` - You use this compute instance for all of the other labs.
 
-To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stack to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several ingress security rules, which are covered in Task 1.
+To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stacks for this workshop to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, then you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
 
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -23,14 +23,15 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account
+- Obtained a free or paid Oracle Cloud account (Always Free accounts are not supported for this workshop)
 - Signed in to Oracle Cloud Infrastructure
+
 
 ## Task 1: Add security rules to your existing VCN
 
-Configure ingress rules in your VCN's default security list to allow traffic on port 22 for SSH connections, traffic on ports 1521 to 1524 for the database listeners, and traffic on port 6080 for HTTP connections to the noVNC browser interface.
+To be able to access your compute instances, you need to configure egress and ingress security rules in your VCN's security list.
 
-> **Note**: If you plan to let Resource Manager create a new VCN for you (recommended), you can skip this task and proceed to Task 2.
+> **Note**: If you let Resource Manager create a new VCN for you when you create your compute instances (recommended), you can skip this task and proceed to Task 2.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -38,9 +39,48 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
 3. Under **Resources**, select **Security Lists**.
 
-4. Click the default security list.
+4. Click the your security list.
 
-5. For each port number/port number range (22, 1521-1524, 6080), click **Add Ingress Rule**. For **Source CIDR**, enter **0.0.0.0/0**. For **Destination port range**, enter the port number. Click **Add Ingress Rule**.
+    Under **Resources** on the left, you can click **Ingress Rules** or **Egress Rules**. To add an egress rule, click **Egress Rules**, and then click the **Add Egress Rules** button. To add an ingress rule, click **Ingress Rules**, and then click the **Add Ingress Rules** button.
+
+5. Add an egress rule with the following settings to allow outbound TCP traffic on all ports:
+
+    - DESTINATION TYPE: CIDR
+    - DESTINATION CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: All
+
+6. Add an ingress rule with the following settings to allow inbound SSH traffic on port 22:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: 22
+
+7. Add an ingress rule with the following settings to allow inbound TCP traffic on port 6080:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: TCP
+    - SOURCE PORT RANGE: All
+    - DESTINATION PORT RANGE: 6080
+
+8. Add an ingress rule with the following settings to allow inbound ICMP traffic:
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 0.0.0.0/0
+    - IP PROTOCOL: ICMP
+    - TYPE: 3
+    - CODE: 4
+
+9. Add an ingress rule with the following settings to allow inbound traffic for all IP protocols on IP addresses 10.0.0.0 to 10.0.255.255.
+
+    - SOURCE TYPE: CIDR
+    - SOURCE CIDR: 10.0.0.0/16
+    - IP PROTOCOL: All Protocols
+
 
 ## Task 2: Create a `workshop-staged` compute instance
 
@@ -71,11 +111,18 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     ![Main Configuration](images/main-configuration.png "Main Configuration section")
 
 
-8. In the **Options** section, configure the following:
+8. In the **Options** section, select an instance shape and select whether you want to use an existing VCN.
 
-    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
-    - Leave **1** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, one OCPU provides 16 GB of RAM, which is sufficient for the "Install Oracle Database 19c with Automatic Root Script Execution" lab. If you increase the number of OCPUs, be sure that you have the capacity available.
-    - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected in the **Stack Information** section.
+    Consider the following when selecting a shape:
+
+    - If you are still within your free trial period, Oracle recommends that you select the **VM.Standard.E2.2** or **VM.Standard2.1** shape. The VM.Standard.E2.2 shape comes with 2 OCPUs and 16GB of RAM. The VM.Standard2.1 shape comes with 1 OCPU and 15GB of RAM. Both shapes are sufficient to run the **Install Oracle Database 19c with Automatic Root Script Execution** lab.
+    - If you are using a paid Oracle Cloud account, Oracle recommends that you select a shape that has 1 OCPU and 16GB of RAM or more. The default is the **VM.Standard.E4.Flex** shape with **1** OCPU, which provides 16GB of RAM. If you change the shape, be sure that you have enough quota available in your tenancy.
+
+    Consider the following when configuring the VCN:
+
+    - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended).
+    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
+
 
     ![Options Section for workshop-staged](images/options-workshop-staged.png "Options Section for workshop-staged")
 
@@ -99,7 +146,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-staged` compute instance and wait a minute or two.
+14. In a browser, paste the URL to your `workshop-staged` compute instance and wait between 30 and 60 seconds.
 
     You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
 
@@ -136,11 +183,17 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
     ![Main Configuration section](images/main-configuration.png "Main Configuration section")
 
 
-8. In the **Options** section, configure the following:
+8. In the **Options** section, select an instance shape and select whether you want to use an existing VCN.
 
-    - Leave **Use Flexible Instance Shape with Adjustable OCPU Count** selected. For **Instance Shape**, leave **VM.Standard.E4.Flex** selected. Depending on the quota that you have in your tenancy, you can choose a different instance shape, if needed.
-    - Leave **2** set as the number of OCPUs per instance. With the VM.Standard.E4.Flex shape, two OCPUs provides 32 GB of RAM, which is sufficient for labs. If you increase the number of OCPUs, be sure that you have the capacity available.
-    - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). If you choose to use your own VCN, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires several ingress security rules, which are specified in Task 1 above. Your VCN also needs to reside in the compartment that you selected in the **Stack Information** section.
+    Consider the following when selecting a shape:
+
+    - If you are still within your free trial period, Oracle recommends that you select the **VM.Standard.E2.4** or **VM.Standard2.2** shape. The VM.Standard.E2.4 shape comes with 4 OCPUs and 32GB of RAM. The VM.Standard2.2 shape comes with 2 OCPUs and 30GB of RAM.
+    - If you are using a paid Oracle Cloud account, Oracle recommends that you select a shape that has 2 OCPUs and 32GB of RAM or more. The default is the **VM.Standard.E4.Flex** shape with **2** OCPUs, which provides 32GB of RAM. If you change the shape, be sure that you have enough quota available in your tenancy.
+
+    Consider the following when configuring the VCN:
+
+    - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). The VCN created for the `workshop-installed` compute instance has the exact same configuration as the VCN created for the `workshop-staged` compute instance. If you don't want to create two VCNs for this workshop, you can reuse the `workshop-staged` VCN. To do so, select **Use Existing VCN**, and then select the VCN and public subnet for your `workshop-staged` compute instance.
+    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
 
     ![Options Section for workshop-installed](images/options-workshop-installed.png "Options Section for workshop-installed")
 
@@ -164,7 +217,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-installed` compute instance and wait a minute or two.
+14. In a browser, paste the URL to your `workshop-installed` compute instance and wait between 30 and 60 seconds.
 
     You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
 
@@ -181,4 +234,4 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, August 24 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
