@@ -13,7 +13,6 @@ Watch the video for a quick walk through of Oracle Database services lab.
 - An Oracle LiveLabs or Paid Oracle Cloud account
 - Lab: Generate SSH Key
 - Lab: Build a DB System
-- Lab: Fast Application Notification
 - Lab: Install Sample Schema
 
 ### About Oracle Database services
@@ -487,7 +486,6 @@ This exercise will demonstrate connection load balancing and why it is important
 
 15. Verify you can connect using this alias.
 
-
 ## Task 5 The difference between connection load balancing and runtime load Balancing
 
 In this exercise we will use the Java client you installed previously: **acdemo**
@@ -556,6 +554,7 @@ Using a different cloud shell window (connected to either node) open a SQL*Plus 
     sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     </copy>
     ````
+
     and run the following SQL statement
 
     ````
@@ -565,7 +564,9 @@ Using a different cloud shell window (connected to either node) open a SQL*Plus 
     select inst_id, service_name, count(*) from gv$session where service_name = 'noac' group by inst_id, service_name;
     exit
     </copy>
-    ````
+    ````    
+
+
 This statement will show you the instance this service is running and the number of open connections on this service.
 It should be relatively even
     ````
@@ -588,14 +589,14 @@ If you look at the current response time for acdemo it is fairly equal - probabl
     41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 38ms
     37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
     ````
-Let's consume CPU on one node with a database-external program. Download the CPU_HOG utility to the opposite Node from where you are running the acdemo application. For example acdemo runs on Node-1, then download CPU_HOG to Node-2.  
+Let's consume CPU on one node with a database-external program. Download the CPU_HOG utility to the opposite Node from where you are running the acdemo application. For example acdemo runs on Node-1, then download CPU_HOG to Node-2.     
 
     ````
     <copy>
     cd /home/oracle
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iMYwjIGTOrUvs4FQqoKY7ie7os3Ybocg1wob-G18rAneuZP-F__z_XoXUKB6hhIt/n/oradbclouducm/b/LiveLabTemp/o/cpuhog.zip
     </copy>
-    ````   
+    ````
 Unzip the utility and set the execute bit      
     ````
     <copy>
@@ -641,7 +642,10 @@ Examine the RLB statistics
     </copy>
     ````
 
+Enter the following in to SQL\*plus
+
     ````
+    <copy>
     set colsep '|' pages 60 space 2 lines 132 num 8 verify off feedback off
     col user_data heading "Service Metrics" format A80 wrap
     break on SERVICE_NAME skip 1
@@ -651,7 +655,10 @@ Examine the RLB statistics
     FROM SYS.SYS$SERVICE_METRICS_TAB
     WHERE ENQ_TIME >= (select max(ENQ_TIME)- 60/1440/60 from SYS.SYS$SERVICE_METRICS_TAB )
     ORDER BY 1;
+    </copy>
     ````
+
+
 You will see something similar to:
 
     ````
@@ -695,4 +702,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Authors** - Troy Anthony, Anil Nair
 * **Contributors** - Kay Malcolm, Kamryn Vinson
-* **Last Updated By/Date** - Kamryn Vinson, September 2021
+* **Last Updated By/Date** - Troy Anthony, September 2021
