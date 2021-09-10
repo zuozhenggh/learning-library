@@ -72,7 +72,7 @@ The following instructions show you how to download the Root Certificate using a
 
 4.  In the **Page info** window, click **View Certificate**.
 
-    ![](images/01b-04.png  ")
+    ![](images/01b-04.png " ")
 
 5.  On the **Certificate** page, click **DigiCert Global Root CA**.
 

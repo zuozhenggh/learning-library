@@ -245,9 +245,9 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 ## Task 6: Confirm the Receiver Path is Running
 
-In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
+1.  In the Oracle GoldenGate Marketplace Receiver Server, verify the Receiver Path is running.
 
-![](images/04-00.png " ")
+    ![](images/04-00.png " ")
 
 In this lab, you created an Extract, a Receiver Path, and a Replicat, and you verified that data is moving from OCI GoldenGate to Oracle GoldenGate. You may now **proceed to the next lab**.
 
