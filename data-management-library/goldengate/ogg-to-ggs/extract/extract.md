@@ -50,7 +50,7 @@ This Extract process captures data from the source database to send to OCI Golde
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/01=07-ext-params.png " ")
+    ![](images/01-7-ext-params.png " ")
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 
