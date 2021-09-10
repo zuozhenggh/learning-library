@@ -173,7 +173,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	Congratulations! You have successfully installed Oracle Database.
 
-Click **Close** to exit Oracle Database Setup Wizard.
+	Click **Close** to exit Oracle Database Setup Wizard.
 
 If you have installed Oracle Database using Option 1, skip Option 2 and **proceed to the next lab**.
 
@@ -384,7 +384,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	Congratulations! You have successfully installed the Oracle Database software and configured the database.
 
-Click **Close** to exit Oracle Database Setup Wizard.
+	Click **Close** to exit Oracle Database Setup Wizard.
 
 You may now **proceed to the next lab**.
 

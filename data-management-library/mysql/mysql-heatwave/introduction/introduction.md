@@ -1,4 +1,5 @@
-# Introduction:
+# Introduction
+
 ## About this Workshop
 
 This workshop will basically walk you through stages where you will be spining a MySQL Database System with **HeatWave Cluster** on **Oracle Cloud** and experience how **HeatWave engine** increase performance as compare to **Normal MySQL** when running analytics queries or other queries which uses **HeatWave engine** to process.
@@ -31,7 +32,6 @@ In this workshop, you will learn how to:
 This lab assumes you have:
 * You have an Oracle account.
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
-
 
 ## Acknowledgements
 * **Author** - Jitender Singh, Senior Cloud Engineer, NA Cloud Engineering
