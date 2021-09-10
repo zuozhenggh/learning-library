@@ -30,6 +30,8 @@ This Extract process captures data from the source database to send to OCI Golde
 
 2.  On the Add Extract page, select **Integrated Extract**, and then click **Next**.
 
+    ![](images/01-02-int-extract.png " ")
+
 3.  For **Process Name**, enter a name for this Extract process, such as UAEXT.
 
 4.  For **Trail Name**, enter a two-character name for the Trail file, such as E1.
@@ -38,6 +40,8 @@ This Extract process captures data from the source database to send to OCI Golde
 
 5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
+    ![](images/02-05.png " ")
+
 6.  Click **Next**.
 
 7.  In the Extract Parameters screen, add the following to the text area:
@@ -45,6 +49,8 @@ This Extract process captures data from the source database to send to OCI Golde
     ```
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
+
+    ![](images/01=07-ext-params.png " ")
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 
@@ -60,13 +66,9 @@ This Extract process captures data from the source database to send to OCI Golde
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
-1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Distribution Server**.
+1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Distribution Server**, and then click **Add Path** (plus icon).
 
     ![](images/02-01.png " ")
-
-2.  Click **Add Path** (plus icon).
-
-    ![](images/02-02.png " ")
 
 3.  On the Add Path page, for **Path Name**, enter a name for this Path. For example, **OGGtoGGS**.
 
@@ -104,6 +106,8 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 14. Return to the Distribution Server Overview page, and then select **Start** from the Path's **Action** menu.
 
+    ![](images/02-14.png " ")
+
 15. In the OCI GoldenGate Deployment Console, check the Receiver Server for the Receiver Path. It can take a few minutes before it appears.
 
     ![](images/02-15-rcvr.png " ")
@@ -114,17 +118,19 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Dis
 
 1.  In the OCI GoldenGate Deployment Console, click **Administration Server**, and then open the navigation menu to select **Configuration**.
 
-    ![](images/02-01-nav-config.png " ")
+    ![](images/03-01.png " ")
 
 2.  For TargetADW, click **Connect to Database**.
 
+    ![](images/03-02.png " ")
+
 3.  Next to Checkpoint, click **Add Checkpoint**.
 
-    ![](images/02-06-add-checkpoint.png " ")
+    ![](images/03-03.png " ")
 
 4.  For **Checkpoint Table**, enter **"SRCMIRROR\_OCIGGLL"."CHECKTABLE"**, and then click **Submit**.
 
-    ![](images/02-07-checktable.png " ")
+    ![](images/03-04.png " ")
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
@@ -134,9 +140,11 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 1.  Click **Add Replicat** (plus icon).
 
-    ![](images/03-01-ggs-add-replicat.png " ")
+    ![](images/04-01.png " ")
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
+
+    ![](images/04-02.png " ")
 
 3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
 
@@ -150,19 +158,25 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
 8.  Under **Managed Options**, enable **Critical to deployment health**.
 
+    ![](images/04-08.png " ")
+
 9.  Click **Next**.
 
 10. In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+
+    ![](images/04-10.png " ")
 
 11. Click **Create**.
 
 12. In the Rep Replicat **Action** menu, select **Start**.
 
-    ![](images/03-10-ggs-start-replicat.png " ")
+    ![](images/04-11.png " ")
 
     The yellow exclamation point icon changes to a green checkmark.  
 
-13. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
+    ![](images/04-12.png " ")
+
+13. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
 14. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
 
@@ -197,11 +211,11 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 ## Task 5: Confirm the Distribution Path is running
 
-In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
+1.  In the Oracle GoldenGate Marketplace Distribution Server, verify the Distribution Path is running.
 
-![](images/04-00.png " ")
+    ![](images/04-00.png " ")
 
-In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. You can now proceed to the next lab.
+In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. You may now **proceed to the next lab**.
 
 ## Learn More
 
