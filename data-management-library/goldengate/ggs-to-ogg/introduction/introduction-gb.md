@@ -21,14 +21,6 @@ In this workshop, you will:
 
 Everything you need to complete this workshop is provided to you in the Workshop Details when your environment becomes available.
 
-### Lab Breakdown
-
-* Lab 1: Create OCI GoldenGate Resources
-* Lab 2: Connect Oracle GoldenGate to Autononous Data Warehouse
-* Lab 3: Create a Trusted Connection between Oracle GoldenGate and OCI GoldenGate
-* Lab 4: Send the OCI GoldenGate Trail File to Oracle GoldenGate
-* Lab 5: (Optional) Connect to the Admin Client to View Extract Statistics and Log Messages
-
 ## Learn More
 
 * [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/overview-goldengate.html#GUID-0AF49219-46DC-4BF2-BBFA-64E4D3F557F2)
