@@ -132,12 +132,38 @@ To adjust additional settings of this experiment:
 
 1. Expand the Additional Settings section on the Experiments page, and make the following changes:
 
+	![Additional Settings](images/additional_settings_bal_accr.png)
 
+2. **Maximum Top Models:** Click the down arrow and set it to 3. This is the maximum number of top models to create. The default is 5 models. Fewer models built results is less time and the experiment will complete sooner.
 
+3. **Maximum Run Duration:** This is the maximum time for which the experiment will be allowed to run. Retain the default entry 8. If you do not enter a time, then the experiment will be allowed to run up to the default, which is 8 hours am extreme upper bound.
+
+4. **Database Service Level:** This is the database connection service level and query parallelism level. Default is Low. Change this to Medium.
+
+*  ``High`` level gives the greatest parallelism but significantly limits the number of concurrent jobs.
+*  ``Medium`` level enables some parallelism but allows greater concurrency for job processing.
+
+	>Note: Changing the database service level setting on the Always Free Tier will have no effect since there is a 1 OCPU limit. However, if you increase the OCPUs allocated to your autonomous database, then you can increase the Database Service Level to Medium or High.
+
+5. Leave the other settings under Additional Settings as is, and click Start and then Faster Results to trigger the AutoML UI experiment to run.
+
+	![Experiment Start options](images/faster_results.png)
+
+	Note the following about the two options:
+
+		- **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of the hyperparamter combinations, and hence yields faster result.
+		- **Better Accuracy:** Select this option if you want emphasis placed on more accurate results.
+
+	> Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
+This completes the task of creating an experiment.
 
 
 ### Task 3.2 View Leader Board with Additional Metrics
+When an experiment runs, it starts to show the results in the Leader Board. When an experiment starts running, the status is displayed in a progress bar. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
+	![Experiment Progress bar](images/exp_progress_bar.png)
+
+The Leader Board displays the top performing models relative to the model metric selected along with the algorithm and accuracy. In this lab, you will view the additional metrics Precision, Recall, ROC AUC for the models:
 
 
 
