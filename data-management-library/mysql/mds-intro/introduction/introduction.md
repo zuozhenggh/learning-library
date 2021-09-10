@@ -49,7 +49,7 @@ In this lab, you will be guided through the following steps:
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering
-* **Contributors** - Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
+* **Contributors** - Mandy Pang, Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, Sept 2021
 
 
