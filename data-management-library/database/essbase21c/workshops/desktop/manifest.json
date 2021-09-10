@@ -13,28 +13,28 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab D1: Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../essbase-initialize-env/essbase-initialize-env.md"
     },
     {
-      "title": "Essbase Features: Basic",
+      "title": "Lab D2: Essbase Features: Basic",
       "filename": "../../essbase-basic/essbase-basic.md"
     },
     {
-      "title": "Essbase Features: Advanced",
+      "title": "Lab D3: Essbase Features: Advanced",
       "filename": "../../essbase-advanced/essbase-advanced.md"
     },
     {
-      "title": "Essbase Drill Through Feature",
+      "title": "Lab D4: Essbase Drill Through Feature",
       "filename": "../../essbase-drill-thru/essbase-drill-thru.md"
     },
     {
-      "title": "Scenario Management",
+      "title": "Lab D5: Scenario Management",
       "filename": "../../scenario/scenario.md"
     },
     {
-      "title": "Essbase Administration Services(EAS) Lite (Optional)",
+      "title": "Lab D6: Essbase Administration Services(EAS) Lite (Optional)",
       "filename": "../../eas/eas.md"
     },
     {

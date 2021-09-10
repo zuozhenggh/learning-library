@@ -8,18 +8,18 @@
       "filename": "./../../intro/intro-fleet-upgrade.md"
     },
     {
-      "title": "Environment Setup",
+      "title": "Lab G1: Environment Setup",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab G2: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Automated Database Upgrade at Scale with Fleet Maintenance",
+      "title": "Lab G3: Automated Database Upgrade at Scale with Fleet Maintenance",
       "description": "This lab walks you through the steps needed with Fleet Maintenance to automate upgrade of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
       "filename": "./../../em-fleet-maintenance-upgrade/em-fleet-maintenance-upgrade.md"

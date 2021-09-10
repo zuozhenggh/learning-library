@@ -13,13 +13,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab D1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Get Started with Real Application Testing",
+      "title": "Lab D2: Get Started with Real Application Testing",
       "description": "The objective of this lab is to become familiar with Real Application Testing capabilities using Oracle Enterprise Manager Cloud Control 13c.",
       "publisheddate": "6/16/2021",
       "filename": "./../../em-rat-spa-dbreplay/em-rat-spa-dbreplay.md"
