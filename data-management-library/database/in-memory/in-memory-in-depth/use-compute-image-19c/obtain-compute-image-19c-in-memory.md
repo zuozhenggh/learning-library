@@ -129,7 +129,7 @@ Configure ingress rules in your VCN's default security list to allow traffic on 
 
     ![Full Screen](images/full-screen.png "Full Screen")
 
-3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Oracle Database 19c New Features**.
+3. If the workshop guide is not open on the desktop: Double-click the Firefox icon on the desktop to open Firefox. On the Firefox toolbar, click **Workshop Guides** and then select **Is there a guide here?**.
 
 
 ## **STEP 4**: Download the lab files
