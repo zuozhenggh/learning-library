@@ -8,8 +8,6 @@ Estimated Lab Time - 10 minutes
 
 Quick walk through on how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
-[](youtube:ITtdiqX8nWQ)
-
 ### Objectives
 
 * Create an APEX workspace in ATP
