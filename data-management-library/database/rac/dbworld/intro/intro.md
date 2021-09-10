@@ -1,13 +1,14 @@
 # Introduction
 
 ## Introduction to Real Application Clusters ##
-Oracle RAC is a cluster database with a shared cache architecture that overcomes the limitations of traditional shared-nothing and shared-disk approaches to provide highly scalable and available database solutions for all business applications. Oracle RAC is a key component of Oracle's private cloud architecture.
+Oracle RAC is a cluster database with a shared cache architecture that overcomes the limitations of traditional shared-nothing and shared-disk approaches to provide highly scalable and available database solutions for all business applications. Oracle RAC is a key component of Oracle's cloud architecture.
 
 Oracle Real Application Clusters provides customers with the highest database availability by removing individual database servers as a single point of failure. In a clustered server environment, the database itself is shared across a pool of servers, which means that if any server in the server pool fails, the database continues to run on surviving servers. Oracle RAC not only enables customers to continue processing database workloads in the event of a server failure, it also helps to further reduce costs of downtime by reducing the amount of time databases are taken offline for planned maintenance operations.
 
-Oracle Real Application Clusters enables the transparent deployment of Oracle Databases across a pool of clustered servers. This enables customers to easily re-deploy their single server Oracle Database onto a cluster of database servers, and thereby take full advantage of the combined memory capacity and processing power the clustered database servers provide.
+## Introduction to Application Continuity ##
+Application Continuity (AC) is a feature available with the Oracle Real Application Clusters (RAC), Oracle RAC One Node and Oracle Active Data Guard options that masks outages from end users and applications by recovering the in-flight database sessions following recoverable outages. Application Continuity performs this recovery beneath the application so that the outage appears to the application as a slightly delayed execution.
 
-Oracle Real Application Clusters provides all the software components required to easily deploy Oracle Databases on a pool of servers and take full advantage of the performance, scalability and availability that clustering provides. Oracle RAC utilizes Oracle Grid Infrastructure as the foundation for Oracle RAC database systems. Oracle Grid Infrastructure includes Oracle Clusterware and Oracle Automatic Storage Management (ASM) that enable efficient sharing of server and storage resources in a highly available and scalable database cloud environment.
+Application Continuity improves the user experience for both planned maintenance and unplanned outages. Application Continuity enhances the fault tolerance of systems and applications that use an Oracle database.
 
 Watch the video below for an overview of Oracle RAC.
 
@@ -18,7 +19,9 @@ Oracle Real Application clusters can be deployed in a variety of ways.  On bare 
 
 ![](./images/rac-deployment.png " ")
 
-In this workshop you will create a 2-node Oracle Real Application Clusters database in the Oracle Cloud.  Oracle Cloud Infrastructure offers 2-node RAC DB systems on virtual machines. When you launch a virtual machine DB system, you choose a shape, which determines the resources allocated to the DB system. After you provision the system, you can change the shape to adapt to new processing capacity requirements.  
+In this workshop you will create a 2-node Oracle Real Application Clusters database in the Oracle Cloud.  Oracle Cloud Infrastructure offers 2-node RAC DB systems on virtual machines. When you launch a virtual machine DB system, you choose a shape, which determines the resources allocated to the DB system. After you provision the system, you can change the shape to adapt to new processing capacity requirements.
+
+Once your system is created you will create database services to provide a transparent end-point for your applications to connect to the database and then examine some of the advanced features that services offer.
 
 You will be using the VM.Standard2.2 shape with 4 OCPUs and 60GB of memory.
 
@@ -26,16 +29,11 @@ For more about Virtual DB systems, click [here](https://docs.cloud.oracle.com/en
 
 ### Workshop Objectives
 - Connect to a DB System
-- Clusterware and Fencing
-- Fast Application Notification
-- Install Sample Schema
 - Services
-- SQL and PL/SQL - Sequences
-- Parallel Execution
-- Oracle Scheduler
-- PL/SQL Packages
+- Application Continuity
+- ACCHK
 
-Estimated Workshop Time:  4 hours
+Estimated Workshop Time:  70 minutes
 
 ## More on Oracle RAC
 
@@ -59,7 +57,11 @@ RAC is a key underpinning of MAA.
 
 * [Visit the RAC site on OTN](https://www.oracle.com/database/technologies/rac.html)
 
+## More Information on Application Continuity
+
+* [Visit the AC site on OTN](https://www.oracle.com/goto/ac)
+
 ## Acknowledgements
 
 - **Authors/Contributors** - Troy Anthony, Anil Nair, Kay Malcolm
-- **Last Updated By/Date** - Kay Malcolm, October 2020
+- **Last Updated By/Date** - Troy Anthony, September 2021
