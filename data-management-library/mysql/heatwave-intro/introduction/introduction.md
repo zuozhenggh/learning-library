@@ -1,4 +1,4 @@
-# Turbocharge Business Insights with MySQL Database
+# Introduction
 
 ## About this Workshop
 

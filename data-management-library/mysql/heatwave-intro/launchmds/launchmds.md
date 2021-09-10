@@ -1,4 +1,4 @@
-# Turbocharge Business Insights with MySQL Database Service and HeatWave
+# Launch MySQL Database Service Systems
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -29,7 +29,7 @@ In this lab, you will be guided through the following tasks:
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
 
-## TASK 1 Create Virtual Cloud Network
+## Task 1: Create Virtual Cloud Network
 
 1. Navigation Menu > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
@@ -97,7 +97,7 @@ Description
 13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
-## TASK 2 Create a MySQL DB System - HeatWave.
+## TASK 2: Create a MySQL DB System - HeatWave.
 
 1. Navigation Menu > Databases > MySQL > DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -196,7 +196,7 @@ Description
     ![MDS](./images/04mysql11-3.png" ")
 
 
-## TASK 3 Create Client Virtual Machine
+## TASK 3: Create Client Virtual Machine
 
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to Navigation Menu > Compute > Instances
     ![COMPUTE](./images/05compute01.png " ")
@@ -245,7 +245,7 @@ Description
     ![COMPUTE](./images/05compute08.png " ")
 
 
-## TASK 4 Connect to MySQL Database - HeatWave
+## TASK 4: Connect to MySQL Database - HeatWave
 
 HeatWave is an add-on to MySQL Database Service. It provides a highly performant and scalable in-memory analytic processing engine optimized for Oracle Cloud Infrastructure. Customers can run HeatWave on data stored in the MySQL database without requiring ETL and without any change to the application. Applications simply access HeatWave via standard MySQL protocols, and the typical administration actions are automated, integrated and accessible via the OCI Web Console, REST API, CLI, or DevOps tools. HeatWave queries achieve orders of magnitude acceleration over the MySQL database.
 
@@ -331,7 +331,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## TASK 5 Create airportdb schema and load data using MySQL Shell
+## TASK 5: Create airportdb schema and load data using MySQL Shell
 
 **Be sure to complete TASK 8 before doing TASK 9**
 
@@ -383,7 +383,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
     <copy>\q</copy>
     ```
 
-## TASK 6 Add a HeatWave Cluster to MDS-HW MySQL Database System
+## TASK 6: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
 1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
@@ -415,7 +415,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 11. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
-## TASK 7 Load airportdb Data into HeatWave Cluster
+## TASK 7: Load airportdb Data into HeatWave Cluster
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
     (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
@@ -451,7 +451,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ```
     ![Connect](./images/11loadcluster02.png " ")
 
-## TASK 8 Run Queries in HeatWave
+## TASK 8: Run Queries in HeatWave
 
 1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
 
@@ -636,7 +636,7 @@ LIMIT 10;
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
 
-## TASK 9 Connect to HeatWave using Workbench
+## TASK 9: Connect to HeatWave using Workbench
 1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box
 
 2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH
