@@ -1,4 +1,4 @@
-# Migrate HR database application to OCI
+# Welcome to Migrate HR database workshop
 
 ## Introduction
 
@@ -67,6 +67,8 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 
 ## Acknowledgements
 
-* **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
-* **Contributors** - Vahidin Qerimi - Principal Solution Engineer
+I'd like to thank to Vahidin, who is experienced APEX developer and Tsengel, GenO lift implementation engineer. These gentlemen have shown their dedication and hardwork to support my workshop.
+
+* **Author** - Bilegt Bat-Ochir - Senior Technology Solution Engineer
+* **Contributors** - Vahidin Qerimi - Principal Technology Solution Engineer, Tsengel Ikhbayar - GenO lift implementation
 * **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021

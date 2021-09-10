@@ -1,8 +1,8 @@
-# Lab 1 
+# Prepare the work environment
 
 ## Introduction
 
-In this step, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell which is a web-based terminal built into OCI console. To use the Cloud Shell machine, your tenancy administrator must grant your the required IAM (Identity and Access Management) policy.
+In this lab, we will show you how to prepare your work environment in Oracle Cloud Infrastructure. We will use cloud-shell which is a web-based terminal built into OCI console. To use the Cloud Shell machine, your tenancy administrator must grant your the required IAM (Identity and Access Management) policy.
 
 This first lab is very important and where we will create all of our resources:
 
@@ -155,5 +155,5 @@ However, if you are unable to resolve it using above fix, please skip to the **N
 ## Acknowledgements
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
-* **Contributors** - 
+* **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
 * **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021

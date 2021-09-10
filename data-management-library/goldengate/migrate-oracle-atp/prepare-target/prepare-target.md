@@ -71,5 +71,5 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 ## Acknowledgements
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
-* **Contributors** - 
+* **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
 * **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021

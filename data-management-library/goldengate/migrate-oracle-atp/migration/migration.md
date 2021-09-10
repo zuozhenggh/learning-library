@@ -1,38 +1,28 @@
-# Migration
+# Migrate HR database
 
 ## Introduction
 
-We Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
+Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
 
-*Estimated lab time*: 10 minutes
+*Estimated lab time*: 15 minutes
 
 ### Objectives
 
 In this lab, we will configure _**two extract**_ processes at the source database and _**two replicat**_ processes at the target database:
 * An extract for **changed data capture**. This process will start be capturing changes and this will create some files called trail files, those will be used after initial load finished. We will call it **the primary extract** during this workshop.
-* An Initial-Load extract. While changes are being captured by the first extract process, the migration step needs a special type of extract process. Basically it captures data from specified list of tables and later will be loaded into target database tables using a System Change Number (SCN). 
 
-We will also configure _**two replicat**_ processes at the target database:
--	An extract for **changed data capture**. This process will start be capturing changes and this will create some files called trail files. We will call it **the primary replicat** during this workshop.
--	An Initial-Load replicat. This will use to copy the existing contents of one or more tables from the source to the target database using file to replicat method.
+* While changes are being captured by the first extract process from the source database, the migration step needs another special type of extract process, which captures data from specified list of tables and later will be loaded into target database tables using a System Change Number (SCN). We will call it the **Initial-Load extract** during this lab. 
 
+* Then we will connect to source database and retrieve the oldest available SCN using SQLPlus connection. This will be used as the instantiation SCN, on another word it means this we will export database rows until that given SCN.
 
+* As soon as the initial-load extract finished at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, this is responsible for populating the target database using extracted data by initial-load extract.
 
-1. An extract for **changed data capture**, This process will start be capturing changes and this will create some files called trail files. It is responsible for change data capture defined by it’s registration SCN. We will call it **the primary extract** during this workshop.
-
-2. We will connect to source database and retrieve the oldest System Change Number (SCN). This will be used as the instantiation SCN. 
-
-3. An Initial-Load extract. While changes are being captured by the primary extract process, the migration step needs a special type of extract process. Basically data will be captured from specified list of tables and later will be loaded into target database tables using the instantiation SCN. 
-
-4. The first replicat, the initial-load replicat will be created. This is responsible for populating the target database using extracted data by initial-load extract.
-
-5. The second replicat for **changed data**. Once the initial-load replicat completes, we will create a replicat process for applying change data to the target database. We will call it **the primary replicat** during this workshop. The instantiation SCN is used to create the primary Replicat, once the initial load replication is complete.
-
+* The second replicat is for applying **changed data**, we will call it **the primary replicat**. Once the initial-load replicat finish, we will create a replicat process for applying changed data which captured during initial-load to the target database. The instantiation SCN is used to mark the starting point for the replicat process. What it means that we will start applying changes after the same SCN we used for initial-load extract.
 
 
 We will do the below tasks: 
 * Add the extracts and replicats processes
-* Add transaction data and a checkpoint table
+* Add transaction data and a checkpoint tables
 * Capture System Change Number (SCN) from the source database
 * Configure continuous replication and do the migration
 
@@ -110,7 +100,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_1.png)
 
-3. In **Process Name**, please provide `EXTPRIM` as it is our primary extract, and then click Next.
+3. Please provide `EXTPRIM` as it is our primary extract in  **Process Name**, and **EX** in **Trail Name**, then click Next.
 
 	![](/images/3.goldengate_ext_2.png)
 
@@ -352,5 +342,5 @@ We will do the below tasks:
 ## Acknowledgements
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
-* **Contributors** - 
+* **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
 * **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021
