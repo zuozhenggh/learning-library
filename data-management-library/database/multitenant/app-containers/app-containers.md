@@ -251,7 +251,7 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ![](./images/task1.3.4-insertvalues.png " ")
 
-4. Create the application seed PDB, which will be used to create additional application PDBs.
+4. Create the application seed PDB, which will be used to create additional application PDBs.  Open the application seed PDB after it is created.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -259,24 +259,15 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ```
     <copy>create pluggable database as seed
-    admin user wm_admin identified by oracle;</copy>
+    admin user wm_admin identified by oracle;
+
+    alter pluggable database wmStore_Master$Seed open;
+    </copy>
     ```
 
     ![](./images/task1.4-createseed.png " ")
 
-5. Open the application seed.
-
-    ```
-    <copy>connect sys/oracle@localhost:1523/wmStore_Master as SysDBA</copy>
-    ```
-
-    ```
-    <copy>alter pluggable database wmStore_Master$Seed open;</copy>
-    ```
-
-    ![](./images/task1.5-openseed.png " ")
-
-6. Sync the seed with the application wmStore.
+5. Sync the seed with the application wmStore.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master$Seed;</copy>
@@ -286,9 +277,9 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
     <copy>alter pluggable database application wmStore sync;</copy>
     ```
 
-    ![](./images/task1.6-syncseed.png " ")
+    ![](./images/task1.5-syncseed.png " ")
 
-7.  Provision separate application databases for each of the 4 stores.
+6.  Provision separate application databases for each of the 4 stores.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -318,9 +309,9 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
     <copy>alter pluggable database all open;</copy>
     ```
 
-    ![](./images/task1.7-createapppdb.png " ")
+    ![](./images/task1.6-createapppdb.png " ")
 
-8. Create franchise-specific data by running the supplied script.  In SQLcl we'll use the "cd" command to execute scripts from the correct directory.
+7. Create franchise-specific data by running the supplied script.  In SQLcl we'll use the "cd" command to execute scripts from the correct directory.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -334,9 +325,9 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
     <copy>@Franchise_Data_Lab1</copy>
     ```
 
-    ![](./images/task1.8-createfranchise1.png " ")
+    ![](./images/task1.7-createfranchise1.png " ")
 
-    ![](./images/task1.8-createfranchise2.png " ")
+    ![](./images/task1.7-createfranchise2.png " ")
 
 ## Task 2: PDB Exploration
 In this section you will take a brief tour of the newly created SaaS estate.
@@ -750,7 +741,7 @@ In this section you will explore the PDBs and learn how to set compatibility at 
 5. Connect to NYC and bring that up to the current version.
 
     ```
-    <copy>conn system/oracle@localhost:1523/NYC;</copy>
+    <copy>conn system/oracle@localhost:1523/NYC</copy>
     ```
 
     ```
@@ -758,6 +749,7 @@ In this section you will explore the PDBs and learn how to set compatibility at 
     ```
 
     ![](./images/task5.5-syncnyc.png " ")
+
 
 6. Connect to wmStore_Master$Seed and bring that up to the current version.
 
@@ -782,6 +774,13 @@ In this section you will explore the PDBs and learn how to set compatibility at 
     ```
 
     ![](./images/task5.7-setcompatibility.png " ")
+
+    ```
+    <copy>select * from DBA_App_PDB_Status;</copy>
+    ```
+
+    ![](./images/task5.7-pdbappstatus.png " ")
+
 
 
 ## Task 6: Expansion Beyond Single CDB and Application Root Replicas
@@ -914,10 +913,10 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.7-openproxypdb.png " ")
 
-8. Synchronize the Application Root Replicas (ARRs) via their proxies. Notice you need to connect as sys to do this.
+8. Synchronize the Application Root Replicas (ARRs) via their proxies.
 
     ```
-    <copy>conn sys/oracle@localhost:1523/wmStore_International_Proxy as sysdba</copy>
+    <copy>conn system/oracle@localhost:1523/wmStore_International_Proxy</copy>
     ```
 
     ```
@@ -925,7 +924,7 @@ The tasks you will accomplish in this step are:
     ```
 
     ```
-    <copy>conn sys/oracle@localhost:1523/wmStore_West_Proxy as sysdba</copy>
+    <copy>conn system/oracle@localhost:1523/wmStore_West_Proxy</copy>
     ```
 
     ```
@@ -1133,7 +1132,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task7.2-relocatetahoe.png " ")
 
-3. Rerun the report and take note of the change: the report results are basically the same, but now you can see that TAHOE is now located in CDB2.
+3. Rerun the report and take note of the change: the report results are basically the same, but now you can see that TAHOE is located in CDB2.
 
     ```
     <copy>connect wmStore_Admin/oracle@localhost:1523/wmStore_Master</copy>
@@ -1403,7 +1402,7 @@ The tasks you will accomplish in this step are:
     ![](./images/task8.5-querytulsa.png " ")
 
 ## Task 9: Application Patches
-This section we define an application patch. Patches are comparable to the application upgrades that we've seen in previous labs, but there are three important differences.
+In this task we define an application patch. Patches are comparable to the application upgrades that we've seen in previous labs, but there are three important differences.
 - The types of operations that are allowed in a patch are more limited. Operations which are destructive are not allowed within a patch, including:
     - Drop a table, column, index, trigger...
     - create or replace view, package, procedure...
@@ -1537,9 +1536,6 @@ The tasks you will accomplish in this step are:
 
     alter pluggable database application wmStore sync to patch 301;
 
-    connect system/oracle@localhost:1524/Japan
-
-    alter pluggable database application wmStore sync to patch 301;
     </copy>
     ```
     ![](./images/task9.2-applypatch.png " ")
