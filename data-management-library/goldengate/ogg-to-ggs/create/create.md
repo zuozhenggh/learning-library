@@ -59,7 +59,7 @@ This lab assumes that you completed all preceding labs.
 
 10. Click **Next**.
 
-11. For GoldenGate Instance Name, enter **ogginstance**.
+11. For GoldenGate Instance Name, enter **ggsinstance**.
 
 12. For Administrator Username, enter **oggadmin**.
 
@@ -172,7 +172,7 @@ Although the GGADMIN user is created during the database registration process, i
 
 11. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
 
-In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You can now proceed to the next lab.
+In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You may now **proceed to the next lab**.
 
 ## Learn More
 

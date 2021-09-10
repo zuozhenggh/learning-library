@@ -29,15 +29,6 @@ To successfully complete this LiveLab, you must have:
 
 > **Note:** *If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. For more information, see the [Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)*
 
-### Lab Breakdown
-
-* Lab 1: Set Up Your Environment
-* Lab 2: Create OCI GoldenGate Resources
-* Lab 3: Connect Oracle GoldenGate to Autononous Data Warehouse
-* Lab 3: Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
-* Lab 4: Send the OCI GoldenGate Trail File to Oracle GoldenGate
-* Lab 5: (Optional) Connect to the Admin Client to View Extract Statistics and Log Messages
-
 ## Learn More
 
 * [Overview of Oracle Cloud Infrastructure GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/overview-goldengate.html#GUID-0AF49219-46DC-4BF2-BBFA-64E4D3F557F2)

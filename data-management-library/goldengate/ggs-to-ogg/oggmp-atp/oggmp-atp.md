@@ -4,7 +4,7 @@
 
 For the purposes of this workshop, Oracle Autonomous Data Warehouse (ADW) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ADW.
 
-Estimated time: 10 minutes
+Estimated time: 15 minutes
 
 ### Objectives
 
@@ -115,7 +115,7 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 
     ![](images/04-10.png " ")
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You can **may proceed to the next lab**.
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

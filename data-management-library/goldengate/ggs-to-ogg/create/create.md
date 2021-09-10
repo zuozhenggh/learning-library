@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate Deployment and register databases.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Resources
 

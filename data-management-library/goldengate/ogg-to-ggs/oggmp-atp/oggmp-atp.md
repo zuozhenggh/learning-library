@@ -121,7 +121,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
     ![](images/01-05-trandata.png " ")
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You may now proceed to the next lab.
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the source ATP database. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
