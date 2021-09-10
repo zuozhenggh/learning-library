@@ -9,7 +9,7 @@ You can deploy controls to block privileged account access to application data a
 
 *Estimated Lab Time:* 35 minutes
 
-*Version tested in this lab:* Oracle Autonomous DB 19cc
+*Version tested in this lab:* Oracle Autonomous DB 19c
 
 ### Video Preview
 Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
