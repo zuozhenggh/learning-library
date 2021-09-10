@@ -32,15 +32,15 @@ Data Analysts usually collect data by collaborating with stakeholders to streaml
 
 ### Objectives
 
-In this workshop, you'll build an end-to-end data pipeline that performs extract, transform, and load (ETL) operations. The pipeline will use OCI Dataflow Apache Spark and OCI Data Catalog Metastore running on OCI for querying and manipulating the data. We will see how different personas (Data Engineer, Data Scientist, and Data Analyst) come together to share Data and Metadata. We'll see how the  three different personas (Data Engineer, Data Scientist, Data Analyst) in the enterprise come together as the data travel across pipelines. You'll also use technologies like OCI Object store for data storage, OCI Data Flow Interactive SQL Cluster, and Oracle Analytics Cloud (OAC) for visualization of the raw data. OCI Data Flow integrates with OCI Data Catalog Metastore which acts as the platform’s centralized metadata store to enable different personas and applications to share data and metadata.
+In this workshop, you'll build an end-to-end data pipeline that performs extract, transform, and load (ETL) operations. The pipeline will use OCI Dataflow Apache Spark and OCI Data Catalog Metastore running on OCI for querying and manipulating the data. We will see how different personas (Data Engineer, Data Scientist, and Data Analyst) come together to share Data and Metadata as the data travel across pipelines. You'll also use technologies like OCI Object store for data storage, OCI Data Flow Interactive SQL Cluster, and Oracle Analytics Cloud (OAC) for visualization of the raw data. OCI Data Flow integrates with OCI Data Catalog Metastore which acts as the platform’s centralized metadata store to enable different personas and applications to share data and metadata.
 
 Here's the summary of what you’d do in the workshop :
 
 As a Data Engineer
 
-* Navigate to the Data Catalog Console and create a new Metastore Instance under a Compartment.
+* Navigate to the Data Catalog Console and explore the Metastore Instance under a Compartment.
 
-* As a Data engineer Build an OCI Data Flow Python batch application that does the following:
+* Build an OCI Data Flow Python batch application that does the following:
 
    1. Read the raw JSON dataset from the object store bucket
   
@@ -52,7 +52,7 @@ As a Data Engineer
   
    5. Create a view in OCI Data Catalog Metastore which is then made available to OAC.
 
-* Navigate to Data Flow Console and creates the Data Flow Application using the PySpark application created in #2 above and selects the metastore that needs to be associated with the template
+* Navigate to Data Flow Console and creates the Data Flow Application using the PySpark application created in above and selects the metastore that needs to be associated with the application
 
 * Navigate to Data Flow Console and runs the Application.
 
@@ -64,14 +64,13 @@ As a Data Scientist
   
    1. Queries the data and metadata that are stored in the metastore #2 above.
   
-   2. Build a sample machine learning model to explore to predict sentiment given a review text
+   2. Build a sample machine learning model to explore to predict sentiment given a review text. Classifiy Yelp reviews as positive / negative and identify most relevant phrases based on the textual content .
   
-   3. Demonstrates that metastore acts like a unified store for data platform allowing applications and different personas to share data and metadata.
+As a Data Analyst navigate to :
 
-As a data analyst navigate to :
+* OAC to explore the dataset that was created by the data engineer.
 
-* OAC to explore the data and build visualization
-* Write custom queries to create reports
+* Write custom queries to create build visualization
 
 Your dataset is the [Yelp Review and Business Dataset](https://www.kaggle.com/yelp-dataset/yelp-dataset), downloaded from the Kaggle website under the terms of the Creative Commons CC0 1.0 Universal (CC0 1.0) "Public Domain Dedication" license.
 
@@ -101,9 +100,9 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 ### What is not covered in the lab
 
-* Policies and other Identity management related setup for OCI Data Flow or OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the [documentation](https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm).
+* Policies and other Identity management related setup for OCI Data Flow, OCI Data Interactive SQL and OCI Data Catalog.They are already setup in the lab tenancy. You can read more about them in the [documentation](https://docs.oracle.com/en-us/iaas/data-flow/using/dfs_getting_started.htm) and the [here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide.pdf)
 
-* OCI Data Flow Interactive SQL server cluster setup and the related policies.They are already setup in the lab tenancy. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
+* Connection between OAC and  OCI Data Flow Interactive SQL server cluster is already setup. If you want to learn more, read the [Guide](https://objectstorage.us-ashburn-1.oraclecloud.com/n/idehhejtnbtc/b/workshop-scripts/o/Hackathon%20User%20Guide%20(1).pdf)
 
 ## **STEP 1**: Inspect the Input JSON files and the scripts for the lab
 
@@ -133,7 +132,7 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 3. Change the Compartment to the ```dataflow-demo```
 
-   ![MetaStore Compartment](../images/Metastore-Change-Compartment.png " ")
+   ![MetaStore Compartment](../images/MetaStore-Change-Compartment.png " ")
 
 4. Should list the MetaStores in  ```dataflow-demo``` Compartment and you should find the ```DF-metastore``` Metastore that we will use for the workshop
 
@@ -147,13 +146,13 @@ This lab guides you step by step, and provides the parameters you need. The pyth
 
 As a Data engineer we start by building a Python based batch application the application calls a script that does the following :
 
-      1. Reads the raw Yelp JSON data from Object Store into a spark dataframe
-      
-      2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
-      
-      3. Creates managed tables by the name yelp_business_raw and yelp_review in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
-      
-      4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data analayst to create visaulization and reports on top of the data.
+1. Reads the raw Yelp JSON data from Object Store into a spark dataframe
+
+2. Cleanses the data by removes all the restaurant that are closed. The restaurant that are closed won't be very helpful in data analysis.
+
+3. Creates managed tables by the name ```yelp_business_raw``` and ```yelp_review``` in the metastore. The metastore acts like a central repository for multiple applications to share data and metadata
+
+4. Creates a view ```yelp_data```  joining the data from both the tables to make it available for Data Analyst to create visualization and reports on top of the data.
 
 Perform the following steps to create an application
 
@@ -163,7 +162,7 @@ Perform the following steps to create an application
 
 2. Click ```Create Application``` from the page to launch the ```Create Application```  page
 
-   ![Create Application](../images/Dataflow-Create-Application" ")
+   ![Create Application](../images/Dataflow-Create-Application.png " ")
 
 3. On the ```Create Application``` page, provide a `Name` and `Description`
 
@@ -196,7 +195,7 @@ Perform the following steps to create an application
 
 1. Launch the Application that was created in Step#3 above. The status of the application should be ```Active```
 
-   [Run Sample Application](../images/Launch-Sample-Application.png " ")
+   ![Run Sample Application](../images/Launch-Sample-Application.png " ")
 
    Notice the application has the correct values for ```Metastore``` and ```Arguments```
 
@@ -258,7 +257,7 @@ Perform the following steps to create an application
 
 11. Navigate to the Object Store Bucket ```DF-default-storage``` that was used as location for the tables.
 
-    ![Application logs](../images/Hive-MetaStore-Bucket.png " ")
+    ![Application logs](../images/Hive-Metastore-Bucket.png " ")
 
 12. Click open the Bucket ```DF-default-storage``` to show the content of the bucket and scrolls to bottom of the page  
 
@@ -318,13 +317,17 @@ As a Data scientist, we create another OCI Data Flow Application. This applicati
 
        ![Query MetaStore Logs ](../images/Query-metastore-run-application-log.png " ")
 
-   11. Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithams. The higher the F1 score the better.
+   11. Also seen in the logs is the F score, which is really the measure of the of Precision and Recall for the two algorithms. The higher the F1 score the better.
 
-    ![Query MetaStore Logs ](../images/Query-metastore-run-application-fscore.png " ")
+       We can see here that the terms that are most positive include ‘friendly staff’, ‘delicious’, ‘great customer service’, ‘great food’. This indicates that the important features for customer’s satisfaction is staff, food taste, and service.
+
+       The terms that are most negative include ‘minutes’, ‘over priced’, ‘bland’, ‘food was ok’, ‘nothing special’. This suggests that negative reviews are driven by long wait times, overpriced food, bad food taste, an experience that isn’t deemed as anything special.
+
+       ![Query MetaStore Logs ](../images/Query-metastore-run-application-fscore.png " ")
 
 ## **STEP 6**: Connect to the Metastore from Oracle Analytics Cloud (OAC)
 
-As a Data analyst, we want to build visualization on top of the raw data that was created by the data engineer. OAC can connect to the OCI Metastore via Data Flow Interactive (DFI) SQL Cluster. For this workshop DFI SQL Cluster is already setup. And the connection between DFI Cluster and OAC via Oracle Remote Data Gateway (RDG) is also established. At the time of writing this workshop OAC doesn't natively supports DFI as a data source instead uses JDBC to establish the connection vis RDG.
+As a Data analyst, we want to build visualization on top of the raw data that was created by the data engineer. OAC can connect to the OCI Metastore via Data Flow Interactive (DFI) SQL Cluster. For this workshop DFI SQL Cluster is already setup. And the connection between DFI Cluster and OAC via Oracle Remote Data Gateway (RDG) is also established. 
 
 1. From the Console navigate to  ```Analytics Cloud```
 
@@ -340,7 +343,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
 4. You should be re-directed to the OAC Console
 
-   ![OAC Console ](../images/OAC-Console.png " ")
+   ![OAC Console ](../images/OAC-console.png " ")
 
 5. On the console first we create a dataset
 
@@ -366,7 +369,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
 
         ![OAC DataSet ](../images/OAC-yelp-dataset.png " ")
 
-6. (Optional) Create a project to Visualize the data in Map Interface as described in [tutorial](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background) and selecting ```state``` and ```average_start``` columns from  the
+6. (Optional) Create a project to Visualize the data in Map Interface as described in [tutorial](https://docs.oracle.com/en/cloud/paas/analytics-cloud/tutorial-create-map-view-of-data/#background) and selecting ```state``` and ```average_star``` columns from  the
 
    1. Add a new ```calculation``` by right clicking ```My Calcuation``` and then ```Add Calculation```
 
@@ -377,6 +380,7 @@ As a Data analyst, we want to build visualization on top of the raw data that wa
         ![OAC My Calculation ](../images/OAC-New-Calculation-Formula.png " ")
 
    3. Click ```Save``` and the new Calculation should be displayed under ```My Calculations``
+
          ![OAC My Calculation Save ](../images/OAC-New-Calculation-Save.png " ")
 
    4. Click on ```Visualize``` on the top left hand and drop the map on the right side
