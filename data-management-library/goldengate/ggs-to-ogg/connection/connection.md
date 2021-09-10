@@ -129,14 +129,14 @@ The following instructions show you how to download the Root Certificate using a
 5.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-    * For **Credential Alias**,  enter a name, such as **ogg2ggs**.
+    * For **Credential Alias**,  enter a name, such as **ggs2ogg**.
     * For **User ID**, enter the user name of the user you created in task 2 (ggsnet).
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.
 
     ![](images/03-04.png " ")
 
-6.  Click **Submit**.
+6.  Click **Submit**. You should now have two credentials in the Marketplace Oracle GoldenGate instance, one to connect to OCI GoldenGate, and one for the target database.
 
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You may now **proceed to the next lab**.
 

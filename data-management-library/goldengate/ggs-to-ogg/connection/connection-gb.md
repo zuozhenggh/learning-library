@@ -125,7 +125,7 @@ The following instructions show you how to download the Root Certificate using a
 4.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
     * For **Credential Domain**, enter a name to distinguish this connection, such as **GGSNetwork**.
-    * For **Credential Alias**,  enter a name, such as **ogg2ggs**.
+    * For **Credential Alias**,  enter a name, such as **ggs2ogg**.
     * For **User ID**, enter the user name of the user you created in step 2 (ggsnet).
     * For **Password**, enter the password associated to the user entered for User ID.
     * For **Verify Password**, re-enter the password for verification purposes.

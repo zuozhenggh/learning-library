@@ -56,7 +56,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
 4.  For **Trail Name**, enter a two-character name for the Trail file, such as E1.
 
-    ![](images/02-04-trailname.png " e")
+    ![](images/02-04-trailname.png " ")
 
 5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
 
@@ -178,7 +178,7 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
     ![](images/05-02-nonint-rep.png " ")
 
-3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
+3.  On the Replicate Options page, for **Process Name**, enter **REP**.
 
     ![](images/05-03-rep-name.png " ")
 
