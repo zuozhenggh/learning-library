@@ -101,7 +101,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
 
-*For the purposes of this workshop, registering the Source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
+*For the purposes of this workshop, registering the target Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
 1.  In the OCI Console breadcrumb, click **GoldenGate**, and then **Registered Databases**.
 

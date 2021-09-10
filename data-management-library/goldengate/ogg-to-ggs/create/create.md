@@ -100,7 +100,7 @@ After you log in successfully, you're brought to the GoldenGate deployment conso
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
 
-*For the purposes of this workshop, registering the Source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
+*For the purposes of this workshop, registering the source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
 1.  Return to the OCI Console. In the breadcrumb, click **GoldenGate**, and then **Registered Databases**.
 
@@ -128,9 +128,9 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 5: Enable the ggadmin user and supplemental logging
+## Task 5: Enable the GGADMIN user and supplemental logging
 
-Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+Although the GGADMIN user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
 
 1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
 

@@ -29,11 +29,13 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 3.  In the Download Client Credentials (Wallet) dialog, enter the Source ATP Admin password twice, and then click **Download**.
 
+    ![](images/02-03.png " ")
+
 ## Task 2: Upload the Source ATP Credentials to Oracle GoldenGate
 
 1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
-    ![](images/02-01_compute.png " ")
+![](images/02-01_compute.png " ")
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
@@ -92,14 +94,16 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 7.  In the Administration Server, open the navigation menu (hamburger icon), and then select **Configuration**.
 
-    ![](images/04-07.png " ")
+    ![](images/03-06.png " ")
 
 8.  Click **Add Credential**.
+
+    ![](images/03-09.png " ")
 
 9.  Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **&lt;userid&gt;\_low**.
+    * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **SourceATP**.
     * For **User ID**, paste the modified ATP connection string from step 4.
     * For **Password**, enter the Source Database password from the Workshop details.
 
