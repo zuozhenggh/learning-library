@@ -148,16 +148,16 @@ Estimate Lab Time: 20 minutes
     ```
 
 3. On your OCI Dashboard navigate to and click on your user profile in the top right. Select the top option, your user.
-    ![Dashboard Profile](./images/dashboard-profile.PNG)
+    ![Dashboard Profile](./images/dashboard-profile.png)
 
 4. Select 'API Keys' and 'Add API Key'.
-    ![Add API Keys](./images/add-api-keys.PNG)
+    ![Add API Keys](./images/add-api-keys.png)
 
 5. Paste your public OCI API key file you copied above and click "Add Key".
-    ![Paste Public Key](./images/paste-pub-key.PNG)
+    ![Paste Public Key](./images/paste-pub-key.png)
 
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
-    ![Configuration File Preview](./images/config-file-preview.PNG)
+    ![Configuration File Preview](./images/config-file-preview.png)
 
 ## **Task 5: Creating Your Configuration File and Copying Your Directory**
 1. Back in your command prompt create your config file.
@@ -186,7 +186,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Update Path](./images/update-path.PNG)
+    ![Update Path](./images/update-path.png)
 
 5. Press the escape key to escape insert.
 
@@ -249,7 +249,7 @@ Estimate Lab Time: 20 minutes
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.PNG)
+    ![Update Key File Path](./images/update-keyfile-path.png)
 
 
 12. To save and quit vi editor.
@@ -278,7 +278,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![OCI CLI Test](./images/cli-test.PNG)
+    ![OCI CLI Test](./images/cli-test.png)
 
 15. Repeat the steps for 'oracle'.
 
@@ -318,7 +318,7 @@ Estimate Lab Time: 20 minutes
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.PNG)
+    ![Update Key File Path](./images/update-keyfile-path.png)
 
 
 19. To save and quit vi editor.
@@ -345,7 +345,7 @@ Estimate Lab Time: 20 minutes
     oci iam region list
     </copy>
     ```
-    ![OCI CLI Test](./images/cli-test.PNG)
+    ![OCI CLI Test](./images/cli-test.png)
 
     
 22. Lock 'zdmuser' private key file.
@@ -395,7 +395,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![RSA Key Check](./images/cat-rsa.PNG)    
+    ![RSA Key Check](./images/cat-rsa.png)    
 
 
 ## **Task 7: Configuring Connectivity Between ZDM, OGG Hub, Source and Target**
