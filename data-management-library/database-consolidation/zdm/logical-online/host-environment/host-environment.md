@@ -416,11 +416,10 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-3. Add entries for the source, target and OGG Hub. Use the following as an example but update with the values current for your environment:
+3. Add entries for the OGG Hub. Use the following as an example but update with the values current for your environment:
 
     ```
     <copy>
-    source_host_ip source_host_address source_host_domain_name
     ogg_host_ip ogg_host_address ogg_host_domain_name 
     </copy>
     ```
