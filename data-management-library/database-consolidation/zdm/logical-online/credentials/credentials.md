@@ -57,7 +57,7 @@ Estimate Lab Time: 15 minutes
 
     ![Viewing Configuration File Preview](./images/view-config-prev.png)
 
-    ![Configuration Preview](./images/config-prev.)
+    ![Configuration Preview](./images/config-prev.png)
 
     `<api_private_key>` is your API private key from the Host Environment lab. To view it again, in CloudShell type the following as 'zdmuser':
 
