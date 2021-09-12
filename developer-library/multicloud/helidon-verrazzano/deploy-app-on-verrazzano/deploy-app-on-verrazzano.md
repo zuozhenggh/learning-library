@@ -165,8 +165,8 @@ weblogic-operator-786b8db578-gtf54                 2/2     Running   0          
 
 ```bash
 <copy>
-curl -LSs https://raw.githubusercontent.com/nagypeter/learning-library/master/developer-library/multicloud/helidon-verrazzano/hello-helidon-app.yaml >~/hello-helidon-app.yaml
-curl -LSs https://raw.githubusercontent.com/nagypeter/learning-library/master/developer-library/multicloud/helidon-verrazzano/hello-helidon-comp.yaml >~/hello-helidon-comp.yaml
+curl -LSs https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/multicloud/helidon-verrazzano/hello-helidon-app.yaml >~/hello-helidon-app.yaml
+curl -LSs https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/multicloud/helidon-verrazzano/hello-helidon-comp.yaml >~/hello-helidon-comp.yaml
 cd ~
 </copy>
 ```
