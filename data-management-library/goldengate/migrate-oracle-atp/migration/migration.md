@@ -2,22 +2,23 @@
 
 ## Introduction
 
-Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
+Up to now, we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous Database. 
 
 *Estimated lab time*: 15 minutes
 
 ### Objectives
 
 In this lab, we will configure _**two extract**_ processes at the source database and _**two replicat**_ processes at the target database:
-* An extract for **changed data capture**. This process will start be capturing changes and this will create some files called trail files, those will be used after initial load finished. We will call it **the primary extract** during this workshop.
+* An extract for **changed data capture**. This process will start by capturing changes also create some files called trail files. We will use these files after the initial load finish at the target database. Let's call it **the primary extract** during this workshop.
 
-* While changes are being captured by the first extract process from the source database, the migration step needs another special type of extract process, which captures data from specified list of tables and later will be loaded into target database tables using a System Change Number (SCN). We will call it the **Initial-Load extract** during this lab. 
+* We will connect to the source database and retrieve the oldest available System Change Number (SCN) using SQLPlus connection. This SCN will be used to the instantiation SCN, in other words, it means we will export database rows until that given SCN.
 
-* Then we will connect to source database and retrieve the oldest available SCN using SQLPlus connection. This will be used as the instantiation SCN, on another word it means this we will export database rows until that given SCN.
+* The migration step needs another 'special' type of extract process while changes are being captured by the first extract process from the source database. This 'special' process is called the **Initial-Load extract**. It captures data from a specified list of tables and later will be loaded into target database tables using the SCN.
 
-* As soon as the initial-load extract finished at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, this is responsible for populating the target database using extracted data by initial-load extract.
+* When the initial-load extract finishes at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, it is responsible for populating the target database using extracted data by the initial-load extract.
 
-* The second replicat is for applying **changed data**, we will call it **the primary replicat**. Once the initial-load replicat finish, we will create a replicat process for applying changed data which captured during initial-load to the target database. The instantiation SCN is used to mark the starting point for the replicat process. What it means that we will start applying changes after the same SCN we used for initial-load extract.
+* The second replicat is for applying **changed data**. We will call it **the primary replicat**. Once the first replicat process, the initial-load finish, we will create a replicat process for applying changed data captured during the initial load to the target database. But how do we know from which starting point we start to replicate? How do we ensure there are no duplicates?
+We will start applying changes after the **same SCN** we used for the initial-load extract. This is the instantiation SCN we used to mark the starting point for the replicat process. 
 
 
 We will do the below tasks: 
@@ -32,7 +33,7 @@ We will do the below tasks:
 
 ## **Step 1**: Log in to GoldenGate deployment 
 
-1. Click the left-top hamburger icon, navigate to **Oracle Database** and choose **GoldenGate**. The page will list all available GoldenGate deployment. Click on HOL_GG_Service, this is what terraform has been created in the first lab.
+1. Click the left-top hamburger icon, navigate to **Oracle Database** and choose **GoldenGate**. The page will list all available GoldenGate deployments. Click on **_`HOL_GG_Service`_**, this is what terraform has been created in the first lab.
 
 	![](/images/3.goldengate.png)
 
@@ -40,7 +41,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_0.png)
 
-3. On the OCI GoldenGate Deployment Console sign in page, please provide **oggadmin** in User Name and password is **CloudStars#123**, then sign in.
+3. On the OCI GoldenGate Deployment Console sign-in page, please provide **_`oggadmin`_** in User Name and password is _**`CloudStars#123`**_ then sign in.
 
 	![](/images/3.goldengate_1.png)
 
@@ -48,51 +49,51 @@ We will do the below tasks:
 
 ## **Step 2**: Source database configuration
 
-1.  You should be seeing the empty Administration dashboard. Let's configure our source and target database for the extract and replication processes. Open the hamburger menu on the top-left corner, choose **Configuration**.
+1.  You should see the empty Administration dashboard. Let's configure our source and target database for the extract and replication processes. Open the hamburger menu on the top-left corner, choose **Configuration**.
 
 	![](/images/3.goldengate_config.png)
 
-2. You can see that our Source and Target databases have been added here already, it is because we did database registration in the first lab using Terraform automation. Click on **Connect to database. source12** icon:
+2. You can see that our Source and Target databases have already been added here. It is because we did database registration in the first lab using Terraform automation. Click on **Connect to database. source12** icon in the Action column.
 
 	![](/images/3.goldengate_config_source.png)
 
-3. Scroll down to the **Checkpoint** and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
+3. Scroll down to the **Checkpoint** and click on **+** icon, then provide **_`ggadmin.chkpt`_** and click **SUBMIT**. 
 
 	![](/images/3.goldengate_config_source_0.png)
 
 	The checkpoint table contains the data necessary for tracking the progress of capture process from source database's transactions. 
 
-4. Now let's add trandata for HR schema, right below the checkpoint, find **TRANDATA Information**. Make sure you choose **Schema** option then click on **+** icon. In the configuration window, for the **Schema Name** provide `HR` then click **SUBMIT**. 
+4. Now let's add trandata for HR schema, right below the checkpoint, find **TRANDATA Information**. Make sure you choose **Schema** option then click on the **+** icon. Enter **_`HR`_** in the **Schema Name**, then click submit to save. This will enable trandata for all objects in the HR schema.
 
 	![](/images/3.goldengate_config_source_trandata.png)
 
-5. You will see **Successfully added Trandata!** notification when you click on a bell icon located at left-top corner
+5. You will see the **Successfully added Trandata!** notification when you click on a bell icon located at the left-top corner.
 
 	![](/images/3.goldengate_config_source_trandata_notification.png)
 
-	However you can verify it by your choice, enter **HR** in the search field and click on the search icon.
+	However, you can verify it by your choice, enter **HR** in the search field and click on the search icon.
 
 	![](/images/3.goldengate_config_source_trandata_check.png)
 
-	The result will verify that you have prepared 7 tables for trandata instantiation in HR schema. This is necessary steps for the source database.
+	The result will verify that you have prepared seven tables for trandata instantiation in HR schema. These are necessary steps for the source database.
 
 ## **Step 3**: Target database configuration
 
-1.  It is time to configure the target database. Similar to **Step 2**, from the available databases, click on **Connect to database. target19** icon:
+1.  It is time to configure the target database. Similar to **Step 2**, click on **Connect to database. target19** icon in the available databases.
 
 	![](/images/3.goldengate_config_target.png)
 
-3. Scroll down to the **Checkpoint** and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. 
+3. Scroll down to the **Checkpoint** and click on **+** icon, then provide **_`ggadmin.chkpt`_** and **SUBMIT**. 
 
 	![](/images/3.goldengate_config_target_0.png)
 
 	The checkpoint table contains the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is best practice to enable the checkpoint table for the target system.
 
-4. Now let's go back to the Administration server overview, open the hamburger menu on the top-left corner, choose **Overview**
+4. Now let's go back to the Administration server overview, open the hamburger menu on the top-left corner, choose **Overview**.
 
 ## **Step 4**: Configure the primary extract at the source database.
 
-1. This is the first and primary extract, or should I say continuous extract is started first to initiate change data capture. In the administration server, click the **+** icon for adding the extract.
+1. This is the first and primary extract, or should I say continuous extract process to initiate change data capture. In the administration server, click the **+** icon for adding the extract.
 
 	![](/images/3.goldengate_ext_0.png)
 
@@ -100,7 +101,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_1.png)
 
-3. Please provide `EXTPRIM` as it is our primary extract in  **Process Name**, and **EX** in **Trail Name**, then click Next.
+3. Please provide **_`extprim`_** as it is our primary extract in  **Process Name**, and **_`ex`_** in **Trail Name**, then click Next.
 
 	![](/images/3.goldengate_ext_2.png)
 
@@ -132,7 +133,7 @@ We will do the below tasks:
 
 ## **Step 5**: Get the SCN of the source database
 
-1. Remember that we copied the terraform output? Go and find the IP address of `Source_DB_Public_IP` from your note and connect to source database using sqlplus connection. Copy the below line, and modify it with your IP address, then open your cloud-shell and run.
+1. Remember that we copied the terraform output? Go and find the IP address of `Source_DB_Public_IP` from your note and connect to the source database using sqlplus connection. Modify the below line with your IP address, then run in your cloud shell.
 	
 	```
 	<copy>
@@ -140,7 +141,7 @@ We will do the below tasks:
 	 </copy>
 	```
 	
-	_**NOTE:** Make sure you replace with your source IP address for successful connection.
+	_**NOTE:** Make sure you replace with your source IP address for successful connection._
 
 2. You will be successfully connected to your source database, then run the below command to get the SCN:
 
@@ -152,7 +153,7 @@ We will do the below tasks:
 	</copy>
 	```
 
-3. Copy the SCN output! The below image shows successful output. In this workshop, SCN is **1667664**. We will also use this in the last step.
+3. Copy the SCN output! The below image shows the successful output. In this workshop, SCN is **1667664**. We will also use this in the last step.
 
 	![](/images/3.goldengate_ext_scn.PNG)
 
@@ -167,11 +168,11 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_7.png)
 
-3. In **Process Name**, please provide `INITLOAD` as since this initial load extract, and then click Next.
+3. In **Process Name**, please provide **_`initload`_** because this initial load extract, and then click Next.
 
 	![](/images/3.goldengate_ext_8.png)
 
-4. Open a notepad, and replace xxxxxx in the below parameter with your SCN output:
+4. Open a notepad, and replace _xxxxxx_ in the below parameter with your SCN output:
 
 	```
 	<copy>
@@ -181,7 +182,7 @@ We will do the below tasks:
 	</copy>
 	```
 
-5. Then modify the initload parameter file, it should be looking like the below image. 
+5. Then modify the initload parameter file should be looking like the below image. 
 
 	![](/images/3.goldengate_ext_9.png)
 
@@ -189,13 +190,15 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_5.png)
 
-7. In the overview dashboard, you should see **INITLOAD** extract is stopped. Click on **Action** button, choose **Details**. Initial-load takes only matter of seconds to finish sample 7 tables. You can see actual extract process details in the **Report** tab. Please refer to the below recording for your reference of this step.
+7. In the overview dashboard, you should see **initload** extract is stopped. Click on **Action** button, choose **Details**. Initial-load takes only a matter of seconds to finish sample 7 tables. You can see actual extract process details in the **Report** tab. Please refer to the below recording for your reference of this step.
 
 	![](/images/3.goldengate_initial_load.gif)
 
+	_RECAP:_ So far, we have configured two extract processes. EXTPRIM is capturing change data and INITLOAD captured every row of the source seven tables. Now we need to create two replicat processes for these two extracts.
+
 ## **Step 7**: Configure the initial-load replicat at the target database.
 
-1. The apply process for initial load replication is very easy and simple to configure. There are four types of Replicats supported by the GoldenGate Services. On the overview page, go to Replicat part and click on **+** to create our replicat process.
+1. The process for initial load replication is simple and easy to configure. There are four types of Replicats supported by GoldenGate Services. Go to the Replicat part and click on the **+** icon to create our replicat process on the overview page, 
 
 	![](/images/3.goldengate_repload_0.png)
 
@@ -203,7 +206,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repload_1.png)
 
-3. Provide a name for the replicat process, for example, **REPLOAD**, because this will be our initial-load replicat process.
+3. Provide a name for the replicat process, for example, **_`repload`_**, because this will be our initial-load replicat process.
 
 	![](/images/3.goldengate_repload_2_1.png)
 
@@ -211,7 +214,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repload_2_2.png)
 
-5. Scroll below and find **Trail Name**, add _**ix**_ as trail name in the field. Because we configured the **INITLOAD** process with this name, so it _**cannot**_ be a random trail name.
+5. Scroll below and find Trail Name, add _**ix**_ as trail name in the field. Because we configured trail file name to `ix` in the **initload** process's parameter, therefore it _**cannot**_ be just a random name.
 
 	![](/images/3.goldengate_repload_2_3.png)
 
@@ -245,9 +248,13 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_5.png)
 
+9. Similar to the extract processes, go and see the detail of the **repload** process. In the statistics tab, you will see how many rows were inserted by the repload process. You can also check more detailed information in the Report tab.
+
+	![](/images/3.goldengate_repload_report.png)
+
 ## **Step 8**: Run update statement at the source database.
 
-1. Okay, now let's make some changes in the source database to make this migration closer to real-life scenario. Open your cloud-shell and run the below to enter the work directory.
+1. Okay, now let's make some changes in the source database to make this migration closer to a real-life scenario. Open your cloud shell and run the below to enter the working directory.
 
 	```
 	<copy>
@@ -263,13 +270,13 @@ We will do the below tasks:
 	</copy>
 	```
 
-	This statement updates a row in the countries table and it is already captured by **EXTPRIM** process. We now need to create another replicat to apply those captured changes at source to the target database.
+	This statement updates a row in the countries table. Also, it must be captured by the **EXTPRIM** process. We now need to create the second replicat process to apply these captured changes at the source to the target database.
 
 	![](/images/3.goldengate_repcont_update.png)
 
 ## **Step 9**: Configure the continuous replicat at the target database.
 
-1. On the overview page, go to Replicat part and click on **+** to create our continuous replicat process.
+1. Go to the Replicat part and click on the **+** icon to create our continuous replicat process on the overview page, 
 
 	![](/images/3.goldengate_repcont_0.png)
 
@@ -277,7 +284,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repcont_1.png)
 
-3. Provide a name for the replicat process, for example, **REPCONT**, because this will be our continuous replication process.
+3. Provide a name for the replicat process, for example, **_`REPCONT`_**, because this will be our continuous replication process.
 
 	![](/images/3.goldengate_repcont_2_1.png)
 
@@ -319,23 +326,23 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repcont_4.png)
 
-9. From the replicats area, find **REPCONT** and click on **Action**. You need to select _**Start with Options**_ here. By doing this, you'd be able provide **SCN** information. Because initial-load process extracted data as of **SCN** that we captured from database then populated our target database. Therefore this replicat **REPCONT** should be running after that **SCN** number, to make sure source and target are consistent.
+9. From the replicats area, find **REPCONT** and click on **Action**. You need to select _**Start with Options**_ here. By doing this, you'd be able to provide **SCN** information. Because initial-load process extracted data as of **SCN** that we captured from database then populated our target database. Therefore, the **REPCONT** replicat should start after that point in time.  It will make sure the source and target are consistent.
 
 	![](/images/3.goldengate_repcont_5.png)
 
-10. Choose **After CSN** from Start Point, and provide the SCN you retrieved in Step 6 into the **CSN**. In this workshop case, 1667664 was SCN number I used for the initial-load replicat. Now click **Start**
+10. Choose **After CSN** from Start Point, and provide the SCN you retrieved in Step 6 into the **CSN**. In this workshop case, 1667664 was the SCN number I used for the initial-load replicat. As we explained, it makes sense to start our replication after this SCN number. Otherwise, there can be some duplicate records, which will cause the replicat process to abend! Now click **Start**
 
 	![](/images/3.goldengate_repcont_6.png)
 
-	_**NOTE:** We captured System Change Number (SCN) from source database, which increments whenever commit occurs. In GoldenGate terminology Commit Sequence Number (CSN), in fact it identifies a point in time when transaction commits. Different naming, but same concept.
+	_**NOTE:** We captured System Change Number (SCN) from the source database, which increments whenever commit occurs. In GoldenGate terminology Commit Sequence Number (CSN) identifies a point in time when the transaction commits. Different naming, but same concept._
 
-11. You can open the **REPCONT** extract process and navigate to the statistics tab, where you will find if **REPCONT** applied the change data from the **EXTPRIM** process.
+11. You can open the **REPCONT** extract process and navigate to the statistics tab, where you will find if **REPCONT** applied the change data from the **EXTPRIM** replicat.
 
 	![](/images/3.goldengate_repcont_7.png)
 
 	Congratulations! You have completed this workshop!
 
-	You successfully migrated the Oracle 12c on-premises database to Oracle Autonomous Database in OCI.
+	You successfully migrated the Oracle 12c on-premises database to Oracle Autonomous Database in OCI. If you wish to continue to migrate a sample HR application, please proceed to the next Bonus lab.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 

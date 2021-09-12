@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this workshop, we will migrate the sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using new cloud native GoldenGate service. Purpose of this workshop is to show simple and yet efficient way to migrate a database to Oracle Cloud. We will use GoldenGate service for the database migration to designated resources in Oracle Cloud Infrastructure and in the final **Bonus** lab we will create HR application in APEX. This workshop consists of 4 labs. 
+In this workshop, we will migrate the sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using the new cloud-native GoldenGate service. The purpose of this workshop is to show the simple and yet efficient way to migrate a database to Oracle Cloud. This workshop consists of 4 labs.  We will use the GoldenGate service for the database migration to designated resources in Oracle Cloud Infrastructure in the first three labs. in the last **Bonus** lab, we will create an HR application in APEX
 
 *Estimated total Workshop Time*: 1.5 hours
 
@@ -12,15 +12,15 @@ We are about to migrate Oracle's famous sample schema HR to the Oracle Autonomou
 
 ### About GoldenGate Service
 
-Oracle Cloud Infrastructure (OCI) GoldenGate is a managed service providing a real-time data mesh platform, which uses replication to keep data highly available, and enabling real-time analysis. You can design, execute and monitor their data replication and stream data processing solutions without the need to allocate or manage compute environments, it is fully managed service. Today we will explore it's capabilities and migrate our source database to target.
+Oracle Cloud Infrastructure (OCI) GoldenGate is a managed service providing a real-time data mesh platform, which uses replication to keep data highly available, and enabling real-time analysis. You can design, execute and monitor their data replication and stream data processing solutions without the need to allocate or manage compute environments, it is a fully managed service. Today we will explore its capabilities and migrate our source database to target.
 
 ### About Autonomous Database
 
-This is self-driving, converged, multimodel database and machine learning based automation takes care of it's operational lifecycle management. Auto provisioning and auto tuning to simplify the creation and optimization of all data stores in the cloud. You can start with the lowest cost and commitment, and autoscale as the business grows. Today we will use this 19c database as our target database.
+This is self-driving, converged, multimodel database and machine learning-based automation takes care of its operational lifecycle management. Auto-provisioning and auto-tuning to simplify the creation and optimization of all data stores in the cloud. You can start with the lowest cost and commitment, and autoscale as the business grows. Today we will use this 19c database as our target database.
 
 ### About Application Express (APEX)
 
-First of all Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. Also APEX is built-in tool of the Autonomous Database and we will explore the best capabilities in the bonus step.
+First of all Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. Also, APEX is a built-in tool of the Autonomous Database and we will explore the best capabilities in the bonus step.
 
 ### About Terraform 
 
@@ -40,9 +40,9 @@ In this workshop you will :
 **Architecture Overview**
 
 - Virtual Cloud Network: we will create a VCN with a public sub-network and internet access to avoid complexity.
-- Source Oracle database: we will create a source database in a Virtual Machine with sample schema, which acts as our source on-premise database. Multiple preparation yet mandatory steps are automated by Terraform and bash script, such as creating GGADMIN schema, granting accesses, enabling supplemental logs etc.
+- Source Oracle database: we will create a source database in a Virtual Machine with sample schema, which acts as our source on-premise database. Multiple preparations yet mandatory steps are automated by Terraform and bash script, such as creating GGADMIN schema, granting accesses, enabling supplemental logs etc.
 - Target Autonomous database: we will provision Oracle Autonomous Database to act as our target database.
-- Goldengate database registration: while our databases are being provisioned and configured, we will register them. Database registration is the vital and important part of GoldenGate deployment. There is no way to connect databases from Goldengate deployment without active registered databases.
+- Goldengate database registration: while our databases are being provisioned and configured, we will register them. Database registration is a critical part of GoldenGate deployment. There is no way to connect databases from Goldengate deployment without active registered databases.
 - Goldengate deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
 	![](/images/architecture.png)
@@ -67,7 +67,7 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 
 ## Acknowledgements
 
-I'd like to thank to Vahidin, who is experienced APEX developer and Tsengel, GenO lift implementation engineer. These gentlemen have shown their dedication and hardwork to support my workshop.
+I would like to thank Vahidin and Tsengel, experienced APEX and GenO lift implementation engineers respectively. These gentlemen have shown their dedication and hard work to support my workshop.
 
 * **Author** - Bilegt Bat-Ochir - Senior Technology Solution Engineer
 * **Contributors** - Vahidin Qerimi - Principal Technology Solution Engineer, Tsengel Ikhbayar - GenO lift implementation
