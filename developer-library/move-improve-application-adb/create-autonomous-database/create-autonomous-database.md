@@ -167,8 +167,8 @@ Please note that most of the database settings and parameters cannot be modified
         ![](./images/sql-developer-3.png)     
 
 
-You have successfully provisioned and connected SQL Developer to Autonomous Database (ATP) and validated the connection.
-                ![](./images/atp-diagram.png)
+      You have successfully provisioned and connected SQL Developer to Autonomous Database (ATP) and validated the connection.
+                    ![](./images/atp-diagram.png)
 
 You may now proceed to the next lab.
 

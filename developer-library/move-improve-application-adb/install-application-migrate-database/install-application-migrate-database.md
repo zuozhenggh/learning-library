@@ -226,7 +226,7 @@ Note: You can use the Data Pump procedure for your own database and migration pr
 
   While we are in SQL Developer check to see if you have the SOE schema in the Other Users folder. You should not see it.  We will import this Swingbench database schema later.
 
-      ![](./images/sql-devloper-other-schema.png)
+      ![](./images/sql-developer-other-schema.png)
 
 
 ## Task 5: Import the Dump File to the Autonomous Database
@@ -337,36 +337,36 @@ Execute the impdb statement below from your compute with Instant Client software
 
 
 
-In SQL Developer check to see if you have the SOE schema in the Other Users folder now. You should see that it has been imported.
+  In SQL Developer check to see if you have the SOE schema in the Other Users folder now. You should see that it has been imported.
 
-Upon import, there was a compilation issue. To fix the issue, the following SQLs grant the missing privilege and recompile the ORDERENTRY package.
-   ```
-   SQL><copy>GRANT EXECUTE ON DBMS_LOCK TO SOE;</copy>
-   SQL><copy>ALTER PACKAGE SOE.ORDERENTRY COMPILE;</copy>
-   ```
-
-
-(Optional) To view the import.log you must put it into an Oracle Object Store bucket and then download it to your laptop and view with a text editor.  An example of putting the file in the Object Store bucket is shown below.  
-
-    ```
-    <copy>
-    BEGIN
-    DBMS_CLOUD.PUT_OBJECT(
-    credential_name=>'STORAGE_CREDENTIAL_NAME',
-    object_uri=>'https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/bucket_name/o/import.log', directory_name=>'DATA_PUMP_DIR',
-    file_name=>'import.log');
-    END;
-
-    /
-    </copy>
-    ```
+  Upon import, there was a compilation issue. To fix the issue, the following SQLs grant the missing privilege and recompile the ORDERENTRY package.
+     ```
+     SQL><copy>GRANT EXECUTE ON DBMS_LOCK TO SOE;</copy>
+     SQL><copy>ALTER PACKAGE SOE.ORDERENTRY COMPILE;</copy>
+     ```
 
 
+  (Optional) To view the import.log you must put it into an Oracle Object Store bucket and then download it to your laptop and view with a text editor.  An example of putting the file in the Object Store bucket is shown below.  
+
+      ```
+      <copy>
+      BEGIN
+      DBMS_CLOUD.PUT_OBJECT(
+      credential_name=>'STORAGE_CREDENTIAL_NAME',
+      object_uri=>'https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/bucket_name/o/import.log', directory_name=>'DATA_PUMP_DIR',
+      file_name=>'import.log');
+      END;
+
+      /
+      </copy>
+      ```
 
 
-Now that we have both the application installed on the App Server and the database imported to ATP we are ready to run the workload.
 
-You may now proceed to the next lab.
+
+  Now that we have both the application installed on the App Server and the database imported to ATP we are ready to run the workload.
+
+ You may now proceed to the next lab.
 
 
 

@@ -68,12 +68,12 @@ Estimated Time: 1 hour 30 minutes
 
    We just did a lift and shift to another compute instance with the same Swingbench workload software!
       ```
-      $ <copy>ls</copy>
-      $ <copy>ping 8.8.8.8</copy>
-      $ <copy>cd swingbench/bin</copy>
+      $<copy>ls</copy>
+      $<copy>ping 8.8.8.8</copy>
+      $<copy>cd swingbench/bin</copy>
       ```
 
-  Replace the script below with your wallet and service name.
+   Replace the script below with your wallet and service name.
 
       ```
       $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \
@@ -137,13 +137,13 @@ The Clone will be created in 15-20 minutes.  It will have a new Wallet.  Notice 
 
  *  Troubleshooting: Test the connection with SQLPlus.
 
-    ```
-    $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
+      ```
+      $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>
 
-    $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
+      $ <copy>export LD_LIBRARY_PATH=/usr/lib/oracle/18.5/client64/lib</copy>
 
-    $ <copy>sqlplus admin/<password>@<service_tp></copy>
-    ```
+      $ <copy>sqlplus admin/<password>@<service_tp></copy>
+      ```
 
      ```
      $<copy>./charbench -c ../configs/SOE_Server_Side_V2.xml \

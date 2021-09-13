@@ -45,7 +45,7 @@
   There are 128 concurrent users making inserts and updates. We will measure users, transactions per minute (TPM) and transactions per second (TPS). It will run for 1 minute, 30 seconds, ie: -rt 1.30.
 
 7. Replace with your own wallet and service names.
-   Ensure the directory location of your wallet zip and service   name is correct.  ie: replace Wallet_ATPLABTEST with your own wallet file name, and atplabtest_tp service with your own service name.
+   Ensure the directory location of your wallet zip and service   name is correct.  ie: replace WalletATPLABTEST with your own wallet file name, and atplabtesttp service with your own service name.
 
    Note that the schema is **soe**.  ie: -u soe.  The soe schema password is **Welcome#2018**.
    If you want to change the password or the user is locked, log in to sqlplus or SQL Developer and enter:
@@ -209,7 +209,7 @@
 2. Set up another connection from SQL Developer to your ATP with a database service of **Medium**.
    This will be good for running our database queries.
 
-  ![](./images/sql-developer-medium-connection.PNG)                             
+    ![](./images/sql-developer-medium-connection.PNG)                             
 
 3. From SQL Developer worksheet, check your cpu count is 4 (ie: 2 cores thus 4 Hyper-threads)
 

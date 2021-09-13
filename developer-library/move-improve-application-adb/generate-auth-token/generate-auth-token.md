@@ -1,4 +1,4 @@
-# Generate Auth Token #
+# Generate the Auth Token #
 
 ## Introduction
 
@@ -24,20 +24,19 @@ The following is intended to outline our general product direction. It is intend
 
 1.  View the user's details:
     - If you're creating an auth token for yourself: Open the **Profile** menu ( ![User menu icon](./images/usermenu.png) ) and click **User Settings**.
-    - If you're an administrator creating an auth token for another user: In the Console, click **Identity**, and then click **Users**. Locate the user in the list, and then click the user's name to view the details. ![](./images/user-profile-icon.png) ![](./images/user-settings.png)
+    - If you're an administrator creating an auth token for another user: In the Console, click **Identity**, and then click **Users**. Locate the user in the list, and then click the user's name to view the details.
+       ![](./images/user-profile-icon.png)
+       ![](./images/user-settings.png)
 
 2.  On the left side of the page, click **Auth Tokens**.
-
-      ![](./images/generate-token.png)
+       ![](./images/generate-token.png)
 
 3.  Click **Generate Token**.
 
 4.  Enter a description that indicates what this token is for, for example, "Object store password token".
 
-5.  Click **Generate Token**.
-    The new token string is displayed.
-
-      ![](./images/copy-token.PNG)
+5.  Click **Generate Token**.The new token string is displayed.
+      ![](./images/copy-token.png)
 
 6. Copy the token string immediately, because you can't retrieve it again after closing the dialog box.
 

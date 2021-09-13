@@ -42,7 +42,7 @@ Estimated Time: 30 minute
 10. Click **Yes**
 11. Copy both the ATP wallet and the private SSH key for the App Server to the Bastion. Be sure to copy the key for Linux, not the .ppk, because your app server is a Linux compute.
 
-      ![](./images/winscp-4.PNG)
+    ![](./images/winscp-4.png)
 
 ## Task 2: Copy the ATP Wallet to the App Server ##
   ![](./images/copy-wallet-diagram.png)
@@ -82,8 +82,8 @@ We are now going to copy the ATP Wallet to the App Server. The App Server will b
     Connect to App Server with the private key. Replace the private key and private IP address with yours.
 
     ```
-    $<copy> ssh –i labkey opc@10.0.1.2</copy>
-    $ <copy>ls</copy>
+    $<copy>ssh –i labkey opc@10.0.1.2</copy>
+    $<copy>ls</copy>
     ```
 
     Let’s test you can reach the internet through the NAT gateway, ping something like the Google DNS. We will need to install software from the internet through the NAT later.
@@ -91,7 +91,7 @@ We are now going to copy the ATP Wallet to the App Server. The App Server will b
     From the App Server session
 
     ```
-    $ <copy>ping 8.8.8.8</copy>
+    $<copy>ping 8.8.8.8</copy>
     ```
 
    ![](./images/ping.PNG)

@@ -105,7 +105,7 @@ Use PuTTy or SSH to connect to your bastion compute. Connect with the compute pu
 For Linux SSH:
 
 ```
-<copy>`sh –i ~/../privatekey opc@<your compute public IP address>`</copy>
+<copy>sh –i ~/../privatekey opc@<your compute public IP address></copy>
 ```
 
 For PuTTY:
@@ -156,13 +156,13 @@ For PuTTY:
 
 10. Click Create
 
-    ![](./images/create-app-server-3.PNG)
+     ![](./images/create-app-server-3.PNG)
 
 
 
    You can see the work request and status of the compute being provisioned in the compute details and Work Requests page.
 
-     ![](./images/create-app-server-5.PNG)
+      ![](./images/create-app-server-5.PNG)
 
 
 
