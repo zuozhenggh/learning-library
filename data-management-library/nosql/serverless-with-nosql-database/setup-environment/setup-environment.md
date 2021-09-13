@@ -5,7 +5,7 @@
 
 This lab walks you through the steps necessary to create a proper operating environment.  We will take advantage of the OCI Resource Manager to create the environment. Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources.  We will be using the stack feature along with Terraform scripts created on your behalf.  As part of the stack we will set up functions, the virtual cloud network, and some data sources.  We will use these in later labs.
 
-Estimated Time: 10 minutes
+Estimated Time: 13 minutes
 
 ### Objectives
 
@@ -28,7 +28,7 @@ This lab assumes you have:
 
     ![](images/console-image.png)
 
-2. Left side drop down, go to Identity & Security and then Compartments.
+2. On left side drop down (left of Oracle Cloud banner), go to Identity & Security and then Compartments.
 
     ![](images/identity-security-compartment.png)
 
@@ -63,25 +63,25 @@ This lab assumes you have:
 
     ![](images/cloud-shell.png)
 
-  **Note:** This needs to be executed in the **HOME region**  Please ensure you are in your home region.
+  **Note:** This needs to be executed in the **HOME region**.  Please ensure you are in your home region.  The Cloud Shell prompt shows you what region the shell is running out of.
 
     ![](images/capturecloudshellhomeregion.png)
 
 5. Execute these commands in your Cloud Shell.  Replace "YOURUSEROCID" with your OCID you copied above before executing.
 
-  ````
-  <copy>
-  openssl genrsa -out NoSQLLabPrivateKey.pem  4096        
-  openssl rsa -pubout -in NoSQLLabPrivateKey.pem -out NoSQLLabPublicKey.pem
-  oci iam user api-key upload --user-id YOURUSEROCID --key-file NoSQLLabPublicKey.pem > info.json
-  </copy>
-  ````
-  If you execute the 'oci iam' command before replacing "YOURUSEROCID" then you will get the following error:
-  **"bash: yourUserOCID: No such file or directory".**   Replace "YOURUSEROCID" and try the last command again.    
+    ````
+    <copy>
+    openssl genrsa -out NoSQLLabPrivateKey.pem  4096        
+    openssl rsa -pubout -in NoSQLLabPrivateKey.pem -out NoSQLLabPublicKey.pem
+    oci iam user api-key upload --user-id YOURUSEROCID --key-file NoSQLLabPublicKey.pem > info.json
+    </copy>
+    ````
+    If you execute the 'oci iam' command before replacing "YOURUSEROCID" then you will get the following error:
+    **"Authorization failed or requested resource not found".**   Replace "YOURUSEROCID" and try the last command again.    
 
 ## Task 3: Deploy the PoC Application
 
-1. To deploy the application, we will use a terraform scripts provided for this Lab. {MJB: NEED TO DEPLOY FROM OBJECT STORAGE}
+1. To deploy the application, we will use a terraform scripts provided for this Lab. Click on the 'Deploy to Oracle Cloud ' button.  This will create a new window in your browser.  {MJB: NEED TO DEPLOY FROM OBJECT STORAGE}
 
   [![Deploy to Oracle Cloud - home](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=us-phoenix-1&zipUrl=https://github.com/dario-vega/serverless-with-nosql-database/archive/refs/heads/main.zip)
 
@@ -89,7 +89,7 @@ This lab assumes you have:
 
     ![](images/capturephoenixmissing.png)
 
-  Please Suscribe to Phoenix Region.  Click on drop down by your region and click on 'Manage Regions'.
+  Please subscribe to Phoenix Region.  Click on drop down by your region and click on 'Manage Regions'.
 
     ![](images/manage-regions.png)
 
@@ -97,27 +97,33 @@ This lab assumes you have:
 
     ![](images/capturesuscribe.png)
 
-  After successfully hitting the 'Deploy to Oracle Cloud' button, you will be brought to a new screen.
+2. After successfully hitting the 'Deploy to Oracle Cloud' button, you will be brought to a new screen.
 
     ![](images/cloud-account-name.png)
 
 
-2. Provide your **Cloud Account Name** (tenancy name, not your username or email) and click on Next.
+3. Provide your **Cloud Account Name** (tenancy name, not your username or email) and click on Next.
 
   Log into your account using your credentials (system may have remembered this from a prior log in).  You will see the Create Stack screen below:
 
     ![](images/create-stack.png)
 
-  Click on the box "I have reviewed and accept the Oracle Terms of Use."  After clicking this box, it will populate the stack information, the name and the description.
+  Click on the box "I have reviewed and accept the Oracle Terms of Use."  After clicking this box, it will populate the stack information, the name and the description.  Check the 'Create in compartment' box and make sure it shows demonosql.   If it does not, change it to demonosql.  
 
-3. Click on Next on bottom left of screen.  This will move you to the 'Configure Variables' screen. Configure the variables for the infrastructure resources that this stack needs prior to running the apply job.
-Choose demonosql as _Compartment_  from the drop down list, provide your username in the text box _OCIR username_ then the token copied in step2 in the text box _OCIR user password_.  You can get your username from your profile. MJB-NEED-IMAGE.
+4. Click on Next on bottom left of screen.  This will move you to the 'Configure Variables' screen. Configure the variables for the infrastructure resources that this stack needs prior to running the apply job.
+Choose demonosql as _Compartment_  from the drop down list, provide your username in the text box _OCIR username_ then the token copied in step2 in the text box _OCIR user password_.  You can get your username from your profile.
 
-4. Click on Next, which brings you to the 'Review' screen.  Click on Create.MJB-NEED-IMAGE.
+    ![](images/configure-var.png)
+
+5. Click on Next, which brings you to the 'Review' screen.  Click on Create.
+
+    ![](images/review-screen.png)
 
   A job will run automatically. It takes approx 3 minutes. Wait still "State" field becomes **Succeeded.**  While it is running you will see a new screen that has the status displayed.   
 
     ![](images/stack-progress.png)
+
+  Once it has succeeded you can delete that window from your browser.
 
 
 ## Task 4: Understand Credentials, Policies and the Dynamic Group
@@ -212,11 +218,8 @@ You may now **proceed to the next lab.**
 
 ## Learn More
 
-* [About Oracle NoSQL Database Cloud Service](https://docs.oracle.com/pls/topic/lookup?ctx=cloud&id=CSNSD-GUID-88373C12-018E-4628-B241-2DFCB7B16DE8)
-* [Oracle NoSQL Database Cloud Service page](https://cloud.oracle.com/en_US/nosql)
-* [Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
-* [Node API Reference Guide](https://oracle.github.io/nosql-node-sdk/)
-* [Python API Reference Guide](https://nosql-python-sdk.readthedocs.io/en/latest/index.html)
+* [About Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [About Managing User Credentials](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm)
 * [About Resource Manager](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
 * [About Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [About Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
@@ -224,5 +227,4 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Dario Vega, Product Manager, NoSQL Product Management and Michael Brey, Director, NoSQL Product Development
-* **Contributors** - XXX, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Michael Brey, Director, NoSQL Product Development, September 2021
