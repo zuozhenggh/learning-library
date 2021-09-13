@@ -6,7 +6,7 @@ OCI Language can be called from the OCI Command Line Interface (CLI).
 
 In this lab session, we will show several code snippets to access our service with CLI.
 
-You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration.
+You do not need to execute these codes, but review them to understand what information and steps are needed to implement your own integration.
 
 *Estimated Lab Time*: 10 minutes
 
@@ -35,19 +35,18 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 ### 1: Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-![](./images/cloudShellIcon.png " ")
+    ![](./images/cloudShellIcon.png " ")
 
 ### 2: Enter Language CLI Command
 
 Enter any one of the Language Pre-Deployed CLI commands you want to execute.
-
-![](./images/cloudShellCommand.png " ")
+    ![](./images/cloudShellCommand.png " ")
 
 
 ### 2: View Result
 
 The Language service displays the results as shown below:
-![](./images/clousShellResult.png " ")
+    ![](./images/clousShellResult.png " ")
 
 
 
@@ -62,30 +61,34 @@ For a complete list of flags and options available for CLI commands, see the [Co
 ## **TASK 2:** Try issuing some of the OCI Language commands
 
 ### 1. Language Detection
-<b>oci ai language detect-language --text, -? | -h | --help</b>
-```
-<copy>oci ai language detect-language --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-```
+Run this command : oci ai language detect-language --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-language --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 2. Named Entity Recognition
-oci ai language detect-entities --text, -? | -h | --help, --is-pii
-```
-<copy>oci ai language detect-entities --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-```
+Run this command : oci ai language detect-entities --text, -? | -h | --help, --is-pii
+    ```
+    <copy>oci ai language detect-entities --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 3. Key Phrase Extraction
-oci ai language detect-key-phrases --text, -? | -h | --help
-```
-<copy>oci ai language detect-key-phrases --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-```
+Run this command : oci ai language detect-key-phrases --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-key-phrases --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 4. Aspect-Based Sentiment Analysis
-oci ai language detect-sentiments --text, -? | -h | --help
-```
-<copy>oci ai language detect-sentiments --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-```
+Run this command : oci ai language detect-sentiments --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-sentiments --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 5. Text Classification
-oci ai language detect-text-classification --text, -? | -h | --help
-```
-<copy>oci ai language detect-text-classification --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
-```
+Run this command : oci ai language detect-text-classification --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-text-classification --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
 
 
 To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
@@ -94,4 +97,9 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-
+## Acknowledgements
+* **Authors**
+    * Rajat Chawla  - Oracle AI Services
+    * Ankit Tyagi -  Oracle AI Services
+* **Last Updated By/Date**
+    * Srijon Sarkar  - Oracle AI Services, September 2021
