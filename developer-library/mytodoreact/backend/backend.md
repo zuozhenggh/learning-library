@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
+In this tutorial, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
 
 Estimated time: 25-minutes
 
@@ -161,7 +161,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics, and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the hamburger menu navigate to **Developer Services** > **Gateways**
+1. From the navigation menu select **Developer Services** then select **Gateways**
    ![gateway](images/gateways.png " ")
 
 2. Select **Create Gateway**
@@ -221,7 +221,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
   It should at least display the row you have created in **Setup the Dev Environment**.
 
-You may now [proceed to the next lab](#next).
+You may now [proceed to the next tutorial](#next).
 
 ## Acknowledgements
 

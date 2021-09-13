@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
+In this tutorial you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
 
 Estimated time: 15-minutes
 
@@ -16,7 +16,7 @@ The App component also maintains the following states:
 
 - "isLoading" is true when waiting for the backend to return the list of items. We use this state to display a spinning wheel while loading.
 
-- "isInserting" is true when waiting for the backend to process a newly inserted item. The **Ad** button will display a spinning wheel during this time.
+- "isInserting" is true when waiting for the backend to process a newly inserted item. The **Add** button will display a spinning wheel during this time.
 
 - "error" stores the error messages received during the API calls.
 

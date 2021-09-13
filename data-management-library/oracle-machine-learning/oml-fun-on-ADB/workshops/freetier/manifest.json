@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
+    "workshoptitle": "Oracle Machine Learning Fundamentals on Oracle Autonomous Database",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -16,21 +16,25 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Oracle Machine Learning Notebooks",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../oml-notebooks/oml-notebooks.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Introduction to Oracle Machine Learning for SQL",
+            "filename": "../../omlsql/omlsql.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Introduction to Oracle Machine Learning for Python",
+            "filename": "../../omlpy/omlpy.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Using OML AutoML UI",
+            "filename": "../../automl/automl.md"
+        },
+        {
+            "title": "Lab 5: Using Oracle Machine Learning Services",
+            "filename": "../../omlserv/omlserv.md"
         },
         {
             "title": "Need Help?",
