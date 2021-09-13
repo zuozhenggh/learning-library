@@ -77,7 +77,7 @@ What are some of the goals of this application:
 
       ![](images/ferry-trip.png)
 
-## Task 3: Select New Traveler
+## Task 4: Select New Traveler
 
 1. Tap on the 'hamburger' button on the top right, and then hit ‘Track Your Baggage’ again.  A new random traveler will be shown.
 
@@ -85,14 +85,14 @@ What are some of the goals of this application:
 
       ![](images/track-bag.png)
 
-## Task 4:  Explore the JSON data record
+## Task 5:  Explore the JSON data record
 
 1. The data record is a JSON document with several nested arrays.  Oracle NoSQL makes it easy to handle nested arrays.
 
       ![](images/json-record.png)
 
 
-## Task 5: Key takeaways
+## Task 6: Key takeaways
 
 1. While this was a simple demo, it used many components that are available in OCI today.
 
