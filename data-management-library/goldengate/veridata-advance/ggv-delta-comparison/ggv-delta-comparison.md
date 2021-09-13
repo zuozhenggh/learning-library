@@ -37,7 +37,13 @@ Enter:
 4. Click **Generate Compare Pair**.
     ![](./images/2DP.png " ")
 5. Click **Save** to save the generated compare pairs on the **Preview** tab.
-6. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA_TEST1 =DELTA_TEST1**, and click **Edit** under **Column Mapping**.
+6. Click the **Existing Compare Pairs** tab, select the Compare Pair
+      ```
+      <copy>
+      DELTA_TEST1=DELTA_TEST1
+      </copy>
+      ```
+      and click **Edit** under **Column Mapping**.
     ![](./images/3DP.png " ")
 
 7.  Click the **Delta Processing** tab, select the **Enable Delta Processing** check box, and then click **Save**.
