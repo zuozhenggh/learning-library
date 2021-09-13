@@ -4,7 +4,7 @@
 
 Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
 
-*Estimated lab time*: 10 minutes
+*Estimated time*: 10 minutes
 
 ### Objectives
 
