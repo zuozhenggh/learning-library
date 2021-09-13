@@ -103,7 +103,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     </copy>
     ```
 
-2. Again, you will be prompted for different passwords for different components. Please copy the password above an enter it for every prompt:
+2. Again, you will be prompted for different passwords for different components. Please copy the password above an enter it for every prompt, except for the Token prompt, for the Token prompt please enter the Token you created and saved before:
 
     ```
     <copy>
