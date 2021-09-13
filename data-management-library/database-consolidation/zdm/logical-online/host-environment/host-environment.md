@@ -398,9 +398,25 @@ Estimate Lab Time: 20 minutes
     ![RSA Key Check](./images/cat-rsa.png)    
 
 
-## **Task 7: Configuring Connectivity Between ZDM, OGG Hub, Source and Target**
+## **Task 7: Configuring Connectivity Between ZDM and the OGG Hub**
 
-1. Edit the /etc/hosts file
+1. In order to configure connectivity between ZDM and the OGG Hub, you will need to modify the etc/hosts file. Let's first gather the relevant information, you will need to OGG Hub hostname, it's private IP and it's Internal FQDN.
+
+2. From your cloud account, select the top left hamburger menu and click on the __Compute__ Option. It will display different options, please click on __Instances__
+
+    ![Compute](./images/compute-menu.png)   
+
+3. Right next to the Oracle GoldenGate Hub instance, you will see a Public IP address and a Private IP address. Copy the Private IP Adress and save it, you will need in the following steps. Then, proceed to Select the Oracle GoldenGate Compute Instances by clicking it's name.
+
+    ![Compute OGG](./images/compute-ogg.png)
+
+4. On the Oracle GoldenGate Hub instance __Instance Information__ tab, scroll down and copy the instances's __Hostname__ and the __Internal FQDN__ information. You might have to click on __Show__ in order for the information to reveal.
+
+
+
+    ![Compute OGG 2](./images/compute-ogg-2.png)
+
+5. Having copied the information, go back to your Cloud Shell and edit the /etc/hosts file
 
     ```
     <copy>
@@ -408,7 +424,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-2. 'i' command lets you insert text into the file.
+6. 'i' command lets you insert text into the file.
 
     ```
     <copy>
@@ -416,15 +432,15 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-3. Add entries for the OGG Hub. Use the following as an example but update with the values current for your environment:
+7. Add an entry at the botttom of the file for the OGG Hub. Use the following as an example but update with the values current for your environment with the information copied above:
 
     ```
     <copy>
-    ogg_host_ip ogg_host_address ogg_host_domain_name 
+    ogg_host_private_ip ogg_public_fqdn ogg_hostname 
     </copy>
     ```
 
-4. To save and quit vi editor.
+8. To save and quit vi editor.
 
     ```
     <copy>
