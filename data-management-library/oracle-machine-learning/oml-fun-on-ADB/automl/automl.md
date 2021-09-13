@@ -32,8 +32,6 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
-
 ## Task 1: Access OML AutoML UI
 
 To access AutoML UI, you must sign into Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
@@ -41,13 +39,15 @@ To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Databas
 
 1. Select an Autonomous Database instance and on the Autonomous Database details page click **Service Console**.
 
-	![Image alt text](images/sample1.png)
+	![Service Console](images/service_console.png)
 
 2. Click **Development**.
 
-  ![Image alt text](images/sample1.png)
+  ![Development option](images/development.png)
 
-4. On the Development page click **Oracle Machine Learning Notebooks**. ![Image alt text](images/sample2.png) click **Navigation**.
+4. On the Development page click **Oracle Machine Learning Notebooks**.
+
+	![OML Notebooks option](images/oml_notebooks_option.png)
 
 5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
 
@@ -61,7 +61,7 @@ To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Databas
 
 In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
 
-	>**Note:** You will be using this table in this lab in the next lab Oracle Machine Learning Services.
+>**Note:** You will be using this table in this lab in the next lab Oracle Machine Learning Services.
 
 To create the table:
 
@@ -86,7 +86,7 @@ To create the table:
            WHERE a.CUST_ID = b.CUST_ID);
 		</copy>
     ```
-		![SQL script to create Customers360 table](images/sql_script.png)
+	![SQL script to create Customers360 table](images/sql_script.png)
 
 6. In the next paragraph, run the following script to view the data:
 
@@ -115,14 +115,14 @@ When creating an Experiment, you must define the data source and the target of t
 
 5. In the **Data Source** field, define the data definition for your experiment. The data definition comprises a data source and a target. Click the search icon to open the Select Table dialog box. Select the table **CUSTOMERS360** and click **OK**.
 
-6. In the Predict drop-down list, select the column **AFFINITY_CARD** from the CUSTOMERS360 table. This is the target for your prediction.
+6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
 
 7. In the **Prediction Type** field, the prediction type is automatically selected based on your data definition. However, you can override the prediction type from the drop-down list, if data type permits. In this example, **Classification** is automatically chosen as the prediction type.
 
-Supported Prediction Types are:
+	Supported Prediction Types are:
 
-* Classification: For non-numeric data type, Classification is selected by default.
-* Regression: For numeric data type, Regression is selected by default.
+	* Classification: For non-numeric data type, Classification is selected by default.
+	* Regression: For numeric data type, Regression is selected by default.
 
 8. In the **Case ID** field, select **CUST_ID**. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
@@ -138,12 +138,12 @@ To adjust additional settings of this experiment:
 
 3. **Maximum Run Duration:** This is the maximum time for which the experiment will be allowed to run. Retain the default entry 8. If you do not enter a time, then the experiment will be allowed to run up to the default, which is 8 hours am extreme upper bound.
 
-4. **Database Service Level:** This is the database connection service level and query parallelism level. Default is Low. Change this to Medium.
+4. **Database Service Level:** This is the database connection service level and query parallelism level. Default is **Low**. Change this to **Medium**.
 
-*  ``High`` level gives the greatest parallelism but significantly limits the number of concurrent jobs.
-*  ``Medium`` level enables some parallelism but allows greater concurrency for job processing.
+	*  **High** level gives the greatest parallelism but significantly limits the number of concurrent jobs.
+	*  **Medium** level enables some parallelism but allows greater concurrency for job processing.
 
-	>Note: Changing the database service level setting on the Always Free Tier will have no effect since there is a 1 OCPU limit. However, if you increase the OCPUs allocated to your autonomous database, then you can increase the Database Service Level to Medium or High.
+>Note: Changing the database service level setting on the Always Free Tier will have no effect since there is a 1 OCPU limit. However, if you increase the OCPUs allocated to your autonomous database, then you can increase the Database Service Level to Medium or High.
 
 5. Leave the other settings under Additional Settings as is, and click Start and then Faster Results to trigger the AutoML UI experiment to run.
 
@@ -151,17 +151,18 @@ To adjust additional settings of this experiment:
 
 	Note the following about the two options:
 
-		- **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of the hyperparamter combinations, and hence yields faster result.
-		- **Better Accuracy:** Select this option if you want emphasis placed on more accurate results.
+	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of the hyperparamter combinations, and hence yields faster result.
+	* **Better Accuracy:** Select this option if you want emphasis placed on more accurate results.
 
-	> Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
+> Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
+
 This completes the task of creating an experiment.
 
 
 ### Task 3.2 View Leader Board with Additional Metrics
 When an experiment runs, it starts to show the results in the Leader Board. When an experiment starts running, the status is displayed in a progress bar. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
-	![Experiment Progress bar](images/exp_progress_bar.png)
+![Experiment Progress bar](images/exp_progress_bar.png)
 
 The Leader Board displays the top performing models relative to the model metric selected along with the algorithm and accuracy. In this lab, you will view the additional metrics Precision, Recall, ROC AUC for the models:
 
@@ -203,13 +204,13 @@ This completes the task of deploying the top model Naive Bayes to OML Services.
 
 ## Task 5: View OML Models with Deployed Metadata and JSON Endpoint
 
-The deployed models are listed under Deployments on the Models page. To view the metadata of the deployed model **CUST360_NB**:
+The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **CUST360_NB**:
 
-1. To go to Deployments, click the hamburger icon and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.  
+1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.  
 
 2. On the Models page, click **Deployments**.
 
-2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI on the Deployments page.
+2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
 
 	![List of deployed models on the Deployments page](images/deployed_models.png)
 
@@ -229,7 +230,7 @@ You can create notebooks based on the top models produced in the experiment. Thi
 
 1. Go to the AutoML page and click the Customers 360 experiment.  
 
-2. Scroll down to the Leader Board, select the Naive Bayes model, and click **Create Notebook**. The Create Notebook dialog opens.
+2. Scroll down to the Leader Board, click on the Naive Bayes model row, and then click **Create Notebook**. The Create Notebook dialog opens.
 
  	![Create Notebook option in Leader Board](images/create_notebook_lb.png)
 
@@ -239,7 +240,7 @@ You can create notebooks based on the top models produced in the experiment. Thi
 
 4. Click **OK**. The notebook is created and listed in the Notebooks page. The message _Notebook NB Customer 360 successfully created_ is also displayed.
 
-	![Notebook creation message](images/nb customer message.png)
+	![Notebook creation message](images/nb_customer_message.png)		
 
 This completes the task of creating the notebook NB Customer 360 based on the Naive Bayes model that is created by the AutoML experiment Customers 360.
 
@@ -247,7 +248,7 @@ This completes the task of creating the notebook NB Customer 360 based on the Na
 ## Task 7: View Generated Notebook and Individual Paragraphs
 To view the generated notebook Customer 360:
 
-1. Click the hamburger icon to open the left navigation menu and click **Notebooks**.
+1. Click the hamburger icon ![Image alt text](images/sample2.png) to open the left navigation menu and click **Notebooks**.
 
 2. The Notebooks page opens with all the notebooks listed in it. Click the **NB Customers 360** notebook to open it.
 
@@ -255,15 +256,15 @@ To view the generated notebook Customer 360:
 
 3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Scroll down to view all the paragraphs in the notebook.
 
-* The first paragraph contains the code to get proxy object for the selected data. The second paragraph contains the code to prepare the training data.
+* The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to view the metadata.
+
+	![Experiment metadata](images/experiment_metadata.png)
+
+* The paragraph titled _Get proxy code_ contains the code to get proxy object for the selected data that is the data form the Customers360 table. The paragraph titles _Prepare Training Data_ contains the code to prepare the training data.
 
 	![Generated Notebook](images/generated_nb_1.png)
 
-	Run the first paragraph  to view the metadata from the experiment. It shows the Customer 360 table. This screenshot shows the output after you run the first paragraph.
-
-	![Generated Notebook](images/generated_nb_1_run.png)
-
-* The third paragraph builds the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The fourth paragraph contains the code to view the model details.
+* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The fourth paragraph contains the code to view the model details.
 
 	![Generated Notebook](images/generated_nb_2.png)
 
