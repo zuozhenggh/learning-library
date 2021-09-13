@@ -7,12 +7,10 @@ This lab walks you through the steps to This lab walks you through the steps to 
 Estimated Time: 15 minutes
 
 ### About Oracle Machine Learning Notebooks
-Oracle Machine Learning Notebooks is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. Users can work with both SQL, Pl/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. They can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Autonomous Database, machine learning functionality is automatically provisioned and managed.
-Through OML Notebooks, users have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
+Oracle Machine Learning Notebooks is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. You can work with SQL, PL/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. You can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Autonomous Database, machine learning functionality is automatically provisioned and managed.
+Through OML Notebooks, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Sign into Oracle Machine Learning Notebooks
@@ -21,14 +19,12 @@ In this lab, you will:
 * Check and update the interpreter binding settings for a notebook
 * Schedule a notebook to run at a specific time using the Jobs interface
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Machine Learning account
 * Access to OMLUSER account
 
-
-*Below, is the "fold"--where items are collapsed by default.*
 
 ## Task 1: Sign into Oracle Machine Learning Notebooks
 
@@ -54,7 +50,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 	![Notebooks option in OML homepage](images/homepage_notebooks.png)
 
 
-## Task 2: Create a Notebook and define paragraphs the md, SQL, and Python interpreters
+## Task 2: Create a Notebook and define paragraphs the md, SQL, PL/SQL, and Python interpreters
 To create a notebook:
 
 1. On the Oracle Machine Learning homepage, click **Notebooks**. The Notebooks page opens.
@@ -78,7 +74,7 @@ You can now use it to create an md paragraph, SQL paragraph, and python paragrap
 ### Task 2.1: Call the Markdown interpreter and generate static html from Markdown plain text
 To call the Markdown interpreter and generate static html from Markdown plain text:
 
-1. Type ``%md``.
+1. Type ``%md`` and press Enter.
 
 2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as seen in the screenshot below.
 
@@ -103,7 +99,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 
 ### Task 2.2: Call the SQL Interpreter and run SQL Statements
-To call the SQL interpreter and run SQL statements
+To call the SQL interpreter and run SQL statements:
 
 1. Edit the paragraph tag and type %sql to call the SQL interpreter.
 2. Type select `table_name` from ``user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
@@ -136,11 +132,14 @@ To call the PL/SQL interpreter and run PL/SQL scripts:
 			END; </copy>
      ```
 
-		 ![PL/SQL script](images/plsql_script.png)
 
-		The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
-		  	- The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
-				- The second part of the script begins with the keyword ``BEGIN``. It inserts 100 rows in to the table ``small_table``
+
+	![PL/SQL script](images/plsql_script.png)
+
+The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
+* The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
+
+* The second part of the script begins with the keyword ``BEGIN``. It inserts 100 rows in to the table ``small_table``
 
 
 ### Task 2.4: Call the Python Interpreter and run Python Statements
@@ -148,20 +147,22 @@ To call the Python interpreter and run python statements:
 1. Edit the paragraph tag and type %python to call the python interpreter.
 2. Type the following command and click Run.
 
-		```
-		<copy>
-		import pandas as pd
+```
+<copy>
+import pandas as pd
 
 		import oml
 
 		DATA = oml.sync(table = "SUPPLEMENTARY_DEMOGRAPHICS", schema = "SH")
 
 		z.show(DATA.head())
-		</copy>
-		```
-		The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here:
+</copy>
+```
 
-		![Python script](images/python_commands.png)
+
+The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here:
+
+![Python script](images/python_commands.png)
 
 ## Task 3: Create a Notebook using a Template Example
 
@@ -169,7 +170,7 @@ This step demonstrates how to create a notebook based on an Example template:
 
 1. Sign into your OML Notebook instance and click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
 
-		![OML homepage](images/homepage_examples.png)
+	![OML homepage](images/homepage_examples.png)
 
 2. Navigate to the **OML4Py Classification DT** example template notebook, click it and then click **Create Notebook**.
 
@@ -177,24 +178,24 @@ This step demonstrates how to create a notebook based on an Example template:
 
 3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **Classification_DT**.
 
-		> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
+	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
-		![Create notebook from example template](images/create_notebook_dialog.png)
+	![Create notebook from example template](images/create_notebook_dialog.png)
 
 
 4. Once the notebook is created, the message _Notebook Classification_DT created in project USER1 Project_ is displayed, as shown in the screenshot.
 
-		![Create notebook message](images/create_notebook_dialog.png)
+	![Create notebook message](images/create_notebook_dialog.png)
 
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
 
-		![Notebooks in left navigation menu](images/notebooks_left_nav.png)
+	![Notebooks in left navigation menu](images/notebooks_left_nav.png)
 
 
 6. The notebook Classification_DT is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
 
-		![Notebook listed](images/notebook_listed.png)
+	![Notebook listed](images/notebook_listed.png)
 
 This completes the task of creating a notebook from an Example template.
 
@@ -225,7 +226,8 @@ In this step, you learn how to set the interpreter bindings:
 
 	![Drag and drop an interpreter binding](images/drag_int_binding.png)
 
->**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue).
+	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue).
+
 
 	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
 
