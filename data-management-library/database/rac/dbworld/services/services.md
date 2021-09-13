@@ -40,14 +40,14 @@ You should have already identified your database name and instance name.  Each p
 3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
 
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
-    ![](../clusterware/images/start-cloudshell.png " ")
+    ![](./images/start-cloudshell.png " ")
 
 4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<Node 1 Public IP Address>
     ````
-    ![](../clusterware/images/racnode1-login.png " ")
+    ![](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
 
@@ -55,7 +55,7 @@ You should have already identified your database name and instance name.  Each p
     ssh -i ~/.ssh/sshkeyname opc@<Node 2 Public IP Address>
     ps -ef | grep pmon
     ````
-    ![](../clusterware/images/racnode2-login.png " ")  
+    ![](./images/racnode2-login.png " ")  
 
 6. Run the command to determine your database name and additional information about your cluster on **node 1**.  Run this as the *grid* user.
 
@@ -65,9 +65,9 @@ You should have already identified your database name and instance name.  Each p
     crsctl stat res -t
     </copy>
     ````
-    ![](./../clusterware/images/crsctl-1.png " ")
+    ![](./images/crsctl-1.png " ")
 
-    ![](./../clusterware/images/crsctl-2.png " ")
+    ![](./images/crsctl-2.png " ")
 
 7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
 
@@ -555,7 +555,7 @@ Using a different cloud shell window (connected to either node) open a SQL*Plus 
     </copy>
     ````
 
-    and run the following SQL statement
+and run the following SQL statement
 
     ````
     <copy>
@@ -564,8 +564,7 @@ Using a different cloud shell window (connected to either node) open a SQL*Plus 
     select inst_id, service_name, count(*) from gv$session where service_name = 'noac' group by inst_id, service_name;
     exit
     </copy>
-    ````    
-
+    ````
 
 This statement will show you the instance this service is running and the number of open connections on this service.
 It should be relatively even
@@ -589,7 +588,8 @@ If you look at the current response time for acdemo it is fairly equal - probabl
     41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 38ms
     37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
     ````
-Let's consume CPU on one node with a database-external program. Download the CPU_HOG utility to the opposite Node from where you are running the acdemo application. For example acdemo runs on Node-1, then download CPU_HOG to Node-2.     
+
+Consume CPU on one node with a database-external program. Download the CPU_HOG utility to the opposite Node from where you are running the acdemo application. If, for example acdemo runs on Node-1, then download CPU_HOG to Node-2.     
 
     ````
     <copy>
@@ -609,9 +609,12 @@ Unzip the utility and set the execute bit
 Start the CPU_HOG utility, specifying a target load of 90%
 
     ````
+    <copy>
     cd /home/oracle/cpu_hog
     atm_cpuload_st 90
+    </copy>
     ````
+
     ![](./images/cpu_hog_running.png " ")
 
 You should see some of the acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
@@ -628,9 +631,16 @@ You should see some of the acdemo requests getting longer (they will periodicall
 
     ````
     <copy>
-    srvctl modify service -d <REPLACE DB NAME> -s noac -rlbgoal SERVICE_TIME
+    srvctl modify service -d <REPLACE DB NAME> -s noac -rlbgaol SERVICE_TIME
     </copy>
     ````
+
+Confirm the config
+
+    ````
+    srvctl config service -d <REPLACE DB NAME> -s noac
+    ````        
+    ![](./images/noac_confiog_rlb.png " ")    
 
 7. How Runtime Load Balancing (RLB) functions is that a smoothed rolling average of responses is calculated by service in the database. From this a metric is sent as a FAN event to subscribing clients. The RLB directive gives an indication to the client how database activity on each instance is performing (for that service). A guide is given to the pool to direct a portion of work to each instance - a lesser value to instances that are loaded.
 

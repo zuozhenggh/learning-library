@@ -4,7 +4,7 @@
 
 This lab walks you through the use and functioning of Application Continuity.
 
-Estimated Lab Time: 60 Minutes
+Estimated Lab Time: 20 Minutes
 
 Watch the video below for an overview of the Application Continuity lab
 [](youtube:KkwxbwII3O4)

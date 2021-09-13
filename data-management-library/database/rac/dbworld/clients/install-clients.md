@@ -45,7 +45,7 @@ In this example the database name is **lvrac_iad2kd**
 
 3. Instance Name
 
-The instance names are constructed from the database name. The Instance Name is formed from the that portion of the database name before the "\_\" and appended with the number *1* (for instance \#1) and the number *2* (instance \#2)
+The instance names are constructed from the database name. The Instance Name is formed from the that portion of the database name before the "\_" and appended with the number *1* (for instance \#1) and the number *2* (instance \#2)
 In this example, Instance \#1 would be **lvrac1** and Instance \#2 would be **lvrac2**
 
 The Oracle background processes will include the instance name. For example, on Node-1
@@ -164,7 +164,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     ````
     ![](./images/wgetPython.png " ")
 
-3. Unzip the Python client
+2. Unzip the Python client
     ````
     <copy>
     sudo su - oracle
@@ -184,15 +184,17 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     ````
 4. Create the *hr* user
    If you have already installed the Java client the **hr** user already exists (by default in **pdb1**) so this step is not required
-   ````
-   <copy>
-   create user hr identified by W3lc0m3#W3lc0m3# default tablespace USERS temporary tablespace TEMP;
-   grant connect, create session, resource to hr;
-   grant create sequence to hr;
-   alter user hr quota unlimited on USERS;
-   exit;
-   </copy>
-   ````
+
+    ````
+    <copy>
+    create user hr identified by W3lc0m3#W3lc0m3# default tablespace USERS temporary tablespace TEMP;
+    grant connect, create session, resource to hr;
+    grant create sequence to hr;
+    alter user hr quota unlimited on USERS;
+    exit;
+    </copy>
+    ````
+
 5. Create the schema objects needed by the Python client
 
     ````
@@ -364,8 +366,8 @@ My regionIdentifier is **us-ashburn-1**
 this should show:
     ````
     $ ls -al /tmp/versionlock.list /tmp/oci_dbaas_ol7repo
-       -rw-rw-r-- 1 opc opc   957 Feb 17  2021 /tmp/oci_dbaas_ol7repo
-       -rw-rw-r-- 1 opc opc 14646 Aug 19 05:33 /tmp/versionlock.list
+        -rw-rw-r-- 1 opc opc   957 Feb 17  2021 /tmp/oci_dbaas_ol7repo
+        -rw-rw-r-- 1 opc opc 14646 Aug 19 05:33 /tmp/versionlock.list
     ````    
 5. Move these files to the yum directory
 
