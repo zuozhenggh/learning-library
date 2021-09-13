@@ -187,7 +187,7 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board showing selected metrics](images/leaderboard_2.png)
 
-5. Click on any model name to view the prediction impact and confusion matrix computed by the model in the Model Detail dialog.
+5. Click on any model name to view the model details in the Model Detail dialog. Click **Prediction Impacts** and **Confusion Matrix** tab in the dialog to view the respective details, as shown in the screenshots below:
 
 * **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models.
 
@@ -249,7 +249,7 @@ The deployed models are listed under **Deployments** on the Models page. To view
 
 	![View model metadata](images/cust360_nb_metadata.png)
 
-4. To view the endpoint JSON, click the URI **cust360nb**. All details of the deployed model are listed in the OPEN API Specification for <deployed_model_name> dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
+4. To view the endpoint JSON, click the URI **cust360nb**. All details of the deployed model are listed in the **OPEN API Specification for <deployed_model_name>** dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
 
 	![View JSON endpoints](images/cust360_nb_endpoint.png)
 
