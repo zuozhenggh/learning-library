@@ -90,7 +90,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     *You can copy the host from the browser address bar of your OCI GoldenGate Deployment Console window, or copy the Console URL from the Deployment Details page and remove the https:// and any trailing slashes (/).*
 
-    ![](images/02-08-note.png " ")
+  ![](images/02-08-note.png " ")
 
 8.  For **Port Number**, enter 443.
 
