@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Modern apps benefit from predictable low latency, flexibility, and horizontal scale-out of NoSQL databases. Join us to learn how effortless it is to develop a modern application using Oracle Cloud Infrastructure and Oracle NoSQL Database Cloud Service. This lab is based on data from an airline baggage tracking application. This lab walks you through the steps to create tables in Oracle NoSQL database cloud service, load data into the database, and perform basic queries.  In addition, it lets you use an application that was developed by the Oracle NoSQL team which contains information found in an airline baggage tracking application.
+Modern applications benefit from predictable low latency, flexibility, and horizontal scale-out of NoSQL databases. Join us to learn how effortless it is to develop a modern application using Oracle Cloud Infrastructure and Oracle NoSQL Database Cloud Service. This lab is based on data from an airline baggage tracking application. This lab walks you through the steps to create tables in Oracle NoSQL Database Cloud Service (NDCS), load data into the database, and perform basic queries.  In addition, it lets you use an application that was developed by the Oracle NoSQL team which contains information found in an airline baggage tracking application.
 
 Estimated Time: 70 Minutes
 
@@ -19,20 +19,19 @@ As a developer, you can connect to NDCS and work with NoSQL tables using the NoS
 ### Objectives
 
 In this workshop you will:
-* Work with a live demo application
-* Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
-* Create an API Signing Key and SDK CLI Configuration File
-* Run the Sample NoSQL Application
-* Execute queries against NoSQL tables
+  * Work with a live demo application
+  * Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
+  * Create an API Signing Key and SDK CLI Configuration File
+  * Run the Sample NoSQL Application
+  * Execute queries against NoSQL tables
 
 
 ### Prerequisites
 
 This workshop assumes you have:
-
-    *  An Oracle Free Tier, Always Free, or Paid Account
-    *  Access to a personal cellphone
-    *  Programming knowledge in java, python or node.js
+  * An Oracle Free Tier, Always Free, or Paid Account
+  * Access to a personal cellphone
+  * Programming knowledge in java, python or node.js
 
 
 ## Learn More
@@ -42,6 +41,10 @@ This workshop assumes you have:
 * [Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
 * [Node API Reference Guide](https://oracle.github.io/nosql-node-sdk/)
 * [Python API Reference Guide](https://nosql-python-sdk.readthedocs.io/en/latest/index.html)
+* [About Resource Manager](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
+* [About Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+* [About Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
+
 
 ## Acknowledgements
 * **Author** - Dario Vega, Product Manager, NoSQL Product Management and Michael Brey, Director, NoSQL Product Development
