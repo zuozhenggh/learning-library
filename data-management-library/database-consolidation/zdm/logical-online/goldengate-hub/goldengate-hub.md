@@ -3,12 +3,12 @@
 ## Introduction
 
 #### Logical Online Migration with Backup Location
-ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Microservices, one Extract and One Replicat. These two microservices's task is to keep both Source and Target in Sync during the migration and during the graceful switchover. The overall logical workflow architecture, as discussed in this workshop's introduction, is as follows:
+ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Microservices, one Extract and one Replicat. These two microservices' task is to keep both source and target in sync during the migration and during the graceful switchover. The overall logical workflow architecture, as discussed in this workshop's introduction, is as follows:
 
 ![](./images/logical-online-backup-workflow.png " ")
 
 
-## Prerequiste: Verify VCN Correct Configuration
+## Prerequisite: Verify VCN Correct Configuration
 
 1. Login to the Oracle Cloud.
 
@@ -16,25 +16,25 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 
 ![](./images/ogg-vcn.png " ")
 
-2.  Click on the Name of the only available VCN in your compartment
+3.  Click on the Name of the only available VCN in your compartment
 
 ![](./images/ogg-available-vcn.png " ")
 
-3.  Scroll down to the __Subnets__ section and click on the only available subnet in your compartment
+4.  Scroll down to the __Subnets__ section and click on the only available subnet in your compartment
 
 ![](./images/ogg-subnet.png " ")
 
-4.  Scroll down to the __Security Lists__ section and click on the only available Security List in your compartment
+5.  Scroll down to the __Security Lists__ section and click on the only available Security List in your compartment
 
 ![](./images/ogg-security-list.png " ")
 
-4.  Scroll down to the __Ingress Rules__ section. If there are no rules for __Port 443__ and __Port 1521__, they must be added. The absence of rules would look like this:
+6.  Scroll down to the __Ingress Rules__ section. If there are no rules for __Port 443__ and __Port 1521__, they must be added. The absence of rules would look like this:
 
 ![](./images/ogg-no-rules.png " ")
 
-4.  If there are no rules present, click on the __Add Ingress Rules__ button. Otherwise, you may proceed to __Task 1__.
+7.  If there are no rules present, click on the __Add Ingress Rules__ button. Otherwise, you may proceed to __Task 1__.
 
-5. An __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
+8. An __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
 
 - Stateless - __Left Unchecked__
 - Source Type - __CIDR__
@@ -46,9 +46,9 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 
 ![](./images/ogg-add-rules.png " ")
 
-6. Click on the __Add Ingress Rules__ button on the bottom:
+9. Click on the __Add Ingress Rules__ button on the bottom:
 
-7. Once you have added a rule for __Port 443__, proceed with a rule for __Port 1521__. Click on the __Add Ingress Rules__ button, an __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
+10. Once you have added a rule for __Port 443__, proceed with a rule for __Port 1521__. Click on the __Add Ingress Rules__ button, an __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
 
 - Stateless - __Left Unchecked__
 - Source Type - __CIDR__
@@ -58,7 +58,7 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 - Destination Port Range - __1521__
 - Description - __Oracle DB__
 
-8. Click on the __Add Ingress Rules__ button on the bottom:
+11. Click on the __Add Ingress Rules__ button on the bottom:
 
 ![](./images/ogg-yes-rules.png " ")
 
@@ -144,11 +144,11 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 1. Open CloudShell
 
-2. Connect to the GoldenGate Hub, replace __ogg\_public\_ip__ with the GoldenGate Hub public ip copied above. Enter yes at the prompt
+2. Connect to the GoldenGate Hub, replace __ogg\_public\_ip__ with the GoldenGate Hub public ip copied above and replace __sshkeyname__ with the SSH Key name used previously. Enter yes at the prompt
 
     ```
     <copy>
-    ssh -i ~/.ssh/sshlabkeys opc@<ogg_public_ip>
+    ssh -i ~/.ssh/<sshkeyname> opc@<ogg_public_ip>
     </copy>
     ```
 
@@ -162,7 +162,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 ![](./images/ogg-cat-credentials.png " ")
 
-4. In a separate browser tab, open the OGG Service Manager home page using the __GoldenGate Hub Public ip__ please do not use the __<>__: https://<ogg_public_ip> 
+4. In a separate browser tab, open the OGG Service Manager home page using the __GoldenGate Hub Public ip__ please do not use the __<>__: __https://<ogg\_public\_ip>__ 
 The browser will show warnings that the page is insecure because it uses a self-signed certificate. Ignore those warnings and proceed
 
 ![](./images/ogg-service-manager.png " ")
@@ -225,7 +225,7 @@ Upon review, click __Submit__
 
 17. You will be logged out of the Oracle GoldenGate Service Manager, sign in again with oggadmin and the recently updated password from the step above (#9)
 
-18. In the Services table, click on the __port__ of the Tabe Administration Server (typically __9021__), this will open a new Sign In page for the __Oracle GoldenGate Administrator Server__
+18. In the Services table, click on the __port__ of the Table Administration Server (typically __9021__), this will open a new Sign In page for the __Oracle GoldenGate Administrator Server__
 
 ![](./images/ogg-target-admin-server.png " ")
 
