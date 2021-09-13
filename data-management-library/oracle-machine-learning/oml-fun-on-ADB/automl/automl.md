@@ -25,7 +25,7 @@ In this lab, you will:
 * View generated notebook and individual paragraphs
 
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
@@ -99,7 +99,7 @@ To create the table:
 
 	![Script to view Customers360 table](images/script_view_customers360.png)
 
-## Task 3: Create an experiment
+## Task 3: Create an Experiment
 An Experiment can be described as a work unit that contains the definition of data source, prediction target, and prediction type along with optional settings. After an Experiment runs successfully, it presents you a list of machine learning models in the leader board. You can select any model for deployment, or use it to create a notebook based on the selected model.
 When creating an Experiment, you must define the data source and the target of the experiment. To create an Experiment:
 
@@ -166,6 +166,37 @@ When an experiment runs, it starts to show the results in the Leader Board. When
 
 The Leader Board displays the top performing models relative to the model metric selected along with the algorithm and accuracy. In this lab, you will view the additional metrics Precision, Recall, ROC AUC for the models:
 
+1. Scroll down the Customer 360 experiments page to view the Leader Board section. The top three algorithms for this experiment are Neural Network, Naive Bayes, and  Random Forest.
+
+	>**Note:** Only when the experiment is completed, can you perform any of these actions listed here, including metrics 	selection.
+
+
+	![Leader Board](images/leaderboard_1.png)
+
+2. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
+
+3. Click **Metrics**. The **Select Additional Metrics** dialog opens.
+
+	![Leader Board options](images/leaderboard_options.png)
+
+4. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
+
+	![Select Additional Metrics dialog](images/select_metrics.png)
+
+	The Leader Board now displays the selected metrics, as shown in the screenshot here. You can sort the rows by clicking the triangle to the right of each column name.
+
+	![Leader Board showing selected metrics](images/leaderboard_2.png)
+
+5. Click on any model name to view the prediction impact and confusion matrix computed by the model in the Model Detail dialog.
+
+* **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models.
+
+	![View Prediction Impact](images/prediction_impact.png)
+
+
+* **Confusion Matrix:** Displays the different combination of actual and predicted values by the algorithm in a table. Confusion Matrix serves as a performance measurement of the machine learning algorithm.
+
+	![View Confusion Matrix](images/confusion_matrix.png)
 
 
 ## Task 4: Deploy Top Model to OML Services

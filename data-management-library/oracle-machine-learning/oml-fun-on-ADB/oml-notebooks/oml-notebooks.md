@@ -204,8 +204,8 @@ This completes the task of creating a notebook from an Example template.
 
 An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning Notebooks, you use the following interpreters:
 
-* SQL interpreters for SQL Statements within an Oracle Database interpreter group
-* PL/SQL  interpreters for PL/SQL scripts/statements within an Oracle Database interpreter group
+* SQL interpreter for SQL Statements within an Oracle Database interpreter group
+* PL/SQL  interpreter for PL/SQL scripts/statements within an Oracle Database interpreter group
 * Python interpreter to process Python scripts
 * md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
 
