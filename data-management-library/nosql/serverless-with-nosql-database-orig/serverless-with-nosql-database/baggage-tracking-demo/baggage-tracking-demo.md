@@ -9,7 +9,7 @@ Estimated Time: 7 minutes
 
 ### Serverless Logic Tier
 
-We selected this demo because it solves real world business problems.  Many of those are listed on the slide.
+We selected demo because it solves real world business problems.  Many of those are listed on the slide.
 
   ![](images/business-problem.png)
 
@@ -29,7 +29,7 @@ Here is a diagram of architecture behind the demo.
 
   ![](images/arch-diagram.png)
 
-Here is an architecture diagram at the component level.
+Here is architecture diagram at the component level.
 
   ![](images/component-arch.png)
 
@@ -63,7 +63,7 @@ What are some of the goals of this application:
 
     ![](images/ndcs-google.png)
 
-  This brings you to the welcome screen for Blue Mist airways.
+  Following that you will get the welcome screen for Blue Mist airways.
 
       ![](images/blue-mist.png)
 

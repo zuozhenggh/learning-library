@@ -4,7 +4,7 @@
 
 This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the OCI console, writing an application program, or triggering actions via a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
-Estimated Time: 25 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -26,7 +26,7 @@ Estimated Time: 25 minutes
 
 2. Click on 'Create Table' and the 'Create Table' screen appears.
 
-    ![](./images/create-tables.png)
+  ![](./images/create-tables.png)
 
   This screen allows you to create tables in one of two different ways, either using simple input or using DDL input.  For this Lab we are going to use the simple input method.  
 
@@ -42,7 +42,7 @@ Estimated Time: 25 minutes
 
   In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding multiple additional columns.  You can easily create simple or more complex tables with this interface.  
 
-5. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
+5. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
 
     ![](./images/freetest-table.png)
 
@@ -57,64 +57,63 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
   Execute the following in your Cloud Shell. {MJB: need to source this from different location}
 
-    ````
-    <copy>
-    git clone https://github.com/dario-vega/serverless-with-nosql-database.git
-    sh ~/serverless-with-nosql-database/data.sh
-    </copy>
-    ````
+  ````
+  <copy>
+  git clone https://github.com/dario-vega/serverless-with-nosql-database.git
+  sh ~/serverless-with-nosql-database/data.sh
+  </copy>
+  ````
 
 2. Execute the following environment setup shell script in the Cloud Shell. If you close/open the Cloud Shell Console, please re-execute it.
 
-    ```
-    <copy>
-    source ~/serverless-with-nosql-database/env.sh
-    </copy>
-    ```
+  ```
+  <copy>
+  source ~/serverless-with-nosql-database/env.sh
+  </copy>
+  ```
 
-3. Let's create NoSQL tables using the OCI CLI. The CLI command for Oracle NoSQl is 'oci nosql <command>'.  We will create two different tables and  echo the DDL statements so you can see what is being created.  One of the tables is a fixed schema table and the other is a JSON document table.  To create the always free table using the OCI CLI, you specify the --is-auto-reclaimable flag, as shown in the code below.
+3. Let's create NoSQL tables using oci-cli. We will create two different tables and  echo the DDL statements so you can see what is being created.  One of the tables is a fixed schema table and the other is a JSON document table.  To create the always free table using the OCI CLI, you specify the --is-auto-reclaimable flag, as shown in the code below.
 
-    ```
-    <copy>
-    cd ~/serverless-with-nosql-database/objects
-    DDL_TABLE=$(cat demo.nosql)
-    echo $DDL_TABLE
-    </copy>
-    ```
+  ```
+  <copy>
+  cd ~/serverless-with-nosql-database/objects
+  DDL_TABLE=$(cat demo.nosql)
+  echo $DDL_TABLE
+  </copy>
+  ```
 
-    ```
-    <copy>
-    oci nosql table create --compartment-id "$COMP_ID"   \
-    --name demo --ddl-statement "$DDL_TABLE" \
-    --is-auto-reclaimable true \
-    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
-    </copy>
-    ```
-    ```
-    <copy>
-    DDL_TABLE=$(cat demoKeyVal.nosql)
-    echo $DDL_TABLE
-    </copy>
-    ```
-    ```
-    <copy>
-    oci nosql table create --compartment-id "$COMP_ID"   \
-    --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
-    --is-auto-reclaimable true \
-    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
-    </copy>
-    ```
+  ```
+  <copy>
+  oci nosql table create --compartment-id "$COMP_ID"   \
+  --name demo --ddl-statement "$DDL_TABLE" \
+  --is-auto-reclaimable true \
+  --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
+  </copy>
+  ```
+  ```
+  <copy>
+  DDL_TABLE=$(cat demoKeyVal.nosql)
+  echo $DDL_TABLE
+  </copy>
+  ```
+  ```
+  <copy>
+  oci nosql table create --compartment-id "$COMP_ID"   \
+  --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
+  --is-auto-reclaimable true \
+  --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
+  </copy>
+  ```
 
 4. Minimize the Cloud Shell by clicking on the minimization button.
 
     ![](./images/cloud-shell-small.png)
 
-
 ## Task 3:  Adding Data From the OCI Console
 
 1. Make sure you are 'Table' screen.  You should see 3 tables listed.  Your compartment should be demonosql.
 
-    ![](./images/table-screen.png)
+  ![](./images/table-screen.png)
 
 2. Lets start with the simple table we created in Task 1.  Click on freeTest table.  The screen that shows up, displays all the key information about the table.  Explore that screen.
 
@@ -128,7 +127,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
     ![](./images/row-inserted.png)
 
-5. Let's insert rows into the other tables.  First we need to get back to the 'Tables' screen.  Click Table on top right.
+5. Lets move onto inserting rows into the other tables.  First we need to get back to the 'Tables' screen.  Click Table on top right.
 
     ![](./images/click-tables.png)
 
@@ -138,68 +137,68 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
 7. Click on 'Insert Row'. This opens up a new window. This time, choose Advanced Json Input.
 
-  Copy/Paste the json Baggage document in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
+  Copy/Paste the json Baggage document in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in. 
 
-    ````
-    <copy>
-    {
-      "fullName" : "Abram Falls",
-      "contactPhone" : "921-284-5378",
-      "ticketNo" : "176233524485",
-      "confNo" : "HP1D4H",
-      "gender" : "F",
-      "bagInfo" : [ {
-        "id" : "79039899127071",
-        "tagNum" : "17657806285185",
-        "routing" : "SYD/SIN/LHR",
-        "lastActionCode" : "OFFLOAD",
-        "lastActionDesc" : "OFFLOAD",
-        "lastSeenStation" : "LHR",
-        "flightLegs" : [ {
-          "flightNo" : "BM254",
-          "flightDate" : "2019.02.28 at 22:00:00 AEDT",
-          "fltRouteSrc" : "SYD",
-          "fltRouteDest" : "SIN",
-          "estimatedArrival" : "2019.03.01 at 03:00:00 SGT",
-          "actions" : [ {
-            "actionAt" : "SYD",
-            "actionCode" : "ONLOAD to SIN",
-            "actionTime" : "2019.02.28 at 22:09:00 AEDT"
-          }, {
-            "actionAt" : "SYD",
-            "actionCode" : "BagTag Scan at SYD",
-            "actionTime" : "2019.02.28 at 21:51:00 AEDT"
-          }, {
-            "actionAt" : "SYD",
-            "actionCode" : "Checkin at SYD",
-            "actionTime" : "2019.02.28 at 20:06:00 AEDT"
-          } ]
-        }, {
-          "flightNo" : "BM272",
-          "flightDate" : "2019.02.28 at 19:09:00 SGT",
-          "fltRouteSrc" : "SIN",
-          "fltRouteDest" : "LHR",
-          "estimatedArrival" : "2019.03.01 at 03:10:00 GMT",
-          "actions" : [ {
-            "actionAt" : "LHR",
-            "actionCode" : "Offload to Carousel at LHR",
-            "actionTime" : "2019.03.01 at 03:01:00 GMT"
-          }, {
-            "actionAt" : "SIN",
-            "actionCode" : "ONLOAD to LHR",
-            "actionTime" : "2019.03.01 at 11:20:00 SGT"
-          }, {
-            "actionAt" : "SIN",
-            "actionCode" : "OFFLOAD from SIN",
-            "actionTime" : "2019.03.01 at 11:10:00 SGT"
-          } ]
-        } ],
-        "lastSeenTimeGmt" : "2019.03.01 at 03:06:00 GMT",
-        "bagArrivalDate" : "2019.03.01 at 03:06:00 GMT"
+````
+<copy>
+{
+  "fullName" : "Abram Falls",
+  "contactPhone" : "921-284-5378",
+  "ticketNo" : "176233524485",
+  "confNo" : "HP1D4H",
+  "gender" : "F",
+  "bagInfo" : [ {
+    "id" : "79039899127071",
+    "tagNum" : "17657806285185",
+    "routing" : "SYD/SIN/LHR",
+    "lastActionCode" : "OFFLOAD",
+    "lastActionDesc" : "OFFLOAD",
+    "lastSeenStation" : "LHR",
+    "flightLegs" : [ {
+      "flightNo" : "BM254",
+      "flightDate" : "2019.02.28 at 22:00:00 AEDT",
+      "fltRouteSrc" : "SYD",
+      "fltRouteDest" : "SIN",
+      "estimatedArrival" : "2019.03.01 at 03:00:00 SGT",
+      "actions" : [ {
+        "actionAt" : "SYD",
+        "actionCode" : "ONLOAD to SIN",
+        "actionTime" : "2019.02.28 at 22:09:00 AEDT"
+      }, {
+        "actionAt" : "SYD",
+        "actionCode" : "BagTag Scan at SYD",
+        "actionTime" : "2019.02.28 at 21:51:00 AEDT"
+      }, {
+        "actionAt" : "SYD",
+        "actionCode" : "Checkin at SYD",
+        "actionTime" : "2019.02.28 at 20:06:00 AEDT"
       } ]
-    }
-    </copy>
-    ````
+    }, {
+      "flightNo" : "BM272",
+      "flightDate" : "2019.02.28 at 19:09:00 SGT",
+      "fltRouteSrc" : "SIN",
+      "fltRouteDest" : "LHR",
+      "estimatedArrival" : "2019.03.01 at 03:10:00 GMT",
+      "actions" : [ {
+        "actionAt" : "LHR",
+        "actionCode" : "Offload to Carousel at LHR",
+        "actionTime" : "2019.03.01 at 03:01:00 GMT"
+      }, {
+        "actionAt" : "SIN",
+        "actionCode" : "ONLOAD to LHR",
+        "actionTime" : "2019.03.01 at 11:20:00 SGT"
+      }, {
+        "actionAt" : "SIN",
+        "actionCode" : "OFFLOAD from SIN",
+        "actionTime" : "2019.03.01 at 11:10:00 SGT"
+      } ]
+    } ],
+    "lastSeenTimeGmt" : "2019.03.01 at 03:06:00 GMT",
+    "bagArrivalDate" : "2019.03.01 at 03:06:00 GMT"
+  } ]
+}
+</copy>
+````
 
 
 8. Click on 'Insert Row' at bottom left of screen.
@@ -208,8 +207,7 @@ You have seen two different ways to insert data into a table.
 
 ## Task 4:  Show Data From the Console
 
-Starting with the demo table, we can go and look at the data we inserted for each of the tables.
-
+Next, we can go and look at the data we inserted for each of the tables.   Let's start with the demo table.
 1. On the left Click on Table Rows
 
     ![](./images/table-row-select.png)
