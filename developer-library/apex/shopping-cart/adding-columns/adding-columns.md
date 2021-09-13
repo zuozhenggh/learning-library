@@ -1,4 +1,4 @@
-# Adding Columns to Product Table
+# Add Columns to Product Table
 
 ## Introduction
 
@@ -15,7 +15,7 @@ In this lab, you will:
 - Create lookup tables.
 - Populate the new lookup tables.
 
-## **Task 1**: Adding Columns to the Products Table
+## Task 1: Adding Columns to the Products Table
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -67,7 +67,7 @@ In this lab, you will:
 
 15. Click **Finish**.
 
-## **Task 2**: Creating Lookup Tables
+## Task 2: Creating Lookup Tables
 You will create lookup tables based on the new three columns, after you will have created a lookup table, you will notice that a new table was created and the column in the PRODUCTS table has been renamed and the data type was changed to NUMBER.
 
 1. Navigate to **PRODUCTS** Table.
@@ -152,7 +152,7 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/lookup-table4.png " ")
 
-## **Task 3**: Populating Lookup Tables
+## Task 3: Populating Lookup Tables
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 

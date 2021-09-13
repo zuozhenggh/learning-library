@@ -1,4 +1,4 @@
-# Building Your Tables and Views - Installing Sample Tables
+# Build Your Tables and Views - Install Sample Tables
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Estimated Lab Time: 5 minutes
 In this lab, you will:
 - Install a sample dataset into your Oracle APEX Workspace
 
-## **Task 1**: Creating Customer Orders Tables
+## Task 1: Creating Customer Orders Tables
 1. Log into your workspace.
 2. From your APEX workspace home page, select **SQL Workshop**, **click Utilities**, and then click **Sample Datasets**.
 
@@ -34,7 +34,7 @@ In this lab, you will:
 
 Note: You do NOT want to click Create Application, as you will manually create an application 
 
-## **Task 2**: Review Database Objects
+## Task 2: Review Database Objects
 
 1. In the Oracle APEX Home, click **SQL Workshop**.
 
