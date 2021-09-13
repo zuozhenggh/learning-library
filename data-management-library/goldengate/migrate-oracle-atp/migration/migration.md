@@ -141,7 +141,7 @@ We will do the below tasks:
 	 </copy>
 	```
 	
-	_**NOTE:** Make sure you replace with your source IP address for successful connection._
+	>**NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
 
 2. You will be successfully connected to your source database, then run the below command to get the SCN:
 
@@ -262,13 +262,15 @@ We will do the below tasks:
 	</copy>
 	```
 
-2. Then run the below, make sure you **replace** with your source IP address. 
+2. Then run the below to make some changes at the source database.
 	
 	```
 	<copy>
 	sqlplus hr/GG##lab12345@ip_address_source_database:1521/ORCL @update.sql
 	</copy>
 	```
+	
+	>**NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
 
 	This statement updates a row in the countries table. Also, it must be captured by the **EXTPRIM** process. We now need to create the second replicat process to apply these captured changes at the source to the target database.
 
