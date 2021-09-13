@@ -39,8 +39,8 @@ During the installation:
 
 The database installer offers two types of installation - *Desktop class* with minimal configuration and *Server class* with advanced configuration. 
 
-> To install both system classes on the same host, you need different Oracle home locations.  
->> For this workshop, select any one installation type, *Desktop class* or *Server class*, in the database installer.
+To install both system classes on the same host, you need different Oracle home locations.  
+For this workshop, select any one installation type, *Desktop class* or *Server class*, in the database installer.
 
 **About Oracle Database Configuration Assistant (Oracle DBCA)**
 
@@ -48,11 +48,11 @@ Like the database installer, the Oracle DBCA tool helps you create and configure
 
 Consider the scenarios:
 
-- **Case#1** You have installed only the database software with the database installer. Then you need to run Oracle DBCA to create your Oracle Database.
+- **Case#1**: You have installed only the database software with the database installer. Then you need to run Oracle DBCA to create your Oracle Database.
 
-- **Case#2** Along with the software, you have also created a starter database with the installer. You can still use Oracle DBCA to create additional databases.
+- **Case#2**:  Along with the software, you have also created a starter database with the installer. You can still use Oracle DBCA to create additional databases.
 
-> You can run Oracle DBCA only after you install the Oracle Database software using the database installer.  
+You can run Oracle DBCA only after you install the Oracle Database software using the database installer.  
 
 Oracle DBCA offers two database creation modes - typical and advanced.
 
@@ -77,7 +77,9 @@ Before installing the Oracle Database software, the installer performs several a
 
 Oracle Database Enterprise Edition requires *7.8 GB* of local disk storage space to install the Oracle Database software.
 
-> Oracle recommends that you allocate approximately *100 GB* to allow additional space for applying any future patches on top of the existing Oracle home.
+Oracle recommends that you allocate approximately *100 GB* to allow additional space for applying any future patches on top of the existing Oracle home.
+
+Click on the next lab to **Get Started**.
 
 ## Learn More
 
@@ -85,7 +87,6 @@ Oracle Database Enterprise Edition requires *7.8 GB* of local disk storage space
 - [Oracle Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/index.html)
 - [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 
-Click on the next lab to **get started**.
 
 ## Acknowledgements
 
