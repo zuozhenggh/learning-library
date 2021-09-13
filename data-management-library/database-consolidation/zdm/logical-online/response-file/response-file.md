@@ -374,9 +374,8 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     ![Configuration Region](./images/config-region-1.png)
     * SOURCECONTAINERDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
     ![Source DB Connection Details](./images/source-db-connection-1.png)
-    * GOLDENGATEHUB\_URL: On your GG Hub Compute Instance home page for the hostname and on your VCN page for the DNS Domain Name. The URL is composed of __https://__ + the OGG Hub hostname + __.__ + the domain name. An example of how the URL can look like is  __https://oggzdm.labvcn.oraclevcn.com__
-    ![GoldenGate HUB URL](./images/gg-hostname-1.png)
-    ![GoldenGate HUB URL 2](./images/gg-dns-domain-name-1.png)
+    * GOLDENGATEHUB\_URL: On your GG Hub Compute Instance home page copy the Internal FQDN, as an example, it should look something like this: __https://oggzdm.labvcn.oraclevcn.com__
+    ![GoldenGate HUB URL](./images/ogg-fqdn.png)
     * GOLDENGATEHUB\_COMPUTEID: On your GG Hub Compute Instance home page. Copy the OCID value.
     ![GoldenGate Compute ID](./images/gg-compute-id-1.png)
     * DATAPUMPSETTINGS_DATABUCKET\_NAMESPACENAME: On your object storage bucket homepage.
