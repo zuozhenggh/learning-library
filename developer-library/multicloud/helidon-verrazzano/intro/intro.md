@@ -25,13 +25,13 @@ This workshop is designed to be as self-explanatory as possible, but feel free t
 ### Prerequisites
 This lab assumes you have the following installed on your machine:
 * JDK 11+
-* Apache Maven (3.6+)
+* Apache Maven (3.6)
 * Docker
 
 
 ## About Helidon
-Helidon is a open source microservices framework introduced by Oracle. Helidon is a collection of Java libraries designed for creating lightweight and fast microservices-based applications. The framework supports two programming models for writing microservices: Helidon SE and Helidon MP.
-While Helidon SE is designed to be a microframework that supports the reactive programming model, Helidon is an implementation of the MicroProfile specification. Since MicroProfile has its roots in Java EE, the MicroProfile APIs follow a familiar, declarative approach with heavy use of annotations. This makes it a good choice for Java EE developers.
+Helidon is a open source microservices framework introduced by Oracle that provides a collection of Java libraries designed for creating lightweight and fast microservices-based applications. The framework supports two programming models for writing microservices: Helidon SE and Helidon MP.
+While Helidon SE is designed to be a microframework that supports the reactive programming model, Helidon MP is an implementation of the MicroProfile specification. Since MicroProfile has its roots in Java EE, the MicroProfile APIs follow a familiar, declarative approach with heavy use of annotations. This makes it a good choice for Java EE developers.
 The MicroProfile features aim at the implementation of microservices. You can find APIs for defining REST Clients, monitoring the application, reading technical and functional statistics and for configuring the application.
 Helidon has also  added additional APIs to the core set of Microprofile APIs giving you all the capabilities you need for writing modern cloud native applications.
 
@@ -60,4 +60,4 @@ Verrazzano includes the following capabilities:
 
 * **Author** -  Peter Nagy
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, August 2021
+* **Last Updated By/Date** - Peter Nagy, September 2021
