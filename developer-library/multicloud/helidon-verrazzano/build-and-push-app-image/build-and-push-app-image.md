@@ -21,7 +21,7 @@ In this lab you will build a Docker image with your Helidon application and push
 
 We'll start by preparing the Docker image that you will use to deploy on Verrazzano.
 
-We are creating a Docker image, which you will upload to Oracle Cloud Container Registry belongs to your OCI account. To do so you need to create image name which reflects your registry coordinates.
+We are creating a Docker image, which you will upload to the Oracle Cloud Container Registry that belongs to your OCI account. To do so you need to create an image name which reflects your registry coordinates.
 
 You need the following information:
 
@@ -40,7 +40,7 @@ Your *Region Name* is located in top right corner in the Oracle Cloud Console, i
 In the Console, open the navigation menu and click **Developer Services**. Under **Containers & Artifacts**, click **Container Registry**.
 ![Tenancy Namespace](images/20.png)
 
-The tenancy namespace is listed in the compartment. For example, in this compartment the tenancy namespace is *id9hokcxpkra*. Copy and save it in a text editor. You will use this information in the next lab, too.
+The tenancy namespace is listed in the compartment. Copy and save it in a text editor. You will use this information in the next lab, too.
 ![Tenancy Namespace](images/16.png)
 
 3. Locate the *Endpoint for Your Region*. <br>
@@ -57,8 +57,8 @@ Refer to the table documented at this URL [https://docs.oracle.com/en-us/iaas/Co
 ```
 The build will produce the following result:
 ```bash
-$ docker build iad.ocir.io/id9hokcxpkra/quickstart-mp:1.0 .
-> docker pull iad.ocir.io/id9hokcxpkra/quickstart-mp:1.0
+$ docker build iad.ocir.io/tenancynamespace/quickstart-mp:1.0 .
+> docker pull iad.ocir.io/tenancynamespace/quickstart-mp:1.0
 [+] Building 107.5s (19/19) FINISHED                                                                                                            
  => [internal] load build definition from Dockerfile                                                                                       0.1s
  => => transferring dockerfile: 785B                                                                                                       0.1s
@@ -106,7 +106,7 @@ This creates the Docker image, what you can check in your local repository.
 $ docker images
 
 REPOSITORY                                                                           TAG                               IMAGE ID       CREATED         SIZE
-iad.ocir.io/id9hokcxpkra/quickstart-mp                                                1.0                               587a079ad854   5 minutes ago   243MB
+iad.ocir.io/tenancynamespace/quickstart-mp                                                1.0                               587a079ad854   5 minutes ago   243MB
 ```
 Copy to your text editor the replaced full image name `END_POINT_OF_YOUR_REGION`/`NAMESPACE_OF_YOUR_TENANCY`/quickstart-mp:1.0 because you will need it later.
 
@@ -136,11 +136,14 @@ In this step, we are going to generate an *Authentication Token*, that we will u
 
 ## Task 3: Push the Helidon Application (quickstart-mp) Docker Image to your Container Registry Repository
 
-In Task 1 of this lab you opened a URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) and determined the endpoint for your Region name in a text editor. In our example the Region Name is US East (Ashburn). You will need this information for this task.
+In Task 1 of this lab you opened a URL [https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) and determined the endpoint for your Region name and copied it to a text editor. In our example the Region Name is US East (Ashburn). You will need this information for this task.
 
 ![Endpoint](images/5.png)
 
-1. In Task 1 of this lab you determined the endpoint for your Region name and copied it to a text editor. In our example the Region Name is *US East (Ashburn)* and the endpoint is *iad.ocir.io*. You will need this information for this task. Copy the following command and paste it in your text editor and then replace the `END_POINT_OF_REGION_NAME` with the endpoint of your region.
+1. Copy the following command and paste it in your text editor and then replace the `END_POINT_OF_REGION_NAME` with the endpoint of your region.
+
+  >In our example the Region Name is *US East (Ashburn)* and the endpoint is *iad.ocir.io*. You will need your specific information for this task. 
+
 ```bash
 <copy>docker login END_POINT_OF_REGION_NAME</copy>
 ```
@@ -180,8 +183,8 @@ Login Succeeded
 ```
 The result should look like this:
 ```bash
-$ docker push iad.ocir.io/id9hokcxpkra/quickstart-mp:1.0
-The push refers to repository [iad.ocir.io/id9hokcxpkra/quickstart-mp]
+$ docker push iad.ocir.io/tenancynamespace/quickstart-mp:1.0
+The push refers to repository [iad.ocir.io/tenancynamespace/quickstart-mp]
 0795b8384c47: Pushed
 131452972f9d: Pushed
 93c53f2e9519: Pushed
