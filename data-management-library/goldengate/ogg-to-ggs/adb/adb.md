@@ -16,7 +16,7 @@ Estimated Lab Time: 20 mins
 
 ### Prerequisites
 
-This lab assumes you have completed the Getting Started lab.
+This lab assumes you have completed the Get Started lab.
 
 > **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
@@ -130,7 +130,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click **Create Autonomous Database**.
 
-    ![](./images/01-02-create-adb.png " ")
+  	![](./images/01-02-create-adb.png " ")
 
 3. Select **Compartment** by clicking on the drop-down list. (Note that yours will be different - do not select **ManagedCompartmentforPaaS**) and then enter **ADWTarget** for **Display Name** and **Database Name**.
 
@@ -164,7 +164,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Click the **Tools** tab, and then click **Open Database Actions**.
 
-		![](./images/05-04-db-actions.png " ")
+	![](./images/05-04-db-actions.png " ")
 
 3.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
