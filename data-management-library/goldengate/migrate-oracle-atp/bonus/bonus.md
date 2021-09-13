@@ -4,7 +4,7 @@
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. We successfully have migrated our on-premise database to ATP, and now we will need to migrate the APEX Application to that database.
 
-*Estimated lab time*: 25 minutes
+*Estimated time*: 25 minutes
 
 ### Objectives
 

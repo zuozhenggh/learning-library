@@ -12,7 +12,7 @@ This first lab is very important and where we will create all of our resources:
 - Goldengate database registrations
 - Goldengate deployment
 
-*Estimated lab time*: 15 minutes
+*Estimated time*: 15 minutes
 
 ### Objectives
 
@@ -91,7 +91,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	_**NOTE:** This will open a new file, you have to press **i** key to enable editing, then "shift+insert" keys to paste copied parameter. When you are done editing press **esc** key and press **:wq** keys, then hit enter for save & quit.*_
+	> **Note:** This will open a new file, you have to press **i** key to enable editing, then "shift+insert" keys to paste copied parameter. When you are done editing press **esc** key and press **:wq** keys, then hit enter for save & quit.
 
 	![](/images/0.Prep_3.PNG)
 
