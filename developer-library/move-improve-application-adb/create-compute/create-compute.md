@@ -155,16 +155,9 @@ For PuTTY:
 9. Use the same SSH key as your bastion compute.  However the best practice is to use a different key
 
 10. Click Create
-
-     ![](./images/create-app-server-3.PNG)
-
-
-
+    ![](./images/create-app-server-3.PNG)
    You can see the work request and status of the compute being provisioned in the compute details and Work Requests page.
-
-      ![](./images/create-app-server-5.PNG)
-
-
+       ![](./images/create-app-server-5.PNG)
 
    Once your compute App Server instance is running, view other details. Note the compute is provisioned on the private subnet, you only get a private IP address.  There is no public IP address.  From the private subnet we have a secure App Server that will connect to ATP.
 
@@ -215,8 +208,8 @@ Let's see how your security list are set up to ensure they allow the right traff
 
 4. Check security list for private subnet.
 
- - Ingress allows SSH from the VCN (this will also allow ingress for SCP copy of the ATP Wallet we will do shortly).
- - Egress allows all protocol traffic to all destination.
+   - Ingress allows SSH from the VCN (this will also allow ingress for SCP copy of the ATP Wallet we will do shortly).
+   - Egress allows all protocol traffic to all destination.
 
 
   ![](./images/seclist-ingress-private-subnet.png)

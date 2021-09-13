@@ -132,7 +132,7 @@
 
   You can hit crtl-C to stop the workload run.
 
-## Task 2.1: Auto Scaling
+### Auto Scaling
 
    Let’s look at the auto scaling feature. Auto scaling automatically scales your cores to a maximum of 3 times the initially core count when the CPU utilization is high.
 
@@ -199,7 +199,7 @@
 
   Why is the cpu count still the same even with the scale down after the workload stops?
 
-##Task 2.2: Show the Effects of Database Services
+### Show the Effects of Database Services
 
 
    We are going to set up two connections, one running the Swingbench workload and the other running a query on another schema.

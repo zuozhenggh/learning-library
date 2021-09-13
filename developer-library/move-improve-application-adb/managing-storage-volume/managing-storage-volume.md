@@ -125,17 +125,17 @@ The Clone will be created in 15-20 minutes.  It will have a new Wallet.  Notice 
 
 10. Run the workload again from your new client, but remember to:
 
- * Copy the new wallet to your new client.
+   * Copy the new wallet to your new client.
 
- * Unzip the wallet
+   * Unzip the wallet
 
- * Add the new database services to tnsnames.ora
+   * Add the new database services to tnsnames.ora
 
- * Edit the sqlnet.ora to point to the new wallet
+   * Edit the sqlnet.ora to point to the new wallet
 
- * and change the Wallet and Connection Service name in the script below
+   * and change the Wallet and Connection Service name in the script below
 
- *  Troubleshooting: Test the connection with SQLPlus.
+   *  Troubleshooting: Test the connection with SQLPlus.
 
       ```
       $ <copy>export PATH=/usr/lib/oracle/18.5/client64/bin:$PATH</copy>

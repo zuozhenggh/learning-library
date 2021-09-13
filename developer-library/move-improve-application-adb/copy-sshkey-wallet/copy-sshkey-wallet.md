@@ -75,7 +75,7 @@ We are now going to copy the ATP Wallet to the App Server. The App Server will b
 
  5. Type **yes** if you see the message below:
 
-     ![](./images/ssh-to-app-server.PNG)
+    ![](./images/ssh-to-app-server.PNG)
 
 
 
