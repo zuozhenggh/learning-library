@@ -934,7 +934,7 @@ LIMIT 10;
     ````
      ![Connect](./images/12hwqueries03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
@@ -962,17 +962,17 @@ LIMIT 10;</copy>
     ````
     ![Connect](./images/12hwqueries04.png " ")
 
- 11. To see if use_secondary_engine is enabled (=ON)
+ 11. To see if `use_secondary_engine` is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Runing additional queries. Remember to turn on and off the use_secondary_engine  to compare the execution time.
+ 12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time.
 
-    (Example  **SET SESSION use_secondary_engine=On;**)
+    (Example  **SET SESSION `use_secondary_engine`=On;**)
 
-    (Example  **SET SESSION use_secondary_engine=Off;**)      
+    (Example  **SET SESSION `use_secondary_engine`=Off;**)      
 
  13. Enter the following command at the prompt
      ````
@@ -1500,7 +1500,6 @@ When delete process is done **MDS-DB** will be set to Delete status.
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
 * [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
-* **Author** -   Perside Foster, MySQL Solution Engineering,  
-* **Contributors** -  Priscila Galvao, MySQL Solution Engineering,
-Mandy Pang, Principal Product Manager
+* **Author** - Perside Foster, MySQL Solution Engineering 
+* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021
