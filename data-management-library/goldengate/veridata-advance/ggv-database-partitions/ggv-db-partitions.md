@@ -32,29 +32,42 @@ This lab assumes you have:
 
 ## **Task 1:** Configure Database Row Partitioning
 To configure Database Row Partitioning:
-1. In the Compare Pair Configuration page, click **Manual Mapping**.
-2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
+1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click Edit, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
+2. Click **Manual Mapping**.
+3. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
     * Source Table: **SALES**
     * Target Table: **SALES**
       ![](./images/1_DB.png " ")
 
-3. Select the source and target partitions from **Source Table Partitions** and **Target Table Partitions**:
-    * Source Table Partitions: **SALES_Q1_2006**
-    * Target Table Partitions: **SALES_Q1_2006**
+4. Select the source and target partitions from **Source Table Partitions** and **Target Table Partitions**:
+    * Source Table Partitions:
+      ```
+      <copy>
+      SALES_Q1_2006
+      </copy>
+
+      ```
+    * Target Table Partitions:
+    ```
+    <copy>
+    SALES_Q1_2006
+    </copy>
+
+    ```
 
       ![](./images/2_DB.png " ")
 
-4. Click **Add Mapping** to map the selected database Table Partitions. You can also map multiple database Table Partitions before generating the compare-pair.
+5. Click **Add Mapping** to map the selected database Table Partitions. You can also map multiple database Table Partitions before generating the compare-pair.
 
     ![](./images/3_DB.png " ")
 
-5. Click **Generate Compare Pairs**. The control moves to the **Preview** tab.
+6. Click **Generate Compare Pairs**. The control moves to the **Preview** tab.
 
 
     ![](./images/4_DB.png " ")
-6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+7. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
 Notice the compare pairs that have been generated with Database Row Partition
 
     ![](./images/5_DB.png " ")

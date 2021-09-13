@@ -30,16 +30,17 @@ This lab assumes you have:
 
 ## **Task 1:** Configure Automatic Row Partitioning
 To configure Automatic Row Partitioning:
-1. In the Compare Pair Configuration page, click **Manual Mapping**.
-2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
+1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click Edit, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
+2. Click **Manual Mapping**.
+3. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
     * Source Table: **XMLTABLE**
     * Target Table: **XMLTABLE**
     ![](./images/1_AP.png " ")
-3. Select the **Automatic Row Partitions** check box.
+4. Select the **Automatic Row Partitions** check box.
 
-4. Enter a numeric value between 2 to 100 in the text field.
+5. Enter a numeric value between 2 to 100 in the text field.
 
       Enter:
 
@@ -47,11 +48,11 @@ To configure Automatic Row Partitioning:
 
       ![](./images/2_AP.png " ")
 
-5. Click **Generate Mappings**. The control moves to the **Preview** tab.
+6. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
     ![](./images/3_AP.png " ")
 
-6. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+7. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
   Notice the compare pairs that have been generated with Automatic Row Partition.
 
     ![](./images/4_AP.png " ")
