@@ -8,18 +8,18 @@
       "filename": "./../../intro/intro-config-compliance.md"
     },
     {
-      "title": "Lab G1: Environment Setup",
+      "title": "Lab 1: Environment Setup",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab G2: Initialize Environment",
+      "title": "Lab 2: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab G3: Database Configuration and Compliance Management",
+      "title": "Lab 3: Database Configuration and Compliance Management",
       "description": "This lab provides an overview of Configuration and Compliance Management features in. It is intended solely to help you assess the business benefits of upgrading to and to plan your I.T. projects",
       "publisheddate": "7/16/2020",
       "filename": "./../../em-configuration-compliance-management/em-configuration-compliance-management.md"

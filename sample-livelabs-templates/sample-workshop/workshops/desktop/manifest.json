@@ -13,20 +13,20 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab D1: Provision an Instance",
+      "title": "Lab 1: Provision an Instance",
       "description": "Labs that follow the introduction are numbered, starting with Lab 1",
       "filename": "../../provision/provision.md"
     },
     {
-      "title": "Lab D2: Setup the Environment",
+      "title": "Lab 2: Setup the Environment",
       "filename": "../../setup/setup.md"
     },
     {
-      "title": "Lab D3: Load Data into an Instance",
+      "title": "Lab 3: Load Data into an Instance",
       "filename": "../../data-load/data-load.md"
     },
     {
-      "title": "Lab D4: Query Data",
+      "title": "Lab 4: Query Data",
       "filename": "../../query/query.md"
     },
     {
