@@ -70,7 +70,7 @@ This Extract process captures data from the source database to send to Oracle Go
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![A](images/02-07-ext-param.png "")
+    ![A](images/02-07-ext-param.png " ")
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 
@@ -80,7 +80,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
     The yellow exclamation point icon changes to a green checkmark.
 
-    ![](images/02-ggs-extract-started.png "Extract process started")
+    ![](images/02-ggs-extract-started.png " ")
 
 ## Task 3: Add and Run a Receiver Path
 
@@ -114,7 +114,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![](images/03-06-port-no.png " ")
 
-7.  Click **Trail Name**, and then select the trail file created in Task 1 above, to send to OCI GoldenGate. For example, select **E1**.
+7.  Click **Trail Name**, and then enter the trail file name created in Task 1 above, to send to OCI GoldenGate. For example, enter **E1**.
 
     ![](images/03-07-trailname.png " ")
 
@@ -152,7 +152,7 @@ In this lab, you created and ran a Path on your on premisess Oracle GoldenGate R
 
     ![](images/04-01.png " ")
 
-2.  For TargetADW, click **Connect to Database**.
+2.  For target ADW database, click **Connect to Database**.
 
     ![](images/04-02.png " ")
 
@@ -164,7 +164,6 @@ In this lab, you created and ran a Path on your on premisess Oracle GoldenGate R
 
     ![](images/04-04.png " ")
 
-5.  Click **Overview** in the left navigation.
 
 ## Task 5: Add and Run a Replicat
 
