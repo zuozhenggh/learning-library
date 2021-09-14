@@ -37,7 +37,7 @@ In this lab you will learn:
 ## Task 1: Prepare Database
 Select between *STEP 1A* and *STEP 1B*
 
-## Task 1A: Prepare Database Using EM Console
+## **STEP 1A:** Prepare Database Using EM Console
 
 1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
@@ -67,7 +67,7 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emjobcom.png " ")
 
-## Task 1B: Prepare database Using the terminal
+## **STEP 1B:** Prepare database Using the terminal
 
 1. Instead of *STEP 1* above, you may run the block below from the terminal as user *oracle*
 
@@ -140,7 +140,7 @@ Select between *STEP 1A* and *STEP 1B*
 
 14. Click on the **activity** tab to understand about the activity breakdown for this SQL.
 
-16. Click on **Save** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
+16. Click on **Save Report** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
 
 ## Task 3: Real-Time Database Operations Monitoring
 
