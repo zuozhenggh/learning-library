@@ -57,7 +57,7 @@ where dynamic-group represents the name of your dynamic group.
 Follow the below steps to open Notebook in DataScience:
 ### 1. Navigate to Data Science Service
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Data Science item under Machine Learning.
-    ![](./images/1.png " ")
+    ![](./images/cloudMenu.png " ")
 
 ### 2. Select Compartment
 Select the Compartment in which want to create your project.
@@ -68,27 +68,27 @@ Select the Compartment in which want to create your project.
 
 ### 3. Create Project
 Click Create Project to create a new project.
-    ![](./images/2.png " ")
+    ![](./images/createProject1.png " ")
 <!-- Select the Project named 'oci-language-livelabs' -->
     
 
 ### 4. Enter Project Details
 Enter name and click Create Button.
-    ![](./images/3.png " ")
+    ![](./images/createProject2.png " ")
 <!-- Select the Notebook named 'Livelabs Notebook' -->
     
 
 
 ### 5. Create Notebook Session
 Click Create Notebook Session to create a new Notebook session.
-    ![](./images/4.png " ")
+    ![](./images/createNotebookSession.png " ")
 
 ### 6. Enter Notebook Details
 Select a name.
 We recommend you choose VM.Standard2.8 (not VM.Standard.E2.8) as the shape. This is a high performance shape, which will be useful for tasks such as AutoML.
 Set block storage to 50 GB.
 Select the subnet with Internet connectivity. (Select private subnet if you have use VCN Wizard to create VCN)
-    ![](./images/5.png " ")
+    ![](./images/createNotebookSession2.png " ")
 
 ### 7. Open the OCI Data Science notebook
 The Notebook Session VM will be created. This might take a few minutes. When created you will see a screen like the following.
