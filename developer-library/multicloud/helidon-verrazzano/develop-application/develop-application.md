@@ -26,7 +26,9 @@ The CLI is distributed as a standalone executable (compiled using GraalVM) for e
 ### Prerequisites
 
 * Helidon requires Java 11+
-* Maven (3.6.x) (**!!!Please do not use 3.8.x due to known issue with application build.**)
+* Maven 3.6.x
+> **Caution: Do not use the 3.8.x version due to known issue with application build!**
+
 * Java and `mvn` are in your path.
 * Windows users will also need the Visual C++ Redistributable Runtime. <br>
 See [Helidon on Windows](https://helidon.io/docs/v2/#/about/04_windows) for more information.
@@ -59,16 +61,14 @@ PowerShell -Command Invoke-WebRequest -Uri "https://helidon.io/cli/latest/window
 ```
 
 
-
-
 ## Task 2: Create Helidon Greeting Application
 1. In your console enter:
 ```bash
-<copy>helidon init --version 2.3.2</copy>
+<copy>helidon init --version 2.3.2 </copy>
 ```
-> To avoid any potential issues you define specific Helidon version which was tested in this lab's environment.
+> To avoid any potential issues, define the specific Helidon version that was tested for this lab's environment.
 
-2. For this demo we will create *MicroProfile* supported microservice, so choose option **2** for **Helidon Flavor**:
+2. For this demo we will create a MicroProfile supported microservice, so choose option **(2)** for **Helidon MP Flavor**:
 
 ```bash
 Version 2.2.0 of this CLI is now available.
@@ -100,7 +100,7 @@ Switch directory to /Users/mitia/Desktop/quickstart-mp to use CLI
 Start development loop? (Default: n):
 ```
 
->For the **development loop** accept the default (**n**) for now. You will come back to this later.
+>For the **development loop** accept the default (**n**) for now. You will start the development loop later in this lab.
 
 You now have a fully functional Microservice Maven Project:
 
@@ -140,7 +140,13 @@ quickstart-mp
 ```
 
 ## Task 3: Run the Helidon Greeting Application
-From the same console/terminal, navigate to the quickstart-mp directory and run the following two commands:
+From the same console/terminal, navigate to the quickstart-mp directory and run the following commands:
+
+```bash
+<copy> cd quickstart-mp
+</copy>
+```
+
 
 With JDK11+
 ```bash
@@ -155,21 +161,29 @@ java -jar target/quickstart-mp.jar
 Open a new terminal/console and run the following commands to check the application:
 
 ```bash
+<copy>
 curl -X GET http://localhost:8080/greet
+</copy>
 {"message":"Hello World!"}
 ```
 
 ```bash
+<copy>
 curl -X GET http://localhost:8080/greet/Joe
+</copy>
 {"message":"Hello Joe!"}
 ```
 
 ```bash
+<copy>
 curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
+</copy>
 ```
 
 ```bash
+<copy>
 curl -X GET http://localhost:8080/greet/Jose
+</copy>
 {"message":"Hola Jose!"}
 ```
 
@@ -178,23 +192,31 @@ curl -X GET http://localhost:8080/greet/Jose
 1. In the same terminal/console, run the following commands to check health and metrics:
 
 ```bash
+<copy>
 curl -s -X GET http://localhost:8080/health
+</copy>
 {"outcome":"UP",...
 . . .
-
-# Prometheus Format
-curl -s -X GET http://localhost:8080/metrics
-# TYPE base:gc_g1_young_generation_count gauge
-. . .
-
-# JSON Format
-curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
-{"base":...
-. . .
-
 ```
 
-2. Stop the *quickstart-mp* application by entering 'Ctrl + C' in the terminal where the "java -jar target/quickstart-mp.jar" command is running.
+```bash
+# Prometheus Format
+<copy>
+curl -s -X GET http://localhost:8080/metrics
+</copy>
+# TYPE base:gc_g1_young_generation_count gauge
+. . .
+```
+```bash
+# JSON Format
+<copy>
+curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
+</copy>
+{"base":...
+. . .
+```
+
+2. Stop the *quickstart-mp* application by entering `Ctrl + C` in the terminal where the "java -jar target/quickstart-mp.jar" command is running.
 
 ## Task 4: Modify the Application
 
@@ -208,9 +230,9 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 <copy>helidon dev</copy>
 ```
 
->This will start the *Development loop* mentioned in the previous task.
+>This will start the **Development loop** mentioned in the previous task.
 
-3. Change the property *app.greeting* to "Hello Oracle".
+3. Change the property *app.greeting* to "Hello Oracle" and save the file.
 
 ```properties
 <copy>app.greeting=Hello Oracle</copy>
@@ -218,7 +240,7 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 
 ![HelidonDev](images/2.jpg)
 
->You will see that whenever you change a file, the **Helidon CLI** recognizes there is a change, recompiles the app, and reruns it. Since Helidon is really small, everything happens really quickly.
+>You will see that whenever you change a file, the **Helidon CLI** recognizes there is a change, recompiles the app, and reruns it. Since Helidon is small, everything happens quickly.
 
 4. In the console/terminal, enter the following:
 
@@ -232,7 +254,7 @@ The result is expected to be:
 {"message":"Hello Oracle World!"}
 ```
 
->Great! You made your first modification.
+Be sure to stop the development loop with `CTRL+C`
 
 5. Go back to your project folder and open the **GreetResource.java** file.
 
@@ -271,13 +293,13 @@ public class GreetHelpResource {
 </copy>
 ```
 
->The class has only one method *getAllGreetings* which returns a list with greetings in different languages. While copying the code, if you encounter an error, then add the necessary package name.
+>The class has only one method *getAllGreetings* which returns a list with greetings in different languages. While copying the code, be sure to add the necessary package name on top of class.
 
 7. Build and run the application:
 
 ```bash
 <copy>
-mvn package
+mvn package -DskipTests
 java -jar target/quickstart-mp.jar
 </copy>
 ```
@@ -300,7 +322,7 @@ curl http://localhost:8080/metrics
 ...
 # TYPE application_me_buzz_mp_quickstart_GreetHelpResource_helpCalled_total counter
 # HELP application_me_buzz_mp_quickstart_GreetHelpResource_helpCalled_total How many time help was called
-application_me_buzz_mp_quickstart_GreetHelpResource_helpCalled_total 3
+application_me_buzz_mp_quickstart_GreetHelpResource_helpCalled_total 1
 ...
 ```
 
@@ -323,4 +345,4 @@ And the new endpoint has been added.
 
 * **Author** -  Dmitry Aleksandrov
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, August 2021
+* **Last Updated By/Date** - Peter Nagy, September 2021

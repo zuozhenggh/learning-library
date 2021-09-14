@@ -41,9 +41,9 @@ You will use the *Cloud Shell* to complete this workshop.
 
 We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It needs a `kubeconfig` file. This will be generated using the OCI CLI which is pre-authenticated, so there’s no setup to do before you can start using it.
 
-1. Click *Access Cluster* on your cluster detail page.
+1. Click **Access Cluster** on your cluster detail page.
 
-    > If you moved away from that page, then open the navigation menu and under *Developer Services*, select *Kubernetes Clusters (OKE)*. Select your cluster and go the detail page.
+    > If you moved away from that page, then open the navigation menu and under **Developer Services**, select **Kubernetes Clusters (OKE)**. Select your cluster and go the detail page.
 
     ![Access Cluster](images/1.png)
 
@@ -53,7 +53,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     ![Copy kubectl Config](images/2.png)
 
-3. Click **Launch Cloud Shell** to open the built-in console. Close the configuration dialog before you paste the command into the *Cloud Shell*.
+3. Click **Launch Cloud Shell** to open the built-in console. Close the configuration dialog before you paste the command into the Cloud Shell.
 
     ![Launch Cloud Shell](images/3.png)
 
@@ -77,16 +77,15 @@ You may need to run this command several times until you see the output similar 
     ```bash
     $ kubectl get node
     NAME          STATUS   ROLES   AGE    VERSION
-    10.0.10.112   Ready    node    4m32s   v1.20.8
-    10.0.10.200   Ready    node    4m32s   v1.20.8
-    10.0.10.36    Ready    node    4m28s   v1.20.8
+    10.0.10.112   Ready    node    4m32s   v1.19.7
+    10.0.10.200   Ready    node    4m32s   v1.19.7
+    10.0.10.36    Ready    node    4m28s   v1.19.7
     ```
 
     > If you see the node's information, then the configuration was successful.
 
 6. You can minimize and restore the terminal size at any time using the controls at the top right corner of the Cloud Shell.
 
-    ![cloud shell](images/5.png)
 
 7. Leave this *Cloud Shell* open; we will use it for further labs.
 
