@@ -291,17 +291,28 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/6.popup_check.PNG)
 
-6. Repeat these tasks 2, 3, 4 on the **Employee Maintenance** page also! Because the employee maintenance page also needs this. Make sure you save it. After finish editing the **Employee Maintenance** page, run the application. Try to edit a record. The Employee Maintenance page will be looking like the one below.
+6. Repeat these sub-steps 2, 3, 4 on the **Employee Maintenance** page also! Because the employee maintenance page also needs this. Make sure you save it. After finish editing the **Employee Maintenance** page, run the application. Try to edit a record. The Employee Maintenance page will be looking like the one below.
 
     ![](images/6.popup_check_2.PNG)
 
-Congratulations! You have completed this workshop!
+    Congratulations, you have completed this workshop!
 
-You successfully migrated the source 12c database to Autonomous Database in Oracle Cloud Infrastructure, also sample HR application. We hope you enjoyed it!
+    You successfully migrated the source 12c database to Autonomous Database in Oracle Cloud Infrastructure, also sample HR application. We hope you enjoyed it!
 
-If you would like to download and compare with the final version of HR application, please get it **[from here](./files/f102.sql)**.
+    If you would like to download and compare with the final version of HR application, please get it **[from here](./files/f102.sql)**.
 
-**This concludes this workshop.**
+    After you finish the workshop, you may wish to delete the all resources. Type the below command in cloud shell:
+
+	```
+	<copy>
+    cd ~/oci_gg_cloud_service
+	terraform destroy --auto-approve
+	</copy>
+	```
+
+    > **Note:** This will destroy the all resources and there is no way to restore them back. Make sure you make some backups if necessary.
+
+**This concludes the workshop. Please scroll down and visit the summary**
 
 ## **Summary**
 
