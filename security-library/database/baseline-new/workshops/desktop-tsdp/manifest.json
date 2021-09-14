@@ -14,13 +14,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../../common/init-start-env/init-start-env.md"
     },
     {
-      "title": "Transparent Sensitive Data Protection (TSDP)",
+      "title": "Lab 2: Transparent Sensitive Data Protection (TSDP)",
       "description": "In this lab you can see how to leverage Oracle Transparent Sensitive Data Protection (TSDP)",
       "publisheddate": "04/14/2021",
       "filename": "../../tsdp/tsdp.md"
