@@ -20,8 +20,8 @@ As a developer, you can connect to NDCS and work with NoSQL tables using the NoS
 
 In this workshop you will:
   * Work with a live demo application
-  * Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
   * Create an API Signing Key and SDK CLI Configuration File
+  * Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
   * Run the Sample NoSQL Application
   * Execute queries against NoSQL tables
 
