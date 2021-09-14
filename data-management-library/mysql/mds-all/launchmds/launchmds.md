@@ -30,6 +30,8 @@ In this lab, you will be guided through the following tasks:
 - Create Oracle Analytics Cloud and connect to MySQL HeatWave
 - Create a Bastion Host and connect to MySQL Standalone
     * Connect to MySQL Standalone using Workbench
+- Manage MySQL Database Service Systems 
+- Create a Bastion Host and connect to MySQL
 - Manage MySQL Database Service Systems
 
 ### Prerequisites
@@ -932,7 +934,7 @@ LIMIT 10;
     ````
      ![Connect](./images/12hwqueries03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
@@ -960,17 +962,17 @@ LIMIT 10;</copy>
     ````
     ![Connect](./images/12hwqueries04.png " ")
 
- 11. To see if use_secondary_engine is enabled (=ON)
+ 11. To see if `use_secondary_engine` is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Runing additional queries. Remember to turn on and off the use_secondary_engine  to compare the execution time.
+ 12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time.
 
-    (Example  **SET SESSION use_secondary_engine=On;**)
+    (Example  **SET SESSION `use_secondary_engine`=On;**)
 
-    (Example  **SET SESSION use_secondary_engine=Off;**)      
+    (Example  **SET SESSION `use_secondary_engine`=Off;**)      
 
  13. Enter the following command at the prompt
      ````
@@ -1448,17 +1450,56 @@ A prompt is displayed asking you to confirm the deletion.
 Enter the word, all caps, "DELETE" and click "Delete 1 MySQL DB System" button.
 
 When delete process is done **MDS-DB** will be set to Delete status.
+
+## **TASK 18:**  Create a Bastion Host and Connect to MySQL
+1. Now we will create a new Bastion Service that will allow us to create a SSH Tunnel to our MySQL DB System
+
+2. Open the navigation menu Identity & Security > Bastion
+
+    ![MDS](./images/10bastion01.png " ") 
+
+3. Click 'Create Bastion'
+
+   ![MDS](./images/10bastion02.png " ") 
+
+4. On Create Bastion page, complete the fields
+
+    - Bastion Name: MDSBastion
+    - Select the Target Virtual Cloud Network in root
+    - Select the Target Subnet in root
+    - Add the CIDR Block Allowlist: 0.0.0.0/0
+    
+    ![MDS](./images/10bastion03.png " ") 
+
+5. Click on Create Bastion
+
+6. Start the Cloud Shell and generate a SSH Key that will be used for the tunnel's session
+
+    ![MDS](./images/10bastion04.png " ") 
+
+7. In the Cloud Shell, create the SSH Key with the following command:
+
+    ````
+    <copy>
+    $ ssh-keygen -t rsa
+    </copy>
+    ````
+
+8. You will find the public key stored in ~/.ssh/id_rsa.pub
+
+  ![MDS](./images/10bastion05.png " ") 
+
+9. On MDS-Bastion page, under sessions, click on 'Create Session'
+
+  ![MDS](./images/10bastion06.png " ") 
+
+10. 
+
 ## Learn More
 
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
 * [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
-* **Author** -   Perside Foster, MySQL Solution Engineering,  
-* **Contributors** -  Priscila Galvao, MySQL Solution Engineering,
-Mandy Pang, Principal Product Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [MySQL Support Forum](https://community.oracle.com/tech/developers/categories/MySQL). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Author** - Perside Foster, MySQL Solution Engineering 
+* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021
