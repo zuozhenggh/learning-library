@@ -33,9 +33,9 @@ In this lab you will learn:
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
 ## Task 1: Prepare Database
-Select between *STEP 1A* and *STEP 1B*
+Select between *Task 1A* and *Task 1B*
 
-## **STEP 1A:** Prepare Database Using EM Console
+## **Task 1A:** Prepare Database Using EM Console
 
 1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
@@ -65,9 +65,9 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emjobcom.png " ")
 
-## **STEP 1B:** Prepare database Using the terminal
+## **Task 1B:** Prepare database Using the terminal
 
-1. Instead of *STEP 1* above, you may run the block below from the terminal as user *oracle*
+1. Instead of *Task 1A* above, you may run the block below from the terminal as user *oracle*
 
     ```
     <copy>
