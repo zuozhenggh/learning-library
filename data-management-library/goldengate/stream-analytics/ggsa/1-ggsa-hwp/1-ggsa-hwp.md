@@ -168,4 +168,4 @@ To publish the pipeline:
 * **Contributors** - Prabhu Thukaram, Senior Director, Software Development
 
 
-* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, August 2021
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, September 2021
