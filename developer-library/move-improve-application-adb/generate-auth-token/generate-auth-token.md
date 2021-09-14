@@ -1,4 +1,4 @@
-# Generate Auth Token #
+# Generate the Auth Token #
 
 ## Introduction
 
@@ -20,36 +20,30 @@ The following is intended to outline our general product direction. It is intend
 
 ## Task 1: Generate the Auth Token ##
 
-1. View the user's details:
-
-   - If you're creating an auth token for yourself: Open the **Profile** menu (![User menu icon](https://docs.cloud.oracle.com/en-us/iaas/Content/Resources/Images/usermenu.png)) and click **User Settings**.
-
-   - If you're an administrator creating an auth token for another user: In the Console, click **Identity**, and then click **Users**. Locate the user in the list, and then click the user's name to view the details.
-
-     ![](./images/user-profile-icon.png)
-
-     ![](./images/user-settings.png)
 
 
-2. On the left side of the page, click **Auth Tokens**.
+1.  View the user's details:
+    - If you're creating an auth token for yourself: Open the **Profile** menu ( ![User menu icon](./images/usermenu.png) ) and click **User Settings**.
+    - If you're an administrator creating an auth token for another user: In the Console, click **Identity**, and then click **Users**. Locate the user in the list, and then click the user's name to view the details.
+       ![](./images/user-profile-icon.png)
+       ![](./images/user-settings.png)
 
-   ![](./images/generate-token.png)
+2.  On the left side of the page, click **Auth Tokens**.
+       ![](./images/generate-token.png)
 
-3. Click **Generate Token**.
+3.  Click **Generate Token**.
 
-4. Enter a description that indicates what this token is for, for example, "Object store password token".
+4.  Enter a description that indicates what this token is for, for example, "Object store password token".
 
-5. Click **Generate Token**.
-   The new token string is displayed.
-
-   ![](./images/copy-token.PNG)
+5.  Click **Generate Token**.The new token string is displayed.
+      ![](./images/copy-token.png)
 
 6. Copy the token string immediately, because you can't retrieve it again after closing the dialog box.
 
-   If you're an administrator creating an auth token for another user, you need to securely deliver it to the user by providing it verbally, printing it out, or sending it through a secure email service.
+    If you're an administrator creating an auth token for another user, you need to securely deliver it to the user by providing it verbally, printing it out, or sending it through a secure email service.
 
-You may now proceed to the next lab.
+  You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021

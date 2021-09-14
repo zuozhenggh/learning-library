@@ -1590,7 +1590,7 @@ The tasks you will accomplish in this step are:
     ![](./images/task10.1-dba_pdbs_query.png " ")
 
 
-2. DBA_APPLICATIONS
+2. DBA\_APPLICATIONS
 
     ```
     <copy>connect system/oracle@localhost:1523/wmStore_Master</copy>
@@ -1611,7 +1611,7 @@ The tasks you will accomplish in this step are:
     ![](./images/task10.2-dba_applications.png " ")
 
 
-3. DBA_APP_VERSIONS
+3. DBA\_APP\_VERSIONS
 
     ```
     <copy>desc DBA_App_Versions</copy>
@@ -1623,7 +1623,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.3-dba_app_versions.png " ")
 
-4. DBA_APP_PATCHES
+4. DBA\_APP\_PATCHES
 
     ```
     <copy>desc DBA_App_Patches</copy>
@@ -1635,7 +1635,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.4-dba_app_patches.png " ")
 
-5. DBA_APP_PDB_STATUS
+5. DBA\_APP\_PDB\_STATUS
 
     ```
     <copy>desc DBA_App_PDB_Status</copy>
@@ -1647,7 +1647,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.5-dba_app_pdb_status.png " ")
 
-6. DBA_APP_STATEMENTS
+6. DBA\_APP\_STATEMENTS
 
     ```
     <copy>desc DBA_App_Statements</copy>
@@ -1659,7 +1659,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.6-dba_app_statements.png " ")
 
-7. DBA_APP_ERRORS
+7. DBA\_APP\_ERRORS
 
     ```
     <copy>connect system/oracle@localhost:1523/NYC</copy>
@@ -1711,7 +1711,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task11.2-syncerror.png " ")
 
-3. Check for dba_app_errors.
+3. Check for dba\_app\_errors.
 
     ```
     <copy>

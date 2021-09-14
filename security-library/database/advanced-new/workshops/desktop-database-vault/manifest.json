@@ -14,13 +14,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../../common/init-start-env/init-start-env.md"
     },
     {
-      "title": "Database Vault (DV)",
+      "title": "Lab 2: Database Vault (DV)",
       "description": "In this lab you can see how to leverage Oracle Database Vault (DV)",
       "publisheddate": "10/20/2020",
       "filename": "../../database-vault/database-vault.md"
