@@ -71,4 +71,4 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
   - **Contributors** -  
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
