@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
+In this tutorial you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
 
 Estimated time: 15-minutes
 
@@ -16,7 +16,7 @@ The App component also maintains the following states:
 
 - "isLoading" is true when waiting for the backend to return the list of items. We use this state to display a spinning wheel while loading.
 
-- "isInserting" is true when waiting for the backend to process a newly inserted item. The **Ad** button will display a spinning wheel during this time.
+- "isInserting" is true when waiting for the backend to process a newly inserted item. The **Add** button will display a spinning wheel during this time.
 
 - "error" stores the error messages received during the API calls.
 
@@ -39,11 +39,11 @@ In this tutorial, you will:
     ```
     <copy>npm --version</copy>
     ```
-3. if `npm` is not inalladed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
+3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
 
 4. Make sure `Go lang` is installed.
 
-    `go version` -> `go version go1.15.2 darwin/amd64`
+    `go version` shows `go version go1.15.2 darwin/amd64`
 
     ```
     <copy>go version</copy>
@@ -86,22 +86,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 		https://bit.ly/3evGlEo
 
 6. Update API_LIST in API.js:
-6.1. Navigate to thnw `frontend/src` directory
+6.1. Navigate to the `frontend/src` directory
 		```bash
 		<copy>cd frontend/src</copy>
 		```
 6.2. In the Oracle Cloud Console, navigate to **Developer Services** and select **API Management**
-	- Click your gateway and go to **Deployment**.
-	- Copy the endpoint.
-	- Paste the endpoint as the value of API_LIST and append **/todolist**.
+6.3. Click your gateway and go to **Deployment**.
+6.4. Copy the endpoint.
+6.5. Paste the endpoint as the value of API_LIST and append **/todolist**.
 
 		For example, const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
-  	- Save the modified API.js file.
+6.6. Save the modified API.js file.
 
 ## Task 2: Run in Dev Mode then Build for Production
 
-1. In the project directory, run the app in the development mode <br />:
+1. In the project directory, run the app in the development mode <br />.
 
 	```bash
 	<copy>npm start</copy>
@@ -134,12 +134,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Task 3: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
-**Object Storage** and then select **Object Storage**.
+**Storage** then select **Object Storage**.
 
-2. Create the **mtdrworkshop** bucket.
+2. Create the **mtdrworkshop** bucket in your root compartment.
 
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
-   bucket with folder hierarchies.
+   bucket while preserving folder hierarchies.
 
 	3.1. Execute `git clone https://github.com/maxjahn/staci.git`.
 
