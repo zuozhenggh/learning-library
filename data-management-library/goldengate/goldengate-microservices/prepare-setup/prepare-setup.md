@@ -28,6 +28,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 22             | SSH                                   |
 | 443            | NGINX Proxy (https)                   |
 | 16000          | GGMA Admin Server                     |
+| 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network

@@ -30,6 +30,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 22             | SSH                                   |
 | 80             | GGSA Console (http)                   |
 | 443            | GGSA Console (https)                  |
+| 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
