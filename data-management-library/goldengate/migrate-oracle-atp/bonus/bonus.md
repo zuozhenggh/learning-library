@@ -91,7 +91,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/2.apex_14.PNG)
 
-9. Provide **HR** user and password to log in to the application.
+9. Provide **HR** user and **GG##lab12345** password to log in to the application.
 
     ![](images/2.apex_15.PNG)
 
