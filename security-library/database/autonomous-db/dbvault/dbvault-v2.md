@@ -1,4 +1,4 @@
-# Oracle Database Vault (DV)
+# Oracle Database Vault on Autonomous DB
 
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features in an Autonomous Database to prevent unauthorized privileged users from accessing sensitive data.
@@ -7,7 +7,7 @@ Managed database services run the risk of 'Admin snooping', allowing privileged 
 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. Through the runtime analysis of privileges and roles, you can increase the security of existing applications by implementing least privileges and reducing the attack profile of your database accounts. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
 
-*Estimated Lab Time:* 35 minutes
+*Estimated Time:* 35 minutes
 
 *Version tested in this lab:* Oracle Autonomous Data Warehouse (ADW) 19c
 
@@ -188,7 +188,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
           ![](./images/adb-dbv_011.png " ")
 
-          **Note:** These 3 users can see the HR.CUSTOMERS table!
+       - **These 3 users can see the HR.CUSTOMERS table!**
 
 2. Now, let's create a realm to secure HR tables by executing this query below as "**DBV_OWNER**" user. So, please **open a 4th web-browser window using the "Incognito mode"!**
 
@@ -263,7 +263,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
           ![](./images/adb-dbv_016.png " ")
 
-       **Note:** No one can access on it with a "insufficient privileges" error, even the DBA user (ADMIN) and the owner (HR)!
+       - **No one can access on it with a "insufficient privileges" error, even the DBA user (ADMIN) and the owner (HR)!**
 
 5. Now, go back to your window logged as "**DBV_OWNER**" user and make sure you have an authorized application user (APPUSER) in the realm by executing this query
 
@@ -303,7 +303,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
           ![](./images/adb-dbv_011.png " ")
 
-      **Note:** APPUSER must be the only user who has access to the table from now!
+       - **APPUSER must be the only user who has access to the table from now!**
 
 ## Task 3: Create an Audit Policy to Capture Realm Violations
 
@@ -322,7 +322,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_018.png " ")
 
-    **Note:** It should be empty
+    **Note:** It should be empty!
 
 2. Create an audit policy on the DV realm `PROTECT_HR` created earlier in Step 2
 
@@ -341,9 +341,17 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    ![](./images/adb-dbv_019.png " ")
 
 
-3. Like in Step 2, to demonstrate the effects of the audit, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
+3. Like in Step 2, let's see now the effects of the audit
+
+    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-    **Note: Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence open each of your sessions in a separate browser window the "Incognito mode"!**
+       **Note:**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
+    
+             ````
+             <copy>WElcome_123#</copy>
+             ````
 
     - Copy/Paste and execute the following query
 
@@ -367,7 +375,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        ![](./images/adb-dbv_011.png " ")
 
-    **Note:** ADMIN and HR users cannot access the HR.CUSTOMERS table and should generate an audit record of their failed attempt to violate policy!
+       - **ADMIN and HR users cannot access the HR.CUSTOMERS table and should generate an audit record of their failed attempt to violate policy!**
 
 4. Review realm violation audit trail in SQL Worksheet as "**ADMIN**" user
 
@@ -460,9 +468,19 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_023.png " ")
 
-3. Like in Step 2, to demonstrate the effects of the simulation, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
+3. Like in Step 2, let's see now the effects of the simulation
+
+    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
-    **Note: Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence open each of your sessions in a separate browser window using the "Incognito mode"!**
+       **Note:**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
+    
+             ````
+             <copy>WElcome_123#</copy>
+             ````
+
+
 
     - Copy/Paste and execute several time the following SELECT query to HR.COUNTRIES table
 
@@ -484,7 +502,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        ![](./images/adb-dbv_026.png " ")
 
-    **Note:** All the users can access the HR.CUSTOMERS table!
+       - **All the users can access the HR.CUSTOMERS table!**
       
 4. Now, we query the simulation log again as "**ADMIN**" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
 
@@ -497,7 +515,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_027.png " ")
 
-    **Note**:
+    **Note:**
       - Although each user can see the results, the log shows all users who selected and would have been blocked by the rule
       - It also shows where they connected from and what client they used to connect
 
@@ -513,7 +531,6 @@ You may also want to capture an audit trail of unauthorized access attempts to y
       </copy>
       ````
 
-    **Note:**
    ![](./images/adb-dbv_028.png " ")
 
       ````
@@ -570,7 +587,9 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_032.png " ")
 
-4. Now, Database Vault is correctly disabled and you may now [proceed to the next lab](#next).
+4. Now, Database Vault is correctly disabled!
+
+You may now [proceed to the next lab](#next).
 
 ## **Appendix**: About the Product
 ### **Overview**

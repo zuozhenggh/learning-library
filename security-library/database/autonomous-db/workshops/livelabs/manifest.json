@@ -9,7 +9,7 @@
     "filename": "../../intro/intro.md"
   },
   {
-    "title": "Getting Started",
+    "title": "Get Started",
     "description": "Get a Free Trial",
     "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
   },
@@ -21,7 +21,7 @@
   },
   {
     "title": "Lab 1: Database Vault (DV)",
-    "description": "In this lab you can see how to leverage Oracle Database Vault (DV)",
+    "description": "In this lab you can see how to leverage Oracle Database Vault on Autonomous DB",
     "publisheddate": "09/01/2021",
     "filename": "../../dbvault/dbvault.md"
   },

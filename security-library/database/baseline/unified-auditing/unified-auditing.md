@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the functionality of Oracle Unified Auditing. It gives the user an opportunity to learn how to configure this feature to audit the database activity.
 
-*Estimated Lab Time:* 35 minutes
+*Estimated Time:* 35 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
