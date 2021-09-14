@@ -42,20 +42,9 @@ To configure Database Row Partitioning:
       ![](./images/1_DB.png " ")
 
 4. Select the source and target partitions from **Source Table Partitions** and **Target Table Partitions**:
-    * Source Table Partitions:
-      ```
-      <copy>
-      SALES_Q1_2006
-      </copy>
+    * Source Table Partitions: **SALES\_Q1\_2006**
 
-      ```
-    * Target Table Partitions:
-    ```
-    <copy>
-    SALES_Q1_2006
-    </copy>
-
-    ```
+    * Target Table Partitions: **SALES\_Q1\_2006**
 
       ![](./images/2_DB.png " ")
 
@@ -67,8 +56,10 @@ To configure Database Row Partitioning:
 
 
     ![](./images/4_DB.png " ")
-7. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
-Notice the compare pairs that have been generated with Database Row Partition
+7. Click **Save** to save the generated compare pair.
+
+  The control moves to the **Existing Compare Pairs** tab.
+  Notice the compare pairs that have been generated with Database Row Partition.
 
     ![](./images/5_DB.png " ")
 

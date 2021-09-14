@@ -52,7 +52,9 @@ To configure Automatic Row Partitioning:
 
     ![](./images/3_AP.png " ")
 
-7. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
+7. Click **Save** to save the generated compare pair.
+
+  The control moves to the **Existing Compare Pairs** tab.
   Notice the compare pairs that have been generated with Automatic Row Partition.
 
     ![](./images/4_AP.png " ")

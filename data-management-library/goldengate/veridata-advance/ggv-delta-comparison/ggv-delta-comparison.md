@@ -19,34 +19,18 @@ During the subsequent runs of a comparison job, the comparison of the tables can
 Enter:
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
-    * Source Table:
-    ```
-    <copy>
-    DELTA_TEST1
-    </copy>
+    * Source Table: **DELTA\_TEST1**
+    * Target Table: **DELTA\_TEST1**
 
-    ```
-    * Target Table:
-    ```
-    <copy>
-    DELTA_TEST1
-    </copy>
-
-    ```
     ![](./images/1DP.png " ")
 4. Click **Generate Compare Pair**.
     ![](./images/2DP.png " ")
 5. Click **Save** to save the generated compare pairs on the **Preview** tab.
-6. Click the **Existing Compare Pairs** tab, select the Compare Pair
-      ```
-      <copy>
-      DELTA_TEST1=DELTA_TEST1
-      </copy>
-      ```
-      and click **Edit** under **Column Mapping**.
-    ![](./images/3DP.png " ")
+6. Click the **Existing Compare Pairs** tab, select the Compare Pair **DELTA\_TEST1=DELTA\_TEST1** and click **Edit** under **Column Mapping**.
 
-7.  Click the **Delta Processing** tab, select the **Enable Delta Processing** check box, and then click **Save**.
+      ![](./images/3DP.png " ")
+
+7.  Click the **Delta Processing** tab, check the **Enable Delta Processing** check box, and then click **Save**.
 
     ![](./images/3DP_selectEnableDelta.png " ")
 
@@ -57,18 +41,15 @@ Enter:
     Delta Processing is enabled. Notice the orange triangular icon next to the compare pairs on the **Existing Compare Pairs** tab:
     ![](./images/6DP.png " ")
 
-9.  Create a job with the following name:
-  ```
-  <copy>
-  Job_Delta_Processing
-  </copy>
+9.  Create a job and add the previously configured group to the job.
 
-  ```
-10. Click **Run/Execute Job** to run this job. To insert screen:
+10. Click **Run/Execute Job** to run the job. Select the job you just created from the **Job** drop-down list, click **Retrieve Compare Pair List**, and then click **Run Job**.
 
-11. Click **Out-of-Sync** link (later we need to add the number).
+    ![](./images/12DP.png " ")
 
-     ![](./images/7DP.png " ")
+11. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you ran now. out-of-sync:1 to be highlighted.
+
+     ![](./images/13DP.png " ")
 
     Note that for the 1st job run, the **Out-of-Sync is 800 rows with 800-Inserts**. Next, let's insert 5 more **Inserts** to the source database from the Terminal.
 
@@ -86,6 +67,7 @@ Enter:
       * **User Name**: source
       * **Password**: source
 15. Enter the following INSERT query:
+
       ```
       <copy>
       insert into delta_test1 values ('2000',2000);
@@ -97,37 +79,33 @@ Enter:
 
       </copy>
      ```
-    Next, go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs.
+16. Press Enter.
+      Next, go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs.
 
-16.  In the **Run/Execute Job** page, select
-      ```
-      <copy>
-      Job_Delta_Processing
-      </copy>
-      ```
-from the **Job** drop-down list and click **Retrieve Compare Pair List**.
+17.  In the **Run/Execute Job** page, select **Job\_Delta\_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.   
 
-17. Click **Select...** under **Delta Base Time** to select the delta-base time from the list to perform delta processing.
+18. Click **Select...** under **Delta Base Time** to select the delta-base time from the list to perform delta processing.
 
       ![](./images/8DP.png " ")
 
-18. In the **Delta Base Time Selection** page, select **Base Time** and then click **Select**.
+19. In the **Delta Base Time Selection** page, select **Base Time** and then click **Select**.
 
       ![](./images/9DP.png " ")
 
-19. Notice the Delta Base Time has been updated to the time slot selected in the previous step.
+20. Notice the Delta Base Time has been updated to the time slot selected in the previous step.
 
     ![](./images/10DP.png " ")
 
-20. Run the Job.
+21. Run the Job.
 
-    To add a screen showing Finished Jobs status.
+22. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you ran now.
 
-21. Click **Out-of-Sync** link (number to be included later).    
 
       ![](./images/11DP.png " ")
 
 Now, Out-of-Sync is 6 Rows with 6 Inserts (1+delta).
+
+      ![](./images/14DP.png " ")
 
 ## Want to Learn More?
 * [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)
