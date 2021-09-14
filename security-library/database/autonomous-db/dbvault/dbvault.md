@@ -32,7 +32,7 @@ This lab assumes you have:
 | 2 | Create a Simple Realm | 10 minutes |
 | 3 | Audit Policy to Capture Realm Violations | 5 minutes |
 | 4 | Simulation Mode | 10 minutes |
-| 5 | Disabling Database Vault | <5 minutes |
+| 5 | Disable Database Vault | <5 minutes |
 
 ## Task 1: Enable Database Vault
 
@@ -539,7 +539,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    ![](./images/adb-dbv_029.png " ")
 
 
-## Task 5: Disabling Database Vault
+## Task 5: Disable Database Vault
 
 1. Log as "**ADMIN**" user and disable DB Vault on the Autonomous Database
 
