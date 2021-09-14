@@ -1,204 +1,202 @@
-# Setup Dev Environment
+# Setup the development environment
 
 ## Introduction
 
-In this  lab, you will configure your development environment and collect information that will be used later throughout this workshop.
+In this tutorial, you will configure your development environment and collect information that will be used later throughout this workshop.
 
 Estimated time: 30 minutes
 
 ### Objectives
 
-* Launch Cloud Shell
+* Launch the Cloud Shell
 * Download the workshop code and scripts from GitHub
-* Set up an OCI Compartment and install a two nodes OKE cluster
-* Create the ATP database, the user schema and a database table
+* Set up an Oracle Cloud Infrastructure (OCI) Compartment and install a two nodes Oracle Kubernetes Engine (OKE) cluster
+* Create an Oracle Autonomous Transaction Procesing database, the user schema, and a database table
 * Install GraalVM  
-* Create an OCI Registry and Auth key
+* Create an OCI Registry and an authentication key
 * Access OKE from the Cloud Shell
 
 ### Prerequisites
 
-- This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
+* This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
 ## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHup repository
 
-1. Launch Cloud Shell
+1. Launch the Cloud Shell
 
-  The Cloud Shell is a small virtual machine running a Bash shell which you access through the OCI Console. It comes with a pre-authenticate CLI pre-installed and configured so you can immediately start working in your tenancy without having to spend time on installation and configuration!
+    The Cloud Shell is a small virtual machine running a Bash shell that you access through the OCI Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
 
-  Click the Cloud Shell icon in the top-right corner of the Console.
-  ![](images/7-open-cloud-shell.png " ")
+2. Click the Cloud Shell icon in the top-right corner of the Console.
+    ![Cloud Shell](images/7-open-cloud-shell.png " ")
 
-2. Clone the GitHub repo and move up the `mtdrworkshop` directory.
+3. Clone the GitHub repo and move up the `mtdrworkshop` directory.
 
-    ````
+```bash
     <copy>
     git clone https://github.com/oracle/oci-react-samples.git
     </copy>
-    ````
+```
 
-    ````
+```bash
     <copy>
     cd ~/oci-react-samples; mv mtdrworkshop ..
     </copy>
-    ````
+```
+
+  ![clone](images/clone.png " ")
 
   ![](images/clone.png " ")
 
   You should now see `mtdrworkshop` in your root directory
 
-3. Change to `mtdrworkshop` directory.
+4. Change to `mtdrworkshop` directory.
 
-	````
-	<copy>
-	cd ~/mtdrworkshop
-	</copy>
-	````
+```bash
+    <copy>
+    cd ~/mtdrworkshop
+    </copy>
+```
 
-4. Set the execution mode for all Shell scripts.
+5. Set the execution mode for all Shell scripts.
 
-    ```
+```bash
     <copy>chmod +x *.sh */*.sh</copy>
-    ```
+```
 
-	NOTE: THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY.
+    **Note:** 
+    * The Cloud shell will disconnect after a certain period of inactiity.
+    * If you are disconnected or logged off and return to Cloud shell, make sure you are back in the ~/mtdrworkshop directory.
 
-	IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
 
 ## Task 2: Create an OCI compartment and an OKE cluster in that compartment
 
- 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity & Security> Compartments**.
+ 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select **Identity & Security** then select  **Compartments**.
 
-  	![](images/15-identity-compartments.png " ")
+  	![Compartment](images/15-identity-compartments.png " ")
 
  2. Click **Create Compartment** with the following parameters then click **Create Compartment**:
 
-	- Compartment name: `mtdrworkshop`
-	- Description: `My ToDo React workshop compartment`
+ * Compartment name: `mtdrworkshop`
+ * Description: `My ToDo React workshop compartment`
 
-    ![](./images/16-create-compartment.png " ")
+    ![Create Compartment](./images/16-create-compartment.png " ")
 
-    ![](images/17-create-compartment2.png " ")
+    ![Create Compartment Cont.](images/17-create-compartment2.png " ")
 
-  3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
+ 3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
 
-    ![](images/19-compartment-name-ocid.png " ")
+    ![compartment-name-ocid](images/19-compartment-name-ocid.png " ")
 
-    ![](images/20-compartment-ocid.png " ")
+    ![compartment-ocid](images/20-compartment-ocid.png " ")
 
   4. Go back into your cloud shell and verify you are in the `~/mtdrworkshop` directory.
 
   5. Run `./setCompartmentId.sh <COMPARTMENT_OCID> <REGION_ID>` where your `<COMPARTMENT_OCID>` and `<REGION_ID>` values are set as arguments.
 
-      For example:
+    For example:
 
        `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`
 
-       ![](images/compartmentid.png " ")
+       ![compartment id](images/compartmentid.png " ")hi
 
-  6.  To create an OKE cluster, return to the OCI console and open up the hamburger button in the top-left corner of the Console and go to **Developer Services > Kubernetes Clusters (OKE)**.
+  6.  To create an OKE cluster, return to the OCI console and open up the navigation menu in the top-left corner of the Console and go to **Developer Services** and select **Kubernetes Clusters (OKE)**.
 
-    ![](images/27-dev-services-oke.png " ")
+    ![OKE Service](images/27-dev-services-oke.png " ")
 
   7. Make sure you are in the newly created compartment and click **Create Cluster**.
-     (Please use the default schema in the unlikely situation that the newly created compartment is not quickly visible on the left pickler)
-    ![](images/28-create-oke.png " ")
+    (Please use the default schema in the unlikely situation that the newly created compartment is not quickly visible on the left menu.)
+    ![Create OKE](images/28-create-oke.png " ")
 
-  8. Choose **Quick Create** as it will create the new cluster along with the new network resources such as Virtual Cloud Network (VCN), Internet Gateway (IG), NAT Gateway (NAT), Regional Subnet for worker nodes, and a Regional Subnet for load balancers. Click **Launch Workflow**.
+  8. Click **Quick Create** because it will create the new cluster along with the new network resources such as virtual cloud network, internet gateway, NAT Gateway (NAT), regional subnet for worker nodes, and a regional subnet for load balancers. Click **Launch Workflow**.
 
-    ![](images/29-create-oke-wizard.png " ")
+    ![OKE Wizard](images/29-create-oke-wizard.png " ")
 
   9. Change the name of the cluster to `mtdrworkshopcluster`, accept all the other defaults, and click **Next** to review the cluster settings.
 
-    ![](images/mtdrworkshopcluster.png " ")
+    ![mtdrworkshopcluster](images/mtdrworkshopcluster.png " ")
 
 
-  10. Once reviewed click **Create Cluster**, and you will see the resource creation progress.
+    ![create OKE wizard](images/31-create-oke-wizard3.png " ")
 
-    ![](images/31-create-oke-wizard3.png " ")
+  11. Close the window once you can.
 
-  11. Close the creation window once you can.
+    ![close cluster](images/32-close-cluster-create.png " ")
 
-    ![](images/32-close-cluster-create.png " ")
+  12. Once launched, it usually takes 5 to 10 minutes for the cluster to be fully provisioned and the **Cluster Status** should show as **Active**.
 
-  12. Once launched it should usually take around 5-10 minutes for the cluster to be fully provisioned and the Cluster Status should show Active.
+    ![click cluster name](images/33-click-cluster-name.png " ")
 
-    ![](images/33-click-cluster-name.png " ")
+    ![copy cluster](images/34-copy-cluster-id.png " ")
 
-    ![](images/34-copy-cluster-id.png " ")
+    There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kubeconfig to access it in a later step.
 
-    There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step.
 
+## **Task 3**: Create the Oracle Autonomous Processing database, TODOUSER and the TODOITEM table
 
 ## Task 3: Create the ATP database, TODOUSER and the TODOITEM table
 
-1. Open up the hamburger menu in the top-left corner of the Console and select **Autonomous Transaction Processing**.
+3. Set the **Compartment, Display Name** and **Database Name**.
 
-    ![](images/menu-autonomous.png " ")
+ 3.1. Set the workload type to **Transaction Processing**.
+ 3.2. Accept the default Deployment Type **Shared Infrastructure**.
 
-2. Click on **Create Autonomous Database**.
+    ![ATP-config-1](images/ATP-config-1.png " ")
 
-    ![](images/create-autonomous.png " ")
+4. Set the **ADMIN password, Network Access Type** and **License Type**
 
-3. Set **Compartment, Database Name and Display Name**.
-   
-	- Set the workload type to "Transaction Processing".
-	- Accept the default Deployment Type "Shared Infrastructure".
-   
-   ![](images/ATP-config-1.png " ")
+ * Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
+  Please note the ADMIN password; it will be required later.
+ * Set the **Access type** to **Allow secure access from specific IPs and VCNs**.
+ * Set the license type to **Bring Your Own License (BYOL)** (does not matter for this workshop)
+ * Click **Create Autonomous Database**
 
-4.  Set **ADMIN password, Network Access Type and License Type**
-   
-	- Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
-		Please note the ADMIN password; it will be required later.
-	- Set the Network Access type to "Allow secure access from specific IPs an VCNs".
-	- Set the license type to "Bring Your Own License (BYOL)" (does not matter for this workshop)
-	- Click on "Create Autonomous Database"
+    ![ADB setup](images/ADB-setup.png " ")
 
-   ![](images/ADB-setup.png " ")
+Note: The database creation will take a few minutes.
 
-	The database creation will take a few minutes.
-
-5. Populate mtdrworkshopdbid.txt with the database OCID
+5. Populate mtdrworkshopdbid.txt with the database OCID.
   
-  	- Create  the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
-		```
-		<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
-		```
+   * Create  the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
+  ```bash
+  <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
+  ```
 
-  	- Copy the OCID of the newly created database from the Cloud console and
+   * Copy the OCID of the newly created database from the Cloud console and
     add it into `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
 
-    ![](images/42-copy-atp-ocids2.png " ")
+    ![copy atp ocids](images/42-copy-atp-ocids2.png " ")
 
-6. Generate the Wallet for your ATP Connectivity
+6. Generate the wallet for your Autonomous Transaction Processing connectivity.
 
-	- Still in Cloud Shell, make sure you are in the
-		`~/mtdrworkshop/setup-dev-environment` directory.
+ * Still in Cloud Shell, make sure you are in the
+  `~/mtdrworkshop/setup-dev-environment` directory.
 
-	- Copy the following command and replace $OCID by the
+ * Copy the following command and replace $OCID with the
      copied OCID.
 
-		```
-		<copy>./generateWallet.sh $OCID</copy>
-		```
-    - Execute generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....
+  ```bash
+  <copy>./generateWallet.sh $OCID</copy>
+  ```
 
-    You will be requested to enter a password for wallet encryption, this is separate for the ADMIN password but you could reuse the statement.
+    * Execute generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....
+
+    You will be requested to enter a password for wallet encryption, this is separate from the ADMIN password but you could reuse the same.
     A wallet.zip file will be created in the current directory.
 
+7. Create the TODOUSER using sql utility in Cloud Shell.
 
-
-7. Create TODOUSER using sql utility in Cloud shell
-
-	- Stay in mtdrwokshop/setup-dev-environment directory and launch
-		sql with /nolog option
+* Stay in the mtdrwokshop/setup-dev-environment directory and launch
+  sql with /nolog option.
 
       ```
       <copy>sql /nolog</copy>
       ```
 
-	  ![](images/SQLCl-Cloud-Shell.png " ")
+      ```
+      <copy>sql /nolog</copy>
+      ```
+
+	  ![SQLcl](images/SQLCl-Cloud-Shell.png " ")
 
 	- Point the tool at your wallet.zip file
 
@@ -212,8 +210,7 @@ Estimated time: 30 minutes
 
      ![](images/Show-tns.png " ")
 
-     - Connect to mtdrdb_tp service, as database ADMIN user (remember the
-       password given to ADMIN above)
+* Connect to mtdrdb_tp service as database ADMIN user (remember the password given to ADMIN above).
 
       ```
       <copy>connect ADMIN@mtdrdb_tp</copy>
@@ -221,35 +218,45 @@ Estimated time: 30 minutes
 
      ![](images/connect.png " ")
 
-      - Create TODOUSER (replace <password> by a strong password).
+     ![connect](images/connect.png " ")
 
-        ```
+* Create TODOUSER with **<password>** replaced by a strong password.
+
+        ```sql
         <copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
         ```
 
-     ![](images/create-user.png " ")
+     ![create user](images/create-user.png " ")
 
        - Grant some privileges to TODOUSER by executing the following command
         
         ```
         <copy>grant create session, create view, create sequence, create procedure, create table, create trigger, create type, create materialized view to todouser;</copy>
         ```
+* Connect as TODOUSER.
+    SQL> connect todouser@mtdrdb_tp
+
+     ![grant](images/grant.png " ")        
 
      ![](images/grant.png " ")        
 
       - Connect as TODOUSER
 
-        ```
+        ```bash
         <copy> connect todouser@mtdrdb_tp</copy>
         ```
 
      ![](images/connect-todouser.png " ")
 
-      - Create TODOITEM table
+        ```bash
+        <copy> connect todouser@mtdrdb_tp</copy>
+        ```
 
-         Copy the following command in the Worksheet and execute.
-         
-         ```
+     ![connect todouser](images/connect-todouser.png " ")
+
+Copy and paste the following command in the worksheet and execute it.
+
+```sql
          <copy>CREATE TABLE todoitem (
            id NUMBER GENERATED ALWAYS AS IDENTITY,
            description VARCHAR2(4000),
@@ -257,15 +264,17 @@ Estimated time: 30 minutes
            done NUMBER(1,0),
            PRIMARY KEY (id)
           );</copy>
-         ```
+```
+
+     ![create-table](images/create-table.png " ")
 
      ![](images/create-table.png " ")
 
       - Insert the first row, manually into TODOITEM table
         
-        ```
+        ```sql
         <copy>insert into todoitem  (description) values ('Manual item insert');</copy>
-        ```
+      ```
 
       Then commit the inserted row
         
@@ -274,81 +283,83 @@ Estimated time: 30 minutes
         ```
      ![](images/commit-complete.png " ")
 
-## Task 4: Create an OCI Registry and Auth key
+## Task 4: Create an OCI Registry and a pre-authentication key
 
-You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. The Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
+You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an Auth key. The OCI Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
-1. Open up the hamburger menu in the top-left corner of the console and go to **Developer Services > Container Registry**.
+1. Open up the navigation menu in the top-left corner of the console and go to **Developer Services** and select **Container Registry**.
 
-  ![](images/21-dev-services-registry.png " ")
-
+    ![Registry](images/21-dev-services-registry.png " ")
 
 2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
 
-  ![](images/22-create-repo.png " ")
+2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
 
-3. 	Click **Create Repository** , specify the following details for your new repository, and click **Create Repository**.
-	- Repository Name: `<tenancy name>/mtdrworkshop`
-		- Access: `Public`
+3. Click **Create Repository**, specify the following details for your new repository, and click **Create Repository**.
+    * Repository Name: `<tenancy name>/mtdrworkshop`
+    * Access: `Public`
 
-  ![](images/create-repository.png " ")
+  ![create repository](images/create-repository.png " ")
+
+  ![create repository](images/create-repository.png " ")
 
   	Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments
-		```
+		```bash
 		<copy>./addOCIRInfo.sh <namespace> <repository_name></copy>
 		```
   	For example `./addOCIRInfo.sh axhpdrizd2ai treehacks01/mtdrworkshop`
 
-  ![](images/add-info.png " ")
+  ![add info](images/add-info.png " ")
 
-4. You will now create the Auth token by going back to the User Settings page. Click the Profile icon in the top-right corner of the Console and select **User Settings**.
+5. You will now create the authentication token by going back to the User Settings page. Click the Profile icon in the top-right corner of the Oracle Cloud Console and select **User Settings**.
 
-  ![](images/23-user-settings.png " ")
+    ![user settings](images/23-user-settings.png " ")
 
-5. Scroll down, click on **Auth Tokens** and select **Generate Token**.
+5. Scroll down, click **Auth Tokens** and select **Generate Token**.
 
-  ![](images/24-gen-auth-token.png " ")
+    ![gen auth token](images/24-gen-auth-token.png " ")
 
-6. In the description type `mtdrworkshoptoken` and click **Generate Token**.
+7. In the **Description** field, type `mtdrworkshoptoken` and click **Generate Token**.
 
-  ![](images/25-gen-auth-token2.png " ")
+    ![gen auth token](images/25-gen-auth-token2.png " ")
 
-7. Copy the token value.
+8. Copy the token value.
 
-  ![](images/26-save-auth-token.png " ")
+    ![save auth token](images/26-save-auth-token.png " ")
 
-8. Go to Cloud Shell, at the workshop root directory and run the
-   dockerLogin.sh scripts ...
- `./dockerLogin.sh  <USERNAME> "<AUTH_TOKEN>"` where
+9. Go to Cloud Shell, at the workshop root directory and run the
+   dockerLogin.sh scripts:
+     `./dockerLogin.sh  <USERNAME> "<AUTH_TOKEN>"` where
 
-	* `<USERNAME>` - is the username used to log in (typically your email address). If your username is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your username, for example `oracleidentitycloudservice/firstname.lastname@something.com`
+ * The `<USERNAME>`: the user name used to log in (typically your email address). If your user name is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your user name, for example, `oracleidentitycloudservice/firstname.lastname@something.com`
 
-	* `"<AUTH_TOKEN>"` - paste the generated token value and enclose the value in quotes.
+ * `"<AUTH_TOKEN>"`: paste the generated token value and enclose the value in quotes.
 
-	For example `dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
+     For example, `dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 
-9. Once successfully logged into Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
+10. Once successfully logged into the Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
 
-    ```
+    ```bash
     <copy>docker images </copy>
     ```
 
 ## Task 5: Install GraalVM in Cloud Shell
 
- We will be using JDK 11 in Cloud Shell to build the Java/Helidon image
-1.  Set some environment variables and run the following commands
+ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build the Helidon image.
 
-    ```
+1. Set some environment variables and run the following commands
+
+    ```bash
     <copy>export MTDRWORKSHOP_LOCATION=~/mtdrworkshop</copy>
     ```
-    
-    ```
+
+    ```bash
     <copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
     ```  
-   
-   	Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
-		
-      ```
+
+    Make sure to be in mtdrwokshop/setup-dev-environment directory then execute the following script
+  
+      ```bash
       <copy>./installGraalVM.sh</copy>
       ```
 
@@ -356,17 +367,18 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
-    ```
+    ```bash
     <copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
     ```
 
-2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
+2. Navigate to **Developer Services** and select  **Kubernetes Clusters (OKE)**
 
-    ![](images/27-dev-services-oke.png " ")
+    ![dev services oke](images/27-dev-services-oke.png " ")
 
-3. Copy the mdtrworkshopcluster id and paste into the newly created file
-  ![](images/mtdrworkshop-cluster-id.png " ")
+    ![dev services](images/27-dev-services-oke.png " ")
 
+3. Copy the **mdtrworkshopcluster** ID and paste it into the newly created file.
+  ![mtdrworkshop cluster id](images/mtdrworkshop-cluster-id.png " ")
 
 4. Run `./verifyOKEAndCreateKubeConfig.sh`
 
@@ -374,38 +386,36 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     <copy>./verifyOKEAndCreateKubeConfig.sh</copy>
     ```
 
- Notice `/.kube/config` is created for the OKE cluster.
+    >**Note** `/.kube/config` is created for the OKE cluster.
+    ![verify OKE]](images/verifyOKEOutput.png " ")
 
-  ![](images/verifyOKEOutput.png " ")
 
 ## Task 7: Configuring Network Security Rules
 1. The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
-2. Navigate to **Developer Services > Kubernetes Clusters (OKE)**
+2. Navigate to **Developer Services** then select **Kubernetes Clusters (OKE)**
 
-    ![](images/27-dev-services-oke.png " ")
+    ![dev services oke](images/27-dev-services-oke.png " ")
 
-   	- Click on the **mtdrworkshopcluster**
+   	- Click **mtdrworkshopcluster**
 
-3. Click on VCN Name
-  ![](images/VCN-name.png " ")
-4. Click on  the VCN named starting with oke-svclbsubnet-quick-mtdrworkshpcluster
-  ![](images/oke-svclbsubnet.png " ")
+4. Click the VCN named starting with **oke-svclbsubnet-quick-mtdrworkshpcluster**.
+  ![OKE svclbsubnet](images/oke-svclbsubnet.png " ")
 
-5. Click on the existing security list
-  ![](images/Add-security-lists.png " ")
+5. Click the existing security list.
+  ![add security](images/Add-security-lists.png " ")
 
-6. Add an Ingress Rule
-  Set the Destination CIDR  as indicated (leave other fields as is) then Click `Add Ingress Rules`
-  ![](images/Ingress-rule.png " ")
+6. Add an **ingress rule**.
+  Set the destination CIDR  as indicated (leave other fields as-is) and then Click **Add Ingress Rules**
+  ![ingress rule](images/Ingress-rule.png " ")
 
-7. Add an Egress Rule
-  Set Stateless and Destination CIDR as indicated in the image (leave other fields as-is) then Click `Add Egress Rules`  
-  ![](images/Egress-rule.png " ")
+7. Add an **egress rule**.
+  Set stateless and destination CIDR as indicated in the image (leave other fields as-is) and then Click **Add Egress Rules**  
+  ![egress rule](images/Egress-rule.png " ")
 
-Congratulations, you have completed lab 1; you may now [proceed to the next lab](#next).
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** -  - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
 * **Last Updated By/Date** - Kamryn Vinson, August 2021
