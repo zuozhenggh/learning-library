@@ -38,7 +38,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
     | Password | **`GG##lab12345`** |
     | Workspace Name | HR_APP |
 
-    _**NOTE:** Workspace ID will be automatically generated for you, ignore and click **Create Workspace**.
+    >**NOTE:** Workspace ID will be automatically generated for you, ignore and click **Create Workspace**.
 
     ![](images/1.workspace_0.PNG)
 
