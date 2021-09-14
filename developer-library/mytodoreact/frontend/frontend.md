@@ -73,17 +73,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	```bash
 	<copy>npm install</copy>
 	```
-	
-4. In case of errors, try the following command:
-	
-		```
-		<copy>npm audit fix --force</copy>
-		```
-	
+
+4. In case of errors, try the following command
+
+    ```bash
+	<copy>npm audit fix --force</copy>
+	```
+
 	>**Note**: ideally, the `npm -version` should be higher than  `6.14.x`  and `node version` higher than 14.16.x 
 	
-5. If `npm` version is inferior to 6.14.x then install the latest `node` using
-		https://bit.ly/3evGlEo
+5. If `npm` version is inferior to 6.14.x then install the latest `node` usinghttps://bit.ly/3evGlEo
 
 6. Update API_LIST in API.js:
 6.1. Navigate to the `frontend/src` directory
@@ -117,14 +116,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	3.1. Press **Ctrl-c** to cancel the developer mode executions.
 
-	3.2. Execute `npm run build`.
+	3.2. Execute `npm run build`
 
-		```bash
-		<copy>npm run build</copy>
-		```
+   ```bash
+   <copy>npm run build</copy>
+   ```
+
 	 `npm` correctly bundles React in production mode (in the build folder) and optimizes the build for best performance.
 
-    	![run build](images/Run-build.png " ")
+    ![run build](images/Run-build.png " ")
 
 	The build is minified and the file name include the hashes.<br />
 	Your app is ready to be deployed!
@@ -143,27 +143,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	3.1. Execute `git clone https://github.com/maxjahn/staci.git`.
 
-		```bash
-		<copy>git clone https://github.com/maxjahn/staci.git</copy>
-		```
+	```bash
+	<copy>git clone https://github.com/maxjahn/staci.git</copy>
+	```
 
 	3.2. Navigate to the **staci** directory
 
-		```bash
-		<copy>cd staci</copy>
-		```
+    ```bash
+    <copy>cd staci</copy>
+     ```
 
 	3.3. Execute `go get -d`.
 
-		```bash
-		<copy>go get -d</copy>
-		```
+     ```bash
+     <copy>go get -d</copy>
+     ```
 
 	3.4. Execute `go build`.
 
-		```bash
-		<copy>go build</copy>
-		```
+    ```bash
+    <copy>go build</copy>
+    ```
 
 4. Upload a static build into the bucket, using the staci binary.
 
@@ -179,7 +179,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You may now run the application from OCI Object Store, using the URL of the index that you've copied above.
 
-    ![MyToDo](images/MyToDo.png " ")
+![MyToDo](images/MyToDo.png " ")
 
 
 ## Acknowledgements
