@@ -175,7 +175,7 @@ At any point, you can go **Back** to the previous window or **Cancel** the insta
 
 	Click **Close** to exit Oracle Database Setup Wizard.
 
-If you have installed Oracle Database using Option 1, skip Option 2 and **proceed to the next lab**.
+ **Proceed to the next lab**.
 
 ## Task 2B: Install and Configure Oracle Database (Server Class)
 
