@@ -12,10 +12,11 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ggsa-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n0et2ROGw0W7FArTFQEUdzJ3UhXBWLbCMZ3buNxAtXRHgBiygUYxWxyTqH61pve9/n/natdsecurity/b/stack/o/ggsa-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+
+    - [ggsa-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n0et2ROGw0W7FArTFQEUdzJ3UhXBWLbCMZ3buNxAtXRHgBiygUYxWxyTqH61pve9/n/natdsecurity/b/stack/o/ggsa-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -52,5 +53,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
-
-
