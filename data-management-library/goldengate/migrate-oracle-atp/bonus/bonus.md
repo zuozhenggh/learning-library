@@ -15,7 +15,7 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. APEX applications are built on top of these database objects.
 
-## **Step 1**: Create an APEX workspace
+## **Task 1**: Create an APEX workspace
 In this part, you will create an APEX workspace in the target *Autonomous Transaction Processing* database. 
 
 1. You already have a pre-created APEX environment in Oracle Autonomous database but not configured. Open your Target ATP in web browser Click on **Tools** tab, in which you will see **Oracle Application Express** link. Click on **Open APEX** button.
@@ -59,7 +59,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
     ![](images/1.workspace_4.PNG) 
 
 
-## **Step 2**: Import HR app in APEX workspace
+## **Task 2**: Import HR app in APEX workspace
 
 1. After you successfully logged in to the newly created APEX workspace and updated the APEX password, you may explore that there are many components and tools included in the APEX workspace. Now let's import our HR application. Click on **App Builder** on the APEX workspace homepage.
 
@@ -95,7 +95,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/2.apex_15.PNG)
 
-## **Step 3**: Add work anniversaries in dashboard page
+## **Task 3**: Add work anniversaries in dashboard page
 
 1. Here is the sample HR application we created for you. We want you to click on the **Dashboard** at which you will see three charts in there. 
 
@@ -152,7 +152,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/3.cards_7.PNG)
 
-## **Step 4**: Create an employee maintenance page 
+## **Task 4**: Create an employee maintenance page 
 
 1. Probably have noticed that there is no page to edit employee details or add a new employee in our application. So let's create a page. Go to your APEX application home page. Find the **Create Page** button.
 
@@ -198,7 +198,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/4.update_row_3.PNG)
 
-## **Step 5**: Modify employee id
+## **Task 5**: Modify employee id
 
 1. Our Employees table doesn't have an automatic identity column to maintain *`employee_id`*. If you create an employee in APEX, it will insert a record without an employee ID. Let's fix this. Go to the application home page and click on **6 - Employee Maintenance**.
 
@@ -216,7 +216,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/5.maintenance_2.PNG)
 
-## **Step 6**: Duplicate the employee maintenance page
+## **Task 6**: Duplicate the employee maintenance page
 
 1. The **Employee Maintenance** page is for two purposes, _edit_ a record and _create_ a new record. Let's add a new page at which we can add new employees only. The idea to have another page is to delegate the tasks separately. Click on the **+** button and **Page as Copy** as shown in the below image.
 
@@ -264,7 +264,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
     
     Did you notice that some fields don't look meaningful? For example, **Job id**, **Manager id**, and **Department id**.  Let's change them to list names instead of IDs in the next step.
 
-## **Step 7**: List of Values
+## **Task 7**: List of Values
 
 1. Go back to APEX editor and let's edit **7 - Create new employee** page.
 
@@ -291,7 +291,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
 
     ![](images/6.popup_check.PNG)
 
-6. Repeat these sub-steps 2, 3, 4 on the **Employee Maintenance** page also! Because the employee maintenance page also needs this. Make sure you save it. After finish editing the **Employee Maintenance** page, run the application. Try to edit a record. The Employee Maintenance page will be looking like the one below.
+6. Repeat these tasks 2, 3, 4 on the **Employee Maintenance** page also! Because the employee maintenance page also needs this. Make sure you save it. After finish editing the **Employee Maintenance** page, run the application. Try to edit a record. The Employee Maintenance page will be looking like the one below.
 
     ![](images/6.popup_check_2.PNG)
 

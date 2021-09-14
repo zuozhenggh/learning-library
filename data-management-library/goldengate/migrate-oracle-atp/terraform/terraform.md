@@ -36,13 +36,13 @@ For a technical overview of this lab step, please watch the following video:
 * Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
-## **Step 1**: Open Cloud-Shell
+## **Task 1**: Open Cloud-Shell
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
 	![](/images/0.Prep_0.PNG)
 
-## **Step 2**: Clone Lab Repository
+## **Task 2**: Clone Lab Repository
 
 1. Let's begin our lab. First, we'll make a copy of the lab repository and go to the cloned directory. In your cloud-shell web terminal, issue the below commands.
 
@@ -57,7 +57,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/1.Git.PNG)
 
-## **Step 3**: Generate SSH keys 
+## **Task 3**: Generate SSH keys 
 
 1. Once the cloud shell environment is ready, issue the below 4 lines of commands. This will create the ssh key files and the api signing keys:
 
@@ -73,7 +73,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/0.Prep_1.PNG)
 
-## **Step 4**: Add Public API keys
+## **Task 4**: Add Public API keys
 
 1. Click on the top right corner of your OCI web console and then click on your **profile name**. 
 
@@ -95,7 +95,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/0.Prep_3.PNG)
 
-## **Step 5**: Terraforming
+## **Task 5**: Terraforming
 
 1. It is now time to initialize terraform. Run the below command to download necessary terraform files from the OCI provider.
 
@@ -115,7 +115,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 	
-	After you ran the apply command, terraform will start installation of several virtual machines and an autonomous database. Be patient, it will approximately take 6 to 10 minutes, as it is now creating Goldengate Service, source and target databases, also registrations of them in Goldengate deployment. During terraform script, if you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
+	After you ran the apply command, terraform will start installation of several virtual machines and an autonomous database. Be patient, it will approximately take 6 to 10 minutes, as it is now creating OCI GoldenGate, source and target databases, also registrations of them in Goldengate deployment. During terraform script, if you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
 	
 3. Make a copy of your output results in your notepad for later use.
 

@@ -31,7 +31,7 @@ We will do the below tasks:
 
 * This lab assumes that you completed all preceding labs.
 
-## **Step 1**: Log in to GoldenGate Deployment 
+## **Task 1**: Log in to OCI GoldenGate Deployment 
 
 1. Click the left-top hamburger icon, navigate to **Oracle Database** and choose **GoldenGate**. The page will list all available GoldenGate deployments. Click on **_`HOL_GG_Service`_**, this is what terraform has been created in the first lab.
 
@@ -47,7 +47,7 @@ We will do the below tasks:
 
 	You successfully have signed in GoldenGate Deployment Console.
 
-## **Step 2**: Source Database Configuration
+## **Task 2**: Source Database Configuration
 
 1.  You should see the empty Administration dashboard. Let's configure our source and target database for the extract and replication processes. Open the hamburger menu on the top-left corner, choose **Configuration**.
 
@@ -77,7 +77,7 @@ We will do the below tasks:
 
 	The result will verify that you have prepared seven tables for trandata instantiation in HR schema. These are necessary steps for the source database.
 
-## **Step 3**: Target Database Configuration
+## **Task 3**: Target Database Configuration
 
 1.  It is time to configure the target database. Similar to **Step 2**, click on **Connect to database. target19** icon in the available databases.
 
@@ -91,7 +91,7 @@ We will do the below tasks:
 
 4. Now let's go back to the Administration server overview, open the hamburger menu on the top-left corner, choose **Overview**.
 
-## **Step 4**: Configure Primary Extract at The Source Database.
+## **Task 4**: Configure Primary Extract at The Source Database.
 
 1. This is the first and primary extract, or should I say continuous extract process to initiate change data capture. In the administration server, click the **+** icon for adding the extract.
 
@@ -109,7 +109,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_3.png)
 
-5. GoldenGate Service created a draft parameter file for your convenience. Add the below line after the last line of the existing draft parameter:
+5. OCI GoldenGate created a draft parameter file for your convenience. Add the below line after the last line of the existing draft parameter:
 
 	```
 	<copy>
@@ -131,7 +131,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_5.png)
 
-## **Step 5**: Get the SCN from The Source Database
+## **Task 5**: Get the SCN from The Source Database
 
 1. Remember that we copied the terraform output? Go and find the IP address of `Source_DB_Public_IP` from your note and connect to the source database using sqlplus connection. Modify the below line with your IP address, then run in your cloud shell.
 	
@@ -157,7 +157,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_ext_scn.PNG)
 
-## **Step 6**: Configure the Initial-Load Extract at the Source Database.
+## **Task 6**: Configure the Initial-Load Extract at the Source Database.
 
 1. Let's go back to the GoldenGate deployment console. In the administration server, click the **+** icon for adding the extract. This is the second and initial-load extract, which will extract all rows in tables into a file.
 
@@ -196,9 +196,9 @@ We will do the below tasks:
 
 	_RECAP:_ So far, we have configured two extract processes. EXTPRIM is capturing change data and INITLOAD captured every row of the source seven tables. Now we need to create two replicat processes for these two extracts.
 
-## **Step 7**: Configure the Initial-Load Replicat at the Target Database.
+## **Task 7**: Configure the Initial-Load Replicat at the Target Database.
 
-1. The process for initial load replication is simple and easy to configure. There are four types of Replicats supported by GoldenGate Services. Go to the Replicat part and click on the **+** icon to create our replicat process on the overview page, 
+1. The process for initial load replication is simple and easy to configure. There are four types of Replicats supported by OCI GoldenGate. Go to the Replicat part and click on the **+** icon to create our replicat process on the overview page, 
 
 	![](/images/3.goldengate_repload_0.png)
 
@@ -222,7 +222,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repload_2_4.png)
 
-7. GoldenGate Service created a draft parameter file, replace the below line from the existing draft parameter:
+7. OCI GoldenGate created a draft parameter file, replace the below line from the existing draft parameter:
 
 	```MAP *.*, TARGET *.*``` 
 	
@@ -252,7 +252,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repload_report.png)
 
-## **Step 8**: Run Update Statement at The Source Database.
+## **Task 8**: Run Update Statement at The Source Database.
 
 1. Okay, now let's make some changes in the source database to make this migration closer to a real-life scenario. Open your cloud shell and run the below to enter the working directory.
 
@@ -276,7 +276,7 @@ We will do the below tasks:
 
 	![](/images/3.goldengate_repcont_update.png)
 
-## **Step 9**: Configure The Continuous Replicat at The Target Database.
+## **Task 9**: Configure The Continuous Replicat at The Target Database.
 
 1. Go to the Replicat part and click on the **+** icon to create our continuous replicat process on the overview page, 
 

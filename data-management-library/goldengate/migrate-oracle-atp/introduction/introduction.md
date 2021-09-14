@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this workshop, we will migrate the sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using the new cloud-native GoldenGate service. The purpose of this workshop is to show the simple and yet efficient way to migrate a database to Oracle Cloud. This workshop consists of 4 labs.  We will use the GoldenGate service for the database migration to designated resources in Oracle Cloud Infrastructure in the first three labs. in the last **Bonus** lab, we will create an HR application in APEX
+In this workshop, we will migrate the sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using the new cloud-native GoldenGate service (OCI GoldenGate). The purpose of this workshop is to show the simple and yet efficient way to migrate a database to Oracle Cloud. This workshop consists of 4 labs.  We will use the OCI GoldenGate for the database migration to designated resources in Oracle Cloud Infrastructure in the first three labs. in the last **Bonus** lab, we will create an HR application in APEX
 
 *Estimated total Workshop Time*: 1.5 hours
 
@@ -10,9 +10,9 @@ In this workshop, we will migrate the sample HR database application to an Auton
 
 We are about to migrate Oracle's famous sample schema HR to the Oracle Autonomous Database. This sample database schema will represent our on-premises source database and consists of multiple tables. 
 
-### About GoldenGate Service
+### About OCI GoldenGate
 
-Oracle Cloud Infrastructure (OCI) GoldenGate is a managed service providing a real-time data mesh platform, which uses replication to keep data highly available, and enabling real-time analysis. You can design, execute and monitor their data replication and stream data processing solutions without the need to allocate or manage compute environments, it is a fully managed service. Today we will explore its capabilities and migrate our source database to target.
+OCI GoldenGate is a managed service providing a real-time data mesh platform, which uses replication to keep data highly available, and enabling real-time analysis. You can design, execute and monitor their data replication and stream data processing solutions without the need to allocate or manage compute environments, it is a fully managed service. Today we will explore its capabilities and migrate our source database to target.
 
 ### About Autonomous Database
 
