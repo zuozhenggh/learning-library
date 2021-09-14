@@ -20,29 +20,33 @@ Estimated Time: 25 minutes
 
 ## Task 1: Create an Oracle NoSQL Table With the Console
 
-1. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Table' screen where you can create a table from the console.
+1. Please verify you are in the Phoenix region.
+
+    ![](./images/phoenix-location.png)
+
+2. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Table' screen where you can create a table from the console.
 
     ![](./images/nosql-tables.png)
 
-2. Click on 'Create Table' and the 'Create Table' screen appears.
+3. Click on 'Create Table' and the 'Create Table' screen appears.
 
     ![](./images/create-tables.png)
 
   This screen allows you to create tables in one of two different ways, either using simple input or using DDL input.  For this Lab we are going to use the simple input method.  
 
-3. The first thing you want to do is click the 'Always Free Configuration' toggle button.  This will create an always free table.   Each tenancy is allowed 3 always free tables.  Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage.  We have mentioned several times in this workshop that you want to be in the Phoenix region.  NoSQL always free tables are only available in the Phoenix region and you need to be in the correct region to use them.
+4. The first thing you want to do is click the 'Always Free Configuration' toggle button.  This will create an always free table.   Each tenancy is allowed 3 always free tables.  Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage. NoSQL always free tables are only available in the Phoenix region and you need to be in the correct region to use them.  The toggle button only shows up in the Phoenix region.
 
     ![](./images/always-free.png)
 
   Clicking on the 'Always Free Configuration' button grays out the boxes to input provisioning.  Next enter a name for your table, a primary key and column. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type string as an additional column.  Click 'Set as a Shard Key'.
 
-4. When done with inputs click on 'Create Table' at the bottom.
+5. When done with inputs click on 'Create Table' at the bottom.
 
    ![](./images/create-myfree-table.png)
 
   In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding multiple additional columns.  You can easily create simple or more complex tables with this interface.  
 
-5. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
+6. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
 
     ![](./images/freetest-table.png)
 
@@ -51,16 +55,19 @@ Estimated Time: 25 minutes
 
 In this task we are going to create tables using the Cloud Shell, and OCI CLI interface.   The OCI CLI commands issued from the Cloud Shell make REST calls to the Oracle NoSQL Database Cloud Service (NDCS).  OCI offers several SDKs in different languages that you can use to make REST calls to NDCS.   To make things a little simpler, we have created some shell scripts and files that will assist you in this Task.  We need to download those to the Cloud Shell first.
 
-1. Open the Cloud Shell from the top right menu.  Please make sure you are in the Phoenix region.
+1. Open the Cloud Shell from the top right menu.  
 
     ![](./images/cloud-shell-phoenix.png)
 
-  Execute the following in your Cloud Shell. {MJB: need to source this from different location}
+  Execute the following in your Cloud Shell. {MJB: need to source this from object storage - after testing done}
 
     ````
     <copy>
-    git clone https://github.com/dario-vega/serverless-with-nosql-database.git
-    sh ~/serverless-with-nosql-database/data.sh
+      git clone https://github.com/dario-vega/demo-lab-nosql
+      mv demo-lab-nosql serverless-with-nosql-database
+      sh ~/serverless-with-nosql-database/data.sh
+      cp ~/NoSQLLabPrivateKey.pem  ~/serverless-with-nosql-database/express-nosql
+      cp ~/info.json ~/serverless-with-nosql-database/express-nosql
     </copy>
     ````
 
@@ -87,7 +94,8 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     oci nosql table create --compartment-id "$COMP_ID"   \
     --name demo --ddl-statement "$DDL_TABLE" \
     --is-auto-reclaimable true \
-    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
+    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
     </copy>
     ```
     ```
@@ -101,7 +109,8 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     oci nosql table create --compartment-id "$COMP_ID"   \
     --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
     --is-auto-reclaimable true \
-    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }"
+    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED 
     </copy>
     ```
 
@@ -138,7 +147,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
 7. Click on 'Insert Row'. This opens up a new window. This time, choose Advanced Json Input.
 
-  Copy/Paste the json Baggage document in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
+  Copy/Paste the json Baggage document below in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
 
     ````
     <copy>
