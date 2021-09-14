@@ -1,4 +1,4 @@
-# Launch Your First MySQL Database Service System
+# Create and Connect to a MySQL Database System
 
 ## Introduction
 In this lab, you will learn how to launch a MySQL Database Service System on Oracle Cloud Infrastructure (OCI) and connect to it using the Oracle Cloud Console.
