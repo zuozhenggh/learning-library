@@ -45,12 +45,12 @@ This lab assumes you have:
     Password: <copy>welcome1</copy>
     ```
 
-    ![](images/em-login.png " ")
+    ![](images/em-login2.png " ")
 
 
 3. Confirm successful login. Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start.
 
-    ![](images/em-landing.png " ")
+    ![](images/em-landing2.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
