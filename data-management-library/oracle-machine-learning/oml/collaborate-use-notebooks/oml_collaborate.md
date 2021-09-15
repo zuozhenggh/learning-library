@@ -13,7 +13,7 @@ A notebook is a web-based interface for data visualization, machine learning, an
 
 * Access to your account in Oracle Autonomous Database
 * Provide workspace permission to users with whom you want to collaborate
-* Two users - USER1 and USER2 created.
+* Two users - `USER1` and `USER2` created.
 * A notebook created in your OML account
 
 
@@ -34,8 +34,9 @@ This use case demonstrates how:
 
 Note:
 
-    * USER1 Workspace and USER2 Workspace are default workspaces created for USER1 and USER2 respectively.
-    * USER1 Project and USER2 Project are default projects under USER1 Workspace and USER2 Workspace, respectively.
+> **Note:** USER1 Workspace and USER2 Workspace are default workspaces created for USER1 and USER2 respectively.
+
+> USER1 Project and USER2 Project are default projects under USER1 Workspace and USER2 Workspace, respectively.
 
 ### USER1 Grants DEVELOPER Permission to USER2
 
@@ -48,7 +49,7 @@ Note:
 
     ![user1_manage_workspace.png](images/user1_manage_workspace.png "user1_manage_workspace.png")
 
-4. In the Manage Workspaces dialog, select **USER1** Workspace and then click **Permissions**.  
+4. In the Manage Workspaces dialog, select **USER1 Workspace** and then click **Permissions**.  
 
     ![manage_workspace.png](images/manage_workspace.png "manage_workspace.png")
 
@@ -183,6 +184,6 @@ of the notebook. Select **Shared** if you want to save and share this notebook. 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Dimpi Sarmah, September 2020
+* **Last Updated By/Date**: Moitreyee Hazarika, September 2020
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

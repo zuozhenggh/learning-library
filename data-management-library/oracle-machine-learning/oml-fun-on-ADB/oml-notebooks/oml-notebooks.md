@@ -110,7 +110,7 @@ To call the SQL interpreter and run SQL statements:
 ### Task 2.3: Call the PL/SQL Interpreter and run PL/SQL Scripts
 
 To call the PL/SQL interpreter and run PL/SQL scripts:
-1. Edit the paragraph rag and type ``%script`` to call the PL/SQL interpreter.
+1. Edit the paragraph tag and type ``%script`` to call the PL/SQL interpreter.
 2. Type the following command and click Run. Alternatively, you can press Shift+Enter keys to run the paragraph.
 
     ```

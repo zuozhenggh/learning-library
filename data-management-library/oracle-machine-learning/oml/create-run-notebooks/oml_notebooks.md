@@ -6,9 +6,9 @@ This lab shows you how to create a notebook and run it in Oracle Machine Learnin
 This lab takes approximately 10 minutes to complete.
 
 ### Background
-Oracle Machine Learning Notebooks is a web-based interface for data analysis, data discovery, and data visualization. Whenever a notebook is created, it must be defined with a specific Interpreter Settings specification. The notebook contains an internal list of bindings that determines the order of the interpreter bindings.
+Oracle Machine Learning Notebooks is a web-based interface for data analysis, data discovery, and data visualization. Whenever a notebook is created, it must be defined with a specific interpreter binding specifications. The notebook contains an internal list of bindings that determines the order of the interpreter bindings.
 
-A notebook comprises paragraphs which is a notebook component where you can write SQL statements, run PL/SQL scripts, and run Python commands. A paragraph has an input section and an output section. In the input section, specify the interpreter to run along with the text. This information is sent to the interpreter to be run. In the output section, the results of the interpreter are provided.
+A notebook comprises paragraphs which is a notebook component where you can write and run SQL statements, PL/SQL scripts, and run Python commands. A paragraph has an input section and an output section. In the input section, specify the interpreter to run along with the text. This information is sent to the interpreter to be run. In the output section, the results of the interpreter are provided.
 
 ### What Do You Need?
 
@@ -20,7 +20,7 @@ A notebook comprises paragraphs which is a notebook component where you can writ
 
 To create a notebook:
 
-1. Log in to your Oracle Machine Learning Notebooks account and click **Notebooks** on the home page.
+1. Sign in to your Oracle Machine Learning Notebooks account and click **Notebooks** on the home page.
 
    ![oml_homepage.png](images/oml_homepage.png "oml_homepage.png")
 
@@ -36,9 +36,10 @@ To create a notebook:
 
 6. Click **OK**. Your notebook is created and it opens in the notebook editor. You can now use it to run SQL statements, run PL/SQL scripts, and run Python commands. To do so, specify any one of the following directives in the input section of the paragraph:
 
-    * `%sql` - To run SQL statements
-    * `%script` - To run PL/SQL scripts
-    * `%python` - To run Python scripts
+    * `%sql` - To call the SQL interpreter and run SQL statements
+    * `%script` - To call the PL/SQL interpreter and run PL/SQL scripts
+    * `%python` - To call the Python interpreter and run python statements
+    * `%md` - To call the Markdown interpreter and generate static html from Markdown plain text
 
 
 7. Click **Back** to return to the Notebooks page, and to save the changes in the notebook.
@@ -47,11 +48,11 @@ To create a notebook:
 
 To create a notebook based on a template:
 
-1. Log in to your Oracle Machine Learning Notebooks account and click **Examples** on the home page.
+1. Sign in to your Oracle Machine Learning Notebooks account and click **Examples** on the home page.
 
     ![oml_homepage_examples.png](images/oml_homepage_examples.png "oml_homepage_examples.png")
 
-2. On the Examples Template page, click the example template based on which you want to create your notebook and then click **Create Notebook**.  Note that clicking the notebook name opens a read-only notebook so that you can see the contents. Clicking anywhere else on the template box selects the template and then **Create Notebook** is enabled. In this example, the user clicks **Anomaly Detection** example template. The Create Notebook dialog box opens.
+2. On the Examples Template page, click the example template based on which you want to create your notebook and then click **Create Notebook**.  Note that clicking the notebook name opens a read-only notebook so that you can see the contents. Clicking anywhere else on the template box selects the template and then **Create Notebook** is enabled. In this example, you click **Anomaly Detection** example template. The Create Notebook dialog box opens.
 
     ![create_example_notebook.png](images/example_templates.png "example_templates.png")
 
@@ -170,11 +171,43 @@ To run a notebook:
 
 4. Click **Back** to return to the Notebooks page.
 
+## Run your Notebook to generate static html from Markdown plain text
+
+To call the Markdown interpreter and generate static html from Markdown plain text:
+
+To call the Markdown interpreter and generate static html from Markdown plain text:
+
+1. Type ``%md`` and press Enter.
+
+2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as seen in the screenshot below.
+
+	![Markdown tags for plain text](images/md_text.png "md_text.png")
+
+3. You can format the text in bold and italics. To display the text in bold, write the same text inside the tag **Hello World** and click Run.
+
+	![Markdown tags for bold](images/md_bold.png "md_bold.png")
+
+4. To display the text in italics, write the same text inside an asterisk pair or underscore pair as shown in the screenshot, and click Run.
+
+	![Markdown tags for italics](images/md_italics.png "md_italics.png")
+
+5. To display the text in a bulleted list, prefix * (asterisk) to the text, as shown in the screenshot below:
+
+	![Markdown tags for bulleted points](images/md_bullets.png "md_bullets.png")
+
+6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix 1, 2, and 3 hashes respectively.
+
+	![Markdown tags for headings](images/md_heading_tags.png "md_heading_tags.png")
+
+
+
+
+
 
 ## Acknowledgements
 
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Moitreyee Hazarika, June 2021
+* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
