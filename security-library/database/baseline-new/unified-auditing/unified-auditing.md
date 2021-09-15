@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the functionality of Oracle Unified Auditing. It gives the user an opportunity to learn how to configure this feature to audit the database activity.
 
-*Estimated Lab Time:* 35 minutes
+*Estimated Time:* 35 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
@@ -21,7 +21,9 @@ Watch a preview of "*Understanding Unified Auditing (February 2019)*" [](youtube
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH
 - You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
