@@ -12,7 +12,7 @@ In this lab, you will:
 
 ## Task 1: Creating Customer Orders Tables
 1. Log into your workspace.
-2. From your APEX workspace home page, select **SQL Workshop**, **click Utilities**, and then click **Sample Datasets**.
+2. From your APEX workspace home page, select **SQL Workshop**, click **Utilities**, and then click **Sample Datasets**.
 
     ![](images/naviagate-sample-dataset.png " ")
 
