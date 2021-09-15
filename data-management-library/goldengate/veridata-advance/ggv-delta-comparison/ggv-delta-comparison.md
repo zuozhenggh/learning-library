@@ -47,42 +47,45 @@ Enter:
 
     ![](./images/12DP.png " ")
 
-11. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you ran now. out-of-sync:1 to be highlighted.
+11. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you executed now.
 
      ![](./images/13DP.png " ")
+
+     ![](./images/7DP.png " ")
 
     Note that for the 1st job run, the **Out-of-Sync is 800 rows with 800-Inserts**. Next, let's insert 5 more **Inserts** to the source database from the Terminal.
 
 12. Open the terminal.
 13. Run the following command:
-  ```
-  <copy>
-  cd /home/opc/stage/scripts
-  source env_setup.sh
-  sqlplus
-  </copy>
+      ```
+      <copy>
+      cd /home/opc/stage/scripts
+      source env_setup.sh
+      sqlplus
+      </copy>
 
-  ```
+      ```
 14. Enter the following credentials:
       * **User Name**: source
       * **Password**: source
 15. Enter the following INSERT query:
 
       ```
-      <copy>
-      insert into delta_test1 values ('2000',2000);
-      insert into delta_test1 values ('2001',2001);
-      insert into delta_test1 values ('2002',2002);
-      insert into delta_test1 values ('2003',2003);
-      insert into delta_test1 values ('2004',2004);
-      commit;
+        <copy>
+        insert into delta_test1 values ('2000',2000);
+        insert into delta_test1 values ('2001',2001);
+        insert into delta_test1 values ('2002',2002);
+        insert into delta_test1 values ('2003',2003);
+        insert into delta_test1 values ('2004',2004);
+        commit;
 
-      </copy>
-     ```
+        </copy>
+       ```
 16. Press Enter.
-      Next, go back to the Oracle GoldenGate Veridata UI run the job again with Delta Base Time to retrieve the delta out-of-sync entries between the 2 job runs.
 
-17.  In the **Run/Execute Job** page, select **Job\_Delta\_Processing** from the **Job** drop-down list and click **Retrieve Compare Pair List**.   
+    Go back to the Oracle GoldenGate Veridata UI run the job again with **Delta Base Time** to retrieve the delta out-of-sync entries between the 2 job runs.
+
+17.  In the **Run/Execute Job** page, select the job you executed earlier from the **Job** drop-down list and click **Retrieve Compare Pair List**.   
 
 18. Click **Select...** under **Delta Base Time** to select the delta-base time from the list to perform delta processing.
 
@@ -92,20 +95,19 @@ Enter:
 
       ![](./images/9DP.png " ")
 
-20. Notice the Delta Base Time has been updated to the time slot selected in the previous step.
+      Notice the **Delta Base Time** has been updated to the time slot selected in the previous step.
 
-    ![](./images/10DP.png " ")
+      ![](./images/10DP.png " ")
 
-21. Run the Job.
+20. Click **Run Job**.
 
-22. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you ran now.
+21. Click **Finished Jobs** and click **Out-of-Sync:1** link for the job you executed now.
 
 
       ![](./images/11DP.png " ")
 
 Now, Out-of-Sync is 6 Rows with 6 Inserts (1+delta).
 
-      ![](./images/14DP.png " ")
 
 ## Want to Learn More?
 * [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)
