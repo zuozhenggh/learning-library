@@ -2,14 +2,14 @@
 
 ## Introduction
 
-This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data with functions, and execute queries a python application.  
+This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data, and execute queries using a python application.  
 
 Estimated Time: 25 minutes
 
 ### Objectives
 
 * Understand the different tables
-* Read data with REST api
+* Read data with REST API
 * Read data with a python application
 
 ### Prerequisites
@@ -241,13 +241,12 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-5. Write queries to answer the following questions. {MJB: need to complete questions}
+5. Write queries to answer the following questions.
 
-  * How many xxx
-  * Which passenger xxx
-  * how many bags on flightNo xxx
+  * Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).  Hint: Every record has an actions array at: bagInfo.flightLegs.actions
+  * Find the number of bags on flight BM715.  Hint: The size of the bagInfo array represents the number of bags a passenger has checked.
 
-    **Note:** The Learn More contains a link to the SQL Reference Guide.
+    **Note:** The Learn More contains a link to the SQL Reference Guide.  Lab 3, Task 3 contains an example of the JSON record to look at.
 
 6. Type in **exit** to exit from the python application.
 
