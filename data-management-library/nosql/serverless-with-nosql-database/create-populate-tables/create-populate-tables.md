@@ -59,12 +59,13 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
     ![](./images/cloud-shell-phoenix.png)
 
-  Execute the following in your Cloud Shell. {MJB: need to source this from object storage - after testing done}
+  Execute the following in your Cloud Shell.
 
     ````
     <copy>
-      git clone https://github.com/dario-vega/demo-lab-nosql
-      mv demo-lab-nosql serverless-with-nosql-database
+      curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
+      unzip serverless-with-nosql-database.zip
+      mv demo-lab-nosql-main serverless-with-nosql-database
       sh ~/serverless-with-nosql-database/data.sh
       cp ~/NoSQLLabPrivateKey.pem  ~/serverless-with-nosql-database/express-nosql
       cp ~/info.json ~/serverless-with-nosql-database/express-nosql
@@ -110,7 +111,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
     --is-auto-reclaimable true \
     --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }" \
-    --wait-for-state SUCCEEDED --wait-for-state FAILED 
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
     </copy>
     ```
 
