@@ -31,8 +31,8 @@
       "filename": "../../init-start-env/init-start-env.md"
     },
     {
-      "title": "Lab 4: Database Assessment Tool (DBSAT)",
-      "description": "In this lab you can see how to leverage Oracle DB Assessment Tool (DBSAT)",
+      "title": "Lab 4: Database Security Assessment Tool (DBSAT)",
+      "description": "In this lab you can see how to leverage Oracle DB Security Assessment Tool (DBSAT)",
       "publisheddate": "10/20/2020",
       "filename": "../../dbsat/dbsat.md"
     },
