@@ -103,8 +103,7 @@ What are some of the goals of this application:
   * Tomcat Server for REST calls
   * Data stored in Oracle NoSQL Cloud Service as JSON documents
 
-
-2. The benefits to customers are shown in this slide.
+  The benefits to customers are shown in this slide.
 
       ![](images/benefits.png)
 
