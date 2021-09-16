@@ -66,7 +66,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     </copy>
     ```
 
-3. You will be prompted for different passwords for different components. As you remember, for the purpose of this lab and for your convenience, we set all the passwords to __WELcome##1234__, please copy this an enter it for every prompt:
+3. You will be prompted for different passwords for different components. As you remember, for the purpose of this lab and for your convenience, we set all the passwords to __WELcome##1234__, please copy this an enter it for every prompt, except for the Token prompt, for the Token prompt please enter the Token you created and saved before:
 
     ```
     <copy>
