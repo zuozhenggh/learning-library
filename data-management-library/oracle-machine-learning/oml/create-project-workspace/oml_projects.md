@@ -69,7 +69,7 @@ To create a project:
 ## Create Workspace in Oracle Machine Learning Notebooks
 To create a workspace:
 
-1. On the top right corner of the Oracle Machine Learning Notebooks homepage, click the project workspace drop-down list and click **Select Project**. The Select Project dialog box opens.
+1. On the top right corner of the Oracle Machine Learning Notebooks home page, click the project workspace drop-down list and click **Select Project**. The Select Project dialog box opens.
 
   ![select_project.png](images/select_project.png "select_project.png")
 

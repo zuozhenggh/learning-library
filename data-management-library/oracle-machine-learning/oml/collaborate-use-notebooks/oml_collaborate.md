@@ -91,7 +91,7 @@ This use case demonstrates how:
 
     ![oml_top_menu.png](images/oml_top_menu.png "oml_top_menu.png")
 
-5. Click **Notebooks** in the Oracle Machine Learning homepage. Alternatively, you can go to the navigation menu on the left and click **Notebooks**.
+5. Click **Notebooks** in the Oracle Machine Learning home page. Alternatively, you can go to the navigation menu on the left and click **Notebooks**.
 
     ![notebooks_user2.png](images/notebooks_user2.png "notebooks_user2.png")
 
@@ -123,7 +123,7 @@ Note notebook opened in different browsers, and they work on it
 simultaneously. The changes made by the users are dynamically
 reflected in the notebook in real-time. To try this example on the same client machine, for example, your laptop, use two different types of browsers such as Chrome and Firefox to enable two different logins. To see changes dynamically, try to position these two browser windows side by side on your screen so that both views are visible.
 
-1. Sign in to the Oracle Machine Learning instance as USER1 in Mozilla Firefox browser. Click <b>Notebooks</b> in the homepage to view the list of notebooks. Observe that the entry for <b>Updated By</b> column for **Sales Note** notebook shows USER2.
+1. Sign in to the Oracle Machine Learning instance as USER1 in Mozilla Firefox browser. Click <b>Notebooks</b> in the home page to view the list of notebooks. Observe that the entry for <b>Updated By</b> column for **Sales Note** notebook shows USER2.
 
      ![user1_views_notebooks.png](images/user1_views_notebooks.png "user1_views_notebooks.png")
 
