@@ -29,7 +29,7 @@ In this lab, you will:
 
 2. Provide a name for your collection in the field **Collection Name - products** and click **Create**.
 
-	![](./images/products.png)
+	![](./images/new-products.png)
 
 3. A notification pops up that displays `products` collections is created.
 
