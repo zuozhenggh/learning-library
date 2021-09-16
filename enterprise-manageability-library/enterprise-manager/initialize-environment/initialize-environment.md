@@ -154,16 +154,16 @@ This lab assumes you have:
     - Delete any content from *SSH Public Key* Textbox
     - Click *Browse* to select the *Private Key*
 
-    ![](images/update_ssh_creds-11.png " ")
+    ![](images/update_ssh_creds-1.png " ")
 
 6. On the file browser, navigate to *"+Other Locations >> tmp"* and select the file *rsa_priv*
 
-    ![](images/update_ssh_creds-22.png " ")
+    ![](images/update_ssh_creds-2.png " ")
 
 7. Click *Test and Save*
 
-    ![](images/update_ssh_creds-33.png " ")
-    ![](images/update_ssh_creds-44.png " ")
+    ![](images/update_ssh_creds-3.png " ")
+    ![](images/update_ssh_creds-4.png " ")
 
 8. Setup oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
 Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDENTIALS"; Click Submit.
