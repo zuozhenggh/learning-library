@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager. It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
-*Estimated Lab Time:* 85 minutes
+*Estimated Time:* 85 minutes
 
 *Version tested in this lab:* Oracle Enterprise Manager 13.4
 
