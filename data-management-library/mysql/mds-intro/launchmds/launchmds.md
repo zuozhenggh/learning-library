@@ -1,4 +1,4 @@
-# Launch Your First MySQL Database Service System
+# Create and connect to a MySQL Database System
 
 ## Introduction
 In this lab, you will learn how to launch a MySQL Database Service System on Oracle Cloud Infrastructure (OCI) and connect to it using the Oracle Cloud Console.
@@ -418,5 +418,5 @@ When the delete process is done, **MDS_DB** will be set to the **Delete** status
 
 ## Acknowledgements
 * **Author** -  Perside Foster, MySQL Solution Engineering
-* **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, July 2021
+* **Contributors** -  Airton Lastori, MySQL Principal Product Manager, Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021

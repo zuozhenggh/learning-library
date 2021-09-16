@@ -1,22 +1,39 @@
-# Title of the Lab
+# Using Oracle Machine Learning Services
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+ In this lab, you will get a quick tour of basic OML Services features. You will learn how to obtain an authentication token for your user account to get started with OML Services and then use OML Services to explore the APIs, get model information and score with a model. You will also get a chance to use Oracle's proprietary Cognitive Text model.
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: -- 30 minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+### About Oracle Machine Learning Services
+OML Services extends OML functionality to support model deployment and model lifecycle management for both in-database OML models and third-party Open Neural Networks Exchange (ONNX) machine learning models via REST APIs. These third-party classification or regression models can be built using tools that support the ONNX format, which includes packages like Scikit-learn and TensorFlow, among several others.
+
+Oracle Machine Learning Services provides REST API endpoints hosted on Oracle Autonomous Database. These endpoints enable the storage of machine learning models along with its metadata, and the creation of scoring endpoints for the model.
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Authenticate your user account with the Autonomous Database to use OML Services.
+
+    Obtain authentication token.
+    Refresh authentication token.
+    Revoke authentication token.
+* Explore APIs. Specifically:
+
+    View the API.
+    Get a list of saved models.
+    View a specific model by referencing the model ID.
+    Get a list of models filtered by model name.
+    Get a list of models filtered by version and namespace.
+* Get a model scoring endpoint.
+* Score data with a model.
+
+    Perform singleton scoring and mini-batch scoring.
+    Use Oracle's Cognitive Text functionality to discover keywords and get a summary for a given text string.
+
 
 ### Prerequisites (Optional)
 

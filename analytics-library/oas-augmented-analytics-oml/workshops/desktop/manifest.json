@@ -13,19 +13,19 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "Initialize Environment Lab",
       "filename": "../../init-start-oas/init-start-oas.md",
       "type": "desktop"
     },
     {
-      "title": "OAS Augmented Analytics and Data Visualization",
+      "title": "Lab 2: OAS Augmented Analytics and Data Visualization",
       "description": "OAS Augmented Analytics and Data Visualization",
       "filename": "../../oas-augmented-analytics/oas-augmented-analytics.md",
       "type": "desktop"
     },
     {
-      "title": "Machine Learning in the Oracle Database",
+      "title": "Lab 3: Machine Learning in the Oracle Database",
       "description": "Machine Learning in the Oracle Database",
       "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md",
       "type": "desktop"
