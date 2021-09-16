@@ -1,4 +1,4 @@
-# Create and Connect to a MySQL Database System
+# Create and Connect to MySQL Database System
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
