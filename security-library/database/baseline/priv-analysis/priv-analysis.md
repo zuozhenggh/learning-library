@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the functionality of Oracle Privilege Analysis. It gives the user an opportunity to learn how to use this feature to always know privileges usage accessed by all users during all the database life.
 
-*Estimated Lab Time:* 15 minutes
+*Estimated Time:* 15 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
