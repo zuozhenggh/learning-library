@@ -1,4 +1,4 @@
-# Create Tables and Load Tables
+# Create Tables, Load Tables
 
 ## Introduction
 
@@ -214,7 +214,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
 8. Click on 'Insert Row' at bottom left of screen.
 
-You have seen two different ways to insert data into a table.  
+  To quickly summarize, in this Lab you have seen two different ways to insert data into a table.  
 
 ## Task 4:  Show Data From the Console
 
