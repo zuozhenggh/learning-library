@@ -16,8 +16,8 @@ swap:
 
 # '(?:[^\S?][^\s][^\S?]*) ?Autonomous Database': Oracle Autonomous Database
 #  '(?<!(?:Oracle)\s*) ?Autonomous Database': Oracle Autonomous Database
-  '(?:[^\s+Oracle]*) ?Autonomous Transaction Processing': Oracle Autonomous Transaction Processing
-  '(?:[^\s]*) ?Autonomous Transaction Database': Oracle Autonomous Transaction Processing
-  Oracle Autonomous Transaction Database: Oracle Autonomous Transaction Processing
-  '(?:[^\s+Oracle]*) ?Machine Learning Notebooks': Oracle Machine Learning Notebooks
-  '(?:[^\S?][^\s][^\S?]*) ?SQL Developer Web': Oracle SQL Developer Web
+#  '(?:[^\s+Oracle]*) ?Autonomous Transaction Processing': Oracle Autonomous Transaction Processing
+#  '(?:[^\s]*) ?Autonomous Transaction Database': Oracle Autonomous Transaction Processing
+#  Oracle Autonomous Transaction Database: Oracle Autonomous Transaction Processing
+#  '(?:[^\s+Oracle]*) ?Machine Learning Notebooks': Oracle Machine Learning Notebooks
+#  '(?:[^\S?][^\s][^\S?]*) ?SQL Developer Web': Oracle SQL Developer Web
