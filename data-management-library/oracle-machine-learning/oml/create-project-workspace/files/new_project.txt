@@ -3,4 +3,4 @@
 This images shows highlights the New Project option in the project workspace drop-down list on the top right corner of the Oracle Machine Learning Notebooks home page.  
 
 
-Copyright © 2017, 2020 Oracle and/or its affiliates. All rights reserved.
+Copyright © 2017, 2021 Oracle and/or its affiliates. All rights reserved.

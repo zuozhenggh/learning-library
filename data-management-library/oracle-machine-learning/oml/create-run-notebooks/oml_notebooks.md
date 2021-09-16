@@ -30,7 +30,7 @@ To create a notebook:
 
 3. In the **Name** field, provide a name for the notebook.
 
-4. In the **Comments**field, enter comments if any.
+4. In the **Comments** field, enter comments if any.
 
 5. The **Connection** field specifies the Global connection group.
 
@@ -91,8 +91,13 @@ This example assumes that you have a notebook called Py Note notebook created. T
 
 3. To use OML4Py, you must first import the `oml` module. `oml` is the OML4Py module that allows you to manipulate Oracle Database objects such as tables and views, invoke user-defined Python functions using embedded execution, and use the database machine learning algorithms. Type the following commands and click the **Run** icon. Alternatively, you can press **Shift+Enter** keys to run the paragraph.   
 
-  `import oml`<br>
-  `oml.isconnected()`
+    ```
+    <copy>
+    import oml
+    oml.isconnected()
+    </copy>
+    ```
+
 
    ![connect_py.png](images/connect_py.png "connect_py.png")
 
@@ -112,17 +117,22 @@ This example assumes that you have a notebook called Py Note notebook created. T
 
 5. Type the following Python code and click the run icon.   
 
-   `import matplotlib.pyplot as plt`<br>
-    `import numpy as np`
+    ```
+    <copy>
+    import matplotlib.pyplot as plt
+    import numpy as np
 
-    `list1 = np.random.rand(10)*2.1`<br>
-    `list2 = np.random.rand(10)*3.0`
+    list1 = np.random.rand(10)*2.1
+    list2 = np.random.rand(10)*3.0
 
-    `plt.subplot(1,2,1) # 1 line, 2 rows, index nr 1 (first position in subplot)`<br>
-    `plt.hist(list1)`<br>
-    `plt.subplot(1, 2, 2) # 1 line, 2 rows, index nr 2 (second position in subplot)`<br>
-    `plt.hist(list2)`<br>
-    `plt.show()`  
+    plt.subplot(1,2,1) # 1 line, 2 rows, index nr 1 (first position in subplot)
+    plt.hist(list1)
+    plt.subplot(1, 2, 2) # 1 line, 2 rows, index nr 2 (second position in subplot)
+    plt.hist(list2)
+    plt.show()
+
+    </copy>
+    ```
 
     In this example, the commands import two python packages to compute and render the data in two histograms for list1 and list2. The Python packages are:
 
@@ -137,11 +147,11 @@ This example assumes that you have a notebook called Py Note notebook created. T
 
 7. Click **Back** to return to the Notebooks page.
 
-## Run Your Notebook with SQL Interpreter
+## Run Your Notebook with SQL and PL/SQL Interpreter
 
 To display and visualize data using SQL in a notebook paragraph, that data must be fetched from the database.
 
-Paragraphs using the SQL (%sql) and PL/SQL (%script) interpreters allow users to invoke Oracle SQL and PL/SQL statements, respectively. Users invoke OML4SQL machine learning functionality in such paragraphs as well. The notebook offers the functionality to perform charting on the SQL interpreter output that is returned to the notebook. The options in the chart settings to perform groupings, summation, and other operations are done in the notebook server, and not in the database server. For example, if you want to run a Group By on all your data, then it is recommended to use SQL scripts to do the grouping in the database, and return the summary information for charting in the notebook. Grouping at the notebook level works well for small sets of data. If you pull a lot of data into the notebook, then you may encounter memory limitations. You can set the row limit for your notebook by using the option Render Row Limit to control how many rows are allowed to be returned from the database, with the default being the first 1000 rows in the Connection Group page.
+Paragraphs using the SQL `%sql` and PL/SQL `%script` interpreters allow users to call Oracle SQL and PL/SQL statements, respectively. You call the OML4SQL machine learning functionality in such paragraphs as well. The notebook offers the functionality to perform charting on the SQL interpreter output that is returned to the notebook. The options in the chart settings to perform groupings, summation, and other operations are done in the notebook server, and not in the database server. For example, if you want to run a `Group By` on all your data, then it is recommended to use SQL scripts to do the grouping in the database, and return the summary information for charting in the notebook. Grouping at the notebook level works well for small sets of data. If you pull a lot of data into the notebook, then you may encounter memory limitations. You can set the row limit for your notebook by using the option **Render Row Limit** to control how many rows are allowed to be returned from the database, with the default being the first 1000 rows in the Connection Group page.
 
 To run a notebook:
 

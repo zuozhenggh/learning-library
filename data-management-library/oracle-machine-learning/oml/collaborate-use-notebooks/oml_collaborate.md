@@ -32,7 +32,7 @@ This use case demonstrates how:
 * USER 2 edits a notebook that is created by USER1 in **USER1 Project**
 * USER1 views the changes in the notebook made by USER2.
 
-Note:
+
 
 > **Note:** USER1 Workspace and USER2 Workspace are default workspaces created for USER1 and USER2 respectively.
 
@@ -184,6 +184,6 @@ of the notebook. Select **Shared** if you want to save and share this notebook. 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Moitreyee Hazarika, September 2020
+* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
