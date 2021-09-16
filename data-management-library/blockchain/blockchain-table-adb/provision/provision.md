@@ -205,7 +205,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ![](./images/task4-5.png " ")
 
 6. In the Create User page, under User tab, provide the following details:
-    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER**
+    - **User Name** - Give the new user a User Name. The username is case-sensitive. In the lab, we name the user **Username - DEMOUSER**.
     - **Password** - Provide the new user a password and confirm the Password. In this lab, we provide the same password as admin user for ease of use, **Password - WElcome123##** and confirm the password.
     - **Quota on tablespace DATA** - Set a value for the Quota on tablespace DATA for the user. Click the drop-down and choose **500M**.
     - **Web Access** - Turn on the Web Access radio button to access the SQL Developer Web.
