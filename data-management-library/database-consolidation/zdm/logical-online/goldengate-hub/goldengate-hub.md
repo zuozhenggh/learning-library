@@ -162,7 +162,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 ![](./images/ogg-cat-credentials.png " ")
 
-4. In a separate browser tab, open the OGG Service Manager home page using the __GoldenGate Hub Public ip__ please do not use the __<>__: __https://<ogg\_public\_ip>__ 
+4. In a separate browser tab, open the OGG Service Manager home page using the __GoldenGate Hub Public ip__ : __https://ogg\_public\_ip__ (replace the ogg\_public\_ip value with the value saved above). 
 The browser will show warnings that the page is insecure because it uses a self-signed certificate. Ignore those warnings and proceed
 
 ![](./images/ogg-service-manager.png " ")
