@@ -16,7 +16,7 @@
     {
       "title": "Lab 1: Install Oracle Database",
       "description": "How to install Oracle Database 21c for Desktop class (minimal configuration) and Server class (advanced configuration).",
-      "filename": "../../installer/install-desktop-server.md"
+      "filename": "../../install-desktop-server/install-desktop-server.md"
     },
     {
       "title": "Lab 2: Create Container Database",

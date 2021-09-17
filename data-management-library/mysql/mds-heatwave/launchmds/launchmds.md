@@ -471,7 +471,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ````
     ![Connect](./images/12hwqueries01.png " ")
 
- 5. Turn on use_secondary_engine variable to use HeatWave
+ 5. Turn on `use_secondary_engine` variable to use HeatWave
      ````
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
@@ -522,7 +522,7 @@ LIMIT 10;
     ````
      ![Connect](./images/12hwqueries03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the use_secondary_engine variable to see how long it takes to run the same query on the MySQL DB System. For example:
+ 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ````
@@ -550,17 +550,17 @@ LIMIT 10;</copy>
     ````
     ![Connect](./images/12hwqueries04.png " ")
 
- 11. To see if use_secondary_engine is enabled (=ON)
+ 11. To see if `use_secondary_engine` is enabled (=ON)
 
  Enter the following command at the prompt:
      ````
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ````
- 12. Runing additional queries. Remember to turn on and off the use_secondary_engine  to compare the execution time. 
+ 12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
    
-    (Example  **SET SESSION use_secondary_engine=On;**) 
+    (Example  **SET SESSION `use_secondary_engine`=On;**) 
 
-    (Example  **SET SESSION use_secondary_engine=Off;**)      
+    (Example  **SET SESSION `use_secondary_engine`=Off;**)      
 
  13. Enter the following command at the prompt
      ````

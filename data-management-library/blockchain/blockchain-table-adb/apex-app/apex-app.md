@@ -77,7 +77,7 @@ This workshop assumes you have:
 
 ## Task 2: Define the REST End Points and Enable the Schema
 
-By default the schema is not registered with ORDS. Let's define REST endpoints for the bank_ledger schema and enable the schema.
+APEX application will interact with the blockchain tables using REST API through the Oracle REST Data Services (ORDS). This requires that the DB schema is registered with ORDS. By default, the schema is not registered with ORDS. Let's define REST endpoints for the bank_ledger schema and enable the schema to use as part of the data signing for the APEX application, which we will import in the next task.
 
 1. Click on the **SQL Workshop** drop-down menu.
 
@@ -95,7 +95,6 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
     ![](./images/task2-32.png " ")
 
 4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nlUdle-us1TMJ-yTOL-sVxXazoDqQegCYakiXiA8zIONnFMWsaCt2u3tNHlz4sUx/n/c4u04/b/data-management-library-files/o/blockchain/ORDS-REST-Blockchain.sql) to download the ORDS-REST-Blockchain.sql file that has the SQL Script to REST Enable this schema and also to create modules for the bank_ledger table with the appropriate handlers.
-
 
 5. Let's import the modules by clicking on **Import**.
 
@@ -146,8 +145,6 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
     END;
     ```
 
-
-
 11. After receiving the rowdata, the Node.js application which will install in the next lab will use that row data to do the signing using the other rest point -  POST method under the signdata.
 
 12. Expand the signdata tab and select **POST**. Notice the sign PL/SQL procedure under Source field takes the cert_guid, chainId, instanceId, seqId as input parameters along with the rowdata to sign the row.
@@ -170,8 +167,6 @@ By default the schema is not registered with ORDS. Let's define REST endpoints f
         :status := 400;
     END;
     ```
-
-
 
 ## Task 3: Import and Run the APEX Application
 
@@ -254,28 +249,16 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task4-9.png " ")
 
-10. Make note the Instance ID, Chain ID and Seq ID of a row that you want to sign. In the demo, we are going to sign the row with Instance ID - 1, Chain ID - 5, and Seq ID - 1.
+10. Chose any row of your choice, make note the Instance ID, Chain ID and Seq ID values of that row and save these required parameters values as you will need to enter them in the signing task in next lab.
 
-   ![](./images/task4-10.png " ")
-<!---
-12. Replace the number 1 for the instanceId, chainId and seqId and update with your notes values in the below command.
+    > *Note - Every blockchain table will have different Instance ID, Chain ID and Seq ID values. Please do not panic if you do not see the same values in your table as in the demo.*
 
-    ```
-    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
-    ```
+    In the demo, we are going to sign the row with Instance ID - 1, Chain ID - 5, and Seq ID - 1.
 
-    After replacing the instanceId, chainId and seqId values in the command, it should look like this:
-
-    ```
-    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
-    ```
-
-13. Save this command in a noted to run which we will run in the next lab and sign the row.
-
---->
+    ![](./images/task4-10.png " ")
 
 ## Acknowledgements
 
 * **Author** - Mark Rakhmilevich, Anoosha Pilli
-* **Contributors** - Anoosha Pilli, Salim Hlayel, Product Manager, Oracle Database
-* **Last Updated By/Date** - Brianna Ambler, August 2021
+* **Contributors** - Anoosha Pilli, Salim Hlayel, Brianna AmblerProduct Manager, Oracle Database
+* **Last Updated By/Date** - Anoosha Pilli, September 2021
