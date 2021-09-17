@@ -32,7 +32,7 @@ Estimated time: 10 minutes
   **Note:**
      - This console shows that no databases yet exist
      - If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on)
-     - You can also sort by **Workload Type** (here, select **All**)
+     - You can also sort by **Workload Type** (here, we selected **All**)
 
          ![](./images/adb-set_003.png " ")
 
