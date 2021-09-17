@@ -45,7 +45,7 @@ Estimated time: 10 minutes
     - **Compartment** - If needed, select your compartment
     - **Display name** - Enter a memorable name for the database for display purposes, for this lab, use *`ADB Security`*
     - **Database Name** - Enter *`ADBSEC01`*, it's important to use letters and numbers only, starting with a letter (the maximum length is 14 characters and Underscores are not supported)
-    - **Workload Type** - Select the type of your Autonomous DB to be conform to your choice at step 3 above (here we select "Data Warehouse")
+    - **Workload Type** - Select the type of your Autonomous DB to match your choice at Step 3 earlier above (here we select "Data Warehouse")
     - **Deployment Type** - Leave *`Shared Infrastructure`* selected
 
          ![](./images/adb-set_005.png " ")
