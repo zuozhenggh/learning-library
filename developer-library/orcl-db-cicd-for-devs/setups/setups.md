@@ -193,11 +193,11 @@ We are going to create a **Compartment** for this lab so that our database is in
 
 ## Task 4: Create a Notification Topic
 
-1. Use the OCI web console drop down menu to go to **Developer Services** and then **Notifications**.
+1. Use the OCI web console drop down menu to go to **Developer Services** and then **Notifications** under **Application Integration**.
 
     ![Notifications from the menu](./images/note-1.png)
 
-2. On the Notifications page, change your compartment to the **livelabs** compartment using the **Compartment** dropdown on the left side of the page.
+2. On the **Notifications page**, change your compartment to the **livelabs** compartment using the **Compartment** dropdown on the left side of the page.
 
     ![Notifications compartment dropdown](./images/note-2.png)
 
@@ -231,7 +231,7 @@ We are going to create a **Compartment** for this lab so that our database is in
 
     ![DevOps from the menu](./images/devops-1.png)
 
-2. On the DevOps Projects page, change your compartment to the **livelabs** compartment using the **Compartment** dropdown on the left side of the page.
+2. On the **DevOps Projects page**, change your compartment to the **livelabs** compartment using the **Compartment** dropdown on the left side of the page.
 
     ![DevOps compartment dropdown](./images/devops-2.png)
 
@@ -293,7 +293,7 @@ We are going to create a **Compartment** for this lab so that our database is in
 
    name the repository **cicdRepository**
 
-     **Repository name:** cicdRepository
+   **Repository name:** cicdRepository
 
     ````
     <copy>
@@ -311,53 +311,53 @@ We are going to create a **Compartment** for this lab so that our database is in
 
 1. Start by starting a **Cloud Shell** terminal. You can do this via the **Cloud Shell icon** ![Cloud Shell icon](./images/shell-1.png) on the top menu bar in the OCI console.
 
-![Cloud Shell icon menu bar](./images/shell-2.png)
+   ![Cloud Shell icon menu bar](./images/shell-2.png)
 
 2. Using the cloud shell, start by **making a directory called livelabs**.
 
-````
-<copy>
-mkdir livelabs
-</copy>
-````
-![making a directory called livelab](./images/shell-3.png)
+   ````
+   <copy>
+   mkdir livelabs
+   </copy>
+   ````
+   ![making a directory called livelab](./images/shell-3.png)
 
 3. Now, enter that directory with a **change directory command**.
-````
-<copy>
-cd livelabs
-</copy>
-````
-![changing directories to livelab](./images/shell-4.png)
+   ````
+   <copy>
+   cd livelabs
+   </copy>
+   ````
+   ![changing directories to livelab](./images/shell-4.png)
 
-And we can issue a **pwd command (Print Working Directory)** to ensure we are in the correct directory.
+   And we can issue a **pwd command (Print Working Directory)** to ensure we are in the correct directory.
 
-![pwd command](./images/shell-5.png)
+   ![pwd command](./images/shell-5.png)
 
-4. We can now clone our OCI DevOps repository so we can start working with it. While still on the Repository Details page from the last task, click the **Clone button**.
+4. We can now clone our OCI DevOps repository so we can start working with it. While still on the **Repository Details page** from the last task, click the **Clone button**.
 
-![Clone button](./images/shell-6.png)
+   ![Clone button](./images/shell-6.png)
 
 5. The **Clone Modal** appears. We want the **Clone With HTTPS** URL from the modal. To the right of the Clone WIth HTTPS entry is a **copy link**. Click the copy link to retrieve the URL. Now paste this URL into a text editor or note pad app like you did for the Auth Token in Task 2.
 
-You can clone the Clone Modal with the Clone button when the URL is copied.
+   You can clone the Clone Modal with the Clone button when the URL is copied.
 
-![Clone Modal](./images/shell-7.png)
+   ![Clone Modal](./images/shell-7.png)
 
 6. Back in the **Cloud Shell**, we need to clone the repository. While still in the livelabs directory, enter the following command that uses the URL you just copied in the previous step:
 
-````
-<copy>
-git clone YOUR_HTTPS_REPOSITORY_URL
-</copy>
-````
+   ````
+   <copy>
+   git clone YOUR_HTTPS_REPOSITORY_URL
+   </copy>
+   ````
 
-In my tenancy, the command would be:
-```
-git clone https://devops.scmservice.eu-frankfurt-1.oci.oraclecloud.com/namespaces/adexacs2/projects/cicdProject/repositories/cicdRepository
-```
+   In my tenancy, the command would be:
+   ```
+   git clone https://devops.scmservice.eu-frankfurt-1.oci.oraclecloud.com/namespaces/adexacs2/projects/cicdProject/repositories/cicdRepository
+   ```
 
-Once you have the command in the cloud shell, press enter to start the clone process.
+   Once you have the command in the cloud shell, press enter to start the clone process.
 
 7. The git command will now ask for a **username**.
 
