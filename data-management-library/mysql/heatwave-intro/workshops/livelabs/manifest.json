@@ -14,22 +14,28 @@
         },
 
         {
-            "title": "Lab 1: Create MySQL Database System",
+            "title": "Lab 1: Setup Infrastructure",
+            "filename": "../../setup-infrastructure/setup-infrastructure.md"
+        },
+                
+        {
+            "title": "Lab 2: Create MySQL Database System",
             "filename": "../../create-dbs/create-dbs.md"
         },
+
         {
-            "title": "Lab 2: Connect to MySQL Database System",
-            "filename": "../../connect-dbs/connect-dbs.md"
+            "title": "Lab 3: Setup HeatWave Clusters",
+            "filename": "../../setup-heatwave/setup-heatwave.md"
         },
         
         {
-            "title": "Lab 3: Setup HeatWave Clusters in MySQL Database System",
-            "filename": "../../setup-heatwave/setup-heatwave.md"
-        },
- 
-        {
-            "title": "Lab 4: Run Queries with MySQL Shell and Workbench",
+            "title": "Lab 4: Run Queries in HeatWave and MySQL ",
             "filename": "../../run-queries/run-queries.md"
+        },
+        
+        {
+            "title": "Lab 5: (Bonus) Run MySQL Autopilot",
+            "filename": "../../run-autopilot/run-autopilot.md"
         },
 
         {
