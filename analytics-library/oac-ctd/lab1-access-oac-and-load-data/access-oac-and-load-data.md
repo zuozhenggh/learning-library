@@ -50,7 +50,7 @@ Note:In the future, Oracle's Redwood theme will be the default look and feel and
 
 ## **Task 2**: Load an excel file
 
-Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/N7XvXLfts5Ld2YMVPhwg7uxnaLLSsP3D6d2Bis9VKa7EBiTWf7FE25EPiNg_UVEq/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Expenses.xlsx)
+Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/U54YMX0aiUSEO-XCPI-OqD9RwzrSR1GrCorz6if9vo0Kk_9kX35cXuLjDtJyyAsP/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Expenses.xlsx)
 
 1. Click on “Create”
 
