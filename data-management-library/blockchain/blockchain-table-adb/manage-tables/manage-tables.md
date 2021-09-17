@@ -293,7 +293,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 
 5. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
 
-	Press enter after providing each detail - Country Name, State, Locality Name, Organization name, Common name, Email address.
+	When prompted, provide the details for each parameter and press enter - Country Name, State, Locality Name, Organization name, Common name, Email address
 
 	```
 	<copy>
