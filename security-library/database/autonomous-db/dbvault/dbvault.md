@@ -5,14 +5,14 @@ This workshop introduces the various features and functionality of Oracle Databa
 
 Managed database services run the risk of 'Admin snooping', allowing privileged users - and especially compromised privileged user accounts - access to sensitive data. Oracle Autonomous Database with DB Vault provides powerful security controls, restricting access to application data by privileged database users, reducing the risk of insider and outsider threats and addressing common compliance requirements.
 
-You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. Through the runtime analysis of privileges and roles, you can increase the security of existing applications by implementing least privileges and reducing the attack profile of your database accounts. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
+You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
 
 *Estimated Time:* 35 minutes
 
 *Version tested in this lab:* Oracle Autonomous Data Warehouse (ADW) 19c
 
 ### Video Preview
-Watch a preview of "*Understanding Oracle Database Vault (March 2019)*" [](youtube:oVidZw7yWIQ)
+Watch a preview of "*Oracle Database Vault Introduction (May 2021)*" [](youtube:vSVr7avZ4Hg)
 
 ### Objectives
 - Enable Database Vault in an Autonomous Database
@@ -146,6 +146,8 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
 Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and HR (table owner) and grant access to APPUSER only.
 
+A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources. After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
+
 1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
     - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
    
@@ -179,7 +181,10 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
           ![](./images/adb-dbv_011.png " ")
 
-       - **These 3 users can see the HR.CUSTOMERS table!**
+       **Note:**
+          - **These 3 users can see the HR.CUSTOMERS table!**
+          - HR because HR owns it
+          -	ADMIN and APPUSER because they have "READ ANY TABLE" system privilege
 
 2. Now, let's create a realm to secure HR tables by executing this query as "**ADMIN**" user
 
@@ -203,7 +208,10 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 
    ![](./images/adb-dbv_012.png " ")
  
-       **Note:** Now the Realm `PROTECT_HR` is created and enabled!
+       **Note:**
+          - Now the Realm `PROTECT_HR` is **created as mandatory and enabled**!
+          - The difference between a mandatory vs regular realm is Regular realm blocks system privileges (and allows direct object grants) while Mandatory realm blocks direct object grants (even object owner) in addition to system privileges
+
 
 3. Add objects to the Realm to protect (here, the CUSTOMERS table)
 
@@ -430,6 +438,8 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 ## Task 4: Simulation Mode
 
+We will use simulation mode to find the factors to use for our "trusted path" connection to the HR.EMPLOYEES table. We will do that by completely disables access to the table – but then put it into simulation mode. Since simulation mode won’t block the actual SQL commands – the SQL commands will work. However, if the SQL command should have been blocked by the new command rule – then it will create an entry in the simulation mode. Then you can review the simulation log to find if it captured the correct violations and the factors and associated rules.
+
 1. First, query the simulation log to show that it has no current values
 
       ````
@@ -642,6 +652,7 @@ Technical Documentation:
   - [Oracle Database Vault 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/dvadm/introduction-to-oracle-database-vault.html#GUID-0C8AF1B2-6CE9-4408-BFB3-7B2C7F9E7284)
 
 Video:
+  - *Understanding Oracle Database Vault (March 2019)* [](youtube:oVidZw7yWIQ)
   - *Oracle Database Vault - Use Cases (Part1) (October 2019)* [](youtube:aW9YQT5IRmA)
   - *Oracle Database Vault - Use Cases (Part2) (November 2019)* [](youtube:hh-cX-ubCkY)
 
