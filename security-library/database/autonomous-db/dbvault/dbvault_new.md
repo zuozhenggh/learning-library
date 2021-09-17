@@ -34,6 +34,8 @@ This lab assumes you have:
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Disable Database Vault | <5 minutes |
 
+**Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
+
 ## Task 1: Enable Database Vault
 
 Oracle Database vault comes pre-installed with your Autonomous database. In this lab we will enable Database Vault (DV), add required user accounts and create a DV realm to secure a set of user tables from privileged user access.
@@ -43,8 +45,6 @@ The HR schema contains multiple tables such as CUSTOMERS table which contains se
    ![](./images/adb-dbv_001.png " ")
 
 We start with creating the two DV user accounts - DV Owner and DV Account Manager. The DV_OWNER account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
-
-    **Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
 
 1. Open a SQL Worksheet on your **ADB Security** as *admin* user
     
