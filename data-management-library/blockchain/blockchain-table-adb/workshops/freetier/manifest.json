@@ -13,20 +13,20 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Generate SSH Keys",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
-        },
-        {
-            "title": "Lab 2: Provision an ATP and Compute Instance",
+            "title": "Lab 1: Provision an ATP and Compute Instance",
             "filename": "../../provision/provision.md"
         },
         {
-            "title": "Lab 3: Manage Blockchain Tables",
+            "title": "Lab 2: Manage Blockchain Tables",
             "filename": "../../manage-tables/manage-tables.md"
         },
         {
-            "title": "Lab 4: Import the Web Application and Test the Blockchain Table Features",
+            "title": "Lab 3: Import the Web Application and Test the Blockchain Table Features",
             "filename": "../../apex-app/apex-app.md"
+        },
+        {
+            "title": "Lab 4: Generate SSH Keys",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },
         {
             "title": "Lab 5: Install Node.js in Compute Instance and Deploy the Application",

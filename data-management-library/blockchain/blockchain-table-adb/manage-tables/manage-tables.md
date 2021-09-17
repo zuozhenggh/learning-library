@@ -8,9 +8,9 @@ For enhanced fraud protection, an optional user signature can be added to a row.
 
 Blockchain tables can be used to implement blockchain applications where the participants are different database users who trust Oracle Database to maintain a verifiable, tamper-resistant blockchain of transactions. All participants must have privileges to insert data into the blockchain table. The contents of the blockchain are defined and managed by the application. By leveraging a trusted provider with verifiable crypto-secure data management practices, such applications can avoid the distributed consensus requirements. This provides most of the protection of the distributed peer-to-peer blockchains, but with much higher throughput and lower transaction latency compared to peer-to-peer blockchains using distributed consensus. Blockchain tables can be used along with (regular) tables in transactions and queries. Database users can continue to use the same tools and practices that they would use for other database application development. Please see Oracle Database 19c or 21c documentation for more information about Blockchain Tables.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature. Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your ATP database instance, and save the certificate GUID it returns.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature.
 
-Estimated Time: 20 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -20,7 +20,6 @@ In this lab, you will:
 * View Blockchain tables and its internal columns
 * Manage blockchain tables and rows in a blockchain table
 * Verify the rows in a blockchain table without signature
-* Generate Certificate and Certificate GUID
 
 ### Prerequisites
 
@@ -76,7 +75,7 @@ In this lab, you will:
 	</copy>
 	```
 
-	!![](./images/task2-1.png " ")
+	![](./images/task2-1.png " ")
 
 2. Query the `bank_ledger` blockchain table to show the records.
 
@@ -249,7 +248,7 @@ You can verify the integrity of blockchain tables by verifying that the chain in
 	```
 
 	![](./images/task6-1.png " ")
-
+<!--
 ## Task 7: Generate Certificate
 
 Let's connect to Oracle cloud shell to generate your x509 key pair. We are generating the key pair and an X509 certificate that will be used for data signing later.
@@ -260,7 +259,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-	![](./images/task7-1.png " ")
+	![](./images/lab5-task7-1.png " ")
 
 2. Download the nodejs.zip file.
 
@@ -270,7 +269,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vNvEwmqib41JCCwSk6_mufdLO6OXNZQzvjITnQ4rqe6EkPwvU5m5krwloHgHw2XJ/n/c4u04/b/data-management-library-files/o/blockchain/nodejs.zip
     </copy>
     ```
-	![](./images/task7-2.png " ")
+	![](./images/lab5-task-7-2.png " ")
 
 3.  Unzip the nodejs file.
 
@@ -279,7 +278,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	unzip nodejs.zip
 	</copy>
 	```
-	![](./images/task7-3.png " ")
+	![](./images/lab5-task7-3.png " ")
 
 4.  Navigate to nodejs folder.
 
@@ -289,7 +288,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
     </copy>
     ```
 
-	![](./images/task7-4.png " ")
+	![](./images/lab5-task7-4.png " ")
 
 5. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
 
@@ -301,7 +300,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	</copy>
 	```
 
-	![](./images/task7-5.png " ")
+	![](./images/lab5-task7-5.png " ")
 
 6.	List the files and notice that your *user01.key*, *user01.pem* key pair is created.
 
@@ -309,7 +308,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	<copy>ls</copy>
 	```
 
-	![](./images/task7-6.png " ")
+	![](./images/lab5-task7-6.png " ")
 
 7. `cat` the *user01.pem* key.
 
@@ -317,7 +316,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	<copy>cat user01.pem</copy>
 	```
 
-	![](./images/task7-7.png " ")
+	![](./images/lab5-task7-7.png " ")
 
 ## Task 8: Store Certificate in the Database
 
@@ -389,7 +388,7 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	/
 	```
 
-	![](./images/task8-1.png " ")
+	![](./images/lab5-task8-1.png " ")
 
 2. Make sure to copy the value of Certificate GUID. It will not be displayed again. 
 
@@ -408,8 +407,8 @@ Let's connect to Oracle cloud shell to generate your x509 key pair. We are gener
 	SELECT * FROM USER_CERTIFICATES;
 	</copy>
 	```
-	![](./images/task8-3.png " ")
-
+	![](./images/lab5-task8-3.png " ")
+-->
 
 You may now [proceed to the next lab](#next).
 
