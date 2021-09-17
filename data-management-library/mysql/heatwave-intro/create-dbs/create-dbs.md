@@ -202,13 +202,13 @@ In this lab, you will be guided through the following tasks:
 
         ![](./images/bastion-08.png " ") 
 
-3. Click `View SSh Command`  
+2. Click `View SSh Command`  
 
         ![](./images/bastion-09.png " ") 
 
-4. Click copy and paste the information to your notepad and hit Close
+3. Click copy and paste the information to your notepad and hit Close
 
-5.  update the session command on notepad
+4.  update the session command on notepad
     - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
     - add `&` at the end of the command
     
@@ -216,18 +216,27 @@ In this lab, you will be guided through the following tasks:
 
         ![](./images/notepad2.png " ") 
     
-6. Open the cloud shell and enter the command from the notepad. It should like this:
+5. Open the cloud shell and enter the command from the notepad. It should like this:
     `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk..................ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
 
-7. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
+6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
 
      ```
      <copy>mysqlsh admin@127.0.0.1</copy>
      ``` 
- 
+7. View  the airportdb total records per table in 
+
+    ```
+    <copy>\sql</copy>
+    ```
+
+    ```
+    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
+    ```
+    ![Connect](./images/09import02.png " ") 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
-* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021

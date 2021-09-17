@@ -21,7 +21,7 @@ In this lab, you will be guided through the following tasks:
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Completed Task 2
+- Completed Lab 2
 
 ## Task 1: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
@@ -56,22 +56,18 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ![Connect](./images/10addheat07.png " ")
 
 ## Task 2: Load airportdb Data into HeatWave Cluster
-1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
+1. If not already connected with SSH, on Command Line, connect to the Cloud Shell
 
-    (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
-
-2. On command Line, connect to MySQL using the MySQL Shell client tool
-
-    (Example  **mysqlsh -uadmin -p -h10.0.1..**)
+2. On command Line, connect to MySQL using the MySQL Shell client tool with th following command:
 
     ```
-    <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
+    <copy>mysqlsh admin@127.0.0.1</copy>
     ```
 
 3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
 
     ```
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ```
 
     ```
