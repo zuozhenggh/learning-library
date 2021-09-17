@@ -1,8 +1,8 @@
-# Create Tables, Load Tables
+# Create tables, load tables
 
 ## Introduction
 
-This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the OCI console, writing an application program, or triggering actions via a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
+This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
 Estimated Time: 25 minutes
 
@@ -10,7 +10,7 @@ Estimated Time: 25 minutes
 
 * Create 3 tables with provisioned reads/sec, writes/sec, and GB storage
 * Write data to the table and read data from the table
-* Look at the data in the tables via the OCI console
+* Look at the data in the tables with the Oracle Cloud Console
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ Estimated Time: 25 minutes
 
     ![](./images/phoenix-location.png)
 
-2. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Tables' screen where you can create a table from the console.
+2. On the OCI menu drop down on the left, go to Databases and then press 'Tables' under Oracle NoSQL Database.  This brings you to the 'Tables' screen where you can create a table from the console.
 
     ![](./images/nosql-tables.png)
 
@@ -76,7 +76,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     </copy>
     ````
 
-2. Execute the following environment setup shell script in the Cloud Shell. If you close/open the Cloud Shell Console, please re-execute it.
+2. Execute the following environment setup shell script in the Cloud Shell. If you close/open the Cloud Shell, please re-execute it.
 
     ```
     <copy>
@@ -127,7 +127,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     ![](./images/cloud-shell-small.png)
 
 
-## Task 3:  Adding Data From the OCI Console
+## Task 3:  Adding Data From the Oracle Cloud Console
 
 1. Make sure you are 'Tables' screen.  You should see 3 tables listed.  Your compartment should be demonosql.
 
@@ -141,7 +141,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
     ![](./images/insert-row.png)
 
-4. On the 'Insert row' screen, you will see two ways to input data - a simple and advanced.   For our freeTest table we will use the simple method.    Enter a value for the pkey column and the name column.  When done, hit 'Insert row'.
+4. On the 'Insert row' screen, you will see two ways to input data - a simple and advanced.   For our freeTest table we will use the simple method.    Enter a value for the pkey column and the name column.  When done, press 'Insert row'.
 
     ![](./images/row-inserted.png)
 
@@ -237,7 +237,7 @@ Starting with the demo table, we can go and look at the data we inserted for eac
 
   You will see in the bottom of the screen the row that we inserted.
 
-3. Go to the top left, hit 'Tables', select the freeTest table, and look at the row inserted into that table.
+3. Go to the top left, press 'Tables', select the freeTest table, and look at the row inserted into that table.
 
 You may now **proceed to the next lab.**
 
