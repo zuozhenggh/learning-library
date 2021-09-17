@@ -57,7 +57,7 @@ This lab assumes you have:
 
     ![](images/capturecloudshellhomeregion.png)
 
-4. Execute these commands in your Cloud Shell.  Replace "YOURUSEROCID" with your OCID you copied above **before** executing.
+4. Execute these commands in your Cloud Shell.  **Replace** "YOURUSEROCID" with your OCID you copied above **before** executing.
 
     ````
     <copy>
