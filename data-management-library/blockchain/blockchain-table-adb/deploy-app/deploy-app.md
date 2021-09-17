@@ -136,15 +136,6 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
 Let's generate your x509 key pair. We are generating the key pair and an X509 certificate that will be used for data signing later.
 
-<!--
-1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-	![](./images/lab5-task7-1.png " ")
--->
 1. Now that we have connected to the compute instance in Oracle cloud shell using SSH, let's download the nodejs.zip file.
 
     ```
@@ -298,7 +289,7 @@ Let's generate your x509 key pair. We are generating the key pair and an X509 ce
 
 ## Task 5: Install Node.js in the Compute Instance
 
-<!--Now that the virtual machine is provisioned,-->Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Autonomous database rest end points.
+Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Autonomous database rest end points.
 
 1. Navigate back to the tab with Oracle Cloud console. To install Node.js we need to have oracle-release-el7 repo added to the virtual machine via sudo. This will take about a minute and will say "Complete!" when finished.
 
