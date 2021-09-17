@@ -9,7 +9,7 @@ You can deploy controls to block privileged account access to application data a
 
 *Estimated Time:* 35 minutes
 
-*Version tested in this lab:* Oracle Autonomous Data Warehouse (ADW) 19c
+*Version tested in this lab:* Oracle Autonomous Datatabase (ADB) 19c
 
 ### Video Preview
 Watch a preview of "*Oracle Database Vault Introduction (May 2021)*" [](youtube:vSVr7avZ4Hg)
