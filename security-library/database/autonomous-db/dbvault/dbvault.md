@@ -9,7 +9,7 @@ You can deploy controls to block privileged account access to application data a
 
 *Estimated Time:* 35 minutes
 
-*Version tested in this lab:* Oracle Autonomous Datatabase (ADB) 19c
+*Version tested in this lab:* Oracle Autonomous Datatabase 19c
 
 ### Video Preview
 Watch a preview of "*Oracle Database Vault Introduction (May 2021)*" [](youtube:vSVr7avZ4Hg)
@@ -42,7 +42,7 @@ The HR schema contains multiple tables such as CUSTOMERS table which contains se
 
    ![](./images/adb-dbv_001.png " ")
 
-We start with creating the two DV user accounts - DV Owner and DV Account Manager. The dv_owner account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
+We start with creating the two DV user accounts - DV Owner and DV Account Manager. The DV_OWNER account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
 
 1. Open a SQL Worksheet on your **ADB Security** as *admin* user
     
@@ -83,10 +83,19 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
       -- Create dbv_owner
       CREATE USER dbv_owner IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_owner;
+      GRANT DV_OWNER TO dbv_owner;
+      GRANT SELECT ANY DICTIONARY TO dbv_owner;
         
       -- Create dbv_acctmgr
       CREATE USER dbv_acctmgr IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_acctmgr;
+      GRANT DV_ACCTMGR TO dbv_acctmgr;
+
+      -- Enable SQL Worksheet for dbv_owner user
+      BEGIN
+         ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('dbv_owner'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('dbv_owner'), p_auto_rest_auth => TRUE);
+      END;
+      /
       </copy>
       ````
 
@@ -149,7 +158,7 @@ Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and 
 A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources. After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
 
 1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
-    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
+    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER) as shown in Task1 previously
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
@@ -250,15 +259,15 @@ A realm is a protection zone inside the database where database schemas, objects
       </copy>
       ````
  
-       - as user **ADMIN**
+       - as user "**ADMIN**"
 
           ![](./images/adb-dbv_014.png " ")
 
-       - as user **HR**
+       - as user "**HR**"
 
           ![](./images/adb-dbv_015.png " ")
 
-       - as user **APPUSER**
+       - as user "**APPUSER**"
 
           ![](./images/adb-dbv_016.png " ")
 
