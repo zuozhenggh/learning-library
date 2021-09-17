@@ -33,7 +33,7 @@ Now that the virtual machine is provisioned, let us see how to install Node.js f
 
     ![](./images/task1-1.png " ")
 
-2. To install Node.js we need to have oracle-release-el7 repo added to the virtual machine as sudo. This will take about a minute and will say "Complete!" when finished.
+2. To install Node.js we need to have oracle-release-el7 repo added to the virtual machine via sudo. This will take about a minute and will say "Complete!" when finished.
 
     ```
     <copy>
@@ -84,7 +84,7 @@ To connect to the Autonomous Database instance from the virtual machine we need 
 
 ## Task 3: Deploy the Application
 
-In the Oracle Linux virtual machine, as we the Node.js running, the ports are enabled, let's download and deploy the application.
+In the Oracle Linux virtual machine, since we have the Node.js installed and the ports are enabled, let's download and deploy the application.
 
 1.  Navigate to nodejs folder.
 
@@ -127,11 +127,19 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 
     ![](./images/task3-5.png " ")
 
-6. Duplicate the browser tab with cloud shell window and SSH into the compute instance.
+6. Duplicate the current tab in the browser.
 
     ![](./images/task3-6.png " ")
 
-7.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
+7. Let's reconnect into the compute instance. Click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using the command.
+
+    ````
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    ````
+
+    ![](./images/task1-1.png " ")
+
+8.  Navigate to the nodejs folder and run the command to deploy the application. Once we run the `node bin/www` command the Node.js application will be running and will be listening on port 8080.
 
     ```
     <copy>
@@ -139,10 +147,20 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
     node bin/www
     </copy>
     ```
-    If the cursor is idle which means the nodejs application is running.
+
+    If the cursor is idle this means the nodejs application is running.
+
     ![](./images/task3-7.png " ")
 
 ## Task 4: Sign the Row
+
+Let's use the curl command to send a REST request to the node.js application we’ve just started. This will cause the application to:
+
+    - Retrieve the content of the row using DBMS_BLOCKCHAIN_TABLE.GET_BYTES_FOR_ROW_SIGNATURE procedures
+    - Invoke openssl command to generate a signature using your private key
+    - Add the signature to the row using DBMS_BLOCKCHAIN_TABLE.SIGN_ROW procedure, at which point the database will use your certificate GUID to retrieve the certificate, extract the public key, and verify that the signature generated using your private key in the node.js application is valid based on the data present in the row and the public key in your X.509 certificate
+
+If the signature and data are verified with the public key, the signature field is stored in the table and the application returns status 200 and a success message. If this fails, it returns error status 400.
 
 1. Navigate back to the previous cloud shell window that does not have the Node.js application running.
 
@@ -160,15 +178,32 @@ In the Oracle Linux virtual machine, as we the Node.js running, the ports are en
 
 3. Notice JSON message with status 200 and message displayed is `Signature has been added to the row successfully` which means that the row how has been signed successfully.
 
-    ![](./images/task4-3.png " ")    
+    ![](./images/task4-3.png " ")
 
 4. To verify, navigate back to the tab with Blockchain APEX application with the List of Transactions and refresh the tab. Notice that the row with the values Instance ID - , Chain ID - and Seq ID - `IS Signed` column should display a green tick from which indicates that the row is signed successfully.
 
     ![](./images/task4-4.png " ")
 
+5. Navigate back to SQL Developer Web and query all the columns in the `bank_ledger` table to view the actual values in the signature and GUID columns.
+
+    Scroll to the output to the right and notice values in the orabctab_signature$, _signature_alg$, and _signature_cert$ columns.
+
+	```
+	<copy>
+	select bank, deposit_date, deposit_amount, ORABCTAB_INST_ID$,
+	ORABCTAB_CHAIN_ID$, ORABCTAB_SEQ_NUM$,
+	ORABCTAB_CREATION_TIME$, ORABCTAB_USER_NUMBER$,
+	ORABCTAB_HASH$, ORABCTAB_SIGNATURE$, ORABCTAB_SIGNATURE_ALG$,
+	ORABCTAB_SIGNATURE_CERT$ from bank_ledger;
+	</copy>
+	```
+
+	![](./images/task4-5.png " ")
+
+
 ## Acknowledgements
 
 * **Author** - Mark Rakhmilevich, Anoosha Pilli
-* **Contributors** - Anoosha Pilli, Salim Hlayel, Product Manager, Oracle Database
-* **Last Updated By/Date** - Brianna Ambler, August 2021
+* **Contributors** - Anoosha Pilli, Salim Hlayel, Brianna Ambler, Product Manager, Oracle Database
+* **Last Updated By/Date** - Anoosha Pilli, September 2021
 

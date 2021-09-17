@@ -32,7 +32,7 @@ This lab assumes you have:
 
     ![](images/identity-security-compartment.png)
 
-3. Click on Create Compartment. This opens up a new window.
+3. Click 'Create Compartment.' This opens up a new window.
 
   Enter **demonosql** as compartment name, enter a description and hit 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- this does not need to be changed.  You can change your parent if you want to be under a different parent compartment.
 
@@ -41,7 +41,7 @@ This lab assumes you have:
 
 ## Task 2: Create an API Key For Your User
 
-1. Top right, click on your Profile -> User Settings.
+1. Top right, click your Profile -> User Settings.
 
   ![](images/user-profile.png)
 
@@ -57,7 +57,7 @@ This lab assumes you have:
 
     ![](images/capturecloudshellhomeregion.png)
 
-4. Execute these commands in your Cloud Shell.  Replace "YOURUSEROCID" with your OCID you copied above **before** executing.
+4. Execute these commands in your Cloud Shell.  **Replace** "YOURUSEROCID" with your OCID you copied above **before** executing.
 
     ````
     <copy>
@@ -104,7 +104,7 @@ In this node.js snippet, we used the credential information created in Task 2 an
 
   You can use **Resource Principals** to do the connection to NoSQL Cloud Service as shown below in the Node.js and Python examples instead of specifying the credentials.  Once they are set up, they are very simple to use because all you need to do is call the appropriate authorization constructor.
 
-In this snippet, there are hard-coded references (eg REGION).
+In this snippet, there are hard-coded references (e.g., REGION).
 
 **NoSQL Database Node.js SDK**
 ```
@@ -137,11 +137,11 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Ph
 
     ![](images/no-phoenix.png)
 
-2.  If it is there, click on it and move your tenancy to Phoenix and **proceed to the next lab.**
+2.  If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
 
     ![](images/phoenix.png)
 
-3.  Since it is not there, please subscribe to Phoenix Region.  Click on drop down by your region and click on 'Manage Regions'.
+3.  Since it is not there, please subscribe to Phoenix Region.  Click the drop down by your region and click 'Manage Regions'.
 
     ![](images/manage-regions.png)
 
@@ -149,7 +149,7 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Ph
 
     ![](images/capturesuscribe.png)
 
-5. If you havent been moved to Phoenix, then click on Phoenix to move your tenancy.
+5. If you haven't been moved to Phoenix, then click Phoenix to move your tenancy.
 
     ![](images/phoenix.png)
 

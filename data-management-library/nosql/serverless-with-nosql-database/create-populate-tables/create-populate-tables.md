@@ -1,4 +1,4 @@
-# Create Tables and Load Tables
+# Create Tables, Load Tables
 
 ## Introduction
 
@@ -24,11 +24,11 @@ Estimated Time: 25 minutes
 
     ![](./images/phoenix-location.png)
 
-2. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Table' screen where you can create a table from the console.
+2. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Tables' screen where you can create a table from the console.
 
     ![](./images/nosql-tables.png)
 
-3. Click on 'Create Table' and the 'Create Table' screen appears.
+3. Click 'Create Table' and the 'Create Table' screen appears.
 
     ![](./images/create-tables.png)
 
@@ -38,15 +38,15 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking on the 'Always Free Configuration' button grays out the boxes to input provisioning.  Next enter a name for your table, a primary key and column. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type string as an additional column.  Click 'Set as a Shard Key'.
+  Clicking the 'Always Free Configuration' button grays out the boxes to input provisioning.  Next enter a name for your table, a primary key and column. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.  Click 'Set as a Shard Key'.
 
-5. When done with inputs click on 'Create Table' at the bottom.
+5. When done with inputs click 'Create table' at the bottom.
 
    ![](./images/create-myfree-table.png)
 
   In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding multiple additional columns.  You can easily create simple or more complex tables with this interface.  
 
-6. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
+6. After clicking 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
 
     ![](./images/freetest-table.png)
 
@@ -115,7 +115,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     </copy>
     ```
 
-4. Minimize the Cloud Shell by clicking on the minimization button.
+4. Minimize the Cloud Shell by clicking the minimization button.
 
     ![](./images/cloud-shell-small.png)
 
@@ -126,11 +126,11 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
     ![](./images/table-screen.png)
 
-2. Lets start with the simple table we created in Task 1.  Click on freeTest table.  The screen that shows up, displays all the key information about the table.  Explore that screen.
+2. Lets start with the simple table we created in Task 1.  Click 'freeTest' table.  The screen that shows up, displays all the key information about the table.  Explore that screen.
 
     ![](./images/free-test.png)
 
-3. Click on insert row, and the insert row screen appears.
+3. Click insert row, and the insert row screen appears.
 
     ![](./images/insert-row.png)
 
@@ -142,11 +142,11 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
     ![](./images/click-tables.png)
 
-6. Click on demo table
+6. Click 'demo' table
 
     ![](./images/capturenosql.png)
 
-7. Click on 'Insert Row'. This opens up a new window. This time, choose Advanced Json Input.
+7. Click 'Insert row'. This opens up a new window. This time, choose Advanced Json Input.
 
   Copy/Paste the json Baggage document below in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
 
@@ -212,19 +212,19 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     ````
 
 
-8. Click on 'Insert Row' at bottom left of screen.
+8. Click 'Insert Row' at bottom left of screen.
 
-You have seen two different ways to insert data into a table.  
+  To quickly summarize, in this Lab you have seen two different ways to insert data into a table.  
 
 ## Task 4:  Show Data From the Console
 
 Starting with the demo table, we can go and look at the data we inserted for each of the tables.
 
-1. On the left Click on Table Rows
+1. On the left Click 'Table Rows'
 
     ![](./images/table-row-select.png)
 
-2. In the textbox Query, keep the text SELECT * FROM demo.  This will select all the rows from our table.  Click on Run query
+2. In the textbox Query, keep the text SELECT * FROM demo.  This will select all the rows from our table.  Click 'Run query'
 
     ![](./images/run-query.png)
 
