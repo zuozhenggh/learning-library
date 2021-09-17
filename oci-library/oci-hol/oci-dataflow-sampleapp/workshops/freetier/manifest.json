@@ -26,8 +26,8 @@
         },
 
         {
-            "title": "Lab 2: Build a Datapipline with OCI DataFlow and Metastore",
-            "description" : "Build a Datapipline with OCI DataFlow and Metastore",
+            "title": "Lab 2: Build a Datapipeline with OCI DataFlow and Metastore",
+            "description" : "Build a Datapipeline with OCI DataFlow and Metastore",
             "filename": "../../dataflow-sampleapp/samplehiveexternaltable.md"
         }
 

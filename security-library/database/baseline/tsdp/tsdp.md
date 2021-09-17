@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the functionality of Oracle Transparent Sensitive Data Protection (TSDP). It gives the user an opportunity to learn how to configure those features in order to protect access to sensitive data by redacting them on-the-fly.
 
-*Estimated Lab Time:* 15 minutes
+*Estimated Time:* 15 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 ### Video Preview

@@ -14,19 +14,19 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
       "filename": "../../../common/init-start-env/init-start-env.md"
     },
     {
-      "title": "Transparent Data Encryption (TDE)",
+      "title": "Lab 2: Transparent Data Encryption (TDE)",
       "description": "In this lab you can see how to leverage Oracle Transparent Data Encryption (TDE)",
       "publisheddate": "10/20/2020",
       "filename": "../../advanced-security/tde/tde.md"
     },
     {
-      "title": "Data Redaction",
+      "title": "Lab 3: Data Redaction",
       "description": "In this lab you can see how to leverage Oracle Data Redaction",
       "publisheddate": "10/20/2020",
       "filename": "../../advanced-security/data-redaction/data-redaction.md"
