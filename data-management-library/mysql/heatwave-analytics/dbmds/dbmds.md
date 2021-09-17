@@ -18,6 +18,8 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
+[Lab 2 Demo](youtube:DfdcFzcnpWQ)
+
 ## Task 1: Add HeatWave Cluster to MySQL Database Service
 
 1. We will need to wait for the DB System which you have just created until its status turns  _**Active**_, it would takes around 10 minutes.
