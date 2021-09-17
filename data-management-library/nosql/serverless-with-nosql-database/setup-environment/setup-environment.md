@@ -34,7 +34,7 @@ This lab assumes you have:
 
 3. Click 'Create Compartment.' This opens up a new window.
 
-  Enter **demonosql** as compartment name, enter a description and hit 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- this does not need to be changed.  You can change your parent if you want to be under a different parent compartment.
+  Enter **demonosql** as compartment name, enter a description and hit 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case.  This HOL assumes the demonosql compartment is a child of the root compartment.
 
     ![](images/create-compartment.png)
 
