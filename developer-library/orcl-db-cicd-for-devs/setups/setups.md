@@ -28,7 +28,7 @@ We are going to create a **Compartment** for this lab so that our database is in
 
     ![Create Compartment Button](./images/comp-2.png)
 
-3. Using the **Create Compartment** modal, set the following values:
+3. Using the **Create Compartment modal**, set the following values:
 
     **Name:** livelabs
 
@@ -53,7 +53,7 @@ We are going to create a **Compartment** for this lab so that our database is in
 
     ![Create Compartment Parent Compartment Field](./images/comp-5.png)
 
-4. When your Create Compartment modal looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment** button.
+4. When your **Create Compartment modal** looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment button**.
 
     ![Create Compartment Modal](./images/comp-6.png)
 
@@ -63,7 +63,7 @@ We are going to create a **Compartment** for this lab so that our database is in
 
    ![Identity & Security, then Users](./images/tok-1.png)
 
-2. On the Users page, find your user login and click the the name to go to the User Details page.
+2. On the **Users page**, find your user login and click the the name to go to the **User Details page**.
 
    ![Users List Page](./images/tok-2.png)
 
@@ -100,9 +100,10 @@ We are going to create a **Compartment** for this lab so that our database is in
 
     ![Generated Token](./images/tok-7.png)
 
+    ### **It is important to note that the token text will not be displayed or able to be retrieved after you click the close button in the Generate Token Modal. Please copy and save this token text.**
+
     When you have copied the token and saved it somewhere (text pad, notes app, etc), click the **Close** button.
 
-    **It is important to note that the token text will not be displayed or able to be retrieved after you click the close button in the Generate Token Modal. Please copy and save this token text.**
 
 ## Task 3: Create an Autonomous Database
 
@@ -110,16 +111,16 @@ We are going to create a **Compartment** for this lab so that our database is in
 
     ![ADB from the menu](./images/adb-1.png)
 
-2. On the Autonomous Database page, change your compartment to the livelabs compartment using the **Compartment** dropdown on the left side of the page.
+2. On the **Autonomous Database page**, change your **compartment** to the **livelabs compartment** using the **Compartment** dropdown on the left side of the page.
 
     ![ADB compartment dropdown](./images/adb-2.png)
 
-3. With the livelabs compartment selected, click the **Create Autonomous Database** button on the top of the page.
+3. With the **livelabs compartment selected**, click the **Create Autonomous Database** button on the top of the page.
 
     ![Create Autonomous Database button](./images/adb-3.png)
 
 
-4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here we can ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **Livelabs ADB** as the Display Name.
+4. In the **Create Autonomous Database** page, we start in the **Provide basic information for the Autonomous Database** section. Here, ensure our **Compartment** is **livelabs** and give our database a **Display Name**. We can use **Livelabs ADB** as the Display Name.
 
     **Display Name:** Livelabs ADB
 
@@ -176,9 +177,9 @@ We are going to create a **Compartment** for this lab so that our database is in
 
    ![admin password section](./images/adb-12.png)
 
-11. For the **Choose network access** section, select **Secure access from everywhere** if not already selected. Leave the **Configure access control rules** checkbox unchecked.
+11. For the **Choose network access** section, select **Allow secure access from everywhere** if not already selected. Leave the **Configure access control rules** checkbox unchecked.
 
-   ![admin password section](./images/adb-13.png)
+   ![network access section](./images/adb-13.png)
 
 12. The **Choose a license type** section should default to **License Included**.
 

@@ -2,6 +2,26 @@
 
 ## About this Workshop
 
+This workshop will walk you through database change management via CI/CD using SQLcl and a the OCI DevOps Code Repository. You will be using an Autonomous Database to create database objects that you will commit to the repository as well as see database change tracking via SQLcl and Liquibase. These skills will set the baseline for expanding CI/CD into areas such as pipelines and automated deployment.
+
+*Estimated Workshop Time:* 2 Hours
+
+### Objectives
+
+In this lab you will learn to use SQLcl and git to track and apply changes across databases for CI/CD processes.
+
+- Create an autonomous database and sameple schemas
+- Use SQLcl to create a baseline of an Oracle Database schema
+- Commit the baseline to a git repository
+- Create and track database object changes with SQLcl
+- Apply the changes to a new schema and see the results
+
+### Prerequisites
+This lab assumes you have:
+* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+
+## Learn More
+
 ### What is CI/CD
 
 Continuous Integration (CI) and Continuous Delivery/Deployment (CD) are a set of principles or methodologies that empower development teams to deliver code faster, more reliably, and with fewer bugs compared to traditional software development such as the waterfall model. Teams that use CI/CD also usually adhere to some version of the Agile Methodology, working on smaller features as part of a larger overarching requirement in sprints rather than monolithic tasks spanning months or years.
@@ -75,48 +95,29 @@ The Liquibase feature in SQLcl enables you to execute commands to generate a cha
 
 **What Database?**
 
-For this LiveLab, the simplest way to get up and running with an Oracle Database is a free OCI account and an always free Autonomous Database. They come up in minutes and are never going to cost you a dime to use. If you do not have an always free OCI account, you can start here. Once you are logged into your account, you can create an always free Autonomous Database by following this guide here. For our purposes, an Autonomous Transaction Processing database is fine. Just remember the password you used when creating the database; we will need it later.
+For this LiveLab, the simplest way to get up and running with an Oracle Database is a free OCI account and an always free Autonomous Database. They come up in minutes and are never going to cost you a dime to use. If you do not have an always free OCI account, you can start [here](https://cloud.oracle.com). Once you are logged into your account, you can create an always free Autonomous Database by following this guide here. For our purposes, an Autonomous Transaction Processing database is fine. Just remember the password you used when creating the database; we will need it later.
 
 **No Really, What Database?**
 
 While we will use a single autonomous database for this LiveLab’s examples, outside of this exercise, you have many choices but the most important take away is that all developers MUST have personal databases to work in; and this point cannot be stressed enough. This can be tricky due to many factors but here are some suggestions on making this step a reality in your development organization.
 
-**Use Multi-tenant in the Oracle Database**
+- **Use Multi-tenant in the Oracle Database**
 
-Did you know that with 19c and later, you can have up to 3 pluggable databases for free? No need for the multi-tenant license, just create and use. PDBs (pluggable databases) also have the ability to clone just the metadata from an origin PDB. This makes it super simple to create copies of a production code database for all developers. It also aids in the testing automation process. Another quick note is that by installing Oracle REST Data Services (ORDS) on a database enables APIs for cloning and creating PDBs via REST calls.
+   Did you know that with 19c and later, you can have up to 3 pluggable databases for free? No need for the multi-tenant license, just create and use. PDBs (pluggable databases) also have the ability to clone just the metadata from an origin PDB. This makes it super simple to create copies of a production code database for all developers. It also aids in the testing automation process. Another quick note is that by installing Oracle REST Data Services (ORDS) on a database enables APIs for cloning and creating PDBs via REST calls.
 
-**The Autonomous Database in OCI**
+- **The Autonomous Database in OCI**
 
-Using ADB in OCI works very similar to multi-tenant where you can create full and metadata only clones of any ADB. And these ADB instances may only need to be up for minutes to weeks. This is what we will be using in this LiveLab.
+   Using ADB in OCI works very similar to multi-tenant where you can create full and metadata only clones of any ADB. And these ADB instances may only need to be up for minutes to weeks. This is what we will be using in this LiveLab.
 
-**Reusable Instances**
+- **Reusable Instances**
 
-There are many features in the Oracle Database that will allow you to recover state so that developers have clean slates to work with in non multi-tenant instances. Features such as Guaranteed Restore Points/Flashback Database, RMAN duplicates/clones and Data Pump allow you to have clean instances for each developer as sprints start.
+   There are many features in the Oracle Database that will allow you to recover state so that developers have clean slates to work with in non multi-tenant instances. Features such as Guaranteed Restore Points/Flashback Database, RMAN duplicates/clones and Data Pump allow you to have clean instances for each developer as sprints start.
 
-**Docker/Virtual Machines**
+- **Docker/Virtual Machines**
 
-Either cloud based or local, virtualization technologies can also give developers personal instances to work in with copies of our main code repository within. Developers can also create VM instances of databases in OCI based on the lastet backup of our production instance if need be as well to help with the personal database effort.
-
-*Estimated Workshop Time:* 1 Hour
-
-### Objectives
-
-In this lab you will learn to use SQLcl and git to track and apply changes across databases for a CI/CD processes.
-
-- Create an autonomous database and sameple schemas
-- Use SQLcl to create a baseline of an Oracle Database schema
-- Commit the baseline to a git repository
-- Create and track database object changes with SQLcl
-- Apply the changes to a new schema and see the results
-
-### Prerequisites
-This lab assumes you have:
-* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
-
-## Learn More
-
+   Either cloud based or local, virtualization technologies can also give developers personal instances to work in with copies of our main code repository within. Developers can also create VM instances of databases in OCI based on the lastet backup of our production instance if need be as well to help with the personal database effort.
 
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, August 2021
+- **Last Updated By/Date** - Brian Spendolini, September 2021
