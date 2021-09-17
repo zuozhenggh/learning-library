@@ -24,27 +24,26 @@ Estimated Lab Time: 30 minutes
 ## **Task 1**: Explore the OAC Project
 
 
-An Oracle Analytics project has 3 main parts:
+An Oracle Analytics project has 3 main tabs:
 
-**Prepare**: Here is where you configure your data. You get a preview of each dataset on the project. And you enrich it by adding columns, hiding or renaming the available ones. You also define joins between datasets here.
+**Prepare**: Here is where you prepare your data. You get a preview of each dataset on the project. And you enrich it by adding columns, hiding or renaming the available ones. You also define joins between datasets here.
 
 **Visualize**: Here is where you explore and Analyze the data.
 You can create several canvases to hold the different visualizations you define.
 
-**Narrate**: Here is where you can create a more presentation oriented view of the analysis you created.
+**Narrate**: Here is where you create a storyboard of the analysis you created.
 
 ![](images/1_home_page_project.png " ")
 
-During these exercises you will use only Visualize and Prepare tabs.
-
+During these exercises you will use only Visualize and Data tabs.
 
 Focusing on Visualize. This is your project window:
 
-Explorer: Here you have the list of datasets and columns.
+Data: Here you have the list of datasets and columns.
 
 Properties Box: Shows all properties and parameters of selected object. Selected component will be highlighted (if a column) or have a blue border (if a graphic).
 
-Graphic Components: Configures which data is shown in the visualization
+Grammar Panel: Configures which data is shown in the visualization
 Canvas: Where all visuals are displayed. You can create several tab canvases (Canvas Tab are at the bottom).
 
 ![](images/2_canvas_properties.png " ")
