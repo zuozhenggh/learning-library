@@ -67,6 +67,8 @@ What are some of the goals of this application:
 
       ![](images/blue-mist.png)
 
+   **Note:** If you see a screen that says 'Blue Mist Employee Portal' and not 'Blue Mist Airways' then you are using a device with a larger display.  You have been taken to the employee portal.  You can look at the information there but it not line up with the rest of the screen shots in this Lab.
+
 ## Task 3: Track a Bag
 
 1. Tap on the 'Track Your Baggage' button.
