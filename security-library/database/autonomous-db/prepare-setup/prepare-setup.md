@@ -23,7 +23,7 @@ Estimated time: 10 minutes
 
     ![](./images/adb-set_001.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click on the provisioning of Autonomous DB of your choice** (here we have choosen an ADW).
+3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click on the provisioning of Autonomous DB of your choice** (here we choose an ADW but again you can also choose ATP if you prefer).
 
     ![](./images/adb-set_002.png " ")
 
