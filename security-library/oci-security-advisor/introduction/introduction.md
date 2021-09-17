@@ -10,12 +10,12 @@ Security Advisor only allows you to create master encryption key with 4096 bits 
 
   ![](./images/advisor-workflow.png " ")
   
-*Estimated Workshop Time:* 1 Hour
+Estimated Workshop Time: 1 Hour
 
 
 
 ### Workshop Objectives
-In this lab, you will learn how to:
+In this workshop, you will learn how to:
 * Create a Maximum Security Zone and Maximum Secure Compartment
 * Grant security access in policy to create resources in the compartment
 * Create OCI Key Vault
@@ -29,7 +29,6 @@ In this lab, you will learn how to:
 * Some understanding of cloud and security terms is helpful
 * Familiarity with Oracle Cloud Infrastructure (OCI) is helpful
 
-You may now proceed to the next lab.
 
 ## Learn More
 - You can find more information about OCI Security Cloud Advisor [here](https://docs.oracle.com/en-us/iaas/Content/SecurityAdvisor/Concepts/securityadvisoroverview.htm)

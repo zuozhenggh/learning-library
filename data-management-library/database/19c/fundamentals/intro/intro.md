@@ -16,7 +16,7 @@ With the Oracle Autonomous Database, developers can fully concentrate on the app
 
 This workshop lets you try out new features in Oracle Database 19c. All of the labs are independent of each other, so you don't need to do them in any particular order. If needed, a lab starts with instructions on how to prepare your environment, and ends with instructions on how to restore your environment back to its original state. For most lab steps, you enter a command in the terminal window. For database actions, you use SQL*Plus.
 
-> **Note**: Currently, this workshop is not supported in an Always Free environment.
+> **Note**: Currently, this workshop is not supported in an Always Free environment. If you are using the LiveLabs environment (green button), please note that the **Install Oracle Database 19c with Automatic Root Script Execution** lab is not available.
 
 ### General Database Overall Enhancement Labs
 
@@ -35,4 +35,4 @@ The following general database overall enhancement labs are available:
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 9 2021

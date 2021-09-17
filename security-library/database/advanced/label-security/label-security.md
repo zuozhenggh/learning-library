@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Label Security (OLS). It gives the user an opportunity to learn how to configure those features to secure their sensitive data, to help tracking consent, and to enforce restriction of processing under regulation requirements such as the General Data Protection Regulation.
 
-*Estimated Lab Time:* 30 minutes
+*Estimated Time:* 30 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 
