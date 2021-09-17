@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Audit Vault and DB Firewall (AVDF). It gives the user an opportunity to learn how to configure those appliances in order to audit, monitor and protect access to sensitive data.
 
-*Estimated Lab Time:* 150 minutes
+*Estimated Time:* 150 minutes
 
 *Version tested in this lab:* Oracle AVDF 20.3
 

@@ -29,7 +29,7 @@ In this lab, you will:
 
     ![](./images/nav-sql.png)
 
-2. On the left side, click on PRODUCTS - this is the table for the 'products' collection.
+2. On the left side, click on PRODUCTS - this is the table for the 'products' collection. To get the view displayed, you need to right-click on **PRODUCTS** and choose **Open**.
 
     ![](./images/products-table.png)
 

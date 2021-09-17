@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, you will provision a Oracle linux compute instance and log into the instance. Then provision the Oracle Autonomous Database (ADB) instance and connect to the database as new user.
+In the previous lab, we generated the ssh keys needed for the compute instance used for the node.js application to provide cryptographic signing of the user data outside the database.
+
+In this lab, you will provision an Oracle Linux compute instance using the ssh keys generated and log into the instance. Then provision the Oracle Autonomous Database (ADB) instance and connect to the database as a new user.
 
 Estimated Time: 20 minutes
 
@@ -27,7 +29,7 @@ This workshop assumes you have:
 
     ![](./images/task1-1.png " ")
 
-2. Make sure you are in the same region and compartment as the provisioned ATP instance and click on **Create Instance**.
+2. Make sure you are in the correct region and compartment and click on **Create Instance**.
 
     ![](./images/task1-2.png " ")
 
@@ -40,11 +42,9 @@ This workshop assumes you have:
     - **Image and shape** - For this lab, leave the default - Always Free Eligible resource or you can click on **Edit** to change the image and shape.
 
     ![](./images/task1-4.png " ")
-    
 
 5. In Add SSH keys, choose **Paste public keys** and paste the public key noted earlier in lab 1 and click **Create**.
 
-    *Note* - If the instance is not provisioning, choose a different Availability Domain (AD) and repeat 3 to 5 steps.
     ![](./images/task1-5.png " ")
 
 6. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Running. At this point, your compute instance is ready to use! Have a look at your instance's details and copy the **Public IP Address** to use later.
@@ -66,28 +66,21 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     ![](./images/task2-1.png " ")
 
-2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  In the command  below, replace "sshkeyname" with your actual ssh key name from Lab 1 and replace "Your Compute Instance Public IP Address" with the one you copied in Task 1 of this lab. Enter the edited command to login to your instance.
 
-    ![](./images/task2-21.png " ")
-    ![](./images/task2-22.png " ")
-
-3.  On the instance homepage, find the Public IP address for your instance.
-
-    ![](./images/task2-3.png " ")
-
-4.  In the command  below, replace "sshkeyname" with your actual ssh key name from Lab 1 and replace "Your Compute Instance Public IP Address" with the one you copied in Task 1 of this lab. Enter the edited command to login to your instance.     
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
     ````
 
-    *Note: The angle brackets <> should not appear in your code.*
+    *Note: The angle brackets <> should not appear in your command.*
+
     ![](./images/task2-4.png " ")
 
-5.  When prompted, answer **yes** to continue connecting.
+3.  When prompted, answer **yes** to continue connecting.
 
     ![](./images/task2-5.png " ")
 
-6.  Proceed to the next task on the left hand menu.
+4.  Proceed to the next task on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
 1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
@@ -102,7 +95,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     ![](./images/cloudshelllogin.png " ")
 
-    *Note: The angle brackets <> should not appear in your code.*
+    *Note: The angle brackets <> should not appear in your command.*
 
 4.  After successfully logging in, proceed to next task.
 
@@ -115,7 +108,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
     ````
     ![](./images/ssh-first-time.png " ")
 
-    *Note: The angle brackets <> should not appear in your code.*
+    *Note: The angle brackets <> should not appear in your command.*
 
 2.  Enter a name for the session and click **Save**.
 
@@ -125,7 +118,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
 4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
+5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE: You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
     ![](./images/putty-auth.png " ")
 
@@ -149,7 +142,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![](./images/task3-2.png " ")
 
-3. From the compartment drop-down menu select the **Compartment** where you want to create your ATP instance. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by **Workload Type**. Here, the **Transaction Processing** workload type is selected.
+3. From the compartment drop-down menu select the **Compartment** to create your ATP instance. Make sure you are in the same region and compartment as the compute instance you just provisioned. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by **Workload Type**. Here, the **Transaction Processing** workload type is selected.
 
     ![](./images/task3-31.png " ")
     ![](./images/task3-32.png " ")
@@ -169,7 +162,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     - **Choose a workload type** - For this lab, choose __Transaction Processing__ as the workload type.
     - **Choose a deployment type** - For this lab, choose **Shared Infrastructure** as the deployment type.
     - **Always Free** - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you to check **Always Free**.
-    - **Choose database version** - Select a database version from the available database versions.
+    - **Choose database version** - Select a database version 19c or 21c from the available database versions.
     - **OCPU count** - Number of CPUs for your service. Leave as it is. An Always Free databas comes with 1 CPU.
     - **Storage (TB)** - Storage capacity in terabytes. Leave as it is. An Always Free database comes with 20 GB of storage.
     - **Auto Scaling** - For this lab, leave auto scaling unchecked.
@@ -212,7 +205,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ![](./images/task4-5.png " ")
 
 6. In the Create User page, under User tab, provide the following details:
-    - **User Name** - Give the new user a User Name. In the lab, we name the user **Username - DEMOUSER**
+    - **User Name** - Give the new user a User Name. The username is case-sensitive. In the lab, we name the user **Username - DEMOUSER**.
     - **Password** - Provide the new user a password and confirm the Password. In this lab, we provide the same password as admin user for ease of use, **Password - WElcome123##** and confirm the password.
     - **Quota on tablespace DATA** - Set a value for the Quota on tablespace DATA for the user. Click the drop-down and choose **500M**.
     - **Web Access** - Turn on the Web Access radio button to access the SQL Developer Web.
@@ -261,5 +254,5 @@ Congratulations!! Now you are connected to the ATP instance as DEMOUSER from SQL
 ## Acknowledgements
 
 * **Author** - Anoosha Pilli, Database Product Manager
-* **Contributors** -  Anoosha Pilli, Database Product Management
-* **Last Updated By/Date** - Brianna Ambler, August 2021
+* **Contributors** - Anoosha Pilli, Brianna Ambler, Product Manager, Oracle Database
+* **Last Updated By/Date** - Anoosha Pilli, September 2021
