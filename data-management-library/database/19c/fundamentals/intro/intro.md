@@ -23,8 +23,8 @@ This workshop lets you try out new features in Oracle Database 19c. All of the l
 The following general database overall enhancement labs are available:
 
 - Install Oracle Database 19c with Automatic Root Script Execution
-- Clone a PDB by Using DBCA in Silent Mode
-- Relocate a PDB by Using DBCA in Silent Mode
+- Clone a PDB from a Remote CDB by Using DBCA in Silent Mode
+- Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode
 - Duplicate a CDB by Using DBCA in Silent Mode
 - Decrease the Transportable Tablespace (TTS) Import and Export Time
 - Omit the Column Encryption Attribute During Import
@@ -35,4 +35,4 @@ The following general database overall enhancement labs are available:
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, September 9 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 17 2021
