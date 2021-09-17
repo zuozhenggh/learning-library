@@ -241,13 +241,16 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-5. Write queries to answer the following questions.
+5. Write new queries to answer the following questions.
 
-  * Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).  Hint: Every record has an actions array at: bagInfo.flightLegs.actions
-  * Find the number of bags on flight BM715.  Hint: The size of the bagInfo array represents the number of bags a passenger has checked.
+  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).  
+  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
 
-    **Note:** The Learn More contains a link to the SQL Reference Guide.  Lab 3, Task 3 contains an example of the JSON record to look at.
-    
+  Find the number of bags on flight BM715.  
+  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+
+  **Note:** The Learn More contains a link to the SQL Reference Guide.  Lab 3, Task 3 contains an example of the JSON record to look at.
+
 6. Type in **exit** to exit from the python application.
 
 7. Minimize the Cloud Shell by hitting the minimize key.
@@ -259,7 +262,7 @@ This task deletes the tables that got created.
 
 1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, hit 'Tables'
 Set your compartment to 'demonosql'
-Click on the freeTest table, which will bring up the table details screen.  Hit Delete.
+Click the freeTest table, which will bring up the table details screen.  Hit Delete.
 
   ![](./images/delete-freetable.png)
 
@@ -267,6 +270,17 @@ Click on the freeTest table, which will bring up the table details screen.  Hit 
 
 2. Return to the 'Tables' screen and repeat the process for the demo and demoKeyVal tables.
 
+3. Remove the 'demonosql' compartment.  From upper left hand menu, go to 'Indentity and Security' then 'Compartments' under 'Identity.'
+
+    ![](./images/remove-compartment.png)
+
+4.  The 'Compartments' screen appears and click 'demonosql'
+
+    ![](./images/select-demonosql.png)
+
+5.  Hit the 'Delete ' button.  This will fire off a job that runs asynchronously.
+
+    ![](./images/delete-demonosql.png)
 
 ## Learn More
 
