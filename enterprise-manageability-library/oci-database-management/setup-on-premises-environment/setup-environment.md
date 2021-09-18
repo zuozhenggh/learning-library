@@ -18,8 +18,7 @@ This lab assumes you have already completed the following:
 
 Click on the link below to download the Resource Manager zip files you need to build your environment.
 
-- [db19c-primary.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0UTTWJVYDzbuU6z6Rcuuri0X5oykLaZOkGDjr-ba-8GNmZhRgKdvob3uAie-j9JX/n/orasenatdpltintegration01/b/database-management-lab/o/db19c-primarydb19c-primary.zip) - Packaged terraform primary database instance creation script.
-
+- [db19c-primary.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hfu967L3r9EtJfSG4JqFc5JSIglAx3iBXLTj0y9VgERvFOz_wqWgYZvrp3zRP8uE/n/orasenatdpltintegration01/b/database-management-lab/o/db19c-primary.zip) - Packaged terraform primary database instance creation script.
 
 ## Task 1: Prepare the Primary Database
 
