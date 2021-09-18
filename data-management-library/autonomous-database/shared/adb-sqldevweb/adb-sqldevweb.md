@@ -4,7 +4,7 @@
 
 In this lab, you will explore the provided sample data sets that come with your Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP) instance using SQL Worksheet.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Before You Begin
 
@@ -22,6 +22,10 @@ You will run a basic query on the `SSB` data set which is a 1 terabyte data set 
 - Learn about the Star Schema Benchmark (SSB) and Sales History (SH) sample data sets
 - Run a query on an ADW sample data set
 
+### Prerequisites
+
+- This lab requires completion of the Provision Autonomous Database lab in the Contents menu on the left.
+
 ## Task 1: Connect with SQL Worksheet
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP console.
@@ -37,7 +41,7 @@ Although you can connect to your autonomous database using local PC desktop tool
 
     ![Click on Tools tab.](./images/Picture100-34.png " ")
 
-3.  The Tools page provides you access to database administration and developer tools for Autonomous Database: Database Actions, Oracle Application Express, Oracle ML User Administration, and SODA Drivers. In the Database Actions box, click **Open Database Actions**.
+3.  The Tools page provides you access to database administration and developer tools for Autonomous Database: Database Actions, Oracle Application Express, Oracle ML User Administration,  SODA Drivers, and Graph Studio. In the Database Actions box, click **Open Database Actions**.
 
     ![Select Open Database Actions.](./images/Picture100-15.png " ")
 
@@ -53,7 +57,7 @@ Although you can connect to your autonomous database using local PC desktop tool
 
     ![Click on SQL.](./images/Picture100-16-click-sql.png " ")
 
-7.  The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
+7.  The first time you open SQL Worksheet, a series of pop-up informational boxes may appear, providing you a tour that introduces the main features. If not, click the Tour button (labeled with binoculars symbol) in the upper right corner. Click **Next** to take a tour through the informational boxes.
 
     ![SQL Worksheet.](./images/Picture100-sql-worksheet.png " ")
 

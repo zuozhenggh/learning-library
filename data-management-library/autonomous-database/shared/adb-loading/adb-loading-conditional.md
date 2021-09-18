@@ -13,7 +13,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 
 > **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -29,6 +29,10 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
 - **Loading Method 2**: Create and load two ADW tables with sample data that you stage in an *OCI Object Store*, using the Database Actions DATA LOAD tool.
 - **Loading method 3**: Create ADW tables using SQL Worksheet and load them with sample data that you stage in an *OCI Object Store*, using the PL/SQL *`DBMS_CLOUD`* package.
+
+### Prerequisites:
+
+- This lab requires completion of the Provision Autonomous Database lab in the Contents menu on the left.
 
 ## Task 1: Download Sample Data for Loading from Local File
 
@@ -269,9 +273,9 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 
  > **Note:** If you skipped Task 8, in which you create a credential for object store access, please use your username and auth token from Task 7 and run the `create_credential` procedure to create a credential. You can <a href="https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-subprograms.html#GUID-742FC365-AA09-48A8-922C-1987795CF36A" target="\_blank">click here</a> to read the documentation on how to create a credential. If you performed Task 8, proceed.
 
-1. Click on the SQL tile to open SQL web developer.
+1. Click on the SQL tile to open SQL Worksheet.
 
-  ![Open SQL Web Developer](images/open-sql-web-dev.png)
+  ![Open SQL Worksheet](images/open-sql-web-dev.png)
 
 2. Unlike the previous tasks where the Database Actions DATA LOAD tool gave you the option to automatically create the target autonomous database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables. Connected as your ADMIN user in SQL Worksheet, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet</a> to the worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 

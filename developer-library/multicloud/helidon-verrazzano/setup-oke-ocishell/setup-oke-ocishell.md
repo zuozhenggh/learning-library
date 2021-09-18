@@ -49,10 +49,9 @@ You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cl
     * **Kubernetes API Endpoint**: Determines if the cluster master nodes are going to be routable or not. Select the **Public Endpoint** value.
     * **Kubernetes Worker Nodes**: Determines if the cluster worker nodes are going to be routable or not. Accept the default value **Private Workers**.
     * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select **VM.Standard.E2.4**.<br>
-    > **Caution**: *Do not accept the default shape; the default shape is too small for the Verrazzaano components*.
+    > **Caution**: *VM.Standard.E2.4 is the recommended because Verrazzano has many components. The default VM.Standard2.1 can be enough for testing purposes but the installation takes much longer.*
 
     * **Number of nodes**: The number of worker nodes to create. Accept the default value, **3**.
-
 
     ![Quick Cluster](images/4.png)
     ![Enter Data](images/5.png)
@@ -74,7 +73,7 @@ You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cl
 
     ![cluster1](images/9.png)
 
-7. When the cluster status changes to Active, continue to the Helidon application development lab.
+7. To save time don't wait to the Active state, continue with the next Helidon application development lab. Before the Verrazzano installation you will come back to verify and configure the OKE cluster access.
 
 ## Acknowledgements
 
