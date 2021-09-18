@@ -4,12 +4,16 @@
 
 In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
 -   Learn how to create external tables on top of files residing on the object store
 -   Learn how to query external data by the external tables
+
+### Prerequisites:
+
+- This lab requires completion of the Load Data lab in the Contents menu on the left.
 
 ## Task 1: Create External Tables with DBMS_CLOUD
 

@@ -19,7 +19,7 @@ You can load data into your new autonomous database (Autonomous Data Warehouse [
 
 > **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
@@ -35,6 +35,10 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 - **Loading Method 1**: Create and load one ADW table with sample data from your *local file system*, using the Database Actions DATA LOAD tool.
 - **Loading Method 2**: Create and load two ADW tables with sample data that you stage in an *OCI Object Store*, using the Database Actions DATA LOAD tool.
 - **Loading method 3**: Create ADW tables using SQL Worksheet and load them with sample data that you stage in an *OCI Object Store*, using the PL/SQL *`DBMS_CLOUD`* package.
+
+### Prerequisites:
+
+- This lab requires completion of the Provision Autonomous Database lab in the Contents menu on the left.
 
 ## Task 1: Download Sample Data for Loading from Local File
 

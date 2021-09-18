@@ -1,4 +1,4 @@
-# Explore Data, Run Queries
+# Explore data, run queries
 
 ## Introduction
 
@@ -55,7 +55,7 @@ The goal of this task is to understand the difference between the 2 data models 
 
     ![](./images/appl-running.png)
 
-    Hit the **'Enter' key** on your keypad to get the command line prompt back.   
+    Press the **'Enter' key** on your keypad to get the command line prompt back.   
 
 3. Insert data into the demo table.   
 
@@ -123,7 +123,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X GET http://localhost:3000/demo/1762322446040  | jq
     </copy>
     ````
-7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, so **hit 'Enter'** like you did before to get the prompt back.  Execute in Cloud Shell.
+7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, so **press 'Enter'** like you did before to get the prompt back.  Execute in Cloud Shell.
 
     ````
     <copy>
@@ -262,20 +262,20 @@ The goal of this task is to understand the difference between the 2 data models 
 
 6. Type in **exit** to exit from the python application.
 
-7. Minimize the Cloud Shell by hitting the minimize key.
+7. Minimize the Cloud Shell by pressing the minimize key.
 
 
 ## Task 4: Clean Up
 
 This task deletes the tables that got created.
 
-1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, hit 'Tables'
+1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, press 'Tables'
 Set your compartment to 'demonosql'
-Click the freeTest table, which will bring up the table details screen.  Hit Delete.
+Click the freeTest table, which will bring up the table details screen.  Press 'Delete'.
 
   ![](./images/delete-freetable.png)
 
-  Deleting tables is an async operation, so you will not immediately see the results on the OCI console.  Eventually the status of the tables will get changed to deleted.  
+  Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console.  Eventually the status of the tables will get changed to deleted.  
 
 2. Return to the 'Tables' screen and repeat the process for the demo and demoKeyVal tables.
 
@@ -287,7 +287,7 @@ Click the freeTest table, which will bring up the table details screen.  Hit Del
 
     ![](./images/select-demonosql.png)
 
-5.  Hit the 'Delete ' button.  This will fire off a job that runs asynchronously.
+5.  Press the 'Delete ' button.  This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 
