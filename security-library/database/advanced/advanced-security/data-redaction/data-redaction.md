@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Redaction. It gives the user an opportunity to learn how to configure those features in order to protect access to sensitive data by redacting them on-the-fly.
 
-*Estimated Time:* 15 minutes
+*Estimated Lab Time:* 15 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 ### Video Preview
@@ -15,9 +15,7 @@ Dynamically redact sensitive data preventing it from being displayed outside the
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment

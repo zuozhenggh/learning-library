@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Masking and Subsetting (DMS) pack for Enterprise Manager. It gives the user an opportunity to learn how to configure those features in order to secure their sensitive data in a Non-Production environment.
 
-*Estimated Time:* 85 minutes
+*Estimated Lab Time:* 85 minutes
 
 *Version tested in this lab:* Oracle Enterprise Manager 13.4
 
@@ -18,9 +18,7 @@ Watch a preview of "*Understanding Oracle Data Masking & Subsetting (April 2019)
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
