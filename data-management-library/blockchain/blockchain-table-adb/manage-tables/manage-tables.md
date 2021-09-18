@@ -8,9 +8,9 @@ For enhanced fraud protection, an optional user signature can be added to a row.
 
 Blockchain tables can be used to implement blockchain applications where the participants are different database users who trust Oracle Database to maintain a verifiable, tamper-resistant blockchain of transactions. All participants must have privileges to insert data into the blockchain table. The contents of the blockchain are defined and managed by the application. By leveraging a trusted provider with verifiable crypto-secure data management practices, such applications can avoid the distributed consensus requirements. This provides most of the protection of the distributed peer-to-peer blockchains, but with much higher throughput and lower transaction latency compared to peer-to-peer blockchains using distributed consensus. Blockchain tables can be used along with (regular) tables in transactions and queries. Database users can continue to use the same tools and practices that they would use for other database application development. Please see Oracle Database 19c or 21c documentation for more information about Blockchain Tables.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature. Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your ATP database instance, and save the certificate GUID it returns.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature.
 
-Estimated Time: 20 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -20,7 +20,6 @@ In this lab, you will:
 * View Blockchain tables and its internal columns
 * Manage blockchain tables and rows in a blockchain table
 * Verify the rows in a blockchain table without signature
-* Generate Certificate and Certificate GUID
 
 ### Prerequisites
 
@@ -76,7 +75,7 @@ In this lab, you will:
 	</copy>
 	```
 
-	!![](./images/task2-1.png " ")
+	![](./images/task2-1.png " ")
 
 2. Query the `bank_ledger` blockchain table to show the records.
 
@@ -249,167 +248,6 @@ You can verify the integrity of blockchain tables by verifying that the chain in
 	```
 
 	![](./images/task6-1.png " ")
-
-## Task 7: Generate Certificate
-
-Let's connect to Oracle cloud shell to generate your x509 key pair. We are generating the key pair and an X509 certificate that will be used for data signing later.
-
-1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-	![](./images/task7-1.png " ")
-
-2. Download the nodejs.zip file.
-
-    ```
-    <copy>
-	cd ~
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/vNvEwmqib41JCCwSk6_mufdLO6OXNZQzvjITnQ4rqe6EkPwvU5m5krwloHgHw2XJ/n/c4u04/b/data-management-library-files/o/blockchain/nodejs.zip
-    </copy>
-    ```
-	![](./images/task7-2.png " ")
-
-3.  Unzip the nodejs file.
-
-	```
-	<copy>
-	unzip nodejs.zip
-	</copy>
-	```
-	![](./images/task7-3.png " ")
-
-4.  Navigate to nodejs folder.
-
-    ```
-    <copy>
-    cd nodejs
-    </copy>
-    ```
-
-	![](./images/task7-4.png " ")
-
-5. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
-
-	When prompted, provide the details for each parameter and press enter - Country Name, State, Locality Name, Organization name, Common name, Email address
-
-	```
-	<copy>
-	openssl req -x509 -sha256 -nodes -newkey rsa:4096 -keyout user01.key -days 730 -out user01.pem
-	</copy>
-	```
-
-	![](./images/task7-5.png " ")
-
-6.	List the files and notice that your *user01.key*, *user01.pem* key pair is created.
-
-	```
-	<copy>ls</copy>
-	```
-
-	![](./images/task7-6.png " ")
-
-7. `cat` the *user01.pem* key.
-
-	```
-	<copy>cat user01.pem</copy>
-	```
-
-	![](./images/task7-7.png " ")
-
-## Task 8: Store Certificate in the Database
-
-1. Navigate to the tab with SQL Developer Web, copy and paste the below procedure in SQL Worksheet. Replace "-----BEGIN CERTIFICATE----MIIFcjCCA1oCCQC+Rsk9wAYlzDAN………-----END CERTIFICATE-----" with the pem key from the Oracle cloud shell in the previous tab. Make sure the pem key in within the apostrophes.
-
-	```
-	<copy>
-	set serveroutput on
-	DECLARE
-		amount NUMBER := 32767;
-		cert_guid RAW(16);
-		cert clob := '-----BEGIN CERTIFICATE----MIIFcjCCA1oCCQC+Rsk9wAYlzDANBgkqhkiG9w0BAQsFADB7MQswCQYDVQQGEwJV
-		………
-		-----END CERTIFICATE-----';
-	BEGIN
-
-  		DBMS_USER_CERTS.ADD_CERTIFICATE(
-      		utl_raw.cast_to_raw(cert), cert_guid);
-  		DBMS_OUTPUT.PUT_LINE('Certificate GUID = ' || cert_guid);
-	END;
-	/
-	</copy>
-	```
-
-	Your procedure should look like this
-
-	```
-	set serveroutput on
-	DECLARE
-		amount NUMBER := 32767;
-		cert_guid RAW(16);
-		cert clob := '-----BEGIN CERTIFICATE-----
-	MIIFlTCCA32gAwIBAgIJAPyKGld/4jwSMA0GCSqGSIb3DQEBCwUAMGExCzAJBgNV
-	BAYTAlVTMQswCQYDVQQIDAJOSjELMAkGA1UEBwwCTEExCzAJBgNVBAoMAlRBMQsw
-	CQYDVQQLDAJQQTELMAkGA1UEAwwCSEExETAPBgkqhkiG9w0BCQEWAkFKMB4XDTIx
-	MDcxNDAxNTcwM1oXDTIzMDcxNDAxNTcwM1owYTELMAkGA1UEBhMCVVMxCzAJBgNV
-	BAgMAk5KMQswCQYDVQQHDAJMQTELMAkGA1UECgwCVEExCzAJBgNVBAsMAlBBMQsw
-	CQYDVQQDDAJIQTERMA8GCSqGSIb3DQEJARYCQUowggIiMA0GCSqGSIb3DQEBAQUA
-	A4ICDwAwggIKAoICAQDAlBMNqLDDprxCCFACf2v3oKaFmes1uSc0WfFPfblNDn7K
-	kvvNYIAkcAxCsv6fvt/xg1ixpDEokwFMm9mf2L8uYZiqx7TnwOsWOABRrkMpnlQ5
-	bVIiFnukb2hxrnehrM/PEkhCxTTXFkDHneNQVkrekYuETpLXK3t06+1eQCGRugZ4
-	q0vcpAES3eNoSf3YS9aXqzcF8zp/qe71QFqdI0CoCUCJ5LN/7sCL+5hzZ80kiC9p
-	1N7AR+LpYURSnFnYSeIk8pSCKx3u2oxRAmrhF+VrLGFUsM4D9uW+pTHQz4PN+VUs
-	ylQati7pH9HRZ7NoGiBJWdRsUkRpS6ylwXzNCl1HmHWU7NbR5IPCuBbrKUfIK9iy
-	mcUQECAHGV+M8hN2obE/MZFdySDpPt37Y7Z/B89GA7As6hUVpX7jUtl4oQhWDVCu
-	6Ah40RvrAVmMI7knhv78+ZFrOlBTyVLxFxazNAzpSmAGQtKmdb68YJetBEB96eto
-	hn4c9HCoUApQDT2AR98qWyQMd9gXQadsd0GmR2RgKtplaRdqVMZBaec1/59reyWT
-	qfohfKpBJbXMLGD1pmkAFwtUiHHXm8NBBgjQNN92U3URVKEy6FEXyvzP2agnIvH4
-	QvzDWPRzyoY2vzn3b7rWX3Srvk3EHCI1+ryYmfJsSKXrrvnDJja+2tpxL9IrxwID
-	AQABo1AwTjAdBgNVHQ4EFgQUCKHo9yn9x3hp8hrl2HauGEzxJYQwHwYDVR0jBBgw
-	FoAUCKHo9yn9x3hp8hrl2HauGEzxJYQwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
-	AQsFAAOCAgEAfK7+UjY9XKvY1GpTMBi57SHc6QWhVZRhdtvd1ak4vBgwrqqmkV3U
-	Uv7IGbG0uqGG1s00I3I8RJbQl5ebTUhdxtuo1XQUQ4Uz9InoUikVSsTWwylaS05d
-	0YwL6i/D6A66Z9oMPxosDHkJLHL6DfyDq2SH4GCzynXx/G2B2uu3Id7jCOYbH4RZ
-	Fm7ftpvsiIelJO99s7r2yLI3eyAMiKCYhRLJ3308/f8TMKs7Pd8xuNzVjxY1lugC
-	u944OinKAgAiHRutwpmEyXgKacRiq8W3NA3dpCudTiRiqpIBaSBvPLyS1oIWP0O+
-	FAl+ak/9UI5K0DD8OOU4Y4pxIbS/NvlHcxG3Sxt1wsunxwV4ujEo1dHRoC9Op8Pk
-	SCpr8hf48AG1PYdufUA8kTvRdd9La6p1fL+nWJ+QuzDFDj0SG92WxQUC6gMRLzlA
-	A7HPcDOG+04AduvMPfpcpkFOtnlJz1Ln1gDUsq0WHIrlfq7whawcJhgS9V9mHOen
-	iw1H2yizZi8/d3y2WK4xJr1m7frIlEkXoemVXAJMwQLh14rdFU/kzcViZm7eQj/p
-	PPEpEcdKfSgRraSNKjT3UdyGXTImRJat/XvjMHWokZPd4Zry7NS5hCqOhZgtUGjr
-	P5ztpVj2DIAxPrrH8JOpUwvGsXOtCxoa0INzkWwckS9WImkJFy2QGfA=
-	-----END CERTIFICATE-----';
-	BEGIN
-		DBMS_USER_CERTS.ADD_CERTIFICATE(
-			utl_raw.cast_to_raw(cert), cert_guid);
-		DBMS_OUTPUT.PUT_LINE('Certificate GUID = ' || cert_guid);
-	END;
-	/
-	```
-
-	![](./images/task8-1.png " ")
-
-2. Make sure to copy the value of Certificate GUID. It will not be displayed again. 
-
-	> **Note:** Do not run the procedure again to generate another Certificate GUID.
-
-	This output looks like this:
-
-	```
-	Certificate GUID = C8D2C1F00236AD7CE0533D11000AE2FC
-	```
-
-3. Run this command to show your certificate.
-
-	```
-	<copy>
-	SELECT * FROM USER_CERTIFICATES;
-	</copy>
-	```
-	![](./images/task8-3.png " ")
-
 
 You may now [proceed to the next lab](#next).
 
