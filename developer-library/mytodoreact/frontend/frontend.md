@@ -114,9 +114,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 3. Cancel the developer mode execution and build the app for production into the `build` folder.<br />
 
-	3.1. Press **Ctrl-c** to cancel the developer mode executions.
+	\* Press **Ctrl-c** to cancel the developer mode executions.
 
-	3.2. Execute `npm run build`
+	\* Execute `npm run build`
 
    ```bash
    <copy>npm run build</copy>
@@ -141,25 +141,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
    bucket while preserving folder hierarchies.
 
-	3.1. Execute `git clone https://github.com/maxjahn/staci.git`.
+	\* Execute `git clone https://github.com/maxjahn/staci.git`.
 
 	```bash
 	<copy>git clone https://github.com/maxjahn/staci.git</copy>
 	```
 
-	3.2. Navigate to the **staci** directory
+	\* Navigate to the **staci** directory
 
     ```bash
     <copy>cd staci</copy>
      ```
 
-	3.3. Execute `go get -d`.
+	\* Execute `go get -d`.
 
      ```bash
      <copy>go get -d</copy>
      ```
 
-	3.4. Execute `go build`.
+	\* Execute `go build`.
 
     ```bash
     <copy>go build</copy>
