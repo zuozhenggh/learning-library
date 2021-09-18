@@ -4,9 +4,9 @@
 
 ## Introduction
 
-In this hands-on workshop, you will be introduced to MySQL Database Service (MDS), a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure. You will learn how to create and use MySQL Database Service with HeatWave in a secure Oracle Cloud Infrastructure environment.
+In this lab you will query data in the HeatWave cluster.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 10 minutes
 
 
 ### Objectives
@@ -27,33 +27,31 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Run Queries in HeatWave
 
-1. If not already connected with SSH, on Command Line, connect to the Compute instance using SSH
+1. If not already connected with SSH, connect to the Cloud Shell
+2. On command Line, connect to MySQL using the MySQL Shell client tool        
 
-    (Example: **ssh -i ~/.ssh/id_rsa opc@&132.145.170..**)
-
-2. On command Line, connect to MySQL using the MySQL Shell client tool
-
-    (Example  **mysqlsh -uadmin -p -h10.0.1..**)
-
-3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt:
     ```
-    <copy>\SQL</copy>
+        <copy>mysqlsh admin@127.0.0.1</copy>
     ```
+3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt
 
-4.	Change to the airport database.  Enter the following command at the prompt:
+    ```
+    <copy>\sql</copy>
+    ```
+4.	Change to the airport database   
+
+    Enter the following command at the prompt
     ```
     <copy>USE airportdb;</copy>
     ```
-    ![Connect](./images/12hwqueries01.png " ")
+5. To see if `use_secondary_engine` is enabled (=ON)
+ Enter the following command at the prompt 
 
- 5. Turn on `use_secondary_engine` variable to use HeatWave
-     ```
-    <copy>SET SESSION use_secondary_engine=ON;</copy>
-    ```
-    
+    ![INTRO](./images/heatwave-qeury-01.png " ")  
+
 6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
- 7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
+7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
 
     ```
     <copy>EXPLAIN SELECT
@@ -71,9 +69,9 @@ GROUP BY
     airline.airlinename
 ORDER BY
     airline.airlinename, avg_age
-LIMIT 10;</copy>
+LIMIT 10\G</copy>
     ```
-    ![Connect](./images/12hwqueries02.png " ")
+    ![Connect](./images/heatwave-qeury-02.png " ")
 
 8. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
      ```
@@ -95,16 +93,16 @@ ORDER BY
 LIMIT 10;
 </copy>
     ```
-     ![Connect](./images/12hwqueries03.png " ")
+     ![Connect](./images/heatwave-qeury-03.png " ")
 
- 9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
+9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ```
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ```
 
- 10. Enter the following command at the prompt:
+10. Enter the following command at the prompt:
      ```
     <copy>SELECT
     airline.airlinename,
@@ -123,25 +121,25 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10;</copy>
     ```
-    ![Connect](./images/12hwqueries04.png " ")
+    ![Connect](./images/heatwave-qeury-04.png " ")
 
- 11. To see if `use_secondary_engine` is enabled (=ON)
+11. To see if `use_secondary_engine` is enabled (=ON)
 
  Enter the following command at the prompt:
      ```
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ```
- 12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
+12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
    
     (Example  **SET SESSION `use_secondary_engine`=On;**) 
 
     (Example  **SET SESSION `use_secondary_engine`=Off;**)      
 
- 13. Enter the following command at the prompt
+13. Enter the following command at the prompt
      ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
- 14. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
+14. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
 
     ```
     <copy> SELECT
@@ -209,19 +207,7 @@ LIMIT 10;
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
-
-## Task 2: Connect to HeatWave using Workbench
-1. At this point, you can also use MySQL Workbench from your local machine to connect to the MySQL endpoint using your new Compute instance as a jump box
-
-2. In your pre-installed MySQL Workbench, configure a connection using the method "Standard TCP/IP over SSH" and use the credentials of the Compute instance for SSH
-
-    **MySQL Workbench Configuration for MDS HeatWAve**
-    ![MDS](./images/13workbench01.png " ") 
-   
-    **MySQL Workbench Use  for MDS HeatWAve**
-    ![MDS](./images/13workbench02.png " ") 
-
-
+    
 ## Learn More
 
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)

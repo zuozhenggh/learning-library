@@ -10,7 +10,7 @@ Oracle added a Bastion Service to OCI. And you may also have noticed that the OC
 
 Today, you will use these two components to connect from the browser to a MDS DB System
 
-Estimated Lab Time 20 minutes
+Estimated Lab Time 15 minutes
 
 
 ### Objectives

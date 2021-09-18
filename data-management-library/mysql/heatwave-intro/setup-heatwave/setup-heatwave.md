@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this hands-on workshop, you will be introduced to MySQL Database Service (MDS), a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure. You will learn how to create and use MySQL Database Service with HeatWave in a secure Oracle Cloud Infrastructure environment.
+In this lab you will load the airportdb database from a MySQL DB System into HeatWave.
 
 Estimated Lab Time: 20 minutes
 
@@ -69,13 +69,16 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ```
     <copy>\sql</copy>
     ```
+    ![Connect](./images/heatwave-load-01.png " ")
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
 4. The compled load cluster screen should look like this:
 
-    ![Connect](./images/11loadcluster01.png " ")
+    ![Connect](./images/heatwave-load-02.png " ")
+
+    ![Connect](./images/heatwave-load-03.png " ")
 
 5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
@@ -85,7 +88,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
     ```
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ```
-    ![Connect](./images/11loadcluster02.png " ")
+    ![Connect](./images/heatwave-load-04.png " ")
 
 ## Learn More
 

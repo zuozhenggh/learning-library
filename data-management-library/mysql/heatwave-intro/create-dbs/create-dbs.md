@@ -4,9 +4,9 @@
 
 ## Introduction
 
-In this lab, you create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.    
+In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.    
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 20 minutes
 
 
 ### Objectives
@@ -149,62 +149,58 @@ In this lab, you will be guided through the following tasks:
     
     - Copy the `Private IP Address` to the notepad
 
-3. Do the followings steps to copy  the public SSH key to the  notepad :
-
+3. Do the followings steps to copy  the public SSH key to the  notepad 
+ 
     - Open the Cloud shell
      ![](./images/cloudshell-10.png " ")    
 
-    - Enter the following command
-
-     ```
+    - Enter the following command   
+        ```
      <copy>cat .ssh/id_rsa.pub</copy>
-     ```    
-     ![](./images/cloudshell-11.png " ")  
+        ``` 
+    ![](./images/cloudshell-11.png " ") 
 
-    - copy the id_rsa.pub content the notepad
-
-        Your notepad should look like this:
+4.  Copy the id_rsa.pub content the notepad
+        Your notepad should look like this
         ![](./images/notepad1.png " ")  
         
-4. Go to Navigation Menu > Identity Security > Bastion
+5. Go to Navigation Menu > Identity Security > Bastion
 
-5. Open the MDSBastion link
+6. Open the MDSBastion link
 
-6. Click `Create Session`
+7. Click `Create Session`
 
-7. Enter the following information
+8. Set up the following information
     - Session type
       Select `SSH port forwarding session`
-    - Session Name  
-        Keep Default
+    - Session Name 
+        *Keep Default*
     - IP address
-        Enter IP addtess from notepad
-    - Port
-     ```
-     <copy>3306</copy>
-     ```      
-    - Add SSH Key
-        Copy SSH Key from notepad
+        *Enter IP addtess from notepad*
+
+9. Enter the Port
+
+    ```      
+        <copy>3306</copy>
+    ```
+10. Add SSH Key -  Copy SSH Key from notepad
     - The screen shoul look like this
-        ![](./images/bastion-06.png " ") 
-
+    ![](./images/bastion-06.png " ") 
     - Click the `Create Session` button 
+11. The completed Bastion Session should look like this
+    ![](./images/bastion-07.png " ") 
 
-8. The completed Bastion Session should look like this:
-
-        ![](./images/bastion-07.png " ") 
-
-    **Note: The Session will expire in 180 minutes**
+**Note: The Session will expire in 180 minutes**
 
 ## Task 3: Connect to MySQL Database System
 
 1. Click on the 3 vertical dots on the Bastion Session
 
-        ![](./images/bastion-08.png " ") 
+    ![](./images/bastion-08.png " ") 
 
 2. Click `View SSh Command`  
 
-        ![](./images/bastion-09.png " ") 
+    ![](./images/bastion-09.png " ") 
 
 3. Click copy and paste the information to your notepad and hit Close
 
@@ -214,7 +210,7 @@ In this lab, you will be guided through the following tasks:
     
     The command from your notepad should look like this
 
-        ![](./images/notepad2.png " ") 
+    ![](./images/notepad2.png " ") 
     
 5. Open the cloud shell and enter the command from the notepad. It should like this:
     `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk..................ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
@@ -233,7 +229,9 @@ In this lab, you will be guided through the following tasks:
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
-    ![Connect](./images/09import02.png " ") 
+        
+    ![Connect](./images/airport-db-view02.png " ") 
+
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
