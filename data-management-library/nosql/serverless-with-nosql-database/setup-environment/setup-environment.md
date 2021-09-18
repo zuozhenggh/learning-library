@@ -1,5 +1,4 @@
-
-# Prepare Your Environment
+# Prepare your environment
 
 ## Introduction
 
@@ -24,7 +23,7 @@ This lab assumes you have:
 
 ## Task 1: Create a Compartment
 
-1. Log into the OCI console using your tenancy.  Please make note of what region you are at.
+1. Log into the Oracle Cloud Console using your tenancy.  Please make note of what region you are at.
 
     ![](images/console-image.png)
 
@@ -32,20 +31,20 @@ This lab assumes you have:
 
     ![](images/identity-security-compartment.png)
 
-3. Click on Create Compartment. This opens up a new window.
+3. Click 'Create Compartment.' This opens up a new window.
 
-  Enter **demonosql** as compartment name, enter a description and hit 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- this does not need to be changed.  You can change your parent if you want to be under a different parent compartment.
+  Enter **demonosql** as compartment name, enter a description and press 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case.  This HOL assumes the demonosql compartment is a child of the root compartment.
 
     ![](images/create-compartment.png)
 
 
 ## Task 2: Create an API Key For Your User
 
-1. Top right, click on your Profile -> User Settings.
+1. Top right, click your Profile, then User Settings.
 
   ![](images/user-profile.png)
 
-2. Click 'User Settings' again. Copy your OCID.   **Make sure to save your OCID for future steps**. Paste it into notepad, some text file, etc. as it will be used in Step 4.
+2. Click 'User Settings' again. Copy your OCID.   **Make sure to save your OCID for future steps**. Paste it into notepad or some text file as it will be used in Step 4.
 
     ![](images/user-ocid.png)
 
@@ -104,7 +103,7 @@ In this node.js snippet, we used the credential information created in Task 2 an
 
   You can use **Resource Principals** to do the connection to NoSQL Cloud Service as shown below in the Node.js and Python examples instead of specifying the credentials.  Once they are set up, they are very simple to use because all you need to do is call the appropriate authorization constructor.
 
-In this snippet, there are hard-coded references (eg REGION).
+In this snippet, there are hard-coded references (for example, REGION).
 
 **NoSQL Database Node.js SDK**
 ```
@@ -137,19 +136,19 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Ph
 
     ![](images/no-phoenix.png)
 
-2.  If it is there, click on it and move your tenancy to Phoenix and **proceed to the next lab.**
+2.  If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
 
     ![](images/phoenix.png)
 
-3.  Since it is not there, please subscribe to Phoenix Region.  Click on drop down by your region and click on 'Manage Regions'.
+3.  Since it is not there, please subscribe to Phoenix Region.  Click the drop down by your region and click 'Manage Regions'.
 
     ![](images/manage-regions.png)
 
-4.  This will bring up a list of regions.  Look for Phoenix and hit 'Subscribe'.
+4.  This will bring up a list of regions.  Look for Phoenix and press 'Subscribe'.
 
     ![](images/capturesuscribe.png)
 
-5. If you havent been moved to Phoenix, then click on Phoenix to move your tenancy.
+5. If you haven't been moved to Phoenix, then click Phoenix to move your tenancy.
 
     ![](images/phoenix.png)
 

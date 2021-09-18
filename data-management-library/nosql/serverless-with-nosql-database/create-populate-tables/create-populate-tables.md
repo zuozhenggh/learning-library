@@ -1,8 +1,8 @@
-# Create Tables, Load Tables
+# Create tables, load tables
 
 ## Introduction
 
-This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the OCI console, writing an application program, or triggering actions via a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
+This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
 Estimated Time: 25 minutes
 
@@ -10,7 +10,7 @@ Estimated Time: 25 minutes
 
 * Create 3 tables with provisioned reads/sec, writes/sec, and GB storage
 * Write data to the table and read data from the table
-* Look at the data in the tables via the OCI console
+* Look at the data in the tables with the Oracle Cloud Console
 
 ### Prerequisites
 
@@ -24,29 +24,33 @@ Estimated Time: 25 minutes
 
     ![](./images/phoenix-location.png)
 
-2. On the OCI menu drop down on the left, go to Databases and then hit 'Tables' under Oracle NoSQL Database.  This brings you to the 'Table' screen where you can create a table from the console.
+2. On the OCI menu drop down on the left, go to Databases and then press 'Tables' under Oracle NoSQL Database.  This brings you to the 'Tables' screen where you can create a table from the console.
 
     ![](./images/nosql-tables.png)
 
-3. Click on 'Create Table' and the 'Create Table' screen appears.
+3. On the 'Tables' screen there is a 'Compartment' box on the left.  Please make **demonosql** compartment is selected.
+
+    ![](./images/set-compartment.png)
+
+4. Click 'Create table' and the 'Create table' screen appears.
 
     ![](./images/create-tables.png)
 
   This screen allows you to create tables in one of two different ways, either using simple input or using DDL input.  For this Lab we are going to use the simple input method.  
 
-4. The first thing you want to do is click the 'Always Free Configuration' toggle button.  This will create an always free table.   Each tenancy is allowed 3 always free tables.  Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage. NoSQL always free tables are only available in the Phoenix region and you need to be in the correct region to use them.  The toggle button only shows up in the Phoenix region.
+5. The first thing you want to do is click the 'Always Free Configuration' toggle button.  This will create an always free table.   Each tenancy is allowed 3 always free tables.  Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage. NoSQL always free tables are only available in the Phoenix region and you need to be in the correct region to use them.  The toggle button only shows up in the Phoenix region.
 
     ![](./images/always-free.png)
 
-  Clicking on the 'Always Free Configuration' button grays out the boxes to input provisioning.  Next enter a name for your table, a primary key and column. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type string as an additional column.  Click 'Set as a Shard Key'.
+  Clicking the 'Always Free Configuration' button grays out the boxes to input provisioning.  Next enter a name for your table, a primary key and column. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.  Click 'Set as a shard key'.
 
-5. When done with inputs click on 'Create Table' at the bottom.
+6. When done with inputs click 'Create table' at the bottom.
 
    ![](./images/create-myfree-table.png)
 
   In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding multiple additional columns.  You can easily create simple or more complex tables with this interface.  
 
-6. After clicking on 'Create Table' you will be brought to the Tables screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always free' tag that is attached to the table.   This lets you know it is an always free table.
+7. After clicking 'Create table' you will be brought to the 'Tables' screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always Free' tag that is attached to the table.   This lets you know it is an always free table.
 
     ![](./images/freetest-table.png)
 
@@ -72,7 +76,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     </copy>
     ````
 
-2. Execute the following environment setup shell script in the Cloud Shell. If you close/open the Cloud Shell Console, please re-execute it.
+2. Execute the following environment setup shell script in the Cloud Shell. If you close/open the Cloud Shell, please re-execute it.
 
     ```
     <copy>
@@ -89,6 +93,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     echo $DDL_TABLE
     </copy>
     ```
+    The echo command will show you the DDL statement that you will execute next.
 
     ```
     <copy>
@@ -99,6 +104,8 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     --wait-for-state SUCCEEDED --wait-for-state FAILED
     </copy>
     ```
+    At the end of this command you should see a "status": "SUCCEEDED" on your screen.
+
     ```
     <copy>
     DDL_TABLE=$(cat demoKeyVal.nosql)
@@ -115,40 +122,40 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     </copy>
     ```
 
-4. Minimize the Cloud Shell by clicking on the minimization button.
+4. Minimize the Cloud Shell by clicking the minimization button.
 
     ![](./images/cloud-shell-small.png)
 
 
-## Task 3:  Adding Data From the OCI Console
+## Task 3:  Adding Data From the Oracle Cloud Console
 
-1. Make sure you are 'Table' screen.  You should see 3 tables listed.  Your compartment should be demonosql.
+1. Make sure you are 'Tables' screen.  You should see 3 tables listed.  Your compartment should be demonosql.
 
     ![](./images/table-screen.png)
 
-2. Lets start with the simple table we created in Task 1.  Click on freeTest table.  The screen that shows up, displays all the key information about the table.  Explore that screen.
+2. Lets start with the simple table we created in Task 1.  Click 'freeTest' table.  The details screen that shows up, displays all the key information about the table.  Explore that screen.
 
     ![](./images/free-test.png)
 
-3. Click on insert row, and the insert row screen appears.
+3. Click 'Insert row', and the 'Insert row' screen appears.
 
     ![](./images/insert-row.png)
 
-4. On the insert row screen, you will see two ways to input data - a simple and advanced.   For our freeTest table we will use the simple method.    Enter a value for the pkey column and the name column.  When done, hit 'Insert row'.
+4. On the 'Insert row' screen, you will see two ways to input data - a simple and advanced.   For our freeTest table we will use the simple method.    Enter a value for the pkey column and the name column.  When done, press 'Insert row'.
 
     ![](./images/row-inserted.png)
 
-5. Let's insert rows into the other tables.  First we need to get back to the 'Tables' screen.  Click Table on top right.
+5. Let's insert rows into the other tables.  First we need to get back to the 'Tables' screen.  Click 'Tables' on top right.
 
     ![](./images/click-tables.png)
 
-6. Click on demo table
+6. Click 'demo' table
 
     ![](./images/capturenosql.png)
 
-7. Click on 'Insert Row'. This opens up a new window. This time, choose Advanced Json Input.
+7. Click 'Insert row'. This opens up a new window. This time, choose 'Advanced JSON Input'.
 
-  Copy/Paste the json Baggage document below in JSON input text box.  Because this Json document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
+  Copy/Paste the JSON Baggage document below in the 'JSON input' text box.  Because this JSON document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
 
     ````
     <copy>
@@ -212,7 +219,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
     ````
 
 
-8. Click on 'Insert Row' at bottom left of screen.
+8. Click 'Insert row' at bottom left of screen.
 
   To quickly summarize, in this Lab you have seen two different ways to insert data into a table.  
 
@@ -220,17 +227,17 @@ In this task we are going to create tables using the Cloud Shell, and OCI CLI in
 
 Starting with the demo table, we can go and look at the data we inserted for each of the tables.
 
-1. On the left Click on Table Rows
+1. On the left Click 'Table rows'
 
     ![](./images/table-row-select.png)
 
-2. In the textbox Query, keep the text SELECT * FROM demo.  This will select all the rows from our table.  Click on Run query
+2. In the textbox 'Query', keep the text SELECT * FROM demo.  This will select all the rows from our table.  Click 'Run query'
 
     ![](./images/run-query.png)
 
   You will see in the bottom of the screen the row that we inserted.
 
-3. Go to the top left, hit 'Tables', select the freeTest table, and look at the row inserted into that table.
+3. Go to the top left, press 'Tables', select the freeTest table, and look at the row inserted into that table.
 
 You may now **proceed to the next lab.**
 
