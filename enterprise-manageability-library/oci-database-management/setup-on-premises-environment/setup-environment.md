@@ -86,9 +86,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 ## Task 4: Connect to your Instance
 
-### MAC or Windows CYGWIN Emulator
+### MAC or Microsoft Windows CYGWIN Emulator
 
-1.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
+1.  Open up a terminal (MAC) or cygwin emulator as the opc user. Enter the ssh command shown below and then type yes when prompted.
 
      
           ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
@@ -109,9 +109,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
      ![](images/logintoserver2.png " ")
 
-### Windows using Putty
+### Microsoft Windows using PuTTY
 
-1.  Open up putty and create a new connection.
+1.  Open up **PuTTY** and create a new connection.
 
 2.  Enter a name for the session and click **Save**.
 
@@ -121,7 +121,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 4.  Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
-5.  Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
+5.  Navigate to the location where you saved your SSH private key file, select the file, and click Open. NOTE: You cannot connect if you are in an Oracle office location on clear-corporate (choose clear-internet) or using Oracle VPN.
 
      ![](./images/putty-auth.png " ")
 
@@ -142,7 +142,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      ```
      ![](./images/tailOfBuildDBInstanceLog.png " ")
 
-2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes).
+2.  When you see the following message, the database setup is complete - **Completed successfully in** (so many) **seconds** (this may take up to 30 minutes).
 
 3.  Run the following command to verify the database with the SID **ORCL** is up and running.
 
@@ -192,7 +192,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      </copy>
      ```
 
-You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary DB.
+You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary Oracle Database.
 
 
 You may now proceed to the next lab.

@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
 1.  You need to create an agent install key before performing the Management Agent installation. An agent install key is issued against your tenancy and validates the authenticity of the installation.
 
-    a) Go to the **Menu** click **Observability & Management** and **Management Agent**.
+    a) From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management** and select **Management Agent**.
 
     b) Select compartment **dbmgmt-demo** from the list of compartments on the left 
 
@@ -47,7 +47,9 @@ This lab assumes you have completed the following labs:
 2.  On the Management Agents home page, click **Download and Keys** from the left menu to view the Agent Install Keys pane. The Agent Install Keys pane is displayed at the bottom of the page. 
 
     a) On the Agent Install Keys pane, click **Create Key** to create a key
-    
+
+    ![](./images/agentinstallpane.png " ") 
+
     b) Enter the required details in the Create Key window 
 
     -  In the **Key Name** field, specify a name (db-demo) to identify the key.
@@ -112,7 +114,7 @@ This lab assumes you have completed the following labs:
 
 ## Task 4: Verify the Management Agent Installation
 
-1. Go to the **Menu** click **Observability & Management** and **Management Agent**.
+1. From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management** and **Management Agent**.
 2. Click **Agents** from the left menu.
 3. Select compartment **dbmgmt-demo** from the list of compartments on the left.
 4. From the Agents list, look for the agent that was recently installed using the Created column which displays the date of the agent installation or the Host column which displays the host name where the agent was installed.

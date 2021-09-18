@@ -109,6 +109,10 @@ This lab assumes you have already completed the following:
      
      **Role:** Select **Default**
 
+	![](./images/connectextpdb.png " ")
+	![](./images/connectextpdb1.png " ")
+	![](./images/connectextpdb2.png " ")
+
      Click **Connect to External Pluggable Database**.
 
      This will take a few minutes to register your Pluggable Database as External Pluggable Database.
@@ -117,15 +121,16 @@ This lab assumes you have already completed the following:
 
 	![](./images/externalpdb5.png " ")
 
-12.  Perform steps 7 to 11 for other pluggable databases - **FINANCE**, **SALES**, **HRSTAGE** and **HRUAT**.
+12.  Perform steps 7 to 11 to add other pluggable databases with these service names - **FINANCE**, **SALES**, **HRSTAGE** and **HRUAT**.
 
-13.  Navigate to **External Database** and click on **Pluggable Databases** and verify all pluggable databases are registered under External pluggable databases.
+13.  On Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and click on **External Database**. Verify all pluggable databases are registered under External pluggable databases.
 
      ![](./images/pluggabledatabases.png " ")
 
      Congratulations, your databases are registered ! 
 
-     Go to **Task 5: Enable Database Management**
+     There is no need to perform Task 2-4 after registering your databases manually.
+     Directly go to **Task 5: Enable Database Management**
 
 ## Task 2: Register External Databases (Using Terraform)
 
@@ -159,11 +164,7 @@ This lab assumes you have already completed the following:
     license_model = BYOL 
     </copy>
     ```
-    
- ![](./images/createstack2.png " ")
-
-
-4. For pluggable_databases array, copy the below values 
+For pluggable\_databases array, copy the below values and paste under pluggable_databases field
 
     ```
     <copy>
@@ -236,6 +237,8 @@ This lab assumes you have already completed the following:
     </copy>
     ```
 
+ ![](./images/createstack2.png " ")
+
 5. Click **Next**, review the data and click **Create**
 
      ![](./images/createstack3.png " ")
@@ -301,7 +304,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Appl
 
      ![](./images/enabledbmgmt1.png " ")
 
-10. Time to navigate to Database Management to monitor and manage the databases.
+10. Now that we have some databases defined and the service configured, from the Cloud Console go back to the navigation menu and select the **Database Management** selection to monitor and manage the databases.
 
      ![](./images/dbmgmt1.png " ")
 

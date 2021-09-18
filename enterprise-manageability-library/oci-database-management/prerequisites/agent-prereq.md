@@ -33,9 +33,9 @@ Estimated time: 20 minutes
 
 To interact with the Oracle Cloud Infrastructure service end-points, customers must explicitly consent to let the management agents carry on the communication.
 
-In this step, a dynamic group is created using the Identity and Access Management service from the OCI Console. This group includes all the management agents. This is a one-time set up step, as any new management agent being installed will automatically belong to this group based on resource type definition shown below.
+In this step, a dynamic group is created using the Identity and Access Management service from the OCI Console. This group includes all the management agents. This is a one-time set up step. Any additional management agents installed will automatically belong to this group based on the resource type definition shown below.
 
-1. To access the Identity and Access Management service, open the **Navigation menu**. Under **Identity & Security**, go to **Identity** and click **Dynamic Groups**.
+1. To access the Identity and Access Management service, click on the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left. Under **Identity & Security**, go to **Identity** and click **Dynamic Groups**.
 
       ![Create a dynamic group](./images/dynamicgroups.png " ")
 
@@ -72,7 +72,7 @@ Where resource.type='managementagent' is the managementagent resource type defin
 
 1.  Now, let's create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission on compartment **dbmgmt-demo** to members or group **dbmgmt-group**.
 
-   a) On the **Menu** click **Identity**, and then click **Policies**.
+   a) From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, under **Identity & Security**, go to **Identity** and then select **Policies**.
 
    b) On the left side, select root compartment.
    
@@ -82,9 +82,11 @@ Where resource.type='managementagent' is the managementagent resource type defin
 
       ![Create Policy](./images/policies.png " ")
    
-   d) Enter a unique **Name** for your policy (For example, "Policy-for-dbmgmt-group") **Note that the name can NOT contain spaces.**
+   d) Enter a unique **Name** for your policy (For example, "Policy-for-dbmgmt-group"). Note that the name cannot contain spaces.
 
    e) Enter a **Description** (for example, "Policy for OCI DB Management").
+
+      ![Create](./images/createpolicy.png " ")
 
    f) Select **Show manual editor**   
 
@@ -105,12 +107,10 @@ Where resource.type='managementagent' is the managementagent resource type defin
 
    h) Click **Create**.
 
-      ![Create](./images/createpolicy.png " ")
-
 2. Create a New User
 
-   a) On the **Menu** click **Identity**, and then click **Users**.
-
+   a) From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, under **Identity & Security**, go to **Identity** and then select **Users**.
+   
    b) Click **Create User**.
 
    c) In the **New User** dialog box, enter the following:
@@ -156,15 +156,19 @@ Where resource.type='managementagent' is the managementagent resource type defin
       f) Click **Add**.
       ![Press the Add button](./images/addusertogroup.png " ")
 
-      g) Sign out of the Oracle Cloud website.
+      g) On the top right corner of Oracle Cloud Console, click on **Profile** and then click **Sign Out** to sign out of the Oracle Cloud website.
+      
+      ![Sign Out](./images/signout.png " ")
 
 5. Verify user permissions when a user belongs to a specific group
 
-      a) Sign in with the local "dbmgmt_user" account you created. Enter the password that was copied earlier.
+      a) Login to Oracle Cloud Console with the local "dbmgmt_user" account you created. Enter the password that was copied earlier.
+
+      ![Sign Out](./images/userlogin.png " ")
 
       b) On first login user is prompted to reset the password. Enter current password and new password for user.
 
-      b) Go to the **Menu** click **Observability & Management** and **Database Management**.
+      b) Open the **Navigation menu**. Under **Observability & Management** click on **Database Management**.
 
       c) Select compartment **dbmgmt-demo** from the list of compartments on the left.
 
@@ -172,11 +176,9 @@ Where resource.type='managementagent' is the managementagent resource type defin
 
       d) There is no message related to permissions and you are allowed to create new instances
 
-      e) Go to the **Menu** click **Identity** and select **Groups.**
+      e) Open the **Navigation menu**. Under **Identity & Security**, go to **Identity** and then select **Groups**.
 
       f) The message **Authorization failed or requested resource not found** appears. This is expected, since your user has no permission to modify groups. (Note: You may instead get the "An unexpected error occurred" message instead. That is also fine.)
-
-      g) Sign out.
 
 
 You may now proceed to the next lab.

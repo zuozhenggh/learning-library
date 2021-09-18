@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Database Management provides a single-pane-of-glass view of your fleet of on-premises and cloud databases in OCI, and enables you to detect issues across the fleet and respond to performance and configuration alerts. As a DBA, here are some of the tasks you can perform using Database Management, which are categorized under database monitoring and management areas.
+Database Management provides a single-pane-of-glass view of your fleet of on-premises and cloud databases in OCI, and enables you to detect issues across the fleet and respond to performance and configuration alerts. Here are some of the tasks you can perform using Database Management, which are categorized under database monitoring and management areas.
 
 Fleet Monitoring and Management
 -   Obtain an overview of your fleet of databases.

@@ -23,7 +23,7 @@ This lab assumes you have completed the following labs:
 
 2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
 
-    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+    Note: If you are running in Microsoft Windows using PuTTY, ensure your Session Timeout is set to greater than 0
 
     ```
     <copy>
@@ -49,7 +49,7 @@ This lab assumes you have completed the following labs:
     ```
     ![](./images/pdbcreate.png " ") 
 
-2.  Run this command to installs the workload data.
+2.  Run this command to install the workload data.
 
 
     ```
