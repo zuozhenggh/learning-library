@@ -12,7 +12,7 @@ As a DevOps user or Database Administrator, you can use the OCI Database Managem
 
 * Monitor the key performance and configuration metrics of all your Oracle Databases together (Fleet of databases).
 * You can compare and analyze database metrics over a selected period.
-* •	Group your most important or production Oracle Databases together, or group together databases that reside across compartments into a Database Group, and monitor them.
+* Group your most important or production Oracle Databases together, or group together databases that reside across compartments into a Database Group, and monitor them.
 * Create SQL jobs to perform administrative operations on a single Oracle Database or a Database Group.
 
 
