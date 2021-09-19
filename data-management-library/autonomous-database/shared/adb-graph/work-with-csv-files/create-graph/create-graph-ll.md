@@ -72,11 +72,11 @@ Learn how to
    ![ALT text is not available for this image](images/models-create.png " ")  
 
 2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
-![ALT text is not available for this image](./images/16-modeler-view-tables.png " ")
+![ALT text is not available for this image](./images/modeler-select-tables.png " ")
 
 2. Move them to the right, i.e. click the first icon on the shuttle control.   
 
-   ![ALT text is not available for this image](./images/17-modeler-selected-tables.png " ")
+   ![ALT text is not available for this image](./images/modeler-selected-tables.png " ")
 
 3.  Click next to get a suggested model. We will edit and update this model.  
 
@@ -93,7 +93,7 @@ Learn how to
     - The **edge direction** is incorrect. The source is `to_acct_id` instead of `from_acct_id`.
     - There are no Vertex and Edge labels
 
-  ![ALT text is not available for this image](./images/bank-graph-incorrect-ddl.png " ")   
+  ![ALT text is not available for this image](./images/modeler-source-incorrect-ddl.png " ")   
 
   We will be using vertex and labels in (PGQL) queries in the next lab.  
   The labels can be added and the edge direction swapped via the GUI. However it is simpler to both in one step by updating the CREATE PROPERTY GRAPH statement.   
@@ -132,7 +132,7 @@ Learn how to
    That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
    
    Enter a model name (e.g. `bank_graph_model`), and other optional information.  
-   ![ALT text is not available for this image](./images/create-bank-graph-dialog.png " ")
+   ![ALT text is not available for this image](./images/modeler-create-graph-dialog.png " ")
 
 7. Graph Studio modeler will now save the metadata and start a job to create the graph.  
    The Jobs page shows the status of this job. 
@@ -147,5 +147,5 @@ Please **proceed to the next lab** to do so.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, April 2021
+* **Last Updated By/Date** - Jayant Sharma, September 2021
   

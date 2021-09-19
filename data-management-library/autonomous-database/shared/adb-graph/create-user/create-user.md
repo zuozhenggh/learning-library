@@ -26,7 +26,7 @@ Learn how to
 
 2. Click on the Tools tab and then the Database Actions link to open it. 
    
-   ![ALT text is not available for this image](images/adb-tools-tab-db-actions.png " ")
+   ![ALT text is not available for this image](images/adb-tools-tab-dbactions.png " ")
 
 ## Task 2: Create the web access and graph-enabled user
 
