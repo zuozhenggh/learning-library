@@ -28,3 +28,4 @@ exceptions:
   - VS
   - Windows
   - Oracle Autonomous Database
+  - Oracle REST Data Services
