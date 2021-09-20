@@ -17,22 +17,16 @@ Estimated Time: 1 hour
 
 * Web Browser
 * SQL Developer 19.1 or higher
+* Always ensure you are in your correct Region and Compartment
 
 ## Task 1: Login to Oracle Cloud ##
 
 1. From your browser login into Oracle Cloud
 
-### About Regions and compartments
-
-**Important Note**
-
-Always ensure you are in your correct Region and Compartment.
-
-If this is an instructor-led lab we are sharing the same tenancy account with multiple students, please create a unique name for your OCI resources that you can identify with. Ie: Use your name or other identifier unique to you to name your cloud resources.
 
 ## Task 2: Provision ATP ##
 
-  Provision the Autonomous Transaction Processing database (ATP) with the steps below.
+   Provision the Autonomous Transaction Processing database (ATP) with the steps below.
 
 1. Select your assigned Region from the upper right of the OCI console.
 
@@ -133,57 +127,48 @@ Please note that most of the database settings and parameters cannot be modified
 
 7. Select Connection Type as Cloud Wallet and Browse for your wallet.
 
-8. Browse and select your service. Ie: <your ATP name>_tp.
-   Note there are five services, select the **tp**  service.
+8. Browse and select your service. i.e.,: "< your ATP name >\_tp". Note there are five services, select the **tp**  service.
 
-  About connection services:
+    About connection services:
 
-- High – for long queries, high parallelism, low SQL concurrency
+    - High – for long queries, high parallelism, low SQL concurrency.
+    - Medium – for medium queries, parallelism, medium concurrency.
+    - Low – for short queries, no parallelism, high concurrency.
+    - TPurgent – for high priority transaction processing.
+    - TP – for standard transaction processing.
 
-- Medium – for medium queries, parallelism, medium concurrency
+9.  Test the connection and Save your connection for later use. Then click Connect.
 
-- Low – for short queries, no parallelism, high concurrency
+    "**Note:**" Ensure that you use **ADMIN** user to view any database configuration.
+    ![](./images/sql-developer-2.png)
 
-- TPurgent – for high priority transaction processing
+10. From your SQL Developer worksheet run the test query below against a sample database that is
+    already in ATP.
 
-- TP – for standard transaction processing
+    ```
+     <copy>SELECT channel_desc,
+      TO_CHAR(SUM(amount_sold),'9,999,999,999') SALES$,
+      RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
+      RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
+      FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
+      WHERE sales.prod_id=products.prod_id
+     AND sales.cust_id=customers.cust_id
+      AND customers.country_id=countries.country_id
+      AND sales.time_id=times.time_id
+      AND sales.channel_id=channels.channel_id
+      AND times.calendar_month_desc IN ('2000-09','2000-10')
+      AND country_iso_code='US'
+      GROUP BY channel_desc;</copy>
 
-
-
-9. Test the connection and Save your connection for later use. Then click Connect.
-
-"**Note:**" Ensure that you use **ADMIN** user to view any database configuration.
-   ![](./images/sql-developer-2.png)
-
-10. From your SQL Developer worksheet run the test query below against a sample database that is already in   ATP.
-
-```
-<copy>SELECT channel_desc,
- TO_CHAR(SUM(amount_sold),'9,999,999,999') SALES$,
- RANK() OVER (ORDER BY SUM(amount_sold)) AS default_rank,
- RANK() OVER (ORDER BY SUM(amount_sold) DESC NULLS LAST) AS custom_rank
- FROM sh.sales, sh.products, sh.customers, sh.times, sh.channels, sh.countries
- WHERE sales.prod_id=products.prod_id
-AND sales.cust_id=customers.cust_id
- AND customers.country_id=countries.country_id
- AND sales.time_id=times.time_id
- AND sales.channel_id=channels.channel_id
- AND times.calendar_month_desc IN ('2000-09','2000-10')
- AND country_iso_code='US'
- GROUP BY channel_desc;</copy>
-
-```
-
-
-
- 11. Click **F5** or the **Run Script** button. Verify the query executes and results are displayed.  
+     ```
+ 11. Click **F5** or the **Run Script** button. Verify the query executes and results are displayed.
 
      Run it again.  Why was it faster?
-      ![](./images/sql-developer-3.png)
+        ![](./images/sql-developer-3.png)     
 
 
-You have successfully provisioned and connected SQL Developer to Autonomous Database (ATP) and validated the connection.
-              ![](./images/atp-diagram.png)
+      You have successfully provisioned and connected SQL Developer to Autonomous Database (ATP) and validated the connection.
+                    ![](./images/atp-diagram.png)
 
 You may now proceed to the next lab.
 
@@ -191,4 +176,4 @@ You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
-- **Author** - Milton Wan, Satyabrata Mishra Database Product Management, August 2021
+- **Author** - Milton Wan, Satyabrata Mishra - Database Product Management, August 2021
