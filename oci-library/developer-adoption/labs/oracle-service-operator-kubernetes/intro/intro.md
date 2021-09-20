@@ -1,24 +1,19 @@
 # Introduction
 
-## Automating the Deployment of Java Apps to Oracle Cloud Infrastructure
+## What is the OCI Service Operator for Kubernetes 
 
-You will learn how to build your infrastructure and automate the deployment of a Cloud Native Java application to Oracle Container Engine for Kubernetes (OKE)  using Oracle Cloud Infrastructure (OCI) DevOps. 
+The OCI Service Operator for Kubernetes (OSOK) makes it easy to create, manage, and connect to Oracle Cloud Infrastructure (OCI) resources from a Kubernetes environment. Kubernetes users can simply install OSOK and perform actions on OCI resources using the Kubernetes API removing the need to use the OCI CLI or other OCI developer tools to interact with the service API. 
 
-Estimated time: 90 minutes
+OSOK is based on the Operator Framework, an open-source toolkit used to manage Operators. It uses the controller-runtime library, which provides high-level APIs and abstractions to write operational logic and also provides tools for scaffolding and code generation for Operators.
 
 
-## Cloud Native Applications Overview
 
-Here is the definition of Cloud Native Applications accordingly to [Cloud Native Computing Foundation (CNCF)](https://github.com/cncf/foundation/blob/master/charter.md):
-
-"Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
-
-These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil."
+Estimated time: 60 minutes
 
 
 ## Oracle DevOps
 
-Oracle Cloud Infrastructure DevOps service provides an end-to-end CI/CD platform for developers. It includes *Deployment Pipelines* to automate your software delivery, and deployment process targeting OCI services: 
+In this lab you will install the Operator SDK to your local machine. You then will need to 
 - Oracle Container Engine for Kubernetes (OKE)
 - Oracle Functions (Fn)
 - Compute instances
