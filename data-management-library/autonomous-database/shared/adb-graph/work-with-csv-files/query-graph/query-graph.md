@@ -54,9 +54,9 @@ If you prefer you can simply **import** the notebook and then execute each parag
    
    ![ALT text is not available for this image](images/notebook-imported.png " ")  
 
-   You can execute the paragraphs in sequence and modify visualizations settings as described in **Task 2** below.  
+   You can execute the paragraphs in sequence and modify visualizations settings as described in **Task 3** below.  
    
-## Task 2: Create a notebook
+## Task 2: Create a notebook (Not necessary if you imported the notebook)
 1. Click on the `Notebooks` menu icon and then on `Create`, on the top right side of that page, to create a new notebook.  
 Name it `Learn/BankGraph: Find Circular Payments`.  
 
@@ -104,6 +104,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
  
 
 ## Task 3: Query the `BANK_GRAPH` and visualize the results 
+
+**Note:** *If you imported the notebook in Task 2a then simply execute each paragraph in sequence after reading the description in each of the steps below*. 
 
 1. Copy and paste the following text into this new paragraph.  
 	```
