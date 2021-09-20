@@ -27,32 +27,32 @@ This lab assumes you have:
 
     ![](images/console-image.png)
 
-2. On left side drop down (left of Oracle Cloud banner), go to Identity & Security and then Compartments.
+2. On left side drop down (left of Oracle Cloud banner), go to **Identity & Security** and then **Compartments.**
 
     ![](images/identity-security-compartment.png)
 
-3. Click 'Create Compartment.' This opens up a new window.
+3. Click **Create Compartment.** This opens up a new window.
 
-  Enter **demonosql** as compartment name, enter a description and press 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case.  This HOL assumes the demonosql compartment is a child of the root compartment.
+  Enter **demonosql** as compartment **Name** field, enter test into **Description** field and press **Create Compartment** button at bottom of window.  The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case.  This HOL assumes the 'demonosql' compartment is a child of the root compartment.
 
     ![](images/create-compartment.png)
 
 
 ## Task 2: Create an API Key For Your User
 
-1. Top right, click your Profile, then User Settings.
+1. Top right, click your **Profile**, then **User Settings.**
 
   ![](images/user-profile.png)
 
-2. Click 'User Settings' again. Copy your OCID.   **Make sure to save your OCID for future steps**. Paste it into notepad or some text file as it will be used in Step 4.
+2. Click **User Settings** again. Copy your OCID.   Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
 
     ![](images/user-ocid.png)
 
-3. Open the Cloud Shell in the top right menu.  It can take about 2 minutes to get the Cloud Shell started.  
+3. Open the **Cloud Shell** in the top right menu.  It can take about 2 minutes to get the Cloud Shell started.  
 
     ![](images/cloud-shell.png)
 
-  **Note:** This needs to be executed in the **HOME region**.  Please ensure you are in your home region.  The Cloud Shell prompt shows you what region the shell is running out of.
+  **Note:** This needs to be executed in the **Home region**.  Please ensure you are in your home region.  The Cloud Shell prompt shows you what region the shell is running out of.
 
     ![](images/capturecloudshellhomeregion.png)
 
@@ -68,7 +68,7 @@ This lab assumes you have:
     If you execute the 'oci iam' command before replacing "YOURUSEROCID" then you will get the following error:
     **"Authorization failed or requested resource not found".**   Replace "YOURUSEROCID" and try the last command again.  
 
-    If you execute the 'oci iam' command and you get this error "ApiKeyLimitExceeded" then you need to delete some keys you already created.  Go to your user details screen, and API Keys to find old keys to delete.
+    If you execute the 'oci iam' command and you get this error **"ApiKeyLimitExceeded"** then you need to delete some keys you already created.  Go to your user details screen, and **API Keys** to find old keys to delete.
 
 5. Exit Cloud Shell  
 
@@ -132,7 +132,7 @@ In the next labs we are going to be running application code and we need an inst
 
 Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Phoenix is **not** your home region then we need to move there.  Skip this Task if Phoenix is your home region.
 
-1.  Check to see if Phoenix shows up in your region drop down list.  Click the down arrow by the region.
+1.  Check to see if Phoenix shows up in your region drop down list.  Click the down **arrow** by the region.
 
     ![](images/no-phoenix.png)
 
@@ -140,15 +140,15 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Ph
 
     ![](images/phoenix.png)
 
-3.  Since it is not there, please subscribe to Phoenix Region.  Click the drop down by your region and click 'Manage Regions'.
+3.  Since it is not there, please subscribe to Phoenix Region.  Click the drop down by your region and click **Manage Regions.**
 
     ![](images/manage-regions.png)
 
-4.  This will bring up a list of regions.  Look for Phoenix and press 'Subscribe'.
+4.  This will bring up a list of regions.  Look for Phoenix and press **Subscribe**.
 
     ![](images/capturesuscribe.png)
 
-5. If you haven't been moved to Phoenix, then click Phoenix to move your tenancy.
+5. If you haven't been moved to Phoenix, then click **Phoenix** to move your tenancy.
 
     ![](images/phoenix.png)
 
