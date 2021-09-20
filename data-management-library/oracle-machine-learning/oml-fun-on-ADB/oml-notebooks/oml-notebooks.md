@@ -180,7 +180,7 @@ This step demonstrates how to create a notebook based on an Example template:
 
 	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
-	![Create Classification DT notebook from example template](images/create_notebook_dialog.png)
+	![Create Classification DT notebook from example template](images/create_notebook_classification.png)
 
 
 4. Once the notebook is created, the message _Notebook Classification DT 1 created in project OMLUSER Project_ is displayed, as shown in the screenshot.
@@ -190,10 +190,10 @@ This step demonstrates how to create a notebook based on an Example template:
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
 
-	![Notebooks in left navigation menu](images/notebooks_left_nav.png)
+	![Notebooks in left navigation menu](images/notebooks_left_nav_pane.png)
 
 
-6. The notebook Classification_DT is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
+6. The Classification DT 1 notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
 
 	![Notebook listed](images/notebook_listed.png)
 
