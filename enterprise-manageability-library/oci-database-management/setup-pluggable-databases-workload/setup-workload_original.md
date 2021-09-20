@@ -28,7 +28,7 @@ This lab assumes you have completed the following labs:
     ```
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/TA1MNo2HPAseQm-KRkxPcxsu6EHu06y5IENZURwM2-Njhi1WCSF-lWQZyiX04uMH/n/orasenatdpltintegration01/b/database-management-lab/o/labs.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ftGGzovwbcFVbRyG6jDfgehtN1hV4FsRvyXjvlcwsjmGu-lNxkH0HnwGX_bDgbCb/n/orasenatdpltintegration01/b/database-management-lab/o/labs.zip
     sudo mv labs.zip /home/oracle
     sudo chown oracle:oinstall /home/oracle/labs.zip
     sudo su - oracle
