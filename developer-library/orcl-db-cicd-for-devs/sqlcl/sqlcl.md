@@ -17,13 +17,15 @@ Estimated Lab Time: 30-45 minutes
 
 ### Prerequisites
 
-- You have completed the [Setups](../setups/setups.md).
+- You have completed the [Setups](../setups/setups.md) lab.
 
 ## Task 1: Download the Autonomous Database Wallet
 
-To access our Autonomous Database, we first must download the wallet that contains the connection information. We can do this in two ways.
+To access our Autonomous Database, we first must download the wallet that contains the connection information.
 
-### Download the wallet via a web browser
+We can do this via two methods.
+
+### Method 1: Download the wallet via a web browser
 
 1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
@@ -58,7 +60,7 @@ To access our Autonomous Database, we first must download the wallet that contai
 
     ![Download Wallet modal](./images/adb-8.png)
 
-    Note where you saved this file and close the **Download Wallet modal** and the **Database Connection slider**.
+    Note where you saved this file and close the **Download Wallet modal** and then close the **Database Connection slider**.
 
 7. Open an **OCI Cloud Shell session** if one is not already running.
 
@@ -82,9 +84,9 @@ To access our Autonomous Database, we first must download the wallet that contai
 
 10. In your home directory, you can issue an **ls** at the cloud shell prompt to see the file.
 
-   ![ls at the prompt](./images/shell-6.png)
+      ![ls at the prompt](./images/shell-6.png)
 
-### Download the wallet via OCI CLI
+### Method 2: Download the wallet via OCI CLI
 
 We can issue an OCI CLI command to download the Autonomous Database wallet. 
 
@@ -106,21 +108,21 @@ We can issue an OCI CLI command to download the Autonomous Database wallet.
 
 5. At the cloud shell prompt, we will issue ab OCI CLI command using the autonomous-database generate-wallet api. 
 
-The format of the api is:
+   The format of the api is:
 
-```
-oci db autonomous-database generate-wallet --autonomous-database-id ADB_OCID --file FILENAME.ZIP --password MY_PASSWORD
-```
+   ```
+   oci db autonomous-database generate-wallet --autonomous-database-id ADB_OCID --file FILENAME.ZIP --password MY_PASSWORD
+   ```
 
-where we supply the Autonomous Database OCID, a filename and a password.
+   where we supply the Autonomous Database OCID, a filename and a password.
 
 6. At the **Cloud Shell prompt**, copy and paste the following to start building our command
 
-````
-<copy>
-oci db autonomous-database generate-wallet --autonomous-database-id 
-</copy>
-````
+   ````
+   <copy>
+   oci db autonomous-database generate-wallet --autonomous-database-id 
+   </copy>
+   ````
    ![copy and paste the following to start building our command](./images/ocid-1.png)
 
 
@@ -320,8 +322,18 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ```` 
    ![provide the password](./images/sql-8.png)
  
+8. So we don't take any schema specific storage or DDL information, run the following at the SQLcl prompt.
 
-8. It's time to create some datababase object for our repository. Run the following code.
+   ````
+   <copy>
+   set ddl storage off
+   set ddl segment_attributes off
+   set ddl tablespace off
+   </copy>
+   ```` 
+   ![DDL OFF!](./images/ddloff-1.png)
+
+9. It's time to create some datababase object for our repository. Run the following code.
 
    **Create a table**
    ````
