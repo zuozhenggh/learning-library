@@ -49,7 +49,7 @@ This lab assumes you have already completed the following:
 
      **Connector display name:** CDB-CON
 
-     **Connector agent ID:** Select **dbm-demo**
+     **Connector agent ID:** Select **dbm_demo**
      
      **DNS hostname or SCAN name:** workshop.subnet1.labvcn.oraclevcn.com
      
@@ -93,7 +93,7 @@ This lab assumes you have already completed the following:
 
      **Connector display name:** MFG
 
-     **Connector agent ID:** Select **dbm-demo**
+     **Connector agent ID:** Select **dbm_demo**
      
      **DNS hostname or SCAN name:** workshop.subnet1.labvcn.oraclevcn.com
      
@@ -150,7 +150,7 @@ This lab assumes you have already completed the following:
 
     ```
     <copy>
-    management_agent_display_name = dbm-demo
+    management_agent_display_name = dbm_demo
     container_database_name = ORCL
     connector_credential_name = orcl.cred
     connector_username = SYSTEM
