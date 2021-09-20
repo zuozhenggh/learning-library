@@ -183,16 +183,17 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
 4.  update the session command on notepad
     - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
-    - add the `&` character at the end of the command or the command will not connection will not be successful
+    - *add the `&` character* at the end of the command or the command will not connection will not be successful
 
 
     The command from your notepad should look like this
 
     ![](./images/notepad2.png " ") 
     
-5. Open the cloud shell and enter the command from the notepad. It should like this... `Don't forget the &`
+5. Open the cloud shell and enter the command from the notepad. It should like this..
+    *Don't forget the &  character*
 
-    `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk..................ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
+    `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk...ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
 
 6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
 
