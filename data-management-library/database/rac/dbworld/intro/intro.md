@@ -15,7 +15,7 @@ For more about Virtual DB systems, click [here](https://docs.cloud.oracle.com/en
 
 ### Workshop Objectives
 - Connect to a DB System
-- Services
+- Workload Management with Database Services
 - Transparent Application Continuity
 - ACCHK
 
