@@ -1,4 +1,4 @@
-# Setup HeatWave Clusters in MySQL Database System 
+# Setup HeatWave cluster in MySQL Database System 
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
