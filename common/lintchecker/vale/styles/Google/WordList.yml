@@ -40,7 +40,7 @@ swap:
   check: select
   CLI: command-line tool
   click on: click|click in
-  Cloud: Google Cloud Platform|GCP
+  Cloud: Oracle Cloud Infrastructure|OCI
   Container Engine: Kubernetes Engine
   content type: media type
   curated roles: predefined roles
@@ -52,8 +52,8 @@ swap:
   file name: filename
   firewalls: firewall rules
   functionality: capability|feature
-  Google account: Google Account
-  Google accounts: Google Accounts
+  Oracle account: Oracle Account
+  Oracle accounts: Oracle Accounts
   Googling: search with Google
   grayed-out: unavailable
   HTTPs: HTTPS
