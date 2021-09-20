@@ -67,7 +67,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     Note in the output there are two files, a *private key:* `id_rsa` and a *public key:* `id_rsa.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 
-## Task 3: Create Bastion Service
+## Task 2: Create Bastion Service
 
 The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL DB System.
 1. Go to Navigation Menu > Identity Security > Bastion
@@ -78,7 +78,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
     ![](./images/bastion-02.png " ")
 
- 3. On Create bastion, complete the following fields:   
+3. On Create bastion, complete the following fields:   
 
     Bastion Name
      ```
@@ -106,16 +106,12 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
     When completed your scren should look like this:
 
-     ![](./images/bastion-04.png " ")
+    ![](./images/bastion-04.png " ")
 
 
-## Task 2: Create a Bastion session
+## Task 3: Create a Bastion session
 
-1. Click the `DSBastion` link
-
-     ![](./images/bastion-05.png " ")
-
-2. Before creating the Bastion Session open a notepad. Do the following steps to record the MySQL Database System private IP address:
+1. Before creating the Bastion Session open a notepad. Do the following steps to record the MySQL Database System private IP address:
 
     - Go to Navigation Menu > Databases > MySQL
      ![](./images/db-list.png " ")
@@ -126,7 +122,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
     
     - Copy the `Private IP Address` to the notepad
 
-3. Do the followings steps to copy  the public SSH key to the  notepad 
+2. Do the followings steps to copy  the public SSH key to the  notepad 
  
     - Open the Cloud shell
      ![](./images/cloudshell-10.png " ")    
@@ -137,17 +133,19 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
         ``` 
     ![](./images/cloudshell-11.png " ") 
 
-4.  Copy the id_rsa.pub content the notepad
+3.  Copy the id_rsa.pub content the notepad
         Your notepad should look like this
         ![](./images/notepad1.png " ")  
         
-5. Go to Navigation Menu > Identity Security > Bastion
+4. Go to Navigation Menu > Identity Security > Bastion
 
-6. Open the MDSBastion link
+5. Click the `DSBastion` link
 
-7. Click `Create Session`
+     ![](./images/bastion-05.png " ")
 
-8. Set up the following information
+6. Click `Create Session`
+
+7. Set up the following information
     - Session type
       Select `SSH port forwarding session`
     - Session Name 
@@ -155,21 +153,21 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
     - IP address
         *Enter IP addtess from notepad*
 
-9. Enter the Port
+8. Enter the Port
 
     ```      
         <copy>3306</copy>
     ```
-10. Add SSH Key -  Copy SSH Key from notepad
+9. Add SSH Key -  Copy SSH Key from notepad
     - The screen shoul look like this
     ![](./images/bastion-06.png " ") 
     - Click the `Create Session` button 
-11. The completed Bastion Session should look like this
+10. The completed Bastion Session should look like this
     ![](./images/bastion-07.png " ") 
 
 **Note: The Session will expire in 180 minutes**
 
-## Task 3: Connect to MySQL Database System
+## Task 4: Connect to MySQL Database System
 
 1. Click on the 3 vertical dots on the Bastion Session
 
@@ -183,7 +181,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
 4.  update the session command on notepad
     - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
-    - *add the `&` character* at the end of the command or the command will not connection will not be successful
+    - *add the `&` character* at the end of the command or the connection will not be successful
 
 
     The command from your notepad should look like this

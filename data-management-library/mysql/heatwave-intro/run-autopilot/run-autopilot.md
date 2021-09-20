@@ -31,7 +31,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Improve Query performance and Heatwave memory usage using Auto Encoding
 
-1.	Run the following 3 queries and record the runtime:
+1.	Run the following 4 queries and record the runtime:
 
  **Query a)** Find per-company average age of passengers from Switzerland, Italy and France
 
@@ -77,6 +77,19 @@ LIMIT 10;
 </copy>
     ```
 **Query c)** Ticket price greater than 500, grouped by price
+    ```
+    <copy> -- Query c) Ticket price greater than 500, grouped by price
+SELECT 
+    booking.price, COUNT(*)
+FROM
+    booking
+WHERE
+    booking.price > 500
+GROUP BY booking.price
+ORDER BY booking.price
+LIMIT 10; </copy>
+    ```
+**Query d)** Ticket price greater than 400, grouped by firstname , lastname
     ```
 <copy>SELECT 
     firstname,

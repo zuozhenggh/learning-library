@@ -33,23 +33,15 @@ In this lab, you will be guided through the following tasks:
     ```
         <copy>mysqlsh admin@127.0.0.1 --sql</copy>
     ```
-3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt
-
-
-4.	Change to the airport database   
+3.	Change to the airport database   
 
     Enter the following command at the prompt
     ```
     <copy>USE airportdb;</copy>
     ```
-5. To see if `use_secondary_engine` is enabled (=ON)
- Enter the following command at the prompt 
+4. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
-    ![INTRO](./images/heatwave-qeury-01.png " ")  
-
-6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
-
-7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
+5. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
     ```
     <copy>EXPLAIN SELECT
@@ -71,7 +63,7 @@ LIMIT 10\G</copy>
     ```
     ![Connect](./images/heatwave-qeury-02.png " ")
 
-8. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
+6. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
      ```
     <copy>SELECT
     airline.airlinename,
@@ -93,14 +85,14 @@ LIMIT 10;
     ```
      ![Connect](./images/heatwave-qeury-03.png " ")
 
-9. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
+7. To compare the HeatWave execution time with MySQL DB System execution time, disable the `use_secondary_engine` variable to see how long it takes to run the same query on the MySQL DB System. For example:
 
  Enter the following command at the prompt:
      ```
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ```
 
-10. Enter the following command at the prompt:
+8. Enter the following command at the prompt:
      ```
     <copy>SELECT
     airline.airlinename,
@@ -121,23 +113,23 @@ LIMIT 10;</copy>
     ```
     ![Connect](./images/heatwave-qeury-04.png " ")
 
-11. To see if `use_secondary_engine` is enabled (=ON)
+9. To see if `use_secondary_engine` is enabled (=ON)
 
  Enter the following command at the prompt:
      ```
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ```
-12. Run additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
+10. Run additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
    
     (Example  **SET SESSION `use_secondary_engine`=On;**) 
 
     (Example  **SET SESSION `use_secondary_engine`=Off;**)      
 
-13. Enter the following command at the prompt
+11. Enter the following command at the prompt
      ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
-14. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
+12. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
 
     ```
     <copy> SELECT
@@ -158,7 +150,7 @@ ORDER BY
 LIMIT 10;
     </copy>
     ```
-15. Enter the following command at the prompt:
+13. Enter the following command at the prompt:
      ```
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ```
@@ -183,7 +175,7 @@ ORDER BY
 LIMIT 10;
     </copy>
     ```
-16. Query c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
+14. Query c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
@@ -226,7 +218,7 @@ WHERE
 GROUP BY firstname , lastname;</copy>
     ```
 
-17. Keep HeatWave processing enabled
+15. Keep HeatWave processing enabled
 
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
