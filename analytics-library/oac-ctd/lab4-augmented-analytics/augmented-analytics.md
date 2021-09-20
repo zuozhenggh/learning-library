@@ -6,8 +6,7 @@
 
 __SUMMARY__
 
-In this exercise you will experiment how easy and dynamic is to create your own analysis.
-Augmented capabilities like automatic map layers and forecasting will be used.
+In this exercise you will experiment how easy and dynamic is to create your own analysis. Augmented capabilities like System map layers and forecasting will be used.
 
 Estimated Lab Time: 30 minutes
 

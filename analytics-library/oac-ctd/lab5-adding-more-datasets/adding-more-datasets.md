@@ -57,15 +57,15 @@ You see a preview of the data. Note that this file has the country column with I
 New Data Set gets uploaded to instance.
 Navigate to previous tab in browser.
 
-1. Click on the plus icon at the top right of the Explorer menu and select “Add Data Set”
+1. Click on the plus icon at the top right of the Data menu and select “Add Data Set”.
 
 ![](images/1_add_data_set.png " ")
 
-Select OAC_TD_Agreements_ yourName.xlsx file from list. Click on Add to Project button.
+1. Select OAC_TD_Agreements_ yourName.xlsx file from list. Click on Add to Project button.
 
 ![](images/6_select_data_set_agreements.png " ")
 
-New Data set gets added to project. Navigate to Data tab.
+1. New Data set gets added to project. Navigate to Data tab.
 
 ![](images/6_navigate_data_tab.png " ")
 
@@ -86,8 +86,7 @@ On the pop-up menu, define the join.
 ![](images/8_add_match.png " ")
 
 Join of these files are between “Provider Name” = “Vendor” and “Provider Country” = “Destination Country_ISO3” because a hotel chain might have the same name in different countries.
-1. Click on the small down arrow to expand the list of columns of the first data set
-2. Click “Provider Name”
+1. Click on the small down arrow to expand the list of columns of the first data set and Click “Provider Name”
 
 ![](images/9_select_provider_field.png " ")
 
@@ -96,9 +95,8 @@ Join of these files are between “Provider Name” = “Vendor” and “Provid
 
 ![](images/10_select_vendor_field.png " ")
 
-1. Repeat the steps 8-10 and select “Provider Country” and “Destination Country_iso3”.
-You should have something like the screenshot.
-Then click OK.
+1. Repeat the steps and select “Provider Country” and “Destination Country_iso3”.
+You should have something like the screenshot. Then click OK.
 
 ![](images/11_submit_connection.png " ")
 
@@ -125,7 +123,7 @@ To obtain the savings you need to calculate the expenses multiplied by the agree
 1. Select “My Calculations” and Right-click on it.
 2. Select “Add Calculation”
 
-My calculations are at the bottom of the explorer, use the slider to find it if your screen resolution is too small and it is not appearing.
+My calculations are at the bottom of the Data Pane, use the slider to find it if your screen resolution is too small and it is not appearing.
 
 ![](images/15_Add_Calculation.png " ")
 
