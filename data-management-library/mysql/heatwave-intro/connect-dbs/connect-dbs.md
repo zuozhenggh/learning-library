@@ -109,7 +109,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
     ![](./images/bastion-04.png " ")
 
 
-## Task 3: Create a Bastion session
+## Task 3: Create Bastion session
 
 1. Before creating the Bastion Session open a notepad. Do the following steps to record the MySQL Database System private IP address:
 
