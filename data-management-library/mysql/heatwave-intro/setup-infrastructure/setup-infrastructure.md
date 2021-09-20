@@ -48,7 +48,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     
     Here is what it should look like.  
 
-    ![](./images/ssh-key01 " ")
+    ![](./images/ssh-key01.png " ")
 
 3.  The public  and  private SSH keys  are stored in ~/.ssh/id_rsa.pub.
 

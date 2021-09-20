@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this lab you will query data in the HeatWave cluster.
+In this lab, you will run queries in HeatWave and in MySQL. You will see the query performance improvements on HeatWave compare to MySQL.
 
 Estimated Lab Time: 10 minutes
 
@@ -14,7 +14,7 @@ Estimated Lab Time: 10 minutes
 In this lab, you will be guided through the following tasks:
 
 - Run Queries with MySQL Shell
-- Run Queries using Workbench
+
 
 
 ### Prerequisites
@@ -31,13 +31,11 @@ In this lab, you will be guided through the following tasks:
 2. On command Line, connect to MySQL using the MySQL Shell client tool        
 
     ```
-        <copy>mysqlsh admin@127.0.0.1</copy>
+        <copy>mysqlsh admin@127.0.0.1 --sql</copy>
     ```
 3. Change the MySQL Shell execution mode to SQL. Enter the following command at the prompt
 
-    ```
-    <copy>\sql</copy>
-    ```
+
 4.	Change to the airport database   
 
     Enter the following command at the prompt
@@ -51,7 +49,7 @@ In this lab, you will be guided through the following tasks:
 
 6. Query a - Find per-company average age of passengers from Switzerland, Italy and France
 
-7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. For example:
+7. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
     ```
     <copy>EXPLAIN SELECT
@@ -129,7 +127,7 @@ LIMIT 10;</copy>
      ```
     <copy>SHOW VARIABLES LIKE 'use_secondary_engine%';</copy>
     ```
-12. Runing additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
+12. Run additional queries. Remember to turn on and off the `use_secondary_engine`  to compare the execution time. 
    
     (Example  **SET SESSION `use_secondary_engine`=On;**) 
 
@@ -192,14 +190,40 @@ LIMIT 10;
     ```
 
     ```
-    <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
+    <copy>SELECT 
+    firstname,
+    lastname,
+    COUNT(booking.passenger_id) AS count_bookings
+FROM
+    passenger,
+    booking
+WHERE
+    booking.passenger_id = passenger.passenger_id
+        AND passenger.lastname = 'Aldrin'
+        OR (passenger.firstname = 'Neil'
+        AND passenger.lastname = 'Armstrong')
+        AND booking.price > 400.00
+GROUP BY firstname , lastname;</copy>
     ```
     ```
     <copy>SET SESSION use_secondary_engine=OFF;</copy>
     ```
     
     ```
-    <copy>select firstname, lastname, count(booking.passenger_id) as count_bookings from passenger, booking   where booking.passenger_id = passenger.passenger_id  and passenger.lastname = 'Aldrin' or (passenger.firstname = 'Neil' and passenger.lastname = 'Armstrong') and booking.price > 400.00 group by firstname, lastname;</copy>
+    <copy>SELECT 
+    firstname,
+    lastname,
+    COUNT(booking.passenger_id) AS count_bookings
+FROM
+    passenger,
+    booking
+WHERE
+    booking.passenger_id = passenger.passenger_id
+        AND passenger.lastname = 'Aldrin'
+        OR (passenger.firstname = 'Neil'
+        AND passenger.lastname = 'Armstrong')
+        AND booking.price > 400.00
+GROUP BY firstname , lastname;</copy>
     ```
 
 17. Keep HeatWave processing enabled

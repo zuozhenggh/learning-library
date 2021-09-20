@@ -206,25 +206,24 @@ In this lab, you will be guided through the following tasks:
 
 4.  update the session command on notepad
     - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
-    - add `&` at the end of the command
-    
+    - add the `&` character at the end of the command or the command will not connection will not be successful
+
+
     The command from your notepad should look like this
 
     ![](./images/notepad2.png " ") 
     
-5. Open the cloud shell and enter the command from the notepad. It should like this:
+5. Open the cloud shell and enter the command from the notepad. It should like this... `Don't forget the &`
+
     `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk..................ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
 
 6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
 
      ```
-     <copy>mysqlsh admin@127.0.0.1</copy>
+     <copy>mysqlsh admin@127.0.0.1 --sql</copy>
      ``` 
 7. View  the airportdb total records per table in 
 
-    ```
-    <copy>\sql</copy>
-    ```
 
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>

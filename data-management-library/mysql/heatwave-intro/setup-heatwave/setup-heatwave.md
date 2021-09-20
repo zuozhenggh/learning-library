@@ -4,7 +4,11 @@
 
 ## Introduction
 
-In this lab you will load the airportdb database from a MySQL DB System into HeatWave.
+A HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
+
+![Connect](./images/10addheat00.png " ")
+
+
 
 Estimated Lab Time: 20 minutes
 
@@ -27,7 +31,6 @@ In this lab, you will be guided through the following tasks:
 
 1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
 
-    ![Connect](./images/10addheat00.png " ")
 
 2. Open the navigation menu  Databases > MySQL > DB Systems
 3. Choose the root Compartment. A list of DB Systems is displayed. 
@@ -43,9 +46,7 @@ provisioning advisor to sample the data stored in InnoDB and based on machine le
 algorithm, it will predict the number of nodes needed.
     ![Connect](./images/10addheat04.png " ")
 
-8. Once the estimations are calculated, it shows list of database schemas in MySQL node. If
-you expand the schema and select different tables, you will see the estimated memory
-required in the Summary box, There is s Load Command (analytics_load) generated in the text box window, which will change based on the selection of databases/tables
+8. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
 
 9. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
     ![Connect](./images/10addheat05.png " ")
@@ -61,20 +62,18 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 2. On command Line, connect to MySQL using the MySQL Shell client tool with th following command:
 
     ```
-    <copy>mysqlsh admin@127.0.0.1</copy>
+    <copy>mysqlsh admin@127.0.0.1 --sql</copy>
     ```
 
 3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
 
-    ```
-    <copy>\sql</copy>
-    ```
+
     ![Connect](./images/heatwave-load-01.png " ")
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
-4. The compled load cluster screen should look like this:
+4. The completed load cluster screen should look like this:
 
     ![Connect](./images/heatwave-load-02.png " ")
 
