@@ -6,7 +6,7 @@ Starting with Oracle Database 19c, you can duplicate a container database (CDB) 
 
 In this lab, you duplicate CDB1 twice by using the `createDuplicateDB` command of DBCA in silent mode. First, you duplicate CDB1 as a single individual database named DUPCDB1 with a basic configuration that uses the default listener. Next, you duplicate CDB1 as OMFCDB1 with Oracle Managed Files (OMF) enabled and create a new listener at the same time. Oracle Managed Files simplifies the creation of databases as Oracle does all OS operations and file naming. Use the `workshop-installed` compute instance.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -537,4 +537,4 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 27 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, September 2 2021

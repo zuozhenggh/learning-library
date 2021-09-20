@@ -15,7 +15,7 @@ To export in transportable tablespace mode with Oracle Data Pump Export, your ta
 In this lab, you use Oracle Data Pump Export and Oracle Data Pump Import to export a transportable tablespace from PDB1 (in CDB1) and import it into PDB2. You experiment with read-only mode for the tablespace, and try out some of the parameters that help to decrease export and import time. Use the `workshop-installed` compute instance.
 
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -574,4 +574,4 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, August 27 2021
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, September 2 2021

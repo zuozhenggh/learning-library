@@ -8,7 +8,7 @@ The following video shows the steps you will execute in this lab.
 
 [](youtube:5g9i9HA_cn0) Graph Studio: Create a graph.
 
-Estimated Lab Time: 15 minutes. 
+Estimated Time: 15 minutes. 
 
 ### Objectives
 
@@ -36,35 +36,35 @@ Learn how to
 
 3. Enter your Autonomous Database account credentials (e.g. `GRAPHUSER`) into the login screen:
  
-    ![](./images/adw-graph-studio-login.png " ")
+    ![ALT text is not available for this image](./images/graphstudio-login-graphuser.png " ")
 
 4. Then click the "Sign In" button. You should see the studio home page.   
 
-    ![](./images/gs-graphuser-home-page.png " ") 
+    ![ALT text is not available for this image](./images/gs-graphuser-home-page.png " ") 
 
     Graph Studio consists of a set of pages accessed from the menu on the left. 
 
-    The Home icon ![](images/home.svg " ") takes you to the Home page you see above.  
-    The Models icon ![](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
-    The Graph page ![](images/radar-chart.svg " ") lists existing graphs which can be used in notebooks.  
-    The Notebook page ![](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
-    The Jobs page ![](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
+    The Home icon ![ALT text is not available for this image](images/home.svg " ") takes you to the Home page you see above.  
+    The Models icon ![ALT text is not available for this image](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
+    The Graph page ![ALT text is not available for this image](images/radar-chart.svg " ") lists existing graphs which can be used in notebooks.  
+    The Notebook page ![ALT text is not available for this image](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
+    The Jobs page ![ALT text is not available for this image](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
 
 
 ## Task 2: Create a graph of accounts and transactions from the corresponding tables
 
 1. Click on the Models icon to navigate to the start of the modeling workflow.  
    Then click on `Create`.  
-   ![](images/models-create.png " ")  
+   ![ALT text is not available for this image](images/models-create.png " ")  
 
    **Note: If you clicked on `Start Modeling` button instead then you'll see the screen shown in the next step.**
 
 2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
-![](./images/16-modeler-view-tables.png " ")
+![ALT text is not available for this image](./images/modeler-select-tables.png " ")
 
 2. Move them to the right, i.e. click the first icon on the shuttle control.   
 
-   ![](./images/17-modeler-selected-tables.png " ")
+   ![ALT text is not available for this image](./images/modeler-selected-tables.png " ")
 
 3.  Click `next` to get a suggested model. We will edit and update this model to add an edge and a vertex label.  
 
@@ -72,19 +72,19 @@ Learn how to
 
     And `BANK_TXNS` is a suggested edge table.
 
-  ![](./images/create-graph-suggested-model.png " ")    
+  ![ALT text is not available for this image](./images/create-graph-suggested-model.png " ")    
   
 
 4.  Now let's modify the default Vertex and Edge labels.  
 
     Click on the `BANK_ACCOUNTS` vertex table. Change the label to `ACCOUNTS`. Then click outside the input box to save the update.  
 
-    ![](images/create-graph-edit-accounts-label.png " ")  
+    ![ALT text is not available for this image](images/create-graph-edit-accounts-label.png " ")  
 
     Click the `BANK_TXNS` edge table and change the label from `BANK_TXNS' to `TRANSFERS`.  
     Then click outside the input box to save the update.  
 
-    ![](images/create-graph-edit-txns-label.png " ")  
+    ![ALT text is not available for this image](images/create-graph-edit-txns-label.png " ")  
 
     This is **important** because we will use these edge labels in the next lab of this workshop when querying the graph.  
 
@@ -92,22 +92,22 @@ Learn how to
     In this instance we want to **confirm** that the direction is from `from_acct_id` to `to_acct_id`.  
 
   Click the Source tab to bring up the existing statement and the edit dialog.  
-  ![](./images/bank-graph-incorrect-ddl.png " ")   
+  ![ALT text is not available for this image](./images/modeler-source-incorrect-ddl.png " ")   
 
   **Notice** that the direction is incorrect. The Source Key is `to_acct_id` instead of what we want, which is `from_acct_id`. 
 
 6. Click the `Designer` tab to go back to the model design page.  
 
    Now select the `BANK_TXNS` edge table, then click on the swap edge icon  
-   ![](images/exchange.svg " ")  
+   ![ALT text is not available for this image](images/exchange.svg " ")  
    to change the edge direction.  
 
-   ![](images/create-graph-swap-edge-direction.png " ")  
+   ![ALT text is not available for this image](images/create-graph-swap-edge-direction.png " ")  
 
 
    Click the `Source` to verify that the edge direction, and hence the generated CREATE PROPERTY GRAPH statement, is correct.  
 
-   ![](images/create-graph-correct-cpg-ddl.png " ")
+   ![ALT text is not available for this image](images/create-graph-correct-cpg-ddl.png " ")
   
 
   **An alternate approach:** In the previous step 5 you could have just updated the CREATE PROPERTY GRAPH statement and saved the updates. That is, you could have just replaced the existing statement with the following one which specifies that the SOURCE KEY is  `from_acct_id`  and the DESTINATION KEY is `to_acct_id`.  
@@ -134,7 +134,7 @@ Learn how to
     </copy>
     ```
 
-   ![](images/correct-ddl-save.png " " )  
+   ![ALT text is not available for this image](images/correct-ddl-save.png " " )  
 
    **Important:** Click the **Save** (floppy disk icon) to commit the changes.
 
@@ -145,20 +145,20 @@ Learn how to
    That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
    
    Enter a model name (e.g. `bank_graph_model`), and other optional information.  
-   ![](./images/create-bank-graph-dialog.png " ")
+   ![ALT text is not available for this image](./images/modeler-create-graph-dialog.png " ")
 
 8. Graph Studio modeler will now save the metadata and start a job to create the graph.  
    The Jobs page shows the status of this job. 
 
-   ![](./images/23-jobs-create-graph.png " ")  
+   ![ALT text is not available for this image](./images/23-jobs-create-graph.png " ")  
 
    Once the graph has been created and loaded into memory, you can query and visualize it in a notebook.
 
 
-Please *proceed to the next lab* to do so.
+Please **proceed to the next lab** to do so.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, May 2021
+* **Last Updated By/Date** - Jayant Sharma, September 2021
   
