@@ -8,6 +8,8 @@ This lab will show you how to setup your database schemas for the subsequent lab
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
+Estimated Lab Time: 5 Minutes
+
 Watch the video below for an overview of the Install Sample Schema lab
 [](youtube:rUIxZjy9HQg)
 
