@@ -31,7 +31,7 @@ Learn how to
    ![ALT text is not available for this image](images/../../query-graph/images/adb-details-page.png " ")  
 
 2. Click on the Tools tab and then the Database Actions link to open it.
-   ![ALT text is not available for this image](images/../../query-graph/images/adb-tools-tab-db-actions.png " ")
+   ![ALT text is not available for this image](images/adb-details-page-yyz.png " ")
 
 ## Task 2: Login as the graph-enabled user
 
@@ -92,11 +92,11 @@ Learn how to
 
 5. Once the files are loaded 
    
-   ![ALT text is not available for this image](./images/db-actions-dataload-files-loaded.png " ")  
+   ![ALT text is not available for this image](./images/dbactions-dataload-files-loaded.png " ")  
 
    Click `Done` to exit.
 
-   ![ALT text is not available for this image](images/db-actions-dataload-click-done.png " ")
+   ![ALT text is not available for this image](images/dbactions-click-done.png " ")
 
 6. Now open the SQL Worksheet.
    ![ALT text is not available for this image](./images/db-actions-choose-sql-card.png " ")
