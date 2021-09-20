@@ -142,7 +142,7 @@ This lab assumes you have already completed the following:
 
 2. Check the **.zip file**, Click the **Browse** link and select the external database setup zip file (`external-db.zip`) that you downloaded. Click **Open** to upload the zip file.
 
-     ![](../Setup-on-premises-environment/images/createstack1.png " ")
+     ![](../setup-on-premises-environment/images/createstack1.png " ")
 
      Accept defaults and click **Next**.
 
