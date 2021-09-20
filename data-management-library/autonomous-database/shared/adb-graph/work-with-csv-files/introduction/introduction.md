@@ -11,7 +11,7 @@ Oracle Autonomous Database contains features that enable it to function as a sca
 
 Watch the following two videos for more information on Graph Studio. The first is an introduction to property graphs and their use cases. The second is a tour of the Graph Studio interface. 
 
-[](youtube:eCd-969hrak)   Simply Graph Analytics with Autonomous Database   
+[](youtube:eCd-969hrak)   Simplify Graph Analytics with Autonomous Database   
 
 [](youtube:S6Q-IJcBkU0)   Autonomous Database: A tour of the Graph Studio interface
 
@@ -29,7 +29,7 @@ In this workshop you will:
 
 * Oracle Cloud Account
 * Provisioned Autonomous Database-Shared instance
-* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Getting Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)  
+* A database user with the correct roles and privileges for working with **Graph Studio**. That is, successful completion of Lab 1 of the [Get Started with Graph Studio  workshop](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-graph/workshops/freetier/index.html?lab=lab-1-create-graph-user)  
   
   
 

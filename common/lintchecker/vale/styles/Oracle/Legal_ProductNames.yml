@@ -1,7 +1,7 @@
 # ensures proper use of Oracle product names
 extends: substitution
 message: "Use '%s' instead of '%s'. Avoid incorrect Oracle product names."
-ignorecase: true
+ignorecase: false
 scope: raw
 level: error
 #scope: Does this need to be set
@@ -13,6 +13,7 @@ swap:
   OML: Oracle Machine Learning Notebooks
   mysql: MySQL
   Mysql: MySQL
+  OCI: Oracle Cloud Infrastructure
 
 # '(?:[^\S?][^\s][^\S?]*) ?Autonomous Database': Oracle Autonomous Database
 #  '(?<!(?:Oracle)\s*) ?Autonomous Database': Oracle Autonomous Database
