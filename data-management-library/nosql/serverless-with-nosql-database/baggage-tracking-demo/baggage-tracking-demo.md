@@ -2,22 +2,22 @@
 
 ## Introduction
 
-This lab walks you through a live baggage tracking demo that was created by the Oracle NoSQL development team.   
+This lab walks you through a live baggage tracking demo created by the Oracle NoSQL development team.
 
 Estimated Time: 7 minutes
 
 
 ### Serverless Logic Tier
 
-We selected this demo because it solves real world business problems.  Many of those are listed on the slide.
+We selected this demo because it solves real world business problems. Many of those are listed on the slide.
 
   ![](images/business-problem.png)
 
-This application is running in all the OCI regions.
+This application is running in all the Oracle Cloud Infrastructure regions.
 
   ![](images/demo-region.png)
 
-The application behind the demo uses a three-tier architecture, representing the brains of the application. Integrating these components: an API Gateway, Streams, and Functions; in your logic tier can be revolutionary.  The features of these services allow you to build a serverless production application that is highly available, scalable, and secure. Your application can use thousands of servers, however, by leveraging this pattern you do not have to manage a single one.
+The application behind the demo uses a three-tier architecture, representing the brains of the application. Integrating these components: an API Gateway, Streams, and Functions; in your logic tier can be revolutionary. The features of these services enable you to build a serverless production application that is highly available, scalable, and secure. Your application can use thousands of servers, however, by leveraging this pattern you do not have to manage a single one.
 
 In addition, by using these managed services together you gain the following benefits:
 *	No operating systems to choose, secure, patch, or manage.
@@ -46,14 +46,14 @@ Here is an architecture diagram at the component level.
 
 ## Task 1: The "Traveling User" Problem
 
-This particular application came to the NoSQL team from Emirates airlines.  When we thought about this for a little bit, we realized that this was a perfect use case for NoSQL.  Many airlines, like United, Delta, American are now offering real time baggage tracking.  You have to install their application, and you get close to a real time feed of where your bag is at as it moves along its journey.  This is a really good example of companies offloading queries from the operational data store.   In the Emirates case, this data was already collected in their operational database and they didn’t want to put consumer level queries on that data store.   The second thing in this example is the involvement of an active/active configuration.  You write data locally in closest data center as that bag travels, but you want to read it from anywhere.  For the best latency, you want the RFID bag scans to be immediately written to the local data center and then let the system take care of propagating that data to the other data centers in an active/active set up.   If you took a trip from the US to Europe for example, the last thing you would want to do is force all the writes back to the US.   Hundreds of bags get scanned per flight segment and you need the best possible latency.   
+This particular application came to the NoSQL team from Emirates airlines. When we thought about this for a little bit, we realized that this was a perfect use case for NoSQL. Many airlines, like United, Delta, American are now offering real time baggage tracking. You have to install their application, and you get close to a real time feed of where your bag is at as it moves along its journey. This is an excellent example of companies offloading queries from the operational data store. In the Emirates case, this data was already collected in their operational database and they didn’t want to put consumer level queries on that data store. The second thing in this example is the involvement of an active/active configuration. You write data locally in closest data center as that bag travels, but you want to read it from anywhere. For the best latency, you want the "RFID" bag scans to be immediately written to the local data center. Then, let the system take care of propagating that data to the other data centers in an active/active set up. If you took a trip from the US to Europe for example, the last thing you would want to do is force all the writes back to the US. Hundreds of bags get scanned per flight segment and you need the best possible latency.
 
-What are some of the goals of this application:
+What are a few goals of this application:
 
   - Predictable low latency
   - Scalable to your user base
   - Highly available
-  - Auto-expiry of the data - baggage location data has a limited lifespan
+  - Auto expiry of the data - baggage location data has a limited lifespan
   - Offload consumer queries from operation data store
 
 
@@ -67,7 +67,7 @@ What are some of the goals of this application:
 
       ![](images/blue-mist.png)
 
-   **Note:** If you see a screen that says 'Blue Mist Employee Portal' and not 'Blue Mist Airways' then you are using a device with a larger display.  You have been taken to the employee portal.  You can look at the information there but it not line up with the rest of the screen shots in this Lab.
+   **Note:** If you see a screen that says 'Blue Mist Employee Portal' and not 'Blue Mist Airways' then you are not using a phone device and instead using a laptop, desktop or tablet. You have been taken to the employee portal. You can look at the information there but it not line up with the rest of the screen shots in this Lab.
 
 ## Task 3: Track a Bag
 
@@ -75,13 +75,13 @@ What are some of the goals of this application:
 
       ![](images/blue-mist-track.png)
 
-  After doing so, you will get random baggage information for a traveler.  Scroll through the information.  In an application from a real airlines, a variety of different information can be displayed.   
+  After doing so, you will get random baggage information for a traveler. Scroll through the information. In an application from a real airlines, a variety of different information is displayed.
 
       ![](images/ferry-trip.png)
 
 ## Task 4: Select New Traveler
 
-1. Tap the **hamburger** button on the top right, and then press **Track Your Baggage** again.  A new random traveler will be shown.
+1. Tap the **hamburger** button on the top right, and then press **Track Your Baggage** again. A new random traveler will be shown.
 
       ![](images/hamburger-menu.png)
 
@@ -89,18 +89,18 @@ What are some of the goals of this application:
 
 ## Task 5:  Explore the JSON data record
 
-1. The data record is a JSON document with several nested arrays.  Oracle NoSQL makes it easy to handle nested arrays.
+1. The data record is a JSON document with several nested arrays. Oracle NoSQL makes it easy to handle nested arrays.
 
       ![](images/json-record.png)
 
 
 ## Task 6: Key takeaways
 
-1. While this was a simple demo, it used many components that are available in OCI today.
+1. While this was a simple demo, it used many components that are available in Oracle Cloud Infrastructure today.
 
-  * Application is running live in all OCI Regions
-  * Application uses OCI traffic Management for Geo-Steering to steer network requests to closest OCI region
-  * OCI API gateway is used
+  * Application is running live in all Oracle Cloud Infrastructure Regions
+  * Application uses Oracle Cloud Infrastructure traffic Management for Geo-Steering to steer network requests to closest Oracle Cloud Infrastructure region
+  * Uses Oracle Cloud Infrastructure API gateway
   * UI development done with Visual Builder Cloud Service
   * Tomcat Server for REST calls
   * Data stored in Oracle NoSQL Cloud Service as JSON documents

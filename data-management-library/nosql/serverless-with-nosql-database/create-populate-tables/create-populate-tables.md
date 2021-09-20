@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through creating and loading NoSQL tables.   This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function.  This lab will walk you through a couple of different approaches.   Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
+This lab walks you through creating and loading NoSQL tables. This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function. This lab will walk you through a couple of different approaches. Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
 Estimated Time: 25 minutes
 
@@ -24,11 +24,11 @@ Estimated Time: 25 minutes
 
     ![](./images/phoenix-location.png)
 
-2. On the OCI menu drop down on the left, go to **Databases** and then press **Tables** under Oracle NoSQL Database.  This brings you to the 'Tables' screen where you can create a table from the console.
+2. On the Oracle Cloud Infrastructure menu drop down on the left, go to **Databases** and then press **Tables** under Oracle NoSQL Database. This brings you to the 'Tables' screen where you can create a table from the console.
 
     ![](./images/nosql-tables.png)
 
-3. On the 'Tables' screen there is a **Compartment** field on the left.  Please make sure **demonosql** compartment is selected.
+3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure **demonosql** compartment is selected.
 
     ![](./images/set-compartment.png)
 
@@ -36,30 +36,30 @@ Estimated Time: 25 minutes
 
     ![](./images/create-tables.png)
 
-  This screen allows you to create tables in one of two different ways, either using simple input or using DDL input.  For this Lab we are going to use the simple input method.  
+  This screen allows you to create tables in one of two different ways, either using simple input or using DDL input. For this Lab we are going to use the simple input method.
 
-5. The first thing you want to do is click the **Always Free Configuration** toggle button.  This will create an always free table.   Each tenancy is allowed 3 always free tables.  Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage. NoSQL always free tables are available in the Phoenix region only and you need to be in the correct region to use them.  The toggle button only shows up in the Phoenix region.
+5. The first thing you want to do is click the **Always Free Configuration** toggle button. This will create an always free table. Each tenancy is allowed 3 always free tables. Always free tables have fixed provisioning at 50 read units, 50 write units and 25 GB of storage. NoSQL always free tables are available in the Phoenix region only and you need to be in the correct region to use them. The toggle button only shows up in the Phoenix region.
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning.  Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.  Click **Set as a shard key.**
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
 
 6. When done with inputs click **Create table** at the bottom.
 
    ![](./images/create-myfree-table.png)
 
-  In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding multiple additional columns.  You can easily create simple or more complex tables with this interface.  
+  In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding many additional columns. You can create simple or more complex tables with this interface.
 
-7. After clicking **Create table** you will be brought to the 'Tables' screen.  This screen shows you a list of tables you have created, as well as basic information about the table.  One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table.  Another thing to notice is the 'Always Free' tag that is attached to the table.   This lets you know it is an always free table.
+7. After clicking **Create table** you will be brought to the 'Tables' screen. This screen shows you a list of tables you have created, as well as basic information about the table. One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table. Another thing to notice is the 'Always Free' tag that is attached to the table. This lets you know it is an always free table.
 
     ![](./images/freetest-table.png)
 
 
 ## Task 2: NoSQL Tables Deployment
 
-In this task we are going to create tables using the Cloud Shell, and OCI Command Line Interface (CLI).   The CLI commands issued from the Cloud Shell make REST calls to the Oracle NoSQL Database Cloud Service (NDCS).  OCI offers several SDKs in different languages that you can use to make REST calls to NDCS.   To make things a little simpler, we have created some shell scripts and files that will assist you in this Task.  We need to download those to the Cloud Shell first.
+In this task we are going to create tables using the Cloud Shell, and Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI commands issued from the Cloud Shell make REST calls to the Oracle NoSQL Database Cloud Service (NDCS). Oracle Cloud Infrastructure offers several SDKs in different languages that you can use to make REST calls to NDCS. To make things a little simpler, we have created some shell scripts and files that will assist you in this Task. We need to download those to the Cloud Shell first.
 
-1. Open the **Cloud Shell** from the top right menu.  
+1. Open the **Cloud Shell** from the top right menu.
 
     ![](./images/cloud-shell-phoenix.png)
 
@@ -84,7 +84,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI Comman
     </copy>
     ```
 
-3. Let's create NoSQL tables using the OCI Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'.  We will create two different tables and  echo the DDL statements so you can see what is being created.  One of the tables is a fixed schema table and the other is a JSON document table.  To create the always free table using the CLI, you specify the --is-auto-reclaimable flag, as shown in the code below.
+3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you specify the --is-auto-reclaimable flag, as shown in the code below.
 
     ```
     <copy>
@@ -129,11 +129,11 @@ In this task we are going to create tables using the Cloud Shell, and OCI Comman
 
 ## Task 3:  Adding Data From the Oracle Cloud Console
 
-1. Make sure you see the 'Tables' screen.  You should see 3 tables listed.  Your **compartment** should be demonosql.
+1. Make sure you see the 'Tables' screen. You should see 3 tables listed. Your **compartment** should be demonosql.
 
     ![](./images/table-screen.png)
 
-2. Lets start with the simple table we created in Task 1.  Click **freeTest** table.  The details screen that shows up, displays all the key information about the table.  Explore that screen.
+2. Lets start with the simple table we created in Task 1. Click **freeTest** table. The details screen that shows up, displays all the key information about the table. Explore that screen.
 
     ![](./images/free-test.png)
 
@@ -141,11 +141,11 @@ In this task we are going to create tables using the Cloud Shell, and OCI Comman
 
     ![](./images/insert-row.png)
 
-4. On the 'Insert row' screen, you will see two ways to input data - a simple and advanced.   For our freeTest table we will use the simple method.    Enter a value for the **Pkey** column and the **Name** column.  When done, press **Insert row.**
+4. On the 'Insert row' screen, you will see two ways to input data - a simple and advanced. For our freeTest table we will use the simple method. Enter a value for the **Pkey** column and the **Name** column. When done, press **Insert row.**
 
     ![](./images/row-inserted.png)
 
-5. Let's insert rows into the other tables.  First we need to get back to the 'Tables' screen.  Click **Tables** on top right.
+5. Let's insert rows into the other tables. First we need to get back to the 'Tables' screen. Click **Tables** on top right.
 
     ![](./images/click-tables.png)
 
@@ -155,7 +155,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI Comman
 
 7. Click **Insert row.** This opens up a new window. This time, choose **Advanced JSON Input.**
 
-  Copy/Paste the JSON Baggage document below in the **JSON input** text box.  Because this JSON document is complex, it is easiest to copy/paste into the field.  However, you could have typed it all in.
+  Copy/Paste the JSON Baggage document below in the **JSON input** text box. Because this JSON document is complex, it is easiest to copy/paste into the field. However, you could have typed it all in.
 
     ````
     <copy>
@@ -221,7 +221,7 @@ In this task we are going to create tables using the Cloud Shell, and OCI Comman
 
 8. Click **Insert row** at bottom left of screen.
 
-  To quickly summarize, in this Lab you have seen two different ways to insert data into a table.  
+  To summarize, in this Lab you have seen two different ways to insert data into a table.
 
 ## Task 4:  Show Data From the Console
 
@@ -231,7 +231,7 @@ Starting with the demo table, we can go and look at the data we inserted for eac
 
     ![](./images/table-row-select.png)
 
-2. In the textbox **Query**, keep the text SELECT * FROM demo.  This will select all the rows from our table.  Click **Run query**
+2. In the textbox **Query**, keep the text 'SELECT * FROM demo.'' This will select all the rows from our table. Click **Run query**
 
     ![](./images/run-query.png)
 
