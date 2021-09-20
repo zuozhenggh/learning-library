@@ -322,8 +322,18 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ```` 
    ![provide the password](./images/sql-8.png)
  
+8. So we don't take any schema specific storage or DDL information, run the following at the SQLcl prompt.
 
-8. It's time to create some datababase object for our repository. Run the following code.
+   ````
+   <copy>
+   set ddl storage off
+   set ddl segment_attributes off
+   set ddl tablespace off
+   </copy>
+   ```` 
+   ![DDL OFF!](./images/ddloff-1.png)
+
+9. It's time to create some datababase object for our repository. Run the following code.
 
    **Create a table**
    ````
