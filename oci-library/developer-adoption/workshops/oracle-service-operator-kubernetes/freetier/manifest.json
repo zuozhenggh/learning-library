@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../../labs/oci-devops-oke/intro/intro.md"
+            "filename": "../../../labs/oracle-service-operator-kubernetes/intro/intro.md"
         },
         {
             "title": "Getting Started with Free Trial Account",
