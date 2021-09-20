@@ -68,6 +68,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | 22             | SSH                                   |
 | 80             | Application (http)                    |
 | 443            | Application (https)                   |
+| 6080           | noVNC Remote Desktop                  |
 | 7803           | Oracle Enterprise Manager             |
 | 8080           | Glassfish Application                 |
 | 50002          | Glassfish Application                 |
