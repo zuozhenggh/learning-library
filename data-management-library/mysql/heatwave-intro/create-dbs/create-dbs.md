@@ -6,17 +6,14 @@
 
 In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.    
 
-Estimated Lab Time: 20 minutes
-
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will be guided through the following tasks:
 
+- Create Create Virtual Cloud Network  
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
-- Create a Bastion session 
-- Connect to DB System using MySQL Shell through Bastion Service/Cloud Shell
-
 
 ### Prerequisites
 
@@ -24,8 +21,75 @@ In this lab, you will be guided through the following tasks:
 - Some Experience with MySQL Shell
 - Must Complete Lab 1
 
+## Task 1: Create Virtual Cloud Network
 
-## Task 1: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+1. Navigation Menu > Networking > Virtual Cloud Networks
+    ![VCN](./images/03vcn01.png " ")
+
+2. Click 'Start VCN Wizard'
+    ![VCN](./images/03vcn02.png " ")
+
+3. Select 'Create VCN with Internet Connectivity'
+
+    Click on 'Start VCN Wizard' 
+    ![VCN](./images/03vcn03.png " ")
+
+4. Create a VCN with Internet Connectivity 
+
+    On Basic Information, complete the following fields:
+
+ VCN Name: 
+     ```
+    <copy>MDS-VCN</copy>
+    ```
+ Compartment: Select  **(root)**
+
+ Your screen should look similar to the following
+    ![VCN](./images/03vcn04.png " ")
+
+5. Click 'Next' at the bottom of the screen 
+
+6. Review Oracle Virtual Cloud Network (VCN), Subnets, and Gateways
+         
+    Click 'Create' to create the VCN
+    ![VCN](./images/03vcn04-1.png " ")
+
+7. The Virtual Cloud Network creation is completing 
+    ![VCN](./images/03vcn05.png " ")
+    
+8. Click 'View Virtual Cloud Network' to display the created VCN
+    ![VCN](./images/03vcn06.png " ")
+
+9. On MDS-VCN page under 'Subnets in (root) Compartment', click on '**Private Subnet-MDS-VCN**' 
+     ![VCN](./images/03vcn07.png " ")
+
+10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click on '**Security List for Private Subnet-MDS-VCN**'
+    ![VCN](./images/03vcn08.png " ")
+
+11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click on '**Add Ingress Rules**' 
+    ![VCN](./images/03vcn09.png " ")
+
+12.	On Add Ingress Rules page under Ingress Rule 1
+ 
+ Add an Ingress Rule with Source CIDR 
+    ```
+    <copy>0.0.0.0/0</copy>
+    ```
+ Destination Port Range 
+     ```
+    <copy>3306,33060</copy>
+     ```
+Description 
+     ```
+    <copy>MySQL Port Access</copy>
+     ```
+ Click 'Add Ingress Rule'
+    ![VCN](./images/03vcn10.png " ")
+
+13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
+    ![VCN](./images/03vcn11.png " ")
+
+## Task 2: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 
 1. Go to Navigation Menu > Databases > MySQL > DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -44,7 +108,6 @@ In this lab, you will be guided through the following tasks:
     - Exlude Backups
     - Advanced Options - Data Import
    
-
 4. Provide basic information for the DB System:
 
  Select Compartment **(root)**
@@ -126,110 +189,11 @@ In this lab, you will be guided through the following tasks:
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/04mysql10-3.png" ")
 
-14. The state 'Active' indicates that the DB System is ready to use 
+14. The state 'Active' indicates that the DB System is ready for use 
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address) 
 
     ![MDS](./images/04mysql11-3.png" ")
-
-## Task 2: Create a Bastion session
-
-1. Click the `DSBastion` link
-
-     ![](./images/bastion-05.png " ")
-
-2. Before creating the Bastion Session open a notepad. Do the following steps to record the MySQL Database System private IP address:
-
-    - Go to Navigation Menu > Databases > MySQL
-     ![](./images/db-list.png " ")
-
-    - Click on the `MDS-HW` Database System link
-
-     ![](./images/db-active.png " ")
-    
-    - Copy the `Private IP Address` to the notepad
-
-3. Do the followings steps to copy  the public SSH key to the  notepad 
- 
-    - Open the Cloud shell
-     ![](./images/cloudshell-10.png " ")    
-
-    - Enter the following command   
-        ```
-     <copy>cat .ssh/id_rsa.pub</copy>
-        ``` 
-    ![](./images/cloudshell-11.png " ") 
-
-4.  Copy the id_rsa.pub content the notepad
-        Your notepad should look like this
-        ![](./images/notepad1.png " ")  
-        
-5. Go to Navigation Menu > Identity Security > Bastion
-
-6. Open the MDSBastion link
-
-7. Click `Create Session`
-
-8. Set up the following information
-    - Session type
-      Select `SSH port forwarding session`
-    - Session Name 
-        *Keep Default*
-    - IP address
-        *Enter IP addtess from notepad*
-
-9. Enter the Port
-
-    ```      
-        <copy>3306</copy>
-    ```
-10. Add SSH Key -  Copy SSH Key from notepad
-    - The screen shoul look like this
-    ![](./images/bastion-06.png " ") 
-    - Click the `Create Session` button 
-11. The completed Bastion Session should look like this
-    ![](./images/bastion-07.png " ") 
-
-**Note: The Session will expire in 180 minutes**
-
-## Task 3: Connect to MySQL Database System
-
-1. Click on the 3 vertical dots on the Bastion Session
-
-    ![](./images/bastion-08.png " ") 
-
-2. Click `View SSh Command`  
-
-    ![](./images/bastion-09.png " ") 
-
-3. Click copy and paste the information to your notepad and hit Close
-
-4.  update the session command on notepad
-    - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
-    - add the `&` character at the end of the command or the command will not connection will not be successful
-
-
-    The command from your notepad should look like this
-
-    ![](./images/notepad2.png " ") 
-    
-5. Open the cloud shell and enter the command from the notepad. It should like this... `Don't forget the &`
-
-    `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk..................ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
-
-6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
-
-     ```
-     <copy>mysqlsh admin@127.0.0.1 --sql</copy>
-     ``` 
-7. View  the airportdb total records per table in 
-
-
-    ```
-    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
-    ```
-        
-    ![Connect](./images/airport-db-view02.png " ") 
 
 You may now [proceed to the next lab](#next).
 

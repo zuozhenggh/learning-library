@@ -231,6 +231,7 @@ GROUP BY firstname , lastname;</copy>
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
+You may now [proceed to the next lab](#next).
     
 ## Learn More
 
