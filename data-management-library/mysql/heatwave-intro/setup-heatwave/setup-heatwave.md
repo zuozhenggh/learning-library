@@ -29,31 +29,28 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-1. You will create a HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave nodes. The MySQL DB System node includes a plugin that is responsible for cluster management, loading data into the HeatWave cluster, query scheduling, and returning query result.
-
-
-2. Open the navigation menu  Databases > MySQL > DB Systems
-3. Choose the root Compartment. A list of DB Systems is displayed. 
+1. Open the navigation menu  Databases > MySQL > DB Systems
+2. Choose the root Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
-4. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
+3. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
     ![Connect](./images/10addheat02.png " ")
-6. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
+4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
-6. Click “Estimate Node Count” button
+5. Click “Estimate Node Count” button
     ![Connect](./images/10addheat03.png " ")
-7. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
+6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
 provisioning advisor to sample the data stored in InnoDB and based on machine learning
 algorithm, it will predict the number of nodes needed.
     ![Connect](./images/10addheat04.png " ")
 
-8. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
+7. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
 
-9. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
+8. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
     ![Connect](./images/10addheat05.png " ")
 
-10. Click “Add HeatWave Cluster” to create the HeatWave cluster
+9. Click “Add HeatWave Cluster” to create the HeatWave cluster
     ![Connect](./images/10addheat06.png " ")
-11. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
 ## Task 2: Load airportdb Data into HeatWave Cluster
@@ -65,7 +62,7 @@ algorithm, it will predict the number of nodes needed.
     <copy>mysqlsh admin@127.0.0.1 --sql</copy>
     ```
 
-3. Change the MySQL Shell execution mode to SQL and run the following Auto Parallel Load command to load the airportdb tables into HeatWave.
+3. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
 
 
     ![Connect](./images/heatwave-load-01.png " ")

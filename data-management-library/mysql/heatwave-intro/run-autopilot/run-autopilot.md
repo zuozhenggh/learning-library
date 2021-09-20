@@ -31,7 +31,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Improve Query performance and Heatwave memory usage using Auto Encoding
 
-1.	Run the following 4 queries and record the runtime:
+1.	Run the following four queries and record the runtime:
 
  **Query a)** Find per-company average age of passengers from Switzerland, Italy and France
 

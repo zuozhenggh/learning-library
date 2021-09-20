@@ -21,7 +21,7 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 -	Free up time of developers, DBAs, and DevOps to focus on value added tasks that are core to your business.
 -	Access to dozens of additional Oracle Cloud Services enabling organizations to embrace the shift to the cloud.
 
-*HeatWave Architecture*
+*Lab Setup*
 
   ![](./images/heatwave-bastion-architecture.png " ") 
 

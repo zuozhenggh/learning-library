@@ -139,7 +139,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
         
 4. Go to Navigation Menu > Identity Security > Bastion
 
-5. Click the `DSBastion` link
+5. Click the `MDSBastion` link
 
      ![](./images/bastion-05.png " ")
 
