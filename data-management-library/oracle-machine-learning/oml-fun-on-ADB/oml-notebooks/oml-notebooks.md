@@ -174,18 +174,18 @@ This step demonstrates how to create a notebook based on an Example template:
 
 2. Navigate to the **OML4Py Classification DT** example template notebook, click it and then click **Create Notebook**.
 
+	![Create Notebook](images/classification_DT_example.png)
 
-
-3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **Classification_DT**.
+3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **OML4Py Classification DT**.
 
 	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
-	![Create notebook from example template](images/create_notebook_dialog.png)
+	![Create Classification DT notebook from example template](images/create_notebook_dialog.png)
 
 
-4. Once the notebook is created, the message _Notebook Classification_DT created in project USER1 Project_ is displayed, as shown in the screenshot.
+4. Once the notebook is created, the message _Notebook Classification DT 1 created in project OMLUSER Project_ is displayed, as shown in the screenshot.
 
-	![Create notebook message](images/create_notebook_dialog.png)
+	![Create notebook message](images/notebook_created_message.png)
 
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
@@ -198,6 +198,42 @@ This step demonstrates how to create a notebook based on an Example template:
 	![Notebook listed](images/notebook_listed.png)
 
 This completes the task of creating a notebook from an Example template.
+
+
+### Task 3.1: Create a Time Series Notebook using the OML4SQL Time Series Template Example
+
+This step demonstrates how to create the Time Series notebook based on the Example template:
+
+1. Go to the **Examples** page under Templates in your Oracle Machine Learning UI.
+
+2. Navigate to the **OML4SQL Time Series ESM** example template notebook, click it and then click **Create Notebook**.
+
+	![Create Notebook](images/oml4sql_time_series.png)
+
+3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **OML4SQL Time Series 1**.
+
+	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
+
+	![Create Time Series notebook from example template](images/create_notebook_time_series.png)
+
+
+4. Once the notebook is created, the message _Notebook OML4SQL Time Series 1 created in project OMLUSER Project_ is displayed, as shown in the screenshot.
+
+
+5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
+
+
+6. The notebook **OML4SQL Time Series 1** is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
+
+	![Notebook listed](images/notebook_list_1.png)
+
+This completes the task of creating the Time Series notebook from the OML4SQL Time Series ESM Example template.
+
+
+
+
+
+
 
 
 ## Task 4: Change Interpreter Bindings Order

@@ -117,9 +117,9 @@ When creating an Experiment, you must define the data source and the target of t
 
 6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
 
-7. In the **Prediction Type** field, the prediction type is automatically selected based on your data definition. However, you can override the prediction type from the drop-down list, if data type permits. In this example, **Classification** is automatically chosen as the prediction type.
+7. In the **Prediction Type** field, the prediction type is automatically selected based on your data definition. In this lab, select **Classification**.
 
-	Supported Prediction Types are:
+The supported prediction types are:
 
 	* Classification: For non-numeric data type, Classification is selected by default.
 	* Regression: For numeric data type, Regression is selected by default.
@@ -151,7 +151,7 @@ To adjust additional settings of this experiment:
 
 	Note the following about the two options:
 
-	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of the hyperparamter combinations, and hence yields faster result.
+	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of hyperparamter combinations and hence yields faster results.
 	* **Better Accuracy:** Select this option if you want emphasis placed on more accurate results.
 
 > Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
@@ -189,12 +189,12 @@ The Leader Board displays the top performing models relative to the model metric
 
 5. Click on any model name to view the model details in the Model Detail dialog. Click **Prediction Impacts** and **Confusion Matrix** tab in the dialog to view the respective details, as shown in the screenshots below:
 
-* **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models.
+* **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models. In this lab, the attribute HOUSEHOLD_SIZE has the highest impact on target prediction. Move your cursor over the prediction impact chart for each attribute to view the values.
 
 	![View Prediction Impact](images/prediction_impact.png)
 
 
-* **Confusion Matrix:** Displays the different combination of actual and predicted values by the algorithm in a table. Confusion Matrix serves as a performance measurement of the machine learning algorithm.
+* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the confusion matrix results are presented as a percentage of the test data being classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
 
 	![View Confusion Matrix](images/confusion_matrix.png)
 
