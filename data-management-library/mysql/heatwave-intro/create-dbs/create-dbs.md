@@ -173,7 +173,7 @@ Description
     Copy and paste the following to PAR Source URL: 
   
     ```
-    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RVosiQ0NG3lZ70pOZoXcc78Uq0GvwJrPsv4xKRLzc3eEk7-AiwPWoOqxcDkTCkwC/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
     ```   
     ![MDS](./images/04mysql08-2.png" ")
 
