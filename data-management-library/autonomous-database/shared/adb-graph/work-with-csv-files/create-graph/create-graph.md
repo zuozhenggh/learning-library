@@ -36,7 +36,7 @@ Learn how to
 
 3. Enter your Autonomous Database account credentials (e.g. `GRAPHUSER`) into the login screen:
  
-    ![ALT text is not available for this image](./images/adw-graph-studio-login.png " ")
+    ![ALT text is not available for this image](./images/graphstudio-login-graphuser.png " ")
 
 4. Then click the "Sign In" button. You should see the studio home page.   
 
@@ -60,11 +60,11 @@ Learn how to
    **Note: If you clicked on `Start Modeling` button instead then you'll see the screen shown in the next step.**
 
 2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
-![ALT text is not available for this image](./images/16-modeler-view-tables.png " ")
+![ALT text is not available for this image](./images/modeler-select-tables.png " ")
 
 2. Move them to the right, i.e. click the first icon on the shuttle control.   
 
-   ![ALT text is not available for this image](./images/17-modeler-selected-tables.png " ")
+   ![ALT text is not available for this image](./images/modeler-selected-tables.png " ")
 
 3.  Click `next` to get a suggested model. We will edit and update this model to add an edge and a vertex label.  
 
@@ -92,7 +92,7 @@ Learn how to
     In this instance we want to **confirm** that the direction is from `from_acct_id` to `to_acct_id`.  
 
   Click the Source tab to bring up the existing statement and the edit dialog.  
-  ![ALT text is not available for this image](./images/bank-graph-incorrect-ddl.png " ")   
+  ![ALT text is not available for this image](./images/modeler-source-incorrect-ddl.png " ")   
 
   **Notice** that the direction is incorrect. The Source Key is `to_acct_id` instead of what we want, which is `from_acct_id`. 
 
@@ -145,7 +145,7 @@ Learn how to
    That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
    
    Enter a model name (e.g. `bank_graph_model`), and other optional information.  
-   ![ALT text is not available for this image](./images/create-bank-graph-dialog.png " ")
+   ![ALT text is not available for this image](./images/modeler-create-graph-dialog.png " ")
 
 8. Graph Studio modeler will now save the metadata and start a job to create the graph.  
    The Jobs page shows the status of this job. 
