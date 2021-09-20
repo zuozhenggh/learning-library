@@ -40,7 +40,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
   Alternatively, you can execute the `pods` shortcut command:
 
-3. Check that the **frontend** load balancer service is running, and write down the external IP
+3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP
     address.
 
     ```

@@ -1,138 +1,89 @@
-
-# LAB 2: Prepare your environment
+# Prepare your environment
 
 ## Introduction
 
-This lab walks you through the steps necessary to create a proper operating environment.  We will take advantage of the OCI Resource Manager to create the environment. Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources.  We will be using the stack feature along with Terraform scripts created on your behalf.  As part of the stack we will set up functions, the virtual cloud network, and some data sources.  We will use all of these in later labs.
+This lab walks you through the steps necessary to create a proper operating environment.  
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
 In this lab you will:
 * Create a compartment
-* Create API Key and Authorization tokens
-* Perform a stack deployment
-* Configure your cloud shell for Functions
+* Create API Key
+* Learn about Credentials, and Policies
+* Set up Cloud Shell
 
 ### Prerequisites
 
 This lab assumes you have:
 
-    *  An Oracle Free Tier, Always Free, or Paid Account
+* An Oracle Free Tier, Always Free, or Paid Account
 
 
-## Task 1: Create a compartment
+## Task 1: Create a Compartment
 
-Log into the OCI console using your tenancy.  Please make note of what region you are at.
+1. Log into the Oracle Cloud Console using your tenancy.  Please make note of what region you are at.
 
-![](images/console-image.png)
+    ![](images/console-image.png)
 
-Left side drop down, go to Identity & Security and then Compartments.
+2. On left side drop down (left of Oracle Cloud banner), go to **Identity & Security** and then **Compartments.**
 
-![](images/identity-security-compartment.png)
+    ![](images/identity-security-compartment.png)
 
-Click on Create Compartment. This opens up a new window.
+3. Click **Create Compartment.** This opens up a new window.
 
-Enter **demonosql** as compartment name, enter a description and hit 'Create Compartment' button at bottom of window.  The parent compartment will display your current parent compartment -- this does not need to be changed.
+  Enter **demonosql** as compartment **Name** field, enter test into **Description** field and press **Create Compartment** button at bottom of window.  The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case.  This HOL assumes the 'demonosql' compartment is a child of the root compartment.
 
-![](images/create-compartment.png)
-
-
-## Task 2: Create an API Key and Auth Token for your user
-
-Top right, click on your Profile -> User Settings.
-
-![](images/create-compartment.png)
-
-On the bottom left, click on 'Auth Tokens'. Click on Generate Token.
-
-![](images/auth-token.png)
-
-Provide a description and then hit Generate Token.
-
-![](images/generate-token.png)
-
-This will generate a token. **Make sure to copy the token and save it for future steps**.  There is a copy button you can use.  Paste it into notepad, some text file, etc.
-
-Go back to your profile and click 'User Settings' again. Copy your OCID
-
-![](images/user-ocid.png)
-
-Open the Cloud Shell in the top right menu.  It can take about 2 minutes to get the Cloud Shell started.  
-
-![](images/cloud-shell.png)
-
-Note: **This needs to be executed in the HOME region**  Please ensure you are in your home region.
-
-![](images/capturecloudshellhomeregion.png)
-
-Copy and paste these commands into your Cloud Shell.  Replace < yourUserOCID > with the OCID you copied above before executing.
-
-````
-openssl genrsa -out NoSQLLabPrivateKey.pem  4096        
-openssl rsa -pubout -in NoSQLLabPrivateKey.pem -out NoSQLLabPublicKey.pem
-oci iam user api-key upload --user-id <yourUserOCID> --key-file NoSQLLabPublicKey.pem > info.json
-
-````
-If you execute the 'oci iam' command before replacing <yourUserOCID> then you will get the following error:
-"bash: yourUserOCID: No such file or directory".   Replace it and try the last command again.    
-
-## Task 3: Deploy the PoC application
-
-To deploy the application, we will use a terraform scripts provided for this Lab.
-
-[![Deploy to Oracle Cloud - home](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=us-phoenix-1&zipUrl=https://github.com/dario-vega/serverless-with-nosql-database/archive/refs/heads/main.zip)
+    ![](images/create-compartment.png)
 
 
-Oracle NoSQL Always Free tables are only available in the Phoenix region.  This application will be deployed in the Phoenix Region and if you are  not subscribed to that region you will get the following error:
+## Task 2: Create an API Key For Your User
 
-![](images/capturephoenixmissing.png)
+1. Top right, click your **Profile**, then **User Settings.**
 
-Please Suscribe to Phoenix Region.  Click on drop down by your region and click on 'Manage Regions'.
+  ![](images/user-profile.png)
 
-![](images/manage-regions.png)
+2. Click **User Settings** again. Copy your OCID.   Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
 
-This will bring up a list of regions.  Look for Phoenix and hit 'Subscribe'.
+    ![](images/user-ocid.png)
 
-![](images/capturesuscribe.png)
+3. Open the **Cloud Shell** in the top right menu.  It can take about 2 minutes to get the Cloud Shell started.  
 
-After successfully hitting the 'Deploy to Oracle Cloud' button, you will be brought to a new screen.
+    ![](images/cloud-shell.png)
 
-![](images/cloud-account-name.png)
+  **Note:** This needs to be executed in the **Home region**.  Please ensure you are in your home region.  The Cloud Shell prompt shows you what region the shell is running out of.
 
+    ![](images/capturecloudshellhomeregion.png)
 
-Provide your **Cloud Account Name** (tenancy name, not your username or email) and click on Next.
+4. Execute these commands in your Cloud Shell.  **Replace** "YOURUSEROCID" with your OCID you copied above **before** executing.
 
-Log into your account using your credentials (system may have remembered this from a prior log in).  You will see the Create Stack screen that looks like this:
+    ````
+    <copy>
+    openssl genrsa -out NoSQLLabPrivateKey.pem  4096        
+    openssl rsa -pubout -in NoSQLLabPrivateKey.pem -out NoSQLLabPublicKey.pem
+    oci iam user api-key upload --user-id YOURUSEROCID --key-file NoSQLLabPublicKey.pem > info.json
+    </copy>
+    ````
+    If you execute the 'oci iam' command before replacing "YOURUSEROCID" then you will get the following error:
+    **"Authorization failed or requested resource not found".**   Replace "YOURUSEROCID" and try the last command again.  
 
-![](images/create-stack.png)
+    If you execute the 'oci iam' command and you get this error **"ApiKeyLimitExceeded"** then you need to delete some keys you already created.  Go to your user details screen, and **API Keys** to find old keys to delete.
 
-Click on the box "I have reviewed and accept the Oracle Terms of Use."  After clicking this box, it will populate the stack information, the name and the description.
+5. Exit Cloud Shell  
 
-Click on Next on bottom left of screen.  This will move you to the 'Configure Variables' screen. Configure the variables for the infrastructure resources that this stack needs prior to running the apply job.
-Choose demonosql as _Compartment_  from the drop down list, provide your username in the text box _OCIR username_ then the token copied in step2 in the text box _OCIR user password_.  You can get your username from your profile.
+## Task 3: Understand Credentials, and Policies
 
-Click on Next, which brings you to the 'Review' screen.  Click on Create.
+**Oracle NoSQL Database Cloud Service uses Oracle Cloud Infrastructure Identity and Access Management to provide secure access to Oracle Cloud.** Oracle Cloud Infrastructure Identity and Access Management enables you to create user accounts and give users permission to inspect, read, use, or manage tables.  Credentials are used for connecting your application to the service and are associated with a specific user.  The credentials consist of the tenancy ID, the user ID, an API signing key, a fingerprint and optionally a passphrase for the signing key.   These got created in Task 2 of this lab and are stored in the info.json file in your Cloud Shell.
 
-A job will run automatically. It takes approx 3 minutes. Wait still State becomes Succeeded.  While it is running you will see a new screen that has the status displayed.   
+The Oracle NoSQL Database SDKs allow you to provide the credentials to an application in multiple ways.  The SDKs support a configuration file as well as one or more interfaces that allow direct specification of the information. You can use the SignatureProvider API to supply your credentials to NoSQL Database.  Oracle NoSQL has SDKs in the following languages:  Java, Node.js, Python, Go, Spring and C#.
 
-![](images/stack-progress.png)
-
-
-## Task 4: Understand credentials, policies and the dynamic group
-
-
-**Oracle NoSQL Database Cloud Service uses Oracle Cloud Infrastructure Identity and Access Management to provide secure access to Oracle Cloud.** Oracle Cloud Infrastructure Identity and Access Management enables you to create user accounts and give users permission to inspect, read, use, or manage tables.  Credentials are used for connecting your application to the service and are associated with a specific user.  The credentials consist of the tenancy ID, the user ID, an API signing key, a fingerprint and optionally a passphrase for the signing key.   These got created in Task 2 of this lab and are stored in the info.json file on your Cloud Shell.
-
-The Oracle NoSQL Database SDKs allow you to provide the credentials to an application in multiple ways.  The SDKs support a configuration file as well as one or more interfaces that allow direct specification of the information. You can use the SignatureProvider to supply your credentials to NoSQL Database.  Oracle NoSQL has SDKs in the following languages:  Java, Node.js, Python, Go, Spring and C#.
-
-In this node.js snippet, we used the credential information created in Task 2 and specified the credentials directly as part of auth.iam property in the initial configuration .  
+In this node.js snippet, we used the credential information created in Task 2 and specified the credentials directly as part of auth.iam property in the initial configuration.  The tenancy ID, the user ID, an API signing key, a fingerprint are all supplied.   The tenancy iD and the user ID are referred to as OCIDs.
 
 ````
        return new NoSQLClient({
             region: Region.EU_FRANKFURT_1,
-			compartment:'ocid1.compartment.oc1..aaaaaaaamg....y3hsyi57paa',
+			compartment:'demonosql',
             auth: {
                 iam: {
                     tenantId: 'ocid1.tenancy.oc1..aaaaaaaahrs4avamaxisc...........slpsdb2d2xe2kp2q',
@@ -144,23 +95,22 @@ In this node.js snippet, we used the credential information created in Task 2 an
         });
 ````
 
-Another way to handle authentication is with Instance and Resource Principals.   The Oracle NoSQL SDKs support both of them.  As part of the stack deployment in Task 3, functions were setup for this workshop.  To enable a function to access another Oracle Cloud Infrastructure resource, you have to include the function in a **Dynamic group**, and then create a policy to grant the
-dynamic group access to that resource.
+  Another way to handle authentication is with Instance and Resource Principals.   The Oracle NoSQL SDKs support both of them.  Resource principals are primarily used when authenticating from functions.  We are not using functions in this workshop so we will not discuss those any further.
 
-Once the policy and the dynamic group are set up, you can include a call to a 'resource principal provider' in your function code. The resource principal provider uses a resource provider session token (RPST) that enables the function to authenticate itself with other Oracle Cloud Infrastructure services. The token is only valid for the resources to which the dynamic group has been granted access.
+  Instance Principals is a capability in Oracle Cloud Infrastructure Identity and Access Management (IAM) that lets you make service calls from an instance. With instance principals, you don’t need to configure user credentials or rotate the credentials. Instances themselves are a principal type in IAM and are set up in IAM.  You can think of them as an IAM service feature that enables instances to be authorized actors (or principals) to perform actions on service resources.  
 
-**Dynamic groups** allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members
+  Oracle NoSQL Database Cloud service has three different resource types, namely, nosql-tables, nosql-rows, and nosql-indexes.  It also has one aggregate resource called nosql-family.  Policies are created that allow a group to work in certain ways with specific types of resources such as nosql-tables in a particular compartment.  All NoSQL tables belong to a defined compartment.  In Task 1 of this Lab, we created the demonosql compartment and this is where we will create our tables.  
 
-As part of the stack deployment in Task 3, the necessary polices and dynamic groups got created on your behalf.  Now, you just use **Resource Principals to do the connection to NoSQL Cloud Service** as shown below in the Node.js and Python examples.
+  You can use **Resource Principals** to do the connection to NoSQL Cloud Service as shown below in the Node.js and Python examples instead of specifying the credentials.  Once they are set up, they are very simple to use because all you need to do is call the appropriate authorization constructor.
 
-In this snippet, there are hard-coded references (eg REGION).
+In this snippet, there are hard-coded references (for example, REGION).
 
 **NoSQL Database Node.js SDK**
 ```
 function createClientResource() {
   return  new NoSQLClient({
     region: Region.EU_FRANKFURT_1,
-    compartment:'ocid1.compartment.oc1..aaaaaaaafml3tc......jimgx3cdnirgup6rhptxwnandq',
+    compartment:'demonosql',
     auth: {
         iam: {
             useResourcePrincipal: true
@@ -176,44 +126,42 @@ def get_handle():
      config = borneo.NoSQLHandleConfig('eu-frankfurt-1', provider).set_logger(None)
      return borneo.NoSQLHandle(config)
 ```
+In the next labs we are going to be running application code and we need an instance to run that from.   In Task 2 we started the Cloud Shell and we will run the application from that instance.   Currently, Cloud Shell does not support Instance Principals so in those labs we will be using credentials.
 
-## Task 5: Set up the function environment
+## Task 4: Move to Phoenix
 
-Ensure your region is set to Phoenix.
+Oracle NoSQL Always Free tables are available only in the Phoenix region.  If Phoenix is **not** your home region then we need to move there.  Skip this Task if Phoenix is your home region.
 
-Under the menu drop down on the upper left, go to Developer Services and then hit Applications under Functions.
+1.  Check to see if Phoenix shows up in your region drop down list.  Click the down **arrow** by the region.
 
-![](images/stack-progress.png)
+    ![](images/no-phoenix.png)
 
-On the left List Scope - Compartment - select demonosql compartment
+2.  If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
 
-![](images/list-scope.png)
+    ![](images/phoenix.png)
 
-Click on nosql_demos application
+3.  Since it is not there, please subscribe to Phoenix Region.  Click the drop down by your region and click **Manage Regions.**
 
-On the left choose Getting Started
+    ![](images/manage-regions.png)
 
-![](images/getting-started.png)
+4.  This will bring up a list of regions.  Look for Phoenix and press **Subscribe**.
 
-Click on Cloud Shell Setup. It may already be selected, look for the check mark in the box.
+    ![](images/capturesuscribe.png)
 
-![](images/check-mark.png)
+5. If you haven't been moved to Phoenix, then click **Phoenix** to move your tenancy.
 
-Execute the steps 1 to 7 provided in this Wizard.  In these steps you will be cutting and pasting commands into the Cloud Shell.
+    ![](images/phoenix.png)
 
-Note: In step 4 replace [OCIR-REPO] by demonosql (the name of the compartment)
-Note: In step 5 you need to generate another authorization token.  In the Auth Tokens window, hit Generate Token, add a description.  The copy the token.
-Note: In step 6 it will ask for a password, paste in your auth token there.   The cursor may not move, so after you paste then hit enter.  It will say 'Login Succeeded' if it was successful.
+
+You may now **proceed to the next lab.**
 
 ## Learn More
 
-* [About Oracle NoSQL Database Cloud Service](https://docs.oracle.com/pls/topic/lookup?ctx=cloud&id=CSNSD-GUID-88373C12-018E-4628-B241-2DFCB7B16DE8)
-* [Oracle NoSQL Database Cloud Service page](https://cloud.oracle.com/en_US/nosql)
-* [Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
-* [Node API Reference Guide](https://oracle.github.io/nosql-node-sdk/)
-* [Python API Reference Guide](https://nosql-python-sdk.readthedocs.io/en/latest/index.html)
+* [About Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [About Managing User Credentials](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm)
+* [About Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
+
 
 ## Acknowledgements
 * **Author** - Dario Vega, Product Manager, NoSQL Product Management and Michael Brey, Director, NoSQL Product Development
-* **Contributors** - XXX, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Michael Brey, Director, NoSQL Product Development, September 2021

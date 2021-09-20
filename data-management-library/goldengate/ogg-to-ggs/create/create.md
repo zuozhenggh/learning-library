@@ -1,4 +1,4 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Deployment
+# Create the Oracle Cloud Infrastructure GoldenGate Resources
 
 ## Introduction
 

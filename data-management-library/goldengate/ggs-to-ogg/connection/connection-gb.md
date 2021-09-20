@@ -134,6 +134,8 @@ The following instructions show you how to download the Root Certificate using a
 
 5.  Click **Submit**. You should now have two credentials in the Marketplace Oracle GoldenGate instance, one to connect to OCI GoldenGate, and one for the target database.
 
+    ![](images/03-05.png " ")
+
 In this lab, you created a trusted connection between Oracle GoldenGate and OCI GoldenGate using a self-signed certificate. You may now **proceed to the next lab**.
 
 ## Acknowledgements
