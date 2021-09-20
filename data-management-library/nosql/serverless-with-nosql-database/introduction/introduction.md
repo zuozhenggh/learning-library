@@ -1,4 +1,4 @@
-# Discover Serverless Apps Using Oracle NoSQL Database Cloud Service
+# Discover serverless apps using Oracle NoSQL Database Cloud Service
 
 ## About this Workshop
 
@@ -44,4 +44,4 @@ This workshop assumes you have:
 * **Author** - Dario Vega, Product Manager, NoSQL Product Management and Michael Brey, Director, NoSQL Product Development
 * **Last Updated By/Date** - Michael Brey, Director, NoSQL Product Development, September 2021
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Free Tier FAQ](https://www.oracle.com/cloud/free/faq.html)***

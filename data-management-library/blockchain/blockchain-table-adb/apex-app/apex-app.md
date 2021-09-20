@@ -257,23 +257,6 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task4-10.png " ")
 
-<!---
-12. Replace the number 1 for the instanceId, chainId and seqId and update with your notes values in the below command.
-
-    ```
-    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
-    ```
-
-    After replacing the instanceId, chainId and seqId values in the command, it should look like this:
-
-    ```
-    curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
-    ```
-
-13. Save this command in a noted to run which we will run in the next lab and sign the row.
-
---->
-
 ## Acknowledgements
 
 * **Author** - Mark Rakhmilevich, Anoosha Pilli
