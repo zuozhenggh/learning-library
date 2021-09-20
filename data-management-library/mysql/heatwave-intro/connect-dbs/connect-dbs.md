@@ -40,9 +40,9 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 2.  Once the cloud shell has started, create the SSH Key using the following command:
 
-    ````
+    ```
     <copy>ssh-keygen -t rsa</copy>
-    ````
+    ```
     
     Hit enter for each question.
     
@@ -54,13 +54,13 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 4.  Examine the two files that you just created.
 
-    ````
+    ```
     <copy>cd .ssh</copy>
-    ````
+    ```
     
-    ````
+    ```
     <copy>ls</copy>
-    ````
+    ```
 
     ![](./images/ssh-ls-01.png " ")
 
@@ -215,6 +215,6 @@ You may now [proceed to the next lab](#next).
 * [Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [OCI Bastion Service ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
 ## Acknowledgements
-* **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - Jaden McElvey, Kamryn Vinson, Frédéric Descamps 
+* **Author** - Perside Foster, MySQL Solution Engineering 
+* **Contributor** - Frédéric Descamps, MySQL Community Manager 
 * **Last Updated By/Date** - Perside Foster, September 2021
