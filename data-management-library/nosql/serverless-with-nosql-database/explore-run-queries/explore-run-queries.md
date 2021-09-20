@@ -55,7 +55,7 @@ The goal of this task is to understand the difference between the 2 data models 
 
     ![](./images/appl-running.png)
 
-    Press the **'Enter' key** on your keypad to get the command line prompt back.   
+    Press the **Enter** key on your keypad to get the command line prompt back.   
 
 3. Insert data into the demo table.   
 
@@ -114,7 +114,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl  "http://localhost:3000/demo?limit=12&orderby=fullName"  | jq
     </copy>
     ````
-    This will display the 12 rows in the table ordered by full name.  In our case, we only have 5 rows total, so displays all existing rows.
+    This will display the 12 rows in the table ordered by full name.  In our case, we only have 5 rows total, so it displays all existing rows.
 
 6. Read data for a specific ticket number using GET command.  Execute in Cloud Shell.
 
@@ -123,7 +123,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X GET http://localhost:3000/demo/1762322446040  | jq
     </copy>
     ````
-7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, so **press 'Enter'** like you did before to get the prompt back.  Execute in Cloud Shell.
+7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, press the **Enter** key like you did before to get the prompt back.  Execute in Cloud Shell.
 
     ````
     <copy>
@@ -160,7 +160,7 @@ The goal of this task is to understand the difference between the 2 data models 
     ````
   Each of these produced slightly different results. The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
 
-  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet.  Feel free to take a look at the code using 'cat express_baggage_demo_nosql.js'
+  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet.  Feel free to take a look at the code using 'cat express-baggage-demo-nosql.js'
 
 9. You can also execute sql statements using OCI CLI commands.  Going this route, you will be querying the data over REST.  Execute in Cloud Shell.
 
@@ -197,7 +197,7 @@ The goal of this task is to understand the difference between the 2 data models 
     python3 nosql.py -s cloud -t $OCI_TENANCY -u $NOSQL_USER_ID -f $NOSQL_FINGERPRINT -k ~/NoSQLLabPrivateKey.pem -e https://nosql.${OCI_REGION}.oci.oraclecloud.com
     </copy>
     ```
-2.  This will create a Pyhton NoSQL shell that you can load data or execute queries in.
+2.  This will create a Python NoSQL shell that you can load data or execute queries in.
 
    ![](./images/capturepython.png)
 
@@ -262,32 +262,31 @@ The goal of this task is to understand the difference between the 2 data models 
 
 6. Type in **exit** to exit from the python application.
 
-7. Minimize the Cloud Shell by pressing the minimize key.
+7. Minimize the Cloud Shell by pressing the **minimize** key.
 
 
 ## Task 4: Clean Up
 
 This task deletes the tables that got created.
 
-1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, press 'Tables'
-Set your compartment to 'demonosql'
-Click the freeTest table, which will bring up the table details screen.  Press 'Delete'.
+1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
+Set your compartment to 'demonosql'.  Click the **freeTest** table, which will bring up the table details screen.  Press **Delete.**
 
   ![](./images/delete-freetable.png)
 
   Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console.  Eventually the status of the tables will get changed to deleted.  
 
-2. Return to the 'Tables' screen and repeat the process for the demo and demoKeyVal tables.
+2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
-3. Remove the 'demonosql' compartment.  From upper left hand menu, go to 'Indentity and Security' then 'Compartments' under 'Identity.'
+3. Remove the 'demonosql' compartment.  From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
-4.  The 'Compartments' screen appears and click 'demonosql'
+4.  The 'Compartments' screen appears and click **demonosql**
 
     ![](./images/select-demonosql.png)
 
-5.  Press the 'Delete ' button.  This will fire off a job that runs asynchronously.
+5.  Press the **Delete** button.  This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 

@@ -71,7 +71,7 @@ What are some of the goals of this application:
 
 ## Task 3: Track a Bag
 
-1. Tap on the 'Track Your Baggage' button.
+1. Tap the **Track Your Baggage** button.
 
       ![](images/blue-mist-track.png)
 
@@ -81,7 +81,7 @@ What are some of the goals of this application:
 
 ## Task 4: Select New Traveler
 
-1. Tap on the 'hamburger' button on the top right, and then press ‘Track Your Baggage’ again.  A new random traveler will be shown.
+1. Tap the **hamburger** button on the top right, and then press **Track Your Baggage** again.  A new random traveler will be shown.
 
       ![](images/hamburger-menu.png)
 
