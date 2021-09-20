@@ -28,8 +28,7 @@ You want to start by adding detail information of cities to your current map.
 ![](images/1_canvas_home_page.png " ")
 
 You can combine several layers of information in a map. Create a new one for the city info.
-1. Click on the Hamburger icon on the top right of the Layer menu
-2. Select “Add Layer”
+1. Click on the Hamburger icon on the top right of the Layer menu . Select “Add Layer”.
 
 ![](images/2_Add_Layer.png " ")
 
@@ -37,12 +36,12 @@ You can combine several layers of information in a map. Create a new one for the
 A new layer by the name of “Layer 2” is created. You can change the name and edit its properties. But for this excercise purpose it is enough as it is.
 You add the city to the map.
 
-1. Click and Drag “Destination City” to the Category (Location). A small green plus icon appear informing that it will be added.
+2. Click and Drag “Destination City” to the Category (Location). A small green plus icon appear informing that it will be added.
 
 ![](images/3_destination_city.png " ")
 
 Location of the destination cities appear on the map. You now want to add the Expense information to see how much was spent by city.
-1. Select and Drag “Expense Amount” to “Size” The size of the bubble represents the amount spent on each city.
+3. Select and Drag “Expense Amount” to “Size” The size of the bubble represents the amount spent on each city.
 
 
 ![](images/4_expense_account.png " ")
@@ -51,9 +50,10 @@ Location of the destination cities appear on the map. You now want to add the Ex
 ## **Task 2**: Apply one-click forecast
 
 Now you want to see the overall trend of expenses by date.
+
 1. Hold control key of your keyboard (Ctrl) and Click on “Date”
-2. Keep Ctrl hold and now click on “Expense Amount”
-3. Right click and choose “Create Best Visualization”
+   Keep Ctrl hold and now click on “Expense Amount”
+   Right click and choose “Create Best Visualization”
 
 ![](images/5_expenseamount_date_viz.png " ")
 
@@ -61,8 +61,8 @@ Now you want to see the overall trend of expenses by date.
 This will create a new analysis using the best type of visualization for the information selected. In this case a Line Chart.
 This graphic shows that there was an increase in expenses in the past few months.
 Now you want to see the prediction of Expenses for the future using Machine Learning.
-1. Right-click on the line chart (on any empty space) and select “Add Statistics”
-2. Select “Forecast”
+2. Right-click on the line chart (on any empty space) and select “Add Statistics”
+   Select “Forecast”
 
 ![](images/6_forecast.png " ")
 
@@ -70,8 +70,8 @@ Now you want to see the prediction of Expenses for the future using Machine Lear
 You get a prediction for the next 3 periods (months). And you see that
 The tool allows you to choose from different Forecast Algorithms.
 On the properties menu at the bottom left you can configure more aspects of the visual.
-1. Click on the “Analytics” icon on the properties menu (most right icon)
-2. Under “Method” click on “Seasonal ARIMA” and choose “ARIMA” (company expenses are not seasonal, so makes more sense to use normal ARIMA model)
+3. Click on the “Analytics” icon on the properties menu (most right icon)
+    Under “Method” click on “Seasonal ARIMA” and choose “ARIMA” (company expenses are not seasonal, so makes more sense to use normal ARIMA model)
 
 Note that the forecast changes as now is using ARIMA method.
 
@@ -84,7 +84,7 @@ Prediction is adjusted but still bad. You want to focus now on Hotel expenses.
 
 ![](images/8_filter.png " ")
 
-1. Find “Hotel” and click on it
+2. Find “Hotel” and click on it
 
 ![](images/9_select_hotel.png " ")
 
@@ -97,38 +97,38 @@ A solid proof that Hotels is one of the root issues here.
 ![](images/10_porto.png " ")
 
 To confirm your analysis, you want to check if expenses were out of policy.
-1. Select “In Policy” and drag it to “Color”
+3. Select “In Policy” and drag it to “Color”
 
 ![](images/11_inPolicy_color.png " ")
 
 Out of policy expenses in hotels had a peak around July. You wonder which hotels are causing this.
 
-1. Hold control key of your keyboard (Ctrl) and Click on “Vendor”
-2. Keep Ctrl hold and now click on “Expense Amount”
-3. Right click and choose “Pick Visualization”
+4. Hold control key of your keyboard (Ctrl) and Click on “Vendor”
+   Keep Ctrl hold and now click on “Expense Amount”
+   Right click and choose “Pick Visualization”
 
 ![](images/12_vendor_expense_selection.png " ")
 
 A wide variety of visualization are available to you.
 
-1. Click on the “Horizontal Bar” Visualization
+5. Click on the “Horizontal Bar” Visualization
 
 ![](images/13_horizontal_bar.png " ")
 
 The list of Hotel vendors appears. Now you need to filter it to Porto and to find the related ones.
-1. Click “Destination City” and drag it to “Filters”
+6. Click “Destination City” and drag it to “Filters”
 
 ![](images/14_destination_city_filter.png " ")
 
 
-1. On the filters menu find and choose “Porto”. You can use the search box at the top to short the list of options.
+7. On the filters menu find and choose “Porto”. You can use the search box at the top to short the list of options.
 
 ![](images/15_select_porto_city.png " ")
 
 
 You see only 3 hotels in Porto. You want to see if our company already has an agreement with them or they are out of policy.
 
-1. Select and Drag “In-Policy” to Color
+8. Select and Drag “In-Policy” to Color
 
 ![](images/16_inPolicy_color.png " ")
 
