@@ -1,10 +1,10 @@
 {
-    "workshoptitle": "Deploy the Oracle Service Operator on Kubernetes",
+    "workshoptitle": "Deploy the Oracle Service Operator on Kubernete",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/intro/intro.md"
+            "filename": "../../../labs/oracle-service-operator-kubernete/intro/intro.md"
         },
         {
             "title": "Getting Started with Free Trial Account",
