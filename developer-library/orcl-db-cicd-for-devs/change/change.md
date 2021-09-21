@@ -243,7 +243,7 @@ Now that we have a working developer branch, its time to merge this change with 
    ````
    Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step, in Lab 1 when we pushed the code to the repository as well as in Lab 2 when we pushed up the new branch.
 
-7. Using the **OCI Web Console and the DevOps Code Repository details page**, if we drill into our master branch we can see that the tables directory is at **version 2.0** 
+7. Using the **OCI Web Console and the DevOps Code Repository details page**, if we drill into our master branch we can see that the table directory is at **version 2.0** 
 
    ![OCI Web Console and the DevOps Code Repository details page](./images/merge-6.png)
 

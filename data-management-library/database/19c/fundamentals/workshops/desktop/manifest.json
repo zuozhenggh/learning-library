@@ -23,13 +23,13 @@
           "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md"
            },
             {
-                "title": "Clone a PDB by Using DBCA in Silent Mode",
-                "description": "Clone a PDB by using DBCA in silent mode.",
+                "title": "Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
+                "description": "Clone a PDB from a remote CDB by using DBCA in silent mode.",
                 "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md"
             },
             {
-                "title": "Relocate a PDB by Using DBCA in Silent Mode",
-                "description": "Relocate a PDB by using DBCA in silent mode.",
+                "title": "Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
+                "description": "Relocate a PDB to a remote CDB by using DBCA in silent mode.",
                 "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md"
             },
             {
