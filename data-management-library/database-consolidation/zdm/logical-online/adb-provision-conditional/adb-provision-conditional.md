@@ -69,7 +69,7 @@ In this lab, you will:
     - __Choose a compartment__ - Use the same compartment as your compute instance.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __TargetATP1__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
-    For this lab, use __TargetATP1__.
+    For this lab, use __TargetATP1__. Please bear in mind that there must not be another database with the same name, otherwise there will be an issue while creating and provisioning it. 
 
     <if type="livelabs">
     ![Enter the required details.](./images/Picture100-26-livelabs.png " ")
