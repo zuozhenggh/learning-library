@@ -104,7 +104,7 @@ Once the join has been defined you can go back to the Visualize tab to continue 
 
 ![](images/12_vizualise.png " ")
 
-On the Explorer menu at the left you note that the new Data Set has been added.
+On the Data menu at the left you note that the new Data Set has been added.
 
 11. Click on the arrow on the left to the data set to expand it.
 
