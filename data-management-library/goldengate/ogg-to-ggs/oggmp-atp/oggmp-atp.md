@@ -17,7 +17,7 @@ In this lab, you will:
 
 Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
 
-## Task 1: Download the Source ATP Client Credentials
+## Task 1: Download the Source ATP client credentials
 
 1.  Navigate back to the Source ATP Autonomous Database Details page, and then click **DB Connection**.
 
@@ -31,13 +31,15 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ![](images/02-03.png " ")
 
-## Task 2: Upload the Source ATP Credentials to Oracle GoldenGate
+## Task 2: Upload the Source ATP credentials to Oracle GoldenGate
 
-1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
+1.  In the Oracle Cloud Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
     ![](images/02-01-compute.png " ")
 
-2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
+2.  Under **List Scope**, ensure that you select the correct **Compartment** for this workshop.
+
+    > **Note:** *For Green Button workshop users, you can find your compartment information in the Workshop Details of this LiveLab.*
 
 3.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle**.
 
@@ -86,7 +88,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
-5.  Log in to the Service Manager using **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
+5.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
 
 6.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 

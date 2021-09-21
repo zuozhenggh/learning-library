@@ -1,10 +1,10 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Resources
+# Create the Oracle Cloud Infrastructure GoldenGate resources
 
 ## Introduction
 
 This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate Deployment.
 
-Estimated Lab Time: 20 minutes
+Estimated time: 20 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Resources
 
@@ -25,7 +25,7 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## Task 1: Create a Deployment
+## Task 1: Create a deployment
 
 > **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
 
@@ -69,8 +69,10 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
+> **Note:** *You can proceed with Tasks 4 and 5 while you wait for the deployment to become active.*
 
-## Task 2: Review the Deployment details
+
+## Task 2: Review the deployment details
 
 On the Deployment Details page, you can:
 
@@ -96,7 +98,7 @@ On the Deployment Details page, you can:
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-## Task 4: Register the Source and Target Database
+## Task 4: Register the source and target databases
 
 Now, follow the steps below to register the source and target Autonomous Database instances.
 
@@ -128,9 +130,9 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 5: Enable the GGADMIN user and supplemental logging
+## Task 5: Unlock the GGADMIN user and supplemental logging
 
-Although the GGADMIN user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+Although the GGADMIN user is created during the database registration process, it is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
 1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
 
@@ -152,7 +154,7 @@ Although the GGADMIN user is created during the database registration process, i
 
     ![](images/02-06-locked.png " ")
 
-7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the GGADMIN user in the database registration steps above, and then click **Apply Changes**.
 
     ![](images/02-07-edit.png " ")
 
@@ -170,11 +172,11 @@ Although the GGADMIN user is created during the database registration process, i
 
 10. Log out of Database Actions.
 
-11. Repeat steps 1 to 7 to enable the ggadmin user for **TargetADW**. Log out of Database Actions when you're done.
+11. Repeat steps 1 to 7 to unlock the GGADMIN user for **TargetADW**. Log out of Database Actions when you're done.
 
 In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You may now **proceed to the next lab**.
 
-## Learn More
+## Learn more
 
 * [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
