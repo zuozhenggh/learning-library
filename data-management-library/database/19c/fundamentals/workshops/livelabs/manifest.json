@@ -18,12 +18,12 @@
             "filename": "./../../initialize-environment/initialize-environment.md"
         },
             {
-                "title": "Clone a PDB by Using DBCA in Silent Mode",
+                "title": "Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
                 "description": "Clone a PDB by using DBCA in silent mode.",
                 "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md"
             },
             {
-                "title": "Relocate a PDB by Using DBCA in Silent Mode",
+                "title": "Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
                 "description": "Relocate a PDB by using DBCA in silent mode.",
                 "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md"
             },
