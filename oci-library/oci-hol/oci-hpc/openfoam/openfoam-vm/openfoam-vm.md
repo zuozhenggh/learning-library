@@ -62,33 +62,33 @@ As a developer, data Engineer,
 
 4. Create Subnets
 
-   1. Public Subnet
+    1. Public Subnet
 
-      - Name: i.e. hpc_public
+        - Name: i.e. hpc_public
 
-      - Subnet Type: Regional
+        - Subnet Type: Regional
 
-      - CIDR Block: 10.0.0.0/24
+        - CIDR Block: 10.0.0.0/24
 
-      - Route Table: "Default Route table"
+        - Route Table: "Default Route table"
 
-      - Subnet Access: Public Subnet
+        - Subnet Access: Public Subnet
 
-      - Security List: "Default Security List"
+        - Security List: "Default Security List"
 
-   2. Private Subnet
+    2. Private Subnet
 
-      - Name: hpc_private
+        - Name: hpc_private
 
-      - Subnet Type: Regional
+        - Subnet Type: Regional
 
-      - CIDR Block: 10.0.3.0/24
+        - CIDR Block: 10.0.3.0/24
 
-      - Route Table: select Route Table created in previous step
+        - Route Table: select Route Table created in previous step
 
-      - Subnet Access: Private Subnet
+        - Subnet Access: Private Subnet
 
-      - Security List: select security list created in previous step
+        - Security List: select security list created in previous step
 
 5. Click **create subnet**
 
@@ -102,7 +102,7 @@ As a developer, data Engineer,
 
    ![](./images/create_IG_content.png " ")
 
-   > **Note:** That will create the internet gateway, and it will need to be associated with a route table. In this case, since the Default Route Table will be used for the public subnet, the internet gateway should be associated with that route table.
+    > **Note:** That will create the internet gateway, and it will need to be associated with a route table. In this case, since the Default Route Table will be used for the public subnet, the internet gateway should be associated with that route table.
 
 7. Add Route Rules to Route Table. On the **Resources** menu on the left side of the page, select **Default Route Table for `hpc_vcn`**, click **Add Route Rules**
 

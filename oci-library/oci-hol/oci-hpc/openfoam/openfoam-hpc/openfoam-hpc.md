@@ -155,38 +155,38 @@ Make sure to have access to the following:
 
 1. On Bastion server, run the following commands that will be needed to render the output using Paraview package.
 
-   ```
-   <copy>$ sudo yum install -y mesa-libGLU
-   $ cd /mnt/gluster-share
-   $ curl -d submit="Download" -d version="v4.4" -d type="binary" -d os="Linux" -d downloadFile="ParaView-4.4.0-Qt4-Linux-64bit.tar.gz" https://www.paraview.org/paraview-downloads/download.php > file.tar.gz
-   $ tar -xf file.tar.gz</copy>
-   ```
+    ```
+    <copy>$ sudo yum install -y mesa-libGLU
+    $ cd /mnt/gluster-share
+    $ curl -d submit="Download" -d version="v4.4" -d type="binary" -d os="Linux" -d downloadFile="ParaView-4.4.0-Qt4-Linux-64bit.tar.gz" https://www.paraview.org/paraview-downloads/download.php >file.tar.gz
+    $ tar -xf file.tar.gz</copy>
+    ```
 
 2. Connect to one of the HPC nodes from bastion server and execute the workload
 
-   ```
-   <copy>$ ssh 172.16.1.2
-   $ cd /mnt/gluster-share/work/
-   $ ./Allrun 36</copy>
-   ```
+    ```
+    <copy>$ ssh 172.16.1.2
+    $ cd /mnt/gluster-share/work/
+    $ ./Allrun 36</copy>
+    ```
 
-   ```
-   ./Allrun 36
-   Cleaning /mnt/gluster-share/work case
-   Mesh Dimensions: (40 16 16)
-   Cores:36: 6, 6, 1
-   Running surfaceFeatures on /mnt/gluster-share/work
-   Running blockMesh on /mnt/gluster-share/work
-   Running decomposePar on /mnt/gluster-share/work
-   Running snappyHexMesh
-   Running patchsummary
-   Running potentialFoam
-   Running simpleFoam
-   Running reconstructParMesh on /mnt/gluster-share/work
-   Running reconstructPar on /mnt/gluster-share/work
-   219.95
-   [opc@inst-quqyz-accurate-swan work]$
-   ```
+    ```
+    ./Allrun 36
+    Cleaning /mnt/gluster-share/work case
+    Mesh Dimensions: (40 16 16)
+    Cores:36: 6, 6, 1
+    Running surfaceFeatures on /mnt/gluster-share/work
+    Running blockMesh on /mnt/gluster-share/work
+    Running decomposePar on /mnt/gluster-share/work
+    Running snappyHexMesh
+    Running patchsummary
+    Running potentialFoam
+    Running simpleFoam
+    Running reconstructParMesh on /mnt/gluster-share/work
+    Running reconstructPar on /mnt/gluster-share/work
+    219.95
+    [opc@inst-quqyz-accurate-swan work]$
+    ```
 
 3. Once the workload completes successfully, configure VNC client on your machine like this. Provide Public IP of Bastion server and VNC port
 
@@ -196,9 +196,9 @@ Make sure to have access to the following:
 
    Create tunnel from your laptop/desktop using the following command from terminal window. Here communication for port 5901 will be made on ssh port 22 and the IP address 150.136.41.3 is the public IP address of bastion server.
 
-   ```
-   <copy>$ ssh -L 5901:localhost:5901 -i Dropbox/amar_priv_key -N -f -l opc 150.136.41.3</copy>
-   ```
+    ```
+    <copy>$ ssh -L 5901:localhost:5901 -i Dropbox/amar_priv_key -N -f -l opc 150.136.41.3</copy>
+    ```
 
 5. Do not close the above ssh tunnel terminal window. Now initiate VNC session and this time instead of IP address use "localhost" on port 5901, even though this port is not opened in the security list of the subnet.
 
@@ -206,10 +206,10 @@ Make sure to have access to the following:
 
 6. Start the Paraview application from within the bastion server
 
-   ```
-   <copy>cd /mnt/gluster-share/ParaView-4.4.0-Qt4-Linux-64bit/bin/
-   ./paraview</copy>
-   ```
+    ```
+    <copy>cd /mnt/gluster-share/ParaView-4.4.0-Qt4-Linux-64bit/bin/
+    ./paraview</copy>
+    ```
 
 7. In Paraview application window, File -> Open -> Path "/mnt/gluster-share/work" and select file name motorbike.foam. It will be zero byte file and that should be fine.
 
