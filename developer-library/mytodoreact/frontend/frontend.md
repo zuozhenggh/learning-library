@@ -39,11 +39,11 @@ In this tutorial, you will:
     ```
     <copy>npm --version</copy>
     ```
-3. if `npm` is not inalladed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
+3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
 
 4. Make sure `Go lang` is installed.
 
-    `go version` -> `go version go1.15.2 darwin/amd64`
+    `go version` shows `go version go1.15.2 darwin/amd64`
 
     ```
     <copy>go version</copy>
@@ -73,35 +73,34 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	```bash
 	<copy>npm install</copy>
 	```
-	
-4. In case of errors, try the following command:
-	
-		```
-		<copy>npm audit fix --force</copy>
-		```
-	
+
+4. In case of errors, try the following command
+
+    ```bash
+	<copy>npm audit fix --force</copy>
+	```
+
 	>**Note**: ideally, the `npm -version` should be higher than  `6.14.x`  and `node version` higher than 14.16.x 
 	
-5. If `npm` version is inferior to 6.14.x then install the latest `node` using
-		https://bit.ly/3evGlEo
+5. If `npm` version is inferior to 6.14.x then install the latest `node` usinghttps://bit.ly/3evGlEo
 
 6. Update API_LIST in API.js:
-6.1. Navigate to thnw `frontend/src` directory
+6.1. Navigate to the `frontend/src` directory
 		```bash
 		<copy>cd frontend/src</copy>
 		```
 6.2. In the Oracle Cloud Console, navigate to **Developer Services** and select **API Management**
-	- Click your gateway and go to **Deployment**.
-	- Copy the endpoint.
-	- Paste the endpoint as the value of API_LIST and append **/todolist**.
+6.3. Click your gateway and go to **Deployment**.
+6.4. Copy the endpoint.
+6.5. Paste the endpoint as the value of API_LIST and append **/todolist**.
 
 		For example, const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
-  	- Save the modified API.js file.
+6.6. Save the modified API.js file.
 
 ## Task 2: Run in Dev Mode then Build for Production
 
-1. In the project directory, run the app in the development mode <br />:
+1. In the project directory, run the app in the development mode <br />.
 
 	```bash
 	<copy>npm start</copy>
@@ -115,16 +114,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 3. Cancel the developer mode execution and build the app for production into the `build` folder.<br />
 
-	3.1. Press **Ctrl-c** to cancel the developer mode executions.
+	\* Press **Ctrl-c** to cancel the developer mode executions.
 
-	3.2. Execute `npm run build`.
+	\* Execute `npm run build`
 
-		```bash
-		<copy>npm run build</copy>
-		```
+   ```bash
+   <copy>npm run build</copy>
+   ```
+
 	 `npm` correctly bundles React in production mode (in the build folder) and optimizes the build for best performance.
 
-    	![run build](images/Run-build.png " ")
+    ![run build](images/Run-build.png " ")
 
 	The build is minified and the file name include the hashes.<br />
 	Your app is ready to be deployed!
@@ -134,36 +134,36 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Task 3: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
-**Object Storage** and then select **Object Storage**.
+**Storage** then select **Object Storage**.
 
-2. Create the **mtdrworkshop** bucket.
+2. Create the **mtdrworkshop** bucket in your root compartment.
 
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
-   bucket with folder hierarchies.
+   bucket while preserving folder hierarchies.
 
-	3.1. Execute `git clone https://github.com/maxjahn/staci.git`.
+	\* Execute `git clone https://github.com/maxjahn/staci.git`.
 
-		```bash
-		<copy>git clone https://github.com/maxjahn/staci.git</copy>
-		```
+	```bash
+	<copy>git clone https://github.com/maxjahn/staci.git</copy>
+	```
 
-	3.2. Navigate to the **staci** directory
+	\* Navigate to the **staci** directory
 
-		```bash
-		<copy>cd staci</copy>
-		```
+    ```bash
+    <copy>cd staci</copy>
+     ```
 
-	3.3. Execute `go get -d`.
+	\* Execute `go get -d`.
 
-		```bash
-		<copy>go get -d</copy>
-		```
+     ```bash
+     <copy>go get -d</copy>
+     ```
 
-	3.4. Execute `go build`.
+	\* Execute `go build`.
 
-		```bash
-		<copy>go build</copy>
-		```
+    ```bash
+    <copy>go build</copy>
+    ```
 
 4. Upload a static build into the bucket, using the staci binary.
 
@@ -179,7 +179,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You may now run the application from OCI Object Store, using the URL of the index that you've copied above.
 
-    ![MyToDo](images/MyToDo.png " ")
+![MyToDo](images/MyToDo.png " ")
 
 
 ## Acknowledgements
