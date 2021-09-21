@@ -73,7 +73,7 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 ## Task 3: Gather compute instance details
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-	![](images/workshop-instance.png) " ")
+	![](images/workshop-instance.png " ")
 
 2. Look for the instance you just created and jot down the public IP address.
     
