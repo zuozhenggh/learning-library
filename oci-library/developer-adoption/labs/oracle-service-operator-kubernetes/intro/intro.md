@@ -6,55 +6,22 @@ The OCI Service Operator for Kubernetes (OSOK) makes it easy to create, manage, 
 
 OSOK is based on the Operator Framework, an open-source toolkit used to manage Operators. It uses the controller-runtime library, which provides high-level APIs and abstractions to write operational logic and also provides tools for scaffolding and code generation for Operators.
 
+## Deploy OSOK on OCI Container Engine for Kubernetes (OKE)
+In this tutorial, you will create an OCI Container Engine for Kubernetes (OKE) cluster. You then will install the Operator SDK to your local machine. Followed by installing the Operator Lifecycle Manager (OLM). And the you will deploy the Oracle Service Operator for Kubernetes (OSOK) to your Kubernetes cluster. You then will connect to the following OCI services:
 
+- MySQL DB System Service 
+- Autonomous Database Service
+- Oracle Streaming Service
 
 Estimated time: 60 minutes
 
 
-## Oracle DevOps
-
-In this lab you will install the Operator SDK to your local machine. You then will need to 
-- Oracle Container Engine for Kubernetes (OKE)
-- Oracle Functions (Fn)
-- Compute instances
-
-Automating software releases with Deployment Pipelines increases developer productivity and allows you to release features more frequently and with fewer errors. It helps avoid downtime during deployments and automates the complexity of updating applications. Oracle DevOps can be used by both customers migrating workloads to OCI (from on-prem or other clouds) and customers developing new applications on OCI.
-
-OCI DevOps offers many deployment strategies to meet your needs – you can perform rolling updates, as well as Blue/Green (also called A/B) and Canary release strategies. With the ability to rollback a deployment coupled with support for various release strategies, Deployment Pipelines provides the capability to minimize the blast radius due to a bad deployment. You can get started with a deployment with the OCI DevOps using existing 3rd party CI platforms leveraging plugins, as well as via CLI and SDKs.
-
-
-## Role Play Scenario
-
-You are leading a company to build a new e-commerce cloud native application using microservices architecture, Kubernetes and you want to automate the software development lifecycle (SDLC) to quickly innovate, delivery new features to customers constantly and faster. There is a Developers team that is responsible for building and testing the application. There is also a SRE (Site Reliability Engineering)/Platform Engineer team that will be responsible for provisioning the infrastructure and take care of operations to ensure the business can meet their Service Level Objective (SLO).
-
-During this lab you will play the role of an SRE/Platform Engineer which will be responsible for: 
-
-- write Infrastructure As Code (IaC) and provision the infrastructure using OCI Resource Manager (Terraform as Service)
-
-    ![DevOps](./images/devops-infrastructure-onboard.png "Roles")
-
-- write K8s manifest files for deploying services/endpoints/security used by application
-- rollout new features/services through the Continuos Delivery pipeline
-- rollback to the latest successful pipeline in case of failures
-
-    ![DevOps](./images/devops-cd.png "Roles")
-
-
-
-### Objectives
-
-In this lab, you will:
-
-* Provisioning Infrastructure using IaC and OCI Resource Manager 
-* Deploy a Java Cloud Native Microservice to OKE Kubernetes cluster via DevOps Pipeline
-
 ### Prerequisites
 
 1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. Basic conceptual knowledge of containers and [Kubernetes](https://kubernetes.io/)
+2. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
+3. [OCI CLi Installation on your local machine](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
+
 
 You may now [proceed to the next lab](#next).
 
@@ -66,6 +33,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Lucas Gomes
-* **Contributors** -  Jonathan Schreiber, Rishi Johari, Tim Graves
-* **Last Updated By/Date** - Lucas Gomes, July 2021
+* **Author** - Rishi Johari
+* **Contributors** -  Mickey Boxell
+* **Last Updated By/Date** - Rishi Johari, September 2021
