@@ -4,6 +4,9 @@
 
 ACME Corp sends an 850 Purchase Order EDI document to Trading Partner Dell Inc. ACME Corp had configured OIC B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
 
+This integration takes the input as XML from a Rest Client . In a real world usecase you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
+
+
 ![B2BArchitecture diagram](images/b2b-outbound1.png)
 
 High level steps of the Integration:
@@ -28,10 +31,6 @@ Oracle Integration - B2B
 In this lab, you will create a basic integration flow:
 This labs takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
-### Prerequisites
-
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Item no 2 with url - [URL Text](https://www.oracle.com).
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -133,9 +132,9 @@ Once you are done with the validation, test it.
 ## **STEP 6**: Switch action after EDI-Translate activity
 1. Add a switch after the EDI-Generate activity
     - For the If branch, Enter the Expression Name as “Success or Warning” and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is a error on namespaces then you can search for “translation-status” and select that element for mapping.
-
-    $EDI-Generate/nsmpr6:executeResponse/nsmpr9:TranslateOutput/nsmpr9:translation-status ="Success"
-
+    ```
+    <copy>$EDI-Generate/nsmpr6:executeResponse/nsmpr9:TranslateOutput/nsmpr9:translation-status ="Success"</copy>
+    ```
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if TranslateOutput > translation-status has a value of Success, then take this route. This is referred to as the success route
     - Click on Validate and Click on Close and save your integration flow
@@ -149,7 +148,6 @@ This expression indicates that if TranslateOutput > translation-status has a val
 | trading-partner | components.schemas.request-wrapper->trading-partner |
 | connectivity-properties-code | Connectivity Properties->Localintegration->code |
 | connectivity-properties-version | Connectivity Properties->Localintegration->version |
-Subhani
 
     - Mappings and Integration flow looks like the below diagrams
     ![mappings diagram](images/b2b-outbound12.png =50%x*)
@@ -158,10 +156,12 @@ Subhani
     - In Otherwise route: Add Throw New Fault Action ->Enter name as “Error” ->click on Create and map the below elements
 
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error to Code
+    AND
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error-report to Reason
-![otherwisemappings diagram](images/b2b-outbound14.png =50%x*)
+
+    ![otherwisemappings diagram](images/b2b-outbound14.png =50%x*)
     - Validate and Close -> Save your integration flow.
-![finalflow diagram](images/b2b-outbound15.png =50%x*)
+    ![finalflow diagram](images/b2b-outbound15.png =50%x*)
 
 ## **STEP 7**: After Switch activity
 1. Edit Map to Receive-App-Msg activity.
@@ -172,12 +172,22 @@ Subhani
 | Validation Error Report | Validation Error Report |
 
 3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper
-4. Your integration should look like the below screenshot
-5. click Actions Menu  in the top-right corner of canvas, and select Tracking.
-6. In the resulting dialog, select orderNumber on the left and move it to the table on the right.
-7. Click Save.
-8. Save the integration and click Close
+4. click Actions Menu  in the top-right corner of canvas, and select Tracking.
+5. In the resulting dialog, select orderNumber on the left and move it to the table on the right.
+6. Click Save.
+7. Save the integration and click Close
    ![finalflow1 diagram](images/b2b-outbound16.png =50%x*)
+
+## **STEP 8**: Activate the integration
+Check for errors, save, and activate the integration flow
+1. On the Integrations page, click on the activate button against your integration to activate it
+2. Click Activate in the Activate Integration dialog and select “Enable Tracing” and “Include Payload” options
+3. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
+4. You have two xml files [USGEPO.xml](files/USGEPO.xml?download=1) and [DellIncPO.xml](files/DellIncPO.xml?download=1), download and open each file and copy the data and paste it in the body of the request console and click on Test
+  ![TestConsole diagram](images/b2b-outbound17.png =50%x*)
+5. Go to MonitoringIntegrations Tracking Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
+6. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folders /B2BWorkshop/B2BTPUSGEOut and /B2BWorkshop/B2BTPDELLOut
+7. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
 
 6. This is an example of manual control over image sizes:
 
