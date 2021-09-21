@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is an optional lab that guides you on how to connect to the on premise or Marketplace Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
+This is an **optional** lab that guides you on how to connect to the on premise or Marketplace Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
 
 Estimated lab time: 5 minutes
 
