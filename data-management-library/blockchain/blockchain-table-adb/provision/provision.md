@@ -2,17 +2,14 @@
 
 ## Introduction
 
-In the previous lab, we generated the ssh keys needed for the compute instance used for the node.js application to provide cryptographic signing of the user data outside the database.
+In this lab, you will provision the Oracle Autonomous Database (ADB) instance and connect to the database as a new user.
 
-In this lab, you will provision an Oracle Linux compute instance using the ssh keys generated and log into the instance. Then provision the Oracle Autonomous Database (ADB) instance and connect to the database as a new user.
-
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 
-- Provision a Oracle Linux compute instance and SSH into the instance
 - Provision an Oracle Autonomous Transaction Processing instance
 - Create a new database user using Database Actions
 - Connect to ATP database as a new user from SQL Developer Web
@@ -23,114 +20,7 @@ This workshop assumes you have:
 
 - Logged in to your own cloud account or a LiveLabs account.
 
-## Task 1: Provision a Compute Instance
-
-1. Click on hamburger menu, search for **Compute** and select **Instances** under Compute.
-
-    ![](./images/task1-1.png " ")
-
-2. Make sure you are in the correct region and compartment and click on **Create Instance**.
-
-    ![](./images/task1-2.png " ")
-
-3. Give a name to the instance. In this lab, we use the Name - **DEMOVM**.
-
-    ![](./images/task1-3.png " ")
-
-4. In Placement, Image and shape, choose the following:
-    - **Availability Domain** - For this lab, leave the default instance Placement to Always Free Eligible or you can click on **Edit** and choose an Availability Domain (AD).
-    - **Image and shape** - For this lab, leave the default - Always Free Eligible resource or you can click on **Edit** to change the image and shape.
-
-    ![](./images/task1-4.png " ")
-
-5. In Add SSH keys, choose **Paste public keys** and paste the public key noted earlier in lab 1 and click **Create**.
-
-    ![](./images/task1-5.png " ")
-
-6. Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Running. At this point, your compute instance is ready to use! Have a look at your instance's details and copy the **Public IP Address** to use later.
-
-    ![](./images/task1-61.png " ")
-    ![](./images/task1-62.png " ")
-
-## Task 2: Connect to your Compute instance
-
-There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
-
-- Oracle Cloud Shell
-- MAC or Windows CYCGWIN Emulator
-- Windows Using Putty
-
-### Oracle Cloud Shell
-
-1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
-
-    ![](./images/task2-1.png " ")
-
-2.  In the command  below, replace "sshkeyname" with your actual ssh key name from Lab 1 and replace "Your Compute Instance Public IP Address" with the one you copied in Task 1 of this lab. Enter the edited command to login to your instance.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-
-    *Note: The angle brackets <> should not appear in your command.*
-
-    ![](./images/task2-4.png " ")
-
-3.  When prompted, answer **yes** to continue connecting.
-
-    ![](./images/task2-5.png " ")
-
-4.  Proceed to the next task on the left hand menu.
-
-### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
-2.  On the instance homepage, find the Public IP address for your instance.
-
-3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/cloudshellssh.png " ")
-
-    ![](./images/cloudshelllogin.png " ")
-
-    *Note: The angle brackets <> should not appear in your command.*
-
-4.  After successfully logging in, proceed to next task.
-
-### Windows using Putty
-
-1.  Open up putty and create a new connection.
-
-    ````
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ````
-    ![](./images/ssh-first-time.png " ")
-
-    *Note: The angle brackets <> should not appear in your command.*
-
-2.  Enter a name for the session and click **Save**.
-
-    ![](./images/putty-setup.png " ")
-
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
-
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
-
-5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE: You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
-
-    ![](./images/putty-auth.png " ")
-
-6. The file path for the SSH private key file now displays in the Private key file for authentication field.
-
-7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session STEP.
-
-8. Click Open to begin your session with the instance.
-
-Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
-
-## Task 3: Provision an ATP Instance
+## Task 1: Provision an ATP Instance
 
 1. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
 
@@ -142,7 +32,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![](./images/task3-2.png " ")
 
-3. From the compartment drop-down menu select the **Compartment** to create your ATP instance. Make sure you are in the same region and compartment as the compute instance you just provisioned. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by **Workload Type**. Here, the **Transaction Processing** workload type is selected.
+3. From the compartment drop-down menu select the **Compartment** to create your ATP instance. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by **Workload Type**. Here, the **Transaction Processing** workload type is selected.
 
     ![](./images/task3-31.png " ")
     ![](./images/task3-32.png " ")
@@ -187,7 +77,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
 
     ![Database instance homepage.](./images/task3-82.png " ")
 
-## Task 4: Create a New User Using Database Actions
+## Task 2: Create a New User Using Database Actions
 
 1. On the DEMOATP instance details page, click on the **Tools** tab, select **Database Actions**, a new tab will open up.
     ![](./images/task4-1.png " ")
@@ -235,7 +125,7 @@ Congratulations!  You now have a fully functional Linux instance running on Orac
     ```
     ![](./images/task4-9.png " ")
 
-## Task 5: Connect to ATP as a New User from SQL Developer Web
+## Task 3: Connect to ATP as a New User from SQL Developer Web
 
 1. Click on the hamburger menu of the Oracle Database Actions and select **SQL** under Development.
 

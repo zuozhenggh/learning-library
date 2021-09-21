@@ -18,6 +18,8 @@ In this lab, you will:
 ### Prerequisites
 
 - Oracle Free Trial Account.
+  
+[Lab 1 Demo](youtube:W4JaHA-Fzp8)
 
 ## Task 1: Create a Virtual Cloud Network and allow traffic through MySQL Database Service port
 
