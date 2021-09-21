@@ -6,8 +6,8 @@ The OCI Service Operator for Kubernetes (OSOK) makes it easy to create, manage, 
 
 OSOK is based on the Operator Framework, an open-source toolkit used to manage Operators. It uses the controller-runtime library, which provides high-level APIs and abstractions to write operational logic and also provides tools for scaffolding and code generation for Operators.
 
-## Deploy OSOK on OCI Container Engine for Kubernetes (OKE)
-In this tutorial, you will create an OCI Container Engine for Kubernetes (OKE) cluster. You then will install the Operator SDK to your local machine. Followed by installing the Operator Lifecycle Manager (OLM). And the you will deploy the Oracle Service Operator for Kubernetes (OSOK) to your Kubernetes cluster. You then will connect to the following OCI services:
+## Tutorial Overview: Deploy OSOK on OCI Container Engine for Kubernetes (OKE)
+In this tutorial, you will create an OCI Container Engine for Kubernetes (OKE) cluster. You then will install the Operator SDK to your local machine. Followed by installing the Operator Lifecycle Manager (OLM). And the you will deploy the Oracle Service Operator for Kubernetes (OSOK) to your Kubernetes cluster. Finally, you will connect to the following OCI services:
 
 - MySQL DB System Service 
 - Autonomous Database Service
