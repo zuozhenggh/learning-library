@@ -56,7 +56,7 @@ algorithm, it will predict the number of nodes needed.
 ## Task 2: Load airportdb Data into HeatWave Cluster
 1. If not already connected with SSH, on Command Line, connect to the Cloud Shell
 
-2. On command Line, connect to MySQL using the MySQL Shell client tool with th following command:
+2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
 
     ```
     <copy>mysqlsh admin@127.0.0.1 --sql</copy>

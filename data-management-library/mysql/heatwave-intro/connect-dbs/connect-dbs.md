@@ -69,7 +69,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 ## Task 2: Create Bastion Service
 
-The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL DB System.
+The new Bastion Service will allow you to create a SSH Tunnel to your MySQL DB System.
 1. Go to Navigation Menu > Identity Security > Bastion
 
     ![](./images/bastion-01.png " ")
@@ -104,7 +104,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
 4. Click `Create Bastion` button 
 
-    When completed your scren should look like this:
+    When completed your screen should look like this:
 
     ![](./images/bastion-04.png " ")
 
@@ -159,7 +159,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
         <copy>3306</copy>
     ```
 9. Add SSH Key -  Copy SSH Key from notepad
-    - The screen shoul look like this
+    - The screen should look like this
     ![](./images/bastion-06.png " ") 
     - Click the `Create Session` button 
 10. The completed Bastion Session should look like this
@@ -173,14 +173,14 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 
     ![](./images/bastion-08.png " ") 
 
-2. Click `View SSh Command`  
+2. Click `View SSH Command`  
 
     ![](./images/bastion-09.png " ") 
 
 3. Click copy and paste the information to your notepad and hit Close
 
 4.  update the session command on notepad
-    - Set the beginning of the command `ssh -4 -i ~.ssh/id_rsa -N -L 3306`
+    - Set the beginning of the command `ssh -4 -i ~/.ssh/id_rsa -N -L 3306`
     - *add the `&` character* at the end of the command or the connection will not be successful
 
 
@@ -191,7 +191,7 @@ The new Bastion Service that will allow you to create a SSH Tunnel to your MySQL
 5. Open the cloud shell and enter the command from the notepad. It should like this..
     *Don't forget the &  character*
 
-    `ssh -4 -i .ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk...ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
+    `ssh -4 -i ~/.ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk...ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
 
 6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
 
@@ -213,7 +213,7 @@ You may now [proceed to the next lab](#next).
 
 * [Cloud Shell](https://www.oracle.com/devops/cloud-shell/?source=:so:ch:or:awr::::Sc)
 * [Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
-* [OCI Bastion Service ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
+* [OCI Bastion Service ](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Bastion/Tasks/connectingtosessions.htm)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributor** - Frédéric Descamps, MySQL Community Manager 
