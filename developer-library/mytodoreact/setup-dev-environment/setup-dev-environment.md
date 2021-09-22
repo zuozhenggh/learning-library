@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you will configure your development environment and collect information that will be used later throughout this workshop.
+In this tutorial, configure your development environment and collect information that will be used later throughout this workshop.
 
 Estimated time: 30 minutes
 
@@ -11,7 +11,7 @@ Estimated time: 30 minutes
 * Launch the Cloud Shell
 * Download the workshop code and scripts from GitHub
 * Set up an Oracle Cloud Infrastructure (OCI) Compartment and install a two nodes Oracle Kubernetes Engine (OKE) cluster
-* Create an Oracle Autonomous Transaction Procesing database, the user schema, and a database table
+* Create an Oracle Autonomous Transaction Procesing (ATP)database, the user schema, and a database table
 * Install GraalVM
 * Create an OCI Registry and an authentication key
 * Access OKE from the Cloud Shell
@@ -22,8 +22,8 @@ Estimated time: 30 minutes
 
 ## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHup repository
 
-1. Launch the Cloud Shell
-The Cloud Shell is a small virtual machine running a Bash shell that you access through the OCI Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
+1. Launch the Oracle Cloud Shell
+The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
 2. Click the Cloud Shell icon in the top-right corner of the Console.
 	![Cloud Shell](images/7-open-cloud-shell.png " ")
 3. Clone the GitHub repo and move up the `mtdrworkshop` directory.
@@ -99,7 +99,7 @@ You should now see `mtdrworkshop` in your root directory
 
 ## Task 3: Create the Autonomous Transaction Processing database, the TODOUSER and the TODOITEM table
 
-1. Open up the hamburger menu in the top-left corner of the Console and select **Oracle Database** then click **Autonomous Transaction Processing**
+1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select **Oracle Database** then click **Autonomous Transaction Processing**
 	![oracle database](images/oracle-database.png " ")
 2. Click **Create Autonomous Database**
 	![ATP-config-1](images/ATP-config-1.png " ")

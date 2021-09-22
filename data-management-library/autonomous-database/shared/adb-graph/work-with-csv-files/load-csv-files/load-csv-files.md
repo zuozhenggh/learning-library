@@ -3,7 +3,7 @@
 ## Introduction
 
 In this lab you will load two CSV files into corresponding tables using the Database Actions interface of your 
-Autonomous Data Warehouse - Shared Infrastructure (ADW) or Autonomous Transaction Processing - Shared Infrastructure (ATP) instance.
+Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
 
 The following video shows the steps you will execute in this lab.
 
@@ -20,34 +20,34 @@ Learn how to
 
 ### Prerequisites
 
-- The following lab requires an Autonomous Database - Shared Infrastructure account. 
-- It assumes that a Graph and Web-Access enabled user has been created. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
+- The following lab requires an Oracle Autonomous Database account. 
+- It assumes that a Graph and Web-Access enabled user exists. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
 
 
 ## Task 1: Connect to the Database Actions for your Autonomous Database instance
 
-1. Open the service detail page for your Autonomous Database instance in the OCI console.  
+1. Open the service detail page for your Autonomous Database instance in the Oracle Cloud Console.  
 
    ![ALT text is not available for this image](images/../../query-graph/images/adb-details-page.png " ")  
 
-2. Click on the Tools tab and then the Database Actions link to open it.
+2. Click the Tools tab and then the Database Actions link to open it.
    ![ALT text is not available for this image](images/adb-details-page-yyz.png " ")
 
 ## Task 2: Login as the graph-enabled user
 
-1. Login as the graph user (e.g. `GRAPHUSER`) for your Autonomous Database instance. 
+1. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
 
     **Note:** If necessary, do the following to create the user with the right roles and privileges:
     - Log in to Database Actions as the ADMIN user for your Autonomous Database.
     - Select Administration and then Database Users from the navigation menu
-    - Click on Create User
+    - Click Create User
     - Turn on the Web-Access and Graph buttons
 
 ## Task 3: Download the sample datasets from the ObjectStore
 
-1. Copy and paste the url in your browser for the zip archive, i.e.  
+1. Copy and paste the url in your browser for the zip archive, that is  
 
     ```
     <copy>
@@ -56,7 +56,7 @@ Learn how to
     ```
 
    Or use `wget` or `curl` to download the sample data to you computer.   
-   A sample `curl` request that you can copy and paste is:
+   An example `curl` request that you can copy and paste is:
     ```
     <copy>
     curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
@@ -67,19 +67,19 @@ Learn how to
 
 ## Task 4: Upload using Database Actions Data Load
 
-1. Click on the Data Load card. 
+1. Click the Data Load card. 
    
    ![ALT text is not available for this image](images/db-actions-dataload-card.png " ")
    
-   Then specifcy the location of your data. That is, make sure the Load Data and the Local File cards are checked. Click `Next`.
+   Then specifcy the location of your data. That is, make sure the Load Data and the Local File cards have a check mark. Click `Next`.
 
    ![ALT text is not available for this image](./images/db-actions-dataload-location.png)
 
-2. Click on `Select Files`.
+2. Click `Select Files`.
    
       ![ALT text is not available for this image](images/db-action-dataload-file-browser.png " ") 
 
-    Navigate to the correct folder (e.g. ~/downloads/random-acct-data) and select the bank_account.csv and the bank_txns.csv file.
+    Navigate to the correct folder (for example, ~/downloads/random-acct-data) and select the bank_account.csv and the bank_txns.csv file.
 
     ![ALT text is not available for this image](./images/db-actions-dataload-choose-files.png " ")
 
@@ -101,7 +101,7 @@ Learn how to
 6. Now open the SQL Worksheet.
    ![ALT text is not available for this image](./images/db-actions-choose-sql-card.png " ")
 
-7. Navigate to the correct folder (e.g. ~/downloads) and select the `fixup.sql` file and drag and drop it into the SQL worksheet. 
+7. Navigate to the correct folder (for example, ~/downloads) and select the `fixup.sql` file and drag it into the SQL worksheet. 
    
    ![ALT text is not available for this image](./images/db-actions-drag-drop-fixup-sql.png " ")  
 
@@ -133,13 +133,13 @@ Learn how to
    - Adds a primary key constraint to the `bank_txns` table.
    - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`.
    - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts_acct_id`.  
-   - Helps you verify that the `txn_id` column was added and the cosntraints defined.
+   - Helps you verify that the addition of a `txn_id` column and the constraints.
 
 
 8. Execute the `fixup.sql` script in the SQL worksheet.  
    ![ALT text is not available for this image](./images/db-actions-sql-execute-fixup.png " ")  
    
-9. The script output should look as as follows:
+9. The script output should look as follows:
    
    ![ALT text is not available for this image](./images/db-actions-sql-script-output.png " ")
   
