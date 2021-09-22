@@ -13,7 +13,6 @@ In this lab we will review and startup all components required to successfully r
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
@@ -119,7 +118,7 @@ This lab assumes you have:
 
 ### **Generate SSH Keys**
 
-1. From your remote desktop session, open a terminal window run the following to generate the key pair
+1. From your remote desktop session, open a terminal window and run the following to generate the key pair
 
     ```
     <copy>
@@ -128,7 +127,7 @@ This lab assumes you have:
     </copy>
     ```
 
-2. Accept defaults for file and passphrase by press *Enter* three times to create a key with no passphrase.
+2. Accept defaults for file and passphrase by pressing *Enter* three times to create a key with no passphrase.
 
     ![](images/ssh-key-gen.png " ")
 
