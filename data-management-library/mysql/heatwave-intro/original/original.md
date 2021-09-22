@@ -308,7 +308,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
 
  Enter the following command at the prompt:
      ```
-    <copy>\SQL</copy>
+    <copy>\sql</copy>
     ```
  To display a list of databases, Enter the following command at the prompt:
       ```
