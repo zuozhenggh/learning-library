@@ -64,7 +64,7 @@ Create a PDB named PDB19 to act as the recovery catalog database. This database 
     $ <copy>$HOME/labs/19cnf/create_PDB19_in_CDB1.sh</copy>
     ```
 
-2. Run the `glogin.sh` shell script to format all of the columns selected in queries.
+2. Run the `glogin.sh` shell script to format all the columns selected in queries.
 
     ```
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
@@ -111,7 +111,7 @@ In PDB19, create a recovery catalog owner named `catowner` and grant it privileg
 
 ## Task 4: Create the recovery catalog in the recovery catalog database with RMAN and register CDB1
 
-Create a virtual private catalog (VPC), also referred to simply as "recovery catalog", in PDB19 for users and databases. Register CDB1 in the recovery catalog.
+Create a virtual private catalog (VPC), also referred to simply as "recovery catalog," in PDB19 for users and databases. Register CDB1 in the recovery catalog.
 
 1. Start Recovery Manager (RMAN).
 
@@ -320,7 +320,7 @@ Connect to the recovery catalog database as the `SYSTEM` user and create two VPC
 
 ## Task 8: Back up and restore PDB1
 
-RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set consists of one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance's timezone is used.  In a later task, you create a query using your tag value to find the handle value.
+RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set has the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set consists of one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance's timezone is used. In a later task, you create a query using your tag value to find the handle value.
 
 In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database as the `vpc_pdb1` user to back up and restore PDB1. Next, try to back up PDB1 as the `vpc_pdb2` user and observe what happens.
 
@@ -417,8 +417,8 @@ In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database a
 
 ## Task 9: Find the handle value that corresponds to your tag value
 
-Query the `RC_BACKUP_PIECE` view, which contains information about backup pieces. This view corresponds to the `V$BACKUP_PIECE` view.
-Each backup set contains one or more backup pieces. Multiple copies of the same backup piece can exist, but each copy has its own record in the control file and its own row in the view.
+Query the `RC_BACKUP_PIECE` view, which has information about backup pieces. This view corresponds to the `V$BACKUP_PIECE` view.
+Each backup set contains one or more backup pieces. Many copies of the same backup piece can exist, but each copy has its own record in the control file and its own row in the view.
 
 1. Connect to the recovery catalog database as the catalog owner.
 
@@ -579,4 +579,4 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 2 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 21 2021

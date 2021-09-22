@@ -6,6 +6,8 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 > ***Note:** This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
+![Diagram](images/onprem2oci.png)
+
 Estimated Lab Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
@@ -23,9 +25,9 @@ In this workshop, you will:
 
 To successfully complete this LiveLab, you must have:
 
-* An on-premises or Marketplace Oracle GoldenGate installation
-* An Oracle Cloud Infrastructure account with access to Netowrking and OCI GoldenGate services
-* Source and target databases provisioned and configured for Oracle GoldenGate (source) and OCI GoldenGate (target)
+* An on-premises or [Marketplace Oracle GoldenGate installation](https://docs.oracle.com/en/middleware/goldengate/core/21.1/oggmp/oracle-goldengate-microservices-oracle-cloud-marketplace.html)
+* An Oracle Cloud Infrastructure account with [access to Networking and OCI GoldenGate services](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/getting-started-goldengate.html#GUID-F85CADD5-48A0-4B38-B8CB-C45C6D4F4361)
+* Supported source and target databases provisioned and configured for [Oracle GoldenGate](https://www.oracle.com/technetwork/middleware/ogg-21-1-0-0-0-cert-matrix-7503910.xls) (source) and [OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html#GUID-384772C7-B327-420C-B6AA-B6CEA727322F) (target)
 
 > ***Note:** If you have a **Free Trial** account, your Free Trial automatically converts to an **Always Free** account when your Free Trial expires. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)*
 

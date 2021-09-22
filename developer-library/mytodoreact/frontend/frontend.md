@@ -1,26 +1,26 @@
-# Deploy the Application Frontend (React JS)
+# Deploy the Frontend React JS Application
 
 ## Introduction
 
-In this tutorial you will deploy a pre-built ReactJS application locally then build it for production an host it on the Oracle Cloud Infrastructure.
+In this tutorial, deploy a pre-built ReactJS application locally then build it for production and host it on the Oracle Cloud Infrastructure (OCI).
 
 Estimated time: 15-minutes
 
 ### Understand the ReactJS Application
 
-The application is simple; it uses "functional components" with "state hooks" for managing states. There is a main component called "App", which renders another component called "NewItem" and two tables of todo items: the active ones and the completed ones. The "NewItem" component displays the text field for adding a new item.
+The application is simple; it uses "functional components" with "state hooks" for managing states. There is a main part called "App", which renders another part called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" part displays the text field for adding a new item.
 
-The App component includes the items state ([]) which contains the list of todo items. When setItems is called with a new array of items, the component will re-render.
+The App part includes the items state ([]) which contains the list of todo items. When setItems is called with a new array of items, the part will re-render.
 
-The App component also maintains the following states:
+The App part also maintains the following states:
 
-- "isLoading" is true when waiting for the backend to return the list of items. We use this state to display a spinning wheel while loading.
+- "isLoading" is true when waiting for the Java tier to return the list of items. We use this state to display a spinning wheel while loading.
 
-- "isInserting" is true when waiting for the backend to process a newly inserted item. The **Add** button will display a spinning wheel during this time.
+- "isInserting" is true when waiting for the Java tier to process a newly inserted item. The **Add** button will display a spinning wheel during this time.
 
 - "error" stores the error messages received during the API calls.
 
-The index.css file contains all the styles for the application.
+The index.css file has all the styles for the application.
 
 ### Objectives
 
@@ -32,7 +32,7 @@ In this tutorial, you will:
 
 ### Prerequisites
 
-1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend   Docker Image to Kubernetes**
+1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend  Docker Image to Kubernetes**
 
 2. Make sure the `npm` command is installed.
 
@@ -73,31 +73,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	```bash
 	<copy>npm install</copy>
 	```
-	
-4. In case of errors, try the following command:
-	
-		```
-		<copy>npm audit fix --force</copy>
-		```
-	
+
+4. In case of errors, try the following command
+
+    ```bash
+	<copy>npm audit fix --force</copy>
+	```
+
 	>**Note**: ideally, the `npm -version` should be higher than  `6.14.x`  and `node version` higher than 14.16.x 
 	
-5. If `npm` version is inferior to 6.14.x then install the latest `node` using
-		https://bit.ly/3evGlEo
+5. If `npm` version is inferior to 6.14.x then install the latest `node` using https://bit.ly/3evGlEo
 
 6. Update API_LIST in API.js:
-6.1. Navigate to the `frontend/src` directory
-		```bash
+	\* Navigate to the `frontend/src` directory
+		```bash 
 		<copy>cd frontend/src</copy>
 		```
-6.2. In the Oracle Cloud Console, navigate to **Developer Services** and select **API Management**
-6.3. Click your gateway and go to **Deployment**.
-6.4. Copy the endpoint.
-6.5. Paste the endpoint as the value of API_LIST and append **/todolist**.
+	\* In the Oracle Cloud Console, navigate to **Developer Services** and select **API Management**
+	\* Click your gateway and go to **Deployment**.
+	\* Copy the endpoint.
+	\* Paste the endpoint as the value of API_LIST and append **/todolist**.
 
-		For example, const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
+	**For Example** const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
-6.6. Save the modified API.js file.
+7. Save the modified API.js file.
 
 ## Task 2: Run in Dev Mode then Build for Production
 
@@ -110,21 +109,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 > **Note**
-    - The page will reload if you make edits.<br />
-    - You will also see any lint errors in the console.
+	- The page will reload if you make edits.<br />
+	- You will also see any lint errors in the console.
 
 3. Cancel the developer mode execution and build the app for production into the `build` folder.<br />
 
-	3.1. Press **Ctrl-c** to cancel the developer mode executions.
+	\* Press **Ctrl-c** to cancel the developer mode executions.
 
-	3.2. Execute `npm run build`.
+	\* Execute `npm run build`
 
-		```bash
-		<copy>npm run build</copy>
-		```
+	```bash
+	<copy>npm run build</copy>
+	```
+
 	 `npm` correctly bundles React in production mode (in the build folder) and optimizes the build for best performance.
 
-    	![run build](images/Run-build.png " ")
+	![run build](images/Run-build.png " ")
 
 	The build is minified and the file name include the hashes.<br />
 	Your app is ready to be deployed!
@@ -141,29 +141,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
    bucket while preserving folder hierarchies.
 
-	3.1. Execute `git clone https://github.com/maxjahn/staci.git`.
+	\* Execute `git clone https://github.com/maxjahn/staci.git`.
 
-		```bash
-		<copy>git clone https://github.com/maxjahn/staci.git</copy>
-		```
+	```bash
+	<copy>git clone https://github.com/maxjahn/staci.git</copy>
+	```
 
-	3.2. Navigate to the **staci** directory
+	\* Navigate to the **staci** directory
 
-		```bash
-		<copy>cd staci</copy>
-		```
+    ```bash
+    <copy>cd staci</copy>
+     ```
 
-	3.3. Execute `go get -d`.
+	\* Execute `go get -d`.
 
-		```bash
-		<copy>go get -d</copy>
-		```
+     ```bash
+     <copy>go get -d</copy>
+     ```
 
-	3.4. Execute `go build`.
+	\* Execute `go build`.
 
-		```bash
-		<copy>go build</copy>
-		```
+    ```bash
+    <copy>go build</copy>
+    ```
 
 4. Upload a static build into the bucket, using the staci binary.
 
@@ -175,11 +175,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 5. Click the index.html object and copy its URL.
 
-    ![bucket index](images/bucket-index.png " ")
+	![bucket index](images/bucket-index.png " ")
 
 You may now run the application from OCI Object Store, using the URL of the index that you've copied above.
 
-    ![MyToDo](images/MyToDo.png " ")
+![MyToDo](images/MyToDo.png " ")
 
 
 ## Acknowledgements
