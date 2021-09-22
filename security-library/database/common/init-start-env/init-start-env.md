@@ -90,6 +90,7 @@ This lab assumes you have:
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
+
         ```
         <copy>
         sudo systemctl restart oracle-database
