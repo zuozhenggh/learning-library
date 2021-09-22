@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy the Oracle Service Operator on Kubernetes",
+    "workshoptitle": "Deploy the Oracle Service Operator on Kubernete",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -11,8 +11,8 @@
             "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision the Infrastructure using Resource Manager",
-            "filename": "../../../labs/oci-devops-oke/deploy-infra/deploy-infra.md"
+            "title": "Lab 1: Deploy OKE Cluster",
+            "filename": "../../../labs/oracle-service-operator-kubernetes/OKE/Create-oke-cluster.md"
         },
         {
             "title": "Lab 2: Continuous Deployment with OCI DevOps Pipeline",
