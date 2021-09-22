@@ -1,11 +1,11 @@
 # Prepare Your Environment
 
 ## Introduction
-Use Resource Manager in Oracle Cloud Infrastructure (OCI) to quickly deploy the following two compute instances for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access via a browser.
+Use Resource Manager in Oracle Cloud Infrastructure (OCI) to deploy the following two compute instances for this workshop. Both compute instances have an easy-to-use noVNC desktop, which you can access through a browser.
 - `workshop-staged` - You use this compute instance only during the lab called **Install Oracle Database 19c with Automatic Root Script Execution**. If you are not going to do this lab, you can skip Task 2.
-- `workshop-installed` - You use this compute instance for all of the other labs.
+- `workshop-installed` - You use this compute instance for all the other labs.
 
-To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stacks for this workshop to ensure that you have all of the proper connectivity required to access your compute instances and run the applications. If you accept, then you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
+To create each compute instance, you create and apply a stack in Resource Manager. A stack is a collection of Oracle Cloud Infrastructure resources corresponding to a given Terraform configuration. A Terraform configuration is a set of one or more TF files written in HashiCorp Configuration Language (HCL) that specify the Oracle Cloud Infrastructure resources to create. Oracle highly recommends that you let Resource Manager create a new VCN for you when creating the stacks for this workshop to ensure that you have all the proper connectivity required to access your compute instances and run the applications. If you accept, then you can skip Task 1. If you choose to use one of your own existing VCNs, be sure that your VCN has a public subnet and a routing table configured with an Internet Gateway. Your VCN also requires several security rules, which are covered in Task 1.
 
 
 Estimated Time: 30 minutes
@@ -115,13 +115,13 @@ To be able to access your compute instances, you need to configure egress and in
 
     Consider the following when selecting a shape:
 
-    - If you are still within your free trial period, Oracle recommends that you select the **VM.Standard.E2.2** or **VM.Standard2.1** shape. The VM.Standard.E2.2 shape comes with 2 OCPUs and 16GB of RAM. The VM.Standard2.1 shape comes with 1 OCPU and 15GB of RAM. Both shapes are sufficient to run the **Install Oracle Database 19c with Automatic Root Script Execution** lab.
+    - If you are still within your free trial period, Oracle recommends that you select the **VM.Standard.E2.2** or **VM.Standard2.1** shape. The VM.Standard.E2.2 shape comes with 2 OCPUs and 16GB of RAM. The VM.Standard2.1 shape comes with 1 OCPU and 15GB of RAM. Both shapes are enough to run the **Install Oracle Database 19c with Automatic Root Script Execution** lab.
     - If you are using a paid Oracle Cloud account, Oracle recommends that you select a shape that has 1 OCPU and 16GB of RAM or more. The default is the **VM.Standard.E4.Flex** shape with **1** OCPU, which provides 16GB of RAM. If you change the shape, be sure that you have enough quota available in your tenancy.
 
     Consider the following when configuring the VCN:
 
     - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended).
-    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
+    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN must have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
 
 
     ![Options Section for workshop-staged](images/options-workshop-staged.png "Options Section for workshop-staged")
@@ -142,11 +142,11 @@ To be able to access your compute instances, you need to configure egress and in
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` address and copy it to the clipboard. Don't include the double-quotation marks. The address syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-staged](images/image-url-workshop-staged.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-staged` compute instance and wait between 30 and 60 seconds.
+14. In a browser, paste the address to your `workshop-staged` compute instance and wait between 30 and 60 seconds.
 
     You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
 
@@ -193,7 +193,7 @@ To be able to access your compute instances, you need to configure egress and in
     Consider the following when configuring the VCN:
 
     - Leave the **Use Existing VCN** check box deselected if you want Resource Manager to create a VCN for you (recommended). The VCN created for the `workshop-installed` compute instance has the exact same configuration as the VCN created for the `workshop-staged` compute instance. If you don't want to create two VCNs for this workshop, you can reuse the `workshop-staged` VCN. To do so, select **Use Existing VCN**, and then select the VCN and public subnet for your `workshop-staged` compute instance.
-    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN needs to have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
+    - You can also use your own VCN. To do so, select **Use Existing VCN**, and then select your VCN and public subnet. Your VCN must have a public subnet and a routing table configured with an Internet Gateway. It also requires egress and ingress security rules, which are specified in Task 1 above. Your VCN needs to reside in the compartment that you selected in the **Stack Information** section.
 
     ![Options Section for workshop-installed](images/options-workshop-installed.png "Options Section for workshop-installed")
 
@@ -213,11 +213,11 @@ To be able to access your compute instances, you need to configure egress and in
 
     Resource Manager starts provisioning your compute instance and the **Job Details** page is displayed. You can monitor the progress of the job by viewing the details in the log. The job is finished when the state reads **Succeeded**. Please allow 5 minutes for the job to complete.
 
-13. Scroll down to the end of the log. Locate the `remote-desktop` URL and copy it to the clipboard. Don't include the double-quotation marks. The URL syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
+13. Scroll down to the end of the log. Locate the `remote-desktop` address and copy it to the clipboard. Don't include the double-quotation marks. The address syntax is `http://[your instance public-ip address]:6080/vnc.html?password=[encrypted password]&resize=scale&quality=9&autoconnect=true`.
 
     ![Image URL for workshop-installed](images/image-url-workshop-installed.png "Image URL for workshop-staged")
 
-14. In a browser, paste the URL to your `workshop-installed` compute instance and wait between 30 and 60 seconds.
+14. In a browser, paste the address to your `workshop-installed` compute instance and wait between 30 and 60 seconds.
 
     You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
 
@@ -234,4 +234,4 @@ To be able to access your compute instances, you need to configure egress and in
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 21 2021
