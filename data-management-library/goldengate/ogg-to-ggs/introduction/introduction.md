@@ -6,6 +6,8 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 > ***Note:** This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
+![Diagram](images/onprem2oci.png)
+
 Estimated Lab Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
