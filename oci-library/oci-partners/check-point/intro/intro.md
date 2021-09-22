@@ -37,7 +37,7 @@ Estimated time: 120 minutes
       - **CloudGuard Security Management**
       - **CloudGuard Next-Gen Firewall with Threat Prevention and SandBlast**
 
-#### Let's get Started!
+Let's get Started!
 
 ## Learn More
 
