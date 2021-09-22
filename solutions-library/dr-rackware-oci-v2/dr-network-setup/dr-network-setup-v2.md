@@ -9,7 +9,7 @@ Estimated Lab Time 45-60 minutes
 - Deploy Terraform to setup necessary architecture for DR
 
 ### Prerequisites
-1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/EI0RqkgDQsid-sm5OQP2Z-rzJAHXboftWh0HrWii2duBC8WRaBYF4CglkFkt3mQ3/n/c4u04/b/solutions-library/o/DR-ORDS-RW-master.zip) to your local machine.
+1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/XzWxNNUoR62Pbz5Gz8ujnpHxYOzd9GCeIShyHJ33R8tNp8HSAu0ZKR5XWkKAeP6x/n/c4u04/b/solutions-library/o/DR-ORDS-RW-master.zip) to your local machine.
 
 2.  Create your own private/public key pair on your local system.
 3.  Zip up all of the files in to a zip folder. The zip file name is not important.
