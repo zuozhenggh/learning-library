@@ -1,4 +1,4 @@
-## Example 1: Diversity & Inclusion
+## Task 3: Diversity & Inclusion
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
