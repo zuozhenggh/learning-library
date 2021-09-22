@@ -16,8 +16,8 @@ Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous 
 <!-- *List objectives for this lab using the format below* -->
 
 In this lab, you will learn how to:
-* Create a temporary table using the oml.push function
-* Create a persistent table using the oml.create function
+* Create a temporary table using the `oml.push` function
+* Create a persistent table using the `oml.create` function
 * Create a proxy object from a table
 * Explore the data
 *	Prepare the data
@@ -121,7 +121,7 @@ z.show(IRIS.head(10))
 The output is as follows:
 ![Image alt text](images/pic2.png)
 
-## Task 2: Create a Proxy Object For a Database Object
+## Task 3: Create a Proxy Object For a Database Object
 Use the `oml.sync` function to create a Python object as a proxy for a database table. The `oml.sync` function returns an `oml.DataFrame` object or a dictionary of `oml.DataFrame` objects. The `oml.DataFrame` object returned by `oml.sync` is a proxy for the database object.  
 ```
 <copy>
@@ -134,7 +134,7 @@ z.show(DEMO.head())
 In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table.
 ![Image alt text](images/pic3.png)
 
-## Task 3: Explore the Data
+## Task 4: Explore The Data
 In this example, use describe, shape and crosstab functions to explore and view the data.
 1. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the DEMO table in each numeric column. A few rows of the output are displayed using the `z.show` function.
 	```
@@ -173,7 +173,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	</copy>
 	```
 	![Images alt text](/images/pic6.png)
-## Task 4: Prepare the Data
+## Task 5: Prepare The Data
 In this step, you will create a `DEMO_DF` dataframe, select the necessary columns for further analysis, display a few rows of the `DEMO_DF` dataframe, and split your data into TRAIN and TEST sets.
 1. Use the DEMO proxy object to create a new proxy object `DEMO_DF` by selecting the necessary columns. Run the following script:
 	```
@@ -185,7 +185,7 @@ In this step, you will create a `DEMO_DF` dataframe, select the necessary column
 	 "PRINTER_SUPPLIES", "YRS_RESIDENCE", "Y_BOX_GAMES"]]
 	 </copy>
 	```
-2. To display the first few records of DEMO_DF, run the following script:
+2. To display the first few records of `DEMO_DF`, run the following script:
 	```
 	<copy>
 	%python
@@ -206,8 +206,8 @@ In this step, you will create a `DEMO_DF` dataframe, select the necessary column
 	TEST_Y = TEST['AFFINITY_CARD']
 	</copy>
 	```
-## Task 5: Build Your model
-Use the oml.dt class to build a Decision Tree model. You can build a model with default settings or specify custom model settings.
+## Task 6: Build Your Model
+Use the `oml.dt` class to build a Decision Tree model. You can build a model with default settings or specify custom model settings.
 1. To build a Decision Tree model with the default settings, run the following script:
 	```
 	<copy>
@@ -354,7 +354,7 @@ Use the oml.dt class to build a Decision Tree model. You can build a model with 
 * `TREE_TERM_MINREC_SPLIT`: Specifies the criteria for splits: minimum number of records in a parent node expressed as a value. No split is attempted if the number of records is below this value. The default value is 20.
 * `CLAS_MAX_SUP_BINS`: Specifies the maximum number of bins for each attribute. The default value is 32.
 
-## Task 6: Evaluate Your model
+## Task 7: Evaluate Your model
 To evaluate your model you need to score the test data and then evaluate the model using various metrics.
 1. In this step, you will make predictions on the test case and add the `CASE_ID` as a supplement column so that you can uniquely associate scores with the original data. To do so run the below script.
 	```
@@ -564,7 +564,7 @@ Here is a custom script to generate the metrics and charts as described above. R
 	```
 	You obtain an accuracy of 0.824789 or approximately 82.5% of the result are correctly predicted.
 
-## Task 7: Score Your model
+## Task 8: Score Your Model
 After building and evaluating the model, you will now score the data.
 1. You can score new data using that model (`dt_mod`) using the predict function. Also, you'll reuse the test data to illustrate it.
 	```
@@ -590,7 +590,7 @@ After building and evaluating the model, you will now score the data.
 	![Images alt text](/images/pic11.png)
 
 In this example, you successfully classified customers who are most likely to be positive responders to an Affinity Card loyal program. You build and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
-
+<!--
 ## For More information
 OML4Py enables data scientists to run their own defined function along with various expertise for making the machine learning models and predictions more significant. Given below are some of the functionality that OML4Py offers:
 1. [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-embedded-python-execution.html#GUID-A15F3A62-736A-4276-83F2-7C54BE026639)
@@ -599,7 +599,7 @@ OML4Py enables data scientists to run their own defined function along with vari
 2. [Automated Machine Learning (Auto ML)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-automl.html#GUID-9F514C2B-1772-4073-807F-3E829D5D558C)
 	AutoML provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
 3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C)
-	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
+	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction. -->
 
 <!-- ## Task 2: Concise Step Description
 
@@ -634,11 +634,20 @@ OML4Py enables data scientists to run their own defined function along with vari
   ``` -->
 
 ## Learn More
-
+<!--
 *(optional - include links to docs, white papers, blogs, etc)*
 
 * [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [URL text 2](http://docs.oracle.com) -->
+
+OML4Py enables data scientists to run their own defined function along with various expertise for making the machine learning models and predictions more significant. Given below are some of the functionality that OML4Py offers:
+1. [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-embedded-python-execution.html#GUID-A15F3A62-736A-4276-83F2-7C54BE026639)
+	OML4Py Embedded Python Execution provides users the ability to invoke user-defined Python functions in one or more Python engines spawned and managed by the Oracle database environment.
+
+2. [Automated Machine Learning (Auto ML)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-automl.html#GUID-9F514C2B-1772-4073-807F-3E829D5D558C)
+	AutoML provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
+3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C)
+	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
