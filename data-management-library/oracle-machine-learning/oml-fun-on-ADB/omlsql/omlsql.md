@@ -126,18 +126,18 @@ To build a model using the time series data, you will use Exponential Smoothing 
     BEGIN
 
          v_setlst('ALGO_NAME')            := 'ALGO_EXPONENTIAL_SMOOTHING';
-          v_setlst('EXSM_INTERVAL')        := 'EXSM_INTERVAL_QTR'; -- accumulation int'l = quarter
-          v_setlst('EXSM_PREDICTION_STEP') := '4';                 -- prediction step = 4 quarters
-          v_setlst('EXSM_MODEL')           := 'EXSM_WINTERS';      -- ESM model = Holt-Winters
-          v_setlst('EXSM_SEASONALITY')     := '4';                 -- seasonal cycle = 4 quarters   
-
-          DBMS_DATA_MINING.CREATE_MODEL2(
-              MODEL_NAME          =\>ESM_SALES_FORECAST_1',
-              MINING_FUNCTION     =\>''TIME_SERIES',
-              DATA_QUERY          =\>''select * from ESM_SH_DATA',
-              SET_LIST            =\>'v_setlst,
-              CASE_ID_COLUMN_NAME =\>''TIME_ID',
-              TARGET_COLUMN_NAME  =\>''AMOUNT_SOLD');
+         v_setlst('EXSM_INTERVAL')        := 'EXSM_INTERVAL_QTR'; -- accumulation int'l = quarter
+         v_setlst('EXSM_PREDICTION_STEP') := '4'; -- prediction step = 4 quarters
+         v_setlst('EXSM_MODEL')           := 'EXSM_WINTERS';  -- ESM model = Holt-Winters
+         v_setlst('EXSM_SEASONALITY')     := '4'; -- seasonal cycle = 4 quarters   
+&nbsp;
+         DBMS_DATA_MINING.CREATE_MODEL2(
+            MODEL_NAME          => 'ESM_SALES_FORECAST_1',
+            MINING_FUNCTION     => 'TIME_SERIES',
+            DATA_QUERY          => 'select * from ESM_SH_DATA',
+            SET_LIST            => v_setlst,
+            CASE_ID_COLUMN_NAME => 'TIME_ID',
+            TARGET_COLUMN_NAME  =>'AMOUNT_SOLD');
     END;
     </copy>
     ```
@@ -152,7 +152,7 @@ The output is as follows:
     Examine the script:
     - `v_setlist` is a variable to store `SETTING_LIST`.
     - `SETTING_LIST` specifies model settings or hyperparameters for the model.
-    - `DBMS_DATA_MINING` is the PL/SQL package used for machine learning. These settings are described in `DBMS_DATA_MINING` - Model Settings.
+    - `DBMS_DATA_MINING` is the PL/SQL package used for machine learning. These settings are described in [`DBMS_DATA_MINING — Algorithm Settings: Exponential Smoothing`](https://docs.oracle.com/en/database/oracle/oracle-database/21/arpls/DBMS_DATA_MINING.html#GUID-A95A0A38-8A5A-4470-B49F-80D81C588BFC).
     - `ALGO_NAME` specifies the algorithm name. Since you are using Exponential Smoothing as the algorithm, the value of the setting is `ALGO_EXPONENTIAL_SMOOTHING`.
     - `EXSM_INTERVAL` indicates the interval of the data set or a unit of interval size. For example, day, week, month, and so on. You want to predict for quarterly sales. Hence, the setting is `EXSM_INTERVAL_QTR`. This setting applies only to the time column with datetime type.
     - `EXSM_PREDICTION_STEP` specifies how many predictions to make. You want to display each value representing a quarter. Hence, a value of 4 gives four values ahead prediction.
@@ -169,8 +169,9 @@ The output is as follows:
     - `TARGET_COLUMN_NAME`: Specifies the column that is to be predicted. Also referred to as the target variable of the model. In other words, the value the model predicts. In this example, you are predicting the sale of products in terms of their dollar price. Therefore, in this example, the `TARGET_COLUMN_NAME` is `AMOUNT_SOLD`.
     >**Note:** Any parameters or settings not specified are either system-determined or default values are used.
 
+
 ## Task 4: Evaluate Your Model
-Evaluate your model by viewing diagnostic metrics and performing quality checks. To obtain more insights about the model and view model settings, you can query data dictionary views and model detail views. Specific model detail views display model statistics which can help you evaluate the model. Model detail views are specific to the algorithm. The names of model detail views begin with DM$xx where xx corresponds to the view prefix. See Model Detail Views.
+Evaluate your model by viewing diagnostic metrics and performing quality checks. To obtain more insights about the model and view model settings, you can query data dictionary views and model detail views. Specific model detail views display model statistics which can help you evaluate the model. Model detail views are specific to the algorithm. The names of model detail views begin with DM$xx where xx corresponds to the view prefix. See [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC).
 1. You can review the model settings by running the following query:
 
     ```
@@ -288,6 +289,6 @@ This completes the prediction step. The model has successfully forecast sales fo
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation
+* **Contributors** -  Mark Hornick, Group
+* **Last Updated By/Date** - <Sarika Surampudi, October 2021>
