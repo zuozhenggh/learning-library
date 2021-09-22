@@ -47,7 +47,7 @@ This lab assumes that you completed all preceding labs.
 
 5.  From the Compartment dropdown, select a compartment.
 
-6.  For OCPU Count, enter **2**.
+6.  For OCPU Count, enter **1**.
 
 7.  For Subnet, select **&lt;user&gt;pubsubnt**.
 
