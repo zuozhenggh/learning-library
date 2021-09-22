@@ -1,10 +1,10 @@
-# Modern Application Development with Oracle REST Data Services - Creating and auto-REST enable a Table
+# Modern Application Development with Oracle REST Data Services - Lab 1: Create and auto-REST enable a table
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Database, create and REST enable a table.
+In this lab you will use Database Actions/SQL Developer Web to connect to your Database, create and REST enable a table.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -12,9 +12,10 @@ Estimated Lab Time: 15 minutes
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
-- Completed the [User Setups Lab](../user-setups/user_setups.md)
+This lab assumes you have completed the following labs:
+* Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
+* Lab: [Provision an Autonomous Database](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md)
+* Lab: [Connect to your Autonomous Database using Database Actions/SQL Developer Web](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md)
 
 ## Task 1: Load data into the Database
 

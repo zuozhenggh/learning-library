@@ -17,7 +17,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision.md"
         },
         {
-            "title": "Lab 2: Connect to ADB",
+            "title": "Lab 2: Connect to an Autonomous Database",
             "description": "Connect to an Autonomous Database with SQL Developer Web",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
