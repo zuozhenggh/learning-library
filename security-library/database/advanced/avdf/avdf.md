@@ -56,23 +56,23 @@ This lab assumes you have:
 
 2. Go to the scripts directory
 
-      ````
-      <copy>cd $DBSEC_LABS/avdf/avs</copy>
-      ````
+    ````
+    <copy>cd $DBSEC_LABS/avdf/avs</copy>
+    ````
 
 3. First, unpack the **avcli.jar** utility to install the Audit Vault Command Line Interface (avcli) so we can automate most of the Agent, host, and Audit Trail deployment
 
-      ````
-      <copy>./avs_deploy_avcli.sh</copy>
-      ````
+    ````
+    <copy>./avs_deploy_avcli.sh</copy>
+    ````
 
     ![](./images/avdf-001.png " ")
 
 4. Next, we will use avcli to register the host, dbsec-lab, with Audit Vault. You will see that the commands being run are stored in the `avcli_register_host.av` file. In this step you will see a activation key. **Record this Activation Key for use later in the lab!**
 
-      ````
-      <copy>./avs_register_host.sh</copy>
-      ````
+    ````
+    <copy>./avs_register_host.sh</copy>
+    ````
 
     ![](./images/avdf-002.png " ")
 
@@ -80,9 +80,9 @@ This lab assumes you have:
 
 5. Next, we will deploy the Audit Vault Agent
 
-      ````
-      <copy>./avs_deploy_agent.sh</copy>
-      ````
+    ````
+    <copy>./avs_deploy_agent.sh</copy>
+    ````
 
     ![](./images/avdf-003.png " ")
 
@@ -90,9 +90,9 @@ This lab assumes you have:
 
 6. Once deployed, we will need to activate the Audit Vault Agent
 
-      ````
-      <copy>./avs_activate_agent.sh</copy>
-      ````
+    ````
+    <copy>./avs_activate_agent.sh</copy>
+    ````
 
     ![](./images/avdf-004.png " ")
 
@@ -102,9 +102,9 @@ This lab assumes you have:
 
 7. As a final step, we will verify that the dbsec-lab host has been properly registered and is activated with Audit Vault
 
-      ````
-      <copy>./avs_show_host.sh</copy>
-      ````
+    ````
+    <copy>./avs_show_host.sh</copy>
+    ````
 
     ![](./images/avdf-005.png " ")
 
@@ -114,13 +114,13 @@ This lab assumes you have:
 
 1. Use the avcli utility to register the pluggable database **pdb1** as an AV target (the password asked here is "*`Oracle123`*")
 
-      ````
-      <copy>./avs_register_pdb.sh</copy>
-      ````
+    ````
+    <copy>./avs_register_pdb.sh</copy>
+    ````
 
-      ````
-      <copy>Oracle123</copy>
-      ````
+    ````
+    <copy>Oracle123</copy>
+    ````
 
     ![](./images/avdf-006.png " ")
 
@@ -132,37 +132,37 @@ This lab assumes you have:
 
 1. First, use the avcli utility to register the Unified Audit Trail for the pluggable database **pdb1** to collect audit data
 
-      ````
-      <copy>./avs_register_audit_trail.sh</copy>
-      ````
+    ````
+    <copy>./avs_register_audit_trail.sh</copy>
+    ````
 
     ![](./images/avdf-007.png " ")
 
 2. Next, list the Audit Trails for the pluggable database **pdb1**
 
-      ````
-      <copy>./avs_list_audit_trails.sh</copy>
-      ````
+    ````
+    <copy>./avs_list_audit_trails.sh</copy>
+    ````
 
     ![](./images/avdf-008.png " ")
 
-      **Note**:
-      - You should see one row returned for the Unified Audit Trail
-      - The `STATUS` column should say **COLLECTING** or **IDLE**
-      - If it says something else please run the script again and verify it changes state
+    **Note**:
+    - You should see one row returned for the Unified Audit Trail
+    - The `STATUS` column should say **COLLECTING** or **IDLE**
+    - If it says something else please run the script again and verify it changes state
 
 3. Using the Audit Vault Web Console view audit data collected via the All Activity Report
 
     - On the right browser window preload with the Audit Vault Web Console, login with the credentials below. If the tab has been closed, open a new one and navigate to:
     - Login to Audit Vault Web Console as *`AVAUDITOR`* with the password "*`T06tron.`*" (keep it open for the rest of the lab)
 
-      ````
-      <copy>AVAUDITOR</copy>
-      ````
+    ````
+    <copy>AVAUDITOR</copy>
+    ````
 
-      ````
-      <copy>T06tron.</copy>
-      ````
+    ````
+    <copy>T06tron.</copy>
+    ````
 
     ![](./images/avdf-300.png " ")
 
@@ -180,7 +180,7 @@ This lab assumes you have:
 
     ![](./images/avdf-010b.png " ")
 
-      **Note**:
+    **Note**:
       - This was just a small example to verify that audit data was being collected and is visible in Audit Vault
       - There will be more detailed report generation labs later in the workshop
 
@@ -231,17 +231,17 @@ You will retrieve and provision the Unified Audit settings for the **pdb1** plug
 
     - Go back to your Terminal session and list **ALL** the Unified Audit Policies in **pdb1**
 
-          ````
-          <copy>./avs_query_all_unified_policies.sh</copy>
-          ````
+    ````
+    <copy>./avs_query_all_unified_policies.sh</copy>
+    ````
 
     ![](./images/avdf-014.png " ")
 
     - Next, show the **enabled** Unified Audit policies
 
-          ````
-          <copy>./avs_query_enabled_unified_policies.sh</copy>
-          ````
+    ````
+    <copy>./avs_query_enabled_unified_policies.sh</copy>
+    ````
 
     ![](./images/avdf-015.png " ")
 
@@ -1132,9 +1132,9 @@ In this lab you will use the Glassfish Application to connect through the Oracle
 
 29. Now, go back to your Terminal session and run the same script as at the beginning to see the impact of the DB Firewall policy
 
-      ````
-      <copy>./dbf_query_fw_policy.sh</copy>
-      ````
+    ````
+    <copy>./dbf_query_fw_policy.sh</copy>
+    ````
 
 30. The output should return "**no rows selected**" for the SQL query
 
@@ -1381,9 +1381,9 @@ In this lab you will create the policy `PII Exfiltration Monitor` to monitor the
 
 25. Once the DB Firewall Alert is created, go back again to you Terminal session to generate the same SELECT commands on SQL*Plus via the proxy connection
 
-      ````
-      <copy>./dbf_exfiltrate_with_dbfw.sh</copy>
-      ````
+    ````
+    <copy>./dbf_exfiltrate_with_dbfw.sh</copy>
+    ````
 
     ![](./images/avdf-177.png " ")
 
@@ -1702,4 +1702,4 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Angeline Dhanarani, Gian, Sartor, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021

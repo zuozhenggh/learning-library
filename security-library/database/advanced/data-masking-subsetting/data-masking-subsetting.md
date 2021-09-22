@@ -646,7 +646,7 @@ This lab assumes you have:
 
 ## Task 11: Execute the Data Masking Scripts
 
-**Recommendation:** To execute the Data Masking script you will need an SSH key-pair. Do not use a putty key-pair, instead use an RSA preferably created in a Linux environment as shown below or the one from your provisioning request.
+**Recommendation:** To execute the Data Masking script you will need an SSH key-pair. Do not use a putty key-pair, instead follow the instructions below to create an RSA key-pair.
 
 ### **Generate SSH Keys**
 
@@ -1252,4 +1252,4 @@ Video
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Manish Choudhary, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
