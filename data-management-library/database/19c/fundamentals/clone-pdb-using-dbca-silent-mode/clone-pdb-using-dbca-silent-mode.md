@@ -179,6 +179,8 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 1. Run the `-createPluggableDatabase` command in DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
+    *This is the new feature!*
+
     ```
     $ <copy>dbca -silent \
     -createPluggableDatabase \
@@ -238,7 +240,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     Session altered.
     ```
 
-4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
+4. Check that PDB2 has the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -331,4 +333,4 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 2 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 21 2021

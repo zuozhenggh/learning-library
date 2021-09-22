@@ -122,7 +122,7 @@ This lab assumes you have:
 
 12. Click **Install** to begin installing the software.
 
-13. On the **Install Product** page, monitor the progress of the steps being executed.  When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes approximately 26 minutes to complete.
+13. On the **Install Product** page, monitor the progress of the steps being executed. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes about 26 minutes to complete.
 
     ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png "Run configuration scripts prompt")
 
@@ -234,7 +234,7 @@ This lab assumes you have:
     CDB$ROOT
     ```
 
-6. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The output lists three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
+6. List all the containers in the CDB by querying the `V$CONTAINERS` view. The output lists three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
 
     ```
     SQL> <copy>COLUMN name FORMAT A8</copy>
@@ -277,4 +277,4 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 21 2021
