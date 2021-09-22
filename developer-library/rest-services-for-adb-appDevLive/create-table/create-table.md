@@ -1,4 +1,4 @@
-# Modern Application Development with Oracle REST Data Services - Lab 1: Create and auto-REST enable a table
+# Modern Application Development with Oracle REST Data Services - Create and auto-REST enable a table
 
 ## Introduction
 
@@ -150,5 +150,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Brian Spendolini, September 2021
 - **Workshop Expiry Date** - May 2022
