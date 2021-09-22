@@ -34,8 +34,6 @@ This lab assumes you have:
 | 4 | Simulation Mode | 10 minutes |
 | 5 | Disable Database Vault | <5 minutes |
 
-**Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
-
 ## Task 1: Enable Database Vault
 
 Oracle Database vault comes pre-installed with your Autonomous database. In this lab we will enable Database Vault (DV), add required user accounts and create a DV realm to secure a set of user tables from privileged user access.
@@ -45,6 +43,8 @@ The HR schema contains multiple tables such as CUSTOMERS table which contains se
    ![](./images/adb-dbv_001.png " ")
 
 We start with creating the two DV user accounts - DV Owner and DV Account Manager. The DV_OWNER account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
+
+    **Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
 
 1. Open a SQL Worksheet on your **ADB Security** as *admin* user
     
@@ -197,7 +197,7 @@ A realm is a protection zone inside the database where database schemas, objects
           - HR because HR owns it
           -	ADMIN and APPUSER because they have "READ ANY TABLE" system privilege
 
-2. Now, let's create a realm to secure HR tables by executing this query below as "**DBV_OWNER**" user. So, please **open a 4th web-browser window using the "Incognito mode"!**
+2. Now, let's create a realm to secure HR tables by executing this query as "**ADMIN**" user
 
       ````
       <copy>
@@ -275,7 +275,7 @@ A realm is a protection zone inside the database where database schemas, objects
 
        - **No one can access on it with a "insufficient privileges" error, even the DBA user (ADMIN) and the owner (HR)!**
 
-5. Now, go back to your window logged as "**DBV_OWNER**" user and make sure you have an authorized application user (APPUSER) in the realm by executing this query
+5. Now, make sure you have an authorized application user (APPUSER) in the realm by executing this query as "**ADMIN**" user
 
       ````
       <copy>

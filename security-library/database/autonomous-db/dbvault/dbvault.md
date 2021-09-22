@@ -29,22 +29,23 @@ This lab assumes you have:
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Enable Database Vault | <5 minutes |
-| 2 | Create a Simple Realm | 10 minutes |
-| 3 | Audit Policy to Capture Realm Violations | 5 minutes |
-| 4 | Simulation Mode | 10 minutes |
-| 5 | Disable Database Vault | <5 minutes |
+| 2 | Enable Separation of Duties (SoD) | 5 minutes |
+| 3 | Create a Simple Realm | 10 minutes |
+| 4 | Audit Policy to Capture Realm Violations | 5 minutes |
+| 5 | Simulation Mode | 10 minutes |
+| 6 | Disable Database Vault | <5 minutes |
+
+**Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
 
 ## Task 1: Enable Database Vault
 
 Oracle Database vault comes pre-installed with your Autonomous database. In this lab we will enable Database Vault (DV), add required user accounts and create a DV realm to secure a set of user tables from privileged user access.
 
-The HR schema contains multiple tables such as CUSTOMERS table which contains sensitive information and needs to be protected from privileged users such as the schema owner (user HR) and DBA (user ADMIN). But the data in these tables should be available to the application user (user APPUSER).
+The `HR` schema contains multiple tables such as `CUSTOMERS` table which contains sensitive information and needs to be protected from privileged users such as the schema owner (user `HR`) and DBA (user `ADMIN`). But the data in these tables should be available to the application user (user `APPUSER`).
 
    ![](./images/adb-dbv_001.png " ")
 
-We start with creating the two DV user accounts - DV Owner and DV Account Manager. The DV_OWNER account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user 'ADMIN' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
-
-    **Note: In this workshop, all the Configure/Enable/Disable DV commands are only for ADB-Shared because ADB-Dedicated uses the same commands as on-premises.**
+We start with creating the two DV user accounts - DV Owner and DV Account Manager. The `DV_OWNER` account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user `ADMIN` loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
 
 1. Open a SQL Worksheet on your **ADB Security** as *admin* user
     
@@ -86,16 +87,19 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
       CREATE USER dbv_owner IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_owner;
       GRANT DV_OWNER TO dbv_owner;
+      GRANT DV_ADMIN TO dbv_owner;
       GRANT SELECT ANY DICTIONARY TO dbv_owner;
         
       -- Create dbv_acctmgr
       CREATE USER dbv_acctmgr IDENTIFIED BY WElcome_123#;
       GRANT CREATE SESSION TO dbv_acctmgr;
       GRANT DV_ACCTMGR TO dbv_acctmgr;
+      GRANT AUDIT_ADMIN to dbv_acctmgr;
 
-      -- Enable SQL Worksheet for dbv_owner user
+      -- Enable SQL Worksheet for the users just created
       BEGIN
          ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('dbv_owner'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('dbv_owner'), p_auto_rest_auth => TRUE);
+         ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('dbv_acctmgr'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('dbv_acctmgr'), p_auto_rest_auth => TRUE);
       END;
       /
       </copy>
@@ -141,7 +145,7 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
        ![](./images/adb-dbv_007.png " ")
 
-    - Once restart completes, log in to SQL Worksheet as *admin* user and verify DV is enabled
+    - Once restart completes, log in to SQL Worksheet as *`ADMIN`* user and verify DV is enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
@@ -153,14 +157,106 @@ We start with creating the two DV user accounts - DV Owner and DV Account Manage
 
 7. Now, Database Vault is enabled!
 
-## Task 2: Create a Simple Realm
+## Task 2: Enable Separation of Duties (SoD)
 
-Next we create a realm to secure the HR.CUSTOMERS table from acces by ADMIN and HR (table owner) and grant access to APPUSER only.
+In Autonomous DB, the `ADMIN` user has all privileges, including the privileges required to administer Database Vault security policies. In some cases, you may wish to separate security administration, user administration, and database administration into different accounts.
+
+In Task1 you created two new users:
+- `DBV_OWNER`, this user has the `DV_OWNER` and `DV_ADMIN` roles and can configure database vault policies
+- `DBV_ACCTMGR`, this user has the `DV_ACCTMGR` role and can create users and change user passwords
+
+In this lab we will remove the ability to create users, change user passwords, and configure database vault policies from the `ADMIN` user.
+
+1. In order to demonstrate the effects of the SoD, it's important to execute the SQL queries from the 3 DB Vault users:
+
+    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (*`ADMIN`*, *`DBV_OWNER`* and *`DBV_ACCTMGR`*) as shown in Task1 previously
+   
+       **Note:**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
+    
+             ````
+             <copy>WElcome_123#</copy>
+             ````
+
+2. Go to the SQL Worksheet as *`ADMIN`* user
+
+3. View ADMIN's roles
+
+      ````
+      <copy>SELECT * FROM session_roles ORDER BY 1;</copy>
+      ````
+
+       ![](./images/adb-dbv_101.png " ")
+
+    **Note:** Notice that ADMIN have several roles
+
+4. Create a test user *`DEMO1`*
+
+      ````
+      <copy>CREATE USER demo1;</copy>
+      ````
+
+       ![](./images/adb-dbv_102.png " ")
+
+    **Note:**
+       - Notice that `ADMIN` is able to create a user, even with Database Vault enabled
+       - This is because `ADMIN` has the DV_ACCTMGR role
+                
+5. Let's go to the SQL Worksheet as *`DBV_ACCTMGR`* and **revoke** `DV_ACCTMGR` **role from** `ADMIN` **user**
+
+      ````
+      <copy>revoke DV_ACCTMGR from ADMIN;</copy>
+      ````
+
+       ![](./images/adb-dbv_103.png " ")
+                
+6. And go to the SQL Worksheet as *`DBV_OWNER`* and **revoke** `DV_OWNER` **role from** `ADMIN` **user**
+
+      ````
+      <copy>
+      revoke DV_OWNER from ADMIN;
+      </copy>
+      ````
+
+       ![](./images/adb-dbv_104.png " ")
+                
+7. Now, go back the SQL Worksheet as *`ADMIN`* and check what happens
+
+    - Create a second test user *`DEMO2`*
+
+          ````
+          <copy>
+          CREATE USER demo2;
+          </copy>
+          ````
+
+       ![](./images/adb-dbv_105.png " ")
+                
+       **Note:** Notice that this now fails!
+
+    - Alter the user *`DEMO1`*
+
+          ````
+          <copy>
+          ALTER USER demo1 IDENTIFIED BY WElcome_123#;
+          </copy>
+          ````
+
+       ![](./images/adb-dbv_106.png " ")
+                
+       **Note:** `ADMIN` can no longer change a user's passwords!
+                
+8. Now, continue on with the lab, but use `DBV_OWNER` and `DBV_ACCTMGR` to do all database vault actions
+
+## Task 3: Create a Simple Realm
+
+Next we create a realm to secure the `HR.CUSTOMERS` table from acces by `ADMIN` and `HR` (table owner) and grant access to `APPUSER` only.
 
 A realm is a protection zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources. After you have secured these into a realm, you can use the realm to control the use of system and object privileges to specific accounts or roles. This enables you to provide fine-grained access controls for anyone who wants to use these schemas, objects, and roles.
 
 1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
-    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER) as shown in Task1 previously
+    - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (*`ADMIN`*, *`HR`* and *`APPUSER`*) as shown in Task1 previously
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
@@ -180,24 +276,24 @@ A realm is a protection zone inside the database where database schemas, objects
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user "**`ADMIN`**"
 
           ![](./images/adb-dbv_009.png " ")
 
-       - as user "**HR**"
+       - as user "**`HR`**"
 
           ![](./images/adb-dbv_010.png " ")
 
-       - as user "**APPUSER**"
+       - as user "**`APPUSER`**"
 
           ![](./images/adb-dbv_011.png " ")
 
        **Note:**
-          - **These 3 users can see the HR.CUSTOMERS table!**
-          - HR because HR owns it
-          -	ADMIN and APPUSER because they have "READ ANY TABLE" system privilege
+          - **These 3 users can see the `HR.CUSTOMERS` table!**
+          - `HR` because `HR` owns it
+          -	`ADMIN` and `APPUSER` because they have "`READ ANY TABLE`" system privilege
 
-2. Now, let's create a realm to secure HR tables by executing this query as "**ADMIN**" user
+2. Now, let's create a realm to secure `HR` tables by executing this query below as *`DBV_OWNER`* user. So, please **open a 4th web-browser window using the "Incognito mode"!**
 
       ````
       <copy>
@@ -217,14 +313,13 @@ A realm is a protection zone inside the database where database schemas, objects
       </copy>
       ````
 
-   ![](./images/adb-dbv_012.png " ")
+       ![](./images/adb-dbv_012.png " ")
  
-       **Note:**
-          - Now the Realm `PROTECT_HR` is **created as mandatory and enabled**!
-          - The difference between a mandatory vs regular realm is Regular realm blocks system privileges (and allows direct object grants) while Mandatory realm blocks direct object grants (even object owner) in addition to system privileges
+    **Note:**
+       - Now the Realm `PROTECT_HR` is **created as mandatory and enabled**!
+       - The difference between a mandatory vs regular realm is Regular realm blocks system privileges (and allows direct object grants) while Mandatory realm blocks direct object grants (even object owner) in addition to system privileges
 
-
-3. Add objects to the Realm to protect (here, the CUSTOMERS table)
+3. Add objects to the Realm to protect (here, the `CUSTOMERS` table)
 
       ````
       <copy>
@@ -251,7 +346,7 @@ A realm is a protection zone inside the database where database schemas, objects
 
 4. Check the effect of this realm
    
-      - Execute again the following query in SQL Worsheet of each the 3 users (ADMIN, HR and APPUSER)
+      - Execute again the following query in SQL Worsheet of each the 3 users (*`ADMIN`*, *`HR`* and *`APPUSER`*)
 
       ````
       <copy>
@@ -261,21 +356,21 @@ A realm is a protection zone inside the database where database schemas, objects
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user "**`ADMIN`**"
 
           ![](./images/adb-dbv_014.png " ")
 
-       - as user "**HR**"
+       - as user "**`HR`**"
 
           ![](./images/adb-dbv_015.png " ")
 
-       - as user "**APPUSER**"
+       - as user "**`APPUSER`**"
 
           ![](./images/adb-dbv_016.png " ")
 
-       - **No one can access on it with a "insufficient privileges" error, even the DBA user (ADMIN) and the owner (HR)!**
+       - **No one can access on it with a "insufficient privileges" error**, even the DBA user (`ADMIN`) and the owner (`HR`)!
 
-5. Now, make sure you have an authorized application user (APPUSER) in the realm by executing this query as "**ADMIN**" user
+5. Now, go back to SQL Worksheet as *`DBV_OWNER`* user and make sure you have an authorized application user (`APPUSER`) in the realm by executing this query
 
       ````
       <copy>
@@ -301,25 +396,31 @@ A realm is a protection zone inside the database where database schemas, objects
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user "**`ADMIN`**"
 
           ![](./images/adb-dbv_014.png " ")
 
-       - as user "**HR**"
+       - as user "**`HR`**"
 
           ![](./images/adb-dbv_015.png " ")
 
-       - as user "**APPUSER**"
+       - as user "**`APPUSER`**"
 
           ![](./images/adb-dbv_011.png " ")
 
-       - **APPUSER must be the only user who has access to the table from now!**
+       - **`APPUSER` must be the only user who has access to the table from now!**
 
-## Task 3: Create an Audit Policy to Capture Realm Violations
+## Task 4: Create an Audit Policy to Capture Realm Violations
 
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Autonomous Database includes Unified Auditing, we will create a policy to audit database vault activities
 
-1. Check that no audit trail log it exists
+1. Open a SQL Worksheet as *`DBV_ACCTMGR`* user - as reminder, the password is *`WElcome_123#`*
+    
+      ````
+      <copy>WElcome_123#</copy>
+      ````
+
+2. Check that no audit trail log it exists
 
       ````
       <copy>
@@ -334,7 +435,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
     **Note:** It should be empty!
 
-2. Create an audit policy on the DV realm `PROTECT_HR` created earlier in Step 2
+3. Create an audit policy on the DV realm `PROTECT_HR` created earlier in Step 2
 
       ````
       <copy>
@@ -351,9 +452,9 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    ![](./images/adb-dbv_019.png " ")
 
 
-3. Like in Step 2, let's see now the effects of the audit
+4. Like in Step 2, let's see now the effects of the audit
 
-    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
+    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (*`ADMIN`*, *`HR`* and *`APPUSER`*)
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
@@ -373,21 +474,21 @@ You may also want to capture an audit trail of unauthorized access attempts to y
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user "**`ADMIN`**"
 
        ![](./images/adb-dbv_014.png " ")
 
-       - as user "**HR**"
+       - as user "**`HR`**"
 
        ![](./images/adb-dbv_015.png " ")
 
-       - as user "**APPUSER**"
+       - as user "**`APPUSER`**"
 
        ![](./images/adb-dbv_011.png " ")
 
-       - **ADMIN and HR users cannot access the HR.CUSTOMERS table and should generate an audit record of their failed attempt to violate policy!**
+       - `ADMIN` **and** `HR` **users cannot access the** `HR.CUSTOMERS` **table and should generate an audit record of their failed attempt to violate policy!**
 
-4. Review realm violation audit trail in SQL Worksheet as "**ADMIN**" user
+5. Go back to the SQL Worksheet as "*`DBV_ACCTMGR`*" to review realm violation audit trail 
 
       ````
       <copy>
@@ -400,9 +501,9 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_020.png " ")
 
-    **Note:** Now, you should see the ADMIN and HR failed attempts
+    **Note:** Now, you should see the `ADMIN` and `HR` failed attempts
 
-5. When you have completed this lab, you can reset the environment
+6. When you have completed this lab, sign in as  as "*`DBV_OWNER`*" to reset the environment
 
       ````
       <copy>
@@ -445,13 +546,19 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
    ![](./images/adb-dbv_021.png " ")
 
-6. Now, you have no longer audit policy and DV realm!
+7. Now, you have no longer audit policy and DV realm!
 
-## Task 4: Simulation Mode
+## Task 5: Simulation Mode
 
-We will use simulation mode to find the factors to use for our "trusted path" connection to the HR.EMPLOYEES table. We will do that by completely disables access to the table – but then put it into simulation mode. Since simulation mode won’t block the actual SQL commands – the SQL commands will work. However, if the SQL command should have been blocked by the new command rule – then it will create an entry in the simulation mode. Then you can review the simulation log to find if it captured the correct violations and the factors and associated rules.
+We will use simulation mode to find the factors to use for our "trusted path" connection to the `HR.EMPLOYEES` table. We will do that by completely disables access to the table – but then put it into simulation mode. Since simulation mode won’t block the actual SQL commands – the SQL commands will work. However, if the SQL command should have been blocked by the new command rule – then it will create an entry in the simulation mode. Then you can review the simulation log to find if it captured the correct violations and the factors and associated rules.
 
-1. First, query the simulation log to show that it has no current values
+1. Open a SQL Worksheet as *`DBV_OWNER`* user - as reminder, the password is *`WElcome_123#`*
+    
+      ````
+      <copy>WElcome_123#</copy>
+      ````
+
+2. First, query the simulation log to show that it has no current values
 
       ````
       <copy>
@@ -462,7 +569,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
    ![](./images/adb-dbv_022.png " ")
 
-2. Next, create a Command Rule that will simulate blocking all SELECT from the HR.COUNTRIES table
+3. Next, create a **Command Rule** that will simulate blocking all `SELECT` from the `HR.COUNTRIES` table
 
       ````
       <copy>
@@ -480,9 +587,9 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
    ![](./images/adb-dbv_023.png " ")
 
-3. Like in Step 2, let's see now the effects of the simulation
+4. Like in Step 2, let's see now the effects of the simulation
 
-    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (ADMIN, HR and APPUSER)
+    - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (*`ADMIN`*, *`HR`* and *`APPUSER`*)
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser windows at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
@@ -500,21 +607,21 @@ We will use simulation mode to find the factors to use for our "trusted path" co
       </copy>
       ````
  
-       - as user "**ADMIN**"
+       - as user "**`ADMIN`**"
 
        ![](./images/adb-dbv_024.png " ")
 
-       - as user "**HR**"
+       - as user "**`HR`**"
 
        ![](./images/adb-dbv_025.png " ")
 
-       - as user "**APPUSER**"
+       - as user "**`APPUSER`**"
 
        ![](./images/adb-dbv_026.png " ")
 
-       - **All the users can access the HR.CUSTOMERS table!**
+       - **All the users can access the** `HR.CUSTOMERS` **table!**
       
-4. Now, we query the simulation log again as "**ADMIN**" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
+5. Now, go back to the SQL Worksheet as "*`DBV_OWNER`*" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
 
       ````
       <copy>
@@ -529,7 +636,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
       - Although each user can see the results, the log shows all users who selected and would have been blocked by the rule
       - It also shows where they connected from and what client they used to connect
 
-5. Before moving to the next lab, we will clean out the simulation logs and remove the Command Rule
+6. Before moving to the next lab, we will clean out the simulation logs and remove the Command Rule
 
       ````
       <copy>
@@ -560,9 +667,9 @@ We will use simulation mode to find the factors to use for our "trusted path" co
    ![](./images/adb-dbv_029.png " ")
 
 
-## Task 5: Disable Database Vault
+## Task 6: Disable Database Vault
 
-1. Log as "**ADMIN**" user and disable DB Vault on the Autonomous Database
+1. Log as "*`ADMIN`*" user and disable DB Vault on the Autonomous Database
 
       ````
       <copy>EXEC DBMS_CLOUD_MACADM.DISABLE_DATABASE_VAULT;</copy>
@@ -570,13 +677,13 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
    ![](./images/adb-dbv_030.png " ")
     
-2. You must “restart” the database to complete the Database Vault enabling process
+2. You must restart the database to complete the Database Vault enabling process
 
     - Restart the database from the console by selecting "**Restart**" in "More Actions" drop-list as shown
 
        ![](./images/adb-dbv_007.png " ")
 
-    - Once restart completes, log in to SQL Worksheet as *admin* user and verify DV is enabled
+    - Once restart completes, log in to SQL Worksheet as *`ADMIN`* user and verify DV is enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
