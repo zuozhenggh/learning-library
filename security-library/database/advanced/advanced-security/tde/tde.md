@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Transparent Data Encryption (TDE). It gives the user an opportunity to learn how to configure those features in order to encrypt sensitive data.
 
-*Estimated Lab Time:* 45 minutes
+*Estimated Time:* 45 minutes
 
 *Version tested in this lab:* Oracle DB 19.10
 

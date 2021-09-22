@@ -1,15 +1,15 @@
-# Explore Data and Run Queries
+# Explore Data, Run Queries
 
 ## Introduction
 
-This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data with functions, and execute queries a python application.  
+This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data, and execute queries using a python application.  
 
 Estimated Time: 25 minutes
 
 ### Objectives
 
 * Understand the different tables
-* Read data with REST api
+* Read data with REST API
 * Read data with a python application
 
 ### Prerequisites
@@ -17,7 +17,7 @@ Estimated Time: 25 minutes
 * An Oracle Free Tier, Always Free, or Paid Cloud Account
 * Connection to the Oracle NoSQL Database Cloud Service
 * Working knowledge of bash shell
-* Working knowledge of Python
+* Working knowledge of SQL language
 
 
 ## Task 1: Restart the Cloud Shell
@@ -59,99 +59,99 @@ The goal of this task is to understand the difference between the 2 data models 
 
 3. Insert data into the demo table.   
 
-  This will be done using a curl command to transfer data over the network to the NoSQL backend using the express_oracle_nosql application.  Execute in Cloud Shell.
+  This will be done using a curl command to transfer data over the network to the NoSQL backend using the "express-oracle-nosql" application.  Execute in Cloud Shell.
 
-  ```
-  <copy>
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
-  </copy>
-  ```
+    ```
+    <copy>
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    </copy>
+    ```
 4.  Insert data into the demoKeyVal table.  Execute in Cloud Shell.
 
-  ````
-  <copy>
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
-  FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
-  curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
-  </copy>
-  ````
+    ````
+    <copy>
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    </copy>
+    ````
 5.  Read back the data that we just entered.  Execute in the Cloud Shell.  In the second two queries, we use a limit clause which limits the number of rows returned.  We also use an orderby clause to sort the returned results.
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3000/demo  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3000/demo  | jq
+    </copy>
+    ````
 
-  ````
-  <copy>
-  curl  "http://localhost:3000/demo?limit=3&orderby=ticketNo"  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl  "http://localhost:3000/demo?limit=3&orderby=ticketNo"  | jq
+    </copy>
+    ````
 
-  ````
-  <copy>
-  curl  "http://localhost:3000/demo?limit=12&orderby=fullName"  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl  "http://localhost:3000/demo?limit=12&orderby=fullName"  | jq
+    </copy>
+    ````
 6. Read Data for a specific TicketNumber using GET command.  Execute in Cloud Shell.
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3000/demo/1762322446040  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3000/demo/1762322446040  | jq
+    </copy>
+    ````
 7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running on the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, so **hit 'Enter'** to get the prompt back.  Execute in Cloud Shell.
 
-  ````
-  <copy>
-  cd ~/serverless-with-nosql-database/express-nosql
-  npm install
-  node express_baggage_demo_nosql.js &
-  </copy>
-  ````
+    ````
+    <copy>
+    cd ~/serverless-with-nosql-database/express-nosql
+    npm install
+    node express_baggage_demo_nosql.js &
+    </copy>
+    ````
 
 8. We can run a query by ticket number and passengers on a flight.  Execute in Cloud Shell.
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3500/getBagInfoByTicketNumber?ticketNo=1762322446040  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber?ticketNo=1762322446040  | jq
+    </copy>
+    ````
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3500/getBagInfoByTicketNumber  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber  | jq
+    </copy>
+    ````
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3500/getBagInfoByTicketNumber | jq '. | length'
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber | jq '. | length'
+    </copy>
+    ````
 
-  ````
-  <copy>
-  curl -X GET http://localhost:3500/getPassengersAffectedByFlight?flightNo=BM715  | jq
-  </copy>
-  ````
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getPassengersAffectedByFlight?flightNo=BM715  | jq
+    </copy>
+    ````
   Each of these produced slightly different results. The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
 
   For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet.
@@ -241,17 +241,20 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-5. Write queries to answer the following questions. {MJB: need to complete questions}
+5. Write new queries to answer the following questions.
 
-  * How many xxx
-  * Which passenger xxx
-  * how many bags on flightNo xxx
+  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).  
+  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
 
-    **Note:** The Learn More contains a link to the SQL Reference Guide.
+  Find the number of bags on flight BM715.  
+  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+
+  **Note:** The Learn More contains a link to the SQL Reference Guide.  Lab 3, Task 3 contains an example of the JSON record to look at.
 
 6. Type in **exit** to exit from the python application.
 
 7. Minimize the Cloud Shell by hitting the minimize key.
+
 
 ## Task 4: Clean Up
 
@@ -259,7 +262,7 @@ This task deletes the tables that got created.
 
 1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, hit 'Tables'
 Set your compartment to 'demonosql'
-Click on the freeTest table, which will bring up the table details screen.  Hit Delete.
+Click the freeTest table, which will bring up the table details screen.  Hit Delete.
 
   ![](./images/delete-freetable.png)
 
@@ -267,6 +270,17 @@ Click on the freeTest table, which will bring up the table details screen.  Hit 
 
 2. Return to the 'Tables' screen and repeat the process for the demo and demoKeyVal tables.
 
+3. Remove the 'demonosql' compartment.  From upper left hand menu, go to 'Indentity and Security' then 'Compartments' under 'Identity.'
+
+    ![](./images/remove-compartment.png)
+
+4.  The 'Compartments' screen appears and click 'demonosql'
+
+    ![](./images/select-demonosql.png)
+
+5.  Hit the 'Delete ' button.  This will fire off a job that runs asynchronously.
+
+    ![](./images/delete-demonosql.png)
 
 ## Learn More
 
