@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you will deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
+In this tutorial, deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
 
 Estimated time: 25-minutes
 
@@ -22,7 +22,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 * Main.java: starts and configures the main entry points
 * ToDoItem.java: maps a Todo Item instance to and from the JSON document
-* ToDoItemStorage.java: stores the Todo item in a persistent store i.e., the Oracle Autonomous database
+* ToDoItemStorage.java: stores the Todo item in a persistent store that is the Oracle Autonomous database
 * ToDoListAppService.java: implements the Helidon service and exposes the REST APIs
 	![bcknd apis](images/Backend-APIs.png " ")
 
@@ -162,7 +162,7 @@ Then click **Create**.
     * Subnet pick the public subnet
 
    Observe that the ToDolist gateway has been successfully created.
-    ![gateway](images/gateway.png " ")
+	![gateway](images/gateway.png " ")
 
 4. Click **Deployments**
 	![deployment-menu](images/deployment-menu.png " ")
