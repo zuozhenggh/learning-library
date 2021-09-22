@@ -571,11 +571,11 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
     ```
 
 
-
 ## Learn More
 
 - [Database New Features Guide (Release 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
 - [Managing a Recovery Catalog](https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/managing-recovery-catalog.html#GUID-E836E243-6620-495B-ACFB-AC0001EF4E89)
+
 
 ## Acknowledgements
 
