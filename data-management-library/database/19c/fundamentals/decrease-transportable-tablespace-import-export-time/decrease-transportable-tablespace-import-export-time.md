@@ -12,7 +12,7 @@ When Oracle Data Pump Import runs in transportable tablespace mode, the metadata
 
 To export in transportable tablespace mode with Oracle Data Pump Export, your tablespaces need to be in read-only mode. Starting in Oracle Database 19c, Oracle Data Pump Export has a new parameter, `TTS_CLOSURE_CHECK`, that can decrease export time. When `TTS_CLOSURE_CHECK` is set to `TEST_MODE`, you can keep your tablespaces in READ WRITE mode during the export and obtain timing requirements for the export operation. Keep in mind that `TEST_MODE` is for testing purposes only and the resulting dump file is unavailable for import. Setting the `TTS_CLOSURE_CHECK` to `OFF` skips the closure check and is another way to decrease export time. A closure check is unnecessary when the DBA knows that the transportable set is self-contained.
 
-In this lab, you use Oracle Data Pump Export and Oracle Data Pump Import to export a transportable tablespace from PDB1 (in CDB1) and import it into PDB2. You experiment with read-only mode for the tablespace, and try out some parameters that help to decrease export and import time. Use the `workshop-installed` compute instance.
+In this lab, you try the time-saving parameters when performing two import and two export operations using Oracle Data Pump Import and Oracle Data Pump Export respectively. During the import operations, you set the `TRANSPORTABLE` parameter to `KEEP_READ_ONLY` and then to `NO_BITMAP_REBUILD`. During the export operations, you set the `TTS_CLOSURE_CHECK` parameter to `TEST _MODE` and then to `OFF`. Use the `workshop-installed` compute instance.
 
 
 Estimated Time: 25 minutes
@@ -353,6 +353,8 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 2. Run the Oracle Data Pump Export transportable operation with the `TTS_CLOSURE_CHECK` parameter set to `TEST_MODE` mode.
 
+    *The `TEST_MODE` value for the `TTS_CLOSURE_CHECK` parameter is a new feature!*
+
     ```
     $ <copy>expdp \"sys/Ora4U_1234@PDB1 as sysdba\" \
       DIRECTORY=dp_pdb1 \
@@ -411,6 +413,8 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 ## Task 7: Export the `TEST` tablespace from `PDB1` with the `TTS_CLOSURE_CHECK` parameter set to `OFF` to skip the closure check
 
 1. Try running the Oracle Data Pump Export transportable operation again with the `TTS_CLOSURE_CHECK` parameter set to `OFF`. This setting skips the closure check. Of course you are sure that the transportable tablespace set is contained!
+
+    *The `OFF` value for the `TTS_CLOSURE_CHECK` parameter is a new feature!*
 
     ```
     $ <copy>expdp \"sys/Ora4U_1234@PDB1 as sysdba\" \
@@ -578,4 +582,4 @@ In this lab, you require two PDBs. The `workshop-installed` compute instance com
 
 - **Author**: Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By**: Blake Hendricks, Solutions Engineer, September 21 2021
+- **Last Updated By**: Blake Hendricks, Solutions Engineer, September 22 2021
