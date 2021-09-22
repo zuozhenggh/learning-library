@@ -69,38 +69,9 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
-> **Note:** *You can proceed with Tasks 4 and 5 while you wait for the deployment to become active.*
+## Task 2: Register the source and target databases
 
-
-## Task 2: Review the deployment details
-
-On the Deployment Details page, you can:
-
-* Review the deployment's status
-* Launch the GoldenGate service deployment console
-* Edit the deployment's name or description
-* Stop and start the deployment
-* Move the deployment to a different compartment
-* Review the deployment resource information
-* Add tags
-
-    ![](images/01-03-gg-deployment-details.png " ")
-
-## Task 3: Launch the GoldenGate Deployment Console
-
-1. When the deployment is active, click **Launch Console**.
-
-    ![](images/04-01-ggs-launchconsole.png " ")
-
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
-
-    ![](images/04-02-ggs-deploymentconsole-signin.png " ")
-
-After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
-
-## Task 4: Register the source and target databases
-
-Now, follow the steps below to register the source and target Autonomous Database instances.
+While the deployment is being created, you can register the source and target Autonomous Database instances.
 
 *For the purposes of this workshop, registering the source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
 
@@ -130,7 +101,7 @@ Now, follow the steps below to register the source and target Autonomous Databas
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 5: Unlock the GGADMIN user and supplemental logging
+## Task 3: Unlock the GGADMIN user and supplemental logging
 
 Although the GGADMIN user is created during the database registration process, it is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -173,6 +144,32 @@ Although the GGADMIN user is created during the database registration process, i
 10. Log out of Database Actions.
 
 11. Repeat steps 1 to 7 to unlock the GGADMIN user for **TargetADW**. Log out of Database Actions when you're done.
+
+## Task 4: Review the deployment details
+
+On the Deployment Details page, you can:
+
+* Review the deployment's status
+* Launch the GoldenGate service deployment console
+* Edit the deployment's name or description
+* Stop and start the deployment
+* Move the deployment to a different compartment
+* Review the deployment resource information
+* Add tags
+
+    ![](images/01-03-gg-deployment-details.png " ")
+
+## Task 5: Launch the GoldenGate Deployment Console
+
+1. When the deployment is active, click **Launch Console**.
+
+    ![](images/04-01-ggs-launchconsole.png " ")
+
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
+
+    ![](images/04-02-ggs-deploymentconsole-signin.png " ")
+
+After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
 In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You may now **proceed to the next lab**.
 

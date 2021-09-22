@@ -4,18 +4,20 @@
 
 For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ATP.
 
-Estimated lab time: 10 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Download the ATP credentials
-* Upload the ATP credentials to the Oracle GoldenGate Marketplace compute instance
+* Use Cloud Shell to upload the ATP credentials to the Oracle GoldenGate Marketplace compute instance
 * Add the ATP credentials in the Oracle GoldenGate Administration Server
 
 ### Prerequisites
 
-Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
+* This lab assumes that you completed all preceding labs.
+* To connect to the Marketplace Oracle GoldenGate compute image, you must have an [SSH key pair](https://docs.oracle.com/en/learn/generate_ssh_keys/index.html#introduction).
+* Have a text editor on hand to copy values that you'll need later.
 
 ## Task 1: Download the Source ATP client credentials
 
@@ -37,42 +39,90 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ![](images/02-01-compute.png " ")
 
-2.  Under **List Scope**, ensure that you select the correct **Compartment** for this workshop.
+2.  Under **List Scope**, ensure that you select the correct **Compartment** for this workshop. You should then see **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle** in the list of Instances.
 
     > **Note:** *For Green Button workshop users, you can find your compartment information in the Workshop Details of this LiveLab.*
 
-3.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle**.
+3.  In the Oracle Cloud Console global header, click **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
-4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
+    ![](images/02-03-cloud-shell.png " ")
 
-    ![](images/02-04.png " ")
+4.  From the Cloud Shell drawer menu (hamburger icon), select **Upload**.
 
-5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
+    ![](images/02-04-cloud-shell-upload.png " ")
+
+5.  In the File Upload to your Home Directory dialog, drag and drop or select the SourceATP wallet file you downloaded in Task 1, and then click **Upload**.
+
+    ![](images/02-05-upload-wallet.png " ")
+
+6.  Repeat step 5 to upload your SSH private key.
+
+7.  To ensure the SSH key permissions are valid, enter the following command:
+
+    ```
+    <copy>chmod 600 <private-SSH-key></copy>
+    ```
+
+8.  Copy the Public IP from the list of Compute Instances.
+
+    ![](images/02-08-publicIP.png " ")
+
+9.  In Cloud Shell, enter the following connect to the Marketplace Oracle GoldenGate compute instance:
 
     ```
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-6.  Upload the wallet\_ATP.zip to /home/opc.
+10. Enter the following `put` command to upload the wallet\_ATP.zip to /home/opc.
 
     ```
-    <copy>put <local-path>/wallet_ATP.zip</copy>
+    <copy>put <local-path>/wallet_ATP.zip</copy> 
     ```
 
-7.  SSH to the compute instance.
+11. Enter `exit` to close the sftp connection.
+
+12. SSH to the compute instance.
 
     ```
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-8.  Extract the contents to a new directory, such as **wallet\_ATP**.
+13. Extract the contents to a new directory, such as **wallet\_ATP**.
 
     ```
 <copy>mkdir wallet_ATP
 unzip wallet_ATP.zip -d wallet_ATP</copy>
     ```
 
-## Task 3: Add the Source ATP credential in the Oracle GoldenGate Administration Server
+14. Change directories to wallet_ATP.
+
+    ```
+    <copy>cd wallet_ATP</copy>
+    ```
+
+15. Enter `pwd` and then copy the full path to the wallet files to be used in a later Task.
+
+> **Note:** *Leave Cloud Shell open.*
+
+## Task 3: Get the Marketplace Oracle GoldenGate oggadmin credentials
+
+1.  Open Cloud Shell if you previously closed the connection and SSH to the compute instance.
+
+    ```
+    <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
+    ```
+
+2.  Enter `ls` to list the contents of the current directory.
+
+3.  Open ogg-credentials.json and copy the output.
+
+    ```
+    <copy>cat ogg-credentials.json</copy>
+    ```
+
+4.  Exit Cloud Shell.
+
+## Task 4: Add the Source ATP credential in the Oracle GoldenGate Administration Server
 
 1.  In the OCI GoldenGate Deployment Console, open the navigation menu (hamburger icon) and then click **Configuration**.
 
@@ -88,7 +138,9 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
 4.  In a new browser tab or window, use the Public IP and port 443 (**https://&lt;public-ip&gt;:443**) to open the Service Manager.
 
-5.  Log in to the Service Manager using the **oggadmin** credentials found in **/home/opc/ogg-credentials.json**.
+5.  Log in to the Service Manager using the **oggadmin** credential you copied in Task 3.
+
+    ![](images/04-05-oggcredentials.png " ")
 
 6.  In the Service Manager, under **Services**, click the port number associated with the Administration Server. The Administration Server opens in a new browser tab. If you're prompted to log in again, use the same oggadmin credentials.
 
@@ -106,7 +158,7 @@ unzip wallet_ATP.zip -d wallet_ATP</copy>
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
     * For **Credential Alias**, enter the ATP database name (low) from /home/opc/wallet\_ATP/tnsnames.ora. For example, **atp&lt;user&gt;_low**.
-    * For **User ID**, paste the modified ATP connection string from step 4.
+    * For **User ID**, paste the modified ATP connection string from step 3.
     * For **Password**, enter the Source Database password from the Workshop details.
 
     ![](images/04-10.png " ")

@@ -24,7 +24,9 @@ To successfully complete this lab, you must have:
 
 ## Task 1A: Using Chrome to download the root certificate
 
-The following instructions show you how to download the Root Certificate using a Chrome web browser.
+The following instructions show you how to download the Root Certificate using a Chrome web browser in Windows.
+
+> **Note:** *Mac users should follow Task 1B and use FireFox to download the root certificate.*
 
 1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
 
