@@ -29,11 +29,11 @@ This lab assumes you have completed the following labs:
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
-1. Start by using the Database Actions Menu in the upper left of the page and select REST
+1. Start by using the **Database Actions Menu** in the upper left of the page and select **REST**
 
     ![DB Actions Menus, choose REST](./images/rest-1.png)
 
-2. Once on the REST page, use the upper tab bar to select **Modules**
+2. Once on the **REST page**, use the upper tab bar to select **Modules**
 
     ![REST Tab Menu, choose Modules](./images/rest-2.png)
 
@@ -45,7 +45,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/rest-4.png)
 
-5. Using the **Create Module** slider, we start with the Module name. Lets use the following value of **com.oracle.livelab.api**:
+5. Using the **Create Module** slider, we start with the Module name. Lets use the following value of **com.oracle.livelab.api**
 
     ````
     <copy>com.oracle.livelab.api</copy>
@@ -53,7 +53,7 @@ This lab assumes you have completed the following labs:
 
     ![Create Modules slider](./images/rest-5.png)
 
-6. For the **Base Path** field, we can use the default of **/api/**. Enter /api/ in the base path field.
+6. For the **Base Path** field, we can use the default of **/api/**. Enter **/api/** in the **base path field**.
 
     ````
     <copy>/api/</copy>
@@ -79,7 +79,7 @@ This lab assumes you have completed the following labs:
     
     Here we will create the endpoint or URL location for our REST enabled SQL Statement that takes in a value.
 
-10. In the **URI Template** template field, enter sqlreport/:id
+10. In the **URI Template** template field, enter **sqlreport/:id**
 
     ````
     <copy>sqlreport/:id</copy>
@@ -191,7 +191,7 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    ![Create Handler slider](./images/rest-00.png)
+    ![Create Handler slider](./images/rest-30a.png)
 
 10. When the **Create Handler** slider looks like the below image (**NOTE: your URL hostname will be different than the below image**), left click the **Create** button.
 
@@ -239,7 +239,7 @@ This lab assumes you have completed the following labs:
 
     ![bizlogic breadcrumb](./images/rest-41.png)
 
-20. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our bizlogic POST tile, select **Get cURL command**.
+20. Now, using the popout menu icon ![popout menu icon](./images/pop-menu.png) on our **bizlogic POST tile**, select **Get cURL command**.
 
     ![selecting Get cURL command](./images/rest-42.png)
 
