@@ -63,7 +63,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     </copy>
     ```
-    ![](./images/2.png" ")
+    ![](./images/2.PNG" ")
 
 2. Connect to the GoldenGate deployment:
 
@@ -72,7 +72,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>connect http://localhost:16000 as oggadmin password Wel_Come1</copy>
     ```
 
-    ![](./images/3.png" ")
+    ![](./images/3.PNG" ")
 
 
 3. After connecting successfully, you can run any of the following commands:
@@ -84,7 +84,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     info all
     </copy>
     ```
-![](./images/4.png" ")
+![](./images/4.PNG" ")
 
     View statistics of  Replicat ***REPKAFKA***
 
@@ -94,7 +94,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     STATS REPLICAT REPKAFKA TOTAL
     </copy>
     ```
-    ![](./images/5.png" ")
+    ![](./images/5.PNG" ")
 
     View the content of a ggserror log file:
     ```
@@ -102,7 +102,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     VIEW MESSAGESL
     </copy>
     ```
-    ![](./images/6.png" ")
+    ![](./images/6.PNG" ")
 
  Source deployment completed!
 
