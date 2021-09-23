@@ -12,8 +12,8 @@ The Admin Client is a command line utility that uses Microservices REST API to c
 ### Objectives
 
 In this lab, you will:
-* Connect to the Admin Client
-* Run various commands using Cloud Shell or an SSH client of your choice
+* Connect to the Admin Client using Cloud Shell or an SSH client of your choice
+* Run various commands
 
 ### Prerequisites
 
@@ -41,11 +41,15 @@ This lab assumes you successfully completed all preceding labs.
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
+    ![](images/02-01.png " ")
+
 2.  Change directories to **/u01/app/ogg/bin**, and then start the Admin Client:
 
     ```
     <copy>./adminclient</copy>
     ```
+
+    ![](images/02-02.png " ")
 
 3.  Connect to the OCI GoldenGate deployment using the user name and password you entered in Lab: Create OCI GoldenGate resources, Task 1, steps 12 and 13.
 
@@ -54,6 +58,8 @@ This lab assumes you successfully completed all preceding labs.
     ```
     > **Note:** *The exclamation point (!) is required. Without it, the command fails and returns an error.*
 
+    ![](images/02-03.png " ")
+
 4.  After connecting successfully, you can run any of the following commands:
 
     Display the status of OCI GoldenGate processes:
@@ -61,15 +67,21 @@ This lab assumes you successfully completed all preceding labs.
       <copy>info all</copy>
     ```
 
+    ![](images/02-04a.png " ")
+
     View statistics of your Replicat:
     ```
     <copy>stats <replicat-name></copy>
     ```
 
+    ![](images/02-04b.png " ")
+
     View the content of a ggserror log file:
     ```
     <copy>view messages</copy>
     ```
+
+    ![](images/02-04c.png " ")
 
     If your deployment had running Extract processes, then you can also purge old unused trail files using:
     ```
