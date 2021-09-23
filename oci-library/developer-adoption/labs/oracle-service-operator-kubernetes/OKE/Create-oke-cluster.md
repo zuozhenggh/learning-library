@@ -15,7 +15,7 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 - kube-public, usually used for resources that have to be accessible across the cluster
 
 # Objectives
-- Create Kubernetes Cluster
+- Create an OCI Container Engine Kubernetes cluster (OKE)
 
 ### Prerequisites
 - [OCI CLI Installation on your local machine](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)

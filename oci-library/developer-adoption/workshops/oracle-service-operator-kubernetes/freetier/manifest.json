@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy the Oracle Service Operator on Kubernete",
+    "workshoptitle": "Deploy the Oracle Service Operator on Kubernetes",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
