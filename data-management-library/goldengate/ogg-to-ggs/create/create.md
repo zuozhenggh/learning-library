@@ -16,10 +16,10 @@ A **database registration** captures source or target database credential inform
 
 In this lab, you will:
 * Create a OCI GoldenGate deployment
-* Review the OCI GoldenGate deployment details
-* Access the OCI GoldenGate deployment console
 * Register the source and target databases
 * Enable the ggadmin user and supplemental logging
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
 
 ### Prerequisites
 
