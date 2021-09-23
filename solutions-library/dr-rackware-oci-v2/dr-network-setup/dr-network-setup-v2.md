@@ -127,7 +127,7 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 - **Author** - Saul Chavez
 - **Last Updated by/date** Saul Chavez September 31, 2021
-- **Lab Expiry Date** - 11/30/2021
+- **Lab Expiration date** - 10/01/2022
 
 
 
