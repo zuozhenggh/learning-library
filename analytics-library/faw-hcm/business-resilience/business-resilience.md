@@ -1,5 +1,5 @@
 
-## Example 2: Business Resilience
+## Task 2: Business Resilience
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
