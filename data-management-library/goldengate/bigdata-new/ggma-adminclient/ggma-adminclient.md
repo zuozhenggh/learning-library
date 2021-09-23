@@ -25,7 +25,7 @@ This Workshop assumes you have:
     - Workshop: Environment Setup
 
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -36,14 +36,15 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 2. Then sudo to “*ggadmin*”. E.g.
 
-```
+
+
+    ```
     <copy>sudo su - ggadmin</copy>
-```
-![](./images/1.png" ")
+    ```
+     ![](./images/1.png" ")
 
 
-
-## **STEP 1**: Connect to the Admin Client
+## Task 1: Connect to the Admin Client
 1. Select **Q** to quit the labmenu.Change directories to ***/u01/ggbd_home/bin/***, and then start the Admin Client:
 
 
@@ -104,7 +105,6 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     ![](./images/6.PNG" ")
 
- Source deployment completed!
 
 
 
