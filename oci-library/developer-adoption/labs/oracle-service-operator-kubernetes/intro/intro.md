@@ -11,7 +11,6 @@ In this tutorial, you will create an OCI Container Engine for Kubernetes (OKE) c
 
 - MySQL DB System Service 
 - Autonomous Database Service
-- Oracle Streaming Service
 
 Estimated time: 60 minutes
 
