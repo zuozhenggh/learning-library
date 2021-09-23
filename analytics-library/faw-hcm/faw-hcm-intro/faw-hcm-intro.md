@@ -14,6 +14,8 @@
 
 *You may check this video, on OTube: [**Import FAW Content**](<https://otube.oracle.com/media/1_9mg1xpv4>)* Estimated Time: 18 minutes
 
+**Estimate time of Workshop**: 45 minutes
+
 ## About <product technology=""></product>
 
 

@@ -2,24 +2,24 @@
 
 ## About this Workshop
 
-In this workshop, you will learn how to build and deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure services.
+In this workshop, learn how to build and deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure (OCI) services.
 
 Estimated Time: 70 minutes
 
-![](./images/Application.png)
+![](./images/Application.png " ")
 
 ### About Product/Technology
 
-You will will learn how to use the Autonomous Database, the Oracle Container Registry (OCR), the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of the Oracle Cloud Infrastructure (OCI) through the deployment of a simple MyToDo List React JS application.
+Learn how to use the Autonomous Database, the Oracle Container Registry (OCR), the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of OCI through the deployment of a simple MyToDo List React JS application.
 
-![](./images/architecture.png)
+    ![](./images/architecture.png " ")
 
 ### Objectives
 
 In this 3 parts workshop, you will:
 
 * Provision a Kubernetes cluster, an Oracle Autonomous Database instance, a Container Registry, and an API Gateway
-* Understand, build and deploy a Java backend implementing the REST APIs, using the Helidon framework Docker, the OCI Container Registry and a Kubernetes service.
+* Understand, build and deploy a Java tier implementing the REST APIs, using the Helidon framework Docker, the OCI Container Registry and a Kubernetes service.
 * Understand, build and deploy a ReactJS frontend/UI making REST calls to the Helidon service implementing the REST APIs; then redeploy the ReactJS frontend over an OCI Object storage bucket
 
 ### Prerequisites
