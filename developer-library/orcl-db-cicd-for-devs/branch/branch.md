@@ -53,7 +53,7 @@ This requires us to create a branch of the repository that we can work in and co
    git status
    </copy>
    ````
-   ![git status](./images/shell-2.png)
+   ![git status](./images/branch-2.png)
 
 4. **Change the directory** to the database directory in preparation for the next steps.
 
@@ -101,8 +101,18 @@ This requires us to create a branch of the repository that we can work in and co
    ```` 
    ![provide the password](./images/branch-5.png)
 
+8. So we don't take any schema specific storage or DDL information, run the following at the SQLcl prompt.
 
-8. We are going to create a simple database change by **adding a column to the trees table**. We can issue the following SQL command at the SQLcl prompt to add the tree_picture column.
+   ````
+   <copy>
+   set ddl storage off
+   set ddl segment_attributes off
+   set ddl tablespace off
+   </copy>
+   ```` 
+   ![DDL OFF!](./images/ddloff-1.png)
+
+9. We are going to create a simple database change by **adding a column to the trees table**. We can issue the following SQL command at the SQLcl prompt to add the tree_picture column.
 
    ````
    <copy>
@@ -112,7 +122,7 @@ This requires us to create a branch of the repository that we can work in and co
 
    ![alter table sql](./images/branch-6.png)
 
-9. We have completed our ticket/task that was assigned to us, time to generate the schema again using SQLcl and Liquibase. As we did in the previous lab, we are going to issue the **lb genschema -split** command at the SQLcl prompt.
+10. We have completed our ticket/task that was assigned to us, time to generate the schema again using SQLcl and Liquibase. As we did in the previous lab, we are going to issue the **lb genschema -split** command at the SQLcl prompt.
 
    ````
    <copy>
@@ -129,7 +139,7 @@ This requires us to create a branch of the repository that we can work in and co
    ````
    ![exit sqlcl](./images/branch-8.png)  
 
-10. To commit our code to the repository on this new branch, change your directory to the top level of the project (the cicdRepository directory). To do this, issue a **cd ..** at the Cloud Shell.
+11. To commit our code to the repository on this new branch, change your directory to the top level of the project (the cicdRepository directory). To do this, issue a **cd ..** at the Cloud Shell.
 
       ````
       <copy>
@@ -139,7 +149,7 @@ This requires us to create a branch of the repository that we can work in and co
 
       ![back up to the cicdRepository directory](./images/branch-9.png)
 
-11. In the **cicdRepository directory**, just as in lab 1, we are going to run **git add .** at the Cloud Shell.
+12. In the **cicdRepository directory**, just as in lab 1, we are going to run **git add .** at the Cloud Shell.
 
       ````
       <copy>
@@ -148,7 +158,7 @@ This requires us to create a branch of the repository that we can work in and co
       ```` 
       ![git add](./images/branch-10.png)
 
-12. Issue a **git commit -m "V2.0"** at the Cloud Shell. This will indicate that we are working on a **new version** of the code in our developer branch.
+13. Issue a **git commit -m "V2.0"** at the Cloud Shell. This will indicate that we are working on a **new version** of the code in our developer branch.
 
       ````
       <copy>
@@ -158,7 +168,7 @@ This requires us to create a branch of the repository that we can work in and co
 
       ![git commit](./images/branch-11.png)
 
-13. Then we **push** the new code up to our repository. This push will be slightly different because we are pushing to a branch. Our push command will be slightly different because we have to create the branch on the push. **Issue the following command** at the Cloud Shell prompt.
+14. Then we **push** the new code up to our repository. This push will be slightly different because we are pushing to a branch. Our push command will be slightly different because we have to create the branch on the push. **Issue the following command** at the Cloud Shell prompt.
 
       ````
       <copy>
@@ -171,15 +181,15 @@ This requires us to create a branch of the repository that we can work in and co
 
       ![user/password for push](./images/branch-13.png)
 
-14. You can view the files in the OCI Cloud Console on the **repository details page**. There will now be 2 branches.
+15. You can view the files in the OCI Cloud Console on the **repository details page**. There will now be 2 branches.
 
       ![repository details page](./images/branch-14.png)
 
-15. On the left side of the page, find the Compare ,menu item and click it.
+16. On the left side of the page, find the Compare ,menu item and click it.
 
       ![compare menu item](./images/branch-15.png)
 
-16. If you select **developerBranch for the Source** and **master for the target**
+17. If you select **developerBranch for the Source** and **master for the target**
 
       ![set source and target for compare](./images/branch-16.png)
 

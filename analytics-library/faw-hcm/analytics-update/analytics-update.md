@@ -1,4 +1,4 @@
-## Example 3: Analytics Update
+## Task 1: Analytics Update
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
