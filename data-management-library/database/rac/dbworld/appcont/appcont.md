@@ -43,7 +43,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
    ![](./images/noac_config.png " ")
 
-   The attributes **commit\_outcome**, **failovertype**, and **failover\_restore** are those that set whether AC is enabled or not. For the \"noac\" service AC is not enabled as commit_outcome is false and failovertype is NONE.
+   The attributes **commit\_outcome**, **failovertype**, and **failover\_restore** are those that set whether AC is enabled or not. For the **noac** service AC is not enabled as commit\_outcome is false and failovertype is NONE.
 
    For the service enabled for TAC, **tac_service**
 
@@ -84,7 +84,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
       build.xml                     <--- A buildfile for ANT (ANT not installed on these systems)
     ````
 
-## Task 3:  NO Replay
+## Task 2:  NO Replay
 
 1. Run the sample program with NO REPLAY enabled
 
@@ -110,7 +110,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     <copy>
     srvctl status service -d `srvctl config database` -s noac
     </copy>
-    ````    
+    ````
 
     This will return an instance name, for example:
 
