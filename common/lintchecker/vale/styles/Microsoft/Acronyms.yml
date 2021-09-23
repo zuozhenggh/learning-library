@@ -8,7 +8,9 @@ first: '\b([A-Z]{3,5})\b'
 second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
+  - ALTER
   - API
+  - ADMIN
   - ASP
   - BATCH
   - CLI
@@ -19,6 +21,7 @@ exceptions:
   - DOM
   - DPI
   - FAQ
+  - FROM
   - GCC
   - GDB
   - GET
@@ -32,12 +35,15 @@ exceptions:
   - JAR
   - JSON
   - JSX
+  - JOB
   - LOAD
   - LESS
   - LLDB
+  - MODEL
   - NET
   - NOTE
   - NVDA
+  - NULL
   - OSS
   - PATH
   - PDF
@@ -45,9 +51,11 @@ exceptions:
   - POST
   - PUT
   - RAM
+  - READ
   - REST
   - REPL
   - RSA
+  - SELECT
   - SCM
   - SCSS
   - SDK
@@ -55,6 +63,8 @@ exceptions:
   - SSH
   - SSL
   - SVG
+  - TABLE
+  - TYPE
   - TBD
   - TCP
   - TODO
@@ -63,6 +73,9 @@ exceptions:
   - USB
   - UTF
   - VALUE
+  - VIEW
+  - WHERE
+  - WRITE
   - XML
   - XSS
   - YAML
