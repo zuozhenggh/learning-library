@@ -12,17 +12,18 @@ Watch the video below for a comprehensive overview of REST and how ORDS provides
 
 ### About this Workshop
 
-This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start by creating an application user whom you will use throughout all the lab steps. Once created, we will load data and create a table in our database. Using the same UI, we will REST enable that table so that endpoints created for all major operations (create, update, query, delete). Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from the Database Actions UI that is provided with all Oracle REST Data Services (ORDS) installs and with the Autonomous Database in Oracle Cloud Infrastructure.
+This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start creating a table in the database and using the same UI, REST enable that table so that endpoints created for all major operations (create, update, query, delete). Next, the Batch Load API will be used to load millions of records into the database in seconds. Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from within the OCI Cloud Console using Oracle Cloud Infrastructure.
 
-Estimated Workshop Time: 60 minutes
+Estimated Workshop Time: 60-90 minutes
 
 ### Objectives
 
+- Create an Autonomous Database
 - Connect to your Autonomous Database using Database Actions/SQL Developer Web
 - Create and Auto-REST enable a table
 - Load data into the database
-- Publish a RESTful service for various database objects
-- Securing the REST endpoints
+- Publish RESTful services for various database objects
+- Secure the REST endpoints
 
 ### Prerequisites
 This lab assumes you have completed the following labs:
