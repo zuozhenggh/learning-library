@@ -16,6 +16,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
+[Lab 3 Demo](youtube:jUxF5wZfrnc)
 
 ## Task 1: Import data into MySQL Database Service and Load tables to HeatWave
 
