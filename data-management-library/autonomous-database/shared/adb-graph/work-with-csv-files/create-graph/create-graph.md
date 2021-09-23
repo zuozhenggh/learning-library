@@ -142,7 +142,8 @@ Learn how to
 7. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
    Enter `bank_graph` as the graph name.  
-   That graph name is used throughout the next lab.  Do not enter a different name because then the queries and code snippets in the next lab will fail.  
+   That graph name is used throughout the next lab.  
+   Do not enter a different name because then the queries and code snippets in the next lab will fail.  
    
    Enter a model name (for example, `bank_graph_model`), and other optional information.  
    ![ALT text is not available for this image](./images/modeler-create-graph-dialog.png " ")
