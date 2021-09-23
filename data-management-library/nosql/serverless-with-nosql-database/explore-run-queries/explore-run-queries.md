@@ -1,8 +1,8 @@
-# Explore Data, Run Queries
+# Explore data, run queries
 
 ## Introduction
 
-This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data, and execute queries using a python application.  
+This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a python application.
 
 Estimated Time: 25 minutes
 
@@ -22,7 +22,7 @@ Estimated Time: 25 minutes
 
 ## Task 1: Restart the Cloud Shell
 
-1. Lets get back into the Cloud Shell.  From the previous lab, you may have minimized it in which case you need to enlarge it.  It is possible it may have become disconnected and/or timed out.   In that case, restart it.
+1. Lets get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
 
     ![](./images/cloud-shell-phoenix.png)
 
@@ -36,11 +36,11 @@ Estimated Time: 25 minutes
 
 ## Task 2: Load Data and Examine It
 
-The goal of this task is to understand the difference between the 2 data models used. The demoKeyVal table is a schema-less table, sometimes referred to as a JSON document that contains a primary key and a JSON column.  The demo table contains the primary key, several fixed columns and a JSON column.  Sometimes referred to as a fixed-schema. These tables are logically equivalent. Which data model you use depends on your business model.   Oracle NoSQL Database Cloud Service is extremely flexible in how you can model your data.   It is a true multi-model database service.
+The goal of this task is to understand the difference between the 2 data models used. The demoKeyVal table is a schema-less table, sometimes referred to as a JSON document, that contains a primary key and a JSON column. The demo table has a primary key, several fixed columns and a JSON column. This is sometimes referred to as a fixed-schema table. These tables are logically equivalent. Which data model you use depends on your business model. Oracle NoSQL Database Cloud Service is extremely flexible in how you can model your data. It is a true multi-model database service.
 
   ![](./images/capturemultimodel.png)
 
-1. Install the Node.js application.  Execute in the Cloud Shell.
+1. Install the Node.js application. Execute in the Cloud Shell.
 
     ```
     <copy>
@@ -55,11 +55,11 @@ The goal of this task is to understand the difference between the 2 data models 
 
     ![](./images/appl-running.png)
 
-    Hit the **'Enter' key** on your keypad to get the command line prompt back.   
+    Press the **Enter** key on your keypad to get the command line prompt back.
 
-3. Insert data into the demo table.   
+3. Insert data into the demo table.
 
-  This will be done using a curl command to transfer data over the network to the NoSQL backend using the "express-oracle-nosql" application.  Execute in Cloud Shell.
+  This will be done using a curl command to transfer data over the network to the NoSQL store using the "express-oracle-nosql" application. Execute in Cloud Shell.
 
     ```
     <copy>
@@ -75,7 +75,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
     </copy>
     ```
-4.  Insert data into the demoKeyVal table.  Execute in Cloud Shell.
+4. Insert data into the demoKeyVal table. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -91,7 +91,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
     </copy>
     ````
-5.  Read back the data that we just entered.  Execute in the Cloud Shell.  In the second two queries, we use a limit clause which limits the number of rows returned.  We also use an orderby clause to sort the returned results.
+5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an orderby clause to sort the returned results.
 
     ````
     <copy>
@@ -99,25 +99,31 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
+    This will display all the rows in the table currently.
+
     ````
     <copy>
     curl  "http://localhost:3000/demo?limit=3&orderby=ticketNo"  | jq
     </copy>
     ````
 
+    This will display the 3 rows in the table ordered by ticket number.
+
     ````
     <copy>
     curl  "http://localhost:3000/demo?limit=12&orderby=fullName"  | jq
     </copy>
     ````
-6. Read Data for a specific TicketNumber using GET command.  Execute in Cloud Shell.
+    This will display the 12 rows in the table ordered by full name. In our case, we only have 5 rows total, so it displays all existing rows.
+
+6. Read data for a specific ticket number using GET command. Execute in Cloud Shell.
 
     ````
     <copy>
     curl -X GET http://localhost:3000/demo/1762322446040  | jq
     </copy>
     ````
-7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running on the background.   We can install that application, and run it on our data.  It uses a different port number than the previous application we installed.  It will also run in the background, so **hit 'Enter'** to get the prompt back.  Execute in Cloud Shell.
+7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background. We can install that application, and run it on our data. It uses a different port number than the previous application we installed. It will also run in the background, press the **Enter** key like you did before to get the prompt back. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -127,7 +133,7 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-8. We can run a query by ticket number and passengers on a flight.  Execute in Cloud Shell.
+8. We can run a few queries by ticket number and flight number. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -154,9 +160,9 @@ The goal of this task is to understand the difference between the 2 data models 
     ````
   Each of these produced slightly different results. The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
 
-  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet.
+  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet. Feel free to take a look at the code using 'cat express-baggage-demo-nosql.js'
 
-9. You can also execute sql statements using OCI CLI commands.  Going this route, you will be querying the data over REST.  Execute in Cloud Shell.
+9. You can also execute sql statements using Oracle Cloud Infrastructure CLI commands. Going this route, you will be querying the data over REST. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -175,7 +181,7 @@ The goal of this task is to understand the difference between the 2 data models 
 
 ## Task 3: Read Data Using a Python CLI Application
 
-1. Create the python CLI application in the Cloud shell.  Execute in Cloud Shell.
+1. Create the python CLI application in the Cloud shell. Execute in Cloud Shell.
 
     ```
     <copy>
@@ -191,12 +197,12 @@ The goal of this task is to understand the difference between the 2 data models 
     python3 nosql.py -s cloud -t $OCI_TENANCY -u $NOSQL_USER_ID -f $NOSQL_FINGERPRINT -k ~/NoSQLLabPrivateKey.pem -e https://nosql.${OCI_REGION}.oci.oraclecloud.com
     </copy>
     ```
-2.  This will create a Pyhton NoSQL shell that you can load data or execute queries in.
+2. This will create a Python NoSQL shell that you can load data or execute queries in.
 
    ![](./images/capturepython.png)
 
 
-3. Load additional data so we can run some queries.  Execute in Cloud Shell.
+3. Load additional data so we can run some queries. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -204,7 +210,7 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-4. Execute the following queries.  Execute in Cloud Shell.
+4. Execute the following queries. Execute in Cloud Shell.
 
     ````
     <copy>
@@ -241,32 +247,48 @@ The goal of this task is to understand the difference between the 2 data models 
     </copy>
     ````
 
-5. Write queries to answer the following questions.
+5. Write new queries to answer the following questions. This should give an appreciation of the types of queries that can be written against Oracle NoSQL Database Cloud Service.
 
-  * Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).  Hint: Every record has an actions array at: bagInfo.flightLegs.actions
-  * Find the number of bags on flight BM715.  Hint: The size of the bagInfo array represents the number of bags a passenger has checked.
+  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).
+  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
 
-    **Note:** The Learn More contains a link to the SQL Reference Guide.  Lab 3, Task 3 contains an example of the JSON record to look at.
-    
+  Find the number of bags on flight BM715.
+  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+
+  Find the names of passengers that had their bags initially loaded in Chicago.
+  **Hint:** Chicago Airport(ORD).
+
+  **Note:** The Learn More contains a link to the SQL Reference Guide. Lab 3, Task 3 contains an example of the JSON record to look at.
+
 6. Type in **exit** to exit from the python application.
 
-7. Minimize the Cloud Shell by hitting the minimize key.
+7. Minimize the Cloud Shell by pressing the **minimize** key.
 
 
 ## Task 4: Clean Up
 
 This task deletes the tables that got created.
 
-1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, hit 'Tables'
-Set your compartment to 'demonosql'
-Click on the freeTest table, which will bring up the table details screen.  Hit Delete.
+1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
 
   ![](./images/delete-freetable.png)
 
-  Deleting tables is an async operation, so you will not immediately see the results on the OCI console.  Eventually the status of the tables will get changed to deleted.  
+  Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console. Eventually the status of the tables will get changed to deleted.
 
-2. Return to the 'Tables' screen and repeat the process for the demo and demoKeyVal tables.
+2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
+3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+
+    ![](./images/remove-compartment.png)
+
+4. The 'Compartments' screen appears and click **demonosql**
+
+    ![](./images/select-demonosql.png)
+
+5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+
+    ![](./images/delete-demonosql.png)
 
 ## Learn More
 
