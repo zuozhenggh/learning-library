@@ -293,7 +293,7 @@ Now that the source side is setup, let us configure GG on the target side (HBase
 In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhbase` read the remote trail files, created the HBase tables and wrote the data to those tables.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -302,4 +302,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, July 2021
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
+* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, September 2021
