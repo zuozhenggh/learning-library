@@ -340,7 +340,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	Algorithms are executed on the in-memory graph via the Java API for PGX.
 
 	First we get a handle to the graph we wish to analyze, that is, `BANK_GRAPH`, from the implicitly created `session` object.   
-	The `session`, `analyst`, and `instance` objects are implicitly created when the in-memory graph server is created. That is, when the envrionment is created.   
+	The `session`, `analyst`, and `instance` objects are implicitly created when the in-memory graph server is created. That is, when the environment is created.   
 	Next we execute the PageRank algorithm, with default parameters, on the graph. The computed value is stored in an attrbute named `pagerank` that is added to each vertex.
 	</copy>
 	```
@@ -481,7 +481,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	%md 
 
 	Lastly, account **#4** is in the top ten list on the left (by PageRank) but not the right (# of transactions) while account **#380** is in the list on right but not the one on the left.  
-	So lets us query and visualize those two accoutns and their neighbors. And once again larger nodes have a higher pagerank.   
+	So lets us query and visualize those two accounts and their neighbors. And once again larger nodes have a higher pagerank.   
 	We see that account #380 is mostly connected to accounts with lower pagerank values while account #4 is connected to accounts with a higher pagerank.
 
 	</copy>
