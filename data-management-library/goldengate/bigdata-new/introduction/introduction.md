@@ -48,7 +48,7 @@ The labs will walk the end-user through how to add all components of Oracle Gold
     In this lab we will load data in MySQL database `ggsource`, GG extract process `extmysql` will capture the changes from MySQL's binary logs and write them to the local trail file. We will route the data from the local trail (on the source) to the remote trail in GoldenGate Microservices Dashboard. The replicat process will read the remote trail files, create the Cassandra tables and write the data to those tables.
 
 - **Lab: GoldenGate Microservices Adminclient** -  
-    In this lab we will manage GoldenGate using the GoldenGate Adminclient via RestfulAPI
+    In this lab Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
 
 ## Learn More
 
@@ -59,6 +59,6 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, August 2021
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
 
 
