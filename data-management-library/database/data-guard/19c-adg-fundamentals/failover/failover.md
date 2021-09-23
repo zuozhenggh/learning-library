@@ -1,4 +1,4 @@
-# Perform a Failover
+# How to Perform Database Failover
 
 ## Introduction
 In this lab, we will be performing a failover operation.
