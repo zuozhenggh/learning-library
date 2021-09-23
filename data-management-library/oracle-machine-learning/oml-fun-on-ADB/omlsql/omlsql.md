@@ -1,4 +1,4 @@
-# Title of the Lab
+# Introduction to Oracle Machine Learning for SQL
 
 ## Introduction
 
@@ -18,45 +18,30 @@ In this lab, you will:
 * Evaluate the model using standard diagnostic metrics
 * Access the forecasts from the DM$VP view
 
-### Prerequisites (Optional)
-
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
+* An Oracle Cloud account
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
+
 
 ## Task 1: Examine the Data
 
-You will use the SALES table from the SH schema. You can access the table by running the SELECT statements in OML Notebooks.
-The following table displays information about the attributes from the SALES table:
+You will use the `SALES` table from the `SH` schema. You can access the table by running the `SELECT` statements in OML Notebooks.
+The following table displays information about the attributes from the `SALES` table:
 
 | Attribute Name | Information |
 | --- | --- |
-| PROD_ID  |The ID of the product  |
-| CUST_ID |The ID of the customer | More text |
-| TIME_ID | The timestamp of the purchase of the product in yyy-mm-dd hh:mm:ss format | More text |
-| CHANNEL_ID | The channel ID of the channel sales data|
-|PROMO_ID | The product promotion ID|
-|QUANTITY_SOLD |The number of items sold|
-|AMOUNT_SOLD |	The amount or sales data|
-1. Sub step 1
+| `PROD_ID`  |The ID of the product  |
+| `CUST_ID` |The ID of the customer | More text |
+| `TIME_ID` | The timestamp of the purchase of the product in yyy-mm-dd hh:mm:ss format | More text |
+| `CHANNEL_ID` | The channel ID of the channel sales data|
+|`PROMO_ID` | The product promotion ID|
+|`QUANTITY_SOLD` |The number of items sold|
+|`AMOUNT_SOLD` |	The amount or sales data|
 
-	![Image alt text](images/sample1.png)
-
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
-
-2. Sub step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
 
 ## Task 2: Prepare the Data
 In this step, you will prepare the data by creating a view.
@@ -84,12 +69,13 @@ The following steps help you to create a view and view the data.
 
 2. Count the number of rows to ensure that we have the same amount of data. Run the following query:
 
-		```
-		<copy>
-		%script
-		SELECT count(*) from ESM_SH_DATA;
-		</copy>
-		```
+    ```
+    <copy>
+    %script
+    SELECT count(*) from ESM_SH_DATA;
+    </copy>
+    ```
+The output is follows:
 
     ```
     COUNT(*)  
@@ -97,21 +83,23 @@ The following steps help you to create a view and view the data.
 
     ---------------------------
 
-    ````
+    ```
 
 3. View the `ESM_SH_DATA`.
+
 
     ```
     <copy>
     %sql
     SELECT * from ESM_SH_DATA;
+
     </copy>
     ```
 
 	![Image alt text](images/timeseries_001.png)
 
 ## Task 3: Build You Model
-To build a model using the time series data, you will use Exponential Smoothing algorithm on the ESM_SH_DATA view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
+To build a model using the time series data, you will use Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
 1. Build a Holt-Winters model with the `ESM_SH_DATA` table, run the following script:
 
     ```
@@ -171,7 +159,7 @@ The output is as follows:
 
 
 ## Task 4: Evaluate Your Model
-Evaluate your model by viewing diagnostic metrics and performing quality checks. To obtain more insights about the model and view model settings, you can query data dictionary views and model detail views. Specific model detail views display model statistics which can help you evaluate the model. Model detail views are specific to the algorithm. The names of model detail views begin with DM$xx where xx corresponds to the view prefix. See [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC).
+Evaluate your model by viewing diagnostic metrics and performing quality checks. To obtain more insights about the model and view model settings, you can query data dictionary views and model detail views. Specific model detail views display model statistics which can help you evaluate the model. Model detail views are specific to the algorithm. The names of model detail views begin with `DM$xx` where _xx_ corresponds to the view prefix. See [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC).
 1. You can review the model settings by running the following query:
 
     ```
@@ -185,7 +173,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     ```
 	![Image alt text](images/timeseries_002.png)
 
-2. To view the model diagonistic view, DM$VG, and evaluate the model, run the following query:
+2. To view the model diagonistic view, `DM$VG`, and evaluate the model, run the following query:
 
     ```
     <copy>
@@ -197,7 +185,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     ```
 
 	![Image alt text](images/timeseries_003.png)
-The DM$VG view for time series contains the global information of the model along with the estimated smoothing constants, the estimated initial state, and global diagnostic measures.
+The `DM$VG` view for time series contains the global information of the model along with the estimated smoothing constants, the estimated initial state, and global diagnostic measures.
 
 - `NAME`: Indicates the diagnostic attribute name.
 - `NUMERIC_VALUE`: Indicates the calculated statistical value for the model.
@@ -210,13 +198,13 @@ The DM$VG view for time series contains the global information of the model alon
     - `MAE`: Indicates Mean Absolute Error.
     - `MSE`: Indicates Mean Square Error.
 
-In Exponential smoothing a series extends infinitely into the past, but that influence of past on future, decays smoothly and exponentially fast. The smooth rate of decay is expressed by one or more smoothing constants. The smoothing constants are parameters that the model estimates. These smoothing constants are represented as α, β, and γ. Values of a smoothing constant near one put almost all weight on the most recent observations. Values of a smoothing constant near zero allow the distant past observations to have a large influence.
+In Exponential smoothing a series extends infinitely into the past, but that influence of past on future, decays smoothly and exponentially fast. The smooth rate of decay is expressed by one or more smoothing constants. The smoothing constants are parameters that the model estimates. These smoothing constants are represented as _α_, _β_, and _γ_. Values of a smoothing constant near one put almost all weight on the most recent observations. Values of a smoothing constant near zero allow the distant past observations to have a large influence.
 
-Note that α is associated with the error or noise of the series, β is associated with the trend, and γ is associated with the seasonality factors. The γ value is closest to zero which means seasonality has an influence on the data set.
+Note that _α_ is associated with the error or noise of the series, _β_ is associated with the trend, and _γ_ is associated with the seasonality factors. The _γ_ value is closest to zero which means seasonality has an influence on the data set.
 
 ## Task 5 Score Your Model
-For a time series model, you can use the DM$VP view to perform scoring or prediction.
-1. Query the DM$VP model detail view to see the forecast (sales for four quarters). The DM$VP view for time series contains the result of an ESM model. The output has a set of records such as partition, `CASE_ID`, value, prediction, lower, upper, and so on and ordered by partition and `CASE_ID` (time). Run the following statement:
+For a time series model, you can use the `DM$VP` view to perform scoring or prediction.
+1. Query the `DM$VP` model detail view to see the forecast (sales for four quarters). The `DM$VP` view for time series contains the result of an ESM model. The output has a set of records such as partition, `CASE_ID`, value, prediction, lower, upper, and so on and ordered by partition and `CASE_ID` (time). Run the following statement:
 
     ```
     <copy>
@@ -240,55 +228,37 @@ For a time series model, you can use the DM$VP view to perform scoring or predic
 	- `round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND`: Specifies the lower and upper confidence levels rounded to two numericals after the decimal.
 
 2. To see a visual representation of the predictions in OML Notebooks, run the above same query with the following settings:
+Click settings and drag `DATE_ID` to keys and `FORECASTED_SOLD (avg)`, `ACTUAL_SOLD (avge)`, `LOWER_BOUND (avg)`, and `UPPER_BOUND(avg)` to values.
 
-		```
-		%sql
-		SELECT TO_CHAR(CASE_ID,'YYYY-MON') DATE_ID, VALUE ACTUAL_SOLD,
-		       round(PREDICTION,2) FORECAST_SOLD,
-		       round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND
-		  FROM DM$VPESM_SALES_FORECAST_1
-		  ORDER BY CASE_ID;
-		```
+    ```
+    <copy>
+      %sql
+      SELECT TO_CHAR(CASE_ID,'YYYY-MON') DATE_ID, VALUE ACTUAL_SOLD,
+             round(PREDICTION,2) FORECAST_SOLD,
+             round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND
+        FROM DM$VPESM_SALES_FORECAST_1
+        ORDER BY CASE_ID;
+    </copy>
+    ```
 
 
 	![Image alt text](images/timeseries_005.png)
-Click settings and drag `DATE_ID` to keys and `FORECASTED_SOLD (avg)`, `ACTUAL_SOLD (avge)`, `LOWER_BOUND (avg)`, and `UPPER_BOUND(avg)` to values.
+
 
 
 This completes the prediction step. The model has successfully forecast sales for the next four quarters.
 
 
 
-
-3. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-	  - List item 3
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	 Enclose the text you want to copy in   .
-    ```
-
-4. Code examples that include variables
-
-	```
-   ssh -i <ssh-key-file>
-  ```
-
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Time series use case](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/mlsql/time-series.html#GUID-B5AF253F-DF52-416C-A621-0B7F6ECFFF7E)
+* [PL/SQL API Packages](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/DBMS_DATA_MINING.html#GUID-7B9145D4-831F-46B3-977F-01AF77ACA4A1)
+* [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC)
+* [Exponential Smoothing](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/expnential-smoothing.html#GUID-65C7E533-E403-4F71-A5FE-EC034745904F)
 
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation
-* **Contributors** -  Mark Hornick, Group
-* **Last Updated By/Date** - <Sarika Surampudi, October 2021>
+* **Contributors** -  Mark Hornick, Sherry LaMonica, Machine Learning Group
+* **Last Updated By/Date** - Sarika Surampudi, September 2021
