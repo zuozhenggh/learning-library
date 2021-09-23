@@ -1,4 +1,4 @@
-# Title of the Lab
+# Introduction to Oracle Machine Learning Notebooks
 
 ## Introduction
 
@@ -273,15 +273,50 @@ In this step, you learn how to set the interpreter bindings:
 
 Clicking **Save** hides the interpreter settings. You can verify it again by clicking the gear icon. This completes the task of changing the interpreter binding order.
 
+## Step 5: Create Jobs to Schedule Notebook Run
+Jobs allow you to schedule the running of notebooks. On the Jobs page, you can create jobs, duplicate jobs, start and stop jobs, delete jobs, and monitor job status by viewing job logs, which are read-only notebooks. In this lab, you will learn how to create a job to schedule the running of the notebook Classification_DT.
+
+To create a job:
+
+1. On the Oracle Machine Learning UI homepage, click **Jobs**. Alternatively, in the left navigation menu, click **Jobs**.
+
+2. On the Jobs page, click **Create**. The Create Jobs dialog box opens.
+
+3. In the **Name** field, enter `Job1`. The number of characters in the job name must not exceed 128 bytes.
+
+	![Create Job](images/create_jobs1.png)
+
+4. In the **Notebook** field, click the search icon to select a notebook to create a job. Navigate through the OMLUSER workspace and OMLUSER project and select `Classification_DT`.
+
+	> **Note:** Only notebooks that are owned by the user or shared are available for selection.
+
+5. In the **Start Date** field, click the date-time editor to set the date and time for your job to commence. Select 09/24/21 and time 08.00.00 pm. Based on the selected date and time, the next run date is computed.
+
+6. Select **Repeat Frequency** and enter **3**, and select **Days** to set the repeat frequency and settings. You can set the frequency in minutes, hours, days, weeks, and months.
+
+7. Expand **Advanced Settings**, and specify the following settings:
+
+	![Create Job](images/create_jobs2.png)
+
+	* **Maximum Number of Runs:** Select **3**. This specifies the maximum number of times the job must run before it is stopped. When the job reaches the maximum run limit, it will stop.  
+
+	* **Timeout in Minutes:** Select **60**. This specifies the maximum amount of time a job should be allowed to run.
+
+	* **Maximum Failures Allowed:** Select **3**. This specifies the maximum number of times a job can fail on consecutive scheduled runs. When the maximum number of failures is reached, the next run date column in the Jobs UI will show an empty value to indicate the job is no longer scheduled to run. The Status column may show the status as `Failed`.
+
+		> Note: Select Automatic Retry if you do not wish to specify the maximum failures allowed manually.  
+
+8. Click **OK**.
+
+
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
+* [Interactive Tour - Oracle Machine Learning Notebooks](https://docs.oracle.com/en/cloud/paas/autonomous-database/oml-tour/)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
+* **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
+* **Last Updated By/Date** - Moitreyee Hazarika, September, 2021

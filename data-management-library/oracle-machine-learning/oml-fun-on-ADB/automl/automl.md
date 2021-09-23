@@ -194,7 +194,7 @@ The Leader Board displays the top performing models relative to the model metric
 	![View Prediction Impact](images/prediction_impact.png)
 
 
-* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the confusion matrix results are presented as a percentage of the test data being classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
+* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are presented as a percentage of the test data being classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
 
 	![View Confusion Matrix](images/confusion_matrix.png)
 
@@ -309,8 +309,8 @@ This completes the task of creating a notebook based on a model and viewing the 
 ## Learn More
 
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [About OML AutoML UI](https://docs.oracle.com/en/database/oracle/machine-learning/oml-automl-ui/index.html)
+* [Blog: OML AutoML UI](https://blogs.oracle.com/machinelearning/post/introducing-oml-automl-user-interface)
 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
