@@ -13,7 +13,7 @@ The Admin Client is a command line utility that uses Microservices REST API to c
 
 In this lab, you will:
 * Connect to the Admin Client
-* Run various commands
+* Run various commands using Cloud Shell or an SSH client of your choice
 
 ### Prerequisites
 
@@ -35,7 +35,7 @@ This lab assumes you successfully completed all preceding labs.
 
 ## Task 2: Connect to the Admin Client
 
-1.  SSH into the Marketplace Oracle GoldenGate instance.
+1.  Use Cloud Shell to SSH into the Marketplace Oracle GoldenGate instance.
 
     ```
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
@@ -47,7 +47,7 @@ This lab assumes you successfully completed all preceding labs.
     <copy>./adminclient</copy>
     ```
 
-3.  Connect to the OCI GoldenGate deployment:
+3.  Connect to the OCI GoldenGate deployment using the user name and password you entered in Lab: Create OCI GoldenGate resources, Task 1, steps 12 and 13.
 
     ```
       <copy>connect <OCI-GoldenGate-deployment-url> as <OCI-GoldenGate-user> password <OCI-GoldenGate-password> !</copy>
