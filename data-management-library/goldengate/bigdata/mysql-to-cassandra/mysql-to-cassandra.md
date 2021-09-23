@@ -255,6 +255,8 @@ Now that GG processes have been created and started on both the source and targe
 
 5. Starting with GG version 12.3.0.1.0, GG automatically creates the Cassandra tables. Let us take a look at the contents of the tables:
 
+Ignore message **Cassandra Keyspace already exists**
+
   ![](./images/f12.png " ")
   ![](./images/f13.png " ")
 
@@ -295,7 +297,7 @@ Now that GG processes have been created and started on both the source and targe
 In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -304,5 +306,5 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
+* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, September 2021
 
