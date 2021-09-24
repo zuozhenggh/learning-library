@@ -19,11 +19,11 @@
             "filename": "../../../labs/oracle-service-operator-kubernetes/OSOK/install-osok.md"
         },    
         {
-            "title": "Lab 3: Deploy MySQL DB System Service from Kubernetes",
+            "title": "Lab 3: Deploy Oracle MySQL DB System Service from Kubernetes",
             "filename": "../../../labs/oracle-service-operator-kubernetes/install-mysql/install-mysql.md"
         },
         {
-            "title": "Lab 4: Deploy Autonomous Database Service from Kubernetes",
+            "title": "Lab 4: Deploy Oracle Autonomous Database Service from Kubernetes",
             "filename": "../../../labs/oracle-service-operator-kubernetes/install-adb/install-adb.md"
         },         
         {
