@@ -75,6 +75,7 @@ To start the manager:
     <copy>start mgr</copy>
 ```
 ![](./images/4.png " ")
+
 3. Execute the obey file to create the GoldenGate process.Obey file contains all the commands to create GoldenGate process
 ```
     <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
@@ -114,6 +115,7 @@ Enter Password as ***Wel_Come1***
     <copy>Wel_Come1</copy>
 ```
 ![](./images/9.png " ")
+
 2. Click on '***+***' to create replicat process for target ***Kafka***.
 
 Replicat is a process that delivers data to a target database. It reads the trail file on the target database, reconstructs the DML or DDL operations, and applies them to the target database.
