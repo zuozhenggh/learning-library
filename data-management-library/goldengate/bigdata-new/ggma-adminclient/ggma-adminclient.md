@@ -3,7 +3,7 @@
 ## Introduction
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
 
-*Estimated Workshop Time*: 15 minutes
+*Estimated Workshop Time*: 5 minutes
 #### Lab Architecture
 
 ![](./images/arch.jpg " ")
@@ -41,7 +41,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - ggadmin</copy>
     ```
-   ![](./images/1.png " ")
+     ![](./images/1.png" ")
 
 
 ## Task 1: Connect to the Admin Client
@@ -64,17 +64,16 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     </copy>
     ```
-   ![](./images/2.png " ")
+    ![](./images/2.PNG" ")
 
 2. Connect to the GoldenGate deployment:
-Replace localhost with livelab server generated IP
 
  
     ```
     <copy>connect http://localhost:16000 as oggadmin password Wel_Come1</copy>
     ```
 
-    ![](./images/3.png " ")
+    ![](./images/3.PNG" ")
 
 
 3. After connecting successfully, you can run any of the following commands:
@@ -86,7 +85,7 @@ Replace localhost with livelab server generated IP
     info all
     </copy>
     ```
-    ![](./images/4.png " ")
+![](./images/4.PNG" ")
 
     View statistics of  Replicat ***REPKAFKA***
 
@@ -96,15 +95,16 @@ Replace localhost with livelab server generated IP
     STATS REPLICAT REPKAFKA TOTAL
     </copy>
     ```
-    ![](./images/5.png " ")
+    ![](./images/5.PNG" ")
 
     View the content of a ggserror log file:
     ```
     <copy>
-    VIEW MESSAGES
+    VIEW MESSAGESL
     </copy>
     ```
-    ![](./images/6.png " ")
+    ![](./images/6.PNG" ")
+
 
 
 
@@ -120,7 +120,7 @@ In summary, Admin Client is a command line utility (similar to the classic GGSCI
 ## Acknowledgements
 * **Author** - Madhu Kumar S, Data Integration Team, Oracle, September  2021
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2021
 
 
 

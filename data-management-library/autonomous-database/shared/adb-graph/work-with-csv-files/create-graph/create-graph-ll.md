@@ -55,10 +55,11 @@ Learn how to
 
 1. Before creating a graph we will **create an execution environment** for running notebook paragraphs and loading the graph into an in-memory representation.   
    
-   Click the pull-down menu under the username `GRAPHUSER` shown in the top right corner of the Graph Studio browser window. Select the `Environment` menu item.  
+   Click the pull-down menu under the username `GRAPHUSER` shown in the top right corner of the Graph Studio browser window.  
+   Select the `Environment` menu item.  
 
    ![ALT text is not available for this image](images/ll-user-pulldown-menu.png " ")
-2. Enter a **value of 2 (gb)** for the memory size and then click `Create`.  
+2. Enter a **value of 2 (GB)** for the memory size and then click `Create`.  
 
    ![ALT text is not available for this image](images/ll-create-env-detail.png " ") 
 3. The Jobs page will show the status. Meanwhile let's start modeling and creating a graph from the existing tables.  
@@ -96,7 +97,7 @@ Learn how to
   ![ALT text is not available for this image](./images/modeler-source-incorrect-ddl.png " ")   
 
   We will be using vertex and labels in (PGQL) queries in the next lab.  
-  The labels can be added and the edge direction swapped via the GUI. However it is simpler update the CREATE PROPERTY GRAPH statement and accomplish both in one step.   
+  The labels can be added and the edge direction swapped using the GUI. However it is simpler update the CREATE PROPERTY GRAPH statement and do both in one step.   
 
   **Replace** the existing statement with the following one which specifies that `BANK_ACCOUNTS` is a vertex table with label `ACCOUNTS` and `BANK_TXNS` is an edge table with label `TRANSFERS`. And the directed edge is from the source `from_acct_id` to destination `to_acct_id`.  
     ```
@@ -129,7 +130,8 @@ Learn how to
 6. Click `Next` and then click `Create Graph` to move on to the next step in the flow.   
 
    Enter `bank_graph` as the graph name.  
-   That graph name is used throughout the next lab. Do not enter a different name because then the queries and code snippets in the next lab will fail.  
+   That graph name is used throughout the next lab.  
+   Do not enter a different name because then the queries and code snippets in the next lab will fail.  
    
    Enter a model name (for example, `bank_graph_model`), and other optional information.  
    ![ALT text is not available for this image](./images/modeler-create-graph-dialog.png " ")
