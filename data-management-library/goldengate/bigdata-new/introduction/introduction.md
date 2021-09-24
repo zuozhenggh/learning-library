@@ -47,6 +47,8 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 - **Lab: Mysql-to-Kafka-via-GoldenGate Microservices** -  
     In this lab we will load data in MySQL database `ggsource`, GG extract process `extmysql` will capture the changes from MySQL's binary logs and write them to the local trail file. We will route the data from the local trail (on the source) to the remote trail in GoldenGate Microservices Dashboard. The replicat process will read the remote trail files, create the Cassandra tables and write the data to those tables.
 
+- **Lab: GoldenGate Microservices Adminclient** -  
+    In this lab we will manage GoldenGate using the GoldenGate Adminclient via RestfulAPI
 
 ## Learn More
 

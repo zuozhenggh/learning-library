@@ -51,7 +51,6 @@ In this lab, you will be guided through the following steps:
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Some Experience with MySQL Shell - [MySQL Site](https://dev.mysql.com/doc/mysql-shell/8.0/en/).
 
-
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
