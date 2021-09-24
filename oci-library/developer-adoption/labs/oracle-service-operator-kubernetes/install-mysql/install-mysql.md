@@ -1,6 +1,5 @@
-# Deploying Oracle Container Engine for Kubernetes
 
-## Introduction
+## Deploy Oracle MySQL DB System Service from Kubernetes
 
 A Kubernetes cluster is a group of nodes. The nodes are the machines running applications. Each node can be a physical machine or a virtual machine. The node's capacity (its number of CPUs and amount of memory) is defined when the node is created. A cluster comprises:
 
@@ -15,7 +14,8 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 - kube-public, usually used for resources that have to be accessible across the cluster
 
 # Objectives
-- Create an OCI Container Engine Kubernetes cluster (OKE)
+- Create an OCI Container Engine Kubernetes cluster (OKE)# Deploying Oracle Container Engine for Kubernetes
+
 
 ### Prerequisites
 - [OCI CLI Installation on your local machine](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
