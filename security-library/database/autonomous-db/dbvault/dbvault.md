@@ -15,10 +15,20 @@ You can deploy controls to block privileged account access to application data a
 Watch a preview of "*Oracle Database Vault Introduction (May 2021)*" [](youtube:vSVr7avZ4Hg)
 
 ### Objectives
+Oracle Database vault comes pre-installed with your Autonomous database.
+In this lab you will:
 - Enable Database Vault in an Autonomous Database
 - Protect sensitive data using a Database Vault realm
 - Create an audit policy to capture realm violations
 - Test Database Vault Controls with Simulation mode
+
+You will use the `HR` schema containing multiple tables such as `CUSTOMERS` or `COUNTRIES` tables which contain sensitive information and need to be protected from privileged users such as the schema owner (user `HR`) and DBA (user `ADMIN`). But the data in these tables should be available to the application user (user `APPUSER`).
+
+   ![](./images/adb-dbv_001.png " ")
+
+**Note:**
+- **In this workshop, the Configure/Enable/Disable DV command syntax is only for Autonomous Database Shared.**
+- Other Oracle Database deployments, including Autonomous Database Dedicated, Exadata Cloud Service, Database Systems, and on-premises database, use a slightly different syntax.
 
 ### Prerequisites
 This lab assumes you have:
@@ -35,15 +45,7 @@ This lab assumes you have:
 | 5 | Simulation Mode | 10 minutes |
 | 6 | Disable Database Vault | <5 minutes |
 
-**Note: In this workshop, the Configure/Enable/Disable DV command syntax is only for Autonomous Database Shared. Other Oracle Database deployments, including Autonomous Database Dedicated, Exadata Cloud Service, Database Systems, and on-premises database, use a slightly different syntax.**
-
 ## Task 1: Enable Database Vault
-
-Oracle Database vault comes pre-installed with your Autonomous database. In this lab we will enable Database Vault, add required user accounts and create a DV realm to secure a set of user tables from privileged user access.
-
-The `HR` schema contains multiple tables such as `CUSTOMERS` table which contain sensitive information and need to be protected from privileged users such as the schema owner (user `HR`) and DBA (user `ADMIN`). But the data in these tables should be available to the application user (user `APPUSER`).
-
-   ![](./images/adb-dbv_001.png " ")
 
 We start by creating two DV user accounts - Database Vault owner (`SEC_ADMIN_OWEN`) and Database Vault account manager (`ACCTS_ADMIN_ACE`). The DV owner account is mandatory as an owner of DV objects. The DV account manager is an optional but recommended role. Once DV is enabled, it immediately begins enforcing separation of duties - the user `ADMIN` loses its ability to create/drop DB user accounts and that privilege is then with the DV account manager role. While DV owner can also become DV account manager, Oracle recommends maintaining separation of duties via two different accounts.
 
