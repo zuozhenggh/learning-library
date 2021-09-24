@@ -1,7 +1,7 @@
-# Get started with Freetier Setup
+# Get started with Free Tier Setup
 
 ## Introduction
-This lab walks you through the steps to provision an Oracle Autonomous Database, and sign into Oracle Machine Learning user interface.
+This lab walks you through the steps set up your free tier environment that includes provisioning an Oracle Autonomous Database, and signing into Oracle Machine Learning user interface.
 
 Estimated Lab Time: 15 minutes
 
@@ -11,7 +11,9 @@ In this lab, you will learn how to:
 
 * Provision an Oracle Autonomous Database
 * Sign into Oracle Machine Learning user interface
-* Create the CUSTOMERS360 table. You will use in table in the lab on AutoML UI and OML Services.
+* Create the CUSTOMERS360 table.
+
+	>**Note:** You will use this table in the lab on AutoML UI and OML Services.
 
 ### Prerequisites
 * Sign up for a free tier Oracle Cloud account.
