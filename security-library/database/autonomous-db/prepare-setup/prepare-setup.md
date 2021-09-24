@@ -74,7 +74,7 @@ Estimated time: 10 minutes
 
 9. Choose the network access and the license type:
 
-    - **Network Access** - Leave *`Secure access from everywhere`* selected
+    - **Network Access** - Leave *`Allow secure access from everywhere`* selected
     - **License Type** - Select *`License Included`*
 
          ![](./images/adb-set_008.png " ")
