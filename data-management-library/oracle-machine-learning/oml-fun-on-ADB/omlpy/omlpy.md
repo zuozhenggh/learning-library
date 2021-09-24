@@ -1,19 +1,13 @@
-# Title of the Lab
+# Oracle Machine Learning for Python
 
 ## Introduction
 
-<!-- *Describe the lab in one or two sentences, for example:*  -->
 This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a Classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab uses iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
 
 Estimated Lab Time: 30 minutes
-
-<!-- ### About <Product/Technology> (Optional) -->
 ### About Oracle Machine Learning for Python(OML4Py)
-<!-- Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section. -->
 Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, which includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can use standard Python syntax and overloaded Python functions, use a natural Python API to in-database machine learning algorithms, invoke user-defined Python functions in database-spawned and controlled Python engines, and leverage automated machine learning (AutoML).
 ### Objectives
-
-<!-- *List objectives for this lab using the format below* -->
 
 In this lab, you will learn how to:
 * Create a temporary table using the `oml.push` function
@@ -27,31 +21,12 @@ In this lab, you will learn how to:
 
 ### Prerequisites (Optional)
 
-<!-- *List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.* -->
-
 This lab assumes you have completed the following lab:
 * Login to Oracle Cloud/Sign Up for Free Tier <link to be provided>
 * Lab 1: Oracle Machine Learning Notebooks
 
-*This is the "fold" - below items are collapsed by default*
-
-<!-- ## Task 1: Concise Step Description -->
 ## Task 1: Create a Database Table
-<!-- (optional) Step 1 opening paragraph.
 
-1. Sub step 1
-
-	![Image alt text](images/sample1.png)
-
-2. Sub step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line. -->
 OML4Py transparently translates many standard Python functions into SQL. With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that resides in the database. In this step, the *iris* data set is used for illustrative purposes to load the data into a temporary database table. The temporary table is automatically deleted when theOML Notebook connection to the database ends unless you have saved its proxy object to a datastore before disconnecting.
 `oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
 1. Run the following scripts to import the `oml` package, the Pandas library, and set the display options:
@@ -590,55 +565,8 @@ After building and evaluating the model, you will now score the data.
 	![Images alt text](/images/pic11.png)
 
 In this example, you successfully classified customers who are most likely to be positive responders to an Affinity Card loyal program. You build and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
-<!--
-## For More information
-OML4Py enables data scientists to run their own defined function along with various expertise for making the machine learning models and predictions more significant. Given below are some of the functionality that OML4Py offers:
-1. [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-embedded-python-execution.html#GUID-A15F3A62-736A-4276-83F2-7C54BE026639)
-	OML4Py Embedded Python Execution provides users the ability to invoke user-defined Python functions in one or more Python engines spawned and managed by the Oracle database environment.
-
-2. [Automated Machine Learning (Auto ML)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-automl.html#GUID-9F514C2B-1772-4073-807F-3E829D5D558C)
-	AutoML provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
-3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C)
-	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction. -->
-
-<!-- ## Task 2: Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ``` -->
 
 ## Learn More
-<!--
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com) -->
 
 OML4Py enables data scientists to run their own defined function along with various expertise for making the machine learning models and predictions more significant. Given below are some of the functionality that OML4Py offers:
 1. [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-embedded-python-execution.html#GUID-A15F3A62-736A-4276-83F2-7C54BE026639)
