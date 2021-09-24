@@ -15,13 +15,17 @@
             "filename": "../../../labs/oracle-service-operator-kubernetes/OKE/Create-oke-cluster.md"
         },
         {
-            "title": "Lab 2: Continuous Deployment with OCI DevOps Pipeline",
-            "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline.md"
+            "title": "Lab 2: Deploy Oracle Service Operator for Kubernetes",
+            "filename": "../../../labs/oracle-service-operator/OSOK/install-osok.md"
         },    
         {
-            "title": "Lab 3: Release resources created through the workshop",
-            "filename": "../../../labs/oci-devops-oke/cleanup/cleanup.md"
-        },        
+            "title": "Lab 3: Deploy MySQL DB System Service from Kubernetes",
+            "filename": "../../../labs/oracle-service-operator/install-mysql/install-mysql.md"
+        },
+        {
+            "title": "Lab 4: Deploy Autonomous Database Service from Kubernetes",
+            "filename": "../../../labs/oracle-service-operator/install-adb/install-adb.md"
+        },         
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
