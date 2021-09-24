@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes
 * Use calculations on your datasets
 
 ### Prerequisites
-* Logged in to OAC
+* User logged in to OAC and using canvas developed in previous lab.
 
 ## **Task 1**: Add additional data set
 
@@ -94,13 +94,13 @@ Join of these files are between “Provider Name” = “Vendor” and “Provid
 
 ![](images/10_select_vendor_field.png " ")
 
-9. Repeat the steps and select “Provider Country” and “Destination Country_iso3”.
+9. Click Add Another Match button. Repeat the steps and select “Provider Country” and “Destination Country_iso3”.
 You should have something like the screenshot. Then click OK.
 
 ![](images/11_submit_connection.png " ")
 
 Once the join has been defined you can go back to the Visualize tab to continue your analysis.
-10. Click on “Visualize” at the top right.
+10. Click on “Visualize” at the top center.
 
 ![](images/12_vizualise.png " ")
 

@@ -19,14 +19,14 @@ Estimated Lab Time: 30 minutes
 * Creating a Project with several reports
 
 ### Prerequisites
-* User logged into OAC
+* User logged into OAC and selected Map visualization in a project from previous lab.
 
 ## **Task 1**: Explore the OAC Project
 
 
 An Oracle Analytics project has 3 main tabs:
 
-**Prepare**: Here is where you prepare your data. You get a preview of each dataset on the project. And you enrich it by adding columns, hiding or renaming the available ones. You also define joins between datasets here.
+**Data**: Here is where you prepare your data. You get a preview of each dataset on the project. And you enrich it by adding columns, hiding or renaming the available ones. You also define joins between datasets here.
 
 **Visualize**: Here is where you explore and Analyze the data.
 You can create several canvases to hold the different visualizations you define.
@@ -94,7 +94,7 @@ Now it is time to check the anomalies
 Anomalies use ML to find outliers. This means that it will try to highlight which combinations of values in your data do not follow the normal distribution and are out of the expected value.
 This does not directly mean they are wrong. Your business knowledge is key to interpret the results.
 Left visual tells you that Out of Policy expenses are made usually with Cash and Corporate card. This is normal, as company should not pay items against its own policy.
-1. Click on “Select for Canvas” at the top right corner of the “Out-of-Policy” graphic
+1. Click on “Select for Canvas” at the top right corner of the “In-Policy is No” graphic
 2. Click on “Add Selected” to close the Explain and go back to the project.
 
 ![](images/7_Add_Selected.png " ")

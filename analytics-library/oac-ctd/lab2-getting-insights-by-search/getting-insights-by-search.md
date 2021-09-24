@@ -84,7 +84,10 @@ A long list of visualization types appears.
 Now you can quickly read and see that Hotels and Airfares were the top contributors.
 
 Good, this is getting interesting. Search bar is great for a quick answer, but it’s now time to get serious and explore in detail. Now you open this in a project.
-1. Hover over the right top corner and click on “Explore as Project”
+
+We will pick Map visualization and start creating project.
+
+1. Hover over the right top corner of Map visualization and click on “Explore as Project”
 
 ![](images/8_exlore_as_project.png " ")
 

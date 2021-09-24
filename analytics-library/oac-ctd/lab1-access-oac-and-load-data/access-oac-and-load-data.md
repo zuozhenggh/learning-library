@@ -125,8 +125,9 @@ This is enough for the exercise needs.
 Data is now ready to be used, however, to have access to one of the easiest methods, you need to enable searching on the dataset.
 
 To do so:
-1. Click on the Navigator menu (“burger” icon) on the top left corner.
-2. Click on “Data”
+1. Naviagte to home screen by clicking Go back arrow from top left corner.
+2. Click on the Navigator menu (“burger” icon) on the top left corner.
+3. Click on “Data”
 
 ![](images/12_data_hamburger_icon.png " ")
 

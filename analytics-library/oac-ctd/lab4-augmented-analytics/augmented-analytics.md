@@ -17,7 +17,7 @@ Estimated Lab Time: 30 minutes
 * Exploring all the filtering options
 
 ### Prerequisites
-* Logged in to OAC
+* User logged in to OAC and using canvas developed in previous lab.
 
 ## **Task 1**: Working with maps 
 
@@ -59,8 +59,11 @@ Now you want to see the overall trend of expenses by date.
 
 
 This will create a new analysis using the best type of visualization for the information selected. In this case a Line Chart.
+Line chart will appear next to Map visualization, you can drag Line chart below map visualization.
+
 This graphic shows that there was an increase in expenses in the past few months.
 Now you want to see the prediction of Expenses for the future using Machine Learning.
+
 2. Right-click on the line chart (on any empty space) and select “Add Statistics”
    Select “Forecast”
 
@@ -116,7 +119,7 @@ A wide variety of visualization are available to you.
 ![](images/13_horizontal_bar.png " ")
 
 The list of Hotel vendors appears. Now you need to filter it to Porto and to find the related ones.
-6. Click “Destination City” and drag it to “Filters”
+6. Click “Destination City” and drag it to “Filters”. Please note this filter is specific to visualization and not to entire canvas.
 
 ![](images/14_destination_city_filter.png " ")
 
